@@ -87,6 +87,17 @@ const T = {
   'goal.transformed': (s, o, p, c) => `${s} swapped "${phrase(c.w, p.from)}" for "${phrase(c.w, p.to)}"`,
   'goal.invented': (s, o, p) => `${s} came up with ${p.label}`,
   'goal.step': (s) => `${s} took a step towards a goal`,
+  'project.started': (s, o, p) => `${s} kicked off a ${lc(p.kind)} project`,
+  'project.progress': (s) => `${s} moved a group project forward`,
+  'project.done': (s) => `${s} and the group finished their project`,
+  'project.effect': (s) => `${s}'s project changed something in the neighbourhood`,
+  'project.failed': (s) => `${s}'s project fizzled out`,
+  'labour.applied': (s, o, p) => `${s} ${p.ok ? 'got through to the next stage for' : 'was turned down for'} a ${lc(p.occ)} job`,
+  'housing.let': (s, o, p, c) => `${c.place || 'A home'} was let (${lc(p.tenure)})`,
+  'housing.void': (s, o, p, c) => `${c.place || 'A home'} stands empty`,
+  'housing.repaired': (s, o, p, c) => `${c.place || 'A home'} was repaired`,
+  'housing.landlord_sale': (s, o, p, c) => `A landlord sold up${c.place ? ' at ' + c.place : ''}`,
+  'housing.bought': (s, o, p) => `${s} bought a home for ${money(p.price)}`,
   'legacy.chron': (s) => `${s} …`,
 };
 export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school'];
@@ -100,7 +111,7 @@ export function describeEvent(w, ev, text, viewer = null) {
   const S = viewer != null && a[0] === viewer ? 'They' : nm(w.people.get(a[0]));
   let O = a[1] != null ? w.people.get(a[1]) : null; const Ot = O ? (viewer != null && a[1] === viewer ? 'them' : nm(O)) : null;
   const pl = ev.payload || {}; const place = ev.place != null ? w.buildings.get(ev.place) : null;
-  if (!f) { const doc = w.events.registry.get(ev.type)?.doc; return { line: `${S}: ${doc || ev.type}` }; }
+  if (!f) { const doc = w.events.registry.get(ev.type)?.doc; return { line: a.length ? `${S}: ${doc || lc(ev.type.split('.').pop())}` : (doc || lc(ev.type)), generic: true }; }
   try { return { line: f(S, Ot, pl, { place: place && place.name, w }).replace(/^They's/, 'Their') }; } catch (e) { return { line: `${S}: ${ev.type}` }; }
 }
 

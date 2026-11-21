@@ -2,6 +2,7 @@
 import { V } from '../lexicon.js';
 export default {
   'cx.day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'tomorrow', 'tonight', 'tomorrow night', 'this weekend'],
+  'cx.evening': ['7pm', '7.30pm', '8pm', '6.45', 'half six'],
   'cx.time': ['7pm', '7.30pm', '8pm', '6.45', '1pm', '2ish', 'half six', '12.30', '11am'],
   'cx.food': ['pizza', 'a curry', 'chips', 'Wagamama', 'a roast', 'the chippy', 'Nando\'s', 'sushi', 'kebabs', 'fish finger sandwiches'],
   'cx.emoji': ['', '', '', ' x', ' 😂', ' 🙈', ' 🙃', ' haha', ' lol', ' 😭'],
@@ -12,7 +13,7 @@ export default {
     'Who is that on the doorbell cam at 3am, it looks like a fox in a hat', 'Cleaning rota is on the fridge. Please. It is a laminated document.',
   ],
   'chat.family': [
-    'Dinner at ours #cx.day#, #cx.time#. Bring nothing. (Bring pudding.)', 'Has anyone heard from Gran? She did not pick up', 'Happy birthday!! 🎂 Hope it is a good one', 'Look at this photo of the baby. Look at those cheeks.', 'Is anyone driving up on Sunday? Car is in the garage again',
+    'Dinner at ours #cx.day#, #cx.evening#. Bring nothing. (Bring pudding.)', 'Has anyone heard from Gran? She did not pick up', 'Happy birthday!! 🎂 Hope it is a good one', 'Look at this photo of the baby. Look at those cheeks.', 'Is anyone driving up on Sunday? Car is in the garage again',
     'Dad has sent another voicemail. It is 4 minutes of him walking.', 'Did you get the form for the hospital? I can drop it round', 'Just checking you all got home ok x', 'Can someone explain to me how to turn the camera on? Love, Mum', 'Proud of you all. That is all. Going now.',
     'Weather terrible. Stay in! Soup on if you need it.', 'The cat has had the kittens!! Four of them. Nobody tell Dad he is a grandfather.', 'What do we all think about Christmas? I will not decide on my own. I will decide on my own.',
   ],

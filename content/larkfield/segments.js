@@ -46,7 +46,7 @@ export const SEGMENTS = [
   {
     id: 'family_couples', label: 'Established families (couples with children)', householdShare: 0.16,
     blurb: 'Two parents, dependent children, school-run logistics; the primary school gate is the main local social space; often two incomes, one part-time.',
-    head: { age: [28, 52], activity: { employed: 0.82, lookingAfterHomeFamily: 0.1, longTermSickDisabled: 0.03, unemployed: 0.03, student: 0.02 } },
+    head: { age: [28, 52], activity: { employed: 0.74, lookingAfterHomeFamily: 0.16, longTermSickDisabled: 0.04, unemployed: 0.03, student: 0.02, otherInactive: 0.01 } },
     tenure: { owned_outright: 0.07, mortgage: 0.36, shared_ownership: 0.02, council: 0.15, housing_assoc: 0.12, private_rent: 0.28 },
     originBornUK: 0.62, yearsInArea: { median: 8, p10: 2, p90: 22 },
     mobility: { annualMoveProb: 0.09, moveReasons: { bigger_home: 0.35, better_schools: 0.2, job: 0.15, buy: 0.2, eviction_or_sale: 0.1 }, car: 0.72, bus: 0.25, bike: 0.06, walkMinutesPerDay: 55, offMapTripsPerWeek: 4 },
@@ -98,7 +98,7 @@ export const SEGMENTS = [
   {
     id: 'early_career', label: 'Early-career singles and couples (renting or first-time buyers)', householdShare: 0.12,
     blurb: 'Late 20s to late 30s, living alone or as a couple in a flat/terrace; career-oriented; partners and friends scattered across the city; the neighbourhood is convenient, not a community.',
-    head: { age: [25, 42], activity: { employed: 0.9, unemployed: 0.03, student: 0.03, longTermSickDisabled: 0.02, lookingAfterHomeFamily: 0.02 } },
+    head: { age: [25, 42], activity: { employed: 0.82, unemployed: 0.03, student: 0.03, longTermSickDisabled: 0.03, lookingAfterHomeFamily: 0.04, otherInactive: 0.03 } },
     tenure: { private_rent: 0.5, mortgage: 0.24, shared_ownership: 0.1, owned_outright: 0.04, housing_assoc: 0.07, council: 0.05 },
     originBornUK: 0.6, yearsInArea: { median: 3.2, p10: 0.6, p90: 9 },
     mobility: { annualMoveProb: 0.28, moveReasons: { partner: 0.25, buy: 0.2, job: 0.2, space: 0.2, rent: 0.15 }, car: 0.4, bus: 0.2, bike: 0.2, walkMinutesPerDay: 50, offMapTripsPerWeek: 9 },
@@ -111,7 +111,7 @@ export const SEGMENTS = [
   {
     id: 'settled_professionals', label: 'Settled professionals and owner households', householdShare: 0.09,
     blurb: 'Late 30s to 60s, owners with mortgages, secure professional or managerial jobs; may have children; invested in the street (residents groups, school governors) or detached from it, by temperament.',
-    head: { age: [35, 66], activity: { employed: 0.88, longTermSickDisabled: 0.03, retired: 0.05, lookingAfterHomeFamily: 0.02, unemployed: 0.02 } },
+    head: { age: [35, 66], activity: { employed: 0.8, longTermSickDisabled: 0.03, retired: 0.05, lookingAfterHomeFamily: 0.06, unemployed: 0.02, otherInactive: 0.02 } },
     tenure: { mortgage: 0.46, owned_outright: 0.42, shared_ownership: 0.01, private_rent: 0.08, housing_assoc: 0.02, council: 0.01 },
     originBornUK: 0.7, yearsInArea: { median: 11, p10: 2, p90: 30 },
     mobility: { annualMoveProb: 0.06, moveReasons: { upsize: 0.3, job: 0.2, schools_suburbs: 0.3, downsize: 0.1, divorce: 0.1 }, car: 0.85, bus: 0.1, bike: 0.12, walkMinutesPerDay: 40, offMapTripsPerWeek: 6 },
@@ -124,7 +124,7 @@ export const SEGMENTS = [
   {
     id: 'shift_workers', label: 'Shift and service workers', householdShare: 0.08,
     blurb: 'NHS and care staff, warehouse and logistics operatives, hospitality, security, drivers; irregular hours; sleep matters; community is the people they share a stair or a work-van with.',
-    head: { age: [21, 62], activity: { employed: 0.93, unemployed: 0.04, longTermSickDisabled: 0.03 } },
+    head: { age: [21, 62], activity: { employed: 0.84, unemployed: 0.05, longTermSickDisabled: 0.04, lookingAfterHomeFamily: 0.05, otherInactive: 0.02 } },
     tenure: { private_rent: 0.33, council: 0.2, housing_assoc: 0.15, mortgage: 0.17, owned_outright: 0.12, shared_ownership: 0.03 },
     originBornUK: 0.55, yearsInArea: { median: 6, p10: 1, p90: 20 },
     mobility: { annualMoveProb: 0.14, moveReasons: { rent: 0.25, space: 0.2, job: 0.2, relationship: 0.15, eviction_or_sale: 0.2 }, car: 0.52, bus: 0.4, bike: 0.1, walkMinutesPerDay: 50, offMapTripsPerWeek: 7 },

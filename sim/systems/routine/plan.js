@@ -197,7 +197,9 @@ export function buildPlan(W, p, D, wakeTickAt) {
   const placed = []; // [a,b,block]
   const gaps = () => { const g = []; let c = wake; for (const b of tl) { if (b.a > c) g.push([c, b.a]); c = Math.max(c, b.b); } g.push([c, bed]); return g; };
   const homeD = W.hdist; // not used
+  let nOut = 0; const maxOut = wend ? 3 : 2;
   for (const wsh of wishes) {
+    if (nOut >= maxOut) break;
     const blk = W.makeOuting(p, D, rec, wsh, L, q);
     if (!blk) continue;
     const tot = blk.tripBefore + blk.dur + blk.tripAfter;
@@ -210,11 +212,12 @@ export function buildPlan(W, p, D, wakeTickAt) {
       if (blk.tripBefore) { parts.push({ a: t, b: t + blk.tripBefore, act: A.commute, pt: 4, pid: blk.tripId, aux: 0 }); t += blk.tripBefore; }
       parts.push({ a: t, b: t + blk.dur, act: blk.act, pt: blk.pt, pid: blk.pid, aux: blk.aux || 0 }); t += blk.dur;
       if (blk.tripAfter) parts.push({ a: t, b: t + blk.tripAfter, act: A.commute, pt: 4, pid: blk.tripId, aux: 1 });
-      for (const b of parts) tl.push(b); tl.sort((x, y) => x.a - y.a); break;
+      for (const b of parts) tl.push(b); tl.sort((x, y) => x.a - y.a); nOut++; break;
     }
   }
   // ---- fill gaps with home activity; the final sleep block
   const final = [];
+  const mealAt = { lunch: -99, dinner: -99 }; for (const b of tl) { if (b.act === A.lunch) mealAt.lunch = b.a; else if (b.act === A.dinner || b.act === A.takeaway) mealAt.dinner = b.b; else if (b.act === A.cafe && b.a >= 11.5 && b.a < 14.5) mealAt.lunch = b.a; else if ((b.act === A.pub || b.act === A.offsocial || b.act === A.nightout) && b.a >= 17) mealAt.dinner = b.a; }
   let c = wake;
   const fill = (g0, g1) => {
     let t = g0;
@@ -224,11 +227,11 @@ export function buildPlan(W, p, D, wakeTickAt) {
       const ev = h >= 19.3;
       if (bed - t < 0.75 && g1 >= bed - 0.01) { add2(t, g1, A.bedtime); break; }
       if (h < 9.4 && t - wake < 2.2 && h >= 5) { act = A.breakfast; len = 0.45; }
-      else if (h >= 12 && h < 13.8 && !final.some((b) => b.act === A.lunch && b.a > t - 3)) { act = A.lunch; len = 0.6; }
-      else if (h >= 17.3 && h < 19.8 && !final.some((b) => b.act === A.dinner && b.a > t - 4)) { act = A.dinner; len = 1.0; }
+      else if (h >= 12 && h < 13.8 && Math.abs(mealAt.lunch - t) > 3 && !final.some((b) => b.act === A.lunch && b.a > t - 3)) { act = A.lunch; len = 0.6; mealAt.lunch = t; }
+      else if (h >= 17.3 && h < 19.8 && Math.abs(mealAt.dinner - t) > 4 && !final.some((b) => b.act === A.dinner && b.a > t - 4)) { act = A.dinner; len = 1.0; mealAt.dinner = t; }
       else act = null;
       if (act === null) act = pickHome(W, p, rec, h, age, wend, ev, D, final.length, q);
-      len = len || (act === A.nap ? 1.0 : (kidsHomeOnly ? 1.6 : 1.6 + dice(id, D, 300 + final.length) * 1.8));
+      len = len || (act === A.nap ? 1.0 : (kidsHomeOnly ? 1.8 : 2.0 + dice(id, D, 300 + final.length) * 2.2));
       if (g1 - (t + len) < 0.5) len = g1 - t;
       if (len < 0.34 && final.length && final[final.length - 1].b === t) { final[final.length - 1].b = t + len; t += len; continue; }
       add2(t, Math.min(g1, t + len), act); t += len;
@@ -243,7 +246,8 @@ export function buildPlan(W, p, D, wakeTickAt) {
   // ---- emit entries (merge contiguous identical states), then the sleep block and the BUILD sentinel at the next wake
   const e = []; let lastKey = '', prev = wakeTickAt - 1;
   for (const b of parts) {
-    if (b.b - b.a < 0.3 && b.pt === 0 && e.length && (b.act >= A.tv || b.act === A.chores) ) continue; // too short to be its own activity: previous state runs on
+    if (b.b - b.a < 0.45 && b.pt === 0 && e.length && (b.act >= A.tv || b.act === A.chores) ) continue; // too short to be its own activity: previous state runs on
+    if (b.b - b.a < 0.3 && b.pt === 0 && e.length && (b.act === A.dinner || b.act === A.lunch || b.act === A.breakfast)) continue; // a 10-minute 'meal' squeezed between two trips is not a meal
     const k = b.act + ':' + b.pt + ':' + b.pid + ':' + (b.aux || 0); if (k === lastKey) continue; lastKey = k;
     const tk = Math.max(hourToTick(cal, D, b.a), prev + 1); prev = tk;
     e.push(tk, b.act, b.pt, b.pid, b.aux || 0);

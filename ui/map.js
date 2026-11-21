@@ -101,7 +101,7 @@ export class MapView {
     return null;
   }
   visible(p, now) { return p.st === 0 || (p.show && now < p.show && p.moving); }
-  figH(p) { const z = this.cam.z; const base = clamp(z * 0.95, 8, 28); return base * (p.age < 4 ? 0.5 : p.age < 12 ? 0.68 : p.age < 17 ? 0.88 : 1); }
+  figH(p) { const z = this.cam.z; const base = clamp(z * 1.3, 10, 36); return base * (p.age < 4 ? 0.5 : p.age < 12 ? 0.68 : p.age < 17 ? 0.88 : 1); }
 
   // ------------------------------------------------------------------ drawing
   lighting() {
@@ -130,7 +130,7 @@ export class MapView {
     const tl = this.timelapse; const dk = tl ? 0.12 : this.dark; this.nightSmooth += (dk - this.nightSmooth) * (tl ? 0.2 : 1);
     this.drawWeather(ctx, now);
     const dkv = this.nightSmooth;
-    if (dkv > 0.01) { ctx.fillStyle = `rgba(9,16,46,${(0.62 * dkv).toFixed(3)})`; ctx.fillRect(0, 0, this.w, this.h); }
+    if (dkv > 0.01) { ctx.fillStyle = `rgba(7,13,44,${(0.7 * dkv).toFixed(3)})`; ctx.fillRect(0, 0, this.w, this.h); }
     if (!tl && (this.dawn > 0 || this.dusk > 0)) { ctx.fillStyle = `rgba(255,140,60,${(0.12 * Math.max(this.dawn, this.dusk)).toFixed(3)})`; ctx.fillRect(0, 0, this.w, this.h); }
     this.drawLights(ctx, dkv);
     this.drawOverlay(ctx);
@@ -162,7 +162,7 @@ export class MapView {
       const n = this.occ.get(b.id) || 0; const ws = this.windows.get(b.id); if (!ws) continue; const [sx, sy] = this.toScreen(b.x, b.y); const bw = b.w * z, bh = b.h * z; if (sx > this.w || sy > this.h || sx + bw < 0 || sy + bh < 0) continue;
       const lit = b.kind === 'commercial' ? (n > 0 ? ws.length : Math.min(1, ws.length)) : Math.min(ws.length, n > 0 ? 1 + n : 0);
       if (!lit) continue;
-      ctx.fillStyle = `rgba(255,205,110,${(0.85 * a).toFixed(2)})`; const ww = Math.max(1.5, z * 0.7), wh = Math.max(1.5, z * 0.7);
+      ctx.fillStyle = `rgba(255,205,110,${(0.85 * a).toFixed(2)})`; const ww = Math.max(1.5, z * 0.36), wh = Math.max(1.5, z * 0.4);
       for (let i = 0; i < lit; i++) { const wx = sx + 2 + ws[i][0] * Math.max(0, bw - ww - 4), wy = sy + 2 + ws[i][1] * Math.max(0, bh - wh - 4); ctx.fillRect(wx, wy, ww, wh); }
       if (z > 6 && n > 0) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = `rgba(255,190,90,${0.1 * a})`; ctx.fillRect(sx, sy, bw, bh); ctx.restore(); }
     }

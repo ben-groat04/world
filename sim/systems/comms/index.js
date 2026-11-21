@@ -131,7 +131,7 @@ export function createComms() {
   function personalPost(w, S, r, p, kind, cause, viral) {
     if (!p) return 0; const ps = S.ppl.get(p.id); if (!ps) return 0;
     // reach depends on ties: followers (heavy tailed) x engagement; a post that catches fire is rare
-    let reach = Math.round(ps.nf * (0.15 + 0.5 * r.next())); const fire = viral || r.next() < 0.0006 * Math.min(4, 1 + ps.nf / 80);
+    let reach = Math.round(ps.nf * (0.15 + 0.5 * r.next())); const fire = viral || r.next() < 0.00004 * Math.min(4, 1 + ps.nf / 80);
     if (fire) { reach *= 20 + Math.round(r.next() * 80); S.stats.viral++; w.emit('comms.viral', { actors: [p.id], salience: 0.35, cause: cause || 0, tags: ['viral', 'social'], payload: { reach } }); }
     const post = { id: S.nextPost++, t: w.tick, au: p.id, k: kind, r: reach, sd: (r.next() * 1e6) | 0 }; if (cause) post.cause = cause;
     S.posts.push(post); if (S.posts.length > 300) S.posts.shift();

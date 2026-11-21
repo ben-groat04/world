@@ -135,12 +135,17 @@ export class Host {
     const sig = posts.length ? posts[0].id + ':' + posts.length : '';
     if (sig !== this.postSig) { this.postSig = sig; this.send({ t: 'posts', posts: posts.slice(0, 60), source: cm ? 'comms' : 'events' }); }
     // storylines
-    const arcs = this.sifter.ranked(14, { minScore: 0.8 }).map((a) => this.arcView(a));
+    const seenB = new Set(); const arcs = []; for (const a of this.sifter.ranked(30, { minScore: 0.8 })) { const v = this.arcView(a); if (v.beats.length < 2) continue; const key = v.beats.slice(-2).map((b) => b.eid).join('-'); if (seenB.has(key)) continue; seenB.add(key); arcs.push(v); if (arcs.length >= 12) break; }
     const asig = arcs.map((a) => a.id + ':' + a.n).join(',');
     if (asig !== this.arcSig) { this.arcSig = asig; this.send({ t: 'arcs', arcs, quiet: arcs.length === 0, stats: this.sifter.stats() }); }
   }
   arcView(a) {
-    const w = this.w; const beats = a.beats.filter((b) => !/^goal\.(step|effect|planned|replanned|deferred)$|^social\.rumour$|^group\.meeting$/.test(b.type)).slice(-5).map((b) => { const ev = w.events.get ? w.events.get(b.eid) : null; return { tick: b.tick, date: w.calendar.formatDate(b.tick), stage: b.stage, text: ev ? describeEvent(w, ev, this.text).line : b.type }; });
+    const w = this.w; const beats = [];
+    for (let i = a.beats.length - 1; i >= 0 && beats.length < 5; i--) {
+      const b = a.beats[i]; if (/^goal\.(step|effect|planned|replanned|deferred|formed)$|^social\.rumour$|^group\.meeting$|^kernel\./.test(b.type)) continue;
+      const ev = w.events.get ? w.events.get(b.eid) : null; if (!ev) continue; const d = describeEvent(w, ev, this.text); if (d.generic && !/^social|^health|^life/.test(b.type)) continue;
+      beats.unshift({ tick: b.tick, date: w.calendar.formatDate(b.tick), stage: b.stage, text: d.line, eid: b.eid });
+    }
     return { id: a.id, kind: a.kind, status: a.status, outcome: a.outcome, stage: a.stage, score: r2(a.score), n: a.beats.length, start: w.calendar.formatDate(a.start), last: w.calendar.formatDate(a.last), days: Math.round((a.last - a.start) / this.TPD), actors: a.actors.slice(0, 5).map((id) => this.ref(id)), beats, quiet: !!a.quiet };
   }
 

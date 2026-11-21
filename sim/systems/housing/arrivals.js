@@ -6,7 +6,7 @@ import { personalityFor, drivesFor, skillsFor, interestsFor, healthFor, savingsF
 import { clamp, wpick, wpickObj, clamp01 } from '../../population/util.js';
 
 const GROUPS = ['white_british', 'other_white', 'indian', 'pakistani', 'bangladeshi', 'chinese', 'other_asian', 'african', 'caribbean', 'mixed', 'other'];
-const ARRIVAL_TILT = { students: 2.4, young_sharers: 1.5, early_career: 1.4, recent_arrivals: 2.5, family_couples: 0.9, lone_parents: 0.7, benefit_dependent: 0.5, older_longterm: 0.1, settled_professionals: 0.9, shift_workers: 0.8, local_business_families: 0.1 };
+const ARRIVAL_TILT = { students: 1.6, young_sharers: 1.5, early_career: 1.4, recent_arrivals: 2.5, family_couples: 0.9, lone_parents: 0.7, benefit_dependent: 0.5, older_longterm: 0.1, settled_professionals: 0.9, shift_workers: 0.8, local_business_families: 0.1 };
 const need = { one_person_66plus: 1, one_person_u66: 1, married_no_kids: 2, cohab_no_kids: 2, couple_66plus: 2, sharers_students_multigen: 3, married_dep_kids: 3, cohab_dep_kids: 3, lone_parent_dep: 2, lone_parent_nondep: 2, married_nondep: 3, cohab_nondep: 3, other_single_family: 3, multi_family_dep_kids: 4 };
 
 let shareCache = new WeakMap();

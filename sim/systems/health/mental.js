@@ -26,7 +26,7 @@ export function monthlyMental(w, rng, people) {
   const st = w.lf.health, T = w.tick;
   // loneliness: a fixed reporting threshold on the loneliness score (LONE_THRESHOLD); prevalence emerges from ties, household, personality, age and events
   for (const p of people) { const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p); hl.loneZ = age < 16 ? -9 : loneScore(w, p, age); }
-  const thr = LONE_THRESHOLD;
+  const thr = ((w.settings.tune || {}).loneThr) ?? LONE_THRESHOLD;
   for (const p of people) {
     const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p), q = p.ext.pop, L = p.ext.life;
     hl.lonely = hl.loneZ > thr ? 1 : 0;

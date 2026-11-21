@@ -7,7 +7,7 @@ import { bedsNeeded, bedsOf, buildPop } from './moves.js';
 
 const BANDS = [[15, 19, '15-19'], [20, 24, '20-24'], [25, 29, '25-29'], [30, 34, '30-34'], [35, 39, '35-39'], [40, 44, '40+']];
 const PARITY_W = [1.0, 0.95, 0.38, 0.14, 0.06];
-export const FERT_REF = 0.5; // circumstance weight of the 'reference' woman whose conception hazard equals the national age-specific rate (partnered, parity 0-1, average desire)
+export const FERT_REF = 0.22; // circumstance weight of the 'reference' woman whose conception hazard equals the national age-specific rate (partnered, parity 0-1, average desire)
 
 function stateWeight(w, p, L) {
   const pt = L.part;
@@ -38,7 +38,7 @@ export function monthlyFertility(w, rng, people) {
     B.el.push([p, wt]); B.sum += wt;
   }
   bands.forEach((B, i) => {
-    if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = 1 / FERT_REF;
+    if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = 1 / (((w.settings.tune || {}).fertRef) ?? FERT_REF);
     for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
   });
 }

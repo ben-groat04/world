@@ -2,7 +2,7 @@
 import { V } from '../lexicon.js';
 export default {
   'cx.day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'tomorrow', 'tonight', 'tomorrow night', 'this weekend'],
-  'cx.time': ['7', '7.30', '8', '6.45', '1', '2ish', 'half six', '12.30', '10'],
+  'cx.time': ['7pm', '7.30pm', '8pm', '6.45', '1pm', '2ish', 'half six', '12.30', '11am'],
   'cx.food': ['pizza', 'a curry', 'chips', 'Wagamama', 'a roast', 'the chippy', 'Nando\'s', 'sushi', 'kebabs', 'fish finger sandwiches'],
   'cx.emoji': ['', '', '', ' x', ' 😂', ' 🙈', ' 🙃', ' haha', ' lol', ' 😭'],
   'chat.flat': [

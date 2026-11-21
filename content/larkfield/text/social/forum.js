@@ -56,7 +56,7 @@ export default {
     'Dogs barking all day at number 22. I have no problem with dogs, I have a problem with a dog on its own for ten hours.',
   ],
   'feed.bins': [
-    'Bin day is {p.day} not Monday! Three bags out already on {p.street}. Foxes have been busy.',
+    'Bin day is {p.day}, as it says on the calendar and the lid. Three bags out already on {p.street}. Foxes have been busy.',
     'Whose are the black sacks dumped #fx.street#? Rats will love it. Bins are there for a reason, people.',
     'Reminder that the recycling gets collected fortnightly. The pink bags are NOT for general waste. Just saying.',
     'Someone has put a mattress by the bins again. The council quote for removal is £45 and a three-week wait, so it is now a feature.',
@@ -114,6 +114,7 @@ export default {
   'feedreply.help': ['Try {p.name}, they did mine and were reasonable.', 'Ours was sorted by calling the council direct rather than the form.', 'Might be worth ringing 101 and getting a crime number.', 'DM sent.', 'I have one you can borrow. Message me.', 'Have you checked with the shop on the corner?'],
   'feedreply.joke': ['At least the foxes are well fed.', 'Welcome to Larkfield.', 'Round here that counts as a good week.', 'Have you tried turning the borough off and on again?'],
   'feedreply.argue': ['That is not what happened and you know it.', 'Maybe the problem is people who post on here instead of talking to their neighbours.', 'Bit of an overreaction, surely?', 'Some of us have no choice but to park there.', 'Not helpful. Please be kind.', 'You wouldn\'t say that to their face.', 'Typical.'],
+  'feedreply.interest': ['Is this still available?', 'Interested! DM sent.', 'Could I have this? Can collect after 6.', 'Might be mine, will message.', 'Thanks for sharing, we will come along.', 'Brilliant idea, count me in.', 'Hope someone claims it. Good on you for posting.'],
   'feedreply.thanks': ['Thank you, that is really helpful!', 'Lovely, cheers.', 'Brilliant, will do.', 'Appreciate it.'],
   // personal feed (Insta/Facebook style) beyond the older post.* keys: a wider daily mix
   'post2.mood': [

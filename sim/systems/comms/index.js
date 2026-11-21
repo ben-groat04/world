@@ -21,7 +21,7 @@ const EVENTS = [
 ];
 const CHAT_BASE = { family: 6, flat: 7, friends: 9, school: 5, five: 4, residents: 2, work: 5, faith: 1.5, dm: 0 };
 const FORUM_W = { lost_pet: 5, parking: 12, recommend: 14, crime: 7, council: 9, noise: 6, bins: 6, kids: 2, dogs: 3, event: 8, freebie: 7, question: 10, shop: 3, lost_prop: 5, alert: 2 };
-const FORUM_TONES = { parking: [0.4, 0.3, 0.1, 0.35], noise: [0.35, 0.2, 0.1, 0.35], kids: [0.3, 0.2, 0.2, 0.3], dogs: [0.4, 0.2, 0.1, 0.3], bins: [0.4, 0.2, 0.2, 0.2], recommend: [0.05, 0.9, 0.05, 0.02], question: [0.05, 0.8, 0.1, 0.02], default: [0.35, 0.3, 0.15, 0.15] };
+const FORUM_TONES = { freebie: [0.05, 0, 0.05, 0, 0.9], lost_prop: [0.1, 0, 0.05, 0, 0.85], shop: [0.6, 0, 0.3, 0.1, 0], alert: [0.7, 0, 0.2, 0.1, 0], event: [0.1, 0, 0.05, 0, 0.85], parking: [0.4, 0.3, 0.1, 0.35], noise: [0.35, 0.2, 0.1, 0.35], kids: [0.3, 0.2, 0.2, 0.3], dogs: [0.4, 0.2, 0.1, 0.3], bins: [0.4, 0.2, 0.2, 0.2], recommend: [0.05, 0.9, 0.05, 0.02], question: [0.05, 0.8, 0.1, 0.02], default: [0.35, 0.3, 0.15, 0.15] };
 const PET = ['Biscuit', 'Mabel', 'Ziggy', 'Pickle', 'Mo', 'Tilly', 'Bruno', 'Luna', 'Gizmo', 'Nala', 'Archie', 'Dotty'];
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const THING = ['a repair cafe', 'a community garden', 'a street party', 'a book swap', 'a walking group', 'a litter pick', 'a food bank rota'];
@@ -30,12 +30,13 @@ const POISSON = (r, l) => { let n = Math.floor(l); if (r.next() < l - n) n++; re
 export function createComms() {
   let W = null, E = null;
   const view = (p) => p ? ({ id: p.id, firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(W.ageOf(p)), segment: p.ext.pop.seg, job: p.job, mood: (p.mood + 1) / 2, children: p.family.childrenIds, traits: {} }) : null;
-  const shops = () => (W._shopNames || (W._shopNames = [...W.buildings.values()].filter((b) => b.lf && ['cafe', 'pub', 'small_supermarket', 'bakery', 'library', 'community_centre', 'pharmacy'].includes(b.lf.template)).map((b) => b.name.replace(/^The /, 'the ')))); 
+  const shops = () => (W._shopNames || (W._shopNames = [...W.buildings.values()].filter((b) => b.lf && ['cafe', 'pub', 'small_supermarket', 'bakery', 'library', 'community_centre', 'pharmacy'].includes(b.lf.template)).map((b) => b.name.replace(/^The /, '')))); 
   const streetName = (p) => { const b = W.buildings.get(p.homeId); const st = b && b.lf && W.map.lf.streets[b.lf.streetId]; return st ? st.name : 'the High Street'; };
   function render(key, a, o = {}) {
     const ap = typeof a === 'number' ? W.people.get(a) : a, bp = typeof o.b === 'number' ? W.people.get(o.b) : o.b; const av = view(ap);
     const seed = (o.seed || 0);
-    const p = { street: ap ? streetName(ap) : 'Newport Road', name: PET[seed % PET.length], shop: shops()[(seed >> 2) % shops().length] || 'the corner shop', day: DAYS[(seed >> 1) % 7], road: ap ? streetName(ap) : 'Newport Road', thing: THING[seed % THING.length], place: shops()[(seed >> 3) % shops().length] || 'the corner shop', n: 1 + (seed % 40), ...(o.p || {}) };
+    const dest = ['Tenerife', 'Cornwall', 'Portugal', 'Lanzarote', 'the Lakes', 'Turkey', 'Wales', 'Greece', 'Scotland', 'Bangladesh', 'Poland', 'Jamaica'];
+    const p = { street: ap ? streetName(ap) : 'Newport Road', name: PET[seed % PET.length], shop: shops()[(seed >> 2) % shops().length] || 'the corner shop', day: DAYS[(seed >> 1) % 7], road: ap ? streetName(ap) : 'Newport Road', thing: THING[seed % THING.length], place: shops()[(seed >> 3) % shops().length] || 'the corner shop', n: 1 + (seed % 40), ...(key.endsWith('.holiday') ? { place: dest[seed % dest.length] } : {}), ...(o.p || {}) };
     try { return E.render(key, { a: av, b: view(bp), s: view(typeof o.s === 'number' ? W.people.get(o.s) : o.s), o: view(typeof o.o === 'number' ? W.people.get(o.o) : o.o), actors: [typeof o.s === 'object' && o.s ? o.s.id : o.s, typeof o.o === 'object' && o.o ? o.o.id : o.o].filter((x) => x != null), people: (id) => view(W.people.get(id)), seed, p, genre: 'ev', date: W.calendar.dateOf ? W.calendar.dateOf(W.tick) : undefined, memory: o.memory }, W); } catch (e) { return '[' + key + ']'; }
   }
   const plugin = {
@@ -64,7 +65,7 @@ export function createComms() {
       chats: (pid) => { const ps = W.soc.ppl.get(pid); return ps ? ps.ch.map((id) => { const c = W.soc.chats[id - 1]; return { id, kind: c.kind, name: c.name, n: c.m.length + c.nx, act: +c.act.toFixed(2) }; }) : []; },
       chat: (id, n = 6) => { const c = W.soc.chats[id - 1]; return c ? c.ring.slice(-n).map((m) => ({ t: m.t, author: m.au, text: chatText(c, m) })) : []; },
       feed: (n = 8) => W.soc.posts.slice(-n).map((p) => ({ id: p.id, t: p.t, author: p.au, kind: p.k, reach: p.r, text: postText(p) })),
-      forum: (n = 8) => W.soc.forum.posts.slice(-n).map((p) => ({ id: p.id, t: p.t, author: p.au, kind: p.k, replies: p.cm.map((c) => ({ author: c.au, tone: c.tn, text: render('feedreply.' + ['agree', 'help', 'joke', 'argue'][c.tn], c.au, { seed: c.sd, p: { name: 'Dave' } }) })), text: postText(p, true), seen: p.r })),
+      forum: (n = 8) => W.soc.forum.posts.slice(-n).map((p) => ({ id: p.id, t: p.t, author: p.au, kind: p.k, replies: p.cm.map((c) => ({ author: c.au, tone: c.tn, text: render('feedreply.' + ['agree', 'help', 'joke', 'argue', 'interest'][c.tn], c.au, { seed: c.sd, p: { name: ['Mick', 'Karen at number 9', 'Steve (the plumber)', 'big Dave', 'Ali at the garage', 'Priti'][c.sd % 6] } }) })), text: postText(p, true), seen: p.r })),
       datingPool: (pid, n = 10) => datingPool(W, pid, n),
       stats: () => JSON.parse(JSON.stringify({ msgs: W.soc.stats.msgs, calls: W.soc.stats.calls, posts: W.soc.stats.posts, viral: W.soc.stats.viral, pile: W.soc.stats.pile, matches: W.soc.stats.matches, chats: W.soc.chats.length, forumMembers: W.soc.forum.members.length })),
     },
@@ -181,7 +182,7 @@ export function createComms() {
     const members = F.members, nm = members.length, tones = FORUM_TONES[kind] || FORUM_TONES.default;
     const seen = Math.min(50, Math.round(nm * (0.35 + 0.3 * r.next()))); post.r = seen;
     let ncm = POISSON(r, (kind === 'parking' || kind === 'council' || kind === 'crime' ? 3.2 : kind === 'recommend' || kind === 'question' ? 2.6 : 1.2) * (0.4 + r.next())); let heat = 0;
-    for (let i = 0; i < ncm; i++) { const q = w.people.get(members[(r.next() * nm) | 0]); if (!q || q === p || !q.alive) continue; const tone = r.weighted([0, 1, 2, 3], tones); if (tone === 3) heat++; if (post.cm.length < 8) post.cm.push({ au: q.id, tn: tone, sd: (r.next() * 1e6) | 0 });
+    for (let i = 0; i < ncm; i++) { const q = w.people.get(members[(r.next() * nm) | 0]); if (!q || q === p || !q.alive) continue; const tone = r.weighted([0, 1, 2, 3, 4], tones.length < 5 ? [...tones, 0] : tones); if (tone === 3) heat++; if (post.cm.length < 8) post.cm.push({ au: q.id, tn: tone, sd: (r.next() * 1e6) | 0 });
       const A = psOf(w, S, p.id), B = psOf(w, S, q.id);
       if (A && B) { const t = A.T.get(q.id); if (t) { touch(t, 3, 1, w.tick); if (tone === 3) { t.l = clamp(t.l - 0.05, -1, 1); t.cf = clamp(t.cf + 0.1, 0, 1); } } else if (r.next() < 0.05) link(w, S, p, q, { k: 'neighbour', r: 'neighbour (met online)', L: 4, c: 0.06, lv: 2, l: 0.1 }, 'online'); } }
     if (kind === 'crime' || kind === 'alert') { let n = 0; for (let i = 0; i < Math.min(seen, 30); i++) { const q = S.ppl.get(members[(r.next() * nm) | 0]); if (!q) continue; learn(S, q, mkBelief(S, 'crime_nearby', p.id, 0, 2, 0.6, -3, 1, w.tick, undefined, {})); n++; } }

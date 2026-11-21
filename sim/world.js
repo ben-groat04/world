@@ -29,6 +29,7 @@ export class World {
     this.town = { name: 'Hollowmere', treasury: 2000 };
     this.nextPersonId = 1;
     this.recordTrails = false;
+    this.prof = null;
     this._handlers = new Map();
     this._rngs = new Map();
     this._interventions = new Map();
@@ -297,22 +298,35 @@ export class World {
     const t = this._setTime();
     const hourStart = t.minute === 0, dayStart = hourStart && t.hour === 0;
     if (dayStart) this._dayStart();
-    this._stepPeople();
+    const P = this.prof;
+    if (P) { const t0 = performance.now(); this._stepPeople(); P.people += performance.now() - t0; } else this._stepPeople();
     this.emit('tick', this);
-    const sys = this.systems;
-    for (let i = 0; i < sys.length; i++) if (sys[i].onTick) sys[i].onTick(this);
+    this._hook('onTick');
     if (hourStart) {
       this._hourStart();
       this.emit('hour', this);
-      for (let i = 0; i < sys.length; i++) if (sys[i].onHour) sys[i].onHour(this);
+      this._hook('onHour');
     }
     if (dayStart) {
       this.emit('day', this);
-      for (let i = 0; i < sys.length; i++) if (sys[i].onDay) sys[i].onDay(this);
+      this._hook('onDay');
       for (const p of this.living()) p.workedTicks = 0; // after systems saw today's total
-      if (t.dayOfSeason === 1) { this.emit('season', this); for (let i = 0; i < sys.length; i++) if (sys[i].onSeason) sys[i].onSeason(this); }
-      if (t.dayOfYear === 0) { this.emit('year', this); for (let i = 0; i < sys.length; i++) if (sys[i].onYear) sys[i].onYear(this); }
+      if (t.dayOfSeason === 1) { this.emit('season', this); this._hook('onSeason'); }
+      if (t.dayOfYear === 0) { this.emit('year', this); this._hook('onYear'); }
     }
+  }
+  // call a lifecycle hook on every system; when world.prof is set, accumulate ms per system (prof.sys[name])
+  _hook(name) {
+    const sys = this.systems, P = this.prof;
+    if (!P) { for (let i = 0; i < sys.length; i++) if (sys[i][name]) sys[i][name](this); return; }
+    for (let i = 0; i < sys.length; i++) if (sys[i][name]) { const t0 = performance.now(); sys[i][name](this); P.sys[sys[i].name] = (P.sys[sys[i].name] || 0) + performance.now() - t0; }
+  }
+  // enable per-section timing: world.enableProfile() then read world.prof {people, brain, walk, needs, sys:{name:ms}}
+  enableProfile() {
+    const P = this.prof = { people: 0, brain: 0, walk: 0, sys: {} };
+    const wrap = (obj, fn, key) => { const orig = obj[fn]; obj[fn] = function (...a) { const t0 = performance.now(); const r = orig.apply(this, a); P[key] += performance.now() - t0; return r; }; };
+    wrap(this.brain, 'decide', 'brain'); wrap(this, '_walk', 'walk');
+    return P;
   }
   run(ticks) { for (let i = 0; i < ticks; i++) this.step(); }
   _hourStart() {

@@ -8,8 +8,8 @@
 // ---------------------------------------------------------------- speed tiers
 export const TIERS = [
   { id: 'pause', label: 'Pause', tps: 0 },
-  { id: 'scene', label: 'Scene', tps: 12, hint: 'about 2 game minutes per real second' },
-  { id: 'life', label: 'Lifetime/hr', tps: 322, hint: 'a 70-year life in an hour (~50 s per game-year)' },
+  { id: 'scene', label: 'Scene', tps: 4, hint: 'slow: watch conversations unfold' },
+  { id: 'life', label: 'Lifetime', tps: 322, hint: 'a 70-year life in an hour (~50 s per game-year)' },
   { id: 'x5', label: 'x5', tps: 1610 },
   { id: 'x20', label: 'x20', tps: 6440 },
   { id: 'max', label: 'Max', tps: Infinity },
@@ -33,6 +33,7 @@ export function clockInfo(w) {
     weather: w.weather ? { type: w.weather.type, temp: w.weather.temp } : null, pop: w.living().length,
     town: w.town ? { name: w.town.name, treasury: Math.round(w.town.treasury || 0) } : null,
     player: w.player ?? null,
+    festival: (() => { const F = w.town && w.town.festivalToday; return F ? { name: F.name, kind: F.kind, venueId: F.venueId ?? null, start: F.startHour, end: F.endHour } : null; })(),
   };
 }
 
@@ -172,6 +173,16 @@ export function directorySnapshot(w) {
   return { living, dead, pyramid: pyr, tick: w.tick };
 }
 
+export function mapPayload(w) {
+  const m = w.map, tiles = new Uint8Array(m.tiles);
+  return { W: m.W, H: m.H, tiles, center: m.center, squareId: m.squareId, buildings: Array.from(w.buildings.values(), staticBuilding) };
+}
+export function staticBuilding(b) { return { id: b.id, type: b.type, name: b.name, x: b.x, y: b.y, w: b.w, h: b.h, door: b.door, doorSide: b.doorSide, open: !!b.open }; }
+export function buildingDetail(w, id) {
+  const b = w.buildings.get(id); if (!b) return null;
+  const P = (ids) => (ids || []).map((i) => w.people.get(i)).filter((p) => p && p.alive).map((p) => ({ id: p.id, name: nm(p), job: p.job }));
+  return { id: b.id, name: b.name, type: b.type, owner: P([b.ownerId])[0] || null, employees: P(b.employees).slice(0, 14), residents: P(b.residents).slice(0, 14), inside: b.occupants ? b.occupants.size : 0, funds: Math.round(b.funds || 0), condition: r2(b.condition ?? 1), hours: b.hours || null, open: w.isOpen ? !!w.isOpen(b) : true };
+}
 export function buildingList(w) {
   const out = [];
   for (const b of w.buildings.values()) out.push({ id: b.id, name: b.name, type: b.type, x: b.x, y: b.y });

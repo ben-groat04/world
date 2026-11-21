@@ -16,7 +16,7 @@ Step order per tick: day-start housekeeping -> people loop (needs, walk/act/deci
 - People sleep: `p.wake` = next tick something can happen (needs refresh, action end, re-think, onTick). Anything that changes `currentAction` outside startAction/endAction must set `p.wake = 0`.
 - Action `onTick(w,p,b,ca,dt)` runs every `def.tickEvery` ticks (default 1; core ones 4) with dt = ticks since last call: multiply per-tick effects by dt.
 - Brain: decisions only when an action ends (+ every 12 ticks for `interruptible`). `brain.openOf(type)` = open buildings, cached per tick; household food cached per eval; scorers should stay allocation-free.
-- Social encounters run every 3rd tick with 3x probability; relationship upkeep + reputation every 4th day; stale acquaintances (no tag, familiarity<0.2, 25+ days) are pruned from `p.relationships`.
+- Social encounters run every 6th tick with 6x probability (capped .95); relationship upkeep + reputation every 4th day; stale acquaintances (no tag, familiarity<0.2, 25+ days) are pruned from `p.relationships`.
 - Person objects have ONE hidden class: declare any new lazily-added person field in `createPerson` (as `undefined`). `p.ext.<system>` holds bulky per-system state.
 - Paths are canonical (computed for (min,max) tile and reversed), so the cache never affects results.
 - Profile: `node tools/report.js ... ` prints a `time(s)` line (people loop / brain / walk / each system). `node --cpu-prof tools/report.js --noprof ...` for V8 profiles.

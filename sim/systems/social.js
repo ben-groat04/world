@@ -548,11 +548,11 @@ function startProb(world, p, loc) {
   if (p.currentAction && p.currentAction.id === 'work') m *= 0.8;
   return m;
 }
-const TALK_EVERY = 3, TPY = 16128;
+const TALK_EVERY = 6, TPY = 16128;
 const placeKey = (p) => (p.locationId != null ? p.locationId : 100000 + ((p.y >> 2) << 8) + (p.x >> 2));
 function onTick(world) {
   const tick = world.tick;
-  if (tick % TALK_EVERY !== 0) return; // encounters are evaluated every 3rd tick with 3x the per-tick probability
+  if (tick % TALK_EVERY !== 0) return; // encounters are evaluated every 6th tick with 6x the per-tick probability
   const S = st(world), rng = world.rng, hour = world.time.hour;
   const living = world.living();
   // bucket people by place: building id, or a 4-tile outdoor cell (keys offset past the building ids)

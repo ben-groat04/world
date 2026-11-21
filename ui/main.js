@@ -147,7 +147,7 @@ addEventListener('keydown', (e) => {
 let lastW = 0;
 function sizeSync() {
   renderer.resize();
-  if (mobile()) { const d = $('sidebar').querySelector('.hm-dock'); if (d) { const r = wrap.getBoundingClientRect(), top = d.getBoundingClientRect().top; const ins = Math.max(0, r.bottom - top); renderer.setInset(ins); document.documentElement.style.setProperty('--sheet', ins + 'px'); } } else { renderer.setInset(0); }
+  if (mobile()) { const d = $('sidebar').querySelector('.hm-dock'); if (d) { const r = wrap.getBoundingClientRect(), top = d.getBoundingClientRect().top; const ins = Math.max(0, r.bottom - top); renderer.setInset(ins); document.body.dataset.sheet = d.dataset.sheet; document.documentElement.style.setProperty('--sheet', ins + 'px'); } } else { renderer.setInset(0); }
   if (renderer.map && lastW === 0 && renderer.w > 0) renderer.fit(); lastW = renderer.w;
 }
 new ResizeObserver(sizeSync).observe(wrap); addEventListener('resize', sizeSync);

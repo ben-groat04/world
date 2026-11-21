@@ -53,7 +53,9 @@ export class Brain {
   _eval(p, out) {
     const w = this.world, c = this.prepare(p), cd = p.cooldown;
     const cands = [];
-    for (const def of this.list) {
+    const list = this.list;
+    for (let di = 0; di < list.length; di++) {
+      const def = list[di];
       if (def.minAge !== undefined && c.age < def.minAge) continue;
       if (def.maxAge !== undefined && c.age > def.maxAge) continue;
       if (cd[def.id] > c.tick) continue;
@@ -61,8 +63,10 @@ export class Brain {
       let s = def.score(w, p);
       if (!(s > 0)) continue;
       let target = c.target;
-      for (const m of this.modifiers) { const r = m(w, p, def, s); if (typeof r === 'number') s = r; }
-      for (const m of def._mods || []) { const r = m(w, p, def, s); if (typeof r === 'number') s = r; }
+      const mods = this.modifiers;
+      for (let i = 0; i < mods.length; i++) { const r = mods[i](w, p, def, s); if (typeof r === 'number') s = r; }
+      const dm = def._mods;
+      if (dm !== undefined) for (let i = 0; i < dm.length; i++) { const r = dm[i](w, p, def, s); if (typeof r === 'number') s = r; }
       if (c.cur === def.id) s += def.stickiness ?? 8;
       if (!(s > 0)) continue;
       cands.push({ def, score: s, target, why: c.why, data: c.data });

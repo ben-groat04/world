@@ -143,6 +143,7 @@ export const CORE_ACTIONS = [
     },
     duration: () => 3,
     onEnd(w, p, b) {
+      w.brain.ctx.hfP = null;
       const hf = householdFood(w, p), price = w.settings.prices.food;
       let n = Math.min(hf.need - hf.have, Math.floor(p.money / price));
       if (b.inventory.food !== undefined) n = Math.min(n, Math.floor(b.inventory.food));
@@ -163,8 +164,8 @@ export const CORE_ACTIONS = [
       if (s0 < 5) return 0;
       let best = null, bv = -1e9;
       for (const type of ['park', 'square', 'market', 'temple']) {
-        for (const b of w.buildingsOfType(type)) {
-          if (!isOpen(b, c.h) || (type === 'park' && rain(w))) continue;
+        if (type === 'park' && rain(w)) continue;
+        for (const b of w.brain.openOf(type)) {
           const occ = b.occupants.size;
           let v = (ex > 0.5 ? Math.min(occ, 8) : (occ > 0 && occ < 4 ? occ * 1.5 : occ >= 6 ? -2 : 0)) - dist(p, b) * 0.08 + w.rng.float(0, 2);
           if (b.id === p.locationId) v += 2;
@@ -232,10 +233,11 @@ export const CORE_ACTIONS = [
       if (c.shift || !dayHour(c.h, 6, 21)) return 0;
       const L = ['square', 'park', 'market', 'temple'];
       const types = c.h >= 16 ? L.concat('tavern') : L;
-      const opts = [];
-      for (const t of types) for (const b of w.buildingsOfType(t)) if (isOpen(b, c.h) && b.id !== p.locationId) opts.push(b);
-      if (!opts.length) return 0;
-      const b = opts[w.rng.int(0, opts.length - 1)];
+      let cnt = 0;
+      for (const t of types) for (const b of w.brain.openOf(t)) if (b.id !== p.locationId) cnt++;
+      if (!cnt) return 0;
+      let k = w.rng.int(0, cnt - 1), b = null;
+      for (const t of types) { for (const bb of w.brain.openOf(t)) if (bb.id !== p.locationId) { if (k-- === 0) { b = bb; break; } } if (b) break; }
       c.target = b.id; c.why = 'restless, fancies a stroll';
       return 9 + 12 * p.personality.openness + 10 * (1 - p.needs.fun) - (rain(w) ? 15 : 0);
     },

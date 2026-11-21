@@ -617,13 +617,14 @@ function onTick(world) {
 }
 
 // ---------------------------------------------------------------- daily upkeep
+const DECAY_DAYS = 4; // relationship upkeep + reputation run every 4th day with 4x step sizes
 function dailyDecay(world) {
-  const tick = world.tick;
+  const tick = world.tick, K = DECAY_DAYS;
   for (const p of world.living()) {
     const rels = p.relationships;
     const spouse = p.family.spouseId;
     for (const [id, r] of rels) {
-      if (r.grudge) r.grudge = Math.max(0, r.grudge - 0.004);
+      if (r.grudge) r.grudge = Math.max(0, r.grudge - 0.004 * K);
       const days = (tick - Math.max(r.lastTick || 0, r._talk || 0)) / TPD;
       if (days < 10) continue;
       const tg = r.tags;
@@ -631,13 +632,12 @@ function dailyDecay(world) {
       // prune stale passing acquaintances (keeps relationship maps small: they are scanned by many systems)
       if (!fam && days >= 25 && r.familiarity < 0.2 && !r.grudge && (tg.length === 0 || (tg.length === 1 && tg[0] === 'acquaintance')) && r.attraction < 0.3 && r.affinity > -0.2 && r.affinity < 0.2) { rels.delete(id); continue; }
       const k = fam ? 0.15 : 1;
-      r.familiarity = Math.max(fam ? 0.5 : 0, r.familiarity - 0.0012 * k);
-      if (!fam && r.affinity > 0 && tg.length < 6) r.affinity = Math.max(0, r.affinity - 0.002 * (1 + days / 60));
-      else if (!fam && r.affinity < 0) r.affinity = Math.min(0, r.affinity + 0.0015); // anger cools
+      r.familiarity = Math.max(fam ? 0.5 : 0, r.familiarity - 0.0012 * k * K);
+      if (!fam && r.affinity > 0 && tg.length < 6) r.affinity = Math.max(0, r.affinity - 0.002 * K * (1 + days / 60));
+      else if (!fam && r.affinity < 0) r.affinity = Math.min(0, r.affinity + 0.0015 * K); // anger cools
       if (!fam && (tg.length > 1 || (tg.length === 1 && tg[0] !== 'family'))) { const o = world.people.get(id); if (o) updateTags(world, p, o, r); }
     }
-    p._talkCount = (p._talkCount || 0) * 0.86;
-    if (p._hang) { for (const [k, v] of p._hang) { const nv = v * 0.97; if (nv < 0.4) p._hang.delete(k); else p._hang.set(k, nv); } }
+    if (p._hang) { for (const [k, v] of p._hang) { const nv = v * 0.885; if (nv < 0.4) p._hang.delete(k); else p._hang.set(k, nv); } }
   }
 }
 function updateReputation(world) {
@@ -654,7 +654,7 @@ function updateReputation(world) {
   for (const p of world.living()) {
     const c = cnt.get(p.id) || 0;
     const target = c ? (sum.get(p.id) / c) * Math.min(1, c / 4) * 1.6 : 0;
-    p.reputation = clamp((p.reputation || 0) + (target - (p.reputation || 0)) * 0.08, -1, 1);
+    p.reputation = clamp((p.reputation || 0) + (target - (p.reputation || 0)) * (1 - Math.pow(0.92, DECAY_DAYS)), -1, 1);
   }
 }
 function fadeRumors(world) {
@@ -707,6 +707,7 @@ function ambientRumors(world) {
 }
 function loneliness(world) {
   for (const p of world.living()) {
+    p._talkCount = (p._talkCount || 0) * 0.86;
     const age = ageOf(world, p);
     if (age < 8) continue;
     if ((p._talkCount || 0) < 0.8 && p.needs.social < 0.35) {
@@ -895,8 +896,7 @@ export default {
   onDay(world) {
     const S = st(world);
     S.chronToday = 0;
-    dailyDecay(world);
-    updateReputation(world);
+    if (world.time.totalDays % DECAY_DAYS === 0) { dailyDecay(world); updateReputation(world); }
     fadeRumors(world);
     ambientRumors(world);
     loneliness(world);

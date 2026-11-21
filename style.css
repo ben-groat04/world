@@ -53,6 +53,8 @@ button{font:inherit;color:inherit;cursor:pointer}
   #sidebar{display:contents}
   #hud{right:10px;bottom:calc(var(--sheet,96px) + 12px)}#hud button{width:44px;height:44px}
   #map-hint{display:none}
-  #ticker{top:8px;left:8px;right:8px;max-width:none;font-size:12.5px}
+  #ticker{top:8px;left:8px;right:8px;max-width:none;font-size:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  body[data-sheet=half] #ticker,body[data-sheet=full] #ticker{display:none}
+  #sidebar .hm-dock[data-sheet=half]{height:46vh}
   #bcard{top:auto;bottom:calc(var(--sheet,96px) + 10px);left:8px;width:min(260px,calc(100% - 70px));max-height:40%}
 }

@@ -17,7 +17,7 @@
 - Seed 1, 1y (21:45 poll): unemployment 10% of active (target ~6%); population fell 557 -> 533 in a year (check
   arrivals vs departures balance); students 4% vs 10%, home/family 3% vs 7%.
 ## Life/health (W1-D) — open
-- Snapshot-resume hash mismatch on Larkfield world (even with life disabled) — determinism bug; must fix.
+- (Deprioritised by user: bit-exact determinism not required.) Only ensure save/load restores state sensibly.
 - Perf: routine + goals dominate CPU; whole world 7-9k ticks/s. Profile/optimise routine wake + goals weekly scans.
 - Housing lacks moveTogether/leaveHome/separate commands (life uses fallbacks) — unify.
 - npm run check grep gate fails on sim/goals/selftest.js (Date.now).

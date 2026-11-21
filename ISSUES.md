@@ -97,3 +97,8 @@ REMAINING / FOR OTHERS:
 - TFR fell to 0.83-1.31 (target ~1.45): find mechanistic cause (partnership formation timing? housing space gate too
   strict? couples leaving before births?).
 - Employed 64-67% vs 55% persists over 10y.
+## Experience pass review
+- Forced: heat-day park trip (20-35% sent) — replace with routine/goal choice responding to heat (evidence on park use).
+- Event clumping on the 1st of month (housing moves, money, mental-health) — stagger per person.
+- Storyline headline repetition ("split up, fell out over money, fell out") — dedupe beat phrasing.
+- Colleagues don't invite new hires.

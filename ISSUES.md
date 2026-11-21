@@ -16,3 +16,10 @@
 - Total perf with goals+material ~9-10k ticks/s (target >= 10-12k).
 - Seed 1, 1y (21:45 poll): unemployment 10% of active (target ~6%); population fell 557 -> 533 in a year (check
   arrivals vs departures balance); students 4% vs 10%, home/family 3% vs 7%.
+## Life/health (W1-D) — open
+- Snapshot-resume hash mismatch on Larkfield world (even with life disabled) — determinism bug; must fix.
+- Perf: routine + goals dominate CPU; whole world 7-9k ticks/s. Profile/optimise routine wake + goals weekly scans.
+- Housing lacks moveTogether/leaveHome/separate commands (life uses fallbacks) — unify.
+- npm run check grep gate fails on sim/goals/selftest.js (Date.now).
+- TFR noisy at n~550 (1.0 vs 1.7 across seeds); dementia 65+ 3-11% by seed; no care homes; tests/life missing.
+- Newcomers don't regrow ties -> loneliness only relatively calibrated (social package should fix).

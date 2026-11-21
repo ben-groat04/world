@@ -107,6 +107,7 @@ export default {
       const out = [...keep, [from, A.goal, pt, pid, 0]];
       if (st && st[1] !== A.build && !(after.length && after[0][0] === to)) out.push([to, st[1], st[2], st[3], st[4]]);
       out.push(...after);
+      if (!out.some((e) => e[1] === A.build && e[0] >= to)) out.push([to, A.build, 0, 0, 0]); // a plan must end in a rebuild marker (life/health insert appointments and funerals)
       rt.plan = out.flat(); rt.pi = keep.length ? 0 : 0; rt.pi = Math.max(0, out.findIndex((e) => e[0] > now)); world.sched.schedule(p, out[rt.pi][0]);
     },
   },

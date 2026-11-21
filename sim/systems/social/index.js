@@ -7,7 +7,7 @@
 //   EVENTS social.acquaint social.introduced social.friendship social.fallout social.reconcile social.rumour social.secret social.confide social.scandal social.kindness social.flirt
 //          social.betray social.fade social.isolation social.feud social.norm_shift civic.complaint   (all with `cause` where the originating fact is an event)
 import { newSoc, relayer, clamp, TPD, isOff, YEAR } from './core.js';
-import { psOf, importPerson, weekly, link, touch, mirror, counts, confidants, segInfo } from './ties.js';
+import { psOf, importPerson, maintain, closure, link, touch, mirror, counts, confidants, segInfo } from './ties.js';
 import { buildVenues, sweep, neighbours, groupMeet, hom } from './encounters.js';
 import { converse, ACT, tell, attractionPossible } from './acts.js';
 import { KINDS, learn, mkBelief, truthOf, pruneFacts, addFact, key as bkey } from './beliefs.js';
@@ -126,10 +126,10 @@ function cmdReveal(w, a) {
 function hourly(w) {
   const S = w.soc, r = w.rngFor('social'), t = w.time, hour = t.hour;
   sweep(w, S, r, hour);
-  const how = t.dow * 24 + hour, ids = S.bk[how];
+  const how = t.dow * 24 + hour, ids = S.bk[how], wn = Math.floor(w.tick / 1008);
   for (let i = 0; i < ids.length; i++) {
     const p = w.people.get(ids[i]); if (!p || !p.alive || !p.ext.pop) continue;
-    weekly(w, S, p, r); everyday(w, S, r, p); neighbours(w, S, r, p); chatter(w, S, r, p);
+    if ((wn + p.id) % 8 === 0) maintain(w, S, p, r); closure(w, S, p, r); everyday(w, S, r, p); neighbours(w, S, r, p); chatter(w, S, r, p);
   }
   if (S.q.length) { let k = 0; while (k < S.q.length && S.q[k].t <= w.tick) { const it = S.q[k++]; if (it.f === 'lie') detectLie(w, S, r, it); } if (k) S.q.splice(0, k); }
 }
@@ -137,14 +137,14 @@ function hourly(w) {
 function chatter(w, S, r, p) {
   const ps = S.ppl.get(p.id); if (!ps || ps.top.length === 0) return;
   const age = w.ageOf(p); if (age < 12) return;
-  const rate = 0.5 + Math.min(2.2, ps.mr / 35); let n = Math.floor(rate) + (r.next() < rate % 1 ? 1 : 0);
+  const rate = 0.2 + Math.min(0.6, ps.mr / 120); let n = Math.floor(rate) + (r.next() < rate % 1 ? 1 : 0);
   while (n-- > 0) {
     const id = ps.top[(r.next() * ps.top.length) | 0], q = w.people.get(id); if (!q || !q.alive) continue;
     const t = ps.T.get(id); if (!t || t.lv < 2) continue;
     converse(w, S, r, p, q, r.next() < 0.28 ? 1 : 2, 'remote');
   }
   // household table talk: news travels inside a home too
-  const b = w.buildings.get(p.homeId); if (b && b.residents.length > 1 && r.next() < 0.5) { const id = b.residents[(r.next() * b.residents.length) | 0]; const q = w.people.get(id); if (q && q.alive && q !== p && q.homeId === p.homeId && w.ageOf(q) >= 8) { const A = ps, B = psOf(w, S, q.id), ta = A.T.get(q.id), tb = B && B.T.get(p.id); if (B && ta && tb) tell(w, S, r, p, q, A, B, ta, tb, 0, true); } }
+  const b = w.buildings.get(p.homeId); if (b && b.residents.length > 1 && r.next() < 0.12) { const id = b.residents[(r.next() * b.residents.length) | 0]; const q = w.people.get(id); if (q && q.alive && q !== p && q.homeId === p.homeId && w.ageOf(q) >= 8) { const A = ps, B = psOf(w, S, q.id), ta = A.T.get(q.id), tb = B && B.T.get(p.id); if (B && ta && tb) tell(w, S, r, p, q, A, B, ta, tb, 0, true); } }
 }
 function detectLie(w, S, r, it) {
   const ps = S.ppl.get(it.b); const b = ps && ps.B.get(it.key); if (!b || !b.lie) return;
@@ -162,6 +162,7 @@ function monthlyJobs(w) {
   rebuildStreets(w, S); normsMonthly(w, S);
   for (const p of w.living()) {
     const ps = S.ppl.get(p.id); if (!ps || !p.ext.pop) continue;
+    if ((p.id + (w.tick / 4032 | 0)) % 3) continue;
     // reputation = distributed opinion of those who know me (aggregated on read, mirrored for the legacy field)
     let sum = 0, wt = 0; for (const [k, t] of ps.T) { if (isOff(k) || t.lv < 2) continue; const o = S.ppl.get(k); const ot = o && o.T.get(p.id); if (!ot) continue; const x = 0.3 + ot.c; sum += (ot.e * 0.5 + ot.l * 0.5) * x; wt += x; }
     p.reputation = wt > 0.2 ? clamp(sum / wt, -1, 1) : 0;

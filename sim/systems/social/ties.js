@@ -82,10 +82,11 @@ function rates(w, p, t, other, age, seg, mrF) {
   R[0] = 0.05 + (L <= 2 ? 0.2 : 0); R[1] = 0; R[2] = 0.1 * mrF;
 }
 // per-layer weekly retention (kin decay slower); layer 4 acquaintances fade fastest
-const KEEP = [1, Math.exp(-0.014 * 0.6), Math.exp(-0.014 * 0.9), Math.exp(-0.014 * 1.4), Math.exp(-0.014 * 2.2)], KEEP_KIN = KEEP.map((x) => Math.pow(x, 0.45));
+const PER = 8; // maintenance runs every 8th week per person: rates are per 8 weeks
+const KEEP = [1, Math.exp(-0.014 * 0.6 * PER), Math.exp(-0.014 * 0.9 * PER), Math.exp(-0.014 * 1.4 * PER), Math.exp(-0.014 * 2.2 * PER)], KEEP_KIN = KEEP.map((x) => Math.pow(x, 0.45));
 const G1 = GAIN * CH_EFF[0], G2 = GAIN * CH_EFF[1], G3 = GAIN * CH_EFF[2], G4 = GAIN * CH_EFF[3];
-/** Weekly maintenance for one person (staggered by id): contacts, decay, layers, triadic closure, loneliness, legacy mirror. Expected-value accounting (no per-tie dice). */
-export function weekly(w, S, p, r) {
+/** 4-weekly maintenance for one person (staggered by id): contacts, decay, layers, loneliness, legacy mirror. Expected-value accounting (no per-tie dice). */
+export function maintain(w, S, p, r) {
   const ps = psOf(w, S, p.id); if (!ps) return;
   const tick = w.tick, q = p.ext.pop, age = w.ageOf(p), seg = segInfo(w, S, q.seg), E = p.personality.extraversion, mrF = clamp(ps.mr / Math.max(8, seg.msgs), 0.2, 3);
   let supply = 0, ctc = 0, drop = null;
@@ -100,32 +101,36 @@ export function weekly(w, S, p, r) {
     rates(w, p, t, other, age, seg, mrF);
     const f = R[0], c = R[1], m = R[2] + (t.L <= 3 ? chatBoost : 0);
     // expected-value contact accounting: c += (1-c) * (1-(1-g)^n)
-    let gain = f * G1 + c * G2 + m * G3; if (t.L >= 3 && other) { const op = S.ppl.get(key); if (op) gain += op.pr * 3.5 * G4; }
-    t.c += (1 - t.c) * gain; t.h += f + c + m * 0.3;
-    if (f + c + m > 0.3) { t.la = tick - ((r.next() * 5 * TPD) | 0); t.ch = f > c && f > m * 0.3 ? 0 : c > m ? 1 : 2; }
+    let gain = (f * G1 + c * G2 + m * G3) * PER; if (t.L >= 3 && other) { const op = S.ppl.get(key); if (op) gain += op.pr * 3.5 * G4 * PER; }
+    if (gain > 0.9) gain = 0.9; t.c += (1 - t.c) * gain; t.h += (f + c + m * 0.3) * PER;
+    if (f + c + m > 0.3) { t.la = tick - ((r.next() * 20 * TPD) | 0); t.ch = f > c && f > m * 0.3 ? 0 : c > m ? 1 : 2; }
     ctc += f + 0.5 * c + 0.15 * m; if (t.L <= 2) supply += t.c * (f + c + 0.3 * m > 0.25 ? 1 : 0.35);
     if (!(t.k === 'partner' || (other && (t.k === 'housemate' || t.k === 'kin') && other.homeId === p.homeId))) t.c *= (t.k === 'kin' ? KEEP_KIN[t.L] : KEEP[t.L]) * (t.cf > 0.3 ? 0.99 : 1);
-    t.d *= 0.97; if (t.cf > 0) { t.cf *= 0.93; if (t.cf < 0.03) t.cf = 0; }
-    if (t.cf < 0.2) t.l += (0.1 + 0.85 * t.c - t.l) * 0.02;
+    t.d *= 0.78; if (t.cf > 0) { t.cf *= 0.57; if (t.cf < 0.03) t.cf = 0; }
+    if (t.cf < 0.2) t.l += (0.1 + 0.85 * t.c - t.l) * 0.15;
     if (t.c < 0.022 && t.k !== 'kin' && t.k !== 'partner' && t.k !== 'ex') { if (t.lv >= 2) { t.lv = 1; S.stats.lostTies++; S.stats.yr.l++; if (t.L <= 3 && t.h > 8) S.stats.fades++; } else if (t.c < 0.008) (drop || (drop = [])).push(key); }
-    if (other && (t.c - t.sy > 0.04 || t.sy - t.c > 0.04)) mirror(p, other, t);
+    if (other && (t.c - t.sy > 0.1 || t.sy - t.c > 0.1)) mirror(p, other, t);
   }
   if (drop) for (const k of drop) ps.T.delete(k);
-  if (ps.sk || ((tick / WEEK | 0) + p.id) % 2 === 0) { relayer(ps); ps.sk = 0; }
-  // triadic closure: a friend's friend becomes an acquaintance (sometimes via a proper introduction)
-  if (ps.top.length >= 2 && age >= 8 && r.next() < 0.5) {
-    const fid = ps.top[(r.next() * ps.top.length) | 0], fps = S.ppl.get(fid);
-    if (fps && fps.top.length) {
-      const gid = fps.top[(r.next() * fps.top.length) | 0];
-      if (gid !== p.id && !ps.T.has(gid)) { const g = w.people.get(gid); if (g && g.alive) { const tf = ps.T.get(fid), tg = fps.T.get(gid); if (tf && tg && r.next() < 0.2 * (tf.c + 0.3) * (tg.c + 0.3) * (0.5 + E)) { link(w, S, p, g, { k: 'friend', r: 'friend of a friend', L: 4, c: 0.07, lv: 2, l: 0.2, e: 0.35 }, 'friend of a friend'); if (r.next() < 0.2) w.emit('social.introduced', { actors: [p.id, g.id], salience: 0.05, payload: { via: fid, how: 'friend of a friend' } }); } } }
-    }
-  }
+  relayer(ps); ps.sk = 0;
   // loneliness: wanted contact vs the support actually received (partner/household count)
   const hh = q.hh != null ? w.lf.households[q.hh] : null, live = hh ? hh.members.length - 1 : 0;
   const need = 1.15 + 0.9 * (E - 0.5) + (age < 25 ? 0.3 : age > 78 ? 0.15 : 0) + 0.35 * (p.personality.neuroticism - 0.5);
   const sup = supply * 0.55 + Math.min(live, 3) * 0.28 + (p.romance && p.romance.partnerId != null ? 0.6 : 0) + Math.min(ctc, 12) * 0.05;
-  ps.ls = clamp(ps.ls * 0.6 + 0.4 * (need - sup) / need, -1, 1.5);
+  ps.ls = clamp(ps.ls * 0.5 + 0.5 * (need - sup) / need, -1, 1.5);
   ps.sc = supply;
+}
+/** Weekly: triadic closure (a friend's friend becomes an acquaintance). */
+export function closure(w, S, p, r) {
+  const ps = S.ppl.get(p.id); if (!ps) return; const age = w.ageOf(p), E = p.personality.extraversion;
+  // triadic closure: a friend's friend becomes an acquaintance (sometimes via a proper introduction)
+  if (ps.top.length >= 2 && age >= 8 && r.next() < 0.25) {
+    const fid = ps.top[(r.next() * ps.top.length) | 0], fps = S.ppl.get(fid);
+    if (fps && fps.top.length) {
+      const gid = fps.top[(r.next() * fps.top.length) | 0];
+      if (gid !== p.id && !ps.T.has(gid)) { const g = w.people.get(gid); if (g && g.alive) { const tf = ps.T.get(fid), tg = fps.T.get(gid); if (tf && tg && r.next() < 0.4 * (tf.c + 0.3) * (tg.c + 0.3) * (0.5 + E)) { link(w, S, p, g, { k: 'friend', r: 'friend of a friend', L: 4, c: 0.07, lv: 2, l: 0.2, e: 0.35 }, 'friend of a friend'); if (r.next() < 0.2) w.emit('social.introduced', { actors: [p.id, g.id], salience: 0.05, payload: { via: fid, how: 'friend of a friend' } }); } } }
+    }
+  }
 }
 export function confidants(ps) { let n = 0; for (const t of ps.T.values()) if (t.L <= 2 && t.t >= 0.55 && t.c >= 0.4) n++; return n; }
 export function counts(ps) { const c = [0, 0, 0, 0, 0]; for (const t of ps.T.values()) if (t.lv >= 2) c[t.L]++; return c; }

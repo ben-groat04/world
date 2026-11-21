@@ -6,7 +6,7 @@ import { converse } from './acts.js';
 
 // how chatty a place is (0..1): chance an attending adult tries to engage someone, and the context for tie formation
 export const SOC = { pub: 0.9, cafe: 0.75, community_centre: 0.9, church: 0.8, church_hall: 0.9, mosque: 0.8, park: 0.55, allotments: 0.8, primary_school: 0.75, nursery: 0.7, gym: 0.4, launderette: 0.6, barber: 0.7, salon: 0.6,
-  library: 0.3, ethnic_grocer: 0.5, bakery: 0.4, small_supermarket: 0.22, charity_shop: 0.35, bookmaker: 0.5, takeaway: 0.18, restaurant: 0.3, off_licence: 0.3, pharmacy: 0.15, gp_surgery: 0.1, business_unit: 0.35, estate_green: 0.6, park_pavilion: 0.6, school_grounds: 0.6, station: 0.05, arch_unit: 0.3 };
+  library: 0.3, ethnic_grocer: 0.5, bakery: 0.4, small_supermarket: 0.22, charity_shop: 0.35, bookmaker: 0.5, takeaway: 0.18, restaurant: 0.3, off_licence: 0.3, estate_green: 0.6, park_pavilion: 0.6, school_grounds: 0.6, station: 0.05 };
 export function buildVenues(w) {
   const out = [];
   for (const b of w.buildings.values()) { const t = b.lf && b.lf.template; if (t && SOC[t] !== undefined) out.push({ id: b.id, soc: SOC[t], t, b }); }
@@ -29,29 +29,29 @@ export function pair(w, S, r, a, b, ctx, soc) {
   const ta = A.T.get(b.id), tb = B.T.get(a.id), tick = w.tick, day = w.time.dayAbs;
   if (ta && ta.lv >= 2) { // already know each other
     const pk = ctx === 'work' ? 0.15 : 0.1 + 0.55 * Math.min(1, ta.c * 2) * (ta.L <= 2 ? 1.2 : 1);
-    if (r.next() < pk * (0.5 + soc)) converse(w, S, r, a, b, 0, ctx);
+    if (r.next() < pk * (0.5 + soc) * 0.5) converse(w, S, r, a, b, 0, ctx);
     else { touch(ta, 0, 0.3, tick); }
     return;
   }
-  // sighting memory (capped)
-  for (const [X, Y, id] of [[A, B, b.id], [B, A, a.id]]) {
-    let s = X.ST.get(id); if (!s) { if (X.ST.size >= 40) { let o = null, ot = 1e9; for (const [k, v] of X.ST) if (v[1] < ot) { ot = v[1]; o = k; } X.ST.delete(o); } s = [0, -1, 0]; X.ST.set(id, s); }
-    s[0]++; if (s[1] !== day) { s[2]++; s[1] = day; }
-  }
-  const sa = A.ST.get(b.id), sb = B.ST.get(a.id);
+  // sighting memory (capped; kept on the initiator's side, the other registers the face with some probability)
+  let sa = A.ST.get(b.id);
+  if (!sa) { if (A.ST.size >= 40) { let o = null, ot = 1e9; for (const [k, v] of A.ST) if (v[1] < ot) { ot = v[1]; o = k; } A.ST.delete(o); } sa = [0, -1, 0]; A.ST.set(b.id, sa); }
+  sa[0]++; if (sa[1] !== day) { sa[2]++; sa[1] = day; }
+  const need = ctx === 'door' ? 2 : 3;
   let t1 = ta, t2 = tb;
-  if (!t1 && sa[2] >= (ctx === 'door' ? 2 : 3) && sa[0] >= 3 && r.next() < 0.5) t1 = mkFace(w, A, b);
-  if (!t2 && sb[2] >= (ctx === 'door' ? 2 : 3) && sb[0] >= 3 && r.next() < 0.5) t2 = mkFace(w, B, a);
-  if (!(t1 && t2)) return; // someone has not yet registered the other
+  if (!t1) { if (sa[2] >= need && sa[0] >= 3 && r.next() < 0.5) t1 = mkFace(w, A, b); }
+  if (!t2 && t1 && sa[2] >= need && r.next() < 0.6) t2 = mkFace(w, B, a);
+  if (!(t1 && t2)) return;
+  if (r.next() > 0.4) return;
   // first words
   const E = (a.personality.extraversion + b.personality.extraversion) * 0.5, A_ = (a.personality.agreeableness + b.personality.agreeableness) * 0.5;
   const sh = shared(S, A, B), h = hom(w, a, b);
-  const pw = clamp(soc * 0.22 * (0.4 + 1.2 * E) * (0.7 + 0.6 * A_) * Math.min(2.2, h) * (1 + 0.5 * sh) * Math.min(2, 0.6 + 0.2 * Math.min(sa[2], 8)) * (ctx === 'door' ? segInfo(w, S, a.ext.pop.seg).nc + segInfo(w, S, b.ext.pop.seg).nc : 1), 0, 0.9);
+  const pw = clamp(soc * 0.22 / 0.4 * (0.4 + 1.2 * E) * (0.7 + 0.6 * A_) * Math.min(2.2, h) * (1 + 0.5 * sh) * Math.min(2, 0.6 + 0.2 * Math.min(sa[2], 8)) * (ctx === 'door' ? segInfo(w, S, a.ext.pop.seg).nc + segInfo(w, S, b.ext.pop.seg).nc : 1), 0, 0.9);
   if (r.next() < pw) {
     const via = ctx === 'door' ? 'neighbours' : ctx === 'work' ? 'work' : ctx === 'school' ? 'school gate' : ctx === 'group' ? 'a group' : 'regulars at ' + ctx;
     const k = ctx === 'door' ? 'neighbour' : ctx === 'work' ? 'colleague' : ctx === 'school' ? 'schoolgate' : 'regular';
     const res = linkT(w, S, a, b, { k, r: k === 'neighbour' ? 'neighbour' : k === 'regular' ? 'regular' : k === 'colleague' ? 'colleague' : 'school gate parent', L: 4, c: 0.06 + 0.03 * h, lv: 2, l: 0.15, e: 0.3 }, via);
-    if (res) { A.ST.delete(b.id); B.ST.delete(a.id); w.emit('social.acquaint', { actors: [a.id, b.id], place: a.locationId, salience: 0.03, tags: ['newcomer'], payload: { via: ctx, days: sa[2] } }); converse(w, S, r, a, b, 0, ctx, true); }
+    if (res) { A.ST.delete(b.id); w.emit('social.acquaint', { actors: [a.id, b.id], place: a.locationId, salience: 0.03, tags: ['newcomer'], payload: { via: ctx, days: sa[2] } }); converse(w, S, r, a, b, 0, ctx, true); }
   }
 }
 function mkFace(w, X, other) {
@@ -62,7 +62,7 @@ function mkFace(w, X, other) {
 
 /** Hourly sweep over the (few) venues that have company. Cost ~ people currently out and about. */
 export function sweep(w, S, r, hour) {
-  if (hour < 7 || hour > 23) return;
+  if (hour < 8 || hour > 22 || (hour & 1)) return;
   const vs = S.venues;
   for (let i = 0; i < vs.length; i++) {
     const v = vs[i], b = w.buildings.get(v.id); if (!b) continue; const occ = b.occupants; if (occ.size < 2) continue;
@@ -70,7 +70,7 @@ export function sweep(w, S, r, hour) {
     const ctx = v.t === 'primary_school' || v.t === 'nursery' ? 'school' : v.t === 'business_unit' || v.t === 'arch_unit' ? 'work' : v.t;
     for (let j = 0; j < n; j++) {
       const a = arr[j]; if (!a.alive || a.ext.rt.off) continue;
-      const E = a.personality.extraversion; if (r.next() > v.soc * (0.3 + 0.9 * E) * 0.55) continue;
+      const E = a.personality.extraversion; if (r.next() > v.soc * (0.3 + 0.9 * E) * 0.34) continue;
       let k = (r.next() * (n - 1)) | 0; if (k >= j) k++; const b = arr[k];
       if (!b.alive || a.homeId === b.homeId) continue;
       if (ctx === 'work' && !(a.workId === v.id || b.workId === v.id || (a.ext.pop.workplace.bid === v.id) || b.ext.pop.workplace.bid === v.id)) continue;
@@ -83,7 +83,7 @@ export function sweep(w, S, r, hour) {
 export function neighbours(w, S, r, p) {
   const b = w.buildings.get(p.homeId); if (!b) return;
   const seg = segInfo(w, S, p.ext.pop.seg), res = b.residents;
-  let tries = r.next() < 0.5 + 0.8 * seg.nc ? 1 : 0; if (r.next() < 0.3 * seg.nc) tries++;
+  let tries = r.next() < 0.3 + 0.5 * seg.nc ? 1 : 0;
   for (let i = 0; i < tries; i++) {
     let o = null;
     if (res.length > 1 && r.next() < 0.6) { const id = res[(r.next() * res.length) | 0]; if (id !== p.id) o = w.people.get(id); }

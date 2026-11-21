@@ -20,10 +20,12 @@ export function news(w, S, r, kind, a, o, m, ev, opts = {}) {
     return f;
   }
   if (sp && !opts.quiet) { // people tell their close ties; the circle widens by gossip
+    let cnt = 0;
     for (const t of sp.T.values()) {
+      if (cnt >= 8) break;
       if (t.L > 3 || t.lv < 2 || typeof t.o !== 'number' || (t.L === 3 && r.next() > 0.25) || (t.L === 2 && r.next() > 0.75) || r.next() > 0.95) continue;
       const q = psOf(w, S, t.o); if (!q) continue;
-      learn(S, q, mkBelief(S, kind, a, o, m, 0.92, a, 1, w.tick, 1, { ev: ev || 0 })); f.n = (f.n || 0);
+      learn(S, q, mkBelief(S, kind, a, o, m, 0.92, a, 1, w.tick, 1, { ev: ev || 0 })); cnt++;
     }
   }
   return f;
@@ -52,7 +54,7 @@ const EVERYDAY = (p, age, q) => {
 export function everyday(w, S, r, p) {
   const ps = S.ppl.get(p.id); if (!ps) return;
   const age = w.ageOf(p), q = p.ext.pop; if (age < 8) return;
-  if (r.next() > 0.32) return;
+  if (r.next() > 0.15) return;
   const ws = EVERYDAY(p, age, q); let tot = 0; for (const k in ws) tot += ws[k];
   let x = r.next() * tot, kind = 'holiday'; for (const k in ws) { x -= ws[k]; if (x < 0) { kind = k; break; } }
   if (kind === 'affair') { const f = news(w, S, r, 'affair', p.id, 0, 1, undefined, { sec: 1 }); return; }

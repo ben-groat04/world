@@ -23,3 +23,8 @@
 - npm run check grep gate fails on sim/goals/selftest.js (Date.now).
 - TFR noisy at n~550 (1.0 vs 1.7 across seeds); dementia 65+ 3-11% by seed; no care homes; tests/life missing.
 - Newcomers don't regrow ties -> loneliness only relatively calibrated (social package should fix).
+## Cleanup (next free slot)
+- Delete legacy medieval world: sim/systems/{economy,social,romance,family,health,crime,politics,culture,migration}.js,
+  sim/brain.js/actions.js/needs.js/map.js/person.js medieval paths, sim/data medieval content, tools/report.js legacy
+  default (make --pack larkfield the default), legacy tests/gates. Keep anything Larkfield imports.
+- Relax internal gates: exact determinism/contract tests are optional; keep a fast sanity check instead.

@@ -7,6 +7,8 @@ import { createSharer } from '../systems/housing/arrivals.js';
 
 const RENTED = new Set(['private_rent', 'council', 'housing_assoc']);
 const TALK = { small: 'small', news: 'news', joke: 'joke', complain: 'complain', advise: 'advise', confide: 'confide', gossip: 'gossip', argue: 'argue', apologise: 'apologise', flirt: 'flirt', favour: 'favour', comfort: 'comfort' };
+// How weighty an ask is on its own (a favour or money matters more than being flattered or chatted up).
+const WEIGHT = { borrow: 0.5, lend: 0.4, ask: 0.45, recruit: 0.4, apologise: 0.5, confront: 0.5, threaten: 0.6, invite: 0.4, visit: 0.4, mediate: 0.4, confide: 0.35, persuade: 0.3, gift: 0.3, befriend: 0.2, gossip: 0.15, flatter: 0.1, message: 0.15 };
 const r1 = (v) => Math.round(v * 100) / 100;
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 
@@ -98,6 +100,16 @@ export function createPlayer() {
     here: (pid) => { const p = W.people.get(pid); return p ? hereOf(p) : []; },
     requests: (pid) => (W.sys.goals ? W.sys.goals.query.requests(pid) : []),
     log: () => S.log.slice(-20),
+    // Requests aimed at the player, ranked by how much they matter (the asker's real goal, how warm the tie is, how weighty the ask) so the UI can
+    // surface a few meaningful ones and batch the rest. Pure presentation: nothing is answered or dropped here; unanswered requests still lapse as 'no reply'.
+    inbox: (pid) => {
+      const sq = W.sys.social && W.sys.social.query, gq = W.sys.goals && W.sys.goals.query; if (!gq) return [];
+      return gq.requests(pid).map((r) => {
+        const g = gq.goal(r.goal), t = sq ? sq.tie(pid, r.from) : null; let score = WEIGHT[r.move] ?? 0.3;
+        if (g && !g.mundane) score += 0.35; if (t) score += Math.min(0.4, 0.15 * (t.lv || 0)) + Math.max(-0.1, Math.min(0.2, t.l || 0));
+        return { ...r, topic: g && !g.mundane && g.tpl !== 'ad_hoc_move' ? g.phrase : '', score: r1(score), notable: score >= 0.7 };
+      }).sort((a, b) => b.score - a.score || a.until - b.until);
+    },
     // How the neighbourhood sees the player: beliefs others hold about them (social beliefs), and the mean warmth of ties towards them.
     reputation: (pid) => {
       const out = { beliefs: {}, known: 0, warm: 0, cool: 0, rep: 0 }; const sq = W.sys.social && W.sys.social.query; if (!sq) return out; out.rep = r1(sq.reputation(pid) || 0);

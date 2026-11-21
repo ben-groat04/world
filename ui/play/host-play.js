@@ -78,8 +78,10 @@ export class PlayHost {
     this.say({ t: 'play.moment', why: it ? it.head : lc(ev.type), date: this.w.calendar.formatDate(this.w.tick) });
   }
   onRequest(ev) {
-    const pid = this.pid; if (pid == null || ev.payload.to !== pid) return; if (this.h.tier !== 'pause' && this.pauseOnEvent) { this.h.setTier('pause'); this.skip = null; }
-    this.say({ t: 'play.moment', why: 'Someone is asking you something.', request: true, date: this.w.calendar.formatDate(this.w.tick) }); this.lastState = 0;
+    const pid = this.pid; if (pid == null || ev.payload.to !== pid) return; this.lastState = 0;
+    // Only weighty asks (a real goal, a warm tie, a favour) interrupt; the rest wait quietly in the inbox. The card itself says who is asking, so no extra toast.
+    const top = this.S(() => this.w.sys.player.query.inbox(pid), []).find((r) => r.from === ev.payload.from && r.move === ev.payload.move);
+    if (top && top.notable && this.h.tier !== 'pause' && this.pauseOnEvent) { this.h.setTier('pause'); this.skip = null; }
   }
 
   // ------------------------------------------------------------------ HUD state (cheap, ~2 Hz)
@@ -89,7 +91,7 @@ export class PlayHost {
     const pop = p.ext.pop || {}, fin = pop.fin || {}, rt = p.ext.rt, off = !!(rt && rt.off), q = w.sys;
     const loc = p.locationId != null ? this.h.place(p.locationId) : null;
     const here = off ? [] : q.player.query.here(pid).slice(0, 12).map((id) => this.personChip(id));
-    const reqs = this.S(() => q.goals.query.requests(pid), []).map((r) => { const g = this.S(() => q.goals.query.goal(r.goal)); return { id: r.id, from: this.ref(r.from), move: r.move, text: REQ_TEXT[r.move] || 'wants something from you', why: g ? g.phrase : '', left: Math.max(0, Math.round((r.until - w.tick) / 6)) }; });
+    const reqs = this.S(() => q.player.query.inbox(pid), []).map((r) => ({ id: r.id, from: this.ref(r.from), move: r.move, text: REQ_TEXT[r.move] || 'wants something from you', why: r.topic, notable: r.notable, left: Math.max(0, Math.round((r.until - w.tick) / 6)) }));
     const job = this.S(() => q.labour.query.job(pid)); const unit = this.S(() => q.housing.query.unit(pid));
     const hr = w.time.hourFloat || 0;
     this.say({ t: 'play.state', s: {

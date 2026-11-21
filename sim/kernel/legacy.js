@@ -116,3 +116,17 @@ export function adaptLegacySystem(world, sys) {
   a.afterLoad = function (w) { if (w.social) w.social.at = new AtView(w); };
   return a;
 }
+
+// ---- scoring-modifier guards for the legacy systems (perf hints; each mirrors the exact condition under which that modifier can change a score) ----
+const ids = (...l) => { const s = new Set(l); return (d) => s.has(d.id); };
+const LEISURE = /soci|chat|visit|tavern|drink|park|relax_park|wander|pray|play|eat_tavern/;   // == social.js LEISURE
+const GUARDS = {
+  crime: [{ person: (w, p) => (p.jailedUntil || 0) > w.tick }],
+  culture: [{ defs: ids('wander', 'relax_park', 'visit_friend', 'shop', 'work', 'school', 'tavern', 'relax_home', 'pray') }],
+  health: [{ person: (w, p) => { if (p.illness) return true; const h = p.ext.health; return !!(h && (h.depressed || h.grief > 0.5)); } }],
+  family: [{ defs: ids('work', 'tavern'), person: (w, p) => !!p.pregnant || (p.sex === 'F' && p.ext.fam !== undefined && p.ext.fam.lastBirthTick != null) }],
+  romance: [{ defs: ids('socialize', 'tavern', 'relax_park'), person: (w, p) => !!p.romance && !p.romance.status }],
+  politics: [{ defs: ids('socialize', 'visit_friend', 'wander', 'relax_park', 'tavern'), person: (w, p) => { const E = w.politics && w.politics.election; return !!E && E.candidates.includes(p.id); } }],
+  social: [{ defs: (d) => LEISURE.test(d.id) }],
+};
+export function legacyModGuard(sysName, index) { if (process.env.NOGUARD) return null; const g = GUARDS[sysName]; return g ? g[index] || null : null; }

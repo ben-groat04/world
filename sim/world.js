@@ -21,7 +21,7 @@ import { Indices } from './kernel/indices.js';
 import { Affordances } from './kernel/affordances.js';
 import { Scheduler, NEEDS_PERIOD_AGENDA } from './kernel/scheduler.js';
 import { loadPlugins, isPlugin } from './kernel/plugin.js';
-import { adaptLegacySystem } from './kernel/legacy.js';
+import { adaptLegacySystem, legacyModGuard } from './kernel/legacy.js';
 import { stateHash, saveSnapshot, loadSnapshot } from './snapshot.js';
 
 // ALL tunables live in world.settings (documented in ARCHITECTURE.md). Systems read them with `?? default` as well, but the
@@ -183,7 +183,7 @@ export class World {
     sys = adaptLegacySystem(this, sys);
     this.systems.push(sys);
     for (const a of sys.actions || []) this.registerAction(a);
-    for (const m of sys.scoreModifiers || []) this.brain.addModifier(m);
+    (sys.scoreModifiers || []).forEach((m, i) => this.brain.addModifier(m, legacyModGuard(sys.name, i)));
   }
   registerIntervention(kind, fn) { this._interventions.set(kind, fn); }
   /** God-mode hook. Goes through the command log (replayable): world.intervene(kind, params) === queueCommand({actor:'god', name:'intervene', args:{kind, params}}). */

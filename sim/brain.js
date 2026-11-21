@@ -11,7 +11,7 @@ export class Brain {
   constructor(world) {
     this.world = world;
     this.list = [];
-    this.modifiers = [];
+    this.modifiers = []; this._mg = []; this._mv = 0; this._gv = [];   // modifier guards (see addModifier)
     this._openTick = -1; this._open = {};
     this._cd = []; this._cs = []; this._ct = []; this._cy = []; this._cx = []; this._wt = new Float64Array(64);
     this.ctx = { h: 0, tick: 0, weekday: 0, rest: false, age: 0, workDay: false, shift: false, shiftEnd: 0, mealAgo: 0, wake: 6.5, bed: 22, inWin: false, target: null, why: null, data: null };
@@ -22,7 +22,14 @@ export class Brain {
     if (i >= 0) this.list[i] = def; else this.list.push(def);
     if (this._wt.length < this.list.length + 8) this._wt = new Float64Array(this.list.length * 2 + 16);
   }
-  addModifier(fn) { this.modifiers.push(fn); }
+  /** Add a score modifier fn(world,p,def,score)->score. Optional guard {defs: (def)=>bool, person: (world,p)=>bool}: when given, fn is only called for defs the
+   *  predicate accepts and for people the person-predicate accepts (it MUST be exactly the condition under which fn would change the score; pure perf hint). */
+  addModifier(fn, guard) { this.modifiers.push(fn); this._mg.push(guard || null); this._gv.push(1); this._mv++; }
+  _modList(def) {
+    const l = [], mg = this._mg;
+    for (let i = 0; i < mg.length; i++) if (mg[i] === null || mg[i].defs === undefined || mg[i].defs(def)) l.push(i);
+    def._ml = l; def._mlv = this._mv; return l;
+  }
   // buildings of `type` that are open right now (cached per tick; shared by all scorers)
   openOf(type) {
     const w = this.world;
@@ -58,6 +65,8 @@ export class Brain {
     const w = this.world, c = this.prepare(p), cd = p.cooldown, tick = c.tick, age = c.age;
     const list = this.list, mods = this.modifiers, nm = mods.length, cur = c.cur;
     const CD = this._cd, CS = this._cs, CT = this._ct, CY = this._cy, CX = this._cx;
+    const mg = this._mg, gv = this._gv;
+    for (let i = 0; i < nm; i++) { const g = mg[i]; gv[i] = g === null || g.person === undefined || g.person(w, p) ? 1 : 0; }
     let n = 0;
     for (let di = 0; di < list.length; di++) {
       const def = list[di];
@@ -68,7 +77,8 @@ export class Brain {
       let s = def.score(w, p);
       if (!(s > 0)) continue;
       const target = c.target, why = c.why, data = c.data;
-      for (let i = 0; i < nm; i++) { const r = mods[i](w, p, def, s); if (typeof r === 'number') s = r; }
+      const ml = def._mlv === this._mv ? def._ml : this._modList(def);
+      for (let k = 0; k < ml.length; k++) { const i = ml[k]; if (gv[i] === 0) continue; const r = mods[i](w, p, def, s); if (typeof r === 'number') s = r; }
       const dm = def._mods;
       if (dm !== undefined) for (let i = 0; i < dm.length; i++) { const r = dm[i](w, p, def, s); if (typeof r === 'number') s = r; }
       if (cur === def.id) s += def.stickiness ?? 8;

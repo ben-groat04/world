@@ -11,6 +11,7 @@ import { createPerson, generatePopulation, newRel, fullName } from './person.js'
 import defaultSystems from './systems/index.js';
 
 const DEFAULT_SETTINGS = { prices: { food: 1, tavernMeal: 4, drink: 4 }, population: 220, houses: 86 };
+const THINK_EVERY = 12; // ticks between re-evaluations of an interruptible action
 const GSHIFT = 3; // spatial grid cell = 8 tiles
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -223,7 +224,7 @@ export class World {
     if (b ? p.locationId !== b.id : tile >= 0 && p.y * W + p.x !== tile) { route = this._route(p, b, tile); if (!route) return false; }
     if (p.currentAction) this.endAction(p);
     const ca = { id, label: typeof def.label === 'function' ? def.label(this, p) : def.label, targetId: b ? b.id : null, untilTick: 0, status: 1, startTick: this.tick, why: why || '', data: opts.data ?? null, forced: !!opts.forced, duration: opts.duration ?? null, thoughtText: opts.thought || null, _d: def, _b: b };
-    p.currentAction = ca;
+    p.currentAction = ca; p.wake = 0;
     this.emit('actionStart', { person: p, action: ca });
     if (route) {
       if (p.locationId != null) this._depart(p);
@@ -242,7 +243,7 @@ export class World {
     stepNeeds(this, p); // settle needs under the ending action's effects
     if (ca.status === 1 && def.onEnd) def.onEnd(this, p, ca._b, ca);
     this.emit('actionEnd', { person: p, action: ca });
-    p.currentAction = null; p.lastAction = ca.id;
+    p.currentAction = null; p.lastAction = ca.id; p.wake = 0;
   }
   _thought(p, ca, doing) {
     const def = ca._d, b = ca._b;
@@ -266,7 +267,7 @@ export class World {
     if (def.onStart && def.onStart(this, p, b, ca) === false) { p.currentAction = null; p.cooldown[def.id] = this.tick + 12; return false; }
     const dur = ca.duration ?? (def.duration ? def.duration(this, p, b, ca) : 6);
     ca.status = 1; ca.untilTick = this.tick + Math.max(1, dur);
-    p.nextThink = this.tick + 10 + (p.id % 5);
+    p.nextThink = this.tick + 10 + (p.id % 5); p.wake = 0;
     p.path = null;
     p.thought = this._thought(p, ca, true);
     return true;
@@ -359,6 +360,7 @@ export class World {
     const tick = this.tick, list = this.living();
     for (let li = 0; li < list.length; li++) {
       const p = list[li];
+      if (tick < p.wake) continue; // asleep until its next scheduled event (see bottom of loop)
       if (!p.alive) continue;
       if (tick - p.needsTick >= NEEDS_PERIOD) stepNeeds(this, p);
       let ca = p.currentAction;
@@ -366,16 +368,20 @@ export class World {
       if (ca.status === 0) { if (this._walk(p)) this._arrive(p); continue; }
       // doing
       const def = ca._d;
-      if (def.onTick) def.onTick(this, p, ca._b, ca);
+      if (def.onTick !== undefined) def.onTick(this, p, ca._b, ca);
       if (!p.alive) continue;
       if (tick >= ca.untilTick) {
         this.endAction(p);
         this.brain.decide(p);
         const na = p.currentAction;
         if (na && na.status === 0) { if (this._walk(p)) this._arrive(p); }
-      } else if (def.interruptible && !ca.forced && tick >= p.nextThink) {
-        p.nextThink = tick + 12;
-        this.brain.decide(p);
+      } else {
+        if (def.interruptible && !ca.forced && tick >= p.nextThink) { p.nextThink = tick + THINK_EVERY; this.brain.decide(p); }
+        if (ca === p.currentAction && def.onTick === undefined) {
+          let wk = p.needsTick + NEEDS_PERIOD; if (ca.untilTick < wk) wk = ca.untilTick;
+          if (def.interruptible && !ca.forced && p.nextThink < wk) wk = p.nextThink;
+          p.wake = wk;
+        }
       }
     }
   }

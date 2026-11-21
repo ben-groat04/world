@@ -333,7 +333,7 @@ export class Renderer {
   drawPeople(ctx, ox, oy, z, now, TL) {
     const sel = this.selectedId, dots = TL || z < 5.5, s = z * 0.34, names = this.store.state.names, walk = now / 120;
     const list = [...this.P.values()]; list.sort((a, b) => a.y - b.y);
-    this.visPeople = [];
+    this.visPeople = []; this.nameQ = [];
     for (const p of list) {
       const inside = p.fl & 1, px = ox + (p.x + 0.5) * z, py = oy + (p.y + 0.55) * z;
       if (inside) { if (p.id === sel) this.ringAt(ctx, px, py, z, now); continue; }
@@ -350,7 +350,7 @@ export class Renderer {
       const hc = nm ? nm.hair : 0.3; ctx.fillStyle = (p.age > 62) ? '#cfcfcf' : hc < 0.35 ? '#2a1d14' : hc < 0.6 ? '#5a3a22' : hc < 0.8 ? '#c9a24a' : hc < 0.92 ? '#a0452a' : '#c8c8c8';
       ctx.beginPath(); ctx.arc(px, y - s * 1.0 * k, s * 0.4 * k, Math.PI, 0); ctx.fill();
       if (p.fl & 8) { ctx.fillStyle = '#7ad94f'; ctx.beginPath(); ctx.arc(px + s * 0.5, y - s * 1.5 * k, s * 0.16, 0, TAU); ctx.fill(); }
-      if (z >= 15 || p.id === sel) { ctx.font = `600 ${Math.max(9, Math.min(12, z * 0.55))}px system-ui,sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'top'; const t = nm ? nm.first : ''; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(0,0,0,0.6)'; ctx.fillStyle = '#fff'; ctx.strokeText(t, px, py + s * 0.75); ctx.fillText(t, px, py + s * 0.75); }
+      if ((z >= 15 || p.id === sel) && nm) this.nameQ.push(nm.first, px, py + s * 0.75);
       if (p.id === sel) this.ringAt(ctx, px, py - s * 0.2, z, now);
       this.visPeople.push(p, px, py - s * 1.6);
     }
@@ -379,6 +379,8 @@ export class Renderer {
     }
   }
   drawOverlays(ctx, vis, ox, oy, z, now) {
+    ctx.font = '600 11px system-ui,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'top'; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(0,0,0,0.65)'; ctx.fillStyle = '#fff';
+    for (let i = 0; i < this.nameQ.length; i += 3) { ctx.strokeText(this.nameQ[i], this.nameQ[i + 1], this.nameQ[i + 2]); ctx.fillText(this.nameQ[i], this.nameQ[i + 1], this.nameQ[i + 2]); }
     // building labels with greedy collision avoidance
     const cand = []; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     for (const b of vis) {
@@ -403,7 +405,7 @@ export class Renderer {
       let drawn = 0;
       for (const e of E) {
         if (drawn > 28) break; const age = (now - e.born) / 2600, [ta, tb] = EMOTE_OF[e.type] || ['dots', 'dots'];
-        for (const [id, ty] of [[e.a, ta], [e.b, tb]]) { const p = this.P.get(id); if (!p) continue; let x, y; if (p.fl & 1) { const b = this.doorAt.get(Math.round(p.y) * this.W + Math.round(p.x)); if (!b || ty === 'dots') continue; x = ox + (b.x + b.w / 2) * z; y = oy + b.y * z - z * 0.3; } else { x = ox + (p.x + 0.5) * z; y = oy + p.y * z - z * 0.55; } if (x < -30 || y < -30 || x > this.w + 30 || y > this.h + 30) continue; if (ty === 'dots' && z < 9) continue; this.emoteBubble(ctx, x, y - age * z * 0.9, Math.max(8, Math.min(15, z * 0.72)), ty, e.type, age); drawn++; }
+        for (const [id, ty] of [[e.a, ta], [e.b, tb]]) { const p = this.P.get(id); if (!p) continue; let x, y; if (p.fl & 1) { const b = this.doorAt.get(Math.round(p.y) * this.W + Math.round(p.x)); if (!b || ty === 'dots') continue; x = ox + (b.x + b.w / 2) * z; y = oy + b.y * z - z * 0.3; } else { x = ox + (p.x + 0.5) * z; y = oy + p.y * z - z * 0.55; } if (x < -30 || y < -30 || x > this.w + 30 || y > this.h + 30) continue; if (ty === 'dots' && !(this.selectedId != null && (id === this.selectedId || (id === e.a ? e.b : e.a) === this.selectedId))) continue; this.emoteBubble(ctx, x, y - age * z * 0.9, Math.max(8, Math.min(15, z * 0.72)), ty, e.type, age); drawn++; }
       }
       // speech bubbles (explicit) + selected thought
       for (const [id, text] of this.store.state.bubbles || []) { const p = this.P.get(id); if (p && !(p.fl & 1) && z >= 9) this.textBubble(ctx, ox + (p.x + 0.5) * z, oy + p.y * z - z * 0.7, text, false); }

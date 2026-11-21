@@ -14,3 +14,6 @@
    play-as-a-character + god mode (or just watch), mobile-friendly, low usage. Internal technical rules are
    guides, not requirements.
 6. **Breadth, not tailoring**: represent the range of lives (segments), not any one real person.
+7. **Fixes grounded in real evidence.** When fixing a mechanism, base it on how things actually work (research via
+   web search/fetch if needed: ONS, government stats, peer-reviewed studies, reputable surveys). Cite the source in
+   code comments or docs/CALIBRATION-METHOD.md. Don't invent a plausible-sounding mechanism when evidence exists.

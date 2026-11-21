@@ -31,3 +31,9 @@
 ## Social / comms (W1-E)
 - Snapshot-resume: whole-world stateHash after resume diverges from a straight run even with `social:false` (goals/others; checked seed 2, 50+30 days). Social state itself round-trips exactly at the restore point (tests/social).
 - Social conversations are sampled (~35-40/day at pop 550) and everything else (contacts, decay) is expected-value accounting; message volume is modelled, not individually simulated. Perf cost ~2.7+0.8 ms/day (see report-social).
+## Social/comms (W1-E) — orchestrator review
+- Forum replies not matched to post context ("anyone tried the new place?" -> "ring 101 for a crime number").
+- Viral posts 21/yr in a 550-person neighbourhood: far too many (should be ~0-1/yr).
+- Loneliness flagged 28% of 16-24 and 26% of 65+ (shape right, level too high; ONS 'often/always' ~7% overall,
+  ~10% young). Zero-confidant share 2% vs 8-15%. Online-formed ties 4% vs ~11%. Friendship-fade counter broken.
+- Odd text: "Dinner at ours tomorrow, 11am". Base 'daily' feed grammar repetitive.

@@ -21,6 +21,10 @@ export function hom(w, a, b) {
   if (a.family.childrenIds.length && b.family.childrenIds.length) x *= 1.4;
   return x;
 }
+// Newcomers actively seek contact: length of residence is the strongest predictor of local bonds (Kasarda & Janowitz 1974, Am. Sociol. Rev.), and the
+// first months in a new place are when people introduce themselves, accept invitations and join things (DCMS Community Life Survey: most UK adults chat to neighbours).
+const FRESH = 120 * TPD;
+export function fresh(w, p) { const h = w.lf && w.lf.households[p.ext.pop && p.ext.pop.hh]; return !!(h && h.since > 0 && w.tick - h.since < FRESH); }
 function shared(S, A, B) { let n = 0; for (const k of A.top) { if (B.T.has(k)) n++; } return n; }
 
 /** One meeting of two people in a shared place: known -> maybe chat; stranger -> sighting -> familiar -> first words -> acquaintance. */
@@ -34,11 +38,22 @@ export function pair(w, S, r, a, b, ctx, soc) {
     else { touch(ta, 0, 0.3, tick); }
     return;
   }
+  // A neighbour introduces themselves to someone new on the street: friendlier, more outgoing neighbours do it more (the newcomer's own effort is the other half).
+  if (ctx === 'door' && (fresh(w, a) !== fresh(w, b))) {
+    const host = fresh(w, a) ? b : a, guest = host === a ? b : a, hp = host.personality;
+    if (w.ageOf(host) >= 18 && r.next() < 0.3 * (0.3 + hp.agreeableness + hp.extraversion) * (guest.personality.extraversion + 0.5)) {
+      const res = linkT(w, S, host, guest, { k: 'neighbour', r: 'neighbour', L: 4, c: 0.16, lv: 2, l: 0.25, e: 0.3 }, 'neighbours');
+      if (res) { w.emit('social.acquaint', { actors: [host.id, guest.id], place: host.locationId ?? host.homeId, salience: 0.25, tags: ['newcomer', 'welcome'], payload: { via: 'welcome', days: 0 } }); converse(w, S, r, host, guest, 0, 'door', true); const ev = w.events.nextId - 1;
+        // the introduction becomes an intention: they mean to pop round / ask them over (a request if the guest is the player, an ordinary goal step for an NPC)
+        if (w.commands.has('goals.plant') && r.next() < 0.7) w.cmd('goals.plant', { person: host.id, tpl: r.next() < 0.5 ? 'befriend_isolated_neighbour' : 'help_neighbour', target: guest.id, intensity: 0.55, cause: ev });
+        return; }
+    }
+  }
   // sighting memory (capped; kept on the initiator's side, the other registers the face with some probability)
   let sa = A.ST.get(b.id);
   if (!sa) { if (A.ST.size >= 40) { let o = null, ot = 1e9; for (const [k, v] of A.ST) if (v[1] < ot) { ot = v[1]; o = k; } A.ST.delete(o); } sa = [0, -1, 0]; A.ST.set(b.id, sa); }
   sa[0]++; if (sa[1] !== day) { sa[2]++; sa[1] = day; }
-  const need = ctx === 'door' ? 2 : 3;
+  const newc = ctx === 'door' && (fresh(w, a) || fresh(w, b)), need = newc ? 1 : ctx === 'door' ? 2 : 3;
   let t1 = ta, t2 = tb;
   if (!t1) { if (sa[2] >= need && sa[0] >= 3 && r.next() < 0.5) t1 = mkFace(w, A, b); }
   if (!t2 && t1 && sa[2] >= need && r.next() < 0.6) t2 = mkFace(w, B, a);
@@ -47,7 +62,7 @@ export function pair(w, S, r, a, b, ctx, soc) {
   // first words
   const E = (a.personality.extraversion + b.personality.extraversion) * 0.5, A_ = (a.personality.agreeableness + b.personality.agreeableness) * 0.5;
   const sh = shared(S, A, B), h = hom(w, a, b);
-  const pw = clamp(soc * 0.22 / 0.4 * (0.4 + 1.2 * E) * (0.7 + 0.6 * A_) * Math.min(2.2, h) * (1 + 0.5 * sh) * Math.min(2, 0.6 + 0.2 * Math.min(sa[2], 8)) * (ctx === 'door' ? 0.45 * (segInfo(w, S, a.ext.pop.seg).nc + segInfo(w, S, b.ext.pop.seg).nc) * (S.bigBlock(w, a) ? 0.45 : 1) : 1), 0, 0.9);
+  const pw = clamp(soc * 0.22 / 0.4 * (0.4 + 1.2 * E) * (0.7 + 0.6 * A_) * Math.min(2.2, h) * (1 + 0.5 * sh) * Math.min(2, 0.6 + 0.2 * Math.min(sa[2], 8)) * (ctx === 'door' ? 0.45 * (segInfo(w, S, a.ext.pop.seg).nc + segInfo(w, S, b.ext.pop.seg).nc) * (S.bigBlock(w, a) ? 0.45 : 1) * (newc ? 2.2 : 1) : 1), 0, 0.9);
   if (r.next() < pw) {
     const via = ctx === 'door' ? 'neighbours' : ctx === 'work' ? 'work' : ctx === 'school' ? 'school gate' : ctx === 'group' ? 'a group' : 'regulars at ' + ctx;
     const k = ctx === 'door' ? 'neighbour' : ctx === 'work' ? 'colleague' : ctx === 'school' ? 'schoolgate' : 'regular';
@@ -84,7 +99,7 @@ export function sweep(w, S, r, hour) {
 export function neighbours(w, S, r, p) {
   const b = w.buildings.get(p.homeId); if (!b) return;
   const seg = segInfo(w, S, p.ext.pop.seg), res = b.residents;
-  let tries = r.next() < 0.3 + 0.5 * seg.nc ? 1 : 0;
+  let tries = r.next() < 0.3 + 0.5 * seg.nc ? 1 : 0; if (fresh(w, p)) tries += 1 + (r.next() < 0.5 ? 1 : 0);
   for (let i = 0; i < tries; i++) {
     let o = null; const A = S.ppl.get(p.id);
     if (A && A.ST.size && r.next() < 0.6) { let k = (r.next() * A.ST.size) | 0; for (const id of A.ST.keys()) { if (k-- <= 0) { const c = w.people.get(id); if (c && c.alive && c.ext.pop.hh !== p.ext.pop.hh && doorDist(w, p, c) < 35) o = c; break; } } }

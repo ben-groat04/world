@@ -78,16 +78,16 @@ export const leaveHandlers = { 'leave.home': (w, d) => { const p = w.people.get(
 export function leaveHome(w, p, why, term) {
   const rng = w.rngFor('life.leave'), L = p.ext.life, hh = hhOf(w, p); if (!hh) return;
   const age = ageOf(w, p), ps = parentsOf(w, p);
-  if (w.commands.has('housing.leaveHome')) { try { const r = w.cmd('housing.leaveHome', { pid: p.id, reason: why }); if (r && r.ok) { w.emit('life.leave_home', { actors: [p.id], salience: 0.3, tags: ['move'], payload: { reason: why, age: +age.toFixed(1) } }); rec(w, 'leave', [w.tick, +age.toFixed(1), why]); bump(w, 'leave_home'); return; } if (r && r.ok === false) return; } catch (e) { /* fallback */ } }
-  const to = why === 'university' ? 'university halls, another city' : rng.pick(['a flat share elsewhere in the city', 'a rented flat across town', 'a room in a shared house elsewhere']);
+  const rr = w.cmd('housing.leaveHome', { pid: p.id, reason: why });
+  if (!rr || !rr.ok) return;
   w.emit('life.leave_home', { actors: [p.id], salience: 0.3, tags: ['move'], payload: { reason: why, age: +age.toFixed(1) } });
-  w.emit('life.move_out', { actors: [p.id], salience: 0.25, tags: ['move'], payload: { to, reason: why } });
+  w.emit('life.move_out', { actors: [p.id], salience: 0.25, tags: ['move'], payload: { to: rr.where === 'local' ? 'a place of their own nearby' : rr.to, reason: why } });
   w.addMemory(p, { type: 'home', text: why === 'university' ? 'Left home for university.' : 'Moved out of the family home.', otherIds: ps.map((x) => x.id), weight: 0.4, importance: 4 });
   rec(w, 'leave', [w.tick, +age.toFixed(1), why]); bump(w, 'leave_home');
-  L.left = { tick: w.tick, why, ph: hh.id };
-  w.lf.life.away.push(p.id);
-  depart(w, [p], why, to);
-  if (why === 'university' && rng.chance(0.4)) later(w, years(w, 2.95) + months(rng.float(0, 4)), 'boom', { pid: p.id });
+  if (rr.where === 'away') { // gone from the map: may come back (boomerang)
+    L.left = { tick: w.tick, why, ph: hh.id }; w.lf.life.away.push(p.id);
+    if (why === 'university' && rng.chance(0.4)) later(w, years(w, 2.95) + months(rng.float(0, 4)), 'boom', { pid: p.id });
+  }
 }
 export function boomerang(w, p) {
   if (!p || p.alive || !p.ext.life.left) return;

@@ -185,7 +185,7 @@ function wire(w) {
   on('life.death', (ev) => { const a = sub(ev); const ps = S().ppl.get(a), p = w.people.get(a); const kn = []; if (ps) for (const t of ps.T.values()) if (typeof t.o === 'number' && (t.L <= 3 || t.k === 'neighbour')) kn.push(t.o); news(w, S(), R(), 'died', a, 0, 3, ev.id, { sec: 0, knowers: kn.slice(0, 60), quiet: true }); if (p) neighboursLearn(w, S(), p.homeId, 'died', a, 0, 3, ev.id, 0.9); });
   on('life.kin_death', (ev) => news(w, S(), R(), 'family_news', sub(ev), 0, 3, ev.id, { sec: 0 }));
   for (const t of ['housing.moved_out', 'life.move_out']) on(t, (ev) => { if (ev.payload && ev.payload.to === 'local') return; for (const id of ev.actors.slice(0, 3)) news(w, S(), R(), 'moving_out', id, 0, 1, ev.id); });
-  on('housing.moved_in', (ev) => { if (ev.payload && ev.payload.reason === 'flatmate_arrival') return; const a = sub(ev); neighboursLearn(w, S(), ev.place, 'moved_in', a, 0, 1, ev.id, 0.75, a); });
+  on('housing.moved_in', (ev) => { for (const id of ev.actors) psOf(w, S(), id); /* newcomers join the weekly neighbour round */ if (ev.payload && ev.payload.reason === 'flatmate_arrival') return; const a = sub(ev); neighboursLearn(w, S(), ev.place, 'moved_in', a, 0, 1, ev.id, 0.75, a); });
   on('labour.hired', (ev) => news(w, S(), R(), 'new_job', sub(ev), 0, 1, ev.id));
   on('labour.promoted', (ev) => news(w, S(), R(), 'promotion', sub(ev), 0, 1, ev.id));
   on('labour.job_lost', (ev) => news(w, S(), R(), 'lost_job', sub(ev), 0, 1, ev.id));

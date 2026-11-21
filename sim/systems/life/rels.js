@@ -228,12 +228,12 @@ export function cohabit(w, aid, force) {
     return;
   }
   // 'out': a (and dependants) move to the partner's place elsewhere
-  const group = [a, ...dependants];
-  if (w.commands.has('housing.leaveHome')) { try { const r = w.cmd('housing.leaveHome', { pid: a.id, reason: 'partner', dependants: dependants.map((c) => c.id), dest: m.where }); if (r && r.ok === false) { pt.waited = (pt.waited || 0) + 1; return; } if (r && r.ok) { finishLeave(w, a, pt, m, age, 'out'); return; } } catch (e) { /* fall back */ } }
+  // housing owns where people live: ask it to move the partner (and dependants) to the partner's place elsewhere
   if (!force && (q.role === 'head' && (hh ? hh.members.filter((id) => { const c = w.people.get(id); return c && c.alive && ageOf(w, c) >= 18; }).length : 0) <= 1 && dependants.length === 0 && q.activity === 'employed' && rng.chance(0.25))) { pt.waited = (pt.waited || 0) + 1; return; }
+  const r = w.cmd('housing.leaveHome', { pid: a.id, reason: 'partner', dependants: dependants.map((c) => c.id), dest: m.where });
+  if (!r || !r.ok) { pt.waited = (pt.waited || 0) + 1; return; }
   w.emit('life.move_out', { actors: [a.id], salience: 0.4, cause: pt.ev || 0, tags: ['romance', 'move'], payload: { to: m.where, reason: 'partner' } });
   finishLeave(w, a, pt, m, age, 'out');
-  depart(w, group, 'partner', m.where);
 }
 function finishLeave(w, a, pt, m, age, how) {
   const La = a.ext.life; if (La.firstCohab == null) La.firstCohab = w.tick; pt.st = pt.st === 'engaged' || pt.st === 'married' ? pt.st : 'cohab'; pt.lat = false;
@@ -245,27 +245,9 @@ function cohabOn(w, rng, a, b) {
   const La = a.ext.life, Lb = b.ext.life, pt = La.part, ha = hhOf(w, a), hb = hhOf(w, b), age = ageOf(w, a);
   if (!pt.lat) return;
   if (ha.id === hb.id) { settle(w, a, b, pt); return; }
-  if (w.commands.has('housing.moveTogether')) { try { const r = w.cmd('housing.moveTogether', { a: a.id, b: b.id, reason: 'couple' }); if (r && r.ok) { settle(w, a, b, pt); return; } if (r && r.ok === false) { pt.waited = (pt.waited || 0) + 1; return; } } catch (e) { /* fall back */ } }
-  // fallback: one joins the other's household if there is room, or both leave for a bigger place elsewhere
-  const kidsOf = (x, h) => h.members.map((id) => w.people.get(id)).filter((c) => c && c.alive && c.id !== x.id && ageOf(w, c) < 18 && (c.family.motherId === x.id || c.family.fatherId === x.id));
-  const own = (x) => x.ext.pop.role === 'head' || x.ext.pop.role === 'partner';
-  let mover, host, hHost;
-  const score = (x, h) => (own(x) ? 2 : 0) + bedsOf(w, h) * 0.3 + (h.tenure === 'owned_outright' || h.tenure === 'mortgage' ? 1 : 0) + (kidsOf(x, h).length ? 0.8 : 0);
-  if (score(a, ha) >= score(b, hb)) { host = a; hHost = ha; mover = b; } else { host = b; hHost = hb; mover = a; }
-  const hm = hhOf(w, mover), mkids = kidsOf(mover, hm), add = 1 + mkids.length;
-  const need = bedsNeeded(w, hHost, add - 0) , cap = bedsOf(w, hHost);
-  if (need <= cap + 1) {
-    for (const c of [mover, ...mkids]) joinHh(w, c, hHost, c === mover ? (own(host) ? 'partner' : 'adult_child') : 'child');
-    settle(w, a, b, pt);
-    w.emit('life.move_in', { actors: [mover.id], salience: 0.25, tags: ['romance', 'move'], payload: { from: 'down the road', reason: 'partner' } });
-    return;
-  }
-  pt.waited = (pt.waited || 0) + 1;
-  if (pt.waited >= 4 && rng.chance(0.4)) { // outgrew both places: a flat together elsewhere
-    const group = [a, b, ...kidsOf(a, ha), ...kidsOf(b, hb)];
-    settle(w, a, b, pt, true); w.emit('life.move_out', { actors: [a.id, b.id], salience: 0.4, tags: ['romance', 'move'], payload: { to: 'elsewhere in the city', reason: 'bigger place together' } });
-    depart(w, group, 'couple', 'elsewhere in the city');
-  }
+  const r = w.cmd('housing.moveTogether', { a: a.id, b: b.id, reason: 'couple', cause: pt.ev || 0, force: (pt.waited || 0) >= 4 });
+  if (r && r.ok) { settle(w, a, b, pt); if (r.how === 'joined') w.emit('life.move_in', { actors: [r.host === a.id ? b.id : a.id], salience: 0.25, tags: ['romance', 'move'], payload: { from: 'down the road', reason: 'partner' } }); return; }
+  pt.waited = (pt.waited || 0) + 1; // no room in either home yet: they keep looking
 }
 function settle(w, a, b, pt, gone) {
   const age = ageOf(w, a);
@@ -310,11 +292,10 @@ export function sepLeave(w, d) {
   const p = w.people.get(d.pid), o = w.people.get(d.other); if (!p || !p.alive) return;
   const hh = hhOf(w, p); if (!hh || (o && o.alive && hhOf(w, o).id !== hh.id)) return; // someone already moved
   const rng = w.rngFor('life.sepleave');
-  if (w.commands.has('housing.separate')) { try { const r = w.cmd('housing.separate', { leaver: p.id, stayer: o ? o.id : null }); if (r && r.ok) return; } catch (e) { /* fall back */ } }
-  if (rng.chance(0.18)) { later(w, months(2), 'sep.leave', { pid: d.pid, other: d.other }); return; } // still sharing a roof for now
-  w.emit('life.move_out', { actors: [p.id], salience: 0.35, tags: ['move', 'ending'], payload: { to: rng.pick(['a friend\'s spare room', 'a flat share elsewhere', 'back to family']), reason: 'separation' } });
-  depart(w, [p], 'separation', 'elsewhere in the city');
-  if (o && o.alive && p.family.childrenIds.length) { const m = newMetro(w, o.id, { name: fullName(p), age: ageOf(w, p), sex: p.sex, rel: 'ex-partner', where: 'elsewhere in the city', how: 'previous relationship', freq: 'child handovers' }); setOffTie(o, m.id, 'kin', 'ex-partner', 2, 0.25, 'co-parent'); }
+  const r = w.cmd('housing.separate', { leaver: p.id, stayer: o ? o.id : null });
+  if (!r || !r.ok) { if (r && r.retry) later(w, months(2), 'sep.leave', { pid: d.pid, other: d.other }); return; } // still sharing a roof for now
+  w.emit('life.move_out', { actors: [p.id], salience: 0.35, tags: ['move', 'ending'], payload: { to: r.where === 'local' ? 'a place of their own nearby' : r.to, reason: 'separation' } });
+  if (r.where === 'away' && o && o.alive && p.family.childrenIds.length) { const m = newMetro(w, o.id, { name: fullName(p), age: ageOf(w, p), sex: p.sex, rel: 'ex-partner', where: 'elsewhere in the city', how: 'previous relationship', freq: 'child handovers' }); setOffTie(o, m.id, 'kin', 'ex-partner', 2, 0.25, 'co-parent'); }
 }
 
 /** player / god: force-form or force-end couples */

@@ -85,7 +85,8 @@ const commuteH = (q) => (q.workplace.kind === 'offmap' ? q.workplace.mins / 60 :
 function bedHour(W, p, D, rec, w) {
   const L = p.ext.rt.life, id = p.id;
   let b = (rec.dow >= 4 && rec.dow <= 5 || (rec.dow === 6 ? false : rec.bankHoliday)) ? L.bedWe : L.bedWd;
-  if (w && w.night) return 99;
+  // night shift: straight to bed on getting home (daytime sleep starts ~30-60 min after the shift ends; NIOSH/CDC: night workers sleep in the morning after the shift)
+  if (w && w.night) return Math.min(36, w.e + (w.kind === 'offmap' ? commuteH(p.ext.pop) : 0.05) + 0.5);
   b += (dice(id, D, 3) - 0.5) * 1.2;
   const nx = W.cal.recAt(D + 1), age = W.ageOf(p);
   if (age >= 16 && p.ext.pop.activity === 'employed' && (nx.dow < 5 && !nx.bankHoliday)) { const w1 = workToday(W, p, D + 1, nx); if (w1 && !w1.night) b = Math.min(b, w1.s + 24 - L.prep - commuteH(p.ext.pop) - 7.5 + (dice(id, D, 4) - 0.5) * 0.4); }

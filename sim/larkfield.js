@@ -15,12 +15,13 @@ import { createHealth } from './systems/health/index.js';
 import { createSocial } from './systems/social/index.js';
 import { createComms } from './systems/comms/index.js';
 import player from './player/index.js';
+import { createConsequences } from './consequences/index.js';
 import { loadSnapshot } from './snapshot.js';
 
 export function larkfieldOpts(seed = 1, opts = {}) {
   const calendar = makeCalendar({ start: opts.start });
   return {
-    seed, pack, calendar, sched: 'agenda', systems: [], plugins: [routine, ...(opts.goals === false ? [] : [createGoals(opts.goalsOpts || {})]), createLabour(), createHousing(), createMoney(), player, ...(opts.life === false ? [] : [createLife(), createHealth()]), ...(opts.social === false ? [] : [createSocial(), createComms()])], strictEvents: !!opts.strictEvents, hashDaily: !!opts.hashDaily,
+    seed, pack, calendar, sched: 'agenda', systems: [], plugins: [routine, ...(opts.goals === false ? [] : [createGoals(opts.goalsOpts || {})]), createLabour(), createHousing(), createMoney(), player, ...(opts.life === false ? [] : [createLife(), createHealth()]), ...(opts.social === false ? [] : [createSocial(), createComms(), createConsequences()])], strictEvents: !!opts.strictEvents, hashDaily: !!opts.hashDaily,
     settings: { population: 500, houses: 0, ...(opts.settings || {}) },
     generateMap: () => buildLarkfieldMap(pack, seed, opts.map || {}),
     populate: (world, rng) => populate(world, rng),

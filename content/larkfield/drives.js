@@ -49,9 +49,9 @@ export const PRESSURES = {
 };
 // Event -> pressure. Matched against event type OR tag (events are read lazily from world.events by actor at scan time). amount 0..1. who: 'self' = actors[0]; 'others' = every other actor; 'all'.
 export const PRESSURE_EVENTS = [
-  { m: ['work.fired', 'work.redundant', 'jobChange.lost', 'tag:redundancy'], to: { job_insecurity: 0.9, low_buffer: 0.5 }, who: 'self' },
-  { m: ['money.debt', 'tag:debt', 'bankruptcy'], to: { debt: 0.8, low_buffer: 0.6 }, who: 'self' },
-  { m: ['home.rent_rise'], to: { rent_rise: 0.8 }, who: 'self' }, { m: ['home.eviction', 'tag:notice'], to: { lease_end: 1, landlord_sale: 0.5, arrears: 0.3 }, who: 'self' },
+  { m: ['work.fired', 'work.redundant', 'jobChange.lost', 'tag:redundancy', 'labour.job_lost'], to: { job_insecurity: 0.9, low_buffer: 0.5 }, who: 'self' },
+  { m: ['money.debt', 'tag:debt', 'bankruptcy', 'money.arrears', 'money.debt_spiral'], to: { debt: 0.8, low_buffer: 0.6 }, who: 'self' },
+  { m: ['home.rent_rise', 'housing.rent_rise'], to: { rent_rise: 0.8 }, who: 'all' }, { m: ['home.eviction', 'tag:notice', 'housing.notice_served', 'housing.eviction'], to: { lease_end: 1, landlord_sale: 0.5, arrears: 0.3 }, who: 'self' },
   { m: ['home.flatmate_leave'], to: { lease_end: 0.4, loneliness: 0.3 }, who: 'self' }, { m: ['life.move_in', 'immigrate'], to: { new_arrival: 0.9 }, who: 'self' },
   { m: ['life.breakup', 'life.divorce', 'breakup', 'divorce'], to: { breakup: 0.9, loneliness: 0.4, single: 0.4 }, who: 'all' },
   { m: ['life.birth', 'birth'], to: { new_baby: 0.9, fatigue: 0.5, wants_children: -0.5 }, who: 'self' },

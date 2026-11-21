@@ -291,6 +291,7 @@ export class Engine {
   pickRole(p, f, g, st, role) {
     const w = this.world, r = this.rng('role', g.id, st.i, st.tries, w.tick), fam = p.family || {};
     if (role === 'target') return g.target;
+    if (typeof g.target === 'number' && (g.tpl === 'help_neighbour' || g.tpl === 'befriend_isolated_neighbour') && !g.ex.includes(g.target)) return g.target; // popping round to a named neighbour (e.g. the newcomer they just met)
     if (role === 'member') { const G = g.group ? this.S.groups.get(g.group) : null; if (G) { const ids = Object.keys(G.members).map(Number).filter((x) => x !== p.id && !g.ex.includes(x)); return ids.length ? ids[Math.floor(r.next() * ids.length)] : null; } role = 'contact'; }
     if (role === 'partner') return f.partnerId ?? null;
     if (['employer', 'authority', 'landlord', 'expert'].includes(role)) return { label: { employer: 'the manager', authority: 'the council', landlord: 'the landlord', expert: 'an adviser' }[role], inst: role };
@@ -305,6 +306,7 @@ export class Engine {
   }
   runStep(p, g, st) {
     const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], s = this.ps(p), f = { z: personalityZ(p), money: w.ledger.balance(p.id), partnerId: p.romance?.partnerId ?? p.partnerId ?? p.family?.spouseId ?? null }, now = w.tick, r = this.rng('step', g.id, st.i, st.tries, now);
+    if (st.target == null && typeof g.target === 'number' && (g.tpl === 'help_neighbour' || g.tpl === 'befriend_isolated_neighbour') && !g.ex.includes(g.target)) st.target = g.target; // the named neighbour
     if (st.role && st.target == null) { st.target = this.pickRole(p, f, g, st, st.role); if (st.target == null && !['employer', 'authority', 'landlord', 'expert'].includes(st.role)) { st.target = null; this.stepFail(p, s, f, g, st, 'busy', 'no one to turn to'); return; } }
     const tp = typeof st.target === 'number' ? w.people.get(st.target) : null;
     if (typeof st.target === 'number' && (!tp || !tp.alive)) { st.target = null; this.stepFail(p, s, f, g, st, 'bad_luck', 'they were not around'); return; }

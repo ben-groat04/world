@@ -299,7 +299,7 @@ export function createLabour() {
         if (a.bid != null || (a.occ && OCC[a.occ] && OCC[a.occ].where === 'onmap')) { slot = w.lf.slots.find((s) => (a.bid == null || s.bid === a.bid) && (!a.occ || s.occ === a.occ) && s.vac.length && !closed(s.bid)); if (!slot) { w.emit('labour.applied', { actors: [p.id], salience: 0.2, tags: ['labour'], payload: { ok: false, why: 'no vacancy' } }); return { ok: false, why: 'no vacancy' }; } o = OCC[slot.occ]; }
         else o = a.occ ? OCC[a.occ] : drawOccupation(w, rng, p, { prior: q.lastOcc, onlyOffmap: true });
         if (!o) return { ok: false, why: 'unknown occupation' };
-        const fit = (QRANK[q.edu] ?? 2) >= (QRANK[o.qual] ?? 0) - 0.5 ? 1 : 0.1, pr = clamp(0.4 * fit * (1 + referralStrength(p)) * (q.activity === 'employed' ? 0.8 : 1), 0, 0.9), ok = a.force || rng.chance(pr);
+        const fit = (QRANK[q.edu] ?? 2) >= (QRANK[o.qual] ?? 0) - 0.5 ? 1 : 0.1, pr = clamp(0.4 * fit * (1 + referralStrength(p)) * (q.activity === 'employed' ? 0.8 : 1) * (a.odds ?? 1), 0, 0.9), ok = a.force || rng.chance(pr);
         w.emit('labour.applied', { actors: [p.id], place: slot ? slot.bid : null, salience: 0.2, tags: ['labour'], payload: { ok, occ: o.id } });
         if (!ok) return { ok: false, why: 'rejected' };
         if (q.activity === 'employed') separate(p, 'swap', '');

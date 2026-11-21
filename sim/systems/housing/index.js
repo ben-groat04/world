@@ -295,23 +295,37 @@ export function createHousing() {
     return eid;
   }
   function vacateSold(old) { landlordSell(old, W.rngFor('housing.sale')); }
+  /** A person (plus dependants) splits off from household hh: into their own rented place in Larkfield (if `dest` is null and a unit is free) or away
+   *  (partner's place, university, another city). Returns {ok, where:'local'|'away', hh?}. Used by life through housing.leaveHome / housing.separate. */
+  function splitOff(hh, group, why, dest, rng, localChance = 1) {
+    const w = W, S = H(w), p = group[0], pop = p.ext.pop, adults = group.filter((x) => w.ageOf(x) >= 16).length, kids = group.length - adults;
+    const beds = Math.max(1, Math.floor(adults / 2) + (adults % 2) + Math.ceil(kids / 2));
+    const cand = dest ? [] : S.list.filter((x) => x.hh < 0 && x.listed && x.tenure === 'private_rent' && x.bedrooms >= beds && x.bedrooms <= beds + 1 && x.rent <= 1100 + 350 * beds).sort((a, b) => a.rent - b.rent || a.id - b.id);
+    const ids = new Set(group.map((x) => x.id));
+    if (cand.length && rng.chance(localChance)) {
+      const u = cand[0], eid = w.emit('housing.moved_out', { actors: group.map((x) => x.id), place: hh.bid, salience: 0.35, tags: ['housing', 'life'], payload: { to: 'local', reason: why } });
+      hh.members = hh.members.filter((id) => !ids.has(id));
+      const nh = { id: w.lf.households.length, unit: u.id, bid: u.bid, seg: hh.seg === 'older_longterm' ? 'early_career' : hh.seg, arch: group.length > 1 ? 'lone_parent_dep' : 'one_person_u66', members: group.map((x) => x.id), tenure: u.tenure, rentPcm: u.rent, mortgagePcm: 0, income: { gross: 0, net: 0, benefits: 0 }, cars: 0, dogs: 0, cats: 0, since: w.tick, group: hh.group, landlord: u.landlord, address: u.address, bedrooms: u.bedrooms, sav: { savings: 0, debt: 0, arrears: 0 } };
+      w.lf.households.push(nh); u.hh = nh.id; u.since = w.tick; u.listed = false; u.voidUntil = 0; u.lastSeg = nh.seg;
+      for (const x of group) { const q = x.ext.pop, ob = x.homeId; q.hh = nh.id; q.unit = u.id; q.role = x === p ? 'head' : 'child'; relocate(x, u.bid, ob); if (w.commands.has('routine.adopt')) w.cmd('routine.adopt', { pid: x.id, from: ob }); }
+      if (w.commands.has('money.initHousehold')) w.cmd('money.initHousehold', { hh: nh.id });
+      w.emit('housing.moved_in', { actors: group.map((x) => x.id), place: u.bid, objects: [nh.id], salience: 0.35, cause: eid, tags: ['housing', 'life'], payload: { from: 'local', reason: why, unit: u.id, tenure: u.tenure } });
+      S.stats.moves++; S.stats.localMoves++; S.stats.movedPersons += group.length; for (const x of group) S.moveLog.push([w.tick, Math.round(w.ageOf(x)), 'local']);
+      return { ok: true, where: 'local', hh: nh.id };
+    }
+    const to = dest || rng.pick(['a flat share elsewhere in the city', 'a rented flat across town', 'a room in a shared house elsewhere']);
+    w.emit('housing.moved_out', { actors: group.map((x) => x.id), place: hh.bid, salience: 0.35, tags: ['housing', 'life'], payload: { to: 'metropolis', reason: why } });
+    for (const x of group) {
+      if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: x.id });
+      if (x.ext.life) x.ext.life.away = { tick: w.tick, to, map: {}, hh: hh.id }; // so life can bring them back (boomerang)
+      x.emigrated = true; x.emigratedTick = w.tick; x.emigratedTo = to; if (x.ext.rt) x.ext.rt.off = null; w.removePerson(x);
+      S.stats.movedPersons++; S.moveLog.push([w.tick, Math.round(w.ageOf(x)), 'out']);
+    }
+    void pop; return { ok: true, where: 'away', to };
+  }
   function leaveHome(hh, p, rng) {
-    const w = W, S = H(w), pop = p.ext.pop;
-    const cand = S.list.filter((x) => x.hh < 0 && x.listed && x.tenure === 'private_rent' && x.bedrooms <= 2 && x.rent <= 1100).sort((a, b) => a.rent - b.rent || a.id - b.id);
-    if (cand.length && rng.chance(0.4)) {
-      const u = cand[0], eid = w.emit('housing.moved_out', { actors: [p.id], place: hh.bid, salience: 0.35, tags: ['housing', 'life'], payload: { to: 'local', reason: 'own_place' } });
-      const i = hh.members.indexOf(p.id); if (i >= 0) hh.members.splice(i, 1);
-      const nh = { id: w.lf.households.length, unit: u.id, bid: u.bid, seg: hh.seg === 'older_longterm' ? 'early_career' : hh.seg, arch: 'one_person_u66', members: [p.id], tenure: u.tenure, rentPcm: u.rent, mortgagePcm: 0, income: { gross: 0, net: 0, benefits: 0 }, cars: 0, dogs: 0, cats: 0, since: w.tick, group: hh.group, landlord: u.landlord, address: u.address, bedrooms: u.bedrooms, sav: { savings: 0, debt: 0, arrears: 0 } };
-      w.lf.households.push(nh); pop.hh = nh.id; pop.unit = u.id; pop.role = 'head'; u.hh = nh.id; u.since = w.tick; u.listed = false; u.voidUntil = 0;
-      const ob = p.homeId; relocate(p, u.bid, ob); if (w.commands.has('money.initHousehold')) w.cmd('money.initHousehold', { hh: nh.id }); if (w.commands.has('routine.adopt')) w.cmd('routine.adopt', { pid: p.id, from: ob });
-      w.emit('housing.moved_in', { actors: [p.id], place: u.bid, objects: [nh.id], salience: 0.35, cause: eid, tags: ['housing', 'life'], payload: { from: 'local', reason: 'own_place', unit: u.id, tenure: u.tenure } });
-      S.stats.moves++; S.stats.localMoves++; S.stats.movedPersons++; S.moveLog.push([w.tick, Math.round(w.ageOf(p)), 'local']); return;
-    }
-    if (rng.chance(0.5)) { // leave for elsewhere (job, university, partner)
-      const eid = w.emit('housing.moved_out', { actors: [p.id], place: hh.bid, salience: 0.35, tags: ['housing', 'life'], payload: { to: 'metropolis', reason: 'own_place' } });
-      const i = hh.members.indexOf(p.id); if (i >= 0) hh.members.splice(i, 1);
-      if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: p.id }); p.emigrated = true; p.emigratedTick = w.tick; p.emigratedTo = 'metropolis'; w.removePerson(p); hh.members.push(p.id); S.stats.movedPersons++; S.moveLog.push([w.tick, Math.round(w.ageOf(p)), 'out']); void eid;
-    }
+    const cand = H(W).list.some((x) => x.hh < 0 && x.listed && x.tenure === 'private_rent' && x.bedrooms <= 2 && x.rent <= 1100);
+    if (cand && rng.chance(0.4)) splitOff(hh, [p], 'own_place', null, rng); else if (rng.chance(0.5)) splitOff(hh, [p], 'own_place', 'metropolis', rng);
   }
   const studying = (p) => p.ext.pop.activity === 'student' || (p.ext.pop.school && (p.ext.pop.school.kind === 'university' || p.ext.pop.school.kind === 'college')); // working students still study
   function sharerRotation(hh, ps, adults, seg, rng) {
@@ -414,6 +428,32 @@ export function createHousing() {
         if (hh.search) return true; if (a.out) { hh.departAt = w.tick + MONTH; hh.departWhy = a.reason || 'chosen'; hh.departDest = a.dest || 'metropolis'; return true; }
         startSearch(hh, a.reason || 'chosen', a.forced || 0, a.cause || 0); return true;
       },
+      'housing.leaveHome': (w, a) => { // someone (plus dependants) moves out of the household they live in
+        const p = w.people.get(a.pid); if (!p || !p.alive || !p.ext.pop) return { ok: false };
+        const hh = w.lf.households[p.ext.pop.hh]; if (!hh || hh.gone) return { ok: false };
+        const deps = (a.dependants || []).map((id) => w.people.get(id)).filter((x) => x && x.alive && x.ext.pop && x.ext.pop.hh === hh.id);
+        const away = a.dest || a.reason === 'university';
+        return splitOff(hh, [p, ...deps], a.reason || 'own_place', away ? (a.dest || 'university halls, another city') : null, w.rngFor('housing.leavehome'), a.reason === 'independence' || a.reason === 'job' ? 0.4 : 0.5);
+      },
+      'housing.moveTogether': (w, a) => { // two partners living apart move in together: the one with the better home hosts (more beds, owns, has the kids)
+        const A = w.people.get(a.a), B = w.people.get(a.b); if (!A || !B || !A.alive || !B.alive || !A.ext.pop || !B.ext.pop) return { ok: false };
+        const ha = w.lf.households[A.ext.pop.hh], hb = w.lf.households[B.ext.pop.hh]; if (!ha || !hb || ha.gone || hb.gone) return { ok: false };
+        if (ha.id === hb.id) return { ok: true, how: 'same_home' };
+        const own = (x) => (x.ext.pop.role === 'head' || x.ext.pop.role === 'partner' ? 2 : 0);
+        const kidsOf = (x, h) => hhLive(h).filter((c) => c.id !== x.id && w.ageOf(c) < 18 && (c.family.motherId === x.id || c.family.fatherId === x.id));
+        const score = (x, h) => own(x) + (U(h.unit) ? U(h.unit).bedrooms : 2) * 0.3 + (h.tenure === 'owned_outright' || h.tenure === 'mortgage' ? 1 : 0) + (kidsOf(x, h).length ? 0.8 : 0);
+        const [host, hHost, mover, hMover] = score(A, ha) >= score(B, hb) ? [A, ha, B, hb] : [B, hb, A, ha];
+        const group = [mover, ...kidsOf(mover, hMover)], need = bedNeed(w, [...hhLive(hHost), ...group]), cap = U(hHost.unit) ? U(hHost.unit).bedrooms : 2;
+        if (need > cap + 1 && !a.force) return { ok: false, why: 'no room' }; // they wait and look; asked again with force after a few months (then the crowded home searches for a bigger place by itself)
+        for (const x of group) w.cmd('housing.join', { pid: x.id, hh: hHost.id, role: x === mover ? (own(host) ? 'partner' : 'adult_child') : 'child', reason: 'couple', cause: a.cause || 0 });
+        return { ok: true, how: 'joined', host: host.id };
+      },
+      'housing.separate': (w, a) => { // a couple living together splits: the leaver finds a place (or goes away); they may linger under one roof for a while
+        const p = w.people.get(a.leaver); if (!p || !p.alive || !p.ext.pop) return { ok: false };
+        const hh = w.lf.households[p.ext.pop.hh]; if (!hh || hh.gone) return { ok: false };
+        const rng = w.rngFor('housing.separate'); if (rng.chance(0.18)) return { ok: false, retry: true };
+        return splitOff(hh, [p], 'separation', null, rng, 0.45);
+      },
       'housing.rentFlat': (w, a) => {
         const hh = hhOfArg(a), u = U(a.unit); if (!hh || !u || u.hh >= 0 || !rented(u.tenure)) return { ok: false };
         const ps = hhLive(hh), cash = ps.reduce((s, p) => s + Math.max(0, p.money), 0); if (cash < u.rent * 0.6) return { ok: false, why: 'cannot afford deposit' };
@@ -429,7 +469,7 @@ export function createHousing() {
       },
       'housing.rentShock': (w, a) => {
         const eid = w.emit('housing.rent_shock', { salience: 0.6, tags: ['housing', 'god'], payload: { pct: a.pct } }); let n = 0;
-        for (const u of H(w).list) if (u.tenure === 'private_rent' && u.rent > 0) { u.rent = Math.round(u.rent * (1 + a.pct / 100)); u.lastRisePct = a.pct; u.lastRise = w.tick; if (u.hh >= 0) { const hh = w.lf.households[u.hh]; hh.rentPcm = u.rent; if (hh.fin) hh.fin.cause = eid; } n++; }
+        for (const u of H(w).list) if (u.tenure === 'private_rent' && u.rent > 0) { u.rent = Math.round(u.rent * (1 + a.pct / 100)); u.lastRisePct = a.pct; u.lastRise = w.tick; if (u.hh >= 0) { const hh = w.lf.households[u.hh]; const old = hh.rentPcm; hh.rentPcm = u.rent; let eid2 = eid; if (a.pct >= 5) eid2 = w.emit('housing.rent_rise', { actors: hhLive(hh).slice(0, 2).map((p) => p.id), place: u.bid, objects: [u.id], salience: a.pct >= 9 ? 0.4 : 0.2, cause: eid, tags: ['housing', 'money'], payload: { pct: +a.pct.toFixed(1), from: old, to: u.rent } }); /* each household gets its own letter, caused by the shock */ if (hh.fin) hh.fin.cause = eid2; } n++; }
         if (w.lf.money) w.lf.money.macro.rent *= 1 + a.pct / 100; return n;
       },
       'housing.evict': (w, a) => { const u = a.unit != null ? U(a.unit) : unitOfAny(a.pid); if (!u || u.hh < 0) return false; const hh = w.lf.households[u.hh]; doEvict(u, hh, 'god_command', a.cause || 0); return true; },

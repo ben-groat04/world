@@ -17,7 +17,7 @@ export function psOf(w, S, id) { let s = S.ppl.get(id); if (s === undefined) { c
 
 /** Build a person's social state from the generated network (p.ext.pop.ties) and personal parameters. */
 export function importPerson(w, S, p) {
-  const ps = emptyPS(p.id); S.ppl.set(p.id, ps);
+  const ps = emptyPS(p.id); S.ppl.set(p.id, ps); if (S.bk) S.bk[p.id % 168].push(p.id); // arrivals/births/the player join the weekly neighbour round (they were silently left out)
   const q = p.ext.pop, seg = segInfo(w, S, q?.seg), age = w.ageOf(p), tick = w.tick, r = w.rngFor('soc.import', p.id);
   const E = p.personality.extraversion;
   ps.mr = Math.max(0.5, seg.msgs * (age < 13 ? 0.1 : age < 16 ? 0.7 : age > 75 ? 0.45 : 1) * (0.6 + 0.8 * E) * (0.6 + 0.8 * r.next()));
@@ -108,14 +108,17 @@ export function maintain(w, S, p, r) {
     if (!(t.k === 'partner' || (other && (t.k === 'housemate' || t.k === 'kin') && other.ext.pop.hh === p.ext.pop.hh))) t.c *= (t.k === 'kin' ? KEEP_KIN[t.L] : KEEP[t.L]) * (t.cf > 0.3 ? 0.99 : 1);
     t.d *= 0.78; if (t.cf > 0) { t.cf *= 0.57; if (t.cf < 0.03) t.cf = 0; }
     if (t.cf < 0.2) t.l += (0.1 + 0.85 * t.c - t.l) * 0.15;
-    if (t.c < (t.L >= 4 ? 0.07 : 0.035) && t.k !== 'kin' && t.k !== 'partner' && t.k !== 'ex') { if (t.lv >= 2) { t.lv = 1; S.stats.lostTies++; S.stats.yr.l++; if (t.L <= 3 && t.h > 8) S.stats.fades++; } else if (t.c < 0.008) (drop || (drop = [])).push(key); }
+    if (t.c < (t.L >= 4 ? 0.07 : 0.035) && t.k !== 'kin' && t.k !== 'partner' && t.k !== 'ex') { if (t.lv >= 2) { t.lv = 1; S.stats.lostTies++; S.stats.yr.l++; // a friendship 'fades' when a tie that had real contact (>= 4 recorded contacts) lapses to a mere sighting; (the old condition L<=3 && h>8 almost never held, so the counter read 0)
+      if ((t.k === 'friend' || t.k === 'colleague' || t.k === 'neighbour') && t.h >= 4) { S.stats.fades++; if (t.k === 'friend' && t.L <= 3 && typeof key === 'number') w.emit('social.fade', { actors: [p.id, key], salience: 0.1, tags: ['social'], payload: { kind: t.k } }); } } else if (t.c < 0.008) (drop || (drop = [])).push(key); }
     if (other && (t.c - t.sy > 0.1 || t.sy - t.c > 0.1)) mirror(p, other, t);
   }
   if (drop) for (const k of drop) ps.T.delete(k);
   relayer(ps); ps.sk = 0;
   // loneliness: wanted contact vs the support actually received (partner/household count)
   const hh = q.hh != null ? w.lf.households[q.hh] : null, live = hh ? hh.members.length - 1 : 0;
-  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : age > 78 ? 0.1 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
+  // need for company: highest in the young (network still forming, Luhmann & Hawkley 2016), falling in later life as people prune to fewer, closer ties and expect less
+  // (socioemotional selectivity, Carstensen 1999): loneliness is the gap between wanted and received contact, so older people with the same network feel it less
+  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : age >= 65 ? -0.1 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
   // A partner / housemates are ALREADY tie-layer-1 members counted in `supply` (and in `ctc` through ~6 face-to-face contacts a week); only the extra value of
   // someone being at home (company, availability) is added here. Earlier version added household (0.14 each) + partner (0.3) on top, triple-counting the
   // partner, which made every older person living alone 'lonely' despite a full network (ELSA/ONS: loneliness tracks contact quality and widowhood, not household size alone).

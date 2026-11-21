@@ -33,7 +33,7 @@ const WS = new Array(ACT.length).fill(0);
 const pickW = (r, ws) => { let t = 0; for (let i = 0; i < ws.length; i++) t += ws[i]; let x = r.next() * t; for (let i = 0; i < ws.length; i++) { x -= ws[i]; if (x < 0) return i; } return 0; };
 
 /** One conversation (a opens). ch: 0 face-to-face, 1 call, 2 message. Returns the act index. */
-export function converse(w, S, r, a, b, ch = 0, ctx = '', first = false, force = null) {
+export function converse(w, S, r, a, b, ch = 0, ctx = '', first = false, force = null, cause = 0) {
   const A = psOf(w, S, a.id), B = psOf(w, S, b.id); if (!A || !B) return -1;
   let ta = A.T.get(b.id), tb = B.T.get(a.id); if (!ta || !tb) { const res = link(w, S, a, b, { k: 'acq', L: 4, c: 0.06, lv: 2 }, ctx || 'introduced'); if (!res) return -1; ta = res[0]; tb = res[1]; }
   const tick = w.tick; S.stats.conv++;
@@ -64,7 +64,7 @@ export function converse(w, S, r, a, b, ch = 0, ctx = '', first = false, force =
       ta.l = clamp(ta.l - heat, -1, 1); tb.l = clamp(tb.l - heat, -1, 1); ta.t = clamp(ta.t - 0.06, 0, 1); tb.t = clamp(tb.t - 0.07, 0, 1);
       ta.cf = clamp(ta.cf + 0.3 + heat, 0, 1); tb.cf = clamp(tb.cf + 0.3 + heat, 0, 1); ta.e = clamp(ta.e - 0.03, -1, 1); tb.e = clamp(tb.e - 0.04, -1, 1);
       w.moodlet(a, 'row', 'Had a row', -0.12, 3 * TPD); w.moodlet(b, 'row', 'Had a row', -0.12, 3 * TPD);
-      if ((ta.c > 0.15 || tb.c > 0.15) && (!ta.fo || tick - ta.fo > 28 * TPD)) { ta.fo = tb.fo = tick; ev = w.emit('social.fallout', { actors: [a.id, b.id], place: a.locationId, salience: 0.3 + 0.2 * Math.min(1, ta.c), tags: ['conflict'], payload: { over: ctx || 'words', c: +ta.c.toFixed(2) } }); }
+      if ((ta.c > 0.15 || tb.c > 0.15) && (!ta.fo || tick - ta.fo > 28 * TPD)) { ta.fo = tb.fo = tick; ev = w.emit('social.fallout', { actors: [a.id, b.id], place: a.locationId, cause, salience: 0.3 + 0.2 * Math.min(1, ta.c), tags: ['conflict'], payload: { over: ctx || 'words', c: +ta.c.toFixed(2) } }); }
       break; }
     case 8: { // apologise: repair depends on the other's agreeableness and the history
       const ok = r.next() < clamp(0.35 + 0.45 * pb.agreeableness + 0.3 * tb.c - 0.2 * tb.cf, 0.1, 0.92);

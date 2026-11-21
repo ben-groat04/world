@@ -65,13 +65,15 @@ export function createComms() {
       chats: (pid) => { const ps = W.soc.ppl.get(pid); return ps ? ps.ch.map((id) => { const c = W.soc.chats[id - 1]; return { id, kind: c.kind, name: c.name, n: c.m.length + c.nx, act: +c.act.toFixed(2) }; }) : []; },
       chat: (id, n = 6) => { const c = W.soc.chats[id - 1]; return c ? c.ring.slice(-n).map((m) => ({ t: m.t, author: m.au, text: chatText(c, m) })) : []; },
       feed: (n = 8) => W.soc.posts.slice(-n).map((p) => ({ id: p.id, t: p.t, author: p.au, kind: p.k, reach: p.r, text: postText(p) })),
-      forum: (n = 8) => W.soc.forum.posts.slice(-n).map((p) => ({ id: p.id, t: p.t, author: p.au, kind: p.k, replies: p.cm.map((c) => ({ author: c.au, tone: c.tn, text: render('feedreply.' + ['agree', 'help', 'joke', 'argue', 'interest'][c.tn], c.au, { seed: c.sd, p: { name: ['Mick', 'Karen at number 9', 'Steve (the plumber)', 'big Dave', 'Ali at the garage', 'Priti'][c.sd % 6] } }) })), text: postText(p, true), seen: p.r })),
+      forum: (n = 8) => W.soc.forum.posts.slice(-n).map((p) => ({ id: p.id, t: p.t, author: p.au, kind: p.k, replies: p.cm.map((c) => ({ author: c.au, tone: c.tn, text: render(replyKey(p.k, ['agree', 'help', 'joke', 'argue', 'interest'][c.tn]), c.au, { seed: c.sd, p: { name: ['Mick', 'Karen at number 9', 'Steve (the plumber)', 'big Dave', 'Ali at the garage', 'Priti'][c.sd % 6] } }) })), text: postText(p, true), seen: p.r })),
       datingPool: (pid, n = 10) => datingPool(W, pid, n),
       stats: () => JSON.parse(JSON.stringify({ msgs: W.soc.stats.msgs, calls: W.soc.stats.calls, posts: W.soc.stats.posts, viral: W.soc.stats.viral, pile: W.soc.stats.pile, matches: W.soc.stats.matches, chats: W.soc.chats.length, forumMembers: W.soc.forum.members.length })),
     },
   };
   // ----- text of stored structures
   function chatText(c, m) { return render('chat.' + (m.k || c.kind), m.au, { seed: m.sd, b: m.bo, p: { thing: 'the plan' } }); }
+  // replies come from the topic's own pool (feedreply.<topic>.<tone>) so an answer fits the post; topics without one use the generic tone pool
+  const replyKey = (kind, tone) => (E && E.has('feedreply.' + kind + '.' + tone) ? 'feedreply.' + kind + '.' + tone : 'feedreply.' + tone);
   function postText(p, forum) {
     if (p.ev) { const ev = W.events.get(p.ev); if (ev) { try { return E.render(ev, { genre: 'post', a: view(W.people.get(p.au)), people: (id) => view(W.people.get(id)), seed: p.sd, date: W.calendar.dateOf(p.t), p: ev.payload }, W); } catch (e) { /* fall through */ } } }
     if (forum || p.k.startsWith('f:')) return render('feed.' + (p.k.startsWith('f:') ? p.k.slice(2) : p.k), p.au, { seed: p.sd, s: p.ab, p: p.ab != null ? {} : undefined });

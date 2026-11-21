@@ -20,7 +20,7 @@ export class MapView {
     this.cam = { x: 67, y: 88, z: 4 }; this.minZ = 2; this.maxZ = 44; this.map = null; this.layer = null;
     this.P = new Map(); this.selected = null; this.follow = null; this.selB = null; this.hoverB = null; this.lastTick = 0; this.tps = 0; this.timelapse = false; this.now = 0;
     this.time = { hour: 12, sunrise: 7, sunset: 18, month: 5, weather: null }; this.dark = 0; this.rain = []; this.flash = 0; this.occ = new Map(); this.leave = 0; this.nightSmooth = 0; this.pulse = 0;
-    this.dest = null; this.labelsOn = true; this.hot = new Map(); this.overlay = 'none'; this.bursts = [];
+    this.dest = null; this.labelsOn = true; this.hot = new Map(); this.disp = new Map(); this.overlay = 'none'; this.bursts = [];
   }
   // ------------------------------------------------------------------ setup
   setMap(map, bld) {
@@ -134,6 +134,7 @@ export class MapView {
     const dkv = this.nightSmooth;
     if (dkv > 0.01) { ctx.fillStyle = `rgba(7,13,44,${(0.7 * dkv).toFixed(3)})`; ctx.fillRect(0, 0, this.w, this.h); }
     if (!tl && (this.dawn > 0 || this.dusk > 0)) { ctx.fillStyle = `rgba(255,140,60,${(0.12 * Math.max(this.dawn, this.dusk)).toFixed(3)})`; ctx.fillRect(0, 0, this.w, this.h); }
+    this.updateDisp(performance.now());
     this.drawLights(ctx, dkv);
     this.drawOverlay(ctx);
     this.drawHighlights(ctx);
@@ -161,7 +162,7 @@ export class MapView {
     if (z >= 2.4) for (const l of this.lamps) { const [x, y] = this.toScreen(l.x + 0.5, l.y + 0.5); if (x < -30 || y < -30 || x > this.w + 30 || y > this.h + 30) continue; const r = Math.max(8, z * 2.6); const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(255,214,130,${0.4 * a})`); g.addColorStop(1, 'rgba(255,214,130,0)'); ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2); }
     ctx.restore();
     for (const b of this.bld) {
-      const n = this.occ.get(b.id) || 0; const ws = this.windows.get(b.id); if (!ws) continue; const [sx, sy] = this.toScreen(b.x, b.y); const bw = b.w * z, bh = b.h * z; if (sx > this.w || sy > this.h || sx + bw < 0 || sy + bh < 0) continue;
+      const n = this.dOcc(b.id); const ws = this.windows.get(b.id); if (!ws) continue; const [sx, sy] = this.toScreen(b.x, b.y); const bw = b.w * z, bh = b.h * z; if (sx > this.w || sy > this.h || sx + bw < 0 || sy + bh < 0) continue;
       const lit = b.kind === 'commercial' ? (n > 0 ? ws.length : Math.min(1, ws.length)) : Math.min(ws.length, n > 0 ? 1 + n : 0);
       if (!lit) continue;
       ctx.fillStyle = `rgba(255,205,110,${(0.85 * a).toFixed(2)})`; const ww = Math.max(1.5, z * 0.36), wh = Math.max(1.5, z * 0.4);
@@ -172,7 +173,7 @@ export class MapView {
   drawOverlay(ctx) {
     if (this.overlay === 'none') return; const st = this.store.s;
     // heat overlay by segment/ stress is drawn per person in drawPeople; building overlay here: occupancy heat
-    if (this.overlay === 'crowd') for (const b of this.bld) { const n = this.occ.get(b.id) || 0; if (!n) continue; const [sx, sy] = this.toScreen(b.x, b.y); ctx.fillStyle = `rgba(255,80,60,${Math.min(0.7, n / 25)})`; ctx.fillRect(sx, sy, b.w * this.cam.z, b.h * this.cam.z); }
+    if (this.overlay === 'crowd') for (const b of this.bld) { const n = this.dOcc(b.id); if (!n) continue; const [sx, sy] = this.toScreen(b.x, b.y); ctx.fillStyle = `rgba(255,80,60,${Math.min(0.7, n / 25)})`; ctx.fillRect(sx, sy, b.w * this.cam.z, b.h * this.cam.z); }
   }
   drawHighlights(ctx) {
     const z = this.cam.z; const hl = (id, col, lw) => { const b = this.byId.get(id); if (!b) return; const [sx, sy] = this.toScreen(b.x, b.y); ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.strokeRect(sx - 1, sy - 1, b.w * z + 2, b.h * z + 2); };
@@ -227,16 +228,35 @@ export class MapView {
       const ph = (now / 900) % 1, r = 7 + ph * 9; ctx.strokeStyle = `rgba(255,211,107,${(1 - ph) * 0.9})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, r, 0, 7); ctx.stroke();
       ctx.fillStyle = '#ffd36b'; ctx.strokeStyle = 'rgba(20,14,0,.8)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(sx, sy, 5, 0, 7); ctx.fill(); ctx.stroke();
     }
-    if (z < 5) return;
-    for (const [id, n] of this.occ) {
-      const b = this.byId.get(id); if (!b || !n) continue; if (['estate_green', 'park', 'allotments', 'school_grounds'].includes(b.type) && z < 6) continue; if (id !== this.selB && n < (z < 8 ? 4 : z < 12 ? 2 : 1)) continue;
+    // count badges: smoothed per building over real time, hysteresis (show >=3, hide <2), faded; never at x5 and faster
+    const tier = this.store.s.tier, fast = tier === 'x5' || tier === 'x20' || tier === 'max';
+    for (const [id, d] of this.disp) {
+      const b = this.byId.get(id); let want = false;
+      if (b && !fast && z >= 5 && d.v > 0) {
+        const quiet = ['estate_green', 'park', 'allotments', 'school_grounds'].includes(b.type) && z < 6;
+        if (id === this.selB) want = true;
+        else if (!quiet) { if (d.on) want = d.v >= 2; else want = d.v >= 3; }
+      }
+      d.on = want; if (d.v > 0) d.txt = d.v;
+      const dt = Math.min(250, now - (d.t || now)); d.t = now; d.a += ((want ? 1 : 0) - d.a) * (1 - Math.exp(-dt / 220));
+      if (!want && d.a < 0.02) { d.a = 0; if (d.v === 0 && d.cand === 0) this.disp.delete(id); continue; }
+      if (!b || !d.txt) continue;
       const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -20 || sy < -20 || sx > this.w + 20 || sy > this.h + 20) continue;
       const col = b.kind === 'residential' ? '#3a7fb0' : b.cat ? CAT_COL[b.cat] || '#d9a441' : '#6b7a8a';
-      const t = String(n), fs = clamp(z * 0.9, 10, 15); ctx.font = `700 ${fs}px system-ui`; const w = Math.max(fs * 1.5, ctx.measureText(t).width + 12), hgt = fs * 1.4;
-      ctx.fillStyle = col; ctx.strokeStyle = 'rgba(255,255,255,0.95)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.roundRect(sx - w / 2, sy - hgt / 2, w, hgt, hgt / 2); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(t, sx, sy + 0.5);
+      const t = String(d.txt), fs = clamp(z * 0.9, 10, 15); ctx.font = `700 ${fs}px system-ui`; const w = Math.max(fs * 1.5, ctx.measureText(t).width + 12), hgt = fs * 1.4;
+      ctx.globalAlpha = d.a; ctx.fillStyle = col; ctx.strokeStyle = 'rgba(255,255,255,0.95)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.roundRect(sx - w / 2, sy - hgt / 2, w, hgt, hgt / 2); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(t, sx, sy + 0.5); ctx.globalAlpha = 1;
     }
   }
+  // Smoothed occupancy: a displayed count only changes once the new raw value has persisted ~1.5 real seconds (also used by lit windows / crowd overlay).
+  updateDisp(now) {
+    for (const [id] of this.occ) if (!this.disp.has(id)) this.disp.set(id, { v: 0, cand: 0, since: now, a: 0, on: false, txt: 0, t: now });
+    for (const [id, d] of this.disp) {
+      const raw = this.occ.has(id) ? this.occ.get(id) : 0;
+      if (raw === d.v) { d.cand = raw; d.since = now; } else if (raw !== d.cand) { d.cand = raw; d.since = now; } else if (now - d.since >= 1500) d.v = raw;
+    }
+  }
+  dOcc(id) { const d = this.disp.get(id); return d ? d.v : 0; }
   drawLabels(ctx) {
     const z = this.cam.z; const boxes = []; const hit = (b) => boxes.some((o) => !(b[2] < o[0] || b[0] > o[2] || b[3] < o[1] || b[1] > o[3]));
     const label = (txt, x, y, fs, col = '#fff', pri = false) => { ctx.font = `600 ${fs}px system-ui, sans-serif`; const w = ctx.measureText(txt).width; const box = [x - w / 2, y - fs / 2, x + w / 2, y + fs / 2]; if (!pri && hit(box)) return; boxes.push(box); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineWidth = 3.5; ctx.strokeStyle = 'rgba(10,14,20,0.8)'; ctx.lineJoin = 'round'; ctx.strokeText(txt, x, y); ctx.fillStyle = col; ctx.fillText(txt, x, y); };

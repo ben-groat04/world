@@ -137,7 +137,7 @@ export function createComms() {
     S.stats.posts.feed++; S.stats.posts[kind === 'daily' ? 'daily' : 'event']++;
     ps.lastPost = w.tick;
     // the people who actually see it: close ties (capped 25); they learn the author's news and the tie warms a little
-    if (kind !== 'daily' || r.next() < 0.2) {
+    if (kind !== 'daily') {
       let best = null; for (const b of ps.B.values()) if (b.a === p.id && KINDS[b.k][0] && (!best || b.t > best.t)) best = b;
       let n = 0; for (const id of ps.top) { if (n >= 25) break; if (r.next() > 0.35) continue; const q = S.ppl.get(id); if (!q) continue; n++; const t = q.T.get(p.id); if (t) touch(t, 3, 1, w.tick); if (best) learn(S, q, mkBelief(S, best.k, best.a, best.o, best.m, 0.9, -2, 1, w.tick, 1, { ev: best.ev })); }
     }
@@ -152,8 +152,10 @@ export function createComms() {
   // ----- daily: chats and the forum
   function daily(w) {
     const S = w.soc, r = w.rngFor('comms.d');
+    const dn = w.time.dayAbs;
     for (const c of S.chats) {
-      const n = c.m.length + c.nx; let k = POISSON(r, (CHAT_BASE[c.kind] || 3) * Math.pow(n, 0.55) * c.act * (w.time.dow >= 5 ? 0.8 : 1) * 0.5);
+      if ((dn + c.id) % 3) continue;
+      const n = c.m.length + c.nx; let k = POISSON(r, (CHAT_BASE[c.kind] || 3) * Math.pow(n, 0.55) * c.act * 1.5);
       S.stats.msgs.grp += k; c.vol = c.vol * 0.9 + k * 0.1;
       for (let i = 0; i < k; i++) { const id = c.m[(r.next() * c.m.length) | 0], p = w.people.get(id); if (!p || !p.alive) continue; const b = bandOf(w.ageOf(p)); S.stats.msgs.byBand[b] = (S.stats.msgs.byBand[b] || 0) + 1; if (i < 3 && r.next() < 0.5) { c.ring.push({ t: w.tick, au: id, k: c.kind, sd: (r.next() * 1e6) | 0, bo: c.m[(r.next() * c.m.length) | 0] }); if (c.ring.length > 16) c.ring.shift(); } }
       if (k > 0 && n >= 4 && r.next() < 0.0035) chatRow(w, S, r, c);

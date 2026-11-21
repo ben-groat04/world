@@ -57,7 +57,7 @@ export function createSocial() {
     year: (w) => { const y = w.soc.stats.yr; w.soc.stats.lastYr = { n: y.n, l: y.l }; y.n = 0; y.l = 0; y.y0 = w.tick; },
   },
   serialize() { return encode(W.soc); },
-  deserialize(st) { W.soc = decode(W, st); rebuild(W, W.soc); W.soc.bigBlock = (w, p) => { const b = w.buildings.get(p.homeId); return !!(b && b.lf.units.length > 8); }; },
+  deserialize(st) { const st0 = decode(W, st); W.soc = st0; const keep = st0.street; rebuild(W, W.soc); W.soc.street = keep; W.soc.bigBlock = (w, p) => { const b = w.buildings.get(p.homeId); return !!(b && b.lf.units.length > 8); }; },
   commands: {
     'social.spreadRumour': (w, a) => cmdRumour(w, a),
     'social.revealSecret': (w, a) => cmdReveal(w, a),
@@ -130,7 +130,8 @@ function hourly(w) {
   const how = t.dow * 24 + hour, ids = S.bk[how], wn = Math.floor(w.tick / 1008);
   for (let i = 0; i < ids.length; i++) {
     const p = w.people.get(ids[i]); if (!p || !p.alive || !p.ext.pop) continue;
-    if ((wn + p.id) % 8 === 0) maintain(w, S, p, r); closure(w, S, p, r); everyday(w, S, r, p); neighbours(w, S, r, p); chatter(w, S, r, p);
+    if ((wn + p.id) % 13 === 0) maintain(w, S, p, r);
+    if ((wn + p.id) % 2 === 0) { closure(w, S, p, r); everyday(w, S, r, p); neighbours(w, S, r, p); neighbours(w, S, r, p); chatter(w, S, r, p); }
   }
   if (S.q.length) { let k = 0; while (k < S.q.length && S.q[k].t <= w.tick) { const it = S.q[k++]; if (it.f === 'lie') detectLie(w, S, r, it); } if (k) S.q.splice(0, k); }
 }
@@ -138,7 +139,7 @@ function hourly(w) {
 function chatter(w, S, r, p) {
   const ps = S.ppl.get(p.id); if (!ps || ps.top.length === 0) return;
   const age = w.ageOf(p); if (age < 12) return;
-  const rate = 0.2 + Math.min(0.6, ps.mr / 120); let n = Math.floor(rate) + (r.next() < rate % 1 ? 1 : 0);
+  const rate = 0.4 + Math.min(1.2, ps.mr / 60); let n = Math.floor(rate) + (r.next() < rate % 1 ? 1 : 0);
   while (n-- > 0) {
     const id = ps.top[(r.next() * ps.top.length) | 0], q = w.people.get(id); if (!q || !q.alive) continue;
     const t = ps.T.get(id); if (!t || t.lv < 2) continue;

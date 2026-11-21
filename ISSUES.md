@@ -28,3 +28,6 @@
   sim/brain.js/actions.js/needs.js/map.js/person.js medieval paths, sim/data medieval content, tools/report.js legacy
   default (make --pack larkfield the default), legacy tests/gates. Keep anything Larkfield imports.
 - Relax internal gates: exact determinism/contract tests are optional; keep a fast sanity check instead.
+## Social / comms (W1-E)
+- Snapshot-resume: whole-world stateHash after resume diverges from a straight run even with `social:false` (goals/others; checked seed 2, 50+30 days). Social state itself round-trips exactly at the restore point (tests/social).
+- Social conversations are sampled (~35-40/day at pop 550) and everything else (contacts, decay) is expected-value accounting; message volume is modelled, not individually simulated. Perf cost ~2.7+0.8 ms/day (see report-social).

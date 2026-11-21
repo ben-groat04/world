@@ -82,7 +82,7 @@ function rates(w, p, t, other, age, seg, mrF) {
   R[0] = 0.05 + (L <= 2 ? 0.2 : 0); R[1] = 0; R[2] = 0.1 * mrF;
 }
 // per-layer weekly retention (kin decay slower); layer 4 acquaintances fade fastest
-const PER = 8; // maintenance runs every 8th week per person: rates are per 8 weeks
+const PER = 13; // maintenance runs every 13th week per person: rates are per 13 weeks
 const KEEP = [1, Math.exp(-0.014 * 0.6 * PER), Math.exp(-0.014 * 0.9 * PER), Math.exp(-0.014 * 1.4 * PER), Math.exp(-0.014 * 3.2 * PER)], KEEP_KIN = KEEP.map((x) => Math.pow(x, 0.45));
 const G1 = GAIN * CH_EFF[0], G2 = GAIN * CH_EFF[1], G3 = GAIN * CH_EFF[2], G4 = GAIN * CH_EFF[3];
 /** 4-weekly maintenance for one person (staggered by id): contacts, decay, layers, loneliness, legacy mirror. Expected-value accounting (no per-tie dice). */
@@ -124,7 +124,7 @@ export function maintain(w, S, p, r) {
 export function closure(w, S, p, r) {
   const ps = S.ppl.get(p.id); if (!ps) return; const age = w.ageOf(p), E = p.personality.extraversion;
   // triadic closure: a friend's friend becomes an acquaintance (sometimes via a proper introduction)
-  if (ps.top.length >= 2 && age >= 8 && r.next() < 0.25) {
+  if (ps.top.length >= 2 && age >= 8 && r.next() < 0.5) {
     const fid = ps.top[(r.next() * ps.top.length) | 0], fps = S.ppl.get(fid);
     if (fps && fps.top.length) {
       const gid = fps.top[(r.next() * fps.top.length) | 0];

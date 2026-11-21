@@ -54,7 +54,7 @@ const EVERYDAY = (p, age, q) => {
 export function everyday(w, S, r, p) {
   const ps = S.ppl.get(p.id); if (!ps) return;
   const age = w.ageOf(p), q = p.ext.pop; if (age < 8) return;
-  if (r.next() > 0.15) return;
+  if (r.next() > 0.3) return;
   const ws = EVERYDAY(p, age, q); let tot = 0; for (const k in ws) tot += ws[k];
   let x = r.next() * tot, kind = 'holiday'; for (const k in ws) { x -= ws[k]; if (x < 0) { kind = k; break; } }
   if (kind === 'affair') { const f = news(w, S, r, 'affair', p.id, 0, 1, undefined, { sec: 1 }); return; }

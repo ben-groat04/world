@@ -67,7 +67,14 @@ export class Host {
   timeInfo() {
     const w = this.w, t = w.time, rec = t.rec || {};
     const hh = String(t.hour || 0).padStart(2, '0'), mm = String(t.minute || 0).padStart(2, '0');
-    return { tick: w.tick, clock: `${hh}:${mm}`, hour: t.hourFloat || 0, date: w.calendar.formatDate(w.tick), year: rec.year, month: rec.month, dow: rec.dow, doy: rec.doy, season: SEASON(rec.month ?? 0), sunrise: rec.sunrise ?? 6.5, sunset: rec.sunset ?? 18, bst: !!rec.bst, bank: rec.bankHoliday || null, term: rec.term || null, weather: w.weather ? { type: w.weather.type, temp: w.weather.temp } : null, pop: w.living().length };
+    return { tick: w.tick, clock: `${hh}:${mm}`, hour: t.hourFloat || 0, date: w.calendar.formatDate(w.tick), year: rec.year, month: rec.month, dow: rec.dow, doy: rec.doy, season: SEASON(rec.month ?? 0), sunrise: rec.sunrise ?? 6.5, sunset: rec.sunset ?? 18, bst: !!rec.bst, bank: rec.bankHoliday || null, term: rec.term || null, weather: this.weatherInfo(rec), pop: w.living().length };
+  }
+  // The kernel's daily weather still uses the legacy 4x28-day seasons; remap to the real calendar month so it never snows in July.
+  weatherInfo(rec) {
+    const wx = this.w.weather; if (!wx) return null; const m = rec.month ?? 0, win = m === 11 || m <= 1; let type = wx.type;
+    if (type === 'snow' && !win) type = 'rain'; if (type === 'fog' && (m >= 5 && m <= 7)) type = 'cloudy'; if (type === 'rain' && m >= 6 && m <= 7 && wx.temp > 20) type = 'clear';
+    const legacy = [11, 22, 10, -1][this.w.time.season ?? 0], mean = [5, 5, 8, 10, 13, 16, 19, 19, 16, 12, 8, 5][m];
+    return { type, temp: Math.round(mean + (wx.temp - legacy) * 0.6) };
   }
   setTier(id) {
     if (!(id in this.tiers)) id = 'life'; this.tier = id; this.tps = this.tiers[id]; this.acc = 0;
@@ -132,7 +139,7 @@ export class Host {
     if (asig !== this.arcSig) { this.arcSig = asig; this.send({ t: 'arcs', arcs, quiet: arcs.length === 0, stats: this.sifter.stats() }); }
   }
   arcView(a) {
-    const w = this.w; const beats = a.beats.slice(-5).map((b) => { const ev = w.events.get ? w.events.get(b.eid) : null; return { tick: b.tick, date: w.calendar.formatDate(b.tick), stage: b.stage, text: ev ? describeEvent(w, ev, this.text).line : b.type }; });
+    const w = this.w; const beats = a.beats.filter((b) => !/^goal\.(step|effect|planned|replanned|deferred)$|^social\.rumour$|^group\.meeting$/.test(b.type)).slice(-5).map((b) => { const ev = w.events.get ? w.events.get(b.eid) : null; return { tick: b.tick, date: w.calendar.formatDate(b.tick), stage: b.stage, text: ev ? describeEvent(w, ev, this.text).line : b.type }; });
     return { id: a.id, kind: a.kind, status: a.status, outcome: a.outcome, stage: a.stage, score: r2(a.score), n: a.beats.length, start: w.calendar.formatDate(a.start), last: w.calendar.formatDate(a.last), days: Math.round((a.last - a.start) / this.TPD), actors: a.actors.slice(0, 5).map((id) => this.ref(id)), beats, quiet: !!a.quiet };
   }
 

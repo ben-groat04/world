@@ -39,7 +39,7 @@ export class MapView {
     if (this.map) { this.minZ = Math.max(1.6, Math.min(this.w / this.map.w, (this.h - this.inset) / this.map.h) * 0.85); }
   }
   setInset(px) { this.inset = px; this.minZ = this.map ? Math.max(1.6, Math.min(this.w / this.map.w, (this.h - this.inset) / this.map.h) * 0.85) : 2; }
-  fit() { if (!this.map) return; const z = Math.min(this.w / (this.map.w * 0.62), (this.h - this.inset) / this.map.h) ; this.cam = { x: this.map.w / 2, y: this.map.h / 2, z: clamp(z, this.minZ, this.maxZ) }; this.clampCam(); }
+  fit(all = false) { if (!this.map) return; const full = Math.min(this.w / (this.map.w * 0.62), (this.h - this.inset) / this.map.h); const narrow = this.w < 700; const z = narrow && !all ? Math.max(full, this.w / 58) : full; this.cam = { x: this.map.w / 2, y: narrow && !all ? this.map.h * 0.55 : this.map.h / 2, z: clamp(z, this.minZ, this.maxZ) }; this.clampCam(); }
   viewCy() { return (this.h - this.inset) / 2; }
   toScreen(x, y) { return [(x - this.cam.x) * this.cam.z + this.w / 2, (y - this.cam.y) * this.cam.z + this.viewCy()]; }
   toTile(sx, sy) { return [(sx - this.w / 2) / this.cam.z + this.cam.x, (sy - this.viewCy()) / this.cam.z + this.cam.y]; }
@@ -238,9 +238,9 @@ export class MapView {
     if (this.selected != null) { const p = this.P.get(this.selected), r = this.store.s.roster.get(this.selected); if (p && r && this.visible(p, this.now)) { const [x, y] = this.toScreen(p.x, p.y); label(`${r.first} ${r.last}`, x, y - this.figH(p) - 22, 12, '#ffd36b', true); } }
   }
   drawTimelapse(ctx, now) {
-    ctx.fillStyle = 'rgba(8,12,18,0.45)'; const t = this.time; const txt = `${t.season} ${t.year}`;
-    ctx.font = '700 34px system-ui'; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; const w = ctx.measureText(txt).width;
-    ctx.fillRect(14, 62, w + 28, 52); ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.fillText(txt, 28, 100);
-    ctx.font = '600 11px system-ui'; ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.fillText('TIME-LAPSE', 28, 76);
+    const t = this.time, txt = `${t.season} ${t.year}`, fs = this.w < 700 ? 22 : 32, y = this.h - this.inset - 54;
+    ctx.font = `700 ${fs}px system-ui`; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; const w = ctx.measureText(txt).width;
+    ctx.fillStyle = 'rgba(8,12,18,0.55)'; ctx.beginPath(); ctx.roundRect(10, y - fs - 12, w + 24, fs + 28, 12); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.95)'; ctx.fillText(txt, 22, y); ctx.font = '700 10px system-ui'; ctx.fillStyle = 'rgba(255,211,107,0.9)'; ctx.fillText('TIME-LAPSE', 22, y - fs - 1);
   }
 }

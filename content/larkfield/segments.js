@@ -85,7 +85,7 @@ export const SEGMENTS = [
   {
     id: 'young_sharers', label: 'Young sharers (house-shares, early 20s to early 30s)', householdShare: 0.10,
     blurb: 'Early-career renters in HMOs and flat-shares; first proper jobs in the city; the local pub and takeaway are conveniences, friends mostly live elsewhere in the city; a 1-3 year chapter.',
-    head: { age: [21, 34], activity: { employed: 0.84, unemployed: 0.05, student: 0.08, longTermSickDisabled: 0.03 } },
+    head: { age: [21, 34], activity: { employed: 0.7, unemployed: 0.05, student: 0.22, longTermSickDisabled: 0.03 } },
     tenure: { private_rent: 0.93, housing_assoc: 0.03, council: 0.0, shared_ownership: 0.02, mortgage: 0.02 },
     originBornUK: 0.62, yearsInArea: { median: 1.9, p10: 0.4, p90: 5 },
     mobility: { annualMoveProb: 0.40, moveReasons: { flatmates_leave: 0.25, partner: 0.2, job: 0.15, rent: 0.15, buy: 0.1, space: 0.15 }, car: 0.1, bus: 0.35, bike: 0.2, walkMinutesPerDay: 55, offMapTripsPerWeek: 10 },

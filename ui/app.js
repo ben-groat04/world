@@ -129,7 +129,7 @@ function endPtr(e, cancel) {
 canvas.addEventListener('pointerup', (e) => endPtr(e, false)); canvas.addEventListener('pointercancel', (e) => endPtr(e, true));
 canvas.addEventListener('wheel', (e) => { e.preventDefault(); const r = rect(); view.zoomAt(e.clientX - r.left, e.clientY - r.top, Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0016))); }, { passive: false });
 canvas.addEventListener('dblclick', (e) => { const r = rect(); view.zoomAt(e.clientX - r.left, e.clientY - r.top, 1.8); });
-$('z-in').onclick = () => view.zoomBy(1.4); $('z-out').onclick = () => view.zoomBy(1 / 1.4); $('z-fit').onclick = () => view.fit();
+$('z-in').onclick = () => view.zoomBy(1.4); $('z-out').onclick = () => view.zoomBy(1 / 1.4); $('z-fit').onclick = () => view.fit(true);
 addEventListener('keydown', (e) => {
   if (e.target && /input|textarea|select/i.test(e.target.tagName) || e.metaKey || e.ctrlKey) return; const k = e.key; const ids = store.s.tiers.map((t) => t.id);
   if (k === ' ') { setTier(store.s.tier === 'pause' ? prevTier : 'pause'); e.preventDefault(); }

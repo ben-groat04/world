@@ -181,7 +181,7 @@ export class Host {
     return {
       id, name: nm(p), first: p.firstName, last: p.lastName, age: Math.floor(age), ageF: age, sex: p.sex, alive: !!p.alive, cause: p.causeOfDeath || null,
       seg: pop.seg, segLabel: SEG_LABEL[pop.seg] || '', role: pop.role, eth: pop.eth, born: pop.birthplace, bornUK: pop.bornUK, religion: pop.religion, yearsAtAddress: pop.yearsAtAddress, edu: pop.edu, car: !!pop.car, pets: pop.pets,
-      home, household: { size: hh ? (hh.members ? hh.members.length : null) : null, members: mem }, unit: unit ? { tenure: unit.tenure, rent: unit.rent, bedrooms: unit.bedrooms, cond: r2(unit.cond), damp: !!unit.damp, notice: !!unit.notice, landlord: unit.landlord != null ? this.ref(unit.landlord) : null, address: unit.address, value: unit.value } : null,
+      home, household: { size: hh ? (hh.members ? hh.members.length : null) : null, members: mem }, unit: unit ? { tenure: unit.tenure, rent: unit.rent, bedrooms: unit.bedrooms, cond: r2(unit.cond), damp: !!unit.damp, notice: !!unit.notice, landlord: unit.landlord != null && w.people.has(unit.landlord) ? this.ref(unit.landlord) : null, address: unit.address, value: unit.value } : null,
       job: p.job, activity: pop.activity, jobInfo: job, workplace,
       money: { pressure: press, budget: bud, savings: Math.round(fin.savings || 0), debt: Math.round(fin.debt || 0), arrears: Math.round(fin.arrears || 0), net: Math.round(fin.net || 0), gross: Math.round(fin.gross || 0), burden: S(() => q.housing.query.rentBurden(id), 0) },
       health: { status: hst, mental: men, wellbeing: wb, mood: r2(p.mood || 0) }, needs: p.needs,
@@ -195,7 +195,7 @@ export class Host {
     const P = (ids) => (ids || []).map((i) => w.people.get(i)).filter((p) => p && p.alive).map((p) => ({ id: p.id, name: nm(p), job: p.job, age: Math.floor(w.ageOf(p)) }));
     const inside = P([...(b.occupants || [])].map((p) => (typeof p === 'object' ? p.id : p)));
     const iv = v ? openingsFor(w.pack, v, rec.dow, rec.bankHoliday) : null;
-    const units = (lf.units || []).slice(0, 8).map((u) => this.safe(() => { const U = w.lf.housing.list.find((x) => x.id === u); return U ? { id: U.id, tenure: U.tenure, bedrooms: U.bedrooms, rent: U.rent, cond: r2(U.cond), vacant: U.hh < 0, landlord: U.landlord != null ? this.ref(U.landlord) : null } : null; }, null)).filter(Boolean);
+    const units = (lf.units || []).slice(0, 8).map((u) => this.safe(() => { const U = w.lf.housing.list.find((x) => x.id === u); return U ? { id: U.id, tenure: U.tenure, bedrooms: U.bedrooms, rent: U.rent, cond: r2(U.cond), vacant: U.hh < 0, landlord: U.landlord != null && w.people.has(U.landlord) ? this.ref(U.landlord) : null } : null; }, null)).filter(Boolean);
     const staff = this.safe(() => q.labour.query.firm(id), null);
     const owner = b.ownerId != null ? this.ref(b.ownerId) : (units.find((u) => u.landlord) || {}).landlord || null;
     return { id, name: b.name, address: lf.address || b.name, type: b.type, kind: lf.kind, cat: lf.category, tpl: lf.template, arch: lf.archetype, hours: iv ? hoursText(iv) : null, open: iv ? iv.some(([a, b2]) => (w.time.hourFloat >= a && w.time.hourFloat < b2)) : null, capacity: v ? v.capacity : null, inside, residents: P(b.residents).slice(0, 16), employees: P(b.employees).slice(0, 16), units, owner, firm: staff, year: w.map.lf.buildings[id]?.year, storeys: w.map.lf.buildings[id]?.storeys };

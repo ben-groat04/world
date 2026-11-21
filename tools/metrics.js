@@ -8,10 +8,11 @@ export function metrics(w, pop0, years) {
   const old = ad.filter((p) => w.ageOf(p) >= 65), young = ad.filter((p) => w.ageOf(p) < 25);
   const ls = (g) => (g.length ? g.filter((p) => p.ext.hl && p.ext.hl.lonely).length / g.length : 0);
   const emp = ad.filter((p) => p.ext.pop && ['employed', 'unemployed'].includes(p.ext.pop.activity));
+  const rec = (w.lf.life && w.lf.life.rec) || {}, nb = (rec.births || []).length, nd = (rec.deaths || []).length;
   return {
     popRatio: L.length / pop0, employed: act('employed'), student: act('student'), home_family: act('home_family'), retired: act('retired'),
     unemployment: emp.length ? emp.filter((p) => p.ext.pop.activity === 'unemployed').length / emp.length : 0,
-    tfr: (w.stats.births / years / women) * 30, birthsPerYr: w.stats.births / years, deathsPerYr: w.stats.deaths / years,
+    tfr: (nb / years / women) * 30, birthsPerYr: nb / years, deathsPerYr: nd / years,
     lonely, lonelyYoung: ls(young), lonelyOld: ls(old), evictionsPerYr: (hs.evictions || 0) / years, movesPerYr: (hs.moves || 0) / years, arrivalsPerYr: (hs.arrivals || 0) / years, departuresPerYr: (hs.departures || 0) / years,
     medianNet: nets.length ? nets[nets.length >> 1] : 0,
   };

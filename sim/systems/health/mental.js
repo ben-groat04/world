@@ -18,10 +18,12 @@ function loneScore(w, p, age) {
   let iso = 0; if (live <= 1) iso += 0.5; if (age >= 75) iso += 0.25; if (L.mar === 'widowed' && L.widowedAt != null && yearsSince(w, L.widowedAt) < 4) iso += 0.45;
   if (q.activity === 'unemployed' || q.activity === 'sick_disabled' || q.activity === 'other_inactive') iso += 0.3; if (q.health.limiting === 2) iso += 0.35;
   if (q.yearsAtAddress < 1.2 && q.seg === 'recent_arrivals') iso += 0.3; if (q.seg === 'recent_arrivals') iso += 0.15; if (L.caring) iso += 0.25;
-  return 1.7 - 0.55 * Math.min(supportOf(w, p), 7) + 1.0 * iso + 1.6 * (N - 0.5) - 1.3 * (E - 0.5) + (age < 25 ? 0.5 : age < 35 ? 0.2 : 0) + (hl.grief.length ? 0.4 : 0);
+  // contact-based: the social plugin's score (personal need for company vs support actually received through real contact, tie quality, household) + circumstances that isolate
+  const sq = w.sys.social && w.sys.social.query; const sl = sq ? sq.loneliness(p.id) : 0.7 - 0.1 * Math.min(supportOf(w, p), 7);
+  return sl + 0.45 * iso + (hl.grief.length ? 0.2 : 0);
 }
 
-export const LONE_THRESHOLD = 0.15; // score above which someone would answer 'often/always lonely'
+export const LONE_THRESHOLD = 0.42; // score above which someone would answer 'often/always lonely'
 export function monthlyMental(w, rng, people) {
   const st = w.lf.health, T = w.tick;
   // loneliness: a fixed reporting threshold on the loneliness score (LONE_THRESHOLD); prevalence emerges from ties, household, personality, age and events

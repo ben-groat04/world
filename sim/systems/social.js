@@ -104,7 +104,7 @@ function updateTags(world, a, b, r) {
   const other = b.relationships && b.relationships.get(a.id);
   for (const t of added) {
     if (t === 'acquaintance') continue;
-    world.emit('relationshipChange', { a: a.id, b: b.id, tag: t, added: true });
+    world.emit('relationshipChange', { a, b, tag: t, added: true });
     const key = a.id < b.id ? `${a.id}-${b.id}` : `${b.id}-${a.id}`;
     if (t === 'close_friend' && !r.tags.includes('family') && other && other.tags.includes('close_friend') && !S.feuds.has('cf' + key)) {
       S.feuds.add('cf' + key);
@@ -263,7 +263,7 @@ export function hear(world, hearer, rumor, teller) {
   rs.trust = clamp(rs.trust + copy.valence * 0.05 * cred, 0, 1);
   if (copy.kind === 'praise') rs.respect = clamp(rs.respect + 0.05, -1, 1);
   if (copy.valence < 0) rs.respect = clamp(rs.respect + copy.valence * 0.04, -1, 1);
-  world.emit('rumor', { rumor: copy, about: subj.id, from: teller ? teller.id : null, to: hearer.id });
+  world.emit('rumor', { rumor: copy, about: subj, from: teller || null, to: hearer });
   return true;
 }
 

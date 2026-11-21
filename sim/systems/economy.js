@@ -633,7 +633,7 @@ function closeBusiness(w, b, owner) {
   const T = [`${bName(b)} has closed its doors for good after ${years < 1 ? 'less than a year' : Math.round(years) + ' years'} of trade.${lead}`, `Bankruptcy at ${bName(b)}: the creditors were paid pennies on the crown and the shutters are down.${lead}`, `${bName(b)} could not make its wages and has been wound up.${lead}`];
   w.chronicle.add({ type: 'bankruptcy', importance: 4, text: w.rng.pick(T), people: owner ? [owner.id] : [], buildingId: b.id });
   if (owner) { owner.money = Math.max(0, owner.money - 60); owner.reputation = clamp(owner.reputation - 0.06, -1, 1); w.addMemory(owner, { type: 'bankruptcy', text: `Went bankrupt with ${bName(b)}.`, otherIds: [], weight: -0.9, importance: 5 }); addDebt(w, owner, 40); }
-  w.emit('bankruptcy', { buildingId: b.id, ownerId: owner?.id ?? null });
+  w.emit('bankruptcy', { buildingId: b.id, owner: owner || null });
 }
 
 function openBusinesses(w, force) {
@@ -657,7 +657,7 @@ function openBusinesses(w, force) {
   w.addMemory(p, { type: 'business', text: `Opened ${name} (formerly ${old}) with ${280} crowns of savings.`, otherIds: [], weight: 0.7, importance: 4 });
   const T = [`${nm(p)} has bought the empty premises of the old ${old} and opens ${name}.`, `New in ${w.town?.name || 'town'}: ${nm(p)} opens ${name} as a ${BUILDING_TYPES[b.type]?.label.toLowerCase() || b.type}, staking ${p.sex === 'F' ? 'her' : 'his'} savings on it.`, `${name} opens under ${nm(p)}, reviving the shuttered ${old}.`];
   w.chronicle.add({ type: 'business', importance: 3, text: w.rng.pick(T), people: [p.id], buildingId: b.id });
-  w.emit('businessOpened', { buildingId: b.id, ownerId: p.id });
+  w.emit('businessOpened', { buildingId: b.id, owner: p });
 }
 
 // ---------------------------------------------------------------- housing

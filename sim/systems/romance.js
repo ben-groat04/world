@@ -263,7 +263,7 @@ export function marry(a, b, o = {}) { // instant marriage (no ceremony details);
     if (house.ownerId == null || !P(house.ownerId) || !P(house.ownerId).alive) house.ownerId = a.sex === 'M' || b.sex !== 'M' ? a.id : b.id;
   }
   W.stats.marriages = (W.stats.marriages || 0) + 1;
-  W.emit('marriage', { a, b, aId: a.id, bId: b.id });
+  W.emit('marriage', { a, b });
 }
 export function finalizeWedding(a, b, invited = []) {
   if (!a.alive || !b.alive) return false;
@@ -442,7 +442,7 @@ export function divorce(a, b, o = {}) {
     `The temple elders have granted a divorce to ${full(a)} and ${full(b)}${o.adultery ? ' after the scandal of the affair' : ''}; ${leaver.firstName} has taken ${pr(leaver).p} things and gone.`,
     `The ${hus.lastName} marriage is over: ${wife.firstName} and ${hus.firstName} part after ${Math.max(1, Math.round(yrs))} years${o.reason ? ' on account of ' + o.reason : ''}.`]), people: [a.id, b.id] });
   rumor('divorce', o.initiator || a, null, 3);
-  W.emit('divorce', { a, b, aId: a.id, bId: b.id });
+  W.emit('divorce', { a, b });
   return true;
 }
 

@@ -61,7 +61,7 @@ export function attachCollector(w) {
   w.on('immigrate', safe(() => { Y().imm++; }));
   w.on('emigrate', safe((e) => { Y().emi += Math.max(1, Array.isArray(e.group) ? e.group.length : 1); }));
   w.on('rumor', safe(() => { d.rumors++; }));
-  w.on('election', safe((e) => { if (e.phase === 'result' && e.winner != null) d.mayors.push({ id: e.winner, tick: w.tick }); }));
+  w.on('election', safe((e) => { if (e.phase === 'result' && e.winner != null) d.mayors.push({ id: idOf(e.winner), tick: w.tick }); }));
   w.on('jobChange', safe((e) => { if (e.newJob === 'mayor' && e.person) { const l = d.mayors[d.mayors.length - 1]; if (!l || l.id !== e.person.id) d.mayors.push({ id: e.person.id, tick: w.tick }); } }));
 
   // daily-rhythm samples: 3am home/asleep, 11am workday at work

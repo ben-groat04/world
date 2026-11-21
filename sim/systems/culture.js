@@ -215,7 +215,7 @@ function fire(w, b, opts = {}) {
   const cause = opts.cause || (FIRE_CAUSE[b.type] ? r.pick(FIRE_CAUSE[b.type]) : 'a stray spark');
   const text = [`FIRE at ${bn(b)}: ${cause}${night ? ' in the dead of night' : ''}.`, gutted ? `The building is gutted${rehoused ? ` and ${rehoused} of its household have been taken in by neighbours or kin` : ''}.` : `The damage is bad but the walls stand.`, volunteers.length ? `${volunteers.length} neighbours formed a bucket line${heroes[0] ? `, ${nm(heroes[0])} foremost among them` : ''}.` : 'Hardly anyone was near enough to help.', dead.length ? `${list(dead.map(nm))} ${dead.length > 1 ? 'did' : 'did'} not escape.` : hurt.length ? `${hurt.length} were hurt but all lived.` : 'Everyone got out alive.'].join(' ');
   chron(w, 'disaster', dead.length || gutted ? 5 : 4, text.replace('FIRE', 'Fire'), [owner?.id, ...dead.map((p) => p.id), heroes[0]?.id], b.id);
-  w.emit('fire', { buildingId: b.id, severity: dmg, dead: dead.map((p) => p.id), gutted });
+  w.emit('fire', { buildingId: b.id, severity: dmg, dead, gutted });
   w.emit('disaster', { kind: 'fire', buildingId: b.id });
   st.disasters.push({ kind: 'fire', tick: w.tick, buildingId: b.id, dead: dead.length });
   st.lastDisasterTick = w.tick;
@@ -531,7 +531,7 @@ function sermon(w) {
   if (donated) { T.almsBox = (T.almsBox || 0) + donated * 0.7; tp.funds = (tp.funds || 0) + donated * 0.3; }
   st.services++;
   st.lastSermon = { tick: w.tick, topic, attendance: hear.length };
-  w.emit('sermon', { priestId: pr?.id, topic, attendance: hear.length });
+  w.emit('sermon', { priest: pr || null, topic, attendance: hear.length });
   const mayor = T.mayorId != null ? w.people.get(T.mayorId) : null;
   // notable sermons reach the chronicle: after disasters, to full houses, or against a scandal
   const special = topic === 'resilience' || hear.length > 105;
@@ -833,7 +833,7 @@ function miracle(w, params = {}) {
   }
   for (const p of w.living()) { if (!p.values) continue; const near = hear.includes(p); p.values.piety = clamp(p.values.piety + (near ? 0.1 : 0.03) * (p.personality.openness > 0.5 ? 1.2 : 0.8), 0, 1); mood(w, p, 'miracleAwe', 'Stirred by talk of a miracle', near ? 0.25 : 0.1, 7 * DAY); }
   C(w).miracles++;
-  w.emit('miracle', { kind, personId: sick?.id });
+  w.emit('miracle', { kind, person: sick || null });
   return `miracle (${kind})${sick ? ' on ' + nm(sick) : ''}`;
 }
 function interventions(w) {

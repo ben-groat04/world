@@ -135,8 +135,8 @@ function commitCrime(w, perp, kind, victim, opts = {}) {
     if (sawIt) { const r = w.getRel(q, perp); r.affinity = clamp(r.affinity - 0.12 * SEVERITY[kind], -1, 1); r.trust = clamp(r.trust - 0.15, 0, 1); }
   }
   // the wider world: social turns known crimes into rumours
-  w.emit('crime', { kind, perpetrator: perp.id, perpId: perp.id, victim: victim.id, victimId: victim.id, buildingId: bId, known, caseId: cs.id, loss, dead, tick: w.tick });
-  if (cs.falseSuspicion) { const sus = w.people.get(cs.suspectId); if (sus && rng.chance(0.6)) w.emit('scandal', { person: sus.id, kind: 'crime', truth: false, text: `is said to be behind the ${kind} against ${nm(victim)}` }); }
+  w.emit('crime', { kind, perpetrator: perp, victim, buildingId: bId, known, caseId: cs.id, loss, dead, tick: w.tick });
+  if (cs.falseSuspicion) { const sus = w.people.get(cs.suspectId); if (sus && rng.chance(0.6)) w.emit('scandal', { person: sus, kind: 'crime', truth: false, text: `is said to be behind the ${kind} against ${nm(victim)}` }); }
   // consequences of a death
   if (dead) {
     if (kind === 'murder' || kind === 'manslaughter') { kinGrudge(w, victim, perp, 1.6); for (const id of [victim.family.spouseId, ...victim.family.childrenIds]) { const q = id != null ? w.people.get(id) : null; if (q && q.alive && known) { const r = w.getRel(q, perp); r.affinity = -1; r.trust = 0; if (!r.tags.includes('enemy')) r.tags.push('enemy'); } } }

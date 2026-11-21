@@ -207,7 +207,7 @@ function startCampaign(w, opts = {}) {
   const list = names.length === 1 ? names[0] : names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
   const verb = E.special ? w.rng.pick(['A special election has been called', 'The council has called a fresh election']) : w.rng.pick(['Nominations are closed', 'The candidates are set', 'The race for the mayor\'s chain begins']);
   chron(w, 'election', 4, `${verb}: ${list} stand${cands.length === 1 ? 's' : ''} for mayor of ${w.town.name || 'the town'}, with the vote set for ${w.formatDate(w.tick + days * DAY)}.${cands.length > 1 ? ` ${nm(cands[0])} promises ${platformSentence(platforms[cands[0].id])}; ${nm(cands[1])} speaks for ${platformSentence(platforms[cands[1].id])}.` : ''}`, cands.map((p) => p.id), townhall(w)?.id);
-  w.emit('election', { phase: 'campaign', candidates: E.candidates.slice(), voteDay: E.voteDay });
+  w.emit('election', { phase: 'campaign', candidates: E.candidates.map((id) => w.people.get(id)), voteDay: E.voteDay });
   return E;
 }
 function rumorPenalty(voter, cand) {
@@ -291,7 +291,7 @@ function tally(w) {
   if (closeCall) text += ` It was the narrowest of margins, and the losing side muttered about the count.`;
   if (inc && !wasInc && cands.includes(inc) && st.econ < -0.2 && ranked.length > 1) text += ` Hard times told against the old administration.`;
   chron(w, 'election', 5, text, ranked.map((c) => c.id), townhall(w)?.id);
-  w.emit('election', { phase: 'result', winner: win.id, votes: Object.fromEntries(votes), cast, eligible, turnout });
+  w.emit('election', { phase: 'result', winner: win, votes: Object.fromEntries(votes), cast, eligible, turnout });
   st.lastResult = { tick: w.tick, winner: win.id, votes: Object.fromEntries(votes), cast, eligible };
   // seat council from the runners-up and appoint the winner
   setMayor(w, win, wasInc ? 'reelected' : 'elected', { votes: wv, cast, endReason: wasInc ? 'reelected' : 'defeated' });
@@ -553,7 +553,7 @@ function coup(w, params = {}) {
   usurper.reputation = clamp((usurper.reputation || 0) - 0.25, -1, 1);
   st.nextElectionYear = w.time.year + 2; st.coupDay = w.time.totalDays;
   st.election = null; w.town.election = null;
-  w.emit('election', { phase: 'coup', usurper: usurper.id });
+  w.emit('election', { phase: 'coup', usurper });
   return `${nm(usurper)} seized power`;
 }
 function checkVacancy(w) {

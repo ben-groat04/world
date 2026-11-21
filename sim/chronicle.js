@@ -19,6 +19,7 @@ export class Chronicle {
       l.push(e);
     }
     this.world.emit('chronicle', e);
+    this.world.emit('legacy.chron', { actors: people, place: buildingId, tags: [type], salience: importance / 5, payload: { entryId: e.id } });
     return e;
   }
   // newest-first list of the last n entries with importance >= minImportance

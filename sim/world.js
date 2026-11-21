@@ -12,13 +12,14 @@ import { createPerson, generatePopulation, newRel, fullName } from './person.js'
 import defaultSystems from './systems/index.js';
 import { subRng } from './kernel/rng.js';
 import { EventBus } from './kernel/events.js';
+import { LEGACY_EVENT_TYPES } from './kernel/event-types.js';
 import { CommandBus } from './kernel/commands.js';
 import { Ledger } from './kernel/ledger.js';
 import { Text } from './kernel/text.js';
 import { Lod } from './kernel/lod.js';
 import { Indices } from './kernel/indices.js';
 import { Affordances } from './kernel/affordances.js';
-import { Scheduler } from './kernel/scheduler.js';
+import { Scheduler, NEEDS_PERIOD_AGENDA } from './kernel/scheduler.js';
 import { loadPlugins, isPlugin } from './kernel/plugin.js';
 import { adaptLegacySystem } from './kernel/legacy.js';
 import { stateHash, saveSnapshot, loadSnapshot } from './snapshot.js';
@@ -61,6 +62,7 @@ export class World {
     // world keys holding persistent system state (serialized by sim/snapshot.js). Systems may push their own namespace.
     this.stateKeys = ['stats', 'town', 'weather', 'player', 'social', 'culture', 'econ', 'healthState', 'migrationState', 'politics', 'romanceState', 'crime'];
     this._handlers = new Map();
+    for (const t of LEGACY_EVENT_TYPES) this._handlers.set(t, []);
     this._rngs = new Map();
     this._interventions = new Map();
     this.people = new Map();
@@ -138,10 +140,11 @@ export class World {
     const l = this._handlers.get(type); if (l) { const i = l.indexOf(fn); if (i >= 0) l.splice(i, 1); }
   }
   emit(type, payload) {
+    const l = this._handlers.get(type); // legacy types always have a (possibly empty) handler list: one Map lookup on the hot path
+    if (l !== undefined) { for (let i = 0; i < l.length; i++) l[i](payload); return; }
     const reg = this.events.registry.map.get(type);
     if (reg === undefined ? type.indexOf('.') >= 0 : !reg.legacy) return this.events.emit(type, payload);
     if (reg === undefined && this.strictEvents) throw new Error(`unknown event type '${type}'`);
-    const l = this._handlers.get(type); if (l) for (let i = 0; i < l.length; i++) l[i](payload);
   }
   registerEventType(type, def) { this.events.register(type, def); return this; }
 
@@ -162,6 +165,17 @@ export class World {
     return w;
   }
   stateHash() { return stateHash(this); }
+  // after snapshot restore: rebuild every derived structure (indices, wheel, walkers, mood expiry queue, adapter views)
+  _afterLoad() {
+    this._living = []; this._livingDirty = true; this._walkers.clear(); this._syncTick = -1;
+    this.index = new Indices(this); this.lod.counts = [0, 0, 0, 0];
+    for (const p of this.living()) { this.index._add(p); if (p.currentAction && p.currentAction.status === 0 && p.currentAction.lazy) this._walkers.add(p); }
+    this._moodQ.clear();
+    for (const p of this.living()) for (const m of p.moodlets) { const h = Math.ceil(m.untilTick / 6); let s = this._moodQ.get(h); if (!s) this._moodQ.set(h, (s = new Set())); s.add(p); }
+    this._tickSystems = this.systems.filter((s) => s.onTick);
+    for (const s of this.systems) if (s.afterLoad) s.afterLoad(this);
+    if (this.sched.agenda) this.sched.rebuild();
+  }
 
   // ---------- registries ----------
   registerAction(def) { this.brain.register(def); this.actions.set(def.id, this.brain.list.find((d) => d.id === def.id)); }
@@ -326,10 +340,11 @@ export class World {
     else if (target && typeof target === 'object') tile = target.y * W + target.x;
     let route = null;
     if (b ? p.locationId !== b.id : tile >= 0 && p.y * W + p.x !== tile) { route = this._route(p, b, tile); if (!route) return false; }
-    if (p.currentAction) this.endAction(p);
+    if (p.currentAction) this.endAction(p, true);
     const ca = { id, label: typeof def.label === 'function' ? def.label(this, p) : def.label, targetId: b ? b.id : null, untilTick: 0, status: 1, startTick: this.tick, why: why || '', data: opts.data ?? null, forced: !!opts.forced, duration: opts.duration ?? null, thoughtText: opts.thought || null, _d: def, _b: b,
       tt: 0, lazy: false, spd: 0, walkT0: 0, walkK: 0, walkDone: 0, arrive: 0 };
-    p.currentAction = ca; p.wake = 0;
+    p.currentAction = ca;
+    if (!this.sched.agenda) p.wake = 0;
     this.emit('actionStart', { person: p, action: ca });
     let ok = true;
     if (route) {
@@ -341,12 +356,12 @@ export class World {
       }
       p.thought = this._thought(p, ca, false);
     } else ok = this._begin(p, ca);
-    if (this.sched.agenda) { p.wake = -2; this.sched.plan(p); }
+    if (this.sched.agenda && this.sched.cur !== p) { p.wake = -2; this.sched.plan(p); }
     return ok;
   }
   forceAction(p, id, target, opts = {}) { return this.startAction(p, id, target, opts.why || '', { ...opts, forced: true }); }
   cancelAction(p) { if (p.currentAction) this.endAction(p); }
-  endAction(p) {
+  endAction(p, noPlan = false) {
     const ca = p.currentAction;
     if (!ca) return;
     const def = ca._d;
@@ -355,8 +370,9 @@ export class World {
     if (ca.status === 1 && def.onTick !== undefined && this.tick > ca.tt) { const dt = this.tick - ca.tt; ca.tt = this.tick; def.onTick(this, p, ca._b, ca, dt); }
     if (ca.status === 1 && def.onEnd) def.onEnd(this, p, ca._b, ca);
     this.emit('actionEnd', { person: p, action: ca });
-    p.currentAction = null; p.lastAction = ca.id; p.wake = 0;
-    if (this.sched.agenda && this.sched.cur !== p) { p.wake = -2; this.sched.plan(p); }
+    p.currentAction = null; p.lastAction = ca.id;
+    if (!this.sched.agenda) p.wake = 0;
+    else if (!noPlan && this.sched.cur !== p) { p.wake = -2; this.sched.plan(p); }
   }
   _thought(p, ca, doing) {
     const def = ca._d, b = ca._b;
@@ -538,7 +554,7 @@ export class World {
   _agendaPerson(p) {
     const tick = this.tick;
     let ca = p.currentAction;
-    if (tick - p.needsTick >= 24 && (ca === null || ca.status === 1)) stepNeeds(this, p);
+    if (tick - p.needsTick >= NEEDS_PERIOD_AGENDA && (ca === null || ca.status === 1)) stepNeeds(this, p);
     if (ca === null) { this.brain.decide(p); ca = p.currentAction; if (ca === null) return; }
     if (ca.status === 0) {
       if (ca.lazy) { this._materialize(p); this._arrive(p); } else if (this._walk(p)) this._arrive(p);
@@ -549,8 +565,6 @@ export class World {
     if (tick >= ca.untilTick) {
       this.endAction(p);
       this.brain.decide(p);
-      const na = p.currentAction;
-      if (na && na.status === 0 && !na.lazy) { if (this._walk(p)) this._arrive(p); }
     } else if (def.interruptible && !ca.forced && tick >= p.nextThink) {
       this.brain.decide(p);
       if (ca === p.currentAction) { this.brain.prepare(p); p.nextThink = this.brain.interruptAt(p, def); }

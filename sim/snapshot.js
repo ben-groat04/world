@@ -5,7 +5,7 @@
 //   const world = loadSnapshot(snap, opts)      // opts.systems optional (same default as World)
 // What is state: world.stateKeys (system namespaces + core records), people, buildings, rng streams, tick.
 // Derived data (spatial grid, path cache, living cache, building-by-type lists) is rebuilt on load.
-import { RNG } from './rng.js';
+import { RNG, hashStr } from './rng.js';
 import { World } from './world.js';
 
 const TYPED = { Int32Array, Float32Array, Float64Array, Uint8Array, Uint32Array, Int16Array, Uint16Array };
@@ -38,14 +38,18 @@ export function saveSnapshot(world) {
   const roots = {};
   for (const k of ['people', 'buildings', 'chronicle', 'settings', ...world.stateKeys]) if (world[k] !== undefined) roots[k] = enc(world[k]);
   const rngs = {}; for (const [name, r] of world._rngs) rngs[name] = { s: r.s, g: r._g };
+  // kernel + plugin state (plain JSON-able)
+  const plugins = {};
+  for (const p of world.plugins) if (p.serialize) plugins[p.name] = { v: p.version, state: JSON.parse(JSON.stringify(p.serialize())) };
+  const kernel = { events: world.events.serialize(), commands: world.commands.serialize(), ledger: world.ledger.serialize(), observed: [...world.lod.observed], hashLog: world.hashLog };
   return {
-    v: 1, seed: world.seed, settings: world.settings, tick: world.tick, nextPersonId: world.nextPersonId,
-    rng: { s: world.rng.s, g: world.rng._g }, rngs, roots, table,
+    v: 2, seed: world.seed, settings: world.settings, tick: world.tick, nextPersonId: world.nextPersonId, sched: world.sched.mode, packId: world.pack ? world.pack.id : null,
+    rng: { s: world.rng.s, g: world.rng._g }, rngs, roots, table, plugins, kernel,
   };
 }
 
 export function loadSnapshot(snap, opts = {}) {
-  const w = new World({ seed: snap.seed, population: snap.settings.population, settings: snap.settings, systems: opts.systems });
+  const w = new World({ seed: snap.seed, population: snap.settings.population, settings: snap.settings, systems: opts.systems, pack: opts.pack, plugins: opts.plugins, sched: opts.sched || snap.sched || 'legacy', strictEvents: opts.strictEvents, hashDaily: !!(snap.kernel && snap.kernel.hashLog) });
   const table = snap.table, objs = new Array(table.length);
   // pass 1: containers
   for (let i = 0; i < table.length; i++) {
@@ -95,6 +99,13 @@ export function loadSnapshot(snap, opts = {}) {
   w._livingDirty = true;
   w.path.cache?.clear?.();
   w.brain._openTick = -1;
+  if (snap.kernel) {
+    w.events.restore(JSON.parse(JSON.stringify(snap.kernel.events))); w.commands.restore(JSON.parse(JSON.stringify(snap.kernel.commands))); w.ledger.restore(JSON.parse(JSON.stringify(snap.kernel.ledger)));
+    w.hashLog = snap.kernel.hashLog ? [...snap.kernel.hashLog] : null;
+    w.lod.observed = new Set(snap.kernel.observed || []);
+  }
+  for (const p of w.plugins) { const e = snap.plugins && snap.plugins[p.name]; if (e && p.deserialize) p.deserialize(e.v !== p.version && p.migrate ? p.migrate(e.v, e.state) : e.state, p.version); }
+  w._afterLoad();
   return w;
 }
 
@@ -103,12 +114,12 @@ export function stateHash(w) {
   let h = 2166136261 >>> 0;
   const mix = (n) => { h ^= (n | 0) >>> 0; h = Math.imul(h, 16777619) >>> 0; };
   const mixf = (x) => mix(Math.round((x || 0) * 1000));
-  mix(w.tick); mix(w.rng.s); mix(w.nextPersonId); mix(w.chronicle.entries.length); mix(w.stats.births); mix(w.stats.deaths);
+  mix(w.tick); mix(w.rng.s); mix(w.nextPersonId); mix(w.events.nextId); mix(w.ledger.n); mix(w.commands.seq); mix(w.chronicle.entries.length); mix(w.stats.births); mix(w.stats.deaths);
   const ids = [...w.people.keys()].sort((a, b) => a - b);
   for (const id of ids) {
     const p = w.people.get(id);
     mix(id); mix(p.alive ? 1 : 0); mix(p.x); mix(p.y); mixf(p.money); mixf(p.health); mixf(p.mood); mixf(p.reputation);
-    mixf(p.needs.hunger); mixf(p.needs.energy); mixf(p.needs.social); mix(p.relationships.size); mix(p.memories.length); mix(p.homeId ?? -1); mix(p.workId ?? -1);
+    mixf(p.needs.hunger); mixf(p.needs.energy); mixf(p.needs.social); mix(p.currentAction ? hashStr(p.currentAction.id) : 0); mix(p.relationships.size); mix(p.memories.length); mix(p.homeId ?? -1); mix(p.workId ?? -1);
   }
   for (const b of w.buildings.values()) { mixf(b.funds); mix(b.employees.length); mix(b.residents.length); }
   return h.toString(16).padStart(8, '0');

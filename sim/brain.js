@@ -1,7 +1,8 @@
 // Utility-AI decision making. Every candidate action is scored; a softmax over the top scores (personality-dependent
 // temperature) picks one. Extension points: world.registerAction(def), brain.addModifier(fn(world,p,def,score)->score).
 import { JOBS } from './map.js';
-import { TICKS_PER_YEAR } from './time.js';
+import { TICKS_PER_YEAR, ticksUntilHour } from './time.js';
+import { DECAY } from './needs.js';
 
 const DEFAULT_JOB = { shift: [8, 17] };
 function inWindow(h, bed, wake) { if (bed >= 24) { const b = bed - 24; return h >= b && h < wake; } return h >= bed || h < wake; }
@@ -12,12 +13,14 @@ export class Brain {
     this.list = [];
     this.modifiers = [];
     this._openTick = -1; this._open = {};
+    this._cd = []; this._cs = []; this._ct = []; this._cy = []; this._cx = []; this._wt = new Float64Array(64);
     this.ctx = { h: 0, tick: 0, weekday: 0, rest: false, age: 0, workDay: false, shift: false, shiftEnd: 0, mealAgo: 0, wake: 6.5, bed: 22, inWin: false, target: null, why: null, data: null };
   }
   register(def) {
     const i = this.list.findIndex((d) => d.id === def.id);
     if (def.perTick) def._pt = Object.entries(def.perTick);
     if (i >= 0) this.list[i] = def; else this.list.push(def);
+    if (this._wt.length < this.list.length + 8) this._wt = new Float64Array(this.list.length * 2 + 16);
   }
   addModifier(fn) { this.modifiers.push(fn); }
   // buildings of `type` that are open right now (cached per tick; shared by all scorers)
@@ -49,52 +52,73 @@ export class Brain {
     c.hfP = null; // household-food cache owner (see actions.householdFood)
     return c;
   }
-  // Score all actions. If `out` is an array, pushes {id,score,target,why} for every candidate (debug / UI "why" view).
+  // Score all actions into the brain's parallel candidate arrays (no per-candidate allocation). Returns the candidate count.
+  // If `out` is an array, also pushes {id,score,target,why} for every candidate (debug / UI "why" view).
   _eval(p, out) {
-    const w = this.world, c = this.prepare(p), cd = p.cooldown;
-    const cands = [];
-    const list = this.list;
+    const w = this.world, c = this.prepare(p), cd = p.cooldown, tick = c.tick, age = c.age;
+    const list = this.list, mods = this.modifiers, nm = mods.length, cur = c.cur;
+    const CD = this._cd, CS = this._cs, CT = this._ct, CY = this._cy, CX = this._cx;
+    let n = 0;
     for (let di = 0; di < list.length; di++) {
       const def = list[di];
-      if (def.minAge !== undefined && c.age < def.minAge) continue;
-      if (def.maxAge !== undefined && c.age > def.maxAge) continue;
-      if (cd[def.id] > c.tick) continue;
+      if (def.minAge !== undefined && age < def.minAge) continue;
+      if (def.maxAge !== undefined && age > def.maxAge) continue;
+      if (cd[def.id] > tick) continue;
       c.target = null; c.why = null; c.data = null;
       let s = def.score(w, p);
       if (!(s > 0)) continue;
-      let target = c.target;
-      const mods = this.modifiers;
-      for (let i = 0; i < mods.length; i++) { const r = mods[i](w, p, def, s); if (typeof r === 'number') s = r; }
+      const target = c.target, why = c.why, data = c.data;
+      for (let i = 0; i < nm; i++) { const r = mods[i](w, p, def, s); if (typeof r === 'number') s = r; }
       const dm = def._mods;
       if (dm !== undefined) for (let i = 0; i < dm.length; i++) { const r = dm[i](w, p, def, s); if (typeof r === 'number') s = r; }
-      if (c.cur === def.id) s += def.stickiness ?? 8;
+      if (cur === def.id) s += def.stickiness ?? 8;
       if (!(s > 0)) continue;
-      cands.push({ def, score: s, target, why: c.why, data: c.data });
-      if (out) out.push({ id: def.id, score: s, target, why: c.why });
+      CD[n] = def; CS[n] = s; CT[n] = target; CY[n] = why; CX[n] = data; n++;
+      if (out) out.push({ id: def.id, score: s, target, why });
     }
-    return cands;
+    return n;
   }
+  // AGENDA MODE. Absolute tick at which an interruptible action should be re-evaluated, or Infinity: the next scheduled obligation
+  // (shift start, school bell, bed time) and the analytic time at which an urgent need threshold is crossed given the current action's
+  // effects. Uses the context prepared for p (World._begin calls prepare first). Replaces the legacy "re-think every 12 ticks" polling.
+  interruptAt(p, def) {
+    const w = this.world, c = this.ctx, tick = w.tick;
+    let t = Infinity, d;
+    if (p.workId != null && c.workDay && !c.shift) {
+      const J = JOBS[p.job] || DEFAULT_JOB;
+      if (c.h < J.shift[0]) { d = ticksUntilHour(tick, J.shift[0]); if (tick + d < t) t = tick + d; }
+    } else if (p.job === 'student' && !c.rest && c.h < 8) { d = ticksUntilHour(tick, 8); if (tick + d < t) t = tick + d; }
+    if (!c.inWin) { d = ticksUntilHour(tick, c.bed % 24); if (tick + d < t) t = tick + d; }
+    const n = p.needs, r = p.needRate, dm = def.decay, pt = def.perTick;
+    d = this._cross(n.hunger, 0.68, DECAY.hunger * r.hunger * (dm && dm.hunger !== undefined ? dm.hunger : 1), pt && pt.hunger || 0); if (tick + d < t) t = tick + d;
+    d = this._cross(n.energy, 0.3, DECAY.energy * r.energy * (dm && dm.energy !== undefined ? dm.energy : 1), pt && pt.energy || 0); if (tick + d < t) t = tick + d;
+    d = this._cross(n.hygiene, 0.5, DECAY.hygiene * r.hygiene * (dm && dm.hygiene !== undefined ? dm.hygiene : 1), pt && pt.hygiene || 0); if (tick + d < t) t = tick + d;
+    return t < tick + 2 ? tick + 2 : Math.ceil(t);
+  }
+  // ticks until need value v falls to thr given decay rate k per tick and perTick gain g (Infinity if it never will / already below)
+  _cross(v, thr, k, g) { const rate = k - g; return v > thr && rate > 1e-9 ? (v - thr) / rate : Infinity; }
   explain(p) { const out = []; this._eval(p, out); return out.sort((a, b) => b.score - a.score); }
-  // Pick and start an action for p. depth guards retries when a chosen action is unreachable.
-  decide(p, depth = 0) {
+  // Pick and start an action for p (softmax over candidate scores; temperature from conscientiousness).
+  decide(p) {
     const w = this.world;
-    const cands = this._eval(p);
-    const n = p.personality;
-    const temp = 2 + 3 * (1 - n.conscientiousness) + (p.traits.includes('lazy') ? 1 : 0);
-    while (cands.length) {
+    let n = this._eval(p);
+    const CD = this._cd, CS = this._cs, CT = this._ct, CY = this._cy, CX = this._cx, WT = this._wt;
+    const temp = 2 + 3 * (1 - p.personality.conscientiousness) + (p.traits.includes('lazy') ? 1 : 0);
+    while (n > 0) {
       let max = -1;
-      for (const k of cands) if (k.score > max) max = k.score;
-      let tot = 0;
-      for (const k of cands) { k.wt = k.score > max - 5 * temp ? Math.exp((k.score - max) / temp) : 0; tot += k.wt; }
-      let r = w.rng.next() * tot, pick = cands[0];
-      for (const k of cands) { r -= k.wt; if (r <= 0 && k.wt > 0) { pick = k; break; } }
-      let target = pick.target;
-      if (pick.def.where) { const t = pick.def.where(w, p); target = t === undefined ? null : t; }
+      for (let k = 0; k < n; k++) if (CS[k] > max) max = CS[k];
+      let tot = 0; const lim = max - 5 * temp;
+      for (let k = 0; k < n; k++) { const v = CS[k] > lim ? Math.exp((CS[k] - max) / temp) : 0; WT[k] = v; tot += v; }
+      let r = w.rng.next() * tot, pk = 0;
+      for (let k = 0; k < n; k++) { r -= WT[k]; if (r <= 0 && WT[k] > 0) { pk = k; break; } }
+      const def = CD[pk];
+      let target = CT[pk];
+      if (def.where) { const t = def.where(w, p); target = t === undefined ? null : t; }
       const cur = p.currentAction;
-      if (cur && cur.id === pick.def.id && cur.targetId === target && (target === null || typeof target === 'number')) return;
-      if (w.startAction(p, pick.def.id, target, pick.why, { data: pick.data })) return;
-      p.cooldown[pick.def.id] = w.tick + 6;
-      cands.splice(cands.indexOf(pick), 1);
+      if (cur && cur.id === def.id && cur.targetId === target && (target === null || typeof target === 'number')) return;
+      if (w.startAction(p, def.id, target, CY[pk], { data: CX[pk] })) return;
+      p.cooldown[def.id] = w.tick + 6;
+      n--; CD[pk] = CD[n]; CS[pk] = CS[n]; CT[pk] = CT[n]; CY[pk] = CY[n]; CX[pk] = CX[n]; // order only matters for ties; swap-remove
     }
     if (!p.currentAction) w.startAction(p, 'idle', null, 'nothing to do');
   }

@@ -23,7 +23,7 @@ export class Scheduler {
   /** Put p in the bucket for absolute tick t (clamped to the future) and record it in p.wake. */
   schedule(p, t) {
     const now = this.world.tick;
-    if (t <= now) t = now + 1;
+    if (t <= now) t = now + 1; else if (t % 1 !== 0) t = Math.ceil(t);
     if (p.wake === t) return;
     p.wake = t;
     if (t - now >= WHEEL) { this.far.push(p); if (t < this.farMin) this.farMin = t; this.stats.far++; return; }

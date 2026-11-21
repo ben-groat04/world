@@ -97,7 +97,7 @@ export const BUILDING_ARCHETYPES = {
     id: 'council_slab', label: '1960s council slab block (4-5 storeys, deck/stair access)', accommodationType: 'purposeBuiltFlats', storeys: 5,
     footprint: { w: 30, d: 8 }, roof: 'flat', material: ['concrete_panel', 'brown_brick'], year: [1962, 1972],
     // generator repeats `unitsPerFloor` units on each floor, split across `cores` stair cores
-    perFloor: { count: 6, cores: 2 }, floors: [1, 5], // floor 0 = ground; floors 0-4
+    perFloor: { count: 6, cores: 2 }, floors: [4, 5], // floor 0 = ground; floors 0-4
     units: [{ kind: 'flat', bedrooms: { 1: 0.35, 2: 0.45, 3: 0.2 }, floorAreaM2: [46, 78] }],
     tenure: { owned_outright: 0.08, mortgage: 0.06, shared_ownership: 0, council: 0.62, housing_assoc: 0.04, private_rent: 0.20 },
     weight: 1,
@@ -105,7 +105,7 @@ export const BUILDING_ARCHETYPES = {
   council_maisonettes: {
     id: 'council_maisonettes', label: 'Low-rise maisonette block (3 storeys)', accommodationType: 'purposeBuiltFlats', storeys: 3,
     footprint: { w: 20, d: 7 }, roof: 'flat', material: ['brown_brick', 'render_cream'], year: [1955, 1970],
-    perFloor: { count: 4, cores: 2 }, floors: [1, 3],
+    perFloor: { count: 4, cores: 2 }, floors: [3, 3],
     units: [{ kind: 'flat', bedrooms: { 2: 0.5, 3: 0.4, 1: 0.1 }, floorAreaM2: [62, 88] }],
     tenure: { owned_outright: 0.04, mortgage: 0.05, shared_ownership: 0, council: 0.56, housing_assoc: 0.15, private_rent: 0.20 },
     weight: 1,

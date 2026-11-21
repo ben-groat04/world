@@ -29,7 +29,7 @@ const band = (a) => (a < 25 ? '18-24' : a < 35 ? '25-34' : a < 50 ? '35-49' : a 
 export class Engine {
   constructor(world, pack, lib, opts = {}) {
     this.world = world; this.pack = pack; this.lib = lib; this.opts = opts;
-    this.cfg = { moneyScale: opts.moneyScale ?? (world.lf ? 1 : 0.05), yearDays: world.calendar?.daysPerYear ?? DAYS_PER_YEAR, maxInvent: opts.maxInvent ?? 200, flags: { invention: true, selfModel: true, groups: true, ...(opts.flags || {}) } };
+    this.cfg = { moneyScale: opts.moneyScale ?? (world.lf ? 1 : 0.05), yearDays: world.calendar?.ticksPerYear ? world.calendar.ticksPerYear / TICKS_PER_DAY : DAYS_PER_YEAR, maxInvent: opts.maxInvent ?? 200, flags: { invention: true, selfModel: true, groups: true, ...(opts.flags || {}) } };
     this.cfg.dayScale = this.cfg.yearDays / 365;
     this.drives = pack.drives || lib.DRIVES; this.driveIdx = Object.fromEntries(this.drives.map((d, i) => [d.id, i]));
     this.selfm = new SelfModels(lib.SELF_BELIEFS); this.methods = new Methods(lib); this.groups = new Groups(this);
@@ -65,6 +65,7 @@ export class Engine {
   }
   driveWeights(p, f, s) {
     const b = band(f.age); if (s.dw && s.band === b) return s.dw; s.band = b;
+    const own = p.ext?.pop?.drives; if (own) { s.dw = this.drives.map((d) => clamp(own[d.id] ?? d.base, 0.05, 1)); return s.dw; }
     const r = this.rng('dw', p.id), z = f.z, seg = f.seg, shifts = this.pack.meta?.segmentShifts || this.lib.SEGMENT_SHIFTS || {};
     s.dw = this.drives.map((d) => {
       let x = d.base; for (const [t, w] of Object.entries(d.traits || {})) x += w * z[t]; if (d.lifeStage && d.lifeStage[b] !== undefined) x += d.lifeStage[b]; if (seg && shifts[seg] && shifts[seg][d.id]) x += shifts[seg][d.id];
@@ -101,32 +102,33 @@ export class Engine {
     this.review(p, s, f);
     if (!f.adult && f.age < 15) return;
     const cap = this.maxActive(f, s); if (s.goals.length >= cap + 2) return;
-    // contagion: what ties are pursuing / have achieved
-    const contag = this._contagion(p, s);
+    let contag = null; const lazyContag = () => contag || (contag = this._contagion(p, s));
     const ctx = { pressure: (k) => this.press(s, k, now) };
-    const r = this.rng('gen', p.id, now), cand = [];
-    for (let i = 0; i < this.tplList.length; i++) {
+    const h0 = hash32(w.seed, 'gen', p.id, now), cand = [], seed = w.seed, pw = PERIOD / this.cfg.yearDays, hasOpps = this.S.opps.length > 0, N = this.tplList.length;
+    for (let i = 0; i < N; i++) {
       const t = this.tplList[i]; if (t.habit || t.retired || !t.gen.base) continue;
+      // cheap pre-draw against an upper bound of the rate: most templates stop here (stateless draw => order-independent, deterministic)
+      let hh = Math.imul(h0 ^ Math.imul(i + 1, 0x9e3779b1), 0x85ebca6b); hh ^= hh >>> 13; hh = Math.imul(hh, 0xc2b2ae35); hh = (hh ^ (hh >>> 16)) >>> 0; const u = (hh % 1000003) / 1000003;
+      if (t._ub === undefined) this._bound(t);
+      if (u > 1 - Math.exp(-t._ub * pw * (hasOpps ? 6 : 1))) continue;
       if ((s.cool[t.id] || 0) > now || this._has(s, t.id)) continue;
       const who = WHO[t.gen.who || 'adult']; if (who ? !who(f, s, ctx) : !f.adult) continue;
-      let dsum = 0; for (const d of t.drive) dsum += dw[this.driveIdx[d]] || 0.4; dsum /= t.drive.length;
-      let pf = 1, maxP = 0; if (t.gen.boost) for (const [k, m] of Object.entries(t.gen.boost)) { const pv = this.press(s, k, now); if (pv > maxP) maxP = pv; pf *= 1 + (m - 1) * pv; }
-      if (t.id === 'find_partner' || t.id === 'start_family') pf *= 1;
-      const oppF = this._oppFactor(t);
-      const soc = t.social ? 1 + t.social * Math.min(3, (contag.pursuing[t.id] || 0) * 1.3 + (contag.won[t.id] || 0) * 2.4) : 1;
-      const bias = this.cfg.flags.selfModel ? Math.exp(0.55 * this.selfm.goalBias(s, t.bias)) : 1;
+      let dsum = 0; const di = t._di; for (let k = 0; k < di.length; k++) dsum += dw[di[k]] || 0.4; dsum /= di.length;
+      let pf = 1, maxP = 0; const bo = t._boost; for (let k = 0; k < bo.length; k += 2) { const pv = this.press(s, bo[k], now); if (pv > maxP) maxP = pv; pf *= 1 + (bo[k + 1] - 1) * pv; }
+      const oppF = hasOpps ? this._oppFactor(t) : 1;
+      const bias = this.cfg.flags.selfModel && t.bias ? Math.exp(0.55 * this.selfm.goalBias(s, t.bias)) : 1;
       const fit = t.invented ? 0.4 + this.fitness(t.id) : 1;
       const stage = f.z.N > 1 && t.rareTail ? 1.4 : 1;
-      const lowDrive = 0.45 + 1.1 * dsum;
-      const rate = t.gen.base * lowDrive * Math.min(pf, 14) * oppF * soc * bias * fit * stage * (t.rareTail ? this._tailPropensity(p, f) : 1);
-      const pr = 1 - Math.exp(-rate * PERIOD / this.cfg.yearDays);
-      if (r.next() < pr) cand.push([t, dsum, maxP, rate]);
+      let rate = t.gen.base * (0.45 + 1.1 * dsum) * Math.min(pf, 14) * oppF * bias * fit * stage * (t.rareTail ? this._tailPropensity(p, f) : 1);
+      if (t.social) { if (u > 1 - Math.exp(-rate * (1 + t.social * 3) * pw)) continue; const c = lazyContag(); rate *= 1 + t.social * Math.min(3, (c.pursuing[t.id] || 0) * 1.3 + (c.won[t.id] || 0) * 2.4); }
+      if (u < 1 - Math.exp(-rate * pw)) cand.push([t, dsum, maxP, rate]);
     }
     cand.sort((a, b) => b[3] - a[3]);
     let made = 0;
     for (const [t, dsum, maxP] of cand) { if (made >= 2) break; if (this.spawn(p, s, f, t, { dsum, maxP, via: 'scan' })) made++; }
     if (this.cfg.flags.invention && f.z.O > 0.4 && now - s.inventedAt > 112 * TICKS_PER_DAY) this.maybeInvent(p, s, f);
   }
+  _bound(t) { let b = 1.55; let pf = 1; t._boost = []; if (t.gen.boost) for (const [k, m] of Object.entries(t.gen.boost)) { t._boost.push(k, m); if (m > 1) pf *= m; } b *= Math.min(pf, 14); if (t.social) b *= 1 + t.social * 3; if (t.bias) b *= Math.exp(0.55 * Object.values(t.bias).reduce((a, x) => a + Math.abs(x), 0)); if (t.invented) b *= 1.4; b *= 1.4; if (t.rareTail) b *= 5; t._ub = t.gen.base * b; t._di = t.drive.map((d) => this.driveIdx[d]); }
   _tailPropensity(p, f) { const u = (hash32(this.world.seed, 'tail', p.id) % 10000) / 10000; return u < 0.06 ? 5 : u < 0.3 ? 1 : 0.15; }   // heavy tail: a few people, most never
   _has(s, tplId) { for (const gid of s.goals) if (this.S.goals.get(gid).tpl === tplId) return true; return false; }
   _oppFactor(t) { const o = this.S.opps; if (!o.length) return 1; let f = 1; for (const x of o) if (x.until > this.world.tick && x.boosts && x.boosts[t.id]) f *= x.boosts[t.id]; return f; }
@@ -183,7 +185,7 @@ export class Engine {
     }
     // origin: strongest pressure among the template's boosters -> its cause event
     let cause = o.cause || 0, origin = ''; if (t.gen.boost) { let m = 0.15; for (const k of Object.keys(t.gen.boost)) { const e = s.press[k]; if (e) { const v = this.press(s, k, now); if (v > m) { m = v; cause = cause || e[2]; origin = k; } } } }
-    if (t.group && t.group !== 'existing' && !o.force) { let n = 0; for (const G of S.groups.values()) if (G.purpose === t.id && G.status !== 'dissolved') n++; if (n >= Math.max(1, Math.round((w.index.count || 100) / 70))) return null; }
+    if (t.group && t.group !== 'existing' && !o.force) { let n = 0; for (const G of S.groups.values()) if (G.purpose === t.id && G.status !== 'dissolved') n++; if (n >= Math.max(1, Math.round((w.index.count || 100) / 200)) + (t.invented ? 0 : 1)) return null; }
     const g = { id: S.goalSeq++, tpl: t.id, p: p.id, status: 'active', int: intensity, secret: r.next() < (t.secret || 0), born: now, last: now, deadline: now + Math.round(this.sd(t.horizon[1]) * TICKS_PER_DAY * 1.5 * (1 - 0.3 * s.stress)), cause, origin, parent: o.parent || 0, target: null, methods: [], steps: [], si: 0, method: '', attempts: 0, diff: t.diff ?? 0.5, flags: {}, ex: [], res: {}, group: 0, log: [], endWhy: '' };
     const tg = this.pickGoalTarget(p, f, t, g); if (tg === false) return null; if (tg != null) g.target = tg;
     S.goals.set(g.id, g); s.goals.push(g.id); let a = S.active.get(t.id); if (!a) S.active.set(t.id, (a = new Set())); a.add(p.id);
@@ -231,7 +233,7 @@ export class Engine {
     s.trace.push({ t: now, kind: 'method', goal: g.id, top: scored.slice().sort((a, b) => b[1] - a[1]).slice(0, 3).map(([a, b]) => [a, +b.toFixed(2)]), drives: this.topDrives(p, s) }); if (s.trace.length > 16) s.trace.shift();
     g.method = m; g.methods.push(m); g.attempts++;
     g.steps = this.methods.steps(m, t.verb).map((x, i) => ({ i, move: x.move, v: x.v, role: x.role, target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 }));
-    if (t.group && t.group !== 'existing' && !g.steps.some((x) => x.move === 'recruit' || (x.move === 'invite' && x.role))) { const at = Math.max(0, g.steps.findIndex((x) => x.move === 'organise' || x.move === 'book' || x.move === 'found')); const ins = [0, 1].map(() => ({ i: 0, move: 'recruit', v: 'member', role: 'contact', target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 })); g.steps.splice(at, 0, ...ins); g.steps.forEach((x, i) => (x.i = i)); }
+    if (t.group && t.group !== 'existing' && t.group !== 'business' && !g.steps.some((x) => x.move === 'recruit' || x.move === 'join' || (x.move === 'ask' && x.v === 'join') || (x.move === 'invite' && x.role))) { const at = Math.max(0, g.steps.findIndex((x) => x.move === 'organise' || x.move === 'book' || x.move === 'found')); const ins = [0, 1].map(() => ({ i: 0, move: 'recruit', v: 'member', role: 'contact', target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 })); g.steps.splice(at, 0, ...ins); g.steps.forEach((x, i) => (x.i = i)); }
     g.si = 0;
     if (!g.steps.length) g.steps.push({ i: 0, move: 'wait', v: 'time', role: null, target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 });
     g.last = now;
@@ -279,7 +281,7 @@ export class Engine {
     return pickW(pool, r.next()) ?? null;
   }
   runStep(p, g, st) {
-    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], s = this.ps(p), f = this.getFacts(p), now = w.tick, r = this.rng('step', g.id, st.i, st.tries, now);
+    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], s = this.ps(p), f = { z: personalityZ(p), money: w.ledger.balance(p.id), partnerId: p.romance?.partnerId ?? p.partnerId ?? p.family?.spouseId ?? null }, now = w.tick, r = this.rng('step', g.id, st.i, st.tries, now);
     if (st.role && st.target == null) { st.target = this.pickRole(p, f, g, st, st.role); if (st.target == null && !['employer', 'authority', 'landlord', 'expert'].includes(st.role)) { st.target = null; this.stepFail(p, s, f, g, st, 'busy', 'no one to turn to'); return; } }
     const tp = typeof st.target === 'number' ? w.people.get(st.target) : null;
     if (typeof st.target === 'number' && (!tp || !tp.alive)) { st.target = null; this.stepFail(p, s, f, g, st, 'bad_luck', 'they were not around'); return; }
@@ -317,7 +319,7 @@ export class Engine {
     if (res === 'ok') {
       S.stats.stepOk++; st.state = 'done'; g.last = w.tick; this.stepEffects(p, f, g, st, mv); if (beliefs.length && !t.mundane) this.selfm.creditOwn(s, beliefs, +1, '', z, 0.03);
       this._emitStep(p, g, st, 'ok', '', n, tn);
-      if (g.si >= g.steps.length - 1) { this.complete(g); return; }
+      if (g.si >= g.steps.length - 1) { const ff = Math.max(0, (t.diff ?? 0.4) - 0.3) * 0.5 * (1 - 0.15 * z.C); if (ff > 0 && this.rng('final', g.id, w.tick).next() < ff) { this.fail(g, ['it did not come to much', 'fell short in the end', 'did not work out'][hash32(g.id, 7) % 3]); return; } this.complete(g); return; }
       const hz = Math.max(0, (t.diff ?? 0.4) - 0.22) * 0.2 * (1 - 0.25 * z.C) * (1.25 - t.patience * 0.5) * (1 + s.stress * 0.5);
       if (hz > 0 && this.rng('lapse', g.id, st.i, w.tick).next() < hz) { this.abandon(g, ['lost interest', 'life got in the way', 'other things took over'][hash32(g.id, st.i) % 3]); return; }
       g.si++; this._schedule(g);
@@ -340,7 +342,7 @@ export class Engine {
   }
   outcomeText(res, why, tn, mv, st, g) {
     const vn = VARIANT_NOUN[st.v] || st.v || '', pick = (a, k) => a[hash32(g.id, st.i, st.tries, k) % a.length];
-    if (res === 'ok') { if (tn && MOVE[st.move].kind === 'social' && ['ask', 'recruit', 'persuade', 'invite', 'borrow'].includes(st.move)) return fmt(pick(OUTCOME_TEXT.okT, 1), { t: tn }); const d = fmt(mv.doing, { t: tn || 'them', g: this.tpl.get(g.tpl).object || '', v: (st.v || '').replace(/_/g, ' ') }); return cap1(d) + ': ' + pick(['went fine', 'went well', 'done', 'no problems'], 2); }
+    if (res === 'ok') { if (tn && MOVE[st.move].kind === 'social' && ['ask', 'recruit', 'persuade', 'invite', 'borrow'].includes(st.move)) return fmt(pick(OUTCOME_TEXT.okT, 1), { t: tn }); const d = fmt(mv.doing, { t: tn || 'them', g: this.phrase(g.tpl), v: (st.v || '').replace(/_/g, ' ') }); return cap1(d) + ': ' + pick(['went fine', 'went well', 'done', 'no problems'], 2); }
     if (res === 'maybe') return fmt(pick(OUTCOME_TEXT.maybe, 3), { t: tn || 'they', v: vn });
     return fmt(pick(OUTCOME_TEXT[why] || OUTCOME_TEXT.bad_luck, 4), { t: tn || 'they', v: vn });
   }
@@ -416,7 +418,7 @@ export class Engine {
     const act = acts[Math.floor(r.next() * acts.length)]; const fmts = inv.formats.filter((x) => !x.tags.length || x.tags.some((t) => act.tags.includes(t))); if (!fmts.length) return; const fm = fmts[Math.floor(r.next() * fmts.length)];
     const id = `inv_${act.id}_${fm.id}`; if (this.tpl.has(id)) return;
     const label = fm.label.replace('{a}', act.noun);
-    const t = { id, verb: 'create', drive: act.drives.slice(0, 2), want: 'running', object: label, by: fm.by, phrase: `start ${label}`, gen: { base: 0.03, who: 'adult', boost: Object.fromEntries(nd.slice(0, 1).length ? [[need, 3]] : []) }, horizon: [60, 400], patience: 0.5, stakes: 0.25, diff: 0.6, group: fm.group, project: fm.project || undefined, social: 0.9, invented: true, inventedBy: p.id, inventedAt: now };
+    const t = { id, verb: 'create', drive: act.drives.slice(0, 2), want: 'running', object: label, by: fm.by, phrase: `start ${label}`, gen: { base: 0.012, who: 'adult', boost: Object.fromEntries(nd.slice(0, 1).length ? [[need, 3]] : []) }, horizon: [60, 400], patience: 0.5, stakes: 0.25, diff: 0.6, group: fm.group, project: fm.project || undefined, social: 0.9, invented: true, inventedBy: p.id, inventedAt: now };
     this.addTemplate(t); this.S.fit[id] = [0, 0]; S.inventedThisYear++; S.stats.invented++; s.inventedAt = now;
     w.emit('goal.invented', { actors: [p.id], salience: 0.3, cause: s.press[need]?.[2] || 0, tags: ['creative'], payload: { tpl: id, label, from: need } });
     this.spawn(p, s, f, t, { dsum: 0.6, maxP: m, via: 'invention', int: 0.1 });
@@ -459,18 +461,23 @@ P.groupView = function (g, full) {
   return v;
 };
 const hold = (name) => name;
+const NO_OVERRIDE = new Set(['build', 'sleep', 'getup', 'commute', 'work', 'work_home', 'school', 'nursery', 'uni', 'school_run', 'nap', 'sick', 'bedtime', 'night_work', 'sleep_day', 'childcare', 'carer', 'breakfast', 'lunch', 'dinner', 'goal']);
+const CAT = { social: 'social', group: 'social', inst: 'errand', econ: 'errand', self: 'home', wait: 'home' };
+// Routine hook (see sim/systems/routine/index.js): slot = {tick, until, act, ptype, pid}. Returns null or {label, thought, ptype, pid, cat, ...} replacing that plan entry. O(1) when nothing is due.
 P.override = function (p, slot) {
-  const s = this.S.ps.get(p.id); if (!s) return null; const w = this.world;
-  const t0 = slot ? (slot.start ?? slot.startTick ?? slot.tick ?? w.tick) : w.tick, t1 = slot ? (slot.end ?? slot.endTick ?? t0 + (slot.ticks ?? slot.duration ?? 30)) : t0 + 30;
+  const s = this.S.ps.get(p.id); if (!s || (s.next === null && s.groups.length === 0)) return null; const w = this.world;
+  if (slot && slot.act && NO_OVERRIDE.has(slot.act)) return null;
+  const t0 = slot ? (slot.tick ?? slot.start ?? w.tick) : w.tick, t1 = slot ? (slot.until ?? slot.end ?? t0 + 30) : t0 + 30;
   if (s.next) { const g = this.S.goals.get(s.next.goal); if (g && g.status === 'active' && s.next.due >= t0 && s.next.due < t1) { const st = g.steps[g.si]; if (st && st.state !== 'done') return this._activity(p, g, st); } }
-  for (const gid of s.groups) { const G = this.S.groups.get(gid); if (G && (G.status === 'active' || G.status === 'institution') && G.nextMeet >= t0 && G.nextMeet < t1 && G.kind !== 'online_community' && G.kind !== 'business') return { kind: 'group_meeting', activity: 'group_meeting', label: `${G.name}: meeting`, thought: `${G.name} tonight. ${G.status === 'institution' ? 'Always is.' : 'Hope enough people come.'}`, venue: G.venue, venueKind: G.venueKind, ticks: 12, group: G.id, why: `member of ${G.name}` }; }
+  for (const gid of s.groups) { const G = this.S.groups.get(gid); if (G && (G.status === 'active' || G.status === 'institution') && G.nextMeet >= t0 && G.nextMeet < t1 && G.kind !== 'online_community' && G.kind !== 'business') return { kind: 'group_meeting', activity: 'group_meeting', label: `${G.name}: meeting`, thought: `${G.name} tonight. ${G.status === 'institution' ? 'Always is.' : 'Hope enough people come.'}`, ptype: G.venue != null ? 1 : undefined, pid: G.venue != null ? G.venue : undefined, cat: 'social', venue: G.venue, venueKind: G.venueKind, ticks: 12, group: G.id, why: `member of ${G.name}` }; }
   return null;
 };
 P._activity = function (p, g, st) {
   const mv = MOVE[st.move], w = this.world, tgt = typeof st.target === 'number' ? this.fn(st.target) : st.target ? st.target.label : '';
-  const vars = { t: tgt || 'someone', g: this.tpl.get(g.tpl).object || this.phrase(g.tpl), v: st.v ? st.v.replace(/_/g, ' ') : '' };
+  const vars = { t: tgt || 'someone', g: this.phrase(g.tpl), v: st.v ? st.v.replace(/_/g, ' ') : '' };
   const doing = fmt(mv.doing, vars), thought = mv.thought ? fmt(mv.thought, vars) : '';
-  return { kind: 'goal_step', activity: 'goal_' + st.move, label: doing.charAt(0).toUpperCase() + doing.slice(1), thought, venueKind: mv.venue ? mv.venue[0] : 'home', venueAlts: mv.venue || ['home'], withPerson: typeof st.target === 'number' ? st.target : null, ticks: mv.dur, goal: g.id, step: g.si, why: this.line(g) };
+  let ptype, pid; const vk = mv.venue || ['home']; if (vk[0] !== 'home') for (const alias of vk) { const v = this.groups.venueByAlias(alias, p.id); if (v != null) { ptype = 1; pid = v; break; } if (alias === 'street') { ptype = 2; break; } }
+  return { kind: 'goal_step', activity: 'goal_' + st.move, label: doing.charAt(0).toUpperCase() + doing.slice(1) + ` (${this.phrase(g.tpl)})`, thought, ptype, pid, cat: CAT[mv.kind] || 'out', venueKind: mv.venue ? mv.venue[0] : 'home', venueAlts: mv.venue || ['home'], withPerson: typeof st.target === 'number' ? st.target : null, ticks: mv.dur, goal: g.id, step: g.si, why: this.line(g) };
 };
 P.getChoices = function (id) {
   const p = this.world.people.get(id), s = this.S.ps.get(id); if (!p || !s) return [];

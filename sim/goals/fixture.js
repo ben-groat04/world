@@ -7,3 +7,11 @@ export async function makeFixture(o = {}) {
   const w = new World({ seed: o.seed ?? 1, population: o.population ?? 240, strictEvents: o.strict ?? true, plugins: [createGoals(o.goals || {})], pack, hashDaily: !!o.hashDaily });
   return w;
 }
+
+/** The real Larkfield world (population + routine) with the goals plugin appended. */
+export async function makeLarkfield(seed = 1, o = {}) {
+  const { larkfieldOpts } = await import('../larkfield.js');
+  const opts = larkfieldOpts(seed, { strictEvents: o.strict ?? true, hashDaily: !!o.hashDaily });
+  opts.plugins = [...opts.plugins, createGoals(o.goals || {})];
+  const w = new World(opts); w.town.name = 'Larkfield'; return w;
+}

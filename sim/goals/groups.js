@@ -6,7 +6,7 @@ import { TICKS_PER_DAY } from '../time.js';
 import { clamp, fmt } from './util.js';
 import { personalityZ, tieStrength } from './facts.js';
 
-const VENUE_ALIAS = { pub: ['pub'], community_centre: ['community_centre', 'church', 'mosque', 'library'], cafe: ['cafe', 'bakery'], library: ['library', 'community_centre'], park: ['park'], gym: ['gym'], sports_hall: ['gym', 'community_centre'], church: ['church', 'mosque'], temple: ['church', 'mosque'], shop: ['vacant_unit', 'corner_shop'], hall: ['community_centre', 'pub', 'church'] };
+const VENUE_ALIAS = { pub: ['pub'], community_centre: ['community_centre', 'church_hall', 'church', 'mosque', 'library'], cafe: ['cafe', 'bakery'], library: ['library', 'community_centre'], park: ['park', 'park_pavilion', 'estate_green'], gym: ['gym'], sports_hall: ['gym', 'community_centre', 'school_grounds'], church: ['church', 'mosque', 'church_hall'], temple: ['mosque', 'church', 'church_hall'], shop: ['vacant_unit', 'corner_shop'], hall: ['community_centre', 'church_hall', 'pub'] };
 export class Groups {
   constructor(engine) { this.e = engine; this.vcache = null; this.vday = -1e9; }
   get w() { return this.e.world; } get S() { return this.e.S; } get kinds() { return this.e.lib.GROUP_KINDS; }
@@ -17,6 +17,7 @@ export class Groups {
     for (const alias of K.venues) { const types = VENUE_ALIAS[alias] || [alias]; for (const ty of types) { const l = this.byType.get(ty); if (l && l.length) return { id: l[hash32(w.seed, 'venue', kind, ty) % l.length], alias }; } }
     return null;
   }
+  venueByAlias(alias, salt) { this.venueFor('club'); const types = VENUE_ALIAS[alias] || [alias]; for (const ty of types) { const l = this.byType.get(ty); if (l && l.length) return l[hash32(this.w.seed, 'va', salt, ty) % l.length]; } return null; }
   vacantUnits() { this.venueFor('business'); return this.byType.get('vacant_unit') || []; }
   // ---- lifecycle
   create(o) {
@@ -115,7 +116,7 @@ export class Groups {
       if (G.members[tp.id]) return { res: 'ok', note: `${tp.firstName} is already in` };
       const q = this.e.ps(tp), tf = this.e.S.ps.get(tp.id), rl = p.relationships?.get(tp.id), z = personalityZ(tp);
       const dw = q.dw || [], belong = dw[this.e.driveIdx.belonging] ?? 0.5, nov = dw[this.e.driveIdx.novelty] ?? 0.5;
-      let pr = 0.28 + 0.25 * (rl ? (rl.affinity || 0) : 0) + 0.2 * (belong - 0.5) + 0.15 * (nov - 0.5) + 0.05 * z.E - 0.08 * Math.max(0, q.groups.length - 1) - q.stress * 0.15 + (tpl.id === 'start_a_band' ? (this.e.cfg && 0) : 0);
+      let pr = 0.33 + 0.25 * (rl ? (rl.affinity || 0) : 0) + 0.2 * (belong - 0.5) + 0.15 * (nov - 0.5) + 0.05 * z.E - 0.08 * Math.max(0, q.groups.length - 1) - q.stress * 0.15 + (tpl.id === 'start_a_band' ? (this.e.cfg && 0) : 0);
       if (gk === 'band') { const musical = hash32(w.seed, 'lat', tp.id, 'musical') % 10000 / 10000 < 0.22 + 0.1 * z.O; pr += musical ? 0.2 : -0.18; }
       const age = w.ageOf(tp); if (age < 16 && gk !== 'team') pr -= 0.3;
       for (const rv of G.rivals) { const R = S.groups.get(rv); if (R && R.members[tp.id]) pr -= 0.2; }
@@ -142,7 +143,7 @@ export class Groups {
       if (this.readiness(G) < 0.45 && st.tries < 3) return { res: 'fail', why: 'busy', note: 'not ready yet, needs more rehearsal' };
       const ok = this.finishProject(G, false); return ok ? { res: 'ok', note: 'it went down well' } : { res: 'fail', why: 'bad_luck', note: 'it was a bit of a flop' };
     }
-    if (st.move === 'join' && ['club', 'garden', 'party', 'union', 'band', 'bands'].includes(st.v) || (st.move === 'ask' && st.v === 'join' && !gk)) {
+    if (st.move === 'join' && ['club', 'garden', 'party', 'union', 'band', 'bands'].includes(st.v) || (st.move === 'ask' && st.v === 'join')) {
       const hint = this.e.lib.GOAL_GROUP_HINT?.[tpl.id] || null; const J = this.findJoinable(p, f, hint, s);
       if (!J) return { res: 'fail', why: 'busy', note: 'nothing like that going on nearby' };
       if (r.next() > 0.45 + 0.25 * f.z.E + 0.2 * (this.e.selfm.get(s, 'community_works') - 0.5)) return { res: 'fail', why: 'refused', note: `did not feel welcome at ${J.name}` };

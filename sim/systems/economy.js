@@ -6,25 +6,8 @@ import { businessName } from '../names.js';
 import { TICKS_PER_YEAR } from '../time.js';
 
 // ---------------------------------------------------------------- constants
-const PUBLIC = new Set(['school', 'clinic', 'temple', 'townhall', 'jail', 'park', 'cemetery']);
-const COMMERCIAL = new Set(['farm', 'bakery', 'smithy', 'tavern', 'market', 'mill', 'inn', 'tailor', 'carpenter']);
+import { PUBLIC, COMMERCIAL, SEASON_YIELD, MEALS_PER_DAY, SHARE, RENT_PER_DAY, GOODS, INPUT_COST, JUNIOR, TRADE_JOBS, MIN_AGE } from '../data/economy.js';
 const WORK_IDS = new Set(['workShift', 'work']);
-const SEASON_YIELD = [0.6, 1.0, 1.8, 0.6]; // farm output multiplier by season (spring, summer, autumn, winter); mean 1.0
-const MEALS_PER_DAY = 3;
-const SHARE = { bakery: 0.40, mill: 0.17, grain: 0.25 }; // of the retail price of a loaf; the market keeps the rest
-const RENT_PER_DAY = 1.1;
-const GOODS = {
-  grain:     { base: 0.36, cover: 45,  producer: 'farm',      daily: null },
-  flour:     { base: 0.38, cover: 4,   producer: 'mill',      daily: null },
-  bread:     { base: 0.90, cover: 0.8, producer: 'bakery',    daily: null },
-  tools:     { base: 4.5,  cover: 30,  producer: 'smithy',    perPerson: 0.04 },   // ironware: nails, hinges, blades, pots (units/person/day)
-  clothes:   { base: 12,   cover: 20,  producer: 'tailor',    perPerson: 0.012 },  // ~1.3 outfits per person-year
-  furniture: { base: 40,   cover: 45,  producer: 'carpenter', perPerson: 0.005 },  // woodwork & furnishings
-};
-const INPUT_COST = { smithy: 0.28, tailor: 0.3, carpenter: 0.25 }; // fraction of sale price spent on imported raw materials
-const JUNIOR = { captain: 'guard', tavernkeeper: 'server', farmer: 'laborer', doctor: 'nurse', innkeeper: 'laborer', baker: null };
-const TRADE_JOBS = ['baker', 'smith', 'tailor', 'carpenter', 'miller', 'server', 'merchant', 'laborer'];
-const MIN_AGE = { doctor: 24, teacher: 22, priest: 26, captain: 28, mayor: 30, clerk: 18, guard: 18, innkeeper: 22, tavernkeeper: 20 };
 
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 const round = (x) => Math.round(x);

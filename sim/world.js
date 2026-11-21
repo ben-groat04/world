@@ -10,7 +10,14 @@ import { stepNeeds, NEEDS_PERIOD } from './needs.js';
 import { createPerson, generatePopulation, newRel, fullName } from './person.js';
 import defaultSystems from './systems/index.js';
 
-const DEFAULT_SETTINGS = { prices: { food: 1, tavernMeal: 4, drink: 4 }, population: 220, houses: 86 };
+// ALL tunables live in world.settings (documented in ARCHITECTURE.md). Systems read them with `?? default` as well, but the
+// defaults are declared here so a tuning agent has one place to look. Politics may move the policy axes at runtime.
+const DEFAULT_SETTINGS = {
+  prices: { food: 1, tavernMeal: 4, drink: 4 }, population: 220, houses: 86,
+  taxRate: 0.15, watchFunding: 0.5, festivalBudget: 0.5, poorRelief: 0.3, publicWorks: 0.35,
+  epidemicScale: 1, immigrationScale: 1, emigrationScale: 1, divorceScale: 1, affairScale: 1, fertilityScale: 1, childMortalityScale: 1, maternalRiskScale: 1,
+  fertilityBoostUntil: 0,
+};
 const THINK_EVERY = 12; // ticks between re-evaluations of an interruptible action
 const GSHIFT = 3; // spatial grid cell = 8 tiles
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -124,11 +131,11 @@ export class World {
     } else { if (!p.x && !p.y) { p.x = this.map.center.x; p.y = this.map.center.y - 6; } this._gridAdd(p); }
     return p;
   }
-  killPerson(p, cause = 'unknown') {
-    if (!p.alive) return;
-    p.alive = false; p.deathTick = this.tick; p.causeOfDeath = cause;
-    if (p.currentAction) { p.currentAction = null; }
-    p.path = null;
+  // Take a person out of the live world (buildings, spatial grid, jobs, households) without a death: used by killPerson
+  // and by emigration. Sets alive=false; the caller records why (deathTick/causeOfDeath or emigrated*).
+  removePerson(p) {
+    p.alive = false;
+    p.currentAction = null; p.path = null;
     if (p.locationId != null) { const b = this.buildings.get(p.locationId); if (b) b.occupants.delete(p); }
     this._gridRemove(p);
     p.locationId = null; p.inside = false;
@@ -138,6 +145,11 @@ export class World {
     const hb = p.homeId != null ? this.buildings.get(p.homeId) : null;
     if (hb) { const i = hb.residents.indexOf(p.id); if (i >= 0) hb.residents.splice(i, 1); }
     this._livingDirty = true;
+  }
+  killPerson(p, cause = 'unknown') {
+    if (!p.alive) return;
+    p.deathTick = this.tick; p.causeOfDeath = cause;
+    this.removePerson(p);
     this.stats.deaths++;
     this.emit('death', { person: p, cause });
   }

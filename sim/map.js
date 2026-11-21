@@ -5,42 +5,9 @@ export const T = { GRASS: 0, ROAD: 1, WATER: 2, BRIDGE: 3, TREE: 4, FIELD: 5, PL
 // movement cost per tile type (0 = impassable)
 export const TILE_COST = new Uint8Array([13, 10, 0, 10, 0, 15, 10, 0, 12, 14, 0]);
 
-// Jobs: wage per worked day, primary skill, shift [start,end] hours, service = works rest days (takes a weekday off instead)
-export const JOBS = {
-  farmer: { wage: 11, skill: 'farming', shift: [6, 15] }, laborer: { wage: 8, skill: 'farming', shift: [7, 16] },
-  baker: { wage: 12, skill: 'cooking', shift: [4.5, 12.5] }, smith: { wage: 14, skill: 'smithing', shift: [8, 17] },
-  tavernkeeper: { wage: 13, skill: 'cooking', shift: [12, 24], service: true }, server: { wage: 8, skill: 'trade', shift: [16, 24], service: true },
-  merchant: { wage: 12, skill: 'trade', shift: [8, 17], service: true },
-  doctor: { wage: 22, skill: 'medicine', shift: [8, 17], service: true }, nurse: { wage: 12, skill: 'medicine', shift: [8, 17], service: true },
-  teacher: { wage: 14, skill: 'teaching', shift: [8, 15] },
-  priest: { wage: 12, skill: 'charisma', shift: [7, 17], service: true },
-  mayor: { wage: 16, skill: 'scholarship', shift: [9, 17] }, clerk: { wage: 12, skill: 'scholarship', shift: [9, 17] },
-  captain: { wage: 15, skill: 'athletics', shift: [8, 17], service: true }, guard: { wage: 12, skill: 'athletics', shift: [8, 17], service: true },
-  miller: { wage: 13, skill: 'crafting', shift: [6, 15] }, innkeeper: { wage: 13, skill: 'cooking', shift: [9, 21], service: true },
-  tailor: { wage: 12, skill: 'crafting', shift: [8, 17] }, carpenter: { wage: 13, skill: 'crafting', shift: [7, 16] },
-  gardener: { wage: 8, skill: 'farming', shift: [8, 15] }, gravedigger: { wage: 8, skill: 'athletics', shift: [8, 14] },
-};
-// Building types. size: 'half' (5x4 slot) | 'wide' (11x4 slot) | 'block' | 'square'. hours = public opening [open, close] (close>24 wraps past midnight)
-export const BUILDING_TYPES = {
-  house: { label: 'House', size: 'half', jobs: [] },
-  farm: { label: 'Farm', size: 'half', jobs: ['farmer', 'farmer', 'laborer', 'laborer', 'laborer'] },
-  bakery: { label: 'Bakery', size: 'half', jobs: ['baker', 'baker', 'baker'], hours: [5, 17] },
-  smithy: { label: 'Smithy', size: 'half', jobs: ['smith', 'smith'], hours: [8, 17] },
-  tavern: { label: 'Tavern', size: 'wide', jobs: ['tavernkeeper', 'server', 'server'], hours: [12, 25] },
-  market: { label: 'Market', size: 'wide', jobs: ['merchant', 'merchant', 'merchant'], hours: [7, 18] },
-  clinic: { label: 'Clinic', size: 'half', jobs: ['doctor', 'nurse', 'nurse'], hours: [8, 18] },
-  school: { label: 'School', size: 'wide', jobs: ['teacher', 'teacher', 'teacher'], hours: [8, 15] },
-  temple: { label: 'Temple', size: 'wide', jobs: ['priest', 'laborer', 'laborer'], hours: [6, 21] },
-  townhall: { label: 'Town Hall', size: 'wide', jobs: ['mayor', 'clerk', 'clerk', 'clerk'], hours: [9, 17] },
-  jail: { label: 'Jail', size: 'half', jobs: ['captain', 'guard', 'guard'] },
-  mill: { label: 'Mill', size: 'half', jobs: ['miller', 'miller', 'miller'], hours: [6, 15] },
-  inn: { label: 'Inn', size: 'wide', jobs: ['innkeeper', 'laborer', 'laborer'] },
-  tailor: { label: 'Tailor', size: 'half', jobs: ['tailor', 'tailor'], hours: [8, 17] },
-  carpenter: { label: 'Carpenter', size: 'half', jobs: ['carpenter', 'carpenter', 'carpenter'], hours: [7, 16] },
-  park: { label: 'Park', size: 'block', jobs: ['gardener'], open: true, hours: [5, 22] },
-  cemetery: { label: 'Cemetery', size: 'block', jobs: ['gravedigger'], open: true, hours: [6, 20] },
-  square: { label: 'Town Square', size: 'square', jobs: [], open: true },
-};
+import { JOBS } from './data/jobs.js';
+import { BUILDING_TYPES } from './data/buildings.js';
+export { JOBS, BUILDING_TYPES };
 export function isOpen(b, h) {
   if (!b.hours) return true;
   const o = b.hours[0], c = b.hours[1];

@@ -229,19 +229,11 @@ const WHY = {
 };
 const DEST = ['the coast', 'the capital', 'Kingsford', 'a market town upriver', 'the new mills in the north', 'the lowland farms', 'a cousin in Oldbridge', 'across the border'];
 
-function removeFromMap(p) { // mirrors world.killPerson without the death
-  p.alive = false;
-  if (p.currentAction) p.currentAction = null;
-  p.path = null;
-  if (p.locationId != null) { const b = W.buildings.get(p.locationId); if (b) b.occupants.delete(p); }
-  if (typeof W._gridRemove === 'function') W._gridRemove(p);
-  p.locationId = null; p.inside = false;
-  const wb = p.workId != null ? W.buildings.get(p.workId) : null;
-  if (wb) { const i = wb.employees.indexOf(p.id); if (i >= 0) wb.employees.splice(i, 1); if (wb.ownerId === p.id) wb.ownerId = null; }
-  p.lastWorkId = p.workId; p.workId = null;
-  const hb = p.homeId != null ? W.buildings.get(p.homeId) : null;
-  if (hb) { const i = hb.residents.indexOf(p.id); if (i >= 0) hb.residents.splice(i, 1); if (hb.ownerId === p.id) hb.ownerId = null; }
-  W._livingDirty = true;
+function removeFromMap(p) { // world.removePerson + clear ownership they leave behind
+  const wb = p.workId != null ? W.buildings.get(p.workId) : null, hb = p.homeId != null ? W.buildings.get(p.homeId) : null;
+  W.removePerson(p);
+  if (wb && wb.ownerId === p.id) wb.ownerId = null;
+  if (hb && hb.ownerId === p.id) hb.ownerId = null;
 }
 function missedBy(p, group) {
   const ids = new Set(group.map((x) => x.id));

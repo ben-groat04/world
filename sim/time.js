@@ -5,8 +5,8 @@ export const DAYS_PER_SEASON = 28;
 export const DAYS_PER_YEAR = 112;
 export const TICKS_PER_YEAR = TICKS_PER_DAY * DAYS_PER_YEAR; // 16128
 export const START_HOUR = 6; // tick 0 is 06:00 on Spring 1, Year 1
-export const SEASON_NAMES = ['Spring', 'Summer', 'Autumn', 'Winter'];
-export const REST_WEEKDAY = 6; // every 7th day is the rest day
+import { SEASON_NAMES, REST_WEEKDAY } from './data/calendar.js';
+export { SEASON_NAMES, REST_WEEKDAY };
 const OFFSET = START_HOUR * TICKS_PER_HOUR;
 const mod = (a, n) => ((a % n) + n) % n;
 

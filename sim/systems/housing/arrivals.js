@@ -44,6 +44,14 @@ const actFor = (w, rng, seg, m, kids) => {
   if (act === 'retired' && a < 55) act = 'employed'; if (act === 'student' && a > 32 && seg.id !== 'students') act = 'employed'; if (act === 'student' && a > 40) act = 'employed';
   return { employed: 'employed', student: 'student', retired: 'retired', unemployed: 'unemployed', lookingAfterHomeFamily: 'home_family', longTermSickDisabled: 'sick_disabled', otherInactive: 'other_inactive' }[act] || act;
 };
+/** A student who moves into town starts a NEW course this academic year (September intake): first-years 18-20 (3 y, 20% 4 y), older entrants mostly 1-year taught
+ *  postgraduates (HESA: ~1/3 of UK HE entrants are postgraduate; many international). Previously arrivals were dropped mid-course at a random point and graduated within months. */
+function startCourse(w, rng, q, age) {
+  const t = w.time, dsm = ((t.month >= 8 ? t.month - 8 : t.month + 4) * 30 + (t.dom - 1)); // days since 1 Sept
+  q.uniStart = w.tick - dsm * w.calendar.ticksPerYear / 365;
+  q.courseYears = age >= 21 && rng.chance(0.7) ? 0.9 : rng.chance(0.2) ? 3.9 : 2.9;
+  if (age >= 18) { q.school = { kind: 'university', dest: 'university' }; q.edu = 'level3'; }
+}
 function makePerson(w, rng, hh, m, seg, hhKids, opts = {}) {
   const pack = w.pack, cal = pack.calibration, cl = w.calendar, age = m.age, share = ethShare(pack);
   const group = opts.group || m.group;
@@ -65,6 +73,7 @@ function makePerson(w, rng, hh, m, seg, hhKids, opts = {}) {
     health: { general: hs.general, conds: hs.conds, disabled: hs.disabled, limiting: hs.limiting }, fin: { gross: 0, net: 0, savings: 0, debt: 0, arrears: 0, studentLoan: 0 }, car: drives, bike: age >= 10 && rng.chance(Math.min(0.9, seg.mobility.bike * 3)), pets: { dogs: 0, cats: 0 },
     drives: drivesFor(rng, pack, pers, age, seg.id), interests: p.interests, yearsAtAddress: 0, grewUp: null, ties: [], life: null };
   if (drives) p.skills.driving = +rng.float(0.5, 0.95).toFixed(2);
+  if (act === 'student' && age >= 17 && age < 35) startCourse(w, rng, p.ext.pop, age);
   return p;
 }
 const REL_OFF = [['mother', 'kin'], ['father', 'kin'], ['sibling', 'kin'], ['best friend', 'friend'], ['old friend', 'friend'], ['uni friend', 'friend']];
@@ -117,7 +126,8 @@ export function createArrivalHousehold(w, rng, unit, forceSeg) {
 /** Create one new adult (a flatmate joining a house-share) as a member of hh. */
 export function createSharer(w, rng, hh, ageHint) {
   const seg = w.pack.meta.segments.find((s) => s.id === hh.seg), share = ethShare(w.pack);
-  const m = { role: 'sharer', age: clamp(Math.round(ageHint + rng.int(-3, 4)), 18, 45), sex: rng.chance(0.5) ? 'F' : 'M', group: wpick(rng, GROUPS.map((g) => [g, share[g] || 0.001])) };
+  const stud = hh.seg === 'students', sAge = stud ? (rng.chance(0.6) ? rng.int(18, 19) : rng.int(20, 25)) : null; // a student house re-lets to the new cohort: mostly first-years
+  const m = { role: 'sharer', age: stud ? sAge : clamp(Math.round(ageHint + rng.int(-3, 4)), 18, 45), sex: rng.chance(0.5) ? 'F' : 'M', group: wpick(rng, GROUPS.map((g) => [g, share[g] || 0.001])) };
   const p = makePerson(w, rng, hh, m, seg, false); hh.members.push(p.id); w.addPerson(p); addTies(w, rng, hh, [p]);
   return p;
 }

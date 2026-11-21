@@ -14,7 +14,7 @@ const r1 = (v) => Math.round(v * 100) / 100;
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 
 export function createPlayer() {
-  let W = null; const S = { talked: {}, log: [], created: false, pending: [] };
+  let W = null; const S = { talked: {}, log: [], created: false, pending: [], dating: {}, asked: {} };
   const me = (a) => { const id = a && a.pid != null ? a.pid : W.player; return typeof id === 'number' ? W.people.get(id) : null; };
   const fail = (why) => ({ ok: false, why });
   const call = (name, args) => (W.commands.has(name) ? W.cmd(name, args) : false);
@@ -69,6 +69,33 @@ export function createPlayer() {
     }
   }
 
+  // ---- dating: an app profile (matches arrive over days from the comms dating pool) and asking out people you already know.
+  // Hand-tuned: MATCH_PER_DAY = expected matches a day for an active profile (~1.4 a week, the order of magnitude app users report); nothing else is forced:
+  // who can match is the comms dating pool (age band, orientation, area), and what a match turns into is decided by life.askOut / messaging as for any NPC.
+  const MATCH_PER_DAY = 0.2, ASK_COOLDOWN_DAYS = 21;
+  const single = (p) => !!(p && p.alive && p.ext.life && !p.ext.life.part);
+  const tieOf = (a, b) => (W.sys.social ? W.sys.social.query.tie(a, b) : null);
+  function personLine(q) { return { id: q.id, name: nm(q), age: Math.floor(W.ageOf(q)), job: (q.job || '').replace(/_/g, ' ') }; }
+  function datable(pid) { // people you know (met properly), single, and mutually plausible by age and orientation; not kin, not asked recently
+    const p = W.people.get(pid), out = []; if (!single(p) || W.ageOf(p) < 17 || !W.sys.social) return out;
+    for (const t of W.sys.social.query.ties(pid)) {
+      if (typeof t.o !== 'number' || t.k === 'kin' || t.k === 'family') continue; const q = W.people.get(t.o);
+      if (!single(q) || !W.sys.social.query.attractionPossible(pid, q.id)) continue; if (W.tick - (S.asked[pid + ':' + q.id] ?? -1e9) < ASK_COOLDOWN_DAYS * tpd()) continue;
+      out.push({ ...personLine(q), l: t.l, c: t.c, rel: t.r || t.k });
+    }
+    return out.sort((a, b) => b.l - a.l);
+  }
+  function datingMatches(pid) { const d = S.dating[pid]; if (!d) return []; return d.matches.map((m) => { const q = W.people.get(m.id); if (!q || !q.alive) return null; const t = tieOf(pid, q.id); return { ...personLine(q), l: t ? t.l : null, lv: t ? t.lv : 0, daysAgo: Math.round((W.tick - m.t) / tpd()), taken: !single(q) }; }).filter(Boolean); }
+  function dailyDating() {
+    for (const [k, d] of Object.entries(S.dating)) {
+      const pid = +k, p = W.people.get(pid); if (!d.on || !p || !p.alive) continue; if (!single(p)) { d.on = false; continue; }
+      const rng = W.rngFor('player.match', pid, W.tick); if (!rng.chance(MATCH_PER_DAY)) continue;
+      const pool = (W.sys.comms ? W.sys.comms.query.datingPool(pid, 14) : []).filter((x) => !d.matches.some((m) => m.id === x.id) && single(W.people.get(x.id)));
+      if (!pool.length) continue; let tot = 0; for (const x of pool) tot += x.score; let r = rng.next() * tot, pick = pool[0]; for (const x of pool) { r -= x.score; if (r <= 0) { pick = x; break; } }
+      if (!call('comms.matchOnApp', { a: pid, b: pick.id })) continue; d.matches.push({ id: pick.id, t: W.tick }); const q = W.people.get(pick.id);
+      note(`New match on the app: ${nm(q)}, ${Math.floor(W.ageOf(q))}.`); W.emit('player.match', { actors: [pid, pick.id], salience: 0.5, tags: ['romance', 'online'], payload: { via: 'app' } });
+    }
+  }
   function settle(w, a) {
       const rng = w.rngFor('player.create'); const u = (w.lf.housing.byId.get ? w.lf.housing.byId.get(a.unit) : w.lf.housing.byId[a.unit]);
       if (!u || u.hh >= 0 || !RENTED.has(u.tenure)) return fail('that home is no longer available');
@@ -114,16 +141,48 @@ export function createPlayer() {
       const react = dl == null ? 'neutral' : dl > 0.02 ? 'warm' : dl < -0.02 ? 'cool' : 'neutral';
       note(`You ${act === 'small' ? 'chatted with' : act + ' with'} ${nm(q)}: ${react}.`); return { ok: !!r, act, react, dl, dt, mood: r1(q.mood) };
     },
-    'player.message': (w, a) => { const p = me(a); if (!p || !w.people.get(a.to)) return fail('no such contact'); const ok = call(a.voice ? 'comms.call' : 'comms.message', { from: p.id, to: a.to }); note(`You ${a.voice ? 'rang' : 'messaged'} ${nm(w.people.get(a.to))}.`); return { ok: !!ok }; },
+    'player.message': (w, a) => {
+      const p = me(a), q = w.people.get(a.to); if (!p || !q) return fail('no such contact');
+      const before = tieOf(q.id, p.id), ok = call(a.voice ? 'comms.call' : 'comms.message', { from: p.id, to: a.to }), after = tieOf(q.id, p.id);
+      const dl = before && after ? r1((after.l ?? 0) - (before.l ?? 0)) : null; note(`You ${a.voice ? 'rang' : 'messaged'} ${nm(q)}.`);
+      return { ok: !!ok, voice: !!a.voice, react: dl == null ? 'neutral' : dl > 0.02 ? 'warm' : dl < -0.02 ? 'cool' : 'neutral', lv: after ? after.lv : 0 };
+    },
+    'player.datingProfile': (w, a) => {
+      const p = me(a); if (!p) return fail('no player'); if (!single(p)) return fail('you are already seeing someone');
+      const d = S.dating[p.id] || (S.dating[p.id] = { on: false, since: w.tick, matches: [] }); const on = a.on !== false; if (on && !d.on) d.since = w.tick; d.on = on;
+      const pool = w.sys.comms ? w.sys.comms.query.datingPool(p.id, 30).length : 0; note(on ? 'You set up a dating profile.' : 'You paused your dating profile.');
+      return { ok: true, on, pool, matches: d.matches.length };
+    },
+    // Ask out someone you know (in person or by message). Only people you have really met, who are single and could plausibly be interested (age, orientation).
+    'player.askOut': (w, a) => {
+      const p = me(a), q = w.people.get(a.to); if (!p || !q || !q.alive) return fail('no such person'); if (!single(p)) return fail('you are already seeing someone');
+      if (!single(q)) return fail('they are already seeing someone'); const t = tieOf(q.id, p.id); if (!t || t.lv < 2) return fail('you have not really met them yet');
+      if (!w.sys.social.query.attractionPossible(p.id, q.id)) return { ok: false, why: 'not a match', plausible: false };
+      const key = p.id + ':' + q.id, last = S.asked[key] ?? -1e9; if (w.tick - last < ASK_COOLDOWN_DAYS * tpd()) return { ok: false, why: 'asked recently', days: Math.ceil(ASK_COOLDOWN_DAYS - (w.tick - last) / tpd()) };
+      S.asked[key] = w.tick; const r = call('life.askOut', { pid: p.id, target: q.id });
+      if (r && r.ok) note(`${nm(q)} said yes: you are seeing each other.`); else note(`${nm(q)} turned you down.`);
+      return { ok: !!(r && r.ok), couple: !!(r && r.ok), low: !!(r && r.p != null && r.p < 0.1), l: t.l, inPerson: p.locationId != null && p.locationId === q.locationId };
+    },
+    'player.buy': (w, a) => {
+      const p = me(a); if (!p || !p.ext.rt) return fail('no player'); const price = a.item === 'pint' ? 5 : 3.2; if (p.money < price) return fail('not enough money');
+      w.ledger.transfer(p.id, 'metropolis', price, 'discretionary'); const bid = p.locationId ?? p.homeId, r = block(p, bid, 3, a.item === 'pint' ? 'Having a drink' : 'Having a coffee'); return { ok: true, price, item: a.item || 'coffee', ...r };
+    },
     'player.post': (w, a) => { const p = me(a); if (!p) return fail('no player'); const ok = a.forum ? call('comms.forumPost', { author: p.id, kind: a.kind || 'question' }) : call('comms.post', { author: p.id, kind: a.kind || 'daily' }); note(a.forum ? 'You posted on the neighbourhood forum.' : 'You posted online.'); return { ok: !!ok }; },
     'player.apply': (w, a) => { const p = me(a); if (!p) return fail('no player'); return applyFor(p, a.occ, a.bid); },
     'player.quit': (w, a) => { const p = me(a); if (!p) return fail('no player'); const ok = call('labour.quit', { pid: p.id }); if (ok) note('You handed in your notice.'); return { ok: !!ok }; },
     'player.rent': (w, a) => { const p = me(a); if (!p) return fail('no player'); const r = call('housing.rentFlat', { pid: p.id, unit: a.unit, reason: 'player' }); if (r && r.ok) note('You signed a new lease.'); return r || fail('failed'); },
     'player.lend': (w, a) => { const p = me(a); if (!p) return fail('no player'); const ok = call('money.lend', { from: p.id, to: a.to, amount: +a.amount, months: a.months || 6 }); if (ok) note(`You lent ${nm(w.people.get(a.to))} £${Math.round(a.amount)}.`); return { ok: !!ok, why: ok ? '' : 'not enough money' }; },
     'player.borrow': (w, a) => { const p = me(a); if (!p) return fail('no player'); const r = call('money.borrow', { pid: p.id, amount: +a.amount, kind: a.kind || 'bank' }); if (r && r.ok) note(`You borrowed £${Math.round(r.amount || a.amount)} (${a.kind || 'bank'}).`); return r || fail('failed'); },
-    'player.join': (w, a) => { const p = me(a); if (!p) return fail('no player'); const ok = call('groups.join', { person: p.id, group: a.group }); if (ok) note('You joined a group.'); return { ok: !!ok }; },
+    'player.join': (w, a) => {
+      const p = me(a); if (!p) return fail('no player'); const gq = w.sys.goals && w.sys.goals.query, g = gq && gq.group(a.group); if (!g) return fail('that group no longer exists');
+      if (gq.groupsOf(p.id).some((x) => x.id === g.id)) return fail('you are already in that group'); const ok = call('groups.join', { person: p.id, group: a.group });
+      if (ok) note(`You joined ${g.name}.`); return { ok: !!ok, name: g.name, kind: g.kind, size: g.size, venue: g.venue ?? null, why: ok ? '' : 'it is not taking members' };
+    },
     'player.found': (w, a) => { const p = me(a); if (!p) return fail('no player'); const r = call('groups.create', { founder: p.id, kind: a.kind || 'club', name: a.name || 'New group' }); if (r) note(`You founded ${a.name || 'a group'}.`); return { ok: !!r }; },
-    'player.adopt': (w, a) => { const p = me(a); if (!p) return fail('no player'); const r = call('goals.adopt', { person: p.id, tpl: a.tpl, intensity: a.intensity ?? 0.7 }); return { ok: !!r, goal: r }; },
+    'player.adopt': (w, a) => {
+      const p = me(a); if (!p) return fail('no player'); const gq = w.sys.goals.query; if (gq.goalsOf(p.id).some((g) => g.tpl === a.tpl && g.status === 'active')) return fail('you are already working on that');
+      const r = call('goals.adopt', { person: p.id, tpl: a.tpl, intensity: a.intensity ?? 0.7 }); if (r) note('You set a goal.'); return { ok: !!r, goal: r, why: r ? '' : 'there is nothing to plan for that right now' };
+    },
     'player.drop': (w, a) => ({ ok: !!call('goals.abandon', { goal: a.goal, why: 'changed my mind' }) }),
     'player.respond': (w, a) => ({ ok: !!call('goals.respond', { request: a.request, answer: a.answer }) }),
   };
@@ -134,6 +193,8 @@ export function createPlayer() {
     here: (pid) => { const p = W.people.get(pid); return p ? hereOf(p) : []; },
     requests: (pid) => (W.sys.goals ? W.sys.goals.query.requests(pid) : []),
     log: () => S.log.slice(-20),
+    datable: (pid) => datable(pid),
+    dating: (pid) => { const d = S.dating[pid]; return { on: !!(d && d.on), since: d ? d.since : null, matches: datingMatches(pid), pool: W.sys.comms ? W.sys.comms.query.datingPool(pid, 30).length : 0 }; },
     pending: (pid) => S.pending.filter((x) => x.pid === pid).map((x) => ({ occ: x.occ, daysLeft: Math.max(0, Math.round((x.due - W.tick) / tpd())) })),
     // Requests aimed at the player, ranked by how much they matter (the asker's real goal, how warm the tie is, how weighty the ask) so the UI can
     // surface a few meaningful ones and batch the rest. Pure presentation: nothing is answered or dropped here; unanswered requests still lapse as 'no reply'.
@@ -156,6 +217,6 @@ export function createPlayer() {
       return out;
     },
   };
-  return { name: 'player', version: '1.0.0', deps: ['routine'], commands, query, clocks: { day: () => resolveApplications() }, init(w) { W = w; } };
+  return { name: 'player', version: '1.0.0', deps: ['routine'], commands, query, clocks: { day: () => { resolveApplications(); dailyDating(); } }, init(w) { W = w; for (const [t, d] of [['player.match', 'A dating-app match for the player']]) if (!w.events.registry.has(t)) w.registerEventType(t, { doc: d, payload: { kind: 'object' } }); } };
 }
 export default createPlayer();

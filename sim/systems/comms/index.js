@@ -155,6 +155,7 @@ export function createComms() {
   // ----- daily: chats and the forum
   function daily(w) {
     const S = w.soc, r = w.rngFor('comms.d');
+    if (!S.dating.users.length) monthly(w); // the app pool exists from day one (it used to stay empty until the first month boundary)
     const dn = w.time.dayAbs;
     for (const c of S.chats) {
       if ((dn + c.id) % 3) continue;

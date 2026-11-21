@@ -208,7 +208,7 @@ export function createHousing() {
       else if (short === 0) hh.crowded = false;
       // student-let tenancies end with the course: once nobody in a student household is studying (graduated / dropped out / working) they give notice
       // at ~10%/month (12-month ASTs, graduate jobs elsewhere) and the unit goes back to the student market
-      if (hh.seg === 'students' && !isSharers(hh) && !hh.search && !hh.departAt && S.autoMoves && !ps.some(studying) && rng.chance(0.10)) { hh.departAt = tick + rng.int(0, 2) * MONTH; hh.departWhy = 'graduated'; hh.departCause = 0; hh.departDest = 'elsewhere'; }
+      if (hh.seg === 'students' && !isSharers(hh) && !hh.search && !hh.departAt && S.autoMoves && !ps.some(studying) && rng.chance(termEndRate(mo, ps.some((x) => x.ext.pop.gradStay)))) { hh.departAt = tick + rng.int(0, 2) * MONTH; hh.departWhy = 'graduated'; hh.departCause = 0; hh.departDest = 'elsewhere'; }
       if (!hh.search && !hh.departAt && S.autoMoves) {
         if (isSharers(hh)) { sharerRotation(hh, ps, adults, seg, rng); }
         else {
@@ -224,7 +224,7 @@ export function createHousing() {
     // --- pending flatmate rooms
     for (let i = S.pendingRooms.length - 1; i >= 0; i--) {
       const r = S.pendingRooms[i], hh = hhs[r.hh]; if (!hh || hh.gone) { S.pendingRooms.splice(i, 1); continue; }
-      if (rng.chance(0.55)) { const p = createSharer(w, rng, hh, r.age); S.pendingRooms.splice(i, 1); finishSharer(hh, p, rng); }
+      if (rng.chance(hh.seg === 'students' ? studentRoomFill(mo) : 0.55)) { const p = createSharer(w, rng, hh, r.age); S.pendingRooms.splice(i, 1); finishSharer(hh, p, rng); }
     }
     // --- waiting list upkeep
     S.wait = S.wait.filter((x) => { const hh = hhs[x.hh]; return hh && !hh.gone && (hh.search || x.points > 0 || isSocial(hh.tenure) === false); });
@@ -328,12 +328,16 @@ export function createHousing() {
     if (cand && rng.chance(0.4)) splitOff(hh, [p], 'own_place', null, rng); else if (rng.chance(0.5)) splitOff(hh, [p], 'own_place', 'metropolis', rng);
   }
   const studying = (p) => p.ext.pop.activity === 'student' || (p.ext.pop.school && (p.ext.pop.school.kind === 'university' || p.ext.pop.school.kind === 'college')); // working students still study
+  // Academic-year cycle (UK student housing): graduates' tenancies end after the September course end (those who stay in the city take ordinary sharer churn,
+  // HESA graduate mobility: ~46.5% stay in region), and rooms / student lets are re-let to the next cohort in Aug-Oct (first-years arrive mid-Sept), with a small January intake.
+  const termEndRate = (mo, stay) => (stay ? 0.012 : mo === 8 ? 0.5 : mo === 9 ? 0.4 : mo === 10 ? 0.2 : 0.03);
+  const studentRoomFill = (mo) => (mo === 8 ? 0.9 : mo === 9 ? 0.6 : mo === 0 ? 0.25 : mo === 7 ? 0.3 : 0.05);
   function sharerRotation(hh, ps, adults, seg, rng) {
     const w = W, S = H(w), rate = hh.seg === 'students' ? 0.014 : hh.seg === 'young_sharers' ? 0.010 : 0.005;
     for (const p of adults) {
       // student-let tenancies end with the course: a former student (graduated, dropped out) in a student house gives notice at ~10%/month
       // (tenancy ends / graduate job elsewhere); the vacant room is re-let to the next cohort (pendingRooms)
-      const r = hh.seg === 'students' && !studying(p) ? 0.10 : rate;
+      const r = hh.seg === 'students' && !studying(p) ? termEndRate(w.time.month, !!p.ext.pop.gradStay) : rate;
       if (adults.length < 2 || !rng.chance(r)) continue;
       const age = w.ageOf(p), eid = w.emit('housing.moved_out', { actors: [p.id], place: hh.bid, objects: [hh.id], salience: 0.3, tags: ['housing', 'life', 'churn'], payload: { to: 'metropolis', reason: 'flatmate_rotation' } });
       if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: p.id });
@@ -387,7 +391,8 @@ export function createHousing() {
     const demand = clamp(0.5 + 0.1 * (macro().rentGrowth - 3) - 0.3 * macro().recession, 0.2, 0.9);
     for (const u of S.list) {
       if (u.hh >= 0 || !u.listed || isSocial(u.tenure) || taken.has(u.id) || u.tenure === 'shared_ownership') { if (u.hh < 0 && u.listed && u.tenure === 'shared_ownership' && rng.chance(0.3)) arrive(u, null); continue; }
-      const p = u.tenure === 'private_rent' ? Math.min(0.95, demand + 0.2) : demand * 0.85;
+      let p = u.tenure === 'private_rent' ? Math.min(0.95, demand + 0.2) : demand * 0.85;
+      if (u.studentLet && !(w.time.month === 7 || w.time.month === 8 || w.time.month === 9)) p *= 0.2; // student lets are let for the September intake (agents market Jan-Aug)
       if (rng.chance(p)) { // landlords may sell empty units instead
         if (u.tenure === 'private_rent') { const ow = ownerOf(u); if (ow && ow.kind === 'small_landlord' && rng.chance(0.045)) { landlordSell(u, rng); u.listed = true; continue; } }
         arrive(u, null);

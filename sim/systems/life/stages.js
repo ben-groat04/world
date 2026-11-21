@@ -44,6 +44,7 @@ export function septemberTransitions(w, people) {
 function emit(w, stage, p) { w.emit('life.school', { actors: [p.id], salience: stage === 'university' ? 0.25 : 0.12, tags: ['school'], payload: { stage } }); }
 export function graduate(w, p, rng) {
   const q = p.ext.pop; q.school = null; q.edu = 'level4plus'; q.uniStart = null; q.activity = 'unemployed';
+  q.gradStay = rng.chance(0.465); // HESA graduate mobility (2023): ~46.5% of graduates stay in the region they studied in; the rest leave when the tenancy ends
   assignWork(w, p, rng);
   w.emit('life.graduate', { actors: [p.id], salience: 0.35, tags: ['school'], payload: { course: q.occ || 'a degree' } });
   w.addMemory(p, { type: 'education', text: 'Graduated from university.', otherIds: [], weight: 0.8, importance: 3 });

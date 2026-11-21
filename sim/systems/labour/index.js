@@ -219,6 +219,7 @@ export function createLabour() {
     else if (!sk && age >= 25 && rng.chance(0.1)) graduate(p, q, age, q.edu);
   }
   function graduate(p, q, age, edu) {
+    q.gradStay = W.rngFor('labour.grad', p.id).chance(0.465); // HESA graduate mobility: ~46.5% of graduates stay in the region they studied in and work there
     separate(p, 'grad', '', {}); q.activity = 'unemployed'; q.edu = edu; q.school = null; q.search = { since: W.tick, kind: 'entry', tries: 0 }; q.lastOcc = null; p.job = 'unemployed';
     W.emit('labour.graduated', { actors: [p.id], salience: 0.3, tags: ['labour', 'life'], payload: { age: Math.round(age) } }); replan(p);
   }

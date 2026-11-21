@@ -76,6 +76,6 @@ export function contractFor(rng, o, hh) {
 }
 export function payFor(w, rng, p, o, macro, priorPay, samePrior) {
   const age = w.ageOf(p), exp = clamp(0.8 + 0.2 * (age - 20) / 10, 0.78, 1.18), z = ((p.personality ? p.personality.conscientiousness : 0.5) - 0.5) * 0.12 + (((p.skills && p.skills.digital) || 0.5) - 0.5) * 0.06;
-  if (samePrior && priorPay) return Math.round(priorPay * rng.float(0.95, 1.12) * macro.wage / (macro._lastWage || 1));
+  if (samePrior && priorPay) return Math.round(priorPay * rng.float(0.95, 1.12));
   return Math.round(logn(rng, o.pay.p10, o.pay.median, o.pay.p90) * exp * (age < 22 ? 0.9 : 1) * (1 + z) * macro.wage);
 }

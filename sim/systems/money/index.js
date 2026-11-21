@@ -32,26 +32,28 @@ function newMacro() { return { rate: 4.0, mortRate: 4.8, cpi: 3.0, price: 1, wag
 function initState(w) {
   const lf = w.lf; if (lf.money) return;
   lf.money = { macro: newMacro(), loans: [], nextLoan: 1, last: {}, stats: { taxIn: 0, benefitsOut: 0, months: 0 }, venueHealth: {}, venueBase: {} };
-  const T = w.pack.meta.tax, B = w.pack.meta.benefits, rng = w.rngFor('money.init');
-  for (const hh of lf.households) {
-    const f = hh.fin = { rentArrears: 0, billArrears: 0, stress: 0, ratio: 0, buffer: 6, cause: 0, hunger: 0, mort: null, income: 0, essentials: 0, claim: false, quiet: 0, pressured: false, spiral: 0 };
-    const adults = hh.members.map((id) => w.people.get(id)).filter((p) => p && w.ageOf(p) >= 16);
-    const head = adults[0];
-    if (hh.rentPcm > 0 && hh.sav && hh.sav.arrears) f.rentArrears = Math.min(hh.sav.arrears, hh.rentPcm * 2.5);
-    else if (hh.sav && hh.sav.arrears) f.billArrears = hh.sav.arrears;
-    if (hh.mortgagePcm > 0) { const bal = Math.round(hh.mortgagePcm / 0.0059), rate = 4.8; f.mort = { bal, rate, term: rng.int(120, 300), fixEnd: w.tick + rng.int(6, 60) * 4380 }; }
-    for (const p of adults) {
-      const q = p.ext.pop, fin = q.fin;
-      fin.cc = Math.round((fin.debt || 0) * 0.8); fin.payday = Math.round((fin.debt || 0) * 0.2 * (hh.sav && hh.sav.debt > 4000 ? 1 : 0.3)); fin.debt = fin.cc + fin.payday; fin.od = 0;
-      fin.pension = Math.round(Math.max(0, w.ageOf(p) - 22) * Math.max(q.fin.gross || 0, 6000) * 0.045 * (q.activity === 'retired' ? 0.6 : 1) * rng.float(0.3, 1.4));
-      fin.sp = 1; fin.priv = 0; fin.stress = 0;
-      if (q.activity === 'retired') { const spA = B.statePensionWeeklyNewFull * 52; fin.sp = fin.gross < spA ? 0.8 : 1; fin.priv = Math.max(0, Math.round(fin.gross - spA * fin.sp)); }
-      if (!fin.studentLoan) fin.studentLoan = 0;
-    }
-  }
+  const rng = w.rngFor('money.init');
+  for (const hh of lf.households) initHousehold(w, hh, rng);
   // the one number every conservation check hangs off
   w.ledger.invariant();
-  void T;
+}
+
+
+export function initHousehold(w, hh, rng) {
+  const B = w.pack.meta.benefits;
+  const f = hh.fin = { rentArrears: 0, billArrears: 0, stress: 0, ratio: 0, buffer: 6, cause: 0, hunger: 0, mort: null, income: 0, essentials: 0, claim: false, pressured: false, spiralEv: 0 };
+  const adults = hh.members.map((id) => w.people.get(id)).filter((p) => p && w.ageOf(p) >= 16);
+  if (hh.rentPcm > 0 && hh.sav && hh.sav.arrears) f.rentArrears = Math.min(hh.sav.arrears, hh.rentPcm * 2.5);
+  else if (hh.sav && hh.sav.arrears) f.billArrears = hh.sav.arrears;
+  if (hh.mortgagePcm > 0) f.mort = { bal: Math.round(hh.mortgagePcm / 0.0059), rate: 4.8, term: rng.int(120, 300), fixEnd: w.tick + rng.int(6, 60) * 4380 };
+  for (const p of adults) {
+    const q = p.ext.pop, fin = q.fin;
+    fin.cc = Math.round((fin.debt || 0) * 0.8); fin.payday = Math.round((fin.debt || 0) * 0.2 * (hh.sav && hh.sav.debt > 4000 ? 1 : 0.3)); fin.debt = fin.cc + fin.payday;
+    fin.pension = Math.round(Math.max(0, w.ageOf(p) - 22) * Math.max(fin.gross || 0, 6000) * 0.045 * (q.activity === 'retired' ? 0.6 : 1) * Math.exp(rng.gauss(-0.5, 1.0)));
+    fin.sp = 1; fin.priv = 0; fin.stress = 0;
+    if (q.activity === 'retired') { const spA = B.statePensionWeeklyNewFull * 52; fin.sp = fin.gross < spA ? 0.8 : 1; fin.priv = Math.max(0, Math.round(fin.gross - spA * fin.sp)); }
+    if (!fin.studentLoan) fin.studentLoan = 0;
+  }
 }
 
 // ------------------------------------------------------------------ macro (annual-scale AR processes stepped monthly)
@@ -76,7 +78,7 @@ function stepMacro(w) {
   m.wage *= 1 + m.wageGrowth / 1200;
   m.rentGrowth = clamp(3.0 + 0.7 * m.cpi - 3.5 * m.recession + rng.gauss(0, 0.4), -3, 12);
   m.rent *= 1 + m.rentGrowth / 1200;
-  m.hpiGrowth = clamp(1.8 + 0.5 * (m.cpi - 2.8) - 1.0 * (m.mortRate - 4.8) - 6 * m.recession + rng.gauss(0, 0.5), -12, 12);
+  m.hpiGrowth = clamp(2.8 + 0.5 * (m.cpi - 2.8) - 1.0 * (m.mortRate - 4.8) - 6 * m.recession + rng.gauss(0, 0.5), -12, 12);
   m.hpi *= 1 + m.hpiGrowth / 1200;
   if (mo === 3) { m.benefit = m.price; m.nmw *= 1 + 0.04; } // April uprating
   if (mo === 3 && w.time.year >= 2028) m.taxIdx = m.price / 1.0;
@@ -369,7 +371,7 @@ export function createMoney() {
   let W = null;
   const plugin = {
     name: 'money', version: '1.0.0',
-    events: { emits: EVENTS.map((e) => e[0]), listens: [] },
+    eventTypes: EVENTS.map((e) => e[0]),
     clocks: { month: (w) => monthly(w) },
     init(world) {
       W = world; MoneyLedger.upgrade(world); registerEvents(world, EVENTS); initState(world);
@@ -414,6 +416,8 @@ export function createMoney() {
       },
       'money.repay': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.ext.pop) return 0; const fin = p.ext.pop.fin; let left = a.amount, tot = 0; for (const k of ['payday', 'cc']) { const x = Math.min(left, fin[k], Math.max(0, p.money)); if (x >= 1) { w.ledger.transfer(p.id, 'metropolis', x, 'debt_service'); fin[k] -= x; left -= x; tot += x; } } return tot; },
       'money.energyShock': (w, a) => { const m = M(w).macro; m.energy *= 1 + (a.pct ?? 30) / 100; m.energyShock = Math.max(m.energyShock, Math.min(1, (a.pct ?? 30) / 60)); w.emit('money.macro_shift', { salience: 0.6, tags: ['macro', 'god'], payload: { what: 'energy', size: a.pct ?? 30 } }); return true; },
+      'money.recession': (w, a) => { const m = M(w).macro; m.recession = Math.max(m.recession, clamp(a.severity ?? 0.6, 0, 1)); m.recMonths = 0; w.emit('money.macro_shift', { salience: 0.65, tags: ['macro', 'god'], payload: { what: 'recession', size: m.recession } }); return true; },
+      'money.initHousehold': (w, a) => { initHousehold(w, w.lf.households[a.hh], w.rngFor('money.init')); return true; },
       'money.setRate': (w, a) => { M(w).macro.rate = a.rate; w.emit('money.macro_shift', { salience: 0.4, tags: ['macro', 'god'], payload: { what: 'rate', size: a.rate } }); return true; },
     },
   };

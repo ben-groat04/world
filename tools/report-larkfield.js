@@ -2,6 +2,7 @@
 // Compact checks: population vs calibration, ties per segment (incl. off-map), time use per segment, 3am-at-home / 11am-at-work, 3 persona day traces, perf.
 import { createLarkfieldWorld } from '../sim/larkfield.js';
 import { TU_CATS } from '../sim/systems/routine/index.js';
+import { runMaterial } from './report-material.js';
 
 const f = (x, n = 1) => (x == null || !Number.isFinite(x) ? 'n/a' : x.toFixed(n));
 const pc = (x) => (x * 100).toFixed(0) + '%';
@@ -118,6 +119,9 @@ export async function runLarkfieldReport(o) {
   const years = o.years || 1, w2 = createLarkfieldWorld(o.seed || 1);
   const ticks = Math.round(years * 365 * 144); const p0 = performance.now(); w2.run(ticks); const secs = (performance.now() - p0) / 1000;
   out.push(`PERF ${years}y = ${ticks} ticks in ${f(secs, 2)}s = ${Math.round(ticks / secs)} ticks/s at pop ${w2.living().length} (target >= 15000; routine+kernel only)  wakes/day/person ${f(w2.sched.stats.wakes / (ticks / 144) / w2.living().length, 1)}  hash ${w2.stateHash()}`);
+  // ---- material life (W1-C): housing, labour, money
+  out.push('--- MATERIAL (housing / labour / money; see tools/report-material.js) ---');
+  out.push(...runMaterial({ seed: o.seed || 1, years: Math.max(1, o.years || 1) }));
   out.push(`total ${f((performance.now() - t0) / 1000, 1)}s`);
   return out;
 }

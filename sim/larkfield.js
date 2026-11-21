@@ -6,12 +6,16 @@ import { makeCalendar } from './systems/routine/calendar.js';
 import { buildLarkfieldMap } from './population/map-adapter.js';
 import { populate } from './population/index.js';
 import routine from './systems/routine/index.js';
+import { createGoals } from './goals/index.js';
+import { createLabour } from './systems/labour/index.js';
+import { createHousing } from './systems/housing/index.js';
+import { createMoney } from './systems/money/index.js';
 import { loadSnapshot } from './snapshot.js';
 
 export function larkfieldOpts(seed = 1, opts = {}) {
   const calendar = makeCalendar({ start: opts.start });
   return {
-    seed, pack, calendar, sched: 'agenda', systems: [], plugins: [routine], strictEvents: !!opts.strictEvents, hashDaily: !!opts.hashDaily,
+    seed, pack, calendar, sched: 'agenda', systems: [], plugins: [routine, ...(opts.goals === false ? [] : [createGoals(opts.goalsOpts || {})]), createLabour(), createHousing(), createMoney()], strictEvents: !!opts.strictEvents, hashDaily: !!opts.hashDaily,
     settings: { population: 500, houses: 0, ...(opts.settings || {}) },
     generateMap: () => buildLarkfieldMap(pack, seed, opts.map || {}),
     populate: (world, rng) => populate(world, rng),

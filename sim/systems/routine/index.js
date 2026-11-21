@@ -82,7 +82,21 @@ function initPerson(world, ctx, p) {
 export default {
   name: 'routine', version: '1.0.0',
   commands: {
+    // life/housing hooks: 'routine.init' gives a person created mid-run (newborn, arrival) a routine record; 'routine.rehome' rebuilds habits after a move or life-stage change.
+    'routine.init': (world, a) => { const p = world.people.get(a.pid); if (p && p.alive && p.ext.pop && !p.ext.rt) initPerson(world, world.rtx, p); },
+    'routine.rehome': (world, a) => {
+      const p = world.people.get(a.pid); if (!p || !p.alive || !p.ext.pop) return; if (!p.ext.rt) { initPerson(world, world.rtx, p); return; }
+      const rt = p.ext.rt; rt.life = makeLife(world, world.rtx, p); rt.adult = world.ageOf(p) >= 16; rt.seg = world.rtx.segIdx[p.ext.pop.seg]; world.cmd('routine.replan', { pid: p.id });
+    },
     'routine.replan': (world, a) => { const p = world.people.get(a.pid); if (!p) return; const rt = p.ext.rt; rt.wk = null; rt.wc0 = rt.wc1 = null; const t = world.tick; rt.plan = [t + 1, rt.plan[(rt.pi - 1 >= 0 ? rt.pi - 1 : 0) * STRIDE + 1], rt.pt, rt.pid, 0, t + 2, A.build, 0, 0, 0]; rt.pi = 0; world.sched.schedule(p, t + 1); },
+    // W1-C housing hook: a person arrived (new Person) or moved house (p.homeId changed): (re)build habit-layer state around the new home.
+    'routine.adopt': (world, a) => {
+      const p = world.people.get(a.pid); if (!p || !p.alive || !p.ext.pop) return false;
+      if (!p.ext.rt) { initPerson(world, world.rtx, p); p.wake = -2; world.sched.schedule(p, p.wake < 0 ? world.tick + 1 : p.wake); return true; }
+      const rt = p.ext.rt; rt.life = makeLife(world, world.rtx, p);
+      if (a.from != null && p.locationId === a.from) { const ob = world.buildings.get(a.from), nb = world.buildings.get(p.homeId); if (ob) ob.occupants.delete(p); if (p.cell >= 0) world._gridRemove(p); p.locationId = nb.id; nb.occupants.add(p); p.x = nb.door.x; p.y = nb.door.y; p.inside = true; }
+      world.cmd('routine.replan', { pid: p.id }); return true;
+    },
     'routine.insert': (world, a) => {
       const p = world.people.get(a.pid); if (!p) return; const rt = p.ext.rt, now = world.tick, from = Math.max(a.from ?? now + 1, now + 1), to = Math.max(a.to, from + 1);
       const ent = []; for (let i = 0; i < rt.plan.length; i += STRIDE) ent.push(rt.plan.slice(i, i + STRIDE));

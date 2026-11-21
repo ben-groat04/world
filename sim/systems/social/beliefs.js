@@ -65,7 +65,7 @@ export function pickTopic(r, ps, other, tie, loyal, gossipy, now) {
   for (const [kk, v] of ps.B) {
     if (v.a === other.id || v.o === other.id) continue;
     if (tl && tl.includes(kk)) continue;
-    if (v.nt && r.next() > (1 - loyal) * 0.12) continue;
+    if (v.nt && r.next() > (1 - loyal) * 0.3) continue;
     let w = v.sal * (0.25 + v.c) * (v.a === ps.id ? 2.2 : gossipy) / (1 + (now - v.t) / (40 * TPD));
     if (KINDS[v.k][0] === 0) w *= gossipy;
     tot += w; TW[i++] = w; arr.push(v);

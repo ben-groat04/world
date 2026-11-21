@@ -14,7 +14,7 @@ export default {
   'rumour.new_car': ['{s.first} has got a new car. Electric. They will tell you about it.', 'Saw {s.first} in a brand new motor. Wonder how that is being paid for.'],
   'rumour.new_dog': ['{s.first} has got a puppy. It is enormous and has eaten a sofa.', 'Have you seen {s.first}\'s new dog? Very cute. Very loud.'],
   'rumour.kid_news': ['{s.first}\'s eldest got into the grammar, I heard.', '{s.first}\'s boy is in trouble at school. Nothing awful, I think.', 'Apparently {s.first}\'s daughter has got the lead in the school play.'],
-  'rumour.ill': ['I heard {s.first} is not well. Hospital appointments, that sort of thing.', 'Poor {s.first}. They have not been right since the autumn.', '{s.first} has been poorly. I don\'t like to ask.'],
+  'rumour.ill': ['I heard {s.first} is not well. Hospital appointments, that sort of thing.', 'Poor {s.first}. {s.They} {s.v:hasnt} been right since the autumn.', '{s.first} has been poorly. I don\'t like to ask.'],
   'rumour.died': ['Have you heard about {s.first}? Passed away. I am still taking it in.', 'Terribly sad news about {s.first}. The funeral will be at the crem.'],
   'rumour.shop_closing': ['The {p.place} is closing, you know. End of the month.', 'Heard the {p.place} is shutting for good. Another one gone.'],
   'rumour.shop_opening': ['Something is opening in the old {p.place}. A cafe, they reckon.', 'New place opening up by the {p.place}. About time.'],

@@ -1,6 +1,7 @@
 // Venue-session encounters (hourly, only venues with >= 2 people present) + doorstep neighbours + group meetings.
 // Strangers who keep sharing a place first become "familiar faces" (weeks of co-presence), only later speak, and only then do ties form. Neighbours in flats often never speak.
 import { TPD, clamp } from './core.js';
+import { hash32 } from '../../kernel/rng.js';
 import { psOf, segInfo, doorDist, touch, link as linkT } from './ties.js';
 import { converse } from './acts.js';
 
@@ -46,7 +47,7 @@ export function pair(w, S, r, a, b, ctx, soc) {
   // first words
   const E = (a.personality.extraversion + b.personality.extraversion) * 0.5, A_ = (a.personality.agreeableness + b.personality.agreeableness) * 0.5;
   const sh = shared(S, A, B), h = hom(w, a, b);
-  const pw = clamp(soc * 0.22 / 0.4 * (0.4 + 1.2 * E) * (0.7 + 0.6 * A_) * Math.min(2.2, h) * (1 + 0.5 * sh) * Math.min(2, 0.6 + 0.2 * Math.min(sa[2], 8)) * (ctx === 'door' ? segInfo(w, S, a.ext.pop.seg).nc + segInfo(w, S, b.ext.pop.seg).nc : 1), 0, 0.9);
+  const pw = clamp(soc * 0.22 / 0.4 * (0.4 + 1.2 * E) * (0.7 + 0.6 * A_) * Math.min(2.2, h) * (1 + 0.5 * sh) * Math.min(2, 0.6 + 0.2 * Math.min(sa[2], 8)) * (ctx === 'door' ? 0.45 * (segInfo(w, S, a.ext.pop.seg).nc + segInfo(w, S, b.ext.pop.seg).nc) * (S.bigBlock(w, a) ? 0.45 : 1) : 1), 0, 0.9);
   if (r.next() < pw) {
     const via = ctx === 'door' ? 'neighbours' : ctx === 'work' ? 'work' : ctx === 'school' ? 'school gate' : ctx === 'group' ? 'a group' : 'regulars at ' + ctx;
     const k = ctx === 'door' ? 'neighbour' : ctx === 'work' ? 'colleague' : ctx === 'school' ? 'schoolgate' : 'regular';
@@ -72,7 +73,7 @@ export function sweep(w, S, r, hour) {
       const a = arr[j]; if (!a.alive || a.ext.rt.off) continue;
       const E = a.personality.extraversion; if (r.next() > v.soc * (0.3 + 0.9 * E) * 0.34) continue;
       let k = (r.next() * (n - 1)) | 0; if (k >= j) k++; const b = arr[k];
-      if (!b.alive || a.homeId === b.homeId) continue;
+      if (!b.alive || a.ext.pop.hh === b.ext.pop.hh) continue;
       if (ctx === 'work' && !(a.workId === v.id || b.workId === v.id || (a.ext.pop.workplace.bid === v.id) || b.ext.pop.workplace.bid === v.id)) continue;
       if (ctx === 'school' && (w.ageOf(a) >= 16) !== (w.ageOf(b) >= 16)) { /* parents with children: gate chat */ }
       pair(w, S, r, a, b, ctx, v.soc);
@@ -85,10 +86,11 @@ export function neighbours(w, S, r, p) {
   const seg = segInfo(w, S, p.ext.pop.seg), res = b.residents;
   let tries = r.next() < 0.3 + 0.5 * seg.nc ? 1 : 0;
   for (let i = 0; i < tries; i++) {
-    let o = null;
-    if (res.length > 1 && r.next() < 0.6) { const id = res[(r.next() * res.length) | 0]; if (id !== p.id) o = w.people.get(id); }
+    let o = null; const A = S.ppl.get(p.id);
+    if (A && A.ST.size && r.next() < 0.6) { let k = (r.next() * A.ST.size) | 0; for (const id of A.ST.keys()) { if (k-- <= 0) { const c = w.people.get(id); if (c && c.alive && c.ext.pop.hh !== p.ext.pop.hh && doorDist(w, p, c) < 35) o = c; break; } } }
+    if (o) { /* repeat sighting */ } else if (res.length > 1 && r.next() < 0.6) { const id = res[hash32(p.id, (r.next() * 2) | 0, 7) % res.length]; if (id !== p.id) o = w.people.get(id); }
     else { const st = S.street.get(b.lf.streetId); if (st && st.length) { for (let k = 0; k < 3; k++) { const c = st[(r.next() * st.length) | 0]; if (c !== p.id && doorDist(w, p, w.people.get(c) || p) < 35) { o = w.people.get(c); break; } } } }
-    if (!o || !o.alive || o.homeId === p.homeId || o.emigrated) continue;
+    if (!o || !o.alive || o.ext.pop.hh === p.ext.pop.hh || o.emigrated) continue;
     if (w.ageOf(o) < 16 && w.ageOf(p) >= 16 && r.next() < 0.7) continue;
     pair(w, S, r, p, o, 'door', 0.5);
   }

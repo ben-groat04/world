@@ -44,8 +44,8 @@ function incident(w, S, r, sid, ids, k, nm) {
   const cb = w.buildings.get(cul.homeId);
   // witnesses: housemates excluded; neighbours in the building, plus the street
   const wit = [];
-  if (cb) for (const id of cb.residents) { if (id !== cul.id && w.people.get(id)?.homeId !== cul.homeId && r.next() < 0.5) wit.push(id); }
-  for (let i = 0; i < 3; i++) { const id = ids[(r.next() * ids.length) | 0]; const o = w.people.get(id); if (o && o.alive && o.homeId !== cul.homeId && w.buildings.get(o.homeId) && doorDist(w, o, cul) < 30 && !wit.includes(id)) wit.push(id); }
+  if (cb) for (const id of cb.residents) { if (id !== cul.id && w.people.get(id)?.ext.pop.hh !== cul.ext.pop.hh && r.next() < 0.5) wit.push(id); }
+  for (let i = 0; i < 3; i++) { const id = ids[(r.next() * ids.length) | 0]; const o = w.people.get(id); if (o && o.alive && o.ext.pop.hh !== cul.ext.pop.hh && w.buildings.get(o.homeId) && doorDist(w, o, cul) < 30 && !wit.includes(id)) wit.push(id); }
   let complained = 0;
   for (const id of wit.slice(0, 5)) {
     const o = w.people.get(id); if (!o || !o.alive || w.ageOf(o) < 16) continue; const ps = psOf(w, S, id); if (!ps) continue;

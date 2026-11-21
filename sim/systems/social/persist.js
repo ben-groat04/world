@@ -2,7 +2,7 @@
 import { newSoc } from './core.js';
 export function encode(S) {
   const ppl = []; for (const [id, ps] of S.ppl) ppl.push([id, { ...ps, T: [...ps.T.values()], ST: [...ps.ST], B: [...ps.B] }]);
-  const { ppl: _p, facts, venues, street, metro, seg, bk, ...rest } = S;
+  const { ppl: _p, facts, venues, street, metro, seg, bk, bigBlock, postCum, postIds, postTot, ...rest } = S;
   return { ppl, facts: [...facts], rest };
 }
 export function decode(w, d) {

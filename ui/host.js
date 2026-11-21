@@ -1,0 +1,223 @@
+// Larkfield UI host: owns the sim World, drives it at the chosen speed tier, and turns world state into compact messages.
+// Worker-safe (no DOM). Used by ui/worker.js (off-thread) and by ui/store.js (main-thread fallback).
+import { createLarkfieldWorld } from '../sim/larkfield.js';
+import { installSifter } from '../sim/sifter/index.js';
+import { TextEngine } from '../sim/text/engine.js';
+import textPack from '../content/larkfield/text/index.js';
+import { SEGMENTS } from '../content/larkfield/segments.js';
+import { openingsFor } from '../sim/population/venues.js';
+import { describeEvent, newsFor, NEWS_TYPES } from './describe.js';
+import { GOD_COMMANDS } from './godcatalogue.js';
+
+export const TIER_LIST = [
+  { id: 'pause', label: 'Pause', hint: 'Space' },
+  { id: 'scene', label: 'Scene', hint: 'Watch the street live: about 1 game-hour per second' },
+  { id: 'life', label: 'Lifetime', hint: 'A 70-year life in about an hour' },
+  { id: 'x5', label: '×5', hint: 'Five times Lifetime' },
+  { id: 'x20', label: '×20', hint: 'Twenty times Lifetime' },
+  { id: 'max', label: 'Max', hint: 'As fast as this device can go' },
+];
+const SEG_IDS = SEGMENTS.map((s) => s.id), SEG_LABEL = Object.fromEntries(SEGMENTS.map((s) => [s.id, s.label]));
+const r2 = (v) => Math.round(v * 100) / 100;
+const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const SEASON = (m) => (m >= 2 && m <= 4 ? 'Spring' : m >= 5 && m <= 7 ? 'Summer' : m >= 8 && m <= 10 ? 'Autumn' : 'Winter');
+const hoursText = (iv) => (iv && iv.length ? iv.map(([a, b]) => `${fh(a)}–${fh(b)}`).join(', ') : 'closed today');
+const fh = (h) => { h = h % 24; const hh = Math.floor(h), mm = Math.round((h - hh) * 60); return `${hh}:${String(mm).padStart(2, '0')}`; };
+
+export class Host {
+  constructor(seed, send) {
+    this.send = send; this.seed = seed;
+    const w = this.w = createLarkfieldWorld(seed);
+    this.sifter = installSifter(w);
+    this.text = new TextEngine(textPack, { seed });
+    this.TPY = w.calendar.ticksPerYear; this.TPD = 144;
+    const lifeTps = this.TPY / 50; // 50 s per game-year = a 70 year life in ~1 hour
+    this.tiers = { pause: 0, scene: 6, life: lifeTps, x5: lifeTps * 5, x20: lifeTps * 20, max: Infinity };
+    this.tier = 'pause'; this.tps = 0; this.acc = 0; this.rate = 0; this.selected = null; this.jump = null;
+    this.news = []; this.newsOut = []; this.forumSeen = 0; this.feedSeen = 0; this.lastDetail = 0; this.lastSlow = 0; this.lastRoster = -1;
+    this.series = []; this.pendingSeries = []; this.godWatch = null; this.lastStatTick = -1e9; this.nextNewsId = 1;
+    this.byBid = new Map(); for (const b of w.buildings.values()) this.byBid.set(b.id, b);
+    this.venueOf = new Map(); for (const v of w.map.lf.venues) this.venueOf.set(v.buildingId, v);
+    this.sampleStats();
+    for (const t of NEWS_TYPES) if (w.events.registry.has(t)) w.on(t, (ev) => this.onEvent(ev));
+    this.seenPop = -1;
+  }
+
+  // ------------------------------------------------------------------ boot
+  hello() {
+    const w = this.w, lf = w.map.lf;
+    const buildings = [];
+    for (const b of w.buildings.values()) buildings.push({ id: b.id, name: b.name, type: b.type, x: b.x, y: b.y, w: b.w, h: b.h, door: b.door, zone: b.zone, kind: b.lf?.kind, cat: b.lf?.category || null, tpl: b.lf?.template || null, arch: b.lf?.archetype || null, address: b.lf?.address || b.name, st: b.lf?.streetId ?? null, units: b.lf?.units?.length || 0, storeys: lf.buildings[b.id]?.storeys || 1 });
+    const dwellings = buildings.filter((b) => b.kind === 'residential').map((b) => ({ id: b.id, name: b.name, unit: w.buildings.get(b.id).lf.units[0] }));
+    const venues = buildings.filter((b) => b.tpl && b.kind !== 'residential').map((b) => ({ id: b.id, name: b.name, tpl: b.tpl }));
+    this.send({
+      t: 'ready', town: 'Larkfield', seed: this.seed, tpy: this.TPY, tiers: TIER_LIST.map((t) => ({ ...t, tps: this.tiers[t.id] })),
+      map: { w: lf.w, h: lf.h, tiles: new Uint8Array(lf.tiles), streets: lf.streets, buildings: lf.buildings.map((b) => ({ id: b.id, kind: b.kind, rect: b.rect, roof: b.roof, ridge: b.ridge, material: b.material, storeys: b.storeys, facing: b.facing, venueId: b.venueId, doors: b.doors, name: b.name })), venues: lf.venues, areas: lf.areas, props: lf.props, graph: null, station: lf.station, gateways: lf.gateways },
+      bld: buildings, segs: SEGMENTS.map((s) => ({ id: s.id, label: s.label, blurb: s.blurb })),
+      god: this.godCatalogue(), dwellings, venueList: venues, sectors: this.safe(() => w.sys.labour.query.sectors(), []),
+      templates: this.safe(() => w.sys.goals.query.templates().filter((t) => !t.mundane).map((t) => ({ id: t.id, phrase: t.phrase })), []),
+      time: this.timeInfo(), news: [], series: this.series.slice(), stats: this.statsDetail(),
+    });
+    this.sendRoster(true);
+  }
+  safe(f, d) { try { return f(); } catch (e) { return d; } }
+
+  // ------------------------------------------------------------------ time / speed
+  timeInfo() {
+    const w = this.w, t = w.time, rec = t.rec || {};
+    const hh = String(t.hour || 0).padStart(2, '0'), mm = String(t.minute || 0).padStart(2, '0');
+    return { tick: w.tick, clock: `${hh}:${mm}`, hour: t.hourFloat || 0, date: w.calendar.formatDate(w.tick), year: rec.year, month: rec.month, dow: rec.dow, doy: rec.doy, season: SEASON(rec.month ?? 0), sunrise: rec.sunrise ?? 6.5, sunset: rec.sunset ?? 18, bst: !!rec.bst, bank: rec.bankHoliday || null, term: rec.term || null, weather: w.weather ? { type: w.weather.type, temp: w.weather.temp } : null, pop: w.living().length };
+  }
+  setTier(id) {
+    if (!(id in this.tiers)) id = 'life'; this.tier = id; this.tps = this.tiers[id]; this.acc = 0;
+    this.send({ t: 'speed', tier: id, tps: this.tps });
+  }
+  advance(dtSec, budgetMs = 12) {
+    if (this.tps === 0) { this.rate *= 0.9; return 0; }
+    const w = this.w, t0 = performance.now(); let n = 0;
+    if (this.tps === Infinity) { while (performance.now() - t0 < budgetMs && n < 30000) { w.step(); n++; if (this.jump && this.checkJump()) break; } }
+    else { this.acc = Math.min(this.acc + dtSec * this.tps, this.tps * 0.4 + 4); while (this.acc >= 1 && performance.now() - t0 < budgetMs) { w.step(); this.acc--; n++; if (this.jump && this.checkJump()) break; } }
+    if (dtSec > 0) this.rate = this.rate * 0.85 + (n / dtSec) * 0.15;
+    if (w.tick - this.lastStatTick >= this.TPD * 14) this.sampleStats();
+    return n;
+  }
+  checkJump() { const j = this.jump; if (this.w.tick > j.limit) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: null }); return true; } return false; }
+
+  // ------------------------------------------------------------------ events -> feeds
+  onEvent(ev) {
+    const w = this.w; const it = newsFor(w, this.text, ev, this); if (!it) return;
+    it.id = this.nextNewsId++; if (this.godWatch && ev.tick <= this.godWatch.until) it.conseq = true;
+    this.news.push(it); this.newsOut.push(it); if (this.news.length > 600) this.news.splice(0, 100);
+    if (this.jump && it.sal >= this.jump.min && ev.tick > this.jump.start) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: it }); }
+  }
+  ref(id) { const p = this.w.people.get(id); return p ? { id, name: nm(p) } : { id, name: typeof id === 'string' ? '(elsewhere)' : 'someone' }; }
+
+  // ------------------------------------------------------------------ frames
+  sendRoster(force) {
+    const w = this.w; if (!force && w.people.size === this.lastRoster) return; this.lastRoster = w.people.size;
+    const out = []; for (const p of w.people.values()) { if (!p.alive) continue; out.push([p.id, p.firstName, p.lastName, SEG_IDS.indexOf(p.ext.pop?.seg), p.sex === 'F' ? 1 : 0, +(p.genes?.skinTone ?? 0.5).toFixed(2), +(p.genes?.hairColor ?? 0.4).toFixed(2), p.ext.pop?.occ || '']); }
+    this.send({ t: 'roster', list: out });
+  }
+  frame(now) {
+    const w = this.w, L = w.living(); const n = L.length, pk = new Float32Array(n * 7); let off = 0, i = 0;
+    for (const p of L) {
+      const rt = p.ext.rt, o = rt && rt.off ? 1 : 0; off += o;
+      pk[i++] = p.id; pk[i++] = p.x; pk[i++] = p.y; pk[i++] = o ? 2 : p.inside ? 1 : 0; pk[i++] = SEG_IDS.indexOf(p.ext.pop?.seg); pk[i++] = w.ageOf(p); pk[i++] = Math.round((p.mood || 0) * 100) + (p.illness ? 1000 : 0) + (p.sex === 'F' ? 2000 : 0);
+    }
+    const occ = []; for (const b of w.buildings.values()) if (b.occupants && b.occupants.size) occ.push(b.id, b.occupants.size);
+    const time = this.timeInfo(); time.off = off; time.rate = this.rate; time.tier = this.tier;
+    this.send({ t: 'frame', time, people: pk, occ: new Int16Array(occ) }, [pk.buffer]);
+    if (w.people.size !== this.lastRoster) this.sendRoster();
+    if (this.newsOut.length) { this.send({ t: 'news', items: this.newsOut.splice(0, 200) }); }
+    if (now - this.lastSlow > (this.tps > 3000 ? 2500 : 1200)) { this.lastSlow = now; this.slowFeeds(); }
+    if (this.pendingSeries.length) { this.send({ t: 'stats', samples: this.pendingSeries.splice(0), stats: this.statsDetail() }); }
+    const gap = this.tps > 3000 ? 700 : 260;
+    if (this.selected != null && now - this.lastDetail > gap) { this.lastDetail = now; const d = this.personDetail(this.selected); if (d) this.send({ t: 'detail', p: d }); }
+  }
+  slowFeeds() {
+    const w = this.w; const cm = w.sys.comms && w.sys.comms.query;
+    let forum = [], feed = [];
+    if (cm) { forum = this.safe(() => cm.forum(40), []); feed = this.safe(() => cm.feed(40), []); }
+    const author = (id) => { const p = w.people.get(id); return { id, name: nm(p), seg: SEG_LABEL[p?.ext.pop?.seg] || '' }; };
+    const posts = [];
+    for (const f of forum) posts.push({ id: 'f' + f.id, ch: 'forum', t: f.t, date: w.calendar.formatDate(f.t), au: author(f.author), kind: f.kind, text: f.text, seen: f.seen, replies: (f.replies || []).map((r) => ({ au: author(r.author), text: r.text, tone: r.tone })) });
+    for (const f of feed) posts.push({ id: 'p' + f.id, ch: 'feed', t: f.t, date: w.calendar.formatDate(f.t), au: author(f.author), kind: f.kind, text: f.text, reach: f.reach });
+    posts.sort((a, b) => b.t - a.t);
+    const sig = posts.length ? posts[0].id + ':' + posts.length : '';
+    if (sig !== this.postSig) { this.postSig = sig; this.send({ t: 'posts', posts: posts.slice(0, 60), source: cm ? 'comms' : 'events' }); }
+    // storylines
+    const arcs = this.sifter.ranked(14, { minScore: 0.8 }).map((a) => this.arcView(a));
+    const asig = arcs.map((a) => a.id + ':' + a.n).join(',');
+    if (asig !== this.arcSig) { this.arcSig = asig; this.send({ t: 'arcs', arcs, quiet: arcs.length === 0, stats: this.sifter.stats() }); }
+  }
+  arcView(a) {
+    const w = this.w; const beats = a.beats.slice(-5).map((b) => { const ev = w.events.get ? w.events.get(b.eid) : null; return { tick: b.tick, date: w.calendar.formatDate(b.tick), stage: b.stage, text: ev ? describeEvent(w, ev, this.text).line : b.type }; });
+    return { id: a.id, kind: a.kind, status: a.status, outcome: a.outcome, stage: a.stage, score: r2(a.score), n: a.beats.length, start: w.calendar.formatDate(a.start), last: w.calendar.formatDate(a.last), days: Math.round((a.last - a.start) / this.TPD), actors: a.actors.slice(0, 5).map((id) => this.ref(id)), beats, quiet: !!a.quiet };
+  }
+
+  // ------------------------------------------------------------------ stats
+  sampleStats() {
+    const w = this.w; this.lastStatTick = w.tick; const L = w.living(); let mood = 0, lone = 0, ad = 0, ten = {}; const q = w.sys; let burdenSum = 0, burdenN = 0;
+    for (const p of L) { mood += p.mood || 0; if (p.ext.hl && p.ext.hl.lonely) lone++; if (w.ageOf(p) >= 18) { ad++; const b = this.safe(() => q.housing.query.rentBurden(p.id), 0); if (b > 0) { burdenSum += b; burdenN++; } } }
+    const hs = this.safe(() => q.housing.query.stats(), {}), ls = this.safe(() => q.labour.query.stats(), {}), ms = this.safe(() => q.money.query.stats(), {});
+    const s = { tick: w.tick, date: w.calendar.formatDate(w.tick), year: w.time.rec?.year, pop: L.length, unemp: r2((ls.rate || 0) * 100), burden: burdenN ? r2(burdenSum / burdenN * 100) : 0, mood: r2(mood / (L.length || 1)), lone: r2(lone / (L.length || 1) * 100), births: w.stats.births || 0, deaths: w.stats.deaths || 0, moves: hs.moves || 0, vac: r2((hs.vacancyRate || 0) * 100), pressured: ms.last?.pressured || 0, rentIdx: r2(this.safe(() => q.housing.query.market().rentIndex, 1)), arrears: 0 };
+    this.series.push(s); this.pendingSeries.push(s); if (this.series.length > 700) this.series.shift();
+  }
+  statsDetail() {
+    const w = this.w, pyr = Array.from({ length: 19 }, (_, i) => ({ lo: i * 5, m: 0, f: 0 })), segs = {}; let n = 0;
+    for (const p of w.living()) { const a = Math.floor(w.ageOf(p)), b = pyr[Math.min(18, Math.floor(a / 5))]; if (p.sex === 'F') b.f++; else b.m++; const s = p.ext.pop?.seg; segs[s] = (segs[s] || 0) + 1; n++; }
+    const hs = this.safe(() => w.sys.housing.query.stats(), {}), ls = this.safe(() => w.sys.labour.query.stats(), {});
+    return { pyr, segs, tenure: hs.tenure || {}, units: hs.units, households: hs.households, overcrowded: hs.overcrowdedRate, labour: ls, housing: hs, macro: this.safe(() => w.sys.money.query.macro(), {}), n };
+  }
+
+  // ------------------------------------------------------------------ details
+  place(id) { const b = id != null ? this.byBid.get(id) : null; return b ? { id: b.id, name: b.name } : null; }
+  personDetail(id) {
+    const w = this.w, p = w.people.get(id); if (!p) return null; const q = w.sys, pop = p.ext.pop || {}, age = w.ageOf(p), S = (f, d = null) => this.safe(f, d);
+    const home = this.place(p.homeId), unit = S(() => q.housing.query.unit(id)), job = S(() => q.labour.query.job(id)), now = S(() => q.routine.query.now(p));
+    const wp = job && job.workplace; let workplace = null;
+    if (pop.workplace && pop.workplace.kind === 'onmap') workplace = { ...this.place(pop.workplace.bid), mode: pop.workplace.mode, mins: pop.workplace.mins };
+    else if (wp) workplace = { name: (wp.dest || 'elsewhere').replace(/_/g, ' '), offmap: true, mode: wp.mode, mins: wp.mins, hybrid: wp.hybrid };
+    const press = S(() => q.money.query.pressure(id)), bud = S(() => q.money.query.budget(id)), fin = pop.fin || {};
+    const hst = S(() => q.health.query.status(id)), men = S(() => q.health.query.mental(id)), wb = S(() => q.health.query.wellbeing(id));
+    const goalList = S(() => q.goals.query.goalsOf(id), []).map((g) => ({ id: g.id, phrase: g.phrase, status: g.status, intensity: r2(g.intensity), secret: g.secret, method: g.method, step: g.step, line: g.line, log: (g.log || []).slice(-2) }));
+    const groups = S(() => q.goals.query.groupsOf(id), []).map((g) => ({ id: g.id, name: g.name, kind: g.kind, size: g.size, role: g.role || (g.leader === id ? 'leader' : 'member'), venue: this.place(g.venue) }));
+    const part = S(() => q.life.query.partner(id)), lst = S(() => q.life.query.status(id));
+    const ties = S(() => q.social.query.ties(id), []).map((t) => ({ id: t.o, name: t.name, k: t.k, r: t.r, strength: r2(t.c), warmth: r2(t.l), trust: r2(t.t), on: !!t.on, via: t.v, conf: !!t.cf }));
+    const bio = []; for (const m of p.memories || []) if (m.type === 'biography') bio.push({ tick: m.tick, date: w.calendar.formatDate(m.tick), text: m.text, imp: m.importance || 2 });
+    const evs = []; for (const ev of w.events.query({ actor: id, minSalience: 0.2, limit: 120 })) { const d = describeEvent(w, ev, this.text, id); if (d && !/^goal\./.test(ev.type)) evs.push({ tick: ev.tick, date: w.calendar.formatDate(ev.tick), text: d.line, imp: Math.round(ev.salience * 5) }); }
+    const life = bio.concat(evs).sort((a, b) => a.tick - b.tick);
+    const hh = S(() => w.lf.households[pop.hh]), mem = hh && hh.members ? hh.members.filter((x) => x !== id).map((x) => this.ref(x)) : [];
+    const loc = p.locationId != null ? this.place(p.locationId) : null;
+    return {
+      id, name: nm(p), first: p.firstName, last: p.lastName, age: Math.floor(age), ageF: age, sex: p.sex, alive: !!p.alive, cause: p.causeOfDeath || null,
+      seg: pop.seg, segLabel: SEG_LABEL[pop.seg] || '', role: pop.role, eth: pop.eth, born: pop.birthplace, bornUK: pop.bornUK, religion: pop.religion, yearsAtAddress: pop.yearsAtAddress, edu: pop.edu, car: !!pop.car, pets: pop.pets,
+      home, household: { size: hh ? (hh.members ? hh.members.length : null) : null, members: mem }, unit: unit ? { tenure: unit.tenure, rent: unit.rent, bedrooms: unit.bedrooms, cond: r2(unit.cond), damp: !!unit.damp, notice: !!unit.notice, landlord: unit.landlord != null ? this.ref(unit.landlord) : null, address: unit.address, value: unit.value } : null,
+      job: p.job, activity: pop.activity, jobInfo: job, workplace,
+      money: { pressure: press, budget: bud, savings: Math.round(fin.savings || 0), debt: Math.round(fin.debt || 0), arrears: Math.round(fin.arrears || 0), net: Math.round(fin.net || 0), gross: Math.round(fin.gross || 0), burden: S(() => q.housing.query.rentBurden(id), 0) },
+      health: { status: hst, mental: men, wellbeing: wb, mood: r2(p.mood || 0) }, needs: p.needs,
+      now: now ? { act: now.act, cat: now.cat, off: now.off, label: now.label } : null, thought: p.thought || '', loc, offmap: !!(now && now.off),
+      goals: goalList, groups, partner: part, lifeStatus: lst, ties, life, drives: pop.drives, personality: p.personality, traits: p.traits, interests: p.interests,
+      portrait: { id: String(p.id), genes: p.genes, sex: p.sex, age, mood: p.mood, health: p.health, alive: !!p.alive }, tick: w.tick,
+    };
+  }
+  buildingDetail(id) {
+    const w = this.w, b = w.buildings.get(id); if (!b) return null; const v = this.venueOf.get(id), q = w.sys, rec = w.time.rec || {}, lf = b.lf || {};
+    const P = (ids) => (ids || []).map((i) => w.people.get(i)).filter((p) => p && p.alive).map((p) => ({ id: p.id, name: nm(p), job: p.job, age: Math.floor(w.ageOf(p)) }));
+    const inside = P([...(b.occupants || [])].map((p) => (typeof p === 'object' ? p.id : p)));
+    const iv = v ? openingsFor(w.pack, v, rec.dow, rec.bankHoliday) : null;
+    const units = (lf.units || []).slice(0, 8).map((u) => this.safe(() => { const U = w.lf.housing.list.find((x) => x.id === u); return U ? { id: U.id, tenure: U.tenure, bedrooms: U.bedrooms, rent: U.rent, cond: r2(U.cond), vacant: U.hh < 0, landlord: U.landlord != null ? this.ref(U.landlord) : null } : null; }, null)).filter(Boolean);
+    const staff = this.safe(() => q.labour.query.firm(id), null);
+    const owner = b.ownerId != null ? this.ref(b.ownerId) : (units.find((u) => u.landlord) || {}).landlord || null;
+    return { id, name: b.name, address: lf.address || b.name, type: b.type, kind: lf.kind, cat: lf.category, tpl: lf.template, arch: lf.archetype, hours: iv ? hoursText(iv) : null, open: iv ? iv.some(([a, b2]) => (w.time.hourFloat >= a && w.time.hourFloat < b2)) : null, capacity: v ? v.capacity : null, inside, residents: P(b.residents).slice(0, 16), employees: P(b.employees).slice(0, 16), units, owner, firm: staff, year: w.map.lf.buildings[id]?.year, storeys: w.map.lf.buildings[id]?.storeys };
+  }
+  directory() {
+    const w = this.w, out = []; for (const p of w.living()) { const pop = p.ext.pop || {}; out.push([p.id, nm(p), Math.floor(w.ageOf(p)), SEG_IDS.indexOf(pop.seg), (p.job || '').slice(0, 40), (this.byBid.get(p.homeId)?.name || ''), pop.fin?.stress ?? 0, p.sex === 'F' ? 1 : 0, p.ext.rt && p.ext.rt.off ? 1 : 0]); }
+    return out;
+  }
+
+  // ------------------------------------------------------------------ god mode
+  godCatalogue() { const have = (n) => this.w.commands.has(n); const list = GOD_COMMANDS.filter((c) => have(c.name)); const known = new Set(GOD_COMMANDS.map((c) => c.name)); const other = [...this.w.commands.handlers.keys()].filter((n) => !known.has(n) && !/^(routine\.|kernel\.)|initPerson|initHousehold|\.init$/.test(n)); return { list, other }; }
+  runCommand(m) {
+    const w = this.w; let res = null, err = null; const c = GOD_COMMANDS.find((x) => x.name === m.name);
+    try { const args = c && c.build ? c.build(m.args || {}, this) : (m.args || {}); const before = w.tick; res = w.queueCommand({ actor: 'god', name: m.name, args }); this.godWatch = { tick: before, until: before + this.TPD * 20 };
+      const it = { id: this.nextNewsId++, tick: w.tick, date: w.calendar.formatDate(w.tick), kind: 'god', type: 'god.' + m.name, head: `God mode: ${c ? c.label : m.name}`, body: c ? c.describe?.(m.args || {}, this) || c.desc : m.name, ppl: [], sal: 1, ok: res !== false }; this.news.push(it); this.newsOut.push(it);
+    } catch (e) { err = String(e && e.message || e); }
+    let out; try { out = res === undefined ? null : JSON.parse(JSON.stringify(res)); } catch (e) { out = String(res); }
+    this.send({ t: 'result', name: m.name, args: m.args, ok: !err && res !== false, error: err, result: out, date: w.calendar.formatDate(w.tick) });
+    this.lastDetail = 0;
+  }
+
+  command(m) {
+    switch (m.cmd) {
+      case 'setSpeed': this.setTier(m.tier); break;
+      case 'select': this.selected = m.id; this.lastDetail = 0; break;
+      case 'building': this.send({ t: 'building', b: this.buildingDetail(m.id) }); break;
+      case 'directory': this.send({ t: 'directory', list: this.directory() }); break;
+      case 'jump': this.jump = { min: m.min ?? 0.5, start: this.w.tick, limit: this.w.tick + this.TPY * 2 }; this.setTier('max'); break;
+      case 'god': this.runCommand(m); break;
+      case 'history': this.send({ t: 'news', items: this.news.slice(-300), replace: true }); break;
+    }
+  }
+}

@@ -47,6 +47,7 @@ export function createSocial() {
     for (const p of world.people.values()) if (p.alive && p.ext && p.ext.pop && !S.ppl.has(p.id)) importPerson(world, S, p);
     rebuild(world, S); S.venues = buildVenues(world).map((v) => ({ id: v.id, soc: v.soc, t: v.t }));
     S.stats.yr.y0 = world.tick;
+    S.bigBlock = (w, p) => { const b = w.buildings.get(p.homeId); return !!(b && b.lf.units.length > 8); };
     wire(world);
   },
   clocks: {
@@ -56,7 +57,7 @@ export function createSocial() {
     year: (w) => { const y = w.soc.stats.yr; w.soc.stats.lastYr = { n: y.n, l: y.l }; y.n = 0; y.l = 0; y.y0 = w.tick; },
   },
   serialize() { return encode(W.soc); },
-  deserialize(st) { W.soc = decode(W, st); rebuild(W, W.soc); },
+  deserialize(st) { W.soc = decode(W, st); rebuild(W, W.soc); W.soc.bigBlock = (w, p) => { const b = w.buildings.get(p.homeId); return !!(b && b.lf.units.length > 8); }; },
   commands: {
     'social.spreadRumour': (w, a) => cmdRumour(w, a),
     'social.revealSecret': (w, a) => cmdReveal(w, a),
@@ -90,7 +91,7 @@ export function createSocial() {
 export default createSocial();
 function neighbourKnown(w, pid) {
   const p = w.people.get(pid), ps = w.soc.ppl.get(pid); if (!p || !ps) return false;
-  for (const [k, t] of ps.T) { if (isOff(k) || t.lv < 2 || t.k === 'kin' || t.k === 'partner' || t.k === 'housemate') continue; const o = w.people.get(k); if (!o || o.homeId === p.homeId || !o.alive) continue; if (o.homeId === p.homeId || (o.homeId != null && w.buildings.get(o.homeId) && (o.homeId === p.homeId || doorDist(w, p, o) <= 24))) return true; }
+  for (const [k, t] of ps.T) { if (isOff(k) || t.lv < 2 || t.k !== 'neighbour') continue; const o = w.people.get(k); if (!o || o.ext.pop.hh === p.ext.pop.hh || !o.alive) continue; if (o.ext.pop.hh === p.ext.pop.hh || (o.homeId != null && w.buildings.get(o.homeId) && (o.ext.pop.hh === p.ext.pop.hh || doorDist(w, p, o) <= 20))) return true; }
   return false;
 }
 function introducible(w, pid, n) {
@@ -144,7 +145,7 @@ function chatter(w, S, r, p) {
     converse(w, S, r, p, q, r.next() < 0.28 ? 1 : 2, 'remote');
   }
   // household table talk: news travels inside a home too
-  const b = w.buildings.get(p.homeId); if (b && b.residents.length > 1 && r.next() < 0.12) { const id = b.residents[(r.next() * b.residents.length) | 0]; const q = w.people.get(id); if (q && q.alive && q !== p && q.homeId === p.homeId && w.ageOf(q) >= 8) { const A = ps, B = psOf(w, S, q.id), ta = A.T.get(q.id), tb = B && B.T.get(p.id); if (B && ta && tb) tell(w, S, r, p, q, A, B, ta, tb, 0, true); } }
+  const b = w.buildings.get(p.homeId); if (b && b.residents.length > 1 && r.next() < 0.12) { const id = b.residents[(r.next() * b.residents.length) | 0]; const q = w.people.get(id); if (q && q.alive && q !== p && q.ext.pop.hh === p.ext.pop.hh && w.ageOf(q) >= 8) { const A = ps, B = psOf(w, S, q.id), ta = A.T.get(q.id), tb = B && B.T.get(p.id); if (B && ta && tb) tell(w, S, r, p, q, A, B, ta, tb, 0, true); } }
 }
 function detectLie(w, S, r, it) {
   const ps = S.ppl.get(it.b); const b = ps && ps.B.get(it.key); if (!b || !b.lie) return;

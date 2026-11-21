@@ -36,7 +36,7 @@ export function createComms() {
     const ap = typeof a === 'number' ? W.people.get(a) : a, bp = typeof o.b === 'number' ? W.people.get(o.b) : o.b; const av = view(ap);
     const seed = (o.seed || 0);
     const p = { street: ap ? streetName(ap) : 'Newport Road', name: PET[seed % PET.length], shop: shops()[(seed >> 2) % shops().length] || 'the corner shop', day: DAYS[(seed >> 1) % 7], road: ap ? streetName(ap) : 'Newport Road', thing: THING[seed % THING.length], place: shops()[(seed >> 3) % shops().length] || 'the corner shop', n: 1 + (seed % 40), ...(o.p || {}) };
-    try { return E.render(key, { a: av, b: view(bp), s: view(typeof o.s === 'number' ? W.people.get(o.s) : o.s), o: view(typeof o.o === 'number' ? W.people.get(o.o) : o.o), people: (id) => view(W.people.get(id)), seed, p, genre: 'ev', date: W.calendar.dateOf ? W.calendar.dateOf(W.tick) : undefined, actors: [], memory: o.memory }, W); } catch (e) { return '[' + key + ']'; }
+    try { return E.render(key, { a: av, b: view(bp), s: view(typeof o.s === 'number' ? W.people.get(o.s) : o.s), o: view(typeof o.o === 'number' ? W.people.get(o.o) : o.o), actors: [typeof o.s === 'object' && o.s ? o.s.id : o.s, typeof o.o === 'object' && o.o ? o.o.id : o.o].filter((x) => x != null), people: (id) => view(W.people.get(id)), seed, p, genre: 'ev', date: W.calendar.dateOf ? W.calendar.dateOf(W.tick) : undefined, memory: o.memory }, W); } catch (e) { return '[' + key + ']'; }
   }
   const plugin = {
     name: 'comms', version: '1.0.0', deps: ['social'],
@@ -159,8 +159,8 @@ export function createComms() {
       if (k > 0 && n >= 4 && r.next() < 0.0035) chatRow(w, S, r, c);
     }
     // 1:1 message volume (aggregate per age band from each person's messaging rate; individual exchanges that carry news are simulated in social)
-    for (const b in S.bandMr || {}) S.stats.msgs.byBand[b] = (S.stats.msgs.byBand[b] || 0) + S.bandMr[b] * 0.55;
-    S.stats.msgs.dm += S.dmDay || 0;
+    for (const b in S.bandMr || {}) S.stats.msgs.byBand[b] = (S.stats.msgs.byBand[b] || 0) + S.bandMr[b] * 1.2;
+    S.stats.msgs.dm += S.dmDay || 0; S.stats.calls += (S.dmDay || 0) / 60;
     // forum
     const F = S.forum; if (F.members.length) {
       let n = POISSON(r, 0.5 + F.members.length * 0.012);

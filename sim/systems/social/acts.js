@@ -20,7 +20,7 @@ function weights(w, S, r, a, b, A, B, ta, tb, ctx, ch, first) {
   out[3] = l > -0.2 ? (0.5 + 1.4 * N) * (c > 0.2 ? 1 : 0.4) : 0;
   out[4] = b.mood < -0.15 || (B.B.size && c > 0.3) ? 0.6 : 0.2;
   const conf = c > 0.3 && ta.t > 0.5 && ctx !== 'pub_crowd';
-  if (conf) { if (A.cfd) out[5] = (0.35 + (ta.t - 0.45) * 2) * (0.7 + 0.6 * (a.mood < 0 ? 1.5 : 1)) * (1 + 0.8 * Math.max(0, A.ls)); }
+  if (conf) { if (A.cfd) out[5] = (0.7 + (ta.t - 0.45) * 2.5) * (0.7 + 0.6 * (a.mood < 0 ? 1.5 : 1)) * (1 + 0.8 * Math.max(0, A.ls)); }
   out[6] = (A.B.size > 2 ? 2.2 * g : 0) * (first ? 0.2 : 1) * (ta.c > 0.12 ? 1 : 0.6);
   out[7] = ta.cf > 0.25 ? 2.6 * (1.2 - Ag) : l < -0.1 ? 1.2 : 0.05 * (1.3 - Ag) * (1 + (ctx === 'pub' ? 1.4 : 0));
   out[8] = ta.cf > 0.2 ? 2.2 * (Ag + 0.2) : 0;
@@ -114,7 +114,7 @@ export function tell(w, S, r, a, b, A, B, ta, tb, ch, selfFirst, gossip) {
   if (!self && S.rumours.length < 400 && r.next() < 0.1) S.rumours.push({ t: w.tick, from: a.id, to: b.id, subj: m.a, obj: m.o, kind: top.k, m: m.m, hops: h, tr: truth, d: m.d ? 1 : 0, nt: top.nt || 0, ch }); else if (!self && S.rumours.length >= 400 && r.next() < 0.1) { S.rumours.shift(); S.rumours.push({ t: w.tick, from: a.id, to: b.id, subj: m.a, obj: m.o, kind: top.k, m: m.m, hops: h, tr: truth, d: m.d ? 1 : 0, nt: top.nt || 0, ch }); }
   if (!self) {
     // what the hearer now thinks of the subject (reputation is distributed beliefs)
-    const sub = B.T.get(m.a); if (sub && !KINDS[top.k][0]) { sub.e = clamp(sub.e - 0.025 * conf, -1, 1); sub.l = clamp(sub.l - 0.015 * conf, -1, 1); }
+    const sub = B.T.get(m.a); if (sub && !KINDS[top.k][0]) { if (!truth) st.falseDriven++; sub.e = clamp(sub.e - 0.025 * conf, -1, 1); sub.l = clamp(sub.l - 0.015 * conf, -1, 1); }
     if (nb.nt || (!KINDS[top.k][0] && h >= 2) || m.d || h >= 3) {
       const leak = top.nt;
       if (leak) { S.stats.secrets.leaked++; if (f) f.leak = (f.leak || 0) + 1; }

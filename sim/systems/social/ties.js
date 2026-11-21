@@ -29,9 +29,9 @@ export function importPerson(w, S, p) {
       const off = isOff(t.o), s = t.s, m = off ? S.metro.get(t.o) : null, kind = t.k === 'friction' ? 'friction' : t.k;
       let lv = 2, L = t.t === 1 ? 1 : t.t === 2 ? 2 : s >= 0.3 ? 3 : 4;
       if (!off && (kind === 'neighbour' || kind === 'schoolgate' || kind === 'regular') && s < 0.34) { // seen about, but never spoken: weaker for flats and for people who keep themselves to themselves
-        const pk = clamp(0.12 + 0.55 * seg.nc + 0.15 * (E - 0.5), 0.08, 0.85); if (r.next() > pk) lv = 1;
+        const pk = clamp(0.04 + 0.42 * seg.nc + 0.12 * (E - 0.5), 0.02, 0.7); if (r.next() > pk) lv = 1;
       }
-      const tie = mkTie(t.o, { k: kind, r: t.rel, L, c: clamp(s * 0.92, 0.02, 0.95), t: clamp(0.25 + 0.6 * s + (kind === 'kin' ? 0.1 : 0), 0, 1), l: t.fr ? -0.25 : clamp(0.1 + 0.8 * s, -1, 1), e: clamp(0.35 + 0.4 * s, -1, 1), v: t.v, cf: t.fr ? 0.35 : 0, lv, on: off ? 0 : 1, a: kind === 'partner' ? 0.7 : 0 }, tick - r.int(0, 600));
+      const tie = mkTie(t.o, { k: kind, r: t.rel, L, c: clamp(s * 0.92, 0.02, 0.95), t: clamp(0.2 + 0.52 * s + (kind === 'kin' ? 0.06 : 0) + 0.13 * r.gauss(0, 1), 0, 1), l: t.fr ? -0.25 : clamp(0.1 + 0.8 * s, -1, 1), e: clamp(0.35 + 0.4 * s, -1, 1), v: off && kind === 'friend' && t.v !== 'family' && r.next() < (age < 20 ? 0.15 : age < 40 ? 0.22 : 0.06) ? 'online' : t.v, cf: t.fr ? 0.35 : 0, lv, on: off ? 0 : 1, a: kind === 'partner' ? 0.7 : 0 }, tick - r.int(0, 600));
       if (lv === 1) tie.c = Math.min(tie.c, 0.05);
       if (m) tie.fq = m.freq;
       ps.T.set(t.o, tie);
@@ -70,7 +70,7 @@ function rates(w, p, t, other, age, seg, mrF) {
     if (other) { ff *= 0.4; mm = Math.max(mm, 1.5) * 0.6; }
     R[0] = ff; R[1] = cc; R[2] = mm; return;
   }
-  if (k === 'partner' || ((k === 'housemate' || k === 'kin') && other.homeId === p.homeId)) { R[0] = 6; R[1] = 0.2; R[2] = 5 * mrF; return; }
+  if (k === 'partner' || ((k === 'housemate' || k === 'kin') && other.ext.pop.hh === p.ext.pop.hh)) { R[0] = 6; R[1] = 0.2; R[2] = 5 * mrF; return; }
   if (k === 'housemate') { R[0] = 0.3; R[1] = 0.1; R[2] = mrF; return; }
   if (k === 'kin') { R[0] = L <= 2 ? 1.3 : 0.4; R[1] = 0.5; R[2] = (L <= 2 ? 3 : 1) * mrF; return; }
   if (k === 'colleague') { R[0] = p.ext.pop.workplace.bid != null && p.ext.pop.workplace.bid === other.ext.pop.workplace.bid && p.ext.pop.activity === 'employed' ? 4 : 0.2; R[1] = 0; R[2] = 1.2 * mrF; return; }
@@ -83,7 +83,7 @@ function rates(w, p, t, other, age, seg, mrF) {
 }
 // per-layer weekly retention (kin decay slower); layer 4 acquaintances fade fastest
 const PER = 8; // maintenance runs every 8th week per person: rates are per 8 weeks
-const KEEP = [1, Math.exp(-0.014 * 0.6 * PER), Math.exp(-0.014 * 0.9 * PER), Math.exp(-0.014 * 1.4 * PER), Math.exp(-0.014 * 2.2 * PER)], KEEP_KIN = KEEP.map((x) => Math.pow(x, 0.45));
+const KEEP = [1, Math.exp(-0.014 * 0.6 * PER), Math.exp(-0.014 * 0.9 * PER), Math.exp(-0.014 * 1.4 * PER), Math.exp(-0.014 * 3.2 * PER)], KEEP_KIN = KEEP.map((x) => Math.pow(x, 0.45));
 const G1 = GAIN * CH_EFF[0], G2 = GAIN * CH_EFF[1], G3 = GAIN * CH_EFF[2], G4 = GAIN * CH_EFF[3];
 /** 4-weekly maintenance for one person (staggered by id): contacts, decay, layers, loneliness, legacy mirror. Expected-value accounting (no per-tie dice). */
 export function maintain(w, S, p, r) {
@@ -105,19 +105,19 @@ export function maintain(w, S, p, r) {
     if (gain > 0.9) gain = 0.9; t.c += (1 - t.c) * gain; t.h += (f + c + m * 0.3) * PER;
     if (f + c + m > 0.3) { t.la = tick - ((r.next() * 20 * TPD) | 0); t.ch = f > c && f > m * 0.3 ? 0 : c > m ? 1 : 2; }
     ctc += f + 0.5 * c + 0.15 * m; if (t.L <= 2) supply += t.c * (f + c + 0.3 * m > 0.25 ? 1 : 0.35);
-    if (!(t.k === 'partner' || (other && (t.k === 'housemate' || t.k === 'kin') && other.homeId === p.homeId))) t.c *= (t.k === 'kin' ? KEEP_KIN[t.L] : KEEP[t.L]) * (t.cf > 0.3 ? 0.99 : 1);
+    if (!(t.k === 'partner' || (other && (t.k === 'housemate' || t.k === 'kin') && other.ext.pop.hh === p.ext.pop.hh))) t.c *= (t.k === 'kin' ? KEEP_KIN[t.L] : KEEP[t.L]) * (t.cf > 0.3 ? 0.99 : 1);
     t.d *= 0.78; if (t.cf > 0) { t.cf *= 0.57; if (t.cf < 0.03) t.cf = 0; }
     if (t.cf < 0.2) t.l += (0.1 + 0.85 * t.c - t.l) * 0.15;
-    if (t.c < 0.022 && t.k !== 'kin' && t.k !== 'partner' && t.k !== 'ex') { if (t.lv >= 2) { t.lv = 1; S.stats.lostTies++; S.stats.yr.l++; if (t.L <= 3 && t.h > 8) S.stats.fades++; } else if (t.c < 0.008) (drop || (drop = [])).push(key); }
+    if (t.c < (t.L >= 4 ? 0.07 : 0.035) && t.k !== 'kin' && t.k !== 'partner' && t.k !== 'ex') { if (t.lv >= 2) { t.lv = 1; S.stats.lostTies++; S.stats.yr.l++; if (t.L <= 3 && t.h > 8) S.stats.fades++; } else if (t.c < 0.008) (drop || (drop = [])).push(key); }
     if (other && (t.c - t.sy > 0.1 || t.sy - t.c > 0.1)) mirror(p, other, t);
   }
   if (drop) for (const k of drop) ps.T.delete(k);
   relayer(ps); ps.sk = 0;
   // loneliness: wanted contact vs the support actually received (partner/household count)
   const hh = q.hh != null ? w.lf.households[q.hh] : null, live = hh ? hh.members.length - 1 : 0;
-  const need = 1.15 + 0.9 * (E - 0.5) + (age < 25 ? 0.3 : age > 78 ? 0.15 : 0) + 0.35 * (p.personality.neuroticism - 0.5);
-  const sup = supply * 0.55 + Math.min(live, 3) * 0.28 + (p.romance && p.romance.partnerId != null ? 0.6 : 0) + Math.min(ctc, 12) * 0.05;
-  ps.ls = clamp(ps.ls * 0.5 + 0.5 * (need - sup) / need, -1, 1.5);
+  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : age > 78 ? 0.1 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
+  const sup = supply * 0.1 + Math.min(live, 3) * 0.14 + (p.romance && p.romance.partnerId != null ? 0.3 : 0) + Math.min(ctc, 12) * 0.03;
+  ps.ls = clamp(ps.ls * 0.5 + 0.5 * (need - sup + 0.7), -1, 1.8);
   ps.sc = supply;
 }
 /** Weekly: triadic closure (a friend's friend becomes an acquaintance). */
@@ -132,5 +132,5 @@ export function closure(w, S, p, r) {
     }
   }
 }
-export function confidants(ps) { let n = 0; for (const t of ps.T.values()) if (t.L <= 2 && t.t >= 0.55 && t.c >= 0.4) n++; return n; }
+export function confidants(ps) { let n = 0; for (const t of ps.T.values()) if (t.L === 1 && t.t >= 0.55 && t.c >= 0.5) n++; return n; }
 export function counts(ps) { const c = [0, 0, 0, 0, 0]; for (const t of ps.T.values()) if (t.lv >= 2) c[t.L]++; return c; }

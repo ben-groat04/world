@@ -25,7 +25,7 @@ export function monthlyFertility(w, rng, people) {
   for (const p of people) {
     if (p.sex !== 'F') continue; const age = ageOf(w, p); if (age < 15 || age >= 45) continue;
     const bi = age < 20 ? 0 : age < 25 ? 1 : age < 30 ? 2 : age < 35 ? 3 : age < 40 ? 4 : 5; if (age < 16) continue;
-    const L = p.ext.life, B = bands[bi]; B.n++;
+    const L = p.ext.life, B = bands[bi]; B.n++; (st.wm || (st.wm = [0, 0, 0, 0, 0, 0]))[bi]++; // woman-months by band: exposure for a proper period TFR (births / woman-years per band x 5)
     if (L.preg || L.away) continue;
     if (p.ext.hl && (p.ext.hl.dying || (p.ext.hl.c && p.ext.hl.c.cancer))) continue;
     let wt = stateWeight(w, p, L); if (wt <= 0) continue;
@@ -39,7 +39,7 @@ export function monthlyFertility(w, rng, people) {
   }
   bands.forEach((B, i) => {
     if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = 1 / (((w.settings.tune || {}).fertRef) ?? FERT_REF);
-    for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
+    for (const [p, wt] of B.el) { st.expH = (st.expH || 0) + Math.min(0.12, rate * wt * k * scale); st.expN = (st.expN || 0) + 1; } for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
   });
 }
 

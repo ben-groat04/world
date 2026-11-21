@@ -37,7 +37,8 @@ export function later(w, dt, kind, data) {
   q.splice(lo, 0, e);
   return e;
 }
-export function runQueue(w, handlers) {
+export const HANDLERS = {}; // queue kind -> fn(world, data, entry); filled by the life and health modules at import time (stateless functions)
+export function runQueue(w, handlers = HANDLERS) {
   const q = w.lf.life.q;
   while (q.length && q[0].t <= w.tick) {
     const e = q.shift(), h = handlers[e.k];

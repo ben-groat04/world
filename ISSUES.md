@@ -9,3 +9,8 @@
   conditional shares).
 - Off-map ties never visited / no off-map leisure despite ~30% ties off-map.
 - Students 4% of adults vs ~10% calibration; employed 64% vs 55%; 0-14 share 20% vs 25%; sleep ~464 vs ~536 min.
+## Material (W1-C) — open
+- Employed share ~70% vs ~55% target (population generator: too few students/inactive/carers/long-term sick).
+- Private rent burden (excl. sharers) 26-31% vs 30-45%; income gini 0.27-0.30 vs 0.30-0.45 (pay dispersion too narrow).
+- Snapshot-resume with goals loaded untested; npm run check timed out — check runtime budget.
+- Total perf with goals+material ~9-10k ticks/s (target >= 10-12k).

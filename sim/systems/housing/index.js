@@ -49,7 +49,7 @@ export function createHousing() {
       list.push(u); byId[u.id] = u;
     }
     const owners = M.owners.map((o) => ({ id: o.id, kind: o.kind, units: o.units.slice(), offMap: o.offMap || 0, sold: 0 }));
-    lf.housing = { list, byId, owners, wait: [], pendingRooms: [], stats: { moves: 0, localMoves: 0, departures: 0, arrivals: 0, evictions: 0, notices: 0, bought: 0, built: 0, movedPersons: 0, sharerChurn: 0, homeless: 0 }, moveLog: [], cafes0: 0, cafes: 0, autoMoves: true, noShocks: false, moveScale: 0.3, ys: 0, evLog: [] };
+    lf.housing = { list, byId, owners, wait: [], pendingRooms: [], stats: { moves: 0, localMoves: 0, departures: 0, arrivals: 0, evictions: 0, notices: 0, bought: 0, built: 0, movedPersons: 0, sharerChurn: 0, homeless: 0 }, moveLog: [], cafes0: 0, cafes: 0, autoMoves: true, noShocks: false, moveScale: 0.36, ys: 0, evLog: [] };
     countCafes(w); H(w).cafes0 = H(w).cafes;
     for (const u of list) u.cafeNear = cafesNear(w, u);
   }
@@ -448,7 +448,7 @@ export function createHousing() {
   }
   function onGoalEffect(ev) {
     const p = W.people.get(ev.actors[0]); if (!p || !p.alive || !p.ext.pop) return; const hh = W.lf.households[p.ext.pop.hh]; if (!hh || hh.gone) return; const want = ev.payload.want;
-    if (want === 'new_tenancy' || want === 'own_place' || want === 'suitable_home') { const stable = !hh.crowded && !(hh.fin && hh.fin.stress > 0.5) && !(U(hh.unit) && U(hh.unit).damp); if (stable && want !== 'own_place' && W.rngFor('housing.goal').chance(0.65)) return;
+    if (want === 'new_tenancy' || want === 'own_place' || want === 'suitable_home') { const stable = !hh.crowded && !(hh.fin && hh.fin.stress > 0.5) && !(U(hh.unit) && U(hh.unit).damp); if (stable && want !== 'own_place' && W.rngFor('housing.goal').chance(0.8)) return;
       if (want === 'own_place' && p.ext.pop.role === 'adult_child' && !isSharers(hh)) leaveHome(hh, p, W.rngFor('housing.goal')); else if (!hh.search) startSearch(hh, want === 'suitable_home' ? 'space' : 'chosen', 0, ev.id); }
     else if (want === 'owns_home') { if (!hh.search) startSearch(hh, 'buy', 0, ev.id); }
     else if (want === 'lives_elsewhere') { hh.departAt = W.tick + MONTH; hh.departWhy = 'chosen'; hh.departCause = ev.id; hh.departDest = 'metropolis'; }

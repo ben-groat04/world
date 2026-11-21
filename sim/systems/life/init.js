@@ -12,7 +12,12 @@ export function initLife(w) {
   const T0 = w.tick;
   for (const m of lf.metro) { if (m.t0 === undefined) m.t0 = T0; if (m.dead === undefined && m.age >= 95 && m.kin) m.dead = T0 - Math.round(rng.float(0.2, 12) * w.calendar.ticksPerYear); }
   const people = [...w.people.values()].filter((p) => p.alive && p.ext.pop);
-  for (const p of people) {
+  for (const p of people) lifeFor(w, p, rng);
+}
+/** (re)build the life-course record of one person from what the population / household data says (founders, and newcomers added by other packages). */
+export function lifeFor(w, p, rng) {
+  const T0 = w.tick;
+  {
     const q = p.ext.pop, age = ageOf(w, p);
     const L = p.ext.life = { or: 'S', mar: 'never', part: null, nPart: 0, parity: 0, firstCohab: null, firstMar: null, firstBirth: null, preg: null, lastBirth: null, desire: 0.5, away: null, left: null, caring: null, boost: 0, ex: 0, sepAt: null, widowedAt: null, planKid: 0 };
     // orientation

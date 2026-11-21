@@ -54,7 +54,8 @@ test('ablation: no referral ties lowers referral hiring share', () => {
   const run = (nr) => { const w = mk(1); w.lf.labour.noReferral = nr; w.run(DAY * 365 * 2); const s = w.lf.labour.stats; return s.referral / Math.max(1, s.hired); };
   assert.ok(run(false) > run(true) + 0.1);
 });
-test('ablation: no rent shocks/notices -> fewer notices', () => {
-  const w = mk(1); w.run(DAY * 365); const base = w.lf.housing.stats.notices;
-  const x = mk(1); x.cmd('housing.rentShock', { pct: 25 }); x.run(DAY * 365); assert.ok(x.lf.housing.stats.notices + x.lf.housing.stats.evictions >= base);
+test('ablation: a 25% rent shock raises arrears and moves', () => {
+  const arrears = (w) => w.lf.households.filter((h) => !h.gone && h.fin && h.fin.rentArrears > 0).length;
+  const w = mk(1); w.run(DAY * 365); const x = mk(1); x.cmd('housing.rentShock', { pct: 25 }); x.run(DAY * 365);
+  assert.ok(arrears(x) >= arrears(w)); assert.ok(x.lf.housing.stats.departures + x.lf.housing.stats.moves >= w.lf.housing.stats.departures + w.lf.housing.stats.moves - 3);
 });

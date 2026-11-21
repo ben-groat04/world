@@ -82,3 +82,18 @@ REMAINING / FOR OTHERS:
 - Employed share drifts up to ~65% (students leave, arrivals are working-age); retired/ageing mix keeps it from falling.
 - Loneliness (held-out): the age profile improved once double counting was removed, but overall prevalence is dominated by newcomers (arrivals have ~1/3 of settled residents' ties); coordinate with the social/newcomer work, then re-fit `loneThr`.
 - Perf 5-8k ticks/s (target 15k) unchanged.
+## Experience pass (UX agent)
+- Month-start clumping remains in housing (moves/notices/rent letters), money (cost pressure, debt) and health (mental-health episodes): spread by household/person day like labour now is. Feed folds batches into a summary line meanwhile.
+- Colleagues do not invite a new hire (workplaces are off-map); gossip about the player is only in Me > reputation.
+- Forum replies are tone-pooled rather than topic-matched.
+## Orchestrator review of realism round 2
+- Students settle at ~3% (vs 10%) because the only source of students is day 1: missing mechanism = annual autumn
+  inflow of new students (18-19yo arriving for university into flatshares/student lets, plus local 16-18 staying on),
+  and student lets turning over each summer. Ground in HESA/ONS student migration patterns.
+- Young (16-24) loneliness 20-27% vs ~10%: newcomers have 1/3 of settled ties — ties at uni/work/flatmates should
+  form quickly for young arrivals (freshers, colleagues, flatmates); check evidence on how fast newcomers build ties.
+- LONE_THRESHOLD refitted to overall prevalence: borderline — it is a measurement scale constant; keep, but report
+  loneliness as tuned-target; held-out = age profile.
+- TFR fell to 0.83-1.31 (target ~1.45): find mechanistic cause (partnership formation timing? housing space gate too
+  strict? couples leaving before births?).
+- Employed 64-67% vs 55% persists over 10y.

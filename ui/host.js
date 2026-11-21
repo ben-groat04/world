@@ -28,6 +28,7 @@ const SEASON = (m) => (m >= 2 && m <= 4 ? 'Spring' : m >= 5 && m <= 7 ? 'Summer'
 const hoursText = (iv) => (iv && iv.length ? iv.map(([a, b]) => `${fh(a)}–${fh(b)}`).join(', ') : 'closed today');
 const fh = (h) => { h = h % 24; const hh = Math.floor(h), mm = Math.round((h - hh) * 60); return `${hh}:${String(mm).padStart(2, '0')}`; };
 
+const BATCH = { 'health.episode': ['More people are having a hard time', 'Several residents report low or anxious spells this month. The GP surgery says appointments are filling.'], 'money.arrears': ['More households fall behind on rent', 'Rent day came and went with several households short. Landlords and advice centres are both getting calls.'], 'money.cost_pressure': ['The cost of living bites again', 'More households say the budget no longer stretches to the end of the month.'], 'money.debt_spiral': ['More borrowing to cover the basics', 'Advice workers report a rise in people borrowing to pay for essentials.'], 'labour.second_job': ['Extra shifts and second jobs', 'More residents are picking up evening and weekend work to make ends meet.'], 'housing.moved_out': ['Several households move on', 'A run of moves this week: vans, boxes and for-let boards on the street.'], 'housing.moved_in': ['New neighbours arrive', 'Several new households have moved onto the streets this week.'] };
 export class Host {
   constructor(seed, send) {
     this.send = send; this.seed = seed;
@@ -104,6 +105,9 @@ export class Host {
     // a shock hits dozens of households at once: show the first few, then fold the rest into one line instead of flooding the feed
     if (iv && ev.type === 'housing.rent_rise') { const r = this.roll || (this.roll = {}); const k = iv.id + ':' + Math.floor(ev.tick / this.TPD); const x = r[k] || (r[k] = { n: 0 }); x.n++;
       if (x.n === 4) { it.head = 'Rent letters all over Larkfield'; it.body = 'The same rise has landed on households across the neighbourhood. Letters are being compared on doorsteps and in the group chats.'; it.sal = Math.max(it.sal, 0.6); } else if (x.n > 4) return; }
+    // month-end/start batches (budgets, mood reviews) land on one day: the first two items per type show, the third becomes one summary line, the rest are dropped
+    const cap = BATCH[ev.type]; if (cap && !iv) { const k = ev.type + ':' + Math.floor(ev.tick / this.TPD), c = this.dayCap || (this.dayCap = new Map()); const n = (c.get(k) || 0) + 1; c.set(k, n); if (c.size > 400) c.delete(c.keys().next().value);
+      if (n === 3) { it.head = cap[0]; it.body = cap[1]; it.ppl = []; it.sal = Math.min(it.sal, 0.35); } else if (n > 3) return; }
     this.news.push(it); this.newsOut.push(it); if (this.news.length > 600) this.news.splice(0, 100);
     if (this.jump && it.sal >= this.jump.min && ev.tick > this.jump.start) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: it }); }
   }

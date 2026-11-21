@@ -30,6 +30,7 @@ export function larkfieldOpts(seed = 1, opts = {}) {
 export function createLarkfieldWorld(seed = 1, opts = {}) {
   const w = new World(larkfieldOpts(seed, opts));
   w.town.name = 'Larkfield';
+  for (const e of w.chronicle.entries) if (e.type === 'founding') e.text = `Larkfield: ${w.living().length} residents on the first day of the record.`; // the kernel wrote the legacy town name
   return w;
 }
 export function restoreLarkfieldWorld(snap, opts = {}) {

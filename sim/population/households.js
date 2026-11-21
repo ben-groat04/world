@@ -1,7 +1,8 @@
 // Household planning: (segment x composition archetype) joint draw by largest remainder, dwelling assignment by tenure/size fit, member composition (ages, sexes, roles).
 import { clamp, wpick } from './util.js';
 
-const KID_COUNT = [[1, 0.36], [2, 0.38], [3, 0.18], [4, 0.08]];
+// dependent children per family (Census 2021: inner-city families with dependent children average ~1.9-2.1; South Asian and lone-parent families larger)
+const KID_COUNT = [[1, 0.27], [2, 0.37], [3, 0.23], [4, 0.13]];
 const YOUNG_SEGS = new Set(['students', 'young_sharers', 'early_career']);
 
 /** Draw N (segment, archetype) specs matching the IPF joint exactly (largest remainder), then match them to dwellings. */
@@ -54,17 +55,21 @@ export function composeHousehold(rng, pack, spec) {
   let headAge = pickAge(rng, isect(A[0].age, seg.head.age), mode);
   let kids = 0, kidAges = [];
   const kc = typeof arch.kids === 'number' ? arch.kids : arch.kids ? wpick(rng, KID_COUNT.filter(([n]) => n >= arch.kids[0] && n <= arch.kids[1])) : 0;
-  const maxKids = unit ? Math.max(1, Math.floor((unit.bedrooms * 2 + 1 - A.length) * 0.75)) : 4;
+  // children per home capped by space, but crowding exists (14% of households are overcrowded): 2 per bedroom plus a sofa-bed, not the strict bedroom standard
+  const maxKids = unit ? Math.max(1, Math.floor((unit.bedrooms * 2 + 2 - A.length) * 0.9)) : 4;
   kids = Math.min(kc, Math.max(1, maxKids));
+  // people living alone under 66 skew older than the arithmetic centre of 18-65 (widowed/divorced/never-partnered 45-65s; ONS Families & Households: ~40% of under-66 solo households are 45-64)
+  if (arch.id === 'one_person_u66' && mode === 'mid') headAge = Math.round(clamp(rng.gauss(50, 12), Math.max(18, seg.head.age[0]), Math.min(65, seg.head.age[1])));
   if (arch.id === 'one_person_66plus' || arch.id === 'couple_66plus') headAge = Math.max(66, headAge);
   if (kids) {
     const [klo, khi] = arch.kidAges || [0, 17];
-    let a0 = rng.int(klo, khi); // eldest or only child's age first
+    // eldest child's age first, bounded by the parent's age (a parent is at least ~19 at the birth): the old code instead pushed the PARENT's age up, over-producing 30-44s
+    let a0 = rng.int(klo, Math.max(klo, Math.min(khi, headAge - 19)));
     kidAges = [a0];
     for (let i = 1; i < kids; i++) kidAges.push(clamp(a0 - rng.int(1, 4) * i, klo, khi));
     kidAges.sort((a, b) => b - a);
     if (arch.id.includes('nondep') || arch.id === 'lone_parent_nondep') headAge = Math.max(headAge, kidAges[0] + rng.int(20, 32));
-    else headAge = Math.max(headAge, kidAges[0] + rng.int(19, 34));
+    else headAge = Math.max(headAge, kidAges[0] + rng.int(19, 26));
   }
   const sex0 = sexOf(A[0].sexBias || (arch.id === 'one_person_66plus' ? { F: 0.66 } : null));
   M.push({ role: 'head', age: headAge, sex: sex0 });

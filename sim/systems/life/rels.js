@@ -2,7 +2,7 @@
 // (dating -> living together / engaged -> married), how they end (breakup, separation, divorce) and the ripples. LGBTQ+ couples use the same machinery.
 import NAMES from '../../../content/larkfield/names.js';
 import { clamp, clamp01, wpick, ageOf, fullName, later, months, days, years, setTie, setOffTie, dropTie, tieOf, metro, newMetro, hhOf, rec, bump, closeOnMap, yearsSince, metroAge } from './util.js';
-import { leaveHh, joinHh, depart, materialise, giveNetwork, bedsOf, bedsNeeded, metroAgeNow } from './moves.js';
+import { leaveHh, joinHh, depart, materialise, giveNetwork, fundArrival, bedsOf, bedsNeeded, metroAgeNow } from './moves.js';
 
 export const wantsSex = (L, sex) => (L.or === 'S' ? (sex === 'M' ? 'F' : 'M') : L.or === 'G' ? sex : null); // null = either (bi/other)
 export function accepts(L, mySex, otherSex) { return L.or === 'S' ? mySex !== otherSex : L.or === 'G' ? mySex === otherSex : true; }
@@ -211,7 +211,7 @@ export function cohabit(w, aid, force) {
   if (how === 'wait') { pt.waited = (pt.waited || 0) + 1; return; }
   if (how === 'in') {
     const np = materialise(w, m, hh, 'partner', rng, { sameFaith: a.ext.pop.religiosity > 0.5 && rng.chance(0.7) });
-    w.addPerson(np); w.cmd('routine.init', { pid: np.id });
+    w.addPerson(np); fundArrival(w, np); w.cmd('routine.init', { pid: np.id });
     np.ext.life = { or: La.or === 'S' ? 'S' : (np.sex === a.sex ? (La.or === 'B' || La.or === 'O' ? 'B' : 'G') : 'B'), mar: 'never', part: { id: a.id, on: true, st: 'cohab', lat: false, since: pt.since, how: pt.how, ev: pt.ev }, nPart: 1 + (rng.chance(0.4) ? 1 : 0), parity: 0, firstCohab: w.tick, firstMar: null, firstBirth: null, preg: null, lastBirth: null, desire: clamp01(0.4 + rng.gauss(0, 0.2)), away: null, left: null, caring: null, boost: 0, ex: 0, sepAt: null, widowedAt: null, planKid: 0, arrivedFor: a.id };
     if (La.or === 'G' && np.sex !== a.sex) La.or = 'B';
     if (np.sex === a.sex && La.or === 'S') La.or = 'B';

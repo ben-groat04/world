@@ -14,3 +14,5 @@
 - Private rent burden (excl. sharers) 26-31% vs 30-45%; income gini 0.27-0.30 vs 0.30-0.45 (pay dispersion too narrow).
 - Snapshot-resume with goals loaded untested; npm run check timed out — check runtime budget.
 - Total perf with goals+material ~9-10k ticks/s (target >= 10-12k).
+- Seed 1, 1y (21:45 poll): unemployment 10% of active (target ~6%); population fell 557 -> 533 in a year (check
+  arrivals vs departures balance); students 4% vs 10%, home/family 3% vs 7%.

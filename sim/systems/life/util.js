@@ -37,6 +37,12 @@ export function later(w, dt, kind, data) {
   q.splice(lo, 0, e);
   return e;
 }
+/** like later(), but lands at hour h (default 9-16, derived from tick) of the target day so inserted routine blocks fall in waking hours */
+export function laterAt(w, dt, kind, data, h) {
+  const t = w.tick + Math.max(1, Math.round(dt)), cal = w.calendar, di = cal.dayIdxOf(t), hr = h ?? 9 + ((t * 7 + (data && data.pid ? data.pid : 0)) % 8);
+  let at = cal.dayStart(di) + hr * 6; if (at <= w.tick) at += 144;
+  return later(w, at - w.tick, kind, data);
+}
 export const HANDLERS = {}; // queue kind -> fn(world, data, entry); filled by the life and health modules at import time (stateless functions)
 export function runQueue(w, handlers = HANDLERS) {
   const q = w.lf.life.q;

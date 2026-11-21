@@ -48,11 +48,20 @@ export const LIFE_EVENTS = [
 
 function ensure(w, people) { const rng = w.rngFor('life.init'); for (const p of people) if (!p.ext.life && p.ext.pop) lifeFor(w, p, rng); }
 
+/** person-years by sex and 5-year age band (and married / unmarried adults): denominators for the life report's rates */
+function accumulate(w, people) {
+  const py = w.lf.life.py || (w.lf.life.py = {}), f = 1 / 12;
+  for (const p of people) {
+    const a = ageOf(w, p), k = p.sex + Math.min(19, Math.floor(a / 5)); py[k] = (py[k] || 0) + f;
+    if (a >= 16) { const L = p.ext.life, m = L && L.part && L.part.st === 'married'; const kk = m ? 'married' : 'unmarried'; py[kk] = (py[kk] || 0) + f; if (L && L.part && L.part.on && !L.part.lat) py.livingCouple = (py.livingCouple || 0) + f; py.adult = (py.adult || 0) + f; }
+  }
+}
 function monthly(w) {
   const rng = w.rngFor('life.month'), people = w.living();
   ensure(w, people);
+  accumulate(w, people);
   coupleStep(w, rng, people); matchmaking(w, rng, people); monthlyFertility(w, rng, people);
-  leavingHome(w, rng, people); boomerangScan(w, rng); retirement(w, rng, people); preschool(w, rng, people);
+  leavingHome(w, rng, people); boomerangScan(w, rng); if (!w.commands.has('labour.retire')) retirement(w, rng, people); preschool(w, rng, people);
   kinMonthly(w, rng); careScan(w, rng, people);
 }
 let SUBS = new WeakSet();

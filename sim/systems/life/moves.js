@@ -14,6 +14,7 @@ export function leaveHh(w, p) {
 }
 /** Put p into household hh (membership, home building, current location if at home). */
 export function joinHh(w, p, hh, role) {
+  if (p.alive && w.commands.has('housing.join')) { try { if (w.cmd('housing.join', { pid: p.id, hh: hh.id, role: role || 'other', reason: 'family' })) { p.ext.pop.yearsAtAddress = 0; return; } } catch (e) { /* fall back to our own move */ } }
   const q = p.ext.pop, old = p.homeId, wasHome = p.locationId === old;
   leaveHh(w, p);
   q.hh = hh.id; q.unit = hh.unit; if (role) q.role = role; p.homeId = hh.bid;
@@ -43,6 +44,7 @@ export function depart(w, people, reason, to) {
       dropTie(h, p.id); h.ext.pop.ties.push({ o: m.id, k: ht.k, rel: ht.rel, t: ht.t, s: ht.s, v: 'moved away', on: 0 }); map[h.id] = m.id;
     }
     p.ext.life.away = { tick: w.tick, to: to || 'elsewhere in the city', map, hh: p.ext.pop.hh };
+    if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: p.id });
     leaveHh(w, p);
     w.removePerson(p); p.emigrated = true; p.emigratedTick = w.tick; p.emigratedTo = to || 'elsewhere in the city';
     w.stats.emigrated = (w.stats.emigrated || 0) + 1;
@@ -65,7 +67,8 @@ export function revive(w, p, hh, role) {
 const OFFMAP_OCC = (w) => w.pack.jobs.filter((o) => o.where === 'offmap' && !o.studentOnly && !o.gig && o.soc >= 2 && o.soc <= 9 && (!o.age || o.age[0] <= 28));
 /** assign a plausible job (off-map workplace) to an adult without one; returns true if employed. Labour package may override via 'labour.assign'. */
 export function assignWork(w, p, rng, o = {}) {
-  if (w.commands.has('labour.assign')) { try { if (w.cmd('labour.assign', { pid: p.id, ...o })) return true; } catch (e) { /* fall through */ } }
+  const q0 = p.ext.pop;
+  if (w.commands.has('labour.initPerson')) { q0.activity = 'employed'; try { w.cmd('labour.initPerson', { pid: p.id, job: true }); if (q0.occ) return true; } catch (e) { /* fall back to our own draw */ } }
   const q = p.ext.pop, age = ageOf(w, p), pack = w.pack, soc = pack.calibration.occupationSOC.composite;
   const cands = OFFMAP_OCC(w).filter((x) => !x.age || (age >= x.age[0] - 2 && age <= x.age[1] + 6));
   if (!cands.length) return false;
@@ -95,7 +98,7 @@ export function buildPop(w, p, o) {
     hh: hh.id, unit: hh.unit, seg: hh.seg, role: o.role, eth: o.group, ethGroup: origin.group, sub: origin.sub, bornUK: o.bornUK ?? origin.bornUK, birthplace: o.bornUK === true ? 'United Kingdom' : origin.birthplace, arrived: o.arrived ?? null,
     religion: rel, religiosity: o.religiosity ?? +(rel === 'No religion' ? rng.float(0, 0.12) : rng.next() * 0.9).toFixed(2),
     activity: age < 16 ? 'child' : 'unemployed', occ: null, soc: 0, contract: null, hours: 0, pay: 0, edu: age < 16 ? 'in_school' : o.edu || 'level3', workplace: { kind: 'none' }, pattern: null, school: age < 4 ? { kind: 'home' } : null,
-    health: { general: h.general, conds: h.conds, disabled: h.disabled, limiting: h.limiting }, fin: { gross: 0, net: 0, savings: 0, debt: 0, arrears: 0, studentLoan: 0 },
+    health: { general: h.general, conds: h.conds, disabled: h.disabled, limiting: h.limiting }, fin: { gross: 0, net: 0, savings: 0, debt: 0, arrears: 0, studentLoan: 0, cc: 0, payday: 0, od: 0, pension: 0, sp: 1, priv: 0, stress: 0 },
     car: false, bike: false, pets: { dogs: hh.dogs || 0, cats: hh.cats || 0 }, drives: age >= 14 ? drivesFor(rng, pack, pers, age, hh.seg) : {}, yearsAtAddress: 0, grewUp: o.grewUp || null, ties: [], life: null, K: [4, 13],
   };
   p.health = h.score;
@@ -112,17 +115,21 @@ export function materialise(w, m, hh, role, rng, o = {}) {
   const age = metroAgeNow(w, m), owner = w.people.get(m.owner);
   const [first, ...rest] = m.name.split(' '); const last = rest.join(' ') || (owner ? owner.lastName : 'Smith');
   const pers = personalityFor(rng, age, m.sex);
-  const p = w.createPerson({ sex: m.sex, firstName: first, lastName: last, homeId: hh.bid, birthTick: w.tick - Math.round(age * w.calendar.ticksPerYear) - rng.int(0, 300), personality: pers, money: o.money ?? Math.round(rng.float(200, 4000)) });
+  const p = w.createPerson({ sex: m.sex, firstName: first, lastName: last, homeId: hh.bid, birthTick: w.tick - Math.round(age * w.calendar.ticksPerYear) - rng.int(0, 300), personality: pers, money: 0 });
   const g = owner && rng.chance(0.72) ? owner.ext.pop.eth : wpick(rng, Object.entries(w.pack.calibration.ethnicity.detail).map(([k, v]) => [NAMES.ETHNICITY_TO_GROUP[k], v]));
   const origin = NAMES.pickOrigin(rng, g, 2026 - Math.floor(age));
   const religion = owner && o.sameFaith ? owner.ext.pop.religion : wpick(rng, Object.entries(NAMES.RELIGION_BY_GROUP[g === 'mixed' ? 'mixed' : g] || { 'No religion': 1 }));
   buildPop(w, p, { hh, rng, group: g, origin, role, religion, bornUK: origin.bornUK, edu: o.edu || wpick(rng, [['level4plus', 0.45], ['level3', 0.25], ['level2', 0.2], ['apprenticeship', 0.1]]), grewUp: m.where, arrived: origin.bornUK ? null : w.tick - Math.round(rng.float(1, 8) * w.calendar.ticksPerYear) });
-  p.ext.pop.fin.savings = p.money;
+  p.ext.pop.fin.savings = Math.round(o.money ?? rng.float(200, 4000));
+  if (age >= 30) p.ext.pop.fin.pension = Math.round((age - 22) * 6000 * 0.045 * rng.float(0.3, 1.4));
   if (age >= 18 && age < 67) assignWork(w, p, rng); else if (age >= 67) { p.ext.pop.activity = 'retired'; p.job = 'retired'; }
   if (p.ext.pop.activity === 'employed') { const f = p.ext.pop.fin; f.gross = Math.round(p.ext.pop.pay * clamp(p.ext.pop.hours / 37.5, 0.15, 1.25)); f.net = Math.round(f.gross * 0.78); }
   return p;
 }
 export const metroAgeNow = (w, m) => m.age + (w.tick - (m.t0 ?? 0)) / w.calendar.ticksPerYear;
+
+/** give an arrival their savings (call AFTER world.addPerson: the ledger needs the person to exist) */
+export function fundArrival(w, p) { const sv = p.ext.pop.fin.savings; if (sv > 0) w.ledger.transfer('metropolis', p.id, sv, 'arrival_savings'); }
 
 /** A few off-map ties for a person who just arrived (friends, parents) so they are not socially empty. */
 export function giveNetwork(w, p, rng) {

@@ -1,7 +1,7 @@
 // Mortality, death, bereavement, funerals and wills. Each month everyone's death probability is the calibration life table (single-year qx by sex) scaled by individual frailty
 // (conditions, smoking, drink, drugs, injury, severe acute illness) renormalised within age/sex bands so the population-level hazard tracks the table while WHO dies depends on health.
 // Cause is drawn per person from age-band cause weights boosted by their conditions; chronic causes give a terminal phase (weeks-months) that families notice, sudden causes do not.
-import { clamp, wpick, ageOf, fullName, later, months, days, years, tieOf, hhOf, rec, bump, newMetro, closeOnMap } from '../life/util.js';
+import { clamp, wpick, ageOf, fullName, later, laterAt, months, days, years, tieOf, hhOf, rec, bump, newMetro, closeOnMap } from '../life/util.js';
 import { afterDeath } from '../life/after.js';
 import { qxAnnual, FRAIL, CAUSES, CAUSE_BASE, causeBand, TERMINAL, DEATH_TEXT, CAUSE_GROUP } from './tables.js';
 
@@ -120,7 +120,7 @@ export function die(w, p, cause) {
   if (hh && (solo || heirs.length) && w.commands.has('housing.inherit')) { try { w.cmd('housing.inherit', { from: p.id, heirs, hh: hh.id, cause: ev }); } catch (e) { /* housing decides */ } }
   // funeral
   const dayStart = w.tick - Math.round(w.time.hourFloat * 6), delay = q.religion === 'Muslim' ? rng.int(1, 3) : rng.int(8, 15);
-  const ft = dayStart + delay * 144 + 60 + rng.int(0, 24);
+  const ft = dayStart + delay * 144 + 66 + rng.int(0, 12);
   later(w, ft - w.tick, 'funeral', { pid: p.id, who: ranked.filter((m) => m.g >= 0.3).slice(0, 12).map((m) => m.id), rel: q.religion, relig: q.religiosity, ev });
   return ev;
 }

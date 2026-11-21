@@ -65,6 +65,7 @@ export class MapView {
         const wasOff = p.st === 2, nowOff = st === 2;
         if (dur > 0 && !first && Math.abs(x - p.tx) + Math.abs(y - p.ty) < 200) {
           p.route = this.route(p.x, p.y, x, y); p.t0 = now; p.dur = dur; p.mvStart = now;
+          p.show = now + dur * 1000 + 120;
           if (wasOff !== nowOff) { p.show = now + dur * 1000 + 700; if (nowOff) this.bursts.push({ x: this.st ? this.st.x : x, y: this.st ? this.st.y : y, t: now, dir: 1 }); else this.bursts.push({ x: p.x, y: p.y, t: now, dir: 0 }); }
         } else { p.x = x; p.y = y; p.route = null; }
         p.tx = x; p.ty = y; p.pst = p.st; p.st = st;
@@ -230,7 +231,7 @@ export class MapView {
     const z = this.cam.z; const boxes = []; const hit = (b) => boxes.some((o) => !(b[2] < o[0] || b[0] > o[2] || b[3] < o[1] || b[1] > o[3]));
     const label = (txt, x, y, fs, col = '#fff', pri = false) => { ctx.font = `600 ${fs}px system-ui, sans-serif`; const w = ctx.measureText(txt).width; const box = [x - w / 2, y - fs / 2, x + w / 2, y + fs / 2]; if (!pri && hit(box)) return; boxes.push(box); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineWidth = 3.5; ctx.strokeStyle = 'rgba(10,14,20,0.8)'; ctx.lineJoin = 'round'; ctx.strokeText(txt, x, y); ctx.fillStyle = col; ctx.fillText(txt, x, y); };
     if (z >= 2.2 && z < 9) for (const s of this.map.streets) { if (s.kind === 'alley') continue; const r = s.rect; const cx = r.x + r.w / 2, cy = r.y + r.h / 2; const [sx, sy] = this.toScreen(cx, cy); const vert = r.h > r.w; ctx.save(); ctx.translate(sx, sy); if (vert) ctx.rotate(-Math.PI / 2); ctx.font = `600 ${clamp(z * 1.2, 9, 12)}px system-ui`; ctx.fillStyle = 'rgba(235,240,245,0.75)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(s.name.toUpperCase().split('').join(' '), 0, 0); ctx.restore(); }
-    if (z >= 4.6) for (const b of this.venueLabels) { const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -60 || sy < -20 || sx > this.w + 60 || sy > this.h + 20) continue; label(b.name.length > 22 ? b.name.slice(0, 21) + '…' : b.name, sx, sy - 0, clamp(z * 0.95, 10, 13), '#fff'); }
+    if (z >= 6.5) for (const b of this.venueLabels) { const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -60 || sy < -20 || sx > this.w + 60 || sy > this.h + 20) continue; label(b.name.length > 22 ? b.name.slice(0, 21) + '…' : b.name, sx, sy - 0, clamp(z * 0.95, 10, 13), '#fff'); }
     if (z >= 2.2) for (const a of this.map.areas) { if (!a.name) continue; const [sx, sy] = this.toScreen(a.rect.x + a.rect.w / 2, a.rect.y + a.rect.h / 2); if (z < 9) label(a.name, sx, sy, 11, '#e6f6cf'); }
     if (this.st && z >= 2.2) { const [x, y] = this.toScreen(this.st.x, this.st.y); label('Station', x, y - Math.max(12, z * 1.4), 11, '#9cd3ff', true); }
     if (this.selB != null && z >= 3) { const b = this.byId.get(this.selB); if (b) { const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y - 1); label(b.name, sx, sy - 4, 12, '#ffd36b', true); } }

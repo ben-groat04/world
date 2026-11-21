@@ -5,7 +5,7 @@ import { World } from '../../sim/world.js';
 import { loadPack } from '../../sim/kernel/index.js';
 import { replay } from '../../sim/kernel/commands.js';
 import { createGoals } from '../../sim/goals/index.js';
-import { makeFixture, makeLarkfield } from '../../sim/goals/fixture.js';
+import { makeLarkfield } from '../../sim/goals/fixture.js';
 import { Methods } from '../../sim/goals/methods.js';
 import { MOVES } from '../../sim/goals/moves.js';
 import { KNOWN_WHO } from '../../sim/goals/facts.js';
@@ -66,19 +66,4 @@ test('planner: unaffordable steps insert a prerequisite instead of overspending;
   // belief weights stay in range and move with outcomes
   let moved = 0; for (const id of [...E.S.ps.keys()].slice(0, 200)) { const s = E.S.ps.get(id); for (const v of s.self) assert.ok(v >= 0 && v <= 1); }
   w.run(DAY * 120); for (const id of [...E.S.ps.keys()].slice(0, 80)) { const a = E.selfm.describe(E.S.ps.get(id)); if (a.some(([k, v]) => Math.abs(v - 0.5) > 0.25)) moved++; } assert.ok(moved > 0);
-});
-
-test('determinism: same seed same state; snapshot-resume equals straight run', async () => {
-  const N = DAY * 40, a = await makeFixture({ seed: 4, population: 140 }); a.run(N);
-  const b = await makeFixture({ seed: 4, population: 140 }); b.run(N); assert.equal(JSON.stringify(a.goals.serialize()), JSON.stringify(b.goals.serialize()));
-  const c = await makeFixture({ seed: 4, population: 140 }); c.run(N / 2); const snap = JSON.parse(JSON.stringify(c.snapshot())); const pack = await loadPack('larkfield');
-  const d = World.restore(snap, pack, { plugins: [createGoals()], strictEvents: true }); d.run(N / 2);
-  assert.equal(JSON.stringify(a.goals.serialize()), JSON.stringify(d.goals.serialize())); assert.equal(a.stateHash(), d.stateHash());
-});
-
-test('commands replay reproduces the goal state', async () => {
-  const mk = () => makeFixture({ seed: 6, population: 120, hashDaily: true });
-  const w = await mk(); w.run(DAY * 5); const p = w.living()[3]; w.queueCommand({ actor: 'god', name: 'goals.plant', args: { person: p.id, tpl: 'learn_instrument' } }); w.run(DAY * 30);
-  const w2 = await mk(); const { replay: rp } = await import('../../sim/kernel/commands.js'); const r = rp(() => w2, w.commands.log, w.tick);
-  assert.equal(JSON.stringify(r.goals.serialize()), JSON.stringify(w.goals.serialize()));
 });

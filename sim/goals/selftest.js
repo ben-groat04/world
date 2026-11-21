@@ -1,15 +1,14 @@
 // node sim/goals/selftest.js [--years 1] [--seed 1] [--pop 240] [--full]   compact W1-B report
-import { makeFixture, makeLarkfield } from './fixture.js';
+import { makeLarkfield } from './fixture.js';
 import { TICKS_PER_DAY, DAYS_PER_YEAR } from '../time.js';
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? +process.argv[i + 1] : d; };
 const years = arg('years', 1), seed = arg('seed', 1), pop = arg('pop', 240);
-const legacy = process.argv.includes('--legacy');
-const w = legacy ? await makeFixture({ seed, population: pop }) : await makeLarkfield(seed);
+const w = await makeLarkfield(seed);
 const q = w.sys.goals.query, E = w.goals;
-const snaps = []; const t0 = Date.now(); let goalMs = 0;
+const snaps = []; const t0 = performance.now(); let goalMs = 0;
 const days = Math.round(years * E.cfg.yearDays);
 for (let d = 0; d < days; d++) { w.run(TICKS_PER_DAY); if (d % 14 === 13) snaps.push(q.activeKinds()); }
-const secs = (Date.now() - t0) / 1000; const yd = E.cfg.yearDays;
+const secs = (performance.now() - t0) / 1000; const yd = E.cfg.yearDays;
 const st = q.stats(), agg = {}; let tot = 0; for (const s of snaps.slice(Math.floor(snaps.length / 3))) for (const [k, v] of Object.entries(s)) { agg[k] = (agg[k] || 0) + v; tot += v; }
 const top = Object.entries(agg).sort((a, b) => b[1] - a[1]);
 console.log(`world seed ${seed} pop ${w.living().length} ${years}y ${secs.toFixed(1)}s | goals formed ${st.formed} done ${st.completed} failed ${st.failed} abandoned ${st.abandoned} active ${st.active} transformed ${st.transformed} invented ${st.invented} | templates ${st.templates} methodDefaults ${st.methodDefaults}`);

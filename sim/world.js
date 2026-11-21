@@ -2,14 +2,9 @@
 // Kernel services (sim/kernel/*): events (registry + log), commands (queue/log/replay), ledger, text, lod, index, affordances, scheduler, plugins.
 import { RNG } from './rng.js';
 import { timeOf, formatDate, formatDateTime, TICKS_PER_YEAR, TICKS_PER_DAY } from './time.js';
-import { generateMap, isOpen } from './map.js';
 import { Pathfinder } from './path.js';
 import { Chronicle } from './chronicle.js';
-import { Brain } from './brain.js';
-import { CORE_ACTIONS } from './actions.js';
-import { stepNeeds, NEEDS_PERIOD } from './needs.js';
-import { createPerson, generatePopulation, newRel, fullName } from './person.js';
-import defaultSystems from './systems/index.js';
+import { createPerson, newRel, fullName } from './person.js';
 import { subRng } from './kernel/rng.js';
 import { EventBus } from './kernel/events.js';
 import { LEGACY_EVENT_TYPES } from './kernel/event-types.js';
@@ -19,9 +14,8 @@ import { Text } from './kernel/text.js';
 import { Lod } from './kernel/lod.js';
 import { Indices } from './kernel/indices.js';
 import { Affordances } from './kernel/affordances.js';
-import { Scheduler, NEEDS_PERIOD_AGENDA } from './kernel/scheduler.js';
+import { Scheduler } from './kernel/scheduler.js';
 import { loadPlugins, isPlugin } from './kernel/plugin.js';
-import { adaptLegacySystem, legacyModGuard } from './kernel/legacy.js';
 import { stateHash, saveSnapshot, loadSnapshot } from './snapshot.js';
 
 // ALL tunables live in world.settings (documented in ARCHITECTURE.md). Systems read them with `?? default` as well, but the
@@ -32,7 +26,6 @@ const DEFAULT_SETTINGS = {
   epidemicScale: 1, immigrationScale: 1, emigrationScale: 1, divorceScale: 1, affairScale: 1, fertilityScale: 1, childMortalityScale: 1, maternalRiskScale: 1,
   fertilityBoostUntil: 0,
 };
-const THINK_EVERY = 12; // legacy mode: ticks between re-evaluations of an interruptible action
 const GSHIFT = 3; // spatial grid cell = 8 tiles
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const LEGACY_CALENDAR = { weekStart: (t) => t.weekday === 0, monthStart: (t) => t.dayOfSeason === 1, yearStart: (t) => t.dayOfYear === 0 };
@@ -69,8 +62,7 @@ export class World {
     this.buildings = new Map();
     this._byType = {};
     this._living = []; this._livingDirty = true;
-    this._walkers = new Set(); this._syncTick = -1;
-    this._moodQ = new Map();
+        this._moodQ = new Map();
     this.hashLog = opts.hashDaily ? [] : null;
     // ---- kernel services
     this.sys = {}; this.plugins = [];
@@ -82,26 +74,23 @@ export class World {
     this.lod = new Lod(this);
     this.index = new Indices(this);
     this.afford = new Affordances(this);
-    this.sched = new Scheduler(this, opts.sched || (opts.settings && opts.settings.sched) || 'agenda');
+    this.sched = new Scheduler(this);
     this.chronicle = new Chronicle(this);
-    this.map = (opts.generateMap || generateMap)(this.rngFor('map'), { houses: this.settings.houses });
+    this.map = opts.generateMap(this.rngFor('map'), { houses: this.settings.houses });
     this.path = new Pathfinder(this.map);
     this.gw = (this.map.W >> GSHIFT) + 1; this.gh = (this.map.H >> GSHIFT) + 1;
     this.grid = Array.from({ length: this.gw * this.gh }, () => new Set());
     for (const b of this.map.buildings) this.addBuilding(b);
-    this.actions = new Map();
-    this.brain = new Brain(this);
-    for (const a of CORE_ACTIONS) this.registerAction(a);
     this.systems = [];
     const plugins = [...(opts.plugins || [])];
-    for (const s of (opts.systems || defaultSystems)) { if (isPlugin(s)) plugins.push(s); else this.registerSystem(s); }
-    (opts.populate || generatePopulation)(this, this.rngFor('population'), this.settings.population);
+    for (const s of (opts.systems || [])) { if (isPlugin(s)) plugins.push(s); }
+    opts.populate(this, this.rngFor('population'), this.settings.population);
     this._dailyWeather();
     this.chronicle.add({ tick: 0, type: 'founding', importance: 3, text: `${this.town.name} wakes to a new dawn with ${this.living().length} souls.`, people: [] });
     for (const s of this.systems) if (s.init) s.init(this);
     if (plugins.length) loadPlugins(this, plugins, this.pack);
     this._tickSystems = this.systems.filter((s) => s.onTick);
-    if (this.sched.agenda) this.sched.rebuild();
+    this.sched.rebuild();
   }
 
   // ---------- basics ----------
@@ -115,9 +104,7 @@ export class World {
   formatDateTime(tick = this.tick) { return this.calendar.formatDateTime ? this.calendar.formatDateTime(tick) : formatDateTime(tick); }
   ageOf(p) { return (this.tick - p.birthTick) / (this.calendar.ticksPerYear || TICKS_PER_YEAR); } // real-calendar packs set calendar.ticksPerYear
   nameOf(p) { return fullName(p); }
-  isOpen(b) { return isOpen(b, this.time.hourFloat); }
   living() {
-    if (this._walkers.size !== 0 && this._syncTick !== this.tick) this._syncWalkers();
     if (this._livingDirty) { this._living = []; for (const p of this.people.values()) if (p.alive) this._living.push(p); this._livingDirty = false; }
     return this._living;
   }
@@ -167,24 +154,17 @@ export class World {
   stateHash() { return stateHash(this); }
   // after snapshot restore: rebuild every derived structure (indices, wheel, walkers, mood expiry queue, adapter views)
   _afterLoad() {
-    this._living = []; this._livingDirty = true; this._walkers.clear(); this._syncTick = -1;
+    this._living = []; this._livingDirty = true;
     this.index = new Indices(this); this.lod.counts = [0, 0, 0, 0];
-    for (const p of this.living()) { this.index._add(p); if (p.currentAction && p.currentAction.status === 0 && p.currentAction.lazy) this._walkers.add(p); }
+    for (const p of this.living()) this.index._add(p);
     this._moodQ.clear();
     for (const p of this.living()) for (const m of p.moodlets) { const h = Math.ceil(m.untilTick / 6); let s = this._moodQ.get(h); if (!s) this._moodQ.set(h, (s = new Set())); s.add(p); }
     this._tickSystems = this.systems.filter((s) => s.onTick);
     for (const s of this.systems) if (s.afterLoad) s.afterLoad(this);
-    if (this.sched.agenda) this.sched.rebuild();
+    this.sched.rebuild();
   }
 
   // ---------- registries ----------
-  registerAction(def) { this.brain.register(def); this.actions.set(def.id, this.brain.list.find((d) => d.id === def.id)); }
-  registerSystem(sys) {
-    sys = adaptLegacySystem(this, sys);
-    this.systems.push(sys);
-    for (const a of sys.actions || []) this.registerAction(a);
-    (sys.scoreModifiers || []).forEach((m, i) => this.brain.addModifier(m, legacyModGuard(sys.name, i)));
-  }
   registerIntervention(kind, fn) { this._interventions.set(kind, fn); }
   /** God-mode hook. Goes through the command log (replayable): world.intervene(kind, params) === queueCommand({actor:'god', name:'intervene', args:{kind, params}}). */
   intervene(kind, params = {}) {
@@ -228,14 +208,14 @@ export class World {
       if (b.open) this._gridAdd(p);
     } else { if (!p.x && !p.y) { p.x = this.map.center.x; p.y = this.map.center.y - 6; } this._gridAdd(p); }
     if (p.alive) this.index._add(p);
-    if (this.sched.agenda && p.alive) { p.wake = -2; this.sched.schedule(p, this.tick + 1); }
+    if (p.alive) { p.wake = -2; this.sched.schedule(p, this.tick + 1); }
     return p;
   }
   // Take a person out of the live world (buildings, spatial grid, jobs, households) without a death: used by killPerson
   // and by emigration. Sets alive=false; the caller records why (deathTick/causeOfDeath or emigrated*).
   removePerson(p) {
     p.alive = false;
-    p.currentAction = null; p.path = null; this._walkers.delete(p);
+    p.currentAction = null; p.path = null;
     if (p.locationId != null) { const b = this.buildings.get(p.locationId); if (b) b.occupants.delete(p); }
     this._gridRemove(p);
     p.locationId = null; p.inside = false;
@@ -257,7 +237,6 @@ export class World {
   // peopleAt: alive people currently inside/at a building. peopleNear: alive people OUTDOORS (incl. open places like park/square) within r tiles.
   peopleAt(buildingId, out = []) { const b = this.buildings.get(buildingId); if (b) for (const p of b.occupants) if (p.alive) out.push(p); return out; }
   peopleNear(x, y, r, out = []) {
-    if (this._walkers.size !== 0 && this._syncTick !== this.tick) this._syncWalkers();
     const x0 = Math.max(0, (x - r) >> GSHIFT), x1 = Math.min(this.gw - 1, (x + r) >> GSHIFT), y0 = Math.max(0, (y - r) >> GSHIFT), y1 = Math.min(this.gh - 1, (y + r) >> GSHIFT);
     const r2 = r * r;
     for (let cy = y0; cy <= y1; cy++) for (let cx = x0; cx <= x1; cx++) for (const p of this.grid[cy * this.gw + cx]) { const dx = p.x - x, dy = p.y - y; if (dx * dx + dy * dy <= r2 && p.alive) out.push(p); }
@@ -302,157 +281,11 @@ export class World {
     for (let k = 0; k < L.length; k++) if (L[k].id === m.id) { i = k; break; }
     if (i >= 0) L[i] = m; else { L.push(m); if (L.length > 14) L.shift(); }
     this._sumMoodlets(p);
-    if (this.sched.agenda) { const h = Math.ceil(m.untilTick / 6); let s = this._moodQ.get(h); if (!s) this._moodQ.set(h, (s = new Set())); s.add(p); }
+    { const h = Math.ceil(m.untilTick / 6); let s = this._moodQ.get(h); if (!s) this._moodQ.set(h, (s = new Set())); s.add(p); }
   }
   moodlet(p, id, label, value, ticks) { this.addMoodlet(p, { id, label, value, untilTick: this.tick + ticks }); }
   removeMoodlet(p, id) { const L = p.moodlets; for (let k = L.length - 1; k >= 0; k--) if (L[k].id === id) { L.splice(k, 1); this._sumMoodlets(p); } }
   _sumMoodlets(p) { let s = 0; for (const m of p.moodlets) s += m.value; p.moodletSum = s > 1 ? 1 : s < -1 ? -1 : s; }
-
-  // ---------- actions ----------
-  _route(p, b, tile = -1) {
-    const W = this.map.W, pf = this.path;
-    const origin = p.y * W + p.x;
-    const from = p.locationId != null ? this.buildings.get(p.locationId) : null;
-    const segs = [];
-    let start = origin;
-    if (from && from.open && origin !== from.door.y * W + from.door.x && (b ? from.id !== b.id : true)) {
-      const s = pf.cached(origin, from.door.y * W + from.door.x); if (!s) return null; segs.push(s); start = from.door.y * W + from.door.x;
-    }
-    if (b) {
-      const dt = b.door.y * W + b.door.x;
-      const s = pf.cached(start, dt); if (!s) return null; segs.push(s);
-      if (b.open) { const spot = b.spots[this.rng.int(0, b.spots.length - 1)]; if (spot !== dt) { const s2 = pf.cached(dt, spot); if (!s2) return null; segs.push(s2); } }
-    } else { const s = pf.cached(start, tile); if (!s) return null; segs.push(s); }
-    if (segs.length === 1) return segs[0];
-    let n = 0; for (const s of segs) n += s.length;
-    const out = new Int32Array(n); let o = 0;
-    for (const s of segs) { out.set(s, o); o += s.length; }
-    return out;
-  }
-  // Start an action: target = building id | {x,y} | null (in place). Returns false if unreachable / refused.
-  startAction(p, id, target = null, why = '', opts = {}) {
-    const def = this.actions.get(id);
-    if (!def) return false;
-    if (this._walkers.size !== 0 && this._walkers.has(p)) this._materialize(p);
-    const W = this.map.W;
-    let b = null, tile = -1;
-    if (typeof target === 'number') { b = this.buildings.get(target); if (!b) return false; }
-    else if (target && typeof target === 'object') tile = target.y * W + target.x;
-    let route = null;
-    if (b ? p.locationId !== b.id : tile >= 0 && p.y * W + p.x !== tile) { route = this._route(p, b, tile); if (!route) return false; }
-    if (p.currentAction) this.endAction(p, true);
-    const ca = { id, label: typeof def.label === 'function' ? def.label(this, p) : def.label, targetId: b ? b.id : null, untilTick: 0, status: 1, startTick: this.tick, why: why || '', data: opts.data ?? null, forced: !!opts.forced, duration: opts.duration ?? null, thoughtText: opts.thought || null, _d: def, _b: b,
-      tt: 0, lazy: false, spd: 0, walkT0: 0, walkK: 0, walkDone: 0, arrive: 0 };
-    p.currentAction = ca;
-    if (!this.sched.agenda) p.wake = 0;
-    this.emit('actionStart', { person: p, action: ca });
-    let ok = true;
-    if (route) {
-      if (p.locationId != null) this._depart(p);
-      ca.status = 0; p.path = route; p.pathIdx = 0;
-      if (this.sched.agenda && !this.recordTrails) {
-        ca.lazy = true; ca.spd = p.speed; ca.walkT0 = this.tick; ca.walkK = this._walkSteps(route, p.speed); ca.arrive = this.tick + ca.walkK;
-        this._walkers.add(p);
-      }
-      p.thought = this._thought(p, ca, false);
-    } else ok = this._begin(p, ca);
-    if (this.sched.agenda && this.sched.cur !== p) { p.wake = -2; this.sched.plan(p); }
-    return ok;
-  }
-  forceAction(p, id, target, opts = {}) { return this.startAction(p, id, target, opts.why || '', { ...opts, forced: true }); }
-  cancelAction(p) { if (p.currentAction) this.endAction(p); }
-  endAction(p, noPlan = false) {
-    const ca = p.currentAction;
-    if (!ca) return;
-    const def = ca._d;
-    if (ca.status === 0 && ca.lazy) this._walkers.delete(p);
-    stepNeeds(this, p); // settle needs under the ending action's effects
-    if (ca.status === 1 && def.onTick !== undefined && this.tick > ca.tt) { const dt = this.tick - ca.tt; ca.tt = this.tick; def.onTick(this, p, ca._b, ca, dt); }
-    if (ca.status === 1 && def.onEnd) def.onEnd(this, p, ca._b, ca);
-    this.emit('actionEnd', { person: p, action: ca });
-    p.currentAction = null; p.lastAction = ca.id;
-    if (!this.sched.agenda) p.wake = 0;
-    else if (!noPlan && this.sched.cur !== p) { p.wake = -2; this.sched.plan(p); }
-  }
-  _thought(p, ca, doing) {
-    const def = ca._d, b = ca._b;
-    if (ca.thoughtText) return ca.thoughtText;
-    if (def.thought) { const t = def.thought(this, p, b, ca); if (t) return t; }
-    const why = ca.why ? ` — ${ca.why}` : '';
-    const home = b && b.id === p.homeId;
-    if (doing) return `${cap(ca.label || ca.id)}${b ? (home ? ' at home' : ' at ' + b.name) : ''}${why}`;
-    return `Heading ${b ? (home ? 'home' : 'to ' + b.name) : 'out'} (${ca.label || ca.id})${why}`;
-  }
-  _depart(p) {
-    const b = this.buildings.get(p.locationId);
-    if (b) b.occupants.delete(p);
-    p.locationId = null;
-    if (p.inside) { p.inside = false; this._gridAdd(p); }
-  }
-  _begin(p, ca) {
-    const def = ca._d, b = ca._b;
-    if (ca.status === 0) stepNeeds(this, p); // settle walking-time needs before perTick effects start
-    this.brain.prepare(p);
-    if (def.onStart && def.onStart(this, p, b, ca) === false) { p.currentAction = null; p.cooldown[def.id] = this.tick + 12; return false; }
-    const dur = ca.duration ?? (def.duration ? def.duration(this, p, b, ca) : 6);
-    ca.status = 1; ca.tt = this.tick; ca.untilTick = this.tick + Math.max(1, dur);
-    if (this.sched.agenda) p.nextThink = def.interruptible && !ca.forced ? this.brain.interruptAt(p, def) : Infinity;
-    else { p.nextThink = this.tick + 10 + (p.id % 5); p.wake = 0; }
-    p.path = null;
-    p.thought = this._thought(p, ca, true);
-    return true;
-  }
-  _arrive(p) {
-    const ca = p.currentAction, b = ca._b;
-    p.path = null; this._walkers.delete(p);
-    if (b) {
-      p.locationId = b.id; b.occupants.add(p);
-      if (!b.open) { p.inside = true; this._gridRemove(p); }
-      this.emit('arrive', { person: p, buildingId: b.id });
-    }
-    this._begin(p, ca);
-  }
-  _walk(p) {
-    const path = p.path, W = this.map.W, cost = this.map.cost, n = path.length;
-    let i = p.pathIdx, budget = p.speed * 10;
-    const rec = this.recordTrails;
-    if (rec) { p.seg.length = 0; p.seg.push(p.x, p.y); p.segTick = this.tick; }
-    while (budget > 0 && i < n) {
-      const t = path[i++];
-      p.x = t % W; p.y = (t / W) | 0;
-      budget -= cost[t];
-      if (rec) p.seg.push(p.x, p.y);
-    }
-    p.pathIdx = i;
-    const ci = (p.y >> GSHIFT) * this.gw + (p.x >> GSHIFT);
-    if (ci !== p.cell) { if (p.cell >= 0) this.grid[p.cell].delete(p); this.grid[ci].add(p); p.cell = ci; }
-    return i >= n;
-  }
-  // ---- analytic walking: a route's duration is a pure function of (path, speed); positions are materialised on demand ----
-  _walkSteps(path, speed) {
-    const cost = this.map.cost, n = path.length, B = speed * 10;
-    let i = 0, k = 0;
-    while (i < n) { let budget = B; while (budget > 0 && i < n) budget -= cost[path[i++]]; k++; }
-    return k;
-  }
-  _materialize(p) {
-    const ca = p.currentAction;
-    if (ca === null || ca.status !== 0 || !ca.lazy) { this._walkers.delete(p); return; }
-    let target = this.tick - ca.walkT0; if (target > ca.walkK) target = ca.walkK;
-    let steps = target - ca.walkDone;
-    if (steps <= 0) return;
-    const path = p.path, W = this.map.W, cost = this.map.cost, n = path.length, B = ca.spd * 10;
-    let i = p.pathIdx, x = p.x, y = p.y;
-    while (steps-- > 0) { let budget = B; while (budget > 0 && i < n) { const t = path[i++]; x = t % W; y = (t / W) | 0; budget -= cost[t]; } }
-    ca.walkDone = target; p.pathIdx = i; p.x = x; p.y = y;
-    const ci = (y >> GSHIFT) * this.gw + (x >> GSHIFT);
-    if (ci !== p.cell) { if (p.cell >= 0) this.grid[p.cell].delete(p); this.grid[ci].add(p); p.cell = ci; }
-  }
-  /** Bring every analytic walker's x/y/grid cell up to the current tick (cheap; once per tick). Called by living(), peopleNear(), encounter pass. */
-  _syncWalkers() {
-    this._syncTick = this.tick;
-    for (const p of this._walkers) this._materialize(p);
-  }
 
   // ---------- main loop ----------
   step() {
@@ -488,7 +321,7 @@ export class World {
     this.events.flush();
     this._inStep = false;
   }
-  _people() { if (this.sched.mode === 'agenda') this.sched.run(this.tick); else this._stepPeople(); }
+  _people() { this.sched.run(this.tick); }
   // call a lifecycle hook on every system; when world.prof is set, accumulate ms per system (prof.sys[name])
   _hook(name) {
     const sys = name === 'onTick' ? this._tickSystems : this.systems, P = this.prof;
@@ -499,46 +332,22 @@ export class World {
     const l = this.clocks[name], P = this.prof;
     for (let i = 0; i < l.length; i++) { if (P) { const t0 = performance.now(); l[i].fn(this, this.time); P.sys[l[i].name] = (P.sys[l[i].name] || 0) + performance.now() - t0; } else l[i].fn(this, this.time); }
   }
-  // enable per-section timing: world.enableProfile() then read world.prof {people, brain, walk, needs, sys:{name:ms}}
-  enableProfile() {
-    const P = this.prof = { people: 0, brain: 0, walk: 0, sys: {} };
-    const wrap = (obj, fn, key) => { const orig = obj[fn]; obj[fn] = function (...a) { const t0 = performance.now(); const r = orig.apply(this, a); P[key] += performance.now() - t0; return r; }; };
-    wrap(this.brain, 'decide', 'brain'); wrap(this, '_walk', 'walk');
-    return P;
-  }
+  // enable per-section timing: world.enableProfile() then read world.prof {people, sys:{name:ms}}
+  enableProfile() { return (this.prof = { people: 0, sys: {} }); }
   run(ticks) { for (let i = 0; i < ticks; i++) this.step(); }
   _hourStart() {
-    if (this.sched.agenda) {
-      const h = this.tick / 6, s = this._moodQ.get(h);
-      if (s !== undefined) {
-        this._moodQ.delete(h);
-        for (const p of s) if (p.alive && p.moodlets.length) {
-          let ch = false;
-          for (let i = p.moodlets.length - 1; i >= 0; i--) if (p.moodlets[i].untilTick <= this.tick) { p.moodlets.splice(i, 1); ch = true; }
-          if (ch) this._sumMoodlets(p);
-        }
-      }
-      return;
-    }
-    for (const p of this.living()) if (p.moodlets.length) {
+    const h = this.tick / 6, q = this._moodQ.get(h);
+    if (q === undefined) return;
+    this._moodQ.delete(h);
+    for (const p of q) if (p.alive && p.moodlets.length) {
       let ch = false;
       for (let i = p.moodlets.length - 1; i >= 0; i--) if (p.moodlets[i].untilTick <= this.tick) { p.moodlets.splice(i, 1); ch = true; }
       if (ch) this._sumMoodlets(p);
     }
   }
   _dayStart() {
-    const agenda = this.sched.agenda;
-    for (const p of this.living()) {
-      const a = (this.tick - p.birthTick) / TICKS_PER_YEAR; p.speed = a < 12 ? 5 : a > 65 ? 4 : 6;
-      if (agenda) this._settle(p); // systems' onDay hooks read needs/mood/workedTicks: bring everyone exactly up to date once a day
-    }
+    for (const p of this.living()) { const a = (this.tick - p.birthTick) / TICKS_PER_YEAR; p.speed = a < 12 ? 5 : a > 65 ? 4 : 6; }
     this._dailyWeather();
-  }
-  /** Settle a person's lazily integrated state (needs, mood, pending onTick effects) up to the current tick. */
-  _settle(p) {
-    const ca = p.currentAction;
-    if (ca !== null && ca.status === 1 && ca._d.onTick !== undefined && this.tick > ca.tt) { const dt = this.tick - ca.tt; ca.tt = this.tick; ca._d.onTick(this, p, ca._b, ca, dt); }
-    stepNeeds(this, p);
   }
   _dailyWeather() {
     const s = this.time.season, r = this.rngFor('weather');
@@ -548,55 +357,5 @@ export class World {
     else if (s === 1) type = x < 0.12 ? 'rain' : x < 0.3 ? 'cloudy' : 'clear';
     else type = x < 0.28 ? 'rain' : x < 0.5 ? 'cloudy' : x < 0.58 && s === 2 ? 'fog' : 'clear';
     this.weather = { type, temp: Math.round([11, 22, 10, -1][s] + r.gauss(0, 3)) };
-  }
-
-  // ---- agenda mode: run one person's wake-up (see kernel/scheduler.js). The scheduler replans them afterwards. ----
-  _agendaPerson(p) {
-    const tick = this.tick;
-    let ca = p.currentAction;
-    if (tick - p.needsTick >= NEEDS_PERIOD_AGENDA && (ca === null || ca.status === 1)) stepNeeds(this, p);
-    if (ca === null) { this.brain.decide(p); ca = p.currentAction; if (ca === null) return; }
-    if (ca.status === 0) {
-      if (ca.lazy) { this._materialize(p); this._arrive(p); } else if (this._walk(p)) this._arrive(p);
-      return;
-    }
-    const def = ca._d;
-    if (def.onTick !== undefined && tick >= ca.tt + (def.tickEvery || 1)) { const dt = tick - ca.tt; ca.tt = tick; def.onTick(this, p, ca._b, ca, dt); if (!p.alive) return; }
-    if (tick >= ca.untilTick) {
-      this.endAction(p);
-      this.brain.decide(p);
-    } else if (def.interruptible && !ca.forced && tick >= p.nextThink) {
-      this.brain.decide(p);
-      if (ca === p.currentAction) { this.brain.prepare(p); p.nextThink = this.brain.interruptAt(p, def); }
-    }
-  }
-  _stepPeople() {
-    const tick = this.tick, list = this.living();
-    for (let li = 0; li < list.length; li++) {
-      const p = list[li];
-      if (tick < p.wake) continue; // asleep until its next scheduled event (see bottom of loop)
-      if (!p.alive) continue;
-      if (tick - p.needsTick >= NEEDS_PERIOD) stepNeeds(this, p);
-      let ca = p.currentAction;
-      if (ca === null) { this.brain.decide(p); ca = p.currentAction; if (ca === null) continue; }
-      if (ca.status === 0) { if (this._walk(p)) this._arrive(p); continue; }
-      // doing
-      const def = ca._d;
-      if (def.onTick !== undefined) { const dt = tick - ca.tt; ca.tt = tick; def.onTick(this, p, ca._b, ca, dt); if (!p.alive) continue; }
-      if (tick >= ca.untilTick) {
-        this.endAction(p);
-        this.brain.decide(p);
-        const na = p.currentAction;
-        if (na && na.status === 0) { if (this._walk(p)) this._arrive(p); }
-      } else {
-        if (def.interruptible && !ca.forced && tick >= p.nextThink) { p.nextThink = tick + THINK_EVERY; this.brain.decide(p); }
-        if (ca === p.currentAction) {
-          let wk = p.needsTick + NEEDS_PERIOD; if (ca.untilTick < wk) wk = ca.untilTick;
-          if (def.onTick !== undefined) { const nt = tick + (def.tickEvery || 1); if (nt < wk) wk = nt; }
-          if (def.interruptible && !ca.forced && p.nextThink < wk) wk = p.nextThink;
-          p.wake = wk;
-        }
-      }
-    }
   }
 }

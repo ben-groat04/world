@@ -39,6 +39,7 @@ export class Host {
     this.series = []; this.pendingSeries = []; this.godWatch = null; this.lastStatTick = -1e9; this.nextNewsId = 1;
     this.byBid = new Map(); for (const b of w.buildings.values()) this.byBid.set(b.id, b);
     this.venueOf = new Map(); for (const v of w.map.lf.venues) this.venueOf.set(v.buildingId, v);
+    while (w.time.hourFloat < 6.8 || w.time.hourFloat > 7.2) { w.step(); if (w.tick > 400) break; } // open the day at about 07:00
     this.sampleStats();
     for (const t of NEWS_TYPES) if (w.events.registry.has(t)) w.on(t, (ev) => this.onEvent(ev));
     this.seenPop = -1;
@@ -205,7 +206,7 @@ export class Host {
   }
 
   // ------------------------------------------------------------------ god mode
-  godCatalogue() { const have = (n) => this.w.commands.has(n); const list = GOD_COMMANDS.filter((c) => have(c.name)); const known = new Set(GOD_COMMANDS.map((c) => c.name)); const other = [...this.w.commands.handlers.keys()].filter((n) => !known.has(n) && !/^(routine\.|kernel\.)|initPerson|initHousehold|\.init$/.test(n)); return { list, other }; }
+  godCatalogue() { const have = (n) => this.w.commands.has(n); const list = GOD_COMMANDS.filter((c) => have(c.name)).map(({ name, group, label, icon, desc, params }) => ({ name, group, label, icon, desc, params })); const known = new Set(GOD_COMMANDS.map((c) => c.name)); const other = [...this.w.commands.handlers.keys()].filter((n) => !known.has(n) && !/^(routine\.|kernel\.)|initPerson|initHousehold|\.init$/.test(n)); return { list, other }; }
   runCommand(m) {
     const w = this.w; let res = null, err = null; const c = GOD_COMMANDS.find((x) => x.name === m.name);
     try { const args = c && c.build ? c.build(m.args || {}, this) : (m.args || {}); const before = w.tick; res = w.queueCommand({ actor: 'god', name: m.name, args }); this.godWatch = { tick: before, until: before + this.TPD * 20 };

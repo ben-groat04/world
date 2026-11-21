@@ -1,13 +1,6 @@
-// Test fixture: kernel World (legacy engine people + Larkfield pack) with the goals plugin. Use createLarkfieldWorld(seed) from sim/larkfield.js when it exists.
+// Test fixture: the Larkfield world with an extra goals plugin instance.
 import { World } from '../world.js';
-import { loadPack } from '../kernel/index.js';
 import { createGoals } from './index.js';
-export async function makeFixture(o = {}) {
-  let pack = null; try { pack = await loadPack('larkfield'); } catch (e) { /* ok */ }
-  const w = new World({ seed: o.seed ?? 1, population: o.population ?? 240, strictEvents: o.strict ?? true, plugins: [createGoals(o.goals || {})], pack, hashDaily: !!o.hashDaily });
-  return w;
-}
-
 /** The real Larkfield world (population + routine) with the goals plugin appended. */
 export async function makeLarkfield(seed = 1, o = {}) {
   const { larkfieldOpts } = await import('../larkfield.js');

@@ -83,7 +83,7 @@ export function loadSnapshot(snap, opts = {}) {
     if (k === 'a') for (const x of d) o.push(dec(x));
     else if (k === 'm') for (const [a, b] of d) o.set(dec(a), dec(b));
     else if (k === 's') for (const x of d) o.add(dec(x));
-    else if (k === 'o') { for (const key of Object.keys(d)) { if (key === '$def') { o._d = w.actions.get(d.$def); continue; } o[key] = dec(d[key]); } }
+    else if (k === 'o') { for (const key of Object.keys(d)) { o[key] = dec(d[key]); } }
   }
   // roots that were not reusable (absent in the fresh world)
   for (const k of Object.keys(snap.roots)) if (k !== 'people' && k !== 'buildings') w[k] = dec(snap.roots[k]);
@@ -98,7 +98,6 @@ export function loadSnapshot(snap, opts = {}) {
   for (const p of w.people.values()) { p.cell = -1; if (p.alive && !p.inside && p.locationId == null || (p.alive && p.locationId != null && w.buildings.get(p.locationId)?.open && !p.inside)) w._gridAdd(p); }
   w._livingDirty = true;
   w.path.cache?.clear?.();
-  w.brain._openTick = -1;
   if (snap.kernel) {
     w.events.restore(JSON.parse(JSON.stringify(snap.kernel.events))); w.commands.restore(JSON.parse(JSON.stringify(snap.kernel.commands))); w.ledger.restore(JSON.parse(JSON.stringify(snap.kernel.ledger)));
     w.hashLog = snap.kernel.hashLog ? [...snap.kernel.hashLog] : null;
@@ -119,7 +118,7 @@ export function stateHash(w) {
   for (const id of ids) {
     const p = w.people.get(id);
     mix(id); mix(p.alive ? 1 : 0); mix(p.x); mix(p.y); mixf(p.money); mixf(p.health); mixf(p.mood); mixf(p.reputation);
-    mixf(p.needs.hunger); mixf(p.needs.energy); mixf(p.needs.social); mix(p.currentAction ? hashStr(p.currentAction.id) : 0); mix(p.relationships.size); mix(p.memories.length); mix(p.homeId ?? -1); mix(p.workId ?? -1);
+    mix(p.currentAction ? hashStr(p.currentAction.id) : 0); mix(p.relationships.size); mix(p.memories.length); mix(p.homeId ?? -1); mix(p.workId ?? -1);
   }
   for (const b of w.buildings.values()) { mixf(b.funds); mix(b.employees.length); mix(b.residents.length); }
   return h.toString(16).padStart(8, '0');

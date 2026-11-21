@@ -53,6 +53,10 @@ export function populate(world, rng) {
   const OCC = Object.fromEntries(pack.jobs.map((o) => [o.id, o]));
   const lf = world.lf = { households: [], metro: [], slots: [], stats: {}, ver: 1 };
   if (!world.stateKeys.includes('lf')) world.stateKeys.push('lf');
+  world.popQuery = { // read-only helpers for other packages (goals/housing/labour/social): world.popQuery.household(p) etc.
+    household: (p) => world.lf.households[p.ext.pop.hh], ties: (p) => p.ext.pop.ties, metro: (id) => world.lf.metro.find((m) => m.id === id) || null,
+    venueStaff: (bid) => (world.buildings.get(bid) || { lf: { staff: [] } }).lf.staff, venues: () => world.map.lf.venues,
+  };
   const T0 = world.tick;
   const units = M.units.filter((u) => u.kind !== 'venue' && !u.vacant);
   const specs = planHouseholds(rng, pack, units);

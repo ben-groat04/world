@@ -20,6 +20,7 @@ export function makeCalendar(opts = {}) {
   const recAt = (i) => { let r = byIdx.get(i); if (r === undefined) { fill(dateOfIdx(i)[0]); r = byIdx.get(i); } return r; };
   const cal = {
     start, startMs, ticksPerYear: TICKS_PER_YEAR_REAL, recAt, yearTable, MONTH_NAMES, DOW_NAMES,
+    dayStart: (idx) => idx * TPD - off,
     dayIdxOf: (tick) => Math.floor((tick + off) / TPD),
     /** day record for a tick (cheap: array lookup). */
     recOfTick: (tick) => recAt(Math.floor((tick + off) / TPD)),

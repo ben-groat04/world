@@ -6,7 +6,7 @@ const NOT_EMPLOYED = new Set(['child', 'student', 'retired', 'unemployed', 'none
 export const latent = (world, id, key, prev) => (hash32(world.seed, 'lat', id, key) % 10000) / 10000 < prev;
 const z = (x) => clamp((x - 0.5) * 4, -2, 2);
 export const personalityZ = (p) => { const q = p.personality || p.traits5 || {}; return { O: z(q.openness ?? 0.5), C: z(q.conscientiousness ?? 0.5), E: z(q.extraversion ?? 0.5), A: z(q.agreeableness ?? 0.5), N: z(q.neuroticism ?? 0.5) }; };
-export const segmentOf = (p) => p.segment || p.ext?.pop?.segment || p.ext?.segment || p.lifestyle || null;
+export const segmentOf = (p) => p.segment || p.ext?.pop?.seg || p.ext?.pop?.segment || p.ext?.segment || p.lifestyle || null;
 export const tieStrength = (r) => (r ? (r.familiarity || 0) * (0.35 + Math.max(r.affinity || 0, 0) * 0.65 + (r.trust || 0) * 0.2) : 0);
 const has = (arr, x) => Array.isArray(arr) && arr.includes(x);
 
@@ -15,10 +15,10 @@ export function computeFacts(world, p, cfg) {
   const id = p.id, age = world.ageOf(p), ms = cfg.moneyScale;
   const f = { id, age, sex: p.sex, z: personalityZ(p), seg: segmentOf(p) };
   f.adult = age >= 18; f.working_age = age >= 18 && age < 66;
-  const job = p.job ?? p.employment?.status ?? null;
+  const pop = p.ext?.pop; const act = pop?.activity; const job = act ? (act === 'employed' ? 'employed' : act === 'home_family' || act === 'sick_disabled' || act === 'other_inactive' ? 'none' : act) : (p.job ?? p.employment?.status ?? null);
   f.student = job === 'student' || p.stage === 'student' || (age >= 16 && age < 23 && has(p.tags, 'student'));
   f.retired = job === 'retired' || age >= 67; f.employed = !NOT_EMPLOYED.has(job) && !f.retired;
-  f.money = world.ledger.balance(id); f.debt = Math.max(p.debt || 0, f.money < 0 ? -f.money : 0);
+  f.money = world.ledger.balance(id); f.debt = Math.max(p.debt || 0, pop?.fin?.debt || 0, f.money < 0 ? -f.money : 0);
   f.richness = clamp(Math.log10(Math.max(f.money / ms, 10)) / 4, 0, 1);       // 0 broke .. 1 loaded (log scale)
   f.low_income = f.richness < 0.5;
   const fam = p.family || {};
@@ -36,8 +36,8 @@ export function computeFacts(world, p, cfg) {
   f.lives_with_parents_adult = f.adult && age < 32 && pa.some((x) => { const q = x != null ? world.people.get(x) : null; return q && q.alive && q.homeId === p.homeId && p.homeId != null; });
   f.health = p.health ?? 1; f.illness = !!p.illness;
   f.has_condition = f.illness || f.health < 0.75 || (age > 40 && latent(world, id, 'condition', 0.2 + (age - 40) * 0.006));
-  f.religious = has(p.traits, 'pious') || !!p.religion || latent(world, id, 'faith', 0.22);
-  f.has_pet = (p.pets && p.pets.length > 0) || latent(world, id, 'pet', 0.24);
+  f.religious = has(p.traits, 'pious') || !!p.religion || (pop?.religiosity ?? 0) > 0.5 || latent(world, id, 'faith', 0.22);
+  f.has_pet = (p.pets && p.pets.length > 0) || (pop?.pets && (pop.pets.length > 0 || pop.pets > 0)) || latent(world, id, 'pet', 0.24);
   // ties (single pass)
   let n3 = 0, close = 0, estranged = null, bestE = 0.35, recentEx = false, neighbours = 0;
   const rel = p.relationships;
@@ -51,7 +51,7 @@ export function computeFacts(world, p, cfg) {
   f.few_local_ties = n3 < 5; f.has_friends = close >= 1 || n3 >= 3;
   f.knows_neighbours = neighbours >= 1 || n3 >= 4;
   f.recent_breakup = recentEx || latent(world, id, 'breakup', f.partnered ? 0 : 0.03);
-  f.single = !f.partnered && f.adult; f.tenure = p.tenure || p.housing?.tenure || null;
+  f.single = !f.partnered && f.adult; f.tenure = p.tenure || p.housing?.tenure || (pop && world.lf ? world.lf.households[pop.hh]?.tenure : null) || null;
   f.renter = f.tenure ? f.tenure !== 'owner' && f.tenure !== 'owned' : !latent(world, id, 'owner', 0.3 + clamp((age - 30) * 0.012, 0, 0.4));
   f.sharer = f.renter && (f.age < 40) && !f.partnered && f.kids === 0 && !f.lives_with_parents_adult && latent(world, id, 'sharer', 0.4);
   f.musical = latent(world, id, 'musical', 0.12 + (f.z.O > 0.3 ? 0.1 : 0) + (f.age < 35 ? 0.06 : 0));

@@ -1,0 +1,430 @@
+// Goals engine: state, goal generation (daily, amortised), HTN-lite planner, step execution, completion/failure/transformation, template invention.
+// Nothing is polled per tick: scans sit in a heap keyed by tick (each person ~weekly), steps in a heap keyed by due tick (resolved on the hour clock), groups on the day clock.
+import { hash32 } from '../kernel/rng.js';
+import { DAYS_PER_YEAR, TICKS_PER_DAY } from '../time.js';
+import { clamp, pickW, Heap, fmt, cap1 } from './util.js';
+import { computeFacts, WHO, personalityZ, tieStrength, latent } from './facts.js';
+import { MOVE, OUTCOME_TEXT, VARIANT_NOUN } from './moves.js';
+import { Methods } from './methods.js';
+import { SelfModels } from './selfmodel.js';
+import { stepLabel, goalLine, render } from './describe.js';
+import { Groups } from './groups.js';
+
+export const EVENTS = {
+  'goal.formed': { goal: 'number', tpl: 'string', intensity: 'number' }, 'goal.planned': { goal: 'number', method: 'string', steps: 'number' },
+  'goal.step': { goal: 'number', move: 'string', ok: 'string', why: 'string', step: 'number', steps: 'number' }, 'goal.replanned': { goal: 'number', method: 'string', why: 'string' },
+  'goal.completed': { goal: 'number', tpl: 'string', want: 'string', days: 'number' }, 'goal.failed': { goal: 'number', tpl: 'string', why: 'string' }, 'goal.abandoned': { goal: 'number', tpl: 'string', why: 'string' },
+  'goal.deferred': { goal: 'number', tpl: 'string' }, 'goal.transformed': { goal: 'number', from: 'string', to: 'string' }, 'goal.invented': { tpl: 'string', label: 'string', from: 'string' }, 'goal.template_retired': { tpl: 'string' },
+  'goal.effect': { goal: 'number', want: 'string', kind: 'string' }, 'self.shifted': { belief: 'string', from: 'number', to: 'number' },
+  'group.founded': { group: 'number', kind: 'string', name: 'string' }, 'group.joined': { group: 'number', role: 'string' }, 'group.left': { group: 'number', why: 'string' }, 'group.meeting': { group: 'number', attended: 'number', members: 'number' },
+  'group.conflict': { group: 'number', severity: 'number' }, 'group.leader_changed': { group: 'number', how: 'string' }, 'group.split': { group: 'number', newGroup: 'number' }, 'group.dissolved': { group: 'number', why: 'string', members: 'number', days: 'number' },
+  'group.institution': { group: 'number' }, 'group.rivalry': { a: 'number', b: 'number' },
+  'project.started': { project: 'number', kind: 'string', group: 'number' }, 'project.progress': { project: 'number', pct: 'number' }, 'project.done': { project: 'number', kind: 'string', ok: 'boolean' }, 'project.effect': { project: 'number', kind: 'string', effect: 'string' },
+  'opportunity.created': { kind: 'string', key: 'string' }, 'request.pending': { from: 'number', to: 'number', move: 'string' },
+};
+const PERIOD = 7;                       // days between scans of one person
+const STAGES = ['18-24', '25-34', '35-49', '50-64', '65+'];
+const band = (a) => (a < 25 ? '18-24' : a < 35 ? '25-34' : a < 50 ? '35-49' : a < 65 ? '50-64' : '65+');
+
+export class Engine {
+  constructor(world, pack, lib, opts = {}) {
+    this.world = world; this.pack = pack; this.lib = lib; this.opts = opts;
+    this.cfg = { moneyScale: opts.moneyScale ?? (world.lf ? 1 : 0.05), yearDays: world.calendar?.daysPerYear ?? DAYS_PER_YEAR, maxInvent: opts.maxInvent ?? 200, flags: { invention: true, selfModel: true, groups: true, ...(opts.flags || {}) } };
+    this.cfg.dayScale = this.cfg.yearDays / 365;
+    this.drives = pack.drives || lib.DRIVES; this.driveIdx = Object.fromEntries(this.drives.map((d, i) => [d.id, i]));
+    this.selfm = new SelfModels(lib.SELF_BELIEFS); this.methods = new Methods(lib); this.groups = new Groups(this);
+    this.tpl = new Map(); this.tplList = [];
+    for (const t of pack.goalTemplates || lib.GOAL_TEMPLATES) this.addTemplate(t);
+    this.pressEv = this._compilePressureEvents(lib.PRESSURE_EVENTS);
+    this.S = this.fresh();
+    this.scanHeap = new Heap(); this.stepHeap = new Heap();
+    this.tmp = { wantStats: {} };
+  }
+  fresh() { return { goalSeq: 1, groupSeq: 1, projSeq: 1, tplSeq: 1, ps: new Map(), goals: new Map(), groups: new Map(), projects: new Map(), fit: {}, opps: [], requests: [], inventedThisYear: 0, nPeople: 0, active: new Map(), wins: new Map(), stats: { formed: 0, completed: 0, failed: 0, abandoned: 0, steps: 0, stepOk: 0, stepFail: 0, replans: 0, transformed: 0, invented: 0, byTpl: {} }, ended: [] }; }
+  addTemplate(t) {
+    if (!t.gen) t.gen = { base: 0 };
+    t.habit = t.habit ?? (t.gen.base >= 10); this.tpl.set(t.id, t); if (!this.tplList.includes(t)) this.tplList.push(t);
+  }
+  _compilePressureEvents(list) { const m = new Map(); for (const r of list) for (const k of r.m) { const key = k.startsWith('tag:') ? k.slice(4) : k; let l = m.get(key); if (!l) m.set(key, (l = [])); l.push(r); } return m; }
+  rng(tag, ...k) { return this.world.rngFor('goals.' + tag, ...k); }
+  get day() { return this.world.time.dayAbs ?? this.world.time.totalDays; }
+  sd(days) { return days * this.cfg.dayScale; }                          // real days -> sim days
+  tickAt(dayOffset, hour) { const w = this.world, t = w.time; return Math.max(w.tick + 1, Math.round(w.tick + dayOffset * TICKS_PER_DAY + (hour - t.hourFloat) * 6)); }
+  phrase(tplId) { const t = this.tpl.get(tplId); return t ? (t.phrase || this.lib.PHRASES[tplId] || tplId.replace(/_/g, ' ')) : tplId; }
+  name(id) { const q = this.world.people.get(id); return q ? `${q.firstName} ${q.lastName}` : 'someone'; }
+  fn(id) { const q = this.world.people.get(id); return q ? q.firstName : 'someone'; }
+
+  // ---------------- person state ----------------
+  ps(p) {
+    let s = this.S.ps.get(p.id); if (s) return s;
+    const w = this.world, f = null, r = this.rng('ps', p.id);
+    let parentVec = null; const fam = p.family || {};
+    for (const pid of [fam.motherId, fam.fatherId]) { const q = pid != null ? this.S.ps.get(pid) : null; if (q) { parentVec = parentVec ? parentVec.map((x, i) => (x + q.self[i]) / 2) : q.self.slice(); } }
+    s = { dw: null, band: '', press: {}, self: this.selfm.init(w, p, parentVec), goals: [], groups: [], cool: {}, trace: [], nextScan: 0, lastScan: w.tick, wins: [], ident: {}, next: null, stress: 0, inventedAt: -1e9 };
+    this.S.ps.set(p.id, s); return s;
+  }
+  driveWeights(p, f, s) {
+    const b = band(f.age); if (s.dw && s.band === b) return s.dw; s.band = b;
+    const r = this.rng('dw', p.id), z = f.z, seg = f.seg, shifts = this.pack.meta?.segmentShifts || this.lib.SEGMENT_SHIFTS || {};
+    s.dw = this.drives.map((d) => {
+      let x = d.base; for (const [t, w] of Object.entries(d.traits || {})) x += w * z[t]; if (d.lifeStage && d.lifeStage[b] !== undefined) x += d.lifeStage[b]; if (seg && shifts[seg] && shifts[seg][d.id]) x += shifts[seg][d.id];
+      return clamp(x + (hash32(this.world.seed, 'dn', p.id, d.id) % 1000 / 1000 - 0.5) * 2.2 * d.sd, 0.05, 1);
+    });
+    return s.dw;
+  }
+  // pressure value 0..1: decayed spike, or state-derived
+  press(s, key, now) { const e = s.press[key]; if (!e) return 0; const hl = (this.lib.PRESSURES[key]?.halfLife || 60) * this.cfg.dayScale; return e[0] * Math.pow(0.5, (now - e[1]) / (hl * TICKS_PER_DAY)); }
+  addPress(s, key, v, cause) { const now = this.world.tick, cur = this.press(s, key, now); s.press[key] = [clamp(Math.max(cur, 0) + v, 0, 1), now, cause || (s.press[key] ? s.press[key][2] : 0)]; if (s.press[key][0] < 0.02) delete s.press[key]; }
+
+  // ---------------- scanning (goal generation) ----------------
+  seedPeople() {
+    const w = this.world;
+    for (const p of w.people.values()) if (p.alive && !this.S.ps.has(p.id)) { const s = this.ps(p); s.nextScan = w.tick + (hash32(w.seed, 'sc0', p.id) % (PERIOD * TICKS_PER_DAY)) + 1; this.scanHeap.push({ k: s.nextScan, id: p.id }); }
+    this.S.nPeople = w.people.size;
+  }
+  daily() {
+    const w = this.world; if (w.people.size !== this.S.nPeople) this.seedPeople();
+    const h = this.scanHeap, until = w.tick + TICKS_PER_DAY;
+    while (h.size && h.peek().k <= until) { const e = h.pop(), p = w.people.get(e.id); if (!p || !p.alive) continue; const s = this.ps(p); if (s.nextScan !== e.k) continue; this.scan(p, s); }
+    this.groups.daily();
+  }
+  scan(p, s) {
+    const w = this.world, now = w.tick, f = computeFacts(w, p, this.cfg); s.age = f.age;
+    // events since last scan -> pressures
+    const evs = w.events.query({ actor: p.id, since: s.lastScan - 1, limit: 40 });
+    for (const ev of evs) this._eventPressure(p, s, ev);
+    this._statePressure(s, f, now);
+    s.lastScan = now; s.nextScan = now + Math.round(PERIOD * TICKS_PER_DAY * (0.8 + 0.4 * this.rng('sj', p.id, now).next())); this.scanHeap.push({ k: s.nextScan, id: p.id });
+    const dw = this.driveWeights(p, f, s);
+    s.stress = this._stress(s, now);
+    this.review(p, s, f);
+    if (!f.adult && f.age < 15) return;
+    const cap = this.maxActive(f, s); if (s.goals.length >= cap + 2) return;
+    // contagion: what ties are pursuing / have achieved
+    const contag = this._contagion(p, s);
+    const ctx = { pressure: (k) => this.press(s, k, now) };
+    const r = this.rng('gen', p.id, now), cand = [];
+    for (let i = 0; i < this.tplList.length; i++) {
+      const t = this.tplList[i]; if (t.habit || t.retired || !t.gen.base) continue;
+      if ((s.cool[t.id] || 0) > now || this._has(s, t.id)) continue;
+      const who = WHO[t.gen.who || 'adult']; if (who ? !who(f, s, ctx) : !f.adult) continue;
+      let dsum = 0; for (const d of t.drive) dsum += dw[this.driveIdx[d]] || 0.4; dsum /= t.drive.length;
+      let pf = 1, maxP = 0; if (t.gen.boost) for (const [k, m] of Object.entries(t.gen.boost)) { const pv = this.press(s, k, now); if (pv > maxP) maxP = pv; pf *= 1 + (m - 1) * pv; }
+      if (t.id === 'find_partner' || t.id === 'start_family') pf *= 1;
+      const oppF = this._oppFactor(t);
+      const soc = t.social ? 1 + t.social * Math.min(3, (contag.pursuing[t.id] || 0) * 1.3 + (contag.won[t.id] || 0) * 2.4) : 1;
+      const bias = this.cfg.flags.selfModel ? Math.exp(0.55 * this.selfm.goalBias(s, t.bias)) : 1;
+      const fit = t.invented ? 0.4 + this.fitness(t.id) : 1;
+      const stage = f.z.N > 1 && t.rareTail ? 1.4 : 1;
+      const lowDrive = 0.45 + 1.1 * dsum;
+      const rate = t.gen.base * lowDrive * Math.min(pf, 14) * oppF * soc * bias * fit * stage * (t.rareTail ? this._tailPropensity(p, f) : 1);
+      const pr = 1 - Math.exp(-rate * PERIOD / this.cfg.yearDays);
+      if (r.next() < pr) cand.push([t, dsum, maxP, rate]);
+    }
+    cand.sort((a, b) => b[3] - a[3]);
+    let made = 0;
+    for (const [t, dsum, maxP] of cand) { if (made >= 2) break; if (this.spawn(p, s, f, t, { dsum, maxP, via: 'scan' })) made++; }
+    if (this.cfg.flags.invention && f.z.O > 0.4 && now - s.inventedAt > 112 * TICKS_PER_DAY) this.maybeInvent(p, s, f);
+  }
+  _tailPropensity(p, f) { const u = (hash32(this.world.seed, 'tail', p.id) % 10000) / 10000; return u < 0.06 ? 5 : u < 0.3 ? 1 : 0.15; }   // heavy tail: a few people, most never
+  _has(s, tplId) { for (const gid of s.goals) if (this.S.goals.get(gid).tpl === tplId) return true; return false; }
+  _oppFactor(t) { const o = this.S.opps; if (!o.length) return 1; let f = 1; for (const x of o) if (x.until > this.world.tick && x.boosts && x.boosts[t.id]) f *= x.boosts[t.id]; return f; }
+  fitness(id) { const f = this.S.fit[id]; return f ? (f[1] + 1) / (f[0] + 3) : 0.33; }
+  maxActive(f, s) { const [lo, hi] = this.lib.SCARCITY.maxActiveGoals; return Math.round(clamp(lo + (hi - lo) * (0.35 + 0.25 * f.z.C) - s.stress * 2, lo - 1, hi)); }
+  _stress(s, now) { let m = 0; for (const k of this.lib.SCARCITY.stressPressures) { const v = this.press(s, k, now); if (v > m) m = v; } return m; }
+  _eventPressure(p, s, ev) {
+    const now = this.world.tick; if (ev.type.startsWith('goal.') || ev.type.startsWith('group.') || ev.type.startsWith('project.') || ev.type === 'kernel.command' || ev.type === 'self.shifted') return;
+    const seen = new Set(), keys = [ev.type]; if (ev.tags) for (const t of ev.tags) keys.push(t);
+    for (const k of keys) { const rules = this.pressEv.get(k); if (!rules) continue; for (const r of rules) { if (seen.has(r)) continue; seen.add(r); const self = ev.actors[0] === p.id; if (r.who === 'self' && !self) continue; if (r.who === 'others' && self) continue; for (const [pk, v] of Object.entries(r.to)) { if (v < 0) { const c = this.press(s, pk, now); if (c > 0) this.addPress(s, pk, v * c, 0); } else this.addPress(s, pk, v * (0.8 + 0.4 * ((ev.salience || 0.3))), ev.id); } } }
+  }
+  _statePressure(s, f, now) {
+    const set = (k, v) => { if (v > 0.05 && v > this.press(s, k, now)) s.press[k] = [v, now, s.press[k] ? s.press[k][2] : 0]; };
+    if (f.debt > 0) set('debt', clamp(Math.log10(1 + f.debt / this.cfg.moneyScale) / 4, 0, 1));
+    set('low_buffer', f.adult && f.richness < 0.3 ? 0.6 - f.richness : 0); set('loneliness', f.adult && f.closeTies < 2 ? 0.5 + (f.closeTies === 0 ? 0.2 : 0) : 0);
+    if (f.single && f.age < 45) set('single', 0.35); if (f.age >= 55) set('ageing', clamp((f.age - 50) / 40, 0, 0.9)); if (f.has_condition && f.health < 0.7) set('illness', 0.4);
+    if (f.lives_with_parents_adult) set('overcrowding', 0.35); if (s.goals.length === 0 && f.adult) set('boredom', 0.4); if (f.kids > 0 && f.youngestKid < 5) set('fatigue', 0.4);
+    if (f.employed && f.z.N > 0.5) set('stagnation', 0.25);
+  }
+  _contagion(p, s) {
+    const out = { pursuing: {}, won: {} }, S = this.S, now = this.world.tick; if (!p.relationships) return out;
+    for (const [oid, r] of p.relationships) {
+      const st = tieStrength(r); if (st < 0.18) continue; const q = S.ps.get(oid); if (!q) continue;
+      for (const gid of q.goals) { const g = S.goals.get(gid); if (g && !g.secret) out.pursuing[g.tpl] = (out.pursuing[g.tpl] || 0) + st; }
+      for (const [tid, tk] of q.wins) if (now - tk < 180 * TICKS_PER_DAY * this.cfg.dayScale) out.won[tid] = (out.won[tid] || 0) + st;
+    }
+    return out;
+  }
+  // periodic review of the person's goals: intensity decay, interest loss (conscientiousness), deadline, deferral
+  review(p, s, f) {
+    const now = this.world.tick;
+    for (const gid of s.goals.slice()) {
+      const g = this.S.goals.get(gid), t = this.tpl.get(g.tpl); if (!g || g.status !== 'active') continue;
+      const age = (now - g.last) / TICKS_PER_DAY, hz = this.sd((t.horizon[0] + t.horizon[1]) / 2);
+      g.int = clamp(g.int * 0.985 + this.press(s, this._mainPress(t), now) * 0.01, 0, 1);
+      if (now > g.deadline) { this.fail(g, 'ran out of time'); continue; }
+      const hazard = (1 - clamp(0.5 + f.z.C * 0.2, 0.1, 0.95)) * 0.07 * (1 - t.patience * 0.8) * (1 + age / Math.max(hz, 4)) / (0.4 + g.int);
+      if (!t.mundane && this.rng('lose', gid, now).next() < hazard) this.abandon(g, 'lost interest');
+      else if (g.int < 0.08) this.abandon(g, 'faded');
+    }
+    for (const gid of s.goals.slice()) { const g = this.S.goals.get(gid); if (g.status === 'deferred' && s.goals.filter((x) => this.S.goals.get(x).status === 'active').length < this.maxActive(f, s)) { g.status = 'active'; g.last = now; this._schedule(g); } else if (g.status === 'deferred' && now - g.born > 120 * TICKS_PER_DAY * this.cfg.dayScale * 3) this.abandon(g, 'never got round to it'); }
+  }
+  _mainPress(t) { const b = t.gen.boost; if (!b) return 'x'; let best = 'x', m = 0; for (const [k, v] of Object.entries(b)) if (v > m) { m = v; best = k; } return best; }
+
+  // ---------------- goal creation ----------------
+  spawn(p, s, f, t, o = {}) {
+    const w = this.world, now = w.tick, S = this.S, r = this.rng('spawn', p.id, now, hash32(t.id));
+    const active = s.goals.filter((x) => S.goals.get(x).status === 'active');
+    const intensity = clamp(0.25 + 0.45 * (o.dsum ?? 0.5) + 0.35 * (o.maxP ?? 0) + (o.int ?? 0) + r.gauss(0, 0.06), 0.1, 1);
+    if (active.length >= this.maxActive(f, s)) {
+      let weakest = null; for (const x of active) { const g = S.goals.get(x); if (!weakest || g.int < weakest.int) weakest = g; }
+      if (!weakest || weakest.int >= intensity || o.force !== true && t.mundane) return null;
+      weakest.status = 'deferred'; w.emit('goal.deferred', { actors: [p.id], payload: { goal: weakest.id, tpl: weakest.tpl }, salience: 0.05 });
+    }
+    // origin: strongest pressure among the template's boosters -> its cause event
+    let cause = o.cause || 0, origin = ''; if (t.gen.boost) { let m = 0.15; for (const k of Object.keys(t.gen.boost)) { const e = s.press[k]; if (e) { const v = this.press(s, k, now); if (v > m) { m = v; cause = cause || e[2]; origin = k; } } } }
+    const g = { id: S.goalSeq++, tpl: t.id, p: p.id, status: 'active', int: intensity, secret: r.next() < (t.secret || 0), born: now, last: now, deadline: now + Math.round(this.sd(t.horizon[1]) * TICKS_PER_DAY * 1.5 * (1 - 0.3 * s.stress)), cause, origin, parent: o.parent || 0, target: null, methods: [], steps: [], si: 0, method: '', attempts: 0, diff: t.diff ?? 0.5, flags: {}, ex: [], res: {}, group: 0, log: [], endWhy: '' };
+    const tg = this.pickGoalTarget(p, f, t, g); if (tg === false) return null; if (tg != null) g.target = tg;
+    S.goals.set(g.id, g); s.goals.push(g.id); let a = S.active.get(t.id); if (!a) S.active.set(t.id, (a = new Set())); a.add(p.id);
+    S.stats.formed++; S.stats.byTpl[t.id] = (S.stats.byTpl[t.id] || 0) + 1; const fit = (S.fit[t.id] ||= [0, 0]); fit[0]++;
+    g.eid = w.emit('goal.formed', { actors: g.target != null && typeof g.target === 'number' ? [p.id, g.target] : [p.id], cause, salience: t.mundane ? 0.05 : 0.2 + 0.2 * t.stakes, tags: g.secret ? ['secret', 'goal'] : ['goal'], payload: { goal: g.id, tpl: t.id, intensity } });
+    this.plan(p, s, f, g, 'initial');
+    return g;
+  }
+  pickGoalTarget(p, f, t, g) {
+    const needs = t.by.some((m) => this.methods.steps(m, t.verb).some((st) => st.role === 'target')) || ['win_back_ex', 'reconcile_with_person', 'avoid_person', 'avenge_wrong', 'expose_secret', 'ask_out', 'get_engaged_or_commit', 'befriend_isolated_neighbour', 'mentor_young_person', 'support_friend_in_crisis'].includes(t.id);
+    if (!needs) return null;
+    const rel = p.relationships, w = this.world; let best = null, bs = -9, r = this.rng('tgt', p.id, g.id);
+    const want = t.id;
+    if (want === 'get_engaged_or_commit' || want === 'introduce_partner_to_family') return f.partnerId ?? false;
+    if (rel) for (const [oid, rl] of rel) {
+      const q = w.people.get(oid); if (!q || !q.alive || oid === p.id) continue; const age = w.ageOf(q); let sc;
+      if (want === 'win_back_ex') sc = rl.tags && rl.tags.includes('ex') ? 2 + (rl.affinity || 0) : -9;
+      else if (want === 'reconcile_with_person') sc = oid === f.estrangedId ? 3 : -9;
+      else if (want === 'avoid_person' || want === 'avenge_wrong' || want === 'expose_secret') sc = (rl.familiarity || 0) > 0.25 ? -(rl.affinity || 0) * 2 + (rl.familiarity || 0) - (rl.tags && rl.tags.includes('family') ? 3 : 0) : -9;
+      else if (want === 'ask_out') sc = (rl.attraction || 0) + (rl.affinity || 0) * 0.5 - (q.romance?.partnerId != null ? 2 : 0) - Math.abs(age - f.age) / 20;
+      else if (want === 'befriend_isolated_neighbour' || want === 'support_friend_in_crisis' || want === 'mentor_young_person') sc = want === 'mentor_young_person' ? (age < 25 ? (rl.familiarity || 0) : -9) : (rl.familiarity || 0) + (rl.affinity || 0) * 0.5 - (want === 'befriend_isolated_neighbour' && (rl.familiarity || 0) > 0.7 ? 1 : 0);
+      else sc = (rl.familiarity || 0) + (rl.affinity || 0);
+      sc += r.next() * 0.3; if (sc > bs) { bs = sc; best = oid; }
+    }
+    if (want === 'avoid_person' || want === 'avenge_wrong' || want === 'expose_secret') { const ce = g.cause ? w.events.get(g.cause) : null; if (ce) { const o = ce.actors.find((a) => a !== p.id && w.people.get(a)?.alive); if (o != null) return o; } }
+    return bs > -3 && best != null ? best : (t.by.some((m) => this.methods.steps(m, t.verb).some((st) => st.role === 'target')) || want === 'avenge_wrong' || want === 'win_back_ex' || want === 'reconcile_with_person' || want === 'expose_secret' ? false : null);
+  }
+
+  // ---------------- planning (HTN-lite: goal -> method -> steps; prerequisites inserted at execution, depth <= 3) ----------------
+  plan(p, s, f, g, why) {
+    const t = this.tpl.get(g.tpl), w = this.world, now = w.tick, r = this.rng('plan', g.id, g.attempts, now);
+    const opts = t.by.filter((m) => !g.methods.includes(m));
+    if (!opts.length) return false;
+    const stress = s.stress, scored = [];
+    for (const m of opts.slice(0, 6)) {
+      const st = this.methods.steps(m, t.verb); let cost = 0, soc = 0, bias = 0, n = 0, savey = false;
+      for (const x of st) { const mv = MOVE[x.move]; cost += mv.money * this.cfg.moneyScale; if (mv.kind === 'social') { soc++; } if (x.move === 'save' || x.move === 'borrow') savey = true; bias += this.selfm.moveBias(s, mv); n++; }
+      const afford = cost <= f.money * 0.9 || savey ? 0 : -clamp(cost / Math.max(f.money, 1) - 0.9, 0, 2);
+      const shy = -(f.z.E < -0.5 ? soc * 0.12 : 0) + (f.z.E > 0.5 ? soc * 0.05 : 0);
+      const sc = 1 + afford + shy + (this.cfg.flags.selfModel ? 0.35 * bias / Math.max(n, 1) : 0) - stress * this.lib.SCARCITY.cheapBias * (n / 6) + (m === opts[0] ? 0.12 : 0) + r.gauss(0, 0.25);
+      scored.push([m, sc]);
+    }
+    const exp = scored.map(([m, sc]) => [m, Math.exp(sc * 2)]);
+    const m = pickW(exp, r.next());
+    s.trace.push({ t: now, kind: 'method', goal: g.id, top: scored.slice().sort((a, b) => b[1] - a[1]).slice(0, 3).map(([a, b]) => [a, +b.toFixed(2)]), drives: this.topDrives(p, s) }); if (s.trace.length > 16) s.trace.shift();
+    g.method = m; g.methods.push(m); g.attempts++;
+    g.steps = this.methods.steps(m, t.verb).map((x, i) => ({ i, move: x.move, v: x.v, role: x.role, target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 }));
+    g.si = 0;
+    if (!g.steps.length) g.steps.push({ i: 0, move: 'wait', v: 'time', role: null, target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 });
+    g.last = now;
+    const ev = w.emit(why === 'initial' ? 'goal.planned' : 'goal.replanned', { actors: [p.id], cause: g.eid, salience: 0.05, payload: why === 'initial' ? { goal: g.id, method: m, steps: g.steps.length } : { goal: g.id, method: m, why } });
+    g.eid = ev; this._schedule(g, true); return true;
+  }
+  topDrives(p, s) { const dw = s.dw || []; return this.drives.map((d, i) => [d.id, +(dw[i] || 0).toFixed(2)]).sort((a, b) => b[1] - a[1]).slice(0, 2); }
+  // total planned span (sim days) spread over remaining steps, stressed people plan shorter
+  _schedule(g, first) {
+    const t = this.tpl.get(g.tpl), s = this.S.ps.get(g.p), st = g.steps[g.si]; if (!st) return;
+    const mv = MOVE[st.move], r = this.rng('sched', g.id, g.si, st.tries, this.world.tick), left = Math.max(1, g.steps.length - g.si);
+    const span = this.sd((t.horizon[0] + t.horizon[1]) / 2) * (0.35 + 0.35 * t.patience) * (1 - (1 - this.lib.SCARCITY.horizonMult) * (s ? s.stress : 0));
+    let gap = (span / g.steps.length) * (0.4 + 1.4 * r.next()); if (mv.kind === 'wait') gap = Math.max(gap, this.sd(4) + r.next() * this.sd(10)); if (st.tries) gap = Math.max(gap, this.sd(2) + r.next() * this.sd(6));
+    if (first) gap *= 0.6; gap = Math.max(gap, 0.3);
+    const hrs = mv.hrs || [10, 17], hour = hrs[0] + r.next() * (hrs[1] - hrs[0]);
+    st.due = this.tickAt(gap, hour); if (mv.venue && mv.venue[0] === 'pub' && r.next() < 0.3) st.due += 0;
+    this.stepHeap.push({ k: st.due, gid: g.id, si: g.si, tries: st.tries });
+    if (s) s.next = { goal: g.id, i: g.si, due: st.due };
+  }
+
+  // ---------------- execution (hour clock) ----------------
+  hourly() {
+    const h = this.stepHeap, now = this.world.tick; let guard = 0;
+    while (h.size && h.peek().k <= now && guard++ < 5000) {
+      const e = h.pop(), g = this.S.goals.get(e.gid); if (!g || g.status !== 'active' || g.si !== e.si || g.steps[g.si].tries !== e.tries || g.steps[g.si].state === 'done') continue;
+      const p = this.world.people.get(g.p); if (!p || !p.alive) { this.end(g, 'void', 'died or left'); continue; }
+      this.runStep(p, g, g.steps[g.si]);
+    }
+    this.groups.hourly();
+    const rq = this.S.requests; for (let i = rq.length - 1; i >= 0; i--) if (rq[i].until <= now) { this.answerRequest(rq[i], null); rq.splice(i, 1); }
+  }
+  pickRole(p, f, g, st, role) {
+    const w = this.world, r = this.rng('role', g.id, st.i, st.tries, w.tick), fam = p.family || {};
+    if (role === 'target') return g.target;
+    if (role === 'partner') return f.partnerId ?? null;
+    if (['employer', 'authority', 'landlord', 'expert'].includes(role)) return { label: { employer: 'the manager', authority: 'the council', landlord: 'the landlord', expert: 'an adviser' }[role], inst: role };
+    const pool = []; const rel = p.relationships; if (!rel) return null;
+    if (role === 'family') { for (const k of [fam.motherId, fam.fatherId, fam.spouseId, ...(fam.childrenIds || []), ...(fam.siblingIds || [])]) if (k != null && !g.ex.includes(k)) { const q = w.people.get(k); if (q && q.alive) pool.push([k, 1 + (rel.get(k)?.affinity || 0)]); } if (!pool.length) for (const [oid, rl] of rel) if (rl.tags && rl.tags.includes('family') && !g.ex.includes(oid)) pool.push([oid, 1]); }
+    else for (const [oid, rl] of rel) {
+      if (g.ex.includes(oid) || oid === p.id) continue; const q = w.people.get(oid); if (!q || !q.alive) continue; const a = w.ageOf(q); if (a < 16 && g.tpl !== 'mentor_young_person') continue;
+      let wt = tieStrength(rl); if (role === 'friend') wt = (rl.affinity || 0) > 0.25 && (rl.familiarity || 0) > 0.35 ? wt + 0.2 : wt * 0.2; if (role === 'neighbour' && !(rl.tags && rl.tags.includes('neighbour'))) wt *= 0.4; if (g.group) { const gr = this.S.groups.get(g.group); if (gr && gr.members[oid]) wt = 0; }
+      if (st.move === 'recruit' && this.S.ps.get(oid)?.goals.length > 6) wt *= 0.3; if (wt > 0.05) pool.push([oid, wt]);
+    }
+    return pickW(pool, r.next()) ?? null;
+  }
+  runStep(p, g, st) {
+    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], s = this.ps(p), f = computeFacts(w, p, this.cfg), now = w.tick, r = this.rng('step', g.id, st.i, st.tries, now);
+    if (st.role && st.target == null) { st.target = this.pickRole(p, f, g, st, st.role); if (st.target == null && !['employer', 'authority', 'landlord', 'expert'].includes(st.role)) { st.target = null; this.stepFail(p, s, f, g, st, 'busy', 'no one to turn to'); return; } }
+    const tp = typeof st.target === 'number' ? w.people.get(st.target) : null;
+    if (typeof st.target === 'number' && (!tp || !tp.alive)) { st.target = null; this.stepFail(p, s, f, g, st, 'bad_luck', 'they were not around'); return; }
+    // cost / prerequisite (shortfall -> insert a prerequisite step, depth<=3)
+    const cost = mv.money * this.cfg.moneyScale * (st.move === 'rent' ? (1 + g.diff) : 1);
+    if (cost > 0 && f.money < cost) {
+      if (st.depth < 2 && !g.flags.noPrereq) { const pre = (f.z.A > 0 || this.selfm.get(s, 'asking_works') > 0.55) && st.move !== 'borrow' ? { move: 'borrow', v: 'loan', role: 'family' } : { move: 'save', v: 'lump', role: null }; this.insertStep(g, st, pre, st.depth + 1); this._schedule(g); return; }
+      this.stepFail(p, s, f, g, st, 'no_money', ''); return;
+    }
+    // intrinsic interest
+    const stakes = t.stakes ?? 0.4;
+    let pr = mv.base; for (const [k, wt] of Object.entries(mv.tr)) pr += wt * f.z[k];
+    const rl = tp ? p.relationships?.get(tp.id) : null; if (rl) pr += (rl.trust - 0.5) * 0.25 + (rl.affinity || 0) * 0.2 + ((rl.familiarity || 0) - 0.5) * 0.08;
+    if (st.move === 'ask' && rl && g.tpl && (rl.affinity || 0) < -0.2) pr -= 0.2;
+    pr += this.selfm.moveBias(s, mv) * 0.06 + (g.int - 0.5) * 0.1 - (g.diff - 0.5) * 0.45 * mv.diffw - s.stress * 0.12 * mv.diffw;
+    if (g.flags.lied) pr += 0.1;
+    const comp = t.claim ? this.competitors(g, t.claim) : 0; pr -= 0.1 * comp;
+    let opposed = false; if (tp) { const q = S.ps.get(tp.id); if (q) for (const gid of q.goals) { const og = S.goals.get(gid); if (og && og.status === 'active' && og.target === p.id && (og.tpl === 'avoid_person' || og.tpl === 'avenge_wrong')) { pr -= 0.3; opposed = true; } } }
+    const special = this.groups.step(p, s, f, g, st, mv, tp, r); if (special) { pr = special.pr ?? pr; if (special.res) { this.finishStep(p, s, f, g, st, special.res, special.why || '', special.note); return; } }
+    pr = clamp(pr, 0.03, 0.97); const u = r.next(); let res, why = '';
+    if (u < pr) res = 'ok'; else if (mv.kind === 'social' && st.tries === 0 && u < pr + 0.13 && tp) res = 'maybe';
+    else { res = 'fail'; why = opposed && r.next() < 0.5 ? 'opposed' : mv.kind === 'social' && tp ? (r.next() < 0.85 ? 'refused' : 'busy') : mv.kind === 'inst' || mv.kind === 'econ' ? (r.next() < (comp ? 0.8 : 0.55) ? 'competition' : 'bad_luck') : 'busy'; if (g.tpl && comp && why !== 'opposed' && mv.kind !== 'self') why = 'competition'; }
+    if (cost > 0 && res !== 'fail') { const to = 'metropolis'; w.ledger.transfer(p.id, to, cost, 'goal.' + st.move, g.eid); g.res.spent = (g.res.spent || 0) + cost; }
+    this.finishStep(p, s, f, g, st, res, why);
+  }
+  competitors(g, claim) { let n = 0; for (const o of this.S.goals.values()) if (o !== g && o.status === 'active' && this.tpl.get(o.tpl).claim === claim && o.p !== g.p) n++; return Math.min(n, 4); }
+  insertStep(g, before, pre, depth) { const st = { i: 0, move: pre.move, v: pre.v, role: pre.role, target: null, state: 'todo', tries: 0, due: 0, note: 'to cover the cost', depth }; g.steps.splice(g.si, 0, st); g.steps.forEach((x, i) => (x.i = i)); }
+  finishStep(p, s, f, g, st, res, why, note) {
+    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], n = g.steps.length; S.stats.steps++;
+    const tn = typeof st.target === 'number' ? this.fn(st.target) : st.target ? st.target.label : '';
+    const txt = note || this.outcomeText(res, why, tn, mv, st, g);
+    st.note = txt; g.log.push([w.tick, st.move, res, txt]); if (g.log.length > 12) g.log.shift();
+    const beliefs = mv.bel ? [mv.bel] : []; const z = f.z;
+    if (res === 'ok') {
+      S.stats.stepOk++; st.state = 'done'; g.last = w.tick; this.stepEffects(p, f, g, st, mv); if (beliefs.length && !t.mundane) this.selfm.creditOwn(s, beliefs, +1, '', z, 0.03);
+      this._emitStep(p, g, st, 'ok', '', n, tn);
+      if (g.si >= g.steps.length - 1) { this.complete(g); return; }
+      g.si++; this._schedule(g);
+    } else if (res === 'maybe') {
+      st.tries++; this._emitStep(p, g, st, 'maybe', 'maybe', n, tn); g.last = w.tick; this._schedule(g);
+    } else {
+      S.stats.stepFail++; if (beliefs.length && !t.mundane) this.selfm.creditOwn(s, beliefs, -1, why, z, 0.04); this._emitStep(p, g, st, 'fail', why, n, tn);
+      this.stepFail(p, s, f, g, st, why, txt, true);
+    }
+  }
+  stepFail(p, s, f, g, st, why, txt, emitted) {
+    const w = this.world; st.tries++; if (!emitted) { st.note = txt || this.outcomeText('fail', why, '', MOVE[st.move], st, g); g.log.push([w.tick, st.move, 'fail', st.note]); this._emitStep(p, g, st, 'fail', why, g.steps.length, ''); this.S.stats.stepFail++; }
+    if (typeof st.target === 'number' && (why === 'refused' || why === 'opposed')) { g.ex.push(st.target); }
+    // retry with someone else / later (cheap), else the method is dead -> replan or give up
+    const retryable = (why === 'refused' || why === 'busy' || why === 'bad_luck') && st.tries < 3 && this.rng('retry', g.id, st.i, st.tries).next() < 0.55 + 0.25 * (s.self ? this.selfm.get(s, 'effort_pays') : 0.5);
+    if (retryable) { if (why === 'refused') st.target = null; this._schedule(g); return; }
+    const t = this.tpl.get(g.tpl); g.last = w.tick;
+    if (g.attempts < 3 && g.methods.length < t.by.length && this.rng('replan', g.id, g.attempts).next() < 0.7) { S_replan: { this.S.stats.replans++; if (this.plan(p, s, f, g, why)) break S_replan; this.fail(g, why); } }
+    else this.fail(g, why === 'competition' ? 'lost out' : why === 'no_money' ? 'could not afford it' : why === 'refused' ? 'people said no' : 'it fell through');
+  }
+  outcomeText(res, why, tn, mv, st, g) {
+    const vn = VARIANT_NOUN[st.v] || st.v || '', pick = (a, k) => a[hash32(g.id, st.i, st.tries, k) % a.length];
+    if (res === 'ok') return tn ? fmt(pick(OUTCOME_TEXT.okT, 1), { t: tn }) : fmt(pick(OUTCOME_TEXT.ok, 2), { v: vn, doing: mv.id });
+    if (res === 'maybe') return fmt(pick(OUTCOME_TEXT.maybe, 3), { t: tn || 'they', v: vn });
+    return fmt(pick(OUTCOME_TEXT[why] || OUTCOME_TEXT.bad_luck, 4), { t: tn || 'they', v: vn });
+  }
+  _emitStep(p, g, st, ok, why, n, tn) {
+    const t = this.tpl.get(g.tpl), w = this.world; if (t.mundane && ok === 'ok' && st.i < n - 1) return;
+    const tags = []; if (ok === 'fail') tags.push('setback'); if (ok === 'ok') tags.push('progress'); if (g.secret) tags.push('secret'); if (['confront', 'sabotage', 'threaten', 'gossip'].includes(st.move)) tags.push('conflict', 'harm');
+    g.eid = w.emit('goal.step', { actors: typeof st.target === 'number' ? [p.id, st.target] : [p.id], cause: g.eid, salience: ok === 'fail' ? 0.12 : 0.08, tags, payload: { goal: g.id, move: st.move, ok, why, step: st.i + 1, steps: n } });
+  }
+  stepEffects(p, f, g, st, mv) {
+    const w = this.world, t = this.tpl.get(g.tpl), tp = typeof st.target === 'number' ? w.people.get(st.target) : null;
+    if (tp && mv.kind === 'social' && w.getRel) { const a = w.getRel(p, tp), b = w.getRel(tp, p); const d = st.move === 'confront' || st.move === 'threaten' || st.move === 'sabotage' || st.move === 'gossip' ? -0.12 : st.move === 'avoid' || st.move === 'observe' ? 0 : 0.04; a.familiarity = clamp((a.familiarity || 0) + 0.04, 0, 1); b.familiarity = clamp((b.familiarity || 0) + 0.04, 0, 1); a.affinity = clamp((a.affinity || 0) + d * 0.6, -1, 1); b.affinity = clamp((b.affinity || 0) + d, -1, 1); a.lastTick = b.lastTick = w.tick; if (st.move === 'confront' || st.move === 'sabotage' || st.move === 'gossip') { b.tags = b.tags || []; if (!b.tags.includes('rival')) b.tags.push('rival'); } if (st.move === 'confide') { a.trust = clamp((a.trust || 0) + 0.05, 0, 1); b.trust = clamp((b.trust || 0) + 0.05, 0, 1); } }
+    if (st.move === 'lend' && tp) { const amt = Math.min(mv.money * this.cfg.moneyScale, Math.max(0, f.money * 0.2)); if (amt > 0) { w.ledger.transfer(p.id, tp.id, amt, 'goal.lend', g.eid); } }
+    if (st.move === 'borrow' && typeof st.target === 'number') { const q = w.people.get(st.target); const need = (g.res.need || 120 * this.cfg.moneyScale); const amt = Math.min(need, Math.max(0, q.money * 0.25)); if (amt > 0) { w.ledger.transfer(q.id, p.id, amt, 'goal.borrow', g.eid); g.res.debtTo = st.target; } }
+    if (st.move === 'borrow' && typeof st.target !== 'number') { /* institutional loan */ w.ledger.transfer('metropolis', p.id, 100 * this.cfg.moneyScale, 'goal.loan', g.eid); }
+    if (st.move === 'save') { const amt = Math.min(Math.max(0, f.money * 0.12), 60 * this.cfg.moneyScale * 2); g.res.saved = (g.res.saved || 0) + amt; }
+    if (st.move === 'train' || st.move === 'learn') { const k = t.object || 'skill'; if (p.skills) { p.skills[k] = clamp((p.skills[k] || 0) + 0.03, 0, 1); } }
+    if (st.move === 'lie') g.flags.lied = true;
+    if (st.move === 'attend' || st.move === 'volunteer') { if (w.moodlet) w.moodlet(p, 'goal_social', 'Got out and did something', 0.05, 6 * 24); }
+  }
+  // ---------------- outcomes ----------------
+  complete(g) {
+    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), p = w.people.get(g.p), s = this.ps(p), days = Math.round((w.tick - g.born) / TICKS_PER_DAY);
+    g.status = 'done'; S.stats.completed++; this._detach(g); (S.fit[t.id] ||= [0, 0])[1]++;
+    const eid = w.emit('goal.completed', { actors: [g.p], cause: g.eid, salience: t.mundane ? 0.05 : 0.25 + 0.3 * t.stakes, tags: ['success', ...(t.mundane ? [] : ['first'].slice(0, 0))], payload: { goal: g.id, tpl: t.id, want: t.want, days } });
+    g.eid = eid; g.endWhy = 'done'; this.finalise(g);
+    s.wins.push([t.id, w.tick]); if (s.wins.length > 4) s.wins.shift(); s.ident[t.id] = (s.ident[t.id] || 0) + 1;
+    s.cool[t.id] = w.tick + Math.round(this.sd(Math.max(t.horizon[1], 30)) * TICKS_PER_DAY * 0.8);
+    const z = personalityZ(p);
+    if (!t.mundane) { const bel = new Set(); for (const st of g.steps) { const b = MOVE[st.move].bel; if (b) bel.add(b); } bel.add('effort_pays'); this.selfm.creditOwn(s, [...bel], +1, '', z, 0.06); this._observeTies(p, [...bel], +1); }
+    if (w.moodlet) w.moodlet(p, 'goal_done', `Achieved: ${this.phrase(t.id)}`, 0.05 + 0.25 * (t.stakes || 0.3), 14 * 24);
+    if (w.addMemory && !t.mundane) w.addMemory(p, { type: 'goal', text: `Managed to ${this.phrase(t.id)}.`, otherIds: [], weight: 0.5, importance: t.stakes > 0.5 ? 3 : 2 });
+    for (const d of t.drive) { const pk = Object.entries(this.lib.PRESSURES).filter(([, v]) => v.drives.includes(d)).map(([k]) => k); for (const k of pk) if (s.press[k]) s.press[k][0] *= 0.5; }
+    w.emit('goal.effect', { actors: [g.p], cause: eid, salience: 0.05, payload: { goal: g.id, want: t.want, kind: t.verb } });
+    this.groups.onGoalEnd(g, true);
+  }
+  fail(g, why) { this.end(g, 'failed', why); }
+  abandon(g, why) { this.end(g, 'abandoned', why); }
+  end(g, status, why) {
+    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), p = w.people.get(g.p); if (g.status !== 'active' && g.status !== 'deferred') return;
+    g.status = status; g.endWhy = why; this._detach(g);
+    if (status === 'void') { this.finalise(g); return; }
+    S.stats[status === 'failed' ? 'failed' : 'abandoned']++;
+    const s = p ? this.ps(p) : null;
+    const eid = w.emit(status === 'failed' ? 'goal.failed' : 'goal.abandoned', { actors: [g.p], cause: g.eid, salience: t.mundane ? 0.04 : 0.15 + 0.2 * (t.stakes || 0.3), tags: ['setback'], payload: { goal: g.id, tpl: t.id, why } });
+    g.eid = eid; this.finalise(g);
+    if (s) {
+      s.cool[t.id] = w.tick + Math.round(this.cfg.yearDays * TICKS_PER_DAY * (0.4 + 0.4 * this.rng('cool', g.id).next()));
+      if (!t.mundane && status === 'failed') { this.selfm.creditOwn(s, ['effort_pays'], -1, why.includes('lost') ? 'competition' : 'bad_luck', personalityZ(p), 0.04); if ((t.stakes || 0) > 0.4) this.addPress(s, 'stagnation', 0.2, eid); }
+      if (!t.mundane && w.addMemory && (t.stakes || 0) > 0.45) w.addMemory(p, { type: 'goal', text: `Never managed to ${this.phrase(t.id)} (${why}).`, otherIds: [], weight: -0.3, importance: 2 });
+      this._transform(p, s, g, t, eid);
+    }
+    this.groups.onGoalEnd(g, false);
+  }
+  _transform(p, s, g, t, eid) {
+    if (!t.transform) return; const r = this.rng('xform', g.id);
+    for (const x of t.transform) { if (r.next() >= x.p) continue; const nt = this.tpl.get(x.to); if (!nt || (s.cool[x.to] || 0) > this.world.tick || this._has(s, x.to)) continue; const f = computeFacts(this.world, p, this.cfg);
+      const ng = this.spawn(p, s, f, nt, { cause: eid, parent: g.id, int: 0.1, dsum: 0.5, force: true }); if (ng) { this.S.stats.transformed++; ng.eid = this.world.emit('goal.transformed', { actors: [p.id], cause: eid, salience: 0.2, tags: ['setback'], payload: { goal: g.id, from: t.id, to: nt.id } }); return; } }
+  }
+  finalise(g) { const S = this.S; S.ended.push(g.id); if (S.ended.length > 800) { for (const id of S.ended.splice(0, 300)) { const o = S.goals.get(id); if (o && o.status !== 'active' && o.status !== 'deferred') S.goals.delete(id); } } }
+  _detach(g) { const S = this.S, s = S.ps.get(g.p); if (s) { const i = s.goals.indexOf(g.id); if (i >= 0) s.goals.splice(i, 1); if (s.next && s.next.goal === g.id) s.next = null; } const a = S.active.get(g.tpl); if (a) a.delete(g.p); }
+  _observeTies(p, bel, out) { const S = this.S; if (!p.relationships) return; let n = 0; for (const [oid, r] of p.relationships) { const st = tieStrength(r); if (st < 0.3) continue; const q = S.ps.get(oid); if (!q) continue; this.selfm.observe(q, bel, out, st); if (++n >= 6) break; } }
+
+  // ---------------- invention / imitation (bounded, logged) ----------------
+  maybeInvent(p, s, f) {
+    const S = this.S, w = this.world, now = w.tick, pop = w.index.count || w.living().length;
+    const inv = this.lib.INVENTION; if (!inv) return;
+    const cap = Math.max(1, Math.round(pop / 30)); if (S.inventedThisYear >= cap || this.tplList.length >= this.cfg.maxInvent) return;
+    const r = this.rng('inv', p.id, now); if (r.next() > 0.05 * (0.5 + f.z.O * 0.3)) return;
+    // an unmet need: strongest pressure or a recently failed goal's drive
+    let need = null, m = 0.2; for (const k of Object.keys(s.press)) { const v = this.press(s, k, now); if (v > m) { m = v; need = k; } } if (!need) return;
+    const nd = this.lib.PRESSURES[need]?.drives || []; const acts = inv.activities.filter((a) => a.drives.some((d) => nd.includes(d)) || r.next() < 0.1); if (!acts.length) return;
+    // imitation: prefer an activity/format used by a successful tie goal
+    const act = acts[Math.floor(r.next() * acts.length)]; const fmts = inv.formats.filter((x) => !x.tags.length || x.tags.some((t) => act.tags.includes(t))); if (!fmts.length) return; const fm = fmts[Math.floor(r.next() * fmts.length)];
+    const id = `inv_${act.id}_${fm.id}`; if (this.tpl.has(id)) return;
+    const label = fm.label.replace('{a}', act.noun);
+    const t = { id, verb: 'create', drive: act.drives.slice(0, 2), want: 'running', object: label, by: fm.by, phrase: `start ${label}`, gen: { base: 0.03, who: 'adult', boost: Object.fromEntries(nd.slice(0, 1).length ? [[need, 3]] : []) }, horizon: [60, 400], patience: 0.5, stakes: 0.25, diff: 0.6, group: fm.group, project: fm.project || undefined, social: 0.9, invented: true, inventedBy: p.id, inventedAt: now };
+    this.addTemplate(t); this.S.fit[id] = [0, 0]; S.inventedThisYear++; S.stats.invented++; s.inventedAt = now;
+    w.emit('goal.invented', { actors: [p.id], salience: 0.3, cause: s.press[need]?.[2] || 0, tags: ['creative'], payload: { tpl: id, label, from: need } });
+    this.spawn(p, s, f, t, { dsum: 0.6, maxP: m, via: 'invention', int: 0.1 });
+  }
+  yearly() {
+    const S = this.S; S.inventedThisYear = 0;
+    for (const t of this.tplList) if (t.invented && !t.retired) { const f = S.fit[t.id]; if (f && f[0] >= 8 && (f[1] + 0.5) / (f[0] + 1) < 0.08) { t.retired = true; this.world.emit('goal.template_retired', { salience: 0.05, payload: { tpl: t.id } }); } }
+    this.groups.yearly();
+  }
+
+  // ---------------- requests aimed at the player ----------------
+  answerRequest(rq, yes) { const g = this.S.goals.get(rq.goal); if (!g || g.status !== 'active') return; const p = this.world.people.get(g.p), st = g.steps[g.si]; if (!p || !st) return; const s = this.ps(p), f = computeFacts(this.world, p, this.cfg); this.finishStep(p, s, f, g, st, yes === true ? 'ok' : yes === 'maybe' ? 'maybe' : 'fail', yes === null ? 'busy' : 'refused', yes === null ? 'got no reply' : undefined); }
+
+  // ---------------- lines & queries ----------------
+  line(g) { return goalLine(this.world, this.stepTarget(g), this.phrase(g.tpl)); }
+  stepTarget(g) { return g; }
+  view(g) { const t = this.tpl.get(g.tpl), st = g.steps[g.si]; return { id: g.id, tpl: g.tpl, phrase: this.phrase(g.tpl), status: g.status, intensity: +g.int.toFixed(2), secret: g.secret, born: g.born, cause: g.cause, origin: g.origin, method: g.method, step: st ? { i: g.si + 1, n: g.steps.length, label: stepLabel(this.world, st), note: st.note, due: st.due } : null, target: typeof g.target === 'number' ? g.target : null, group: g.group, parent: g.parent, line: this.line(g), log: g.log.slice(-4), mundane: !!t.mundane }; }
+}

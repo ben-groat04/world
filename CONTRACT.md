@@ -59,6 +59,8 @@ Registered in sim/systems/index.js (array). Order: economy, social, romance, fam
 'death' {person, cause}, 'marriage' {a,b}, 'divorce' {a,b}, 'crime' {...}, 'jobChange' {person, oldJob, newJob},
 'moveHome' {person, homeId}, 'election' {...}, 'rumor' {...}, 'intervention' {kind, params}.
 
+Payload convention (see ARCHITECTURE.md for the full table): persons are Person OBJECTS under role names (`{person}`, `{a,b}`, `{child,mother,father}`, `{perpetrator,victim}`), buildings are `buildingId`; only the high-volume 'encounter'/'conversation' events carry person ids.
+
 ## Quality bar
 Realism first: results must look plausible to a demographer/historian of a pre-industrial market town
 (age pyramid, marriage ages ~18-30, ~3-5 children per woman over life with some infant/child mortality,

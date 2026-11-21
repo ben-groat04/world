@@ -1,0 +1,15 @@
+{
+  "name": "larkfield",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Larkfield: agent-based simulation of a UK inner-city neighbourhood (no dependencies)",
+  "scripts": {
+    "check": "node tools/check.js",
+    "check:full": "node tools/check.js --full",
+    "test": "node --test tests/kernel.test.js",
+    "report": "node tools/report.js",
+    "perf": "node tools/perf.js",
+    "determinism": "node tools/determinism.js"
+  }
+}

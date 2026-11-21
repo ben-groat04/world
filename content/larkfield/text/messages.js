@@ -1,0 +1,47 @@
+// Text messages / group chats (genre 'msg'). Keys: msg.* conversational acts, msg:<eventType> reacting to events. ctx.rel: mum, partner, mate, flatmate, colleague, neighbour, kid ...
+import { V } from './lexicon.js';
+export default {
+  'msg.hello': [
+    ...V('teen', 'u up?', 'oi', 'where r u', 'mum is asking where i am. where am i', 'bored. say something'),
+    ...V('student', 'pub?', 'anyone in the house? i am locked out', 'is the heating on or have i become numb', 'pls remember to buy milk. nobody has milk. this is the milk text'),
+    ...V('young_pro', 'Free Thursday?', 'Running 10 late, order me something', 'I have news. Not bad news. Call you tonight', 'Mate. You will not believe the meeting I just sat through'),
+    ...V('parent', 'Can you pick her up? I\'m stuck in a meeting and she has PE kit', 'We\'re out of wipes. Again. Also nappies. Also my will to live', 'Did you sign the form? The one with the picture of a bus on it?', 'Home by 6, I\'ll do pasta.'),
+    ...V('retiree', 'Hello love, are you coming Sunday? I\'ll do a roast.', 'Have you rung the doctor yet? You promised.', 'I saw Margaret at the bus stop. She asked after you.', 'This is Dad. I\'ve pressed the wrong button again.', 'Rang but you were out. No rush x'),
+    ...V('adult', 'You free to talk later?', 'Quick question about the car.', 'Running late. Start without me.'),
+  ],
+  'msg.late': [
+    { t: 'Sorry, bus is a joke. 15 mins!', when: { reg: ['plain', 'casual'] } },
+    { t: 'On my way, honest', when: { voice: ['teen', 'student'] } },
+    { t: 'Delayed by #lx.nuisance#. Will explain.', when: { voice: ['young_pro', 'adult'] } },
+    { t: 'Stuck at the school gate with a tearful child and a lost coat. 10 mins', when: { voice: 'parent' } },
+    { t: 'Walking slowly, love. Don\'t wait in the cold.', when: { voice: 'retiree' } },
+  ],
+  'msg.check_in': [
+    { t: 'You OK? Haven\'t heard from you in a few days.', when: { rel: ['mum', 'dad', 'friend', 'mate'] } },
+    { t: 'Just checking in. No need to reply.', when: { voice: ['retiree', 'parent'] } },
+    { t: 'saw ur story. u good?', when: { voice: ['teen', 'student'] } },
+    { t: 'Thinking of you. Pub when you\'re ready? No pressure.', when: { voice: ['young_pro', 'adult'] } },
+    { t: 'Is the heating working in your place? It\'s going to be freezing.', when: { rel: ['mum', 'dad'] } },
+  ],
+  'msg.flatmate': ['Whose is the chicken in the fridge. It has been there a while. It has become a character', 'Bins are on Thursday. This is the fourth time I\'ve said this. I am not angry I\'m just tired', 'Plumber is coming between 8 and 6. Please be nice to him', 'Can we talk about the heating? Not in a bad way. In a "it is 14 degrees" way', 'FYI the landlord is doing a viewing Saturday. Hide the bike', 'Boiler\'s gone. Again. Group hug?'],
+  'msg.colleague': ['Can you cover Friday? Will owe you a coffee.', 'Did you see that email? I need a second pair of eyes before I reply', 'Meeting moved to 3. Or 4. Or whenever the projector deigns to work.', 'Lunch? I need to escape.', 'Thanks for covering. You\'re a legend.'],
+  'msg.partner': ['Pick up milk? And a lemon. And patience.', 'Missing you. Don\'t tell anyone I said that.', 'We need to talk about Sunday. Mum is "popping round".', 'I\'ve made a dinner. It doesn\'t look like the picture but it\'s edible', 'Love you. Home soon.'],
+  'msg.kid': ['mum can you come get me', 'dad i left my bag at school', 'can i stay at jaden\'s', 'we won!!! 3-1', 'phone is on 4% i love you bye'],
+  'msg.group.flat': ['Bins done. Rota updated. Please do not make me update it again.', 'who ate my yoghurt. I wrote my name on it. in biro', 'The kettle is broken. This is a crisis', 'Pizza night? I will pay if someone else orders', 'Landlord says he is "looking into" the mould. We should buy a bigger bucket'],
+  'msg.group.family': ['Dinner Sunday at 1. Not 2. ONE.', 'Who is bringing the pudding? Not trifle again', 'Photos from the weekend!! Dad, you are cut off in all of them', 'Gran is home from the hospital. Doing OK. She asks for custard creams', 'Does anyone know how to turn this phone off?'],
+  'msg.group.school': ['Reminder: non-uniform day Friday. Bring £1.', 'Anyone have the spelling list? Little one has "lost" it', 'Lost property is overflowing. Please come and claim your child\'s forty-seventh jumper', 'Anyone fancy taking turns for the walking bus?'],
+  'msg:life.breakup': [
+    ...V('teen', 'ok so it is over. dont say anything. say something'),
+    ...V('student', 'can i come round? ended it. i need a very bad film'),
+    ...V('young_pro', 'It\'s done. I\'m ok. Not ok. Can you call?'),
+    ...V('parent', 'We\'ve split up. I\'ll explain. Please don\'t tell mum yet.'),
+    ...V('retiree', 'Dear, I have some difficult news. Could you ring?'),
+  ],
+  'msg:life.birth': [...V('parent', 'She\'s here!! 7lb 3. Both well. Phone off for a bit xx'), ...V('young_pro', 'Baby arrived at 4.12am. Everyone is fine and I\'m on a plastic chair eating a cheese sandwich'), ...V('retiree', 'A grandchild! We are on the way with a cardigan.')],
+  'msg:life.death': [...V('adult', 'Calling you in a minute. I have some very sad news.'), ...V('parent', 'Gran passed away this morning. Peacefully. I\'ll ring when I can.'), ...V('teen', 'nan died. im ok. not really. can you come over')],
+  'msg:work.fired': [...V('young_pro', 'Well. Redundant. Meet me at the pub?'), ...V('parent', 'Lost my job today. Don\'t tell the kids. I\'ll sort it.'), ...V('adult', 'Bit of news. Let\'s talk later.')],
+  'msg:work.hired': [...V('young_pro', 'GOT IT. Start in 3 weeks. You are buying'), ...V('student', 'i got the job!!!!! dinner on me, well, on credit'), ...V('adult', 'Good news. Offer accepted.')],
+  'msg:life.move_in': ['Keys in hand!! Come round when the sofa arrives. It is currently on the pavement.', 'Landlord was 40 minutes late and the stairs are very narrow but it is OURS (rented)'],
+  'msg:home.eviction': ['We\'ve got to be out by the end of next month. Can I stay with you for a bit?', 'Got the notice. Don\'t panic. I am panicking.'],
+  'msg:*': ['Have you heard? Ring me.', 'Did you see the group chat? Absolute scenes.'],
+};

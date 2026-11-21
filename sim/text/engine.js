@@ -39,9 +39,9 @@ export class TextEngine {
   constructor(grammar = {}, opts = {}) {
     this.rules = new Map(); this.counter = 0; this.last = new Map(); this.recent = []; this.recentN = opts.recentN || 60;
     this.memoryWindow = opts.memoryWindow || 40; this.stats = { renders: 0, missing: new Map(), retries: 0 }; this.worldSeed = opts.seed || 0;
-    this.add(grammar);
+    this.sentiment = grammar.sentiment || {}; this.add(grammar);
   }
-  add(g) { for (const [k, v] of Object.entries(g?.rules || g || {})) { const arr = Array.isArray(v) ? v : [v]; this.rules.set(k, (this.rules.get(k) || []).concat(arr.map((a) => (typeof a === 'string' ? { t: a } : a)))); } return this; }
+  add(g) { for (const [k, v] of Object.entries(g?.rules || (g?.sentiment ? {} : g) || {})) { const arr = Array.isArray(v) ? v : [v]; this.rules.set(k, (this.rules.get(k) || []).concat(arr.map((a) => (typeof a === 'string' ? { t: a } : a)))); } return this; }
   has(k) { return this.rules.has(k); }
 
   // ---- context resolution
@@ -66,6 +66,7 @@ export class TextEngine {
     f['a.they'] = pronounsOf(A).they; f['b.they'] = pronounsOf(B).they; f.sex = A?.sex; f.self = roles.a && roles.a === roles.s ? 'yes' : 'no'; f['s.voice'] = voiceOf(roles.s); f.place = place != null ? 'yes' : 'no';
     for (const r of ['a', 'b']) for (const [k, v] of Object.entries(roles[r]?.traits || {})) f[`${r}.trait.${k}`] = v;
     if (when) { f.hour = when.hour; f.weekend = when.weekday >= 5 ? 'yes' : 'no'; }
+    if (ev && f['p.sentiment'] === undefined && !p.sentiment) f['p.sentiment'] = this.sentiment[ev.type] || 'neutral';
     for (const [k, v] of Object.entries(p)) if (f['p.' + k] === undefined && (typeof v !== 'object')) f['p.' + k] = v;
     return { ev, ctx, roles, p, place, when, f, vars: {}, rng: new RNG(hash32(ctx.seed ?? 0, this.worldSeed, ev ? ev.id ?? 0 : 0, typeof evOrKey === 'string' ? evOrKey : ev.type, A?.id ?? 0, salt)), author: A, world };
   }
@@ -104,7 +105,7 @@ export class TextEngine {
       const pr = pronounsOf(P);
       if (lp === 'first') v = P?.firstName ?? 'someone'; else if (lp === 'nick') v = P?.nickname || P?.firstName || 'someone';
       else if (lp === 'last') v = P?.lastName ?? ''; else if (lp === 'name') v = nameOf(P); else if (lp === 'title') v = `${titleOf(P || {})} ${P?.lastName ?? ''}`.trim();
-      else if (lp === 'v') v = conj(arg, pr.plural); else if (lp === 'job') v = P?.job || 'work'; else if (lp === 'age') v = P?.age ?? ''; else if (lp === 'agew') v = P?.age ?? '';
+      else if (lp === 'v') v = conj(arg, pr.plural); else if (lp === 'job') v = P?.job || 'work'; else if (lp === 'age') v = P?.age ?? ''; else if (lp === 'kids') v = Array.isArray(P?.children) ? P.children.length : P?.children ?? P?.kids ?? '';
       else if (lp === 'seg') v = P?.segment ?? ''; else if (lp === 'rel') v = st.ctx[root + 'Rel'] ?? st.ctx.relTerm ?? 'friend';
       else if (pr[lp] !== undefined) v = pr[lp];
       else v = P?.[prop] ?? '';
@@ -121,12 +122,13 @@ export class TextEngine {
       const out = this._pick(name, st, depth); if (out == null) return m === '#' ? m : m.replace(/#/g, PH);
       return mods ? this._mods(out, mods, st) : out;
     });
-    return s.replace(/\{([$\w.]+)(?::([^}|]*))?((?:\|\w+)*)\}/g, (m, key, arg, mods) => {
+    return s.replace(/\{([$\w.]+)(?::([^}|?]*))?(?:\?([^}|]*))?((?:\|\w+)*)\}/g, (m, key, arg, fb, mods) => {
       if (key === 'when') return this._when(mods, st);
-      const out = String(this._ref(key, arg, st)); return mods ? this._mods(out, mods, st) : out;
+      let out = String(this._ref(key, arg, st)); if (out === '' && fb !== undefined) out = fb; return mods ? this._mods(out, mods, st) : out;
     });
   }
   _mods(s, mods, st) {
+    if (s === '') return s;
     for (const m of mods.split('|')) { if (!m) continue; if (MODS[m]) s = MODS[m](s); else if (['date', 'time', 'dow', 'daypart'].includes(m)) s = this._when('|' + m, st); }
     return s;
   }
@@ -143,13 +145,13 @@ export class TextEngine {
   }
   /** render(evOrKey, ctx) -> string. ctx: {genre, a,b,c,other, people, register, rel, mood, date, placeName, seed, p, vars, memory, idiolect, world}. */
   render(evOrKey, ctx = {}, world = ctx.world) {
-    const genre = ctx.genre || 'ev'; const keys = this._keys(evOrKey, genre); const key = keys.find((k) => this.rules.has(k));
-    if (!key) return typeof evOrKey === 'string' ? `[${evOrKey}]` : `[${evOrKey.type}]`;
+    const genre = ctx.genre || 'ev'; const keys = this._keys(evOrKey, genre).filter((k) => this.rules.has(k));
+    if (!keys.length) return typeof evOrKey === 'string' ? `[${evOrKey}]` : `[${evOrKey.type}]`;
     this.stats.renders++;
     let out = '';
     for (let attempt = 0; attempt < 4; attempt++) {
-      const st = this._state(evOrKey, ctx, world, attempt); st.used = [];
-      out = tidy(this._pick(key, st, 0) ?? '');
+      const st = this._state(evOrKey, ctx, world, attempt); st.used = []; out = '';
+      for (const key of keys) { out = tidy(this._pick(key, st, 0) ?? ''); if (out) break; }
       if (ctx.memory === false || !out || !this.recent.includes(out) || attempt === 3) { this.counter++; for (const id of st.used) this.last.set(id, this.counter); break; }
       this.stats.retries++; this.counter++; for (const id of st.used) this.last.set(id, this.counter);
     }

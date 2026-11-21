@@ -114,7 +114,7 @@ export function stateHash(w) {
   let h = 2166136261 >>> 0;
   const mix = (n) => { h ^= (n | 0) >>> 0; h = Math.imul(h, 16777619) >>> 0; };
   const mixf = (x) => mix(Math.round((x || 0) * 1000));
-  mix(w.tick); mix(w.rng.s); mix(w.nextPersonId); mix(w.events.nextId); mix(w.ledger.n); mix(w.commands.seq); mix(w.chronicle.entries.length); mix(w.stats.births); mix(w.stats.deaths);
+  mix(w.tick); mix(w.rng.s); mix(w.nextPersonId); mix(w.events.nextId); mix(w.ledger.n); mix(w.commands.log.length); mix(w.chronicle.entries.length); mix(w.stats.births); mix(w.stats.deaths);
   const ids = [...w.people.keys()].sort((a, b) => a - b);
   for (const id of ids) {
     const p = w.people.get(id);

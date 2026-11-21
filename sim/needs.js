@@ -1,6 +1,6 @@
 // Needs decay (1 = satisfied, 0 = desperate) and mood.
 export const NEED_KEYS = ['hunger', 'energy', 'social', 'fun', 'hygiene', 'comfort', 'purpose'];
-export const DECAY = { hunger: 0.0105, energy: 0.0062, social: 0.0042, fun: 0.0048, hygiene: 0.0028, comfort: 0.0020, purpose: 0.0030 };
+export const DECAY = { hunger: 0.0105, energy: 0.0062, social: 0.0042, fun: 0.0032, hygiene: 0.0028, comfort: 0.0020, purpose: 0.0026 };
 
 export function makeNeedRates(pers) {
   return {
@@ -27,7 +27,7 @@ export function stepNeeds(world, p) {
   n.purpose -= DECAY.purpose * kp; if (n.purpose < 0) n.purpose = 0;
   if (n.hunger < 0.04) p.starve++;
   const w = n.hunger * 0.22 + n.energy * 0.16 + n.social * 0.14 + n.fun * 0.14 + n.hygiene * 0.06 + n.comfort * 0.1 + n.purpose * 0.18;
-  let target = (w - 0.55) * 2.4 + p.emotionSum + (0.5 - p.personality.neuroticism) * 0.15;
+  let target = (w - 0.55) * 2.4 + p.moodletSum + (0.5 - p.personality.neuroticism) * 0.15;
   if (p.health < 0.5) target -= (0.5 - p.health);
   if (target > 1) target = 1; else if (target < -1) target = -1;
   p.mood += (target - p.mood) * 0.03;

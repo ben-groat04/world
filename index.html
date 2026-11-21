@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hollowmere</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div id="town-name">Hollowmere</div>
+  <div id="clock"><span id="date">Spring 1, Year 1</span> <span id="time">06:00</span> <span id="weather"></span></div>
+  <div id="popcount"></div>
+  <div id="speed">
+    <button data-speed="0" title="Pause (space)">&#10074;&#10074;</button>
+    <button data-speed="1" class="on">1x</button>
+    <button data-speed="2">5x</button>
+    <button data-speed="3">20x</button>
+    <button data-speed="4">100x</button>
+    <button data-speed="5">max</button>
+  </div>
+  <div id="topbar-extra"></div>
+</header>
+<main id="layout">
+  <section id="map-wrap">
+    <canvas id="map"></canvas>
+    <div id="map-hint">drag to pan &middot; wheel to zoom &middot; click a person</div>
+  </section>
+  <aside id="sidebar">
+    <!-- RIGHT SIDEBAR: panels (inspector, dashboards...) mount here -->
+    <div id="inspector"><p class="muted">Click a person or building to inspect.</p></div>
+    <div id="sidebar-extra"></div>
+  </aside>
+</main>
+<section id="feed">
+  <!-- BOTTOM FEED: chronicle / newspaper mounts here -->
+  <div id="feed-title">Town chronicle</div>
+  <div id="feed-list"></div>
+</section>
+<script type="module" src="ui/main.js"></script>
+</body>
+</html>

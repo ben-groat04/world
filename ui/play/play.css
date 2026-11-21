@@ -40,3 +40,8 @@
 .gh small { display: block; color: var(--mute); font-size: 12px; font-weight: 400; margin-top: 1px; } .gh span { flex: 1; min-width: 0; }
 .gthemes { padding: 0 0 6px; flex-wrap: wrap; } body.psheet-open #toast { z-index: 40; }
 @media (max-width: 820px) { #pstrip { right: 60px; padding-left: 10px; gap: 8px; } .pmini { gap: 6px; } .pbar { width: 28px; } #pcard { right: 60px; top: 62px; } .psb { max-height: 88vh; } }
+
+.preq { background: var(--panel2); border-radius: 12px; padding: 8px 10px; margin-bottom: 6px; } .preq .pa { margin-top: 6px; } .preq .pa button { min-height: 44px; }
+body.playing #ticker { display: none; } .pa button { min-height: 44px; }
+#pcard .pq small { color: var(--mute); }
+@media (max-width: 820px) { #pstrip { top: max(8px, env(safe-area-inset-top)); } .pdo { min-height: 44px; } }

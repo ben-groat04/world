@@ -206,6 +206,9 @@ export function createHousing() {
       const need = bedNeed(w, ps), short = Math.max(0, need - u.bedrooms);
       if (short > 0 && !hh.crowded) { hh.crowded = true; w.emit('housing.overcrowded', { actors: adults.slice(0, 2).map((p) => p.id), place: u.bid, objects: [hh.id], salience: 0.3, tags: ['housing'], payload: { short } }); if (!S.wait.some((x) => x.hh === hh.id) && (isSocial(hh.tenure) || (f && f.stress > 0.5))) S.wait.push({ hh: hh.id, since: tick, points: 2 * short }); }
       else if (short === 0) hh.crowded = false;
+      // student-let tenancies end with the course: once nobody in a student household is studying (graduated / dropped out / working) they give notice
+      // at ~10%/month (12-month ASTs, graduate jobs elsewhere) and the unit goes back to the student market
+      if (hh.seg === 'students' && !isSharers(hh) && !hh.search && !hh.departAt && S.autoMoves && !ps.some((p) => p.ext.pop.activity === 'student') && rng.chance(0.10)) { hh.departAt = tick + rng.int(0, 2) * MONTH; hh.departWhy = 'graduated'; hh.departCause = 0; hh.departDest = 'elsewhere'; }
       if (!hh.search && !hh.departAt && S.autoMoves) {
         if (isSharers(hh)) { sharerRotation(hh, ps, adults, seg, rng); }
         else {

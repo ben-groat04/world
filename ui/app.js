@@ -14,18 +14,22 @@ const mobile = () => matchMedia('(max-width:820px)').matches;
 const TL = new Set(['life', 'x5', 'x20', 'max']);
 
 // ------------------------------------------------------------------ tabs + panes
-const TABS = [['feed', 'Feed', '✉'], ['inspect', 'Inspect', '☺'], ['town', 'Town', '▤'], ['people', 'People', '☰'], ['god', 'God', '★']];
+const TABS = [['feed', 'Watch', '✉'], ['people', 'People', '☺'], ['town', 'Town', '▤'], ['god', 'God', '★']];
 $('tabs').innerHTML = TABS.map(([k, l, i]) => `<button role="tab" data-tab="${k}"><i>${i}</i><span>${l}</span></button>`).join('');
 $('panes').innerHTML = TABS.map(([k]) => `<section class="pane" id="pane-${k}" data-pane="${k}" hidden></section>`).join('');
+$('pane-people').innerHTML = '<div class="sub" id="people-dir"></div><div class="sub" id="pane-inspect" hidden></div>';
+let inspOn = false; // People pane shows the inspector (true) or the directory (false)
+function showInspector(on) { inspOn = on; $('pane-inspect').hidden = !on; $('people-dir').hidden = on; }
 let tab = 'feed', sheet = 'half'; // sheet: peek | half | full (mobile)
 const side = $('sidebar');
 function setSheet(s) { sheet = s; side.dataset.sheet = s; sizeSync(); }
 function setTab(k, open = true) {
+  if (k === 'inspect') { showInspector(true); k = 'people'; }
   tab = k; document.querySelectorAll('#tabs button').forEach((b) => { b.classList.toggle('on', b.dataset.tab === k); b.setAttribute('aria-selected', b.dataset.tab === k); });
   document.querySelectorAll('.pane').forEach((p) => { p.hidden = p.dataset.pane !== k; });
-  if (k === 'people') people.refresh(); if (mobile() && open && sheet === 'peek') setSheet('half');
+  if (k === 'people' && !inspOn) people.refresh(); if (mobile() && open && sheet === 'peek') setSheet('half');
 }
-$('tabs').addEventListener('click', (e) => { const b = e.target.closest('[data-tab]'); if (!b) return; if (mobile() && b.dataset.tab === tab && sheet !== 'peek') setSheet('peek'); else setTab(b.dataset.tab); });
+$('tabs').addEventListener('click', (e) => { const b = e.target.closest('[data-tab]'); if (!b) return; if (mobile() && b.dataset.tab === tab && sheet !== 'peek') setSheet('peek'); else { if (b.dataset.tab === 'people' && tab === 'people' && inspOn) showInspector(false); setTab(b.dataset.tab); } });
 $('grab').addEventListener('click', () => setSheet(sheet === 'peek' ? 'half' : sheet === 'half' ? 'full' : 'half'));
 (() => { // drag the sheet handle
   const g = $('grab'); let y0 = null;
@@ -38,33 +42,39 @@ let selB = null;
 const hooks = { selB: () => selB, show: (id) => { const p = view.personPos(id); if (p) view.focus(p[0], p[1], Math.max(view.cam.z, 14)); }, onBuilding: (f) => { hooks._b = f; } };
 mountFeed($('pane-feed'), store);
 mountInspect($('pane-inspect'), store, hooks);
+$('pane-inspect').addEventListener('click', (e) => { if (e.target.closest('[data-back]')) { showInspector(false); people.refresh(); } });
 mountTown($('pane-town'), store);
-const people = mountPeople($('pane-people'), store);
+const people = mountPeople($('people-dir'), store);
 let pickReq = null;
 hooks.pick = (type, cb) => { pickReq = { type, cb, sheet }; toast(`Tap a ${type === 'person' ? 'person' : 'building'} on the map…`, 6000); if (mobile()) setSheet('peek'); };
-hooks.select = (id) => selectPerson(id); hooks.follow = () => { if (!store.s.following) store.follow(true); }; hooks.toast = (m, ms) => toast(m, ms);
+hooks.select = (id) => selectPerson(id); hooks.peek = () => { if (mobile()) setSheet('peek'); }; hooks.follow = () => { if (!store.s.following) store.follow(true); }; hooks.toast = (m, ms) => toast(m, ms);
 mountGod($('pane-god'), store, hooks);
 const play = mountPlay(store, hooks);
 window.larkfield.play = play;
-setTab('feed', false); setSheet(mobile() ? 'half' : 'half');
+setTab('feed', false); setSheet(mobile() ? 'peek' : 'half');
 
 // ------------------------------------------------------------------ top bar
-const speedEl = $('speed');
+const speedEl = $('speed'); let tierLabel = {}; const speedPop = $('speedpop');
+const popOpen = (on) => { speedPop.classList.toggle('open', on); $('speedbtn').setAttribute('aria-expanded', on); };
+$('speedbtn').addEventListener('click', (e) => { e.stopPropagation(); popOpen(!speedPop.classList.contains('open')); });
+document.addEventListener('click', (e) => { if (!e.target.closest('#speedpop')) popOpen(false); });
+$('pausebtn').addEventListener('click', () => setTier(store.s.tier === 'pause' ? prevTier : 'pause'));
 store.on('ready', (m) => {
+  tierLabel = Object.fromEntries(m.tiers.map((t) => [t.id, t.label]));
   speedEl.innerHTML = m.tiers.map((t) => `<button data-tier="${t.id}" title="${esc(t.hint || t.label)}">${t.id === 'pause' ? '<span class="pi">&#10074;&#10074;</span><span class="pt"> Pause</span>' : esc(t.label)}</button>`).join('');
   speedEl.appendChild($('jump'));
   view.setMap(m.map, m.bld); $('loading').classList.add('gone'); setTimeout(() => $('loading')?.remove(), 700); setTimeout(() => $('map-hint')?.classList.add('gone'), 9000);
   setTier(qs.get('speed') || 'life'); updateSpeedUI(store.s.tier); sizeSync(); view.fit();
 });
-speedEl.addEventListener('click', (e) => { const b = e.target.closest('[data-tier]'); if (b) setTier(b.dataset.tier); });
+speedEl.addEventListener('click', (e) => { const b = e.target.closest('[data-tier]'); if (b) { setTier(b.dataset.tier); popOpen(false); } });
 let prevTier = 'life';
 function setTier(id) { if (store.s.tier !== 'pause') prevTier = store.s.tier; store.setSpeed(id); }
 function updateSpeedUI(id) {
   speedEl.querySelectorAll('[data-tier]').forEach((b) => b.classList.toggle('on', b.dataset.tier === id));
-  view.timelapse = TL.has(id); document.body.dataset.tier = id; if (id !== 'max') $('jump').classList.remove('busy');
+  view.timelapse = TL.has(id); document.body.dataset.tier = id; $('speedlbl').textContent = id === 'pause' ? 'Paused' : tierLabel[id] || id; $('pausebtn').classList.toggle('on', id === 'pause'); $('pausebtn').querySelector('.pi').innerHTML = id === 'pause' ? '&#9654;' : '&#10074;&#10074;'; if (id !== 'max') $('jump').classList.remove('busy');
 }
 store.on('speed', updateSpeedUI);
-$('jump').addEventListener('click', () => { $('jump').classList.add('busy'); toast('Skipping ahead to the next notable event…', 60000); store.jump(); });
+$('jump').addEventListener('click', () => { popOpen(false); $('jump').classList.add('busy'); toast('Skipping ahead to the next notable event…', 60000); store.jump(); });
 const WX = { clear: '☀', cloudy: '☁', rain: '☂', snow: '❄', fog: '☁' };
 let lastDate = '';
 store.on('frame', (m) => {
@@ -72,19 +82,21 @@ store.on('frame', (m) => {
   if (t.date !== lastDate) { lastDate = t.date; $('date').textContent = t.date; }
   $('time').textContent = t.clock; $('wx').textContent = t.weather ? `${WX[t.weather.type] || ''} ${t.weather.temp}°C` : '';
   $('popcount').textContent = `${t.pop - t.off} here`; $('citycount').textContent = `${t.off} in the city`;
+  $('speedmeta').textContent = `${t.pop - t.off} here · ${t.off} in the city`;
   const tp = store.s.tps; const yrs = (t.rate || 0) / (store.s.tpy || 52596) * 60;
   $('speedinfo').textContent = t.tier === 'pause' ? 'Paused' : t.tier === 'scene' ? '1 hour per second' : yrs >= 0.1 ? `${yrs < 10 ? yrs.toFixed(1) : Math.round(yrs)} game-years / min` : '';
 });
 
 // ------------------------------------------------------------------ toast + ticker
 let toastT = 0;
-function toast(msg, ms = 4200) { const el = $('toast'); el.innerHTML = msg; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, ms); }
+function toast(msg, ms = 4200) { if (document.body.classList.contains('psheet-open') || (document.body.classList.contains('playing') && !$('pcard').hidden)) return; const el = $('toast'); el.innerHTML = msg; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, ms); }
 const tick = $('ticker'); let tickT = 0;
 store.on('news', (items) => {
-  if (TL.has(store.s.tier) && store.s.tier !== 'life') return;
-  const e = [...items].reverse().find((x) => x.sal >= 0.5 && x.kind !== 'god'); if (!e) return;
+  for (const x of items) if (x.sal >= 0.5 && x.kind !== 'god' && x.place && x.place.id != null && !store.s.replaying) view.setHot(x.place.id, performance.now() + 25000);
+  if (TL.has(store.s.tier) && store.s.tier !== 'life') return; if (document.body.classList.contains('playing')) return;
+  const e = [...items].reverse().find((x) => x.sal >= 0.6 && x.kind !== 'god'); if (!e) return;
   tick.hidden = false; tick.innerHTML = `<time>${esc(e.date)}</time> ${esc(e.head)}`; tick.dataset.pid = e.ppl && e.ppl[0] ? e.ppl[0].id : ''; tick.style.animation = 'none'; void tick.offsetWidth; tick.style.animation = '';
-  clearTimeout(tickT); tickT = setTimeout(() => { tick.hidden = true; }, 12000);
+  clearTimeout(tickT); tickT = setTimeout(() => { tick.hidden = true; }, 7000);
 });
 tick.addEventListener('click', () => { if (tick.dataset.pid) selectPerson(+tick.dataset.pid); });
 store.on('jumped', (it) => { $('jump').classList.remove('busy'); if (it) { toast(`<b>${esc(it.date)}</b> &mdash; ${esc(it.head)}`, 9000); if (it.ppl && it.ppl[0]) selectPerson(it.ppl[0].id); } else toast('Nothing notable happened for two years.'); });
@@ -93,12 +105,12 @@ store.on('result', (r) => { toast(`${r.ok ? '★ ' : '⚠ '}<b>${esc(r.name)}</b
 // ------------------------------------------------------------------ selection
 const followBtn = $('z-follow');
 function selectPerson(id) {
-  selB = null; view.selB = null; store.select(id); view.selected = id; followBtn.hidden = false; setTab('inspect');
+  selB = null; view.selB = null; store.select(id); view.selected = id; followBtn.hidden = false; showInspector(true); setTab('people'); if (mobile() && sheet === 'peek') setSheet('half');
   const p = view.personPos(id); if (p) view.focus(p[0], p[1], Math.max(view.cam.z, mobile() ? 10 : 13)); else { const off = store.on('frame', () => { off(); const q = view.personPos(id); if (q) view.focus(q[0], q[1], 12); }); }
 }
 function selectBuilding(id) {
   if (id == null) { selB = null; view.selB = null; hooks._b && hooks._b(); return; }
-  const b = store.s.bById.get(id); if (!b) return; view.selected = null; store.select(null); followBtn.hidden = true; view.follow = null; selB = id; view.selB = id; store.building(id); setTab('inspect');
+  const b = store.s.bById.get(id); if (!b) return; view.selected = null; store.select(null); followBtn.hidden = true; view.follow = null; selB = id; view.selB = id; store.building(id); showInspector(true); setTab('people'); if (mobile() && sheet === 'peek') setSheet('half');
   view.focus(b.x + b.w / 2, b.y + b.h / 2, Math.max(8, Math.min(view.cam.z, 14)));
 }
 store.on('building', () => hooks._b && hooks._b());

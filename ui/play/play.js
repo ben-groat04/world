@@ -30,9 +30,9 @@ export function mountPlay(store, hooks) {
     const en = s.needs.energy ?? 0.7, req = s.reqs.length;
     strip.innerHTML = `<div class="pwho"><b>${esc(s.name)}</b><small>${s.off ? 'Away in the city' : s.loc ? esc(s.loc.name) : 'Out and about'}</small></div>
       <div class="pmini"><span title="Money">${gbp(s.money)}</span><span title="Energy"><i class="pbar"><b style="width:${Math.round(en * 100)}%;background:${en < 0.3 ? 'var(--bad)' : en < 0.55 ? 'var(--warn)' : 'var(--good)'}"></b></i></span><span title="Mood">${MOOD(s.mood)}</span></div>
-      <button class="pdo" id="pdo">Do${req ? `<em>${req}</em>` : ''}</button>`;
-    const r = s.reqs[0];
-    if (r && sheet.hidden) { card.hidden = false; card.innerHTML = `<div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>they are trying to: ${esc(r.why)}</small>` : ''}</div><div class="pa"><button data-ans="yes">Yes</button><button data-ans="maybe">Maybe</button><button data-ans="no">Not now</button></div>${s.reqs.length > 1 ? `<small class="pmore">+${s.reqs.length - 1} more waiting</small>` : ''}`; card.dataset.rid = r.id; }
+      <button class="pdo" id="pdo">Do${req ? `<em>${req > 9 ? '9+' : req}</em>` : ''}</button>`;
+    const r = s.reqs.find((x) => x.notable), rest = s.reqs.length - (r ? 1 : 0); // one weighty ask at a time; the rest wait in the Do menu inbox
+    if (r && sheet.hidden) { card.hidden = false; card.innerHTML = `<div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>${esc(cap(r.why))}</small>` : ''}</div><div class="pa"><button data-ans="yes">Yes</button><button data-ans="maybe">Maybe</button><button data-ans="no">Not now</button></div>${rest ? `<small class="pmore">${rest} more in your inbox</small>` : ''}`; card.dataset.rid = r.id; }
     else card.hidden = true;
   }
   card.addEventListener('click', (e) => { const b = e.target.closest('[data-ans]'); if (!b) return; doit('player.respond', { request: +card.dataset.rid, answer: b.dataset.ans }); card.hidden = true; resume(); });
@@ -71,9 +71,10 @@ export function mountPlay(store, hooks) {
 
   // ---------------------------------------------------------------- views
   function menuView(s) {
-    const here = s.here || [];
+    const here = s.here || [], inbox = s.reqs || [];
+    const ibx = inbox.length ? `<h5>Waiting for you <small>${inbox.length}</small></h5>${inbox.slice(0, 8).map((r) => `<div class="preq"><div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>${esc(cap(r.why))}</small>` : ''}</div><div class="pa"><button data-ans="yes" data-rid="${r.id}">Yes</button><button data-ans="maybe" data-rid="${r.id}">Maybe</button><button data-ans="no" data-rid="${r.id}">Not now</button></div></div>`).join('')}${inbox.length > 8 ? `<p class="pdim">${inbox.length - 8} more; they lapse if ignored.</p>` : ''}` : '';
     return head(esc(s.name)) + `<div class="pbody">
-      <p class="pthought">${esc(s.thought || '')}</p>
+      <p class="pthought">${esc(s.thought || '')}</p>${ibx}
       ${here.length ? `<h5>Here with you</h5><div class="pchips">${here.map((x) => `<button class="pchip" data-talk="${x.id}">${esc(x.name)}<small>${x.known ? warmWord(x.l) : 'stranger'}</small></button>`).join('')}</div>` : `<p class="pdim">${s.off ? 'You are away in the city.' : 'Nobody else is here right now.'}</p>`}
       <div class="pgrid">${btn('📍<span>Go somewhere</span>', 'data-open="places"')}${btn('☕<span>Stay a while</span>', 'data-act="stay"')}${btn('🌆<span>Evening in the city</span>', 'data-act="out"')}${btn('⏭<span>Let time pass</span>', 'data-act="skip2"')}${btn(s.canSleep ? '🌙<span>Sleep till morning</span>' : '⏩<span>Until morning</span>', 'data-act="morning"')}
         ${btn('📱<span>Phone</span>', 'data-open="phone"')}${btn('☺<span>People</span>', 'data-open="people"')}${btn('💼<span>Work &amp; home</span>', 'data-open="work"')}${btn('⚑<span>Goals &amp; groups</span>', 'data-open="goals"')}${btn('◉<span>Me &amp; the street</span>', 'data-open="me"')}</div>${msg()}</div>`;
@@ -153,6 +154,7 @@ export function mountPlay(store, hooks) {
   // ---------------------------------------------------------------- events
   sheet.addEventListener('click', (e) => {
     const t = e.target.closest('button,a'); if (!t) return;
+    if (t.dataset.ans && t.dataset.rid) { doit('player.respond', { request: +t.dataset.rid, answer: t.dataset.ans }); const r = P.s && P.s.reqs.findIndex((x) => x.id === +t.dataset.rid); if (r >= 0) P.s.reqs.splice(r, 1); paint(); return; }
     if (t.matches('[data-close]')) { if (t.matches('[data-pid]')) hooks.select(+t.dataset.pid); close(); return; }
     if (t.dataset.open) { open(t.dataset.open); return; }
     if (t.dataset.talk) { open('talk', +t.dataset.talk); return; }
@@ -199,8 +201,8 @@ export function mountPlay(store, hooks) {
   store.on('play.setup', (m) => { P.setup = m; if (!P.form.unit && m.homes[0]) P.form.unit = m.homes[0].id; paint(); });
   store.on('play.section', (m) => { P.sec[m.name] = m; paint(); });
   store.on('directory', () => { if (P.view === 'take') paint(); });
-  store.on('play.on', (m) => { P.on = true; P.pid = m.pid; P.homeId = null; close(); hooks.select(m.pid); hooks.follow(); toast('You are playing. Tap <b>Do</b> to act.', 4000); });
-  store.on('play.off', () => { P.on = false; P.s = null; paintStrip(); });
+  store.on('play.on', (m) => { P.on = true; document.body.classList.add('playing'); P.pid = m.pid; P.homeId = null; close(); hooks.select(m.pid); hooks.follow(); hooks.peek && hooks.peek(); toast('You are playing. Tap <b>Do</b> to act.', 3000); });
+  store.on('play.off', () => { P.on = false; document.body.classList.remove('playing'); P.s = null; paintStrip(); });
   store.on('play.result', (m) => { P.msg = m.text || ''; toast(esc(m.text || ''), 3200); if (!sheet.hidden) { if (P.view === 'work') post({ op: 'section', name: 'work' }); paint(); } });
   store.on('play.moment', (m) => { toast(`⏸ <b>${esc(m.why)}</b>`, 6000); });
   store.on('ready', () => { post({ op: 'state' }); });

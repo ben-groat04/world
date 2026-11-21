@@ -15,7 +15,12 @@
     <div id="brand"><i class="logo"></i><b>Larkfield</b></div>
     <div id="clock"><span id="date">&nbsp;</span><span id="time"></span><span id="wx"></span></div>
     <div id="counts"><span id="popcount" title="Residents in the neighbourhood"></span><span id="citycount" title="Residents currently away in the city (via the station and bus stops)"></span></div>
-    <div id="speed" role="group" aria-label="Simulation speed"></div>
+    <button id="pausebtn" aria-label="Pause or resume"><span class="pi">&#10074;&#10074;</span></button>
+    <button id="speedbtn" aria-label="Speed" aria-expanded="false"><span id="speedlbl">Scene</span> <i>&#9662;</i></button>
+    <div id="speedpop">
+      <div id="speedmeta"></div>
+      <div id="speed" role="group" aria-label="Simulation speed"></div>
+    </div>
     <button id="jump" title="Run until something notable happens (N)">Next event <i>&#9197;</i></button>
   </header>
   <main id="layout">

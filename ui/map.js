@@ -20,7 +20,7 @@ export class MapView {
     this.cam = { x: 67, y: 88, z: 4 }; this.minZ = 2; this.maxZ = 44; this.map = null; this.layer = null;
     this.P = new Map(); this.selected = null; this.follow = null; this.selB = null; this.hoverB = null; this.lastTick = 0; this.tps = 0; this.timelapse = false; this.now = 0;
     this.time = { hour: 12, sunrise: 7, sunset: 18, month: 5, weather: null }; this.dark = 0; this.rain = []; this.flash = 0; this.occ = new Map(); this.leave = 0; this.nightSmooth = 0; this.pulse = 0;
-    this.dest = null; this.labelsOn = true; this.overlay = 'none'; this.bursts = [];
+    this.dest = null; this.labelsOn = true; this.hot = new Map(); this.overlay = 'none'; this.bursts = [];
   }
   // ------------------------------------------------------------------ setup
   setMap(map, bld) {
@@ -215,14 +215,22 @@ export class MapView {
     if (this.cam.z > 16) { ctx.font = `600 ${Math.round(clamp(this.cam.z * 0.42, 9, 13))}px system-ui`; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; const nm = r ? r.first : ''; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(10,14,20,.75)'; ctx.strokeText(nm, x, y - h * 1.02); ctx.fillStyle = '#fff'; ctx.fillText(nm, x, y - h * 1.02); }
     ctx.globalAlpha = 1;
   }
+  // Occupancy is quiet by default: far out only a few pulsing 'something is happening here' markers (recent notable news at a place) are drawn;
+  // closer in, number badges appear only where two or more people are together (or something is happening) until street level.
+  setHot(id, until) { this.hot.set(id, until); }
   drawBadges(ctx) {
-    const z = this.cam.z; if (z < 2.6) return;
+    const z = this.cam.z, now = performance.now(); for (const [k, t] of this.hot) if (t < now) this.hot.delete(k);
+    for (const [id, t] of this.hot) {
+      const b = this.byId.get(id); if (!b) continue; const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -20 || sy < -20 || sx > this.w + 20 || sy > this.h + 20) continue;
+      const ph = (now / 900) % 1, r = 7 + ph * 9; ctx.strokeStyle = `rgba(255,211,107,${(1 - ph) * 0.9})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, r, 0, 7); ctx.stroke();
+      ctx.fillStyle = '#ffd36b'; ctx.strokeStyle = 'rgba(20,14,0,.8)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(sx, sy, 5, 0, 7); ctx.fill(); ctx.stroke();
+    }
+    if (z < 5) return;
     for (const [id, n] of this.occ) {
-      const b = this.byId.get(id); if (!b || !n) continue; if (['estate_green', 'park', 'allotments', 'school_grounds'].includes(b.type) && z < 6) continue;
+      const b = this.byId.get(id); if (!b || !n) continue; if (['estate_green', 'park', 'allotments', 'school_grounds'].includes(b.type) && z < 6) continue; if (z < 8 && n < 2 && id !== this.selB) continue;
       const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -20 || sy < -20 || sx > this.w + 20 || sy > this.h + 20) continue;
       const col = b.kind === 'residential' ? '#3a7fb0' : b.cat ? CAT_COL[b.cat] || '#d9a441' : '#6b7a8a';
-      if (z < 5) { ctx.fillStyle = col; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(sx, sy, 3 + Math.min(4, Math.sqrt(n)), 0, 7); ctx.fill(); ctx.stroke(); continue; }
-      const t = String(n), fs = clamp(z * 0.9, 10, 15), tw = ctx.measureText(t).width; ctx.font = `700 ${fs}px system-ui`; const w = Math.max(fs * 1.5, ctx.measureText(t).width + 12), hgt = fs * 1.4;
+      const t = String(n), fs = clamp(z * 0.9, 10, 15); ctx.font = `700 ${fs}px system-ui`; const w = Math.max(fs * 1.5, ctx.measureText(t).width + 12), hgt = fs * 1.4;
       ctx.fillStyle = col; ctx.strokeStyle = 'rgba(255,255,255,0.95)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.roundRect(sx - w / 2, sy - hgt / 2, w, hgt, hgt / 2); ctx.fill(); ctx.stroke();
       ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(t, sx, sy + 0.5);
     }

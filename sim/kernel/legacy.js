@@ -8,6 +8,7 @@ import { has } from '../util.js';
 import { TICKS_PER_YEAR } from '../time.js';
 
 const TALK_EVERY = 6;
+const SCALE = +(process.env.TALKSCALE || 1);
 const byId = (a, b) => a.id - b.id;
 const OUT = 100000;
 
@@ -26,7 +27,7 @@ class AtView {
 
 function startProb(world, p, loc) {
   const pe = p.personality.extraversion;
-  let m = 0.11 * (0.45 + pe) * (1.5 - p.needs.social * 0.8);
+  let m = SCALE * 0.11 * (0.45 + pe) * (1.5 - p.needs.social * 0.8);
   if (has(p, 'shy')) m *= 0.6;
   if (has(p, 'gossip')) m *= 1.2;
   if (!loc) return m * 0.25;

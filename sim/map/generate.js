@@ -644,3 +644,182 @@ export function generateMap(pack, seed = 1, opts = {}) {
       else u.valueGBP = Math.round(pack.ROOM_MODEL.housePriceByBedrooms[u.bedrooms] * f * (A[M.buildings[u.buildingId].archetype].accommodationType === 'purposeBuiltFlats' ? 0.92 : 1) / 1000) * 1000;
     }
   }
+  // =========================================================== street chains (graph)
+  // edge-band chain row nodes (towpath / ring-road pavement) so park paths and V streets join it
+  const edgeRowNodes = [];
+  for (let x = 0; x < W; x += 10) edgeRowNodes.push(g.node(x, eY, 'street'));
+  g.node(W - 1, eY, 'street');
+  // V streets in band B4 run down to the edge row
+  for (const s of vStreets.B4) {
+    const yEnd = eY;
+    for (const X of [s.rect.x, s.rect.x + s.w - 1]) for (let y = s.rect.y + s.rect.h; y <= yEnd; y++) if (M.tiles[I(X, y)] !== T.WATER && M.tiles[I(X, y)] !== T.PAVEMENT && M.tiles[I(X, y)] !== T.PATH) M.tiles[I(X, y)] = T.PATH;
+  }
+  const lineDefs = []; // {axis:'h'|'v', k (row or col), a0,a1 (inclusive along-range), streetId}
+  for (const s of M.streets) {
+    if (s.axis === 'h') { lineDefs.push({ axis: 'h', k: s.lines.N, a0: s.rect.x, a1: s.rect.x + s.rect.w - 1, s }); lineDefs.push({ axis: 'h', k: s.lines.S, a0: s.rect.x, a1: s.rect.x + s.rect.w - 1, s }); }
+    else {
+      const top = s.rect.y - 1, bot = s.rect.y + s.rect.h - 1 + (botOf.B4 === null && vStreets.B4.includes(s) ? (eY - (s.rect.y + s.rect.h - 1)) : 1);
+      lineDefs.push({ axis: 'v', k: s.lines.W, a0: top, a1: bot, s }); lineDefs.push({ axis: 'v', k: s.lines.E, a0: top, a1: bot, s });
+    }
+  }
+  // junction nodes
+  for (const h of lineDefs.filter((l) => l.axis === 'h')) for (const v of lineDefs.filter((l) => l.axis === 'v')) {
+    if (v.k >= h.a0 && v.k <= h.a1 && h.k >= v.a0 && h.k <= v.a1) g.node(v.k, h.k, 'street');
+  }
+  // line ends and mid-block crossing points
+  for (const l of lineDefs) {
+    if (l.axis === 'h') { g.node(l.a0, l.k, 'street'); g.node(l.a1, l.k, 'street'); }
+    else { g.node(l.k, l.a0, 'street'); g.node(l.k, l.a1, 'street'); }
+  }
+  const crossAt = (s, along) => { // zebra between the two pavements of street s at coordinate `along`
+    if (s.axis === 'h') { const a = g.node(along, s.lines.N, 'street'), b = g.node(along, s.lines.S, 'street'); return [a, b]; }
+    const a = g.node(s.lines.W, along, 'street'), b = g.node(s.lines.E, along, 'street'); return [a, b];
+  };
+  const zebras = [];
+  for (const s of M.streets) {
+    const step = s.kind === 'high' ? 9 : 11;
+    const a0 = s.axis === 'h' ? s.rect.x : s.rect.y, a1 = a0 + (s.axis === 'h' ? s.rect.w : s.rect.h);
+    for (let a = a0 + 5; a < a1 - 3; a += step) {
+      // avoid dropping a crossing inside a junction mouth
+      const mouth = M.streets.some((q) => q.axis !== s.axis && a >= (q.axis === 'v' ? q.rect.x - 1 : q.rect.y - 1) && a <= (q.axis === 'v' ? q.rect.x + q.rect.w : q.rect.y + q.rect.h));
+      if (mouth) continue;
+      zebras.push({ s, a, ...(() => { const [p, q] = crossAt(s, a); return { p, q }; })() });
+    }
+  }
+  // connect the lines
+  const isRoadBetween = (x0, y0, x1, y1) => { const dx = Math.sign(x1 - x0), dy = Math.sign(y1 - y0); let x = x0, y = y0; while (x !== x1 || y !== y1) { x += dx; y += dy; if (M.tiles[I(x, y)] === T.ROAD) return true; } return false; };
+  const lineNodes = (l) => g.nodes.filter((n) => (l.axis === 'h' ? (n.y === l.k && n.x >= l.a0 && n.x <= l.a1) : (n.x === l.k && n.y >= l.a0 && n.y <= l.a1)));
+  for (const l of lineDefs) {
+    const ns = lineNodes(l).sort((p, q) => (l.axis === 'h' ? p.x - q.x : p.y - q.y));
+    for (let i = 1; i < ns.length; i++) {
+      const a = ns[i - 1], b = ns[i]; const road = isRoadBetween(a.x, a.y, b.x, b.y);
+      const hsPen = l.s.kind === 'high' ? 10 : 6;
+      g.edge(a.id, b.id, road ? 'crossing' : 'footway', road ? (Math.abs(a.x - b.x) + Math.abs(a.y - b.y)) * 2 + hsPen : null);
+    }
+  }
+  for (const z of zebras) g.edge(z.p, z.q, 'crossing', (z.s.w) * 2 + (z.s.kind === 'high' ? 8 : 4));
+  // aligned crossroad on the high street: zebra at both V lines (pedestrians cross HS where B2/B3 streets align)
+  for (const X of [vStreets.B2[1].lines.W, vStreets.B2[1].lines.E]) { const a = g.at(X, HS.lines.N), b = g.at(X, HS.lines.S); if (a >= 0 && b >= 0) g.edge(a, b, 'crossing', MAIN_W * 2 + 8); }
+  // B4 V streets meet the edge row; edge chain
+  {
+    const ns = g.nodes.filter((n) => n.y === eY).sort((p, q) => p.x - q.x);
+    for (let i = 1; i < ns.length; i++) g.edge(ns[i - 1].id, ns[i].id, 'footway');
+  }
+  // block corner links: V line end ↔ edge-chain joins already via lineDefs for B4. Park & estate paths link into chain nodes by coordinates (tiles on pavement).
+  // links between path nodes on pavement tiles and the street lines (nodes created on pavement coincide with line nodes)
+  // =========================================================== gateways
+  const gws = M.gateways;
+  const addGw = (o) => { const gw = { id: gws.length, ...o }; gws.push(gw); return gw; };
+  {
+    const sb = M.buildings[M.station];
+    addGw({ kind: 'station', template: 'station', name: 'Larkfield station', node: sb.node, x: sb.door.x, y: sb.door.y, buildingId: sb.id });
+    const hsW = g.node(0, HS.lines.N, 'gate'), hsW2 = g.node(0, HS.lines.S, 'gate'), hsE = g.node(W - 1, HS.lines.N, 'gate'), hsE2 = g.node(W - 1, HS.lines.S, 'gate');
+    g.edge(hsW, hsW2, 'crossing', MAIN_W * 2 + 8); g.edge(hsE, hsE2, 'crossing', MAIN_W * 2 + 8);
+    addGw({ kind: 'road', template: 'road_west', name: `${HS.name} (to city centre)`, node: hsW, x: 0, y: HS.lines.N });
+    addGw({ kind: 'road', template: 'road_east', name: `${HS.name} (to ring road)`, node: hsE, x: W - 1, y: HS.lines.N });
+    const tp0 = g.node(0, eY, 'gate'), tp1 = g.node(W - 1, eY, 'gate');
+    addGw({ kind: 'towpath', template: 'towpath', name: southEdge === 'canal' ? 'Canal towpath (west)' : 'Ring road footway (west)', node: tp0, x: 0, y: eY });
+    addGw({ kind: 'towpath', template: 'towpath', name: southEdge === 'canal' ? 'Canal towpath (east)' : 'Ring road footway (east)', node: tp1, x: W - 1, y: eY });
+    const c0 = g.node(0, S0.lines.S, 'gate'); addGw({ kind: 'cycle', template: 'cycle_route', name: `${S0.name} cycle route`, node: c0, x: 0, y: S0.lines.S });
+    // bus stops (shelters on the pavement)
+    const stops = [
+      { s: HS, line: 'N', x: vStreets.B2[1].rect.x - 20 - rng.int(0, 4), label: 'A' },
+      { s: HS, line: 'S', x: vStreets.B2[1].rect.x + 24 + rng.int(0, 4), label: 'B' },
+      { s: S0, line: 'S', x: stationX0 - 8, label: 'C' },
+    ];
+    for (const st of stops) {
+      const y = st.s.lines[st.line]; const x = st.x; const n = g.node(x, y, 'gate');
+      addGw({ kind: 'bus', template: 'bus_stop', name: `${st.s.name} (Stop ${st.label})`, node: n, x, y });
+      M.props.busStops.push({ x, y, w: 3, h: 1, street: st.s.id });
+    }
+  }
+  // =========================================================== props: street trees, cars, lamps
+  const nearMouth = (s, a, pad) => M.streets.some((q) => q.axis !== s.axis && a >= (q.axis === 'v' ? q.rect.x : q.rect.y) - pad && a <= (q.axis === 'v' ? q.rect.x + q.rect.w : q.rect.y + q.rect.h) + pad);
+  const nodeNear = (x, y, r) => g.nodes.some((n) => n.kind === 'door' && Math.abs(n.x - x) <= r && Math.abs(n.y - y) <= r);
+  for (const s of M.streets) {
+    const a0 = s.axis === 'h' ? s.rect.x : s.rect.y, len = s.axis === 'h' ? s.rect.w : s.rect.h;
+    // parking rows are the outer carriageway rows
+    const rows = s.axis === 'h' ? [s.rect.y + s.pav, s.rect.y + s.w - s.pav - 1] : [s.rect.x + s.pav, s.rect.x + s.w - s.pav - 1];
+    const pCar = s.kind === 'high' ? 0.33 : s.kind === 'collector' ? 0.4 : 0.58;
+    for (const r of rows) for (let a = a0 + 3; a < a0 + len - 5; a += 3) {
+      if (nearMouth(s, a, 3)) continue;
+      if (s.kind === 'high' && M.props.busStops.some((b) => b.street === s.id && Math.abs(b.x - a) < 6)) continue;
+      if (rng.chance(pCar)) M.props.cars.push(s.axis === 'h' ? { x: a, y: r, w: 2, h: 1, c: rng.int(0, 7) } : { x: r, y: a, w: 1, h: 2, c: rng.int(0, 7) });
+    }
+    // lamps and trees
+    const sides = s.axis === 'h' ? [s.lines.N, s.lines.S] : [s.lines.W, s.lines.E];
+    for (const k of sides) for (let a = a0 + 7; a < a0 + len - 6; a += (s.kind === 'high' ? 14 : 17)) {
+      if (nearMouth(s, a, 2)) continue;
+      const x = s.axis === 'h' ? a : k, y = s.axis === 'h' ? k : a;
+      if (s.kind === 'high' || rng.chance(0.55)) M.props.lamps.push({ x, y });
+    }
+    if (s.kind !== 'collector') for (const k of sides) for (let a = a0 + 10 + rng.int(0, 5); a < a0 + len - 8; a += rng.int(10, 16)) {
+      if (nearMouth(s, a, 3)) continue;
+      const x = s.axis === 'h' ? a : k, y = s.axis === 'h' ? k : a;
+      if (s.kind === 'high' ? rng.chance(0.6) : rng.chance(0.35)) { const iy = s.axis === 'h' && s.pav > 1 ? (k === s.lines.N ? y + 1 : y - 1) : y; const ix = s.axis === 'v' && s.pav > 1 ? (k === s.lines.W ? x + 1 : x - 1) : x; M.props.trees.push({ x: ix, y: iy, r: 1.5 + rng.float(0, 0.7), street: true }); }
+    }
+  }
+  // back-garden trees and bins
+  for (const b of M.buildings) if (b.kind === 'residential' && b.plot && b.archetype !== 'newbuild_apartments' && !A[b.archetype]?.perFloor && rng.chance(0.18)) {
+    const p = b.plot; const tx = p.x + rng.int(0, Math.max(0, p.w - 1)); const ty = p.y + rng.int(0, Math.max(0, p.h - 1));
+    if (M.tiles[I(tx, ty)] === T.YARD) M.props.trees.push({ x: tx, y: ty, r: 0.9 + rng.float(0, 0.6) });
+  }
+  // dedupe trees on same tile, remove trees on buildings/roads
+  {
+    const seen = new Set(); M.props.trees = M.props.trees.filter((t) => { const k = t.y * W + t.x; if (seen.has(k) || !inb(t.x, t.y)) return false; seen.add(k); const tt = M.tiles[k]; return tt !== T.BUILDING && tt !== T.ROAD && tt !== T.WATER && tt !== T.RAIL; });
+    M.props.cars = M.props.cars.filter((c) => { const w = c.w || (c.v ? 1 : 2), h = c.h || (c.v ? 2 : 1); c.w = w; c.h = h; for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const t = M.tiles[I(c.x + i, c.y + j)]; if (t === T.BUILDING || t === T.WATER || t === T.PARK || t === T.GRASS) return false; } return true; });
+    M.props.benches = M.props.benches.map((b) => ({ x: b.x, y: b.y, w: 2, h: 1 }));
+  }
+  // =========================================================== finish graph (pre-transform), checks
+  const warnings = [];
+  const graph0 = g.finish();
+  const { comp, count } = graph0.components();
+  if (count > 1) { const sizes = new Array(count).fill(0); comp.forEach((c) => sizes[c]++); const main = sizes.indexOf(Math.max(...sizes)); const lost = []; for (const bld of M.buildings) if (bld.node >= 0 && comp[bld.node] !== main) lost.push(bld.id); if (lost.length) warnings.push(`graph: ${count} components; ${lost.length} buildings unreachable (ids ${lost.slice(0, 8).join(',')})`); }
+  for (const bld of M.buildings) if (bld.doors.length && (bld.node < 0 || bld.node === undefined)) warnings.push(`building ${bld.id} (${bld.archetype}) has no door node`);
+  M.meta.warnings = warnings;
+  return finalise(M, g, tf, W, H, pack, rng);
+}
+
+// ============================================================ orientation transform + packaging
+function finalise(M, g, tf, W, H, pack, rng) {
+  const NW = tf.transpose ? H : W, NH = tf.transpose ? W : H;
+  const mt = (x, y) => { if (tf.flipX) x = W - 1 - x; if (tf.flipY) y = H - 1 - y; return tf.transpose ? [y, x] : [x, y]; };
+  const mp = (p) => { if (!p) return p; const [x, y] = mt(p.x, p.y); p.x = x; p.y = y; return p; };
+  const mr = (r) => { if (!r) return r; const [ax, ay] = mt(r.x, r.y), [bx, by] = mt(r.x + r.w - 1, r.y + r.h - 1); r.x = Math.min(ax, bx); r.y = Math.min(ay, by); r.w = Math.abs(ax - bx) + 1; r.h = Math.abs(ay - by) + 1; return r; };
+  const mf = (f) => { if (!f) return f; let v = { N: [0, -1], S: [0, 1], E: [1, 0], W: [-1, 0] }[f]; if (tf.flipX) v = [-v[0], v[1]]; if (tf.flipY) v = [v[0], -v[1]]; if (tf.transpose) v = [v[1], v[0]]; return v[0] === 0 ? (v[1] < 0 ? 'N' : 'S') : (v[0] < 0 ? 'W' : 'E'); };
+  const tiles = new Uint8Array(NW * NH), bAt = new Int32Array(NW * NH).fill(-1);
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const [nx, ny] = mt(x, y); tiles[ny * NW + nx] = M.tiles[y * W + x]; bAt[ny * NW + nx] = M.bAt[y * W + x]; }
+  M.tiles = tiles; M.bAt = bAt; M.w = NW; M.h = NH;
+  for (const b of M.buildings) { mr(b.rect); mr(b.plot); b.facing = mf(b.facing); b.entryDir = mf(b.entryDir); b.ridge = (b.facing === 'N' || b.facing === 'S') ? 'x' : 'y'; mp(b.door); for (const d of b.doors) mp(d); delete b.nodeOverride; }
+  for (const s of M.streets) { mr(s.rect); s.axis = s.rect.w >= s.rect.h ? 'h' : 'v'; s.lines = s.axis === 'h' ? { N: s.rect.y, S: s.rect.y + s.rect.h - 1 } : { W: s.rect.x, E: s.rect.x + s.rect.w - 1 }; delete s.a0; delete s.t0; delete s.t1; }
+  for (const c of M.cells) mr(c.rect);
+  for (const a of M.areas) mr(a.rect);
+  for (const v of M.venues) v.rect = v.buildingId >= 0 ? M.buildings[v.buildingId].rect : v.rect;
+  for (const k of ['trees', 'lamps', 'bins']) for (const p of M.props[k]) mp(p);
+  for (const k of ['cars', 'benches', 'busStops']) for (const p of M.props[k]) { const r = { x: p.x, y: p.y, w: p.w, h: p.h }; mr(r); p.x = r.x; p.y = r.y; p.w = r.w; p.h = r.h; }
+  for (const gw of M.gateways) mp(gw);
+  if (M.parkMid) mp(M.parkMid); if (M.schoolGate) mp(M.schoolGate);
+  M.features.railway = mr({ x: 0, y: 0, w: W, h: 8 }); M.features.edge.rect = mr(M.features.edge.rect); delete M.features.railway.stationX0;
+  for (const n of g.nodes) { const [x, y] = mt(n.x, n.y); n.x = x; n.y = y; }
+  const graph = g.finish();
+  M.graph = graph;
+  // house-keeping: node per venue / unit after transform is unchanged (ids stable)
+  const T0 = pack.venues;
+  M.nodeOfUnit = (uid) => M.units[uid].node;
+  M.nodeOfVenue = (vid) => M.venues[vid].node;
+  M.route = (a, b) => graph.route(a, b);
+  M.gatewaysByKind = (k) => M.gateways.filter((q) => q.kind === k);
+  M.stats = computeStats(M, pack);
+  return M;
+}
+
+export function computeStats(M, pack) {
+  const A = pack.archetypes;
+  const dw = M.units.filter((u) => u.kind !== 'venue');
+  const acc = {}; for (const u of dw) { const at = A[M.buildings[u.buildingId].archetype].accommodationType; acc[at] = (acc[at] || 0) + 1; }
+  const ten = {}; for (const u of dw) ten[u.tenure] = (ten[u.tenure] || 0) + 1;
+  const cat = {}; for (const v of M.venues) cat[v.category] = (cat[v.category] || 0) + 1;
+  const n = dw.length;
+  const shares = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, +(v / n).toFixed(3)]));
+  return { dwellings: n, vacant: dw.filter((u) => u.vacant).length, bedroomsTotal: dw.reduce((s, u) => s + u.bedrooms, 0), buildings: M.buildings.length, venues: M.venues.length, venueByCategory: cat, accommodation: acc, accommodationShare: shares(acc), tenure: ten, tenureShare: shares(ten), graphNodes: M.graph.n, graphEdges: M.graph.edges.length, cars: M.props.cars.length, trees: M.props.trees.length, warnings: M.meta.warnings };
+}

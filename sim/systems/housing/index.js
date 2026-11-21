@@ -110,6 +110,7 @@ export function createHousing() {
     const w = W, rng = w.rngFor('housing.arrive'), S = H(w);
     const { hh, people, seg } = createArrivalHousehold(w, rng, u, forceSeg);
     u.hh = hh.id; u.since = w.tick; u.voidUntil = 0; u.listed = false; u.lastRise = w.tick; u.lastSeg = hh.seg;
+    if (rented(u.tenure)) u.studentLet = hh.seg === 'students'; // the letting market follows its tenants: a unit let to students is marketed to the next student cohort, one let to anyone else leaves the student market
     hh.rentPcm = rented(u.tenure) ? u.rent : 0;
     if (u.tenure === 'mortgage' || u.tenure === 'owned_outright') { const price = valueOf(w, u); hh.mortgagePcm = u.tenure === 'mortgage' ? Math.round(price * 0.8 * 0.0059) : 0; }
     const adults = people.filter((p) => w.ageOf(p) >= 16), net = Math.max(900, (seg.money.incomeBand[1] / 12) * 0.82 * (u.tenure === 'private_rent' ? 1 : 0.9));

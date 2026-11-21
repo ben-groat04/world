@@ -1,4 +1,5 @@
 // Tie lifecycle: import from the generated network, create/link, contact accounting by channel, weekly maintenance + decay, triadic closure, loneliness, legacy Rel mirror.
+import { contextTies } from './context.js';
 import { TPD, WEEK, CH, CH_EFF, GAIN, clamp, mkTie, emptyPS, relayer, isOff, kinOf } from './core.js';
 
 const FREQ = { 'daily messages': [0.15, 0.5, 12], 'weekly call': [0.08, 1.0, 3], 'monthly meetup': [0.23, 0.15, 1.6], 'a few times a year': [0.06, 0.05, 0.45], 'weekly visit': [1, 0.5, 3], 'monthly visit': [0.23, 0.3, 2],
@@ -88,6 +89,7 @@ const G1 = GAIN * CH_EFF[0], G2 = GAIN * CH_EFF[1], G3 = GAIN * CH_EFF[2], G4 = 
 /** 4-weekly maintenance for one person (staggered by id): contacts, decay, layers, loneliness, legacy mirror. Expected-value accounting (no per-tie dice). */
 export function maintain(w, S, p, r) {
   const ps = psOf(w, S, p.id); if (!ps) return;
+  contextTies(w, S, p, r);
   const tick = w.tick, q = p.ext.pop, age = w.ageOf(p), seg = segInfo(w, S, q.seg), E = p.personality.extraversion, mrF = clamp(ps.mr / Math.max(8, seg.msgs), 0.2, 3);
   let supply = 0, ctc = 0, drop = null;
   const chatBoost = ps.ch.length ? 0.4 : 0;

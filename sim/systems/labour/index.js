@@ -135,7 +135,11 @@ export function createLabour() {
         case 'sick_disabled': if (age < 66 && rng.chance(0.004)) { q.activity = 'unemployed'; q.search = { since: tick, kind: 'return', tries: 0 }; replan(p); } break;
         case 'home_family': {
           const kids = hh ? hh.members.map((id) => w.people.get(id)).filter((k) => k && k.alive && w.ageOf(k) < 4.5).length : 0;
-          if (!kids && age < 62 && rng.chance(0.02)) { q.activity = 'unemployed'; q.search = { since: tick, kind: 'return', tries: 0 }; replan(p); }
+          // return to work: slow, and slower with school-age children at home and in groups where caring is the norm (ONS/ethnicity-facts-figures 2021: 51% of Pakistani/Bangladeshi
+          // women are economically inactive vs ~20% of men; maternal employment rises only gradually as the youngest child ages, ONS Families and the labour market 2021). Was a flat 2%/month.
+          const young = hh ? hh.members.some((id) => { const k = w.people.get(id); return k && k.alive && w.ageOf(k) < 11; }) : false;
+          const rtw = 0.012 * (young ? 0.6 : 1) * (q.eth === 'pakistani' || q.eth === 'bangladeshi' ? 0.35 : 1);
+          if (!kids && age < 62 && rng.chance(rtw)) { q.activity = 'unemployed'; q.search = { since: tick, kind: 'return', tries: 0 }; replan(p); }
           break;
         }
         case 'other_inactive': if (age < 60 && rng.chance(0.003)) { q.activity = 'unemployed'; q.search = { since: tick, kind: 'return', tries: 0 }; replan(p); } break;
@@ -318,7 +322,8 @@ export function createLabour() {
       'labour.secondJob': (w, a) => { const p = w.people.get(a.pid); return !!p && secondJob(p, a.hours || 8); },
       'labour.recession': (w, a) => w.cmd('money.recession', a),
       'labour.setActivity': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; if (p.ext.pop.activity === 'employed' && a.activity !== 'employed') separate(p, 'set', ''); p.ext.pop.activity = a.activity; p.job = a.activity; replan(p); return true; },
-      'labour.initPerson': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; const q = p.ext.pop, rng = w.rngFor('labour.new'); q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72); if (q.activity === 'employed' || (q.activity === 'student' && a.job)) { const o = drawOccupation(w, rng, p, { hasVacancy: (id) => !!openSlotFor(p, id) }); const slot = o.where === 'onmap' ? openSlotFor(p, o.id) : null; startJob(p, o, slot ? { slot } : {}); if (q.activity === 'student') { q.activity = 'student'; q.hours = rng.int(8, 16); q.contract = 'zero_hours'; } } else if (q.activity === 'unemployed') q.search = { since: w.tick, kind: 'entry', tries: 0 }; return true; },
+      'labour.initPerson': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; const q = p.ext.pop, rng = w.rngFor('labour.new'); q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72); if (q.activity === 'employed' || (q.activity === 'student' && a.job)) { const wasStudent = q.activity === 'student'; const o = drawOccupation(w, rng, p, { hasVacancy: (id) => !!openSlotFor(p, id) }); const slot = o.where === 'onmap' ? openSlotFor(p, o.id) : null; startJob(p, o, slot ? { slot } : {}); if (wasStudent) { q.activity = 'student'; p.job = 'student'; // (bug fix: startJob had already set 'employed', so every arriving working student silently stopped being a student)
+  q.hours = rng.int(8, 16); q.contract = 'zero_hours'; } } else if (q.activity === 'unemployed') q.search = { since: w.tick, kind: 'entry', tries: 0 }; return true; },
       'labour.openFirm': (w, a) => {
         const b = w.buildings.get(a.bid); if (!b) return false; const S = L(w); S.firms[b.id] = { bid: b.id, sector: 'retail_hospitality', closedUntil: 0, closedAt: 0, name: a.name || 'New business', opened: w.tick };
         if (!b.lf.staff) b.lf.staff = []; const mk = (occ, n) => { const vid = b.lf.venueId ?? 900 + b.id; const s = { vid, bid: b.id, occ, n, filled: [], ext: 0, vac: Array.from({ length: n }, () => ({ since: w.tick, occ })) }; w.lf.slots.push(s); b.lf.staff.push({ vid, occ, n, filled: [] }); };

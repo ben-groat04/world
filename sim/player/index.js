@@ -139,7 +139,7 @@ export function createPlayer() {
       const r = call('social.converse', { a: p.id, b: q.id, act }); const after = w.sys.social ? w.sys.social.query.tie(q.id, p.id) : null;
       const dl = before && after ? r1((after.l ?? 0) - (before.l ?? 0)) : null, dt = before && after ? r1((after.t ?? 0) - (before.t ?? 0)) : null;
       const react = dl == null ? 'neutral' : dl > 0.02 ? 'warm' : dl < -0.02 ? 'cool' : 'neutral';
-      note(`You ${act === 'small' ? 'chatted with' : act + ' with'} ${nm(q)}: ${react}.`); return { ok: !!r, act, react, dl, dt, mood: r1(q.mood) };
+      note(`You ${act === 'small' ? 'chatted with' : act + ' with'} ${nm(q)}: ${react}.`); return { ok: !!r, act, react, dl, dt, mood: r1(q.mood), l: after ? after.l : null, lv: after ? after.lv : 0, met: !!(after && after.lv >= 2 && !(before && before.lv >= 2)) };
     },
     'player.message': (w, a) => {
       const p = me(a), q = w.people.get(a.to); if (!p || !q) return fail('no such contact');

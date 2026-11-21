@@ -23,9 +23,9 @@ for (const a of S.ranked(12, { includeQuiet: true })) console.log(S.summarise(a)
 console.log('stats', JSON.stringify(S.stats()));
 // perf: 10 sim-years x 500 pop ~ 150k events of mostly noise
 const T0 = process.hrtime.bigint(); const P = new Sifter({ patterns: PATTERNS, ticksPerDay: D }); let seed = 1; const r = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
-const types = ['life.couple', 'work.fired', 'work.hired', 'social.fallout', 'social.friendship', 'money.debt', 'home.rent_rise', 'biz.open', 'life.move_out', 'social.reconcile', 'life.move_in', 'civic.campaign', 'school.result', 'conversation.chat', 'shop.buy', 'work.shift', 'health.diagnosis'];
+const types = ['conversation.chat', 'life.couple', 'work.fired', 'work.hired', 'social.fallout', 'social.friendship', 'money.debt', 'home.rent_rise', 'biz.open', 'life.move_out', 'social.reconcile', 'life.move_in', 'civic.campaign', 'school.result', 'work.shift', 'health.diagnosis'];
 const N = 150000; let last = -1;
-for (let i = 0; i < N; i++) { const t = types[Math.floor(r() * r() * types.length)]; const a = Math.floor(r() * 500), b = Math.floor(r() * 500); P.consume({ id: i, type: t, tick: Math.floor((i / N) * 3650 * D), actors: [a, b], objects: [Math.floor(r() * 200)], place: Math.floor(r() * 60), tags: [], cause: r() < 0.3 && last >= 0 ? last : -1, salience: 0.3, payload: {} }); last = i; }
+for (let i = 0; i < N; i++) { const t = r() < 0.7 ? 'shop.buy' : types[Math.floor(r() * r() * types.length)]; const a = Math.floor(r() * 500), b = Math.floor(r() * 500); P.consume({ id: i, type: t, tick: Math.floor((i / N) * 3650 * D), actors: [a, b], objects: [Math.floor(r() * 200)], place: Math.floor(r() * 60), tags: [], cause: r() < 0.3 && last >= 0 ? last : -1, salience: 0.3, payload: {} }); last = i; }
 const ms = Number(process.hrtime.bigint() - T0) / 1e6;
 console.log(`perf: ${N} events in ${ms.toFixed(0)}ms (${(ms / N * 1000).toFixed(1)}us/event); arcs ${P.arcs.length}, confirmed ${P.stats().arcs}`);
 if (missing.length) { console.log('MISSING', missing.join(',')); process.exit(1); }

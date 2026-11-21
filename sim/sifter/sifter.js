@@ -60,24 +60,27 @@ export class Sifter {
     if (ev.tick - this.lastSweep > 7 * this.tpd) this.sweep(ev.tick);
   }
   _open(p, key, ev) {
-    const arc = { id: this.nextId++, kind: p.kind, scope: p.scope, key, actors: ev.actors.slice(0, 3), status: 'open', outcome: null, stage: p.stages[0].name, stageIdx: 0, start: ev.tick, last: ev.tick, beats: [], systems: new Set(), maxDepth: 0, score: 0, quiet: true, confirmed: false, sig: '', pat: p };
+    const arc = { id: this.nextId++, kind: p.kind, scope: p.scope, key, actors: ev.actors.slice(0, 3), status: 'open', outcome: null, stage: p.stages[0].name, stageIdx: 0, start: ev.tick, last: ev.tick, beats: [], systems: new Set(), maxDepth: 0, sum: 0, score: 0, quiet: true, confirmed: false, sig: '', pat: p };
     return arc;
   }
   _register(arc) { this.arcs.push(arc); for (const a of arc.actors) { let l = this.byActorIdx.get(a); if (!l) this.byActorIdx.set(a, l = []); l.push(arc); } }
   _beat(arc, ev, st, si, depth) {
     arc.beats.push({ eid: ev.id, tick: ev.tick, type: ev.type, stage: st.name, sal: ev.salience ?? 0.3, depth });
-    arc.last = ev.tick; if (si > arc.stageIdx) { arc.stageIdx = si; arc.stage = st.name; }
+    arc.sum += ev.salience ?? 0.3; arc.last = ev.tick; if (si > arc.stageIdx) { arc.stageIdx = si; arc.stage = st.name; }
     arc.systems.add(DOMAIN(ev.type)); if (depth > arc.maxDepth) arc.maxDepth = depth;
     for (const a of ev.actors || []) if (!arc.actors.includes(a) && arc.actors.length < 4) arc.actors.push(a);
     let l = this.byCause.get(ev.id); if (!l) this.byCause.set(ev.id, l = []); l.push(arc);
   }
   _score(arc) {
-    let s = 0, n = 0; for (const b of arc.beats) { s += b.sal; n++; }
-    arc.score = s + 0.4 * arc.maxDepth + 0.6 * (arc.systems.size - 1) + (arc.status === 'resolved' ? 0.5 : 0);
+    arc.score = arc.sum + 0.4 * arc.maxDepth + 0.6 * (arc.systems.size - 1) + (arc.status === 'resolved' ? 0.5 : 0) + (arc.bonus || 0);
     const was = arc.confirmed; arc.confirmed = arc.beats.length >= (arc.pat.min || 2); if (arc.confirmed && !was && !arc.registered) { arc.registered = true; this._register(arc); }
     arc.quiet = arc.score < this.quietBelow;
-    const path = []; for (const b of arc.beats) if (path[path.length - 1]?.[0] !== b.stage) path.push([b.stage, 1]); else path[path.length - 1][1]++;
-    arc.sig = `${arc.kind}:${path.map((x) => x[0]).join('>')}${arc.outcome ? '=' + arc.outcome : ''}`;
+  }
+  /** kind:stage>stage=outcome, computed on demand (stable arc signature for variety metrics). */
+  signature(arc) {
+    if (arc.parts) return arc.sig;
+    const path = []; for (const b of arc.beats) if (path[path.length - 1] !== b.stage) path.push(b.stage);
+    return `${arc.kind}:${path.join('>')}${arc.outcome ? '=' + arc.outcome : ''}`;
   }
   _close(arc, outcome) {
     if (arc.status !== 'open') return;
@@ -94,8 +97,8 @@ export class Sifter {
         if (c.needClosed !== false && o.status === 'open') continue;
         if (arc.start < o.last || arc.start - o.last > c.within * this.tpd) continue;
         this.composed.add(id);
-        const m = { kind: c.kind, scope: 'person', key: String(actor), actors: [actor], status: arc.status === 'open' ? 'open' : 'resolved', outcome: c.outcome || null, stage: 'composite', stageIdx: 0, start: o.start, last: arc.last, beats: [...o.beats, ...arc.beats].sort((x, y) => x.tick - y.tick), systems: new Set([...o.systems, ...arc.systems]), maxDepth: Math.max(o.maxDepth, arc.maxDepth), score: 0, quiet: true, confirmed: true, sig: '', pat: { min: 1 }, parts: [o.id, arc.id] };
-        m.registered = true; this._register(m); this._score(m); m.sig = `${c.kind}:${o.sig.split(':')[0]}>${arc.kind}`; m.score += 0.8; m.quiet = m.score < this.quietBelow; break;
+        const m = { kind: c.kind, scope: 'person', key: String(actor), actors: [actor], status: arc.status === 'open' ? 'open' : 'resolved', outcome: c.outcome || null, stage: 'composite', stageIdx: 0, start: o.start, last: arc.last, beats: [...o.beats, ...arc.beats].sort((x, y) => x.tick - y.tick), systems: new Set([...o.systems, ...arc.systems]), maxDepth: Math.max(o.maxDepth, arc.maxDepth), sum: 0, score: 0, quiet: true, confirmed: false, sig: '', pat: { min: 1 }, parts: [o.id, arc.id] };
+        m.registered = true; this._register(m); this._score(m); m.sig = `${c.kind}:${o.kind}>${arc.kind}`; m.sum = [...o.beats, ...arc.beats].reduce((x, b) => x + b.sal, 0); m.bonus = 0.8; this._score(m); break;
       }
     }
   }

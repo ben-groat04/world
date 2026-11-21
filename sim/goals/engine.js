@@ -40,7 +40,7 @@ export class Engine {
     this.scanHeap = new Heap(); this.stepHeap = new Heap();
     this.tmp = { wantStats: {} };
   }
-  fresh() { return { goalSeq: 1, groupSeq: 1, projSeq: 1, tplSeq: 1, ps: new Map(), goals: new Map(), groups: new Map(), projects: new Map(), fit: {}, opps: [], requests: [], inventedThisYear: 0, nPeople: 0, active: new Map(), wins: new Map(), stats: { formed: 0, completed: 0, failed: 0, abandoned: 0, steps: 0, stepOk: 0, stepFail: 0, replans: 0, transformed: 0, invented: 0, byTpl: {} }, ended: [] }; }
+  fresh() { return { goalSeq: 1, groupSeq: 1, projSeq: 1, tplSeq: 1, ps: new Map(), goals: new Map(), groups: new Map(), projects: new Map(), fit: {}, opps: [], requests: [], inventedThisYear: 0, nPeople: 0, active: new Map(), wins: new Map(), stats: { formed: 0, completed: 0, failed: 0, abandoned: 0, steps: 0, stepOk: 0, stepFail: 0, replans: 0, transformed: 0, invented: 0, byTpl: {}, out: {} }, ended: [] }; }
   addTemplate(t) {
     if (!t.gen) t.gen = { base: 0 };
     t.habit = t.habit ?? (t.gen.base >= 2.5); this.tpl.set(t.id, t); if (!this.tplList.includes(t)) this.tplList.push(t);
@@ -134,7 +134,7 @@ export class Engine {
   maxActive(f, s) { const [lo, hi] = this.lib.SCARCITY.maxActiveGoals; return Math.round(clamp(lo + (hi - lo) * (0.35 + 0.25 * f.z.C) - s.stress * 2, lo - 1, hi)); }
   _stress(s, now) { let m = 0; for (const k of this.lib.SCARCITY.stressPressures) { const v = this.press(s, k, now); if (v > m) m = v; } return m; }
   _eventPressure(p, s, ev) {
-    const now = this.world.tick; if (ev.type.startsWith('goal.') || ev.type.startsWith('group.') || ev.type.startsWith('project.') || ev.type === 'kernel.command' || ev.type === 'self.shifted') return;
+    const now = this.world.tick; if (ev.type === 'kernel.command') return;
     const seen = new Set(), keys = [ev.type]; if (ev.tags) for (const t of ev.tags) keys.push(t);
     for (const k of keys) { const rules = this.pressEv.get(k); if (!rules) continue; for (const r of rules) { if (seen.has(r)) continue; seen.add(r); const self = ev.actors[0] === p.id; if (r.who === 'self' && !self) continue; if (r.who === 'others' && self) continue; for (const [pk, v] of Object.entries(r.to)) { if (v < 0) { const c = this.press(s, pk, now); if (c > 0) this.addPress(s, pk, v * c, 0); } else this.addPress(s, pk, v * (0.8 + 0.4 * ((ev.salience || 0.3))), ev.id); } } }
   }
@@ -363,7 +363,7 @@ export class Engine {
   // ---------------- outcomes ----------------
   complete(g) {
     const w = this.world, S = this.S, t = this.tpl.get(g.tpl), p = w.people.get(g.p), s = this.ps(p), days = Math.round((w.tick - g.born) / TICKS_PER_DAY);
-    g.status = 'done'; S.stats.completed++; this._detach(g); (S.fit[t.id] ||= [0, 0])[1]++;
+    g.status = 'done'; S.stats.completed++; (S.stats.out[t.id] ||= [0, 0, 0])[0]++; this._detach(g); (S.fit[t.id] ||= [0, 0])[1]++;
     const eid = w.emit('goal.completed', { actors: [g.p], cause: g.eid, salience: t.mundane ? 0.05 : 0.25 + 0.3 * t.stakes, tags: ['success', ...(t.mundane ? [] : ['first'].slice(0, 0))], payload: { goal: g.id, tpl: t.id, want: t.want, days } });
     g.eid = eid; g.endWhy = 'done'; this.finalise(g);
     s.wins.push([t.id, w.tick]); if (s.wins.length > 4) s.wins.shift(); s.ident[t.id] = (s.ident[t.id] || 0) + 1;
@@ -382,7 +382,7 @@ export class Engine {
     const w = this.world, S = this.S, t = this.tpl.get(g.tpl), p = w.people.get(g.p); if (g.status !== 'active' && g.status !== 'deferred') return;
     g.status = status; g.endWhy = why; this._detach(g);
     if (status === 'void') { this.finalise(g); return; }
-    S.stats[status === 'failed' ? 'failed' : 'abandoned']++;
+    S.stats[status === 'failed' ? 'failed' : 'abandoned']++; (S.stats.out[t.id] ||= [0, 0, 0])[status === 'failed' ? 1 : 2]++;
     const s = p ? this.ps(p) : null;
     const eid = w.emit(status === 'failed' ? 'goal.failed' : 'goal.abandoned', { actors: [g.p], cause: g.eid, salience: t.mundane ? 0.04 : 0.15 + 0.2 * (t.stakes || 0.3), tags: ['setback'], payload: { goal: g.id, tpl: t.id, why } });
     g.eid = eid; this.finalise(g);

@@ -15,9 +15,10 @@ console.log(`world seed ${seed} pop ${w.living().length} ${years}y ${secs.toFixe
 console.log(`kinds active (sampled): ${top.length}; top: ${top.slice(0, 8).map(([k, v]) => `${k} ${(100 * v / tot).toFixed(1)}%`).join(', ')}; max share ${(100 * top[0][1] / tot).toFixed(1)}%`);
 console.log(`steps ${st.steps} ok ${(100 * st.stepOk / Math.max(1, st.steps)).toFixed(0)}% fail ${(100 * st.stepFail / Math.max(1, st.steps)).toFixed(0)}% replans ${st.replans}`);
 // outcome by kind
-const by = {}; for (const g of E.S.goals.values()) { const k = g.tpl; (by[k] ||= { done: 0, failed: 0, ab: 0 }); if (g.status === 'done') by[k].done++; else if (g.status === 'failed') by[k].failed++; else if (g.status === 'abandoned') by[k].ab++; }
-const rows = Object.entries(by).filter(([, v]) => v.done + v.failed + v.ab >= 4).sort((a, b) => (b[1].done + b[1].failed + b[1].ab) - (a[1].done + a[1].failed + a[1].ab)).slice(0, 12);
-console.log('outcomes (done/fail/aband): ' + rows.map(([k, v]) => `${k} ${v.done}/${v.failed}/${v.ab}`).join('; '));
+const rows = Object.entries(st.out).filter(([k]) => !E.tpl.get(k).mundane).sort((a, b) => (b[1][0] + b[1][1] + b[1][2]) - (a[1][0] + a[1][1] + a[1][2])).slice(0, 14);
+console.log('non-mundane outcomes done/fail/aband: ' + rows.map(([k, v]) => `${k} ${v[0]}/${v[1]}/${v[2]}`).join('; '));
+let D = 0, F2 = 0, A2 = 0, mD = 0, mT = 0; for (const [k, v] of Object.entries(st.out)) { if (E.tpl.get(k).mundane) { mD += v[0]; mT += v[0] + v[1] + v[2]; } else { D += v[0]; F2 += v[1]; A2 += v[2]; } }
+console.log(`success rate: non-mundane ${(100 * D / Math.max(1, D + F2 + A2)).toFixed(0)}% (${D + F2 + A2} ended), mundane ${(100 * mD / Math.max(1, mT)).toFixed(0)}% (${mT}); mundane share of formed ${(100 * Object.entries(st.byTpl).filter(([k]) => E.tpl.get(k).mundane).reduce((a, [, v]) => a + v, 0) / st.formed).toFixed(0)}%`);
 console.log(`groups: ${JSON.stringify(st.groups)} kinds: ${JSON.stringify(Object.entries(q.groups({ all: true })).reduce((m, [, g]) => ((m[g.kind] = (m[g.kind] || 0) + 1), m), {}))}`);
 const ev = w.events.stats; console.log(`events ${ev.emitted} cause-coverage ${(100 * w.events.causeCoverage()).toFixed(0)}% goals-types ${Object.keys(ev.byType).filter((t) => /^(goal|group|project|self)\./.test(t)).length}`);
 // life stories

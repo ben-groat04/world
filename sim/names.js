@@ -13,7 +13,7 @@ const FIXED = {
   carpenter: ['Oakheart Carpentry', 'The Plane & Chisel', 'Joiners\' Yard', 'Timberline Workshop'],
   clinic: ['Willow Clinic'], school: ['Hollowmere Schoolhouse'], temple: ['Temple of the Quiet Light'],
   townhall: ['Town Hall'], jail: ['The Watch House'], mill: ['Riverbend Mill'], park: ['Elm Green'],
-  cemetery: ['Hollowmere Rest'], plaza: ['Founders\' Square'], farm: ['Brightfield Farm', 'Meadowbrook Farm', 'Stonecrop Farm', 'Hillside Farm', 'Fallow Acres', 'Greenhollow Farm', 'Cloverleaf Farm', 'Windrow Farm'],
+  cemetery: ['Hollowmere Rest'], square: ['Founders\' Square'], farm: ['Brightfield Farm', 'Meadowbrook Farm', 'Stonecrop Farm', 'Hillside Farm', 'Fallow Acres', 'Greenhollow Farm', 'Cloverleaf Farm', 'Windrow Farm'],
 };
 const OWNER_FMT = {
   farm: (l) => `${l} Farm`, bakery: (l) => `${l}'s Bakery`, smithy: (l) => `${l} Forge`,

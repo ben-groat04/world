@@ -1,4 +1,4 @@
-// Procedural town map: river with bridges, road grid, plaza, blocks with building slots, farms/fields, forest.
+// Procedural town map: river with bridges, road grid, square, blocks with building slots, farms/fields, forest.
 import { hash2, vnoise } from './rng.js';
 
 export const T = { GRASS: 0, ROAD: 1, WATER: 2, BRIDGE: 3, TREE: 4, FIELD: 5, PLAZA: 6, BUILDING: 7, PARK: 8, GRAVE: 9, FOUNTAIN: 10 };
@@ -7,40 +7,39 @@ export const TILE_COST = new Uint8Array([13, 10, 0, 10, 0, 15, 10, 0, 12, 14, 0]
 
 // Jobs: wage per worked day, primary skill, shift [start,end] hours, service = works rest days (takes a weekday off instead)
 export const JOBS = {
-  farmer: { wage: 11, skill: 'farming', shift: [6, 15] }, farmhand: { wage: 8, skill: 'farming', shift: [6, 15] },
+  farmer: { wage: 11, skill: 'farming', shift: [6, 15] }, laborer: { wage: 8, skill: 'farming', shift: [7, 16] },
   baker: { wage: 12, skill: 'cooking', shift: [4.5, 12.5] }, smith: { wage: 14, skill: 'smithing', shift: [8, 17] },
   tavernkeeper: { wage: 13, skill: 'cooking', shift: [12, 24], service: true }, server: { wage: 8, skill: 'trade', shift: [16, 24], service: true },
   merchant: { wage: 12, skill: 'trade', shift: [8, 17], service: true },
-  physician: { wage: 22, skill: 'medicine', shift: [8, 17], service: true }, nurse: { wage: 12, skill: 'medicine', shift: [8, 17], service: true },
+  doctor: { wage: 22, skill: 'medicine', shift: [8, 17], service: true }, nurse: { wage: 12, skill: 'medicine', shift: [8, 17], service: true },
   teacher: { wage: 14, skill: 'teaching', shift: [8, 15] },
-  priest: { wage: 12, skill: 'charisma', shift: [7, 17], service: true }, acolyte: { wage: 6, skill: 'scholarship', shift: [8, 16], service: true },
-  steward: { wage: 16, skill: 'scholarship', shift: [9, 17] }, clerk: { wage: 12, skill: 'scholarship', shift: [9, 17] },
+  priest: { wage: 12, skill: 'charisma', shift: [7, 17], service: true },
+  mayor: { wage: 16, skill: 'scholarship', shift: [9, 17] }, clerk: { wage: 12, skill: 'scholarship', shift: [9, 17] },
   captain: { wage: 15, skill: 'athletics', shift: [8, 17], service: true }, guard: { wage: 12, skill: 'athletics', shift: [8, 17], service: true },
   miller: { wage: 13, skill: 'crafting', shift: [6, 15] }, innkeeper: { wage: 13, skill: 'cooking', shift: [9, 21], service: true },
-  innhand: { wage: 8, skill: 'cooking', shift: [9, 21], service: true },
   tailor: { wage: 12, skill: 'crafting', shift: [8, 17] }, carpenter: { wage: 13, skill: 'crafting', shift: [7, 16] },
   gardener: { wage: 8, skill: 'farming', shift: [8, 15] }, gravedigger: { wage: 8, skill: 'athletics', shift: [8, 14] },
 };
-// Building types. size: 'half' (5x4 slot) | 'wide' (11x4 slot) | 'block' | 'plaza'. hours = public opening [open, close] (close>24 wraps past midnight)
+// Building types. size: 'half' (5x4 slot) | 'wide' (11x4 slot) | 'block' | 'square'. hours = public opening [open, close] (close>24 wraps past midnight)
 export const BUILDING_TYPES = {
   house: { label: 'House', size: 'half', jobs: [] },
-  farm: { label: 'Farm', size: 'half', jobs: ['farmer', 'farmer', 'farmhand', 'farmhand', 'farmhand'] },
+  farm: { label: 'Farm', size: 'half', jobs: ['farmer', 'farmer', 'laborer', 'laborer', 'laborer'] },
   bakery: { label: 'Bakery', size: 'half', jobs: ['baker', 'baker', 'baker'], hours: [5, 17] },
   smithy: { label: 'Smithy', size: 'half', jobs: ['smith', 'smith'], hours: [8, 17] },
   tavern: { label: 'Tavern', size: 'wide', jobs: ['tavernkeeper', 'server', 'server'], hours: [12, 25] },
   market: { label: 'Market', size: 'wide', jobs: ['merchant', 'merchant', 'merchant'], hours: [7, 18] },
-  clinic: { label: 'Clinic', size: 'half', jobs: ['physician', 'nurse', 'nurse'], hours: [8, 18] },
+  clinic: { label: 'Clinic', size: 'half', jobs: ['doctor', 'nurse', 'nurse'], hours: [8, 18] },
   school: { label: 'School', size: 'wide', jobs: ['teacher', 'teacher', 'teacher'], hours: [8, 15] },
-  temple: { label: 'Temple', size: 'wide', jobs: ['priest', 'acolyte', 'acolyte'], hours: [6, 21] },
-  townhall: { label: 'Town Hall', size: 'wide', jobs: ['steward', 'clerk', 'clerk', 'clerk'], hours: [9, 17] },
+  temple: { label: 'Temple', size: 'wide', jobs: ['priest', 'laborer', 'laborer'], hours: [6, 21] },
+  townhall: { label: 'Town Hall', size: 'wide', jobs: ['mayor', 'clerk', 'clerk', 'clerk'], hours: [9, 17] },
   jail: { label: 'Jail', size: 'half', jobs: ['captain', 'guard', 'guard'] },
   mill: { label: 'Mill', size: 'half', jobs: ['miller', 'miller', 'miller'], hours: [6, 15] },
-  inn: { label: 'Inn', size: 'wide', jobs: ['innkeeper', 'innhand', 'innhand'] },
+  inn: { label: 'Inn', size: 'wide', jobs: ['innkeeper', 'laborer', 'laborer'] },
   tailor: { label: 'Tailor', size: 'half', jobs: ['tailor', 'tailor'], hours: [8, 17] },
   carpenter: { label: 'Carpenter', size: 'half', jobs: ['carpenter', 'carpenter', 'carpenter'], hours: [7, 16] },
   park: { label: 'Park', size: 'block', jobs: ['gardener'], open: true, hours: [5, 22] },
   cemetery: { label: 'Cemetery', size: 'block', jobs: ['gravedigger'], open: true, hours: [6, 20] },
-  plaza: { label: 'Town Square', size: 'plaza', jobs: [], open: true },
+  square: { label: 'Town Square', size: 'square', jobs: [], open: true },
 };
 export function isOpen(b, h) {
   if (!b.hours) return true;
@@ -80,7 +79,7 @@ export function generateMap(rng, opts = {}) {
   const VXE = [100, 112], HYE = [-3, 21, 45, 69, 93];
   for (const x of VXE) roadV(x, 21, 69);
 
-  // ---- plaza with fountain
+  // ---- square with fountain
   const PX0 = 44, PY0 = 41, PW = 9, PH = 9;
   for (let y = PY0; y < PY0 + PH; y++) for (let x = PX0; x < PX0 + PW; x++) tiles[idx(x, y)] = T.PLAZA;
   for (let y = 44; y <= 46; y++) for (let x = 47; x <= 49; x++) tiles[idx(x, y)] = T.FOUNTAIN;
@@ -93,7 +92,7 @@ export function generateMap(rng, opts = {}) {
     const b = {
       id: buildings.length, type, name: bt.label, x, y, w, h, door: { x: door.x, y: door.y }, doorSide: side,
       open: !!bt.open, ownerId: null, residents: [], employees: [], jobs: bt.jobs.slice(),
-      inventory: {}, capacity: type === 'house' ? 8 : bt.jobs.length, funds: 0, hours: bt.hours ? bt.hours.slice() : null, zone,
+      inventory: {}, condition: 1, capacity: type === 'house' ? 8 : bt.jobs.length, funds: 0, hours: bt.hours ? bt.hours.slice() : null, zone,
     };
     buildings.push(b);
     for (let yy = y; yy < y + h; yy++) for (let xx = x; xx < x + w; xx++) bAt[idx(xx, yy)] = b.id;
@@ -101,10 +100,10 @@ export function generateMap(rng, opts = {}) {
   };
   const solid = (b) => { for (let yy = b.y; yy < b.y + b.h; yy++) for (let xx = b.x; xx < b.x + b.w; xx++) tiles[idx(xx, yy)] = T.BUILDING; };
 
-  // plaza building (open)
-  const plaza = mk('plaza', PX0, PY0, PW, PH, { x: 48, y: 40 }, 'N', 'core');
-  plaza.spots = [];
-  for (let y = PY0; y < PY0 + PH; y++) for (let x = PX0; x < PX0 + PW; x++) if (tiles[idx(x, y)] === T.PLAZA) plaza.spots.push(idx(x, y));
+  // square building (open)
+  const square = mk('square', PX0, PY0, PW, PH, { x: 48, y: 40 }, 'N', 'core');
+  square.spots = [];
+  for (let y = PY0; y < PY0 + PH; y++) for (let x = PX0; x < PX0 + PW; x++) if (tiles[idx(x, y)] === T.PLAZA) square.spots.push(idx(x, y));
 
   // ---- blocks & slots
   const blocks = [];
@@ -156,7 +155,7 @@ export function generateMap(rng, opts = {}) {
     return best;
   };
   const core = ['core'];
-  // civic / commercial wide buildings (target distance from plaza)
+  // civic / commercial wide buildings (target distance from square)
   for (const [type, r] of [['townhall', 10], ['market', 12], ['tavern', 14], ['temple', 18], ['inn', 20], ['school', 24]]) {
     const s = choose('wide', core, (s) => Math.abs(s.dist - r) + rng.float(0, 3));
     if (s) place(type, s);
@@ -228,8 +227,8 @@ export function generateMap(rng, opts = {}) {
       }
     }
   }
-  // drop buildings whose door is not connected to the plaza
-  const mainComp = comp[idx(plaza.door.x, plaza.door.y)];
+  // drop buildings whose door is not connected to the square
+  const mainComp = comp[idx(square.door.x, square.door.y)];
   const keep = buildings.filter((b) => comp[idx(b.door.x, b.door.y)] === mainComp);
   if (keep.length !== buildings.length) {
     for (const b of buildings) if (!keep.includes(b) && !b.open) for (let yy = b.y; yy < b.y + b.h; yy++) for (let xx = b.x; xx < b.x + b.w; xx++) { tiles[idx(xx, yy)] = T.GRASS; cost[idx(xx, yy)] = TILE_COST[T.GRASS]; bAt[idx(xx, yy)] = -1; }
@@ -237,5 +236,5 @@ export function generateMap(rng, opts = {}) {
     bAt.fill(-1);
     buildings.forEach((b, i) => { b.id = i; for (let yy = b.y; yy < b.y + b.h; yy++) for (let xx = b.x; xx < b.x + b.w; xx++) bAt[idx(xx, yy)] = i; });
   }
-  return { W, H, tiles, cost, comp, bAt, buildings, riverX, plazaId: plaza.id, parkId: park.id, cemeteryId: cemetery.id, seed, center: { x: PCX, y: PCY } };
+  return { W, H, tiles, cost, comp, bAt, buildings, riverX, squareId: square.id, parkId: park.id, cemeteryId: cemetery.id, seed, center: { x: PCX, y: PCY } };
 }

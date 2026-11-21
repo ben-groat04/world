@@ -30,11 +30,13 @@ export class RNG {
     this._g = r * Math.sin(2 * Math.PI * v);
     return m + s * r * Math.cos(2 * Math.PI * v);
   }
+  // weights: array of numbers OR function(item, index) -> number
   weighted(items, weights) {
+    const w = typeof weights === 'function' ? items.map(weights) : weights;
     let tot = 0;
-    for (let i = 0; i < weights.length; i++) tot += weights[i];
+    for (let i = 0; i < w.length; i++) tot += w[i];
     let r = this.next() * tot;
-    for (let i = 0; i < items.length; i++) { r -= weights[i]; if (r <= 0) return items[i]; }
+    for (let i = 0; i < items.length; i++) { r -= w[i]; if (r <= 0) return items[i]; }
     return items[items.length - 1];
   }
   shuffle(arr) {

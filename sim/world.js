@@ -241,6 +241,7 @@ export class World {
     if (!ca) return;
     const def = ca._d;
     stepNeeds(this, p); // settle needs under the ending action's effects
+    if (ca.status === 1 && def.onTick !== undefined && this.tick > ca.tt) { const dt = this.tick - ca.tt; ca.tt = this.tick; def.onTick(this, p, ca._b, ca, dt); }
     if (ca.status === 1 && def.onEnd) def.onEnd(this, p, ca._b, ca);
     this.emit('actionEnd', { person: p, action: ca });
     p.currentAction = null; p.lastAction = ca.id; p.wake = 0;
@@ -266,7 +267,7 @@ export class World {
     this.brain.prepare(p);
     if (def.onStart && def.onStart(this, p, b, ca) === false) { p.currentAction = null; p.cooldown[def.id] = this.tick + 12; return false; }
     const dur = ca.duration ?? (def.duration ? def.duration(this, p, b, ca) : 6);
-    ca.status = 1; ca.untilTick = this.tick + Math.max(1, dur);
+    ca.status = 1; ca.tt = this.tick; ca.untilTick = this.tick + Math.max(1, dur);
     p.nextThink = this.tick + 10 + (p.id % 5); p.wake = 0;
     p.path = null;
     p.thought = this._thought(p, ca, true);
@@ -368,8 +369,7 @@ export class World {
       if (ca.status === 0) { if (this._walk(p)) this._arrive(p); continue; }
       // doing
       const def = ca._d;
-      if (def.onTick !== undefined) def.onTick(this, p, ca._b, ca);
-      if (!p.alive) continue;
+      if (def.onTick !== undefined) { const dt = tick - ca.tt; ca.tt = tick; def.onTick(this, p, ca._b, ca, dt); if (!p.alive) continue; }
       if (tick >= ca.untilTick) {
         this.endAction(p);
         this.brain.decide(p);
@@ -377,8 +377,9 @@ export class World {
         if (na && na.status === 0) { if (this._walk(p)) this._arrive(p); }
       } else {
         if (def.interruptible && !ca.forced && tick >= p.nextThink) { p.nextThink = tick + THINK_EVERY; this.brain.decide(p); }
-        if (ca === p.currentAction && def.onTick === undefined) {
+        if (ca === p.currentAction) {
           let wk = p.needsTick + NEEDS_PERIOD; if (ca.untilTick < wk) wk = ca.untilTick;
+          if (def.onTick !== undefined) { const nt = tick + (def.tickEvery || 1); if (nt < wk) wk = nt; }
           if (def.interruptible && !ca.forced && p.nextThink < wk) wk = p.nextThink;
           p.wake = wk;
         }

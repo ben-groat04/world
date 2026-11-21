@@ -1,6 +1,7 @@
 // Core utility-AI actions. Contract shape: {id,label,score(world,p),where?(world,p),duration(world,p,b),onStart,onTick,onEnd,thought?,interruptible}
 // Core actions stash their chosen target in world.brain.ctx.target / .why / .data from score() instead of defining where().
 // Extra fields: perTick {need:delta} applied each tick while acting; decay {need:multiplier} scales need decay while acting;
+// tickEvery (default 1): onTick(w,p,b,ca,dt) is called every N ticks with dt = ticks since its last call (do per-tick effects x dt);
 // minAge/maxAge gate; stickiness bonus when it is already the current action.
 import { isOpen } from './map.js';
 import { ticksUntilHour } from './time.js';
@@ -114,7 +115,7 @@ export const CORE_ACTIONS = [
       return s;
     },
     duration(w, p) { const c = w.brain.ctx; return Math.max(1, Math.min(ticksUntilHour(w.tick, c.shiftEnd % 24), 24)); },
-    onTick(w, p) { p.workedTicks++; },
+    tickEvery: 4, onTick(w, p, b, ca, dt) { p.workedTicks += dt; },
   },
   {
     id: 'school', label: 'in lessons', interruptible: false, perTick: { purpose: 0.011, social: 0.005, fun: 0.002 }, minAge: 6, maxAge: 15.99,
@@ -177,7 +178,7 @@ export const CORE_ACTIONS = [
       return s0;
     },
     duration: (w) => w.rng.int(8, 14),
-    onTick(w, p, b) { if (b) p.needs.social = Math.min(1, p.needs.social + 0.004 * Math.min(4, b.occupants.size - 1)); },
+    tickEvery: 4, onTick(w, p, b, ca, dt) { if (b) p.needs.social = Math.min(1, p.needs.social + 0.004 * dt * Math.min(4, b.occupants.size - 1)); },
   },
   {
     id: 'relax_park', label: 'relaxing in the park', interruptible: true, minAge: 6, perTick: { fun: 0.016, comfort: 0.003, social: 0.003 },
@@ -209,7 +210,7 @@ export const CORE_ACTIONS = [
     },
     duration: (w) => w.rng.int(8, 16),
     onStart(w, p, b) { const pr = w.settings.prices.drink; if (p.money < pr) return false; p.money -= pr; b.funds += pr; },
-    onTick(w, p, b) { if (b) p.needs.social = Math.min(1, p.needs.social + 0.004 * Math.min(4, b.occupants.size - 1)); },
+    tickEvery: 4, onTick(w, p, b, ca, dt) { if (b) p.needs.social = Math.min(1, p.needs.social + 0.004 * dt * Math.min(4, b.occupants.size - 1)); },
   },
   {
     id: 'pray', label: 'praying', minAge: 5, perTick: { purpose: 0.01, comfort: 0.004, fun: 0.002 },
@@ -252,7 +253,7 @@ export const CORE_ACTIONS = [
       return 10 + 30 * (1 - p.needs.comfort) + 8 * (1 - p.needs.fun) * (1.2 - p.personality.extraversion) + (c.age < 6 ? 40 : 0) + (p.locationId === p.homeId ? 3 : 0);
     },
     duration: (w) => w.rng.int(6, 12),
-    onTick(w, p, b) { if (b) p.needs.social = Math.min(1, p.needs.social + 0.003 * Math.min(2, b.occupants.size - 1)); },
+    tickEvery: 4, onTick(w, p, b, ca, dt) { if (b) p.needs.social = Math.min(1, p.needs.social + 0.003 * dt * Math.min(2, b.occupants.size - 1)); },
   },
   {
     id: 'chores', label: 'doing chores', interruptible: true, minAge: 12, perTick: { purpose: 0.011, comfort: 0.002, fun: 0.002 },

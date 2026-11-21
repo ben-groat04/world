@@ -73,6 +73,10 @@ export function createPerson(world, o = {}) {
     romance: { partnerId: null, status: null, sinceTick: 0 }, memories: [], rumors: [], pregnant: null, jailedUntil: 0,
     currentAction: null, thought: '', lastAction: null, cooldown: {}, nextThink: 0, wake: 0, lastMeal: -rng.int(6, 40), starve: 0, workedTicks: 0, cell: -1, needsTick: world.tick - (world.nextPersonId % 6), seg: [], segTick: -1, speed: 6,
     schedule: { wake, bed, offDay: rng.int(0, 5) }, ext: {}, bubble: null,
+    // fields that systems add lazily; declared here (undefined) so every Person has ONE stable hidden class (big V8 speedup)
+    _talkCount: undefined, _lastTalk: undefined, _thoughtTick: undefined, _nextTalk: undefined, cliqueId: undefined, _hang: undefined, _pregRumor: undefined,
+    debt: undefined, creditorId: undefined, maidenName: undefined, lastWorkId: undefined, graveId: undefined, widowed: undefined, homemaker: undefined,
+    emigrated: undefined, emigratedTick: undefined, emigratedTo: undefined, _speechPending: undefined, _visitFriendId: undefined, drunk: undefined, _dyingOfMother: undefined, _playerNotified: undefined, _nm: undefined,
   };
   p.needRate = makeNeedRates(personality);
   return p;

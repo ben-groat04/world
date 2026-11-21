@@ -197,6 +197,7 @@ export class Engine {
   tieName(o) { if (typeof o === 'number') return this.fn(o); if (!this.metro) { this.metro = new Map((this.world.lf?.metro || []).map((m) => [m.id, m])); } const m = this.metro.get(o); return m ? m.name.split(' ')[0] : 'family'; }
   // ---------------- goal creation ----------------
   spawn(p, s, f, t, o = {}) {
+    if (!o.force && this.isPlayer(p) && !this.opts.autoPlayer) return null; // the player's person only gets goals the player adopts (player plugin)
     const w = this.world, now = w.tick, S = this.S, r = this.rng('spawn', p.id, now, hash32(t.id));
     const active = s.goals.filter((x) => S.goals.get(x).status === 'active');
     const intensity = clamp(0.25 + 0.45 * (o.dsum ?? 0.5) + 0.35 * (o.maxP ?? 0) + (o.int ?? 0) + r.gauss(0, 0.06), 0.1, 1);

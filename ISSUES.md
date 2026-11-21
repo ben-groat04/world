@@ -55,3 +55,6 @@ students 2% vs 10% and employed 64-69% vs 55% (day-1 tables + student turnover; 
 (65+ 24-33% vs ~7%, held-out); friendship-fade counter reads 0; online-formed ties 4% vs 11%; night-shift workers do not always sleep after a shift;
 forum replies are tone-pooled, not context matched; housing moveTogether/leaveHome/separate still use life's fallbacks; ethnicity x religion joint sampling not changed;
 tests: goals/material/social determinism tests partly stale (3 pre-existing failures: goals world kinds, snapshot-resume determinism, home-unit listing).
+## UX / clutter (next free slot) — user priority
+- Mobile-first information hierarchy: glanceable essentials, progressive disclosure, collapsible cards ordered by
+  relevance, fewer tabs, map decluttering (labels/badges only when zoomed/relevant), notable-only notifications.

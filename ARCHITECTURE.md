@@ -1,4 +1,41 @@
-# Hollowmere architecture (organized, final API)
+# Larkfield architecture (Wave 0 kernel + legacy medieval engine behind adapters)
+Binding vocabulary: CONTRACT.md (kernel interfaces are section "Kernel contract 1.0"). Roadmap: ROADMAP.md 3.2-3.6. All sim code is DOM-free ES modules, deterministic: no `Math.random`, `Date.now`, `new Date()` or `performance.now` in `sim/` or `content/` (grep gate in `npm run check`).
+
+## Kernel (sim/kernel/*, sim/model/*, sim/index.js)
+| file | what | public API |
+|---|---|---|
+| types.js | JSDoc typedefs, `CONTRACT_VERSION`, `TIER`, `CLOCKS` | import for types only |
+| rng.js | sub-stream RNG | `world.rngFor(name)` persistent named stream (snapshotted); `world.rngFor(name, ...keys)` STATELESS stream = pure function of (seed, name, keys); `hash32`, `subRng` |
+| events.js, event-types.js | event bus + registry + indices + causal query | `world.emit(type,{actors,objects,place,tags,cause,salience,payload})->id`, `world.on`, `world.events.query/chain/get`, `world.registerEventType`. Handlers run at end of step (after people/systems/clocks), never re-entrantly, in registration order. Unknown types throw when `strictEvents`. Old payload-style events stay synchronous (`LEGACY_EVENT_TYPES`); every old `chronicle.add` also emits `legacy.chron`. |
+| scheduler.js | agenda mode timing wheel | see "Scheduling" |
+| commands.js | command queue + log + replay | `world.queueCommand({tick?,actor,name,args})`, `world.registerCommand(name,fn)`, `world.cmd(name,args)` (internal, not logged), `replay(makeWorld, log, ticks)`; `world.intervene()` goes through it |
+| plugin.js | plugin loader + contract mode | `loadPlugins`, `validatePlugin`, `readonly`; `new World({plugins:[...], contractMode:true})` freezes query results; `world.sys.<name>.query.*` is the only cross-system read path |
+| affordances.js, ledger.js, text.js, lod.js | stable stubs (real engines drop in behind the same API) | `world.afford.for/apply/registerVerb`, `world.ledger.transfer/balance/total`, `world.text.render/add/addGrammar/setEngine`, `world.lod.tierOf/setTier/observe` |
+| indices.js | maintained indices | `world.index.byVenue/byHousehold/byEmployer/byOrg/byTier/byStage/needsAttention/counts` (live collections: do not mutate) |
+| schema.js, pack.js | pack validator + loader | `validatePack(pack)`, `assertPack`, `registerSection(name, schema)`, `t.*` schema DSL, `loadPack('larkfield')`, `legacyPack()` |
+| legacy.js | adapters for the unowned medieval systems | venue-session social pass, `S.at` view, scoring-modifier guards (`legacyModGuard`) |
+| sim/model/index.js | person field registry | `declareField(name,{owner,type,doc})`, `checkPerson(p)` (lists undeclared keys; test asserts legacy people are clean) |
+| sim/index.js | entry | `createWorld(opts)`, `createWorldFromPack(id, opts)`, re-exports kernel |
+| sim/snapshot.js | snapshot/restore/fork + `stateHash` | `world.snapshot()`, `World.restore(snap, pack)`, `world.fork(salt?)` (salt re-seeds every stream so the fork diverges), per-day hashes via `new World({hashDaily:true}).hashLog` |
+
+Multiple `World` instances per process are supported by the kernel (no module-level mutable state). The legacy systems keep their world in a per-module slot, so step ONE legacy world at a time (restore/fork are fine; interleaving steps of two worlds is also fine as long as each `World` constructor/restore call completes before stepping, because systems re-bind in `init`/`afterLoad`).
+
+## Scheduling (agenda mode, default; `new World({sched:'agenda'|'legacy'})`)
+Nobody is ticked. Each living person sits in one timing-wheel bucket (`p.wake`, WHEEL=512 ticks + far list), buckets run in ascending person id. A person runs code only when (a) their activity ends, (b) an interrupt fires: shift/school/bed time and need thresholds are scheduled ANALYTICALLY from decay rates (`Brain.interruptAt`), (c) a staggered needs refresh every `NEEDS_PERIOD_AGENDA` (24) ticks, (d) an analytic walk completes (walking is `lazy`: arrival tick computed from the route; positions are materialised only when somebody reads them via `living()/peopleNear()/_syncWalkers()`). `world.sched.plan(p)` must be called after changing `p.currentAction` outside the person loop (the engine does). Moodlet expiry uses an hourly queue instead of a scan; systems' `onDay` hooks see everyone settled (`_settle`) at day start.
+`sched.mode='legacy'` keeps the old every-tick people loop for A/B and regression.
+Encounters: the legacy social system's per-tick bucket-everyone pass is replaced (kernel/legacy.js) by a venue-session pass over the maintained occupancy sets: only venues with >= 2 awake people are touched; the conversation logic is the system's own.
+Scoring modifiers: `brain.addModifier(fn, {defs, person})` — optional guards so a modifier is only called for the defs/people it can change (exact mirror of its own early-outs; perf hint only).
+
+## Performance (pop 222, one core; `node tools/perf.js`, `npm run check` gate)
+Baseline at hand-off: legacy every-tick loop 2,100-2,700 ticks/s (brain ~35%, social ~27%). Now: agenda mode 3,000-3,600 ticks/s (machine noisy; use best-of), ~10 decisions per person-day (legacy loop: same count but polled every tick for need/interrupts). Where the time goes now (per tick, ms): brain decide 0.16 (scoring 26 actions x ~10 decisions/person-day is irreducible without changing content), legacy social 0.11 (converse 12 us x 2.2/person-day + per-venue rolls), other legacy systems 0.06, scheduler+walk+needs 0.06. Kernel overhead (scheduler, events, indices, commands) is < 5%.
+The 10,000 ticks/s target is NOT reachable with the legacy systems: they were written per-person-per-day and are being replaced (ROADMAP W1) by event-driven systems that must follow these rules: no `living()` scans in hot paths, use `world.index.*`, slow variables on `clocks.day/week` with staggered buckets, encounters via venue sessions, cached per-tick lookups, and no allocation in scorers.
+Perf budget for new systems: kernel + all systems <= 0.1 ms/tick average at pop 500 (10k ticks/s); `tools/perf.js --pop 500 --prof` shows the per-system split.
+
+## Verify
+`npm run check` (~50 s): grep gate, schema (legacy + content packs), contract tests (`tests/kernel.test.js`, node:test), determinism (same seed twice, snapshot-resume == straight run, command-log replay, fork; `--full` = 3 sim-years), perf gate (`--perf-gate N` / `$PERF_GATE`), 3-seed report (only known balance FAILs allowed). Individual: `node tools/determinism.js`, `node tools/perf.js --gate 3000`, `node tools/report.js --seeds 1,2,3 --years 2`.
+
+---
+# Legacy medieval engine (still running; replaced system by system in Wave 1)
 Binding vocabulary: CONTRACT.md. All sim code is DOM-free ES modules, deterministic (only `world.rng` / `world.rngFor('name')`, never Math.random). ONE World per thread/process (systems keep a module-level `W`); parallel runs use worker_threads.
 
 ## Layout / where each concern lives

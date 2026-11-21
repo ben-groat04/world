@@ -608,17 +608,18 @@ export function generateMap(pack, seed = 1, opts = {}) {
     const prior = (u) => A[M.buildings[u.buildingId].archetype].tenure || { private_rent: 1 };
     for (const u of dw) { const pr = prior(u); u.tenure = rng.weighted(TEN, TEN.map((t) => pr[t] || 0)); }
     const counts = () => { const c = {}; for (const t of TEN) c[t] = 0; for (const u of dw) c[u.tenure]++; return c; };
-    let stuck = 0;
-    for (let it = 0; it < 4000 && stuck < 40; it++) {
-      const c = counts(); let sur = null, def = null;
-      for (const t of TEN) { const d = c[t] - target[t]; if (!sur || d > c[sur] - target[sur]) sur = t; if (!def || d < c[def] - target[def]) def = t; }
-      if (c[sur] - target[sur] <= 0 && target[def] - c[def] <= 0) break;
-      if (c[sur] - target[sur] < 1 && target[def] - c[def] < 1) break;
-      const cand = dw.filter((u) => u.tenure === sur && (prior(u)[def] || 0) > 0);
-      if (!cand.length) { stuck++; // relax: any unit in an archetype where `def` has non-zero prior may switch, else give up this pair
-        const cand2 = dw.filter((u) => u.tenure === sur && ['terraced', 'semi', 'convertedOrSharedHouse'].includes(A[M.buildings[u.buildingId].archetype].accommodationType) && def !== 'council' && def !== 'housing_assoc' && def !== 'shared_ownership');
-        if (cand2.length) { rng.pick(cand2).tenure = def; } continue; }
-      const u = rng.weighted(cand, cand.map((q) => prior(q)[def])); u.tenure = def;
+    for (let it = 0; it < 4000; it++) {
+      const c = counts(); const surs = TEN.filter((t) => c[t] > target[t]).sort((x, y) => (c[y] - target[y]) - (c[x] - target[x]));
+      const defs = TEN.filter((t) => c[t] < target[t]).sort((x, y) => (target[y] - c[y]) - (target[x] - c[x]));
+      if (!surs.length || !defs.length) break;
+      let done = false;
+      for (const def of defs) { for (const sur of surs) { const cand = dw.filter((u) => u.tenure === sur && (prior(u)[def] || 0) > 0); if (cand.length) { rng.weighted(cand, cand.map((q) => prior(q)[def])).tenure = def; done = true; break; } } if (done) break; }
+      if (!done) { // no archetype prior allows the switch: relax to houses (any tenure) / any unit, so the calibration margin still holds
+        const sur = surs[0], def = defs[0];
+        const houses = dw.filter((u) => u.tenure === sur && ['terraced', 'semi', 'convertedOrSharedHouse', 'detached'].includes(A[M.buildings[u.buildingId].archetype].accommodationType));
+        const pool = houses.length && !['shared_ownership'].includes(def) ? houses : dw.filter((u) => u.tenure === sur);
+        if (!pool.length) break; rng.pick(pool).tenure = def;
+      }
     }
     // vacancy ~3.5% (turnover voids), landlords, rent / value
     const privateUnits = dw.filter((u) => u.tenure === 'private_rent');
@@ -771,6 +772,19 @@ export function generateMap(pack, seed = 1, opts = {}) {
     M.props.benches = M.props.benches.map((b) => ({ x: b.x, y: b.y, w: 2, h: 1 }));
   }
   // =========================================================== finish graph (pre-transform), checks
+  // connectivity repair: any component left detached from the main street graph (bus-stop gates, park paths, pavilion) is stitched to its nearest main-component node
+  {
+    const N = g.nodes.length, par = Int32Array.from({ length: N }, (_, i) => i); const find = (a) => { while (par[a] !== a) { par[a] = par[par[a]]; a = par[a]; } return a; };
+    for (const e of g.edges.values()) par[find(e.a)] = find(e.b);
+    const sizes = new Map(); for (let i = 0; i < N; i++) { const r = find(i); sizes.set(r, (sizes.get(r) || 0) + 1); }
+    const main = [...sizes.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    const mainNodes = g.nodes.filter((n) => find(n.id) === main && n.kind !== 'door');
+    for (const r of [...sizes.keys()]) {
+      if (r === main) continue; let best = null;
+      for (const n of g.nodes) { if (find(n.id) !== r) continue; for (const m of mainNodes) { const d = Math.abs(n.x - m.x) + Math.abs(n.y - m.y); if (!best || d < best.d) best = { d, a: n.id, b: m.id }; } }
+      if (best) { g.edge(best.a, best.b, 'link', best.d * 2 + 6); par[find(best.a)] = find(best.b); (M.meta.repairs ||= []).push(best.d); }
+    }
+  }
   const warnings = [];
   const graph0 = g.finish();
   const { comp, count } = graph0.components();

@@ -1,4 +1,20 @@
-# Interface contract (binding for ALL agents, including the core engine)
+# Kernel contract 1.0 (Wave 0, frozen: extend, never rename; versioned by `CONTRACT_VERSION` in sim/kernel/types.js)
+Full signatures: sim/kernel/types.js (JSDoc) and ARCHITECTURE.md (kernel table). Summary of what packages may rely on:
+1. **Events**: `world.emit('domain.verb', {actors, objects, place, tags, cause, salience, payload}) -> id`; register types with `world.registerEventType(type, {payload:{field:'number'|'string'|'boolean'|'object'|'any'}, template})` (new-style types MUST be registered; tests run with `strictEvents`). `world.on(type, fn(ev, world))` fires after the emitting step, never inside emit. `world.events.query({actor, place, type, since, until, cause, minSalience, limit})` (newest first), `world.events.chain(id)`. Payloads hold data only; text is rendered at read time by `world.text.render(ev)`.
+2. **Plugin** (`sim/systems/<x>/index.js` default export): `{name, version, deps, init(world, pack), clocks:{hour,day,week,month,year}, on:{Type:fn}, events:{emits,listens}, affordances(person, ctx), query:{...}, commands:{name:fn(world,args,cmd)}, serialize/deserialize(state,version)/migrate(from,state)}`. Pass via `new World({plugins:[...], pack})`. Never touch another system's state: use `world.sys.<other>.query.fn()` (read-only; frozen in `contractMode`) or events/commands.
+3. **Commands**: all player/god/policy actions: `world.queueCommand({tick?, actor:'god'|'player'|'policy'|id, name, args})` (args JSON-able). Logged in `world.commands.log`; replay = seed + pack + log. Cross-system writes: `world.cmd(name,args)` to the owning system's command.
+4. **Snapshot**: `world.snapshot()` (JSON-able), `World.restore(snap, pack)`, `world.fork(salt?)`. Plugin state travels through `serialize/deserialize`. Anything not in `world.stateKeys`/plugin state/kernel services is derived and must be rebuildable (`afterLoad`).
+5. **RNG**: never `Math.random`. `world.rng` (legacy shared), `world.rngFor('name')` persistent stream per system, `world.rngFor('name', day, id)` stateless derived stream (use for per-entity/per-day rolls; adding a roll elsewhere never shifts it).
+6. **Ledger**: `world.ledger.transfer(from, to, amount, reason, causeEvent)`; accounts: person id, `'b:<id>'`, `'council'`, `'metropolis'`, `'void'`; conserved (`ledger.total()`).
+7. **Indices**: `world.index.byVenue/byHousehold/byEmployer/byOrg/byTier/byStage/needsAttention/counts()`; no `world.living()` scans in per-tick code.
+8. **Scheduling**: do not poll; set `p.currentAction` only through `world.startAction/endAction` (or call `world.sched.plan(p)` after); schedule slow work with plugin `clocks`. `sched.mode='agenda'` is the default.
+9. **Person fields**: declare new top-level person keys with `declareField(name,{owner})` (sim/model); only the owner writes them.
+10. **Packs**: `content/<id>/index.js` default export validated by `validatePack` (required: id, version, contractVersion (major must match), calibration, names, jobs, buildings); add section schemas with `registerSection`.
+11. **Text/LOD/Affordances**: stubs with stable API (`world.text`, `world.lod`, `world.afford`); real engines attach via `setEngine` / providers.
+12. **Gates**: `npm run check` must pass before handing work back.
+
+---
+# Legacy medieval contract (still valid for sim/systems/*)
 Everything here is the minimum shared vocabulary. Extend freely with NEW fields; never rename these.
 
 ## Time

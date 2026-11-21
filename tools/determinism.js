@@ -23,7 +23,7 @@ export function run(o = {}) {
   const d = World.restore(snap, null); d.run(ticks - d.tick);
   add('snapshot-resume equals straight run', a.hashLog.join() === d.hashLog.join() && a.stateHash() === d.stateHash(), firstDiff(a.hashLog, d.hashLog));
 
-  const cmds = [[20, 'weather'], [45, 'epidemic']];
+  const cmds = [[Math.floor(days * 0.3)], [Math.floor(days * 0.6)]];
   const mkCmd = () => { const w = mk(); w.registerCommand('test.bump', (ww, args) => { for (const p of ww.living()) if (p.id % args.mod === 0) p.money += args.amt; }); return w; };
   const e = mkCmd();
   for (const [day] of cmds) { e.run(day * TICKS_PER_DAY - e.tick); e.queueCommand({ actor: 'god', name: 'test.bump', args: { mod: 3, amt: day } }); }

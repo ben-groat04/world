@@ -5,6 +5,8 @@ export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&am
 const pct = (v) => Math.round(v * 100);
 const gbp = (n) => '£' + Math.round(n).toLocaleString('en-GB');
 const lc = (s) => String(s || '').replace(/_/g, ' ');
+/** Human durations: "3 days", "5 weeks", "8 months", "2 years 3 months". */
+export const dur = (days) => { days = Math.max(0, Math.round(days)); if (days < 2) return days <= 0 ? 'today' : '1 day'; if (days < 14) return days + ' days'; if (days < 60) return Math.round(days / 7) + ' weeks'; if (days < 730) { const m = Math.round(days / 30.4); return m + ' months'; } const y = Math.floor(days / 365.25), m = Math.round((days - y * 365.25) / 30.4); return y + ' years' + (m && m < 12 ? ' ' + m + ' months' : ''); };
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
 export const SEG_COL = [32, 205, 330, 265, 175, 120, 15, 48, 290, 90, 0];
 const segColor = (i) => `hsl(${SEG_COL[i] ?? 200},62%,52%)`;
@@ -36,7 +38,7 @@ export function mountFeed(el, store) {
   el.addEventListener('click', (e) => { const c = e.target.closest('.news'); if (c && !e.target.closest('a')) c.classList.toggle('open'); });
   function news(it) {
     const ic = KIND_ICON[it.kind] || '●';
-    return `<article class="card news k-${it.kind}${it.conseq ? ' conseq' : ''}${it.sal >= 0.5 ? ' big' : ''}"><div class="ni">${ic}</div><div class="nb"><div class="nh">${esc(it.head)}</div>${it.body ? `<p>${esc(it.body)}</p>` : it.line && it.line !== it.head ? `<p>${esc(it.line)}</p>` : ''}<div class="nm"><time>${esc(it.date)}</time>${it.conseq ? '<em>consequence</em>' : ''}${it.place ? ' · ' + bl(it.place.id, it.place.name) : ''}${(it.ppl || []).slice(0, 3).map((p) => ' ' + pl(p.id, p.name)).join('')}</div></div></article>`;
+    return `<article class="card news k-${it.kind}${it.conseq ? ' conseq' : ''}${it.sal >= 0.5 ? ' big' : ''}"><div class="ni">${ic}</div><div class="nb"><div class="nh">${esc(it.head)}</div>${it.because ? `<div class="because">↳ because of: ${esc(it.because)}</div>` : ''}${it.body ? `<p>${esc(it.body)}</p>` : it.line && it.line !== it.head ? `<p>${esc(it.line)}</p>` : ''}<div class="nm"><time>${esc(it.date)}</time>${it.conseq ? '<em>consequence</em>' : ''}${it.place ? ' · ' + bl(it.place.id, it.place.name) : ''}${(it.ppl || []).slice(0, 3).map((p) => ' ' + pl(p.id, p.name)).join('')}</div></div></article>`;
   }
   function renderLocal() {
     const items = store.s.news.slice(-80).reverse();
@@ -53,9 +55,12 @@ export function mountFeed(el, store) {
     return P.map((p) => `<article class="card post"><div class="ph"><span class="av" style="background:hsl(${(p.au.id * 47) % 360},45%,40%)">${esc((p.au.name || '?')[0])}</span><div>${person(p.au)}<small>${esc(p.date)}${p.reach ? ` · reached ${p.reach}` : ''}</small></div></div><p>${esc(p.text)}</p></article>`).join('');
   }
   function renderStories() {
-    const A = store.s.arcs; if (!A.length) return '<p class="empty">Quiet week. No storyline is running strongly: just ordinary lives. Speed up and check back.</p>';
-    return A.map((a) => `<article class="card arc"><div class="ah"><span class="tag">${esc(lc(a.kind))}</span><span class="st ${a.status}">${a.status === 'open' ? 'ongoing' : esc(a.outcome || a.status)}</span><small>${a.days} days · ${a.n} beats</small></div><div class="who">${a.actors.map(person).join(', ')}</div><ol class="beats">${a.beats.map((b) => `<li><time>${esc(b.date)}</time> ${esc(b.text)}</li>`).join('')}</ol></article>`).join('');
+    const A = store.s.arcs, F = store.s.follow; if (!A.length) return '<p class="empty">No story is running strongly yet: just ordinary lives. Speed up and check back in a few game-weeks.</p>';
+    const who = F ? `<article class="card follow"><div class="fh">Who to follow</div><div class="fw">${pl(F.id, F.name)}<small>${esc(F.kind)}</small></div><p>${esc(F.why)}</p><button class="pb" data-follow="${F.id}">◎ Follow ${esc(F.name.split(' ')[0])}</button></article>` : '';
+    return who + A.map((a) => `<article class="card arc k-${esc(a.kind)}"><div class="ah"><span class="tag">${esc(a.label)}</span><span class="st ${a.status}">${a.status === 'open' ? 'ongoing' : esc(a.outcome || a.status)}</span><small>${dur(a.since)}${a.idle > 14 ? ' · quiet for ' + dur(a.idle) : ''}</small></div><div class="hl">${storyHead(a)}</div><ol class="beats">${a.beats.slice(-4).map((b) => `<li><time>${esc(b.date)}</time> ${esc(b.text)}</li>`).join('')}</ol></article>`).join('');
   }
+  // headline with the protagonists' names turned into links ("Priya & Tom: got together, ...")
+  const storyHead = (a) => { const i = a.headline.indexOf(': '); let names = esc(a.headline.slice(0, i < 0 ? 0 : i)); const rest = esc(a.headline.slice(i < 0 ? 0 : i)); for (const x of a.actors) { const f = esc(x.name.split(' ')[0]); names = names.replace(new RegExp('\\b' + f + '\\b'), `<a class="pl" data-pid="${x.id}">${f}</a>`); } return names + rest; };
   function render() { const top = body.scrollTop; body.innerHTML = mode === 'local' ? renderLocal() : mode === 'forum' ? renderForum() : mode === 'posts' ? renderPosts() : renderStories(); body.scrollTop = top; }
   let dirty = false; const mark = () => { if (!dirty) { dirty = true; setTimeout(() => { dirty = false; render(); }, 400); } };
   store.on('news', mark); store.on('posts', mark); store.on('arcs', mark); store.on('ready', mark); render();
@@ -74,18 +79,19 @@ export function mountInspect(el, store, hooks) {
     const m = d.money, pr = m.pressure || {}, hs = d.health.status || {}, men = d.health.mental || {}, wb = d.health.wellbeing || {};
     const bur = m.burden || 0; const stress = pr.stress ?? 0;
     const job = d.jobInfo, wpl = d.workplace;
-    const workLine = job && job.occ && d.activity === 'employed' ? `${esc(cap(lc(job.occ)))} · ${esc(lc(job.contract))} · ${job.hours} h/wk · ${gbp(job.pay)}/yr${wpl ? `<br><small>${wpl.offmap ? 'Works in the city (' + esc(wpl.name) + ')' : 'at ' + bl(wpl.id, wpl.name)}${wpl.mode ? ' · ' + esc(lc(wpl.mode)) + (wpl.mins ? ', ' + wpl.mins + ' min' : '') : ''}${wpl.hybrid ? ' · hybrid' : ''}</small>` : ''}${job.job2 ? '<br><small>+ second job</small>' : ''}` : `${esc(cap(lc(d.activity)))}${d.job && lc(d.job).toLowerCase() !== lc(d.activity).toLowerCase() ? ' · ' + esc(d.job) : ''}`;
+    const workLine = job && job.occ && d.activity === 'employed' ? `${esc(d.occLabel || cap(lc(job.occ)))} · ${esc(lc(job.contract))} · ${job.hours} h/wk · ${gbp(job.pay)}/yr${wpl ? `<br><small>${wpl.offmap ? 'Works in the city (' + esc(wpl.name) + ')' : 'at ' + bl(wpl.id, wpl.name)}${wpl.mode ? ' · ' + esc(lc(wpl.mode)) + (wpl.mins ? ', ' + wpl.mins + ' min' : '') : ''}${wpl.hybrid ? ' · hybrid' : ''}</small>` : ''}${job.job2 ? '<br><small>+ second job</small>' : ''}` : `${esc(cap(lc(d.activity)))}${d.job && lc(d.job).toLowerCase() !== lc(d.activity).toLowerCase() ? ' · ' + esc(d.job) : ''}`;
     const unit = d.unit;
     const moodW = d.health.mood > 0.35 ? 'upbeat' : d.health.mood > 0.05 ? 'okay' : d.health.mood > -0.3 ? 'flat' : 'low', strW = stress < 0.3 ? 'coping' : stress < 0.6 ? 'strained' : 'under pressure';
     const stCls = (bad) => (bad ? 'stt bad' : 'stt');
-    const workHint = job && job.occ && d.activity === 'employed' ? esc(cap(lc(job.occ))) : esc(cap(lc(d.activity)));
+    const workHint = job && job.occ && d.activity === 'employed' ? esc(d.occLabel || cap(lc(job.occ))) : esc(cap(lc(d.activity)));
     const lifeRows = d.life.slice().reverse();
     const goals = d.goals.length ? d.goals.map((g) => `<div class="goal"><div class="gt">${esc(cap(g.phrase))}<small>${esc(g.status)}${g.secret ? ' · secret' : ''}</small></div>${g.step ? `<div class="gs"><span>${esc(g.step.label)}</span><span>${g.step.i}/${g.step.n}</span></div>${bar(g.step.n ? g.step.i / g.step.n : 0, 'var(--good)')}` : ''}</div>`).join('') : '<p class="mute">No active goals right now.</p>';
     const cond = (hs.conditions || []).length ? hs.conditions.map((c) => `<span class="pill">${esc(lc(c))}</span>`).join('') : '';
     return `
     <button class="back" data-back>&lsaquo; People</button>
-    <div class="phead"><canvas id="pcv" width="192" height="192"></canvas><div class="pn"><h2>${esc(d.name)}</h2><div class="sub">${d.age} · ${esc(d.segLabel)}</div><div class="sub dim">${d.home ? bl(d.home.id, d.home.name) : ''}${d.yearsAtAddress != null ? ` · ${d.yearsAtAddress} yrs here` : ''}</div>
+    <div class="phead"><canvas id="pcv" width="192" height="192"></canvas><div class="pn"><h2>${esc(d.name)}</h2><div class="sub">${d.age} · ${esc(d.segLabel)}</div><div class="sub dim">${d.home ? bl(d.home.id, d.home.name) : ''}${d.yearsAtAddress != null ? ` · ${dur(d.yearsAtAddress * 365.25)} here` : ''}</div>
       <div class="pbtns"><button id="pfollow" class="${store.s.following ? 'on' : ''}">${store.s.following ? '◉ Following' : '◎ Follow'}</button><button id="pshow">Show on map</button><button id="pplay" title="Play as this person">Play as</button></div></div></div>
+    ${d.story ? `<div class="mystory"><b>${esc(d.story.label)}</b> ${esc(d.story.headline.replace(/^[^:]*: /, ''))}${d.story.status === 'open' ? '' : ' <i>(' + esc(d.story.outcome || d.story.status) + ')</i>'}</div>` : ''}
     ${d.alive ? '' : `<div class="dead">Died${d.cause ? ': ' + esc(d.cause) : ''}</div>`}
     <div class="now ${d.offmap ? 'away' : ''}"><div class="act">${d.offmap ? '✈ Away in the city' : d.loc ? '⌂ At ' + bl(d.loc.id, d.loc.name) : '→ Out and about'}${d.now ? ` · ${esc(lc(d.now.act))}` : ''}</div><div class="thought">“${esc(d.thought || '…')}”</div><div class="states"><span class="${stCls(moodW === 'low')}">Mood ${moodW}</span><span class="${stCls(stress >= 0.6)}">Money ${strW}</span>${wb.lonely ? '<span class="stt bad">Lonely</span>' : ''}${(hs.conditions || []).length ? `<span class="stt bad">${esc(lc(hs.conditions[0]))}</span>` : ''}</div></div>
     ${sec('home', 'Home &amp; household', `<div class="kv"><span>Household</span><span>${d.household.members.length ? d.household.members.map((x) => pl(x.id, x.name)).join(', ') : 'lives alone'}</span></div>${unit ? `<div class="kv"><span>Home</span><span>${esc(lc(unit.tenure))}, ${unit.bedrooms} bed${unit.bedrooms === 1 ? '' : 's'}${unit.rent ? ' · ' + gbp(unit.rent) + '/mo' : ''}</span></div>${unit.landlord ? `<div class="kv"><span>Landlord</span><span>${pl(unit.landlord.id, unit.landlord.name)}</span></div>` : ''}<div class="kv"><span>Condition</span><span>${pct(unit.cond)}%${unit.damp ? ' · damp' : ''}${unit.notice ? ' · <b class="bad">notice served</b>' : ''}</span></div>` : ''}`, false, `${d.household.members.length ? 'with ' + d.household.members.length : 'lives alone'}${unit ? ' · ' + esc(lc(unit.tenure)) : ''}`)}
@@ -101,7 +107,7 @@ export function mountInspect(el, store, hooks) {
     ${sec('about', 'About', `<div class="kv"><span>Born</span><span>${esc(d.born || '?')}${d.religion && d.religion !== 'No religion' ? ' · ' + esc(d.religion) : ''}</span></div><div class="kv"><span>Education</span><span>${esc(lc(d.edu))}</span></div><div class="kv"><span>Interests</span><span>${esc((d.interests || []).join(', ') || '—')}</span></div>${d.pets && (d.pets.dogs || d.pets.cats) ? `<div class="kv"><span>Pets</span><span>${d.pets.dogs ? d.pets.dogs + ' dog' + (d.pets.dogs > 1 ? 's' : '') : ''} ${d.pets.cats ? d.pets.cats + ' cat' : ''}</span></div>` : ''}`, false)}`;
   }
   function place(b) {
-    const P = (a, k) => a.length ? a.map((p) => `<a class="pl chip" data-pid="${p.id}">${esc(p.name)}<small>${esc((p.job || '').slice(0, 24))}</small></a>`).join('') : `<span class="mute">${k}</span>`;
+    const P = (a, k) => a.length ? a.map((p) => `<a class="pl chip" data-pid="${p.id}">${esc(p.name)}<small>${esc(p.job || '')}</small></a>`).join('') : `<span class="mute">${k}</span>`;
     const rentBand = b.units && b.units.length ? (() => { const r = b.units.filter((u) => u.rent).map((u) => u.rent); return r.length ? `${gbp(Math.min(...r))}${Math.max(...r) !== Math.min(...r) ? '–' + gbp(Math.max(...r)) : ''}/mo` : null; })() : null;
     return `<button class="back" data-back>&lsaquo; People</button><div class="bhead"><h2>${esc(b.name)}</h2><div class="sub">${esc(lc(b.tpl || b.arch || b.type))}${b.cat ? ' · ' + esc(lc(b.cat)) : ''}${b.year ? ' · built ' + b.year : ''}</div><div class="sub dim">${esc(b.address)}</div></div>
       ${b.hours != null ? `<div class="now"><div class="act"><b class="${b.open ? 'good' : 'bad'}">${b.open ? 'Open now' : 'Closed'}</b> · ${esc(b.hours)}</div></div>` : ''}

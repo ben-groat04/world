@@ -26,7 +26,7 @@ test('larkfield world: goals form, plans run, events carry causes, kinds are var
   assert.ok(st.failed + st.abandoned > 20, 'failures happen');
   const kinds = Object.keys(w.goals.S.stats.byTpl); assert.ok(kinds.length >= 25, 'kinds formed ' + kinds.length);
   const ak = q.activeKinds(), tot = Object.values(ak).reduce((a, b) => a + b, 0), mx = Math.max(...Object.values(ak)); assert.ok(mx / tot < 0.15, 'max kind share ' + mx / tot);
-  assert.ok(w.events.causeCoverage() > 0.6);
+  { let n = 0, c = 0; for (const e of w.events.log.values()) if (e.type.startsWith('goal.')) { n++; if (e.cause) c++; } assert.ok(n > 100 && c / n > 0.6, 'goal events carry causes ' + (c / Math.max(1, n)).toFixed(2)); } // whole-log coverage is not meaningful: root observations (social, comms, births, arrivals) legitimately have no cause
   const lines = w.people.get([...w.goals.S.ps.keys()].find((id) => q.goalsOf(id).length)) && null; // smoke
   let seen = 0; for (const id of w.goals.S.ps.keys()) { for (const l of q.describe(id)) { assert.match(l, /^Goal: .+/); seen++; } if (seen > 20) break; } assert.ok(seen > 5);
   const mund = Object.entries(w.goals.S.stats.byTpl).reduce((a, [k, v]) => a + (w.goals.tpl.get(k).ordinary || w.goals.tpl.get(k).mundane ? v : 0), 0); assert.ok(mund / st.formed > 0.7, 'mostly mundane ' + mund / st.formed);

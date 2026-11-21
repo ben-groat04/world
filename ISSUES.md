@@ -67,3 +67,18 @@ tests: goals/material/social determinism tests partly stale (3 pre-existing fail
 - Housing arrivals: export a proper makePerson so player creation uses the real generator (exact age).
 - NPCs never ask the player anything naturally (0 requests in 60 days for a taken-over resident); earlier cards were
   injected. NPC goals should target the player like any other tie (favours, invites, borrowing, dates).
+
+
+---
+## Status after round 3 (activity / life course / loneliness / housing commands)
+FIXED: day-1 activity by age (+ bug: students without a job became 'unemployed'); one graduation mechanism with course lengths and September ends; student lets and end-of-tenancy for graduates;
+night-shift workers sleep after the shift; friendship-fade counter (now ~4/100/yr); forum replies keyed to post topic (`feedreply.<topic>.<tone>`); housing.moveTogether / leaveHome / separate implemented
+in housing and life's fallbacks removed; money.budget() returns household AND personal figures (inspector mismatch was household income next to personal net); kernel weather on the real calendar;
+goals test (cause coverage now measured on goal.* events); ethnicity x religion documented as joint + household-correlated for arrivals; parents-alive uses cohort survival.
+REMAINING / FOR OTHERS:
+- UI (ui/host.js `weatherInfo`): delete the legacy 4x28 remap, `w.weather` is now real-calendar ({type,temp,regime}); inspector should show `budget.personNetMonth` next to household `budget.income`.
+- Student share: day-1 ~12-13% (census 9.8%), settles ~2-4% after 2-3 y. The map has few student-let units (7 of 259), 16-17s and local 18-year-olds who go to university are only ~4/yr in a 550-person
+  neighbourhood, and young adults leave faster than they arrive; a real university area would need more student housing (purpose-built blocks) in the map generator.
+- Employed share drifts up to ~65% (students leave, arrivals are working-age); retired/ageing mix keeps it from falling.
+- Loneliness (held-out): the age profile improved once double counting was removed, but overall prevalence is dominated by newcomers (arrivals have ~1/3 of settled residents' ties); coordinate with the social/newcomer work, then re-fit `loneThr`.
+- Perf 5-8k ticks/s (target 15k) unchanged.

@@ -51,7 +51,7 @@ const T = {
   'health.accident': (s, o, p) => `${s} had an accident: ${lc(p.kind)} (${lc(p.severity)})`,
   'health.episode': (s, o, p) => `${s} began an episode of ${lc(p.kind)}`,
   'health.substance': (s, o, p) => `${s}: ${lc(p.what)} ${lc(p.change)}`,
-  'health.ill': (s, o, p) => `${s} fell ill with ${lc(p.name)}`,
+  'health.ill': (s, o, p) => (/heat/.test(p.name || '') ? `${s} was taken ill in the heat` : `${s} fell ill with ${lc(p.name)}`),
   'health.treatment': (s, o, p) => `${s} sought help: ${lc(p.what)}`,
   'health.recovered': (s, o, p) => `${s} recovered from ${lc(p.condition)}`,
   'money.windfall': (s, o, p) => `${s} came into ${money(p.amount)} (${lc(p.source)})`,
@@ -100,10 +100,25 @@ const T = {
   'housing.bought': (s, o, p) => `${s} bought a home for ${money(p.price)}`,
   'legacy.chron': (s) => `${s} …`,
 };
-export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school'];
-const MIN_SAL = { 'life.funeral': 0.35, 'life.school': 0.3, 'civic.complaint': 0.1, 'money.arrears': 0.45, 'housing.rent_rise': 0.2, 'life.caring_start': 0.4, 'goal.invented': 0.3, 'labour.second_job': 0.25 };
+export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.ill', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school'];
+const MIN_SAL = { 'health.ill': 0.35, 'life.funeral': 0.35, 'life.school': 0.3, 'civic.complaint': 0.1, 'money.arrears': 0.45, 'housing.rent_rise': 0.2, 'life.caring_start': 0.4, 'goal.invented': 0.3, 'labour.second_job': 0.25 };
 const MAP = { 'labour.hired': 'work.hired', 'labour.job_lost': 'work.fired', 'labour.promoted': 'work.promoted', 'housing.moved_in': 'life.move_in', 'housing.moved_out': 'life.move_out', 'housing.notice_served': 'home.eviction', 'housing.eviction': 'home.eviction', 'housing.rent_rise': 'home.rent_rise', 'life.divorce': 'life.breakup' };
 const view = (w, p) => (p ? { firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(w.ageOf(p)), segment: p.ext?.pop?.seg, mood: ((p.mood || 0) + 1) / 2, job: p.job } : null);
+// Plain-English payload for the text grammar: where from/to, why they moved, who employs them, what the job is called.
+const WHERE = { outside: 'elsewhere in the UK', local: 'elsewhere in the area', metropolis: 'the city centre', suburbs: 'the suburbs', elsewhere: 'somewhere else in the city', sofa_surfing_then_elsewhere: 'a friend\'s sofa for now' };
+const WHY = { job: ['a new job', 'a job offer', 'work'], afford: ['rent they could no longer manage', 'the rent going up', 'money getting tight'], space: ['needing more space', 'a bigger place', 'a spare room for the kids'], partner: ['moving in with a partner', 'a partner', 'a relationship'], notice: ['a notice to leave', 'the landlord selling up', 'a letter from the landlord'],
+  social_allocation: ['a council offer', 'a housing association offer'], chosen: ['a change of scene', 'wanting a change', 'a better flat'], study: ['a course', 'university'], lifecycle: ['a new stage of life', 'downsizing', 'the family growing'], independence: ['wanting a place of their own', 'independence'], separation: ['a split', 'a separation'], flatmate_rotation: ['a flatmate swapping round', 'the house changing hands'], arrival: ['a new job and a lower rent', 'a lower rent', 'a new start', 'a fresh start', 'a friend nearby', 'family close by'] };
+const EMP = { city_centre_offices: ['an office in the city centre', 'a city-centre firm', 'a small agency in town'], business_park: ['a firm out at the business park', 'an operations team at the business park'], industrial_estate: ['a firm on the industrial estate', 'a workshop on the estate'], teaching_hospital: ['the teaching hospital', 'the hospital'], secondary_school: ['a secondary school', 'a school across town'], university: ['the university'], home: ['a firm that lets them work from home', 'themselves, from the spare room'], city_centre_retail_leisure: ['a shop in town', 'a restaurant in town', 'a bar in the centre'], other_neighbourhood: ['a firm across town', 'a place in the next neighbourhood'], retail_park: ['a store at the retail park'], logistics_park: ['a distribution centre', 'a warehouse on the ring road'], airport: ['the airport'] };
+const hsh = (n) => { let x = (n | 0) * 2654435761 >>> 0; x ^= x >>> 15; return x >>> 0; };
+const pickBy = (arr, n) => arr[hsh(n) % arr.length];
+const roleLabel = (w, id) => { const o = (w.pack && w.pack.jobs || []).find((j) => j.id === id); const t = String(o ? o.label : lc(id)).replace(/\s*\([^)]*\)?/g, '').replace(/ \/ /g, '/').trim(); return /^[A-Z]{2,}/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1); };
+function humanPayload(w, ev) {
+  const pl = ev.payload || {}, out = {}; if (pl.occ) { out.role = roleLabel(w, pl.occ); const o = (w.pack.jobs || []).find((j) => j.id === pl.occ); const venue = ev.place != null ? w.buildings.get(ev.place) : null;
+    out.employer = venue && venue.name ? venue.name : o ? pickBy(EMP[o.dest || o.where] || ['a local employer'], ev.id) : 'a local employer'; }
+  if (pl.from != null) out.from = WHERE[pl.from] || pl.from; if (pl.to != null) out.to = WHERE[pl.to] || pl.to;
+  if (pl.reason) out.why = pickBy(WHY[pl.reason] || WHY.chosen, ev.id); else if (ev.type === 'housing.moved_in') out.why = pickBy(WHY.arrival, ev.id);
+  return out;
+}
 const DEFAULTS = { employer: 'a local employer', role: 'new role', biz: 'a local business', kind: 'business', to: 'elsewhere in the city', from: 'elsewhere', years: 'a few', amount: 900, pct: 5, weight: 7 };
 
 export function describeEvent(w, ev, text, viewer = null) {
@@ -120,9 +135,9 @@ export function newsFor(w, text, ev, host) {
   const d = describeEvent(w, ev, text); const a = ev.actors || [];
   const ppl = a.slice(0, 4).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean);
   let head = d.line, body = null;
-  const key = MAP[ev.type] || ev.type;
+  const key = ev.type === 'health.ill' && /heat/.test(ev.payload?.name || '') ? 'health.heat' : MAP[ev.type] || ev.type;
   if (text.has && text.has('headline:' + key)) {
-    const ctx = { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, role: lc(ev.payload?.occ) || undefined, employer: DEFAULTS.employer, biz: ev.payload?.name || DEFAULTS.biz }, date: w.calendar.dateOf(ev.tick), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
+    const ctx = { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), biz: ev.payload?.name || DEFAULTS.biz }, date: w.calendar.dateOf(ev.tick), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
     try {
       const e2 = { ...ev, type: key }; const h = text.render(e2, ctx, w);
       if (h && !/[{}#\[]/.test(h)) { head = h; const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (b && !/[{}#\[]|Details are still/.test(b)) body = b; }
@@ -130,4 +145,11 @@ export function newsFor(w, text, ev, host) {
   }
   const place = ev.place != null ? w.buildings.get(ev.place) : null;
   return { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind: ev.type.split('.')[0], head, body, line: d.line, ppl, sal: ev.salience, place: place ? { id: place.id, name: place.name } : null };
+}
+
+const ACT = { home_family: 'Home & family', other_inactive: 'Not working', unemployed: 'Looking for work', student: 'Student', retired: 'Retired', long_term_sick: 'Long-term sick', employed: 'Working', sick: 'Long-term sick', carer: 'Carer' };
+/** A job label that fits a list row: drop the bracketed detail and keep the first two parts ("Retail / sales assistant (city centre)" -> "Retail / sales assistant"). */
+export function shortJob(label) {
+  const s = String(label || ''); if (ACT[s]) return ACT[s]; let t = s.replace(/\s*\([^)]*\)?/g, '').trim(); const parts = t.split(/\s*\/\s*/); if (parts.length > 2) t = parts.slice(0, 2).join(' / ');
+  return t ? t[0].toUpperCase() + t.slice(1) : '';
 }

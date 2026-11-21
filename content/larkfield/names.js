@@ -137,6 +137,9 @@ export const ARAB_OTHER_ALIAS = 'other'; // 'arab_other' parent in a Mixed mix r
 
 // Religion conditional on origin group (shares of "stated" religion mix), nudged so the whole population matches calibration.religion when weighted by group share.
 // These are DESIGN priors for the founding generator, which should rebalance to calibration.religion. Keys: No religion, Christian, Muslim, Hindu, Sikh, Buddhist, Jewish, Other.
+// Religion conditional on ethnic group = the joint distribution (ONS Census 2021 RM031 'Ethnic group by religion', England & Wales; rounded, urban-skewed: e.g. Indian ~49% Hindu / ~21% Sikh /
+// ~15% Muslim, Pakistani & Bangladeshi >90% Muslim, Black African ~60% Christian / ~30% Muslim, Chinese ~55% no religion / ~15% Buddhist). Sampling is ethnicity first, then religion given
+// ethnicity (and sub-origin where it differs sharply), then household correlation (children/partners take a parent's/partner's) -- never independent draws.
 export const RELIGION_BY_GROUP = {
   white_british: { 'No religion': 0.5, Christian: 0.44, Muslim: 0.004, Hindu: 0.002, Sikh: 0.002, Buddhist: 0.007, Jewish: 0.003, Other: 0.04 },
   other_white: { 'No religion': 0.32, Christian: 0.55, Muslim: 0.05, Hindu: 0.002, Sikh: 0.001, Buddhist: 0.01, Jewish: 0.015, Other: 0.05 },

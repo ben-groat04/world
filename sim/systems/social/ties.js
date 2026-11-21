@@ -116,9 +116,9 @@ export function maintain(w, S, p, r) {
   relayer(ps); ps.sk = 0;
   // loneliness: wanted contact vs the support actually received (partner/household count)
   const hh = q.hh != null ? w.lf.households[q.hh] : null, live = hh ? hh.members.length - 1 : 0;
-  // need for company: highest in the young (network still forming, Luhmann & Hawkley 2016), falling in later life as people prune to fewer, closer ties and expect less
-  // (socioemotional selectivity, Carstensen 1999): loneliness is the gap between wanted and received contact, so older people with the same network feel it less
-  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : age >= 65 ? -0.1 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
+  // need for company: highest in the young (network still forming, Luhmann & Hawkley 2016); no extra need in old age (the earlier +0.1 over 78 had no support:
+  // age gradients in loneliness disappear once widowhood, health and contact are controlled, Victor et al. 2005)
+  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
   // A partner / housemates are ALREADY tie-layer-1 members counted in `supply` (and in `ctc` through ~6 face-to-face contacts a week); only the extra value of
   // someone being at home (company, availability) is added here. Earlier version added household (0.14 each) + partner (0.3) on top, triple-counting the
   // partner, which made every older person living alone 'lonely' despite a full network (ELSA/ONS: loneliness tracks contact quality and widowhood, not household size alone).

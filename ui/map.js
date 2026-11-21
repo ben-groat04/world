@@ -43,7 +43,9 @@ export class MapView {
   viewCy() { return (this.h - this.inset) / 2; }
   toScreen(x, y) { return [(x - this.cam.x) * this.cam.z + this.w / 2, (y - this.cam.y) * this.cam.z + this.viewCy()]; }
   toTile(sx, sy) { return [(sx - this.w / 2) / this.cam.z + this.cam.x, (sy - this.viewCy()) / this.cam.z + this.cam.y]; }
-  clampCam() { const m = this.map; if (!m) return; const hw = this.w / 2 / this.cam.z, hh = this.viewCy() / this.cam.z; this.cam.x = clamp(this.cam.x, Math.min(hw * 0.4, m.w / 2), Math.max(m.w - hw * 0.4, m.w / 2)); this.cam.y = clamp(this.cam.y, Math.min(hh * 0.4, m.h / 2), Math.max(m.h - hh * 0.4, m.h / 2)); }
+  // Keep the map edge at (or just inside) the screen edge: no dark void above/beside the neighbourhood. If the map is smaller than the view on an axis, centre it.
+  clampCam() { const m = this.map; if (!m) return; const hw = this.w / 2 / this.cam.z, hh = this.viewCy() / this.cam.z, mg = 2;
+    this.cam.x = hw * 2 >= m.w + 2 * mg ? m.w / 2 : clamp(this.cam.x, hw - mg, m.w - hw + mg); this.cam.y = hh * 2 >= m.h + 2 * mg ? m.h / 2 : clamp(this.cam.y, hh - mg, m.h - hh + mg); }
   pan(dx, dy) { this.cam.x -= dx / this.cam.z; this.cam.y -= dy / this.cam.z; this.goal = null; this.clampCam(); }
   zoomAt(sx, sy, f) { const [tx, ty] = this.toTile(sx, sy); this.cam.z = clamp(this.cam.z * f, this.minZ, this.maxZ); this.cam.x = tx - (sx - this.w / 2) / this.cam.z; this.cam.y = ty - (sy - this.viewCy()) / this.cam.z; this.clampCam(); }
   zoomBy(f) { this.zoomAt(this.w / 2, this.viewCy(), f); }

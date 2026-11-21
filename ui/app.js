@@ -119,6 +119,7 @@ store.on('follow', (on) => { view.follow = on ? store.s.selected : null; followB
 followBtn.addEventListener('click', () => store.follow());
 document.addEventListener('click', (e) => {
   if (e.target.closest('#pplay') && store.s.selected != null) { play.take(store.s.selected); return; }
+  const fo = e.target.closest('[data-follow]'); if (fo) { selectPerson(+fo.dataset.follow); setTimeout(() => store.follow(true), 400); return; }
   const p = e.target.closest('[data-pid]'); if (p && p.dataset.pid && !p.closest('#ticker')) { selectPerson(+p.dataset.pid); return; }
   const b = e.target.closest('[data-bid]'); if (b) selectBuilding(+b.dataset.bid);
 });

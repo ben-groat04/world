@@ -23,7 +23,7 @@ export class Store {
       case 'speed': s.tier = m.tier; s.tps = m.tps; this.emit('speed', m.tier); break;
       case 'news': if (m.replace) s.news = []; for (const it of m.items) s.news.push(it); if (s.news.length > 800) s.news.splice(0, s.news.length - 800); this.emit('news', m.items); break;
       case 'posts': s.posts = m.posts; s.postSource = m.source; this.emit('posts', m.posts); break;
-      case 'arcs': s.arcs = m.arcs; s.arcsQuiet = m.quiet; s.arcStats = m.stats; this.emit('arcs', m.arcs); break;
+      case 'arcs': s.arcs = m.arcs; s.follow = m.follow; s.arcsQuiet = m.quiet; s.arcStats = m.stats; this.emit('arcs', m.arcs); break;
       case 'stats': for (const x of m.samples) s.series.push(x); s.stats = m.stats; this.emit('stats', s.series); break;
       case 'detail': if (m.p && m.p.id === s.selected) { s.detail = m.p; this.emit('detail', m.p); } break;
       case 'building': s.bdetail = m.b; this.emit('building', m.b); break;

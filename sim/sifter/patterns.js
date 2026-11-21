@@ -1,30 +1,61 @@
-// Declarative storyline patterns. Matchers are event types (wildcards 'life.*') or 'tag:<tag>'; patterns tolerate other packs' naming by also matching tags.
-// window = days of silence before an arc lapses. min = beats needed to count as a confirmed arc. Add patterns freely; no code changes elsewhere.
-const NEG = ['work.fired', 'home.eviction', 'money.debt', 'health.diagnosis', 'life.breakup', 'biz.close', 'tag:setback'];
-const POS = ['work.hired', 'work.promoted', 'money.windfall', 'biz.open', 'life.graduate', 'school.result', 'tag:success'];
+// Declarative storyline patterns, written against the event types Larkfield actually emits (checked on real 2-year logs, seed 1).
+// Matchers are event types (wildcards 'life.*') or 'tag:<tag>'. window = days of silence before an arc lapses. min = beats needed to count as a confirmed arc.
+// scope: 'pair' (two actors, order-free), 'person' (first actor; allActors = every actor up to 3 gets the arc), 'object', 'place'.
+const BIG = (ev) => (ev.salience ?? 0) >= 0.2; // mundane goals (the weekly shop, a haircut) are emitted at 0.05 and never become storylines
 export const PATTERNS = [
-  { kind: 'courtship', scope: 'pair', window: 200, min: 2, stages: [{ name: 'meet', m: ['social.friendship', 'social.flirt', 'tag:flirt'] }, { name: 'dating', m: ['life.couple', 'social.date', 'tag:romance'], repeat: true }, { name: 'commit', m: ['life.engaged', 'life.marriage', 'life.cohabit', 'home.move_together'], terminal: true, outcome: 'committed' }] },
-  { kind: 'romance', scope: 'pair', window: 600, min: 2, stages: [{ name: 'together', m: ['life.couple'] }, { name: 'bond', m: ['life.cohabit', 'life.engaged', 'life.marriage', 'life.birth', 'home.move_together'], repeat: true }, { name: 'end', m: ['life.breakup', 'life.divorce', 'life.death'], terminal: true, outcome: 'ended' }] },
-  { kind: 'breakup', scope: 'pair', window: 90, min: 2, stages: [{ name: 'rupture', m: ['life.breakup', 'life.divorce'] }, { name: 'fallout', m: ['social.fallout', 'home.flatmate_leave', 'life.move_out', 'money.dispute'], repeat: true }, { name: 'settled', m: ['social.reconcile', 'life.couple'], terminal: true, outcome: 'settled' }] },
-  { kind: 'rivalry', scope: 'pair', window: 400, min: 3, stages: [{ name: 'spark', m: ['social.fallout', 'crime.antisocial', 'tag:conflict'] }, { name: 'escalation', m: ['social.fallout', 'social.insult', 'crime.antisocial', 'civic.complaint', 'tag:conflict'], repeat: true }, { name: 'truce', m: ['social.reconcile'], terminal: true, outcome: 'reconciled' }] },
-  { kind: 'feud', scope: 'pair', window: 700, min: 5, stages: [{ name: 'spark', m: ['social.fallout', 'tag:conflict'] }, { name: 'escalation', m: ['social.fallout', 'social.insult', 'crime.*', 'civic.complaint', 'tag:conflict'], repeat: true }] },
-  { kind: 'revenge', scope: 'pair', window: 500, min: 2, stages: [{ name: 'wrong', m: ['crime.*', 'social.betray', 'social.fallout', 'work.fired', 'tag:harm'] }, { name: 'retaliation', m: ['crime.*', 'social.fallout', 'social.rumour', 'tag:harm'], dir: 'reverse', terminal: true, outcome: 'avenged' }] },
-  { kind: 'rise', scope: 'person', window: 500, min: 3, stages: [{ name: 'step', m: POS, repeat: true }], compose: [{ kind: 'redemption', after: 'fall', then: 'rise', within: 700, outcome: 'redeemed' }, { kind: 'comeback', after: 'jobloss', then: 'rise', within: 500, outcome: 'recovered' }] },
-  { kind: 'fall', scope: 'person', window: 400, min: 3, stages: [{ name: 'setback', m: NEG, repeat: true }, { name: 'bottom', m: ['life.death', 'crime.arrest', 'health.crisis'], terminal: true, outcome: 'bottomed' }] },
-  { kind: 'jobloss', scope: 'person', window: 400, min: 2, stages: [{ name: 'loss', m: ['work.fired', 'work.redundant', 'work.quit'] }, { name: 'strain', m: ['money.debt', 'home.rent_rise', 'social.fallout', 'health.diagnosis'], repeat: true }, { name: 'recovery', m: ['work.hired', 'work.promoted'], terminal: true, outcome: 'recovered' }] },
-  { kind: 'debt_spiral', scope: 'person', window: 300, min: 3, stages: [{ name: 'debt', m: ['money.debt', 'home.rent_rise'], repeat: true }, { name: 'crisis', m: ['home.eviction', 'money.bankruptcy', 'crime.theft'], terminal: true, outcome: 'crisis' }] },
-  { kind: 'eviction_chain', scope: 'person', window: 200, min: 3, stages: [{ name: 'notice', m: ['home.eviction'] }, { name: 'scramble', m: ['life.move_out', 'money.debt', 'home.flatmate_join', 'life.move_in'], repeat: true }, { name: 'rehoused', m: ['life.move_in', 'home.bought'], terminal: true, outcome: 'rehoused' }] },
-  { kind: 'scandal', scope: 'person', window: 250, min: 3, stages: [{ name: 'secret', m: ['social.secret', 'crime.*', 'tag:secret'] }, { name: 'spread', m: ['social.rumour', 'tag:gossip'], repeat: true }, { name: 'revealed', m: ['social.scandal', 'civic.scandal', 'crime.arrest'], terminal: true, outcome: 'exposed' }] },
-  { kind: 'underdog', scope: 'person', window: 600, min: 3, stages: [{ name: 'against', m: ['work.fired', 'biz.close', 'school.fail', 'tag:setback'] }, { name: 'effort', m: ['school.result', 'work.hired', 'biz.open', 'civic.campaign'], repeat: true }, { name: 'win', m: ['work.promoted', 'money.windfall', 'civic.win', 'tag:success'], terminal: true, outcome: 'triumph' }] },
-  { kind: 'coming_of_age', scope: 'person', window: 900, min: 4, stages: [{ name: 'first', m: ['school.result', 'life.graduate', 'work.hired', 'life.move_out', 'life.couple', 'tag:first'], repeat: true, guard: (ev) => (ev.payload?.age ?? 18) <= 26 }] },
-  { kind: 'found_family', scope: 'object', window: 500, min: 4, stages: [{ name: 'gather', m: ['home.flatmate_join', 'social.friendship'] }, { name: 'bond', m: ['social.friendship', 'social.reconcile', 'social.kindness', 'tag:support'], repeat: true }] },
-  { kind: 'flatshare_saga', scope: 'object', window: 400, min: 4, stages: [{ name: 'move_in', m: ['home.flatmate_join'], repeat: true }, { name: 'friction', m: ['social.fallout', 'home.rent_rise', 'money.dispute', 'home.flatmate_leave'], repeat: true }] },
-  { kind: 'business_saga', scope: 'object', window: 700, min: 3, stages: [{ name: 'open', m: ['biz.open'] }, { name: 'trade', m: ['biz.*', 'money.debt', 'money.windfall', 'civic.campaign'], repeat: true }, { name: 'close', m: ['biz.close'], terminal: true, outcome: 'closed' }] },
-  { kind: 'newcomer', scope: 'person', window: 400, min: 3, stages: [{ name: 'arrive', m: ['life.move_in', 'tag:newcomer'] }, { name: 'settle', m: ['social.friendship', 'work.hired', 'civic.campaign', 'social.kindness', 'life.couple'], repeat: true }, { name: 'leave', m: ['life.move_out'], terminal: true, outcome: 'left' }] },
-  { kind: 'isolation_rescue', scope: 'person', window: 400, min: 2, stages: [{ name: 'isolated', m: ['social.isolation', 'tag:lonely', 'life.death'] }, { name: 'rescued', m: ['social.kindness', 'social.friendship', 'civic.campaign', 'tag:support'], terminal: true, outcome: 'rescued' }] },
-  { kind: 'bereavement', scope: 'person', window: 500, min: 3, allActors: true, stages: [{ name: 'death', m: ['life.death'] }, { name: 'aftermath', m: ['health.diagnosis', 'work.quit', 'life.move_out', 'money.debt', 'social.kindness', 'life.move_in'], repeat: true }] },
-  { kind: 'moving_on', scope: 'person', allActors: true, window: 300, min: 2, stages: [{ name: 'ended', m: ['life.breakup', 'life.divorce'] }, { name: 'new_start', m: ['life.move_out', 'life.move_in', 'work.hired', 'life.couple'], repeat: true, terminal: false }] },
-  { kind: 'neighbourhood_campaign', scope: 'place', window: 300, min: 3, stages: [{ name: 'launch', m: ['civic.campaign'] }, { name: 'rally', m: ['civic.*', 'social.kindness'], repeat: true }] },
-  { kind: 'windfall', scope: 'person', window: 200, min: 2, stages: [{ name: 'windfall', m: ['money.windfall'] }, { name: 'spend', m: ['life.move_in', 'home.bought', 'biz.open', 'money.debt', 'social.fallout'], repeat: true }] },
+  { kind: 'romance', scope: 'person', allActors: true, window: 500, min: 2, stages: [
+    { name: 'together', m: ['life.couple', 'social.flirt'] },
+    { name: 'deepen', m: ['life.cohabit', 'life.engaged', 'life.pregnant', 'life.marriage', 'life.birth'], repeat: true },
+    { name: 'end', m: ['life.breakup', 'life.divorce'], terminal: true, outcome: 'ended' }] },
+  { kind: 'breakup', scope: 'person', allActors: true, window: 120, min: 2, stages: [
+    { name: 'rupture', m: ['life.breakup', 'life.divorce'] },
+    { name: 'fallout', m: ['housing.moved_out', 'life.move_out', 'social.fallout', 'money.arrears', 'health.episode', 'life.leave_home'], repeat: true },
+    { name: 'new_start', m: ['life.couple', 'housing.moved_in', 'life.move_in', 'labour.hired'], terminal: true, outcome: 'moved on' }] },
+  { kind: 'new_family', scope: 'person', allActors: true, window: 400, min: 2, stages: [
+    { name: 'expecting', m: ['life.pregnant', 'life.birth'] },
+    { name: 'adjusting', m: ['life.birth', 'money.cost_pressure', 'labour.quit', 'labour.went_inactive', 'housing.overcrowded', 'housing.moved_out', 'life.caring_start'], repeat: true }] },
+  { kind: 'job_loss', scope: 'person', window: 300, min: 2, stages: [
+    { name: 'loss', m: ['labour.job_lost', 'labour.quit', 'labour.firm_closed'] },
+    { name: 'strain', m: ['money.arrears', 'money.debt_spiral', 'money.cost_pressure', 'housing.rent_rise', 'housing.notice_served', 'health.episode', 'labour.applied', 'money.benefit_claim'], repeat: true },
+    { name: 'recovery', m: ['labour.hired', 'labour.promoted'], terminal: true, outcome: 'back at work' }] },
+  { kind: 'money_squeeze', scope: 'person', allActors: true, window: 200, span: 400, min: 3, stages: [
+    { name: 'squeeze', m: ['housing.rent_rise', 'money.cost_pressure', 'money.arrears'] },
+    { name: 'strain', m: ['money.arrears', 'money.debt_spiral', 'money.benefit_claim', 'labour.second_job', 'social.fallout', 'health.episode', 'money.cost_pressure'], repeat: true },
+    { name: 'out', m: ['housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.moved_out'], terminal: true, outcome: 'forced to move' },
+    { name: 'clear', m: ['money.arrears_cleared'], terminal: true, outcome: 'got back on top of it' }] },
+  { kind: 'newcomer', scope: 'person', allActors: true, window: 120, span: 180, min: 3, stages: [
+    { name: 'arrive', m: ['housing.moved_in', 'life.move_in'] },
+    { name: 'settle', m: ['social.acquaint', 'social.friendship', 'labour.hired', 'group.joined', 'social.kindness', 'life.couple', 'social.confide'], repeat: true },
+    { name: 'leave', m: ['housing.moved_out', 'life.move_out'], terminal: true, outcome: 'left again' }] },
+  { kind: 'falling_out', scope: 'pair', window: 120, span: 365, min: 2, stages: [
+    { name: 'row', m: ['social.fallout', 'group.conflict'] },
+    { name: 'escalation', m: ['social.fallout', 'group.conflict', 'civic.complaint'], repeat: true },
+    { name: 'truce', m: ['social.reconcile'], terminal: true, outcome: 'made up' }] },
+  { kind: 'illness', scope: 'person', allActors: true, window: 300, min: 2, stages: [
+    { name: 'diagnosis', m: ['health.diagnosis', 'health.crisis', 'health.accident'] },
+    { name: 'coping', m: ['life.caring_start', 'health.treatment', 'health.episode', 'labour.went_inactive', 'labour.quit', 'housing.moved_out'], repeat: true },
+    { name: 'recovered', m: ['health.recovered', 'life.caring_end'], terminal: true, outcome: 'recovered' },
+    { name: 'death', m: ['life.death'], terminal: true, outcome: 'died' }] },
+  { kind: 'bereavement', scope: 'person', allActors: true, window: 300, min: 2, stages: [
+    { name: 'loss', m: ['life.death', 'life.kin_death', 'life.funeral'] },
+    { name: 'aftermath', m: ['life.funeral', 'life.will', 'money.estate', 'health.episode', 'labour.quit', 'housing.moved_out', 'social.kindness', 'life.move_in'], repeat: true }] },
+  { kind: 'career', scope: 'person', window: 600, min: 2, stages: [
+    { name: 'step', m: ['labour.hired', 'labour.promoted', 'labour.pay_rise', 'life.graduate', 'labour.second_job'], repeat: true }] },
+  { kind: 'scandal', scope: 'person', window: 200, min: 2, stages: [
+    { name: 'secret', m: ['social.secret'] },
+    { name: 'out', m: ['social.scandal'], terminal: true, outcome: 'came out' }] },
+  { kind: 'ambition', scope: 'person', window: 200, min: 2, stages: [
+    { name: 'set_out', m: ['goal.formed'], guard: BIG },
+    { name: 'attempt', m: ['goal.transformed', 'goal.invented', 'group.founded', 'project.started', 'goal.deferred'], repeat: true },
+    { name: 'won', m: ['goal.completed'], terminal: true, outcome: 'pulled it off', guard: BIG },
+    { name: 'gave_up', m: ['goal.failed', 'goal.abandoned'], terminal: true, outcome: 'gave up', guard: BIG }] },
+  { kind: 'welcome', scope: 'pair', window: 100, span: 150, min: 2, stages: [
+    { name: 'hello', m: ['tag:welcome'] },
+    { name: 'friends', m: ['social.friendship', 'social.confide', 'social.kindness', 'social.acquaint'], repeat: true },
+    { name: 'cooled', m: ['social.fallout'], terminal: true, outcome: 'fell out' }] },
+  { kind: 'group_saga', scope: 'person', window: 300, min: 3, stages: [
+    { name: 'found', m: ['group.founded'] },
+    { name: 'run', m: ['group.joined', 'group.conflict', 'group.leader_changed', 'project.done', 'group.split'], repeat: true },
+    { name: 'end', m: ['group.dissolved'], terminal: true, outcome: 'folded' }] },
 ];
-export const KINDS = PATTERNS.map((p) => p.kind).concat(['redemption', 'comeback']);
+export const KINDS = PATTERNS.map((p) => p.kind);

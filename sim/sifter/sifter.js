@@ -40,6 +40,7 @@ export class Sifter {
       for (const key of this._keys(p, ev)) {
         const ok = `${p.kind}|${key}`; let arc = this.open.get(ok);
         if (arc && ev.tick - arc.last > p.window * this.tpd) { this._close(arc, 'lapsed'); arc = null; }
+        if (arc && p.span && ev.tick - arc.start > p.span * this.tpd) { this._close(arc, 'settled'); arc = null; } // a phase of life (being new, a welcome) ends by itself
         if (!arc) { if (si !== 0 || (st.guard && !st.guard(ev, null))) continue; arc = this._open(p, key, ev); this.open.set(ok, arc); }
         else {
           if (si < arc.stageIdx && !(p.stages[si].repeat && si > 0)) continue;
@@ -54,13 +55,13 @@ export class Sifter {
     }
     // causal attach: events caused by an arc's events join it as consequences (cross-system reach)
     if (ev.cause >= 0 && this.byCause.has(ev.cause)) {
-      for (const arc of this.byCause.get(ev.cause)) if (arc.status === 'open' && !touched.has(arc) && arc.beats.length < 40) { this._beat(arc, ev, { name: 'consequence' }, arc.stageIdx, cd); touched.add(arc); }
+      for (const arc of this.byCause.get(ev.cause)) if (arc.status === 'open' && !touched.has(arc) && arc.beats.length < 40 && (!ev.actors || !ev.actors.length || ev.actors.some((a) => arc.actors.includes(a)))) { this._beat(arc, ev, { name: 'consequence' }, arc.stageIdx, cd); touched.add(arc); }
     }
     for (const arc of touched) { this._score(arc); if (arc.confirmed && this.thenKinds.has(arc.kind)) this._compose(arc); }
     if (ev.tick - this.lastSweep > 7 * this.tpd) this.sweep(ev.tick);
   }
   _open(p, key, ev) {
-    const arc = { id: this.nextId++, kind: p.kind, scope: p.scope, key, actors: ev.actors.slice(0, 3), status: 'open', outcome: null, stage: p.stages[0].name, stageIdx: 0, start: ev.tick, last: ev.tick, beats: [], systems: new Set(), maxDepth: 0, sum: 0, score: 0, quiet: true, confirmed: false, sig: '', pat: p };
+    const arc = { id: this.nextId++, kind: p.kind, scope: p.scope, key, actors: p.scope === 'person' && !p.allActors ? [ev.actors[0]] : p.scope === 'person' ? [Number(key), ...ev.actors.filter((a) => String(a) !== key)].slice(0, 3) : ev.actors.slice(0, 3), status: 'open', outcome: null, stage: p.stages[0].name, stageIdx: 0, start: ev.tick, last: ev.tick, beats: [], systems: new Set(), maxDepth: 0, sum: 0, score: 0, quiet: true, confirmed: false, sig: '', pat: p };
     return arc;
   }
   _register(arc) { this.arcs.push(arc); for (const a of arc.actors) { let l = this.byActorIdx.get(a); if (!l) this.byActorIdx.set(a, l = []); l.push(arc); } }
@@ -68,7 +69,7 @@ export class Sifter {
     arc.beats.push({ eid: ev.id, tick: ev.tick, type: ev.type, stage: st.name, sal: ev.salience ?? 0.3, depth });
     arc.sum += ev.salience ?? 0.3; arc.last = ev.tick; if (si > arc.stageIdx) { arc.stageIdx = si; arc.stage = st.name; }
     arc.systems.add(DOMAIN(ev.type)); if (depth > arc.maxDepth) arc.maxDepth = depth;
-    for (const a of ev.actors || []) if (!arc.actors.includes(a) && arc.actors.length < 4) arc.actors.push(a);
+    if (arc.pat.scope === 'pair' || arc.pat.allActors) for (const a of (ev.actors || []).slice(0, 3)) if (!arc.actors.includes(a) && arc.actors.length < 3) arc.actors.push(a);
     let l = this.byCause.get(ev.id); if (!l) this.byCause.set(ev.id, l = []); l.push(arc);
   }
   _score(arc) {

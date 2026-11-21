@@ -69,12 +69,15 @@ export function buildNetwork(world, rng, hhs, people) {
     }
     if (role === 'parent' || role === 'grandparent') { const m = addMetro(p.id, 'son/daughter', { age: Math.round(a - 28), kin: true, where: 'elsewhere in the city' }); addOff(p, m, 'kin', 2, 0.7); continue; }
     // parents (mother, father) alive with prob by own age; siblings; adult children elsewhere
-    const pm = clamp(1.05 - Math.max(0, a - 25) * 0.012, 0.05, 0.98), pf = clamp(1.0 - Math.max(0, a - 25) * 0.015, 0.03, 0.95);
+    // Is a parent still alive? Gompertz survival of the parent's cohort to their age now (UK period life-table shape: women S(75)~0.8, S(85)~0.55, S(90)~0.37;
+    // men S(70)~0.84, S(80)~0.6, S(90)~0.23). Earlier a linear formula left both parents alive for ~40-55% of 66-year-olds (reality: ~10% / ~5%).
+    const surv = (x, A, B) => Math.exp(-A / B * (Math.exp(B * x) - 1)), gapM = rng.int(22, 34), gapF = rng.int(24, 38);
+    const pm = clamp(surv(a + gapM, 1.217e-4 * 0.10, 0.10) / surv(gapM, 1.217e-4 * 0.10, 0.10), 0, 0.98), pf = clamp(surv(a + gapF, 1.15e-4 * 0.105, 0.105) / surv(gapF, 1.15e-4 * 0.105, 0.105), 0, 0.95);
     const onMapParent = p.ext.pop.hhParentOnMap;
     const kinTier = (base) => (rng.chance(SEG_KIN[q.seg] || 0.4) ? base : base + 1);
     if (role !== 'sharer' || true) {
-      if (!['adult_child'].includes(role) || !p.family.motherId) if (rng.chance(pm) && !(role === 'adult_child' && p.family.motherId)) { const m = addMetro(p.id, 'mother', { age: Math.round(a + rng.int(22, 34)), sex: 'F', kin: true, how: 'family' }); addOff(p, m, 'kin', kinTier(1), 0.6 + rng.float(0, 0.3)); }
-      if (!(role === 'adult_child' && p.family.fatherId) && rng.chance(pf)) { const m = addMetro(p.id, 'father', { age: Math.round(a + rng.int(24, 38)), sex: 'M', kin: true, how: 'family' }); addOff(p, m, 'kin', kinTier(2), 0.45 + rng.float(0, 0.3)); }
+      if (!['adult_child'].includes(role) || !p.family.motherId) if (rng.chance(pm) && !(role === 'adult_child' && p.family.motherId)) { const m = addMetro(p.id, 'mother', { age: Math.round(a + gapM), sex: 'F', kin: true, how: 'family' }); addOff(p, m, 'kin', kinTier(1), 0.6 + rng.float(0, 0.3)); }
+      if (!(role === 'adult_child' && p.family.fatherId) && rng.chance(pf)) { const m = addMetro(p.id, 'father', { age: Math.round(a + gapF), sex: 'M', kin: true, how: 'family' }); addOff(p, m, 'kin', kinTier(2), 0.45 + rng.float(0, 0.3)); }
       const nsib = a < 15 ? 0 : wpick(rng, [[0, 1.2], [1, 3], [2, 2.2], [3, 1]]);
       for (let k = 0; k < nsib; k++) { const sx = rng.chance(0.5) ? 'F' : 'M'; const m = addMetro(p.id, sx === 'F' ? 'sister' : 'brother', { age: Math.round(a + rng.int(-6, 6)), sex: sx, kin: true, how: 'family' }); addOff(p, m, 'kin', k === 0 ? kinTier(1) : 2, 0.45 + rng.float(0, 0.35)); }
     }

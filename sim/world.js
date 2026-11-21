@@ -349,7 +349,25 @@ export class World {
     for (const p of this.living()) { const a = (this.tick - p.birthTick) / TICKS_PER_YEAR; p.speed = a < 12 ? 5 : a > 65 ? 4 : 6; }
     this._dailyWeather();
   }
+  /** Real-calendar weather (Larkfield): the pack's monthly UK climate table (calendar.weather.seasonal: mean temp, spread, regime weights, daily persistence `stick`)
+   *  drives a daily regime Markov chain; precipitation type follows the regime and the day's temperature (snow only when it is cold enough). */
+  _realWeather(rec) {
+    const r = this.rngFor('weather'), W = this.calendar.yearTable(rec.year).weather, M = W.seasonal[rec.month], prev = this.weather && this.weather.regime;
+    let regime = prev;
+    if (!regime || !M.regimes[regime] || r.next() > M.stick) { const ks = Object.keys(M.regimes); regime = r.weighted(ks, ks.map((k) => M.regimes[k])); }
+    const R = W.regimes[regime];
+    const shift = regime === 'heatwave' ? 6 : regime === 'snap_snow' ? -4 : regime.startsWith('cold') ? -2.5 : regime === 'humid_thundery' ? 2.5 : regime === 'grey_mild' ? 1 : 0;
+    const temp = Math.round(M.tMean + shift + r.gauss(0, M.tRange / 3));
+    let type = 'clear'; const x = r.next();
+    // the regime's wetness is scaled so the month's expected wet days equal the climate table (rainDays: days with >= 1 mm)
+    let avg = 0, tw = 0; for (const k of Object.keys(M.regimes)) { avg += M.regimes[k] * W.regimes[k].rain; tw += M.regimes[k]; } const pr = Math.min(0.95, R.rain * (M.rainDays / 30) / Math.max(0.05, avg / tw));
+    if (x < pr) type = temp <= 1 && (R.snow || 0) > 0 && r.next() < 0.7 ? 'snow' : 'rain';
+    else if (x < pr + 0.25 + (regime === 'grey_mild' || regime === 'mixed' ? 0.2 : 0)) type = 'cloudy';
+    if (type === 'cloudy' && temp <= 4 && (rec.month <= 1 || rec.month === 11) && r.next() < 0.18) type = 'fog';
+    this.weather = { type, temp, regime };
+  }
   _dailyWeather() {
+    if (this.calendar.recAt && this.calendar.yearTable && this.time.rec) return this._realWeather(this.time.rec);
     const s = this.time.season, r = this.rngFor('weather');
     const x = r.next();
     let type = 'clear';

@@ -11,7 +11,7 @@ export default {
   'headline:life.breakup': ['{s.first} and {o.first} part ways', 'Break-up on Larkfield: couple call it a day'],
   'news:life.breakup': ['{s.name} and {o.name} have ended their relationship after {p.years?a few|words} years. Friends say it was amicable. The shared flat, less so.'],
   'headline:life.move_in': ['New residents settle on Larkfield Road', '{s.first} {s.last} joins the neighbourhood'],
-  'news:life.move_in': ['{s.name} has moved to the area from {p.from}, citing a new job and a lower rent. Existing residents have offered tips on parking, bin days and which chippy to avoid.'],
+  'news:life.move_in': ['{s.name} has moved to the area from {p.from}, citing {p.why}. Existing residents have offered tips on parking, bin days and which chippy to avoid.'],
   'headline:life.move_out': ['{s.first} {s.last} leaves for {p.to}', 'Farewell, {s.first}: another one heads for the ring road'],
   'news:life.move_out': ['After {p.years?a few|words} years on the street, {s.name} is leaving for {p.to}. A leaving do is planned at the pub on #lx.day#. "We\'ll miss the noise," said one neighbour, and meant it.'],
   'headline:work.hired': ['{p.employer|cap} takes on {s.name}', 'New start at {p.employer}: {s.first} lands the job'],

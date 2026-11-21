@@ -102,6 +102,9 @@ export function createArrivalHousehold(w, rng, unit, forceSeg) {
     if (m.parents) { const [a, b] = m.parents, A = M[a].person, B = b !== undefined ? M[b].person : null; const mom = A.sex === 'F' ? A : B && B.sex === 'F' ? B : null, dad = A.sex === 'M' ? A : B && B.sex === 'M' ? B : null; p.family.motherId = mom ? mom.id : null; p.family.fatherId = dad ? dad.id : null; for (const par of [mom, dad]) if (par && !par.family.childrenIds.includes(p.id)) par.family.childrenIds.push(p.id); }
     if (m.childIdx) for (const ci of m.childIdx) { const c = M[ci].person; if (p.sex === 'F') c.family.motherId = p.id; else c.family.fatherId = p.id; if (!p.family.childrenIds.includes(c.id)) p.family.childrenIds.push(c.id); }
   }
+  // Religion within a household is correlated, as in the founding population (Census 2021 RM083: most multi-person households share one religion): children
+  // usually take a parent's, partners usually share. (makePerson draws each person from the ethnic-group conditional table independently.)
+  for (const m of M) { const p = m.person; if ((m.role === 'child' || m.role === 'partner') && M[0].person !== p && rng.chance(m.role === 'child' ? 0.82 : 0.75)) { const h = (m.parents && M[m.parents[0]] ? M[m.parents[0]] : M[0]).person; if (h && h !== p) { p.ext.pop.religion = h.ext.pop.religion; p.ext.pop.religiosity = +(h.ext.pop.religion === 'No religion' ? rng.float(0, 0.12) : Math.min(1, h.ext.pop.religiosity * rng.float(0.6, 1.1))).toFixed(2); p.values.piety = p.ext.pop.religiosity; } } }
   lf.households.push(hh);
   for (const p of people) { w.addPerson(p); }
   addTies(w, rng, hh, people);

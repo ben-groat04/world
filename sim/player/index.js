@@ -142,7 +142,7 @@ export function createPlayer() {
       return gq.requests(pid).map((r) => {
         const g = gq.goal(r.goal), t = sq ? sq.tie(pid, r.from) : null; let score = WEIGHT[r.move] ?? 0.3;
         if (g && !g.mundane) score += 0.35; if (t) score += Math.min(0.4, 0.15 * (t.lv || 0)) + Math.max(-0.1, Math.min(0.2, t.l || 0));
-        return { ...r, topic: g && !g.mundane && g.tpl !== 'ad_hoc_move' ? g.phrase : '', score: r1(score), notable: score >= 0.7 };
+        return { ...r, tpl: g ? g.tpl : '', v: r.v || '', topic: g && !g.mundane && g.tpl !== 'ad_hoc_move' ? g.phrase : '', score: r1(score), notable: score >= 0.7 };
       }).sort((a, b) => b.score - a.score || a.until - b.until);
     },
     // How the neighbourhood sees the player: beliefs others hold about them (social beliefs), and the mean warmth of ties towards them.

@@ -7,6 +7,8 @@ const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 const r2 = (v) => Math.round(v * 100) / 100;
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 const REQ_TEXT = { ask: 'would like to ask you a favour', persuade: 'is trying to talk you round', recruit: 'would like you to join something', befriend: 'wants to get to know you better', flatter: 'is being very nice to you', confide: 'wants to confide in you', gossip: 'has some gossip to share', confront: 'wants a word with you', apologise: 'wants to apologise to you', borrow: 'would like to borrow some money', lend: 'wants to lend you some money', gift: 'has a little gift for you', invite: 'is inviting you out', visit: 'would like to visit you', message: 'has sent you a message', threaten: 'is leaning on you', mediate: 'wants to smooth things over' };
+const REQ_TPL = { befriend_isolated_neighbour: 'knocked to say hello: you are new on the street', help_neighbour: 'popped round to ask if you need anything now you have moved in' };
+const ASK_FAVOUR = ['asks if you have a drill they could borrow', 'asks if you could take in a parcel for them', 'is after a cup of sugar and a bit of company', 'asks whether you could keep an eye on the flat this weekend', 'asks if you know a decent plumber', 'asks if you have jump leads'];
 const WEEK = 144 * 7;
 
 export class PlayHost {
@@ -49,7 +51,7 @@ export class PlayHost {
     switch (name) {
       case 'player.talk': return `${who} ${r.react === 'warm' ? 'warmed to that' : r.react === 'cool' ? 'did not take it well' : 'took it in their stride'}.`;
       case 'player.goTo': return 'On your way.'; case 'player.stay': return 'Settling in.'; case 'player.goOut': return 'Off out into the city.';
-      case 'player.apply': return `Application succeeded: ${lc(r.occ)}.`; case 'player.message': return 'Sent.'; case 'player.post': return 'Posted.';
+      case 'player.apply': return r.pending ? `Application sent for ${lc(r.occ)}. Expect a reply in about ${r.days} days.` : `Application succeeded: ${lc(r.occ)}.`; case 'player.message': return 'Sent.'; case 'player.post': return 'Posted.';
       case 'player.respond': return 'Answered.'; default: return 'Done.';
     }
   }
@@ -91,7 +93,7 @@ export class PlayHost {
     const pop = p.ext.pop || {}, fin = pop.fin || {}, rt = p.ext.rt, off = !!(rt && rt.off), q = w.sys;
     const loc = p.locationId != null ? this.h.place(p.locationId) : null;
     const here = off ? [] : q.player.query.here(pid).slice(0, 12).map((id) => this.personChip(id));
-    const reqs = this.S(() => q.player.query.inbox(pid), []).map((r) => ({ id: r.id, from: this.ref(r.from), move: r.move, text: REQ_TEXT[r.move] || 'wants something from you', why: r.topic, notable: r.notable, left: Math.max(0, Math.round((r.until - w.tick) / 6)) }));
+    const reqs = this.S(() => q.player.query.inbox(pid), []).map((r) => ({ id: r.id, from: this.ref(r.from), move: r.move, text: r.move === 'ask' && r.v === 'favour' ? ASK_FAVOUR[(r.id * 7 + r.from) % ASK_FAVOUR.length] : REQ_TPL[r.tpl] || REQ_TEXT[r.move] || 'wants something from you', why: r.topic, notable: r.notable, left: Math.max(0, Math.round((r.until - w.tick) / 6)) }));
     const job = this.S(() => q.labour.query.job(pid)); const unit = this.S(() => q.housing.query.unit(pid));
     const hr = w.time.hourFloat || 0;
     this.say({ t: 'play.state', s: {
@@ -133,7 +135,7 @@ export class PlayHost {
       out.dests = Object.keys(w.pack.meta.offmap).filter((k) => /centre|leisure|retail|airport|other_neigh/.test(k)).map((k) => ({ k, name: lc(k) }));
     } else if (name === 'work') {
       const P = q.player.query; out.openings = P.openings().slice(0, 60).map((o) => ({ occ: o.occ, label: lc(o.occ), bid: o.bid ?? null, where: o.bid != null ? this.h.place(o.bid)?.name : lc(o.dest), count: o.count }));
-      out.job = this.S(() => q.labour.query.job(pid)); out.vac = P.vacancies().filter((u) => u.tenure === 'private_rent').slice(0, 10).map((u) => ({ id: u.id, address: u.address, rent: u.rent, beds: u.bedrooms }));
+      out.pending = this.S(() => P.pending(pid), []); out.job = this.S(() => q.labour.query.job(pid)); out.vac = P.vacancies().filter((u) => u.tenure === 'private_rent').slice(0, 10).map((u) => ({ id: u.id, address: u.address, rent: u.rent, beds: u.bedrooms }));
       out.unit = this.S(() => q.housing.query.unit(pid));
     }
     this.say({ t: 'play.section', ...out });

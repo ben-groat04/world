@@ -34,6 +34,8 @@ export function pair(w, S, r, a, b, ctx, soc) {
   const ta = A.T.get(b.id), tb = B.T.get(a.id), tick = w.tick, day = w.time.dayAbs;
   if (ta && ta.lv >= 2) { // already know each other
     const pk = ctx === 'work' ? 0.15 : 0.1 + 0.55 * Math.min(1, ta.c * 2) * (ta.L <= 2 ? 1.2 : 1);
+    // neighbours who have met a newcomer start asking small favours (a drill, a parcel, sugar): ordinary neighbourly reciprocity, and how an NPC asks the player
+    if (ctx === 'door' && fresh(w, b) && ta.c > 0.08 && r.next() < 0.05 && w.commands.has('goals.use_move')) { w.cmd('goals.use_move', { person: a.id, move: 'ask', variant: 'favour', target: b.id }); return; }
     if (r.next() < pk * (0.5 + soc) * 0.5) converse(w, S, r, a, b, 0, ctx);
     else { touch(ta, 0, 0.3, tick); }
     return;

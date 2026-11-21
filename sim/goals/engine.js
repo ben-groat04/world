@@ -325,7 +325,7 @@ export class Engine {
     if (g.flags.lied) pr += 0.1; if (st.move === 'save' || st.move === 'maintain' || st.move === 'train') pr -= s.stress * 0.35;
     const comp = t.claim ? this.competitors(g, t.claim) : 0; pr -= 0.1 * comp;
     let opposed = false; if (tp) { const q = S.ps.get(tp.id); if (q) for (const gid of q.goals) { const og = S.goals.get(gid); if (og && og.status === 'active' && og.target === p.id && (og.tpl === 'avoid_person' || og.tpl === 'avenge_wrong')) { pr -= 0.3; opposed = true; } } }
-    if (tp && this.isPlayer(tp) && mv.kind === 'social' && !this.opts.autoPlayer) { const rq = { id: (this.rid = (this.rid || 0) + 1), goal: g.id, from: p.id, to: tp.id, move: st.move, until: now + 3 * TICKS_PER_DAY }; S.requests.push(rq); w.emit('request.pending', { actors: [p.id, tp.id], salience: 0.3, cause: g.eid, payload: { from: p.id, to: tp.id, move: st.move } }); return; }
+    if (tp && this.isPlayer(tp) && mv.kind === 'social' && !this.opts.autoPlayer) { const rq = { id: (this.rid = (this.rid || 0) + 1), goal: g.id, from: p.id, to: tp.id, move: st.move, v: st.v || '', until: now + 3 * TICKS_PER_DAY }; S.requests.push(rq); w.emit('request.pending', { actors: [p.id, tp.id], salience: 0.3, cause: g.eid, payload: { from: p.id, to: tp.id, move: st.move } }); return; }
     const special = this.groups.step(p, s, f, g, st, mv, tp, r); if (special) { pr = special.pr ?? pr; if (special.res) { this.finishStep(p, s, f, g, st, special.res, special.why || '', special.note); return; } }
     pr = clamp(pr, 0.03, 0.97); const u = r.next(); let res, why = '';
     if (u < pr) res = 'ok'; else if (mv.kind === 'social' && st.tries === 0 && u < pr + 0.13 && tp) res = 'maybe';

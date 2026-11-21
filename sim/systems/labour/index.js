@@ -97,11 +97,13 @@ export function createLabour() {
   }
 
   // ---------------------------------------------------------------- monthly
-  function monthly(w) {
+  // Spread over the month: each person's monthly review falls on their own day (id mod 30) instead of every hire/lay-off landing on the 1st
+  // (start dates and redundancy letters are spread through the month in reality). `slice` = day index 0..29; firms and vacancy ageing run on slice 0.
+  function monthly(w, slice = 0) {
     const S = L(w), mc = macro(), rng = w.rngFor('labour.month'), tick = w.tick, OCC = occMap(w), mo = w.time.month;
     const rec = 1 + 3.0 * mc.recession;
     // --- firms: closure / reopening
-    for (const bid of Object.keys(S.firms)) {
+    if (slice === 0) for (const bid of Object.keys(S.firms)) {
       const f = S.firms[bid];
       if (f.closedUntil && tick >= f.closedUntil && f.closedUntil > 0) { f.closedUntil = 0; for (const s of slotsOf(+bid)) { s.vac = Array.from({ length: s.n - s.filled.length - s.ext }, () => ({ since: tick, occ: s.occ })); } w.emit('labour.firm_opened', { place: +bid, salience: 0.3, tags: ['labour', 'visible'], payload: { name: f.name, reopened: true } }); }
       else if (!f.closedUntil) {
@@ -111,7 +113,7 @@ export function createLabour() {
       }
     }
     // --- on-map vacancies: ageing, external hires
-    for (const s of w.lf.slots) {
+    if (slice === 0) for (const s of w.lf.slots) {
       if (closed(s.bid)) continue;
       for (let i = s.vac.length - 1; i >= 0; i--) if (tick - s.vac[i].since > 2 * MONTH && rng.chance(0.4)) { s.vac.splice(i, 1); s.ext++; }
     }
@@ -119,7 +121,7 @@ export function createLabour() {
     const people = [...w.people.values()];
     let emp = 0;
     for (const p of people) {
-      if (!p.alive) continue; const q = p.ext.pop; if (!q) continue; const age = w.ageOf(p), hh = w.lf.households[q.hh];
+      if (!p.alive || p.id % 30 !== slice) continue; const q = p.ext.pop; if (!q) continue; const age = w.ageOf(p), hh = w.lf.households[q.hh];
       if (age >= 16 && q.activity === 'child') { // 16th birthday: college / first job
         const r = rng.next(); if (r < 0.62) { q.activity = 'student'; q.school = { kind: 'college', dest: 'secondary_school' }; q.edu = 'level2'; } else { q.activity = 'unemployed'; q.search = { since: tick, kind: 'entry', tries: 0 }; q.edu = 'level1'; q.lastOcc = null; }
         replan(p); continue;
@@ -140,8 +142,8 @@ export function createLabour() {
         case 'retired': break;
       }
     }
-    placeOnMapApplicants();
-    S.emp = emp;
+    if (slice % 10 === 0) placeOnMapApplicants(); // three rounds a month (chance below is per round)
+    S.emp = slice === 0 ? emp : (S.emp || 0) + emp;
   }
 
   function employedStep(p, q, age, hh, rng, mc, rec, OCC, mo) {
@@ -248,7 +250,7 @@ export function createLabour() {
         if (o.age && (w.ageOf(p) > o.age[1] + 4)) sc *= 0.2;
         if (sc > bs) { bs = sc; best = p; }
       }
-      if (best && rng.chance(0.45)) hire(best, o, bs > 1.5 ? 'referral' : 'application', best.ext.pop.lastShock || 0, { slot: s });
+      if (best && rng.chance(0.15)) hire(best, o, bs > 1.5 ? 'referral' : 'application', best.ext.pop.lastShock || 0, { slot: s });
     }
   }
   // ---------------------------------------------------------------- firms / shocks
@@ -278,7 +280,7 @@ export function createLabour() {
 
   const plugin = {
     name: 'labour', version: '1.0.0', eventTypes: EVENTS.map((e) => e[0]),
-    clocks: { month: (w) => monthly(w) },
+    clocks: { day: (w) => monthly(w, Math.floor(w.tick / 144) % 30) },
     init(world) {
       W = world; registerEvents(world, EVENTS); initState(world);
       if (world.events.registry.has('goal.effect')) world.events.on('goal.effect', (ev) => onGoalEffect(ev));

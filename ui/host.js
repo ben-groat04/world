@@ -2,11 +2,12 @@
 // Worker-safe (no DOM). Used by ui/worker.js (off-thread) and by ui/store.js (main-thread fallback).
 import { createLarkfieldWorld } from '../sim/larkfield.js';
 import { installSifter } from '../sim/sifter/index.js';
+import { storylines, storyOf } from '../sim/sifter/storylines.js';
 import { TextEngine } from '../sim/text/engine.js';
 import textPack from '../content/larkfield/text/index.js';
 import { SEGMENTS } from '../content/larkfield/segments.js';
 import { openingsFor } from '../sim/population/venues.js';
-import { describeEvent, newsFor, NEWS_TYPES } from './describe.js';
+import { describeEvent, newsFor, NEWS_TYPES, shortJob } from './describe.js';
 import { GOD_COMMANDS, GOD_PRESETS, themeOf } from './godcatalogue.js';
 import { PlayHost } from './play/host-play.js';
 
@@ -18,7 +19,8 @@ export const TIER_LIST = [
   { id: 'x20', label: '×20', hint: 'Twenty times Lifetime' },
   { id: 'max', label: 'Max', hint: 'As fast as this device can go' },
 ];
-const SEG_IDS = SEGMENTS.map((s) => s.id), SEG_LABEL = Object.fromEntries(SEGMENTS.map((s) => [s.id, s.label]));
+const SEG_SHORT = { older_longterm: 'Older locals', family_couples: 'Established families', lone_parents: 'Lone parents', students: 'Students', young_sharers: 'Young sharers', early_career: 'Early-career renters', settled_professionals: 'Settled professionals', shift_workers: 'Shift & service workers', recent_arrivals: 'Recent arrivals', local_business_families: 'Business families', benefit_dependent: 'Out of work / long-term ill' };
+const SEG_IDS = SEGMENTS.map((s) => s.id), SEG_LABEL = Object.fromEntries(SEGMENTS.map((s) => [s.id, SEG_SHORT[s.id] || s.label]));
 const r2 = (v) => Math.round(v * 100) / 100;
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -57,7 +59,7 @@ export class Host {
     this.send({
       t: 'ready', town: 'Larkfield', seed: this.seed, tpy: this.TPY, tiers: TIER_LIST.map((t) => ({ ...t, tps: this.tiers[t.id] })),
       map: { w: lf.w, h: lf.h, tiles: new Uint8Array(lf.tiles), streets: lf.streets, buildings: lf.buildings.map((b) => ({ id: b.id, kind: b.kind, rect: b.rect, roof: b.roof, ridge: b.ridge, material: b.material, storeys: b.storeys, facing: b.facing, venueId: b.venueId, doors: b.doors, name: b.name })), venues: lf.venues, areas: lf.areas, props: lf.props, graph: null, station: lf.station, gateways: lf.gateways },
-      bld: buildings, segs: SEGMENTS.map((s) => ({ id: s.id, label: s.label, blurb: s.blurb })),
+      bld: buildings, segs: SEGMENTS.map((s) => ({ id: s.id, label: SEG_SHORT[s.id] || s.label, full: s.label, blurb: s.blurb })),
       god: this.godCatalogue(), dwellings, venueList: venues, sectors: this.safe(() => w.sys.labour.query.sectors(), []),
       templates: this.safe(() => w.sys.goals.query.templates().filter((t) => !t.mundane).map((t) => ({ id: t.id, phrase: t.phrase })), []),
       time: this.timeInfo(), news: [], series: this.series.slice(), stats: this.statsDetail(),
@@ -97,7 +99,11 @@ export class Host {
   // ------------------------------------------------------------------ events -> feeds
   onEvent(ev) {
     const w = this.w; const it = newsFor(w, this.text, ev, this); this.play.onEvent(ev, it); if (!it) return;
-    it.id = this.nextNewsId++; if (this.godWatch && ev.tick <= this.godWatch.until) it.conseq = true;
+    it.id = this.nextNewsId++; const tr = this.play.tracked, iv = ev.cause ? tr.get(ev.cause) : null; // cause-linked: caused (directly or down a chain) by something the god did
+    if (iv) { tr.set(ev.id, iv); it.conseq = true; it.because = iv.label; }
+    // a shock hits dozens of households at once: show the first few, then fold the rest into one line instead of flooding the feed
+    if (iv && ev.type === 'housing.rent_rise') { const r = this.roll || (this.roll = {}); const k = iv.id + ':' + Math.floor(ev.tick / this.TPD); const x = r[k] || (r[k] = { n: 0 }); x.n++;
+      if (x.n === 4) { it.head = 'Rent letters all over Larkfield'; it.body = 'The same rise has landed on households across the neighbourhood. Letters are being compared on doorsteps and in the group chats.'; it.sal = Math.max(it.sal, 0.6); } else if (x.n > 4) return; }
     this.news.push(it); this.newsOut.push(it); if (this.news.length > 600) this.news.splice(0, 100);
     if (this.jump && it.sal >= this.jump.min && ev.tick > this.jump.start) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: it }); }
   }
@@ -138,9 +144,11 @@ export class Host {
     const sig = posts.length ? posts[0].id + ':' + posts.length : '';
     if (sig !== this.postSig) { this.postSig = sig; this.send({ t: 'posts', posts: posts.slice(0, 60), source: cm ? 'comms' : 'events' }); }
     // storylines
-    const seenB = new Set(); const arcs = []; for (const a of this.sifter.ranked(30, { minScore: 0.8 })) { const v = this.arcView(a); if (v.beats.length < 2) continue; const key = v.beats.slice(-2).map((b) => b.eid).join('-'); if (seenB.has(key)) continue; seenB.add(key); arcs.push(v); if (arcs.length >= 12) break; }
-    const asig = arcs.map((a) => a.id + ':' + a.n).join(',');
-    if (asig !== this.arcSig) { this.arcSig = asig; this.send({ t: 'arcs', arcs, quiet: arcs.length === 0, stats: this.sifter.stats() }); }
+    const arcs = this.safe(() => storylines(this.sifter, w, { limit: 6 }), []); const asig = arcs.map((a) => a.id + ':' + a.beats.length + ':' + a.idle).join(',');
+    if (asig !== this.arcSig) {
+      this.arcSig = asig; const top = arcs.find((a) => a.status === 'open') || arcs[0];
+      this.send({ t: 'arcs', arcs, follow: top ? { id: top.actors[0].id, name: top.actors[0].name, why: top.headline, kind: top.label } : null, quiet: arcs.length === 0, stats: this.sifter.stats() });
+    }
   }
   arcView(a) {
     const w = this.w; const beats = [];
@@ -190,17 +198,17 @@ export class Host {
       id, name: nm(p), first: p.firstName, last: p.lastName, age: Math.floor(age), ageF: age, sex: p.sex, alive: !!p.alive, cause: p.causeOfDeath || null,
       seg: pop.seg, segLabel: SEG_LABEL[pop.seg] || '', role: pop.role, eth: pop.eth, born: pop.birthplace, bornUK: pop.bornUK, religion: pop.religion, yearsAtAddress: pop.yearsAtAddress, edu: pop.edu, car: !!pop.car, pets: pop.pets,
       home, household: { size: hh ? (hh.members ? hh.members.length : null) : null, members: mem }, unit: unit ? { tenure: unit.tenure, rent: unit.rent, bedrooms: unit.bedrooms, cond: r2(unit.cond), damp: !!unit.damp, notice: !!unit.notice, landlord: unit.landlord != null && w.people.has(unit.landlord) ? this.ref(unit.landlord) : null, address: unit.address, value: unit.value } : null,
-      job: p.job, activity: pop.activity, jobInfo: job, workplace,
+      job: p.job, occLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', activity: pop.activity, jobInfo: job, workplace,
       money: { pressure: press, budget: bud, savings: Math.round(fin.savings || 0), debt: Math.round(fin.debt || 0), arrears: Math.round(fin.arrears || 0), net: Math.round(fin.net || 0), gross: Math.round(fin.gross || 0), burden: S(() => q.housing.query.rentBurden(id), 0) },
       health: { status: hst, mental: men, wellbeing: wb, mood: r2(p.mood || 0) }, needs: p.needs,
       now: now ? { act: now.act, cat: now.cat, off: now.off, label: now.label } : null, thought: p.thought || '', loc, offmap: !!(now && now.off),
-      goals: goalList, groups, partner: part, lifeStatus: lst, ties, life, drives: pop.drives, personality: p.personality, traits: p.traits, interests: p.interests,
+      story: this.safe(() => storyOf(this.sifter, w, id), null), goals: goalList, groups, partner: part, lifeStatus: lst, ties, life, drives: pop.drives, personality: p.personality, traits: p.traits, interests: p.interests,
       portrait: { id: String(p.id), genes: p.genes, sex: p.sex, age, mood: p.mood, health: p.health, alive: !!p.alive }, tick: w.tick,
     };
   }
   buildingDetail(id) {
     const w = this.w, b = w.buildings.get(id); if (!b) return null; const v = this.venueOf.get(id), q = w.sys, rec = w.time.rec || {}, lf = b.lf || {};
-    const P = (ids) => (ids || []).map((i) => w.people.get(i)).filter((p) => p && p.alive).map((p) => ({ id: p.id, name: nm(p), job: p.job, age: Math.floor(w.ageOf(p)) }));
+    const P = (ids) => (ids || []).map((i) => w.people.get(i)).filter((p) => p && p.alive).map((p) => ({ id: p.id, name: nm(p), job: shortJob(p.job), age: Math.floor(w.ageOf(p)) }));
     const inside = P([...(b.occupants || [])].map((p) => (typeof p === 'object' ? p.id : p)));
     const iv = v ? openingsFor(w.pack, v, rec.dow, rec.bankHoliday) : null;
     const units = (lf.units || []).slice(0, 8).map((u) => this.safe(() => { const U = w.lf.housing.list.find((x) => x.id === u); return U ? { id: U.id, tenure: U.tenure, bedrooms: U.bedrooms, rent: U.rent, cond: r2(U.cond), vacant: U.hh < 0, landlord: U.landlord != null && w.people.has(U.landlord) ? this.ref(U.landlord) : null } : null; }, null)).filter(Boolean);
@@ -209,7 +217,7 @@ export class Host {
     return { id, name: b.name, address: lf.address || b.name, type: b.type, kind: lf.kind, cat: lf.category, tpl: lf.template, arch: lf.archetype, hours: iv ? hoursText(iv) : null, open: iv ? iv.some(([a, b2]) => (w.time.hourFloat >= a && w.time.hourFloat < b2)) : null, capacity: v ? v.capacity : null, inside, residents: P(b.residents).slice(0, 16), employees: P(b.employees).slice(0, 16), units, owner, firm: staff, year: w.map.lf.buildings[id]?.year, storeys: w.map.lf.buildings[id]?.storeys };
   }
   directory() {
-    const w = this.w, out = []; for (const p of w.living()) { const pop = p.ext.pop || {}; out.push([p.id, nm(p), Math.floor(w.ageOf(p)), SEG_IDS.indexOf(pop.seg), (p.job || '').slice(0, 40), (this.byBid.get(p.homeId)?.name || ''), pop.fin?.stress ?? 0, p.sex === 'F' ? 1 : 0, p.ext.rt && p.ext.rt.off ? 1 : 0]); }
+    const w = this.w, out = []; for (const p of w.living()) { const pop = p.ext.pop || {}; out.push([p.id, nm(p), Math.floor(w.ageOf(p)), SEG_IDS.indexOf(pop.seg), shortJob(p.job), (this.byBid.get(p.homeId)?.name || ''), pop.fin?.stress ?? 0, p.sex === 'F' ? 1 : 0, p.ext.rt && p.ext.rt.off ? 1 : 0]); }
     return out;
   }
 

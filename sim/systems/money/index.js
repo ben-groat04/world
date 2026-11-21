@@ -380,7 +380,11 @@ export function createMoney() {
     query: {
       balance: (id) => W.ledger.balance(id),
       pressure: (x) => { const h = hhOfAny(W, x); if (!h || !h.fin) return null; const f = h.fin; return { stress: f.stress, ratio: f.ratio, buffer: f.buffer, arrears: f.rentArrears + f.billArrears, rentArrears: f.rentArrears, hunger: f.hunger, debt: livePeople(W, h).reduce((s, p) => s + (p.ext.pop.fin.cc || 0) + (p.ext.pop.fin.payday || 0), 0), claiming: f.claim, spiral: !!f.spiralEv }; },
-      budget: (x) => { const h = hhOfAny(W, x); return h && h.fin ? { ...h.fin.last } : null; },
+      // Household monthly budget. `income` and all cost lines are for the WHOLE HOUSEHOLD (partners' pay + benefits); when x is a person id the result also carries
+      // that person's own take-home (`personNetMonth`/`personNetYear`, the same figure as p.ext.pop.fin.net) so a UI can show 'you £X of the household's £Y'
+      // (the inspector earlier printed household income next to the person's own annual net, which looked inconsistent).
+      budget: (x) => { const h = hhOfAny(W, x); if (!h || !h.fin) return null; const p = typeof x === 'number' ? W.people.get(x) : x, q = p && p.ext && p.ext.pop && p.ext.pop.fin;
+        return { ...h.fin.last, scope: 'household', adults: livePeople(W, h).filter((a) => W.ageOf(a) >= 16).length, ...(q ? { personNetMonth: Math.round(q.monthNet || 0), personNetYear: Math.round(q.net || 0), incomeYear: (h.fin.last.income || 0) * 12 } : {}) }; },
       macro: () => ({ ...M(W).macro }),
       arrears: (x) => { const h = hhOfAny(W, x); if (!h || !h.fin) return { rent: 0, bills: 0, months: 0 }; return { rent: h.fin.rentArrears, bills: h.fin.billArrears, months: h.rentPcm > 0 ? h.fin.rentArrears / h.rentPcm : 0 }; },
       debt: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.pop) return 0; const f = p.ext.pop.fin; return (f.cc || 0) + (f.payday || 0); },

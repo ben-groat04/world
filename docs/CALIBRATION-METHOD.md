@@ -41,3 +41,22 @@ population ratio ~1.0 over 5 years, employed share ~55%, student ~10%, home/fami
 Age profile of moves (`moveLog`), loneliness by age (young/old, `lonelyYoung`/`lonelyOld`), share of ties off-map, divorce timing/duration,
 age at first birth, TFR shape by age (ASFR), tenure transitions, evictions per year, rent burden, income gini, causes of death mix, zero-confidant share.
 Report them with `node tools/report.js --years 1 --life-years 10`.
+
+## Round 3 changes (day-1 activity, life course, loneliness, instrumentation)
+| area | change | grounding |
+|---|---|---|
+| day-1 activity (`sim/population/activity.js`) | activity drawn by AGE band (inner-city ward table) x bounded segment tilt, instead of the segment head distribution for everyone. Bug fixed: a day-1 student without a part-time job was converted to 'unemployed' (this alone removed most students and inflated unemployment). Also used for arrivals (`housing/arrivals.js`) | ONS Census 2021 TS066 by age; DfE 16-18 participation: ~92% of 16-17s in education/training, 66% of 18s (2023) |
+| education life course | one graduation mechanism: courses have a length (3 y, 20% 4 y, set at entry), graduation each September, 4%/yr drop-out; day-1 students start at a uniform point in their course; labour no longer graduates on an age hazard (was 18%/month from 21.5) | HESA/DfE: ~33% of 18-year-olds in HE, 3-year first degrees |
+| student housing | units let to students stay student lets (`unit.studentLet`, non-students mostly cannot take them; arrival weight `STUDENT_LET_STICKY`); a student household with nobody studying gives notice at ~10%/month (end of AST) | letting-agent behaviour; HMO licensing |
+| loneliness (held-out) | removed double counting: partner (0.3) and household (0.14/person) were added on top of tie supply that already contains them; removed fixed living-alone (0.5) and age>=75 (0.25) isolation constants; the unsupported +0.1 need over 78 removed; `LONE_THRESHOLD` re-fitted 0.42 -> 0.85 to the overall ~7% target because removing the double counted partner/household terms shifted every score up | Victor et al. 2005/ONS 2018: age effect vanishes after widowhood/health/contact; Age UK/ELSA: widowed ~5x as likely 'often lonely'; Carstensen socioemotional selectivity |
+| parents alive | Gompertz cohort survival replaces a linear formula (66-year-olds: mother alive ~23%, father ~6%, was 56%/39%) | UK period life tables |
+| ethnicity x religion | documented as joint: religion | ethnic group (RM031 shape) | sub-origin override | household correlation (now also for arrivals) | ONS Census 2021 RM031, RM083 |
+| night shift | bed time = shift end + commute + 30 min (was 'no bed time', so nobody slept after a shift until the next wake) | NIOSH/CDC: night workers sleep in the morning after the shift |
+| weather | kernel daily weather = monthly UK climate Markov chain (regime persistence, wet-day scaling to the monthly rainDays) on the real calendar | Met Office Manchester-like monthly means |
+| instrumentation | `fades` counts friend/colleague/neighbour ties with >= 4 contacts that lapse (the old test almost never held, reading 0) | - |
+| money query | `budget()` returns household income plus the person's own take-home; the inspector mixed household income with personal annual net | - |
+
+Hand-tuned mechanism constants added this round (all labelled in code): student-let stickiness 40, student notice hazard 0.10/month, course length 3 y (20% 4 y), drop-out 4%/yr,
+`LONE_THRESHOLD` 0.85 (measurement threshold, fitted to overall ~7%), parent Gompertz parameters, share of day-1 student units that are student lets 0.8.
+Held-out reporting unchanged: loneliness by age (lonelyYoung / lonelyOld), off-map tie share, zero-confidants, divorce, rent burden, gini.
+Open: loneliness is dominated by newcomers (recent arrivals hold ~1/3 of the ties of settled residents); the social/newcomer work should fix that before `loneThr` is re-fitted.

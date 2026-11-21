@@ -28,7 +28,7 @@ function loneScore(w, p, age) {
   return sl + 0.45 * iso + (hl.grief.length ? 0.2 : 0);
 }
 
-export const LONE_THRESHOLD = 0.42; // score above which someone would answer 'often/always lonely'
+export const LONE_THRESHOLD = 0.85; // score above which someone would answer 'often/always lonely'
 export function monthlyMental(w, rng, people) {
   const st = w.lf.health, T = w.tick;
   // loneliness: a fixed reporting threshold on the loneliness score (LONE_THRESHOLD); prevalence emerges from ties, household, personality, age and events

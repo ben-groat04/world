@@ -31,6 +31,8 @@ export class World {
     this.nextPersonId = 1;
     this.recordTrails = false;
     this.prof = null;
+    // world keys holding persistent system state (serialized by sim/snapshot.js). Systems may push their own namespace.
+    this.stateKeys = ['stats', 'town', 'weather', 'player', 'social', 'culture', 'econ', 'healthState', 'migrationState', 'politics', 'romanceState', 'crime'];
     this._handlers = new Map();
     this._rngs = new Map();
     this._interventions = new Map();

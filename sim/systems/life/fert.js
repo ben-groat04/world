@@ -1,14 +1,13 @@
 // Fertility, pregnancy and births. Monthly: each woman's chance of a birth-leading conception is the age-specific fertility rate (calibration) scaled by her circumstances
-// (partnership status, parity, spacing, desire, money stress, space at home) and renormalised within each age band so period fertility tracks the calibration while WHO has the babies
-// emerges from partnerships, readiness and housing. Pregnancies run ~40 weeks with miscarriage risk; births create residents (name, ethnicity, religion, kin ties, routine record).
+// (partnership status, parity, spacing, desire, money stress, space at home) relative to a FIXED reference woman (FERT_REF). Nothing is renormalised to hit a target: the number of
+// births emerges from how many women are partnered / ready / housed. FERT_REF is the one tunable (see docs/CALIBRATION-METHOD.md). Pregnancies run ~40 weeks with miscarriage risk; births create residents (name, ethnicity, religion, kin ties, routine record).
 import NAMES from '../../../content/larkfield/names.js';
 import { clamp, clamp01, wpick, ageOf, fullName, later, months, days, years, setTie, setOffTie, tieOf, metro, hhOf, rec, bump, newMetro } from './util.js';
 import { bedsNeeded, bedsOf, buildPop } from './moves.js';
 
 const BANDS = [[15, 19, '15-19'], [20, 24, '20-24'], [25, 29, '25-29'], [30, 34, '30-34'], [35, 39, '35-39'], [40, 44, '40+']];
 const PARITY_W = [1.0, 0.95, 0.38, 0.14, 0.06];
-// births to a woman who moves away mid-pregnancy are lost to the neighbourhood (and arrivals do not arrive pregnant): compensate by band so resident ASFR tracks the calibration
-const LOSS_COMP = [1.1, 1.45, 1.35, 1.15, 1.08, 1.05];
+export const FERT_REF = 0.5; // circumstance weight of the 'reference' woman whose conception hazard equals the national age-specific rate (partnered, parity 0-1, average desire)
 
 function stateWeight(w, p, L) {
   const pt = L.part;
@@ -21,7 +20,7 @@ function moneyStress(w, p) { const m = w.sys && w.sys.money; if (!m) return 0.3;
 
 export function monthlyFertility(w, rng, people) {
   const asfr = w.pack.calibration.fertility.asfrComposite_derived || w.pack.calibration.fertility.asfrPer1000Women_EnglandWales2022;
-  const st = w.lf.life, scale = st.fertScale * (st.boom > w.tick ? 1 + (st.boomPct || 0.5) : 1) * 1.12;
+  const st = w.lf.life, scale = st.fertScale * (st.boom > w.tick ? 1 + (st.boomPct || 0.5) : 1);
   const bands = BANDS.map(() => ({ n: 0, el: [], sum: 0 }));
   for (const p of people) {
     if (p.sex !== 'F') continue; const age = ageOf(w, p); if (age < 15 || age >= 45) continue;
@@ -39,8 +38,8 @@ export function monthlyFertility(w, rng, people) {
     B.el.push([p, wt]); B.sum += wt;
   }
   bands.forEach((B, i) => {
-    if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = B.n / B.sum;
-    for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale * LOSS_COMP[i]))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
+    if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = 1 / FERT_REF;
+    for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
   });
 }
 

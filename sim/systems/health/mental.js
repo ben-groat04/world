@@ -21,14 +21,12 @@ function loneScore(w, p, age) {
   return 1.7 - 0.55 * Math.min(supportOf(w, p), 7) + 1.0 * iso + 1.6 * (N - 0.5) - 1.3 * (E - 0.5) + (age < 25 ? 0.5 : age < 35 ? 0.2 : 0) + (hl.grief.length ? 0.4 : 0);
 }
 
+export const LONE_THRESHOLD = 0.15; // score above which someone would answer 'often/always lonely'
 export function monthlyMental(w, rng, people) {
   const st = w.lf.health, T = w.tick;
-  // loneliness threshold: calibrated once so ~7% of adults are "often/always lonely" at the start (Community Life Survey), then individual scores move it
-  const adults = [];
-  for (const p of people) { const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p); if (age < 16) { hl.loneZ = -9; continue; } hl.loneZ = loneScore(w, p, age); adults.push(hl.loneZ); }
-  // (the tie structure erodes with churn because nothing re-grows ties for newcomers, so the threshold tracks the 93rd percentile slowly: individuals still cross it on life events)
-  if (adults.length > 50) { adults.sort((a, b) => a - b); const q93 = adults[Math.floor(adults.length * (1 - 0.07))]; st.loneThr = st.loneThr == null ? q93 : st.loneThr + 0.12 * (q93 - st.loneThr); }
-  const thr = st.loneThr ?? 9;
+  // loneliness: a fixed reporting threshold on the loneliness score (LONE_THRESHOLD); prevalence emerges from ties, household, personality, age and events
+  for (const p of people) { const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p); hl.loneZ = age < 16 ? -9 : loneScore(w, p, age); }
+  const thr = LONE_THRESHOLD;
   for (const p of people) {
     const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p), q = p.ext.pop, L = p.ext.life;
     hl.lonely = hl.loneZ > thr ? 1 : 0;

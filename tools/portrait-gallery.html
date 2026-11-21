@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Portrait gallery</title>
+<style>
+body{margin:0;padding:12px;background:#2b2a2e;color:#ddd;font:11px system-ui,sans-serif}
+#g{display:grid;grid-template-columns:repeat(8,120px);gap:8px;justify-content:center}
+.c{text-align:center;background:#38363c;border-radius:8px;padding:6px 0}
+.c canvas{display:block;margin:0 auto 3px}
+</style></head><body><div id="g"></div>
+<script type="module">
+import { drawPortrait, portraitDataURL } from '../ui/portrait.js';
+let s = 12345; const rnd = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+const clamp = v => Math.max(0, Math.min(1, v));
+const KEYS = ['skinTone','hairColor','eyeColor','height','build','looks'];
+const newGenes = () => Object.fromEntries(KEYS.map(k => [k, rnd()]));
+const child = (a, b) => Object.fromEntries(KEYS.map(k => [k, clamp((rnd() < .5 ? a[k] : b[k]) * .7 + (a[k] + b[k]) / 2 * .3 + (rnd() - .5) * .08)]));
+const jobs = ['farmer','smith','baker','doctor','teacher','priest','guard','merchant','tavernkeeper','laborer'];
+const firsts = ['Ann','Bram','Cora','Dag','Elsa','Finn','Gwen','Hal','Ida','Jon'];
+const people = [];
+let id = 1;
+// families: couples with kids
+const lasts = ['Ashby','Thorne','Marsh','Fenwick','Hale'];
+for (const last of lasts) {
+  const gm = newGenes(), gf = newGenes();
+  const dad = { id: 'p' + id++, lastName: last, sex: 'M', age: 30 + Math.floor(rnd() * 25), genes: gf, mood: rnd() * 2 - 1, job: jobs[Math.floor(rnd() * jobs.length)] };
+  const mom = { id: 'p' + id++, lastName: last, sex: 'F', age: 28 + Math.floor(rnd() * 22), genes: gm, mood: rnd() * 2 - 1, job: jobs[Math.floor(rnd() * jobs.length)] };
+  people.push(dad, mom);
+  const kids = [3, 8, 15, 22];
+  for (let i = 0; i < 3; i++) people.push({ id: 'p' + id++, lastName: last, sex: i % 2 ? 'F' : 'M', age: kids[Math.floor(rnd() * 4)] + i, genes: child(gf, gm), mood: rnd() * 2 - 1, job: i > 1 ? jobs[Math.floor(rnd() * jobs.length)] : 'child' });
+}
+// extras: elderly, dead, sick, odd inputs
+people.push({ id: 'e1', lastName: 'Ashby', sex: 'male', age: 78, genes: newGenes(), mood: .2, job: 'farmer' });
+people.push({ id: 'e2', lastName: 'Thorne', sex: 'female', age: 84, genes: newGenes(), mood: -.1 });
+people.push({ id: 'e3', lastName: 'Marsh', sex: 'M', age: 70, genes: newGenes(), mood: 0, job: 'priest' });
+people.push({ id: 'd1', lastName: 'Hale', sex: 'F', age: 66, genes: newGenes(), alive: false });
+people.push({ id: 'd2', lastName: 'Hale', sex: 'M', age: 52, genes: newGenes(), alive: false, job: 'smith' });
+people.push({ id: 's1', lastName: 'Fenwick', sex: 'F', age: 35, genes: newGenes(), health: .15, mood: -.7 });
+people.push({ id: 'x1', lastName: 'Nogenes', sex: 'M' });
+people.push({ id: 'x2', lastName: 'Strs', sex: 'F', age: 29, genes: { skinTone: 'dark', hairColor: 'red', eyeColor: 'green' }, mood: .9 });
+people.push({ id: 'b1', lastName: 'Ashby', sex: 'F', age: 0.5, genes: newGenes(), mood: .5 });
+people.push({ id: 'b2', lastName: 'Marsh', sex: 'M', age: 1.5, genes: newGenes(), mood: -.8 });
+const g = document.getElementById('g');
+for (const p of people.slice(0, 48)) {
+  const d = document.createElement('div'); d.className = 'c';
+  const cv = document.createElement('canvas'); cv.width = cv.height = 104; d.appendChild(cv);
+  drawPortrait(cv.getContext('2d'), p, 0, 0, 104);
+  const l = document.createElement('div'); l.textContent = `${p.lastName} ${p.sex[0]} ${p.age ?? '?'} m${(p.mood ?? 0).toFixed(1)} ${p.job || ''}`;
+  d.appendChild(l); g.appendChild(d);
+}
+const im = new Image(); im.src = portraitDataURL(people[0], 64); window.__url = im.src.slice(0, 22);
+window.__done = true;
+</script></body></html>

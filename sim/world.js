@@ -111,9 +111,9 @@ export class World {
     if (keys.length) return subRng(this.seed, name, ...keys);
     let r = this._rngs.get(name); if (!r) { r = this.rng.fork(name); this._rngs.set(name, r); } return r;
   }
-  formatDate(tick = this.tick) { return formatDate(tick); }
-  formatDateTime(tick = this.tick) { return formatDateTime(tick); }
-  ageOf(p) { return (this.tick - p.birthTick) / TICKS_PER_YEAR; }
+  formatDate(tick = this.tick) { return this.calendar.formatDate ? this.calendar.formatDate(tick) : formatDate(tick); }
+  formatDateTime(tick = this.tick) { return this.calendar.formatDateTime ? this.calendar.formatDateTime(tick) : formatDateTime(tick); }
+  ageOf(p) { return (this.tick - p.birthTick) / (this.calendar.ticksPerYear || TICKS_PER_YEAR); } // real-calendar packs set calendar.ticksPerYear
   nameOf(p) { return fullName(p); }
   isOpen(b) { return isOpen(b, this.time.hourFloat); }
   living() {
@@ -157,7 +157,7 @@ export class World {
   static restore(snap, pack, opts = {}) { return loadSnapshot(snap, { ...opts, pack }); }
   /** Independent copy of this world (via snapshot). With `salt`, all RNG streams are re-seeded so the fork diverges from the original. */
   fork(salt) {
-    const w = loadSnapshot(JSON.parse(JSON.stringify(saveSnapshot(this))), { systems: this.opts.systems, pack: this.pack, plugins: this.opts.plugins });
+    const w = loadSnapshot(JSON.parse(JSON.stringify(saveSnapshot(this))), { systems: this.opts.systems, pack: this.pack, plugins: this.opts.plugins, worldOpts: this.opts });
     if (salt !== undefined) {
       const k = subRng(this.seed, 'fork', salt).int(1, 1 << 30);
       w.rng.s = (w.rng.s ^ k) >>> 0 || 1; for (const r of w._rngs.values()) r.s = (r.s ^ k) >>> 0 || 1;

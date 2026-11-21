@@ -49,7 +49,7 @@ export function saveSnapshot(world) {
 }
 
 export function loadSnapshot(snap, opts = {}) {
-  const w = new World({ seed: snap.seed, population: snap.settings.population, settings: snap.settings, systems: opts.systems, pack: opts.pack, plugins: opts.plugins, sched: opts.sched || snap.sched || 'legacy', strictEvents: opts.strictEvents, hashDaily: !!(snap.kernel && snap.kernel.hashLog) });
+  const w = new World({ ...(opts.worldOpts || {}), seed: snap.seed, population: snap.settings.population, settings: snap.settings, systems: opts.systems, pack: opts.pack, plugins: opts.plugins, sched: opts.sched || snap.sched || 'legacy', strictEvents: opts.strictEvents, hashDaily: !!(snap.kernel && snap.kernel.hashLog) });
   const table = snap.table, objs = new Array(table.length);
   // pass 1: containers
   for (let i = 0; i < table.length; i++) {

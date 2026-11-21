@@ -214,7 +214,7 @@ function render(c, T, opts) {
   c.closePath(); c.fill();
   drawClothingDetail(c, J, cx, shY, shW, neckW, skin, T);
   // neck shadow under chin
-  c.fillStyle = css(shade(skin, .72), .5);
+  c.fillStyle = css(shade(skin, .72), .32);
   c.beginPath(); c.ellipse(cx, cy + ry + 1, rx * .62, 5.5, 0, 0, Math.PI); c.fill();
 
   // ---- ears ----

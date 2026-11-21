@@ -46,7 +46,8 @@ export function createHousing() {
         premium: rng.float(0.88, 1.14), cond: +rng.float(0.5, 1).toFixed(2), damp: false, repair: null, notice: null, since: hh ? hh.since : 0, lastRise: w.tick - rng.int(0, 11) * MONTH, lastRisePct: 0, voidUntil: 0, listed: !hh, complained: 0, hpiBase: 1, cafeNear: 0, bx: b.door.x, by: b.door.y, floor: mu.floor };
       if (!hh) { u.listed = false; u.voidUntil = w.tick + rng.int(0, 2) * MONTH; if (!u.rent) u.rent = rented(u.tenure) ? marketRent(w, u, 1) : 0; }
       if (u.tenure === 'private_rent' || isSocial(u.tenure)) u.cond = Math.min(u.cond, rng.float(0.45, 1));
-      u.lastSeg = hh ? hh.seg : null; // the kind of tenant last housed here: student lets stay student lets (letting-agent behaviour)
+      // student lets (HMOs / agent-marketed flats near the university) are let only to students; ~80% of the units students occupy on day 1 are such lets
+      u.studentLet = !!hh && hh.seg === 'students' && rng.chance(0.8); u.lastSeg = hh ? hh.seg : null;
       list.push(u); byId[u.id] = u;
     }
     const owners = M.owners.map((o) => ({ id: o.id, kind: o.kind, units: o.units.slice(), offMap: o.offMap || 0, sold: 0 }));
@@ -335,7 +336,7 @@ export function createHousing() {
   // ---------------------------------------------------------------- market clearing
   function candidates(hh) {
     const s = hh.search, S = H(W);
-    return S.list.filter((u) => u.hh < 0 && u.listed && u.id !== hh.unit && (s.buy ? (u.tenure === 'mortgage' || u.tenure === 'owned_outright') : u.tenure === 'private_rent') && u.bedrooms >= s.beds && u.bedrooms <= s.beds + 1 && (s.buy ? valueOf(W, u) * 0.9 <= Math.max(1, (hh.income ? hh.income.gross : 30000)) * 4.5 : u.rent <= s.maxRent * 1.05));
+    return S.list.filter((u) => u.hh < 0 && u.listed && u.id !== hh.unit && (!u.studentLet || hh.seg === 'students') && (s.buy ? (u.tenure === 'mortgage' || u.tenure === 'owned_outright') : u.tenure === 'private_rent') && u.bedrooms >= s.beds && u.bedrooms <= s.beds + 1 && (s.buy ? valueOf(W, u) * 0.9 <= Math.max(1, (hh.income ? hh.income.gross : 30000)) * 4.5 : u.rent <= s.maxRent * 1.05));
   }
   function clearMarket(rng) {
     const w = W, S = H(w), tick = w.tick, hhs = w.lf.households;

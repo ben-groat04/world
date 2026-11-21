@@ -10,9 +10,9 @@ const GROUPS = ['white_british', 'other_white', 'indian', 'pakistani', 'banglade
 const ARRIVAL_TILT = { students: 3.5, young_sharers: 1.5, early_career: 1.4, recent_arrivals: 2.5, family_couples: 0.9, lone_parents: 0.7, benefit_dependent: 0.5, older_longterm: 0.1, settled_professionals: 0.9, shift_workers: 0.8, local_business_families: 0.1 };
 const need = { one_person_66plus: 1, one_person_u66: 1, married_no_kids: 2, cohab_no_kids: 2, couple_66plus: 2, sharers_students_multigen: 3, married_dep_kids: 3, cohab_dep_kids: 3, lone_parent_dep: 2, lone_parent_nondep: 2, married_nondep: 3, cohab_nondep: 3, other_single_family: 3, multi_family_dep_kids: 4 };
 
-// Letting-agent behaviour: a flat/house last let to students is re-let to students (agents market to the university, landlords like 12-month cohorts).
-// Tunable mechanism parameter (relative weight of a student household when the previous tenants were students).
-const STUDENT_LET_STICKY = 6;
+// Letting-agent behaviour: a unit marketed as a student let (unit.studentLet) is re-let to students (agents market to the university, landlords like 12-month cohorts).
+// Tunable mechanism parameter (relative weight of a student household for a student let).
+const STUDENT_LET_STICKY = 40;
 let shareCache = new WeakMap();
 function ethShare(pack) {
   let s = shareCache.get(pack); if (s) return s;
@@ -24,7 +24,7 @@ export function pickSegArch(w, rng, unit, forceSeg) {
   const pack = w.pack, joint = pack.meta.segmentComposition, cells = [];
   for (const seg of pack.meta.segments) {
     if (forceSeg && seg.id !== forceSeg) continue;
-    const tn = seg.tenure[unit.tenure] || 0.003, base = seg.householdShare * (seg.mobility.annualMoveProb + 0.05) * (ARRIVAL_TILT[seg.id] ?? 1) * tn * (unit.lastSeg === 'students' ? (seg.id === 'students' ? STUDENT_LET_STICKY : 0.3) : seg.id === 'students' ? 0.5 : 1);
+    const tn = seg.tenure[unit.tenure] || 0.003, base = seg.householdShare * (seg.mobility.annualMoveProb + 0.05) * (ARRIVAL_TILT[seg.id] ?? 1) * tn * (unit.studentLet ? (seg.id === 'students' ? STUDENT_LET_STICKY : 0.02) : seg.id === 'students' ? 0.5 : 1);
     for (const [arch, wt] of Object.entries(joint[seg.id] || {})) {
       const n = need[arch] || 2, d = unit.bedrooms - (n > 3 ? 3 : n === 3 ? 2 : n === 1 ? 1 : 1), fit = d < 0 ? Math.exp(0.9 * d) : Math.exp(-0.45 * d);
       const sh = arch === 'sharers_students_multigen' ? (unit.kind === 'shared_house' || unit.bedrooms >= 3 ? 1 : 0.15) : (unit.kind === 'shared_house' ? 0.05 : 1);

@@ -10,14 +10,15 @@ const COMMERCIAL = new Set(['farm', 'bakery', 'smithy', 'tavern', 'market', 'mil
 const WORK_IDS = new Set(['workShift', 'work']);
 const SEASON_YIELD = [0.6, 1.0, 1.8, 0.6]; // farm output multiplier by season (spring, summer, autumn, winter); mean 1.0
 const MEALS_PER_DAY = 3;
+const SHARE = { bakery: 0.40, mill: 0.17, grain: 0.25 }; // of the retail price of a loaf; the market keeps the rest
 const RENT_PER_DAY = 1.1;
 const GOODS = {
-  grain:     { base: 0.28, cover: 90,  producer: 'farm',      daily: null },
-  flour:     { base: 0.36, cover: 4,   producer: 'mill',      daily: null },
-  bread:     { base: 0.50, cover: 0.8, producer: 'bakery',    daily: null },
-  tools:     { base: 16,   cover: 30,  producer: 'smithy',    perPerson: 0.08 / 112 },
-  clothes:   { base: 12,   cover: 20,  producer: 'tailor',    perPerson: 0.9 / 112 },
-  furniture: { base: 35,   cover: 45,  producer: 'carpenter', perPerson: 0.12 / 112 },
+  grain:     { base: 0.36, cover: 45,  producer: 'farm',      daily: null },
+  flour:     { base: 0.38, cover: 4,   producer: 'mill',      daily: null },
+  bread:     { base: 0.90, cover: 0.8, producer: 'bakery',    daily: null },
+  tools:     { base: 4.5,  cover: 30,  producer: 'smithy',    perPerson: 0.04 },   // ironware: nails, hinges, blades, pots (units/person/day)
+  clothes:   { base: 12,   cover: 20,  producer: 'tailor',    perPerson: 0.012 },  // ~1.3 outfits per person-year
+  furniture: { base: 40,   cover: 45,  producer: 'carpenter', perPerson: 0.005 },  // woodwork & furnishings
 };
 const INPUT_COST = { smithy: 0.28, tailor: 0.3, carpenter: 0.25 }; // fraction of sale price spent on imported raw materials
 const JUNIOR = { captain: 'guard', tavernkeeper: 'server', farmer: 'laborer', doctor: 'nurse', innkeeper: 'laborer', baker: null };
@@ -30,7 +31,7 @@ const round = (x) => Math.round(x);
 const age = (w, p) => w.ageOf(p);
 
 function treasury(w) { w.town = w.town || {}; if (typeof w.town.treasury !== 'number') w.town.treasury = 600; return w.town; }
-function taxRate(w) { return w.settings?.taxRate ?? 0.1; }
+function taxRate(w) { return w.settings?.taxRate ?? 0.15; }
 function idn(p) { return typeof p.id === 'number' ? p.id : [...String(p.id)].reduce((a, c) => a + c.charCodeAt(0), 0); }
 function eco(w) { return w.econ; }
 function E(w, p) {
@@ -51,7 +52,7 @@ function wealthOf(w, p) {
 }
 
 // ---------------------------------------------------------------- market
-function stockOf(w, g) { let s = 0; for (const b of w.buildings.values()) s += b.inventory?.[g] || 0; return s; }
+function stockOf(w, g) { let s = 0; for (const b of w.buildings.values()) { s += b.inventory?.[g] || 0; if (g === 'bread') s += b.inventory?.food || 0; } return s; }
 function mealsPerDay(w) {
   let d = 0;
   for (const p of w.living()) { const a = age(w, p); d += a < 5 ? 0.45 : a < 14 ? 0.75 : 1; }
@@ -69,20 +70,19 @@ function targetStock(w, g) {
 // Sell `qty` of good g to a buyer. Returns units actually delivered. Revenue flows to producers/market; buyer pays outside.
 function takeGood(w, g, qty) {
   const e = eco(w);
-  let got = 0;
-  const src = [];
-  for (const b of w.buildings.values()) { const s = b.inventory?.[g] || 0; if (s > 0.01 && !b.closed) src.push(b); }
-  src.sort((a, b) => b.inventory[g] - a.inventory[g]);
+  const src = []; let tot = 0;
+  for (const b of w.buildings.values()) { const s = b.inventory?.[g] || 0; if (s > 0.01 && !b.closed) { src.push(b); tot += s; } }
   const p = price(w, g);
+  const take = Math.min(qty, tot); let got = 0;
+  const mk = e.marketBuilding(w);
   for (const b of src) {
-    if (got >= qty) break;
-    const t = Math.min(b.inventory[g], qty - got);
+    const t = take * (b.inventory[g] / tot);
     b.inventory[g] -= t; got += t;
     const rev = t * p;
     const fee = b.type === 'market' ? 0 : rev * 0.06;
     b.funds = (b.funds || 0) + rev - fee;
     b.revToday = (b.revToday || 0) + rev - fee;
-    const mk = e.marketBuilding(w); if (mk && mk !== b) { mk.funds = (mk.funds || 0) + fee * 0.65; mk.revToday = (mk.revToday || 0) + fee * 0.65; }
+    if (mk && mk !== b) { mk.funds = (mk.funds || 0) + fee * 0.65; mk.revToday = (mk.revToday || 0) + fee * 0.65; }
     treasury(w).treasury += fee * 0.35;
   }
   e.sold[g] = (e.sold[g] || 0) + got;
@@ -244,178 +244,85 @@ function restDayFor(w, p) {
 }
 function nowHour(w) { return w.time.hour + w.time.minute / 60; }
 
-const workAction = {
-  id: 'workShift', label: 'Working', interruptible: true,
-  where(w, p) { const b = p.workId != null ? w.buildings.get(p.workId) : null; return b && !b.closed ? b.id : null; },
-  score(w, p) {
-    if (!p.workId || !JOBS[p.job] || jailed(w, p)) return 0;
-    const b = w.buildings.get(p.workId); if (!b || b.closed) return 0;
-    const sh = shiftOf(p.job); const h = nowHour(w);
-    if (h < sh[0] || h >= sh[1]) return 0;
-    if (restDayFor(w, p)) return 0;
-    if (p.illness && (p.illness.severity || 0) > 0.55) return 0;
-    if (p.health < 0.3) return 0;
-    const ec = E(w, p);
-    if (ec.lastShiftDay === w.time.totalDays && ec.shiftDone) return 0;
-    let s = 55 + 30 * p.personality.conscientiousness;
-    if (p.traits.includes('lazy')) s -= 20;
-    if (p.traits.includes('ambitious')) s += 8;
-    if ((p.money || 0) < 15) s += 12; // need the wage
-    if (p.needs.hunger < 0.2) s -= 30;
-    if (p.needs.energy < 0.15) s -= 20;
-    return Math.max(0, s);
-  },
-  duration(w, p) {
-    const sh = shiftOf(p.job); if (!sh) return 6;
-    return clamp(Math.ceil((sh[1] - nowHour(w)) * 6), 3, 66);
-  },
-  onStart(w, p) {
-    const ec = E(w, p); ec.lastShiftDay = w.time.totalDays; ec.shiftDone = false; ec.presentTicks = 0;
-    ec.shiftTicks = workAction.duration(w, p);
-    p.thought = `Off to ${p.workId != null ? bName(w.buildings.get(p.workId) || {}) : 'work'} for the ${p.job}'s shift.`;
-  },
-  onTick(w, p) {
-    if (p.locationId === p.workId && p.workId != null) { const ec = p.econ; if (ec) ec.presentTicks++; p.needs.purpose = Math.min(1, p.needs.purpose + 0.0025); }
-  },
-  onEnd(w, p) {
-    const ec = E(w, p), b = p.workId != null ? w.buildings.get(p.workId) : null; if (!b) return;
-    const ratio = clamp(ec.presentTicks / Math.max(1, ec.shiftTicks * 0.85), 0, 1);
-    ec.shiftDone = ratio > 0.5;
-    ec.perf = ec.perf * 0.96 + ratio * 0.04;
-    if (ratio < 0.3) return;
-    payWage(w, p, b, ratio);
-    const J = JOBS[p.job];
-    if (J) {
-      const gain = 0.0016 * (0.5 + p.genes.intellect) * (ec.apprentice ? 2 : 1) * (1 - (p.skills[J.skill] || 0)) * ratio;
-      p.skills[J.skill] = Math.min(1, (p.skills[J.skill] || 0) + gain);
-    }
-  },
-  thought: (w, p) => `Working as a ${p.job}.`,
-};
-
-// ---------------------------------------------------------------- shopping & meals
-function dependentsOf(w, p) {
-  const out = [];
-  const h = p.homeId != null ? w.buildings.get(p.homeId) : null; if (!h) return out;
-  for (const id of h.residents) {
-    if (id === p.id) continue; const q = w.people.get(id); if (!q || !q.alive) continue;
-    const a = age(w, q);
-    const isKid = a < 14 && (q.family.fatherId === p.id || q.family.motherId === p.id || !q.family.fatherId || true);
-    const isSpouse = q.id === p.family.spouseId && (q.job === 'unemployed' || q.job === 'retired' || q.homemaker) && (q.money || 0) < 25;
-    const isParent = (p.family.fatherId === q.id || p.family.motherId === q.id) && a > 60 && (q.money || 0) < 10;
-    if (isKid || isSpouse || isParent) out.push(q);
-  }
-  return out;
+function creditLimit(p) { return 25 + 60 * ((p.reputation + 1) / 2) + (p.job !== 'unemployed' && p.job !== 'retired' ? 30 : 0); }
+function addDebt(w, p, amt) {
+  p.debt = (p.debt || 0) + amt;
+  if (!p.creditorId || !w.people.get(p.creditorId)?.alive) p.creditorId = eco(w).lender?.id ?? null;
 }
 function marketBuilding(w) { return w.buildingsOfType('market').find((b) => !b.closed) || null; }
-function creditLimit(p) { return 25 + 60 * ((p.reputation + 1) / 2) + (p.job !== 'unemployed' && p.job !== 'retired' ? 30 : 0); }
 
-const shopAction = {
-  id: 'shopGroceries', label: 'Shopping for food', interruptible: true,
-  where(w) { const m = marketBuilding(w); return m ? m.id : null; },
-  score(w, p) {
-    if (age(w, p) < 13 || jailed(w, p)) return 0;
-    const m = marketBuilding(w); if (!m || !isOpen(m, nowHour(w))) return 0;
-    const dep = dependentsOf(w, p).filter((q) => age(w, q) < 14 || q.money < 3);
-    const target = (1 + dep.length) * MEALS_PER_DAY * 2;
-    const have = p.inventory.food || 0;
-    if (have >= target * 0.6) return 0;
-    let s = 28 + 50 * (1 - have / target);
-    if (p.needs.hunger < 0.3 && have < 1) s += 15;
-    // avoid leaving during the middle of a working day unless short
-    if (p.job && JOBS[p.job] && have > 1) { const sh = shiftOf(p.job); const h = nowHour(w); if (h >= sh[0] && h < sh[1] && !restDayFor(w, p)) s -= 35; }
-    return Math.max(0, s);
-  },
-  duration: () => 6,
-  onStart(w, p) { p._shopDone = false; p.thought = 'Out to the market to buy food for the household.'; },
-  onTick(w, p) {
-    if (p._shopDone) return; const m = marketBuilding(w); if (!m || p.locationId !== m.id) return;
-    p._shopDone = true; shopNow(w, p);
-  },
-  onEnd(w, p) {
-    if (p._shopDone) return; const m = marketBuilding(w); if (m && p.locationId === m.id) { p._shopDone = true; shopNow(w, p); }
-  },
-};
-function shopNow(w, p) {
-  const e = eco(w);
-  const dep = dependentsOf(w, p);
-  const heads = [p, ...dep];
-  let want = 0;
-  for (const q of heads) want += Math.max(0, MEALS_PER_DAY * (age(w, q) < 5 ? 0.5 : age(w, q) < 14 ? 0.75 : 1) * 2.5 - (q.inventory.food || 0));
-  if (want < 0.5) return;
-  const pr = price(w, 'bread') * 1.0;
-  let afford = (p.money || 0) / pr;
-  const credit = Math.max(0, creditLimit(p) - (p.debt || 0)) / pr;
-  const canBuy = Math.min(want, afford + credit);
-  let got = canBuy > 0 ? takeGood(w, 'bread', canBuy) : 0;
-  if (got < canBuy - 0.5 && w.tick >= e.noImportUntil) got += importGood(w, 'bread', 0) || 0;
-  const cost = got * pr;
-  const fromCash = Math.min(p.money || 0, cost);
-  p.money = (p.money || 0) - fromCash;
-  if (cost > fromCash + 0.001) { addDebt(w, p, cost - fromCash); }
-  e.foodSpend += cost;
-  // distribute equally among the household members that need it
-  let left = got;
-  const order = heads.slice().sort((a, b) => (a.inventory.food || 0) - (b.inventory.food || 0));
-  for (const q of order) { const give = Math.min(left, Math.max(0.5, want / heads.length)); q.inventory.food = (q.inventory.food || 0) + give; left -= give; }
-  if (left > 0) p.inventory.food = (p.inventory.food || 0) + left;
-  if (got < 1 && (p.inventory.food || 0) < 1) { // nothing available or affordable: parish alms
-    const T = treasury(w);
-    if (T.treasury > 5 && w.rng.chance(0.7)) { const a = 3; T.treasury -= a; p.inventory.food = (p.inventory.food || 0) + a; p.thought = 'Could not afford bread; took alms from the temple.'; e.alms++; if (w.rng.chance(0.2)) w.addMemory(p, { type: 'alms', text: 'Went to the temple for charity because there was no bread at home.', otherIds: [], weight: -0.4, importance: 2 }); }
+// Engine actions (work / shop / eat_*) do the walking and spending; the economy backs them:
+// retail food stock lives in market.inventory.food and is restocked from the bakeries each hour,
+// retail prices are written into world.settings.prices, and wages are paid each dawn from yesterday's workedTicks.
+function restockMarket(w) {
+  const e = eco(w), mk = marketBuilding(w); if (!mk) return;
+  mk.inventory = mk.inventory || {};
+  const want = Math.max(0, e.dailyDemand.bread * 0.8 - (mk.inventory.food || 0));
+  if (want < 1) return;
+  const P = price(w, 'bread');
+  let got = 0;
+  const src = []; let tot = 0;
+  for (const b of w.buildings.values()) { const s = b.type === 'market' ? 0 : b.inventory?.bread || 0; if (s >= 0.5 && !b.closed) { src.push(b); tot += s; } }
+  const take = Math.min(want, tot);
+  if (take > 0) {
+    // value of a loaf is split along the chain: bakery, mill, farms (grain), market keeps the rest as its margin
+    const farms = w.buildingsOfType('farm').filter((f) => !f.closed), mills = w.buildingsOfType('mill').filter((f) => !f.closed);
+    const fw = farms.reduce((a, f) => a + f.employees.length + 1, 0), mw = mills.reduce((a, f) => a + f.employees.length + 1, 0);
+    const pay = (bld, amt) => { bld.funds = (bld.funds || 0) + amt; bld.revToday = (bld.revToday || 0) + amt; };
+    for (const b of src) {
+      const t = take * (b.inventory.bread / tot); b.inventory.bread -= t; got += t;
+      pay(b, t * P * SHARE.bakery);
+    }
+    for (const f of mills) pay(f, take * P * SHARE.mill * (f.employees.length + 1) / mw);
+    for (const f of farms) pay(f, take * P * SHARE.grain * (f.employees.length + 1) / fw);
+    mk.funds -= take * P * (SHARE.bakery + SHARE.mill + SHARE.grain);
+  }
+  if (got < want && w.tick >= e.noImportUntil && e.market.mult.bread > 1.5 && (e.stock.bread || 0) < e.dailyDemand.bread * 0.3) got += importGood(w, 'food', Math.min(want - got, e.dailyDemand.bread * 0.05)) || 0;
+  mk.inventory.food = (mk.inventory.food || 0) + got; e.salesDay.bread += got;
+}
+function syncPrices(w) {
+  const pr = w.settings.prices, f = price(w, 'bread');
+  pr.food = Math.round(f * 100) / 100; pr.tavernMeal = Math.round(f * 300) / 100; pr.drink = Math.round(f * 200) / 100;
+}
+function parishAlms(w) {
+  // anyone about to starve with no money gets alms from the temple (treasury) or a neighbour's charity
+  const T = treasury(w), e = eco(w), pr = w.settings.prices.food;
+  for (const p of w.living()) {
+    if (p.needs.hunger > 0.28 || (p.inventory.food || 0) >= 1 || (p.money || 0) >= pr * 3) continue;
+    if (age(w, p) < 5) continue;
+    const home = p.homeId != null ? w.buildings.get(p.homeId) : null;
+    if (home && home.residents.some((i) => (w.people.get(i)?.inventory.food || 0) >= 1)) continue;
+    const credit = Math.max(0, creditLimit(p) - (p.debt || 0));
+    if (credit > pr * 6 && p.job !== 'retired' && age(w, p) >= 16) { addDebt(w, p, pr * 6); p.inventory.food = (p.inventory.food || 0) + 6; continue; }
+    if (T.treasury > 5) { T.treasury -= 3 * pr; p.inventory.food = (p.inventory.food || 0) + 3; e.alms++; p.thought = 'Took bread from the temple dole.'; if (w.rng.chance(0.15)) w.addMemory(p, { type: 'alms', text: 'Went to the temple for charity because there was nothing to eat at home.', otherIds: [], weight: -0.4, importance: 2 }); }
     else e.unmet++;
   }
 }
-function addDebt(w, p, amt) {
-  p.debt = (p.debt || 0) + amt;
-  if (!p.creditorId || !w.people.get(p.creditorId)?.alive) {
-    // the richest person in town with spare cash tends to be the lender
-    p.creditorId = eco(w).lender?.id ?? null;
+function payWagesDaily(w) {
+  // yesterday's work -> wages, skill growth, attendance
+  const e = eco(w); const yd = (w.time.weekday + 6) % 7;
+  for (const p of w.living()) {
+    const ec = E(w, p); const J = JOBS[p.job];
+    if (!J || p.workId == null) { ec.worked = 0; continue; }
+    const b = w.buildings.get(p.workId); if (!b || b.closed) continue;
+    const shiftTicks = (J.shift[1] - J.shift[0]) * 6;
+    const ratio = clamp((p.workedTicks || 0) / (shiftTicks * 0.8), 0, 1);
+    const rest = J.service ? yd === p.schedule?.offDay : yd === 6;
+    if (w.time.totalDays - ec.hireDay <= 1) continue;
+    if (!rest) { ec.perf = ec.perf * 0.96 + ratio * 0.04; ec.lastShiftDay = w.time.totalDays - 1; }
+    if (ratio < 0.25) continue;
+    payWage(w, p, b, ratio);
+    const gain = 0.0018 * (0.5 + p.genes.intellect) * (ec.apprentice ? 2 : 1) * (1 - (p.skills[J.skill] || 0)) * ratio;
+    p.skills[J.skill] = Math.min(1, (p.skills[J.skill] || 0) + gain);
   }
 }
-
-const mealAction = {
-  id: 'buyMeal', label: 'Eating out', interruptible: true,
-  _pick(w, p) {
-    const h = nowHour(w); let best = null, bd = 1e9;
-    for (const t of ['tavern', 'inn']) for (const b of w.buildingsOfType(t)) {
-      if (b.closed || !isOpen(b, h)) continue;
-      const d = Math.abs(b.x - p.x) + Math.abs(b.y - p.y); if (d < bd) { bd = d; best = b; }
-    }
-    return best;
-  },
-  where(w, p) { const b = mealAction._pick(w, p); return b ? b.id : null; },
-  score(w, p) {
-    if (age(w, p) < 14 || jailed(w, p) || (p.money || 0) < 4) return 0;
-    const b = mealAction._pick(w, p); if (!b) return 0;
-    const hungry = p.needs.hunger < 0.4, noFood = (p.inventory.food || 0) < 1;
-    let s = 0;
-    if (hungry && noFood) s = 50 + (0.4 - p.needs.hunger) * 80;
-    else if (hungry && (p.money || 0) > 40 && p.personality.extraversion > 0.5) s = 30;
-    else if (p.needs.social < 0.35 && (p.money || 0) > 60) s = 18 + 12 * p.personality.extraversion;
-    return s;
-  },
-  duration: () => 6,
-  onStart(w, p) { p._mealDone = false; },
-  onTick(w, p) {
-    if (p._mealDone) return; const b = w.buildings.get(p.locationId); if (!b || (b.type !== 'tavern' && b.type !== 'inn')) return;
-    p._mealDone = true;
-    const pr = b.type === 'inn' ? 1.6 : 1.2;
-    if ((p.money || 0) < pr) return;
-    p.money -= pr; b.funds = (b.funds || 0) + pr; b.revToday = (b.revToday || 0) + pr;
-    treasury(w).treasury += pr * 0.03; b.funds -= pr * 0.03;
-    takeGood(w, 'bread', 0.5); // ingredients bought from the bakery
-    p.needs.hunger = Math.min(1, p.needs.hunger + 0.6); p.needs.fun = Math.min(1, p.needs.fun + 0.06); p.needs.social = Math.min(1, p.needs.social + 0.06);
-    eco(w).mealSpend += pr;
-    p.thought = `Having a hot meal at ${bName(b)}.`;
-  },
-  thought: () => 'Having a hot meal at the tavern.',
-};
 
 // ---------------------------------------------------------------- production (hourly)
 function recalcRates(w) {
   const e = eco(w);
   const D = mealsPerDay(w), pop = w.living().length;
-  e.dailyDemand = { grain: D, flour: D, bread: D };
+  const dem = Math.max(0.5 * D, e.sales.bread || 0);
+  e.dailyDemand = { grain: D, flour: dem, bread: dem };
   for (const g of ['tools', 'clothes', 'furniture']) e.dailyDemand[g] = pop * GOODS[g].perPerson;
   const eff = {};
   for (const b of w.buildings.values()) {
@@ -428,10 +335,30 @@ function recalcRates(w) {
   e.rate = {};
   for (const g of Object.keys(GOODS)) {
     const hoursPerDay = (eff[g] || 0) * 6 / 7; // rest day
-    const need = e.dailyDemand[g] * (g === 'grain' ? 1.12 : 1.15);
+    const need = e.dailyDemand[g] * (g === 'grain' ? 2.0 : 1.6); // farms, bakeries & crafts export their surplus to nearby villages
     e.rate[g] = hoursPerDay > 0 ? need / hoursPerDay : 0;
   }
   e.workHours = eff;
+  e.need = {}; for (const g of Object.keys(GOODS)) e.need[g] = e.dailyDemand[g] * (g === 'grain' ? 2.0 : g === 'flour' || g === 'bread' ? 1.6 : 1.6);
+}
+function adjustRates(w) {
+  const e = eco(w);
+  e.sales.bread = e.sales.bread * 0.93 + e.salesDay.bread * 0.07; e.salesDay.bread = 0;
+  if (w.time.weekday === 1) { // weekly: producers whose till is empty mark up; flush ones mark down (cost-push pricing)
+    for (const g of ['grain', 'flour', 'bread', 'tools', 'clothes', 'furniture']) {
+      const ps = w.buildingsOfType(GOODS[g].producer).filter((b) => !b.closed); if (!ps.length) continue;
+      let f = 0, pay = 0; for (const b of ps) { f += b.funds || 0; pay += b.employees.length * 11; }
+      f /= ps.length; pay /= ps.length;
+      if (f < 40 + pay * 1.5) e.kx[g] = clamp(e.kx[g] * 1.06, 0.5, 8); else if (f > 200 + pay * 10) e.kx[g] = clamp(e.kx[g] * 0.95, 0.5, 8);
+    }
+  }
+  for (const g of Object.keys(GOODS)) e.expWeek[g] = (e.expWeek[g] || 0) + e.need[g] * (g === 'grain' ? SEASON_YIELD[w.time.season] : 1) * (g === 'grain' ? 1 : throttle(w, g));
+  if (w.time.weekday !== 0) return;
+  for (const g of Object.keys(GOODS)) {
+    const made = e.madeWeek[g] || 0, exp = e.expWeek[g] || 0;
+    if (exp > 1 && e.workHours[g] > 0) e.adj[g] = clamp(e.adj[g] * Math.pow(clamp(exp / Math.max(made, exp * 0.05), 0.6, 1.6), 0.5), 0.6, 4);
+    e.madeWeek[g] = 0; e.expWeek[g] = 0;
+  }
 }
 function throttle(w, g) {
   const cap = targetStock(w, g) * (g === 'grain' ? 2.2 : 3);
@@ -448,17 +375,12 @@ function workersPresent(w, b) {
   return { u, n };
 }
 function buyInput(w, buyer, g, qty) {
-  // buy from producing buildings' inventory with buyer funds
-  let got = 0; const pr = price(w, g) * 0.9;
-  for (const b of w.buildings.values()) {
-    if (got >= qty) break; if (b === buyer || b.closed) continue;
-    const s = b.inventory?.[g] || 0; if (s < 0.1) continue;
-    const afford = Math.max(0, (buyer.funds || 0)) / pr;
-    const t = Math.min(s, qty - got, afford); if (t <= 0) break;
-    b.inventory[g] -= t; got += t; const c = t * pr;
-    buyer.funds -= c; b.funds = (b.funds || 0) + c; b.revToday = (b.revToday || 0) + c;
-  }
-  return got;
+  // physical transfer between stages of the staple chain; payment is settled when the loaf is sold (see restockMarket)
+  const src = []; let tot = 0;
+  for (const b of w.buildings.values()) { if (b === buyer || b.closed) continue; const s = b.inventory?.[g] || 0; if (s >= 0.1) { src.push(b); tot += s; } }
+  const take = Math.min(qty, tot); if (take <= 0) return 0;
+  for (const b of src) b.inventory[g] -= take * (b.inventory[g] / tot);
+  return take;
 }
 function produceHour(w) {
   const e = eco(w); const S = w.time.season; const sy = SEASON_YIELD[S] * e.harvest;
@@ -469,20 +391,20 @@ function produceHour(w) {
     switch (b.type) {
       case 'farm': {
         const tf = (b.inventory.toolsWear ?? 1) > 0.3 ? 1 : 0.8;
-        const out = u * (e.rate.grain || 0) * sy * tf * throttle(w, 'grain');
+        const out = u * (e.rate.grain || 0) * e.adj.grain * sy * tf * throttle(w, 'grain');
         b.inventory.grain = (b.inventory.grain || 0) + out; e.made.grain += out; break;
       }
       case 'mill': {
-        const want = u * (e.rate.flour || 0) * throttle(w, 'flour');
+        const want = u * (e.rate.flour || 0) * e.adj.flour * throttle(w, 'flour');
         const got = buyInput(w, b, 'grain', want); b.inventory.flour = (b.inventory.flour || 0) + got * 0.97; e.made.flour += got; break;
       }
       case 'bakery': {
-        const want = u * (e.rate.bread || 0) * throttle(w, 'bread');
+        const want = u * (e.rate.bread || 0) * e.adj.bread * throttle(w, 'bread');
         const got = buyInput(w, b, 'flour', want); b.inventory.bread = (b.inventory.bread || 0) + got * 1.02; e.made.bread += got; break;
       }
       case 'smithy': case 'tailor': case 'carpenter': {
         const g = b.type === 'smithy' ? 'tools' : b.type === 'tailor' ? 'clothes' : 'furniture';
-        const out = u * (e.rate[g] || 0) * throttle(w, g);
+        const out = u * (e.rate[g] || 0) * e.adj[g] * throttle(w, g);
         const cost = out * price(w, g) * INPUT_COST[b.type];
         if ((b.funds || 0) > cost) { b.funds -= cost; b.inventory[g] = (b.inventory[g] || 0) + out; e.made[g] += out; }
         if (b.type === 'carpenter') repairs(w, b, u);
@@ -533,14 +455,14 @@ function spoilAndExport(w) {
     if (inv.grain) inv.grain *= 0.9992;
     if (inv.flour) inv.flour *= 0.995;
     if (inv.bread) { const keep = e.dailyDemand.bread * 0.4; if (inv.bread > keep) inv.bread -= (inv.bread - keep) * 0.35; }
-    if (b.type === 'market' && inv.food) { inv.bread = (inv.bread || 0) + inv.food; inv.food = 0; }
+    if (inv.food && b.type === 'market') { const keep = e.dailyDemand.bread * 1.2; if (inv.food > keep) inv.food -= (inv.food - keep) * 0.3; }
     // exports of surplus to nearby towns (brings money in)
     if (b.closed) continue;
-    for (const g of ['grain', 'tools', 'clothes', 'furniture']) {
+    for (const g of ['grain', 'bread', 'flour', 'tools', 'clothes', 'furniture']) {
       if (GOODS[g].producer !== b.type) continue;
-      const ex = (inv[g] || 0) - targetStock(w, g) * 0.6 / Math.max(1, w.buildingsOfType(b.type).length);
+      const ex = (inv[g] || 0) - targetStock(w, g) * (g === 'bread' ? 0.7 : 0.6) / Math.max(1, w.buildingsOfType(b.type).length);
       const boost = e.boomUntil > w.tick ? e.boomFactor : 1;
-      if (ex > 1) { const t = ex * (g === 'grain' ? 0.08 : 0.15) * boost; inv[g] -= t; const rev = t * GOODS[g].base * 0.8 * boost; b.funds = (b.funds || 0) + rev; b.revToday = (b.revToday || 0) + rev; e.exportRev += rev; }
+      if (ex > 1) { const t = ex * (g === 'grain' ? 0.06 : 0.15) * boost; inv[g] -= t; const rev = t * GOODS[g].base * (g === 'bread' || g === 'flour' ? 0.65 : 0.8) * e.kx[g] * boost; b.funds = (b.funds || 0) + rev; b.revToday = (b.revToday || 0) + rev; e.exportRev += rev; }
     }
   }
   // import to stop outright starvation when bread/flour/grain are scarce
@@ -550,14 +472,25 @@ function spoilAndExport(w) {
 }
 function durableDemand(w) {
   const e = eco(w);
-  for (const g of ['tools', 'clothes', 'furniture']) {
-    let n = e.dailyDemand[g] * (e.boomUntil > w.tick ? e.boomFactor : 1);
+  const adults = w.living().filter((p) => age(w, p) >= 18 && !isPlayer(w, p));
+  if (!adults.length) return;
+  for (const g of ['tools', 'furniture']) {
+    const n = e.dailyDemand[g] * (e.boomUntil > w.tick ? e.boomFactor : 1);
     const k = Math.floor(n) + (w.rng.chance(n - Math.floor(n)) ? 1 : 0);
     for (let i = 0; i < k; i++) {
       const pr = price(w, g);
-      if (g === 'tools') { const farms = w.buildingsOfType('farm').filter((b) => !b.closed && (b.funds || 0) > pr); if (!farms.length) continue; const f = w.rng.pick(farms); if (takeGood(w, g, 1) >= 1) { f.funds -= pr; f.inventory.toolsWear = 1; } }
-      else if (g === 'furniture') { const h = w.rng.pick([...w.buildings.values()].filter((b) => b.type === 'house' && b.residents.length)); if (!h) continue; const o = w.people.get(h.ownerId) || w.people.get(h.residents[0]); if (!o || o.money < pr * 2) continue; if (takeGood(w, g, 1) >= 1) { o.money -= pr; h.condition = Math.min(1, (h.condition ?? 0.7) + 0.08); for (const id of h.residents) { const r = w.people.get(id); if (r) r.needs.comfort = Math.min(1, r.needs.comfort + 0.1); } } }
+      let buyer = null;
+      for (let t = 0; t < 8 && !buyer; t++) { const q = w.rng.pick(adults); if ((q.money || 0) > pr * 1.8) buyer = q; }
+      if (!buyer) { e.unmetGoods++; continue; }
+      if (takeGood(w, g, 1) < 1) { e.unmetGoods++; continue; }
+      buyer.money -= pr;
+      if (g === 'furniture') { const h = buyer.homeId != null ? w.buildings.get(buyer.homeId) : null; if (h) { h.condition = Math.min(1, (h.condition ?? 0.7) + 0.06); for (const id of h.residents) { const r = w.people.get(id); if (r) r.needs.comfort = Math.min(1, r.needs.comfort + 0.1); } } }
     }
+  }
+  // farms replace worn tools
+  for (const f of w.buildingsOfType('farm')) {
+    if (f.closed || !f.inventory) continue; f.inventory.toolsWear = (f.inventory.toolsWear ?? 1) - 0.0025;
+    if (f.inventory.toolsWear < 0.35 && (f.funds || 0) > price(w, 'tools') * 3 && takeGood(w, 'tools', 3) >= 1) { f.funds -= price(w, 'tools') * 3; f.inventory.toolsWear = 1; }
   }
 }
 function personDaily(w) {
@@ -594,13 +527,6 @@ function personDaily(w) {
       if (b && ((p.skills[JOBS[oldJob]?.skill] || 0) > 0.75 || b.ownerId === p.id) && a > 55) w.chronicle.add({ type: 'retirement', importance: 2, text: `${nm(p)}, a ${oldJob} of long standing${b ? ` at ${bName(b)}` : ''}, hangs up ${p.sex === 'F' ? 'her' : 'his'} tools at the age of ${Math.floor(a)}.`, people: [p.id], buildingId: b?.id });
     }
     if (a >= 16 && a < ec.retireAge && p.job !== 'student') { workingAge++; if (JOBS[p.job]) employed++; }
-    // absence tracking
-    if (JOBS[p.job] && p.workId != null && day - ec.hireDay > 2) {
-      const yday = day - 1; const wd = (w.time.weekday + 6) % 7;
-      const wasRest = JOBS[p.job].service ? wd === idn(p) % 6 : wd === 6;
-      if (!wasRest && ec.lastShiftDay < yday && !jailed(w, p)) ec.perf *= 0.97;
-      else if (jailed(w, p)) ec.perf *= 0.985;
-    }
     // unemployment
     if (p.job === 'unemployed' && a >= 16 && a < ec.retireAge && !p.homemaker) ec.unempDays++;
     else ec.unempDays = 0;
@@ -619,19 +545,21 @@ function personDaily(w) {
       else if (p.debt > 120 && !ec.debtNoted) { ec.debtNoted = true; w.addMemory(p, { type: 'debt', text: `Is deep in debt (${round(p.debt)} crowns) and lies awake over it.`, otherIds: [p.creditorId].filter((x) => x != null), weight: -0.6, importance: 3 }); p.needs.comfort = Math.max(0, p.needs.comfort - 0.1); }
       if (p.debt < 40) ec.debtNoted = false;
     }
+    // tithes and almsgiving by the well-off feed the parish purse
+    if (p.money > 400) { const t = 0.002 * (p.money - 400) * (has2(p, 'pious') ? 2 : 1); p.money -= t; T.treasury += t; }
     // poor relief and family support
     if (a >= 60 || p.job === 'unemployed') {
-      if (p.money < 6 && (p.job === 'retired' || ec.unempDays > 7 || p.health < 0.5 || (a > 58))) {
+      if (p.money < (T.treasury > 800 ? 40 : 6) && (p.job === 'retired' || ec.unempDays > 7 || p.health < 0.5 || (a > 58))) {
         const kids = p.family.childrenIds.map((i) => w.people.get(i)).filter((c) => c && c.alive && c.money > 150 && c.id !== p.id);
         if (kids.length && !ply) { const k = w.rng.pick(kids); const gift = Math.min(k.money * 0.04, 8) + 1; k.money -= gift; p.money += gift; const rel = w.getRel(p, k); rel.affinity = Math.min(1, rel.affinity + 0.002); }
-        else if (T.treasury > 30 && (p.job === 'retired' || p.health < 0.5)) { p.money += 1.5; T.treasury -= 1.5; e.relief += 1.5; }
+        else if (T.treasury > 30 && (p.job === 'retired' || p.health < 0.5)) { const pen = T.treasury > 800 ? 3 : 1.5; p.money += pen; T.treasury -= pen; e.relief += pen; }
         else if (T.treasury > 80 && ec.unempDays > 14) { p.money += 1; T.treasury -= 1; e.relief += 1; }
       }
     }
     // spouse sharing: nonearning spouse draws from the earner's purse
     if (p.family.spouseId && !JOBS[p.job] && p.money < 12) { const s = w.people.get(p.family.spouseId); if (s && s.alive && s.money > 40 && s.homeId === p.homeId) { const t = Math.min(4, s.money * 0.1); s.money -= t; p.money += t; } }
     // upkeep: soap, candles, heating in winter (small drain that goes outside town)
-    if (a >= 16) { const up = 0.5 + (w.time.season === 3 ? 0.5 : 0); p.money = Math.max(0, p.money - Math.min(up, p.money * 0.15 + 0.05)); }
+    if (a >= 16) { const up = 0.12 + (w.time.season === 3 ? 0.12 : 0); p.money = Math.max(0, p.money - Math.min(up, p.money * 0.15 + 0.05)); }
     // firing
     if (!ply && JOBS[p.job] && p.workId != null && day - ec.hireDay > 25 && !PUBLIC.has(w.buildings.get(p.workId)?.type)) {
       const bad = ec.perf < 0.38 || (jailed(w, p) && (p.jailedUntil - w.tick) > 14 * 144);
@@ -647,6 +575,12 @@ function personDaily(w) {
     if (p.job === 'unemployed' && a >= 16 && a < ec.retireAge && ec.unempDays > 5 && p.money < 3 && !p.homemaker) p.needs.purpose = Math.max(0, p.needs.purpose - 0.01);
     ec.wageToday = 0;
   }
+  // hearth tax: each occupied household pays a small sum
+  for (const h of w.buildings.values()) {
+    if (h.type !== 'house' || !h.residents.length) continue;
+    const head = h.residents.map((i) => w.people.get(i)).filter((q) => q && q.alive && age(w, q) >= 18).sort((x, y) => y.money - x.money)[0];
+    if (head && head.money > 4) { const t = Math.min(head.money * 0.2, 0.45 * tr / 0.12); head.money -= t; T.treasury += t; }
+  }
   e.employmentRate = workingAge ? employed / workingAge : 0;
   e.workingAge = workingAge; e.employed = employed;
   // taxes of tr already taken at source; property tax on landlords
@@ -656,6 +590,7 @@ function personDaily(w) {
     const t = 0.12 * tr; if (o.money > t) { o.money -= t; T.treasury += t; }
   }
 }
+function has2(p, t) { return p.traits.includes(t); }
 function gini(arr) {
   const n = arr.length; if (!n) return 0; const s = arr.slice().sort((a, b) => a - b); let cum = 0, tot = 0;
   for (let i = 0; i < n; i++) { cum += (i + 1) * s[i]; tot += s[i]; } if (!tot) return 0; return (2 * cum) / (n * tot) - (n + 1) / n;
@@ -671,15 +606,22 @@ function businessDaily(w) {
     // owner injects capital when running short
     if (owner && owner.alive && (b.funds || 0) < payroll * 2 && owner.money > 250 && !isPlayer(w, owner) && w.rng.chance(0.5)) { const inj = Math.min(120, owner.money * 0.25); owner.money -= inj; b.funds = (b.funds || 0) + inj; b.econ.injected = (b.econ.injected || 0) + inj; }
     // tavern/inn/market overhead & upkeep going outside town
-    const upkeep = 1.2 + payroll * 0.04; b.funds = (b.funds || 0) - Math.min(upkeep, Math.max(upkeep, 0)); b.costToday = upkeep + (b.wagesToday || 0);
+    const upkeep = 0.6 + payroll * 0.02; b.funds = (b.funds || 0) - Math.min(upkeep, Math.max(upkeep, 0)); b.costToday = upkeep + (b.wagesToday || 0);
     b.condition = Math.max(0.05, (b.condition ?? 0.8) - 0.0007);
+    // taverns and inns buy their ale and provisions from local farms and bakers and from outside
+    if (b.type === 'tavern' || b.type === 'inn') {
+      const d = (b.funds || 0) - (b.lastFunds ?? (b.funds || 0));
+      if (d > 0) { const cost = d * 0.5; b.funds -= cost; const farms = w.buildingsOfType('farm').filter((f) => !f.closed), bks = w.buildingsOfType('bakery').filter((f) => !f.closed); for (const f of farms) f.funds = (f.funds || 0) + cost * 0.3 / farms.length; for (const f of bks) f.funds = (f.funds || 0) + cost * 0.15 / bks.length; }
+      b.lastFunds = b.funds;
+    }
     // dividends
     if (owner && owner.alive && day % 7 === 0 && (b.funds || 0) > payroll * 14 + 350) {
       const x = ((b.funds || 0) - payroll * 14 - 350) * 0.4; b.funds -= x; const tax = x * taxRate(w); owner.money = (owner.money || 0) + x - tax; T.treasury += tax; e.dividends += x;
     }
     if (b.funds < 0) b.econ.daysNeg++; else b.econ.daysNeg = Math.max(0, b.econ.daysNeg - 2);
     b.profit30 = (b.profit30 || 0) * 0.965 + ((b.revToday || 0) - (b.costToday || 0));
-    if (b.econ.daysNeg >= 24 && b.funds < -60) closeBusiness(w, b, owner);
+    if (b.econ.daysNeg >= 40 && b.funds < -90) closeBusiness(w, b, owner);
+    if (b.revToday > 0) { const tx = b.revToday * taxRate(w) * 0.4; b.funds -= tx; T.treasury += tx; }
     b.revToday = 0; b.wagesToday = 0;
   }
 }
@@ -846,6 +788,20 @@ function checkSpikes(w) {
   }
 }
 
+// ---------------------------------------------------------------- civic works: a swollen treasury is spent on repairs and relief
+function civicWorks(w) {
+  const T = treasury(w), e = eco(w);
+  if (T.treasury < 2500) return;
+  const spend = (T.treasury - 1500) * 0.3; T.treasury -= spend;
+  const crafts = [...w.buildingsOfType('carpenter'), ...w.buildingsOfType('smithy')].filter((b) => !b.closed);
+  for (const c of crafts) c.funds = (c.funds || 0) + spend * 0.35 / crafts.length;
+  let fixed = 0; for (const b of w.buildings.values()) if (PUBLIC.has(b.type) && (b.condition ?? 1) < 0.9) { b.condition = Math.min(1, (b.condition ?? 0.6) + 0.25); fixed++; }
+  const poor = w.living().filter((p) => (p.money || 0) < 30 && age(w, p) >= 14);
+  for (const p of poor) { const g = Math.min(15, spend * 0.45 / Math.max(1, poor.length)); p.money += g; }
+  e.relief += spend * 0.45;
+  if (spend > 300) w.chronicle.add({ type: 'civic', importance: 2, text: w.rng.pick([`The council spent ${round(spend)} crowns this season on mending the Town Hall roof, the bridge and the well, and on a dole for the poorest families.`, `A season of works: ${round(spend)} crowns from the town purse went on repairs${fixed ? ` to ${fixed} public buildings` : ''} and on bread and coal for the poor.`]), people: [] });
+}
+
 // ---------------------------------------------------------------- interventions
 function regIntervention(w, kind, fn, desc) {
   fn.description = desc; w.registerIntervention?.(kind, fn, desc);
@@ -893,8 +849,8 @@ function initEcon(w) {
   const e = {
     market: { mult: {}, override: {}, inflation: 1 }, market_prev: {}, stock: {}, rate: {}, dailyDemand: {}, sold: {}, demandToday: {}, imported: {},
     made: { grain: 0, flour: 0, bread: 0, tools: 0, clothes: 0, furniture: 0 }, harvest: 1, harvestForced: null, noImportUntil: 0, boomUntil: 0, boomFactor: 1, spiked: {},
-    wagesPaid: 0, foodSpend: 0, mealSpend: 0, exportRev: 0, dividends: 0, alms: 0, unmet: 0, relief: 0, evictions: 0, employmentRate: 0, unemployed: 0, gini: 0,
-    richestId: null, richestWealth: 0, lender: null, worst: null,
+    wagesPaid: 0, foodSpend: 0, mealSpend: 0, exportRev: 0, dividends: 0, alms: 0, unmet: 0, relief: 0, evictions: 0, unmetGoods: 0, employmentRate: 0, unemployed: 0, gini: 0,
+    kx: { grain: 1, flour: 1, bread: 1, tools: 1, clothes: 1, furniture: 1 }, k: { grain: 1, flour: 1, bread: 1, tools: 1, clothes: 1, furniture: 1 }, mktShare: 0.78, sales: { bread: 0 }, salesDay: { bread: 0 }, adj: { grain: 1, flour: 1, bread: 1, tools: 1, clothes: 1, furniture: 1 }, madeWeek: {}, expWeek: {}, richestId: null, richestWealth: 0, lender: null, worst: null,
     marketBuilding: marketBuilding,
   };
   w.econ = e;
@@ -912,36 +868,32 @@ function seedStocks(w) {
   spread('farm', 'grain', D * 70); spread('mill', 'flour', D * 3.5); spread('bakery', 'bread', D * 0.6);
   spread('smithy', 'tools', pop * 0.03); spread('tailor', 'clothes', pop * 0.08); spread('carpenter', 'furniture', pop * 0.02);
   for (const b of w.buildingsOfType('farm')) b.inventory.toolsWear = w.rng.float(0.4, 1);
-  const mk = marketBuilding(w); if (mk && mk.inventory?.food) { mk.inventory.bread = (mk.inventory.bread || 0) + mk.inventory.food; mk.inventory.food = 0; }
-  for (const b of w.buildings.values()) { if (COMMERCIAL.has(b.type)) { b.funds = Math.max(b.funds || 0, 220); b.econ = { daysNeg: 0, openedDay: -w.rng.int(100, 3000) }; } }
-  treasury(w); if (w.settings && w.settings.taxRate === undefined) w.settings.taxRate = 0.1;
+    for (const b of w.buildings.values()) { if (COMMERCIAL.has(b.type)) { b.funds = Math.max(b.funds || 0, 220); b.econ = { daysNeg: 0, openedDay: -w.rng.int(100, 3000) }; } }
+  treasury(w); if (w.settings && w.settings.taxRate === undefined) w.settings.taxRate = 0.15;
 }
 
 export default {
   name: 'economy',
   init(world) {
-    initEcon(world); seedStocks(world); registerInterventions(world);
+    initEcon(world); seedStocks(world); syncPrices(world); registerInterventions(world);
     for (const p of world.living()) E(world, p);
     world.on('death', (ev) => onDeath(world, ev.person));
-    world.on('actionEnd', (ev) => { // drinking at the tavern costs money, which lands in the till
-      const a = ev?.action, p = ev?.person; if (!a || !p) return;
-      const id = a.id ?? a; if (id !== 'drink' && id !== 'drinkAtTavern' && id !== 'tavern') return;
-      const b = p.locationId != null ? world.buildings.get(p.locationId) : null; if (!b || (b.type !== 'tavern' && b.type !== 'inn') || (p.money || 0) < 1.2) return;
-      const pr = 1.0 + (p.traits.includes('drunkard') ? 0.6 : 0); p.money -= pr; b.funds = (b.funds || 0) + pr; b.revToday = (b.revToday || 0) + pr; eco(world).mealSpend += pr;
-    });
   },
-  onHour(world) { produceHour(world); },
+  onHour(world) { const m0 = { ...eco(world).made }; produceHour(world); { const e = eco(world); for (const g in e.made) e.madeWeek[g] = (e.madeWeek[g] || 0) + (e.made[g] - m0[g]) / (g === 'grain' ? Math.max(0.3, e.harvest) : 1); } restockMarket(world); if (world.time.hour % 3 === 1) parishAlms(world); },
   onDay(world) {
     const e = eco(world);
-    recalcRates(world); updatePrices(world); spoilAndExport(world); durableDemand(world);
+    recalcRates(world); adjustRates(world); updatePrices(world); syncPrices(world); spoilAndExport(world); payWagesDaily(world); durableDemand(world);
     personDaily(world); businessDaily(world); rentDaily(world); runHiring(world); runApprenticeships(world);
     checkSpikes(world);
     for (const g in e.sold) e.sold[g] *= 0.98;
     if (world.time.dayOfSeason === 14 && world.rng.chance(0.6)) openBusinesses(world);
     if (world.time.dayOfSeason === 20) housingMarket(world);
   },
-  onSeason(world) { if (world.time.season === 0) harvestRoll(world); },
+  onSeason(world) {
+    if (world.time.season === 0) harvestRoll(world);
+    civicWorks(world);
+  },
   onYear(world) { const e = eco(world); e.wagesPaid = 0; e.foodSpend = 0; e.mealSpend = 0; e.exportRev = 0; e.dividends = 0; e.alms = 0; e.unmet = 0; e.relief = 0; e.evictions = 0; for (const k in e.made) e.made[k] = 0; for (const b of world.buildingsOfType('farm')) if (b.inventory) b.inventory.toolsWear = Math.max(0, (b.inventory.toolsWear ?? 1) - 0.5); },
-  actions: [workAction, shopAction, mealAction],
+  actions: [],
   scoreModifiers: [],
 };

@@ -7,7 +7,7 @@ export class Sifter {
   /** @param {{ticksPerDay?:number, patterns:Array, quietBelow?:number, keepDepth?:number}} o */
   constructor(o) {
     this.tpd = o.ticksPerDay || 144; this.patterns = o.patterns; this.quietBelow = o.quietBelow ?? 1.2;
-    this.arcs = []; this.open = new Map(); this.byCause = new Map(); this.depth = new Map(); this.nextId = 1; this.consumed = 0; this.lastSweep = 0; this.composed = new Set();
+    this.arcs = []; this.open = new Map(); this.byCause = new Map(); this.depth = new Map(); this.nextId = 1; this.consumed = 0; this.lastSweep = 0; this.composed = new Set(); this.byActorIdx = new Map(); this.thenKinds = new Set(o.patterns.flatMap((p) => (p.compose || []).map((c) => c.then)));
     this.exact = new Map(); this.wild = new Map(); this.tagIdx = new Map();
     this.patterns.forEach((p, pi) => p.stages.forEach((s, si) => s.m.forEach((m) => {
       const [map, key] = m.startsWith('tag:') ? [this.tagIdx, m.slice(4)] : m.endsWith('.*') ? [this.wild, m.slice(0, -2)] : [this.exact, m];
@@ -56,13 +56,14 @@ export class Sifter {
     if (ev.cause >= 0 && this.byCause.has(ev.cause)) {
       for (const arc of this.byCause.get(ev.cause)) if (arc.status === 'open' && !touched.has(arc) && arc.beats.length < 40) { this._beat(arc, ev, { name: 'consequence' }, arc.stageIdx, cd); touched.add(arc); }
     }
-    for (const arc of touched) { this._score(arc); if (arc.status !== 'open' || arc.confirmed) this._compose(arc); }
+    for (const arc of touched) { this._score(arc); if (arc.confirmed && this.thenKinds.has(arc.kind)) this._compose(arc); }
     if (ev.tick - this.lastSweep > 7 * this.tpd) this.sweep(ev.tick);
   }
   _open(p, key, ev) {
     const arc = { id: this.nextId++, kind: p.kind, scope: p.scope, key, actors: ev.actors.slice(0, 3), status: 'open', outcome: null, stage: p.stages[0].name, stageIdx: 0, start: ev.tick, last: ev.tick, beats: [], systems: new Set(), maxDepth: 0, score: 0, quiet: true, confirmed: false, sig: '', pat: p };
-    this.arcs.push(arc); return arc;
+    return arc;
   }
+  _register(arc) { this.arcs.push(arc); for (const a of arc.actors) { let l = this.byActorIdx.get(a); if (!l) this.byActorIdx.set(a, l = []); l.push(arc); } }
   _beat(arc, ev, st, si, depth) {
     arc.beats.push({ eid: ev.id, tick: ev.tick, type: ev.type, stage: st.name, sal: ev.salience ?? 0.3, depth });
     arc.last = ev.tick; if (si > arc.stageIdx) { arc.stageIdx = si; arc.stage = st.name; }
@@ -73,7 +74,7 @@ export class Sifter {
   _score(arc) {
     let s = 0, n = 0; for (const b of arc.beats) { s += b.sal; n++; }
     arc.score = s + 0.4 * arc.maxDepth + 0.6 * (arc.systems.size - 1) + (arc.status === 'resolved' ? 0.5 : 0);
-    arc.confirmed = arc.beats.length >= (arc.pat.min || 2);
+    const was = arc.confirmed; arc.confirmed = arc.beats.length >= (arc.pat.min || 2); if (arc.confirmed && !was && !arc.registered) { arc.registered = true; this._register(arc); }
     arc.quiet = arc.score < this.quietBelow;
     const path = []; for (const b of arc.beats) if (path[path.length - 1]?.[0] !== b.stage) path.push([b.stage, 1]); else path[path.length - 1][1]++;
     arc.sig = `${arc.kind}:${path.map((x) => x[0]).join('>')}${arc.outcome ? '=' + arc.outcome : ''}`;
@@ -81,32 +82,32 @@ export class Sifter {
   _close(arc, outcome) {
     if (arc.status !== 'open') return;
     arc.status = outcome === 'lapsed' ? 'lapsed' : 'resolved'; arc.outcome = outcome; this.open.delete(`${arc.kind}|${arc.key}`);
-    this._score(arc); if (arc.confirmed) this._compose(arc);
+    this._score(arc); if (arc.confirmed && this.thenKinds.has(arc.kind)) this._compose(arc);
   }
   /** Two-arc compositions: pattern.compose = [{kind:'redemption', after:'fall', within:days}] fires when this arc (kind second) is confirmed and a finished `after` arc exists on a shared actor. */
   _compose(arc) {
     for (const p of this.patterns) for (const c of p.compose || []) {
       if (c.then !== arc.kind) continue; const actor = arc.actors[0];
       const id = `${c.kind}|${arc.id}`; if (this.composed.has(id)) continue;
-      for (const o of this.arcs) {
+      for (const o of this.byActorIdx.get(actor) || []) {
         if (o === arc || o.kind !== c.after || !o.confirmed || !o.actors.includes(actor)) continue;
         if (c.needClosed !== false && o.status === 'open') continue;
         if (arc.start < o.last || arc.start - o.last > c.within * this.tpd) continue;
         this.composed.add(id);
         const m = { kind: c.kind, scope: 'person', key: String(actor), actors: [actor], status: arc.status === 'open' ? 'open' : 'resolved', outcome: c.outcome || null, stage: 'composite', stageIdx: 0, start: o.start, last: arc.last, beats: [...o.beats, ...arc.beats].sort((x, y) => x.tick - y.tick), systems: new Set([...o.systems, ...arc.systems]), maxDepth: Math.max(o.maxDepth, arc.maxDepth), score: 0, quiet: true, confirmed: true, sig: '', pat: { min: 1 }, parts: [o.id, arc.id] };
-        this.arcs.push(m); this._score(m); m.sig = `${c.kind}:${o.sig.split(':')[0]}>${arc.kind}`; m.score += 0.8; m.quiet = m.score < this.quietBelow; break;
+        m.registered = true; this._register(m); this._score(m); m.sig = `${c.kind}:${o.sig.split(':')[0]}>${arc.kind}`; m.score += 0.8; m.quiet = m.score < this.quietBelow; break;
       }
     }
   }
   sweep(tick) {
     this.lastSweep = tick;
     for (const arc of [...this.open.values()]) if (tick - arc.last > arc.pat.window * this.tpd) this._close(arc, 'lapsed');
-    if (this.depth.size > 20000) { const cut = this.nextEvCut ?? 0; let n = 0; for (const k of this.depth.keys()) { this.depth.delete(k); this.byCause.delete(k); if (++n > 10000) break; } }
+    if (this.depth.size > 20000) { let n = 0; for (const k of this.depth.keys()) { this.depth.delete(k); this.byCause.delete(k); if (++n > 10000) break; } }
   }
   ranked(n = 10, { minScore = 0, includeQuiet = false, kind } = {}) {
     return this.arcs.filter((a) => a.confirmed && (includeQuiet || !a.quiet) && a.score >= minScore && (!kind || a.kind === kind)).sort((a, b) => b.score - a.score).slice(0, n);
   }
-  byActor(id) { return this.arcs.filter((a) => a.confirmed && a.actors.includes(id)); }
+  byActor(id) { return (this.byActorIdx.get(id) || []).filter((a) => a.confirmed); }
   /** Plain summary with causal-chain stats. */
   summarise(arc, names = (id) => `#${id}`) {
     const stages = []; for (const b of arc.beats) if (stages[stages.length - 1]?.stage !== b.stage) stages.push({ stage: b.stage, n: 1, tick: b.tick }); else stages[stages.length - 1].n++;

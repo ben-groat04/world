@@ -37,3 +37,9 @@
 - Loneliness flagged 28% of 16-24 and 26% of 65+ (shape right, level too high; ONS 'often/always' ~7% overall,
   ~10% young). Zero-confidant share 2% vs 8-15%. Online-formed ties 4% vs ~11%. Friendship-fade counter broken.
 - Odd text: "Dinner at ours tomorrow, 11am". Base 'daily' feed grammar repetitive.
+## UI review (orchestrator, screenshot)
+- Money inconsistency in inspector: "Monthly income £2,425" vs "net £16,884/yr" for a retiree — one figure wrong (check money.budget vs pop income fields).
+- "Retired · retired" duplicated label.
+- Map feels static: most people indoors shown only as number badges; consider showing people at windows/doors, gatherings outside pubs/shops, kids playing, more visible street life at Scene speed.
+- Kernel daily weather still on old 4x28 seasons (UI remaps) — move weather onto the real calendar.
+- tools/ui-test.html stale — delete.

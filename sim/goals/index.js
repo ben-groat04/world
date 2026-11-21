@@ -1,6 +1,7 @@
 // W1-B goals plugin ("goals"): drives x pressures x opportunities x contagion -> goals -> HTN-lite plans over ~55 primitive moves -> real activities (via the routine hook) with realistic failure,
 // replanning and transformation; self-model beliefs; bounded template invention; groups and projects as collective agents. All outcomes are kernel events with `cause`.
-// Routine hook:  world.sys.goals.query.override(person, slot) -> null | {kind:'goal_step', activity, label, thought, venue, withPerson, ticks, goal, step, ...}   (slot: {start|tick, end|ticks})
+// Routine hook (matches sim/systems/routine): world.sys.goals.query.override(person, {tick, until, act, ptype, pid}) -> null | {label, thought, ptype (1 building,2 street,3 off-map), pid, cat, ...}.
+//   Returns goal steps due in the slot, group meetings, and ordinary social outings (friend / family / night out, on- and off-map). Never overrides sleep/work/commute/school.
 // Commands:  goals.plant / goals.adopt / goals.abandon / goals.use_move / goals.respond / goals.inject_opportunity / groups.create / groups.join / groups.leave / groups.disband
 import * as DRV from '../../content/larkfield/drives.js';
 import * as GT from '../../content/larkfield/goal-templates.js';

@@ -3,7 +3,7 @@
 // Projects have progress and emit VISIBLE world-effect events (project.effect). Processed on the day clock (only groups whose meeting is due) - never per tick.
 import { hash32 } from '../kernel/rng.js';
 import { TICKS_PER_DAY } from '../time.js';
-import { clamp, fmt } from './util.js';
+import { clamp, fmt, pickW } from './util.js';
 import { personalityZ, tieStrength } from './facts.js';
 
 const VENUE_ALIAS = { pub: ['pub'], community_centre: ['community_centre', 'church_hall', 'church', 'mosque', 'library'], cafe: ['cafe', 'bakery'], library: ['library', 'community_centre'], park: ['park', 'park_pavilion', 'estate_green'], gym: ['gym'], sports_hall: ['gym', 'community_centre', 'school_grounds'], church: ['church', 'mosque', 'church_hall'], temple: ['mosque', 'church', 'church_hall'], shop: ['vacant_unit', 'corner_shop'], hall: ['community_centre', 'church_hall', 'pub'] };
@@ -25,7 +25,7 @@ export class Groups {
     const id = S.groupSeq++, W = this.e.lib.NAME_WORDS, h = hash32(w.seed, 'gname', id);
     const name = o.name || fmt(K.names[h % K.names.length], { a: W.a[(h >>> 4) % W.a.length], n: W.n[(h >>> 9) % W.n.length], p: W.p[(h >>> 14) % W.p.length] });
     const v = this.venueFor(o.kind);
-    const g = { id, name, kind: o.kind, founder: o.founder, leader: o.founder, members: {}, purpose: o.purpose || '', goal: o.goal || 0, venue: v ? v.id : null, venueKind: v ? v.alias : 'home', cadence: Math.max(1, Math.round(K.cadence * this.e.cfg.dayScale)), nextMeet: 0, funds: 0, cohesion: 0.6, rep: 0, status: 'forming', born: w.tick, ended: 0, history: [], project: 0, rivals: [], meetings: 0, weak: 0, small: 0, lastActive: w.tick, norms: [] };
+    const g = { id, name, kind: o.kind, founder: o.founder, leader: o.founder, members: {}, purpose: o.purpose || '', goal: o.goal || 0, venue: v ? v.id : null, venueKind: v ? v.alias : 'home', cadence: Math.max(1, Math.round(K.cadence * this.e.cfg.dayScale)), nextMeet: 0, funds: 0, cohesion: 0.6, rep: 0, status: 'forming', born: w.tick, ended: 0, history: [], project: 0, rivals: [], meetings: 0, weak: 0, small: 0, tags: [], lastActive: w.tick, norms: [] };
     S.groups.set(id, g); this.addMember(g, o.founder, K.roles[0] || 'founder', 0.9, true);
     if (o.members) for (const m of o.members) this.addMember(g, m, K.roles[1] || 'member', 0.6, true);
     return g;
@@ -139,8 +139,8 @@ export class Groups {
     }
     if (G && (st.move === 'train' || st.move === 'attend')) { this.progress(G, 0.5); return null; }
     if (G && st.move === 'perform') {
-      if (G.status !== 'active') return { res: 'fail', why: 'busy', note: 'the group is not up and running yet' };
-      if (this.readiness(G) < 0.45 && st.tries < 3) return { res: 'fail', why: 'busy', note: 'not ready yet, needs more rehearsal' };
+      if (G.status !== 'active') return { res: 'defer', note: 'the group is not up and running yet' };
+      if (this.readiness(G) < 0.45) return { res: 'defer', note: 'not ready yet, needs more rehearsal' };
       const ok = this.finishProject(G, false); return ok ? { res: 'ok', note: 'it went down well' } : { res: 'fail', why: 'bad_luck', note: 'it was a bit of a flop' };
     }
     if (st.move === 'join' && ['club', 'garden', 'party', 'union', 'band', 'bands'].includes(st.v) || (st.move === 'ask' && st.v === 'join')) {
@@ -155,7 +155,7 @@ export class Groups {
   findJoinable(p, f, hint, s) {
     let best = null, bs = 0.1; const rel = p.relationships;
     for (const G of this.S.groups.values()) {
-      if (G.status !== 'active' && G.status !== 'institution') continue; if (G.members[p.id]) continue; const K = this.kinds[G.kind]; if (this.size(G) >= K.cap) continue; if (hint && !hint.includes(G.kind)) continue;
+      if (G.status !== 'active' && G.status !== 'institution') continue; if (G.members[p.id]) continue; const K = this.kinds[G.kind]; if (this.size(G) >= K.cap) continue; if (hint && !hint.some((h) => (h.startsWith('tag:') ? G.tags && G.tags.includes(h.slice(4)) : h === G.kind))) continue;
       if (G.kind === 'business' || G.kind === 'friend_gang') continue;
       let sc = 0.3 + G.rep * 0.3 + G.cohesion * 0.3 + (this.size(G) < K.min + 2 ? 0.1 : 0); if (rel) for (const id of Object.keys(G.members)) { const rl = rel.get(+id); if (rl) sc += tieStrength(rl) * 0.8; }
       sc += this.e.rng('fj', p.id, G.id, this.w.tick >> 9).next() * 0.25; if (sc > bs) { bs = sc; best = G; }
@@ -168,6 +168,42 @@ export class Groups {
     if (!ok && G.status === 'forming' && G.goal === g.id) this.dissolve(G, 'never got going');
     if (ok && G.goal === g.id && G.status === 'forming') { G.status = 'active'; this.announce(G); }
   }
+  // ---- pre-seeded established groups (day 1 is not empty; most people JOIN existing groups rather than found new ones)
+  seed() {
+    const w = this.w, e = this.e, S = this.S; if (S.groups.size || S.seeded) return; S.seeded = true;
+    const people = []; for (const p of w.people.values()) if (p.alive && w.ageOf(p) >= 5) people.push(p);
+    const n = people.length, scale = Math.max(0.3, n / 500), yt = e.cfg.yearDays * TICKS_PER_DAY, rr = e.rng('seedgroups');
+    const faith = [...w.buildings.values()].filter((b) => b.type === 'church' || b.type === 'mosque' || b.type === 'church_hall');
+    const A = (p) => w.ageOf(p), rel = (p) => p.ext?.pop?.religion || '', pop = (p) => p.ext?.pop;
+    const SPEC = [
+      { kind: 'club', tags: ['run', 'sport'], name: 'Larkfield Runners', n: 1, size: [6, 14], suit: (p) => (A(p) > 18 && A(p) < 55 ? 1 : 0.1) * (0.3 + (p.personality?.conscientiousness ?? 0.5)), venue: 'park', yrs: [2, 8] },
+      { kind: 'team', tags: ['sport'], name: 'Sunday five-a-side', n: 1, size: [8, 12], suit: (p) => (A(p) > 18 && A(p) < 45 ? 1 : 0.05) * (p.sex === 'M' ? 1 : 0.4), venue: 'sports_hall', yrs: [3, 10] },
+      { kind: 'club', name: 'Quiz team at the pub', n: 1, size: [5, 9], suit: (p) => (A(p) > 22 && A(p) < 70 ? 1 : 0.1) * (0.5 + (p.personality?.openness ?? 0.5)), venue: 'pub', yrs: [1, 6] },
+      { kind: 'association', name: 'Residents\' association', n: 1, size: [6, 14], suit: (p) => (A(p) > 35 ? 1 : 0.15), venue: 'community_centre', yrs: [3, 15] },
+      { kind: 'online_community', name: 'Larkfield parents\' chat', n: 1, size: [10, 30], suit: (p) => (pop(p)?.life ? 1 : 1) * (this._isParent(p) ? 1 : 0.02), venue: 'home', yrs: [1, 4] },
+      { kind: 'club', name: 'Library book group', n: 1, size: [5, 10], suit: (p) => (A(p) > 30 ? 1 : 0.2) * (p.sex === 'F' ? 1.2 : 0.6), venue: 'library', yrs: [2, 9] },
+      { kind: 'volunteer_group', name: 'Community pantry volunteers', n: 1, size: [5, 12], suit: (p) => (A(p) > 25 ? 1 : 0.3) * (0.3 + (p.personality?.agreeableness ?? 0.5)), venue: 'community_centre', yrs: [1, 5] },
+      { kind: 'club', tags: ['sing'], name: 'Community choir', n: 1, size: [8, 16], suit: (p) => (A(p) > 25 ? 1 : 0.3) * (p.sex === 'F' ? 1.3 : 0.5), venue: 'church_hall', yrs: [2, 12] },
+      { kind: 'club', tags: ['grow'], name: 'Allotment society', n: 1, size: [6, 12], suit: (p) => (A(p) > 40 ? 1 : 0.2), venue: 'park', yrs: [4, 20] },
+    ];
+    const mk = (spec, venueId) => {
+      const sz = Math.round((spec.size[0] + rr.next() * (spec.size[1] - spec.size[0])) * Math.min(1.5, scale)), cand = people.map((p) => [p, spec.suit(p) + 0.001]);
+      const first = pickW(cand, rr.next()); if (!first) return null;
+      const G = this.create({ kind: spec.kind, founder: first.id, name: spec.name, purpose: '' }); G.status = 'active'; G.tags = spec.tags || []; if (venueId != null) { G.venue = venueId; G.venueKind = 'fixed'; } G.born = w.tick - Math.round((spec.yrs[0] + rr.next() * (spec.yrs[1] - spec.yrs[0])) * yt); G.rep = 0.2 + 0.3 * rr.next(); G.cohesion = 0.55 + 0.3 * rr.next(); G.announced = true;
+      let tries = 0; while (this.size(G) < sz && tries++ < sz * 6) {
+        const base = first.relationships; let pick = null;
+        if (base && rr.next() < 0.6) { const c = []; for (const [id, rl] of base) { const q = w.people.get(id); if (q && q.alive && !G.members[id]) c.push([q, spec.suit(q) * (tieStrength(rl) + 0.05)]); } pick = pickW(c, rr.next()); }
+        if (!pick) pick = pickW(cand, rr.next()); if (pick && !G.members[pick.id]) this.addMember(G, pick.id, 'member', 0.35 + 0.5 * rr.next(), true);
+      }
+      this.schedule(G, rr.next() * G.cadence); if ((w.tick - G.born) / yt >= this.kinds[G.kind].inst && G.cohesion > 0.6) G.status = 'institution'; return G;
+    };
+    for (const spec of SPEC) { for (let i = 0; i < Math.max(1, Math.round(spec.n * scale)); i++) mk({ ...spec, name: i ? spec.name + ' ' + (i + 1) : spec.name }, null); }
+    // faith communities: one per place of worship, joined by people whose religion matches the building (when known) or by religiosity
+    for (const b of faith) {
+      const mosque = b.type === 'mosque'; const G = mk({ kind: 'faith_group', name: b.name ? b.name + ' community' : (mosque ? 'Mosque community' : 'Church community'), size: [14, 40], suit: (p) => { const r = rel(p); const rg = pop(p)?.religiosity ?? 0; const m = /muslim/i.test(r), c = /christian/i.test(r); return (mosque ? (m ? 1 : 0.01) : (c ? 1 : 0.02)) * (0.2 + rg); }, yrs: [10, 60] }, b.id); if (G) G.status = 'institution';
+    }
+  }
+  _isParent(p) { const k = p.family?.childrenIds; return !!(k && k.length && k.some((id) => { const c = this.w.people.get(id); return c && this.w.ageOf(c) < 12; })); }
   // ---- clocks
   hourly() {}
   daily() {

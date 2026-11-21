@@ -80,5 +80,5 @@ export const SELF_BELIEFS = {
   family_first: { label: 'family comes first', prior: { A: 0.04 }, start: 0.55, seg: { family_couples: 0.08, lone_parents: 0.08, students: -0.08, early_career: -0.05 } },
 };
 // Scarcity: stressed people plan shorter, discount more. horizon multiplier on plan length and weight on immediate (cheap) methods.
-export const SCARCITY = { stressPressures: ['debt', 'arrears', 'low_buffer', 'burnout', 'fatigue', 'new_baby'], horizonMult: 0.55, cheapBias: 0.5, maxActiveGoals: [3, 7] };
+export const SCARCITY = { stressPressures: ['debt', 'arrears', 'low_buffer', 'burnout', 'fatigue', 'new_baby'], horizonMult: 0.55, cheapBias: 0.5, maxActiveGoals: [2, 5] };
 export default { DRIVES, SEGMENT_SHIFTS, PRESSURES, PRESSURE_EVENTS, SELF_BELIEFS, SCARCITY };

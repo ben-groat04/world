@@ -26,7 +26,8 @@ export function monthlyMental(w, rng, people) {
   // loneliness threshold: calibrated once so ~7% of adults are "often/always lonely" at the start (Community Life Survey), then individual scores move it
   const adults = [];
   for (const p of people) { const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p); if (age < 16) { hl.loneZ = -9; continue; } hl.loneZ = loneScore(w, p, age); adults.push(hl.loneZ); }
-  if (st.loneThr == null && adults.length > 50) { adults.sort((a, b) => a - b); st.loneThr = adults[Math.floor(adults.length * (1 - 0.07))]; }
+  // (the tie structure erodes with churn because nothing re-grows ties for newcomers, so the threshold tracks the 93rd percentile slowly: individuals still cross it on life events)
+  if (adults.length > 50) { adults.sort((a, b) => a - b); const q93 = adults[Math.floor(adults.length * (1 - 0.07))]; st.loneThr = st.loneThr == null ? q93 : st.loneThr + 0.12 * (q93 - st.loneThr); }
   const thr = st.loneThr ?? 9;
   for (const p of people) {
     const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p), q = p.ext.pop, L = p.ext.life;
@@ -36,15 +37,18 @@ export function monthlyMental(w, rng, people) {
     if (age < 13) continue;
     hl.stress *= 0.88;
     const ms = moneyStress(w, p);
-    let floor = 0; if (ms > 0.55) floor = Math.max(floor, 0.5 * ms); if (L.caring) floor = Math.max(floor, 0.35); if (hl.lonely) floor = Math.max(floor, 0.3); if (q.activity === 'unemployed' && age > 17) floor = Math.max(floor, 0.25);
-    if (L.lastBirth != null && T - L.lastBirth < months(10) && p.sex === 'F') floor = Math.max(floor, 0.22);
-    if (hl.acute && hl.acute.sev >= 3) floor = Math.max(floor, 0.3); if (hl.dying) floor = Math.max(floor, 0.5);
+    let floor = 0, src = '';
+    const fl = (v, why) => { if (v > floor) { floor = v; src = why; } };
+    if (ms > 0.55) fl(0.5 * ms, 'money worries'); if (L.caring && L.caring.kind !== 'other') fl(0.35, 'caring'); if (hl.lonely) fl(0.3, 'loneliness'); if (q.activity === 'unemployed' && age > 17) fl(0.25, 'unemployment');
+    if (L.lastBirth != null && T - L.lastBirth < months(10) && p.sex === 'F') fl(0.22, 'new baby');
+    if (hl.acute && hl.acute.sev >= 3) fl(0.3, 'illness'); if (hl.dying) fl(0.5, 'illness'); if (hl.c.cancer && !hl.c.cancer.rem) fl(0.32, 'illness');
+    hl.src = src;
     const S = clamp(Math.max(hl.stress, floor) + (hl.grief.length ? 0.12 : 0), 0, 1), mh = hl.mh, N = p.personality.neuroticism;
     hl.S = S;
     if (mh.st === 0) {
       if (age >= 14) {
-        const chronic = Object.keys(hl.c).length, ageF = age < 18 ? 0.55 : age < 25 ? 1.1 : age < 50 ? 1.2 : age < 65 ? 0.95 : 0.7;
-        const r = 0.0066 * (p.sex === 'F' ? 1.5 : 1) * ageF * Math.exp(1.9 * (S - 0.2)) * (0.5 + 1.0 * N) * (1 + 0.35 * Math.min(chronic, 3)) * (1 + 0.45 * (q.health.limiting || 0)) * (1 + 0.4 * Math.min(3, mh.n)) * (hl.lonely ? 1.45 : 1) * (hl.alc === 2 ? 1.6 : 1) * (st.mhScale || 1);
+        const chronic = Object.keys(hl.c).length, ageF = age < 18 ? 0.55 : age < 25 ? 1.1 : age < 50 ? 1.2 : age < 65 ? 0.95 : 0.5;
+        const r = 0.0066 * (p.sex === 'F' ? 1.5 : 1) * ageF * Math.exp(1.9 * (S - 0.2)) * (0.5 + 1.0 * N) * (1 + 0.35 * Math.min(chronic, 3)) * (1 + 0.25 * (q.health.limiting || 0)) * (1 + 0.4 * Math.min(3, mh.n)) * (hl.lonely ? 1.45 : 1) * (hl.alc === 2 ? 1.6 : 1) * (st.mhScale || 1);
         if (rng.chance(Math.min(0.2, r))) startEpisode(w, rng, p, hl, age);
       }
     } else {
@@ -62,7 +66,7 @@ export function monthlyMental(w, rng, people) {
 }
 function startEpisode(w, rng, p, hl, age) {
   const mh = hl.mh, T = w.tick, kind = rng.chance(0.52) ? 2 : 1;
-  const trig = hl.trigger && T - hl.trigT < months(5) ? hl.trigger : hl.lonely ? 'loneliness' : hl.S > 0.45 ? 'stress' : 'no clear trigger';
+  const trig = hl.trigger && T - hl.trigT < months(5) ? hl.trigger : hl.src && hl.S > 0.28 ? hl.src : 'no clear trigger';
   mh.st = kind; mh.t0 = T; mh.n++; mh.sev = clamp(rng.gauss(0.45, 0.2) + 0.2 * (hl.S - 0.3), 0.1, 1); mh.tx = 0; mh.months = 0; mh.pend = false; mh.trig = trig;
   const q2 = p.ext.pop.health; if (!q2.conds.includes('depression/anxiety')) q2.conds = [...q2.conds, 'depression/anxiety'];
   mh.ev = w.emit('health.episode', { actors: [p.id], salience: 0.3, cause: hl.trigEv || 0, tags: ['mental', trig], payload: { kind: kind === 2 ? 'depression' : 'anxiety', trigger: trig } });
@@ -84,8 +88,8 @@ function substances(w, rng, p, hl, age, S) {
   const q = p.ext.pop, L = p.ext.life, T = w.tick, M = p.sex === 'M', C = p.personality.conscientiousness, N = p.personality.neuroticism;
   const faith = q.religion === 'Muslim' ? 0.05 : q.religion === 'Sikh' ? 0.5 : q.religion === 'Hindu' ? 0.5 : 1;
   // smoking
-  if (!hl.smoke) { if (age >= 14 && age < 28 && rng.chance(0.0010 * (q.seg === 'benefit_dependent' ? 2 : q.seg === 'settled_professionals' ? 0.4 : 1) * (1.4 - C) * (q.religion === 'Muslim' ? 0.5 : 1))) { hl.smoke = 1; } }
-  else { const quit = 0.0058 * (1 + 0.5 * C) * (L.preg ? 25 : 1) * (hl.c['heart disease'] || hl.c.COPD || hl.c.cancer ? 3 : 1) * (age > 60 ? 1.4 : 1); if (rng.chance(quit)) { hl.smoke = 0; if (hl.c.COPD || age > 55 || L.preg) w.emit('health.substance', { actors: [p.id], salience: 0.15, tags: ['smoking'], payload: { what: 'smoking', change: 'stopped' } }); } }
+  if (!hl.smoke) { if (age >= 14 && age < 30 && rng.chance(0.0016 * (q.seg === 'benefit_dependent' ? 2 : q.seg === 'settled_professionals' ? 0.4 : 1) * (1.4 - C) * (q.religion === 'Muslim' ? 0.5 : 1))) { hl.smoke = 1; } }
+  else { const quit = 0.0034 * (1 + 0.5 * C) * (L.preg ? 25 : 1) * (hl.c['heart disease'] || hl.c.COPD || hl.c.cancer ? 3 : 1) * (age > 60 ? 1.4 : 1); if (rng.chance(quit)) { hl.smoke = 0; if (hl.c.COPD || age > 55 || L.preg) w.emit('health.substance', { actors: [p.id], salience: 0.15, tags: ['smoking'], payload: { what: 'smoking', change: 'stopped' } }); } }
   // alcohol
   if (age >= 18) {
     if (hl.alc === 0) { if (rng.chance(0.0014 * faith * (M ? 1.35 : 0.8) * (1.3 - C) * (age > 70 ? 0.4 : age < 25 ? 1.3 : 1) * (1 + 0.7 * S))) hl.alc = 1; }

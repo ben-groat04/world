@@ -115,7 +115,7 @@ const ageF = (a, tbl) => { for (const [lim, v] of tbl) if (a < lim) return v; re
 export function divorceHazard(durYears, ageAtMarriage, kidsU5, stress) {
   let h = durYears < 2 ? 0.0006 : durYears < 10 ? 0.0016 : durYears < 20 ? 0.0011 : 0.0005;
   h *= ageAtMarriage < 25 ? 1.9 : ageAtMarriage < 30 ? 1.25 : 1; if (kidsU5) h *= 0.8; h *= 1 + 0.7 * (stress || 0);
-  return h * 1.3;
+  return h * 1.05;
 }
 export const cohabEndHazard = (dur, age, kids) => (dur < 3 ? 0.0075 : 0.0042) * (age < 25 ? 1.5 : age > 40 ? 0.7 : 1) * (kids ? 0.65 : 1);
 export const datingEndHazard = (monthsIn, age) => (monthsIn < 3 ? 0.07 : monthsIn < 12 ? 0.038 : 0.02) * (age < 22 ? 1.5 : age > 40 ? 0.7 : 1);
@@ -136,7 +136,7 @@ export function coupleStep(w, rng, people) {
       if (rng.chance(datingEndHazard(mIn, minAge))) { later(w, rng.int(1, 27) * 144, 'rel.end', { a: p.id, how: 'dating' }); continue; }
       if (mIn < 3.5) continue;
       const kids = kidsIn(w, p, 16) || (other && kidsIn(w, other, 16));
-      let pc = 0.058 * ageF(minAge, [[19, 0.1], [22, 0.5], [25, 0.85], [32, 1.25], [42, 1.0], [200, 0.5]]) * (kids ? 0.55 : 1) * (pt.on ? 1.2 : 1) * (pt.lat && mIn > 30 ? 0.6 : 1);
+      let pc = 0.07 * ageF(minAge, [[19, 0.1], [22, 0.5], [25, 0.85], [32, 1.25], [42, 1.0], [200, 0.5]]) * (kids ? 0.55 : 1) * (pt.on ? 1.2 : 1) * (pt.lat && mIn > 30 ? 0.6 : 1);
       if (p.ext.life.boost > w.tick) pc *= 1.5;
       const trad = arranged(p) || (other && arranged(other));
       if (trad) { if (rng.chance(0.032 * ageF(minAge, [[20, 0.3], [24, 1], [200, 1.2]]))) later(w, rng.int(1, 20) * 144, 'rel.engage', { a: p.id }); continue; }
@@ -145,7 +145,7 @@ export function coupleStep(w, rng, people) {
     } else if (pt.st === 'cohab') {
       const kids = kidsIn(w, p, 16) || (other && kidsIn(w, other, 16));
       if (rng.chance(cohabEndHazard(dur, minAge, kids))) { later(w, rng.int(1, 27) * 144, 'rel.end', { a: p.id, how: 'cohab' }); continue; }
-      const preg = (p.ext.life.preg || (other && other.ext.life.preg)) ? 2.2 : 1;
+      const preg = (p.ext.life.preg || (other && other.ext.life.preg)) ? 3.5 : 1;
       let pm = 0.0058 * preg * ageF(minAge, [[22, 0.3], [25, 0.55], [30, 1.0], [40, 1.35], [55, 0.7], [200, 0.25]]) * (dur < 1 ? 0.45 : 1) * (p.ext.pop.religiosity > 0.5 ? 1.5 : 1) * (kids ? 1.25 : 1);
       if (rng.chance(pm)) later(w, rng.int(1, 20) * 144, 'rel.engage', { a: p.id });
     } else if (pt.st === 'engaged') {
@@ -216,7 +216,7 @@ export function cohabit(w, aid, force) {
     if (La.or === 'G' && np.sex !== a.sex) La.or = 'B';
     if (np.sex === a.sex && La.or === 'S') La.or = 'B';
     np.ext.hl = null;
-    w.lf.metro.splice(w.lf.metro.indexOf(m), 1); dropTie(a, m.id);
+    m.gone = true; m.rel = 'partner (moved in)'; dropTie(a, m.id);
     setTie(w, a, np, 'partner', 'partner', 'partner', 1, 0.7, pt.how); giveNetwork(w, np, rng);
     pt.id = np.id; pt.on = true; pt.st = pt.st === 'engaged' || pt.st === 'married' ? pt.st : 'cohab'; pt.lat = false;
     a.family.spouseId = np.id; np.family.spouseId = a.id; a.romance.partnerId = np.id; np.romance = { partnerId: a.id, status: pt.st === 'married' ? 'married' : a.romance.status, sinceTick: pt.since };

@@ -4,7 +4,7 @@ import { clamp, clamp01, wpick, ageOf, years, months } from '../life/util.js';
 import { BURDEN } from './tables.js';
 
 const MAP = { 'dementia (early)': 'dementia' };
-export function burdenOf(hl) { let b = 0; for (const k in hl.c) b += (BURDEN[k] ?? 0.05) * (0.5 + hl.c[k].sev); return b; }
+export function burdenOf(hl) { let b = 0; for (const k in hl.c) b += (BURDEN[k] ?? 0.05) * (hl.c[k].rem ? 0.3 : 0.5 + hl.c[k].sev); return b + (hl.mh.st ? 0.07 + 0.08 * hl.mh.sev : 0); }
 const SMOKE_BY_SEG = { benefit_dependent: 1.6, lone_parents: 1.4, shift_workers: 1.3, older_longterm: 1.0, students: 0.7, settled_professionals: 0.5, early_career: 0.75, young_sharers: 0.95, family_couples: 0.8, recent_arrivals: 0.9, local_business_families: 0.7 };
 
 export function hlFor(w, p, rng, newborn) {
@@ -16,7 +16,7 @@ export function hlFor(w, p, rng, newborn) {
     hl.c[k] = { t0: T - years(w, rng.float(0.3, Math.min(15, Math.max(0.5, age / 3)))), sev: k === 'dementia' ? rng.float(0.15, 0.6) : rng.float(0.1, 0.6), dx: T - months(rng.float(0, 60)), tx: rng.chance(0.7 * hl.adh + 0.3) ? 1 : 0 };
   }
   if (newborn) { /* congenital */ if (rng.chance(0.008)) hl.c.epilepsy = { t0: T, sev: 0.3, dx: T + months(rng.float(2, 30)), tx: 1 }; if (rng.chance(0.012)) { q.health.disabled = true; q.health.limiting = Math.max(q.health.limiting, 1); } }
-  hl.burden0 = burdenOf(hl);
+  hl.burden0 = burdenOf(hl); hl.disBase = !!q.health.disabled; hl.lim2 = q.health.limiting === 2;
   // substances
   if (age >= 14) {
     const seg = SMOKE_BY_SEG[q.seg] ?? 1, ageF = age < 18 ? 0.25 : age < 25 ? 0.9 : age < 60 ? 1.1 : age < 75 ? 0.7 : 0.35;

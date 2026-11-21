@@ -25,7 +25,7 @@ export function parseArgs(argv) {
   const o = { pack: null, seed: 1, years: 50, pop: null, quiet: false, sections: null, seeds: null, save: null, load: null, hash: false, prof: true };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i], nx = argv[i + 1];
-    if (a === '--pack') o.pack = argv[++i]; else if (a === '--seed') o.seed = +argv[++i]; else if (a === '--years') o.years = +argv[++i]; else if (a === '--pop') o.pop = +argv[++i];
+    if (a === '--pack') o.pack = argv[++i]; else if (a === '--seed') o.seed = +argv[++i]; else if (a === '--years') o.years = +argv[++i]; else if (a === '--pop') o.pop = +argv[++i]; else if (a === '--life-years') o.lifeYears = +argv[++i];
     else if (a === '--quiet') o.quiet = true; else if (a === '--hash') o.hash = true; else if (a === '--noprof') o.prof = false;
     else if (a === '--section') o.sections = argv[++i].split(','); else if (a === '--seeds') o.seeds = argv[++i].split(',').map(Number);
     else if (a === '--save') o.save = argv[++i]; else if (a === '--load') o.load = argv[++i];

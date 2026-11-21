@@ -70,11 +70,11 @@ export function setTie(w, a, b, kind, relA, relB, tier, s, via) {
 /** one-sided tie to an off-map (Metropolis) placeholder */
 export function setOffTie(p, mid, kind, rel, tier, s, via) { dropTie(p, mid); p.ext.pop.ties.push({ o: mid, k: kind, rel, t: tier, s: +s.toFixed(2), v: via || '', on: 0 }); }
 export function metro(w, id) {
-  let ix = w._metroIdx; if (!ix || ix.size !== w.lf.metro.length) { ix = w._metroIdx = new Map(); for (const m of w.lf.metro) ix.set(m.id, m); }
+  let ix = w._metroIdx; if (!ix || ix.n !== w.lf.metro.length) { ix = w._metroIdx = new Map(); ix.n = w.lf.metro.length; for (const m of w.lf.metro) ix.set(m.id, m); }
   return ix.get(id) || null;
 }
 export function newMetro(w, owner, o) {
-  const lf = w.lf.life; const id = 'm' + (lf.mid++);
+  const lf = w.lf.life; const id = 'mx' + (lf.mid++); // own id space ('m<n>' belongs to the population / housing generators, which allocate by array length)
   const m = { id, name: o.name, age: Math.round(o.age), sex: o.sex, rel: o.rel, where: o.where || 'elsewhere in the city', how: o.how || '', owner, freq: o.freq || 'weekly call', t0: w.tick };
   if (o.kin) m.kin = true; w.lf.metro.push(m); return m;
 }

@@ -7,8 +7,7 @@ export function lgbShare(age) { return age < 25 ? 0.105 : age < 35 ? 0.075 : age
 
 export function initLife(w) {
   const rng = w.rngFor('life.init'), lf = w.lf;
-  const maxM = lf.metro.reduce((m, x) => Math.max(m, parseInt(x.id.slice(1), 10) || 0), 0);
-  lf.life = { ver: 1, q: [], rec: {}, stats: {}, mid: maxM + 1, fertScale: 1, boom: 0, seeded: w.tick, first: {}, yearStats: [] };
+  lf.life = { ver: 1, q: [], rec: {}, stats: {}, mid: 1, fertScale: 1, boom: 0, seeded: w.tick, first: {}, yearStats: [] };
   const T0 = w.tick;
   for (const m of lf.metro) { if (m.t0 === undefined) m.t0 = T0; if (m.dead === undefined && m.age >= 95 && m.kin) m.dead = T0 - Math.round(rng.float(0.2, 12) * w.calendar.ticksPerYear); }
   const people = [...w.people.values()].filter((p) => p.alive && p.ext.pop);

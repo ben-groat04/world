@@ -69,7 +69,7 @@ function subscribe(w) {
   if (SUBS.has(w) || !w.events.registry.has('goal.effect')) return; SUBS.add(w);
   w.on('goal.effect', (ev) => {
     const p = w.people.get(ev.actors[0]); if (!p || !p.alive || !p.ext.life) return; const want = ev.payload.want, L = p.ext.life;
-    if ((want === 'in_relationship' || want === 'date') && !L.part && ageOf(w, p) >= 17) later(w, 144 * 3, 'rel.start', { a: p.id, b: null, how: want === 'date' ? 'friends' : 'app' });
+    if ((want === 'in_relationship' || want === 'date') && !L.part && ageOf(w, p) >= 17) L.boost = w.tick + months(2); // goal effort raises the odds; the relationship itself comes from the dating model
     else if (want === 'committed' && L.part && L.part.st !== 'married' && L.part.st !== 'engaged') later(w, 144 * 5, 'rel.engage', { a: p.id });
     else if (want === 'moved_on') L.boost = w.tick + months(2);
   });

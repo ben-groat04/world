@@ -7,7 +7,7 @@ import { qxAnnual, FRAIL, CAUSES, CAUSE_BASE, causeBand, TERMINAL, DEATH_TEXT, C
 
 export function frailOf(p) {
   const hl = p.ext.hl; let x = 0;
-  for (const k in hl.c) { const c = hl.c[k]; x += (FRAIL[k] ?? 0.2) * (0.6 + 0.8 * c.sev) * (1 - 0.3 * c.tx * hl.adh); }
+  for (const k in hl.c) { const c = hl.c[k]; x += (FRAIL[k] ?? 0.2) * (c.rem ? 0.25 : 0.6 + 0.8 * c.sev) * (1 - 0.3 * c.tx * hl.adh); }
   if (hl.mh.st > 0) x += FRAIL['depression/anxiety'] * (0.5 + hl.mh.sev);
   x += hl.smoke * 0.35 + (hl.alc === 2 ? 0.9 : hl.alc === 1 ? 0.1 : 0) + hl.drug * 0.7;
   if (p.ext.pop.health.limiting === 2) x += 0.25;
@@ -26,7 +26,7 @@ export function monthlyMortality(w, rng, people) {
   }
   for (const [p, a, f, k] of list) {
     const s = sums.get(k), pm = qxAnnual(cal, a, p.sex) / 12 * (f / (s[0] / s[1])) * (a >= 65 ? mult : 1) * (a < 1 ? 1 : 1);
-    if (rng.chance(Math.min(0.3, pm))) startDying(w, p, pickCause(w, rng, p, a));
+    bump(w, 'death_expected', pm); if (rng.chance(Math.min(0.3, pm))) { bump(w, 'death_rolled'); startDying(w, p, pickCause(w, rng, p, a)); }
   }
 }
 
@@ -36,7 +36,7 @@ export function pickCause(w, rng, p, a) {
     let x = CAUSE_BASE[c][b];
     switch (c) {
       case 'perinatal': x = a < 1 ? 6 : 0; break;
-      case 'cancer': x *= has('cancer') ? 30 : 0.3; x *= hl.smoke ? 1.5 : 1; break;
+      case 'cancer': x *= has('cancer') ? (hl.c.cancer.rem ? 7 : 30) : 0.3; x *= hl.smoke ? 1.5 : 1; break;
       case 'heart disease': x *= has('heart disease') ? 14 : 0.3; x *= (has('hypertension') ? 1.5 : 1) * (has('diabetes') ? 1.8 : 1) * (hl.smoke ? 1.4 : 1); break;
       case 'stroke': x *= has('stroke') ? 12 : 0.35; x *= has('hypertension') ? 2 : 1; break;
       case 'COPD': x *= has('COPD') ? 30 : 0.04; x *= hl.smoke ? 2 : 1; break;
@@ -64,7 +64,7 @@ export function startDying(w, p, cause) {
   const give = (k, sev, dx) => { if (!hl.c[k]) hl.c[k] = { t0: T - months(rng.float(1, 6)), sev, dx, tx: 0 }; };
   let ev = 0;
   if (cause === 'cancer' && !hl.c.cancer) { give('cancer', 0.8, T + days(rng.int(1, 10))); ev = diagnose(w, p, 'cancer', true); }
-  else if (cause === 'cancer' && !hl.c.cancer.dx) { hl.c.cancer.dx = T; ev = diagnose(w, p, 'cancer', true); }
+  else if (cause === 'cancer' && (!hl.c.cancer.dx || hl.c.cancer.rem)) { hl.c.cancer.rem = false; hl.c.cancer.sev = 0.8; if (!hl.c.cancer.dx) { hl.c.cancer.dx = T; ev = diagnose(w, p, 'cancer', true); } else ev = w.emit('health.crisis', { actors: [p.id], salience: 0.5, tags: ['illness'], payload: { what: 'cancer has come back' } }); }
   else if (cause === 'heart disease') give('heart disease', 0.7, null);
   else if (cause === 'stroke') { give('stroke', 0.8, T); if (hl.c.stroke.dx === T) ev = w.emit('health.crisis', { actors: [p.id], salience: 0.55, tags: ['illness'], payload: { what: 'stroke' } }); }
   else if (cause === 'COPD') give('COPD', 0.7, T);
@@ -111,7 +111,7 @@ export function die(w, p, cause) {
   const ev = w.emit('life.death', { actors: [p.id, ...ranked.slice(0, 14).map((m) => m.id)], salience: age < 40 ? 0.85 : age < 65 ? 0.65 : 0.5, cause: dyingEv, tags: ['death', cause], payload: { cause: DEATH_TEXT[cause] || cause, age: Math.floor(age), group, where } });
   for (const m of ranked) applyGrief(w, w.people.get(m.id), m.rel || m.k, m.g, ev, fullName(p));
   L.death.ev = ev; L.obit = obituary(w, p);
-  rec(w, 'deaths', [w.tick, +age.toFixed(1), p.sex, cause, where, !!(hl.dying), q.activity]); bump(w, 'deaths'); bump(w, 'death_' + cause);
+  rec(w, 'deaths', [w.tick, +age.toFixed(1), p.sex, cause, where, !!dyingEv, q.activity]); bump(w, 'deaths'); bump(w, 'death_' + cause);
   // will / estate: money pays out through its own death listener; housing is asked to pass the tenancy to the household
   const kids = (p.family.childrenIds || []).filter((id) => { const k = w.people.get(id); return k && k.alive; });
   const spouse = ranked.find((m) => /partner|husband|wife|spouse/.test(m.rel || '') || m.k === 'partner');

@@ -15,15 +15,15 @@ export function qxAnnual(cal, age, sex) {
 // condition -> incidence per 1000 per year by age band
 export const INC = {
   hypertension: [1, 5, 13, 24, 31, 33, 28],
-  diabetes: [0.5, 2.2, 4.2, 6.2, 7.5, 7, 5],
+  diabetes: [0.6, 2.8, 5.2, 7.7, 9.4, 8.7, 6.2],
   'heart disease': [0.05, 0.3, 1.4, 3.8, 7.5, 12, 16],
   stroke: [0.05, 0.2, 0.7, 1.8, 3.6, 7, 11],
   COPD: [0.15, 0.5, 1.8, 4.5, 7, 8, 8],
   cancer: [0.45, 1.1, 2.7, 6.5, 12, 18, 19],
-  dementia: [0, 0, 0.05, 0.3, 2.2, 10, 30],
-  arthritis: [0.8, 3.5, 9, 17, 25, 28, 24],
+  dementia: [0, 0, 0.05, 0.3, 2.0, 8, 24],
+  arthritis: [1, 4.5, 11.5, 22, 32, 36, 31],
   'back pain': [7, 10, 11, 11, 9, 7, 5],
-  asthma: [2.6, 1.6, 1.2, 1.0, 0.9, 0.7, 0.5],
+  asthma: [7, 3, 2, 1.5, 1.2, 1, 0.8],
   'mobility impairment': [0.2, 0.5, 1.2, 2.5, 5, 10, 18],
   'hearing/sight loss': [0.3, 0.8, 2, 5, 9, 16, 28],
 };

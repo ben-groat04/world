@@ -83,6 +83,12 @@ export function careScan(w, rng, people) {
       if (w.commands.has('health.stress')) w.cmd('health.stress', { pid: carer.id, amount: 0.3, why: 'caring', cause: ev });
     }
   }
+  // lighter, unspecified informal care (a neighbour, friend, relative elsewhere): ~8% of adults at any time in the Census / Community Life data, mostly a few hours a week
+  for (const p of people) {
+    const L = p.ext.life, a = ageOf(w, p); if (a < 25 || a > 80) continue;
+    if (L.caring) { if (L.caring.kind === 'other' && rng.chance(0.012)) endCaring(w, p, 'ended'); continue; }
+    if (rng.chance(0.0015 * (p.sex === 'F' ? 1.35 : 0.8) * (a >= 45 && a < 66 ? 1.8 : 1) * (a > 75 ? 0.6 : 1))) { L.caring = { for: 'other', hrs: rng.chance(0.7) ? rng.int(2, 19) : rng.int(20, 45), since: w.tick, kind: 'other' }; bump(w, 'caring_other'); }
+  }
   // carers whose cared-for person died or recovered
   for (const p of people) { const c = p.ext.life.caring; if (!c || typeof c.for !== 'number') continue; const o = w.people.get(c.for); if (!o || !o.alive || !o.ext.life.needCare) endCaring(w, p, !o || !o.alive ? 'died' : 'ended'); }
 }

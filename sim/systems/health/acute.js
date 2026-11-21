@@ -50,7 +50,7 @@ function fall(w, rng, p, hl, age, sevF) {
   later(w, days(dur + (hosp ? 7 : 0)), 'acute.end', { pid: p.id, t0: T });
   bump(w, 'ill'); bump(w, 'ill_sev' + sev);
   let ev = 0;
-  if (sev >= 2) { ev = w.emit('health.ill', { actors: [p.id], salience: hosp ? 0.45 : 0.1, tags: ['illness'], payload: { name, severity: sev } }); }
+  if (sev >= 2) { ev = w.emit('health.ill', { actors: [p.id], salience: hosp ? 0.45 : 0.1, tags: ['illness'], payload: { name, severity: sev } }); hl.acute.ev = ev; }
   if (hosp) { w.emit('health.crisis', { actors: [p.id], salience: 0.5, cause: ev, tags: ['illness', 'hospital'], payload: { what: 'admitted to hospital with ' + name } }); bump(w, 'admissions'); }
   if (sev >= 3 || (sev === 2 && rng.chance(0.3))) { bump(w, 'gp'); if (sev === 3) { bump(w, 'ae'); } }
 }
@@ -69,7 +69,7 @@ export const acuteHandlers = {
   'acute.end'(w, d) {
     const p = w.people.get(d.pid); if (!p || !p.alive || !p.ext.hl) return; const hl = p.ext.hl; if (!hl.acute || hl.acute.t0 !== d.t0) return;
     const a = hl.acute; hl.acute = null; p.illness = null; const i = w.lf.health.ill.indexOf(p.id); if (i >= 0) w.lf.health.ill.splice(i, 1);
-    if (a.sev >= 2) w.emit('health.recovered', { actors: [p.id], salience: 0.08, tags: ['illness'], payload: { condition: a.name } });
+    if (a.sev >= 3 || a.hosp) w.emit('health.recovered', { actors: [p.id], salience: 0.2, cause: a.ev || 0, tags: ['illness'], payload: { condition: a.name } });
   },
   'ae.visit'(w, d) {
     const p = w.people.get(d.pid); if (!p || !p.alive || !w.commands.has('routine.insert')) return;
@@ -97,6 +97,8 @@ export function monthlyGP(w, rng, people) {
     const hl = p.ext.hl; if (!hl) continue; const age = ageOf(w, p);
     let l = (age < 5 ? 6 : age < 16 ? 2.4 : age < 45 ? (p.sex === 'F' ? 4.6 : 2.3) : age < 65 ? 5 : age < 75 ? 7 : 10) + 2.2 * Math.min(4, Object.keys(hl.c).length) + (hl.mh.st ? 3 : 0);
     l /= 12; let n = 0; while (l > 0) { if (rng.chance(Math.min(l, 1))) n++; l -= 1; }
+    // non-injury A&E attendances (fevers, chest pain, exacerbations): statistics only
+    if (rng.chance((age < 5 ? 0.32 : age < 16 ? 0.12 : age < 65 ? 0.13 : 0.26) * (1 + 0.5 * Math.min(3, Object.keys(hl.c).length)) / 12)) bump(w, 'ae');
     if (n) { bump(w, 'gp', n); hl.gp.n12 = hl.gp.n12 * 0.92 + n; if (age >= 17 && rng.chance(0.2)) laterAt(w, days(rng.int(1, 28)), 'gp.visit', { pid: p.id }); }
   }
 }

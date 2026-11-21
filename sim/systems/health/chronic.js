@@ -41,7 +41,7 @@ export function monthlyChronic(w, rng, people) {
       c.sev = clamp(c.sev + (pr / 12) * (1 - 0.4 * c.tx * hl.adh) + rng.gauss(0, 0.006), 0.02, 1);
       if (cond === 'stroke') c.sev = Math.max(0.15, c.sev - 0.01);
       if (c.dx && !c.tx && c.dx < T - months(1) && rng.chance(0.2)) c.tx = rng.chance(0.55 + 0.4 * hl.adh) ? 1 : 0;
-      if (cond === 'cancer' && c.dx && rng.chance(0.011 * (1 + c.tx))) { delete hl.c.cancer; hl.cancerHist = T; const q2 = p.ext.pop.health; q2.conds = q2.conds.filter((x) => x !== 'cancer'); w.emit('health.recovered', { actors: [p.id], salience: 0.45, tags: ['illness'], payload: { condition: 'cancer' } }); bump(w, 'cancer_cured'); }
+      if (cond === 'cancer' && c.dx && !c.rem && rng.chance(0.011 * (1 + c.tx))) { c.rem = true; c.sev = 0.1; c.tx = 1; hl.cancerHist = T; w.emit('health.recovered', { actors: [p.id], salience: 0.45, tags: ['illness'], payload: { condition: 'cancer' } }); bump(w, 'cancer_cured'); }
       else if (cond === 'asthma' && age > 18 && rng.chance(0.0006)) delete hl.c.asthma;
     }
     if (hl.injury && hl.injury.until < T) hl.injury = null;
@@ -57,12 +57,12 @@ function onset(w, rng, p, hl, cond, wait) {
 }
 export function updateScore(w, p, hl) {
   const q = p.ext.pop.health, age = ageOf(w, p);
-  let b = burdenOf(hl) + (hl.mh.st ? 0.07 + 0.08 * hl.mh.sev : 0) + (hl.acute ? 0.1 * hl.acute.sev : 0) + (hl.injury ? 0.18 * hl.injury.sev : 0) + (hl.dying ? 0.3 : 0);
+  let b = burdenOf(hl) + (hl.acute ? 0.1 * hl.acute.sev : 0) + (hl.injury ? 0.18 * hl.injury.sev : 0) + (hl.dying ? 0.3 : 0);
   const score = clamp(hl.base - (b - hl.burden0), 0.05, 1); p.health = score;
   q.general = score >= 0.9 ? 'very good' : score >= 0.72 ? 'good' : score >= 0.52 ? 'fair' : score >= 0.33 ? 'bad' : 'very bad';
-  let dis = q.disabled; for (const k in hl.c) if (DISABLING.has(k) && hl.c[k].sev > 0.3 && hl.c[k].dx) dis = true;
-  if (score < 0.58) dis = true; if (hl.injury && hl.injury.sev >= 0.5) dis = true;
-  q.disabled = dis; const lim = score < 0.4 || (hl.c.dementia && hl.c.dementia.sev > 0.55) ? 2 : dis ? 1 : 0; q.limiting = Math.max(lim, hl.injury && hl.injury.sev >= 0.7 ? 2 : 0, age < 18 && q.limiting === 1 ? 1 : 0, q.limiting === 2 && score < 0.5 ? 2 : 0);
+  let dis = !!hl.disBase; for (const k in hl.c) if (DISABLING.has(k) && hl.c[k].sev > 0.3 && hl.c[k].dx) dis = true;
+  if (score < 0.55) dis = true; if (hl.injury && hl.injury.sev >= 0.5) dis = true;
+  q.disabled = dis; const lim = score < 0.4 || (hl.c.dementia && hl.c.dementia.sev > 0.55) || (hl.disBase && hl.lim2) ? 2 : dis ? 1 : 0; q.limiting = Math.max(lim, hl.injury && hl.injury.sev >= 0.7 ? 2 : 0);
   if (!dis) q.limiting = 0;
   if (age >= 16 && q.activity === 'employed' && q.limiting === 2 && p.ext.pop.health.conds.length && w.rngFor('health.sick', p.id, w.tick).chance(0.04)) { /* long-term sickness exit is labour's call; flag for it */ hl.workLimited = true; }
 }

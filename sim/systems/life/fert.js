@@ -7,13 +7,15 @@ import { bedsNeeded, bedsOf, buildPop } from './moves.js';
 
 const BANDS = [[15, 19, '15-19'], [20, 24, '20-24'], [25, 29, '25-29'], [30, 34, '30-34'], [35, 39, '35-39'], [40, 44, '40+']];
 const PARITY_W = [1.0, 0.95, 0.38, 0.14, 0.06];
+// births to a woman who moves away mid-pregnancy are lost to the neighbourhood (and arrivals do not arrive pregnant): compensate by band so resident ASFR tracks the calibration
+const LOSS_COMP = [1.1, 1.45, 1.35, 1.15, 1.08, 1.05];
 
 function stateWeight(w, p, L) {
   const pt = L.part;
-  if (!pt) return 0.1;
-  if (pt.on) { const o = w.people.get(pt.id); if (!o || !o.alive) return 0.1; if (o.sex === p.sex) return p.sex === 'F' ? 0.17 : 0; return pt.st === 'married' || pt.st === 'engaged' ? 1.0 : pt.lat ? 0.3 : 0.85; }
+  if (!pt) return 0.08;
+  if (pt.on) { const o = w.people.get(pt.id); if (!o || !o.alive) return 0.1; if (o.sex === p.sex) return p.sex === 'F' ? 0.17 : 0; return pt.st === 'married' || pt.st === 'engaged' ? 1.0 : pt.lat ? 0.2 : 0.6; }
   const m = metro(w, pt.id); if (m && m.sex === p.sex) return p.sex === 'F' ? 0.15 : 0;
-  return pt.st === 'married' ? 1.0 : pt.st === 'cohab' ? 0.85 : 0.3;
+  return pt.st === 'married' ? 1.0 : pt.st === 'cohab' ? 0.6 : 0.22;
 }
 function moneyStress(w, p) { const m = w.sys && w.sys.money; if (!m) return 0.3; try { const x = m.query.pressure(p.id); return x ? x.stress || 0 : 0.3; } catch (e) { return 0.3; } }
 
@@ -38,7 +40,7 @@ export function monthlyFertility(w, rng, people) {
   }
   bands.forEach((B, i) => {
     if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = B.n / B.sum;
-    for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
+    for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale * LOSS_COMP[i]))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
   });
 }
 

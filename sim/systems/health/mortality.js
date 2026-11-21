@@ -11,6 +11,8 @@ export function frailOf(p) {
   if (hl.mh.st > 0) x += FRAIL['depression/anxiety'] * (0.5 + hl.mh.sev);
   x += hl.smoke * 0.35 + (hl.alc === 2 ? 0.9 : hl.alc === 1 ? 0.1 : 0) + hl.drug * 0.7;
   if (p.ext.pop.health.limiting === 2) x += 0.25;
+  if (hl.lonely) x += 0.15; // social isolation raises mortality risk (Holt-Lunstad)
+  { const f = p.ext.pop.fin; if (f && f.net != null && f.net < 14000) x += 0.2; else if (f && f.net > 45000) x -= 0.1; } // deprivation gradient in life expectancy
   if (hl.injury) x += 0.7 * hl.injury.sev;
   if (hl.acute && hl.acute.sev >= 3) x += 0.8;
   return Math.exp(x);

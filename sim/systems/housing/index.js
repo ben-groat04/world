@@ -237,7 +237,7 @@ export function createHousing() {
     if (hh.fin) hh.fin.cause = eid;
     if (!S.wait.some((x) => x.hh === hh.id)) S.wait.push({ hh: hh.id, since: w.tick, points: 4 });
   }
-  function seekDestinationForced(hh, reason, eid) { const rng = W.rngFor('housing.forced'); if (rng.chance(reason === 'arrears' ? 0.55 : 0.14)) return; seekDestination(hh, null, rng, reason === 'arrears' ? 'afford' : 'notice', eid, 1); }
+  function seekDestinationForced(hh, reason, eid) { const rng = W.rngFor('housing.forced'); seekDestination(hh, null, rng, reason === 'arrears' ? 'afford' : 'notice', eid, 1); }
   function noticeStep(u, hh, rng, money) {
     const own = ownerOf(u), type = own ? own.kind : 'small_landlord', mk = marketRent(W, u), gap = mk / u.rent - 1;
     let h = 0.0035 * (type === 'small_landlord' ? 1.25 : type === 'build_to_rent' ? 0.3 : 0.8) * (gap > 0.15 ? 2 : 1) * (1 + 3 * clamp(macro().rentGrowth / 10, 0, 1));
@@ -249,7 +249,8 @@ export function createHousing() {
   function processNotice(u, hh, rng) {
     const n = u.notice; if (W.tick < n.until) return;
     if (hh.departAt || hh.search) { if (W.tick < n.until + 2 * MONTH) return; }
-    const evict = n.reason === 'arrears' ? rng.chance(0.5) : rng.chance(0.55);
+    // a household still in place once the notice (plus any extension while it is actively searching) has run out is evicted: whether it found somewhere in time emerges from vacancies, rent ceilings and savings
+    const evict = true; void rng;
     if (!evict) { n.until += MONTH; if (n.until - n.tick > 6 * MONTH) { u.notice = null; hh.forced = null; if (hh.fin) hh.fin.arrearsFlag = hh.fin.arrearsFlag; } return; }
     doEvict(u, hh, n.reason, n.eid);
   }
@@ -448,7 +449,8 @@ export function createHousing() {
   }
   function onGoalEffect(ev) {
     const p = W.people.get(ev.actors[0]); if (!p || !p.alive || !p.ext.pop) return; const hh = W.lf.households[p.ext.pop.hh]; if (!hh || hh.gone) return; const want = ev.payload.want;
-    if (want === 'new_tenancy' || want === 'own_place' || want === 'suitable_home') { const stable = !hh.crowded && !(hh.fin && hh.fin.stress > 0.5) && !(U(hh.unit) && U(hh.unit).damp); if (stable && want !== 'own_place' && W.rngFor('housing.goal').chance(0.8)) return;
+    if (want === 'new_tenancy' || want === 'own_place' || want === 'suitable_home') { const stable = !hh.crowded && !(hh.fin && hh.fin.stress > 0.5) && !(U(hh.unit) && U(hh.unit).damp); const anchored = isSocial(hh.tenure) || hhLive(hh).some((k) => { const a = W.ageOf(k); return a >= 4 && a < 17; }) || (p.ext.pop.yearsAtAddress || 0) > 6; // secure tenancy, school places, long roots: a wish to move is not acted on while nothing is wrong
+      if (stable && want !== 'own_place' && anchored) return;
       if (want === 'own_place' && p.ext.pop.role === 'adult_child' && !isSharers(hh)) leaveHome(hh, p, W.rngFor('housing.goal')); else if (!hh.search) startSearch(hh, want === 'suitable_home' ? 'space' : 'chosen', 0, ev.id); }
     else if (want === 'owns_home') { if (!hh.search) startSearch(hh, 'buy', 0, ev.id); }
     else if (want === 'lives_elsewhere') { hh.departAt = W.tick + MONTH; hh.departWhy = 'chosen'; hh.departCause = ev.id; hh.departDest = 'metropolis'; }

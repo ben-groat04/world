@@ -227,7 +227,7 @@ export class MapView {
     }
     if (z < 5) return;
     for (const [id, n] of this.occ) {
-      const b = this.byId.get(id); if (!b || !n) continue; if (['estate_green', 'park', 'allotments', 'school_grounds'].includes(b.type) && z < 6) continue; if (z < 8 && n < 2 && id !== this.selB) continue;
+      const b = this.byId.get(id); if (!b || !n) continue; if (['estate_green', 'park', 'allotments', 'school_grounds'].includes(b.type) && z < 6) continue; if (id !== this.selB && n < (z < 8 ? 4 : z < 12 ? 2 : 1)) continue;
       const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -20 || sy < -20 || sx > this.w + 20 || sy > this.h + 20) continue;
       const col = b.kind === 'residential' ? '#3a7fb0' : b.cat ? CAT_COL[b.cat] || '#d9a441' : '#6b7a8a';
       const t = String(n), fs = clamp(z * 0.9, 10, 15); ctx.font = `700 ${fs}px system-ui`; const w = Math.max(fs * 1.5, ctx.measureText(t).width + 12), hgt = fs * 1.4;

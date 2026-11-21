@@ -15,8 +15,13 @@ export function supportOf(w, p) {
 function loneScore(w, p, age) {
   const hl = p.ext.hl, L = p.ext.life, q = p.ext.pop, hh = hhOf(w, p), E = p.personality.extraversion, N = p.personality.neuroticism;
   const live = hh ? hh.members.reduce((n, id) => { const x = w.people.get(id); return n + (x && x.alive ? 1 : 0); }, 0) : 1;
-  let iso = 0; if (live <= 1) iso += 0.5; if (age >= 75) iso += 0.25; if (L.mar === 'widowed' && L.widowedAt != null && yearsSince(w, L.widowedAt) < 4) iso += 0.45;
-  if (q.activity === 'unemployed' || q.activity === 'sick_disabled' || q.activity === 'other_inactive') iso += 0.3; if (q.health.limiting === 2) iso += 0.35;
+  // Circumstances that isolate BEYOND what the social plugin's contact score already counts. Not counted here (were double counts / unsupported):
+  //  - living alone (the score already subtracts household company), and
+  //  - age itself: ELSA/ONS analyses (Victor et al.; ONS 2018 'Loneliness - what characteristics and circumstances are associated') find the age gradient
+  //    of chronic loneliness among 65+ vanishes once widowhood, poor health and contact are controlled; ~5-15% of older people are often/always lonely.
+  // Kept: recent widowhood (Age UK/ELSA: widowed 5x as likely 'often lonely'), poor health limiting mobility, no work/routine, newcomer status, caring.
+  let iso = 0; if (L.mar === 'widowed' && L.widowedAt != null && yearsSince(w, L.widowedAt) < 4) iso += 0.45;
+  if (q.activity === 'unemployed' || q.activity === 'sick_disabled' || q.activity === 'other_inactive') iso += 0.3; if (q.health.limiting === 2) iso += 0.25;
   if (q.yearsAtAddress < 1.2 && q.seg === 'recent_arrivals') iso += 0.3; if (q.seg === 'recent_arrivals') iso += 0.15; if (L.caring) iso += 0.25;
   // contact-based: the social plugin's score (personal need for company vs support actually received through real contact, tie quality, household) + circumstances that isolate
   const sq = w.sys.social && w.sys.social.query; const sl = sq ? sq.loneliness(p.id) : 0.7 - 0.1 * Math.min(supportOf(w, p), 7);

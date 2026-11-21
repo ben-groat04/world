@@ -100,7 +100,7 @@ store.on('news', (items) => {
 });
 tick.addEventListener('click', () => { if (tick.dataset.pid) selectPerson(+tick.dataset.pid); });
 store.on('jumped', (it) => { $('jump').classList.remove('busy'); if (it) { toast(`<b>${esc(it.date)}</b> &mdash; ${esc(it.head)}`, 9000); if (it.ppl && it.ppl[0]) selectPerson(it.ppl[0].id); } else toast('Nothing notable happened for two years.'); });
-store.on('result', (r) => { toast(`${r.ok ? '★ ' : '⚠ '}<b>${esc(r.name)}</b> ${r.ok ? 'sent. Watch the Local feed for consequences.' : 'failed: ' + esc(r.error || 'rejected')}`, 5000); if (r.ok && store.s.tier === 'pause') setTier(prevTier || 'life'); });
+store.on('result', (r) => { toast(`${r.ok ? '★ ' : '⚠ '}<b>${esc(r.name)}</b> ${r.ok ? 'sent.' : 'failed: ' + esc(r.error || 'rejected')}`, 5000); if (r.ok && store.s.tier === 'pause') setTier(prevTier || 'life'); });
 
 // ------------------------------------------------------------------ selection
 const followBtn = $('z-follow');

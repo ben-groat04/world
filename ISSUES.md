@@ -65,3 +65,5 @@ tests: goals/material/social determinism tests partly stale (3 pre-existing fail
   in elderly, parks busy, sleep worse, tempers) with causes.
 - Player conversations often neutral — talk outcomes need clearer, felt consequences.
 - Housing arrivals: export a proper makePerson so player creation uses the real generator (exact age).
+- NPCs never ask the player anything naturally (0 requests in 60 days for a taken-over resident); earlier cards were
+  injected. NPC goals should target the player like any other tie (favours, invites, borrowing, dates).

@@ -208,7 +208,7 @@ export function createHousing() {
       else if (short === 0) hh.crowded = false;
       // student-let tenancies end with the course: once nobody in a student household is studying (graduated / dropped out / working) they give notice
       // at ~10%/month (12-month ASTs, graduate jobs elsewhere) and the unit goes back to the student market
-      if (hh.seg === 'students' && !isSharers(hh) && !hh.search && !hh.departAt && S.autoMoves && !ps.some((p) => p.ext.pop.activity === 'student') && rng.chance(0.10)) { hh.departAt = tick + rng.int(0, 2) * MONTH; hh.departWhy = 'graduated'; hh.departCause = 0; hh.departDest = 'elsewhere'; }
+      if (hh.seg === 'students' && !isSharers(hh) && !hh.search && !hh.departAt && S.autoMoves && !ps.some(studying) && rng.chance(0.10)) { hh.departAt = tick + rng.int(0, 2) * MONTH; hh.departWhy = 'graduated'; hh.departCause = 0; hh.departDest = 'elsewhere'; }
       if (!hh.search && !hh.departAt && S.autoMoves) {
         if (isSharers(hh)) { sharerRotation(hh, ps, adults, seg, rng); }
         else {
@@ -313,12 +313,13 @@ export function createHousing() {
       if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: p.id }); p.emigrated = true; p.emigratedTick = w.tick; p.emigratedTo = 'metropolis'; w.removePerson(p); hh.members.push(p.id); S.stats.movedPersons++; S.moveLog.push([w.tick, Math.round(w.ageOf(p)), 'out']); void eid;
     }
   }
+  const studying = (p) => p.ext.pop.activity === 'student' || (p.ext.pop.school && (p.ext.pop.school.kind === 'university' || p.ext.pop.school.kind === 'college')); // working students still study
   function sharerRotation(hh, ps, adults, seg, rng) {
     const w = W, S = H(w), rate = hh.seg === 'students' ? 0.014 : hh.seg === 'young_sharers' ? 0.010 : 0.005;
     for (const p of adults) {
       // student-let tenancies end with the course: a former student (graduated, dropped out) in a student house gives notice at ~10%/month
       // (tenancy ends / graduate job elsewhere); the vacant room is re-let to the next cohort (pendingRooms)
-      const r = hh.seg === 'students' && p.ext.pop.activity !== 'student' ? 0.10 : rate;
+      const r = hh.seg === 'students' && !studying(p) ? 0.10 : rate;
       if (adults.length < 2 || !rng.chance(r)) continue;
       const age = w.ageOf(p), eid = w.emit('housing.moved_out', { actors: [p.id], place: hh.bid, objects: [hh.id], salience: 0.3, tags: ['housing', 'life', 'churn'], payload: { to: 'metropolis', reason: 'flatmate_rotation' } });
       if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: p.id });

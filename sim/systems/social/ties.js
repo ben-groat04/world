@@ -116,7 +116,10 @@ export function maintain(w, S, p, r) {
   // loneliness: wanted contact vs the support actually received (partner/household count)
   const hh = q.hh != null ? w.lf.households[q.hh] : null, live = hh ? hh.members.length - 1 : 0;
   const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : age > 78 ? 0.1 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
-  const sup = supply * 0.1 + Math.min(live, 3) * 0.14 + (p.romance && p.romance.partnerId != null ? 0.3 : 0) + Math.min(ctc, 12) * 0.03;
+  // A partner / housemates are ALREADY tie-layer-1 members counted in `supply` (and in `ctc` through ~6 face-to-face contacts a week); only the extra value of
+  // someone being at home (company, availability) is added here. Earlier version added household (0.14 each) + partner (0.3) on top, triple-counting the
+  // partner, which made every older person living alone 'lonely' despite a full network (ELSA/ONS: loneliness tracks contact quality and widowhood, not household size alone).
+  const sup = supply * 0.1 + Math.min(live, 3) * 0.06 + Math.min(ctc, 12) * 0.03;
   ps.ls = clamp(ps.ls * 0.5 + 0.5 * (need - sup + 0.7), -1, 1.8);
   ps.sc = supply;
 }

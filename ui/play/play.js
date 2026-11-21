@@ -32,7 +32,7 @@ export function mountPlay(store, hooks) {
       <div class="pmini"><span title="Money">${gbp(s.money)}</span><span title="Energy"><i class="pbar"><b style="width:${Math.round(en * 100)}%;background:${en < 0.3 ? 'var(--bad)' : en < 0.55 ? 'var(--warn)' : 'var(--good)'}"></b></i></span><span title="Mood">${MOOD(s.mood)}</span></div>
       <button class="pdo" id="pdo">Do${req ? `<em>${req > 9 ? '9+' : req}</em>` : ''}</button>`;
     const r = s.reqs.find((x) => x.notable), rest = s.reqs.length - (r ? 1 : 0); // one weighty ask at a time; the rest wait in the Do menu inbox
-    if (r && sheet.hidden) { card.hidden = false; card.innerHTML = `<div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>${esc(cap(r.why))}</small>` : ''}</div><div class="pa"><button data-ans="yes">Yes</button><button data-ans="maybe">Maybe</button><button data-ans="no">Not now</button></div>${rest ? `<small class="pmore">${rest} more in your inbox</small>` : ''}`; card.dataset.rid = r.id; }
+    if (r && sheet.hidden) { card.hidden = false; card.innerHTML = `<div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>Trying to ${esc(r.why)}</small>` : ''}</div><div class="pa"><button data-ans="yes">Yes</button><button data-ans="maybe">Maybe</button><button data-ans="no">Not now</button></div>${rest ? `<small class="pmore">${rest} more in your inbox</small>` : ''}`; card.dataset.rid = r.id; }
     else card.hidden = true;
   }
   card.addEventListener('click', (e) => { const b = e.target.closest('[data-ans]'); if (!b) return; doit('player.respond', { request: +card.dataset.rid, answer: b.dataset.ans }); card.hidden = true; resume(); });
@@ -72,7 +72,7 @@ export function mountPlay(store, hooks) {
   // ---------------------------------------------------------------- views
   function menuView(s) {
     const here = s.here || [], inbox = s.reqs || [];
-    const ibx = inbox.length ? `<h5>Waiting for you <small>${inbox.length}</small></h5>${inbox.slice(0, 8).map((r) => `<div class="preq"><div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>${esc(cap(r.why))}</small>` : ''}</div><div class="pa"><button data-ans="yes" data-rid="${r.id}">Yes</button><button data-ans="maybe" data-rid="${r.id}">Maybe</button><button data-ans="no" data-rid="${r.id}">Not now</button></div></div>`).join('')}${inbox.length > 8 ? `<p class="pdim">${inbox.length - 8} more; they lapse if ignored.</p>` : ''}` : '';
+    const ibx = inbox.length ? `<h5>Waiting for you <small>${inbox.length}</small></h5>${inbox.slice(0, 8).map((r) => `<div class="preq"><div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>Trying to ${esc(r.why)}</small>` : ''}</div><div class="pa"><button data-ans="yes" data-rid="${r.id}">Yes</button><button data-ans="maybe" data-rid="${r.id}">Maybe</button><button data-ans="no" data-rid="${r.id}">Not now</button></div></div>`).join('')}${inbox.length > 8 ? `<p class="pdim">${inbox.length - 8} more; they lapse if ignored.</p>` : ''}` : '';
     return head(esc(s.name)) + `<div class="pbody">
       <p class="pthought">${esc(s.thought || '')}</p>${ibx}
       ${here.length ? `<h5>Here with you</h5><div class="pchips">${here.map((x) => `<button class="pchip" data-talk="${x.id}">${esc(x.name)}<small>${x.known ? warmWord(x.l) : 'stranger'}</small></button>`).join('')}</div>` : `<p class="pdim">${s.off ? 'You are away in the city.' : 'Nobody else is here right now.'}</p>`}

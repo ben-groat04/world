@@ -22,9 +22,9 @@ export class Groups {
   create(o) {
     const w = this.w, S = this.S, K = this.kinds[o.kind]; if (!K) throw new Error('unknown group kind ' + o.kind);
     const id = S.groupSeq++, W = this.e.lib.NAME_WORDS, h = hash32(w.seed, 'gname', id);
-    const name = o.name || fmt(K.names[h % K.names.length], { a: W.a[(h >> 4) % W.a.length], n: W.n[(h >> 9) % W.n.length], p: W.p[(h >> 14) % W.p.length] });
+    const name = o.name || fmt(K.names[h % K.names.length], { a: W.a[(h >>> 4) % W.a.length], n: W.n[(h >>> 9) % W.n.length], p: W.p[(h >>> 14) % W.p.length] });
     const v = this.venueFor(o.kind);
-    const g = { id, name, kind: o.kind, founder: o.founder, leader: o.founder, members: {}, purpose: o.purpose || '', goal: o.goal || 0, venue: v ? v.id : null, venueKind: v ? v.alias : 'home', cadence: Math.max(1, Math.round(K.cadence * this.e.cfg.dayScale)), nextMeet: 0, funds: 0, cohesion: 0.6, rep: 0, status: 'forming', born: w.tick, ended: 0, history: [], project: 0, rivals: [], meetings: 0, weak: 0, lastActive: w.tick, norms: [] };
+    const g = { id, name, kind: o.kind, founder: o.founder, leader: o.founder, members: {}, purpose: o.purpose || '', goal: o.goal || 0, venue: v ? v.id : null, venueKind: v ? v.alias : 'home', cadence: Math.max(1, Math.round(K.cadence * this.e.cfg.dayScale)), nextMeet: 0, funds: 0, cohesion: 0.6, rep: 0, status: 'forming', born: w.tick, ended: 0, history: [], project: 0, rivals: [], meetings: 0, weak: 0, small: 0, lastActive: w.tick, norms: [] };
     S.groups.set(id, g); this.addMember(g, o.founder, K.roles[0] || 'founder', 0.9, true);
     if (o.members) for (const m of o.members) this.addMember(g, m, K.roles[1] || 'member', 0.6, true);
     return g;
@@ -103,6 +103,11 @@ export class Groups {
     const tpl = this.e.tpl.get(g.tpl), S = this.S, w = this.w; if (!this.e.cfg.flags.groups) return null;
     let G = g.group ? S.groups.get(g.group) : null; if (G && G.status === 'dissolved') { G = null; }
     const gk = tpl.group && tpl.group !== 'existing' ? tpl.group : null;
+    if (gk === 'business') {
+      if (!G) { G = this.create({ kind: 'business', founder: p.id, purpose: tpl.id, goal: g.id }); g.group = G.id; }
+      if (st.move === 'perform') { G.status = 'active'; this.announce(G); if (!G.project) this.startProject(G, tpl.project || 'business'); const ok = this.finishProject(G, false); return ok ? { res: 'ok', note: 'doors open' } : { res: 'fail', why: 'bad_luck', note: 'the opening fizzled' }; }
+      return null;
+    }
     const recruiting = (st.move === 'recruit' || (st.move === 'invite' && gk));
     if (recruiting && gk) {
       if (!G) { G = this.create({ kind: gk, founder: p.id, purpose: tpl.id, goal: g.id }); g.group = G.id; }
@@ -157,6 +162,7 @@ export class Groups {
     return best;
   }
   onGoalEnd(g, ok) {
+    if (g.tpl === 'challenge_group_leader' && g.group) { const G = this.S.groups.get(g.group); if (G && G.status !== 'dissolved' && G.members[g.p]) { if (ok) { const won = this.leadershipVote(G, g.p, this.e.rng('vote', g.id)); if (won) { const from = G.leader; G.leader = g.p; G.members[g.p].role = this.kinds[G.kind].roles[0] || 'leader'; this.w.emit('group.leader_changed', { actors: [g.p, from], place: G.venue, cause: g.eid, salience: 0.25, tags: ['conflict', 'civic'], payload: { group: G.id, how: 'challenge' } }); this.hist(G, `${this.e.fn(g.p)} unseated ${this.e.fn(from)}`); G.cohesion = clamp(G.cohesion - 0.1, 0, 1); if (G.members[from]) G.members[from].commit -= 0.35; } else { this.removeMember(G, g.p, 'pushed out'); } } else if (G.members[g.p]) G.members[g.p].commit -= 0.25; } return; }
     if (!g.group) return; const G = this.S.groups.get(g.group); if (!G) return;
     if (!ok && G.status === 'forming' && G.goal === g.id) this.dissolve(G, 'never got going');
     if (ok && G.goal === g.id && G.status === 'forming') { G.status = 'active'; this.announce(G); }
@@ -177,7 +183,7 @@ export class Groups {
     g.meetings++; g.lastActive = w.tick; const n = ids.length;
     if (att.length < Math.max(2, Math.ceil(K.min * 0.5)) && K.min > 1) { g.weak++; g.cohesion = clamp(g.cohesion - 0.06, 0, 1); } else g.weak = 0;
     if (att.length >= 2) {
-      g.cohesion = clamp(g.cohesion + 0.015 + 0.02 * (att.length / n), 0, 1);
+      { const tgt = 0.22 + 0.62 * (att.length / n) + (g.project ? 0.1 : 0) - 0.012 * Math.max(0, n - 8) + 0.1 * g.rep; g.cohesion = clamp(g.cohesion + 0.14 * (tgt - g.cohesion), 0, 1); }
       const lim = Math.min(att.length, 6); for (let i = 0; i < lim; i++) for (let j = i + 1; j < lim; j++) { const a = w.people.get(att[i]), b = w.people.get(att[j]); if (a && b && w.getRel) { const ra = w.getRel(a, b), rb = w.getRel(b, a); ra.familiarity = clamp((ra.familiarity || 0) + 0.025, 0, 1); rb.familiarity = clamp((rb.familiarity || 0) + 0.025, 0, 1); ra.affinity = clamp((ra.affinity || 0) + 0.012, -1, 1); rb.affinity = clamp((rb.affinity || 0) + 0.012, -1, 1); ra.lastTick = rb.lastTick = w.tick; } }
       // costs: venue hire / dues flow to the venue's account (the pub gets paid)
       const cost = K.cost * this.e.cfg.moneyScale; if (cost > 0) for (const id of att) { const q = w.people.get(id); if (q.money > cost * 3) w.ledger.transfer(id, g.venue != null && w.buildings.get(g.venue) ? 'b:' + g.venue : 'metropolis', cost, 'group.dues', g.eid || 0); }
@@ -202,7 +208,7 @@ export class Groups {
     // split
     if (g.cohesion < 0.28 && n >= 6 && r.next() < 0.25) this.split(g, r);
     // dissolve
-    const n2 = this.size(g), haz = K.hazard * (g.status === 'institution' ? 0.15 : 1) * (1.5 - g.cohesion) * (this.e.cfg.dayScale) * (g.cadence / this.e.cfg.yearDays);
+    const n2 = this.size(g), haz = K.hazard * (g.status === 'institution' ? 0.15 : 1)  * (1.5 - g.cohesion) * (g.cadence / this.e.cfg.yearDays);
     if (g.status === 'active' || g.status === 'institution') {
       if (n2 < Math.max(1, K.min - 1) && n2 < K.min) { if (++g.small > 2) return this.dissolve(g, n2 === 0 ? 'everyone left' : 'too few members'); } else g.small = 0;
       if (g.cohesion < 0.1 && r.next() < 0.5) return this.dissolve(g, 'fell apart');

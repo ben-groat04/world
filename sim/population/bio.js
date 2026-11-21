@@ -45,7 +45,7 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
     if (q.role === 'head' && (h.arch === 'one_person_66plus' || h.arch === 'couple_66plus') && !p.family.spouseId && rng.chance(0.55)) mem(p, rng.float(1, 14), `${p.sex === 'F' ? 'Her husband' : 'His wife'} died.`, -0.9, 5);
     else if (age > 30 && !p.family.spouseId && q.role === 'head' && rng.chance(0.3)) mem(p, rng.float(1, 9), `A long relationship ended.`, -0.5, 3);
     // moves
-    if (q.role !== 'child' || age > 8) { const mr = wpickObj(rng, s.mobility.moveReasons); mem(p, Math.min(h.yearsAt, q.yearsAtAddress + 0.01), `Moved to ${h.address}${mr ? ' (' + mr.replace(/_/g, ' ') + ')' : ''}.`, 0.2, 3); }
+    if (q.role !== 'child' || age > 8) { const mr = wpickObj(rng, s.mobility.moveReasons); mem(p, Math.min(h.yearsAt, q.yearsAtAddress + 0.01), `Moved to ${h.unit.address}${mr ? ' (' + mr.replace(/_/g, ' ') + ')' : ''}.`, 0.2, 3); }
     // later-life events
     if (age >= 45 && rng.chance(0.4)) mem(p, rng.float(0.5, 8), `${rng.pick(['Mother', 'Father'])} died.`, -0.8, 5);
     if (age >= 40 && rng.chance(0.15)) mem(p, rng.float(0.3, 6), `Health scare: ${q.health.conds[0] || 'a hospital stay'}.`, -0.6, 3);

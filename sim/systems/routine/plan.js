@@ -32,7 +32,7 @@ function workToday0(W, p, D, rec) {
   if (dice(id, D, 13) < 0.009 + 0.02 * (1 - (p.health || 0.8))) { rt.sickDay = D; return null; }
   // owners follow venue opening hours
   if (OWNER_OCC.has(q.occ) && q.workplace.kind === 'onmap') {
-    const v = W.map.lf.venues[q.workplace.vid]; const iv = v ? openingsFor(pack, v, dow, rec.bankHoliday) : [];
+    const v = W.map.venues[q.workplace.vid]; const iv = v ? openingsFor(pack, v, dow, rec.bankHoliday) : [];
     if (!iv.length) return dow === 6 && dice(id, D, 5) < 0.6 ? null : { s: 8, e: 16, kind: 'onmap' };
     return { s: Math.max(5, iv[0][0] - 0.5), e: Math.min(29, iv[iv.length - 1][1] + 0.5), kind: 'onmap', owner: true };
   }
@@ -88,7 +88,7 @@ function bedHour(W, p, D, rec, w) {
   if (w && w.night) return 99;
   b += (dice(id, D, 3) - 0.5) * 1.2;
   const nx = W.cal.recAt(D + 1), age = W.ageOf(p);
-  if (age >= 16 && p.ext.pop.activity === 'employed' && (nx.dow < 5 && !nx.bankHoliday)) { const w1 = workToday(W, p, D + 1, nx); if (w1 && !w1.night) b = Math.min(b, w1.s - L.prep - commuteH(p.ext.pop) - 7.3 + 24 - 24 + (dice(id, D, 4) - 0.5) * 0.4); }
+  if (age >= 16 && p.ext.pop.activity === 'employed' && (nx.dow < 5 && !nx.bankHoliday)) { const w1 = workToday(W, p, D + 1, nx); if (w1 && !w1.night) b = Math.min(b, w1.s + 24 - L.prep - commuteH(p.ext.pop) - 7.5 + (dice(id, D, 4) - 0.5) * 0.4); }
   return clamp(b, age < 5 ? 19 : 20.2, 27);
 }
 
@@ -110,19 +110,19 @@ export function buildPlan(W, p, D, wakeTickAt) {
   let busyFrom = wake;
   add(wake, wake + prep, A.getup, 0, 0);
   const dest = (k) => W.destIdx[k];
-  const transit = (a, b, d, mode) => add(a, b, A.commute, 4, dest(d) * 8 + MODE_IDX[mode]);
+  const transit = (a, b, d, mode, aux = 0) => add(a, b, A.commute, 4, dest(d) * 8 + MODE_IDX[mode], aux);
   const hasKidsHome = q.role !== 'child' && W.hhKidsSchool(p, rec);
   // ---- children / school
   if (age < 16) {
     const sc = q.school || { kind: 'home' };
     if (rec.schoolDay && sc.kind === 'primary') { const sb = W.schoolB; add(8.75 - 0.0, 15.25, A.school, 1, sb); }
-    else if (rec.schoolDay && sc.kind === 'secondary') { add(7.55, 8.35, A.commute, 4, dest('secondary_school') * 8 + MODE_IDX.bus); add(8.35, 15.35, A.school, 3, dest('secondary_school')); add(15.35, 16.05, A.commute, 4, dest('secondary_school') * 8 + MODE_IDX.bus); }
+    else if (rec.schoolDay && sc.kind === 'secondary') { add(7.55, 8.35, A.commute, 4, dest('secondary_school') * 8 + MODE_IDX.bus); add(8.35, 15.35, A.school, 3, dest('secondary_school')); add(15.35, 16.05, A.commute, 4, dest('secondary_school') * 8 + MODE_IDX.bus, 1); }
     else if (!rec.bankHoliday && rec.dow < 5 && sc.kind === 'nursery') add(8.1, 17.3, A.nursery, 1, W.nurseryB);
   } else if (q.activity === 'student' && q.school && q.school.kind !== 'none' && rec.dow < 5 && !rec.bankHoliday) {
     const term = q.school.kind === 'college' ? rec.schoolDay : uniTerm(rec);
     if (term && dice(id, Math.floor(D / 7), 40 + rec.dow) < (q.school.kind === 'college' ? 0.9 : 0.62)) {
       const s = 9 + Math.floor(dice(id, D, 41) * 2.5), e = s + 3.5 + dice(id, D, 42) * 3; const mn = (q.school.kind === 'college' ? 25 : 22) / 60;
-      add(s - mn, s, A.commute, 4, dest(q.school.dest) * 8 + MODE_IDX.bus); add(s, e, A.uni, 3, dest(q.school.dest)); add(e, e + mn, A.commute, 4, dest(q.school.dest) * 8 + MODE_IDX.bus);
+      add(s - mn, s, A.commute, 4, dest(q.school.dest) * 8 + MODE_IDX.bus); add(s, e, A.uni, 3, dest(q.school.dest)); add(e, e + mn, A.commute, 4, dest(q.school.dest) * 8 + MODE_IDX.bus, 1);
     }
   }
   // ---- school run duty (adults with primary-age kids): morning drop & pick-up by whoever is free
@@ -138,14 +138,14 @@ export function buildPlan(W, p, D, wakeTickAt) {
     if (w.kind === 'home') { add(s, e, A.work_home, 0, 0); }
     else if (w.kind === 'onmap' && wp.bid != null) {
       const lunchAt = s + 4.2;
-      if (e - s >= 6.5) { add(s, lunchAt, w.owner ? A.business : A.work, 1, wp.bid); add(lunchAt, lunchAt + 0.6, A.lunch, dice(id, D, 8) < (L.homeLunch || 0.3) ? 0 : 1, dice(id, D, 8) < (L.homeLunch || 0.3) ? 0 : wp.bid); add(lunchAt + 0.6, e, w.owner ? A.business : A.work, 1, wp.bid); }
+      if (e - s >= 6.5) { add(s, lunchAt, w.owner ? A.business : A.work, 1, wp.bid); add(lunchAt, lunchAt + 0.6, s >= 15 ? A.dinner : A.lunch, dice(id, D, 8) < (L.homeLunch || 0.3) ? 0 : 1, dice(id, D, 8) < (L.homeLunch || 0.3) ? 0 : wp.bid); add(lunchAt + 0.6, e, w.owner ? A.business : A.work, 1, wp.bid); }
       else add(s, e, A.work, 1, wp.bid);
     } else if (w.kind === 'offmap') {
       const mn = wp.mins / 60, d = wp.dest;
       transit(s - mn, s, d, wp.mode);
       const night = w.night || e > 24;
       if (e - s >= 6.5) { const la = s + 4.3; add(s, la, night ? A.night_work : A.work, 3, dest(d)); add(la, la + 0.6, A.lunch, 3, dest(d)); add(la + 0.6, e, night ? A.night_work : A.work, 3, dest(d)); } else add(s, e, night ? A.night_work : A.work, 3, dest(d));
-      transit(e, e + mn, d, wp.mode);
+      transit(e, e + mn, d, wp.mode, 1);
     }
   } else if (sick) add(wake + prep, wake + prep + 14, A.sick, 0, 0);
   // ---- unpaid non-work activity anchors
@@ -160,7 +160,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
     if (rel === 'Christian' && rec.dow === 6 && dice(id, D, 60) < q.religiosity * 0.85) add(10, 11.3, A.worship, 1, wb);
     else if (rel === 'Muslim' && rec.dow === 4 && p.sex === 'M' && age >= 12 && (!w || w.kind !== 'offmap') && dice(id, D, 60) < q.religiosity * 0.9) add(13.0, 14.0, A.worship, 1, wb);
     else if (rel === 'Muslim' && rec.dow === 6 && dice(id, D, 61) < q.religiosity * 0.3) add(10, 11.5, A.worship, 1, wb);
-    else if ((rel === 'Hindu' || rel === 'Sikh') && rec.dow === 6 && dice(id, D, 60) < q.religiosity * 0.5) { const d = dest('hindu_temple_gurdwara'); add(10, 10.5, A.commute, 4, d * 8 + (q.car ? MODE_IDX.drive : MODE_IDX.bus)); add(10.5, 12.3, A.worship, 3, d); add(12.3, 12.8, A.commute, 4, d * 8 + (q.car ? MODE_IDX.drive : MODE_IDX.bus)); }
+    else if ((rel === 'Hindu' || rel === 'Sikh') && rec.dow === 6 && dice(id, D, 60) < q.religiosity * 0.5) { const d = dest('hindu_temple_gurdwara'); add(10, 10.5, A.commute, 4, d * 8 + (q.car ? MODE_IDX.drive : MODE_IDX.bus)); add(10.5, 12.3, A.worship, 3, d); add(12.3, 12.8, A.commute, 4, d * 8 + (q.car ? MODE_IDX.drive : MODE_IDX.bus), 1); }
   }
   const fixed = blocks.filter((b) => true).sort((x, y) => x.a - y.a);
   // resolve overlaps among anchors (keep earlier-starting; trim later)
@@ -170,7 +170,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
   const kidsHomeOnly = age < 12;
   const wishes = [];
   const lv = L.lv;
-  const dayF = wend ? 1.55 : 0.8, mild = rec.regime === 'rain' ? 0.8 : 1;
+  const dayF = wend ? 2.3 : 0.85, mild = rec.regime === 'rain' ? 0.8 : 1;
   const rain = 1;
   const want = (kind, rate, a, b, dur, opts = {}) => { if (rate <= 0) return; if (dice(id, D, 100 + wishes.length + kind.length) > clamp(rate / 7 * dayF * (opts.noDay ? 1 : mild), 0, 0.92)) return; const s = a + dice(id, D, 200 + kind.length) * Math.max(0, b - a - dur); wishes.push({ kind, a: s, dur, opts }); };
   if (!sick && age >= 5) {
@@ -209,7 +209,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
       const parts = []; let t = a;
       if (blk.tripBefore) { parts.push({ a: t, b: t + blk.tripBefore, act: A.commute, pt: 4, pid: blk.tripId, aux: 0 }); t += blk.tripBefore; }
       parts.push({ a: t, b: t + blk.dur, act: blk.act, pt: blk.pt, pid: blk.pid, aux: blk.aux || 0 }); t += blk.dur;
-      if (blk.tripAfter) parts.push({ a: t, b: t + blk.tripAfter, act: A.commute, pt: 4, pid: blk.tripId, aux: 0 });
+      if (blk.tripAfter) parts.push({ a: t, b: t + blk.tripAfter, act: A.commute, pt: 4, pid: blk.tripId, aux: 1 });
       for (const b of parts) tl.push(b); tl.sort((x, y) => x.a - y.a); break;
     }
   }
@@ -228,8 +228,9 @@ export function buildPlan(W, p, D, wakeTickAt) {
       else if (h >= 17.3 && h < 19.8 && !final.some((b) => b.act === A.dinner && b.a > t - 4)) { act = A.dinner; len = 1.0; }
       else act = null;
       if (act === null) act = pickHome(W, p, rec, h, age, wend, ev, D, final.length, q);
-      len = len || (act === A.nap ? 1.0 : (kidsHomeOnly ? 1.3 : 1.2 + dice(id, D, 300 + final.length) * 1.3));
+      len = len || (act === A.nap ? 1.0 : (kidsHomeOnly ? 1.6 : 1.6 + dice(id, D, 300 + final.length) * 1.8));
       if (g1 - (t + len) < 0.5) len = g1 - t;
+      if (len < 0.34 && final.length && final[final.length - 1].b === t) { final[final.length - 1].b = t + len; t += len; continue; }
       add2(t, Math.min(g1, t + len), act); t += len;
     }
   };
@@ -242,7 +243,8 @@ export function buildPlan(W, p, D, wakeTickAt) {
   // ---- emit entries (merge contiguous identical states), then the sleep block and the BUILD sentinel at the next wake
   const e = []; let lastKey = '', prev = wakeTickAt - 1;
   for (const b of parts) {
-    const k = b.act + ':' + b.pt + ':' + b.pid; if (k === lastKey) continue; lastKey = k;
+    if (b.b - b.a < 0.3 && b.pt === 0 && e.length && (b.act >= A.tv || b.act === A.chores) ) continue; // too short to be its own activity: previous state runs on
+    const k = b.act + ':' + b.pt + ':' + b.pid + ':' + (b.aux || 0); if (k === lastKey) continue; lastKey = k;
     const tk = Math.max(hourToTick(cal, D, b.a), prev + 1); prev = tk;
     e.push(tk, b.act, b.pt, b.pid, b.aux || 0);
   }

@@ -7,7 +7,7 @@ export const ACTS = [
   ['park', 'Out in the park', 'out'], ['worship', 'At worship', 'out'], ['community', 'At the community centre', 'out'], ['library', 'At the library', 'out'], ['visit', 'Visiting a friend', 'social'],
   ['offsocial', 'Out in the city with friends', 'social'], ['nightout', 'On a night out in the city', 'social'], ['family_off', 'Visiting family elsewhere', 'social'], ['retail_trip', 'On a shopping trip', 'out'],
   ['tv', 'Watching TV', 'home'], ['gaming', 'Gaming', 'home'], ['phone', 'On the phone / scrolling', 'home'], ['chores', 'Doing housework', 'chores'], ['childcare', 'Looking after the children', 'care'], ['homework', 'Doing homework', 'home'],
-  ['nap', 'Resting', 'home'], ['rest', 'Relaxing at home', 'home'], ['garden', 'In the garden / on the allotment', 'home'], ['bedtime', 'Winding down for bed', 'home'], ['study', 'Studying at home', 'work'], ['jobsearch', 'Sorting out paperwork and job search', 'chores'],
+  ['nap', 'Having a rest', 'sleep'], ['rest', 'Relaxing', 'home'], ['garden', 'In the garden / on the allotment', 'home'], ['bedtime', 'Winding down for bed', 'home'], ['study', 'Studying at home', 'work'], ['jobsearch', 'Sorting out paperwork and job search', 'chores'],
   ['carer', 'Caring for a relative', 'care'], ['sick', 'Unwell at home', 'home'], ['play', 'Playing', 'home'], ['sleep_day', 'Sleeping after a night shift', 'sleep'], ['night_work', 'On a night shift', 'work'], ['online', 'Online with friends', 'home'],
   ['goal', 'Pursuing something', 'out'], ['takeaway', 'Collecting a takeaway', 'errand'], ['business', 'Running the business', 'work'], ['cook', 'Cooking', 'chores'],
 ];

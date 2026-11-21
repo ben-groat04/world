@@ -22,10 +22,10 @@ const pc = (x) => (x == null ? 'n/a' : (x * 100).toFixed(0) + '%');
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : '?');
 
 export function parseArgs(argv) {
-  const o = { seed: 1, years: 50, pop: null, quiet: false, sections: null, seeds: null, save: null, load: null, hash: false, prof: true };
+  const o = { pack: null, seed: 1, years: 50, pop: null, quiet: false, sections: null, seeds: null, save: null, load: null, hash: false, prof: true };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i], nx = argv[i + 1];
-    if (a === '--seed') o.seed = +argv[++i]; else if (a === '--years') o.years = +argv[++i]; else if (a === '--pop') o.pop = +argv[++i];
+    if (a === '--pack') o.pack = argv[++i]; else if (a === '--seed') o.seed = +argv[++i]; else if (a === '--years') o.years = +argv[++i]; else if (a === '--pop') o.pop = +argv[++i];
     else if (a === '--quiet') o.quiet = true; else if (a === '--hash') o.hash = true; else if (a === '--noprof') o.prof = false;
     else if (a === '--section') o.sections = argv[++i].split(','); else if (a === '--seeds') o.seeds = argv[++i].split(',').map(Number);
     else if (a === '--save') o.save = argv[++i]; else if (a === '--load') o.load = argv[++i];
@@ -157,6 +157,7 @@ function runSeedsParallel(o) {
 async function main() {
   const o = parseArgs(process.argv.slice(2));
   if (o.help) { console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(0, 9).join('\n')); return; }
+  if (o.pack === 'larkfield') { const { runLarkfieldReport } = await import('./report-larkfield.js'); console.log((await runLarkfieldReport(o)).join('\n')); return; } // Larkfield pack report (population/routine checks), see tools/report-larkfield.js
   if (!o.seeds) { console.log(runOne(o).lines.join('\n')); return; }
   const t0 = performance.now();
   const res = await runSeedsParallel(o);

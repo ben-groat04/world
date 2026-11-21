@@ -22,7 +22,7 @@ export const EVENTS = {
   'project.started': { project: 'number', kind: 'string', group: 'number' }, 'project.progress': { project: 'number', pct: 'number' }, 'project.done': { project: 'number', kind: 'string', ok: 'boolean' }, 'project.effect': { project: 'number', kind: 'string', effect: 'string' },
   'opportunity.created': { kind: 'string', key: 'string' }, 'request.pending': { from: 'number', to: 'number', move: 'string' },
 };
-const PERIOD = 7;                       // days between scans of one person
+const PERIOD = 14;                      // days between scans of one person
 const STAGES = ['18-24', '25-34', '35-49', '50-64', '65+'];
 const band = (a) => (a < 25 ? '18-24' : a < 35 ? '25-34' : a < 50 ? '35-49' : a < 65 ? '50-64' : '65+');
 
@@ -43,7 +43,7 @@ export class Engine {
   fresh() { return { goalSeq: 1, groupSeq: 1, projSeq: 1, tplSeq: 1, ps: new Map(), goals: new Map(), groups: new Map(), projects: new Map(), fit: {}, opps: [], requests: [], inventedThisYear: 0, nPeople: 0, active: new Map(), wins: new Map(), stats: { formed: 0, completed: 0, failed: 0, abandoned: 0, steps: 0, stepOk: 0, stepFail: 0, replans: 0, transformed: 0, invented: 0, byTpl: {} }, ended: [] }; }
   addTemplate(t) {
     if (!t.gen) t.gen = { base: 0 };
-    t.habit = t.habit ?? (t.gen.base >= 10); this.tpl.set(t.id, t); if (!this.tplList.includes(t)) this.tplList.push(t);
+    t.habit = t.habit ?? (t.gen.base >= 2.5); this.tpl.set(t.id, t); if (!this.tplList.includes(t)) this.tplList.push(t);
   }
   _compilePressureEvents(list) { const m = new Map(); for (const r of list) for (const k of r.m) { const key = k.startsWith('tag:') ? k.slice(4) : k; let l = m.get(key); if (!l) m.set(key, (l = [])); l.push(r); } return m; }
   rng(tag, ...k) { return this.world.rngFor('goals.' + tag, ...k); }
@@ -76,6 +76,7 @@ export class Engine {
   press(s, key, now) { const e = s.press[key]; if (!e) return 0; const hl = (this.lib.PRESSURES[key]?.halfLife || 60) * this.cfg.dayScale; return e[0] * Math.pow(0.5, (now - e[1]) / (hl * TICKS_PER_DAY)); }
   addPress(s, key, v, cause) { const now = this.world.tick, cur = this.press(s, key, now); s.press[key] = [clamp(Math.max(cur, 0) + v, 0, 1), now, cause || (s.press[key] ? s.press[key][2] : 0)]; if (s.press[key][0] < 0.02) delete s.press[key]; }
 
+  getFacts(p) { return computeFacts(this.world, p, this.cfg); }   // uncached on purpose: caching would make snapshot-resume diverge from a straight run
   // ---------------- scanning (goal generation) ----------------
   seedPeople() {
     const w = this.world;
@@ -89,7 +90,7 @@ export class Engine {
     this.groups.daily();
   }
   scan(p, s) {
-    const w = this.world, now = w.tick, f = computeFacts(w, p, this.cfg); s.age = f.age;
+    const w = this.world, now = w.tick, f = this.getFacts(p); s.age = f.age;
     // events since last scan -> pressures
     const evs = w.events.query({ actor: p.id, since: s.lastScan - 1, limit: 40 });
     for (const ev of evs) this._eventPressure(p, s, ev);
@@ -182,6 +183,7 @@ export class Engine {
     }
     // origin: strongest pressure among the template's boosters -> its cause event
     let cause = o.cause || 0, origin = ''; if (t.gen.boost) { let m = 0.15; for (const k of Object.keys(t.gen.boost)) { const e = s.press[k]; if (e) { const v = this.press(s, k, now); if (v > m) { m = v; cause = cause || e[2]; origin = k; } } } }
+    if (t.group && t.group !== 'existing' && !o.force) { let n = 0; for (const G of S.groups.values()) if (G.purpose === t.id && G.status !== 'dissolved') n++; if (n >= Math.max(1, Math.round((w.index.count || 100) / 70))) return null; }
     const g = { id: S.goalSeq++, tpl: t.id, p: p.id, status: 'active', int: intensity, secret: r.next() < (t.secret || 0), born: now, last: now, deadline: now + Math.round(this.sd(t.horizon[1]) * TICKS_PER_DAY * 1.5 * (1 - 0.3 * s.stress)), cause, origin, parent: o.parent || 0, target: null, methods: [], steps: [], si: 0, method: '', attempts: 0, diff: t.diff ?? 0.5, flags: {}, ex: [], res: {}, group: 0, log: [], endWhy: '' };
     const tg = this.pickGoalTarget(p, f, t, g); if (tg === false) return null; if (tg != null) g.target = tg;
     S.goals.set(g.id, g); s.goals.push(g.id); let a = S.active.get(t.id); if (!a) S.active.set(t.id, (a = new Set())); a.add(p.id);
@@ -229,6 +231,7 @@ export class Engine {
     s.trace.push({ t: now, kind: 'method', goal: g.id, top: scored.slice().sort((a, b) => b[1] - a[1]).slice(0, 3).map(([a, b]) => [a, +b.toFixed(2)]), drives: this.topDrives(p, s) }); if (s.trace.length > 16) s.trace.shift();
     g.method = m; g.methods.push(m); g.attempts++;
     g.steps = this.methods.steps(m, t.verb).map((x, i) => ({ i, move: x.move, v: x.v, role: x.role, target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 }));
+    if (t.group && t.group !== 'existing' && !g.steps.some((x) => x.move === 'recruit' || (x.move === 'invite' && x.role))) { const at = Math.max(0, g.steps.findIndex((x) => x.move === 'organise' || x.move === 'book' || x.move === 'found')); const ins = [0, 1].map(() => ({ i: 0, move: 'recruit', v: 'member', role: 'contact', target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 })); g.steps.splice(at, 0, ...ins); g.steps.forEach((x, i) => (x.i = i)); }
     g.si = 0;
     if (!g.steps.length) g.steps.push({ i: 0, move: 'wait', v: 'time', role: null, target: null, state: 'todo', tries: 0, due: 0, note: '', depth: 0 });
     g.last = now;
@@ -263,6 +266,7 @@ export class Engine {
   pickRole(p, f, g, st, role) {
     const w = this.world, r = this.rng('role', g.id, st.i, st.tries, w.tick), fam = p.family || {};
     if (role === 'target') return g.target;
+    if (role === 'member') { const G = g.group ? this.S.groups.get(g.group) : null; if (G) { const ids = Object.keys(G.members).map(Number).filter((x) => x !== p.id && !g.ex.includes(x)); return ids.length ? ids[Math.floor(r.next() * ids.length)] : null; } role = 'contact'; }
     if (role === 'partner') return f.partnerId ?? null;
     if (['employer', 'authority', 'landlord', 'expert'].includes(role)) return { label: { employer: 'the manager', authority: 'the council', landlord: 'the landlord', expert: 'an adviser' }[role], inst: role };
     const pool = []; const rel = p.relationships; if (!rel) return null;
@@ -275,7 +279,7 @@ export class Engine {
     return pickW(pool, r.next()) ?? null;
   }
   runStep(p, g, st) {
-    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], s = this.ps(p), f = computeFacts(w, p, this.cfg), now = w.tick, r = this.rng('step', g.id, st.i, st.tries, now);
+    const w = this.world, S = this.S, t = this.tpl.get(g.tpl), mv = MOVE[st.move], s = this.ps(p), f = this.getFacts(p), now = w.tick, r = this.rng('step', g.id, st.i, st.tries, now);
     if (st.role && st.target == null) { st.target = this.pickRole(p, f, g, st, st.role); if (st.target == null && !['employer', 'authority', 'landlord', 'expert'].includes(st.role)) { st.target = null; this.stepFail(p, s, f, g, st, 'busy', 'no one to turn to'); return; } }
     const tp = typeof st.target === 'number' ? w.people.get(st.target) : null;
     if (typeof st.target === 'number' && (!tp || !tp.alive)) { st.target = null; this.stepFail(p, s, f, g, st, 'bad_luck', 'they were not around'); return; }
@@ -294,6 +298,7 @@ export class Engine {
     if (g.flags.lied) pr += 0.1;
     const comp = t.claim ? this.competitors(g, t.claim) : 0; pr -= 0.1 * comp;
     let opposed = false; if (tp) { const q = S.ps.get(tp.id); if (q) for (const gid of q.goals) { const og = S.goals.get(gid); if (og && og.status === 'active' && og.target === p.id && (og.tpl === 'avoid_person' || og.tpl === 'avenge_wrong')) { pr -= 0.3; opposed = true; } } }
+    if (tp && this.isPlayer(tp) && mv.kind === 'social' && !this.opts.autoPlayer) { const rq = { id: (this.rid = (this.rid || 0) + 1), goal: g.id, from: p.id, to: tp.id, move: st.move, until: now + 3 * TICKS_PER_DAY }; S.requests.push(rq); w.emit('request.pending', { actors: [p.id, tp.id], salience: 0.3, cause: g.eid, payload: { from: p.id, to: tp.id, move: st.move } }); return; }
     const special = this.groups.step(p, s, f, g, st, mv, tp, r); if (special) { pr = special.pr ?? pr; if (special.res) { this.finishStep(p, s, f, g, st, special.res, special.why || '', special.note); return; } }
     pr = clamp(pr, 0.03, 0.97); const u = r.next(); let res, why = '';
     if (u < pr) res = 'ok'; else if (mv.kind === 'social' && st.tries === 0 && u < pr + 0.13 && tp) res = 'maybe';
@@ -313,6 +318,8 @@ export class Engine {
       S.stats.stepOk++; st.state = 'done'; g.last = w.tick; this.stepEffects(p, f, g, st, mv); if (beliefs.length && !t.mundane) this.selfm.creditOwn(s, beliefs, +1, '', z, 0.03);
       this._emitStep(p, g, st, 'ok', '', n, tn);
       if (g.si >= g.steps.length - 1) { this.complete(g); return; }
+      const hz = Math.max(0, (t.diff ?? 0.4) - 0.22) * 0.2 * (1 - 0.25 * z.C) * (1.25 - t.patience * 0.5) * (1 + s.stress * 0.5);
+      if (hz > 0 && this.rng('lapse', g.id, st.i, w.tick).next() < hz) { this.abandon(g, ['lost interest', 'life got in the way', 'other things took over'][hash32(g.id, st.i) % 3]); return; }
       g.si++; this._schedule(g);
     } else if (res === 'maybe') {
       st.tries++; this._emitStep(p, g, st, 'maybe', 'maybe', n, tn); g.last = w.tick; this._schedule(g);
@@ -333,7 +340,7 @@ export class Engine {
   }
   outcomeText(res, why, tn, mv, st, g) {
     const vn = VARIANT_NOUN[st.v] || st.v || '', pick = (a, k) => a[hash32(g.id, st.i, st.tries, k) % a.length];
-    if (res === 'ok') return tn ? fmt(pick(OUTCOME_TEXT.okT, 1), { t: tn }) : fmt(pick(OUTCOME_TEXT.ok, 2), { v: vn, doing: mv.id });
+    if (res === 'ok') { if (tn && MOVE[st.move].kind === 'social' && ['ask', 'recruit', 'persuade', 'invite', 'borrow'].includes(st.move)) return fmt(pick(OUTCOME_TEXT.okT, 1), { t: tn }); const d = fmt(mv.doing, { t: tn || 'them', g: this.tpl.get(g.tpl).object || '', v: (st.v || '').replace(/_/g, ' ') }); return cap1(d) + ': ' + pick(['went fine', 'went well', 'done', 'no problems'], 2); }
     if (res === 'maybe') return fmt(pick(OUTCOME_TEXT.maybe, 3), { t: tn || 'they', v: vn });
     return fmt(pick(OUTCOME_TEXT[why] || OUTCOME_TEXT.bad_luck, 4), { t: tn || 'they', v: vn });
   }
@@ -401,7 +408,7 @@ export class Engine {
     const S = this.S, w = this.world, now = w.tick, pop = w.index.count || w.living().length;
     const inv = this.lib.INVENTION; if (!inv) return;
     const cap = Math.max(1, Math.round(pop / 30)); if (S.inventedThisYear >= cap || this.tplList.length >= this.cfg.maxInvent) return;
-    const r = this.rng('inv', p.id, now); if (r.next() > 0.05 * (0.5 + f.z.O * 0.3)) return;
+    const r = this.rng('inv', p.id, now); if (r.next() > 0.02 * (0.5 + f.z.O * 0.3)) return;
     // an unmet need: strongest pressure or a recently failed goal's drive
     let need = null, m = 0.2; for (const k of Object.keys(s.press)) { const v = this.press(s, k, now); if (v > m) { m = v; need = k; } } if (!need) return;
     const nd = this.lib.PRESSURES[need]?.drives || []; const acts = inv.activities.filter((a) => a.drives.some((d) => nd.includes(d)) || r.next() < 0.1); if (!acts.length) return;
@@ -428,3 +435,71 @@ export class Engine {
   stepTarget(g) { return g; }
   view(g) { const t = this.tpl.get(g.tpl), st = g.steps[g.si]; return { id: g.id, tpl: g.tpl, phrase: this.phrase(g.tpl), status: g.status, intensity: +g.int.toFixed(2), secret: g.secret, born: g.born, cause: g.cause, origin: g.origin, method: g.method, step: st ? { i: g.si + 1, n: g.steps.length, label: stepLabel(this.world, st), note: st.note, due: st.due } : null, target: typeof g.target === 'number' ? g.target : null, group: g.group, parent: g.parent, line: this.line(g), log: g.log.slice(-4), mundane: !!t.mundane }; }
 }
+
+// ---------------- persistence, queries, commands (mixed into Engine) ----------------
+const P = Engine.prototype;
+P.serialize = function () {
+  const S = this.S, ps = []; for (const [id, s] of S.ps) ps.push([id, { ...s, wins: s.wins }]);
+  return { v: 1, goalSeq: S.goalSeq, groupSeq: S.groupSeq, projSeq: S.projSeq, ps, goals: [...S.goals.values()], groups: [...S.groups.values()], projects: [...S.projects.values()], fit: S.fit, opps: S.opps, requests: S.requests, inventedThisYear: S.inventedThisYear, stats: S.stats, ended: S.ended, nPeople: S.nPeople, rid: this.rid || 0,
+    invented: this.tplList.filter((t) => t.invented).map((t) => ({ ...t })), retired: this.tplList.filter((t) => t.retired).map((t) => t.id) };
+};
+P.deserialize = function (st) {
+  const S = this.fresh(); this.S = S; S.goalSeq = st.goalSeq; S.groupSeq = st.groupSeq; S.projSeq = st.projSeq; S.fit = st.fit; S.opps = st.opps; S.requests = st.requests; S.inventedThisYear = st.inventedThisYear; S.stats = st.stats; S.ended = st.ended; S.nPeople = st.nPeople; this.rid = st.rid;
+  for (const t of st.invented) if (!this.tpl.has(t.id)) this.addTemplate(t); for (const id of st.retired) { const t = this.tpl.get(id); if (t) t.retired = true; }
+  for (const [id, s] of st.ps) S.ps.set(id, s); for (const g of st.goals) S.goals.set(g.id, g); for (const g of st.groups) S.groups.set(g.id, g); for (const p of st.projects) S.projects.set(p.id, p);
+  this.scanHeap = new Heap(); this.stepHeap = new Heap();
+  for (const [id, s] of S.ps) this.scanHeap.push({ k: s.nextScan, id });
+  for (const g of S.goals.values()) { if (g.status === 'active' || g.status === 'deferred') { let a = S.active.get(g.tpl); if (!a) S.active.set(g.tpl, (a = new Set())); a.add(g.p); if (g.status === 'active' && g.steps[g.si]) this.stepHeap.push({ k: g.steps[g.si].due, gid: g.id, si: g.si, tries: g.steps[g.si].tries }); } }
+};
+P.activeKinds = function () { const m = {}, S = this.S; for (const g of S.goals.values()) if (g.status === 'active') m[g.tpl] = (m[g.tpl] || 0) + 1; return m; };
+P.statsView = function () { const S = this.S; let act = 0; for (const g of S.goals.values()) if (g.status === 'active') act++; const gs = { forming: 0, active: 0, institution: 0, dissolved: 0 }; for (const g of S.groups.values()) gs[g.status] = (gs[g.status] || 0) + 1; return { ...S.stats, active: act, people: S.ps.size, groups: gs, templates: this.tplList.filter((t) => !t.retired).length, methodDefaults: this.methods.defaults, projects: S.projects.size }; };
+P.groupView = function (g, full) {
+  const v = { id: g.id, name: g.name, kind: g.kind, status: g.status, size: this.groups.size(g), leader: g.leader, founder: g.founder, venue: g.venue, cohesion: +g.cohesion.toFixed(2), rep: +g.rep.toFixed(2), born: g.born, rivals: g.rivals.slice(), purpose: g.purpose, project: g.project ? { ...this.S.projects.get(g.project) } : null, meetings: g.meetings };
+  if (full) { v.members = Object.entries(g.members).map(([id, m]) => ({ id: +id, role: m.role, commit: +m.commit.toFixed(2), att: m.att })); v.history = g.history.slice(); v.funds = g.funds; }
+  return v;
+};
+const hold = (name) => name;
+P.override = function (p, slot) {
+  const s = this.S.ps.get(p.id); if (!s) return null; const w = this.world;
+  const t0 = slot ? (slot.start ?? slot.startTick ?? slot.tick ?? w.tick) : w.tick, t1 = slot ? (slot.end ?? slot.endTick ?? t0 + (slot.ticks ?? slot.duration ?? 30)) : t0 + 30;
+  if (s.next) { const g = this.S.goals.get(s.next.goal); if (g && g.status === 'active' && s.next.due >= t0 && s.next.due < t1) { const st = g.steps[g.si]; if (st && st.state !== 'done') return this._activity(p, g, st); } }
+  for (const gid of s.groups) { const G = this.S.groups.get(gid); if (G && (G.status === 'active' || G.status === 'institution') && G.nextMeet >= t0 && G.nextMeet < t1 && G.kind !== 'online_community' && G.kind !== 'business') return { kind: 'group_meeting', activity: 'group_meeting', label: `${G.name}: meeting`, thought: `${G.name} tonight. ${G.status === 'institution' ? 'Always is.' : 'Hope enough people come.'}`, venue: G.venue, venueKind: G.venueKind, ticks: 12, group: G.id, why: `member of ${G.name}` }; }
+  return null;
+};
+P._activity = function (p, g, st) {
+  const mv = MOVE[st.move], w = this.world, tgt = typeof st.target === 'number' ? this.fn(st.target) : st.target ? st.target.label : '';
+  const vars = { t: tgt || 'someone', g: this.tpl.get(g.tpl).object || this.phrase(g.tpl), v: st.v ? st.v.replace(/_/g, ' ') : '' };
+  const doing = fmt(mv.doing, vars), thought = mv.thought ? fmt(mv.thought, vars) : '';
+  return { kind: 'goal_step', activity: 'goal_' + st.move, label: doing.charAt(0).toUpperCase() + doing.slice(1), thought, venueKind: mv.venue ? mv.venue[0] : 'home', venueAlts: mv.venue || ['home'], withPerson: typeof st.target === 'number' ? st.target : null, ticks: mv.dur, goal: g.id, step: g.si, why: this.line(g) };
+};
+P.getChoices = function (id) {
+  const p = this.world.people.get(id), s = this.S.ps.get(id); if (!p || !s) return [];
+  const out = []; for (const gid of s.goals) { const g = this.S.goals.get(gid); if (!g || g.status !== 'active') continue; const st = g.steps[g.si]; if (!st) continue; out.push({ kind: 'step', goal: g.id, move: st.move, label: stepLabel(this.world, st), reason: `part of: ${this.phrase(g.tpl)}`, score: +(g.int * (1 - 0.1 * g.si)).toFixed(2) }); }
+  const f = computeFacts(this.world, p, this.cfg);
+  for (const o of this.S.opps) if (o.until > this.world.tick && o.boosts) for (const k of Object.keys(o.boosts)) if (!this._has(s, k) && this.tpl.get(k)) out.push({ kind: 'goal', tpl: k, label: this.phrase(k), reason: `opportunity: ${o.kind}`, score: 0.3 });
+  return out.sort((a, b) => b.score - a.score).slice(0, 8);
+};
+P.cmdPlant = function (a, how) {
+  const p = this.world.people.get(a.person), t = this.tpl.get(a.tpl); if (!p || !t) return false;
+  const s = this.ps(p), f = computeFacts(this.world, p, this.cfg); this.seedPeople();
+  if (this._has(s, t.id)) return false;
+  const g = this.spawn(p, s, f, t, { dsum: 0.6, maxP: a.intensity ?? 0.5, force: true, via: how, cause: a.cause || 0 });
+  if (g) { if (a.target != null) g.target = a.target; if (a.secret != null) g.secret = !!a.secret; if (a.intensity != null) g.int = a.intensity; }
+  return g ? g.id : false;
+};
+P.cmdMove = function (a) {
+  const p = this.world.people.get(a.person); if (!p || !MOVE[a.move]) return false; const s = this.ps(p), f = computeFacts(this.world, p, this.cfg), t = this.tpl.get('ad_hoc_move');
+  const g = this.spawn(p, s, f, t, { force: true, dsum: 0.5 }); if (!g) return false;
+  g.steps = [{ i: 0, move: a.move, v: a.variant || '', role: null, target: a.target ?? null, state: 'todo', tries: 0, due: this.world.tick, note: '', depth: 0 }]; g.si = 0; g.group = a.group || 0; g.target = a.target ?? null;
+  this.runStep(p, g, g.steps[0]); return g.id;
+};
+P.isPlayer = function (tp) { const pl = this.world.player; return tp && pl != null && (pl === tp.id || pl.id === tp.id || pl.personId === tp.id); };
+P.cmdRespond = function (a) { const rq = this.S.requests.find((r) => r.id === a.request); if (!rq) return false; this.S.requests.splice(this.S.requests.indexOf(rq), 1); this.answerRequest(rq, a.answer === 'yes' ? true : a.answer === 'maybe' ? 'maybe' : false); return true; };
+P.cmdOpportunity = function (a) {
+  const w = this.world, days = a.days ?? 60; this.S.opps.push({ kind: a.kind, key: a.key || a.kind, boosts: a.boosts || {}, place: a.place ?? null, until: w.tick + Math.round(this.sd(days) * TICKS_PER_DAY) });
+  w.emit('opportunity.created', { place: a.place ?? null, salience: 0.15, tags: ['opportunity'], payload: { kind: a.kind, key: a.key || a.kind } }); return true;
+};
+P.cmdGroupCreate = function (a) {
+  const g = this.groups.create({ kind: a.kind, founder: a.founder, name: a.name, purpose: a.purpose || '', members: a.members || [] }); g.status = 'active'; this.groups.announce(g); return g.id;
+};
+P.cmdGroupJoin = function (a) { const g = this.S.groups.get(a.group); if (!g || g.status === 'dissolved') return false; return this.groups.addMember(g, a.person, a.role || 'member', 0.6, false); };

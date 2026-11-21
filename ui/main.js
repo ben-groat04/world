@@ -7,7 +7,7 @@ import { esc } from './inspector.js';
 
 const qs = new URLSearchParams(location.search);
 const $ = (id) => document.getElementById(id);
-const store = createAutoSource({ seed: +(qs.get('seed') || 1), population: +(qs.get('pop') || 220), forceLocal: qs.has('local') });
+const store = createAutoSource({ seed: +(qs.get('seed') || 1), population: +(qs.get('pop') || 220), forceLocal: qs.has('local'), pack: qs.get('pack') });
 const canvas = $('map'), wrap = $('map-wrap');
 const renderer = new Renderer(canvas, store);
 export const ui = { store, renderer };

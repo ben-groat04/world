@@ -69,7 +69,7 @@ export function healthFor(rng, cal, age, segHealth, forceSick) {
   let tilt = (segHealth && segHealth.limitingLongTerm ? segHealth.limitingLongTerm / 0.12 : 1);
   let u = rng.next();
   if (forceSick) tilt = 4;
-  const bad = clamp(pBad * (0.55 + 0.45 * tilt), 0, 0.92);
+  const bad = clamp(pBad * (0.55 + 0.45 * tilt) * 1.35, 0, 0.92);
   let general;
   if (u < bad * 0.25) general = 'very bad'; else if (u < bad * 0.6) general = 'bad'; else if (u < bad) general = 'fair'; else if (u < bad + (1 - bad) * (g.good / (g.good + g.veryGood))) general = 'good'; else general = 'very good';
   const conds = [];

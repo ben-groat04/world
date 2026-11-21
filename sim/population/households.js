@@ -1,7 +1,7 @@
 // Household planning: (segment x composition archetype) joint draw by largest remainder, dwelling assignment by tenure/size fit, member composition (ages, sexes, roles).
 import { clamp, wpick } from './util.js';
 
-const KID_COUNT = [[1, 0.43], [2, 0.38], [3, 0.14], [4, 0.05]];
+const KID_COUNT = [[1, 0.36], [2, 0.38], [3, 0.18], [4, 0.08]];
 const YOUNG_SEGS = new Set(['students', 'young_sharers', 'early_career']);
 
 /** Draw N (segment, archetype) specs matching the IPF joint exactly (largest remainder), then match them to dwellings. */

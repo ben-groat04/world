@@ -354,15 +354,15 @@ export function createLocalSource(world, { drive = false, hz = 5 } = {}) {
 }
 
 // Preferred entry for the app: module Worker, falling back to the main thread if workers fail or never answer.
-export function createAutoSource({ seed = 1, population = 220, timeoutMs = 12000, forceLocal = false } = {}) {
+export function createAutoSource({ seed = 1, population = 220, timeoutMs = 12000, forceLocal = false, pack = null } = {}) {
   const store = new Store();
   store.mode = 'worker';
   const toLocal = async (why) => {
     if (store.mode === 'local') return;
     console.warn('[hollowmere] worker unavailable (' + why + '), running on main thread');
     store.mode = 'local'; try { store.backend?.terminate?.(); } catch (e) { /* ignore */ }
-    const { World } = await import('../sim/world.js');
-    const world = new World({ seed, population });
+    let world;
+    if (pack === 'larkfield') world = (await import('../sim/larkfield.js')).createLarkfieldWorld(seed); else { const { World } = await import('../sim/world.js'); world = new World({ seed, population }); }
     const host = new Host(world, (m) => store.apply(m), { drive: true });
     let last = performance.now();
     const drv = setInterval(() => { const now = performance.now(); host.advance(Math.min(0.25, (now - last) / 1000), host.tps === Infinity ? 18 : 8); last = now; }, 16);
@@ -376,7 +376,7 @@ export function createAutoSource({ seed = 1, population = 220, timeoutMs = 12000
     store.backend = { post: (m) => wk.postMessage(m), terminate: () => wk.terminate() };
     wk.onmessage = (e) => store.apply(e.data);
     wk.onerror = (e) => { if (!store.state.ready) toLocal(e.message || 'error'); else console.error('[hollowmere worker]', e.message || e); };
-    wk.postMessage({ cmd: 'init', seed, population });
+    wk.postMessage({ cmd: 'init', seed, population, pack });
     setTimeout(() => { if (!store.state.ready) toLocal('timeout'); }, timeoutMs);
   } catch (e) { toLocal(String(e)); }
   return store;
@@ -398,8 +398,9 @@ if (typeof WorkerGlobalScope !== 'undefined' && typeof self !== 'undefined' && s
   self.onmessage = async (e) => {
     const m = e.data;
     if (m.cmd === 'init' && !host) {
-      const { World } = await import('../sim/world.js');
-      const world = new World({ seed: m.seed || 1, population: m.population || 220 });
+      let world;
+      if (m.pack === 'larkfield') { const { createLarkfieldWorld } = await import('../sim/larkfield.js'); world = createLarkfieldWorld(m.seed || 1); } // ?pack=larkfield: Larkfield world (people drawn by the legacy renderer; new map rendering = later UI package)
+      else { const { World } = await import('../sim/world.js'); world = new World({ seed: m.seed || 1, population: m.population || 220 }); }
       host = new Host(world, send); host.hello();
       if (m.speed) host.setTier(m.speed);
       for (const q of pending.splice(0)) host.command(q);

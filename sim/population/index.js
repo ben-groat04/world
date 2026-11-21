@@ -216,8 +216,8 @@ export function populate(world, rng) {
   for (const h of hhs) {
     const seg = SEG[h.seg], hm = h.members, nAdults = hm.filter((x) => x.age >= 17).length;
     // cars (household) then drivers
-    const carP = seg.mobility.car * (h.unit.kind === 'flat' ? 0.8 : 1.05);
-    h.cars = rng.chance(carP) ? (nAdults >= 2 && rng.chance(0.3 + 0.2 * (seg.money.pressure < 0.4 ? 1 : 0)) ? 2 : 1) : 0;
+    const carP = Math.min(0.95, seg.mobility.car * 1.5 * (h.unit.kind === 'flat' ? 0.85 : 1.1));
+    h.cars = rng.chance(carP) ? (nAdults >= 2 && rng.chance(0.5 + 0.2 * (seg.money.pressure < 0.4 ? 1 : 0)) ? (rng.chance(0.15) ? 3 : 2) : 1) : 0;
     h.pets = pets(h);
     let carLeft = h.cars;
     for (const m of hm) { m.drives = m.age >= 17 && carLeft > 0 && rng.chance(0.85); if (m.drives) carLeft--; m.bike = m.age >= 10 && rng.chance(Math.min(0.9, seg.mobility.bike * 3 + (m.age < 18 ? 0.25 : 0))); }
@@ -260,9 +260,9 @@ export function populate(world, rng) {
     for (const m of adults) {
       let g = 0, personalBen = 0;
       if (m.activity === 'employed' || m.occId) { g = m.pay * clamp(m.hours / 37.5, 0.15, 1.25); if (m.activity === 'student') g = m.pay * m.hours / 37.5; }
-      else if (m.activity === 'retired') { g = BEN.statePensionWeeklyNewFull * 52 * (rng.chance(0.8) ? 1 : 0.7) + (rng.chance(h.seg === 'settled_professionals' ? 0.8 : 0.35) ? logn(rng, 1500, 5500, 18000) : 0); personalBen = 0; }
+      else if (m.activity === 'retired') { g = BEN.statePensionWeeklyNewFull * 52 * (rng.chance(0.65) ? 1 : 0.8) + (rng.chance(h.seg === 'settled_professionals' ? 0.8 : 0.35) ? logn(rng, 1500, 5500, 18000) : 0); personalBen = 0; }
       else if (m.activity === 'student') { g = logn(rng, seg.money.incomeBand[0] * 0.8, seg.money.incomeBand[1], seg.money.incomeBand[2]) * (seg.id === 'students' ? 0.95 : 0.4); }
-      m.gross = Math.round(g); m.netAnnual = Math.round(m.activity === 'retired' ? g * 0.93 : netFromGross(g, TAX, (m.edu === 'level4plus' && m.age < 45 && m.age >= 21))); gross += m.gross; net += m.netAnnual;
+      m.gross = Math.round(g); m.netAnnual = Math.round(m.activity === 'retired' ? g : netFromGross(g, TAX, (m.edu === 'level4plus' && m.age < 45 && m.age >= 21))); gross += m.gross; net += m.netAnnual;
     }
     const nKids = hm.filter((x) => x.age < 16).length, hasPartner = adults.length >= 2 && hm.some((x) => x.role === 'partner');
     const workless = adults.filter((x) => x.activity !== 'employed' && x.activity !== 'retired' && x.activity !== 'student' && x.age < 66);

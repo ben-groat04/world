@@ -17,7 +17,13 @@ export const TU_CATS = CATS;
 
 function enter(world, ctx, p, rt, act, pt, pid, aux, tick) {
   // time-use accounting of the activity just finished
-  if (ctx.tu && rt.since >= 0) ctx.tu[(((rt.dow >= 5 ? 1 : 0) * ctx.nseg + rt.seg) * CATS.length) + rt.cat] += tick - rt.since;
+  if (ctx.tu !== null && rt.since >= 0 && rt.adult) { const k = (rt.dow >= 5 ? 1 : 0) * ctx.nseg + rt.seg; ctx.tu[k * CATS.length + rt.cat] += tick - rt.since; if (rt.pt === 0) ctx.tuh[k] += tick - rt.since; }
+  const same = (pt === 0 && p.locationId === p.homeId) || (pt === 1 && p.locationId === pid);
+  if (same) { // same place, new activity: no movement/occupancy work
+    const b = world.buildings.get(p.locationId);
+    p.thought = ACT_LABEL[act] + (p.locationId === p.homeId ? ' at home' : ' at ' + b.name);
+    rt.act = act; rt.cat = CATS.indexOf(ACT_CAT[act]); rt.since = tick; rt.dow = world.time.dow; rt.pt = pt; rt.pid = pid; p.lastAction = ACTS[act][0]; return;
+  }
   const pb = p.locationId;
   if (pb !== null) { const b = world.buildings.get(pb); if (b) b.occupants.delete(p); }
   if (p.cell >= 0) world._gridRemove(p);
@@ -36,7 +42,7 @@ function enter(world, ctx, p, rt, act, pt, pid, aux, tick) {
   } else {
     const di = pt === 3 ? pid : pid >> 3, dk = ctx.destKeys[di]; off = 'offmap:' + dk; p.x = ctx.gwx; p.y = ctx.gwy;
     th = pt === 4 ? MODE_VERB[pid & 7] + ' to ' + ctx.destName[di] : ACT_LABEL[act] + ' (' + ctx.destName[di] + ')';
-    if (pt === 4 && ctx.homeBound(p, rt, act)) th = MODE_VERB[pid & 7] + ' home from ' + ctx.destName[di];
+    if (pt === 4 && aux === 1) th = MODE_VERB[pid & 7] + ' home from ' + ctx.destName[di];
   }
   if (act === A.goal && rt.goalLabel) th = rt.goalLabel;
   rt.act = act; rt.cat = CATS.indexOf(ACT_CAT[act]); rt.off = off; rt.since = tick; rt.dow = world.time.dow; rt.pt = pt; rt.pid = pid;
@@ -64,7 +70,7 @@ export function wake(world, ctx, p) {
 }
 
 function initPerson(world, ctx, p) {
-  const rt = p.ext.rt = { life: makeLife(world, ctx, p), plan: [], pi: 0, wk: null, wc0: null, wc1: null, act: A.sleep, cat: 0, off: null, since: -1, dow: 0, seg: ctx.segIdx[p.ext.pop.seg], pt: 0, pid: 0, goalLabel: '', sickDay: -1 };
+  const rt = p.ext.rt = { life: makeLife(world, ctx, p), plan: [], pi: 0, wk: null, wc0: null, wc1: null, act: A.sleep, cat: 0, off: null, since: -1, dow: 0, seg: ctx.segIdx[p.ext.pop.seg], adult: world.ageOf(p) >= 16, pt: 0, pid: 0, goalLabel: '', sickDay: -1 };
   const D = world.calendar.dayIdxOf(world.tick), hb = world.buildings.get(p.homeId);
   p.locationId = hb.id; hb.occupants.add(p); p.x = hb.door.x; p.y = hb.door.y; p.inside = true;
   const w0 = hourToTick(world.calendar, D, 0) ; // everyone is in bed at the very start

@@ -88,7 +88,7 @@ export function buildNetwork(world, rng, hhs, people) {
       const m = addMetro(p.id, 'partner (lives elsewhere)', { age: Math.round(a + rng.int(-5, 6)), where: 'elsewhere in the city', how: wpick(rng, [['dating app', 3], ['friends', 3], ['work', 2]]), freq: 'daily messages', sameOrigin: false }); addOff(p, m, 'partner', 1, 0.8);
     }
     // ex-partner and co-parenting
-    if (h.arch.startsWith('lone_parent') && role === 'head') { const m = addMetro(p.id, 'ex-partner', { age: Math.round(a + rng.int(-3, 6)), sex: p.sex === 'F' ? 'M' : 'F', where: 'elsewhere in the city', how: 'previous relationship', freq: wpick(rng, [['child handover weekly', 3], ['rarely', 2], ['messages about the kids', 3]]), sameOrigin: false }); p.ext.pop.ties.push({ o: m.id, k: 'ex', rel: 'ex-partner', t: 2, s: +rng.float(0.25, 0.6).toFixed(2), v: 'co-parent', on: 0, fr: rng.chance(0.5) ? 'strained contact arrangements' : null }); }
+    if (h.arch.startsWith('lone_parent') && role === 'head') { const m = addMetro(p.id, 'ex-partner', { age: Math.round(a + rng.int(-3, 6)), sex: p.sex === 'F' ? 'M' : 'F', where: 'elsewhere in the city', how: 'previous relationship', freq: wpick(rng, [['child handover weekly', 3], ['rarely', 2], ['messages about the kids', 3]]), sameOrigin: false }); p.ext.pop.ties.push({ o: m.id, k: 'ex', rel: 'ex-partner', t: 2, s: +rng.float(0.25, 0.6).toFixed(2), v: 'co-parent', on: 0, fr: rng.chance(0.25) ? "strained contact arrangements" : null }); }
   }
   // ---- 3. friends: clique + sympathy sizes, homophily on-map, rest off-map
   const kidIds = new Set(people.filter((p) => ageOf(p) < 16).map((p) => p.id));
@@ -126,7 +126,7 @@ export function buildNetwork(world, rng, hhs, people) {
       let placed = false;
       if (onMap) {
         const pool = kids ? people.filter((x) => ageOf(x) < 16 && Math.abs(ageOf(x) - a) < 3 && x.id !== p.id) : adultsPool;
-        const cands = []; for (let k = 0; k < 40; k++) { const c = pool[rng.int(0, pool.length - 1)]; if (c && c.id !== p.id && !q.ties.some((t) => t.o === c.id) && onCount(c) < c.ext.pop.K?.[1] - 3 + 6 && (c.ext.pop.K ? c.ext.pop.ties.filter((t) => t.t <= 2).length < c.ext.pop.K[1] : true)) cands.push(c); }
+        const cands = []; for (let k = 0; k < 40; k++) { const c = pool[rng.int(0, pool.length - 1)]; if (c && c.id !== p.id && !q.ties.some((t) => t.o === c.id) && c.ext.pop.ties.filter((t) => t.t <= 2).length < 19) cands.push(c); }
         if (cands.length) { const c = rng.weighted(cands, cands.map((c2) => sims(p, c2))); placed = addTie(p, c, 'friend', 'friend', 'friend', tier, s, c.ext.pop.workplace.bid != null && c.ext.pop.workplace.bid === q.workplace.bid ? 'colleague' : dist(p, c) < 60 ? 'neighbours' : wpick(rng, [['mutual friends', 3], ['faith/community', 1], ['pub/cafe regulars', 2], ['school gate', 1]])); }
       }
       if (!placed) { // off-map friend placeholder
@@ -143,7 +143,7 @@ export function buildNetwork(world, rng, hhs, people) {
     const chat = seg.social.neighbourChat;
     const same = world.buildings.get(p.homeId);
     let n = 0;
-    for (const c of st) { if (c.id === p.id || c.ext.pop.hh === q.hh || n >= 12) continue; const dd = dist(p, c); if (dd > 55) continue; const pr = chat * (c.homeId === p.homeId ? 0.4 : 0.55) * Math.exp(-dd / 45) * (a < 16 ? 0.3 : 1); if (rng.chance(pr)) { if (addTie(p, c, 'neighbour', 'neighbour', 'neighbour', 3, 0.15 + rng.float(0, 0.3), c.homeId === p.homeId ? 'same building' : 'same street')) n++; } }
+    for (const c of st) { if (c.id === p.id || c.ext.pop.hh === q.hh || n >= 8) continue; const dd = dist(p, c); if (dd > 55) continue; const pr = chat * (c.homeId === p.homeId ? 0.3 : 0.4) * Math.exp(-dd / 40) * (a < 16 ? 0.3 : 1) * (same.lf.units.length > 3 ? 0.4 : 1); if (rng.chance(pr)) { if (addTie(p, c, 'neighbour', 'neighbour', 'neighbour', 3, 0.15 + rng.float(0, 0.3), c.homeId === p.homeId ? 'same building' : 'same street')) n++; } }
     // school gate (parents of primary-age children, same school year +-1)
     if (a >= 22 && p.family.childrenIds.some((cid) => { const c = byId.get(cid); return c && ageOf(c) >= 3 && ageOf(c) < 11; })) {
       const mine = p.family.childrenIds.map((cid) => byId.get(cid)).filter((c) => c && ageOf(c) >= 3 && ageOf(c) < 11);
@@ -158,7 +158,7 @@ export function buildNetwork(world, rng, hhs, people) {
   const worshipOf = (p) => { const r = p.ext.pop.religion; return r === 'Muslim' ? venueByTemplate('mosque')[0] : r === 'Christian' ? venueByTemplate('church')[0] : null; };
   const congr = new Map();
   for (const p of people) { const w = worshipOf(p); if (w && p.ext.pop.religiosity > 0.45 && ageOf(p) >= 8) (congr.get(w.id) || congr.set(w.id, []).get(w.id)).push(p); }
-  for (const l of congr.values()) for (const p of l) for (let k = 0; k < 4; k++) { const c = l[rng.int(0, l.length - 1)]; if (c !== p && c.ext.pop.hh !== p.ext.pop.hh) addTie(p, c, 'faith', 'congregation', 'congregation', 3, 0.25 + rng.float(0, 0.3), 'place of worship'); }
+  for (const l of congr.values()) for (const p of l) for (let k = 0; k < 2; k++) { const c = l[rng.int(0, l.length - 1)]; if (c !== p && c.ext.pop.hh !== p.ext.pop.hh) addTie(p, c, 'faith', 'congregation', 'congregation', 3, 0.25 + rng.float(0, 0.3), 'place of worship'); }
   for (const p of people) { // customers know resident business owners (shop/cafe/pub/takeaway)
     const q = p.ext.pop; if (q.workplace.kind !== 'onmap' || !(q.contract === 'self_employed' || q.occ === 'shop_owner_manager' || q.occ === 'cafe_owner' || q.occ === 'publican')) continue;
     const n = Math.round(10 + 14 * segOf(p).social.onMapShare.acquaintances * rng.next());
@@ -166,7 +166,7 @@ export function buildNetwork(world, rng, hhs, people) {
   }
   // ---- 5. mundane frictions (~8%): noise, parking, bins, landlord, workplace rival, school-gate spat
   for (const p of people) {
-    const q = p.ext.pop, a = ageOf(p); if (a < 18 || !rng.chance(0.09)) continue;
+    const q = p.ext.pop, a = ageOf(p); if (a < 18 || !rng.chance(0.05)) continue;
     const kinds = [['noise complaint', 4], ['parking dispute', 2], ['bins and rubbish', 1.5], ['landlord dispute (repairs/damp)', q.seg === 'older_longterm' ? 0 : ['private_rent'].includes(hhOf(p).tenure) ? 3 : 0], ['workplace rival', q.workplace.kind !== 'none' ? 2 : 0], ['school-gate spat', p.family.childrenIds.length ? 1.5 : 0]];
     const kind = wpick(rng, kinds);
     if (kind === 'landlord dispute (repairs/damp)') { const m = addMetro(p.id, 'landlord/agent', { age: rng.int(35, 65), where: 'elsewhere in the city', how: 'tenancy', freq: 'emails', sameOrigin: false }); p.ext.pop.ties.push({ o: m.id, k: 'friction', rel: 'landlord', t: 3, s: 0.3, v: 'tenancy', on: 0, fr: kind }); continue; }

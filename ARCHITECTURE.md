@@ -1,115 +1,40 @@
-# Larkfield architecture (Wave 0 kernel + legacy medieval engine behind adapters)
-Binding vocabulary: CONTRACT.md (kernel interfaces are section "Kernel contract 1.0"). Roadmap: ROADMAP.md 3.2-3.6. All sim code is DOM-free ES modules, deterministic: no `Math.random`, `Date.now`, `new Date()` or `performance.now` in `sim/` or `content/` (grep gate in `npm run check`).
+# Larkfield architecture
 
-## Kernel (sim/kernel/*, sim/model/*, sim/index.js)
-| file | what | public API |
-|---|---|---|
-| types.js | JSDoc typedefs, `CONTRACT_VERSION`, `TIER`, `CLOCKS` | import for types only |
-| rng.js | sub-stream RNG | `world.rngFor(name)` persistent named stream (snapshotted); `world.rngFor(name, ...keys)` STATELESS stream = pure function of (seed, name, keys); `hash32`, `subRng` |
-| events.js, event-types.js | event bus + registry + indices + causal query | `world.emit(type,{actors,objects,place,tags,cause,salience,payload})->id`, `world.on`, `world.events.query/chain/get`, `world.registerEventType`. Handlers run at end of step (after people/systems/clocks), never re-entrantly, in registration order. Unknown types throw when `strictEvents`. Old payload-style events stay synchronous (`LEGACY_EVENT_TYPES`); every old `chronicle.add` also emits `legacy.chron`. |
-| scheduler.js | agenda mode timing wheel | see "Scheduling" |
-| commands.js | command queue + log + replay | `world.queueCommand({tick?,actor,name,args})`, `world.registerCommand(name,fn)`, `world.cmd(name,args)` (internal, not logged), `replay(makeWorld, log, ticks)`; `world.intervene()` goes through it |
-| plugin.js | plugin loader + contract mode | `loadPlugins`, `validatePlugin`, `readonly`; `new World({plugins:[...], contractMode:true})` freezes query results; `world.sys.<name>.query.*` is the only cross-system read path |
-| affordances.js, ledger.js, text.js, lod.js | stable stubs (real engines drop in behind the same API) | `world.afford.for/apply/registerVerb`, `world.ledger.transfer/balance/total`, `world.text.render/add/addGrammar/setEngine`, `world.lod.tierOf/setTier/observe` |
-| indices.js | maintained indices | `world.index.byVenue/byHousehold/byEmployer/byOrg/byTier/byStage/needsAttention/counts` (live collections: do not mutate) |
-| schema.js, pack.js | pack validator + loader | `validatePack(pack)`, `assertPack`, `registerSection(name, schema)`, `t.*` schema DSL, `loadPack('larkfield')`, `legacyPack()` |
-| legacy.js | adapters for the unowned medieval systems | venue-session social pass, `S.at` view, scoring-modifier guards (`legacyModGuard`) |
-| sim/model/index.js | person field registry | `declareField(name,{owner,type,doc})`, `checkPerson(p)` (lists undeclared keys; test asserts legacy people are clean) |
-| sim/index.js | entry | `createWorld(opts)`, `createWorldFromPack(id, opts)`, re-exports kernel |
-| sim/snapshot.js | snapshot/restore/fork + `stateHash` | `world.snapshot()`, `World.restore(snap, pack)`, `world.fork(salt?)` (salt re-seeds every stream so the fork diverges), per-day hashes via `new World({hashDaily:true}).hashLog` |
+Larkfield is the only world: an agent-based simulation of a UK inner-city neighbourhood (~550 people, 10-minute ticks, real UK calendar).
+Plain JS ES modules, no dependencies, DOM-free (the UI in `ui/` talks to the sim through `ui/host.js` / `ui/worker.js`).
+Outcomes must emerge from mechanisms; see `docs/CALIBRATION-METHOD.md` for what is input, what is tuned, what is held out.
 
-Multiple `World` instances per process are supported by the kernel (no module-level mutable state). The legacy systems keep their world in a per-module slot, so step ONE legacy world at a time (restore/fork are fine; interleaving steps of two worlds is also fine as long as each `World` constructor/restore call completes before stepping, because systems re-bind in `init`/`afterLoad`).
+## Entry point
+`sim/larkfield.js`: `createLarkfieldWorld(seed, opts)` = kernel `World` + Larkfield pack (`content/larkfield`) + street-graph map + generated population + plugins
+(routine, goals, labour, housing, money, life, health, social, comms). `world.snapshot()` / `restoreLarkfieldWorld(snap)` save and resume
+(state is restored sensibly; not bit-exact determinism).
 
-## Scheduling (agenda mode, default; `new World({sched:'agenda'|'legacy'})`)
-Nobody is ticked. Each living person sits in one timing-wheel bucket (`p.wake`, WHEEL=512 ticks + far list), buckets run in ascending person id. A person runs code only when (a) their activity ends, (b) an interrupt fires: shift/school/bed time and need thresholds are scheduled ANALYTICALLY from decay rates (`Brain.interruptAt`), (c) a staggered needs refresh every `NEEDS_PERIOD_AGENDA` (24) ticks, (d) an analytic walk completes (walking is `lazy`: arrival tick computed from the route; positions are materialised only when somebody reads them via `living()/peopleNear()/_syncWalkers()`). `world.sched.plan(p)` must be called after changing `p.currentAction` outside the person loop (the engine does). Moodlet expiry uses an hourly queue instead of a scan; systems' `onDay` hooks see everyone settled (`_settle`) at day start.
-`sched.mode='legacy'` keeps the old every-tick people loop for A/B and regression.
-Encounters: the legacy social system's per-tick bucket-everyone pass is replaced (kernel/legacy.js) by a venue-session pass over the maintained occupancy sets: only venues with >= 2 awake people are touched; the conversation logic is the system's own.
-Scoring modifiers: `brain.addModifier(fn, {defs, person})` — optional guards so a modifier is only called for the defs/people it can change (exact mirror of its own early-outs; perf hint only).
+## Kernel (`sim/world.js`, `sim/kernel/*`)
+- `World`: time (`sim/time.js`, calendar from the pack), map, people/buildings, spatial grid, event bus, command bus, ledger, plugin loader, chronicle.
+  Hooks: plugin `clocks` (hour/day/week/month/year), `world.on(event)`, `world.queueCommand` / `world.cmd`.
+- `kernel/scheduler.js`: timing wheel of people. Nobody is polled per tick; each person wakes at `p.wake` (set by the routine plugin).
+- `kernel/events.js`, `event-types.js`: `world.emit('domain.verb', {actors, place, cause, salience, payload})`; causal queries (`world.events.query/chain`).
+- `kernel/ledger.js`: double-entry money (`world.ledger.transfer`, `invariant()`); `indices.js` (byVenue/byHousehold/...), `plugin.js`, `schema.js`/`pack.js` (pack validation).
+- `sim/snapshot.js`, `sim/chronicle.js`, `sim/path.js`, `sim/person.js` (person record + `createPerson`), `sim/rng.js`.
 
-## Performance (pop 222, one core; `node tools/perf.js`, `npm run check` gate)
-Baseline at hand-off: legacy every-tick loop 2,100-2,700 ticks/s (brain ~35%, social ~27%). Now: agenda mode 3,000-3,600 ticks/s (machine noisy; use best-of), ~10 decisions per person-day (legacy loop: same count but polled every tick for need/interrupts). Where the time goes now (per tick, ms): brain decide 0.16 (scoring 26 actions x ~10 decisions/person-day is irreducible without changing content), legacy social 0.11 (converse 12 us x 2.2/person-day + per-venue rolls), other legacy systems 0.06, scheduler+walk+needs 0.06. Kernel overhead (scheduler, events, indices, commands) is < 5%.
-The 10,000 ticks/s target is NOT reachable with the legacy systems: they were written per-person-per-day and are being replaced (ROADMAP W1) by event-driven systems that must follow these rules: no `living()` scans in hot paths, use `world.index.*`, slow variables on `clocks.day/week` with staggered buckets, encounters via venue sessions, cached per-tick lookups, and no allocation in scorers.
-Perf budget for new systems: kernel + all systems <= 0.1 ms/tick average at pop 500 (10k ticks/s); `tools/perf.js --pop 500 --prof` shows the per-system split.
+## Plugins (`sim/systems/*`, `sim/goals`)
+| plugin | job |
+|---|---|
+| routine | habit layer: day plans from calendar + segment time-use; outings, work, school, meals, sleep; `p.thought` |
+| goals (`sim/goals`) | goals, groups, projects, opportunities; overrides plan slots when a step/outing is due |
+| labour | jobs, hiring, contracts, unemployment, retirement, graduation |
+| housing | units, tenancy, rent, notices/evictions, moves, arrivals and departures |
+| money | household budgets, macro prices, benefits, tax, debt; owns the ledger |
+| life | partnerships, births, leaving home, kin, informal care |
+| health | chronic/acute illness, mental health, loneliness flag, mortality, bereavement |
+| social, comms | ties, encounters, rumours/beliefs/norms; phones, group chats, forum, feed |
+Cross-plugin access only through `world.sys.<name>.query.*` and `world.cmd(...)`. Population generation: `sim/population/*` (day-1 input).
 
-## Verify
-`npm run check` (~50 s): grep gate, schema (legacy + content packs), contract tests (`tests/kernel.test.js`, node:test), determinism (same seed twice, snapshot-resume == straight run, command-log replay, fork; `--full` = 3 sim-years), perf gate (`--perf-gate N` / `$PERF_GATE`), 3-seed report (only known balance FAILs allowed). Individual: `node tools/determinism.js`, `node tools/perf.js --gate 3000`, `node tools/report.js --seeds 1,2,3 --years 2`.
+## Content (`content/larkfield`)
+Pack: calibration, segments, archetypes, venues, jobs, names, goal templates, text (`text/`), calendar, drives. `sim/data/calibration.js` holds census-derived inputs.
 
----
-# Legacy medieval engine (still running; replaced system by system in Wave 1)
-Binding vocabulary: CONTRACT.md. All sim code is DOM-free ES modules, deterministic (only `world.rng` / `world.rngFor('name')`, never Math.random). ONE World per thread/process (systems keep a module-level `W`); parallel runs use worker_threads.
-
-## Layout / where each concern lives
-- sim/world.js engine (tick loop, people stepping, action execution, spatial grid, events, moodlets/memory, snapshot-able state). sim/brain.js utility AI. sim/actions.js core actions. sim/needs.js lazy needs integration. sim/person.js factory + initial population. sim/map.js procedural map. sim/path.js A*. sim/chronicle.js town record. sim/rng.js. sim/time.js. sim/util.js shared pure helpers (`clamp, has, pid, fullName`). sim/snapshot.js save/load/stateHash.
-- sim/systems/*.js (order in systems/index.js): economy (jobs, wages, goods, prices, businesses, housing, debt, inheritance - the ONLY place estates are settled), social (encounters, conversations, relationships, gossip/rumors, reputation, cliques), romance, family (pregnancy, births, child mortality <15 - the ONLY place under-15 deaths are rolled, households, orphans, kinship), health (illness, injuries, adult mortality >=15, grief, funerals), crime, politics (mayor, elections, writes policy axes into world.settings), culture (weather, festivals, disasters, clubs), migration (arrivals/emigration).
-- SETTING-SPECIFIC CONTENT (edit these to reskin; code reads them): `sim/data/jobs.js` (JOBS: wage, skill, shift, service), `sim/data/buildings.js` (BUILDING_TYPES: label, footprint, job slots, opening hours), `sim/data/names.js` (first/last names, business names, TOWN_NAME), `sim/data/calendar.js` (SEASON_NAMES, REST_WEEKDAY, festival calendar CAL + opener texts), `sim/data/economy.js` (GOODS & producers, PUBLIC/COMMERCIAL building sets, seasonal yield, job ladders JUNIOR, MIN_AGE, rent, wage shares), `sim/data/health.js` (diseases DIS, injuries per job INJ_JOB, job nouns). Still hardcoded in code (reskin TODO): core action set/labels in sim/actions.js, rumor/conversation/obituary/chronicle text templates inside each system, building type names inside map.js layout generation and in several `buildingsOfType('tavern'|'temple'|...)` look-ups, politics/crime vocabulary (mayor, watch, jail).
-
-## Engine API (world.*)
-`new World({seed, population, houses?, systems?, settings?})`. Fields: rng, tick, time, weather, map, buildings(Map), people(Map incl. dead/emigrated), stats, settings, town{name,treasury,...}, chronicle, brain, actions, path, player, stateKeys.
-Methods: `step()`, `run(n)`, `living()` (cached array of alive people; emigrants have alive=false), `buildingsOfType(t)`, `building(id)`, `person(id)`, `nameOf(p)`, `isOpen(b)`, `rngFor(name)`, `on/off/emit`, `log(text,opts)`, `addMemory(p,{type,text,otherIds,weight,importance})` (cap 150, drops least important), `moodlet(p,id,label,value,ticks)` / `addMoodlet(p,{id,label,value,untilTick})` (same id replaces, max 14, recomputes `p.moodletSum`; expire hourly) / `removeMoodlet(p,id)`, `addPerson`, `removePerson(p)` (leave the live world without dying: buildings, grid, job, home; used by killPerson + emigration), `killPerson(p,cause)` (emits 'death'), `createPerson(opts)`, `getRel/relScore`, `peopleAt(buildingId)`, `peopleNear(x,y,r)` (outdoor people, 8-tile bucket grid), `nearestBuilding(type,x,y,filter)`, `startAction/forceAction/cancelAction/endAction`, `registerAction/registerSystem/registerIntervention/intervene`, `formatDate`, `enableProfile()`.
-Step order per tick: day-start housekeeping -> people loop (needs, walk/act/decide) -> 'tick' event + systems onTick -> (hour) 'hour' + onHour -> (day) 'day' + onDay -> season/year hooks. System hook timing: `world.prof` (after `enableProfile()`).
-
-## Performance design (keep when editing!)
-- Needs are lazy: `stepNeeds` integrates elapsed ticks (decay + the action's perTick effects) every NEEDS_PERIOD=6 ticks per person (staggered) and at every action start/end (`endAction`, `_begin`). Never write per-tick need logic; use `perTick`/`decay` on action defs.
-- People sleep: `p.wake` = next tick something can happen (needs refresh, action end, re-think, onTick). Anything that changes `currentAction` outside startAction/endAction must set `p.wake = 0`.
-- Action `onTick(w,p,b,ca,dt)` runs every `def.tickEvery` ticks (default 1; core ones 4) with dt = ticks since last call: multiply per-tick effects by dt.
-- Brain: decisions only when an action ends (+ every 12 ticks for `interruptible`). `brain.openOf(type)` = open buildings, cached per tick; household food cached per eval; scorers should stay allocation-free.
-- Social encounters run every 6th tick with 6x probability (capped .95); relationship upkeep + reputation every 4th day; stale acquaintances (no tag, familiarity<0.2, 25+ days) are pruned from `p.relationships`.
-- Person objects have ONE hidden class: declare any new lazily-added person field in `createPerson` (as `undefined`). `p.ext.<system>` holds bulky per-system state.
-- Paths are canonical (computed for (min,max) tile and reversed), so the cache never affects results.
-- Profile: `node tools/report.js ... ` prints a `time(s)` line (people loop / brain / walk / each system). `node --cpu-prof tools/report.js --noprof ...` for V8 profiles.
-
-## Persistent state namespaces (snapshot roots = world.stateKeys + people, buildings, chronicle, settings, rng streams)
-`world.social` (rumors, recent, cliques, feuds, stats), `world.econ`, `world.healthState`, `world.migrationState`, `world.politics`, `world.romanceState`, `world.crime`, `world.culture`, `world.town`, `world.stats` (counters; `stats.social` shared with world.social.stats), `world.weather`. Per-person system data: `p.ext.{health,fam,rom,culture,migration,menopause}`; social uses underscore fields `_nextTalk,_talkCount,_hang,_lastTalk,_thoughtTick,_pregRumor`. System APIs: `world.family` (getParents/Children/Siblings/Ancestors/Descendants, kinship, bloodDistance, relocate, findVacantHouse, conceive), `world.romance` (startDating, propose, engage, marry, breakUp, divorce, ...), `world.healthApi` (infect, seedOutbreak, treat, addChronic, isIll), `world.migrationApi` (arrive, emigrate, pressure), `world.social_api` (converse, spreadRumor, createRumor, hear, getFriends, getEnemies, getClique), `world.econ` (price(g), hire, fire, payWage, GOODS). To add persistent state: put it under a world key listed in `world.stateKeys` (push your namespace) and keep it JSON-able (Maps/Sets/typed arrays/shared refs OK, functions are skipped).
-
-## Events (world.on). Convention: persons are Person OBJECTS under role names; buildings by `buildingId`; lists are arrays of objects. Exception (high volume): 'encounter' and 'conversation' carry ids `{a,b}` (UI worker uses them).
-engine: 'tick','hour','day','season','year' (world), 'actionStart'/'actionEnd' {person, action}, 'arrive' {person, buildingId}, 'death' {person, cause}, 'chronicle' (entry), 'buildingAdded' {building}, 'intervention' {kind, params}.
-systems: 'birth' {child,mother,father}; 'pregnancy' {mother,father,premarital}; 'marriage'/'divorce'/'dating'/'engagement'/'affair' {a,b}; 'breakup' {a,b,engaged}; 'romanceOffer' {from,to,kind}; 'scandal' {person,kind,truth,text} or {kind:'affair',spouse,cheater,lover}; 'crime' {kind,perpetrator,victim,buildingId,known,caseId,loss,dead}; 'arrest' {person,caseId}; 'conviction' {person,caseId,kind,days}; 'jobChange' {person,oldJob,newJob,buildingId}; 'moveHome' {person,homeId}; 'immigrate' {person,kind}; 'emigrate' {person,reason,group:[persons]}; 'election' {phase:'campaign'|'result'|'coup', candidates|winner|usurper (persons), ...}; 'speech' {person,issue,listeners}; 'rumor' {rumor,about,from,to}; 'relationshipChange' {a,b,tag,added}; 'conversation' {a,b (ids),type,outcome,quality,buildingId,topic,rumorId,aboutId,escalate,firstMeeting,drunk}; 'encounter' {a,b (ids),buildingId,firstMeeting}; 'outbreak'/'outbreakEnd' {disease,...}; 'recovered' {person,disease}; 'funeral' {person,buildingId,day,invited}; 'fire' {buildingId,severity,dead:[persons],gutted}; 'disaster' {kind,...}; 'festival'/'festivalEnd'; 'sermon' {priest,topic,attendance}; 'miracle' {kind,person}; 'bankruptcy' {buildingId,owner}; 'businessOpened' {buildingId,owner}.
-
-## world.settings: ALL tunables (declared with defaults in sim/world.js; politics moves the policy axes at runtime)
-| key | default | meaning |
-|---|---|---|
-| prices.food / tavernMeal / drink | 1 / 4 / 4 | retail prices in coins; economy rewrites them daily from market state |
-| population, houses | 220, 86 | initial population, house count (map capacity ~290 people) |
-| taxRate | 0.15 | income/trade tax fraction (politics adjusts 0.05..0.30) |
-| watchFunding, festivalBudget, poorRelief, publicWorks | .5 .5 .3 .35 | municipal spending axes (0..1) |
-| epidemicScale / immigrationScale / emigrationScale | 1 | multipliers on outbreak seeding / arrivals / departures |
-| divorceScale, affairScale | 1 | multipliers on divorce / infidelity hazards (romance) |
-| fertilityScale, maternalRiskScale, childMortalityScale | 1 | multipliers on conception rate / childbirth death risk / under-15 mortality (family) |
-| fertilityBoostUntil | 0 | tick until which fertility is x3 (set by an intervention) |
-Rates that are NOT settings (edit in code): adult mortality `annualHazard` (health.js) and child hazard `annualHazard` (family.js); diseases (sim/data/health.js); wages/shifts (data/jobs.js); goods & prices (data/economy.js); marriage/dating thresholds (romance.js); crime motives (crime.js); migration band `popFactorOut` (migration.js); need decay `DECAY` and per-action `perTick` (needs.js/actions.js); conversation outcome tables `GAIN/SOCIAL_BOOST/KIND` (social.js).
-
-## Time (sim/time.js)
-1 tick = 10 min; 144 ticks/day; 28-day seasons; 112-day year; tick 0 = Spring 1, Year 1, 06:00. Every 7th day (`weekday===6`) is the rest day.
-`world.time` = {tick, hour, minute, hourFloat, day(=dayOfYear 0..111), dayOfYear, dayOfSeason(1..28), season(0..3), seasonName, year(1-based), weekday, restDay, totalDays(=dayAbs)}.
-Helpers: `formatDate(tick)` "Spring 12, Year 3", `formatTime`, `ticksUntilHour(tick,h)`, `world.ageOf(p)` (float years). Backstory ticks may be negative.
-
-## Map (sim/map.js)
-120x90 `map.tiles` (Uint8Array, `T.GRASS/ROAD/WATER/BRIDGE/TREE/FIELD/PLAZA/BUILDING/PARK/GRAVE/FOUNTAIN`), `map.cost` (0 = blocked), `map.bAt[idx]` building id or -1, `map.comp` connectivity labels, `map.center`.
-Re-exports `BUILDING_TYPES`/`JOBS` (data lives in sim/data/), `isOpen(b, hourFloat)`.
-Building: {id,type,name,x,y,w,h,door{x,y} (walkable tile OUTSIDE the building on the road/plaza), doorSide, open (park/cemetery/square: people stay visible, `spots` = walkable tile idx), ownerId, residents[], employees[], jobs[] (job titles = capacity per slot), inventory{}, funds, condition, capacity, hours, zone, occupants:Set<Person> (runtime)}.
-Types: house farm bakery smithy tavern market clinic school temple townhall jail mill inn tailor carpenter park cemetery square (the plaza; id = `map.squareId`). ~86 houses, 8 farms, 2 each of bakery/smithy/tavern/market/tailor/carpenter. Empty houses (no residents) = vacancies.
-`world.addBuilding(b)` registers a new one (call `renderer`-side nothing; it redraws every frame).
-
-## Pathing (sim/path.js)
-`world.path.cached(startTileIdx, goalTileIdx)` -> Int32Array of tile idx (excl. start, incl. goal) or null; shared, never mutate. Tile idx = y*W+x. People walk 4-6 tiles/tick (cost-weighted: roads fastest).
-
-## Person (sim/person.js) -- fields per CONTRACT plus
-`locationId` (building id or null=outdoors), `inside` (true inside closed building => not drawn), `path/pathIdx`, `seg/segTick` (UI interpolation trail, only if `world.recordTrails`), `speed`, `schedule{wake,bed,offDay}`, `needRate`, `moodletSum`, `lastMeal` (tick), `workedTicks` (ticks worked today; reset after systems' onDay), `starve` (ticks with hunger<0.04, never reset by engine), `cooldown{actionId:untilTick}`, `thought`, `lastAction`, `bubble {text, until}` (UI draws speech bubble), `ext{}` (free namespace for systems), `interests`, `values{tradition,wealth,family,freedom,community,piety}`, `family.siblingIds`, `maidenName` (wives), `homemaker` flag.
-Jobs: `p.job` is always a string: 'child'(<6), 'student'(6-15), 'retired', 'unemployed', or a job title from JOBS (`p.workId` set). Engine does NOT change jobs/hire/age-transition: the economy system must (update `p.job`, `p.workId`, `building.employees`; the brain reads `JOBS[p.job].shift` live).
-`world.createPerson(opts)` {sex, age, firstName, lastName, mother, father | parents:[mother,father], homeId, birthTick, money, genes, personality} -> Person (id assigned, NOT yet added). Use `birthTick: world.tick` for newborns. `world.addPerson(p)` inserts (links parents' childrenIds + parent rels, places inside home).
-Relationships: `world.getRel(a,b)` (persons or ids, lazily created) `{familiarity,affinity,attraction,trust,respect,lastTick,tags[]}`; `world.relScore(a,b)`.
-
-## Actions & brain (sim/actions.js, sim/brain.js)
-Def: `{id, label, score(world,p)->number (<=0 = unavailable), where?(world,p)->buildingId|{x,y}|null, duration(world,p,b,ca)->ticks, onStart?(w,p,b,ca) (return false to refuse -> 12-tick cooldown), onTick?(w,p,b,ca), onEnd?(w,p,b,ca), thought?(w,p,b,ca)->string, interruptible?, perTick?:{need:delta} (applied each tick while acting), decay?:{need:multiplier}, minAge?, maxAge?, stickiness?}`. Duration is evaluated on arrival; `ca` is the p.currentAction record `{id,label,targetId,untilTick,status(0 walking,1 doing),startTick,why,data,forced,thought}`. Built-in actions (score uses `world.brain.ctx`: h, rest, shift, shiftEnd, workDay, inWin(sleep window), wake/bed, mealAgo, age; core actions set `ctx.target/why/data` instead of `where`): sleep, eat_home, eat_tavern, work, school, shop, socialize, relax_park, tavern, pray, wander, relax_home, chores, bathe, visit_friend, idle.
-Decision: all candidates scored (>0), then each `scoreModifiers` fn `(world,p,def,score)->newScore` (return a number to replace) is applied, current action gets +stickiness (8), softmax over scores (temperature 2-6 by conscientiousness) picks. Add modifiers via `sys.scoreModifiers` or `world.brain.addModifier(fn)`. `world.brain.explain(p)` -> sorted [{id,score,target,why}] for UI. Interruptible actions are re-evaluated every ~12 ticks.
-Forcing: `world.startAction(p, id, target(buildingId|{x,y}|null), why, {duration, thought, data, forced})` / `world.forceAction(p,id,target,{duration,thought,why})` (forced = never interrupted) / `world.cancelAction(p)`. Returns false if unreachable. Register custom ids via a system's `actions` (e.g. 'jailed', 'funeral', 'festival') then force them.
-Thought: auto-built "Heading to X (label) — why" / "Label at X — why" unless `def.thought` or `opts.thought`.
-
-## Chronicle (sim/chronicle.js)
-`world.chronicle.add({type, importance 1-5, text, people:[ids], buildingId?, tick?})` -> entry {id,tick,type,importance,text,people,buildingId}; `.recent(n,minImp)` newest-first; `.query({sinceTick,untilTick,type,minImportance,person,limit})`; `.biography(id)` -> [{tick,date,text,source,importance}] oldest-first merging memories+entries; `.biographyText(id)`; `.digest(since,until,limit,minImp)`; `.format(entry)`.
-
-## UI (index.html, ui/main.js, ui/render.js)
-`ui/main.js` exports `ui` (also `window.hollowmere`): `{world, renderer, speedIndex, selected, selectedBuilding, select(id), selectBuilding(id), setSpeed(i), onSelect(fn), onFrame(fn(world,now)), onTick(fn(world)), renderInspector (assign to override the minimal inspector)}`. Mount points: `#inspector`, `#sidebar-extra`, `#feed-list`, `#topbar-extra`. Speeds 0,3,15,60,300 ticks/s, max (12ms/frame budget). `?seed=N&pop=N`. Renderer: `posOf(p,alpha,out)` interpolated position, `toWorld/toScreen`, `cam`. Static building styling by type (ROOF table in render.js).
-
-## Tools / test harness
-`node tools/report.js --seed 1 --years 50` (compact report, <80 lines). Options: `--section demo|econ|social|crime|stories` (comma list; header/timing/CHECKS always print), `--seeds 1,2,3` (parallel workers, one line per seed + combined check summary), `--hash` (final state hash; same seed twice must match), `--save snapshots/y30.json[.gz]` / `--load snapshots/y30.json --years 5` (continue from a snapshot; loaded == straight run, verified by hash), `--pop N`, `--quiet`, `--noprof`. `tools/plausibility.js` = checks + metrics (attachCollector/computeMetrics/runChecks). `tools/headless.js` = per-year need averages + `--hist`. Snapshot API: `saveSnapshot(world)`, `loadSnapshot(snap)`, `stateHash(world)` in sim/snapshot.js (builds a fresh World with the same seed, restores state in place; path cache and spatial grid are rebuilt).
+## Tools
+- `node tools/report.js [--seed 1] [--years 1] [--life-years N] [--personas a,b,c]` full report (population, material, life, social, personas, perf).
+- `node tools/perf.js [--years 1] [--prof]` ticks/s. `node tools/check.js` (npm run check): < 30 s sanity (boot, 1 year, NaN, money invariant, loose bands, snapshot resume).
+- `node tools/tune.js` multi-seed search over mechanistic parameters; `tools/metrics.js` metrics and targets.
+- Tests: `npm test` (`tests/*/*.test.js`; slow, a few minutes). `node sim/goals/selftest.js`.

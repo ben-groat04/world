@@ -43,3 +43,15 @@
 - Map feels static: most people indoors shown only as number badges; consider showing people at windows/doors, gatherings outside pubs/shops, kids playing, more visible street life at Scene speed.
 - Kernel daily weather still on old 4x28 seasons (UI remaps) — move weather onto the real calendar.
 - tools/ui-test.html stale — delete.
+
+---
+## Status after cleanup / calibration pass (latest)
+FIXED: legacy medieval world deleted (systems, brain/actions/needs/map/names, legacy tests/tools); report.js defaults to Larkfield; quick `npm run check`;
+selftest Date.now; outcome-forcing replaced (loneliness threshold, ASFR renormalisation + band multipliers, forced-notice stay-put chance, goal-move 80% gate;
+see docs/CALIBRATION-METHOD.md); duplicate meals; weekend over-packing (outings capped 2 weekday / 3 weekend); viral posts 21/yr -> ~1/yr; 'Dinner ... 11am'
+text; forum 'crime number' reply to unrelated posts; population stable over 10y (ratio 0.99-1.03 on seeds 1-3); unemployment converges to ~5-7%; TFR ~1.2-1.3; lonely overall ~6-8%.
+REMAINING: perf ~6.5-7.5k ticks/s (target 15k NOT met; cost is spread: routine buildPlan ~23%, wakes ~10/person-day, goals scan/override ~17%, social hourly ~10%);
+students 2% vs 10% and employed 64-69% vs 55% (day-1 tables + student turnover; needs a university-intake mechanism); loneliness by age shape wrong
+(65+ 24-33% vs ~7%, held-out); friendship-fade counter reads 0; online-formed ties 4% vs 11%; night-shift workers do not always sleep after a shift;
+forum replies are tone-pooled, not context matched; housing moveTogether/leaveHome/separate still use life's fallbacks; ethnicity x religion joint sampling not changed;
+tests: goals/material/social determinism tests partly stale (3 pre-existing failures: goals world kinds, snapshot-resume determinism, home-unit listing).

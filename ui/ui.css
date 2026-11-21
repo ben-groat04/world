@@ -29,11 +29,11 @@
 .hm-grab { display: none; }
 .hm-tabs { display: flex; gap: 2px; padding: 6px 6px 0; background: var(--hm-bg2); border-bottom: 1px solid var(--hm-line); overflow-x: auto; scrollbar-width: none; flex: none; touch-action: pan-x; }
 .hm-tabs::-webkit-scrollbar { display: none; }
-.hm-tabs button { position: relative; flex: 1 0 auto; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 8px 10px; background: transparent; border: 0; border-radius: 9px 9px 0 0; color: var(--hm-muted); font-weight: 600; white-space: nowrap; }
+.hm-tabs button { position: relative; flex: 1 0 auto; display: flex; align-items: center; justify-content: center; gap: 4px; padding: 8px 7px; font-size: 12.5px; background: transparent; border: 0; border-radius: 9px 9px 0 0; color: var(--hm-muted); font-weight: 600; white-space: nowrap; }
 .hm-tabs button .ic { font-size: 15px; }
 .hm-tabs button.on { background: var(--hm-bg); color: var(--hm-ink); box-shadow: inset 0 2px 0 var(--hm-accent); }
 .hm-tabs button:not(.on):hover { background: color-mix(in srgb, var(--hm-bg) 50%, transparent); }
-.hm-tabs sup { position: absolute; top: 2px; right: 0; min-width: 16px; padding: 0 4px; font-size: 10px; line-height: 16px; border-radius: 8px; background: var(--hm-accent); color: var(--hm-accent-ink); text-align: center; }
+.hm-tabs sup { position: static; margin-left: 2px; align-self: flex-start; min-width: 16px; padding: 0 4px; font-size: 10px; line-height: 16px; border-radius: 8px; background: var(--hm-accent); color: var(--hm-accent-ink); text-align: center; }
 .hm-panes { flex: 1; min-height: 0; position: relative; }
 .hm-pane { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; padding: 12px 12px 28px; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 .hm-pane[hidden] { display: none; }
@@ -95,7 +95,7 @@
 .hm-kvs div { background: var(--hm-bg); border-radius: 8px; padding: 5px 8px; min-width: 0; } .hm-kvs span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--hm-muted); }
 .hm-kvs b { font: 700 15px var(--hm-serif); } .hm-kvs b small { font: 400 10px var(--hm-sans); color: var(--hm-muted); } .hm-kvs b.sm { font-size: 11px; line-height: 1.2; display: block; }
 .hm-pers { display: flex; gap: 8px; align-items: center; }
-.hm-radar { flex: none; width: 160px; height: auto; } .hm-radar .g { fill: none; stroke: var(--hm-line); stroke-width: .8; } .hm-radar .a { fill: color-mix(in srgb, var(--hm-accent) 30%, transparent); stroke: var(--hm-accent); stroke-width: 1.6; } .hm-radar text { font: 8.5px var(--hm-sans); fill: var(--hm-muted); }
+.hm-radar { flex: none; width: 205px; height: auto; } .hm-radar .g { fill: none; stroke: var(--hm-line); stroke-width: .8; } .hm-radar .a { fill: color-mix(in srgb, var(--hm-accent) 30%, transparent); stroke: var(--hm-accent); stroke-width: 1.6; } .hm-radar text { font: 8.5px var(--hm-sans); fill: var(--hm-muted); }
 .hm-traits { display: flex; flex-wrap: wrap; gap: 5px; align-content: center; }
 .hm-trait { padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--hm-gold) 22%, var(--hm-card)); border: 1px solid color-mix(in srgb, var(--hm-gold) 45%, transparent); font-size: 12px; font-weight: 600; text-transform: capitalize; }
 .hm-sub { margin-top: 8px; } .hm-sub summary { cursor: pointer; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--hm-muted); }
@@ -157,7 +157,8 @@
 .tl-top { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; border-bottom: 2px solid var(--hm-ink); padding-bottom: 8px; } .tl-date b { font: 900 clamp(24px, 4vw, 40px)/1 var(--hm-serif); display: block; } .tl-date span { color: var(--hm-muted); font: italic 13px var(--hm-serif); } .tl-pop { margin-left: auto; font: 14px var(--hm-serif); } .tl-pop b { font-size: 28px; } .tl-close { padding: 8px 14px; border-radius: 9px; border: 1px solid var(--hm-line); background: var(--hm-card); }
 .tl-main { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 18px; flex: 1; min-height: 0; padding-top: 10px; }
 .tl-ticker { overflow: hidden; display: flex; flex-direction: column; gap: 8px; -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); }
-.tl-item { font: 16px/1.4 var(--hm-serif); padding-bottom: 7px; border-bottom: 1px solid var(--hm-line); animation: hm-in .5s ease-out; } .tl-item time { display: block; font: 700 10px var(--hm-sans); text-transform: uppercase; letter-spacing: .08em; color: var(--hm-muted); } .tl-item.i4, .tl-item.i5 { font-weight: 700; font-size: 18px; }
+.tl-item { font: 16px/1.4 var(--hm-serif); padding-bottom: 7px; border-bottom: 1px solid var(--hm-line); }
+.tl-item.new { animation: hm-in .5s ease-out; } .tl-item time { display: block; font: 700 10px var(--hm-sans); text-transform: uppercase; letter-spacing: .08em; color: var(--hm-muted); } .tl-item.i4, .tl-item.i5 { font-weight: 700; font-size: 18px; }
 @keyframes hm-in { from { opacity: 0; transform: translateY(-8px); } }
 .tl-side { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: hidden; }
 .tl-fp { position: relative; padding: 10px 12px 10px 16px; border: 1px solid var(--hm-line); border-radius: 12px; background: var(--hm-card); display: flex; flex-direction: column; } .tl-fp b { font: 700 17px var(--hm-serif); } .tl-fp span { color: var(--hm-accent); font-size: 12px; font-weight: 600; } .tl-fp em { font: italic 13px var(--hm-serif); color: var(--hm-muted); } .tl-fp i { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; border-radius: 12px 0 0 12px; }
@@ -179,5 +180,5 @@
   .hm-bar { grid-template-columns: 70px 1fr 28px; } .hm-pers { flex-direction: column; align-items: stretch; } .hm-radar { width: 100%; max-width: 230px; margin: 0 auto; }
   .tl-main { grid-template-columns: 1fr; overflow-y: auto; } .tl-ticker { max-height: 34vh; } .hm-tl { padding: 10px 12px 96px; }
 }
-@media (min-width: 761px) { .hm-dock { border-left: 1px solid var(--hm-line); } }
+@media (min-width: 761px) { .hm-dock { border-left: 1px solid var(--hm-line); } .hm-tabs button .ic { display: none; } .hm-tabs button { padding: 9px 9px; } }
 @media (prefers-reduced-motion: reduce) { .hm-dock, .hm-tl-item, .tl-item { transition: none !important; animation: none !important; } }

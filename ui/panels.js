@@ -48,11 +48,12 @@ export function drawLine(cv, spec, hover) {
   const x0 = Math.min(...xs), x1 = Math.max(...xs, x0 + 0.5);
   let [y0, y1, step] = niceRange(spec.y?.[0] ?? Math.min(...ys), spec.y?.[1] ?? Math.max(...ys));
   if (spec.y?.[0] != null) y0 = spec.y[0]; if (spec.y?.[1] != null) y1 = spec.y[1];
+  if (spec.y && spec.y[0] != null && spec.y[1] != null) step = (spec.step || niceRange(y0, y1, 0)[2]);
   const X = (x) => L + ((x - x0) / (x1 - x0)) * (w - L - R), Y = (y) => T + (1 - (y - y0) / (y1 - y0 || 1)) * (h - T - B);
   if (spec.band) { g.fillStyle = cssv(cv, '--hm-band', 'rgba(120,160,90,.18)'); g.fillRect(L, Y(Math.min(y1, spec.band[1])), w - L - R, Y(Math.max(y0, spec.band[0])) - Y(Math.min(y1, spec.band[1]))); }
   g.font = '10px system-ui'; g.textBaseline = 'middle'; g.lineWidth = 1;
-  const n = 3;
-  for (let i = 0; i <= n; i++) { const v = y0 + ((y1 - y0) * i) / n, y = Y(v); g.strokeStyle = grid; g.globalAlpha = 0.7; g.beginPath(); g.moveTo(L, y + .5); g.lineTo(w - R, y + .5); g.stroke(); g.globalAlpha = 1; g.fillStyle = ink; g.textAlign = 'right'; g.fillText((spec.fmt || ((q) => fmtN(q, y1 - y0 < 5 ? 2 : 0)))(v), L - 4, y); }
+  const ns = step || (y1 - y0) / 3;
+  for (let v = Math.ceil(y0 / ns - 1e-9) * ns; v <= y1 + 1e-9; v += ns) { const y = Y(v); g.strokeStyle = grid; g.globalAlpha = 0.7; g.beginPath(); g.moveTo(L, y + .5); g.lineTo(w - R, y + .5); g.stroke(); g.globalAlpha = 1; g.fillStyle = ink; g.textAlign = 'right'; g.fillText((spec.fmt || ((q) => fmtN(q, ns < 1 ? (ns < 0.1 ? 2 : 1) : 0)))(Math.abs(v) < 1e-9 ? 0 : v), L - 4, y); }
   g.textAlign = 'center'; g.textBaseline = 'alphabetic';
   const span = x1 - x0, ys_ = span > 40 ? 10 : span > 16 ? 5 : span > 8 ? 2 : 1;
   for (let yr = Math.ceil(x0 / ys_) * ys_; yr <= x1; yr += ys_) { g.fillStyle = ink; g.fillText('Y' + (yr + 1), X(yr), h - 4); }
@@ -144,9 +145,9 @@ export function mountStats(container, store, opts = {}) {
   const kpis = root.querySelector('.hm-kpis'), wrap = root.querySelector('.hm-charts');
   const c = (n) => cssv(root, '--hm-c' + n, ['', '#4f7fc0', '#d9822b', '#5aa469', '#b86bc4', '#c8a23a'][n]);
   const CH = [
-    { id: 'pop', title: 'Population', note: () => `${last('pop') ?? '-'}`, build: (S) => ({ series: [{ name: 'people', color: c(1), fill: true, pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.pop]) }] }) },
+    { id: 'pop', title: 'Population', build: (S) => ({ series: [{ name: 'people', color: c(1), fill: true, pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.pop]) }] }) },
     { id: 'bd', title: 'Births & deaths per year', bars: true, note: () => '<i class="k" style="background:var(--hm-c3)"></i>births <i class="k" style="background:var(--hm-c2)"></i>deaths' },
-    { id: 'mood', title: 'Average mood', build: (S) => ({ y: [-0.5, 0.8], fmt: (v) => v.toFixed(1), series: [{ color: c(5), pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.mood]) }] }) },
+    { id: 'mood', title: 'Average mood', build: (S) => ({ y: [-0.5, 1], step: 0.5, fmt: (v) => v.toFixed(1), series: [{ color: c(5), pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.mood]) }] }) },
     { id: 'gini', title: 'Wealth inequality (Gini)', note: () => 'shaded: typical 0.3–0.5', build: (S) => ({ y: [0, 1], band: [0.3, 0.5], fmt: (v) => v.toFixed(1), series: [{ color: c(4), pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.gini]) }] }) },
     { id: 'emp', title: 'Working adults', build: (S) => ({ y: [0, 1], fmt: (v) => Math.round(v * 100) + '%', series: [{ color: c(3), pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.employed]) }] }) },
     { id: 'crime', title: 'Crimes per year', bars: true, note: () => '' },
@@ -193,7 +194,7 @@ export function mountStats(container, store, opts = {}) {
   let dirTimer = setInterval(() => { if (vis()) store.requestDirectory(); }, 4000);
   const offs = [store.on('stats', dd), store.on('directory', dd), store.on('time', dd), store.on('ready', draw)];
   const ro = new ResizeObserver(() => draw()); ro.observe(root);
-  draw();
+  draw(); store.requestDirectory();
   return { el: root, refresh() { store.requestDirectory(); draw(); }, destroy() { offs.forEach((f) => f()); clearInterval(dirTimer); ro.disconnect(); root.remove(); } };
 }
 
@@ -216,7 +217,7 @@ export function mountDirectory(container, store, opts = {}) {
   const vis = () => !root.closest('[hidden]') && root.offsetParent !== null;
   const timer = setInterval(() => { if (vis()) store.requestDirectory(); }, 5000);
   const off = store.on('directory', () => { if (vis() && document.activeElement?.tagName !== 'SELECT') render(); });
-  render();
+  render(); store.requestDirectory();
   return { el: root, refresh() { store.requestDirectory(); render(); }, destroy() { off(); clearInterval(timer); root.remove(); } };
 }
 
@@ -236,7 +237,7 @@ export function mountGraves(container, store, opts = {}) {
   const vis = () => !root.closest('[hidden]') && root.offsetParent !== null;
   const timer = setInterval(() => { if (vis()) store.requestDirectory(); }, 8000);
   const off = store.on('directory', () => { if (vis()) render(); });
-  render();
+  render(); store.requestDirectory();
   return { el: root, refresh() { store.requestDirectory(); render(); }, destroy() { off(); clearInterval(timer); root.remove(); } };
 }
 
@@ -249,16 +250,18 @@ export function mountTimelapse(container, store, opts = {}) {
   const tick = root.querySelector('.tl-ticker'), fol = root.querySelector('.tl-follow');
   const show = () => { dismissed = false; root.hidden = false; draw(true); }, hide = () => { root.hidden = true; };
   const c = (n) => cssv(root, '--hm-c' + n, ['', '#4f7fc0', '#d9822b', '#5aa469', '#b86bc4', '#c8a23a'][n]);
+  let lastTop = 0;
   function ticker() {
     const L = store.state.chron, out = []; for (let i = L.length - 1; i >= 0 && out.length < 14; i--) if (L[i].imp >= 3) out.push(L[i]);
-    tick.innerHTML = out.map((e) => `<div class="tl-item i${e.imp}"><time>${esc(e.date)}</time>${linkify(e.text, e.ppl)}</div>`).join('') || '<div class="muted">Years pass quietly…</div>';
+    const prevTop = lastTop; lastTop = out.length ? out[0].id : 0;
+    tick.innerHTML = out.map((e) => `<div class="tl-item i${e.imp} ${e.id > prevTop && prevTop ? 'new' : ''}"><time>${esc(e.date)}</time>${linkify(e.text, e.ppl)}</div>`).join('') || '<div class="muted">Years pass quietly…</div>';
   }
   function draw(force) {
     if (root.hidden) return; const t = store.state.time, S = store.state.series;
     if (t) { root.querySelector('.tl-date b').textContent = t.date; root.querySelector('.tl-date span').textContent = `${t.seasonName} · year ${t.year}`; root.querySelector('.tl-pop').innerHTML = `<b>${t.pop}</b> townsfolk`; }
     const cv = root.querySelectorAll('canvas');
     drawLine(cv[0], { series: [{ color: c(1), fill: true, pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.pop]) }] });
-    drawLine(cv[1], { y: [-0.5, 0.8], fmt: (v) => v.toFixed(1), series: [{ color: c(5), pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.mood]) }] });
+    drawLine(cv[1], { y: [-0.5, 1], step: 0.5, fmt: (v) => v.toFixed(1), series: [{ color: c(5), pts: S.map((s) => [s.tick / TICKS_PER_YEAR, s.mood]) }] });
     const a = [yearly(S, 'births'), yearly(S, 'deaths')], ys = new Set(); a.forEach((m) => m.forEach((_, y) => ys.add(y)));
     drawBars(cv[2], { groups: [...ys].sort((x, y) => x - y).map((y) => ({ x: 'Y' + (y + 1), v: a.map((m) => Math.max(0, m.get(y) || 0)) })), series: [{ color: c(3) }, { color: c(2) }] });
     const d = store.state.detail;

@@ -31,7 +31,7 @@ function radar(pers) {
   const axes = BIG5.map((_, i) => `<line x1="${C}" y1="${C}" x2="${pt(i, R)[0]}" y2="${pt(i, R)[1]}" class="g"/>`).join('');
   const poly = BIG5.map(([k], i) => pt(i, R * (0.06 + 0.94 * (pers[k] ?? 0.5))).join(',')).join(' ');
   const labels = BIG5.map(([k, l], i) => { const [x, y] = pt(i, R + 13); return `<text x="${x}" y="${y + 3}" text-anchor="${Math.abs(x - C) < 4 ? 'middle' : x > C ? 'start' : 'end'}">${l}</text>`; }).join('');
-  return `<svg class="hm-radar" viewBox="-14 -2 156 134" aria-label="Personality radar">${grid}${axes}<polygon points="${poly}" class="a"/>${labels}</svg>`;
+  return `<svg class="hm-radar" viewBox="-38 -4 204 138" aria-label="Personality radar">${grid}${axes}<polygon points="${poly}" class="a"/>${labels}</svg>`;
 }
 
 function chip(r) { return r ? `<span class="hm-chip ${r.alive ? '' : 'dead'} ${r.sex === 'F' ? 'f' : 'm'}">${pLink(r.id, r.name)}<small>${r.alive ? r.age : '†' + r.age}</small></span>` : ''; }
@@ -75,7 +75,7 @@ function sections(d, ctx) {
   S.family = `<div class="hm-tree">${treeRow('Grandparents', [F.paternal?.father, F.paternal?.mother, F.maternal?.father, F.maternal?.mother])}${treeRow('Parents', [F.father, F.mother])}
     ${treeRow(F.spouse ? 'Spouse' : 'Partner', F.spouse ? [F.spouse] : F.partner ? [F.partner] : [])}${treeRow('Formerly wed', F.exSpouses)}${treeRow('Siblings', F.siblings)}${treeRow('Children', F.children)}${treeRow('Grandchildren', F.grandchildren)}
     ${!F.father && !F.mother && !F.spouse && !F.partner && !F.children.length && !F.siblings.length ? '<p class="muted">No kin known in town.</p>' : ''}</div>`;
-  S.life = d.life.length ? `<ol class="hm-life">${d.life.slice().reverse().map((l) => `<li class="i${l.imp}"><time>${esc(l.date)}</time>${esc(l.text)}</li>`).join('')}</ol>` : '<p class="muted">Nothing recorded yet.</p>';
+  S.life = d.life.length ? `<ol class="hm-life">${d.life.slice().reverse().map((l) => `<li class="i${l.imp}"><time>${esc(l.date)}${l.n > 1 ? ` \u00B7 ${l.n} times` : ''}</time>${esc(l.text)}</li>`).join('')}</ol>` : '<p class="muted">Nothing recorded yet.</p>';
   return S;
 }
 const ORDER = [['now', 'Right now', true], ['mood', 'Mood', true], ['needs', 'Needs', true], ['body', 'Body & purse', true], ['person', 'Personality', true], ['skills', 'Skills', false], ['rels', 'Relationships', true], ['rumors', 'Rumours believed', false], ['family', 'Family', true], ['life', 'Life story', true]];

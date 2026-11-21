@@ -20,7 +20,7 @@ const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const r2 = (v) => Math.round(v * 100) / 100;
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : '?');
 const ageOf = (w, p) => (w.tick - p.birthTick) / TICKS_PER_YEAR;
-const dateOf = (w, tick) => (w.formatDate ? w.formatDate(tick) : `Day ${Math.floor(tick / TICKS_PER_DAY)}`);
+const dateOf = (w, tick) => (w.formatDate ? w.formatDate(tick) : `Day ${Math.floor(tick / TICKS_PER_DAY)}`).replace(/, Year -(\d+)/, (m, n) => `, ${n} yr${n === '1' ? '' : 's'} before the founding`);
 const ref = (w, id) => { const p = id != null ? w.people.get(id) : null; return p ? { id: p.id, name: nm(p), alive: !!p.alive, age: Math.floor(ageOf(w, p)), sex: p.sex } : null; };
 
 // ---------------------------------------------------------------- builders (pure functions of world)
@@ -100,6 +100,9 @@ export function snapshotPerson(w, id) {
   let life = [];
   try {
     life = (w.chronicle.biography ? w.chronicle.biography(id, 0.3) : []).map((l) => ({ tick: l.tick, date: l.date || dateOf(w, l.tick), text: l.text, imp: l.importance || 2, src: l.source || '' }));
+    { const seen = new Map(), out = []; // collapse repeated lines ("X sat with me when I was low" x5) into one entry
+      for (let i = life.length - 1; i >= 0; i--) { const l = life[i], k = l.text; if (seen.has(k) && l.imp < 4) { seen.get(k).n++; continue; } l.n = 1; seen.set(k, l); out.push(l); }
+      life = out.reverse(); }
     if (life.length > 90) life = life.filter((l, i) => i < 4 || l.imp >= 3 || i > life.length - 40);
   } catch (e) { /* engine incomplete */ }
   const rumors = (p.rumors || []).slice(-8).reverse().map((r) => ({ about: ref(w, r.aboutId), kind: r.kind, text: r.text, truth: r.truth, from: ref(w, r.heardFrom), date: r.tick != null ? dateOf(w, r.tick) : '' }));
@@ -307,13 +310,9 @@ export function createLocalSource(world, { drive = false, hz = 5 } = {}) {
   const store = new Store();
   const host = new Host(world, (m) => store.apply(m), { drive });
   let last = performance.now();
-  const timer = setInterval(() => {
-    const now = performance.now();
-    if (drive) host.advance((now - last) / 1000, 14);
-    last = now;
-    host.flush(now, { frames: false });
-  }, Math.round(1000 / hz));
-  store.backend = { post: (m) => host.command(m), host, stop: () => clearInterval(timer), pump: (dt) => host.advance(dt) };
+  const drv = drive ? setInterval(() => { const now = performance.now(); host.advance(Math.min(0.25, (now - last) / 1000), 10); last = now; }, 16) : 0;
+  const timer = setInterval(() => host.flush(performance.now(), { frames: false }), Math.round(1000 / hz));
+  store.backend = { post: (m) => host.command(m), host, stop: () => { clearInterval(timer); if (drv) clearInterval(drv); }, pump: (dt) => host.advance(dt) };
   host.hello();
   return store;
 }

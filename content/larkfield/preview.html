@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><title>Larkfield map preview</title>
+<style>body{margin:0;background:#222;color:#ddd;font:13px system-ui}#bar{padding:6px 10px;position:sticky;top:0;background:#111;z-index:2}canvas{display:block}</style>
+<div id="bar">seed <input id="seed" value="1" size="4"> scale <input id="scale" value="6" size="2"> <label><input type="checkbox" id="graph">graph</label> <button id="go">render</button> <span id="info"></span></div>
+<canvas id="c"></canvas>
+<script type="module">
+import pack from './map-pack.js';
+import { generateMap } from '../../sim/map/index.js';
+import { drawMap } from '../../ui/render-modern.js';
+const q = new URLSearchParams(location.search);
+const $ = (i) => document.getElementById(i);
+if (q.get('seed')) $('seed').value = q.get('seed'); if (q.get('scale')) $('scale').value = q.get('scale'); if (q.get('graph')) $('graph').checked = true;
+function go() { const M = generateMap(pack, +$('seed').value || 1); window.MAP = M; drawMap($('c').getContext('2d'), M, { scale: +$('scale').value || 6, graph: $('graph').checked }); const s = M.stats; $('info').textContent = `${M.w}x${M.h} tiles, ${s.dwellings} dwellings, ${s.venues} venues, ${s.graphNodes} nodes`; document.title = 'ready'; }
+$('go').onclick = go; go();
+</script>

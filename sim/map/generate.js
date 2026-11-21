@@ -790,7 +790,7 @@ function finalise(M, g, tf, W, H, pack, rng) {
   const tiles = new Uint8Array(NW * NH), bAt = new Int32Array(NW * NH).fill(-1);
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const [nx, ny] = mt(x, y); tiles[ny * NW + nx] = M.tiles[y * W + x]; bAt[ny * NW + nx] = M.bAt[y * W + x]; }
   M.tiles = tiles; M.bAt = bAt; M.w = NW; M.h = NH;
-  for (const b of M.buildings) { mr(b.rect); mr(b.plot); b.facing = mf(b.facing); b.entryDir = mf(b.entryDir); b.ridge = (b.facing === 'N' || b.facing === 'S') ? 'x' : 'y'; mp(b.door); for (const d of b.doors) mp(d); delete b.nodeOverride; }
+  for (const b of M.buildings) { if (b.plot === b.rect) b.plot = { ...b.rect }; mr(b.rect); mr(b.plot); b.facing = mf(b.facing); b.entryDir = mf(b.entryDir); b.ridge = (b.facing === 'N' || b.facing === 'S') ? 'x' : 'y'; mp(b.door); for (const d of b.doors) mp(d); delete b.nodeOverride; }
   for (const s of M.streets) { mr(s.rect); s.axis = s.rect.w >= s.rect.h ? 'h' : 'v'; s.lines = s.axis === 'h' ? { N: s.rect.y, S: s.rect.y + s.rect.h - 1 } : { W: s.rect.x, E: s.rect.x + s.rect.w - 1 }; delete s.a0; delete s.t0; delete s.t1; }
   for (const c of M.cells) mr(c.rect);
   for (const a of M.areas) mr(a.rect);

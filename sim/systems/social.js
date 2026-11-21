@@ -1,7 +1,7 @@
 // Social system: encounters, conversations, relationships, gossip & rumors, reputation, cliques, loneliness.
 // sim/ code: no DOM, world.rng only.
+import { clamp } from '../util.js';
 const TPD = 144;
-const clamp = (v, a = 0, b = 1) => (v < a ? a : v > b ? b : v);
 const has = (p, t) => p.traits && p.traits.includes(t);
 const pid = (x) => (x !== null && typeof x === 'object' ? x.id : x);
 const lc = (s) => (s ? s[0].toLowerCase() + s.slice(1) : s);
@@ -62,14 +62,7 @@ export function getEnemies(world, p) {
 }
 export function getClique(world, p) { const S = st(world); return S.cliques.find((c) => c.members.includes(p.id)) || null; }
 
-export function addMoodlet(world, p, id, label, value, ticks) {
-  if (!p.moodlets) p.moodlets = [];
-  const until = world.tick + ticks;
-  const ex = p.moodlets.find((m) => m.id === id);
-  if (ex) { ex.value = Math.abs(value) > Math.abs(ex.value) ? value : ex.value; ex.untilTick = Math.max(ex.untilTick, until); ex.label = label; return; }
-  p.moodlets.push({ id, label, value, untilTick: until });
-  if (p.moodlets.length > 14) p.moodlets.shift();
-}
+export function addMoodlet(world, p, id, label, value, ticks) { world.moodlet(p, id, label, value, ticks); }
 function mem(world, p, type, text, others, weight, importance) {
   if (world.addMemory) world.addMemory(p, { type, text, otherIds: others, weight, importance });
 }
@@ -496,7 +489,7 @@ export function converse(world, a, b, opts = {}) {
     if (q > 0.1) {
       outcome = 'comforted';
       addMoodlet(world, b, 'comforted', `Comforted by ${an}`, 0.22, 2 * TPD);
-      if (b.moodlets) b.moodlets = b.moodlets.filter((m) => !/lonely/.test(m.id));
+      world.removeMoodlet(b, 'lonely');
       mem(world, b, 'comfort', `${full(a)} sat with me when I was low.`, [a.id], 0.6, 2);
       rb.trust = clamp(rb.trust + 0.04, 0, 1);
       rb.respect = clamp(rb.respect + 0.03, -1, 1);

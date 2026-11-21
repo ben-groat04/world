@@ -10,12 +10,17 @@ const urg = (n, k = 1.6) => 100 * Math.pow(1 - n, k);
 const rain = (w) => w.weather.type === 'rain' || w.weather.type === 'snow';
 const dayHour = (h, a, b) => h >= a && h < b;
 
+const HF = { have: 0, need: 0, n: 0, home: null }; // shared result object, cached per decision (brain.ctx.hfP)
 function householdFood(w, p) {
+  const c = w.brain.ctx;
+  if (c.hfP === p) return HF;
+  c.hfP = p;
   const home = p.homeId != null ? w.buildings.get(p.homeId) : null;
-  if (!home) return { have: p.inventory.food, need: 3, n: 1, home: null };
+  if (!home) { HF.have = p.inventory.food; HF.need = 3; HF.n = 1; HF.home = null; return HF; }
   let have = 0, n = 0;
   for (const id of home.residents) { const q = w.people.get(id); if (q && q.alive) { have += q.inventory.food; n++; } }
-  return { have, need: n * 3, n, home };
+  HF.have = have; HF.need = n * 3; HF.n = n; HF.home = home;
+  return HF;
 }
 export function takeFood(w, p) {
   if (p.inventory.food >= 1) { p.inventory.food -= 1; return true; }
@@ -28,8 +33,8 @@ export function takeFood(w, p) {
   return false;
 }
 function nearestOpen(w, p, type, c) {
-  const L = w.buildingsOfType(type); let best = null, bd = 1e9;
-  for (const b of L) { if (!isOpen(b, c.h)) continue; const d = dist(p, b); if (d < bd) { bd = d; best = b; } }
+  const L = w.brain.openOf(type); let best = null, bd = 1e9;
+  for (let i = 0; i < L.length; i++) { const b = L[i]; const d = dist(p, b); if (d < bd) { bd = d; best = b; } }
   return best;
 }
 const mealWindow = (h) => dayHour(h, 6, 9.5) || dayHour(h, 11.5, 14) || dayHour(h, 17.5, 21);

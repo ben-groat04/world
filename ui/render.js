@@ -116,7 +116,8 @@ export class Renderer {
   resize() {
     const c = this.canvas, r = c.getBoundingClientRect();
     this.dpr = Math.min(window.devicePixelRatio || 1, 2);
-    c.width = Math.max(1, Math.round(r.width * this.dpr)); c.height = Math.max(1, Math.round(r.height * this.dpr));
+    const W = Math.max(1, Math.round(r.width * this.dpr)), H = Math.max(1, Math.round(r.height * this.dpr));
+    if (c.width !== W || c.height !== H) { c.width = W; c.height = H; }
     this.w = r.width; this.h = r.height;
   }
   setInset(px) { this.inset = Math.max(0, px | 0); }
@@ -199,7 +200,7 @@ export class Renderer {
     const t0 = performance.now(); this.frame++;
     const ctx = this.ctx, z = this.cam.zoom, st = this.store.state;
     ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
-    ctx.fillStyle = '#10151a'; ctx.fillRect(0, 0, this.w, this.h);
+    ctx.fillStyle = '#2b3f28'; ctx.fillRect(0, 0, this.w, this.h);
     if (!this.map) { ctx.fillStyle = '#8d98a5'; ctx.font = '14px system-ui'; ctx.textAlign = 'center'; ctx.fillText('Building the town…', this.w / 2, this.h / 2); return; }
     this.update(now);
     const season = this.season ?? 0, hour = this.hour ?? 12, TL = this.timelapse, wt = (this.weather && this.weather.type) || 'clear';

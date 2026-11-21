@@ -1,10 +1,10 @@
 // ROMANCE system: attraction, crushes, courtship, engagement, weddings, marriage quality, infidelity,
 // breakups, divorce, widowhood and remarriage. Player-safe: nothing here assumes a person is AI-driven;
 // all transitions are exported (startDating, propose, finalizeWedding, breakUp, divorce, respondToOffer).
+import { clamp } from '../util.js';
 import { kinship, bloodDistance, relocate, findVacantHouse, getParents, getSiblings } from './family.js';
 
 const TPD = 144, DPY = 112, YEAR = TPD * DPY;
-const clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x);
 const full = (p) => `${p.firstName} ${p.lastName}`;
 let W = null;
 const P = (id) => (id == null || !W ? null : W.people.get(id) || null);
@@ -14,7 +14,7 @@ const has = (p, t) => p.traits.includes(t);
 const pr = (p) => (p.sex === 'F' ? { s: 'she', o: 'her', p: 'her' } : { s: 'he', o: 'him', p: 'his' });
 const NONJOB = new Set(['unemployed', 'retired', 'student', 'child', undefined, null]);
 const desc = (p) => (NONJOB.has(p.job) ? full(p) : `${full(p)} (${p.job})`);
-const moodlet = (p, id, label, value, ticks) => W.addMoodlet(p, { id, label, value, untilTick: W.tick + ticks });
+const moodlet = (p, id, label, value, ticks) => W.moodlet(p, id, label, value, ticks);
 const mem = (p, type, text, others, weight, importance) => W.addMemory(p, { type, text, otherIds: others, weight, importance });
 const rom = (p) => (p.ext.rom || (p.ext.rom = { sat: 0.7, crush: null, desire: null, cool: {}, affair: null, widowedTick: null, lastBreak: -1e9, offers: [], lowDays: 0, grief: 0 }));
 const rel = (a, b) => W.getRel(a, b);

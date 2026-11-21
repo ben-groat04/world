@@ -11,6 +11,7 @@ export class Brain {
     this.world = world;
     this.list = [];
     this.modifiers = [];
+    this._openTick = -1; this._open = {};
     this.ctx = { h: 0, tick: 0, weekday: 0, rest: false, age: 0, workDay: false, shift: false, shiftEnd: 0, mealAgo: 0, wake: 6.5, bed: 22, inWin: false, target: null, why: null, data: null };
   }
   register(def) {
@@ -19,6 +20,14 @@ export class Brain {
     if (i >= 0) this.list[i] = def; else this.list.push(def);
   }
   addModifier(fn) { this.modifiers.push(fn); }
+  // buildings of `type` that are open right now (cached per tick; shared by all scorers)
+  openOf(type) {
+    const w = this.world;
+    if (this._openTick !== w.tick) { this._openTick = w.tick; this._open = {}; }
+    let l = this._open[type];
+    if (l === undefined) { l = this._open[type] = []; for (const b of w.buildingsOfType(type)) if (w.isOpen(b)) l.push(b); }
+    return l;
+  }
   // Fill the shared context for person p (also usable by modifiers / UI).
   prepare(p) {
     const w = this.world, t = w.time, c = this.ctx, s = p.schedule;
@@ -37,6 +46,7 @@ export class Brain {
     c.wake = wake; c.bed = bed; c.inWin = inWindow(c.h, bed, wake);
     c.mealAgo = w.tick - p.lastMeal;
     c.cur = p.currentAction ? p.currentAction.id : null;
+    c.hfP = null; // household-food cache owner (see actions.householdFood)
     return c;
   }
   // Score all actions. If `out` is an array, pushes {id,score,target,why} for every candidate (debug / UI "why" view).

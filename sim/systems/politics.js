@@ -1,6 +1,7 @@
 // POLITICS: mayor & town council, four-year elections with campaigns, platforms, voting, policy enactment into
 // world.settings, the municipal purse (watch, poor relief, public works), scandals, recalls, coups.
 // Pure sim code: world.rng only, no DOM. Works if any person (incl. world.player) is externally controlled.
+import { clamp } from '../util.js';
 import { BUILDING_TYPES } from '../map.js';
 import { createRumor, spreadRumor } from './social.js';
 
@@ -11,7 +12,6 @@ const AXES = ['taxRate', 'watchFunding', 'festivalBudget', 'poorRelief', 'public
 const AXIS_RANGE = { taxRate: [0.05, 0.3], watchFunding: [0, 1], festivalBudget: [0, 1], poorRelief: [0, 1], publicWorks: [0, 1] };
 const AXIS_LABEL = { taxRate: 'the tax rate', watchFunding: 'funding for the watch', festivalBudget: 'the festival purse', poorRelief: 'relief for the poor', publicWorks: 'public works' };
 
-const clamp = (x, a, b) => (x < a ? a : x > b ? b : x);
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'nobody');
 const has = (p, t) => !!p && p.traits.includes(t);
 const he = (p) => (p.sex === 'F' ? 'she' : 'he');
@@ -22,7 +22,7 @@ const jailed = (w, p) => (p.jailedUntil || 0) > w.tick;
 const S = (w) => w.politics;
 const town = (w) => { w.town = w.town || {}; if (typeof w.town.treasury !== 'number') w.town.treasury = 0; return w.town; };
 function chron(w, type, importance, text, people, buildingId) { return w.chronicle.add({ type, importance, text, people: (people || []).filter((x) => x != null), buildingId }); }
-function mood(w, p, id, label, v, days) { if (w.addMoodlet) w.addMoodlet(p, { id, label, value: v, untilTick: w.tick + days * DAY }); }
+function mood(w, p, id, label, v, days) { w.moodlet(p, id, label, v, days * DAY); }
 function mem(w, p, type, text, others, weight, imp) { if (p && p.alive) w.addMemory(p, { type, text, otherIds: others || [], weight, importance: imp }); }
 function adults(w, min = 18) { return w.living().filter((p) => w.ageOf(p) >= min); }
 function townhall(w) { return w.buildingsOfType('townhall')[0] || null; }

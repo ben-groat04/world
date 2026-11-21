@@ -1,12 +1,12 @@
 // CULTURE: weather & seasons, festival calendar, temple & religion, ceremonies (christenings, funerals),
 // natural disasters (fire, flood, storm, harsh winter), clubs & hobbies, emergent traditions and memorials.
 // Pure sim code: world.rng only, no DOM. Never assumes every person is AI-driven (world.player is never forced).
+import { clamp } from '../util.js';
 import { isOpen, BUILDING_TYPES } from '../map.js';
 import { createRumor, spreadRumor } from './social.js';
 
 const DAY = 144;
 const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const clamp = (x, a, b) => (x < a ? a : x > b ? b : x);
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 const has = (p, t) => !!p && p.traits.includes(t);
 const he = (p) => (p.sex === 'F' ? 'she' : 'he');
@@ -18,7 +18,7 @@ const C = (w) => w.culture;
 const skill = (p, k) => (p.skills && p.skills[k]) || 0;
 function town(w) { w.town = w.town || {}; if (typeof w.town.treasury !== 'number') w.town.treasury = 0; return w.town; }
 function chron(w, type, importance, text, people, buildingId) { return w.chronicle.add({ type, importance, text, people: (people || []).filter((x) => x != null), buildingId }); }
-function mood(w, p, id, label, v, ticks) { if (w.addMoodlet) w.addMoodlet(p, { id, label, value: v, untilTick: w.tick + ticks }); }
+function mood(w, p, id, label, v, ticks) { w.moodlet(p, id, label, v, ticks); }
 function mem(w, p, type, text, others, weight, imp) { if (p && p.alive) w.addMemory(p, { type, text, otherIds: others || [], weight, importance: imp }); }
 function cx(p) { if (!p.ext) p.ext = {}; if (!p.ext.culture) p.ext.culture = { attended: 0, services: 0, drinks: 0, gamble: 0, temperanceUntil: 0 }; return p.ext.culture; }
 function bn(b) { return b ? (b.name || BUILDING_TYPES[b.type]?.label || b.type) : 'the street'; }

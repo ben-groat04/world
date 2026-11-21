@@ -98,13 +98,13 @@ export function drawPyramid(cv, pyr) {
 
 // ------------------------------------------------------------------ Gazette
 export function mountGazette(container, store, opts = {}) {
-  const root = $(`<div class="hm-gaz"><header class="hm-mast"><div class="rule"></div><h1></h1><div class="sub"><span class="vol"></span><span class="mid">❦</span><span class="dt"></span><span class="mid">❦</span><span>One penny</span></div><div class="rule"></div></header>
+  const root = $(`<div class="hm-gaz"><header class="hm-mast"><div class="rule"></div><h1></h1><div class="sub"><span class="vol"></span><span class="mid">&bull;</span><span class="dt"></span><span class="mid">&bull;</span><span>Live feed</span></div><div class="rule"></div></header>
     <div class="hm-filters"><div class="seg" role="group" aria-label="Importance"><button data-imp="1">All</button><button data-imp="2">Notable</button><button data-imp="3" class="on">News</button><button data-imp="4">Major</button></div>
-    <select class="type" aria-label="Type"><option value="">Everything</option></select><input class="q" type="search" placeholder="Search the archive…"></div><div class="hm-feed"></div></div>`);
+    <select class="type" aria-label="Type"><option value="">Everything</option></select><input class="q" type="search" placeholder="Search the feed…"></div><div class="hm-feed"></div></div>`);
   container.appendChild(root);
   const feed = root.querySelector('.hm-feed'), types = root.querySelector('.type');
   let minImp = opts.minImportance || 3, type = '', q = '', limit = 120; const known = new Set(); let unseenCb = opts.onUnseen;
-  root.querySelector('h1').textContent = `The ${store.state.townName || 'Hollowmere'} Gazette`;
+  root.querySelector('h1').textContent = `${store.state.townName || 'Hollowmere'} Local`;
   root.querySelectorAll('[data-imp]').forEach((b) => b.classList.toggle('on', +b.dataset.imp === minImp));
   function render() {
     const list = store.state.chron; const out = []; const ql = q.toLowerCase();
@@ -116,7 +116,7 @@ export function mountGazette(container, store, opts = {}) {
       const c = e.imp >= 5 ? 'extra' : e.imp >= 4 ? 'major' : e.imp >= 3 ? 'news' : 'minor';
       html += `<article class="hm-item ${c}" data-type="${esc(e.type)}"><div class="meta"><time>${esc(e.date)}</time><span class="tp">${esc(e.type)}</span>${e.imp >= 5 ? '<span class="star">EXTRA!</span>' : ''}</div><p>${linkify(e.text, e.ppl)}</p></article>`;
     }
-    if (out.length >= limit) html += '<button class="hm-more" data-more>Older editions…</button>';
+    if (out.length >= limit) html += '<button class="hm-more" data-more>Older stories…</button>';
     feed.innerHTML = html || '<p class="muted pad">No stories match. The town is quiet.</p>';
     const t = store.state.time; if (t) { root.querySelector('.vol').textContent = `Vol. ${t.year}`; root.querySelector('.dt').textContent = t.date; }
     for (const e of list) if (!known.has(e.type)) { known.add(e.type); types.insertAdjacentHTML('beforeend', `<option value="${esc(e.type)}">${esc(cap(e.type))}</option>`); }
@@ -129,7 +129,7 @@ export function mountGazette(container, store, opts = {}) {
   });
   types.addEventListener('change', () => { type = types.value; render(); });
   root.querySelector('.q').addEventListener('input', (e) => { q = e.target.value; render(); });
-  const offs = [store.on('chron', (en) => { rr(); if (unseenCb && Array.isArray(en)) unseenCb(en.filter((x) => x.imp >= 3).length); }), store.on('ready', () => { root.querySelector('h1').textContent = `The ${store.state.townName} Gazette`; render(); })];
+  const offs = [store.on('chron', (en) => { rr(); if (unseenCb && Array.isArray(en)) unseenCb(en.filter((x) => x.imp >= 3).length); }), store.on('ready', () => { root.querySelector('h1').textContent = `${store.state.townName} Local`; render(); })];
   render();
   return { el: root, refresh: render, destroy() { offs.forEach((f) => f()); root.remove(); } };
 }
@@ -276,7 +276,7 @@ export function mountTimelapse(container, store, opts = {}) {
 }
 
 // ------------------------------------------------------------------ Dock (tabs + responsive sheet)
-const TABS = [['person', 'Person', '☺'], ['gazette', 'Gazette', '✉'], ['stats', 'Stats', '▓'], ['people', 'People', '☖'], ['graves', 'Graves', '†'], ['god', 'God', '✦']];
+const TABS = [['person', 'Person', '☺'], ['gazette', 'News', '✉'], ['stats', 'Stats', '▓'], ['people', 'People', '☖'], ['graves', 'Graves', '†'], ['god', 'God', '✦']];
 export function mountDock(container, store, opts = {}) {
   const tabs = opts.tabs || TABS.map((t) => t[0]);
   const root = $(`<div class="hm-dock" data-sheet="peek"><div class="hm-grab" role="button" aria-label="Expand panel" tabindex="0"><i></i></div><nav class="hm-tabs" role="tablist">${TABS.filter((t) => tabs.includes(t[0])).map((t) => `<button role="tab" data-tab="${t[0]}"><span class="ic">${t[2]}</span><span class="tx">${t[1]}</span><sup hidden></sup></button>`).join('')}</nav><div class="hm-panes">${TABS.filter((t) => tabs.includes(t[0])).map((t) => `<section class="hm-pane" data-pane="${t[0]}" hidden></section>`).join('')}</div></div>`);

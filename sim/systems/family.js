@@ -2,11 +2,11 @@
 // elderly care, kinship helpers. Realistic pre-industrial rates; works with player-controlled people.
 // Exports: default system, plus family-tree helpers (getParents, getChildren, getSiblings, getAncestors,
 // getDescendants, kinship, bloodDistance, relocate, findVacantHouse, conceive).
+import { clamp } from '../util.js';
 import { firstName } from '../names.js';
 
 const TPD = 144, DPY = 112, YEAR = TPD * DPY;
 const GESTATION = Math.round(0.75 * YEAR);
-const clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x);
 const full = (p) => `${p.firstName} ${p.lastName}`;
 let W = null; // module-level world reference (set in init) so helpers can take plain people/ids
 
@@ -17,7 +17,7 @@ const isPlayer = (p) => W && W.player != null && W.player === p.id;
 const pro = (p) => (p.sex === 'F' ? { s: 'she', o: 'her', p: 'her' } : { s: 'he', o: 'him', p: 'his' });
 const fam = (p) => (p.ext.fam || (p.ext.fam = { lastBirthTick: null, births: 0, stillbirths: 0 }));
 const setting = (k, d) => (W && W.settings && W.settings[k] !== undefined ? W.settings[k] : d);
-const moodlet = (p, id, label, value, ticks) => W.addMoodlet(p, { id, label, value, untilTick: W.tick + ticks });
+const moodlet = (p, id, label, value, ticks) => W.moodlet(p, id, label, value, ticks);
 
 // ------------------------------------------------------------------ family-tree helpers
 export function getParents(p) { p = asP(p); return p ? [P(p.family.motherId), P(p.family.fatherId)].filter(Boolean) : []; }

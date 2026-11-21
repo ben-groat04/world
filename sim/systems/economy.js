@@ -1,5 +1,6 @@
 // Economy: jobs, production chains (farm->mill->bakery), market prices, wages, businesses, housing, debt, inheritance.
 // Pure sim code: world.rng only, no DOM. Heavy work is in onHour/onDay; onTick is unused.
+import { clamp } from '../util.js';
 import { JOBS, BUILDING_TYPES, isOpen } from '../map.js';
 import { businessName } from '../names.js';
 import { TICKS_PER_YEAR } from '../time.js';
@@ -26,7 +27,6 @@ const TRADE_JOBS = ['baker', 'smith', 'tailor', 'carpenter', 'miller', 'server',
 const MIN_AGE = { doctor: 24, teacher: 22, priest: 26, captain: 28, mayor: 30, clerk: 18, guard: 18, innkeeper: 22, tavernkeeper: 20 };
 
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
-const clamp = (x, a, b) => (x < a ? a : x > b ? b : x);
 const round = (x) => Math.round(x);
 const age = (w, p) => w.ageOf(p);
 
@@ -812,7 +812,7 @@ function registerInterventions(w) {
     const [world, p] = argsOf(a, b); const amt = p.amount ?? 2500;
     const living = world.living().filter((x) => age(world, x) >= 16);
     const lucky = p.personId != null ? [world.people.get(p.personId)].filter(Boolean) : world.rng.shuffle(living.slice()).slice(0, Math.max(3, Math.round(living.length * 0.06)));
-    for (const x of lucky) { const g = p.personId != null ? amt : Math.round(amt * world.rng.float(0.15, 0.6)); x.money += g; world.addMemory(x, { type: 'windfall', text: `Struck it rich in the gold rush, bringing home ${g} crowns.`, otherIds: [], weight: 0.9, importance: 5 }); x.moodlets?.push({ id: 'goldRush', label: 'Struck it rich', value: 0.6, untilTick: world.tick + 20 * 144 }); }
+    for (const x of lucky) { const g = p.personId != null ? amt : Math.round(amt * world.rng.float(0.15, 0.6)); x.money += g; world.addMemory(x, { type: 'windfall', text: `Struck it rich in the gold rush, bringing home ${g} crowns.`, otherIds: [], weight: 0.9, importance: 5 }); world.moodlet(x, 'goldRush', 'Struck it rich', 0.6, 20 * 144); }
     for (const x of living) if (!lucky.includes(x)) x.money += Math.round(amt * 0.01);
     for (const bb of world.buildings.values()) if (COMMERCIAL.has(bb.type) && !bb.closed) bb.funds = (bb.funds || 0) + 40;
     eco(world).market.inflation = 1.18;

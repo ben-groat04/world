@@ -8,11 +8,11 @@
 // p.ext.migration.{reason,departTick} record the departure; the 'emigrate' world event {person, reason, group} fires.
 // Arrivals: p.ext.migration = {arrivedTick, origin, reason, kind, secret?}, event 'immigrate' {person, kind}.
 // world.migrationState = {initialPop, arrived, departed, emigrants:[ids]}; world.migrationApi = {arrive, emigrate, pressure}.
+import { clamp } from '../util.js';
 
 import { firstName, surname } from '../names.js';
 
 const TPD = 144, DPY = 112, YEAR = TPD * DPY;
-const clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x);
 let W = null;
 const P = (id) => (id == null || !W ? null : W.people.get(id) || null);
 const nm = (p) => `${p.firstName} ${p.lastName}`;

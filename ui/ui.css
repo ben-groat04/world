@@ -1,18 +1,18 @@
 /* Hollowmere UI modules: inspector, gazette, stats, directory, graves, god mode, time-lapse, dock.
    Warm storybook paper by day, lamplit brown by night. Everything is prefixed hm-. */
 .hm-dock, .hm-tl {
-  --hm-bg: #f5eddb; --hm-bg2: #ece1c8; --hm-card: #fbf6e9; --hm-ink: #3a2f22; --hm-muted: #8a7b64; --hm-line: #d9cbae;
-  --hm-accent: #b5532f; --hm-accent-ink: #fff8ec; --hm-gold: #c9962b; --hm-good: #5f9a52; --hm-bad: #c0443b;
-  --hm-c1: #3f74b5; --hm-c2: #d4762a; --hm-c3: #4f9a5c; --hm-c4: #a257ad; --hm-c5: #b88d1d; --hm-band: rgba(95, 154, 82, .16);
-  --hm-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+  --hm-bg: #f3f5f8; --hm-bg2: #e7ebf0; --hm-card: #ffffff; --hm-ink: #1b2430; --hm-muted: #6b7686; --hm-line: #d9dfe7;
+  --hm-accent: #2f6fed; --hm-accent-ink: #ffffff; --hm-gold: #f0a020; --hm-good: #23a26d; --hm-bad: #d9473f;
+  --hm-c1: #2f6fed; --hm-c2: #f08a24; --hm-c3: #23a26d; --hm-c4: #9b5de5; --hm-c5: #e0a800; --hm-band: rgba(35, 162, 109, .14);
+  --hm-serif: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --hm-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --hm-shadow: 0 6px 24px rgba(60, 40, 10, .22);
+  --hm-shadow: 0 6px 24px rgba(20, 30, 50, .22);
 }
 @media (prefers-color-scheme: dark) {
   .hm-dock, .hm-tl {
-    --hm-bg: #231d17; --hm-bg2: #2d251d; --hm-card: #2b241c; --hm-ink: #eadfc9; --hm-muted: #a1927a; --hm-line: #433829;
-    --hm-accent: #e0875a; --hm-accent-ink: #261a10; --hm-gold: #e0b24a; --hm-good: #7ab96a; --hm-bad: #e0645a;
-    --hm-c1: #6ea0e0; --hm-c2: #eb9650; --hm-c3: #78c286; --hm-c4: #c585d0; --hm-c5: #e0bd52; --hm-band: rgba(122, 185, 106, .16); --hm-shadow: 0 -6px 28px rgba(0, 0, 0, .5);
+    --hm-bg: #161c25; --hm-bg2: #1e2632; --hm-card: #202a37; --hm-ink: #e8ecf1; --hm-muted: #8e9aab; --hm-line: #2c3646;
+    --hm-accent: #5b97ff; --hm-accent-ink: #0c1420; --hm-gold: #ffc24a; --hm-good: #4cc58f; --hm-bad: #ff6a60;
+    --hm-c1: #5b97ff; --hm-c2: #ffa24d; --hm-c3: #4cc58f; --hm-c4: #b88af0; --hm-c5: #ffc24a; --hm-band: rgba(76, 197, 143, .14); --hm-shadow: 0 -6px 28px rgba(0, 0, 0, .55);
   }
 }
 .hm-dock *, .hm-tl * { box-sizing: border-box; }
@@ -113,11 +113,11 @@
 .hm-life time { display: block; font: 700 10px var(--hm-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--hm-muted); }
 
 /* ---------- gazette */
-.hm-mast { text-align: center; margin: 0 0 8px; } .hm-mast .rule { height: 5px; border-top: 2px solid var(--hm-ink); border-bottom: 1px solid var(--hm-ink); margin: 2px 0 6px; }
-.hm-mast h1 { margin: 0; font: 900 clamp(24px, 6vw, 31px)/1.05 var(--hm-serif); letter-spacing: .01em; font-variant: small-caps; }
-.hm-mast .sub { display: flex; justify-content: center; gap: 10px; font: italic 11px var(--hm-serif); color: var(--hm-muted); padding: 3px 0 4px; } .hm-mast .mid { color: var(--hm-gold); }
+.hm-mast { text-align: left; margin: 0 0 8px; } .hm-mast .rule { display: none; }
+.hm-mast h1 { margin: 0; font: 800 clamp(20px, 5vw, 24px)/1.1 var(--hm-sans); letter-spacing: -.01em; }
+.hm-mast .sub { display: flex; justify-content: flex-start; gap: 10px; font: 600 11px var(--hm-sans); color: var(--hm-muted); padding: 3px 0 4px; } .hm-mast .mid { color: var(--hm-gold); }
 .hm-year { margin: 14px 0 4px; text-align: center; font: 700 11px var(--hm-sans); letter-spacing: .3em; text-transform: uppercase; color: var(--hm-muted); display: flex; align-items: center; gap: 10px; } .hm-year::before, .hm-year::after { content: ''; flex: 1; border-top: 1px solid var(--hm-line); }
-.hm-item { padding: 7px 0 8px; border-bottom: 1px solid color-mix(in srgb, var(--hm-line) 70%, transparent); font-family: var(--hm-serif); }
+.hm-item { padding: 7px 0 8px; border-bottom: 1px solid color-mix(in srgb, var(--hm-line) 70%, transparent); }
 .hm-item p { margin: 0; font-size: 14px; line-height: 1.42; } .hm-item .meta { display: flex; gap: 8px; align-items: center; font: 10px var(--hm-sans); text-transform: uppercase; letter-spacing: .07em; color: var(--hm-muted); margin-bottom: 1px; }
 .hm-item .tp { padding: 0 6px; border-radius: 4px; background: var(--hm-bg2); } .hm-item .star { color: var(--hm-accent-ink); background: var(--hm-accent); padding: 0 6px; border-radius: 4px; font-weight: 800; letter-spacing: .12em; }
 .hm-item.minor p { font-size: 12.5px; color: var(--hm-muted); } .hm-item.major p { font-weight: 700; font-size: 15px; } .hm-item.extra { background: color-mix(in srgb, var(--hm-accent) 9%, transparent); border: 1px solid color-mix(in srgb, var(--hm-accent) 40%, transparent); border-radius: 10px; padding: 9px 11px; margin: 6px 0; } .hm-item.extra p { font: 800 17px/1.25 var(--hm-serif); }

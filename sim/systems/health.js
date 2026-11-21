@@ -4,9 +4,9 @@
 // Per-person state lives in p.ext.health; town state in world.healthState (+ world.town.graves). API: world.healthApi.
 // sim/ code: no DOM, world.rng only. Works if a person's actions are chosen externally (player): modifiers only affect AI
 // scoring and forced actions (funeral) are skipped for world.player; the 'funeral' world event carries details instead.
+import { clamp } from '../util.js';
 
 const TPD = 144, DPY = 112, YEAR = TPD * DPY;
-const clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x);
 let W = null;
 const P = (id) => (id == null || !W ? null : W.people.get(id) || null);
 const nm = (p) => `${p.firstName} ${p.lastName}`;
@@ -18,7 +18,7 @@ const pick = (a) => W.rng.pick(a);
 const chance = (x) => W.rng.next() < x;
 const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
 const numWord = (n) => (n <= 12 ? NUM[n] : String(n));
-const moodlet = (p, id, label, value, ticks) => W.addMoodlet(p, { id, label, value, untilTick: W.tick + ticks });
+const moodlet = (p, id, label, value, ticks) => W.moodlet(p, id, label, value, ticks);
 const mem = (p, type, text, otherIds, weight, importance) => W.addMemory(p, { type, text, otherIds: otherIds || [], weight, importance });
 const chron = (type, importance, text, people, buildingId) => W.chronicle.add({ type, importance, text, people: (people || []).filter((x) => x != null), buildingId });
 const rint = (a, b) => W.rng.int(a, b);
@@ -729,7 +729,7 @@ function registerInterventions(w) {
       const h = H(p); p.illness = null; h.incub = null; p.health = Math.max(p.health, 0.9);
       h.chronic = h.chronic.filter((c) => c.sev > 0.6);
       h.dep = 0; h.depressed = false; h.grief = prm.all ? h.grief : 0;
-      p.moodlets = p.moodlets.filter((m) => m.id !== 'sick'); world._sumMoodlets?.(p);
+      world.removeMoodlet(p, 'sick');
       mem(p, 'health', 'Was healed, almost miraculously, of every ailment.', [], 0.7, 3); k++;
     }
     return `${k} healed`;

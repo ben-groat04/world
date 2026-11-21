@@ -178,12 +178,16 @@ export class World {
     }
     return mem;
   }
-  // moodlet: {id, label, value (-1..1 contribution to mood), untilTick}; same id replaces.
+  // moodlet: {id, label, value (-1..1 contribution to mood), untilTick}; same id replaces; max 14 kept (oldest dropped).
   addMoodlet(p, m) {
-    const i = p.moodlets.findIndex((x) => x.id === m.id);
-    if (i >= 0) p.moodlets[i] = m; else p.moodlets.push(m);
+    const L = p.moodlets;
+    let i = -1;
+    for (let k = 0; k < L.length; k++) if (L[k].id === m.id) { i = k; break; }
+    if (i >= 0) L[i] = m; else { L.push(m); if (L.length > 14) L.shift(); }
     this._sumMoodlets(p);
   }
+  moodlet(p, id, label, value, ticks) { this.addMoodlet(p, { id, label, value, untilTick: this.tick + ticks }); }
+  removeMoodlet(p, id) { const L = p.moodlets; for (let k = L.length - 1; k >= 0; k--) if (L[k].id === id) { L.splice(k, 1); this._sumMoodlets(p); } }
   _sumMoodlets(p) { let s = 0; for (const m of p.moodlets) s += m.value; p.moodletSum = s > 1 ? 1 : s < -1 ? -1 : s; }
 
   // ---------- actions ----------

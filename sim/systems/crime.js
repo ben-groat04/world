@@ -1,5 +1,6 @@
 // Crime & justice: motives (poverty, greed, grudges, drink), opportunity, witnesses, the watch, trials, jail, revenge.
 // Pure sim code: world.rng only. Rates target a few offences a year per few hundred people; murder is very rare.
+import { clamp } from '../util.js';
 import { BUILDING_TYPES } from '../map.js';
 
 const DAY = 144;
@@ -8,7 +9,6 @@ const SEVERITY = { theft: 1, fraud: 2, burglary: 3, assault: 2, manslaughter: 4,
 const K_RATE = 0.015; // per-person daily attempt probability scale (times motive^2); tuned for ~1 offence / 40-80 people / year
 
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'a stranger');
-const clamp = (x, a, b) => (x < a ? a : x > b ? b : x);
 const he = (p) => (p.sex === 'F' ? 'she' : 'he');
 const his = (p) => (p.sex === 'F' ? 'her' : 'his');
 const him = (p) => (p.sex === 'F' ? 'her' : 'him');
@@ -23,7 +23,7 @@ function jailBuilding(w) { return w.buildingsOfType('jail')[0] || null; }
 function isPlayer(w, p) { return w.player != null && w.player === p.id; }
 function townName(w) { return w.town?.name || 'the town'; }
 function chron(w, type, importance, text, people, buildingId) { return w.chronicle.add({ type, importance, text, people: people.filter((x) => x != null), buildingId }); }
-function mood(w, p, id, label, v, days) { if (w.addMoodlet) w.addMoodlet(p, { id, label, value: v, untilTick: w.tick + days * DAY }); }
+function mood(w, p, id, label, v, days) { w.moodlet(p, id, label, v, days * DAY); }
 function night(w) { const h = w.time.hour; return h >= 22 || h < 5; }
 
 // ------------------------------------------------------------------ motive

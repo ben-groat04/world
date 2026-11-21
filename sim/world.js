@@ -6,7 +6,7 @@ import { Pathfinder } from './path.js';
 import { Chronicle } from './chronicle.js';
 import { Brain } from './brain.js';
 import { CORE_ACTIONS } from './actions.js';
-import { stepNeeds } from './needs.js';
+import { stepNeeds, NEEDS_PERIOD } from './needs.js';
 import { createPerson, generatePopulation, newRel, fullName } from './person.js';
 import defaultSystems from './systems/index.js';
 
@@ -235,6 +235,7 @@ export class World {
     const ca = p.currentAction;
     if (!ca) return;
     const def = ca._d;
+    stepNeeds(this, p); // settle needs under the ending action's effects
     if (ca.status === 1 && def.onEnd) def.onEnd(this, p, ca._b, ca);
     this.emit('actionEnd', { person: p, action: ca });
     p.currentAction = null; p.lastAction = ca.id;
@@ -256,6 +257,7 @@ export class World {
   }
   _begin(p, ca) {
     const def = ca._d, b = ca._b;
+    if (ca.status === 0) stepNeeds(this, p); // settle walking-time needs before perTick effects start
     this.brain.prepare(p);
     if (def.onStart && def.onStart(this, p, b, ca) === false) { p.currentAction = null; p.cooldown[def.id] = this.tick + 12; return false; }
     const dur = ca.duration ?? (def.duration ? def.duration(this, p, b, ca) : 6);
@@ -354,15 +356,12 @@ export class World {
     for (let li = 0; li < list.length; li++) {
       const p = list[li];
       if (!p.alive) continue;
-      stepNeeds(this, p);
-      if (p.jailedUntil > tick && p.currentAction && p.currentAction.id !== 'jailed' && !p.currentAction.forced) { /* crime system forces actions; nothing here */ }
+      if (tick - p.needsTick >= NEEDS_PERIOD) stepNeeds(this, p);
       let ca = p.currentAction;
       if (ca === null) { this.brain.decide(p); ca = p.currentAction; if (ca === null) continue; }
       if (ca.status === 0) { if (this._walk(p)) this._arrive(p); continue; }
       // doing
       const def = ca._d;
-      const pt = def._pt;
-      if (pt) { const n = p.needs; for (let k = 0; k < pt.length; k++) { const key = pt[k][0]; let v = n[key] + pt[k][1]; n[key] = v > 1 ? 1 : v < 0 ? 0 : v; } }
       if (def.onTick) def.onTick(this, p, ca._b, ca);
       if (!p.alive) continue;
       if (tick >= ca.untilTick) {

@@ -242,7 +242,7 @@ export function hear(world, hearer, rumor, teller) {
     return false;
   }
   hearer.rumors.push(copy);
-  if (hearer.rumors.length > 14) {
+  if (hearer.rumors.length > 8) {
     let wi = 0, wv = 1e9;
     hearer.rumors.forEach((x, i) => { const v = Math.abs(x.valence) * x.severity - (world.tick - x.tick) * 1e-4; if (v < wv) { wv = v; wi = i; } });
     hearer.rumors.splice(wi, 1);
@@ -466,7 +466,7 @@ export function converse(world, a, b, opts = {}) {
     addMoodlet(world, b, 'quarrel', 'Still fuming after a quarrel', -0.18, TPD);
     mem(world, a, 'argument', `Quarrelled with ${full(b)} ${cause}.`, [b.id], -0.5, 2);
     mem(world, b, 'argument', `Quarrelled with ${full(a)} ${cause}.`, [a.id], -0.5, 2);
-    const wit = (S.at.get(a.locationId) || []).length;
+    const wit = (S.at.get(placeKey(a)) || []).length;
     let escalate = false;
     if ((has(a, 'hothead') || has(b, 'hothead')) && (ctx.drunkA || ctx.drunkB || ra.grudge > 0.5) && rng.chance(0.25)) escalate = true;
     ctx.escalate = escalate;
@@ -475,7 +475,7 @@ export function converse(world, a, b, opts = {}) {
       if (r) {
         const subj = world.people.get(r.aboutId), oth = subj === a ? b : a;
         r.base = r.text = rumorText(world, 'quarrel', subj, { other: oth });
-        birthRumor(world, r, (S.at.get(a.locationId) || []).filter((x) => x !== a && x !== b).slice(0, 3));
+        birthRumor(world, r, (S.at.get(placeKey(a)) || []).filter((x) => x !== a && x !== b).slice(0, 3));
       }
     }
   } else if (type === 'apologize') {
@@ -561,51 +561,59 @@ function startProb(world, p, loc) {
   if (p.currentAction && p.currentAction.id === 'work') m *= 0.8;
   return m;
 }
+const TALK_EVERY = 3, TPY = 16128;
+const placeKey = (p) => (p.locationId != null ? p.locationId : 100000 + ((p.y >> 2) << 8) + (p.x >> 2));
 function onTick(world) {
-  const S = st(world), rng = world.rng, tick = world.tick, hour = world.time.hour;
+  const tick = world.tick;
+  if (tick % TALK_EVERY !== 0) return; // encounters are evaluated every 3rd tick with 3x the per-tick probability
+  const S = st(world), rng = world.rng, hour = world.time.hour;
+  const living = world.living();
+  // bucket people by place: building id, or a 4-tile outdoor cell (keys offset past the building ids)
   const buckets = new Map();
-  for (const p of world.living()) {
-    let key;
-    if (p.locationId != null) key = p.locationId;
-    else key = 'o' + ((p.x / 4) | 0) + ',' + ((p.y / 4) | 0);
-    let arr = buckets.get(key);
-    if (!arr) buckets.set(key, (arr = []));
-    arr.push(p);
+  for (let i = 0; i < living.length; i++) {
+    const p = living[i];
+    const key = placeKey(p);
+    const arr = buckets.get(key);
+    if (arr === undefined) buckets.set(key, [p]); else arr.push(p);
   }
   S.at = buckets;
+  const minBorn = tick - 3 * TPY;
   for (const [key, arr] of buckets) {
     const n = arr.length;
     if (n < 2) continue;
-    const loc = typeof key === 'string' ? null : world.buildings.get(key);
+    const loc = key >= 100000 ? null : world.buildings.get(key);
     for (let i = 0; i < n; i++) {
       const p = arr[i];
-      if ((p._nextTalk || 0) > tick || p.id === world.player || !p.alive) continue;
-      if (ageOf(world, p) < 3 || asleep(p, hour)) continue;
+      if (p._nextTalk > tick || p.birthTick > minBorn || !p.alive) continue;
+      if (p.id === world.player) continue;
+      const ca = p.currentAction;
+      if (ca !== null && (ca.id === 'sleep' || ca.id === 'bathe')) continue;
       if (loc && loc.id === p.homeId && (hour >= 22 || hour < 6)) continue;
       if (p.illness && p.illness.severity > 0.6) continue;
-      if (!rng.chance(startProb(world, p, loc))) continue;
+      if (rng.next() >= Math.min(0.95, startProb(world, p, loc) * TALK_EVERY)) continue;
       // choose a partner among up to 4 random others
       const cands = [];
       for (let k = 0; k < 4 && cands.length < 3; k++) {
         const q = arr[rng.int(0, n - 1)];
-        if (q === p || !q.alive || cands.includes(q) || (q._nextTalk || 0) > tick || asleep(q, hour)) continue;
-        if (ageOf(world, q) < 3) continue;
-        const r = p.relationships && p.relationships.get(q.id);
+        if (q === p || !q.alive || cands.includes(q) || q._nextTalk > tick || q.birthTick > minBorn) continue;
+        const qa = q.currentAction;
+        if (qa !== null && (qa.id === 'sleep' || qa.id === 'bathe')) continue;
+        const r = p.relationships.get(q.id);
         if (r && tick - (r._talk || -999) < 6) continue; // same pair cooldown (1 hour)
         cands.push(q);
       }
       if (!cands.length) continue;
       const other = rng.weighted(cands, (q) => {
-        const r = p.relationships && p.relationships.get(q.id);
+        const r = p.relationships.get(q.id);
         let w = 0.4;
         if (r) w += r.familiarity * 2 + Math.max(0, r.affinity) * 2 + (r.attraction > 0.3 ? 1 : 0) - Math.max(0, -r.affinity) * 0.8 + (r.grudge || 0) * (has(p, 'hothead') ? 2 : 0);
         if (p._visitFriendId === q.id) w += 4;
-        if (ageOf(world, p) < 12 && ageOf(world, q) < 12) w += 1;
+        if (tick - p.birthTick < 12 * TPY && tick - q.birthTick < 12 * TPY) w += 1;
         return Math.max(0.05, w);
       });
       if (!loc) {
         // outdoor passers-by: only a brief greeting unless acquainted
-        const r = p.relationships && p.relationships.get(other.id);
+        const r = p.relationships.get(other.id);
         if (!r || r.familiarity < 0.2) { converse(world, p, other, { type: 'greeting' }); p._nextTalk = other._nextTalk = tick + 2; continue; }
       }
       const dur = rng.int(2, 5);
@@ -619,18 +627,21 @@ function onTick(world) {
 function dailyDecay(world) {
   const tick = world.tick;
   for (const p of world.living()) {
-    if (!p.relationships) continue;
-    for (const [id, r] of p.relationships) {
+    const rels = p.relationships;
+    const spouse = p.family.spouseId;
+    for (const [id, r] of rels) {
       if (r.grudge) r.grudge = Math.max(0, r.grudge - 0.004);
       const days = (tick - Math.max(r.lastTick || 0, r._talk || 0)) / TPD;
       if (days < 10) continue;
-      const fam = isFam(r) || (p.family && p.family.spouseId === id);
+      const tg = r.tags;
+      const fam = spouse === id || (tg.length > 0 && tg.includes('family'));
+      // prune stale passing acquaintances (keeps relationship maps small: they are scanned by many systems)
+      if (!fam && days >= 25 && r.familiarity < 0.2 && !r.grudge && (tg.length === 0 || (tg.length === 1 && tg[0] === 'acquaintance')) && r.attraction < 0.3 && r.affinity > -0.2 && r.affinity < 0.2) { rels.delete(id); continue; }
       const k = fam ? 0.15 : 1;
       r.familiarity = Math.max(fam ? 0.5 : 0, r.familiarity - 0.0012 * k);
-      if (!fam && r.affinity > 0 && r.tags.length < 6) r.affinity = Math.max(0, r.affinity - 0.002 * (1 + days / 60));
+      if (!fam && r.affinity > 0 && tg.length < 6) r.affinity = Math.max(0, r.affinity - 0.002 * (1 + days / 60));
       else if (!fam && r.affinity < 0) r.affinity = Math.min(0, r.affinity + 0.0015); // anger cools
-      const o = world.people.get(id);
-      if (o && (r.tags.length > 1 || r.tags.length === 1 && r.tags[0] !== 'family') && !fam) updateTags(world, p, o, r);
+      if (!fam && (tg.length > 1 || (tg.length === 1 && tg[0] !== 'family'))) { const o = world.people.get(id); if (o) updateTags(world, p, o, r); }
     }
     p._talkCount = (p._talkCount || 0) * 0.86;
     if (p._hang) { for (const [k, v] of p._hang) { const nv = v * 0.97; if (nv < 0.4) p._hang.delete(k); else p._hang.set(k, nv); } }
@@ -706,7 +717,8 @@ function loneliness(world) {
     const age = ageOf(world, p);
     if (age < 8) continue;
     if ((p._talkCount || 0) < 0.8 && p.needs.social < 0.35) {
-      const nf = getFriends(world, p).length;
+      let nf = 0;
+      for (const [id, r] of p.relationships) if (r.tags.length && (r.tags.includes('friend') || r.tags.includes('close_friend'))) { const o = world.people.get(id); if (o && o.alive && ++nf > 1) break; }
       if (nf <= 1) { addMoodlet(world, p, 'lonely', 'Lonely and isolated', -0.15 - 0.1 * (1 - p.personality.extraversion < 0.5 ? 1 : 0), 3 * TPD); if (!p._thoughtTick || world.tick - p._thoughtTick > 20) think(world, p, 'Nobody has spoken to me properly in days.'); }
     }
   }
@@ -802,26 +814,29 @@ function whereId(world, p, action) {
 }
 const scoreModifiers = [
   function socialBias(world, p, action, score) {
-    if (!(score > 0) || !LEISURE.test(action.id)) return score;
+    let lf = action._leisure;
+    if (lf === undefined) lf = action._leisure = LEISURE.test(action.id) ? (/soci|chat|visit/.test(action.id) ? 2 : 1) : 0;
+    if (lf === 0 || !(score > 0)) return score;
     const S = world.social;
     if (!S) return score;
     let m = 1;
-    if (/soci|chat|visit/.test(action.id)) m += 0.5 * (1 - p.needs.social) * (p._talkCount < 0.8 ? 1.5 : 1);
-    // use target chosen by the brain context when available, else ask the action
-    let id = null;
-    const c = world.brain && world.brain.ctx;
-    if (action.where) id = whereId(world, p, action);
-    if (id == null && c && c.target != null && typeof c.target !== 'object') id = c.target;
+    if (lf === 2) m += 0.5 * (1 - p.needs.social) * (p._talkCount < 0.8 ? 1.5 : 1);
+    // use the target chosen by the brain context when available, else ask the action
+    let id = world.brain.ctx.target;
+    if (id == null && action.where) id = whereId(world, p, action);
+    else if (typeof id === 'object') id = null;
     if (id != null) {
       const arr = S.at.get(id);
-      if (arr && p.relationships) {
+      if (arr && arr.length > 1) {
         let f = 0, e = 0;
+        const rels = p.relationships;
         for (let i = 0; i < arr.length && i < 16; i++) {
           const o = arr[i];
           if (o === p) continue;
-          const r = p.relationships.get(o.id);
-          if (!r) continue;
-          if (r.tags.includes('close_friend')) f += 1.4; else if (r.tags.includes('friend')) f += 1; else if (r.tags.includes('enemy')) e += 1.2; else if (r.tags.includes('rival')) e += 0.6;
+          const r = rels.get(o.id);
+          if (r === undefined || r.tags.length === 0) continue;
+          const tg = r.tags;
+          if (tg.includes('close_friend')) f += 1.4; else if (tg.includes('friend')) f += 1; else if (tg.includes('enemy')) e += 1.2; else if (tg.includes('rival')) e += 0.6;
         }
         m += Math.min(0.6, f * 0.18) * (0.5 + p.personality.extraversion) - Math.min(0.5, e * 0.2);
       }

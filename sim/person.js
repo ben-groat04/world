@@ -71,7 +71,7 @@ export function createPerson(world, o = {}) {
     mood: 0.1, moodlets: [], moodletSum: 0, health: 1, illness: null, money: o.money ?? 0, inventory: { food: rng.int(1, 4), goods: 0 }, reputation: 0,
     relationships: new Map(), family: { fatherId: father ? father.id : null, motherId: mother ? mother.id : null, spouseId: null, childrenIds: [], exSpouseIds: [] },
     romance: { partnerId: null, status: null, sinceTick: 0 }, memories: [], rumors: [], pregnant: null, jailedUntil: 0,
-    currentAction: null, thought: '', lastAction: null, cooldown: {}, nextThink: 0, lastMeal: -rng.int(6, 40), starve: 0, workedTicks: 0, cell: -1, seg: [], segTick: -1, speed: 6,
+    currentAction: null, thought: '', lastAction: null, cooldown: {}, nextThink: 0, lastMeal: -rng.int(6, 40), starve: 0, workedTicks: 0, cell: -1, needsTick: world.tick - (world.nextPersonId % 6), seg: [], segTick: -1, speed: 6,
     schedule: { wake, bed, offDay: rng.int(0, 5) }, ext: {}, bubble: null,
   };
   p.needRate = makeNeedRates(personality);

@@ -204,7 +204,7 @@ export class Store {
   constructor() {
     this.state = {
       ready: false, time: null, speed: 'life', interventions: [], buildings: [], chron: [], series: [], directory: null,
-      detail: null, selectedId: null, following: false, townName: 'Hollowmere', people: new Float32Array(0), lastJump: null, log: [],
+      detail: null, selectedId: null, map: null, names: new Map(), emotes: [], bubbles: [], occ: null, trails: null, trailTick: -1, bdetail: null, following: false, townName: 'Hollowmere', people: new Float32Array(0), lastJump: null, log: [],
     };
     this._subs = {}; this.backend = null;
   }
@@ -218,13 +218,17 @@ export class Store {
   intervene(kind, params = {}) { this.post({ cmd: 'intervene', kind, params }); }
   jumpToNextEvent(minImportance = 3) { this.post({ cmd: 'jump', minImportance }); }
   playerCommand(cmd) { this.post({ cmd: 'player', ...cmd }); }
+  requestBuilding(id) { this.post({ cmd: 'building', id }); }
   requestDirectory() { this.post({ cmd: 'directory' }); }
   // ---- inbound
   apply(m) {
     const s = this.state;
     switch (m.t) {
-      case 'ready': Object.assign(s, { ready: true, interventions: m.interventions || [], buildings: m.buildings || [], townName: m.town || s.townName, series: m.series || [], chron: m.chron || [], time: m.time }); this.emit('ready', s); this.emit('chron', s.chron); this.emit('stats', s.series); this.emit('time', s.time); this.emit('interventions', s.interventions); break;
-      case 'frame': s.time = m.time; if (m.people) s.people = m.people; this.emit('time', s.time); this.emit('frame', m); break;
+      case 'ready': Object.assign(s, { ready: true, map: m.map || null, interventions: m.interventions || [], buildings: m.buildings || [], townName: m.town || s.townName, series: m.series || [], chron: m.chron || [], time: m.time }); this.emit('ready', s); this.emit('chron', s.chron); this.emit('stats', s.series); this.emit('time', s.time); this.emit('interventions', s.interventions); break;
+      case 'frame': s.time = m.time; if (m.people) s.people = m.people; s.occ = m.occ || s.occ; s.bubbles = m.bubbles || []; s.trails = m.trails || null; s.trailTick = m.trails ? m.time.tick : -1; if (m.emotes && m.emotes.length) { for (const e of m.emotes) s.emotes.push(e); if (s.emotes.length > 200) s.emotes.splice(0, s.emotes.length - 200); } this.emit('time', s.time); this.emit('frame', m); break;
+      case 'names': for (const r of m.list) s.names.set(r[0], { first: r[1], last: r[2], job: r[3], skin: r[4], hair: r[5] }); break;
+      case 'building': if (m.b) { s.bdetail = m.b; this.emit('building', m.b); } break;
+      case 'newbuilding': if (s.map) s.map.buildings.push(m.b); this.emit('newbuilding', m.b); break;
       case 'detail': if (m.p && m.p.id === s.selectedId) { s.detail = m.p; this.emit('detail', m.p); } break;
       case 'chron': for (const e of m.entries) s.chron.push(e); if (s.chron.length > 3000) s.chron.splice(0, s.chron.length - 3000); this.emit('chron', m.entries); break;
       case 'stats': for (const x of m.samples) s.series.push(x); this.emit('stats', s.series); break;
@@ -246,21 +250,26 @@ export class Host {
     this.outbox = []; this.series = []; this.lastDetail = 0; this.lastFrame = 0; this.lastSample = -1e9;
     world.on('chronicle', (e) => { this.outbox.push(chronEntry(world, e)); if (this.jump && e.importance >= this.jump.min && e.tick > this.jump.start) this._finishJump(e); });
     world.on('day', () => { if (world.time.totalDays % 14 === 0) this._sample(); });
+    this.emotes = []; this.known = new Map(); this.lastTrailTick = -1; this.lastNames = 0;
+    world.on('conversation', (e) => { if (this.tps <= 700) this.emotes.push([e.a, e.b, e.type, e.outcome || '']); });
+    world.on('buildingAdded', (e) => { if (this.ready) this.send({ t: 'newbuilding', b: staticBuilding(e.building) }); });
     this._sample();
   }
   _sample() { const s = statsSample(this.w); this.series.push(s); this.pendingSamples = (this.pendingSamples || []); this.pendingSamples.push(s); }
   hello() {
     const w = this.w;
-    this.send({ t: 'ready', interventions: interventionList(w), buildings: buildingList(w), town: w.town?.name, series: this.series.slice(), chron: w.chronicle.entries.slice(-400).map((e) => chronEntry(w, e)), time: clockInfo(w) });
+    this.ready = true;
+    this.send({ t: 'ready', map: mapPayload(w), interventions: interventionList(w), buildings: buildingList(w), town: w.town?.name, series: this.series.slice(), chron: w.chronicle.entries.slice(-400).map((e) => chronEntry(w, e)), time: clockInfo(w) });
     this.outbox.length = 0; this.pendingSamples = [];
   }
-  setTier(id) { const t = TIERS.find((x) => x.id === id) || TIERS[2]; this.tier = t.id; this.tps = t.tps; this.send({ t: 'speed', tier: t.id }); }
+  setTier(id) { const t = TIERS.find((x) => x.id === id) || TIERS[2]; this.tier = t.id; this.tps = t.tps; this.w.recordTrails = t.tps > 0 && t.tps <= 16; this.send({ t: 'speed', tier: t.id }); }
   _finishJump(e) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', entry: chronEntry(this.w, e) }); }
   command(m) {
     const w = this.w;
     switch (m.cmd) {
       case 'setSpeed': this.setTier(m.tier); break;
       case 'select': this.selected = m.id; this.lastDetail = 0; break;
+      case 'building': this.send({ t: 'building', b: buildingDetail(w, m.id) }); break;
       case 'directory': this.send({ t: 'directory', d: directorySnapshot(w) }); break;
       case 'jump': this.jump = { min: m.minImportance || 3, start: w.tick, limit: w.tick + TICKS_PER_YEAR * 2 }; this.tier = 'max'; this.tps = Infinity; this.send({ t: 'speed', tier: 'max' }); break;
       case 'intervene': {
@@ -292,11 +301,27 @@ export class Host {
     }
     return n;
   }
+  _names(now) {
+    if (now - this.lastNames < 700 && this.known.size) return; this.lastNames = now;
+    const out = [];
+    for (const p of this.w.living()) { if (this.known.get(p.id) !== p.job) { this.known.set(p.id, p.job); out.push([p.id, p.firstName, p.lastName, p.job, p.genes?.skinTone ?? 0.5, p.genes?.hairColor ?? 0.3]); } }
+    if (out.length) this.send({ t: 'names', list: out });
+  }
   // flush snapshots. call ~25 Hz
   flush(now, { frames = true } = {}) {
     const w = this.w;
-    if (frames) { const pk = packPeople(w); this.send({ t: 'frame', time: clockInfo(w), people: pk }, pk.buffer); }
-    else this.send({ t: 'frame', time: clockInfo(w) });
+    this._names(now);
+    if (frames) {
+      const pk = packPeople(w), extra = { t: 'frame', time: clockInfo(w), people: pk };
+      const slow = this.tps <= 700;
+      if (this.emotes.length) extra.emotes = this.emotes.splice(0, 60);
+      if (slow) {
+        const bub = []; for (const p of w.living()) if (p.bubble && p.bubble.until > w.tick) bub.push([p.id, p.bubble.text]); extra.bubbles = bub;
+        if (w.recordTrails && w.tick !== this.lastTrailTick) { this.lastTrailTick = w.tick; const tr = []; for (const p of w.living()) if (p.segTick === w.tick && p.seg.length >= 4) tr.push(p.id, p.seg.length / 2, ...p.seg); extra.trails = new Float32Array(tr); }
+      }
+      const occ = []; for (const b of w.buildings.values()) if (!b.open && b.occupants && b.occupants.size) occ.push(b.id, b.occupants.size); extra.occ = new Int16Array(occ);
+      this.send(extra, pk.buffer);
+    } else this.send({ t: 'frame', time: clockInfo(w) });
     if (this.outbox.length) { this.send({ t: 'chron', entries: this.outbox.splice(0, 400) }); this.outbox.length = 0; }
     if (this.pendingSamples && this.pendingSamples.length) { this.send({ t: 'stats', samples: this.pendingSamples }); this.pendingSamples = []; }
     const gap = this.tps === Infinity || this.tps > 3000 ? 600 : 220;
@@ -322,9 +347,38 @@ export function createLocalSource(world, { drive = false, hz = 5 } = {}) {
   const host = new Host(world, (m) => store.apply(m), { drive });
   let last = performance.now();
   const drv = drive ? setInterval(() => { const now = performance.now(); host.advance(Math.min(0.25, (now - last) / 1000), 10); last = now; }, 16) : 0;
-  const timer = setInterval(() => host.flush(performance.now(), { frames: false }), Math.round(1000 / hz));
+  const timer = setInterval(() => host.flush(performance.now(), { frames: drive }), drive ? 40 : Math.round(1000 / hz));
   store.backend = { post: (m) => host.command(m), host, stop: () => { clearInterval(timer); if (drv) clearInterval(drv); }, pump: (dt) => host.advance(dt) };
   host.hello();
+  return store;
+}
+
+// Preferred entry for the app: module Worker, falling back to the main thread if workers fail or never answer.
+export function createAutoSource({ seed = 1, population = 220, timeoutMs = 12000, forceLocal = false } = {}) {
+  const store = new Store();
+  store.mode = 'worker';
+  const toLocal = async (why) => {
+    if (store.mode === 'local') return;
+    console.warn('[hollowmere] worker unavailable (' + why + '), running on main thread');
+    store.mode = 'local'; try { store.backend?.terminate?.(); } catch (e) { /* ignore */ }
+    const { World } = await import('../sim/world.js');
+    const world = new World({ seed, population });
+    const host = new Host(world, (m) => store.apply(m), { drive: true });
+    let last = performance.now();
+    const drv = setInterval(() => { const now = performance.now(); host.advance(Math.min(0.25, (now - last) / 1000), host.tps === Infinity ? 18 : 8); last = now; }, 16);
+    const fl = setInterval(() => host.flush(performance.now(), { frames: true }), 40);
+    store.backend = { post: (m) => host.command(m), host, stop: () => { clearInterval(drv); clearInterval(fl); } };
+    host.hello(); host.setTier(store.state.speed);
+  };
+  if (forceLocal || typeof Worker === 'undefined') { toLocal('forced'); return store; }
+  try {
+    const wk = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
+    store.backend = { post: (m) => wk.postMessage(m), terminate: () => wk.terminate() };
+    wk.onmessage = (e) => store.apply(e.data);
+    wk.onerror = (e) => { if (!store.state.ready) toLocal(e.message || 'error'); else console.error('[hollowmere worker]', e.message || e); };
+    wk.postMessage({ cmd: 'init', seed, population });
+    setTimeout(() => { if (!store.state.ready) toLocal('timeout'); }, timeoutMs);
+  } catch (e) { toLocal(String(e)); }
   return store;
 }
 

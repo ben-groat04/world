@@ -13,6 +13,13 @@ const uniTerm = (r) => { const m = r.month, d = r.dom; return (m === 8 && d >= 2
 
 /** Work for person p on day D: null (not working) | {s, e, kind, night}. Hours are floats since midnight of D (e may exceed 24). */
 export function workToday(W, p, D, rec) {
+  const rt = p.ext.rt, c0 = rt.wc0, c1 = rt.wc1;
+  if (c0 && c0.D === D) return c0.v; if (c1 && c1.D === D) return c1.v;
+  const v = workToday0(W, p, D, rec);
+  if (!c0 || (c1 && c0.D < c1.D)) rt.wc0 = { D, v }; else rt.wc1 = { D, v };
+  return v;
+}
+function workToday0(W, p, D, rec) {
   const q = p.ext.pop, rt = p.ext.rt, pack = W.pack;
   if (q.activity !== 'employed' && !(q.activity === 'student' && q.occ)) return null;
   const pat = pack.meta.patterns[q.pattern]; if (!pat) return null;
@@ -194,7 +201,8 @@ export function buildPlan(W, p, D, wakeTickAt) {
     const blk = W.makeOuting(p, D, rec, wsh, L, q);
     if (!blk) continue;
     const tot = blk.tripBefore + blk.dur + blk.tripAfter;
-    for (const [g0, g1] of gaps()) {
+    for (const [g0, g1x] of gaps()) {
+      const g1 = wsh.kind === 'nightout' && g1x === bed ? 27.2 : g1x;
       let a = Math.max(wsh.a - blk.tripBefore, g0 + 0.1);
       if (a + tot > g1 - 0.1) { if (g1 - g0 - 0.2 >= tot && a > g0 + 0.1) a = g1 - 0.1 - tot; else continue; }
       if (a < g0 + 0.05) continue;
@@ -231,31 +239,18 @@ export function buildPlan(W, p, D, wakeTickAt) {
   for (const b of tl) { if (b.a > c) { fill(c, b.a); } parts.push(...final.splice(0)); parts.push(b); c = Math.max(c, b.b); }
   fill(c, Math.max(c, bed)); parts.push(...final.splice(0));
   parts.sort((x, y) => x.a - y.a);
-  // ---- emit entries; dedupe contiguous same-state
-  const nextWake = wakeHour(W, p, D + 1) + 24;
-  const night = w && w.night && !sick;
-  let t0 = hourToTick(cal, D, wake);
-  if (parts.length && wakeTickAt !== undefined) t0 = wakeTickAt;
-  const e = [];
-  let lastKey = '';
+  // ---- emit entries (merge contiguous identical states), then the sleep block and the BUILD sentinel at the next wake
+  const e = []; let lastKey = '', prev = wakeTickAt - 1;
   for (const b of parts) {
-    const k = b.act + ':' + b.pt + ':' + b.pid; const tk = Math.max(hourToTick(cal, D, b.a), (e.length ? e[e.length - STRIDE] + 1 : t0));
-    if (k === lastKey) continue; lastKey = k;
+    const k = b.act + ':' + b.pt + ':' + b.pid; if (k === lastKey) continue; lastKey = k;
+    const tk = Math.max(hourToTick(cal, D, b.a), prev + 1); prev = tk;
     e.push(tk, b.act, b.pt, b.pid, b.aux || 0);
   }
   const lastEnd = parts.length ? parts[parts.length - 1].b : wake;
-  const slAct = night || (w === null && false) ? A.sleep_day : (w && w.night ? A.sleep_day : A.sleep);
-  const sleepStart = Math.max(lastEnd, bed >= 99 ? lastEnd : bed);
-  const nextTick = Math.max(hourToTick(cal, D, nextWake), (e.length ? e[e.length - STRIDE] : t0) + 2);
-  const nextW = hourToTick(cal, D + 1, wakeHour(W, p, D + 1));
-  const endTick = Math.max(nextW, e.length ? e[e.length - STRIDE] + 2 : t0 + 2);
-  const prevNight = false;
-  const sleepAct = w && w.night ? A.sleep_day : A.sleep;
-  e.push(Math.max(hourToTick(cal, D, sleepStart), (e.length ? e[e.length - STRIDE] + 1 : t0)), A.sleep, 0, 0, 0);
-  // sleep after a night shift is labelled as day sleep
-  const sa = e.length - STRIDE; const pwN = e[sa] < endTick; if (e[sa] >= endTick) e.length = sa + 0;
-  if (e.length && e[e.length - STRIDE + 1] === A.sleep && W.isDaySleep(p, D, e[e.length - STRIDE])) e[e.length - STRIDE + 1] = A.sleep_day;
-  e.push(Math.max(endTick, (e.length ? e[e.length - STRIDE] + 1 : t0 + 1)), A.build, 0, 0, 0);
+  const nightW = w && w.night && !sick;
+  const sTick = Math.max(hourToTick(cal, D, bed >= 99 ? lastEnd : Math.max(lastEnd, bed)), prev + 1);
+  const endTick = Math.max(hourToTick(cal, D + 1, wakeHour(W, p, D + 1)), sTick + 6);
+  e.push(sTick, nightW ? A.sleep_day : A.sleep, 0, 0, 0, endTick, A.build, 0, 0, 0);
   return e;
 }
 
@@ -273,9 +268,9 @@ function pickHome(W, p, rec, h, age, wend, ev, D, k, q) {
   if (age >= 66 && h >= 13.8 && h < 16.2 && r < 0.4) return A.nap;
   if (h >= 14 && h < 17 && q.activity === 'employed' && r < 0.04) return A.nap;
   if (p.ext.pop.pets && p.ext.pop.pets.dogs && h > 8 && h < 18 && r < 0.0) return A.park;
-  if (q.hhKids && h >= 17.2 && h < 20.2 && r < 0.45) return A.childcare;
-  if (q.hhKids && h >= 7 && h < 18 && r < 0.45 && wend) return A.childcare;
-  if (!wend && q.hhKids && h >= 7 && h < 18 && q.activity === 'home_family') return pickW([['chores', 4], ['childcare', 2], ['tv', 1.5], ['phone', 1.5], ['rest', 1]], r);
+  if (p.ext.rt.life.kids && h >= 17.2 && h < 20.2 && r < 0.45) return A.childcare;
+  if (p.ext.rt.life.kids && h >= 7 && h < 18 && r < 0.45 && wend) return A.childcare;
+  if (!wend && p.ext.rt.life.kids && h >= 7 && h < 18 && q.activity === 'home_family') return pickW([['chores', 4], ['childcare', 2], ['tv', 1.5], ['phone', 1.5], ['rest', 1]], r);
   if (h >= 8 && h < 13 && wend && r < 0.25) return A.chores;
   if (q.activity === 'retired' && h < 17 && r < 0.18) return A.garden;
   if (q.activity === 'retired' && r < 0.3) return A.tv;

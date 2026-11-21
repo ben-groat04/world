@@ -407,3 +407,21 @@ Never delete the old system until its replacement is green on `npm run check` an
 5. **Bold bets underperform** (self-models, template invention, lazy lives): each has a flag and ablation test; fall back to fixed templates / T1-only without breaking contracts.
 6. **Stereotype leakage**: fairness audit; ethnicity enters only through enumerated channels; occupations drawn from the joint distribution of age/sex/education/place.
 7. **Calibration drift**: single reference place and year (UK-city inner-urban composite, Census 2021); estimate-level numbers warn not fail; records flagged "design parameter" when no benchmark exists.
+
+---
+
+## Addendum (orchestrator): heterogeneity, off-map social life, persona checks
+Applies to all Wave 1+ packages. Averages describe a neighbourhood, not a life.
+1. **Lifestyle segments.** Population is generated as distinct segments (e.g. long-term older residents, families
+   incl. lone parents, students, young sharers/early-career professionals, settled professionals, shift workers,
+   recent arrivals), each with its own routines, time use, mobility, money pressures and *social geography*.
+   Segment shares come from calibration; plausibility is checked per segment as well as in aggregate.
+2. **The off-map city is a social space, not just a job sink.** Many residents' most important ties (work friends,
+   university friends, family elsewhere, partners met via apps) live off-map in the Metropolis, maintained by
+   messages and periodic meetups/nights out elsewhere. Local ties are often weak for some segments and strong for
+   others (long-term residents, parents at the school gate, religious communities, shop owners).
+3. **Churn as a life stage.** For mobile segments the neighbourhood is a 1-3 year chapter; flatmates rotate,
+   people leave for partners, jobs or space. Arrivals and departures are stories, not noise.
+4. **Persona plausibility reviews.** In addition to statistical bands, the report includes per-segment "a typical
+   day / week / year" traces for sampled individuals, reviewed for whether such a life looks right.
+   Do not tailor to any single real person; aim for breadth across segments.

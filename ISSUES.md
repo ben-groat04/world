@@ -58,3 +58,10 @@ tests: goals/material/social determinism tests partly stale (3 pre-existing fail
 ## UX / clutter (next free slot) — user priority
 - Mobile-first information hierarchy: glanceable essentials, progressive disclosure, collapsible cards ordered by
   relevance, fewer tabs, map decluttering (labels/badges only when zoomed/relevant), notable-only notifications.
+## Player/god (W2-D) review
+- Newcomer applied for a job and was immediately hired as a senior manager — implausible (qualification/experience,
+  competition, interview lag). Labour hiring for player must use the same mechanisms as NPCs.
+- Heatwave effects barely cause-linked (tracker shows ~1 event): health/routine/social should respond (heat illness
+  in elderly, parks busy, sleep worse, tempers) with causes.
+- Player conversations often neutral — talk outcomes need clearer, felt consequences.
+- Housing arrivals: export a proper makePerson so player creation uses the real generator (exact age).

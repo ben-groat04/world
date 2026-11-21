@@ -18,9 +18,9 @@ function demoEvents(seed, years = 10, pop = 500) {
   for (let i = 0; i < n; i++) { const t = types[Math.floor(r() ** (1 + seed % 3) * types.length)]; const a = Math.floor(r() * pop); const b = (a + 1 + Math.floor(r() * 12)) % pop; const c = r() < 0.35 && last >= 0; ev.push({ id: i, type: t, tick: Math.floor((i / n) * years * 365 * 144), actors: [a, b], objects: [Math.floor(r() * 120)], place: r() < 0.8 ? Math.floor(r() * 60) : null, tags: [], cause: c ? last : -1, salience: 0.25 + r() * 0.4, payload: r() < 0.92 ? { reason: 'x' } : {} }); last = i; }
   return ev;
 }
-function demoTexts(seed, n = 400) {
+function demoTexts(seed, n = 120) {
   const eng = new TextEngine(pack, { seed }); const ppl = [{ id: 1, firstName: 'Kayleigh', age: 16, sex: 'F' }, { id: 2, firstName: 'Tomasz', age: 20, sex: 'M', segment: 'student' }, { id: 3, firstName: 'Priya', age: 29, sex: 'F', segment: 'young_sharer' }, { id: 4, firstName: 'Dean', age: 38, sex: 'M', children: [1] }, { id: 5, firstName: 'Margaret', age: 78, sex: 'F' }];
-  const out = []; for (let i = 0; i < n; i++) { const a = ppl[i % 5]; out.push(eng.render(i % 3 ? 'post.daily' : 'thought.idle', { a, seed: i, date: { hour: 9, weekday: i % 7 } })); } return out;
+  const out = []; for (let i = 0; i < n; i++) { const a = ppl[i % 5]; out.push(eng.render(['post.daily', 'thought.idle', 'post.daily', 'msg.hello', 'thought.home', 'msg.flatmate', 'thought.money', 'post.daily'][i % 8], { a: { ...a, mood: ((i * 37) % 100) / 100 }, seed: i, date: { hour: 9, weekday: i % 7 } })); } return out;
 }
 const args = process.argv.slice(2);
 let runs;

@@ -49,6 +49,7 @@ export default {
     ...M('high', 'Can\'t sleep for good reasons. Lovely.'),
   ],
   'thought.idle': [
+    '#lx.shop|cap# will have it. Or it won\'t, and I\'ll walk past #lx.shop# on the way home with nothing.', 'Thinking about #lx.food# for no reason. Mostly reason.', 'Went past #lx.hobby# and nearly went in. Nearly.', 'Mum used to say #lx.weather# weather builds character. I think it builds a cold.', 'I should do something about #lx.nuisance#. I will write a strongly worded email. Or have a nap.', 'Fancy #lx.drink#. Not fancy getting up for it.', 'If I leave now, I will make #lx.bus# and be early. If I stay, I will see the end of this programme. Staying.',
     'Wonder what\'s for tea.', 'Someone\'s frying onions two doors down. I have never been so jealous.', 'The pigeon on the wall has been looking at me for ten minutes. We\'re in a standoff.', 'I should go for a walk. I\'ll go for a walk. After this.', 'The street smells of wet leaves and chips.', 'Must renew that thing. What thing? That thing.',
     { t: 'Odd to think there are four hundred people within a five-minute walk and I know maybe a dozen.', when: { 'a.trait.extraversion': '<0.4' } },
     { t: 'Think I\'ll pop to the pub. Just for one. Famous last words.', when: { 'a.trait.extraversion': '>0.6' } },

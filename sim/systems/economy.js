@@ -219,13 +219,6 @@ function payWage(w, p, b, frac = 1) {
   E(w, p).wageToday += paid; eco(w).wagesPaid += paid;
   return paid;
 }
-function shiftOf(job) { return JOBS[job]?.shift; }
-function restDayFor(w, p) {
-  const J = JOBS[p.job]; if (!J) return false;
-  const wd = w.time.weekday;
-  return J.service ? wd === idn(p) % 6 : wd === 6;
-}
-function nowHour(w) { return w.time.hour + w.time.minute / 60; }
 
 function creditLimit(p) { return 25 + 60 * ((p.reputation + 1) / 2) + (p.job !== 'unemployed' && p.job !== 'retired' ? 30 : 0); }
 function addDebt(w, p, amt) {

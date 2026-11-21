@@ -4,7 +4,6 @@ import { clamp } from '../util.js';
 import { BUILDING_TYPES } from '../map.js';
 
 const DAY = 144;
-const KINDS = ['theft', 'burglary', 'fraud', 'assault', 'manslaughter', 'murder'];
 const SEVERITY = { theft: 1, fraud: 2, burglary: 3, assault: 2, manslaughter: 4, murder: 5 };
 const K_RATE = 0.015; // per-person daily attempt probability scale (times motive^2); tuned for ~1 offence / 40-80 people / year
 

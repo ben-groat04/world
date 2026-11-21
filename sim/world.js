@@ -186,7 +186,7 @@ export class World {
   addMemory(p, m) {
     const mem = { tick: m.tick ?? this.tick, type: m.type || 'event', text: m.text, otherIds: m.otherIds || [], weight: m.weight ?? 0, importance: m.importance ?? 2 };
     p.memories.push(mem);
-    if (p.memories.length > 300) {
+    if (p.memories.length > 150) {
       let wi = 0, ws = Infinity;
       for (let i = 0; i < p.memories.length - 20; i++) { const s = p.memories[i].importance * 10 + Math.abs(p.memories[i].weight) * 5 + i * 0.01; if (s < ws) { ws = s; wi = i; } }
       p.memories.splice(wi, 1);

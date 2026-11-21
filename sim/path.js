@@ -98,6 +98,7 @@ export class Pathfinder {
     const key = start * this.N + goal;
     let p = this.cache.get(key);
     if (p !== undefined) { this.stats.hits++; return p; }
+    if (this.cache.size > 40000) this.cache.clear(); // safety cap (cache is a pure memo; results are canonical)
     if (start === goal) { p = this.find(start, goal); this.cache.set(key, p); return p; }
     const fwd = start < goal, a = fwd ? start : goal, z = fwd ? goal : start;
     let f = this.find(a, z), r = null;

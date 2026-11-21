@@ -42,7 +42,6 @@ function desireOf(p) {
 }
 function ageDesire(a) { return a < 16 ? 0 : a < 18 ? 0.25 : a < 21 ? 0.8 : a < 29 ? 1 : a < 36 ? 0.7 : a < 46 ? 0.4 : a < 60 ? 0.2 : 0.1; }
 export function single(p) { return p.alive && !p.romance.status && p.family.spouseId == null; }
-function adultOk(p, minAge = 16) { return p.alive && ageOf(p) >= minAge; }
 function kinBlock(a, b) { return bloodDistance(a, b) <= 4 || ['mother-in-law', 'father-in-law', 'stepmother', 'stepfather', 'stepson', 'stepdaughter', 'son-in-law', 'daughter-in-law'].includes(kinship(a, b)); }
 function readyForLove(p) { // grief / heartbreak
   const r = rom(p), t = W.tick;
@@ -560,7 +559,6 @@ function datingDaily() {
     // wandering eye / jealousy covered in conversation events
   }
 }
-function widowsLog() {}
 
 // ------------------------------------------------------------------ conversation hook (flirting etc.)
 const CONV_GAIN = { greeting: 0.002, smalltalk: 0.005, deep: 0.014, joke: 0.011, comfort: 0.012, gossip: 0.004, flirt: 0.045, argue: -0.012, complain: -0.002, apologize: 0.004 };

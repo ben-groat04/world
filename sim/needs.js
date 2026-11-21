@@ -13,6 +13,7 @@ export function makeNeedRates(pers) {
 // CURRENT action state (decay multipliers + perTick effects while doing). The engine calls it every NEEDS_PERIOD ticks
 // per person (staggered) AND whenever the action changes (world.flushNeeds), so short actions are still accounted exactly.
 export const NEEDS_PERIOD = 6;
+const MOOD_K = Array.from({ length: 64 }, (_, dt) => 1 - Math.pow(0.97, dt)); // mood relaxation factor per dt ticks
 export function stepNeeds(world, p) {
   const dt = world.tick - p.needsTick;
   if (dt <= 0) return;
@@ -46,5 +47,5 @@ export function stepNeeds(world, p) {
   let target = (w - 0.55) * 2.4 + p.moodletSum + (0.5 - p.personality.neuroticism) * 0.15;
   if (p.health < 0.5) target -= (0.5 - p.health);
   if (target > 1) target = 1; else if (target < -1) target = -1;
-  p.mood += (target - p.mood) * (dt === 1 ? 0.03 : 1 - Math.pow(0.97, dt));
+  p.mood += (target - p.mood) * (dt < 64 ? MOOD_K[dt] : 1);
 }

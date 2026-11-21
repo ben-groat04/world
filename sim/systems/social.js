@@ -16,6 +16,7 @@ function st(world) {
   if (!S) {
     S = world.social = {
       rumors: new Map(),      // id -> {id, aboutId, kind, truth, tick, heard, chronicled}
+      recent: new Map(),      // 'aboutId:kind' -> tick an ambient rumor was last born (dedupe)
       nextRumor: 1,
       cliques: [],            // [{id, members:[ids], hangout, name}]
       feuds: new Set(),
@@ -205,7 +206,7 @@ export function hear(world, hearer, rumor, teller) {
   const S = st(world), rng = world.rng;
   if (!hearer.alive) return false;
   if (!hearer.rumors) hearer.rumors = [];
-  if (hearer.rumors.some((x) => x.id === rumor.id)) return false;
+  for (let i = 0; i < hearer.rumors.length; i++) { const x = hearer.rumors[i]; if (x.id === rumor.id || (x.aboutId === rumor.aboutId && x.kind === rumor.kind && x.kind !== 'crime' && x.kind !== 'affair')) return false; }
   const subj = world.people.get(rumor.aboutId);
   if (!subj || !subj.alive && world.tick - rumor.tick > 30 * TPD) return false;
   const copy = teller ? mutate(world, rumor) : { ...rumor, embell: rumor.embell.slice() };
@@ -302,7 +303,7 @@ function birthRumor(world, r, hearers) {
 function pickShare(world, a, b) {
   if (!a.rumors || !a.rumors.length) return null;
   const rng = world.rng;
-  const cand = a.rumors.filter((r) => r.aboutId !== b.id && r.aboutId !== a.id && !(b.rumors && b.rumors.some((x) => x.id === r.id)) && world.people.get(r.aboutId));
+  const cand = a.rumors.filter((r) => r.hops < 4 && r.aboutId !== b.id && r.aboutId !== a.id && !(b.rumors && b.rumors.some((x) => x.id === r.id)) && world.people.get(r.aboutId));
   if (!cand.length) return null;
   const tactless = has(a, 'gossip') && a.personality.agreeableness < 0.4;
   const rb = rel(b, a);
@@ -447,8 +448,6 @@ export function converse(world, a, b, opts = {}) {
   };
   apply(a, b, ra, qa);
   apply(b, a, rb, qb);
-  if (a.needs && b.needs) { /* both boosted above via 'from' */ }
-  if (b.needs) { /* b boost applied in second call with from=b */ }
 
   let outcome = q > 0.35 ? 'great' : q > 0.1 ? 'good' : q > -0.1 ? 'neutral' : 'bad';
   if (type === 'argue') {
@@ -534,11 +533,6 @@ export function converse(world, a, b, opts = {}) {
 }
 
 // ---------------------------------------------------------------- per-tick encounters
-function asleep(p, hour) {
-  const ca = p.currentAction;
-  if (ca && (ca.id === 'sleep' || ca.id === 'bathe')) return true;
-  return false;
-}
 function startProb(world, p, loc) {
   const pe = p.personality.extraversion;
   let m = 0.11 * (0.45 + pe) * (1.5 - p.needs.social * 0.8);
@@ -666,7 +660,8 @@ function fadeRumors(world) {
       return age < 18 + 70 * r.severity;
     });
   }
-  for (const [id, r] of S.rumors) if (tick - r.tick > 160 * TPD) S.rumors.delete(id);
+  for (const [id, r] of S.rumors) if (tick - r.tick > 120 * TPD) S.rumors.delete(id);
+  for (const [k, t] of S.recent) if (tick - t > 40 * TPD) S.recent.delete(k);
 }
 function ambientRumors(world) {
   const rng = world.rng, S = st(world), living = world.living();
@@ -687,6 +682,9 @@ function ambientRumors(world) {
     }
     if (!kinds.length) continue;
     const k = rng.weighted(kinds, (x) => x[1]);
+    const rk = p.id + ':' + k[0], last = S.recent.get(rk);
+    if (last !== undefined && world.tick - last < 40 * TPD) continue; // same story about the same person is already circulating
+    S.recent.set(rk, world.tick);
     const ctx = {};
     if (k[0] === 'courtship') ctx.other = world.people.get(p.romance.partnerId);
     const r = createRumor(world, { aboutId: p.id, kind: k[0], truth: k[2] === undefined ? true : k[2], ctx });
@@ -892,7 +890,6 @@ export default {
     for (const p of world.living()) if (p.relationships) for (const [id, r] of p.relationships) { if (!r.tags) r.tags = []; const o = world.people.get(id); if (o && !isFam(r)) updateTags(world, p, o, r); }
   },
   onTick,
-  onHour(world) {},
   onDay(world) {
     const S = st(world);
     S.chronToday = 0;

@@ -665,7 +665,6 @@ export default {
     if (m) applyPolicies(world, false);
     interventions(world);
     world.on('death', (ev) => { const p = ev && ev.person; if (!p) return; if (p.id === world.town.mayorId) st.mayorDied = true; });
-    world.on('marriage', () => {});
   },
   onHour(world) {
     const st = S(world), t = world.time;

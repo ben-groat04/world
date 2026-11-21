@@ -30,7 +30,6 @@ const range = (r) => rfl(r[0], r[1]);
 import { DIS, INJ_JOB, JOBNOUN, DUSTY } from '../data/health.js';
 // ---------------------------------------------------------------------------------------------- state
 function S() { return W.healthState; }
-function outbreakOf(id) { const o = S().outbreaks; return o[id] && o[id].active ? o[id] : null; }
 
 // ---------------------------------------------------------------------------------------------- mortality model
 function annualHazard(a) { // Gompertz-Makeham for people past childhood (family.js handles under 15)
@@ -44,12 +43,6 @@ function chronicMult(p) {
   return m;
 }
 function hasDoctor() { return S().doctors.length > 0; }
-function careQuality() { // best treatment quality available in town
-  const s = S(); let q = 0;
-  for (const d of s.doctors) q = Math.max(q, 0.2 + 0.8 * clamp((d.skills.medicine || 0) * 1.15));
-  for (const n of s.nurses) q = Math.max(q, 0.12 + 0.5 * clamp((n.skills.medicine || 0) * 1.15));
-  return q;
-}
 
 const CHRONIC = {
   joints: { name: 'aching joints', mort: 0.1, health: 0.05 },

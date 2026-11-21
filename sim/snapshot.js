@@ -36,7 +36,7 @@ export function saveSnapshot(world) {
     return { $r: id };
   };
   const roots = {};
-  for (const k of ['people', 'buildings', 'chronicle', ...world.stateKeys]) if (world[k] !== undefined) roots[k] = enc(world[k]);
+  for (const k of ['people', 'buildings', 'chronicle', 'settings', ...world.stateKeys]) if (world[k] !== undefined) roots[k] = enc(world[k]);
   const rngs = {}; for (const [name, r] of world._rngs) rngs[name] = { s: r.s, g: r._g };
   return {
     v: 1, seed: world.seed, settings: world.settings, tick: world.tick, nextPersonId: world.nextPersonId,

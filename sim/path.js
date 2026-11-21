@@ -92,20 +92,19 @@ export class Pathfinder {
     for (let c = goal, i = n - 1; c !== start; c = parent[c], i--) out[i] = c;
     return out;
   }
-  // Cached path between two tile indices (also caches the reverse). Returned arrays are shared: never mutate.
+  // Cached path between two tile indices. Canonical: the path is always computed for (min,max) and reversed for the
+  // other direction, so results never depend on cache history (needed for snapshot/determinism). Shared arrays: never mutate.
   cached(start, goal) {
     const key = start * this.N + goal;
     let p = this.cache.get(key);
     if (p !== undefined) { this.stats.hits++; return p; }
-    p = this.find(start, goal);
-    this.cache.set(key, p);
-    if (p && p.length > 0 && start !== goal) {
-      const r = new Int32Array(p.length);
-      for (let i = 0; i < p.length - 1; i++) r[i] = p[p.length - 2 - i];
-      r[p.length - 1] = start;
-      this.cache.set(goal * this.N + start, r);
-    }
-    return p;
+    if (start === goal) { p = this.find(start, goal); this.cache.set(key, p); return p; }
+    const fwd = start < goal, a = fwd ? start : goal, z = fwd ? goal : start;
+    let f = this.find(a, z), r = null;
+    if (f && f.length > 0) { r = new Int32Array(f.length); for (let i = 0; i < f.length - 1; i++) r[i] = f[f.length - 2 - i]; r[f.length - 1] = a; }
+    else r = f;
+    this.cache.set(a * this.N + z, f); this.cache.set(z * this.N + a, r);
+    return fwd ? f : r;
   }
 }
 export { EMPTY as EMPTY_PATH };

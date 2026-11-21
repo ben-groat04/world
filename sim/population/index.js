@@ -7,6 +7,7 @@
 //   occ (occupation id|null), soc, contract, hours (paid h/wk), pay (gross FTE £/yr), edu, workplace{kind:'onmap'|'offmap'|'home'|'none', bid, dest, mode, mins, hybrid[], flex}, pattern, school{kind,bid|dest}, health{general,conds,disabled,limiting},
 //   fin{gross,net,benefits,savings,debt,arrears,studentLoan,spend}, car (drives), bike, pets, drives{}, interests[], life{chrono,wake,bed,lv{},fav{},sociability,homebody}, yearsAtAddress, grewUp, ties[] }
 //   world.lf = { households:[{id,unit,bid,seg,arch,members[],tenure,rentPcm,mortgagePcm,income,cars,dogs,cats,since}], metro:[{id,name,age,sex,rel,where,how,owner,freq}], slots, stats }
+import { sampleActivity } from './activity.js';
 import NAMES from '../../content/larkfield/names.js';
 import { clamp, clamp01, wpick, wpickObj, logn, netFromGross, ageBand, pcm } from './util.js';
 import { planHouseholds, composeHousehold } from './households.js';
@@ -135,13 +136,9 @@ export function populate(world, rng) {
     if (a < 16) return 'child';
     if (a < 18) return rng.chance(0.9) ? 'student' : 'employed';
     let act;
-    if (m.role === 'head' || m.role === 'sharer' || m.role === 'sibling') act = wpickObj(rng, seg.head.activity);
-    else if (m.role === 'partner') { const ha = { ...seg.head.activity }; if (hm0kids(h)) { ha.lookingAfterHomeFamily = (ha.lookingAfterHomeFamily || 0.05) * (m.sex === 'F' ? 4 : 0.5); ha.employed = (ha.employed || 0.5) * (m.sex === 'F' ? 0.75 : 1.05); } act = wpickObj(rng, ha); }
-    else if (m.role === 'adult_child') act = a < 22 ? wpick(rng, [['student', 0.45], ['employed', 0.4], ['unemployed', 0.1], ['otherInactive', 0.05]]) : a < 30 ? wpick(rng, [['employed', 0.6], ['student', 0.12], ['unemployed', 0.12], ['longTermSickDisabled', 0.08], ['otherInactive', 0.08]]) : wpick(rng, [['employed', 0.55], ['unemployed', 0.12], ['longTermSickDisabled', 0.15], ['lookingAfterHomeFamily', 0.12], ['otherInactive', 0.06]]);
+    if (m.role !== 'parent' && m.role !== 'grandparent') act = sampleActivity(rng, pack.meta.segments, seg, a, { sex: m.sex, youngKids: m.role === 'partner' && hm0kids(h), role: m.role });
     else if (m.role === 'parent' || m.role === 'grandparent') act = a >= 66 ? 'retired' : wpick(rng, [['retired', 0.5], ['longTermSickDisabled', 0.3], ['employed', 0.2]]);
-    else act = wpickObj(rng, seg.head.activity);
     if (a >= 67) act = rng.chance(h.seg === 'local_business_families' ? 0.5 : 0.92) ? 'retired' : act === 'student' ? 'retired' : act;
-    else if (a >= 60 && act !== 'longTermSickDisabled') { if (rng.chance(clamp((a - 58) / 12, 0, 0.8) * (seg.id === 'older_longterm' ? 1 : 0.5))) act = 'retired'; }
     if (act === 'retired' && a < 55) act = 'employed';
     if (act === 'student' && a > 32 && !(seg.id === 'students')) act = 'employed';
     if (act === 'student' && a > 40) act = 'employed';
@@ -244,7 +241,7 @@ export function populate(world, rng) {
             if (m.workplace.hybrid && m.workplace.hybrid.length === 0) m.workplace.hybrid = [2];
           }
           if (o.pattern === 'school_day' && o.where === 'onmap') m.workplace.mins = 4;
-        } else { m.activity = m.age < 18 ? 'student' : 'unemployed'; }
+        } else if (m.activity !== 'student') { m.activity = 'unemployed'; } // a student without a part-time job stays a student
       }
       const occ = m.occId ? OCC[m.occId] : null;
       m.edu = eduFor(m, occ, m.activity, h);

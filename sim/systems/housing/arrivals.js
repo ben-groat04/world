@@ -1,5 +1,6 @@
 // Arrival generator (minimal, compatible with sim/population): builds a new household for a unit from the pack's segment x archetype tables and
 // creates real Person records (ext.pop, kin links, off-map ties). Used for households and single sharers who move into Larkfield from the Metropolis.
+import { sampleActivity } from '../../population/activity.js';
 import NAMES from '../../../content/larkfield/names.js';
 import { composeHousehold } from '../../population/households.js';
 import { personalityFor, drivesFor, skillsFor, interestsFor, healthFor, savingsFor } from '../../population/persona.js';
@@ -33,10 +34,9 @@ const eduDraw = (rng, cal, age, seg, act) => {
   if (age < 16) return 'in_school'; if (act === 'student') return age < 19 ? 'level2' : age < 22 ? 'level3' : 'level4plus';
   const c = cal.qualifications16plus; return wpick(rng, [['none', c.none * (age < 35 ? 0.35 : 1)], ['level1', c.level1], ['level2', c.level2], ['apprenticeship', c.apprenticeship], ['level3', c.level3], ['level4plus', c.level4plus * (seg === 'benefit_dependent' ? 0.4 : 1) * (seg === 'settled_professionals' || seg === 'early_career' ? 2 : 1)], ['other', c.other]]);
 };
-const actFor = (rng, seg, m, kids) => {
+const actFor = (w, rng, seg, m, kids) => {
   const a = m.age; if (a < 16) return 'child'; if (a < 18) return rng.chance(0.9) ? 'student' : 'employed';
-  let act = wpickObj(rng, seg.head.activity);
-  if (m.role === 'partner' && kids && m.sex === 'F') act = rng.chance(0.3) ? 'lookingAfterHomeFamily' : act;
+  let act = sampleActivity(rng, w.pack.meta.segments, seg, a, { sex: m.sex, youngKids: m.role === 'partner' && kids, role: m.role });
   if (a >= 67) act = rng.chance(0.92) ? 'retired' : act === 'student' ? 'retired' : act;
   if (act === 'retired' && a < 55) act = 'employed'; if (act === 'student' && a > 32 && seg.id !== 'students') act = 'employed'; if (act === 'student' && a > 40) act = 'employed';
   return { employed: 'employed', student: 'student', retired: 'retired', unemployed: 'unemployed', lookingAfterHomeFamily: 'home_family', longTermSickDisabled: 'sick_disabled', otherInactive: 'other_inactive' }[act] || act;
@@ -47,7 +47,7 @@ function makePerson(w, rng, hh, m, seg, hhKids, opts = {}) {
   const by = 2026 - Math.floor(age), origin = NAMES.pickOrigin(rng, group, by); if (seg.id === 'recent_arrivals' && age >= 18) { origin.bornUK = false; if (origin.birthplace === 'United Kingdom') origin.birthplace = (NAMES.GROUPS[group].birth.other || [['Poland', 1]])[0][0]; }
   const nm = NAMES.pickName(rng, origin, m.sex, by);
   const pers = personalityFor(rng, age, m.sex);
-  const act = actFor(rng, seg, m, hhKids), edu = eduDraw(rng, cal, age, seg.id, act);
+  const act = actFor(w, rng, seg, m, hhKids), edu = eduDraw(rng, cal, age, seg.id, act);
   const rel = (NAMES.RELIGION_BY_SUB[origin.sub] || NAMES.RELIGION_BY_GROUP[group] || NAMES.RELIGION_BY_GROUP.white_british); const religion = wpick(rng, Object.entries(rel));
   const religiosity = religion === 'No religion' ? rng.float(0, 0.12) : clamp01(Math.pow(rng.next(), 0.8));
   const hs = healthFor(rng, cal, age, seg.health, act === 'sick_disabled');

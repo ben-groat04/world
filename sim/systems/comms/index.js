@@ -155,7 +155,7 @@ export function createComms() {
     const dn = w.time.dayAbs;
     for (const c of S.chats) {
       if ((dn + c.id) % 3) continue;
-      const n = c.m.length + c.nx; let k = POISSON(r, (CHAT_BASE[c.kind] || 3) * Math.pow(n, 0.55) * c.act * 1.5);
+      const n = c.m.length + c.nx; if (c.lam === undefined) c.lam = (CHAT_BASE[c.kind] || 3) * Math.pow(n, 0.55) * c.act * 1.5; let k = POISSON(r, c.lam);
       S.stats.msgs.grp += k; c.vol = c.vol * 0.9 + k * 0.1;
       for (let i = 0; i < k; i++) { const id = c.m[(r.next() * c.m.length) | 0], p = w.people.get(id); if (!p || !p.alive) continue; const b = bandOf(w.ageOf(p)); S.stats.msgs.byBand[b] = (S.stats.msgs.byBand[b] || 0) + 1; if (i < 3 && r.next() < 0.5) { c.ring.push({ t: w.tick, au: id, k: c.kind, sd: (r.next() * 1e6) | 0, bo: c.m[(r.next() * c.m.length) | 0] }); if (c.ring.length > 16) c.ring.shift(); } }
       if (k > 0 && n >= 4 && r.next() < 0.0035) chatRow(w, S, r, c);

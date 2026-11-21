@@ -33,3 +33,22 @@ export const GOD_COMMANDS = [
   { name: 'social.introduce', group: 'Mind & society', label: 'Introduce two people', icon: '↔', desc: 'Make two residents friends.', params: [P('a', 'First'), P('b', 'Second')], build: (a) => ({ a: +a.a, b: +a.b }), describe: (a, h) => `${h.ref(+a.a).name} meets ${h.ref(+a.b).name}` },
   { name: 'social.feud', group: 'Mind & society', label: 'Start a feud', icon: '⚔', desc: 'Two residents fall out badly.', params: [P('a', 'First'), P('b', 'Second')], build: (a) => ({ a: +a.a, b: +a.b }), describe: (a, h) => `${h.ref(+a.a).name} and ${h.ref(+a.b).name} feud` },
 ];
+
+// ---- Themes (the catalogue is browsed by theme) and presets (named what-ifs; each is one intervention whose causal chain is tracked).
+const THEME = { 'housing.rentShock': 'Housing', 'housing.buildFlats': 'Housing', 'housing.evict': 'Housing', 'housing.repair': 'Housing', 'health.pandemic': 'Weather & disasters', 'health.heatwave': 'Weather & disasters', 'money.energyShock': 'Weather & disasters',
+  'health.illness': 'Health', 'health.cure': 'Health', 'health.injure': 'Health', 'health.stress': 'Health', 'life.babyBoom': 'Events', 'groups.create': 'Events', 'goals.plant': 'Life', 'life.matchmake': 'Life', 'life.breakUp': 'Life',
+  'social.spreadRumour': 'Social', 'social.introduce': 'Social', 'social.feud': 'Social', 'player.charismaticNewcomer': 'Events' };
+export const THEMES = ['Economy', 'Housing', 'Health', 'Social', 'Life', 'Events', 'Weather & disasters'];
+export const themeOf = (name, group) => THEME[name] || (group === 'Economy' ? 'Economy' : group === 'Mind & society' ? 'Social' : group);
+const PERSON = (k, label) => ({ k, label, type: 'person' });
+export const GOD_PRESETS = [
+  { id: 'rent2x', icon: '£', label: 'What if rent doubled?', desc: 'Every private rent rises 100%. Watch arrears, moves and evictions.', steps: () => [{ name: 'housing.rentShock', args: { pct: 100 } }] },
+  { id: 'factory', icon: '✕', label: 'A factory closes', desc: 'Pick a workplace; it shuts and its staff lose their jobs.', picks: [{ k: 'bid', label: 'Which business', type: 'venue' }], steps: (p) => [{ name: 'labour.closeFirm', args: { bid: +p.bid, reason: 'closed' } }], describe: (p, h) => `${h.place(+p.bid)?.name || 'A business'} closes` },
+  { id: 'heat', icon: '☀', label: 'Heatwave', desc: 'A week of dangerous heat; older and unwell residents suffer.', steps: () => [{ name: 'health.heatwave', args: { days: 7, severity: 0.7 } }] },
+  { id: 'tower', icon: '▦', label: 'New tower block', desc: 'Forty new flats come onto the market.', steps: () => [{ name: 'housing.buildFlats', args: { n: 40 } }] },
+  { id: 'pandemic', icon: '☣', label: 'Pandemic', desc: 'A new respiratory virus spreads for 16 weeks.', steps: () => [{ name: 'health.pandemic', args: { severity: 0.6, weeks: 16 } }] },
+  { id: 'lottery', icon: '★', label: 'Lottery win', desc: 'Someone you pick wins £1,000,000.', picks: [PERSON('person', 'Winner')], steps: (p) => [{ name: 'money.windfall', args: { pid: +p.person, amount: 1000000 } }], describe: (p, h) => `${h.ref(+p.person).name} wins £1,000,000` },
+  { id: 'rumour', icon: '✉', label: 'Spread a rumour about…', desc: 'Start a rumour about someone; see who hears it and what they do.', picks: [PERSON('about', 'About'), { k: 'kind', label: 'Claim', type: 'select', def: 'new_couple', options: kinds }], steps: (p) => [{ name: 'social.spreadRumour', args: { about: +p.about, claim: { kind: p.kind || 'new_couple' }, seeds: 4 } }], describe: (p, h) => `A rumour about ${h.ref(+p.about).name}: ${String(p.kind || 'new couple').replace(/_/g, ' ')}` },
+  { id: 'match', icon: '♥', label: 'Matchmake…', desc: 'Set two people up and see whether it lasts.', picks: [PERSON('a', 'First'), PERSON('b', 'Second')], steps: (p) => [{ name: 'life.matchmake', args: { a: +p.a, b: +p.b } }], describe: (p, h) => `${h.ref(+p.a).name} and ${h.ref(+p.b).name} are set up` },
+  { id: 'charisma', icon: '☺', label: 'A charismatic newcomer arrives', desc: 'An outgoing, agreeable professional moves into a vacant flat.', steps: () => [{ name: 'player.charismaticNewcomer', args: {} }] },
+];

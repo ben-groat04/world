@@ -33,8 +33,7 @@ export function createPlayer() {
     for (const q of b.occupants) if (q !== p && q.alive) out.push(q.id); return out;
   }
 
-  const commands = {
-    'player.create': (w, a) => {
+  function settle(w, a) {
       const rng = w.rngFor('player.create'); const u = (w.lf.housing.byId.get ? w.lf.housing.byId.get(a.unit) : w.lf.housing.byId[a.unit]);
       if (!u || u.hh >= 0 || !RENTED.has(u.tenure)) return fail('that home is no longer available');
       const budget = Math.max(0, Math.round(a.budget ?? 3000)); if (budget < u.rent * 0.6) return fail('not enough for the deposit and first rent');
@@ -44,7 +43,7 @@ export function createPlayer() {
       const age = Math.max(16, Math.min(90, a.age ?? 28)), p = createSharer(w, rng, hh, age);
       p.firstName = String(a.first || 'Alex').slice(0, 20); p.lastName = String(a.last || 'Newcomer').slice(0, 24); p.sex = a.sex === 'M' ? 'M' : 'F';
       p.birthTick = w.tick - Math.round(age * w.calendar.ticksPerYear) - rng.int(0, 300); p.ext.pop.role = 'head'; p.ext.pop.birthplace = a.from || p.ext.pop.birthplace;
-      const q = p.ext.pop; q.activity = 'unemployed'; q.fin.savings = 0; q.fin.debt = 0;
+      const q = p.ext.pop; q.activity = a.employed ? 'employed' : 'unemployed'; q.fin.savings = 0; q.fin.debt = 0;
       w.ledger.transfer('metropolis', p.id, budget, 'arrival_savings');
       const f = q.fin; Object.assign(f, { cc: 0, payday: 0, pension: 0, sp: 1, priv: 0, stress: 0, noCredit: false });
       const b = w.buildings.get(hh.bid); if (b && b.residents && !b.residents.includes(p.id)) b.residents.push(p.id);
@@ -52,7 +51,17 @@ export function createPlayer() {
       if (a.occ) { const r = call('labour.applyForJob', { pid: p.id, occ: a.occ, force: true }); if (!r || !r.ok) q.activity = 'unemployed'; }
       call('routine.adopt', { pid: p.id });
       w.emit('housing.moved_in', { actors: [p.id], place: hh.bid, objects: [hh.id], salience: 0.35, tags: ['housing', 'life', 'arrival'], payload: { from: 'outside', reason: 'arrival', unit: u.id, tenure: u.tenure } });
-      w.player = p.id; S.created = true; note(`You moved into ${u.address}.`); return { ok: true, pid: p.id };
+      return { ok: true, pid: p.id, address: u.address };
+
+  }
+  const commands = {
+    'player.create': (w, a) => { const r = settle(w, a); if (r.ok) { w.player = r.pid; S.created = true; note(`You moved into ${r.address}.`); } return r; },
+    // God-mode circumstance: someone with an unusually outgoing, agreeable personality moves in. What they do with the street is up to the mechanisms.
+    'player.charismaticNewcomer': (w, a) => {
+      const rng = w.rngFor('player.newcomer'), u = vacancies()[0]; if (!u) return fail('no vacant home');
+      const first = rng.pick(['Jordan', 'Amara', 'Luca', 'Priya', 'Noor', 'Dani', 'Kofi', 'Mei']), last = rng.pick(['Rivers', 'Okoye', 'Santos', 'Hale', 'Moreau', 'Bianchi', 'Nakamura', 'Reyes']);
+      const r = settle(w, { first, last, age: a.age ?? 31, sex: rng.chance(0.5) ? 'F' : 'M', seg: 'settled_professionals', budget: 8000, unit: u.id, employed: true }); if (!r.ok) return r;
+      const p = w.people.get(r.pid); Object.assign(p.personality, { extraversion: 0.97, agreeableness: 0.85, openness: 0.8, neuroticism: 0.2 }); if (p.traits && !p.traits.includes('gossip')) p.traits.push('charming'); return r;
     },
     'player.take': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.alive || !p.ext.pop) return fail('no such resident'); if (!p.ext.rt) call('routine.init', { pid: p.id }); w.player = p.id; note(`You are now ${nm(p)}.`); return { ok: true, pid: p.id }; },
     'player.release': (w) => { w.player = null; return { ok: true }; },

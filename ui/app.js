@@ -1,7 +1,9 @@
 // Larkfield app shell: top bar + speed tiers, map input (pan / pinch / tap), bottom-sheet tabs on mobile, sidebar on desktop.
 import { createSource } from './store.js';
 import { MapView } from './map.js';
-import { mountFeed, mountInspect, mountTown, mountPeople, mountGod, esc } from './views.js';
+import { mountFeed, mountInspect, mountTown, mountPeople, esc } from './views.js';
+import { mountGod } from './play/god.js';
+import { mountPlay } from './play/play.js';
 
 const qs = new URLSearchParams(location.search);
 const $ = (id) => document.getElementById(id);
@@ -38,7 +40,12 @@ mountFeed($('pane-feed'), store);
 mountInspect($('pane-inspect'), store, hooks);
 mountTown($('pane-town'), store);
 const people = mountPeople($('pane-people'), store);
-mountGod($('pane-god'), store);
+let pickReq = null;
+hooks.pick = (type, cb) => { pickReq = { type, cb, sheet }; toast(`Tap a ${type === 'person' ? 'person' : 'building'} on the map…`, 6000); if (mobile()) setSheet('peek'); };
+hooks.select = (id) => selectPerson(id); hooks.follow = () => { if (!store.s.following) store.follow(true); }; hooks.toast = (m, ms) => toast(m, ms);
+mountGod($('pane-god'), store, hooks);
+const play = mountPlay(store, hooks);
+window.larkfield.play = play;
 setTab('feed', false); setSheet(mobile() ? 'half' : 'half');
 
 // ------------------------------------------------------------------ top bar
@@ -99,6 +106,7 @@ store.on('select', (id) => { if (id == null) { view.selected = null; view.follow
 store.on('follow', (on) => { view.follow = on ? store.s.selected : null; followBtn.classList.toggle('on', !!on); if (on) view.goal = null; });
 followBtn.addEventListener('click', () => store.follow());
 document.addEventListener('click', (e) => {
+  if (e.target.closest('#pplay') && store.s.selected != null) { play.take(store.s.selected); return; }
   const p = e.target.closest('[data-pid]'); if (p && p.dataset.pid && !p.closest('#ticker')) { selectPerson(+p.dataset.pid); return; }
   const b = e.target.closest('[data-bid]'); if (b) selectBuilding(+b.dataset.bid);
 });
@@ -123,7 +131,8 @@ canvas.addEventListener('pointermove', (e) => {
 });
 function endPtr(e, cancel) {
   const had = ptrs.size; ptrs.delete(e.pointerId); if (!ptrs.size) canvas.classList.remove('drag');
-  if (had === 1 && g && g.moved < 9 && !cancel) { const r = rect(), hit = view.pick(e.clientX - r.left, e.clientY - r.top); if (hit && hit.person != null) selectPerson(hit.person); else if (hit && hit.building != null) selectBuilding(hit.building); else { selectBuilding(null); store.select(null); } }
+  if (had === 1 && g && g.moved < 9 && !cancel) { const r = rect(), hit = view.pick(e.clientX - r.left, e.clientY - r.top);
+    if (pickReq) { const v = pickReq.type === 'person' ? hit && hit.person : hit && hit.building; if (v != null) { const q = pickReq; pickReq = null; q.cb(v); if (mobile()) setSheet(q.sheet); toast('Picked.', 1200); } else toast('Tap a ' + (pickReq.type === 'person' ? 'person' : 'building') + ' on the map…', 1500); } else if (hit && hit.person != null) selectPerson(hit.person); else if (hit && hit.building != null) selectBuilding(hit.building); else { selectBuilding(null); store.select(null); } }
   if (ptrs.size === 1) g = { moved: 99 };
 }
 canvas.addEventListener('pointerup', (e) => endPtr(e, false)); canvas.addEventListener('pointercancel', (e) => endPtr(e, true));

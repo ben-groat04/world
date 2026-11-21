@@ -9,7 +9,7 @@ import { wpickObj } from './util.js';
 // [maxAge, shares]   keys follow content/larkfield/segments.js
 const BASE = [
   [17, { student: 0.84, employed: 0.09, unemployed: 0.03, otherInactive: 0.04 }],
-  [21, { student: 0.50, employed: 0.35, unemployed: 0.06, lookingAfterHomeFamily: 0.03, longTermSickDisabled: 0.02, otherInactive: 0.04 }],
+  [21, { student: 0.42, employed: 0.41, unemployed: 0.06, lookingAfterHomeFamily: 0.03, longTermSickDisabled: 0.02, otherInactive: 0.04 }],
   [24, { student: 0.22, employed: 0.56, unemployed: 0.07, lookingAfterHomeFamily: 0.05, longTermSickDisabled: 0.03, otherInactive: 0.07 }],
   [29, { student: 0.07, employed: 0.72, unemployed: 0.05, lookingAfterHomeFamily: 0.06, longTermSickDisabled: 0.03, otherInactive: 0.07 }],
   [39, { student: 0.03, employed: 0.72, unemployed: 0.04, lookingAfterHomeFamily: 0.12, longTermSickDisabled: 0.04, otherInactive: 0.05 }],

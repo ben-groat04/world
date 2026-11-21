@@ -11,8 +11,12 @@ const moneyStress = (w, p) => { const m = w.sys && w.sys.money; if (!m) return 0
 export function septemberTransitions(w, people) {
   const rng = w.rngFor('life.school');
   for (const p of people) {
-    const a = ageOf(w, p); if (a >= 25 || a < 3.9) continue;
+    const a = ageOf(w, p); if (a < 3.9) continue;
     const q = p.ext.pop, L = p.ext.life; let changed = false;
+    if (a >= 25) { // mature/postgraduate students: the course simply runs its length (or is abandoned)
+      if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { graduate(w, p, rng); rehome(w, p); }
+      continue;
+    }
     if (a < 11) { if (a >= 4 && (!q.school || q.school.kind !== 'primary')) { q.school = { kind: 'primary' }; q.activity = 'child'; changed = true; } }
     else if (a < 16) { if (!q.school || q.school.kind !== 'secondary') { q.school = { kind: 'secondary', dest: 'secondary_school' }; q.activity = 'child'; if (q.edu === 'in_school') q.edu = 'in_school'; changed = true; emit(w, 'secondary', p); } }
     else if (a < 17) {
@@ -27,19 +31,19 @@ export function septemberTransitions(w, people) {
     else if (a < 19 && q.school && q.school.kind === 'college') {
       const hi = q.seg === 'benefit_dependent' ? 0.28 : q.seg === 'lone_parents' || q.seg === 'shift_workers' ? 0.34 : q.seg === 'settled_professionals' || q.seg === 'family_couples' || q.seg === 'local_business_families' ? 0.55 : 0.42;
       if (rng.chance(hi)) {
-        q.school = { kind: 'university', dest: 'university' }; q.activity = 'student'; q.edu = 'level3'; L.uniStart = w.tick; changed = true; emit(w, 'university', p);
+        q.school = { kind: 'university', dest: 'university' }; q.activity = 'student'; q.edu = 'level3'; q.uniStart = w.tick; q.courseYears = rng.chance(0.2) ? 4 : 3; changed = true; emit(w, 'university', p);
         const away = rng.chance(0.55);
         if (away) later(w, rng.int(2, 25) * 144, 'leave.uni', { pid: p.id });
       } else { q.school = null; q.edu = 'level3'; q.activity = 'unemployed'; q.occ = q.occ || null; assignWork(w, p, rng); changed = true; emit(w, 'work', p); }
     }
     if (a >= 18 && q.role === 'child') q.role = 'adult_child';
-    if (L.uniStart != null && q.school && q.school.kind === 'university' && w.tick - L.uniStart >= years(w, 2.95)) graduate(w, p, rng);
+    if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { graduate(w, p, rng); changed = true; } // 4%/yr drop out
     if (changed) rehome(w, p);
   }
 }
 function emit(w, stage, p) { w.emit('life.school', { actors: [p.id], salience: stage === 'university' ? 0.25 : 0.12, tags: ['school'], payload: { stage } }); }
 export function graduate(w, p, rng) {
-  const q = p.ext.pop; q.school = null; q.edu = 'level4plus'; p.ext.life.uniStart = null; q.activity = 'unemployed';
+  const q = p.ext.pop; q.school = null; q.edu = 'level4plus'; q.uniStart = null; q.activity = 'unemployed';
   assignWork(w, p, rng);
   w.emit('life.graduate', { actors: [p.id], salience: 0.35, tags: ['school'], payload: { course: q.occ || 'a degree' } });
   w.addMemory(p, { type: 'education', text: 'Graduated from university.', otherIds: [], weight: 0.8, importance: 3 });

@@ -7,7 +7,8 @@ import textPack from '../content/larkfield/text/index.js';
 import { SEGMENTS } from '../content/larkfield/segments.js';
 import { openingsFor } from '../sim/population/venues.js';
 import { describeEvent, newsFor, NEWS_TYPES } from './describe.js';
-import { GOD_COMMANDS } from './godcatalogue.js';
+import { GOD_COMMANDS, GOD_PRESETS, themeOf } from './godcatalogue.js';
+import { PlayHost } from './play/host-play.js';
 
 export const TIER_LIST = [
   { id: 'pause', label: 'Pause', hint: 'Space' },
@@ -43,6 +44,7 @@ export class Host {
     this.sampleStats();
     for (const t of NEWS_TYPES) if (w.events.registry.has(t)) w.on(t, (ev) => this.onEvent(ev));
     this.seenPop = -1;
+    this.play = new PlayHost(this);
   }
 
   // ------------------------------------------------------------------ boot
@@ -84,17 +86,17 @@ export class Host {
   advance(dtSec, budgetMs = 12) {
     if (this.tps === 0) { this.rate *= 0.9; return 0; }
     const w = this.w, t0 = performance.now(); let n = 0;
-    if (this.tps === Infinity) { while (performance.now() - t0 < budgetMs && n < 30000) { w.step(); n++; if (this.jump && this.checkJump()) break; } }
-    else { this.acc = Math.min(this.acc + dtSec * this.tps, this.tps * 0.4 + 4); while (this.acc >= 1 && performance.now() - t0 < budgetMs) { w.step(); this.acc--; n++; if (this.jump && this.checkJump()) break; } }
+    if (this.tps === Infinity) { while (performance.now() - t0 < budgetMs && n < 30000) { w.step(); n++; if ((this.jump || this.play.skip) && this.checkJump()) break; } }
+    else { this.acc = Math.min(this.acc + dtSec * this.tps, this.tps * 0.4 + 4); while (this.acc >= 1 && performance.now() - t0 < budgetMs) { w.step(); this.acc--; n++; if ((this.jump || this.play.skip) && this.checkJump()) break; } }
     if (dtSec > 0) this.rate = this.rate * 0.85 + (n / dtSec) * 0.15;
     if (w.tick - this.lastStatTick >= this.TPD * 14) this.sampleStats();
     return n;
   }
-  checkJump() { const j = this.jump; if (this.w.tick > j.limit) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: null }); return true; } return false; }
+  checkJump() { if (this.play.skipDue()) return true; const j = this.jump; if (!j) return false; if (this.w.tick > j.limit) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: null }); return true; } return false; }
 
   // ------------------------------------------------------------------ events -> feeds
   onEvent(ev) {
-    const w = this.w; const it = newsFor(w, this.text, ev, this); if (!it) return;
+    const w = this.w; const it = newsFor(w, this.text, ev, this); this.play.onEvent(ev, it); if (!it) return;
     it.id = this.nextNewsId++; if (this.godWatch && ev.tick <= this.godWatch.until) it.conseq = true;
     this.news.push(it); this.newsOut.push(it); if (this.news.length > 600) this.news.splice(0, 100);
     if (this.jump && it.sal >= this.jump.min && ev.tick > this.jump.start) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: it }); }
@@ -120,6 +122,7 @@ export class Host {
     if (this.newsOut.length) { this.send({ t: 'news', items: this.newsOut.splice(0, 200) }); }
     if (now - this.lastSlow > (this.tps > 3000 ? 2500 : 1200)) { this.lastSlow = now; this.slowFeeds(); }
     if (this.pendingSeries.length) { this.send({ t: 'stats', samples: this.pendingSeries.splice(0), stats: this.statsDetail() }); }
+    this.play.tickFrame();
     const gap = this.tps > 3000 ? 700 : 260;
     if (this.selected != null && now - this.lastDetail > gap) { this.lastDetail = now; const d = this.personDetail(this.selected); if (d) this.send({ t: 'detail', p: d }); }
   }
@@ -211,10 +214,10 @@ export class Host {
   }
 
   // ------------------------------------------------------------------ god mode
-  godCatalogue() { const have = (n) => this.w.commands.has(n); const list = GOD_COMMANDS.filter((c) => have(c.name)).map(({ name, group, label, icon, desc, params }) => ({ name, group, label, icon, desc, params })); const known = new Set(GOD_COMMANDS.map((c) => c.name)); const other = [...this.w.commands.handlers.keys()].filter((n) => !known.has(n) && !/^(routine\.|kernel\.)|initPerson|initHousehold|\.init$/.test(n)); return { list, other }; }
+  godCatalogue() { const have = (n) => this.w.commands.has(n); const list = GOD_COMMANDS.filter((c) => have(c.name)).map(({ name, group, label, icon, desc, params }) => ({ name, group, theme: themeOf(name, group), label, icon, desc, params })); const known = new Set(GOD_COMMANDS.map((c) => c.name)); const other = [...this.w.commands.handlers.keys()].filter((n) => !known.has(n) && !/^(routine\.|kernel\.)|initPerson|initHousehold|\.init$/.test(n)); return { list, other: other.filter((n) => !/^player\./.test(n)), presets: GOD_PRESETS.map(({ id, label, icon, desc, picks }) => ({ id, label, icon, desc, picks: picks || [] })) }; }
   runCommand(m) {
     const w = this.w; let res = null, err = null; const c = GOD_COMMANDS.find((x) => x.name === m.name);
-    try { const args = c && c.build ? c.build(m.args || {}, this) : (m.args || {}); const before = w.tick; res = w.queueCommand({ actor: 'god', name: m.name, args }); this.godWatch = { tick: before, until: before + this.TPD * 20 };
+    try { const args = c && c.build ? c.build(m.args || {}, this) : (m.args || {}); const before = w.tick; const ev0 = w.events.nextId; res = w.queueCommand({ actor: 'god', name: m.name, args }); if (!m.quiet) this.play.track(c ? c.label : m.name, c && c.describe ? c.describe(m.args || {}, this) : '', ev0, c && c.icon); this.godWatch = { tick: before, until: before + this.TPD * 20 };
       const it = { id: this.nextNewsId++, tick: w.tick, date: w.calendar.formatDate(w.tick), kind: 'god', type: 'god.' + m.name, head: `God mode: ${c ? c.label : m.name}`, body: c ? c.describe?.(m.args || {}, this) || c.desc : m.name, ppl: [], sal: 1, ok: res !== false }; this.news.push(it); this.newsOut.push(it);
     } catch (e) { err = String(e && e.message || e); }
     let out; try { out = res === undefined ? null : JSON.parse(JSON.stringify(res)); } catch (e) { out = String(res); }
@@ -230,6 +233,8 @@ export class Host {
       case 'directory': this.send({ t: 'directory', list: this.directory() }); break;
       case 'jump': this.jump = { min: m.min ?? 0.5, start: this.w.tick, limit: this.w.tick + this.TPY * 2 }; this.setTier('max'); break;
       case 'god': this.runCommand(m); break;
+      case 'godPreset': this.play.preset(m); break;
+      case 'play': this.play.op(m); break;
       case 'history': this.send({ t: 'news', items: this.news.slice(-300), replace: true }); break;
     }
   }

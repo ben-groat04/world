@@ -46,6 +46,7 @@ export function createHousing() {
         premium: rng.float(0.88, 1.14), cond: +rng.float(0.5, 1).toFixed(2), damp: false, repair: null, notice: null, since: hh ? hh.since : 0, lastRise: w.tick - rng.int(0, 11) * MONTH, lastRisePct: 0, voidUntil: 0, listed: !hh, complained: 0, hpiBase: 1, cafeNear: 0, bx: b.door.x, by: b.door.y, floor: mu.floor };
       if (!hh) { u.listed = false; u.voidUntil = w.tick + rng.int(0, 2) * MONTH; if (!u.rent) u.rent = rented(u.tenure) ? marketRent(w, u, 1) : 0; }
       if (u.tenure === 'private_rent' || isSocial(u.tenure)) u.cond = Math.min(u.cond, rng.float(0.45, 1));
+      u.lastSeg = hh ? hh.seg : null; // the kind of tenant last housed here: student lets stay student lets (letting-agent behaviour)
       list.push(u); byId[u.id] = u;
     }
     const owners = M.owners.map((o) => ({ id: o.id, kind: o.kind, units: o.units.slice(), offMap: o.offMap || 0, sold: 0 }));
@@ -107,7 +108,7 @@ export function createHousing() {
   function arrive(u, forceSeg) {
     const w = W, rng = w.rngFor('housing.arrive'), S = H(w);
     const { hh, people, seg } = createArrivalHousehold(w, rng, u, forceSeg);
-    u.hh = hh.id; u.since = w.tick; u.voidUntil = 0; u.listed = false; u.lastRise = w.tick;
+    u.hh = hh.id; u.since = w.tick; u.voidUntil = 0; u.listed = false; u.lastRise = w.tick; u.lastSeg = hh.seg;
     hh.rentPcm = rented(u.tenure) ? u.rent : 0;
     if (u.tenure === 'mortgage' || u.tenure === 'owned_outright') { const price = valueOf(w, u); hh.mortgagePcm = u.tenure === 'mortgage' ? Math.round(price * 0.8 * 0.0059) : 0; }
     const adults = people.filter((p) => w.ageOf(p) >= 16), net = Math.max(900, (seg.money.incomeBand[1] / 12) * 0.82 * (u.tenure === 'private_rent' ? 1 : 0.9));
@@ -311,7 +312,10 @@ export function createHousing() {
   function sharerRotation(hh, ps, adults, seg, rng) {
     const w = W, S = H(w), rate = hh.seg === 'students' ? 0.014 : hh.seg === 'young_sharers' ? 0.010 : 0.005;
     for (const p of adults) {
-      if (adults.length < 2 || !rng.chance(rate)) continue;
+      // student-let tenancies end with the course: a former student (graduated, dropped out) in a student house gives notice at ~10%/month
+      // (tenancy ends / graduate job elsewhere); the vacant room is re-let to the next cohort (pendingRooms)
+      const r = hh.seg === 'students' && p.ext.pop.activity !== 'student' ? 0.10 : rate;
+      if (adults.length < 2 || !rng.chance(r)) continue;
       const age = w.ageOf(p), eid = w.emit('housing.moved_out', { actors: [p.id], place: hh.bid, objects: [hh.id], salience: 0.3, tags: ['housing', 'life', 'churn'], payload: { to: 'metropolis', reason: 'flatmate_rotation' } });
       if (w.commands.has('labour.depart')) w.cmd('labour.depart', { pid: p.id });
       p.emigrated = true; p.emigratedTick = w.tick; p.emigratedTo = rng.pick(['metropolis', 'partner_elsewhere', 'new_job_elsewhere', 'back_home']); w.removePerson(p);

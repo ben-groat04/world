@@ -31,6 +31,7 @@ export class Store {
       case 'result': s.results.unshift(m); this.emit('result', m); break;
       case 'jumped': this.emit('jumped', m.item); break;
       case 'error': console.error('[sim]', m.error); this.emit('error', m.error); break;
+      default: this.emit(m.t, m);
     }
   }
 }

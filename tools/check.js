@@ -24,7 +24,7 @@ try {
   band('population change', L.length / pop0, 0.85, 1.15);
   const act = (a) => ad.filter((p) => p.ext.pop.activity === a).length / ad.length;
   band('employed share', act('employed'), 0.45, 0.70);
-  band('student share', act('student'), 0.015, 0.16) // known: ~2% vs 10% census (ISSUES.md);
+  band('student share', act('student'), 0.04, 0.16);
   band('unemployed share', act('unemployed'), 0.02, 0.12);
   band('median age', L.map((p) => w.ageOf(p)).sort((a, b) => a - b)[L.length >> 1], 28, 40);
   const snap = JSON.parse(JSON.stringify(w.snapshot()));

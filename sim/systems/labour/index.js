@@ -211,8 +211,9 @@ export function createLabour() {
   }
   function studentStep(p, q, age, rng) {
     const sk = q.school && q.school.kind;
-    if (sk === 'college' && age >= 18) { if (rng.chance(0.55)) { q.school = { kind: 'university', dest: 'university' }; q.edu = 'level3'; } else graduate(p, q, age, 'level3'); }
-    else if (sk === 'university' && age >= 21.5 && rng.chance(0.18)) graduate(p, q, age, 'level4plus');
+    // college -> university/work at 18 is decided by life (September transitions); this only catches stragglers (arrivals aged 19+ still 'college')
+    if (sk === 'college' && age >= 19) { if (rng.chance(0.45)) { q.school = { kind: 'university', dest: 'university' }; q.edu = 'level3'; q.uniStart = W.tick; q.courseYears = 3; } else graduate(p, q, age, 'level3'); }
+    else if (sk === 'university') { if (q.uniStart == null) { q.uniStart = W.tick - Math.round(rng.float(0, 2.8) * W.calendar.ticksPerYear); q.courseYears = 3; } } // course end handled by life (September)
     else if (!sk && age >= 25 && rng.chance(0.1)) graduate(p, q, age, q.edu);
   }
   function graduate(p, q, age, edu) {

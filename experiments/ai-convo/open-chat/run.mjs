@@ -1,10 +1,10 @@
-// Four agents (Haiku by default) talk to each other, each agent one long-lived `claude -p` process (stream-json in/out, no HTTP API), so startup cost is paid once and each agent keeps its own history. The system prompt is NOTE + BRIEF and nothing else.
+// Four agents (Haiku by default) talk to each other through the `claude -p` CLI (no HTTP API). Each agent is a saved CLI session that holds exactly what it has seen and said in the posted conversation: every ask forks a new session from the agent's last posted turn (--resume <id> --fork-session), and only the fork whose reply is posted becomes the agent's session. A reply that isn't posted (lost the turn, or PASS) is discarded with its fork, so no agent remembers saying something nobody saw. The system prompt is NOTE + BRIEF and nothing else.
 // What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task).
-// Prompts: an agent's first turn gets the whole conversation so far; later turns get only what others said since it last spoke (its own replies are already in its history), as a header line "\u2014 Name, Sun 19:42" followed by the text. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
-// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and those agents are told so in their next prompt. Every prompt says an agent may reply just PASS. If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Oracle answers count).
+// Prompts: until an agent has posted, it gets the whole conversation so far; after that it gets what others said since its last posted message (its own posted replies are already in its session), as a header line "\u2014 Name, Sun 19:42" followed by the text. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
+// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and forgotten by their agents. Every prompt says an agent may reply just PASS. If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time (repeated in each prompt until that agent posts) and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Oracle answers count).
 // In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides); each posted message is stamped and the clock then advances 1-6 minutes.
 // Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl} (every reply is logged with posted: true|false and its clock time `at`; transcript.txt has only posted messages, oracle answers and clock notes).
-import fs from 'fs'; import os from 'os'; import path from 'path'; import readline from 'readline'; import { spawn } from 'child_process';
+import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
 const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation.';
 const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. You have lives outside this chat. Skip disclaimers about being an AI or about your limits. Keep messages short.';
@@ -28,26 +28,19 @@ fs.mkdirSync(dir, { recursive: true });
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
 const env = { ...process.env }; for (const k of ['CLAUDE_CODE_USER_EMAIL', 'CLAUDECODE', 'CLAUDE_CODE_CHILD_SESSION', 'CLAUDE_CODE_ENTRYPOINT']) delete env[k];
 env.CLAUDE_CODE_MAX_OUTPUT_TOKENS = '1000'; env.CLAUDE_CONFIG_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
-const mkArgv = sys => ['-p', '--input-format', 'stream-json', '--output-format', 'stream-json', '--verbose', '--system-prompt', sys, '--tools', '', '--setting-sources', '', '--settings', '{"attribution":{"commit":"","pr":""},"includeCoAuthoredBy":false}',
-  '--exclude-dynamic-system-prompt-sections', '--no-session-persistence', '--model', MODEL];
+const mkArgv = sys => ['-p', '--output-format', 'json', '--system-prompt', sys, '--tools', '', '--setting-sources', '', '--settings', '{"attribution":{"commit":"","pr":""},"includeCoAuthoredBy":false}',
+  '--exclude-dynamic-system-prompt-sections', '--model', MODEL]; // sessions are saved (no --no-session-persistence) so they can be forked; they live in the temp CLAUDE_CONFIG_DIR
 const fail = msg => { console.error('claude error:', msg); process.exit(1); };
-const agents = {};
-for (const n of NAMES) {
-  const proc = spawn('claude', mkArgv(`${NOTE} ${briefFor(n)}`), { cwd, env, stdio: ['pipe', 'pipe', 'inherit'] });
-  proc.on('error', e => fail(e));
-  agents[n] = { proc, lines: readline.createInterface({ input: proc.stdout })[Symbol.asyncIterator]() };
-}
+const session = {}; // per agent: the CLI session id of its last posted turn (absent until it has posted)
+// One turn: fork the agent's session (or start a fresh one) with `user` as the next message; returns the result JSON, whose session_id is the fork.
 async function turn(n, user) {
-  const { proc, lines } = agents[n];
-  proc.stdin.write(JSON.stringify({ type: 'user', message: { role: 'user', content: user } }) + '\n');
-  for (;;) {
-    const { value, done } = await lines.next();
-    if (done) fail(`agent ${n} process exited before a result`);
-    const j = JSON.parse(value);
-    if (j.type !== 'result') continue;
-    if (j.is_error) fail(j.result || JSON.stringify(j));
-    return j;
-  }
+  const argv = [...mkArgv(`${NOTE} ${briefFor(n)}`), ...(session[n] ? ['--resume', session[n], '--fork-session'] : [])];
+  const proc = spawn('claude', argv, { cwd, env, stdio: ['pipe', 'pipe', 'inherit'] });
+  let out = ''; proc.stdout.on('data', d => out += d); proc.stdin.end(user);
+  const code = await new Promise(res => { proc.on('error', e => fail(e)); proc.on('close', res); });
+  let j; try { j = JSON.parse(out); } catch { fail(`agent ${n}: exit ${code}, no result`); }
+  if (j.is_error) fail(j.result || JSON.stringify(j));
+  return j;
 }
 async function askOracle(who, q) {
   const ctx = convo.slice(-6).map(line).join('\n\n');
@@ -66,16 +59,15 @@ async function askOracle(who, q) {
 const PASS = '(If you have nothing to say, reply with just PASS.)', isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
 const log = row => fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify(row) + '\n');
 const say = (head, body) => { fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- ${head}\n${body}\n\n`); console.log(`--- ${head}\n${body}\n`); };
-const prefix = {}; // per agent: lines to put at the top of their next prompt (time jump, "your last message wasn't sent")
+const prefix = {}; // per agent: lines to put at the top of their prompts until they next post (time jump)
 const ask = async (n, step, at) => {
-  const fresh = n in seen ? convo.slice(seen[n]) : convo;
-  const body = n in seen
+  const fresh = n in session ? convo.slice(seen[n]) : convo;
+  const body = n in session
     ? `${fresh.length ? `New messages:\n${fresh.map(line).join('\n\n')}\n\nWrite your next message.` : 'No new messages.'}\n\n${PASS}`
     : `(It's now ${WD[clock.getDay()]} ${clock.getDate()} ${MON[clock.getMonth()]}, ${hm(clock)}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.\n\n${PASS}`;
   const user = (prefix[n] || []).map(x => x + '\n\n').join('') + body;
-  delete prefix[n]; seen[n] = convo.length;
   const j = await turn(n, user), text = j.result.trim();
-  return { n, text, pass: isPass(text), usage: j.usage, user, step, at };
+  return { n, text, pass: isPass(text), usage: j.usage, user, step, at, sid: j.session_id };
 };
 let askers = [NAMES[0]], afterJump = false, step = 0;
 while (convo.length < MESSAGES) {
@@ -88,8 +80,7 @@ while (convo.length < MESSAGES) {
   const chosen = named.length ? 'addressed' : 'random', first = named.length ? named[0][0] : live[rnd(0, live.length - 1)];
   for (const r of done) log({ step, who: r.n, text: r.text, ...(r.pass && { pass: true }), posted: r === first, ...(r === first && { chosen }), at, usage: r.usage, user: r.user, argv: mkArgv(briefFor(r.n)) });
   if (first) {
-    for (const r of done) if (r !== first && !r.pass) (prefix[r.n] ||= []).push(`(Your last message wasn't sent: ${first.n} posted first.)`);
-    post(first.n, first.text); seen[first.n] = convo.length;
+    post(first.n, first.text); session[first.n] = first.sid; seen[first.n] = convo.length; delete prefix[first.n]; // the posted fork becomes the agent's session
     say(`${stamp(new Date(at))}, ${first.n}`, first.text);
     const q = ORACLE && first.text.match(/^\s*@oracle\b[:,]?\s*(.+)$/im)?.[1];
     if (q) try {
@@ -109,5 +100,4 @@ while (convo.length < MESSAGES) {
   say('everyone passed, time jumps', note);
   askers = [...NAMES]; afterJump = true;
 }
-for (const n of NAMES) agents[n].proc.stdin.end();
 console.log('Done. Saved transcript.txt and log.jsonl in', dir);

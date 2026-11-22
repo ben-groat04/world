@@ -19,8 +19,9 @@ node run.mjs 60 "custom brief"        # message limit, brief override
 Each run writes `runs/<timestamp>/transcript.txt`, plus `log.jsonl`, which holds every reply, including unsent replies and passes. Runs take a few minutes, so run them in the background.
 
 ### How it works
-- **The agents:** each one is a long-lived `claude -p` process with `--system-prompt` set to the brief. They get no tools, a temp working folder and a fresh config folder. That keeps Claude Code's coding prompt, CLAUDE.md and account details out. The CLI still adds a short environment note, and the system prompt tells them to ignore it. That line is left out of the logs.
+- **The agents:** each one is a saved `claude -p` session with `--system-prompt` set to the brief. They get no tools, a temp working folder and a fresh config folder. That keeps Claude Code's coding prompt, CLAUDE.md and account details out. The CLI still adds a short environment note, and the system prompt tells them to ignore it. That line is left out of the logs.
 - **Taking turns:** after each message, everyone else is asked at once whether to reply. If the last message names someone who wants to reply, that person is posted. Otherwise a random person who wants to reply is posted.
+- **Memory:** an agent remembers only what was posted. Each ask forks the agent's session from its last posted message (`--resume <id> --fork-session`), and only the fork that gets posted is kept. A reply that loses the turn is thrown away with its fork, so no agent thinks it said something nobody saw. Runs before 2026-11-22 17:40 used one long-lived process per agent, so agents there remember their unsent replies.
 - **Passing and ending:** an agent can reply `PASS`. When everyone passes, the in-story clock jumps to the next evening. If everyone passes again, the run ends.
 - **Header comments:** the top of `run.mjs` explains the details.
 

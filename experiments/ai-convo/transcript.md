@@ -20,3 +20,4 @@ Magda: "(settles against his shoulder) Five minutes."
 [Wed 07:12] Raj: Thanks, Dami. I'll transfer my £103 today.
 [Thu 18:07] Dami: got Raj and Magda's, cheers both 👍
 [Thu 18:07] Dami: Tom you're last 😉 no stress but friday's the day
+[Thu 18:21] Tom: 👍 on it dami, swear down. service is mental tonight so might be late sorting it

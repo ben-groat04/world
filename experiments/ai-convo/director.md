@@ -4,3 +4,5 @@
 - T3 → Magda: "Tuesday 22:30, in bed in your room; Kuba is here, watching something on his laptop next to you."
 - T4 → Raj: "Wednesday 07:10, kitchen, making coffee before a 9am interview call for a contract. Nobody else up yet. You see the group chat."
 - T5 → Dami: "Thursday 18:05, home after an early shift, sofa. Your banking app shows £103 in from Magda (Wed 14:20) and £103 from Raj (Wed 08:02). Nothing from Tom."
+# Live mode started 11:33 real time; clock Thu 18:00 -> Sun 23:00, 1s = 5min
+- External event rolled: OFFER: recruiter calls Fri 11:30 — they want him, start in 2 weeks, good day rate. (delivered to Raj only)

@@ -59,10 +59,18 @@
 //  lineMentions       mean over people (those with private lines AND posted messages) of how many of their posted messages
 //                     contain (whole word, case-insensitive) one of the 3 longest non-stopword words (letters, >=4 chars)
 //                     of their own private line(s) (all private_lines rows for that person, pooled). '-' if no private lines
+//  perDay             posted messages per in-story day (first row to the end row, or the last row)
+//  starts             conversation starts per in-story day: posts at least 2 h after the previous post (the first post counts)
+//  opener             1 if the earliest check-in of the run posted (the opener), else 0; '-' if no check-in rows
+//  passOpen..passNotif  share of looks that ended as a PASS row (a PASS, a polish DROP or a withdrawn draft; not a reaction) by situation, from the prompt `user`:
+//                     passFirst = another person's first look; passEvEmpty / passEvQuiet / passEvNew = a look with a life-events block and an empty chat / nothing new in the chat / new messages (a "(new)" line);
+//                     passNotif = a look without an events block that had new messages. Looks are rows with `user`. '-' if none
+//  dropRate           share of replies that reached the rewrite pass and were DROPped (rows with `raw`)
+//  addStyle, addAll   rewrite fidelity over posted rows with `raw`: emoji + slang tokens not in the raw draft, and all new tokens (emoji included), per token posted (prompts.mjs added())
 //  oracle             number of oracle rows (private ones included)
 //  end                how the run ended (`end` row: limit / date); '-' if none
 
-import { readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs'; import { added } from './prompts.mjs';
 
 const PRAISE = [
   /\bgreat point\b/i, /\bgood point\b/i, /\bfair point\b/i, /\blove that\b/i, /\bnice catch\b/i,
@@ -165,6 +173,12 @@ function score(dir) {
   const perPerson = Object.keys(lines).filter(n => counts[n]).map(n => { const ws = lineWords(lines[n]); return ws.length ? msgs.filter(m => m.who === n && hasWord(m.text, ws)).length : null; });
   const failed = all.filter(r => r.failed === 'continuation').length;
   const cnt = f => msgs.length ? msgs.filter(f).length : null;
+  const looks = agent.filter(r => r.user && r.checkin), firstL = looks.reduce((a, r) => !a || r.checkin < a.checkin ? r : a, null), sit = r => {
+    if (r === firstL) return 'Open'; if (!/You last looked/.test(r.user)) return 'First'; const ev = /Not on your phone/.test(r.user), nu = /\(new\)/.test(r.user), empty = /\(no messages\)/.test(r.user);
+    return ev ? (empty ? 'EvEmpty' : nu ? 'EvNew' : 'EvQuiet') : nu ? 'Notif' : null; };
+  const passBy = k => { const l = looks.filter(r => sit(r) === k); return l.length ? l.filter(r => r.pass === true).length / l.length : null; };
+  const t0 = Math.min(...agent.filter(r => r.at).map(r => Date.parse(r.at + 'Z'))), t1 = ms(all.findLast(r => r.end)?.at) ?? Math.max(...msgs.map(m => m.t)), days = (t1 - t0) / 864e5;
+  const withRaw = msgs.filter(m => m.raw && m.draft == null), ad = withRaw.map(m => added(m.raw, m.text)), sum = f => ad.reduce((a, x) => a + f(x), 0), tok = sum(x => x.total), polished = agent.filter(r => r.raw || r.polishDrop);
   return {
     run: dir.replace(/\/$/, '').split('/').pop(),
     messages: msgs.length, people: Object.keys(counts).length,
@@ -198,6 +212,12 @@ function score(dir) {
     selfReact: reactRows.length ? reactRows.filter(r => msgs[r.to]?.who === r.who).length : null,
     failed: failed || null,
     lineMentions: mean(perPerson),
+    perDay: msgs.length && days > 0 ? msgs.length / days : null,
+    starts: msgs.length && days > 0 ? msgs.filter((m, i) => !i || m.t - msgs[i - 1].t >= 2 * 36e5).length / days : null,
+    opener: firstL ? (firstL.posted === true ? 1 : 0) : null,
+    passFirst: passBy('First'), passEvEmpty: passBy('EvEmpty'), passEvQuiet: passBy('EvQuiet'), passEvNew: passBy('EvNew'), passNotif: passBy('Notif'),
+    dropRate: polished.length ? polished.filter(r => r.polishDrop).length / polished.length : null,
+    addStyle: tok ? sum(x => x.emoji + x.slang) / tok : null, addAll: tok ? sum(x => x.words) / tok : null,
     oracle,
     end,
   };

@@ -181,6 +181,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   </header>
   <div id="error" class="error" role="alert" hidden></div>
   <form class="newrun" id="newForm" autocomplete="off" hidden>
+    <div class="field full"><label class="label" for="nSituation">Situation</label>
+      <input id="nSituation" type="text" maxlength="500" placeholder="Optional: who they are to each other, e.g. You're siblings. (Default: friends.)"></div>
     <div class="field grow"><label class="label" for="nTopic">Topic</label>
       <input id="nTopic" type="text" maxlength="500" placeholder="Optional"></div>
     <div class="field"><label class="label" for="nModel">Model</label>
@@ -427,7 +429,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
         secrets[name] = m[2].replace(/\s+/g, ' ').slice(0, 300);
       }
       const model = $('nModel').value === 'sonnet' ? 'sonnet' : 'haiku';
-      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nmessages: 120\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}\nsecrets: ${JSON.stringify(secrets)}`;
+      const situation = $('nSituation').value.replace(/\s+/g, ' ').trim().slice(0, 500);
+      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nmessages: 120\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\nsituation: ${situation || '(none)'}\ntopic: ${topic || '(none)'}\nsecrets: ${JSON.stringify(secrets)}`;
       sending = true; $('nGo').disabled = true; nStatus('Sending\u2026');
       try {
         const anchor = await comments.anchorFor($('newForm'));

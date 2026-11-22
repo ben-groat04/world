@@ -53,31 +53,31 @@
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
-    "bedrooms": 5,
-    "occupancy_rating": 1,
+    "bedrooms": 4,
+    "occupancy_rating": 0,
     "size": 4,
     "members": [
      {
-      "name": "Rebecca Hall",
+      "name": "Rachel Brown",
       "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Marta Petrov",
-      "age": 33,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Lucy Wright",
+      "name": "Tanisha Campbell",
       "age": 32,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Elena Moreau",
+      "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      }
     ]
    },
-   "relationship_status": "single",
+   "relationship_status": "in a relationship (living apart)",
    "children": [],
    "health": "very good",
    "education": "Degree or above (level 4+)",
@@ -87,26 +87,26 @@
    "former_occupation": null
   },
   {
-   "name": "Rebecca Hall",
+   "name": "Rachel Brown",
    "age": 33,
    "sex": "F",
    "ethnicity": "White British",
    "birthplace": "England",
    "years_in_uk": 33,
    "religion": "No religion",
-   "activity": "looking after home or family",
+   "activity": "long-term sick or disabled",
    "occupation": null,
    "contract": null,
    "employer": null,
-   "annual_income": 977,
+   "annual_income": 5847,
    "earnings_from_work": null,
    "hours_per_week": 0,
    "shifts": [],
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
-    "bedrooms": 5,
-    "occupancy_rating": 1,
+    "bedrooms": 4,
+    "occupancy_rating": 0,
     "size": 4,
     "members": [
      {
@@ -116,14 +116,14 @@
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Marta Petrov",
-      "age": 33,
+      "name": "Tanisha Campbell",
+      "age": 32,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Lucy Wright",
-      "age": 32,
+      "name": "Elena Moreau",
+      "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      }
@@ -131,53 +131,59 @@
    },
    "relationship_status": "single",
    "children": [],
-   "health": "very good",
+   "health": "bad",
    "education": "Degree or above (level 4+)",
    "hourly_pay": null,
-   "income_source": "benefits or partner support",
+   "income_source": "benefits (UC LCWRA, ESA, PIP)",
    "role": null,
-   "former_occupation": "Teaching & other educational professionals"
+   "former_occupation": "Health professionals (doctors, nurses, therapists)"
   },
   {
-   "name": "Marta Petrov",
-   "age": 33,
+   "name": "Tanisha Campbell",
+   "age": 32,
    "sex": "F",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
+   "ethnicity": "Mixed / multiple",
    "birthplace": "Australia",
-   "years_in_uk": 11,
-   "religion": "Christian",
+   "years_in_uk": 5,
+   "religion": "No religion",
    "activity": "employed full-time",
-   "occupation": "Caring personal service occupations",
-   "contract": "agency",
-   "employer": "Private care provider",
-   "annual_income": 24636,
-   "earnings_from_work": 24636,
-   "hours_per_week": 36,
+   "occupation": "Protective service occupations",
+   "contract": "permanent",
+   "employer": "Police or fire service",
+   "annual_income": 47537,
+   "earnings_from_work": 47537,
+   "hours_per_week": 42.5,
    "shifts": [
     {
-     "day": "Fri",
-     "start": "19:00",
-     "end": "07:30",
-     "paid_hours": 12
+     "day": "Mon",
+     "start": "18:00",
+     "end": "05:30",
+     "paid_hours": 10.75
+    },
+    {
+     "day": "Thu",
+     "start": "18:00",
+     "end": "05:30",
+     "paid_hours": 10.75
     },
     {
      "day": "Sat",
-     "start": "19:00",
-     "end": "07:30",
-     "paid_hours": 12
+     "start": "18:00",
+     "end": "05:30",
+     "paid_hours": 10.75
     },
     {
      "day": "Sun",
-     "start": "19:00",
-     "end": "07:30",
-     "paid_hours": 12
+     "start": "18:00",
+     "end": "04:30",
+     "paid_hours": 10.25
     }
    ],
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
-    "bedrooms": 5,
-    "occupancy_rating": 1,
+    "bedrooms": 4,
+    "occupancy_rating": 0,
     "size": 4,
     "members": [
      {
@@ -187,74 +193,62 @@
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Rebecca Hall",
+      "name": "Rachel Brown",
       "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Lucy Wright",
-      "age": 32,
+      "name": "Elena Moreau",
+      "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      }
     ]
    },
-   "relationship_status": "in a relationship (living apart)",
+   "relationship_status": "separated or divorced",
    "children": [],
-   "health": "very good",
+   "health": "good",
    "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 13.16,
+   "hourly_pay": 21.51,
    "income_source": "earnings",
    "role": null,
    "former_occupation": null
   },
   {
-   "name": "Lucy Wright",
-   "age": 32,
+   "name": "Elena Moreau",
+   "age": 33,
    "sex": "F",
-   "ethnicity": "White British",
+   "ethnicity": "White Other (incl. Irish, Eastern European)",
    "birthplace": "England",
-   "years_in_uk": 32,
-   "religion": "No religion",
+   "years_in_uk": 33,
+   "religion": "Christian",
    "activity": "employed part-time",
-   "occupation": "Business, media & public-service professionals",
+   "occupation": "Administrative occupations",
    "contract": "permanent",
-   "employer": "Bank or insurer",
-   "annual_income": 33848,
-   "earnings_from_work": 33848,
-   "hours_per_week": 27.5,
+   "employer": "Private company",
+   "annual_income": 14068,
+   "earnings_from_work": 14068,
+   "hours_per_week": 18,
    "shifts": [
-    {
-     "day": "Mon",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
-    },
     {
      "day": "Tue",
      "start": "08:30",
-     "end": "16:00",
-     "paid_hours": 7
+     "end": "18:00",
+     "paid_hours": 9
     },
     {
-     "day": "Wed",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Thu",
-     "start": "08:00",
-     "end": "15:00",
-     "paid_hours": 6.5
+     "day": "Fri",
+     "start": "08:30",
+     "end": "18:00",
+     "paid_hours": 9
     }
    ],
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
-    "bedrooms": 5,
-    "occupancy_rating": 1,
+    "bedrooms": 4,
+    "occupancy_rating": 0,
     "size": 4,
     "members": [
      {
@@ -264,14 +258,14 @@
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Rebecca Hall",
+      "name": "Rachel Brown",
       "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Marta Petrov",
-      "age": 33,
+      "name": "Tanisha Campbell",
+      "age": 32,
       "sex": "F",
       "relation": "housemate (unrelated)"
      }
@@ -280,8 +274,8 @@
    "relationship_status": "single",
    "children": [],
    "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 23.67,
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 15.03,
    "income_source": "earnings",
    "role": null,
    "former_occupation": null

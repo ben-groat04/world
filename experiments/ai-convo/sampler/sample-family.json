@@ -109,7 +109,7 @@
    "occupation": null,
    "contract": null,
    "employer": null,
-   "annual_income": 4850,
+   "annual_income": 6107,
    "earnings_from_work": null,
    "hours_per_week": 0,
    "shifts": [],
@@ -156,7 +156,7 @@
    "health": "good",
    "education": "A-level or apprenticeship (level 3)",
    "hourly_pay": null,
-   "income_source": "student support",
+   "income_source": "student support (maintenance loan)",
    "role": null,
    "former_occupation": null
   },

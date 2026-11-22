@@ -85,7 +85,7 @@ function person(o = {}) {
   const a0 = age < 18 || R() < .22 ? ri(0, Math.min(15, age)) : ri(18, Math.min(38, age));
   const yrs = uk ? age : Math.min(age, Math.max(1, age - a0));
   const rel = o.rel ?? pk(D.rel[eth], k => k === 'No religion' ? (age < 35 ? 1.3 : age < 55 ? 1 : .75) : 1);
-  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1]);
+  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1], k => k === 'ho' ? (o.hoMul ?? 1) : 1);
   if (age >= 80 && ['ft', 'pt', 'se'].includes(act)) act = 're'; else if (age >= 75 && act === 'ft') act = 'pt'; // very few people work past 80
   const edu = kid ? null : (o.edu === DEGK && age < 21 ? null : o.edu) ?? (act === 'st' ? (age < 22 ? pk('l3:85,gcse:15') : pk('deg:55,l3:45')) : pk(D.edu[b - 1], k => k === DEGK ? (age < 21 ? 0 : D.eduMul[eth]) : 1));
   let h = pk(D.health[kid ? 0 : b]);
@@ -131,8 +131,8 @@ function build(type, pr, fo = {}, minK = 0) {
   if (type === 'one') { me({}); return res(); }
   if (type === 'couple') { partner(me({})); return res(); }
   if (type === 'shared') {
-    const a = me({ aw: D.flatAge, max: 64 }), n = fo.n ?? +pk(D.nKids.shared);
-    while (M.length < n) M.push(person({ pr, aw: D.flatAge, ...(R() < .6 ? { min: Math.max(18, a.age - 6), max: a.age + 6 } : { max: 64 }) }));
+    const a = me({ aw: D.flatAge, max: 64, hoMul: .15 }), n = fo.n ?? +pk(D.nKids.shared);
+    while (M.length < n) M.push(person({ pr, aw: D.flatAge, hoMul: .15, ...(R() < .6 ? { min: Math.max(18, a.age - 6), max: a.age + 6 } : { max: 64 }) }));
     return res();
   }
   if (type === 'withparents') {
@@ -203,7 +203,7 @@ function finish(h, pr, tenure) {
 }
 function hhFor(p, pr) {
   for (let t = 0; t < 40; t++) {
-    const type = pk(D.hhAge[B(p.age) - 1], k => Math.pow(D.prof.hh[k] ?? 1, pr) * (D.ethTilt[k]?.[p.eth] ?? 1) * (k.startsWith('lone') && p.sex === 'M' ? .2 : 1));
+    const type = pk(D.hhAge[B(p.age) - 1], k => Math.pow(D.prof.hh[k] ?? 1, pr) * (D.ethTilt[k]?.[p.eth] ?? 1) * (k.startsWith('lone') && p.sex === 'M' ? .2 : 1) * (p.act === 'ho' ? ({ shared: .15, one: .35 }[k] ?? 1) : 1)); // home/family carers rarely live with unrelated adults or alone
     const h = build(type, pr, { p }); if (h) return finish(h, pr)[0];
   }
   return finish(build('one', pr, { p }), pr)[0];

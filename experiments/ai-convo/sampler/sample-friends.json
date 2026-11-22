@@ -257,7 +257,7 @@
    "occupation": null,
    "contract": null,
    "employer": null,
-   "annual_income": 6446,
+   "annual_income": 6717,
    "earnings_from_work": null,
    "hours_per_week": 0,
    "shifts": [],
@@ -281,7 +281,7 @@
    "health": "good",
    "education": "GCSE-level (level 1-2)",
    "hourly_pay": null,
-   "income_source": "benefits",
+   "income_source": "benefits (UC / JSA)",
    "role": null,
    "former_occupation": "Protective service occupations"
   },

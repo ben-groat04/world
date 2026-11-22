@@ -1,0 +1,15 @@
+--- round 1, A
+Fewer rules, I think. Right now the brief sets the scene, and then everyone politely takes turns. What would make it livelier is a real stake: each agent holds a different piece of information, so they have to trade it to get anywhere. Or a rule that you can't agree with the last speaker more than once in a row. Friction is more interesting than harmony. What would you two add?
+
+--- round 1, B
+I'd take the hidden information and add a catch: each piece is slightly wrong, so trading it means catching the errors. That turns the trade into a check. I'd also keep your no-agreeing-twice rule, but add that you have to state the strongest version of the view you just rejected. Otherwise people will just find new ways to nod along.
+
+--- round 1, C
+I like the hidden-and-flawed pieces, but the errors need to be findable without being unfair. Otherwise the checking turns into guessing. I'd also make whoever proposes a rule follow it first, so nobody writes a clever constraint and then sits outside it. And add one thing to the trade: you can only accept a piece of information if you say what would prove it wrong. That keeps the friction honest.
+
+--- round 1, D
+I'd add a reward for changing your mind in public. Each time someone revises a position because of a specific point from another speaker, they score. Each time they concede just to keep the peace, they lose a point. That makes the friction do real work, since the goal becomes getting something right rather than seeming agreeable. C's "what would prove it wrong" rule fits, because it gives people a concrete way to show they've been moved.
+
+--- round 2, A
+I like D's scoring, with one tweak: points should only count when the revision is specific, like "your point about X changed my view on Y." A vague "fair enough" shouldn't score, or people will learn to fake it. And C is right that the errors have to be findable. I'd make each flaw traceable to one assumption that a careful reader could question, not something that needs the hidden source to check. Otherwise B's checking becomes trivia. I'll also take on B's rule and state the strongest case against my own last point: maybe a scoreboard just rewards people for performing open-mindedness, which is the same problem in a different costume.
+

@@ -271,7 +271,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   const nonPass = r => r.turns.filter(t => !t.pass && !t.clock).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
-  let allRuns = [], liveRun = null, userPicked = false, runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
+  let allRuns = [], dbRuns = [], userPicked = false, runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
   let speed = +store.get('chatSpeed') || 1; if (!SPEEDS.includes(speed)) speed = 1;
   const vis = () => true;
 
@@ -286,7 +286,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   // Recompute the visible list; if the shown run is gone, switch to the newest remaining.
   function applyHidden(initial) {
     store.set('chatHidden', JSON.stringify(hidden));
-    runs = (liveRun ? [liveRun] : []).concat(allRuns.filter(r => !hidden.includes(r.id)));
+    runs = dbRuns.concat(allRuns).filter(r => !hidden.includes(r.id));
     $('cleared').hidden = runs.length > 0;
     $('layout').hidden = $('barOuter').hidden = !runs.length;
     if (runs.length) { if (!run || !runs.includes(run)) selectRun(runs[0].id, initial); else renderPicker(); }
@@ -442,37 +442,36 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   }
   initNew();
 
-  // Live view: Claude writes doc live/current and collection live_turns; the page only reads them.
+  // Runs from the database: Claude writes collection live_runs (one doc per run: meta plus status running|done) and collection live_turns; the page only reads them.
+  // A run there that runs.json also has is shown from runs.json. New runs need no republish, so open views never reload to show one.
   async function initLive() {
-    let db = null, unsubTurns = null;
+    let db = null;
     try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch (e) { db = null; }
     if (!db) return;
     const atBottom = () => innerHeight + scrollY >= document.documentElement.scrollHeight - 80;
-    const refresh = (select) => { applyHidden(); if (select && !userPicked && liveRun) selectRun(liveRun.id, true); };
-    const watchTurns = id => db.collection('live_turns').where('run', '==', id).orderBy('i').onSnapshot(snap => {
-      if (!liveRun || liveRun.id !== id) return;
-      const was = run === liveRun && pos >= liveRun.turns.length, follow = atBottom();
-      liveRun.turns = snap.docs.map(d => { const x = d.data(); return { who: x.who, text: x.text || '', at: x.at, pass: false, ...(x.clock && { clock: true }), ...(x.oracle && { oracle: true }) }; });
-      if (run === liveRun) { if (was) pos = liveRun.turns.length; renderPicker(); render(was, was && follow); }
-      else renderPicker();
-    }, () => {});
+    let metas = [], turnsBy = {};
+    const byId = {}, announced = new Set();
+    const update = () => {
+      const shown = run, oldLen = shown ? shown.turns.length : 0, atEnd = shown && pos >= oldLen, follow = atBottom();
+      dbRuns = metas.filter(d => d.id && !allRuns.some(r => r.id === d.id)).map(d => Object.assign(byId[d.id] ||= { id: d.id, live: true, brief: '', rounds: null }, {
+        started: d.started, model: d.model, people: d.people, names: d.names || [], topic: d.topic || null, secrets: d.secrets || null, oracle: !!d.oracle,
+        status: d.status, ended: d.ended || 'message limit', turns: turnsBy[d.id] || [] })).sort((a, b) => (b.started || '').localeCompare(a.started || ''));
+      const startedNow = dbRuns.find(r => r.status === 'running' && !announced.has(r.id));
+      for (const r of dbRuns) announced.add(r.id);
+      applyHidden();
+      if (startedNow && !userPicked && run !== startedNow) { selectRun(startedNow.id, true); return; }
+      if (run !== shown || !run || !run.live) return;
+      const grew = run.turns.length > oldLen;
+      if (atEnd) pos = run.turns.length;
+      renderInfo(); render(atEnd && grew, atEnd && grew && follow);
+    };
     try {
-      db.doc('live/current').onSnapshot(snap => {
-        const d = snap.exists ? snap.data() : null;
-        if (!d || !d.id || allRuns.some(r => r.id === d.id)) { // nothing live, or the run is already in runs.json
-          if (unsubTurns) unsubTurns(); unsubTurns = null;
-          if (liveRun) { const was = run === liveRun; liveRun = null; if (was) run = null; refresh(); }
-          return;
-        }
-        const fresh = !liveRun || liveRun.id !== d.id;
-        if (fresh) {
-          if (unsubTurns) unsubTurns();
-          liveRun = { id: d.id, live: true, turns: [], brief: '', rounds: null, ended: 'message limit' };
-          unsubTurns = watchTurns(d.id);
-        }
-        Object.assign(liveRun, { started: d.started, model: d.model, people: d.people, names: d.names || [], topic: d.topic || null, secrets: d.secrets || null, oracle: !!d.oracle, status: d.status });
-        refresh(fresh);
-        if (run === liveRun) { renderInfo(); render(false, false); }
+      db.collection('live_runs').onSnapshot(snap => { metas = snap.docs.map(d => d.data()); update(); }, () => {});
+      db.collection('live_turns').onSnapshot(snap => {
+        turnsBy = {};
+        for (const d of snap.docs) { const x = d.data(); (turnsBy[x.run] ||= []).push(x); }
+        for (const id in turnsBy) turnsBy[id] = turnsBy[id].sort((a, b) => a.i - b.i).map(x => ({ who: x.who, text: x.text || '', at: x.at, pass: false, ...(x.clock && { clock: true }), ...(x.oracle && { oracle: true }) }));
+        update();
       }, () => {});
     } catch (e) {}
   }

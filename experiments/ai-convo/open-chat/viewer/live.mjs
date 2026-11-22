@@ -1,6 +1,6 @@
 // Exports a run in progress for the viewer's live view: `node viewer/live.mjs <runId> <outDir>`.
-// Writes <outDir>/current.json and one <outDir>/turn-<i>.json per turn not exported before (state in <outDir>/sent.txt),
-// then prints the new turn files. Claude writes them to the artifact's database (live/current, live_turns/<runId>-<i>).
+// Writes <outDir>/run.json (meta plus status) and one <outDir>/turn-<i>.json per turn not exported before (state in <outDir>/sent.txt),
+// then prints the new turn files. Claude writes them to the artifact's database (live_runs/<runId>, live_turns/<runId>-<i>).
 import fs from 'fs'; import path from 'path'; import { execFileSync } from 'child_process';
 const [id, out] = process.argv.slice(2), here = import.meta.dirname;
 execFileSync('node', [path.join(here, 'build.mjs')]);
@@ -10,7 +10,7 @@ fs.mkdirSync(out, { recursive: true });
 const done = process.argv[4] === 'done', sentFile = path.join(out, 'sent.txt');
 const sent = fs.existsSync(sentFile) ? +fs.readFileSync(sentFile, 'utf8') : 0;
 const { turns, ...meta } = run;
-fs.writeFileSync(path.join(out, 'current.json'), JSON.stringify({ ...meta, status: done ? 'done' : 'running' }));
+fs.writeFileSync(path.join(out, 'run.json'), JSON.stringify({ ...meta, status: done ? 'done' : 'running' }));
 const files = [];
 turns.forEach((t, i) => {
   if (i < sent) return;

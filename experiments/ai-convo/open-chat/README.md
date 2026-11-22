@@ -30,21 +30,22 @@ Each run writes `runs/<timestamp>/transcript.txt`, plus `log.jsonl`, which holds
   - `file_path`: `viewer/index.html`
   - `files`: `{"runs.json": "<absolute path>/viewer/runs.json"}`
   - `capabilities`: `{"comments": {}, "db": {}}`
-  - Republish after every run so the run appears.
+  - Don't republish after a run: the run reaches the page through the database (below), and a republish reloads every open view back to the top. Republish only when the page itself changes. That publish also folds the database runs into `runs.json`.
 
 ### Operating it from a Claude session (the session that publishes the page)
 1. **Start requests.** The page's Start button sends this session a comment that begins `START RUN`, with lines `model:`, `people:`, `messages:`, `oracle: yes|no`, `topic: <text or (none)>` and `secrets: <JSON>`. To act on one:
    - Run `run.mjs` in the background with the matching env vars: `MODEL`, `PEOPLE`, `MESSAGES`, `ORACLE=1`, `TOPIC`, `SECRETS`.
-   - Reply in the comment thread.
-   - When the run finishes, rebuild `runs.json` and republish.
-2. **Live view (optional).** The page shows a run in progress from the artifact's database:
-   - doc `live/current`: run meta plus `status: running|done`
+   - Reply in the comment thread, then resolve it when the run ends.
+2. **Database runs.** The page shows each new run, live and after it ends, from the artifact's database:
+   - collection `live_runs`: doc id `<runId>`, run meta plus `status: running|done`
    - collection `live_turns`: doc id `<runId>-<4-digit i>`, fields `{run, i, who, text, at, clock?, oracle?}`
 
-   While a run goes, watch its `log.jsonl`, for example with a Monitor that prints a line whenever the posted count grows. On each event:
-   - Run `node viewer/live.mjs <runId> <outDir>`. It writes `current.json` plus one `turn-XXXX.json` for each turn not yet sent, and prints the new turn files.
-   - Write them with one `ArtifactData` batch: `set` `live/current` from `current.json`, and `set` each turn into `live_turns`. If a doc already exists, pin the write to its `version`.
+   A run that is also in the published `runs.json` is shown from there.
 
-   When the run ends, write `current.json` with `done` as the third argument, then republish. The published `runs.json` then takes over from the database copy.
+   While a run goes, watch its `log.jsonl`, for example with a Monitor that prints a line whenever the posted count grows. On each event:
+   - Run `node viewer/live.mjs <runId> <outDir>`. It writes `run.json` plus one `turn-XXXX.json` for each turn not yet sent, and prints the new turn files.
+   - Write them with one `ArtifactData` batch: `set` `live_runs/<runId>` from `run.json`, and `set` each turn into `live_turns`. If a doc already exists, pin the write to its `version`.
+
+   When the run ends, do the same with `done` as the third argument, then rebuild `runs.json` and commit it.
 
 The artifact and its database belong to whoever publishes it. A new account publishes its own copy, and only that session receives its Start requests.

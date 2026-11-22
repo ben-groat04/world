@@ -5,8 +5,8 @@
 // Run: [MODEL=sonnet] [TOPIC='...'] node run.mjs [rounds] [brief]   (default 30 rounds). Output: runs/<timestamp>/{transcript.txt,log.jsonl}
 import fs from 'fs'; import os from 'os'; import path from 'path'; import readline from 'readline'; import { spawn } from 'child_process';
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
-const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. There is no workspace, no files, no tools and no task here.';
-const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. Skip disclaimers about being an AI. Keep messages short.';
+const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation.';
+const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. You have lives outside this chat. Skip disclaimers about being an AI or about your limits. Keep messages short.';
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
 const ORACLE = process.env.ORACLE === '1'; // optional oracle: agents may start a line with @oracle to have a web-searching haiku answer; its answer joins the conversation as 'Oracle'

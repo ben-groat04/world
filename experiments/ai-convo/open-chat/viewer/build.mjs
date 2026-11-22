@@ -4,8 +4,7 @@ const here = import.meta.dirname, runsDir = path.join(here, '..', 'runs');
 const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
 const MARK = ' Something that\'s been on your mind: ', SECRET = ' Only you know this: ';
 const split = (s, mark) => { const i = s.indexOf(mark); return i < 0 ? [s, null] : [s.slice(0, i), s.slice(i + mark.length)]; };
-// Only runs made with run.mjs's current default brief; earlier test runs stay in runs/ but not in the viewer.
-const BRIEF = fs.readFileSync(path.join(here, '..', 'run.mjs'), 'utf8').match(/const BRIEF = process\.argv\[3\] \|\| '([^']*)'/)[1];
+const SINCE = '2026-11-22T16-37'; // earlier runs were tests: kept in runs/, left out of the viewer
 const ORACLE_LINE = ' There is also an oracle that can look things up online: start a line with @oracle and your question.';
 const runs = [];
 for (const id of fs.readdirSync(runsDir).sort().reverse()) {
@@ -22,7 +21,7 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const oracle = arg(rows[0].argv, '--system-prompt').includes(ORACLE_LINE);
   const [, topic] = split(brief(names[0]), MARK);
   const briefB = brief(names[1]); names.slice(2).forEach(brief);
-  if (briefB !== BRIEF) continue;
+  if (id < SINCE) continue;
   const last = rows.at(-1).round, lastRows = rows.filter(r => r.round === last);
   runs.push({
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,

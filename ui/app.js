@@ -22,7 +22,7 @@ let inspOn = false; // People pane shows the inspector (true) or the directory (
 function showInspector(on) { inspOn = on; $('pane-inspect').hidden = !on; $('people-dir').hidden = on; }
 let tab = 'feed', sheet = 'half'; // sheet: peek | half | full (mobile)
 const side = $('sidebar');
-function setSheet(s) { sheet = s; side.dataset.sheet = s; sizeSync(); }
+function setSheet(s) { sheet = s; side.dataset.sheet = s; document.body.dataset.sheet = s; sizeSync(); }
 function setTab(k, open = true) {
   if (k === 'inspect') { showInspector(true); k = 'people'; }
   tab = k; document.querySelectorAll('#tabs button').forEach((b) => { b.classList.toggle('on', b.dataset.tab === k); b.setAttribute('aria-selected', b.dataset.tab === k); });

@@ -92,3 +92,8 @@ body.playing #ticker { display: none; } .pa button { min-height: 44px; }
 .pb.row small, .pact small { line-height: 1.35; }
 .ghint { border: 1px solid #38506b; background: #1d2a39; border-radius: 12px; padding: 12px; margin: 8px 0; font-size: 13.5px; line-height: 1.45; } .ghint p { margin: 6px 0 8px; color: #d3dce8; } .gnote { margin: 6px 0; font-size: 12.5px; color: var(--mute); line-height: 1.4; } .gcons[open] > summary { position: sticky; top: 0; }
 .pdet > summary, .pthings > summary, .gcons > summary { min-height: 44px; box-sizing: border-box; align-items: center; } .pdb select, .pl2 select, #padopt, #pbtype, #pwork, #pcase, #pparty { min-height: 44px; }
+
+/* ---- mobile polish: feedback card is one line + "More"; collapsed dating row once seeing someone */
+.pfb p { margin: 3px 0 0; } .pfb .pfm { margin-top: 4px; } .pfb .pfm p { margin: 6px 0 0; }
+.pfmb { border: 0; background: none; color: var(--accent); font-size: 13px; font-weight: 700; min-height: 44px; padding: 0 4px; margin: 0 0 -6px; text-align: left; }
+.pfb .pfn { margin-top: 2px; }

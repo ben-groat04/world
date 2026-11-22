@@ -90,7 +90,11 @@ export function mountPlay(store, hooks) {
     const f = P.fb; if (!f) return '';
     const plan = f.plan && f.plan.length ? `<ol class="pplan">${f.plan.map((x) => `<li class="${x.now ? 'now' : ''}"><b>${esc(x.text)}</b> <span class="${x.mine ? 'you' : 'auto'}">${x.mine ? 'you can help' : 'automatic'}</span><small>${esc(x.hint)}</small></li>`).join('')}</ol>` : '';
     const next = f.next && f.next.length ? `<div class="pfn"><span>Next:</span>${f.next.map((n) => `<button data-open="${n.open}">${esc(n.label)}</button>`).join('')}</div>` : '';
-    return `<div class="pfb ${f.ok ? 'ok' : 'no'}" role="status"><button class="pfx" data-fbx aria-label="Dismiss">✕</button><b>${esc(f.title || f.text || '')}</b>${f.body ? `<p>${esc(f.body)}</p>` : ''}${f.facts && f.facts.length ? `<ul class="pfacts">${f.facts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${plan}${next}</div>`;
+    // one line (title + first sentence) with the rest behind "More": the card stays short on a phone
+    const sent = (f.body || '').split(/(?<=[.!?])\s+/), first = sent[0] || '', rest = (f.body || '').slice(first.length).trim();
+    const extra = (rest ? `<p>${esc(rest)}</p>` : '') + (f.facts && f.facts.length ? `<ul class="pfacts">${f.facts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '') + plan;
+    const more = extra ? (P.fbMore ? `<div class="pfm">${extra}</div><button class="pfmb" data-fbmore>Less</button>` : `<button class="pfmb" data-fbmore>More</button>`) : '';
+    return `<div class="pfb ${f.ok ? 'ok' : 'no'}" role="status"><button class="pfx" data-fbx aria-label="Dismiss">✕</button><b>${esc(f.title || f.text || '')}</b>${first ? `<p>${esc(first)}</p>` : ''}${more}${next}</div>`;
   };
   const shell = (v, title, body) => head(title) + tabs(v) + `<div class="pbody">${fbHtml()}${body}</div>`;
 
@@ -169,7 +173,8 @@ export function mountPlay(store, hooks) {
   function phoneView(d) {
     if (!d) return loading('phone', 'Phone');
     const dt = d.dating || { on: false, matches: [] };
-    return shell('phone', 'Phone', `<button class="pb big" data-open="dating"><b>💘 Dating</b><small>${dt.on ? `Profile live · ${dt.matches.length} match${dt.matches.length === 1 ? '' : 'es'}` : 'Set up a profile, get matches over days, or ask out someone you know'}</small></button>
+    const seeing = P.s && P.s.me && P.s.me.partner;
+    return shell('phone', 'Phone', `${seeing ? `<button class="pb row" data-open="dating"><b>💞 Seeing ${esc(seeing)}</b></button>` : `<button class="pb big" data-open="dating"><b>💘 Dating</b><small>${dt.on ? `Profile live · ${dt.matches.length} match${dt.matches.length === 1 ? '' : 'es'}` : 'Set up a profile, get matches over days, or ask out someone you know'}</small></button>`}
       <button class="pb big" data-open="people"><b>☺ People you know</b><small>Everyone you have met, and how well</small></button>
       <h5>Post</h5><div class="pgrid2">${btn('Post online', 'data-post="feed"')}${FORUM_KINDS.slice(0, 4).map(([k, l]) => btn(l, `data-post="forum" data-kind="${k}"`)).join('')}</div>
       <h5>Message someone</h5><div class="pchips">${d.contacts.map((c) => `<button class="pchip" data-msg="${c.id}">${esc(c.name)}</button>`).join('') || '<span class="pdim">No contacts yet. Meet people first.</span>'}</div>
@@ -179,7 +184,7 @@ export function mountPlay(store, hooks) {
   function datingView(d) {
     if (!d) return loading('dating', 'Dating');
     const me = P.s && P.s.me;
-    if (me && me.partner) return shell('dating', 'Dating', `<button class="plink" data-open="phone">‹ Phone</button><div class="pfb ok"><b>You are seeing ${esc(me.partner)}</b><p>Your dating profile is off and no new matches arrive while you are together. How it goes now depends on time spent together and how you each get on: message ${esc(me.partner)}, meet up, see friends. If it ends, you can come back here.</p></div>`);
+    if (me && me.partner) return shell('dating', 'Dating', `<button class="plink" data-open="phone">‹ Phone</button><div class="pfb ok"><b>You are seeing ${esc(me.partner)}</b><p>Your dating profile is off while you are together. How it goes depends on time spent together: message ${esc(me.partner)}, meet up, see friends.</p></div>`);
     const dt = d.dating || { on: false, matches: [], pool: 0 }, known = d.datable || [];
     const matchRows = dt.matches.map((m) => row(`<span class="pn"><b>${esc(m.name)}</b><small>${m.age} · ${esc(m.job || '')} · matched ${m.daysAgo ? m.daysAgo + ' days ago' : 'today'}${m.taken ? ' · now seeing someone' : ''}</small></span>${m.taken ? '' : btn('Message', `data-msg="${m.id}"`, 'sm') + btn('Ask out', `data-askout="${m.id}"`, 'sm')}`)).join('');
     const knownRows = known.filter((k) => !dt.matches.some((m) => m.id === k.id)).map((m) => row(`<span class="pn"><b>${esc(m.name)}</b><small>${m.age} · ${esc(m.job || '')} · ${esc(lc(m.rel))} · ${warmWord(m.l)}</small></span>${btn('Ask out', `data-askout="${m.id}"`, 'sm')}`)).join('');
@@ -250,7 +255,7 @@ export function mountPlay(store, hooks) {
       ${(() => { const byId = new Map(d.templates.map((t) => [t.id, t])), kind = (P.s && P.s.me && P.s.me.kind) || 'other', sug = (GOAL_FOR[kind] || GOAL_FOR.other).split(' ').map((i) => byId.get(i)).filter(Boolean), used = new Set(); const chip = (t) => `<button class="pchip ${P.goalPick === t.id ? 'on' : ''}" data-goal="${esc(t.id)}">${esc(cap(t.phrase))}</button>`;
         const cats = GOAL_CATS.map(([n, ids]) => { const ts = ids.map((i) => byId.get(i)).filter(Boolean); ts.forEach((t) => used.add(t.id)); return pdet('gc' + n, n, `${ts.length}`, `<div class="pchips">${ts.map(chip).join('')}</div>`); }).join(''), rest = d.templates.filter((t) => !used.has(t.id));
         return `<p class="phelp">Suggested for you</p><div class="pchips">${sug.map(chip).join('')}</div>${preview}${pdet('allgoals', 'All goals by theme', `${d.templates.length}`, cats + (rest.length ? `<div class="pchips">${rest.map(chip).join('')}</div>` : ''))}`; })()}
-      <p class="pdim">Looking for a partner? Use Phone &gt; Dating: it works from the people you actually know and the app.</p>
+      ${P.s && P.s.me && P.s.me.partner ? "" : `<p class="pdim">Looking for a partner? Use Phone &gt; Dating: it works from the people you actually know and the app.</p>`}
       <h5>Your groups</h5>${d.groups.map((g) => row(`<span class="pn"><b>${esc(g.name)}</b><small>${esc(g.kind)} · ${g.size} members</small></span>`)).join('') || '<p class="pdim">You are not in any group. Joining one is the easiest way to meet people: you end up in the same places at the same times.</p>'}
       ${d.open.length ? `<h5>Groups you could join</h5><div class="plist">${d.open.map((g) => `<button class="pb row" data-join="${g.id}"><b>Join ${esc(g.name)}</b><small>${esc(g.kind)} · ${g.size} members${g.at ? ' · ' + esc(g.at) : ''}${g.knows ? ` · you know ${esc(g.names)}${g.knows > 3 ? ' and ' + (g.knows - 3) + ' more' : ''}` : ''}</small></button>`).join('')}</div><p class="pdim">Joining puts you in the same places as the members at the same times; it does not make anyone like you. That part comes from talking.</p>` : ''}
       <div class="pgrid2"><input id="pgname" placeholder="Start a group: name" autocomplete="off">${btn('Found it', 'data-found="club"')}</div>`);
@@ -295,7 +300,8 @@ export function mountPlay(store, hooks) {
     const t = e.target.closest('button,a'); if (!t) return;
     if (t.dataset.ans && t.dataset.rid) { doit('player.respond', { request: +t.dataset.rid, answer: t.dataset.ans }); const r = P.s && P.s.reqs.findIndex((x) => x.id === +t.dataset.rid); if (r >= 0) P.s.reqs.splice(r, 1); paint(); return; }
     if (t.matches('[data-close]')) { if (t.matches('[data-pid]')) hooks.select(+t.dataset.pid); close(); return; }
-    if (t.matches('[data-fbx]')) { P.fb = null; paint(); return; }
+    if (t.matches('[data-fbx]')) { P.fb = null; P.fbMore = false; paint(); return; }
+    if (t.matches('[data-fbmore]')) { P.fbMore = !P.fbMore; paint(); return; }
     if (t.matches('[data-introshow]')) { close(); showIntro(0); return; }
     if (t.dataset.a) { // suggested action on Here & now
       const a = t.dataset.a;
@@ -375,7 +381,7 @@ export function mountPlay(store, hooks) {
   store.on('play.on', (m) => { P.on = true; P.mode = P.mode || 'create'; document.body.classList.add('playing'); P.pid = m.pid; P.homeId = null; close(); hooks.select(m.pid); hooks.follow(); hooks.peek && hooks.peek(); if (!lsGet('lf_play_intro_' + P.mode)) P.pendingIntro = true; else toast('You are playing. Tap <b>Do</b> to act.', 3000); });
   store.on('play.off', () => { P.on = false; document.body.classList.remove('playing'); P.s = null; endIntro(); paintStrip(); });
   store.on('play.result', (m) => {
-    P.fb = { ok: m.ok, title: m.title || m.text || '', body: m.body || '', plan: m.plan, next: m.next, facts: m.facts };
+    P.fbMore = false; P.fb = { ok: m.ok, title: m.title || m.text || '', body: m.body || '', plan: m.plan, next: m.next, facts: m.facts };
     const n = m.name || ''; if (/apply|quit|rent|borrow|business\.|crime\.|civic\./.test(n)) refresh('work'); else if (/join|found|adopt|drop/.test(n)) refresh('goals'); else if (/datingProfile|askOut|message/.test(n)) refresh('phone');
     if (!sheet.hidden) { paint(); const pb = box.querySelector('.pbody'); if (pb) pb.scrollTop = 0; } else { const first = (m.body || '').split(/(?<=[.!?])\s/)[0]; toast(`<b>${esc(P.fb.title)}</b>${first ? '<br>' + esc(first) : ''}`, 4500); P.fb = null; }
   });

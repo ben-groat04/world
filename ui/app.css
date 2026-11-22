@@ -199,3 +199,6 @@ ul.plain { list-style: none; padding: 0; margin: 4px 0; } ul.plain li { padding:
 @media (max-width: 820px) { #digest { right: 62px; left: 8px; } }
 
 .bio{margin:.2rem 0 .7rem;font-size:.92rem;line-height:1.45;color:var(--fg,inherit)}
+
+/* mobile clutter: the news ticker repeats the feed right below it, so show it only when the sheet is down (peek) */
+@media (max-width: 820px) { body[data-sheet="half"] #ticker, body[data-sheet="full"] #ticker { display: none; } }

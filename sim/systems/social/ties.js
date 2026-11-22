@@ -14,6 +14,7 @@ export function segInfo(w, S, id) {
 const doorDist = (w, a, b) => { const x = w.buildings.get(a.homeId), y = w.buildings.get(b.homeId); if (!x || !y) return 99; return x.id === y.id ? 0 : Math.abs(x.door.x - y.door.x) + Math.abs(x.door.y - y.door.y); };
 export { doorDist };
 
+const YOUTH_NEED = +(process.env.YOUTH_NEED ?? 0.25); // TEMP
 export function psOf(w, S, id) { let s = S.ppl.get(id); if (s === undefined) { const p = w.people.get(id); s = p ? importPerson(w, S, p) : null; } return s; }
 
 /** Build a person's social state from the generated network (p.ext.pop.ties) and personal parameters. */
@@ -120,7 +121,7 @@ export function maintain(w, S, p, r) {
   const hh = q.hh != null ? w.lf.households[q.hh] : null, live = hh ? hh.members.length - 1 : 0;
   // need for company: highest in the young (network still forming, Luhmann & Hawkley 2016); no extra need in old age (the earlier +0.1 over 78 had no support:
   // age gradients in loneliness disappear once widowhood, health and contact are controlled, Victor et al. 2005)
-  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? 0.25 : 0) + 0.3 * (p.personality.neuroticism - 0.5);
+  const need = 1 + 0.5 * (E - 0.5) + (age < 25 ? YOUTH_NEED : 0) + 0.3 * (p.personality.neuroticism - 0.5);
   // A partner / housemates are ALREADY tie-layer-1 members counted in `supply` (and in `ctc` through ~6 face-to-face contacts a week); only the extra value of
   // someone being at home (company, availability) is added here. Earlier version added household (0.14 each) + partner (0.3) on top, triple-counting the
   // partner, which made every older person living alone 'lonely' despite a full network (ELSA/ONS: loneliness tracks contact quality and widowhood, not household size alone).

@@ -2,12 +2,13 @@
 // Slots supplied by the caller: {goal} {step} {b.first} (partner / the other person) {kid} {street} {p.owed} {p.rent} {p.pct} {p.venue} {p.job} {p.days}.
 const M = (band, ...ts) => ts.map((t) => ({ t, when: { moodband: band } }));
 export default {
+  'thought.child': ['Is it nearly snack time?', 'Can I have the tablet? Please? Just ten minutes.', 'Wants the red cup. Not the blue one. The red one.', 'Why is the moon out when it is still light?', 'Is it the weekend yet?', 'Dad/Mum said five more minutes about forty minutes ago.'.replace('Dad/Mum', 'Someone'), 'Who is that dog\'s owner? Can I stroke it?', 'Wonder what is for tea. Hope it is not the green thing.'],
   'thought.arrears': [
     ...M(['low', 'flat'], 'Owe £{p.owed} on the rent and the letter has stopped being polite.', 'Two weeks until pay and £{p.owed} behind. I keep doing the sum as if it will change.', 'Need to ring the landlord. Rehearsing what to say so it sounds like a plan and not a plea.'),
     ...M(['ok', 'high'], 'Behind on the rent by £{p.owed}, but there is a plan, and a plan is most of the way to being fine.', 'Chipping away at the £{p.owed}. A bit more each month and it stops being a thing.'),
   ],
   'thought.notice': [
-    'Notice on the table: {p.days} days to find somewhere that is not twice the price. Three tabs open, none of them affordable.',
+    'Notice on the table and the clock running. Three tabs open, none of them affordable.',
     'Every flat under £{p.rent} a month is either a cupboard or already gone.',
     ...M('low', 'Packing a room I have only just got used to.'),
     { t: 'The landlord says it is nothing personal. It is the most personal thing that has happened all year.', when: {} },
@@ -18,10 +19,10 @@ export default {
     ...M(['low', 'flat'], 'The rent goes out of the account faster than I can say the word.'),
   ],
   'thought.goal': [
-    'Trying to {goal}. Today the job is: {step}.',
-    'On the list: {goal}. Next bit is {step}, which is the bit I keep putting off.',
+    'Trying to {goal}. Some days it feels close, some days it feels like a joke someone else is telling.',
+    'On the list: {goal}. Every week it slides a little further down.',
     { t: 'Want to {goal} by the end of the year. Not sure the year agrees.', when: { moodband: ['low', 'flat'] } },
-    { t: 'Small steps on {goal}. {step} today. Feels almost like progress.', when: { moodband: ['ok', 'high'] } },
+    { t: 'Small steps towards trying to {goal}. Feels almost like progress.', when: { moodband: ['ok', 'high'] } },
     'If I can {goal}, a lot of the rest gets easier. That is what I tell myself on the bus.',
   ],
   'thought.goal_plain': [
@@ -30,7 +31,7 @@ export default {
     'Might {goal} soon. Might. The wanting is the easy bit.',
   ],
   'thought.partner': [
-    'Wonder what {b.first} wants for tea. Wonder if {b.They} {b.v:know} either.',
+    'Wonder what {b.first} wants for tea. Wonder if {b.they} {b.v:know} either.',
     'Something {b.first} said last night is still going round in my head, in a good way.',
     { t: '{b.first} has been working too hard. I should say something and I should make a decent dinner first.', when: { moodband: ['flat', 'ok'] } },
     { t: 'Lucky with {b.first}. Do not say so often enough.', when: { moodband: 'high' } },
@@ -88,9 +89,7 @@ export default {
     'Night shift soon. The trick is to sleep before you are tired and be tired before you sleep. I have never got it right.',
     'Packed the flask and the sandwiches. The one thing I look forward to on a night is the first cup.',
   ],
-  'thought.sleeping': [
-    'Mmm.', 'Dreaming about the bus not arriving. It did not, in the dream either.', '(deep asleep, one arm over the pillow)',
-  ],
+  'thought.sleeping': ['Dreaming about the bus not arriving. It did not come in the dream either.', 'Dreaming about an exam and no shoes.', 'Dead to the world, and happy to be.', 'Dreaming the kind of dream where everything is fine for no reason.', 'Out for the count, one arm over the pillow.'],
   'thought.dog': [
     'The dog has decided the park is the best place in the world. Who am I to argue?', 'Left it too late for the walk again. The dog\'s expression says it all.',
   ],

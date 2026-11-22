@@ -49,7 +49,7 @@ const PH = {
   'life.move_out': (p) => 'moved out' + (p.to ? ' to ' + p.to : '') + (p.reason === 'partner' ? ', to be with a partner' : p.reason === 'separation' ? ' after the split' : p.reason === 'job' ? ' for work' : p.reason === 'study' ? ' to study' : ''),
   'life.move_in': (p) => 'moved in' + (p.reason === 'partner' ? ' with a partner' : '') + (p.from ? ', from ' + p.from : ''),
   'life.leave_home': (p) => 'left home' + (p.reason === 'job' ? ' for work' : p.reason === 'study' ? ' to study' : p.reason === 'independence' ? ' to be independent' : ''),
-  'life.caring_start': (p) => ({ t: 'took on caring for their ' + (p.rel || 'relative') + (p.hrs >= 35 ? ', a full-time job on its own' : ''), st: 'caring for their ' + (p.rel || 'relative') }),
+  'life.caring_start': (p, c) => ({ t: 'took on caring for ' + c.his + ' ' + (p.rel || 'relative') + (p.hrs >= 35 ? ', a full-time job on its own' : ''), st: 'caring for ' + c.his + ' ' + (p.rel || 'relative') }),
   'life.caring_end': () => 'stopped being a carer',
   'life.death': (p, c) => { const d = c.ev.actors && c.ev.actors[0]; if (d != null && !c.ids.has(d)) { const f = first(c.w, d); return f ? 'lost ' + f : 'lost someone close'; } return 'died' + (p.age ? ' aged ' + p.age : ''); },
   'life.kin_death': () => 'lost a relative',
@@ -160,7 +160,7 @@ export function headlineOf(arc, w, beats = beatsOf(arc, w, 40)) {
     s += [`; now ${pro}${be} ${z.st}`, ` and now ${pro}${be} ${z.st}`, `, and these days ${pro}${be} ${z.st}`][h % 3];
   } else {
     const sameSub = m && sub(m) === sub(z); if (m && sameSub) s += `, ${thens[h % 3]} ${tail(m)} and ${sub(z) ? txt(z) : tail(z)}`;
-    else s += (m ? `, ${thens[h % 3]} ${tail(m)}` : '') + [`, then ${tail(z)}`, `; ${['after that', 'soon after', 'not long after'][(h >> 3) % 3]} ${sub(z) ? '' : pro + ' '}${tail(z)}`, `, and then ${tail(z)}`][h % 3];
+    else s += (m ? `, ${thens[h % 3]} ${tail(m)}` : '') + [`, then ${tail(z)}`, `; ${['after that', 'soon after', 'not long after'][(h >>> 3) % 3]} ${sub(z) ? '' : pro + ' '}${tail(z)}`, `, and then ${tail(z)}`][h % 3];
   }
   if (s.length > 175 && m) s = `${lead(a)}, then ${tail(z)}`;
   return s.replace(/\s+/g, ' ') + '.';

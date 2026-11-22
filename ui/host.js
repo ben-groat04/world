@@ -30,7 +30,7 @@ const SEASON = (m) => (m >= 2 && m <= 4 ? 'Spring' : m >= 5 && m <= 7 ? 'Summer'
 const hoursText = (iv) => (iv && iv.length ? iv.map(([a, b]) => `${fh(a)}–${fh(b)}`).join(', ') : 'closed today');
 const fh = (h) => { h = h % 24; const hh = Math.floor(h), mm = Math.round((h - hh) * 60); return `${hh}:${String(mm).padStart(2, '0')}`; };
 
-const BATCH = { 'health.episode': ['More people are having a hard time', 'Several residents report low or anxious spells this month. The GP surgery says appointments are filling.'], 'money.arrears': ['More households fall behind on rent', 'Rent day came and went with several households short. Landlords and advice centres are both getting calls.'], 'money.cost_pressure': ['The cost of living bites again', 'More households say the budget no longer stretches to the end of the month.'], 'money.debt_spiral': ['More borrowing to cover the basics', 'Advice workers report a rise in people borrowing to pay for essentials.'], 'labour.second_job': ['Extra shifts and second jobs', 'More residents are picking up evening and weekend work to make ends meet.'], 'housing.moved_out': ['Several households move on', 'A run of moves this week: vans, boxes and for-let boards on the street.'], 'social.scandal': ['Talk of the town', 'A few names are doing the rounds at the school gate and the pub this week. Nobody wants to be the one who started it.', 1], 'social.rumour': ['Whispers on the street', 'Several rumours are going round at once. Most will be forgotten by Friday.'], 'housing.moved_in': ['New neighbours arrive', 'Several new households have moved onto the streets this week.'] };
+const BATCH = Object.fromEntries(['health.episode', 'money.arrears', 'money.cost_pressure', 'money.debt_spiral', 'labour.second_job', 'housing.moved_out', 'social.scandal', 'social.rumour', 'housing.moved_in'].map((t) => [t, t === 'social.scandal' ? [t, 1] : [t]])); // which event types fold into one line when many land on one day (the wording comes from the text pack: batch.*)
 export class Host {
   constructor(seed, send) {
     this.send = send; this.seed = seed;
@@ -115,21 +115,29 @@ export class Host {
     if (iv) { tr.set(ev.id, iv); it.conseq = true; it.because = iv.label; }
     // a shock hits dozens of households at once: show the first few, then fold the rest into one line instead of flooding the feed
     if (iv && ev.type === 'housing.rent_rise') { const r = this.roll || (this.roll = {}); const k = iv.id + ':' + Math.floor(ev.tick / this.TPD); const x = r[k] || (r[k] = { n: 0 }); x.n++;
-      if (x.n === 4) { it.head = 'Rent letters all over Larkfield'; it.body = 'The same rise has landed on households across the neighbourhood. Letters are being compared on doorsteps and in the group chats.'; it.sal = Math.max(it.sal, 0.6); } else if (x.n > 4) return; }
+      if (x.n === 4) { const bt = this.batchText('batch.head:god.rent_letters', 'batch.body:god.rent_letters', ev, x.n); if (bt) { it.head = bt.head; it.body = bt.body; } it.sal = Math.max(it.sal, 0.6); } else if (x.n > 4) return; }
     // month-end/start batches (budgets, mood reviews) land on one day: the first two items per type show, the third becomes one summary line, the rest are dropped
     const cap = BATCH[ev.type]; if (cap && !iv) { const k = ev.type + ':' + Math.floor(ev.tick / this.TPD), c = this.dayCap || (this.dayCap = new Map()); const n = (c.get(k) || 0) + 1; c.set(k, n); if (c.size > 400) c.delete(c.keys().next().value);
-      const show = cap[2] ?? 2; if (n === show + 1) { it.head = cap[0]; it.body = cap[1]; it.ppl = []; it.sal = Math.min(it.sal, 0.35); } else if (n > show + 1) return; }
+      const show = cap[1] ?? 2; if (n === show + 1) { const bt = this.batchText('batch.head:' + ev.type, 'batch.body:' + ev.type, ev, n); if (bt) { it.head = bt.head; it.body = bt.body; } it.ppl = []; it.sal = Math.min(it.sal, 0.35); } else if (n > show + 1) return; }
     // leaving and re-arriving within days is one change of address inside the area, not a farewell plus a welcome
     if (ev.type === 'life.move_out' && ev.actors && ev.actors[0] != null) { const h = this.heldOut || (this.heldOut = new Map()); h.set(ev.actors[0], { it, ev }); return; }
     if (ev.type === 'life.move_in' && ev.actors && this.heldOut && this.heldOut.has(ev.actors[0])) { const h = this.heldOut.get(ev.actors[0]); this.heldOut.delete(ev.actors[0]);
       if (ev.tick - h.ev.tick < this.TPD * 5) { const p = this.w.people.get(ev.actors[0]); const n = p ? nm(p) : 'A resident'; const f = p ? p.firstName : 'A resident';
-        it.head = [`${n} changes address`, `${f} swaps one front door for another`, `Boxes and a van: ${n} moves house`][ev.id % 3]; it.body = `${n} is staying in the area, just not at the old address. A few doors, or a few streets, along.`; it.kind = 'housing'; it.sal = 0.3; it.type = 'life.move_local'; }
+        const bt = this.batchText('batch.moved', 'batch.moved.body', ev, 1, p); it.head = bt ? bt.head : `${n} changes address`; it.body = bt ? bt.body : `${n} is staying in the area, just not at the old address.`; it.kind = 'housing'; it.sal = 0.3; it.type = 'life.move_local'; }
       else this.commit(h.it, h.ev); }
     this.commit(it, ev);
   }
   commit(it, ev) {
     this.news.push(it); this.newsOut.push(it); if (this.news.length > 600) this.news.splice(0, 100);
     if (this.jump && it.sal >= this.jump.min && ev.tick > this.jump.start) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: it }); }
+  }
+  /** Head and body for a folded batch of events, from the text pack with real specifics (the street of the latest case, the month, who moved). */
+  batchText(hk, bk, ev, n, who) {
+    const w = this.w; if (!this.text.has(hk)) return null;
+    const pid = who ? who.id : ev.actors && ev.actors[0], P = pid != null ? w.people.get(pid) : null, street = this.safe(() => w.map.lf.streets[w.buildings.get(P.homeId).lf.streetId].name, '') || this.safe(() => w.map.lf.streets[w.buildings.get(ev.place).lf.streetId].name, '') || 'the neighbourhood';
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], d = w.calendar.dateOf(ev.tick) || {};
+    const ctx = { genre: 'news', a: P ? { id: P.id, firstName: P.firstName, lastName: P.lastName, sex: P.sex } : undefined, seed: ev.id, p: { street, month: MONTHS[d.m] || 'month', n, where: ['round the corner', 'a few streets along', 'down the road'][ev.id % 3] } };
+    try { const head = this.text.render(hk, ctx, w), body = this.text.render(bk, { ...ctx, seed: ev.id + 7 }, w); return head && body && !/[{}#]/.test(head + body) ? { head, body } : null; } catch (e) { return null; }
   }
   releaseHeld() { if (!this.heldOut || !this.heldOut.size) return; for (const [k, h] of this.heldOut) if (this.w.tick - h.ev.tick >= this.TPD * 5) { this.heldOut.delete(k); this.commit(h.it, h.ev); } }
   ref(id) { const p = this.w.people.get(id); return p ? { id, name: nm(p) } : { id, name: typeof id === 'string' ? '(elsewhere)' : 'someone' }; }
@@ -216,13 +224,13 @@ export class Host {
     const groups = S(() => q.goals.query.groupsOf(id), []).map((g) => ({ id: g.id, name: g.name, kind: g.kind, size: g.size, role: g.role || (g.leader === id ? 'leader' : 'member'), venue: this.place(g.venue) }));
     const part = S(() => q.life.query.partner(id)), lst = S(() => q.life.query.status(id));
     const ties = S(() => q.social.query.ties(id), []).map((t) => ({ id: t.o, name: t.name, k: t.k, r: t.r, strength: r2(t.c), warmth: r2(t.l), trust: r2(t.t), on: !!t.on, via: t.v, conf: !!t.cf }));
-    const life = timelineOf(w, p, w.events.query({ actor: id, minSalience: 0.12, limit: 400 })).map((l) => ({ tick: l.tick, date: w.calendar.formatDate(l.tick), text: l.text, imp: l.imp, ev: !!l.ev }));
+    const life = timelineOf(w, p, w.events.query({ actor: id, minSalience: 0.12, limit: 400 })).map((l) => ({ tick: l.tick, date: w.calendar.formatDate(l.tick), text: l.text, imp: l.imp, ev: !!l.ev, et: l.et || '' }));
     const hh = S(() => w.lf.households[pop.hh]), mem = hh && hh.members ? hh.members.filter((x) => x !== id).map((x) => this.ref(x)) : [];
     const loc = p.locationId != null ? this.place(p.locationId) : null;
     const street = S(() => w.map.lf.streets[w.buildings.get(p.homeId).lf.streetId].name, '');
     const kidsF = (p.family?.childrenIds || []).map((k) => w.people.get(k)).filter((k) => k && k.alive).map((k) => ({ name: k.firstName, age: Math.floor(w.ageOf(k)) }));
     const wpl2 = workplace ? (workplace.offmap ? 'in the city' : 'at ' + workplace.name) : '';
-    const bio = S(() => summaryOf(w, p, { age: Math.floor(age), partner: part, kids: kidsF, jobLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', workplace: wpl2, activity: pop.activity, yearsAtAddress: pop.yearsAtAddress, street, tenure: unit && unit.tenure, household: hh && hh.members ? hh.members.length : 1, timeline: life.map((l) => ({ ...l })) }), '');
+    const bio = S(() => summaryOf(w, p, { age: Math.floor(age), partner: part, kids: kidsF, jobLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', workplace: wpl2, activity: pop.activity, role: pop.role, yearsAtAddress: pop.yearsAtAddress, street, tenure: unit && unit.tenure, household: hh && hh.members ? hh.members.length : 1, timeline: life.map((l) => ({ ...l })) }), '');
     const co = { press, unit, goals: goalList, partner: part, lst, ties: S(() => q.social.query.ties(id), []), now, wb };
     const richNow = now ? activityLabel(w, p, now, {}) : '';
     return {

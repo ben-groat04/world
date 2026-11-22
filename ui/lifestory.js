@@ -22,8 +22,8 @@ export function memText(w, m) {
   t = t.replace(/ \([^)]*\)(?=\.?$)/, ''); return t.endsWith('.') ? t : t + '.';
 }
 
-const SKIP_EV = new Set(['life.couple', 'life.breakup', 'life.divorce', 'life.marriage', 'life.birth', 'life.graduate', 'life.leave_home', 'life.cohabit', 'life.pregnant', 'life.engaged', 'life.funeral', 'life.will', 'life.move_out', 'life.move_in', 'life.miscarriage', 'social.acquaint', 'social.confide', 'social.kindness', 'social.secret', 'social.scandal', 'social.isolation', 'social.rumour', 'health.episode', 'health.treatment', 'health.recovered', 'health.substance', 'health.ill', 'goal.formed', 'goal.failed', 'goal.abandoned', 'goal.transformed', 'goal.invented', 'goal.deferred', 'labour.applied', 'money.cost_pressure', 'project.started', 'project.done', 'group.meeting', 'group.joined', 'group.left']);
-const COLLAPSE = new Set(['money.arrears', 'money.arrears_cleared', 'money.debt_spiral', 'housing.rent_rise', 'social.fallout', 'social.reconcile', 'social.friendship']);
+const SKIP_EV = new Set(['life.couple', 'life.breakup', 'life.divorce', 'life.marriage', 'life.birth', 'life.graduate', 'life.leave_home', 'life.cohabit', 'life.pregnant', 'life.engaged', 'life.funeral', 'life.will', 'life.move_out', 'life.move_in', 'life.miscarriage', 'social.acquaint', 'social.confide', 'social.kindness', 'social.secret', 'social.scandal', 'social.isolation', 'social.rumour', 'health.diagnosis', 'health.episode', 'health.treatment', 'health.recovered', 'health.substance', 'health.ill', 'goal.formed', 'goal.failed', 'goal.abandoned', 'goal.transformed', 'goal.invented', 'goal.deferred', 'labour.applied', 'money.cost_pressure', 'project.started', 'project.done', 'group.meeting', 'group.joined', 'group.left']);
+const COLLAPSE = new Set(['money.arrears', 'money.arrears_cleared', 'money.debt_spiral', 'housing.rent_rise', 'social.fallout', 'social.reconcile']);
 const FRIEND_MAX = 4, TL_MAX = 60;
 
 /** Timeline [{tick, text, imp}] oldest first: rewritten memories plus the person's own events, repeats collapsed. */
@@ -45,7 +45,7 @@ export function timelineOf(w, p, events) {
   for (const g of groups) {
     const it = g.items[0], t = cap1(it.c.t + (it.c.x || '')); let text = t;
     if (g.n > 1) { const months = Math.max(1, Math.round((g.last - g.first) / DAY / 30)); text = g.type === 'money.arrears' ? `${t}, and it happened ${g.n - 1 === 1 ? 'once more' : (NUM[g.n - 1] || g.n - 1) + ' more times'} over ${months > 11 ? 'the next couple of years' : 'the following ' + (months > 1 ? months + ' months' : 'month')}` : g.type === 'money.arrears_cleared' ? 'Cleared the arrears (' + g.n + ' times, as money allowed)' : g.type === 'social.fallout' ? `${t}, and fell out again ${g.n - 1 === 1 ? 'once' : (NUM[g.n - 1] || g.n - 1) + ' times'} since` : t + ` (${g.n} times)`; }
-    out.push({ ev: true, tick: g.first, text: text.endsWith('.') || text.endsWith(')') ? text : text + '.', imp: Math.min(5, Math.max(2, Math.round((it.ev.salience || 0.2) * 5))) });
+    out.push({ ev: true, et: /^health\./.test(it.ev.type) ? 'health' : '', tick: g.first, text: text.endsWith('.') || text.endsWith(')') ? text : text + '.', imp: Math.min(5, Math.max(2, Math.round((it.ev.salience || 0.2) * 5))) });
   }
   out.sort((x, y) => x.tick - y.tick);
   if (out.length > TL_MAX) { const keep = out.filter((x) => x.imp >= 3); const rest = out.filter((x) => x.imp < 3).slice(-(TL_MAX - keep.length)); return keep.concat(rest).sort((x, y) => x.tick - y.tick).slice(-TL_MAX); }
@@ -53,7 +53,7 @@ export function timelineOf(w, p, events) {
 }
 
 const years = (y) => (y < 1 ? 'less than a year' : y < 1.5 ? 'about a year' : `${Math.round(y)} years`);
-const when = (w, tick) => { const d = (w.tick - tick) / (w.TPY || 52560); return d < 0.1 ? 'a few weeks ago' : d < 0.9 ? 'in the last few months' : d < 1.6 ? 'last year' : `${Math.round(d)} years ago`; };
+const when = (w, tick) => { const d = (w.tick - tick) / (w.TPY || 52560); return d < 0.12 ? 'a few weeks ago' : d < 0.8 ? 'in the last few months' : d < 1.6 ? 'last year' : `${['two', 'two', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][Math.min(10, Math.max(2, Math.round(d))) ]} years ago`.replace(/^(\w+) years ago$/, (m, n) => (Math.round(d) > 10 ? Math.round(d) + ' years ago' : m)); };
 
 /**
  * The paragraph. facts: {age, partner:{name,st,kind}|null, kids:[{name,age}], jobLabel, workplace, activity, yearsAtAddress, street, tenure, unit, household:n, timeline}
@@ -66,15 +66,16 @@ export function summaryOf(w, p, f) {
   // 1. where from
   const born = mem(/^Born /), came = mem(/^Came to the UK|^Moved to the UK/), bornUK = pop.bornUK !== false && (!pop.birthplace || pop.birthplace === 'United Kingdom' || !came);
   let origin = '';
-  if (born) origin = born.text.replace(/\.$/, '').replace(/^Born/, 'was born').replace(/, grew up in/, ' and grew up in');
+  const fixPlace = (t) => t.replace(/ in United Kingdom/, ' in the UK').replace(/ in elsewhere in the city/, ' elsewhere in the city').replace(/ in the south coast/, ' on the south coast').replace(/ in the north$/, ' in the north').replace(/ from United Kingdom/, '');
+  if (born) origin = fixPlace(born.text.replace(/\.$/, '').replace(/^Born/, 'was born').replace(/, grew up in/, ' and grew up in'));
   else if (came) origin = came.text.replace(/\.$/, '').replace(/^(Came|Moved) to the UK/, 'came to the UK').replace(/ from (\w[\w ]*?)( for work)?$/, ' from $1$2');
   else if (pop.birthplace && pop.birthplace !== 'United Kingdom' && bornUK === false) origin = 'came to the UK from ' + pop.birthplace;
   if (origin && f.age >= 5) sents.push([`${F} ${origin}, and ${is} now ${f.age}.`, `${F} is ${f.age}. ${cap1(he)} ${origin}.`, `Now ${f.age}, ${F} ${origin}.`][h % 3]);
   else sents.push(`${F} is ${f.age}${f.street ? ' and lives on ' + f.street : ''}.`);
   // 2. school / work
-  const act = f.activity, jl = f.jobLabel ? f.jobLabel.toLowerCase() : '';
+  const act = f.activity, jl = (pop.occ && occLabel(w, pop.occ)) || (f.jobLabel ? f.jobLabel.toLowerCase().split(' / ')[0] : '');
   const edu = { level4plus: 'a degree', level3: 'A-levels or similar', apprenticeship: 'an apprenticeship', level2: 'GCSEs', level1: 'a few GCSEs' }[pop.edu];
-  if (act === 'employed' && jl) sents.push([`${cap1(he)} works as ${aAn(jl)}${f.workplace ? ', ' + f.workplace : ''}${edu && f.age < 60 ? ', and left education with ' + edu : ''}.`, `${F} is ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}.`][(h >> 2) % 2]);
+  if (act === 'employed' && jl) sents.push([`${cap1(he)} works as ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}${edu && f.age < 60 ? ', and left education with ' + edu : ''}.`, `${cap1(he)} ${is} ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}.`][(h >>> 2) % 2]);
   else if (act === 'retired') { const r = mem(/^Retired/); sents.push(r ? `${cap1(he)} retired ${when(w, r.tick)}${jl ? ', having worked as ' + aAn(jl) : ''}.` : `${cap1(he)} is retired${jl ? ' after a working life as ' + aAn(jl) : ''}.`); }
   else if (act === 'student') sents.push(`${cap1(he)} ${is} still studying${f.age >= 18 ? ' at college or university' : ''}.`);
   else if (act === 'unemployed') sents.push(`${cap1(he)} ${is} between jobs${jl ? ', most recently as ' + aAn(jl) : ''}.`);
@@ -83,15 +84,18 @@ export function summaryOf(w, p, f) {
   else if (act === 'sick_disabled' || act === 'other_inactive') sents.push(`${cap1(he)} ${is} not working at the moment.`);
   // 3. people and home
   const bits = [];
-  const pt = f.partner; if (pt && pt.name) bits.push(pt.st === 'married' ? `married to ${pt.name.split(' ')[0]}` : pt.kind === 'off' ? `seeing ${pt.name.split(' ')[0]}, who lives elsewhere` : `with ${pt.name.split(' ')[0]}`);
+  const pt = f.partner; if (pt && pt.name) bits.push(pt.st === 'married' ? `married to ${pt.name.split(' ')[0]}` : pt.kind === 'off' ? `seeing ${pt.name.split(' ')[0]} (who lives elsewhere)` : `with ${pt.name.split(' ')[0]}`);
   const kids = (f.kids || []).filter((k) => k.age != null); if (kids.length) bits.push(kids.length === 1 ? `a parent to ${kids[0].name} (${kids[0].age})` : `a parent of ${NUM[kids.length] || kids.length}, ${kids.slice(0, 3).map((k) => k.name + ' (' + k.age + ')').join(', ').replace(/, ([^,]*)$/, ' and $1')}${kids.length > 3 ? ' and others' : ''}`);
   if (!bits.length && f.age >= 20 && !(f.household > 1)) bits.push('living on ' + his + ' own');
-  const home = f.street ? `${f.tenure ? 'a ' + f.tenure.replace(/_/g, ' ') + ' home' : 'home'} on ${f.street}${f.yearsAtAddress != null && f.yearsAtAddress >= 0.3 ? ' for ' + years(f.yearsAtAddress) : ''}` : '';
-  if (bits.length && home) sents.push(`${cap1(he)} ${is} ${bits.join(' and ')}, with ${home}.`);
-  else if (bits.length) sents.push(`${cap1(he)} ${is} ${bits.join(' and ')}.`);
-  else if (home && !sents[0].includes(f.street || '@')) sents.push(`${cap1(he)} has ${home}.`);
+  const T = { owned_outright: 'owns a home', mortgage: 'is buying a home', private_rent: 'rents a place', housing_assoc: 'rents from a housing association', council: 'rents a council home', social_rent: 'rents a council home' };
+  const yrs = f.yearsAtAddress != null && f.yearsAtAddress >= 0.3 ? [`, where ${he} ${he === 'they' ? 'have' : 'has'} lived for ${years(f.yearsAtAddress)}`, ` and has been there ${years(f.yearsAtAddress)}`][(h >>> 7) % 2].replace('and has', he === 'they' ? 'and have' : 'and has') : '';
+  const owner = f.age >= 18 && f.role !== 'child', ownV = owner && T[f.tenure], hasYrs = f.yearsAtAddress != null && f.yearsAtAddress >= 0.3;
+  const home = !f.street ? '' : ownV ? `${ownV} on ${f.street}${yrs}` : hasYrs ? `${he === 'they' ? 'have' : 'has'} lived on ${f.street} for ${years(f.yearsAtAddress)}` : `lives on ${f.street}`;
+  if (bits.length) sents.push(home ? [`${cap1(he)} ${is} ${bits.join(' and ')}, and ${home}.`, `${cap1(he)} ${is} ${bits.join(' and ')}. ${cap1(he)} ${home}.`][(h >>> 6) % 2] : `${cap1(he)} ${is} ${bits.join(' and ')}.`);
+  else if (home) sents.push(`${cap1(he)} ${home}.`);
   // 4. the last turning points: recent events of the person's own that mattered (event wording only: it is subject-free and past tense)
-  const rec = (f.timeline || []).filter((x) => x.ev && x.tick > w.tick - (w.TPY || 52560) * 3 && x.imp >= 3 && x.tick <= w.tick).slice(-2);
-  if (rec.length) { const L = (x) => x.text.replace(/[.)]+$/, '').replace(/^[A-Z](?![A-Z])/, (c) => c.toLowerCase()) + ' ' + when(w, x.tick); sents.push([`Lately ${he} ${L(rec[0])}${rec[1] ? ', and ' + L(rec[1]) : ''}.`, `The big changes recently: ${he} ${L(rec[0])}${rec[1] ? ', then ' + L(rec[1]) : ''}.`][(h >> 4) % 2].replace(/ , /g, ', ')); }
+  const rec = (f.timeline || []).filter((x) => x.ev && x.et !== 'health' && x.tick > w.tick - (w.TPY || 52560) * 3 && x.imp >= 3 && x.tick <= w.tick).slice(-2);
+  if (rec.length) { const lc1 = (t) => t.replace(/[.)]+$/, '').replace(/^[A-Z](?![A-Z])/, (c) => c.toLowerCase()); const W = (x) => when(w, x.tick), cp = (t) => cap1(t);
+    const one = `${cp(W(rec[0]))} ${he} ${lc1(rec[0].text)}`, two = rec[1] ? (W(rec[1]) === W(rec[0]) ? `, and ${lc1(rec[1].text)}` : `, and ${W(rec[1])} ${he} ${lc1(rec[1].text)}`) : ''; sents.push(`${one}${two}.`); }
   return sents.join(' ');
 }

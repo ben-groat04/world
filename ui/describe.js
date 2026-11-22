@@ -297,17 +297,17 @@ export function activityLabel(w, p, now, x = {}) {
   const pop = p.ext?.pop || {}, seed = hh32(p.id * 31 + Math.floor(w.tick / 9)), pick = (...a) => a[seed % a.length];
   const at = (/^.* at (?!home$)(.+)$/.exec(base) || [])[1] || (/\(([^)]+)\)$/.exec(base) || [])[1] || '';
   const home = p.locationId === p.homeId, co = x.co || companions(w, p), kids = co.filter((c) => c.kid && c.age < 12), partner = co.find((c) => c.sp), job = pop.occ, occN = ROLE[job] || '';
-  const stress = pop.fin?.stress ?? 0, mood = p.mood ?? 0, wx = wxOf(w), rain = wx && /rain/.test(wx.type), dog = (pop.pets?.dogs || 0) > 0;
+  const age = Math.floor(w.ageOf(p)), hhN = S(() => (w.lf.households[pop.hh].members || []).length, 2), stress = pop.fin?.stress ?? 0, mood = p.mood ?? 0, wx = wxOf(w), rain = wx && /rain/.test(wx.type), dog = (pop.pets?.dogs || 0) > 0;
   const next = x.next || S(() => w.sys.routine.query.plan(p).find((e) => e.tick > w.tick && /^(work|night_work|business|work_home)$/.test(e.act)), null);
   const toShift = next && next.tick - w.tick < 130 ? next.act : null; let m;
   switch (act) {
     case 'sleep': return h < 6 || h >= 22 ? pick('Fast asleep', 'Asleep, phone charging by the bed', 'Dead to the world') : weekend ? pick('Having a lie-in', 'Sleeping in, nowhere to be') : 'Asleep at home';
     case 'sleep_day': return pick('Sleeping off a night shift', 'Asleep after a night shift, curtains drawn');
     case 'nap': return pick('Having a rest', 'Resting their eyes');
-    case 'getup': return toShift === 'night_work' ? 'Up and getting ready for tonight\'s shift' : kids.length ? pick('Getting the kids up and ready', `Getting ${kids[0].firstName} ready for the day`) : toShift && pop.activity === 'employed' ? pick('Getting ready for work', 'Getting up and out for work') : pick('Getting up and putting the kettle on', 'Getting up and ready at home');
+    case 'getup': if (age < 16) return weekend ? 'Getting up and about' : 'Getting ready for school'; return toShift === 'night_work' ? 'Up and getting ready for tonight\'s shift' : kids.length ? pick('Getting the kids up and ready', `Getting ${kids[0].firstName} ready for the day`) : toShift && pop.activity === 'employed' ? pick('Getting ready for work', 'Getting up and out for work') : pick('Getting up and putting the kettle on', 'Getting up and ready at home');
     case 'breakfast': return kids.length ? pick('Breakfast with the kids', `Breakfast with ${joinNames(kids.slice(0, 2).map((k) => k.firstName))}`) : partner ? `Breakfast with ${partner.firstName}` : pick('Toast and tea at home', 'Having breakfast at home');
     case 'lunch': return at && /work/i.test(base) ? 'Lunch break at ' + theName(at) : pick('Having lunch at home', 'Making some lunch');
-    case 'dinner': return toShift === 'night_work' && home ? 'Making tea before the night shift' : kids.length ? pick('Cooking dinner for the family', `Sorting dinner while ${kids[0].firstName} does homework`) : partner ? `Cooking dinner with ${partner.firstName}` : home ? pick('Sorting something for tea', 'Cooking dinner for one', 'Having dinner at home') : base;
+    case 'dinner': return toShift === 'night_work' && home ? 'Making tea before the night shift' : kids.length ? pick('Cooking dinner for the family', `Sorting dinner while ${kids[0].firstName} does homework`) : partner ? `Cooking dinner with ${partner.firstName}` : home ? (age < 13 ? 'Having dinner at home' : hhN === 1 ? pick('Cooking dinner for one', 'Sorting something for tea') : pick('Sorting something for tea', 'Cooking dinner')) : base;
     case 'cook': return partner ? `Cooking with ${partner.firstName}` : kids.length ? 'Cooking with the kids around' : 'Cooking something proper';
     case 'tv': { const fb = (p.interests || []).includes('football') && ((dow === 5 && h >= 12 && h < 18) || (h >= 19 && h < 22)); const wi = partner || co[0]; return fb ? (wi ? `Watching the match with ${wi.firstName}` : 'Watching the match') : wi ? `Watching TV with ${wi.firstName}` : kids.length ? 'Watching something with the kids' : pick('On the sofa with the telly on', 'Watching TV at home'); }
     case 'gaming': return co[0] ? `Gaming with ${co[0].firstName} in the room` : 'Gaming at home';
@@ -329,14 +329,15 @@ export function activityLabel(w, p, now, x = {}) {
     case 'commute': if ((m = /^(Walking|Cycling|On the bus|On the train|Driving) (to|home from) (.+)$/.exec(base))) { return `${m[1]} ${m[2]} ${theName(m[3])}${rain && /Walking|Cycling/.test(m[1]) ? ' in the rain' : ''}`; } return base;
     case 'school_run': return kids.length ? `Taking ${kids[0].firstName} to school` : h > 12 ? 'Collecting the kids from school' : 'On the school run';
     case 'shop': return at ? (stress > 0.6 ? `At ${at}, watching the total` : pick(`Picking up bits at ${at}`, `Shopping at ${at}`)) : base;
-    case 'errand': return at ? `Popping into ${at}` : base;
+    case 'errand': return at ? (/surgery|clinic|hospital|centre|school|pharmacy|chemist/i.test(at) ? `At ${at}` : `Popping into ${at}`) : base;
     case 'cafe': return at ? pick(`Coffee at ${at}`, `Having a coffee at ${at}`) : base;
     case 'pub': return at ? pick(`Out at ${at}`, `Catching up at ${at}`) : base;
     case 'gym': return at ? `Working out at ${at}` : base;
     case 'park': return at ? (dog ? `Walking the dog in ${at}` : `Out in ${at}`) : dog ? 'Out walking the dog' : base;
     case 'worship': return at ? `At ${at}` : base;
     case 'community': case 'library': return at ? `At ${at}` : base;
-    default: return base;
+    case 'offsocial': case 'nightout': case 'family_off': case 'retail_trip': return base.replace(/ \([^)]*\)$/, '');
+    default: return base.replace(/ \((city[^)]*)\)$/, '');
   }
 }
 
@@ -353,17 +354,18 @@ export function thoughtFor(w, text, p, x = {}) {
   const wb = x.wb ?? S(() => q.health.query.wellbeing(id), {}), ties = x.ties ?? S(() => q.social.query.ties(id), []), wx = wxOf(w), co = companions(w, p), home = p.locationId === p.homeId;
   const mood01 = ((p.mood || 0) + 1) / 2, age = Math.floor(w.ageOf(p)), C = []; // candidates [key, weight, extras]
   const add = (k, wt, ex) => { if (text.has(k)) C.push([k, wt, ex || {}]); };
+  if (age < 12) { if (age < 4 || !text.has('thought.child')) return ''; add('thought.child', 3); }
   const asleep = act === 'sleep' || act === 'sleep_day' || act === 'nap';
   if (asleep) add('thought.sleeping', 3); else if (h >= 1 && h < 5) add('thought.night', 3);
-  if (!asleep) {
+  if (!asleep && age >= 12) {
     const burden = S(() => q.housing.query.rentBurden(id), 0), renter = unit && unit.rent > 0 && !/own|mortgage/.test(unit.tenure || '');
     if ((fin.arrears || 0) > 60) add('thought.arrears', 3.2, { p: { owed: Math.round(fin.arrears) } });
     if (unit && unit.notice) add('thought.notice', 3.4, { p: { rent: Math.round((unit.rent || 900) * 1.0) } });
     if (renter && burden > 0.4) add('thought.rent', 1.6, { p: { rent: Math.round(unit.rent).toLocaleString('en-GB'), pct: Math.round(burden * 100) } });
     if (stress > 0.6) add('thought.money', 2);
     if (unit && unit.damp && home) add('thought.damp', 1.4);
-    const g = goals.find((g) => g.status === 'active' && !g.secret && g.phrase && !SENS_GOAL.test(g.id || '') && !SENS_GOAL.test(g.phrase));
-    if (g) { const st = g.step && g.step.label; if (st) add('thought.goal', 2.3, { goal: g.phrase, step: lowerFirst(st) }); else add('thought.goal_plain', 1, { goal: g.phrase }); }
+    const g = goals.find((g) => (g.status === 'active' || g.status === 'open' || !g.status) && !g.secret && g.phrase && !SENS_GOAL.test(g.id || '') && !SENS_GOAL.test(g.phrase));
+    if (g) { add(g.step ? 'thought.goal' : 'thought.goal_plain', g.step ? 2.3 : 1, { goal: g.phrase }); }
     if (partner && partner.id != null && h >= 17 && h < 24) { const P = w.people.get(partner.id); if (P && partner.kind === 'on' && home) add('thought.partner', 1.7, { b: P }); }
     if (partner && partner.kind === 'off' && partner.id != null && h >= 8) { const P = w.people.get(partner.id); if (P) add('thought.partner_away', 1.2, { b: P }); }
     const kid = (p.family?.childrenIds || []).map((k) => w.people.get(k)).find((k) => k && k.alive && w.ageOf(k) < 15);

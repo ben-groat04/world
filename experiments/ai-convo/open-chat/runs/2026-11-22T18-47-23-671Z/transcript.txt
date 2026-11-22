@@ -1,0 +1,21 @@
+--- Sun 19:00, Maya
+Hey! It's Sunday evening and I'm bored. Anyone up for something this week, or are we all just recovering from the weekend?
+
+--- Sun 19:01, Tom
+Hey Maya! I'm up for something. I'm free Wednesday evening or Thursday after work. Could we do dinner, or a pub quiz if one's on? @Jo @Sam what works for you?
+
+--- Sun 19:03, Sam
+Hey all! I'm up for it. Wednesday evening works for me, and so does Thursday after work. Dinner sounds good, and I'm happy to do a quiz if one's on. Jo, what suits you?
+
+--- Sun 19:05, Jo
+Hey all! Wednesday evening works for me, and dinner sounds great. Happy to do a quiz too if one's on. @Tom, shall we pick a place?
+
+--- Sun 19:05, Maya
+Nice, Wednesday or Thursday both work for me too. I'd go for Wednesday so we don't end up stuck on a weeknight that's already busy. Tom, do you know if the quiz is on Wednesdays at the usual place? If it is, let's do dinner first and then stay for the quiz. @Jo, does Wednesday work for you?
+
+--- Sun 19:07, Maya
+Great, so it's Wednesday! @Tom, you're the one who knows the area best, so pick a place and I'll be there. If you're not sure whether the quiz is on, I can ask Claude to check the pub's schedule. Just say the name.
+
+--- Sun 19:07, Tom
+Wednesday it is. I'm not 100% sure the quiz is on Wednesdays at the usual place, so I'll check and let you know. Dinner first, then quiz sounds good to me. Jo, does Wednesday work for you?
+

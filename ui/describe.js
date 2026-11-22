@@ -275,7 +275,7 @@ export function shortJob(label) {
 // What a person is doing and thinking right now, in words, from the sim's activity plus what is true of them.
 // The routine owns the plain activity label ("Asleep at home"); this renders richer wording from it and the context. Deterministic, never claims what the data does not show.
 const hh32 = (n) => { let x = Math.imul(n | 0, 2654435761) >>> 0; x ^= x >>> 15; x = Math.imul(x, 2246822519) >>> 0; return (x ^ (x >>> 13)) >>> 0; };
-const theName = (n) => (/^[a-z]/.test(n) ? 'the ' + n : n);
+const theName = (n) => (/^city centre/.test(n) ? 'the city centre' : /^[a-z]/.test(n) ? 'the ' + n : n);
 const lowerFirst = (t) => (t ? t[0].toLowerCase() + t.slice(1) : t);
 const ROLE = { nurse: 'On the ward', practice_nurse: 'Seeing patients', primary_teacher: 'In the classroom', secondary_teacher: 'In the classroom', teaching_assistant: 'In the classroom', barista_waiter: 'Behind the counter', cook_chef: 'In the kitchen', chef_offmap: 'In the kitchen', kitchen_porter_cook: 'In the kitchen', bar_staff: 'Behind the bar', publican: 'Behind the bar', retail_assistant: 'On the shop floor', retail_city: 'On the shop floor', shop_supervisor: 'On the shop floor', store_manager: 'On the shop floor', warehouse_operative: 'On the warehouse floor', warehouse_picker: 'Picking orders', delivery_rider: 'Out on deliveries', delivery_courier_app: 'Out on deliveries', delivery_driver: 'On the road with a van', taxi_driver: 'Out on a fare', rideshare_driver: 'Out on a fare', receptionist: 'On reception', gp: 'In surgery', care_worker: 'On a care round', cleaner_housekeeper: 'Cleaning', security_guard: 'On the door', barber_hairdresser: 'Cutting hair', builder_labourer_trades: 'On site', electrician_plumber: 'On a job', carpenter_joiner: 'On a job', mechanic_engineering_trades: 'In the workshop', vehicle_technician: 'In the workshop' };
 const wxOf = (w) => { const wx = w.weather, m = w.time?.rec?.month ?? 0; if (!wx) return null; const win = m === 11 || m <= 1; let t = wx.type; if (t === 'snow' && !win) t = 'rain'; if (t === 'fog' && m >= 5 && m <= 7) t = 'cloudy'; if (t === 'rain' && m >= 6 && m <= 7 && wx.temp > 20) t = 'clear'; const mean = [5, 5, 8, 10, 13, 16, 19, 19, 16, 12, 8, 5][m], legacy = [11, 22, 10, -1][w.time.season ?? 0]; return { type: t, temp: Math.round(mean + ((wx.temp ?? 10) - legacy) * 0.6) }; };
@@ -324,7 +324,7 @@ export function activityLabel(w, p, now, x = {}) {
     case 'work': case 'night_work': case 'business': case 'work_home': {
       if (act === 'work_home') return pick('Working from home, laptop open', 'On a call from home');
       if (act === 'business') return at ? 'Running the business at ' + at : 'Running the business';
-      const place = at ? ' at ' + theName(at) : ''; if (act === 'night_work') return (occN ? occN + ' on' : 'On') + ' the night shift' + place;
+      const place = at ? ' at ' + theName(at) : ''; if (act === 'night_work') return pick('Working a night shift', 'On nights') + place;
       return occN && at ? `${occN}${place}` : at ? `At work${place}` : base; }
     case 'commute': if ((m = /^(Walking|Cycling|On the bus|On the train|Driving) (to|home from) (.+)$/.exec(base))) { return `${m[1]} ${m[2]} ${theName(m[3])}${rain && /Walking|Cycling/.test(m[1]) ? ' in the rain' : ''}`; } return base;
     case 'school_run': return kids.length ? `Taking ${kids[0].firstName} to school` : h > 12 ? 'Collecting the kids from school' : 'On the school run';

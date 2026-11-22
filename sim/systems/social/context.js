@@ -11,7 +11,7 @@ import { clamp, mkTie, relayer } from './core.js';
 import { psOf } from './ties.js';
 
 const K2 = 13; // size of the 'support + sympathy' layers a person tries to maintain (Dunbar 5 / 15)
-const CTX = { study: [1.2, 0.30, 'weekly visit', 'course'], flat: [0.5, 0.28, 'weekly visit', 'a flatmate\'s friends'], work: [0.6, 0.20, 'monthly meetup', 'work'], club: [0.3, 0.15, 'monthly meetup', 'a club/class'] };
+const CTX = { study: [1.2, 0.30, 'weekly visit', 'course'], flat: [0.5, 0.28, 'weekly visit', 'a flatmate\'s friends'], work: [0.6, 0.20, 'monthly meetup', 'work'], club: [0.3, 0.15, 'monthly meetup', 'a club/class'], online: [0.5, 0.2, 'daily messages', 'online (gaming / social media)'] };
 const FRIEND_WHERE = ['elsewhere in the city', 'the city centre', 'the same area'];
 
 export function contextTies(w, S, p, r) {
@@ -27,12 +27,14 @@ export function contextTies(w, S, p, r) {
   if (q.activity === 'employed') ctx.push(['work', q.workplace && q.workplace.kind === 'onmap' ? 0.5 : 1]);
   if (hh && hh.members.some((id) => { if (id === p.id) return false; const o = w.people.get(id); return o && o.alive && w.ageOf(o) >= 18 && o.family.motherId !== p.id && p.family.motherId !== o.id && o.family.spouseId !== p.id && !(o.family.childrenIds || []).includes(p.id) && !p.family.childrenIds.includes(o.id); })) ctx.push(['flat', 1]);
   if (age >= 16 && age < 70) ctx.push(['club', 1]);
+  // Online-formed friendships (gaming, social platforms, group chats): common among the young - Pew 2015 (57% of US teens made friends online), Ofcom Online Nation (16-24 are near-universal users); falls steeply with age.
+  if (age >= 16 && age < 60) ctx.push(['online', age < 25 ? 1 : age < 35 ? 0.6 : 0.2]);
   for (const [name, mult] of ctx) {
     const [rate, c0, fq, via] = CTX[name]; const lam = rate * mult * (0.5 + E) * ageF * (1 - sat); let k = Math.floor(lam) + (r.next() < lam - Math.floor(lam) ? 1 : 0);
     while (k-- > 0) {
       const lf = w.lf, sex = r.next() < 0.5 ? 'F' : 'M', ag = clamp(Math.round(age + r.gauss(0, 4)), 16, 85), by = 2026 - ag;
       const nm = NAMES.pickName(r, NAMES.pickOrigin(r, q.eth, by), sex, by), id = 'm' + (lf.metro.length + 1);
-      const m = { id, name: `${nm.first} ${nm.last}`, age: ag, sex, rel: name === 'study' ? 'course-mate' : name === 'work' ? 'colleague' : name === 'flat' ? 'flatmate\'s friend' : 'friend from a club', where: FRIEND_WHERE[r.int(0, 2)], how: via, owner: p.id, freq: fq };
+      const m = { id, name: `${nm.first} ${nm.last}`, age: ag, sex, rel: name === 'study' ? 'course-mate' : name === 'work' ? 'colleague' : name === 'flat' ? 'flatmate\'s friend' : name === 'online' ? 'online friend' : 'friend from a club', where: FRIEND_WHERE[r.int(0, 2)], how: via, owner: p.id, freq: fq };
       lf.metro.push(m); S.metro.set(id, m);
       const tie = mkTie(id, { k: 'friend', r: m.rel, L: 3, c: clamp(c0 * (0.75 + 0.5 * r.next()), 0.05, 0.6), l: 0.35, e: 0.35, v: via, on: 0, lv: 2 }, w.tick); tie.fq = fq;
       ps.T.set(id, tie);

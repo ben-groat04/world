@@ -491,9 +491,13 @@ export function createHousing() {
         const host = bs.length ? bs[rng.int(0, bs.length - 1)] : [...w.buildings.values()].find((b) => b.zone === 'res'); if (!host) return 0;
         let nid = Math.max(...S.list.map((u) => u.id), ...w.map.lf.units.map((u) => u.id)) + 1;
         for (let i = 0; i < n; i++) {
-          const beds = rng.chance(0.4) ? 1 : rng.chance(0.7) ? 2 : 3, tenure = rng.chance(0.7) ? 'housing_assoc' : 'shared_ownership';
-          const u = { id: nid++, bid: host.id, kind: 'flat', bedrooms: beds, area: 40 + beds * 15, tenure, landlord: 1, rent: 0, value: tenure === 'shared_ownership' ? BASE_PRICE(w)[beds] : 0, hh: -1, address: host.name, label: 'new build', premium: 1, cond: 1, damp: false, repair: null, notice: null, since: 0, lastRise: w.tick, lastRisePct: 0, voidUntil: w.tick + MONTH, listed: false, complained: 0, hpiBase: 1, cafeNear: 0, bx: host.door.x, by: host.door.y, floor: 1 };
-          u.rent = marketRent(w, u); S.list.push(u); S.byId[u.id] = u; S.owners[1].units.push(u.id); if (host.lf.units) host.lf.units.push(u.id);
+          // Tenure mix of new supply: GLA/DLUHC net additions 2020-23: ~69% private market, ~31% affordable (Trust for London, from DLUHC data). Affordable = 2/3 social rent (housing association), 1/3 shared ownership;
+          // market = ~60% for sale (owner-occupier / buy-to-let sold on, mostly mortgaged), ~40% build-to-rent. Unit sizes follow London new-build: mostly 1-2 bed flats.
+          const beds = rng.chance(0.4) ? 1 : rng.chance(0.7) ? 2 : 3, x = rng.next(), tenure = x < 0.21 ? 'housing_assoc' : x < 0.31 ? 'shared_ownership' : x < 0.31 + 0.69 * 0.6 ? (rng.chance(0.85) ? 'mortgage' : 'owned_outright') : 'private_rent';
+          let landlord = tenure === 'private_rent' ? S.owners.findIndex((o) => o.kind === 'build_to_rent') : tenure === 'housing_assoc' || tenure === 'shared_ownership' ? 1 : -1;
+          if (tenure === 'private_rent' && landlord < 0) { landlord = S.owners.length; S.owners.push({ id: landlord, kind: 'build_to_rent', units: [], offMap: 0, sold: 0 }); }
+          const u = { id: nid++, bid: host.id, kind: 'flat', bedrooms: beds, area: 40 + beds * 15, tenure, landlord, rent: 0, value: tenure === 'shared_ownership' || tenure === 'mortgage' || tenure === 'owned_outright' ? BASE_PRICE(w)[beds] : 0, hh: -1, address: host.name, label: 'new build', premium: 1, cond: 1, damp: false, repair: null, notice: null, since: 0, lastRise: w.tick, lastRisePct: 0, voidUntil: w.tick + MONTH, listed: false, complained: 0, hpiBase: 1, cafeNear: 0, bx: host.door.x, by: host.door.y, floor: 1 };
+          u.rent = rented(tenure) ? marketRent(w, u) : 0; S.list.push(u); S.byId[u.id] = u; if (landlord >= 0) S.owners[landlord].units.push(u.id); if (host.lf.units) host.lf.units.push(u.id);
         }
         S.stats.built += n; w.emit('housing.built', { place: host.id, salience: 0.5, cause: a.cause || 0, tags: ['housing', 'civic'], payload: { n } }); return n;
       },

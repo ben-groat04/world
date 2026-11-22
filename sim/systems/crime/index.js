@@ -45,6 +45,8 @@ export const PARAMS = {
   nearRepeatDays: 28, nearRepeatP: 0.30, // Johnson & Bowers: elevated risk at/near victimised homes for ~1 month
 };
 
+// Immediate-custody probability of a first-time convicted offender by offence class (see outcomes()).
+const CUSTODY = { sexual: 0.56, theftperson: 0.40, burglary: 0.45, assault: 0.22, harass: 0.12, vehicle: 0.15, theft: 0.15, bike: 0.12, shoplift: 0.10, damage: 0.06, publicorder: 0.05, drugs: 0.15, asb: 0.02 };
 export function createCrime() {
   let W = null, C = null;
   const R = (...k) => W.rngFor('crime', ...k);
@@ -60,6 +62,14 @@ export function createCrime() {
 
   // ------------------------------------------------------------------ propensity
   const curve = (a) => (a < 10 || a > 75 ? 0 : Math.exp(-Math.pow(Math.log(a / 17.5), 2) / (2 * (a < 17.5 ? 0.2 : 0.42) ** 2)));
+  // PEER AGE ASSORTMENT of violence. Violence is overwhelmingly between people of similar age: ONS CSEW (YE Mar 2024) stranger violence victimisation is 2.2% at 16-24, ~3x the all-age rate (0.7%), because the motivated
+  // aggressors are drawn from the same age-crime curve as `curve` (peak late teens/early 20s). A counterpart's chance of being the target is therefore the share of potential aggressors of a similar age (Gaussian, sigma 7 y),
+  // plus a small age-blind share (drunk/opportunistic confrontation, robbery). Used for the anonymous night-time-economy aggressor (age ~ curve) and for strangers squaring up on the street.
+  const PEER_SIGMA = 7, PEER_BLIND = 0.15;
+  const PEER = (() => { const t = [], curves = []; for (let x = 12; x <= 70; x++) curves.push([x, curve(x)]); const tot = curves.reduce((a, c) => a + c[1], 0); let mx = 0;
+    for (let a = 0; a <= 100; a++) { let s = 0; for (const [x, c] of curves) s += c * Math.exp(-((a - x) ** 2) / (2 * PEER_SIGMA ** 2)); t[a] = PEER_BLIND * 0.5 + (1 - PEER_BLIND) * s / tot; mx = Math.max(mx, t[a]); } return t.map((v) => v / mx); })();
+  const peerOfAnon = (a) => PEER[Math.max(0, Math.min(100, Math.round(a)))];
+  const peerOf = (va, oa) => PEER_BLIND * 0.5 + (1 - PEER_BLIND) * Math.exp(-((va - oa) ** 2) / (2 * PEER_SIGMA ** 2));
   function risk(p) {
     const a = ageOf(p), c = crOf(p); if (a < 11 || a > 75 || !p.alive) return 0; const q = p.ext.pop, hl = p.ext.hl, pe = p.personality, hh = hhOf(p), M = p.sex === 'M';
     let x = (M ? 1.1 : 0) + 1.4 * (0.5 - pe.conscientiousness) + 1.0 * (0.5 - pe.agreeableness) + (p.traits.includes('hothead') ? 0.45 : 0);
@@ -165,8 +175,8 @@ export function createCrime() {
   function assault(o, r) {
     const s = snap(); let v = null, known = 0; const nte = (W.time.dow === 4 || W.time.dow === 5) && (W.time.hour >= 21 || W.time.hour < 3);
     if (o && r.next() < 0.62) { v = conflictTarget(o, r, -0.1); if (v) known = 1; }
-    if (!v) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; // counterpart of a stranger confrontation: whoever is out, with male aggressors mostly squaring up to same-sex peers and drink lowering restraint on both sides; no age weight (age exposure comes from who is out at night)
-      for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al)) v = c; }
+    if (!v) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; // counterpart of a stranger confrontation: whoever is out, with male aggressors mostly squaring up to same-sex peers and drink lowering restraint on both sides; age enters through who is out at night and through peer-age assortment (peerOf)
+      for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al) * (o ? peerOf(ageOf(c), ageOf(o)) : peerOfAnon(ageOf(c)))) v = c; }
       if (!v) return false; if (v.ext.cr && v.ext.cr.avoid && r.next() < 0.5) return false; }
     if (!o && !nte && r.next() < 0.7) return false; const g = nte ? 0.25 : 0.1; if (r.next() > 0.7 * (1 - g)) return false;
     const u = r.next(); return commit('assault', { off: o, vic: v, hh: hhOf(v), known, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null });
@@ -189,7 +199,7 @@ export function createCrime() {
   const cnt = (k, t, n = 1) => { (C[k] || (C[k] = {}))[t] = ((C[k] || {})[t] || 0) + n; };
   function commit(type, o) {
     const T = TYPES[type], r = R(W.tick, C.seq), v = o.vic, off = o.off, fromRes = !!off; C.seq++;
-    cnt('exp', type); if (v) { const k = band(ageOf(v)) + v.sex; cnt('vicBand', k); cnt('vicT', type + '|' + k); const c = crOf(v); c.vn++; c.vt[type] = (c.vt[type] || 0) + 1; c.last = c.last; } if (off) { cnt('offBand', band(ageOf(off)) + off.sex); const c = crOf(off); c.last = W.tick; c.lastT = o.hh ? o.hh.id : null; c.nOff = (c.nOff || 0) + 1; }
+    cnt('exp', type); if (v) { const k = band(ageOf(v)) + v.sex; cnt('vicBand', k); cnt('vicT', type + '|' + k); if (type === 'assault') cnt('vicSrc', (o.city ? 'city' : o.dom ? 'dom' : o.known ? 'known' : 'stranger') + '|' + k); const c = crOf(v); c.vn++; c.vt[type] = (c.vt[type] || 0) + 1; c.last = c.last; } if (off) { cnt('offBand', band(ageOf(off)) + off.sex); const c = crOf(off); c.last = W.tick; c.lastT = o.hh ? o.hh.id : null; c.nOff = (c.nOff || 0) + 1; }
     if (type === 'burglary' || type === 'vehicle' || type === 'theft') if (o.hh) { C.hot[o.hh.id] = W.tick + PARAMS.nearRepeatDays * D; C.hotL = null; }
     // reporting decision (victim) -> recording
     let rep;
@@ -251,15 +261,20 @@ export function createCrime() {
         if (v) crOf(v).trust = clamp(crOf(v).trust + 0.08, 0.05, 1);
         if (off) W.emit('crime.arrest', { actors: [off.id], cause: e.eid, salience: e.dom ? 0.05 : 0.2, tags: ['crime', ...(e.dom ? ['private'] : [])], payload: { kind: e.ty, outcome: out } });
         if (out === 'out-of-court') { cnt('sent', 'caution'); if (oc) { oc.pri++; } continue; }
-        cnt('ch', e.ty); (keep || (keep = [])).push({ ...e, stage: 1, t: W.tick + Math.round((30 + r.next() * 120) * D) });
+        cnt('ch', e.ty); const wait = Math.round((30 + r.next() * 120) * D), pri0 = oc ? oc.pri : 0;
+        // REMAND: a charged resident may be held in custody until trial (bail refused: seriousness, prior record, risk to the victim). MoJ OMSQ: ~1 in 6 of the prison population is on remand; of Crown Court
+        // defendants ~1 in 3 are remanded in custody (hand-set here: 25% for seriousness >= 2 plus 6% per prior, 2% + 3% per prior for lesser offences, domestic abuse +15%). Time on remand is credited against any sentence.
+        let remandDays = 0; if (off && oc && !(oc.cust > W.tick) && r.next() < clamp((e.sev >= 2 ? 0.25 : 0.02) + (e.sev >= 2 ? 0.06 : 0.03) * Math.min(pri0, 6) + (e.dom ? 0.15 : 0), 0, 0.8)) { remandDays = Math.round(wait / D); lockUp(off, oc, remandDays, e, 'On remand', 'remand'); }
+        (keep || (keep = [])).push({ ...e, stage: 1, t: W.tick + wait, remandDays });
       } else {
         if (!off) { cnt('sentOutsider', 'n'); continue; } // anonymous visiting offenders: sentenced elsewhere, not a resident
         const guilty = r.next() < 0.85; if (!guilty) { cnt('sent', 'not guilty'); continue; } // ~85% of prosecutions end in conviction (MoJ CJS statistics)
         cnt('conv', e.ty); const pri = oc ? oc.pri : 0; let sent = 'fine';
-        const pc = clamp(0.015 + 0.07 * pri + 0.07 * e.sev * (e.ty === 'burglary' ? 2 : 1) + (e.dom ? 0.04 : 0), 0, 0.7), u = r.next();
-        sent = u < pc ? 'custody' : u < pc + 0.12 + 0.05 * e.sev ? 'suspended' : u < pc + 0.35 + 0.1 * e.sev ? 'community order' : 'fine';
-        if (T.sev === 0 && e.ty !== 'shoplift') sent = u < pc * 0.3 ? 'custody' : 'fine';
-        cnt('sent', sent); if (oc) { oc.pri++; oc.conv++; if (sent === 'custody') imprison(off, oc, u, r, e); if (off.ext.hl) W.cmd('health.stress', { pid: off.id, amount: 0.15, why: 'a court appearance', cause: e.eid }); }
+        // Immediate-custody probability of a convicted (charged) offender: MoJ Criminal Justice Statistics quarterly YE Sep 2024: custody rate 7% for all offences, 33% for indictable offences, sexual offences 56%, robbery 55%;
+        // violence/burglary/theft in between (rounded, hand-set per class below). Each prior conviction raises the odds (Sentencing Council: previous convictions aggravate), x1.3 per prior up to 6, domestic abuse x1.3.
+        const base = CUSTODY[e.ty] ?? 0.1, odds = base / (1 - base) * Math.pow(1.3, Math.min(pri, 6)) * (e.dom ? 1.3 : 1) * (e.sev >= 3 ? 1 : 1), pc = clamp(odds / (1 + odds), 0, 0.9), u = r.next();
+        sent = u < pc ? 'custody' : u < pc + 0.14 + 0.05 * e.sev ? 'suspended' : u < pc + 0.38 + 0.1 * e.sev ? 'community order' : 'fine';
+        cnt('sent', sent); if (oc) { oc.pri++; oc.conv++; if (e.remandDays && sent !== 'custody') { oc.cust = Math.min(oc.cust, W.tick); } if (sent === 'custody') imprison(off, oc, u, r, e); if (off.ext.hl) W.cmd('health.stress', { pid: off.id, amount: 0.15, why: 'a court appearance', cause: e.eid }); }
         W.emit('crime.sentenced', { actors: off ? [off.id] : [], cause: e.eid, salience: sent === 'custody' ? 0.35 : 0.12, tags: ['crime', ...(e.dom ? ['private'] : [])], payload: { kind: e.ty, sentence: sent } });
       }
     }
@@ -270,10 +285,18 @@ export function createCrime() {
   // ties lapse because nobody is seen. Sentence lengths: ~70% short (1-9 months), ~30% 1-5 years (MoJ sentencing statistics: average custodial sentence ~ 17-20 months, most individual sentences < 12 months but long ones dominate the prison stock).
   function imprison(off, oc, u, r, e) {
     const months = r.next() < 0.25 + 0.1 * e.sev ? 12 + ((r.next() * 48) | 0) : 1 + ((r.next() * 8) | 0), served = Math.max(1, Math.round(months * PARAMS.served * 30)); // days in prison
-    oc.cust = W.tick + served * D; oc.lam = 0; cnt('sent', 'custody-months', months); cnt('prisonDays', 'n', served);
-    if (off.ext.pop && off.ext.pop.activity === 'employed') W.cmd('labour.quit', { pid: off.id });
-    if (W.commands.has('routine.insert') && off.ext.rt) W.cmd('routine.insert', { pid: off.id, from: W.tick + 1, to: oc.cust, label: 'In custody', ptype: 3, dest: 'custody' });
-    const hh = hhOf(off); if (hh) for (const id of hh.members) { const q = W.people.get(id); if (q && q.alive && q !== off) W.cmd('health.stress', { pid: id, amount: ageOf(q) >= 16 ? 0.18 : 0.1, why: 'a family member sent to prison', cause: e.eid }); } // partner/children carry the strain; the household loses the income via the job loss
+    const credit = e.remandDays || 0, left = Math.max(1, served - credit); // days already spent on remand count towards the sentence
+    cnt('sent', 'custody-months', months);
+    lockUp(off, oc, left, e, 'In custody', 'custody', credit > 0);
+  }
+  /** Take a resident off the map for `days` (remand or sentence): rate zero, job lost, routine slot 'in custody', household strain. `extend`: already locked up on remand, so the sentence continues from now. */
+  function lockUp(off, oc, days, e, label, kind, extend) {
+    oc.cust = W.tick + days * D; oc.lam = 0; cnt('prisonDays', 'n', days); if (kind === 'remand') cnt('sent', 'remand');
+    if (!extend) {
+      if (off.ext.pop && off.ext.pop.activity === 'employed') W.cmd('labour.quit', { pid: off.id });
+      const hh = hhOf(off); if (hh) for (const id of hh.members) { const q = W.people.get(id); if (q && q.alive && q !== off) W.cmd('health.stress', { pid: id, amount: ageOf(q) >= 16 ? 0.18 : 0.1, why: kind === 'remand' ? 'a family member held on remand' : 'a family member sent to prison', cause: e.eid }); } // partner/children carry the strain; the household loses the income via the job loss
+    }
+    if (W.commands.has('routine.insert') && off.ext.rt) W.cmd('routine.insert', { pid: off.id, from: W.tick + 1, to: oc.cust, label, ptype: 3, dest: 'custody' });
   }
 
   // ------------------------------------------------------------------ clocks
@@ -288,7 +311,7 @@ export function createCrime() {
     // night-time-economy exposure of residents who are out in the city centre (off the map): stranger violence, theft from the person and sexual offences, with the same guardianship logic
     if (h >= 20 || h < 4) { const s = snap(); if (s.nte.length) { const base = PROFILE.nte(h, dow) / 4, wv = wave && (!wave.type || wave.type === 'assault') ? wave.mult : 1;
       for (const v of s.nte) { const a = ageOf(v); if (a < 16) continue; const al = v.ext.hl ? v.ext.hl.alc || 0 : 0, M = v.sex === 'M', c = crOf(v), dr = 1 + PARAMS.drinkRisk * al;
-        const lamA = PARAMS.NTE.assault * base * dr * (M ? 1 : PARAMS.sexPair) * wv * (1 + 0.1 * (1 - C.police.cap)) * 2 / (1 + PARAMS.sexPair), lamT = PARAMS.NTE.theftperson * base * dr * (a < 45 ? 1.2 : 0.7), lamS = PARAMS.NTE.sexual * base * dr * (M ? 0.2 : 1) * 2 / 1.2;
+        const lamA = PARAMS.NTE.assault * base * dr * peerOfAnon(a) * (M ? 1 : PARAMS.sexPair) * wv * (1 + 0.1 * (1 - C.police.cap)) * 2 / (1 + PARAMS.sexPair), lamT = PARAMS.NTE.theftperson * base * dr * (a < 45 ? 1.2 : 0.7), lamS = PARAMS.NTE.sexual * base * dr * (M ? 0.2 : 1) * 2 / 1.2;
         if (r.next() < lamA) { const u = r.next(); commit('assault', { off: null, vic: v, hh: hhOf(v), known: 0, city: 1, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null }); }
         if (r.next() < lamT) commit('theftperson', { off: null, vic: v, hh: hhOf(v), loss: 250, place: null, city: 1, force: r.next() < 0.12 });
         if (r.next() < lamS) commit('sexual', { off: null, vic: v, hh: hhOf(v), known: 0.1, place: null, city: 1 }); } } }
@@ -408,7 +431,7 @@ export function createCrime() {
       'crime.lockUp': (w, a) => { const p = w.people.get(a.pid), hh = p && hhOf(p); if (!hh) return false; C.sec[hh.id] = clamp(secOf(hh) + 0.3, 0, 0.95); crOf(p).lock = 1; return true; },
     },
     query: {
-      stats: () => ({ years: (W.tick - C.t0) / (365.25 * D), exp: { ...C.exp }, rec: { ...C.rec }, rep: { ...C.rep }, det: { ...C.det }, ch: { ...C.ch }, conv: { ...C.conv }, sent: { ...C.sent }, away: { ...C.away }, city: { ...C.city }, detAway: { ...C.detAway }, vicT: { ...C.vicT }, prisonDays: (C.prisonDays || {}).n || 0, vicBand: { ...C.vicBand }, offBand: { ...C.offBand }, hom: C.hom.n || 0, moved: C.moved.n || 0, domActive: Object.keys(C.dom).length, police: { ...C.police }, attendMedian: C.attend.length ? [...C.attend].sort((a, b) => a - b)[C.attend.length >> 1] : null, offenders: C.act.length, watch: Object.keys(C.watch).length, wave: C.wave && C.wave.until > W.tick ? { ...C.wave } : null }),
+      stats: () => ({ years: (W.tick - C.t0) / (365.25 * D), exp: { ...C.exp }, rec: { ...C.rec }, rep: { ...C.rep }, det: { ...C.det }, ch: { ...C.ch }, conv: { ...C.conv }, sent: { ...C.sent }, away: { ...C.away }, city: { ...C.city }, detAway: { ...C.detAway }, vicT: { ...C.vicT }, vicSrc: { ...C.vicSrc }, prisonDays: (C.prisonDays || {}).n || 0, vicBand: { ...C.vicBand }, offBand: { ...C.offBand }, hom: C.hom.n || 0, moved: C.moved.n || 0, domActive: Object.keys(C.dom).length, police: { ...C.police }, attendMedian: C.attend.length ? [...C.attend].sort((a, b) => a - b)[C.attend.length >> 1] : null, offenders: C.act.length, watch: Object.keys(C.watch).length, wave: C.wave && C.wave.until > W.tick ? { ...C.wave } : null }),
       risk: (pid) => { const p = W.people.get(pid); return p ? +risk(p).toFixed(3) : 0; }, fear: (pid) => { const p = W.people.get(pid); return p ? +crOf(p).fear.toFixed(2) : 0; },
       victim: (pid) => { const p = W.people.get(pid); return p ? { n: crOf(p).vn, by: { ...crOf(p).vt }, avoids: !!crOf(p).avoid, trust: +crOf(p).trust.toFixed(2) } : null; },
       offenders: () => C.act.map((id) => { const p = W.people.get(id); return p ? { id, lam: +crOf(p).lam.toFixed(2), prior: crOf(p).pri, conv: crOf(p).conv } : null; }).filter(Boolean),

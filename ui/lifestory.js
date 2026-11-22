@@ -66,10 +66,11 @@ export function summaryOf(w, p, f) {
   // 1. where from
   const born = mem(/^Born /), came = mem(/^Came to the UK|^Moved to the UK/), bornUK = pop.bornUK !== false && (!pop.birthplace || pop.birthplace === 'United Kingdom' || !came);
   let origin = '';
-  const fixPlace = (t) => t.replace(/ in United Kingdom/, ' in the UK').replace(/ in elsewhere in the city/, ' elsewhere in the city').replace(/ in the south coast/, ' on the south coast').replace(/ in the north$/, ' in the north').replace(/ from United Kingdom/, '');
+  const THE = /\b(in|from) (Philippines|Netherlands|Gambia|Bahamas|Czech Republic|United States|Maldives|Seychelles)\b/;
+  const fixPlace = (t) => t.replace(THE, '$1 the $2').replace(/ in United Kingdom/, ' in the UK').replace(/ in elsewhere in the city/, ' elsewhere in the city').replace(/ in the south coast/, ' on the south coast').replace(/ in the north$/, ' in the north').replace(/ from United Kingdom/, '');
   if (born) origin = fixPlace(born.text.replace(/\.$/, '').replace(/^Born/, 'was born').replace(/, grew up in/, ' and grew up in'));
   else if (came) origin = came.text.replace(/\.$/, '').replace(/^(Came|Moved) to the UK/, 'came to the UK').replace(/ from (\w[\w ]*?)( for work)?$/, ' from $1$2');
-  else if (pop.birthplace && pop.birthplace !== 'United Kingdom' && bornUK === false) origin = 'came to the UK from ' + pop.birthplace;
+  else if (pop.birthplace && pop.birthplace !== 'United Kingdom' && bornUK === false) origin = 'came to the UK from ' + (/^(Philippines|Netherlands|Gambia|Bahamas|Czech Republic|United States)$/.test(pop.birthplace) ? 'the ' : '') + pop.birthplace;
   if (origin && f.age >= 5) sents.push([`${F} ${origin}, and ${is} now ${f.age}.`, `${F} is ${f.age}. ${cap1(he)} ${origin}.`, `Now ${f.age}, ${F} ${origin}.`][h % 3]);
   else sents.push(`${F} is ${f.age}${f.street ? ' and lives on ' + f.street : ''}.`);
   // 2. school / work

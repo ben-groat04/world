@@ -26,12 +26,12 @@ function demoTexts(seed, n = 120) {
 // Runs the UI host headless, collects every rendered feed post, forum post/reply, news head/body, storyline beat and person-timeline line, and reports distinct ratio,
 // the most repeated templates (names/numbers masked) and exact repeats within a game-month. Target: distinct >= 0.9, no template > 2%, no repeat within a month.
 export async function textVariety(seed = 1, years = 3, log = console.log) {
-  const { Host } = await import('../ui/host.js'); const { storylines } = await import('../sim/sifter/storylines.js'); void storylines;
-  const msgs = []; const h = new Host(seed, (m) => msgs.push(m)); const lines = []; const seenPost = new Set(); const TPD = h.TPD, end = h.w.tick + years * h.TPY; let nextSlow = h.w.tick;
+  const { Host } = await import('../ui/host.js'); const { storylines } = await import('../sim/sifter/storylines.js');
+  const msgs = []; const h = new Host(seed, (m) => msgs.push(m)); const lines = []; const seenPost = new Set(); const TPD = h.TPD, end = h.w.tick + years * h.TPY; let nextSlow = h.w.tick, nextArc = h.w.tick; const seenArc = new Set();
   const flush = () => { for (const m of msgs.splice(0)) {
     if (m.t === 'news') for (const it of m.items) { if (it.kind === 'god') continue; lines.push({ g: 'news.head', tick: it.tick, s: it.head }); if (it.body) lines.push({ g: 'news.body', tick: it.tick, s: it.body }); }
     else if (m.t === 'posts') for (const p of m.posts) if (!seenPost.has(p.id)) { seenPost.add(p.id); lines.push({ g: 'post.' + p.ch, tick: p.t, s: p.text }); for (const r of p.replies || []) lines.push({ g: 'reply', tick: p.t, s: r.text }); } } };
-  while (h.w.tick < end) { for (let i = 0; i < TPD && h.w.tick < end; i++) h.w.step(); h.releaseHeld(); if (h.newsOut.length) h.send({ t: 'news', items: h.newsOut.splice(0) }); if (h.w.tick >= nextSlow) { nextSlow += TPD; h.slowFeeds(); } flush(); }
+  while (h.w.tick < end) { for (let i = 0; i < TPD && h.w.tick < end; i++) h.w.step(); h.releaseHeld(); if (h.newsOut.length) h.send({ t: 'news', items: h.newsOut.splice(0) }); if (h.w.tick >= nextSlow) { nextSlow += TPD; h.slowFeeds(); } if (h.w.tick >= nextArc) { nextArc += TPD * 14; for (const a of storylines(h.sifter, h.w, { limit: 12 })) { const k = a.id + ':' + a.beats.length; if (seenArc.has(k)) continue; seenArc.add(k); lines.push({ g: 'story.head', tick: h.w.tick, s: a.headline }); for (const b of a.beats) { const bk = b.tick + '|' + b.text; if (!seenArc.has(bk)) { seenArc.add(bk); lines.push({ g: 'story.beat', tick: b.tick, s: b.text }); } } } } flush(); }
   for (const a of h.sifter.arcs.filter((x) => x.confirmed).slice(0, 400)) for (const b of h.arcView(a).beats) lines.push({ g: 'beat', tick: b.tick, s: b.text });
   const norm = (x) => x.replace(/\b[A-Z][a-z]+( [A-Z][a-z]+)?\b/g, 'N').replace(/\d+/g, '#'), cnt = new Map(), mm = new Set(); let rep = 0;
   for (const l of lines) { const k = norm(l.s); cnt.set(k, (cnt.get(k) || 0) + 1); const m = Math.floor(l.tick / (TPD * 30)) + '|' + l.s; if (mm.has(m)) rep++; mm.add(m); }

@@ -23,8 +23,9 @@ export function lifeFor(w, p, rng) {
     if (age >= 12) { if (rng.chance(lgbShare(age))) L.or = wpick(rng, [['G', 0.42], ['B', 0.46], ['O', 0.12]]); }
     // children (on-map alive + off-map placeholders)
     L.parity = (p.family.childrenIds || []).length + p.ext.pop.ties.filter((t) => !t.on && t.rel && /^(son|daughter)$/.test(t.rel)).length;
-    // desire for (more) children: family value, age, existing parity
-    L.desire = clamp01(0.35 + 0.5 * (p.values ? p.values.family - 0.5 : 0) + rng.gauss(0, 0.18) - (rng.chance(0.1) ? 0.45 : 0) - 0.12 * Math.max(0, L.parity - 1));
+    // desire for (more) children: family value, existing parity. Baseline 0.5 = the 'average desire' of the fertility reference woman (fert.js weight 0.35 + 1.3 x desire = 1.0); it was 0.35, which made the typical
+    // woman want fewer children than the reference she is scaled against. ~10% childfree by choice (-0.45), as UK surveys (ONS Families and households; BSA) find ~85-90% of women intend/expect to have children.
+    L.desire = clamp01(0.5 + 0.5 * (p.values ? p.values.family - 0.5 : 0) + rng.gauss(0, 0.18) - (rng.chance(0.1) ? 0.45 : 0) - 0.12 * Math.max(0, L.parity - 1));
     // partner
     const sp = p.family.spouseId != null ? w.people.get(p.family.spouseId) : null;
     if (sp && sp.alive) {

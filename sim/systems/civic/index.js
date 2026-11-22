@@ -124,7 +124,7 @@ export function createCivic() {
     if (camp) { camp.status = 'closed'; endCampaign(camp, out === 'refused'); }
   }
   function monthlyApps(r) {
-    for (const [k, K] of Object.entries(APP_KINDS)) if (r.next() < K.perMonth * (W.living().length / 550)) newApp(k, null);
+    for (const [k, K] of Object.entries(APP_KINDS)) if (r.next() < K.perMonth * (K.fixed ? 1 : W.living().length / 550)) newApp(k, null); // `fixed`: the supply of development sites does not grow with the number of residents
   }
 
   // ------------------------------------------------------------------ campaigns

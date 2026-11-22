@@ -240,7 +240,7 @@ Your turn. Your journal shows what you have already said and done. You can say n
   }
   const l2 = live(); if (l2.length < 2) return endScene(sc, sc.phone ? 'hung up' : 'walked off')
   if (sc.lines.length >= MAX_LINES) return endScene(sc, 'cap')
-  const last = sc.lines[sc.lines.length - 1].name, addressed = r && resolve(r.to, l2.filter((m) => m !== speaker && m !== last))
+  const last = sc.lines[sc.lines.length - 1]?.name, addressed = r && resolve(r.to, l2.filter((m) => m !== speaker && m !== last))
   const order = l2.filter((m) => m !== speaker && m !== last).sort((a, b) => sc.lines.map((l) => l.name).lastIndexOf(a) - sc.lines.map((l) => l.name).lastIndexOf(b))
   sc.next = addressed || order.find((m) => !sc.done[m])
   if (!sc.next) endScene(sc, 'talk ran out')
@@ -387,7 +387,7 @@ One or more decisions per item (kind none if nothing comes of it). An errand's r
 while (true) {
   const tNext = Math.min(...NAMES.filter((n) => !sceneOf(n)).map((n) => S[n].next), Q.length ? Q[0].t : Infinity, ...ACTIVE.map((sc) => sc.t))
   if (tNext >= END) break
-  clock = Math.max(clock, tNext)
+  clock = Math.max(clock, Math.ceil(tNext)) // whole minutes; a conversation's own time can be fractional
   drain(); await resolveWorld(clock); drain() // errands that just started are resolved, and due results delivered, before anyone looks again
   if (simCalls >= MAX_CALLS) { stopped = clock; log(`${A.label}: safety stop at ${MAX_CALLS} calls, ${fmt(clock)}`); L.push({ t: clock, kind: 'stopped', reason: `maxCalls ${MAX_CALLS}` }); break }
   const sc = ACTIVE.find((x) => x.t <= clock)
@@ -430,8 +430,8 @@ HOW IT WORKS: each person plans their own next hours (errands belong to a plan s
 TRANSCRIPT:\n${cap(transcript, 90000) || '(nothing)'}
 TIMELINES (turns, why, what they chose to remember, plan):\n${cap(memories, 40000)}
 WORLD DECISIONS:\n${cap(worldLog(L), 15000) || '(none)'}
-First imagine what a real stretch like this would contain for these people; then compare. Check for stereotyping, including in how others treat them. Point to mechanism causes, not just symptoms, and check each against the logs.`,
-    obj({ imagined: arr(str), missing_texture: arr(str), stereotyping: arr(obj({ who: str, quote: str, why: str })), breakers: arr(obj({ quote: str, why: str })), mechanism_issues: arr(str), score: { type: 'integer', description: '1-10 realism' }, verdict: str }),
+First imagine what a real stretch like this would contain for these people; then compare. Check for stereotyping, including in how others treat them. Point to mechanism causes, not just symptoms, and check each against the logs. For every issue, consider first whether an AI-first solution would solve it (give the judgment to a person's or role's model, with the facts it needs in view) rather than more code rules or machinery; say which, and why.`,
+    obj({ imagined: arr(str), missing_texture: arr(str), stereotyping: arr(obj({ who: str, quote: str, why: str })), breakers: arr(obj({ quote: str, why: str })), mechanism_issues: arr(obj({ issue: str, evidence: { type: 'string', description: 'what in the logs shows it' }, ai_first: { type: 'string', description: 'an AI-first fix: which model call gets the judgment and what it needs to see; or why code must own it (a hard fact)' } })), score: { type: 'integer', description: '1-10 realism' }, verdict: str }),
     { phase: 'Audit', label: `${A.label} audit`, for: 'auditor', model: 'opus', effort: 'high' })
   log(`${A.label}: audit score ${audit?.score ?? '?'} · ${String(audit?.verdict || '').slice(0, 140)}`)
 }

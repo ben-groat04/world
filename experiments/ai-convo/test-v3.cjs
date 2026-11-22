@@ -82,7 +82,7 @@ function mock(people, opts = {}) {
       return { decisions: lines.flatMap((l, i) => { if (r() < 0.08) return []; const who = names.find((m) => l.includes(m)) || names[0]
         const kd = /\[action\]/.test(l) ? pick(['result', 'result', 'none']) : pick(['result', 'text', 'call', 'none'])
         return [{ item: i + 1, kind: kd, who, from: pick(['Priya at Larch Lettings', 'Dev', 'Sam', 'Unknown']), text: `outcome ${i + 1} for ${who.split(' ')[0]} ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 5, 60]), reason: 'because' }] }) } }
-    if (kind === 'audit') return { imagined: ['a'], missing_texture: [], stereotyping: [], breakers: [], mechanism_issues: [], score: 6, verdict: 'ok' }
+    if (kind === 'audit') return { imagined: ['a'], missing_texture: [], stereotyping: [], breakers: [], mechanism_issues: [{ issue: 'x', evidence: 'y', ai_first: 'z' }], score: 6, verdict: 'ok' }
     throw new Error('unknown call ' + JSON.stringify(Object.keys(s)))
   }
   return { agent, seen }

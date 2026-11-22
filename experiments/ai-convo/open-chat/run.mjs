@@ -101,9 +101,10 @@ async function checkin(n) {
   const t = clock, firstShown = seen[n] ?? 0, fresh = convo.slice(firstShown).filter(m => m.who !== n), now = `${n}'s phone, ${stamp(t)}`;
   const extra = [...(ans[n] ?? []), ...reactions.slice(seenR[n] ?? 0).filter(x => x.who !== n).map(x => ({ at: x.at, s: `(${x.who} reacted ${x.emoji} to ${convo[x.to].who === n ? 'your' : convo[x.to].who + "'s"} ${hm(convo[x.to].at)} message)` }))];
   const readWords = fresh.reduce((s, m) => s + words(m.text), 0) + (ans[n] ?? []).reduce((s, a) => s + words(a.s), 0); ans[n] = []; // reading time: what is new from others
-  const chat = screen(n, firstShown, extra), user = `(${now}.${n in looked ? ` You last looked ${stamp(looked[n])}.` : ''})` + (news ? `\n\nSince you last looked: ${news}` : '') + `\n\n${chat || '(nothing in the chat yet)'}` + (n in session && !fresh.length && !extra.length ? '\n\n(Nothing new since you last looked.)' : '');
+  const chat = screen(n, firstShown, extra), user = `(${now}.${n in looked ? ` You last looked ${stamp(looked[n])}.` : ''})` + (news ? `\n\nSince you last looked: ${news}` : '') + `\n\n${chat || '(nothing in the chat yet)'}` + (n === NAMES[0] && !(n in looked) ? `\n\n(You've opened the chat to send something.)` : '') /* hard-coded: the opener's first look says why they picked up the phone (the design has them open the chat; without this, Sonnet openers passed on an empty chat for 3 days) */ + (n in session && !fresh.length && !extra.length ? '\n\n(Nothing new since you last looked.)' : '');
   const j = await turn(n, user), text = j.text.trim();
-  session[n] = j.sid; seen[n] = convo.length; seenR[n] = reactions.length; looked[n] = t; // the fork is always the agent's session
+  seen[n] = convo.length; seenR[n] = reactions.length; looked[n] = t;
+  const keep = () => { session[n] = j.sid; }; // only a check-in that posts something is kept as the agent's session: a PASS (or reaction, or failed turn) fork is discarded, so a history of looking and staying quiet doesn't build up and make quiet the habit (it did: after a few PASSes agents passed on everything). The header's 'You last looked' and the phone screen still show what was seen.
   const meta = { usage: j.usage, user, argv: mkArgv(briefFor(n)) };
   if (j.cont) { log({ who: n, failed: 'continuation', text, posted: false, at: iso(t), checkin: iso(t), ...meta }); return sched(n, +t + rf(OFFLINE_MIN) * MIN); } // not posted; like a PASS for scheduling
   const to = convo.findLastIndex(m => m.who !== n), emoji = REACT && to >= firstShown && text.match(REACT_RE)?.[1].trim(); // a reaction needs a message first shown now
@@ -114,7 +115,7 @@ async function checkin(n) {
   }
   if (isPass(text) || REACT && REACT_RE.test(text)) { // a REACT with nothing new to react to is quiet
     log({ who: n, text, pass: true, posted: false, at: iso(t), checkin: iso(t), ...meta }); return sched(n, +t + rf(OFFLINE_MIN) * MIN); }
-  reply(n, splitReply(text), +t + readWords / READ_WPM * MIN, t, meta, true);
+  keep(); reply(n, splitReply(text), +t + readWords / READ_WPM * MIN, t, meta, true);
 }
 const ATT = /^\[(file|photo|link)(:[^\]]*)?\]$/i; // an attachment line: [file: name.ext], [photo], [photo: what it shows], [link: what it is]
 const BULLET = /^\s*([-*\u2022]|\d+[.)])\s/, joins = (a, p) => !ATT.test(p) && !ATT.test(a) && (a.endsWith(':') || p === '---' || /(^|\n)---$/.test(a) || p.split('\n').every(l => BULLET.test(l))); // p belongs with the part a before it
@@ -169,12 +170,12 @@ if (PRIVATE && process.env.LINES_FROM) { // the setting, day-0 lines and any oth
   Object.assign(sleep, generated); log({ private_lines: lines, setting, sleep: generated, usage: j.usage });
 }
 if (process.env.GEN_ONLY === '1') { console.log('Generated only. Saved log.jsonl in', dir); process.exit(0); }
-const REFRESH_HOURS = 6; // in-story hours between a person's refreshes of what has happened to them: design parameter, unsourced (short enough for something to have changed by the next day's check-ins, long enough that a conversation within a refresh is not interrupted by new events)
+const REFRESH_HOURS = 2; // in-story hours between a person's refreshes of what has happened to them: design parameter, unsourced (short enough that a person picking up their phone after a few hours has had something happen since, which a 6-hour gap often didn't; long enough that a back-and-forth, minutes apart, is not interrupted by new events)
 const since = Object.fromEntries(NAMES.map(n => [n, START])); // per person: the in-story time of their last refresh
 const full = d => `${WD[d.getDay()]} ${iso(d).slice(0, 10)} ${hm(d)}`;
 async function refresh(n) { // what has happened to n since its last refresh; n's day-0 line stays as their identity. Returns the text, which opens the check-in turn.
   const from = since[n], chat = convo.filter(m => m.at > from); since[n] = clock;
-  const j = await twice(async () => { const j = await gen(`${cast(false)}\nSetting: ${setting}\n\nIt is now ${full(clock)}. ${n}'s life (fixed): ${lines[n]}${events[n] ? `\nWhat was going on with ${n} on ${full(from)} (background: how things stood then): ${events[n]}` : ''}\n\n${chat.length ? `What was posted in the chat since ${stamp(from)}:\n${chat.map(line).join('\n\n')}\n\n` : ''}Write what has happened to ${n} since ${stamp(from)}, in the second person ('You ...'): how the things ${n} said they would do outside the chat went, what has happened since, and what is different now from then. Keep where ${n} lives and their occupation as in their life. A few sentences; reply with only this.`, `events ${n}:`); return j.text.trim() && j; }, `events ${n}:`);
+  const j = await twice(async () => { const j = await gen(`${cast(false)}\nSetting: ${setting}\n\nIt is now ${full(clock)}. ${n}'s life (fixed): ${lines[n]}${events[n] ? `\nWhat was going on with ${n} on ${full(from)} (background: how things stood then): ${events[n]}` : ''}\n\n${chat.length ? `What was posted in the chat since ${stamp(from)}:\n${chat.map(line).join('\n\n')}\n\n` : ''}Write what has happened to ${n} since ${stamp(from)}, in the second person ('You ...'): how the things ${n} said they would do outside the chat went, what has happened since, and what is different now from then: what actually happened, in two or three short sentences, not how ${n} feels about it. Keep where ${n} lives and their occupation as in their life. Reply with only this.`, `events ${n}:`); return j.text.trim() && j; }, `events ${n}:`);
   events[n] = j.text.trim(); log({ private_lines: { [n]: events[n] }, day: iso(clock).slice(0, 10), at: iso(clock), usage: j.usage });
   return events[n];
 }

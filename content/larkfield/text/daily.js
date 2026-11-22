@@ -67,7 +67,7 @@ const studentPred = ['has become a personality trait', 'is held together with bl
 
 const proFull = [
   'train was cancelled, bus was full, so i walked along {v.street} and found out where all the good bakeries are',
-  'commute update: {r.18-50} minutes each way, {r.0-2} seats, one man eating a boiled egg. zero regrets about working from home on {when|dow}',
+  'commute update: {r.18-50} minutes each way, standing for most of it, one man eating a boiled egg. zero regrets about working from home on {when|dow}',
   'new coffee order at {v.cafe}: oat flat white, extra shot. the barista and i have an understanding now',
   'office pretends hybrid is optional while counting badge swipes. i have started waving at the scanner',
   'flat viewing on {p.street} today. "bijou" was doing a lot of work. so was the damp',
@@ -113,7 +113,7 @@ const parentFull = [
   'got the bus with a pram and no one offered to help except the {r.60-80} year old woman. thank you madam',
   'weetabix on the ceiling. i will not be asking how',
   'tea at {r.5-6}pm and bedtime at {r.7-8}pm is the only time of day i feel like a competent adult',
-  'swimming lessons at the leisure centre: the changing room alone should count as cardio',
+  'swimming lessons across town: the changing room alone should count as cardio',
   'got a call from {v.school}. everyone is fine. one tooth, no sign of it, an official form',
   'asked the kids what they want for tea and was told "pizza or no tea". pizza then',
   'taxi service to {v.park} again. i am basically a minicab with snacks',
@@ -127,7 +127,7 @@ const retireeFull = [
   'lovely morning at the allotment. the courgettes are showing off again and the slugs are on a go-slow',
   'queued {r.12-25} minutes at the post office. the lady in front was telling the whole queue about her hip. we enjoyed it',
   'the 52 was on time today. i have written it in the diary',
-  'a cabbage is now £{r.1-2}.{r.10-99} at the market. i remember when that bought a pint',
+  'a cabbage is now £{r.1-2}.{r.10-99} at {v.shop}. i remember when that bought a pint',
   'bumped into an old neighbour at {v.shop}. forty minutes later we parted, no wiser about the bread aisle',
   'Church hall tea on {when|dow}: the scones were reported "acceptable". high praise',
   'gentle walk round {v.park}. the ducks and i exchanged views',
@@ -147,7 +147,7 @@ const retireeFull = [
   'crossword clue of the day was a pun. i have been smiling since breakfast',
   'It was {r.1-6} degrees at the bus stop and the shelter is still missing a panel. Letters have been sent.',
 ];
-const retireeObs = ['the market', 'our street', 'the surgery', 'the new bus timetable', 'the library', 'the post office', 'the corner shop', 'the bin men', 'young people on scooters', 'my knees', 'the pharmacy queue', 'the church hall', 'the allotment', 'the paper', 'the radio this morning', 'the weather forecast', 'the chap at {v.shop}', 'the neighbour\'s fence', 'my morning walk', 'the postman'];
+const retireeObs = ['our street', 'the surgery', 'the new bus timetable', 'the library', 'the post office', 'the corner shop', 'the bin men', 'young people on scooters', 'my knees', 'the pharmacy queue', 'the church hall', 'the allotment', 'the paper', 'the radio this morning', 'the weather forecast', 'the chap at {v.shop}', 'the neighbour\'s fence', 'my morning walk', 'the postman'];
 const retireeAside = ['we manage', 'there it is', 'I thought I should mention it', 'and I stand by that', 'as it always was', 'one does notice', 'no complaints, mostly', 'that is all for now'];
 const retireePred = ['was lovely, if I say so myself', 'is not what it was, but then neither am I', 'has gone downhill since they changed the opening hours', 'is a credit to the area', 'did its best', 'made my morning', 'has been the same for {r.20-50} years and I like it that way', 'could do with a letter to the council', 'was better when I was young, but so was I'];
 
@@ -185,16 +185,13 @@ const compose = (voice, obsRule, asideRule) => ({ t: `#${obsRule}# #${asideRule}
 export default {
   'post.daily': [
     { t: '#d.teen#', when: { voice: 'teen' }, w: 12 },
-    { t: '#d.student#', when: { voice: 'student' }, w: 12 },
-    { t: '#d.young_pro#', when: { voice: 'young_pro' }, w: 12 },
+    { t: '#d.student|sent#', when: { voice: 'student' }, w: 12 },
+    { t: '#d.young_pro|sent#', when: { voice: 'young_pro' }, w: 12 },
     { t: '#d.parent|sent#', when: { voice: 'parent' }, w: 12 },
     { t: '#d.retiree|sent#', when: { voice: 'retiree' }, w: 12 },
     { t: '#d.adult|sent#', when: { voice: 'adult' }, w: 12 },
-    { t: '#d.season#', w: 0.04 }, { t: '#d.weather#', when: { wx: ['clear', 'cloudy', 'rain', 'snow', 'fog'] }, w: 0.08 },
-    { t: '#d.weekend#', when: { weekend: 'yes' }, w: 0.04 }, { t: '#d.weekday#', when: { weekend: 'no' }, w: 0.04 }, { t: '#d.mix#', w: 4 },
-    { t: '#d.night#', when: { dp: 'night' }, w: 0.1 }, { t: '#d.morning#', when: { dp: 'morning' }, w: 0.04 }, { t: '#d.evening#', when: { dp: 'evening' }, w: 0.04 },
-    { t: '#d.low#', when: { moodband: 'low' }, w: 0.1 }, { t: '#d.high#', when: { moodband: 'high' }, w: 0.06 },
-  ],
+    { t: '#d.mix|sent#', w: 5 },
+    ],
   'post2.mood': ['#post.daily#'], 'post2.photo': ['#post.daily#'],
   'd.teen': [{ t: '#g.scene#', w: 9 }, { t: '#g.scene# #g.verdict#', w: 9 }, { t: '#d.pre.dp# #g.scene#', w: 3 }, { t: '#d.pre.wx# #g.scene#', w: 4, when: { wx: ['clear', 'cloudy', 'rain', 'snow', 'fog'] } }, { t: '#g.scene# #d.react.teen#', w: 5 }, { t: '#d.pre.wx# #d.teen.full#', w: 5, when: { wx: ['clear', 'cloudy', 'rain', 'snow', 'fog'] } }, { t: '#d.pre.season# #d.teen.full#', w: 1.5 }, { t: '#d.pre.dp# #d.teen.full#', w: 1.2 }, { t: '#d.pre.dp# #d.teen.full#. #d.react.teen#', w: 1.2 }, { t: '#d.pre.wx# #d.teen.full#. #d.react.teen#', w: 2, when: { wx: ['clear', 'cloudy', 'rain', 'snow', 'fog'] } }, { t: '#d.teen.full#', w: 3 }, { t: '#d.teen.full#. #d.react.teen#', w: 6 }, { t: '#d.obs.teen# #d.pred.teen#', w: 1 }, { t: '#d.obs.teen# #d.pred.teen#. #d.aside.teen#', w: 1.5 }],
   'd.teen.full': teenFull, 'd.obs.teen': teenObs, 'd.pred.teen': teenPred, 'd.aside.teen': teenAside,
@@ -232,9 +229,7 @@ export default {
   'd.mix': [
     { t: '#g.scene#. #d.low#', when: { moodband: 'low' }, w: 3 }, { t: '#d.low#. #g.scene#', when: { moodband: ['low', 'flat'] }, w: 2 },
     { t: '#g.scene#. #d.high#', when: { moodband: 'high' }, w: 3 }, { t: '#d.high#. #g.scene#', when: { moodband: ['high', 'ok'] }, w: 1 },
-    { t: '#d.weekend# #g.scene#', when: { weekend: 'yes' }, w: 3 }, { t: '#d.weekday# #g.scene#', when: { weekend: 'no' }, w: 3 }, { t: '#g.scene# #d.weekday#', when: { weekend: 'no' }, w: 2 }, { t: '#g.scene# #d.weekend#', when: { weekend: 'yes' }, w: 2 },
-    { t: '#d.night# #g.scene#', when: { dp: 'night' }, w: 3 }, { t: '#d.morning# #g.scene#', when: { dp: 'morning' }, w: 2 }, { t: '#d.evening# #g.scene#', when: { dp: 'evening' }, w: 2 },
-    { t: '#d.season# #g.scene#', w: 2 }, { t: '#g.scene# #d.season#', w: 2 }, { t: '#d.weather# #g.scene#', when: { wx: ['clear', 'cloudy', 'rain', 'snow', 'fog'] }, w: 3 },
+    { t: '#d.pre.season# #g.scene#', w: 3 }, { t: '#d.pre.dp# #g.scene#', w: 2 }, { t: '#d.pre.wx# #g.scene#', when: { wx: ['clear', 'cloudy', 'rain', 'snow', 'fog'] }, w: 3 },
   ],
   'd.season': [
     ...W({ season: 'spring' }, 'clocks have gone forward and i have already lost an hour of my life and a glove', 'blossom on {p.street}. the pavements look like a wedding', 'first day I could sit outside {v.cafe} without a coat. i was wrong, i needed a coat', 'daffodils in {v.park} are out. the council has done something right', 'spring cleaning: found {r.2-9} odd socks and a very old receipt', 'pollen count is hitting. my eyes have left the building', 'the evenings are lighter and the neighbours have all remembered they have gardens'),
@@ -255,7 +250,7 @@ export default {
     'sunday lie-in lasted until {r.7-8}.{r.10-50}am, courtesy of next door\'s bin lorry', 'the car boot at {v.park} had a bargain. I will not be telling anyone what it was',
     'roast at {v.pub}: the Yorkshire was the size of a hat. it will be a very slow afternoon', 'parkrun at {v.park}: {r.80-250} runners, one man dressed as a banana, nobody was faster than the banana',
     'sat on the bench at {v.park} with a coffee for {r.20-50} minutes and watched the world pass. recommend', 'saturday shop at {v.shop} is a competitive sport. i came second to a trolley',
-    'sunday and the whole of {p.street} smells of roast dinner', 'farmers\' market on {v.street}: bought a loaf, a cheese and a story I did not ask for',
+    'sunday and the whole of {p.street} smells of roast dinner',
     'the weekend has gone in a blink and all that was achieved was a clean kitchen', 'a Sunday walk round {v.park}. everyone had a dog and an opinion',
   ],
   'd.weekday': [

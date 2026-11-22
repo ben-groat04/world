@@ -144,12 +144,12 @@ export default {
     ...V('retiree', 'It was a pleasure to see {o.first} at the shop. All forgotten, I hope.'),
   ],
   'post:*': [
-    ...V('teen', 'idk what to feel about this tbh', 'not gonna lie did not see that coming'),
-    ...V('student', 'wow. ok. that\'s a thing that happened', 'on today\'s episode of local news: this'),
-    ...V('young_pro', 'Well, that\'s the neighbourhood group chat sorted for the week.', 'Noted. Moving on to the more important question of lunch.'),
-    ...V('parent', 'Heard about this at the school gate. Thoughts with everyone involved.', 'Well, that is something to discuss over the bins.'),
-    ...V('retiree', 'A sign of the times, I fear.', 'There has been a lot of that lately.'),
-    ...V('adult', 'Strange times round here.', 'Heard about this. Hmm.'),
+    ...V('teen', 'idk what to feel about this tbh', 'not gonna lie did not see that coming', 'everyone on the group chat is talking about it. my phone is dying', 'the whole of year {r.9-13} knows already. of course they do', 'i literally cannot keep up with this street', 'ok the street is wild today', 'heard about this on the bus. no comment (i have comments)'),
+    ...V('student', 'wow. ok. that\'s a thing that happened', 'on today\'s episode of local news: this', 'the house chat is going absolutely wild about this', 'heard about this at {v.pub}. we are all speechless, and slightly drunk', 'will be thinking about this during my {r.9-10}am seminar', 'this is why i love living near {v.street}. never boring'),
+    ...V('young_pro', 'Well, that\'s the neighbourhood group chat sorted for the week.', 'Noted. Moving on to the more important question of lunch.', 'Saw this in the {v.cafe} queue. Everyone has an opinion, nobody has the facts.', 'Not my business, but, well. Interesting.', 'Another thing to discuss over a flat white on {when|dow}.', 'Heard about this before I\'d finished my coffee. {p.street} runs on gossip.'),
+    ...V('parent', 'Heard about this at the school gate. Thoughts with everyone involved.', 'Well, that is something to discuss over the bins.', 'Talked about nothing else at pick-up today. Thinking of everyone.', 'I hope everyone involved is being looked after. We are here if needed.', 'The kids asked what was going on. I said "grown-up things" and put the telly on.', 'News travels fast on {p.street}. I was told three times before nine.'),
+    ...V('retiree', 'A sign of the times, I fear.', 'There has been a lot of that lately.', 'It was much the same in my day, only we kept it quieter.', 'I do hope everyone is all right. Come round for a cup of tea if you need to.', 'Well I never. I shall say no more.', 'Heard about it in {v.shop}. The queue was the longest I have seen.'),
+    ...V('adult', 'Strange times round here.', 'Heard about this. Hmm.', 'Hearing about it from three different people is a skill in itself.', 'Funny old street, this.', 'Takes all sorts, as they say.', 'Right. I need a cup of tea.'),
   ],
   // ---------- replies (p.sentiment pos|neg|neutral derived from the event type via pack.sentiment)
   'reply:*': [

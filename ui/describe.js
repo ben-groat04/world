@@ -162,23 +162,88 @@ function humanPayload(w, ev) {
   if (pl.years != null) out.span = span(pl.years);
   if (pl.from != null) out.from = WHERE[pl.from] || pl.from; if (pl.to != null) out.to = WHERE[pl.to] || pl.to;
   if (pl.reason) out.why = pickBy(WHY[pl.reason] || WHY.chosen, ev.id); else if (ev.type === 'housing.moved_in') out.why = pickBy(WHY.arrival, ev.id);
+  Object.assign(out, specifics(w, ev, pl));
   return out;
+}
+// Real specifics that make two events of one type read differently: where (street / address / venue), who they are to each other, what a row was over, how people met.
+const OVER = { remote: 'something said online', money: 'money', noise: 'noise', goal: 'clashing plans', parking: 'parking', door: 'what happened on the doorstep', school: 'the school run', bins: 'the bins', kids: 'the kids', dogs: 'the dogs', pub: 'a night at the pub', ethnic_grocer: 'something in the corner shop', park: 'the park', barber: 'the barber\'s', salon: 'the salon' };
+const VIA = { 'same street': 'neighbours on the same street', 'school gate': 'from the school gate', 'place of worship': 'from the place of worship', 'same building': 'same building', neighbours: 'neighbours', 'shop regular': 'regulars at the same shop', mixing: 'in the same circles', online: 'online', school: 'at the school gate', welcome: 'a welcome visit', door: 'on the doorstep', park: 'in the park', community_centre: 'at the community centre', pub: 'at the pub', group: 'through a group', cafe: 'at the cafe', salon: 'at the salon', bakery: 'at the bakery', ethnic_grocer: 'at the corner shop', takeaway: 'at the takeaway', restaurant: 'over a meal', church: 'at church' };
+const KIND_W = { ill: 'health', in_debt: 'money troubles', planning_move: 'plans to move', job_hunting: 'job-hunting', new_couple: 'a new relationship', family_news: 'family news', addiction: 'a private matter', affair: 'a relationship', moving_out: 'plans to move', lost_job: 'work', drugs: 'a private matter', row: 'a row', breakup: 'a break-up', pregnant: 'a pregnancy', noise: 'noise', parking: 'parking', bins: 'the bins', kids: 'kids', dogs: 'dogs' };
+const TENURE_W = { private_rent: 'private rent', council: 'council', housing_assoc: 'housing association', mortgage: 'mortgage', owned_outright: 'owned', shared_ownership: 'shared ownership' };
+const STAGE_W = { primary: 'primary school', secondary: 'secondary school', college: 'college', university: 'university', work: 'work' };
+const SEV_W = { minor: 'nothing serious', fracture: 'a broken bone', serious: 'serious injuries' };
+const SEASONS = ['winter', 'winter', 'spring', 'spring', 'spring', 'summer', 'summer', 'summer', 'autumn', 'autumn', 'autumn', 'winter'];
+function specifics(w, ev, pl) {
+  const o = { whenw: 'recently', nth: 1, nthw: '', street: '', addr: '', venue: '', relnoun: '', relvia: '', over: '', via: '', kindw: '', tenurew: '', stagew: '', sev: '', pctr: '', fromamt: '', disw: '', carerel: '', deathplace: '', afterw: '', dayw: '', season: '', dayname: '' };
+  try { const b = ev.place != null ? w.buildings.get(ev.place) : null; if (b) { const st = b.lf && b.lf.streetId != null && w.map.lf.streets[b.lf.streetId]; if (st) o.street = st.name; if (b.lf && b.lf.kind === 'residential') o.addr = b.name; else if (b.name) o.venue = b.name; } } catch (e) { /* none */ }
+  try { const d = w.calendar.dateOf(ev.tick); o.season = SEASONS[d.m] || ''; o.dayname = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][d.dow] || '';
+    o.whenw = d.hour < 5 ? `in the early hours of ${o.dayname}` : d.hour < 12 ? `on ${o.dayname} morning` : d.hour < 17 ? `on ${o.dayname} afternoon` : d.hour < 22 ? `on ${o.dayname} evening` : `late on ${o.dayname}`; } catch (e) { /* none */ }
+  const a = ev.actors || [];
+  if (a.length > 1 && typeof a[0] === 'number' && typeof a[1] === 'number' && /^(social|life|group)\./.test(ev.type)) { try { const t = (w.sys.social.query.ties(a[0]) || []).find((x) => x.o === a[1]); if (t) { const n = t.k === 'kin' ? t.r : t.k === 'partner' ? (t.r === 'partner' ? 'partner' : t.r) : t.k; if (n && !/^(acquaint|acquaintance|stranger|none)$/.test(n)) o.relnoun = lc(n).replace(/^friend$/, t.c > 0.8 ? 'old friend' : 'friend'); if (t.v && VIA[t.v]) o.relvia = VIA[t.v]; } } catch (e) { /* none */ } }
+  if (pl.over != null) o.over = OVER[pl.over] || lc(pl.over); if (pl.via != null) o.via = VIA[pl.via] || lc(pl.via);
+  if (pl.kind != null) o.kindw = KIND_W[pl.kind] || lc(pl.kind); if (pl.tenure) o.tenurew = TENURE_W[pl.tenure] || lc(pl.tenure); if (pl.stage) o.stagew = STAGE_W[pl.stage] || lc(pl.stage);
+  if (pl.severity != null) o.sev = SEV_W[pl.severity] || lc(pl.severity); if (typeof pl.pct === 'number') o.pctr = Math.round(pl.pct); if (typeof pl.from === 'number') o.fromamt = pl.from;
+  if (pl.kind != null && /^(extension|loft|change|new|conversion|basement)/.test(String(pl.kind))) o.kindw = lc(pl.kind); o.disw = pl.damp ? 'damp' : 'disrepair'; o.carerel = pl.rel === 'partner' ? 'a partner' : 'a relative';
+  if (pl.where) o.deathplace = pl.where === 'hospital' ? ' in hospital' : pl.where === 'home' ? ' at home' : '';
+  if (pl.after != null) o.afterw = span(pl.after); if (pl.days != null) o.dayw = pl.days < 21 ? 'a few days' : pl.days < 60 ? `${Math.round(pl.days / 7)} weeks` : pl.days < 400 ? `${Math.round(pl.days / 30)} months` : `${Math.round(pl.days / 365)} years`;
+  return o;
 }
 const DEFAULTS = { employer: 'a local employer', role: 'new role', biz: 'a local business', kind: 'business', to: 'elsewhere in the city', from: 'elsewhere', years: 'a few', amount: 900, pct: 5, weight: 7 };
 
+const selfView = { firstName: 'They', lastName: '', pronouns: 'they' };
+const dview = (w, p) => (p ? { id: p.id, firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(w.ageOf(p)), segment: p.ext?.pop?.seg, mood: ((p.mood || 0) + 1) / 2, job: p.job } : null);
 export function describeEvent(w, ev, text, viewer = null) {
   const f = T[ev.type]; const a = ev.actors || [];
   const S = viewer != null && a[0] === viewer ? 'They' : nm(w.people.get(a[0]));
   let O = a[1] != null ? w.people.get(a[1]) : null; const Ot = O ? (viewer != null && a[1] === viewer ? 'them' : nm(O)) : null;
   const pl = ev.payload || {}; const place = ev.place != null ? w.buildings.get(ev.place) : null;
+  // preferred: the grammar (line:<type>), composed from the event's own specifics and never the same sentence twice in a row
+  if (text && text.has) {
+    const pair = ['life.couple', 'life.breakup', 'life.cohabit', 'life.engaged', 'life.pregnant'].includes(ev.type); const key = pair && !O && text.has('line:' + ev.type + '.solo') ? ev.type + '.solo' : ev.type;
+    if (text.has('line:' + key)) {
+      try {
+        const self = viewer != null && a[0] === viewer; const ctx = { genre: 'line', a: self ? selfView : dview(w, w.people.get(a[0])), b: dview(w, O), people: (id) => dview(w, w.people.get(id)), seed: ev.id * 2 + (self ? 1 : 0),
+          p: { ...DEFAULTS, ...pl, ...humanPayload(w, ev), name: pl.name ?? DEFAULTS.biz }, placeName: place ? place.name : undefined, date: ((x) => ({ ...x, weekday: x.dow, day: x.d, month: x.m, year: x.y }))(w.calendar.dateOf(ev.tick)) };
+        if (ctx.p.from == null) ctx.p.from = DEFAULTS.from; const h = text.render({ ...ev, type: key }, ctx, w);
+        if (h && !/[{}#\[\]]|undefined|NaN/.test(h)) return { line: (self ? h.replace(/(?<!^)\bThey\b/g, 'them').replace(/^They's/, 'Their').replace(/\bthey\b(?= (are|were))/g, 'they') : h) };
+      } catch (e) { /* fall back to the plain line */ }
+    }
+  }
   if (!f) { const doc = w.events.registry.get(ev.type)?.doc; return { line: a.length ? `${S}: ${doc || lc(ev.type.split('.').pop())}` : (doc || lc(ev.type)), generic: true }; }
   try { return { line: f(S, Ot, pl, { place: place && place.name, w }).replace(/^They's/, 'Their') }; } catch (e) { return { line: `${S}: ${ev.type}` }; }
+}
+
+const okText = (h) => h && !/[{}#\[\]]|undefined|NaN|Details are still/.test(h);
+const dateCtx = (w, ev) => ((x) => ({ ...x, weekday: x.dow, day: x.d, month: x.m, year: x.y }))(w.calendar.dateOf(ev.tick));
+function newsCtx(w, ev, extra) {
+  const a = ev.actors || [];
+  return { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), ...(extra || {}), biz: ev.payload?.name || DEFAULTS.biz }, date: dateCtx(w, ev), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
+}
+// Several of one kind in one week become a single, specific line ("New faces on Raglan Road and Cobden Street this week"); events that keep recurring for one person are shown once and then marked "again".
+const FOLD = { 'housing.moved_in': 'arrivals', 'life.move_in': 'arrivals', 'housing.moved_out': 'leavers', 'life.move_out': 'leavers', 'labour.hired': 'jobs', 'labour.job_lost': 'lost', 'social.scandal': 'gossip' };
+const FOLD_SHOW = { gossip: 1 }; // items shown in full before the rest of the week is folded into one line
+const REPEATS = new Set(['money.arrears', 'money.debt_spiral', 'labour.second_job', 'social.scandal', 'money.cost_pressure']);
+const WORDS_N = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+function foldItem(w, text, ev, host, it) {
+  const kind = FOLD[ev.type]; if (!kind || !host) return it; const TPD = 144, k = kind + ':' + Math.floor(ev.tick / (TPD * 7)), st = host._fold || (host._fold = new Map());
+  const x = st.get(k) || st.set(k, { n: 0, streets: [] }).get(k); x.n++;
+  try { const b = ev.place != null ? w.buildings.get(ev.place) : null; const sn = b && b.lf && b.lf.streetId != null ? w.map.lf.streets[b.lf.streetId]?.name : null; if (sn && !x.streets.includes(sn)) x.streets.push(sn); } catch (e) { /* none */ }
+  if (st.size > 200) st.delete(st.keys().next().value);
+  const show = FOLD_SHOW[kind] ?? 2; if (x.n <= show) return it; if (x.n > show + 1) return null;
+  const list = x.streets.length ? (x.streets.length > 1 ? x.streets.slice(0, -1).join(', ') + ' and ' + x.streets.at(-1) : x.streets[0]) : 'Larkfield';
+  const e2 = { ...ev, type: 'fold.' + kind }; const ctx = newsCtx(w, e2, { count: show + 1, streets: list });
+  try { const h = text.render(e2, ctx, w), b = text.render(e2, { ...ctx, genre: 'news' }, w); if (okText(h)) { it.head = fixText(h); it.body = okText(b) ? fixText(b) : null; it.line = it.head; it.ppl = []; it.type = 'fold.' + kind; it.sal = Math.min(it.sal, 0.4); return it; } } catch (e) { /* keep */ }
+  return it;
 }
 
 export function newsFor(w, text, ev, host) {
   const min = MIN_SAL[ev.type] ?? 0.3; if (ev.salience < min) return null;
   if (/^health\.(episode|substance)$/.test(ev.type)) return null; // sober: nobody's mental health or drinking is named in the public feed (it stays in their own profile and the storylines)
+  let nth = 1;
+  if (host && REPEATS.has(ev.type) && ev.actors && ev.actors[0] != null) { const m = host._rep || (host._rep = new Map()), k = ev.type + ':' + ev.actors[0], rec = m.get(k) || { n: 0, last: -1e9 }; if (ev.tick - rec.last < 144 * 90) { rec.last = ev.tick; m.set(k, rec); return null; } rec.n++; rec.last = ev.tick; nth = rec.n; m.set(k, rec); if (m.size > 3000) m.delete(m.keys().next().value); }
   if (LOCAL[ev.type]) { if (isPrivateEv(ev)) return null; const kind = ev.type.split('.')[0]; let x; try { x = LOCAL[ev.type](w, ev, ev.payload || {}); } catch (e) { return null; }
+    if (text && text.has && text.has('headline:' + ev.type)) { try { const ctx = newsCtx(w, ev, kind === 'crime' ? { biz: '' } : null), e2 = { ...ev }, h = text.render(e2, ctx, w); if (okText(h)) x = { head: fixText(h), body: x.body };
+      if (text.has('news:' + ev.type)) { const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (okText(b)) x.body = fixText(b); } } catch (e) { /* static text stands */ } }
     const place = ev.place != null && kind !== 'crime' ? w.buildings.get(ev.place) : null; const named = kind === 'civic' || ev.type === 'business.opened' || ev.type === 'business.closed' ? (ev.actors || []).slice(0, 2).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean) : [];
     return { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind, head: x.head, body: x.body, line: x.head, ppl: kind === 'crime' ? [] : named, sal: kind === 'crime' ? Math.min(ev.salience, 0.45) : ev.salience, place: place ? { id: place.id, name: place.name } : null, town: 1 }; }
   const d = describeEvent(w, ev, text); const a = ev.actors || [];
@@ -187,14 +252,15 @@ export function newsFor(w, text, ev, host) {
   const key = ev.type === 'health.ill' && /heat/.test(ev.payload?.name || '') ? 'health.heat' : MAP[ev.type] || ev.type;
   const solo = PAIR.has(key) && (a.length < 2 || !w.people.get(a[1])); const sk = solo && text.has && text.has('headline:' + key + '.solo') ? key + '.solo' : key; // no resident on the other side: never print "and someone"
   if (text.has && text.has('headline:' + sk)) {
-    const ctx = { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), biz: ev.payload?.name || DEFAULTS.biz }, date: ((x) => ({ ...x, weekday: x.dow, day: x.d, month: x.m, year: x.y }))(w.calendar.dateOf(ev.tick)), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
+    const ctx = newsCtx(w, ev, { nth, nthw: nth > 1 ? 'Again: ' : '' });
     try {
       const e2 = { ...ev, type: sk }; const h = text.render(e2, ctx, w);
       if (h && !/[{}#\[]/.test(h)) { head = fixText(h); const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (b && !/[{}#\[]|Details are still/.test(b)) body = fixText(b); }
     } catch (e) { /* keep plain line */ }
   }
   const place = ev.place != null ? w.buildings.get(ev.place) : null;
-  return { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind: ev.type.split('.')[0], head, body, line: d.line, ppl, sal: ev.salience, place: place ? { id: place.id, name: place.name } : null };
+  const out = { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind: ev.type.split('.')[0], head, body, line: d.line, ppl, sal: ev.salience, place: place ? { id: place.id, name: place.name } : null };
+  return foldItem(w, text, ev, host, out);
 }
 
 const ACT = { home_family: 'Home & family', other_inactive: 'Not working', unemployed: 'Looking for work', student: 'Student', retired: 'Retired', long_term_sick: 'Long-term sick', employed: 'Working', sick: 'Long-term sick', carer: 'Carer' };
@@ -202,4 +268,17 @@ const ACT = { home_family: 'Home & family', other_inactive: 'Not working', unemp
 export function shortJob(label) {
   const s = String(label || ''); if (ACT[s]) return ACT[s]; let t = s.replace(/\s*\([^)]*\)?/g, '').trim(); const parts = t.split(/\s*\/\s*/); if (parts.length > 2) t = parts.slice(0, 2).join(' / ');
   return t ? t[0].toUpperCase() + t.slice(1) : '';
+}
+
+/** An inner thought for a person right now, from the grammar (thought.*), keyed to their situation and the hour. Deterministic per person and half-day. For the UI to show beside the activity label. */
+export function thoughtFor(w, text, p) {
+  if (!p || !text || !text.has) return '';
+  const h = w.time.hour ?? 12, pop = p.ext?.pop || {}, st = pop.fin?.stress ?? 0, lonely = !!(p.ext?.hl && p.ext.hl.lonely), working = pop.activity === 'employed';
+  const key = h >= 23 || h < 5 ? 'thought.night' : lonely && h % 5 === 0 ? 'thought.lonely' : st > 0.6 && h % 3 === 0 ? 'thought.money' : working && ((h >= 7 && h <= 9) || (h >= 17 && h <= 19)) ? 'thought.commute' : working && h >= 9 && h <= 17 ? 'thought.work' : (p.family?.childrenIds || []).length && h % 4 === 0 ? 'thought.family' : h % 3 === 0 ? 'thought.home' : 'thought.idle';
+  if (!text.has(key)) return '';
+  try {
+    const d = w.calendar.dateOf(w.tick); const ctx = { genre: 'thought', a: { id: p.id, firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(w.ageOf(p)), segment: pop.seg, mood: ((p.mood || 0) + 1) / 2, job: p.job, children: p.family?.childrenIds || [] }, seed: p.id * 8 + Math.floor((w.tick % 14400) / 720) + (d ? d.d * 977 : 0), date: ((x) => ({ ...x, weekday: x.dow, day: x.d, month: x.m, year: x.y }))(d),
+      p: { street: (() => { try { const b = w.buildings.get(p.homeId); return w.map.lf.streets[b.lf.streetId].name; } catch (e) { return 'the road'; } })() } };
+    const t = text.render(key, ctx, w); return okText(t) ? t : '';
+  } catch (e) { return ''; }
 }

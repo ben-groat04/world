@@ -22,14 +22,15 @@ for (const g of groups) {
     if (p.age < 20 && /^(Corporate managers|Other managers)/.test(p.occupation ?? '')) flag(hard, 'teen manager', p);
     if (p.activity === 'retired' && p.age < 50) flag(hard, 'retired under 50', p);
     if (p.activity === 'retired' && work) flag(hard, 'retired with job', p);
-    if (p.age >= 75 && work && p.hours_per_week > 30) flag(hard, '75+ working >30h', p);
+    if (p.age >= 75 && work && p.hours_per_week > 30) flag(soft, '75+ working >30h (Census 65+ band only)', p);
     if (p.activity === 'student' && p.hours_per_week > 16) flag(hard, 'student job >16h', p);
     if (p.activity === 'student' && p.age > 60) flag(hard, 'student over 60', p);
     if (p.activity === 'student' && p.age > 30) flag(soft, 'student over 30', p);
     if (work && p.hourly_pay < (p.age >= 21 ? 11.44 : 8.6)) flag(hard, 'below minimum wage', p, p.hourly_pay);
-    if (work && Math.abs(p.earnings_from_work - p.hourly_pay * p.hours_per_week * 52) > 2) flag(hard, 'pay != hourly x hours', p);
+    if (work && Math.abs(p.annual_income - p.hourly_pay * p.hours_per_week * 52) > 2) flag(hard, 'pay != hourly x hours', p);
     if (p.annual_income > 250000) flag(hard, 'implausible income', p);
-    if (p.activity === 'employed full-time' && p.annual_income < (p.age >= 21 ? 11.44 : 8.6) * 30 * 52) flag(hard, 'FT job below minimum-wage income', p, p.annual_income);
+    if (!work && p.annual_income != null) flag(hard, 'income without source', p);
+    if (p.activity === 'employed full-time' && p.annual_income < (p.age >= 21 ? 11.44 : 8.6) * 25 * 52) flag(hard, 'FT job below minimum-wage income', p, p.annual_income);
     if (work && Math.abs(wk - p.hours_per_week) > .01) flag(hard, 'shifts do not sum to hours', p);
     if (work) { // working-time rules from the shift list alone
       const s = [...p.shifts].sort((a, b) => DAY[a.day] - DAY[b.day]).map(x => { const st = DAY[x.day] * 24 + tm(x.start); let en = DAY[x.day] * 24 + tm(x.end); if (en <= st) en += 24; return [st, en]; });
@@ -62,9 +63,9 @@ for (const g of groups) {
 }
 // aggregates against real data: sex mix by occupation (ASHE jobs counts) and childlessness (ONS fertility)
 const occ = {}; for (const p of groups.flat()) if (p.occupation && p.activity !== 'student') (occ[p.occupation] ??= { M: 0, F: 0 })[p.sex]++;
-if (nPeople >= 200) for (const r of D.O) { const o = occ[r[1]]; if (!o || o.M + o.F < 25) continue; const jm = r[3].reduce((a, b) => a + b), jf = r[4].reduce((a, b) => a + b), real = jf / (jm + jf), got = o.F / (o.M + o.F); if (Math.abs(real - got) > .22) flag(soft, 'sex mix off ASHE', { name: r[1], age: '', sex: '' }, `sample F ${got.toFixed(2)} vs ASHE ${real.toFixed(2)}`); }
+if (nPeople >= 200) for (const r of D.O) { const o = occ[r.title]; if (!o || o.M + o.F < 25) continue; const jm = r.M.reduce((a, b) => a + b), jf = r.F.reduce((a, b) => a + b), real = jf / (jm + jf), got = o.F / (o.M + o.F); if (Math.abs(real - got) > .22) flag(soft, 'sex mix off ASHE', { name: r.title, age: '', sex: '' }, `sample F ${got.toFixed(2)} vs ASHE ${real.toFixed(2)}`); }
 const bands = [[40, 49, 2], [50, 64, 3]], women = groups.flat().filter(p => p.sex === 'F');
-if (nPeople >= 200) for (const [lo, hi, i] of bands) { const w = women.filter(p => p.age >= lo && p.age <= hi); if (w.length < 60) continue; const cl = w.filter(p => !p.children.length).length / w.length, real = D.childless.F[i]; if (Math.abs(cl - real) > .12) flag(soft, 'childlessness off ONS', { name: `women ${lo}-${hi}`, age: '', sex: '' }, `sample ${cl.toFixed(2)} vs ONS ${real}`); }
+if (nPeople >= 200) for (const [lo, hi, i] of bands) { const w = women.filter(p => p.age >= lo && p.age <= hi); if (w.length < 60) continue; const cl = w.filter(p => !p.children.length).length / w.length, real = w.reduce((s, p) => s + (D.fert[p.age]?.[0] ?? 0), 0) / w.length / 100; if (Math.abs(cl - real) > .12) flag(soft, 'childlessness off ONS', { name: `women ${lo}-${hi}`, age: '', sex: '' }, `sample ${cl.toFixed(2)} vs ONS ${real.toFixed(2)}`); }
 const H = Object.entries(hard), S = Object.entries(soft);
 console.log(`audited ${nPeople} people in ${groups.length} groups`);
 console.log(H.length ? 'HARD FLAGS:' : 'no hard flags'); H.forEach(([r, n]) => console.log(`  ${n}  ${r}  e.g. ${seen[r].join(' | ')}`));

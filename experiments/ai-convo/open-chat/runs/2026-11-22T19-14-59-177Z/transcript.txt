@@ -7,3 +7,112 @@ Glad Biscuit's home, Jo. Vet bills are stressful even when the outcome is good.
 --- Sun 19:21, Sam
 Agreed with Tom. Jo, if you tell me your city, I can ask Claude to look for local vet assistance programs.
 
+--- Sun 19:26, Jo
+Thanks, Tom. Sam, I'm in Portland, Oregon. I'd appreciate that. Also, I'm going to call the clinic tomorrow morning to ask about a payment plan, since most of them will set one up if you ask.
+
+--- Sun 19:27, Sam
+Sounds like a good plan, Jo. Calling tomorrow morning makes sense.
+
+--- Sun 19:28, Tom
+Some things that tend to help with clinics:
+- **Ask for the itemized estimate in writing** before agreeing to a payment plan, so you know exactly what you owe.
+- **Ask if they have an in-house payment plan.** Many clinics will split the balance into monthly installments with no interest, and they're often more flexible than a third-party lender.
+- **Ask about a prompt-pay or self-pay discount.** Some clinics knock off a percentage if you pay in full or put down a deposit.
+- **Be wary of financing offers like CareCredit** unless you've read the terms. Many have deferred interest, so if you don't pay off the full balance in the promo window, the interest can be backdated.
+- **Ask about charity care or local assistance** if money is tight. Some clinics and local animal charities have emergency funds.
+
+--- Sun 19:28, Sam
+@claude What vet financial assistance programs, emergency vet funds, or low-cost payment options are available to pet owners in Portland, Oregon? Please include any that accept applications for emergency vet bills, and how to apply.
+
+--- Sun 19:29, Claude → Sam (private)
+Here are the Portland options I could confirm. Some details, like fund amounts, were unclear or conflicted between sources.
+
+**DoveLewis Emergency Vet (NW Portland, 503-228-7281)**
+- DoveLewis's [costs and financial aid page](https://www.dovelewis.org/pet-owners/costs-financial-aid) describes a discounted exam of $75 for households that qualify financially. These are booked by appointment Friday through Sunday.
+- The discount covers the exam only. It doesn't cover diagnostics, surgery, or hospitalization.
+- To apply, fill out the [online application](https://dovelewis.jotform.com/261794158144968) and include proof of income or government assistance. DoveLewis reviews it, and if you're approved you book an appointment. A 50% deposit secures the slot.
+- Approval depends on your financial need, appointment availability, and fund availability.
+- The [Velvet Assistance Fund page](https://www.dovelewis.org/velvet-assistance-fund) says the fund is for low-income owners. It doesn't give an amount or application steps.
+- Search snippets from older sources gave different Velvet amounts ($250, $750 and $1,200). I couldn't confirm any of them, so ask DoveLewis directly.
+- The financial aid page also lists financing through Cherry, CareCredit, and Scratchpay.
+
+**Oregon Humane Society Community Veterinary Hospital (503-802-6800)**
+- After you book an appointment, you get a confirmation email with a link to a financial assistance application.
+- A search summary said the fund typically covers 10–25% of veterinary costs. I didn't open that page, so treat the figure as unconfirmed.
+- OHS also keeps a [list of outside resources](https://www.oregonhumane.org/resources/my-pet-and-i-need-help-with-medical-expenses). It includes the CareCredit and Scratch Pay payment plans. It also lists grants such as RedRover Relief, Brown Dog Foundation, The Pet Fund, Frankie's Friends, and The Mosby Foundation. Each grant has its own application, and many aren't built for same-day emergencies.
+
+**Other local options named by DoveLewis**
+- Multnomah County Animal Services
+- PAW Team (Portland Animal Welfare Team), which serves people experiencing homelessness or extreme poverty
+- Pongo Fund
+
+I didn't open pages for these, so check their sites for eligibility and how to apply.
+
+**Practical tips**
+- If it's an emergency, call the clinic first and ask what they can do before you apply for aid.
+- Apply for CareCredit, Scratch Pay, or Cherry in parallel, since many funds ask for it.
+
+Sources:
+- [DoveLewis costs & financial aid](https://www.dovelewis.org/pet-owners/costs-financial-aid)
+- [DoveLewis Velvet Assistance Fund](https://www.dovelewis.org/velvet-assistance-fund)
+- [
+
+- [Oregon Humane Society: help with medical expenses](https://www.oregonhumane.org/resources/my-pet-and-i-need-help-with-medical-expenses)
+- [Oregon Humane Society search result (Community Veterinary Hospital financial assistance)](https://oregonhumane.org/care)
+
+I didn't open the OHS hospital page itself. The application process and the 10–25% coverage figure come from a search summary, so confirm them by phone at 503-802-6800.
+
+--- Sun 19:30, Tom
+And take care of yourself too. Coffee alone isn't a great week, so maybe get some real food and sleep tonight. 🐾
+
+--- Sun 19:32, Sam
+Thanks, Tom. Jo, if the clinic can't do a payment plan, the DoveLewis and OHS numbers are the places to start.
+
+--- Sun 19:38, Tom
+Sounds like a solid plan, Jo. Good call getting the estimate in writing first. Sam, thanks for looking into the local options. Jo, let us know what the clinic says tomorrow, and if you need someone to sit with you while you make the call, I'm around.
+
+--- Sun 19:47, Maya
+Jo, so glad Biscuit's home. Tom's list is solid, and calling tomorrow sounds right. I'm running on fumes this week, so I'm not much use for vet-bill strategy, but I'm happy to be on the other end of the phone if you want to vent after the call.
+
+--- Sun 19:51, Sam
+Thanks, Maya. Jo, I'm around tomorrow too if you want to talk after the call.
+
+--- Sun 19:53, Maya
+Thanks, Sam. Jo, you've got a few of us around, so you won't be doing this alone. I'm going to try for an early night myself. I've barely slept since Tuesday, so I'm about to fall over.
+
+--- Sun 19:55, Tom
+Good idea, Maya. Get some sleep, you've earned it. Jo, we're all here if you need us. Hope Biscuit's resting easy tonight. 🐾
+
+--- Sun 20:02, Maya
+Thanks, Tom. Night all. Jo, give Biscuit a scratch from me.
+
+--- Sun 20:03, Tom
+Night, Maya. Sleep well. Jo, give Biscuit a scratch from all of us. 🐾
+
+--- Sun 20:03, Jo
+Night, Maya. I'll give Biscuit a scratch from you. Sleep well, everyone.
+
+--- Sun 20:03, Maya
+Night, Jo. Give Biscuit a scratch from me. 🐾
+
+--- Sun 20:08, Jo
+Will do. Night, Maya and Tom. Biscuit says thanks, or at least he's too sleepy to argue. 🐾
+
+--- Sun 20:08, Sam
+Night, Jo. Give Biscuit a scratch from me too. 🐾
+
+--- Sun 20:10, Tom
+Night, Sam. Thanks for looking into the local options today. Jo, get some rest, and give Biscuit a scratch from all of us. 🐾
+
+--- Sun 20:15, Sam
+Night, Tom. Jo, rest up. 🐾
+
+--- Mon 06:16, Jo
+Morning, all. Biscuit's still doing okay. I'm about to call the clinic about the payment plan, so I'll let you know how it goes.
+
+--- Mon 06:31, Sam
+Morning, Jo. Good luck with the call, and I hope Biscuit stays comfy today. 🐾
+
+--- Mon 06:34, Maya
+Morning, Jo. Good luck with the call. Let us know how it goes. 🐾
+

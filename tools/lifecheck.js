@@ -50,6 +50,7 @@ export function checkTimeline(w, p, tl) {
 export function lifeCheck(seed = 1, years = 10, log = () => {}) {
   const w = createLarkfieldWorld(seed), TPY = w.calendar.ticksPerYear, violations = [], bump = (v) => { for (const x of v) violations.push(x); };
   const yrs0 = new Map(), unit0 = new Map(), movers = new Set(), strikes = new Map(); for (const p of w.living()) { const q = p.ext.pop; if (q) { yrs0.set(p.id, q.yearsAtAddress); unit0.set(p.id, q.unit); } }
+  const day1 = new Set([...w.people.keys()]);
   const t0 = w.tick, end = t0 + Math.round(years * TPY); let month = 0;
   const stateCheck = () => {
     for (const p of w.living()) { const q = p.ext.pop; if (q && unit0.has(p.id) && unit0.get(p.id) !== q.unit) movers.add(p.id); }
@@ -83,24 +84,28 @@ export function lifeCheck(seed = 1, years = 10, log = () => {}) {
   let tenureChecked = 0;
   for (const p of w.living()) { const q = p.ext.pop; if (!q || !yrs0.has(p.id) || unit0.get(p.id) !== q.unit || movers.has(p.id) || p.memories.some((m) => m.tick > t0 && /^Moved back in|^Moved out of the family|^Left home/.test(m.text))) continue; /* a person who left home and came back starts a new stay */ const exp = yrs0.get(p.id) + years; tenureChecked++; if (Math.abs(q.yearsAtAddress - exp) > 0.35) violations.push({ rule: 'tenure not updating', id: p.id, name: `${p.firstName} ${p.lastName}`, text: `years here ${q.yearsAtAddress} expected ~${exp.toFixed(1)}` }); }
   // timelines
-  let people = 0, lines = 0;
+  let people = 0, lines = 0, arrivals = 0;
   for (const p of w.people.values()) {
     if (!p.ext.pop) continue; people++;
     const tl = timelineOf(w, p, w.events.query({ actor: p.id, minSalience: 0.12, limit: 400 })); lines += tl.length; bump(checkTimeline(w, p, tl));
+    // people who ARRIVED during the run (new households, flatmates, partners moving in; born before the run began, not day-1 residents) must carry the same backstory as the founding residents
+    if (!day1.has(p.id) && p.birthTick < t0) { arrivals++; const q = p.ext.pop;
+      if (!tl.some((x) => /^Born /.test(x.text))) violations.push({ rule: 'arrival without backstory', id: p.id, name: `${p.firstName} ${p.lastName}`, text: 'no "Born" entry' });
+      if (q.bornUK === false && q.birthplace && q.birthplace !== 'United Kingdom' && !tl.some((x) => /^Moved to the UK/.test(x.text))) violations.push({ rule: 'migrant arrival without UK entry', id: p.id, name: `${p.firstName} ${p.lastName}`, text: q.birthplace }); }
   }
   // siblings of one mother: >= 36 weeks apart unless twins (same birth tick +- 3 days)
   let pairs = 0;
   for (const m of w.people.values()) { const ks = (m.family.childrenIds || []).map((id) => w.people.get(id)).filter((c) => c && c.family.motherId === m.id).sort((a, b) => a.birthTick - b.birthTick);
     for (let i = 1; i < ks.length; i++) { const gap = (ks[i].birthTick - ks[i - 1].birthTick) / TPD; pairs++; if (gap > 3 && gap < 36 * 7) violations.push({ rule: 'siblings born too close (not twins)', id: ks[i].id, name: `${ks[i - 1].firstName}/${ks[i].firstName}`, text: `${gap.toFixed(0)} days apart` }); } }
   const byRule = {}; for (const v of violations) (byRule[v.rule] ||= []).push(v);
-  return { violations, byRule, stats: { people, lines, tenureChecked, siblingPairs: pairs, years, seed } };
+  return { violations, byRule, stats: { people, lines, arrivals, tenureChecked, siblingPairs: pairs, years, seed } };
 }
 
 const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop());
 if (isMain) {
   const argv = process.argv.slice(2), val = (f, d) => (argv.includes(f) ? +argv[argv.indexOf(f) + 1] : d);
   const r = lifeCheck(val('--seed', 1), val('--years', 10));
-  console.log(`lifecheck seed ${r.stats.seed}, ${r.stats.years}y: ${r.stats.people} people, ${r.stats.lines} timeline lines, ${r.stats.tenureChecked} tenure checks, ${r.stats.siblingPairs} sibling pairs`);
+  console.log(`lifecheck seed ${r.stats.seed}, ${r.stats.years}y: ${r.stats.people} people (${r.stats.arrivals} arrivals with backstories), ${r.stats.lines} timeline lines, ${r.stats.tenureChecked} tenure checks, ${r.stats.siblingPairs} sibling pairs`);
   for (const [rule, vs] of Object.entries(r.byRule)) { console.log(`  FAIL ${rule}: ${vs.length}`); if (!argv.includes('--quiet')) for (const x of vs.slice(0, 4)) console.log(`      #${x.id} ${x.name} ${x.text}`); }
   console.log(r.violations.length ? `LIFECHECK FAILED (${r.violations.length} violations)` : 'LIFECHECK OK');
   process.exit(r.violations.length ? 1 : 0);

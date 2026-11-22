@@ -21,7 +21,7 @@ const THE_PLACES = /^(Philippines|Netherlands|Gambia|Bahamas|Czech Republic|Unit
 const bornAt = (place) => (/^elsewhere /.test(place) ? place : /^the (south|north|east|west)/.test(place) ? 'on ' + place : 'in ' + place);
 const inPlace = (c) => (THE_PLACES.test(c) ? 'the ' + c : c);
 
-export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
+export function writeBiographies(world, rng, hhs, people, { UK_PLACES, arrival = false }) {
   const cl = world.calendar, T0 = world.tick, Y = cl.ticksPerYear, pack = world.pack;
   const byId = new Map(people.map((p) => [p.id, p]));
   const seg = (id) => pack.meta.segments.find((s) => s.id === id);
@@ -33,7 +33,7 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
   for (const p of people) {
     const q = p.ext.pop, age = world.ageOf(p), h = hhs[q.hh], s = seg(q.seg), occ = q.occ ? pack.jobs.find((o) => o.id === q.occ) : null;
     const birthYear = cl.dateOf(p.birthTick).y;
-    const nativeHere = q.bornUK && rng.chance(q.seg === 'older_longterm' ? 0.35 : 0.1);
+    const nativeHere = !arrival && q.bornUK && rng.chance(q.seg === 'older_longterm' ? 0.35 : 0.1);
     q.grewUp = q.bornUK ? (nativeHere ? 'Larkfield (this neighbourhood)' : rng.pick(UK_PLACES.slice(1))) : q.birthplace;
     mem(p, age, q.bornUK ? (q.grewUp === 'Larkfield (this neighbourhood)' ? 'Born in the city, grew up in Larkfield.' : `Born ${bornAt(q.grewUp)}.`) : `Born in ${inPlace(q.birthplace)}.`, 0.4, 3);
     // arrival: years ago. Never before birth, never after the current address was taken up.
@@ -127,5 +127,13 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
     if (age >= 16 && rng.chance(0.12)) mem(p, Math.min(rng.float(0.3, 5), age - 15), rng.pick(['Holiday abroad that was a highlight of the year.', 'Was burgled; never felt quite as safe after.', 'Won a local competition.', 'Had a bad fall-out with a friend.', 'Ran a first 10k.']), 0.2, 2);
     p.memories.sort((a, b) => a.tick - b.tick);
   }
+}
+export const UK_PLACES = ['Larkfield (this neighbourhood)', 'elsewhere in the city', 'a nearby town', 'a town in the north', 'a Midlands town', 'London', 'a small town in Wales', 'Scotland', 'the south coast', 'a village in the countryside', 'another northern city'];
+/** The same one-timeline backstory for people who arrive DURING a run (new households, flatmates, a partner moving in): reuses writeBiographies on a household view, with nobody "born in Larkfield"
+ *  (they have just moved here) and the job start date taken from the biography so the story and the job tenure agree. tools/lifecheck.js validates arrivals along with everyone else. */
+export function arrivalBiography(world, rng, hh, people) {
+  const hhs = { [hh.id]: { ...hh, yearsAt: 0, arch: hh.arch || 'one_person_u66', unit: { address: hh.address || '', tenure: hh.tenure } } };
+  writeBiographies(world, rng, hhs, people, { UK_PLACES, arrival: true });
+  for (const p of people) { const q = p.ext.pop; if (q && q.jobSince != null && q.activity === 'employed' && q.tenureStart) { q.tenureStart = q.jobSince; if (q.workplace) q.workplace.since = q.jobSince; } }
 }
 export default writeBiographies;

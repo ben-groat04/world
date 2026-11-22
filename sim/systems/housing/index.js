@@ -10,6 +10,7 @@ import { liveHh } from '../../kernel/archive.js';
 import { clamp, registerEvents, livePeople, bedNeed, isSharers } from '../money/util.js';
 import { dayOfMonth, slotDay } from '../../util.js';
 import { createArrivalHousehold, createSharer, savingsFor } from './arrivals.js';
+import { arrivalBiography } from '../../population/bio.js';
 
 // Cash a household must hold to move into a rented unit: deposit (5 weeks, Tenant Fees Act 2019 cap) + first month is ~ 1.2 x rent in reality; the sim asks for 60% of one month's rent in hand (hand-set, lower: most movers use family help / savings elsewhere).
 const MOVE_IN_CASH_SHARE = 0.6;
@@ -30,6 +31,7 @@ const MONTH = 4380, YEAR = 52560;
 // 557 days in Outer London, 2,208 days (6y) in Lewisham; 323,000+ London households on lists (London Assembly Housing Committee, Mar 2026) against ~25k general-needs lets a year (about 1 in 12-15 a year).
 // Band 3 below = no reasonable preference. BAND3_WAIT_YEARS = years in the queue before a household with no priority reaches the front (by bedrooms needed); BAND3_WIN = the share of
 // vacancies it then actually wins against the rest of the borough list (hand-set mechanism constants, see CALIBRATION-METHOD Round 10).
+const AFFORD_SEARCH_MAX = 0.25; // monthly chance of starting to look for a cheaper home at rent >= 65% of net income
 const BAND3_WAIT_YEARS = { 1: 3.2, 2: 5.4, 3: 7, 4: 9 }, BAND3_WIN = 0.25;
 const H = (w) => w.lf.housing;
 const BASE_RENT = (w) => w.pack.unitTypes.rooms.rentPerMonthByBedrooms, BASE_PRICE = (w) => w.pack.unitTypes.rooms.housePriceByBedrooms;
@@ -133,6 +135,7 @@ export function createHousing() {
     hh.sav.arrears = 0;
     if (w.commands.has('money.initHousehold')) w.cmd('money.initHousehold', { hh: hh.id });
     for (const p of people) { if (w.ageOf(p) >= 16 && w.commands.has('labour.initPerson')) w.cmd('labour.initPerson', { pid: p.id, job: true }); if (w.commands.has('routine.adopt')) w.cmd('routine.adopt', { pid: p.id }); }
+    arrivalBiography(w, rng, hh, people); // one consistent backstory, as for the founding residents
     if (u.tenure === 'mortgage' && hh.fin && hh.fin.mort) { hh.fin.mort.bal = Math.round(valueOf(w, u) * 0.8); const dep = Math.round(valueOf(w, u) * 0.2); void dep; }
     S.stats.arrivals++; S.stats.movedPersons += people.length; for (const p of people) S.moveLog.push([w.tick, Math.round(w.ageOf(p)), 'in']);
     w.emit('housing.moved_in', { actors: people.map((p) => p.id), place: u.bid, objects: [hh.id], salience: 0.35, tags: ['housing', 'life', 'arrival'], payload: { from: 'outside', reason: 'arrival', unit: u.id, tenure: u.tenure } });
@@ -182,6 +185,8 @@ export function createHousing() {
     // scarcity of larger homes (Whitehead & Kleinhans; GLA Housing Needs of Londoners). The segment probability MOVE_OUT_P is the typical case; for a household with children it is scaled by the supply of suitable, affordable vacant homes
     // in the ward: x1.4 when none, falling to x0.6 when many (x1 at ~1-2 homes).
     if (kids && !forced) { const n = suitableLocal(hh); out = clamp(out * (0.6 + 0.8 / (1 + n)), 0, 0.95); }
+    // nothing at all in the ward within their means (every rent has risen with the market): they leave for cheaper areas / family rather than search in vain
+    if (why === 'afford' && !forced && suitableLocal(hh) === 0) out = Math.max(out, 0.85);
     const goOut = rng.chance(out * (forced ? 1.0 : 1) * (SUBURB_SEGS.has(hh.seg) && young && !kids ? 1.15 : 1));
     if (goOut) { hh.departAt = W.tick + rng.int(0, 2) * MONTH; hh.departWhy = why; hh.departCause = cause || 0; hh.departDest = hh.seg === 'students' ? 'elsewhere' : SUBURB_SEGS.has(hh.seg) && rng.chance(0.55) ? 'suburbs' : hh.seg === 'older_longterm' ? 'family_or_care' : 'metropolis'; }
     else startSearch(hh, why, forced, cause);
@@ -251,7 +256,11 @@ export function createHousing() {
       if (!hh.search && !hh.departAt && S.autoMoves) {
         if (isSharers(hh)) { sharerRotation(hh, ps, adults, seg, rng); }
         else {
-          if (rng.chance(moveHazard(hh, u, seg))) { const why = short > 0 ? 'space' : hh.fin && hh.fin.stress > 0.6 ? 'afford' : u.damp ? 'condition' : (hh.members.some((id) => { const p = w.people.get(id); return p && p.alive && w.ageOf(p) < 2; }) && !isSocial(hh.tenure)) ? 'family' : 'lifecycle'; seekDestination(hh, seg, rng, why, u.repair ? u.repair.eid : f ? f.cause : 0, 0); }
+          if (rng.chance(moveHazard(hh, u, seg))) { const why = short > 0 ? 'space' : (hh.fin && hh.fin.stress > 0.6) || (hh.tenure === 'private_rent' && f && f.income > 0 && hh.rentPcm / f.income > 0.45) ? 'afford' : u.damp ? 'condition' : (hh.members.some((id) => { const p = w.people.get(id); return p && p.alive && w.ageOf(p) < 2; }) && !isSocial(hh.tenure)) ? 'family' : 'lifecycle'; seekDestination(hh, seg, rng, why, u.repair ? u.repair.eid : f ? f.cause : 0, 0); }
+          // AFFORDABILITY: a private renter paying more than ~35% of net income (the usual 'unaffordable' line in English Housing Survey / Shelter analysis) starts looking for somewhere cheaper at up to
+          // 25% a month once the share reaches 65% (a notice period plus a few viewings; Resolution Foundation / GLA: unaffordable rent rises are a leading reason for involuntary private-rented moves and for
+          // the net outflow of lower-income London renters). The annual move probability above is far too slow for an acute shock, so this is a separate monthly trigger.
+          else if (hh.tenure === 'private_rent' && f && f.income > 0 && hh.rentPcm / f.income > 0.4 && rng.chance(AFFORD_SEARCH_MAX * clamp((hh.rentPcm / f.income - 0.35) / 0.3, 0, 1))) seekDestination(hh, seg, rng, 'afford', u.repair ? u.repair.eid : f.cause, 0);
           else if (hh.tenure === 'private_rent' && f && adults.length && f.buffer > 4 && f.stress < 0.3 && ps.length && adults.reduce((s, p) => s + p.money, 0) > 12000 && rng.chance(0.004)) startSearch(hh, 'buy', 0, 0);
         }
         // young adults leaving the family home
@@ -391,6 +400,7 @@ export function createHousing() {
     p.ext.pop.hh = hh.id; p.ext.pop.unit = hh.unit; p.homeId = hh.bid; const b = w.buildings.get(hh.bid); if (!b.residents.includes(p.id)) b.residents.push(p.id);
     if (w.commands.has('labour.initPerson')) w.cmd('labour.initPerson', { pid: p.id, job: true });
     if (w.commands.has('routine.adopt')) w.cmd('routine.adopt', { pid: p.id });
+    arrivalBiography(w, rng, hh, [p]);
     S.stats.movedPersons++; S.moveLog.push([w.tick, Math.round(w.ageOf(p)), 'in']);
     w.emit('housing.moved_in', { actors: [p.id], place: hh.bid, objects: [hh.id], salience: 0.3, tags: ['housing', 'life', 'churn'], payload: { from: 'outside', reason: 'flatmate_arrival', unit: hh.unit, tenure: hh.tenure } });
   }
@@ -428,6 +438,8 @@ export function createHousing() {
       const lim = s.forced ? 3 : 5;
       if (s.tries >= lim) {
         hh.search = null;
+        // nothing in the ward is within their means: an unaffordable-rent household gives up looking locally and leaves for cheaper areas / family (departs after 0-2 months)
+        if (!s.forced && !s.buy && s.reason === 'afford' && !hh.departAt) { hh.departAt = tick + rng.int(0, 2) * MONTH; hh.departWhy = 'afford'; hh.departCause = s.cause; hh.departDest = SUBURB_SEGS.has(hh.seg) ? 'suburbs' : 'metropolis'; }
         if (s.forced) { const u = U(hh.unit); if (u && u.notice) { /* keep notice running; leaving area if nothing by deadline */ hh.departAt = Math.max(tick, u.notice.until - MONTH); hh.departWhy = s.reason; hh.departCause = s.cause; hh.departDest = 'metropolis'; } }
       }
     }

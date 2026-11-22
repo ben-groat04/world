@@ -92,8 +92,11 @@ function stepMacro(w) {
 
 // ------------------------------------------------------------------ credit
 const CC_MONTHS = 2.2; // card limit in months of take-home pay (UK card limits are typically 1-3x monthly income)
-const odLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp((f.monthNet || 0) * 0.6, 0, 1800) / 50) * 50; };
-const ccLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp((f.monthNet || 0) * CC_MONTHS, 0, 7000) / 100) * 100; };
+// Lenders size limits on income AFTER committed housing costs (FCA CONC 5 affordability rules; credit-reference 'committed expenditure'), so a household whose rent doubles loses most of its borrowing headroom at once
+// instead of borrowing its way through the first months. `fin.hcost` = this adult's share of the monthly rent/mortgage (set each month in the bills step); the floor keeps a minimum limit for people whose housing eats nearly everything.
+const dispNet = (f) => Math.max(0.2 * (f.monthNet || 0), (f.monthNet || 0) - (f.hcost || 0));
+const odLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp(dispNet(f) * 0.6, 0, 1800) / 50) * 50; };
+const ccLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp(dispNet(f) * CC_MONTHS, 0, 7000) / 100) * 100; };
 /** Pay what cash + overdraft allow (never borrows on the card). Returns pounds paid. */
 function payCash(w, p, to, amount, reason) { const room = Math.max(0, p.money + odLimit(p)), x = Math.min(Math.round(amount), room); if (x > 0) w.ledger.transfer(p.id, to, x, reason); return x; }
 /** Pay `amount` from p to `to`. Waterfall: cash -> overdraft -> credit card -> payday (essentials only) -> unpaid. Returns {paid, unpaid, spiral}. */
@@ -222,6 +225,7 @@ function monthly(w) {
     // ---------- 4. bills
     const nA = adults.length, nP = ps.length, seasonE = SEASON_ENERGY[mo] * macro.energy, pr = macro.price;
     const incomeHH = adults.reduce((s, p) => s + (inc.get(p.id) || 0), 0) + ben;
+    { const hc = (renter ? hh.rentPcm : (hh.mortgagePcm || 0)) / Math.max(1, nA); for (const p of adults) p.ext.pop.fin.hcost = hc; }
     const landlordAcc = hh.tenure === 'council' ? 'council' : hh.tenure === 'housing_assoc' || hh.tenure === 'shared_ownership' ? 'l:1' : hh.landlord != null && hh.landlord >= 0 ? 'l:' + hh.landlord : 'metropolis';
     let mortPay = 0;
     if (!f.mort && hh.mortgagePcm > 0) f.mort = { bal: Math.round(hh.mortgagePcm / 0.0059), rate: 4.8, term: 240, fixEnd: tick + 52560 * 3 };

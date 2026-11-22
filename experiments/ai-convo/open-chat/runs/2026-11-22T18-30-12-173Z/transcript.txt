@@ -121,3 +121,6 @@ See you Wednesday!
 --- Mon 18:04, Tom
 See you Wednesday, Jo!
 
+--- end date reached
+Wed 19:00
+

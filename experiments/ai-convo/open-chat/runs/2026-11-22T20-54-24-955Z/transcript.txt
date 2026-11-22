@@ -112,3 +112,6 @@ See you Sunday, Tom.
 --- Mon 15:05, Tom
 See you Sunday, Jo.
 
+--- end date reached
+Wed 19:00
+

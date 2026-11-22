@@ -106,3 +106,100 @@ Jo, hope the rear wheels behave.
 --- Mon 13:17, Jo
 Thanks Dan! Fingers crossed for the rear wheels. Good luck getting the landlord sorted today 🙂
 
+--- Mon 15:49, Tom
+Sounds like a plan, Dan. Good luck with the landlord and the photos. Jo, fingers crossed for the rear wheels. I'm still on the essays, so I'll probably be quiet for a bit.
+
+--- Mon 15:52, Jo
+Thanks Tom! Good luck with the essays, and don't let the "always" ones get to you 🙂
+
+--- Mon 17:25, Dan
+Cheers Jo, and thanks Tom. I'm still in the flat, so I'll message the landlord once I'm back at the van. I'll drop the photos in here later if anyone wants to see how bad the ceiling is.
+
+--- Mon 17:26, Jo
+Sounds good Dan, send the photos over whenever. Hope the landlord's quick to respond 🙂
+
+--- Mon 17:37, Sam
+Dan, sorry, I've been stuck in the north elevation numbers all day and haven't sent the surveyor details yet. I'll get them to you tonight.
+
+--- Mon 17:38, Sam
+@claude Can you find a damp and timber surveyor in Leeds that does domestic damp surveys for flats, ideally with a phone number or website I can pass on?
+
+--- Mon 17:38, Claude → Sam (private)
+Two Leeds firms fit, and I checked both on their own pages.
+
+**Timberwise Leeds** is the better match for flats.
+- Phone: 0113 208 9146
+- Website: [timberwise.co.uk/locations/leeds](https://timberwise.co.uk/locations/leeds/)
+- Email: leeds@timberwise.co.uk
+- Address: Wira Business Park, West Park, LS16 6EB
+- It does damp and timber reports, including pre-purchase surveys.
+- Its page says it works in city-centre flats and coordinates access with building management.
+- It is a member of the Property Care Association (PCA) and is endorsed by Which? Trusted Traders.
+- Its main business is treatment work, so the survey may lead to a quote for remedial work.
+
+**BT Preservation** is the independent option.
+- Phone: 0113 265 2752
+- Website: [btpreservation.co.uk](https://btpreservation.co.uk/?p=2645)
+- Address: Sherburn in Elmet, LS25 6NS
+- It offers independent damp and timber consultancy, where the surveyor quotes no treatment work. That avoids a conflict of interest.
+- Consultant surveys start from about £350.
+- It is a PCA member and TrustMark accredited.
+- Its page doesn't mention flats specifically, so ask whether they cover them.
+
+I didn't confirm current availability or final prices with either firm. For a flat, ask whether the survey covers shared walls and communal areas. If a mortgage lender needs the report, check that it will be accepted.
+
+Sources:
+- [Timberwise Leeds](https://timberwise.co.uk/locations/leeds/)
+- [BT Preservation](https://btpreservation.co.uk/?p=2645)
+
+--- Mon 17:44, Dan
+No worries Sam, the north elevation sounds like it's eating your whole day. Whatever you get back from Claude is fine by me, and I'll send the photos over once I'm back at the van.
+
+--- Mon 17:44, Jo
+Dan, that's kind of you to say. Hope the photos and landlord side of things get sorted soon 🙂
+
+--- Mon 17:45, Sam
+Dan, sorry this took so long. Two Leeds options:
+
+**Timberwise Leeds**, 0113 208 9146, leeds@timberwise.co.uk, timberwise.co.uk/locations/leeds. They say they work in city-centre flats and coordinate access with building management. They're also a treatment firm, so the survey could lead to a quote for work.
+
+--- Mon 17:46, Sam
+**BT Preservation**, 0113 265 2752, btpreservation.co.uk. They're independent, so the surveyor doesn't quote treatment work. Surveys start from about £350, but check they cover flats.
+
+--- Mon 17:46, Sam
+Neither has been confirmed for availability or price, so call and ask. For the landlord, ask whether the report needs to cover the flat above.
+
+--- Mon 17:50, Dan
+Thanks Sam, that's really useful. The independent option sounds better to me, since I don't want the surveyor pushing a quote on me. I'll ring BT Preservation tomorrow and ask whether they cover flats and whether the report can look at the flat above. I'll pass on the details to the landlord too.
+
+--- Mon 17:50, Dan
+Jo, I'll send the photos over tonight.
+
+--- Mon 18:07, Jo
+Thanks for sorting that, Sam. Dan, sounds like a good plan, and I'll look forward to the photos 🙂
+
+--- Mon 18:12, Dan
+<invoke name="message">
+<parameter name="to">Jo</parameter>
+<parameter name="text">Will do Jo, I'll send them over tonight 🙂</parameter>
+</invoke>
+>tool_use is not available in this session. Use a reply instead.
+
+--- Mon 18:12, Dan
+<invoke name="message">
+>Tool call rejected: no message tool is available. Reply in plain text.
+
+--- Mon 18:20, Sam
+Thanks Dan, good plan. Let me know how the call goes tomorrow.
+
+--- Mon 18:30, Jo
+Sounds good, Dan. Looking forward to the photos. Sam, thanks for sorting the surveyor options 🙂
+
+--- Mon 18:33, Dan
+Will do Sam, I'll let you know how the call goes. Jo, the photos are coming tonight.
+
+--- Mon 18:38, Tom reacted 👍 to Dan's 18:33 message
+
+--- end date reached
+Wed 19:00
+

@@ -39,7 +39,7 @@ export const FORMATS = {
 };
 // Units currently trading in pack templates outside FORMATS stay as they are (gym, pharmacy): they get the same P&L with these static parameters.
 export const STATIC = {
-  gym: { pl: 1, gm: 0.9, off: 1.2, fit: 300, afflu: 0.3, rev0: 25000, ownerOcc: null }, pharmacy: { pl: 1, gm: 0.3, off: 1.6, fit: 400, afflu: 0, rev0: 40000, ownerOcc: null, nhs: true },
+  gym: { pl: 1, gm: 0.9, off: 1.2, fit: 300, afflu: 0.3, rev0: 25000, ownerOcc: null }, pharmacy: { pl: 1, gm: 0.3, off: 1.6, fit: 400, afflu: 0, rev0: 55000, ownerOcc: null, nhs: true },
   dentist: { pl: 2, gm: 0.9, off: 2, fit: 400, afflu: 0, rev0: 30000, ownerOcc: null, nhs: true },
 };
 export const TMPL_FORMATS = {}; for (const [id, f] of Object.entries(FORMATS)) (TMPL_FORMATS[f.tmpl] || (TMPL_FORMATS[f.tmpl] = [])).push(id);

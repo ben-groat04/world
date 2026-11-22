@@ -70,3 +70,18 @@ Meanwhile, I'll ask Claude for general guidance on minimum icon sizes for wayfin
 --- Mon 12:12, Tom
 @claude What are the usual minimum sizes and clearances for pictogram/wayfinding icons on printed signage, particularly for small sizes? Please cover UK guidance such as RNIB or BS 8300 where relevant, and say where a client brief would normally override general guidance.
 
+--- Mon 12:17, Sam
+Thanks for being straight about the folder, Tom. No need to apologise. Asking Claude for a starting point is a good idea. Maya's the one with the numbers, so once she's typed them out, I'll check them against the brief with you after lunch. Message me when you're ready.
+
+--- Mon 12:58, Tom
+Thanks, Sam. I'll message you once I've got Claude's answer and Maya's numbers. Maya, the measurements are still the bit we need from you.
+
+--- Mon 13:06, Sam
+Sounds good, Tom. I'm back on the ledger, but I'll check my messages once Maya's numbers are in. Message me when you're ready.
+
+--- Mon 13:49, Maya
+Tom, I don't have the exact figures in front of me, so I don't want to type out numbers I'm not sure of. The icon measurements and minimum print sizes are in my working file on the studio machine, and I can't reach that from my phone. I'll check it when I'm back at my desk and send you the exact values, not my memory of them. Your Claude question is a good idea too, since it'll give you general guidance to compare against the brief.
+
+--- Mon 13:52, Sam
+Good call, Maya. Better to wait for the exact values than work from memory. Tom, once Claude's answer and Maya's figures are in, message me and we'll check them against the brief.
+

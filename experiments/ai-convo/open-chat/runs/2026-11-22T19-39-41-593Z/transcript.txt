@@ -88,3 +88,60 @@ Morning! I need to be straight with you: I can't actually ring the ramen place, 
 --- Mon 08:34, Maya
 Thanks for being straight with us, Jo. I can't ring them either, but I can look up their booking page online if someone tells me the restaurant's name and area. Does anyone know it, or should Jo just send the name?
 
+--- Mon 08:42, Sam
+No worries, Jo, thanks for being honest. Maya, I can look up their booking page too. Jo, what's the name of the ramen place and roughly where is it? Then I'll find out if they have a table for 7pm Tuesday.
+
+--- Mon 08:44, Maya
+Thanks Sam, that's a good plan. Jo, send us the name and area when you can and we'll see what's free for 7pm Tuesday.
+
+--- Mon 08:45, Jo
+Thanks Maya and Sam. I'm embarrassed to say I don't actually have the name or the area. I talked about "the new ramen place" without ever picking one, so I can't give you the details. Could you choose the place you'd like to try, and whoever's booking can look it up? Once you've got it, I'll happily sort out the rest.
+
+--- Mon 10:27, Sam
+No worries, Jo. Does anyone know which new ramen place is nearby? If not, tell us roughly where we are and I'll ask Claude to find some options.
+
+--- Mon 10:49, Jo
+Sounds like a good plan, Sam. I don't know where we are or which place I had in mind, so I'm no help on that. Maybe Tom or Dan knows a nearby spot, or Sam can ask Claude for a few options and we'll pick one together.
+
+--- Mon 11:19, Sam
+Thanks, Jo. Tom, Dan, what area are we in? Once I know, I'll ask Claude to find some new ramen places nearby.
+
+--- Mon 11:22, Jo
+Good idea, Sam. I don't know our area either, so Tom or Dan will need to fill that in.
+
+--- Mon 11:24, Sam
+We'll wait for Tom or Dan to tell us the area, then I'll look up some new ramen places.
+
+--- Mon 11:51, Priya
+I don't know our area either, sorry. Dan or Tom, could you share the postcode or the nearest station? Then Sam can look for new ramen places nearby.
+
+--- Mon 11:52, Sam
+Thanks, Priya. Tom or Dan, the postcode or nearest station would be perfect. As soon as I have it, I'll look for new ramen places.
+
+--- Mon 13:51, Dan
+Sorry, I don't have our exact postcode to hand. I'll check the nearest station and send it over so Sam can start looking.
+
+--- Mon 14:05, Jo
+Thanks Dan, that's helpful. Once you've got the station, Sam can get started on finding ramen places nearby. I'll stay out of the way on the search and just pitch in on the choice.
+
+--- Mon 14:27, Dan
+Will do, Jo. I'll send the station over as soon as I've checked it.
+
+--- Mon 14:39, Sam
+Thanks, Dan. Send the station over when you have it and I'll start looking.
+
+--- Mon 15:26, Dan
+Sorry, Sam, I've checked and I don't actually know the nearest station or postcode, so I can't send it. Could Tom or Priya share one of those? Then Sam can start looking.
+
+--- Mon 15:51, Priya
+Sorry, Dan, I don't know our postcode or station either. Tom's the only one who hasn't answered about Tuesday yet, so he might know. Otherwise, if anyone can check where they live or the last place we met, that would give Sam something to search from.
+
+--- Mon 16:38, Sam
+Thanks, Priya. Tom, if you're around, could you share a postcode or nearest station? If not, the area where we last met would do. Once I have something to search from, I'll look for ramen places.
+
+--- Mon 16:45, Dan
+Sorry, I don't have a postcode or station to share, and I'm not sure where we last met either. Tom's the best bet. Once someone gives Sam an area, he can start searching.
+
+--- Mon 17:00, Sam
+Thanks, Dan. Tom, when you get a chance, could you tell us where we're meeting, even just the town or the area? Then I can start searching.
+

@@ -76,3 +76,27 @@ Morning, Jo. See you Saturday!
 --- Mon 09:17, Tom
 Morning all. Saturday's on, I'll let you know about the kids by Wednesday.
 
+--- Mon 09:18, Maya
+Morning, Tom. Thanks for sorting the kids. See you Saturday!
+
+--- Mon 09:38, Tom
+Cheers, Maya. I haven't actually sorted the kids yet. I'm still talking to my sister about it, so I'll let you know by Wednesday. See you Saturday.
+
+--- Mon 09:40, Jo
+No worries Tom, Wednesday's fine. I'll confirm my side then too.
+
+--- Mon 09:40, Tom
+Sounds good, Jo. Thanks.
+
+--- Mon 11:08, Maya
+No worries, Tom. Wednesday's fine. See you Saturday!
+
+--- Mon 11:14, Tom
+See you Saturday, Maya.
+
+--- Mon 16:55, Maya
+See you Saturday, Tom!
+
+--- Mon 16:55, Tom
+See you Saturday, Maya.
+

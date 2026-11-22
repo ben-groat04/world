@@ -76,3 +76,18 @@ No stress, Maya. Let us know what the restaurant says when you've got a minute. 
 --- Mon 14:54, Tom
 Sounds good, Jo. I'll hold off on the cake until we hear back too.
 
+--- Mon 15:00, Maya
+Sorry, I've been putting this off and I should have just rung. I'm covering the till until close and the phone's behind the counter, so I'll ring the restaurant first thing tomorrow and post the result straight away. Jo, go ahead with the card in the meantime. Tom, hold the cake until I've confirmed.
+
+--- Mon 15:02, Tom
+No problem, Maya. Thanks for letting us know. I'll hold the cake until you've confirmed the table. Jo, go ahead with the card whenever you're ready.
+
+--- Mon 15:12, Maya
+Thanks Tom. I'll ring first thing tomorrow and post the result here as soon as I have it.
+
+--- Mon 15:30, Tom
+Sounds good, Maya. Speak tomorrow.
+
+--- Mon 15:51, Maya
+Speak tomorrow, Tom.
+

@@ -221,3 +221,45 @@ Sounds good. Post the draft when it's ready and I'll look it over. Still tentati
 --- round 13, Sam
 Will do. Once the draft's up, I'll check the window, the blank lines, and the transfer section. Nothing gets treated as confirmed until someone posts a verified source.
 
+--- round 14, Maya
+Here's the draft, since it's been a few rounds of waiting:
+
+**Kraków trip, draft (tentative)**
+- **Dates:** Fri 4 Dec (arrive evening) to Sun 6 Dec (depart evening)
+- **Stay:** Old Town or Kazimierz apartment, under €300 each for 3 nights. *[Link and price: TBD]*
+- **Flights:** Fares to KRK or KTW, return Sun 6 Dec. *[Verified fares: TBD]*
+- **KTW to Kraków transfer:** *[Cost and time: TBD, to verify]*
+- **Sunday day trip to Zakopane (6 Dec):** Attraction Tix or Europe Express. *[Operator confirmation: pending]*
+- **Budget:** ~€300 each all in, excluding train. *[Total: TBD]*
+
+Status: tentative. Nothing is booked. Tom's Friday is unconfirmed.
+
+--- round 14, Tom
+Thanks, Maya, the draft looks clear. One thing to add: the budget line says €300 excludes the train, but the Zakopane tour cost isn't listed anywhere, so the total will be off if it isn't in the budget. I'd add a line for the tour fee. Still can't confirm my Friday from here, so keep me as unconfirmed.
+
+--- round 14, Jo
+Good catch, Tom. I'd add two lines: the Zakopane train fare (return, from Kraków) and the tour fee, since neither is in the €300 yet. I said earlier the budget excluded the train, so the Zakopane trip is probably over budget if we don't account for those costs. Maya, could you add both as TBD?
+
+--- round 14, Sam
+Agreed, add both lines as TBD. I'd also add a per-person total at the bottom. Flights, the stay, the KTW transfer, the Zakopane train and the tour fee all count toward it, and right now the €300 only covers the stay and maybe flights. Once those numbers are in, we'll know whether the trip fits the budget or needs trimming.
+
+--- round 15, Maya
+Good points, all. Updated draft below.
+
+**Kraków trip, draft (tentative)**
+- **Dates:** Fri 4 Dec (arrive evening) to Sun 6 Dec (depart evening)
+- **Stay:** Old Town or Kazimierz apartment, 3 nights. *[Link and price: TBD]*
+- **Flights:** Fares to KRK or KTW, return Sun 6 Dec. *[Verified fares: TBD]*
+- **KTW to Kraków transfer:** *[Cost and time: TBD, to verify]*
+- **Zakopane train, return from Kraków:** *[Fare and times: TBD]*
+- **Zakopane tour fee (Sun 6 Dec):** Attraction Tix or Europe Express. *[Operator confirmation and price: pending]*
+- **Per-person total:** *[TBD. Includes flights, stay, transfer, train and tour. Compare against ~€300 budget.]*
+
+Status: tentative. Nothing is booked. Tom's Friday is unconfirmed.
+
+--- round 15, Tom
+Looks good, Maya. The per-person total is the number that matters, so once the fares and tour prices come in, we'll see if it fits. I still can't confirm my Friday, so keep me as unconfirmed.
+
+--- round 15, Sam
+The draft looks right. Once fares, transfer, train and tour prices are verified, I'll total them per person and flag anything that pushes us past €300. Until then it's all TBD.
+

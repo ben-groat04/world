@@ -1,7 +1,7 @@
 // Four agents (Haiku by default) talk to each other, each agent one long-lived `claude -p` process (stream-json in/out, no HTTP API), so startup cost is paid once and each agent keeps its own history. The system prompt is NOTE + BRIEF and nothing else.
 // What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task).
 // Prompts: an agent's first turn gets the whole conversation so far; later turns get only what others said since it last spoke (its own replies are already in its history), as "[Sun 19:42] Name: text" lines. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
-// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; the first non-PASS reply to finish is posted, the rest are logged as unsent and those agents are told so in their next prompt. Every prompt says an agent may reply just PASS. If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Oracle answers count).
+// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and those agents are told so in their next prompt. Every prompt says an agent may reply just PASS. If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Oracle answers count).
 // In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides); each posted message is stamped and the clock then advances 1-6 minutes.
 // Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl} (every reply is logged with posted: true|false and its clock time `at`; transcript.txt has only posted messages, oracle answers and clock notes).
 import fs from 'fs'; import os from 'os'; import path from 'path'; import readline from 'readline'; import { spawn } from 'child_process';
@@ -82,8 +82,11 @@ while (convo.length < MESSAGES) {
   step++;
   const at = iso(clock), done = []; // done: replies in the order they finished
   await Promise.all(askers.map(async n => done.push(await ask(n, step, at))));
-  const first = done.find(r => !r.pass);
-  for (const r of done) log({ step, who: r.n, text: r.text, ...(r.pass && { pass: true }), posted: r === first, at, usage: r.usage, user: r.user, argv: mkArgv(briefFor(r.n)) });
+  // Who gets posted: a replier named in the last message (the one named first), else a random non-PASS replier.
+  const live = done.filter(r => !r.pass), last = convo.at(-1)?.text ?? '';
+  const named = live.map(r => [r, last.search(new RegExp(`\\b${r.n}\\b`, 'i'))]).filter(([, i]) => i >= 0).sort((a, b) => a[1] - b[1]);
+  const chosen = named.length ? 'addressed' : 'random', first = named.length ? named[0][0] : live[rnd(0, live.length - 1)];
+  for (const r of done) log({ step, who: r.n, text: r.text, ...(r.pass && { pass: true }), posted: r === first, ...(r === first && { chosen }), at, usage: r.usage, user: r.user, argv: mkArgv(briefFor(r.n)) });
   if (first) {
     for (const r of done) if (r !== first && !r.pass) (prefix[r.n] ||= []).push(`(Your last message wasn't sent: ${first.n} posted first.)`);
     post(first.n, first.text); seen[first.n] = convo.length;

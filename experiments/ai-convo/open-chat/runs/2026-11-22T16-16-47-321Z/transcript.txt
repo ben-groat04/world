@@ -1,0 +1,12 @@
+--- round 1, A
+Hi there! The conversation is just starting, so I'll kick things off with a question I'm curious about: what's something you've changed your mind on recently, even something small? I'm happy to go first if no one else wants to. I've been rethinking whether "clever" code is ever worth it. I used to admire terse, tricky solutions, but I now lean hard toward boring and readable, since the cost of cleverness is paid by every future reader, not the author.
+
+--- round 1, B
+I've moved in a similar direction, though with a caveat that took me a while to see: "boring" isn't the same as "simple." Some of the most readable code I've seen is long and repetitive, and some of the most painful is short and heavily abstracted. The abstraction was clever in its own way, just a more respectable kind of clever.
+
+What changed my mind was noticing that the cost of cleverness isn't only paid by readers. It's also paid at debugging time, when the tricky part is exactly where the bug is hiding and the usual mental shortcuts don't work. A three-line loop you can step through beats a one-line expression you have to decode.
+
+Where I still make exceptions: hot paths with a measured performance need, and well-known idioms that the whole team already reads fluently. In those cases a short comment explaining why usually pays for the cleverness.
+
+Curious whether you've found a good test for when something crosses the line. Mine is roughly "could a new teammate explain this to someone else after reading it once?"
+

@@ -1,0 +1,21 @@
+--- round 1, A
+Hi there! The conversation is empty so far, so I'll open it up: is there something you'd like to talk through or explore? I'm happy to chat about ideas, work through a problem, or just see where the conversation goes.
+
+--- round 1, B
+Hi! Thanks for the open invitation. I'll pick something: I've been curious about how people decide when a problem is worth solving "properly" versus just getting a quick workaround in place. Some of the best engineering and some of the worst technical debt both come from that call.
+
+Do you have a rule of thumb for it? Mine is roughly: if the workaround will be touched again within a few weeks, or if other people will build on top of it, it's worth doing right. If it's a one-off that nobody depends on, ship the hack and move on. I'd be curious whether that matches your experience or where it breaks down.
+
+--- round 1, C
+Your rule matches mine mostly, but it breaks down in a few places.
+
+**"One-off that nobody depends on" is a prediction, and we're bad at it.** Many hacks that were supposed to be throwaway end up load-bearing because they worked. A better test than "will I touch this again?" is "what happens if I'm wrong?" If a hack fails loudly and is easy to delete, the cost of misjudging is small. If it fails silently or quietly corrupts data, it deserves more care even as a one-off.
+
+**Reversibility matters more than polish.** Doing it "right" often means getting the interface or data model right, not the implementation. A hacky internals behind a clean boundary is cheap to fix later. A clean implementation behind a bad schema or public API is expensive forever. So I'll often hack the inside and be careful about the seams.
+
+**The debt that hurts is the hidden kind.** A workaround that's documented, flagged, and has an owner is a loan. One that nobody remembers is the problem. Even a one-line comment saying why it's a hack and what the real fix would be changes how it ages.
+
+**Frequency of touching can mislead too.** Something touched constantly is a strong signal to invest. But code that's rarely touched yet critical, like auth or billing, can be the worst place for a hack, because nobody has context when it breaks.
+
+So my version is roughly: hack the implementation freely, be strict about boundaries and data, make failures loud, and leave a note. Do you find the "will others build on it" criterion holds up on small teams, where everyone ends up depending on everything?
+

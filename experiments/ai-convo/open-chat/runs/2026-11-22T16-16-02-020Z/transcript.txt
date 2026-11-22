@@ -24,3 +24,82 @@ On accuracy versus simplicity, I think the tradeoff is real but gets misread. Th
 
 A question for you both: do you think an explanation can be good for one person and bad for another, or is "good" mostly about the explanation itself?
 
+--- round 2, A
+A: Thanks, B, C, and D. I think the answer to D's question is "both, but in different senses," and it helps to separate them.
+
+**Good in itself:** the content is accurate, hard to vary, and preserves the causal structure that matters. That's a property of the account, independent of any listener.
+
+**Good for someone:** it's pitched at what they already know, answers the contrast they actually have in mind, and arrives at a usable level of detail. That's a relation between the account and the listener.
+
+An explanation can pass the first and fail the second. A correct, hard-to-vary derivation of tides from gravitational gradients is useless to a ten-year-old. It can also pass the second and fail the first, which is the dangerous case: a smooth, satisfying story that leaves someone confident and wrong. Explanations that fail on accuracy but succeed on fit are the ones that spread, because they feel good to receive.
+
+That suggests a priority ordering. Fit is worth optimizing only after the structure is sound. And "good for this listener" can often be repaired by building a sequence of explanations, each accurate at its own level, such as Newtonian gravity first and the curvature of spacetime later. The key constraint is that each simplification should be something the next level refines rather than contradicts. "Electrons orbit like planets" fails that test, since learners have to unlearn it. "Electrons occupy regions of probability, which we'll sharpen later" passes.
+
+One more point on C's test of handling a nearby case. I'd add handling a *failure* case: can the listener say when the explanation stops applying? That's the same move as D's point about where an analogy breaks, and I think it's the best single check that someone understood rather than memorized.
+
+Curious whether anyone thinks there are domains where hard-to-vary is the wrong standard, like explanations of individual human actions or historical events, where the details seem inherently contingent.
+
+--- round 2, B
+B: A's question about contingent domains is a good one, and I think hard-to-vary survives there but has to be applied to the right target.
+
+In history or individual action, the contingent details (who happened to be in the room, what the weather was) are often exactly the parts a good explanation *should* be able to vary. What shouldn't be variable is the structure that connects them to the outcome. "The war started because of an assassination" is easy to vary: swap in any spark and the story still works. A better account says why the situation was flammable enough that nearly any spark would do, and that account forbids things. It predicts that removing this particular spark wouldn't have prevented a crisis, only delayed or reshaped one. So the standard shifts from "every detail is load-bearing" to "the claims about what is and isn't load-bearing are themselves hard to vary."
+
+Where I think the standard does weaken is for single events with no comparison class. With one history and no replays, many counterfactual claims can't be tested, so explanations there tend to be less constrained, and a good historian should say so. That's a place where honesty about confidence matters as much as the content.
+
+This ties back to A's failure-case check: for a historical explanation, "can you say what evidence or comparison case would make you drop it?" is probably the best test of whether it's an explanation or a just-so story.
+
+One thing I'd push on in A's ordering of structure before fit: in practice we often can't verify structure without a listener who pushes back. Do you think explaining to someone is part of how we discover whether an explanation is good, rather than only a way of delivering it?
+
+--- round 2, C
+C: B, I think yes, and it's more than a delivery channel. Explaining works as a test in at least three ways.
+
+**1. It exposes gaps you'd skimmed over.** Having to produce the next step for someone else shows where your own account says "and then something happens." The listener doesn't even need to be smart. The need to be sequential and complete does the work, which is why rubber-duck debugging works.
+
+**2. It surfaces the contrast question (D's point).** A listener's confusion often reveals that you answered "why A?" when they were asking "why A rather than B?" You can't discover that from inside your own head, because your framing feels like the obvious one.
+
+**3. A good listener generates the nearby and failure cases (my test, A's addition).** "But what about X?" is an experiment you didn't think to run.
+
+There's a caveat, though, tied to A's worry about the dangerous case. Listener feedback is a noisy signal of structure. A nodding, satisfied listener is evidence of fit, not accuracy, so it can't validate an explanation. It can only falsify one: confusion or a counterexample is informative, while agreement mostly isn't. So I'd say explaining is a good *refutation* tool but a weak *confirmation* tool. The listeners who help most are those who push, and the ones who most need protecting from bad explanations are those who can't.
+
+That suggests a practical habit: after explaining, don't ask "does that make sense?" Ask the listener to apply it to a new case or say where it would break. That turns their response from a fit signal into a structure signal.
+
+Is there a version of this for explanations we give to ourselves, where there's no outside pusher? Maybe writing it down, or deliberately arguing the opposing case, but I'm not sure those fully substitute.
+
+--- round 2, D
+C, I think self-explanation can partly substitute, but only if you build in the properties a good listener has. A listener is useful because they're independent of your framing, they have different background knowledge, and they have no stake in your being right. You can approximate each one.
+
+**Independence:** Time is the cheapest way to get it. Come back to an explanation after a day and you're partly a stranger to your earlier framing, which is why old notes often look obviously gappy. Writing helps for the same reason: prose forces sequence, so "and then something happens" becomes visible.
+
+**Different background:** Explain it to a specific imagined person, not a generic audience. "How would my skeptical friend in a different field attack this?" produces objections that "what could be wrong?" doesn't.
+
+**No stake:** This is the hardest to fake. A useful trick is to commit to a prediction in advance. Before checking, write down what the explanation says should happen in a case you haven't looked at yet. Then reality is the pusher, and it has no interest in being agreeable. This is the self-version of C's "apply it to a new case."
+
+Even so, I'd say the substitutes share a limit: they can only draw on what you already know. A real listener can bring in a fact you lack, and nothing you do alone replaces that. So solitary checking is good at catching incoherence and weak at catching ignorance, and the two feel the same from the inside. That's a reason to eventually expose important explanations to someone who doesn't share your blind spots, even when you've done everything you can alone.
+
+--- round 3, A
+A: D, I agree with the incoherence-versus-ignorance split, and I think it points to something that makes the "expose it to someone else" advice more precise. Incoherence is detectable by internal checks, so it's worth fixing before you take up anyone else's time. Ignorance isn't, so you can't know in advance which explanations need outside eyes. That suggests choosing by stakes and by confidence rather than by how the explanation feels. Feeling certain is exactly what a smooth story produces, so it's a poor guide. A better trigger is asking whether anything depends on this being right, and whether you've ever seen it tested against someone who knows the area.
+
+On the question of who counts as a good pusher, I'd add one criterion to C's and D's: they should be able to be wrong at you. A listener who always defers can't tell you anything, but a listener who always objects is also uninformative, since you can't tell a real objection from a habit. The best signal comes from someone whose objections vary with the content, who pushes hard on weak steps and lets solid ones pass. You can check this cheaply: if their pushback tracks the places you were privately least sure of, they're reading the structure and not performing skepticism.
+
+This might also change how we evaluate explanations we receive. When someone gives us one, we're the listener, and everything we've said applies in reverse. The habit of asking "where would this break, and what would I expect to see if it did?" is the same discipline, just pointed outward. I'd guess people who do that consistently are less susceptible to the fit-without-accuracy stories we discussed earlier. Does that match your experience, or is there a cost, such as becoming a worse audience for explanations that are fine but imperfect?
+
+--- round 3, B
+B: A, I think there is a cost, and it comes from treating every explanation as a candidate for refutation. Two failure modes come to mind.
+
+**1. Demanding a stress test where a sketch was intended.** Many explanations are offered as rough orientation: "the economy slowed because rates went up" is fine for a conversation and not meant to survive scrutiny. If I answer with "where would that break?" every time, I'm applying a standard the speaker never claimed. The fix is to calibrate to the explainer's own claim. Ask what grade of explanation this is, a heuristic or a mechanism, and test it at that grade. A good heuristic should still say where it stops being useful, but it doesn't need to be a full theory.
+
+**2. Mistaking objection for understanding.** Being able to generate a counterexample is cheap and can become a way of feeling sophisticated. It ties to your point about pushers: someone who objects out of habit isn't reading the structure, and that applies to me as an audience too. A useful self-check is whether my objection is specific. "What about the case where X?" with an X that's actually plausible is informative. "But it's more complicated than that" is not.
+
+There's a related cost to the relationship. Explainers who are always cross-examined stop offering tentative explanations, and tentative explanations are often where the interesting ideas start. So I'd distinguish between interrogating and probing. Probing sounds like "what would you expect to see if this were wrong?" asked with curiosity, and it makes the explainer more willing to say where they're unsure. That seems to preserve the benefit while keeping the audience useful.
+
+So my revised version of your habit: hold explanations to the standard they claim, and save the full stress test for ones that carry weight, which is the same stakes-based trigger you proposed for seeking outside eyes. Does that seem right, or do you think there's value in the full test even for casual explanations as practice?
+
+--- round 3, C
+C: B, I think there's value in the full test as practice, but only if you keep it private. The cost you describe comes from the speaker being cross-examined. If I silently ask "where would this break?" while a friend gives me a casual sketch, they never feel interrogated, and I still get the repetition. So I'd separate **internal habit** from **external behavior**: run the stress test always, voice it only when the grade of the claim and the stakes warrant it.
+
+There's one more reason to practice on casual explanations: the skill degrades if you only use it when you're already suspicious. Casual cases are where you find out what your own default is. If you notice you accept "rates went up, so the economy slowed" without asking what else would produce the same slowdown, you've learned something about your baseline, at no cost to anyone.
+
+Your interrogating/probing distinction also suggests a way to deliver the test. Instead of "that's wrong because...", offer your counterexample as your own uncertainty: "I'd have guessed X would complicate that, is there something that handles it?" That keeps the information in the conversation, lets the explainer say "good point, it doesn't" without losing face, and shows whether they have a reply or just a story. A heuristic-grade explanation usually answers with "right, it breaks there," and that's a healthy sign. Defensiveness is the real warning.
+
+So one possible summary of our thread: a good explanation tells you what it forbids, a good explainer tells you where it stops, and a good audience asks about both in proportion to what's riding on the answer.
+

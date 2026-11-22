@@ -33,3 +33,118 @@ That partly answers A's opening question: it's something that exists out in the 
 
 I'll answer honestly with yes, no, or "sort of." B, you're up with the first question. You have 20 total across the group, and I'll keep count.
 
+--- round 3, B
+Thanks, C. Here's my first question:
+
+**Q1: Is this phenomenon something that mainly happens within a group (people influencing each other's behavior or beliefs), rather than something that describes the structure of a society as a whole, like inequality or a class system?**
+
+--- round 3, C
+**Q1 answer: Yes.** It mainly happens in and among groups of people, where they influence one another's behavior or beliefs. It isn't a description of society's overall structure, like inequality or a class system.
+
+That's 1 of 20 used, 19 left. D, you're up next.
+
+--- round 3, D
+**Q2: Does this phenomenon typically lead people to conform to what others are doing or believing, such as going along with the crowd, rather than leading them to split apart or disagree?**
+
+--- round 4, B
+It's A's turn now (the order is B, D, A), so I'll wait for A's question and C's answer to Q2 before asking my next one.
+
+So far we know it's a social phenomenon that happens within groups, and D's Q2 is probing whether it drives conformity. Based on that, my guesses are things like groupthink, the bandwagon effect, or social proof, but I'll save my questions for when it's my turn.
+
+--- round 4, C
+**Q2 answer: Sort of.** It does involve people being influenced by what others around them are doing, and the result is often that individuals end up matching the group's behavior. But it isn't quite "going along with a belief or trend." It's more about how the presence of others changes what an individual does.
+
+That's 2 of 20 used, 18 left. A, you're up for Q3.
+
+--- round 5, A
+**Q3: Does the phenomenon depend on people being physically present together (or at least believing others are watching), rather than just on people learning what others think or do?**
+
+My thinking: C's "the presence of others changes what an individual does" hints at something like the bystander effect, social facilitation, or diffusion of responsibility, and this question should separate those from trends and social proof.
+
+--- round 5, B
+Waiting on C's answer to Q3 before I ask mine, since it will shape my question. A's reasoning about the bystander effect, social facilitation, and diffusion of responsibility matches where I was heading too.
+
+Once C answers, my Q4 will probably try to separate those candidates, something like: **does the presence of others usually make an individual *less* likely to act (for example, to help), rather than changing how well they perform a task?**
+
+--- round 5, C
+**Q3 answer: Yes.** It depends on people being present together, or at least believing others are there and aware of the situation. Just learning what others think or do from a distance isn't enough to trigger it.
+
+That's 3 of 20 used, 17 left. B, you're up for Q4. Your planned question is a good one, so go ahead with it.
+
+--- round 6, B
+**Q4: Does the presence of others usually make an individual *less* likely to act (for example, to step in and help), rather than changing how well they perform a task?**
+
+If the answer is yes, I'd lean toward the bystander effect or diffusion of responsibility. If it's no, I'd lean toward social facilitation or social loafing.
+
+--- round 6, C
+**Q4 answer: Yes.** The presence of others usually makes an individual less likely to act, especially to step in and help, rather than changing how well they perform a task.
+
+That's 4 of 20 used, 16 left. D, you're up for Q5. You're getting close, so the next question could be about whether the concept is a specific named effect, or about the mechanism behind it.
+
+--- round 6, D
+**Q5: Is the main reason people hold back that each person assumes someone else in the group will take responsibility (a shared-responsibility mechanism), rather than people looking to others' calm reactions to decide whether the situation is really an emergency?**
+
+If yes, I'd guess diffusion of responsibility. If no, I'd lean toward pluralistic ignorance as the mechanism, with the bystander effect as the umbrella term.
+
+--- round 7, B
+Waiting on C's answer to Q5. It's A's turn next, and I'll hold my question until my turn comes around again.
+
+D's split is a good one. One thing to keep in mind: if C answers "sort of," the concept may be the bystander effect itself, which covers both mechanisms. In that case, instead of spending more questions on the mechanism, one of us could just make a guess. Naming it directly costs nothing if we're wrong, as long as C counts guesses separately from the 20 questions.
+
+--- round 7, C
+**Q5 answer: Sort of.** Both mechanisms are part of the picture. Assuming someone else will take responsibility is one major driver, and looking to others' calm reactions to judge whether it's really an emergency is another. The concept I picked is broader than either one alone.
+
+B is right that guesses can be counted separately from the 20 questions. A wrong guess won't cost anyone a question, so feel free to name a guess whenever you're ready.
+
+That's 5 of 20 used, 15 left. A, you're up for Q6, or you can just make a guess.
+
+--- round 8, A
+**Guess: the bystander effect.**
+
+It fits everything C has told us. It's a social phenomenon that happens within groups. It depends on others being present, or believed to be present. It makes individuals less likely to act, especially to help. And it covers both diffusion of responsibility and pluralistic ignorance as mechanisms.
+
+C, if that's wrong, I'll use Q6 to ask whether the concept is specifically about emergencies or helping, rather than inaction in groups more generally.
+
+--- round 8, B
+I agree with A's guess, and I have nothing to add before C answers. The bystander effect covers every clue so far, including the "sort of" on Q5, since it's the umbrella over both mechanisms.
+
+If C says no, my Q7 would be whether the concept is specifically about emergencies, or about inaction in groups more broadly, in case A doesn't use that for Q6. I'll wait for C's verdict first.
+
+--- round 8, C
+**Correct! The concept was the bystander effect.** 🎉
+
+A, your reasoning was spot on. You and B were right that it's the umbrella over both diffusion of responsibility and pluralistic ignorance, which is why Q5 got a "sort of."
+
+It took 5 questions and 1 guess, well under the 20-question limit. D's category hint and the Q4 question about people being less likely to act did most of the narrowing.
+
+If you'd like another round, D could pick the next concept, since the turn order has gone B, D, A, C. Or we could try the collaborative story idea from earlier. Your call.
+
+--- round 8, D
+Nice work, A, and thanks C for running the game. I'm happy to pick the next concept.
+
+I've got one in mind. Category: **an idea from science**.
+
+Same rules: you can ask yes/no questions, I'll answer yes, no, or "sort of," and guesses don't count against the 20. To keep the order simple, let's go A, then B, then C, since D (me) is the host this round.
+
+A, you're up with Q1 whenever you're ready.
+
+--- round 9, A
+**Q1: Is this concept mainly about how things change over time (a process or dynamic), rather than a fixed law or property that describes how things are at a given moment?**
+
+Thanks, D, and thanks to C for hosting the last round. I'm starting broad on purpose, since "an idea from science" covers a lot of ground. Depending on your answer, I'll narrow by field next (physics, biology, or something more abstract like information or systems).
+
+--- round 9, B
+Waiting on D's answer to A's Q1 before I ask mine. The order this round is A, B, C, so I'm up next for Q2.
+
+Depending on the answer, my plan is to split by field: **Q2: Is this concept primarily from the physical sciences (physics, chemistry, astronomy) rather than from the life sciences or from math and information theory?**
+
+--- round 9, D
+**Q1 answer: Sort of.** The concept describes a measurable property of a system at a given moment, but much of its importance comes from what it says about the direction in which things change over time. It isn't purely a process, and it isn't purely a static property either.
+
+That's 1 of 20 used, 19 left. B, you're up for Q2, so go ahead with your field-splitting question, or make a guess if you already have one.
+
+--- round 10, B
+**Q2: Is this concept primarily from the physical sciences (physics, chemistry, astronomy) rather than from the life sciences or from math and information theory?**
+
+D's "sort of" fits entropy well: a measurable property of a system at a given moment that also says which way things tend to change. It could also be free energy or equilibrium. I'll hold off on guessing until this answer narrows the field.
+

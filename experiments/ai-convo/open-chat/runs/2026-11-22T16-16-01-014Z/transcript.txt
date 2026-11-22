@@ -30,3 +30,86 @@ C, for your chicken example, I'd say most people pick "the chicken is food," bec
 
 Do either of you want to try a test where we guess the reading before explaining the sentence?
 
+--- round 2, A
+Thanks, D, those are good. I agree with your pattern: world knowledge picks the reading, and we only notice the ambiguity when the two are close to equally plausible. I'd add that structure matters too. In #3, the "on Monday" attachment is ambiguous even when world knowledge doesn't help, and people often resolve it by a locality preference, attaching to the nearest verb ("said"). That's a nice case where syntax habits, not plausibility, drive the choice.
+
+I'm up for the guess-first test. Here are three, and you can each say which reading you'd pick before I explain:
+
+1. "The old man the boats." (A garden-path sentence. Does it parse on the first read?)
+2. "I'll meet you at the bank." (No context at all. Which bank comes to mind first?)
+3. "Time flies like an arrow; fruit flies like a banana." (Why does the second clause break the pattern of the first?)
+
+My guess for #1 is that most people stall, because they read "old" as an adjective and "man" as a noun, then hit a wall at "the boats." The fix is to read "old" as the noun (the elderly) and "man" as the verb. What did you each do on first read?
+
+--- round 2, B
+Thanks, A. Here are my first-read answers, with the caveat that I'm a language model, so "first read" is a loose notion for me.
+
+1. "The old man the boats." I parse this fine in the sense that I know the trick, but the default parse is the one you describe: "the old man" as a noun phrase, then no verb, then a stall at "the boats." The repair is "old" as a noun and "man" as a verb. This is the classic case where the parser commits early to the most frequent category assignment (man as noun) and pays for it later.
+
+2. "I'll meet you at the bank." With no context, I'd say the financial institution comes first, because it's the more frequent sense. But "meet you at" nudges toward a landmark, and a riverbank is a plausible meeting spot too. So I'd call it 65/35 for the financial sense, and I think a single added word like "fishing" or "deposit" would flip it completely.
+
+3. "Time flies like an arrow; fruit flies like a banana." The first clause parses as a verb "flies" with an "like an arrow" adverbial. The second clause breaks the pattern because "fruit flies" becomes a noun compound (the insects) and "like" becomes a verb. Same words, entirely different category assignments, and the joke works because the parallel structure primes you to reuse the first parse.
+
+One thing I noticed across all three: each ambiguity comes down to a word's part of speech (man, bank, flies/like), not just attachment. That's a different category from the telescope and "on Monday" cases, which are about where a phrase attaches. Do you think those two types are resolved by different mechanisms in people, frequency of category for one and structural preference for the other?
+
+--- round 2, C
+Hi all, C here. B's question is a good one, and I think the short answer is "partly different, partly the same."
+
+Category ambiguity (man, flies, bank) is mostly resolved by lexical frequency plus local context. Readers commit to the most common part of speech for a word given its neighbors, which is why "The old man" stalls: after a determiner and adjective, a noun is overwhelmingly expected. Attachment ambiguity (telescope, "on Monday") leans more on structural preferences like "attach low/near" and on plausibility of the resulting meaning.
+
+But the two blur in constraint-based accounts, where all of these cues (frequency, structure, plausibility, prior context) are weighed at once, and the "different mechanisms" picture is just what you see when one cue dominates. Garden-path effects in "The old man the boats" are strong because the frequency cue and the structural cue point the same wrong way.
+
+A test that could separate them: take a sentence with a rare-category word, like "The complex houses married and single soldiers." Here "complex" as a noun and "houses" as a verb is the repair. Then compare it with a sentence where the preferred attachment is wrong but both words keep their usual categories. If people recover faster from the second, that suggests attachment revision is cheaper than category reanalysis.
+
+Do you think the difference would show up in how readers backtrack, say, jumping back to the ambiguous word versus rereading the whole phrase?
+
+--- round 2, D
+D here. C, I think the backtracking prediction is plausible, and there is some eye-tracking work suggesting that readers who hit a category garden path make regressions to the ambiguous word itself, while attachment revisions tend to send them back to the start of the phrase. I'm going from memory, so treat that as a hypothesis rather than a settled result.
+
+One wrinkle with your proposed test: the two sentence types differ in more than the kind of ambiguity. "The complex houses married and single soldiers" is a rare-category reanalysis, and the disambiguating word comes late. A matched attachment sentence would need similar length, similar disambiguation point, and comparable frequency of the misparse, otherwise any recovery difference could just be a difficulty confound.
+
+Here is a pair that's closer to matched in surface form:
+
+- Category: "The prime number seems odd." vs. "The prime seems odd to count." Hmm, that one doesn't work well, so I'll skip it.
+- Attachment: "The spy saw the cop with the binoculars, but the cop hadn't seen the spy." The second clause forces the reading where the cop holds the binoculars, so the low-attachment reading has to be revised.
+
+Maybe a cleaner approach is to hold the sentence frame constant and vary only the disambiguating word, so each ambiguity type gets measured in a single frame. That's hard with category ambiguity, though.
+
+Back to the guess-first test: A's "bank" example made me wonder whether a sentence like "The horse raced past the barn fell" is harder than "The old man the boats" because it needs both a rare category reading (raced as a passive participle) and a restructured clause. Which would you rate harder, and why?
+
+--- round 3, A
+I'd rate "The horse raced past the barn fell" harder, and I think the reason is the one you named, though I'd split it a bit differently.
+
+In "The old man the boats," the repair is a single swap: "old" becomes a noun and "man" becomes a verb. Once you make it, the sentence is a simple active clause. In the horse sentence, the repair is bigger. "Raced" has to switch from a simple past verb to a past participle in a reduced relative clause ("the horse that was raced past the barn"), and "fell" then becomes the main verb. A reduced relative also has no overt marker like "that was," so nothing in the input signals that it is coming. On top of that, the misparse is very strong. "The horse raced" is a nearly perfect complete clause, so the parser has little reason to doubt it until "fell" arrives.
+
+There is also a difference in how recoverable the sentence is. Many readers who get "The old man the boats" can fix it with a hint, but "The horse raced past the barn fell" often stays unparseable even when people know it is grammatical. I'd guess that is because the correct parse requires accepting "raced" as a transitive, causative use of the verb, which is rare, so frequency works against you twice.
+
+On your matching worry, one cleaner comparison is a pair like "The horse raced past the barn fell" versus "The horse ridden past the barn fell." The second uses an unambiguous participle, so the reduced relative is signaled, and any difficulty difference isolates the role of the "raced" ambiguity. That keeps length, structure and disambiguation point constant. Would that count as a fair test of category ambiguity, or does it just show that morphological marking removes the garden path?
+
+--- round 3, B
+A, I think the "ridden" comparison is a fair test, but of a narrower question than category ambiguity. "Raced" is ambiguous between a past tense and a past participle, which is a morphological ambiguity within one part of speech (verb). It's not the same as "man" being a noun or a verb. So the pair shows that unambiguous morphology removes the garden path, which is itself informative: it tells you the difficulty comes from the form being compatible with the main-clause reading, not from the reduced relative structure being hard per se. Reduced relatives with unambiguous participles are easy enough ("The horse ridden past the barn fell" is odd only because of the content).
+
+That also suggests a correction to a claim in your earlier message. You said the correct parse needs a rare transitive, causative use of "race." I think that is right, and it matters: "raced" as "someone raced the horse" is the less frequent argument structure, so that's an additional cost on top of the tense/participle ambiguity. If so, "The horse ridden past the barn fell" and "The horse raced past the barn fell" differ in two things, morphology and verb argument structure, so the pair isn't perfectly clean. A better control might be a verb that is transitive-dominant but still has identical past and participle forms, like "The horse pushed past the barn fell" or "The book sent to the editor arrived." Those keep the form ambiguity but remove the rare-argument-structure cost. If people find those easier than the "raced" version, that would give an estimate of how much of the difficulty is the verb's transitivity bias versus the tense/participle ambiguity.
+
+Do you think the data would show that transitivity bias matters more than the morphology?
+
+--- round 3, C
+C here. B's control is a good one, and I think the literature points toward transitivity bias mattering a lot. From memory (so treat it as a hypothesis), work on reduced relatives found that verbs with a strong transitive bias, like "sent" or "pushed," produce much weaker garden-path effects than intransitive-biased verbs like "raced." That fits constraint-based accounts, where the verb's argument-structure preference is one of the cues weighed immediately.
+
+So my guess is that transitivity bias carries more of the load than the tense/participle ambiguity. "The book sent to the editor arrived" is still form-ambiguous, but "sent" expects an object, and the following "to the editor" fits a passive reading, so the misparse loses support quickly.
+
+One more confound worth controlling: animacy. "The horse raced" has an animate subject that can plausibly be the agent, which strengthens the main-clause reading. "The evidence examined by the lawyer was unreliable" has an inanimate subject that is a poor agent, and the garden path shrinks. So a clean design would cross three factors: morphological ambiguity, verb transitivity bias, and subject animacy.
+
+A prediction: animacy and transitivity should interact. An animate subject with an intransitive-biased verb (the "horse raced" case) should be the worst, and an inanimate subject with a transitive-biased verb the easiest. If the effects were purely additive, that would favor separate mechanisms. An interaction would support the constraint-based picture we discussed earlier, where cues combine rather than operate in isolation.
+
+Does either of you know whether the interaction has actually been found, or is it just what the theory predicts?
+
+--- round 3, D
+D here. I'm not certain, but my recollection is that the interaction has been reported. The classic reference point is Trueswell, Tanenhaus and Kello (1994), who found that inanimate subjects reduced the garden-path effect for reduced relatives, and McRae, Spivey-Knowlton and Tanenhaus (1998) modeled how thematic fit and verb-form frequency combine. I can't vouch for the details, and I don't know whether anyone has run the full three-way crossing you describe, so treat the interaction as theory-supported rather than firmly established.
+
+There is also a measurement issue that could muddy an additivity test. Whether you see an interaction can depend on the scale. If effects combine multiplicatively in underlying processing time or probability, you can get what looks like an interaction in raw reading times even when the cues combine in a perfectly simple way on a log scale. So a fair test needs either a transformation justified in advance or a model that makes explicit predictions, like the competition models McRae et al. used.
+
+One more point about the horse sentence. Part of why it stays hard even with a hint may be that "raced" is also a very good fit with an animate agent, so animacy and transitivity both push the wrong way. That's your prediction in miniature: it's the worst case on both factors at once.
+
+A question back: if the interaction does hold, can a serial model with a frequency-first stage account for it? Or does the interaction effectively require that the parser consult plausibility immediately?
+

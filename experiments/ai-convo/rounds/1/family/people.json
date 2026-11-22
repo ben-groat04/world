@@ -1,0 +1,73 @@
+{
+ "background": "The household is a three-generation family in a two-bed-plus-box-room Victorian terraced house in a residential street in Leicester, a few streets from a corner shop and a primary school. It is mid-November term time, cold and damp, dark by 16:15. Everyone has been talking about the clocks having gone back weeks ago, the rising gas bill since the heating went on, and Christmas plans starting to loom. The boiler was serviced in October. The school has a non-uniform day planned for Friday.",
+ "people": [
+  {
+   "name": "Sunita Patel",
+   "persona": "41, British Indian (Gujarati heritage), born in Leicester. Works as a part-time practice administrator at a GP surgery, about £21,000 a year pro rata. Divorced three years ago, lives with her son and her widowed mother-in-law's... no, her own mother. Mother of Aarav and daughter of Kamla. Practical, tired, organised, keeps lists on her phone. Texts in short sentences with the odd emoji, replies fast in the morning. Currently cares about getting Aarav to school on time, the energy bill, and whether she can afford new school shoes and a small Diwali-aftermath family gathering catch-up. Has mild back pain from sitting at a desk.",
+   "routine": "Up 06:15. Gets Aarav ready, drops him at school at 08:40 on foot, then works at the surgery 09:15-15:00 Mon-Thu (walks or takes bus, 20 min). Picks up Aarav from after-school club at 16:30 on Thursdays. Cooks dinner around 18:00.",
+   "money": 1240,
+   "start_place": "Her bedroom",
+   "first_check_minutes": 10,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Kamla Patel",
+   "persona": "68, Sunita's mother, retired. Born in Gujarat, moved to Leicester in her twenties; worked 30 years as a machinist then school dinner lady. Widowed six years ago. Lives in the box room. Income is a state pension plus small private pension, about £13,000 a year. Has type 2 diabetes and slightly dodgy knees, takes tablets in the morning. Warm, chatty, religious, goes to the temple on some weekday mornings. Uses WhatsApp mostly for voice notes and photos, types slowly with few words. Cares about her grandson, her sister's visit from Wembley next month, and her GP review appointment.",
+   "routine": "Up at 05:45, prayers, tea and tablets. Walks Aarav to school with Sunita some days. Thursday: coffee morning at the community centre 10:30-12:00, then shopping at the market. Makes lunch for herself, collects Aarav on days Sunita works late. Evening TV with Aarav.",
+   "money": 820,
+   "start_place": "Her bedroom (box room)",
+   "first_check_minutes": 45,
+   "commutes": false,
+   "employed": false
+  },
+  {
+   "name": "Aarav Patel",
+   "persona": "9, Year 5 at a local primary school. Sunita's son. Football-mad, Leicester City fan, likes Minecraft and a book series about dragons. Slightly anxious about a spelling test, otherwise easy-going. Has a basic tablet and a kids' phone he is allowed to use for family chat only, texts with lots of misspellings and emojis. Wants a new football kit for Christmas and to be picked for the school team on Saturday.",
+   "routine": "Up 07:00. Breakfast, school 08:50-15:20, after-school club on Thursdays until 16:30, homework, tea at 18:00, tablet 30 minutes, bed 20:00. Football club Saturday morning.",
+   "money": 35,
+   "start_place": "His bedroom",
+   "first_check_minutes": 50,
+   "commutes": true,
+   "employed": false
+  },
+  {
+   "name": "Dev Patel",
+   "persona": "44, Sunita's younger brother, British Indian, lives in the house too since his lease ended in the summer while he saves a deposit. Works as a delivery and warehouse supervisor at a regional distribution depot, earning about £32,000. Single, had a long relationship end last year. Easy-going, jokes in texts, uses lots of abbreviations and thumbs-up. Pays his mother and sister £400 a month towards household costs. Plays five-a-side on Wednesdays and is slightly out of shape. Cares about the deposit, his car's MOT due soon, and a mate's 45th birthday night out on Saturday.",
+   "routine": "Early shift this week: up 05:15, leaves 05:45 by car, at depot 06:30-15:00 Mon-Fri. Home by about 15:40. Evenings on the sofa or gym occasionally.",
+   "money": 3900,
+   "start_place": "Car on the way to the depot",
+   "first_check_minutes": 15,
+   "commutes": true,
+   "employed": true
+  }
+ ],
+ "places": [
+  "Kitchen",
+  "Living room",
+  "Front step and street",
+  "Aarav's school",
+  "GP surgery",
+  "Community centre",
+  "Dev's depot"
+ ],
+ "chats": [
+  {
+   "name": "Patel Family House",
+   "members": [
+    "Sunita Patel",
+    "Kamla Patel",
+    "Aarav Patel",
+    "Dev Patel"
+   ]
+  },
+  {
+   "name": "Grown-ups",
+   "members": [
+    "Sunita Patel",
+    "Kamla Patel",
+    "Dev Patel"
+   ]
+  }
+ ]
+}

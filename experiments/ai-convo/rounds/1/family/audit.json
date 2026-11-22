@@ -1,0 +1,80 @@
+{
+ "rules": [
+  "You are one real person, not an assistant. Know only what you have seen or been told.",
+  "Text and speak like your person really does: length, punctuation, slang, typos, emoji (or none). British register.",
+  "Do things for your own reasons. Nobody tells you what should happen.",
+  "Money is real: you can only pay what is in your account; your balance is shown to you.",
+  "No therapy-speak, no speeches, no tidy resolutions."
+ ],
+ "decisions": 111,
+ "final": {
+  "Sunita Patel": {
+   "money": 1240,
+   "memory": "Fri 20:00. Park done, Aarav bathed and in bed, he's warm and OK. Now talk to Dev about the silent phone, calmly, not in front of Aarav. His Mon/Tues pickup offer is useful, probably say yes. Football 10 tomorrow, check with coach. Mum buys shoes Saturday, keep receipt. Balance £1240. Back aching, hot water bottle. Still angry, very tired."
+  },
+  "Kamla Patel": {
+   "money": 820,
+   "memory": "Aarav safe, fed, warm. Plates nearly done. Park trip with Sunita, cap and gloves. Football 10am tomorrow. Dev must keep phone off silent. Saturday market shoes, keep receipt. Sister from Wembley next month, GP review. Tired, knees achy, glad he is home."
+  },
+  "Aarav Patel": {
+   "money": 35,
+   "memory": "Bedtime, in bed. Football tomorrow at 10, hope coach picks me. Uncle Dev promised he will be on time Saturday after football and have loud phone. Beat him 3-0 on FIFA as Leicester. Want Leicester kit for Christmas. Still a bit scared from the gate being dark."
+  },
+  "Dev Patel": {
+   "money": 3900,
+   "memory": "Fri 19:30. FIFA with Aarav on sofa, he's Leicester 3-0 up, I'm Liverpool with sticky controller. Showed phone on loud + alarm. Promised not late Saturday. He said stop saying sorry. He asked me to pick him up from gate Saturday after football; I said yes, will set alarm. Offered Sunita Mon/Tues pickups. To do: MOT, Saturday's 45th, deposit."
+  }
+ },
+ "audit": {
+  "score": 4,
+  "breakers": [
+   {
+    "quote": "Sunita: \"...I'm going to have a sit in the front room for ten minutes before Dev's back.\" ... [Fri 15:40] Aarav: school finnished. im at the gate by the lite",
+    "why": "Sunita is off work and at home, Nani is at home, and per his memory Dev is in the kitchen at 15:40. Not one of them remembers a 9-year-old finishes at 15:20. A real mum keeps the pickup time in her head without trying. None of their memories even mention it."
+   },
+   {
+    "quote": "[Fri 16:20] Aarav: its 4:20 now 😢🥶 stil at the gate under the lite. everyone has gon home.",
+    "why": "No primary school leaves a Year 5 child alone at the gate for 40 minutes in the dark. On Thursday, after-school club also let him wait outside alone. Staff would keep him inside and ring his mum. Also, a scared child with a phone rings Mum. He doesn't send a timestamped text every 15 minutes."
+   },
+   {
+    "quote": "Kamla: \"Aarav beta, Nani is asking you. Jeans is okay? Come, say.\" (x6 across both women)",
+    "why": "Aarav is 'by the heater' but isn't a scene participant, so he can never answer. The two women ask the same question for about eight turns. It reads as a broken loop, not a family."
+   },
+   {
+    "quote": "Dev: \"Big mug, blue one, got it 👍 Sugar in yours Sun or no?\" / \"Half a spoon, got it 👍 Chai's nearly done\"",
+    "why": "Filler. Every person has to speak every turn, so making tea becomes a five-exchange negotiation. The kitchen scenes are the same: tea, paracetamol and 'sit sit beta', over and over."
+   },
+   {
+    "quote": "Fri 11:15 Kamla @Community centre (Went to the temple...) / Fri 12:45 Kamla: \"temple I go tomorrow\"",
+    "why": "Her memory says she went to the temple, then she says she didn't. Also, at 16:30 Kamla 'meets Dev on the front step' while Dev is in the school scene with Sunita. Where people are isn't kept consistent."
+   },
+   {
+    "quote": "Fri 07:55 Kamla: Aarav not down yet, Sunita went up to peek earlier. Going up to wake him gently now.",
+    "why": "Sunita is already walking him to school. Kamla spends about two hours 'keeping toast warm' for a child who has left. Her state is stale and never updated from what happened."
+   },
+   {
+    "quote": "Dev: \"Saturday after football? ... What time's it finish, 4ish?\"",
+    "why": "Football was set for 10am an hour earlier, in a scene Dev wasn't in. The plans don't add up, and no shared household calendar exists to catch it."
+   },
+   {
+    "quote": "Dev: \"Go on Mum, chai would be lush, ta.\"",
+    "why": "'Lush' is a Welsh/West Country word, not something a 44-year-old Leicester man says. Small, but a British reader notices."
+   }
+  ],
+  "mechanism_issues": [
+   "No shared household routine or calendar. School finish (15:20), club finish, who is collecting, football time and work days should be fixed facts that everyone in the house can see, with responsibilities that persist. Right now pickup only exists if someone happens to remember it in a chat, so both 'gate' crises were manufactured by a missing affordance, not by the characters.",
+   "Location and co-presence aren't authoritative. Dev's memory has him in the kitchen at 15:40 alongside Sunita and Kamla, but he isn't in their scene. Kamla is on the front step with Dev while Dev is at the school. The temple trip is contradicted. Scenes need to be built from one location state that every agent's memory is written back to.",
+   "People mentioned as present but not in the participant list (Aarav 'by the heater') can't respond, which causes long ask-again loops. Either pull named people who are in the room into the scene, or tell speakers who is actually there.",
+   "Forced round-robin turns. Everyone must speak every round, so scenes pad out with tea, paracetamol and back-rubbing. Speakers need a 'say nothing / carry on with what I'm doing / leave' option, and scenes should end automatically when two rounds add nothing new.",
+   "Phone messages are only seen between scenes or ticks, so a child texting for 40 minutes goes unseen by three adults in the same house. Model notifications buzzing during scenes, with some chance of being noticed. Add voice and phone calls as an action: a 9-year-old, Kamla (voice notes) and Sunita ('ring me') would all call.",
+   "No institutional NPCs. The school and after-school club should react (keep the child inside, phone the parent) rather than leave a 9-year-old outside alone in the dark.",
+   "Life events aren't conditioned on schedule or surfaced in context. Sunita gets a 'commute disrupted' event on Saturday when she doesn't work Saturdays. Kamla's family phone call on Thursday never appears in any scene or memory.",
+   "Memory snapshots re-copy a fixed worry list every 30 minutes ('Balance £1240', 'Sister from Wembley, GP review'). That anchors the characters and causes repetition, while real changes (Aarav already left for school, football is at 10) don't propagate. Snapshots should record what changed, not restate the persona.",
+   "Every 30-minute tick in the kitchen spawns a fresh scene that restarts from 'is there tea left?'. Low-activity stretches should be skipped or summarised instead of being played out as dialogue."
+  ],
+  "extra_rules": [
+   "Don't repeat a question or offer you've already made. If nothing new is happening, say nothing, get on with something, or leave."
+  ],
+  "verdict": "The voices are mostly right: Kamla's 'scuffed is not scuffed', Sunita giving in on the market shoes, and Aarav telling Dev to stop saying sorry. The run as a whole doesn't hold up. The big drama, a child stranded at the gate two days running, only happens because the simulation has no shared routine for school pickup, no school staff, no phone calls, and no consistent record of who is where. Dev was apparently in the kitchen while his nephew froze. The scenes in between pad out because everyone has to speak every turn and nobody can stay quiet, which gives you endless tea and the same question asked six times to a boy who isn't in the scene. Most fixes belong in the mechanism: a household calendar, authoritative locations, phone notifications and calls, institutional NPCs, and permission to say nothing. Adding more rules isn't the answer."
+ }
+}

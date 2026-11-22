@@ -1,0 +1,71 @@
+{
+ "label": "smoke-v3",
+ "setting": "Three adults sharing a rented flat in an inner-city neighbourhood of a UK city.",
+ "dateNote": "Friday in mid-November 2026; dark by 16:15",
+ "startDow": 4,
+ "startHour": 16,
+ "hours": 12,
+ "seed": 301,
+ "audit": true,
+ "attributes": [
+  {
+   "name": "Hayley Johnson",
+   "age": 41,
+   "sex": "female",
+   "ethnicity": "White British",
+   "birthplace": "United Kingdom",
+   "occupation": "Marketing associate",
+   "contract": "permanent",
+   "workplace": "city centre office, Mon-Wed office, Thu-Fri home",
+   "annual_income": 39500,
+   "hours_per_week": 37,
+   "household": {
+    "tenure": "private rent",
+    "bedrooms": 3
+   },
+   "relationship_status": "single",
+   "health": "good, asthma",
+   "education": "degree"
+  },
+  {
+   "name": "Junior Edwards",
+   "age": 55,
+   "sex": "male",
+   "ethnicity": "Black Caribbean",
+   "birthplace": "United Kingdom",
+   "occupation": "Hospital porter",
+   "contract": "permanent",
+   "annual_income": 25000,
+   "hours_per_week": 36,
+   "shifts": "3 x 12h shifts a week; this week Sat and Sun days 07:00-19:00",
+   "household": {
+    "tenure": "private rent",
+    "bedrooms": 3
+   },
+   "relationship_status": "divorced",
+   "health": "fair",
+   "education": "Level 3"
+  },
+  {
+   "name": "Yousif Al-Ani",
+   "age": 26,
+   "sex": "male",
+   "ethnicity": "Arab",
+   "birthplace": "Yemen",
+   "years_in_uk": 5,
+   "occupation": "Freelance designer",
+   "contract": "self-employed",
+   "workplace": "from home",
+   "annual_income": 15800,
+   "hours_per_week": 30,
+   "household": {
+    "tenure": "private rent",
+    "bedrooms": 3
+   },
+   "relationship_status": "single",
+   "health": "very good",
+   "education": "degree"
+  }
+ ],
+ "roleAgent": "sim"
+}

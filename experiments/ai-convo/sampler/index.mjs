@@ -11,7 +11,9 @@ import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
 export const D = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url), 'utf8'));
 const YEAR = 2025, DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], DEGK = 'deg';
-const O = D.O.map((r, i) => { const [t, pat, M, F, y, o, deg, se, ...q] = r; return { id: i + 1, t, pat, M, F, y, o, deg, se, pay: q.slice(0, 5), er: q[5].split('|') }; });
+const O = D.O.map(r => ({ code: r[0], t: r[1], pat: r[2].includes(':') ? r[2] : r[2] + ':1', J: { M: r[3], F: r[4] }, deg: r[5], se: r[6], pay: r.slice(7, 12), fth: r[12], pth: r[13], er: r[14].split('|') }));
+const byCode = c => O.find(r => r.code === +c);
+const BT = Object.fromEntries(Object.entries(D.bedTen).map(([k, v]) => [k, Object.fromEntries(v.split(',').map(x => x.split(':')))])); // tenure -> rating -> likelihood ratio
 const ACT = { ft: 'employed full-time', pt: 'employed part-time', se: 'self-employed', st: 'student', un: 'unemployed', re: 'retired', si: 'long-term sick or disabled', ho: 'looking after home or family', pre: 'pre-school child', sc: 'school pupil' };
 const LAB = { child: { M: 'son', F: 'daughter' }, parent: { M: 'father', F: 'mother' }, spouse: { M: 'husband', F: 'wife' }, partner: { M: 'partner', F: 'partner' }, sib: { M: 'brother', F: 'sister' }, gchild: { M: 'grandson', F: 'granddaughter' }, gparent: { M: 'grandfather', F: 'grandmother' }, pil: { M: 'father-in-law', F: 'mother-in-law' }, cil: { M: 'son-in-law', F: 'daughter-in-law' }, hm: { M: 'housemate (unrelated)', F: 'housemate (unrelated)' } };
 const INV = { child: 'parent', parent: 'child', spouse: 'spouse', partner: 'partner', sib: 'sib', gchild: 'gparent', gparent: 'gchild', pil: 'cil', cil: 'pil', hm: 'hm' };
@@ -28,7 +30,9 @@ const pk = (w, f) => { const e = ent(w), v = e.map(([k, x]) => +x * (f ? f(k) : 
 const one = a => a[Math.floor(R() * a.length)];
 const step = (t, x) => { let m = 1; for (const [f, v] of t) if (x >= f) m = v; return m; };
 const B = a => a < 18 ? 0 : a < 25 ? 1 : a < 35 ? 2 : a < 50 ? 3 : a < 65 ? 4 : a < 75 ? 5 : 6;
-const EB = a => a < 16 ? 0 : a < 25 ? 1 : a < 35 ? 2 : a < 50 ? 3 : a < 65 ? 4 : 5;
+const EB = a => a < 25 ? 0 : a < 35 ? 1 : a < 50 ? 2 : a < 65 ? 3 : 4;
+const AB = a => a < 22 ? 0 : a < 30 ? 1 : a < 40 ? 2 : a < 50 ? 3 : a < 60 ? 4 : 5; // ASHE age bands
+const UA = [-.25, -.12, 0, .05, .02, -.05]; // percentile shift by age band (assumption, small)
 const hm = t => { t = ((t % 24) + 24) % 24; return String(Math.floor(t)).padStart(2, '0') + ':' + (t % 1 ? '30' : '00'); };
 // ---------- person
 function ageSex(o) { // the one joint draw: age x sex, with optional range, profile and setting weights
@@ -42,25 +46,33 @@ function ageSex(o) { // the one joint draw: age x sex, with optional range, prof
 }
 const QS = [.1, .25, .5, .75, .9];
 function hourly(oc, age, uMax = .9) {
-  const u = cl((R() + R()) / 2 * .8 + .1 + (age < 25 ? -.18 : age < 35 ? -.05 : age < 55 ? .05 : 0), .1, uMax);
+  const u = cl((R() + R()) / 2 * .8 + .1 + UA[AB(age)], .1, uMax);
   let i = 0; while (i < 3 && u > QS[i + 1]) i++;
   const q = oc.pay, h = q[i] + (q[i + 1] - q[i]) * (u - QS[i]) / (QS[i + 1] - QS[i]);
-  return Math.round(h * (age < 21 ? .82 : 1) * 100) / 100; // 18-20: NMW is lower
+  return Math.round(Math.max(h * (age < 21 ? .82 : 1), age >= 21 ? 11.44 : 8.6) * 100) / 100; // legal floor (NLW/NMW Apr 2024)
 }
+const restOk = (days, st, els) => { // >=11h between shifts (cyclic over the week) and a >=35h gap (24h weekly rest + daily rest)
+  const n = days.length; let mx = 0;
+  for (let i = 0; i < n; i++) { const j = (i + 1) % n, end = days[i] * 24 + st[i] + els[i], nx = days[j] * 24 + st[j] + (j <= i ? 168 : 0), g = nx - end; if (n > 1 && g < 11) return false; mx = Math.max(mx, g); }
+  return n === 1 || mx >= 35;
+};
 function mkShifts(P, h) {
   const L = +pk(P.lens), n0 = cl(Math.round(h / L), 1, P.md), pool = [0, 1, 2, 3, 4, 5, 6].filter(d => d < 5 || P.we > 0), n = Math.min(n0, pool.length), days = [];
   while (days.length < n) days.push(+pk(pool.filter(d => !days.includes(d)).map(d => [d, d >= 5 ? P.we : 1])));
   days.sort((a, b) => a - b);
   const base = Math.round(h / n * 4) / 4, sts = P.st[L] || P.st.d;
-  return days.map((d, i) => {
-    const len = i === n - 1 ? Math.round((h - base * (n - 1)) * 4) / 4 : base, el = len + (len > 6 ? .5 : 0);
-    const ok = sts.filter(s => !P.endMax || s + el <= P.endMax), s = one(ok.length ? ok : [Math.min(...sts)]);
-    return { day: DAYS[d], start: hm(s), end: hm(s + el), paid_hours: len };
-  });
+  const lens = days.map((d, i) => i === n - 1 ? Math.round((h - base * (n - 1)) * 4) / 4 : base), els = lens.map(l => l + (l > 6 ? .5 : 0));
+  const okS = i => { const ok = sts.filter(s => !P.endMax || s + els[i] <= P.endMax); return ok.length ? ok : [Math.min(...sts)]; };
+  let st = null; const s0 = one(sts);
+  for (let t = 0; t < 60 && !st; t++) { const c = days.map((d, i) => { const o = okS(i); return R() < .65 && o.includes(s0) ? s0 : one(o); }); if (restOk(days, c, els)) st = c; }
+  st ??= days.map((d, i) => { const o = okS(i); return o.includes(s0) ? s0 : o[0]; }); // same start every day: rest = 24 - elapsed >= 11
+  return days.map((d, i) => ({ day: DAYS[d], start: hm(st[i]), end: hm(st[i] + els[i]), paid_hours: lens[i] }));
 }
-const wOcc = (r, sex, age, edu, act) => r[sex] * (age < 25 ? r.y : age >= 60 ? r.o : 1) * (r.deg > 0 ? (edu === DEGK ? 1 : r.deg > 1 ? 0 : .15) : r.deg < 0 && edu === DEGK ? .35 : 1) * (act === 'se' ? r.se : 1) * (act === 'pt' && r.deg < 0 ? 2 : 1);
+const wOcc = (r, sex, age, edu, act) => r.J[sex][AB(age)] * (r.deg > 0 ? (edu === DEGK ? 1 : r.deg > 1 ? 0 : .15) : r.deg < 0 && edu === DEGK ? .35 : 1) * (act === 'se' ? r.se : 1) * (act === 'pt' && r.deg < 0 ? 2 : 1);
 function firstName(eth, rel, sex, age) {
-  let pool = D.names[eth === 'in' ? (rel === 'Sikh' ? 'sikh' : rel === 'Muslim' ? 'pk' : 'in') : eth];
+  let alt = ['pk', 'bd', 'ao', 'oa', 'mx', 'cn'].includes(eth) ? { Sikh: 'sikh', Hindu: 'in', Jewish: 'wb' }[rel] : null; // names follow faith where the ethnic pool would clash
+  if (eth === 'mx' && !alt) alt = rel === 'Muslim' ? one(['pk', 'ao', 'wb']) : one(['wb', 'wb', 'bc']);
+  let pool = D.names[alt ?? (eth === 'in' ? (rel === 'Sikh' ? 'sikh' : rel === 'Muslim' ? 'pk' : 'in') : eth)];
   if (typeof pool === 'string') pool = D.names[one(pool.split(' '))];
   const v = pool[sex]; if (typeof v === 'string') return [one(v.split(' ')), one(pool.S)];
   const by = YEAR - age, i = by < 1960 ? 0 : by < 1980 ? 1 : by < 2000 ? 2 : 3;
@@ -73,23 +85,25 @@ function person(o = {}) {
   const a0 = age < 18 || R() < .22 ? ri(0, Math.min(15, age)) : ri(18, Math.min(38, age));
   const yrs = uk ? age : Math.min(age, Math.max(1, age - a0));
   const rel = o.rel ?? pk(D.rel[eth], k => k === 'No religion' ? (age < 35 ? 1.3 : age < 55 ? 1 : .75) : 1);
-  const act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1]);
-  const edu = kid ? null : o.edu ?? (act === 'st' ? (age < 22 ? pk('l3:85,gcse:15') : pk('deg:55,l3:45')) : pk(D.edu[b - 1], k => k === DEGK ? D.eduMul[eth] : 1));
+  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1]);
+  if (age >= 80 && ['ft', 'pt', 'se'].includes(act)) act = 're'; else if (age >= 75 && act === 'ft') act = 'pt'; // very few people work past 80
+  const edu = kid ? null : (o.edu === DEGK && age < 21 ? null : o.edu) ?? (act === 'st' ? (age < 22 ? pk('l3:85,gcse:15') : pk('deg:55,l3:45')) : pk(D.edu[b - 1], k => k === DEGK ? (age < 21 ? 0 : D.eduMul[eth]) : 1));
   let h = pk(D.health[kid ? 0 : b]);
   if (act === 'si') h = pk('fair:30,bad:45,very bad:25'); else if (act === 'ft' || act === 'se') while (h === 'very bad' || (h === 'bad' && R() < .6)) h = pk(D.health[b]);
   const emp = ['ft', 'pt', 'se'].includes(act) || (act === 'st' && (o.occ != null || R() < .38));
   const former = !emp && ['re', 'un', 'si', 'ho'].includes(act) && age >= 25;
-  let oc = null; if (emp || former) oc = O[(o.occ ?? +pk(emp && act === 'st' ? D.sj : Object.fromEntries(O.map(r => [r.id, wOcc(r, sex, age, edu, act === 'st' ? 'ft' : act)])))) - 1];
-  let P, hrs = 0, hp = null, shifts = [], inc = null, src = null;
+  let oc = null; if (emp || former) oc = byCode(o.occ ?? +pk(emp && act === 'st' ? D.sj : Object.fromEntries(O.map(r => [r.code, wOcc(r, sex, age, edu, act === 'st' ? 'ft' : act)]))));
+  let P, hrs = 0, hp = null, shifts = [], inc = null, src = null, earn = null;
   if (emp) {
-    P = D.pat[o.pat ?? (act === 'st' ? 'student' : oc.pat)];
-    hrs = Math.min(o.hrs ?? (act === 'ft' ? +pk(P.fth) : act === 'pt' ? +pk(D.ptHours) : act === 'se' ? ri(18, 50) : ri(6, 16)), P.md * P.cap);
-    hp = hourly(oc, age, o.uMax); shifts = mkShifts(P, hrs); inc = Math.round(hp * hrs * 52); src = 'earnings';
+    P = D.pat[o.pat ?? (act === 'st' ? 'student' : pk(oc.pat))];
+    hrs = Math.min(o.hrs ?? (act === 'ft' ? cl(Math.round(rn(oc.fth, 1.8) * 2) / 2, 30, 52) : act === 'pt' ? cl(Math.round(rn(oc.pth, 4) * 2) / 2, 8, 29.5) : act === 'se' ? ri(18, 50) : ri(6, 16)), P.md * P.cap);
+    hp = hourly(oc, age, o.uMax); shifts = mkShifts(P, hrs); earn = Math.round(hp * hrs * 52); inc = earn; src = 'earnings';
   } else if (D.inc[act]) { const [s, lo, hi] = D.inc[act]; src = s; inc = ri(lo, hi); }
+  if (act === 'st' && emp) { inc += ri(...D.inc.st.slice(1)); src = 'earnings + student support'; }
   const [fn, sn] = firstName(eth, rel, sex, age);
   const contract = !emp ? null : act === 'se' ? 'self-employed' : pk(D.contract, k => k === 'zero hours' ? P.zh * (act === 'st' ? 2.5 : 1) : 1);
   const employer = !emp ? null : o.emp ?? (act === 'se' ? 'self-employed (own account)' : pk(Object.fromEntries(oc.er.map((s, i) => [s, 1 / (i + 1)]))));
-  return { fn, sn, age, sex, eth, bp, yrs, rel, act, edu, h, oc, emp, former, P, hrs, hp, shifts, inc, src, contract, employer, role: o.role };
+  return { fn, sn, age, sex, eth, bp, yrs, rel, act, edu, h, oc, emp, former, P, hrs, hp, shifts, inc, src, earn, contract, employer, role: o.role };
 }
 // ---------- households
 function bedReq(M, C, type) { // ONS bedroom standard
@@ -101,7 +115,7 @@ function bedReq(M, C, type) { // ONS bedroom standard
 function build(type, pr, fo = {}, minK = 0) {
   const M = [], C = [], K = [], S = [], G = [], IL = [], foc = fo.p, ix = p => M.indexOf(p);
   const me = o => { const p = foc ?? person({ pr, ...fo, ...o }); M.push(p); return p; };
-  const mar = (a, b) => R() < D.marr[B(Math.max(a.age, b.age)) - 1];
+  const mar = (a, b) => R() < D.marr[a.sex][B(Math.max(a.age, b.age)) - 1];
   const partner = (a, minAge = 18, eth) => {
     const sx = R() < .012 ? a.sex : a.sex === 'M' ? 'F' : 'M', d = a.sex === sx ? rn(0, 3) : rn(2.2, 3.5);
     const e = eth ?? (R() < D.endog[a.eth] ? a.eth : a.eth === 'wb' ? pk(D.eth[EB(a.age)], k => k === 'wb' ? 0 : 1) : R() < .6 ? 'wb' : 'mx');
@@ -156,7 +170,8 @@ function finish(h, pr, tenure) {
   if (type === 'shared') for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) link(i, j, 'hm');
   const sur = () => K.forEach(([a, c]) => { const ps = K.filter(k => k[1] === c).map(k => M[k[0]]); M[c].sn = (ps.find(x => x.sex === 'M') ?? ps[0]).sn; });
   sur(); C.forEach(([a, b, m]) => { const [x, y] = M[a].sex === 'M' ? [M[a], M[b]] : [M[b], M[a]]; if (x.sex !== y.sex && R() < (m ? .75 : .15)) y.sn = x.sn; }); sur();
-  const stat = p => { const b = B(p.age) - 1, k = pk(D.rs[b], k => k === 'married' || k === 'cohab' ? 0 : k === 'widowed' ? (p.sex === 'F' ? 1.45 : .55) : k === 'divorced' ? (p.sex === 'F' ? 1.1 : .9) : 1); return k === 'single' ? (R() < D.lat[b] ? 'in a relationship (living apart)' : 'single') : k === 'divorced' ? 'separated or divorced' : k; };
+  const used = new Set(); M.forEach(p => { for (let t = 0; t < 40 && used.has(nameOf(p)); t++) p.fn = firstName(p.eth, p.rel, p.sex, p.age)[0]; used.add(nameOf(p)); });
+  const stat = p => { const b = B(p.age) - 1, k = pk(D.rs[p.sex][b], k => k === 'married' || k === 'cohab' ? 0 : 1); return k === 'single' ? (R() < D.lat[b] ? 'in a relationship (living apart)' : 'single') : k === 'divorced' ? 'separated or divorced' : k; };
   M.forEach((p, i) => { const c = C.find(x => x[0] === i || x[1] === i); p.status = c ? (c[2] ? 'married' : 'cohabiting') : p.age < 18 ? 'single' : stat(p); });
   const kidRec = (p, c) => ({ name: nameOf(c), age: c.age, lives: 'with me' });
   M.forEach((p, i) => {
@@ -166,19 +181,19 @@ function finish(h, pr, tenure) {
     for (let t = 0; t < cnt && !hasDep; t++) {
       const ka = p.age - Math.max(17, Math.round(rn(p.sex === 'F' ? 28.5 : 31.5, 5.5)));
       if (ka < 0 || (ka < 18 && (p.kids.length || R() > (p.sex === 'M' ? .35 : .1)))) continue;
-      const ks = one(['M', 'F']), [f] = firstName(p.eth, p.rel, ks, ka);
+      const ks = one(['M', 'F']); let f; for (let t = 0; t < 40; t++) { [f] = firstName(p.eth, p.rel, ks, ka); if (!used.has(f + ' ' + p.sn)) break; } used.add(f + ' ' + p.sn);
       p.kids.push({ name: f + ' ' + p.sn, age: ka, lives: ka < 18 ? 'with other parent' : ka < 24 && R() < .4 ? 'away at university' : 'own household' });
     }
   });
   const eld = Math.max(...M.filter(x => x.age >= 18).map(x => x.age)), req = bedReq(M, C, type), adults = M.filter(x => x.age >= 18).length;
   const tk = tenure ?? pk(D.ten[D.tt[type]], k => D.tenAge[eld < 35 ? 0 : eld < 65 ? 1 : 2][k] * Math.pow(D.prof.ten[k], pr));
   let bd = req + 1;
-  for (let t = 0; t < 20; t++) { const x = Math.max(1, req + +pk(D.bed[tk], k => k < 0 ? (type === 'shared' ? .35 : 1 + 3 * pr) : 1)); if (x * 2 >= adults && x * 3 >= n && (type !== 'shared' || x >= Math.max(2, n - 1))) { bd = x; break; } }
+  for (let t = 0; t < 20; t++) { const d = +pk(D.bedType[D.tt[type]], k => BT[tk][k] * (+k < 0 ? (type === 'shared' ? 0 : Math.pow(D.prof.over, pr)) : 1)), x = Math.max(1, req + (d === 2 ? (R() < .6 ? 2 : 3) : d)); if (x * 2 >= adults && x * 3 >= n && (type !== 'shared' || x >= Math.max(2, n - 1))) { bd = x; break; } }
   const kind = n === 1 ? 'one-person household' : type === 'shared' ? 'other household: unrelated adults sharing' : G.length ? 'multi-generation family household' : (C.length && K.length ? 'couple family' : K.length ? 'lone-parent family' : 'couple family') + (K.length ? (M.some(x => x.age < 18) ? ' with dependent children' : ' with non-dependent children') : ', no children');
   return M.map((p, i) => {
     const q = {
       name: nameOf(p), age: p.age, sex: p.sex, ethnicity: D.ethLabel[p.eth], birthplace: p.bp, years_in_uk: p.yrs, religion: p.rel, activity: ACT[p.act],
-      occupation: p.emp ? p.oc.t : null, contract: p.contract, employer: p.employer, annual_income: p.inc, hours_per_week: p.hrs, shifts: p.shifts,
+      occupation: p.emp ? p.oc.t : null, contract: p.contract, employer: p.employer, annual_income: p.inc, earnings_from_work: p.earn, hours_per_week: p.hrs, shifts: p.shifts,
       household: { type: kind, tenure: D.tenLabel[tk], bedrooms: bd, occupancy_rating: bd - req, size: n, members: M.map((m, j) => j === i ? null : { name: nameOf(m), age: m.age, sex: m.sex, relation: rel[i][j] }).filter(Boolean) },
       relationship_status: p.status, children: p.kids, health: p.h, education: p.edu ? D.eduLabel[p.edu] : p.age < 5 ? 'pre-school' : p.age < 11 ? 'primary school' : 'secondary school / college',
       hourly_pay: p.hp, income_source: p.src, role: p.role ?? null, former_occupation: p.former ? p.oc.t : null
@@ -196,6 +211,7 @@ function hhFor(p, pr) {
 // ---------- validation (works on output objects; resample on failure)
 export function validate(ps) {
   const E = [], e = (p, m) => E.push(`${p.name}: ${m}`);
+  if (new Set(ps.map(p => p.name)).size !== ps.length) E.push('duplicate names in group');
   for (const p of ps) {
     const { P, oc, act } = p._ ?? {}, h = p.household, hrs = p.hours_per_week, adults = h.members.filter(m => m.age >= 18).length + (p.age >= 18);
     if (!(p.age >= 0 && p.age <= 95)) e(p, 'age');
@@ -218,7 +234,9 @@ export function validate(ps) {
         if (!P.we && DAYS.indexOf(x.day) > 4) e(p, 'weekend shift in weekday-only job');
         if (P.endMax && st + x.paid_hours + (x.paid_hours > 6 ? .5 : 0) > P.endMax) e(p, 'cafe shift runs past ' + P.endMax);
       }
-      if (Math.abs(p.annual_income - Math.round(p.hourly_pay * hrs * 52)) > 1) e(p, 'pay != hourly x hours');
+      if (Math.abs(p.earnings_from_work - Math.round(p.hourly_pay * hrs * 52)) > 1) e(p, 'pay != hourly x hours');
+      if (p.hourly_pay < (p.age >= 21 ? 11.44 : 8.6)) e(p, 'below minimum wage');
+      if (!restOk(s.map(x => DAYS.indexOf(x.day)), s.map(x => +x.start.slice(0, 2) + (x.start.endsWith('30') ? .5 : 0)), s.map(x => x.paid_hours + (x.paid_hours > 6 ? .5 : 0)))) e(p, 'insufficient rest between shifts');
       if (p.hourly_pay < oc.pay[0] * (p.age < 21 ? .75 : 1) || p.hourly_pay > oc.pay[4]) e(p, 'hourly outside ASHE p10-p90');
       if (oc.deg > 1 && p._.edu !== DEGK) e(p, 'degree-required role without degree');
     }
@@ -249,7 +267,7 @@ const SET = {
   flatshare: (n, pr) => ({ people: finish(build('shared', pr, { n: Math.max(2, n) }), pr, 'priv') }),
   family: (n, pr) => { // one whole household of 3+ (n, if >= 3, is a target size)
     for (let t = 0; ; t++) {
-      const eth = pk(D.eth[3], k => Math.pow(D.prof.eth[k], pr)), type = pk(D.famType);
+      const eth = pk(D.eth[2], k => Math.pow(D.prof.eth[k], pr)), type = pk(D.famType);
       if (R() * 3.5 > (D.ethTilt[type]?.[eth] ?? 1)) continue;
       const h = build(type, pr, { eth }, type.startsWith('lone') ? 2 : 1);
       if (h && h.M.length >= 3 && (n < 3 || t > 400 || h.M.length === n)) return { people: finish(h, pr) };
@@ -257,10 +275,10 @@ const SET = {
   },
   cafe: (n, pr) => {
     const base = { pr, pat: 'cafe', emp: 'this café', aw: D.cafeAge, max: 65 };
-    const ps = [person({ ...base, act: 'se', occ: 2, role: 'owner-manager', min: 25, hrs: ri(45, 55), uMax: .5, emp: 'this café (owner)' })];
+    const ps = [person({ ...base, act: 'se', occ: 12, role: 'owner-manager', min: 25, hrs: ri(45, 55), uMax: .5, emp: 'this café (owner)' })];
     for (let i = 1; i < n; i++) {
       const cook = i === 1 && n >= 3, r = R();
-      ps.push(person(cook ? { ...base, occ: 16, role: 'cook', act: r < .75 ? 'ft' : 'pt' } : { ...base, occ: 24, role: one(['barista', 'counter assistant', 'server', 'kitchen assistant']), ...(r < .3 ? { act: 'st', max: 25 } : { act: r < .65 ? 'ft' : 'pt' }) }));
+      ps.push(person(cook ? { ...base, occ: 54, role: 'cook', act: r < .75 ? 'ft' : 'pt' } : { ...base, occ: 92, role: one(['barista', 'counter assistant', 'server', 'kitchen assistant']), ...(r < .3 ? { act: 'st', max: 25 } : { act: r < .65 ? 'ft' : 'pt' }) }));
     }
     return { people: ps.map(p => hhFor(p, pr)) };
   },
@@ -278,7 +296,7 @@ const SET = {
 };
 const PR = { flatshare: .5, family: 0, cafe: .5, street: 1, friends: .75 };
 export function sample(setting, n, seed) {
-  seedRng(seed); const g = retry(() => SET[setting](n, PR[setting])); return { setting, n, seed, ...g };
+  seedRng(setting + ':' + seed); const g = retry(() => SET[setting](n, PR[setting])); return { setting, n, seed, ...g };
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [, , s, n = 4, seed = 1] = process.argv;

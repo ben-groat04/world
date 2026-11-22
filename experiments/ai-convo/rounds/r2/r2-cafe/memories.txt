@@ -1,0 +1,167 @@
+## Beata Mazur
+Mon 10:00 [the simulation starts: decide where you are and what you are doing] @Café front of house: work
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 10:05 [after the conversation] @Café front of house: working the shift, serving and tidying (kept plan)
+   remembers: Dave dropped the milk and bread, I signed his invoice. Usual order, he'll be back Thursday.
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 10:10 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 10:20 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 10:30 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 10:40 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 10:50 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 11:00 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 11:10 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 11:20 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 11:30 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 11:40 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 11:50 [you looked up from what you were doing] @Café front of house: working the shift, serving and tidying (kept plan)
+   plan: until Mon 12:00: working the shift, serving and tidying @Café front of house / until Mon 12:30: doing the stock order I've been putting off @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 12:12 [next in your plan: doing the stock order I've been putting off @Café front of house; after the conversation] @Café front of house: doing the stock order I've been putting off
+   remembers: Gail says we're low on oat milk and cups. Medium cups and matching lids on the order. I'm checking the sleeve box in the back to see how many sleeves we need.
+   plan: until Mon 12:30: count sleeves, finish stock order @Café front of house / until Mon 15:30: lunch rush then closing up @Café front of house
+Mon 12:22 [you looked up from what you were doing; after the conversation] @Café front of house: count sleeves, finish stock order
+   remembers: Told Gail about 150 sleeves, roughly two boxes' worth, and put it on the order sheet. Sheet is nearly done and I'll ring it through after the rush.
+   plan: until Mon 12:35: finish order sheet, check lunch rush @Café front of house / until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 12:30 [you looked up from what you were doing; after the conversation] @Café front of house: finish order sheet, check lunch rush (kept plan)
+   remembers: Gail asked about sandwich bread for the rush. Told her Thursday's delivery is usually enough but added two extra loaves to the order sheet. Sun's out so it'll be busy.
+   plan: until Mon 12:35: finish order sheet, check lunch rush @Café front of house / until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 12:33 [you looked up from what you were doing] @Café front of house: finish order sheet, check lunch rush (kept plan)
+   plan: until Mon 12:35: finish order sheet, check lunch rush @Café front of house / until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 12:36 [next in your plan: lunch rush, ring through order after, close up @Café front of house] @Café front of house: lunch rush, ring through order after, close up (kept plan)
+   plan: until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 12:45 [you looked up from what you were doing] @Café front of house: lunch rush, ring through order after, close up (kept plan)
+   plan: until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 12:55 [you looked up from what you were doing] @Café front of house: lunch rush, ring through order after, close up (kept plan)
+   plan: until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 13:05 [you looked up from what you were doing] @Café front of house: lunch rush, ring through order after, close up (kept plan)
+   plan: until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 13:15 [you looked up from what you were doing] @Café front of house: lunch rush, ring through order after, close up (kept plan)
+   plan: until Mon 15:30: lunch rush, ring through order after, close up @Café front of house
+Mon 13:25 [you looked up from what you were doing] @Café front of house: lunch rush, ring through order after, close up
+   plan: until Mon 14:00: finish lunch rush, ring through the order @Café front of house [errand: ring through the supplier order] / until Mon 15:30: wipe down, cash up, close up @Café front of house
+Mon 13:35 [you looked up from what you were doing] @Café front of house: finish lunch rush, ring through the order
+   plan: until Mon 15:30: wipe down, cash up, close up @Café front of house
+Mon 13:50 [you looked up from what you were doing] @Café front of house: wipe down, cash up, close up (kept plan)
+   plan: until Mon 15:30: wipe down, cash up, close up @Café front of house
+
+## Chipo Banda
+Mon 10:00 [the simulation starts: decide where you are and what you are doing] @Café kitchen: work
+   plan: until Mon 12:00: cooking soups and bakes for lunch service @Café kitchen / until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 10:20 [you looked up from what you were doing] @Café kitchen: cooking soups and bakes for lunch service (kept plan)
+   plan: until Mon 12:00: cooking soups and bakes for lunch service @Café kitchen / until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 10:40 [you looked up from what you were doing] @Café kitchen: cooking soups and bakes for lunch service (kept plan)
+   plan: until Mon 12:00: cooking soups and bakes for lunch service @Café kitchen / until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 11:00 [you looked up from what you were doing] @Café kitchen: cooking soups and bakes for lunch service (kept plan)
+   plan: until Mon 12:00: cooking soups and bakes for lunch service @Café kitchen / until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 11:20 [you looked up from what you were doing] @Café kitchen: cooking soups and bakes for lunch service (kept plan)
+   plan: until Mon 12:00: cooking soups and bakes for lunch service @Café kitchen / until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 11:40 [you looked up from what you were doing] @Café kitchen: cooking soups and bakes for lunch service (kept plan)
+   plan: until Mon 12:00: cooking soups and bakes for lunch service @Café kitchen / until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 12:00 [next in your plan: lunch service, then clearing down and cleaning @Café kitchen] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 12:15 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 12:30 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 12:45 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 13:00 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 13:15 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 13:30 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+Mon 13:45 [you looked up from what you were doing] @Café kitchen: lunch service, then clearing down and cleaning (kept plan)
+   plan: until Mon 15:30: lunch service, then clearing down and cleaning @Café kitchen
+
+## Eilidh Campbell
+Mon 10:00 [the simulation starts: decide where you are and what you are doing] @Café front of house: work
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 10:42 [you looked up from what you were doing; after the conversation] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   remembers: Gail had me doing window tables, sugar pots, counter tops, then checked the milk fridge dates. Binned an undated oat milk, got told to label open cartons from now on. Taped dates on everything. Next was takeaway lids and tables.
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 10:50 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 11:00 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 11:10 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 11:20 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 11:30 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 11:40 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 11:50 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:00 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:10 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:20 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:30 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan) | talk to A regular customer
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:36 [after the conversation] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   remembers: Regular in a work jacket ordered a tea and plain cheese toastie, paid by card, sat by the window. I took his tea over.
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:40 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 12:50 [you looked up from what you were doing] @Café front of house: serving customers, chatting, wiping tables (kept plan)
+   plan: until Mon 13:00: serving customers, chatting, wiping tables @Café front of house / until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 13:16 [next in your plan: quick lunch break @Café front of house; you looked up from what you were doing; after the conversation] @Café front of house: quick lunch break (kept plan)
+   remembers: Gail gave me a toastie on my break, said lunch rush was mostly done. Told her I'm going up to Kirsty's on Friday afternoon and need to look up train times.
+   plan: until Mon 13:30: quick lunch break @Café front of house / until Mon 16:30: serving, tidying, closing up tasks @Café front of house
+Mon 13:30 [next in your plan: serving, tidying, closing up tasks @Café front of house] @Café front of house: serving, tidying, closing up tasks
+   plan: until Mon 13:45: finish toastie, look up Friday trains on phone @Café front of house / until Mon 16:30: serving, tidying, closing up @Café front of house
+Mon 13:55 [you looked up from what you were doing; after the conversation] @Café front of house: serving, tidying, closing up (kept plan)
+   remembers: Gail nagged me to book the Friday train. Booked one getting in about 3, screenshotted it, told Kirsty. Railcard is at home so using the digital one.
+   plan: until Mon 16:30: serving, tidying, closing up @Café front of house
+Mon 13:58 [next in your plan: serving, tidying, closing up @Café front of house] @Café front of house: serving, tidying, closing up (kept plan)
+   plan: until Mon 16:30: serving, tidying, closing up @Café front of house
+
+## Zara Whitaker-Mensah
+Mon 10:00 [the simulation starts: decide where you are and what you are doing] @Zara's room: 
+   plan: until Mon 11:00: watching a video essay on old synths, bit of studying @Zara's room / until Mon 12:00: coursework reading, last-minute bits @Zara's room / until Mon 13:00: making lunch @Whitaker-Mensah living room and kitchen
+Mon 10:30 [you looked up from what you were doing] @Zara's room: watching a video essay on old synths, bit of studying
+   plan: until Mon 11:00: finish synth video essay @Zara's room / until Mon 11:30: find lecture notes and photograph them for Jess @Zara's room / until Mon 12:30: coursework reading @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen
+Mon 11:00 [next in your plan: find lecture notes and photograph them for Jess @Zara's room] @Zara's room: find lecture notes and photograph them for Jess (kept plan)
+   plan: until Mon 11:30: find lecture notes and photograph them for Jess @Zara's room / until Mon 12:30: coursework reading @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen
+Mon 11:15 [you looked up from what you were doing] @Zara's room: find lecture notes and photograph them for Jess (kept plan)
+   plan: until Mon 11:30: find lecture notes and photograph them for Jess @Zara's room / until Mon 12:30: coursework reading @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen
+Mon 11:30 [next in your plan: coursework reading @Zara's room] @Zara's room: coursework reading (kept plan)
+   plan: until Mon 12:30: coursework reading @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen
+Mon 12:10 [you looked up from what you were doing] @Zara's room: coursework reading
+   plan: until Mon 12:40: coursework reading, photographing lecture notes for Jess @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen
+Mon 12:30 [you looked up from what you were doing] @Zara's room: coursework reading, photographing lecture notes for Jess
+   plan: until Mon 12:45: photographing lecture notes, sending to Jess with slides @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen
+Mon 12:40 [you looked up from what you were doing] @Zara's room: photographing lecture notes, sending to Jess with slides
+   plan: until Mon 12:55: sending note photos and slides to Jess @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen / until Mon 15:00: doing reading @Zara's room
+Mon 12:45 [you looked up from what you were doing] @Zara's room: sending note photos and slides to Jess (kept plan)
+   plan: until Mon 12:55: sending note photos and slides to Jess @Zara's room / until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen / until Mon 15:00: doing reading @Zara's room
+Mon 12:50 [you looked up from what you were doing] @Zara's room: sending note photos and slides to Jess
+   plan: until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen / until Mon 15:00: doing reading @Zara's room
+Mon 12:50   -> Whitaker-Mensah living room and kitchen (making lunch)
+Mon 13:00 [after the conversation] @Whitaker-Mensah living room and kitchen: making lunch (kept plan)
+   remembers: Quick chat with mum while making toast. Dad finished the unsalted butter Saturday but there was loads of salted left. Taking toast upstairs to read.
+   plan: until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen / until Mon 15:00: doing reading @Zara's room
+Mon 13:05 [you looked up from what you were doing] @Whitaker-Mensah living room and kitchen: making lunch (kept plan)
+   plan: until Mon 13:30: making lunch @Whitaker-Mensah living room and kitchen / until Mon 15:00: doing reading @Zara's room
+Mon 13:20 [you looked up from what you were doing] @Whitaker-Mensah living room and kitchen: making lunch
+   plan: until Mon 13:30: eating toast @Zara's room / until Mon 15:00: doing reading @Zara's room
+Mon 13:20   -> Zara's room (eating toast)
+Mon 13:30 [next in your plan: doing reading @Zara's room] @Zara's room: doing reading | ring Naomi Okafor
+   plan: until Mon 14:00: on the phone with Naomi, gossip @Zara's room / until Mon 15:30: doing reading @Zara's room
+Mon 13:46 [after the conversation] @Zara's room: doing reading
+   remembers: Called Naomi. Gossip: Priya (green coat, front of seminar) seen with Marcus, sharing a cake at the café by the union. Source is Jess Brennan from Naomi's halls, who sat across from them. Not official, just cake for now. Not Jess Hartley. Told her I'd get on with reading.
+   plan: until Mon 15:30: doing reading, drifting a bit @Zara's room

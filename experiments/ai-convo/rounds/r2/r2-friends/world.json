@@ -1,0 +1,1287 @@
+{
+ "chats_at_start": [
+  {
+   "name": "The Gang",
+   "members": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ]
+  }
+ ],
+ "setting": "a group of friends in an English city, each in their own home",
+ "context": {
+  "ties": [
+   {
+    "a": "Deborah Pritchard",
+    "b": "Lisa Ormerod",
+    "shared": [
+     "education"
+    ],
+    "age_gap": 2
+   },
+   {
+    "a": "Deborah Pritchard",
+    "b": "Ian Fletcher",
+    "shared": [
+     "education",
+     "religion"
+    ],
+    "age_gap": 1
+   },
+   {
+    "a": "Deborah Pritchard",
+    "b": "Ngozi Okafor",
+    "shared": [
+     "religion"
+    ],
+    "age_gap": 4
+   },
+   {
+    "a": "Lisa Ormerod",
+    "b": "Ian Fletcher",
+    "shared": [
+     "education"
+    ],
+    "age_gap": 3
+   },
+   {
+    "a": "Lisa Ormerod",
+    "b": "Ngozi Okafor",
+    "shared": [],
+    "age_gap": 6
+   },
+   {
+    "a": "Ian Fletcher",
+    "b": "Ngozi Okafor",
+    "shared": [
+     "religion"
+    ],
+    "age_gap": 3
+   }
+  ]
+ },
+ "background": "Four friends in their late forties to mid fifties live in separate homes in an English city. Deborah is unemployed and lives alone, Lisa lives in a crowded rented house with her husband and four adult children, Ian lives alone in a social rented flat, and Ngozi lives with her husband and young son in a house they are buying. It is a Tuesday evening in early December, after the working day.",
+ "common_knowledge": [
+  "The four are friends and have each other's numbers.",
+  "Deborah and Ian are both Christian, as is Ngozi.",
+  "Deborah is separated or divorced and has two daughters or children living independently.",
+  "Lisa works shifts in care and lives with her husband and four grown children.",
+  "Ian works early shifts on a grounds team and lives alone in a flat.",
+  "Ngozi is self-employed, married to Chidi, with a young son Emeka."
+ ],
+ "names": {
+  "sets": [
+   [
+    {
+     "id": "p1",
+     "name": "Karen Whitfield"
+    },
+    {
+     "id": "p2",
+     "name": "Ellie Whitfield"
+    },
+    {
+     "id": "p3",
+     "name": "Kayleigh Whitfield"
+    },
+    {
+     "id": "p4",
+     "name": "Sharon Dawson"
+    },
+    {
+     "id": "p5",
+     "name": "Gary Dawson"
+    },
+    {
+     "id": "p6",
+     "name": "Callum Dawson"
+    },
+    {
+     "id": "p7",
+     "name": "Chloe Dawson"
+    },
+    {
+     "id": "p8",
+     "name": "Megan Dawson"
+    },
+    {
+     "id": "p9",
+     "name": "Liam Dawson"
+    },
+    {
+     "id": "p10",
+     "name": "Paul Hendry"
+    },
+    {
+     "id": "p11",
+     "name": "Grace Adeyemi"
+    },
+    {
+     "id": "p12",
+     "name": "Tunde Adeyemi"
+    },
+    {
+     "id": "p13",
+     "name": "Daniel Adeyemi"
+    },
+    {
+     "id": "p14",
+     "name": "Temi Adeyemi"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Julie Marsh"
+    },
+    {
+     "id": "p2",
+     "name": "Amy Marsh"
+    },
+    {
+     "id": "p3",
+     "name": "Hannah Marsh"
+    },
+    {
+     "id": "p4",
+     "name": "Tracey Booth"
+    },
+    {
+     "id": "p5",
+     "name": "Steve Booth"
+    },
+    {
+     "id": "p6",
+     "name": "Jack Booth"
+    },
+    {
+     "id": "p7",
+     "name": "Lauren Booth"
+    },
+    {
+     "id": "p8",
+     "name": "Sophie Booth"
+    },
+    {
+     "id": "p9",
+     "name": "Ryan Booth"
+    },
+    {
+     "id": "p10",
+     "name": "Darren Collier"
+    },
+    {
+     "id": "p11",
+     "name": "Esther Mensah"
+    },
+    {
+     "id": "p12",
+     "name": "Kwame Mensah"
+    },
+    {
+     "id": "p13",
+     "name": "Kofi Mensah"
+    },
+    {
+     "id": "p14",
+     "name": "Abena Mensah"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Deborah Pritchard"
+    },
+    {
+     "id": "p2",
+     "name": "Georgia Pritchard"
+    },
+    {
+     "id": "p3",
+     "name": "Rebecca Pritchard"
+    },
+    {
+     "id": "p4",
+     "name": "Lisa Ormerod"
+    },
+    {
+     "id": "p5",
+     "name": "Martin Ormerod"
+    },
+    {
+     "id": "p6",
+     "name": "Tom Ormerod"
+    },
+    {
+     "id": "p7",
+     "name": "Hayley Ormerod"
+    },
+    {
+     "id": "p8",
+     "name": "Natalie Ormerod"
+    },
+    {
+     "id": "p9",
+     "name": "Josh Ormerod"
+    },
+    {
+     "id": "p10",
+     "name": "Ian Fletcher"
+    },
+    {
+     "id": "p11",
+     "name": "Ngozi Okafor"
+    },
+    {
+     "id": "p12",
+     "name": "Chidi Okafor"
+    },
+    {
+     "id": "p13",
+     "name": "Emeka Okafor"
+    },
+    {
+     "id": "p14",
+     "name": "Chioma Okafor"
+    }
+   ]
+  ],
+  "picked": 2
+ },
+ "knows_at_start": {
+  "Deborah Pritchard": {
+   "by_name": [
+    "Lisa Ormerod",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Lisa Ormerod",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Rebecca Pritchard",
+    "Georgia Pritchard",
+    "Gary Whitlow",
+    "Sandra Keane"
+   ]
+  },
+  "Lisa Ormerod": {
+   "by_name": [
+    "Deborah Pritchard",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Deborah Pritchard",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Bev Hartley",
+    "Karen Platt",
+    "Pauline Dunn",
+    "Martin Ormerod",
+    "Tom Ormerod",
+    "Hayley Ormerod",
+    "Natalie Ormerod",
+    "Josh Ormerod"
+   ]
+  },
+  "Ian Fletcher": {
+   "by_name": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ngozi Okafor"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Clive Marsden",
+    "Alan Fletcher",
+    "Dave Rimmer",
+    "Edna Boyle"
+   ]
+  },
+  "Ngozi Okafor": {
+   "by_name": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ian Fletcher"
+   ],
+   "numbers": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ian Fletcher"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Helen Cartwright",
+    "Adaeze Mbeki",
+    "Fiona Sharpe",
+    "Chioma Okafor",
+    "Chidi Okafor",
+    "Emeka Okafor"
+   ]
+  }
+ },
+ "workplace": {
+  "Lisa Ormerod": "Care workplace",
+  "Ian Fletcher": "Grounds depot"
+ },
+ "people": [
+  {
+   "name": "Deborah Pritchard",
+   "attributes": {
+    "id": "p1",
+    "age": 52,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 52,
+    "religion": "Christian",
+    "activity": "unemployed",
+    "occupation": null,
+    "contract": null,
+    "employer": null,
+    "annual_income": null,
+    "hours_per_week": 0,
+    "shifts": [],
+    "household": {
+     "type": "one-person household",
+     "tenure": "private rented",
+     "bedrooms": 4,
+     "occupancy_rating": 3,
+     "size": 1,
+     "members": []
+    },
+    "relationship_status": "separated or divorced",
+    "children": [
+     {
+      "id": "p2",
+      "age": 18,
+      "lives": "own household",
+      "name": "Georgia Pritchard"
+     },
+     {
+      "id": "p3",
+      "age": 26,
+      "lives": "own household",
+      "name": "Rebecca Pritchard"
+     }
+    ],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": null,
+    "role": null,
+    "name": "Deborah Pritchard"
+   },
+   "temperament": "openness low, conscientiousness average, extraversion average, agreeableness low, emotional stability average",
+   "profile": "You live alone in a rented four-bedroom house that is far too big for one person, and you've never quite got round to moving somewhere smaller. You're 52, out of work at the moment, and your days run on routine: up early, a long walk or a bike ride, a bit of job searching, then odds and ends around the house and garden. You're in good health and like to keep it that way. You trained through an apprenticeship years ago and still like fixing things yourself, whether that's a dripping tap, a bike chain or a shelf. You're separated and your two grown children have their own places. You see them when it suits, and you don't chase them. You like things done the way you're used to. You're slow to warm to new ideas, food, or gadgets, and you say so bluntly. You can be short with people who waffle or tell you what to do, and you don't often soften it afterwards. You like the radio, football on telly, crosswords, and a pint at the same pub with the same few people.",
+   "speech": "Plain and direct. Short sentences, little padding. Says what he thinks without much cushioning, and can sound curt or dismissive about things he doesn't fancy. Dry humour now and then. Asks few questions and doesn't dwell on feelings. Will talk at length only on things he knows, like fixing stuff or football.",
+   "texting": "Short, lower-case mostly, minimal punctuation, no emoji. Replies within a few hours, sometimes just a few words like a thumbs-up in text form. Rarely starts conversations, and doesn't bother with greetings or sign-offs.",
+   "contacts": [
+    {
+     "relation": "older child",
+     "about": "Grown-up son or daughter in their own place. Warm but busy, texts in bursts, teases you for being stubborn."
+    },
+    {
+     "relation": "younger child",
+     "about": "Eighteen and newly independent. Casual and brief, mostly gets in touch when they need something."
+    },
+    {
+     "relation": "friend from the pub",
+     "about": "Long-standing mate. Easygoing, chats about football and nothing much else, gives as good as he gets."
+    },
+    {
+     "relation": "former colleague",
+     "about": "Used to work alongside you. Chatty and upbeat, passes on job leads, and you find them a bit much."
+    }
+   ]
+  },
+  {
+   "name": "Lisa Ormerod",
+   "attributes": {
+    "id": "p4",
+    "age": 54,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 54,
+    "religion": "No religion",
+    "activity": "employed full-time",
+    "occupation": "Caring personal service occupations",
+    "contract": "employee",
+    "employer": null,
+    "annual_income": 24451,
+    "hours_per_week": 40.5,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "14:00",
+      "end": "22:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Thu",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Fri",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Sat",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Sun",
+      "start": "07:00",
+      "end": "16:00",
+      "paid_hours": 8.5
+     }
+    ],
+    "household": {
+     "type": "couple family with non-dependent children",
+     "tenure": "private rented",
+     "bedrooms": 3,
+     "occupancy_rating": -2,
+     "size": 6,
+     "members": [
+      {
+       "id": "p5",
+       "age": 56,
+       "sex": "M",
+       "relation": "husband",
+       "name": "Martin Ormerod"
+      },
+      {
+       "id": "p6",
+       "age": 20,
+       "sex": "M",
+       "relation": "son",
+       "name": "Tom Ormerod"
+      },
+      {
+       "id": "p7",
+       "age": 23,
+       "sex": "F",
+       "relation": "daughter",
+       "name": "Hayley Ormerod"
+      },
+      {
+       "id": "p8",
+       "age": 24,
+       "sex": "F",
+       "relation": "daughter",
+       "name": "Natalie Ormerod"
+      },
+      {
+       "id": "p9",
+       "age": 27,
+       "sex": "M",
+       "relation": "son",
+       "name": "Josh Ormerod"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p6",
+      "age": 20,
+      "lives": "with me",
+      "name": "Tom Ormerod"
+     },
+     {
+      "id": "p7",
+      "age": 23,
+      "lives": "with me",
+      "name": "Hayley Ormerod"
+     },
+     {
+      "id": "p8",
+      "age": 24,
+      "lives": "with me",
+      "name": "Natalie Ormerod"
+     },
+     {
+      "id": "p9",
+      "age": 27,
+      "lives": "with me",
+      "name": "Josh Ormerod"
+     }
+    ],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 11.61,
+    "role": null,
+    "name": "Lisa Ormerod"
+   },
+   "temperament": "openness average, conscientiousness average, extraversion average, agreeableness average, emotional stability high",
+   "profile": "You work as a care assistant, mostly early shifts that start at seven, with a late one on Mondays, and weekends are mostly work too. Your days are busy and on your feet, so evenings at home are about tea and sitting down. Six adults share a three-bed rented house, so it's crowded and there's always someone's washing, shoes or plates in the way. You've learned to let most of it go. You're steady and hard to rattle, which people lean on, though you can be a bit too calm when someone wants you to react. You like a crossword, daytime quiz shows, a bit of gardening in the small yard, and a long phone call on your day off. You're in good health, walk a fair bit, and cook big pots of food that stretch.",
+   "speech": "Warm, plain and unhurried. Medium-length sentences, direct without being blunt. You ask people how they are and mean it. You make light of problems and take your time to get to the point. Now and then you tease gently.",
+   "texting": "Short messages, mostly lower case with light punctuation. Occasional emoji, such as a smiley or a heart. You reply when you're off shift, so there can be gaps of a few hours on work days, and quickly on your days off.",
+   "contacts": [
+    {
+     "relation": "friend from work",
+     "about": "Care assistant you've worked alongside for years. Chatty and funny, swaps shifts with you and moans about rotas."
+    },
+    {
+     "relation": "sister",
+     "about": "Lives across the city. You talk most weeks about family and nothing much. She's a bit of a worrier and you settle her."
+    },
+    {
+     "relation": "neighbour and friend",
+     "about": "Lives a few doors down. Easygoing, borrows and lends things, and stops for a chat over the fence."
+    }
+   ]
+  },
+  {
+   "name": "Ian Fletcher",
+   "attributes": {
+    "id": "p10",
+    "age": 51,
+    "sex": "M",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 51,
+    "religion": "Christian",
+    "activity": "employed full-time",
+    "occupation": "Elementary trades and related occupations",
+    "contract": "employee",
+    "employer": null,
+    "annual_income": 30351,
+    "hours_per_week": 38,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "08:00",
+      "end": "16:00",
+      "paid_hours": 7.5
+     },
+     {
+      "day": "Wed",
+      "start": "07:00",
+      "end": "15:00",
+      "paid_hours": 7.5
+     },
+     {
+      "day": "Thu",
+      "start": "07:30",
+      "end": "15:30",
+      "paid_hours": 7.5
+     },
+     {
+      "day": "Fri",
+      "start": "07:30",
+      "end": "15:30",
+      "paid_hours": 7.5
+     },
+     {
+      "day": "Sat",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     }
+    ],
+    "household": {
+     "type": "one-person household",
+     "tenure": "social rented",
+     "bedrooms": 1,
+     "occupancy_rating": 0,
+     "size": 1,
+     "members": []
+    },
+    "relationship_status": "separated or divorced",
+    "children": [],
+    "health": "fair",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 15.36,
+    "role": null,
+    "name": "Ian Fletcher"
+   },
+   "temperament": "openness average, conscientiousness low, extraversion average, agreeableness average, emotional stability high",
+   "profile": "You work early shifts as a groundskeeper and general maintenance hand, five days a week including Saturdays, so you're up before it's light and mostly done by mid-afternoon. You live alone in a one-bed council flat that you keep tidy enough, though the post piles up and small jobs like the dripping tap wait months. Your knees and lower back complain after a day of lifting and digging, and you've learned to pace yourself and not make a fuss. You're even-tempered and hard to rattle, but you're disorganised: you forget birthdays, double-book yourself and turn up late with a shrug and an apology. Evenings are tea, the radio or the telly, a bit of football, and pottering with a small tub of herbs on the windowsill. You're divorced, on decent terms with it all now, and you like a pub quiz or a Sunday walk when your body allows.",
+   "speech": "Plain, easygoing and unhurried. Short to medium sentences, fairly direct, with a dry joke now and then. Says enough but doesn't ramble. Rarely gets worked up and tends to shrug things off. Will admit when he's forgotten something.",
+   "texting": "Short messages, mostly lowercase, light punctuation, almost no emoji. Replies are slow and patchy during work hours, then a burst in the evening. Sometimes forgets to answer until prompted.",
+   "contacts": [
+    {
+     "relation": "friend from the pub quiz",
+     "about": "Chatty and organised, sorts out the plans, and gets teased for it. Texts in full sentences."
+    },
+    {
+     "relation": "brother",
+     "about": "Lives a few towns away, rings on Sundays, talks football and family news, and is blunt but kind."
+    },
+    {
+     "relation": "former colleague",
+     "about": "Left the grounds team a while ago. They swap gossip and moans and meet up for the odd pint."
+    },
+    {
+     "relation": "neighbour in the flats",
+     "about": "Older woman across the landing who he checks in on and carries shopping for. She's warm and nosy."
+    }
+   ]
+  },
+  {
+   "name": "Ngozi Okafor",
+   "attributes": {
+    "id": "p11",
+    "age": 48,
+    "sex": "F",
+    "ethnicity": "Black African",
+    "birthplace": "Scotland",
+    "years_in_uk": 48,
+    "religion": "Christian",
+    "activity": "self-employed",
+    "occupation": "Business and public-service associate professionals",
+    "contract": "self-employed",
+    "employer": "self-employed",
+    "annual_income": null,
+    "hours_per_week": 35,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "08:30",
+      "end": "16:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Tue",
+      "start": "09:30",
+      "end": "17:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Wed",
+      "start": "09:30",
+      "end": "17:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Thu",
+      "start": "09:00",
+      "end": "16:30",
+      "paid_hours": 7
+     },
+     {
+      "day": "Fri",
+      "start": "09:00",
+      "end": "16:30",
+      "paid_hours": 7
+     }
+    ],
+    "household": {
+     "type": "couple family with dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 2,
+     "size": 3,
+     "members": [
+      {
+       "id": "p12",
+       "age": 50,
+       "sex": "M",
+       "relation": "husband",
+       "name": "Chidi Okafor"
+      },
+      {
+       "id": "p13",
+       "age": 11,
+       "sex": "M",
+       "relation": "son",
+       "name": "Emeka Okafor"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p13",
+      "age": 11,
+      "lives": "with me",
+      "name": "Emeka Okafor"
+     },
+     {
+      "id": "p14",
+      "age": 22,
+      "lives": "own household",
+      "name": "Chioma Okafor"
+     }
+    ],
+    "health": "good",
+    "education": "GCSE-level (level 1-2)",
+    "hourly_pay": null,
+    "role": null,
+    "name": "Ngozi Okafor"
+   },
+   "temperament": "openness average, conscientiousness average, extraversion high, agreeableness average, emotional stability average",
+   "profile": "You work for yourself, roughly nine-to-four or five most weekdays, doing admin and coordination for small businesses and a couple of local organisations from a desk in the spare room. You fit your day around school runs for your 11-year-old, and you're usually the one who has already rung three people before lunch. You like company and talk easily, which means you sometimes overrun, interrupt, or fill a silence that didn't need filling. You left school after GCSEs and learned everything on the job, and you're quietly proud of that. Evenings are usually dinner with your husband and son, then something on the telly. At weekends you like a long walk, a pub lunch, football on the sidelines for your son, and having people round. Your eldest has their own place and you like a regular catch-up with them.",
+   "speech": "Warm, chatty and quick. Mostly medium-length sentences that run on when you're enthusiastic. Direct and friendly, asks lots of questions back, tells little stories to make a point. Occasionally talks over the point and has to circle back. Plain everyday words.",
+   "texting": "Fairly quick replies, usually within minutes during the day. Short to medium messages, mostly lower case with relaxed punctuation, a few exclamation marks, the odd emoji like a smile or laughing face. Sometimes sends two or three messages in a row instead of one.",
+   "contacts": [
+    {
+     "relation": "friend from the school gate",
+     "about": "Another parent with a child the same age. Easygoing, swaps lifts and gossip, teases you for talking so much."
+    },
+    {
+     "relation": "older sister",
+     "about": "Lives a bit away. Blunt and funny, rings on Sundays, gives opinions you didn't ask for."
+    },
+    {
+     "relation": "friend of many years",
+     "about": "Known since your twenties. Dry humour, good for a long pub catch-up and honest advice."
+    },
+    {
+     "relation": "eldest child",
+     "about": "22, lives independently. Texts in short bursts, affectionate in a casual way, occasionally asks for help with life admin."
+    }
+   ]
+  }
+ ],
+ "places": [
+  {
+   "name": "Deborah's home",
+   "kind": "private",
+   "building": "Deborah's house",
+   "access": [
+    "Deborah Pritchard"
+   ]
+  },
+  {
+   "name": "Ormerod house living room",
+   "kind": "shared",
+   "building": "Ormerod house",
+   "access": [
+    "Lisa Ormerod",
+    "Martin Ormerod",
+    "Tom Ormerod",
+    "Hayley Ormerod",
+    "Natalie Ormerod",
+    "Josh Ormerod"
+   ]
+  },
+  {
+   "name": "Ormerod house kitchen",
+   "kind": "shared",
+   "building": "Ormerod house",
+   "access": [
+    "Lisa Ormerod",
+    "Martin Ormerod",
+    "Tom Ormerod",
+    "Hayley Ormerod",
+    "Natalie Ormerod",
+    "Josh Ormerod"
+   ]
+  },
+  {
+   "name": "Lisa and Martin's bedroom",
+   "kind": "private",
+   "building": "Ormerod house",
+   "access": [
+    "Lisa Ormerod",
+    "Martin Ormerod"
+   ]
+  },
+  {
+   "name": "Ormerod children's bedrooms",
+   "kind": "shared",
+   "building": "Ormerod house",
+   "access": [
+    "Tom Ormerod",
+    "Hayley Ormerod",
+    "Natalie Ormerod",
+    "Josh Ormerod",
+    "Lisa Ormerod",
+    "Martin Ormerod"
+   ]
+  },
+  {
+   "name": "Ian's flat",
+   "kind": "private",
+   "building": "Ian's flats",
+   "access": [
+    "Ian Fletcher"
+   ]
+  },
+  {
+   "name": "Flats landing",
+   "kind": "shared",
+   "building": "Ian's flats",
+   "access": [
+    "Ian Fletcher",
+    "Edna Boyle"
+   ]
+  },
+  {
+   "name": "Okafor house living room",
+   "kind": "shared",
+   "building": "Okafor house",
+   "access": [
+    "Ngozi Okafor",
+    "Chidi Okafor",
+    "Emeka Okafor"
+   ]
+  },
+  {
+   "name": "Okafor house kitchen",
+   "kind": "shared",
+   "building": "Okafor house",
+   "access": [
+    "Ngozi Okafor",
+    "Chidi Okafor",
+    "Emeka Okafor"
+   ]
+  },
+  {
+   "name": "Ngozi and Chidi's bedroom",
+   "kind": "private",
+   "building": "Okafor house",
+   "access": [
+    "Ngozi Okafor",
+    "Chidi Okafor"
+   ]
+  },
+  {
+   "name": "Emeka's bedroom",
+   "kind": "private",
+   "building": "Okafor house",
+   "access": [
+    "Emeka Okafor",
+    "Ngozi Okafor",
+    "Chidi Okafor"
+   ]
+  },
+  {
+   "name": "Care workplace",
+   "kind": "shared",
+   "building": "Care workplace",
+   "access": [
+    "Lisa Ormerod",
+    "Bev Hartley"
+   ]
+  },
+  {
+   "name": "Grounds depot",
+   "kind": "shared",
+   "building": "Grounds depot",
+   "access": [
+    "Ian Fletcher"
+   ]
+  },
+  {
+   "name": "School gate",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Local pub",
+   "kind": "public",
+   "building": "Local pub",
+   "access": []
+  },
+  {
+   "name": "Corner shop",
+   "kind": "public",
+   "building": "Corner shop",
+   "access": []
+  },
+  {
+   "name": "Park",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "elsewhere",
+   "kind": "public",
+   "building": "",
+   "access": []
+  }
+ ],
+ "contacts": [
+  {
+   "name": "Rebecca Pritchard",
+   "role": "Deborah's older daughter, 26",
+   "about": "Warm but busy, texts in bursts, teases her mum for being stubborn.",
+   "linked": [
+    "Deborah Pritchard"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Georgia Pritchard",
+   "role": "Deborah's younger daughter, 18",
+   "about": "Casual and brief, mostly gets in touch when she needs something.",
+   "linked": [
+    "Deborah Pritchard"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Gary Whitlow",
+   "role": "Deborah's friend from the pub",
+   "about": "Long-standing mate, easygoing, chats about football and gives as good as he gets.",
+   "linked": [
+    "Deborah Pritchard"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Sandra Keane",
+   "role": "Deborah's former colleague",
+   "about": "Chatty and upbeat, passes on job leads, a bit much.",
+   "linked": [
+    "Deborah Pritchard"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Bev Hartley",
+   "role": "Lisa's friend and care assistant colleague",
+   "about": "Chatty and funny, swaps shifts and moans about rotas.",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Karen Platt",
+   "role": "Lisa's sister",
+   "about": "Lives across the city, talks most weeks about family, a bit of a worrier.",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Pauline Dunn",
+   "role": "Lisa's neighbour and friend",
+   "about": "Lives a few doors down, easygoing, borrows and lends, chats over the fence.",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Clive Marsden",
+   "role": "Ian's friend from the pub quiz",
+   "about": "Chatty and organised, sorts the plans, gets teased for it, texts in full sentences.",
+   "linked": [
+    "Ian Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Alan Fletcher",
+   "role": "Ian's brother",
+   "about": "Lives a few towns away, rings on Sundays, talks football and family news, blunt but kind.",
+   "linked": [
+    "Ian Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Dave Rimmer",
+   "role": "Ian's former colleague from the grounds team",
+   "about": "Swaps gossip and moans with Ian and meets him for the odd pint.",
+   "linked": [
+    "Ian Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Edna Boyle",
+   "role": "Ian's older neighbour in the flats",
+   "about": "Lives across the landing, warm and nosy; Ian checks in on her and carries her shopping.",
+   "linked": [
+    "Ian Fletcher"
+   ],
+   "place": "Flats landing",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Helen Cartwright",
+   "role": "Ngozi's friend from the school gate",
+   "about": "Parent of a child the same age as Emeka, easygoing, swaps lifts and gossip, teases Ngozi for talking so much.",
+   "linked": [
+    "Ngozi Okafor"
+   ],
+   "place": "School gate",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Adaeze Mbeki",
+   "role": "Ngozi's older sister",
+   "about": "Lives a bit away, blunt and funny, rings on Sundays, gives unrequested opinions.",
+   "linked": [
+    "Ngozi Okafor"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Fiona Sharpe",
+   "role": "Ngozi's friend of many years",
+   "about": "Known since their twenties, dry humour, good for a long pub catch-up and honest advice.",
+   "linked": [
+    "Ngozi Okafor"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Chioma Okafor",
+   "role": "Ngozi's eldest child, 22",
+   "about": "Lives independently, texts in short bursts, casually affectionate, sometimes asks for help with life admin.",
+   "linked": [
+    "Ngozi Okafor"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Martin Ormerod",
+   "role": "Lisa Ormerod's husband",
+   "about": "56 husband, lives with Lisa Ormerod",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "Ormerod house",
+   "at": {
+    "place": "Lisa and Martin's bedroom",
+    "until": 231,
+    "doing": "Martin is in the bedroom too, getting ready for bed, hanging up his work shirt and setting his alarm."
+   },
+   "seen": [
+    "18:00-18:15 at Ormerod house kitchen",
+    "18:59-19:04 at Ormerod house kitchen",
+    "19:20-21:20 at Ormerod house living room",
+    "21:31-21:51 at Lisa and Martin's bedroom"
+   ]
+  },
+  {
+   "name": "Tom Ormerod",
+   "role": "Lisa Ormerod's son",
+   "about": "20 son, lives with Lisa Ormerod",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "Ormerod house",
+   "at": {
+    "place": "Ormerod house kitchen",
+    "until": 15,
+    "doing": "Drifts in, grabs a biscuit from the tin and leans on the counter scrolling his phone."
+   },
+   "seen": [
+    "18:05-18:15 at Ormerod house kitchen"
+   ]
+  },
+  {
+   "name": "Hayley Ormerod",
+   "role": "Lisa Ormerod's daughter",
+   "about": "23 daughter, lives with Lisa Ormerod",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "Ormerod house",
+   "at": null
+  },
+  {
+   "name": "Natalie Ormerod",
+   "role": "Lisa Ormerod's daughter",
+   "about": "24 daughter, lives with Lisa Ormerod",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "Ormerod house",
+   "at": null
+  },
+  {
+   "name": "Josh Ormerod",
+   "role": "Lisa Ormerod's son",
+   "about": "27 son, lives with Lisa Ormerod",
+   "linked": [
+    "Lisa Ormerod"
+   ],
+   "place": "",
+   "home": "Ormerod house",
+   "at": null
+  },
+  {
+   "name": "Chidi Okafor",
+   "role": "Ngozi Okafor's husband",
+   "about": "50 husband, lives with Ngozi Okafor",
+   "linked": [
+    "Ngozi Okafor"
+   ],
+   "place": "",
+   "home": "Okafor house",
+   "at": {
+    "place": "Okafor house living room",
+    "until": 215,
+    "doing": "Sitting on the sofa with a laptop on his knee, glancing at the stairs, waiting to go up and say night to Emeka with Ngozi."
+   },
+   "seen": [
+    "18:00-18:30 at Okafor house kitchen",
+    "18:42-19:27 at Okafor house kitchen",
+    "19:50-20:40 at Okafor house living room",
+    "20:52-21:04 at Okafor house living room",
+    "21:05-21:35 at Okafor house living room"
+   ]
+  },
+  {
+   "name": "Emeka Okafor",
+   "role": "Ngozi Okafor's son",
+   "about": "11 son, lives with Ngozi Okafor",
+   "linked": [
+    "Ngozi Okafor"
+   ],
+   "place": "",
+   "home": "Okafor house",
+   "at": {
+    "place": "Okafor house living room",
+    "until": 160,
+    "doing": "Sprawled on the sofa with a blanket, half watching the telly and half doing something on a tablet, then asks what's on next."
+   },
+   "seen": [
+    "18:00-18:30 at Okafor house kitchen",
+    "18:42-19:27 at Okafor house kitchen",
+    "19:40-20:40 at Okafor house living room"
+   ]
+  }
+ ],
+ "dropped": [],
+ "events_given": [],
+ "knows_at_end": {
+  "Deborah Pritchard": {
+   "by_name": [
+    "Lisa Ormerod",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Lisa Ormerod",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Rebecca Pritchard",
+    "Georgia Pritchard",
+    "Gary Whitlow",
+    "Sandra Keane"
+   ]
+  },
+  "Lisa Ormerod": {
+   "by_name": [
+    "Deborah Pritchard",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Deborah Pritchard",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Bev Hartley",
+    "Karen Platt",
+    "Pauline Dunn",
+    "Martin Ormerod",
+    "Tom Ormerod",
+    "Hayley Ormerod",
+    "Natalie Ormerod",
+    "Josh Ormerod"
+   ]
+  },
+  "Ian Fletcher": {
+   "by_name": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ngozi Okafor"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Clive Marsden",
+    "Alan Fletcher",
+    "Dave Rimmer",
+    "Edna Boyle"
+   ]
+  },
+  "Ngozi Okafor": {
+   "by_name": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ian Fletcher",
+    "Ngozi Okafor"
+   ],
+   "numbers": [
+    "Deborah Pritchard",
+    "Lisa Ormerod",
+    "Ian Fletcher"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Helen Cartwright",
+    "Adaeze Mbeki",
+    "Fiona Sharpe",
+    "Chioma Okafor",
+    "Chidi Okafor",
+    "Emeka Okafor"
+   ]
+  }
+ }
+}

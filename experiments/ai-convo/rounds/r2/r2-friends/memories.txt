@@ -1,0 +1,93 @@
+## Deborah Pritchard
+Tue 18:00 [the simulation starts: decide where you are and what you are doing] @Deborah's home: 
+   plan: until Tue 19:00: tea, then crossword with radio on @Deborah's home / until Tue 21:30: football on telly @Deborah's home / until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+Tue 19:00 [next in your plan: football on telly @Deborah's home] @Deborah's home: football on telly (kept plan)
+   plan: until Tue 21:30: football on telly @Deborah's home / until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+Tue 19:30 [you looked up from what you were doing] @Deborah's home: football on telly (kept plan)
+   plan: until Tue 21:30: football on telly @Deborah's home / until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+Tue 20:00 [you looked up from what you were doing] @Deborah's home: football on telly (kept plan)
+   plan: until Tue 21:30: football on telly @Deborah's home / until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+Tue 20:30 [you looked up from what you were doing] @Deborah's home: football on telly (kept plan)
+   plan: until Tue 21:30: football on telly @Deborah's home / until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+Tue 21:00 [you looked up from what you were doing] @Deborah's home: football on telly (kept plan)
+   plan: until Tue 21:30: football on telly @Deborah's home / until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+Tue 21:30 [next in your plan: tidy up, bed @Deborah's home] @Deborah's home: tidy up, bed (kept plan)
+   plan: until Tue 22:30: tidy up, bed @Deborah's home / until Wed 06:00: asleep @Deborah's home (asleep)
+
+## Lisa Ormerod
+Tue 18:00 [the simulation starts: decide where you are and what you are doing] @Lisa and Martin's bedroom: 
+   plan: until Tue 18:45: making a big pot of tea for everyone @Ormerod house kitchen / until Tue 20:00: eating tea, sitting down @Ormerod house living room / until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 18:00   -> Ormerod house kitchen (making a big pot of tea for everyone)
+Tue 18:58 [you looked up from what you were doing; after the conversation] @Ormerod house kitchen: making a big pot of tea for everyone
+   remembers: Made chicken and veg stew, ate with Martin. He was tired but fine, work was just busy. Josh and Tom didn't come down, so I saved bowls for them.
+   plan: until Tue 19:20: washing the pot, tidying up @Ormerod house kitchen / until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 19:03 [after the conversation] @Ormerod house kitchen: washing the pot, tidying up (kept plan)
+   remembers: Martin and I lifted the heavy stew pot into the sink between us. He went to put his feet up and I started scrubbing it.
+   plan: until Tue 19:20: washing the pot, tidying up @Ormerod house kitchen / until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 19:08 [you looked up from what you were doing] @Ormerod house kitchen: washing the pot, tidying up (kept plan)
+   plan: until Tue 19:20: washing the pot, tidying up @Ormerod house kitchen / until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 19:18 [you looked up from what you were doing] @Ormerod house kitchen: washing the pot, tidying up (kept plan)
+   plan: until Tue 19:20: washing the pot, tidying up @Ormerod house kitchen / until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 19:20   -> Ormerod house living room (crossword and telly)
+Tue 19:21 [next in your plan: crossword and telly @Ormerod house living room] @Ormerod house living room: crossword and telly (kept plan)
+   plan: until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 19:50 [you looked up from what you were doing] @Ormerod house living room: crossword and telly (kept plan)
+   plan: until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 20:20 [you looked up from what you were doing] @Ormerod house living room: crossword and telly (kept plan)
+   plan: until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 20:50 [you looked up from what you were doing] @Ormerod house living room: crossword and telly (kept plan)
+   plan: until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 21:20 [you looked up from what you were doing] @Ormerod house living room: crossword and telly (kept plan)
+   plan: until Tue 21:30: crossword and telly @Ormerod house living room / until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+Tue 21:30   -> Lisa and Martin's bedroom (getting ready for bed)
+Tue 21:47 [next in your plan: getting ready for bed @Lisa and Martin's bedroom; after the conversation] @Lisa and Martin's bedroom: getting ready for bed (kept plan)
+   remembers: Bedtime with Martin. Checked the back door was locked and his alarm was right for the early start. Lights out, settling to sleep.
+   plan: until Tue 22:30: getting ready for bed @Lisa and Martin's bedroom / until Wed 06:00: sleep @Lisa and Martin's bedroom (asleep)
+
+## Ian Fletcher
+Tue 18:00 [the simulation starts: decide where you are and what you are doing] @Ian's flat: 
+   plan: until Tue 19:00: making tea, eating, sorting a bit of post @Ian's flat / until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 18:30 [you looked up from what you were doing] @Ian's flat: making tea, eating, sorting a bit of post (kept plan)
+   plan: until Tue 19:00: making tea, eating, sorting a bit of post @Ian's flat / until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 19:00 [next in your plan: telly and radio, watering herbs @Ian's flat] @Ian's flat: telly and radio, watering herbs (kept plan)
+   plan: until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 19:30 [you looked up from what you were doing] @Ian's flat: telly and radio, watering herbs (kept plan)
+   plan: until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 20:00 [you looked up from what you were doing] @Ian's flat: telly and radio, watering herbs (kept plan)
+   plan: until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 20:30 [you looked up from what you were doing] @Ian's flat: telly and radio, watering herbs (kept plan)
+   plan: until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 21:00 [you looked up from what you were doing] @Ian's flat: telly and radio, watering herbs (kept plan)
+   plan: until Tue 21:30: telly and radio, watering herbs @Ian's flat / until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+Tue 21:30 [next in your plan: getting ready for bed @Ian's flat] @Ian's flat: getting ready for bed (kept plan)
+   plan: until Tue 22:00: getting ready for bed @Ian's flat / until Wed 05:45: asleep @Ian's flat (asleep)
+
+## Ngozi Okafor
+Tue 18:00 [the simulation starts: decide where you are and what you are doing] @Ngozi and Chidi's bedroom: 
+   plan: until Tue 18:30: helping make dinner, chatting with Chidi and Emeka @Okafor house kitchen / until Tue 19:30: eating dinner with family @Okafor house kitchen / until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 18:00   -> Okafor house kitchen (helping make dinner, chatting with Chidi and Emeka)
+Tue 18:41 [you looked up from what you were doing; after the conversation] @Okafor house kitchen: eating dinner with family (kept plan)
+   remembers: Got Emeka through his last two spellings (necessary, separate), had him lay the table, and chased Chidi out of his daydream to bring the sauce. Chidi says it's work stuff, a deadline creeping closer on the same project. We're eating now. Emeka got one spelling wrong, a double-letter word, and we'll look at it after pudding.
+   plan: until Tue 19:30: eating dinner with family @Okafor house kitchen / until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 18:44 [next in your plan: eating dinner with family @Okafor house kitchen] @Okafor house kitchen: eating dinner with family (kept plan)
+   plan: until Tue 19:30: eating dinner with family @Okafor house kitchen / until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 18:50 [you looked up from what you were doing] @Okafor house kitchen: eating dinner with family (kept plan)
+   plan: until Tue 19:30: eating dinner with family @Okafor house kitchen / until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 19:39   -> Okafor house living room (telly with family, checking phone now and then)
+Tue 19:39 [you looked up from what you were doing; after the conversation] @Okafor house living room: telly with family, checking phone now and then (kept plan)
+   remembers: Went over Emeka's spellings with him: definitely, separate and necessary, all right by the end. Pudding with custard, then bag and reading book, then a bit of telly.
+   plan: until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 19:42 [next in your plan: telly with family, checking phone now and then @Okafor house living room] @Okafor house living room: telly with family, checking phone now and then (kept plan)
+   plan: until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 20:27 [you looked up from what you were doing; after the conversation] @Okafor house living room: telly with family, checking phone now and then (kept plan)
+   remembers: Tested Emeka on his spelling words, he got all ten right including knife. Gave him a sticker for the fridge, then teeth and I'll go up to say night.
+   plan: until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 20:30 [you looked up from what you were doing] @Okafor house living room: telly with family, checking phone now and then (kept plan)
+   plan: until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 20:50 [you looked up from what you were doing] @Okafor house living room: telly with family, checking phone now and then
+   plan: until Tue 21:05: waiting for Emeka to finish teeth, then go up to say night @Okafor house living room / until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 21:01 [you looked up from what you were doing; after the conversation] @Okafor house living room: waiting for Emeka to finish teeth, then go up to say night (kept plan)
+   remembers: Chidi wants to say night to Emeka too. Said we'd give him a few minutes to finish teeth and go up together.
+   plan: until Tue 21:05: waiting for Emeka to finish teeth, then go up to say night @Okafor house living room / until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)
+Tue 21:05 [next in your plan: telly with family, checking phone now and then @Okafor house living room] @Okafor house living room: telly with family, checking phone now and then (kept plan) | talk to Chidi Okafor
+   plan: until Tue 22:00: telly with family, checking phone now and then @Okafor house living room / until Tue 22:30: getting ready for bed @Ngozi and Chidi's bedroom / until Tue 23:59: asleep @Ngozi and Chidi's bedroom (asleep)

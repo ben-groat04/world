@@ -1,0 +1,65 @@
+{
+ "Deborah Pritchard": {
+  "place": "Deborah's home",
+  "doing": "tidy up, bed",
+  "turns": 7,
+  "days": {},
+  "journal": [
+   "Tue 19:25 Georgia Pritchard texted: mum are you in later? might pop round tmrw to grab my charger, left it in the front room",
+   "Tue 19:30 you → Georgia Pritchard: in all day. charger's on the front room table"
+  ]
+ },
+ "Lisa Ormerod": {
+  "place": "Lisa and Martin's bedroom",
+  "doing": "getting ready for bed",
+  "turns": 11,
+  "days": {},
+  "journal": [
+   "Tue 18:00 you went to Ormerod house kitchen: making a big pot of tea for everyone",
+   "Tue 18:00 Martin Ormerod is here (Wanders into the kitchen after work, looking for a mug and asking what's for tea.).",
+   "Tue 18:05 Tom Ormerod is here (Drifts in, grabs a biscuit from the tin and leans on the counter scrolling his phone.).",
+   "Tue 18:58 conversation at Ormerod house kitchen with Martin Ormerod [ref 18:00]: Made chicken and veg stew, ate with Martin. He was tired but fine, work was just busy. Josh and Tom didn't come down, so I saved bowls for them.",
+   "Tue 18:59 Martin Ormerod is here (Wipes the table and puts the bowls by the sink, then wanders off to the sofa with his tea.).",
+   "Tue 19:03 conversation at Ormerod house kitchen with Martin Ormerod [ref 19:00]: Martin and I lifted the heavy stew pot into the sink between us. He went to put his feet up and I started scrubbing it.",
+   "Tue 19:20 you went to Ormerod house living room: crossword and telly",
+   "Tue 19:20 Martin Ormerod is here (Sits in his armchair with his tea, half watching the telly, and says little.).",
+   "Tue 21:30 you went to Lisa and Martin's bedroom: getting ready for bed",
+   "Tue 21:31 Martin Ormerod is here (Martin is in the bedroom too, getting ready for bed, hanging up his work shirt and setting his alarm.).",
+   "Tue 21:47 conversation at Lisa and Martin's bedroom with Martin Ormerod [ref 21:30]: Bedtime with Martin. Checked the back door was locked and his alarm was right for the early start. Lights out, settling to sleep."
+  ]
+ },
+ "Ian Fletcher": {
+  "place": "Ian's flat",
+  "doing": "getting ready for bed",
+  "turns": 8,
+  "days": {},
+  "journal": []
+ },
+ "Ngozi Okafor": {
+  "place": "Okafor house living room",
+  "doing": "telly with family, checking phone now and then",
+  "turns": 11,
+  "days": {},
+  "journal": [
+   "Tue 18:00 you went to Okafor house kitchen: helping make dinner, chatting with Chidi and Emeka",
+   "Tue 18:00 Chidi Okafor is here (Is at the hob stirring a pan and chatting about his day.).",
+   "Tue 18:00 Emeka Okafor is here (Is at the table, half doing his spelling homework, getting distracted and asking when dinner will be ready.).",
+   "Tue 18:41 conversation at Okafor house kitchen with Emeka Okafor, Chidi Okafor [ref 18:00]: Got Emeka through his last two spellings (necessary, separate), had him lay the table, and chased Chidi out of his daydream to bring the sauce. Chidi says it's work stuff, a deadline creeping closer on the same project. We're eating now. Emeka got one spelling wrong, a double-letter word, and we'll look at it after pudding.",
+   "Tue 18:42 Chidi Okafor is here (Sitting at the table eating, helps clear plates afterwards, a bit quiet with work on his mind.).",
+   "Tue 18:42 Emeka Okafor is here (Eating, chatting about school, then asks to go over his spelling mistake after pudding.).",
+   "Tue 19:39 conversation at Okafor house kitchen with Emeka Okafor [ref 19:02]: Went over Emeka's spellings with him: definitely, separate and necessary, all right by the end. Pudding with custard, then bag and reading book, then a bit of telly.",
+   "Tue 19:39 you went to Okafor house living room: telly with family, checking phone now and then",
+   "Tue 19:40 Emeka Okafor is here (Sprawled on the sofa with a blanket, half watching the telly and half doing something on a tablet, then asks what's on next.).",
+   "Tue 19:50 Chidi Okafor is here (Sits at the end of the sofa with his laptop open on his knee, glancing at the telly, still thinking about work.).",
+   "Tue 20:05 Chioma Okafor texted: hey mum, quick one, do you know where I'd find my old council tax letter? need it for a form. no rush x",
+   "Tue 20:26 you → Chioma Okafor: hiya love, try the folder in the bottom drawer of the desk in the spare room, the blue one marked house stuff. if it's not there have a look on your online account, they usually have old bills! x",
+   "Tue 20:27 conversation at Okafor house living room with Emeka Okafor [ref 19:45]: Tested Emeka on his spelling words, he got all ten right including knife. Gave him a sticker for the fridge, then teeth and I'll go up to say night.",
+   "Tue 20:38 Chioma Okafor texted: found it thanks mum! x",
+   "Tue 20:50 you → Chioma Okafor: brilliant, glad it was there! x",
+   "Tue 20:52 Chidi Okafor is here (Comes back into the living room with a mug of tea, sits on the other end of the sofa and scrolls his phone, half-watching the telly.).",
+   "Tue 21:01 conversation at Okafor house living room with Chidi Okafor [ref 20:50]: Chidi wants to say night to Emeka too. Said we'd give him a few minutes to finish teeth and go up together.",
+   "Tue 21:05 Chidi Okafor is here (Sitting on the sofa with a laptop on his knee, glancing at the stairs, waiting to go up and say night to Emeka with Ngozi.).",
+   "Tue 22:00 conversation at Okafor house living room with Chidi Okafor [ref 21:05]:\nNgozi Okafor: \"Right, I reckon he's had long enough with those teeth. Shall we go up?\" (Mutes the telly and gets up off the sofa.)\nChidi Okafor: \"Yeah, go on. I'm right behind you.\" (Puts down what he was doing and gets up.)\nNgozi Okafor: \"After you then. Mind the third stair, it creaks and he'll know we're coming!\" (Heads for the stairs, leaving the telly muted.)\nChidi Okafor: \"Ha, right, thanks. Quietly now.\" (Follows her to the stairs, stepping over the third stair.)\nNgozi Okafor (Climbs the stairs, stepping over the creaky third one, and heads quietly to Emeka's room.)\nChidi Okafor: \"Door's open a crack. Looks like he's still awake.\" (Reaches the landing and stops just behind Ngozi, keeping his voice low.)\nNgozi Okafor: \"Shh, let's just peek. Emeka, love, you still awake? Dad's here too, we've come to say night.\" (Pushes the door open gently and whispers.)\nChidi Okafor: \"Night, champ. Sleep well. Big day tomorrow.\" (Peers in softly over Ngozi's shoulder, voice low.)\nNgozi Okafor: \"Night night, love. Love you. Lights out now, yeah? Don't be reading under the covers.\" (Stays in the doorway, whispering, smiling at Emeka.)\nChidi Okafor: \"Night, son. Sleep tight.\" (Gives a small wave from behind Ngozi, then steps back from the doorway.)\nNgozi Okafor: \"He's nearly gone, look at him. Come on, let's leave him be.\" (Pulls the door to, leaving it open a crack, and heads back toward the stairs quietly.)\nChidi Okafor: \"Yeah, he's out for the count. Cuppa?\" (Follows her quietly back toward the stairs, stepping over the third stair again.)\nNgozi Okafor: \"Go on then, quick one. Just a peppermint for me, I'll never sleep otherwise.\" (Heads quietly down the stairs, stepping over the third one.)\nChidi Okafor: \"Peppermint, got it. Kettle's quick, I'll bring it through.\" (Heads down the stairs behind her, stepping over the third one, then off toward the kitchen.)\nNgozi Okafor: \"Lovely. I'll go and unmute the telly.\" (Heads down the stairs and back to the sofa, unmutes the telly.)\nChidi Okafor: \"Kettle's on. Won't be a minute.\" (Fills the kettle and gets two mugs out, dropping a peppermint teabag in one.)\nNgozi Okafor (Settles back on the sofa and waits for the tea, glancing at the telly.)\nChidi Okafor: \"Here we go, one peppermint. Want a biscuit with it?\" (Carries two mugs through from the kitchen and hands Ngozi the peppermint tea.)\nNgozi Okafor: \"Ooh, no biscuit, thanks, I've had plenty today. Cheers love. Come and sit, you've been staring at that laptop all night. Is that work thing still bugging you?\" (Takes the mug and shifts up the sofa to make room.)\nChidi Okafor: \"Bit of it, yeah. Deadline's just getting closer. Nothing I can't sort. Let's not talk shop, though. What are we watching?\" (Sits down next to her on the sofa with his mug and closes the laptop lid on the coffee table.)\nNgozi Okafor: \"Fair enough, no shop talk. I think there's that detective thing on next, or we could just see what's on. Is it any good, do you know?\" (Sips the peppermint tea and leans back against him, eyes on the telly.)\nChidi Okafor: \"No idea, to be honest. Let's give it ten minutes and see.\" (Puts an arm round her and glances at the telly.)\nNgozi Okafor: \"Mm, go on then, ten minutes. If it's rubbish we'll find something else.\" (Snuggles into him with her tea, eyes on the telly.)\nChidi Okafor: \"Mm. Looks a bit slow so far, but give it a go.\" (Sips his tea and keeps his arm round her, eyes on the telly.)\nNgozi Okafor: \"Mm, it is a bit slow. Give it a few more minutes though.\" (Stays snuggled against him with her tea, eyes on the telly.)\nChidi Okafor: \"Yeah, it's not grabbing me. Another five minutes, then we switch?\" (Sips his tea, eyes on the telly.)\nNgozi Okafor: \"Yeah, go on, five minutes and then we switch. Honestly I'd be happy with anything that isn't mumbling in a car park.\" (Sips her tea, stays leaning against him.)\nChidi Okafor: \"Yeah, that's the five. Shall I flick through and see what else is on?\" (Picks up the remote, keeps his other arm round her.)\nNgozi Okafor: \"Go on then, have a flick. Nothing with cars in car parks!\" (Sips her tea, stays leaning against him.)\nChidi Okafor: \"Right, let's see. There's a quiz thing, or a documentary about bridges. Bridges?\" (Flicks through channels with the remote, arm still round her.)"
+  ]
+ }
+}

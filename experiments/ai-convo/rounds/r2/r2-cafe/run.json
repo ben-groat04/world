@@ -1,0 +1,50 @@
+{
+ "label": "r2-cafe",
+ "seed": 2203,
+ "args": {
+  "label": "r2-cafe",
+  "setting": "an independent café in an English town and the homes of the people who work there",
+  "dateNote": "Monday 30 November 2026",
+  "startDow": 0,
+  "startHour": 10,
+  "seed": 2203,
+  "hours": 4,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Mon 10:00",
+  "to": "Mon 14:00",
+  "hours": 4
+ },
+ "totalTokens": 1230717,
+ "agentCount": 217,
+ "stats": {
+  "turns": {
+   "Beata Mazur": 25,
+   "Chipo Banda": 14,
+   "Eilidh Campbell": 20,
+   "Zara Whitaker-Mensah": 15
+  },
+  "calls": 217,
+  "simCalls": 211,
+  "maxCalls": 460,
+  "byFor": {
+   "generator": 6,
+   "Beata Mazur": 37,
+   "Chipo Banda": 14,
+   "Eilidh Campbell": 51,
+   "Zara Whitaker-Mensah": 29,
+   "world": 31,
+   "Dave Pritchard": 2,
+   "Gail Turner": 32,
+   "A regular customer": 3,
+   "Emma Whitaker": 4,
+   "Naomi Okafor": 8
+  },
+  "sceneLines": 106,
+  "promptChars": 883530,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

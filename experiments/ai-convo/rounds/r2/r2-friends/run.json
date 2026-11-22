@@ -1,0 +1,48 @@
+{
+ "label": "r2-friends",
+ "seed": 2205,
+ "args": {
+  "label": "r2-friends",
+  "setting": "a group of friends in an English city, each in their own home",
+  "dateNote": "Tuesday 1 December 2026",
+  "startDow": 1,
+  "startHour": 18,
+  "seed": 2205,
+  "hours": 4,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Tue 18:00",
+  "to": "Tue 22:00",
+  "hours": 4
+ },
+ "totalTokens": 1402514,
+ "agentCount": 241,
+ "stats": {
+  "turns": {
+   "Deborah Pritchard": 7,
+   "Lisa Ormerod": 11,
+   "Ian Fletcher": 8,
+   "Ngozi Okafor": 11
+  },
+  "calls": 241,
+  "simCalls": 235,
+  "maxCalls": 460,
+  "byFor": {
+   "generator": 6,
+   "Deborah Pritchard": 7,
+   "Lisa Ormerod": 35,
+   "Ian Fletcher": 8,
+   "Ngozi Okafor": 81,
+   "world": 11,
+   "Martin Ormerod": 22,
+   "Emeka Okafor": 49,
+   "Chidi Okafor": 22
+  },
+  "sceneLines": 187,
+  "promptChars": 1090844,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

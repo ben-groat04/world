@@ -1,0 +1,261 @@
+[Mon 10:00] present (at Mon 10:00) Dave Pritchard → Beata Mazur: Finishing the bread and milk drop at the back, stacking crates and wanting the invoice signed.
+   item: Beata Mazur starts "working the shift, serving and tidying" at Café front of house, until Mon 12:00
+   reason: Dave does early morning rounds; a late tail end of delivery is plausible and he's often owed money by Beata.
+[Mon 10:00] speak (at Mon 10:00) Dave Pritchard → Beata Mazur: Morning, Beata! Last of the milk's in the fridge. No rush on the invoice, but you know I'll mention it.
+   item: Beata Mazur starts "working the shift, serving and tidying" at Café front of house, until Mon 12:00
+   reason: Cheerful banter about slow payment fits his character.
+[Mon 10:00] none Beata Mazur: 
+   item: Beata Mazur starts "working the shift, serving and tidying" at Café front of house, until Mon 12:00
+   reason: No contact messages needed beyond the delivery; Monday morning is quiet for family.
+[Mon 10:00] none Chipo Banda: 
+   item: Chipo Banda starts "cooking soups and bakes for lunch service" at Café kitchen, until Mon 12:00
+   reason: Alone in the kitchen mid-prep on a Monday; contacts usually ring on Sundays, so nothing comes of it.
+[Mon 10:00] present (at Mon 10:00) Gail Turner → Eilidh Campbell: Working the front, restocking the cake counter and keeping an eye on how Eilidh handles the tables.
+   item: Eilidh Campbell starts "serving customers, chatting, wiping tables" at Café front of house, until Mon 13:00
+   reason: Gail is the older colleague who is plausibly on shift mid-morning.
+[Mon 10:00] speak (at Mon 10:00) Gail Turner → Eilidh Campbell: Tables by the window need doing when you've a minute. Cloth's under the counter.
+   item: Eilidh Campbell starts "serving customers, chatting, wiping tables" at Café front of house, until Mon 13:00
+   reason: Short practical line from Gail.
+[Mon 10:00] text (at Mon 10:25) Kirsty Laird → Eilidh Campbell: just found this band you'd love, sending a voice note later. we should actually plan a visit this time lol
+   item: Eilidh Campbell starts "serving customers, chatting, wiping tables" at Café front of house, until Mon 13:00
+   reason: Kirsty sends memes and music and plans visits that rarely happen.
+[Mon 10:00] text (at Mon 10:15) Jess Hartley → Zara Whitaker-Mensah: hey do you have the notes from last Thursday's lecture? I think I missed half of it. also there's a gig on Friday if you're up for it
+   item: Zara Whitaker-Mensah starts "watching a video essay on old synths, bit of studying" at Zara's room, until Mon 11:00
+   reason: Jess is chatty, disorganised, and swaps notes and gig recommendations.
+[Mon 10:30] text (at Mon 10:36) Jess Hartley → Zara Whitaker-Mensah: legend, thank you!! no rush. not totally sure who's playing yet, some local band my flatmate rates, will find out and let you know
+   item: Zara Whitaker-Mensah texted Jess Hartley: "hey, yeah i have some notes, they're a bit messy though. i'll take photos and send them later today. friday gig sounds good, i'm working till 12 but after that i'm up for it. who's playing?"
+   reason: Jess replies to Zara's question in her chatty, disorganised way, without inventing specifics.
+[Mon 10:30] none Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah starts "finish synth video essay" at Zara's room, until Mon 11:00
+   reason: Zara is alone in her room working on her video essay; nothing comes of it beyond Jess's reply already placed.
+[Mon 10:50] text (at Mon 10:54) Kirsty Laird → Eilidh Campbell: sending it now, fair warning the singer sounds like he's gargling gravel but in a good way
+   item: Eilidh Campbell texted Kirsty Laird: "ooh yes send the voice note"
+   reason: Kirsty promised the voice note and follows up shortly after Eilidh's reply.
+[Mon 10:50] text (at Mon 10:59) Kirsty Laird → Eilidh Campbell: friday!! let me check when I've got lectures, I think I'm free from lunch. will message you later x
+   item: Eilidh Campbell texted Kirsty Laird: "and yes lets actually plan it, im off friday 🙂"
+   reason: Kirsty responds to the plan but non-committally, as visits rarely get firmed up.
+[Mon 11:00] text (at Mon 11:12) Naomi Okafor → Zara Whitaker-Mensah: just saw this and thought of you 😂 [meme] also voice note incoming when i'm out of my seminar, got gossip
+   item: Zara Whitaker-Mensah starts "find lecture notes and photograph them for Jess" at Zara's room, until Mon 11:30
+   reason: Easygoing friend sends a meme on a Monday morning; ordinary light contact.
+[Mon 11:00] none Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah starts "find lecture notes and photograph them for Jess" at Zara's room, until Mon 11:30
+   reason: No one else is at home or in her room; she finds and photographs notes alone.
+[Mon 11:10] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "haha gravel gargling is the best kind"
+   reason: Kirsty already said she'd message later once she checks lectures; a reply to a light joke needs nothing more now.
+[Mon 11:10] text (at Mon 11:14) Kirsty Laird → Eilidh Campbell: just checked, I'm done at 12 on friday so any time after that. come up on the afternoon train? x
+   item: Eilidh Campbell texted Kirsty Laird: "friday works, just tell me when 🙂"
+   reason: She said she'd check her lectures and get back; Eilidh's follow-up prompts a natural reply.
+[Mon 11:20] text (at Mon 11:45) Naomi Okafor → Zara Whitaker-Mensah: [voice note, 0:48] Ok so seminar finally over. Long story short, you will NOT believe who's been seen together. Call me later when you're off shift and I'll tell you properly 😂
+   item: Zara Whitaker-Mensah texted Naomi Okafor: "haha ok that's very me. waiting on the gossip 👀"
+   reason: Naomi said a voice note was coming once out of her seminar; plausible follow-up a bit later, kept light and without drama.
+[Mon 11:30] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "afternoon train works, ill sort the time on my phone on my break"
+   reason: Kirsty already has the plan; she said she'd message later, so no immediate reply is needed.
+[Mon 11:30] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "so excited, bring the gravel man on a playlist 😂"
+   reason: Light closing message; Kirsty is likely in lectures and will reply later.
+[Mon 11:30] text (at Mon 11:30) Naomi Okafor → Zara Whitaker-Mensah: ok seminar over, voice note coming in a sec but the short version is someone from our year group got caught doing something very dumb at the library 😂 will explain
+   item: Zara Whitaker-Mensah starts "coursework reading" at Zara's room, until Mon 12:30
+   reason: Naomi said she'd send the gossip after her seminar, and it is now close to when that would finish.
+[Mon 11:40] text (at Mon 11:43) Naomi Okafor → Zara Whitaker-Mensah: ok so the voice note was getting too long so typing it 😂 someone from our year got caught napping under a desk in the library with a little blanket and a travel pillow, been there overnight apparently. security had to wake them up. i can't
+   item: Zara Whitaker-Mensah texted Naomi Okafor: "ok now i need to know. library?? what did they do 😂"
+   reason: Naomi promised gossip and said she'd explain; she replies shortly after Zara's text in her teasing style.
+[Mon 12:00] present (at Mon 12:00) Gail Turner → Beata Mazur: Behind the counter wiping down the machine and sorting the lunch rush bits, nearby while Beata does the order.
+   item: Beata Mazur starts "doing the stock order I've been putting off" at Café front of house, until Mon 12:30
+   reason: Gail was placed at front of house until 12:00 and is a natural presence during lunch.
+[Mon 12:00] speak (at Mon 12:00) Gail Turner → Beata Mazur: We're low on oat milk and the cups, Beata. Put those on the order or we'll be out by Wednesday.
+   item: Beata Mazur starts "doing the stock order I've been putting off" at Café front of house, until Mon 12:30
+   reason: Ordinary practical prompt relevant to a stock order.
+[Mon 12:00] text (at Mon 12:10) Michał Mazur → Beata Mazur: mum what do I do with a bag of lentils and nothing else. broke till Friday 😭
+   item: Beata Mazur starts "doing the stock order I've been putting off" at Café front of house, until Mon 12:30
+   reason: Michał often texts asking for money-saving cooking tips; ordinary midday message.
+[Mon 12:00] none Chipo Banda: 
+   item: Chipo Banda starts "lunch service, then clearing down and cleaning" at Café kitchen, until Mon 15:30
+   reason: Chipo is alone in the kitchen on lunch service; nobody listed there and contacts usually ring on Sundays, so nothing comes of it.
+[Mon 12:10] text (at Mon 12:14) Naomi Okafor → Zara Whitaker-Mensah: ha right?? commitment of the year. ok no spoilers, I'll tell you properly on the phone. just make sure you're sitting down 😂
+   item: Zara Whitaker-Mensah texted Naomi Okafor: "nooo under a desk with a travel pillow is elite commitment 😂 who is it?? i'll call you later, got reading to do first"
+   reason: Naomi is teasing and keeps the gossip for the call Zara said she'd make later.
+[Mon 12:10] none Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah starts "coursework reading, photographing lecture notes for Jess" at Zara's room, until Mon 12:40
+   reason: Zara is alone in her room and nobody listed is there, so nothing comes of it.
+[Mon 12:10] text (at Mon 12:30) Jess Hartley → Zara Whitaker-Mensah: no pressure on the notes!! but if you get a sec, the slides from Thursday too if you have them? my laptop ate half of mine 🙃
+   item: Zara Whitaker-Mensah starts "coursework reading, photographing lecture notes for Jess" at Zara's room, until Mon 12:40
+   reason: Jess is chatty and disorganised, and Zara has just said she'd send her notes.
+[Mon 12:12] none Michał Mazur → Beata Mazur: 
+   item: Beata Mazur texted Michał Mazur: "rice, pasta, tin of tomatoes if you have them. fry an onion, chuck the lentils in with stock and whatever veg. come for tea wed if you're stuck"
+   reason: Michał has just been answered; he'd reply later, nothing needed now.
+[Mon 12:12] present (at Mon 12:12) Gail Turner → Beata Mazur: Making tea in the back-to-front area, then stacking cups and keeping an eye on the counter.
+   item: Beata Mazur starts "count sleeves, finish stock order" at Café front of house, until Mon 12:30
+   reason: Gail is already placed at front of house until 12:30 and just offered to put the kettle on.
+[Mon 12:12] speak (at Mon 12:16) Gail Turner → Beata Mazur: Tea's made, it's on the side. Got your number on the sleeves?
+   item: Beata Mazur starts "count sleeves, finish stock order" at Café front of house, until Mon 12:30
+   reason: Gail would ordinarily check in once the kettle's done and Beata has finished counting.
+[Mon 12:22] present (at Mon 12:22) Gail Turner → Beata Mazur: Wiping the counter and keeping an eye on the queue as the lunch rush starts to build.
+   item: Beata Mazur starts "finish order sheet, check lunch rush" at Café front of house, until Mon 12:35
+   reason: Gail is already placed at front of house until 12:30.
+[Mon 12:22] present (at Mon 12:27) A regular customer → Beata Mazur: Comes in for a takeaway coffee and a sandwich, waits at the counter.
+   item: Beata Mazur starts "finish order sheet, check lunch rush" at Café front of house, until Mon 12:35
+   reason: Lunch rush starts around now; an ordinary customer fits.
+[Mon 12:22] speak (at Mon 12:25) Gail Turner → Beata Mazur: Sandwich bread's looking thin for the rush. Will the Thursday delivery cover it, or do we want a few extra in?
+   item: Beata Mazur starts "finish order sheet, check lunch rush" at Café front of house, until Mon 12:35
+   reason: Gail would naturally mention a practical stock concern while Beata checks the lunch rush.
+[Mon 12:22] none Beata Mazur: 
+   item: Beata Mazur starts "finish order sheet, check lunch rush" at Café front of house, until Mon 12:35
+   reason: Dave already delivered this morning, and no other contact would plausibly get in touch now; Michał texted just before.
+[Mon 12:30] none Jess Hartley → Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah texted Jess Hartley: "yep i have the slides, will send them with the notes photos in a bit 👍"
+   reason: Jess already got her reply; she'll wait for the photos and slides.
+[Mon 12:30] none Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah starts "photographing lecture notes, sending to Jess with slides" at Zara's room, until Mon 12:45
+   reason: Alone in her room on a quiet Monday lunchtime; nothing needs to interrupt a short task, and Naomi and Jess are already waiting on her.
+[Mon 12:35] present (at Mon 12:35) Gail Turner → Beata Mazur: Working the counter beside Beata, making drinks and handling the queue as the lunch rush builds.
+   item: Beata Mazur starts "lunch rush, ring through order after, close up" at Café front of house, until Mon 15:30
+   reason: Gail is already on shift at front of house and said she'd take the regular.
+[Mon 12:35] present (at Mon 12:35) A regular customer → Beata Mazur: Stands at the counter waiting to order, work jacket on, brisk and polite.
+   item: Beata Mazur starts "lunch rush, ring through order after, close up" at Café front of house, until Mon 15:30
+   reason: Already placed there 12:27-12:33; keeps continuity.
+[Mon 12:35] speak (at Mon 12:36) A regular customer → Beata Mazur: Morning. Large americano and the cheese toastie, please. To take away.
+   item: Beata Mazur starts "lunch rush, ring through order after, close up" at Café front of house, until Mon 15:30
+   reason: The regular is at the counter in the queue and would order briskly.
+[Mon 12:35] text (at Mon 12:55) Michał Mazur → Beata Mazur: lentils update: onion fried, lentils in, smells weirdly ok. do i need to add salt at the start or the end
+   item: Beata Mazur starts "lunch rush, ring through order after, close up" at Café front of house, until Mon 15:30
+   reason: Follow-up to his earlier lentil texts; ordinary mid-day text from a son.
+[Mon 12:40] none Jess Hartley → Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah texted Jess Hartley: "notes + slides coming through now, sorry the handwriting is a crime 😂"
+   reason: Jess already asked for these; she'll reply once the photos arrive, which is covered under the step.
+[Mon 12:40] text (at Mon 12:46) Jess Hartley → Zara Whitaker-Mensah: got them!! you're a lifesaver, handwriting is fine, I can read it. owe you a coffee
+   item: Zara Whitaker-Mensah starts "sending note photos and slides to Jess" at Zara's room, until Mon 12:55
+   reason: Jess is chatty and would acknowledge the notes soon after they arrive.
+[Mon 12:50] none Jess Hartley → Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah texted Jess Hartley: "haha a coffee sounds good, friday after the gig maybe 😂"
+   reason: Zara's message closes the notes exchange; Jess has already thanked her, so no reply is needed for now.
+[Mon 12:50] present (at Mon 12:58) Emma Whitaker → Zara Whitaker-Mensah: Comes into the kitchen to put the kettle on and get her own lunch things out, chatting briefly about nothing much.
+   item: Zara Whitaker-Mensah starts "making lunch" at Whitaker-Mensah living room and kitchen, until Mon 13:30
+   reason: A parent living in the house would plausibly be around at lunchtime.
+[Mon 12:50] speak (at Mon 12:50) Emma Whitaker → Zara Whitaker-Mensah: Making enough for two, or is that just for you? There's bread in the bin if you want toast.
+   item: Zara Whitaker-Mensah starts "making lunch" at Whitaker-Mensah living room and kitchen, until Mon 13:30
+   reason: Ordinary small talk from her mum while they share the kitchen.
+[Mon 12:56] text (at Mon 12:59) Michał Mazur → Beata Mazur: ha ok salting at the end. found half a lemon in the fridge, going in. thanks mum. wed tea is a yes 🙏
+   item: Beata Mazur texted Michał Mazur: "end mostly. salt a bit at the end, lentils go tough if you salt too early. add a splash of vinegar or lemon if you have it"
+   reason: Michał would ordinarily reply briefly to his mum's advice and accept the offer of tea.
+[Mon 13:00] present (at Mon 13:00) Gail Turner → Eilidh Campbell: Working the counter and stacking things behind it; nods at Eilidh as she sits for her break.
+   item: Eilidh Campbell starts "quick lunch break" at Café front of house, until Mon 13:30
+   reason: Gail is already placed at front of house until 14:35.
+[Mon 13:00] speak (at Mon 13:00) Gail Turner → Eilidh Campbell: Go on, sit down. Lunch rush is mostly done. Toastie's still warm if you want one.
+   item: Eilidh Campbell starts "quick lunch break" at Café front of house, until Mon 13:30
+   reason: Gail is kind and practical; a short line about her break fits.
+[Mon 13:00] text (at Mon 13:08) Kirsty Laird → Eilidh Campbell: just sent the voice note, did you get it?? also do you know which train yet? x
+   item: Eilidh Campbell starts "quick lunch break" at Café front of house, until Mon 13:30
+   reason: Kirsty was sorting Friday's visit and Eilidh said she'd do the train time on her break.
+[Mon 13:00] none Eilidh Campbell: 
+   item: Eilidh Campbell starts "quick lunch break" at Café front of house, until Mon 13:30
+   reason: Dave has finished his round, the regular leaves at 13:05, and no one else needs to get in touch.
+[Mon 13:06] text (at Mon 13:09) Michał Mazur → Beata Mazur: half a loaf of toast end in the freezer, that counts 😂 eating it now. will report back on the lentils
+   item: Beata Mazur texted Michał Mazur: "good lad. eat it with bread if you've got any"
+   reason: Michał is mid-meal and ordinarily replies to his mum's last text, keeping the light teasing tone.
+[Mon 13:13] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "just got it, will listen after my break 😂"
+   reason: Kirsty already has her reply; she just messaged a few minutes ago and nothing more is needed yet.
+[Mon 13:13] text (at Mon 13:15) Kirsty Laird → Eilidh Campbell: haha no rush! I'm in the library till 2 anyway. any train after 12:30 gets you here for the afternoon x
+   item: Eilidh Campbell texted Kirsty Laird: "train time in a bit, doing it now i swear"
+   reason: Kirsty, awaiting the train time, would ordinarily reply briefly and easily to Eilidh's 'doing it now'.
+[Mon 13:15] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "yep got it, listening after my break"
+   reason: Kirsty already replied at 13:15 saying no rush; nothing more needed from her yet.
+[Mon 13:15] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "gravel man incoming 😂"
+   reason: Kirsty is in the library until 2 and has already answered, so no further message comes now.
+[Mon 13:16] text (at Mon 13:28) Michał Mazur → Beata Mazur: verdict: lentils actually good?? bit bland but the lemon saved it. toast end was a bit freezer-burnt 😂 see you wed
+   item: Beata Mazur texted Michał Mazur: "ha it counts. report back"
+   reason: Michał promised to report back on the lentils and has just eaten; a short update is natural.
+[Mon 13:20] text (at Mon 13:27) Naomi Okafor → Zara Whitaker-Mensah: ok i'm out of lectures for the day, ring me whenever you're free?? the gossip is KILLING me, i can't hold it in much longer 😂
+   item: Zara Whitaker-Mensah starts "eating toast" at Zara's room, until Mon 13:30
+   reason: Naomi has been teasing about gossip and asked for a call; a nudge while Zara eats is ordinary.
+[Mon 13:25] result (at Mon 13:25) Beata Mazur: You ring the supplier's order line. It picks up after a short wait and a woman takes the order. You read out the oat milk, medium cups with lids, the sleeves and two extra sandwich loaves. She reads it back, it's all fine, and she says it'll go out with the Thursday delivery.
+   item: Beata Mazur at Café front of house, Mon 13:25-Mon 14:00: ring through the supplier order
+   reason: Ordinary routine call completing the errand, using the order details already settled.
+[Mon 13:25] present (at Mon 13:25) Gail Turner → Beata Mazur: Wiping down the counter and tidying the cake stand after the rush, nearby if Beata needs anything.
+   item: Beata Mazur starts "finish lunch rush, ring through the order" at Café front of house, until Mon 14:00
+   reason: Gail is placed at front of house until 14:35 and is on shift.
+[Mon 13:25] present (at Mon 13:25) A regular customer → Beata Mazur: Finishing his tea at the window table, then heads out with a nod.
+   item: Beata Mazur starts "finish lunch rush, ring through the order" at Café front of house, until Mon 14:00
+   reason: He was placed there until 13:05 so he has probably left; this is a short leftover.
+[Mon 13:25] text (at Mon 13:35) Michał Mazur → Beata Mazur: lentils report: actually decent?? bit bland, more lemon next time. you were right about the salt 😂
+   item: Beata Mazur starts "finish lunch rush, ring through the order" at Café front of house, until Mon 14:00
+   reason: He said he'd report back on the lentils; ordinary follow-up text.
+[Mon 13:30] present (at Mon 13:30) Gail Turner → Eilidh Campbell: Wiping the counter and stacking cups, keeping an eye on the door while Eilidh finishes her toastie.
+   item: Eilidh Campbell starts "serving, tidying, closing up tasks" at Café front of house, until Mon 16:30
+   reason: Gail is already at front of house until 14:00 and is the colleague showing people the ropes.
+[Mon 13:30] present (at Mon 13:30) A regular customer → Eilidh Campbell: Comes back to the counter to return his plate and mug, nods, and heads out.
+   item: Eilidh Campbell starts "serving, tidying, closing up tasks" at Café front of house, until Mon 16:30
+   reason: He was placed at the café 13:25-13:28 and is a regular, so a quick departure fits.
+[Mon 13:30] speak (at Mon 13:35) Gail Turner → Eilidh Campbell: Tables by the window want a wipe when you're done eating. Then the bins out the back, if you're up for it.
+   item: Eilidh Campbell starts "serving, tidying, closing up tasks" at Café front of house, until Mon 16:30
+   reason: Gail gives short practical tasks after the lunch rush.
+[Mon 13:30] text (at Mon 13:42) Kirsty Laird → Eilidh Campbell: found the gravel man's other song, even better. any train after half twelve works btw, just pick one x
+   item: Eilidh Campbell starts "serving, tidying, closing up tasks" at Café front of house, until Mon 16:30
+   reason: Kirsty is waiting on the train time and sends casual follow-ups.
+[Mon 13:30] text (at Mon 13:38) Naomi Okafor → Zara Whitaker-Mensah: ok i'm free and sat on my bed, ring me when you can!! i'm literally vibrating with gossip
+   item: Zara Whitaker-Mensah starts "doing reading" at Zara's room, until Mon 15:00
+   reason: Naomi said she was out of lectures and wants Zara to call. Zara is reading, so a nudge is natural.
+[Mon 13:30] none Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah starts "doing reading" at Zara's room, until Mon 15:00
+   reason: No one else is in her room, and her mum already offered tea earlier, so nothing more is needed.
+[Mon 13:30] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "ok found trains, looking at the one after 12:30 so ill be there mid afternoon"
+   reason: Kirsty is in the library until 2 and already said no rush; she may reply later, nothing needed now.
+[Mon 13:30] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "will confirm exact time in a bit 🙂"
+   reason: Eilidh's holding message needs no immediate answer; Kirsty is busy studying.
+[Mon 13:30] present (at Mon 13:30) Gail Turner → Eilidh Campbell: Wiping down the counter and restacking cups behind it, within earshot while Eilidh finishes her toastie.
+   item: Eilidh Campbell starts "finish toastie, look up Friday trains on phone" at Café front of house, until Mon 13:45
+   reason: Gail is already on shift at the front of house until 14:00 and was placed there.
+[Mon 13:30] present (at Mon 13:30) A regular customer → Eilidh Campbell: Finishing his tea and toastie at the window table, then heading out.
+   item: Eilidh Campbell starts "finish toastie, look up Friday trains on phone" at Café front of house, until Mon 13:45
+   reason: He is placed there until 13:33 and then leaves.
+[Mon 13:30] speak (at Mon 13:30) Gail Turner → Eilidh Campbell: Got your train sorted yet? Don't leave it too late, Friday ones fill up.
+   item: Eilidh Campbell starts "finish toastie, look up Friday trains on phone" at Café front of house, until Mon 13:45
+   reason: Gail knew about the Friday trip and would ordinarily ask in passing while Eilidh is on her phone.
+[Mon 13:35] none Michał Mazur → Beata Mazur: 
+   item: Beata Mazur texted Michał Mazur: "told you. less moaning, more lemon. see you wed"
+   reason: Conversation has naturally wrapped up with 'see you wed'; no further reply needed.
+[Mon 13:35] present (at Mon 13:35) Gail Turner → Beata Mazur: Wiping down the machine and stacking the last clean cups behind the counter before she finishes up.
+   item: Beata Mazur starts "wipe down, cash up, close up" at Café front of house, until Mon 15:30
+   reason: Gail is already placed at front of house until 13:45.
+[Mon 13:35] speak (at Mon 13:37) Gail Turner → Beata Mazur: Lunch is done. I've wiped the machine. Do you want the till counted now or after the afternoon lot?
+   item: Beata Mazur starts "wipe down, cash up, close up" at Café front of house, until Mon 15:30
+   reason: Gail is practical and would ask about the cash-up as it starts.
+[Mon 13:35] present (at Mon 13:35) A regular customer → Beata Mazur: Finishing his tea at the window table, then bringing his cup and plate to the counter on his way out.
+   item: Beata Mazur starts "wipe down, cash up, close up" at Café front of house, until Mon 15:30
+   reason: The regular was placed there until 13:33, so he is just leaving.
+[Mon 13:44] text (at Mon 13:47) Kirsty Laird → Eilidh Campbell: perfect, that works for me! I'll be done well before then. text me when it's booked x
+   item: Eilidh Campbell texted Kirsty Laird: "booking the one that gets in about 3 now"
+   reason: Kirsty is in the library until 2 but would reply briefly to confirm the plan.
+[Mon 13:44] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "ha gravel man, send it over later 🙂"
+   reason: Kirsty already replied to the train news; she'd say nothing more about the gravel man so soon, having just sent the song herself.
+[Mon 13:46] text (at Mon 13:58) Naomi Okafor → Zara Whitaker-Mensah: ok are you free yet?? i'm still on my bed, phone in hand, ring me when you surface 😂
+   item: Zara Whitaker-Mensah starts "doing reading, drifting a bit" at Zara's room, until Mon 15:30
+   reason: Naomi has been waiting to share gossip and has nudged repeatedly; a further nudge is ordinary.
+[Mon 13:46] none Zara Whitaker-Mensah: 
+   item: Zara Whitaker-Mensah starts "doing reading, drifting a bit" at Zara's room, until Mon 15:30
+   reason: No one else is in her room; Jess has her notes and others have no reason to get in touch now.
+[Mon 13:50] text (at Mon 13:53) Kirsty Laird → Eilidh Campbell: yay!! can't wait, I'll meet you at the station x
+   item: Eilidh Campbell texted Kirsty Laird: "booked! gets in about 3 🙂"
+   reason: Kirsty asked to be told once booked; she replies warmly.
+[Mon 13:50] none Kirsty Laird → Eilidh Campbell: 
+   item: Eilidh Campbell texted Kirsty Laird: "screenshotted it too, gail made me"
+   reason: Second message is covered by the single reply to the first; nothing more comes of it.
+[Mon 13:58] present (at Mon 13:58) Gail Turner → Eilidh Campbell: Wiping down the counter and stacking clean cups, nearby if Eilidh needs anything.
+   item: Eilidh Campbell starts "serving, tidying, closing up" at Café front of house, until Mon 16:30
+   reason: Gail is on shift at the front of house all afternoon.
+[Mon 13:58] present (at Mon 14:20) A regular customer → Eilidh Campbell: Comes in for a quick takeaway tea, stands at the counter and waits to be served.
+   item: Eilidh Campbell starts "serving, tidying, closing up" at Café front of house, until Mon 16:30
+   reason: Ordinary afternoon trade; a regular popping in is plausible but brief.
+[Mon 13:58] none Eilidh Campbell: 
+   item: Eilidh Campbell starts "serving, tidying, closing up" at Café front of house, until Mon 16:30
+   reason: Dave delivers in the morning and said he'd be back Thursday; not there this afternoon.
+[Mon 13:58] none Eilidh Campbell: 
+   item: Eilidh Campbell starts "serving, tidying, closing up" at Café front of house, until Mon 16:30
+   reason: Train is booked and confirmed at 13:53; nothing more needed now.

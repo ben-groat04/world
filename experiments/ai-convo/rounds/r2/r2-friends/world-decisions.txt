@@ -1,0 +1,111 @@
+[Tue 18:00] none Deborah Pritchard: 
+   item: Deborah Pritchard starts "tea, then crossword with radio on" at Deborah's home, until Tue 19:00
+   reason: Quiet evening alone with tea and the crossword; nothing in particular comes of it.
+[Tue 18:00] present (at Tue 18:00) Martin Ormerod → Lisa Ormerod: Wanders into the kitchen after work, looking for a mug and asking what's for tea.
+   item: Lisa Ormerod starts "making a big pot of tea for everyone" at Ormerod house kitchen, until Tue 18:45
+   reason: Husband at home at teatime would ordinarily pop in while the tea is being made.
+[Tue 18:00] speak (at Tue 18:00) Martin Ormerod → Lisa Ormerod: Is that pot for all of us? Stick me down for a big mug, love.
+   item: Lisa Ormerod starts "making a big pot of tea for everyone" at Ormerod house kitchen, until Tue 18:45
+   reason: Natural opening remark from Martin as he arrives.
+[Tue 18:00] present (at Tue 18:05) Tom Ormerod → Lisa Ormerod: Drifts in, grabs a biscuit from the tin and leans on the counter scrolling his phone.
+   item: Lisa Ormerod starts "making a big pot of tea for everyone" at Ormerod house kitchen, until Tue 18:45
+   reason: 20-year-old son at home gets drawn in by the smell of tea and snacks.
+[Tue 18:00] none Ian Fletcher: 
+   item: Ian Fletcher starts "making tea, eating, sorting a bit of post" at Ian's flat, until Tue 19:00
+   reason: Ordinary quiet evening eating and sorting post; no one gets in touch.
+[Tue 18:00] present (at Tue 18:00) Chidi Okafor → Ngozi Okafor: Is at the hob stirring a pan and chatting about his day.
+   item: Ngozi Okafor starts "helping make dinner, chatting with Chidi and Emeka" at Okafor house kitchen, until Tue 18:30
+   reason: Husband is helping make dinner in the kitchen.
+[Tue 18:00] present (at Tue 18:00) Emeka Okafor → Ngozi Okafor: Is at the table, half doing his spelling homework, getting distracted and asking when dinner will be ready.
+   item: Ngozi Okafor starts "helping make dinner, chatting with Chidi and Emeka" at Okafor house kitchen, until Tue 18:30
+   reason: 11-year-old at home at dinner time.
+[Tue 18:00] speak (at Tue 18:00) Emeka Okafor → Ngozi Okafor: Mum, can I have the last bit of the plantain before it goes in the pan?
+   item: Ngozi Okafor starts "helping make dinner, chatting with Chidi and Emeka" at Okafor house kitchen, until Tue 18:30
+   reason: Ordinary kid chatter while dinner is made.
+[Tue 18:42] present (at Tue 18:42) Chidi Okafor → Ngozi Okafor: Sitting at the table eating, helps clear plates afterwards, a bit quiet with work on his mind.
+   item: Ngozi Okafor starts "eating dinner with family" at Okafor house kitchen, until Tue 19:30
+   reason: Husband at the family dinner, as placed earlier.
+[Tue 18:42] present (at Tue 18:42) Emeka Okafor → Ngozi Okafor: Eating, chatting about school, then asks to go over his spelling mistake after pudding.
+   item: Ngozi Okafor starts "eating dinner with family" at Okafor house kitchen, until Tue 19:30
+   reason: Son is at the table; he already asked to check spelling after pudding.
+[Tue 18:42] speak (at Tue 19:02) Emeka Okafor → Ngozi Okafor: Mum, can we do the spelling now? I think the word I got wrong was 'definitely'. Is it an 'a' or an 'e' in the middle?
+   item: Ngozi Okafor starts "eating dinner with family" at Okafor house kitchen, until Tue 19:30
+   reason: Natural follow-up to his earlier request, once pudding is being finished.
+[Tue 18:42] none Ngozi Okafor: 
+   item: Ngozi Okafor starts "eating dinner with family" at Okafor house kitchen, until Tue 19:30
+   reason: No contacts reach out during a family dinner; nothing else comes of it.
+[Tue 18:58] present (at Tue 18:59) Martin Ormerod → Lisa Ormerod: Wipes the table and puts the bowls by the sink, then wanders off to the sofa with his tea.
+   item: Lisa Ormerod starts "washing the pot, tidying up" at Ormerod house kitchen, until Tue 19:20
+   reason: He said he'd clear up and wipe round; brief presence fits.
+[Tue 18:58] speak (at Tue 19:00) Martin Ormerod → Lisa Ormerod: Pot's heavy, love, want a hand lifting it to the sink before I go and sit down?
+   item: Lisa Ormerod starts "washing the pot, tidying up" at Ormerod house kitchen, until Tue 19:20
+   reason: Ordinary small offer from a husband while tidying.
+[Tue 18:58] none Lisa Ormerod: 
+   item: Lisa Ormerod starts "washing the pot, tidying up" at Ormerod house kitchen, until Tue 19:20
+   reason: Other family and contacts have no particular reason to get in touch during a quiet washing-up.
+[Tue 19:00] text (at Tue 19:25) Georgia Pritchard → Deborah Pritchard: mum are you in later? might pop round tmrw to grab my charger, left it in the front room
+   item: Deborah Pritchard starts "football on telly" at Deborah's home, until Tue 21:30
+   reason: Georgia mostly gets in touch when she needs something; low-key ordinary ask.
+[Tue 19:00] none Ian Fletcher: 
+   item: Ian Fletcher starts "telly and radio, watering herbs" at Ian's flat, until Tue 21:30
+   reason: Quiet evening at home; nothing ordinary prompts contact right now.
+[Tue 19:20] present (at Tue 19:20) Martin Ormerod → Lisa Ormerod: Sits in his armchair with his tea, half watching the telly, and says little.
+   item: Lisa Ormerod starts "crossword and telly" at Ormerod house living room, until Tue 21:30
+   reason: He said he'd go and put his feet up; the living room is where he'd be.
+[Tue 19:20] none Lisa Ormerod: 
+   item: Lisa Ormerod starts "crossword and telly" at Ormerod house living room, until Tue 21:30
+   reason: A quiet evening with the crossword and telly; no one else needs to get in touch right now.
+[Tue 19:32] none Georgia Pritchard → Deborah Pritchard: 
+   item: Deborah Pritchard texted Georgia Pritchard: "in all day. charger's on the front room table"
+   reason: Georgia has her answer; a thumbs-up is unnecessary and she usually only texts when she needs something, so nothing further now.
+[Tue 19:40] present (at Tue 19:40) Emeka Okafor → Ngozi Okafor: Sprawled on the sofa with a blanket, half watching the telly and half doing something on a tablet, then asks what's on next.
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: Eleven-year-old at home on a school night after tea, would be in the living room until bedtime.
+[Tue 19:40] present (at Tue 19:50) Chidi Okafor → Ngozi Okafor: Sits at the end of the sofa with his laptop open on his knee, glancing at the telly, still thinking about work.
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: Consistent with his work deadline and being home with the family in the evening.
+[Tue 19:40] speak (at Tue 19:45) Emeka Okafor → Ngozi Okafor: Mum, can we do my spelling now? I want to get it done before this programme starts.
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: Follows on from the plan to look at his wrong spelling after pudding.
+[Tue 19:40] text (at Tue 20:05) Chioma Okafor → Ngozi Okafor: hey mum, quick one, do you know where I'd find my old council tax letter? need it for a form. no rush x
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: Eldest child living independently sometimes texts for life admin help, a short burst on an ordinary evening.
+[Tue 20:26] text (at Tue 20:38) Chioma Okafor → Ngozi Okafor: found it thanks mum! x
+   item: Ngozi Okafor texted Chioma Okafor: "hiya love, try the folder in the bottom drawer of the desk in the spare room, the blue one marked house stuff. if it's not there have a look on your online account, they usually have old bills! x"
+   reason: Chioma replies shortly after getting a helpful answer, as a casual short text.
+[Tue 20:50] none Chioma Okafor → Ngozi Okafor: 
+   item: Ngozi Okafor texted Chioma Okafor: "brilliant, glad it was there! x"
+   reason: Chioma already said thanks and the exchange is finished; no reply needed.
+[Tue 20:50] present (at Tue 20:52) Chidi Okafor → Ngozi Okafor: Comes back into the living room with a mug of tea, sits on the other end of the sofa and scrolls his phone, half-watching the telly.
+   item: Ngozi Okafor starts "waiting for Emeka to finish teeth, then go up to say night" at Okafor house living room, until Tue 21:05
+   reason: Chidi was in the living room earlier and would ordinarily drift back while Emeka does teeth.
+[Tue 20:50] speak (at Tue 20:50) Chidi Okafor → Ngozi Okafor: Is he still up there? I'll come up in a minute too, I want to say night to him as well.
+   item: Ngozi Okafor starts "waiting for Emeka to finish teeth, then go up to say night" at Okafor house living room, until Tue 21:05
+   reason: Ordinary small chat between husband and wife while waiting.
+[Tue 20:50] none Ngozi Okafor: 
+   item: Ngozi Okafor starts "waiting for Emeka to finish teeth, then go up to say night" at Okafor house living room, until Tue 21:05
+   reason: Emeka is upstairs brushing teeth and will call down when done; nothing needed yet.
+[Tue 20:50] none Ngozi Okafor: 
+   item: Ngozi Okafor starts "waiting for Emeka to finish teeth, then go up to say night" at Okafor house living room, until Tue 21:05
+   reason: No particular reason for a friend to get in touch tonight.
+[Tue 21:05] present (at Tue 21:05) Chidi Okafor → Ngozi Okafor: Sitting on the sofa with a laptop on his knee, glancing at the stairs, waiting to go up and say night to Emeka with Ngozi.
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: He is already in the living room and said he would go up with her shortly.
+[Tue 21:05] speak (at Tue 21:10) Chidi Okafor → Ngozi Okafor: Right, he must be done with his teeth by now. Shall we go up and say night?
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: Chidi said they would go up together after a few minutes.
+[Tue 21:05] none Ngozi Okafor: 
+   item: Ngozi Okafor starts "telly with family, checking phone now and then" at Okafor house living room, until Tue 22:00
+   reason: Emeka is upstairs doing teeth and no one else is due to get in touch; a quiet evening is ordinary.
+[Tue 21:30] none Deborah Pritchard: 
+   item: Deborah Pritchard starts "tidy up, bed" at Deborah's home, until Tue 22:30
+   reason: Quiet evening alone tidying; Georgia already arranged to come tomorrow, nothing more needed.
+[Tue 21:30] none Ian Fletcher: 
+   item: Ian Fletcher starts "getting ready for bed" at Ian's flat, until Tue 22:00
+   reason: Ordinary night getting ready for bed alone; no one has cause to get in touch.
+[Tue 21:30] present (at Tue 21:31) Martin Ormerod → Lisa Ormerod: Martin is in the bedroom too, getting ready for bed, hanging up his work shirt and setting his alarm.
+   item: Lisa Ormerod starts "getting ready for bed" at Lisa and Martin's bedroom, until Tue 22:30
+   reason: Martin lives with Lisa and was in the living room until 21:20, so he would be heading to bed at the same time.
+[Tue 21:30] speak (at Tue 21:30) Martin Ormerod → Lisa Ormerod: Did you lock the back door, love, or shall I check it on my way up? Early start tomorrow.
+   item: Lisa Ormerod starts "getting ready for bed" at Lisa and Martin's bedroom, until Tue 22:30
+   reason: Ordinary bedtime chat between a married couple.

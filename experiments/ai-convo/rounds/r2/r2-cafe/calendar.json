@@ -1,0 +1,38 @@
+[
+ {
+  "what": "work",
+  "who": [
+   "Beata Mazur"
+  ],
+  "place": "Café front of house",
+  "t0": -180,
+  "t1": 330,
+  "by": "sampler",
+  "at": "Mon 07:00",
+  "until": "Mon 15:30"
+ },
+ {
+  "what": "work",
+  "who": [
+   "Chipo Banda"
+  ],
+  "place": "Café kitchen",
+  "t0": -90,
+  "t1": 330,
+  "by": "sampler",
+  "at": "Mon 08:30",
+  "until": "Mon 15:30"
+ },
+ {
+  "what": "work",
+  "who": [
+   "Eilidh Campbell"
+  ],
+  "place": "Café front of house",
+  "t0": -30,
+  "t1": 390,
+  "by": "sampler",
+  "at": "Mon 09:30",
+  "until": "Mon 16:30"
+ }
+]

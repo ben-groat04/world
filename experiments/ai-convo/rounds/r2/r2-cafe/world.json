@@ -1,0 +1,1110 @@
+{
+ "chats_at_start": [
+  {
+   "name": "Café Rota",
+   "members": [
+    "Beata Mazur",
+    "Chipo Banda",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ]
+  }
+ ],
+ "setting": "an independent café in an English town and the homes of the people who work there",
+ "context": {},
+ "background": "A small independent café run by its owner-manager, Beata Mazur, with a few part-time and full-time staff. Monday morning to early afternoon is a working shift for Beata, Chipo and Eilidh. Zara works Wednesdays and Fridays and studies, so she is not on shift. Everyone lives in rented or owned homes in the same English town.",
+ "common_knowledge": [
+  "Beata Mazur owns and manages the café and is everyone's boss.",
+  "The café staff are Beata, Chipo, Eilidh and Zara, and shifts are arranged and swapped by message.",
+  "On Monday Beata, Chipo and Eilidh are on shift together; Zara is not rostered.",
+  "Chipo cooks in the kitchen, and Eilidh and Zara serve customers.",
+  "It is a Monday in late November in a small English town."
+ ],
+ "names": {
+  "sets": [
+   [
+    {
+     "id": "p1",
+     "name": "Agnieszka Nowak"
+    },
+    {
+     "id": "p2",
+     "name": "Marek Nowak"
+    },
+    {
+     "id": "p3",
+     "name": "Julia Nowak"
+    },
+    {
+     "id": "p4",
+     "name": "Kamil Nowak"
+    },
+    {
+     "id": "p5",
+     "name": "Rutendo Moyo"
+    },
+    {
+     "id": "p6",
+     "name": "Daniel Whitfield"
+    },
+    {
+     "id": "p7",
+     "name": "Isla MacLeod"
+    },
+    {
+     "id": "p8",
+     "name": "Callum Reid"
+    },
+    {
+     "id": "p9",
+     "name": "Maya Okafor-Bennett"
+    },
+    {
+     "id": "p10",
+     "name": "Sarah Bennett"
+    },
+    {
+     "id": "p11",
+     "name": "Chidi Okafor"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Beata Mazur"
+    },
+    {
+     "id": "p2",
+     "name": "Tomasz Mazur"
+    },
+    {
+     "id": "p3",
+     "name": "Oliwia Mazur"
+    },
+    {
+     "id": "p4",
+     "name": "Michał Mazur"
+    },
+    {
+     "id": "p5",
+     "name": "Chipo Banda"
+    },
+    {
+     "id": "p6",
+     "name": "Liam Gallagher-Price"
+    },
+    {
+     "id": "p7",
+     "name": "Eilidh Campbell"
+    },
+    {
+     "id": "p8",
+     "name": "Fraser Munro"
+    },
+    {
+     "id": "p9",
+     "name": "Zara Whitaker-Mensah"
+    },
+    {
+     "id": "p10",
+     "name": "Emma Whitaker"
+    },
+    {
+     "id": "p11",
+     "name": "Kofi Mensah"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Dorota Wróbel"
+    },
+    {
+     "id": "p2",
+     "name": "Piotr Wróbel"
+    },
+    {
+     "id": "p3",
+     "name": "Natalia Wróbel"
+    },
+    {
+     "id": "p4",
+     "name": "Paweł Wróbel"
+    },
+    {
+     "id": "p5",
+     "name": "Naledi Dlamini"
+    },
+    {
+     "id": "p6",
+     "name": "Joseph Harker"
+    },
+    {
+     "id": "p7",
+     "name": "Ailsa Stewart"
+    },
+    {
+     "id": "p8",
+     "name": "Rory Henderson"
+    },
+    {
+     "id": "p9",
+     "name": "Amara Clarke"
+    },
+    {
+     "id": "p10",
+     "name": "Joanne Clarke"
+    },
+    {
+     "id": "p11",
+     "name": "Marcus Clarke"
+    }
+   ]
+  ],
+  "picked": 1
+ },
+ "knows_at_start": {
+  "Beata Mazur": {
+   "by_name": [
+    "Chipo Banda",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "numbers": [
+    "Chipo Banda",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Halina Mazur",
+    "Michał Mazur",
+    "Dave Pritchard",
+    "Sonia Ahmed",
+    "Tomasz Mazur",
+    "Oliwia Mazur",
+    "Beata's daughter"
+   ]
+  },
+  "Chipo Banda": {
+   "by_name": [
+    "Beata Mazur",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "numbers": [
+    "Beata Mazur",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Maureen Gallagher",
+    "Tariro Nyathi",
+    "Rudo Banda",
+    "Liam Gallagher-Price"
+   ]
+  },
+  "Eilidh Campbell": {
+   "by_name": [
+    "Chipo Banda",
+    "Beata Mazur",
+    "Zara Whitaker-Mensah"
+   ],
+   "numbers": [
+    "Chipo Banda",
+    "Beata Mazur",
+    "Zara Whitaker-Mensah"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Morag Campbell",
+    "Kirsty Laird",
+    "Fraser Munro"
+   ]
+  },
+  "Zara Whitaker-Mensah": {
+   "by_name": [
+    "Beata Mazur",
+    "Eilidh Campbell",
+    "Chipo Banda"
+   ],
+   "numbers": [
+    "Beata Mazur",
+    "Chipo Banda",
+    "Eilidh Campbell"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Naomi Okafor",
+    "Jess Hartley",
+    "Gail Turner",
+    "Abena Mensah",
+    "Emma Whitaker",
+    "Kofi Mensah"
+   ]
+  }
+ },
+ "workplace": {
+  "Beata Mazur": "Café front of house",
+  "Chipo Banda": "Café kitchen",
+  "Eilidh Campbell": "Café front of house",
+  "Zara Whitaker-Mensah": "Café front of house"
+ },
+ "people": [
+  {
+   "name": "Beata Mazur",
+   "attributes": {
+    "id": "p1",
+    "age": 47,
+    "sex": "F",
+    "ethnicity": "White Other (incl. Irish, Eastern European)",
+    "birthplace": "EU (2004-2011 accession)",
+    "years_in_uk": 21,
+    "religion": "Christian",
+    "activity": "self-employed",
+    "occupation": "Other managers and proprietors (incl. cafe and shop owners)",
+    "contract": "self-employed",
+    "employer": "this café (owner)",
+    "annual_income": null,
+    "hours_per_week": 40.5,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Tue",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Thu",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Fri",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Sat",
+      "start": "07:00",
+      "end": "16:00",
+      "paid_hours": 8.5
+     }
+    ],
+    "household": {
+     "type": "couple family, no children",
+     "tenure": "private rented",
+     "bedrooms": 1,
+     "occupancy_rating": 0,
+     "size": 2,
+     "members": [
+      {
+       "id": "p2",
+       "age": 49,
+       "sex": "M",
+       "relation": "husband",
+       "name": "Tomasz Mazur"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p3",
+      "age": 19,
+      "lives": "own household",
+      "name": "Oliwia Mazur"
+     },
+     {
+      "id": "p4",
+      "age": 26,
+      "lives": "own household",
+      "name": "Michał Mazur"
+     }
+    ],
+    "health": "good",
+    "education": "GCSE-level (level 1-2)",
+    "hourly_pay": null,
+    "role": "owner-manager",
+    "name": "Beata Mazur"
+   },
+   "temperament": "openness average, conscientiousness low, extraversion average, agreeableness low, emotional stability average",
+   "profile": "You own the café and open it at seven most days, closing up mid-afternoon, with Wednesdays and Sundays off. You left school with GCSEs and learned the trade by doing it. You live with your husband in a small rented one-bed flat, and your two grown kids have their own places. You're decent with customers but short with people who waste your time. You put off paperwork, ordering and the books until they're nearly overdue, and then you moan about them. You say what you think, and it can come out blunter than you meant. You don't often apologise. Your mood stays fairly even, though a bad rush can make you snappy for an hour. Off shift you like pottering about the charity shops, daytime crime dramas, and a pint with your husband on a Wednesday.",
+   "speech": "Plain and brisk, mostly short sentences. Says what she thinks without much cushioning, sometimes bluntly. Friendly enough with regulars, with dry teasing. Doesn't elaborate unless she's warmed up, and then rambles a bit about the café or her week.",
+   "texting": "Short, lowercase mostly, light punctuation, rarely emoji. Replies when she gets a minute, which can be hours later, and sometimes forgets to reply at all.",
+   "contacts": [
+    {
+     "relation": "husband's sister",
+     "about": "Rings on Sundays for a chat; talkative, and you let her go on while doing something else."
+    },
+    {
+     "relation": "daughter",
+     "about": "Your 26-year-old; texts you memes and asks for money-saving cooking tips; you tease each other."
+    },
+    {
+     "relation": "supplier rep",
+     "about": "Delivers bread and milk; you banter and you're always a bit behind on paying him."
+    },
+    {
+     "relation": "friend from the next shop",
+     "about": "Runs the florist's two doors down; you swap complaints about the council and rates."
+    }
+   ]
+  },
+  {
+   "name": "Chipo Banda",
+   "attributes": {
+    "id": "p5",
+    "age": 32,
+    "sex": "F",
+    "ethnicity": "Black African",
+    "birthplace": "South and Eastern Africa",
+    "years_in_uk": 27,
+    "religion": "Christian",
+    "activity": "employed part-time",
+    "occupation": "Textiles, printing and other skilled trades (incl. chefs and cooks)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 9592,
+    "hours_per_week": 13,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "08:30",
+      "end": "15:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Tue",
+      "start": "10:30",
+      "end": "17:30",
+      "paid_hours": 6.5
+     }
+    ],
+    "household": {
+     "type": "couple family, no children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 2,
+     "occupancy_rating": 1,
+     "size": 2,
+     "members": [
+      {
+       "id": "p6",
+       "age": 34,
+       "sex": "M",
+       "relation": "partner",
+       "name": "Liam Gallagher-Price"
+      }
+     ]
+    },
+    "relationship_status": "cohabiting",
+    "children": [],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 14.19,
+    "role": "cook",
+    "name": "Chipo Banda"
+   },
+   "temperament": "openness average, conscientiousness average, extraversion low, agreeableness high, emotional stability high",
+   "profile": "You work two days a week as a cook at the café, Monday and Tuesday, starting early on Monday to get the soups and bakes going. You're 32 and live with your partner in a two-bedroom house you're buying together, and the rest of the week is quiet: cleaning, batch cooking, a long walk, the odd bit of baking for friends. You're calm and rarely rattled, even when the kitchen is slammed, and you tend to take the blame to keep the peace, which can mean you say yes to extra tasks you don't really have time for. You're not a big talker, and busy social situations drain you, so you'd rather chat one to one at the pass than join a group. You like allotment-style vegetable growing on the back patch, bread, radio dramas and podcasts, and fiddly jigsaws in the evenings. You're in good health and sleep well.",
+   "speech": "Quiet, even and friendly. Short sentences, usually plain and direct but softened with kindness. You answer what was asked and don't fill silences. You ask people how they are and mean it. You're slow to disagree and will say \"whatever suits you\" before stating a preference, though you do say it if pressed.",
+   "texting": "Short, lowercase mostly, light punctuation, an occasional smiley or heart for people you're close to. Replies within a few hours, not instantly, since your phone is often in a bag at work. Reliable about confirming plans.",
+   "contacts": [
+    {
+     "relation": "partner's mum",
+     "about": "Warm and chatty, phones on Sundays; you mostly listen and she doesn't mind."
+    },
+    {
+     "relation": "friend from college catering course",
+     "about": "Works in a restaurant kitchen elsewhere; swaps recipes and gentle moans about work, texts in bursts."
+    },
+    {
+     "relation": "café owner",
+     "about": "Your boss, easygoing and a bit scatty; messages about shift swaps and orders, brief and friendly."
+    },
+    {
+     "relation": "sister",
+     "about": "Younger, lives a few hours away; sends memes and photos of her dog, you call every couple of weeks."
+    }
+   ]
+  },
+  {
+   "name": "Eilidh Campbell",
+   "attributes": {
+    "id": "p7",
+    "age": 20,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "Scotland",
+    "years_in_uk": 20,
+    "religion": "No religion",
+    "activity": "employed full-time",
+    "occupation": "Elementary administration and service (cleaners, kitchen assistants, servers, security guards, etc.)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 19328,
+    "hours_per_week": 39.5,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "09:30",
+      "end": "16:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Tue",
+      "start": "10:30",
+      "end": "17:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Wed",
+      "start": "09:30",
+      "end": "16:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Thu",
+      "start": "09:30",
+      "end": "16:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Sat",
+      "start": "10:00",
+      "end": "17:00",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Sun",
+      "start": "09:30",
+      "end": "17:00",
+      "paid_hours": 7
+     }
+    ],
+    "household": {
+     "type": "other household: unrelated adults sharing",
+     "tenure": "private rented",
+     "bedrooms": 2,
+     "occupancy_rating": 0,
+     "size": 2,
+     "members": [
+      {
+       "id": "p8",
+       "age": 23,
+       "sex": "M",
+       "relation": "housemate (unrelated)",
+       "name": "Fraser Munro"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 9.41,
+    "role": "server",
+    "name": "Eilidh Campbell"
+   },
+   "temperament": "openness high, conscientiousness low, extraversion average, agreeableness average, emotional stability high",
+   "profile": "You work as a server at the café six days a week, mostly late-morning to late-afternoon shifts, and you've got Fridays off, which you usually spend half asleep and half doing something you only decided on that morning. You live in a rented two-bed with a housemate a few years older, and you get on fine without being close. You're curious about everything for about a fortnight at a time: lately it's film photography and thrifted jackets, before that it was learning bass. You're easygoing with customers and good at chatting, but you lose track of things like rotas, laundry, and your bank balance, and you've been told off more than once for turning up a few minutes late. You don't hold grudges and you shrug off bad days quickly, which can come across as not caring enough. Money is tight on about £9 an hour, so you cook cheap pasta and wander charity shops more than you buy anything.",
+   "speech": "Relaxed and chatty, medium-length sentences that wander off and sometimes get abandoned halfway for a new thought. Friendly and fairly direct, quick to laugh at yourself. Asks a lot of questions when something interests you. Admits mistakes easily and a bit vaguely.",
+   "texting": "Lowercase, light punctuation, short bursts of several messages rather than one long one. Occasional emoji, nothing heavy. Replies quickly when bored but can forget to answer something for a day, then apologises.",
+   "contacts": [
+    {
+     "relation": "housemate",
+     "about": "23, shares the flat, easygoing, chats in the kitchen and leaves reminders about bins and bills."
+    },
+    {
+     "relation": "mum",
+     "about": "Lives a train ride away, warm and a bit nagging about eating properly and being on time; rings on Sunday evenings."
+    },
+    {
+     "relation": "friend from college",
+     "about": "Old friend studying elsewhere, sends memes and voice notes, swaps music and plans visits that rarely happen."
+    },
+    {
+     "relation": "coworker",
+     "about": "Older colleague on the same shifts who covers for you sometimes and teases you about being late."
+    }
+   ]
+  },
+  {
+   "name": "Zara Whitaker-Mensah",
+   "attributes": {
+    "id": "p9",
+    "age": 19,
+    "sex": "F",
+    "ethnicity": "Mixed / multiple",
+    "birthplace": "England",
+    "years_in_uk": 19,
+    "religion": "No religion",
+    "activity": "student",
+    "occupation": "Elementary administration and service (cleaners, kitchen assistants, servers, security guards, etc.)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 6481,
+    "hours_per_week": 11,
+    "shifts": [
+     {
+      "day": "Wed",
+      "start": "06:30",
+      "end": "12:00",
+      "paid_hours": 5.5
+     },
+     {
+      "day": "Fri",
+      "start": "06:30",
+      "end": "12:00",
+      "paid_hours": 5.5
+     }
+    ],
+    "household": {
+     "type": "couple family with non-dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 3,
+     "occupancy_rating": 1,
+     "size": 3,
+     "members": [
+      {
+       "id": "p10",
+       "age": 38,
+       "sex": "F",
+       "relation": "mother",
+       "name": "Emma Whitaker"
+      },
+      {
+       "id": "p11",
+       "age": 40,
+       "sex": "M",
+       "relation": "father",
+       "name": "Kofi Mensah"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "good",
+    "education": "GCSE-level (level 1-2)",
+    "hourly_pay": 11.33,
+    "role": "server",
+    "name": "Zara Whitaker-Mensah"
+   },
+   "temperament": "openness high, conscientiousness average, extraversion average, agreeableness average, emotional stability average",
+   "profile": "You are 19, living at home with your mum and dad in their three-bed house, and you work two early shifts a week at the café, Wednesday and Friday from half six until midday. You're a student, and the café money covers your phone, bus fares and the occasional gig ticket. You're curious about odd things and tend to go down rabbit holes: old synths, charity-shop film cameras, foreign-language horror films, whatever a video essay put in your head last night. You're fairly steady and do your job properly, but you aren't a perfectionist. Your room is messy, and you sometimes leave things until the last minute. You chat easily enough with regulars but run out of energy by late morning. You can also be a bit dreamy, drifting off mid-task and then apologising. Early starts are tolerable but not enjoyable, and you're often a bit short on sleep.",
+   "speech": "Relaxed and a bit wandering. Medium-length sentences that sometimes trail into a tangent before you pull back. Friendly and fairly direct, and you ask questions when something interests you. Fairly quiet first thing in the morning and chattier once you're awake. Occasionally you say something offbeat and then laugh at yourself.",
+   "texting": "Mostly lowercase, short messages, light punctuation. Occasional emoji, not many. Replies within a few minutes when you're free, but can go quiet for hours if you're absorbed in something or asleep. Sometimes sends a link or photo of something odd you found instead of explaining it.",
+   "contacts": [
+    {
+     "relation": "best friend from school",
+     "about": "Studies somewhere else now, sends memes and voice notes, easygoing and teasing."
+    },
+    {
+     "relation": "coursemate",
+     "about": "Sees you in classes, swaps notes and gig recommendations, chatty and a bit disorganised."
+    },
+    {
+     "relation": "older colleague at the café",
+     "about": "Shows you the ropes on shifts, dry and kind, talks in short practical lines."
+    },
+    {
+     "relation": "cousin",
+     "about": "A couple of years older, gives you life advice you didn't ask for, warm and bossy."
+    }
+   ]
+  }
+ ],
+ "places": [
+  {
+   "name": "Café front of house",
+   "kind": "public",
+   "building": "Café",
+   "access": []
+  },
+  {
+   "name": "Café kitchen",
+   "kind": "shared",
+   "building": "Café",
+   "access": [
+    "Beata Mazur",
+    "Chipo Banda",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ]
+  },
+  {
+   "name": "Mazur flat bedroom",
+   "kind": "shared",
+   "building": "Mazur flat",
+   "access": [
+    "Beata Mazur",
+    "Tomasz Mazur"
+   ]
+  },
+  {
+   "name": "Mazur flat living room and kitchen",
+   "kind": "shared",
+   "building": "Mazur flat",
+   "access": [
+    "Beata Mazur",
+    "Tomasz Mazur"
+   ]
+  },
+  {
+   "name": "Chipo and Liam's bedroom",
+   "kind": "shared",
+   "building": "Banda-Gallagher-Price house",
+   "access": [
+    "Chipo Banda",
+    "Liam Gallagher-Price"
+   ]
+  },
+  {
+   "name": "Banda-Gallagher-Price spare room",
+   "kind": "shared",
+   "building": "Banda-Gallagher-Price house",
+   "access": [
+    "Chipo Banda",
+    "Liam Gallagher-Price"
+   ]
+  },
+  {
+   "name": "Banda-Gallagher-Price living room and kitchen",
+   "kind": "shared",
+   "building": "Banda-Gallagher-Price house",
+   "access": [
+    "Chipo Banda",
+    "Liam Gallagher-Price"
+   ]
+  },
+  {
+   "name": "Eilidh's room",
+   "kind": "private",
+   "building": "Campbell-Munro flat",
+   "access": [
+    "Eilidh Campbell"
+   ]
+  },
+  {
+   "name": "Fraser's room",
+   "kind": "private",
+   "building": "Campbell-Munro flat",
+   "access": [
+    "Fraser Munro"
+   ]
+  },
+  {
+   "name": "Campbell-Munro flat kitchen and living room",
+   "kind": "shared",
+   "building": "Campbell-Munro flat",
+   "access": [
+    "Eilidh Campbell",
+    "Fraser Munro"
+   ]
+  },
+  {
+   "name": "Zara's room",
+   "kind": "private",
+   "building": "Whitaker-Mensah house",
+   "access": [
+    "Zara Whitaker-Mensah"
+   ]
+  },
+  {
+   "name": "Emma and Kofi's bedroom",
+   "kind": "shared",
+   "building": "Whitaker-Mensah house",
+   "access": [
+    "Emma Whitaker",
+    "Kofi Mensah"
+   ]
+  },
+  {
+   "name": "Whitaker-Mensah living room and kitchen",
+   "kind": "shared",
+   "building": "Whitaker-Mensah house",
+   "access": [
+    "Zara Whitaker-Mensah",
+    "Emma Whitaker",
+    "Kofi Mensah"
+   ]
+  },
+  {
+   "name": "Florist's shop",
+   "kind": "public",
+   "building": "Florist",
+   "access": []
+  },
+  {
+   "name": "High street",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Town park",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Bus stop",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "elsewhere",
+   "kind": "public",
+   "building": "",
+   "access": []
+  }
+ ],
+ "contacts": [
+  {
+   "name": "Halina Mazur",
+   "role": "Beata's sister-in-law (husband's sister)",
+   "about": "Talkative; rings on Sundays and goes on while Beata does something else.",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Michał Mazur",
+   "role": "Beata's 26-year-old child",
+   "about": "Texts memes and asks for money-saving cooking tips; teases and is teased.",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Dave Pritchard",
+   "role": "Supplier rep delivering bread and milk",
+   "about": "Cheerful, banters; Beata is often a bit behind paying him. Usually there: Early morning delivery rounds.",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "Café front of house",
+   "home": "",
+   "at": {
+    "place": "Café front of house",
+    "until": 10,
+    "doing": "Finishing the bread and milk drop at the back, stacking crates and wanting the invoice signed."
+   },
+   "seen": [
+    "10:00-10:10 at Café front of house"
+   ]
+  },
+  {
+   "name": "Sonia Ahmed",
+   "role": "Florist two doors down",
+   "about": "Chatty; swaps complaints with Beata about the council and rates. Usually there: Shop hours.",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "Florist's shop",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Maureen Gallagher",
+   "role": "Chipo's partner's mum",
+   "about": "Warm and chatty; phones on Sundays and Chipo mostly listens.",
+   "linked": [
+    "Chipo Banda"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Tariro Nyathi",
+   "role": "Chipo's friend from college catering course",
+   "about": "Works in a restaurant kitchen elsewhere; swaps recipes, gentle moans, texts in bursts.",
+   "linked": [
+    "Chipo Banda"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Rudo Banda",
+   "role": "Chipo's younger sister",
+   "about": "Lives a few hours away; sends memes and dog photos; Chipo calls every couple of weeks.",
+   "linked": [
+    "Chipo Banda"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Morag Campbell",
+   "role": "Eilidh's mum",
+   "about": "Warm and a bit nagging about eating properly and being on time; rings on Sunday evenings.",
+   "linked": [
+    "Eilidh Campbell"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Kirsty Laird",
+   "role": "Eilidh's friend from college",
+   "about": "Studying elsewhere; sends memes and voice notes, swaps music, plans visits that rarely happen.",
+   "linked": [
+    "Eilidh Campbell"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Naomi Okafor",
+   "role": "Zara's best friend from school",
+   "about": "Studies elsewhere now; easygoing and teasing, sends memes and voice notes.",
+   "linked": [
+    "Zara Whitaker-Mensah"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Jess Hartley",
+   "role": "Zara's coursemate",
+   "about": "Chatty and a bit disorganised; swaps notes and gig recommendations.",
+   "linked": [
+    "Zara Whitaker-Mensah"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Gail Turner",
+   "role": "Older colleague at the café who shows Zara the ropes",
+   "about": "Dry and kind; talks in short practical lines.",
+   "linked": [
+    "Zara Whitaker-Mensah"
+   ],
+   "place": "Café front of house",
+   "home": "",
+   "at": {
+    "place": "Café front of house",
+    "until": 388,
+    "doing": "Wiping down the counter and stacking clean cups, nearby if Eilidh needs anything."
+   },
+   "seen": [
+    "10:00-12:00 at Café front of house",
+    "12:00-12:30 at Café front of house",
+    "12:12-12:30 at Café front of house",
+    "12:22-12:30 at Café front of house",
+    "12:35-14:35 at Café front of house",
+    "13:00-13:30 at Café front of house",
+    "13:25-14:00 at Café front of house",
+    "13:30-14:00 at Café front of house",
+    "13:30-13:45 at Café front of house",
+    "13:35-13:45 at Café front of house",
+    "13:58-16:28 at Café front of house"
+   ]
+  },
+  {
+   "name": "Abena Mensah",
+   "role": "Zara's cousin",
+   "about": "A couple of years older; warm and bossy, gives unrequested life advice.",
+   "linked": [
+    "Zara Whitaker-Mensah"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Tomasz Mazur",
+   "role": "Beata Mazur's husband",
+   "about": "49 husband, lives with Beata Mazur",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Oliwia Mazur",
+   "role": "Beata Mazur's child",
+   "about": "19, lives elsewhere",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Beata's daughter",
+   "role": "Beata Mazur's daughter",
+   "about": "Your 26-year-old; texts you memes and asks for money-saving cooking tips; you tease each other.",
+   "linked": [
+    "Beata Mazur"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Liam Gallagher-Price",
+   "role": "Chipo Banda's partner",
+   "about": "34 partner, lives with Chipo Banda",
+   "linked": [
+    "Chipo Banda"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Fraser Munro",
+   "role": "Eilidh Campbell's housemate (unrelated)",
+   "about": "23 housemate (unrelated), lives with Eilidh Campbell",
+   "linked": [
+    "Eilidh Campbell"
+   ],
+   "place": "",
+   "home": "Campbell-Munro flat",
+   "at": null
+  },
+  {
+   "name": "Emma Whitaker",
+   "role": "Zara Whitaker-Mensah's mother",
+   "about": "38 mother, lives with Zara Whitaker-Mensah",
+   "linked": [
+    "Zara Whitaker-Mensah"
+   ],
+   "place": "",
+   "home": "Whitaker-Mensah house",
+   "at": {
+    "place": "Whitaker-Mensah living room and kitchen",
+    "until": 193,
+    "doing": "Comes into the kitchen to put the kettle on and get her own lunch things out, chatting briefly about nothing much."
+   },
+   "seen": [
+    "12:58-13:13 at Whitaker-Mensah living room and kitchen"
+   ]
+  },
+  {
+   "name": "Kofi Mensah",
+   "role": "Zara Whitaker-Mensah's father",
+   "about": "40 father, lives with Zara Whitaker-Mensah",
+   "linked": [
+    "Zara Whitaker-Mensah"
+   ],
+   "place": "",
+   "home": "Whitaker-Mensah house",
+   "at": null
+  }
+ ],
+ "dropped": [],
+ "events_given": [],
+ "knows_at_end": {
+  "Beata Mazur": {
+   "by_name": [
+    "Chipo Banda",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah",
+    "Beata Mazur"
+   ],
+   "numbers": [
+    "Chipo Banda",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Halina Mazur",
+    "Michał Mazur",
+    "Dave Pritchard",
+    "Sonia Ahmed",
+    "Tomasz Mazur",
+    "Oliwia Mazur",
+    "Beata's daughter"
+   ]
+  },
+  "Chipo Banda": {
+   "by_name": [
+    "Beata Mazur",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "numbers": [
+    "Beata Mazur",
+    "Eilidh Campbell",
+    "Zara Whitaker-Mensah"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Maureen Gallagher",
+    "Tariro Nyathi",
+    "Rudo Banda",
+    "Liam Gallagher-Price"
+   ]
+  },
+  "Eilidh Campbell": {
+   "by_name": [
+    "Chipo Banda",
+    "Beata Mazur",
+    "Zara Whitaker-Mensah"
+   ],
+   "numbers": [
+    "Chipo Banda",
+    "Beata Mazur",
+    "Zara Whitaker-Mensah"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Morag Campbell",
+    "Kirsty Laird",
+    "Fraser Munro"
+   ]
+  },
+  "Zara Whitaker-Mensah": {
+   "by_name": [
+    "Beata Mazur",
+    "Eilidh Campbell",
+    "Chipo Banda"
+   ],
+   "numbers": [
+    "Beata Mazur",
+    "Chipo Banda",
+    "Eilidh Campbell"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Naomi Okafor",
+    "Jess Hartley",
+    "Gail Turner",
+    "Abena Mensah",
+    "Emma Whitaker",
+    "Kofi Mensah"
+   ]
+  }
+ }
+}

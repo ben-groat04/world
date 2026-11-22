@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Sam Smith",
+    "age": 43,
+    "sex": "male",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "Sales / account executive",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "elsewhere in the city (city_centre_offices)",
+    "approx_annual_income_gbp": {
+      "gross": 46300,
+      "net": 36900
+    },
+    "hours_per_week": 42,
+    "shift_pattern": {
+      "label": "Office 3 days + home 2",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 08:45-17:30"
+    },
+    "household": {
+      "type": "cohab dep kids",
+      "tenure": "mortgage",
+      "bedrooms": 3,
+      "address": "35 Cutting Road",
+      "lives_with": [
+        {
+          "name": "Helen Scott",
+          "age": 37,
+          "relation": "partner"
+        },
+        {
+          "name": "Emily Smith",
+          "age": 13,
+          "relation": "daughter"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Helen)",
+    "children": [
+      {
+        "name": "Emily Smith",
+        "age": 13,
+        "lives": "at home"
+      }
+    ],
+    "pets": [
+      "1 dog"
+    ],
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 3 (A-levels/BTEC)",
+    "_src": {
+      "id": 77,
+      "household": 30,
+      "segment": "settled_professionals"
+    }
+  },
+  {
+    "name": "Helen Scott",
+    "age": 37,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "Police officer / community support / fire",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "elsewhere in the city (city_centre_offices)",
+    "approx_annual_income_gbp": {
+      "gross": 33400,
+      "net": 27500
+    },
+    "hours_per_week": 45,
+    "shift_pattern": {
+      "label": "NHS shifts (long days/nights)",
+      "shifts": "daily 07:00-19:30; daily 19:00-07:30; daily 07:00-15:00; daily 13:00-21:00"
+    },
+    "household": {
+      "type": "cohab dep kids",
+      "tenure": "mortgage",
+      "bedrooms": 3,
+      "address": "35 Cutting Road",
+      "lives_with": [
+        {
+          "name": "Sam Smith",
+          "age": 43,
+          "relation": "partner"
+        },
+        {
+          "name": "Emily Smith",
+          "age": 13,
+          "relation": "daughter"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Sam)",
+    "children": [
+      {
+        "name": "Emily Smith",
+        "age": 13,
+        "lives": "at home"
+      }
+    ],
+    "pets": [
+      "1 dog"
+    ],
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 3 (A-levels/BTEC)",
+    "_src": {
+      "id": 78,
+      "household": 30,
+      "segment": "settled_professionals"
+    }
+  },
+  {
+    "name": "Emily Smith",
+    "age": 13,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "child",
+    "activity": "child",
+    "contract": null,
+    "workplace": null,
+    "approx_annual_income_gbp": {
+      "gross": 0,
+      "net": 0
+    },
+    "hours_per_week": null,
+    "shift_pattern": null,
+    "household": {
+      "type": "cohab dep kids",
+      "tenure": "mortgage",
+      "bedrooms": 3,
+      "address": "35 Cutting Road",
+      "lives_with": [
+        {
+          "name": "Sam Smith",
+          "age": 43,
+          "relation": "father"
+        },
+        {
+          "name": "Helen Scott",
+          "age": 37,
+          "relation": "mother"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": [
+      "1 dog"
+    ],
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "still in school",
+    "_src": {
+      "id": 79,
+      "household": 30,
+      "segment": "settled_professionals"
+    }
+  }
+]

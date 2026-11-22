@@ -1,0 +1,301 @@
+[
+  {
+    "name": "Zahra Al-Rubaie",
+    "age": 60,
+    "sex": "female",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "Iraq",
+    "born_in_uk": false,
+    "years_in_uk": 33,
+    "religion": "Muslim",
+    "occupation": "Café owner",
+    "activity": "employed",
+    "contract": "self_employed",
+    "workplace": "Mrs Dhillon's Tea Rooms (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 59800,
+      "net": 45200
+    },
+    "hours_per_week": 62,
+    "shift_pattern": {
+      "label": "Self-directed / irregular",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 09:00-17:00"
+    },
+    "household": {
+      "type": "multi family dep kids",
+      "tenure": "private rent",
+      "bedrooms": 4,
+      "address": "20 Raglan Road",
+      "lives_with": [
+        {
+          "name": "Bogdan Al-Rubaie",
+          "age": 60,
+          "relation": "partner"
+        },
+        {
+          "name": "Ayşe Al-Rubaie",
+          "age": 87,
+          "relation": "mother"
+        },
+        {
+          "name": "Karolina Al-Rubaie",
+          "age": 12,
+          "relation": "daughter"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Bogdan)",
+    "children": [
+      {
+        "name": "Karolina Al-Rubaie",
+        "age": 12,
+        "lives": "at home"
+      },
+      {
+        "name": "Camilo Al-Rubaie",
+        "age": 36,
+        "lives": "another UK city"
+      },
+      {
+        "name": "Sebastián Al-Rubaie",
+        "age": 36,
+        "lives": "another UK city"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "no formal qualifications",
+    "_src": {
+      "id": 51,
+      "household": 22,
+      "segment": "local_business_families"
+    }
+  },
+  {
+    "name": "Mariana Costa",
+    "age": 56,
+    "sex": "female",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "Brazil",
+    "born_in_uk": false,
+    "years_in_uk": 39,
+    "religion": "No religion",
+    "occupation": "Restaurant manager",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "Anatolia Mangal (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 39800,
+      "net": 32200
+    },
+    "hours_per_week": 53,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "other single family",
+      "tenure": "mortgage",
+      "bedrooms": 2,
+      "address": "38 Raglan Road",
+      "lives_with": [
+        {
+          "name": "Mohamed Tahiri",
+          "age": 82,
+          "relation": "father"
+        }
+      ]
+    },
+    "relationship_status": "divorced",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 3 (A-levels/BTEC)",
+    "_src": {
+      "id": 121,
+      "household": 44,
+      "segment": "local_business_families"
+    }
+  },
+  {
+    "name": "Noor Ali",
+    "age": 22,
+    "sex": "female",
+    "ethnicity": "Pakistani",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Muslim",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 3500,
+      "net": 3500
+    },
+    "hours_per_week": 9,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "lone parent nondep",
+      "tenure": "private rent",
+      "bedrooms": 2,
+      "address": "Flat above Lena's Kitchen, Newport Road",
+      "lives_with": [
+        {
+          "name": "Aisha Ali",
+          "age": 50,
+          "relation": "mother"
+        },
+        {
+          "name": "Maryam Ali",
+          "age": 23,
+          "relation": "sister"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 406,
+      "household": 179,
+      "segment": "lone_parents"
+    }
+  },
+  {
+    "name": "Fadi Atallah",
+    "age": 27,
+    "sex": "male",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "Syria",
+    "born_in_uk": false,
+    "years_in_uk": 10,
+    "religion": "Muslim",
+    "occupation": "Chef (city restaurants/hotels)",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 32200,
+      "net": 26700
+    },
+    "hours_per_week": 49,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "cohab no kids",
+      "tenure": "private rent",
+      "bedrooms": 2,
+      "address": "52 Newport Road",
+      "lives_with": [
+        {
+          "name": "Elias Khatib",
+          "age": 28,
+          "relation": "partner"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Elias)",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 2 (GCSEs)",
+    "_src": {
+      "id": 437,
+      "household": 190,
+      "segment": "young_sharers"
+    }
+  },
+  {
+    "name": "Daniel Taylor",
+    "age": 37,
+    "sex": "male",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "Kitchen porter / takeaway cook",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "Wing Zone (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 39800,
+      "net": 32200
+    },
+    "hours_per_week": 49,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "multi family dep kids",
+      "tenure": "owned outright",
+      "bedrooms": 0,
+      "address": "Flat 23, Wharf House, Cutting Road",
+      "lives_with": [
+        {
+          "name": "Claire White",
+          "age": 36,
+          "relation": "partner"
+        },
+        {
+          "name": "Lisa Davies",
+          "age": 37,
+          "relation": "relative"
+        },
+        {
+          "name": "Hannah Taylor",
+          "age": 10,
+          "relation": "daughter"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Claire)",
+    "children": [
+      {
+        "name": "Hannah Taylor",
+        "age": 10,
+        "lives": "at home"
+      }
+    ],
+    "pets": [
+      "1 cat"
+    ],
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "no formal qualifications",
+    "_src": {
+      "id": 233,
+      "household": 96,
+      "segment": "family_couples"
+    }
+  }
+]

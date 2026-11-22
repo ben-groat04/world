@@ -1,0 +1,257 @@
+[
+  {
+    "name": "Elizabeth Williams",
+    "age": 64,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Christian",
+    "occupation": "Primary school teacher",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "Gladstone Street Primary Academy (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 31000,
+      "net": 25900
+    },
+    "hours_per_week": 44,
+    "shift_pattern": {
+      "label": "School hours (term time)",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 08:00-16:30"
+    },
+    "household": {
+      "type": "married no kids",
+      "tenure": "owned outright",
+      "bedrooms": 3,
+      "address": "47 Cutting Road",
+      "lives_with": [
+        {
+          "name": "Brian Williams",
+          "age": 66,
+          "relation": "partner"
+        }
+      ]
+    },
+    "relationship_status": "married (Brian)",
+    "children": [
+      {
+        "name": "Hannah Williams",
+        "age": 31,
+        "lives": "another UK city"
+      },
+      {
+        "name": "Finley Williams",
+        "age": 34,
+        "lives": "elsewhere in the city"
+      },
+      {
+        "name": "George Williams",
+        "age": 30,
+        "lives": "another UK city"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [
+        "heart disease"
+      ],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 103,
+      "household": 36,
+      "segment": "settled_professionals"
+    }
+  },
+  {
+    "name": "Ruby Clark",
+    "age": 29,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "Builder / bricklayer / plasterer / painter-decorator",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "elsewhere in the city (industrial_estate)",
+    "approx_annual_income_gbp": {
+      "gross": 60200,
+      "net": 45500
+    },
+    "hours_per_week": 43,
+    "shift_pattern": {
+      "label": "Site hours (trades/construction)",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 07:30-16:30; Sat 08:00-12:00"
+    },
+    "household": {
+      "type": "married dep kids",
+      "tenure": "housing assoc",
+      "bedrooms": 4,
+      "address": "39 Cutting Road",
+      "lives_with": [
+        {
+          "name": "Connor Clark",
+          "age": 28,
+          "relation": "partner"
+        },
+        {
+          "name": "Ruby Clark",
+          "age": 4,
+          "relation": "daughter"
+        },
+        {
+          "name": "Luke Clark",
+          "age": 1,
+          "relation": "son"
+        },
+        {
+          "name": "Finley Clark",
+          "age": 0,
+          "relation": "son"
+        }
+      ]
+    },
+    "relationship_status": "married (Connor)",
+    "children": [
+      {
+        "name": "Ruby Clark",
+        "age": 4,
+        "lives": "at home"
+      },
+      {
+        "name": "Luke Clark",
+        "age": 1,
+        "lives": "at home"
+      },
+      {
+        "name": "Finley Clark",
+        "age": 0,
+        "lives": "at home"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 2 (GCSEs)",
+    "_src": {
+      "id": 86,
+      "household": 32,
+      "segment": "family_couples"
+    }
+  },
+  {
+    "name": "Jean Robinson",
+    "age": 67,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "retired",
+    "activity": "retired",
+    "contract": null,
+    "workplace": null,
+    "approx_annual_income_gbp": {
+      "gross": 12000,
+      "net": 12000
+    },
+    "hours_per_week": null,
+    "shift_pattern": null,
+    "household": {
+      "type": "one person 66plus",
+      "tenure": "owned outright",
+      "bedrooms": 2,
+      "address": "65 Cutting Road",
+      "lives_with": []
+    },
+    "relationship_status": "divorced",
+    "children": [
+      {
+        "name": "Katie Robinson",
+        "age": 37,
+        "lives": "a nearby town"
+      },
+      {
+        "name": "Kelly Robinson",
+        "age": 39,
+        "lives": "elsewhere in the city"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "bad",
+      "conditions": [
+        "hypertension",
+        "depression/anxiety",
+        "hearing/sight loss"
+      ],
+      "disabled": true
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 151,
+      "household": 57,
+      "segment": "older_longterm"
+    }
+  },
+  {
+    "name": "Laura Robinson",
+    "age": 40,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Christian",
+    "occupation": "Allied health (physio/OT/radiographer/paramedic)",
+    "activity": "employed",
+    "contract": "fixed_term",
+    "workplace": "elsewhere in the city (teaching_hospital)",
+    "approx_annual_income_gbp": {
+      "gross": 33200,
+      "net": 27000
+    },
+    "hours_per_week": 38,
+    "shift_pattern": {
+      "label": "NHS shifts (long days/nights)",
+      "shifts": "daily 07:00-19:30; daily 19:00-07:30; daily 07:00-15:00; daily 13:00-21:00"
+    },
+    "household": {
+      "type": "married no kids",
+      "tenure": "owned outright",
+      "bedrooms": 1,
+      "address": "Flat 17, Wharf House, Cutting Road",
+      "lives_with": [
+        {
+          "name": "Jason Robinson",
+          "age": 44,
+          "relation": "partner"
+        }
+      ]
+    },
+    "relationship_status": "married (Jason)",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 226,
+      "household": 90,
+      "segment": "settled_professionals"
+    }
+  }
+]

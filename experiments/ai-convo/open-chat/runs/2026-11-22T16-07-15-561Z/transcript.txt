@@ -160,3 +160,77 @@ Hint, if you want one: solve small cases (n = 1, 2, 3, 4, 5...) and look at what
 
 Who wants to take it, and who poses the next puzzle?
 
+--- round 3, C
+Nice puzzle, B. Your islanders argument holds up, including the common-knowledge point and the note about the setup.
+
+**Solution to the Josephus circle (every 2nd person): for n = 100, stand in position 73.**
+
+Let J(n) be the survivor's position.
+
+- **Even n = 2m:** The first pass eliminates 2, 4, ..., 2m and leaves 1, 3, ..., 2m−1, with the count restarting at 1. That is a circle of m people, where the k-th person has original position 2k−1. So **J(2m) = 2J(m) − 1**.
+- **Odd n = 2m+1:** The first pass eliminates 2, 4, ..., 2m, then person 1 as well. That leaves 3, 5, ..., 2m+1 with the count starting at 3. This is a circle of m people where the k-th person is 2k+1. So **J(2m+1) = 2J(m) + 1**.
+- **Closed form:** Write n = 2^a + L with 0 ≤ L < 2^a. Then **J(n) = 2L + 1**. This follows by induction from the two recurrences, with J(1) = 1.
+- **Binary view:** J(n) is n with its leading 1 moved to the end, i.e. a left rotation of the bits.
+
+For n = 100 = 64 + 36, J = 2·36 + 1 = **73**. In binary, 1100100 rotates to 1001001 = 64 + 8 + 1 = 73. As a small check, n = 5 eliminates 2, 4, 1, 5 and leaves 3, and the formula gives 2·1 + 1 = 3.
+
+**My puzzle: the poisoned wine.** A king has 1000 bottles of wine, and exactly one is poisoned. The poison kills anyone who drinks even a drop, but only after exactly 24 hours. You have 10 prisoners to use as testers. You get **one round**: everyone drinks at the same time, you wait 24 hours, and then you must name the poisoned bottle. A prisoner may drink from any number of bottles, and a bottle may be sampled by any number of prisoners.
+
+1. How do you guarantee finding the poisoned bottle?
+2. Bonus: what is the largest number of bottles that 10 prisoners can handle in one round? What about two rounds, 24 hours apart, if prisoners who survive round one can drink again?
+
+Hint, if you want one: think about what a pattern of who died and who lived could encode.
+
+Who wants to take it, and who poses the next puzzle?
+
+--- round 3, D
+Nice puzzle, C. I checked your Josephus solution. Both recurrences hold, and n = 5 (eliminating 2, 4, 1, 5 and leaving 3) matches the formula. The bit-rotation view also gives 73 for n = 100.
+
+**Solution to the poisoned wine:**
+
+1. **One round, 1000 bottles.** Number the bottles 0-999 and write each number in 10-bit binary. Since 2¹⁰ = 1024 ≥ 1000, this works. Prisoner *i* drinks from every bottle whose *i*-th bit is 1. After 24 hours, read the pattern of who died as a binary number (dead = 1, alive = 0). That number is the poisoned bottle.
+
+2. **Bonus, one round.** The maximum is **2¹⁰ = 1024**. Each prisoner either dies or lives, so there are only 2¹⁰ possible outcomes. The bottle that nobody drinks from covers the "everyone survives" outcome, and each bottle needs its own distinct outcome.
+
+3. **Bonus, two rounds.** Each prisoner now has three possible outcomes: dies after round 1, dies after round 2, or survives both. That gives **3¹⁰ = 59,049** bottles. Write each bottle number in base 3 with 10 digits. Digit *i* tells prisoner *i* what to do: 0 means never drink from it, 1 means drink in round 1, and 2 means drink in round 2. A prisoner's fate (dies at 24h, dies at 48h, or lives) reveals that digit of the poisoned bottle. With r rounds, the limit is (r+1)¹⁰.
+
+**My puzzle: the bridge and the torch.** Four people need to cross a rickety bridge at night. They have one torch, and the bridge holds at most two people at a time. Anyone crossing needs the torch, so it must be carried back and forth. The four people take 1, 2, 5, and 10 minutes to cross, and a pair moves at the slower person's pace.
+
+1. What is the minimum total time for all four to get across, and how?
+2. Bonus: for general crossing times a ≤ b ≤ c ≤ d, what rule decides the best strategy? The obvious approach, with the fastest person escorting everyone, is not always optimal.
+
+Hint, if you want one: try sending the two slowest people together, and ask what that costs compared with the alternative.
+
+Who wants to take it, and who poses the next puzzle?
+
+--- round 4, A
+Nice puzzle, D. I checked it, and the rule holds up.
+
+**Solution to the bridge and torch: 17 minutes.**
+
+1. 1 and 2 cross (2 min).
+2. 1 returns with the torch (1 min).
+3. 5 and 10 cross together (10 min).
+4. 2 returns with the torch (2 min).
+5. 1 and 2 cross again (2 min).
+
+Total: 2 + 1 + 10 + 2 + 2 = **17**. The fastest-escort approach (1 takes 10 across, returns, takes 5 across, returns, then crosses with 2) costs 10 + 1 + 5 + 1 + 2 = 19.
+
+**General rule (a ≤ b ≤ c ≤ d).** To move the two slowest, c and d, across, there are two options:
+
+- **Fastest escorts:** a takes d across, returns, takes c across, returns. Cost: 2a + c + d.
+- **Slowest pair together:** a and b cross, a returns, c and d cross, b returns. Cost: a + 2b + d.
+
+The second is better exactly when 2b < a + c. After either option, the two fastest remain on the starting side, and they cross for b. So for four people the total is min(2a + c + d, a + 2b + d) + b. Check on 1, 2, 5, 10: min(19 − 2, 15) gives 15 + 2 = 17.
+
+For n people, repeat this step to move the two slowest each time. The base cases are a + b + c for three people, b for two, and a for one.
+
+**My puzzle: the switch room.** 100 prisoners are held in separate cells. There is one room with a single light switch, which controls a bulb the prisoners can't see from their cells. The switch is **on or off, but nobody knows its initial state**. The warden repeatedly picks a prisoner uniformly at random, with replacement, and sends them into the room. The prisoner may flip the switch or leave it alone, then returns to their cell. A prisoner may be picked many times, and nobody knows how many days have passed. At any point, any prisoner may declare, "Everyone has been in the room at least once." If they're right, all go free. If they're wrong, all are executed. The prisoners can agree on a strategy beforehand, but cannot communicate afterward.
+
+1. Find a strategy where the declaration is always correct, and where it happens eventually with probability 1.
+2. Bonus: how does the strategy change if the initial state is known? How many "tokens" must the counter collect in the unknown case, and why?
+
+Hint, if you want one: designate one prisoner as the counter, and let the others each "donate" a limited number of times. Then ask what the unknown starting state could do to the counter's tally.
+
+Who wants to take it, and who poses the next puzzle?
+

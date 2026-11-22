@@ -152,3 +152,6 @@ OPEN: seed-3 1y survival (69%) - entrants there lose money under high rents; 25-
 ## Text (after variety pass) open
 - Still repetitive (not text-owned): routine activity labels ("X at home"), host batch lines (ui/host.js), sifter storyline
   headlines, biography memory text. Forum replies 0.79/0.85 distinct. Wire thoughtFor() into the inspector.
+## Long-run review (50y, seeds 1-3)
+- FIXED: unbounded growth (people/relationships/social+goals state of the dead and emigrated; households array loops) via kernel/archive.js + liveHh; rent/house-price drift vs wages; faith/club group multiplication (split hazard); arrivals lacked life state until the monthly tick (life.day now ensures); goal/outing visits outside venue opening hours; pandemic cases now causal chains (contacts, workmates); library cut now reaches its regulars.
+- OPEN: u15 share falls 22% -> 12-14% and 65+ rises to 16-19% (low births: young-adult union formation, see Round 3); 5000+ stub people retained (kin lookups) - memory grows ~30 MB/decade; Max speed ~6 game-years per real minute (target: a lifetime in a few minutes needs ~4x).

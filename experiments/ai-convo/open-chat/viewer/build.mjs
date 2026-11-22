@@ -11,7 +11,7 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const file = path.join(runsDir, id, 'log.jsonl');
   if (!fs.existsSync(file)) continue;
   const all = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)).filter(r => !r.error); // oracle failures are logged but not shown
-  const rows = all.filter(r => !r.oracle); // agent turns; Oracle answers are added back to turns below
+  const rows = all.filter(r => !r.oracle && !r.clock); // agent turns; Oracle and Clock rows stay in turns only
   if (!rows.length) continue;
   const m = id.match(/^(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d)-(\d\d)-(\d{3})Z$/);
   const started = m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null;
@@ -27,8 +27,8 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,
     names, people: names.length, oracle, topic, secrets: Object.keys(secrets).length ? secrets : null,
     rounds: last,
-    ended: lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
-    turns: all.map(r => ({ round: r.round, who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }) })),
+    ended: !all.at(-1).clock && lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
+    turns: all.map(r => ({ round: r.round, who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) })),
   });
 }
 const out = JSON.stringify(runs);

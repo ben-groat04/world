@@ -109,6 +109,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .status { margin: 0; font-size: .85rem; color: var(--muted); min-width: 0; overflow-wrap: anywhere; }
 .status.err { color: var(--d); }
 .chat { display: flex; flex-direction: column; gap: 1rem; min-height: 12rem; }
+.time { font-weight: 400; letter-spacing: 0; color: var(--muted); margin-left: .4rem; }
 .round { display: flex; align-items: center; gap: .75rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: .5rem; }
 .round::before, .round::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .msg { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .65rem; max-width: 46rem; }
@@ -266,7 +267,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     catch (e) { return iso; }
   };
   const cls = w => run.names.includes(w) ? 'who-' + 'ABCDEFGH'[run.names.indexOf(w)] : 'who-O'; // colour by slot in run.names
-  const nonPass = r => r.turns.filter(t => !t.pass).length;
+  const nonPass = r => r.turns.filter(t => !t.pass && !t.clock).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
   let allRuns = [], runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
@@ -306,23 +307,23 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   }
 
   function render(animateLast, follow) {
-    const turns = run.turns; let html = '', lastRound = 0, last = -1;
+    const turns = run.turns; let html = '';
     for (let i = 0; i < pos; i++) {
       const t = turns[i]; if (!vis(t)) continue;
-      if (t.round !== lastRound) { html += `<div class="round">Round ${t.round}</div>`; lastRound = t.round; }
-      if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">Oracle</div>${md(t.text)}</div>`;
+      const tm = t.at ? `<span class="time">${esc(t.at.slice(11, 16))}</span>` : '';
+      if (t.clock) html += `<div class="round">${esc((t.text.match(/It's now (.+?)\.\)/) || [0, t.text])[1])}</div>`;
+      else if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">Oracle${tm}</div>${md(t.text)}</div>`;
       else if (t.pass) html += `<div class="quiet ${cls(t.who)}"><b>${esc(t.who)}</b> stayed quiet</div>`;
-      else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}</div>${md(t.text)}</div></div>`; }
+      else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}</div></div>`; }
     }
     if (typing) {
-      if (typing.round !== lastRound) html += `<div class="round">Round ${typing.round}</div>`;
       html += `<div class="msg typing ${cls(typing.who)}" aria-label="${esc(typing.who)} is typing"><div class="avatar" aria-hidden="true">${esc(typing.who[0])}</div><div class="bubble"><i></i><i></i><i></i></div></div>`;
     }
     if (pos >= turns.length) {
       html += run.ended === 'everyone passed' ? '<div class="end">End</div>' : '<div class="end">Cut off</div>';
     }
     $('chat').innerHTML = html;
-    const shown = turns.slice(0, pos).filter(t => !t.pass).length, total = nonPass(run);
+    const shown = turns.slice(0, pos).filter(t => !t.pass && !t.clock).length, total = nonPass(run);
     $('count').textContent = `${shown} / ${total} messages`;
     $('play').querySelector('span').textContent = playing ? 'Pause' : (pos >= turns.length ? 'Replay' : 'Play');
     $('play').querySelector('svg').innerHTML = playing ? '<path d="M2 1.5h3.5v11H2zM8.5 1.5H12v11H8.5z"/>' : '<path d="M3 1.5v11l9-5.5z"/>';
@@ -339,8 +340,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     if (j < 0) { pos = run.turns.length; stop(); render(false, true); return; }
     const t = run.turns[j], len = t.text.length;
     pos = j; // reveal silently any hidden passes before j
-    const typeMs = reduced() ? 0 : (t.pass ? 500 : 500 + Math.min(len, 500) * 3.5) / speed;
-    typing = reduced() ? null : { who: t.who, round: t.round };
+    const typeMs = reduced() ? 0 : (t.pass || t.clock ? 500 : 500 + Math.min(len, 500) * 3.5) / speed;
+    typing = reduced() || t.clock ? null : { who: t.who };
     render(false, true);
     timer = setTimeout(() => {
       typing = null; pos = j + 1; render(true, true);

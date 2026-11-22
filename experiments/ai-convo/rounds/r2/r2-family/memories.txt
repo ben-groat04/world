@@ -1,0 +1,407 @@
+## Joanne Louise Danby
+Sat 09:00 [the simulation starts: decide where you are and what you are doing] @Joanne and Mark's Bedroom: 
+   plan: until Sat 09:30: getting dressed, making the bed @Joanne and Mark's Bedroom / until Sat 10:30: breakfast things, wiping surfaces, planning meals and shopping list @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 09:05 [after the conversation] @Joanne and Mark's Bedroom: getting dressed, making the bed (kept plan)
+   remembers: Mark's doing eggs and coffee. I said I'd have the usual, not chilli. He wants a walk after breakfast if the weather holds and Harry kept off his game.
+   plan: until Sat 09:30: getting dressed, making the bed @Joanne and Mark's Bedroom / until Sat 10:30: breakfast things, wiping surfaces, planning meals and shopping list @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 09:15 [you looked up from what you were doing] @Joanne and Mark's Bedroom: getting dressed, making the bed (kept plan)
+   plan: until Sat 09:30: getting dressed, making the bed @Joanne and Mark's Bedroom / until Sat 10:30: breakfast things, wiping surfaces, planning meals and shopping list @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 09:30   -> Danby Kitchen (breakfast things, wiping surfaces, planning meals and shopping list)
+Sat 09:30 [next in your plan: breakfast things, wiping surfaces, planning meals and shopping list @Danby Kitchen; you came into Danby Kitchen: Mark Stephen Danby here] @Danby Kitchen: breakfast things, wiping surfaces, planning meals and shopping list (kept plan)
+   plan: until Sat 10:30: breakfast things, wiping surfaces, planning meals and shopping list @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 09:38 [after the conversation] @Danby Kitchen: breakfast things, wiping surfaces, planning meals and shopping list (kept plan)
+   remembers: Harry asked about the cones bag for training. Told him bottom left shelf in the garage, else dad's car boot, and plate in the dishwasher first.
+   plan: until Sat 10:30: breakfast things, wiping surfaces, planning meals and shopping list @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 09:50 [you looked up from what you were doing] @Danby Kitchen: breakfast things, wiping surfaces, planning meals and shopping list
+   plan: until Sat 10:30: wiping surfaces, planning meals and shopping list, check apples for crumble @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 10:05 [you looked up from what you were doing] @Danby Kitchen: wiping surfaces, planning meals and shopping list, check apples for crumble (kept plan)
+   plan: until Sat 10:30: wiping surfaces, planning meals and shopping list, check apples for crumble @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 10:20 [you looked up from what you were doing] @Danby Kitchen: wiping surfaces, planning meals and shopping list, check apples for crumble (kept plan)
+   plan: until Sat 10:30: wiping surfaces, planning meals and shopping list, check apples for crumble @Danby Kitchen / until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 10:30   -> Danby Living Room (laundry sorting, then reading)
+Sat 10:30 [next in your plan: laundry sorting, then reading @Danby Living Room] @Danby Living Room: laundry sorting, then reading (kept plan)
+   plan: until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 11:00 [you looked up from what you were doing] @Danby Living Room: laundry sorting, then reading (kept plan)
+   plan: until Sat 12:00: laundry sorting, then reading @Danby Living Room
+Sat 11:30 [you looked up from what you were doing] @Danby Living Room: laundry sorting, then reading
+   plan: until Sat 12:00: finish laundry sorting, then reading @Danby Living Room / until Sat 12:45: make lunch, plan crumble for tomorrow @Danby Kitchen
+Sat 12:00   -> Danby Kitchen (make lunch, plan crumble for tomorrow)
+Sat 12:00 [next in your plan: make lunch, plan crumble for tomorrow @Danby Kitchen] @Danby Kitchen: make lunch, plan crumble for tomorrow
+   plan: until Sat 12:45: making lunch, planning apple crumble @Danby Kitchen / until Sat 13:30: lunch with family, clearing up @Danby Kitchen
+Sat 12:15 [you looked up from what you were doing] @Danby Kitchen: making lunch, planning apple crumble (kept plan)
+   plan: until Sat 12:45: making lunch, planning apple crumble @Danby Kitchen / until Sat 13:30: lunch with family, clearing up @Danby Kitchen
+Sat 12:30 [you looked up from what you were doing] @Danby Kitchen: making lunch, planning apple crumble (kept plan)
+   plan: until Sat 12:45: making lunch, planning apple crumble @Danby Kitchen / until Sat 13:30: lunch with family, clearing up @Danby Kitchen
+Sat 12:51 [after the conversation] @Danby Kitchen: lunch with family, clearing up (kept plan)
+   remembers: Mark's annoyed the mortgage letter shows a higher rate and maybe a different fixed period. He's fetching the letter to read me the figures. I told him to check the date and product and not to use the summary sheet.
+   plan: until Sat 13:30: lunch with family, clearing up @Danby Kitchen
+Sat 13:09 [next in your plan: lunch with family, clearing up @Danby Kitchen; you looked up from what you were doing; after the conversation] @Danby Kitchen: lunch with family, clearing up
+   remembers: Mark upset the mortgage letter shows a higher rate and different fixed period. We'll check the product and ring on Monday. | Letter says 4.89 percent fixed two years, not five. Mark copied the reference number onto an envelope. Agreed to ring Monday and ask for the product in writing. Then lunch.
+   plan: until Sat 13:35: finish soup, clear up lunch @Danby Kitchen / until Sat 14:30: prep apple crumble for tomorrow, check shopping list @Danby Kitchen
+Sat 13:24 [you looked up from what you were doing] @Danby Kitchen: finish soup, clear up lunch
+   plan: until Sat 13:40: finish soup, clear up lunch @Danby Kitchen / until Sat 14:45: prep apple crumble for tomorrow, check shopping list @Danby Kitchen
+Sat 13:48 [you looked up from what you were doing; after the conversation] @Danby Kitchen: prep apple crumble for tomorrow, check shopping list (kept plan)
+   remembers: Mark needed a headcount for Paul's Christmas. We said Boxing Day, provisional, just the three of us. I'll ring Mum tomorrow after church about the 25th and Mark won't ring her first. He's noted his questions for Monday's mortgage call.
+   plan: until Sat 14:45: prep apple crumble for tomorrow, check shopping list @Danby Kitchen
+Sat 13:51 [next in your plan: prep apple crumble for tomorrow, check shopping list @Danby Kitchen] @Danby Kitchen: prep apple crumble for tomorrow, check shopping list
+   plan: until Sat 14:45: making apple crumble topping and prepping apples, checking shopping list @Danby Kitchen / until Sat 15:30: reading @Danby Living Room
+Sat 14:06 [you looked up from what you were doing] @Danby Kitchen: making apple crumble topping and prepping apples, checking shopping list (kept plan)
+   plan: until Sat 14:45: making apple crumble topping and prepping apples, checking shopping list @Danby Kitchen / until Sat 15:30: reading @Danby Living Room
+Sat 14:21 [you looked up from what you were doing] @Danby Kitchen: making apple crumble topping and prepping apples, checking shopping list
+   plan: until Sat 14:50: making crumble topping, prepping apples @Danby Kitchen / until Sat 15:40: reading @Danby Living Room
+Sat 14:36 [you looked up from what you were doing] @Danby Kitchen: making crumble topping, prepping apples (kept plan)
+   plan: until Sat 14:50: making crumble topping, prepping apples @Danby Kitchen / until Sat 15:40: reading @Danby Living Room
+Sat 14:50   -> Danby Living Room (reading)
+Sat 14:50 [next in your plan: reading @Danby Living Room] @Danby Living Room: reading (kept plan)
+   plan: until Sat 15:40: reading @Danby Living Room
+Sat 15:40 [your plan ran out] @Danby Living Room: reading
+   plan: until Sat 16:30: making apple crumble for tomorrow @Danby Kitchen / until Sat 17:30: planning Sunday lunch and shopping list @Danby Kitchen / until Sat 18:30: preparing tea @Danby Kitchen
+Sat 15:40   -> Danby Kitchen (making apple crumble for tomorrow)
+Sat 15:43 [you came into Danby Kitchen: Mark Stephen Danby here] @Danby Kitchen: making apple crumble for tomorrow (kept plan)
+   plan: until Sat 16:30: making apple crumble for tomorrow @Danby Kitchen / until Sat 17:30: planning Sunday lunch and shopping list @Danby Kitchen / until Sat 18:30: preparing tea @Danby Kitchen
+Sat 16:00 [you looked up from what you were doing] @Danby Kitchen: making apple crumble for tomorrow (kept plan)
+   plan: until Sat 16:30: making apple crumble for tomorrow @Danby Kitchen / until Sat 17:30: planning Sunday lunch and shopping list @Danby Kitchen / until Sat 18:30: preparing tea @Danby Kitchen
+Sat 16:20 [you looked up from what you were doing] @Danby Kitchen: making apple crumble for tomorrow (kept plan)
+   plan: until Sat 16:30: making apple crumble for tomorrow @Danby Kitchen / until Sat 17:30: planning Sunday lunch and shopping list @Danby Kitchen / until Sat 18:30: preparing tea @Danby Kitchen
+Sat 16:30 [next in your plan: planning Sunday lunch and shopping list @Danby Kitchen] @Danby Kitchen: planning Sunday lunch and shopping list (kept plan)
+   plan: until Sat 17:30: planning Sunday lunch and shopping list @Danby Kitchen / until Sat 18:30: preparing tea @Danby Kitchen
+Sat 17:00 [you looked up from what you were doing] @Danby Kitchen: planning Sunday lunch and shopping list (kept plan)
+   plan: until Sat 17:30: planning Sunday lunch and shopping list @Danby Kitchen / until Sat 18:30: preparing tea @Danby Kitchen
+Sat 17:30 [next in your plan: preparing tea @Danby Kitchen] @Danby Kitchen: preparing tea (kept plan)
+   plan: until Sat 18:30: preparing tea @Danby Kitchen
+Sat 18:04 [you looked up from what you were doing; after the conversation] @Danby Kitchen: preparing tea
+   remembers: Harry laid the table for three, filled the water jug and washed his hands. I told him tea is shepherd's pie and sent him to read until I shout.
+   plan: until Sat 18:30: finishing shepherd's pie, putting it in the oven @Danby Kitchen / until Sat 19:15: serving tea with Mark and Harry @Danby Kitchen
+Sat 18:14 [you looked up from what you were doing] @Danby Kitchen: finishing shepherd's pie, putting it in the oven
+   plan: until Sat 18:30: putting shepherd's pie in the oven, tidying up @Danby Kitchen / until Sat 19:15: serving tea with Mark and Harry @Danby Kitchen
+Sat 18:24 [you looked up from what you were doing] @Danby Kitchen: putting shepherd's pie in the oven, tidying up
+   plan: until Sat 18:35: putting pie in oven, tidying up @Danby Kitchen / until Sat 19:15: serving tea with Mark and Harry @Danby Kitchen
+Sat 18:34 [you looked up from what you were doing] @Danby Kitchen: putting pie in oven, tidying up
+   plan: until Sat 18:40: putting pie in oven, tidying up @Danby Kitchen / until Sat 19:15: serving tea with Mark and Harry @Danby Kitchen
+Sat 18:39 [you looked up from what you were doing] @Danby Kitchen: putting pie in oven, tidying up
+   plan: until Sat 18:45: putting pie in oven, tidying up @Danby Kitchen / until Sat 19:30: serving tea with Mark and Harry, then clearing up @Danby Kitchen
+Sat 18:44 [you looked up from what you were doing] @Danby Kitchen: putting pie in oven, tidying up
+   plan: until Sat 19:30: putting pie in oven, then serving tea with Mark and Harry, clearing up @Danby Kitchen / until Sat 21:00: reading, quiet evening @Danby Living Room
+Sat 18:59 [you looked up from what you were doing] @Danby Kitchen: putting pie in oven, then serving tea with Mark and Harry, clearing up
+   plan: until Sat 19:30: putting pie in oven, then serving tea, clearing up @Danby Kitchen / until Sat 21:00: reading, quiet evening @Danby Living Room
+Sat 19:09 [you looked up from what you were doing] @Danby Kitchen: putting pie in oven, then serving tea, clearing up
+   plan: until Sat 19:35: putting pie in oven, then calling everyone to tea @Danby Kitchen / until Sat 20:15: serving tea, eating, clearing up @Danby Kitchen / until Sat 21:00: reading, quiet evening @Danby Living Room
+Sat 19:19 [you looked up from what you were doing] @Danby Kitchen: putting pie in oven, then calling everyone to tea | talk to Mark Stephen Danby
+   plan: until Sat 19:35: putting pie in oven, setting timer @Danby Kitchen / until Sat 20:15: serving tea, eating, clearing up @Danby Kitchen / until Sat 21:00: reading, quiet evening @Danby Living Room
+Sat 19:34 [you looked up from what you were doing; after the conversation] @Danby Kitchen: putting pie in oven, setting timer (kept plan)
+   remembers: Put the shepherd's pie in, twenty-five minutes. Told Mark to tie the bin bag off properly and wash his hands. Tea at quarter to. Harry has come in.
+   plan: until Sat 19:35: putting pie in oven, setting timer @Danby Kitchen / until Sat 20:15: serving tea, eating, clearing up @Danby Kitchen / until Sat 21:00: reading, quiet evening @Danby Living Room
+Sat 20:38 [you looked up from what you were doing; after the conversation] @Danby Kitchen: putting pie in oven, setting timer
+   remembers: Tea of shepherd's pie with Mark and Harry. Harry helped lay the table and wants to text Oliver about the fox after tea. Mark is washing up, I'm drying. Harry's fetching his fox drawing to show us.
+   plan: until Sat 21:00: drying up with Mark, look at Harry's fox drawing @Danby Kitchen / until Sat 22:00: reading, quiet evening @Danby Living Room
+Sat 21:00   -> Danby Living Room (reading, quiet evening)
+Sat 21:00 [you looked up from what you were doing; after the conversation] @Danby Living Room: reading, quiet evening (kept plan)
+   remembers: Mark scrubbed the pie dish and I dried it. Harry put his fox drawing on the fridge by the calendar and sent Oliver a photo. Pans left to soak, I'll do them later. Going to read.
+   plan: until Sat 22:00: reading, quiet evening @Danby Living Room
+Sat 21:03 [next in your plan: reading, quiet evening @Danby Living Room; you came into Danby Living Room: Harry Thomas Danby here] @Danby Living Room: reading, quiet evening
+   plan: until Sat 21:30: reading, quiet evening @Danby Living Room / until Sat 21:50: wash the soaked pans, check kitchen is tidy @Danby Kitchen / until Sat 22:30: reading @Danby Living Room
+Sat 21:23 [you looked up from what you were doing] @Danby Living Room: reading, quiet evening (kept plan)
+   plan: until Sat 21:30: reading, quiet evening @Danby Living Room / until Sat 21:50: wash the soaked pans, check kitchen is tidy @Danby Kitchen / until Sat 22:30: reading @Danby Living Room
+Sat 21:30   -> Danby Kitchen (wash the soaked pans, check kitchen is tidy)
+Sat 21:30 [next in your plan: wash the soaked pans, check kitchen is tidy @Danby Kitchen] @Danby Kitchen: wash the soaked pans, check kitchen is tidy
+   plan: until Sat 21:50: washing the soaked pans, checking kitchen is tidy @Danby Kitchen / until Sat 22:30: reading @Danby Living Room
+Sat 21:50   -> Danby Living Room (reading)
+Sat 21:50 [next in your plan: reading @Danby Living Room; you came into Danby Living Room: Mark Stephen Danby, Harry Thomas Danby here] @Danby Living Room: reading
+   plan: until Sat 22:30: reading @Danby Living Room / until Sat 23:00: getting ready for bed, reading @Joanne and Mark's Bedroom / until Sat 23:15: asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:20 [you looked up from what you were doing] @Danby Living Room: reading (kept plan)
+   plan: until Sat 22:30: reading @Danby Living Room / until Sat 23:00: getting ready for bed, reading @Joanne and Mark's Bedroom / until Sat 23:15: asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:29 [after the conversation] @Danby Living Room: reading
+   remembers: Mark finished with his records and went up. I said I'd finish my chapter, ten minutes, and lock the back door. He warned the lock needs a proper shove at the top.
+   plan: until Sat 22:40: finishing chapter @Danby Living Room / until Sat 22:45: lock back door with a shove, check it caught, lights off @Danby Kitchen / until Sat 23:15: getting ready for bed, a little reading @Joanne and Mark's Bedroom / until Sun 07:00: asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:40   -> Danby Kitchen (lock back door with a shove, check it caught, lights off)
+Sat 22:40 [next in your plan: lock back door with a shove, check it caught, lights off @Danby Kitchen] @Danby Kitchen: lock back door with a shove, check it caught, lights off
+   plan: until Sat 22:45: shove back door lock, check it caught, lights off @Danby Kitchen / until Sat 23:15: getting ready for bed, a little reading @Joanne and Mark's Bedroom / until Sun 07:00: asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:45   -> Joanne and Mark's Bedroom (getting ready for bed, a little reading)
+Sat 22:45 [next in your plan: getting ready for bed, a little reading @Joanne and Mark's Bedroom; you came into Joanne and Mark's Bedroom: Mark Stephen Danby here] @Joanne and Mark's Bedroom: getting ready for bed, a little reading (kept plan)
+   plan: until Sat 23:15: getting ready for bed, a little reading @Joanne and Mark's Bedroom / until Sun 07:00: asleep @Joanne and Mark's Bedroom (asleep)
+Sun 07:00 [your plan ran out] @Joanne and Mark's Bedroom: asleep
+   the day: Mark did eggs and coffee and wanted a walk. Emma confirmed Sunday lunch and I told her I'd make apple crumble. Agreed to bake flapjacks for Sue's school fair stall. Mark was upset about the mortgage letter showing a higher rate, so we'll ring on Monday. Mum texted about Christmas Day and I said I'd ring after church. Shepherd's pie for tea, Harry showed us his fox drawing. Locked the back door with a shove and went to bed.
+   plan: until Sun 07:30: getting up, dressing @Joanne and Mark's Bedroom / until Sun 08:30: breakfast, check Sunday lunch list, start roast prep @Danby Kitchen / until Sun 10:00: get Harry ready for church, tidy @Danby Kitchen
+Sun 07:03 [you woke up] @Joanne and Mark's Bedroom: getting up, dressing (kept plan)
+   plan: until Sun 07:30: getting up, dressing @Joanne and Mark's Bedroom / until Sun 08:30: breakfast, check Sunday lunch list, start roast prep @Danby Kitchen / until Sun 10:00: get Harry ready for church, tidy @Danby Kitchen
+Sun 07:30   -> Danby Kitchen (breakfast, check Sunday lunch list, start roast prep)
+Sun 07:30 [next in your plan: breakfast, check Sunday lunch list, start roast prep @Danby Kitchen] @Danby Kitchen: breakfast, check Sunday lunch list, start roast prep (kept plan)
+   plan: until Sun 08:30: breakfast, check Sunday lunch list, start roast prep @Danby Kitchen / until Sun 10:00: get Harry ready for church, tidy @Danby Kitchen
+Sun 07:50 [you looked up from what you were doing] @Danby Kitchen: breakfast, check Sunday lunch list, start roast prep
+   plan: until Sun 08:30: breakfast, check lunch list, start roast prep, apple crumble @Danby Kitchen / until Sun 10:00: get Harry ready for church, tidy @Danby Kitchen
+Sun 08:10 [you looked up from what you were doing] @Danby Kitchen: breakfast, check lunch list, start roast prep, apple crumble
+   plan: until Sun 08:40: breakfast with Harry and Mark, check lunch list, start roast prep @Danby Kitchen / until Sun 09:20: make apple crumble, tidy up @Danby Kitchen / until Sun 10:00: get Harry ready for church @Harry's Bedroom
+Sun 08:25 [you looked up from what you were doing] @Danby Kitchen: breakfast with Harry and Mark, check lunch list, start roast prep (kept plan)
+   plan: until Sun 08:40: finish breakfast, check lunch list, start roast prep @Danby Kitchen / until Sun 09:20: make apple crumble, tidy up @Danby Kitchen / until Sun 09:30: ring Mum back about Christmas @Danby Kitchen / until Sun 10:00: get Harry ready for church @Harry's Bedroom
+Sun 08:40 [next in your plan: make apple crumble, tidy up @Danby Kitchen] @Danby Kitchen: make apple crumble, tidy up (kept plan)
+   plan: until Sun 09:20: make apple crumble, tidy up @Danby Kitchen / until Sun 09:30: ring Mum back about Christmas @Danby Kitchen / until Sun 10:00: get Harry ready for church @Harry's Bedroom
+
+## Mark Stephen Danby
+Sat 09:00 [the simulation starts: decide where you are and what you are doing] @Joanne and Mark's Bedroom:  | talk to Joanne Louise Danby
+   plan: until Sat 09:30: making coffee and a proper breakfast @Danby Kitchen / until Sat 12:00: walk with Harry, chatting about whatever he's into @Local Park / until Sat 13:00: cooking lunch, fussing over the mortgage paperwork @Danby Kitchen
+Sat 09:04   -> Danby Kitchen (making coffee and a proper breakfast)
+Sat 09:04 [after the conversation] @Danby Kitchen: making coffee and a proper breakfast (kept plan)
+   remembers: Told Joanne I'm making breakfast; she wants the usual, no chilli. I'll shout Harry when it's ready and we're walking after if the weather holds.
+   plan: until Sat 09:30: making coffee and a proper breakfast @Danby Kitchen / until Sat 12:00: walk with Harry, chatting about whatever he's into @Local Park / until Sat 13:00: cooking lunch, fussing over the mortgage paperwork @Danby Kitchen
+Sat 09:15 [you looked up from what you were doing] @Danby Kitchen: making coffee and a proper breakfast (kept plan)
+   plan: until Sat 09:30: making coffee and a proper breakfast @Danby Kitchen / until Sat 12:00: walk with Harry, chatting about whatever he's into @Local Park / until Sat 13:00: cooking lunch, fussing over the mortgage paperwork @Danby Kitchen
+Sat 09:30   -> Local Park (walk with Harry, chatting about whatever he's into)
+Sat 09:30 [next in your plan: walk with Harry, chatting about whatever he's into @Local Park] @Local Park: walk with Harry, chatting about whatever he's into (kept plan)
+   plan: until Sat 12:00: walk with Harry, chatting about whatever he's into @Local Park / until Sat 13:00: cooking lunch, fussing over the mortgage paperwork @Danby Kitchen
+Sat 10:00 [you looked up from what you were doing] @Local Park: walk with Harry, chatting about whatever he's into (kept plan)
+   plan: until Sat 12:00: walk with Harry, chatting about whatever he's into @Local Park / until Sat 13:00: cooking lunch, fussing over the mortgage paperwork @Danby Kitchen
+Sat 10:30 [you looked up from what you were doing] @Local Park: walk with Harry, chatting about whatever he's into | talk to Harry Thomas Danby
+   plan: until Sat 10:50: Check Harry's training time, say hello to Jake, then wait and watch @Local Park / until Sat 12:00: Finish walk, maybe watch training for a bit @Local Park / until Sat 13:00: Cooking lunch, fussing over mortgage paperwork @Danby Kitchen
+Sat 11:19 [you looked up from what you were doing; after the conversation] @Local Park: with Harry Thomas Danby, Jake Turner
+   remembers: Harry and Jake laid out cones at the park; coach said ten thirty but turned up late, around eleven. Jake reckons about an hour in all. I'm waiting on the bench and Harry has his water where I can see it.
+   plan: until Sat 12:00: Watching training from the bench @Local Park / until Sat 13:00: Cooking lunch, mortgage paperwork @Danby Kitchen
+Sat 12:17 [you looked up from what you were doing; after the conversation] @Local Park: Watching training from the bench
+   remembers: Watched Harry and Jake do stretches and cone drills at the park; told Harry to stretch and keep his head up. Scrimmage next. I told them to be home by half one, coat on between games.
+   plan: until Sat 12:35: Walking home from the park @Local Road / until Sat 13:30: Cooking lunch, then mortgage paperwork while waiting for Harry @Danby Kitchen
+Sat 12:17   -> Local Road (Walking home from the park)
+Sat 12:35   -> Danby Kitchen (Cooking lunch, then mortgage paperwork while waiting for Harry)
+Sat 12:35 [next in your plan: Cooking lunch, then mortgage paperwork while waiting for Harry @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby here] @Danby Kitchen: Cooking lunch, then mortgage paperwork while waiting for Harry | talk to Joanne Louise Danby
+   plan: until Sat 13:30: Cooking lunch with Joanne, then mortgage paperwork @Danby Kitchen
+Sat 12:51 [you looked up from what you were doing; after the conversation] @Danby Kitchen: Cooking lunch, then mortgage paperwork while waiting for Harry | talk to Joanne Louise Danby
+   remembers: Joanne is making apple crumble and there are enough apples. I'm doing onions for lunch, then reading her the mortgage letter. The rate looks higher than we agreed and the fixed period may be different. She says check the date, in case it's a different product, and read from the letter, not the summary sheet.
+   plan: until Sat 13:30: Reading mortgage letter to Joanne, then lunch with Harry @Danby Kitchen / until Sat 14:30: Mortgage paperwork, then ring Paul back about Christmas @Danby Kitchen
+Sat 13:09 [you looked up from what you were doing; after the conversation] @Danby Kitchen: Cooking lunch, then mortgage paperwork while waiting for Harry
+   remembers: Letter says 4.89 percent fixed two years, not the five we discussed. Joanne read the date and product name. Reference number copied onto the envelope. Monday we ring the lender and ask for the product in writing. Eating soup now.
+   plan: until Sat 13:40: Finishing lunch with Joanne and Harry @Danby Kitchen / until Sat 14:30: Mortgage paperwork, noting questions for Monday call @Danby Kitchen / until Sat 15:00: Ringing Paul about Christmas headcount @Danby Kitchen
+Sat 13:19 [after the conversation] @Danby Kitchen: Finishing lunch with Joanne and Harry (kept plan)
+   remembers: Paul rang about Mum's Christmas headcount. I said Boxing Day is likelier since Joanne's mum will want the 25th, but I must check with Joanne first. Told him I'd text after lunch and not to tell Mum yet.
+   plan: until Sat 13:40: Finishing lunch with Joanne and Harry @Danby Kitchen / until Sat 14:30: Mortgage paperwork, noting questions for Monday call @Danby Kitchen / until Sat 15:00: Ringing Paul about Christmas headcount @Danby Kitchen
+Sat 13:24 [you looked up from what you were doing] @Danby Kitchen: Finishing lunch with Joanne and Harry (kept plan) | talk to Joanne Louise Danby
+   remembers: Paul rang about Christmas headcount. I said Boxing Day is more likely since Joanne's mum wants us on the 25th, but I need to check with Joanne first. Told him to keep it from Mum for now and that I'd text after lunch.
+   plan: until Sat 13:40: Finishing lunch with Joanne and Harry @Danby Kitchen / until Sat 14:30: Mortgage paperwork, noting questions for Monday call @Danby Kitchen / until Sat 15:00: Ringing Paul about Christmas headcount @Danby Kitchen
+Sat 13:47 [you looked up from what you were doing; after the conversation] @Danby Kitchen: Finishing lunch with Joanne and Harry
+   remembers: Settled Christmas with Joanne: Boxing Day provisional for the three of us, she'll tell her mum herself tomorrow after church and I mustn't ring her first. Paul already told provisional. Then washed up and wrote my three mortgage questions plus the reference number on the envelope.
+   plan: until Sat 14:30: Going over mortgage letter, finalising questions for Monday call @Danby Kitchen / until Sat 15:00: Ringing Paul about Christmas and a catch-up @Danby Kitchen
+Sat 14:07 [you looked up from what you were doing] @Danby Kitchen: Going over mortgage letter, finalising questions for Monday call (kept plan)
+   plan: until Sat 14:30: Going over mortgage letter, finalising questions for Monday call @Danby Kitchen / until Sat 15:00: Ringing Paul about Christmas and a catch-up @Danby Kitchen
+Sat 14:27 [you looked up from what you were doing] @Danby Kitchen: Going over mortgage letter, finalising questions for Monday call
+   plan: until Sat 14:40: Finishing mortgage questions on envelope @Danby Kitchen / until Sat 15:15: Ringing Paul for a catch-up about Christmas @Danby Kitchen
+Sat 14:32 [you looked up from what you were doing] @Danby Kitchen: Finishing mortgage questions on envelope (kept plan)
+   plan: until Sat 14:40: Finishing mortgage questions on envelope @Danby Kitchen / until Sat 15:15: Ringing Paul for a catch-up about Christmas @Danby Kitchen
+Sat 14:37 [you looked up from what you were doing] @Danby Kitchen: Finishing mortgage questions on envelope (kept plan)
+   remembers: Went through the mortgage letter with Joanne. Rate looks higher and the fixed period may differ. Monday we ring with the reference number and ask for it in writing. | Joanne will ring her mum tomorrow after church about Christmas. I texted Paul that Boxing Day is provisional, and he's keeping quiet until we confirm.
+   plan: until Sat 14:40: Finishing mortgage questions on envelope @Danby Kitchen / until Sat 15:15: Ringing Paul for a catch-up about Christmas @Danby Kitchen
+Sat 14:40 [next in your plan: Ringing Paul for a catch-up about Christmas @Danby Kitchen] @Danby Kitchen: Ringing Paul for a catch-up about Christmas
+   plan: until Sat 15:15: Finishing mortgage letter notes for Monday's call @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:00 [you looked up from what you were doing] @Danby Kitchen: Finishing mortgage letter notes for Monday's call
+   plan: until Sat 15:20: Finish mortgage notes, tidy envelope and letter together @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:10 [you looked up from what you were doing] @Danby Kitchen: Finish mortgage notes, tidy envelope and letter together
+   plan: until Sat 15:25: Finish mortgage notes, tuck envelope and letter together @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:20 [you looked up from what you were doing] @Danby Kitchen: Finish mortgage notes, tuck envelope and letter together
+   plan: until Sat 15:30: Finish mortgage notes, tuck envelope and letter together @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:25 [you looked up from what you were doing] @Danby Kitchen: Finish mortgage notes, tuck envelope and letter together
+   plan: until Sat 15:35: Finish mortgage notes, tuck envelope and letter together @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:30 [you looked up from what you were doing] @Danby Kitchen: Finish mortgage notes, tuck envelope and letter together
+   plan: until Sat 15:40: Finish mortgage notes, tuck envelope and letter together @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:35 [you looked up from what you were doing] @Danby Kitchen: Finish mortgage notes, tuck envelope and letter together
+   plan: until Sat 15:45: Finish mortgage notes, tuck envelope and letter together @Danby Kitchen / until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 15:45   -> Danby Living Room (Reading, then records with Harry)
+Sat 15:45 [next in your plan: Reading, then records with Harry @Danby Living Room] @Danby Living Room: Reading, then records with Harry (kept plan)
+   plan: until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 16:05 [you looked up from what you were doing] @Danby Living Room: Reading, then records with Harry (kept plan)
+   plan: until Sat 16:30: Reading, then records with Harry @Danby Living Room
+Sat 16:25 [you looked up from what you were doing] @Danby Living Room: Reading, then records with Harry
+   plan: until Sat 17:30: Reading, then records with Harry @Danby Living Room / until Sat 18:30: Cooking dinner @Danby Kitchen
+Sat 16:45 [you looked up from what you were doing] @Danby Living Room: Reading, then records with Harry (kept plan)
+   plan: until Sat 17:30: Reading, then records with Harry @Danby Living Room / until Sat 18:30: Cooking dinner @Danby Kitchen
+Sat 17:05 [you looked up from what you were doing] @Danby Living Room: Reading, then records with Harry (kept plan)
+   plan: until Sat 17:30: Reading, then records with Harry @Danby Living Room / until Sat 18:30: Cooking dinner @Danby Kitchen
+Sat 17:25 [you looked up from what you were doing] @Danby Living Room: Reading, then records with Harry (kept plan)
+   plan: until Sat 17:30: Reading, then records with Harry @Danby Living Room / until Sat 18:30: Cooking dinner @Danby Kitchen
+Sat 17:30   -> Danby Kitchen (Cooking dinner)
+Sat 17:30 [next in your plan: Cooking dinner @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby, Harry Thomas Danby here] @Danby Kitchen: Cooking dinner (kept plan)
+   plan: until Sat 18:30: Cooking dinner @Danby Kitchen
+Sat 17:45 [you looked up from what you were doing] @Danby Kitchen: Cooking dinner
+   plan: until Sat 18:30: Cooking dinner, chatting with Joanne and Harry @Danby Kitchen / until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 17:55 [you looked up from what you were doing] @Danby Kitchen: Cooking dinner, chatting with Joanne and Harry (kept plan)
+   plan: until Sat 18:30: Cooking dinner, chatting with Joanne and Harry @Danby Kitchen / until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 18:05 [you looked up from what you were doing] @Danby Kitchen: Cooking dinner, chatting with Joanne and Harry (kept plan)
+   plan: until Sat 18:30: Cooking dinner, chatting with Joanne and Harry @Danby Kitchen / until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 18:15 [you looked up from what you were doing] @Danby Kitchen: Cooking dinner, chatting with Joanne and Harry (kept plan)
+   plan: until Sat 18:30: Cooking dinner, chatting with Joanne and Harry @Danby Kitchen / until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 18:25 [you looked up from what you were doing] @Danby Kitchen: Cooking dinner, chatting with Joanne and Harry (kept plan)
+   plan: until Sat 18:30: Cooking dinner, chatting with Joanne and Harry @Danby Kitchen / until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 18:30 [next in your plan: Eating dinner with family, then clearing up @Danby Kitchen] @Danby Kitchen: Eating dinner with family, then clearing up (kept plan)
+   plan: until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 18:45 [you looked up from what you were doing] @Danby Kitchen: Eating dinner with family, then clearing up (kept plan)
+   plan: until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 19:00 [you looked up from what you were doing] @Danby Kitchen: Eating dinner with family, then clearing up (kept plan)
+   plan: until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 19:15 [you looked up from what you were doing] @Danby Kitchen: Eating dinner with family, then clearing up (kept plan)
+   plan: until Sat 19:30: Eating dinner with family, then clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 19:34 [after the conversation] @Danby Kitchen: Eating dinner with family, then clearing up
+   remembers: Joanne put the shepherd's pie in, 25 minutes, tea at quarter to. I grumbled that whoever last did the bin hadn't tied the bag off, then tied it off properly, lifted it out and went to wash my hands. Harry came in.
+   plan: until Sat 20:30: Taking the bin out, washing hands, eating dinner with family, clearing up @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 20:38 [you looked up from what you were doing; after the conversation] @Danby Kitchen: with Harry Thomas Danby, Joanne Louise Danby | talk to Joanne Louise Danby
+   remembers: Family tea of shepherd's pie with carrots (butter and thyme). Harry wants to text Oliver about the fox after tea and is fetching his fox drawing for me to look at. I took on the washing up since Jo cooked; she's drying. I scrubbed the dish, which has a crust on the corner.
+   plan: until Sat 21:00: Washing up, pans after soaking, look at Harry's fox drawing @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 21:00 [you looked up from what you were doing; after the conversation] @Danby Kitchen: with Harry Thomas Danby, Joanne Louise Danby
+   remembers: Finished scrubbing the pie dish and handed it to Jo. Harry stuck his fox drawing on the fridge by the calendar, sent Oliver a photo, then went to read. Pans left soaking for Jo; I wiped the hob.
+   plan: until Sat 21:10: Finish wiping hob and worktops @Danby Kitchen / until Sat 22:30: Playing records or guitar, then bed @Danby Living Room
+Sat 21:10   -> Danby Living Room (Playing records or guitar, then bed)
+Sat 21:10 [next in your plan: Playing records or guitar, then bed @Danby Living Room; you came into Danby Living Room: Joanne Louise Danby, Harry Thomas Danby here] @Danby Living Room: Playing records or guitar, then bed
+   plan: until Sat 22:15: Putting a record on, listening, a bit of guitar quietly @Danby Living Room / until Sat 22:30: Tidying records away, then bed @Danby Living Room
+Sat 21:30 [you looked up from what you were doing] @Danby Living Room: Putting a record on, listening, a bit of guitar quietly (kept plan)
+   plan: until Sat 22:15: Putting a record on, listening, a bit of guitar quietly @Danby Living Room / until Sat 22:30: Tidying records away, then bed @Danby Living Room
+Sat 21:50 [you looked up from what you were doing] @Danby Living Room: Putting a record on, listening, a bit of guitar quietly (kept plan)
+   plan: until Sat 22:15: Putting a record on, listening, a bit of guitar quietly @Danby Living Room / until Sat 22:30: Tidying records away, then bed @Danby Living Room
+Sat 22:10 [you looked up from what you were doing] @Danby Living Room: Putting a record on, listening, a bit of guitar quietly (kept plan)
+   plan: until Sat 22:15: Putting a record on, listening, a bit of guitar quietly @Danby Living Room / until Sat 22:30: Tidying records away, then bed @Danby Living Room
+Sat 22:15 [next in your plan: Tidying records away, then bed @Danby Living Room] @Danby Living Room: Tidying records away, then bed
+   plan: until Sat 22:30: Putting records back in sleeves and shelf, then say goodnight to Jo @Danby Living Room / until Sat 23:00: Bed, a bit of reading @Joanne and Mark's Bedroom / until Sun 07:30: Asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:25 [you looked up from what you were doing] @Danby Living Room: Putting records back in sleeves and shelf, then say goodnight to Jo | talk to Joanne Louise Danby
+   plan: until Sat 22:35: Putting records back in sleeves, saying goodnight to Jo @Danby Living Room / until Sat 23:00: Bed, a bit of reading @Joanne and Mark's Bedroom / until Sun 07:30: Asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:28 [after the conversation] @Danby Living Room: Putting records back in sleeves and shelf, then say goodnight to Jo
+   remembers: Finished with the records. Jo is finishing her chapter, ten minutes, and will lock the back door. I reminded her it needs a proper shove at the top. I'm going up to bed.
+   plan: until Sat 23:00: Bed, a bit of reading @Joanne and Mark's Bedroom / until Sun 07:30: Asleep @Joanne and Mark's Bedroom (asleep)
+Sat 22:28   -> Joanne and Mark's Bedroom (Bed, a bit of reading)
+Sun 07:30 [your plan ran out] @Joanne and Mark's Bedroom: Asleep
+   the day: Sat was a full one. Cold park morning watching Harry and Jake do cone drills, then lunch and going through the mortgage letter with Joanne: the rate looks higher than agreed, so we ring on Monday with the reference number. Rang Paul about Christmas, Boxing Day provisional until Jo has spoken to her mum. Shepherd's pie for tea, Harry's fox drawing on the fridge, then records and bed.
+   plan: until Sun 08:30: Sleeping on, then waking up slowly @Joanne and Mark's Bedroom (asleep) / until Sun 09:30: Making breakfast and coffee for everyone @Danby Kitchen / until Sun 12:00: Walk or cycle while Joanne is at church @Local Road
+Sun 08:30   -> Danby Kitchen (Making breakfast and coffee for everyone)
+Sun 08:30 [you woke up; you came into Danby Kitchen: Joanne Louise Danby, Harry Thomas Danby here] @Danby Kitchen: Making breakfast and coffee for everyone (kept plan)
+   plan: until Sun 09:30: Making breakfast and coffee for everyone @Danby Kitchen / until Sun 12:00: Walk or cycle while Joanne is at church @Local Road
+Sun 08:50 [you looked up from what you were doing] @Danby Kitchen: Making breakfast and coffee for everyone (kept plan)
+   plan: until Sun 09:30: Making breakfast and coffee for everyone @Danby Kitchen / until Sun 12:00: Walk or cycle while Joanne is at church @Local Road
+
+## Harry Thomas Danby
+Sat 09:00 [the simulation starts: decide where you are and what you are doing] @Harry's Bedroom: 
+   plan: until Sat 09:30: getting dressed, tidying room, drawing an animal @Harry's Bedroom / until Sat 10:00: having breakfast with parents @Danby Kitchen / until Sat 12:00: reading series book, sketching @Danby Living Room
+Sat 09:20 [you looked up from what you were doing] @Harry's Bedroom: getting dressed, tidying room, drawing an animal
+   plan: until Sat 09:30: getting dressed, finishing tidying, packing kit and cones bag @Harry's Bedroom / until Sat 10:00: having breakfast with parents @Danby Kitchen / until Sat 10:15: getting boots and water bottle, ready to leave for training @Danby Kitchen
+Sat 09:30   -> Danby Kitchen (having breakfast with parents)
+Sat 09:30 [next in your plan: having breakfast with parents @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby here] @Danby Kitchen: having breakfast with parents (kept plan) | talk to Joanne Louise Danby
+   plan: until Sat 10:00: having breakfast with parents @Danby Kitchen / until Sat 10:15: getting boots and water bottle, ready to leave for training @Danby Kitchen
+Sat 09:38 [after the conversation] @Danby Kitchen: having breakfast with parents
+   remembers: Asked mum about the cones bag. She said check bottom left shelf in the garage, then dad's car boot, and plate in the dishwasher first. Did that and went to the garage.
+   plan: until Sat 10:00: find cones bag in garage, then finish breakfast things @Danby Kitchen / until Sat 10:15: getting boots and water bottle, ready for training @Danby Kitchen
+Sat 09:48 [you looked up from what you were doing] @Danby Kitchen: find cones bag in garage, then finish breakfast things
+   plan: until Sat 10:00: find cones bag in garage, bring it to kitchen @Danby Kitchen / until Sat 10:15: getting boots and water bottle, ready for training @Danby Kitchen
+Sat 09:53 [you looked up from what you were doing] @Danby Kitchen: find cones bag in garage, bring it to kitchen
+   plan: until Sat 10:15: put cones bag by door, get boots and water bottle ready @Danby Kitchen / until Sat 10:25: get changed, say bye to parents, head out to club @Danby Kitchen
+Sat 10:03 [you looked up from what you were doing] @Danby Kitchen: put cones bag by door, get boots and water bottle ready
+   plan: until Sat 10:15: get boots and water bottle ready, cones bag by door @Danby Kitchen / until Sat 10:25: get changed, say bye to parents, head out to club @Danby Kitchen
+Sat 10:13 [you looked up from what you were doing] @Danby Kitchen: get boots and water bottle ready, cones bag by door
+   plan: until Sat 10:20: fill water bottle, get boots on, check cones bag @Danby Kitchen / until Sat 10:28: say bye to parents and head out to club with cones bag @Danby Kitchen / until Sat 12:00: football training at the club @Local Park
+Sat 10:18 [you looked up from what you were doing] @Danby Kitchen: fill water bottle, get boots on, check cones bag
+   plan: until Sat 10:27: fill water bottle, boots on, check cones bag, say bye to parents @Danby Kitchen / until Sat 12:00: football training at the club @Local Park
+Sat 10:23 [you looked up from what you were doing] @Danby Kitchen: fill water bottle, boots on, check cones bag, say bye to parents
+   plan: until Sat 10:27: fill water bottle, boots on, check cones bag, say bye to parents @Danby Kitchen / until Sat 12:00: football training at the club @Local Park
+Sat 10:27   -> Local Park (football training at the club)
+Sat 10:27 [next in your plan: football training at the club @Local Park; you came into Local Park: Mark Stephen Danby here] @Local Park: football training at the club (kept plan) | talk to Jake Turner
+   plan: until Sat 12:00: football training at the club @Local Park
+Sat 11:19 [after the conversation] @Local Park: football training at the club (kept plan)
+   remembers: Brought the cones to the park with Jake and helped lay them out. Dad stayed to watch from the bench. Coach turned up late at the gate and Jake went to ask him if we can start.
+   plan: until Sat 12:00: football training at the club @Local Park
+Sat 12:00 [your plan ran out] @Local Park: football training at the club
+   plan: until Sat 12:30: finishing football training, drills with Jake @Local Park / until Sat 13:00: chatting with Jake, then heading home with dad @Local Park / until Sat 14:00: lunch with mum and dad @Danby Kitchen
+Sat 12:10 [you looked up from what you were doing] @Local Park: finishing football training, drills with Jake (kept plan)
+   plan: until Sat 12:30: finishing football training, drills with Jake @Local Park / until Sat 13:00: chatting with Jake, then heading home with dad @Local Park / until Sat 14:00: lunch with mum and dad @Danby Kitchen
+Sat 12:20 [you looked up from what you were doing] @Local Park: finishing football training, drills with Jake (kept plan)
+   plan: until Sat 12:30: finishing football training, drills with Jake @Local Park / until Sat 13:00: chatting with Jake, then heading home with dad @Local Park / until Sat 14:00: lunch with mum and dad @Danby Kitchen
+Sat 12:33 [next in your plan: chatting with Jake, then heading home with dad @Local Park; after the conversation] @Local Park: chatting with Jake, then heading home with dad
+   remembers: Jake said good scrimmage and same time next week. I offered to bring the cones bag if he forgets and we packed up the last cones together. Said bye since dad's waiting.
+   plan: until Sat 12:50: walking home with cones bag @Local Road / until Sat 14:00: lunch with mum and dad, then watch highlights and count unlucky's @Danby Kitchen
+Sat 12:33   -> Local Road (walking home with cones bag)
+Sat 12:36 [you came into Local Road: Mark Stephen Danby here] @Local Road: walking home with cones bag (kept plan)
+   plan: until Sat 12:50: walking home with cones bag @Local Road / until Sat 14:00: lunch with mum and dad, then watch highlights and count unlucky's @Danby Kitchen
+Sat 12:50   -> Danby Kitchen (lunch with mum and dad, then watch highlights and count unlucky's)
+Sat 12:50 [you came into Danby Kitchen: a conversation is going on; next in your plan: lunch with mum and dad, then watch highlights and count unlucky's @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby, Mark Stephen Danby here] @Danby Kitchen: lunch with mum and dad, then watch highlights and count unlucky's | talk to Joanne Louise Danby
+   plan: until Sat 13:30: lunch with mum and dad @Danby Kitchen / until Sat 14:00: watching highlights and counting unlucky's @Danby Living Room
+Sat 12:53 [after the conversation] @Danby Kitchen: lunch with mum and dad (kept plan)
+   remembers: Came in as mum and dad were talking about dad's mortgage letter, the rate is higher than he expected and he's irritated. Mum said not to panic until they see the fixed period. Lunch is being put out.
+   plan: until Sat 13:30: lunch with mum and dad @Danby Kitchen / until Sat 14:00: watching highlights and counting unlucky's @Danby Living Room
+Sat 13:05 [you looked up from what you were doing] @Danby Kitchen: lunch with mum and dad
+   plan: until Sat 13:30: having lunch with mum and dad @Danby Kitchen / until Sat 14:00: watching highlights and counting unlucky's @Danby Living Room
+Sat 13:20 [you looked up from what you were doing] @Danby Kitchen: having lunch with mum and dad
+   plan: until Sat 13:30: finishing lunch, helping clear up @Danby Kitchen / until Sat 14:15: watching highlights, counting unlucky's @Danby Living Room
+Sat 13:30   -> Danby Living Room (watching highlights, counting unlucky's)
+Sat 13:30 [next in your plan: watching highlights, counting unlucky's @Danby Living Room] @Danby Living Room: watching highlights, counting unlucky's (kept plan)
+   plan: until Sat 14:15: watching highlights, counting unlucky's @Danby Living Room
+Sat 13:50 [you looked up from what you were doing] @Danby Living Room: watching highlights, counting unlucky's
+   plan: until Sat 14:15: watching highlights, counting unlucky's @Danby Living Room
+Sat 14:05 [you looked up from what you were doing] @Danby Living Room: watching highlights, counting unlucky's
+   plan: until Sat 14:30: watching highlights, counting unlucky's @Danby Living Room / until Sat 14:40: texting Oliver the final count @Danby Living Room
+Sat 14:20 [you looked up from what you were doing] @Danby Living Room: watching highlights, counting unlucky's (kept plan)
+   plan: until Sat 14:30: watching highlights, counting unlucky's @Danby Living Room / until Sat 14:40: texting Oliver the final count @Danby Living Room
+Sat 14:30 [next in your plan: texting Oliver the final count @Danby Living Room] @Danby Living Room: texting Oliver the final count
+   plan: until Sat 14:50: waiting for Oliver's reply, tidying up @Danby Living Room
+Sat 14:40 [you looked up from what you were doing] @Danby Living Room: waiting for Oliver's reply, tidying up
+   plan: until Sat 15:30: drawing animals, checking phone now and then @Harry's Bedroom
+Sat 14:40   -> Harry's Bedroom (drawing animals, checking phone now and then)
+Sat 14:55 [you looked up from what you were doing] @Harry's Bedroom: drawing animals, checking phone now and then (kept plan)
+   plan: until Sat 15:30: drawing animals, checking phone now and then @Harry's Bedroom
+Sat 15:10 [you looked up from what you were doing] @Harry's Bedroom: drawing animals, checking phone now and then (kept plan)
+   plan: until Sat 15:30: drawing animals, checking phone now and then @Harry's Bedroom
+Sat 15:25 [you looked up from what you were doing] @Harry's Bedroom: drawing animals, checking phone now and then
+   plan: until Sat 16:00: finishing fox drawing, then send photo to Oliver @Harry's Bedroom
+Sat 15:45 [you looked up from what you were doing] @Harry's Bedroom: finishing fox drawing, then send photo to Oliver (kept plan)
+   plan: until Sat 16:00: finishing fox drawing, then send photo to Oliver @Harry's Bedroom
+Sat 16:00 [your plan ran out] @Harry's Bedroom: finishing fox drawing, then send photo to Oliver
+   plan: until Sat 16:30: finishing fox drawing, then chatting to Oliver @Harry's Bedroom / until Sat 17:30: reading a series book, relaxing @Danby Living Room / until Sat 18:30: tea with mum and dad @Danby Kitchen
+Sat 16:10 [you looked up from what you were doing] @Harry's Bedroom: finishing fox drawing, then chatting to Oliver (kept plan)
+   plan: until Sat 16:30: finishing fox drawing, then chatting to Oliver @Harry's Bedroom / until Sat 17:30: reading a series book, relaxing @Danby Living Room / until Sat 18:30: tea with mum and dad @Danby Kitchen
+Sat 16:20 [you looked up from what you were doing] @Harry's Bedroom: finishing fox drawing, then chatting to Oliver
+   plan: until Sat 16:30: chatting to Oliver about the fox drawing, tidying pencils @Harry's Bedroom / until Sat 17:30: reading a series book @Danby Living Room / until Sat 18:30: tea with mum and dad @Danby Kitchen
+Sat 16:25 [you looked up from what you were doing] @Harry's Bedroom: chatting to Oliver about the fox drawing, tidying pencils (kept plan)
+   plan: until Sat 16:30: chatting to Oliver about the fox drawing, tidying pencils @Harry's Bedroom / until Sat 17:30: reading a series book @Danby Living Room / until Sat 18:30: tea with mum and dad @Danby Kitchen
+Sat 16:30   -> Danby Living Room (reading a series book)
+Sat 16:30 [next in your plan: reading a series book @Danby Living Room; you came into Danby Living Room: Mark Stephen Danby here] @Danby Living Room: reading a series book (kept plan)
+   plan: until Sat 17:30: reading a series book @Danby Living Room / until Sat 18:30: tea with mum and dad @Danby Kitchen
+Sat 17:00 [you looked up from what you were doing] @Danby Living Room: reading a series book (kept plan)
+   plan: until Sat 17:30: reading a series book @Danby Living Room / until Sat 18:30: tea with mum and dad @Danby Kitchen
+Sat 17:30   -> Danby Kitchen (tea with mum and dad)
+Sat 17:30 [next in your plan: tea with mum and dad @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby here] @Danby Kitchen: tea with mum and dad | talk to Joanne Louise Danby
+   plan: until Sat 18:30: having tea with mum and dad @Danby Kitchen
+Sat 18:03 [you looked up from what you were doing; after the conversation] @Danby Kitchen: tea with mum and dad
+   remembers: Helped mum lay the table and fill the water jug for shepherd's pie. Tea is about an hour off. She said to go and read until she shouts.
+   plan: until Sat 18:55: reading my book until tea is called @Danby Living Room
+Sat 18:03   -> Danby Living Room (reading my book until tea is called)
+Sat 18:33 [you looked up from what you were doing] @Danby Living Room: reading my book until tea is called (kept plan)
+   plan: until Sat 18:55: reading my book until tea is called @Danby Living Room
+Sat 18:55 [your plan ran out] @Danby Living Room: reading my book until tea is called
+   plan: until Sat 19:30: reading my book until tea is called @Danby Living Room / until Sat 20:00: tea with mum and dad, then put the fox drawing on the fridge @Danby Kitchen / until Sat 21:00: helping clear up, then reading or drawing @Danby Living Room
+Sat 19:15 [you looked up from what you were doing] @Danby Living Room: reading my book until tea is called (kept plan)
+   plan: until Sat 19:30: reading my book until tea is called @Danby Living Room / until Sat 20:00: tea with mum and dad, then put the fox drawing on the fridge @Danby Kitchen / until Sat 21:00: helping clear up, then reading or drawing @Danby Living Room
+Sat 19:30   -> Danby Kitchen (tea with mum and dad, then put the fox drawing on the fridge)
+Sat 19:30 [you came into Danby Kitchen: a conversation is going on; next in your plan: tea with mum and dad, then put the fox drawing on the fridge @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby, Mark Stephen Danby here] @Danby Kitchen: tea with mum and dad, then put the fox drawing on the fridge | talk to Joanne Louise Danby
+   plan: until Sat 20:00: tea with mum and dad, then put the fox drawing on the fridge @Danby Kitchen / until Sat 21:00: helping clear up, then reading or drawing @Danby Living Room
+Sat 19:34 [after the conversation] @Danby Kitchen: tea with mum and dad, then put the fox drawing on the fridge (kept plan) | talk to Joanne Louise Danby
+   remembers: Mum put the shepherd's pie in the oven, tea is at quarter to eight. Dad was sorting out the bin that had been badly tied. I came into the kitchen.
+   plan: until Sat 20:00: tea with mum and dad, then put the fox drawing on the fridge @Danby Kitchen / until Sat 21:00: helping clear up, then reading or drawing @Danby Living Room
+Sat 20:38 [you looked up from what you were doing; after the conversation] @Danby Kitchen: tea with mum and dad, then put the fox drawing on the fridge | talk to Mark Stephen Danby
+   remembers: Had shepherd's pie tea with mum and dad. Helped set the table. Mum said I can text Oliver after tea. Dad wants to see my fox drawing (the ears) before I text, and then it goes on the fridge. Dad's washing up, mum's drying.
+   plan: until Sat 20:50: showing dad and mum the fox drawing, putting it on the fridge @Danby Kitchen / until Sat 21:00: texting Oliver back, then reading @Danby Living Room
+Sat 20:58 [you looked up from what you were doing; after the conversation] @Danby Kitchen: with Mark Stephen Danby, Joanne Louise Danby
+   remembers: Put the fox on the fridge by the calendar, not over the school letter. Dad said the left ear is best. Sent Oliver the pic. Dad said not to text all night, so I'm going to read.
+   plan: until Sat 21:30: reading my book @Danby Living Room
+Sat 20:58   -> Danby Living Room (reading my book)
+Sat 21:18 [you looked up from what you were doing] @Danby Living Room: reading my book
+   plan: until Sat 21:30: reading my book @Danby Living Room
+Sat 21:30 [your plan ran out] @Danby Living Room: reading my book
+   plan: until Sat 22:00: reading my book @Danby Living Room / until Sat 22:15: brush teeth, get ready for bed, pack bag check @Harry's Bedroom / until Sat 22:30: read in bed then lights out @Harry's Bedroom / until Sun 07:30: asleep @Harry's Bedroom (asleep)
+Sat 22:00   -> Harry's Bedroom (brush teeth, get ready for bed, pack bag check)
+Sat 22:00 [next in your plan: brush teeth, get ready for bed, pack bag check @Harry's Bedroom] @Harry's Bedroom: brush teeth, get ready for bed, pack bag check (kept plan)
+   plan: until Sat 22:15: brush teeth, get ready for bed, pack bag check @Harry's Bedroom / until Sat 22:30: read in bed then lights out @Harry's Bedroom / until Sun 07:30: asleep @Harry's Bedroom (asleep)
+Sat 22:15 [next in your plan: read in bed then lights out @Harry's Bedroom] @Harry's Bedroom: read in bed then lights out (kept plan)
+   plan: until Sat 22:30: read in bed then lights out @Harry's Bedroom / until Sun 07:30: asleep @Harry's Bedroom (asleep)
+Sun 07:30 [your plan ran out] @Harry's Bedroom: asleep
+   the day: Sat is over, but a good one. Drew and finished the fox, and dad said the left ear was the best bit. Mum made shepherd's pie late, and then the fox went on the fridge by the calendar. I sent Oliver a picture and read my book in the living room before bed.
+   plan: until Sun 08:00: get up, dress, make bed @Harry's Bedroom / until Sun 08:30: breakfast with mum and dad @Danby Kitchen / until Sun 10:00: reading my book, then text Oliver about the wolves @Danby Living Room
+Sun 07:33 [you woke up] @Harry's Bedroom: get up, dress, make bed (kept plan)
+   plan: until Sun 08:00: get up, dress, make bed @Harry's Bedroom / until Sun 08:30: breakfast with mum and dad @Danby Kitchen / until Sun 10:00: reading my book, then text Oliver about the wolves @Danby Living Room
+Sun 08:00   -> Danby Kitchen (breakfast with mum and dad)
+Sun 08:00 [next in your plan: breakfast with mum and dad @Danby Kitchen; you came into Danby Kitchen: Joanne Louise Danby here] @Danby Kitchen: breakfast with mum and dad
+   plan: until Sun 08:30: breakfast with mum and dad @Danby Kitchen / until Sun 10:00: reading my book, then text Oliver about the wolves @Danby Living Room
+Sun 08:15 [you looked up from what you were doing] @Danby Kitchen: breakfast with mum and dad
+   plan: until Sun 08:30: finishing breakfast with mum and dad @Danby Kitchen / until Sun 10:00: reading my book, then text Oliver the wolf story @Danby Living Room
+Sun 08:25 [you looked up from what you were doing] @Danby Kitchen: finishing breakfast with mum and dad (kept plan)
+   plan: until Sun 08:30: finishing breakfast with mum and dad @Danby Kitchen / until Sun 10:00: reading my book, then text Oliver the wolf story @Danby Living Room
+Sun 08:30   -> Danby Living Room (reading my book, then text Oliver the wolf story)
+Sun 08:30 [next in your plan: reading my book, then text Oliver the wolf story @Danby Living Room] @Danby Living Room: reading my book, then text Oliver the wolf story (kept plan)
+   plan: until Sun 10:00: reading my book, then text Oliver the wolf story @Danby Living Room

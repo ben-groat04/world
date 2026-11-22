@@ -1,0 +1,576 @@
+[Sat 09:00] text (at Sat 09:12) Jake Turner → Harry Thomas Danby: Morning Harry! Training's still 10:30 at the club today yeah? Can you bring the cones bag, I forgot mine lol
+   item: Harry Thomas Danby starts "getting dressed, tidying room, drawing an animal" at Harry's Bedroom, until Sat 09:30
+   reason: Jake is a weekend club teammate who usually texts about training times and who brings what; it's Saturday morning.
+[Sat 09:00] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "getting dressed, tidying room, drawing an animal" at Harry's Bedroom, until Sat 09:30
+   reason: Nobody else is in his bedroom, and Oliver and Margaret have no particular reason to get in touch just now.
+[Sat 09:05] text (at Sat 09:17) Dave Holloway → Mark Stephen Danby: Morning! Are you out on the bike later? Bit of frost but it's dry. Ring me if you fancy a loop.
+   item: Mark Stephen Danby starts "making coffee and a proper breakfast" at Danby Kitchen, until Sat 09:30
+   reason: Dave is a weekend cycling friend and a Saturday morning message about a ride is ordinary.
+[Sat 09:05] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "making coffee and a proper breakfast" at Danby Kitchen, until Sat 09:30
+   reason: No one else is listed as being in the kitchen, and Emma, Priya and Paul have no reason to get in touch now.
+[Sat 09:12] text (at Sat 09:20) Emma Danby → Joanne Louise Danby: morning! are you and dad still ok for lunch tomorrow? I'll bring the washing for you to ignore 😂
+   item: Joanne Louise Danby starts "getting dressed, making the bed" at Joanne and Mark's Bedroom, until Sat 09:30
+   reason: Chatty adult daughter texting a casual weekend message on a Saturday morning.
+[Sat 09:20] none Jake Turner → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Jake Turner: "morning! yep 10:30 at the club. i'll bring the cones bag 🙂"
+   reason: Jake already has his answer; a thumbs-up or reply isn't needed.
+[Sat 09:20] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "getting dressed, finishing tidying, packing kit and cones bag" at Harry's Bedroom, until Sat 09:30
+   reason: Harry is alone getting ready for 10 minutes; nothing in particular comes of it and no contact needs to get in touch.
+[Sat 09:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "breakfast things, wiping surfaces, planning meals and shopping list" at Danby Kitchen, until Sat 10:30
+   reason: Quiet Saturday morning at home with Harry; Emma's 09:20 text is already waiting for a reply, nothing new needed.
+[Sat 09:30] text (at Sat 09:40) Dave Holloway → Mark Stephen Danby: No rush but if you're out later give us a shout, thinking of a loop around eleven if the frost lifts.
+   item: Mark Stephen Danby starts "walk with Harry, chatting about whatever he's into" at Local Park, until Sat 12:00
+   reason: Dave is a weekend regular who already texted and would plausibly follow up if unanswered.
+[Sat 09:30] text (at Sat 09:35) Oliver Reid → Harry Thomas Danby: morning!! did you see the match highlights?? my brother says the ref was blind 😂
+   item: Harry Thomas Danby starts "having breakfast with parents" at Danby Kitchen, until Sat 10:00
+   reason: Oliver sends lots of little chatty messages on a Saturday morning.
+[Sat 09:30] text (at Sat 09:34) Emma Danby → Joanne Louise Danby: perfect, see you at 12! 😂 can I bring anything for pudding?
+   item: Joanne Louise Danby texted Emma Danby: "Yes, still fine for lunch tomorrow. Bring the washing, I'll ignore it as usual. Come for twelve."
+   reason: Emma ordinarily replies briefly to her mum's confirmation.
+[Sat 09:30] none Dave Holloway → Mark Stephen Danby: 
+   item: Mark Stephen Danby texted Dave Holloway: "Morning Dave. Can't do a loop today, I've got Harry out on a walk this morning and a mountain of mortgage paperwork after lunch. Frost is a good shout though. Try me for next weekend, and I'll actually bring the right gloves this time."
+   reason: Dave's invite was declined and nothing more is needed; a reply is not required.
+[Sat 09:35] text (at Sat 09:38) Emma Danby → Joanne Louise Danby: haha ok, crumble!! 😍 apple? see you at 12 mum
+   item: Joanne Louise Danby texted Emma Danby: "Nothing. Just yourself. I'm doing a crumble."
+   reason: Emma is chatty and would plausibly send a brief reply to her mum's text.
+[Sat 09:38] text (at Sat 09:40) Oliver Reid → Harry Thomas Danby: honestly yes 😂 he missed a clear handball right in front of him?? my brother nearly threw the remote. watch it before training, it's only like 3 mins
+   item: Harry Thomas Danby texted Oliver Reid: "morning! no not yet, i've got training at 10:30. was it a bad decision then? 😂"
+   reason: Oliver is chatty and replies quickly to Harry's question.
+[Sat 09:38] none Emma Danby → Joanne Louise Danby: 
+   item: Joanne Louise Danby texted Emma Danby: "Apple, yes. Don't be late."
+   reason: Emma's last exchange is finished; she has said see you at 12, so no further reply is needed now.
+[Sat 09:38] present BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 09:38) Joanne Louise Danby: Joanne is already in the kitchen, wiping the worktop and putting the breakfast things away.
+   item: Harry Thomas Danby starts "find cones bag in garage, then finish breakfast things" at Danby Kitchen, until Sat 10:00
+   reason: She is the simulated person already placed in the kitchen.
+[Sat 09:38] text (at Sat 09:41) Oliver Reid → Harry Thomas Danby: its not even funny, he gave them a penalty for NOTHING 😂 u have to watch it after training
+   item: Harry Thomas Danby starts "find cones bag in garage, then finish breakfast things" at Danby Kitchen, until Sat 10:00
+   reason: Oliver is chatty and sends many small messages; this follows Harry's reply about the match.
+[Sat 09:38] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "find cones bag in garage, then finish breakfast things" at Danby Kitchen, until Sat 10:00
+   reason: Jake and Margaret have no reason to contact him now; the cones bag was already arranged.
+[Sat 09:48] none Oliver Reid → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Oliver Reid: "haha ok i'll watch it after training! 😂"
+   reason: Oliver's last message already got a reply; he may send a joke later but nothing needed now.
+[Sat 09:48] result (at Sat 09:48) Harry Thomas Danby: You find the cones bag in the garage, slightly dusty, on the shelf by the bikes. You carry it through to the kitchen.
+   item: Harry Thomas Danby starts "find cones bag in garage, bring it to kitchen" at Danby Kitchen, until Sat 10:00
+   reason: Ordinary uneventful errand outcome.
+[Sat 09:48] text (at Sat 09:52) Jake Turner → Harry Thomas Danby: Cheers for bringing the cones mate! See you at 10:30 😄
+   item: Harry Thomas Danby starts "find cones bag in garage, bring it to kitchen" at Danby Kitchen, until Sat 10:00
+   reason: Jake is chatty and louder, a quick thanks follows his earlier request.
+[Sat 09:50] text (at Sat 10:02) Sue Marsden → Joanne Louise Danby: Morning Joanne! Are you going to the school Christmas fair next week? I'm doing the cake stall if you fancy baking something x
+   item: Joanne Louise Danby starts "wiping surfaces, planning meals and shopping list, check apples for crumble" at Danby Kitchen, until Sat 10:30
+   reason: Friendly talkative neighbour makes ordinary Saturday contact; no pressure.
+[Sat 09:50] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "wiping surfaces, planning meals and shopping list, check apples for crumble" at Danby Kitchen, until Sat 10:30
+   reason: No other background people are placed at home; Emma already settled lunch plans by text, nothing else needed.
+[Sat 09:53] none Jake Turner → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Jake Turner: "no worries, got it! see you there 🙂"
+   reason: Jake already confirmed; the exchange is finished and he has no need to reply.
+[Sat 09:53] present BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 09:53) Joanne Louise Danby: 
+   item: Harry Thomas Danby starts "put cones bag by door, get boots and water bottle ready" at Danby Kitchen, until Sat 10:15
+   reason: Joanne is already simulated in the kitchen, so no background person needs adding.
+[Sat 09:53] text (at Sat 09:57) Oliver Reid → Harry Thomas Danby: ok but when you watch it count how many times the commentator says 'unlucky' 😂 i think its like 6
+   item: Harry Thomas Danby starts "put cones bag by door, get boots and water bottle ready" at Danby Kitchen, until Sat 10:15
+   reason: Oliver is chatty and sends lots of little messages, so a silly follow-up about the highlights is ordinary.
+[Sat 10:03] none Oliver Reid → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Oliver Reid: "haha ok i'll count!! 😂 got to go to training now, talk later"
+   reason: Harry signed off to go to training; Oliver's last jokes were answered, nothing more needed right now.
+[Sat 10:03] present BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 10:03) Joanne Louise Danby: 
+   item: Harry Thomas Danby starts "get boots and water bottle ready, cones bag by door" at Danby Kitchen, until Sat 10:15
+   reason: Joanne is already simulated in the kitchen, so no extra background person is needed.
+[Sat 10:03] text (at Sat 10:09) Jake Turner → Harry Thomas Danby: Just leaving now, see you in a bit! Don't forget water bottle lol
+   item: Harry Thomas Danby starts "get boots and water bottle ready, cones bag by door" at Danby Kitchen, until Sat 10:15
+   reason: Jake is loud and chatty, texts about what to bring before training; a small last-minute nudge is ordinary.
+[Sat 10:09] text (at Sat 10:12) Sue Marsden → Joanne Louise Danby: Lovely, flapjacks are always the first to go! Thanks Joanne x
+   item: Joanne Louise Danby texted Sue Marsden: "Morning. Yes, I'll be there. I can do a tray of flapjacks. Not promising anything fancy."
+   reason: Sue is friendly and talkative, so she would plausibly send a quick thanks reply.
+[Sat 10:13] none Jake Turner → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Jake Turner: "ok! got my water bottle, leaving soon 🙂"
+   reason: Jake is already on his way to training and has just been told Harry is leaving soon; no reply needed.
+[Sat 10:13] present BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 10:13) Joanne Louise Danby: Is in the kitchen finishing her tea, nearby while Harry gets ready.
+   item: Harry Thomas Danby starts "fill water bottle, get boots on, check cones bag" at Danby Kitchen, until Sat 10:20
+   reason: Joanne is simulated in the kitchen, so she is plausibly around on a Saturday morning.
+[Sat 10:13] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "fill water bottle, get boots on, check cones bag" at Danby Kitchen, until Sat 10:20
+   reason: Joanne is the only other person in the kitchen and a simulated person, so no extra background person is needed. Nothing else comes up in the few minutes before training.
+[Sat 10:18] speak BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 10:19) Joanne Louise Danby: Got everything, love? Boots, water bottle, shin pads? Come on, you don't want to be late.
+   item: Harry Thomas Danby starts "fill water bottle, boots on, check cones bag, say bye to parents" at Danby Kitchen, until Sat 10:27
+   reason: Mum is in the kitchen as Harry leaves for training; an ordinary check-in.
+[Sat 10:18] text (at Sat 10:22) Oliver Reid → Harry Thomas Danby: ok also the commentator thing, i changed my mind its definitely 7 😂 good luck at training!!
+   item: Harry Thomas Danby starts "fill water bottle, boots on, check cones bag, say bye to parents" at Danby Kitchen, until Sat 10:27
+   reason: Oliver is chatty and sends lots of little messages; a follow-up joke fits.
+[Sat 10:23] none Oliver Reid → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Oliver Reid: "7?! ok i'll count properly 😂 thanks!"
+   reason: Oliver has just had the last word and Harry is heading out to training, so no reply is needed right now.
+[Sat 10:23] present BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 10:23) Joanne Louise Danby: Is in the kitchen and sees Harry off. She reminds him about his coat and says she'll pick him up later.
+   item: Harry Thomas Danby starts "fill water bottle, boots on, check cones bag, say bye to parents" at Danby Kitchen, until Sat 10:27
+   reason: Joanne is already placed in the kitchen, and a parent seeing a child off to training is ordinary.
+[Sat 10:23] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "fill water bottle, boots on, check cones bag, say bye to parents" at Danby Kitchen, until Sat 10:27
+   reason: Jake texted at 10:09 that he was leaving, and Harry has answered, so there is nothing more to send.
+[Sat 10:27] present (at Sat 10:27) Jake Turner → Harry Thomas Danby: Arrives at the club for training with his own boot bag, kicking a ball about on the grass while waiting for the session to start.
+   item: Harry Thomas Danby starts "football training at the club" at Local Park, until Sat 12:00
+   reason: Jake is a weekend teammate who said he was leaving at 10:09 for the 10:30 session.
+[Sat 10:27] speak (at Sat 10:29) Jake Turner → Harry Thomas Danby: Harry! Got the cones bag, legend. Chuck it over here and we'll set up the drill before the others turn up.
+   item: Harry Thomas Danby starts "football training at the club" at Local Park, until Sat 12:00
+   reason: Jake asked Harry to bring the cones and would naturally greet him and get on with setting up.
+[Sat 10:27] text (at Sat 10:47) Oliver Reid → Harry Thomas Danby: ok one more thing, my brother says the ref's name is trending 😂 tell me how training goes!!
+   item: Harry Thomas Danby starts "football training at the club" at Local Park, until Sat 12:00
+   reason: Oliver is chatty and sends lots of little messages, so a further joke text is in character.
+[Sat 10:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "laundry sorting, then reading" at Danby Living Room, until Sat 12:00
+   reason: Quiet Saturday morning alone at home; Emma and Sue have already been in touch, nothing more is due.
+[Sat 11:19] present (at Sat 11:19) Jake Turner → Mark Stephen Danby: Taking part in training with Harry, running drills around the cones.
+   item: Mark Stephen Danby starts "Watching training from the bench" at Local Park, until Sat 12:00
+   reason: Jake was placed at the park until 12:00 and is already there.
+[Sat 11:19] speak (at Sat 11:21) Jake Turner → Mark Stephen Danby: Mr Danby, Coach says we're good to start now. Drills first, then a scrimmage. Should wrap up about twelve.
+   item: Mark Stephen Danby starts "Watching training from the bench" at Local Park, until Sat 12:00
+   reason: Jake went to ask the coach about starting. Mark had asked about timings, so Jake would pass it on.
+[Sat 11:19] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Watching training from the bench" at Local Park, until Sat 12:00
+   reason: No contact texts or calls now. Dave already got a reply about the loop and Mark is busy watching.
+[Sat 11:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "finish laundry sorting, then reading" at Danby Living Room, until Sat 12:00
+   reason: Quiet Saturday morning alone at home; Emma and Sue have already been in touch and nothing else is pending.
+[Sat 12:00] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "make lunch, plan crumble for tomorrow" at Danby Kitchen, until Sat 12:45
+   reason: Quiet Saturday lunch prep at home alone; Emma and Sue have already been in touch this morning and nothing else is due.
+[Sat 12:00] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "making lunch, planning apple crumble" at Danby Kitchen, until Sat 12:45
+   reason: Quiet Saturday morning cooking alone; nobody is due and the family have already messaged earlier.
+[Sat 12:00] present (at Sat 12:00) Jake Turner → Harry Thomas Danby: Jake is still at the pitch, back from asking the coach, and tells Harry the coach said to get on with the drills and they will finish up soon.
+   item: Harry Thomas Danby starts "finishing football training, drills with Jake" at Local Park, until Sat 12:30
+   reason: Jake is already placed at the park until 12:00 and is mid-conversation with the coach.
+[Sat 12:00] text (at Sat 12:10) Oliver Reid → Harry Thomas Danby: did u finish training yet?? go watch the highlights!! 😂 count the unlucky's!!
+   item: Harry Thomas Danby starts "finishing football training, drills with Jake" at Local Park, until Sat 12:30
+   reason: Oliver sent a lot of messages earlier and asked to hear how training goes; fits his chatty style.
+[Sat 12:11] text (at Sat 12:14) Oliver Reid → Harry Thomas Danby: ok!! no spoilers but the ref is SO bad 😂 tell me the unlucky count after!!
+   item: Harry Thomas Danby texted Oliver Reid: "not yet, nearly done! will watch when i get home 😂"
+   reason: Oliver is chatty and replies quickly with a silly little message.
+[Sat 12:17] text (at Sat 12:21) Dave Holloway → Mark Stephen Danby: Frost lifted in the end, did a lovely loop. You missed out! Fancy next Saturday then?
+   item: Mark Stephen Danby starts "Walking home from the park" at Local Road, until Sat 12:35
+   reason: Dave said he might loop around eleven and is a weekend texter; a follow-up fits.
+[Sat 12:30] present (at Sat 12:30) Jake Turner → Harry Thomas Danby: Finishing up at the park with Harry after the scrimmage, chatting about the drills, picking up cones and bags before heading off himself.
+   item: Harry Thomas Danby starts "chatting with Jake, then heading home with dad" at Local Park, until Sat 13:00
+   reason: Jake is already placed at the park until 12:25 and is the person Harry is chatting with.
+[Sat 12:30] speak (at Sat 12:30) Jake Turner → Harry Thomas Danby: Good scrimmage, mate! You were quick on those turns. Same time next week? I'll bring the cones bag for once.
+   item: Harry Thomas Danby starts "chatting with Jake, then heading home with dad" at Local Park, until Sat 13:00
+   reason: Jake is friendly and loud, and wraps up with Harry before leaving.
+[Sat 12:30] text (at Sat 12:40) Oliver Reid → Harry Thomas Danby: is training done?? go home and watch the highlights!! 😂 dont forget the unlucky count!!
+   item: Harry Thomas Danby starts "chatting with Jake, then heading home with dad" at Local Park, until Sat 13:00
+   reason: Oliver sends lots of little messages and has been nudging Harry all morning.
+[Sat 12:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "chatting with Jake, then heading home with dad" at Local Park, until Sat 13:00
+   reason: Margaret has no reason to get in touch; Mark already left for home, so nobody else turns up.
+[Sat 12:33] text (at Sat 12:39) Oliver Reid → Harry Thomas Danby: did u finish?? watch the highlights when u get in!! 😂 7 unlucky's i swear
+   item: Harry Thomas Danby starts "walking home with cones bag" at Local Road, until Sat 12:50
+   reason: Oliver is chatty and has been nudging Harry about the highlights all morning; another message fits.
+[Sat 12:33] none Mark Stephen Danby: 
+   item: Harry Thomas Danby starts "walking home with cones bag" at Local Road, until Sat 12:50
+   reason: Mark is already simulated on the road, so no extra background person is needed, and Jake is still at the park.
+[Sat 12:35] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Cooking lunch, then mortgage paperwork while waiting for Harry" at Danby Kitchen, until Sat 13:30
+   reason: Mark is cooking with Joanne in the kitchen; no other background person is placed there, and nothing needs to come of it.
+[Sat 12:35] text (at Sat 12:50) Paul Danby → Mark Stephen Danby: Did you see the score last night? Mum rang me asking if we're both going over at Christmas, think she wants a headcount. Ring me later if you're not up to your neck in paperwork.
+   item: Mark Stephen Danby starts "Cooking lunch, then mortgage paperwork while waiting for Harry" at Danby Kitchen, until Sat 13:30
+   reason: Paul is Mark's brother and talks football and their parents, and a Saturday lunchtime text is ordinary.
+[Sat 12:35] none Dave Holloway → Mark Stephen Danby: 
+   item: Mark Stephen Danby texted Dave Holloway: "Sounds like a good one, Dave. Next Saturday, yes, put me down. I'll be there with the right gloves, and I'll hold you to the ride being at a civilised hour."
+   reason: Dave just replied-worthy chat is settled; the plan is agreed and he would likely reply later at most, so nothing arrives right now.
+[Sat 12:50] text (at Sat 12:56) Oliver Reid → Harry Thomas Danby: HARRY are u home yet?? lunch then highlights!! 😂 7 unlucky's, i bet you a biscuit
+   item: Harry Thomas Danby starts "lunch with mum and dad, then watch highlights and count unlucky's" at Danby Kitchen, until Sat 14:00
+   reason: Oliver has been texting repeatedly about the highlights and would keep nudging; he is chatty and silly.
+[Sat 12:50] none Joanne Louise Danby: 
+   item: Harry Thomas Danby starts "lunch with mum and dad, then watch highlights and count unlucky's" at Danby Kitchen, until Sat 14:00
+   reason: Both parents are already simulated at the kitchen; no extra background person is needed there.
+[Sat 12:50] text (at Sat 12:53) Oliver Reid → Harry Thomas Danby: yesss ok!! enjoy lunch 😂 7 unlucky's, i'm calling it. tell me after!!
+   item: Harry Thomas Danby texted Oliver Reid: "just got home! having lunch, then i'll watch it and count the unlucky's 😂"
+   reason: Oliver is chatty and keeps texting about the highlights, so a short reply to Harry's message fits.
+[Sat 12:51] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "lunch with family, clearing up" at Danby Kitchen, until Sat 13:30
+   reason: Quiet family lunch clean-up; no one else is listed and nothing needs to intrude.
+[Sat 12:51] none Paul Danby → Mark Stephen Danby: 
+   item: Mark Stephen Danby texted Paul Danby: "Haven't seen the score, no. Don't tell me, I'll look later. Mum did ring me about Christmas too, so I'll ring you this afternoon once I've got through this mortgage letter, which has a rate on it I don't like."
+   reason: Mark has said he will ring Paul this afternoon, so Paul has no need to reply right now.
+[Sat 12:54] text (at Sat 13:06) Oliver Reid → Harry Thomas Danby: go watch it after lunch!! 😂 7 unlucky's, dont let me down
+   item: Harry Thomas Danby starts "lunch with mum and dad" at Danby Kitchen, until Sat 13:30
+   reason: Oliver is chatty and keeps sending reminders about the highlights, so another small message fits.
+[Sat 12:54] none Joanne Louise Danby: 
+   item: Harry Thomas Danby starts "lunch with mum and dad" at Danby Kitchen, until Sat 13:30
+   reason: Both parents are already simulated at the table, so no background person is needed and lunch just goes on.
+[Sat 13:05] text (at Sat 13:08) Oliver Reid → Harry Thomas Danby: BISCUIT BET ON 😂 enjoy lunch!! tell me the count after, i'm saying 7 and i'm never wrong 😂
+   item: Harry Thomas Danby texted Oliver Reid: "yes im home! having lunch now, will watch after 🙂 7 unlucky's, ok biscuit bet on!"
+   reason: Oliver is chatty and replies quickly to Harry's text, keeping the running joke going.
+[Sat 13:05] none Joanne Louise Danby: 
+   item: Harry Thomas Danby starts "having lunch with mum and dad" at Danby Kitchen, until Sat 13:30
+   reason: Mum and dad are already simulated at the table; no extra background person is needed for a family lunch.
+[Sat 13:09] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "finish soup, clear up lunch" at Danby Kitchen, until Sat 13:35
+   reason: Quiet Saturday lunch clear-up; her contacts have already been in touch this morning and nothing more is due.
+[Sat 13:09] call (at Sat 13:17) Paul Danby → Mark Stephen Danby: Right, you said you'd ring but I've got the kettle on and I'm bored. Mum wants a headcount for Christmas, so are we doing the twenty-fifth or Boxing Day? Ring me back or pick up, either way.
+   item: Mark Stephen Danby starts "Finishing lunch with Joanne and Harry" at Danby Kitchen, until Sat 13:40
+   reason: Paul said he'd be around and Mark promised to ring this afternoon; a brother nudging with a call is ordinary.
+[Sat 13:20] text (at Sat 13:23) Oliver Reid → Harry Thomas Danby: lol ok!! 7 unlucky's, i'm never wrong 😂 go go go
+   item: Harry Thomas Danby texted Oliver Reid: "ok ok i'll watch it in a bit, just finishing lunch! will tell you the count 😂"
+   reason: Oliver is chatty and keeps nudging about the highlights; a short reply fits.
+[Sat 13:20] present BLOCKED ((nobody) cannot be at Danby Kitchen) (at Sat 13:20) Joanne Louise Danby: Clearing plates and wiping the table, chatting to Harry about his morning.
+   item: Harry Thomas Danby starts "finishing lunch, helping clear up" at Danby Kitchen, until Sat 13:30
+   reason: Joanne is simulated in the kitchen; no need to add another background person here.
+[Sat 13:20] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "finishing lunch, helping clear up" at Danby Kitchen, until Sat 13:30
+   reason: Nothing prompts Margaret to get in touch on a Saturday lunchtime.
+[Sat 13:20] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "finishing lunch, helping clear up" at Danby Kitchen, until Sat 13:30
+   reason: Jake already said goodbye at the park; no reason to text now.
+[Sat 13:27] text (at Sat 13:33) Paul Danby → Mark Stephen Danby: Fair enough, my lips are sealed. Let me know once Joanne's sorted it with her mum and I'll tell Mum then. Boxing Day suits me fine.
+   item: Mark Stephen Danby texted Paul Danby: "Boxing Day looks likely for the three of us, but it's provisional. Joanne is speaking to her mum first, so don't tell Mum yet. I'll confirm once that's done."
+   reason: Paul would plausibly reply briefly to acknowledge the provisional plan.
+[Sat 13:30] text (at Sat 13:36) Oliver Reid → Harry Thomas Danby: WELL?? have u watched it yet?? 😂 7 unlucky's, the biscuit is mine
+   item: Harry Thomas Danby starts "watching highlights, counting unlucky's" at Danby Living Room, until Sat 14:15
+   reason: Oliver has been texting every few minutes about the highlights and would keep nudging.
+[Sat 13:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "watching highlights, counting unlucky's" at Danby Living Room, until Sat 14:15
+   reason: Nobody else is listed at home; no one else comes in or contacts him in this stretch.
+[Sat 13:47] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Going over mortgage letter, finalising questions for Monday call" at Danby Kitchen, until Sat 14:30
+   reason: Mark is focused on paperwork with Joanne nearby; contacts have all just been in touch and Paul and Dave are settled, so nothing more comes of it now.
+[Sat 13:50] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "prep apple crumble for tomorrow, check shopping list" at Danby Kitchen, until Sat 14:45
+   reason: Quiet Saturday afternoon prepping crumble with Mark around; nothing needs to come of it, Emma and Sue already messaged this morning.
+[Sat 13:50] text (at Sat 13:52) Oliver Reid → Harry Thomas Danby: 4?? only 4!! 😂 there's loads more coming, i'm saying 7, the biscuit is mine
+   item: Harry Thomas Danby texted Oliver Reid: "not finished yet, still counting! i'm on 4 so far 😂 will tell you at the end"
+   reason: Oliver is chatty and replies quickly to Harry's message.
+[Sat 13:50] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "watching highlights, counting unlucky's" at Danby Living Room, until Sat 14:15
+   reason: Harry is alone watching highlights at home with no one listed present; nothing more comes of it.
+[Sat 13:51] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "making apple crumble topping and prepping apples, checking shopping list" at Danby Kitchen, until Sat 14:45
+   reason: Quiet Saturday afternoon baking prep; Mark is already there and the morning's messages are settled, so nothing needs to happen.
+[Sat 14:05] text (at Sat 14:08) Oliver Reid → Harry Thomas Danby: 4 so far?? 😂 keep going, it gets worse!! 7 unlucky's, the biscuit is mine 🍪
+   item: Harry Thomas Danby texted Oliver Reid: "haha we'll see! still watching, i'll tell you the final count when it's done 🙂"
+   reason: Oliver is chatty and replies quickly to Harry's text, sticking to his bet.
+[Sat 14:05] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "watching highlights, counting unlucky's" at Danby Living Room, until Sat 14:30
+   reason: Nobody else is listed at the living room and nothing needs to happen during a quiet half hour of watching highlights.
+[Sat 14:21] text (at Sat 14:25) Oliver Reid → Harry Thomas Danby: ok ok no spoilers 😂 but 7, i'm calling it. biscuit ready 🍪
+   item: Harry Thomas Danby texted Oliver Reid: "still watching, nearly there! i'm not telling the count till the end 😂"
+   reason: Oliver texts constantly and would reply quickly with his running joke.
+[Sat 14:21] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "making crumble topping, prepping apples" at Danby Kitchen, until Sat 14:50
+   reason: An ordinary Saturday afternoon baking prep with Mark at home; Emma and Sue were already in touch this morning, and nothing else needs to happen.
+[Sat 14:27] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finishing mortgage questions on envelope" at Danby Kitchen, until Sat 14:40
+   reason: Quiet Saturday afternoon at the kitchen table with Joanne there; nobody else is placed and nothing needs to come of it.
+[Sat 14:30] text (at Sat 14:34) Oliver Reid → Harry Thomas Danby: WELL?? is it done?? 😂 7 unlucky's right?? biscuit is mine 🍪
+   item: Harry Thomas Danby starts "texting Oliver the final count" at Danby Living Room, until Sat 14:40
+   reason: Oliver is chatty and has been texting every 10-20 minutes about the count, so another nudge is in character.
+[Sat 14:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "texting Oliver the final count" at Danby Living Room, until Sat 14:40
+   reason: Nobody else is at home in the living room per the listing, and no one else is due to get in touch in these ten minutes.
+[Sat 14:30] text (at Sat 14:32) Oliver Reid → Harry Thomas Danby: SIX?? 😂 so close!! ok i demand a recount 🍪 off by one is basically a win for me
+   item: Harry Thomas Danby texted Oliver Reid: "finished! final count is 6 unlucky's, so you were close but not quite 😂 you owe me nothing, i just say you're off by one 🍪"
+   reason: Oliver is chatty and replies fast to Harry's count.
+[Sat 14:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "waiting for Oliver's reply, tidying up" at Danby Living Room, until Sat 14:50
+   reason: Living room is empty and nobody else is listed there. Nothing else needs to happen.
+[Sat 14:40] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Ringing Paul for a catch-up about Christmas" at Danby Kitchen, until Sat 15:15
+   reason: Mark already spoke to Paul at 13:17 and texted him; a further ring now would be a short, ordinary follow-up and nothing else needs to intrude. Joanne is already there, no other background person fits.
+[Sat 14:40] text (at Sat 14:43) Oliver Reid → Harry Thomas Danby: SIX. fine. 😂 i accept the biscuit is yours this time but i still say the commentator got one wrong. what are you up to now??
+   item: Harry Thomas Danby texted Oliver Reid: "it's done, i counted 6! no recount, i paused it and everything 😂 you can keep the biscuit this time"
+   reason: Oliver is chatty and replies quickly to Harry's message.
+[Sat 14:40] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finishing mortgage letter notes for Monday's call" at Danby Kitchen, until Sat 15:15
+   reason: Mark is busy with paperwork; he already dealt with Paul and Dave earlier, so nothing new comes in.
+[Sat 14:40] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "drawing animals, checking phone now and then" at Harry's Bedroom, until Sat 15:30
+   reason: Harry is alone drawing; Oliver's reply is covered under item 1 and nobody else is due to be in touch.
+[Sat 14:50] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "reading" at Danby Living Room, until Sat 15:40
+   reason: A quiet Saturday afternoon of reading; the morning's messages are settled and nobody has a reason to interrupt.
+[Sat 15:00] text (at Sat 15:03) Oliver Reid → Harry Thomas Danby: a FOX?? 😂 ok fair, the ref is still terrible though. send me a pic when it's done!! 🦊
+   item: Harry Thomas Danby texted Oliver Reid: "drawing a fox right now 🦊 the commentator was fine, you just don't like the ref 😂"
+   reason: Oliver is chatty and replies quickly to Harry's texts, and he'd tease back about the ref and ask to see the drawing.
+[Sat 15:00] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish mortgage notes, tidy envelope and letter together" at Danby Kitchen, until Sat 15:20
+   reason: Mark is alone at the kitchen table finishing paperwork; Paul and Dave have both just been dealt with and nobody else has cause to get in touch.
+[Sat 15:10] text (at Sat 15:14) Oliver Reid → Harry Thomas Danby: ok ok!! 🦊 can't wait, hope it's a good fox 😂 does it have a bushy tail??
+   item: Harry Thomas Danby texted Oliver Reid: "haha ok, nearly done! i'll send a pic when it's finished 🦊"
+   reason: Oliver is chatty and replies quickly to Harry's messages.
+[Sat 15:10] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish mortgage notes, tuck envelope and letter together" at Danby Kitchen, until Sat 15:25
+   reason: Mark is alone finishing paperwork; Saturday afternoon contacts have already been dealt with, so nothing comes of it.
+[Sat 15:20] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish mortgage notes, tuck envelope and letter together" at Danby Kitchen, until Sat 15:30
+   reason: Mark is finishing paperwork alone for ten minutes; nobody is due and nothing needs to interrupt, as Paul and Dave have both already been dealt with today.
+[Sat 15:25] text (at Sat 15:28) Oliver Reid → Harry Thomas Danby: ooh bushy tail!! 🦊😂 ok take your time, fur is the hard bit. pic when it's done!!
+   item: Harry Thomas Danby texted Oliver Reid: "yes it has a bushy tail! 🦊 nearly finished, just doing the fur. will send a pic soon"
+   reason: Oliver is chatty and replies quickly to Harry's message.
+[Sat 15:25] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish mortgage notes, tuck envelope and letter together" at Danby Kitchen, until Sat 15:35
+   reason: Mark is alone finishing paperwork for ten minutes; nobody else is there and no contact has reason to get in touch.
+[Sat 15:25] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "finishing fox drawing, then send photo to Oliver" at Harry's Bedroom, until Sat 16:00
+   reason: Harry is alone drawing in his bedroom; Oliver's reply is already covered under item 1.
+[Sat 15:30] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish mortgage notes, tuck envelope and letter together" at Danby Kitchen, until Sat 15:40
+   reason: Mark is finishing paperwork alone at the kitchen table; nothing ordinary prompts anyone to turn up or get in touch in this short step.
+[Sat 15:35] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish mortgage notes, tuck envelope and letter together" at Danby Kitchen, until Sat 15:45
+   reason: Mark is alone finishing paperwork for ten minutes; nobody is due and nothing needs to come of it.
+[Sat 15:40] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "making apple crumble for tomorrow" at Danby Kitchen, until Sat 16:30
+   reason: Quiet Saturday afternoon baking; Mark is already there and nothing else needs to happen. Emma and Sue already messaged this morning and arranged everything.
+[Sat 15:45] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Reading, then records with Harry" at Danby Living Room, until Sat 16:30
+   reason: Quiet reading and records with Harry in the living room; nobody else is listed there, and Paul and Dave have both already been dealt with today, so nothing comes of it.
+[Sat 16:00] text (at Sat 16:03) Oliver Reid → Harry Thomas Danby: FOX!! 🦊😂 ok send it send it, wonky is fine. is the tail actually bushy?? i demand to see the fur
+   item: Harry Thomas Danby texted Oliver Reid: "fox is done! 🦊 sorry the photo might be a bit wonky, the tail took ages 😂"
+   reason: Oliver is chatty and has been waiting for the pic, so he replies quickly with excitement.
+[Sat 16:00] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "finishing fox drawing, then chatting to Oliver" at Harry's Bedroom, until Sat 16:30
+   reason: No one else is listed in Harry's bedroom, and nobody else is due to contact him beyond Oliver's reply.
+[Sat 16:20] text (at Sat 16:23) Oliver Reid → Harry Thomas Danby: SEND IT!! 🦊😂 scribbly fur is the best fur, i promise not to laugh (i will a bit)
+   item: Harry Thomas Danby texted Oliver Reid: "yes the tail is bushy! 🦊 the fur is a bit scribbly but i'm proud of it. sending the pic, don't laugh 😂"
+   reason: Oliver is chatty and eager to see the fox pic; replies within a few minutes.
+[Sat 16:20] text (at Sat 16:22) Oliver Reid → Harry Thomas Danby: YES it came through!! 🦊😂 the tail is SO bushy, wonky is perfect. 10/10 fox, better than the ref
+   item: Harry Thomas Danby texted Oliver Reid: "did the pic come through? 🦊 sorry its wonky!"
+   reason: Oliver is chatty and replies quickly to Harry's message about the pic.
+[Sat 16:20] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "chatting to Oliver about the fox drawing, tidying pencils" at Harry's Bedroom, until Sat 16:30
+   reason: Harry is alone in his bedroom tidying pencils and nobody else is placed there, so nothing else comes of it.
+[Sat 16:25] text (at Sat 16:28) Oliver Reid → Harry Thomas Danby: ok ok 10/10 stands 😂 the fox is better than the ref and that's not hard. what are you doing now??
+   item: Harry Thomas Danby texted Oliver Reid: "haha thank you!! i already sent it, glad it came through 🦊 10/10 is a bit much but i'll take it 😂"
+   reason: Oliver is chatty and replies quickly with another light message.
+[Sat 16:25] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Reading, then records with Harry" at Danby Living Room, until Sat 17:30
+   reason: Quiet Saturday afternoon reading with Harry; no one is placed there, and contacts have already been dealt with today.
+[Sat 16:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "planning Sunday lunch and shopping list" at Danby Kitchen, until Sat 17:30
+   reason: Quiet Saturday afternoon planning at the kitchen table; lunch with Emma and flapjacks already settled by text, nothing new needs to arrive.
+[Sat 16:30] text (at Sat 16:36) Oliver Reid → Harry Thomas Danby: ok but seriously what are you doing now?? 😂 is the fox going on the fridge?? 🦊
+   item: Harry Thomas Danby starts "reading a series book" at Danby Living Room, until Sat 17:30
+   reason: Oliver asked 'what are you doing now' at 16:28 and Harry hasn't replied; he is chatty and sends lots of little messages.
+[Sat 16:36] text (at Sat 16:39) Oliver Reid → Harry Thomas Danby: ooh a book 📖😂 what's it about?? i'm just on the sofa being annoyed about the ref again lol. is the fox going on the fridge?? 🦊
+   item: Harry Thomas Danby texted Oliver Reid: "just reading my book now 📖 then tea soon. what are you doing?"
+   reason: Oliver is chatty, sends many little messages and replies quickly, asking again about the fox.
+[Sat 17:05] text (at Sat 17:08) Oliver Reid → Harry Thomas Danby: WOLVES finding a lost dog?? 🐺😂 ok that sounds actually good. fridge is the right place for the fox, mum has taste 🦊 enjoy tea!! tell me what you have
+   item: Harry Thomas Danby texted Oliver Reid: "my book is about a pack of wolves who find a lost dog 🐺 and probably yes the fox is going on the fridge, mum likes them there 😂 going for tea soon!"
+   reason: Oliver is chatty and replies quickly to Harry's messages, picking up on the book and the fridge.
+[Sat 17:30] text (at Sat 17:42) Margaret Hale → Joanne Louise Danby: Hello love. Are you free for a quick chat tomorrow about Christmas Day? Mum x
+   item: Joanne Louise Danby starts "preparing tea" at Danby Kitchen, until Sat 18:30
+   reason: Mark's earlier note says Joanne is to speak to her mum about Christmas; a short kind text fits Margaret.
+[Sat 17:30] text (at Sat 17:38) Oliver Reid → Harry Thomas Danby: what's for tea?? 😂 i'm having pizza i think. did the fox go on the fridge yet?? 🦊
+   item: Harry Thomas Danby starts "tea with mum and dad" at Danby Kitchen, until Sat 18:30
+   reason: Oliver asked Harry to say what he is having for tea and sends lots of little messages.
+[Sat 17:30] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Cooking dinner" at Danby Kitchen, until Sat 18:30
+   reason: Mark is busy cooking and nothing else is due; Paul and Dave are already settled for today.
+[Sat 17:30] none Oliver Reid → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Oliver Reid: "going to find out now! will tell you after 🙂"
+   reason: Harry just said he'll tell Oliver after tea; Oliver has already been texting a lot and Harry is heading to eat, so nothing more comes of it right now.
+[Sat 17:45] text (at Sat 17:48) Oliver Reid → Harry Thomas Danby: SHEPHERD'S PIE?? 😂 rude, i would be a great guest. ok enjoy!! tell me if the fox gets a good spot on the fridge 🦊
+   item: Harry Thomas Danby texted Oliver Reid: "shepherd's pie 😂 mum says you're not invited. the fox is going on the fridge after tea 🦊"
+   reason: Oliver is chatty and replies quickly with jokes; a short reply fits.
+[Sat 17:45] none Oliver Reid → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Oliver Reid: "shepherd's pie 😂 mum says you're not invited. the fox is going on the fridge after tea 🦊"
+   reason: No other contact or household event needed right now; tea is starting.
+[Sat 17:45] none Margaret Hale → Joanne Louise Danby: 
+   item: Joanne Louise Danby texted Margaret Hale: "Yes, any time after ten. Ring me."
+   reason: Joanne's reply just settles the plan; Margaret will ring tomorrow after ten, so nothing more is needed now.
+[Sat 17:45] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Cooking dinner, chatting with Joanne and Harry" at Danby Kitchen, until Sat 18:30
+   reason: Ordinary Saturday dinner prep at home; Emma and Paul are already sorted for today and Dave and Priya have no reason to get in touch, so nothing comes of it.
+[Sat 18:03] text (at Sat 18:07) Oliver Reid → Harry Thomas Danby: HA shepherd's pie is not a restaurant 😂 fair. ok fox on the fridge after tea, i want a full report 🦊
+   item: Harry Thomas Danby texted Oliver Reid: "mum says shepherd's pie is not a restaurant 😂 fox goes on the fridge after tea! 🦊"
+   reason: Oliver is chatty and replies quickly to Harry's messages.
+[Sat 18:03] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "reading my book until tea is called" at Danby Living Room, until Sat 18:55
+   reason: Harry is reading alone in the living room and nothing needs to interrupt him before tea is called.
+[Sat 18:04] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "finishing shepherd's pie, putting it in the oven" at Danby Kitchen, until Sat 18:30
+   reason: Quiet Saturday evening cooking; Mark is the only other person there and no background person would naturally turn up or get in touch right now (Margaret already arranged to ring tomorrow).
+[Sat 18:14] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting shepherd's pie in the oven, tidying up" at Danby Kitchen, until Sat 18:30
+   reason: Quiet Saturday evening at home making tea; Margaret is already ringing tomorrow, Emma coming tomorrow, nothing else pending, so nothing comes of it.
+[Sat 18:24] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, tidying up" at Danby Kitchen, until Sat 18:35
+   reason: Quiet Saturday teatime at home; Mark is already there and no background person has a reason to be in or to get in touch just now.
+[Sat 18:30] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Eating dinner with family, then clearing up" at Danby Kitchen, until Sat 19:30
+   reason: A quiet family dinner with Joanne; no one else is listed as there and nothing is pending, so nothing comes of it.
+[Sat 18:34] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, tidying up" at Danby Kitchen, until Sat 18:40
+   reason: A short six-minute step of putting a pie in the oven and tidying with Mark already there. No background person is placed at the house and nobody has a reason to get in touch just now.
+[Sat 18:39] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, tidying up" at Danby Kitchen, until Sat 18:45
+   reason: Quiet Saturday evening getting tea in the oven; Mark is already there, no one else would ordinarily turn up or message in these few minutes.
+[Sat 18:44] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, then serving tea with Mark and Harry, clearing up" at Danby Kitchen, until Sat 19:30
+   reason: Ordinary Saturday tea at home with Mark and Harry; no one else is listed as present and nothing needs to intrude.
+[Sat 18:55] text (at Sat 19:07) Oliver Reid → Harry Thomas Danby: well?? did the fox get a good spot on the fridge?? 🦊😂 full report please
+   item: Harry Thomas Danby starts "reading my book until tea is called" at Danby Living Room, until Sat 19:30
+   reason: Oliver is chatty and has asked for a fridge report; a text during reading time is in character.
+[Sat 18:59] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, then serving tea, clearing up" at Danby Kitchen, until Sat 19:30
+   reason: Ordinary Saturday tea at home with Mark; no background person is placed there and nothing needs to intrude.
+[Sat 19:09] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, then calling everyone to tea" at Danby Kitchen, until Sat 19:35
+   reason: Ordinary Saturday tea at home; nobody else is placed there and no contact has a natural reason to get in touch right now.
+[Sat 19:19] text (at Sat 19:22) Oliver Reid → Harry Thomas Danby: ok ok 😂 waiting on tea like a hungry wolf 🐺 send a pic of the fox on the fridge when it's up!!
+   item: Harry Thomas Danby texted Oliver Reid: "sorry, tea's not been called yet so the fox is still waiting! 🦊 will tell you when it's up on the fridge 🙂"
+   reason: Oliver is chatty and replies quickly to Harry's texts, so a short, light reply is natural.
+[Sat 19:30] text (at Sat 19:36) Oliver Reid → Harry Thomas Danby: is the fox on the fridge yet?? 🦊😂 tea taking forever, i'm starving on your behalf
+   item: Harry Thomas Danby starts "tea with mum and dad, then put the fox drawing on the fridge" at Danby Kitchen, until Sat 20:00
+   reason: Oliver is chatty and has been asking for a fridge report all evening; a further small message fits.
+[Sat 19:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "tea with mum and dad, then put the fox drawing on the fridge" at Danby Kitchen, until Sat 20:00
+   reason: Margaret's Christmas call is arranged with Joanne for tomorrow, and Jake has no reason to text on a Saturday evening, so nothing else comes of it. No one else is in the kitchen.
+[Sat 19:34] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "putting pie in oven, setting timer" at Danby Kitchen, until Sat 19:35
+   reason: Quiet moment putting the pie in; family are in the kitchen and nothing else needs to happen.
+[Sat 19:34] text (at Sat 19:40) Oliver Reid → Harry Thomas Danby: is tea called yet?? 😂 fox on the fridge?? 🦊 i need the full report
+   item: Harry Thomas Danby starts "tea with mum and dad, then put the fox drawing on the fridge" at Danby Kitchen, until Sat 20:00
+   reason: Oliver has been pinging every so often about the fox and tea; another nudge is in character.
+[Sat 19:34] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Taking the bin out, washing hands, eating dinner with family, clearing up" at Danby Kitchen, until Sat 20:30
+   reason: Ordinary evening routine; no contact due now, Paul and Dave already settled things earlier.
+[Sat 20:38] text (at Sat 20:41) Oliver Reid → Harry Thomas Danby: FINALLY 😂 shepherd's pie at last!! tell your dad the fox is 10/10 🦊 send a pic when it's on the fridge!!
+   item: Harry Thomas Danby texted Oliver Reid: "sorry!! tea was late, shepherd's pie. showing dad the fox now, then it's going on the fridge 🦊"
+   reason: Oliver has been texting all day and replies quickly and chattily to Harry's message.
+[Sat 20:38] none Oliver Reid → Harry Thomas Danby: 
+   item: Harry Thomas Danby texted Oliver Reid: "sorry!! tea was late, shepherd's pie. showing dad the fox now, then it's going on the fridge 🦊"
+   reason: Nothing else comes of it. Dad is already there and no one else needs to act.
+[Sat 20:57] text (at Sat 20:59) Oliver Reid → Harry Thomas Danby: FOX ON THE FRIDGE!! 🦊😂 left ear is the best bit, your dad has taste. told you 10/10
+   item: Harry Thomas Danby texted Oliver Reid: "it's on the fridge! 🦊 dad says the left ear is the best bit"
+   reason: Oliver is chatty and has been waiting all evening for this report, so he replies quickly.
+[Sat 20:58] text (at Sat 21:00) Oliver Reid → Harry Thomas Danby: FOX ON THE FRIDGE 🦊😂 left ear is elite, your dad has taste. ok the fridge spot is a solid 10/10 too
+   item: Harry Thomas Danby texted Oliver Reid: "here's the pic 🦊"
+   reason: Oliver has been asking for this pic all evening and replies fast and chattily.
+[Sat 20:58] text (at Sat 21:02) Oliver Reid → Harry Thomas Danby: THE FOX 🦊😂 left ear is the best bit, your dad has taste. ok what's the book wolves doing now?? 🐺
+   item: Harry Thomas Danby starts "reading my book" at Danby Living Room, until Sat 21:30
+   reason: Oliver is chatty and has been waiting for the fox pic; he would reply soon after it arrives.
+[Sat 21:00] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "reading, quiet evening" at Danby Living Room, until Sat 22:00
+   reason: Quiet Saturday evening; Margaret already arranged to ring tomorrow and Emma is coming for lunch, so nobody needs to contact her now.
+[Sat 21:00] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Finish wiping hob and worktops" at Danby Kitchen, until Sat 21:10
+   reason: Wiping the hob alone for ten minutes; nothing outstanding with his contacts tonight, Paul and Dave are both waiting on things already settled.
+[Sat 21:03] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "reading, quiet evening" at Danby Living Room, until Sat 21:30
+   reason: A quiet Saturday evening reading until 21:30; nobody else is listed at home besides Harry, and no contact has a pending reason to get in touch at 21:03, since Margaret already arranged to ring tomorrow.
+[Sat 21:10] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Playing records or guitar, then bed" at Danby Living Room, until Sat 22:30
+   reason: Quiet Saturday evening at home with Joanne and Harry; Emma and Dave already arranged things today, Paul is waiting on Joanne's call with her mum, and nothing needs to arrive at 21:10.
+[Sat 21:10] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Putting a record on, listening, a bit of guitar quietly" at Danby Living Room, until Sat 22:15
+   reason: Quiet Saturday evening at home with family; Emma and Dave have already been dealt with today, Paul is waiting on Joanne's mum, Priya is a weekday colleague, so nothing comes of it.
+[Sat 21:18] result (at Sat 21:18) Oliver Reid → Harry Thomas Danby: Your text to Oliver goes through and shows as delivered.
+   item: Harry Thomas Danby texted Oliver Reid: "ha the wolves are in trouble 🐺 i'll tell you tomorrow, going to read now. night! 🙂"
+   reason: Ordinary message send; no snag.
+[Sat 21:18] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "reading my book" at Danby Living Room, until Sat 21:30
+   reason: Quiet evening reading in the living room with parents already there; nothing further comes of it, and Oliver was just told goodnight.
+[Sat 21:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "wash the soaked pans, check kitchen is tidy" at Danby Kitchen, until Sat 21:50
+   reason: Saturday 21:30 alone in the kitchen washing pans; nobody is listed as home and no contact has reason to get in touch this late, so nothing comes of it.
+[Sat 21:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "washing the soaked pans, checking kitchen is tidy" at Danby Kitchen, until Sat 21:50
+   reason: Late Saturday evening, washing pans alone; nothing prompts contact right now. Margaret already arranged a call for tomorrow.
+[Sat 21:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "reading my book" at Danby Living Room, until Sat 22:00
+   reason: Harry told Oliver he is going to read and said night; Oliver has already had his answer, so no further message is due. Mark is already in the room.
+[Sat 21:50] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "reading" at Danby Living Room, until Sat 22:30
+   reason: A quiet Saturday evening with Mark and Harry in the room. Emma, Sue and Margaret have all been in touch today and settled things, Carol has no reason to ring now, and p4 lives elsewhere with nothing prompting contact.
+[Sat 21:50] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "reading" at Danby Living Room, until Sat 22:30
+   reason: A quiet Saturday evening with Mark and Harry in the room; no background person is at home, and nothing is due from contacts. Margaret already arranged to ring tomorrow, Emma is coming for lunch, and Sue's flapjack chat is settled.
+[Sat 22:00] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "brush teeth, get ready for bed, pack bag check" at Harry's Bedroom, until Sat 22:15
+   reason: Harry is alone getting ready for bed at 22:00; Oliver was told goodnight at 21:18 and nobody else would ordinarily contact him now.
+[Sat 22:15] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Tidying records away, then bed" at Danby Living Room, until Sat 22:30
+   reason: Late Saturday evening, winding down at home; nobody else is likely to text or call, and Dave, Paul and Emma have all already been in touch today.
+[Sat 22:15] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "read in bed then lights out" at Harry's Bedroom, until Sat 22:30
+   reason: Harry told Oliver he was going to read and say goodnight at 21:18, so Oliver has no reason to message again and no one else would visit.
+[Sat 22:15] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Putting records back in sleeves and shelf, then say goodnight to Jo" at Danby Living Room, until Sat 22:30
+   reason: Late Saturday evening at home with Jo; no background people are listed there and nothing in particular prompts a contact now (Emma, Paul and Dave have all been dealt with today), so the step goes uninterrupted.
+[Sat 22:28] none Mark Stephen Danby: 
+   item: Mark Stephen Danby starts "Bed, a bit of reading" at Joanne and Mark's Bedroom, until Sat 23:00
+   reason: Late Saturday night, Mark is in bed reading. Nobody else is in the bedroom, and no contact would ordinarily text or ring at this hour after the day's exchanges were already settled.
+[Sat 22:29] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "finishing chapter" at Danby Living Room, until Sat 22:40
+   reason: Late Saturday evening reading alone; nobody is listed as present and no contact would ordinarily get in touch at 22:30, since Margaret already arranged to ring tomorrow and Emma is coming for lunch.
+[Sat 22:40] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "lock back door with a shove, check it caught, lights off" at Danby Kitchen, until Sat 22:45
+   reason: Late Saturday night, locking up alone for five minutes; nobody is around and no contact would ordinarily get in touch at 22:40 after the day's exchanges were already settled.
+[Sat 22:40] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "shove back door lock, check it caught, lights off" at Danby Kitchen, until Sat 22:45
+   reason: Locking up alone at 22:40 on a Saturday; nobody is placed there and no contact has reason to get in touch late at night, so nothing comes of it.
+[Sat 22:45] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "getting ready for bed, a little reading" at Joanne and Mark's Bedroom, until Sat 23:15
+   reason: Late Saturday night, getting ready for bed with Mark in the room; family contacts have already been in touch today and nothing more is due.
+[Sun 07:00] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "getting up, dressing" at Joanne and Mark's Bedroom, until Sun 07:30
+   reason: Early Sunday morning, Joanne and Mark are getting up; no background person is placed in the bedroom, and nobody would ordinarily text at 07:00 (Margaret's call is expected after ten, Emma comes at twelve).
+[Sun 07:30] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "breakfast, check Sunday lunch list, start roast prep" at Danby Kitchen, until Sun 08:30
+   reason: Quiet Sunday morning in the kitchen. Nobody else is placed there. Emma is due at 12 and Margaret said she would ring after ten, so neither has a reason to get in touch before 08:30.
+[Sun 07:30] text (at Sun 07:45) Oliver Reid → Harry Thomas Danby: morning!! 😂 so what happened to the wolves?? you said you'd tell me today 🐺
+   item: Harry Thomas Danby starts "get up, dress, make bed" at Harry's Bedroom, until Sun 08:00
+   reason: Harry promised last night to tell Oliver about the book today, and Oliver is a chatty texter who would follow up in the morning.
+[Sun 07:50] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "breakfast, check lunch list, start roast prep, apple crumble" at Danby Kitchen, until Sun 08:30
+   reason: Early Sunday morning with lunch already confirmed with Emma and Margaret's call not due until after ten, so nobody else is there and nobody contacts her in this window.
+[Sun 08:00] text (at Sun 08:12) Oliver Reid → Harry Thomas Danby: HARRY 😂 wolves update please?? i've been thinking about them all night 🐺 also did the fox survive the night on the fridge 🦊
+   item: Harry Thomas Danby starts "breakfast with mum and dad" at Danby Kitchen, until Sun 08:30
+   reason: Oliver is chatty and already messaged at 07:45 with no reply, so a follow-up fits.
+[Sun 08:00] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "breakfast with mum and dad" at Danby Kitchen, until Sun 08:30
+   reason: Margaret's Christmas Day chat is arranged with Joanne for after ten, so nothing for Harry at breakfast.
+[Sun 08:00] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "breakfast with mum and dad" at Danby Kitchen, until Sun 08:30
+   reason: Training was yesterday and nothing is pending, so he has no reason to text at breakfast.
+[Sun 08:00] result (at Sun 08:00) Oliver Reid → Harry Thomas Danby: Your text to Oliver goes through and shows as delivered.
+   item: Harry Thomas Danby texted Oliver Reid: "morning! 😄 ok so the wolves, i'll tell you properly in a bit, just having breakfast. it's a good story i promise"
+   reason: Plain message send, nothing unusual.
+[Sun 08:00] text (at Sun 08:06) Oliver Reid → Harry Thomas Danby: ok ok but the wolves!! 🐺😂 breakfast first, then full wolf report please. i'm on toast myself
+   item: Harry Thomas Danby texted Oliver Reid: "morning! 😄 ok so the wolves, i'll tell you properly in a bit, just having breakfast. it's a good story i promise"
+   reason: Oliver is chatty and replies quickly with a silly message, keeping to his habit.
+[Sun 08:00] none Joanne Louise Danby: 
+   item: Harry Thomas Danby starts "breakfast with mum and dad" at Danby Kitchen, until Sun 08:30
+   reason: Joanne is already simulated there and no other background person is listed for the kitchen, so none is added.
+[Sun 08:00] text (at Sun 08:15) Margaret Hale → Joanne Louise Danby: Morning love. Ring me when you've had your breakfast, no rush. Mum x
+   item: Harry Thomas Danby starts "breakfast with mum and dad" at Danby Kitchen, until Sun 08:30
+   reason: Margaret asked yesterday to chat about Christmas Day and Joanne said to ring any time after ten. A short note this morning is plausible, but she wouldn't text Harry.
+[Sun 08:10] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "breakfast with Harry and Mark, check lunch list, start roast prep" at Danby Kitchen, until Sun 08:40
+   reason: Quiet Sunday breakfast and roast prep. Emma is due at twelve and Margaret said she would ring after ten, so nobody in the background has a reason to get in touch or turn up between 08:10 and 08:40.
+[Sun 08:15] text (at Sun 08:17) Oliver Reid → Harry Thomas Danby: FOX BY THE CALENDAR 🦊😂 ok good, safe spot. breakfast first fine, but then wolves!! 🐺 i want the whole story
+   item: Harry Thomas Danby texted Oliver Reid: "ok ok sorry!! 😄 the fox survived, it's on the fridge by the calendar 🦊 wolf report coming in a bit, i'll finish breakfast first"
+   reason: Oliver is chatty and has been chasing the wolf report all morning, so he replies quickly.
+[Sun 08:15] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "finishing breakfast with mum and dad" at Danby Kitchen, until Sun 08:30
+   reason: Joanne is already at the table. Nobody else would be there, and nothing else comes of breakfast beyond Oliver's text.
+[Sun 08:25] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "finish breakfast, check lunch list, start roast prep" at Danby Kitchen, until Sun 08:40
+   reason: Margaret asked Joanne to ring after breakfast with no rush, Emma is already confirmed for twelve, and no one else is due to be in touch, so nothing comes of this stretch.
+[Sun 08:30] text (at Sun 08:50) Paul Danby → Mark Stephen Danby: Morning. Any word from Joanne's mum yet about Christmas? Mum's asking again. No rush, just say when you know.
+   item: Mark Stephen Danby starts "Making breakfast and coffee for everyone" at Danby Kitchen, until Sun 09:30
+   reason: Paul has been waiting on Mark to confirm Christmas plans, which Joanne is settling with her mum this morning; a gentle nudge is ordinary.
+[Sun 08:30] none Joanne Louise Danby: 
+   item: Mark Stephen Danby starts "Making breakfast and coffee for everyone" at Danby Kitchen, until Sun 09:30
+   reason: Joanne is already simulated in the kitchen; no background person needs to be added, and nothing else comes of the moment.
+[Sun 08:30] none Harry Thomas Danby: 
+   item: Harry Thomas Danby starts "reading my book, then text Oliver the wolf story" at Danby Living Room, until Sun 10:00
+   reason: Oliver has already been texting about the wolves and Harry is replying himself; no extra contact is needed and no one else is in the living room.
+[Sun 08:40] none Joanne Louise Danby: 
+   item: Joanne Louise Danby starts "make apple crumble, tidy up" at Danby Kitchen, until Sun 09:20
+   reason: Margaret has already asked Joanne to ring her after breakfast, so she waits rather than calling again. Emma and Sue have nothing pending, and no one else would turn up at the house while Joanne bakes with Mark around.

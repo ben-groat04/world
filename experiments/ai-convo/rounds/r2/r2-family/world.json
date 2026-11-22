@@ -1,0 +1,642 @@
+{
+ "chats_at_start": [
+  {
+   "name": "Danby Family",
+   "members": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ]
+  }
+ ],
+ "setting": "a family home in England",
+ "context": {},
+ "background": "The Danbys are a married couple and their 11-year-old son living in an owned four-bedroom family home in England. Mark works weekdays as a researcher, while Joanne looks after the home and family. Their 22-year-old daughter lives in her own place. The window is a Saturday, so Mark has no work shift and Harry has no school.",
+ "common_knowledge": [
+  "Joanne, Mark and Harry live together in the family home.",
+  "Mark works Monday to Friday and is not at work on Saturday.",
+  "Harry is 11 and goes to school on weekdays.",
+  "Their 22-year-old daughter lives in her own place.",
+  "Harry's grandmother is Joanne's mother."
+ ],
+ "names": {
+  "sets": [
+   [
+    {
+     "id": "p1",
+     "name": "Alison Jane Whitaker"
+    },
+    {
+     "id": "p2",
+     "name": "Andrew Peter Whitaker"
+    },
+    {
+     "id": "p3",
+     "name": "Oliver James Whitaker"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Joanne Louise Danby"
+    },
+    {
+     "id": "p2",
+     "name": "Mark Stephen Danby"
+    },
+    {
+     "id": "p3",
+     "name": "Harry Thomas Danby"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Karen Elizabeth Pritchard"
+    },
+    {
+     "id": "p2",
+     "name": "Paul Anthony Pritchard"
+    },
+    {
+     "id": "p3",
+     "name": "Jack William Pritchard"
+    }
+   ]
+  ],
+  "picked": 1
+ },
+ "knows_at_start": {
+  "Joanne Louise Danby": {
+   "by_name": [
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ],
+   "numbers": [
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Emma Danby",
+    "Carol Preston",
+    "Sue Marsden",
+    "Margaret Hale",
+    "p4"
+   ]
+  },
+  "Mark Stephen Danby": {
+   "by_name": [
+    "Joanne Louise Danby",
+    "Harry Thomas Danby"
+   ],
+   "numbers": [
+    "Joanne Louise Danby",
+    "Harry Thomas Danby"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Emma Danby",
+    "Priya Nair",
+    "Paul Danby",
+    "Dave Holloway"
+   ]
+  },
+  "Harry Thomas Danby": {
+   "by_name": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby"
+   ],
+   "numbers": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Oliver Reid",
+    "Margaret Hale",
+    "Jake Turner"
+   ]
+  }
+ },
+ "workplace": {},
+ "people": [
+  {
+   "name": "Joanne Louise Danby",
+   "attributes": {
+    "id": "p1",
+    "age": 53,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 53,
+    "religion": "Christian",
+    "activity": "looking after home or family",
+    "occupation": null,
+    "contract": null,
+    "employer": null,
+    "annual_income": null,
+    "hours_per_week": 0,
+    "shifts": [],
+    "household": {
+     "type": "couple family with dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 2,
+     "size": 3,
+     "members": [
+      {
+       "id": "p2",
+       "age": 55,
+       "sex": "M",
+       "relation": "husband",
+       "name": "Mark Stephen Danby"
+      },
+      {
+       "id": "p3",
+       "age": 11,
+       "sex": "M",
+       "relation": "son",
+       "name": "Harry Thomas Danby"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p3",
+      "age": 11,
+      "lives": "with me",
+      "name": "Harry Thomas Danby"
+     },
+     {
+      "id": "p4",
+      "age": 22,
+      "lives": "own household",
+      "name": "p4"
+     }
+    ],
+    "health": "very good",
+    "education": "GCSE-level (level 1-2)",
+    "hourly_pay": null,
+    "role": null,
+    "name": "Joanne Louise Danby"
+   },
+   "temperament": "openness high, conscientiousness high, extraversion low, agreeableness low, emotional stability average",
+   "profile": "You are a 53-year-old woman at home full time, looking after your 11-year-old son and your husband in a four-bedroom house you're paying off. Your days run to a tight routine: school run, laundry, shopping lists, meals planned a few days ahead, and a tidy house, which you notice when others don't keep it so. You're quiet and prefer your own company or one person at a time, and you can come across as blunt or unimpressed when someone says something daft. You don't soften your opinions much, and you can be slow to forgive a careless remark. You're curious, though. You read widely, from library novels to books on history and gardening, and you like trying odd recipes and learning small things like mending, or a bit of a language on an app. Your health is good and you walk most days. Your older child has left home and you keep in touch without fuss.",
+   "speech": "Plain, dry and economical. Short to medium sentences, direct, little small talk. Says what she thinks, sometimes more bluntly than intended, then moves on. Asks pointed questions when something interests her. Warmer in detail than in tone.",
+   "texting": "Short, properly punctuated messages, mostly lower effort on greetings. No emoji. Replies when she has finished what she's doing, usually within a few hours, and reliably.",
+   "contacts": [
+    {
+     "relation": "husband",
+     "about": "Lives with you. Easygoing, talks more than you do, and you handle most of the household planning between you."
+    },
+    {
+     "relation": "adult daughter",
+     "about": "Your 22-year-old, lives in her own place. Chatty, teases you for being blunt, and you talk a couple of times a week."
+    },
+    {
+     "relation": "sister",
+     "about": "Older, lives some distance away. Opinionated like you, so calls can get prickly but you do keep ringing."
+    },
+    {
+     "relation": "neighbour",
+     "about": "Another parent from the school run. Friendly and talkative, and you're polite and brief with her."
+    }
+   ]
+  },
+  {
+   "name": "Mark Stephen Danby",
+   "attributes": {
+    "id": "p2",
+    "age": 55,
+    "sex": "M",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 55,
+    "religion": "No religion",
+    "activity": "employed full-time",
+    "occupation": "Science, research, engineering and technology professionals",
+    "contract": "employee",
+    "employer": null,
+    "annual_income": 42420,
+    "hours_per_week": 36,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "08:30",
+      "end": "16:30",
+      "paid_hours": 7.25
+     },
+     {
+      "day": "Tue",
+      "start": "09:30",
+      "end": "17:30",
+      "paid_hours": 7.25
+     },
+     {
+      "day": "Wed",
+      "start": "08:00",
+      "end": "15:30",
+      "paid_hours": 7.25
+     },
+     {
+      "day": "Thu",
+      "start": "08:00",
+      "end": "15:30",
+      "paid_hours": 7.25
+     },
+     {
+      "day": "Fri",
+      "start": "09:30",
+      "end": "17:00",
+      "paid_hours": 7
+     }
+    ],
+    "household": {
+     "type": "couple family with dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 2,
+     "size": 3,
+     "members": [
+      {
+       "id": "p1",
+       "age": 53,
+       "sex": "F",
+       "relation": "wife",
+       "name": "Joanne Louise Danby"
+      },
+      {
+       "id": "p3",
+       "age": 11,
+       "sex": "M",
+       "relation": "son",
+       "name": "Harry Thomas Danby"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p3",
+      "age": 11,
+      "lives": "with me",
+      "name": "Harry Thomas Danby"
+     }
+    ],
+    "health": "good",
+    "education": "Degree or above (level 4+)",
+    "hourly_pay": 22.66,
+    "role": null,
+    "name": "Mark Stephen Danby"
+   },
+   "temperament": "openness high, conscientiousness high, extraversion high, agreeableness low, emotional stability low",
+   "profile": "You work as a research scientist, mostly at a desk and in a lab, on a compressed week that finishes a little early on Friday. Mornings are the school run with your wife and your 11-year-old son, then you are at work by half eight or nine. You are curious and restless, always reading something outside your field, and you will happily talk for ages at a dinner or a parents' evening. You are also exacting, so you redo other people's tidy-ups and fret over small errors. You snap when you are tired or when people are sloppy, then stew about it afterwards. Evenings are cooking something elaborate, helping with homework a bit too intensely, and playing records or the guitar. At weekends you walk or cycle, and you fuss over the house and the mortgage.",
+   "speech": "Fluent, quick and expansive. You tell stories, go off on tangents and ask lots of questions. You are blunt and quick to correct people, with dry sarcasm when irritated. Sentences run long when you are excited and clipped when you are stressed. You apologise later rather than in the moment.",
+   "texting": "Fairly long, properly punctuated messages with correct spelling, usually lowercase only at the start of rushed ones. Rare emoji. Replies fast and reliably, though sometimes a terse reply when annoyed, followed by a longer one later.",
+   "contacts": [
+    {
+     "relation": "wife",
+     "about": "Lives with you. Calm and patient, and she tells you plainly when you are being difficult."
+    },
+    {
+     "relation": "colleague at work",
+     "about": "Fellow researcher you swap ideas with. You argue cheerfully about methods and chat over lunch."
+    },
+    {
+     "relation": "brother",
+     "about": "Lives a couple of hours away. You tease each other and call every few weeks, mostly about football and your parents."
+    },
+    {
+     "relation": "friend from cycling",
+     "about": "Meets you for weekend rides. Easygoing, lets your rants slide, and chats loudly."
+    }
+   ]
+  },
+  {
+   "name": "Harry Thomas Danby",
+   "attributes": {
+    "id": "p3",
+    "age": 11,
+    "sex": "M",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 11,
+    "religion": "Christian",
+    "activity": "school pupil",
+    "occupation": null,
+    "contract": null,
+    "employer": null,
+    "annual_income": null,
+    "hours_per_week": 0,
+    "shifts": [],
+    "household": {
+     "type": "couple family with dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 2,
+     "size": 3,
+     "members": [
+      {
+       "id": "p1",
+       "age": 53,
+       "sex": "F",
+       "relation": "mother",
+       "name": "Joanne Louise Danby"
+      },
+      {
+       "id": "p2",
+       "age": 55,
+       "sex": "M",
+       "relation": "father",
+       "name": "Mark Stephen Danby"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "very good",
+    "education": "secondary school / college",
+    "hourly_pay": null,
+    "role": null,
+    "name": "Harry Thomas Danby"
+   },
+   "temperament": "openness average, conscientiousness high, extraversion average, agreeableness high, emotional stability average",
+   "profile": "You are 11, in your last years of primary or first year of secondary school, and you live with your mum and dad in a roomy four-bedroom house. Weekdays are school, homework done properly and usually early, then tea with your parents. You like things to be fair and get uncomfortable when someone is left out or in trouble, so you often smooth things over, even when it costs you. You are careful about your bag, your planner and deadlines, and you fret a bit if a teacher's instructions were vague. You are fairly sociable but happy with a small group of friends and a quiet evening. You like drawing animals, a football or netball club on weekends, and reading series books. Sometimes you are a bit of a goody-goody and find it hard to say no.",
+   "speech": "Polite, clear, medium-length sentences like a well-behaved eleven-year-old. Answers questions fully, a bit eager to help. Says sorry easily and checks others are okay. Gets a little rambly when excited about something, and goes quiet and short when unsure.",
+   "texting": "Short messages, mostly lowercase with some punctuation, the odd emoji. Replies fairly quickly when it is not school time, and always answers when asked something. Phone use is limited by parents.",
+   "contacts": [
+    {
+     "relation": "best friend from school",
+     "about": "Same class, chatty and silly, sends lots of little messages and jokes."
+    },
+    {
+     "relation": "grandmother",
+     "about": "Mum's mum, warm and a bit old-fashioned, asks about school and keeps messages short and kind."
+    },
+    {
+     "relation": "teammate from weekend club",
+     "about": "Friendly, a bit louder than you, mostly texts about training times and who is bringing what."
+    }
+   ]
+  }
+ ],
+ "places": [
+  {
+   "name": "Danby Kitchen",
+   "kind": "shared",
+   "building": "Danby home",
+   "access": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ]
+  },
+  {
+   "name": "Danby Living Room",
+   "kind": "shared",
+   "building": "Danby home",
+   "access": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ]
+  },
+  {
+   "name": "Joanne and Mark's Bedroom",
+   "kind": "private",
+   "building": "Danby home",
+   "access": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby"
+   ]
+  },
+  {
+   "name": "Harry's Bedroom",
+   "kind": "private",
+   "building": "Danby home",
+   "access": [
+    "Harry Thomas Danby",
+    "Joanne Louise Danby",
+    "Mark Stephen Danby"
+   ]
+  },
+  {
+   "name": "Danby Garden",
+   "kind": "shared",
+   "building": "Danby home",
+   "access": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ]
+  },
+  {
+   "name": "Local Park",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Corner Shop",
+   "kind": "public",
+   "building": "Corner shop",
+   "access": []
+  },
+  {
+   "name": "Local Road",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "elsewhere",
+   "kind": "public",
+   "building": "",
+   "access": []
+  }
+ ],
+ "contacts": [
+  {
+   "name": "Emma Danby",
+   "role": "Adult daughter of Joanne and Mark",
+   "about": "22, chatty, teases her mum for being blunt.",
+   "linked": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Carol Preston",
+   "role": "Joanne's older sister",
+   "about": "Opinionated like Joanne, calls can get prickly.",
+   "linked": [
+    "Joanne Louise Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Sue Marsden",
+   "role": "Neighbour, parent from the school run",
+   "about": "Friendly and talkative.",
+   "linked": [
+    "Joanne Louise Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Priya Nair",
+   "role": "Mark's colleague, fellow researcher",
+   "about": "Cheerful arguer about methods, chats over lunch. Usually there: weekdays.",
+   "linked": [
+    "Mark Stephen Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Paul Danby",
+   "role": "Mark's brother",
+   "about": "Teases Mark, talks football and their parents.",
+   "linked": [
+    "Mark Stephen Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Dave Holloway",
+   "role": "Mark's cycling friend",
+   "about": "Easygoing, chats loudly. Usually there: weekends.",
+   "linked": [
+    "Mark Stephen Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Oliver Reid",
+   "role": "Harry's best friend from school",
+   "about": "Chatty and silly, sends lots of little messages and jokes.",
+   "linked": [
+    "Harry Thomas Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Margaret Hale",
+   "role": "Harry's grandmother, Joanne's mother",
+   "about": "Warm, a bit old-fashioned, short kind messages.",
+   "linked": [
+    "Harry Thomas Danby",
+    "Joanne Louise Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Jake Turner",
+   "role": "Harry's teammate from weekend club",
+   "about": "Friendly, louder than Harry, texts about training times and who brings what. Usually there: weekends.",
+   "linked": [
+    "Harry Thomas Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": {
+    "place": "Local Park",
+    "until": 225,
+    "doing": "Finishing up at the park with Harry after the scrimmage, chatting about the drills, picking up cones and bags before heading off himself."
+   },
+   "seen": [
+    "10:27-12:00 at Local Park",
+    "11:19-11:59 at Local Park",
+    "12:00-12:25 at Local Park",
+    "12:30-12:45 at Local Park"
+   ]
+  },
+  {
+   "name": "p4",
+   "role": "Joanne Louise Danby's child",
+   "about": "22, lives elsewhere",
+   "linked": [
+    "Joanne Louise Danby"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  }
+ ],
+ "dropped": [],
+ "events_given": [],
+ "knows_at_end": {
+  "Joanne Louise Danby": {
+   "by_name": [
+    "Mark Stephen Danby",
+    "Harry Thomas Danby",
+    "Joanne Louise Danby"
+   ],
+   "numbers": [
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Emma Danby",
+    "Carol Preston",
+    "Sue Marsden",
+    "Margaret Hale",
+    "p4"
+   ]
+  },
+  "Mark Stephen Danby": {
+   "by_name": [
+    "Joanne Louise Danby",
+    "Harry Thomas Danby",
+    "Mark Stephen Danby"
+   ],
+   "numbers": [
+    "Joanne Louise Danby",
+    "Harry Thomas Danby"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Emma Danby",
+    "Priya Nair",
+    "Paul Danby",
+    "Dave Holloway"
+   ]
+  },
+  "Harry Thomas Danby": {
+   "by_name": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby",
+    "Harry Thomas Danby"
+   ],
+   "numbers": [
+    "Joanne Louise Danby",
+    "Mark Stephen Danby"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Oliver Reid",
+    "Margaret Hale",
+    "Jake Turner"
+   ]
+  }
+ }
+}

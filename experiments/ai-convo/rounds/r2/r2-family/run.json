@@ -1,0 +1,44 @@
+{
+ "label": "r2-family",
+ "seed": 2202,
+ "args": {
+  "label": "r2-family",
+  "setting": "a family home in England",
+  "dateNote": "Saturday 28 November 2026",
+  "startDow": 5,
+  "startHour": 9,
+  "seed": 2202,
+  "hours": 24,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Sat 09:00",
+  "to": "Sun 09:00",
+  "hours": 24
+ },
+ "totalTokens": 845108,
+ "agentCount": 511,
+ "stats": {
+  "turns": {
+   "Joanne Louise Danby": 57,
+   "Mark Stephen Danby": 54,
+   "Harry Thomas Danby": 56
+  },
+  "calls": 511,
+  "simCalls": 506,
+  "maxCalls": 1860,
+  "byFor": {
+   "generator": 5,
+   "Joanne Louise Danby": 117,
+   "Mark Stephen Danby": 129,
+   "Harry Thomas Danby": 115,
+   "world": 118,
+   "Jake Turner": 27
+  },
+  "sceneLines": 220,
+  "promptChars": 2995323,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

@@ -380,7 +380,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       $('summary').textContent = `${runs.length} runs \u00b7 ${runs.reduce((n, r) => n + nonPass(r), 0)} messages`;
       $('layout').hidden = false; $('barOuter').hidden = false;
       init();
-      selectRun(store.get('chatRun') && runs.some(r => r.id === store.get('chatRun')) ? store.get('chatRun') : runs[0].id, true);
+      selectRun(runs[0].id, true);
     })
     .catch(err => showError(err && err.message ? err.message : 'The request failed.'));
 })();

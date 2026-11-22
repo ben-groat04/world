@@ -86,16 +86,16 @@ const WORLD = obj({ background: { type: 'string', description: '2-4 sentences of
   workplace: arr(obj({ person: str, place: str }), { description: 'for each person who works: which of the places above' }),
   contacts: arr(obj({ name: str, role: str, about: { type: 'string', description: '1 line incl. how they talk' }, linked_to: arr(str), place: { type: 'string', description: 'where they can be met in person, or empty' } }, ['name', 'role', 'about', 'linked_to']),
     { description: 'shared background characters the facts imply (letting agent for renters, a manager for employees)' }),
-  names: arr(obj({ id: str, name: str }), { description: 'a full name for every person, household member and child whose name is null, by id' }),
+  names: arr(obj({ id: str, name: str }), { description: 'a full name for every person, household member and child, by id' }),
   contact_names: arr(obj({ person: str, relation: str, name: str }), { description: 'a first name for each person\'s contacts listed below, following naming patterns for that person\'s background and generation' }) })
 const W = await call('role', `${roleOf('world builder')}Supply the structure these lives already have. No plot, and never guess data: nothing the setting or facts do not give.
 SETTING: ${SETTING}${Object.keys(CONTEXT).length ? `\nSAMPLE CONTEXT: ${JSON.stringify(CONTEXT)}` : ''}
 WINDOW: ${fmt(0)} for ${HOURS} hours${DATE}.
 PEOPLE:\n${PEOPLE.map((p) => `${p.name || p.attributes.id}: ${JSON.stringify(shown(p.attributes))}\n  contacts to name: ${p.contacts.map((c) => c.relation).join('; ') || 'none'}`).join('\n')}
-Where a name is null (no sourced name list applies), choose a full name, as people with that birth year, birthplace, religion and family are actually named; keep a household's names consistent with each other; no two alike. Refer to the people by their names (the ones you give, where null).`, WORLD, { phase: 'Generate', label: 'build world', for: 'generator' })
+Nobody has a name yet (no sourced name data fits a person's background and family). Name everyone with an id (people, household members, children) as people with that birth year, birthplace, religion and family are actually named; keep each household's names consistent with each other; no two alike. Refer to the people by the names you give.`, WORLD, { phase: 'Generate', label: 'build world', for: 'generator' })
 if (!W) throw new Error('world generation returned nothing')
 const GIVEN = Object.fromEntries((W.names || []).map((x) => [x.id, x.name]))
-const named = (o) => { if (o && typeof o === 'object') { if ('name' in o && o.name == null && o.id) o.name = GIVEN[o.id] || o.id; Object.values(o).forEach(named) } } // id = visible failure if the builder skipped one
+const named = (o) => { if (o && typeof o === 'object') { if (o.id && o.name == null) o.name = GIVEN[o.id] || o.id; Object.values(o).forEach(named) } } // id = visible failure if the builder skipped one
 ATTR.forEach(named); PEOPLE.forEach((p) => { p.name = p.attributes.name })
 const NAMES = PEOPLE.map((p) => p.name), P = Object.fromEntries(PEOPLE.map((p) => [p.name, p]))
 const simOf = (m) => NAMES.find((n) => m.id ? P[n].attributes.id === m.id : n === m.name) || '' // a household member who is also simulated

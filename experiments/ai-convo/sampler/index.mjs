@@ -62,12 +62,6 @@ function mkShifts(P, h) {
   return days.map((d, i) => ({ day: DAYS[d], start: hm(st[i]), end: hm(st[i] + els[i]), paid_hours: lens[i] }));
 }
 const restOk = (days, st, els) => { const n = days.length; let mx = 0; for (let i = 0; i < n; i++) { const j = (i + 1) % n, g = days[j] * 24 + st[j] + (j <= i ? 168 : 0) - (days[i] * 24 + st[i] + els[i]); if (n > 1 && g < 11) return false; mx = Math.max(mx, g); } return n === 1 || mx >= 35; };
-const onsName = (sex, age) => { const ys = Object.keys(D.baby[sex]).map(Number), by = 2025 - age, y = ys.reduce((a, b) => Math.abs(b - by) < Math.abs(a - by) ? b : a); return one(D.baby[sex][y]); }; // nearest listed year's top 100 (ranks only -> equal weights)
-function firstName(eth, rel, sex, age, bp) {
-  const ukb = Object.keys(D.ukNation).includes(bp);
-  if (eth === 'wb' || (ukb && (eth === 'wo' || eth === 'mx') && rel !== 'Muslim')) return [onsName(sex, age), one(D.names.wb.S)]; // ONS baby names (not published by ethnicity: used for White British and UK-born White Other/Mixed only)
-  return [null, null]; // no sourced name list for anyone else: name left null; the simulation's world builder names them from the full attributes
-}
 function person(o = {}) {
   const pr = o.pr ?? 0, oc0 = o.occ != null ? byCode(o.occ) : null;
   const aw = (a, sx) => (o.aw ? o.aw(a, sx) : 1) * (o.act ? actShare(sx, a, o.act) : 1) * (oc0 ? jobRate(oc0, sx, a) : 1) * (o.act && oc0 && o.act === 'st' ? 1 : 1);
@@ -96,8 +90,7 @@ function person(o = {}) {
     if (age < 21) { row.deg = 0; } else if (emp && act !== 'st') { const pp = profSum(sex, age); if (oc.code >= 21 && oc.code < 25) edu = DEGK; else { const d = Math.max(0, (row.deg - pp) / (1 - pp)), rest = 1 - row.deg; for (const k in row) row[k] = k === DEGK ? d : row[k] * (1 - d) / rest; } }
     edu ??= pk(row);
   }
-  const [fn, sn] = firstName(eth, rel, sex, age, bp);
-  return { fn, sn, age, sex, eth, bp, yrs, rel, act, edu, h, oc, emp, P, hrs, hp, shifts, earn, contract: !emp ? null : act === 'se' ? 'self-employed' : 'employee', employer: !emp ? null : o.emp ?? (act === 'se' ? 'self-employed' : null), role: o.role };
+  return { age, sex, eth, bp, yrs, rel, act, edu, h, oc, emp, P, hrs, hp, shifts, earn, contract: !emp ? null : act === 'se' ? 'self-employed' : 'employee', employer: !emp ? null : o.emp ?? (act === 'se' ? 'self-employed' : null), role: o.role };
 }
 // ---------- households
 function bedReq(M, C, type) { // ONS bedroom standard
@@ -142,19 +135,18 @@ function build(type, pr, fo = {}) {
   if (type === 'multigen') { const ga = mo.age + anyBirthAge(); if (ga > 94) return null; const gp = person({ pr, age: ga, sex: 'F', eth: mo.eth, rel: mo.rel }); M.push(gp); K.push([ix(gp), ix(mo)]); IL.push([ix(fa), ix(gp)]); kids.forEach(k => G.push([ix(gp), ix(k)])); }
   return { M, C, K, S, G, IL, type };
 }
-const nameOf = p => p.fn && p.sn ? p.fn + ' ' + p.sn : null; let IDN = 0; // ids: who is who in households, since some names are null
+let IDN = 0; // no names (no source conditions them on ethnicity, religion and family): ids say who is who; the simulation's world builder names everyone
 function finish(h, pr, tenure) {
   const { M, C, K, S, G, IL, type } = h, n = M.length, rel = M.map(() => ({}));
   const link = (a, b, c) => { rel[a][b] = LAB[c][M[b].sex]; rel[b][a] = LAB[INV[c]][M[a].sex]; };
   C.forEach(([a, b, m]) => link(a, b, m ? 'spouse' : 'partner')); K.forEach(([a, b]) => link(a, b, 'child')); S.forEach(([a, b]) => link(a, b, 'sib')); G.forEach(([a, b]) => link(a, b, 'gchild')); IL.forEach(([a, b]) => link(a, b, 'pil'));
   if (type === 'shared') for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) link(i, j, 'hm');
-  K.forEach(([a, c]) => { const ps = K.filter(k => k[1] === c).map(k => M[k[0]]); M[c].sn = (ps.find(x => x.sex === 'M') ?? ps[0]).sn; }); // children take the father's surname, else the mother's
-  M.forEach(p => { p.id ??= 'p' + ++IDN; }); const used = new Set(); M.forEach(p => { for (let t = 0; t < 40 && nameOf(p) && used.has(nameOf(p)); t++) p.fn = firstName(p.eth, p.rel, p.sex, p.age, p.bp)[0]; used.add(nameOf(p)); });
+  M.forEach(p => { p.id ??= 'p' + ++IDN; });
   const stat = p => pk(D.rs[p.sex][B(p.age) - 1], k => k === 'married' || k === 'cohab' ? 0 : 1);
   M.forEach((p, i) => { const c = C.find(x => x[0] === i || x[1] === i); p.status = c ? (c[2] ? 'married' : 'cohabiting') : p.age < 18 ? 'single' : { single: 'single', divorced: 'separated or divorced', widowed: 'widowed' }[stat(p)]; });
   M.forEach((p, i) => {
-    p.kids = K.filter(k => k[0] === i).map(k => ({ name: nameOf(M[k[1]]), id: M[k[1]].id, age: M[k[1]].age, lives: 'with me' }));
-    for (const a of p.away ?? []) { let f; for (let t = 0; t < 40; t++) { [f] = firstName(p.eth, p.rel, one(['M', 'F']), a, p.bp); if (!used.has(f + ' ' + p.sn)) break; } const nm = f && p.sn ? f + ' ' + p.sn : null; if (nm) used.add(nm); p.kids.push({ name: nm, id: 'p' + ++IDN, age: a, lives: 'own household' }); }
+    p.kids = K.filter(k => k[0] === i).map(k => ({ id: M[k[1]].id, age: M[k[1]].age, lives: 'with me' }));
+    for (const a of p.away ?? []) p.kids.push({ id: 'p' + ++IDN, age: a, lives: 'own household' });
   });
   const eld = Math.max(...M.filter(x => x.age >= 18).map(x => x.age)), req = bedReq(M, C, type), adults = M.filter(x => x.age >= 18).length;
   const tk = tenure ?? pk(D.ten[D.tt[type]], k => D.tenAge[eld >= 65 ? 'o65' : 'u65'][k] * Math.pow(D.tenMul[k], pr));
@@ -165,9 +157,9 @@ function finish(h, pr, tenure) {
   const kind = n === 1 ? 'one-person household' : type === 'shared' ? 'other household: unrelated adults sharing' : G.length ? 'multi-generation family household' : (C.length && K.length ? 'couple family' : K.length ? 'lone-parent family' : 'couple family') + (K.length ? (M.some(x => x.age < 18) ? ' with dependent children' : ' with non-dependent children') : ', no children');
   return M.map((p, i) => {
     const q = {
-      name: nameOf(p), id: p.id, age: p.age, sex: p.sex, ethnicity: D.ethLabel[p.eth], birthplace: p.bp, years_in_uk: p.yrs, religion: p.rel, activity: ACT[p.act],
+      id: p.id, age: p.age, sex: p.sex, ethnicity: D.ethLabel[p.eth], birthplace: p.bp, years_in_uk: p.yrs, religion: p.rel, activity: ACT[p.act],
       occupation: p.emp ? p.oc.title : null, contract: p.contract, employer: p.employer, annual_income: p.earn, hours_per_week: p.hrs, shifts: p.shifts,
-      household: { type: kind, tenure: D.tenLabel[tk], bedrooms: bd, occupancy_rating: bd - req, size: n, members: M.map((m, j) => j === i ? null : { name: nameOf(m), id: m.id, age: m.age, sex: m.sex, relation: rel[i][j] }).filter(Boolean) },
+      household: { type: kind, tenure: D.tenLabel[tk], bedrooms: bd, occupancy_rating: bd - req, size: n, members: M.map((m, j) => j === i ? null : { id: m.id, age: m.age, sex: m.sex, relation: rel[i][j] }).filter(Boolean) },
       relationship_status: p.status, children: p.kids, health: p.h, education: p.edu ? D.eduLabel[p.edu] : p.age < 5 ? 'pre-school' : p.age < 11 ? 'primary school' : 'secondary school / college',
       hourly_pay: p.hp, role: p.role ?? null
     };
@@ -184,8 +176,8 @@ function hhFor(p, pr) {
 // ---------- validation (works on output objects; groups are resampled on failure)
 const FTMIN = Math.floor(Math.min(...O.map(r => r.hf[0]))), STUMAX = Math.max(...Object.values(D.studentHours).map(q => q[4]));
 export function validate(ps) {
-  const E = [], e = (p, m) => E.push(`${p.name}: ${m}`);
-  const nm = ps.map(p => p.name).filter(Boolean); if (new Set(nm).size !== nm.length) E.push('duplicate names in group'); if (new Set(ps.map(p => p.id)).size !== ps.length) E.push('duplicate ids in group');
+  const E = [], e = (p, m) => E.push(`${p.id}: ${m}`);
+  if (new Set(ps.map(p => p.id)).size !== ps.length) E.push('duplicate ids in group');
   for (const p of ps) {
     const { P, oc, act } = p._ ?? {}, h = p.household, hrs = p.hours_per_week, adults = h.members.filter(m => m.age >= 18).length + (p.age >= 18);
     if (!(p.age >= 0 && p.age <= 99)) e(p, 'age'); if (p.years_in_uk > p.age) e(p, 'years_in_uk > age');
@@ -217,7 +209,7 @@ export function validate(ps) {
       if (c === 'spouse' || c === 'partner') partners++;
       if (c === 'child' && !p.children.some(k => k.id === m.id && k.lives === 'with me')) e(p, 'household child missing from children');
       const q2 = ps.find(x => x !== p && x.id === m.id);
-      if (q2) { const back = q2.household.members.find(x => x.id === p.id); if (!back || back.relation !== LAB[INV[c]][p.sex]) e(p, `inverse mismatch with ${m.name}`); }
+      if (q2) { const back = q2.household.members.find(x => x.id === p.id); if (!back || back.relation !== LAB[INV[c]][p.sex]) e(p, `inverse mismatch with ${m.id}`); }
     }
     if ((p.relationship_status === 'married' || p.relationship_status === 'cohabiting') !== (partners === 1)) e(p, 'status vs partner in household');
     for (const k of p.children) { if (p.age - k.age < 15) e(p, 'child too old'); if (k.lives === 'with me' && !h.members.some(m => m.id === k.id && CLS[m.relation] === 'child')) e(p, 'child "with me" not in household'); }

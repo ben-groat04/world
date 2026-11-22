@@ -4,7 +4,6 @@
   "seed": "1",
   "people": [
     {
-      "name": null,
       "id": "p1",
       "age": 40,
       "sex": "M",
@@ -58,23 +57,20 @@
         "size": 4,
         "members": [
           {
-            "name": null,
             "id": "p2",
             "age": 34,
             "sex": "M",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": "Maureen Robinson",
             "id": "p3",
             "age": 60,
             "sex": "F",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": "Katie Williams",
             "id": "p4",
-            "age": 36,
+            "age": 58,
             "sex": "F",
             "relation": "housemate (unrelated)"
           }
@@ -88,7 +84,6 @@
       "role": null
     },
     {
-      "name": null,
       "id": "p2",
       "age": 34,
       "sex": "M",
@@ -142,23 +137,20 @@
         "size": 4,
         "members": [
           {
-            "name": null,
             "id": "p1",
             "age": 40,
             "sex": "M",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": "Maureen Robinson",
             "id": "p3",
             "age": 60,
             "sex": "F",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": "Katie Williams",
             "id": "p4",
-            "age": 36,
+            "age": 58,
             "sex": "F",
             "relation": "housemate (unrelated)"
           }
@@ -172,7 +164,6 @@
       "role": null
     },
     {
-      "name": "Maureen Robinson",
       "id": "p3",
       "age": 60,
       "sex": "F",
@@ -226,34 +217,35 @@
         "size": 4,
         "members": [
           {
-            "name": null,
             "id": "p1",
             "age": 40,
             "sex": "M",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": null,
             "id": "p2",
             "age": 34,
             "sex": "M",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": "Katie Williams",
             "id": "p4",
-            "age": 36,
+            "age": 58,
             "sex": "F",
             "relation": "housemate (unrelated)"
           }
         ]
       },
-      "relationship_status": "single",
+      "relationship_status": "separated or divorced",
       "children": [
         {
-          "name": "Katie Robinson",
           "id": "p5",
-          "age": 37,
+          "age": 35,
+          "lives": "own household"
+        },
+        {
+          "id": "p6",
+          "age": 40,
           "lives": "own household"
         }
       ],
@@ -263,20 +255,19 @@
       "role": null
     },
     {
-      "name": "Katie Williams",
       "id": "p4",
-      "age": 36,
+      "age": 58,
       "sex": "F",
-      "ethnicity": "White Other (incl. Irish, Eastern European)",
+      "ethnicity": "White British",
       "birthplace": "England",
-      "years_in_uk": 36,
-      "religion": "Christian",
-      "activity": "employed full-time",
-      "occupation": "Business & public-service associate professionals",
-      "contract": "employee",
-      "employer": null,
-      "annual_income": 43290,
-      "hours_per_week": 37,
+      "years_in_uk": 58,
+      "religion": "No religion",
+      "activity": "self-employed",
+      "occupation": "Business, media & public-service professionals",
+      "contract": "self-employed",
+      "employer": "self-employed",
+      "annual_income": 58305,
+      "hours_per_week": 37.5,
       "shifts": [
         {
           "day": "Mon",
@@ -305,8 +296,8 @@
         {
           "day": "Fri",
           "start": "09:30",
-          "end": "17:00",
-          "paid_hours": 7
+          "end": "17:30",
+          "paid_hours": 7.5
         }
       ],
       "household": {
@@ -317,21 +308,18 @@
         "size": 4,
         "members": [
           {
-            "name": null,
             "id": "p1",
             "age": 40,
             "sex": "M",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": null,
             "id": "p2",
             "age": 34,
             "sex": "M",
             "relation": "housemate (unrelated)"
           },
           {
-            "name": "Maureen Robinson",
             "id": "p3",
             "age": 60,
             "sex": "F",
@@ -339,11 +327,22 @@
           }
         ]
       },
-      "relationship_status": "single",
-      "children": [],
+      "relationship_status": "separated or divorced",
+      "children": [
+        {
+          "id": "p7",
+          "age": 24,
+          "lives": "own household"
+        },
+        {
+          "id": "p8",
+          "age": 29,
+          "lives": "own household"
+        }
+      ],
       "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": 22.5,
+      "education": "Degree or above (level 4+)",
+      "hourly_pay": 29.9,
       "role": null
     }
   ]

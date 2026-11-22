@@ -4,7 +4,6 @@
   "seed": "1",
   "people": [
     {
-      "name": "Liam Harrison",
       "id": "p1",
       "age": 42,
       "sex": "M",
@@ -45,171 +44,138 @@
         }
       ],
       "household": {
-        "type": "couple family with dependent children",
-        "tenure": "owned with mortgage",
-        "bedrooms": 4,
-        "occupancy_rating": 2,
-        "size": 4,
-        "members": [
-          {
-            "name": "Cheryl Wilson",
-            "id": "p2",
-            "age": 40,
-            "sex": "F",
-            "relation": "wife"
-          },
-          {
-            "name": "Imogen Harrison",
-            "id": "p3",
-            "age": 9,
-            "sex": "F",
-            "relation": "daughter"
-          },
-          {
-            "name": "Kate Harrison",
-            "id": "p4",
-            "age": 16,
-            "sex": "F",
-            "relation": "daughter"
-          }
-        ]
+        "type": "one-person household",
+        "tenure": "private rented",
+        "bedrooms": 1,
+        "occupancy_rating": 0,
+        "size": 1,
+        "members": []
       },
-      "relationship_status": "married",
-      "children": [
-        {
-          "name": "Imogen Harrison",
-          "id": "p3",
-          "age": 9,
-          "lives": "with me"
-        },
-        {
-          "name": "Kate Harrison",
-          "id": "p4",
-          "age": 16,
-          "lives": "with me"
-        }
-      ],
+      "relationship_status": "separated or divorced",
+      "children": [],
       "health": "very good",
       "education": "GCSE-level (level 1-2)",
       "hourly_pay": 31.62,
       "role": "owner-manager"
     },
     {
-      "name": "Charlotte Morgan",
-      "id": "p5",
-      "age": 52,
+      "id": "p2",
+      "age": 55,
       "sex": "F",
       "ethnicity": "White British",
       "birthplace": "England",
-      "years_in_uk": 52,
+      "years_in_uk": 55,
       "religion": "No religion",
       "activity": "employed part-time",
       "occupation": "Textiles, printing & other skilled trades (incl. chefs and cooks)",
       "contract": "employee",
       "employer": "this café",
-      "annual_income": 17649,
-      "hours_per_week": 25.5,
+      "annual_income": 11493,
+      "hours_per_week": 17.5,
       "shifts": [
         {
           "day": "Tue",
-          "start": "09:00",
-          "end": "18:00",
-          "paid_hours": 8.5
+          "start": "08:30",
+          "end": "14:30",
+          "paid_hours": 5.75
         },
         {
-          "day": "Fri",
-          "start": "07:00",
-          "end": "16:00",
-          "paid_hours": 8.5
+          "day": "Sat",
+          "start": "10:30",
+          "end": "16:30",
+          "paid_hours": 5.75
         },
         {
           "day": "Sun",
+          "start": "07:30",
+          "end": "13:30",
+          "paid_hours": 6
+        }
+      ],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "owned with mortgage",
+        "bedrooms": 3,
+        "occupancy_rating": 2,
+        "size": 2,
+        "members": [
+          {
+            "id": "p3",
+            "age": 57,
+            "sex": "M",
+            "relation": "husband"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "good",
+      "education": "GCSE-level (level 1-2)",
+      "hourly_pay": 12.63,
+      "role": "cook"
+    },
+    {
+      "id": "p4",
+      "age": 58,
+      "sex": "F",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 58,
+      "religion": "Christian",
+      "activity": "employed full-time",
+      "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
+      "contract": "employee",
+      "employer": "this café",
+      "annual_income": 25475,
+      "hours_per_week": 35.5,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "07:00",
+          "end": "16:30",
+          "paid_hours": 9
+        },
+        {
+          "day": "Tue",
           "start": "08:30",
-          "end": "17:30",
+          "end": "18:00",
+          "paid_hours": 9
+        },
+        {
+          "day": "Wed",
+          "start": "06:30",
+          "end": "16:00",
+          "paid_hours": 9
+        },
+        {
+          "day": "Sun",
+          "start": "06:30",
+          "end": "15:30",
           "paid_hours": 8.5
         }
       ],
       "household": {
-        "type": "one-person household",
+        "type": "couple family with non-dependent children",
         "tenure": "social rented",
-        "bedrooms": 3,
-        "occupancy_rating": 2,
-        "size": 1,
-        "members": []
-      },
-      "relationship_status": "single",
-      "children": [
-        {
-          "name": "Lilly Morgan",
-          "id": "p6",
-          "age": 18,
-          "lives": "own household"
-        },
-        {
-          "name": "Emily Morgan",
-          "id": "p7",
-          "age": 20,
-          "lives": "own household"
-        },
-        {
-          "name": "Ashley Morgan",
-          "id": "p8",
-          "age": 27,
-          "lives": "own household"
-        },
-        {
-          "name": "Christian Morgan",
-          "id": "p9",
-          "age": 31,
-          "lives": "own household"
-        }
-      ],
-      "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": 13.31,
-      "role": "cook"
-    },
-    {
-      "name": null,
-      "id": "p10",
-      "age": 36,
-      "sex": "F",
-      "ethnicity": "Arab / Other",
-      "birthplace": "England",
-      "years_in_uk": 36,
-      "religion": "Muslim",
-      "activity": "employed part-time",
-      "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-      "contract": "employee",
-      "employer": "this café",
-      "annual_income": 3724,
-      "hours_per_week": 5.5,
-      "shifts": [
-        {
-          "day": "Wed",
-          "start": "07:00",
-          "end": "12:30",
-          "paid_hours": 5.5
-        }
-      ],
-      "household": {
-        "type": "couple family with dependent children",
-        "tenure": "owned with mortgage",
-        "bedrooms": 3,
-        "occupancy_rating": 1,
-        "size": 3,
+        "bedrooms": 2,
+        "occupancy_rating": -1,
+        "size": 4,
         "members": [
           {
-            "name": null,
-            "id": "p11",
-            "age": 38,
+            "id": "p5",
+            "age": 60,
             "sex": "M",
             "relation": "husband"
           },
           {
-            "name": null,
-            "id": "p12",
-            "age": 9,
+            "id": "p6",
+            "age": 32,
+            "sex": "M",
+            "relation": "son"
+          },
+          {
+            "id": "p7",
+            "age": 42,
             "sex": "M",
             "relation": "son"
           }
@@ -218,148 +184,120 @@
       "relationship_status": "married",
       "children": [
         {
-          "name": null,
-          "id": "p12",
-          "age": 9,
+          "id": "p6",
+          "age": 32,
+          "lives": "with me"
+        },
+        {
+          "id": "p7",
+          "age": 42,
           "lives": "with me"
         }
       ],
       "health": "very good",
       "education": "Degree or above (level 4+)",
-      "hourly_pay": 13.02,
-      "role": "server"
+      "hourly_pay": 13.8,
+      "role": "counter assistant"
     },
     {
-      "name": null,
-      "id": "p13",
-      "age": 46,
-      "sex": "M",
-      "ethnicity": "Mixed / multiple",
-      "birthplace": "North America and the Caribbean",
-      "years_in_uk": 42,
+      "id": "p8",
+      "age": 33,
+      "sex": "F",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 33,
       "religion": "No religion",
-      "activity": "employed full-time",
+      "activity": "employed part-time",
       "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
       "contract": "employee",
       "employer": "this café",
-      "annual_income": 22902,
-      "hours_per_week": 38,
+      "annual_income": 12014,
+      "hours_per_week": 19,
       "shifts": [
         {
-          "day": "Tue",
-          "start": "08:30",
-          "end": "16:30",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Wed",
-          "start": "08:30",
-          "end": "16:30",
-          "paid_hours": 7.5
-        },
-        {
           "day": "Thu",
-          "start": "09:30",
+          "start": "07:30",
           "end": "17:30",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Fri",
-          "start": "09:00",
-          "end": "17:00",
-          "paid_hours": 7.5
+          "paid_hours": 9.5
         },
         {
           "day": "Sat",
-          "start": "08:30",
-          "end": "17:00",
-          "paid_hours": 8
-        }
-      ],
-      "household": {
-        "type": "one-person household",
-        "tenure": "owned outright",
-        "bedrooms": 3,
-        "occupancy_rating": 2,
-        "size": 1,
-        "members": []
-      },
-      "relationship_status": "single",
-      "children": [],
-      "health": "fair",
-      "education": "Degree or above (level 4+)",
-      "hourly_pay": 11.59,
-      "role": "barista"
-    },
-    {
-      "name": null,
-      "id": "p14",
-      "age": 23,
-      "sex": "F",
-      "ethnicity": "Chinese",
-      "birthplace": "England",
-      "years_in_uk": 23,
-      "religion": "No religion",
-      "activity": "student",
-      "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-      "contract": "employee",
-      "employer": "this café",
-      "annual_income": 17252,
-      "hours_per_week": 29,
-      "shifts": [
-        {
-          "day": "Mon",
-          "start": "06:30",
-          "end": "12:30",
-          "paid_hours": 5.75
-        },
-        {
-          "day": "Tue",
-          "start": "06:30",
-          "end": "12:30",
-          "paid_hours": 5.75
-        },
-        {
-          "day": "Wed",
-          "start": "08:00",
-          "end": "13:30",
-          "paid_hours": 5.75
-        },
-        {
-          "day": "Thu",
-          "start": "08:00",
-          "end": "13:30",
-          "paid_hours": 5.75
-        },
-        {
-          "day": "Fri",
-          "start": "07:00",
-          "end": "13:00",
-          "paid_hours": 6
+          "start": "07:30",
+          "end": "17:30",
+          "paid_hours": 9.5
         }
       ],
       "household": {
         "type": "couple family, no children",
+        "tenure": "owned outright",
+        "bedrooms": 3,
+        "occupancy_rating": 2,
+        "size": 2,
+        "members": [
+          {
+            "id": "p9",
+            "age": 35,
+            "sex": "M",
+            "relation": "husband"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "fair",
+      "education": "GCSE-level (level 1-2)",
+      "hourly_pay": 12.16,
+      "role": "kitchen assistant"
+    },
+    {
+      "id": "p10",
+      "age": 19,
+      "sex": "M",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 19,
+      "religion": "Christian",
+      "activity": "student",
+      "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
+      "contract": "employee",
+      "employer": "this café",
+      "annual_income": 6853,
+      "hours_per_week": 11,
+      "shifts": [
+        {
+          "day": "Sat",
+          "start": "09:30",
+          "end": "15:00",
+          "paid_hours": 5.5
+        },
+        {
+          "day": "Sun",
+          "start": "09:00",
+          "end": "14:30",
+          "paid_hours": 5.5
+        }
+      ],
+      "household": {
+        "type": "lone-parent family with non-dependent children",
         "tenure": "owned with mortgage",
-        "bedrooms": 2,
+        "bedrooms": 3,
         "occupancy_rating": 1,
         "size": 2,
         "members": [
           {
-            "name": null,
-            "id": "p15",
-            "age": 25,
-            "sex": "M",
-            "relation": "partner"
+            "id": "p11",
+            "age": 52,
+            "sex": "F",
+            "relation": "mother"
           }
         ]
       },
-      "relationship_status": "cohabiting",
+      "relationship_status": "single",
       "children": [],
       "health": "good",
-      "education": "Degree or above (level 4+)",
-      "hourly_pay": 11.44,
-      "role": "kitchen assistant"
+      "education": "A-level or apprenticeship (level 3)",
+      "hourly_pay": 11.98,
+      "role": "counter assistant"
     }
   ]
 }

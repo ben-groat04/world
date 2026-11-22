@@ -51,7 +51,7 @@ function mock(people, opts = {}) {
     if (kind !== 'person' && kind !== 'world' && r() < (opts.nullRate ?? 0.04)) return null
     if (kind === 'person') return { profile: 'You are ordinary.', speech: 'plain', texting: 'short', contacts: [{ relation: 'friend', about: 'texts in full sentences' }, { relation: 'sister', about: 'quiet' }] }
     if (kind === 'world') {
-      const ids = [...prompt.matchAll(/"name":null,"id":"(p\d+)"/g)].map((m) => m[1]), give = [...new Set(ids)].filter((id, i) => opts.skipName !== true || i > 0).map((id) => ({ id, name: `Named ${id.toUpperCase()} Person` }))
+      const ids = [...prompt.matchAll(/"id":"(p\d+)"/g)].map((m) => m[1]), give = [...new Set(ids)].filter((id, i) => opts.skipName !== true || i > 0).map((id) => ({ id, name: `Named ${id.toUpperCase()} Person` }))
       names = people.map((a) => a.name || give.find((g) => g.id === a.id)?.name || a.id)
       return { background: 'An ordinary place.', common_knowledge: ['Bins go out Thursday'], know_each_other: opts.strangers ? [] : [names.slice(0, 2)],
         places: [...names.map((n) => ({ name: `${n.split(' ')[0]}'s room`, kind: 'private', building: opts.strangers ? n : 'Home', access: [n] })), { name: 'Kitchen', kind: 'shared', building: 'Home', access: opts.strangers ? [names[0]] : names }, { name: 'Work', kind: 'public', building: '', access: [] }, { name: 'Supermarket', kind: 'public', building: '', access: [] }],
@@ -109,10 +109,9 @@ async function test(label, smp, extra = {}) {
   for (const c of out.calls.filter((c) => c.label.startsWith('write person'))) { const p = c.prompt
     for (const a of people) for (const v of [a.name, ...(a.household?.members || []).map((m) => m.name), ...(a.children || []).map((m) => m.name)]) if (v && p.includes(v)) fail(`writer saw a name: ${v}`)
     if (/"(sex|ethnicity|birthplace|religion|years_in_uk)"/.test(p)) fail('writer saw an identity field: ' + p.match(/"(sex|ethnicity|birthplace|religion|years_in_uk)"/)[1]) }
-  // unnamed people (no sourced name list) are named by the world builder, everywhere they appear; a skipped one shows as its id
+  // the sampler gives no names; the world builder names everyone, everywhere they appear; a skipped one shows as its id
   const all = people.flatMap((a) => [a, ...(a.household?.members || []), ...(a.children || [])])
   if (all.some((m) => m.name == null)) fail('someone left unnamed')
-  for (const m of all) { const rawM = raw.flatMap((a) => [a, ...(a.household?.members || []), ...(a.children || [])]).find((x) => x.id === m.id); if (rawM?.name && rawM.name !== m.name) fail('a sourced name was changed: ' + rawM.name) }
   for (const a of people) for (const m of a.household?.members || []) { const q = people.find((x) => x.id === m.id); if (q && q.name !== m.name) fail(`household name mismatch: ${m.name} vs ${q.name}`) }
   // ethnicity never reaches a character model
   const eth = [...new Set(people.map((a) => a.ethnicity).filter(Boolean))]

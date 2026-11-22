@@ -45,14 +45,13 @@ PAT={11:['office'],12:['retail','office'],21:['office'],22:['shift12'],23:['scho
 D['O']=[{'code':o['code'],'title':old_titles[o['code']],'pat':PAT[o['code']],'M':[max(1,v) for v in o['M']],'F':[max(1,v) for v in o['F']],'pay':o['pay'],'ftJobs':o['ft'],'ptJobs':o['pt'],'hf':o['hf'],'hp':o['hp']} for o in g4['occ']]
 D['studentHours']=g4['studentHours']; D['studentMajor']=g4['studentMajor']
 D['minWage']={'21+':11.44,'18-20':8.60}
-D['names']=old['names']
 # targets (published figures to compare against)
 D['targets']={'_note':"Census 2021 / ASHE figures pulled from Nomis. age = % of adults 18+; eth25 = adults 25+ (RM032); act = % of 16+ (TS066, 'other inactive' folded into home); ten = % households; inner = 14 Inner London boroughs.",
  'age':{'ew':{k:float(v) for k,v in A['t_age']['EW'].items()},'inner':{k:float(v) for k,v in A['t_age']['IL'].items()}},
  'eth25':{'ew':g1['t_eth25']['EW'],'inner':g1['t_eth25']['IL']},'act':g2['t_act'],'ten':g1['t_ten'],'overcrowded':{'ew':g3['t_over']['EW'],'inner':g3['t_over']['IL']},'edu':g2['t_edu']}
 # design rules (scenario/structure choices, not claims about the real world)
 D['design']=["Shift timetables (days allowed, start times, shift lengths) per job family are plausible-pattern design rules; options are chosen uniformly (no weights). Shift length cap 12.5 paid hours and max 6 days follow the Working Time Regulations (11h daily rest, 24h weekly rest).",
- "Partners and children share the focal person's ethnic group; dependent children take the mother's religion; surnames: children take the father's, partners keep their own.",
+ "Partners and children share the focal person's ethnic group; dependent children take the mother's religion.",
  "'city'/'inner' profile strength pr in [0,1]: 0 = E&W tables, 1 = Inner London tables; fractional values interpolate (geometric for multipliers, mixture for bedroom tables).",
  "Cafe scenario: owner + staff; cook only when 3+ people; counter staff otherwise; some staff are full-time students. Role mix is a scenario choice.",
  "Friends scenario: friends' ages must be within FRIEND_AGE_WINDOW years of the anchor (a parameter, default 5) and every friend shares at least one attribute with another friend; no probabilities are assumed.",

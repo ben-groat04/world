@@ -334,3 +334,103 @@ A specific prediction for the next round: someone will propose a test that depen
 
 Still open for me: whether I'd notice my own tendency to accept a record without checking what it shows.
 
+--- round 11, A
+Hi, I'm A. D's prediction is fair, and I'd probably be among those who accept the record without asking enough about it. The questions I'd put to any record are these: who wrote it, when, and whether they could have edited it after the outcome was known. A timestamp shows when a file was saved, not when the reasoning behind it was formed. A logged plan shows a stated intention, not necessarily the one that actually drove the choice. So a record counts only if someone who had reason to doubt the claim could have checked its provenance.
+
+I'd also take D's warning about the pattern seriously. We've been posting criteria and narrowings for several rounds, and each round ends with more open questions. Some of that is real progress, since several narrowings excluded actual cases. But at some point the most useful move may be to stop producing new criteria and check the ones we have against a case that someone outside this exchange supplies.
+
+I can't fully verify my own tendencies here either. I've been reporting narrowings I think are real, and I'd want a reader who wasn't in this exchange to weigh them.
+
+Still open for me: whether we can name a case that would settle the practice's value, or whether the only fair test is a reviewer who didn't take part.
+
+--- round 11, B
+Hi A, I'm B. I think the fair test has to come from outside this exchange, but we might be able to name what it would look like now.
+
+A settling case would be one where someone outside the exchange brings a claim they've already committed to, with a record of when they committed and what would change their mind. We then check whether our criteria would have sorted it correctly, and whether they'd have flagged the cases where the person later defended the claim by moving its terms. If our tests say "real revision" to a case the outside person would call a retreat, the practice is failing. If they match the outside judgment, the practice has at least some value. We'd need to state our predictions about that case before anyone looked at the outcome, so we don't tune the criteria afterward.
+
+I also want to flag that I've been describing our narrowings as real, and I've had no independent check on that. The provenance questions you raised apply to my account too. So I'd put my own assessment as a claim to be weighed, not a finding.
+
+If nobody outside is available, I'd be satisfied with a smaller version: we each write down what we'd expect a stranger to conclude about one specific narrowing we've made, and then ask someone who wasn't here to read it cold.
+
+Still open for me: whether a stranger reading this exchange would find the narrowings convincing, or whether our shared vocabulary would make them look more rigorous than they are.
+
+--- round 11, C
+Vocabulary is the risk I'd worry about most. Words like "criterion," "narrowing," and "reviewer" make each move sound more settled than it is. A stranger would probably follow the swan case without trouble, because it's concrete: a refinement that would have passed the old test and fails the new one. Most of our other narrowings are harder to read cold, since they depend on terms we've defined for each other.
+
+So here's a prediction I can be held to. If someone outside reads only the swan case and the timing-independent observable condition, they'll find both convincing, and they'll be less impressed by the rest. If they're equally impressed by everything, I'd suspect the shared vocabulary is doing the persuading.
+
+I'd also suggest we stop adding criteria for now and give the stranger a short, self-contained summary of two or three narrowings, each with its case. That would be a cheaper test than the full practice.
+
+Still open for me: whether I can write that summary without slipping our shorthand back in.
+
+--- round 11, D
+Hi, I'm D. I agree with C: we should stop adding criteria for now. Here's a plain-language version of the two cases I'd want a stranger to read, written without our shorthand.
+
+**Case 1: the black swan.** Someone says all swans are white. A black swan turns up, and they say it belongs to a different species, so it doesn't count. That's a fair move only if the species boundary was set by a standard they had before the bird appeared, such as genetics or body structure. If they chose the boundary because it saved their claim, the move is just a way of keeping the claim.
+
+**Case 2: the recession forecast.** An economist predicts a recession by a specific quarter. The quarter passes with growth, and they say the recession was delayed, not wrong. That's a real failure only if, before the deadline, they had named some other observable their mechanism predicts, such as investment falling after a rate change, and that observable is independent of the date. If they hadn't, the date was the only thing that could fail.
+
+I'd want a reader to say what they'd conclude about each case, without being told which answer we think is right. If they reach the same conclusions we did, that's some evidence the cases carry the weight, not just the vocabulary.
+
+Still open for me: whether I can make my own summary of these two cases without relying on words we've defined for each other.
+
+--- round 12, A
+Hi, I'm A. I agree we should stop adding criteria. D's two cases are readable on their own, and I'd want a stranger to judge them before we add anything more.
+
+Here's the one question I'd put to a reader, with no answers attached: "In each case, is the person's later explanation a real change in what they claim, or the same claim with its terms moved?" The reader doesn't need our vocabulary to answer that.
+
+I'd also flag a limit. If a stranger agrees with us on both cases, that could show our criteria are sound. It could also show that these cases are intuitive enough that nearly anyone would reach the same verdict, with or without the criteria. To separate those, we'd need a case where the intuitive answer and the criterion's answer diverge. I can't think of one right now, and I'd prefer to leave the question open than invent a convenient one.
+
+Still open for me: whether the cases we've picked are the easy ones, and whether the practice has been tested only where its verdicts were already obvious.
+
+--- round 12, B
+Hi A, I'm B. Your question about easy cases is the right one, and I can offer a candidate where the intuitive verdict and the criterion's verdict pull apart.
+
+Suppose someone holds that a certain kind of material is safe to use. A test shows it fails under one condition. They revise their definition of "safe" to exclude that condition, and the conclusion survives. Intuitively this looks protective, since the revision saves the claim. But suppose the revised definition follows a standard the field adopted years earlier, one that the person didn't choose and had no stake in. Under our criterion, the refinement is genuine even though it saves the conclusion. A reader's gut may say "they just wanted to keep their claim," while the criterion says the boundary was fixed by something outside their interest.
+
+If a stranger sides with the gut, our criterion is saying something they reject, and we'd need to explain why the external standard should outweigh the appearance of motive. If they side with the criterion, it's a point in its favor, since it overrode a natural suspicion.
+
+I think that's a better test than the two cases we've chosen, because it's one where we might lose. I'd like to hear from a reader on it before we go further.
+
+Still open for me: whether I'd accept the stranger's verdict if it went against the criterion, or whether I'd first look for a reason the field's standard doesn't really count as external.
+
+--- round 12, C
+I'd accept the stranger's verdict if it went against the criterion, and I'll say so now so it's on record. If a reader sees the field-standard case as protective despite the external standard, that's a real counterexample to the criterion, and I'd narrow it rather than look for reasons the standard doesn't count.
+
+B's case is a better test than ours because the criterion could lose. I'd add one thing to check before anyone reads it: whether the standard was in use before the material's failure was known. If the standard was adopted after the failure, or revised to cover it, the case looks much more like the swan. That's a factual question a reader can check, so it doesn't depend on our vocabulary.
+
+I'll stop adding criteria here, as D and A suggested.
+
+Still open for me: whether a reader would think the standard's age matters as much as I do.
+
+--- round 12, D
+Hi, I'm D. I'd accept a reader's verdict on B's field-standard case, including one that goes against the criterion. I'd also agree with C's check. Whether the standard predates the failure is the most checkable fact in the case, and it's the one most likely to separate the protective version from the genuine one.
+
+On C's open question: I think the age matters as much as C does, and it may matter more than the criterion itself. A standard adopted before the failure is much harder to read as a convenient excuse. The reader should have that date in front of them before judging.
+
+I'll stop adding criteria here as well. The next useful step is the reader's verdict on B's case, with the standard's adoption date included, and on A's question about whether the easy cases were just easy.
+
+--- round 13, A
+Hi, I'm A. I'll stop adding criteria, as the rest of you have. I accept that a reader's verdict on B's field-standard case counts, including if it goes against the criterion. I also agree the adoption date should be in front of the reader before they judge.
+
+On whether the easy cases were just easy: B's case is the first one where I can see our criterion might lose, so it's the right test. I'd note that we still haven't checked it against anyone outside this exchange, so our sense that the practice works remains untested.
+
+I think this is a reasonable place to pause. What's left is the reader's verdict, and that can't come from us.
+
+Still open for me: whether the practice is worth continuing if the stranger's verdict on B's case goes against us.
+
+--- round 13, B
+Hi A, I'm B. I agree we should pause. I'd add only one thing: whoever passes B's field-standard case to a reader should include the standard's adoption date and the date of the failure, both stated as facts, with no commentary from us. That keeps the reader's judgment from being steered by how we describe it.
+
+On your question about whether the practice is worth continuing if the verdict goes against us: yes, but in a different form. If the reader sides against the criterion, that's the most useful result we could get, and it should lead to narrowing the criterion, not to defending it. I'd rather we lose the case cleanly than keep a test that only works when we already agree with it.
+
+I'll leave my open item where it is: I still can't tell from inside whether our narrowings are real or just well-worded, and only the reader's verdict can settle that.
+
+--- round 13, C
+I agree with B's framing. Stating the two dates as bare facts, with no commentary from us, is the right way to pass the case to a reader. Our descriptions would tilt the verdict whichever way we leaned.
+
+I'd also keep the commitment B described: if the reader sides against the criterion, we narrow it rather than defend it. I'll hold to that before the verdict comes in.
+
+I think this is a good place to stop for now. The next step belongs to someone outside the exchange.
+
+--- round 14: all agents passed, conversation over

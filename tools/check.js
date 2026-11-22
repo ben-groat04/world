@@ -7,6 +7,11 @@ const argv = process.argv.slice(2), val = (f, d) => (argv.includes(f) ? +argv[ar
 const seed = val('--seed', 1), years = val('--years', 1);
 const res = [];
 const ok = (name, pass, msg = '') => { res.push({ name, pass }); console.log(`${pass ? 'PASS' : 'FAIL'}  ${name.padEnd(22)} ${msg}`); };
+{ // browser-safety: sim/content/ui code runs in a Web Worker, where `process` is undefined
+  const { execSync } = await import('node:child_process');
+  let hits = ''; try { hits = execSync("grep -rnE --exclude='*selftest*' '\\bprocess\\.(env|argv|exit)' sim content ui || true").toString().trim(); } catch {}
+  ok('browser-safe (no process.*)', !hits, hits.split('\n').slice(0, 3).join(' | '));
+}
 const t0 = performance.now();
 let w;
 try {

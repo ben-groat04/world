@@ -14,7 +14,8 @@ export function segInfo(w, S, id) {
 const doorDist = (w, a, b) => { const x = w.buildings.get(a.homeId), y = w.buildings.get(b.homeId); if (!x || !y) return 99; return x.id === y.id ? 0 : Math.abs(x.door.x - y.door.x) + Math.abs(x.door.y - y.door.y); };
 export { doorDist };
 
-const YOUTH_NEED = +(process.env.YOUTH_NEED ?? 0.25); // TEMP
+// Extra need for company under 25 (Luhmann & Hawkley 2016). Was 0.25; lowered to 0.15 once school/online ties existed (the larger value double-counted network formation, which the youth now go through explicitly).
+const YOUTH_NEED = 0.15;
 export function psOf(w, S, id) { let s = S.ppl.get(id); if (s === undefined) { const p = w.people.get(id); s = p ? importPerson(w, S, p) : null; } return s; }
 
 /** Build a person's social state from the generated network (p.ext.pop.ties) and personal parameters. */

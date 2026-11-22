@@ -39,7 +39,7 @@ export const PARAMS = {
   // (previously 20% of young men a year, ~5x CSEW). visitorShare = share of anonymous-stranger confrontations on the map whose target is a non-resident. Set so that resident prevalence matches CSEW
   // (stranger violence 0.7% of adults, 2.2% of 16-24s; ONS Nature of violent crime YE Mar 2024); the attempt stream (OUT.assault) is unchanged, so recorded totals are kept.
   visitorShare: 0.85,
-  repeatBoost: 2.0, repeatDays: 120, overlap: 1.6, // recent-victim hazard multiplier (1 + boost x e^(-t/days)); victim-offender overlap multiplier
+  repeatBoost: 3.0, repeatDays: 120, overlap: 1.6, // recent-victim hazard multiplier (1 + boost x e^(-t/days)); victim-offender overlap multiplier
   sexPair: 0.47,          // women's relative chance of being the counterpart of a stranger fight: male aggressors (~80%) pick same-sex peers (~80%) => victims ~68% male (CSEW: stranger violence victims ~2:1 male)
   sexualKnown: 0.04,      // relative weight of a sexual offence against someone he knows in a male offender's offence mix (~80% of CSEW perpetrators are known to the victim); tuned so experienced prevalence ~ CSEW
   domSexual: 0.045,        // share of incidents within an abusive relationship that are sexual (ONS domestic abuse: sexual assault by a partner is a minority of DA)
@@ -190,7 +190,7 @@ export function createCrime() {
       for (let i = 0; i < 3 && !visitor; i++) { const vs = r.next() < 0.5 ? 'M' : 'F', va = 16 + r.next() * 48, al = r.next() < 0.35 ? 1 : 0; if (r.next() < (vs === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al) * peerOfAnon(va)) visitor = true; }
       if (!visitor) return false; }
     if (!v && !visitor) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; // counterpart of a stranger confrontation: whoever is out, with male aggressors mostly squaring up to same-sex peers and drink lowering restraint on both sides; age enters through who is out at night and through peer-age assortment (peerOf)
-      for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al) * (o ? peerOf(ageOf(c), ageOf(o)) : peerOfAnon(ageOf(c))) * Math.min(3, vuln(crOf(c))) / 1.3) v = c; }
+      for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al) * (o ? peerOf(ageOf(c), ageOf(o)) : peerOfAnon(ageOf(c))) * Math.min(6, vuln(crOf(c)))) v = c; }
       if (!v) return false; if (v.ext.cr && v.ext.cr.avoid && r.next() < 0.5) return false; }
     if (!o && !nte && r.next() < 0.7) return false; const g = nte ? 0.25 : 0.1; if (r.next() > 0.7 * (1 - g)) return false;
     const u = r.next(); if (visitor) { cnt('vis', 'assault'); return commit('assault', { off: null, vic: null, visitor: 1, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null, rep0: TYPES.assault.rep }); }
@@ -325,7 +325,7 @@ export function createCrime() {
     }
     // night-time-economy exposure of residents who are out in the city centre (off the map): stranger violence, theft from the person and sexual offences, with the same guardianship logic
     if (h >= 20 || h < 4) { const s = snap(); if (s.nte.length) { const base = PROFILE.nte(h, dow) / 4, wv = wave && (!wave.type || wave.type === 'assault') ? wave.mult : 1;
-      for (const v of s.nte) { const a = ageOf(v); if (a < 16) continue; const al = v.ext.hl ? v.ext.hl.alc || 0 : 0, M = v.sex === 'M', c = crOf(v), dr = 1 + PARAMS.drinkRisk * al, vu = Math.min(3, vuln(c)) / 1.3;
+      for (const v of s.nte) { const a = ageOf(v); if (a < 16) continue; const al = v.ext.hl ? v.ext.hl.alc || 0 : 0, M = v.sex === 'M', c = crOf(v), dr = 1 + PARAMS.drinkRisk * al, vu = Math.min(6, vuln(c));
         const lamA = PARAMS.NTE.assault * base * dr * vu * peerOfAnon(a) * (M ? 1 : PARAMS.sexPair) * wv * (1 + 0.1 * (1 - C.police.cap)) * 2 / (1 + PARAMS.sexPair), lamT = PARAMS.NTE.theftperson * base * dr * (a < 45 ? 1.2 : 0.7), lamS = PARAMS.NTE.sexual * base * dr * (M ? 0.2 : 1) * 2 / 1.2;
         if (r.next() < lamA) { const u = r.next(); commit('assault', { off: null, vic: v, hh: hhOf(v), known: 0, city: 1, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null }); }
         if (r.next() < lamT) commit('theftperson', { off: null, vic: v, hh: hhOf(v), loss: 250, place: null, city: 1, force: r.next() < 0.12 });

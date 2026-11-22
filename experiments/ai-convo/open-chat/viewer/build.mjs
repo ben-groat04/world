@@ -26,9 +26,9 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const last = rows.at(-1).round, lastRows = rows.filter(r => r.round === last);
   runs.push({
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,
-    names, oracle, topic, secrets: Object.keys(secrets).length ? secrets : null,
+    names, people: names.length, oracle, topic, secrets: Object.keys(secrets).length ? secrets : null,
     rounds: last,
-    ended: lastRows.length === 4 && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
+    ended: lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
     turns: all.map(r => ({ round: r.round, who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }) })),
   });
 }

@@ -14,7 +14,8 @@ const ORACLE_LINE = ' There is also an oracle that can look things up online: st
 // System prompt order: BRIEF, oracle line, A's topic, the agent's secret.
 const briefFor = n => BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
-const NAMES = ['Maya', 'Tom', 'Jo', 'Sam'], ROUNDS = +process.argv[2] || 30, convo = [], seen = {};
+const NAMES = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, Math.min(8, Math.max(2, +process.env.PEOPLE || 4))), // env PEOPLE: 2-8 agents, default 4
+   ROUNDS = +process.argv[2] || 30, convo = [], seen = {};
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
 fs.mkdirSync(dir, { recursive: true });
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));

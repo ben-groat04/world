@@ -17,6 +17,10 @@
   --b: #b45309; --b-soft: #fbebd6;
   --c: #0e7a6b; --c-soft: #d9f0ec;
   --d: #b02f68; --d-soft: #f8e0ea;
+  --e: #6d45c9; --e-soft: #e9e2f8;
+  --f: #5b7410; --f-soft: #e6eed0;
+  --g: #c0392b; --g-soft: #f9e0dc;
+  --h: #0b78a0; --h-soft: #d8eef6;
   --font-body: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --bar-h: 4.5rem;
@@ -29,6 +33,10 @@
     --b: #f1a653; --b-soft: #382813;
     --c: #4fd0bb; --c-soft: #12322e;
     --d: #f278ae; --d-soft: #3a1a2b;
+    --e: #b69bff; --e-soft: #2a2145;
+    --f: #b3d452; --f-soft: #2a3210;
+    --g: #ff8c7a; --g-soft: #3d1c18;
+    --h: #5cc6ec; --h-soft: #10303c;
     color-scheme: dark;
   }
 }
@@ -39,6 +47,10 @@
   --b: #f1a653; --b-soft: #382813;
   --c: #4fd0bb; --c-soft: #12322e;
   --d: #f278ae; --d-soft: #3a1a2b;
+  --e: #b69bff; --e-soft: #2a2145;
+  --f: #b3d452; --f-soft: #2a3210;
+  --g: #ff8c7a; --g-soft: #3d1c18;
+  --h: #5cc6ec; --h-soft: #10303c;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -103,6 +115,10 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .who-B { --who: var(--b); --who-soft: var(--b-soft); }
 .who-C { --who: var(--c); --who-soft: var(--c-soft); }
 .who-D { --who: var(--d); --who-soft: var(--d-soft); }
+.who-E { --who: var(--e); --who-soft: var(--e-soft); }
+.who-F { --who: var(--f); --who-soft: var(--f-soft); }
+.who-G { --who: var(--g); --who-soft: var(--g-soft); }
+.who-H { --who: var(--h); --who-soft: var(--h-soft); }
 .who-O { --who: var(--muted); --who-soft: var(--surface); }
 .oracle { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .5rem .85rem; font-size: .9rem; color: var(--muted); overflow-wrap: anywhere; }
 .oracle .name { color: var(--muted); }
@@ -154,6 +170,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       <input id="nTopic" type="text" maxlength="500" placeholder="Optional"></div>
     <div class="field"><label class="label" for="nModel">Model</label>
       <select id="nModel"><option value="haiku" selected>haiku</option><option value="sonnet">sonnet</option></select></div>
+    <div class="field"><label class="label" for="nPeople">People</label>
+      <select id="nPeople"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
     <label class="check" for="nOracle"><input id="nOracle" type="checkbox"> Oracle</label>
     <button class="btn primary" id="nGo" type="submit" disabled>Start</button>
     <p class="status" id="nStatus" role="status"></p>
@@ -232,7 +250,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     try { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso)); }
     catch (e) { return iso; }
   };
-  const cls = w => run.names.includes(w) ? 'who-' + 'ABCD'[run.names.indexOf(w)] : 'who-O'; // colour by slot in run.names
+  const cls = w => run.names.includes(w) ? 'who-' + 'ABCDEFGH['[run.names.indexOf(w)] : 'who-O'; // colour by slot in run.names
   const nonPass = r => r.turns.filter(t => !t.pass).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
@@ -359,8 +377,9 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       e.preventDefault();
       if (!comments || !canSend || sending) return;
       const topic = $('nTopic').value.replace(/\s+/g, ' ').trim().slice(0, 500);
+      const people = Math.min(8, Math.max(2, +$('nPeople').value || 4));
       const model = $('nModel').value === 'sonnet' ? 'sonnet' : 'haiku';
-      const text = `START RUN\nmodel: ${model}\nrounds: 30\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}`;
+      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nrounds: 30\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}`;
       sending = true; $('nGo').disabled = true; nStatus('Sending\u2026');
       try {
         const anchor = await comments.anchorFor($('newForm'));

@@ -156,3 +156,26 @@ Sorry, Sam and Tom. I can't make phone calls from here, so I haven't been able t
 --- Tue 17:40, Tom
 No problem, Maya. I can ring Fuji Hiro and Senbon Sakura for you this evening and let you know what they say. Just tell me which one to call first. 🍜
 
+--- Tue 17:43, Maya
+Thanks Tom, that's really kind! Please ring Senbon Sakura first, since it's open later on Sundays and I think it's the safer bet. If they're closed or full, try Fuji Hiro next. The numbers I have are Senbon Sakura 0113 244 9232 and Fuji Hiro 0113 460 7987, though the Senbon Sakura one came from a listing site, so it's worth double-checking. Let me know what they say and we'll pick a time 🍜
+
+--- Tue 17:45, Jo
+Quick heads up, Tom: Claude couldn't confirm a phone number for either place earlier, so those numbers may be out of date. I'll ask it to check them before you call.
+
+--- Tue 17:47, Jo
+@claude Could you double-check the phone numbers for Senbon Sakura (71 Great George Street, Leeds) and Fuji Hiro (Merrion Centre, Leeds)? Maya's got 0113 244 9232 and 0113 460 7987, but Tom's about to ring, so please confirm whether they're correct and mention where you found them.
+
+--- Tue 17:47, Claude → Jo (private)
+One of Maya's numbers matches and one doesn't.
+
+- **Senbon Sakura: 0113 244 9232 matches.** [Sluurpy](https://www.sluurpy.com/fr/leeds/restaurant/1677918/senbon-sakura) lists +44 113 244 9232 at 71 Great George Street, LS1 3BR. It was the only source I found with a number, so it's a single-source match.
+- **Fuji Hiro: 0113 460 7987 doesn't match.** [FirstTable](https://www.firsttable.co.uk/leeds/city-centre/fuji-hiro) lists **0113 460 1798** at 45 Wade Lane, Leeds LS2 8NJ. A search result for Tripaligner gave the same number, but I didn't open that page. Maya's number looks like the same digits in a different order, so it may be a typo. I found nothing listing 0113 460 7987.
+
+Tom should probably ring Fuji Hiro on 0113 460 1798. Neither number comes from the restaurant's own site, so if the call doesn't connect, check Google Maps. Fuji Hiro closes at 8pm on Sundays, so he should call soon.
+
+--- Tue 17:51, Tom
+Sorry, Maya, I need to correct myself. I can't make phone calls, so I can't ring either place, and I shouldn't have offered. @Jo, I can't ring either, so could Sam or you ring Senbon Sakura and Fuji Hiro instead? Checking the numbers first is a good idea, since they may be out of date. 🍜
+
+--- message limit reached
+Tue 17:51
+

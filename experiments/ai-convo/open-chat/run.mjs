@@ -23,7 +23,7 @@ const NOTE = ENV_NOTE + ' The relay shows you the chat whenever you look at it.'
 // The brief describes the situation, not behaviour: who you are, what this chat is, who's in it. (Earlier briefs were behaviour instructions: "talk as you would with friends", "keep messages short", "skip disclaimers about being an AI"; agents that didn't know they were friends texting on phones wrote polished, assistant-like prose.)
 const list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1);
 // The medium (a group chat on your phone, and who's in it) is always stated; an argv[3] brief describes who these people are to you (e.g. colleagues, siblings) in place of the default friends.
-const BRIEF = process.argv[3], situation = n => { const others = list(NAMES.filter(x => x !== n)); return (BRIEF ? `This is a group chat on your phone with ${others}. ${BRIEF}` : `This is a group chat on your phone with your friends ${others}.`) + (LIFE ? ' You each have your own life outside this chat.' : ''); };
+const BRIEF = process.argv[3], situation = n => { const others = list(NAMES.filter(x => x !== n)); return (BRIEF ? `This is a ${CHAT} on your phone with ${others}. ${BRIEF}` : `This is a ${CHAT} on your phone with your ${NAMES.length > 2 ? 'friends' : 'friend'} ${others}.`) + (LIFE ? ' You each have your own life outside this chat.' : ''); };
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
 // Optional (ORACLE=1): agents can ask Claude the way a person would. A line starting @claude goes to that agent's own Claude chat (one saved session per agent, so it remembers their earlier questions), which can search the web and open pages. Claude sees only the question, not the group chat; its answer goes only to the asker: it shows up in their next check-in as "(Claude replied to you:)" and they decide what to share, in their own words. The asker gets a check-in after the usual attention delay, since they are waiting for it. ORACLE_MODEL picks its model (default sonnet).
@@ -35,6 +35,7 @@ const briefFor = n => `You are ${n}. ` + situation(n) + (setting && ` ${setting}
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, Math.min(8, Math.max(2, +process.env.PEOPLE || 4))), // env PEOPLE: 2-8 agents, default 4
    MESSAGES = +(process.env.MESSAGES || process.argv[2]) || 120, DAYS = +process.env.DAYS || 3, convo = [], seen = {}, looked = {};
+const CHAT = NAMES.length > 2 ? 'group chat' : 'chat'; // two people: a 1:1 chat, not a group
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const p2 = x => String(x).padStart(2, '0'), hm = d => `${p2(d.getHours())}:${p2(d.getMinutes())}`, rf = ([a, b]) => a + Math.random() * (b - a), randn = () => Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()), words = t => t.trim().split(/\s+/).length;
 const stamp = d => `${WD[d.getDay()]} ${hm(d)}`, iso = d => `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}T${hm(d)}`, MIN = 60000;
@@ -145,10 +146,10 @@ async function posted(e) {
 // Private lines. The generator prompt is a design choice: it asks for lives (place and job first, then what is going on), not chat behaviour, and for varied, specific, ordinary circumstances because without that it kept choosing the same ones (a broken boiler in 6 of 12 runs, a 10K in 7 of 12).
 const who = NAMES.filter(n => !SECRETS[n]); // those with a SECRETS entry get no line: the secret takes priority
 const GEN = `${ENV_NOTE} You write short background details about characters for a story.`, FORM = "in the second person ('You ...'): where you are and your job or occupation first, then what is going on. Choose varied, specific, ordinary circumstances rather than stock ones. Describe the life, not how you behave in the chat.";
-const cast = () => `These people are in a group chat: ${list(NAMES)}. ${BRIEF || 'They are friends.'}${TOPIC ? ` ${NAMES[0]} has this on their mind: ${TOPIC}` : ''}${NAMES.filter(n => SECRETS[n]).map(n => ` ${n} already has this going on: ${SECRETS[n]}`).join('')}`;
+const cast = () => `These people are in a ${CHAT}: ${list(NAMES)}. ${BRIEF || 'They are friends.'}${TOPIC ? ` ${NAMES[0]} has this on their mind: ${TOPIC}` : ''}${NAMES.filter(n => SECRETS[n]).map(n => ` ${n} already has this going on: ${SECRETS[n]}`).join('')}`;
 const gen = (input, what) => claude(mkArgv(GEN), input).catch(e => { console.error(what, e.message); process.exit(1); });
 if (PRIVATE) { // one call: the shared setting and a line per person
-  const j = await gen(`${cast()}\n\nWrite a JSON object with "setting": one sentence in the second person for the whole group, saying where you all live (a real or plausible town, city or area) and how you know each other, fitting the situation; and "lines": for ${list(who)}, one line each about their life this week, ${FORM} Make the people clearly different from each other. Reply with only the JSON.`, 'private lines:');
+  const j = await gen(`${cast()}\n\nWrite a JSON object with "setting": one sentence in the second person for ${NAMES.length > 2 ? 'the whole group' : 'both of them'}, saying where you ${NAMES.length > 2 ? 'all ' : 'both '}live (a real or plausible town, city or area) and how you know each other, fitting the situation; and "lines": for ${list(who)}, one line each about their life this week, ${FORM} Make the people clearly different from each other. Reply with only the JSON.`, 'private lines:');
   const g = JSON.parse(j.text.match(/\{[\s\S]*\}/)[0]); setting = g.setting; for (const n of who) lines[n] = g.lines[n];
   log({ private_lines: lines, setting, usage: j.usage });
 }

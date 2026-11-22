@@ -12,13 +12,15 @@ const TYPE_WPM = [36.17, 13.22], TYPE_WPM_FLOOR = 10; // floor: design parameter
 const READ_WPM = 238;
 // Delay from a message arriving to the user opening it: log-normal with median 6.15 min and a quarter opened within 60 s (Pielot, de Oliveira, Kwak, Oliver, "Didn't You See My Message? Predicting Attentiveness to Mobile Instant Messages", CHI 2014, https://doi.org/10.1145/2556288.2556973). Hence mu = ln 6.15, sigma = ln(6.15/1)/0.6745 (0.6745 = the 75th-percentile z).
 const NOTIFY = { mu: Math.log(6.15), sigma: Math.log(6.15) / 0.6745 };
-const OFFLINE_MIN = [30, 600]; // minutes until a spontaneous check-in (nothing new) after a PASS or a finished reply. design parameter, unsourced (TODO: source)
+const OFFLINE_MIN = [30, 600]; // PRIVATE=0 only: minutes until a spontaneous check-in after a PASS or a finished reply. design parameter, unsourced (TODO: source)
+// With private lines on, a person looks at the chat unprompted when something has happened in their life (their next refresh, REFRESH_HOURS after the last), not at random: a glance at a quiet chat with nothing new in it was answered PASS almost every time (as a real person would), and those glances filled the agents' histories with PASSes.
+const nextLook = n => sched(n, PRIVATE ? Math.max(+clock, +since[n] + REFRESH_HOURS * 60 * MIN) : +clock + rf(OFFLINE_MIN) * MIN);
 const SLEEP_START = [22.5, 24], SLEEP_END = [6, 8]; // hours of day, drawn once per agent when the generated identity gives no sleeping hours (a PRIVATE=0 run, or LINES_FROM an older run). design parameter, unsourced (TODO: source)
 const FIRST_SPREAD_MIN = [5, 120]; // minutes after START at which the agents other than Maya first look. design parameter, unsourced (TODO: source)
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
 const PRIVATE = process.env.PRIVATE !== '0', REACT = process.env.REACT !== '0'; // on by default; =0 for comparison
 const ENV_NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation.'; // the oracle gets only this
-const NOTE = ENV_NOTE + ' The relay shows you the chat whenever you look at it.' + ' To stay quiet, reply with only the word PASS: the relay drops it and nobody in the chat ever sees it.' + (REACT ? ' To react to the latest message with an emoji instead of writing a reply, reply with REACT and the emoji (e.g. REACT \u{1F44D}): it shows on that message and doesn\'t notify anyone.' : '') + ' To send a file, photo or link, put it on its own line as [file: name], [photo: what it shows] or [link: what it is].';
+const NOTE = ENV_NOTE + ' The relay shows you the chat whenever you look at it and sends whatever you reply as your message(s).' + ' If you don\'t want to send anything right now, reply with only the word PASS: nobody in the chat sees it.' + (REACT ? ' To react to the latest message with an emoji instead of writing a reply, reply with REACT and the emoji (e.g. REACT \u{1F44D}): it shows on that message and doesn\'t notify anyone.' : '') + ' To send a file, photo or link, put it on its own line as [file: name], [photo: what it shows] or [link: what it is].';
 // The brief describes the situation, not behaviour: who you are, what this chat is, who's in it. (Earlier briefs were behaviour instructions: "talk as you would with friends", "keep messages short", "skip disclaimers about being an AI"; agents that didn't know they were friends texting on phones wrote polished, assistant-like prose.)
 const list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1);
 // The medium (a group chat on your phone, and who's in it) is always stated; an argv[3] brief describes who these people are to you (e.g. colleagues, siblings) in place of the default friends.
@@ -98,24 +100,25 @@ function screen(n, from, extra = []) {
 async function checkin(n) {
   const news = lines[n] && clock - since[n] >= REFRESH_HOURS * 60 * MIN ? await refresh(n) : ''; // what has happened to n since its last refresh
   waiting.delete(n);
+  if (PRIVATE && n in looked && !news && convo.length === seen[n] && reactions.slice(seenR[n] ?? 0).every(x => x.who === n) && !(ans[n] ?? []).length) return nextLook(n); // nothing new on the phone or in their life (a refresh moved since[n] after this look was scheduled): no look
   const t = clock, firstShown = seen[n] ?? 0, fresh = convo.slice(firstShown).filter(m => m.who !== n), now = `${n}'s phone, ${stamp(t)}`;
   const extra = [...(ans[n] ?? []), ...reactions.slice(seenR[n] ?? 0).filter(x => x.who !== n).map(x => ({ at: x.at, s: `(${x.who} reacted ${x.emoji} to ${convo[x.to].who === n ? 'your' : convo[x.to].who + "'s"} ${hm(convo[x.to].at)} message)` }))];
   const readWords = fresh.reduce((s, m) => s + words(m.text), 0) + (ans[n] ?? []).reduce((s, a) => s + words(a.s), 0); ans[n] = []; // reading time: what is new from others
-  const chat = screen(n, firstShown, extra), user = `(${now}.${n in looked ? ` You last looked ${stamp(looked[n])}.` : ''})` + (news ? `\n\nSince you last looked: ${news}` : '') + `\n\n${chat || '(nothing in the chat yet)'}` + (n === NAMES[0] && !(n in looked) ? `\n\n(You've opened the chat to send something.)` : '') /* hard-coded: the opener's first look says why they picked up the phone (the design has them open the chat; without this, Sonnet openers passed on an empty chat for 3 days) */ + (n in session && !fresh.length && !extra.length ? '\n\n(Nothing new since you last looked.)' : '');
+  const chat = screen(n, firstShown, extra), user = `(${now}.${n in looked ? ` You last looked ${stamp(looked[n])}.` : ''})` + (news ? `\n\nSince you last looked: ${news}` : '') + `\n\n${chat || '(no messages)'}` + (n === NAMES[0] && !(n in looked) ? `\n\n(You've opened the chat to send something.)` : '') /* hard-coded: the opener's first look says why they picked up the phone (the design has them open the chat; without this, Sonnet openers passed on an empty chat for 3 days) */;
   const j = await turn(n, user), text = j.text.trim();
   seen[n] = convo.length; seenR[n] = reactions.length; looked[n] = t;
-  const keep = () => { session[n] = j.sid; }; // only a check-in that posts something is kept as the agent's session: a PASS (or reaction, or failed turn) fork is discarded, so a history of looking and staying quiet doesn't build up and make quiet the habit (it did: after a few PASSes agents passed on everything). The header's 'You last looked' and the phone screen still show what was seen.
+  session[n] = j.sid; // the fork is always the agent's session
   const meta = { usage: j.usage, user, argv: mkArgv(briefFor(n)) };
-  if (j.cont) { log({ who: n, failed: 'continuation', text, posted: false, at: iso(t), checkin: iso(t), ...meta }); return sched(n, +t + rf(OFFLINE_MIN) * MIN); } // not posted; like a PASS for scheduling
+  if (j.cont) { log({ who: n, failed: 'continuation', text, posted: false, at: iso(t), checkin: iso(t), ...meta }); return nextLook(n); } // not posted; like a PASS for scheduling
   const to = convo.findLastIndex(m => m.who !== n), emoji = REACT && to >= firstShown && text.match(REACT_RE)?.[1].trim(); // a reaction needs a message first shown now
   if (emoji) { // a reaction goes on the latest message from someone else, shown to n at this check-in: no notifications, and the agent goes quiet like after a PASS
     reactions.push({ who: n, emoji, to, at: t });
     log({ who: n, react: emoji, to, posted: false, at: iso(t), checkin: iso(t), ...meta }); say(`${stamp(t)}, ${n} reacted ${emoji} to ${convo[to].who}'s ${hm(convo[to].at)} message`);
-    return sched(n, +t + rf(OFFLINE_MIN) * MIN);
+    return nextLook(n);
   }
   if (isPass(text) || REACT && REACT_RE.test(text)) { // a REACT with nothing new to react to is quiet
-    log({ who: n, text, pass: true, posted: false, at: iso(t), checkin: iso(t), ...meta }); return sched(n, +t + rf(OFFLINE_MIN) * MIN); }
-  keep(); reply(n, splitReply(text), +t + readWords / READ_WPM * MIN, t, meta, true);
+    log({ who: n, text, pass: true, posted: false, at: iso(t), checkin: iso(t), ...meta }); return nextLook(n); }
+  reply(n, splitReply(text), +t + readWords / READ_WPM * MIN, t, meta, true);
 }
 const ATT = /^\[(file|photo|link)(:[^\]]*)?\]$/i; // an attachment line: [file: name.ext], [photo], [photo: what it shows], [link: what it is]
 const BULLET = /^\s*([-*\u2022]|\d+[.)])\s/, joins = (a, p) => !ATT.test(p) && !ATT.test(a) && (a.endsWith(':') || p === '---' || /(^|\n)---$/.test(a) || p.split('\n').every(l => BULLET.test(l))); // p belongs with the part a before it
@@ -124,7 +127,7 @@ function reply(n, parts, at, t, meta, first) { // queue the messages of n's repl
   busy[n] = parts.length;
   parts.forEach((p, i) => when(at += words(p) / typeWpm[n] * MIN, { kind: 'post', who: n, text: p, checkin: t, ...(i === 0 && { meta, ...(first && { draft: parts.join('\n\n') }) }) }));
 }
-const done = n => { sched(n, +clock + rf(OFFLINE_MIN) * MIN); if (unread(n)) notify(n); }; // finished a reply (or dropped it): next spontaneous check-in, and a check-in for what came meanwhile
+const done = n => { nextLook(n); if (unread(n)) notify(n); }; // finished a reply (or dropped it): next spontaneous check-in, and a check-in for what came meanwhile
 // Re-check before a reply's first message posts: n sees what others posted since its check-in and answers SEND (the draft unchanged), PASS or the message to send instead. Reading the new messages adds no time (they showed up as it typed). Only the first message triggers it, and only once per reply, to bound cost. A changed reply is typed again from now (design choice: an unchanged one (SEND) has already been typed, so it posts on schedule). Returns true if e is not to be posted now (dropped, or requeued).
 async function recheck(e) {
   const n = e.who, user = `(${n}'s phone, ${stamp(clock)}.)\n\n${screen(n, seen[n])}\n\n\u2014 ${n} (you, not sent yet)\n${e.draft}\n\n(Your message isn't sent yet. SEND sends it, PASS deletes it, or type what you send instead.)`; // the crossed messages and the unsent draft on one screen
@@ -140,6 +143,7 @@ async function recheck(e) {
 const ASK = /^\s*@claude\b[:,]?\s*([\s\S]+)/im; // everything after @claude, across lines
 async function posted(e) {
   if (e.draft && convo.slice(seen[e.who]).some(m => m.who !== e.who) && await recheck(e)) return;
+  if (seen[e.who] === convo.length) seen[e.who]++; // one's own message is never new to oneself
   convo.push({ who: e.who, text: e.text, at: clock });
   log({ who: e.who, text: e.text, ...(ATT.test(e.text) && { attachment: true }), posted: true, at: iso(clock), checkin: iso(new Date(e.checkin)), ...e.meta });
   say(`${stamp(clock)}, ${e.who}`, e.text);
@@ -170,12 +174,12 @@ if (PRIVATE && process.env.LINES_FROM) { // the setting, day-0 lines and any oth
   Object.assign(sleep, generated); log({ private_lines: lines, setting, sleep: generated, usage: j.usage });
 }
 if (process.env.GEN_ONLY === '1') { console.log('Generated only. Saved log.jsonl in', dir); process.exit(0); }
-const REFRESH_HOURS = 2; // in-story hours between a person's refreshes of what has happened to them: design parameter, unsourced (short enough that a person picking up their phone after a few hours has had something happen since, which a 6-hour gap often didn't; long enough that a back-and-forth, minutes apart, is not interrupted by new events)
+const REFRESH_HOURS = 4; // in-story hours between a person's refreshes of what has happened to them: design parameter, unsourced (it also paces unprompted looks: a few a day while awake; long enough that a back-and-forth, minutes apart, is not interrupted by new events)
 const since = Object.fromEntries(NAMES.map(n => [n, START])); // per person: the in-story time of their last refresh
 const full = d => `${WD[d.getDay()]} ${iso(d).slice(0, 10)} ${hm(d)}`;
 async function refresh(n) { // what has happened to n since its last refresh; n's day-0 line stays as their identity. Returns the text, which opens the check-in turn.
   const from = since[n], chat = convo.filter(m => m.at > from); since[n] = clock;
-  const j = await twice(async () => { const j = await gen(`${cast(false)}\nSetting: ${setting}\n\nIt is now ${full(clock)}. ${n}'s life (fixed): ${lines[n]}${events[n] ? `\nWhat was going on with ${n} on ${full(from)} (background: how things stood then): ${events[n]}` : ''}\n\n${chat.length ? `What was posted in the chat since ${stamp(from)}:\n${chat.map(line).join('\n\n')}\n\n` : ''}Write what has happened to ${n} since ${stamp(from)}, in the second person ('You ...'): how the things ${n} said they would do outside the chat went, what has happened since, and what is different now from then: what actually happened, in two or three short sentences, not how ${n} feels about it. Keep where ${n} lives and their occupation as in their life. Reply with only this.`, `events ${n}:`); return j.text.trim() && j; }, `events ${n}:`);
+  const j = await twice(async () => { const j = await gen(`${cast(false)}\nSetting: ${setting}\n\nIt is now ${full(clock)}. ${n}'s life (fixed): ${lines[n]}${events[n] ? `\nWhat was going on with ${n} on ${full(from)} (background: how things stood then): ${events[n]}` : ''}\n\nWhat was posted in the chat since ${stamp(from)}. This is everything anyone has posted; nothing else was said there:\n${chat.length ? chat.map(line).join('\n\n') : '(nothing)'}\n\nWrite what has happened in ${n}'s life in the ${Math.round((clock - from) / 36e5)} hours since ${stamp(from)}, in the second person ('You ...'): what they did, what happened to them and around them, how things stand now. Only what is new: they already know the background. Leave the chat out: say nothing about what ${n} or anyone posted, read, meant to post or will post, or has or hasn't told the others; ${n} decides that in the chat. Keep where ${n} lives and their occupation as in their life. Two or three short sentences of what actually happened; reply with only this.`, `events ${n}:`); return j.text.trim() && j; }, `events ${n}:`);
   events[n] = j.text.trim(); log({ private_lines: { [n]: events[n] }, day: iso(clock).slice(0, 10), at: iso(clock), usage: j.usage });
   return events[n];
 }

@@ -70,7 +70,9 @@ export function setTie(w, a, b, kind, relA, relB, tier, s, via) {
 /** one-sided tie to an off-map (Metropolis) placeholder */
 export function setOffTie(p, mid, kind, rel, tier, s, via) { dropTie(p, mid); p.ext.pop.ties.push({ o: mid, k: kind, rel, t: tier, s: +s.toFixed(2), v: via || '', on: 0 }); }
 export function metro(w, id) {
-  let ix = w._metroIdx; if (!ix || ix.n !== w.lf.metro.length) { ix = w._metroIdx = new Map(); ix.n = w.lf.metro.length; for (const m of w.lf.metro) ix.set(m.id, m); }
+  const ms = w.lf.metro; let ix = w._metroIdx; // lf.metro is append-only, so extend the index instead of rebuilding it (a full rebuild per lookup made every lookup O(history))
+  if (!ix || ix.src !== ms || ix.n > ms.length) { ix = w._metroIdx = new Map(); ix.n = 0; ix.src = ms; }
+  if (ix.n < ms.length) { for (let i = ix.n; i < ms.length; i++) ix.set(ms[i].id, ms[i]); ix.n = ms.length; }
   return ix.get(id) || null;
 }
 export function newMetro(w, owner, o) {

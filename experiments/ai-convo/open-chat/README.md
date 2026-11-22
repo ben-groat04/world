@@ -13,16 +13,18 @@ MODEL=sonnet node run.mjs             # default haiku
 ORACLE=1 node run.mjs                 # agents can write "@claude ..." to ask Claude, which searches the web and reads pages (ORACLE_MODEL, default sonnet)
 SECRETS='{"Tom":"..."}' node run.mjs  # a private line for chosen people ("Only you know this, at least at first: ...")
 START=2026-12-01T19:00 node run.mjs   # in-story start time (default 19:00 today)
+DAYS=2 node run.mjs                   # in-story days before the run ends (default 3)
 node run.mjs 60 "custom brief"        # message limit, brief override
 ```
 
-Each run writes `runs/<timestamp>/transcript.txt`, plus `log.jsonl`, which holds every reply, including unsent replies and passes. Runs take a few minutes, so run them in the background.
+Each run writes `runs/<timestamp>/transcript.txt`, plus `log.jsonl`, which has a row per posted message and per PASS, plus oracle rows and the end row. Runs take a few minutes, so run them in the background.
 
 ### How it works
-- **The agents:** each one is a saved `claude -p` session with `--system-prompt` set to the brief. They get no tools, a temp working folder and a fresh config folder. That keeps Claude Code's coding prompt, CLAUDE.md and account details out. The CLI still adds a short environment note, and the system prompt tells them to ignore it. That line is left out of the logs.
-- **Taking turns:** after each message, everyone else is asked at once whether to reply. If the last message names someone who wants to reply, that person is posted. Otherwise a random person who wants to reply is posted.
-- **Memory:** an agent remembers only what was posted. Each ask forks the agent's session from its last posted message (`--resume <id> --fork-session`), and only the fork that gets posted is kept. A reply that loses the turn is thrown away with its fork, so no agent thinks it said something nobody saw. Runs before 2026-11-22 17:40 used one long-lived process per agent, so agents there remember their unsent replies.
-- **Passing and ending:** an agent can reply `PASS`. When everyone passes, the in-story clock jumps to the next evening. If everyone passes again, the run ends.
+- **The agents:** each one is a saved `claude -p` session with `--system-prompt` set to "You are <name>." plus the brief. They get one tool, `WebFetch` (so they can open links, like the Claude they ask), a temp working folder and a fresh config folder. That keeps Claude Code's coding prompt, CLAUDE.md and account details out. The CLI still adds a short environment note, and the system prompt tells them to ignore it. That line is left out of the logs.
+- **Clock:** there are no turns and no rounds. Each agent has its own next check-in time, and the loop takes the earliest pending event (a check-in, a message finishing being typed, an `@claude` answer arriving) and moves the in-story clock to it. At a check-in the agent sees the time and what is new since it last looked (or the whole chat on its first look). Its reply is posted when finished: check-in time + time to read the new messages + time to type the reply, from the constants at the top of `run.mjs` (typing and reading speeds are unsourced design parameters, marked TODO). A reply with blank lines becomes several messages, each posted after its own typing time. Messages that arrive while someone types are seen at their next check-in, so replies can cross, and anyone can post twice in a row.
+- **Presence:** after posting, an agent looks again soon (minutes). After replying `PASS` it puts the phone down and looks again hours later. Maya opens at the start time; the others first look within the first two hours. When everyone is offline the chat is simply quiet.
+- **Memory:** every check-in forks the agent's session (`--resume <id> --fork-session`) and the fork is always kept. Nothing is discarded: a PASS stays in its history as "looked and stayed quiet", and every other reply is posted. So no agent remembers saying something nobody saw, and none loses what it read. Older runs differ: before 2026-11-22 17:40 each agent was one long-lived process, and until the event-driven clock unposted replies were thrown away with their forks.
+- **Ending:** at `MESSAGES` posted messages (Claude answers count), or when the in-story clock passes the start plus `DAYS` days (default 3). The last row of `log.jsonl` is `{end: 'limit'|'date', at}`.
 - **Header comments:** the top of `run.mjs` explains the details.
 
 ## Viewer (claude.ai Artifact)

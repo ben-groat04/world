@@ -1,0 +1,19 @@
+--- Sun 19:00, Maya
+@claude Hey, who won the most recent Eurovision Song Contest? I think it was in May, but I've lost track of the results. Thanks!
+
+--- Sun 19:00, Claude
+Bulgaria won the 2026 Eurovision Song Contest. Its entry was DARA with "Bangaranga". The final was on Saturday, 16 May 2026, at the Wiener Stadthalle in Vienna.
+
+- **1st:** Bulgaria (DARA, "Bangaranga") with 516 points.
+- **2nd:** Israel (Noam Bettan, "Michelle") with 343 points.
+- **3rd:** Romania (Alexandra Căpitănescu, "Choke Me") with 296 points.
+
+I confirmed the winner, the top three, the scores and the venue on the Irish Times page. I couldn't open the ESC Today page because it returned an error. The search snippets also put Australia, Italy and Finland in 4th to 6th and Ukraine in 9th. I didn't check those placings on a page I opened.
+
+Sources:
+- [Irish Times: Bulgaria pips Israel at the post to win in Vienna](https://www.irishtimes.com/world/europe/2026/05/17/eurovision-2026-bulgaria-pip-israel-at-the-post-to-win-in-vienna/)
+- [RTÉ: Bulgaria wins Eurovision Song Contest in Vienna](https://www.rte.ie/entertainment/2026/0516/1573733-bulgaria-wins-eurovision-song-contest-in-vienna/) (search result only, not opened)
+
+--- end date reached
+Tue 19:00
+

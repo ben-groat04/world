@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Emma Edwards",
+    "age": 53,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Christian",
+    "occupation": "Café owner",
+    "activity": "employed",
+    "contract": "self_employed",
+    "workplace": "Marmaris Café (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 28600,
+      "net": 24100
+    },
+    "hours_per_week": 58,
+    "shift_pattern": {
+      "label": "Self-directed / irregular",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 09:00-17:00"
+    },
+    "household": {
+      "type": "multi family dep kids",
+      "tenure": "owned outright",
+      "bedrooms": 3,
+      "address": "Flat 16, Wharf House, Viaduct Road",
+      "lives_with": [
+        {
+          "name": "Ryan Hall",
+          "age": 55,
+          "relation": "partner"
+        },
+        {
+          "name": "Gary Edwards",
+          "age": 77,
+          "relation": "father"
+        },
+        {
+          "name": "Amelia Edwards",
+          "age": 11,
+          "relation": "daughter"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Ryan)",
+    "children": [
+      {
+        "name": "Amelia Edwards",
+        "age": 11,
+        "lives": "at home"
+      },
+      {
+        "name": "Chloe Edwards",
+        "age": 29,
+        "lives": "elsewhere in the city"
+      },
+      {
+        "name": "Kyle Edwards",
+        "age": 21,
+        "lives": "another UK city"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 211,
+      "household": 90,
+      "segment": "local_business_families"
+    }
+  },
+  {
+    "name": "Grace Boateng",
+    "age": 21,
+    "sex": "female",
+    "ethnicity": "Black African",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Christian",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 2400,
+      "net": 2400
+    },
+    "hours_per_week": 8,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "lone parent nondep",
+      "tenure": "private rent",
+      "bedrooms": 2,
+      "address": "24 Linden Road",
+      "lives_with": [
+        {
+          "name": "Patience Boateng",
+          "age": 49,
+          "relation": "mother"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 3 (A-levels/BTEC)",
+    "_src": {
+      "id": 62,
+      "household": 27,
+      "segment": "lone_parents"
+    }
+  },
+  {
+    "name": "Tapiwa Mutasa",
+    "age": 39,
+    "sex": "male",
+    "ethnicity": "Black African",
+    "birthplace": "Zimbabwe",
+    "born_in_uk": false,
+    "years_in_uk": 1,
+    "religion": "Christian",
+    "occupation": "Cook / chef",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "Lahore Karahi (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 49000,
+      "net": 38800
+    },
+    "hours_per_week": 48,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "sharers students multigen",
+      "tenure": "private rent",
+      "bedrooms": 5,
+      "address": "33 Linden Road",
+      "lives_with": [
+        {
+          "name": "Joseph Bangura",
+          "age": 42,
+          "relation": "housemate"
+        },
+        {
+          "name": "Mireille Kalala",
+          "age": 37,
+          "relation": "housemate"
+        },
+        {
+          "name": "Segun Adeyemi",
+          "age": 39,
+          "relation": "housemate"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 3 (A-levels/BTEC)",
+    "_src": {
+      "id": 286,
+      "household": 125,
+      "segment": "recent_arrivals"
+    }
+  },
+  {
+    "name": "Olivia Jones",
+    "age": 22,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "No religion",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 4300,
+      "net": 4300
+    },
+    "hours_per_week": 17,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "one person u66",
+      "tenure": "private rent",
+      "bedrooms": 1,
+      "address": "Flat 3, 16 Beech Avenue",
+      "lives_with": []
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 366,
+      "household": 156,
+      "segment": "students"
+    }
+  },
+  {
+    "name": "Amandeep Kaur",
+    "age": 25,
+    "sex": "female",
+    "ethnicity": "Indian",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Sikh",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 2700,
+      "net": 2700
+    },
+    "hours_per_week": 11,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "cohab no kids",
+      "tenure": "housing assoc",
+      "bedrooms": 2,
+      "address": "Flat 18, Wharf House, Viaduct Road",
+      "lives_with": [
+        {
+          "name": "Jagdeep Bhogal",
+          "age": 25,
+          "relation": "partner"
+        }
+      ]
+    },
+    "relationship_status": "living with partner (Jagdeep)",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 217,
+      "household": 92,
+      "segment": "students"
+    }
+  }
+]

@@ -1,0 +1,259 @@
+[
+  {
+    "name": "Sara Mahmoud",
+    "age": 19,
+    "sex": "female",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Muslim",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 2500,
+      "net": 2500
+    },
+    "hours_per_week": 13,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "sharers students multigen",
+      "tenure": "private rent",
+      "bedrooms": 5,
+      "address": "17 Station Road",
+      "lives_with": [
+        {
+          "name": "Sofía Pérez",
+          "age": 18,
+          "relation": "housemate"
+        },
+        {
+          "name": "Ziyi Luo",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Zainab Hussein",
+          "age": 22,
+          "relation": "housemate"
+        },
+        {
+          "name": "Andrea López",
+          "age": 22,
+          "relation": "housemate"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 3 (A-levels/BTEC)",
+    "_src": {
+      "id": 16,
+      "household": 8,
+      "segment": "students"
+    }
+  },
+  {
+    "name": "Zainab Hussein",
+    "age": 22,
+    "sex": "female",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Muslim",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 2900,
+      "net": 2900
+    },
+    "hours_per_week": 12,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "sharers students multigen",
+      "tenure": "private rent",
+      "bedrooms": 5,
+      "address": "17 Station Road",
+      "lives_with": [
+        {
+          "name": "Sara Mahmoud",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Sofía Pérez",
+          "age": 18,
+          "relation": "housemate"
+        },
+        {
+          "name": "Ziyi Luo",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Andrea López",
+          "age": 22,
+          "relation": "housemate"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 19,
+      "household": 8,
+      "segment": "students"
+    }
+  },
+  {
+    "name": "Andrea López",
+    "age": 22,
+    "sex": "female",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Other",
+    "occupation": "Student part-time job (hospitality/retail)",
+    "activity": "student",
+    "contract": "zero_hours",
+    "workplace": "elsewhere in the city (city_centre_retail_leisure)",
+    "approx_annual_income_gbp": {
+      "gross": 2700,
+      "net": 2700
+    },
+    "hours_per_week": 11,
+    "shift_pattern": {
+      "label": "Evening hospitality",
+      "shifts": "Tue/Wed/Thu/Fri/Sat/Sun 16:30-00:30"
+    },
+    "household": {
+      "type": "sharers students multigen",
+      "tenure": "private rent",
+      "bedrooms": 5,
+      "address": "17 Station Road",
+      "lives_with": [
+        {
+          "name": "Sara Mahmoud",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Sofía Pérez",
+          "age": 18,
+          "relation": "housemate"
+        },
+        {
+          "name": "Ziyi Luo",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Zainab Hussein",
+          "age": 22,
+          "relation": "housemate"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 20,
+      "household": 8,
+      "segment": "students"
+    }
+  },
+  {
+    "name": "Sofía Pérez",
+    "age": 18,
+    "sex": "female",
+    "ethnicity": "Other ethnic group",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Christian",
+    "occupation": "student",
+    "activity": "student",
+    "contract": null,
+    "workplace": null,
+    "approx_annual_income_gbp": {
+      "gross": 4200,
+      "net": 4200
+    },
+    "hours_per_week": null,
+    "shift_pattern": null,
+    "household": {
+      "type": "sharers students multigen",
+      "tenure": "private rent",
+      "bedrooms": 5,
+      "address": "17 Station Road",
+      "lives_with": [
+        {
+          "name": "Sara Mahmoud",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Ziyi Luo",
+          "age": 19,
+          "relation": "housemate"
+        },
+        {
+          "name": "Zainab Hussein",
+          "age": 22,
+          "relation": "housemate"
+        },
+        {
+          "name": "Andrea López",
+          "age": 22,
+          "relation": "housemate"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "Level 2 (GCSEs)",
+    "_src": {
+      "id": 17,
+      "household": 8,
+      "segment": "students"
+    }
+  }
+]

@@ -1,0 +1,261 @@
+[
+  {
+    "name": "Haroon Hussein",
+    "age": 49,
+    "sex": "male",
+    "ethnicity": "Pakistani",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Muslim",
+    "occupation": "economically inactive",
+    "activity": "economically inactive",
+    "contract": null,
+    "workplace": null,
+    "approx_annual_income_gbp": {
+      "gross": 0,
+      "net": 0
+    },
+    "hours_per_week": null,
+    "shift_pattern": null,
+    "household": {
+      "type": "married nondep",
+      "tenure": "owned outright",
+      "bedrooms": 3,
+      "address": "13 Albert Road",
+      "lives_with": [
+        {
+          "name": "Mariam Hussein",
+          "age": 45,
+          "relation": "partner"
+        },
+        {
+          "name": "Yusuf Hussein",
+          "age": 26,
+          "relation": "son"
+        },
+        {
+          "name": "Ahmed Hussein",
+          "age": 25,
+          "relation": "son"
+        }
+      ]
+    },
+    "relationship_status": "married (Mariam)",
+    "children": [
+      {
+        "name": "Yusuf Hussein",
+        "age": 26,
+        "lives": "at home"
+      },
+      {
+        "name": "Ahmed Hussein",
+        "age": 25,
+        "lives": "at home"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 478,
+      "household": 201,
+      "segment": "family_couples"
+    }
+  },
+  {
+    "name": "Mariam Hussein",
+    "age": 45,
+    "sex": "female",
+    "ethnicity": "Pakistani",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Muslim",
+    "occupation": "Imam / religious teacher",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "Jamia Masjid Bilal (in Larkfield)",
+    "approx_annual_income_gbp": {
+      "gross": 24800,
+      "net": 21400
+    },
+    "hours_per_week": 56,
+    "shift_pattern": {
+      "label": "Self-directed / irregular",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 09:00-17:00"
+    },
+    "household": {
+      "type": "married nondep",
+      "tenure": "owned outright",
+      "bedrooms": 3,
+      "address": "13 Albert Road",
+      "lives_with": [
+        {
+          "name": "Haroon Hussein",
+          "age": 49,
+          "relation": "partner"
+        },
+        {
+          "name": "Yusuf Hussein",
+          "age": 26,
+          "relation": "son"
+        },
+        {
+          "name": "Ahmed Hussein",
+          "age": 25,
+          "relation": "son"
+        }
+      ]
+    },
+    "relationship_status": "married (Haroon)",
+    "children": [
+      {
+        "name": "Yusuf Hussein",
+        "age": 26,
+        "lives": "at home"
+      },
+      {
+        "name": "Ahmed Hussein",
+        "age": 25,
+        "lives": "at home"
+      }
+    ],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "apprenticeship",
+    "_src": {
+      "id": 479,
+      "household": 201,
+      "segment": "family_couples"
+    }
+  },
+  {
+    "name": "Yusuf Hussein",
+    "age": 26,
+    "sex": "male",
+    "ethnicity": "Pakistani",
+    "birthplace": "Pakistan",
+    "born_in_uk": false,
+    "years_in_uk": 10,
+    "religion": "Muslim",
+    "occupation": "Accountant / finance professional",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "elsewhere in the city (city_centre_offices)",
+    "approx_annual_income_gbp": {
+      "gross": 45400,
+      "net": 34700
+    },
+    "hours_per_week": 45,
+    "shift_pattern": {
+      "label": "Office 3 days + home 2",
+      "shifts": "Mon/Tue/Wed/Thu/Fri 08:45-17:30"
+    },
+    "household": {
+      "type": "married nondep",
+      "tenure": "owned outright",
+      "bedrooms": 3,
+      "address": "13 Albert Road",
+      "lives_with": [
+        {
+          "name": "Haroon Hussein",
+          "age": 49,
+          "relation": "father"
+        },
+        {
+          "name": "Mariam Hussein",
+          "age": 45,
+          "relation": "mother"
+        },
+        {
+          "name": "Ahmed Hussein",
+          "age": 25,
+          "relation": "brother"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "degree or higher",
+    "_src": {
+      "id": 480,
+      "household": 201,
+      "segment": "family_couples"
+    }
+  },
+  {
+    "name": "Ahmed Hussein",
+    "age": 25,
+    "sex": "male",
+    "ethnicity": "Pakistani",
+    "birthplace": "United Kingdom",
+    "born_in_uk": true,
+    "years_in_uk": null,
+    "religion": "Muslim",
+    "occupation": "Paramedic / ambulance technician",
+    "activity": "employed",
+    "contract": "permanent",
+    "workplace": "elsewhere in the city (teaching_hospital)",
+    "approx_annual_income_gbp": {
+      "gross": 31900,
+      "net": 26500
+    },
+    "hours_per_week": 38,
+    "shift_pattern": {
+      "label": "NHS shifts (long days/nights)",
+      "shifts": "daily 07:00-19:30; daily 19:00-07:30; daily 07:00-15:00; daily 13:00-21:00"
+    },
+    "household": {
+      "type": "married nondep",
+      "tenure": "owned outright",
+      "bedrooms": 3,
+      "address": "13 Albert Road",
+      "lives_with": [
+        {
+          "name": "Haroon Hussein",
+          "age": 49,
+          "relation": "father"
+        },
+        {
+          "name": "Mariam Hussein",
+          "age": 45,
+          "relation": "mother"
+        },
+        {
+          "name": "Yusuf Hussein",
+          "age": 26,
+          "relation": "brother"
+        }
+      ]
+    },
+    "relationship_status": "single, never married",
+    "children": [],
+    "pets": null,
+    "health": {
+      "general": "very good",
+      "conditions": [],
+      "disabled": false
+    },
+    "education": "apprenticeship",
+    "_src": {
+      "id": 481,
+      "household": 201,
+      "segment": "family_couples"
+    }
+  }
+]

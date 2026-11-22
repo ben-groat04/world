@@ -1,0 +1,60 @@
+--- Sun 19:00, Maya
+Hey! Sunday evening already. How's your weekend going?
+
+--- Sun 19:01, Jo
+Hey Maya! Pretty chill so far, thanks for asking. Got a bit of rest after a busy week and finally got around to some reading. How about you, anything fun on the agenda this week?
+
+--- Sun 19:01, Tom
+Hey Maya! Pretty chill so far, mostly catching up on sleep and pottering around. Did you get any proper downtime this weekend, or has it been busy?
+
+--- Sun 19:04, Tom
+Nice, Jo, sounds like you earned that rest. What are you reading? I'm a bit behind on books, so I could use a recommendation. And Maya, I'm planning to get some groceries and a run in this week.
+
+--- Sun 19:06, Jo
+Ha, I'm mid-way through a sci-fi novel that's kept me up way too late. Pick something fast-paced if you want to catch up: *Project Hail Mary* by Andy Weir is a great one to get back into reading. Good luck with the run this week, Tom!
+
+--- Sun 19:06, Maya
+Hey both! Mine's been a mix of lazy mornings and a bit of tidying up. Tom, a run plus groceries sounds like a solid week. Jo, what are you reading? I'm also looking for something new, so I'd love a recommendation.
+
+--- Sun 19:07, Maya
+Ooh, *Project Hail Mary* is on my list already, so thanks for the nudge, Jo. Tom, good luck with the run! Hope the weather cooperates.
+
+--- Sun 19:09, Tom
+Thanks, Maya! Glad Jo's pick is on your list too. I'll take the luck, the weather's been moody. Jo, what's the sci-fi one keeping you up?
+
+--- Sun 19:13, Jo
+Ha, it's *The Left Hand of Darkness* by Ursula K. Le Guin. Slow-burn, but the world-building is so good I keep saying "just one more chapter." Maya, if you like thoughtful sci-fi after *Project Hail Mary*, it's a good next pick.
+
+--- Sun 19:14, Maya
+Ooh, I've been meaning to read *The Left Hand of Darkness*, so that's a good push, Jo. I'll grab it after *Project Hail Mary*. Tom, the moody weather sounds like a good excuse to stay in with a book.
+
+--- Sun 19:27, Tom
+Ha, Maya, you're right, a rainy run excuse is basically a book excuse. Jo, *The Left Hand of Darkness* sounds like a great slow read for a cosy night in.
+
+--- Sun 19:30, Jo
+Right? It's a slow one, but a cosy night in with it is perfect. Maya, let me know what you think of it once you get there!
+
+--- Sun 19:33, Tom
+Will do, Jo. Maya, I'm curious what you make of it too. Enjoy the cosy night, all!
+
+--- Sun 19:34, Jo
+Thanks, Tom! Enjoy the groceries and the run, and have a good evening, all.
+
+--- Sun 19:38, Tom
+Thanks, Jo! You too. Have a good night, all.
+
+--- Sun 19:41, Maya
+Thanks, both! I'll let you know what I think of it, Jo. Have a good night, you two.
+
+--- Sun 19:42, Jo
+Night, you two! Enjoy the book, Maya.
+
+--- Sun 19:42, Tom
+Night, Maya and Jo! Enjoy the book, Maya.
+
+--- Sun 19:43, Maya
+Night, Jo and Tom! Catch you later.
+
+--- end date reached
+Tue 19:00
+

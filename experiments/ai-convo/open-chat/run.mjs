@@ -1,15 +1,19 @@
 // Four agents (Haiku by default) talk to each other through the `claude -p` CLI (no HTTP API). Each agent is a saved CLI session that holds everything it has read and written: every check-in forks the agent's session (--resume <id> --fork-session) and the fork is always kept as its session. Nothing is ever discarded: a PASS stays in its history as "looked and stayed quiet", and every other reply is posted, so no agent remembers saying something nobody saw, and none loses what it read. The system prompt is NOTE + BRIEF (which starts "You are <name>.") and nothing else.
 // What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task). Agents have WebFetch (links in the chat can be opened); a reply is the text after its last tool call. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
-// Event-driven clock: no global steps. Every agent has its own next check-in time, and the loop takes the earliest pending event (a check-in, a message finishing being typed, an @claude answer arriving), moves the in-story clock to it and handles it. At a check-in the agent is shown the time and what is new since it last looked (header line "\u2014 Name, Sun 19:42", then the text; on its first look, the whole conversation). Its reply is posted when finished: check-in time + time to read the new messages + time to type it. A reply may be several messages (split on blank lines), each posted after its own typing time. Messages posted while an agent is typing are seen only at its next check-in, so replies can cross, and anyone can post twice in a row. Presence: after posting an agent stays in the chat and looks again soon (RECHECK_MIN); after PASS it puts the phone down and looks again after OFFLINE_MIN. Maya (first name, gets the topic) opens at START; the others first look at some point in FIRST_SPREAD_MIN after it. Nobody is told to take turns and nothing makes the days pass: a quiet chat is just agents who are all offline.
-// The relay note (NOTE) says an agent may reply just PASS, which nobody sees; it is not in the chat prompts, where agents took it up as a word. Ends at MESSAGES posted messages (Claude answers count) or when the in-story clock passes START + DAYS days; the last log row is {end: 'limit'|'date', at}.
+// Event-driven clock: no global steps. Every agent has its own next check-in time, and the loop takes the earliest pending event (a check-in, a message finishing being typed, an @claude answer arriving), moves the in-story clock to it and handles it. At a check-in the agent is shown the time and what is new since it last looked (header line "\u2014 Name, Sun 19:42", then the text; on its first look, the whole conversation). Its reply is posted when finished: check-in time + time to read the new messages + time to type it (each agent has its own typing speed). A reply may be several messages (split on blank lines), each posted after its own typing time. Messages posted while an agent is typing are seen only at its next check-in, so replies can cross, and anyone can post twice in a row. Check-ins come from notifications: whenever a message posts (Claude's answers too), every other agent who is not mid-reply gets a check-in scheduled after a delay from NOTIFY (an earlier pending check-in is kept, not stacked); an agent mid-reply is notified once it has posted. Spontaneous check-ins (nothing new, so someone can start a new conversation) come OFFLINE_MIN after a PASS or after finishing a reply. Agents don't check in while asleep (SLEEP_START..SLEEP_END): such a check-in moves to their wake time. Maya (first name, gets the topic) opens at START; the others first look at some point in FIRST_SPREAD_MIN after it. Nobody is told to take turns and nothing makes the days pass: a quiet chat is just agents who are all offline.
+// The relay note (NOTE) says an agent may reply just PASS, which nobody sees; it is not in the chat prompts, where agents took it up as a word. Ends at MESSAGES posted messages (Claude answers count; replies already being typed still post, no new check-ins start) or when the in-story clock passes START + DAYS days; the last log row is {end: 'limit'|'date', at}.
 // In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides).
 // Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [DAYS=3] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl}: log.jsonl has a row per posted message and per PASS (posted: true|false, `at` = post time, or check-in time for a PASS, `checkin` = the check-in it came from; usage/user/argv on the first message of a check-in), oracle rows, and the end row. transcript.txt has only posted messages and the end.
 import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
-// Timing (all in-story). Every real-world speed here is a design parameter, unsourced (TODO: source); ranges are drawn uniformly per use.
-const TYPE_CPM = [150, 300]; // typing speed, characters per minute. design parameter, unsourced (TODO: source)
-const READ_CPM = [800, 1500]; // reading speed, characters per minute. design parameter, unsourced (TODO: source)
-const RECHECK_MIN = [1, 8]; // minutes until an agent that just posted looks again (it is still in the chat). design parameter, unsourced (TODO: source)
-const OFFLINE_MIN = [30, 600]; // minutes until an agent that passed looks again (phone down). design parameter, unsourced (TODO: source)
+// Timing (all in-story).
+// Typing on a phone: mean 36.17 words/min, SD 13.22 (Palin, Feit, Kim, Kristensson, Oulasvirta, "How do People Type on Mobile Devices? Observations from a Study with 37,000 Volunteers", MobileHCI 2019, https://doi.org/10.1145/3338286.3340120). It was a copy-typing task, so composing a reply may be slower. Drawn once per agent from a normal truncated below at TYPE_WPM_FLOOR.
+const TYPE_WPM = [36.17, 13.22], TYPE_WPM_FLOOR = 10; // floor: design parameter, unsourced (about the mean minus 2 SD)
+// Silent reading: 238 words/min for non-fiction (Brysbaert, "How many words do we read per minute?", Journal of Memory and Language 109, 104047, 2019, https://doi.org/10.1016/j.jml.2019.104047). Measured on continuous text.
+const READ_WPM = 238;
+// Delay from a message arriving to the user opening it: log-normal with median 6.15 min and a quarter opened within 60 s (Pielot, de Oliveira, Kwak, Oliver, "Didn't You See My Message? Predicting Attentiveness to Mobile Instant Messages", CHI 2014, https://doi.org/10.1145/2556288.2556973). Hence mu = ln 6.15, sigma = ln(6.15/1)/0.6745 (0.6745 = the 75th-percentile z).
+const NOTIFY = { mu: Math.log(6.15), sigma: Math.log(6.15) / 0.6745 };
+const OFFLINE_MIN = [30, 600]; // minutes until a spontaneous check-in (nothing new) after a PASS or a finished reply. design parameter, unsourced (TODO: source)
+const SLEEP_START = [22.5, 24], SLEEP_END = [6, 8]; // hours of day, drawn once per agent. design parameter, unsourced (TODO: source)
 const FIRST_SPREAD_MIN = [5, 120]; // minutes after START at which the agents other than Maya first look. design parameter, unsourced (TODO: source)
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
 const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. The relay shows you the chat whenever you look at it. To stay quiet, reply with only the word PASS: the relay drops it and nobody in the chat ever sees it.';
@@ -25,10 +29,12 @@ const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, Math.min(8, Math.max(2, +process.env.PEOPLE || 4))), // env PEOPLE: 2-8 agents, default 4
    MESSAGES = +(process.env.MESSAGES || process.argv[2]) || 120, DAYS = +process.env.DAYS || 3, convo = [], seen = {}, looked = {};
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const p2 = x => String(x).padStart(2, '0'), hm = d => `${p2(d.getHours())}:${p2(d.getMinutes())}`, rf = ([a, b]) => a + Math.random() * (b - a);
+const p2 = x => String(x).padStart(2, '0'), hm = d => `${p2(d.getHours())}:${p2(d.getMinutes())}`, rf = ([a, b]) => a + Math.random() * (b - a), randn = () => Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()), words = t => t.trim().split(/\s+/).length;
 const stamp = d => `${WD[d.getDay()]} ${hm(d)}`, iso = d => `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}T${hm(d)}`, MIN = 60000;
 const START = process.env.START ? new Date(process.env.START) : new Date(new Date().setHours(19, 0, 0, 0)), END = new Date(+START + DAYS * 864e5);
 let clock = START;
+const typeWpm = {}, sleep = {}, busy = {}; // per agent: own typing speed, [sleep start, wake] hours, replies still being typed
+NAMES.forEach(n => { typeWpm[n] = Math.max(TYPE_WPM_FLOOR, TYPE_WPM[0] + TYPE_WPM[1] * randn()); sleep[n] = [rf(SLEEP_START), rf(SLEEP_END)]; busy[n] = 0; });
 const line = m => `\u2014 ${m.who}, ${stamp(m.at)}\n${m.text}`; // header line, then the text: no "Name: text" pattern for agents to copy
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
 fs.mkdirSync(dir, { recursive: true });
@@ -62,7 +68,13 @@ const log = row => fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify
 const say = (head, body) => { fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- ${head}\n${body}\n\n`); console.log(`--- ${head}\n${body}\n`); };
 const queue = []; let seq = 0; // pending events, earliest first: {t (ms), kind: 'checkin'|'post'|'oracle', ...}
 const when = (t, e) => { queue.push({ t, seq: seq++, ...e }); queue.sort((a, b) => a.t - b.t || a.seq - b.seq); };
-const chars = ms => ms.reduce((s, m) => s + m.text.length, 0);
+const awake = (n, t) => { const d = new Date(t), h = d.getHours() + d.getMinutes() / 60, [s, e] = sleep[n]; return h >= s || h < e ? d.setHours(0, 0, 0, 0) + (e + (h >= s ? 24 : 0)) * 60 * MIN : +t; }; // a time in n's sleep window moves to n's wake time
+function sched(n, t) { // n's next check-in; an earlier pending one is kept, not stacked
+  t = awake(n, t); const i = queue.findIndex(e => e.kind === 'checkin' && e.who === n);
+  if (i >= 0) { if (queue[i].t <= t) return; queue.splice(i, 1); }
+  when(t, { kind: 'checkin', who: n });
+}
+const notify = n => sched(n, +clock + Math.exp(NOTIFY.mu + NOTIFY.sigma * randn()) * MIN); // n opens the new message after a log-normal delay
 async function checkin(n) {
   const t = clock, fresh = convo.slice(seen[n] ?? 0).filter(m => m.who !== n), now = `It's now ${stamp(t)}`; // own messages are already in its session
   const user = !(n in session) ? `(${now}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}`
@@ -70,33 +82,37 @@ async function checkin(n) {
   const j = await turn(n, user), text = j.text;
   session[n] = j.sid; seen[n] = convo.length; looked[n] = t; // the fork is always the agent's session
   const meta = { usage: j.usage, user, argv: mkArgv(briefFor(n)) };
-  if (isPass(text)) { log({ who: n, text, pass: true, posted: false, at: iso(t), checkin: iso(t), ...meta }); return when(+t + rf(OFFLINE_MIN) * MIN, { kind: 'checkin', who: n }); }
+  if (isPass(text)) { log({ who: n, text, pass: true, posted: false, at: iso(t), checkin: iso(t), ...meta }); return sched(n, +t + rf(OFFLINE_MIN) * MIN); }
   let parts = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
   const k = ORACLE ? parts.findIndex(p => ASK.test(p)) : -1;
   if (k >= 0) parts = [...parts.slice(0, k), parts.slice(k).join('\n\n')]; // the question runs to the end of the reply
-  let at = +t + chars(fresh) / rf(READ_CPM) * MIN;
-  parts.forEach((p, i) => when(at += p.length / rf(TYPE_CPM) * MIN, { kind: 'post', who: n, text: p, checkin: t, ...(i === 0 && { meta }) }));
-  when(at + rf(RECHECK_MIN) * MIN, { kind: 'checkin', who: n });
+  let at = +t + fresh.reduce((s, m) => s + words(m.text), 0) / READ_WPM * MIN;
+  busy[n] = parts.length;
+  parts.forEach((p, i) => when(at += words(p) / typeWpm[n] * MIN, { kind: 'post', who: n, text: p, checkin: t, ...(i === 0 && { meta }) }));
 }
 const ASK = /^\s*@claude\b[:,]?\s*([\s\S]+)/im; // everything after @claude, across lines
 async function posted(e) {
   convo.push({ who: e.who, text: e.text, at: clock });
   log({ who: e.who, text: e.text, posted: true, at: iso(clock), checkin: iso(new Date(e.checkin)), ...e.meta });
   say(`${stamp(clock)}, ${e.who}`, e.text);
+  const others = NAMES.filter(n => n !== e.who);
+  others.filter(n => !busy[n]).forEach(notify);
+  if (!--busy[e.who]) { sched(e.who, +clock + rf(OFFLINE_MIN) * MIN); if (convo.slice(seen[e.who]).some(m => m.who !== e.who)) notify(e.who); } // done typing: sees what came meanwhile
   const q = ORACLE && e.text.match(ASK)?.[1].trim();
   if (q) try { const t0 = Date.now(), o = await askOracle(e.who, q); when(+clock + Date.now() - t0, { kind: 'oracle', who: e.who, text: o.text, question: q, usage: o.usage }); } // answer lands after the real duration of the call
   catch (x) { console.error('oracle error:', x.message); log({ who: 'Claude', oracle: true, question: q, error: x.message }); }
 }
-NAMES.forEach((n, i) => when(+START + (i ? rf(FIRST_SPREAD_MIN) * MIN : 0), { kind: 'checkin', who: n }));
+NAMES.forEach((n, i) => sched(n, +START + (i ? rf(FIRST_SPREAD_MIN) * MIN : 0)));
 let end;
 while (!end) {
-  if (convo.length >= MESSAGES) end = 'limit';
+  const closing = convo.length >= MESSAGES; // at the limit no new check-ins start; replies already being typed still post
+  if (closing && queue.every(e => e.kind === 'checkin')) end = 'limit';
   else if (queue[0].t > END) { end = 'date'; clock = END; }
   else {
     const e = queue.shift(); clock = new Date(e.t);
-    if (e.kind === 'checkin') await checkin(e.who);
+    if (e.kind === 'checkin') { if (!closing) await checkin(e.who); }
     else if (e.kind === 'post') await posted(e);
-    else { convo.push({ who: 'Claude', text: e.text, at: clock }); log({ who: 'Claude', text: e.text, oracle: true, question: e.question, at: iso(clock), usage: e.usage }); say(`${stamp(clock)}, Claude`, e.text); }
+    else { convo.push({ who: 'Claude', text: e.text, at: clock }); log({ who: 'Claude', text: e.text, oracle: true, question: e.question, at: iso(clock), usage: e.usage }); say(`${stamp(clock)}, Claude`, e.text); NAMES.filter(n => !busy[n]).forEach(notify); }
   }
 }
 log({ end, at: iso(clock) }); say(end === 'limit' ? 'message limit reached' : 'end date reached', stamp(clock));

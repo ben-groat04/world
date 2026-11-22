@@ -1,0 +1,21 @@
+--- Sun 19:00, Maya
+Hey, it's Sunday evening, so I'm around. What's up?
+
+--- Sun 19:01, Sam
+Hey Maya! Not much, just winding down after a slow weekend. How about you? Anything fun planned for the evening, or just chilling?
+
+--- Sun 19:02, Tom
+Hey both! Just chilling tonight, nothing big. Maybe a bit of cooking and an early night. Sam, how's your slow weekend been, anything you've been up to?
+
+--- Sun 19:03, Maya
+Hey Sam! Same here, pretty low-key. I've got a stack of laundry to fold and I'm trying to decide between finishing a book or finally trying that soup recipe I bookmarked. Did you get any rest this weekend, or was it more errands?
+
+--- Sun 19:04, Jo
+Hey! Laundry folding is the worst, so I'd do the soup first and read while it simmers. Which recipe is it? I've been meaning to make something warm this week, so I might copy you.
+
+--- Sun 19:04, Sam
+Mostly rest, honestly. Got a long nap Saturday and spent a while on a messy puzzle. Maya, go with the soup. Laundry can wait, and a book will still be there tomorrow. Tom, what are you cooking?
+
+--- Sun 19:05, Tom
+Ha, Jo's right, soup first and read while it simmers. Maya, which recipe is it? Sam, I'm curious about your weekend too.
+

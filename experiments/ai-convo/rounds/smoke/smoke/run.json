@@ -1,0 +1,12 @@
+{
+ "label": "smoke",
+ "seed": 301,
+ "window": {
+  "from": "Fri 16:00",
+  "to": "Sat 04:00",
+  "hours": 12
+ },
+ "totalTokens": 189142,
+ "agentCount": 38,
+ "calls": 38
+}

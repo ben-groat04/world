@@ -1,0 +1,47 @@
+{
+ "Hayley Johnson": {
+  "money": 1468,
+  "place": "Flat kitchen",
+  "plans": [
+   "Run tomorrow if chest allows",
+   "Wait for Priya's reply about the radiator",
+   "Read the crime book before bed"
+  ],
+  "notes": [
+   "Fri 16:30 Work day is done.",
+   "Fri 17:57 Work finished; Marnie wants to call about the baking show.",
+   "Fri 19:50 Marnie didn't pick up earlier; Priya message failed as contact name didn't match.",
+   "Fri 19:52 Marnie is ringing now; radiator message went to Priya at the agency.",
+   "Fri 21:48 Call with Marnie finished; Yousif is making egg fried rice."
+  ],
+  "days": []
+ },
+ "Junior Edwards": {
+  "money": 620,
+  "place": "Junior's room",
+  "plans": [
+   "quick bite if hungry, then bed",
+   "up 05:30 for 07:00 shift",
+   "swap break with Gareth"
+  ],
+  "notes": [
+   "Fri 19:50 Gareth asked about covering an extra hour or swapping a break tomorrow"
+  ],
+  "days": [
+   "Fri: Quiet Friday at home; agreed to swap a break and cover an extra hour for Gareth on Saturday."
+  ]
+ },
+ "Yousif Al-Ani": {
+  "money": 214,
+  "place": "Flat kitchen",
+  "plans": [
+   "eat something",
+   "check Sam's invoice again tomorrow",
+   "go to bed"
+  ],
+  "notes": [],
+  "days": [
+   "Fri: Sam's invoice still unpaid, balance stuck at £214, and I forgot dinner until late evening."
+  ]
+ }
+}

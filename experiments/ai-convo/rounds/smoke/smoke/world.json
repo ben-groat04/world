@@ -1,0 +1,600 @@
+{
+ "setting": "Three adults sharing a rented flat in an inner-city neighbourhood of a UK city.",
+ "background": "Hayley, Junior and Yousif share a rented three-bed flat on the first floor of a converted Victorian terrace in an inner-city neighbourhood. They have lived together for around three years (Yousif is the newest, arrived two years ago). It is a mid-November Friday, dark by 16:15 and cold. Hayley is finishing her working-from-home day at the kitchen table, Yousif is in his room on a client job, and Junior is home after a week of shifts with weekend 07:00 starts ahead. The landlord is managed through a letting agency.",
+ "common_knowledge": [
+  "Hayley, Junior and Yousif have shared the flat for about three years (Yousif for two); they get on well and are friendly but not best friends.",
+  "Rent is split by room size and paid by standing order to the letting agency on the 1st; bills (gas, electric, broadband) are split three ways by a shared app and settled monthly.",
+  "The weekly food shop is loosely shared: staples are common, people mark their own items, and whoever goes shopping tells the chat.",
+  "Junior has 07:00 shifts Sat and Sun, up around 05:30; the flat is quiet after 22:00 and he is happy with noise before then.",
+  "Hayley works from home Thu and Fri at the kitchen table and usually finishes about 16:30.",
+  "Yousif works from his room and keeps irregular hours; he is waiting for a client invoice to be paid.",
+  "Heating is on a timer and the flatmates are careful with it because of costs; Hayley's radiator is slow to warm and the landlord has been asked once before.",
+  "Bins go out on Sunday night for Monday morning collection; recycling is fortnightly.",
+  "The corner shop on the street is open until 23:00; the Saturday market runs 08:00 to 15:00 at the square nearby.",
+  "Hayley keeps an inhaler in every coat; flatmates know she has asthma."
+ ],
+ "people": [
+  {
+   "name": "Hayley Johnson",
+   "facts": "41, female, White British, UK-born, marketing associate (permanent, 37h, office Mon-Wed, home Thu-Fri), £39,500, private rent in 3-bed shared flat, single, good health with asthma, degree.",
+   "persona": "Hayley is a tidy, dry-humoured person who likes a plan but doesn't mind it falling apart. She works from the flat on Fridays, usually at the kitchen table, and tends to finish by about 16:30 and then decide what the evening is. She runs slowly on Saturday mornings when her chest allows and keeps an inhaler in every coat. Lately she has been mildly annoyed that the radiator in her room is slow to warm up and is thinking of asking the landlord again. She is friendly with both flatmates, shares the weekly shop loosely with them, and likes baking when she has time. She is reading a long crime series and watching a baking show with her sister on the phone.",
+   "speech": "Measured, warm, a bit wry. Speaks in full sentences with the odd understatement ('not ideal, that'). Says 'right then' when changing topic. Medium pace.",
+   "texting": "Short to medium messages, proper capitalisation and punctuation, occasional single emoji, replies within a few minutes during the day.",
+   "dependants": [
+    {
+     "name": "Marnie",
+     "relation": "sister"
+    }
+   ],
+   "attributes": {
+    "name": "Hayley Johnson",
+    "age": 41,
+    "sex": "female",
+    "ethnicity": "White British",
+    "birthplace": "United Kingdom",
+    "occupation": "Marketing associate",
+    "contract": "permanent",
+    "workplace": "city centre office, Mon-Wed office, Thu-Fri home",
+    "annual_income": 39500,
+    "hours_per_week": 37,
+    "household": {
+     "tenure": "private rent",
+     "bedrooms": 3
+    },
+    "relationship_status": "single",
+    "health": "good, asthma",
+    "education": "degree"
+   },
+   "home": "Hayley's room",
+   "start_place": "Flat kitchen",
+   "start_doing": "Finishing the last emails of her working-from-home day at the kitchen table",
+   "balance": 1480,
+   "first_check_minutes": 10
+  },
+  {
+   "name": "Junior Edwards",
+   "facts": "55, male, Black Caribbean, UK-born, hospital porter (permanent, 3x12h shifts, this week Sat and Sun 07:00-19:00), £25,000, private rent in 3-bed shared flat, divorced, fair health, Level 3 education.",
+   "persona": "Junior is calm, steady and quietly funny, with a habit of humming while he cooks. He has to be up around 05:30 for his weekend shifts, so on Friday he likes a quiet evening and an early night, and his feet and lower back are often sore. He likes dominoes, listening to old soul and reggae records, and a long Sunday-evening phone call with his grown daughter. He is a little worried about the rising cost of heating this winter. He gets on easily with his flatmates and doesn't mind a bit of noise before 22:00.",
+   "speech": "Unhurried, low and friendly. Uses 'mate' and 'listen' now and then. Tells short stories with a punchline. Plain London-leaning English only if it suits; no exaggerated dialect.",
+   "texting": "Brief, lower-case sometimes, minimal punctuation, a thumbs-up emoji now and then. Replies slowly, often hours later, as he isn't glued to his phone.",
+   "dependants": [
+    {
+     "name": "Tanya",
+     "relation": "adult daughter"
+    }
+   ],
+   "attributes": {
+    "name": "Junior Edwards",
+    "age": 55,
+    "sex": "male",
+    "ethnicity": "Black Caribbean",
+    "birthplace": "United Kingdom",
+    "occupation": "Hospital porter",
+    "contract": "permanent",
+    "annual_income": 25000,
+    "hours_per_week": 36,
+    "shifts": "3 x 12h shifts a week; this week Sat and Sun days 07:00-19:00",
+    "household": {
+     "tenure": "private rent",
+     "bedrooms": 3
+    },
+    "relationship_status": "divorced",
+    "health": "fair",
+    "education": "Level 3"
+   },
+   "home": "Junior's room",
+   "start_place": "Junior's room",
+   "start_doing": "Resting his feet after a shift week and putting on an old soul record",
+   "balance": 620,
+   "first_check_minutes": 25
+  },
+  {
+   "name": "Yousif Al-Ani",
+   "facts": "26, male, Arab, born in Yemen, 5 years in UK, freelance designer (self-employed, ~30h, from home), £15,800, private rent in 3-bed shared flat, single, very good health, degree.",
+   "persona": "Yousif is curious, a bit restless and easily absorbed in his work. He works from his room, with client deadlines that bunch up, and sometimes forgets to eat until the afternoon. Money is tight and uneven, so he watches spending and likes cheap good things like market veg and second-hand books. He plays five-a-side on Thursdays, photographs buildings on his phone and is learning to make sourdough, with mixed results. He is currently waiting for a client to pay an invoice. He talks to his mother and brother on video calls on weekends.",
+   "speech": "Fluent, articulate English with a slight accent, thoughtful pauses, often asks questions back. Friendly and a little self-deprecating. Medium pace.",
+   "texting": "Medium length, mostly lower-case with correct spelling, a few emoji, sends quick replies during the day and sometimes sends several short messages in a row.",
+   "dependants": [
+    {
+     "name": "Hamza",
+     "relation": "younger brother"
+    },
+    {
+     "name": "Amal",
+     "relation": "mother"
+    }
+   ],
+   "attributes": {
+    "name": "Yousif Al-Ani",
+    "age": 26,
+    "sex": "male",
+    "ethnicity": "Arab",
+    "birthplace": "Yemen",
+    "years_in_uk": 5,
+    "occupation": "Freelance designer",
+    "contract": "self-employed",
+    "workplace": "from home",
+    "annual_income": 15800,
+    "hours_per_week": 30,
+    "household": {
+     "tenure": "private rent",
+     "bedrooms": 3
+    },
+    "relationship_status": "single",
+    "health": "very good",
+    "education": "degree"
+   },
+   "home": "Yousif's room",
+   "start_place": "Yousif's room",
+   "start_doing": "Working on a client design job, having skipped lunch",
+   "balance": 214,
+   "first_check_minutes": 15
+  }
+ ],
+ "places": [
+  {
+   "name": "Hayley's room",
+   "kind": "private",
+   "building": "flat",
+   "access": [
+    "Hayley Johnson"
+   ],
+   "encounter": 0.9,
+   "npcs": [],
+   "npc_chance": 0
+  },
+  {
+   "name": "Junior's room",
+   "kind": "private",
+   "building": "flat",
+   "access": [
+    "Junior Edwards"
+   ],
+   "encounter": 0.9,
+   "npcs": [],
+   "npc_chance": 0
+  },
+  {
+   "name": "Yousif's room",
+   "kind": "private",
+   "building": "flat",
+   "access": [
+    "Yousif Al-Ani"
+   ],
+   "encounter": 0.9,
+   "npcs": [],
+   "npc_chance": 0
+  },
+  {
+   "name": "Flat kitchen",
+   "kind": "shared",
+   "building": "flat",
+   "access": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "encounter": 0.8,
+   "npcs": [],
+   "npc_chance": 0
+  },
+  {
+   "name": "Flat living room",
+   "kind": "shared",
+   "building": "flat",
+   "access": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "encounter": 0.7,
+   "npcs": [],
+   "npc_chance": 0
+  },
+  {
+   "name": "Front street and entrance",
+   "kind": "public",
+   "building": "",
+   "access": [],
+   "encounter": 0.15,
+   "npcs": [
+    "Mr Okafor"
+   ],
+   "npc_chance": 0.15
+  },
+  {
+   "name": "Corner shop",
+   "kind": "public",
+   "building": "",
+   "access": [],
+   "encounter": 0.3,
+   "npcs": [
+    "Mr Okafor"
+   ],
+   "npc_chance": 0.7
+  },
+  {
+   "name": "Park",
+   "kind": "public",
+   "building": "",
+   "access": [],
+   "encounter": 0.15,
+   "npcs": [],
+   "npc_chance": 0.1
+  },
+  {
+   "name": "The Crown pub",
+   "kind": "public",
+   "building": "",
+   "access": [],
+   "encounter": 0.3,
+   "npcs": [
+    "Dev"
+   ],
+   "npc_chance": 0.3
+  },
+  {
+   "name": "Hospital",
+   "kind": "public",
+   "building": "",
+   "access": [],
+   "encounter": 0.3,
+   "npcs": [
+    "Gareth"
+   ],
+   "npc_chance": 0.5
+  },
+  {
+   "name": "out (elsewhere)",
+   "kind": "public",
+   "building": "",
+   "access": [],
+   "encounter": 0,
+   "npcs": [],
+   "npc_chance": 0
+  }
+ ],
+ "chats": [
+  {
+   "name": "Flat 2B",
+   "members": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ]
+  }
+ ],
+ "calendar": [
+  {
+   "what": "Hayley working from home",
+   "who": [
+    "Hayley Johnson"
+   ],
+   "days": [
+    "Fri"
+   ],
+   "start": "09:00",
+   "end": "16:30",
+   "place": "Flat kitchen",
+   "kind": "work"
+  },
+  {
+   "what": "Junior's hospital porter shift",
+   "who": [
+    "Junior Edwards"
+   ],
+   "days": [
+    "Sat"
+   ],
+   "start": "07:00",
+   "end": "19:00",
+   "place": "Hospital",
+   "kind": "work"
+  },
+  {
+   "what": "Junior up for shift",
+   "who": [
+    "Junior Edwards"
+   ],
+   "days": [
+    "Sat"
+   ],
+   "start": "05:30",
+   "end": "06:15",
+   "place": "Junior's room",
+   "kind": "household"
+  },
+  {
+   "what": "Hayley's Saturday run if chest allows",
+   "who": [
+    "Hayley Johnson"
+   ],
+   "days": [
+    "Sat"
+   ],
+   "start": "08:30",
+   "end": "09:30",
+   "place": "Park",
+   "kind": "commitment",
+   "responsible": "Hayley Johnson"
+  },
+  {
+   "what": "Yousif client work, flexible hours",
+   "who": [
+    "Yousif Al-Ani"
+   ],
+   "days": [
+    "Fri"
+   ],
+   "start": "10:00",
+   "end": "18:00",
+   "place": "Yousif's room",
+   "kind": "work"
+  },
+  {
+   "what": "Saturday market open",
+   "who": [],
+   "days": [
+    "Sat"
+   ],
+   "start": "08:00",
+   "end": "15:00",
+   "place": "Front street and entrance",
+   "kind": "commitment"
+  }
+ ],
+ "npcs": [
+  {
+   "name": "Marnie",
+   "role": "Hayley's sister, lives in another city",
+   "linked_to": [
+    "Hayley Johnson"
+   ],
+   "persona": "Warm, teasing, texts in short bursts with exclamation marks; they watch the baking show together by phone.",
+   "answers": 0.7
+  },
+  {
+   "name": "Tanya",
+   "role": "Junior's adult daughter",
+   "linked_to": [
+    "Junior Edwards"
+   ],
+   "persona": "Affectionate, busy, calls rather than texts, usually on Sunday evenings.",
+   "answers": 0.6
+  },
+  {
+   "name": "Amal",
+   "role": "Yousif's mother in Yemen/abroad",
+   "linked_to": [
+    "Yousif Al-Ani"
+   ],
+   "persona": "Loving, asks if he is eating; prefers video calls at weekends, sends voice notes.",
+   "answers": 0.6
+  },
+  {
+   "name": "Hamza",
+   "role": "Yousif's younger brother",
+   "linked_to": [
+    "Yousif Al-Ani"
+   ],
+   "persona": "Joking, sends memes and short texts, sometimes asks for small favours.",
+   "answers": 0.6
+  },
+  {
+   "name": "Priya at Larch Lettings",
+   "role": "letting agency property manager",
+   "linked_to": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "persona": "Polite, formal emails, slow to respond; office closes 17:00 Fridays.",
+   "answers": 0.3
+  },
+  {
+   "name": "Mr Okafor",
+   "role": "corner shop owner",
+   "linked_to": [],
+   "persona": "Friendly, chatty, knows everyone by name.",
+   "answers": 0.8
+  },
+  {
+   "name": "Dev",
+   "role": "Yousif's five-a-side teammate and friend",
+   "linked_to": [
+    "Yousif Al-Ani"
+   ],
+   "persona": "Casual, texts in lowercase, suggests pints.",
+   "answers": 0.5
+  },
+  {
+   "name": "Gareth",
+   "role": "Junior's porter colleague",
+   "linked_to": [
+    "Junior Edwards"
+   ],
+   "persona": "Easygoing, short texts about shift swaps.",
+   "answers": 0.5
+  },
+  {
+   "name": "Client contact Sam",
+   "role": "Yousif's client with an unpaid invoice",
+   "linked_to": [
+    "Yousif Al-Ani"
+   ],
+   "persona": "Pleasant but vague about payment; replies by email, often late.",
+   "answers": 0.3
+  }
+ ],
+ "event_types": [
+  {
+   "text": "A parcel for one of you is left with the downstairs neighbour and they leave a card.",
+   "who": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "scope": "each",
+   "p_per_day": 0.06,
+   "when": "at_home",
+   "hours": [
+    16,
+    21
+   ]
+  },
+  {
+   "text": "Hayley's radiator stays cold for hours; the room is noticeably chilly.",
+   "who": [
+    "Hayley Johnson"
+   ],
+   "scope": "each",
+   "p_per_day": 0.25,
+   "when": "at_home",
+   "hours": [
+    16,
+    22
+   ]
+  },
+  {
+   "text": "Priya at Larch Lettings emails to say a boiler service visit is being arranged for next week.",
+   "who": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "scope": "household",
+   "p_per_day": 0.04,
+   "when": "any",
+   "hours": [
+    9,
+    16
+   ]
+  },
+  {
+   "text": "Sam says the invoice is being processed and should be paid early next week.",
+   "who": [
+    "Yousif Al-Ani"
+   ],
+   "scope": "each",
+   "p_per_day": 0.08,
+   "when": "any",
+   "hours": [
+    9,
+    18
+   ],
+   "from_npc": "Client contact Sam"
+  },
+  {
+   "text": "Gareth texts asking if Junior can cover an extra hour or swap a break tomorrow.",
+   "who": [
+    "Junior Edwards"
+   ],
+   "scope": "each",
+   "p_per_day": 0.05,
+   "when": "any",
+   "from_npc": "Gareth"
+  },
+  {
+   "text": "Marnie texts about the baking show episode and wants to call.",
+   "who": [
+    "Hayley Johnson"
+   ],
+   "scope": "each",
+   "p_per_day": 0.35,
+   "when": "any",
+   "hours": [
+    17,
+    22
+   ],
+   "from_npc": "Marnie"
+  },
+  {
+   "text": "Dev texts asking if Yousif fancies a pint at the Crown.",
+   "who": [
+    "Yousif Al-Ani"
+   ],
+   "scope": "each",
+   "p_per_day": 0.2,
+   "when": "any",
+   "hours": [
+    17,
+    21
+   ],
+   "from_npc": "Dev"
+  },
+  {
+   "text": "Hamza sends a message asking Yousif to lend a little money.",
+   "who": [
+    "Yousif Al-Ani"
+   ],
+   "scope": "each",
+   "p_per_day": 0.04,
+   "when": "any",
+   "from_npc": "Hamza",
+   "money": -20
+  },
+  {
+   "text": "Hayley's asthma tightens with the cold air; she needs her inhaler.",
+   "who": [
+    "Hayley Johnson"
+   ],
+   "scope": "each",
+   "p_per_day": 0.08,
+   "when": "any"
+  },
+  {
+   "text": "Junior's lower back flares up and he needs to sit or lie down.",
+   "who": [
+    "Junior Edwards"
+   ],
+   "scope": "each",
+   "p_per_day": 0.12,
+   "when": "at_home"
+  },
+  {
+   "text": "Broadband drops out for an hour or so.",
+   "who": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "scope": "household",
+   "p_per_day": 0.05,
+   "when": "any"
+  },
+  {
+   "text": "A neighbour's loud music or a late-night noise carries through the wall.",
+   "who": [
+    "Hayley Johnson",
+    "Junior Edwards",
+    "Yousif Al-Ani"
+   ],
+   "scope": "household",
+   "p_per_day": 0.1,
+   "when": "any",
+   "hours": [
+    20,
+    23
+   ]
+  },
+  {
+   "text": "Yousif's sourdough starter needs feeding or his loaf comes out dense.",
+   "who": [
+    "Yousif Al-Ani"
+   ],
+   "scope": "each",
+   "p_per_day": 0.3,
+   "when": "at_home"
+  }
+ ],
+ "money": [
+  {
+   "who": "Hayley Johnson",
+   "amount": -12,
+   "what": "Takeaway or shop spend for the evening",
+   "day": 0,
+   "time": "18:30",
+   "t": 150
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+ "it": 1,
+ "seed": 301,
+ "rules": [
+  "You are one real person, not an assistant. You know only what you have seen, been told, or is common knowledge here.",
+  "Talk the way your person talks and text the way they text. Speech is spoken words only.",
+  "Do things for your own reasons. Nobody tells you what should happen.",
+  "Money is real: you can only spend what is in your account.",
+  "No therapy-speak, speeches or tidy resolutions. Doing or saying nothing is normal."
+ ],
+ "decisions": 15,
+ "calls": 35,
+ "budget": 34,
+ "stoppedAt": null,
+ "coveredTo": "Sat 04:00",
+ "audit": {
+  "imagined_week": [
+   "Hayley shuts the laptop around 16:30, puts the kettle on, maybe checks the heating timer or notices the flat's cold and complains a little in the group chat (once)",
+   "One 'going to the corner shop, anyone want anything?' message in the flat chat, or a takeaway order with the driver at the door and a bit of friction about the buzzer (likely once in the evening)",
+   "Junior cooks something simple between 18:00 and 19:30, humming in the kitchen, so he crosses paths with Hayley at the table: a few minutes of chat about the week, his feet, tomorrow's 07:00 start (very likely; one kitchen overlap at least)",
+   "Junior sorts tomorrow out: uniform, lunch in a tub, phone on charge, alarm set, a shower, in bed by 21:30-22:00 (near-certain given the 05:30 alarm)",
+   "Bathroom queue or a knock on the door around 21:00-22:00 as people get ready for bed",
+   "Yousif skips proper meals, snacks, works past 18:00, checks the banking app a couple of times, maybe sends Sam a polite 'just following up' email even though it's Friday night, or decides to leave it till Monday (one money moment, and some anxiety about it)",
+   "A message or two from outside: Dev about Saturday or a match, Hamza or his mum confirming the weekend video call, a client 'quick tweak' email (1-3 in the evening)",
+   "Hayley's sister call, about an hour, then reading in bed; maybe getting her running kit out for the morning and checking her chest",
+   "Heating clicking off on the timer around 22:00, someone putting on a jumper or a hot water bottle; a quick word about the cost",
+   "Friday-night street noise from outside, a neighbour, a delivery to the wrong flat: one minor interruption from outside",
+   "From 23:00 to 04:00 the flat is basically silent: Yousif maybe awake on his laptop or phone till 01:00-02:00, keeping the noise down for Junior"
+  ],
+  "missing_texture": [
+   "Junior never leaves his room and never eats. 'Cook something easy later' sits in his plans from 16:15 to 00:29 without happening. For a man with a 05:30 alarm and a kitchen he shares, that is the single most unreal thing in the run.",
+   "Junior is still up at 00:29, 'heading to bed soon', when his whole persona is about an early night before a 07:00 shift.",
+   "The flat has no common life. The group chat is never used, nobody goes to the shop, the bathroom is never mentioned, nobody bumps into anyone in the hallway, and nobody says anything about the heating on a cold November night. That last one matters because heating and the radiator are seeded in the setup.",
+   "Hayley's -£12 'takeaway or shop spend' is never tied to anything. Nobody goes out, nothing is delivered, nothing gets eaten. It is a line in a ledger, not something that happened.",
+   "Hayley sits at the kitchen table from 16:00 to 21:48 and never moves: no shower, no change of clothes, no making dinner.",
+   "Yousif has nothing from outside the flat. Dev, Hamza and the client never get in touch, and he takes no action of his own on the unpaid invoice beyond refreshing the app twice in a row.",
+   "Nobody gets ready for tomorrow. Junior doesn't set out his uniform or make a packed lunch, and Hayley doesn't get her running kit out or think about her chest.",
+   "The kitchen scene between Hayley and Yousif works, but it's the only time two flatmates meet in twelve hours. Junior, who 'doesn't mind noise before 22:00', never sees either of them.",
+   "Facts drift. Hayley tells Yousif about 'one bloke's sponge' being a pancake, but the episode had a woman's sponge sink and get covered in cream. Marnie says she has 'OPINIONS about who went out' and then says she hasn't watched it yet.",
+   "Marnie repeats 'same time next week' at 20:40 and again at 00:33, which reads like an echo rather than a person.",
+   "Hayley's message to the agency on a Friday evening is believable, but nothing comes back, not even an out-of-hours auto-reply."
+  ],
+  "stereotyping": [
+   {
+    "who": "Junior Edwards",
+    "quote": "He likes dominoes, listening to old soul and reggae records",
+    "why": "Neither dominoes nor reggae comes from his attributes. Both are the stock hobbies handed to a middle-aged Black Caribbean man. The run then repeats it in his activity line ('soul record on')."
+   },
+   {
+    "who": "Junior Edwards",
+    "quote": "a habit of humming while he cooks",
+    "why": "This is a 'warm, easy-going older Black man' trope rather than anything sampled. It's mild, and ironic given he never cooks in the run."
+   },
+   {
+    "who": "Hayley Johnson",
+    "quote": "likes baking when she has time... watching a baking show with her sister",
+    "why": "This is the default prose for a tidy, middle-class, White British woman in her forties. It's mild, but the baking show then takes over her entire evening."
+   }
+  ],
+  "score": 4,
+  "verdict": "The voices are good in places. Junior's texts to Gareth sound right, Hayley's 'served it in a bowl and called it a trifle' is a nice line, and the egg fried rice exchange feels true. But it doesn't read like a Friday night in a shared flat. Three people sit in separate rooms for twelve hours, and the whole run consists of one long phone call and one ten-minute kitchen chat. Junior's evening doesn't hold together. He plans dinner for eight hours and never eats it, and he's still up after midnight with a 05:30 alarm. Activity lines go stale, so Yousif is apparently still eating his supper at 01:29. Hayley's £12 is a number with no object attached. Facts change between scenes (the 'bloke' with the pancake sponge, Marnie's spoilers). The household details seeded in the setup, like the heating timer, the shared shop and the group chat, are never used. A skeptical reader would see that the plans were registered but the bodies never had to act on them.",
+  "breakers": [
+   {
+    "quote": "Sat 00:29 @Junior's room: resting feet, heading to bed soon | plans: quick bite if hungry, then bed; up 05:30",
+    "why": "He's been 'cooking something easy later' since 16:15 and still hasn't eaten. He's up past midnight before a 12-hour shift starting at 07:00, which goes against the stated persona and against common sense."
+   },
+   {
+    "quote": "Sat 01:29 @Flat kitchen: eating late supper, then bed",
+    "why": "Yousif started frying rice at 21:37. Saying he's still in the kitchen eating four hours later means the activity line is stale."
+   },
+   {
+    "quote": "One bloke's sponge was more of a pancake, though.",
+    "why": "This contradicts the episode as it was played out an hour earlier: her sponge sank, the cream volcano. The world state isn't keeping shared facts."
+   },
+   {
+    "quote": "Don't hang up on me, I have OPINIONS about who went out!!",
+    "why": "Seconds later Marnie says she hasn't watched it either. The background character contradicts herself."
+   },
+   {
+    "quote": "Hayley Johnson: -£12 Takeaway or shop spend for the evening",
+    "why": "There's no shop trip, no delivery, no food. A placeholder charge with nothing behind it."
+   },
+   {
+    "quote": "Priya message failed as contact name didn't match.",
+    "why": "Mechanism plumbing has leaked into the character's own record of her day."
+   },
+   {
+    "quote": "You refresh the banking app. Balance still shows £214.00, with nothing pending.",
+    "why": "This duplicates the same solo action from the same minute. It reads like a loop, not a person."
+   }
+  ],
+  "mechanism_issues": [
+   "Bodily needs and plans have no enforcement. A plan like 'cook something easy' can carry over from one check-in to the next forever without being done or dropped, so meals and bedtimes simply don't happen.",
+   "The day-summary check-in seems to keep people awake. Junior writes his summary at 00:29 and Yousif at 01:29, which places them awake when they should be asleep.",
+   "Activity and location lines never expire. A short action like eating supper stays as the current activity until the next check-in, however long that is.",
+   "Spending is logged without an action, place or object behind it. A shop or takeaway spend doesn't make anyone move (corner shop, front door), so the encounters it would bring never happen.",
+   "Meetings only happen when people share a place, and people only change place when they check in. Characters who stay 'in my room' never pass through the kitchen, hallway or bathroom, so shared-flat contact stays close to zero.",
+   "Facts from scenes (what happened in the episode, who said what) aren't stored as shared world facts. Later retellings and background characters' replies drift away from them.",
+   "Background-character messages are generated from the event text, not from that character's state. This produces contradictions (Marnie) and echoed messages (repeated 'same time next week').",
+   "Contact routing relies on exact names and the failure gets surfaced to the character. Organisations have no opening hours or auto-replies.",
+   "The world produces nothing on its own: no heating timer, no deliveries, no neighbours, no group-chat traffic. Only two scripted events fired in twelve hours.",
+   "Identical solo actions in the same tick aren't de-duplicated."
+  ],
+  "proposed_mechanisms": [
+   "Needs clock: each person has hunger, tiredness and hygiene that rise over time and are tied to their calendar. Bedtime is worked back from the next fixed wake-up time. Once a need passes a threshold it forces a check-in that resolves it (eat, wash, sleep) or makes the person explicitly put it off.",
+   "Plan ageing: if a plan has been carried over N check-ins, the resolver either makes it happen at the next sensible moment or asks the person to drop it. Plans can't sit forever.",
+   "Activity duration: every activity gets an expected length. When it runs out, the resolver moves the person on to a default next state (back to their room, asleep) instead of leaving the old line in place.",
+   "Movement from actions: cooking, eating, washing, buying and answering the door all happen in specific places (kitchen, bathroom, front door, shop). Doing them moves the person there and gives a chance of meeting whoever else is there. This lets ordinary flat contact emerge without scripting it.",
+   "Every spend has to name an item and a place or supplier, and is resolved as an action with consequences: a trip, a delivery arriving, food that now exists.",
+   "Shared fact log: notable facts from a scene are written to a log that all participants and later scenes can read, and retellings are checked against it.",
+   "Background-character state: each background character keeps a small memory of what they've seen and said, so their replies stay consistent and don't repeat.",
+   "Ambient world events drawn from the setting's own systems: heating timers, post and deliveries, neighbour noise, weather, group-chat prompts and work emails, at a realistic rate rather than just scripted events.",
+   "Organisation behaviour: agencies and businesses have opening hours and send auto-replies out of hours. Contact resolution is fuzzy and never shown to the character.",
+   "Day summaries are written retroactively at the person's actual bedtime (or as of a fixed time), not as a live check-in that puts them awake.",
+   "Collapse duplicate solo actions in the same tick."
+  ],
+  "extra_rules": [
+   "Eat, wash and sleep when your body and tomorrow's schedule would make a real person do it; if you planned something small, either do it or drop it."
+  ]
+ }
+}

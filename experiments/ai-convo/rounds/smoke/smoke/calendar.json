@@ -1,0 +1,28 @@
+[
+ {
+  "what": "Hayley working from home",
+  "who": [
+   "Hayley Johnson"
+  ],
+  "responsible": "",
+  "kind": "work",
+  "place": "Flat kitchen",
+  "t0": -420,
+  "t1": 30,
+  "at": "Fri 09:00",
+  "until": "Fri 16:30"
+ },
+ {
+  "what": "Yousif client work, flexible hours",
+  "who": [
+   "Yousif Al-Ani"
+  ],
+  "responsible": "",
+  "kind": "work",
+  "place": "Yousif's room",
+  "t0": -360,
+  "t1": 120,
+  "at": "Fri 10:00",
+  "until": "Fri 18:00"
+ }
+]

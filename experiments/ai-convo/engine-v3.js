@@ -1,10 +1,10 @@
 export const meta = {
   name: 'social-sim-v3',
   description: "Social simulation: one agent per person plans its own time, talks or doesn't, ends conversations itself and condenses its own memories; code keeps each person's first-hand journal, the clock, places, calendar, who knows whom, sourced events and full logs; a world role resolves consequences with reasons",
-  phases: [{ title: 'Generate' }, { title: 'Simulate' }, { title: 'Audit', model: 'opus' }],
+  phases: [{ title: 'Generate' }, { title: 'Simulate' }],
 }
 // args: { label, setting (a description), dateNote, startDow (0=Mon), startHour, hours, seed, sample: sampler output {setting, people, ...} | attributes: [...],
-//         events?: [{text, who, p_per_day, hours?, from?, source}], rules?: [str], audit?: bool, maxCalls?, roleAgent?: 'persona'|'sim' }
+//         events?: [{text, who, p_per_day, hours?, from?, source}], rules?: [str], maxCalls?, roleAgent?: 'persona'|'sim' }
 // The model makes every judgment. Code keeps facts and logs everything. No real-world figure is guessed: people, households and shift times
 // come from the sampler; event rates only from args.events with a source; anything unsourced is left out, not made up.
 // Memory: each person's journal (what they saw, heard, said and did) is kept verbatim by code and shown back in every call. When a
@@ -58,7 +58,7 @@ async function call(kind, prompt, schema, o) {
 phase('Generate')
 const SAMPLE = A.sample && !Array.isArray(A.sample) ? A.sample : {}
 const SETTING = A.setting || SAMPLE.setting || ''
-const CONTEXT = Object.fromEntries(Object.entries(SAMPLE).filter(([k]) => !['people', 'n', 'seed', 'setting'].includes(k))) // e.g. area, ties
+const CONTEXT = JSON.parse(JSON.stringify(Object.fromEntries(Object.entries(SAMPLE).filter(([k]) => !['people', 'n', 'seed', 'setting'].includes(k))), (k, v) => k === 'ethnicity' ? undefined : Array.isArray(v) ? v.filter((x) => x !== 'ethnicity') : v)) // e.g. area, ties (ethnicity kept out, as everywhere)
 const ATTR = (A.attributes || SAMPLE.people || (Array.isArray(A.sample) ? A.sample : [])).map((a) => JSON.parse(JSON.stringify(a, (k, v) => k.startsWith('_') ? undefined : v)))
 if (!ATTR.length) throw new Error('args.sample (sampler output) or args.attributes is required: people must come from sampled data, never be made up')
 // Anything without a source (interests, tastes, way of talking) is written blind to identity: no name, sex, ethnicity, birthplace or religion.
@@ -417,23 +417,6 @@ const final = Object.fromEntries(NAMES.map((n) => [n, { place: S[n].place, doing
 const stats = { calls: CALLS.length, simCalls, maxCalls: MAX_CALLS, byFor: CALLS.reduce((m, c) => (m[c.for] = (m[c.for] || 0) + 1, m), {}), sceneLines: CALLS.filter((c) => c.why === 'scene line').length, promptChars: CALLS.reduce((k, c) => k + c.prompt.length, 0), failed: CALLS.filter((c) => c.result == null).length, roleAgent: ROLE_AT, stoppedAt: stopped == null ? null : fmt(stopped) }
 log(`${A.label}: ${stats.simCalls} sim calls (${stats.sceneLines} scene lines), ${L.filter((e) => e.kind === 'scene').length} scenes, ${L.filter((e) => e.kind === 'call').length} calls, ${L.filter((e) => e.kind === 'chat' || e.kind === 'dm').length} messages${stopped != null ? ', stopped early' : ''}`)
 
-// ---------- 3. audit (optional; never feeds back into the run) ----------
-let audit = null
-if (A.audit !== false) {
-  phase('Audit')
-  const cap = (s, k) => s.length <= k ? s : s.slice(0, k / 2) + `\n[... ${s.length - k} chars omitted ...]\n` + s.slice(-k / 2)
-  audit = await call('role', `${roleOf('auditor')}Audit this social simulation for realism with a novelist's eye, as a sceptical reader from this setting.
-SETTING: ${SETTING}. WINDOW: ${fmt(0)} to ${fmt(END)}${DATE}${stopped != null ? ` (stopped early at ${fmt(stopped)})` : ''}.
-PEOPLE (sampled attributes incl. ethnicity; the character writer saw none of name, sex, ethnicity, birthplace, religion; players were not shown ethnicity; temperament drawn at random):\n${PEOPLE.map((p) => `${p.name} | ${JSON.stringify(p.attributes)} | ${p.temperament}\n  ${p.profile}\n  speech: ${p.speech} | texting: ${p.texting}`).join('\n')}
-WORLD: ${W.background}\nShifts: ${CAL.filter((o) => o.by === 'sampler').map((o) => `${o.who[0]} ${fmt(o.t0)}-${fmt(o.t1).slice(4)}`).join(' | ') || 'none'}\nEvents that fired: ${EVENTS.map((e) => `${fmt(e.t)} ${e.who}: ${e.text}`).join(' | ') || 'none (only sourced rates are used)'}
-HOW IT WORKS: each person plans their own next hours (errands belong to a plan step and resolve when it starts) and chooses how often they glance at their phone; they get a turn when their plan runs out, when they glance and something is new, between activities, on waking, on walking into a room with someone in it, and after every conversation. Every call shows the person their own journal verbatim; they condense each conversation and each day in their own words when it ends. Conversations run inside the clock line by line; people can walk in, be called over, or leave. A world role resolves errands, background characters and sourced events, with a reason for each. Money is not tracked (no sourced balances or prices).
-TRANSCRIPT:\n${cap(transcript, 90000) || '(nothing)'}
-TIMELINES (turns, why, what they chose to remember, plan):\n${cap(memories, 40000)}
-WORLD DECISIONS:\n${cap(worldLog(L), 15000) || '(none)'}
-First imagine what a real stretch like this would contain for these people; then compare. Check for stereotyping, including in how others treat them. Point to mechanism causes, not just symptoms, and check each against the logs. For every issue, consider first whether an AI-first solution would solve it (give the judgment to a person's or role's model, with the facts it needs in view) rather than more code rules or machinery; say which, and why.`,
-    obj({ imagined: arr(str), missing_texture: arr(str), stereotyping: arr(obj({ who: str, quote: str, why: str })), breakers: arr(obj({ quote: str, why: str })), mechanism_issues: arr(obj({ issue: str, evidence: { type: 'string', description: 'what in the logs shows it' }, ai_first: { type: 'string', description: 'an AI-first fix: which model call gets the judgment and what it needs to see; or why code must own it (a hard fact)' } })), score: { type: 'integer', description: '1-10 realism' }, verdict: str }),
-    { phase: 'Audit', label: `${A.label} audit`, for: 'auditor', model: 'opus', effort: 'high' })
-  log(`${A.label}: audit score ${audit?.score ?? '?'} · ${String(audit?.verdict || '').slice(0, 140)}`)
-}
+// the audit is a separate workflow (audit-v3.js) over the saved outputs of several runs
 return { version: 3, label: A.label, seed: A.seed, args: { ...A, attributes: undefined, sample: undefined }, window: { from: fmt(0), to: fmt(END), hours: HOURS }, world, events: EVENTS.map((e) => `${fmt(e.t)} ${e.who}${e.from ? ' (from ' + e.from + ')' : ''}: ${e.text} [source: ${e.source}]`),
-  log: L, transcript, memories, worldLog: worldLog(L), calendar: CAL.map((o) => ({ ...o, at: fmt(o.t0), until: fmt(o.t1) })), final, stats, audit, calls: CALLS, heads: HEADS }
+  log: L, transcript, memories, worldLog: worldLog(L), calendar: CAL.map((o) => ({ ...o, at: fmt(o.t0), until: fmt(o.t1) })), final, stats, calls: CALLS, heads: HEADS }

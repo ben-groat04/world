@@ -96,7 +96,7 @@ export function populate(world, rng) {
       if (m.role === 'child' || (m.role === 'adult_child' && m.parents)) { const ps = m.parents.map((k) => hm[k].group); group = ps.length > 1 && ps[0] !== ps[1] ? 'mixed' : ps[0]; }
       m.group = group;
       const by = 2026 - Math.floor(m.age);
-      let origin = NAMES.pickOrigin(rng, group, by);
+      let origin = NAMES.pickOrigin(rng, group, by, m.parents && m.role !== 'sharer' && hm[m.parents[0]] ? hm[m.parents[0]].origin : m.role === 'partner' && i > 0 && rng.chance(0.9) ? hm[0].origin : null);
       if (h.seg === 'recent_arrivals' && m.age >= 18 && origin.bornUK) { origin = NAMES.pickOrigin(rng, group, by); origin.bornUK = false; if (origin.birthplace === 'United Kingdom') origin.birthplace = (NAMES.GROUPS[group].birth.other || [['Poland', 1]])[0][0]; }
       if (m.role === 'child' && h.seg === 'recent_arrivals' && rng.chance(0.4)) origin.bornUK = false;
       if (m.parents && m.role !== 'sharer') { const par = hm[m.parents[0]]; if (par.origin && par.origin.bornUK === false && h.seg !== 'recent_arrivals' && rng.chance(0.15)) origin.bornUK = true; }
@@ -111,7 +111,7 @@ export function populate(world, rng) {
     }
     for (const m of hm) {
       if (m.role === 'partner' && rng.chance(h.arch.includes('married') ? 0.7 : 0.35)) m.lastName = hm[0].lastName;
-      if (m.role === 'child' || (m.role === 'adult_child' && m.parents)) { const par = hm[m.parents[m.parents.length > 1 && hm[m.parents[1]].sex === 'M' && rng.chance(0.8) ? 1 : 0]]; m.lastName = par.lastName; if (m.parents.length === 1 || rng.chance(0.85)) m.lastName = hm[m.parents[0]].sex === 'M' || m.parents.length === 1 ? hm[m.parents[0]].lastName : hm[m.parents[1]].lastName; }
+      if (m.role === 'child' || (m.role === 'adult_child' && m.parents)) { const ps = m.parents.map((k) => hm[k]), nm = (x) => x && { first: x.firstName, last: x.lastName }; const fa = ps.find((x) => x.sex === 'M'), mo = ps.find((x) => x.sex === 'F'); m.lastName = NAMES.childSurname(rng, m.origin, m.sex, nm(fa), nm(mo), !!fa && (!mo || rng.chance(0.85))); }
       if (m.role === 'parent' || m.role === 'sibling') { /* own surname (mother's maiden name) */ if (m.role === 'sibling' && rng.chance(0.7)) m.lastName = hm[0].lastName; }
       if (m.role === 'grandparent') m.lastName = hm[0].lastName;
       // religion

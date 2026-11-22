@@ -102,9 +102,9 @@ function makeBaby(w, rng, mother, father, hh, marital, k) {
   const sex = rng.chance(0.512) ? 'M' : 'F', yr = w.calendar.dateOf(w.tick).y;
   const mq = mother.ext.pop, fq = father ? father.ext.pop : null;
   const group = fq && fq.eth !== mq.eth ? 'mixed' : mq.eth;
-  const origin = NAMES.pickOrigin(rng, group, yr); origin.bornUK = true; origin.birthplace = 'United Kingdom';
+  const origin = NAMES.childOrigin(rng, group, yr, [fq, mq]);
   const first = NAMES.pickFirst(rng, origin, sex, yr);
-  const last = father && (marital === 'married' || rng.chance(0.5)) ? father.lastName : mother.lastName;
+  const last = NAMES.childSurname(rng, origin, sex, father && { first: father.firstName, last: father.lastName }, { first: mother.firstName, last: mother.lastName }, !!father && (marital === 'married' || rng.chance(0.5)));
   const baby = w.createPerson({ sex, firstName: first, lastName: last, homeId: hh.bid, birthTick: w.tick - k, mother, father: father || null, money: 0 });
   const rel = father && rng.chance(0.2) ? fq.religion : mq.religion;
   buildPop(w, baby, { hh, rng, group, origin, role: 'child', religion: rel, bornUK: true, religiosity: 0, grewUp: 'Larkfield (this neighbourhood)' });

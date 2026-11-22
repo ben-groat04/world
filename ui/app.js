@@ -61,7 +61,7 @@ document.addEventListener('click', (e) => { if (!e.target.closest('#speedpop')) 
 $('pausebtn').addEventListener('click', () => setTier(store.s.tier === 'pause' ? prevTier : 'pause'));
 store.on('ready', (m) => {
   tierLabel = Object.fromEntries(m.tiers.map((t) => [t.id, t.label]));
-  speedEl.innerHTML = m.tiers.map((t) => `<button data-tier="${t.id}" title="${esc(t.hint || t.label)}">${t.id === 'pause' ? '<span class="pi">&#10074;&#10074;</span><span class="pt"> Pause</span>' : esc(t.label)}</button>`).join('');
+  speedEl.innerHTML = m.tiers.map((t) => `<button data-tier="${t.id}" title="${esc(t.hint || t.label)}">${t.id === 'pause' ? '<span class="pi">&#10074;&#10074;</span><span class="pt"> Pause</span>' : `<span class="lf">${esc(t.label)}</span><span class="sh">${esc(t.short || t.label)}</span>`}</button>`).join('');
   speedEl.appendChild($('jump'));
   view.setMap(m.map, m.bld); $('loading').classList.add('gone'); setTimeout(() => $('loading')?.remove(), 700); setTimeout(() => $('map-hint')?.classList.add('gone'), 9000);
   setTier(qs.get('speed') || 'life'); updateSpeedUI(store.s.tier); sizeSync(); view.fit();
@@ -74,6 +74,7 @@ function updateSpeedUI(id) {
   view.timelapse = TL.has(id); document.body.dataset.tier = id; $('speedlbl').textContent = id === 'pause' ? 'Paused' : tierLabel[id] || id; $('pausebtn').classList.toggle('on', id === 'pause'); $('pausebtn').querySelector('.pi').innerHTML = id === 'pause' ? '&#9654;' : '&#10074;&#10074;'; if (id !== 'max') $('jump').classList.remove('busy');
 }
 store.on('speed', updateSpeedUI);
+$('z-next').addEventListener('click', () => $('jump').click());
 $('jump').addEventListener('click', () => { popOpen(false); $('jump').classList.add('busy'); toast('Skipping ahead to the next notable event…', 60000); store.jump(); });
 const WX = { clear: '☀', cloudy: '☁', rain: '☂', snow: '❄', fog: '☁' };
 let lastDate = '';
@@ -107,6 +108,8 @@ function showDigest(f) {
   digestEl.innerHTML = `<button class="dgx" data-dx aria-label="Close">✕</button><div class="dgh">While you were fast-forwarding</div><div class="dgm">${esc(f.date)} to ${esc(t.date)} · ${dur}</div>${counts.length ? `<div class="dgc">${counts.map((c) => `<span>${esc(c)}</span>`).join('')}</div>` : ''}${picks.length ? `<div class="dgl">${picks.map((it) => `<a data-pid="${it.ppl[0].id}"><time>${esc(it.date)}</time> ${esc(it.head)}</a>`).join('')}</div><div class="dgd">Tap a line to see who it is about. Storylines has the long-running ones.</div>` : ''}`;
   digestEl.hidden = false;
 }
+let autoPeek = false; // on a phone the time-lapse needs the map: tuck the sheet down while it runs, and put it back afterwards
+store.on('speed', (id) => { if (!mobile()) return; if (FAST.has(id) && sheet === 'half' && !document.body.classList.contains('playing')) { autoPeek = true; setSheet('peek'); } else if (!FAST.has(id) && autoPeek) { autoPeek = false; if (sheet === 'peek') setSheet('half'); } });
 store.on('speed', (id) => { if (FAST.has(id)) { if (!fast && store.s.time) fast = { tick: store.s.time.tick, date: store.s.time.date, n: {}, top: [] }; jumpedFlag = false; } else if (fast) { const f = fast; fast = null; setTimeout(() => showDigest(f), 80); } });
 store.on('jumped', () => { jumpedFlag = true; });
 store.on('select', () => { digestEl.hidden = true; });
@@ -149,6 +152,29 @@ store.on('building', () => hooks._b && hooks._b());
 store.on('select', (id) => { if (id == null) { view.selected = null; view.follow = null; followBtn.hidden = true; followBtn.classList.remove('on'); } });
 store.on('follow', (on) => { view.follow = on ? store.s.selected : null; followBtn.classList.toggle('on', !!on); if (on) view.goal = null; });
 followBtn.addEventListener('click', () => store.follow());
+
+// ------------------------------------------------------------------ follow a life: pinned mini-card + running timeline (fed by host 'lifeFollow' messages)
+const fcard = document.createElement('div'); fcard.id = 'fcard'; fcard.hidden = true; wrap.appendChild(fcard);
+const FOL = { id: null, items: [], slow: (() => { try { return localStorage.getItem('lf_follow_slow') !== '0'; } catch (e) { return true; } })() };
+const MOODE = (m) => (m > 0.45 ? '😄' : m > 0.15 ? '🙂' : m > -0.15 ? '😐' : m > -0.45 ? '🙁' : '😟');
+function paintFollow() {
+  const on = store.s.following && FOL.id != null; fcard.hidden = !on; document.body.classList.toggle('following', !!on); if (!on) return;
+  const d = store.s.detail && store.s.detail.id === FOL.id ? store.s.detail : null, r = store.s.roster.get(FOL.id), name = d ? d.name : r ? `${r.first} ${r.last}` : 'Someone';
+  const live = FOL.items.slice(0, 5), earlier = d && d.life ? d.life.filter((l) => l.ev && !FOL.items.some((x) => x.tick === l.tick)).slice(-(Math.max(0, 4 - live.length))).reverse() : [];
+  const doing = d && d.now ? d.now.label : '', rows = live.map((x) => `<li class="${x.big ? 'big' : ''}"><time>${esc(x.date)}</time> ${esc(x.text)}${x.slowed ? ' <em>slowed down</em>' : ''}</li>`).concat(earlier.map((l) => `<li class="old"><time>${esc(l.date)}</time> ${esc(l.text)}</li>`));
+  fcard.innerHTML = `<div class="fh"><a class="fn" data-pid="${FOL.id}">${esc(name)}</a>${d ? `<small>${d.age} · ${MOODE(d.health ? d.health.mood : 0)}</small>` : ''}<button class="fx" data-fx aria-label="Stop following">✕</button></div>
+    ${doing ? `<div class="fd">${esc(doing)}</div>` : ''}<ul class="ft">${rows.length ? rows.join('') : '<li class="old">Nothing new yet. Their life events will appear here as they happen.</li>'}</ul>
+    <button class="fs ${FOL.slow ? 'on' : ''}" data-fslow>${FOL.slow ? '✓ ' : ''}Slow down on big moments</button>`;
+}
+function startFollow() { FOL.id = store.s.selected; FOL.items = []; store.post({ cmd: 'followLife', on: FOL.id != null, id: FOL.id, slow: FOL.slow }); paintFollow(); }
+store.on('follow', (on) => { if (on) startFollow(); else { store.post({ cmd: 'followLife', on: false }); FOL.id = null; paintFollow(); } });
+store.on('select', (id) => { if (store.s.following && id != null && id !== FOL.id) { view.follow = id; startFollow(); } else if (id == null) { FOL.id = null; paintFollow(); } });
+store.on('lifeFollow', (m) => { if (m.id !== FOL.id) return; for (const it of m.items) FOL.items.unshift(it); if (FOL.items.length > 12) FOL.items.length = 12; paintFollow(); const big = m.items.find((x) => x.big); if (big && big.slowed) toast(`<b>${esc(big.date)}</b> &mdash; ${esc(big.text)}`, 5000); });
+store.on('detail', () => { if (store.s.following) paintFollow(); });
+fcard.addEventListener('click', (e) => {
+  if (e.target.closest('[data-fx]')) { store.follow(false); return; }
+  if (e.target.closest('[data-fslow]')) { FOL.slow = !FOL.slow; try { localStorage.setItem('lf_follow_slow', FOL.slow ? '1' : '0'); } catch (x) { /* ignore */ } store.post({ cmd: 'followLife', on: true, id: FOL.id, slow: FOL.slow }); paintFollow(); }
+});
 document.addEventListener('click', (e) => {
   if (e.target.closest('#pplay') && store.s.selected != null) { play.take(store.s.selected); return; }
   const fo = e.target.closest('[data-follow]'); if (fo) { selectPerson(+fo.dataset.follow); setTimeout(() => store.follow(true), 400); return; }

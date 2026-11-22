@@ -190,7 +190,7 @@ export class MapView {
       if (!b.vacant) continue; const [sx, sy] = this.toScreen(b.x, b.y), bw = b.w * z, bh = b.h * z; if (!vis(sx, sy, bw, bh)) continue;
       ctx.fillStyle = 'rgba(40,44,52,0.55)'; ctx.fillRect(sx, sy, bw, bh);
       if (z >= 5) { ctx.strokeStyle = 'rgba(20,24,30,0.55)'; ctx.lineWidth = 1; ctx.beginPath(); for (let y = sy + 3; y < sy + bh - 1; y += Math.max(3, z * 0.45)) { ctx.moveTo(sx + 1, y); ctx.lineTo(sx + bw - 1, y); } ctx.stroke(); }
-      if (z >= 6.5) { const fs = clamp(z * 0.8, 9, 12); ctx.font = `italic 600 ${fs}px system-ui`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; const cx = sx + bw / 2, cy = sy + bh / 2; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(10,14,20,.8)'; ctx.strokeText('To let', cx, cy); ctx.fillStyle = '#d8cfb8'; ctx.fillText('To let', cx, cy); }
+      if (z >= 9) { const fs = clamp(z * 0.7, 9, 11); ctx.font = `italic 600 ${fs}px system-ui`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; const cx = sx + bw / 2, cy = sy + Math.min(bh / 2, fs + 4); ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(10,14,20,.8)'; ctx.strokeText('To let', cx, cy); ctx.fillStyle = '#d8cfb8'; ctx.fillText('To let', cx, cy); }
     }
     for (const [id, t] of fresh) { const age = (tick - t) / 144; if (age > 45) continue; const b = this.byId.get(id); if (!b) continue; const [sx, sy] = this.toScreen(b.x, b.y), bw = b.w * z; if (!vis(sx, sy, bw, b.h * z)) continue;
       const a = age < 30 ? 1 : 1 - (age - 30) / 15; ctx.globalAlpha = a; if (z < 6) { ctx.fillStyle = '#4fd1b5'; ctx.strokeStyle = 'rgba(10,14,20,.7)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(sx + bw - 2, sy + 2, 3.5, 0, 7); ctx.fill(); ctx.stroke(); }
@@ -281,16 +281,19 @@ export class MapView {
     const z = this.cam.z; const boxes = []; const hit = (b) => boxes.some((o) => !(b[2] < o[0] || b[0] > o[2] || b[3] < o[1] || b[1] > o[3]));
     const label = (txt, x, y, fs, col = '#fff', pri = false) => { ctx.font = `600 ${fs}px system-ui, sans-serif`; const w = ctx.measureText(txt).width; const box = [x - w / 2, y - fs / 2, x + w / 2, y + fs / 2]; if (!pri && hit(box)) return; boxes.push(box); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineWidth = 3.5; ctx.strokeStyle = 'rgba(10,14,20,0.8)'; ctx.lineJoin = 'round'; ctx.strokeText(txt, x, y); ctx.fillStyle = col; ctx.fillText(txt, x, y); };
     if (z >= 2.2 && z < 9) for (const s of this.map.streets) { if (s.kind === 'alley') continue; const r = s.rect; const cx = r.x + r.w / 2, cy = r.y + r.h / 2; const [sx, sy] = this.toScreen(cx, cy); const vert = r.h > r.w; ctx.save(); ctx.translate(sx, sy); if (vert) ctx.rotate(-Math.PI / 2); ctx.font = `600 ${clamp(z * 1.2, 9, 12)}px system-ui`; ctx.fillStyle = 'rgba(235,240,245,0.75)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(s.name.toUpperCase().split('').join(' '), 0, 0); ctx.restore(); }
+    if (this.timelapse) { const t = this.timelapseBox(ctx); if (t) boxes.push([t.x - 6, t.y - 6, t.x + t.w + 6, t.y + t.h + 6]); }
     if (z >= 6.5) for (const b of this.venueLabels) { const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y + b.h / 2); if (sx < -60 || sy < -20 || sx > this.w + 60 || sy > this.h + 20) continue; label(b.name.length > 22 ? b.name.slice(0, 21) + '…' : b.name, sx, sy - 0, clamp(z * 0.95, 10, 13), '#fff'); }
     if (z >= 2.2) for (const a of this.map.areas) { if (!a.name) continue; const [sx, sy] = this.toScreen(a.rect.x + a.rect.w / 2, a.rect.y + a.rect.h / 2); if (z < 9) label(a.name, sx, sy, 11, '#e6f6cf'); }
     if (this.st && z >= 2.2) { const [x, y] = this.toScreen(this.st.x, this.st.y); label('Station', x, y - Math.max(12, z * 1.4), 11, '#9cd3ff', true); }
     if (this.selB != null && z >= 3) { const b = this.byId.get(this.selB); if (b) { const [sx, sy] = this.toScreen(b.x + b.w / 2, b.y - 1); label(b.name, sx, sy - 4, 12, '#ffd36b', true); } }
     if (this.selected != null) { const p = this.P.get(this.selected), r = this.store.s.roster.get(this.selected); if (p && r && this.visible(p, this.now)) { const [x, y] = this.toScreen(p.x, p.y); label(`${r.first} ${r.last}`, x, y - this.figH(p) - 22, 12, '#ffd36b', true); } }
   }
+  // One compact caption ("Summer 2027 · time-lapse") in the bottom-left corner of the visible map. Its box is reserved in drawLabels so shop names never print under it.
+  timelapseBox(ctx) { const t = this.time; if (!t) return null; const fs = this.w < 700 ? 13 : 16; ctx.font = `700 ${fs}px system-ui`; const txt = `${t.season} ${t.year}`, w = ctx.measureText(txt).width + (this.w < 700 ? 22 : 130), h = fs + 12, x = 10, y = this.h - this.inset - h - 10; return { txt, fs, x, y, w, h }; }
   drawTimelapse(ctx, now) {
-    const t = this.time, txt = `${t.season} ${t.year}`, fs = this.w < 700 ? 22 : 32, y = this.h - this.inset - 54;
-    ctx.font = `700 ${fs}px system-ui`; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; const w = ctx.measureText(txt).width;
-    ctx.fillStyle = 'rgba(8,12,18,0.55)'; ctx.beginPath(); ctx.roundRect(10, y - fs - 12, w + 24, fs + 28, 12); ctx.fill();
-    ctx.fillStyle = 'rgba(255,255,255,0.95)'; ctx.fillText(txt, 22, y); ctx.font = '700 10px system-ui'; ctx.fillStyle = 'rgba(255,211,107,0.9)'; ctx.fillText('TIME-LAPSE', 22, y - fs - 1);
+    const b = this.timelapseBox(ctx); if (!b) return;
+    ctx.fillStyle = 'rgba(8,12,18,0.72)'; ctx.beginPath(); ctx.roundRect(b.x, b.y, b.w, b.h, 10); ctx.fill();
+    ctx.font = `700 ${b.fs}px system-ui`; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.95)'; ctx.fillText(b.txt, b.x + 10, b.y + b.h / 2 + 1);
+    if (this.w >= 700) { const w0 = ctx.measureText(b.txt).width; ctx.font = '700 10px system-ui'; ctx.fillStyle = 'rgba(255,211,107,0.9)'; ctx.fillText('TIME-LAPSE', b.x + 10 + w0 + 8, b.y + b.h / 2 + 1); }
   }
 }

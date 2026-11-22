@@ -53,9 +53,29 @@ export const PATTERNS = [
     { name: 'hello', m: ['tag:welcome'] },
     { name: 'friends', m: ['social.friendship', 'social.confide', 'social.kindness', 'social.acquaint'], repeat: true },
     { name: 'cooled', m: ['social.fallout'], terminal: true, outcome: 'fell out' }] },
-  { kind: 'group_saga', scope: 'person', window: 300, min: 3, stages: [
+  { kind: 'group_saga', scope: 'person', window: 300, min: 2, stages: [
     { name: 'found', m: ['group.founded'] },
-    { name: 'run', m: ['group.joined', 'group.conflict', 'group.leader_changed', 'project.done', 'group.split'], repeat: true },
+    { name: 'run', m: ['group.joined', 'group.conflict', 'group.leader_changed', 'project.done', 'group.split', 'group.rivalry', 'group.institution'], repeat: true },
     { name: 'end', m: ['group.dissolved'], terminal: true, outcome: 'folded' }] },
+  // Variety arcs (FEEL-REVIEW-3): friendships forming, a business rising or struggling, a carer's year, a teenager's first steps, neighbours campaigning.
+  { kind: 'friendship', scope: 'pair', window: 150, span: 300, min: 3, stages: [
+    { name: 'met', m: ['social.acquaint', 'social.introduced'] },
+    { name: 'friends', m: ['social.friendship', 'social.confide', 'social.kindness'], repeat: true },
+    { name: 'cooled', m: ['social.fallout'], terminal: true, outcome: 'fell out' }] },
+  { kind: 'business_saga', scope: 'place', window: 400, min: 2, stages: [
+    { name: 'open', m: ['business.opened'] },
+    { name: 'trading', m: ['business.struggling', 'business.recovered', 'labour.hired'], repeat: true },
+    { name: 'close', m: ['business.closed'], terminal: true, outcome: 'closed down' }] },
+  { kind: 'carer', scope: 'person', window: 300, min: 2, stages: [
+    { name: 'start', m: ['life.caring_start'] },
+    { name: 'toll', m: ['health.episode', 'labour.went_inactive', 'labour.quit', 'money.cost_pressure', 'money.arrears', 'social.kindness', 'social.confide'], repeat: true },
+    { name: 'end', m: ['life.caring_end', 'life.death'], terminal: true, outcome: 'caring came to an end' }] },
+  { kind: 'growing_up', scope: 'person', window: 400, min: 2, stages: [
+    { name: 'milestone', m: ['life.school', 'labour.graduated', 'life.graduate', 'life.leave_home'] },
+    { name: 'steps', m: ['labour.hired', 'life.couple', 'life.leave_home', 'social.friendship', 'housing.moved_out', 'group.joined', 'life.school', 'labour.applied', 'social.fallout'], repeat: true }] },
+  { kind: 'campaign', scope: 'place', allActors: true, window: 90, span: 240, min: 3, stages: [
+    { name: 'complaint', m: ['civic.complaint'], repeat: true },
+    { name: 'organised', m: ['group.founded', 'civic.planning_application', 'social.norm_shift'], repeat: true },
+    { name: 'settled', m: ['civic.case_closed', 'civic.planning_decision'], terminal: true, outcome: 'heard by the council' }] },
 ];
 export const KINDS = PATTERNS.map((p) => p.kind);

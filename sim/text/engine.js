@@ -29,7 +29,7 @@ function prepAlt(a) {
   const lit = String(a.t || '').replace(/\{[^}]*\}|#[^#]*#|\[[^\]]*\]/g, ' ').split(/\s+/).filter(Boolean).length; a._lit = lit;
   return a;
 }
-const DISTINCT_WORDS = 9, SOFT_DAYS = 45, QUOTE_MONTHS = 3;
+const FRESH_TRIES = 10, FRESH_DAYS = 90, DISTINCT_WORDS = 9, SOFT_DAYS = 45, QUOTE_MONTHS = 3;
 function evalCond(val, c) {
   if (Array.isArray(c)) return c.some((x) => evalCond(val, x));
   if (typeof c === 'string') {
@@ -129,6 +129,9 @@ export class TextEngine {
     if (st.ctx.memory !== false && alts.length > 1) { st.used.push(name + '#' + idx); if (alts[idx].once || alts[idx]._lit >= DISTINCT_WORDS) (st.rareUsed ||= []).push(name + '#' + idx); }
     return this._expand(alts[idx].t, st, depth + 1);
   }
+  _sentences(text) { const out = []; for (const raw of String(text).split(/(?<=[.!?"])\s+/)) { const k = raw.replace(/[^\w' ]/g, '').trim().toLowerCase(); if (k.split(/\s+/).length >= 7) out.push(k); } return out; }
+  _staleSentence(text, day) { const m = this.sentDay; if (!m) return false; for (const k of this._sentences(text)) { const d = m.get(k); if (d !== undefined && day - d < FRESH_DAYS) return true; } return false; }
+  _noteSentences(text, day) { const m = this.sentDay || (this.sentDay = new Map()); for (const k of this._sentences(text)) m.set(k, day); if (m.size > 30000) { const it = m.keys(); for (let i = 0; i < 5000; i++) m.delete(it.next().value); } }
   /** Fraction (0.05..1) of a rule's rate-limited lines that are currently free to use; 1 for rules with nothing rate-limited. */
   _avail(name, st) {
     const alts = this.rules.get(name); if (!alts) return 1;
@@ -210,10 +213,13 @@ export class TextEngine {
     const A0 = ctx.a?.id ?? (typeof ctx.a === 'number' ? ctx.a : ''), ck = ctx.seed != null && ctx.cache !== false ? `${keys[0]}|${genre}|${ctx.seed}|${A0}|${typeof evOrKey === 'object' ? evOrKey.id : ''}|${ctx.b?.id ?? ''}|${ctx.s?.id ?? ''}` : null; // same post, same words every time it is shown
     if (ck && this.cache.has(ck)) return this.cache.get(ck);
     let out = '';
-    for (let attempt = 0; attempt < 6; attempt++) {
+    for (let attempt = 0; attempt < FRESH_TRIES; attempt++) {
       const st = this._state(evOrKey, ctx, world, attempt); st.used = []; out = '';
       for (const key of keys) { out = tidy(this._pick(key, st, 0) ?? ''); if (out) break; }
-      if (ctx.memory === false || !out || !this.recentSet.has(out) || attempt === 5) { this.counter++; for (const id of st.used) this.last.set(id, this.counter); if (st.rareUsed) for (const id of st.rareUsed) this.rare.set(id, st.day); break; }
+      // freshness: besides the exact-text memory, a distinctive sentence (>= 7 words) spoken anywhere in town within FRESH_DAYS makes this draw lose to another one
+      // (a pool of a few dozen lines cannot serve ~40 posts a day without repeating, so the engine spends its retries on finding a line nobody has used lately)
+      const stale = ctx.memory !== false && out && attempt < FRESH_TRIES - 1 && this._staleSentence(out, st.day);
+      if (ctx.memory === false || !out || (!this.recentSet.has(out) && !stale) || attempt === FRESH_TRIES - 1) { if (ctx.memory !== false && out) this._noteSentences(out, st.day); this.counter++; for (const id of st.used) this.last.set(id, this.counter); if (st.rareUsed) for (const id of st.rareUsed) this.rare.set(id, st.day); break; }
       this.stats.retries++; this.counter++; for (const id of st.used) this.last.set(id, this.counter);
     }
     if (ctx.memory !== false) { this.recent.push(out); this.recentSet.set(out, (this.recentSet.get(out) || 0) + 1); if (this.recent.length > this.recentN) { const o = this.recent.shift(), n = this.recentSet.get(o) - 1; if (n > 0) this.recentSet.set(o, n); else this.recentSet.delete(o); } }

@@ -6,8 +6,12 @@ import { projectPhrase } from './projectwords.js';
 import { jobNoun } from '../text/jobs.js';
 import { deslash } from '../text/mods.js';
 import { beatSentence } from './beatwords.js';
-const MAXKIND = 3;
-const KIND_W = { romance: 1.35, new_family: 1.3, bereavement: 1.2, illness: 1.15, job_loss: 1.1, breakup: 1.1, money_squeeze: 1.05, falling_out: 1.0, welcome: 1.0, ambition: 0.95, newcomer: 0.85, career: 0.8, scandal: 0.9, group_saga: 0.9 };
+const MAXKIND = 2;
+// What a viewer cares about, by kind. Deliberately NOT ordered by negativity: the grim kinds (money, break-ups, job loss) used to fill every list because they carried the most salience and the highest weights.
+// Stakes here = how much of a person's life the story reshapes (a baby, a carer's year, a first business) rather than how bad it is.
+const KIND_W = { romance: 1.25, new_family: 1.3, bereavement: 1.1, illness: 1.1, job_loss: 0.9, breakup: 0.9, money_squeeze: 0.8, falling_out: 1.0, welcome: 0.8, ambition: 0.95, newcomer: 0.85, career: 0.95, scandal: 0.9, group_saga: 1.2, friendship: 1.15, business_saga: 1.4, carer: 1.4, growing_up: 1.35, campaign: 1.25 };
+const GRIM = new Set(['money_squeeze', 'job_loss', 'breakup']); // the three money-and-break-up kinds share a cap per list, so a hard year does not read as the only story in town
+const MULTI = new Set(['campaign']); // community stories name up to three people
 const NOISE = /^goal\.(step|effect|planned|replanned|deferred|formed)$|^social\.rumour$|^group\.meeting$|^kernel\.|^comms\./;
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 
@@ -94,6 +98,17 @@ const PH = {
   'social.secret': () => null,
   'social.scandal': (p, c) => (p.kind === 'new_couple' ? 'had a new romance become the talk of the street' : p.kind === 'lost_job' ? 'had news of a job loss get round' : p.kind === 'family_news' ? 'had family news get round' : p.kind === 'moving_out' ? 'had word get round of a move' : null),
   'group.founded': (p) => 'started ' + (p.name || 'a group') + (p.kind && p.name && !new RegExp(p.kind, 'i').test(p.name) ? ', ' + aAn(p.kind) : ''),
+  'group.institution': () => ({ t: 'saw the group become a fixture of the neighbourhood', st: 'running a well-established group' }),
+  'group.rivalry': () => 'ended up in a rivalry with another group',
+  'business.opened': (p) => ({ t: 'opened ' + (p.name || 'a new business'), st: 'running ' + (p.name || 'a business') }),
+  'business.struggling': (p) => ({ t: 'saw ' + (p.name || 'the business') + ' cut staff and hours to get by', st: 'fighting to keep ' + (p.name || 'the business') + ' going' }),
+  'business.recovered': (p) => ({ t: 'got ' + (p.name || 'the business') + ' back on its feet', st: 'back on an even keel' }),
+  'business.closed': (p) => 'saw ' + (p.name || 'the business') + ' close' + (p.reason === 'insolvent' ? ' for good' : ''),
+  'life.school': (p) => (p.stage === 'university' ? 'started university' : p.stage === 'work' ? 'left education for work' : p.stage === 'secondary' ? 'started secondary school' : p.stage === 'sixth_form' || p.stage === 'college' ? 'started college' : null),
+  'labour.graduated': () => 'finished studying and went looking for work',
+  'social.introduced': (p, c) => { const o = other(c, c.ev); return o ? 'was introduced to ' + o + ' by a friend' : 'was introduced to a friend of a friend'; },
+  'civic.planning_application': (p) => 'saw a planning application go in nearby', 'civic.planning_decision': (p) => 'heard the planning decision' + (p.outcome ? ' (' + lc(p.outcome) + ')' : ''), 'civic.case_closed': () => 'had the complaint closed',
+  'social.norm_shift': () => 'saw the street change its mind about something',
   'group.joined': () => 'joined a local group', 'group.conflict': (p, c) => 'clashed at a meeting' + placeOf(c.w, c.ev), 'group.dissolved': (p) => (p.why === 'never got going' ? 'saw the group fold before it got going' : 'saw the group fold'),
   'group.leader_changed': (p) => (p.how === 'challenge' ? 'ousted the group\'s leader' : 'took over running the group'), 'group.split': () => 'split the group',
   'civic.complaint': (p) => 'complained to the council' + (COMPLAIN[p.kind] ? ' about ' + COMPLAIN[p.kind] : ''),
@@ -108,15 +123,15 @@ const PH = {
 const KEY = (t) => ({ 'life.move_out': 'move', 'housing.moved_out': 'move', 'life.move_in': 'movein', 'housing.moved_in': 'movein', 'goal.failed': 'goalend', 'goal.abandoned': 'goalend', 'life.death': 'death', 'life.kin_death': 'death', 'labour.job_lost': 'jobend', 'labour.quit': 'jobend', 'social.acquaint': 'meet', 'social.friendship': 'friend', 'life.breakup': 'split', 'life.divorce': 'split', 'money.cost_pressure': 'squeeze', 'housing.rent_rise': 'rent' }[t] || t);
 const hisOf = (w, ids) => { if (ids.length !== 1) return 'their'; const p = w.people.get(ids[0]); return p && p.sex === 'F' ? 'her' : p && p.sex === 'M' ? 'his' : 'their'; };
 
-const KIND_LEAD = { romance: 'Love story', breakup: 'After the break-up', new_family: 'A growing family', job_loss: 'Out of work', money_squeeze: 'Money getting tight', newcomer: 'New to the street', falling_out: 'A falling out', illness: 'Health scare', bereavement: 'Bereavement', career: 'Getting on', scandal: 'Word on the street', ambition: 'A plan', welcome: 'Neighbours', group_saga: 'A club story' };
+const KIND_LEAD = { romance: 'Love story', breakup: 'After the break-up', new_family: 'A growing family', job_loss: 'Out of work', money_squeeze: 'Money getting tight', newcomer: 'New to the street', falling_out: 'A falling out', illness: 'Health scare', bereavement: 'Bereavement', career: 'Getting on', scandal: 'Word on the street', ambition: 'A plan', welcome: 'Neighbours', group_saga: 'A club story', friendship: 'A new friendship', business_saga: 'Open for business', carer: 'Caring', growing_up: 'Growing up', campaign: 'Neighbours campaigning', rivalry: 'An ongoing feud', reconciliation: 'Made up', settling_in: 'Settling in' };
 export const kindLabel = (k) => KIND_LEAD[k] || lc(k);
 const firstName = (w, id) => { const p = w.people.get(id); return p ? p.firstName : 'someone'; };
 /** Protagonist display names: first names, full only when two share one. */
 function nameList(w, ids) { const f = ids.map((i) => firstName(w, i)); return f.map((n, i) => (f.indexOf(n) !== i ? n + ' ' + ((w.people.get(ids[i]) || {}).lastName || '') : n).trim()); }
 export const namesOf = (w, ids) => { const n = nameList(w, ids); return n.length > 2 ? n.slice(0, -1).join(', ') + ' & ' + n.at(-1) : n.join(' & '); };
 const PAIRED = new Set(['life.couple', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.engaged', 'life.marriage', 'life.pregnant', 'life.birth', 'social.friendship', 'social.fallout', 'social.reconcile', 'social.flirt', 'life.caring_start']);
-const PAIR = new Set(['romance', 'breakup', 'falling_out', 'welcome', 'new_family']); // stories about two people; the rest follow one person and name others as they appear
-const protagonists = (arc, w) => arc.actors.filter((a) => typeof a === 'number' && w.people.get(a)).slice(0, PAIR.has(arc.kind) ? 2 : 1);
+const PAIR = new Set(['romance', 'breakup', 'falling_out', 'welcome', 'new_family', 'friendship']); // stories about two people; the rest follow one person and name others as they appear
+const protagonists = (arc, w) => arc.actors.filter((a) => typeof a === 'number' && w.people.get(a)).slice(0, PAIR.has(arc.kind) ? 2 : MULTI.has(arc.kind) ? 3 : 1);
 
 /** One event as a subject-free clause: {t (past), st (state form or ''), key}, or null when it is mundane/sensitive/unknown. */
 export function clauseOf(ev, w, ids) {
@@ -183,29 +198,56 @@ function beatLine(b, w, arc, prevTick, tpd) {
     const t = beatSentence(b, pl, c, null); return t || plain;
   } catch (e) { return plain; }
 }
+// A card's label says what the story *is now*, not just which pattern opened it: a falling-out that has run on is a feud, one that ended well is a reconciliation,
+// a newcomer who has made friends is settling in. Display only; the arc and its kind are untouched.
+export function labelKindOf(a) {
+  if (a.kind === 'falling_out') return a.outcome === 'made up' ? 'reconciliation' : a.beats.length >= 4 ? 'rivalry' : 'falling_out';
+  if (a.kind === 'newcomer' && a.status !== 'open' && a.outcome !== 'left again') return 'settling_in';
+  if (a.kind === 'newcomer' && a.beats.length >= 4) return 'settling_in';
+  return a.kind;
+}
+// Resolutions that read as a payoff (the viewer wanted to know how it ended).
+const PAYOFF = new Set(['made up', 'back at work', 'got back on top of it', 'recovered', 'pulled it off', 'moved on', 'closed down', 'caring came to an end', 'heard by the council']);
+const STALE_DAYS = 40; // an unchanged story is listed for this long, then rests until it has a new beat (or the list would be thin)
 /**
  * The stories worth following right now.
+ * Rank = what the beats carried (salience) x recency x variety of what happened x what a viewer cares about (KIND_W, not ordered by misery)
+ *        x novelty (kinds / protagonists not already featured lately get the airtime) x payoff (a story that just resolved is news).
+ * Airtime memory lives on the sifter (sifter.air), keyed by arc id: when a story's beat count has not changed for STALE_DAYS it is rested, so the
+ * same headline is not listed fortnight after fortnight.
  * @param {import('./sifter.js').Sifter} sifter  @param {object} w world  @param {{limit?:number, now?:number}} o
  */
 export function storylines(sifter, w, { limit = 6, now = w.tick } = {}) {
-  const tpd = sifter.tpd, cand = [];
+  const tpd = sifter.tpd, cand = [], air = sifter.air || (sifter.air = new Map()), feat = sifter.featured || (sifter.featured = []);
+  while (feat.length && now - feat[0].tick > 150 * tpd) feat.shift();
+  const recentKind = {}, recentWho = new Set(); for (const f of feat) { recentKind[f.kind] = (recentKind[f.kind] || 0) + 1; for (const x of f.who) recentWho.add(x); }
   for (const a of sifter.arcs) {
     if (!a.confirmed || a.quiet) continue; const idle = (now - a.last) / tpd; if (idle > (a.status === 'open' ? 150 : 60)) continue;
     const types = new Set(a.beats.filter((b) => PH[b.type] && b.stage !== 'consequence').map((b) => b.type)); if (types.size < 2) continue;
     const living = a.actors.filter((id) => typeof id === 'number' && w.people.get(id) && w.people.get(id).alive); if (!living.length) continue;
-    const rank = a.sum * Math.exp(-idle / 70) * (1 + 0.2 * Math.min(5, types.size)) * (KIND_W[a.kind] ?? 1) * (a.status === 'open' ? 1 : 0.8);
-    cand.push({ a, rank, types: types.size });
+    if (a.kind === 'growing_up') { const pr = w.people.get(living[0]); if (!pr || w.ageOf(pr) > 23) continue; }
+    if (a.kind === 'campaign' && living.length < 2) continue;
+    const lk = labelKindOf(a);
+    // novelty: each recent feature of the same label kind halves its appeal a little; a protagonist featured lately counts less (a new face is a new story)
+    const novel = 1 / (1 + 0.45 * (recentKind[lk] || 0)) * (living.some((x) => recentWho.has(x)) ? 0.8 : 1);
+    const payoff = a.status !== 'open' && PAYOFF.has(a.outcome) && idle < 30 ? 1.5 : a.status === 'open' ? 1 : 0.8;
+    const rank = Math.pow(a.sum, 0.7) * Math.exp(-idle / 70) * (1 + 0.2 * Math.min(5, types.size)) * (KIND_W[a.kind] ?? 1) * novel * payoff;
+    const st = air.get(a.id); const stale = st && st.n === a.beats.length && now - st.since > STALE_DAYS * tpd;
+    cand.push({ a, rank, types: types.size, lk, stale });
   }
   cand.sort((x, y) => y.rank - x.rank);
-  const used = new Set(), perKind = {}, out = [];
-  for (const c of cand) {
-    const a = c.a; if (a.actors.some((x) => used.has(x))) continue; if ((perKind[a.kind] || 0) >= MAXKIND) continue;
-    const beats = beatsOf(a, w, 5); if (beats.length < 2) continue;
-    used.add(a.actors[0]); for (const x of a.actors) used.add(x); perKind[a.kind] = (perKind[a.kind] || 0) + 1;
-    out.push({ id: a.id, kind: a.kind, label: kindLabel(a.kind), status: a.status, outcome: a.outcome, headline: headlineOf(a, w), actors: a.actors.filter((x) => typeof x === 'number').slice(0, 3).map((id) => ({ id, name: firstName(w, id) + ' ' + (w.people.get(id)?.lastName || '') })),
+  const used = new Set(), perKind = {}, out = [], rested = [];
+  const take = (c) => {
+    const a = c.a; if (a.actors.some((x) => used.has(x))) return false; if ((perKind[c.lk] || 0) >= MAXKIND) return false; if (GRIM.has(c.lk) && (perKind.grim || 0) >= 2) return false;
+    const beats = beatsOf(a, w, 5); if (beats.length < 2) return false;
+    used.add(a.actors[0]); for (const x of a.actors) used.add(x); perKind[c.lk] = (perKind[c.lk] || 0) + 1; if (GRIM.has(c.lk)) perKind.grim = (perKind.grim || 0) + 1;
+    out.push({ id: a.id, kind: c.lk, label: kindLabel(c.lk), status: a.status, outcome: a.outcome, headline: headlineOf(a, w), actors: a.actors.filter((x) => typeof x === 'number').slice(0, 3).map((id) => ({ id, name: firstName(w, id) + ' ' + (w.people.get(id)?.lastName || '') })),
       beats: beats.map((b, i) => ({ tick: b.tick, date: w.calendar.formatDate(b.tick), text: beatLine(b, w, a, i ? beats[i - 1].tick : null, tpd) })), since: Math.max(1, Math.round((now - a.start) / tpd)), idle: Math.round((now - a.last) / tpd), rank: Math.round(c.rank * 100) / 100 });
-    if (out.length >= limit) break;
-  }
+    const st = air.get(a.id); if (!st || st.n !== a.beats.length) { air.set(a.id, { n: a.beats.length, since: now }); feat.push({ tick: now, kind: c.lk, who: a.actors.filter((x) => typeof x === 'number').slice(0, 2) }); }
+    return true;
+  };
+  for (const c of cand) { if (out.length >= limit) break; if (c.stale) { rested.push(c); continue; } take(c); }
+  for (const c of rested) { if (out.length >= Math.min(limit, 3)) break; take(c); } // never leave the list empty just because everything is old news
   return out;
 }
 /** One line for a person's inspector: their strongest live story, or null. */

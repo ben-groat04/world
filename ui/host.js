@@ -2,7 +2,7 @@
 // Worker-safe (no DOM). Used by ui/worker.js (off-thread) and by ui/store.js (main-thread fallback).
 import { createLarkfieldWorld } from '../sim/larkfield.js';
 import { installSifter } from '../sim/sifter/index.js';
-import { storylines, storyOf } from '../sim/sifter/storylines.js';
+import { storylines, storyOf, clauseOf } from '../sim/sifter/storylines.js';
 import { TextEngine } from '../sim/text/engine.js';
 import textPack from '../content/larkfield/text/index.js';
 import { SEGMENTS } from '../content/larkfield/segments.js';
@@ -13,10 +13,15 @@ import { isPrivate, townData, bizBrief, noticesAt, pinList, crimeSample, adminDa
 import { GOD_COMMANDS, GOD_PRESETS, themeOf } from './godcatalogue.js';
 import { PlayHost } from './play/host-play.js';
 
+// Event types that belong in a followed person's running timeline, and the ones that are a big moment (a reason to slow down).
+const FOLLOW_TYPES = ['life.couple', 'life.cohabit', 'life.engaged', 'life.marriage', 'life.pregnant', 'life.birth', 'life.breakup', 'life.divorce', 'life.move_out', 'life.move_in', 'life.leave_home', 'life.death', 'life.kin_death', 'life.graduate', 'life.school', 'life.caring_start', 'life.caring_end',
+  'labour.hired', 'labour.job_lost', 'labour.quit', 'labour.promoted', 'labour.pay_rise', 'labour.graduated', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.eviction', 'housing.notice_served', 'housing.rent_rise', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.recovered',
+  'money.arrears', 'money.arrears_cleared', 'money.debt_spiral', 'social.friendship', 'social.fallout', 'social.reconcile', 'group.joined', 'group.founded', 'business.opened', 'business.closed'];
+const BIG_MOMENTS = new Set(['life.couple', 'life.cohabit', 'life.engaged', 'life.marriage', 'life.pregnant', 'life.birth', 'life.breakup', 'life.divorce', 'life.move_out', 'life.leave_home', 'life.death', 'life.kin_death', 'life.graduate', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'housing.moved_in', 'housing.moved_out', 'housing.eviction', 'health.diagnosis', 'health.crisis', 'business.opened', 'business.closed']);
 export const TIER_LIST = [
-  { id: 'pause', label: 'Pause', hint: 'Space' },
-  { id: 'scene', label: 'Scene', hint: 'Watch the street live: about 1 game-hour per second' },
-  { id: 'life', label: 'Lifetime', hint: 'An 80-year life in about an hour' },
+  { id: 'pause', label: 'Pause', short: 'Pause', hint: 'Space' },
+  { id: 'scene', label: 'Scene', short: 'Scene', hint: 'Watch the street live: about 1 game-hour per second' },
+  { id: 'life', label: 'Lifetime', short: 'Life', hint: 'An 80-year life in about an hour' },
   { id: 'x3', label: '×3', hint: 'Three times Lifetime: a life in about 20 minutes' },
   { id: 'x8', label: '×8', hint: 'Eight times Lifetime (a fast device may reach it; otherwise as fast as it can)' },
   { id: 'max', label: 'Max', hint: 'As fast as this device can go' },
@@ -48,6 +53,10 @@ export class Host {
     while (w.time.hourFloat < 6.8 || w.time.hourFloat > 7.2) { w.step(); if (w.tick > 400) break; } // open the day at about 07:00
     this.sampleStats();
     for (const t of NEWS_TYPES) if (w.events.registry.has(t)) w.on(t, (ev) => this.onEvent(ev));
+    // "Follow a life": while one person is followed, the events of their own life are phrased (same wording as the storylines) and sent as they happen.
+    // Registered once per event type; each handler is a single id comparison when nobody is followed.
+    this.lifeFollow = null;
+    for (const t of FOLLOW_TYPES) if (w.events.registry.has(t)) w.on(t, (ev) => { if (this.lifeFollow) this.onFollowEvent(ev); });
     this.seenPop = -1; this.pins = new Map(); this.fresh = new Map(); this.townSig = '';
     if (w.events.registry.has('business.venueChanged')) w.on('business.venueChanged', (ev) => this.onVenue(ev));
     if (w.events.registry.has('business.opened')) w.on('business.opened', (ev) => { if (ev.place != null) { this.fresh.set(ev.place, ev.tick); this.send({ t: 'fresh', id: ev.place, tick: ev.tick }); } });
@@ -106,6 +115,14 @@ export class Host {
 
   // ------------------------------------------------------------------ events -> feeds
   onVenue(ev) { const pl = ev.payload || {}; this.send({ t: 'venue', id: ev.place, name: pl.name, tpl: pl.to, cat: pl.category, vacant: pl.to === 'vacant_unit', variant: pl.variant || null, tick: ev.tick }); this.townSig = ''; }
+  onFollowEvent(ev) {
+    const lf = this.lifeFollow, id = lf.id; if (!ev.actors || !ev.actors.includes(id) || isPrivate(ev)) return;
+    const w = this.w, p = w.people.get(id); if (!p) return; const c = clauseOf(ev, w, [id]); if (!c || !c.t) return;
+    const big = BIG_MOMENTS.has(ev.type) && (ev.type !== 'life.death' || ev.actors[0] !== id), t = c.t + (c.x || '');
+    lf.out.push({ tick: ev.tick, date: w.calendar.formatDate(ev.tick), text: `${p.firstName} ${t}.`, big, type: ev.type });
+    if (lf.out.length > 40) lf.out.shift();
+    if (big && lf.slow && (this.tier === 'x3' || this.tier === 'x8' || this.tier === 'max')) { this.setTier('life'); lf.out[lf.out.length - 1].slowed = true; }
+  }
   onEvent(ev) {
     if (isPrivate(ev)) return;
     const w = this.w; const it = newsFor(w, this.text, ev, this); this.play.onEvent(ev, it); if (!it) return;
@@ -157,6 +174,7 @@ export class Host {
     const occ = []; for (const b of w.buildings.values()) if (b.occupants && b.occupants.size) occ.push(b.id, b.occupants.size);
     const time = this.timeInfo(); time.off = off; time.rate = this.rate; time.tier = this.tier;
     this.send({ t: 'frame', time, people: pk, occ: new Int16Array(occ) }, [pk.buffer]);
+    if (this.lifeFollow && this.lifeFollow.out.length) this.send({ t: 'lifeFollow', id: this.lifeFollow.id, items: this.lifeFollow.out.splice(0) });
     if (w.people.size !== this.lastRoster) this.sendRoster();
     this.releaseHeld();
     if (this.newsOut.length) { this.send({ t: 'news', items: this.newsOut.splice(0, 200) }); }
@@ -275,7 +293,8 @@ export class Host {
   command(m) {
     switch (m.cmd) {
       case 'setSpeed': this.setTier(m.tier); break;
-      case 'select': this.selected = m.id; this.lastDetail = 0; break;
+      case 'select': this.selected = m.id; this.lastDetail = 0; if (this.lifeFollow && this.lifeFollow.id !== m.id) this.lifeFollow = null; break;
+      case 'followLife': this.lifeFollow = m.on && m.id != null ? { id: m.id, slow: m.slow !== false, out: [] } : null; break;
       case 'building': this.send({ t: 'building', b: this.buildingDetail(m.id) }); break;
       case 'directory': this.send({ t: 'directory', list: this.directory() }); break;
       case 'jump': this.jump = { min: m.min ?? 0.5, start: this.w.tick, limit: this.w.tick + this.TPY * 2 }; this.setTier('max'); break;

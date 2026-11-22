@@ -7,6 +7,9 @@ import { bedsNeeded, bedsOf, buildPop } from './moves.js';
 
 const BANDS = [[15, 19, '15-19'], [20, 24, '20-24'], [25, 29, '25-29'], [30, 34, '30-34'], [35, 39, '35-39'], [40, 44, '40+']];
 const PARITY_W = [1.0, 0.95, 0.38, 0.14, 0.06];
+// ~11% of recognised pregnancies end in miscarriage (NHS / RCOG: about 1 in 8). ASFR counts LIVE births, so the hazard of a conception must be ASFR/(1-MISCARRIAGE);
+// before, conception was drawn at the live-birth rate and then 11% were lost again, i.e. births ran ~11% below the national rate by construction of the pipeline.
+const MISCARRIAGE = 0.11;
 export const FERT_REF = 0.22; // circumstance weight of the 'reference' woman whose conception hazard equals the national age-specific rate (partnered, parity 0-1, average desire)
 
 function stateWeight(w, p, L) {
@@ -24,8 +27,8 @@ export function monthlyFertility(w, rng, people) {
   const bands = BANDS.map(() => ({ n: 0, el: [], sum: 0 }));
   for (const p of people) {
     if (p.sex !== 'F') continue; const age = ageOf(w, p); if (age < 15 || age >= 45) continue;
-    const bi = age < 20 ? 0 : age < 25 ? 1 : age < 30 ? 2 : age < 35 ? 3 : age < 40 ? 4 : 5; if (age < 16) continue;
-    const L = p.ext.life, B = bands[bi]; B.n++; (st.wm || (st.wm = [0, 0, 0, 0, 0, 0]))[bi]++; // woman-months by band: exposure for a proper period TFR (births / woman-years per band x 5)
+    const ab = age + 0.75, bi = ab < 20 ? 0 : ab < 25 ? 1 : ab < 30 ? 2 : ab < 35 ? 3 : ab < 40 ? 4 : 5; if (age < 16) continue; // ASFR is by age at BIRTH: a conception now is a birth ~9 months older
+    const L = p.ext.life, B = bands[bi]; B.n++; (st.wm || (st.wm = [0, 0, 0, 0, 0, 0]))[age < 20 ? 0 : age < 25 ? 1 : age < 30 ? 2 : age < 35 ? 3 : age < 40 ? 4 : 5]++; // woman-months by band: exposure for a proper period TFR (births / woman-years per band x 5) (st.wm || (st.wm = [0, 0, 0, 0, 0, 0]))[age < 20 ? 0 : age < 25 ? 1 : age < 30 ? 2 : age < 35 ? 3 : age < 40 ? 4 : 5]++; // woman-months by band: exposure for a proper period TFR (births / woman-years per band x 5)
     if (L.preg || L.away) continue;
     if (p.ext.hl && (p.ext.hl.dying || (p.ext.hl.c && p.ext.hl.c.cancer))) continue;
     let wt = stateWeight(w, p, L); if (wt <= 0) continue;
@@ -38,8 +41,8 @@ export function monthlyFertility(w, rng, people) {
     B.el.push([p, wt]); B.sum += wt;
   }
   bands.forEach((B, i) => {
-    if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000, k = 1 / (((w.settings.tune || {}).fertRef) ?? FERT_REF);
-    for (const [p, wt] of B.el) { st.expH = (st.expH || 0) + Math.min(0.12, rate * wt * k * scale); st.expN = (st.expN || 0) + 1; } for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
+    if (!B.el.length) return; const rate = (asfr[BANDS[i][2]] || 0) / 12000 / (1 - MISCARRIAGE), k = 1 / (((w.settings.tune || {}).fertRef) ?? FERT_REF);
+    for (const [p, wt] of B.el) if (rng.chance(Math.min(0.12, rate * wt * k * scale))) later(w, rng.int(1, 27) * 144, 'conceive', { m: p.id });
   });
 }
 
@@ -47,7 +50,7 @@ export const fertHandlers = {
   conceive(w, d) {
     const m = w.people.get(d.m); if (!m || !m.alive) return; const L = m.ext.life; if (L.preg || L.away) return;
     const rng = w.rngFor('life.preg'), pt = L.part, fa = pt && pt.on ? w.people.get(pt.id) : null;
-    const due = w.tick + days(rng.float(268, 290)) - (rng.chance(0.08) ? days(rng.float(10, 40)) : 0), mis = rng.chance(0.11);
+    const due = w.tick + days(rng.float(268, 290)) - (rng.chance(0.08) ? days(rng.float(10, 40)) : 0), mis = rng.chance(MISCARRIAGE);
     L.preg = { t0: w.tick, due, father: fa ? fa.id : pt && !pt.on ? pt.id : null, fOn: !!fa, mis };
     if (mis) later(w, days(rng.float(40, 85)), 'miscarry', { m: m.id, t0: w.tick });
     else { later(w, days(84), 'announce', { m: m.id, t0: w.tick }); later(w, due - w.tick, 'birth', { m: m.id, t0: w.tick }); }

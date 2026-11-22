@@ -44,7 +44,7 @@ export function createSocial() {
   init(world) {
     W = world; const S = world.soc = newSoc(); registerAll(world, EVENTS);
     S.seg = {}; S.metro = new Map(world.lf.metro.map((m) => [m.id, m]));
-    for (const p of world.people.values()) if (p.alive && p.ext && p.ext.pop && !S.ppl.has(p.id)) importPerson(world, S, p);
+    for (const p of world.living()) if (p.ext && p.ext.pop && !S.ppl.has(p.id)) importPerson(world, S, p);
     world.archiveHooks.push((p) => { const S = world.soc; S.ppl.delete(p.id); if (S.bk) { const b = S.bk[p.id % 168], i = b.indexOf(p.id); if (i >= 0) b.splice(i, 1); } }); // departed people leave the social graph (kernel/archive.js)
     rebuild(world, S); S.venues = buildVenues(world).map((v) => ({ id: v.id, soc: v.soc, t: v.t }));
     S.stats.yr.y0 = world.tick;

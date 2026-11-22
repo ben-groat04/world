@@ -10,7 +10,7 @@ export function initLife(w) {
   lf.life = { ver: 1, q: [], rec: {}, stats: {}, mid: 1, fertScale: 1, boom: 0, seeded: w.tick, first: {}, yearStats: [] };
   const T0 = w.tick;
   for (const m of lf.metro) { if (m.t0 === undefined) m.t0 = T0; if (m.dead === undefined && m.age >= 95 && m.kin) m.dead = T0 - Math.round(rng.float(0.2, 12) * w.calendar.ticksPerYear); }
-  const people = [...w.people.values()].filter((p) => p.alive && p.ext.pop);
+  const people = w.living().filter((p) => p.ext.pop);
   for (const p of people) lifeFor(w, p, rng);
 }
 /** (re)build the life-course record of one person from what the population / household data says (founders, and newcomers added by other packages). */

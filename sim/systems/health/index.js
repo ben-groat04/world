@@ -69,8 +69,8 @@ export function createHealth() {
       if (!world.stateKeys.includes('lf')) world.stateKeys.push('lf');
       initService(world);
       const rng = world.rngFor('health.init');
-      for (const p of world.people.values()) if (p.alive && p.ext.pop && !p.ext.hl) p.ext.hl = hlFor(world, p, rng, false);
-      for (const p of world.people.values()) if (p.alive && p.ext.hl) { const hl = p.ext.hl; hl.base = p.health; hl.burden0 = hl.burden0; }
+      for (const p of world.living()) if (p.ext.pop && !p.ext.hl) p.ext.hl = hlFor(world, p, rng, false);
+      for (const p of world.living()) if (p.ext.hl) { const hl = p.ext.hl; hl.base = p.health; hl.burden0 = hl.burden0; }
     },
     clocks: {
       day: (w) => { subscribe(w); dailySick(w); monthly(w); },

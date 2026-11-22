@@ -132,6 +132,6 @@ export default {
   init(world, pack) {
     const ctx = world.rtx = makeCtx(world, pack);
     world._agendaPerson = (p) => wake(world, ctx, p);
-    for (const p of world.people.values()) if (p.alive && p.ext.pop) initPerson(world, ctx, p);
+    for (const p of world.living()) if (p.ext.pop) initPerson(world, ctx, p);
   },
 };

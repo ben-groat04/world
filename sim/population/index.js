@@ -103,6 +103,13 @@ export function populate(world, rng) {
       m.origin = origin;
       m.birthTick = birthTickOf(m.age);
     }
+    // siblings: birthdays were drawn independently inside each age year, which can put two children of the same mother only weeks apart. Biologically a mother cannot
+    // bear two singletons closer than ~9 months (a pregnancy is ~40 weeks), so a closer pair of the same age is either twins (one shared birth tick, ~1.6% of births x same-age
+    // pairs) or the older child's birthday is moved earlier to a feasible gap. Youngest first so the shift ripples toward the eldest.
+    { const MIN_GAP = Math.round(39 * 7 * cl.ticksPerYear / 365), groups = new Map();
+      for (const m of hm) if (m.parents && m.parents.length && (m.role === 'child' || m.role === 'adult_child')) { const k = m.parents.join(','); (groups.get(k) || groups.set(k, []).get(k)).push(m); }
+      for (const g of groups.values()) { g.sort((a, b) => b.birthTick - a.birthTick); // youngest (latest birth) first
+        for (let i = 0; i + 1 < g.length; i++) { const y = g[i], o = g[i + 1]; if (y.birthTick - o.birthTick < MIN_GAP) { if (y.age === o.age && rng.chance(0.2)) o.birthTick = y.birthTick; else o.birthTick = y.birthTick - MIN_GAP - rng.int(0, 90 * 144); } } } }
     // names: children share the head's surname; couples share with prob; religion; everything else per person
     for (let i = 0; i < hm.length; i++) {
       const m = hm[i];

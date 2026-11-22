@@ -82,7 +82,7 @@ export class Engine {
   // ---------------- scanning (goal generation) ----------------
   seedPeople() {
     const w = this.world;
-    for (const p of w.people.values()) if (p.alive && !this.S.ps.has(p.id)) { const s = this.ps(p); s.nextScan = w.tick + (hash32(w.seed, 'sc0', p.id) % (PERIOD * TICKS_PER_DAY)) + 1; this.scanHeap.push({ k: s.nextScan, id: p.id }); }
+    for (const p of w.living()) if (!this.S.ps.has(p.id)) { const s = this.ps(p); s.nextScan = w.tick + (hash32(w.seed, 'sc0', p.id) % (PERIOD * TICKS_PER_DAY)) + 1; this.scanHeap.push({ k: s.nextScan, id: p.id }); }
     this.S.nPeople = w.people.size;
     if (this.cfg.flags.groups && this.opts.seedGroups !== false) this.groups.seed();
   }

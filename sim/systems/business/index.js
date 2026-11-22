@@ -274,7 +274,7 @@ export function createBusiness() {
 
   // ============================================================================================================== regulars / third places
   const favKeys = (slot) => (slot === 'shops' ? ['shops'] : [slot]);
-  function regularsOf(bid) { const out = [], tm = venueOf(bid).template, slot = FAV_SLOT[tm]; if (!slot) return out; for (const p of W.people.values()) { const f = p.alive && p.ext.rt && p.ext.rt.life && p.ext.rt.life.fav; if (f && (slot === 'shops' ? f.shops && f.shops.includes(bid) : f[slot] === bid)) out.push(p.id); } return out; }
+  function regularsOf(bid) { const out = [], tm = venueOf(bid).template, slot = FAV_SLOT[tm]; if (!slot) return out; for (const p of W.living()) { const f = p.ext.rt && p.ext.rt.life && p.ext.rt.life.fav; if (f && (slot === 'shops' ? f.shops && f.shops.includes(bid) : f[slot] === bid)) out.push(p.id); } return out; }
   function candidates(slot) { const out = []; for (const B of trading()) if (FAV_SLOT[B.tmpl] === slot) out.push(B); return out; }
   const wantPl = (p) => { const n = p.ext.pop.fin ? p.ext.pop.fin.net : 20000; return n < 16000 ? 1 : n < 30000 ? 2 : 3; };
   function pickFav(p, cands, curBid, rng) {
@@ -294,8 +294,8 @@ export function createBusiness() {
   }
   function churnFavs() { // monthly: a few people try somewhere else (new openings get a trial boost; poorer residents drift from premium places; habit keeps most put)
     const rng = rngm('churn'), cache = {}; const slots = ['cafe', 'pub', 'takeaway', 'barber', 'launderette']; let moved = 0;
-    for (const p of W.people.values()) {
-      if (!p.alive || !p.ext.rt || !p.ext.rt.life || !p.ext.rt.life.fav) continue; const f = p.ext.rt.life.fav; fixFavs(p, rng, cache);
+    for (const p of W.living()) {
+      if (!p.ext.rt || !p.ext.rt.life || !p.ext.rt.life.fav) continue; const f = p.ext.rt.life.fav; fixFavs(p, rng, cache);
       for (const slot of slots) { if (f[slot] === undefined || !rng.chance(0.035)) continue; const n = pickFav(p, cache[slot] || (cache[slot] = candidates(slot)), f[slot], rng); if (n != null && n !== f[slot]) { f[slot] = n; moved++; } }
       if (f.shops && rng.chance(0.03)) { const c = cache.shops || (cache.shops = candidates('shops')), n = pickFav(p, c, f.shops[0], rng); if (n != null && n !== f.shops[0]) { f.shops[0] = n; if (f.shops[1] === n) f.shops.splice(1, 1); moved++; } }
     }
@@ -304,7 +304,7 @@ export function createBusiness() {
 
   // ============================================================================================================== openings
   function ctxNames(rng, owner) {
-    const eth = {}; for (const p of W.people.values()) if (p.alive) { const e = p.ext.pop.eth; eth[e] = (eth[e] || 0) + 1; }
+    const eth = {}; for (const p of W.living()) { const e = p.ext.pop.eth; eth[e] = (eth[e] || 0) + 1; }
     const tot = Object.values(eth).reduce((a, b) => a + b, 0) || 1, sh = (...k) => k.reduce((s, x) => s + (eth[x] || 0), 0) / tot;
     const cuisineW = { south_asian: 0.3 + 3 * sh('pakistani', 'bangladeshi', 'indian'), caribbean: 0.1 + 3 * sh('caribbean'), african: 0.1 + 3 * sh('african'), turkish: 0.3 + 2 * sh('other_white', 'other'), italian: 0.3 + sh('white_british'), chinese: 0.1 + 3 * sh('chinese'), polish: 0.1 + 2 * sh('other_white') };
     const taken = new Set(Object.values(S().biz).filter(isTrading).map((B) => B.name)); const street = (() => { const st = W.map.lf.streets; return st && st.length ? rng.pick(st).name.replace(/ (Road|Street|Lane|Avenue)$/, '') : 'Larkfield'; })();

@@ -7,7 +7,7 @@ const cap1 = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
 const aAn = (s) => (/^([aeiou]|HR\b|IT\b|MOT\b)/i.test(s) && !/^(uni|use|eu)/i.test(s) ? 'an ' : 'a ') + s;
 const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 const SENSITIVE = /bad patch|took over for a while|depress|anxi|mental|ptsd|psych|bipolar|eating|addict|alcohol|drug|substance|pregnancy|miscarr|burgled|assault|abuse|domestic|harass|robbed|mugg|secret|affair|arrest|convict/i;
-const WHY = { 'downsize or care': 'to downsize', 'bigger home': 'for a bigger home', buy: 'to buy', job: 'for work', partner: 'to be with a partner', 'eviction or sale': 'after a notice to leave', 'better schools': 'for the schools', 'schools suburbs': 'for the schools', space: 'for more space', rent: 'to bring the rent down', 'tenancy ends': 'when the tenancy ended', health: 'for health reasons', relationship: 'after a relationship ended', bereavement: 'after a bereavement', 'business sale': 'after selling the business', retirement: 'on retiring', family: 'to be near family' };
+const WHY = { 'downsize or care': 'to downsize', 'bigger home': 'for a bigger home', buy: 'to buy', job: 'for work', partner: 'to be with a partner', 'eviction or sale': 'after a notice to leave', 'better schools': 'for the schools', 'schools suburbs': 'for the schools', space: 'for more space', rent: 'to bring the rent down', 'tenancy ends': 'when the tenancy ended', health: 'for health reasons', relationship: 'after a relationship ended', bereavement: 'after a bereavement', 'business sale': 'after selling the business', retirement: 'on retiring', family: 'to be near family', 'with the family': 'with the family', 'family nearby': 'to be near family', 'nearer family': 'to be nearer family', 'housing offer': 'after a housing offer', graduate: 'after graduating', housemates: 'to share with friends', 'flatmates leave': 'after the flatmates moved on', upsize: 'for a bigger home', downsize: 'to downsize', divorce: 'after a divorce', overcrowding: 'to escape overcrowding', 'status change': 'after a change in status', 'chain migration cluster': 'to be near relatives', 'lease end': 'when the lease ended', 'kids schools': 'for the schools' };
 
 /** Rewrites one stored memory into a plain timeline line, or null if it should not be shown. */
 export function memText(w, m) {
@@ -75,13 +75,13 @@ export function summaryOf(w, p, f) {
   else sents.push(`${F} is ${f.age}${f.street ? ' and lives on ' + f.street : ''}.`);
   // 2. school / work
   const act = f.activity, jl = (pop.occ && occLabel(w, pop.occ)) || (f.jobLabel ? f.jobLabel.toLowerCase().split(' / ')[0] : '');
-  const edu = { level4plus: 'a degree', level3: 'A-levels or similar', apprenticeship: 'an apprenticeship', level2: 'GCSEs', level1: 'a few GCSEs' }[pop.edu];
+  const bornY = w.calendar && w.calendar.dateOf ? w.calendar.dateOf(p.birthTick).y : 1990, gc = bornY + 16 >= 1988 ? 'GCSEs' : 'O-levels', edu = pop.bornUK === false ? ({ level4plus: 'a degree', level3: 'school qualifications from abroad', apprenticeship: 'an apprenticeship' }[pop.edu]) : { level4plus: 'a degree', level3: 'A-levels or similar', apprenticeship: 'an apprenticeship', level2: gc, level1: bornY + 16 >= 1988 ? 'a few GCSEs' : 'a few CSEs' }[pop.edu];
   if (act === 'employed' && jl) sents.push([`${cap1(he)} works as ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}${edu && f.age < 60 ? ', and left education with ' + edu : ''}.`, `${cap1(he)} ${is} ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}.`][(h >>> 2) % 2]);
   else if (act === 'retired') { const r = mem(/^Retired/); sents.push(r ? `${cap1(he)} retired ${when(w, r.tick)}${jl ? ', having worked as ' + aAn(jl) : ''}.` : `${cap1(he)} is retired${jl ? ' after a working life as ' + aAn(jl) : ''}.`); }
   else if (act === 'student') sents.push(`${cap1(he)} ${is} still studying${f.age >= 18 ? ' at college or university' : ''}.`);
   else if (act === 'unemployed') sents.push(`${cap1(he)} ${is} between jobs${jl ? ', most recently as ' + aAn(jl) : ''}.`);
   else if (act === 'home_family') sents.push(`${cap1(he)} ${is} at home looking after the family.`);
-  else if (act === 'child') sents.push(`${cap1(he)} ${is} at school.`);
+  else if (act === 'child') sents.push(f.age < 1 ? `${cap1(he)} ${is} a baby.` : f.age < 4 ? `${cap1(he)} ${is} too young for school${f.school === 'nursery' ? ' and goes to nursery' : ''}.` : f.age >= 16 ? `${cap1(he)} ${is} finishing school.` : `${cap1(he)} ${is} at ${f.age < 11 ? 'primary' : 'secondary'} school.`);
   else if (act === 'sick_disabled' || act === 'other_inactive') sents.push(`${cap1(he)} ${is} not working at the moment.`);
   // 3. people and home
   const bits = [];

@@ -171,7 +171,7 @@ export class Groups {
   // ---- pre-seeded established groups (day 1 is not empty; most people JOIN existing groups rather than found new ones)
   seed() {
     const w = this.w, e = this.e, S = this.S; if (S.groups.size || S.seeded) return; S.seeded = true;
-    const people = []; for (const p of w.people.values()) if (p.alive && w.ageOf(p) >= 5) people.push(p);
+    const people = []; for (const p of w.living()) if (w.ageOf(p) >= 5) people.push(p);
     const n = people.length, scale = Math.max(0.3, n / 500), yt = e.cfg.yearDays * TICKS_PER_DAY, rr = e.rng('seedgroups');
     const faith = [...w.buildings.values()].filter((b) => b.type === 'church' || b.type === 'mosque' || b.type === 'church_hall');
     const A = (p) => w.ageOf(p), rel = (p) => p.ext?.pop?.religion || '', pop = (p) => p.ext?.pop;

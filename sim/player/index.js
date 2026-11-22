@@ -214,8 +214,8 @@ export function createPlayer() {
     // How the neighbourhood sees the player: beliefs others hold about them (social beliefs), and the mean warmth of ties towards them.
     reputation: (pid) => {
       const out = { beliefs: {}, known: 0, warm: 0, cool: 0, rep: 0 }; const sq = W.sys.social && W.sys.social.query; if (!sq) return out; out.rep = r1(sq.reputation(pid) || 0);
-      for (const q of W.people.values()) {
-        if (!q.alive || q.id === pid) continue;
+      for (const q of W.living()) {
+        if (q.id === pid) continue;
         const bs = sq.beliefs(q.id, { about: pid }); for (const b of bs) out.beliefs[b.k] = (out.beliefs[b.k] || 0) + 1;
         const t = sq.tie(q.id, pid); if (t && t.lv >= 2) { out.known++; if (t.l > 0.25) out.warm++; else if (t.l < -0.15) out.cool++; }
       }

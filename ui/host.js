@@ -230,7 +230,7 @@ export class Host {
     const street = S(() => w.map.lf.streets[w.buildings.get(p.homeId).lf.streetId].name, '');
     const kidsF = (p.family?.childrenIds || []).map((k) => w.people.get(k)).filter((k) => k && k.alive).map((k) => ({ name: k.firstName, age: Math.floor(w.ageOf(k)) }));
     const wpl2 = workplace ? (workplace.offmap ? 'in the city' : 'at ' + workplace.name) : '';
-    const bio = S(() => summaryOf(w, p, { age: Math.floor(age), partner: part, kids: kidsF, jobLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', workplace: wpl2, activity: pop.activity, role: pop.role, yearsAtAddress: pop.yearsAtAddress, street, tenure: unit && unit.tenure, household: hh && hh.members ? hh.members.length : 1, timeline: life.map((l) => ({ ...l })) }), '');
+    const bio = S(() => summaryOf(w, p, { age: Math.floor(age), partner: part, kids: kidsF, jobLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', workplace: wpl2, activity: pop.activity, school: pop.school && pop.school.kind, role: pop.role, yearsAtAddress: pop.yearsAtAddress, street, tenure: unit && unit.tenure, household: hh && hh.members ? hh.members.length : 1, timeline: life.map((l) => ({ ...l })) }), '');
     const co = { press, unit, goals: goalList, partner: part, lst, ties: S(() => q.social.query.ties(id), []), now, wb };
     const richNow = now ? activityLabel(w, p, now, {}) : '';
     return {

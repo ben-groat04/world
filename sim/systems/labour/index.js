@@ -90,10 +90,10 @@ export function createLabour() {
     for (const s of lf.slots) { const b = w.buildings.get(s.bid), e = b && b.lf.staff.find((x) => x.vid === s.vid && x.occ === s.occ); if (e) e.filled = s.filled.slice(); }
     for (const s of lf.slots) { s.ext = Math.max(0, s.n - s.filled.length); s.vac = []; }
     for (const b of w.buildings.values()) if (b.lf && b.lf.staff && b.lf.staff.length) lf.labour.firms[b.id] = { bid: b.id, sector: sectorOfBuilding(w, b), closedUntil: 0, closedAt: 0, name: b.name };
-    for (const p of w.people.values()) {
-      if (!p.alive || !p.ext.pop) continue; const q = p.ext.pop, age = w.ageOf(p); if (age < 16) continue;
+    for (const p of w.living()) {
+      if (!p.ext.pop) continue; const q = p.ext.pop, age = w.ageOf(p); if (age < 16) continue;
       q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72) + (q.contract === 'self_employed' ? 2 : 0);
-      if (q.activity === 'employed') { q.tenureStart = w.tick - Math.round(Math.min(rng.float(0.3, 9) * 52560, (age - 17) * 52560 * 0.9)); if (q.contract === 'fixed_term') q.contractEnd = w.tick + rng.int(2, 14) * MONTH; q.lastOcc = q.occ; }
+      if (q.activity === 'employed') { q.tenureStart = q.jobSince != null ? q.jobSince : w.tick - Math.round(Math.min(rng.float(0.3, 9) * 52560, (age - 17) * 52560 * 0.9)); /* jobSince: the biography's own start date, so the life story and job tenure agree */ if (q.contract === 'fixed_term') q.contractEnd = w.tick + rng.int(2, 14) * MONTH; q.lastOcc = q.occ; }
       else if (q.activity === 'unemployed') { q.search = { since: w.tick - rng.int(1, 12) * MONTH, kind: 'unemp', tries: 0 }; q.lastOcc = drawOccupation(w, rng, p, { onlyOffmap: true }).id; }
       else if (q.activity === 'other_inactive' || q.activity === 'home_family') q.lastOcc = drawOccupation(w, rng, p, { onlyOffmap: true }).id;
     }
@@ -122,7 +122,7 @@ export function createLabour() {
       for (let i = s.vac.length - 1; i >= 0; i--) if (tick - s.vac[i].since > 2 * MONTH && rng.chance(0.4)) { s.vac.splice(i, 1); s.ext++; }
     }
     // --- people
-    const people = [...w.people.values()];
+    const people = w.living().slice(); // living only: archived stubs never matter here
     let emp = 0;
     for (const p of people) {
       if (!p.alive || p.id % 30 !== slice) continue; const q = p.ext.pop; if (!q) continue; const age = w.ageOf(p), hh = w.lf.households[q.hh];
@@ -252,8 +252,8 @@ export function createLabour() {
       if (!s.vac.length || closed(s.bid)) continue;
       const o = OCC[s.occ]; if (!o) continue;
       let best = null, bs = 0;
-      for (const p of w.people.values()) {
-        if (!p.alive) continue; const q = p.ext.pop; if (!q || q.activity !== 'unemployed' || w.ageOf(p) < (o.age ? o.age[0] - 2 : 16)) continue;
+      for (const p of w.living()) {
+        const q = p.ext.pop; if (!q || q.activity !== 'unemployed' || w.ageOf(p) < (o.age ? o.age[0] - 2 : 16)) continue;
         if (QRANK[q.edu] < (QRANK[o.qual] ?? 0) - 0.5) continue;
         let sc = (q.lastOcc === s.occ ? 2 : OCC[q.lastOcc] && OCC[q.lastOcc].soc === o.soc ? 1 : 0.35) * (1 + referralStrength(p)) * (0.6 + 0.8 * rng.next());
         if (o.age && (w.ageOf(p) > o.age[1] + 4)) sc *= 0.2;
@@ -290,12 +290,12 @@ export function createLabour() {
     const rng = W.rngFor('labour.layoffs'), S = L(W);
     const eid = W.emit('labour.sector_shock', { salience: 0.55, cause: cause || 0, tags: ['labour', 'macro'], payload: { sector, share } });
     S.shocks[sector] = { mult: 3, until: W.tick + 4 * MONTH, eid }; let n = 0;
-    for (const p of W.people.values()) { if (!p.alive || !p.ext.pop || p.ext.pop.activity !== 'employed') continue; if (sectorOfPerson(p) === sector && rng.chance(share)) { loseJob(p, 'redundancy', eid); n++; } }
+    for (const p of W.living().slice()) { if (!p.ext.pop || p.ext.pop.activity !== 'employed') continue; if (sectorOfPerson(p) === sector && rng.chance(share)) { loseJob(p, 'redundancy', eid); n++; } }
     return n;
   }
 
   const unemployment = () => {
-    let e = 0, u = 0, ad = 0; for (const p of W.people.values()) { if (!p.alive || !p.ext.pop) continue; const a = W.ageOf(p); if (a < 16) continue; ad++; const x = p.ext.pop.activity; if (x === 'employed') e++; else if (x === 'unemployed') u++; }
+    let e = 0, u = 0, ad = 0; for (const p of W.living()) { if (!p.ext.pop) continue; const a = W.ageOf(p); if (a < 16) continue; ad++; const x = p.ext.pop.activity; if (x === 'employed') e++; else if (x === 'unemployed') u++; }
     return { employed: e, unemployed: u, rate: e + u ? u / (e + u) : 0, shareOf16plus: ad ? u / ad : 0, adults16: ad };
   };
 
@@ -310,7 +310,7 @@ export function createLabour() {
       unemployment, firmClosed: (bid) => closed(bid), firm: (bid) => { const f = firmOf(bid); return f ? { ...f, slots: slotsOf(bid).map((s) => ({ occ: s.occ, n: s.n, filled: s.filled.length, vacancies: s.vac.length, ext: s.ext })) } : null; },
       openings: (f = {}) => { const out = []; for (const s of W.lf.slots) { if (!s.vac.length || closed(s.bid)) continue; if ((f.occ && s.occ !== f.occ) || (f.bid != null && s.bid !== f.bid)) continue; out.push({ kind: 'slot', bid: s.bid, occ: s.occ, count: s.vac.length, since: s.vac[0].since }); } if (!f.onmap) for (const o of W.pack.jobs) if (o.where !== 'onmap' && (!f.occ || f.occ === o.id)) out.push({ kind: 'offmap', occ: o.id, dest: o.dest || 'home', count: 1 }); return out; },
       job: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.pop) return null; const q = p.ext.pop; return { activity: q.activity, occ: q.occ, pay: q.pay, hours: q.hours, contract: q.contract, workplace: q.workplace, tenureYears: q.tenureStart ? (W.tick - q.tenureStart) / 52560 : 0, search: q.search ? { months: (W.tick - q.search.since) / MONTH } : null, job2: q.job2 || null }; },
-      searchers: () => [...W.people.values()].filter((p) => p.alive && p.ext.pop && p.ext.pop.activity === 'unemployed').map((p) => p.id),
+      searchers: () => W.living().filter((p) => p.ext.pop && p.ext.pop.activity === 'unemployed').map((p) => p.id),
       sectorOf: (occ) => sectorOfOcc(occMap(W)[occ]), sectors: () => SECTORS.slice(),
       durations: () => L(W).durations.slice(), stats: () => ({ ...L(W).stats, ...unemployment() }),
     },

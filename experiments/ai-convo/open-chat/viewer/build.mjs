@@ -2,13 +2,13 @@
 import fs from 'fs'; import path from 'path';
 const here = import.meta.dirname, runsDir = path.join(here, '..', 'runs');
 const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
-const MARK = ' Something that\'s been on your mind: ', SECRET = / Only you know this(?:, at least at first)?: /;
+const MARK = / Something (?:that's been|on your) (?:on your )?mind(?: \(put it your own way, not in these words\))?: /, STYLE = / How you text: .*$/s, SECRET = / Only you know this(?:, at least at first)?: /;
 const split = (s, mark) => { const m = typeof mark === 'string' ? (s.includes(mark) ? { index: s.indexOf(mark), 0: mark } : null) : s.match(mark); return m ? [s.slice(0, m.index), s.slice(m.index + m[0].length)] : [s, null]; };
 const SINCE = '2026-11-22T16-37'; // earlier runs were tests: kept in runs/, left out of the viewer
 const ORACLE_LINES = [' There is also an oracle that can look things up online: start a line with @oracle and your question.', // runs before 2026-11-22 18:00
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.', // until the answer went to the asker alone
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer comes back to you alone.'];
-const PRIVATE = / What's going on with you at the moment: .*?(?: Today: .*?)?(?= Something that's been on your mind: | Only you know this|$)/s; // EXP_PRIVATE line, per person: kept out of the shared brief
+const PRIVATE = / What's going on with you at the moment: .*?(?: Today: .*?)?(?= Something that's been on your mind: | Something on your mind \(| Only you know this|$)/s; // EXP_PRIVATE line, per person: kept out of the shared brief
 const PERSON = /^(?:You are [A-Z][a-z]+|You write [A-Z][a-z]+'s messages in this chat)\. /; // runs from 2026-11-22 evening put the name first in the system prompt, per person (EXP_FICTION: "You write <Name>'s messages")
 const FICTION = / [A-Z][a-z]+'s life outside the chat is yours to decide: .*? and how things went\./; // EXP_FICTION sentence, per person
 const dayLabel = at => { const d = new Date(at); return `(It's now ${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()]} ${d.getDate()} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()]}.)`; };
@@ -24,7 +24,7 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const started = m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null;
   const byWho = w => rows.find(r => r.who === w && r.argv)?.argv; // later messages of one reply carry no argv
   const names = [...new Set(rows.map(r => r.who))], secrets = {};
-  const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt'), SECRET); if (sec) secrets[w] = sec; return ORACLE_LINES.reduce((s, l) => s.replace(l, ''), b.replace(PERSON, '').replace(FICTION, '').replace(PRIVATE, '')); };
+  const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt').replace(STYLE, ''), SECRET); if (sec) secrets[w] = sec; return ORACLE_LINES.reduce((s, l) => s.replace(l, ''), b.replace(PERSON, '').replace(FICTION, '').replace(PRIVATE, '')); };
   const oracle = ORACLE_LINES.some(l => arg(byWho(names[0]), '--system-prompt').includes(l));
   const [, topic] = split(brief(names[0]), MARK);
   const briefB = brief(names[1]); names.slice(2).forEach(brief);

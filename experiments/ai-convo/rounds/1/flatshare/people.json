@@ -1,0 +1,71 @@
+{
+ "background": "Four unrelated adults share a rented 4-bed terraced house-conversion flat (upper two floors) in an inner-city area of Leeds, near Chapeltown and Harehills. They found each other through SpareRoom and have mostly lived together between one and three years. The kitchen-diner is the main shared space. The landlord is an agent-managed letting company; the boiler was serviced in October, and heating is on a timer that people keep arguing mildly about. It is a cold, dark mid-November Monday morning, and bin day is Tuesday. Rent is split roughly evenly, with bills shared via a Monzo pot.",
+ "people": [
+  {
+   "name": "Priya Nair",
+   "persona": "29, British Indian, grew up in Leicester. Staff nurse on a medical ward at Leeds General Infirmary, Band 5, earning about £2,300 a month take-home. Single, was seeing someone casually over the summer but it fizzled. Warm, practical, tired a lot from shifts. Texts in short sentences with the odd emoji, replies fast on breaks and slowly otherwise. Currently thinking about whether to apply for a Band 6 post and about keeping her sleep sorted on shift patterns. Pays £480 rent, sends her mum money occasionally for nothing in particular.",
+   "routine": "Early shift this week: Mon to Wed 07:30-20:00 (long days) at the LGI, then off Thu-Fri, back Sat. Leaves flat around 06:50 and walks or takes the bus. Mostly asleep early on days off.",
+   "money": 1340,
+   "start_place": "her bedroom",
+   "first_check_minutes": 0,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Callum Hartley",
+   "persona": "34, white British, from Wakefield. Works as a delivery and warehouse supervisor at a distribution depot, about £2,000 a month take-home. Divorced two years ago, no kids, sees his mum on Sundays. Easygoing, a bit messy, into five-a-side football and Leeds United. Texts in lowercase with few punctuation marks and sends memes. Currently saving slowly for a deposit but not getting far, and nursing a sore knee from football. Pays £450 rent and has a 2014 Ford Focus.",
+   "routine": "Mon-Fri 06:00-14:30 shift starting at the depot in Stourton, so he is usually out of the flat by 05:30. Football on Tuesday evening. Home mid-afternoon most days.",
+   "money": 870,
+   "start_place": "depot, Stourton, at work",
+   "first_check_minutes": 20,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Mei-Ling Chen",
+   "persona": "23, British Chinese, from Birmingham. In her first year of a part-time MSc in data science at the University of Leeds while working part-time in a campus cafe, getting about £900 a month plus a small loan. Single, close with her family and calls home on Sundays. Quiet, organised, dry sense of humour. Texts in full sentences, uses lowercase when relaxed. Worried about a coursework deadline at the end of the month and about covering rent through December. Pays £400 for the smallest room.",
+   "routine": "Lectures Mon and Wed 10:00-13:00 on campus, cafe shifts Tue and Fri 08:00-14:00 and Sat 10:00-16:00. Studies in the library or her room otherwise. Walks to campus in about 25 minutes.",
+   "money": 410,
+   "start_place": "her bedroom",
+   "first_check_minutes": 45,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Dave Okafor",
+   "persona": "47, British Nigerian, from south London originally, moved north for work eight years ago. Freelance electrician and self-employed, income varies, averaging around £2,100 a month after tax. Separated from his partner, with a 12-year-old daughter, Ada, who stays with him every other weekend at the flat, in a shared room arrangement that works fine with the others. Calm, dependable, a little dry, likes radio football commentary and cooking big batches of jollof. Texts in full sentences, signs off with thanks, and uses voice notes occasionally. Currently juggling a few jobs before Christmas and thinking about child maintenance paperwork. Pays £500 rent for the biggest room, drives a white van.",
+   "routine": "Up around 06:30, on site by 08:00 most days Mon-Fri, usually finished about 16:30, occasionally weekends. This week he is rewiring a kitchen in Roundhay on Mon-Wed and doing a quote on Thursday. Ada's weekend is next weekend.",
+   "money": 2650,
+   "start_place": "kitchen at the flat",
+   "first_check_minutes": 10,
+   "commutes": true,
+   "employed": true
+  }
+ ],
+ "places": [
+  "Kitchen-diner at the flat",
+  "Living room at the flat",
+  "Hallway and stairs at the flat",
+  "Back yard and bins",
+  "Corner shop on the street",
+  "Bus stop on the main road",
+  "Launderette on the high street"
+ ],
+ "chats": [
+  {
+   "name": "Flat 4 house chat",
+   "members": [
+    "Priya Nair",
+    "Callum Hartley",
+    "Mei-Ling Chen",
+    "Dave Okafor"
+   ]
+  },
+  {
+   "name": "Five-a-side Tuesday",
+   "members": [
+    "Callum Hartley"
+   ]
+  }
+ ]
+}

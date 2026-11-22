@@ -1,0 +1,81 @@
+{
+ "rules": [
+  "You are one real person, not an assistant. Know only what you have seen or been told.",
+  "Text and speak like your person really does: length, punctuation, slang, typos, emoji (or none). British register.",
+  "Do things for your own reasons. Nobody tells you what should happen.",
+  "Money is real: you can only pay what is in your account; your balance is shown to you.",
+  "No therapy-speak, no speeches, no tidy resolutions."
+ ],
+ "decisions": 111,
+ "final": {
+  "Priya Nair": {
+   "money": 1340,
+   "memory": "Day off Thu, off till Sat. Sleeping in after the last long day. Still mulling Band 6 application. Might send Mum a bit of money, nothing urgent. Feet recovering."
+  },
+  "Callum Hartley": {
+   "money": 870,
+   "memory": "Thu 05:40, up late-ish for shift, knee stiff, get it looked at by weekend if no better. Saving for deposit, £870. Chilled, just need to get out the door to Stourton."
+  },
+  "Mei-Ling Chen": {
+   "money": 410,
+   "memory": "Wed 23:00. Wrote up the bike report bit (1,847 of ~640k rows binned, ~0.3%, need count and reason in a paragraph). Going to bed, tired. Balance £410. Worried about Dec rent and end-of-month deadline. Cafe shift Fri 8-2. Maybe had some of Dave's jollof."
+  },
+  "Dave Okafor": {
+   "money": 2650,
+   "memory": "Thu early. Roundhay kitchen rewire done, quote today. Keep mornings quiet for Callum (knee, up 04:30). Still need Ada's mum's NI number for child maintenance form. Ada's weekend next weekend. Back aching, dozing till alarm."
+  }
+ },
+ "audit": {
+  "score": 4,
+  "breakers": [
+   {
+    "quote": "Thanks for the thumbs up, by the way, very professional. ... Thanks for telling me.",
+    "why": "Dave says 'thanks' at the end of almost every line he speaks, even where it makes no sense. His persona says he signs off texts with thanks, and that habit has been copied into face-to-face speech, where it turns into a nervous tic."
+   },
+   {
+    "quote": "Morning Dave. Ugh, it's freezing. Kettle just boiled if you want it 😅",
+    "why": "Priya uses emoji in spoken dialogue. The same problem as Dave: her texting style is being applied to how she talks out loud."
+   },
+   {
+    "quote": "Mei-Ling, you've done one of these child maintenance forms, haven't you?",
+    "why": "Made-up shared history. Mei-Ling is a 23-year-old student with no children. Other examples: 'the ones Priya keeps complaining about', and Callum's 'you were saying the heating was alright now yeah', which Dave never said."
+   },
+   {
+    "quote": "what is it you do again, the early start? I always forget.",
+    "why": "Flatmates who have lived together for a while would know each other's jobs. The characters have no background on each other, so they ask interview-style questions."
+   },
+   {
+    "quote": "how many bad rows you reckon its been, like out of the whole lot",
+    "why": "A warehouse supervisor wouldn't be keen on her row counts. The figure '1,847 of 640k' comes up in nearly every scene and memory, which reads like the memory recycling content rather than conversation."
+   },
+   {
+    "quote": "Mei-Ling, you're a saint, I'll nab a bowl in a bit",
+    "why": "Priya thanks the wrong person, because Dave is the one cooking. This is a speaker-tracking slip in a three-person scene."
+   },
+   {
+    "quote": "If you want, I'll keep the kitchen quiet in the mornings, I'm up at half six anyway",
+    "why": "This doesn't follow: Callum has left by 05:30, so there's nothing to keep quiet for. It's politeness for its own sake. Throughout, everyone offers tea, food, help and good luck in every encounter, and nobody shows any friction, even though Callum is supposed to be messy and Mei-Ling is worried about money."
+   },
+   {
+    "quote": "Mei-Ling Chen: \"\" (Gives Dave a quick thumbs up without looking up...)",
+    "why": "Empty turns that are just filler. Scenes keep going strictly back and forth after the conversation has naturally ended."
+   }
+  ],
+  "mechanism_issues": [
+   "Each persona has a single texting-style description, and it is being applied to spoken dialogue too: Dave's sign-off 'thanks' and Priya's emoji show up in speech. Personas need separate fields for how they speak and how they text, and speech output should strip emoji.",
+   "No one uses their phone to each other in three days: no group chat, no DMs, no payments. Everything happens face to face in the kitchen. When people are apart, they need to be prompted that their phone is available (bins, heating, 'is there jollof left', Priya texting from the ward).",
+   "The scheduler puts two or three people together in the kitchen or living room almost every hour and keeps the scene running until it times out, which forces filler turns and endless small talk. Allow scenes of one person, give people an easy way to leave, and end a scene once the talk has died down.",
+   "The memory snapshots are a fixed checklist copied forward every time (1,847 rows, return the tub, saving slowly, might send Mum money, Ada next weekend). That drives topics to repeat in conversation: the knee, the heating, the jollof and the bike data each come up in four to six scenes. Finished items should drop out, and old items should fade or be compressed.",
+   "Intentions keep repeating but are never acted on: 'might send Mum a bit' appears in every one of Priya's snapshots, but she never does it. Check whether there is any way to pay someone outside the flat, or whether intentions are ever turned into actions.",
+   "Life events are rolled without checking where the person is or what they're doing. Priya gets a family catch-up call at 16:53 in the middle of a ward long day. Mei-Ling's 'work ran an hour over' fires at 08:55, before an 8am shift could have finished. Rolls should be checked against each person's schedule.",
+   "There is no shared background: how long they've lived together, what they know about each other's jobs, house norms, who pays which bills. Without it, agents make up history or ask things they would already know. Seed a short block of common knowledge.",
+   "Household money isn't modelled at all: no utility splits, rent date, shared shopping or pay schedule. So Mei-Ling's rent worry has nothing to attach to, and she keeps checking her banking app for same-day pay that would never arrive. Add pay dates and recurring shared bills.",
+   "Where people are drifts away from what they believe. Mei-Ling's snapshot says she's 'in my room' while the system has her in the living room. Callum says 'dave's jollof after' football when he had planned to eat it before. Feed the actual location and the plan they already stated back to them."
+  ],
+  "extra_rules": [
+   "Only refer to shared history or facts about others that you have actually seen or been told.",
+   "Most encounters at home are brief or wordless. You don't need to chat, offer anything or ask after anyone."
+  ],
+  "verdict": "This run is pleasant and plausible line by line, but over three days it doesn't read like a real shared flat. Everyone is relentlessly nice, it's the same few topics every time, and every encounter turns into a tea-and-chat session in the kitchen. No one texts, there's no friction, and money doesn't come up.\n\nThe root causes are mostly in the mechanics, not the characters:\n- **Texting style used for speech:** the texting descriptions are applied to spoken dialogue (Dave's constant 'thanks', Priya's emoji out loud).\n- **Memory copied forward:** the memory snapshots repeat the same checklist, so the same topics keep coming back.\n- **Too many shared scenes:** the scheduler keeps putting people in shared rooms and won't let scenes end.\n- **No shared background:** agents make up history or ask things they'd already know.\n- **Life events ignore schedules:** events are rolled without checking where people are.\n- **No household money:** with no bills or pay dates, there's nothing to cause friction.\n\nI've suggested only two short extra rules; the rest should be fixed in how the simulation works."
+ }
+}

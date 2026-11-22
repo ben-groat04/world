@@ -1,12 +1,12 @@
 // Four agents (Haiku by default) talk to each other through the `claude -p` CLI (no HTTP API). Each agent is a saved CLI session that holds exactly what it has seen and said in the posted conversation: every ask forks a new session from the agent's last posted turn (--resume <id> --fork-session), and only the fork whose reply is posted becomes the agent's session. A reply that isn't posted (lost the turn, or PASS) is discarded with its fork, so no agent remembers saying something nobody saw. The system prompt is NOTE + BRIEF and nothing else.
 // What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task).
 // Prompts: until an agent has posted, it gets the whole conversation so far; after that it gets what others said since its last posted message (its own posted replies are already in its session), as a header line "\u2014 Name, Sun 19:42" followed by the text. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
-// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and forgotten by their agents. Every prompt says an agent may reply just PASS. If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time (repeated in each prompt until that agent posts) and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Claude answers count).
+// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and forgotten by their agents. The relay note (NOTE, in the system prompt) says an agent may reply just PASS, which nobody sees; it is not in the chat prompts, where agents took it up as a word ("I'll PASS on anything else"). If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time (repeated in each prompt until that agent posts) and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Claude answers count).
 // In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides); each posted message is stamped and the clock then advances 1-6 minutes.
 // Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl} (every reply is logged with posted: true|false and its clock time `at`; transcript.txt has only posted messages, oracle answers and clock notes).
 import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
-const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation.';
+const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. The relay also asks you after each new message whether to reply. To stay quiet, reply with only the word PASS: the relay drops it and nobody in the chat ever sees it.';
 const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. You have lives outside this chat. Skip disclaimers about being an AI or about your limits. Keep messages short.';
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
@@ -60,15 +60,15 @@ async function askOracle(who, q) {
   claudeChat[who] = res.session_id;
   return { result: text, usage: res.usage };
 }
-const PASS = '(If you have nothing to say, reply with just PASS.)', isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
+const isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
 const log = row => fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify(row) + '\n');
 const say = (head, body) => { fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- ${head}\n${body}\n\n`); console.log(`--- ${head}\n${body}\n`); };
 const prefix = {}; // per agent: lines to put at the top of their prompts until they next post (time jump)
 const ask = async (n, step, at) => {
   const fresh = n in session ? convo.slice(seen[n]) : convo;
   const body = n in session
-    ? `${fresh.length ? `New messages:\n${fresh.map(line).join('\n\n')}\n\nWrite your next message.` : 'No new messages.'}\n\n${PASS}`
-    : `(It's now ${WD[clock.getDay()]} ${clock.getDate()} ${MON[clock.getMonth()]}, ${hm(clock)}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.\n\n${PASS}`;
+    ? `${fresh.length ? `New messages:\n${fresh.map(line).join('\n\n')}\n\nWrite your next message.` : 'No new messages.'}`
+    : `(It's now ${WD[clock.getDay()]} ${clock.getDate()} ${MON[clock.getMonth()]}, ${hm(clock)}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.`;
   const user = (prefix[n] || []).map(x => x + '\n\n').join('') + body;
   const j = await turn(n, user), text = j.result.trim();
   return { n, text, pass: isPass(text), usage: j.usage, user, step, at, sid: j.session_id };

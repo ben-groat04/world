@@ -243,7 +243,8 @@ export class Groups {
     // member drift out
     for (const id of ids) { const m = g.members[id]; if (m.commit < 0.12 && id !== g.leader && r.next() < 0.5) { this.removeMember(g, id, 'drifted away'); this.hist(g, `${this.e.fn(id)} drifted away`); } }
     // split
-    if (g.cohesion < 0.28 && n >= 6 && r.next() < 0.25) this.split(g, r);
+    // a split (schism / breakaway) is a rare event even in a group in conflict: ~20%/yr hazard while cohesion is low, spread over its meetings (was 25% per meeting = every conflicted group split within weeks, 3 -> 51 faith groups in 25y)
+    if (g.cohesion < 0.28 && n >= 6 && r.next() < 0.2 * Math.max(1, g.cadence) / this.e.cfg.yearDays) this.split(g, r);
     // dissolve
     const n2 = this.size(g), haz = K.hazard * (g.status === 'institution' ? 0.15 : 1)  * (1.5 - g.cohesion) * (g.cadence / this.e.cfg.yearDays);
     if (g.status === 'active' || g.status === 'institution') {

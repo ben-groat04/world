@@ -220,8 +220,8 @@ function newsCtx(w, ev, extra) {
   return { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), ...(extra || {}), biz: ev.payload?.name || DEFAULTS.biz }, date: dateCtx(w, ev), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
 }
 // Several of one kind in one week become a single, specific line ("New faces on Raglan Road and Cobden Street this week"); events that keep recurring for one person are shown once and then marked "again".
-const FOLD = { 'housing.moved_in': 'arrivals', 'life.move_in': 'arrivals', 'housing.moved_out': 'leavers', 'life.move_out': 'leavers', 'labour.hired': 'jobs', 'labour.job_lost': 'lost', 'social.scandal': 'gossip' };
-const FOLD_SHOW = { gossip: 1 }; // items shown in full before the rest of the week is folded into one line
+const FOLD = { 'housing.moved_in': 'arrivals', 'life.move_in': 'arrivals', 'housing.moved_out': 'leavers', 'life.move_out': 'leavers', 'labour.hired': 'jobs', 'labour.job_lost': 'lost' };
+const FOLD_SHOW = {}; // items shown in full before the rest of the week is folded into one line (default 2)
 const REPEATS = new Set(['money.arrears', 'money.debt_spiral', 'labour.second_job', 'social.scandal', 'money.cost_pressure']);
 const WORDS_N = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 function foldItem(w, text, ev, host, it) {
@@ -241,6 +241,7 @@ export function newsFor(w, text, ev, host) {
   if (/^health\.(episode|substance)$/.test(ev.type)) return null; // sober: nobody's mental health or drinking is named in the public feed (it stays in their own profile and the storylines)
   let nth = 1;
   if (host && REPEATS.has(ev.type) && ev.actors && ev.actors[0] != null) { const m = host._rep || (host._rep = new Map()), k = ev.type + ':' + ev.actors[0], rec = m.get(k) || { n: 0, last: -1e9 }; if (ev.tick - rec.last < 144 * 90) { rec.last = ev.tick; m.set(k, rec); return null; } rec.n++; rec.last = ev.tick; nth = rec.n; m.set(k, rec); if (m.size > 3000) m.delete(m.keys().next().value); }
+  if (host && ev.type === 'social.scandal') { const last = host._gosTick ?? -1e9; if (ev.tick - last < 144 * 1.7) return null; host._gosTick = ev.tick; } // gossip dumps arrive in batches: one story a day and a half is enough, and the host never needs its generic "Talk of the town" fold
   if (LOCAL[ev.type]) { if (isPrivateEv(ev)) return null; const kind = ev.type.split('.')[0]; let x; try { x = LOCAL[ev.type](w, ev, ev.payload || {}); } catch (e) { return null; }
     if (text && text.has && text.has('headline:' + ev.type)) { try { const ctx = newsCtx(w, ev, kind === 'crime' ? { biz: '' } : null), e2 = { ...ev }, h = text.render(e2, ctx, w); if (okText(h)) x = { head: fixText(h), body: x.body };
       if (text.has('news:' + ev.type)) { const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (okText(b)) x.body = fixText(b); } } catch (e) { /* static text stands */ } }

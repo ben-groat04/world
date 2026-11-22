@@ -1,10 +1,9 @@
 // Archive the departed. Long runs (50+ years) accumulate every person who ever lived or moved away (arrivals ~40/yr):
 // without pruning, memory, snapshot size and every "for all people" loop grow without bound.
 // After a grace period (GRACE_YEARS) a dead or emigrated person is reduced to a stub: identity, family links, birth/death facts
-// and ext.pop (kept so kin lookups never dereference undefined) survive; relationships, rumours, per-system state and (for emigrants)
+// and ext (kept, minus its tie list, so kin lookups never dereference undefined) survive; relationships, rumours, per-system state and (for emigrants)
 // memories are dropped, and living people's relationships/ties pointing at an archived person are cleared.
 // Genealogy (grandparents, graves, obituaries) is unaffected because the stub keeps `family`, names, dates and cause of death.
-const STUB_EXT_DROP = ['rt', 'hl', 'cr', 'civ'];
 export const GRACE_DEAD_YEARS = 1;
 // Emigrants can return for up to 6 years (life/stages.js boomerangScan revives adult children who left home), so they are archived after 7.
 export const GRACE_EMIGRANT_YEARS = 7;
@@ -20,8 +19,7 @@ export function archiveDeparted(w) {
     p.relationships = new Map(); p.rumors = []; p.moodlets = [];
     if (p.emigrated) p.memories = [];
     else if (p.memories.length > 12) p.memories = p.memories.filter((m) => (m.importance || 0) >= 3).slice(-12);
-    if (p.ext) for (const k of STUB_EXT_DROP) delete p.ext[k];
-    if (p.ext && p.ext.pop) { delete p.ext.pop.ties; delete p.ext.pop.drives; }
+    if (p.ext && p.ext.pop) p.ext.pop.ties = []; // other ext state stays (small) so a stray revive/lookup never meets undefined
     for (const h of w.archiveHooks) h(p);
   }
   if (!fresh.length) return 0;

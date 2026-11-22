@@ -1,7 +1,7 @@
 // Local neighbourhood forum posts (keys feed.<kind>), replies (feedreply.<tone>), personal feed posts (post2.*). Slots: {p.street} {p.name} {p.thing} {p.day} {p.pet} {p.shop} {p.road}.
 import { V } from '../lexicon.js';
 export default {
-  'fx.street': ['{p.street}', 'the end of {p.street}', 'near the {p.shop}', 'outside the {p.shop}', 'on {p.street}', 'by the park gates'],
+  'fx.street': ['{p.street}', 'the end of {p.street}', 'near {p.shop}', 'outside {p.shop}', 'on {p.street}', 'by the park gates'],
   'fx.when': ['this morning', 'last night', 'around 7am', 'about half six', 'yesterday evening', 'earlier today', 'just now', 'at the weekend', 'at about 2am'],
   'fx.thanks': ['Thanks all.', 'Cheers.', 'Thank you!', 'Any help appreciated.', 'Thanks in advance.', 'Much appreciated.', 'Ta.', 'TIA', 'Thanks x'],
   'fx.pls': ['Please share.', 'Pls share if you can.', 'Any info welcome.', 'DM me if you know anything.', 'Please keep an eye out.', ''],
@@ -29,14 +29,14 @@ export default {
     'Recommendations for a #fx.trade#, please. Had two quotes and one of them laughed.',
     'Does anyone know a #fx.trade# who does evenings or weekends? Happy to pay properly.',
     'New here. Where do you all get your coffee/bread/haircut? Be kind, I have only found the Co-op.',
-    'Anyone tried the new place by the {p.shop}? Wondering if it is worth the hype.',
+    'Anyone tried the new place by {p.shop}? Wondering if it is worth the hype.',
     'Where is the best fish and chips round here? Settle a family argument.',
   ],
   'feed.crime': [
     'Heads up: someone has been trying car door handles along {p.street} #fx.when#. Doorbell cam caught a bloke in a grey hoodie. Lock up.',
     'Bike stolen from #fx.street# #fx.when#. Lock cut clean through. If you see a blue hybrid for sale on the usual sites, shout.',
     'Not trying to scare anyone, but there was a break-in on {p.street}. Police have been. Worth checking your side gates.',
-    'Two lads on e-bikes grabbed a phone from a woman outside the {p.shop} #fx.when#. She is okay but shaken. Be careful.',
+    'Two lads on e-bikes grabbed a phone from a woman outside {p.shop} #fx.when#. She is okay but shaken. Be careful.',
     'Someone tried my back door #fx.when#. Neighbours: motion lights are cheap. Do it.',
     'Parcel stolen from our porch again. If anyone has footage of {p.street} #fx.when# please DM.',
   ],
@@ -64,7 +64,7 @@ export default {
   'feed.kids': [
     'Lovely to see the kids playing out on {p.street} #fx.when#. Reminded me of being young. Only asking drivers to take it slow.',
     'Ball through my window #fx.when#. No harm done, but could the parents have a word? Not angry, just a bit surprised.',
-    'Can parents please remind kids not to cycle on the pavement by the {p.shop}? A few near misses with pensioners.',
+    'Can parents please remind kids not to cycle on the pavement by {p.shop}? A few near misses with pensioners.',
   ],
   'feed.dogs': [
     'DOG OWNERS. Pick it up. It is not difficult. There is a bin right there #fx.street#.',
@@ -73,7 +73,7 @@ export default {
   'feed.event': [
     'Community litter pick on {p.day}, 10am, meet at the park gates. Bags, gloves and bacon rolls provided. Please come.',
     'Reminder: coffee morning at the church hall {p.day}. All welcome, bring a friend, bring a cake.',
-    'Quiz night at the {p.shop} on Thursday. £2 a head, prize is a meat raffle and glory.',
+    'Quiz night at {p.shop} on Thursday. £2 a head, prize is a meat raffle and glory.',
     'Table-top sale at the community centre on Saturday. Tables are £5. Come and sell your clutter.',
     'Anyone fancy starting a walking group? Gentle pace, tea at the end. Message me.',
     'Lantern parade is back this year! Volunteers needed for stewarding. Dm me if you can help.',
@@ -86,7 +86,7 @@ export default {
     'Moving out and need to get rid of a sofa. It is a nice sofa. It is also very heavy. Free for anyone with a van.',
   ],
   'feed.question': [
-    'Does anyone know what the building work at the {p.shop} is? Scaffolding has gone up and nobody will tell me.',
+    'Does anyone know what the building work at {p.shop} is? Scaffolding has gone up and nobody will tell me.',
     'Is the library open late this week or did I imagine that?',
     'What time does the recycling centre close on Sundays? Google says two things.',
     'Is there a parents and toddlers group nearby that is not full? Asking for a friend who is me.',
@@ -95,21 +95,21 @@ export default {
     'Has anyone else had a letter from the landlord about rent going up? Wondering if it is just us.',
   ],
   'feed.shop': [
-    'So sad to hear the {p.shop} is closing. Been going there since I was a kid. Anyone know why?',
+    'So sad to hear {p.shop} is closing. Been going there since I was a kid. Anyone know why?',
     'Just popped into the new place by the station. Friendly, a bit pricey, but the cake is excellent. Worth supporting.',
-    'Support your local shops or lose them, as they say. The {p.shop} is half empty these days.',
+    'Support your local shops or lose them, as they say. {p.shop} is half empty these days.',
   ],
   'feed.lost_prop': [
     'Found: set of keys with a red tag and a tiny plastic duck, picked up #fx.street#. Message me to claim.',
     'Has anyone lost a child\'s blue scooter? It is leaning on my wall and has been for three days.',
     'Lost: grey glove, left hand, probably near the bus stop. It is the one I knitted so I would like it back.',
-    'Found a wallet outside the {p.shop}. Handed it in. Just so you know there are still some decent people.',
+    'Found a wallet outside {p.shop}. Handed it in. Just so you know there are still some decent people.',
   ],
   'feed.goal': [
     'If anyone fancies helping with {p.thing}, give me a shout. More hands than we have, which is none.',
     'Looking for people interested in {p.thing}. Beginners welcome. Seriously, I am one.',
   ],
-  'feed.alert': ['Burst water main near #fx.street#. Pressure is low, so do not panic if your tap coughs.', 'Road closed by the {p.shop} for emergency works. Diversion adds ten minutes.', 'Water off on {p.street} until 3pm apparently. Fill the kettle now.'],
+  'feed.alert': ['Burst water main near #fx.street#. Pressure is low, so do not panic if your tap coughs.', 'Road closed by {p.shop} for emergency works. Diversion adds ten minutes.', 'Water off on {p.street} until 3pm apparently. Fill the kettle now.'],
   'feedreply.agree': ['Same here.', 'Completely agree.', 'This. So much this.', 'Yes!! Happens every week.', 'Nodding along.', 'Can confirm.', 'Same on our road.', '100%'],
   'feedreply.help': ['Try {p.name}, they did mine and were reasonable.', 'Ours was sorted by calling the council direct rather than the form.', 'DM sent.', 'I have one you can borrow. Message me.', 'Have you checked with the shop on the corner?'],
   'feedreply.joke': ['At least the foxes are well fed.', 'Welcome to Larkfield.', 'Round here that counts as a good week.', 'Have you tried turning the borough off and on again?'],
@@ -127,7 +127,7 @@ export default {
   'feedreply.parking.argue': ['Some of us need the van for work, there is nowhere else.', 'Public roads, not private spaces.', 'People with driveways blocking dropped kerbs is the real issue.'],
   'feedreply.parking.interest': ['Is there a meeting about the permit changes?', 'Does anyone know if the new zone starts in the spring?'],
   'feedreply.recommend.agree': ['Seconded, ours is excellent.', 'Yes, can vouch for that one.', 'Ours too. Worth every penny.'],
-  'feedreply.recommend.help': ['We have used the one near the {p.shop} for years, never a complaint.', 'Ask in the parents\' chat, someone always has a name.', 'We used someone from the next street, I will DM the number.', 'Check reviews first, a couple near here are not great.'],
+  'feedreply.recommend.help': ['We have used the one near {p.shop} for years, never a complaint.', 'Ask in the parents\' chat, someone always has a name.', 'We used someone from the next street, I will DM the number.', 'Check reviews first, a couple near here are not great.'],
   'feedreply.recommend.joke': ['If you find a good one, tell me too.', 'Reliable and cheap, pick one.'],
   'feedreply.recommend.argue': ['Not had a good experience with them, to be fair.', 'Pricey for what you get.'],
   'feedreply.recommend.interest': ['Following, I need the same thing.', 'Also looking, any luck?'],

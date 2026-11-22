@@ -149,3 +149,6 @@ OPEN: seed-3 1y survival (69%) - entrants there lose money under high rents; 25-
 - Pandemic preset: "2 events, 0 people"; library cut similar — consequences must come from health/civic mechanisms.
 - Café with customers at 03:30 (venue opening hours vs visits).
 - No market-stall business path in UI (side-hustle stopgap). Feed lines still repetitive. Take-over mode under-tested.
+## Text (after variety pass) open
+- Still repetitive (not text-owned): routine activity labels ("X at home"), host batch lines (ui/host.js), sifter storyline
+  headlines, biography memory text. Forum replies 0.79/0.85 distinct. Wire thoughtFor() into the inspector.

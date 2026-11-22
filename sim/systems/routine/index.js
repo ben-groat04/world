@@ -98,7 +98,7 @@ export default {
       world.cmd('routine.replan', { pid: p.id }); return true;
     },
     'routine.insert': (world, a) => {
-      const p = world.people.get(a.pid); if (!p) return; const rt = p.ext.rt, now = world.tick, from = Math.max(a.from ?? now + 1, now + 1), to = Math.max(a.to, from + 1);
+      const p = world.people.get(a.pid); if (!p) return; const rt = p.ext.rt, now = world.tick; if (!rt) return; if (a.dest !== 'custody' && p.ext.cr && p.ext.cr.cust > now) return; /* in prison: nothing else takes them out of it */ const from = Math.max(a.from ?? now + 1, now + 1), to = Math.max(a.to, from + 1);
       const ent = []; for (let i = 0; i < rt.plan.length; i += STRIDE) ent.push(rt.plan.slice(i, i + STRIDE));
       const cur = rt.pi - 1, keep = ent.filter((e, i) => i >= Math.max(0, cur) && e[0] < from), after = ent.filter((e) => e[0] >= to);
       let st = null; for (const e of ent) if (e[0] <= to) st = e; // state active at `to` resumes

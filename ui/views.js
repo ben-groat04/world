@@ -12,7 +12,7 @@ export const SEG_COL = [32, 205, 330, 265, 175, 120, 15, 48, 290, 90, 0];
 const segColor = (i) => `hsl(${SEG_COL[i] ?? 200},62%,52%)`;
 const pl = (id, name) => `<a class="pl" data-pid="${id}">${esc(name)}</a>`;
 const bl = (id, name) => `<a class="bl" data-bid="${id}">${esc(name)}</a>`;
-const KIND_ICON = { life: '♥', labour: '⚒', housing: '⌂', health: '✚', money: '£', social: '☺', group: '⚉', goal: '⚑', god: '★', civic: '✉' };
+const KIND_ICON = { life: '♥', labour: '⚒', housing: '⌂', health: '✚', money: '£', social: '☺', group: '⚉', goal: '⚑', god: '★', civic: '✉', crime: '◈', business: '▣' };
 
 // ------------------------------------------------------------------ small chart helpers (inline SVG)
 function spark(vals, { w = 150, h = 38, col = '#5bb4ff', fmt = (v) => v } = {}) {
@@ -30,10 +30,11 @@ const stackBar = (parts) => { const tot = parts.reduce((s, p) => s + p.v, 0) || 
 
 // ------------------------------------------------------------------ FEED
 export function mountFeed(el, store) {
-  let mode = 'local'; const tabs = [['local', 'Local'], ['stories', 'Storylines'], ['forum', 'Forum'], ['posts', 'Posts']];
-  el.innerHTML = `<div class="chips" id="fchips">${tabs.map(([k, l]) => `<button data-m="${k}" class="${k === mode ? 'on' : ''}">${l}</button>`).join('')}</div><div id="fbody" class="scroll"></div>`;
+  let mode = 'local', lf = 'all'; const tabs = [['local', 'Local'], ['stories', 'Storylines'], ['forum', 'Forum'], ['posts', 'Posts']];
+  el.innerHTML = `<div class="chips" id="fchips">${tabs.map(([k, l]) => `<button data-m="${k}" class="${k === mode ? 'on' : ''}">${l}</button>`).join('')}</div><div class="seg" id="lfilter">${[['all', 'Everything'], ['people', 'People'], ['town', 'Town']].map(([k, l]) => `<button data-lf="${k}" class="${k === lf ? 'on' : ''}">${l}</button>`).join('')}</div><div id="fbody" class="scroll"></div>`;
   const body = el.querySelector('#fbody');
   el.querySelector('#fchips').onclick = (e) => { const b = e.target.closest('[data-m]'); if (!b) return; mode = b.dataset.m; el.querySelectorAll('#fchips button').forEach((x) => x.classList.toggle('on', x === b)); render(); };
+  el.querySelector('#lfilter').onclick = (e) => { const b = e.target.closest('[data-lf]'); if (!b) return; lf = b.dataset.lf; el.querySelectorAll('#lfilter button').forEach((x) => x.classList.toggle('on', x === b)); render(); };
   const person = (p) => pl(p.id, p.name);
   el.addEventListener('click', (e) => { const c = e.target.closest('.news'); if (c && !e.target.closest('a')) c.classList.toggle('open'); });
   function news(it) {
@@ -41,7 +42,8 @@ export function mountFeed(el, store) {
     return `<article class="card news k-${it.kind}${it.conseq ? ' conseq' : ''}${it.sal >= 0.5 ? ' big' : ''}"><div class="ni">${ic}</div><div class="nb"><div class="nh">${esc(it.head)}</div>${it.because ? `<div class="because">↳ because of: ${esc(it.because)}</div>` : ''}${it.body ? `<p>${esc(it.body)}</p>` : it.line && it.line !== it.head ? `<p>${esc(it.line)}</p>` : ''}<div class="nm"><time>${esc(it.date)}</time>${it.conseq ? '<em>consequence</em>' : ''}${it.place ? ' · ' + bl(it.place.id, it.place.name) : ''}${(it.ppl || []).slice(0, 3).map((p) => ' ' + pl(p.id, p.name)).join('')}</div></div></article>`;
   }
   function renderLocal() {
-    const items = store.s.news.slice(-80).reverse();
+    const TOWN = new Set(['business', 'crime', 'civic']); const items = store.s.news.filter((x) => lf === 'all' || (lf === 'town' ? TOWN.has(x.kind) && x.town : !(TOWN.has(x.kind) && x.town))).slice(-80).reverse();
+    if (lf === 'town' && !items.length) return '<p class="empty">Nothing to report from the high street, the council or the police yet. Shops opening and closing, planning decisions, council cuts and elections appear here.</p>';
     return items.length ? items.map(news).join('') : '<p class="empty">A quiet start. Local news will appear here as things happen: arrivals, jobs, rows, weddings, rent rises…</p>';
   }
   function renderForum() {
@@ -61,7 +63,7 @@ export function mountFeed(el, store) {
   }
   // headline with the protagonists' names turned into links ("Priya & Tom: got together, ...")
   const storyHead = (a) => { const i = a.headline.indexOf(': '); let names = esc(a.headline.slice(0, i < 0 ? 0 : i)); const rest = esc(a.headline.slice(i < 0 ? 0 : i)); for (const x of a.actors) { const f = esc(x.name.split(' ')[0]); names = names.replace(new RegExp('\\b' + f + '\\b'), `<a class="pl" data-pid="${x.id}">${f}</a>`); } return names + rest; };
-  function render() { const top = body.scrollTop; body.innerHTML = mode === 'local' ? renderLocal() : mode === 'forum' ? renderForum() : mode === 'posts' ? renderPosts() : renderStories(); body.scrollTop = top; }
+  function render() { const top = body.scrollTop; el.querySelector('#lfilter').hidden = mode !== 'local'; body.innerHTML = mode === 'local' ? renderLocal() : mode === 'forum' ? renderForum() : mode === 'posts' ? renderPosts() : renderStories(); body.scrollTop = top; }
   let dirty = false; const mark = () => { if (!dirty) { dirty = true; setTimeout(() => { dirty = false; render(); }, 400); } };
   store.on('news', mark); store.on('posts', mark); store.on('arcs', mark); store.on('ready', mark); render();
 }
@@ -106,10 +108,23 @@ export function mountInspect(el, store, hooks) {
     ${sec('story', `Life story <small>${lifeRows.length}</small>`, `<ol class="timeline">${lifeRows.map((l) => `<li class="i${Math.min(5, l.imp || 2)}"><time>${esc(l.date)}</time><span>${esc(l.text)}</span></li>`).join('')}</ol>`, false)}
     ${sec('about', 'About', `<div class="kv"><span>Born</span><span>${esc(d.born || '?')}${d.religion && d.religion !== 'No religion' ? ' · ' + esc(d.religion) : ''}</span></div><div class="kv"><span>Education</span><span>${esc(lc(d.edu))}</span></div><div class="kv"><span>Interests</span><span>${esc((d.interests || []).join(', ') || '—')}</span></div>${d.pets && (d.pets.dogs || d.pets.cats) ? `<div class="kv"><span>Pets</span><span>${d.pets.dogs ? d.pets.dogs + ' dog' + (d.pets.dogs > 1 ? 's' : '') : ''} ${d.pets.cats ? d.pets.cats + ' cat' : ''}</span></div>` : ''}`, false)}`;
   }
+  function bizCard(b) {
+    const z = b.biz; const notes = (b.notices || []).map((n) => `<div class="notice"><b>${n.camp ? 'Campaign against: ' : 'Planning notice: '}</b>${esc(n.text)}${n.objections != null ? `<small>${n.objections} objection${n.objections === 1 ? '' : 's'} so far</small>` : ''}</div>`).join('');
+    if (!z) return notes;
+    if (z.status === 'vacant') return `<div class="bizcard vacant"><div class="bz-h"><b class="warn">To let</b><span>${z.months >= 1 ? 'empty for ' + dur(z.months * 30.4) : 'recently vacated'}</span></div>
+      <div class="kv"><span>Asking rent</span><span>${z.ask ? gbp(z.ask) + '/mo' : '—'}</span></div><div class="kv"><span>Size</span><span>${z.m2} m²</span></div>${z.was ? `<div class="kv"><span>Last tenant</span><span>${esc(z.was)}</span></div>` : ''}
+      <p class="mute small">A unit left empty for long drags down footfall for its neighbours. Someone may take it on: a resident starting up, or a chain.</p></div>${notes}`;
+    const d = z.doing, L = z.last, yrs = z.ageMonths != null ? (z.ageMonths >= 24 ? Math.round(z.ageMonths / 12) + ' years' : z.ageMonths + ' months') : '';
+    const fresh = b.fresh != null && b.now - b.fresh < 144 * 45;
+    return `<div class="bizcard"><div class="bz-h"><b class="${d.tone === 'bad' ? 'bad' : d.tone === 'warn' ? 'warn' : 'good'}">${esc(cap(d.word))}</b><span>${fresh ? 'New · ' : ''}${esc(z.kind)}${yrs ? ' · trading ' + yrs : ''}</span></div><p class="mute small">${esc(d.why)}${z.hours ? ' Opening hours are reduced.' : ''}</p>
+      <div class="kv"><span>Owner</span><span>${z.owner ? pl(z.owner.id, z.owner.name) : esc(z.ownerText || '—')}</span></div>
+      <div class="kv"><span>Regulars</span><span>${z.regulars || 'few known'}</span></div>${L ? `<details class="sec sub" data-k="bizfin"><summary>Last month's books</summary><div class="kv"><span>Takings</span><span>${gbp(L.rev)}</span></div><div class="kv"><span>Wages</span><span>${gbp(L.wages)}</span></div><div class="kv"><span>Rent</span><span>${gbp(L.rent)}</span></div><div class="kv"><span>${L.profit >= 0 ? 'Left over' : 'Shortfall'}</span><span class="${L.profit < 0 ? 'bad' : ''}">${gbp(Math.abs(L.profit))}</span></div></details>` : ''}</div>${notes}`;
+  }
   function place(b) {
     const P = (a, k) => a.length ? a.map((p) => `<a class="pl chip" data-pid="${p.id}">${esc(p.name)}<small>${esc(p.job || '')}</small></a>`).join('') : `<span class="mute">${k}</span>`;
     const rentBand = b.units && b.units.length ? (() => { const r = b.units.filter((u) => u.rent).map((u) => u.rent); return r.length ? `${gbp(Math.min(...r))}${Math.max(...r) !== Math.min(...r) ? '–' + gbp(Math.max(...r)) : ''}/mo` : null; })() : null;
     return `<button class="back" data-back>&lsaquo; People</button><div class="bhead"><h2>${esc(b.name)}</h2><div class="sub">${esc(lc(b.tpl || b.arch || b.type))}${b.cat ? ' · ' + esc(lc(b.cat)) : ''}${b.year ? ' · built ' + b.year : ''}</div><div class="sub dim">${esc(b.address)}</div></div>
+      ${bizCard(b)}
       ${b.hours != null ? `<div class="now"><div class="act"><b class="${b.open ? 'good' : 'bad'}">${b.open ? 'Open now' : 'Closed'}</b> · ${esc(b.hours)}</div></div>` : ''}
       <div class="grid3"><div><b>${b.inside.length}</b><small>inside now</small></div><div><b>${b.residents.length}</b><small>live here</small></div><div><b>${b.employees.length}</b><small>work here</small></div></div>
       ${b.owner ? `<div class="kv"><span>Owner / landlord</span><span>${pl(b.owner.id, b.owner.name)}</span></div>` : ''}${rentBand ? `<div class="kv"><span>Rent band</span><span>${rentBand}</span></div>` : ''}${b.capacity ? `<div class="kv"><span>Capacity</span><span>${b.capacity}</span></div>` : ''}
@@ -137,31 +152,80 @@ export function mountInspect(el, store, hooks) {
 
 // ------------------------------------------------------------------ TOWN (stats dashboard)
 export function mountTown(el, store) {
-  el.innerHTML = '<div id="town" class="scroll"></div>'; const root = el.querySelector('#town');
+  el.innerHTML = '<div id="town" class="scroll"></div>'; const root = el.querySelector('#town'); const open = {};
+  root.addEventListener('toggle', (e) => { const d = e.target.closest && e.target.closest('details.sec'); if (d && d.dataset.k) open[d.dataset.k] = d.open; }, true);
   const card = (label, val, sub, series, col, fmt) => `<div class="stat"><div class="sl">${label}</div><div class="sv">${val}</div>${series ? spark(series, { col }) : ''}<div class="ss">${sub || ''}</div></div>`;
+  const det = (key, title, hint, inner) => `<details class="sec tcard" data-k="${key}" ${open[key] ? 'open' : ''}><summary>${title}<small class="hint">${hint}</small></summary><div class="tbody">${inner}</div></details>`;
+  const kv = (k, v) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`;
+  const lvl = (v) => (v >= 0.95 ? ['as normal', ''] : v >= 0.7 ? ['slightly reduced', 'warn'] : v >= 0.45 ? ['reduced', 'warn'] : ['badly cut', 'bad']);
+  function highCard(t, ser) {
+    const h = t.high; if (!h) return ''; const tot = h.trading + h.vacant || 1;
+    const vac = ser.map((x) => x.biz).filter((v) => v != null);
+    const units = h.units.length ? h.units.map((u) => `<a class="bl chip2" data-bid="${u.bid}">${esc(u.name.replace(/^TO LET, /, ''))}<small>${u.months >= 1 ? dur(u.months * 30.4) : 'new'}${u.ask ? ' · ' + gbp(u.ask) + '/mo' : ''}</small></a>`).join('') : '<span class="mute">None. Every unit is trading.</span>';
+    const ch = h.changes.length ? h.changes.map((c) => `<span class="pill ${c.d > 0 ? 'up' : 'down'}">${c.d > 0 ? '+' : '−'}${Math.abs(c.d)} ${esc(c.label)}</span>`).join('') : '<span class="mute">Same mix of shops as when we started.</span>';
+    const news = h.news.length ? `<ul class="plain">${h.news.slice(0, 6).map((n) => `<li><time>${esc(n.date)}</time> ${esc(n.text)}</li>`).join('')}</ul>` : '<p class="mute">No openings or closures yet.</p>';
+    return det('high', 'High street', `${h.trading} trading · ${h.vacant} to let`, `${stackBar([{ l: 'trading', v: h.trading, c: '#5fd09a' }, { l: 'to let', v: h.vacant, c: '#8a8478' }])}
+      <p class="mute small">${pct(h.vacant / tot)}% of units empty${h.struggling ? ` · ${h.struggling} cutting hours or staff` : ''} · commercial rents ${Math.abs(h.rentIdx - 1) < 0.01 ? 'level with' : (h.rentIdx > 1 ? 'up ' : 'down ') + Math.abs(Math.round((h.rentIdx - 1) * 100)) + '% on'} the start</p>
+      ${vac.length > 2 ? `<h5>Empty units over time</h5>${spark(vac, { col: '#c9b27a' })}` : ''}<h5>Empty units</h5><div class="chips2">${units}</div><h5>Mix of shops, change since the start</h5><div class="pills">${ch}</div><h5>Recent changes</h5>${news}`);
+  }
+  const SG = ['#5bb4ff', '#ffd36b', '#c58bff', '#ff9b6b', '#5fd09a', '#8c9bb0'];
+  function safetyCard(t, ser, det0) {
+    const sf = t.safety, last = ser.at(-1); if (!sf || !last || !last.cr) return sf ? det('safety', 'Safety', 'collecting data', '<p class="mute">Recorded crime figures start after the first few weeks.</p>') : '';
+    const cr = ser.filter((x) => x.cr); const end = cr.at(-1), t12 = end.tick - 365 * 144; let base = cr[0]; for (const x of cr) if (x.tick <= t12) base = x;
+    const spanY = Math.max(0.1, (end.tick - base.tick) / (365 * 144)), enough = spanY >= 0.9, sum = (a) => a.reduce((s, v) => s + v, 0);
+    const diff = end.cr.map((v, i) => Math.max(0, v - base.cr[i])), total = sum(diff), per = (total / spanY) / Math.max(1, end.pop || 500) * 1000;
+    // trend: last six months against the six before (needs a year of history)
+    let trend = '';
+    if (spanY >= 0.95) { const mid = cr.reduce((m, x) => (Math.abs(x.tick - (end.tick - 182 * 144)) < Math.abs(m.tick - (end.tick - 182 * 144)) ? x : m), cr[0]), a = sum(end.cr) - sum(mid.cr), b = sum(mid.cr) - sum(base.cr); trend = b >= 5 ? (a > b * 1.15 ? 'rising' : a < b * 0.85 ? 'falling' : 'steady') : ''; }
+    const fear = cr.map((x) => x.fear), f0 = fear[Math.max(0, fear.length - 14)], fNow = end.fear;
+    const deltas = []; for (let i = 1; i < cr.length; i++) deltas.push(sum(cr[i].cr) - sum(cr[i - 1].cr)); const sm = deltas.map((_, i) => sum(deltas.slice(Math.max(0, i - 5), i + 1)) / Math.min(6, i + 1));
+    const mx = Math.max(1, ...diff);
+    const rows = sf.groups.map((g, i) => `<div class="hbar"><span>${esc(g.label)}</span><i style="width:${(diff[i] / mx) * 100}%;background:${SG[i % SG.length]}"></i><b>${diff[i]}</b></div>`).join('');
+    const watch = sf.watches.length ? `<p class="small">Neighbourhood watch: ${sf.watches.map((w) => esc(w.street)).join(', ')}.</p>` : '';
+    const pol = sf.police < 0.8 ? 'stretched' : sf.police > 1.15 ? 'well resourced' : 'normal';
+    return det('safety', 'Safety', trend ? `recorded crime ${trend}` : `${total} recorded ${enough ? 'this year' : 'so far'}`, `
+      <p class="small">Police recorded <b>${total}</b> offences ${enough ? 'in the last 12 months' : `in the first ${Math.max(1, Math.round(spanY * 12))} months`} (about ${per.toFixed(0)} per 1,000 residents a year).${trend ? ' The trend is ' + trend + '.' : ' Not enough history yet for a trend.'}</p>
+      ${sm.length > 3 ? `<h5>Recorded crime, smoothed</h5>${spark(sm, { col: '#5bb4ff' })}` : ''}<h5>What was recorded</h5><div class="hbars">${rows}</div>
+      <h5>How safe people feel</h5><p class="small">${end.worried}% of residents say they feel quite worried about crime; the average worry level is ${fNow.toFixed(0)}/100${f0 != null && Math.abs(fNow - f0) >= 1.5 ? (fNow > f0 ? ', up' : ', down') + ' on six months ago' : ', about the same as before'}. Feelings of safety often move differently from recorded crime: they follow what people hear and see.</p>
+      ${fear.length > 3 ? spark(fear, { col: '#ffd36b' }) : ''}<p class="small">Police capacity: ${pol}.</p>${watch}`);
+  }
+  function councilCard(t) {
+    const c = t.council; if (!c) return '';
+    const sv = c.services.map((s) => { const [w, cls] = lvl(s.level); return `<div class="kv"><span>${esc(s.label)}</span><span class="${cls}">${s.detail && s.level < 0.95 ? esc(s.detail) + ' · ' : ''}${w}</span></div>`; }).join('');
+    const apps = c.apps.length ? c.apps.map((a) => `<div class="app"><b>${esc(cap(a.name))}</b><small>${esc(a.street)} · ${a.objections} objection${a.objections === 1 ? '' : 's'}${a.supports ? ', ' + a.supports + ' in support' : ''} · decision in ${dur(a.days)}</small></div>`).join('') : '<p class="mute">No applications open.</p>';
+    const camps = c.camps.length ? c.camps.map((k) => `<div class="app"><b>${esc(k.name)}</b><small>${k.sign} signatures${k.leader ? ' · led by ' + pl(k.leader.id, k.leader.name) : ''}</small></div>`).join('') : '<p class="mute">No active campaigns.</p>';
+    const cut = c.services.some((s) => s.level < 0.95);
+    return det('council', 'Council', `${c.nextDays != null ? 'election in ' + dur(c.nextDays) : ''}${c.apps.length ? ' · ' + c.apps.length + ' planning' : ''}${c.camps.length ? ' · ' + c.camps.length + ' campaign' + (c.camps.length > 1 ? 's' : '') : ''}`, `
+      <h5>Ward councillors <small>${esc(c.control || '')} borough</small></h5><div class="chips2">${c.cllrs.map((x) => `<span class="chip2">${x.id ? pl(x.id, x.name) : esc(x.name)}<small>${esc(x.party)}</small></span>`).join('')}</div>
+      <p class="small">Next election: <b>${esc(c.next)}</b>${c.last ? `. Last time (${esc(c.last.date)}) turnout was ${c.last.turnout}% and ${esc(c.last.top)} won.` : ''}</p>
+      <h5>Services${cut ? ' <small>some have been cut</small>' : ''}</h5>${sv}<h5>Planning applications</h5>${apps}<h5>Campaigns</h5>${camps}${c.cases ? `<p class="small">${c.cases} council case${c.cases > 1 ? 's' : ''} open (bins, potholes, repairs).</p>` : ''}`);
+  }
   function render() {
-    const S = store.s, ser = S.series, last = ser.at(-1) || {}, det = S.stats || {}, first = ser[0] || last;
+    const S = store.s, ser = S.series, last = ser.at(-1) || {}, dt = S.stats || {}, first = ser[0] || last, T = S.town || {};
     const col = (k) => ser.map((x) => x[k]);
-    const seg = det.segs || {}; const segParts = S.segs.map((g, i) => ({ l: g.label.replace(/ \(.*\)/, ''), v: seg[g.id] || 0, c: segColor(i) })).filter((p) => p.v);
-    const ten = det.tenure || {}; const TC = { owned_outright: '#5fd09a', mortgage: '#4fa97a', private_rent: '#ff9b6b', council: '#5bb4ff', housing_assoc: '#8c7bff', shared_ownership: '#e6c34f' };
+    const seg = dt.segs || {}; const segParts = S.segs.map((g, i) => ({ l: g.label.replace(/ \(.*\)/, ''), v: seg[g.id] || 0, c: segColor(i) })).filter((p) => p.v);
+    const ten = dt.tenure || {}; const TC = { owned_outright: '#5fd09a', mortgage: '#4fa97a', private_rent: '#ff9b6b', council: '#5bb4ff', housing_assoc: '#8c7bff', shared_ownership: '#e6c34f' };
     const tenParts = Object.entries(ten).map(([k, v]) => ({ l: lc(k), v, c: TC[k] || '#888' }));
-    const lab = det.labour || {};
+    const lab = dt.labour || {}; const top = root.scrollTop;
     root.innerHTML = `<div class="stats">
-      ${card('Residents', last.pop ?? '—', `${det.households || '?'} households`, col('pop'), '#5bb4ff')}
+      ${card('Residents', last.pop ?? '—', `${dt.households || '?'} households`, col('pop'), '#5bb4ff')}
       ${card('Unemployment', (last.unemp ?? 0).toFixed(1) + '%', `${lab.employed || 0} employed · ${lab.unemployed || 0} looking`, col('unemp'), '#ff9b6b')}
       ${card('Rent burden', (last.burden ?? 0).toFixed(0) + '%', 'of income, renters (mean)', col('burden'), '#ffd36b')}
       ${card('Wellbeing', ((last.mood ?? 0) * 50 + 50).toFixed(0), 'mood index 0–100', col('mood').map((v) => v * 50 + 50), '#5fd09a')}
       ${card('Loneliness', (last.lone ?? 0).toFixed(1) + '%', 'of residents lonely', col('lone'), '#c58bff')}
       ${card('Households pressured', last.pressured ?? 0, 'high cost-of-living stress', col('pressured'), '#ff7a6b')}
     </div>
+    <div class="tcards">${highCard(T, ser)}${safetyCard(T, ser)}${councilCard(T)}</div>
     <div class="tally"><div><b>${last.births ?? 0}</b><small>births</small></div><div><b>${last.deaths ?? 0}</b><small>deaths</small></div><div><b>${last.moves ?? 0}</b><small>home moves</small></div><div><b>${(last.vac ?? 0).toFixed(1)}%</b><small>vacant homes</small></div><div><b>${(last.rentIdx ?? 1).toFixed(2)}</b><small>rent index</small></div></div>
-    <h4>Age pyramid</h4>${det.pyr ? pyramid(det.pyr) : ''}
+    <h4>Age pyramid</h4>${dt.pyr ? pyramid(dt.pyr) : ''}
     <h4>Who lives here</h4>${stackBar(segParts)}
     <h4>How people hold their homes</h4>${stackBar(tenParts)}
     <p class="mute small">Sampled every 14 game days · ${ser.length} samples since ${esc(first.date || '')}</p>`;
+    root.scrollTop = top;
   }
   let t = 0; const mark = () => { clearTimeout(t); t = setTimeout(render, 250); };
-  store.on('stats', mark); store.on('ready', mark); render();
+  const ask = () => { if (el.offsetParent !== null || !store.s.town) store.post({ cmd: 'town' }); };
+  store.on('stats', mark); store.on('ready', () => { ask(); mark(); }); store.on('town', mark); render(); setInterval(() => { if (el.offsetParent !== null) ask(); }, 3500);
 }
 
 // ------------------------------------------------------------------ PEOPLE directory

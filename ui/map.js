@@ -22,13 +22,14 @@ export class MapView {
     this.time = { hour: 12, sunrise: 7, sunset: 18, month: 5, weather: null }; this.dark = 0; this.rain = []; this.flash = 0; this.occ = new Map(); this.leave = 0; this.nightSmooth = 0; this.pulse = 0;
     this.dest = null; this.labelsOn = true; this.hot = new Map(); this.disp = new Map(); this.overlay = 'none'; this.bursts = [];
   }
+  // Venue labels follow the live building list: a shop that changes hands is renamed on the map, a vacant unit is labelled by drawVacant instead.
+  get venueLabels() { return this.bld.filter((b) => b.tpl && b.kind !== 'residential' && !b.vacant && !['business_unit', 'vacant_unit', 'arch_unit', 'estate_agent'].includes(b.tpl)); }
   // ------------------------------------------------------------------ setup
   setMap(map, bld) {
     this.map = map; this.bld = bld; this.byId = new Map(bld.map((b) => [b.id, b])); this.tiles = map.tiles;
     const cv = document.createElement('canvas'); drawMap(cv.getContext('2d'), map, { scale: S, labels: false }); this.layer = cv;
     this.lamps = map.props.lamps || []; this.st = map.station; this.gw = (map.gateways || []).filter((g) => g.kind !== 'station');
     this.windows = new Map(); for (const b of bld) { if (b.kind === 'residential' || b.kind === 'commercial') { const r = b.id * 9301 + 49297; const n = Math.max(2, Math.min(9, Math.floor(b.w * b.h / 9))); const ws = []; for (let i = 0; i < n; i++) { const a = ((r * (i + 3) * 233280) % 1000) / 1000, c = ((r * (i + 7) * 9301) % 1000) / 1000; ws.push([a, c]); } this.windows.set(b.id, ws); } }
-    this.venueLabels = bld.filter((b) => b.tpl && b.kind !== 'residential' && !['business_unit', 'vacant_unit', 'arch_unit', 'estate_agent'].includes(b.tpl));
     this.resize(); this.fit();
   }
   resize() {
@@ -138,6 +139,7 @@ export class MapView {
     this.drawLights(ctx, dkv);
     this.drawOverlay(ctx);
     this.drawHighlights(ctx);
+    this.drawShops(ctx);
     this.drawStation(ctx, now);
     this.drawPeople(ctx, now);
     this.drawBadges(ctx);
@@ -162,7 +164,7 @@ export class MapView {
     if (z >= 2.4) for (const l of this.lamps) { const [x, y] = this.toScreen(l.x + 0.5, l.y + 0.5); if (x < -30 || y < -30 || x > this.w + 30 || y > this.h + 30) continue; const r = Math.max(8, z * 2.6); const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(255,214,130,${0.4 * a})`); g.addColorStop(1, 'rgba(255,214,130,0)'); ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2); }
     ctx.restore();
     for (const b of this.bld) {
-      const n = this.dOcc(b.id); const ws = this.windows.get(b.id); if (!ws) continue; const [sx, sy] = this.toScreen(b.x, b.y); const bw = b.w * z, bh = b.h * z; if (sx > this.w || sy > this.h || sx + bw < 0 || sy + bh < 0) continue;
+      if (b.vacant) continue; const n = this.dOcc(b.id); const ws = this.windows.get(b.id); if (!ws) continue; const [sx, sy] = this.toScreen(b.x, b.y); const bw = b.w * z, bh = b.h * z; if (sx > this.w || sy > this.h || sx + bw < 0 || sy + bh < 0) continue;
       const lit = b.kind === 'commercial' ? (n > 0 ? ws.length : Math.min(1, ws.length)) : Math.min(ws.length, n > 0 ? 1 + n : 0);
       if (!lit) continue;
       ctx.fillStyle = `rgba(255,205,110,${(0.85 * a).toFixed(2)})`; const ww = Math.max(1.5, z * 0.36), wh = Math.max(1.5, z * 0.4);
@@ -179,6 +181,24 @@ export class MapView {
     const z = this.cam.z; const hl = (id, col, lw) => { const b = this.byId.get(id); if (!b) return; const [sx, sy] = this.toScreen(b.x, b.y); ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.strokeRect(sx - 1, sy - 1, b.w * z + 2, b.h * z + 2); };
     if (this.selB != null) { hl(this.selB, '#ffd36b', 2.5); const b = this.byId.get(this.selB); if (b) { const [sx, sy] = this.toScreen(b.x, b.y); ctx.fillStyle = 'rgba(255,211,107,0.12)'; ctx.fillRect(sx, sy, b.w * z, b.h * z); } }
     if (this.hoverB != null && this.hoverB !== this.selB) hl(this.hoverB, 'rgba(255,255,255,0.55)', 1.5);
+  }
+  // Calm town markers: shuttered "To let" units, a quiet "new" tag on recent openings, and notice markers for planning applications / campaigns.
+  // Crime is deliberately never drawn on the map.
+  drawShops(ctx) {
+    const z = this.cam.z; if (z < 3) return; const tick = this.time.tick || 0, fresh = this.store.s.fresh, pins = this.store.s.pins || [], vis = (sx, sy, w, h) => !(sx > this.w || sy > this.h || sx + w < 0 || sy + h < 0);
+    for (const b of this.bld) {
+      if (!b.vacant) continue; const [sx, sy] = this.toScreen(b.x, b.y), bw = b.w * z, bh = b.h * z; if (!vis(sx, sy, bw, bh)) continue;
+      ctx.fillStyle = 'rgba(40,44,52,0.55)'; ctx.fillRect(sx, sy, bw, bh);
+      if (z >= 5) { ctx.strokeStyle = 'rgba(20,24,30,0.55)'; ctx.lineWidth = 1; ctx.beginPath(); for (let y = sy + 3; y < sy + bh - 1; y += Math.max(3, z * 0.45)) { ctx.moveTo(sx + 1, y); ctx.lineTo(sx + bw - 1, y); } ctx.stroke(); }
+      if (z >= 6.5) { const fs = clamp(z * 0.8, 9, 12); ctx.font = `italic 600 ${fs}px system-ui`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; const cx = sx + bw / 2, cy = sy + bh / 2; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(10,14,20,.8)'; ctx.strokeText('To let', cx, cy); ctx.fillStyle = '#d8cfb8'; ctx.fillText('To let', cx, cy); }
+    }
+    for (const [id, t] of fresh) { const age = (tick - t) / 144; if (age > 45) continue; const b = this.byId.get(id); if (!b) continue; const [sx, sy] = this.toScreen(b.x, b.y), bw = b.w * z; if (!vis(sx, sy, bw, b.h * z)) continue;
+      const a = age < 30 ? 1 : 1 - (age - 30) / 15; ctx.globalAlpha = a; if (z < 6) { ctx.fillStyle = '#4fd1b5'; ctx.strokeStyle = 'rgba(10,14,20,.7)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(sx + bw - 2, sy + 2, 3.5, 0, 7); ctx.fill(); ctx.stroke(); }
+      else { const fs = 10; ctx.font = `700 ${fs}px system-ui`; const tw = ctx.measureText('New').width + 8; ctx.fillStyle = '#2fae94'; ctx.beginPath(); ctx.roundRect(sx + bw - tw, sy - fs - 2, tw, fs + 4, 4); ctx.fill(); ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('New', sx + bw - tw / 2, sy - fs / 2); } ctx.globalAlpha = 1; }
+    for (const p of pins) { const b = this.byId.get(p.bid); if (!b) continue; const [sx, sy] = this.toScreen(b.x, b.y), bw = b.w * z; if (!vis(sx, sy, bw, b.h * z) || z < 4) continue;
+      const s = clamp(z * 0.9, 9, 15), x = sx + bw / 2 - s / 2, y = sy - s - 2; ctx.fillStyle = p.kind === 'campaign' ? '#8fb4e8' : '#e9e4d2'; ctx.strokeStyle = 'rgba(20,28,40,.8)'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.roundRect(x, y, s, s * 1.15, 2); ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(40,50,70,.7)'; ctx.beginPath(); for (let i = 1; i <= 3; i++) { ctx.moveTo(x + 2, y + i * s * 0.28); ctx.lineTo(x + s - 2, y + i * s * 0.28); } ctx.stroke();
+      if (z >= 10) { ctx.font = '600 10px system-ui'; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(10,14,20,.8)'; ctx.strokeText(p.label, sx + bw / 2, y - 1); ctx.fillStyle = '#e9e4d2'; ctx.fillText(p.label, sx + bw / 2, y - 1); } }
   }
   drawStation(ctx, now) {
     if (!this.st) return; const z = this.cam.z; const [x, y] = this.toScreen(this.st.x, this.st.y);

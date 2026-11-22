@@ -1,7 +1,9 @@
 // Play + god-consequence layer for the UI host (worker-safe, no DOM). Owns: player setup/creation, verbs -> kernel commands (actor 'player'),
 // the compact HUD state, on-demand sheet sections, pause-on-event, skip-ahead, and the god-intervention consequence tracker (causal event chains).
 import { describeEvent } from '../describe.js';
+import { isPrivate, adminData, fmtLabel } from '../town.js';
 import { GOD_PRESETS } from '../godcatalogue.js';
+import { CASE_KINDS } from '../../sim/systems/civic/data.js';
 import { stepLabel } from '../../sim/goals/describe.js';
 import { MOVE } from '../../sim/goals/moves.js';
 
@@ -23,6 +25,7 @@ const NEEDS_SITUATION = new Set(['ask_out', 'repair_or_end_relationship', 'settl
 const FIX_JOB = { unemployed: 'out of work', 'sick disabled': 'off work (ill or disabled)', 'other inactive': 'not working', 'looking after family': 'at home with family', student: 'student', retired: 'retired' };
 const k0 = (v) => Math.round(v / 1000);
 const fh = (h) => { h = h % 24; const hh = Math.floor(h), mm = Math.floor((h - hh) * 60); return hh + ':' + String(mm).padStart(2, '0'); };
+const CASE_NAME = { bins: 'missed bins', pothole: 'a pothole', flytip: 'fly-tipping', damp: 'damp in a council home', repair: 'a council repair', noise: 'noise' };
 const dayName = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 export class PlayHost {
@@ -60,7 +63,8 @@ export class PlayHost {
 
   // ------------------------------------------------------------------ verbs
   verb(name, args, quiet) {
-    const w = this.w; let r; try { r = w.queueCommand({ actor: 'player', name, args: args || {} }); } catch (e) { r = { ok: false, why: String(e.message || e) }; }
+    const w = this.w; let r; if (/^(business\.(start|workAt|becomeRegular)|crime\.(report|joinWatch|lockUp)|civic\.(complain|object|joinCampaign|standCouncillor))$/.test(name)) args = { ...(args || {}), pid: this.pid };
+    try { r = w.queueCommand({ actor: 'player', name, args: args || {} }); } catch (e) { r = { ok: false, why: String(e.message || e) }; }
     if (r === true) r = { ok: true }; else if (r === false || r == null) r = { ok: false, why: '' };
     if (!quiet) { const fb = this.feedback(name, args || {}, r); this.say({ t: 'play.result', name, ok: !!r.ok, text: fb.title, ...fb }); }
     if (r && r.ok && /goTo|stay|goOut|buy/.test(name)) this.h.lastDetail = 0;
@@ -130,6 +134,30 @@ export class PlayHost {
       case 'player.goTo': return out(`Heading to ${place(a.bid)}`, `About ${Math.max(10, (r.from - w.tick - 1) * 10)} minutes' walk. Your character walks there by themselves while time runs. When they arrive, open Do to see who is there.`);
       case 'player.stay': return out('Taking it easy', 'Your character stays put for an hour, then goes back to their routine. Time runs while they do.');
       case 'player.goOut': return out('Out in the city', 'A few hours away from the neighbourhood. You will be back on the map after.');
+      case 'business.start': {
+        const addr = (this.h.byBid.get(a.unit)?.lf?.address || 'the unit').replace(/^TO LET, /, '');
+        if (r.ok) return out(`You opened a ${fmtLabel(a.type).toLowerCase()}`, `It is at ${addr}. Set-up cost about £${(r.cost || 0).toLocaleString('en-GB')}, paid from your savings and ${a.loan === false ? 'no loan' : 'a start-up loan (up to £25,000, repaid from takings)'}. New businesses rarely make money in the first year and rent, wages and rates come out every month. Tap the building on the map to see how it is doing; regulars and reviews build slowly.`, { next: [{ label: 'Check my money', open: 'me' }] });
+        if (/needs about/.test(r.why || '')) return out('Not enough to start up yet', `${cap1(r.why).replace(/£(\d{4,})/g, (m, n) => '£' + (+n).toLocaleString('en-GB'))}. You have £${Math.round(w.people.get(pid)?.money || 0).toLocaleString('en-GB')} in hand. A smaller unit or a cheaper type (a barber or corner shop costs far less than a restaurant) may fit.`, { next: [{ label: 'Choose again', open: 'work' }] });
+        if (/not vacant/.test(r.why || '')) return out('That unit has just gone', 'Someone else took it. Pick another empty unit.', { next: [{ label: 'See units to let', open: 'work' }] });
+        return out('Could not start a business', r.why ? cap1(r.why) + '.' : 'Pick a unit to let and a type of business.', { next: [{ label: 'Back', open: 'work' }] });
+      }
+      case 'business.workAt': {
+        const nameB = this.h.byBid.get(a.bid)?.name || 'that business';
+        if (r.ok) return out(`Application sent to ${nameB}`, `Small employers usually reply within a week or two: expect ${days(r.days || 7)}. They weigh your experience against other applicants, and they only hire if they have a vacancy. ${pendingLine()}`, { next: [{ label: 'Back to Life admin', open: 'work' }] });
+        if (/three applications/.test(r.why || '')) return out('You already have three applications out', `${pendingLine()} Wait for a reply first.`);
+        if (/already applied/.test(r.why || '')) return out(`You already applied to ${nameB}`, `${pendingLine()} Nothing to do but wait.`);
+        return out(`${nameB} is not hiring`, r.why ? cap1(r.why) + '.' : 'No vacancy at the moment. Small businesses hire rarely: try another, or check back in a few weeks.');
+      }
+      case 'crime.report': return r.ok ? out('You reported it to the police', 'It is now on record and has a crime number you can use for insurance. Reporting does not guarantee an arrest: most thefts are never solved. But recorded crime is how police and the council see patterns on your street, and being taken seriously nudges your trust in the police up.', { next: [{ label: 'Neighbourhood watch', open: 'work' }] }) : out('Nothing to report', 'There is no recent crime against you that has not been reported. If something happens to you, come back here. In an emergency call 999.');
+      case 'crime.joinWatch': return r.ok ? out('You joined the street watch', 'Neighbours look out for each other and share alerts in a group chat. Watches are linked to less burglary and vehicle crime in the research, and mean you get to know people on your street.', { next: [{ label: 'Open Phone', open: 'phone' }] }) : out('Could not join', 'There is no watch you can join from where you live right now.');
+      case 'crime.lockUp': return r.ok ? out('You made your home more secure', 'Better locks, lights and a habit of checking windows. This lowers the burglary risk for your household and does not move the risk onto neighbours.') : out('Could not do that', 'You need a home of your own first.');
+      case 'civic.complain': {
+        const K = CASE_KINDS[a.kind || 'bins'] || { days: 14, service: 'bins' }, lvl = this.S(() => w.sys.civic.query.service(K.service), 1);
+        return r.ok ? out(`You told the council about ${CASE_NAME[a.kind || 'bins'] || a.kind}`, `The council's target for this is ${K.days} days${lvl < 0.9 ? ', and the service has been cut back so expect longer' : ''}. If nothing happens, a ward councillor can chase it. How well it is handled changes how far you trust the council.`, { next: [{ label: 'Back', open: 'work' }] }) : out('Could not log that', 'Try again in a moment.');
+      }
+      case 'civic.object': return r.ok ? out('Your objection is in', 'It goes to the planning committee with everyone else\'s. Objections count when they raise real planning grounds (noise, traffic, overlooking) and when many neighbours write, especially close to an election. Most applications (about 86% nationally) are approved anyway.', { next: [{ label: 'Join a campaign', open: 'work' }] }) : out('Could not object', 'You may already have objected, or the council has already decided it.');
+      case 'civic.joinCampaign': return r.ok ? out('You joined the campaign', 'You added your name and joined its group. Campaigns win more when many sign, when the local paper and forum take it up, and when an election is close.', { next: [{ label: 'Goals & groups', open: 'goals' }] }) : out('Could not join', 'That campaign may have just ended.');
+      case 'civic.standCouncillor': { const nx = this.S(() => w.sys.civic.query.election().next); return r.ok ? out('You will stand for the council', `At the ward election on ${nx ? w.calendar.formatDate(nx) : 'the next election day'}. Candidates win by being known and trusted: join groups, campaign on local problems and get to know the street first.`, { next: [{ label: 'Goals & groups', open: 'goals' }] }) : out('You cannot stand', 'You need to be 18 or over.'); }
       case 'player.respond': return out('Answered', 'They will remember how you replied. It shapes how they treat you.');
       default: return out(r.ok ? 'Done' : 'That did not work', r.why ? cap1(r.why) + '.' : 'Nothing changed. Open Do > Here & now for what is possible.');
     }
@@ -270,7 +298,7 @@ export class PlayHost {
     } else if (name === 'work') {
       const P = q.player.query; const seenOcc = new Set(); out.openings = P.openings().map((o) => ({ occ: o.occ, ...this.jobInfo(o.occ), bid: o.bid ?? null, at: o.bid != null ? this.h.place(o.bid)?.name : '', count: o.count })).filter((o) => { const k = o.occ + ':' + o.bid; if (seenOcc.has(k)) return false; seenOcc.add(k); return true; }).sort((a, b) => (b.bid != null) - (a.bid != null) || b.mid - a.mid).slice(0, 70);
       out.pending = this.S(() => P.pending(pid), []).map((x) => ({ ...x, label: this.jobInfo(x.occ).label })); out.job = this.S(() => q.labour.query.job(pid)); if (out.job && out.job.occ) out.job = { ...out.job, ...this.jobInfo(out.job.occ) }; out.vac = P.vacancies().filter((u) => u.tenure === 'private_rent').slice(0, 10).map((u) => ({ id: u.id, address: u.address, rent: u.rent, beds: u.bedrooms }));
-      out.unit = this.S(() => q.housing.query.unit(pid));
+      out.unit = this.S(() => q.housing.query.unit(pid)); out.admin = adminData(this.h, pid);
     }
     this.say({ t: 'play.section', ...out });
   }
@@ -304,7 +332,7 @@ export class PlayHost {
     const w = this.w, sig = this.ivs.map((i) => i.id + ':' + i.n).join(',') + ':' + Math.floor(w.tick / 144); if (sig === this.convSig) return; this.convSig = sig;
     const list = this.ivs.slice().reverse().map((iv) => {
       iv.top.sort((a, c) => c.s - a.s || a.tick - c.tick); const top = [];
-      for (const t of iv.top.slice(0, 6)) { const r = w.events.get(t.id); if (!r) continue; const d = this.S(() => describeEvent(w, r, this.h.text)); if (d && d.line) top.push({ date: w.calendar.formatDate(r.tick), text: d.line, pid: typeof r.actors[0] === 'number' ? r.actors[0] : null }); }
+      for (const t of iv.top.slice(0, 6)) { const r = w.events.get(t.id); if (!r || isPrivate(r)) continue; const d = this.S(() => describeEvent(w, r, this.h.text)); if (d && d.line) top.push({ date: w.calendar.formatDate(r.tick), text: d.line, pid: typeof r.actors[0] === 'number' ? r.actors[0] : null }); }
       return { id: iv.id, label: iv.label, body: iv.body, icon: iv.icon, date: iv.date, n: iv.n, people: iv.actors.size, kinds: iv.kinds, buckets: iv.buckets.slice(0, 40), top, days: Math.round((w.tick - iv.tick) / 144), live: w.tick - iv.last < WEEK * 2 };
     });
     this.say({ t: 'conseq', list });

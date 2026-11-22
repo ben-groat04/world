@@ -8,6 +8,7 @@ import textPack from '../content/larkfield/text/index.js';
 import { SEGMENTS } from '../content/larkfield/segments.js';
 import { openingsFor } from '../sim/population/venues.js';
 import { describeEvent, newsFor, NEWS_TYPES, shortJob } from './describe.js';
+import { isPrivate, townData, bizBrief, noticesAt, pinList, crimeSample, adminData, fmtLabel } from './town.js';
 import { GOD_COMMANDS, GOD_PRESETS, themeOf } from './godcatalogue.js';
 import { PlayHost } from './play/host-play.js';
 
@@ -46,7 +47,12 @@ export class Host {
     while (w.time.hourFloat < 6.8 || w.time.hourFloat > 7.2) { w.step(); if (w.tick > 400) break; } // open the day at about 07:00
     this.sampleStats();
     for (const t of NEWS_TYPES) if (w.events.registry.has(t)) w.on(t, (ev) => this.onEvent(ev));
-    this.seenPop = -1;
+    this.seenPop = -1; this.pins = new Map(); this.fresh = new Map(); this.townSig = '';
+    if (w.events.registry.has('business.venueChanged')) w.on('business.venueChanged', (ev) => this.onVenue(ev));
+    if (w.events.registry.has('business.opened')) w.on('business.opened', (ev) => { if (ev.place != null) { this.fresh.set(ev.place, ev.tick); this.send({ t: 'fresh', id: ev.place, tick: ev.tick }); } });
+    if (w.events.registry.has('civic.planning_application')) w.on('civic.planning_application', (ev) => { if (ev.place != null) { this.pins.set(ev.id, { eid: ev.id, bid: ev.place, kind: ev.payload && ev.payload.kind, camp: false }); this.pinSig = ''; } });
+    if (w.events.registry.has('civic.planning_decision')) w.on('civic.planning_decision', (ev) => { this.pins.delete(ev.cause); this.pinSig = ''; });
+    if (w.events.registry.has('civic.campaign')) w.on('civic.campaign', (ev) => { const p = this.pins.get(ev.cause); if (p) { p.camp = true; this.pinSig = ''; } });
     this.play = new PlayHost(this);
   }
 
@@ -56,14 +62,14 @@ export class Host {
     const buildings = [];
     for (const b of w.buildings.values()) buildings.push({ id: b.id, name: b.name, type: b.type, x: b.x, y: b.y, w: b.w, h: b.h, door: b.door, zone: b.zone, kind: b.lf?.kind, cat: b.lf?.category || null, tpl: b.lf?.template || null, arch: b.lf?.archetype || null, address: b.lf?.address || b.name, st: b.lf?.streetId ?? null, units: b.lf?.units?.length || 0, storeys: lf.buildings[b.id]?.storeys || 1 });
     const dwellings = buildings.filter((b) => b.kind === 'residential').map((b) => ({ id: b.id, name: b.name, unit: w.buildings.get(b.id).lf.units[0] }));
-    const venues = buildings.filter((b) => b.tpl && b.kind !== 'residential').map((b) => ({ id: b.id, name: b.name, tpl: b.tpl }));
+    const venues = buildings.filter((b) => b.tpl && b.tpl !== 'vacant_unit' && b.kind !== 'residential').map((b) => ({ id: b.id, name: b.name, tpl: b.tpl }));
     this.send({
       t: 'ready', town: 'Larkfield', seed: this.seed, tpy: this.TPY, tiers: TIER_LIST.map((t) => ({ ...t, tps: this.tiers[t.id] })),
       map: { w: lf.w, h: lf.h, tiles: new Uint8Array(lf.tiles), streets: lf.streets, buildings: lf.buildings.map((b) => ({ id: b.id, kind: b.kind, rect: b.rect, roof: b.roof, ridge: b.ridge, material: b.material, storeys: b.storeys, facing: b.facing, venueId: b.venueId, doors: b.doors, name: b.name })), venues: lf.venues, areas: lf.areas, props: lf.props, graph: null, station: lf.station, gateways: lf.gateways },
       bld: buildings, segs: SEGMENTS.map((s) => ({ id: s.id, label: SEG_SHORT[s.id] || s.label, full: s.label, blurb: s.blurb })),
       god: this.godCatalogue(), dwellings, venueList: venues, sectors: this.safe(() => w.sys.labour.query.sectors(), []),
       templates: this.safe(() => w.sys.goals.query.templates().filter((t) => !t.mundane).map((t) => ({ id: t.id, phrase: t.phrase })), []),
-      time: this.timeInfo(), news: [], series: this.series.slice(), stats: this.statsDetail(),
+      time: this.timeInfo(), news: [], series: this.series.slice(), stats: this.statsDetail(), pins: pinList(this), fresh: [...this.fresh].map(([id, tick]) => ({ id, tick })),
     });
     this.sendRoster(true);
   }
@@ -98,8 +104,11 @@ export class Host {
   checkJump() { if (this.play.skipDue()) return true; const j = this.jump; if (!j) return false; if (this.w.tick > j.limit) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: null }); return true; } return false; }
 
   // ------------------------------------------------------------------ events -> feeds
+  onVenue(ev) { const pl = ev.payload || {}; this.send({ t: 'venue', id: ev.place, name: pl.name, tpl: pl.to, cat: pl.category, vacant: pl.to === 'vacant_unit', variant: pl.variant || null, tick: ev.tick }); this.townSig = ''; }
   onEvent(ev) {
+    if (isPrivate(ev)) return;
     const w = this.w; const it = newsFor(w, this.text, ev, this); this.play.onEvent(ev, it); if (!it) return;
+    if (it.kind === 'crime') { const k = this.crimeSeen || (this.crimeSeen = new Map()), last = k.get(ev.type); if (last != null && ev.tick - last < this.TPD * 14) return; k.set(ev.type, ev.tick); } // at most one item per kind of offence a fortnight: a calm local-paper rhythm, not a ticker
     it.id = this.nextNewsId++; const tr = this.play.tracked, iv = ev.cause ? tr.get(ev.cause) : null; // cause-linked: caused (directly or down a chain) by something the god did
     if (iv) { tr.set(ev.id, iv); it.conseq = true; it.because = iv.label; }
     // a shock hits dozens of households at once: show the first few, then fold the rest into one line instead of flooding the feed
@@ -147,6 +156,7 @@ export class Host {
     posts.sort((a, b) => b.t - a.t);
     const sig = posts.length ? posts[0].id + ':' + posts.length : '';
     if (sig !== this.postSig) { this.postSig = sig; this.send({ t: 'posts', posts: posts.slice(0, 60), source: cm ? 'comms' : 'events' }); }
+    const psig = [...this.pins.values()].map((p) => p.eid + (p.camp ? 'c' : '')).join(','); if (psig !== this.pinSig) { this.pinSig = psig; this.send({ t: 'pins', list: pinList(this) }); }
     // storylines
     const arcs = this.safe(() => storylines(this.sifter, w, { limit: 6 }), []); const asig = arcs.map((a) => a.id + ':' + a.beats.length + ':' + a.idle).join(',');
     if (asig !== this.arcSig) {
@@ -158,7 +168,7 @@ export class Host {
     const w = this.w; const beats = [];
     for (let i = a.beats.length - 1; i >= 0 && beats.length < 5; i--) {
       const b = a.beats[i]; if (/^goal\.(step|effect|planned|replanned|deferred|formed)$|^social\.rumour$|^group\.meeting$|^kernel\./.test(b.type)) continue;
-      const ev = w.events.get ? w.events.get(b.eid) : null; if (!ev) continue; const d = describeEvent(w, ev, this.text); if (d.generic && !/^social|^health|^life/.test(b.type)) continue;
+      const ev = w.events.get ? w.events.get(b.eid) : null; if (!ev || isPrivate(ev) || /^crime\./.test(ev.type)) continue; const d = describeEvent(w, ev, this.text); if (d.generic && !/^social|^health|^life/.test(b.type)) continue;
       beats.unshift({ tick: b.tick, date: w.calendar.formatDate(b.tick), stage: b.stage, text: d.line, eid: b.eid });
     }
     return { id: a.id, kind: a.kind, status: a.status, outcome: a.outcome, stage: a.stage, score: r2(a.score), n: a.beats.length, start: w.calendar.formatDate(a.start), last: w.calendar.formatDate(a.last), days: Math.round((a.last - a.start) / this.TPD), actors: a.actors.slice(0, 5).map((id) => this.ref(id)), beats, quiet: !!a.quiet };
@@ -169,7 +179,7 @@ export class Host {
     const w = this.w; this.lastStatTick = w.tick; const L = w.living(); let mood = 0, lone = 0, ad = 0, ten = {}; const q = w.sys; let burdenSum = 0, burdenN = 0;
     for (const p of L) { mood += p.mood || 0; if (p.ext.hl && p.ext.hl.lonely) lone++; if (w.ageOf(p) >= 18) { ad++; const b = this.safe(() => q.housing.query.rentBurden(p.id), 0); if (b > 0) { burdenSum += b; burdenN++; } } }
     const hs = this.safe(() => q.housing.query.stats(), {}), ls = this.safe(() => q.labour.query.stats(), {}), ms = this.safe(() => q.money.query.stats(), {});
-    const s = { tick: w.tick, date: w.calendar.formatDate(w.tick), year: w.time.rec?.year, pop: L.length, unemp: r2((ls.rate || 0) * 100), burden: burdenN ? r2(burdenSum / burdenN * 100) : 0, mood: r2(mood / (L.length || 1)), lone: r2(lone / (L.length || 1) * 100), births: w.stats.births || 0, deaths: w.stats.deaths || 0, moves: hs.moves || 0, vac: r2((hs.vacancyRate || 0) * 100), pressured: ms.last?.pressured || 0, rentIdx: r2(this.safe(() => q.housing.query.market().rentIndex, 1)), arrears: 0 };
+    const s = { tick: w.tick, date: w.calendar.formatDate(w.tick), year: w.time.rec?.year, pop: L.length, unemp: r2((ls.rate || 0) * 100), burden: burdenN ? r2(burdenSum / burdenN * 100) : 0, mood: r2(mood / (L.length || 1)), lone: r2(lone / (L.length || 1) * 100), births: w.stats.births || 0, deaths: w.stats.deaths || 0, moves: hs.moves || 0, vac: r2((hs.vacancyRate || 0) * 100), pressured: ms.last?.pressured || 0, ...(this.safe(() => crimeSample(this), null) || {}), biz: this.safe(() => w.sys.business.query.stats().vacant, 0), rentIdx: r2(this.safe(() => q.housing.query.market().rentIndex, 1)), arrears: 0 };
     this.series.push(s); this.pendingSeries.push(s); if (this.series.length > 700) this.series.shift();
   }
   statsDetail() {
@@ -194,7 +204,7 @@ export class Host {
     const part = S(() => q.life.query.partner(id)), lst = S(() => q.life.query.status(id));
     const ties = S(() => q.social.query.ties(id), []).map((t) => ({ id: t.o, name: t.name, k: t.k, r: t.r, strength: r2(t.c), warmth: r2(t.l), trust: r2(t.t), on: !!t.on, via: t.v, conf: !!t.cf }));
     const bio = []; for (const m of p.memories || []) if (m.type === 'biography') bio.push({ tick: m.tick, date: w.calendar.formatDate(m.tick), text: m.text, imp: m.importance || 2 });
-    const evs = []; for (const ev of w.events.query({ actor: id, minSalience: 0.2, limit: 120 })) { const d = describeEvent(w, ev, this.text, id); if (d && !/^goal\./.test(ev.type)) evs.push({ tick: ev.tick, date: w.calendar.formatDate(ev.tick), text: d.line, imp: Math.round(ev.salience * 5) }); }
+    const evs = []; for (const ev of w.events.query({ actor: id, minSalience: 0.2, limit: 120 })) { if (isPrivate(ev) || /^crime\./.test(ev.type)) continue; const d = describeEvent(w, ev, this.text, id); if (d && !/^goal\./.test(ev.type)) evs.push({ tick: ev.tick, date: w.calendar.formatDate(ev.tick), text: d.line, imp: Math.round(ev.salience * 5) }); }
     const life = bio.concat(evs).sort((a, b) => a.tick - b.tick);
     const hh = S(() => w.lf.households[pop.hh]), mem = hh && hh.members ? hh.members.filter((x) => x !== id).map((x) => this.ref(x)) : [];
     const loc = p.locationId != null ? this.place(p.locationId) : null;
@@ -218,7 +228,7 @@ export class Host {
     const units = (lf.units || []).slice(0, 8).map((u) => this.safe(() => { const U = w.lf.housing.list.find((x) => x.id === u); return U ? { id: U.id, tenure: U.tenure, bedrooms: U.bedrooms, rent: U.rent, cond: r2(U.cond), vacant: U.hh < 0, landlord: U.landlord != null && w.people.has(U.landlord) ? this.ref(U.landlord) : null } : null; }, null)).filter(Boolean);
     const staff = this.safe(() => q.labour.query.firm(id), null);
     const owner = b.ownerId != null ? this.ref(b.ownerId) : (units.find((u) => u.landlord) || {}).landlord || null;
-    return { id, name: b.name, address: lf.address || b.name, type: b.type, kind: lf.kind, cat: lf.category, tpl: lf.template, arch: lf.archetype, hours: iv ? hoursText(iv) : null, open: iv ? iv.some(([a, b2]) => (w.time.hourFloat >= a && w.time.hourFloat < b2)) : null, capacity: v ? v.capacity : null, inside, residents: P(b.residents).slice(0, 16), employees: P(b.employees).slice(0, 16), units, owner, firm: staff, year: w.map.lf.buildings[id]?.year, storeys: w.map.lf.buildings[id]?.storeys };
+    return { id, name: b.name, address: lf.address || b.name, type: b.type, kind: lf.kind, cat: lf.category, tpl: lf.template, arch: lf.archetype, hours: iv ? hoursText(iv) : null, open: iv ? iv.some(([a, b2]) => (w.time.hourFloat >= a && w.time.hourFloat < b2)) : null, capacity: v ? v.capacity : null, inside, residents: P(b.residents).slice(0, 16), employees: P(b.employees).slice(0, 16), units, owner, firm: staff, year: w.map.lf.buildings[id]?.year, storeys: w.map.lf.buildings[id]?.storeys, biz: this.safe(() => bizBrief(this, id), null), notices: this.safe(() => noticesAt(this, id), []), fresh: this.fresh.has(id) ? this.fresh.get(id) : null, now: w.tick };
   }
   directory() {
     const w = this.w, out = []; for (const p of w.living()) { const pop = p.ext.pop || {}; out.push([p.id, nm(p), Math.floor(w.ageOf(p)), SEG_IDS.indexOf(pop.seg), shortJob(p.job), (this.byBid.get(p.homeId)?.name || ''), pop.fin?.stress ?? 0, p.sex === 'F' ? 1 : 0, p.ext.rt && p.ext.rt.off ? 1 : 0]); }
@@ -247,6 +257,7 @@ export class Host {
       case 'god': this.runCommand(m); break;
       case 'godPreset': this.play.preset(m); break;
       case 'play': this.play.op(m); break;
+      case 'town': this.send({ t: 'town', d: townData(this), tick: this.w.tick }); break;
       case 'history': this.send({ t: 'news', items: this.news.slice(-300), replace: true }); break;
     }
   }

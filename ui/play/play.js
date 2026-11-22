@@ -29,7 +29,7 @@ export function mountPlay(store, hooks) {
   const sheet = document.createElement('div'); sheet.id = 'psheet'; sheet.hidden = true; sheet.innerHTML = '<div class="psb"></div>'; document.body.appendChild(sheet);
   const box = sheet.querySelector('.psb');
   const intro = document.createElement('div'); intro.id = 'pintro'; intro.hidden = true; document.body.appendChild(intro);
-  const P = { on: false, s: null, view: 'start', arg: null, sec: {}, setup: null, form: { first: '', last: '', age: 27, sex: 'F', seg: 'early_career', budget: 3500, occ: '', unit: null }, fb: null, q: '', dirQ: '', goalPick: null, introStep: 0, seenNotes: 0 };
+  const P = { on: false, s: null, view: 'start', arg: null, sec: {}, setup: null, form: { first: '', last: '', age: 27, sex: 'F', seg: 'early_career', budget: 3500, occ: '', unit: null }, fb: null, open: {}, biz: { unit: null, type: 'coffee_shop', loan: true }, workBid: null, caseKind: 'bins', party: 'Independent', q: '', dirQ: '', goalPick: null, introStep: 0, seenNotes: 0 };
   store.s.play = P;
   const post = (m) => store.post({ cmd: 'play', ...m });
   const doit = (name, args) => post({ op: 'do', name, args });
@@ -176,6 +176,26 @@ export function mountPlay(store, hooks) {
       <h5>Your matches <small>${dt.matches.length}</small></h5>${matchRows || `<p class="pdim">${dt.on ? 'No matches yet. They arrive over days: carry on with your life and check back.' : 'Turn on your profile to start getting matches.'}</p>`}
       <h5>People you know who could be a match</h5>${knownRows || '<p class="pdim">Nobody you know fits yet. You have not met anyone single and compatible. Say hello to people at the pub or a club, or use the app.</p>'}`);
   }
+  // Town life: start a business, work at a local firm, safety and council. Collapsed by default so the sheet stays short.
+  const CASES = { bins: 'Missed bins', pothole: 'Pothole', flytip: 'Fly-tipping', damp: 'Damp in a council home', repair: 'Council home repair', noise: 'Noise' };
+  const pdet = (key, title, hint, inner) => `<details class="pdet" data-k="${key}" ${P.open[key] ? 'open' : ''}><summary>${title}${hint ? `<small>${hint}</small>` : ''}</summary><div class="pdb">${inner}</div></details>`;
+  function adminView(A, s) {
+    if (!A) return '';
+    const B = P.biz, unit = A.units && A.units.find((u) => u.bid === B.unit) ? B.unit : (s && s.loc && A.units && A.units.find((u) => u.bid === s.loc.id) ? s.loc.id : null);
+    const units = (A.units || []).map((u) => `<button class="pb row ${unit === u.bid ? 'sel' : ''}" data-bizunit="${u.bid}">${esc(u.name.replace(/^TO LET, /, ''))}<small>${u.m2} m² · asking ${gbp(u.ask)}/mo · ${u.months >= 1 ? 'empty ' + u.months + ' month' + (u.months > 1 ? 's' : '') : 'just vacated'}</small></button>`).join('') || '<p class="pdim">Every unit on the high street is trading right now.</p>';
+    const start = pdet('biz', 'Start a business here', A.units && A.units.length ? `${A.units.length} unit${A.units.length > 1 ? 's' : ''} to let` : 'no units to let', `<p class="phelp">Pick an empty unit and a type. Set-up (fit-out, deposit, stock) usually runs to tens of thousands of pounds and comes from your savings (${gbp(A.money)}) plus a start-up loan of up to £25,000 that is repaid from takings. Rent, wages and business rates are paid monthly; most new businesses lose money at first.</p><div class="plist">${units}</div>
+      <label class="pl2">What kind<select id="pbtype">${(A.formats || []).map((f) => `<option value="${esc(f.id)}" ${B.type === f.id ? 'selected' : ''}>${esc(cap(f.label))}</option>`).join('')}</select></label>
+      <label class="pl2 ck"><input type="checkbox" id="pbloan" ${B.loan ? 'checked' : ''}> Use a start-up loan</label>${btn(unit ? 'Open for business' : 'Choose a unit first', `data-bizgo="${unit || ''}" ${unit ? '' : 'disabled'}`, 'go')}`);
+    const work = pdet('workat', 'Work at a local business', '', `<p class="phelp">Shops, cafes, pubs and salons hire rarely and only when they have a vacancy. You can apply to any one; for set job lists see Work above.</p><label class="pl2">Business<select id="pwork">${(A.firms || []).map((f) => `<option value="${f.bid}" ${+P.workBid === f.bid ? 'selected' : ''}>${esc(f.name)} · ${esc(f.kind)} (${esc(f.doing)})</option>`).join('')}</select></label>${btn('Apply to work there', 'data-workat', 'go')}`);
+    const v = A.victim;
+    const safety = pdet('safety', 'Safety and council', '', `${v && v.n ? `<p class="phelp">You have been a victim of crime ${v.n} time${v.n > 1 ? 's' : ''}. Report anything that has not been reported: it creates a crime number and helps police see patterns.</p>` : '<p class="phelp">If something happens to you, you can report it here. In an emergency call 999.</p>'}
+      <div class="pgrid2">${btn('Report a crime<small>to the police</small>', 'data-cmd="crime.report"')}${btn('Join the street watch<small>with neighbours</small>', 'data-cmd="crime.joinWatch"')}${btn('Secure my home<small>locks and lights</small>', 'data-cmd="crime.lockUp"')}</div>
+      <h5>Complain to the council</h5><div class="pgrid2"><select id="pcase">${(A.cases || []).map((k) => `<option value="${k}" ${P.caseKind === k ? 'selected' : ''}>${esc(CASES[k] || lc(k))}</option>`).join('')}</select>${btn('Send complaint', 'data-complain')}</div>
+      <h5>Object to a planning application</h5>${(A.apps || []).length ? `<div class="plist">${A.apps.map((a) => `<button class="pb row" data-object="${a.id}"><b>Object: ${esc(cap(a.name))}</b><small>${esc(a.street)} · ${a.objections} objection${a.objections === 1 ? '' : 's'} so far</small></button>`).join('')}</div>` : '<p class="pdim">No applications open for comment.</p>'}
+      <h5>Join a campaign</h5>${(A.camps || []).length ? `<div class="plist">${A.camps.map((c) => `<button class="pb row" data-joincamp="${c.id}"><b>Join: ${esc(c.name)}</b><small>${c.sign} signatures</small></button>`).join('')}</div>` : '<p class="pdim">No campaigns running. They start when enough neighbours share a grievance.</p>'}
+      <h5>Stand as a councillor</h5><p class="phelp">The next ward election is ${esc(A.nextDate || 'not yet set')}. Three seats; you need to be known and trusted.</p><div class="pgrid2"><select id="pparty">${(A.parties || []).map((x) => `<option ${P.party === x ? 'selected' : ''}>${esc(x)}</option>`).join('')}</select>${btn('Stand', 'data-stand')}</div>`);
+    return `<h5>Town</h5>${start}${work}${safety}<h5 class="sp">Jobs</h5>`;
+  }
   function workView(d, s) {
     if (!d) return loading('work', 'Life admin');
     const j = d.job, emp = j && j.activity === 'employed';
@@ -183,7 +203,7 @@ export function mountPlay(store, hooks) {
       <div class="plist">${d.openings.map((o) => `<button class="pb row" data-apply="${esc(o.occ)}" data-bid="${o.bid ?? ''}"><b>${esc(o.label)}</b><small>${esc(o.band)} a year · ${esc(o.hours)} · ${o.at ? esc(o.at) : esc(o.where)}${o.sub ? ' · ' + esc(o.sub) : ''}</small></button>`).join('')}</div>`;
     const money = `<h5>Money</h5><p class="pdim">${s ? gbp(s.money) + ' in hand' + (s.debt ? `, ${gbp(s.debt)} debt` : '') : ''}. Borrowing adds to your debt; repaying comes out of income.</p><div class="pgrid2">${btn('Bank loan £200<small>needs income</small>', 'data-borrow="200" data-kind="bank"')}${btn('Family £200<small>if relatives can</small>', 'data-borrow="200" data-kind="family"')}${btn('Payday loan £150<small>fast but costly</small>', 'data-borrow="150" data-kind="payday"')}</div>`;
     const home = `<h5>Home${s && s.home ? ` <small>${esc(s.home.tenure)} · ${gbp(s.home.rent)}/mo</small>` : ''}</h5><p class="pdim">Moving costs a deposit and first month. Pick a flat to move in.</p><div class="plist">${d.vac.length ? d.vac.map((u) => `<button class="pb row" data-rent="${u.id}">${esc(u.address)}<small>${u.beds} bed · ${gbp(u.rent)}/mo · tap to move</small></button>`).join('') : '<p class="pdim">Nothing to rent right now.</p>'}</div>`;
-    return shell('work', 'Life admin', jobs + money + home);
+    return shell('work', 'Life admin', adminView(d.admin, s) + jobs + money + home);
   }
   function goalsView(d) {
     if (!d) return loading('goals', 'Goals & groups');
@@ -254,6 +274,14 @@ export function mountPlay(store, hooks) {
     if (t.dataset.goto) { if (t.dataset.goto === 'home') doit('player.goTo', { bid: P.s.homeId, hours: 3, label: 'Heading home' }); else doit('player.goTo', { bid: +t.dataset.goto, hours: 3 }); closeKeep(); return; }
     if (t.dataset.apply) { doit('player.apply', { occ: t.dataset.apply, bid: t.dataset.bid === '' ? undefined : +t.dataset.bid }); return; }
     if (t.dataset.borrow) { doit('player.borrow', { amount: +t.dataset.borrow, kind: t.dataset.kind }); return; }
+    if (t.dataset.bizunit) { P.biz.unit = +t.dataset.bizunit; paint(); return; }
+    if (t.dataset.bizgo !== undefined && t.matches('[data-bizgo]')) { if (t.dataset.bizgo) doit('business.start', { unit: +t.dataset.bizgo, type: P.biz.type, loan: P.biz.loan }); return; }
+    if (t.matches('[data-workat]')) { const sel = box.querySelector('#pwork'); if (sel && sel.value) doit('business.workAt', { bid: +sel.value }); return; }
+    if (t.dataset.cmd) { doit(t.dataset.cmd, {}); return; }
+    if (t.matches('[data-complain]')) { doit('civic.complain', { kind: P.caseKind }); return; }
+    if (t.dataset.object) { doit('civic.object', { app: +t.dataset.object }); return; }
+    if (t.dataset.joincamp) { doit('civic.joinCampaign', { id: +t.dataset.joincamp }); return; }
+    if (t.matches('[data-stand]')) { doit('civic.standCouncillor', { party: P.party }); return; }
     if (t.dataset.rent) { doit('player.rent', { unit: +t.dataset.rent }); return; }
     if (t.dataset.drop) { doit('player.drop', { goal: +t.dataset.drop }); return; }
     if (t.dataset.adopt) { doit('player.adopt', { tpl: t.dataset.adopt }); P.goalPick = null; return; }
@@ -276,6 +304,7 @@ export function mountPlay(store, hooks) {
   });
   // actions that leave the sheet: show the answer as a toast and let time run
   function closeKeep() { const fb = P.fb; P.pendingToast = true; close(); void fb; resume(); }
+  sheet.addEventListener('toggle', (e) => { const d = e.target; if (d && d.classList && d.classList.contains('pdet')) P.open[d.dataset.k] = d.open; }, true);
   sheet.addEventListener('input', (e) => {
     const t = e.target, f = P.form;
     if (t.id === 'cf-first') f.first = t.value; else if (t.id === 'cf-last') f.last = t.value;
@@ -286,6 +315,7 @@ export function mountPlay(store, hooks) {
   sheet.addEventListener('change', (e) => {
     const t = e.target;
     if (t.id === 'cf-occ') P.form.occ = t.value;
+    else if (t.id === 'pbtype') P.biz.type = t.value; else if (t.id === 'pbloan') P.biz.loan = t.checked; else if (t.id === 'pwork') P.workBid = t.value; else if (t.id === 'pcase') P.caseKind = t.value; else if (t.id === 'pparty') P.party = t.value;
     else if (t.id === 'padopt') { P.goalPick = t.value || null; P.fb = null; paint(); }
     else if (t.id === 'ppause') { P.pauseOn = t.checked; post({ op: 'pauseOnEvent', on: t.checked }); }
   });
@@ -299,7 +329,7 @@ export function mountPlay(store, hooks) {
   store.on('play.off', () => { P.on = false; document.body.classList.remove('playing'); P.s = null; endIntro(); paintStrip(); });
   store.on('play.result', (m) => {
     P.fb = { ok: m.ok, title: m.title || m.text || '', body: m.body || '', plan: m.plan, next: m.next };
-    const n = m.name || ''; if (/apply|quit|rent|borrow/.test(n)) refresh('work'); else if (/join|found|adopt|drop/.test(n)) refresh('goals'); else if (/datingProfile|askOut|message/.test(n)) refresh('phone');
+    const n = m.name || ''; if (/apply|quit|rent|borrow|business\.|crime\.|civic\./.test(n)) refresh('work'); else if (/join|found|adopt|drop/.test(n)) refresh('goals'); else if (/datingProfile|askOut|message/.test(n)) refresh('phone');
     if (!sheet.hidden) paint(); else { const first = (m.body || '').split(/(?<=[.!?])\s/)[0]; toast(`<b>${esc(P.fb.title)}</b>${first ? '<br>' + esc(first) : ''}`, 4500); P.fb = null; }
   });
   store.on('play.moment', (m) => { toast(`⏸ <b>${esc(m.why)}</b>${m.hint ? '<br>' + esc(m.hint) : ''}`, 7000); });

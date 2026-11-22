@@ -21,7 +21,7 @@ const EVENTS = [
   ['business.start_failed', 'A would-be business owner could not open', { why: 'string' }], ['business.rates', 'Business rates changed', { pct: 'number' }],
 ];
 // ---- constants with real-world meaning ------------------------------------------------------------------------------------------------------------------------------------
-const RENT_M2 = { hs: 240, side: 170, arch: 60, special: 130 };   // GBP/m2/yr: inner-city secondary high street; set so rent is ~8-12% of day-1 turnover (Sage/ATO cafe benchmarks 10-15%)
+const RENT_M2 = { hs: 460, side: 330, arch: 115, special: 250 };  // GBP/m2/yr: inner-city high street (~GBP 43/sq ft zone A-ish); raised from 240 because rent was only 3-6% of turnover against 10-15% (Sage/ATO/Toast cafe benchmarks, BRC occupancy-cost surveys). Held-out check: rent/revenue
 const ENERGY_M2 = 75, OVERHEAD_FIX = 330, CARD_FEE = 0.016;      // GBP/m2/yr; insurance+licences+accounts per month; card/platform fees share of sales
 const RATES_MULT = 0.499, SBRR_FULL = 12000, SBRR_TAPER = 15000; // small business multiplier 2024/25; small business rate relief: 100% under RV 12k tapering to 0 at 15k
 const OVERDRAFT = 10000, LOAN_MAX = 25000, LOAN_RATE = 0.06, LOAN_MONTHS = 60; // UK Start Up Loans: up to 25k, fixed 6%, 1-5 years
@@ -29,6 +29,10 @@ const REVIEW_MONTHS = 60, LEASE_MONTHS = 120;                    // 5-yearly upw
 const SIGMA_Q = 0.3, RHO_Q = 0.95;                                // persistent idiosyncratic quality (Jovanovic learning model); sd of monthly innovation scaled below
 const MATCH_RATE = 0.05;                                          // monthly per-unit chance an entrant is found for a typical vacant unit (implies ~12-20 month voids; fits ~11-14% vacancy)
 const ASK_DECAY = 0.015;                                          // vacant units' asking rent falls 1.5%/month toward the clearing rent
+const RAMP_MONTHS = 8, RAMP_START = 0.6;                          // soft-launch: off-map catchment (passers-by, word of mouth, delivery apps) builds from 60% to 100% over ~8 months (new hospitality/retail openings take 6-12 months to reach run-rate)
+const RUNWAY_MEDIAN = 5, RUNWAY_SD = 0.5;                          // founders raise working capital for ~5 months of fixed costs (UK Start Up Loans / British Business Bank guidance: 3-6 months), lognormal across founders
+const COND_DECAY = 0.012, COND_FLOOR = 0.3, VOID_GRACE = 6;        // a unit empty > 6 months deteriorates (damp, services, shopfront) by ~1.2%/month; condition scales entry cost and entrant interest
+const HOLDOUT_SHARE = 0.3, HOLDOUT_DECAY = 0.003, REDEV_SHARE = 0.08; // 30% of landlords (institutions/absentees valuing the asset on headline rent) concede only 0.3%/month; 8% of units are withheld for redevelopment/conversion for years (LDC/Savills/CBRE long-term vacancy drivers)
 const CHAIN_CLOSE_STREAK = 9;                                     // chains rationalise stores after ~9 months of negative store contribution
 
 export function createBusiness() {
@@ -127,7 +131,7 @@ export function createBusiness() {
     const s = S(), m = macro(), rng = rngm('m'), mo = w.time.month, acc = s.acc; s.m = (s.m || 0) + 1; // months run (first two are warm-up: partial payroll/spending months)
     // --- indices
     const st = affluence(); s.A = 0.6 * (st.inc / s.inc0) / (m.wage || 1) + 0.4 * (st.prof / s.prof0 > 0 ? Math.min(2, st.prof / s.prof0) : 1);
-    const vr = vacancyRate(); s.vac = vr;
+    const vr = vacancyRate(); s.vac = vr; { const vl = vacants(); s.vacM = (s.vacM || 0) + vl.length; s.vacL = (s.vacL || 0) + vl.filter((B) => (w.tick - B.since) / MONTH > 36).length; }
     s.rentIdx = clamp(s.rentIdx * (1 + (m.rentGrowth / 100 * 0.5 + 0.35 * (0.11 - vr) + 0.25 * (s.A - 1) * 0.2) / 12), 0.55, 2.2); // asking rents follow demand: tight market raises, voids lower them
     const ftBy = {}, ftN = {}; for (const B of trading()) { if (B.ft.ema != null) { ftBy[B.tmpl] = (ftBy[B.tmpl] || 0) + B.ft.ema; ftN[B.tmpl] = (ftN[B.tmpl] || 0) + 1; } } s.ftMean = {}; for (const k in ftBy) s.ftMean[k] = ftBy[k] / ftN[k];
     const slotsBy = {}; for (const sl of w.lf.slots) (slotsBy[sl.bid] || (slotsBy[sl.bid] = [])).push(sl);
@@ -158,7 +162,7 @@ export function createBusiness() {
           B.k = clamp(need > 0 && E > 200 ? (need - E) / E : f.off, 0.1, 8); B.q0 = B.q; delete B.cE; delete B.cF; }
       }
       const recess = 1 - 0.15 * (m.recession || 0); // retail/hospitality sales fall a few % to ~10% in a deep recession (ONS retail sales GFC/2020); estate-agency volumes more (demandIdx)
-      const off = fixedRev ? (f.rev0 || 20000) * (f.nhs ? 1 : demandIdx()) * Math.exp(B.q * 0.5) * (1 + rng.gauss(0, 0.05)) : (B.k ?? f.off) * B.resEma * Math.exp(0.5 * (B.q - B.q0)) * recess * (1 + rng.gauss(0, 0.05)) * (B.trim ? 1 - 0.1 * B.trim.days.length : 1);
+      const ageM = B.opened != null ? (w.tick - B.opened) / MONTH : 99, ramp = RAMP_START + (1 - RAMP_START) * Math.min(1, ageM / RAMP_MONTHS), off = fixedRev ? (f.rev0 || 20000) * (f.nhs ? 1 : demandIdx()) * Math.exp(B.q * 0.5) * (1 + rng.gauss(0, 0.05)) : (B.k ?? f.off) * B.resEma * Math.exp(0.5 * (B.q - B.q0)) * recess * ramp * (1 + rng.gauss(0, 0.05)) * (B.trim ? 1 - 0.1 * B.trim.days.length : 1);
       pay('metropolis', acct, off, 'offmap_sales'); const rev = A.res + off;
       const gmEff = 1 - (1 - f.gm) / B.price; pay(acct, 'metropolis', rev * (1 - gmEff), 'stock');
       const over = OVERHEAD_FIX + rev * CARD_FEE + (B.own.kind === 'chain' ? rev * 0.03 : 0);
@@ -209,7 +213,7 @@ export function createBusiness() {
     if (indie && cash < -OVERDRAFT && B.reserve <= 0 && B.loss >= 5) why = 'insolvent'; // lenders tolerate a short dip, not a run of losses
     else if (B.own.kind === 'chain' && B.loss >= CHAIN_CLOSE_STREAK) why = 'chain_rationalisation';
     else if (B.own.kind === 'chain' && macro().recession > 0.5 && B.loss >= 4 && rng.chance(0.08)) why = 'chain_restructuring';
-    else if (indie && B.loss >= 8 && rng.chance(Math.min(0.5, 0.08 * (B.loss - 6)))) why = 'owner_gave_up'; // after most of a year of losses
+    else if (indie && B.loss >= 8 && (B.reserve <= 0 || W.tick - B.born > 12 * MONTH) && rng.chance(Math.min(0.5, 0.08 * (B.loss - 6)))) why = 'owner_gave_up'; // in year one a founder still has runway/personal subsidy left: sunk fit-out and family money keep them going // after most of a year of losses
     else if (B.own.kind === 'charity' && B.loss >= 12) why = 'charity_withdrew';
     const op = B.own.pid != null ? W.people.get(B.own.pid) : null;
     if (!why && B.own.kind === 'resident' && (!op || !op.alive || !op.ext.pop || op.ext.pop.workplace.bid !== B.bid)) { succession(B, rng); if (B.status !== 'trading') return; }
@@ -248,7 +252,7 @@ export function createBusiness() {
     if (B.loan) { B.loan = null; }
     const rec = { id: B.id, bid, fid: B.fid, tmpl: B.tmpl, name: B.name, born: B.born, died: W.tick, why, own: B.own.kind, init: !!B.init, jobs: staff }; S().past.push(rec); if (S().past.length > 400) S().past.shift(); bump('close', B.fid || B.tmpl);
     const old = { fid: B.fid, tmpl: B.tmpl, rent: B.rent, name: B.name };
-    S().biz[bid] = { bid, vid: B.vid, m2: B.m2, zone: B.zone, status: 'vacant', since: W.tick, ask: Math.round(B.rent * 1.02), rent: B.rent, qual: Math.exp(rng2().gauss(0, 0.7)), prev: old, reviewAt: 0, leaseEnd: 0 };
+    S().biz[bid] = { bid, vid: B.vid, m2: B.m2, zone: B.zone, status: 'vacant', since: W.tick, ask: Math.round(B.rent * 1.02), rent: B.rent, qual: B.qual ?? Math.exp(rng2().gauss(0, 0.7)), prev: old, reviewAt: 0, leaseEnd: 0, cond: 1, hold: rng2().chance(HOLDOUT_SHARE), redev: rng2().chance(REDEV_SHARE) ? W.tick + Math.round((24 + 48 * rng2().next()) * MONTH) : 0 };
     applyVenue(bid, 'vacant_unit', null, 'TO LET');
     reassignFavs(bid, regulars);
     const lines = { insolvent: 'ran out of money', owner_gave_up: 'closed after a hard year', owner_retired: 'closed as the owner retired', chain_rationalisation: 'shut in a chain cost-cutting round', chain_restructuring: 'shut in a chain restructuring', chain_closing_branches: 'is one of the branches the company is closing', owner_moved_on: 'closed; the owners have moved on', charity_withdrew: 'closed, the charity pulling out', god: 'closed down' };
@@ -302,7 +306,8 @@ export function createBusiness() {
     else { const grp = rng.weighted(Object.keys(eth), Object.values(eth)), o = W.pack.names.pickOrigin(rng, grp, 1975), nm = W.pack.names.pickName(rng, o, rng.chance(0.5) ? 'M' : 'F', 1975); surname = nm.last; given = nm.first; }
     return { surname, given, place: street, cuisineW, taken };
   }
-  function entryCost(B, fid, f) { const takeover = B.prev && B.prev.tmpl === f.tmpl ? 0.3 : B.prev && FAV_SLOT[B.prev.tmpl] && FAV_SLOT[B.prev.tmpl] === FAV_SLOT[f.tmpl] ? 0.55 : 1; return f.fit * B.m2 * takeover + 3 * B.ask + 1.5 * (B.ask + 2200); }
+  // a run-down unit loses the previous tenant's reusable fit-out and needs remedial works (tk, derelict)
+  function entryCost(B, fid, f) { const takeover = B.prev && B.prev.tmpl === f.tmpl ? 0.3 : B.prev && FAV_SLOT[B.prev.tmpl] && FAV_SLOT[B.prev.tmpl] === FAV_SLOT[f.tmpl] ? 0.55 : 1, cond = B.cond ?? 1, tk = takeover + (1 - takeover) * (1 - cond), derelict = 1 + 1.2 * (1 - cond); return f.fit * B.m2 * tk * derelict + 3 * B.ask + 1.5 * (B.ask + 2200); }
   function expectedRev(fid) { const f = FORMATS[fid], same = trading().filter((B) => B.tmpl === f.tmpl && B.rev6.length >= 3), pool = same.filter((B) => B.fid === fid).concat(same.length && !same.some((B) => B.fid === fid) ? same : []);
     if (!pool.length) return f.rev0 * demandIdx(); const mean = pool.reduce((s2, B) => s2 + B.rev6.reduce((a2, x) => a2 + x, 0) / B.rev6.length, 0) / pool.length; return mean * Math.pow(same.length / (same.length + 1), 0.7); } // an entrant splits the incumbents' pie
   function viable(B, fid, tol = 0.1, owner = { kind: 'indie' }) { const f = FORMATS[fid], rev = expectedRev(fid), OCC = W._occ || (W._occ = Object.fromEntries(W.pack.jobs.map((o) => [o.id, o])));
@@ -334,7 +339,7 @@ export function createBusiness() {
     const nm = opts.name || makeName(rng, fid, { ...ctx, chain: chain || charity });
     const wasVac = B.since != null ? Math.round((W.tick - B.since) / MONTH) : null; if (wasVac != null) { S().voids.push({ bid, months: wasVac, t: W.tick, init: !!B.initVoid }); if (S().voids.length > 300) S().voids.shift(); }
     owner.brand = chain || charity ? nm : undefined;
-    const nb = { bid, vid: B.vid, m2: B.m2, zone: B.zone, id: S().nextId++, status: 'trading', fid, tmpl: f.tmpl, variant: f.variant || null, name: nm, own: owner, born: W.tick, price: 1, q: rng.gauss(-0.03, 0.22), rating: 3.5, ft: { vh: 0, ema: null }, loan: null, trim: null, scale: 1, loss: 0, ok: 0, last: null, regs: 0, stage: 0, fillR: 1, rev6: [], reserve: 0, q0: 0,
+    const nb = { bid, vid: B.vid, m2: B.m2, zone: B.zone, qual: B.qual, id: S().nextId++, status: 'trading', fid, tmpl: f.tmpl, variant: f.variant || null, name: nm, own: owner, born: W.tick, price: 1, q: rng.gauss(-0.03, 0.22), rating: 3.5, ft: { vh: 0, ema: null }, loan: null, trim: null, scale: 1, loss: 0, ok: 0, last: null, regs: 0, stage: 0, fillR: 1, rev6: [], reserve: 0, q0: 0,
       k: catchmentFor(f), rent: Math.round(opts.rent || Math.max(B.ask || 0, 0) * (chain ? 1.05 : 1)), reviewAt: W.tick + REVIEW_MONTHS * MONTH, leaseEnd: W.tick + LEASE_MONTHS * MONTH, prev: B.prev || null, opened: W.tick, rentFree: W.tick + (chain ? 6 : 4) * MONTH }; // new 10-year leases typically carry a 3-6 month rent-free fit-out period
     if (!nb.rent) nb.rent = marketRent(B);
     // capital: resident owner's own money + start-up loan; off-map owners bring a lognormal pot; chains are funded centrally
@@ -346,7 +351,12 @@ export function createBusiness() {
     if (loan > 0) { money('metropolis', 'b:' + bid, loan, 'business_loan'); nb.loan = { left: loan, pm: Math.round(loan / LOAN_MONTHS + 1) }; }
     if (!p) money('metropolis', 'b:' + bid, own, 'business_capital');
     const fitout = Math.round(spent * 0.62); money('b:' + bid, 'metropolis', fitout, 'fitout'); // fit-out and stock paid to off-map contractors/suppliers; the rest stays as the cash buffer
-    nb.reserve = chain ? 0 : p ? 0 : Math.round(Math.max(0, cost * 0.1));
+    if (chain || charity) nb.reserve = 0;
+    else { // founders' working capital / personal subsidy: ~5 months (lognormal) of fixed costs beyond the fit-out; resident founders have it from a partner's income, family and overdraft (half as deep)
+      const OCC = W._occ || (W._occ = Object.fromEntries(W.pack.jobs.map((o) => [o.id, o]))), wagesM = staffFor(fid, f, B.m2, owner).reduce((s2, x) => s2 + x.n * ((OCC[x.occ] ? OCC[x.occ].pay.median : 25000) / 12) * 1.1, 0);
+      const fixedM = nb.rent + wagesM + OVERHEAD_FIX + B.m2 * ENERGY_M2 / 12, months = Math.exp(Math.log(RUNWAY_MEDIAN) + RUNWAY_SD * rng.gauss(0, 1));
+      nb.reserve = Math.round(fixedM * months * (p ? 0.5 : 1)); nb.runwayM = +months.toFixed(1);
+    }
     S().biz[bid] = nb;
     const staff = staffFor(fid, f, B.m2, owner); applyVenue(bid, f.tmpl, f.variant, nm);
     W.cmd('labour.openFirm', { bid, name: nm, staff });
@@ -372,9 +382,10 @@ export function createBusiness() {
   function matching() {
     const rng = rngm('match'), s = S(), dm = demandIdx();
     for (const B of vacants()) {
-      const months = (W.tick - B.since) / MONTH; B.ask = Math.max(Math.round(marketRent(B) * 0.82), Math.round(B.ask * (1 - ASK_DECAY))); // landlords concede slowly
-      if (months < 1) continue;
-      const attract = clamp(Math.pow(marketRent(B) / Math.max(1, B.ask), 1.2), 0.6, 2.2), h = MATCH_RATE * B.qual * dm * attract;
+      const months = (W.tick - B.since) / MONTH; B.ask = Math.max(Math.round(marketRent(B) * (B.hold ? 0.95 : 0.82)), Math.round(B.ask * (1 - (B.hold ? HOLDOUT_DECAY : ASK_DECAY)))); // landlords concede slowly; hold-out landlords barely at all
+      B.cond = Math.max(COND_FLOOR, 1 - COND_DECAY * Math.max(0, months - VOID_GRACE));
+      if (months < 1 || (B.redev && W.tick < B.redev)) continue; // withheld for redevelopment/conversion: not on the market
+      const attract = clamp(Math.pow(marketRent(B) / Math.max(1, B.ask), 1.2), 0.6, 2.2), h = MATCH_RATE * B.qual * dm * attract * (0.35 + 0.65 * B.cond);
       if (!rng.chance(clamp(h, 0, 0.5))) continue;
       const kinds = [['indie', 0.62], ['chain', B.m2 >= 90 ? 0.22 : 0.08], ['charity', 0.16 + 0.3 * clamp(months / 30, 0, 1)]]; // charities and 'meanwhile' uses take on units that stay empty
       const kind = rng.weighted(kinds.map((k) => k[0]), kinds.map((k) => k[1])); const ws = formatWeights(B, kind, null, kind === 'indie' ? 80000 : null, rng); if (!ws.length) continue;
@@ -448,7 +459,7 @@ export function createBusiness() {
     query: {
       manages: (bid) => !!(W && W.lf.business && W.lf.business.biz[bid]), weight: (bid) => weightOf(bid), venue: (bid) => { const B = S().biz[bid]; return B ? view(B) : null; },
       list: () => Object.values(S().biz).map(view), vacant: () => vacants().map(view), vacancyRate: () => vacancyRate(), mix: () => mixCount(), mix0: () => ({ ...S().mix0 }), rentIndex: () => S().rentIdx, affluence: () => S().A,
-      news: (n = 10) => S().log.slice(-n).reverse(), survival: () => survival(), voids: () => S().voids.map((x) => ({ ...x })), past: () => S().past.map((x) => ({ ...x })), yearly: () => JSON.parse(JSON.stringify(S().yr)),
+      news: (n = 10) => S().log.slice(-n).reverse(), survival: () => survival(), voids: () => S().voids.map((x) => ({ ...x })), vacTail: () => ({ unitMonths: S().vacM || 0, longMonths: S().vacL || 0 }), past: () => S().past.map((x) => ({ ...x })), yearly: () => JSON.parse(JSON.stringify(S().yr)),
       jobs: () => W.lf.slots.filter((s) => S().biz[s.bid] && S().biz[s.bid].status === 'trading').reduce((n, s) => n + s.filled.filter((x) => typeof x === 'number').length, 0), formats: () => Object.keys(FORMATS),
       stats: () => ({ trading: trading().length, vacant: vacants().length, vacancyRate: vacancyRate(), rentIdx: S().rentIdx, affluence: S().A, favMoves: S().favMoves || 0 }),
     },

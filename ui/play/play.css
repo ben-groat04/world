@@ -73,3 +73,8 @@ body.playing #ticker { display: none; } .pa button { min-height: 44px; }
 .pib h3 { margin: 10px 0 6px; font-size: 18px; } .pib p { margin: 0 0 12px; color: #d3dce8; font-size: 14.5px; line-height: 1.5; } .pidots { display: flex; gap: 6px; } .pidots i { width: 22px; height: 5px; border-radius: 3px; background: #2f4157; } .pidots i.on { background: var(--accent); }
 .pia { display: flex; gap: 10px; align-items: center; } .pia .pb { margin-top: 0; } .pia .ghost { width: auto; flex: 0 0 90px; } .pia .go { flex: 1; margin-top: 0; }
 .pbody { min-height: 120px; } .pbody h5 small { text-transform: none; }
+
+/* town verbs in Life admin */
+.pdet { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; background: var(--panel2); } .pdet > summary { padding: 11px 12px; font-weight: 700; font-size: 14px; cursor: pointer; list-style: none; display: flex; gap: 8px; align-items: baseline; } .pdet > summary::-webkit-details-marker { display: none; }
+.pdet > summary::before { content: '\25B8'; color: var(--dim); font-size: 11px; } .pdet[open] > summary::before { content: '\25BE'; } .pdet > summary small { margin-left: auto; color: var(--mute); font-weight: 500; font-size: 12px; } .pdb { padding: 0 12px 12px; }
+.pdb h5 { margin: 14px 0 6px; } .pb.sel { outline: 2px solid var(--accent); } .pl2.ck { display: flex; gap: 8px; align-items: center; } .pdb select { width: 100%; }

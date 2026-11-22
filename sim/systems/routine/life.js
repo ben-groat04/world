@@ -5,7 +5,7 @@ import { A, MODE_IDX } from './acts.js';
 import { wakeHour, workToday } from './plan.js';
 
 export function makeCtx(world, pack) {
-  const M = world.map.lf, offKeys = Object.keys(pack.meta.offmap), segs = pack.meta.segments.map((s) => s.id);
+  const M = world.map.lf, offKeys = [...Object.keys(pack.meta.offmap), 'custody'], segs = pack.meta.segments.map((s) => s.id);
   const cal = world.calendar, byT = {};
   for (const v of M.venues) (byT[v.template] || (byT[v.template] = [])).push(v);
   const station = world.map.station;
@@ -95,7 +95,7 @@ export function makeLife(world, ctx, p) {
     shop: v('corner_shop', 'small_supermarket', 'ethnic_grocer') * 0.8 * mult() * limited, cafe: v('cafe') * (0.5 + E) * money * mult() * idle * limited, pub: v('pub') * (0.4 + 1.1 * E) * (isMus ? 0.07 : 1) * money * mult() * limited,
     gym: v('gym') * (0.5 + C) * mult() * (age > 60 ? 0.5 : 1) * (q.health.limiting ? 0.4 : 1), library: v('library') * mult() * idle, community: v('community_centre') * mult() * idle, pharmacy: v('pharmacy', 'gp_surgery') * 0.5 * mult() * (age > 55 ? 1.3 : 1),
     launderette: v('launderette') * (hh.tenure === 'private_rent' && hh.bedrooms <= 1 ? 1 : 0.25), takeaway: v('takeaway') * 0.6 * mult() * money, barber: 0.12 * mult(), park: v('park') * mult() * limited * (L.dog ? 0.8 : 1),
-    visit: (0.35 + 2.2 * seg.social.onMapShare.closeFriends * (0.5 + E)) * mult() * limited * (age > 65 ? 1.3 : 1), offsocial: seg.social.offMapMeetupsPerMonth / 4.3 * 0.6 * (0.5 + E) * money * mult() * limited, nightout: seg.social.offMapMeetupsPerMonth / 4.3 * 0.3 * (age < 45 ? 1 : age < 60 ? 0.3 : 0.05) * (isMus && q.religiosity > 0.3 ? 0.2 : 1) * money * mult() * (hh.members.some((id) => world.ageOf(world.people.get(id)) < 6) ? 0.3 : 1),
+    visit: (0.35 + 2.2 * seg.social.onMapShare.closeFriends * (0.5 + E)) * mult() * limited * (age > 65 ? 1.3 : 1), offsocial: seg.social.offMapMeetupsPerMonth / 4.3 * 0.6 * (0.5 + E) * money * mult() * limited, nightout: seg.social.offMapMeetupsPerMonth / 4.3 * 0.3 * (age < 25 ? 1.35 : age < 45 ? 1 : age < 60 ? 0.3 : 0.05) * (isMus && q.religiosity > 0.3 ? 0.2 : 1) * money * mult() * (hh.members.some((id) => world.ageOf(world.people.get(id)) < 6) ? 0.3 : 1),
     family: 0.14 + (seg.id === 'students' ? 0.1 : 0), retail: hh.cars ? 0.35 : 0.12,
   };
   if (!adult) L.lv.shop = 0;

@@ -8,12 +8,13 @@
 //     target hardening, avoidance, forum posts and belief spread (via social/comms), moving away after burglary, neighbourhood watch emerging from street crime.
 //   QUERY world.sys.crime.query: stats() risk(pid) fear(pid) victim(pid) offenders() streetCrime(sid) shopLoss(bid) inCustody(pid) recent(n) describe(rec) watch() police()
 //   CMD   god: crime.wave{days,mult,type} crime.policeCuts{pct} crime.policeBoost{pct}   player: crime.report{pid,type?} crime.joinWatch{pid} crime.lockUp{pid}
-//   EVENTS crime.burglary crime.bike_theft crime.antisocial crime.assault crime.theft crime.vehicle crime.damage crime.fraud crime.harassment crime.domestic crime.drugs crime.disorder
+//   EVENTS crime.burglary crime.bike_theft crime.antisocial crime.assault crime.theft crime.vehicle crime.damage crime.fraud crime.harassment crime.domestic crime.drugs crime.disorder crime.sexual (private/sensitive: never in public feeds)
 //          crime.reported crime.arrest crime.sentenced crime.watch_started crime.watch_lapsed crime.moved_away
 import { TYPES, TYPE_IDS, PROFILE, PROF_OF, CAL_GROUPS } from './data.js';
+import { A } from '../routine/acts.js';
 
 const D = 144, H = 8760;
-const EV = [['crime.burglary'], ['crime.bike_theft'], ['crime.antisocial'], ['crime.assault'], ['crime.theft'], ['crime.vehicle'], ['crime.damage'], ['crime.fraud'], ['crime.harassment'], ['crime.domestic'], ['crime.drugs'], ['crime.disorder']];
+const EV = [['crime.burglary'], ['crime.bike_theft'], ['crime.antisocial'], ['crime.assault'], ['crime.theft'], ['crime.vehicle'], ['crime.damage'], ['crime.fraud'], ['crime.harassment'], ['crime.domestic'], ['crime.drugs'], ['crime.disorder'], ['crime.sexual']];
 const EV2 = [['crime.reported', 'A victim reported an offence to the police', { kind: 'string' }], ['crime.arrest', 'A local resident was dealt with for an offence', { kind: 'string', outcome: 'string' }],
   ['crime.sentenced', 'A court sentence', { kind: 'string', sentence: 'string' }], ['crime.watch_started', 'Residents of a street started a neighbourhood watch group', { street: 'number' }],
   ['crime.watch_lapsed', 'A street neighbourhood watch lapsed', { street: 'number' }], ['crime.moved_away', 'A household moved out after being a victim of crime', { kind: 'string' }]];
@@ -27,7 +28,15 @@ const STR = { burglary: 'a burglary', theft: 'a theft', vehicle: 'a vehicle brea
 export const PARAMS = {
   K: 0.22,                // baseline offending episodes/yr of a peak-age male with average risk factors (most episodes are petty and local or elsewhere in the city)
   away: 0.55,             // share of resident episodes that happen elsewhere in the city (still feed their record)
-  OUT: { burglary: 18, theft: 45, vehicle: 55, bike: 40, theftperson: 50, shoplift: 90, damage: 100, asb: 60, assault: 200, harass: 100, publicorder: 14 },
+  OUT: { burglary: 20, theft: 45, vehicle: 55, bike: 40, theftperson: 50, shoplift: 85, damage: 72, asb: 60, assault: 200, harass: 100, publicorder: 14, sexual: 6 },
+  // NIGHT-TIME-ECONOMY EXPOSURE (residents on a night out in the city centre, off the map): hazard per person-hour at the Friday/Saturday peak, before drink and sex pairing.
+  // Anchored to ONS/CSEW: roughly a fifth of violence happens in or around pubs and clubs, ~40% of violent incidents involve an offender believed to be drunk.
+  NTE: { assault: 0.0030, theftperson: 0.0006, sexual: 0.0006 },
+  drinkRisk: 0.6,         // extra hazard per level of alcohol use (heavy drinkers are both targets and fight-starters)
+  sexPair: 0.47,          // women's relative chance of being the counterpart of a stranger fight: male aggressors (~80%) pick same-sex peers (~80%) => victims ~68% male (CSEW: stranger violence victims ~2:1 male)
+  sexualKnown: 0.04,      // relative weight of a sexual offence against someone he knows in a male offender's offence mix (~80% of CSEW perpetrators are known to the victim); tuned so experienced prevalence ~ CSEW
+  domSexual: 0.045,        // share of incidents within an abusive relationship that are sexual (ONS domestic abuse: sexual assault by a partner is a minority of DA)
+  served: 0.4,            // share of a determinate custodial sentence actually served in prison (Standard Determinate Sentence release at 40% from Oct 2024; 50% before)
   fraud: 0.08,            // per-adult annual probability scale of a successful fraud (CSEW: 7% of adults a victim of any fraud, most refunded)
   watchEff: 0.22,         // Bennett et al. 2008: 16-26% reduction => multiplicative cut on burglary/vehicle success on a watched street
   moveAfterBurglary: 0.05,// share of burglary victims who move because of it within a year (tuned; see report note)
@@ -78,15 +87,15 @@ export function createCrime() {
   // ------------------------------------------------------------------ hour snapshot of who is where (only built when an attempt happens)
   let SNAP = null, SNAPT = -1;
   function snap() {
-    if (SNAPT === W.tick && SNAP) return SNAP; SNAPT = W.tick; const occ = new Set(), out = [], pub = [], st = new Map();
+    if (SNAPT === W.tick && SNAP) return SNAP; SNAPT = W.tick; const occ = new Set(), out = [], pub = [], nte = [], st = new Map(), hr = W.time.hour;
     for (const p of W.living()) {
       const q = p.ext.pop; if (!q) continue;
       if (p.locationId === p.homeId && p.locationId != null) occ.add(q.hh);
-      else if (p.locationId == null) { if (!(p.ext.rt && p.ext.rt.off)) out.push(p); }
+      else if (p.locationId == null) { if (!(p.ext.rt && p.ext.rt.off)) out.push(p); else if (p.ext.rt.act === A.nightout || (p.ext.rt.act === A.offsocial && (hr >= 20 || hr < 4))) nte.push(p); }
       else { const b = W.buildings.get(p.locationId); if (b && b.lf && PUBS.has(b.lf.template) && ageOf(p) >= 18) pub.push(p); }
     }
     for (const hh of W.lf.households) { if (hh.gone) continue; const s = streetOfHh(hh), e = st.get(s) || [0, 0]; e[1]++; if (occ.has(hh.id)) e[0]++; st.set(s, e); }
-    return (SNAP = { occ, out, pub, st });
+    return (SNAP = { occ, out, pub, nte, st });
   }
   const dark = () => { const t = W.time, h = t.hourFloat; return t.sunset != null ? (h < t.sunrise || h > t.sunset) : (h < 7 || h > 18); };
   const presence = (s, sid) => { const e = s.st.get(sid); return e && e[1] ? e[0] / e[1] : 0.3; };
@@ -155,20 +164,31 @@ export function createCrime() {
   function assault(o, r) {
     const s = snap(); let v = null, known = 0; const nte = (W.time.dow === 4 || W.time.dow === 5) && (W.time.hour >= 21 || W.time.hour < 3);
     if (o && r.next() < 0.62) { v = conflictTarget(o, r, -0.1); if (v) known = 1; }
-    if (!v) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; let bs = -1; for (let i = 0; i < 3; i++) { const c = pool[(r.next() * pool.length) | 0], sc = (ageOf(c) < 30 ? 2 : 1) + (c.sex === 'M' ? 1 : 0) + (c.ext.hl && c.ext.hl.alc ? 1 : 0) + r.next(); if (sc > bs) { bs = sc; v = c; } } /* offenders pick the most available/vulnerable-looking: young, drinking, men on a night out */ if (v === o || ageOf(v) < 16) return false; if (v.ext.cr && v.ext.cr.avoid && r.next() < 0.5) return false; }
+    if (!v) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; // counterpart of a stranger confrontation: whoever is out, with male aggressors mostly squaring up to same-sex peers and drink lowering restraint on both sides; no age weight (age exposure comes from who is out at night)
+      for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al)) v = c; }
+      if (!v) return false; if (v.ext.cr && v.ext.cr.avoid && r.next() < 0.5) return false; }
     if (!o && !nte && r.next() < 0.7) return false; const g = nte ? 0.25 : 0.1; if (r.next() > 0.7 * (1 - g)) return false;
     const u = r.next(); return commit('assault', { off: o, vic: v, hh: hhOf(v), known, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null });
   }
   function harass(o, r) { const v = conflictTarget(o, r, -0.25) || (!o ? (() => { const p = W.living()[(r.next() * W.people.size) | 0]; return p && ageOf(p) > 16 && r.next() < 0.3 ? p : null; })() : null); if (!v) return false; return commit('harass', { off: o, vic: v, hh: hhOf(v), known: o ? 1 : 0.1, place: null }); }
   function publicorder(o, r) { const s = snap(); if (s.pub.length + s.out.length < 3) return false; if (r.next() > 0.5) return false; return commit('publicorder', { off: o, place: null, silent: true }); }
-  const ATTEMPT = { burglary, theft: theftHome, vehicle, bike, theftperson: theftPerson, shoplift, damage, asb, assault, harass, publicorder };
+  function sexual(o, r) { // outsider/stranger or acquaintance offence among people out at night on the map; residents' offences against people they know are in sexualKnown
+    const s = snap(); if (!dark() && r.next() < 0.7) return false; const pool = s.pub.concat(s.out); if (pool.length < 2) return false; let v = null;
+    for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'F' ? 1 : 0.2) * (0.62 + 0.38 * al)) v = c; }
+    if (!v) return false; return commit('sexual', { off: o, vic: v, hh: hhOf(v), known: o ? 0.5 : 0.05, place: null });
+  }
+  function sexualKnown(o, r) { // an offence by a resident against someone he knows (friend, acquaintance, former partner)
+    if (!o || !W.sys.social) return false; const ties = W.sys.social.query.ties(o.id, { layer: 3 }).filter((t) => t.on && W.people.get(t.o) && ageOf(W.people.get(t.o)) >= 16 && W.people.get(t.o).sex !== o.sex); if (!ties.length) return false;
+    const v = W.people.get(r.pick(ties).o); return commit('sexual', { off: o, vic: v, hh: hhOf(v), known: 0.9, place: null });
+  }
+  const ATTEMPT = { sexual, burglary, theft: theftHome, vehicle, bike, theftperson: theftPerson, shoplift, damage, asb, assault, harass, publicorder };
 
   // ------------------------------------------------------------------ commit: counters, victim effects, reporting, detection queue
   const band = (a) => (a < 16 ? '<16' : a < 25 ? '16-24' : a < 35 ? '25-34' : a < 50 ? '35-49' : a < 65 ? '50-64' : '65+');
   const cnt = (k, t, n = 1) => { (C[k] || (C[k] = {}))[t] = ((C[k] || {})[t] || 0) + n; };
   function commit(type, o) {
     const T = TYPES[type], r = R(W.tick, C.seq), v = o.vic, off = o.off, fromRes = !!off; C.seq++;
-    cnt('exp', type); if (v) { const k = band(ageOf(v)) + v.sex; cnt('vicBand', k); const c = crOf(v); c.vn++; c.vt[type] = (c.vt[type] || 0) + 1; c.last = c.last; } if (off) { cnt('offBand', band(ageOf(off)) + off.sex); const c = crOf(off); c.last = W.tick; c.lastT = o.hh ? o.hh.id : null; c.nOff = (c.nOff || 0) + 1; }
+    cnt('exp', type); if (v) { const k = band(ageOf(v)) + v.sex; cnt('vicBand', k); cnt('vicT', type + '|' + k); const c = crOf(v); c.vn++; c.vt[type] = (c.vt[type] || 0) + 1; c.last = c.last; } if (off) { cnt('offBand', band(ageOf(off)) + off.sex); const c = crOf(off); c.last = W.tick; c.lastT = o.hh ? o.hh.id : null; c.nOff = (c.nOff || 0) + 1; }
     if (type === 'burglary' || type === 'vehicle' || type === 'theft') if (o.hh) { C.hot[o.hh.id] = W.tick + PARAMS.nearRepeatDays * D; C.hotL = null; }
     // reporting decision (victim) -> recording
     let rep;
@@ -178,13 +198,14 @@ export function createCrime() {
     const rec = rep && !T.noRecord && (T.policeInitiated || r.next() < PARAMS.recording);
     if (rep) cnt('rep', type); if (rec) cnt('rec', type);
     if (o.venue != null) cnt('shop', 'n');
-    const dom = o.dom, evType = dom ? 'crime.domestic' : T.ev, hl = v && v.ext.hl, actors = v ? [v.id] : off ? [off.id] : [];
-    const sal = dom ? 0.04 : type === 'burglary' ? 0.4 : type === 'assault' && o.injury !== 'none' ? 0.4 : T.sev >= 2 ? 0.3 : 0.12;
-    const eid = W.emit(evType, { actors: dom ? actors : v ? [v.id] : [], place: o.place ?? null, salience: sal, tags: dom ? ['crime', 'private', 'sensitive'] : ['crime', ...(T.sev >= 2 ? ['unsafe_area'] : []), 'neighbourhood'], payload: { kind: type, rec: !!rec } });
-    const sid = v ? streetOf(v) : o.street ?? -1; const L = C.log; L.push({ t: W.tick, type, eid, v: v ? v.id : null, o: off ? off.id : null, rec: rec ? 1 : 0, sid, inj: o.injury || '', dom: dom ? 1 : 0, ven: o.venue ?? null, loss: o.loss || 0 }); if (L.length > 600) L.shift();
-    if (sid >= 0 && !dom) { (C.street[sid] || (C.street[sid] = [])).push(W.tick); if (C.street[sid].length > 12) C.street[sid].shift(); }
+    const dom = o.dom, sens = !!T.sensitive, priv = dom || sens, evType = sens ? 'crime.sexual' : dom ? 'crime.domestic' : T.ev, hl = v && v.ext.hl, actors = v ? [v.id] : off ? [off.id] : [];
+    const sal = priv ? 0.03 : type === 'burglary' ? 0.4 : type === 'assault' && o.injury !== 'none' ? 0.4 : T.sev >= 2 ? 0.3 : 0.12;
+    const eid = W.emit(evType, { actors: priv ? actors : v ? [v.id] : [], place: o.place ?? null, salience: sal, tags: priv ? ['crime', 'private', 'sensitive'] : ['crime', ...(T.sev >= 2 ? ['unsafe_area'] : []), 'neighbourhood'], payload: { kind: type, rec: !!rec } });
+    const sid = v ? streetOf(v) : o.street ?? -1; const L = C.log; L.push({ t: W.tick, type, eid, v: v ? v.id : null, o: off ? off.id : null, rec: rec ? 1 : 0, sid, inj: o.injury || '', dom: priv ? 1 : 0, sens: sens ? 1 : 0, city: o.city ? 1 : 0, ven: o.venue ?? null, loss: o.loss || 0 }); if (L.length > 600) L.shift();
+    if (sid >= 0 && !priv && !o.city) { (C.street[sid] || (C.street[sid] = [])).push(W.tick); if (C.street[sid].length > 12) C.street[sid].shift(); }
     // victim effects
     if (v) victimEffects(v, type, o, eid, r, rep);
+    if (o.city) cnt('city', type);
     if (o.others) for (const id of o.others) { const q = W.people.get(id); if (q && q.alive && q !== v) { crOf(q).fear = clamp(crOf(q).fear + 0.02, 0, 1); } }
     if (o.loss && v && type === 'fraud') { try { W.ledger.transfer(v.id, 'metropolis', o.loss, 'fraud', eid); } catch (e) { /* no funds */ } }
     // serious injury, rare fatality
@@ -194,7 +215,7 @@ export function createCrime() {
       const cap = C.police.cap; let pd = T.det * cap * (o.known >= 0.5 ? 5 : 1) * (o.cctv ? 2 : 1) * (off && off.ext.cr.pri ? 1.3 : 1) * (T.policeInitiated ? 1 : 1);
       if (!off && !T.policeInitiated) pd *= 0.85; // anonymous visiting offenders are identified a little less
       if (o.dom) pd *= 1.2;
-      if (r.next() < Math.min(0.9, pd)) C.q.push({ t: W.tick + Math.round((5 + r.next() * 40) * D), ty: type, off: off ? off.id : null, vic: v ? v.id : null, sev: T.sev + (o.injury === 'serious' ? 1 : 0), dom: o.dom ? 1 : 0, stage: 0, eid, withdraw: o.dom ? 0.5 : v ? 0.12 : 0.02 });
+      if (r.next() < Math.min(0.9, pd)) C.q.push({ t: W.tick + Math.round((5 + r.next() * 40) * D), ty: type, off: off ? off.id : null, vic: v ? v.id : null, sev: T.sev + (o.injury === 'serious' ? 1 : 0), dom: o.dom ? 1 : 0, stage: 0, eid, withdraw: o.dom ? 0.5 : sens ? 0.45 : v ? 0.12 : 0.02 });
       else if (v && rep) { const c = crOf(v); c.trust = clamp(c.trust - 0.06 * (T.sev + 0.5) * 0.5, 0.05, 1); } // reported, no suspect: confidence erodes
       if (v && rep) { W.emit('crime.reported', { actors: [v.id], cause: eid, salience: 0.03, tags: ['crime'], payload: { kind: type } }); C.attend.push(Math.round((o.injury === 'serious' || o.dom ? 14 : 40 + 40 * r.next()) / Math.max(0.3, C.police.cap))); if (C.attend.length > 300) C.attend.shift(); }
     }
@@ -211,7 +232,7 @@ export function createCrime() {
     if (type === 'vehicle' && hh) C.sec[hh.id] = clamp(secOf(hh) + 0.1, 0, 0.95);
     // telling the street: forum alert (non-domestic only), more likely for burglary/violence
     const ps = W.soc && W.soc.ppl.get(v.id);
-    if (!o.dom && ps && ps.fm && T.sev >= 1 && r.next() < 0.3 + 0.1 * T.sev) W.cmd('comms.forumPost', { author: v.id, kind: 'crime' });
+    if (!o.dom && !T.sensitive && ps && ps.fm && T.sev >= 1 && r.next() < 0.3 + 0.1 * T.sev) W.cmd('comms.forumPost', { author: v.id, kind: 'crime' });
     // household stress for a burglary at home
     if (hh && type === 'burglary') for (const id of hh.members) { const q = W.people.get(id); if (q && q !== v && q.alive) { crOf(q).fear = clamp(crOf(q).fear + 0.25, 0, 1); } }
   }
@@ -224,23 +245,34 @@ export function createCrime() {
       const off = e.off != null ? W.people.get(e.off) : null, v = e.vic != null ? W.people.get(e.vic) : null, T = TYPES[e.ty], oc = off ? crOf(off) : null;
       if (e.stage === 0) {
         if (v && r.next() < e.withdraw) { cnt('det', 'withdrawn'); if (v) crOf(v).trust = clamp(crOf(v).trust - 0.04, 0.05, 1); continue; } // victim does not support prosecution (esp. domestic abuse)
-        cnt('det', e.ty);
-        const oo = r.next(); const out = oo < (T.policeInitiated ? 0.35 : 0.58) ? 'charged' : oo < 0.9 ? 'out-of-court' : 'no-action'; if (out === 'no-action') { if (v) crOf(v).trust -= 0.03; continue; }
+        cnt(e.away ? 'detAway' : 'det', e.ty); // 'det' counts only offences recorded here (away = residents' offences elsewhere in the city, kept separate so charge rates are per recorded offence)
+        const out = r.next() < T.chg ? 'charged' : 'out-of-court'; // det is already the share with a positive outcome; the charge share of those is the Home Office split by class
         if (v) crOf(v).trust = clamp(crOf(v).trust + 0.08, 0.05, 1);
         if (off) W.emit('crime.arrest', { actors: [off.id], cause: e.eid, salience: e.dom ? 0.05 : 0.2, tags: ['crime', ...(e.dom ? ['private'] : [])], payload: { kind: e.ty, outcome: out } });
         if (out === 'out-of-court') { cnt('sent', 'caution'); if (oc) { oc.pri++; } continue; }
         cnt('ch', e.ty); (keep || (keep = [])).push({ ...e, stage: 1, t: W.tick + Math.round((30 + r.next() * 120) * D) });
       } else {
-        const guilty = r.next() < 0.8; if (!guilty) { cnt('sent', 'not guilty'); continue; }
+        if (!off) { cnt('sentOutsider', 'n'); continue; } // anonymous visiting offenders: sentenced elsewhere, not a resident
+        const guilty = r.next() < 0.85; if (!guilty) { cnt('sent', 'not guilty'); continue; } // ~85% of prosecutions end in conviction (MoJ CJS statistics)
         cnt('conv', e.ty); const pri = oc ? oc.pri : 0; let sent = 'fine';
         const pc = clamp(0.015 + 0.07 * pri + 0.07 * e.sev * (e.ty === 'burglary' ? 2 : 1) + (e.dom ? 0.04 : 0), 0, 0.7), u = r.next();
         sent = u < pc ? 'custody' : u < pc + 0.12 + 0.05 * e.sev ? 'suspended' : u < pc + 0.35 + 0.1 * e.sev ? 'community order' : 'fine';
         if (T.sev === 0 && e.ty !== 'shoplift') sent = u < pc * 0.3 ? 'custody' : 'fine';
-        cnt('sent', sent); if (oc) { oc.pri++; oc.conv++; if (sent === 'custody') { const months = u < 0.15 ? 12 + ((r.next() * 36) | 0) : 1 + ((r.next() * 5) | 0); oc.cust = W.tick + months * 30 * D; oc.lam = 0; cnt('sent', 'custody-months', months); if (off.ext.pop && off.ext.pop.activity === 'employed') W.cmd('labour.quit', { pid: off.id }); } if (off.ext.hl) W.cmd('health.stress', { pid: off.id, amount: 0.15, why: 'a court appearance', cause: e.eid }); }
+        cnt('sent', sent); if (oc) { oc.pri++; oc.conv++; if (sent === 'custody') imprison(off, oc, u, r, e); if (off.ext.hl) W.cmd('health.stress', { pid: off.id, amount: 0.15, why: 'a court appearance', cause: e.eid }); }
         W.emit('crime.sentenced', { actors: off ? [off.id] : [], cause: e.eid, salience: sent === 'custody' ? 0.35 : 0.12, tags: ['crime', ...(e.dom ? ['private'] : [])], payload: { kind: e.ty, sentence: sent } });
       }
     }
     C.q = keep || [];
+  }
+
+  // PRISON: a custodial sentence removes the person from the routine layer (off the map, `routine.insert` to 'custody') for the part of the sentence actually served; job lost, household under strain,
+  // ties lapse because nobody is seen. Sentence lengths: ~70% short (1-9 months), ~30% 1-5 years (MoJ sentencing statistics: average custodial sentence ~ 17-20 months, most individual sentences < 12 months but long ones dominate the prison stock).
+  function imprison(off, oc, u, r, e) {
+    const months = r.next() < 0.25 + 0.1 * e.sev ? 12 + ((r.next() * 48) | 0) : 1 + ((r.next() * 8) | 0), served = Math.max(1, Math.round(months * PARAMS.served * 30)); // days in prison
+    oc.cust = W.tick + served * D; oc.lam = 0; cnt('sent', 'custody-months', months); cnt('prisonDays', 'n', served);
+    if (off.ext.pop && off.ext.pop.activity === 'employed') W.cmd('labour.quit', { pid: off.id });
+    if (W.commands.has('routine.insert') && off.ext.rt) W.cmd('routine.insert', { pid: off.id, from: W.tick + 1, to: oc.cust, label: 'In custody', ptype: 3, dest: 'custody' });
+    const hh = hhOf(off); if (hh) for (const id of hh.members) { const q = W.people.get(id); if (q && q.alive && q !== off) W.cmd('health.stress', { pid: id, amount: ageOf(q) >= 16 ? 0.18 : 0.1, why: 'a family member sent to prison', cause: e.eid }); } // partner/children carry the strain; the household loses the income via the job loss
   }
 
   // ------------------------------------------------------------------ clocks
@@ -252,11 +284,19 @@ export function createCrime() {
       if (t === 'publicorder' || t === 'assault') lam *= 1 + 0.1 * (1 - C.police.cap);
       let n = pois(r, lam); while (n-- > 0) ATTEMPT[t](null, r);
     }
+    // night-time-economy exposure of residents who are out in the city centre (off the map): stranger violence, theft from the person and sexual offences, with the same guardianship logic
+    if (h >= 20 || h < 4) { const s = snap(); if (s.nte.length) { const base = PROFILE.nte(h, dow) / 4, wv = wave && (!wave.type || wave.type === 'assault') ? wave.mult : 1;
+      for (const v of s.nte) { const a = ageOf(v); if (a < 16) continue; const al = v.ext.hl ? v.ext.hl.alc || 0 : 0, M = v.sex === 'M', c = crOf(v), dr = 1 + PARAMS.drinkRisk * al;
+        const lamA = PARAMS.NTE.assault * base * dr * (M ? 1 : PARAMS.sexPair) * wv * (1 + 0.1 * (1 - C.police.cap)) * 2 / (1 + PARAMS.sexPair), lamT = PARAMS.NTE.theftperson * base * dr * (a < 45 ? 1.2 : 0.7), lamS = PARAMS.NTE.sexual * base * dr * (M ? 0.2 : 1) * 2 / 1.2;
+        if (r.next() < lamA) { const u = r.next(); commit('assault', { off: null, vic: v, hh: hhOf(v), known: 0, city: 1, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null }); }
+        if (r.next() < lamT) commit('theftperson', { off: null, vic: v, hh: hhOf(v), loss: 250, place: null, city: 1, force: r.next() < 0.12 });
+        if (r.next() < lamS) commit('sexual', { off: null, vic: v, hh: hhOf(v), known: 0.1, place: null, city: 1 }); } } }
     // resident offenders
     if (C.lamTot > 0) {
       let n = pois(r, C.lamTot / H * 1.0); while (n-- > 0) {
         const x = r.next() * C.lamTot; let lo = 0, hi = C.cum.length - 1; while (lo < hi) { const m = (lo + hi) >> 1; if (C.cum[m] < x) lo = m + 1; else hi = m; } const o = W.people.get(C.act[lo]); if (!o || !o.alive || o.ext.cr.cust > w.tick) continue;
         const wt = typeWeights(o, h, dow), t = r.weighted(wt[0], wt[1]);
+        if (t === 'sexualKnown') { sexualKnown(o, r); continue; }
         if (r.next() < PARAMS.away) { awayEpisode(o, t, r); continue; }
         ATTEMPT[t](o, r);
       }
@@ -266,11 +306,11 @@ export function createCrime() {
     const a = ageOf(o), c = o.ext.cr, hl = o.ext.hl || {}, dr = hl.drug || 0, al = hl.alc || 0, hot = o.traits.includes('hothead') ? 1 : 0, young = a < 19 ? 1 : 0, pov = (hhOf(o) && hhOf(o).fin ? hhOf(o).fin.stress : 0);
     const P = (t) => PROFILE[PROF_OF[t]](h, dow);
     const m = { shoplift: (0.9 + 2 * dr + 0.8 * young + pov) * P('shoplift'), burglary: (0.15 + 1.2 * dr) * P('burglary') * (a > 16 ? 1 : 0.3), theft: 0.4 + dr, vehicle: (0.15 + 0.5 * dr) * P('vehicle'), bike: (young ? 0.9 : 0.15) * P('bike'), theftperson: (0.2 + 0.5 * dr) * P('theftperson'),
-      damage: (0.7 + 0.8 * young + 0.8 * hot) * P('damage'), asb: (young ? 2.2 : 0.2) * P('asb') * (1 + (1 - svc('youth'))), assault: (0.5 + 1.4 * hot + 0.6 * al + 0.5 * c.vn) * P('assault'), harass: 0.25 + 0.5 * hot, publicorder: (0.1 + 0.7 * al) * P('publicorder') };
+      damage: (0.7 + 0.8 * young + 0.8 * hot) * P('damage'), asb: (young ? 2.2 : 0.2) * P('asb') * (1 + (1 - svc('youth'))), assault: (0.5 + 1.4 * hot + 0.6 * al + 0.5 * c.vn) * P('assault'), harass: 0.25 + 0.5 * hot, publicorder: (0.1 + 0.7 * al) * P('publicorder'), sexualKnown: o.sex === 'M' && a >= 16 ? PARAMS.sexualKnown * (1 + 1.5 * al + 0.8 * dr + 1.0 * hot) : 0 };
     const ts = Object.keys(m); return [ts, ts.map((k) => m[k])];
   }
   function awayEpisode(o, t, r) { // offence elsewhere in the city: only the offender's own record is affected
-    cnt('away', t); const T = TYPES[t]; if (T.noRecord) return; if (r.next() < T.rep * 0.9 * PARAMS.recording && r.next() < T.det * C.police.cap * (o.ext.cr.pri ? 1.3 : 1) * 3) { C.q.push({ t: W.tick + Math.round((10 + r.next() * 40) * D), ty: t, off: o.id, vic: null, sev: T.sev, dom: 0, stage: 0, eid: 0, withdraw: 0.02 }); }
+    cnt('away', t); const T = TYPES[t]; if (T.noRecord) return; if (r.next() < T.rep * 0.9 * PARAMS.recording && r.next() < T.det * C.police.cap * (o.ext.cr.pri ? 1.3 : 1) * 1.5) { C.q.push({ t: W.tick + Math.round((10 + r.next() * 40) * D), ty: t, off: o.id, vic: null, sev: T.sev, dom: 0, stage: 0, eid: 0, away: 1, withdraw: 0.02 }); } // x1.5: an identified repeat local offender is easier to find than an anonymous one
   }
   function daily(w) {
     const r = R(w.tick, 'd'); outcomes();
@@ -282,7 +322,7 @@ export function createCrime() {
     }
     // domestic abuse: ongoing relationship state (sensitive; invisible in rumours/feed)
     for (const k of Object.keys(C.dom)) { const d = C.dom[k], a = W.people.get(d.o), b = W.people.get(d.v); if (!a || !b || !a.alive || !b.alive || !a.romance || a.romance.partnerId !== b.id) { delete C.dom[k]; continue; }
-      if (r.next() < 0.009) commit(r.next() < 0.55 ? 'assault' : 'harass', { off: a, vic: b, hh: hhOf(b), known: 1, dom: true, injury: 'none', place: a.homeId }); // roughly one recorded-or-not incident every 3 weeks within a relationship
+      if (r.next() < 0.009) commit(r.next() < PARAMS.domSexual ? 'sexual' : r.next() < 0.55 ? 'assault' : 'harass', { off: a, vic: b, hh: hhOf(b), known: 1, dom: true, injury: 'none', place: a.homeId }); // roughly one recorded-or-not incident every 3 weeks within a relationship
     }
   }
   function weekly(w) {
@@ -324,7 +364,7 @@ export function createCrime() {
 
   // ------------------------------------------------------------------ describe (sober one-line text of a log record)
   function describe(e) {
-    const v = e.v != null ? W.people.get(e.v) : null, st = streetName(e.sid), T = TYPES[e.type]; if (e.dom) return 'Police recorded an incident at a home address. No further detail is published.';
+    const v = e.v != null ? W.people.get(e.v) : null, st = streetName(e.sid), T = TYPES[e.type]; if (e.dom || e.sens) return 'Police recorded an incident. No further detail is published.';
     const rep = e.rec ? 'reported to the police' : 'not reported to the police';
     switch (e.type) {
       case 'burglary': return `Burglary on ${st}: ${name(v)} came home to find the house had been entered while it was empty (${rep}).`;
@@ -367,12 +407,12 @@ export function createCrime() {
       'crime.lockUp': (w, a) => { const p = w.people.get(a.pid), hh = p && hhOf(p); if (!hh) return false; C.sec[hh.id] = clamp(secOf(hh) + 0.3, 0, 0.95); crOf(p).lock = 1; return true; },
     },
     query: {
-      stats: () => ({ years: (W.tick - C.t0) / (365.25 * D), exp: { ...C.exp }, rec: { ...C.rec }, rep: { ...C.rep }, det: { ...C.det }, ch: { ...C.ch }, conv: { ...C.conv }, sent: { ...C.sent }, away: { ...C.away }, vicBand: { ...C.vicBand }, offBand: { ...C.offBand }, hom: C.hom.n || 0, moved: C.moved.n || 0, domActive: Object.keys(C.dom).length, police: { ...C.police }, attendMedian: C.attend.length ? [...C.attend].sort((a, b) => a - b)[C.attend.length >> 1] : null, offenders: C.act.length, watch: Object.keys(C.watch).length, wave: C.wave && C.wave.until > W.tick ? { ...C.wave } : null }),
+      stats: () => ({ years: (W.tick - C.t0) / (365.25 * D), exp: { ...C.exp }, rec: { ...C.rec }, rep: { ...C.rep }, det: { ...C.det }, ch: { ...C.ch }, conv: { ...C.conv }, sent: { ...C.sent }, away: { ...C.away }, city: { ...C.city }, detAway: { ...C.detAway }, vicT: { ...C.vicT }, prisonDays: (C.prisonDays || {}).n || 0, vicBand: { ...C.vicBand }, offBand: { ...C.offBand }, hom: C.hom.n || 0, moved: C.moved.n || 0, domActive: Object.keys(C.dom).length, police: { ...C.police }, attendMedian: C.attend.length ? [...C.attend].sort((a, b) => a - b)[C.attend.length >> 1] : null, offenders: C.act.length, watch: Object.keys(C.watch).length, wave: C.wave && C.wave.until > W.tick ? { ...C.wave } : null }),
       risk: (pid) => { const p = W.people.get(pid); return p ? +risk(p).toFixed(3) : 0; }, fear: (pid) => { const p = W.people.get(pid); return p ? +crOf(p).fear.toFixed(2) : 0; },
       victim: (pid) => { const p = W.people.get(pid); return p ? { n: crOf(p).vn, by: { ...crOf(p).vt }, avoids: !!crOf(p).avoid, trust: +crOf(p).trust.toFixed(2) } : null; },
       offenders: () => C.act.map((id) => { const p = W.people.get(id); return p ? { id, lam: +crOf(p).lam.toFixed(2), prior: crOf(p).pri, conv: crOf(p).conv } : null; }).filter(Boolean),
       streetCrime: (sid) => (C.street[sid] || []).filter((t) => W.tick - t < 365 * D).length, shopLoss: (bid) => C.shopLoss[bid] || 0, inCustody: (pid) => { const p = W.people.get(pid); return !!(p && p.ext.cr && p.ext.cr.cust > W.tick); },
-      recent: (n = 8) => C.log.filter((e) => !e.dom).slice(-n).reverse().map((e) => ({ t: e.t, type: e.type, text: describe(e) })), describe, watch: () => Object.keys(C.watch).map((s) => ({ street: +s, name: streetName(+s), since: C.watch[s].t, members: C.watch[s].n })),
+      recent: (n = 8) => C.log.filter((e) => !e.dom && !e.sens).slice(-n).reverse().map((e) => ({ t: e.t, type: e.type, text: describe(e) })), describe, watch: () => Object.keys(C.watch).map((s) => ({ street: +s, name: streetName(+s), since: C.watch[s].t, members: C.watch[s].n })),
       police: () => ({ ...C.police }), types: () => TYPE_IDS.slice(), groups: () => CAL_GROUPS,
     },
   };

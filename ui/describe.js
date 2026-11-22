@@ -1,4 +1,6 @@
 // Turns kernel events into short human sentences and "Larkfield Local" news items. Pure; worker-safe.
+const isPrivateEv = (ev) => /^crime\.domestic/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
+export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
@@ -100,8 +102,42 @@ const T = {
   'housing.bought': (s, o, p) => `${s} bought a home for ${money(p.price)}`,
   'legacy.chron': (s) => `${s} …`,
 };
-export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.ill', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school'];
-const MIN_SAL = { 'health.ill': 0.35, 'life.funeral': 0.35, 'life.school': 0.3, 'civic.complaint': 0.1, 'money.arrears': 0.45, 'housing.rent_rise': 0.2, 'life.caring_start': 0.4, 'goal.invented': 0.3, 'labour.second_job': 0.25 };
+
+// ---- Town news: business, civic and (anonymised, non-sensitive) safety items in a sober local-paper tone. Never names victims or offenders; never uses events tagged private/sensitive.
+const pound = (n) => '£' + Math.round(n).toLocaleString('en-GB');
+const streetName = (w, sid) => (w.map && w.map.lf && w.map.lf.streets[sid] ? w.map.lf.streets[sid].name : 'the area');
+const svcName = { library: 'library', youth: 'youth club', bins: 'bin collections', roads: 'road repairs', repairs: 'council housing repairs', noise: 'noise enforcement' };
+const CRIME = { 'crime.burglary': ['Burglary reported', 'Police recorded a burglary at a home that was empty at the time. Residents are reminded to lock doors and windows, even for a short trip out.'],
+  'crime.assault': ['Assault recorded', 'Police recorded an assault in the neighbourhood.'], 'crime.vehicle': ['Vehicle broken into', 'A vehicle was broken into overnight. Police advise leaving nothing on show.'],
+  'crime.bike_theft': ['Bike stolen', 'A bike was taken from outside a home. Police advise using a good lock and registering bikes.'], 'crime.theft': ['Theft recorded', 'Police recorded a theft in the neighbourhood.'],
+  'crime.damage': ['Criminal damage', 'Police recorded damage to property.'], 'crime.antisocial': ['Antisocial behaviour reported', 'Residents have reported antisocial behaviour. It can be reported to the council or on 101.'],
+  'crime.fraud': ['Residents warned about scams', 'A resident lost money to a scam. Police remind people that banks never ask for PINs or ask you to move money.'], 'crime.harassment': ['Harassment reported', 'Police recorded a report of harassment.'],
+  'crime.drugs': ['Drugs offence recorded', 'Police recorded a drugs offence.'], 'crime.disorder': ['Public order incident', 'Police dealt with a public order incident.'] };
+const LOCAL = {
+  'business.opened': (w, ev, p) => ({ head: `${p.name} opens`, body: `A new ${lc(p.fid || p.tmpl)} has opened${ev.place != null && w.buildings.get(ev.place) ? ' at ' + (w.buildings.get(ev.place).lf.address || '').replace(/^[^,]*, ?/, '') : ''}.` }),
+  'business.closed': (w, ev, p) => ({ head: `${p.name} has closed`, body: `${p.ageMonths >= 24 ? 'After ' + Math.round(p.ageMonths / 12) + ' years' : 'After ' + (p.ageMonths || 1) + ' months'} of trading${p.jobs ? `, ${p.jobs} job${p.jobs > 1 ? 's are' : ' is'} affected` : ''}${p.regulars ? ' and regulars will miss it' : ''}. The reason given: ${({ owner_retired: 'the owner is retiring', insolvent: 'it could no longer cover its costs', owner_gave_up: 'the owner called it a day', god: 'a sudden closure' })[p.reason] || lc(p.reason)}.` }),
+  'business.struggling': (w, ev, p) => ({ head: `${p.name} cuts back`, body: p.stage >= 2 ? 'The business has reduced staff and opening hours to cope with rising costs.' : 'The business has shortened its opening hours to cut costs.' }),
+  'business.recovered': (w, ev, p) => ({ head: `${p.name} restores hours`, body: 'Trading has picked up and normal opening hours are back.' }),
+  'business.rent_review': (w, ev, p) => ({ head: `${p.name}: rent ${p.pct > 0 ? 'rises' : 'falls'}`, body: `A rent review has ${p.pct > 0 ? 'raised' : 'lowered'} the commercial rent by ${Math.abs(Math.round(p.pct))}%.` }),
+  'business.owner_change': (w, ev, p) => ({ head: `${p.name} under new ownership`, body: 'The business has changed hands and is trading as before.' }),
+  'business.rates': (w, ev, p) => ({ head: p.pct < 0 ? 'Business rates cut' : 'Business rates up', body: `Business rates for local firms ${p.pct < 0 ? 'fall' : 'rise'} by ${Math.abs(p.pct)}%.` }),
+  'crime.watch_started': (w, ev, p) => ({ head: `Neighbourhood watch starts on ${streetName(w, p.street)}`, body: 'Residents have organised a neighbourhood watch and set up a group chat for the street.' }),
+  'civic.planning_application': (w, ev, p) => { const st = ev.place != null && w.buildings.get(ev.place) ? streetName(w, w.buildings.get(ev.place).lf.streetId) : null; const a = (w.sys.civic.query.planning(60) || []).filter((x) => x.status === 'open' && x.kind === p.kind && (!st || x.street === st))[0];
+    return { head: `Planning application: ${a ? a.name : lc(p.kind)}`, body: `${st ? 'Lodged on ' + st + '. ' : ''}Neighbours have been notified and can comment before the council decides.` }; },
+  'civic.planning_decision': (w, ev, p) => ({ head: `Council ${p.outcome} ${lc(p.kind)} plans`, body: p.objections ? `${p.objections} objection${p.objections > 1 ? 's' : ''} had been received.` : 'No objections had been received.' }),
+  'civic.election': (w, ev, p) => ({ head: 'Ward election held', body: `Turnout was ${Math.round(p.turnout * 100)}%. ${p.winner || 'No party'} won the most votes.` }),
+  'civic.councillor_elected': (w, ev, p) => ({ head: `${nm(w.people.get((ev.actors || [])[0]))} elected councillor`, body: `A local resident now sits for the ward (${p.party}).` }),
+  'civic.service_cut': (w, ev, p) => ({ head: `Council cuts ${svcName[p.service] || lc(p.service)}`, body: ({ library: 'Library opening hours are reduced.', youth: 'The youth club will run fewer sessions.', bins: 'Collections move to a longer cycle on some streets.', roads: 'Road and pavement repairs are delayed.', repairs: 'Council housing repairs have a longer waiting list.', noise: 'The noise and enforcement team has lost officers.' })[p.service] || 'The service will be reduced.' }),
+  'civic.service_restored': (w, ev, p) => ({ head: `${(svcName[p.service] || lc(p.service)).replace(/^./, (c) => c.toUpperCase())} partly restored`, body: 'The council has put some funding back.' }),
+  'civic.campaign': (w, ev, p) => ({ head: `Campaign launched: ${p.cause}`, body: `${nm(w.people.get((ev.actors || [])[0]))} is gathering signatures and neighbours' support.` }),
+  'civic.campaign_outcome': (w, ev, p) => ({ head: p.won ? 'Campaign succeeds' : 'Campaign ends without success', body: p.won ? 'The council has responded to local pressure.' : 'Campaigners say they will keep raising the issue.' }),
+  'civic.bins': (w, ev, p) => ({ head: 'Missed bin collections', body: `Residents on ${streetName(w, p.street)} report bins left uncollected.` }),
+};
+for (const k of Object.keys(CRIME)) LOCAL[k] = () => ({ head: CRIME[k][0], body: CRIME[k][1] });
+export const LOCAL_TYPES = Object.keys(LOCAL);
+export const LOCAL_KINDS = new Set(['business', 'crime', 'civic']);
+export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.ill', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school', ...LOCAL_TYPES];
+const MIN_SAL = { 'crime.assault': 0.4, 'crime.burglary': 0.38, 'crime.theft': 0.4, 'crime.vehicle': 0.4, 'crime.damage': 0.4, 'crime.antisocial': 0.4, 'crime.fraud': 0.4, 'crime.harassment': 0.4, 'crime.bike_theft': 0.4, 'crime.drugs': 0.4, 'crime.disorder': 0.4, 'civic.bins': 0.1, 'civic.planning_application': 0.1, 'civic.planning_decision': 0.1, 'business.rent_review': 0.15, 'business.recovered': 0.15, 'health.ill': 0.35, 'life.funeral': 0.35, 'life.school': 0.3, 'civic.complaint': 0.1, 'money.arrears': 0.45, 'housing.rent_rise': 0.2, 'life.caring_start': 0.4, 'goal.invented': 0.3, 'labour.second_job': 0.25 };
 const MAP = { 'labour.hired': 'work.hired', 'labour.job_lost': 'work.fired', 'labour.promoted': 'work.promoted', 'housing.moved_in': 'life.move_in', 'housing.moved_out': 'life.move_out', 'housing.notice_served': 'home.eviction', 'housing.eviction': 'home.eviction', 'housing.rent_rise': 'home.rent_rise', 'life.divorce': 'life.breakup' };
 const view = (w, p) => (p ? { firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(w.ageOf(p)), segment: p.ext?.pop?.seg, mood: ((p.mood || 0) + 1) / 2, job: p.job } : null);
 // Plain-English payload for the text grammar: where from/to, why they moved, who employs them, what the job is called.
@@ -132,6 +168,9 @@ export function describeEvent(w, ev, text, viewer = null) {
 
 export function newsFor(w, text, ev, host) {
   const min = MIN_SAL[ev.type] ?? 0.3; if (ev.salience < min) return null;
+  if (LOCAL[ev.type]) { if (isPrivateEv(ev)) return null; const kind = ev.type.split('.')[0]; let x; try { x = LOCAL[ev.type](w, ev, ev.payload || {}); } catch (e) { return null; }
+    const place = ev.place != null && kind !== 'crime' ? w.buildings.get(ev.place) : null; const named = kind === 'civic' || ev.type === 'business.opened' || ev.type === 'business.closed' ? (ev.actors || []).slice(0, 2).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean) : [];
+    return { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind, head: x.head, body: x.body, line: x.head, ppl: kind === 'crime' ? [] : named, sal: kind === 'crime' ? Math.min(ev.salience, 0.45) : ev.salience, place: place ? { id: place.id, name: place.name } : null, town: 1 }; }
   const d = describeEvent(w, ev, text); const a = ev.actors || [];
   const ppl = a.slice(0, 4).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean);
   let head = d.line, body = null;

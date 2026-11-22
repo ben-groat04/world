@@ -164,3 +164,20 @@ details.sec > summary .hint { margin-left: auto; text-transform: none; letter-sp
 .mystory b{margin-right:6px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.75}
 .news .because{font-size:12px;color:var(--warn,#e6b455);margin:2px 0 4px}
 .card.arc .tag{text-transform:none}
+
+/* ---- town: news filter, business card, council/safety/high-street cards */
+.seg { display: flex; gap: 2px; margin: 8px 12px 2px; padding: 2px; background: var(--panel2); border: 1px solid var(--line); border-radius: 99px; width: fit-content; } .seg[hidden] { display: none; }
+.seg button { border: 0; background: transparent; color: var(--mute); padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 600; min-height: 28px; } .seg button.on { background: #2b3d52; color: var(--ink); }
+.news.k-crime .ni, .news.k-business .ni, .news.k-civic .ni { color: var(--accent2); }
+.bizcard { margin: 10px 0 6px; padding: 10px 12px; background: var(--panel2); border: 1px solid var(--line); border-radius: var(--radius); } .bizcard.vacant { border-style: dashed; }
+.bz-h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; } .bz-h span { color: var(--mute); font-size: 12px; text-align: right; } .bizcard p { margin: 4px 0 6px; }
+.bizcard .sec.sub { border-top: 0; margin-top: 4px; } .bizcard .sec.sub > summary { font-weight: 600; font-size: 12px; color: var(--mute); }
+.notice { margin: 6px 0; padding: 8px 10px; border-left: 3px solid #8fb4e8; background: rgba(143,180,232,.08); border-radius: 0 8px 8px 0; font-size: 13px; } .notice small { display: block; color: var(--mute); }
+.tcards { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; } .tcard { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel2); padding: 0 12px; }
+.tcard > summary { padding: 11px 0; } .tcard .tbody { padding: 0 0 12px; } .tcard h5 { margin: 12px 0 4px; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--dim); } .tcard h5 small { text-transform: none; letter-spacing: 0; }
+.tbody .small, .small { font-size: 12.5px; } .tbody p { margin: 6px 0; }
+.hbars { display: flex; flex-direction: column; gap: 5px; } .hbar { display: grid; grid-template-columns: 8.5em 1fr 2.2em; gap: 8px; align-items: center; font-size: 12px; color: var(--mute); } .hbar i { display: block; height: 8px; border-radius: 99px; min-width: 2px; } .hbar b { color: var(--ink); text-align: right; font-weight: 600; }
+.pills { display: flex; flex-wrap: wrap; gap: 5px; } .pill.up { background: rgba(95,208,154,.14); color: var(--good); } .pill.down { background: rgba(255,122,107,.12); color: var(--bad); }
+.chip2 { display: inline-flex; flex-direction: column; padding: 5px 10px; margin: 0 6px 6px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); font-size: 13px; text-decoration: none; } .chip2 small { color: var(--mute); font-size: 11px; }
+.app { padding: 6px 0; border-top: 1px solid var(--line); font-size: 13px; } .app:first-of-type { border-top: 0; } .app small { display: block; color: var(--mute); }
+ul.plain { list-style: none; padding: 0; margin: 4px 0; } ul.plain li { padding: 4px 0; font-size: 12.5px; border-top: 1px solid var(--line); } ul.plain li:first-child { border-top: 0; } ul.plain time { color: var(--dim); margin-right: 4px; }

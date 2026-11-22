@@ -173,6 +173,11 @@ export function buildPlan(W, p, D, wakeTickAt) {
   const lv = L.lv;
   const dayF = wend ? 2.3 : 0.85, mild = rec.regime === 'rain' ? 0.8 : 1;
   const rain = 1;
+  // Heat shifts the park routine (replaces a forced 20-35% evening park trip): park visits rise with temperature (Natural England People & Nature Survey, MENE: warm days and evenings are peak park use;
+  // Met Office/UKHSA: people without gardens and in top-floor flats use parks as refuge), more so in flats, less for the very old, and move to the cooler evening once it is hot. +7 C stands in for a god-set heatwave.
+  const wxN = W.world.weather, hsN = W.world.lf && W.world.lf.health && W.world.lf.health.heat, hotN = Math.max(0, (wxN && wxN.temp != null ? wxN.temp : 14) + (hsN && hsN.until > wakeTickAt ? 7 : 0) - 20);
+  const homeB = W.world.buildings.get(home), flatN = !!(homeB && homeB.lf && homeB.lf.units && homeB.lf.units.length > 1);
+  const parkHeat = hotN > 0 ? (1 + 0.15 * Math.min(hotN, 10)) * (flatN ? 1.25 : 1) * (age >= 75 ? 0.6 : 1) : 1, parkEve = hotN >= 4;
   const want = (kind, rate, a, b, dur, opts = {}) => { if (rate <= 0) return; if (dice(id, D, 100 + wishes.length + kind.length) > clamp(rate / 7 * dayF * (opts.noDay ? 1 : mild), 0, 0.92)) return; const s = a + dice(id, D, 200 + kind.length) * Math.max(0, b - a - dur); wishes.push({ kind, a: s, dur, opts }); };
   if (!sick && age >= 5) {
     const night = w && w.night;
@@ -185,14 +190,14 @@ export function buildPlan(W, p, D, wakeTickAt) {
       want('library', lv.library, 10, 16.5, 0.8); want('community', lv.community, 10, 16, 1.5); want('pharmacy', lv.pharmacy, 9.5, 17.5, 0.3); want('launderette', lv.launderette, 9, 19, 1.2);
       want('takeaway', lv.takeaway, 17.5, 21.5, 0.35); want('barber', lv.barber, 10, 17.5, 0.8);
       if (L.dog) want('park', 5, 6.8, 8.6, 0.6, { dog: true, noDay: true });
-      want('park', lv.park * (L.dog ? 0.6 : 1), wend ? 9.5 : 16.5, wend ? 17 : 19.5, 0.7 + dice(id, D, 9) * 0.9);
+      want('park', lv.park * (L.dog ? 0.6 : 1) * parkHeat, wend ? (parkEve ? 16 : 9.5) : (parkEve ? 17.8 : 16.5), wend ? (parkEve ? 20.5 : 17) : (parkEve ? 20.8 : 19.5), 0.7 + dice(id, D, 9) * 0.9);
       want('visit', lv.visit, wend ? 12 : 18, wend ? 21 : 21.5, 1.8 + dice(id, D, 10) * 2);
       want('offsocial', lv.offsocial * (wend ? 1 : 0.5), wend ? 12 : 18.5, wend ? 18.5 : 21.5, 3.5 + dice(id, D, 11) * 2);
       want('nightout', lv.nightout * (rec.dow === 4 || rec.dow === 5 ? 2.2 : rec.dow === 3 ? 0.9 : 0.15), 20, 23, 4 + dice(id, D, 12) * 2, { noDay: true });
       if (wend) { want('family_off', lv.family, 11, 15, 5 + dice(id, D, 13) * 2); want('retail_trip', lv.retail, 11, 16, 3.2); }
     } else if (age >= 12 && age < 16) {
-      want('park', 3.5, wend ? 11 : 16, wend ? 18 : 19, 1.2); want('shop', 1.5, wend ? 11 : 15.8, 18, 0.4); want('visit', 1.6, wend ? 11 : 16.5, 19.5, 2); if (wend) want('offsocial', 0.6, 12, 17, 3.5);
-    } else { want('park', 4 * (wend ? 1.3 : 1), wend ? 9.5 : 16, wend ? 16 : 18, 1.0); want('visit', 1.2, wend ? 11 : 16.3, 18, 1.6); }
+      want('park', 3.5 * parkHeat, wend ? 11 : 16, wend ? 18 : 19, 1.2); want('shop', 1.5, wend ? 11 : 15.8, 18, 0.4); want('visit', 1.6, wend ? 11 : 16.5, 19.5, 2); if (wend) want('offsocial', 0.6, 12, 17, 3.5);
+    } else { want('park', 4 * (wend ? 1.3 : 1) * parkHeat, wend ? 9.5 : 16, wend ? 16 : 18, 1.0); want('visit', 1.2, wend ? 11 : 16.3, 18, 1.6); }
   }
   wishes.sort((x, y) => x.a - y.a);
   const placed = []; // [a,b,block]

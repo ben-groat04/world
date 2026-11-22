@@ -2,7 +2,7 @@
 export class Store {
   constructor() {
     this.s = { ready: false, time: null, tier: 'pause', tps: 0, tiers: [], map: null, bld: [], bById: new Map(), roster: new Map(), segs: [], people: new Float32Array(0), occ: new Map(), news: [], posts: [], postSource: '', arcs: [], arcsQuiet: true, series: [], stats: null, selected: null, detail: null, following: false, god: null, results: [], directory: null, bdetail: null, dwellings: [], venueList: [], sectors: [], templates: [] };
-    this.subs = {}; this.backend = null;
+    this.s.fresh = new Map(); this.s.pins = []; this.s.town = null; this.subs = {}; this.backend = null;
   }
   on(t, f) { (this.subs[t] ||= new Set()).add(f); return () => this.subs[t].delete(f); }
   emit(t, d) { const q = this.subs[t]; if (q) for (const f of [...q]) { try { f(d, this.s); } catch (e) { console.error('[ui]', t, e); } } }
@@ -17,7 +17,7 @@ export class Store {
   apply(m) {
     const s = this.s;
     switch (m.t) {
-      case 'ready': Object.assign(s, { ready: true, tiers: m.tiers, map: m.map, bld: m.bld, segs: m.segs, god: m.god, time: m.time, series: m.series, stats: m.stats, dwellings: m.dwellings, venueList: m.venueList, sectors: m.sectors, templates: m.templates, tpy: m.tpy }); s.bById = new Map(m.bld.map((b) => [b.id, b])); this.emit('ready', m); break;
+      case 'ready': Object.assign(s, { ready: true, tiers: m.tiers, map: m.map, bld: m.bld, segs: m.segs, god: m.god, time: m.time, series: m.series, stats: m.stats, dwellings: m.dwellings, venueList: m.venueList, sectors: m.sectors, templates: m.templates, tpy: m.tpy }); s.bById = new Map(m.bld.map((b) => [b.id, b])); s.pins = m.pins || []; s.fresh = new Map((m.fresh || []).map((f) => [f.id, f.tick])); for (const b of m.bld) if (b.tpl === 'vacant_unit') { b.vacant = true; b.cat = 'vacant'; } this.emit('ready', m); break;
       case 'roster': for (const r of m.list) s.roster.set(r[0], { id: r[0], first: r[1], last: r[2], seg: r[3], female: !!r[4], skin: r[5], hair: r[6], occ: r[7] }); this.emit('roster', m.list); break;
       case 'frame': s.time = m.time; s.people = m.people; { const o = new Map(); const a = m.occ; for (let i = 0; i < a.length; i += 2) o.set(a[i], a[i + 1]); s.occ = o; } this.emit('frame', m); break;
       case 'speed': s.tier = m.tier; s.tps = m.tps; this.emit('speed', m.tier); break;
@@ -27,6 +27,12 @@ export class Store {
       case 'stats': for (const x of m.samples) s.series.push(x); s.stats = m.stats; this.emit('stats', s.series); break;
       case 'detail': if (m.p && m.p.id === s.selected) { s.detail = m.p; this.emit('detail', m.p); } break;
       case 'building': s.bdetail = m.b; this.emit('building', m.b); break;
+      case 'venue': { const b = s.bById.get(m.id); if (b) { b.name = m.name; b.tpl = m.tpl; b.cat = m.vacant ? 'vacant' : m.cat; b.vacant = !!m.vacant; }
+        if (s.venueList) { const i = s.venueList.findIndex((v) => v.id === m.id); if (m.vacant) { if (i >= 0) s.venueList.splice(i, 1); } else if (i >= 0) { s.venueList[i].name = m.name; s.venueList[i].tpl = m.tpl; } else s.venueList.push({ id: m.id, name: m.name, tpl: m.tpl }); }
+        this.emit('venue', m); break; }
+      case 'fresh': s.fresh.set(m.id, m.tick); this.emit('venue', m); break;
+      case 'pins': s.pins = m.list; this.emit('pins', m.list); break;
+      case 'town': s.town = m.d; s.townTick = m.tick; this.emit('town', m.d); break;
       case 'directory': s.directory = m.list; this.emit('directory', m.list); break;
       case 'result': s.results.unshift(m); this.emit('result', m); break;
       case 'jumped': this.emit('jumped', m.item); break;

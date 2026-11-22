@@ -1,7 +1,7 @@
 // Consequences plugin: the second-order effects a god intervention (or a bad month) has on ordinary lives, as mechanisms with causes. Each ripple is
 // an ordinary command/act on ordinary people, linked by `cause` to the event that triggered it, so the feed, storylines and the person inspector can show "because of".
 //   HEAT  (health.outbreak 'heatwave'):  heat illness among the old / chronically ill / living alone / top-floor flats; broken sleep (stress); short tempers
-//         between people who share a home; people drifting to the park and the shade on warm evenings.
+//         between people who share a home; (people drifting to the park on warm evenings is the routine's own temperature-responsive park wish, routine/plan.js).
 //     Evidence: UKHSA heat mortality monitoring 2022 (~3,000 heat-associated deaths, >80% aged 65+); Public Health England Heatwave Plan (risk: age 75+, long-term
 //     conditions, living alone, top-floor flats); Committee on Climate Change 2022 (overheating in UK flats); Minor et al. 2022 (sleep loss in heat); Anderson 2001
 //     (heat and irritability/aggression); Met Office / Natural England People & Nature Survey (parks are the main heatwave refuge for people without gardens).
@@ -39,18 +39,7 @@ export function createConsequences() {
       }
     }
   }
-  // Early afternoon of a heat day: who will head for the park this evening (done after the day's plan is built, so it sticks).
-  function heatEvening() {
-    const hs = W.lf.health && W.lf.health.heat; if (!hs || hs.until <= W.tick) return; const sev = clamp((hs.mort - 0.1) / 0.2, 0, 1), r = rng('eve', W.tick), P = parks(); if (!P.length) return;
-    for (const p of W.living()) {
-      const age = W.ageOf(p), pop = p.ext.pop; if (!pop || !p.ext.rt) continue; const unit = W.sys.housing && W.sys.housing.query.unit(p.id), b = W.buildings.get(p.homeId);
-      const top = !!(unit && b && (b.lf.units || []).length > 1 && (unit.floor ?? 0) >= Math.max(1, (W.map.lf.buildings[b.id]?.storeys || 1)));
-      if (age >= 5 && age < 75 && !p.ext.rt.off && r.next() < (top ? 0.35 : 0.2) + 0.1 * sev) {
-        const bid = P[(r.next() * P.length) | 0], from = W.tick + Math.max(1, Math.round((18 - (W.time.hourFloat || 0)) * 6));
-        W.cmd('routine.insert', { pid: p.id, from, to: from + 12 + ((r.next() * 6) | 0), label: 'Out in the park, too hot indoors', ptype: 1, bid });
-      }
-    }
-  }
+  // (heat-day park trips are no longer forced here: the routine's park wish responds to temperature and to flats/no garden, see routine/plan.js)
   function rowsDay() {
     for (let i = S.rows.length - 1; i >= 0; i--) {
       const x = S.rows[i]; if (x.due > W.tick) continue; S.rows.splice(i, 1);
@@ -67,7 +56,7 @@ export function createConsequences() {
   }
   return {
     name: 'consequences', version: '1.0.0', deps: ['health'],
-    clocks: { day: () => { heatDay(); rowsDay(); }, hour: (w) => { if (w.time.hour === 14) heatEvening(); } },
+    clocks: { day: () => { heatDay(); rowsDay(); } },
     init(w) {
       W = w;
       if (w.events.registry.has('health.outbreak')) w.on('health.outbreak', (ev) => { if (ev.payload && ev.payload.name === 'heatwave' && ev.payload.phase === 'start') S.heatEid = ev.id; });

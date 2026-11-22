@@ -51,7 +51,9 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
     const ageAtArrival = age - ukYears, uk = (ageThen) => q.bornUK || ageThen >= ageAtArrival + 0.02; // is the person already in the UK at that age?
     // education, in the qualification of the era; abroad it is the home country's (or nothing)
     let eduEnd = 16; // age at which full-time education ended (earliest a job can start)
-    if (age >= 4.5 && uk(4.5)) mem(p, age - 4.5, `Started primary school${nativeHere ? ' nearby' : ''}.`, 0.2, 1);
+    // Reception: the first 1 September on or after the 4th birthday (DfE admissions code)
+    const bd = cl.dateOf(p.birthTick), sinceSep = ((bd.m >= 8 ? bd.m - 8 : bd.m + 4) * 30.44 + (bd.d - 1)) / 365.25, toSep = (1 - sinceSep) % 1, primaryYa = age - 4 - toSep;
+    if (primaryYa > 0.05 && uk(age - primaryYa)) mem(p, primaryYa, `Started primary school${nativeHere ? ' nearby' : ''}.`, 0.2, 1);
     const level = q.edu;
     if (age >= 16.2 && level && level !== 'none') {
       const examYear = birthYear + 16;

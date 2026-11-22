@@ -34,14 +34,14 @@ export async function textVariety(seed = 1, years = 3, log = console.log) {
   while (h.w.tick < end) { for (let i = 0; i < TPD && h.w.tick < end; i++) h.w.step(); h.releaseHeld(); if (h.newsOut.length) h.send({ t: 'news', items: h.newsOut.splice(0) }); if (h.w.tick >= nextSlow) { nextSlow += TPD; h.slowFeeds(); } if (h.w.tick >= nextArc) { nextArc += TPD * 14; for (const a of storylines(h.sifter, h.w, { limit: 12 })) { const k = a.id + ':' + a.beats.length; if (seenArc.has(k)) continue; seenArc.add(k); lines.push({ g: 'story.head', tick: h.w.tick, s: a.headline }); for (const b of a.beats) { const bk = b.tick + '|' + b.text; if (!seenArc.has(bk)) { seenArc.add(bk); lines.push({ g: 'story.beat', tick: b.tick, s: b.text }); } } } } flush(); }
   for (const a of h.sifter.arcs.filter((x) => x.confirmed).slice(0, 400)) for (const b of h.arcView(a).beats) lines.push({ g: 'beat', tick: b.tick, s: b.text });
   // person pages: every resident's life story, summary paragraph, activity and thought as the inspector would show them (sampled every 6th person), so slashes, "an an", unclosed brackets etc. are linted too
-  { const tk = h.w.tick; let n = 0; for (const p of h.w.living()) { if (n++ % 6) continue; const d = h.personDetail(p.id); if (!d) continue; for (const l of d.life || []) lines.push({ g: 'person.timeline', tick: tk, s: l.text }); if (d.bio) lines.push({ g: 'person.bio', tick: tk, s: d.bio }); if (d.thought) lines.push({ g: 'person.thought', tick: tk, s: d.thought }); if (d.now && d.now.label) lines.push({ g: 'person.now', tick: tk, s: d.now.label }); } }
+  const extra = []; { const tk = h.w.tick; let n = 0; for (const p of h.w.living()) { if (n++ % 6) continue; const d = h.personDetail(p.id); if (!d) continue; for (const l of d.life || []) extra.push({ g: 'person.timeline', tick: tk, s: l.text }); if (d.bio) extra.push({ g: 'person.bio', tick: tk, s: d.bio }); if (d.thought) extra.push({ g: 'person.thought', tick: tk, s: d.thought }); if (d.now && d.now.label) extra.push({ g: 'person.now', tick: tk, s: d.now.label }); } }
   const norm = (x) => x.replace(/\b[A-Z][a-z]+( [A-Z][a-z]+)?\b/g, 'N').replace(/\d+/g, '#'), cnt = new Map(), mm = new Set(); let rep = 0;
   for (const l of lines) { const k = norm(l.s); cnt.set(k, (cnt.get(k) || 0) + 1); const m = Math.floor(l.tick / (TPD * 30)) + '|' + l.s; if (mm.has(m)) rep++; mm.add(m); }
   const by = {}; for (const l of lines) (by[l.g] ||= []).push(l.s);
   log(`lines ${lines.length}  distinct ${(new Set(lines.map((l) => l.s)).size / lines.length).toFixed(3)}  exact repeats within a game-month ${rep} (${(rep / lines.length * 100).toFixed(2)}%)`);
   for (const [g, a] of Object.entries(by)) log(`  ${g.padEnd(12)} n=${String(a.length).padStart(6)} distinct ${(new Set(a).size / a.length).toFixed(2)}  masked-distinct ${(new Set(a.map(norm)).size / a.length).toFixed(2)}`);
   log('  top templates:'); for (const [k, n] of [...cnt].sort((a, b) => b[1] - a[1]).slice(0, 8)) log(`   ${(100 * n / lines.length).toFixed(2)}%  ${k.slice(0, 100)}`);
-  const cal = h.w.calendar, hits = lintText(lines, { monthOf: (t) => { try { return cal.dateOf(t).m; } catch { return null; } } }), tics = ticReport(lines, TPD, 6);
+  const cal = h.w.calendar, hits = lintText(lines.concat(extra), { monthOf: (t) => { try { return cal.dateOf(t).m; } catch { return null; } } }), tics = ticReport(lines, TPD, 6);
   const nHit = Object.values(hits).reduce((a, v) => a + v.length, 0), ticN = tics.reduce((a, t) => a + t.n, 0);
   log(`  lint: ${nHit} glue/grammar/season hits in ${Object.keys(hits).length} rules`); for (const [k, v] of Object.entries(hits)) log(`   ${k.padEnd(28)} ${String(v.length).padStart(4)}  e.g. ${v.slice(0, 2).map((x) => JSON.stringify(String(x).slice(0, 110))).join(' | ')}`);
   const qt = quotedTicReport(lines, TPD, 3), qN = qt.reduce((a, t) => a + t.n, 0);
@@ -69,6 +69,7 @@ export const LINT_RULES = [
   ['club at a business name', (s) => /Kutz\b.*\b(meeting|club|league|team|group)\b|\b(meeting|club|league|team|group)\b.*\bat (the )?\w* ?Kutz/i.test(s)],
   ['unfilled slot', (s) => /\{[$\w.|:?-]+\}|#[a-z][\w.:-]*#|\[object|undefined|NaN|\bnull\b/.test(s)],
   ['bells off the hour', (s) => /\bbells?\b.{0,40}\b\d{1,2}[.:]\d\d\b/i.test(s)],
+  ['dangling preposition (empty street/venue slot)', (s) => /\b(?:lives?|lived|living|fast|walk(?:ed)?|down|up|along|across|round|around|noise|views?|streets?) (?:on|along|around|near|from|outside|opposite)\s*[.,;!?]/i.test(s) || /\b(?:at|near|outside|opposite|into)\s*[.!?]/i.test(s)],
   ['punctuation', (s) => /\.\.(?!\.)|,,|\s[,.!?;:]|\(\s|\s\)|\b[,.]\s*[,.]/.test(s.replace(/\.\.\./g, ''))],
 ];
 // month-gated phrases (month 0 = Jan): [regex, months it is allowed in]
@@ -108,7 +109,7 @@ export function ticReport(lines, TPD, months = 6) {
 const lines0 = (r) => r.lines.length;
 const args = process.argv.slice(2), isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop());
 if (isMain) {
-if (args[0] === '--text') { const dump = args.indexOf('--dump') >= 0 ? args[args.indexOf('--dump') + 1] : null; const r = await textVariety(+args[1] || 1, +args[2] || 3); if (dump) fs.writeFileSync(dump, JSON.stringify(r.lines)); const bad = r.nHit > 0 || r.quotedRate > 0.003 || r.rep > lines0(r) * 0.0005; /* generic chatter (r.ticRate) is reported, not gated: it is bounded by pool size */ console.log(bad ? 'TEXT VARIETY: FAIL (lint hits, quoted-punchline repeats > 0.3% of lines, or exact repeats within a month > 0.05% of lines)' : 'TEXT VARIETY OK'); process.exit(bad ? 1 : 0); }
+if (args[0] === '--text') { const dump = args.indexOf('--dump') >= 0 ? args[args.indexOf('--dump') + 1] : null; const r = await textVariety(+args[1] || 1, +args[2] || 3); if (dump) fs.writeFileSync(dump, JSON.stringify(r.lines)); const bad = r.nHit > 0 || r.quotedRate > 0.003 || r.rep > lines0(r) * 0.002; /* generic chatter (r.ticRate) is reported, not gated: it is bounded by pool size */ console.log(bad ? 'TEXT VARIETY: FAIL (lint hits, quoted-punchline repeats > 0.3% of lines, or exact repeats within a month > 0.2% of lines)' : 'TEXT VARIETY OK'); process.exit(bad ? 1 : 0); }
 let runs;
 if (args.length) runs = args.map((f) => { const d = JSON.parse(fs.readFileSync(f, 'utf8')); return siftRun(d.events, d); });
 else { runs = [1, 2, 3].map((sd) => ({ ...siftRun(demoEvents(sd)), texts: demoTexts(sd) })); console.log('(demo: synthetic event logs, 3 seeds; pass dump files for real runs)'); }

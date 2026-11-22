@@ -75,7 +75,7 @@ export function summaryOf(w, p, f) {
   else if (came) origin = came.text.replace(/\.$/, '').replace(/^(Came|Moved) to the UK/, 'came to the UK').replace(/ from (\w[\w ]*?)( for work)?$/, ' from $1$2');
   else if (pop.birthplace && pop.birthplace !== 'United Kingdom' && bornUK === false) origin = 'came to the UK from ' + (/^(Philippines|Netherlands|Gambia|Bahamas|Czech Republic|United States)$/.test(pop.birthplace) ? 'the ' : '') + pop.birthplace;
   if (origin && f.age >= 5) sents.push([`${F} ${origin}, and ${is} now ${f.age}.`, `${F} is ${f.age}. ${cap1(he)} ${origin}.`, `Now ${f.age}, ${F} ${origin}.`][h % 3]);
-  else sents.push(`${F} is ${f.age}${f.street ? ' and lives on ' + f.street : ''}.`);
+  else sents.push(`${F} is ${f.age}${f.street && !(f.yearsAtAddress != null && f.yearsAtAddress >= 0.3) ? ' and lives on ' + f.street : ''}.`);
   // 2. school / work
   const act = f.activity, jl = (pop.occ && occLabel(w, pop.occ)) || (f.jobLabel ? jobNoun(f.jobLabel) : '');
   const bornY = w.calendar && w.calendar.dateOf ? w.calendar.dateOf(p.birthTick).y : 1990, gc = bornY + 16 >= 1988 ? 'GCSEs' : 'O-levels', edu = pop.bornUK === false ? ({ level4plus: 'a degree', level3: 'school qualifications from abroad', apprenticeship: 'an apprenticeship' }[pop.edu]) : { level4plus: 'a degree', level3: 'A-levels or similar', apprenticeship: 'an apprenticeship', level2: gc, level1: bornY + 16 >= 1988 ? 'a few GCSEs' : 'a few CSEs' }[pop.edu];

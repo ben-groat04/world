@@ -76,7 +76,7 @@ export function createComms() {
   // replies come from the topic's own pool (feedreply.<topic>.<tone>) so an answer fits the post; topics without one use the generic tone pool
   const replyKey = (kind, tone) => (E && E.has('feedreply.' + kind + '.' + tone) ? 'feedreply.' + kind + '.' + tone : 'feedreply.' + tone);
   function postText(p, forum) {
-    if (p.ev) { const ev = W.events.get(p.ev); if (ev) { try { return E.render(ev, { genre: 'post', a: view(W.people.get(p.au)), people: (id) => view(W.people.get(id)), seed: p.sd, date: W.calendar.dateOf(p.t), p: ev.payload }, W); } catch (e) { /* fall through */ } } }
+    if (p.ev) { const ev = W.events.get(p.ev); if (ev) { try { return E.render(ev, { genre: 'post', a: view(W.people.get(p.au)), people: (id) => view(W.people.get(id)), seed: p.sd, date: W.calendar.dateOf(p.t), p: { street: W.people.get(p.au) ? streetName(W.people.get(p.au)) : 'the High Street', ...ev.payload } }, W); } catch (e) { /* fall through */ } } }
     if (forum || p.k.startsWith('f:')) return render('feed.' + (p.k.startsWith('f:') ? p.k.slice(2) : p.k), p.au, { seed: p.sd, s: p.ab, t: p.t, p: p.ab != null ? {} : undefined });
     const key = p.k === 'daily' ? ['post.daily', 'post2.mood', 'post2.mood', 'post2.photo'][p.sd % 4] : p.k === 'goal' ? 'feed.goal' : 'post.daily';
     return render(key, p.au, { seed: p.sd, t: p.t });

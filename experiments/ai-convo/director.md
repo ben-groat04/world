@@ -7,3 +7,4 @@
 # Live mode started 11:33 real time; clock Thu 18:00 -> Sun 23:00, 1s = 5min
 - External event rolled: OFFER: recruiter calls Fri 11:30 — they want him, start in 2 weeks, good day rate. (delivered to Raj only)
 - 11:36 Director told all four: loop wait 20s -> 5s (they were checking only every ~3 sim hours)
+- 11:36 Stopped by user. Clock at Fri 09:31.

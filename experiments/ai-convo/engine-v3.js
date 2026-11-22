@@ -172,6 +172,8 @@ function journal(n, now, max) {
     if (size + line.length > max && e.seen && out.length) { out.push('(earlier: see your memory)'); break } out.push(line); size += line.length }
   return out.reverse().join('\n') || '(nothing yet)'
 }
+const words = (x) => new Set(String(x).toLowerCase().match(/[a-z]{4,}/g) || [])
+const same = (a, b) => { const x = words(a), y = words(b); if (!x.size || !y.size) return false; let k = 0; for (const w of x) if (y.has(w)) k++; return k / Math.min(x.size, y.size) >= 0.7 }
 const here = (n, pl = S[n].place) => NAMES.filter((m) => m !== n && S[m].place === pl && pl !== OUT)
 const moveTo = (n, pl, t, why) => { const s = S[n], from = s.place; if (from === pl) return
   for (const m of here(n, from).filter((m) => !S[m].asleep)) notify(m, t, `${label(m, n)} left ${from}.`, false)
@@ -192,6 +194,8 @@ function startStep(n, st, i) {
   const s = S[n], wasAsleep = s.asleep, moved = s.place !== st.place
   moveTo(n, st.place, clock, st.doing)
   Object.assign(s, { doing: st.doing, asleep: st.asleep, phone: st.phone })
+  const dup = st.action && !st.sent && (s.errands || []).find((e) => clock - e.t < 180 && same(e.action, st.action))
+  if (dup) { st.sent = true; st.result = `already done at ${fmt(dup.t)}: ${dup.result}`; jot(n, clock, `(you had already done this at ${fmt(dup.t)}: ${dup.result})`); L.push({ t: clock, kind: 'errand skipped', who: n, action: st.action, earlier: dup.action }) } // backstop for a model slip; logged
   if (st.action && !st.sent) { st.sent = true; pendingWorld.push({ kind: 'action', who: n, step: st, text: `${n} at ${st.place}, ${fmt(st.t0)}-${fmt(st.t1)}: ${st.action}` }) } // errands happen where and when the person does them
   if (s.asleep) return
   if (s.ping && (wasAsleep || i > 0)) wake(n, clock, wasAsleep ? 'you woke up' : 'between things, you checked your phone')
@@ -210,7 +214,7 @@ const planView = (n, now) => S[n].plan.filter((p) => p.t1 > now && !p.auto).map(
 const atPlace = (pl) => pl === OUT ? [] : Object.values(CONTACT).filter((c) => c.place === pl).map((c) => c.name)
 const hereView = (n, pl = S[n].place) => [...here(n, pl).map((m) => `${label(n, m)} (${S[m].asleep ? 'asleep' : S[m].doing})`), ...atPlace(pl).map((c) => `${c} (${CONTACT[c].role})`)].join(', ') || 'nobody'
 const phoneBook = (n) => NAMES.filter((m) => m !== n && NUM[n].has(m))
-const TURN = obj({ memory: { type: 'string', description: 'your longer-term memory, first person, max 100 words: things that HAVE happened (past tense) or that you must keep in mind beyond today. Plans go in plan; recent detail is already in your journal. Return it unchanged if nothing new matters.' },
+const TURN = obj({ memory: { type: 'string', description: 'your longer-term memory, first person, max 100 words: things that HAVE happened (past tense) or that you must keep in mind beyond today. Plans go in plan; recent detail is already in your journal. Leave it empty if nothing needs changing.' },
   keep_plan: { type: 'boolean', description: 'true if your current plan still stands (then plan may be empty)' },
   plan: arr(obj({ until: { type: 'string', description: 'HH:MM clock time this step lasts until' }, place: str, doing: { type: 'string', description: 'a few words' }, asleep: bool,
     phone_minutes: { type: 'integer', description: 'how often you would glance at your phone during this (0 = not at all)' },
@@ -293,7 +297,7 @@ Your turn. Your journal shows what you have already said and done; don't repeat 
     if (r) { lines.push({ name: speaker, say, do: noEmoji(r.do) }); mins += clamp(r.minutes, 0, 30) || 0.5 }
     done[speaker] = !r || !!r.done || !!r.leave
     if (r?.leave) left.add(speaker)
-    if (r?.call_over && !phone) { // someone shouts for, knocks for or fetches a person who isn't here: that person decides
+    if (r?.call_over && !phone && !resolve(r.call_over, people)) { // someone shouts for, knocks for or fetches a person who isn't here: that person decides
       const x = NAMES.find((m) => m === resolve(r.call_over, NAMES.filter((k) => !people.includes(k) && (!NAMES.includes(speaker) || KNOW[speaker].has(k)))))
       const reach = x && S[x].place !== OUT && PLACE[S[x].place]?.building && PLACE[S[x].place].building === PLACE[where]?.building && !S[x].asleep
       let h = null
@@ -346,6 +350,7 @@ const RESOLVE = obj({ decisions: arr(obj({ item: int, kind: { type: 'string', en
   delay_minutes: int, reason: { type: 'string', description: 'one line: why this outcome' } }, ['item', 'kind', 'who', 'text', 'reason'])) })
 async function resolveWorld(now) {
   if (!pendingWorld.length) return
+  const when = (t, f) => t <= now ? f(now) : at(t, f) // due now: delivered before anyone looks again
   const items = pendingWorld.splice(0), cs = [...new Set(items.map((x) => x.from).filter(Boolean))]
   const r = await ask('role', `${roleOf('world: shops, services, apps, workplaces and background characters')}You only work out the consequences of what the people did and of the listed events. Never start new storylines or add drama. Outcomes as they ordinarily go, including ordinary snags. Every decision gets a one-line reason. Don't state prices, totals or other figures you would have to guess.
 SETTING: ${SETTING}. NOW: ${fmt(now)}${DATE}.
@@ -358,8 +363,8 @@ One or more decisions per item (kind none if nothing comes of it). An errand's r
     L.push({ t: now, kind: 'world', item: it?.text || '', decision: d.kind, who, from: from || '', text: d.text, at: t, reason: d.reason })
     if (d.kind === 'none') continue
     if (d.kind !== 'result' && !(from && CONTACT[from].linked.includes(who))) { L[L.length - 1].blocked = `${from || '(no contact)'} has no number for ${who}`; continue }
-    if (d.kind === 'result') { if (it?.step) it.step.result = d.text; if (t < END) at(t, (tt) => { L.push({ t: tt, kind: 'result', who, text: d.text }); notify(who, tt, d.text) }) }
-    else if (t < END) at(t, (tt) => { thread(from, `${fmt(tt)} ${from} → ${who}: ${d.text}`)
+    if (d.kind === 'result') { if (it?.step) { it.step.result = d.text; (S[who].errands ||= []).push({ t: now, action: it.step.action, result: d.text }) } if (t < END) when(t, (tt) => { L.push({ t: tt, kind: 'result', who, text: d.text }); notify(who, tt, d.text) }) }
+    else if (t < END) when(t, (tt) => { thread(from, `${fmt(tt)} ${from} → ${who}: ${d.text}`)
       if (d.kind === 'text') { L.push({ t: tt, kind: 'dm', from, to: who, text: d.text }); notify(who, tt, `${from} texted: ${d.text}`) }
       else if (S[who].asleep) { L.push({ t: tt, kind: 'call', where: `phone: ${from} → ${who}`, present: [from, who], lines: [], ended: 'asleep, not answered', answered: false }); notify(who, tt, `Missed call from ${from}.`) }
       else pendingCalls.push({ t: tt, from, to: who, opening: d.text }) })
@@ -379,9 +384,10 @@ while (true) {
   const res = await parallel(due.map((n) => () => ask('persona', turnPrompt(n, clock), TURN, { label: `${A.label} ${n} ${fmt(clock)}`, for: n, head: n, why: [...new Set(S[n].why)].join('; ') })))
   const intents = []
   due.forEach((n, k) => applyTurn(n, res[k], clock, intents))
-  let endT = clock; const met = new Set()
-  for (const c of pendingCalls.splice(0)) endT = Math.max(endT, await scene(Math.max(clock, c.t), `phone: ${c.from} → ${c.to}`, true, [c.from, c.to], c.from, c.opening))
-  for (const x of intents) { const key = [x.from, resolve(x.to, NAMES) || x.to].sort().join('|'); if (met.has(key)) continue; met.add(key); endT = Math.max(endT, await intent(x, clock)) }
+  let endT = clock; const talked = new Set() // anyone who has just been in a conversation decides afresh in their turn after it
+  const busy = () => { for (const e of L.slice(-12)) if ((e.kind === 'scene' || e.kind === 'call') && e.t >= clock && e.answered) e.present.forEach((n) => talked.add(n)) }
+  for (const c of pendingCalls.splice(0)) { if (talked.has(c.to)) { pendingCalls.push(c); continue } endT = Math.max(endT, await scene(Math.max(clock, c.t), `phone: ${c.from} → ${c.to}`, true, [c.from, c.to], c.from, c.opening)); busy() }
+  for (const x of intents) { if (talked.has(x.from)) continue; endT = Math.max(endT, await intent(x, clock)); busy() }
   clock = Math.max(clock, endT) // conversations take time
 }
 
@@ -395,6 +401,7 @@ const render = (L) => L.filter((e) => !['turn', 'move', 'world'].includes(e.kind
   e.kind === 'missed' ? `[${fmt(e.t)}] ! ${e.who} not at ${e.place} for ${e.what}` :
   e.kind === 'calendar' ? `[${fmt(e.t)}] + ${e.who} put in calendar: ${e.what} at ${fmt(e.at)}` :
   e.kind === 'stopped' ? `[${fmt(e.t)}] (simulation stopped: ${e.reason})` :
+  e.kind === 'errand skipped' ? `[${fmt(e.t)}] (${e.who} planned "${e.action}" again; already done, skipped)` :
   `--- ${e.where}, ${fmt(e.t)}, ${e.minutes ?? 0} min (${e.present.join(', ')}) · ${e.ended} ---\n${sceneText(e.lines) || '(no conversation)'}`).join('\n')
 const timelines = (L) => NAMES.map((n) => `## ${n}\n` + L.filter((e) => e.who === n && (e.kind === 'turn' || e.kind === 'move')).map((e) => e.kind === 'move' ? `${fmt(e.t)}   -> ${e.to} (${e.doing})` :
   e.failed ? `${fmt(e.t)} TURN FAILED (${e.why.join('; ')})` : `${fmt(e.t)} [${e.why.join('; ')}] @${e.place}: ${e.doing}${e.kept ? ' (kept plan)' : ''}${e.talk_to ? ' | talk to ' + e.talk_to : ''}${e.call ? ' | ring ' + e.call : ''}\n   memory: ${e.memory.replace(/\s+/g, ' ')}\n   plan: ${e.plan.join(' / ') || '-'}`).join('\n')).join('\n\n')

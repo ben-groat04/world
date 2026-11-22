@@ -125,6 +125,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .bubble hr { border: 0; border-top: 1px solid var(--line); margin: .6rem 0; }
 .bubble code { font-family: var(--font-mono); font-size: .85em; background: var(--hover); padding: .05em .3em; border-radius: 3px; }
 .bubble .h { font-weight: 700; }
+.reacts { margin-top: .4rem; font-size: .8rem; color: var(--muted); }
 .who-A { --who: var(--a); --who-soft: var(--a-soft); }
 .who-B { --who: var(--b); --who-soft: var(--b-soft); }
 .who-C { --who: var(--c); --who-soft: var(--c-soft); }
@@ -311,11 +312,12 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     const turns = run.turns; let html = '';
     for (let i = 0; i < pos; i++) {
       const t = turns[i]; if (!vis(t)) continue;
+      const rx = t.reactions ? `<div class="reacts">${t.reactions.map(r => esc(r.emoji + ' ' + r.who)).join(' \u00b7 ')}</div>` : '';
       const tm = t.at ? `<span class="time">${esc(t.at.slice(11, 16))}</span>` : '';
       if (t.clock) html += `<div class="round">${esc((t.text.match(/It's now (.+?)\.\)/) || [0, t.text])[1])}</div>`;
-      else if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}</div>`;
+      else if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}${rx}</div>`;
       else if (t.pass) html += `<div class="quiet ${cls(t.who)}"><b>${esc(t.who)}</b> stayed quiet</div>`;
-      else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}</div></div>`; }
+      else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}${rx}</div></div>`; }
     }
     if (typing) {
       html += `<div class="msg typing ${cls(typing.who)}" aria-label="${esc(typing.who)} is typing"><div class="avatar" aria-hidden="true">${esc(typing.who[0])}</div><div class="bubble"><i></i><i></i><i></i></div></div>`;

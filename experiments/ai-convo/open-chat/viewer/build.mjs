@@ -28,12 +28,15 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   if (id < SINCE) continue;
   // Three log formats: events (rows carry `checkin`: one row per posted message or PASS, in time order, plus an end row), steps (`step`: clock rows, unsent replies) and rounds (`round`). Turns are the posted messages and oracle answers (plus clock rows, or a day marker where an events run enters a new day); passes and unsent replies are only counted.
   const events = rows[0].checkin != null, isNew = events || rows[0].step != null, lastRows = rows.filter(r => r.round === rows.at(-1).round);
+  const turns = all.filter(r => r.posted !== false).flatMap((r, i, a) => [...(events && r.at && (i ? a[i - 1].at.slice(0, 10) !== r.at.slice(0, 10) : false) ? [{ who: 'Clock', text: dayLabel(r.at), pass: false, clock: true, at: r.at }] : []), { ...(r.round != null && { round: r.round }), who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) }]);
+  const msgs = turns.filter(t => !t.clock); // EXP_REACT rows (react, to = index among the posted messages) become turn.reactions, not turns
+  for (const r of all.filter(r => r.react)) (msgs[r.to].reactions ??= []).push({ who: r.who, emoji: r.react });
   runs.push({
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,
     names, people: names.length, oracle, topic, secrets: Object.keys(secrets).length ? secrets : null,
-    ...(isNew ? { passes: rows.filter(r => r.pass).length, unsent: rows.filter(r => r.posted === false && !r.pass).length } : { rounds: rows.at(-1).round }),
+    ...(isNew ? { passes: rows.filter(r => r.pass).length, unsent: rows.filter(r => r.posted === false && !r.pass && !r.react).length } : { rounds: rows.at(-1).round }),
     ended: events ? (endRow?.end === 'date' ? 'end date' : 'message limit') : isNew ? (all.filter(r => r.step === all.at(-1).step && !r.clock).every(r => r.pass) ? 'everyone passed' : 'message limit') : !all.at(-1).clock && lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
-    turns: all.filter(r => r.posted !== false).flatMap((r, i, a) => [...(events && r.at && (i ? a[i - 1].at.slice(0, 10) !== r.at.slice(0, 10) : false) ? [{ who: 'Clock', text: dayLabel(r.at), pass: false, clock: true, at: r.at }] : []), { ...(r.round != null && { round: r.round }), who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) }]),
+    turns,
   });
 }
 const out = JSON.stringify(runs);

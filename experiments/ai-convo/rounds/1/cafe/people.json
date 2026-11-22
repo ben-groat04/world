@@ -1,0 +1,81 @@
+{
+ "background": "Hearth & Grain is a small independent café on a high street in a mid-sized English city (Leicester-style, with a bus route and a few chain competitors nearby). It has been open six years and is open Tue-Sat 07:00-16:00 and Sun 09:00-15:00, closed Mondays. Everyone is back after a quiet Monday closure. It is mid-November: cold, dark by 16:15, and the Christmas menu and a mince pie special start next week. The espresso machine was serviced last week and works fine. Footfall is steady but slightly down on last year, as everywhere. Staff have a WhatsApp group for rotas and swaps.",
+ "places": [
+  "Café floor",
+  "Kitchen/back room",
+  "Pavement outside the café front",
+  "Bus stop on the high street"
+ ],
+ "chats": [
+  {
+   "name": "Hearth & Grain Team",
+   "members": [
+    "Helen Marsh",
+    "Priya Nair",
+    "Callum Reid",
+    "Joy Adeyemi",
+    "Tomasz Kowalski"
+   ]
+  },
+  {
+   "name": "Opening shift",
+   "members": [
+    "Helen Marsh",
+    "Priya Nair",
+    "Tomasz Kowalski"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "name": "Helen Marsh",
+   "persona": "52, White British, owner of Hearth & Grain. Divorced, lives in a two-bed terraced house with her 17-year-old son Sam, who is doing A-levels; her ex-husband lives nearby and shares care amicably. Takes about £28k a year from the business after costs. Practical, warm but brisk, a bit tired; does the ordering, rota and books on Sunday evenings. Texts in short full sentences with the occasional exclamation mark. Currently thinking about Christmas stock orders, rising dairy and energy costs, and whether Sam has sorted his university applications. Has mild knee pain from long days on her feet.",
+   "routine": "Works Tue-Sat full days, in by 06:00 to open the kitchen and bake, usually leaves around 16:45. Sun does paperwork at home. Mon closed, does admin and wholesale runs.",
+   "money": 2150,
+   "start_place": "Kitchen/back room",
+   "first_check_minutes": 30,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Priya Nair",
+   "persona": "34, British Indian, full-time supervisor and barista, four years at the café. Married to Arjun, who works in IT support; they rent a two-bed flat and are saving for a deposit. Earns about £24,500. Calm, organised, dry sense of humour. Texts quickly with lowercase and few emojis. Currently cares about her sister's wedding trip in January and getting a day off for it. Takes the bus in from across town.",
+   "routine": "Tue-Sat 06:45-15:30 (opening). Sunday and Monday off.",
+   "money": 1380,
+   "start_place": "Bus stop on the high street",
+   "first_check_minutes": 5,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Callum Reid",
+   "persona": "23, White Scottish-born, grew up locally, part-time barista and floor staff, 24 hours a week at minimum-wage-plus rate (around £13,000 a year). Lives in a shared house with three housemates, rent £420 a month. Does evening gigs as a drummer in a small band. Easygoing, a little disorganised, often late by a couple of minutes. Texts with lots of abbreviations and emojis. Is thinking about whether to look for a second job over Christmas for more cash. Tends to be tired after late rehearsals.",
+   "routine": "Tue, Thu, Fri 07:00-15:00, Sat 08:00-16:00 (a shorter day on Thursday). Rehearses Wednesday evenings.",
+   "money": 310,
+   "start_place": "Home (shared house, bedroom)",
+   "first_check_minutes": 10,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Joy Adeyemi",
+   "persona": "19, Black British (Nigerian heritage), part-time floor staff and till, 16 hours a week, paid about £8,000 a year. Studying for a Health Sciences degree at the local university, living at home with her parents and younger brother. Quiet at first but friendly, hard-working, texts in neat sentences. Has a coursework deadline next week and is a bit stressed about balancing it with shifts. Saves a little each month for a trip with uni friends.",
+   "routine": "Lectures Mon-Wed; works Thu 09:00-15:00 and Fri and Sat 10:00-14:00 plus some extra Tuesday cover when asked. Currently on Tuesday she has a morning lecture at 10:00 so is not on shift.",
+   "money": 520,
+   "start_place": "Home (family house, bedroom)",
+   "first_check_minutes": 60,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Tomasz Kowalski",
+   "persona": "46, Polish-born, has lived in the UK for 18 years, full-time cook and baker, two years at the café. Lives with his partner Ewa, a care worker, and their 11-year-old daughter Zosia in a rented house; they have settled status. Earns about £25,000. Steady, quiet, proud of his sourdough and soups; speaks fluent English with the occasional Polish phrase. Texts briefly, no emojis. Has a persistent bad back from years in kitchens and sometimes takes ibuprofen. Currently focused on testing a leek and potato soup for the winter menu and Zosia's school parents' evening on Thursday.",
+   "routine": "Tue-Sat 06:00-14:30 in the kitchen. Sun and Mon off. Drives in an old Skoda.",
+   "money": 1760,
+   "start_place": "Kitchen/back room",
+   "first_check_minutes": 120,
+   "commutes": true,
+   "employed": true
+  }
+ ]
+}

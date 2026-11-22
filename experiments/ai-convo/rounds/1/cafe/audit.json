@@ -1,0 +1,93 @@
+{
+ "rules": [
+  "You are one real person, not an assistant. Know only what you have seen or been told.",
+  "Text and speak like your person really does: length, punctuation, slang, typos, emoji (or none). British register.",
+  "Do things for your own reasons. Nobody tells you what should happen.",
+  "Money is real: you can only pay what is in your account; your balance is shown to you.",
+  "No therapy-speak, no speeches, no tidy resolutions."
+ ],
+ "decisions": 120,
+ "final": {
+  "Helen Marsh": {
+   "money": 2150,
+   "memory": "Thu 11:55 at café, order notebook nearly done, knee grumbling. Oat milks added to Friday's order. Pie price blank till I check numbers next week. Callum wants 10-16 extra hrs, not Wed evenings, doing rota Sunday night. Priya's Jan Friday pencilled. Milk fridge dates being checked. Worried about dairy/energy costs. Ask Sam about uni tonight. Made Joy's flat white; she has a deadline next week, told her to swap shifts via group chat if needed."
+  },
+  "Priya Nair": {
+   "money": 1380,
+   "memory": "Thu 12:05. On shift, quiet. Unexpected expense (£40-£120) this morning, sort on break or tonight, balance £1380. Helen does rota Sunday night; Callum wants extra hours. Pie price blank till next week. To do: nudge Helen nearer the time about January Friday off for sister's wedding trip."
+  },
+  "Callum Reid": {
+   "money": 310,
+   "memory": "Thu 10:50 on shift, tired. Balance £310. Posted extra Xmas shifts request in group chat (10-16 hrs, not Wed eve, Sun ok). Helen does rota Sunday night. Milk fridge dates with Priya done-ish, oat short."
+  },
+  "Joy Adeyemi": {
+   "money": 520,
+   "memory": "Thu 11:50, café with Helen and Priya. Helen made my flat white, asked about coursework; deadline next week, stressful but managing. Helen said to put swaps in group chat. Work Fri and Sat 10-2. Saving for uni trip. Balance £520. Callum asked for extra shifts in group chat; not my business. Priya seemed quiet, checking her phone."
+  },
+  "Tomasz Kowalski": {
+   "money": 1760,
+   "memory": "Thu 12:05, kitchen. Soup tasted fine, lunch service on. Back a bit sore, ibuprofen if needed. Cream 20p/litre up, on sheet. Parents' evening for Zosia tonight, leave at 14:30 sharp. Callum wants extra xmas shifts, Helen does rota Sunday, not my business."
+  }
+ },
+ "audit": {
+  "score": 3,
+  "breakers": [
+   {
+    "quote": "Callum Reid: \"morning! 😊 what can I get ya?\" / Priya Nair: \"shout if anyone orders something weird and you freeze 😅\"",
+    "why": "Spoken dialogue has emoji, 'lol' and all-lowercase in it. Their texting style has leaked into how they talk out loud. No British café worker says 'lol' across the counter, and the emoji make speech unreadable as speech."
+   },
+   {
+    "quote": "Helen Marsh: \"I'll have the cream figure for you before we open\" ... \"give me five minutes and I'll have that cream figure\" ... \"nearly there with the cream\" ... (13:05) \"I'm writing that cream figure on the sheet now\"",
+    "why": "One trivial number gets promised or 'written on the sheet' about six times across three scenes, and Tomasz says 'Sit, Helen' each time. That's a conversational loop, not two colleagues getting on with their jobs."
+   },
+   {
+    "quote": "Helen (Tue 07:50, café open since 07:00): \"before we open\"; Helen (Tue ~10:00): \"get the till on for opening\"; Helen (Wed 08:05): \"Cuppa, then doors at seven\"",
+    "why": "The owner keeps getting her own opening time wrong. The characters clearly don't know what time it is or what the trading hours are."
+   },
+   {
+    "quote": "Joy memory Thu 09:50: \"On shift, wiping tables and covering the till\" vs Thu 11:50 scene: Joy walks in, sits down and orders a flat white; Helen asks how her coursework is going",
+    "why": "A staff member rostered 9 to 3 turns up as a customer halfway through her own shift, and nobody notices. Her rota and where the scenes put her don't agree."
+   },
+   {
+    "quote": "Helen (Wed 14:04): \"Oat milk's on the shelf in the back, I think we're getting low\" / Priya: \"oat milk's down to two cartons\"",
+    "why": "Priya already counted two cartons and ordered three boxes on Tuesday. The stock hasn't changed and nobody remembers the order. Nothing in the world keeps track of stock."
+   },
+   {
+    "quote": "Priya: \"right, i'll nip and see if the manager's about\"",
+    "why": "She has worked there four years for a five-person business. She'd say 'Helen', not 'the manager'. The phrase comes from the character description, not from her."
+   },
+   {
+    "quote": "Priya memory, repeated about 15 times: \"Family member phoned earlier, might ring back\" / \"Unexpected expense ... will sort on break or tonight, balance £1380\"",
+    "why": "Life events come with no detail (who rang, what the expense was), so she can't do anything with them. She glances at her phone twice and nothing happens. Helen's late finish on Tuesday leaves no trace at all."
+   },
+   {
+    "quote": "Priya Nair: \"hi joy, nice to see you...\" (Stays near the counter with Priya...)",
+    "why": "Priya greets Joy a second time, and the action text refers to herself in the third person."
+   },
+   {
+    "quote": "Priya: \"morning. you're in early.\" / Callum: \"sorry sorry, couple mins late again\"",
+    "why": "The first line already contradicts itself. She has no idea of the time or who is due in when."
+   },
+   {
+    "quote": "Three hours on the café floor with almost no customers; all the talk is staff thanking each other for wiping things",
+    "why": "A high-street café at lunchtime ends up feeling empty and too polite. Nothing gets in the way, so with nothing else to do the staff narrate chores and say thank you."
+   }
+  ],
+  "mechanism_issues": [
+   "Scenes run for a fixed number of turns whatever the content, so everyone has to keep producing lines and recycles the same few topics (the cream figure, 'sit down', 'shout if you need anything'). Let a scene end early, or let people walk off or go quiet, once nobody has anything new. Empty-line turns show the model already wants to stop.",
+   "The memory snapshots are nearly identical rolling to-do lists that get fed back in every 15 to 30 minutes. That keeps open loops alive (the cream figure, reminding Helen about January, 'ask Sam') and causes repeat actions. Mark items as done when they happen, and drop or compress items that haven't changed.",
+   "The voice/style instruction ('text like your person does: emoji, punctuation') is applied to both speech and typed messages. Speech and texts need separate style guidance, or the renderer should strip text-only style from in-person dialogue.",
+   "Characters aren't given the current clock time, the café's trading hours or the rota. Hence 'before we open' at 07:50 while open since 07:00, 'doors at seven' at 08:05, and Priya saying 'you're in early' to someone who's late. Add a shared facts block (hours, today's rota, who's due when) to the prompt for every scene.",
+   "Scene membership isn't tied to the rota or to a character's own state. Joy was on shift per her memory, then entered as a customer. Tuesday's Callum/Helen timings also drift. Build scene casts from the rota, and pass each person's role in the scene to them.",
+   "There's no world state for stock or orders. Oat milk gets counted and ordered twice with the same result. A small shared ledger of facts (orders placed, sheet pinned, figure written) would stop this.",
+   "Life events are too vague to act on ('a family member phoned', 'an expense came up') and have no follow-through. Make them concrete (who, how much, what for) and actually play them out: a phone call scene with the relative, a payment out of the account. Otherwise characters just keep noting them forever.",
+   "Off-screen people (Sam, Arjun, Ewa, Zosia, customers, suppliers) never show up, so outside lives and the shop floor are empty. Helen 'asks Sam about uni' every evening and it never happens. Add lightweight NPC turns for family and customers, so there's something to react to besides each other.",
+   "The group chat gets one post and no replies. Helen would probably at least react or reply, and Joy says 'not my business'. Check that people can see and reply to chat messages between scenes."
+  ],
+  "extra_rules": [
+   "Out loud you talk like speech: no emoji, 'lol' or text-style spelling. Those are only for typed messages.",
+   "Don't repeat what you've already said or done. If there's nothing new, go quiet, get on with work, or leave."
+  ],
+  "verdict": "The tone is plausible and nicely low-key: tired knees, oat milk, a day off for a wedding. Three things sink it. Spoken dialogue full of emoji and 'lol', looping repetition (the cream figure, 'sit down, Helen'), and basic timeline and presence errors: the owner doesn't know when she opens, a rostered worker turns up as a customer, the same stock is counted twice. The causes are mostly in the mechanics: scenes with a fixed number of turns, identical to-do memories being fed back in, no shared clock, rota or stock state, one style prompt for both talking and texting, life events too vague to act on, and no customers or family to react to. Fix those and keep the rules to two lines at most; the realistic texture is already coming through on its own."
+ }
+}

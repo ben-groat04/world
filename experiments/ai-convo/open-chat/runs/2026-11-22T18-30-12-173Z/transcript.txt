@@ -109,3 +109,15 @@ No worries, Jo! See you Wednesday at 7.
 --- Mon 07:29, Tom
 See you Wednesday, Jo!
 
+--- Mon 13:46, Jo
+See you Wednesday, Tom!
+
+--- Mon 17:29, Tom
+See you Wednesday!
+
+--- Mon 18:04, Jo
+See you Wednesday!
+
+--- Mon 18:04, Tom
+See you Wednesday, Jo!
+

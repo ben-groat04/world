@@ -7,10 +7,10 @@
 //   occ (occupation id|null), soc, contract, hours (paid h/wk), pay (gross FTE £/yr), edu, workplace{kind:'onmap'|'offmap'|'home'|'none', bid, dest, mode, mins, hybrid[], flex}, pattern, school{kind,bid|dest}, health{general,conds,disabled,limiting},
 //   fin{gross,net,benefits,savings,debt,arrears,studentLoan,spend}, car (drives), bike, pets, drives{}, interests[], life{chrono,wake,bed,lv{},fav{},sociability,homebody}, yearsAtAddress, grewUp, ties[] }
 //   world.lf = { households:[{id,unit,bid,seg,arch,members[],tenure,rentPcm,mortgagePcm,income,cars,dogs,cats,since}], metro:[{id,name,age,sex,rel,where,how,owner,freq}], slots, stats }
-import { annualPay, nlwFloor, payFte } from '../pay.js';
+import { annualPay, nlwFloor } from '../pay.js';
 import { sampleActivity } from './activity.js';
 import NAMES from '../../content/larkfield/names.js';
-import { clamp, clamp01, wpick, wpickObj, logn, sexFit, socSexTilt, SOC_FEMALE, netFromGross, ageBand, pcm } from './util.js';
+import { clamp, clamp01, wpick, wpickObj, logn, netFromGross, ageBand, pcm } from './util.js';
 import { schoolYearAge } from '../util.js';
 import { planHouseholds, composeHousehold, separateSiblings } from './households.js';
 import { personalityFor, drivesFor, skillsFor, interestsFor, healthFor, savingsFor } from './persona.js';
@@ -177,12 +177,11 @@ export function populate(world, rng) {
     }
     if (act === 'student' && m.age >= 17) return rng.chance(0.35) ? { occ: OCC.student_part_time } : null;
     for (let tries = 0; tries < 6; tries++) {
-      const soc = wpick(rng, socKeys.map((k) => [k, socBase[k] * (tilt[k] ?? 1) * socSexTilt(k, m.sex)]));
+      const soc = wpick(rng, socKeys.map((k) => [k, socBase[k] * (tilt[k] ?? 1)]));
       const pool = Object.entries(pack.meta.socToOcc[soc] || {}).map(([id, w]) => {
         const o = OCC[id]; if (!o) return [id, 0];
         let x = w;
         if (o.age && (m.age < o.age[0] - 1 || m.age > o.age[1] + 2)) x *= 0.05;
-        x *= sexFit(o, m.sex, SOC_FEMALE[soc]);
         if (o.studentOnly) x = 0;
         if (o.where === 'onmap') { const free = slotsFor(id); if (!free.length) x = 0; else x *= Math.min(2, free.length) * 1.3; }
         if (h.seg === 'shift_workers' && SHIFTY.has(o.pattern)) x *= 6; else if (h.seg === 'shift_workers') x *= 0.4;
@@ -234,7 +233,8 @@ export function populate(world, rng) {
         if (d && d.occ) {
           const o = d.occ; m.occId = o.id; m.soc = o.soc; m.pattern = o.pattern; m.hours = m.activity === 'student' ? rng.int(8, 18) : hoursFor(o, h, m);
           m.contract = o.gig ? 'gig' : rng.chance(o.selfEmployed || 0) ? 'self_employed' : m.activity === 'student' ? 'zero_hours' : rng.chance(0.06 + (o.partTime ? 0.08 : 0) + (SHIFTY.has(o.pattern) && o.soc >= 6 ? 0.07 : 0)) ? 'zero_hours' : rng.chance(0.06) ? 'fixed_term' : 'permanent';
-          m.pay = Math.round(o.id === 'student_part_time' ? logn(rng, o.pay.p10, o.pay.median, o.pay.p90) : nlwFloor(payFte(rng, o.pay, m.age), m.contract, m.age)); // hourly rate as FTE £/yr, floored at the NLW for employees (sim/pay.js)
+          const exp = clamp(0.8 + 0.2 * (m.age - 20) / 10, 0.78, 1.18); // experience premium
+          m.pay = Math.round(o.id === 'student_part_time' ? logn(rng, o.pay.p10, o.pay.median, o.pay.p90) : nlwFloor(logn(rng, o.pay.p10, o.pay.median, o.pay.p90) * exp * (m.age < 22 ? 0.9 : 1), m.contract, m.age)); // hourly rate as FTE £/yr, floored at the NLW for employees (sim/pay.js)
           if (o.where === 'onmap') {
             let slot = d.venue ? { vid: d.venue.id, bid: d.venue.buildingId } : null;
             if (!slot) { const free = slotsFor(o.id); slot = rng.pick(free); if (slot) slot.filled.push(m); }

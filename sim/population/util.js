@@ -36,15 +36,3 @@ export function netFromGross(g, TAX, studentLoan = false) {
   const sl = studentLoan && g > TAX.studentLoanPlan2Threshold ? (g - TAX.studentLoanPlan2Threshold) * TAX.studentLoanRate : 0;
   return Math.max(0, g - tax - ni - sl);
 }
-
-/** Female share of employee jobs by SOC major group, ASHE 2026 (provisional) Table 14.6a jobs by sex (sum of 4-digit rows). Used to tilt the sex-blind SOC-group draw (calibration.occupationSOC is both sexes pooled). */
-export const SOC_FEMALE = { 1: 0.39, 2: 0.51, 3: 0.50, 4: 0.71, 5: 0.11, 6: 0.76, 7: 0.59, 8: 0.11, 9: 0.50 };
-export const socSexTilt = (soc, sex) => { const f = SOC_FEMALE[soc] ?? 0.5; return sex === 'F' ? f / 0.5 : (1 - f) / 0.5; };
-/** Relative weight of occupation `o` for a person of `sex` ('F'|'M') GIVEN a SOC group whose female share is `base`: from the occupation's female share of employee jobs (content jobs.js `female`, ASHE 2026 jobs by sex),
- *  so within nursing/care women and within trades men are drawn in proportion to who does the job. `sexOnly` ('M'|'F') is a hard role rule (imam). */
-export const sexFit = (o, sex, base = 0.5) => {
-  if (!o) return 1;
-  if (o.sexOnly) return o.sexOnly === sex ? 1 : 0;
-  if (o.female == null) return 1;
-  return Math.max(0.02, sex === 'F' ? o.female / base : (1 - o.female) / (1 - base));
-};

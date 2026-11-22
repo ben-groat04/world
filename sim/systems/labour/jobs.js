@@ -1,7 +1,6 @@
 // Labour helpers: sectors, promotion ladders, qualification ranks, job drawing and workplace construction. Pure data + functions of (world, rng, person).
 import { clamp } from '../money/util.js';
-import { nlwFloor, payFte } from '../../pay.js';
-import { sexFit, socSexTilt, SOC_FEMALE } from '../../population/util.js';
+import { nlwFloor } from '../../pay.js';
 export const QRANK = { in_school: 0, none: 0, level1: 1, level2: 2, apprenticeship: 2.5, level3: 3, level4plus: 4, other: 2 };
 export const LADDER = {
   retail_assistant: ['shop_supervisor', 'store_manager'], shop_supervisor: ['store_manager'], barista_waiter: ['restaurant_manager'], bar_staff: ['publican'], kitchen_porter_cook: ['cook_chef'], cook_chef: ['restaurant_manager'],
@@ -64,13 +63,12 @@ export function drawOccupation(w, rng, p, opts = {}) {
   for (let tries = 0; tries < 8; tries++) {
     let soc;
     if (prior && rng.chance(0.62)) soc = prior.soc;
-    else soc = wpick(rng, Object.keys(pack.meta.socGroups).map((k) => [+k, (base[pack.meta.socGroups[k]] || 0.1) * (tilt[k] ?? 1) * socSexTilt(k, p.sex)]));
+    else soc = wpick(rng, Object.keys(pack.meta.socGroups).map((k) => [+k, (base[pack.meta.socGroups[k]] || 0.1) * (tilt[k] ?? 1)]));
     const pool = Object.entries(pack.meta.socToOcc[soc] || {}).map(([id, wt]) => {
       const o = OCC[id]; if (!o || o.studentOnly) return [id, 0];
       let x = wt;
       if (prior && id === prior.id) x *= 6;
       if (o.age && (age < o.age[0] - 1 || age > o.age[1] + 2)) x *= 0.05;
-      x *= sexFit(o, p.sex, SOC_FEMALE[soc]);
       if (QRANK[q.edu] < (QRANK[o.qual] ?? 0) - 0.5) x *= 0.08;
       x *= gateWeight(w, q, o, age, opts);
       if (o.where === 'onmap') { if (opts.onlyOffmap || !(opts.hasVacancy && opts.hasVacancy(id))) x = 0; else x *= 1.5; }
@@ -116,7 +114,7 @@ export function contractFor(rng, o, hh) {
   return rng.chance(0.06 + (o.partTime ? 0.08 : 0) + sh) ? 'zero_hours' : rng.chance(0.07) ? 'fixed_term' : 'permanent';
 }
 export function payFor(w, rng, p, o, macro, priorPay, samePrior) {
-  const age = w.ageOf(p), z = ((p.personality ? p.personality.conscientiousness : 0.5) - 0.5) * 0.12 + (((p.skills && p.skills.digital) || 0.5) - 0.5) * 0.06;
+  const age = w.ageOf(p), exp = clamp(0.8 + 0.2 * (age - 20) / 10, 0.78, 1.18), z = ((p.personality ? p.personality.conscientiousness : 0.5) - 0.5) * 0.12 + (((p.skills && p.skills.digital) || 0.5) - 0.5) * 0.06;
   if (samePrior && priorPay) return Math.round(priorPay * rng.float(0.95, 1.12));
-  return Math.round(nlwFloor(payFte(rng, o.pay, age, z * 4) * macro.wage, o.gig ? 'gig' : o.selfEmployed > 0.5 ? 'self_employed' : 'permanent', age)); // z (conscientiousness/digital; was a +-6% multiplier) is now a rank shift
+  return Math.round(nlwFloor(logn(rng, o.pay.p10, o.pay.median, o.pay.p90) * exp * (age < 22 ? 0.9 : 1) * (1 + z) * macro.wage, o.gig ? 'gig' : o.selfEmployed > 0.5 ? 'self_employed' : 'permanent', age));
 }

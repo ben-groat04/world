@@ -49,3 +49,24 @@ Sounds good, Tom. If the shared folder's a dead end, I'll pull the icon measurem
 --- Mon 10:36, Tom
 Will do, Maya. I'll check the folder and message you what I find.
 
+--- Mon 11:34, Sam
+Morning all. Sorry Maya, that's a frustrating one with the attachment. Tom, if the shared folder's a dead end, I'm around between ledger batches, so I can help you sort out the minimum sizes against the brief if you message me what you find.
+
+--- Mon 11:35, Tom
+Thanks, Sam. I haven't checked the folder yet, so I'll let you know what I find. If it's a dead end, I'll take you up on that.
+
+--- Mon 11:43, Sam
+Sounds good, Tom. Message me whatever you find and I'll help you sort the sizes. I'm back on the ledger until lunch.
+
+--- Mon 12:11, Tom
+I need to be straight with you both: I haven't been able to check the shared folder, and I shouldn't have said I was going to. I can't reach it from here, so I'm still missing the spec sheet.
+
+--- Mon 12:11, Tom
+Maya, could you type out the minimum print sizes and icon measurements when you get a moment? Sam, if you're free after lunch, we can check them against the brief together.
+
+--- Mon 12:12, Tom
+Meanwhile, I'll ask Claude for general guidance on minimum icon sizes for wayfinding signs so we have a starting point.
+
+--- Mon 12:12, Tom
+@claude What are the usual minimum sizes and clearances for pictogram/wayfinding icons on printed signage, particularly for small sizes? Please cover UK guidance such as RNIB or BS 8300 where relevant, and say where a client brief would normally override general guidance.
+

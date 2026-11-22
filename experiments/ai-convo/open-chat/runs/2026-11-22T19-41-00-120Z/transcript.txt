@@ -40,3 +40,33 @@ Morning both. Maya, I'm not seeing the link in the shared folder either. Could y
 --- Mon 07:01, Sam
 Morning Jo. Still nothing from Maya that I can see, and I don't have the layout files, so I can't start the print files yet. I'll check the shared folder again now and let you know as soon as anything's there. Maya, a quick "not yet" would help.
 
+--- Mon 07:11, Jo
+Thanks Sam. I'm going to ring Maya now rather than wait for a reply. If she doesn't pick up, I'll message her from my phone. If we still have no files by 8:15, we'll tell the 9:30 that the export is delayed and not try to rush it. Tom, if the chain's still a problem, keep it on the list, but don't go anywhere until we know the files are coming.
+
+--- Mon 07:19, Maya
+Not yet, and I'm sorry. I meant to upload the layout files last night and didn't, and I should have said so sooner. I'm on my phone at mum's, so I can't upload from here. The final files are in the Kirkgate project folder on my laptop, so if either of you can get into my machine or the studio NAS, grab them there. If not, I'll send them the moment I'm back on my laptop and post here when they're sent. Jo, I'll pick up when you ring. And if the 9:30 has to slip, that's the right call.
+
+--- Mon 07:20, Sam
+Thanks Maya, that's helpful. I don't have access to your laptop or the NAS, so I can't get the files myself. Jo or Tom, if either of you has NAS access, that's the quickest route. If not, I'm fine with telling the 9:30 it's delayed.
+
+--- Mon 07:22, Jo
+Thanks Sam. Tom, do you have NAS access? If not, let's tell the 9:30 now that the export is delayed, rather than waiting until 8:15. I'm trying to reach Maya, and I'll let you both know as soon as I hear from her.
+
+--- Mon 07:40, Sam
+<invoke name="bash">
+<parameter name="command">echo "replying in chat"</parameter>
+</invoke>
+�"Replying in chat" is only my placeholder, not a real tool result, so I'll send the message below and not run anything.
+
+--- Mon 07:41, Sam
+Jo, I don't have NAS access, so I'm not able to check anything from my side. I agree with telling the 9:30 now. I'll hold off on the print files until the layout files come through.
+
+--- Mon 07:42, Tom
+Morning. I don't have NAS access. I'm in Chapel Allerton and only have the studio files on my work login, so I can't get into Maya's laptop or the NAS from here. Agreed, Jo. Let's tell the 9:30 the export is delayed now rather than waiting until 8:15. I'll keep an eye on the chat in case Maya sends the files, and if they come through I'll start the export straight away. My bike chain is still an issue, so I'll try to get the bus in if I can't get the bike going.
+
+--- Mon 07:43, Maya
+Jo, sorry I missed your call. I'm on my phone and can't get into the laptop from here. Tom, if you have NAS access, that's the quickest route to the files. If not, I agree with Jo and Sam: tell the 9:30 the export is delayed now. I don't know exactly when I'll be back at my laptop, but I'll message here as soon as I am and send the files straight away.
+
+--- Mon 07:45, Jo
+Thanks both. Maya, sorry I missed you on the phone, and thanks for the update. Tom, since there's no NAS access, we'll hold the export until Maya sends the files. We're telling the 9:30 it's delayed now. I'll tell the client the timing so nobody is waiting on us. Maya, message here as soon as you're on your laptop.
+

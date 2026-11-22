@@ -429,7 +429,7 @@ export function createHousing() {
   };
   const plugin = {
     name: 'housing', version: '1.0.0', eventTypes: EVENTS.map((e) => e[0]),
-    clocks: { day: (w) => monthly(w) }, // staggered: each unit/household is processed on its own day of the month
+    clocks: { day: (w) => monthly(w), month: (w) => { for (const p of w.living()) { const q = p.ext.pop; if (q && q.yearsAtAddress != null) q.yearsAtAddress = +(q.yearsAtAddress + 1 / 12).toFixed(3); } } }, // yearsAtAddress is a stored duration: it must advance (it was frozen at its day-1 value, so "9 years here" never changed). Staggered:: each unit/household is processed on its own day of the month
     init(world) {
       W = world; registerEvents(world, EVENTS); initState(world);
       if (world.events.registry.has('goal.effect')) world.events.on('goal.effect', onGoalEffect);

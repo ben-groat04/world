@@ -37,8 +37,22 @@ export class Groups {
     if (K.min >= 1 && !g.project) { const tpl = this.e.tpl.get(g.purpose); if (tpl && tpl.project) this.startProject(g, tpl.project); }
     this.schedule(g, 0.5);
   }
+  /** Can this person take part in what the group does? One rule for every way in (seeding, recruiting, joining, word of mouth) and for staying in (checked at every meeting):
+   *  a minimum age per kind of group, and physical groups (sport / running / team) need an age and health to match (no stroke survivor on the five-a-side roster). */
+  fit(g, q) {
+    const a = this.w.ageOf(q), pop = q.ext && q.ext.pop, h = (pop && pop.health) || {}, conds = h.conds || [], name = g.name || '';
+    const youth = /junior|youth|kids|under-?\d|scout|brownie|cub|school|children/i.test(name);
+    const minAge = youth ? 5 : g.kind === 'friend_gang' ? 8 : g.kind === 'online_community' ? 12 : g.venueKind === 'pub' || /pub|quiz/i.test(name) ? 18 : 14;
+    if (a < minAge) return false;
+    const run = (g.tags || []).includes('run') || /runner|jog|10k/i.test(name), phys = run || (g.tags || []).includes('sport') || g.kind === 'team' || /five-a-side|football|cricket|netball|rugby|climb|gym|swim/i.test(name);
+    if (phys) {
+      if (a > (run ? 72 : 60)) return false;
+      if (h.limiting >= 2 || conds.some((c) => /stroke|mobility|dementia|heart|copd|cancer|arthritis/i.test(c)) || (q.health != null && q.health < 0.3)) return false;
+    }
+    return true;
+  }
   addMember(g, id, role, commit, silent) {
-    if (g.members[id]) return false; g.members[id] = { role, since: this.w.tick, commit, att: 0 }; const s = this.e.S.ps.get(id) || this.e.ps(this.w.people.get(id)); if (!s.groups.includes(g.id)) s.groups.push(g.id);
+    if (g.members[id]) return false; if (g.leader !== id) { const q = this.w.people.get(id); if (q && !this.fit(g, q)) return false; } g.members[id] = { role, since: this.w.tick, commit, att: 0 }; const s = this.e.S.ps.get(id) || this.e.ps(this.w.people.get(id)); if (!s.groups.includes(g.id)) s.groups.push(g.id);
     this.w.index?.orgJoin?.(g.id + 1e6, this.w.people.get(id));
     if (!silent) this.w.emit('group.joined', { actors: [id], cause: g.eid || 0, salience: 0.08, tags: ['civic'], payload: { group: g.id, role } });
     return true;
@@ -114,6 +128,7 @@ export class Groups {
       if (!G) { G = this.create({ kind: gk, founder: p.id, purpose: tpl.id, goal: g.id }); g.group = G.id; }
       const K = this.kinds[gk]; if (!tp) return { res: 'fail', why: 'busy', note: 'no one to ask' };
       if (G.members[tp.id]) return { res: 'ok', note: `${tp.firstName} is already in` };
+      if (!this.fit(G, tp)) { g.ex.push(tp.id); return { res: 'fail', why: 'refused', note: `${tp.firstName} could not manage it` }; }
       const q = this.e.ps(tp), tf = this.e.S.ps.get(tp.id), rl = p.relationships?.get(tp.id), z = personalityZ(tp);
       const dw = q.dw || [], belong = dw[this.e.driveIdx.belonging] ?? 0.5, nov = dw[this.e.driveIdx.novelty] ?? 0.5;
       let pr = 0.33 + 0.25 * (rl ? (rl.affinity || 0) : 0) + 0.2 * (belong - 0.5) + 0.15 * (nov - 0.5) + 0.05 * z.E - 0.08 * Math.max(0, q.groups.length - 1) - q.stress * 0.15 + (tpl.id === 'start_a_band' ? (this.e.cfg && 0) : 0);
@@ -155,7 +170,7 @@ export class Groups {
   findJoinable(p, f, hint, s) {
     let best = null, bs = 0.1; const rel = p.relationships;
     for (const G of this.S.groups.values()) {
-      if (G.status !== 'active' && G.status !== 'institution') continue; if (G.members[p.id]) continue; const K = this.kinds[G.kind]; if (this.size(G) >= K.cap) continue; if (hint && !hint.some((h) => (h.startsWith('tag:') ? G.tags && G.tags.includes(h.slice(4)) : h === G.kind))) continue;
+      if (G.status !== 'active' && G.status !== 'institution') continue; if (G.members[p.id] || !this.fit(G, p)) continue; const K = this.kinds[G.kind]; if (this.size(G) >= K.cap) continue; if (hint && !hint.some((h) => (h.startsWith('tag:') ? G.tags && G.tags.includes(h.slice(4)) : h === G.kind))) continue;
       if (G.kind === 'business' || G.kind === 'friend_gang') continue;
       let sc = 0.3 + G.rep * 0.3 + G.cohesion * 0.3 + (this.size(G) < K.min + 2 ? 0.1 : 0); if (rel) for (const id of Object.keys(G.members)) { const rl = rel.get(+id); if (rl) sc += tieStrength(rl) * 0.8; }
       sc += this.e.rng('fj', p.id, G.id, this.w.tick >> 9).next() * 0.25; if (sc > bs) { bs = sc; best = G; }
@@ -216,7 +231,7 @@ export class Groups {
   }
   meet(g) {
     const w = this.w, S = this.S, K = this.kinds[g.kind], r = this.e.rng('meet', g.id, w.tick), ids = Object.keys(g.members).map(Number);
-    const att = []; for (const id of ids) { const q = w.people.get(id), m = g.members[id]; if (!q || !q.alive) { this.removeMember(g, id, 'died or left'); continue; } const s = S.ps.get(id); const pa = clamp(0.25 + 0.7 * m.commit - (s ? s.stress * 0.25 : 0) + (id === g.leader ? 0.15 : 0), 0.05, 0.97); if (r.next() < pa) { att.push(id); m.att++; m.commit = clamp(m.commit + 0.015, 0, 1); } else m.commit = clamp(m.commit - 0.02, 0, 1); }
+    const att = []; for (const id of ids) { const q = w.people.get(id), m = g.members[id]; if (!q || !q.alive) { this.removeMember(g, id, 'died or left'); continue; } if (!this.fit(g, q)) { this.removeMember(g, id, 'no longer able to take part'); continue; } const s = S.ps.get(id); const pa = clamp(0.25 + 0.7 * m.commit - (s ? s.stress * 0.25 : 0) + (id === g.leader ? 0.15 : 0), 0.05, 0.97); if (r.next() < pa) { att.push(id); m.att++; m.commit = clamp(m.commit + 0.015, 0, 1); } else m.commit = clamp(m.commit - 0.02, 0, 1); }
     g.meetings++; g.lastActive = w.tick; const n = ids.length;
     if (att.length < Math.max(2, Math.ceil(K.min * 0.5)) && K.min > 1) { g.weak++; g.cohesion = clamp(g.cohesion - 0.06, 0, 1); } else g.weak = 0;
     if (att.length >= 2) {

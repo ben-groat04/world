@@ -1,4 +1,5 @@
 // Turns kernel events into short human sentences and "Larkfield Local" news items. Pure; worker-safe.
+import { projectPhrase } from '../sim/sifter/projectwords.js';
 const isPrivateEv = (ev) => /^crime\.(domestic|sexual)|^health\.substance$|^social\.secret$/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
 export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
@@ -93,7 +94,7 @@ const T = {
   'goal.transformed': (s, o, p, c) => `${s} swapped "${phrase(c.w, p.from)}" for "${phrase(c.w, p.to)}"`,
   'goal.invented': (s, o, p) => `${s} came up with ${p.label}`,
   'goal.step': (s) => `${s} took a step towards a goal`,
-  'project.started': (s, o, p) => `${s} kicked off a ${lc(p.kind)} project`,
+  'project.started': (s, o, p) => `${s} ${projectPhrase(p.kind, 'start', p.project)}`,
   'project.progress': (s) => `${s} moved a group project forward`,
   'project.done': (s) => `${s} and the group finished their project`,
   'project.effect': (s) => `${s}'s project changed something in the neighbourhood`,
@@ -331,7 +332,7 @@ export function activityLabel(w, p, now, x = {}) {
     case 'getup': if (age < 16) return weekend ? 'Getting up and about' : 'Getting ready for school'; return toShift === 'night_work' ? 'Up and getting ready for tonight\'s shift' : kids.length ? pick('Getting the kids up and ready', `Getting ${kids[0].firstName} ready for the day`) : toShift && pop.activity === 'employed' ? pick('Getting ready for work', 'Getting up and out for work') : pick('Getting up and putting the kettle on', 'Getting up and ready at home');
     case 'breakfast': return kids.length ? pick('Breakfast with the kids', `Breakfast with ${joinNames(kids.slice(0, 2).map((k) => k.firstName))}`) : partner ? `Breakfast with ${partner.firstName}` : pick('Toast and tea at home', 'Having breakfast at home');
     case 'lunch': return at && /work/i.test(base) ? 'Lunch break at ' + theName(at) : pick('Having lunch at home', 'Making some lunch');
-    case 'dinner': return toShift === 'night_work' && home ? 'Making tea before the night shift' : kids.length ? pick('Cooking dinner for the family', `Sorting dinner while ${kids[0].firstName} does homework`) : partner ? `Cooking dinner with ${partner.firstName}` : home ? (age < 13 ? 'Having dinner at home' : hhN === 1 ? pick('Cooking dinner for one', 'Sorting something for tea') : pick('Sorting something for tea', 'Cooking dinner')) : base;
+    case 'dinner': return toShift === 'night_work' && home ? 'Making tea before the night shift' : kids.length ? (kids.some((k) => k.age >= 6) ? pick('Cooking dinner for the family', `Sorting dinner while ${kids.find((k) => k.age >= 6).firstName} does homework`) : pick('Cooking dinner for the family', `Sorting dinner with ${kids[0].firstName} ${kids[0].age < 2 ? 'on a hip' : 'underfoot'}`)) : partner ? `Cooking dinner with ${partner.firstName}` : home ? (age < 13 ? 'Having dinner at home' : hhN === 1 ? pick('Cooking dinner for one', 'Sorting something for tea') : pick('Sorting something for tea', 'Cooking dinner')) : base;
     case 'cook': return partner ? `Cooking with ${partner.firstName}` : kids.length ? 'Cooking with the kids around' : 'Cooking something proper';
     case 'tv': { const fb = (p.interests || []).includes('football') && ((dow === 5 && h >= 12 && h < 18) || (h >= 19 && h < 22)); const wi = partner || co[0]; return fb ? (wi ? `Watching the match with ${wi.firstName}` : 'Watching the match') : wi ? `Watching TV with ${wi.firstName}` : kids.length ? 'Watching something with the kids' : pick('On the sofa with the telly on', 'Watching TV at home'); }
     case 'gaming': return co[0] ? `Gaming with ${co[0].firstName} in the room` : 'Gaming at home';
@@ -393,7 +394,7 @@ export function thoughtFor(w, text, p, x = {}) {
     if (partner && partner.id != null && h >= 17 && h < 24) { const P = w.people.get(partner.id); if (P && partner.kind === 'on' && home) add('thought.partner', 1.7, { b: P }); }
     if (partner && partner.kind === 'off' && partner.id != null && h >= 8) { const P = w.people.get(partner.id); if (P) add('thought.partner_away', 1.2, { b: P }); }
     const kid = (p.family?.childrenIds || []).map((k) => w.people.get(k)).find((k) => k && k.alive && w.ageOf(k) < 15);
-    if (kid && h >= 7 && h < 22) add('thought.kids', 1.5, { kid: kid.firstName });
+    if (kid && h >= 7 && h < 22) add('thought.kids', 1.5, { kid: kid.firstName, kidAge: Math.floor(w.ageOf(kid)) });
     if (lst && lst.pregnant) add('thought.pregnant', 2.2); if (lst && lst.careing) add('thought.caring', 2);
     if (pop.activity === 'unemployed' && h >= 9 && h < 21) add('thought.jobhunt', 2.2);
     if (pop.activity === 'retired' && h >= 9 && h < 21) add('thought.retired', 1.5);
@@ -415,7 +416,7 @@ export function thoughtFor(w, text, p, x = {}) {
   const view = (q2) => (q2 ? { id: q2.id, firstName: q2.firstName, lastName: q2.lastName, sex: q2.sex, age: Math.floor(w.ageOf(q2)), segment: q2.ext?.pop?.seg, mood: ((q2.mood || 0) + 1) / 2, job: q2.job, children: q2.family?.childrenIds || [] } : null);
   for (const i of order.slice(0, 3)) {
     const [key, , ex] = C[i];
-    const ctx = { genre: 'thought', memory: false, a: view(p), b: ex.b ? view(ex.b) : undefined, seed: id * 8 + win * 3 + (d.d || 0) * 977, date: { ...d, weekday: d.dow, day: d.d, month: d.m, year: d.y, hour: h }, goal: ex.goal, step: ex.step, kid: ex.kid, p: { street, ...(ex.p || {}) }, features: { 'a.age': age } };
+    const ctx = { genre: 'thought', memory: false, a: view(p), b: ex.b ? view(ex.b) : undefined, seed: id * 8 + win * 3 + (d.d || 0) * 977, date: { ...d, weekday: d.dow, day: d.d, month: d.m, year: d.y, hour: h }, goal: ex.goal, step: ex.step, kid: ex.kid, p: { street, ...(ex.p || {}) }, features: { 'a.age': age, ...(ex.kidAge != null ? { 'kid.stage': ex.kidAge < 2 ? 'baby' : ex.kidAge < 5 ? 'toddler' : ex.kidAge < 12 ? 'child' : 'teen' } : {}) } };
     try { const t = text.render(key, ctx, w); if (okText(t)) return t; } catch (e) { /* next */ }
   }
   return '';

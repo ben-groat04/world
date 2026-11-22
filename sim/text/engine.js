@@ -11,6 +11,23 @@ import { pronounsOf, voiceOf, moodBand, titleOf, nameOf, ageBand } from './peopl
 import { MODS, tidy, timePhrase, datePhrase, daypart, DAYS, cap } from './mods.js';
 
 const PH = '\u0001';
+/**
+ * Alt preparation. Content tags (all optional):
+ *   prefix  <<m=9,10 once=6>> text   m = months (0 = Jan) the line may be used in; once = the line is used at most once per N game-months across the WHOLE town
+ *   fields  { t, once: 6 | true, months: [..] }   (true = 6 months)
+ * Any leaf line with 9+ literal words (a "distinctive" line with a punchline) is automatically rate-limited too (soft: heavily down-weighted for ~6 weeks after it last
+ * appeared anywhere), so a witty line cannot read as a tic across different people. Tagged lines are hard-limited unless a rule has nothing else left.
+ */
+function prepAlt(a) {
+  if (a._p) return a; a._p = true;
+  const m = /^<<([^>]*)>>\s*/.exec(a.t || '');
+  if (m) { a.t = a.t.slice(m[0].length); for (const tok of m[1].trim().split(/\s+/)) { const [k, v] = tok.split('='); if (k === 'm') a.months = v.split(',').map(Number); else if (k === 'once') a.once = v === undefined || v === '' ? true : +v; } }
+  if (a.months && a.months.length) a.when = { ...(a.when || {}), month: a.months };
+  if (a.once === true) a.once = 6;
+  const lit = String(a.t || '').replace(/\{[^}]*\}|#[^#]*#|\[[^\]]*\]/g, ' ').split(/\s+/).filter(Boolean).length; a._lit = lit;
+  return a;
+}
+const DISTINCT_WORDS = 9, SOFT_DAYS = 45;
 function evalCond(val, c) {
   if (Array.isArray(c)) return c.some((x) => evalCond(val, x));
   if (typeof c === 'string') {
@@ -38,10 +55,10 @@ function conj(v, plural) {
 export class TextEngine {
   constructor(grammar = {}, opts = {}) {
     this.rules = new Map(); this.counter = 0; this.last = new Map(); this.recent = []; this.recentSet = new Map(); this.cache = new Map(); this.recentN = opts.recentN || 1500;
-    this.memoryWindow = opts.memoryWindow || 40; this.stats = { renders: 0, missing: new Map(), retries: 0 }; this.worldSeed = opts.seed || 0;
+    this.memoryWindow = opts.memoryWindow || 40; this.stats = { renders: 0, missing: new Map(), retries: 0 }; this.worldSeed = opts.seed || 0; this.rare = new Map();
     this.sentiment = grammar.sentiment || {}; this.add(grammar);
   }
-  add(g) { for (const [k, v] of Object.entries(g?.rules || (g?.sentiment ? {} : g) || {})) { const arr = Array.isArray(v) ? v : [v]; this.rules.set(k, (this.rules.get(k) || []).concat(arr.map((a) => (typeof a === 'string' ? { t: a } : a)))); } return this; }
+  add(g) { for (const [k, v] of Object.entries(g?.rules || (g?.sentiment ? {} : g) || {})) { const arr = Array.isArray(v) ? v : [v]; this.rules.set(k, (this.rules.get(k) || []).concat(arr.map((a) => prepAlt(typeof a === 'string' ? { t: a } : a)))); } return this; }
   has(k) { return this.rules.has(k); }
 
   // ---- context resolution
@@ -72,18 +89,27 @@ export class TextEngine {
       if (wx && cur && cur.d === (when.day ?? when.d) && cur.m === m) { let t = wx.type; if (t === 'snow' && !(m === 11 || m <= 1)) t = 'rain'; if (t === 'fog' && m >= 5 && m <= 7) t = 'cloudy'; if (t === 'rain' && m >= 6 && m <= 7 && wx.temp > 20) t = 'clear'; f.wx = t; f.warm = wx.temp >= 20 && m >= 4 && m <= 9 ? 'yes' : 'no'; } }
     if (ev && f['p.sentiment'] === undefined && !p.sentiment) f['p.sentiment'] = this.sentiment[ev.type] || 'neutral';
     for (const [k, v] of Object.entries(p)) if (f['p.' + k] === undefined && (typeof v !== 'object')) f['p.' + k] = v;
-    return { ev, ctx, roles, p, place, when, f, vars: {}, rng: new RNG(hash32(ctx.seed ?? 0, this.worldSeed, ev ? ev.id ?? 0 : 0, typeof evOrKey === 'string' ? evOrKey : ev.type, A?.id ?? 0, salt)), author: A, world };
+    if (when && when.month != null) f.sunset = SUNSET[when.month] ?? 18; // local clock hour of sunset in that month (Larkfield ~53N): gates "dark at 5pm" and friends
+    const tickNow = world?.tick, day = tickNow != null ? Math.floor(tickNow / 144) : Math.floor(this.counter / 40);
+    return { ev, ctx, roles, p, place, when, f, day, vars: {}, rng: new RNG(hash32(ctx.seed ?? 0, this.worldSeed, ev ? ev.id ?? 0 : 0, typeof evOrKey === 'string' ? evOrKey : ev.type, A?.id ?? 0, salt)), author: A, world };
   }
 
   // ---- expansion
   _pick(name, st, depth) {
     const alts = this.rules.get(name);
     if (!alts) { this.stats.missing.set(name, (this.stats.missing.get(name) || 0) + 1); return null; }
-    const ok = [], ws = []; const mem = st.ctx.memory !== false, idio = st.ctx.idiolect !== false && st.author?.id != null;
+    const ok = [], ws = [], held = []; const mem = st.ctx.memory !== false, idio = st.ctx.idiolect !== false && st.author?.id != null;
     for (let i = 0; i < alts.length; i++) {
       const a = alts[i];
       if (a.when) { let pass = true; for (const k in a.when) if (!evalCond(st.f[k], a.when[k])) { pass = false; break; } if (!pass) continue; }
       let w = a.w ?? 1;
+      if (mem && alts.length > 1 && (a.once || a._lit >= DISTINCT_WORDS)) { // town-wide freshness for distinctive lines
+        const t = this.rare.get(name + '#' + i);
+        if (t !== undefined) {
+          if (a.once) { if (st.day - t < a.once * 30) { held.push(i); continue; } }
+          else { const d = st.day - t; if (d < SOFT_DAYS) w *= 0.03 + 0.97 * (d / SOFT_DAYS) ** 1.5; }
+        }
+      }
       if (a.when) w *= 1 + 0.15 * Object.keys(a.when).length; // more specific -> slightly favoured
       if (alts.length > 1) {
         const id = name + '#' + i;
@@ -92,11 +118,12 @@ export class TextEngine {
       }
       ok.push(i); ws.push(w);
     }
+    if (!ok.length && held.length) for (const i of held) { ok.push(i); ws.push(alts[i].w ?? 1); } // nothing fresh left in this rule: reuse the least-bad rather than say nothing
     if (!ok.length) return null;
     let tot = 0; for (const w of ws) tot += w;
     let r = st.rng.next() * tot, j = 0; for (; j < ws.length - 1; j++) { r -= ws[j]; if (r < 0) break; }
     const idx = ok[j];
-    if (st.ctx.memory !== false && alts.length > 1) st.used.push(name + '#' + idx);
+    if (st.ctx.memory !== false && alts.length > 1) { st.used.push(name + '#' + idx); if (alts[idx].once || alts[idx]._lit >= DISTINCT_WORDS) (st.rareUsed ||= []).push(name + '#' + idx); }
     return this._expand(alts[idx].t, st, depth + 1);
   }
   _ref(key, arg, st) {
@@ -174,7 +201,7 @@ export class TextEngine {
     for (let attempt = 0; attempt < 6; attempt++) {
       const st = this._state(evOrKey, ctx, world, attempt); st.used = []; out = '';
       for (const key of keys) { out = tidy(this._pick(key, st, 0) ?? ''); if (out) break; }
-      if (ctx.memory === false || !out || !this.recentSet.has(out) || attempt === 5) { this.counter++; for (const id of st.used) this.last.set(id, this.counter); break; }
+      if (ctx.memory === false || !out || !this.recentSet.has(out) || attempt === 5) { this.counter++; for (const id of st.used) this.last.set(id, this.counter); if (st.rareUsed) for (const id of st.rareUsed) this.rare.set(id, st.day); break; }
       this.stats.retries++; this.counter++; for (const id of st.used) this.last.set(id, this.counter);
     }
     if (ctx.memory !== false) { this.recent.push(out); this.recentSet.set(out, (this.recentSet.get(out) || 0) + 1); if (this.recent.length > this.recentN) { const o = this.recent.shift(), n = this.recentSet.get(o) - 1; if (n > 0) this.recentSet.set(o, n); else this.recentSet.delete(o); } }
@@ -183,6 +210,7 @@ export class TextEngine {
   }
 }
 const roleKey = new Set(['a', 'b', 'c', 'x', 's', 'o']);
+const SUNSET = [16.6, 17.5, 18.3, 20.0, 21.0, 21.7, 21.5, 20.6, 19.3, 17.9, 16.2, 15.8]; // Jan..Dec, clock time with BST (month-mean; ~Manchester)
 
 /** Wire into a kernel world: world.text.setEngine(...). Grammar pack = {rules}. */
 export function installTextEngine(world, grammar, opts = {}) {

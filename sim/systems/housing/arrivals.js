@@ -2,9 +2,10 @@
 // creates real Person records (ext.pop, kin links, off-map ties). Used for households and single sharers who move into Larkfield from the Metropolis.
 import { sampleActivity } from '../../population/activity.js';
 import NAMES from '../../../content/larkfield/names.js';
-import { composeHousehold } from '../../population/households.js';
+import { composeHousehold, separateSiblings } from '../../population/households.js';
 import { personalityFor, drivesFor, skillsFor, interestsFor, healthFor, savingsFor } from '../../population/persona.js';
 import { clamp, wpick, wpickObj, clamp01 } from '../../population/util.js';
+import { schoolYearAge } from '../../util.js';
 
 const GROUPS = ['white_british', 'other_white', 'indian', 'pakistani', 'bangladeshi', 'chinese', 'other_asian', 'african', 'caribbean', 'mixed', 'other'];
 const ARRIVAL_TILT = { students: 3.5, young_sharers: 1.5, early_career: 1.4, recent_arrivals: 2.5, family_couples: 0.9, lone_parents: 0.7, benefit_dependent: 0.5, older_longterm: 0.1, settled_professionals: 0.9, shift_workers: 0.8, local_business_families: 0.1 };
@@ -66,13 +67,14 @@ function makePerson(w, rng, hh, m, seg, hhKids, opts = {}) {
   const religiosity = religion === 'No religion' ? rng.float(0, 0.12) : clamp01(Math.pow(rng.next(), 0.8));
   const hs = healthFor(rng, cal, age, seg.health, act === 'sick_disabled');
   const p = w.createPerson({ sex: m.sex, firstName: nm.first, lastName: nm.last, homeId: hh.bid, birthTick: w.tick - Math.round(age * cl.ticksPerYear) - rng.int(0, cl.ticksPerYear - 1), personality: pers, money: 0 });
+  const sy = schoolYearAge(w.calendar, w.tick, p.birthTick); // school year, not integer age: reception starts the September after the 4th birthday
   p.skills = skillsFor(rng, age, edu, null, pers); p.skills.languages = origin.bornUK ? 0 : rng.int(1, 3);
   p.interests = interestsFor(rng, age, m.sex, religiosity > 0.45, false);
   p.values = { tradition: clamp01(rng.gauss(0.45, 0.18)), wealth: clamp01(rng.gauss(0.5, 0.2)), family: clamp01(rng.gauss(0.6, 0.2)), freedom: clamp01(rng.gauss(0.55, 0.2)), community: clamp01(rng.gauss(0.5, 0.2)), piety: religiosity };
   p.job = age < 16 ? 'student' : act; p.health = hs.score; p.mood = clamp(0.25 + 0.5 * (0.5 - pers.neuroticism) + rng.gauss(0, 0.15), -0.6, 0.8); p.needsTick = Number.MAX_SAFE_INTEGER;
   const drives = age >= 17 && rng.chance(0.45) && seg.mobility.car > 0.2;
   p.ext.pop = { hh: hh.id, unit: hh.unit, seg: seg.id, role: m.role, eth: group, ethGroup: origin.group, sub: origin.sub, bornUK: origin.bornUK, birthplace: origin.birthplace, arrived: w.tick, religion, religiosity: +religiosity.toFixed(2),
-    activity: act, occ: null, soc: 0, contract: null, hours: 0, pay: 0, edu, workplace: { kind: 'none' }, pattern: null, school: age < 16 ? (age < 4 ? { kind: 'home' } : age < 11 ? { kind: 'primary' } : { kind: 'secondary', dest: 'secondary_school' }) : act === 'student' ? (age < 19 ? { kind: 'college', dest: 'secondary_school' } : { kind: 'university', dest: 'university' }) : null,
+    activity: act, occ: null, soc: 0, contract: null, hours: 0, pay: 0, edu, workplace: { kind: 'none' }, pattern: null, school: age < 16 ? (sy < 4 ? (age >= 3 && rng.chance(0.78) ? { kind: 'nursery' } : { kind: 'home' }) : sy < 11 ? { kind: 'primary' } : { kind: 'secondary', dest: 'secondary_school' }) : act === 'student' ? (age < 19 ? { kind: 'college', dest: 'secondary_school' } : { kind: 'university', dest: 'university' }) : null,
     health: { general: hs.general, conds: hs.conds, disabled: hs.disabled, limiting: hs.limiting }, fin: { gross: 0, net: 0, savings: 0, debt: 0, arrears: 0, studentLoan: 0 }, car: drives, bike: age >= 10 && rng.chance(Math.min(0.9, seg.mobility.bike * 3)), pets: { dogs: 0, cats: 0 },
     drives: drivesFor(rng, pack, pers, age, seg.id), interests: p.interests, yearsAtAddress: 0, grewUp: null, ties: [], life: null };
   if (drives) p.skills.driving = +rng.float(0.5, 0.95).toFixed(2);
@@ -118,6 +120,8 @@ export function createArrivalHousehold(w, rng, unit, forceSeg) {
   // Religion within a household is correlated, as in the founding population (Census 2021 RM083: most multi-person households share one religion): children
   // usually take a parent's, partners usually share. (makePerson draws each person from the ethnic-group conditional table independently.)
   for (const m of M) { const p = m.person; if ((m.role === 'child' || m.role === 'partner') && M[0].person !== p && rng.chance(m.role === 'child' ? 0.82 : 0.75)) { const h = (m.parents && M[m.parents[0]] ? M[m.parents[0]] : M[0]).person; if (h && h !== p) { p.ext.pop.religion = h.ext.pop.religion; p.ext.pop.religiosity = +(h.ext.pop.religion === 'No religion' ? rng.float(0, 0.12) : Math.min(1, h.ext.pop.religiosity * rng.float(0.6, 1.1))).toFixed(2); p.values.piety = p.ext.pop.religiosity; } } }
+  { const sib = people.filter((p) => p.family.motherId != null || p.family.fatherId != null).map((p) => ({ p, birthTick: p.birthTick, age: Math.floor(w.ageOf(p)) })); // same-mother siblings need a feasible birth gap (or shared twin birth)
+    separateSiblings(rng, sib, (x) => String(x.p.family.motherId ?? 'f' + x.p.family.fatherId), w.calendar.ticksPerYear); for (const x of sib) x.p.birthTick = x.birthTick; }
   lf.households.push(hh);
   for (const p of people) { w.addPerson(p); }
   addTies(w, rng, hh, people);

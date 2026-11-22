@@ -17,6 +17,7 @@ export function createPlayer() {
   let W = null; const S = { talked: {}, log: [], created: false, pending: [], dating: {}, asked: {} };
   const me = (a) => { const id = a && a.pid != null ? a.pid : W.player; return typeof id === 'number' ? W.people.get(id) : null; };
   const fail = (why) => ({ ok: false, why });
+  const asleep = (q) => { try { const n = W.sys.routine.query.now(q); return !!n && (n.act === 'sleep' || n.act === 'sleep_day' || n.act === 'nap'); } catch { return false; } };
   const call = (name, args) => (W.commands.has(name) ? W.cmd(name, args) : false);
   const note = (text) => { S.log.push({ tick: W.tick, text }); if (S.log.length > 60) S.log.shift(); };
   const tpd = () => W.calendar.ticksPerDay || 144;
@@ -135,6 +136,7 @@ export function createPlayer() {
     'player.talk': (w, a) => {
       const p = me(a), q = w.people.get(a.to); if (!p || !q || !q.alive) return fail('no one there');
       if (p.locationId == null || p.locationId !== q.locationId) return fail('they are not here');
+      if (asleep(q)) return fail('they are asleep'); // you cannot chat to someone who is asleep; the UI shows 'asleep' and hides Talk, this is the rule behind it
       const last = S.talked[q.id] ?? -99; if (w.tick - last < 3) return fail('give it a little while first'); S.talked[q.id] = w.tick;
       const act = TALK[a.act] || 'small'; const before = w.sys.social ? w.sys.social.query.tie(q.id, p.id) : null;
       const r = call('social.converse', { a: p.id, b: q.id, act }); const after = w.sys.social ? w.sys.social.query.tie(q.id, p.id) : null;

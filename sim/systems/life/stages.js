@@ -14,7 +14,7 @@ export function septemberTransitions(w, people) {
     const a = ageOf(w, p); if (a < 3.9) continue;
     const q = p.ext.pop, L = p.ext.life; if (!L || !q) continue; /* UI-agent guard: some arrivals have no life record yet (crashed the 1 Sep rollover in a 10y watch run) */ let changed = false;
     if (a >= 25) { // mature/postgraduate students: the course simply runs its length (or is abandoned)
-      if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { graduate(w, p, rng); rehome(w, p); }
+      if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { (w.tick - q.uniStart >= years(w, q.courseYears || 3) ? graduate : dropOut)(w, p, rng); rehome(w, p); }
       continue;
     }
     if (a < 11) { if (a >= 4 && (!q.school || q.school.kind !== 'primary')) { q.school = { kind: 'primary' }; q.activity = 'child'; changed = true; } }
@@ -37,11 +37,18 @@ export function septemberTransitions(w, people) {
       } else { q.school = null; q.edu = 'level3'; q.activity = 'unemployed'; q.occ = q.occ || null; assignWork(w, p, rng); changed = true; emit(w, 'work', p); }
     }
     if (a >= 18 && q.role === 'child') q.role = 'adult_child';
-    if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { graduate(w, p, rng); changed = true; } // 4%/yr drop out
+    if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { (w.tick - q.uniStart >= years(w, q.courseYears || 3) ? graduate : dropOut)(w, p, rng); changed = true; } // 4%/yr drop out (HESA non-continuation ~6%): leaving without a degree is not graduating
     if (changed) rehome(w, p);
   }
 }
 function emit(w, stage, p) { w.emit('life.school', { actors: [p.id], salience: stage === 'university' ? 0.25 : 0.12, tags: ['school'], payload: { stage } }); }
+/** Leaves the course early: no degree, no graduation event (previously the 4% dropout path called graduate(), giving 18-year-olds a degree). */
+export function dropOut(w, p, rng) {
+  const q = p.ext.pop; q.school = null; q.uniStart = null; q.activity = 'unemployed'; q.edu = 'level3';
+  assignWork(w, p, rng);
+  w.addMemory(p, { type: 'education', text: 'Left university without finishing the course.', otherIds: [], weight: -0.2, importance: 3 });
+  rehome(w, p);
+}
 export function graduate(w, p, rng) {
   const q = p.ext.pop; q.school = null; q.edu = 'level4plus'; q.uniStart = null; q.activity = 'unemployed';
   q.gradStay = rng.chance(0.465); // HESA graduate mobility (2023): ~46.5% of graduates stay in the region they studied in; the rest leave when the tenancy ends

@@ -2,6 +2,7 @@
 // Pure over (sifter, accessors); worker-safe. Selection rules (all structural, nothing tuned to a name or an outcome):
 //   - one storyline per protagonist (the strongest), at most MAXKIND per kind, nothing quiet, nothing that lapsed long ago;
 //   - rank = salience carried by the beats x recency x variety of what happened (distinct event types) x kind weight (what a viewer cares about).
+import { projectPhrase } from './projectwords.js';
 import { beatSentence } from './beatwords.js';
 const MAXKIND = 3;
 const KIND_W = { romance: 1.35, new_family: 1.3, bereavement: 1.2, illness: 1.15, job_loss: 1.1, breakup: 1.1, money_squeeze: 1.05, falling_out: 1.0, welcome: 1.0, ambition: 0.95, newcomer: 0.85, career: 0.8, scandal: 0.9, group_saga: 0.9 };
@@ -99,7 +100,7 @@ const PH = {
   'goal.failed': (p, c) => (SENSITIVE_GOAL.test(p.tpl || '') ? null : 'gave up trying to ' + gphrase(c.w, p.tpl)),
   'goal.abandoned': (p, c) => (SENSITIVE_GOAL.test(p.tpl || '') ? null : 'dropped the plan to ' + gphrase(c.w, p.tpl)),
   'goal.transformed': () => 'changed tack', 'goal.invented': (p) => 'came up with a plan for ' + (p.label || 'something new'),
-  'project.started': (p) => 'got a ' + (p.kind || 'project') + ' going', 'project.done': (p) => (p.ok === false ? 'saw a ' + (p.kind || 'project') + ' fall flat' : 'pulled off a ' + (p.kind || 'project')),
+  'project.started': (p) => projectPhrase(p.kind, 'start', p.project), 'project.done': (p) => projectPhrase(p.kind, p.ok === false ? 'flop' : 'done', p.project),
 };
 // events that say the same thing share a key so a card does not repeat itself ("fell out", "fell out over money", "fell out")
 const KEY = (t) => ({ 'life.move_out': 'move', 'housing.moved_out': 'move', 'life.move_in': 'movein', 'housing.moved_in': 'movein', 'goal.failed': 'goalend', 'goal.abandoned': 'goalend', 'life.death': 'death', 'life.kin_death': 'death', 'labour.job_lost': 'jobend', 'labour.quit': 'jobend', 'social.acquaint': 'meet', 'social.friendship': 'friend', 'life.breakup': 'split', 'life.divorce': 'split', 'money.cost_pressure': 'squeeze', 'housing.rent_rise': 'rent' }[t] || t);

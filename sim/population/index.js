@@ -10,7 +10,8 @@
 import { sampleActivity } from './activity.js';
 import NAMES from '../../content/larkfield/names.js';
 import { clamp, clamp01, wpick, wpickObj, logn, netFromGross, ageBand, pcm } from './util.js';
-import { planHouseholds, composeHousehold } from './households.js';
+import { schoolYearAge } from '../util.js';
+import { planHouseholds, composeHousehold, separateSiblings } from './households.js';
 import { personalityFor, drivesFor, skillsFor, interestsFor, healthFor, savingsFor } from './persona.js';
 import { buildNetwork } from './network.js';
 import { writeBiographies } from './bio.js';
@@ -106,10 +107,7 @@ export function populate(world, rng) {
     // siblings: birthdays were drawn independently inside each age year, which can put two children of the same mother only weeks apart. Biologically a mother cannot
     // bear two singletons closer than ~9 months (a pregnancy is ~40 weeks), so a closer pair of the same age is either twins (one shared birth tick, ~1.6% of births x same-age
     // pairs) or the older child's birthday is moved earlier to a feasible gap. Youngest first so the shift ripples toward the eldest.
-    { const MIN_GAP = Math.round(39 * 7 * cl.ticksPerYear / 365), groups = new Map();
-      for (const m of hm) if (m.parents && m.parents.length && (m.role === 'child' || m.role === 'adult_child')) { const k = m.parents.join(','); (groups.get(k) || groups.set(k, []).get(k)).push(m); }
-      for (const g of groups.values()) { g.sort((a, b) => b.birthTick - a.birthTick); // youngest (latest birth) first
-        for (let i = 0; i + 1 < g.length; i++) { const y = g[i], o = g[i + 1]; if (y.birthTick - o.birthTick < MIN_GAP) { if (y.age === o.age && rng.chance(0.2)) o.birthTick = y.birthTick; else o.birthTick = y.birthTick - MIN_GAP - rng.int(0, 90 * 144); } } } }
+    separateSiblings(rng, hm.filter((m) => m.parents && m.parents.length && (m.role === 'child' || m.role === 'adult_child')), (m) => m.parents.join(','), cl.ticksPerYear);
     // names: children share the head's surname; couples share with prob; religion; everything else per person
     for (let i = 0; i < hm.length; i++) {
       const m = hm[i];
@@ -255,7 +253,7 @@ export function populate(world, rng) {
       m.health = healthFor(rng, cal, m.age, seg.health, m.activity === 'sick_disabled');
       if (m.activity === 'sick_disabled' && m.health.general === 'very good') { m.health.general = 'fair'; m.health.disabled = true; m.health.limiting = 1; m.health.score = 0.62; }
       m.school = null;
-      if (m.age < 16) m.school = m.age < 4 ? (rng.chance(clamp(0.35 + (h.seg === 'family_couples' ? 0.1 : 0) - (h.seg === 'lone_parents' ? 0.0 : 0), 0, 0.8)) && m.age >= 1 ? { kind: 'nursery' } : { kind: 'home' }) : m.age < 11 ? { kind: 'primary' } : { kind: 'secondary', dest: 'secondary_school' };
+      if (m.age < 16) m.school = schoolYearAge(cl, T0, m.birthTick) < 4 ? (rng.chance(clamp(0.35 + (h.seg === 'family_couples' ? 0.1 : 0) - (h.seg === 'lone_parents' ? 0.0 : 0), 0, 0.8)) && m.age >= 1 ? { kind: 'nursery' } : { kind: 'home' }) : schoolYearAge(cl, T0, m.birthTick) < 11 ? { kind: 'primary' } : { kind: 'secondary', dest: 'secondary_school' };
       else if (m.activity === 'student') m.school = m.age < 19 ? { kind: 'college', dest: 'secondary_school' } : { kind: 'university', dest: 'university' };
     }
     // household finances

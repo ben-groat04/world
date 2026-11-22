@@ -123,7 +123,7 @@ export function mountPlay(store, hooks) {
   const loading = (v, t) => shell(v, t, '<p class="pdim">Loading…</p>');
 
   // ---------------------------------------------------------------- views
-  function personRow(x) { return `<button class="pperson" data-talk="${x.id}"><span><b>${esc(x.name)}</b><small>${esc(x.line || '')}</small></span><i>Talk ›</i></button>`; }
+  function personRow(x) { return x.asleep ? `<div class="pperson asleep"><span><b>${esc(x.name)}</b><small>${esc(x.line || '')}</small></span><i>Asleep</i></div>` : `<button class="pperson" data-talk="${x.id}"><span><b>${esc(x.name)}</b><small>${esc(x.line || '')}</small></span><i>Talk ›</i></button>`; }
   function menuView(s) {
     const here = s.here || [], inbox = s.reqs || [], acts = s.acts || [], things = s.things || [], doneN = things.filter((t) => t.done).length;
     const ibx = inbox.length ? `<h5>Waiting for you <small>${inbox.length}</small></h5>${inbox.slice(0, 6).map((r) => `<div class="preq"><div class="pq"><b>${esc(r.from.name)}</b> ${esc(r.text)}${r.why ? `<small>Trying to ${esc(r.why)}</small>` : ''}</div><div class="pa"><button data-ans="yes" data-rid="${r.id}">Yes</button><button data-ans="maybe" data-rid="${r.id}">Maybe</button><button data-ans="no" data-rid="${r.id}">Not now</button></div></div>`).join('')}${inbox.length > 6 ? `<p class="pdim">${inbox.length - 6} more; they lapse if ignored.</p>` : ''}` : '';
@@ -148,6 +148,7 @@ export function mountPlay(store, hooks) {
   function talkView(s) {
     const id = P.arg; const x = (s.here || []).find((q) => q.id === id) || (P.sec.people && P.sec.people.here.find((q) => q.id === id));
     if (!x) return head('Talk', 'menu') + `<div class="pbody">${fbHtml()}<p class="pdim">They have gone. Open Here &amp; now to see who is around.</p></div>`;
+    if (x.asleep) return head(esc(x.name), 'menu') + `<div class="pbody">${fbHtml()}<p class="pdim">${esc(x.line || '')}</p><p class="phelp">${esc(x.first || x.name)} is asleep. Let them sleep: come back when they are up, or message them from Phone.</p><div class="pgrid2">${btn('Message them', `data-msg="${id}"`)}${btn('View profile', `data-pid="${id}" data-close`)}</div></div>`;
     const datable = ((P.sec.phone && P.sec.phone.datable) || []).some((d) => d.id === id);
     return head(esc(x.name), 'menu') + `<div class="pbody">${fbHtml()}<p class="pdim">${esc(x.line || '')}</p>
       <p class="phelp">${x.known ? 'You have met. Closer topics work better the better you know each other.' : 'You have not really met. Start with small talk: it is the safe way to break the ice.'}</p>

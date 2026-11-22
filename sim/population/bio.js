@@ -17,6 +17,9 @@ const REASON_OK = {
   housing_offer: (c) => c.ageAt >= 18, overcrowding: (c) => c.ageAt >= 16, status_change: (c) => c.ageAt >= 18, chain_migration_cluster: (c) => c.ageAt >= 18, lease_end: (c) => c.ageAt >= 25,
 };
 
+const THE_PLACES = /^(Philippines|Netherlands|Gambia|Bahamas|Czech Republic|United States|Maldives|Seychelles|Congo|Ivory Coast|United Arab Emirates|UAE)$/;
+const inPlace = (c) => (THE_PLACES.test(c) ? 'the ' + c : c);
+
 export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
   const cl = world.calendar, T0 = world.tick, Y = cl.ticksPerYear, pack = world.pack;
   const byId = new Map(people.map((p) => [p.id, p]));
@@ -55,12 +58,12 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
         if (examYear >= 1988) mem(p, age - 16, 'Finished GCSEs.', 0.3, 2);
         else if (level === 'level1') mem(p, age - 16, examYear >= 1965 ? 'Left school with a few CSEs.' : 'Left school at 15.', 0.2, 2);
         else mem(p, age - 16, 'Took O-levels.', 0.3, 2);
-      } else mem(p, age - 16, `Finished secondary school in ${q.birthplace}.`, 0.2, 2);
+      } else mem(p, age - 16, `Finished secondary school in ${inPlace(q.birthplace)}.`, 0.2, 2);
     }
     const deg = level === 'level4plus';
-    if (age >= 19 && (deg || level === 'level3')) { mem(p, age - 18, deg ? 'Went to university.' : 'Went to college.', 0.5, 3); eduEnd = deg ? 18 : 18; }
+    if (age >= 19 && (deg || level === 'level3')) { mem(p, age - 18, `${deg ? 'Went to university' : 'Went to college'}${uk(18) ? '' : ' in ' + inPlace(q.birthplace)}.`, 0.5, 3); eduEnd = 18; }
     if (age >= 22 && deg) { mem(p, age - 21.3, 'Graduated.', 0.8, 3); eduEnd = 21.5; }
-    if (age >= 20 && level === 'apprenticeship') { mem(p, age - 19, 'Started an apprenticeship.', 0.4, 2); eduEnd = 19; }
+    if (age >= 20 && level === 'apprenticeship') { mem(p, age - 19, uk(19) ? 'Started an apprenticeship.' : `Started an apprenticeship in ${inPlace(q.birthplace)}.`, 0.4, 2); eduEnd = 19; }
     if (q.activity === 'student' && age >= 18) eduEnd = age; // still studying: no finished job history to tell
     info.set(p.id, { age, birthYear, q, h, s, occ, ukYears, ageAtArrival, uk, eduEnd, owner: /own|mortgage/.test((h.unit && h.unit.tenure) || '') });
   }
@@ -107,7 +110,7 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
     else if (age > 30 && !p.family.spouseId && q.role === 'head' && rng.chance(0.3)) mem(p, Math.min(rng.float(1, 9), age - 19, ukYears - 0.05), 'A long relationship ended.', -0.5, 3);
     // the move into the current address: nobody "moves" to the home they were born and raised in, and a child never moves "for work"
     const sinceYa = Math.min(h.yearsAt, q.yearsAtAddress + 0.01);
-    if (sinceYa < age - 0.1 && sinceYa > 0.02 && (q.role !== 'child' || age > 1.5)) {
+    if (sinceYa < age - 0.1 && sinceYa > 0.02 && age - sinceYa >= 2) { // (a baby's house moves are not narrated)
       const ageAt = age - sinceYa; let mr = null;
       if (ageAt >= 18 && q.role !== 'child') {
         const ctx = { ageAt, owner, hasPartner: !!p.family.spouseId && (I.tog || 0) >= sinceYa - 0.5, kidsThen: kidAges.some((k) => k > sinceYa), schoolKidThen: kidAges.some((k) => k - sinceYa >= 3 && k - sinceYa <= 16), degree: q.edu === 'level4plus' };

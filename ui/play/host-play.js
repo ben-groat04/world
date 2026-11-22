@@ -107,6 +107,7 @@ export class PlayHost {
       case 'player.talk': {
         if (!r.ok) {
           if (/not here/.test(r.why || '')) return out(`${who} is not here any more`, 'People move on. Check who is here now, or message them from Phone.', { next: [{ label: 'See who is here', open: 'menu' }] });
+          if (/asleep/.test(r.why || '')) return out(`${who} is asleep`, 'Let them sleep. Come back when they are up, or message them later from Phone.', { next: [{ label: 'See who is here', open: 'menu' }] });
           if (/little while/.test(r.why || '')) return out(`You have only just spoken to ${who}`, 'Give it half an hour or so. Talk to someone else, or go somewhere new, then come back.', { next: [{ label: 'See who is here', open: 'menu' }] });
           return out('Nobody to talk to', 'Nobody by that name is here.', { next: [{ label: 'See who is here', open: 'menu' }] });
         }
@@ -275,7 +276,8 @@ export class PlayHost {
     const p = this.w.people.get(id); if (!p) return { id, name: 'someone' }; const t = this.S(() => this.w.sys.social.query.tie(id, this.pid)), known = !!(t && t.lv >= 2), age = Math.floor(this.w.ageOf(p));
     const job = this.jobWords(p), rel = known && !/^(acq|acquaintance|friend|match)$/.test(t.r || t.k) ? lc(t.r || t.k) : (known && (t.r || t.k) === 'match' ? 'app match' : '');
     const line = [`${age}`, job, known ? `${rel ? rel + ', ' : ''}${WARM(t.l)}` : 'you have not met'].filter(Boolean).join(' · ');
-    return { id, name: nm(p), first: p.firstName, age, job, l: t ? r2(t.l) : null, known, rel, line };
+    const asleep = !!this.S(() => { const n = this.w.sys.routine.query.now(p); return n && (n.act === 'sleep' || n.act === 'sleep_day' || n.act === 'nap'); });
+    return { id, name: nm(p), first: p.firstName, age, job, l: t ? r2(t.l) : null, known, rel, asleep, line: asleep ? `${line} · asleep` : line };
   }
   // Who you are right now, as plain facts read from the sim (nothing invented): what you do all day, where you live, what you owe, who you share life with.
   // `tips` are shortcuts into the real menus for this kind of life; they never decide an outcome.
@@ -356,7 +358,7 @@ export class PlayHost {
       else if (wp && wp.kind !== 'onmap' && !off) acts.push({ k: 'work', dest: (this.S(() => w.sys.labour.query.job(p.id)) || {}).workplace?.dest, label: 'Head to work', sub: 'Off-map workplace. Your character also goes by themselves when a shift starts.' });
     }
     if (!home && !off) acts.push({ k: 'home', label: 'Go home', sub: 'Head back to your flat.' });
-    if (people.length > 2 && acts.length < 4) acts.push({ k: 'talk', id: people[2].id, label: `Talk to ${people[2].first}`, sub: people[2].line });
+    if (people.length > 2 && !people[2].asleep && acts.length < 4) acts.push({ k: 'talk', id: people[2].id, label: `Talk to ${people[2].first}`, sub: people[2].line });
     if (home && (hr >= 20 || hr < 6)) acts.push({ k: 'morning', label: 'Sleep till morning', sub: 'Time moves on to about 7am.' });
     else if (acts.length < 5 && !off) acts.push({ k: 'stay', label: 'Stay here a while', sub: 'Wait an hour and see who turns up.' });
     return acts.slice(0, 5);

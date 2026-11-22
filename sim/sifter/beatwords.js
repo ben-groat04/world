@@ -4,6 +4,7 @@
 //   - an optional lead says how long since the story's previous beat ("Three weeks on, ..."), an optional tail echoes the protagonists' mood for events with an obvious valence;
 //   - tokens {n} {they} {They} {their} {them} {was} {has} {is} {at} {o} are filled from the story. Anything sensitive is filtered upstream (storylines.js PH returns null for it).
 // Pure functions, worker-safe, no sim RNG.
+import { projectWords } from './projectwords.js';
 const hsh = (n) => { let x = (Math.imul(n | 0, 2654435761) >>> 0); x ^= x >>> 15; x = Math.imul(x, 2246822519) >>> 0; return (x ^ (x >>> 13)) >>> 0; };
 const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
 const nw = (n) => (n >= 0 && n < NUM.length ? NUM[n] : String(n));
@@ -100,8 +101,8 @@ const TV = {
   'civic.complaint': (p) => [`{n} complained to the council${COMPLAIN[p.kind] ? ' about ' + COMPLAIN[p.kind] : ''}`, `{n} wrote to the council${COMPLAIN[p.kind] ? ' about ' + COMPLAIN[p.kind] : ''}`, `{n} reported${COMPLAIN[p.kind] ? ' ' + COMPLAIN[p.kind] : ' a problem'} to the council and waited`],
   'goal.transformed': () => ['{n} changed tack', '{n} rethought the plan', '{n} tried a different route'],
   'goal.invented': (p) => [`{n} came up with a plan for ${p.label || 'something new'}`, `{n} got an idea about ${p.label || 'something new'}`],
-  'project.started': (p) => [`{n} got a ${p.kind || 'project'} going`, `{n} began a ${p.kind || 'project'}`],
-  'project.done': (p) => (p.ok === false ? [`{n} saw a ${p.kind || 'project'} fall flat`, `The ${p.kind || 'project'} came to nothing for {n}`] : [`{n} pulled off a ${p.kind || 'project'}`, `{n} finished a ${p.kind || 'project'}`]),
+  'project.started': (p) => projectWords(p.kind, 'start').map((x) => `{n} ${x}`),
+  'project.done': (p) => projectWords(p.kind, p.ok === false ? 'flop' : 'done').map((x) => `{n} ${x}`),
 };
 const OVER = { remote: 'something said online', money: 'money', goal: 'what each of them wanted', noise: 'noise', parking: 'parking', pub: 'a night at the pub', bins: 'the bins', door: 'something said on the doorstep', kids: 'the kids', dogs: 'a dog', school: 'the school', community_centre: 'something at the community centre', bookmaker: 'the bookies', park: 'the park' };
 const FV = { 'same street': 'as neighbours down the road', 'place of worship': 'at the place of worship', 'school gate': 'at the school gate', neighbours: 'as neighbours', 'same building': 'living in the same building', 'shop regular': 'as shop regulars', mixing: 'out and about', online: 'online' };

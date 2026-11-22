@@ -115,3 +115,17 @@ export function composeHousehold(rng, pack, spec) {
   M.arch = arch; M.seg = seg;
   return M;
 }
+
+/**
+ * Siblings' birthdays are drawn independently inside each age year, which can put two children of one mother only weeks apart. A mother cannot bear two singletons closer than
+ * ~9 months (pregnancy ~40 weeks), so a closer pair is either twins (one shared birth tick: only for same-age pairs, ~1.6% of births) or the older child's birthday moves earlier to a feasible gap.
+ * kids: items with {birthTick, age?}; keyOf(item) -> sibling-group key (same parents). Youngest first so any shift ripples toward the eldest. Mutates birthTick.
+ */
+export function separateSiblings(rng, kids, keyOf, ticksPerYear, twinChance = 0.2) {
+  const MIN_GAP = Math.round(39 * 7 * ticksPerYear / 365), groups = new Map();
+  for (const m of kids) { const k = keyOf(m); (groups.get(k) || groups.set(k, []).get(k)).push(m); }
+  for (const g of groups.values()) {
+    g.sort((a, b) => b.birthTick - a.birthTick);
+    for (let i = 0; i + 1 < g.length; i++) { const y = g[i], o = g[i + 1]; if (y.birthTick - o.birthTick < MIN_GAP) { if (y.age === o.age && rng.chance(twinChance)) o.birthTick = y.birthTick; else o.birthTick = y.birthTick - MIN_GAP - rng.int(0, 90 * 144); } }
+  }
+}

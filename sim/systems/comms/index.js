@@ -26,6 +26,10 @@ const FORUM_TONES = { freebie: [0.05, 0, 0.05, 0, 0.9], lost_prop: [0.1, 0, 0.05
 const PET = ['Biscuit', 'Mabel', 'Ziggy', 'Pickle', 'Mo', 'Tilly', 'Bruno', 'Luna', 'Gizmo', 'Nala', 'Archie', 'Dotty'];
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const THING = ['a repair cafe', 'a community garden', 'a street party', 'a book swap', 'a walking group', 'a litter pick', 'a food bank rota'];
+// Generic (non-event) local-group chatter. Ofcom Adults' Media Use and Attitudes 2026 (fieldwork Sep-Nov 2025): 49% of UK adults actively post/share/comment on social media at all (down from 61% in 2024);
+// only a minority of that is in LOCAL groups (street/area Facebook and WhatsApp groups, Nextdoor). ASSUMPTION (no UK weekly local-group figure found): ~1 in 5 of those active posters, i.e. ~10% of adults,
+// post in a local group in a given week, about 1.5 posts a week each => 0.10 x 1.5 / 7 = 0.021 posts per adult per day (about 9 a day for a ward of ~440 adults; it was ~40). Event-driven posts (births, weddings, jobs, notices) are separate and add on top.
+const LOCAL_POSTS_PER_ADULT_DAY = 0.10 * 1.5 / 7;
 const POISSON = (r, l) => { let n = Math.floor(l); if (r.next() < l - n) n++; return n; };
 
 export function createComms() {
@@ -123,12 +127,12 @@ export function createComms() {
     for (const p of w.living()) { const q = p.ext.pop, age = w.ageOf(p); if (age < 20) continue; const base = q.seg === 'older_longterm' ? 0.42 : q.seg === 'family_couples' || q.seg === 'lone_parents' ? 0.38 : q.seg === 'settled_professionals' ? 0.35 : q.seg === 'students' ? 0.03 : q.seg === 'young_sharers' ? 0.1 : q.seg === 'recent_arrivals' ? 0.25 : 0.22; const own = w.lf.households[q.hh]; const pr = base * (own && (own.tenure === 'owned_outright' || own.tenure === 'mortgage') ? 1.3 : 0.9); if (w.rngFor('comms.forum', p.id).next() < pr) { const ps = S.ppl.get(p.id); if (ps) { ps.fm = 1; S.forum.members.push(p.id); } } }
     cumulate(w, S);
   }
-  function cumulate(w, S) { let t = 0; S.postCum = []; S.postIds = []; for (const [id, ps] of S.ppl) { const p = w.people.get(id); if (!p || !p.alive) continue; t += ps.pr; S.postCum.push(t); S.postIds.push(id); } S.postTot = t; }
+  function cumulate(w, S) { let t = 0; S.postCum = []; S.postIds = []; S.postAdults = 0; for (const [id, ps] of S.ppl) { const p = w.people.get(id); if (!p || !p.alive) continue; if (w.ageOf(p) >= 16) S.postAdults++; t += ps.pr; S.postCum.push(t); S.postIds.push(id); } S.postTot = t; }
   // ----- hourly: personal posts (sampled by author weight, never per-person scans)
   function hourly(w) {
     const S = w.soc, r = w.rngFor('comms'), h = w.time.hour; if (h < 7 || h > 23) return;
-    if (!S.postCum) cumulate(w, S);
-    const lam = S.postTot / 17; let n = POISSON(r, lam);
+    if (!S.postCum || S.postAdults == null) cumulate(w, S);
+    const lam = (S.postAdults || 0) * LOCAL_POSTS_PER_ADULT_DAY / 17; let n = POISSON(r, lam); // volume is set by the adult count (ps.pr only decides WHO posts), not by the sum of per-person weights
     while (n-- > 0) { const x = r.next() * S.postTot; let lo = 0, hi = S.postCum.length - 1; while (lo < hi) { const m = (lo + hi) >> 1; if (S.postCum[m] < x) lo = m + 1; else hi = m; } const p = w.people.get(S.postIds[lo]); if (p && p.alive) personalPost(w, S, r, p, 'daily', 0); }
   }
   function personalPost(w, S, r, p, kind, cause, viral) {

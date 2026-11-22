@@ -6,6 +6,7 @@
 //   CMD    money.windfall{pid,amount,reason} money.transfer{from,to,amount,reason} money.lend{from,to,amount} money.borrow{pid,amount,kind} money.repay{pid,amount}
 //          money.energyShock{pct} money.setRate{rate}
 //   EVENTS money.windfall money.arrears money.arrears_cleared money.cost_pressure money.debt_spiral money.benefit_claim money.loan money.loan_default money.estate money.macro_shift
+import { annualPay } from '../../pay.js';
 import { liveHh } from '../../kernel/archive.js';
 import { MoneyLedger } from './ledger.js';
 import { taxNI, employerNI, minHourly, universalCredit, childBenefit, statePensionMonth, pensionCreditFloor, lhaFor } from './tax.js';
@@ -116,7 +117,7 @@ function grossMonth(w, p, rng, macro, firmHealth) {
   const working = q.activity === 'employed' || (q.activity === 'student' && q.occ);
   let g = 0;
   if (working && q.pay > 0 && q.hours > 0) {
-    g = q.pay * clamp(q.hours / 37.5, 0.12, 1.3) / 12;
+    g = annualPay(q) / 12; // hourly rate x paid hours (sim/pay.js)
     const c = q.contract;
     if (c === 'zero_hours') g *= rng.chance(0.2) ? rng.float(0.5, 0.8) : rng.float(0.9, 1.12);
     else if (c === 'self_employed' || c === 'gig') g *= Math.exp(rng.gauss(-0.04, 0.28)) * (firmHealth || 1);

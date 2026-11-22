@@ -263,7 +263,7 @@ export function endRel(w, aid, how, why) {
   const a = w.people.get(aid); if (!a || !a.alive) return; const La = a.ext.life, pt = La.part; if (!pt) return;
   const rng = w.rngFor('life.end'), b = pt.on ? w.people.get(pt.id) : null, kind = pt.st;
   const dur = yearsSince(w, pt.since), married = kind === 'married';
-  const ev = w.emit(married ? 'life.divorce' : 'life.breakup', { actors: b ? [a.id, b.id] : [a.id], salience: married ? 0.65 : 0.45, cause: pt.ev || 0, tags: ['romance', 'ending'], payload: { years: +dur.toFixed(1), kind } });
+  const ev = w.emit(married ? 'life.divorce' : 'life.breakup', { actors: b ? [a.id, b.id] : [a.id], salience: married ? 0.65 : kind === 'dating' && dur < 0.5 ? 0.2 : 0.45, cause: pt.ev || 0, tags: ['romance', 'ending'], payload: { years: +dur.toFixed(1), kind } });
   const ids = [a, b].filter(Boolean);
   for (const x of ids) {
     const lx = x.ext.life; lx.part = null; lx.ex++; lx.sepAt = w.tick; if (married) { lx.mar = 'divorced'; x.family.exSpouseIds.push(x === a ? (b ? b.id : -1) : a.id); }

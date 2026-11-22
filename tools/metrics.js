@@ -7,7 +7,7 @@ export function metrics(w, pop0, years) {
   const lonely = ad.filter((p) => p.ext.hl && p.ext.hl.lonely).length / n;
   const old = ad.filter((p) => w.ageOf(p) >= 65), young = ad.filter((p) => w.ageOf(p) < 25);
   const ls = (g) => (g.length ? g.filter((p) => p.ext.hl && p.ext.hl.lonely).length / g.length : 0);
-  const emp = ad.filter((p) => p.ext.pop && ['employed', 'unemployed'].includes(p.ext.pop.activity));
+  const emp = ad.filter((p) => p.ext.pop && w.ageOf(p) < 65 && ['employed', 'unemployed'].includes(p.ext.pop.activity)); // ILO: economically active, 16-64
   const rec = (w.lf.life && w.lf.life.rec) || {}, nb = (rec.births || []).length, nd = (rec.deaths || []).length;
   return {
     popRatio: L.length / pop0, employed: act('employed'), student: act('student'), home_family: act('home_family'), retired: act('retired'),

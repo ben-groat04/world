@@ -86,7 +86,7 @@ export function mountInspect(el, store, hooks) {
     const m = d.money, pr = m.pressure || {}, hs = d.health.status || {}, men = d.health.mental || {}, wb = d.health.wellbeing || {};
     const bur = m.burden || 0; const stress = pr.stress ?? 0;
     const job = d.jobInfo, wpl = d.workplace;
-    const workLine = job && job.occ && d.activity === 'employed' ? `${esc(d.occLabel || cap(lc(job.occ)))} · ${esc(lc(job.contract))} · ${job.hours} h/wk · ${gbp(job.pay)}/yr${wpl ? `<br><small>${wpl.offmap ? 'Works in the city (' + esc(wpl.name) + ')' : 'at ' + bl(wpl.id, wpl.name)}${wpl.mode ? ' · ' + esc(lc(wpl.mode)) + (wpl.mins ? ', ' + wpl.mins + ' min' : '') : ''}${wpl.hybrid ? ' · hybrid' : ''}</small>` : ''}${job.job2 ? '<br><small>+ second job</small>' : ''}` : `${esc(cap(lc(d.activity)))}${d.job && lc(d.job).toLowerCase() !== lc(d.activity).toLowerCase() ? ' · ' + esc(d.job) : ''}`;
+    const workLine = job && job.occ && d.activity === 'employed' ? `${esc(d.occLabel || cap(lc(job.occ)))} · ${esc(lc(job.contract))} · ${job.hours} h/wk · ${job.rate ? '£' + job.rate.toFixed(2) + '/h · ' : ''}${gbp(job.pay)}/yr${wpl ? `<br><small>${wpl.offmap ? 'Works in the city (' + esc(wpl.name) + ')' : 'at ' + bl(wpl.id, wpl.name)}${wpl.mode ? ' · ' + esc(lc(wpl.mode)) + (wpl.mins ? ', ' + wpl.mins + ' min' : '') : ''}${wpl.hybrid ? ' · hybrid' : ''}</small>` : ''}${job.job2 ? '<br><small>+ second job</small>' : ''}` : `${esc(cap(lc(d.activity)))}${d.job && lc(d.job).toLowerCase() !== lc(d.activity).toLowerCase() ? ' · ' + esc(d.job) : ''}`;
     const unit = d.unit;
     const moodW = d.health.mood > 0.35 ? 'upbeat' : d.health.mood > 0.05 ? 'okay' : d.health.mood > -0.3 ? 'flat' : 'low', strW = stress < 0.3 ? 'coping' : stress < 0.6 ? 'strained' : 'under pressure';
     const stCls = (bad) => (bad ? 'stt bad' : 'stt');
@@ -214,7 +214,7 @@ export function mountTown(el, store) {
     const lab = dt.labour || {}; const top = root.scrollTop;
     root.innerHTML = `<div class="stats">
       ${card('Residents', last.pop ?? '—', `${dt.households || '?'} households`, col('pop'), '#5bb4ff')}
-      ${card('Unemployment', (last.unemp ?? 0).toFixed(1) + '%', `${lab.employed || 0} employed · ${lab.unemployed || 0} looking`, col('unemp'), '#ff9b6b')}
+      ${card('Unemployment (ILO)', (last.unemp ?? 0).toFixed(1) + '%', `looking ÷ working-age active (16–64): ${lab.unemployed || 0} of ${(lab.employed || 0) + (lab.unemployed || 0)}`, col('unemp'), '#ff9b6b')}
       ${card('Rent burden', (last.burden ?? 0).toFixed(0) + '%', 'of income, renters (mean)', col('burden'), '#ffd36b')}
       ${card('Wellbeing', ((last.mood ?? 0) * 50 + 50).toFixed(0), 'mood index 0–100', col('mood').map((v) => v * 50 + 50), '#5fd09a')}
       ${card('Loneliness', (last.lone ?? 0).toFixed(1) + '%', 'of residents lonely', col('lone'), '#c58bff')}

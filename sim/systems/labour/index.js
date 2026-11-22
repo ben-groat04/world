@@ -6,15 +6,19 @@
 //   EVENTS labour.hired labour.job_lost labour.quit labour.promoted labour.pay_rise labour.retired labour.firm_closed labour.firm_opened labour.second_job labour.sector_shock labour.went_inactive labour.graduated labour.applied
 //   Consumes goals' goal.effect (get_job/change_job/pay_rise/promoted/left_job/back_at_work/self_employed/side_income...) when the goals plugin is loaded.
 import { clamp, registerEvents, livePeople } from '../money/util.js';
-import { drawOccupation, occMap, offmapWorkplace, hoursFor, contractFor, payFor, sectorOfOcc, sectorOfBuilding, LADDER, SECTORS, QRANK } from './jobs.js';
+import { annualPay, hourlyRate } from '../../pay.js';
+import { drawOccupation, REGULATED, TRAINING, credOf, credOcc, hasCred, grantCred, bankExperience, xpYears, gateWeight, occMap, offmapWorkplace, hoursFor, contractFor, payFor, sectorOfOcc, sectorOfBuilding, LADDER, SECTORS, QRANK } from './jobs.js';
 
 const EVENTS = [
   ['labour.hired', 'A resident started a job', { occ: 'string' }], ['labour.job_lost', 'A resident lost their job (redundancy, fixed-term end, firm closure, dismissal)', { kind: 'string' }],
   ['labour.quit', 'A resident resigned', { kind: 'string' }], ['labour.promoted', 'Promotion with a pay jump', { occ: 'string' }], ['labour.pay_rise', 'Notable pay rise', { pct: 'number' }],
   ['labour.retired', 'A resident retired', { age: 'number' }], ['labour.firm_closed', 'An on-map business closed', { reason: 'string' }], ['labour.firm_opened', 'An on-map business (re)opened', { name: 'string' }],
+  ['labour.training', 'Started a course or apprenticeship toward a regulated job', { cred: 'string', years: 'number' }], ['labour.qualified', 'Completed a qualification needed for a regulated job', { cred: 'string' }],
   ['labour.second_job', 'Took a second job / gig shifts', { hours: 'number' }], ['labour.sector_shock', 'Shock to a sector of the labour market', { sector: 'string' }],
   ['labour.went_inactive', 'Left the labour force (sickness, caring, discouraged)', { why: 'string' }], ['labour.graduated', 'Finished study and entered the job market', { age: 'number' }], ['labour.applied', 'A job application and its result', { ok: 'boolean' }],
 ];
+const MIN_TIME_TO_HIRE = 1; // months
+const GRAD_SHARE = [['nurse', 0.05], ['allied_health', 0.03], ['teacher', 0.04], ['solicitor', 0.025], ['doctor', 0.02], ['social_worker', 0.01], ['pharmacist', 0.006], ['dentist', 0.003]];
 const MONTH = 4380;
 const L = (w) => w.lf.labour;
 const ageF = (a) => (a < 25 ? 1.8 : a < 35 ? 1.3 : a < 50 ? 0.9 : a < 60 ? 0.6 : 0.4);
@@ -34,7 +38,7 @@ export function createLabour() {
   function hasVacancy(occ) { return W.lf.slots.some((s) => s.occ === occ && s.vac.length > 0 && !closed(s.bid)); }
   // --- separation: take p out of their job and into the given state
   function separate(p, kind, why, opts = {}) {
-    const q = p.ext.pop, w = W, wasOcc = q.occ;
+    const q = p.ext.pop, w = W, wasOcc = q.occ; if (wasOcc) bankExperience(w, q, wasOcc, q.soc);
     if (q.workplace && q.workplace.kind === 'onmap') {
       const s = findSlot(q, p);
       if (s) { s.filled.splice(s.filled.indexOf(p.id), 1); if (!opts.noVacancy) s.vac.push({ since: w.tick, occ: s.occ }); else s.n--; syncStaff(s); }
@@ -61,6 +65,7 @@ export function createLabour() {
   // --- start p in occupation o (offmap/home) or in an on-map slot
   function startJob(p, o, o2 = {}) {
     const q = p.ext.pop, hh = W.lf.households[q.hh], rng = W.rngFor('labour.hire'), prior = q.lastOcc, same = prior === o.id;
+    { const cr = credOf(o); if (cr) { grantCred(q, cr); if (q.train && q.train.cred === cr) q.train = null; } } // (whoever holds a regulated job holds its qualification: the gate is upstream in drawOccupation / applyForJob / promotion)
     q.occ = o.id; q.soc = o.soc; q.pattern = o.pattern; q.contract = o2.contract || contractFor(rng, o, hh); q.hours = o2.hours ?? hoursFor(rng, o, p, hh, W);
     q.pay = o2.pay ?? payFor(W, rng, p, o, macro(), q.lastPay, same);
     if (o2.slot) { const s = o2.slot; if (s.vac.length) s.vac.shift(); s.filled.push(p.id); syncStaff(s); q.workplace = { kind: 'onmap', bid: s.bid, vid: s.vid, mode: 'walk', mins: 3 }; p.workId = s.bid; const b = W.buildings.get(s.bid); if (b && !b.employees.includes(p.id)) b.employees.push(p.id); }
@@ -93,12 +98,15 @@ export function createLabour() {
     for (const p of w.living()) {
       if (!p.ext.pop) continue; const q = p.ext.pop, age = w.ageOf(p); if (age < 16) continue;
       q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72) + (q.contract === 'self_employed' ? 2 : 0);
-      if (q.activity === 'employed') { q.tenureStart = q.jobSince != null ? q.jobSince : w.tick - Math.round(Math.min(rng.float(0.3, 9) * 52560, (age - 17) * 52560 * 0.9)); /* jobSince: the biography's own start date, so the life story and job tenure agree */ if (q.contract === 'fixed_term') q.contractEnd = w.tick + rng.int(2, 14) * MONTH; q.lastOcc = q.occ; }
+      { const o0 = OCC[q.occ || q.lastOcc]; if (o0 && (q.activity === 'employed' || q.activity === 'unemployed')) { grantCred(q, credOf(o0)); } }
+      if (q.activity === 'employed') { q.tenureStart = q.jobSince != null ? q.jobSince : w.tick - Math.round(Math.min(rng.float(0.3, 9) * 52560, (age - 17) * 52560 * 0.9)); /* jobSince: the biography's own start date, so the life story and job tenure agree */ if (q.contract === 'fixed_term') q.contractEnd = w.tick + rng.int(2, 14) * MONTH; q.lastOcc = q.occ;
+        { const prior = Math.max(0, (age - 21) * 0.7 - (w.tick - q.tenureStart) / 52560); q.xpTotal = prior; q.xpSoc = { [q.soc]: prior * 0.6 }; q.xp = {}; } /* day-1 work history before the current job: ~70% of years since 21 in work, ~60% of that in the same SOC group (input, like the rest of the day-1 composition) */ }
       else if (q.activity === 'unemployed') { q.search = { since: w.tick - rng.int(1, 12) * MONTH, kind: 'unemp', tries: 0 }; q.lastOcc = drawOccupation(w, rng, p, { onlyOffmap: true }).id; }
       else if (q.activity === 'other_inactive' || q.activity === 'home_family') q.lastOcc = drawOccupation(w, rng, p, { onlyOffmap: true }).id;
     }
     void OCC;
   }
+
 
   // ---------------------------------------------------------------- monthly
   // Spread over the month: each person's monthly review falls on their own day (id mod 30) instead of every hire/lay-off landing on the 1st
@@ -132,6 +140,7 @@ export function createLabour() {
       }
       if (age < 16) continue;
       if (!q.retireAge) q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72);
+      if (q.train || (age >= 19 && age < 56)) trainingStep(p, q, age, rng);
       switch (q.activity) {
         case 'employed': { emp++; employedStep(p, q, age, hh, rng, mc, rec, OCC, mo); break; }
         case 'student': studentStep(p, q, age, rng); break;
@@ -154,6 +163,31 @@ export function createLabour() {
     S.emp = slice === 0 ? emp : (S.emp || 0) + emp;
   }
 
+  // Retraining for a regulated job: enrolment is a small monthly hazard for people the path really suits (feeder job, or the entry education and no job), a course takes its real duration
+  // (TRAINING in jobs.js), and the qualification is granted only when it ends. A newly qualified person in another job moves into the regulated one over the following months.
+  function trainingStep(p, q, age, rng) {
+    const tick = W.tick;
+    if (q.train) {
+      if (tick >= q.train.until) {
+        const cred = q.train.cred; grantCred(q, cred); q.train = null; q.pendingSwitch = credOcc(cred);
+        W.emit('labour.qualified', { actors: [p.id], salience: 0.4, tags: ['labour', 'life'], payload: { cred } });
+        W.addMemory(p, { type: 'work', text: `Qualified (${TRAINING[cred].label}).`, otherIds: [], weight: 0.7, importance: 3 });
+      }
+      return;
+    }
+    if (age < 19 || age > 55 || !(q.activity === 'employed' || q.activity === 'unemployed' || q.activity === 'home_family')) return;
+    const feeder = q.activity === 'employed' ? q.occ : q.lastOcc, qr = QRANK[q.edu] ?? 2;
+    for (const cred of Object.keys(TRAINING)) {
+      const t = TRAINING[cred], fed = t.feeders.includes(feeder); if (hasCred(q, cred) || qr < (fed ? (t.feederMinQ ?? t.minQ) : t.minQ) || (t.maxAge && age > t.maxAge)) continue;
+      const h = fed ? 0.0035 : q.activity === 'unemployed' && qr >= t.minQ + 1 ? 0.0004 : qr >= 4 ? 0.00012 : 0; // feeder-job staff ~4%/yr (employer-funded degree apprenticeships, Nursing Associate -> RN), the rest rare career changers
+      if (h && rng.chance(h * (age < 30 ? 1.5 : age > 45 ? 0.5 : 1))) {
+        q.train = { cred, since: tick, until: tick + Math.round(t.years * 12 * MONTH * rng.float(0.95, 1.15)) };
+        W.emit('labour.training', { actors: [p.id], salience: 0.3, tags: ['labour', 'life'], payload: { cred, years: t.years } });
+        W.addMemory(p, { type: 'work', text: `Started ${t.label}.`, otherIds: [], weight: 0.4, importance: 2 });
+        return;
+      }
+    }
+  }
   function employedStep(p, q, age, hh, rng, mc, rec, OCC, mo) {
     const w = W, S = L(w), tick = w.tick, sec = sectorOfPerson(p);
     const sh = S.shocks[sec] && S.shocks[sec].until > tick ? S.shocks[sec].mult : 1;
@@ -172,6 +206,8 @@ export function createLabour() {
     if (c === 'self_employed' && rng.chance(0.002 * rec)) { loseJob(p, 'business_failed', 0); return; }
     if (rng.chance(0.0012 * (age < 25 ? 1.6 : 1))) { loseJob(p, 'dismissal', 0); return; }
     if (rng.chance(0.0022 * ageF(age))) { loseJob(p, 'quit', 0); L(w).stats.quits++; return; }
+    // newly qualified: move into the regulated job they trained for
+    if (q.pendingSwitch) { const o = OCC[q.pendingSwitch]; if (!o || q.occ === o.id) q.pendingSwitch = null; else if (rng.chance(0.3)) { const slot = o.where === 'onmap' ? openSlotFor(p, o.id) : null; if (o.where !== 'onmap' || slot) { q.pendingSwitch = null; separate(p, 'swap', ''); hire(p, o, 'application', 0, slot ? { slot } : {}); return; } } }
     // job-to-job move
     if (rng.chance(0.0075 * ageF(age) * (1 - 0.6 * mc.recession))) { jobToJob(p, q, rng, OCC); return; }
     // pay review + promotion at anniversary month
@@ -196,7 +232,7 @@ export function createLabour() {
     const lad = LADDER[q.occ];
     if (lad && ten >= 1.5 && rng.chance(0.06 * (0.5 + perf) * (age < 35 ? 1.6 : age > 55 ? 0.3 : 1)) ) {
       const nxt = OCC[lad[rng.int(0, lad.length - 1)]];
-      if (nxt && (nxt.where !== 'onmap' || (q.workplace.kind === 'onmap' && W.lf.slots.some((s) => s.bid === q.workplace.bid && s.occ === nxt.id && s.vac.length)))) {
+      if (nxt && (!credOf(nxt) || hasCred(q, credOf(nxt))) && (nxt.where !== 'onmap' || (q.workplace.kind === 'onmap' && W.lf.slots.some((s) => s.bid === q.workplace.bid && s.occ === nxt.id && s.vac.length)))) {
         const prevPay = q.pay, slot = nxt.where === 'onmap' ? W.lf.slots.find((s) => s.bid === q.workplace.bid && s.occ === nxt.id && s.vac.length) : null;
         const oldOcc = q.occ; separate(p, 'promo', '', { noVacancy: false }); q.lastOcc = oldOcc;
         startJob(p, nxt, { slot, pay: Math.round(Math.max(prevPay * rng.float(1.08, 1.18), nxt.pay.p10)), contract: 'permanent', hours: Math.max(q.lastPay ? 30 : 30, 37) });
@@ -228,6 +264,7 @@ export function createLabour() {
   }
   function graduate(p, q, age, edu) {
     q.gradStay = W.rngFor('labour.grad', p.id).chance(0.465); // HESA graduate mobility: ~46.5% of graduates stay in the region they studied in and work there
+    { const r = W.rngFor('labour.gradcred', p.id).next(); if (edu === 'level4plus') { let t = 0; for (const [c, sh] of GRAD_SHARE) { t += sh; if (r < t) { grantCred(q, c); break; } } } } // HESA first-degree subject shares: ~5% nursing, ~3% allied health, ~4% education (QTS), ~2.5% law (solicitor route), ~2% medicine, ~1% social work
     separate(p, 'grad', '', {}); q.activity = 'unemployed'; q.edu = edu; q.school = null; q.search = { since: W.tick, kind: 'entry', tries: 0 }; q.lastOcc = null; p.job = 'unemployed';
     W.emit('labour.graduated', { actors: [p.id], salience: 0.3, tags: ['labour', 'life'], payload: { age: Math.round(age) } }); replan(p);
   }
@@ -239,6 +276,7 @@ export function createLabour() {
     const hf = (q.health && q.health.limiting ? 0.7 : 1);
     let f = 0.165 * (1 - 0.55 * mc.recession) * Math.exp(-dur / 14) * (0.85 + 0.3 * C) * (1 + ref) * hf * (age > 55 ? 0.65 : age < 25 ? 1.1 : 1) * (q.search.kind === 'entry' ? 1.25 : 1);
     f = clamp(f, 0, 0.7); q.search.tries++;
+    if (dur < MIN_TIME_TO_HIRE) return; // application, interview, references/vetting and the new employer's start date: 4-8 weeks from deciding to look to a first day (CIPD/REC hiring surveys), never 10 days
     if (!rng.chance(f)) return;
     const o = drawOccupation(W, rng, p, { prior: q.lastOcc, onlyOffmap: true });
     if (!o) return;
@@ -255,6 +293,8 @@ export function createLabour() {
       for (const p of w.living()) {
         const q = p.ext.pop; if (!q || q.activity !== 'unemployed' || w.ageOf(p) < (o.age ? o.age[0] - 2 : 16)) continue;
         if (QRANK[q.edu] < (QRANK[o.qual] ?? 0) - 0.5) continue;
+        if (q.search && (w.tick - q.search.since) < MIN_TIME_TO_HIRE * MONTH) continue;
+        if (gateWeight(w, q, o, w.ageOf(p), {}) < 0.5) continue; // regulated job without the qualification / skilled trade without experience
         let sc = (q.lastOcc === s.occ ? 2 : OCC[q.lastOcc] && OCC[q.lastOcc].soc === o.soc ? 1 : 0.35) * (1 + referralStrength(p)) * (0.6 + 0.8 * rng.next());
         if (o.age && (w.ageOf(p) > o.age[1] + 4)) sc *= 0.2;
         if (sc > bs) { bs = sc; best = p; }
@@ -294,9 +334,12 @@ export function createLabour() {
     return n;
   }
 
+  // ILO unemployment (ONS Labour Force Survey definition): unemployed / economically active (employed + unemployed), ages 16-64
+  // (ONS headline rates are 16+; the 16-64 form is the one the working-age tables quote). Students, carers, the sick/disabled and the
+  // retired are inactive, not unemployed. `rate` is this ILO rate; `shareOf16plus` is kept only for the old "of all adults" reading.
   const unemployment = () => {
-    let e = 0, u = 0, ad = 0; for (const p of W.living()) { if (!p.ext.pop) continue; const a = W.ageOf(p); if (a < 16) continue; ad++; const x = p.ext.pop.activity; if (x === 'employed') e++; else if (x === 'unemployed') u++; }
-    return { employed: e, unemployed: u, rate: e + u ? u / (e + u) : 0, shareOf16plus: ad ? u / ad : 0, adults16: ad };
+    let e = 0, u = 0, ad = 0, u16 = 0; for (const p of W.living()) { if (!p.ext.pop) continue; const a = W.ageOf(p); if (a < 16) continue; ad++; const x = p.ext.pop.activity; if (x === 'unemployed') u16++; if (a >= 65) continue; if (x === 'employed') e++; else if (x === 'unemployed') u++; }
+    return { employed: e, unemployed: u, rate: e + u ? u / (e + u) : 0, shareOf16plus: ad ? u16 / ad : 0, adults16: ad, definition: 'ILO: unemployed / (employed + unemployed), ages 16-64' };
   };
 
   const plugin = {
@@ -309,7 +352,7 @@ export function createLabour() {
     query: {
       unemployment, firmClosed: (bid) => closed(bid), firm: (bid) => { const f = firmOf(bid); return f ? { ...f, slots: slotsOf(bid).map((s) => ({ occ: s.occ, n: s.n, filled: s.filled.length, vacancies: s.vac.length, ext: s.ext })) } : null; },
       openings: (f = {}) => { const out = []; for (const s of W.lf.slots) { if (!s.vac.length || closed(s.bid)) continue; if ((f.occ && s.occ !== f.occ) || (f.bid != null && s.bid !== f.bid)) continue; out.push({ kind: 'slot', bid: s.bid, occ: s.occ, count: s.vac.length, since: s.vac[0].since }); } if (!f.onmap) for (const o of W.pack.jobs) if (o.where !== 'onmap' && (!f.occ || f.occ === o.id)) out.push({ kind: 'offmap', occ: o.id, dest: o.dest || 'home', count: 1 }); return out; },
-      job: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.pop) return null; const q = p.ext.pop; return { activity: q.activity, occ: q.occ, pay: q.pay, hours: q.hours, contract: q.contract, workplace: q.workplace, tenureYears: q.tenureStart ? (W.tick - q.tenureStart) / 52560 : 0, search: q.search ? { months: (W.tick - q.search.since) / MONTH } : null, job2: q.job2 || null }; },
+      job: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.pop) return null; const q = p.ext.pop; return { activity: q.activity, occ: q.occ, pay: Math.round(annualPay(q)), rate: +hourlyRate(q).toFixed(2), payFte: q.pay, hours: q.hours, contract: q.contract, workplace: q.workplace, tenureYears: q.tenureStart ? (W.tick - q.tenureStart) / 52560 : 0, search: q.search ? { months: (W.tick - q.search.since) / MONTH } : null, job2: q.job2 || null }; },
       searchers: () => W.living().filter((p) => p.ext.pop && p.ext.pop.activity === 'unemployed').map((p) => p.id),
       sectorOf: (occ) => sectorOfOcc(occMap(W)[occ]), sectors: () => SECTORS.slice(),
       durations: () => L(W).durations.slice(), stats: () => ({ ...L(W).stats, ...unemployment() }),
@@ -322,6 +365,7 @@ export function createLabour() {
         if (a.bid != null || (a.occ && OCC[a.occ] && OCC[a.occ].where === 'onmap')) { slot = w.lf.slots.find((s) => (a.bid == null || s.bid === a.bid) && (!a.occ || s.occ === a.occ) && s.vac.length && !closed(s.bid)); if (!slot) { w.emit('labour.applied', { actors: [p.id], salience: 0.2, tags: ['labour'], payload: { ok: false, why: 'no vacancy' } }); return { ok: false, why: 'no vacancy' }; } o = OCC[slot.occ]; }
         else o = a.occ ? OCC[a.occ] : drawOccupation(w, rng, p, { prior: q.lastOcc, onlyOffmap: true });
         if (!o) return { ok: false, why: 'unknown occupation' };
+        if (!a.force && credOf(o) && !hasCred(q, credOf(o))) { const t = TRAINING[credOf(o)]; w.emit('labour.applied', { actors: [p.id], place: slot ? slot.bid : null, salience: 0.2, tags: ['labour'], payload: { ok: false, occ: o.id, why: 'not qualified' } }); return { ok: false, why: t ? 'needs a qualification first: ' + t.label + ' (about ' + t.years + ' years)' : 'needs a professional qualification' }; }
         const fit = (QRANK[q.edu] ?? 2) >= (QRANK[o.qual] ?? 0) - 0.5 ? 1 : 0.1, pr = clamp(0.4 * fit * (1 + referralStrength(p)) * (q.activity === 'employed' ? 0.8 : 1) * (a.odds ?? 1), 0, 0.9), ok = a.force || rng.chance(pr);
         w.emit('labour.applied', { actors: [p.id], place: slot ? slot.bid : null, salience: 0.2, tags: ['labour'], payload: { ok, occ: o.id } });
         if (!ok) return { ok: false, why: 'rejected' };
@@ -339,7 +383,7 @@ export function createLabour() {
       'labour.secondJob': (w, a) => { const p = w.people.get(a.pid); return !!p && secondJob(p, a.hours || 8); },
       'labour.recession': (w, a) => w.cmd('money.recession', a),
       'labour.setActivity': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; if (p.ext.pop.activity === 'employed' && a.activity !== 'employed') separate(p, 'set', ''); p.ext.pop.activity = a.activity; p.job = a.activity; replan(p); return true; },
-      'labour.initPerson': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; const q = p.ext.pop, rng = w.rngFor('labour.new'); q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72); if (q.activity === 'employed' || (q.activity === 'student' && a.job)) { const wasStudent = q.activity === 'student'; const o = drawOccupation(w, rng, p, { hasVacancy: (id) => !!openSlotFor(p, id) }); const slot = o.where === 'onmap' ? openSlotFor(p, o.id) : null; startJob(p, o, slot ? { slot } : {}); if (wasStudent) { q.activity = 'student'; p.job = 'student'; // (bug fix: startJob had already set 'employed', so every arriving working student silently stopped being a student)
+      'labour.initPerson': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; const q = p.ext.pop, rng = w.rngFor('labour.new'); q.retireAge = clamp(rng.gauss(65.3, 2.6), 58, 72); if (q.activity === 'employed' || (q.activity === 'student' && a.job)) { const wasStudent = q.activity === 'student'; const o = drawOccupation(w, rng, p, { hasVacancy: (id) => !!openSlotFor(p, id), grant: true }); const slot = o.where === 'onmap' ? openSlotFor(p, o.id) : null; startJob(p, o, slot ? { slot } : {}); if (wasStudent) { q.activity = 'student'; p.job = 'student'; // (bug fix: startJob had already set 'employed', so every arriving working student silently stopped being a student)
   q.hours = rng.int(8, 16); q.contract = 'zero_hours'; } } else if (q.activity === 'unemployed') q.search = { since: w.tick, kind: 'entry', tries: 0 }; return true; },
       'labour.openFirm': (w, a) => {
         const b = w.buildings.get(a.bid); if (!b) return false; const S = L(w); S.firms[b.id] = { bid: b.id, sector: 'retail_hospitality', closedUntil: 0, closedAt: 0, name: a.name || 'New business', opened: w.tick };

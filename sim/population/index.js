@@ -7,6 +7,7 @@
 //   occ (occupation id|null), soc, contract, hours (paid h/wk), pay (gross FTE £/yr), edu, workplace{kind:'onmap'|'offmap'|'home'|'none', bid, dest, mode, mins, hybrid[], flex}, pattern, school{kind,bid|dest}, health{general,conds,disabled,limiting},
 //   fin{gross,net,benefits,savings,debt,arrears,studentLoan,spend}, car (drives), bike, pets, drives{}, interests[], life{chrono,wake,bed,lv{},fav{},sociability,homebody}, yearsAtAddress, grewUp, ties[] }
 //   world.lf = { households:[{id,unit,bid,seg,arch,members[],tenure,rentPcm,mortgagePcm,income,cars,dogs,cats,since}], metro:[{id,name,age,sex,rel,where,how,owner,freq}], slots, stats }
+import { annualPay, nlwFloor } from '../pay.js';
 import { sampleActivity } from './activity.js';
 import NAMES from '../../content/larkfield/names.js';
 import { clamp, clamp01, wpick, wpickObj, logn, netFromGross, ageBand, pcm } from './util.js';
@@ -233,7 +234,7 @@ export function populate(world, rng) {
           const o = d.occ; m.occId = o.id; m.soc = o.soc; m.pattern = o.pattern; m.hours = m.activity === 'student' ? rng.int(8, 18) : hoursFor(o, h, m);
           m.contract = o.gig ? 'gig' : rng.chance(o.selfEmployed || 0) ? 'self_employed' : m.activity === 'student' ? 'zero_hours' : rng.chance(0.06 + (o.partTime ? 0.08 : 0) + (SHIFTY.has(o.pattern) && o.soc >= 6 ? 0.07 : 0)) ? 'zero_hours' : rng.chance(0.06) ? 'fixed_term' : 'permanent';
           const exp = clamp(0.8 + 0.2 * (m.age - 20) / 10, 0.78, 1.18); // experience premium
-          m.pay = Math.round(logn(rng, o.pay.p10, o.pay.median, o.pay.p90) * (o.id === 'student_part_time' ? 1 : exp * (m.age < 22 ? 0.9 : 1)));
+          m.pay = Math.round(o.id === 'student_part_time' ? logn(rng, o.pay.p10, o.pay.median, o.pay.p90) : nlwFloor(logn(rng, o.pay.p10, o.pay.median, o.pay.p90) * exp * (m.age < 22 ? 0.9 : 1), m.contract, m.age)); // hourly rate as FTE £/yr, floored at the NLW for employees (sim/pay.js)
           if (o.where === 'onmap') {
             let slot = d.venue ? { vid: d.venue.id, bid: d.venue.buildingId } : null;
             if (!slot) { const free = slotsFor(o.id); slot = rng.pick(free); if (slot) slot.filled.push(m); }
@@ -261,7 +262,7 @@ export function populate(world, rng) {
     const adults = hm.filter((x) => x.age >= 16);
     for (const m of adults) {
       let g = 0, personalBen = 0;
-      if (m.activity === 'employed' || m.occId) { g = m.pay * clamp(m.hours / 37.5, 0.15, 1.25); if (m.activity === 'student') g = m.pay * m.hours / 37.5; }
+      if (m.activity === 'employed' || m.occId) { g = annualPay({ pay: m.pay, hours: m.hours, soc: m.soc, contract: m.contract }); }  // hourly rate x paid hours (sim/pay.js)
       else if (m.activity === 'retired') { g = BEN.statePensionWeeklyNewFull * 52 * (rng.chance(0.65) ? 1 : 0.8) + (rng.chance(h.seg === 'settled_professionals' ? 0.8 : 0.35) ? logn(rng, 1500, 5500, 18000) : 0); personalBen = 0; }
       else if (m.activity === 'student') { g = logn(rng, seg.money.incomeBand[0] * 0.8, seg.money.incomeBand[1], seg.money.incomeBand[2]) * (seg.id === 'students' ? 0.95 : 0.4); }
       m.gross = Math.round(g); m.netAnnual = Math.round(m.activity === 'retired' ? g : netFromGross(g, TAX, (m.edu === 'level4plus' && m.age < 45 && m.age >= 21))); gross += m.gross; net += m.netAnnual;

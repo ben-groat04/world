@@ -1,6 +1,7 @@
 // Household membership moves, departures to / arrivals from the Metropolis, and materialising off-map people (partners, newcomers).
 // The housing package owns "where people live"; life emits INTENTS as commands (housing.moveTogether / housing.leaveHome / housing.returnHome / housing.separate / housing.inherit).
 // When a command is not registered (housing not loaded) the helpers here are the fallback, so the life course never stalls.
+import { annualPay, nlwFloor } from '../../pay.js';
 import NAMES from '../../../content/larkfield/names.js';
 import { personalityFor, drivesFor, skillsFor, interestsFor, healthFor } from '../../population/persona.js';
 import { logn } from '../../population/util.js';
@@ -78,7 +79,7 @@ export function assignWork(w, p, rng, o = {}) {
   const [lo, typ, hi] = occ.hours; const part = lo < 30 && rng.chance((occ.partTime || 0) + (age >= 60 ? 0.25 : 0) + (o.partTime || 0));
   q.occ = occ.id; q.soc = occ.soc; q.pattern = occ.pattern; q.activity = 'employed'; q.contract = occ.selfEmployed && rng.chance(occ.selfEmployed) ? 'self_employed' : 'permanent';
   q.hours = Math.round(part ? clamp(rng.gauss(22, 5), Math.max(8, lo), 29) : clamp(rng.gauss(Math.max(typ, 32), 3), Math.max(30, lo), hi));
-  q.pay = Math.round(logn(rng, occ.pay.p10, occ.pay.median, occ.pay.p90) * clamp(0.8 + 0.2 * (age - 20) / 10, 0.78, 1.18));
+  q.pay = Math.round(nlwFloor(logn(rng, occ.pay.p10, occ.pay.median, occ.pay.p90) * clamp(0.8 + 0.2 * (age - 20) / 10, 0.78, 1.18), q.contract, age));
   const dest = pack.meta.offmap[occ.dest], dm = dest ? dest.minutes : { bus: 25 };
   const mode = dm.rail && rng.chance(0.4) ? 'rail' : dm.bus ? 'bus' : dm.drive ? 'drive' : 'walk';
   q.workplace = occ.where === 'home' || occ.pattern === 'remote' ? { kind: 'home', mode: null, mins: 0 } : { kind: 'offmap', dest: occ.dest, mode, mins: Math.round((dm[mode] || 25) * rng.float(0.85, 1.25) + 6), hybrid: occ.pattern === 'office_hybrid' ? [1, 2, 3] : null };
@@ -125,7 +126,7 @@ export function materialise(w, m, hh, role, rng, o = {}) {
   p.ext.pop.fin.savings = Math.round(o.money ?? rng.float(200, 4000));
   if (age >= 30) p.ext.pop.fin.pension = Math.round((age - 22) * 6000 * 0.045 * rng.float(0.3, 1.4));
   if (age >= 18 && age < 67) assignWork(w, p, rng); else if (age >= 67) { p.ext.pop.activity = 'retired'; p.job = 'retired'; }
-  if (p.ext.pop.activity === 'employed') { const f = p.ext.pop.fin; f.gross = Math.round(p.ext.pop.pay * clamp(p.ext.pop.hours / 37.5, 0.15, 1.25)); f.net = Math.round(f.gross * 0.78); }
+  if (p.ext.pop.activity === 'employed') { const f = p.ext.pop.fin; f.gross = Math.round(annualPay(p.ext.pop)); f.net = Math.round(f.gross * 0.78); }
   return p;
 }
 export const metroAgeNow = (w, m) => m.age + (w.tick - (m.t0 ?? 0)) / w.calendar.ticksPerYear;

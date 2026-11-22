@@ -14,6 +14,8 @@ const need = { one_person_66plus: 1, one_person_u66: 1, married_no_kids: 2, coha
 // Letting-agent behaviour: a unit marketed as a student let (unit.studentLet) is re-let to students (agents market to the university, landlords like 12-month cohorts).
 // Tunable mechanism parameter (relative weight of a student household for a student let).
 const STUDENT_LET_STICKY = 40;
+// Borough nominees into a vacant social home are mostly households with priority need (Housing Act 1996 Part 6/7, see housing/index.js): childless singles and couples only via vulnerability.
+const NOMINEE_WEIGHT = { one_person_u66: 0.12, married_no_kids: 0.08, cohab_no_kids: 0.08, couple_66plus: 0.6, one_person_66plus: 0.6, sharers_students_multigen: 0.02 };
 let shareCache = new WeakMap();
 function ethShare(pack) {
   let s = shareCache.get(pack); if (s) return s;
@@ -29,7 +31,8 @@ export function pickSegArch(w, rng, unit, forceSeg) {
     for (const [arch, wt] of Object.entries(joint[seg.id] || {})) {
       const n = need[arch] || 2, d = unit.bedrooms - (n > 3 ? 3 : n === 3 ? 2 : n === 1 ? 1 : 1), fit = d < 0 ? Math.exp(0.9 * d) : Math.exp(-0.45 * d);
       const sh = arch === 'sharers_students_multigen' ? (unit.kind === 'shared_house' || unit.bedrooms >= 3 ? 1 : 0.15) : (unit.kind === 'shared_house' ? 0.05 : 1);
-      cells.push([{ seg: seg.id, arch }, base * wt * fit * sh + 1e-9]);
+      const nom = unit.tenure === 'council' || unit.tenure === 'housing_assoc' ? (NOMINEE_WEIGHT[arch] ?? 1) : 1;
+      cells.push([{ seg: seg.id, arch }, base * wt * fit * sh * nom + 1e-9]);
     }
   }
   return wpick(rng, cells);

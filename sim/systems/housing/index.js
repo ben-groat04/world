@@ -23,6 +23,14 @@ const EVENTS = [
   ['housing.bought', 'Household bought a home', { price: 'number' }], ['housing.unit_claimed', 'A vacant business unit was claimed', { name: 'string' }],
 ];
 const MONTH = 4380, YEAR = 52560;
+// ---- Social-housing allocation: reasonable-preference BANDS, not a queue of anyone who asked.
+// Housing Act 1996 Part 6 s166A: councils must give reasonable preference to people who are homeless (HA 1996 Part 7: main duty only to households in PRIORITY NEED - dependent children, pregnancy,
+// age/disability/other vulnerability), living in overcrowded/insanitary housing, or with medical/welfare needs. London schemes band these (A/emergency, B/urgent, C/other need); a single adult
+// with no priority sits in the lowest or no band and, in inner London, waits years for a 1-bed: Centre for London (from MHCLG LA housing statistics) average 1-bed wait 1,175 days (3y2m) in Inner London,
+// 557 days in Outer London, 2,208 days (6y) in Lewisham; 323,000+ London households on lists (London Assembly Housing Committee, Mar 2026) against ~25k general-needs lets a year (about 1 in 12-15 a year).
+// Band 3 below = no reasonable preference. BAND3_WAIT_YEARS = years in the queue before a household with no priority reaches the front (by bedrooms needed); BAND3_WIN = the share of
+// vacancies it then actually wins against the rest of the borough list (hand-set mechanism constants, see CALIBRATION-METHOD Round 10).
+const BAND3_WAIT_YEARS = { 1: 3.2, 2: 5.4, 3: 7, 4: 9 }, BAND3_WIN = 0.25;
 const H = (w) => w.lf.housing;
 const BASE_RENT = (w) => w.pack.unitTypes.rooms.rentPerMonthByBedrooms, BASE_PRICE = (w) => w.pack.unitTypes.rooms.housePriceByBedrooms;
 const rented = (t) => t === 'private_rent' || t === 'council' || t === 'housing_assoc' || t === 'shared_ownership';
@@ -133,6 +141,17 @@ export function createHousing() {
   }
 
   // ---------------------------------------------------------------- hazards
+  // priority need (HA 1996 s189): dependent child, pregnancy, old age, or a limiting illness/disability or severe mental illness in the household
+  function priorityNeed(ps) {
+    const w = W; for (const p of ps) { const a = w.ageOf(p), q = p.ext.pop, hl = p.ext.hl; if (a < 16) return true; if (a >= 66) return true; if (p.ext.life && p.ext.life.preg) return true; if (q.health && q.health.limiting === 2) return true; if (hl && hl.mh && hl.mh.st >= 2) return true; } return false;
+  }
+  /** band 1 emergency (homeless/notice with priority need, or severely overcrowded with children), band 2 urgent (priority need plus overcrowding or a medical need), band 3 no reasonable preference */
+  function bandOf(hh) {
+    const ps = hhLive(hh), pn = priorityNeed(ps), short = Math.max(0, bedNeed(W, ps) - (hh.bedrooms || 0)), kids = ps.some((p) => W.ageOf(p) < 16);
+    if ((hh.forced && pn) || (short >= 2 && kids)) return 1;
+    if (pn && (short >= 1 || ps.some((p) => p.ext.pop.health && p.ext.pop.health.limiting === 2))) return 2;
+    return 3;
+  }
   function moveHazard(hh, u, seg) {
     const w = W, ten = TEN_MULT[hh.tenure] ?? 1, yrs = (w.tick - hh.since) / YEAR;
     let m = ten * (yrs < 1 ? 1.7 : yrs < 3 ? 1.1 : yrs < 8 ? 0.75 : 0.45);
@@ -220,6 +239,8 @@ export function createHousing() {
         const pr = u.tenure === 'private_rent' ? 0.18 : u.tenure === 'housing_assoc' ? 0.06 : 0.03;
         if (rng.chance(pr)) serveNotice(u, hh, 'arrears', f.cause);
       }
+      // registering on the council list: open to anyone qualifying; private renters paying a heavy share of income do (so a single adult can sit on the list for years in band 3)
+      if (hh.tenure === 'private_rent' && f && f.income > 0 && hh.rentPcm / f.income > 0.35 && !S.wait.some((x) => x.hh === hh.id) && rng.chance(0.012)) S.wait.push({ hh: hh.id, since: tick, points: 0 });
       // overcrowding record
       const need = bedNeed(w, ps), short = Math.max(0, need - u.bedrooms);
       if (short > 0 && !hh.crowded) { hh.crowded = true; w.emit('housing.overcrowded', { actors: adults.slice(0, 2).map((p) => p.id), place: u.bid, objects: [hh.id], salience: 0.3, tags: ['housing'], payload: { short } }); if (!S.wait.some((x) => x.hh === hh.id) && (isSocial(hh.tenure) || (f && f.stress > 0.5))) S.wait.push({ hh: hh.id, since: tick, points: 2 * short }); }
@@ -385,9 +406,14 @@ export function createHousing() {
     S.wait.sort((a, b) => b.points - a.points || a.hh - b.hh);
     for (const u of S.list) {
       if (u.hh >= 0 || !u.listed || !isSocial(u.tenure) || !slotDay(u.id, dom)) continue;
-      const x = S.wait.find((e) => { const hh = hhs[e.hh]; return hh && !hh.gone && hh.unit !== u.id && U(hh.unit) && bedNeed(w, hhLive(hh)) <= u.bedrooms && bedNeed(w, hhLive(hh)) >= u.bedrooms - 1 && (hh.search || hh.forced || hh.crowded || !isSocial(hh.tenure)); });
-      if (x) { const hh = hhs[x.hh]; S.wait.splice(S.wait.indexOf(x), 1); taken.add(u.id); moveLocal(hh, u, 'social_allocation', hh.forced ? hh.forced.eid : 0); continue; }
-      if (rng.chance(0.75)) { taken.add(u.id); arrive(u, rng.chance(0.55) ? 'benefit_dependent' : null); }
+      const cands = []; for (const e of S.wait) { const hh = hhs[e.hh]; if (!(hh && !hh.gone && hh.unit !== u.id && U(hh.unit) && bedNeed(w, hhLive(hh)) <= u.bedrooms && bedNeed(w, hhLive(hh)) >= u.bedrooms - 1 && (hh.search || hh.forced || hh.crowded || !isSocial(hh.tenure)))) continue; const band = bandOf(hh); cands.push([e, hh, band]); }
+      cands.sort((a, b) => a[2] - b[2] || b[0].points - a[0].points || a[0].hh - b[0].hh);
+      let x = null, xb = 0;
+      for (const [e, hh, band] of cands) { if (band < 3) { x = e; xb = band; break; } const need = Math.min(4, Math.max(1, bedNeed(w, hhLive(hh)))); if ((tick - e.since) / YEAR >= BAND3_WAIT_YEARS[need] && rng.chance(BAND3_WIN)) { x = e; xb = 3; break; } }
+      if (x) { const hh = hhs[x.hh], ps = hhLive(hh), SL = S.stats.socialLets || (S.stats.socialLets = { local: 0, band1: 0, band2: 0, band3: 0, singleNonPriority: 0, singleAdult: 0, nominees: 0, nomineeSingles: 0, waitYears: [] }); SL.local++; SL['band' + xb]++; SL.waitYears.push(+((tick - x.since) / YEAR).toFixed(2)); if (SL.waitYears.length > 200) SL.waitYears.shift();
+        if (ps.length === 1 && w.ageOf(ps[0]) >= 16 && w.ageOf(ps[0]) < 60) { SL.singleAdult++; if (xb === 3) SL.singleNonPriority++; }
+        S.wait.splice(S.wait.indexOf(x), 1); taken.add(u.id); moveLocal(hh, u, 'social_allocation', hh.forced ? hh.forced.eid : 0); continue; }
+      if (rng.chance(0.75)) { taken.add(u.id); const hh2 = arrive(u, rng.chance(0.55) ? 'benefit_dependent' : null), SL = S.stats.socialLets || (S.stats.socialLets = { local: 0, band1: 0, band2: 0, band3: 0, singleNonPriority: 0, singleAdult: 0, nominees: 0, nomineeSingles: 0, waitYears: [] }); SL.nominees++; { const ad = hhLive(hh2).filter((p) => w.ageOf(p) >= 16); if (ad.length === 1 && hhLive(hh2).length === 1 && w.ageOf(ad[0]) < 60) SL.nomineeSingles++; } }
     }
     // 2. local searchers
     for (const hh of liveHh(w)) {

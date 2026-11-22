@@ -1,0 +1,39 @@
+{
+ "label": "smoke-v3",
+ "seed": 301,
+ "args": {
+  "label": "smoke-v3",
+  "setting": "Three adults sharing a rented flat in an inner-city neighbourhood of a UK city.",
+  "dateNote": "Friday in mid-November 2026; dark by 16:15",
+  "startDow": 4,
+  "startHour": 16,
+  "hours": 12,
+  "seed": 301,
+  "audit": true,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Fri 16:00",
+  "to": "Sat 04:00",
+  "hours": 12
+ },
+ "totalTokens": 556654,
+ "agentCount": 92,
+ "stats": {
+  "calls": 91,
+  "simCalls": 87,
+  "maxCalls": 240,
+  "byFor": {
+   "generator": 4,
+   "Hayley Johnson": 37,
+   "Junior Edwards": 34,
+   "Yousif Al-Ani": 12,
+   "world": 4
+  },
+  "sceneLines": 55,
+  "promptChars": 337689,
+  "failed": 0,
+  "roleAgent": "sim",
+  "stoppedAt": null
+ }
+}

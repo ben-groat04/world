@@ -1,0 +1,105 @@
+{
+ "imagined": [
+  "About 16:00: Hayley floats a takeaway in the flat chat. Junior, on a day off and short of money, offers to cook instead. Two or three messages settle it. Yousif replies late with 'yeah ok' or not at all.",
+  "Junior makes one shop run. He might forget something like the thyme, the coconut milk or the beans for rice and peas, and either swear about it or nip back out. Then he cooks for an hour or more with music on, and the kitchen gets messy.",
+  "Hayley sends the report at about 17:00, possibly late and stressed. She changes, makes one corner-shop run for beer and something sweet, and probably texts a friend or her mum (her mum might ring on a Friday).",
+  "Eating around 19:30 to 20:00. Yousif comes out late, takes a bowl and stays maybe 15 minutes. He might not drink, and could quietly turn down the lager. Someone offers Junior a fiver, or Hayley's pudding counts as her share.",
+  "The flat is cold in mid-November, so someone puts the heating on or asks to. That sets off the shared worry about the bill, and Yousif would probably say something since he complains about practical things.",
+  "Junior gets his uniform and lanyard ready, sets an alarm, maybe sorts a packed lunch from the leftovers, and is in bed by 22:00 to 22:30. He might grumble about his knee or the weekend ahead.",
+  "Pots get left in the sink. Junior is low on conscientiousness, so Hayley or Yousif probably end up doing them, with some mild resentment.",
+  "Hayley watches TV or scrolls in her room until about midnight. Yousif stays up late on his laptop: football highlights, podcasts, maybe checking whether Gareth has paid. Everyone is asleep by 04:00, and Junior's alarm goes at about 05:45."
+ ],
+ "missing_texture": [
+  "Nobody mentions or touches the heating, though all three memories say the bill is nagging them. It is the flat's most obvious shared friction on a cold November night.",
+  "Junior's low conscientiousness and low emotional stability never show. He is punctual, plans ahead, sets alarms and nothing goes wrong. The gas bill letter sits in his memory all evening and is never acted on or mentioned.",
+  "Yousif's low agreeableness and irritability are missing. He is polite, grateful and agrees to watch Strictly. He has no dry or curt moment and doesn't complain about the dishes.",
+  "Nobody outside the flat appears: no text from Hayley's mum, Junior's son Devon, a friend or a client. People in their 20s, 40s and 50s on a Friday night would have some outside contact.",
+  "Hayley's report is never actually sent on screen. Her memory just says 'sent (I think)'.",
+  "No pre-shift routine for Junior: uniform, lunch, the leftovers he offered being boxed up.",
+  "No real mess, no washing-up aftermath, no leftovers going into containers. Hayley's 'I'll do the pots' at 22:00 is never followed through in any detail.",
+  "Yousif's background (Yemeni, five years in the UK) has no texture at all. He is offered lager over and over and the scene never registers whether he drinks. Hayley asks him 'what do you lot do for presents?' and the moment goes nowhere, when it would really be a small awkward beat.",
+  "Junior lists rice and peas with coconut milk, but he only bought chicken, rice, peppers and onions. No beans, coconut milk, thyme, allspice or scotch bonnet were ever acquired or said to be in the cupboard."
+ ],
+ "stereotyping": [
+  {
+   "who": "Junior Edwards",
+   "quote": "Ha, thyme yeah, plus allspice and a bit of curry powder, and the scotch bonnet whole so it doesn't blow your head off, man... Bruv, last call, I'm not saving you the chicken!",
+   "why": "The brief did seed his cooking and his British Caribbean speech. But the scene piles on the markers: curry chicken, scotch bonnet, allspice, rice and peas, plus 'man', 'bruv' and 'you know what I mean' in almost every line. A 55-year-old hospital porter ends up as a stock jovial Caribbean cook, with no other side to him over two scenes."
+  },
+  {
+   "who": "Junior Edwards",
+   "quote": "Listen, mind the big spoon, it's got a mind of its own. Five minutes and we're eating, you know what I mean.",
+   "why": "The verbal tics are mechanical, nearly every turn ends in 'you know what I mean'. He reads as a caricature rather than a person, and his thinking side (high openness, new interests, stories from the ward) never comes through."
+  },
+  {
+   "who": "Yousif Al-Ani",
+   "quote": "Go on Yousif, what do you lot do for presents? Or are you one of those people who's done by October?",
+   "why": "'You lot' quietly lumps him into a group. The two others also treat him like a pet to be coaxed out with food ('He never comes out unless he smells food'). He is never given a voice or an answer, and stays the silent foreign flatmate."
+  },
+  {
+   "who": "Hayley Johnson",
+   "quote": "Oh my god, cheers Junior, that's loads! Honestly that looks amazing. Go on, I'll take this one...",
+   "why": "Not ethnic stereotyping, but her speech-tic list is used in every line ('oh my god', 'honestly', 'go on'). It flattens her into a gushing type. Her stress about work and her mum's nagging get no space."
+  }
+ ],
+ "breakers": [
+  {
+   "quote": "[Fri 16:00] Junior Edwards paid (outside) £10.00 ... [Fri 17:17] Junior Edwards paid (outside) £9.55 (You pick up a chicken breast pack (£4.50), a 1kg bag of long grain rice...",
+   "why": "Junior does the same shop twice, first chicken thighs and then chicken breast. On £25k with £240 to his name, that would not go unnoticed. Nobody mentions two lots of chicken and rice."
+  },
+  {
+   "quote": "[Fri 17:03] Hayley Johnson paid (outside) £13.47 (...four bottles of lager and a shop-bought chocolate cheesecake...) ... [Fri 17:20] Hayley Johnson paid (outside) £8.00 (...a four-pack of lager (£5.80) and a single-serve sticky toffee pudding",
+   "why": "Hayley also buys twice. She then has eight lagers but keeps saying 'I've got four'. On top of that, a background £45 'weekly food shop' fires at 17:30 while she is standing in the corner shop."
+  },
+  {
+   "quote": "[Fri 17:00] (Flat 3) Junior Edwards: back from tesco, curry chicken going on shortly",
+   "why": "His timeline has him only arriving at Tesco at 17:00 and staying there until 17:30, still 'buying' at 17:24, while the chat says he is home and cooking."
+  },
+  {
+   "quote": "Junior: curry chicken ready about 7.30 ... food around 7ish ... curry will be about 7ish ... curry will be ready about half seven",
+   "why": "Within 30 minutes Junior announces the time about six times, and it changes each time. Hayley says 'i'll nip to the corner shop... anyone want anything?' three times. Real people don't keep re-posting the same plan in a group chat."
+  },
+  {
+   "quote": "Hayley Johnson: \"Ha, there he is! Sit down, Yousif, you alright?...\" (Kitchen, Fri 19:00 scene, participants: Hayley Johnson, Junior Edwards)",
+   "why": "Yousif isn't part of the 19:00 scene and his timeline puts him in the kitchen only at 19:25. Here the other two greet him, pull out a chair and push lager at him for several turns, and he never speaks."
+  },
+  {
+   "quote": "Hayley Johnson: \"Yousif, you alright in there? Your curry's getting cold, mate!\" ... Junior Edwards: \"I'll save Yousif a bowl if he's still hiding in there\"",
+   "why": "In the 19:30 scene, straight after they 'sat him down', they treat Yousif as still in his room. Hayley takes the cheesecake 'out of the fridge' after putting it on the counter. She brings up Christmas presents for her mum again as if new, and Junior presents the blanket for Gloria as a fresh idea. The second scene restarts the first."
+  },
+  {
+   "quote": "Junior Edwards: \"Go on then, one lager, just the one though, man\"",
+   "why": "He already opened a lager at 19:00. His memory also says 'had one lager'."
+  },
+  {
+   "quote": "Yousif: Fri 23:30 -> Living room (watching Strictly on sofa) until Sat 00:15",
+   "why": "Yousif goes back to the living room at 23:30 to 'watch Strictly with Hayley and Junior', but Junior has been asleep since 23:00 and Hayley left at 22:00. A stale memory turned into a new plan."
+  },
+  {
+   "quote": "Junior: Fri 19:30 -> Living room (eating with flatmates, chatting) ... --- Kitchen, Fri 19:30",
+   "why": "His timeline location doesn't match the scene location."
+  },
+  {
+   "quote": "Junior Edwards: \"Just rice and peas, bit of thyme, bit of coconut milk\"",
+   "why": "Earlier it was plain rice, and he never bought beans or coconut milk. The dish changes from scene to scene."
+  },
+  {
+   "quote": "is that Wynne still going?",
+   "why": "This names a real Strictly contestant from the 2024 series, in a simulation dated November 2026. A local viewer would spot it as out of date."
+  }
+ ],
+ "mechanism_issues": [
+  "The shopping actions aren't deduplicated. Junior's 'do' at 16:00 was resolved immediately, while he was still in his room, with the result delivered at 16:35. But his plan step 'grab chicken... @Tesco Express' stayed open until 17:30, so he issued the 'do' again at 17:17. Hayley's 17:03 purchase came back at 17:23, after she had already re-issued the same buy at 17:20. The world role needs to mark an intent as already in progress or done, and the planner needs to see results that are still pending.",
+  "Purchases are resolved before the character has moved ('paid (outside)' while @Junior's room). That is why the chat says 'back from tesco' at the same moment the timeline says he is arriving.",
+  "Every glance at the phone triggers a turn with no record of what the character has already posted. The agent replies to each new message by restating the plan, which is where the repeated times and repeated corner-shop offers come from. Each agent needs its own recent outgoing messages in context, plus a bias toward not replying.",
+  "The scene generator doesn't stick to the participant list. People not in the scene get arrivals and actions written for them, but no lines. Arrivals should be events that put the person into the scene, or be forbidden.",
+  "Scenes don't carry continuity from one to the next. The 19:30 scene was seeded from compressed memories, so the scene state (Yousif present, cheesecake on the counter, topics already covered, lagers opened) was lost. Pass the prior scene transcript or a structured state into the next scene.",
+  "One scene of about 22 minutes stands in for Hayley's whole 19:00 to 21:30 block. Junior then 'winds down' and 'wakes at 23:00', and Yousif's later plan is built from a memory that says 'watching Strictly' after the fact. Memory rewrites mix up what has happened with what is planned.",
+  "The ledger posts a recurring background spend (the £45 'weekly food shop') with no link to where the character actually is, on top of explicit purchases.",
+  "Speech-style prompts are treated as mandatory tic quotas, so every line uses the catchphrases. That makes Junior read as an ethnic caricature and Hayley as a cartoon.",
+  "Temperament traits (Junior low conscientiousness and low stability, Yousif low agreeableness and low stability) don't affect behaviour. Every agent drifts toward cooperative, smooth outcomes, and no event or friction source (the heating, the dishes, the bill letter) is seeded to bring the traits out.",
+  "Agents don't track inventory. No one notices eight lagers, two puddings, two lots of chicken, or ingredients that were never bought."
+ ],
+ "score": 4,
+ "verdict": "The outline of the evening is believable: Junior cooks a pot instead of a takeaway, Hayley brings beer and pudding, Yousif comes out briefly, there's some Strictly, and Junior gets an early night before his 07:00 shift. The execution keeps breaking the illusion. Both Junior and Hayley buy their shopping twice and nobody notices. The group chat repeats the same plans about six times. In the first dinner scene, Hayley and Junior greet and seat a Yousif who isn't there. The second scene then restarts as if he were still in his room, and repeats the cheesecake, the lager and the Christmas-present conversation. Yousif later goes back to watch Strictly alone at 23:30. Underneath this are four mechanism faults: action intents aren't deduplicated or tracked while pending, scenes don't carry state from one to the next, generated dialogue ignores the participant list, and memory treats plans as things that already happened. The characterisation leans on speech tics to the point of caricature, especially Junior's Caribbean markers. All the traits that would create friction (the heating, the dishes, Junior's disorganisation, Yousif's irritability) are smoothed away, leaving a warm but hollow evening."
+}

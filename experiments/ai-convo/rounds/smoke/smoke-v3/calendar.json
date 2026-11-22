@@ -1,0 +1,26 @@
+[
+ {
+  "what": "Hayley's working day from home",
+  "who": [
+   "Hayley Johnson"
+  ],
+  "place": "Kitchen",
+  "t0": -420,
+  "t1": 60,
+  "by": "routine",
+  "at": "Fri 09:00",
+  "until": "Fri 17:00"
+ },
+ {
+  "what": "Yousif's freelance work hours",
+  "who": [
+   "Yousif Al-Ani"
+  ],
+  "place": "Yousif's room",
+  "t0": -360,
+  "t1": 120,
+  "by": "routine",
+  "at": "Fri 10:00",
+  "until": "Fri 18:00"
+ }
+]

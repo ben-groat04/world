@@ -1,0 +1,26 @@
+{
+ "Hayley Johnson": {
+  "money": 1113.53,
+  "place": "Hayley's room",
+  "doing": "Sleeping",
+  "memory": "Friday ~9:30pm, on the sofa watching Strictly catch-up with Junior and Yousif, lager and cheesecake. Junior's curry was brilliant, he's up for 7am shift so off by ten. Leftover curry for my lunch tomorrow. Slippers for mum (Junior's idea), about nine more presents to figure out. Junior's mum has passed, be gentle. Yousif has logo revisions, quiet but joined us. I said I'd do the pots later. Heating bill still nags.",
+  "turns": 12,
+  "unseen": []
+ },
+ "Junior Edwards": {
+  "money": 220.45,
+  "place": "Junior's room",
+  "doing": "sleeping",
+  "memory": "Friday night, woke up 23:00 in my room. Working Sat and Sun 7-7, knee grumbling. Cooked curry chicken and rice for the flat, went well, Yousif came out and ate. Had cheesecake and one lager, watched Strictly with Hayley and Yousif. Blanket idea for Gloria, vouchers for Devon. Still haven't dealt with the gas bill letter. Need sleep for 7am, alarm set.",
+  "turns": 9,
+  "unseen": []
+ },
+ "Yousif Al-Ani": {
+  "money": 410,
+  "place": "Yousif's room",
+  "doing": "sleep",
+  "memory": "Friday night. Ate Junior's curry, had cheesecake, watching Strictly with Hayley and Junior for a bit. Gareth still hasn't paid October invoice, chase politely Monday. Not putting heating on. Then bed, back to room for podcast.",
+  "turns": 7,
+  "unseen": []
+ }
+}

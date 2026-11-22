@@ -1,0 +1,12 @@
+[Fri 16:00] result (at Fri 16:35) Junior Edwards: You get to Tesco Express and find everything on your list. Chicken thighs (about 1kg) are £4.50, a 1kg bag of rice £2.20, a bag of mixed peppers £2.00 and a net of onions £1.30. The total is £10.00, under your £15 limit. The shop is fairly busy for a Friday after work, and you queue for a few minutes at the self-checkout. You pay by card and walk home with the bags.
+   item: Junior Edwards (at Junior's room, balance £240.00, will spend up to £15.00): Buy chicken, rice, peppers, onions at Tesco Express for big pot
+   reason: Ordinary shop run. All items are stocked at typical Tesco Express prices and the total is within budget.
+[Fri 17:03] result (at Fri 17:23) Hayley Johnson: You pick up four bottles of lager and a shop-bought chocolate cheesecake from the corner shop. The queue is short and you pay by card. The total is £13.47, within your budget.
+   item: Hayley Johnson (at Hayley's room, balance £1180.00, will spend up to £15.00): Buy a few beers and a dessert at the corner shop for the curry night
+   reason: Ordinary corner shop purchase of a few beers and a dessert fits within the £15 limit; items in stock.
+[Fri 17:17] result (at Fri 17:29) Junior Edwards: You pick up a chicken breast pack (£4.50), a 1kg bag of long grain rice (£2.10), a three-colour pepper pack (£1.80) and a bag of brown onions (£1.15). The Friday after-work queue is busy and the self-checkout takes a few minutes. The total is £9.55, charged to you. Your balance is now £220.45.
+   item: Junior Edwards (at Tesco Express, balance £230.00, will spend up to £18.00): buy chicken, rice, peppers, onions at Tesco Express
+   reason: All four items are ordinary stock at a Tesco Express and the total is under the £18 budget. The Friday evening rush only adds a short wait.
+[Fri 17:20] result (at Fri 17:30) Hayley Johnson: You pick up a four-pack of lager (£5.80) and a single-serve sticky toffee pudding (£2.20) at the corner shop. The shop is busy with the Friday after-work crowd, so you queue a few minutes. Total £8.00, paid by card.
+   item: Hayley Johnson (at Corner shop, balance £1166.53, will spend up to £15.00): buy a few beers and a dessert at the corner shop
+   reason: Ordinary purchase within the £15 budget; Friday evening queue is the only friction.

@@ -9,8 +9,10 @@ export function openingsFor(pack, v, dow, bank) {
   const t = pack.venues[v.template]; if (!t) return [];
   let h = t.hours; if (v.template === 'business_unit' && t.variants && t.variants[v.variant] && t.variants[v.variant].hoursOverride) return t.variants[v.variant].hoursOverride;
   if (!h) return [];
+  if (v.trim && v.trim.days.includes(dow)) return []; // struggling business has dropped a day (business plugin)
   let key = dow === 6 ? 'sun' : dow === 5 ? 'sat' : 'wk';
   if (bank) key = h.bank === 'sat' ? 'sat' : 'sun';
-  return h[key] || [];
+  const iv = h[key] || [];
+  return v.trim && v.trim.eve > 0 && iv.length ? iv.map((x, i) => (i === iv.length - 1 ? [x[0], Math.max(x[0] + 1, x[1] - v.trim.eve)] : x)) : iv; // ...or closes earlier in the evening
 }
 export const isOpenAt = (iv, hour) => { for (let i = 0; i < iv.length; i++) if (hour >= iv[i][0] && hour < iv[i][1]) return true; return false; };

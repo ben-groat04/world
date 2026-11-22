@@ -106,7 +106,7 @@ export function createLabour() {
     if (slice === 0) for (const bid of Object.keys(S.firms)) {
       const f = S.firms[bid];
       if (f.closedUntil && tick >= f.closedUntil && f.closedUntil > 0) { f.closedUntil = 0; for (const s of slotsOf(+bid)) { s.vac = Array.from({ length: s.n - s.filled.length - s.ext }, () => ({ since: tick, occ: s.occ })); } w.emit('labour.firm_opened', { place: +bid, salience: 0.3, tags: ['labour', 'visible'], payload: { name: f.name, reopened: true } }); }
-      else if (!f.closedUntil) {
+      else if (!f.closedUntil && !(w.sys.business && w.sys.business.query.manages(+bid))) { // (business plugin owns closures of the units it manages)
         const hv = w.lf.money ? (w.lf.money.venueHealth[bid] ?? 1) : 1;
         const hz = 0.0004 + (hv < 0.55 ? 0.05 * (0.55 - hv) / 0.25 : 0) + 0.003 * mc.recession;
         if (rng.chance(hz)) closeFirm(+bid, hv < 0.55 ? 'trading_losses' : 'owner_retired', 0);
@@ -259,16 +259,28 @@ export function createLabour() {
     }
   }
   // ---------------------------------------------------------------- firms / shocks
-  function closeFirm(bid, reason, cause) {
+  function closeFirm(bid, reason, cause, permanent = false) {
     const f = firmOf(bid); if (!f || f.closedUntil > W.tick) return false;
     const eid = W.emit('labour.firm_closed', { place: bid, salience: 0.55, cause, tags: ['labour', 'visible'], payload: { reason, name: f.name } });
-    f.closedUntil = W.tick + W.rngFor('labour.close').int(4, 10) * MONTH; f.closedAt = W.tick; L(W).stats.closures++;
+    f.closedUntil = permanent ? Infinity : W.tick + W.rngFor('labour.close').int(4, 10) * MONTH; f.closedAt = W.tick; L(W).stats.closures++;
     for (const s of slotsOf(bid)) {
       for (const id of s.filled.slice()) { const p = W.people.get(id); if (p) loseJob(p, 'firm_closed', eid); }
       s.filled = []; s.vac = []; s.ext = 0; syncStaff(s);
     }
     for (const s of slotsOf(bid)) s.n = Math.max(0, s.n);
+    if (permanent) { for (let i = W.lf.slots.length - 1; i >= 0; i--) if (W.lf.slots[i].bid === bid) W.lf.slots.splice(i, 1); const b = W.buildings.get(bid); if (b && b.lf) b.lf.staff = []; delete L(W).firms[bid]; }
     return true;
+  }
+  // Scale a firm's staffing (business plugin: short-time working, redundancies, expansion). Slots keep s.base (their size when first scaled); owner slots are never cut below 1.
+  function resizeFirm(bid, scale, cause) {
+    let cut = 0;
+    for (const s of slotsOf(bid)) {
+      if (s.base === undefined) s.base = s.n; const want = Math.max(s.n > 0 && /owner|manager|publican|supervisor/.test(s.occ) ? 1 : 0, Math.round(s.base * scale)); let d = s.n - want;
+      if (d > 0) { while (d > 0 && s.vac.length) { s.vac.pop(); s.n--; d--; } while (d > 0 && s.ext > 0) { s.ext--; s.n--; d--; } while (d > 0 && s.filled.length) { const id = s.filled[s.filled.length - 1]; const p = typeof id === 'number' ? W.people.get(id) : null; if (p && p.alive && p.ext.pop) { loseJob(p, 'redundancy', cause || 0, { noVacancy: true }); cut++; } else { s.filled.pop(); s.n--; } d--; } }
+      else if (d < 0) { for (let i = 0; i < -d; i++) s.vac.push({ since: W.tick, occ: s.occ }); s.n += -d; }
+      syncStaff(s);
+    }
+    return cut;
   }
   function layoffs(sector, share, cause) {
     const rng = W.rngFor('labour.layoffs'), S = L(W);
@@ -316,7 +328,8 @@ export function createLabour() {
       'labour.hire': (w, a) => w.cmd('labour.applyForJob', { ...a, force: true }),
       'labour.quit': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.ext.pop || p.ext.pop.activity !== 'employed') return false; loseJob(p, 'quit', a.cause || 0); return true; },
       'labour.layoffs': (w, a) => layoffs(a.sector, a.share ?? 0.25, a.cause),
-      'labour.closeFirm': (w, a) => closeFirm(a.bid, a.reason || 'closed', a.cause || 0),
+      'labour.closeFirm': (w, a) => closeFirm(a.bid, a.reason || 'closed', a.cause || 0, !!a.permanent),
+      'labour.resizeFirm': (w, a) => resizeFirm(a.bid, a.scale, a.cause),
       'labour.raise': (w, a) => { const p = w.people.get(a.pid); if (!p || p.ext.pop.activity !== 'employed') return false; p.ext.pop.pay = Math.round(p.ext.pop.pay * (1 + (a.pct ?? 5) / 100)); w.emit('labour.pay_rise', { actors: [p.id], salience: 0.3, cause: a.cause || 0, tags: ['labour', 'money'], payload: { pct: a.pct ?? 5 } }); return true; },
       'labour.retire': (w, a) => { const p = w.people.get(a.pid); if (!p || p.ext.pop.activity === 'retired') return false; if (p.ext.pop.activity === 'employed') retire(p); else { p.ext.pop.activity = 'retired'; p.job = 'retired'; } return true; },
       'labour.secondJob': (w, a) => { const p = w.people.get(a.pid); return !!p && secondJob(p, a.hours || 8); },
@@ -326,8 +339,9 @@ export function createLabour() {
   q.hours = rng.int(8, 16); q.contract = 'zero_hours'; } } else if (q.activity === 'unemployed') q.search = { since: w.tick, kind: 'entry', tries: 0 }; return true; },
       'labour.openFirm': (w, a) => {
         const b = w.buildings.get(a.bid); if (!b) return false; const S = L(w); S.firms[b.id] = { bid: b.id, sector: 'retail_hospitality', closedUntil: 0, closedAt: 0, name: a.name || 'New business', opened: w.tick };
+        if (a.staff) { for (let i = w.lf.slots.length - 1; i >= 0; i--) if (w.lf.slots[i].bid === b.id) w.lf.slots.splice(i, 1); b.lf.staff = []; } // explicit staffing [{occ,n}] replaces the default owner + 2 assistants
         if (!b.lf.staff) b.lf.staff = []; const mk = (occ, n) => { const vid = b.lf.venueId ?? 900 + b.id; const s = { vid, bid: b.id, occ, n, filled: [], ext: 0, vac: Array.from({ length: n }, () => ({ since: w.tick, occ })) }; w.lf.slots.push(s); b.lf.staff.push({ vid, occ, n, filled: [] }); };
-        if (!w.lf.slots.some((s) => s.bid === b.id)) { mk('shop_owner_manager', 1); mk('retail_assistant', 2); }
+        if (a.staff) for (const x of a.staff) mk(x.occ, x.n); else if (!w.lf.slots.some((s) => s.bid === b.id)) { mk('shop_owner_manager', 1); mk('retail_assistant', 2); }
         w.emit('labour.firm_opened', { place: b.id, salience: 0.4, tags: ['labour', 'visible'], payload: { name: S.firms[b.id].name } }); return true;
       },
     },

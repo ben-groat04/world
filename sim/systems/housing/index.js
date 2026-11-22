@@ -497,7 +497,9 @@ export function createHousing() {
     },
   };
   function claimUnit(a) {
-    const w = W, b = w.buildings.get(a.building); if (!b) return false; b.lf.claim = { name: a.name || 'New business', group: a.group ?? null, tick: w.tick };
+    const w = W, b = w.buildings.get(a.building); if (!b) return false;
+    if (w.commands.has('business.claimUnit')) return w.cmd('business.claimUnit', a); // business plugin: type, rent, loan, staffing, venue rename
+    b.lf.claim = { name: a.name || 'New business', group: a.group ?? null, tick: w.tick };
     if (w.commands.has('labour.openFirm')) w.cmd('labour.openFirm', { bid: b.id, name: a.name });
     H(w).extraCafes = (H(w).extraCafes || 0) + 1;
     w.emit('housing.unit_claimed', { place: b.id, salience: 0.4, cause: a.cause || 0, tags: ['housing', 'civic', 'visible'], payload: { name: a.name || 'New business' } }); return true;

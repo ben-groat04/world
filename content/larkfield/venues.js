@@ -124,6 +124,19 @@ export const VENUE_TEMPLATES = {
     sessions: [{ kind: 'appointment', days: D.wk, from: 9, to: 18, fill: 0.2 }], staff: [{ occ: 'lettings_agent', n: [2, 4], pattern: 'day' }, { occ: 'office_administrator', n: [1, 1], pattern: 'day' }],
     names: ['Haywards Lettings & Sales', 'Moor & Co', 'Key Move Estates', 'Urban Nest Lettings'], tags: ['housing', 'office'],
   },
+  // Added by the business plugin (W2-A): formats that arrive as the high street changes (LDC/PwC: vape shops, discounters among fastest-growing categories).
+  vape_shop: {
+    id: 'vape_shop', label: 'Vape shop', category: 'retail', zone: 'none', count: [0, 0], footprint: { w: 4, d: 7 }, storeysAbove: 1,
+    hours: H([[9.5, 18.5]], [[9.5, 18.5]], [[11, 16]]), capacity: 6, priceLevel: 1, spendGBP: [8, 40],
+    sessions: [{ kind: 'shopping', days: D.all, from: 11, to: 18, fill: 0.2, regulars: 0.7 }], staff: [{ occ: 'retail_assistant', n: [1, 2], pattern: 'day' }],
+    names: ['Cloud Nine Vapes', 'Vape Lounge', 'Puff Station', 'Vapour Trail', 'Juice Box'], tags: ['shop', 'regulars'],
+  },
+  discount_store: {
+    id: 'discount_store', label: 'Discount / variety store', category: 'retail', zone: 'none', count: [0, 0], footprint: { w: 8, d: 8 }, storeysAbove: 0,
+    hours: H([[8.5, 18]], [[8.5, 18]], [[10, 16]], 'sun'), capacity: 30, priceLevel: 1, spendGBP: [2, 25],
+    sessions: [{ kind: 'shopping', days: D.all, from: 10, to: 17, fill: 0.4 }], staff: [{ occ: 'retail_assistant', n: [3, 5], pattern: 'retail_rota' }, { occ: 'store_manager', n: [1, 1], pattern: 'day' }],
+    names: ['Pound Bazaar', 'Bargain Hub', 'Everything 99p'], tags: ['shop', 'chain'],
+  },
   vacant_unit: {
     id: 'vacant_unit', label: 'Vacant / "to let" shop unit', category: 'vacant', zone: 'hs', count: [1, 3], footprint: { w: 5, d: 7 }, storeysAbove: 1,
     hours: H(CLOSED), capacity: 0, sessions: [], staff: [], names: ['TO LET'], tags: ['vacant'], filler: true,

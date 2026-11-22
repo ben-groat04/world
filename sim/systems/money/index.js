@@ -23,8 +23,8 @@ const EVENTS = [
   ['money.macro_shift', 'The macro vector changed regime (recession, energy shock, rate change)', { what: 'string' }],
 ];
 const M = (w) => w.lf.money;
-const FOOD_VENUES = new Set(['corner_shop', 'small_supermarket', 'ethnic_grocer', 'bakery', 'off_licence']);
-const LEISURE_VENUES = new Set(['cafe', 'pub', 'takeaway', 'restaurant', 'barber', 'salon', 'launderette', 'bookmaker', 'gym', 'charity_shop', 'money_phone']);
+const FOOD_VENUES = new Set(['corner_shop', 'small_supermarket', 'ethnic_grocer', 'bakery', 'off_licence', 'discount_store']);
+const LEISURE_VENUES = new Set(['cafe', 'pub', 'takeaway', 'restaurant', 'barber', 'salon', 'launderette', 'bookmaker', 'gym', 'charity_shop', 'money_phone', 'vape_shop']);
 const CC_RATE = 0.0185, OD_FEE = 0.025, PD_ROLL = 0.35, PD_CAP = 1500;
 
 function newMacro() { return { rate: 4.0, mortRate: 4.8, cpi: 3.0, price: 1, wage: 1, rent: 1, hpi: 1, energy: 1, benefit: 1, taxIdx: 1, nmw: 1, recession: 0, recMonths: 0, energyShock: 0, wageGrowth: 3.6, rentGrowth: 4.5, hpiGrowth: 2.5, month: 0 }; }
@@ -129,7 +129,8 @@ function monthly(w) {
   const venueIn = new Map(), wages = new Map();
   const foodVenues = [], leisureVenues = [];
   for (const v of w.map.lf.venues) {
-    const t = v.template, st = pack.venues[t] && pack.venues[t].staff; const wt = (st ? st.reduce((s, x) => s + (Array.isArray(x.n) ? (x.n[0] + x.n[1]) / 2 : x.n), 0) : 1) + 0.5;
+    const t = v.template, st = pack.venues[t] && pack.venues[t].staff; let wt = (st ? st.reduce((s, x) => s + (Array.isArray(x.n) ? (x.n[0] + x.n[1]) / 2 : x.n), 0) : 1) + 0.5;
+    if (w.sys.business) { const bw = w.sys.business.query.weight(v.buildingId); if (bw != null) wt = bw; } // where residents actually spend follows footfall, reputation and price (business plugin)
     if (FOOD_VENUES.has(t)) foodVenues.push([v.buildingId, wt]); else if (LEISURE_VENUES.has(t)) leisureVenues.push([v.buildingId, wt]);
   }
   const pickVenue = (list) => { if (!list.length) return null; let tot = 0; for (const x of list) tot += x[1]; let r = rng.next() * tot; for (const x of list) { r -= x[1]; if (r <= 0) return x[0]; } return list[list.length - 1][0]; };
@@ -341,6 +342,7 @@ function monthly(w) {
     if (!b.lf || !b.lf.staff || !b.lf.staff.length) continue;
     const acc = 'b:' + b.id, closed = labour && labour.query.firmClosed ? labour.query.firmClosed(b.id) : false, wg = wages.get(b.id) || 0, local = venueIn.get(b.id) || 0;
     if (closed) { const bal = L.balance(acc); if (bal > 0) L.transfer(acc, 'metropolis', bal, 'business_wind_down'); else if (bal < 0) L.transfer('metropolis', acc, -bal, 'business_wind_down'); continue; }
+    if (w.sys.business && w.sys.business.query.manages(b.id)) continue; // P&L, top-ups and closure of managed businesses belong to the business plugin
     const base = S.venueBase[b.id] = S.venueBase[b.id] === undefined ? local : S.venueBase[b.id] * 0.9 + local * 0.1;
     const demand = base > 20 ? clamp(local / base, 0.6, 1.4) : 1;
     const h0 = hv(b.id), h1 = clamp(0.55 * h0 + 0.45 * (0.65 + 0.35 * demand) - 0.22 * macro.recession + rng.gauss(0.03, 0.03), 0.15, 1.35); S.venueHealth[b.id] = h1;

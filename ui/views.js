@@ -3,7 +3,7 @@ import { drawPortrait } from './portrait.js';
 
 export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const pct = (v) => Math.round(v * 100);
-const gbp = (n) => '£' + Math.round(n).toLocaleString('en-GB');
+const gbp = (n) => (Number.isFinite(+n) ? (n < 0 ? '-£' : '£') + Math.abs(Math.round(n)).toLocaleString('en-GB') : '£–');
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 /** Human durations: "3 days", "5 weeks", "8 months", "2 years 3 months". */
 export const dur = (days) => { days = Math.max(0, Math.round(days)); if (days < 2) return days <= 0 ? 'today' : '1 day'; if (days < 14) return days + ' days'; if (days < 60) return Math.round(days / 7) + ' weeks'; if (days < 730) { const m = Math.round(days / 30.4); return m + ' months'; } const y = Math.floor(days / 365.25), m = Math.round((days - y * 365.25) / 30.4); return y + ' years' + (m && m < 12 ? ' ' + m + ' months' : ''); };

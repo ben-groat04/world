@@ -129,7 +129,7 @@ export class PlayHost {
           // The odds life.askOut used, and which ingredient pulled them down most. Nothing here decides the result: it is read back from the sim.
           const fx = r.fx || {}, pc = r.p != null ? Math.round(r.p * 100) : null, parts = [['att', 0.4 * (fx.att || 0), 0.4, `${who} does not seem to find you attractive yet`], ['aff', 0.3 * (fx.aff || 0), 0.3, `the two of you have not really clicked yet (little in common so far)`], ['fam', 0.25 * (fx.fam || 0), 0.25, `you have not spent enough time together yet`], ['gap', -(fx.gap || 0) / 40, 0, `there is a ${fx.gap}-year age gap`]];
           const worst = parts.map((x) => ({ ...x, lack: x[2] - x[1] })).sort((m, n) => n.lack - m.lack)[0], odds = pc == null ? '' : pc < 12 ? 'a long shot' : pc < 30 ? 'roughly one chance in four' : pc < 50 ? 'a fair chance' : 'good odds';
-          return out(`${who} said no`, `Asked ${r.inPerson ? 'in person' : 'by message'}. It was ${odds}${pc != null ? ` (about ${pc}%)` : ''} and the main thing against you: ${worst.lack > 0.02 ? worst[3] : 'it just was not their moment'}. Rejection dents ${who}'s interest a little, so asking again right away will not help. You can ask again in about three weeks. Meanwhile see them at a group, chat, message; or try the app.`, { next: [{ label: 'Open dating', open: 'dating' }, { label: 'Meet people', open: 'places' }] });
+          return out(`${who} said no`, `Asked ${r.inPerson ? 'in person' : 'by message'}. It was ${odds}${pc != null ? ` (about ${pc}%)` : ''} and the weakest ingredient was this: ${worst.lack > 0.02 ? worst[3] : 'nothing stood out, it just went the other way'}. Rejection dents ${who}'s interest a little, so asking again right away will not help. You can ask again in about three weeks. Meanwhile see them at a group, chat, message; or try the app.`, { next: [{ label: 'Open dating', open: 'dating' }, { label: 'Meet people', open: 'places' }] });
         }
         return out(`${who} said no`, `Nothing more to say about why. Give it a few weeks and spend time together first.`, { next: [{ label: 'Message them', open: 'dating' }] });
       }
@@ -147,7 +147,7 @@ export class PlayHost {
         return out('Could not apply', r.why ? cap1(r.why) + '.' : 'That job is not available.');
       }
       case 'player.quit': return r.ok ? out('You handed in your notice', 'You will not be paid after your last day. Look under Life admin > Jobs for something else.', { next: [{ label: 'Find a job', open: 'work' }] }) : out('You have no job to quit', 'You are not employed right now.');
-      case 'player.rent': return r.ok ? out('You signed a new lease', 'Your belongings follow within a day or so, and the people you live with come too. Rent is due monthly from now; check Me > money, and tell the neighbours you are leaving by seeing them first.', { next: [{ label: 'Check my money', open: 'me' }] }) : out('Could not take that flat', /deposit/.test(r.why || '') ? `Your household does not have enough cash on hand for the deposit and first rent (you hold £${Math.round(w.people.get(pid)?.money || 0).toLocaleString('en-GB')}). Earn first, or pick a cheaper flat.` : r.why ? cap1(r.why) + '. Another one may suit better.' : 'It may have just gone to someone else. Pick another.', { next: [{ label: 'See other flats', open: 'work' }] });
+      case 'player.rent': return r.ok ? out('You signed a new lease', 'Your belongings follow within a day or so, and the people you live with come too. Rent is due monthly from now; check Me > money, and tell the neighbours you are leaving by seeing them first.', { next: [{ label: 'Check my money', open: 'me' }] }) : out('Could not take that flat', /deposit/.test(r.why || '') ? `Your household does not have enough cash on hand for the deposit and first rent (you hold ${gbpH(w.people.get(pid)?.money)}). Earn first, or pick a cheaper flat.` : r.why ? cap1(r.why) + '. Another one may suit better.' : 'It may have just gone to someone else. Pick another.', { next: [{ label: 'See other flats', open: 'work' }] });
       case 'player.join': {
         if (r.ok) return out(`You joined ${r.name}`, `A ${lc(r.kind)} with ${r.size} members${r.venue != null ? `, based around ${place(r.venue)}` : ''}. Being a member puts you in the same places as the others, which is how you get to know them. Go along when they meet, or look for members in Here & now.`, { next: [{ label: 'Things to try', open: 'menu' }] });
         return out('Could not join', /already/.test(r.why || '') ? 'You are already a member of that group.' : r.why ? cap1(r.why) + '. Try another group, or start your own.' : 'Try another group, or start your own.');
@@ -174,13 +174,13 @@ export class PlayHost {
       case 'player.goOut': return out('Out in the city', 'A few hours away from the neighbourhood. You will be back on the map after.');
       case 'business.start': {
         if (SOLO_LABEL[a.type]) {
-          if (r.ok) return out(`You started ${SOLO_LABEL[a.type]}`, `Set-up cost £${(r.cost || 0).toLocaleString('en-GB')}${r.loan ? `, of which £${r.loan.toLocaleString('en-GB')} is a start-up loan repaid monthly from takings` : ', paid from your savings'}. Takings start low and build over many months; pitch, van or insurance costs and any loan repayment come out every month. If it loses money for six months running it closes. Watch your money in Me, and the news for how it is going.`, { next: [{ label: 'Check my money', open: 'me' }] });
+          if (r.ok) return out(`You started ${SOLO_LABEL[a.type]}`, `Set-up cost ${gbpH(r.cost)}${r.loan ? `, of which ${gbpH(r.loan)} is a start-up loan repaid monthly from takings` : ', paid from your savings'}. Takings start low and build over many months; pitch, van or insurance costs and any loan repayment come out every month. If it loses money for six months running it closes. Watch your money in Me, and the news for how it is going.`, { next: [{ label: 'Check my money', open: 'me' }] });
           if (/already running/.test(r.why || '')) return out('You already run one', 'One small trade at a time. It closes if it loses money for six months running.');
-          return out('Could not start it', `${cap1(r.why || 'it did not come off')}${r.loanRefused ? '. The start-up loan went through a credit and business-plan check and was refused' : ''}. You hold £${Math.round(w.people.get(pid)?.money || 0).toLocaleString('en-GB')}; the stall needs about £${(r.cost || 0).toLocaleString('en-GB')} between savings (up to 80% of what you hold) and a loan. Try the cheapest option (home-based), or save first.`, { next: [{ label: 'Choose again', open: 'work' }] });
+          return out('Could not start it', `${r.loanRefused ? 'The start-up loan was refused after a credit and business-plan check.' : 'Savings alone do not cover it.'} You hold ${gbpH(w.people.get(pid)?.money)} and up to 80% of that can go in; it needs about ${gbpH(r.cost)} in all. Try the cheapest option (home-based), or save first.`, { next: [{ label: 'Choose again', open: 'work' }] });
         }
         const addr = (this.h.byBid.get(a.unit)?.lf?.address || 'the unit').replace(/^TO LET, /, '');
         if (r.ok) return out(`You opened a ${fmtLabel(a.type).toLowerCase()}`, `It is at ${addr}. Set-up cost about £${(r.cost || 0).toLocaleString('en-GB')}, paid from your savings and ${a.loan === false ? 'no loan' : 'a start-up loan (up to £25,000, repaid from takings)'}. New businesses rarely make money in the first year and rent, wages and rates come out every month. Tap the building on the map to see how it is doing; regulars and reviews build slowly.`, { next: [{ label: 'Check my money', open: 'me' }] });
-        if (/needs about/.test(r.why || '')) return out('Not enough to start up yet', `${cap1(r.why).replace(/£(\d{4,})/g, (m, n) => '£' + (+n).toLocaleString('en-GB'))}. You have £${Math.round(w.people.get(pid)?.money || 0).toLocaleString('en-GB')} in hand. A smaller unit or a cheaper type (a barber or corner shop costs far less than a restaurant) may fit.`, { next: [{ label: 'Choose again', open: 'work' }] });
+        if (/needs about/.test(r.why || '')) return out('Not enough to start up yet', `${cap1(r.why).replace(/£(\d{4,})/g, (m, n) => '£' + (+n).toLocaleString('en-GB'))}. You have ${gbpH(w.people.get(pid)?.money)} in hand. A smaller unit or a cheaper type (a barber or corner shop costs far less than a restaurant) may fit.`, { next: [{ label: 'Choose again', open: 'work' }] });
         if (/not vacant/.test(r.why || '')) return out('That unit has just gone', 'Someone else took it. Pick another empty unit.', { next: [{ label: 'See units to let', open: 'work' }] });
         return out('Could not start a business', r.why ? cap1(r.why) + '.' : 'Pick a unit to let and a type of business.', { next: [{ label: 'Back', open: 'work' }] });
       }
@@ -227,6 +227,7 @@ export class PlayHost {
       case 'do': return this.verb(m.name, m.args);
       case 'skip': return m.what === 'morning' ? this.skipMorning() : this.skipTo(Math.round((m.hours || 2) * 6), `${m.hours || 2} hours later.`);
       case 'pauseOnEvent': this.pauseOnEvent = !!m.on; return;
+      case 'godUndo': return this.undo(m.id);
       case 'section': return this.section(m.name);
       case 'state': return this.state(true);
     }
@@ -321,21 +322,27 @@ export class PlayHost {
     // shortcuts that fit this life
     const tips = [];
     if (kind === 'student') { tips.push({ t: 'Earn a bit alongside your course', d: 'Part-time jobs fit around lectures. Employers reply in 1-3 weeks.', open: 'work' }); if (money0(p.money) < 150 || debt > 500) tips.push({ t: 'Money is tight', d: 'Goals: "Sort out benefits" or "Find some quick cash" start a plan that runs over days.', open: 'goals' }); tips.push({ t: 'Join a society or team', d: 'The quickest way to widen your circle: you end up in the same places each week.', open: 'goals' }); }
-    else if (kind === 'retired') { tips.push({ t: 'See who is around', d: 'Cafes, the library and the community centre are where neighbours drop in.', open: 'places' }); tips.push({ t: 'Join something local', d: 'Choir, allotment, book group, faith group: you meet the same people weekly.', open: 'goals' }); if ((p.health ?? 1) < 0.65) tips.push({ t: 'Health is not great', d: 'Goal "See the GP" books an appointment over the next days.', open: 'goals' }); tips.push({ t: 'Keep a small sideline', d: 'A market stall or home-based trade is open to anyone. Costs and risks are shown first.', open: 'work' }); }
-    else if (kind === 'jobless') { tips.push({ t: 'Apply for jobs', d: 'You can have three applications out. Replies take 1-3 weeks.', open: 'work' }); if (money0(p.money) < 150 || arrears > 0 || debt > 300) tips.push({ t: 'Sort out money first', d: 'Goals: "Sort out benefits" or "Pay down the debt" make a plan that runs in the background.', open: 'goals' }); tips.push({ t: 'Try working for yourself', d: 'A market stall is the cheapest route: no premises, small set-up.', open: 'work' }); }
+    else if (kind === 'retired') { tips.push({ t: 'See who is around', d: 'Cafes, the library and the community centre are where neighbours drop in.', open: 'places' }); tips.push({ t: 'Join something local', d: 'Choir, allotment, book group, faith group: you meet the same people weekly.', open: 'goals' }); if ((p.health ?? 1) < 0.65) tips.push({ t: 'Health is not great', d: 'Goal "See the GP" books an appointment over the next days.', open: 'goals' }); if (!this.soloOf(pid)) tips.push({ t: 'Keep a small sideline', d: 'A market stall or home-based trade is open to anyone. Costs and risks are shown first.', open: 'work' }); }
+    else if (kind === 'jobless') { tips.push({ t: 'Apply for jobs', d: 'You can have three applications out. Replies take 1-3 weeks.', open: 'work' }); if (money0(p.money) < 150 || arrears > 0 || debt > 300) tips.push({ t: 'Sort out money first', d: 'Goals: "Sort out benefits" or "Pay down the debt" make a plan that runs in the background.', open: 'goals' }); tips.push({ t: 'Study or retrain', d: 'Goal "Do a course" plans the enrolment and study over weeks.', open: 'goals' }); if (!this.soloOf(pid)) tips.push({ t: 'Try working for yourself', d: 'A market stall is the cheapest route: no premises, small set-up.', open: 'work' }); }
     else if (kind === 'working') { tips.push({ t: 'Change job or ask for a raise', d: 'Goals plan the steps (look, apply, interview). Outcomes depend on the labour market.', open: 'goals' }); if (arrears > 0 || debt > 500) tips.push({ t: 'Money is stretched', d: 'Goal "Pay down the debt", or move somewhere cheaper in Life admin.', open: 'goals' }); }
     else { tips.push({ t: 'Look for work or a small trade', d: 'Jobs, local firms and a market stall are all in Life admin.', open: 'work' }); }
     if (single && kind !== 'retired') tips.push({ t: 'Dating', d: 'Switch on the app (matches arrive over days) or ask out someone you already know.', open: 'dating' });
     if (part2) tips.push({ t: 'Spend time with ' + part.firstName, d: 'Seeing each other and messaging keep a relationship warm.', open: 'phone' });
     return { kind, age, facts: facts.filter((f) => f.text), tips: tips.slice(0, 4), withParents, rented: /rent/.test(ten), owns: /owned|mortgage/.test(ten), ten: lc(ten), rent, money: money0(p.money), partner: part ? part.firstName : '' };
   }
+  // Does this person run a stall/home business? (the business plugin has no query for it yet, so read the opened/closed events)
+  soloOf(pid) {
+    const ev = this.S(() => this.w.events.query({ actor: pid, type: 'business.opened', limit: 20 }), []).filter((r) => r.payload && SOLO_LABEL[r.payload.fid]), cl = this.S(() => this.w.events.query({ actor: pid, type: 'business.closed', limit: 20 }), []).filter((r) => r.payload && SOLO_LABEL[r.payload.fid]);
+    const last = ev[0]; if (!last || (cl[0] && cl[0].tick > last.tick)) return null; return { label: SOLO_LABEL[last.payload.fid], since: this.w.calendar.formatDate(last.tick) };
+  }
   // "Lately": what actually happened around you (events from the sim that you are part of, newest first) plus your own actions.
   lately(pid) {
     const w = this.w, q = w.sys, out = [], seen = new Set(), since = w.tick - 144 * 21;
     const evs = this.S(() => w.events.query({ actor: pid, since, minSalience: 0.2, limit: 60 }), []);
-    for (const r of evs) { if (isPrivate(r) || /^kernel\.|^goal\.|^routine\./.test(r.type)) continue; const d = this.S(() => describeEvent(w, r, this.h.text)); if (!d || !d.line || seen.has(d.line)) continue; seen.add(d.line); out.push({ tick: r.tick, text: d.line }); }
+    for (const r of evs) { if (isPrivate(r) || /^kernel\.|^goal\.|^routine\./.test(r.type)) continue; const sf = r.payload && SOLO_LABEL[r.payload.fid]; const d = sf && /^business\.(opened|closed)$/.test(r.type) ? { line: r.type === 'business.opened' ? `You started ${sf}` : `Your ${sf.replace(/^a /, '')} closed (${r.payload.reason === 'insolvent' ? 'six months of losses' : 'you moved on'})` } : this.S(() => describeEvent(w, r, this.h.text)); if (!d || !d.line || seen.has(d.line)) continue; seen.add(d.line); out.push({ tick: r.tick, text: d.line, ev: true }); }
     for (const l of this.S(() => q.player.query.log(), []).slice(-8)) if (!seen.has(l.text)) { seen.add(l.text); out.push({ tick: l.tick, text: l.text }); }
-    return out.sort((a, b) => b.tick - a.tick).slice(0, 6).map((l) => ({ ago: Math.max(0, Math.round((w.tick - l.tick) / 144)), text: l.text }));
+    const me = w.people.get(pid), full = me ? nm(me) : null, you = (t) => (full ? t.split(full + "'s").join('Your').split(full).join('you').replace(/^you\b/, 'You') : t);
+    return out.sort((a, b) => b.tick - a.tick).slice(0, 6).map((l) => ({ ago: Math.max(0, Math.round((w.tick - l.tick) / 144)), text: l.ev ? you(l.text).replace(/^You: /, '') : l.text }));
   }
   // The few sensible things to do right now, from the real situation (who is here, where, time, money, job).
   hereActions(p, here, loc, off) {
@@ -386,7 +393,7 @@ export class PlayHost {
     } else if (name === 'goals') {
       out.goals = this.S(() => q.goals.query.goalsOf(pid), []).filter((g) => !g.mundane).map((g) => { const f = this.S(() => q.goals.query.goal(g.id)); return { id: g.id, phrase: g.phrase, status: g.status, line: g.line || '', plan: f ? this.planOf(f) : [] }; });
       out.groups = this.S(() => q.goals.query.groupsOf(pid), []).map((g) => ({ id: g.id, name: g.name, kind: lc(g.kind), size: g.size }));
-      const known = new Set(this.S(() => q.social.query.ties(pid), []).filter((t) => typeof t.o === 'number' && t.lv >= 2).map((t) => t.o));
+      const known = new Set(this.S(() => q.social.query.ties(pid), []).filter((t) => typeof t.o === 'number' && t.on).map((t) => t.o));
       out.open = this.S(() => q.goals.query.groups({}), []).filter((g) => !out.groups.some((x) => x.id === g.id)).map((g) => { const f = this.S(() => q.goals.query.group(g.id)), mem = f && f.members ? f.members : [], kn = mem.filter((m) => known.has(m.id)).map((m) => w.people.get(m.id)?.firstName).filter(Boolean); return { id: g.id, name: g.name, kind: lc(g.kind), size: g.size, at: this.h.place(g.venue)?.name || '', knows: kn.length, names: kn.slice(0, 3).join(', ') }; }).sort((a, b) => b.knows - a.knows || b.size - a.size).slice(0, 12);
       const gt = new Map((w.pack.goalTemplates || []).map((t) => [t.id, t]));
       out.templates = this.S(() => q.goals.query.templates().filter((t) => !t.mundane && !t.invented && !NEEDS_SITUATION.has(t.id)).map((t) => { const g = gt.get(t.id) || {}; return { id: t.id, phrase: t.phrase, by: (g.by || []).slice(0, 4).map(lc), days: g.horizon || null }; }), []).slice(0, 70);
@@ -406,8 +413,8 @@ export class PlayHost {
       out.dests = Object.keys(w.pack.meta.offmap).filter((k) => /centre|leisure|retail|airport|other_neigh/.test(k)).map((k) => ({ k, name: lc(k) }));
     } else if (name === 'work') {
       const P = q.player.query; const seenOcc = new Set(); out.openings = P.openings().map((o) => ({ occ: o.occ, ...this.jobInfo(o.occ), bid: o.bid ?? null, at: o.bid != null ? this.h.place(o.bid)?.name : '', count: o.count })).filter((o) => { const k = o.occ + ':' + o.bid; if (seenOcc.has(k)) return false; seenOcc.add(k); return true; }).sort((a, b) => (b.bid != null) - (a.bid != null) || b.mid - a.mid).slice(0, 70);
-      out.pending = this.S(() => P.pending(pid), []).map((x) => ({ ...x, label: this.jobInfo(x.occ).label })); out.job = this.S(() => q.labour.query.job(pid)); if (out.job && out.job.occ) out.job = { ...out.job, ...this.jobInfo(out.job.occ) }; out.vac = P.vacancies().filter((u) => u.tenure === 'private_rent').slice(0, 10).map((u) => ({ id: u.id, address: u.address, rent: money0(u.rent), beds: u.bedrooms, need: money0(u.rent * 0.6) })); // housing.rentFlat refuses unless the household holds at least 60% of one month's rent
-      out.solo = this.S(() => q.business.query.startOptions(pid, null).solo, []); out.me = this.situation(pid);
+      out.pending = this.S(() => P.pending(pid), []).map((x) => ({ ...x, label: this.jobInfo(x.occ).label })); out.job = this.S(() => q.labour.query.job(pid)); if (out.job && out.job.occ) out.job = { ...this.jobInfo(out.job.occ), ...out.job }; out.vac = P.vacancies().filter((u) => u.tenure === 'private_rent').slice(0, 10).map((u) => ({ id: u.id, address: u.address, rent: money0(u.rent), beds: u.bedrooms, need: money0(u.rent * 0.6) })); // housing.rentFlat refuses unless the household holds at least 60% of one month's rent
+      out.solo = this.S(() => q.business.query.startOptions(pid, null).solo, []); out.mySolo = this.soloOf(pid); out.me = this.situation(pid);
       out.unit = this.S(() => q.housing.query.unit(pid)); out.admin = adminData(this.h, pid);
     }
     this.say({ t: 'play.section', ...out });
@@ -418,15 +425,22 @@ export class PlayHost {
     const P = GOD_PRESETS.find((x) => x.id === m.id); if (!P) return;
     const w = this.w, before = w.events.nextId; const results = [];
     for (const s of P.steps(m.picks || {}, this.h)) { try { results.push(w.queueCommand({ actor: 'god', name: s.name, args: s.args })); } catch (e) { results.push(false); } }
-    this.track(P.label, P.describe ? P.describe(m.picks || {}, this.h) : P.desc, before, P.icon);
+    const iv = this.track(P.label, P.describe ? P.describe(m.picks || {}, this.h) : P.desc, before, P.icon);
+    if (iv) { iv.preset = P.id; iv.ends = P.lasts ? w.calendar.formatDate(w.tick + P.lasts * 144) : null; iv.undo = P.undo ? P.undo.label : null; this.convSig = ''; this.sendConseq(); }
+    if (this.h.tier === 'pause') this.h.setTier('scene'); // a paused world shows nothing: let time run so the reaction can be watched
     this.say({ t: 'result', name: P.label, ok: results.some((r) => r !== false), error: null, args: m.picks, date: w.calendar.formatDate(w.tick) });
+  }
+  undo(id) {
+    const iv = this.ivs.find((x) => x.id === id), P = iv && GOD_PRESETS.find((x) => x.id === iv.preset); if (!P || !P.undo || iv.undone) return; const w = this.w, b = w.events.nextId;
+    for (const s of P.undo.steps()) { try { w.queueCommand({ actor: 'god', name: s.name, args: s.args }); } catch (e) { /* ignore */ } }
+    iv.undone = true; this.track('Reversed: ' + P.label, `${P.undo.label}. This is a new intervention: evictions, moves, closures and illnesses it already caused stay.`, b, '↺'); this.say({ t: 'result', name: P.undo.label, ok: true, error: null, date: w.calendar.formatDate(w.tick) });
   }
   track(label, body, before, icon) {
     const w = this.w, roots = []; for (let id = before; id < w.events.nextId; id++) { const r = w.events.get(id); if (r && r.type !== 'kernel.command') roots.push(r); }
     const iv = { id: this.ivSeq++, label, body: body || '', icon: icon || '★', tick: w.tick, date: w.calendar.formatDate(w.tick), n: 0, kinds: {}, actors: new Set(), buckets: [0], top: [], roots: roots.length, last: w.tick };
     this.ivs.push(iv); if (this.ivs.length > 12) { const old = this.ivs.shift(); for (const [k, v] of this.tracked) if (v === old) this.tracked.delete(k); }
     for (const r of roots) { this.tracked.set(r.id, iv); this.count(iv, r); }
-    this.scanFrom = Math.max(this.scanFrom, w.events.nextId); this.convSig = ''; this.sendConseq();
+    this.scanFrom = Math.max(this.scanFrom, w.events.nextId); this.convSig = ''; this.sendConseq(); return iv;
   }
   count(iv, r) {
     iv.n++; const k = r.type.split('.')[0]; iv.kinds[k] = (iv.kinds[k] || 0) + 1; for (const a of r.actors) if (typeof a === 'number') iv.actors.add(a);
@@ -443,7 +457,7 @@ export class PlayHost {
     const list = this.ivs.slice().reverse().map((iv) => {
       iv.top.sort((a, c) => c.s - a.s || a.tick - c.tick); const top = [];
       for (const t of iv.top.slice(0, 6)) { const r = w.events.get(t.id); if (!r || isPrivate(r)) continue; const d = this.S(() => describeEvent(w, r, this.h.text)); if (d && d.line) top.push({ date: w.calendar.formatDate(r.tick), text: d.line, pid: typeof r.actors[0] === 'number' ? r.actors[0] : null }); }
-      return { id: iv.id, label: iv.label, body: iv.body, icon: iv.icon, date: iv.date, n: iv.n, people: iv.actors.size, kinds: iv.kinds, buckets: iv.buckets.slice(0, 40), top, days: Math.round((w.tick - iv.tick) / 144), live: w.tick - iv.last < WEEK * 2 };
+      return { id: iv.id, label: iv.label, body: iv.body, icon: iv.icon, date: iv.date, ends: iv.ends || null, undo: iv.undo && !iv.undone ? iv.undo : null, undone: !!iv.undone, n: iv.n, people: iv.actors.size, kinds: iv.kinds, buckets: iv.buckets.slice(0, 40), top, days: Math.round((w.tick - iv.tick) / 144), live: w.tick - iv.last < WEEK * 2 };
     });
     this.say({ t: 'conseq', list });
   }

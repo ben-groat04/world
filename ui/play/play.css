@@ -79,3 +79,16 @@ body.playing #ticker { display: none; } .pa button { min-height: 44px; }
 .pdet > summary::before { content: '\25B8'; color: var(--dim); font-size: 11px; } .pdet[open] > summary::before { content: '\25BE'; } .pdet > summary small { margin-left: auto; color: var(--mute); font-weight: 500; font-size: 12px; } .pdb { padding: 0 12px 12px; }
 .pdb h5 { margin: 14px 0 6px; } .pb.sel { outline: 2px solid var(--accent); } .pl2.ck { display: flex; gap: 8px; align-items: center; } .pdb select { width: 100%; }
 .pfb p { white-space: pre-line; }
+
+/* ---- play clarity pass: >=44px tap targets, who-am-I card, ways forward, consequence facts, take-over filters */
+.pb.sm { min-height: 44px; } .pchip { min-height: 44px; align-items: center; justify-content: center; } .ptabs { gap: 4px; } .ptabs button { min-height: 44px; padding: 0 12px; flex: 1 0 auto; }
+.pfn button, .plink, .pback, .pclose { min-height: 44px; } .pfn button { padding: 0 12px; }
+.pwhoami { border: 1px solid var(--line); border-radius: 12px; background: var(--panel2); margin: 6px 0 10px; } .pwhoami > summary { padding: 12px; font-weight: 700; font-size: 14px; cursor: pointer; list-style: none; min-height: 44px; display: flex; gap: 8px; align-items: baseline; } .pwhoami > summary::-webkit-details-marker { display: none; }
+.pwhoami > summary::before { content: '\25B8'; color: var(--dim); font-size: 11px; } .pwhoami[open] > summary::before { content: '\25BE'; } .pwhoami > summary small { margin-left: auto; color: var(--mute); font-weight: 500; font-size: 12px; }
+.pwhoami dl { margin: 0; padding: 0 12px 10px; } .pwhoami dl div { display: flex; gap: 10px; padding: 5px 0; border-top: 1px solid var(--line); font-size: 13.5px; line-height: 1.35; } .pwhoami dt { flex: 0 0 64px; color: var(--mute); font-size: 12px; padding-top: 1px; } .pwhoami dd { margin: 0; flex: 1; } .pwhoami .warn dd { color: var(--warn); }
+.ptips { display: grid; gap: 6px; } .ptips button { text-align: left; border: 1px solid #38506b; background: #22313f; color: var(--ink); border-radius: 11px; padding: 10px 12px; min-height: 52px; font-size: 14px; } .ptips button b { display: block; } .ptips button small { display: block; color: var(--mute); font-size: 12px; margin-top: 2px; line-height: 1.35; }
+.pfacts { margin: 8px 0 0; padding: 8px 10px; list-style: none; border-radius: 8px; background: rgba(255, 255, 255, .05); font-size: 12.5px; color: #cfd9e6; } .pfacts li { padding: 1px 0; } .pfacts li::before { content: '\21AA\00a0'; color: var(--dim); }
+.pdb .pchips, .pbody > .pchips { margin: 6px 0; } #tq, #pq, #pgname { min-height: 44px; }
+.pb.row small, .pact small { line-height: 1.35; }
+.ghint { border: 1px solid #38506b; background: #1d2a39; border-radius: 12px; padding: 12px; margin: 8px 0; font-size: 13.5px; line-height: 1.45; } .ghint p { margin: 6px 0 8px; color: #d3dce8; } .gnote { margin: 6px 0; font-size: 12.5px; color: var(--mute); line-height: 1.4; } .gcons[open] > summary { position: sticky; top: 0; }
+.pdet > summary, .pthings > summary, .gcons > summary { min-height: 44px; box-sizing: border-box; align-items: center; } .pdb select, .pl2 select, #padopt, #pbtype, #pwork, #pcase, #pparty { min-height: 44px; }

@@ -4,7 +4,7 @@ export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 const cap1 = (s) => (s ? String(s)[0].toUpperCase() + String(s).slice(1) : s);
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
-const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
+const money = (n) => (Number.isFinite(+n) ? (n < 0 ? '-£' : '£') + Math.abs(Math.round(n)).toLocaleString('en-GB') : '£–');
 let PHR = null;
 const phrase = (w, id) => { if (!PHR) { PHR = new Map(); try { for (const t of w.sys.goals.query.templates()) PHR.set(t.id, t.phrase); } catch (e) { /* ignore */ } } return PHR.get(id) || lc(id); };
 
@@ -108,7 +108,7 @@ const T = {
 };
 
 // ---- Town news: business, civic and (anonymised, non-sensitive) safety items in a sober local-paper tone. Never names victims or offenders; never uses events tagged private/sensitive.
-const pound = (n) => '£' + Math.round(n).toLocaleString('en-GB');
+const pound = (n) => (Number.isFinite(+n) ? (n < 0 ? '-£' : '£') + Math.abs(Math.round(n)).toLocaleString('en-GB') : '£–');
 const streetName = (w, sid) => (w.map && w.map.lf && w.map.lf.streets[sid] ? w.map.lf.streets[sid].name : 'the area');
 const svcName = { library: 'library', youth: 'youth club', bins: 'bin collections', roads: 'road repairs', repairs: 'council housing repairs', noise: 'noise enforcement' };
 const CRIME = { 'crime.burglary': ['Burglary reported', 'Police recorded a burglary at a home that was empty at the time. Residents are reminded to lock doors and windows, even for a short trip out.'],

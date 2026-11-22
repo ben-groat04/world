@@ -44,14 +44,17 @@ async function turn(n, user) {
 }
 async function askOracle(who, q) {
   const ctx = convo.slice(-6).map(m => `${m.who}: ${m.text}`).join('\n\n');
-  const argv = ['-p', `Recent conversation:\n${ctx}\n\nQuestion from ${who}: ${q}`, '--output-format', 'json', '--system-prompt', `${NOTE} You are the oracle in a group chat of friends. Answer the question in a few plain sentences. Name a source when it matters.`,
+  // stream-json, not json: with web search the model writes text across several turns, and json's .result keeps only the last block.
+  const argv = ['-p', `Recent conversation:\n${ctx}\n\nQuestion from ${who}: ${q}`, '--output-format', 'stream-json', '--verbose', '--system-prompt', `${NOTE} You are the oracle in a group chat of friends. Answer the question in a few plain sentences. Name a source when it matters.`,
     '--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--setting-sources', '', '--no-session-persistence', '--model', 'haiku'];
   const proc = spawn('claude', argv, { cwd, env, stdio: ['ignore', 'pipe', 'pipe'] });
-  let out = ''; proc.stdout.on('data', d => out += d); proc.stderr.on('data', d => out += d);
+  let out = '', err = ''; proc.stdout.on('data', d => out += d); proc.stderr.on('data', d => err += d);
   const code = await new Promise(res => { proc.on('error', () => res(-1)); proc.on('close', res); });
-  const j = JSON.parse(out); // a non-JSON failure throws and is reported by the caller
-  if (code !== 0 || j.is_error) throw new Error(j.result || `exit ${code}`);
-  return j;
+  const events = out.split('\n').filter(Boolean).map(l => JSON.parse(l));
+  const res = events.find(e => e.type === 'result');
+  if (code !== 0 || !res || res.is_error) throw new Error(res?.result || err.trim() || `exit ${code}`);
+  const text = events.filter(e => e.type === 'assistant').flatMap(e => e.message.content).filter(c => c.type === 'text').map(c => c.text.trim()).filter(Boolean).join('\n\n');
+  return { result: text, usage: res.usage };
 }
 const PASS = '(If you have nothing to say, reply with just PASS.)', isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
 rounds: for (let r = 1; r <= ROUNDS; r++) {

@@ -71,7 +71,7 @@ const ask = async (n, step, at) => {
   const fresh = n in seen ? convo.slice(seen[n]) : convo;
   const body = n in seen
     ? `${fresh.length ? `New messages:\n${fresh.map(line).join('\n\n')}\n\nWrite your next message.` : 'No new messages.'}\n\n${PASS}`
-    : `Conversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.\n\n${PASS}`;
+    : `(It's now ${WD[clock.getDay()]} ${clock.getDate()} ${MON[clock.getMonth()]}, ${hm(clock)}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.\n\n${PASS}`;
   const user = (prefix[n] || []).map(x => x + '\n\n').join('') + body;
   delete prefix[n]; seen[n] = convo.length;
   const j = await turn(n, user), text = j.result.trim();

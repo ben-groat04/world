@@ -4,7 +4,7 @@
  "seed": "1",
  "people": [
   {
-   "name": "Helen Moore",
+   "name": "Stephanie Moore",
    "age": 55,
    "sex": "F",
    "ethnicity": "White British",
@@ -57,19 +57,19 @@
     "size": 4,
     "members": [
      {
-      "name": "Agnieszka Nowak",
+      "name": "Sarah Taylor",
       "age": 60,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Ana Russo",
+      "name": "Natalia Wisniewski",
       "age": 25,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Agnieszka O'Brien",
+      "name": "Katie Green",
       "age": 31,
       "sex": "F",
       "relation": "housemate (unrelated)"
@@ -79,17 +79,17 @@
    "relationship_status": "separated or divorced",
    "children": [
     {
-     "name": "Mia Moore",
+     "name": "Ruby Moore",
      "age": 18,
      "lives": "own household"
     },
     {
-     "name": "Isla Moore",
+     "name": "Lily Moore",
      "age": 22,
      "lives": "own household"
     },
     {
-     "name": "Ryan Moore",
+     "name": "Joel Moore",
      "age": 27,
      "lives": "own household"
     }
@@ -100,7 +100,7 @@
    "role": null
   },
   {
-   "name": "Agnieszka Nowak",
+   "name": "Sarah Taylor",
    "age": 60,
    "sex": "F",
    "ethnicity": "White Other (incl. Irish, Eastern European)",
@@ -129,19 +129,19 @@
     "size": 4,
     "members": [
      {
-      "name": "Helen Moore",
+      "name": "Stephanie Moore",
       "age": 55,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Ana Russo",
+      "name": "Natalia Wisniewski",
       "age": 25,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Agnieszka O'Brien",
+      "name": "Katie Green",
       "age": 31,
       "sex": "F",
       "relation": "housemate (unrelated)"
@@ -156,7 +156,7 @@
    "role": null
   },
   {
-   "name": "Ana Russo",
+   "name": "Natalia Wisniewski",
    "age": 25,
    "sex": "F",
    "ethnicity": "White Other (incl. Irish, Eastern European)",
@@ -191,19 +191,19 @@
     "size": 4,
     "members": [
      {
-      "name": "Helen Moore",
+      "name": "Stephanie Moore",
       "age": 55,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Agnieszka Nowak",
+      "name": "Sarah Taylor",
       "age": 60,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Agnieszka O'Brien",
+      "name": "Katie Green",
       "age": 31,
       "sex": "F",
       "relation": "housemate (unrelated)"
@@ -218,7 +218,7 @@
    "role": null
   },
   {
-   "name": "Agnieszka O'Brien",
+   "name": "Katie Green",
    "age": 31,
    "sex": "F",
    "ethnicity": "White Other (incl. Irish, Eastern European)",
@@ -271,19 +271,19 @@
     "size": 4,
     "members": [
      {
-      "name": "Helen Moore",
+      "name": "Stephanie Moore",
       "age": 55,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Agnieszka Nowak",
+      "name": "Sarah Taylor",
       "age": 60,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Ana Russo",
+      "name": "Natalia Wisniewski",
       "age": 25,
       "sex": "F",
       "relation": "housemate (unrelated)"

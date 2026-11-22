@@ -5,190 +5,13 @@
  "area": "one inner-city area (inner profile)",
  "people": [
   {
-   "name": "Aoife Garcia",
-   "age": 42,
-   "sex": "F",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
-   "birthplace": "EU (2004-2011 accession)",
-   "years_in_uk": 8,
-   "religion": "Muslim",
-   "activity": "employed full-time",
-   "occupation": "Business & public-service associate professionals",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 43367,
-   "hours_per_week": 37,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "09:00",
-     "end": "17:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Tue",
-     "start": "08:30",
-     "end": "16:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Wed",
-     "start": "08:30",
-     "end": "16:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Thu",
-     "start": "08:30",
-     "end": "16:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Fri",
-     "start": "08:30",
-     "end": "16:00",
-     "paid_hours": 7
-    }
-   ],
-   "household": {
-    "type": "multi-generation family household",
-    "tenure": "social rented",
-    "bedrooms": 3,
-    "occupancy_rating": 0,
-    "size": 5,
-    "members": [
-     {
-      "name": "Pierre Horvath",
-      "age": 44,
-      "sex": "M",
-      "relation": "partner"
-     },
-     {
-      "name": "Ewa Horvath",
-      "age": 7,
-      "sex": "F",
-      "relation": "daughter"
-     },
-     {
-      "name": "Mateusz Horvath",
-      "age": 14,
-      "sex": "M",
-      "relation": "son"
-     },
-     {
-      "name": "Niamh Garcia",
-      "age": 72,
-      "sex": "F",
-      "relation": "mother"
-     }
-    ]
-   },
-   "relationship_status": "cohabiting",
-   "children": [
-    {
-     "name": "Ewa Horvath",
-     "age": 7,
-     "lives": "with me"
-    },
-    {
-     "name": "Mateusz Horvath",
-     "age": 14,
-     "lives": "with me"
-    }
-   ],
-   "health": "fair",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 22.54,
-   "role": null
-  },
-  {
-   "name": "Jamie Clarke",
-   "age": 44,
+   "name": "Timothy Moore",
+   "age": 54,
    "sex": "M",
    "ethnicity": "White British",
    "birthplace": "England",
-   "years_in_uk": 44,
-   "religion": "No religion",
-   "activity": "employed full-time",
-   "occupation": "Culture, media & sports occupations",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 60963,
-   "hours_per_week": 39.5,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "09:30",
-     "end": "18:00",
-     "paid_hours": 8
-    },
-    {
-     "day": "Wed",
-     "start": "11:00",
-     "end": "19:30",
-     "paid_hours": 8
-    },
-    {
-     "day": "Thu",
-     "start": "09:30",
-     "end": "18:00",
-     "paid_hours": 8
-    },
-    {
-     "day": "Fri",
-     "start": "09:30",
-     "end": "18:00",
-     "paid_hours": 8
-    },
-    {
-     "day": "Sat",
-     "start": "11:00",
-     "end": "19:00",
-     "paid_hours": 7.5
-    }
-   ],
-   "household": {
-    "type": "couple family with non-dependent children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 4,
-    "occupancy_rating": 2,
-    "size": 3,
-    "members": [
-     {
-      "name": "Lauren Edwards",
-      "age": 42,
-      "sex": "F",
-      "relation": "partner"
-     },
-     {
-      "name": "Chloe Clarke",
-      "age": 26,
-      "sex": "F",
-      "relation": "daughter"
-     }
-    ]
-   },
-   "relationship_status": "cohabiting",
-   "children": [
-    {
-     "name": "Chloe Clarke",
-     "age": 26,
-     "lives": "with me"
-    }
-   ],
-   "health": "very bad",
-   "education": "No qualifications",
-   "hourly_pay": 29.68,
-   "role": null
-  },
-  {
-   "name": "Rachel Harrison",
-   "age": 28,
-   "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 28,
-   "religion": "No religion",
+   "years_in_uk": 54,
+   "religion": "Christian",
    "activity": "long-term sick or disabled",
    "occupation": null,
    "contract": null,
@@ -197,202 +20,45 @@
    "hours_per_week": 0,
    "shifts": [],
    "household": {
-    "type": "multi-generation family household",
+    "type": "one-person household",
     "tenure": "social rented",
-    "bedrooms": 2,
-    "occupancy_rating": -1,
-    "size": 5,
-    "members": [
-     {
-      "name": "Matthew White",
-      "age": 30,
-      "sex": "M",
-      "relation": "husband"
-     },
-     {
-      "name": "Jacob White",
-      "age": 0,
-      "sex": "M",
-      "relation": "son"
-     },
-     {
-      "name": "Freddie White",
-      "age": 1,
-      "sex": "M",
-      "relation": "son"
-     },
-     {
-      "name": "Joanna Harrison",
-      "age": 65,
-      "sex": "F",
-      "relation": "mother"
-     }
-    ]
+    "bedrooms": 1,
+    "occupancy_rating": 0,
+    "size": 1,
+    "members": []
    },
-   "relationship_status": "married",
-   "children": [
-    {
-     "name": "Jacob White",
-     "age": 0,
-     "lives": "with me"
-    },
-    {
-     "name": "Freddie White",
-     "age": 1,
-     "lives": "with me"
-    }
-   ],
-   "health": "bad",
-   "education": "Degree or above (level 4+)",
+   "relationship_status": "separated or divorced",
+   "children": [],
+   "health": "fair",
+   "education": "A-level or apprenticeship (level 3)",
    "hourly_pay": null,
    "role": null
   },
   {
-   "name": "Darren Davies",
-   "age": 46,
+   "name": "Jason Harrison",
+   "age": 37,
    "sex": "M",
    "ethnicity": "White British",
-   "birthplace": "EU (2004-2011 accession)",
-   "years_in_uk": 39,
-   "religion": "No religion",
-   "activity": "self-employed",
-   "occupation": "Business, media & public-service professionals",
-   "contract": "self-employed",
-   "employer": "self-employed",
-   "annual_income": 33730,
-   "hours_per_week": 28.5,
+   "birthplace": "England",
+   "years_in_uk": 37,
+   "religion": "Christian",
+   "activity": "employed full-time",
+   "occupation": "Corporate managers & directors",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 62197,
+   "hours_per_week": 36.5,
    "shifts": [
     {
-     "day": "Tue",
-     "start": "09:30",
-     "end": "17:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Wed",
+     "day": "Mon",
      "start": "08:30",
      "end": "16:30",
      "paid_hours": 7.25
     },
     {
-     "day": "Thu",
+     "day": "Tue",
      "start": "09:30",
      "end": "17:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Fri",
-     "start": "09:30",
-     "end": "16:30",
-     "paid_hours": 6.75
-    }
-   ],
-   "household": {
-    "type": "one-person household",
-    "tenure": "social rented",
-    "bedrooms": 2,
-    "occupancy_rating": 1,
-    "size": 1,
-    "members": []
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 22.76,
-   "role": null
-  },
-  {
-   "name": "Baljit Singh",
-   "age": 48,
-   "sex": "F",
-   "ethnicity": "Arab / Other",
-   "birthplace": "Middle East",
-   "years_in_uk": 15,
-   "religion": "Sikh",
-   "activity": "student",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": null,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 5,
-    "occupancy_rating": 0,
-    "size": 5,
-    "members": [
-     {
-      "name": "Kamal Ahmed",
-      "age": 34,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Sofia Moreau",
-      "age": 30,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Alison Evans",
-      "age": 62,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Imogen Evans",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [
-    {
-     "name": "Taran Singh",
-     "age": 19,
-     "lives": "own household"
-    },
-    {
-     "name": "Amandeep Singh",
-     "age": 26,
-     "lives": "own household"
-    }
-   ],
-   "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": null,
-   "role": null
-  },
-  {
-   "name": "Andrew Jones",
-   "age": 62,
-   "sex": "M",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 62,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Business, media & public-service professionals",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 60186,
-   "hours_per_week": 36.5,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "15:30",
      "paid_hours": 7.25
     },
     {
@@ -403,49 +69,280 @@
     },
     {
      "day": "Thu",
-     "start": "08:00",
-     "end": "15:30",
+     "start": "09:00",
+     "end": "16:30",
      "paid_hours": 7.25
     },
     {
      "day": "Fri",
-     "start": "08:00",
-     "end": "16:00",
+     "start": "09:00",
+     "end": "17:00",
      "paid_hours": 7.5
     }
    ],
    "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
+    "type": "couple family with dependent children",
+    "tenure": "social rented",
+    "bedrooms": 3,
+    "occupancy_rating": 1,
+    "size": 3,
     "members": [
      {
-      "name": "Cian Wisniewski",
-      "age": 64,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Grace Brown",
-      "age": 24,
+      "name": "Katherine White",
+      "age": 35,
       "sex": "F",
-      "relation": "housemate (unrelated)"
+      "relation": "wife"
      },
      {
-      "name": "Archie Smith",
-      "age": 20,
+      "name": "Louis Harrison",
+      "age": 9,
       "sex": "M",
-      "relation": "housemate (unrelated)"
+      "relation": "son"
      }
     ]
    },
-   "relationship_status": "single",
-   "children": [],
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Louis Harrison",
+     "age": 9,
+     "lives": "with me"
+    }
+   ],
+   "health": "good",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 32.77,
+   "role": null
+  },
+  {
+   "name": "Hannah Cooper",
+   "age": 51,
+   "sex": "F",
+   "ethnicity": "Mixed / multiple",
+   "birthplace": "England",
+   "years_in_uk": 51,
+   "religion": "Christian",
+   "activity": "employed part-time",
+   "occupation": "Secretarial & related occupations",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 11317,
+   "hours_per_week": 16.5,
+   "shifts": [
+    {
+     "day": "Tue",
+     "start": "08:30",
+     "end": "17:30",
+     "paid_hours": 8.25
+    },
+    {
+     "day": "Wed",
+     "start": "09:30",
+     "end": "18:30",
+     "paid_hours": 8.25
+    }
+   ],
+   "household": {
+    "type": "couple family, no children",
+    "tenure": "owned with mortgage",
+    "bedrooms": 1,
+    "occupancy_rating": 0,
+    "size": 2,
+    "members": [
+     {
+      "name": "Martin Taylor",
+      "age": 53,
+      "sex": "M",
+      "relation": "husband"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Georgina Cooper",
+     "age": 29,
+     "lives": "own household"
+    }
+   ],
    "health": "fair",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": 13.19,
+   "role": null
+  },
+  {
+   "name": "Molly Morgan",
+   "age": 32,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "Wales",
+   "years_in_uk": 32,
+   "religion": "No religion",
+   "activity": "employed full-time",
+   "occupation": "Teaching & other educational professionals",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 47918,
+   "hours_per_week": 34.5,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Tue",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Wed",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Thu",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Fri",
+     "start": "08:00",
+     "end": "15:00",
+     "paid_hours": 6.5
+    }
+   ],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "owned with mortgage",
+    "bedrooms": 3,
+    "occupancy_rating": 0,
+    "size": 5,
+    "members": [
+     {
+      "name": "Michael Edwards",
+      "age": 34,
+      "sex": "M",
+      "relation": "partner"
+     },
+     {
+      "name": "Hunter Edwards",
+      "age": 0,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Eleanor Edwards",
+      "age": 3,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Willow Edwards",
+      "age": 4,
+      "sex": "F",
+      "relation": "daughter"
+     }
+    ]
+   },
+   "relationship_status": "cohabiting",
+   "children": [
+    {
+     "name": "Hunter Edwards",
+     "age": 0,
+     "lives": "with me"
+    },
+    {
+     "name": "Eleanor Edwards",
+     "age": 3,
+     "lives": "with me"
+    },
+    {
+     "name": "Willow Edwards",
+     "age": 4,
+     "lives": "with me"
+    }
+   ],
+   "health": "very good",
    "education": "Degree or above (level 4+)",
-   "hourly_pay": 31.71,
+   "hourly_pay": 26.71,
+   "role": null
+  },
+  {
+   "name": "Malcolm Roberts",
+   "age": 73,
+   "sex": "M",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 73,
+   "religion": "No religion",
+   "activity": "unemployed",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "one-person household",
+    "tenure": "owned with mortgage",
+    "bedrooms": 2,
+    "occupancy_rating": 1,
+    "size": 1,
+    "members": []
+   },
+   "relationship_status": "separated or divorced",
+   "children": [],
+   "health": "very good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": null,
+   "role": null
+  },
+  {
+   "name": "Phyllis Turner",
+   "age": 83,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 83,
+   "religion": "Christian",
+   "activity": "retired",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family, no children",
+    "tenure": "owned outright",
+    "bedrooms": 4,
+    "occupancy_rating": 3,
+    "size": 2,
+    "members": [
+     {
+      "name": "Alan Scott",
+      "age": 85,
+      "sex": "M",
+      "relation": "husband"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Barbara Turner",
+     "age": 56,
+     "lives": "own household"
+    }
+   ],
+   "health": "fair",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": null,
    "role": null
   }
  ]

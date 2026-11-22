@@ -4,7 +4,7 @@
  "seed": "1",
  "people": [
   {
-   "name": "Wendy Smith",
+   "name": "Leanne Smith",
    "age": 46,
    "sex": "F",
    "ethnicity": "White British",
@@ -33,30 +33,41 @@
    ],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "owned outright",
+    "tenure": "owned with mortgage",
     "bedrooms": 3,
     "occupancy_rating": 1,
-    "size": 3,
+    "size": 4,
     "members": [
      {
-      "name": "Kevin Clarke",
+      "name": "Gregory Wright",
       "age": 48,
       "sex": "M",
-      "relation": "partner"
+      "relation": "husband"
      },
      {
-      "name": "Tommy Clarke",
-      "age": 16,
-      "sex": "M",
-      "relation": "son"
+      "name": "Poppy Wright",
+      "age": 7,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Bella Wright",
+      "age": 10,
+      "sex": "F",
+      "relation": "daughter"
      }
     ]
    },
-   "relationship_status": "cohabiting",
+   "relationship_status": "married",
    "children": [
     {
-     "name": "Tommy Clarke",
-     "age": 16,
+     "name": "Poppy Wright",
+     "age": 7,
+     "lives": "with me"
+    },
+    {
+     "name": "Bella Wright",
+     "age": 10,
      "lives": "with me"
     }
    ],
@@ -66,14 +77,14 @@
    "role": null
   },
   {
-   "name": "Kevin Clarke",
+   "name": "Gregory Wright",
    "age": 48,
    "sex": "M",
-   "ethnicity": "White British",
-   "birthplace": "England",
+   "ethnicity": "White Other (incl. Irish, Eastern European)",
+   "birthplace": "Wales",
    "years_in_uk": 48,
-   "religion": "No religion",
-   "activity": "looking after home or family",
+   "religion": "Christian",
+   "activity": "long-term sick or disabled",
    "occupation": null,
    "contract": null,
    "employer": null,
@@ -82,45 +93,56 @@
    "shifts": [],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "owned outright",
+    "tenure": "owned with mortgage",
     "bedrooms": 3,
     "occupancy_rating": 1,
-    "size": 3,
+    "size": 4,
     "members": [
      {
-      "name": "Wendy Smith",
+      "name": "Leanne Smith",
       "age": 46,
       "sex": "F",
-      "relation": "partner"
+      "relation": "wife"
      },
      {
-      "name": "Tommy Clarke",
-      "age": 16,
-      "sex": "M",
-      "relation": "son"
+      "name": "Poppy Wright",
+      "age": 7,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Bella Wright",
+      "age": 10,
+      "sex": "F",
+      "relation": "daughter"
      }
     ]
    },
-   "relationship_status": "cohabiting",
+   "relationship_status": "married",
    "children": [
     {
-     "name": "Tommy Clarke",
-     "age": 16,
+     "name": "Poppy Wright",
+     "age": 7,
+     "lives": "with me"
+    },
+    {
+     "name": "Bella Wright",
+     "age": 10,
      "lives": "with me"
     }
    ],
-   "health": "very good",
+   "health": "fair",
    "education": "Degree or above (level 4+)",
    "hourly_pay": null,
    "role": null
   },
   {
-   "name": "Tommy Clarke",
-   "age": 16,
-   "sex": "M",
-   "ethnicity": "White British",
+   "name": "Poppy Wright",
+   "age": 7,
+   "sex": "F",
+   "ethnicity": "Mixed / multiple",
    "birthplace": "England",
-   "years_in_uk": 16,
+   "years_in_uk": 7,
    "religion": "No religion",
    "activity": "school pupil",
    "occupation": null,
@@ -131,29 +153,84 @@
    "shifts": [],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "owned outright",
+    "tenure": "owned with mortgage",
     "bedrooms": 3,
     "occupancy_rating": 1,
-    "size": 3,
+    "size": 4,
     "members": [
      {
-      "name": "Wendy Smith",
+      "name": "Leanne Smith",
       "age": 46,
       "sex": "F",
       "relation": "mother"
      },
      {
-      "name": "Kevin Clarke",
+      "name": "Gregory Wright",
       "age": 48,
       "sex": "M",
       "relation": "father"
+     },
+     {
+      "name": "Bella Wright",
+      "age": 10,
+      "sex": "F",
+      "relation": "sister"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "bad",
+   "education": "primary school",
+   "hourly_pay": null,
+   "role": null
+  },
+  {
+   "name": "Bella Wright",
+   "age": 10,
+   "sex": "F",
+   "ethnicity": "Mixed / multiple",
+   "birthplace": "England",
+   "years_in_uk": 10,
+   "religion": "No religion",
+   "activity": "school pupil",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "owned with mortgage",
+    "bedrooms": 3,
+    "occupancy_rating": 1,
+    "size": 4,
+    "members": [
+     {
+      "name": "Leanne Smith",
+      "age": 46,
+      "sex": "F",
+      "relation": "mother"
+     },
+     {
+      "name": "Gregory Wright",
+      "age": 48,
+      "sex": "M",
+      "relation": "father"
+     },
+     {
+      "name": "Poppy Wright",
+      "age": 7,
+      "sex": "F",
+      "relation": "sister"
      }
     ]
    },
    "relationship_status": "single",
    "children": [],
    "health": "good",
-   "education": "secondary school / college",
+   "education": "primary school",
    "hourly_pay": null,
    "role": null
   }

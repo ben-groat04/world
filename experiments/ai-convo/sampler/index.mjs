@@ -62,7 +62,11 @@ function mkShifts(P, h) {
   return days.map((d, i) => ({ day: DAYS[d], start: hm(st[i]), end: hm(st[i] + els[i]), paid_hours: lens[i] }));
 }
 const restOk = (days, st, els) => { const n = days.length; let mx = 0; for (let i = 0; i < n; i++) { const j = (i + 1) % n, g = days[j] * 24 + st[j] + (j <= i ? 168 : 0) - (days[i] * 24 + st[i] + els[i]); if (n > 1 && g < 11) return false; mx = Math.max(mx, g); } return n === 1 || mx >= 35; };
-function firstName(eth, rel, sex, age) {
+const onsName = (sex, age) => { const ys = Object.keys(D.baby[sex]).map(Number), by = 2025 - age, y = ys.reduce((a, b) => Math.abs(b - by) < Math.abs(a - by) ? b : a); return one(D.baby[sex][y]); }; // nearest listed year's top 100 (ranks only -> equal weights)
+function firstName(eth, rel, sex, age, bp) {
+  const ukb = Object.keys(D.ukNation).includes(bp);
+  if (eth === 'wb' || (ukb && (eth === 'wo' || eth === 'mx') && rel !== 'Muslim')) return [onsName(sex, age), one(D.names.wb.S)]; // ONS baby names (not published by ethnicity: used for White British and UK-born White Other/Mixed only)
+  if (eth === 'wo') { const p = D.names[bp === 'Ireland' ? 'ie' : /accession|Rest of Europe/.test(bp) ? 'ee' : /^EU/.test(bp) ? 'eu' : 'wb']; return /^(Ireland|EU|Rest)/.test(bp) ? [one(p[sex].split(' ')), one(p.S)] : [onsName(sex, age), one(D.names.wb.S)]; }
   let alt = ['pk', 'bd', 'ao', 'oa', 'mx', 'cn'].includes(eth) ? { Sikh: 'sikh', Hindu: 'in', Jewish: 'wb', Buddhist: 'oa' }[rel] : null; // names follow faith where the ethnic pool would clash
   if (eth === 'mx' && !alt) alt = rel === 'Muslim' ? one(['pk', 'ao', 'wb']) : one(['wb', 'wb', 'bc']);
   let pool = D.names[alt ?? (eth === 'in' ? (rel === 'Sikh' ? 'sikh' : rel === 'Muslim' ? 'pk' : 'in') : eth)];
@@ -82,7 +86,7 @@ function person(o = {}) {
     const [, , lo, hi] = bands.find(x => x[0] === pk(bands.map(x => [x[0], x[1]]))); yrs = age - ri(lo, Math.min(hi, age));
   }
   const rel = o.rel ?? pk(D.rel[eth]);
-  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1]);
+  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1], k => k === 'ho' ? (o.noHo ? 0 : 1) : 1); // no source for carers among unrelated sharers -> excluded for them
   if (act === 're' && age < 50) act = 'si'; // design: the Census 'retired' cell below 50 is folded into long-term sick/disabled (early retirement through ill health)
   let h = pk(D.health[kid ? 0 : b]); if (act === 'si' && /good/.test(h)) h = pk(D.health[b], k => /fair|bad/.test(k) ? 1 : 0); // long-term sick/disabled: not "good" health (definition)
   const emp = ['ft', 'pt', 'se'].includes(act) || (act === 'st' && (o.occ != null || R() < D.stWork));
@@ -98,7 +102,7 @@ function person(o = {}) {
     if (age < 21) { row.deg = 0; } else if (emp && act !== 'st') { const pp = profSum(sex, age); if (oc.code >= 21 && oc.code < 25) edu = DEGK; else { const d = Math.max(0, (row.deg - pp) / (1 - pp)), rest = 1 - row.deg; for (const k in row) row[k] = k === DEGK ? d : row[k] * (1 - d) / rest; } }
     edu ??= pk(row);
   }
-  const [fn, sn] = firstName(eth, rel, sex, age);
+  const [fn, sn] = firstName(eth, rel, sex, age, bp);
   return { fn, sn, age, sex, eth, bp, yrs, rel, act, edu, h, oc, emp, P, hrs, hp, shifts, earn, contract: !emp ? null : act === 'se' ? 'self-employed' : 'employee', employer: !emp ? null : o.emp ?? (act === 'se' ? 'self-employed' : null), role: o.role };
 }
 // ---------- households
@@ -121,26 +125,25 @@ function build(type, pr, fo = {}) {
   const me = o => { const p = foc ?? person({ pr, ...fo, ...o }); M.push(p); return p; };
   const mk = (o, a) => { const p = person({ pr, eth: a.eth, ...o }); M.push(p); return p; };
   const married = (a, b) => R() < D.marr.M[B(Math.max(a.age, b.age)) - 1];
-  const mate = (a, minAge = 18) => { const sx = a.sex === 'M' ? 'F' : 'M', age = Math.round(a.sex === 'M' ? a.age - D.partnerGap : a.age + D.partnerGap); if (age < minAge || age > 99) return null; const q = mk({ age, sex: sx }, a); C.push([ix(a), ix(q), married(a, q)]); return q; };
+  const mate = (a, minAge = 18, ss = false) => { const sx = ss ? a.sex : a.sex === 'M' ? 'F' : 'M', age = ss ? Math.floor(a.age / 5) * 5 + ri(0, 4) : Math.round(a.sex === 'M' ? a.age - D.partnerGap : a.age + D.partnerGap); if (age < minAge || age > 99) return null; const eth = R() < D.pMixedPartner ? pk(D.eth[EB(age)], k => k === a.eth ? 0 : 1) : a.eth; const q = person({ pr, age, sex: sx, eth }); M.push(q); C.push([ix(a), ix(q), married(a, q)]); return q; };
   const adultKidsOnly = p => { if (p.sex !== 'F' || p.age < 20) return true; for (let t = 0; t < 40; t++) { const k = kidsOf(p.age); if (k && k.every(x => x >= 18)) { p.away = k; return true; } } return false; };
-  const kidP = (age, m) => person({ pr, age, sex: ageSex({ age, pr: 0 }).sex, eth: m.eth, rel: m.rel });
+  const kidP = (age, m, f) => person({ pr, age, sex: ageSex({ age, pr: 0 }).sex, eth: f && f.eth !== m.eth ? 'mx' : m.eth, rel: m.rel });
   if (type === 'one') { const a = me({}); if (!adultKidsOnly(a)) return null; return { M, C, K, S, G, IL, type }; }
-  if (type === 'couple') { const a = me({}), b = mate(a); if (!b || ![a, b].every(adultKidsOnly)) return null; return { M, C, K, S, G, IL, type }; }
+  if (type === 'couple') { const a = me({}), b = mate(a, 18, R() < D.ssNoKids); if (!b || ![a, b].every(adultKidsOnly)) return null; return { M, C, K, S, G, IL, type }; }
   if (type === 'shared') {
-    const a = me({ aw: (x) => sharedShare(x), max: 64 }), n = fo.n ?? +pk(Object.entries(D.hhSize).filter(([k]) => /^[2-9]|^8/.test(k) && !/Total/.test(k)).map(([k, v]) => [parseInt(k), v]));
-    while (M.length < n) M.push(person({ pr, aw: sharedShare, max: 64 })); if (!M.every(adultKidsOnly)) return null; return { M, C, K, S, G, IL, type };
+    const a = me({ aw: (x) => sharedShare(x), max: 64, noHo: 1 }), n = fo.n ?? +pk(Object.entries(D.hhSize).filter(([k]) => /^[2-9]|^8/.test(k) && !/Total/.test(k)).map(([k, v]) => [parseInt(k), v]));
+    while (M.length < n) M.push(person({ pr, aw: sharedShare, max: 64, noHo: 1 })); if (!M.every(adultKidsOnly)) return null; return { M, C, K, S, G, IL, type };
   }
   if (type === 'withparents') {
     const c = me({ min: 18 }), mo = person({ pr, age: c.age + anyBirthAge(), sex: 'F', eth: c.eth, rel: c.rel }); if (mo.age > 94) return null; M.push(mo); K.push([ix(mo), ix(c)]);
     if (R() > D.parLone) { const fa = mate(mo, 18); if (!fa) return null; K.push([ix(fa), ix(c)]); } return { M, C, K, S, G, IL, type };
   }
   const adult = type.endsWith('adult'), lone = type.startsWith('lone'); let mo, fa = null; const f0 = me({ sex: lone ? 'F' : fo.sex });
-  if (lone && f0.sex === 'M') return null;
-  if (f0.sex === 'F') mo = f0; else { mo = person({ pr, age: Math.round(f0.age - D.partnerGap), sex: 'F', eth: f0.eth }); if (mo.age < 18) return null; M.push(mo); C.push([0, 1, married(f0, mo)]); fa = f0; }
+  if (f0.sex === 'F') mo = f0; else if (lone) mo = { age: Math.round(f0.age - D.partnerGap), eth: f0.eth, rel: f0.rel, away: [] }; else { mo = person({ pr, age: Math.round(f0.age - D.partnerGap), sex: 'F', eth: f0.eth }); if (mo.age < 18) return null; M.push(mo); C.push([0, 1, married(f0, mo)]); fa = f0; }
   if (!lone && !fa) { fa = mate(mo); if (!fa) return null; }
   const ks = (() => { for (let t = 0; t < 80; t++) { const k = kidsOf(mo.age); if (!k || !k.length) continue; const dep = k.some(x => x < 18); if (adult ? k.every(x => x >= 18) : dep) return k; } return null; })(); if (!ks) return null;
-  const hk = adult ? ks : ks.filter(x => x < 18); mo.away = adult ? [] : ks.filter(x => x >= 18);
-  const kids = hk.map(a => { const k = kidP(a, mo); M.push(k); K.push([ix(mo), ix(k)]); if (fa) K.push([ix(fa), ix(k)]); return k; });
+  const hk = adult ? ks : ks.filter(x => x < 18); if (!lone || f0.sex === 'F') mo.away = adult ? [] : ks.filter(x => x >= 18);
+  const kids = hk.map(a => { const k = kidP(a, mo, fa); M.push(k); if (M.includes(mo)) K.push([ix(mo), ix(k)]); if (fa) K.push([ix(fa), ix(k)]); else if (lone && !M.includes(mo)) K.push([ix(f0), ix(k)]); return k; });
   kids.forEach((x, i) => kids.slice(i + 1).forEach(y => S.push([ix(x), ix(y)])));
   if (type === 'multigen') { const ga = mo.age + anyBirthAge(); if (ga > 94) return null; const gp = person({ pr, age: ga, sex: 'F', eth: mo.eth, rel: mo.rel }); M.push(gp); K.push([ix(gp), ix(mo)]); IL.push([ix(fa), ix(gp)]); kids.forEach(k => G.push([ix(gp), ix(k)])); }
   return { M, C, K, S, G, IL, type };
@@ -152,12 +155,12 @@ function finish(h, pr, tenure) {
   C.forEach(([a, b, m]) => link(a, b, m ? 'spouse' : 'partner')); K.forEach(([a, b]) => link(a, b, 'child')); S.forEach(([a, b]) => link(a, b, 'sib')); G.forEach(([a, b]) => link(a, b, 'gchild')); IL.forEach(([a, b]) => link(a, b, 'pil'));
   if (type === 'shared') for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) link(i, j, 'hm');
   K.forEach(([a, c]) => { const ps = K.filter(k => k[1] === c).map(k => M[k[0]]); M[c].sn = (ps.find(x => x.sex === 'M') ?? ps[0]).sn; }); // children take the father's surname, else the mother's
-  const used = new Set(); M.forEach(p => { for (let t = 0; t < 40 && used.has(nameOf(p)); t++) p.fn = firstName(p.eth, p.rel, p.sex, p.age)[0]; used.add(nameOf(p)); });
+  const used = new Set(); M.forEach(p => { for (let t = 0; t < 40 && used.has(nameOf(p)); t++) p.fn = firstName(p.eth, p.rel, p.sex, p.age, p.bp)[0]; used.add(nameOf(p)); });
   const stat = p => pk(D.rs[p.sex][B(p.age) - 1], k => k === 'married' || k === 'cohab' ? 0 : 1);
   M.forEach((p, i) => { const c = C.find(x => x[0] === i || x[1] === i); p.status = c ? (c[2] ? 'married' : 'cohabiting') : p.age < 18 ? 'single' : { single: 'single', divorced: 'separated or divorced', widowed: 'widowed' }[stat(p)]; });
   M.forEach((p, i) => {
     p.kids = K.filter(k => k[0] === i).map(k => ({ name: nameOf(M[k[1]]), age: M[k[1]].age, lives: 'with me' }));
-    for (const a of p.away ?? []) { let f; for (let t = 0; t < 40; t++) { [f] = firstName(p.eth, p.rel, one(['M', 'F']), a); if (!used.has(f + ' ' + p.sn)) break; } used.add(f + ' ' + p.sn); p.kids.push({ name: f + ' ' + p.sn, age: a, lives: 'own household' }); }
+    for (const a of p.away ?? []) { let f; for (let t = 0; t < 40; t++) { [f] = firstName(p.eth, p.rel, one(['M', 'F']), a, p.bp); if (!used.has(f + ' ' + p.sn)) break; } used.add(f + ' ' + p.sn); p.kids.push({ name: f + ' ' + p.sn, age: a, lives: 'own household' }); }
   });
   const eld = Math.max(...M.filter(x => x.age >= 18).map(x => x.age)), req = bedReq(M, C, type), adults = M.filter(x => x.age >= 18).length;
   const tk = tenure ?? pk(D.ten[D.tt[type]], k => D.tenAge[eld >= 65 ? 'o65' : 'u65'][k] * Math.pow(D.tenMul[k], pr));
@@ -179,7 +182,7 @@ function finish(h, pr, tenure) {
 }
 function hhFor(p, pr) {
   for (let t = 0; t < 80; t++) {
-    const type = pk(D.hhAge[B(p.age) - 1], k => Math.pow(D.hhMul[k] ?? 1, pr) * (k.startsWith('lone') ? D.hhEth.lone[p.eth] : k === 'one' ? D.hhEth.one[p.eth] : k === 'shared' || k === 'multigen' ? D.hhEth.other[p.eth] : 1) * (k.startsWith('lone') && p.sex === 'M' ? 0 : 1));
+    const type = pk(D.hhAge[B(p.age) - 1], k => Math.pow(D.hhMul[k] ?? 1, pr) * (k.startsWith('lone') ? D.hhEth.lone[p.eth] : k === 'one' ? D.hhEth.one[p.eth] : k === 'shared' || k === 'multigen' ? D.hhEth.other[p.eth] : 1) * (k.startsWith('lone') ? (p.sex === 'F' ? D.loneMother[k === 'lone_dep' ? 'dep' : 'adult'] : 1 - D.loneMother[k === 'lone_dep' ? 'dep' : 'adult']) : 1) * (k === 'shared' && p.act === 'ho' ? 0 : 1));
     const h = build(type, pr, { p }); if (h) { const r = finish(h, pr); if (r) return r[0]; }
   }
   throw new Error('no household');
@@ -234,7 +237,7 @@ const SET = {
   family: (n, pr) => { // one whole household of 3+ (n, if >= 3, is a target size)
     for (let t = 0; t < 600; t++) {
       const type = pk(D.famType), w = k => type.startsWith('lone') ? D.hhEth.lone[k] : type === 'multigen' ? D.hhEth.other[k] : 1;
-      const p = person({ pr, sex: 'F', aw: (a) => { const r = D.hhAge[B(a) - 1] ?? {}, z = Object.values(r).reduce((x, y) => x + y, 0); return z ? (r[type] ?? 0) / z : 0; }, ethW: w });
+      const p = person({ pr, sex: type.startsWith('lone') ? (R() < D.loneMother[type === 'lone_dep' ? 'dep' : 'adult'] ? 'F' : 'M') : 'F', aw: (a) => { const r = D.hhAge[B(a) - 1] ?? {}, z = Object.values(r).reduce((x, y) => x + y, 0); return z ? (r[type] ?? 0) / z : 0; }, ethW: w });
       const h = build(type, pr, { p }); if (!h || h.M.length < 3 || (n >= 3 && t < 500 && h.M.length !== n)) continue; const r = finish(h, pr); if (r) return { people: r };
     }
   },

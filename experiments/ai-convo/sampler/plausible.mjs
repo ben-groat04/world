@@ -18,7 +18,7 @@ for (const g of groups) {
     if (p.age < 16 && (work || p.annual_income)) flag(hard, 'child with job/income', p);
     if (p.age < 18 && p.relationship_status !== 'single') flag(hard, 'minor partnered', p);
     if (p.age < 21 && /Degree/.test(p.education)) flag(hard, 'degree before 21', p);
-    if (p.age < 22 && /^(Health professionals|Teaching)/.test(p.occupation ?? '')) flag(hard, 'qualified professional under 22', p, p.occupation);
+    if (p.age < 21 && /^(Health professionals|Teaching)/.test(p.occupation ?? '')) flag(hard, 'qualified professional under 21', p, p.occupation);
     if (p.age < 20 && /^(Corporate managers|Other managers)/.test(p.occupation ?? '')) flag(hard, 'teen manager', p);
     if (p.activity === 'retired' && p.age < 50) flag(hard, 'retired under 50', p);
     if (p.activity === 'retired' && work) flag(hard, 'retired with job', p);

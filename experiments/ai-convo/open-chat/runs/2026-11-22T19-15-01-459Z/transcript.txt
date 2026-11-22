@@ -100,3 +100,193 @@ Morning, Jo, glad you slept. Leeds is helpful to know. Tom, go ahead and ask Cla
 --- Mon 08:01, Tom
 @claude In England, specifically Leeds: what are a landlord's legal duties to repair a bathroom ceiling, what deadlines apply once a tenant reports a repair, and what can Leeds City Council do if the landlord stalls? Please include the relevant laws (e.g. Landlord and Tenant Act 1985 s.11, Homes (Fitness for Human Habitation) Act 2018, Housing Act 2004 hazards) and any official council complaint or inspection routes, with links to official sources where possible.
 
+--- Mon 08:01, Claude → Tom (private)
+I confirmed the Leeds council process and the Renters' Rights Act timing. I couldn't open the legislation.gov.uk or gov.uk pages, so the statute details below come from my own knowledge. Check them against the links.
+
+**1. Landlord's duties**
+- **Landlord and Tenant Act 1985 s.11** ([text](https://www.legislation.gov.uk/ukpga/1985/70/section/11)) applies to most tenancies under 7 years. It requires the landlord to keep the structure and exterior in repair, and also the installations for water, gas, electricity, sanitation, heating and hot water. A bathroom ceiling is part of the structure. A leak from a roof or from pipes above it is normally the landlord's responsibility. The duty only starts once the landlord knows about the problem, so report it in writing.
+- **Homes (Fitness for Human Habitation) Act 2018** (it inserts ss.9A–9C into the 1985 Act) requires the home to be fit to live in at the start of the tenancy and throughout it. A ceiling that is collapsing, or that has a persistent leak and mould, can breach it. A tenant can sue in the county court, and the court can order repairs and award compensation.
+- **Housing Act 2004, Housing Health and Safety Rating System (HHSRS)** covers hazards such as damp and mould, falls, and electrical hazards (for example, a leak near light fittings). The council scores hazards as Category 1 (serious) or Category 2.
+
+**2. Deadlines**
+- Section 11 has no fixed number of days. The landlord must act within a "reasonable time", which depends on the urgency. A ceiling that is leaking or about to fall is urgent.
+- Leeds City Council tells tenants to report in writing and allow about 14 days for a response. For urgent problems it suggests contacting the council once the landlord has failed to act ([Leeds: help for private tenants](https://www.leeds.gov.uk/housing/help-for-private-tenants)).
+- **Awaab's Law** (fixed timescales for damp and mould) applies to social landlords. For private landlords, my search suggests the Renters' Rights Act only gives government the power to extend it. The same search suggests a consultation on doing so runs to 18 December 2026. Those sources were commercial guides rather than gov.uk, so treat this as unconfirmed. The same sources say the Decent Homes Standard for private rentals is not due until 2035. The main Renters' Rights Act tenancy reforms began on 1 May 2026.
+
+**3. Leeds City Council routes**
+- Contact the Private Rented Housing team on 0113 378 4699 or at prs.housing@leeds.gov.uk. The council says it will usually speak to you first, may ask for photos and correspondence, and may arrange an inspection ([source](https://www.leeds.gov.uk/housing/help-for-private-tenants)).
+- If an inspection finds serious hazards, the council can take enforcement action. Under the Housing Act 2004 (from my own
+
+knowledge), it can serve an improvement notice, a prohibition order or an emergency remedial action notice. It can also carry out the works itself and charge the landlord, and it can issue civil penalties of up to £30,000 per offence. Failing to comply with an improvement notice is an offence. I couldn't open the Act itself, so check the details on [legislation.gov.uk](https://www.legislation.gov.uk/ukpga/2004/34/contents).
+
+Leeds has used these powers. In December 2025 it prosecuted a Beeston landlord over damp, mould and heating. The landlord had failed to comply with an improvement notice and had received civil penalties totalling £37,000 since 2021 ([Leeds news](https://news.leeds.gov.uk/news/landlord-pays-price-for-mismanagement-of-leeds-rental-property)).
+
+**4. Other routes if the landlord stalls**
+- **Court action:** A tenant can claim for disrepair under s.11 or the 2018 Act in the county court. Shelter's guidance covers this. I didn't open it, so I can't confirm its details.
+- **Ombudsman:** If the council fails to act on your report, you can complain to the [Local Government and Social Care Ombudsman](https://www.lgo.org.uk). It has closed several Leeds private-housing complaints without investigation where it found no fault, for example [25 013 847](https://www.lgo.org.uk/decisions/housing/private-housing/25-013-847). Complete the council's own complaints process first.
+- **Caution on claims firms:** Leeds warns about disrepair claims firms ([Leeds council page](https://www.leeds.gov.uk/campaign/housing-disrepair-claims)). I didn't open that page, so I don't know the details.
+
+**Practical steps**
+1. Report the problem in writing, with dated photos, and keep a copy.
+2. If nothing happens after about 14 days, or sooner if the ceiling is unsafe, contact the council team above.
+3. Don't withhold rent. That risks arrears and eviction.
+
+**Not confirmed:** I haven't verified the exact penalty amounts or the full text of the statutes. I also haven't confirmed the current status of the Awaab's Law extension to private tenants. If you tell me your tenancy type and start date, I can check how these rules apply to you.
+
+Sources:
+- [Leeds: help for private tenants](https://www.leeds.gov.uk/housing/help-for-private-tenants)
+- [Landlord and Tenant Act 1985 s.11](https://www.legislation.gov.uk/ukpga/1985/70/section/11)
+- [Leeds news: landlord prosecution](https://news.leeds.gov.uk/news/landlord-pays-price-for-mismanagement-of-leeds-rental-property)
+- [LGO decision 25 013 847](https://www.lgo.org.uk/decisions/hous
+
+ing/private-housing/25-013-847)
+- [Leeds: housing disrepair claims](https://www.leeds.gov.uk/campaign/housing-disrepair-claims)
+- [Housing Act 2004](https://www.legislation.gov.uk/ukpga/2004/34/contents)
+- [Renters' Rights Act and Awaab's Law guides, e.g. August](https://www.augustapp.com/blog/awaabs-law-private-landlords). This is a commercial source, so treat its Awaab's Law and Decent Homes dates as unconfirmed.
+
+--- Mon 08:07, Tom
+Thanks, Claude. That's useful. Jo, the short version: the landlord has a legal duty to fix a leaking or unsafe bathroom ceiling within a reasonable time once you've reported it in writing. Leeds council's private rented housing team (0113 378 4699, prs.housing@leeds.gov.uk) can inspect and force the landlord to act, so if they stall, that's your next call. Don't withhold rent. Claude flagged that the exact penalty amounts and Awaab's Law timings for private landlords aren't confirmed, so don't quote those in your email.
+
+--- Mon 08:07, Tom
+Send the draft over when you're ready and we'll check it against this.
+
+--- Mon 09:02, Jo
+Thanks, Tom. That's exactly what I needed, and I'll leave out the penalty amounts and the Awaab's Law timings.
+
+--- Mon 09:03, Jo
+I'm going to write the email this morning and paste it here once it's done. Maya and Sam, I'll take you up on the offer to read it over.
+
+--- Mon 09:05, Sam
+Good plan, Jo. Paste it here when it's written and I'll read it over. Tom's summary covers the main points.
+
+--- Mon 09:30, Jo
+Thanks, Sam. I'm drafting it now and I'll paste it here as soon as it's ready.
+
+--- Mon 09:52, Tom
+Sounds good, Jo. Paste it here when it's ready and we'll read it over.
+
+--- Mon 10:04, Jo
+Here's the draft. The date and damage details in brackets are mine to fill in.
+
+--- Mon 10:04, Jo
+---
+
+--- Mon 10:04, Jo
+Subject: Repair request – bathroom ceiling leak at [address]
+
+--- Mon 10:04, Jo
+Hi [landlord's name],
+
+--- Mon 10:05, Jo
+I'm writing about the leak in the bathroom ceiling at [address]. I first reported this on [date reported], and the damage is [describe: e.g. staining, dripping, flaking plaster].
+
+--- Mon 10:06, Sam
+Jo, the draft is still coming in, so I'll wait for the rest before commenting. Once it's all here I'll check it against Tom's summary, especially that the reported date and deadline are in there.
+
+--- Mon 10:06, Tom
+Good opening, Jo. Before you send it, add a deadline for a response, say 7 days, and tell them you'll get a quote and ask them to cover it if they don't act. Paste the rest when you've got it.
+
+--- Mon 10:06, Jo
+Please arrange for the repair to be carried out, or confirm by [date, about 7 days from today] when your contractor will attend. If I don't hear from you by then, I'll get a quote for the work and ask you to pay for it, and I'll contact Leeds City Council's private rented housing team about the delay.
+
+--- Mon 10:06, Jo
+Thanks,
+Jo
+
+--- Mon 10:06, Jo
+---
+
+--- Mon 10:06, Jo
+Tom, Maya, Sam, does this match what Tom found? Tell me if anything needs changing before I send it.
+
+--- Mon 10:08, Sam
+Looks solid, Jo. It has the reported date, a 7-day deadline, the quote-and-recharge step, and the council route, which matches Tom's summary. Two small checks before you send:
+
+--- Mon 10:09, Sam
+- Fill in the brackets, especially the reported date. If you're not sure of the exact date you first told them, use the earliest one you can prove (a text or call log).
+- Keep a copy of the sent email, and note the date you sent it, since that starts the clock.
+
+--- Mon 10:10, Sam
+Nothing else needs changing. Good luck, and tell us what they reply.
+
+--- Mon 10:12, Tom
+Sam's added two good points: use the earliest date you can prove, and note the sending date since that starts the clock. My message above already covers the rest, so I'll leave it there. Good luck, Jo. Let us know what they reply.
+
+--- Mon 10:20, Jo
+Thanks, both. I'll fill in the brackets with the earliest date I can prove, keep a copy of what I send, and let you know what they reply.
+
+--- Mon 14:33, Maya
+Looks good, Jo. Sam's two checks are the important ones: fill in the earliest date you can prove, and keep a copy with the sending date. Good luck, and let us know what they say.
+
+--- Mon 14:33, Jo
+Thanks, Maya. I'll get the dates in and keep a copy of the sent email. I'll let you know what the landlord says.
+
+--- Mon 14:40, Maya
+Sounds good, Jo. Keep us posted.
+
+--- Mon 14:40, Jo
+Will do, Maya.
+
+--- Mon 20:16, Jo
+Hey all, no update yet. I haven't sent the email. I want to fill in the reported date properly first, and I'm still searching my texts for it. I'll post here once it's sent and once the landlord replies.
+
+--- Mon 20:20, Tom
+Thanks for the update, Jo. Take your time finding that date. Once you've got it, you're good to send. Let us know when it's out.
+
+--- Mon 20:28, Jo
+Thanks, Tom. I'll let you know when it's sent.
+
+--- Mon 20:36, Maya
+Thanks, Jo. Finding that date first is the right move. Let us know when it's sent.
+
+--- Tue 07:41, Jo
+Morning, Maya. Still haven't sent it. I'm going to dig out the texts with the landlord this morning, and I'll post here once it's sent.
+
+--- Tue 07:42, Sam
+Morning, Jo. Good plan, the texts should have the date. Let us know when it's sent.
+
+--- Tue 07:52, Maya
+Morning, Jo. Good plan. Once you've found the texts, the date should be easy to pin down. Let us know when it's sent.
+
+--- Tue 08:03, Tom
+Morning, Jo. Once you've got the date from the texts, you're all set to send. Let us know when it's out.
+
+--- Tue 09:54, Jo
+Morning, all. I still haven't found the texts. I'll keep looking and post here as soon as the email goes out.
+
+--- Tue 09:55, Tom
+Morning, Jo. If you can't find the texts, a call log or an email with the landlord works too. Use the earliest date you can prove, and send it when you're ready.
+
+--- Tue 10:06, Maya
+Morning, Jo. Tom's right: a call log or an email with the landlord will do. Use the earliest date you can prove, and don't let the search hold up sending it for too long.
+
+--- Tue 10:09, Jo
+Thanks, both. You're right, I've been stuck on this for too long. I'll check my call log and emails now, and if I can't find an earlier date quickly, I'll use the date I first reported it and send the email today.
+
+--- Tue 10:10, Maya
+That sounds like a good plan, Jo. Send it today once you have a date you can stand behind, and let us know when it's out.
+
+--- Tue 10:11, Jo
+Will do, Maya. I'll post here when it's sent.
+
+--- Tue 10:11, Maya
+Thanks, Jo. Good luck.
+
+--- Tue 10:11, Jo
+Thanks, Maya.
+
+--- Tue 12:02, Jo
+Hey all, still no update. I haven't sent the email yet. I'm checking my call log and emails now, and I'll post here as soon as it's sent.
+
+--- Tue 12:12, Maya
+Thanks for the update, Jo. Don't let the search drag on much longer. If you can't find an earlier date soon, use the date you first reported it and send it.
+
+--- Tue 13:11, Jo
+Thanks, Maya. You're right. I'll stop searching and send it this afternoon, using the date I first reported it. I'll post here once it's out.
+
+--- Tue 13:14, Maya
+Good call, Jo. Send it this afternoon and let us know when it's out.
+
+--- message limit reached
+Tue 13:14
+

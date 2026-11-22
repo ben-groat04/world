@@ -76,3 +76,6 @@ Talk later, everyone! Have a good Monday.
 --- Mon 15:30, Maya
 Talk later, everyone! Have a good one.
 
+--- end date reached
+Wed 19:00
+

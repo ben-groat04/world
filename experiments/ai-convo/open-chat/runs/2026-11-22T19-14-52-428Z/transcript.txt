@@ -106,3 +106,24 @@ Thanks, Tom. Send it whenever, and I'll be there Thursday.
 --- Mon 17:31, Jo
 Whenever you're ready, Tom. I'm in for Thursday.
 
+--- Mon 20:06, Tom
+Thanks, all. I'll send the time once I've got it from the hospital. Honestly, knowing you're all in for Thursday makes it easier to think about.
+
+--- Mon 21:16, Sam
+Glad it helps, Tom. We've got you for Thursday.
+
+--- Mon 21:19, Tom
+Thanks, Sam. I'll let you know the time soon.
+
+--- Mon 21:20, Jo
+Glad it helps, Tom. Send the time when you have it, and I'll be there Thursday.
+
+--- Mon 21:22, Tom
+Thanks, Jo. I'll send it over once I've got it.
+
+--- Mon 21:23, Jo
+Sounds good, Tom. No rush.
+
+--- end date reached
+Wed 19:00
+

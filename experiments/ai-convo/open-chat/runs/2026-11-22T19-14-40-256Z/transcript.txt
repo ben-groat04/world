@@ -157,3 +157,21 @@ Great, Jo! See you Wednesday at 19:00.
 --- Mon 17:43, Jo
 See you Wednesday at 19:00, Tom!
 
+--- Mon 17:44, Sam
+See you Wednesday, Jo!
+
+--- Mon 17:48, Jo
+See you Wednesday, Sam!
+
+--- Mon 17:56, Maya
+Sounds good, see you all Wednesday at 19:00!
+
+--- Mon 18:01, Sam
+See you all Wednesday!
+
+--- Mon 18:10, Jo
+See you all Wednesday!
+
+--- end date reached
+Wed 19:00
+

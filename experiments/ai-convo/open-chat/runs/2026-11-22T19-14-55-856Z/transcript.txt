@@ -73,3 +73,6 @@ See you then!
 --- Mon 09:12, Sam
 See you Sunday!
 
+--- end date reached
+Wed 19:00
+

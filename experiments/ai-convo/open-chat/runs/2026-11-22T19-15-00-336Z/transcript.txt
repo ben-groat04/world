@@ -100,3 +100,6 @@ See you Wednesday, Sam!
 --- Mon 17:03, Sam
 See you Wednesday, Tom!
 
+--- end date reached
+Wed 19:00
+

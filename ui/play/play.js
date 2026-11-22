@@ -73,14 +73,16 @@ export function mountPlay(store, hooks) {
 
   // ---------------------------------------------------------------- sheet plumbing
   function open(view, arg) {
-    if (P.on && sheet.hidden && store.s.tier !== 'pause') { P.prevTier = store.s.tier; store.setSpeed('pause'); }
+    if (sheet.hidden && store.s.tier !== 'pause') { P.prevTier = store.s.tier; store.setSpeed('pause'); } // any decision sheet (including choosing a flat before you have a character) freezes time so lists cannot go stale
     if (view !== P.view || (arg || null) !== P.arg) P.fb = P.fbKeep ? P.fb : null; P.fbKeep = false;
     P.view = view; P.arg = arg || null; sheet.hidden = false; document.body.classList.add('psheet-open');
+    if (['people', 'phone', 'goals', 'me', 'work', 'places', 'dating'].includes(view)) { delete P.sec[view === 'people' || view === 'dating' ? (view === 'people' ? 'people' : 'phone') : view]; } // never paint last time's flats/jobs/matches: wait for a fresh read
+    if (view === 'create') { P.setup = null; P.form.unit = null; }
     if (['people', 'phone', 'goals', 'me', 'work', 'places', 'dating'].includes(view)) post({ op: 'section', name: view === 'people' || view === 'dating' ? (view === 'people' ? 'people' : 'phone') : view });
     if (view === 'menu') post({ op: 'state' }); if (view === 'take') store.directoryReq(); if (view === 'create' && !P.setup) post({ op: 'setup' }); if (view === 'talk') { post({ op: 'section', name: 'people' }); post({ op: 'section', name: 'phone' }); }
     paint();
   }
-  function close() { const was = !sheet.hidden; sheet.hidden = true; if (was && P.on && P.prevTier && store.s.tier === 'pause') { store.setSpeed(P.prevTier); if (!P.tip) { P.tip = 1; toast('Time is running again. Your character follows their routine until you act.', 3500); } } P.prevTier = null; P.fb = null; paintStrip(); document.body.classList.remove('psheet-open'); }
+  function close() { const was = !sheet.hidden; sheet.hidden = true; if (was && P.prevTier && store.s.tier === 'pause') { store.setSpeed(P.prevTier); if (P.on && !P.tip) { P.tip = 1; toast('Time is running again. Your character follows their routine until you act.', 3500); } } P.prevTier = null; P.fb = null; paintStrip(); document.body.classList.remove('psheet-open'); }
   sheet.addEventListener('click', (e) => { if (e.target === sheet) close(); });
   const head = (title, back) => `<div class="psh">${back ? `<button class="pback" data-open="${back}" aria-label="Back">‹</button>` : ''}<h3>${title}</h3><button class="pclose" data-close aria-label="Close">✕</button></div>`;
   const tabs = (v) => `<nav class="ptabs">${TABS.map(([k, l]) => `<button data-open="${k}" class="${TAB_OF[v] === k ? 'on' : ''}">${l}</button>`).join('')}</nav>`;
@@ -240,7 +242,7 @@ export function mountPlay(store, hooks) {
     const money = `<h5>Money</h5><p class="pdim">${s ? gbp(s.money) + ' in hand.' : ''}${debtLine} Borrowing adds to what you owe and comes out of your income. A lender's limit follows your income and credit record.</p><div class="pgrid2">${btn('Bank loan £200<small>limit follows income</small>', 'data-borrow="200" data-kind="bank"')}${btn('Family £200<small>from kin who can spare it</small>', 'data-borrow="200" data-kind="family"')}${btn('Payday loan £150<small>fast, costly, capped</small>', 'data-borrow="150" data-kind="payday"')}</div>`;
     const homeNote = me.withParents ? 'You live in the family home. Moving out means renting privately: you need cash for a deposit and first month, and then rent every month.' : me.owns ? 'You own your home. Taking a rented flat means leaving it.' : me.rented ? `You rent for ${gbp(me.rent)} a month. Moving takes about a day and needs cash on hand for the deposit.` : 'Moving needs cash on hand for the deposit and first month.';
     const flat = (u) => { const ok = !s || s.money >= u.need; return `<button class="pb row" data-rent="${u.id}">${esc(u.address)}<small>${u.beds} bed · ${gbp(u.rent)}/mo · needs about ${gbp(u.need)} in hand${ok ? '' : ` (you hold ${gbp(s.money)})`} · tap to move</small></button>`; };
-    const home = `<h5>Home${s && s.home ? ` <small>${esc(me.withParents ? 'family home' : s.home.tenure)}${s.home.rent ? ' · ' + gbp(s.home.rent) + '/mo' : ''}</small>` : ''}</h5><p class="pdim">${homeNote}</p><div class="plist">${d.vac.length ? d.vac.map(flat).join('') : '<p class="pdim">Nothing to rent right now.</p>'}</div>`;
+    const home = `<h5>Home${s && s.home ? ` <small>${esc(me.withParents ? 'family home' : s.home.tenure)}${s.home.rent ? ' · ' + gbp(s.home.rent) + '/mo' : ''}</small>` : ''}</h5><p class="pdim">${homeNote}</p><div class="plist">${d.vac.length ? d.vac.map(flat).join('') : '<p class="pdim">No private flats are free right now. Landlords usually re-let an empty flat within one to three months, so check back in a week or two (time moves on when you close this).</p>'}</div>`;
     return shell('work', 'Work, money and home', adminView(d.admin, s, d.solo, d.mySolo) + jobs + money + home);
   }
   // Goals grouped by theme, with a few picked for the kind of life you lead; the long list stays folded away.
@@ -282,7 +284,7 @@ export function mountPlay(store, hooks) {
       <label class="pl2">Savings to bring <output>${gbp(f.budget)}</output><input id="cf-budget" type="range" min="800" max="20000" step="100" value="${f.budget}"></label>
       <label class="pl2">Apply first for<select id="cf-occ"><option value="">Look for work after I arrive</option>${su.jobs.map((j) => `<option value="${esc(j.occ)}" ${f.occ === j.occ ? 'selected' : ''}>${esc(j.label)}${j.band ? ' · ' + esc(j.band) : ''}</option>`).join('')}</select></label>
       <p class="pdim">Applying is optional: you will hear back in a week or two, and can apply for more later.</p>
-      <h5>Home</h5><div class="plist">${su.homes.map((u) => `<button class="pb row ${f.unit === u.id ? 'on' : ''}" data-unit="${u.id}">${esc(u.address)}<small>${u.beds} bed · ${gbp(u.rent)}/mo · ${esc(lc(u.tenure))}</small></button>`).join('')}</div>${fbHtml()}
+      <h5>Home</h5><div class="plist">${su.homes.length ? '' : '<p class="pdim">No private flats are free right now. Close this and try again in a week or two.</p>'}${su.homes.map((u) => `<button class="pb row ${f.unit === u.id ? 'on' : ''}" data-unit="${u.id}">${esc(u.address)}<small>${u.beds} bed · ${gbp(u.rent)}/mo · ${esc(lc(u.tenure))}</small></button>`).join('')}</div>${fbHtml()}
       ${btn('Move in', 'data-act="create"', 'go')}</div>`;
   }
   const DIR_FILTERS = [['all', 'Everyone'], ['student', 'Students'], ['struggle', 'Struggling'], ['retired', 'Retired'], ['jobless', 'Looking for work'], ['renter', 'Renters']];

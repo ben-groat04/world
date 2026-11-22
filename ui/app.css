@@ -222,12 +222,12 @@ body.following #ticker, body.following #digest { display: none; }
   #speedpop { display: contents; } #speedmeta, #speedbtn, #pausebtn { display: none; }
   #speed { display: flex; gap: 2px; background: var(--panel); border: 1px solid var(--line); padding: 2px; border-radius: 12px; flex: none; }
   #speed button { min-height: 40px; min-width: 38px; padding: 4px 6px; border-radius: 9px; font-size: 12px; background: transparent; } #speed button.on { background: var(--accent); color: #1b1608; }
-  #speed .lf { display: none; } #speed .sh { display: inline; } #speed .pt { display: none; } #speed #jump { display: none; }
+  #speed button .lf { display: none; } #speed button .sh { display: inline; } #speed button .pt { display: none; } #speed #jump { display: none; }
   #clock { flex-direction: column; align-items: flex-start; gap: 0; line-height: 1.2; flex: 1; min-width: 0; } #date { font-size: 12.5px; white-space: nowrap; } #time { font-size: 14px; } #wx { display: none; }
   #z-next { display: block; }
   /* map overlays above the sheet instead of floating across the whole map */
-  #digest { top: auto; bottom: calc(var(--sheet, 62px) + 8px); left: 8px; right: 8px; max-width: none; max-height: 42%; overflow-y: auto; }
-  #fcard { left: 8px; top: 8px; width: calc(100% - 66px); }
+  #digest { top: auto; bottom: calc(var(--sheet, 62px) + 8px); left: 8px; right: 8px; max-width: none; max-height: 34%; overflow-y: auto; }
+  #fcard { left: 8px; top: 8px; width: calc(100% - 66px); font-size: 12px; } #fcard .ft { max-height: 6.6em; }
   .chips { flex-wrap: wrap; overflow: visible; padding-bottom: 6px; } .chips button { min-height: 32px; padding: 5px 10px; font-size: 12px; }
   #sidebar[data-sheet="half"] { height: 44%; }
 }

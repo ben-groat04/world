@@ -238,3 +238,10 @@ OPEN (needs sim owners):
 - FIXED text: per-run punchline memory (`once`, auto for quoted lines) in `sim/text/engine.js`, month tags `<<m=..>>`, venue short refs ("the rec"), a/an by sound, doubled words, 1 reply, slashes (`sim/text/mods.js`, `sim/text/jobs.js`); lint in `tools/variety.js --text` and `tests/text/text.test.js`.
 - FIXED money panel (overdraft counted twice; stale "borrowing" flag), "Died" tag shown for people who left town.
 - OPEN: generic feed chatter still repeats (about 36% of lines contain a 7+ word sentence seen in the previous 30 game-days; pools are bounded by ~40 posts/day town-wide); more pool growth or a lower posting rate is the next lever. Pay/occupation realism, council tenancies, deaths and unemployment queued above are untouched.
+
+## Larkfield population data contradictions (found via ai-convo round 2 attributes)
+- shift_pattern contradicts hours_per_week (e.g. 6×8h evening shifts for 8–17 h/wk students; café owner "Mon–Fri 09:00–17:00").
+- Implausible pay: cook £49k after 1 yr in UK.
+- "Imam" assigned to a woman (Imam/religious teacher category not gender-aware).
+- Severe overcrowding passes silently (4 people in a 1-bed; lone parent + child in 1-bed is plausible, 4 adults+teen is not common).
+- Household relation label "grandparent/grandchild" ambiguous.

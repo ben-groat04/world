@@ -142,3 +142,139 @@ Sounds good, Jo. Maya, just let us know when you've spoken to them.
 --- Tue 17:48, Jo
 Will do, Tom. I'll get on with my marking and keep an eye out for Maya's update.
 
+--- Tue 19:07, Maya
+I still haven't rung the restaurant, and I'm sorry I've kept you both waiting. I'll ring them tomorrow morning when they open, and I'll post what they say as soon as I know. If the 6th is still free, I'll try for a table then. If not, we'll pick another date and I'll tell you straight away.
+
+--- Tue 19:07, Jo
+Thanks for being straight with us, Maya. Ring them tomorrow when you can and let us know. If the 6th's gone, we'll just pick another weekend. Don't worry about it.
+
+--- Tue 19:08, Tom
+No stress, Maya. Ring them tomorrow and let us know. If the 6th's gone we'll pick another weekend, and I'll check the train times for whichever one it ends up being.
+
+--- Tue 19:09, Maya
+Thanks Tom, I'll ring them first thing tomorrow and let you both know.
+
+--- Tue 20:01, Jo
+Sounds good both. Speak tomorrow once Maya's been on the phone.
+
+--- Tue 20:02, Tom
+Sounds good, Jo. Speak tomorrow.
+
+--- Tue 20:08, Jo
+Night Tom. Speak tomorrow.
+
+--- Tue 20:10, Tom
+Night Jo.
+
+--- Tue 20:10, Jo
+Night Tom.
+
+--- Tue 21:00, Maya
+Night both. I'll ring first thing and post the result tomorrow.
+
+--- Tue 21:10, Jo
+Night Maya. Thanks for sorting it.
+
+--- Wed 07:06, Maya
+Morning both. The restaurant won't open until later, so I'll ring as soon as they do and post the result here.
+
+--- Wed 07:07, Tom
+Morning Maya. Sounds good, let us know once you've got them.
+
+--- Wed 07:07, Maya
+Will do, Tom.
+
+--- Wed 07:55, Jo
+Morning both. Maya, ring when they're open and let us know. Tom, I'll keep the card on hold until the table's confirmed.
+
+--- Wed 08:15, Maya
+Morning Jo. I'm starting my shift at 8 so I can't ring them until my break. I'll post the result as soon as I've spoken to them.
+
+--- Wed 08:17, Jo
+No worries, Maya. Ring them on your break and let us know how it goes.
+
+--- Wed 08:17, Maya
+Will do, Jo.
+
+--- Wed 08:44, Jo
+Thanks Maya.
+
+--- Wed 14:39, Maya
+I'm sorry, I still haven't rung them, and I need to be honest about why. I keep saying I will and then not doing it, and that's wasted your time. Can one of you ring the restaurant? I'll send the number and the 6th at 7pm for 12 people, and I'll ask Claude to check any online booking options if that's easier. Tell me which you'd prefer.
+
+--- Wed 14:45, Tom
+Thanks for being honest, Maya. I can ring the restaurant myself, but I'm at the desk for the Stoppard tech until late tonight. If you send me the number and the details, I'll ring first thing tomorrow, before the shift. Or I can check whether they take online bookings. Either way, I'll sort it and post the result here.
+
+--- Wed 14:50, Maya
+Thanks Tom. I have to admit I never picked a restaurant, so I don't have a name or number to send you. Could you pick one in Hexham that does a group of about 12 and check whether they have a table at 7pm on Saturday the 6th? If you'd rather I look up a shortlist first, I can do that and send it over tonight.
+
+--- Wed 14:51, Tom
+Right, I'll look into it. Asking Claude to find restaurants in Hexham that can seat about 12 on Saturday the 6th at 7pm, so I'll post what I find.
+
+--- Wed 14:53, Tom
+@claude Can you find restaurants in Hexham, Northumberland that take group bookings for about 12 people? I'm after a place that could seat a group on Saturday 6 December at 7pm. Please give me a shortlist with phone numbers, whether they take online bookings, and anything about group or private room options.
+
+--- Wed 14:55, Claude → Tom (private)
+I found three Hexham restaurants worth ringing. I couldn't confirm that any of them has a table for 12 at 7pm on Saturday 6 December. Pages for the Boatside Inn and Vercelli wouldn't load when I tried to open them, so their details come from search results only.
+
+**1. The Boatside Inn** (Warden, just outside Hexham)
+- **Phone:** 01434 602233 (listed on several OpenTable pages).
+- **Online booking:** It has an [OpenTable listing](https://www.opentable.co.uk/r/the-boatside-inn-hexham).
+- **Group options:** It has a private dining room. Listings give the capacity as 25 or 26, and one says the whole restaurant can be booked for up to 50. It can plan menus from buffet to four courses. This is the strongest fit for 12.
+
+**2. Vercelli** (36–38 Priestpopple, Hexham)
+- **Phone:** 01434 603350.
+- **Online booking:** It's on [OpenTable](https://opentable.co.uk/r/vercelli-restaurant-hexham). One listing says booking is by phone only, with payment (£45 a head) at booking. That may apply only to a special event or set menu, so ask when you call.
+- **Group options:** An earlier search result mentioned a separate event space and a 50-seat banquet hall. I couldn't verify either.
+
+**3. Bouchon Bistrot** (4–6 Gilesgate, Hexham NE46 3NJ)
+- **Phone:** 01434 609943 ([SquareMeal](https://www.squaremeal.co.uk/restaurants/bouchon-bistrot-hexham_13381)).
+- **Online booking:** SquareMeal takes requests for 1–14 people, but the restaurant has to confirm each one. It's also on OpenTable.
+- **Group options:** [Cvent](https://www.cvent.com/venues/hexham/restaurant/bouchon-bistrot/venue-c02432b7-30b1-4232-995a-fa10def41ebd) says private dining is available but gives no capacity. Saturday dinner reportedly runs until about 9pm, so a 7pm start should fit, but confirm that.
+
+**Other leads**
+- **Slaley Hall** (just outside Hexham) has private Christmas party nights, reportedly from £39.95 a head. That price comes from a search snippet and may be out of date.
+- The Beaumont Hotel appeared in a Living North private-dining article, but I couldn't confirm what it offers.
+
+6 December is a peak Christmas weekend, so phone soon. Ask about deposits, pre-ordering and set menus for large groups, and whether you'd get a private room or just a table in the main dining room. Opening hours can change, so check them too.
+
+Sources:
+- [OpenTable: Boatside Inn](https://www.opentable.co.uk/r/the-boatside-inn-hexham)
+- [OpenTable: Vercelli](https://opentable.co.uk/r/vercelli
+
+-restaurant-hexham)
+- [SquareMeal: Bouchon Bistrot](https://www.squaremeal.co.uk/restaurants/bouchon-bistrot-hexham_13381)
+- [Cvent: Bouchon Bistrot](https://www.cvent.com/venues/hexham/restaurant/bouchon-bistrot/venue-c02432b7-30b1-4232-995a-fa10def41ebd)
+- [Cvent: Boatside Inn](https://www.cvent.com/venues/fi-FI/hexham/hotel/boatside-inn/venue-82ce75e0-40ad-4874-add0-94e42e9527cd?p=53)
+- [Christmas Venues: Slaley Hall](https://www.christmasvenues.com/party/5316/winter-wonderland-christmas-party-nights-at-slaley-hall)
+- [Living North: private dining rooms in the North East](https://www.livingnorth.com/article/private-dining-rooms-you-need-know-about-north-east)
+
+I opened only the SquareMeal and Cvent pages for Bouchon Bistrot. The phone numbers for the Boatside Inn and Vercelli, and the room capacities, come from search-result summaries.
+
+--- Wed 15:03, Jo
+Thanks both. Tom, I'll leave the restaurant search with you and Claude. Once you've got a shortlist, I can help pick one and sort the card.
+
+--- Wed 15:10, Tom
+Thanks Claude, that's really useful. The Boatside Inn looks like the best fit for a group of 12 with its private dining room. I'll ring them tomorrow morning before my shift, and I'll post what they say. If they don't have the 6th at 7pm, I'll try Bouchon Bistrot next.
+
+--- Wed 15:12, Jo
+Nice one Tom, the Boatside sounds like a good shout. Let us know what they say tomorrow, and if the 6th doesn't work, we'll try Bouchon next. I'll get names for the card in the meantime.
+
+--- Wed 15:19, Tom
+Cheers Jo, I'll ring the Boatside first thing and post what they say.
+
+--- Wed 15:20, Jo
+Cheers Tom. Speak tomorrow once you've rung them.
+
+--- Wed 15:35, Tom
+Speak tomorrow, Jo.
+
+--- Wed 15:37, Jo
+Speak tomorrow, Tom.
+
+--- Wed 15:48, Maya
+Thanks Tom, that's a big help. I'll stay out of the way on the restaurant now and let you ring the Boatside tomorrow. Jo, I'll sort my bit of the card in the meantime. Speak tomorrow, both.
+
+--- message limit reached
+Wed 15:48
+

@@ -41,4 +41,22 @@ export default {
   'headline:home.eviction': ['Family given notice on Larkfield Road', 'Eviction notice served on {s.name}', '{s.first} {s.last} told to leave by the landlord', 'A notice on the door for {s.first} {s.last}'],
   'headline:health.heat': ['{s.first} {s.last} taken ill in the heat', 'Heat takes its toll: {s.first} {s.last} unwell', 'Ambulance called as the heat gets to {s.first}', '{s.first} {s.last} struggles through the hottest days', 'Hot flat, bad night, worse morning for {s.first}'],
   'news:health.heat': ['{s.name} was taken ill during the hot spell, a flat with no through-draught and no fan. Neighbours have been knocking on doors to check on older residents. "Drink water and shut the curtains," said one.', 'With the flat "like an oven by two o\'clock", {s.name} became unwell with heat exhaustion. A neighbour sat with {s.them} until {s.they} {s.v:feel} better.'],
+
+  // ---- solo variants: used when the other party is not a resident of the neighbourhood (never "and someone")
+  'headline:life.couple.solo': ['{s.first} {s.last} is seeing someone new', '{s.first} has a new person on the scene', 'Friends say {s.first} {s.last} is "very happy, annoyingly"', '{s.first} is bringing a plus-one to the pub quiz'],
+  'news:life.couple.solo': ['{s.name} has been seen about with someone from outside the street for weeks and has now stopped denying it. Friends call it "long overdue".', 'The quiz team says {s.name} now leaves early on Thursdays. A new partner, apparently, from across town.'],
+  'headline:life.breakup.solo': ['{s.first} {s.last} is single again', 'A split for {s.first} {s.last}', '{s.first} ends it: "It had run its course"', 'Quiet end to a long-distance romance for {s.first}'],
+  'news:life.breakup.solo': ['{s.name} has ended a relationship {p.span}. Friends say it was calm, which is not the same as easy.', 'After {p.span} together, {s.name} is on {s.their} own again. Neighbours have been dropping round with soup and opinions.'],
+  'headline:life.marriage.solo': ['Wedding bells for {s.first} {s.last}', '{s.first} {s.last} gets married', 'A day off work and a good suit: {s.first} {s.last} marries'],
+  'news:life.marriage.solo': ['{s.name} was married on {when|date}, in a ceremony most of the street was not at but heard about in great detail. The cake travelled well.'],
+  'headline:life.cohabit.solo': ['{s.first} {s.last} moves in with a partner', 'Two toothbrushes, one bathroom: {s.first} {s.last}', '{s.first} {s.last} is sharing a front door now'],
+  'news:life.cohabit.solo': ['{s.name} has moved in with a partner, a step friends describe as "brave" and "overdue" in roughly equal measure.'],
+  'headline:life.engaged.solo': ['{s.first} {s.last} gets engaged', 'A ring appears on {s.first} {s.last}\'s hand'],
+  'headline:life.pregnant.solo': ['{s.first} {s.last} is expecting', 'A baby on the way for {s.first} {s.last}'],
+  'headline:social.reconcile.solo': ['{s.first} {s.last} makes up with an old friend'],
+  'headline:social.fallout.solo': ['{s.first} {s.last} falls out with a neighbour', 'Words exchanged on the stairs: {s.first} {s.last}'],
+  'news:social.fallout.solo': ['{s.name} has fallen out with a neighbour over something small that has grown. Both are reliably at the same shop at 5.10pm.'],
+  // ---- gossip: said lightly, never says what the secret is
+  'news:social.scandal': ['Nobody will say what it is, but {s.name} has been taking the long way round to avoid the shop.', 'A story about {s.name} has reached the school gate, the launderette and the pub, in that order. Details differ by the telling.', 'Whatever it was, {s.name} would rather it had stayed quiet. The street is being kind, mostly.', 'It is the sort of thing people talk about in low voices at the bus stop. {s.first} has not been seen out much since.'],
+  'headline:social.rumour': ['Talk on the street about {s.first} {s.last}', 'What is being said about {s.first}', 'A whisper goes round about {s.first} {s.last}'],
 };

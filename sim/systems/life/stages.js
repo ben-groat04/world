@@ -12,7 +12,7 @@ export function septemberTransitions(w, people) {
   const rng = w.rngFor('life.school');
   for (const p of people) {
     const a = ageOf(w, p); if (a < 3.9) continue;
-    const q = p.ext.pop, L = p.ext.life; let changed = false;
+    const q = p.ext.pop, L = p.ext.life; if (!L || !q) continue; /* UI-agent guard: some arrivals have no life record yet (crashed the 1 Sep rollover in a 10y watch run) */ let changed = false;
     if (a >= 25) { // mature/postgraduate students: the course simply runs its length (or is abandoned)
       if (q.uniStart != null && q.school && q.school.kind === 'university' && (w.tick - q.uniStart >= years(w, q.courseYears || 3) || rng.chance(0.04))) { graduate(w, p, rng); rehome(w, p); }
       continue;

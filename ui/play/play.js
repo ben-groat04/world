@@ -146,10 +146,12 @@ export function mountPlay(store, hooks) {
   }
   function placesView(pl) {
     if (!pl) return loading('places', 'Go somewhere');
-    const q = P.q.toLowerCase(), list = pl.places.filter((p) => !q || p.name.toLowerCase().includes(q) || p.tpl.includes(q)).slice(0, 60);
+    const q = P.q.toLowerCase(), list = pl.places.filter((p) => !q || p.name.toLowerCase().includes(q) || p.tpl.toLowerCase().includes(q));
+    const groups = []; for (const p of list) { let g = groups.find((x) => x.n === p.group); if (!g) groups.push(g = { n: p.group, items: [] }); g.items.push(p); }
+    const row2 = (p) => btn(`${esc(p.name)}<small>${esc(p.tpl)}</small>`, `data-goto="${p.id}"`, 'row');
     return shell('places', 'Go somewhere', `<p class="phelp">Pick a place and your character walks there while time runs. Cafés, the pub, the library and community centre are where you meet people.</p><input id="pq" type="search" placeholder="Search places…" value="${esc(P.q)}" autocomplete="off">
       <div class="pgrid2">${btn('☕ Stay a while', 'data-act="stay"')}${btn('🌆 Evening in the city', 'data-act="out"')}${btn('⏭ Let 2 hours pass', 'data-act="skip2"')}${btn(P.s && P.s.canSleep ? '🌙 Sleep till morning' : '⏩ Until morning', 'data-act="morning"')}</div>
-      <div class="plist">${btn('🏠 Home', 'data-goto="home"', 'row')}${list.map((p) => btn(`${esc(p.name)}<small>${esc(p.tpl)}</small>`, `data-goto="${p.id}"`, 'row')).join('')}</div>`);
+      <div class="plist">${btn('🏠 Home', 'data-goto="home"', 'row')}</div>${groups.map((g, i) => `<h5>${esc(g.n)}</h5><div class="plist">${g.items.slice(0, q || i < 2 ? 40 : 12).map(row2).join('')}</div>`).join('') || '<p class="pdim">No places match.</p>'}`);
   }
   function peopleView(d) {
     if (!d) return loading('people', 'People you know');
@@ -183,7 +185,7 @@ export function mountPlay(store, hooks) {
     if (!A) return '';
     const B = P.biz, unit = A.units && A.units.find((u) => u.bid === B.unit) ? B.unit : (s && s.loc && A.units && A.units.find((u) => u.bid === s.loc.id) ? s.loc.id : null);
     const units = (A.units || []).map((u) => `<button class="pb row ${unit === u.bid ? 'sel' : ''}" data-bizunit="${u.bid}">${esc(u.name.replace(/^TO LET, /, ''))}<small>${u.m2} m² · asking ${gbp(u.ask)}/mo · ${u.months >= 1 ? 'empty ' + u.months + ' month' + (u.months > 1 ? 's' : '') : 'just vacated'}</small></button>`).join('') || '<p class="pdim">Every unit on the high street is trading right now.</p>';
-    const start = pdet('biz', 'Start a business here', A.units && A.units.length ? `${A.units.length} unit${A.units.length > 1 ? 's' : ''} to let` : 'no units to let', `<p class="phelp">Pick an empty unit and a type. Set-up (fit-out, deposit, stock) usually runs to tens of thousands of pounds and comes from your savings (${gbp(A.money)}) plus a start-up loan of up to £25,000 that is repaid from takings. Rent, wages and business rates are paid monthly; most new businesses lose money at first.</p><div class="plist">${units}</div>
+    const start = pdet('biz', 'Start a business here', A.units && A.units.length ? `${A.units.length} unit${A.units.length > 1 ? 's' : ''} to let` : 'no units to let', `<p class="phelp">Pick an empty unit and a type. Set-up (fit-out, deposit, stock) usually runs to tens of thousands of pounds and comes from your savings (${gbp(A.money)}) plus a start-up loan of up to £25,000 that is repaid from takings. Rent, wages and business rates are paid monthly; most new businesses lose money at first. Not enough money for a unit? Try Goals &amp; groups &gt; Start a side hustle or Build an online following: they cost little and your character works at them in spare time.</p><div class="plist">${units}</div>
       <label class="pl2">What kind<select id="pbtype">${(A.formats || []).map((f) => `<option value="${esc(f.id)}" ${B.type === f.id ? 'selected' : ''}>${esc(cap(f.label))}</option>`).join('')}</select></label>
       <label class="pl2 ck"><input type="checkbox" id="pbloan" ${B.loan ? 'checked' : ''}> Use a start-up loan</label>${btn(unit ? 'Open for business' : 'Choose a unit first', `data-bizgo="${unit || ''}" ${unit ? '' : 'disabled'}`, 'go')}`);
     const work = pdet('workat', 'Work at a local business', '', `<p class="phelp">Shops, cafes, pubs and salons hire rarely and only when they have a vacancy. You can apply to any one; for set job lists see Work above.</p><label class="pl2">Business<select id="pwork">${(A.firms || []).map((f) => `<option value="${f.bid}" ${+P.workBid === f.bid ? 'selected' : ''}>${esc(f.name)} · ${esc(f.kind)} (${esc(f.doing)})</option>`).join('')}</select></label>${btn('Apply to work there', 'data-workat', 'go')}`);
@@ -196,11 +198,17 @@ export function mountPlay(store, hooks) {
       <h5>Stand as a councillor</h5><p class="phelp">The next ward election is ${esc(A.nextDate || 'not yet set')}. Three seats; you need to be known and trusted.</p><div class="pgrid2"><select id="pparty">${(A.parties || []).map((x) => `<option ${P.party === x ? 'selected' : ''}>${esc(x)}</option>`).join('')}</select>${btn('Stand', 'data-stand')}</div>`);
     return `<h5>Town</h5>${start}${work}${safety}<h5 class="sp">Jobs</h5>`;
   }
+  // jobs: the nearest and most approachable first (on the street, then lower-paid entry roles); the rest (professional posts that want qualifications) fold away
+  function jobList(all) {
+    const one = (o) => `<button class="pb row" data-apply="${esc(o.occ)}" data-bid="${o.bid ?? ''}"><b>${esc(o.label)}</b><small>${esc(o.band)} a year · ${esc(o.hours)} · ${o.at ? esc(o.at) : esc(o.where)}${o.sub ? ' · ' + esc(o.sub) : ''}</small></button>`;
+    const sorted = [...all].sort((a, b) => (b.bid != null) - (a.bid != null) || (a.mid || 0) - (b.mid || 0)), near = sorted.filter((o) => o.bid != null || (o.mid || 0) < 29000).slice(0, 8), rest = sorted.filter((o) => !near.includes(o));
+    return `<h5>Jobs you could get now</h5><div class="plist">${near.map(one).join('')}</div>${rest.length ? pdet('morejobs', `${rest.length} more jobs`, 'mostly professional', `<p class="phelp">Qualifications and experience count here; senior posts go to people already working up to them.</p><div class="plist">${rest.map(one).join('')}</div>`) : ''}`;
+  }
   function workView(d, s) {
     if (!d) return loading('work', 'Life admin');
     const j = d.job, emp = j && j.activity === 'employed';
     const jobs = `<h5>Work</h5>${emp ? row(`<span class="pn"><b>${esc(j.label || cap(lc(j.occ)))}</b><small>${j.hours} h/week · ${gbp(j.pay)}/yr gross</small></span>${btn('Quit', 'data-act="quit"', 'sm bad')}`) : `<p class="phelp">You are looking for work. Pick a job to apply (up to three at once). Employers take one to three weeks to reply and weigh your qualifications and experience against other jobseekers; senior posts go to people already working up to them. Pay shown is the typical gross range for the job.</p>${(d.pending || []).map((x) => `<p class="pdim">⏳ ${esc(x.label)}: reply in ${x.daysLeft ? x.daysLeft + ' days' : 'a day or so'}</p>`).join('')}`}
-      <div class="plist">${d.openings.map((o) => `<button class="pb row" data-apply="${esc(o.occ)}" data-bid="${o.bid ?? ''}"><b>${esc(o.label)}</b><small>${esc(o.band)} a year · ${esc(o.hours)} · ${o.at ? esc(o.at) : esc(o.where)}${o.sub ? ' · ' + esc(o.sub) : ''}</small></button>`).join('')}</div>`;
+      ${jobList(d.openings)}`;
     const money = `<h5>Money</h5><p class="pdim">${s ? gbp(s.money) + ' in hand' + (s.debt ? `, ${gbp(s.debt)} debt` : '') : ''}. Borrowing adds to your debt; repaying comes out of income.</p><div class="pgrid2">${btn('Bank loan £200<small>needs income</small>', 'data-borrow="200" data-kind="bank"')}${btn('Family £200<small>if relatives can</small>', 'data-borrow="200" data-kind="family"')}${btn('Payday loan £150<small>fast but costly</small>', 'data-borrow="150" data-kind="payday"')}</div>`;
     const home = `<h5>Home${s && s.home ? ` <small>${esc(s.home.tenure)} · ${gbp(s.home.rent)}/mo</small>` : ''}</h5><p class="pdim">Moving costs a deposit and first month. Pick a flat to move in.</p><div class="plist">${d.vac.length ? d.vac.map((u) => `<button class="pb row" data-rent="${u.id}">${esc(u.address)}<small>${u.beds} bed · ${gbp(u.rent)}/mo · tap to move</small></button>`).join('') : '<p class="pdim">Nothing to rent right now.</p>'}</div>`;
     return shell('work', 'Life admin', adminView(d.admin, s) + jobs + money + home);

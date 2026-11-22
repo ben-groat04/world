@@ -7,6 +7,9 @@ const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
 let PHR = null;
 const phrase = (w, id) => { if (!PHR) { PHR = new Map(); try { for (const t of w.sys.goals.query.templates()) PHR.set(t.id, t.phrase); } catch (e) { /* ignore */ } } return PHR.get(id) || lc(id); };
 
+// "a few months" / "1 year" / "7 years" (never "0 years")
+const span = (y) => { const n = +y; return !(n >= 0) ? 'a few years' : n < 0.75 ? 'a few months' : n < 1.5 ? 'about a year' : `${Math.round(n)} years`; };
+const fixText = (t) => (t == null ? t : String(t).replace(/\b(zero|0|no) years\b/gi, 'less than a year').replace(/\bone years\b/g, 'one year'));
 // [line(s, o, pl, ctx), news?]  s = subject name, o = second actor or payload name, pl = payload
 const T = {
   'life.birth': (s, o, p) => `${s} and ${o} had a baby, ${p.baby || 'a new arrival'}`,
@@ -14,8 +17,8 @@ const T = {
   'life.marriage': (s, o) => `${s} and ${o} got married`,
   'life.couple': (s, o, p) => `${s} started seeing ${o || p.name || 'someone'}`,
   'life.engaged': (s, o) => `${s} and ${o} got engaged`,
-  'life.breakup': (s, o, p) => `${s} ended a ${lc(p.kind)} relationship of ${p.years} years`,
-  'life.divorce': (s, o, p) => `${s} and ${o} divorced after ${p.years} years`,
+  'life.breakup': (s, o, p) => `${s} ended a ${lc(p.kind)} relationship of ${span(p.years)}`,
+  'life.divorce': (s, o, p) => `${s} and ${o} divorced after ${span(p.years)}`,
   'life.cohabit': (s, o, p) => `${s} moved in with ${o || 'a partner'}`,
   'life.pregnant': (s, o) => `${s} and ${o} are expecting a baby`,
   'life.miscarriage': (s) => `${s} suffered a miscarriage`,
@@ -138,6 +141,7 @@ export const LOCAL_TYPES = Object.keys(LOCAL);
 export const LOCAL_KINDS = new Set(['business', 'crime', 'civic']);
 export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.ill', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school', ...LOCAL_TYPES];
 const MIN_SAL = { 'crime.assault': 0.4, 'crime.burglary': 0.38, 'crime.theft': 0.4, 'crime.vehicle': 0.4, 'crime.damage': 0.4, 'crime.antisocial': 0.4, 'crime.fraud': 0.4, 'crime.harassment': 0.4, 'crime.bike_theft': 0.4, 'crime.drugs': 0.4, 'crime.disorder': 0.4, 'civic.bins': 0.1, 'civic.planning_application': 0.1, 'civic.planning_decision': 0.1, 'business.rent_review': 0.15, 'business.recovered': 0.15, 'health.ill': 0.35, 'life.funeral': 0.35, 'life.school': 0.3, 'civic.complaint': 0.1, 'money.arrears': 0.45, 'housing.rent_rise': 0.2, 'life.caring_start': 0.4, 'goal.invented': 0.3, 'labour.second_job': 0.25 };
+const PAIR = new Set(['life.couple', 'life.breakup', 'life.marriage', 'life.cohabit', 'life.engaged', 'life.pregnant', 'social.reconcile', 'social.fallout']);
 const MAP = { 'labour.hired': 'work.hired', 'labour.job_lost': 'work.fired', 'labour.promoted': 'work.promoted', 'housing.moved_in': 'life.move_in', 'housing.moved_out': 'life.move_out', 'housing.notice_served': 'home.eviction', 'housing.eviction': 'home.eviction', 'housing.rent_rise': 'home.rent_rise', 'life.divorce': 'life.breakup' };
 const view = (w, p) => (p ? { firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(w.ageOf(p)), segment: p.ext?.pop?.seg, mood: ((p.mood || 0) + 1) / 2, job: p.job } : null);
 // Plain-English payload for the text grammar: where from/to, why they moved, who employs them, what the job is called.
@@ -151,6 +155,7 @@ const roleLabel = (w, id) => { const o = (w.pack && w.pack.jobs || []).find((j) 
 function humanPayload(w, ev) {
   const pl = ev.payload || {}, out = {}; if (pl.occ) { out.role = roleLabel(w, pl.occ); const o = (w.pack.jobs || []).find((j) => j.id === pl.occ); const venue = ev.place != null ? w.buildings.get(ev.place) : null;
     out.employer = venue && venue.name ? venue.name : o ? pickBy(EMP[o.dest || o.where] || ['a local employer'], ev.id) : 'a local employer'; }
+  if (pl.years != null) out.span = span(pl.years);
   if (pl.from != null) out.from = WHERE[pl.from] || pl.from; if (pl.to != null) out.to = WHERE[pl.to] || pl.to;
   if (pl.reason) out.why = pickBy(WHY[pl.reason] || WHY.chosen, ev.id); else if (ev.type === 'housing.moved_in') out.why = pickBy(WHY.arrival, ev.id);
   return out;
@@ -168,6 +173,7 @@ export function describeEvent(w, ev, text, viewer = null) {
 
 export function newsFor(w, text, ev, host) {
   const min = MIN_SAL[ev.type] ?? 0.3; if (ev.salience < min) return null;
+  if (/^health\.(episode|substance)$/.test(ev.type)) return null; // sober: nobody's mental health or drinking is named in the public feed (it stays in their own profile and the storylines)
   if (LOCAL[ev.type]) { if (isPrivateEv(ev)) return null; const kind = ev.type.split('.')[0]; let x; try { x = LOCAL[ev.type](w, ev, ev.payload || {}); } catch (e) { return null; }
     const place = ev.place != null && kind !== 'crime' ? w.buildings.get(ev.place) : null; const named = kind === 'civic' || ev.type === 'business.opened' || ev.type === 'business.closed' ? (ev.actors || []).slice(0, 2).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean) : [];
     return { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind, head: x.head, body: x.body, line: x.head, ppl: kind === 'crime' ? [] : named, sal: kind === 'crime' ? Math.min(ev.salience, 0.45) : ev.salience, place: place ? { id: place.id, name: place.name } : null, town: 1 }; }
@@ -175,11 +181,12 @@ export function newsFor(w, text, ev, host) {
   const ppl = a.slice(0, 4).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean);
   let head = d.line, body = null;
   const key = ev.type === 'health.ill' && /heat/.test(ev.payload?.name || '') ? 'health.heat' : MAP[ev.type] || ev.type;
-  if (text.has && text.has('headline:' + key)) {
+  const solo = PAIR.has(key) && (a.length < 2 || !w.people.get(a[1])); const sk = solo && text.has && text.has('headline:' + key + '.solo') ? key + '.solo' : key; // no resident on the other side: never print "and someone"
+  if (text.has && text.has('headline:' + sk)) {
     const ctx = { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), biz: ev.payload?.name || DEFAULTS.biz }, date: w.calendar.dateOf(ev.tick), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
     try {
-      const e2 = { ...ev, type: key }; const h = text.render(e2, ctx, w);
-      if (h && !/[{}#\[]/.test(h)) { head = h; const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (b && !/[{}#\[]|Details are still/.test(b)) body = b; }
+      const e2 = { ...ev, type: sk }; const h = text.render(e2, ctx, w);
+      if (h && !/[{}#\[]/.test(h)) { head = fixText(h); const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (b && !/[{}#\[]|Details are still/.test(b)) body = fixText(b); }
     } catch (e) { /* keep plain line */ }
   }
   const place = ev.place != null ? w.buildings.get(ev.place) : null;

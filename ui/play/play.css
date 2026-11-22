@@ -78,3 +78,4 @@ body.playing #ticker { display: none; } .pa button { min-height: 44px; }
 .pdet { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; background: var(--panel2); } .pdet > summary { padding: 11px 12px; font-weight: 700; font-size: 14px; cursor: pointer; list-style: none; display: flex; gap: 8px; align-items: baseline; } .pdet > summary::-webkit-details-marker { display: none; }
 .pdet > summary::before { content: '\25B8'; color: var(--dim); font-size: 11px; } .pdet[open] > summary::before { content: '\25BE'; } .pdet > summary small { margin-left: auto; color: var(--mute); font-weight: 500; font-size: 12px; } .pdb { padding: 0 12px 12px; }
 .pdb h5 { margin: 14px 0 6px; } .pb.sel { outline: 2px solid var(--accent); } .pl2.ck { display: flex; gap: 8px; align-items: center; } .pdb select { width: 100%; }
+.pfb p { white-space: pre-line; }

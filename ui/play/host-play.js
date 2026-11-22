@@ -15,8 +15,24 @@ const REQ_TPL = { befriend_isolated_neighbour: 'knocked to say hello: you are ne
 const ASK_FAVOUR = ['asks if you have a drill they could borrow', 'asks if you could take in a parcel for them', 'is after a cup of sugar and a bit of company', 'asks whether you could keep an eye on the flat this weekend', 'asks if you know a decent plumber', 'asks if you have jump leads'];
 const WEEK = 144 * 7;
 const cap1 = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
-const WARM = (l) => (l == null ? 'not met' : l > 0.5 ? 'close' : l > 0.2 ? 'friendly' : l > -0.15 ? 'acquaintance' : 'cool');
+const WARM = (l) => (l == null ? 'not met' : l > 0.5 ? 'close friends' : l > 0.2 ? 'on friendly terms' : l > -0.15 ? 'acquaintances' : 'on cool terms');
 const ACT_DID = { small: 'chatted with', joke: 'joked with', news: 'shared some news with', advise: 'offered advice to', comfort: 'comforted', complain: 'had a moan with', confide: 'confided in', gossip: 'gossiped with', flirt: 'flirted with', favour: 'asked a favour of', apologise: 'apologised to', argue: 'argued with' };
+// what the other person actually says back: short, in character-neutral British speech, picked by act and outcome (deterministic per moment)
+const SAYS = {
+  small: { warm: ['"Terrible weather, isn\'t it? Honestly though, I\'d rather be out in it than at home."', '"Oh, you\'re new, aren\'t you? Where are you living?"', '"Been here years. Best thing is the people, worst thing is the parking."'], flat: ['"Yes, mustn\'t grumble," and a polite nod.', 'A short, friendly answer, then back to their phone.', '"Mm, you\'re right." The conversation runs out of road.'] },
+  joke: { warm: ['A proper laugh. "Ha! Stop it. I\'m telling that one at work."', '"That\'s terrible. Do another."'], flat: ['A half-smile. The joke lands somewhere near the floor.', '"Ha. Right." They are not sure if it was a joke.'] },
+  news: { warm: ['"Really? I hadn\'t heard. Thanks for telling me."', '"Well, that\'s something. Anyone else know?"'], flat: ['"Oh, right." They take it in and say little.'] },
+  advise: { warm: ['"That\'s actually useful, thank you. I\'ll try it."'], flat: ['"Hm. Maybe." Advice is easier to give than to take.'] },
+  comfort: { warm: ['"Thanks. That means more than you\'d think."'], flat: ['A small nod. "I\'ll be fine, honestly."'] },
+  confide: { warm: ['"Thank you for telling me. It stays with me."'], flat: ['They listen, a little awkwardly, and change the subject gently.'] },
+  flirt: { warm: ['A grin they try to hide. "Careful, I might take you seriously."'], flat: ['A polite laugh and a half step back.'] },
+  favour: { warm: ['"Of course. Just let me know when."'], flat: ['"Er, I\'ll see what I can do." It is not a yes.'] },
+  complain: { warm: ['"Don\'t get me started. Honestly, it\'s the same for all of us."'], flat: ['"Yeah, well." They do not want to join in.'] },
+  gossip: { warm: ['"No! Who told you? ...Go on, then."'], flat: ['"I\'d rather not say anything about anyone." A raised eyebrow.'] },
+  apologise: { warm: ['"Don\'t worry. We\'re fine. Thanks for saying."'], flat: ['"Okay." It will take more than words.'] },
+  argue: { warm: ['A long pause, then, "...Fair. I hadn\'t thought of it that way."'], flat: ['"We\'ll have to agree to differ."'] },
+};
+const sayOf = (w, who, act, react) => { const p = (SAYS[act] || SAYS.small)[react === 'warm' ? 'warm' : 'flat']; return `${who}: ${p[(w.tick >> 3) % p.length]}`; };
 const ACT_COOL = { flirt: 'Flirting lands better once you know each other.', argue: 'Arguing rarely wins people over.', favour: 'Asking for favours works better once you have built some goodwill.', confide: 'Opening up to someone you barely know can feel like too much.', gossip: 'Gossip goes down badly if they like the person you are talking about.', complain: 'Moaning to someone you hardly know can wear thin.' };
 // What you can do yourself to speed up each kind of goal step (goal steps otherwise run on autopilot, mostly in spare evenings).
 const MOVE_HINT = { search: 'happens on its own at home', plan: 'happens on its own at home', budget: 'happens on its own at home', save: 'happens on its own', wait: 'just takes time', apply: 'you can apply yourself: Do > Life admin > Jobs', attend: 'go along yourself: Do > Go somewhere', join: 'you can join a group yourself: Do > Goals & groups', ask: 'talk to or message the person yourself', befriend: 'talk to people when you meet them', persuade: 'talk to them yourself', recruit: 'ask them yourself: talk to them', invite: 'invite them yourself: message them', visit: 'drop in yourself: Do > Go somewhere', rent: 'Do > Life admin > Home', move: 'Do > Life admin > Home', train: 'happens on its own in spare time', learn: 'happens on its own in spare time', exercise: 'happens on its own in spare time', message: 'message them yourself: Do > Phone', buy: 'happens on its own' };
@@ -85,9 +101,9 @@ export class PlayHost {
           return out('Nobody to talk to', 'Nobody by that name is here.', { next: [{ label: 'See who is here', open: 'menu' }] });
         }
         const lbl = WARM(r.l), met = r.met ? ` You have now properly met ${who}: they are in your People list, so you can message them and ask them out, or invite them to things.` : '';
-        if (r.react === 'warm') return out(`You ${ACT_DID[r.act] || 'talked to'} ${who}`, `${who} warmed to it. You are now ${lbl}.${met}`, { next: [{ label: 'Talk more later', open: 'menu' }] });
+        if (r.react === 'warm') return out(`You ${ACT_DID[r.act] || 'talked to'} ${who}`, `${sayOf(w, who, r.act, 'warm')}\n\nThey warmed to it. You are now ${lbl}.${met}`, { next: [{ label: 'Talk more later', open: 'menu' }] });
         if (r.react === 'cool') return out(`You ${ACT_DID[r.act] || 'talked to'} ${who}`, `${who} did not take it well and likes you a little less. ${ACT_COOL[r.act] || 'It happens.'} Try something lighter next time, like small talk or a joke.`, { next: [{ label: 'Try small talk instead', open: 'menu' }] });
-        return out(`You ${ACT_DID[r.act] || 'talked to'} ${who}`, `${who} took it in their stride, and nothing much changed. Friendships grow with repeat meetings, so keep bumping into each other: groups, the pub, the café. You are ${lbl}.${met}`, { next: [{ label: 'Find a group to join', open: 'goals' }] });
+        return out(`You ${ACT_DID[r.act] || 'talked to'} ${who}`, `${sayOf(w, who, r.act, 'flat')}\n\nNothing much changed, which is normal: friendships grow with repeat meetings, so keep bumping into each other (groups, the pub, the café). You are ${lbl}.${met}`, { next: [{ label: 'Find a group to join', open: 'goals' }] });
       }
       case 'player.message': {
         if (!r.ok) return out(`Could not reach ${who}`, 'Their phone seems to be off. Try again later.');
@@ -238,7 +254,6 @@ export class PlayHost {
     const w = this.w, hr = w.time.hourFloat || 0, acts = [], home = p.locationId === p.homeId, b = loc ? this.h.byBid.get(loc.id) : null, tpl = b && b.lf ? b.lf.template : '';
     const pop = p.ext.pop || {}, emp = pop.activity === 'employed';
     const people = here.slice().sort((x, y) => (y.known ? 1 : 0) - (x.known ? 1 : 0) || (y.l ?? 0) - (x.l ?? 0));
-    for (const x of people.slice(0, 2)) acts.push({ k: 'talk', id: x.id, label: x.known ? `Talk to ${x.first}` : `Say hello to ${x.first}`, sub: x.line });
     if (!off && /^(cafe|bakery)$/.test(tpl)) acts.push({ k: 'buy', item: 'coffee', label: 'Order a coffee', sub: 'About £3. A good place to start a conversation.' });
     else if (!off && tpl === 'pub') acts.push({ k: 'buy', item: 'pint', label: 'Get a drink', sub: 'About £5. Pubs are where locals mix.' });
     const wp = pop.workplace; if (emp && hr >= 5.5 && hr < 19) {
@@ -293,7 +308,10 @@ export class PlayHost {
       const hst = this.S(() => q.health.query.status(pid)) || {}; out.health = { score: r2(p.health ?? 1), conditions: (hst.conditions || []).map(lc) };
       const fin = (p.ext.pop || {}).fin || {}; out.money = { cash: Math.round(p.money || 0), debt: Math.round(fin.debt || 0), arrears: Math.round(fin.arrears || 0), net: Math.round(fin.net || 0) };
     } else if (name === 'places') {
-      out.places = [...w.buildings.values()].filter((b) => b.lf && b.lf.kind !== 'residential' && b.name).map((b) => ({ id: b.id, name: b.name, tpl: lc(b.lf.template || b.lf.category || b.type) })).sort((a, b) => a.name.localeCompare(b.name));
+      // places worth walking to, social ones first; workshops, arches, schools and the like are not offered
+      const HIDE = /(^| )(unit|estate green|nursery|vacant unit|primary school|secondary school|mortuary)( |$)/, GOOD = { cafe: 0, pub: 0, 'community centre': 0, library: 0, park: 1, 'park pavilion': 1, gym: 1, church: 1, mosque: 1, 'church hall': 1, restaurant: 2, bakery: 2, 'small supermarket': 3, 'ethnic grocer': 3, 'off licence': 3, barber: 3, salon: 3, launderette: 3, pharmacy: 3, 'charity shop': 3, station: 4 };
+      const GROUP = ['Meet people', 'Parks, sport and worship', 'Eating out', 'Shops and services', 'Getting about', 'Other'];
+      out.places = [...w.buildings.values()].filter((b) => b.lf && b.lf.kind !== 'residential' && b.name).map((b) => { const t = lc(b.lf.template || b.lf.category || b.type); return { id: b.id, name: b.name, tpl: cap1(t), hide: HIDE.test(t), g: GOOD[t] ?? 5 }; }).filter((p) => !p.hide && (p.g < 5 || !/^\d+ /.test(p.name))).map((p) => ({ id: p.id, name: p.name, tpl: p.tpl, group: GROUP[p.g] })).sort((a, b) => GROUP.indexOf(a.group) - GROUP.indexOf(b.group) || a.name.localeCompare(b.name));
       out.dests = Object.keys(w.pack.meta.offmap).filter((k) => /centre|leisure|retail|airport|other_neigh/.test(k)).map((k) => ({ k, name: lc(k) }));
     } else if (name === 'work') {
       const P = q.player.query; const seenOcc = new Set(); out.openings = P.openings().map((o) => ({ occ: o.occ, ...this.jobInfo(o.occ), bid: o.bid ?? null, at: o.bid != null ? this.h.place(o.bid)?.name : '', count: o.count })).filter((o) => { const k = o.occ + ':' + o.bid; if (seenOcc.has(k)) return false; seenOcc.add(k); return true; }).sort((a, b) => (b.bid != null) - (a.bid != null) || b.mid - a.mid).slice(0, 70);

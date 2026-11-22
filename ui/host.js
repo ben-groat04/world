@@ -29,7 +29,7 @@ const SEASON = (m) => (m >= 2 && m <= 4 ? 'Spring' : m >= 5 && m <= 7 ? 'Summer'
 const hoursText = (iv) => (iv && iv.length ? iv.map(([a, b]) => `${fh(a)}–${fh(b)}`).join(', ') : 'closed today');
 const fh = (h) => { h = h % 24; const hh = Math.floor(h), mm = Math.round((h - hh) * 60); return `${hh}:${String(mm).padStart(2, '0')}`; };
 
-const BATCH = { 'health.episode': ['More people are having a hard time', 'Several residents report low or anxious spells this month. The GP surgery says appointments are filling.'], 'money.arrears': ['More households fall behind on rent', 'Rent day came and went with several households short. Landlords and advice centres are both getting calls.'], 'money.cost_pressure': ['The cost of living bites again', 'More households say the budget no longer stretches to the end of the month.'], 'money.debt_spiral': ['More borrowing to cover the basics', 'Advice workers report a rise in people borrowing to pay for essentials.'], 'labour.second_job': ['Extra shifts and second jobs', 'More residents are picking up evening and weekend work to make ends meet.'], 'housing.moved_out': ['Several households move on', 'A run of moves this week: vans, boxes and for-let boards on the street.'], 'housing.moved_in': ['New neighbours arrive', 'Several new households have moved onto the streets this week.'] };
+const BATCH = { 'health.episode': ['More people are having a hard time', 'Several residents report low or anxious spells this month. The GP surgery says appointments are filling.'], 'money.arrears': ['More households fall behind on rent', 'Rent day came and went with several households short. Landlords and advice centres are both getting calls.'], 'money.cost_pressure': ['The cost of living bites again', 'More households say the budget no longer stretches to the end of the month.'], 'money.debt_spiral': ['More borrowing to cover the basics', 'Advice workers report a rise in people borrowing to pay for essentials.'], 'labour.second_job': ['Extra shifts and second jobs', 'More residents are picking up evening and weekend work to make ends meet.'], 'housing.moved_out': ['Several households move on', 'A run of moves this week: vans, boxes and for-let boards on the street.'], 'social.scandal': ['Talk of the town', 'A few names are doing the rounds at the school gate and the pub this week. Nobody wants to be the one who started it.'], 'social.rumour': ['Whispers on the street', 'Several rumours are going round at once. Most will be forgotten by Friday.'], 'housing.moved_in': ['New neighbours arrive', 'Several new households have moved onto the streets this week.'] };
 export class Host {
   constructor(seed, send) {
     this.send = send; this.seed = seed;
@@ -117,9 +117,19 @@ export class Host {
     // month-end/start batches (budgets, mood reviews) land on one day: the first two items per type show, the third becomes one summary line, the rest are dropped
     const cap = BATCH[ev.type]; if (cap && !iv) { const k = ev.type + ':' + Math.floor(ev.tick / this.TPD), c = this.dayCap || (this.dayCap = new Map()); const n = (c.get(k) || 0) + 1; c.set(k, n); if (c.size > 400) c.delete(c.keys().next().value);
       if (n === 3) { it.head = cap[0]; it.body = cap[1]; it.ppl = []; it.sal = Math.min(it.sal, 0.35); } else if (n > 3) return; }
+    // leaving and re-arriving within days is one change of address inside the area, not a farewell plus a welcome
+    if (ev.type === 'life.move_out' && ev.actors && ev.actors[0] != null) { const h = this.heldOut || (this.heldOut = new Map()); h.set(ev.actors[0], { it, ev }); return; }
+    if (ev.type === 'life.move_in' && ev.actors && this.heldOut && this.heldOut.has(ev.actors[0])) { const h = this.heldOut.get(ev.actors[0]); this.heldOut.delete(ev.actors[0]);
+      if (ev.tick - h.ev.tick < this.TPD * 5) { const p = this.w.people.get(ev.actors[0]); const n = p ? nm(p) : 'A resident'; const f = p ? p.firstName : 'A resident';
+        it.head = [`${n} changes address`, `${f} swaps one front door for another`, `Boxes and a van: ${n} moves house`][ev.id % 3]; it.body = `${n} is staying in the area, just not at the old address. A few doors, or a few streets, along.`; it.kind = 'housing'; it.sal = 0.3; it.type = 'life.move_local'; }
+      else this.commit(h.it, h.ev); }
+    this.commit(it, ev);
+  }
+  commit(it, ev) {
     this.news.push(it); this.newsOut.push(it); if (this.news.length > 600) this.news.splice(0, 100);
     if (this.jump && it.sal >= this.jump.min && ev.tick > this.jump.start) { this.jump = null; this.setTier('pause'); this.send({ t: 'jumped', item: it }); }
   }
+  releaseHeld() { if (!this.heldOut || !this.heldOut.size) return; for (const [k, h] of this.heldOut) if (this.w.tick - h.ev.tick >= this.TPD * 5) { this.heldOut.delete(k); this.commit(h.it, h.ev); } }
   ref(id) { const p = this.w.people.get(id); return p ? { id, name: nm(p) } : { id, name: typeof id === 'string' ? '(elsewhere)' : 'someone' }; }
 
   // ------------------------------------------------------------------ frames
@@ -138,6 +148,7 @@ export class Host {
     const time = this.timeInfo(); time.off = off; time.rate = this.rate; time.tier = this.tier;
     this.send({ t: 'frame', time, people: pk, occ: new Int16Array(occ) }, [pk.buffer]);
     if (w.people.size !== this.lastRoster) this.sendRoster();
+    this.releaseHeld();
     if (this.newsOut.length) { this.send({ t: 'news', items: this.newsOut.splice(0, 200) }); }
     if (now - this.lastSlow > (this.tps > 3000 ? 2500 : 1200)) { this.lastSlow = now; this.slowFeeds(); }
     if (this.pendingSeries.length) { this.send({ t: 'stats', samples: this.pendingSeries.splice(0), stats: this.statsDetail() }); }

@@ -87,6 +87,38 @@ store.on('frame', (m) => {
   $('speedinfo').textContent = t.tier === 'pause' ? 'Paused' : t.tier === 'scene' ? '1 hour per second' : yrs >= 0.1 ? `${yrs < 10 ? yrs.toFixed(1) : Math.round(yrs)} game-years / min` : '';
 });
 
+// ------------------------------------------------------------------ digest ("while you were fast-forwarding") + first-visit welcome
+const FAST = new Set(['x5', 'x20', 'max']); const TPD = 144;
+const COUNTS = [['life.birth', 'baby', 'babies'], ['life.death', 'death', 'deaths'], ['life.marriage', 'wedding', 'weddings'], ['life.breakup', 'break-up', 'break-ups'], ['life.move_in', 'arrival', 'arrivals'], ['life.move_out', 'departure', 'departures'], ['labour.hired', 'new job', 'new jobs'], ['labour.job_lost', 'job lost', 'jobs lost'], ['business.opened', 'shop opened', 'shops opened'], ['business.closed', 'business closed', 'businesses closed']];
+let fast = null, jumpedFlag = false;
+const digestEl = document.createElement('div'); digestEl.id = 'digest'; digestEl.hidden = true; wrap.appendChild(digestEl);
+digestEl.addEventListener('click', (e) => { if (e.target.closest('[data-dx]')) { digestEl.hidden = true; return; } });
+store.on('news', (items) => { if (!fast) return; for (const it of items) { if (it.kind === 'god') continue; fast.n[it.type] = (fast.n[it.type] || 0) + 1; if (it.sal >= 0.35 && it.ppl && it.ppl.length) { fast.top.push(it); if (fast.top.length > 300) { fast.top.sort((a, b) => b.sal - a.sal); fast.top.length = 120; } } } });
+function digestPick(top) { // one story per person, a spread of kinds first (not three evictions in a row), then fill up to two per kind
+  const sorted = top.slice().sort((a, b) => b.sal - a.sal || b.tick - a.tick), seen = new Set(), kinds = {}, out = [];
+  for (const cap of [1, 2]) for (const it of sorted) { const k = it.ppl[0].id; if (out.length >= 6 || seen.has(k) || (kinds[it.kind] || 0) >= cap) continue; seen.add(k); kinds[it.kind] = (kinds[it.kind] || 0) + 1; out.push(it); }
+  return out.sort((a, b) => a.tick - b.tick);
+}
+function showDigest(f) {
+  const t = store.s.time, days = Math.round(((t ? t.tick : 0) - f.tick) / TPD); if (days < 30 || jumpedFlag) return;
+  const dur = days >= 700 ? `${(days / 365).toFixed(1)} years` : days >= 60 ? `${Math.round(days / 30.4)} months` : `${days} days`;
+  const counts = COUNTS.map(([k, one, many]) => [f.n[k] || 0, one, many]).filter((c) => c[0] > 0).map(([n, one, many]) => `${n} ${n === 1 ? one : many}`);
+  const picks = digestPick(f.top);
+  digestEl.innerHTML = `<button class="dgx" data-dx aria-label="Close">✕</button><div class="dgh">While you were fast-forwarding</div><div class="dgm">${esc(f.date)} to ${esc(t.date)} · ${dur}</div>${counts.length ? `<div class="dgc">${counts.map((c) => `<span>${esc(c)}</span>`).join('')}</div>` : ''}${picks.length ? `<div class="dgl">${picks.map((it) => `<a data-pid="${it.ppl[0].id}"><time>${esc(it.date)}</time> ${esc(it.head)}</a>`).join('')}</div><div class="dgd">Tap a line to see who it is about. Storylines has the long-running ones.</div>` : ''}`;
+  digestEl.hidden = false;
+}
+store.on('speed', (id) => { if (FAST.has(id)) { if (!fast && store.s.time) fast = { tick: store.s.time.tick, date: store.s.time.date, n: {}, top: [] }; jumpedFlag = false; } else if (fast) { const f = fast; fast = null; setTimeout(() => showDigest(f), 80); } });
+store.on('jumped', () => { jumpedFlag = true; });
+store.on('select', () => { digestEl.hidden = true; });
+if (!(() => { try { return localStorage.getItem('lf_welcomed'); } catch (e) { return '1'; } })() && !qs.has('speed')) {
+  const wel = document.createElement('div'); wel.id = 'welcome';
+  wel.innerHTML = `<div class="wc"><b>Larkfield</b><p>A living, simulated neighbourhood in a UK city: a few hundred neighbours with jobs, rents, friendships and secrets. Nothing is scripted.</p><button data-w="watch">Watch it unfold</button><button data-w="play">Play a resident</button><button data-w="god">God mode: shake things up</button><small>You can change your mind any time. Tap a person or a building on the map to learn their story.</small></div>`;
+  document.body.appendChild(wel);
+  store.on('ready', () => { if (!wel.isConnected) return; prevTier = 'life'; store.setSpeed('pause'); });
+  wel.addEventListener('click', (e) => { const b = e.target.closest('[data-w]'); if (!b) return; const k = b.dataset.w; wel.remove(); try { localStorage.setItem('lf_welcomed', '1'); } catch (x) { /* ignore */ }
+    if (k === 'watch') { setTier('life'); setTab('feed'); } else if (k === 'play') { setTier('life'); $('z-play').click(); } else { setTab('god'); if (mobile()) setSheet('half'); setTier('life'); } });
+}
+
 // ------------------------------------------------------------------ toast + ticker
 let toastT = 0;
 function toast(msg, ms = 4200) { if (document.body.classList.contains('psheet-open') || (document.body.classList.contains('playing') && !$('pcard').hidden)) return; const el = $('toast'); el.innerHTML = msg; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, ms); }

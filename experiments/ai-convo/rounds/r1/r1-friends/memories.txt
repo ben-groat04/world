@@ -1,0 +1,28 @@
+## Matthew Harrison
+Thu 18:00 [the simulation starts: decide where you are and what you are doing] @Matthew and Sophie's bedroom: 
+   plan: until Thu 19:00: Cooking tea for Oliver and Sophie, cheap pasta bake @Harrison kitchen / until Thu 19:45: Eating tea, tidying up, laundry on @Harrison kitchen / until Thu 20:15: Bath and bedtime story with Oliver @Oliver's bedroom / until Thu 21:30: Feeding Isla, podcast, update family calendar for weekend @Harrison living room / until Thu 22:30: Wind down, check bills spreadsheet briefly @Harrison living room / until Fri 06:00: Sleep, broken by night feeds @Matthew and Sophie's bedroom (asleep)
+Thu 18:00   -> Harrison kitchen (Cooking tea for Oliver and Sophie, cheap pasta bake)
+Thu 19:45   -> Oliver's bedroom (Bath and bedtime story with Oliver)
+Thu 20:15   -> Harrison living room (Feeding Isla, podcast, update family calendar for weekend)
+Thu 22:30   -> Matthew and Sophie's bedroom (Sleep, broken by night feeds)
+
+## Marco Conti
+Thu 18:00 [the simulation starts: decide where you are and what you are doing] @Marco's flat: 
+   plan: until Thu 19:00: finish work thread, then cook and eat leftover batch meal @Marco's flat / until Thu 22:30: reading non-fiction, reading about tide tables @Marco's flat / until Thu 23:00: get ready for bed @Marco's flat / until Fri 07:00: sleep @Marco's flat (asleep) / until Fri 08:30: breakfast and start of day @Marco's flat
+
+## Aisha Rahman
+Thu 18:00 [the simulation starts: decide where you are and what you are doing] @elsewhere: 
+   plan: until Thu 19:00: home, cooking big dinner with Yusuf @Rahman flat / until Thu 21:00: marking pile, podcast on @Rahman flat / until Thu 22:30: chilling, nagging Yusuf about screens @Rahman flat / until Fri 06:30: asleep @Rahman flat (asleep)
+Thu 18:00   -> Rahman flat (home, cooking big dinner with Yusuf)
+Thu 18:11 [looked at your phone (close friend and fellow teacher texted: Ugh, same.)] @Rahman flat: home, cooking big dinner with Yusuf (kept plan)
+   plan: until Thu 19:00: home, cooking big dinner with Yusuf @Rahman flat / until Thu 21:00: marking pile, podcast on @Rahman flat / until Thu 22:30: chilling, nagging Yusuf about screens @Rahman flat / until Fri 06:30: asleep @Rahman flat (asleep)
+Thu 19:08 [looked at your phone (close friend and fellow teacher texted: Dinner wit)] @Rahman flat: marking pile, podcast on (kept plan)
+   plan: until Thu 21:00: marking pile, podcast on @Rahman flat / until Thu 22:30: chilling, nagging Yusuf about screens @Rahman flat / until Fri 06:30: asleep @Rahman flat (asleep)
+
+## Chloe Walker
+Thu 18:00 [the simulation starts: decide where you are and what you are doing] @Chloe and Daniel's bedroom: 
+   plan: until Thu 19:30: bath and bedtime routine with Alfie @Alfie's bedroom / until Thu 20:30: tea, tidy up, load washing @Walker kitchen / until Thu 22:30: telly and scroll with Daniel @Walker living room / until Fri 06:30: sleep @Chloe and Daniel's bedroom (asleep) / until Fri 08:00: breakfast, get Alfie ready, nursery run @Walker kitchen
+Thu 18:00   -> Alfie's bedroom (bath and bedtime routine with Alfie)
+Thu 19:30   -> Walker kitchen (tea, tidy up, load washing)
+Thu 20:30   -> Walker living room (telly and scroll with Daniel)
+Thu 22:30   -> Chloe and Daniel's bedroom (sleep)

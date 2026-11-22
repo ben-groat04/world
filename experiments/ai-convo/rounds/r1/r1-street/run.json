@@ -1,0 +1,40 @@
+{
+ "label": "r1-street",
+ "seed": 1101,
+ "args": {
+  "label": "r1-street",
+  "setting": "Neighbours on the same residential street in an inner-city neighbourhood of a UK city.",
+  "dateNote": "mid-November 2026",
+  "startDow": 6,
+  "startHour": 10,
+  "hours": 12,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Sun 10:00",
+  "to": "Sun 22:00",
+  "hours": 12
+ },
+ "totalTokens": 83683,
+ "agentCount": 19,
+ "stats": {
+  "calls": 19,
+  "simCalls": 14,
+  "maxCalls": 360,
+  "byFor": {
+   "generator": 5,
+   "Imran Hussain": 3,
+   "Wei Zhang": 4,
+   "Joby Mathew": 1,
+   "Matteo Rossi": 2,
+   "world": 3,
+   "Xiaoyu Lin": 1
+  },
+  "sceneLines": 3,
+  "promptChars": 26872,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

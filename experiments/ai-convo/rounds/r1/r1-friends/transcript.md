@@ -1,0 +1,6 @@
+[Thu 18:00] Aisha Rahman → close friend and fellow teacher: hiii how was today?? i am drowning in marking again lol 🙈
+[Thu 18:06] close friend and fellow teacher → Aisha Rahman: Ugh, same. Today was a lot, and I've got a pile of books staring at me from the sofa. Have you eaten or are you running on tea again? Fancy a moan on the phone later, or shall I just send sympathy and biscuits?
+[Thu 18:11] Aisha Rahman → close friend and fellow teacher: haha tea AND a biscuit situation, dont judge 🙈
+[Thu 18:11] Aisha Rahman → close friend and fellow teacher: cooking a massive dinner with yusuf rn so ill ring you after 9 when ive done some marking?? or at least pretended to 😂 sympathy and biscuits both gratefully accepted x
+[Thu 19:05] close friend and fellow teacher → Aisha Rahman: Dinner with Yusuf sounds far better than my toast and a pile of books. Fine, ring me after 9. I'll pretend I've marked loads too. Biscuits are on their way (virtually). Enjoy the cooking x
+[Thu 19:08] Aisha Rahman → close friend and fellow teacher: deal x ring you after 9 😂 save me a biscuit

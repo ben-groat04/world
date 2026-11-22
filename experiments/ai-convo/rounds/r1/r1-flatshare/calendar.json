@@ -1,0 +1,26 @@
+[
+ {
+  "what": "work",
+  "who": [
+   "Hannah Clarke"
+  ],
+  "place": "elsewhere",
+  "t0": -390,
+  "t1": 90,
+  "by": "sampler",
+  "at": "Fri 09:30",
+  "until": "Fri 17:30"
+ },
+ {
+  "what": "work",
+  "who": [
+   "Daniel Whitaker"
+  ],
+  "place": "elsewhere",
+  "t0": -120,
+  "t1": 450,
+  "by": "sampler",
+  "at": "Fri 14:00",
+  "until": "Fri 23:30"
+ }
+]

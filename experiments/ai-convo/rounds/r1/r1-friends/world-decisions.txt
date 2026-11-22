@@ -1,0 +1,12 @@
+[Thu 18:00] text (at Thu 18:06) close friend and fellow teacher → Aisha Rahman: Ugh, same. Today was a lot, and I've got a pile of books staring at me from the sofa. Have you eaten or are you running on tea again? Fancy a moan on the phone later, or shall I just send sympathy and biscuits?
+   item: Aisha Rahman texted close friend and fellow teacher: "hiii how was today?? i am drowning in marking again lol 🙈"
+   reason: A friend would reply to a casual check-in in her dry, sarcastic voice, a few minutes later.
+[Thu 19:00] none close friend and fellow teacher → Aisha Rahman: 
+   item: Aisha Rahman texted close friend and fellow teacher: "haha tea AND a biscuit situation, dont judge 🙈"
+   reason: Light banter already covered by the friend's earlier reply; the second message answers it, so no separate reply is needed.
+[Thu 19:00] text (at Thu 19:05) close friend and fellow teacher → Aisha Rahman: Dinner with Yusuf sounds far better than my toast and a pile of books. Fine, ring me after 9. I'll pretend I've marked loads too. Biscuits are on their way (virtually). Enjoy the cooking x
+   item: Aisha Rahman texted close friend and fellow teacher: "cooking a massive dinner with yusuf rn so ill ring you after 9 when ive done some marking?? or at least pretended to 😂 sympathy and biscuits both gratefully accepted x"
+   reason: Ordinary dry, friendly acknowledgement of the plan to call after 9.
+[Thu 19:30] none close friend and fellow teacher → Aisha Rahman: 
+   item: Aisha Rahman texted close friend and fellow teacher: "deal x ring you after 9 😂 save me a biscuit"
+   reason: The conversation has reached a natural close with a plan to phone after 9. Nothing more is needed now, and the friend would not reply with anything new at 19:30.

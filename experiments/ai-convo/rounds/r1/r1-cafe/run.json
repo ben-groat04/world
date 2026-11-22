@@ -1,0 +1,38 @@
+{
+ "label": "r1-cafe",
+ "seed": 1101,
+ "args": {
+  "label": "r1-cafe",
+  "setting": "A small independent café in a UK city and the people who work there.",
+  "dateNote": "mid-November 2026",
+  "startDow": 1,
+  "startHour": 6,
+  "hours": 12,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Tue 06:00",
+  "to": "Tue 18:00",
+  "hours": 12
+ },
+ "totalTokens": 57407,
+ "agentCount": 12,
+ "stats": {
+  "calls": 12,
+  "simCalls": 7,
+  "maxCalls": 360,
+  "byFor": {
+   "generator": 5,
+   "Gary Whitfield": 2,
+   "Jack Thornton": 2,
+   "Sharon Priestley": 1,
+   "Ellie Marsh": 2
+  },
+  "sceneLines": 0,
+  "promptChars": 20077,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

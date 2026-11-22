@@ -1,0 +1,67 @@
+## Chloe Bennett
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Chloe's bedroom: 
+   plan: until Fri 17:15: coursework, tidy planner for next week @Chloe's bedroom / until Fri 17:45: baking, chat to Hannah when she gets in @Flat kitchen / until Fri 19:00: make dinner and eat @Flat kitchen / until Fri 22:30: football or telly, playlist, relax @Flat living room / until Fri 23:00: get ready for bed @Chloe's bedroom / until Sat 07:30: sleep @Chloe's bedroom (asleep)
+Fri 17:15   -> Flat kitchen (baking, chat to Hannah when she gets in)
+Fri 17:54 [after the conversation] @Flat kitchen: baking, chat to Hannah when she gets in
+   remembers: Chatted with Hannah and Claire while baking cookies. Hannah's making fridge raid pasta and wants salad and milk. Claire already bought bread, so I'm only going out for salad and a pint of milk. Saved cookies for Hannah, Claire and Daniel.
+   plan: until Fri 18:10: quick shop for salad and milk @Corner shop [errand: buy salad (check yellow stickers) and a pint of milk] / until Fri 19:00: make dinner and eat, save cookies @Flat kitchen / until Fri 22:30: football or telly, playlist, relax @Flat living room / until Fri 23:00: get ready for bed @Chloe's bedroom / until Sat 07:30: sleep @Chloe's bedroom (asleep)
+Fri 17:54   -> Corner shop (quick shop for salad and milk)
+Fri 18:10   -> Flat kitchen (make dinner and eat, save cookies)
+Fri 18:52 [after the conversation] @Flat kitchen: with Hannah Clarke, Claire Hodgson
+   remembers: Kitchen chat with Hannah and Claire. Made cookies, got salad and milk from the shop (Claire had already got bread). Hannah gave me some of her egg and cheese pasta. Saved a couple of cookies under foil for Daniel. Taking dinner to the living room for the football later.
+   plan: until Fri 19:30: eat pasta and salad, put a playlist on @Flat living room / until Fri 22:30: watch football, relax @Flat living room / until Fri 23:00: get ready for bed @Chloe's bedroom / until Sat 07:30: sleep @Chloe's bedroom (asleep)
+Fri 18:52   -> Flat living room (eat pasta and salad, put a playlist on)
+Fri 19:23 [after the conversation] @Flat living room: eat pasta and salad, put a playlist on (kept plan)
+   remembers: Claire came in with pasta, said football's fine. She's off Fridays, works 7am Sat and Sun, going for a quiet night and roasting veg. I said I'm ahead on coursework but still fretting.
+   plan: until Fri 19:30: eat pasta and salad, put a playlist on @Flat living room / until Fri 22:30: watch football, relax @Flat living room / until Fri 23:00: get ready for bed @Chloe's bedroom / until Sat 07:30: sleep @Chloe's bedroom (asleep)
+Fri 20:57 [after the conversation] @Flat living room: watch football, relax (kept plan)
+   remembers: Watched football low in the living room with Hannah (reading her salt book, brought me a warm cookie) and Claire (crime programme). Told them about Daniel's foil cookies. A goal, I think.
+   plan: until Fri 22:30: watch football, relax @Flat living room / until Fri 23:00: get ready for bed @Chloe's bedroom / until Sat 07:30: sleep @Chloe's bedroom (asleep)
+Fri 22:30   -> Chloe's bedroom (get ready for bed)
+
+## Hannah Clarke
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Hannah's bedroom: 
+   plan: until Fri 17:30: finishing work for the week @Hannah's bedroom / until Fri 19:30: cooking something slightly ambitious for dinner @Flat kitchen [errand: check what is in the fridge and cupboards] / until Fri 23:00: relaxing, library book, chatting with housemates @Flat living room / until Sat 07:30: sleep @Hannah's bedroom (asleep)
+Fri 17:30   -> Flat kitchen (cooking something slightly ambitious for dinner)
+Fri 17:30 [you came into Flat kitchen: Chloe Bennett here; looked at your phone (You go through the fridge and cupboards. There are)] @Flat kitchen: cooking something slightly ambitious for dinner | talk to Chloe Bennett
+   plan: until Fri 19:30: cooking a pasta with whatever veg and eggs there are, chatting to Chloe @Flat kitchen / until Fri 23:00: relaxing, library book, chatting with housemates @Flat living room / until Sat 07:30: sleep @Hannah's bedroom (asleep)
+Fri 18:59 [after the conversation] @Flat kitchen: cooking a pasta with whatever veg and eggs there are, chatting to Chloe (kept plan)
+   remembers: Fridge-raid carbonara-ish pasta in the kitchen with Chloe and Claire. Chloe made oat and raisin cookies and saved a couple for Daniel. Claire already bought bread and milk, Chloe fetched salad and milk anyway. Taking my bowl and tea through to the living room.
+   plan: until Fri 19:30: cooking a pasta with whatever veg and eggs there are, chatting to Chloe @Flat kitchen / until Fri 23:00: relaxing, library book, chatting with housemates @Flat living room / until Sat 07:30: sleep @Hannah's bedroom (asleep)
+Fri 19:30   -> Flat living room (relaxing, library book, chatting with housemates)
+Fri 19:30 [you came into Flat living room: Chloe Bennett here] @Flat living room: relaxing, library book, chatting with housemates (kept plan) | talk to Chloe Bennett
+   plan: until Fri 23:00: relaxing, library book, chatting with housemates @Flat living room / until Sat 07:30: sleep @Hannah's bedroom (asleep)
+Fri 20:57 [after the conversation] @Flat living room: relaxing, library book, chatting with housemates (kept plan)
+   remembers: Evening in the living room with Chloe and Claire, football on low, Claire watching a crime show. Fetched cookies for me and Chloe, chatted about my salt book (war and anchovies). Nothing needed.
+   plan: until Fri 23:00: relaxing, library book, chatting with housemates @Flat living room / until Sat 07:30: sleep @Hannah's bedroom (asleep)
+Fri 23:00   -> Hannah's bedroom (sleep)
+
+## Daniel Whitaker
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Daniel's bedroom: 
+   plan: until Fri 23:30: late shift @Daniel's workplace / until Sat 00:15: home, snack, chat if anyone up @Flat kitchen / until Sat 09:00: asleep @Daniel's bedroom (asleep)
+Fri 16:00   -> Daniel's workplace (late shift)
+Fri 23:30   -> Flat kitchen (home, snack, chat if anyone up)
+Sat 00:15   -> Daniel's bedroom (asleep)
+
+## Claire Hodgson
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Claire's bedroom: 
+   plan: until Fri 17:00: resting, podcast @Claire's bedroom / until Fri 17:45: picking up a few bits, checking yellow stickers @Corner shop [errand: buy milk and any reduced items for dinner] / until Fri 19:00: cooking a batch of dinner @Flat kitchen / until Fri 22:30: watching box set @Flat living room / until Fri 23:00: getting ready for bed, alarm set for early start @Claire's bedroom / until Sat 06:00: sleeping @Claire's bedroom (asleep)
+Fri 17:00   -> Corner shop (picking up a few bits, checking yellow stickers)
+Fri 17:45   -> Flat kitchen (cooking a batch of dinner)
+Fri 18:59 [after the conversation] @Flat kitchen: with Hannah Clarke, Chloe Bennett
+   remembers: Kitchen chat with Hannah and Chloe. Told Chloe I'd already got bread and milk and that salad was on yellow sticker. Hannah gave me a small bowl of her egg and veg pasta, I made tea, and Chloe's cookies were nice. Saving a couple for Daniel. Taking food through to the living room, with my ready meal in the oven.
+   plan: until Fri 19:25: eating pasta and tea with the others @Flat living room / until Fri 19:35: getting ready meal out of oven, plating with veg @Flat kitchen / until Fri 22:30: watching box set @Flat living room / until Fri 23:00: getting ready for bed, alarm set for early start @Claire's bedroom / until Sat 06:00: sleeping @Claire's bedroom (asleep)
+Fri 18:59   -> Flat living room (eating pasta and tea with the others)
+Fri 19:02 [you came into Flat living room: Chloe Bennett here] @Flat living room: eating pasta and tea with the others (kept plan) | talk to Chloe Bennett
+   plan: until Fri 19:25: eating pasta and tea with the others @Flat living room / until Fri 19:35: getting ready meal out of oven, plating with veg @Flat kitchen / until Fri 22:30: watching box set @Flat living room / until Fri 23:00: getting ready for bed, alarm set for early start @Claire's bedroom / until Sat 06:00: sleeping @Claire's bedroom (asleep)
+Fri 19:23 [after the conversation] @Flat living room: eating pasta and tea with the others
+   remembers: Sat with Chloe in the living room while she had pesto pasta and football on. She offered me more pasta, I said no thanks. Told her I'm on at seven Saturday and Sunday, a drag. Went to sort the oven tray.
+   plan: until Fri 19:40: getting tray out of oven, plating with veg @Flat kitchen / until Fri 22:30: eating, watching box set @Flat living room / until Fri 23:00: getting ready for bed, alarm set for early start @Claire's bedroom / until Sat 06:00: sleeping @Claire's bedroom (asleep)
+Fri 19:23   -> Flat kitchen (getting tray out of oven, plating with veg)
+Fri 19:26 [you came into Flat kitchen: Hannah Clarke here] @Flat kitchen: getting tray out of oven, plating with veg (kept plan)
+   plan: until Fri 19:40: getting tray out of oven, plating with veg @Flat kitchen / until Fri 22:30: eating, watching box set @Flat living room / until Fri 23:00: getting ready for bed, alarm set for early start @Claire's bedroom / until Sat 06:00: sleeping @Claire's bedroom (asleep)
+Fri 19:40   -> Flat living room (eating, watching box set)
+Fri 20:57 [after the conversation] @Flat living room: eating, watching box set (kept plan)
+   remembers: Living room with Hannah and Chloe, football on low. Hannah's reading a salt book (war and anchovies). Told them I'm just watching my crime programme. Cookies under foil are Daniel's.
+   plan: until Fri 22:30: eating, watching box set @Flat living room / until Fri 23:00: getting ready for bed, alarm set for early start @Claire's bedroom / until Sat 06:00: sleeping @Claire's bedroom (asleep)
+Fri 22:30   -> Claire's bedroom (getting ready for bed, alarm set for early start)

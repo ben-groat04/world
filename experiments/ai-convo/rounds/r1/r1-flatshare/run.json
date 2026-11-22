@@ -1,0 +1,39 @@
+{
+ "label": "r1-flatshare",
+ "seed": 1101,
+ "args": {
+  "label": "r1-flatshare",
+  "setting": "Adults sharing a privately rented flat in an inner-city neighbourhood of a UK city.",
+  "dateNote": "mid-November 2026",
+  "startDow": 4,
+  "startHour": 16,
+  "hours": 12,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Fri 16:00",
+  "to": "Sat 04:00",
+  "hours": 12
+ },
+ "totalTokens": 401756,
+ "agentCount": 70,
+ "stats": {
+  "calls": 70,
+  "simCalls": 65,
+  "maxCalls": 360,
+  "byFor": {
+   "generator": 5,
+   "Chloe Bennett": 20,
+   "Hannah Clarke": 21,
+   "Daniel Whitaker": 1,
+   "Claire Hodgson": 20,
+   "world": 3
+  },
+  "sceneLines": 45,
+  "promptChars": 248780,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

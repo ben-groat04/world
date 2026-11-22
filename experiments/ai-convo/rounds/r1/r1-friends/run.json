@@ -1,0 +1,39 @@
+{
+ "label": "r1-friends",
+ "seed": 1101,
+ "args": {
+  "label": "r1-friends",
+  "setting": "A group of friends in a UK city.",
+  "dateNote": "mid-November 2026",
+  "startDow": 3,
+  "startHour": 18,
+  "hours": 12,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Thu 18:00",
+  "to": "Fri 06:00",
+  "hours": 12
+ },
+ "totalTokens": 62046,
+ "agentCount": 14,
+ "stats": {
+  "calls": 14,
+  "simCalls": 9,
+  "maxCalls": 360,
+  "byFor": {
+   "generator": 5,
+   "Matthew Harrison": 1,
+   "Marco Conti": 1,
+   "Aisha Rahman": 3,
+   "Chloe Walker": 1,
+   "world": 3
+  },
+  "sceneLines": 0,
+  "promptChars": 21942,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

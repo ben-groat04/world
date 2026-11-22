@@ -1,0 +1,8 @@
+[Sun 10:00] Imran Hussain → Mum: Morning Mum, how are you? I'll ring you later this evening if that's ok. Anything you need from the shops this week?
+--- Wei and Xiaoyu's bedroom, Sun 10:00, 9 min (Wei Zhang, Xiaoyu Lin) · walked off ---
+Wei Zhang: "Morning. Did you hear that boiler again in the night? Sort of a clunking noise. Might have a look at it after breakfast." (stretches and rolls over towards Xiaoyu)
+Xiaoyu Lin: "Mm, I think I heard something around three. Just a clunk, then it stopped. Yeah, have a look after breakfast. Is there any coffee?" (Murmurs sleepily and snuggles in, pulling the duvet up.)
+Wei Zhang: "I'll make it. Stay put, I'll bring it through in a bit. Might be a while though, the kettle's slow." (Gets up, pulls on a jumper and heads towards the kitchen)
+[Sun 10:20] Mum → Imran Hussain: Morning beta, I'm alright, just back from the shop actually so I'm well stocked, don't worry about me. Maybe some fresh coriander and a bag of onions if you're passing, but only if you're passing. Yes ring me tonight, after the news is fine, I'll be in. Are you eating properly? Make sure it's not just toast again.
+[Sun 10:25] Imran Hussain → Mum: Will do Mum, I'll pick up coriander and onions today and drop them round this week. Yes I'm eating properly, chilli on the go today! Ring you after the news.
+[Sun 13:30] ~ Imran Hussain: The shop is open on a Sunday afternoon and fairly quiet. You find onions and peppers on the fresh veg shelves and tins of kidney beans in the aisle. You pick up what you need, pay at the counter and are back out well within the time. The peppers are a bit limited in choice, so you take what's there.

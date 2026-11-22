@@ -1,0 +1,26 @@
+[
+ {
+  "what": "work",
+  "who": [
+   "Gary Whitfield"
+  ],
+  "place": "elsewhere",
+  "t0": 210,
+  "t1": 660,
+  "by": "sampler",
+  "at": "Tue 09:30",
+  "until": "Tue 17:00"
+ },
+ {
+  "what": "work",
+  "who": [
+   "Jack Thornton"
+  ],
+  "place": "elsewhere",
+  "t0": 120,
+  "t1": 630,
+  "by": "sampler",
+  "at": "Tue 08:00",
+  "until": "Tue 16:30"
+ }
+]

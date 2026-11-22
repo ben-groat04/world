@@ -1,0 +1,77 @@
+{
+ "Chloe Bennett": {
+  "place": "Chloe's bedroom",
+  "doing": "sleep",
+  "turns": 5,
+  "days": {},
+  "journal": [
+   "Fri 17:15 you went to Flat kitchen: baking, chat to Hannah when she gets in",
+   "Fri 17:30 Hannah Clarke came into Flat kitchen.",
+   "Fri 17:54 conversation at Flat kitchen with Hannah Clarke, Claire Hodgson [ref 17:30]: Chatted with Hannah and Claire while baking cookies. Hannah's making fridge raid pasta and wants salad and milk. Claire already bought bread, so I'm only going out for salad and a pint of milk. Saved cookies for Hannah, Claire and Daniel.",
+   "Fri 17:54 you went to Corner shop: quick shop for salad and milk",
+   "Fri 17:54 The shop is fairly busy with people on the way home from work. The chilled aisle has a few yellow-stickered items left, including a couple of bagged salads and a pasta salad pot reduced for today. You pick one, and the milk is in the fridge at the back, with plenty of pints. There is a short queue at the till of two or three people. You pay and are out within about ten minutes.",
+   "Fri 18:10 you went to Flat kitchen: make dinner and eat, save cookies",
+   "Fri 18:52 conversation at Flat kitchen with Hannah Clarke, Claire Hodgson [ref 17:30]: Kitchen chat with Hannah and Claire. Made cookies, got salad and milk from the shop (Claire had already got bread). Hannah gave me some of her egg and cheese pasta. Saved a couple of cookies under foil for Daniel. Taking dinner to the living room for the football later.",
+   "Fri 18:52 you went to Flat living room: eat pasta and salad, put a playlist on",
+   "Fri 18:59 Claire Hodgson came into Flat living room.",
+   "Fri 19:23 conversation at Flat living room with Claire Hodgson [ref 19:02]: Claire came in with pasta, said football's fine. She's off Fridays, works 7am Sat and Sun, going for a quiet night and roasting veg. I said I'm ahead on coursework but still fretting.",
+   "Fri 19:23 Claire Hodgson left Flat living room.",
+   "Fri 19:30 Hannah Clarke came into Flat living room.",
+   "Fri 20:57 conversation at Flat living room with Hannah Clarke, Claire Hodgson [ref 19:30]: Watched football low in the living room with Hannah (reading her salt book, brought me a warm cookie) and Claire (crime programme). Told them about Daniel's foil cookies. A goal, I think.",
+   "Fri 22:30 you went to Chloe's bedroom: get ready for bed"
+  ]
+ },
+ "Hannah Clarke": {
+  "place": "Hannah's bedroom",
+  "doing": "sleep",
+  "turns": 5,
+  "days": {},
+  "journal": [
+   "Fri 17:30 you went to Flat kitchen: cooking something slightly ambitious for dinner",
+   "Fri 17:30 You go through the fridge and cupboards. There are some basics: a few staples like pasta, rice or tinned goods in the cupboards, and some milk, eggs and a bit of veg in the fridge, plus assorted condiments. Some shelves are shared and hard to tell whose is whose, and a couple of items are past their date and could be binned. There is enough for a simple meal tonight, but nothing much for a proper weekend shop. Fresh items like bread and salad are running low.",
+   "Fri 17:54 Chloe Bennett left Flat kitchen.",
+   "Fri 18:52 Chloe Bennett left Flat kitchen.",
+   "Fri 18:59 conversation at Flat kitchen with Chloe Bennett, Claire Hodgson [ref 17:30]: Fridge-raid carbonara-ish pasta in the kitchen with Chloe and Claire. Chloe made oat and raisin cookies and saved a couple for Daniel. Claire already bought bread and milk, Chloe fetched salad and milk anyway. Taking my bowl and tea through to the living room.",
+   "Fri 18:59 Claire Hodgson left Flat kitchen.",
+   "Fri 19:23 Claire Hodgson came into Flat kitchen.",
+   "Fri 19:30 you went to Flat living room: relaxing, library book, chatting with housemates",
+   "Fri 20:57 conversation at Flat living room with Chloe Bennett, Claire Hodgson [ref 19:30]: Evening in the living room with Chloe and Claire, football on low, Claire watching a crime show. Fetched cookies for me and Chloe, chatted about my salt book (war and anchovies). Nothing needed.",
+   "Fri 22:30 Chloe Bennett left Flat living room.",
+   "Fri 22:30 Claire Hodgson left Flat living room.",
+   "Fri 23:00 you went to Hannah's bedroom: sleep"
+  ]
+ },
+ "Daniel Whitaker": {
+  "place": "Daniel's bedroom",
+  "doing": "asleep",
+  "turns": 1,
+  "days": {},
+  "journal": [
+   "Fri 16:00 you went to Daniel's workplace: late shift",
+   "Fri 23:30 you went to Flat kitchen: home, snack, chat if anyone up",
+   "Sat 00:15 you went to Daniel's bedroom: asleep"
+  ]
+ },
+ "Claire Hodgson": {
+  "place": "Claire's bedroom",
+  "doing": "sleeping",
+  "turns": 6,
+  "days": {},
+  "journal": [
+   "Fri 17:00 you went to Corner shop: picking up a few bits, checking yellow stickers",
+   "Fri 17:00 The shop is busy with the after-work rush. Milk is in the fridge at the back and there are plenty of cartons. The reduced section by the chilled cabinet has a few yellow-stickered items: some bread, a couple of ready meals and a tray of vegetables, all close to their use-by date. Choice is limited and some of it is a bit picked over. You can put together something workable for dinner, and the queue at the till takes a few minutes.",
+   "Fri 17:45 you went to Flat kitchen: cooking a batch of dinner",
+   "Fri 17:54 Chloe Bennett left Flat kitchen.",
+   "Fri 18:52 Chloe Bennett left Flat kitchen.",
+   "Fri 18:59 conversation at Flat kitchen with Hannah Clarke, Chloe Bennett [ref 17:30]: Kitchen chat with Hannah and Chloe. Told Chloe I'd already got bread and milk and that salad was on yellow sticker. Hannah gave me a small bowl of her egg and veg pasta, I made tea, and Chloe's cookies were nice. Saving a couple for Daniel. Taking food through to the living room, with my ready meal in the oven.",
+   "Fri 18:59 you went to Flat living room: eating pasta and tea with the others",
+   "Fri 19:23 conversation at Flat living room with Chloe Bennett [ref 19:02]: Sat with Chloe in the living room while she had pesto pasta and football on. She offered me more pasta, I said no thanks. Told her I'm on at seven Saturday and Sunday, a drag. Went to sort the oven tray.",
+   "Fri 19:23 you went to Flat kitchen: getting tray out of oven, plating with veg",
+   "Fri 19:30 Hannah Clarke left Flat kitchen.",
+   "Fri 19:40 you went to Flat living room: eating, watching box set",
+   "Fri 20:57 conversation at Flat living room with Hannah Clarke, Chloe Bennett [ref 19:30]: Living room with Hannah and Chloe, football on low. Hannah's reading a salt book (war and anchovies). Told them I'm just watching my crime programme. Cookies under foil are Daniel's.",
+   "Fri 22:30 Chloe Bennett left Flat living room.",
+   "Fri 22:30 you went to Claire's bedroom: getting ready for bed, alarm set for early start"
+  ]
+ }
+}

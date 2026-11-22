@@ -1,0 +1,41 @@
+## Imran Hussain
+Sun 10:00 [the simulation starts: decide where you are and what you are doing] @Imran's bedroom: 
+   plan: until Sun 10:45: breakfast, coffee, water herbs, podcast @Imran's flat living area / until Sun 13:30: long walk @Local park / until Sun 14:15: pick up veg and tins, chat @Corner shop [errand: buy onions, peppers, kidney beans for chilli] / until Sun 17:30: cook big batch of chilli, tidy up @Imran's flat living area / until Sun 19:00: ring Mum, eat, prep work bits for Monday @Imran's flat living area / until Sun 22:00: podcast, wind down, early night @Imran's flat living area
+Sun 10:00   -> Imran's flat living area (breakfast, coffee, water herbs, podcast)
+Sun 10:25 [looked at your phone (Mum texted: Morning beta, I'm alright, just back f)] @Imran's flat living area: breakfast, coffee, water herbs, podcast (kept plan)
+   plan: until Sun 10:45: breakfast, coffee, water herbs, podcast @Imran's flat living area / until Sun 13:30: long walk @Local park / until Sun 14:15: pick up veg and tins, chat @Corner shop [errand: buy onions, peppers, kidney beans for chilli] / until Sun 17:30: cook big batch of chilli, tidy up @Imran's flat living area / until Sun 19:00: ring Mum, eat, prep work bits for Monday @Imran's flat living area / until Sun 22:00: podcast, wind down, early night @Imran's flat living area
+Sun 10:45   -> Local park (long walk)
+Sun 13:30   -> Corner shop (pick up veg and tins, chat)
+Sun 14:15   -> Imran's flat living area (cook big batch of chilli, tidy up)
+Sun 14:15 [between things, you checked your phone] @Imran's flat living area: cook big batch of chilli, tidy up (kept plan)
+   plan: until Sun 17:30: cook big batch of chilli, tidy up @Imran's flat living area / until Sun 19:00: ring Mum, eat, prep work bits for Monday @Imran's flat living area / until Sun 22:00: podcast, wind down, early night @Imran's flat living area
+
+## Wei Zhang
+Sun 10:00 [the simulation starts: decide where you are and what you are doing] @Wei and Xiaoyu's bedroom:  | talk to Xiaoyu Lin
+   plan: until Sun 10:45: slow wake up, chat with Xiaoyu @Wei and Xiaoyu's bedroom / until Sun 12:00: late breakfast, look at boiler noise @Zhang-Lin living room and kitchen / until Sun 14:30: walk a different route, charity shop vinyl browse @The residential street / until Sun 18:30: cook something new, put bins out check @Zhang-Lin living room and kitchen / until Sun 22:00: evening with Xiaoyu, language app, early night before work @Zhang-Lin living room and kitchen
+Sun 10:09 [after the conversation] @Wei and Xiaoyu's bedroom: slow wake up, chat with Xiaoyu (kept plan)
+   remembers: Woke up with Xiaoyu. We both heard the boiler clunk around three. I'll make coffee, bring it through, and look at the boiler after breakfast.
+   plan: until Sun 10:45: slow wake up, chat with Xiaoyu @Wei and Xiaoyu's bedroom / until Sun 12:00: late breakfast, look at boiler noise @Zhang-Lin living room and kitchen / until Sun 14:30: walk a different route, charity shop vinyl browse @The residential street / until Sun 18:30: cook something new, put bins out check @Zhang-Lin living room and kitchen / until Sun 22:00: evening with Xiaoyu, language app, early night before work @Zhang-Lin living room and kitchen
+Sun 10:45   -> Zhang-Lin living room and kitchen (late breakfast, look at boiler noise)
+Sun 12:00   -> The residential street (walk a different route, charity shop vinyl browse)
+Sun 14:30   -> Zhang-Lin living room and kitchen (cook something new, put bins out check)
+
+## Joby Mathew
+Sun 10:00 [the simulation starts: decide where you are and what you are doing] @Joby and Susan's bedroom: 
+   plan: until Sun 10:30: quick breakfast, get Ethan dressed, find work lanyard @Mathew family living room and kitchen / until Sun 11:00: walk to work, chat to anyone on the street @The residential street / until Sun 17:00: Sunday shift @Health clinic / until Sun 17:30: walk home @The residential street / until Sun 20:00: cook a big pot of curry, dinner with Susan and Ethan @Mathew family living room and kitchen / until Sun 22:00: bedtime for Ethan, football on telly, early night @Mathew family living room and kitchen
+Sun 10:00   -> Mathew family living room and kitchen (quick breakfast, get Ethan dressed, find work lanyard)
+Sun 10:30   -> The residential street (walk to work, chat to anyone on the street)
+Sun 11:00   -> Health clinic (Sunday shift)
+Sun 17:00   -> The residential street (walk home)
+Sun 17:30   -> Mathew family living room and kitchen (cook a big pot of curry, dinner with Susan and Ethan)
+
+## Matteo Rossi
+Sun 10:00 [the simulation starts: decide where you are and what you are doing] @Matteo and Giulia's bedroom: 
+   plan: until Sun 10:45: porridge for Leonardo, tidy kitchen, coffee @Rossi-Ferrari living room and kitchen / until Sun 12:00: take Leonardo to the park with the buggy @Local park / until Sun 13:00: cook Sunday lunch for the house @Rossi-Ferrari living room and kitchen / until Sun 15:00: nap time for Leonardo, laundry with a podcast @Leonardo's bedroom / until Sun 18:00: play with Leonardo, make dinner @Rossi-Ferrari living room and kitchen / until Sun 22:00: dinner, bath and bedtime, relax with Giulia @Rossi-Ferrari living room and kitchen
+Sun 10:00   -> Rossi-Ferrari living room and kitchen (porridge for Leonardo, tidy kitchen, coffee)
+Sun 10:45   -> Local park (take Leonardo to the park with the buggy)
+Sun 10:45 [you came into Local park: stranger (M, 40s) here] @Local park: take Leonardo to the park with the buggy (kept plan)
+   plan: until Sun 12:00: take Leonardo to the park with the buggy @Local park / until Sun 13:00: cook Sunday lunch for the house @Rossi-Ferrari living room and kitchen / until Sun 15:00: nap time for Leonardo, laundry with a podcast @Leonardo's bedroom / until Sun 18:00: play with Leonardo, make dinner @Rossi-Ferrari living room and kitchen / until Sun 22:00: dinner, bath and bedtime, relax with Giulia @Rossi-Ferrari living room and kitchen
+Sun 12:00   -> Rossi-Ferrari living room and kitchen (cook Sunday lunch for the house)
+Sun 13:00   -> Leonardo's bedroom (nap time for Leonardo, laundry with a podcast)
+Sun 15:00   -> Rossi-Ferrari living room and kitchen (play with Leonardo, make dinner)

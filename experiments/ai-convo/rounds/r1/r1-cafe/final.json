@@ -1,0 +1,53 @@
+{
+ "Gary Whitfield": {
+  "place": "High street",
+  "doing": "Walk home",
+  "turns": 2,
+  "days": {},
+  "journal": [
+   "Tue 07:30 you went to Whitfield home - living areas: Breakfast, tea, radio",
+   "Tue 08:30 you went to High street: Walk to the café",
+   "Tue 09:20 you went to Café front: Work: till, floor, ordering, check fridges",
+   "Tue 17:00 you went to Café kitchen: Finish books and lock up",
+   "Tue 17:00 stranger (M, 20s) left Café kitchen.",
+   "Tue 17:40 you went to High street: Walk home"
+  ]
+ },
+ "Jack Thornton": {
+  "place": "Shared house A - kitchen and living room",
+  "doing": "cook dinner, eat",
+  "turns": 2,
+  "days": {},
+  "journal": [
+   "Tue 07:40 you went to Bus stop: travel to cafe",
+   "Tue 07:55 you went to Café kitchen: prep, breakfast and lunch specials, soups",
+   "Tue 17:00 stranger (M, 50s) came into Café kitchen.",
+   "Tue 17:00 you went to Bus stop: travel home",
+   "Tue 17:30 you went to Shared house A - kitchen and living room: cook dinner, eat"
+  ]
+ },
+ "Sharon Priestley": {
+  "place": "Priestley home - living areas",
+  "doing": "tea with family, quiz shows, bed",
+  "turns": 1,
+  "days": {},
+  "journal": [
+   "Tue 07:30 you went to Priestley home - living areas: breakfast, tea, checking the oven is off",
+   "Tue 08:30 you went to Local park: walk",
+   "Tue 11:00 you went to Priestley home - living areas: housework, baking shows on telly"
+  ]
+ },
+ "Ellie Marsh": {
+  "place": "Shared house B - kitchen and living room",
+  "doing": "dinner, chat with housemates",
+  "turns": 2,
+  "days": {},
+  "journal": [
+   "Tue 07:30 you went to Shared house B - kitchen and living room: getting up, breakfast",
+   "Tue 08:30 you went to Shared house B - Ellie's bedroom: getting ready for course",
+   "Tue 13:00 you went to Shared house B - kitchen and living room: lunch",
+   "Tue 13:40 you went to Shared house B - Ellie's bedroom: coursework",
+   "Tue 17:30 you went to Shared house B - kitchen and living room: dinner, chat with housemates"
+  ]
+ }
+}

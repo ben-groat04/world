@@ -1,0 +1,38 @@
+## Gary Whitfield
+Tue 06:00 [the simulation starts: decide where you are and what you are doing] @Whitfield home - Gary and Karen's bedroom: 
+   plan: until Tue 07:30: Sleep a bit longer, then get up and dressed @Whitfield home - Gary and Karen's bedroom (asleep) / until Tue 08:30: Breakfast, tea, radio @Whitfield home - living areas / until Tue 09:20: Walk to the café @High street / until Tue 17:00: Work: till, floor, ordering, check fridges @Café front / until Tue 17:30: Finish books and lock up @Café kitchen
+Tue 07:30   -> Whitfield home - living areas (Breakfast, tea, radio)
+Tue 08:30   -> High street (Walk to the café)
+Tue 09:20   -> Café front (Work: till, floor, ordering, check fridges)
+Tue 17:00   -> Café kitchen (Finish books and lock up)
+Tue 17:00 [you came into Café kitchen: stranger (M, 20s) here] @Café kitchen: Finish books and lock up
+   plan: until Tue 17:40: Finish books, check fridge temperatures, lock up @Café kitchen / until Tue 18:00: Walk home @High street / until Tue 22:30: Tea with Karen, radio, bit of telly @Whitfield home - living areas / until Tue 23:00: Get ready for bed @Whitfield home - Gary and Karen's bedroom / until Wed 06:30: Sleep @Whitfield home - Gary and Karen's bedroom (asleep)
+Tue 17:40   -> High street (Walk home)
+
+## Jack Thornton
+Tue 06:00 [the simulation starts: decide where you are and what you are doing] @Thornton house - Jack's bedroom: 
+   plan: until Tue 07:15: sleeping a bit more, then up and dressed @Thornton house - Jack's bedroom (asleep) / until Tue 07:40: get up, breakfast, pack knives @Thornton house - Jack's bedroom / until Tue 07:55: travel to cafe @Bus stop / until Tue 16:30: prep, breakfast and lunch specials, soups @Café kitchen
+Tue 07:40   -> Bus stop (travel to cafe)
+Tue 07:55   -> Café kitchen (prep, breakfast and lunch specials, soups)
+Tue 16:30 [your plan ran out] @Café kitchen: prep, breakfast and lunch specials, soups
+   plan: until Tue 17:00: clean down station, restock, wipe knives @Café kitchen / until Tue 17:30: travel home @Bus stop / until Tue 19:00: cook dinner, eat @Shared house A - kitchen and living room / until Tue 22:30: relax @Shared house A - Megan's bedroom
+Tue 17:00   -> Bus stop (travel home)
+Tue 17:30   -> Shared house A - kitchen and living room (cook dinner, eat)
+
+## Sharon Priestley
+Tue 06:00 [the simulation starts: decide where you are and what you are doing] @Priestley home - Sharon and Darren's bedroom: 
+   plan: until Tue 07:30: staying in bed a bit, then getting up @Priestley home - Sharon and Darren's bedroom / until Tue 08:30: breakfast, tea, checking the oven is off @Priestley home - living areas / until Tue 11:00: walk @Local park / until Tue 13:00: housework, baking shows on telly @Priestley home - living areas / until Tue 22:30: tea with family, quiz shows, bed @Priestley home - living areas
+Tue 07:30   -> Priestley home - living areas (breakfast, tea, checking the oven is off)
+Tue 08:30   -> Local park (walk)
+Tue 11:00   -> Priestley home - living areas (housework, baking shows on telly)
+
+## Ellie Marsh
+Tue 06:00 [the simulation starts: decide where you are and what you are doing] @Shared house B - Ellie's bedroom: 
+   plan: until Tue 07:30: sleeping a bit more @Shared house B - Ellie's bedroom (asleep) / until Tue 08:30: getting up, breakfast @Shared house B - kitchen and living room / until Tue 09:00: getting ready for course @Shared house B - Ellie's bedroom / until Tue 12:00: coursework @Shared house B - Ellie's bedroom
+Tue 07:30   -> Shared house B - kitchen and living room (getting up, breakfast)
+Tue 08:30   -> Shared house B - Ellie's bedroom (getting ready for course)
+Tue 12:00 [your plan ran out] @Shared house B - Ellie's bedroom: coursework
+   plan: until Tue 13:00: coursework @Shared house B - Ellie's bedroom / until Tue 13:40: lunch @Shared house B - kitchen and living room / until Tue 17:30: coursework @Shared house B - Ellie's bedroom / until Tue 19:00: dinner, chat with housemates @Shared house B - kitchen and living room / until Tue 22:30: scrolling videos, music @Shared house B - Ellie's bedroom / until Tue 23:30: sleep @Shared house B - Ellie's bedroom (asleep)
+Tue 13:00   -> Shared house B - kitchen and living room (lunch)
+Tue 13:40   -> Shared house B - Ellie's bedroom (coursework)
+Tue 17:30   -> Shared house B - kitchen and living room (dinner, chat with housemates)

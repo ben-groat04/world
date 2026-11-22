@@ -1,0 +1,58 @@
+{
+ "Imran Hussain": {
+  "place": "Imran's flat living area",
+  "doing": "podcast, wind down, early night",
+  "turns": 3,
+  "days": {},
+  "journal": [
+   "Sun 10:00 you → Mum: Morning Mum, how are you? I'll ring you later this evening if that's ok. Anything you need from the shops this week?",
+   "Sun 10:00 you went to Imran's flat living area: breakfast, coffee, water herbs, podcast",
+   "Sun 10:20 Mum texted: Morning beta, I'm alright, just back from the shop actually so I'm well stocked, don't worry about me. Maybe some fresh coriander and a bag of onions if you're passing, but only if you're passing. Yes ring me tonight, after the news is fine, I'll be in. Are you eating properly? Make sure it's not just toast again.",
+   "Sun 10:25 you → Mum: Will do Mum, I'll pick up coriander and onions today and drop them round this week. Yes I'm eating properly, chilli on the go today! Ring you after the news.",
+   "Sun 10:45 you went to Local park: long walk",
+   "Sun 10:45 stranger (M, 20s) came into Local park.",
+   "Sun 12:00 stranger (M, 20s) left Local park.",
+   "Sun 13:30 you went to Corner shop: pick up veg and tins, chat",
+   "Sun 13:30 The shop is open on a Sunday afternoon and fairly quiet. You find onions and peppers on the fresh veg shelves and tins of kidney beans in the aisle. You pick up what you need, pay at the counter and are back out well within the time. The peppers are a bit limited in choice, so you take what's there.",
+   "Sun 14:15 you went to Imran's flat living area: cook big batch of chilli, tidy up"
+  ]
+ },
+ "Wei Zhang": {
+  "place": "Zhang-Lin living room and kitchen",
+  "doing": "evening with Xiaoyu, language app, early night before work",
+  "turns": 2,
+  "days": {},
+  "journal": [
+   "Sun 10:09 conversation at Wei and Xiaoyu's bedroom with Xiaoyu Lin [ref 10:00]: Woke up with Xiaoyu. We both heard the boiler clunk around three. I'll make coffee, bring it through, and look at the boiler after breakfast.",
+   "Sun 10:45 you went to Zhang-Lin living room and kitchen: late breakfast, look at boiler noise",
+   "Sun 12:00 you went to The residential street: walk a different route, charity shop vinyl browse",
+   "Sun 14:30 you went to Zhang-Lin living room and kitchen: cook something new, put bins out check"
+  ]
+ },
+ "Joby Mathew": {
+  "place": "Mathew family living room and kitchen",
+  "doing": "bedtime for Ethan, football on telly, early night",
+  "turns": 1,
+  "days": {},
+  "journal": [
+   "Sun 10:00 you went to Mathew family living room and kitchen: quick breakfast, get Ethan dressed, find work lanyard",
+   "Sun 10:30 you went to The residential street: walk to work, chat to anyone on the street",
+   "Sun 11:00 you went to Health clinic: Sunday shift",
+   "Sun 17:00 you went to The residential street: walk home",
+   "Sun 17:30 you went to Mathew family living room and kitchen: cook a big pot of curry, dinner with Susan and Ethan"
+  ]
+ },
+ "Matteo Rossi": {
+  "place": "Rossi-Ferrari living room and kitchen",
+  "doing": "dinner, bath and bedtime, relax with Giulia",
+  "turns": 2,
+  "days": {},
+  "journal": [
+   "Sun 10:00 you went to Rossi-Ferrari living room and kitchen: porridge for Leonardo, tidy kitchen, coffee",
+   "Sun 10:45 you went to Local park: take Leonardo to the park with the buggy",
+   "Sun 12:00 you went to Rossi-Ferrari living room and kitchen: cook Sunday lunch for the house",
+   "Sun 13:00 you went to Leonardo's bedroom: nap time for Leonardo, laundry with a podcast",
+   "Sun 15:00 you went to Rossi-Ferrari living room and kitchen: play with Leonardo, make dinner"
+  ]
+ }
+}

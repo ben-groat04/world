@@ -1,0 +1,930 @@
+{
+ "setting": "A small independent café in a UK city and the people who work there.",
+ "context": {},
+ "background": "A small independent café in a UK city is owned and run by Gary Whitfield, who works there most days. His staff are Jack Thornton, the full-time cook, Sharon Priestley, a part-time server on Thursday mornings, and Ellie Marsh, a student who serves on Thursdays and Fridays. Tuesday starts before opening, and the day covers the café's working hours into the early evening.",
+ "common_knowledge": [
+  "The four café staff (Gary, Jack, Sharon and Ellie) know each other from working at the café.",
+  "Gary Whitfield owns and manages the café.",
+  "Gary and Jack are both on shift on Tuesday. Sharon and Ellie are not scheduled that day.",
+  "Each person knows their own household members."
+ ],
+ "know_each_other": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+   "Gary Whitfield"
+  ],
+  [
+   "Jack Thornton"
+  ],
+  [
+   "Sharon Priestley"
+  ],
+  [
+   "Ellie Marsh"
+  ]
+ ],
+ "people": [
+  {
+   "name": "Gary Whitfield",
+   "attributes": {
+    "id": "p5",
+    "age": 56,
+    "sex": "M",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 56,
+    "religion": "Christian",
+    "activity": "self-employed",
+    "occupation": "Other managers & proprietors (incl. cafe and shop owners)",
+    "contract": "self-employed",
+    "employer": "this café (owner)",
+    "annual_income": 54963,
+    "hours_per_week": 42.5,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "07:30",
+      "end": "15:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Tue",
+      "start": "09:30",
+      "end": "17:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Wed",
+      "start": "09:30",
+      "end": "17:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Thu",
+      "start": "06:30",
+      "end": "14:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Fri",
+      "start": "06:30",
+      "end": "14:00",
+      "paid_hours": 7
+     },
+     {
+      "day": "Sun",
+      "start": "06:30",
+      "end": "14:30",
+      "paid_hours": 7.5
+     }
+    ],
+    "household": {
+     "type": "couple family with non-dependent children",
+     "tenure": "social rented",
+     "bedrooms": 3,
+     "occupancy_rating": 1,
+     "size": 3,
+     "members": [
+      {
+       "id": "p6",
+       "age": 54,
+       "sex": "F",
+       "relation": "wife",
+       "name": "Karen Whitfield"
+      },
+      {
+       "id": "p7",
+       "age": 23,
+       "sex": "M",
+       "relation": "son",
+       "name": "Callum Whitfield"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p7",
+      "age": 23,
+      "lives": "with me",
+      "name": "Callum Whitfield"
+     }
+    ],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 24.87,
+    "role": "owner-manager",
+    "name": "Gary Whitfield"
+   },
+   "temperament": "openness average, conscientiousness high, extraversion high, agreeableness high, emotional stability average",
+   "profile": "You own the café and work six days a week, opening at half six on Thursdays, Fridays and Sundays and coming in a bit later Monday to Wednesday. You do the baking prep, the ordering, the till and the floor, and you know most regulars by name and usual order. You're conscientious to a fault: you check the fridge temperatures twice, can't leave a table uncleared, and you stay late to finish the books even when you're tired. You're chatty and warm and find it hard to say no, so staff swap shifts with you and you sometimes cover for them and then grumble to yourself about it. Home is a rented three-bed with your wife and your 23-year-old son, who is in and out. You like a walk on your one free day, the radio, a bit of football on telly, and trying out a new traybake recipe. Current small worries are the price of butter and energy bills, an ageing coffee grinder, and whether your son will ever tidy his room.",
+   "speech": "Friendly, quick and talkative, in plain everyday English. You use people's names, ask follow-up questions and fill silences with small talk. You're direct when it's about work (can you do Saturday, the delivery's late) but soften it with thanks or a joke. Medium-length sentences, the odd tangent about a customer or a recipe, and you apologise a lot for things that aren't your fault.",
+   "texting": "Short, friendly messages in normal sentence case with proper punctuation. You use the occasional smiley or thumbs up and sign off with 'thanks'. You reply quickly during the day, though not while the café is busy, and you often text from the back room at quiet moments.",
+   "contacts": [
+    {
+     "relation": "wife",
+     "about": "Your wife. She is dry and practical and teases you about working too much."
+    },
+    {
+     "relation": "café supplier",
+     "about": "The delivery driver and baker's rep. He is brisk and cheerful, and you chat about prices and delays."
+    },
+    {
+     "relation": "long-time regular",
+     "about": "A retired customer who comes in most mornings. She is chatty and tells you about her grandchildren."
+    },
+    {
+     "relation": "friend and fellow business owner",
+     "about": "The owner of the shop next door. You trade moans about rates and rubbish collections over a quick tea."
+    }
+   ]
+  },
+  {
+   "name": "Jack Thornton",
+   "attributes": {
+    "id": "p8",
+    "age": 23,
+    "sex": "M",
+    "ethnicity": "Other Asian",
+    "birthplace": "England",
+    "years_in_uk": 23,
+    "religion": "Christian",
+    "activity": "employed full-time",
+    "occupation": "Textiles, printing & other skilled trades (incl. chefs and cooks)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 35992,
+    "hours_per_week": 48,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "08:00",
+      "end": "16:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Tue",
+      "start": "08:00",
+      "end": "16:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Thu",
+      "start": "08:00",
+      "end": "16:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Fri",
+      "start": "08:00",
+      "end": "16:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Sat",
+      "start": "08:00",
+      "end": "16:30",
+      "paid_hours": 8
+     },
+     {
+      "day": "Sun",
+      "start": "07:00",
+      "end": "15:30",
+      "paid_hours": 8
+     }
+    ],
+    "household": {
+     "type": "other household: unrelated adults sharing",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 0,
+     "size": 4,
+     "members": [
+      {
+       "id": "p9",
+       "age": 35,
+       "sex": "F",
+       "relation": "housemate (unrelated)",
+       "name": "Hannah Doyle"
+      },
+      {
+       "id": "p10",
+       "age": 54,
+       "sex": "F",
+       "relation": "housemate (unrelated)",
+       "name": "Lorraine Pickett"
+      },
+      {
+       "id": "p11",
+       "age": 20,
+       "sex": "F",
+       "relation": "housemate (unrelated)",
+       "name": "Megan Shaw"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 14.42,
+    "role": "cook",
+    "name": "Jack Thornton"
+   },
+   "temperament": "openness high, conscientiousness average, extraversion average, agreeableness average, emotional stability high",
+   "profile": "You are a 23-year-old cook at a small independent café, on your feet from 8 until half four six days a week, with Sundays starting at 7. You do prep, the hot breakfast and lunch specials, soups and baking when asked. You live in a shared house with three unrelated adults, which suits you fine, and you mostly keep to the kitchen and your own room. You are curious and like trying odd things: fermenting, pickling, cooking dishes from cuisines you've never made, wandering into charity shops and secondhand bookshops. You stay calm when a rush hits and rarely get rattled, though you can be a bit untidy with your station and forget to restock when you're absorbed in an idea. You're not especially chatty or quiet, and you get mildly stubborn about how something should be seasoned. Your days off are Wednesday only, so you spend it sleeping a bit later, cooking for yourself, and doing laundry. Small current worries are whether the winter menu will let you try your miso-squash soup, and that your knife needs sharpening.",
+   "speech": "Relaxed, plain and fairly direct. Medium pace, short to medium sentences. You say what you think without fuss, then drift into tangents about food or a thing you read when something interests you. Dry, easygoing humour. You ask curious questions and are happy to say you don't know. In the kitchen you're brief and practical: \"behind\", \"two minutes\", \"that needs salt\".",
+   "texting": "Short, lowercase, light punctuation, occasional emoji but not many. Replies fairly quickly on breaks or evenings, slower during shifts. Sometimes sends photos of food instead of words.",
+   "contacts": [
+    {
+     "relation": "older sister",
+     "about": "Lives a couple of hours away, works in admin; chatty, sends voice notes, teases you about your cooking experiments."
+    },
+    {
+     "relation": "friend from catering college",
+     "about": "Cooks at a restaurant across the city; you swap recipes and complaints, talks fast and swears a lot."
+    },
+    {
+     "relation": "café owner",
+     "about": "Your boss; practical and friendly, talks in quick instructions and thanks, occasionally asks you to cover extra."
+    },
+    {
+     "relation": "mum",
+     "about": "Rings on Sunday evenings, asks if you're eating properly, warm and a bit repetitive."
+    }
+   ]
+  },
+  {
+   "name": "Sharon Priestley",
+   "attributes": {
+    "id": "p15",
+    "age": 51,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 51,
+    "religion": "No religion",
+    "activity": "employed part-time",
+    "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 3385,
+    "hours_per_week": 5,
+    "shifts": [
+     {
+      "day": "Thu",
+      "start": "07:00",
+      "end": "12:00",
+      "paid_hours": 5
+     }
+    ],
+    "household": {
+     "type": "couple family with non-dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 3,
+     "occupancy_rating": 1,
+     "size": 3,
+     "members": [
+      {
+       "id": "p16",
+       "age": 53,
+       "sex": "M",
+       "relation": "husband",
+       "name": "Darren Priestley"
+      },
+      {
+       "id": "p17",
+       "age": 27,
+       "sex": "F",
+       "relation": "daughter",
+       "name": "Chloe Priestley"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p17",
+      "age": 27,
+      "lives": "with me",
+      "name": "Chloe Priestley"
+     }
+    ],
+    "health": "very good",
+    "education": "GCSE-level (level 1-2)",
+    "hourly_pay": 13.02,
+    "role": "server",
+    "name": "Sharon Priestley"
+   },
+   "temperament": "openness average, conscientiousness low, extraversion high, agreeableness average, emotional stability average",
+   "profile": "You work one early shift a week at the café, Thursday 7 till 12, serving and clearing tables. It's pin money really, but you like it because it gets you out and talking to the regulars before the rest of your day starts. You're chatty and warm, and you'll start a conversation with anyone, which sometimes means orders back up while you finish a story. You're not great with routines: you forget to restock the sugar, leave cloths where they shouldn't be, and turn up with seconds to spare. You live with your husband and your grown-up daughter in the house you're still paying off. Outside work you do a bit of walking, watch a lot of baking and quiz shows, and keep meaning to start a craft thing. Small worries at the moment are the mortgage, whether your daughter will move out, and whether you've left the oven on.",
+   "speech": "Friendly, quick and talkative. You use long, looping sentences that wander off and come back, with lots of \"love\", \"you know\" and asides. You say what you think straight out, usually cheerfully. You laugh easily, ask people questions back, and fill silences. Plain everyday words, nothing fancy.",
+   "texting": "Medium-length texts, chatty, lower case mostly with loose punctuation and a few exclamation marks. Occasional emoji, such as a smiley or a heart. Replies fairly quickly but forgets to answer some messages until later. Sometimes sends two or three short texts in a row.",
+   "contacts": [
+    {
+     "relation": "sister",
+     "about": "Older sister who lives nearby, phones for long catch-ups and you both talk over each other."
+    },
+    {
+     "relation": "friend from the neighbourhood",
+     "about": "Walking buddy, you go out on weekend strolls and swap gossip and recipes."
+    },
+    {
+     "relation": "café colleague",
+     "about": "Younger coworker who covers other days, you chat about shift swaps and cover, and she teases you about being late."
+    },
+    {
+     "relation": "daughter's friend",
+     "about": "Pops round often, you chat with her over tea in the kitchen like she's family."
+    }
+   ]
+  },
+  {
+   "name": "Ellie Marsh",
+   "attributes": {
+    "id": "p18",
+    "age": 18,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 18,
+    "religion": "No religion",
+    "activity": "student",
+    "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 10165,
+    "hours_per_week": 17.5,
+    "shifts": [
+     {
+      "day": "Thu",
+      "start": "08:30",
+      "end": "17:30",
+      "paid_hours": 8.75
+     },
+     {
+      "day": "Fri",
+      "start": "08:30",
+      "end": "17:30",
+      "paid_hours": 8.75
+     }
+    ],
+    "household": {
+     "type": "other household: unrelated adults sharing",
+     "tenure": "owned with mortgage",
+     "bedrooms": 5,
+     "occupancy_rating": 0,
+     "size": 5,
+     "members": [
+      {
+       "id": "p19",
+       "age": 44,
+       "sex": "F",
+       "relation": "housemate (unrelated)",
+       "name": "Joanne Burke"
+      },
+      {
+       "id": "p20",
+       "age": 59,
+       "sex": "F",
+       "relation": "housemate (unrelated)",
+       "name": "Patricia Hume"
+      },
+      {
+       "id": "p21",
+       "age": 46,
+       "sex": "F",
+       "relation": "housemate (unrelated)",
+       "name": "Nicola Barlow"
+      },
+      {
+       "id": "p22",
+       "age": 35,
+       "sex": "M",
+       "relation": "housemate (unrelated)",
+       "name": "Tom Reeves"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": 11.17,
+    "role": "server",
+    "name": "Ellie Marsh"
+   },
+   "temperament": "openness average, conscientiousness average, extraversion average, agreeableness average, emotional stability average",
+   "profile": "You are 18 and in your first year of a part-time course alongside the job, and you work Thursdays and Fridays at the café as a server, 8:30 to 5:30 on your feet. You live in a big shared house with four unrelated adults, all older than you, so home is quiet, polite and a bit like having lodgers for flatmates. You are fairly easygoing and get on with most people, though you can go quiet when you are tired or when a customer is rude and you are not sure whether to say something. You sometimes forget to restock things until someone points it out, then do it straight away. You like playing football on a Sunday, scrolling through short videos, and finding new music on the bus. Small worries at the moment are money stretching to the end of the month, getting your coursework in on time, and whether you are fast enough on the coffee machine.",
+   "speech": "Friendly, plain and fairly relaxed. You use short to medium sentences and answer what you are asked without much padding. You are polite with customers and a bit more joking with colleagues. You say \"I think\" and \"probably\" when unsure rather than bluffing. You ask for help if you are stuck, but not right away. You do not talk much about yourself unless asked.",
+   "texting": "Short messages, mostly lowercase, light punctuation, an occasional emoji like a laugh face. You reply within an hour or so on days off, but you are slow during shifts because your phone is in your bag. You are reliable about confirming shifts.",
+   "contacts": [
+    {
+     "relation": "Café manager",
+     "about": "Runs the café, busy and warm, sends quick practical messages about rotas and swaps."
+    },
+    {
+     "relation": "Coworker on the same shifts",
+     "about": "A slightly older server who shows you tricks, chatty and teasing."
+    },
+    {
+     "relation": "Friend from college",
+     "about": "Same course, you swap notes and memes, texts in bursts late in the evening."
+    },
+    {
+     "relation": "Mum",
+     "about": "Lives elsewhere, checks in a few times a week, asks if you are eating properly."
+    }
+   ]
+  }
+ ],
+ "places": [
+  {
+   "name": "Café front",
+   "kind": "public",
+   "building": "Café",
+   "access": []
+  },
+  {
+   "name": "Café kitchen",
+   "kind": "shared",
+   "building": "Café",
+   "access": [
+    "Gary Whitfield",
+    "Jack Thornton",
+    "Sharon Priestley",
+    "Ellie Marsh"
+   ]
+  },
+  {
+   "name": "Whitfield home - Gary and Karen's bedroom",
+   "kind": "private",
+   "building": "Whitfield home",
+   "access": [
+    "Gary Whitfield"
+   ]
+  },
+  {
+   "name": "Whitfield home - Callum's bedroom",
+   "kind": "private",
+   "building": "Whitfield home",
+   "access": []
+  },
+  {
+   "name": "Whitfield home - living areas",
+   "kind": "shared",
+   "building": "Whitfield home",
+   "access": [
+    "Gary Whitfield"
+   ]
+  },
+  {
+   "name": "Thornton house - Jack's bedroom",
+   "kind": "private",
+   "building": "Shared house A",
+   "access": [
+    "Jack Thornton"
+   ]
+  },
+  {
+   "name": "Shared house A - Hannah's bedroom",
+   "kind": "private",
+   "building": "Shared house A",
+   "access": []
+  },
+  {
+   "name": "Shared house A - Lorraine's bedroom",
+   "kind": "private",
+   "building": "Shared house A",
+   "access": []
+  },
+  {
+   "name": "Shared house A - Megan's bedroom",
+   "kind": "private",
+   "building": "Shared house A",
+   "access": []
+  },
+  {
+   "name": "Shared house A - kitchen and living room",
+   "kind": "shared",
+   "building": "Shared house A",
+   "access": [
+    "Jack Thornton"
+   ]
+  },
+  {
+   "name": "Priestley home - Sharon and Darren's bedroom",
+   "kind": "private",
+   "building": "Priestley home",
+   "access": [
+    "Sharon Priestley"
+   ]
+  },
+  {
+   "name": "Priestley home - Chloe's bedroom",
+   "kind": "private",
+   "building": "Priestley home",
+   "access": []
+  },
+  {
+   "name": "Priestley home - living areas",
+   "kind": "shared",
+   "building": "Priestley home",
+   "access": [
+    "Sharon Priestley"
+   ]
+  },
+  {
+   "name": "Shared house B - Ellie's bedroom",
+   "kind": "private",
+   "building": "Shared house B",
+   "access": [
+    "Ellie Marsh"
+   ]
+  },
+  {
+   "name": "Shared house B - Joanne's bedroom",
+   "kind": "private",
+   "building": "Shared house B",
+   "access": []
+  },
+  {
+   "name": "Shared house B - Patricia's bedroom",
+   "kind": "private",
+   "building": "Shared house B",
+   "access": []
+  },
+  {
+   "name": "Shared house B - Nicola's bedroom",
+   "kind": "private",
+   "building": "Shared house B",
+   "access": []
+  },
+  {
+   "name": "Shared house B - Tom's bedroom",
+   "kind": "private",
+   "building": "Shared house B",
+   "access": []
+  },
+  {
+   "name": "Shared house B - kitchen and living room",
+   "kind": "shared",
+   "building": "Shared house B",
+   "access": [
+    "Ellie Marsh"
+   ]
+  },
+  {
+   "name": "High street",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Bus stop",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Local park",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "elsewhere",
+   "kind": "public",
+   "building": "",
+   "access": []
+  }
+ ],
+ "contacts": [
+  {
+   "name": "Dennis",
+   "role": "café supplier",
+   "about": "Delivers to the café and deals with Gary on orders; brisk and friendly, talks in short practical sentences.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Maureen",
+   "role": "long-time regular customer",
+   "about": "Has been coming to the café for years; chatty and warm, likes a natter with Gary.",
+   "linked": [],
+   "place": "Café front"
+  },
+  {
+   "name": "Steve",
+   "role": "friend and fellow business owner",
+   "about": "Runs another local business and swaps news and moans about trade with Gary; easygoing and joking.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Amy",
+   "role": "Jack's older sister",
+   "about": "Teasing and affectionate, talks casually.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Liam",
+   "role": "Jack's friend from catering college",
+   "about": "Another cook; relaxed, swaps kitchen stories in casual banter.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Julie",
+   "role": "Jack's mum",
+   "about": "Caring and a bit fussy, asks if he is eating properly.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Tracey",
+   "role": "Sharon's sister",
+   "about": "Close and chatty, speaks frankly.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Angela",
+   "role": "Sharon's friend from the neighbourhood",
+   "about": "Lives nearby; friendly and gossipy over a cuppa.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Jess",
+   "role": "Chloe's friend",
+   "about": "Friend of Sharon's daughter Chloe; cheerful and informal.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Maya",
+   "role": "Ellie's friend from college",
+   "about": "Same age as Ellie; texts in quick, casual messages.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Claire",
+   "role": "Ellie's mum",
+   "about": "Supportive and practical, checks in about shifts and college.",
+   "linked": [],
+   "place": ""
+  },
+  {
+   "name": "Karen Whitfield",
+   "role": "Gary Whitfield's wife",
+   "about": "54 wife, lives with Gary Whitfield",
+   "linked": [
+    "Gary Whitfield"
+   ],
+   "place": "Whitfield home - Gary and Karen's bedroom"
+  },
+  {
+   "name": "Callum Whitfield",
+   "role": "Gary Whitfield's son",
+   "about": "23 son, lives with Gary Whitfield",
+   "linked": [
+    "Gary Whitfield"
+   ],
+   "place": "Whitfield home - Gary and Karen's bedroom"
+  },
+  {
+   "name": "wife",
+   "role": "Gary Whitfield's wife",
+   "about": "Your wife. She is dry and practical and teases you about working too much.",
+   "linked": [
+    "Gary Whitfield"
+   ],
+   "place": ""
+  },
+  {
+   "name": "café supplier",
+   "role": "Gary Whitfield's café supplier",
+   "about": "The delivery driver and baker's rep. He is brisk and cheerful, and you chat about prices and delays.",
+   "linked": [
+    "Gary Whitfield"
+   ],
+   "place": ""
+  },
+  {
+   "name": "long-time regular",
+   "role": "Gary Whitfield's long-time regular",
+   "about": "A retired customer who comes in most mornings. She is chatty and tells you about her grandchildren.",
+   "linked": [
+    "Gary Whitfield"
+   ],
+   "place": ""
+  },
+  {
+   "name": "friend and fellow business owner",
+   "role": "Gary Whitfield's friend and fellow business owner",
+   "about": "The owner of the shop next door. You trade moans about rates and rubbish collections over a quick tea.",
+   "linked": [
+    "Gary Whitfield"
+   ],
+   "place": ""
+  },
+  {
+   "name": "Hannah Doyle",
+   "role": "Jack Thornton's housemate (unrelated)",
+   "about": "35 housemate (unrelated), lives with Jack Thornton",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": "Thornton house - Jack's bedroom"
+  },
+  {
+   "name": "Lorraine Pickett",
+   "role": "Jack Thornton's housemate (unrelated)",
+   "about": "54 housemate (unrelated), lives with Jack Thornton",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": "Thornton house - Jack's bedroom"
+  },
+  {
+   "name": "Megan Shaw",
+   "role": "Jack Thornton's housemate (unrelated)",
+   "about": "20 housemate (unrelated), lives with Jack Thornton",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": "Thornton house - Jack's bedroom"
+  },
+  {
+   "name": "older sister",
+   "role": "Jack Thornton's older sister",
+   "about": "Lives a couple of hours away, works in admin; chatty, sends voice notes, teases you about your cooking experiments.",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": ""
+  },
+  {
+   "name": "friend from catering college",
+   "role": "Jack Thornton's friend from catering college",
+   "about": "Cooks at a restaurant across the city; you swap recipes and complaints, talks fast and swears a lot.",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": ""
+  },
+  {
+   "name": "café owner",
+   "role": "Jack Thornton's café owner",
+   "about": "Your boss; practical and friendly, talks in quick instructions and thanks, occasionally asks you to cover extra.",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": ""
+  },
+  {
+   "name": "mum",
+   "role": "Jack Thornton's mum",
+   "about": "Rings on Sunday evenings, asks if you're eating properly, warm and a bit repetitive.",
+   "linked": [
+    "Jack Thornton"
+   ],
+   "place": ""
+  },
+  {
+   "name": "Darren Priestley",
+   "role": "Sharon Priestley's husband",
+   "about": "53 husband, lives with Sharon Priestley",
+   "linked": [
+    "Sharon Priestley"
+   ],
+   "place": "Priestley home - Sharon and Darren's bedroom"
+  },
+  {
+   "name": "Chloe Priestley",
+   "role": "Sharon Priestley's daughter",
+   "about": "27 daughter, lives with Sharon Priestley",
+   "linked": [
+    "Sharon Priestley"
+   ],
+   "place": "Priestley home - Sharon and Darren's bedroom"
+  },
+  {
+   "name": "sister",
+   "role": "Sharon Priestley's sister",
+   "about": "Older sister who lives nearby, phones for long catch-ups and you both talk over each other.",
+   "linked": [
+    "Sharon Priestley"
+   ],
+   "place": ""
+  },
+  {
+   "name": "friend from the neighbourhood",
+   "role": "Sharon Priestley's friend from the neighbourhood",
+   "about": "Walking buddy, you go out on weekend strolls and swap gossip and recipes.",
+   "linked": [
+    "Sharon Priestley"
+   ],
+   "place": ""
+  },
+  {
+   "name": "café colleague",
+   "role": "Sharon Priestley's café colleague",
+   "about": "Younger coworker who covers other days, you chat about shift swaps and cover, and she teases you about being late.",
+   "linked": [
+    "Sharon Priestley"
+   ],
+   "place": ""
+  },
+  {
+   "name": "daughter's friend",
+   "role": "Sharon Priestley's daughter's friend",
+   "about": "Pops round often, you chat with her over tea in the kitchen like she's family.",
+   "linked": [
+    "Sharon Priestley"
+   ],
+   "place": ""
+  },
+  {
+   "name": "Joanne Burke",
+   "role": "Ellie Marsh's housemate (unrelated)",
+   "about": "44 housemate (unrelated), lives with Ellie Marsh",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": "Shared house B - Ellie's bedroom"
+  },
+  {
+   "name": "Patricia Hume",
+   "role": "Ellie Marsh's housemate (unrelated)",
+   "about": "59 housemate (unrelated), lives with Ellie Marsh",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": "Shared house B - Ellie's bedroom"
+  },
+  {
+   "name": "Nicola Barlow",
+   "role": "Ellie Marsh's housemate (unrelated)",
+   "about": "46 housemate (unrelated), lives with Ellie Marsh",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": "Shared house B - Ellie's bedroom"
+  },
+  {
+   "name": "Tom Reeves",
+   "role": "Ellie Marsh's housemate (unrelated)",
+   "about": "35 housemate (unrelated), lives with Ellie Marsh",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": "Shared house B - Ellie's bedroom"
+  },
+  {
+   "name": "Café manager",
+   "role": "Ellie Marsh's Café manager",
+   "about": "Runs the café, busy and warm, sends quick practical messages about rotas and swaps.",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": ""
+  },
+  {
+   "name": "Coworker on the same shifts",
+   "role": "Ellie Marsh's Coworker on the same shifts",
+   "about": "A slightly older server who shows you tricks, chatty and teasing.",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": ""
+  },
+  {
+   "name": "Friend from college",
+   "role": "Ellie Marsh's Friend from college",
+   "about": "Same course, you swap notes and memes, texts in bursts late in the evening.",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": ""
+  },
+  {
+   "name": "Mum",
+   "role": "Ellie Marsh's Mum",
+   "about": "Lives elsewhere, checks in a few times a week, asks if you are eating properly.",
+   "linked": [
+    "Ellie Marsh"
+   ],
+   "place": ""
+  }
+ ],
+ "dropped": [],
+ "events_given": []
+}

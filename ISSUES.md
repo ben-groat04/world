@@ -102,3 +102,18 @@ REMAINING / FOR OTHERS:
 - Event clumping on the 1st of month (housing moves, money, mental-health) — stagger per person.
 - Storyline headline repetition ("split up, fell out over money, fell out") — dedupe beat phrasing.
 - Colleagues don't invite new hires.
+
+## Realism round 3 (students, newcomer ties, TFR, employment) - status
+- FIXED students: found two real bugs + one missing mechanism. (1) `labour.initPerson` turned every arriving working student into 'employed' (startJob ran before the
+  'still a student' test), (2) arriving students were dropped mid-course at a random point and graduated within months, (3) no academic-year cycle. Now: arrivals start a
+  new course (first-years 18-20 3y/20% 4y; 21+ mostly 1y taught postgraduates), student houses re-let rooms to the next cohort Aug-Oct (+ small January intake),
+  student lets are marketed for September and follow their tenants (unit becomes/stops being a student let), graduates stay in the city 46.5% (HESA graduate mobility) else
+  leave when the tenancy ends (Sep-Nov). Students settle ~9.5% (was 3%).
+- FIXED newcomer loneliness: contexts that form ties (study, work, shared flat, clubs; `social/context.js`), rate falls as support layers fill. Newcomers now take ~1-2 years to
+  integrate (lonely peak in months 3-12). Settled residents had ~0% lonely (day-1 networks are too stable: no tail) so `LONE_THRESHOLD` 1.0 -> 0.75 (measurement constant, refit to overall ~7%).
+  Open: young (16-24) still 12-20% vs ONS ~10% (the +0.25 need for <25 is large); settled-resident loneliness has no tail (bereavement/illness drive it only via ties lost).
+- TFR: measured wrongly (births / women alive at END x 30; swung 0.7-1.7 with drift) -> now period TFR from woman-year exposure. Mechanism fixes: conception hazard used the live-birth
+  rate then 11% miscarried (-11%); ASFR is by age at birth but hazard was by age at conception (shifted births a band older; now age+0.75). Bands 30+ now ~0.95-1.1 x ASFR.
+  Still ~1.2: 20-29 band births are 0.4-0.75 x ASFR because only ~25% of women 20-29 are in a cohabiting/married union (student-heavy). Partnership formation in the 20s is the open lever.
+- Employed 58-60% (was 64-67%): the excess was students->employed drain. Home/family return-to-work was a flat 2%/month (now 1.2%, x0.6 child <11, x0.35 Pakistani/Bangladeshi: ethnicity-facts-figures 2021 51% of
+  women inactive). Remaining 4 pts above 55%: retired share 12% (input age structure), arrivals more employed than day-1 residents (selection by segment tilt).

@@ -68,3 +68,15 @@ Day-1 age structure (input): children per family 1.9->2.1 mean (KID_COUNT), crow
 - Heat (consequences/index.js): illness/day = 0.007 x vulnerability (age 85+ 1.0, 75+ 0.7, 65+ 0.35, <5 0.35, x1.4 per condition up to 3, x1.3 alone, x1.4 top floor) x (0.5 + severity); sleep stress 0.02-0.05 for 35% (+30% top floor); home row p = 0.004 x (0.5+N) x (0.5+severity); 20-35% head to a park in the evening. Sources in file header (UKHSA 2022, PHE Heatwave Plan, CCC 2022, Anderson 2001).
 - Money rows: p = 0.3 + 0.4 N that a couple/housemates row within 1-9 days of a >=8% rent rise or arrears (Conger 1990). Rent shock now emits one housing.rent_rise per household (cause = shock) and goal pressure rules listen to Larkfield event names.
 - Labour monthly review now runs on person-day (id mod 30); on-map vacancy filling 3 rounds/month at 0.15 (was 0.45 once).
+
+## Round 4 (student cycle, newcomer ties, TFR measurement, activity flows)
+| area | change | grounding | status |
+|---|---|---|---|
+| student intake | arrivals start a new course; student rooms/lets re-let Aug-Oct; lets follow tenants | UK academic year; HESA | mechanism |
+| graduate stay | `gradStay` 0.465 per graduate | HESA graduate mobility (46.5% stay in region) | hand-set constant from data |
+| course length | first-years 18-20: 3y (20% 4y); 21+: 70% 1y taught | HESA entrants | hand-set |
+| context ties (`social/context.js`) | study 1.2, shared flat 0.5, work 0.6, club 0.3 new ties/quarter x (0.5+E) x age factor x (1 - support layer fill/13) | first-year cohort: 4.2 course friends by year end (Springer 2020); work/neighbourhood supply friends (Kalmijn, Mollenhorst - recalled) | hand-set rates; saturate at Dunbar 5/15 |
+| `LONE_THRESHOLD` | 1.0 -> 0.75 | measurement threshold, refit to overall ~7% (tuned target) | held-out: age profile (young ONS 16-29 9.7%, 70+ 3.7%) |
+| TFR | metric = period TFR from woman-year exposure; conception hazard = ASFR/(1-0.11) at age+0.75 | NHS/RCOG miscarriage ~1 in 8; ASFR by age at birth | TFR is HELD-OUT (not tuned) |
+| home/family return | 1.2%/month x0.6 child<11 x0.35 Pakistani/Bangladeshi | ethnicity-facts-figures 2021; ONS Families & labour market | hand-set |
+Not tuned: employed share (target 55%), student share, TFR (held-out), loneliness age profile (held-out). Only `LONE_THRESHOLD` was refit (overall loneliness).

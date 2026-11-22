@@ -196,8 +196,9 @@ const ACTIVE = []; let SID = 0
 const sceneOf = (n) => ACTIVE.find((sc) => sc.people.includes(n) && !sc.left.has(n))
 const sceneText = (lines, v) => lines.map((l) => { const nm = v ? label(v, l.name) : l.name; return l.say ? `${nm}: "${l.say}"${l.do ? ' (' + l.do + ')' : ''}` : `${nm} (${l.do || 'says nothing'})` }).join('\n')
 function startScene(t, where, phone, people, starter, opening) {
-  const sc = { id: ++SID, t0: t, t, where, phone, people: [...people], starter, lines: [], left: new Set(), silent: new Set(), next: [starter], failed: 0 }
-  if (opening) { sc.lines.push({ name: starter, say: noEmoji(opening), do: '' }); sc.t += 1; sc.next = people.filter((x) => x !== starter) }
+  const sc = { id: ++SID, t0: t, t, where, phone, people: [...people], starter, lines: [], left: new Set(), aside: new Set(), silent: new Set(), unheard: [], next: [starter], failed: 0 }
+  if (opening && phone) { sc.held = noEmoji(opening); sc.next = people.filter((x) => x !== starter) } // the callee sees who is ringing, not what they will say
+  else if (opening) { sc.lines.push({ name: starter, say: noEmoji(opening), do: '' }); sc.t += 1; sc.next = people.filter((x) => x !== starter) }
   ACTIVE.push(sc); return sc
 }
 function release(sc, n, t, ended) { // a person leaves a conversation: it goes into their journal, and they decide what next
@@ -211,8 +212,8 @@ function endScene(sc, ended) {
   ACTIVE.splice(ACTIVE.indexOf(sc), 1)
   const t = Math.ceil(sc.t), ps = sc.people.filter((x) => NAMES.includes(x))
   if (ended === 'not answered') sc.lines.length = 0
-  L.push({ t: sc.t0, kind: sc.phone ? 'call' : 'scene', where: sc.where, present: sc.people, lines: sc.lines, minutes: t - sc.t0, ended, answered: ended !== 'not answered', ...(sc.failed ? { failed: sc.failed } : {}) })
-  for (const m of ps) if (sc.lines.some((l) => l.say.toLowerCase().includes(m.split(' ')[0].toLowerCase()))) for (const v of ps) KNOW[v].add(m) // names said aloud are learned
+  L.push({ t: sc.t0, kind: sc.phone ? 'call' : 'scene', where: sc.where, present: sc.people, lines: sc.lines, minutes: t - sc.t0, ended, answered: ended !== 'not answered', ...(sc.unheard.length ? { unheard: sc.unheard } : {}), ...(sc.failed ? { failed: sc.failed } : {}) })
+  for (const m of ps) if (sc.lines.some((l) => new RegExp(`(?<!\\p{L})${m.split(' ')[0].replace(/[^\p{L}'-]/gu, '')}(?!\\p{L})`, 'iu').test(l.say))) for (const v of ps.filter((x) => !sc.left.has(x))) KNOW[v].add(m) // a first name said aloud is learned by those still there
   if (sc.phone && ps.length === 2 && ended !== 'not answered') for (const v of ps) NUM[v].add(ps.find((x) => x !== v))
   for (const n of sc.people) if (!sc.left.has(n)) release(sc, n, t, ended)
   for (const c of sc.people.filter((x) => CONTACT[x])) { thread(c, `${fmt(sc.t0)} ${sc.phone ? 'call' : 'met'} with ${sc.people.filter((x) => x !== c).join(', ')}: ${ended === 'not answered' ? '(not answered)' : sc.lines.map((l) => `${l.name}: ${l.say || '(' + l.do + ')'}`).join(' / ')}`)
@@ -221,7 +222,11 @@ function endScene(sc, ended) {
 const SAY = obj({ say: { type: 'string', description: 'words said out loud, or empty' }, do: { type: 'string', description: 'brief action, or empty' },
   to: { type: 'string', description: 'who you are speaking to (a name, or "everyone")' }, minutes: { type: 'integer', description: 'minutes until anyone speaks again: your words plus any pause after them. What you do runs alongside and adds no time unless it stops the talk.' },
   call_over: { type: 'string', description: 'someone NOT here whom you call, shout or knock for now; else empty' },
-  leave: { type: 'boolean', description: 'you walk off / hang up after this' } }, ['say', 'do', 'to', 'minutes', 'leave'])
+  leave: { type: 'boolean', description: 'you walk off / hang up after this' },
+  aside: { type: 'boolean', description: 'you stop taking part and go back to what you were doing, still here (anyone can talk to you again)' } }, ['say', 'do', 'to', 'minutes', 'leave'])
+// what a person does to anyone not here goes through the same pipes as in a turn, so the world decides what comes of it (round 2: calls and customers were only narrated)
+const SAYP = obj({ ...SAY.properties, messages: arr(obj({ to: str, text: str }), { maxItems: 2, description: 'texts you send now (to a person, contact or group)' }),
+  call: { type: 'string', description: 'someone you ring now (you step out of this conversation to do it); else empty' }, action: { type: 'string', description: 'an errand that depends on the outside world, done now (look something up, order, pay); else empty' } }, SAY.required)
 const HEAR = obj({ come: { type: 'boolean', description: 'you go to them' }, say: { type: 'string', description: 'anything you call back, or empty' } })
 const personaCtx = (n, now, max) => `YOUR JOURNAL (what you saw, heard, said and did):\n${journal(n, now, max)}\nYOUR PLAN: ${planView(n, now).slice(0, 2).join(' / ') || '(none)'}\n\n`
 const live = (sc) => sc.people.filter((x) => !sc.left.has(x))
@@ -235,39 +240,49 @@ function lineFrom(sc, speaker, floor) { // one person's next bit of a conversati
   const st = S[speaker].plan.find((p) => p.t0 <= now && now < p.t1 && !p.auto), late = st && st.t0 > sc.t0 && (st.place !== (sc.phone ? S[speaker].place : sc.where) || st.doing !== S[speaker].doing)
   return ask('persona', `${personaCtx(speaker, now, 3000)}IT IS ${fmt(now)}. ${sc.phone ? `You are ON THE PHONE (you are at ${S[speaker].place}).` : `You are at ${sc.where}.`} ${who}${late ? `\nYour plan had you ${st.doing} @${st.place} from ${fmt(st.t0).slice(4)}.` : ''}${ringing ? `\nYOUR PHONE IS RINGING: ${NUM[speaker].has(sc.starter) || CONTACT[sc.starter] ? sc.starter : 'a number you do not have saved'}. Answer (say something) or let it ring (leave=true, say nothing).` : ''}
 THIS CONVERSATION SO FAR${now - sc.t0 >= 1 ? ` (${Math.round(now - sc.t0)} min in)` : ''}:\n${soFar}
-${turn} You can also carry on with what you were doing, call someone over, or ${sc.phone ? 'hang up' : 'leave'}.`, SAY, { label: `${A.label} ${speaker} @${sc.where}`, for: speaker, head: speaker, why: 'scene line' })
+${turn} You can also go back to what you were doing (aside), call someone over, or ${sc.phone ? 'hang up' : 'leave'}. Anything you do to someone not here (text, ring, look up, order) goes in messages, call or action, not in what you say or do.`, SAYP, { label: `${A.label} ${speaker} @${sc.where}`, for: speaker, head: speaker, why: 'scene line' })
 }
+const outward = (sc, n, r) => { if (!r || !NAMES.includes(n)) return; const t = Math.ceil(sc.t) // texts, errands and calls made mid-conversation
+  for (const m of r.messages || []) send(n, m.to, m.text, t)
+  if (String(r.action || '').trim()) pendingWorld.push({ kind: 'action', who: n, text: `${n} at ${S[n].place}, ${fmt(t)}: ${r.action}` })
+  if (String(r.call || '').trim()) { if (!sc.left.has(n)) { sc.left.add(n); release(sc, n, t, 'left') } intend(n, { kind: 'call', to: r.call }, t) } }
+const bgNear = (sc) => Object.values(CONTACT).filter((c) => c.at && c.at.until > sc.t && !sceneOf(c.name) && PLACE[c.at.place]?.building && PLACE[c.at.place].building === PLACE[sc.where]?.building).map((c) => c.name)
 async function sceneLine(sc) {
   if (sc.ending) return endScene(sc, sc.ending) // the last line has finished
   const cands = sc.next.filter((x) => live(sc).includes(x)), floor = cands.length > 1
-  const rs = await parallel(cands.map((n) => () => lineFrom(sc, n, floor || !sc.addressed)))
+  const rs = await parallel(cands.map((n) => () => lineFrom(sc, n, floor || (sc.lines.length > 0 && !sc.addressed))))
   if (sc.phone && !sc.answered && cands[0] !== sc.starter) { if (!rs[0] || (rs[0].leave && !String(rs[0].say || '').trim())) return endScene(sc, 'not answered'); sc.answered = true }
   const spoke = [], t0 = sc.t
   cands.forEach((n, k) => { const r = rs[k]; if (!r) return void sc.failed++
-    if (r.leave) { if (r.say || r.do) sc.lines.push({ name: n, say: noEmoji(r.say), do: noEmoji(r.do) }); sc.left.add(n); release(sc, n, Math.ceil(sc.t), 'left') }
+    if (r.leave || r.aside) { if (r.say || r.do) sc.lines.push({ name: n, say: noEmoji(r.say), do: noEmoji(r.do) }); sc.left.add(n); if (r.aside && !sc.phone) sc.aside.add(n); release(sc, n, Math.ceil(sc.t), r.leave ? 'left' : 'aside'); outward(sc, n, r) }
     else if (String(r.say || '').trim()) spoke.push([n, r]) })
-  const [speaker, r] = spoke.length ? spoke[Math.floor(rnd() * spoke.length)] : [] // several want to speak at once: one gets in
-  if (speaker) { sc.lines.push({ name: speaker, say: noEmoji(r.say), do: noEmoji(r.do) }); sc.silent.clear(); sc.t = t0 + Math.max(0.5, clamp(r.minutes, 0, 30)) }
+  const [speaker, r] = spoke.length ? spoke[Math.floor(rnd() * spoke.length)] : [] // several want to speak at once: one gets in (the others are kept as unheard)
+  for (const [n, x] of spoke) if (n !== speaker) sc.unheard.push({ name: n, say: noEmoji(x.say) })
+  if (speaker) { sc.lines.push({ name: speaker, say: noEmoji(r.say), do: noEmoji(r.do) }); sc.silent.clear(); sc.t = t0 + Math.max(0.5, clamp(r.minutes, 0, 30)); outward(sc, speaker, r) }
   else { for (const n of cands) sc.silent.add(n)
-    const r1 = cands.length === 1 && rs[0] && !rs[0].leave ? rs[0] : null
-    sc.lines.push(r1 ? { name: cands[0], say: '', do: noEmoji(r1.do) } : { name: '—', say: '', do: 'pause' }); sc.t = t0 + Math.max(0.5, clamp(r1?.minutes, 0, 10)) }
+    const r1 = cands.length === 1 && rs[0] && !rs[0].leave && !rs[0].aside ? rs[0] : null
+    sc.lines.push(r1 ? { name: cands[0], say: '', do: noEmoji(r1.do) } : { name: '—', say: '', do: 'pause' }); sc.t = t0 + Math.max(0.5, clamp(r1?.minutes, 0, 10)); outward(sc, cands[0], r1) }
+  if (sc.held && sc.answered) { sc.lines.push({ name: sc.starter, say: sc.held, do: '' }); sc.held = null; sc.t += 0.5 } // the caller speaks once picked up
   if (r?.call_over && !sc.phone && !resolve(r.call_over, live(sc))) { // the person called for decides for themselves
-    const me = NAMES.includes(speaker), x = resolve(r.call_over, NAMES.filter((k) => !live(sc).includes(k) && (!me || KNOW[speaker].has(k))))
+    const me = NAMES.includes(speaker), x = resolve(r.call_over, NAMES.filter((k) => !live(sc).includes(k) && (!me || KNOW[speaker].has(k)))), bg = !x && resolve(r.call_over, bgNear(sc))
     const reach = x && !sceneOf(x) && !S[x].asleep && PLACE[S[x].place]?.building && PLACE[S[x].place].building === PLACE[sc.where]?.building
     const h = reach ? await ask('persona', `${personaCtx(x, sc.t, 1500)}IT IS ${fmt(sc.t)}. You are at ${S[x].place}${S[x].doing ? ', ' + S[x].doing : ''}. You hear ${label(x, speaker)} calling for you from ${sc.where}${r.say ? `: "${noEmoji(r.say)}"` : ''}. Do you go? You can also call something back, or ignore it.`, HEAR, { label: `${A.label} ${x} hears ${speaker}`, for: x, head: x, why: 'called over' }) : null
     if (h?.come) { moveTo(x, sc.where, Math.ceil(sc.t), 'called over by ' + speaker); join(sc, x, noEmoji(h.say)) }
+    else if (bg) { CONTACT[bg].at = { ...CONTACT[bg].at, place: sc.where }; join(sc, bg, '') } // a background person who is here comes over; their words come from the world voice
     else sc.lines.push(h && String(h.say || '').trim() ? { name: x, say: noEmoji(h.say), do: `from ${S[x].place}` } : { name: '—', say: '', do: `no answer from ${r.call_over}` })
   }
   const l2 = live(sc); if (l2.length < 2) return void (sc.ending = sc.phone ? 'hung up' : 'walked off')
   if (sc.lines.length >= MAX_LINES) return void (sc.ending = 'cap')
-  const addressed = speaker && resolve(r.to, l2.filter((m) => m !== speaker))
+  const back = speaker && !sc.phone && resolve(r.to, [...sc.aside].filter((m) => S[m].place === sc.where && !sceneOf(m) && !S[m].asleep))
+  if (back) { sc.aside.delete(back); join(sc, back, '') } // spoken to again after stepping back
+  const addressed = speaker && resolve(r.to, live(sc).filter((m) => m !== speaker))
   sc.addressed = !!addressed // spoken to: that person answers or stays quiet; otherwise anyone else may speak, and talk ends when nobody does
-  sc.next = addressed ? [addressed] : speaker ? l2.filter((m) => m !== speaker) : l2.filter((m) => !sc.silent.has(m))
+  sc.next = addressed ? [addressed] : speaker ? live(sc).filter((m) => m !== speaker) : live(sc).filter((m) => !sc.silent.has(m))
   if (!sc.next.length) sc.ending = 'talk ran out'
 }
 // being in the same room is not being in the conversation: others there hear it start and decide for themselves whether to join (talk_to)
 function talkNear(sc) { for (const m of NAMES.filter((m) => S[m].place === sc.where && !S[m].asleep && !sceneOf(m))) notify(m, sc.t0, `${sc.people.map((x) => label(m, x)).join(' and ')} are talking here.`); return sc }
-function join(sc, n, say) { if (sc.people.includes(n)) sc.left.delete(n); else sc.people.push(n); sc.silent.delete(n); if (NAMES.includes(n)) S[n].doing = 'with ' + live(sc).filter((m) => m !== n).join(', '); sc.lines.push({ name: n, say: say || '', do: 'comes in' }) }
+function join(sc, n, say) { const back = sc.people.includes(n); if (back) sc.left.delete(n); else sc.people.push(n); sc.silent.delete(n); if (NAMES.includes(n)) S[n].doing = 'with ' + live(sc).filter((m) => m !== n).join(', '); sc.lines.push({ name: n, say: say || '', do: back ? 'joins in again' : 'comes in' }) }
 
 // ---------- plans: the person's own; code carries them out, and pauses them while the person is in a conversation ----------
 function setPlan(n, steps, now) {

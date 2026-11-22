@@ -13,7 +13,7 @@ const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D
 const ORACLE = process.env.ORACLE === '1'; // optional oracle: agents may start a line with @oracle to have a web-searching haiku answer; its answer joins the conversation as 'Oracle'
 const ORACLE_LINE = ' There is also an oracle that can look things up online: start a line with @oracle and your question.';
 // System prompt order: BRIEF, oracle line, A's topic, the agent's secret.
-const briefFor = n => BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
+const briefFor = n => BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this, at least at first: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, Math.min(8, Math.max(2, +process.env.PEOPLE || 4))), // env PEOPLE: 2-8 agents, default 4
    MESSAGES = +(process.env.MESSAGES || process.argv[2]) || 120, convo = [], seen = {};

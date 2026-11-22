@@ -2,8 +2,8 @@
 import fs from 'fs'; import path from 'path';
 const here = import.meta.dirname, runsDir = path.join(here, '..', 'runs');
 const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
-const MARK = ' Something that\'s been on your mind: ', SECRET = ' Only you know this: ';
-const split = (s, mark) => { const i = s.indexOf(mark); return i < 0 ? [s, null] : [s.slice(0, i), s.slice(i + mark.length)]; };
+const MARK = ' Something that\'s been on your mind: ', SECRET = / Only you know this(?:, at least at first)?: /;
+const split = (s, mark) => { const m = typeof mark === 'string' ? (s.includes(mark) ? { index: s.indexOf(mark), 0: mark } : null) : s.match(mark); return m ? [s.slice(0, m.index), s.slice(m.index + m[0].length)] : [s, null]; };
 const SINCE = '2026-11-22T16-37'; // earlier runs were tests: kept in runs/, left out of the viewer
 const ORACLE_LINE = ' There is also an oracle that can look things up online: start a line with @oracle and your question.';
 const runs = [];

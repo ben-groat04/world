@@ -29,7 +29,7 @@ const STR = { burglary: 'a burglary', theft: 'a theft', vehicle: 'a vehicle brea
 export const PARAMS = {
   K: 0.22,                // baseline offending episodes/yr of a peak-age male with average risk factors (most episodes are petty and local or elsewhere in the city)
   away: 0.55,             // share of resident episodes that happen elsewhere in the city (still feed their record)
-  OUT: { burglary: 20, theft: 45, vehicle: 55, bike: 40, theftperson: 50, shoplift: 85, damage: 72, asb: 60, assault: 200, harass: 100, publicorder: 14, sexual: 6 },
+  OUT: { burglary: 20, theft: 45, vehicle: 55, bike: 40, theftperson: 50, shoplift: 85, damage: 72, asb: 60, assault: 300, harass: 100, publicorder: 14, sexual: 6 },
   // NIGHT-TIME-ECONOMY EXPOSURE (residents on a night out in the city centre, off the map): hazard per person-hour at the Friday/Saturday peak, before drink and sex pairing.
   // Anchored to ONS/CSEW: roughly a fifth of violence happens in or around pubs and clubs, ~40% of violent incidents involve an offender believed to be drunk.
   NTE: { assault: 0.0006, theftperson: 0.0006, sexual: 0.0006 },
@@ -38,7 +38,7 @@ export const PARAMS = {
   // includes victims the CSEW does not sample (under 16s, people in institutions, non-household). A resident-only pool of ~500 therefore cannot absorb recorded totals without implausible prevalence
   // (previously 20% of young men a year, ~5x CSEW). visitorShare = share of anonymous-stranger confrontations on the map whose target is a non-resident. Set so that resident prevalence matches CSEW
   // (stranger violence 0.7% of adults, 2.2% of 16-24s; ONS Nature of violent crime YE Mar 2024); the attempt stream (OUT.assault) is unchanged, so recorded totals are kept.
-  visitorShare: 0.85,
+  visitorShare: 0.9,
   repeatBoost: 3.0, repeatDays: 120, overlap: 1.6, // recent-victim hazard multiplier (1 + boost x e^(-t/days)); victim-offender overlap multiplier
   sexPair: 0.47,          // women's relative chance of being the counterpart of a stranger fight: male aggressors (~80%) pick same-sex peers (~80%) => victims ~68% male (CSEW: stranger violence victims ~2:1 male)
   sexualKnown: 0.04,      // relative weight of a sexual offence against someone he knows in a male offender's offence mix (~80% of CSEW perpetrators are known to the victim); tuned so experienced prevalence ~ CSEW

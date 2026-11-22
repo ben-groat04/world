@@ -9,7 +9,7 @@ const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight
 const nw = (n) => (n >= 0 && n < NUM.length ? NUM[n] : String(n));
 const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
 const round = (n) => (n >= 2000 ? Math.round(n / 500) * 500 : n >= 400 ? Math.round(n / 50) * 50 : Math.round(n / 10) * 10);
-const lst = (a) => (a.length <= 1 ? a.join('') : a.length === 2 ? a.join(' and ') : a.length === 3 ? a.slice(0, 2).join(', ') + ' and ' + a[2] : a.slice(0, 2).join(', ') + ' and ' + (a.length - 2) + ' others');
+const lst = (a) => (a.length <= 1 ? a.join('') : a.length === 2 ? a.join(' and ') : a.length === 3 ? a.slice(0, 2).join(', ') + ' and ' + a[2] : a.slice(0, 2).join(', ') + ' and ' + nw(a.length - 2) + ' others');
 const aAn = (s) => (/^[aeiou]/i.test(s) && !/^(uni|use|eu)/i.test(s) ? 'an ' : 'a ') + s;
 
 /** Lead-in phrases by gap since the previous beat (days). */
@@ -32,6 +32,7 @@ const TAIL = {
   posLow: [', though {they} {is} not quite feeling it yet', ', though it has not lifted {their} spirits much'],
 };
 
+const AB = (c) => (c.o && c.one ? '{n} and ' + c.o : '{n}');
 const WITH = (c) => (c.o ? ' with ' + c.o : '');
 /** type -> (payload, c) => string[] of templates. c: {st, at, o, one, pair, place, wl}. */
 const TV = {
@@ -83,9 +84,9 @@ const TV = {
   'health.treatment': () => ['{n} asked the GP for help', '{n} saw the GP and started to get support', '{n} finally booked the appointment'],
   'health.recovered': () => ['{n} turned a corner', '{n} {was} on the mend', '{n} felt well again', 'It lifted, slowly, for {n}'],
   'health.ill': (p) => [p.name ? `{n} came down with ${lc(p.name)}` : '{n} fell ill', p.name ? `${lc(p.name)} laid {n} low` : '{n} {was} laid low', '{n} {was} off sick for a week'],
-  'social.fallout': (p, c) => { const o = OVER[p.over]; return [`{n} fell out${o ? ' over ' + o : ''}${p.over === 'remote' ? '' : c.at}`, `Words were exchanged between {n}${o ? ' over ' + o : ''}`, `{n} stopped speaking${o ? ' after a row about ' + o : ''}`, `It blew up between {n}${o ? ': ' + o : ''}${p.over === 'remote' ? '' : c.at}`, `{n} had a row${o ? ' about ' + o : ''}, and neither backed down`]; },
+  'social.fallout': (p, c) => { const o = OVER[p.over], ab = AB(c); return [`{n} fell out${c.o && c.one ? ' with ' + c.o : ''}${o ? ' over ' + o : ''}${p.over === 'remote' || p.over === 'pub' ? '' : c.at}`, `Words were exchanged between ${ab}${o ? ' over ' + o : ''}`, `${ab} stopped speaking${o ? ' after a row about ' + o : ''}`, `It blew up between ${ab}${o ? ': ' + o : ''}${p.over === 'remote' ? '' : c.at}`, `${ab} had a row${o ? ' about ' + o : ''}, and neither backed down`, `${ab} ${c.o && c.one ? 'were' : '{was}'} not on speaking terms${o ? ' after the row over ' + o : ''}`]; },
   'social.reconcile': () => ['{n} made up', '{n} buried it and started talking again', 'The silence ended: {n} made up', '{n} patched things up'],
-  'social.friendship': (p, c) => [`{n} became friends${WITH(c)}${FV[p.via] ? ' ' + FV[p.via] : ''}`, `{n} fell into a friendship${WITH(c)}`, `{n} clicked${WITH(c)}${FV[p.via] ? ', ' + FV[p.via] : ''}`, `{n} started meeting up${WITH(c)}`, `A friendship took hold between {n}${c.o ? ' and ' + c.o : ''}`],
+  'social.friendship': (p, c) => [`{n} became friends${WITH(c)}${FV[p.via] ? ' ' + FV[p.via] : ''}`, `{n} fell into a friendship${WITH(c)}`, `{n} clicked${WITH(c)}${FV[p.via] ? ' ' + FV[p.via] : ''}`, `{n} started meeting up${WITH(c)}`, `A friendship took hold between {n}${c.o ? ' and ' + c.o : ''}`],
   'social.acquaint': (p, c) => (p.via === 'welcome' ? (c.wl && c.wl.length ? [`{n} {was} welcomed to the street by ${lst(c.wl)}`, `${lst(c.wl)} came to say hello to {n}`, `{n} met the neighbours: ${lst(c.wl)}`, `First to knock for {n} were ${lst(c.wl)}`, `${lst(c.wl)} made {n} feel at home`] : ['{n} {was} welcomed to the street', '{n} met the neighbours', '{n} had a first week of nodding hellos']) : [`{n} got talking${c.o ? ' with ' + c.o : ''}${ACQ[p.via] || ''}`, `{n} fell into conversation${c.o ? ' with ' + c.o : ''}${ACQ[p.via] || ''}`, `{n} met${c.o ? ' ' + c.o : ' someone'}${ACQ[p.via] || ''}`]),
   'social.confide': (p, c) => (c.o ? [`{n} opened up to ${c.o}`, `{n} told ${c.o} what was on {their} mind`, `{n} leaned on ${c.o} for a while`] : ['{n} opened up to a friend', '{n} talked it through with a friend']),
   'social.kindness': (p, c) => (c.o ? [`{n} looked out for ${c.o}`, `{n} did ${c.o} a good turn`, `{n} turned up for ${c.o} when it counted`] : ['{n} showed a kindness', '{n} did someone a good turn']),

@@ -4,12 +4,13 @@ import forum from './forum.js';
 import chats from './chats.js';
 import rumours from './rumours.js';
 import { wrap, cores } from './forumx.js';
+import { cores2 } from './forumy.js';
 import replies2 from './replies2.js';
 const rules = {};
 const fixLead = (v) => (Array.isArray(v) ? v.map((x) => (typeof x === 'string' ? x.replace(/,? but$/, '.').replace(/,$/, '.') : x)) : v);
 for (const g of [forum, chats, rumours, replies2]) for (const [k, v] of Object.entries(g)) rules[k] = (rules[k] || []).concat(v);
 for (const [k, v] of Object.entries(wrap)) rules[k] = (rules[k] || []).concat(/^(fp\.lead|fr\.pre)/.test(k) ? fixLead(v) : v);
-for (const [k, v] of Object.entries(cores)) rules[k] = (rules[k] || []).concat(v);
+for (const g of [cores, cores2]) for (const [k, v] of Object.entries(g)) rules[k] = (rules[k] || []).concat(v);
 // wrap: move each feed.<topic> / feedreply.<topic>.<tone> into core.<key> and put wrapper alternatives in its place
 const TONES = ['agree', 'help', 'joke', 'argue', 'interest'];
 for (const k of Object.keys(rules)) {

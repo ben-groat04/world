@@ -1,5 +1,5 @@
 // Turns kernel events into short human sentences and "Larkfield Local" news items. Pure; worker-safe.
-const isPrivateEv = (ev) => /^crime\.domestic/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
+const isPrivateEv = (ev) => /^crime\.(domestic|sexual)|^health\.substance$|^social\.secret$/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
 export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 const cap1 = (s) => (s ? String(s)[0].toUpperCase() + String(s).slice(1) : s);
@@ -269,10 +269,11 @@ function newsFor0(w, text, ev, host) {
 // hospital dash it causes; arrears and the borrowing that follows). The feed keeps the most specific line, drops the echoes, and writes a follow-up that says what it follows from.
 const DAY = 144;
 // later type -> [earlier types for the same person that already tell the story, window in days]
-const ECHO = { 'life.cohabit': [['housing.moved_out', 'life.move_out', 'life.move_in', 'housing.moved_in'], 2], 'life.move_out': [['housing.moved_out', 'life.cohabit'], 2], 'life.move_in': [['housing.moved_in'], 2], 'housing.moved_out': [['life.move_out', 'life.cohabit'], 2] };
+const ECHO = { 'civic.campaign': [['group.founded'], 2], 'life.cohabit': [['housing.moved_out', 'life.move_out', 'life.move_in', 'housing.moved_in'], 2], 'life.move_out': [['housing.moved_out', 'life.cohabit'], 2], 'life.move_in': [['housing.moved_in'], 2], 'housing.moved_out': [['life.move_out', 'life.cohabit'], 2] };
 // later type -> [earlier type, variant key, window days]: the follow-up is written as a consequence ("... as the arrears mount")
 const FOLLOW = { 'money.debt_spiral': ['money.arrears', 'after_arrears', 21], 'health.crisis': ['health.ill', 'after_ill', 4], 'housing.eviction': ['housing.notice_served', 'after_notice', 60] };
 export function newsFor(w, text, ev, host) {
+  if (isPrivateEv(ev)) return null; // domestic, sexual and other sensitive matters never reach a public feed
   const ids = (ev.actors || []).filter((a) => typeof a === 'number').slice(0, 2);
   if (host && ids.length) {
     const seen = host._seen || (host._seen = new Map()), recent = (t, days) => { for (const a of ids) for (const r of seen.get(a) || []) if (r.type === t && ev.tick - r.tick <= DAY * days && ev.tick >= r.tick) return r; return null; };

@@ -10,3 +10,165 @@ Hey! I'm free tonight. Tea on the couch sounds good to me.
 --- Sun 19:02, Tom
 Hey all! I'm free too. Tea on the couch sounds perfect. I'll make a cup and join you.
 
+--- Sun 19:03, Sam
+Nice, we're all in. I'll bring biscuits. Maya, is your place still the spot, or should we pick somewhere else?
+
+--- Sun 19:03, Jo
+Nice, we're all in! Tom, grab a mug for yourself. Maya, what are you watching or talking about tonight?
+
+--- Sun 19:04, Maya
+Yes, my place is still good! Come over whenever you're ready. Sam, the biscuits are a great idea. I'll put the kettle on now.
+
+--- Sun 19:05, Jo
+Sounds perfect! I'll head over to Maya's. Should I bring anything else, or are biscuits and tea enough?
+
+--- Sun 19:05, Tom
+Sounds great! Maya's place it is. I'll grab a mug and head over soon. Sam, bring the good biscuits. Jo, I'm not sure what we're talking about yet, but I'm up for whatever.
+
+--- Sun 19:06, Sam
+Biscuits and tea are plenty, Jo. I'll bring the good ones, Tom. I'm heading out in about ten minutes, so see you at Maya's soon.
+
+--- Sun 19:06, Jo
+Ha, no agenda from me either! Maybe we just catch up. Tom, how's your week been?
+
+--- Sun 19:06, Maya
+Biscuits and tea are plenty, Jo. Honestly, I don't have a plan. I've got something I want to tell you all tonight, though, so it's good you're coming over. Nothing bad, I promise. I'll explain when you get here.
+
+--- Sun 19:07, Tom
+Ha, sounds good to me. My week's been pretty ordinary: lots of work, a bit of tiredness, and I'm happy the weekend's here. How about you? Anything new?
+
+--- Sun 19:07, Sam
+Oh, now I'm curious! Okay, I'll be there in ten. Can't wait to hear it, Maya.
+
+--- Sun 19:07, Maya
+Sounds good. Catching up is perfect. I'll be here with the kettle on, and I'm looking forward to seeing you all.
+
+--- Sun 19:08, Tom
+Now I'm curious too, Maya! Nothing bad is a relief. I'm on my way over, so see you soon.
+
+--- Sun 19:09, Maya
+Mine's been busy too, Tom. Ordinary-ish, but with a big thing on my mind. I'd rather tell you all together when you're here, so I don't have to repeat myself. See you soon!
+
+--- Sun 19:09, Tom
+Totally get that, Maya. Saves us all from hearing it twice. See you in a bit!
+
+--- Sun 19:09, Sam
+Sounds like a good week to wind down, Tom. Mine was fine, busy but not too bad. I'll answer properly when I'm on Maya's couch with a cup of tea. See you soon!
+
+--- Sun 19:10, Maya
+See you soon, Tom and Sam! Jo, you're coming too, right? I'll have the kettle ready for you all.
+
+--- Sun 19:10, Jo
+Ooh, Maya, now I'm curious too! Nothing bad, you said, so I'll wait till we're all there. My week's been fine, mostly quiet. I'm heading over now, see you soon!
+
+--- Sun 19:10, Sam
+Makes sense, Maya. Heading out now with the biscuits. See you in ten!
+
+--- Sun 19:12, Maya
+Great, see you both soon! The kettle's going on now. Thanks for coming over, everyone.
+
+--- Sun 19:13, Sam
+On my way! Almost there.
+
+--- Sun 19:14, Jo
+Yes, I'm coming! I'm on my way now, so see you all at Maya's soon. Can't wait to hear your news, Maya.
+
+--- Sun 19:14, Maya
+Almost there, Sam! Door's open, so just come on in. The tea's nearly ready.
+
+--- Sun 19:14, Tom
+On my way too, just a few minutes out. See you both at Maya's!
+
+--- Sun 19:15, Sam
+Coming in now, Maya! Tom and Jo, I'm right behind you.
+
+--- Sun 19:17, Tom
+Just got to the door. Coming in now!
+
+--- Sun 19:18, Maya
+Welcome, Sam! Grab a seat, the tea's brewing. Tom and Jo, I'll see you in a few minutes.
+
+--- Sun 19:19, Sam
+I'm in! Setting the biscuits down on the table. Maya, go ahead with your news whenever you're ready.
+
+--- Sun 19:19, Jo
+On my way, nearly there! Save me a seat, Maya. Is that the good biscuit tin, Sam?
+
+--- Sun 19:19, Tom
+Hi, everyone! I'm here now, so go ahead, Maya. I'm ready for the news.
+
+--- Sun 19:20, Maya
+Hi Tom, hi Sam! Jo, I've saved you the seat next to me. Sam, yes, that's the good tin.
+
+--- Sun 19:21, Maya
+Okay, here's my news. I've accepted a job in another city. I'm really excited about it, but I know it means I'll be moving away, and that means I won't see you all as often. I wanted to tell you in person. I'd love to hear what you think.
+
+--- Sun 19:21, Tom
+Hi Maya! Thanks for having us. Jo, the good tin's definitely the right call.
+
+--- Sun 19:23, Sam
+Maya, that's big news! Congratulations, and I can tell you're excited about it. I'll miss seeing you every week, though, so we'll have to plan visits and keep this chat busy. Which city is it?
+
+--- Sun 19:23, Maya
+Thanks, Tom! Jo and Sam, I'm still hoping to hear what you think about the job. It's a big change for me, so I'd really like to know how you're feeling about it.
+
+--- Sun 19:24, Jo
+Maya, that's huge! I'm really happy for you, even though I'll miss seeing you every week. Which city is it? And when are you leaving?
+
+--- Sun 19:25, Maya
+Thank you both, that means a lot. It's Edinburgh, and I'd start in about six weeks. I'm still sorting out the details, like a flat and packing, but I'm excited. We'll definitely plan visits. Tom, I'd love to hear what you think too.
+
+--- Sun 19:25, Tom
+Maya, congratulations! That's huge, and I can see why you're excited. I'll miss having you around this close, but I'm really glad for you. Which city is it? And when do you move? We should plan a proper send-off, and I'm happy to visit once you're settled.
+
+--- Sun 19:27, Sam
+Edinburgh, wow! That's a great city. Six weeks doesn't leave much time, so let's plan a proper send-off. Maya, do you want a dinner out, or something low-key here with the tea and biscuits? And I'd happily help with packing if you want an extra pair of hands.
+
+--- Sun 19:29, Tom
+Edinburgh's a brilliant city, Maya! I'm really happy for you, and I'll miss having you nearby. I think a low-key send-off here with tea and biscuits sounds perfect, and I'm happy to help with packing too. Would you rather we do a dinner out as well, or keep it simple?
+
+--- Sun 19:33, Maya
+Thanks, Tom and Sam, that's really kind of you both. I think I'd like a low-key send-off here, with tea and biscuits, and maybe one dinner out later if we can fit it in. And yes please on the packing help. Jo, what do you think?
+
+--- Sun 19:34, Tom
+Perfect, that sounds like a great plan. I'll bring a box or two for packing. Jo, what do you think?
+
+--- Sun 19:35, Jo
+Edinburgh's a great move, Maya! I'm really happy for you, and I'll miss you being just around the corner. I'd love to help with packing too, and I think tea and biscuits here sounds perfect for the send-off. Maybe we could do a dinner out as well, if you'd like one. What do you think?
+
+--- Sun 19:36, Sam
+Great plan! I'll bring the rest of the biscuits and a roll of tape for the boxes. Jo, you in for packing and a send-off here?
+
+--- Sun 19:37, Tom
+Sounds like we've got a plan! Maya, let us know which dates work for you for the packing and the dinner.
+
+--- Sun 19:39, Sam
+Sounds like we've got a plan. Maya, just tell us which days suit you and I'll sort mine around them. I'm glad we're all in this together.
+
+--- Sun 19:39, Maya
+Yes, I'd love that. Let's aim for a dinner out in the next couple of weeks, and I'll check my dates for packing help. Thanks, all of you. This means a lot.
+
+--- Sun 19:40, Sam
+Brilliant, Maya. Dinner in the next couple of weeks works for me, so pick a night and I'll be there. Thanks for telling us in person, too.
+
+--- Sun 19:41, Tom
+Brilliant, Maya. I'll keep my evenings open over the next couple of weeks, so just send over a few dates and I'll work around them. Thanks for telling us in person. This means a lot to me too.
+
+--- Sun 19:42, Jo
+Yes, I'm in for both! Count me in for packing, and I'm happy to help with the send-off here. Maya, just send over a few dates that work and I'll sort mine around them.
+
+--- Sun 19:45, Maya
+I'll check my calendar and send a few dates over tonight. Thanks, all of you. I'm really glad I told you in person.
+
+--- Sun 19:48, Sam
+Perfect, Maya. Send the dates whenever you're ready, and I'll be there for the packing and the dinner. Glad we're all in it together.
+
+--- Sun 19:49, Tom
+Thanks, Maya. I'm glad you told us in person too. Send the dates over whenever you're ready and I'll be there.
+
+--- Sun 19:50, Maya
+Thanks, both. I'll send a few dates over in the next day or so once I've looked at my calendar. Night, all.
+
+--- Sun 19:50, Jo
+Thanks, Maya, I'm really glad you told us in person too. Send the dates over whenever you're ready, and I'll make sure I'm free for the packing and the dinner.
+

@@ -13,3 +13,149 @@ Ordering in for me too, Maya. I'm working tomorrow, then I'm out for a late dinn
 --- Sun 19:14, Maya
 Ha, Tom and Jo both voting order in, so that's settled. I'm not really in the mood to cook anyway. Tomorrow's pretty flat for me too: work, then I want to get to bed early because I'm exhausted. Which place should we order from? I can check the menus if nobody has a favourite.
 
+--- Sun 19:16, Maya
+Sounds good, we're all ordering in then. Sam, have a good late dinner tomorrow. Tom, Jo, what are you in the mood for? Thai, pizza, or something else? I'll place the order once we pick.
+
+--- Sun 19:17, Tom
+Nice, order in it is. I don't have a favourite place, so go ahead and check the menus. If you're after something light since you're wiped out, I'd say pick whatever's quick and easy to share. Early night sounds like the right call for you, Maya.
+
+--- Sun 19:17, Jo
+Thai sounds good to me. I'm happy with whatever's easy to share, so I'll go with the majority. Maya, if you're checking menus, a green curry or pad see ew would be my pick.
+
+--- Sun 19:18, Tom
+Thai for me, if that works. Pad see ew or a green curry, whichever's easiest to share. Happy to split it however you like, Maya.
+
+--- Sun 19:18, Maya
+Thanks Tom. I'll go with Thai, since it's quick and easy to share. I'll look at the menus and post a few options so we can pick. Jo, Sam, shout if you have a strong preference.
+
+--- Sun 19:19, Jo
+Thai works for me. Pad see ew and a green curry to share sounds perfect, and I'm happy to split it evenly. Maya, go ahead and place it when you're ready, and send me my share and I'll pay you back.
+
+--- Sun 19:20, Sam
+Thai works for me. I don't have a strong preference, so go with whatever you post, Maya. Pad see ew for me if it's on the list.
+
+--- Sun 19:22, Tom
+Sounds great. Pad see ew and green curry to share, split evenly. Maya, send the order details when you've placed it and I'll sort my share with you. Thanks for organising, and get some rest tomorrow if you can.
+
+--- Sun 19:24, Maya
+Great, we're agreed: Thai, with pad see ew and green curry to share, split four ways. I don't have a place or menu in front of me yet, so I'll ask Claude to look up the Thai options near us and post them here.
+
+--- Sun 19:24, Sam
+Sounds good. I'm in for an even split on pad see ew and green curry. Maya, send me my share when you've placed it and I'll pay you back. Thanks for sorting it.
+
+--- Sun 19:25, Maya
+@claude Can you find a few well-rated Thai takeaway places that deliver to central city areas, and list their pad see ew and green curry with prices and typical delivery times? Please keep it short.
+
+--- Sun 19:25, Claude
+Which city (or postcode) should I search? Thai takeaway menus, prices and delivery times depend on location, and I can't pick "central city" without one.
+
+Tell me the city and any preferences, like a delivery app (Uber Eats, DoorDash, Deliveroo, Just Eat) or a budget. I'll then find a few well-rated places and list their pad see ew and green curry prices and typical delivery times, with sources.
+
+--- Sun 19:26, Jo
+Sounds good, Maya. Thanks for sorting this out. I'm in for an even split on the pad see ew and green curry, so just send my share once it's placed and I'll pay you back.
+
+--- Sun 19:26, Maya
+Thanks Sam. Claude needs our city or postcode to find delivery places, and I don't want to guess. Tom, Jo, Sam, which city or postcode are we in? Once I know, I'll ask Claude again for a few Thai places with prices.
+
+--- Sun 19:27, Tom
+@claude Sorry, I should have said: we all live in the same city, so Maya, just tell Claude which one it is and whichever app you normally use. Then it can pull up the menus.
+
+--- Sun 19:27, Claude
+PASS
+
+--- Sun 19:27, Sam
+Maya, Claude needs the city name or postcode to search. Add that to your @claude message and it should be able to pull up places near us. I'm fine with whichever delivery app you find cheapest.
+
+--- Sun 19:28, Maya
+Thanks Tom. I still don't have the city name in front of me, and I'd rather not guess. Tom, Jo, Sam, which city are we in, and does anyone already use a delivery app that's easiest for us? Once you tell me, I'll ask Claude for a few Thai options.
+
+--- Sun 19:28, Jo
+Sorry, I've been assuming someone else knows the city, but I can't see it in the chat either. Maya, tell Claude the city or postcode and whichever app you use. I'm happy with any of the places it finds.
+
+--- Sun 19:29, Tom
+Claude's last reply just said "PASS", so it probably didn't get your city. Maya, ping it again with the city name and we'll go from there.
+
+--- Sun 19:30, Jo
+I don't know the city name offhand either, so I won't guess. Maya, whoever knows it should just type it into your @claude message. I don't have a preferred delivery app, so whichever is cheapest or easiest for you is fine with me.
+
+--- Sun 19:31, Maya
+None of us has actually said the city yet, including me, so I can't give Claude one without guessing. Could one of you just type the city or postcode in the chat? Then I'll ask Claude again with it, and I'll pick whichever app is cheapest.
+
+--- Sun 19:31, Sam
+I don't know the city name either, sorry. Maya, the easiest fix is to open your delivery app and check the saved address. That'll give you the postcode for @claude. Happy to split it four ways once the order's placed.
+
+--- Sun 19:32, Tom
+I don't know the city name either, Maya, so I can't help there. Whatever you type into your @claude message is fine by me, and I'm happy with any app you pick. If it's easier, you could also just order from the place you use most.
+
+--- Sun 19:32, Jo
+I can't see the city name in this chat either, so I can't type it for you. Maya, if you're not sure, maybe check the address on your last delivery order or your phone's location settings. Otherwise, Tom or Sam might know it and can type it here.
+
+--- Sun 19:33, Maya
+I can't see my saved address from here, so I don't have a postcode to give Claude either. Tom, do you know the city or postcode? If not, could each of you check your delivery app's saved address and post the postcode here? Then I'll ask Claude for Thai places near it.
+
+--- Sun 19:35, Tom
+I don't know the city or postcode either, Maya. Your delivery app's saved address is the quickest way to get it, and then you can send it to Claude. Once you have it, I'm happy with whichever place is cheapest.
+
+--- Sun 19:38, Jo
+I don't know our city or postcode either, so I can't post one. Maya, your delivery app's saved address is the quickest route. If you can't see it, the nearest Thai place you've ordered from before would also work. Once you have a name or postcode, ask Claude and I'll go with whatever's cheapest.
+
+--- Sun 19:38, Maya
+We've all said we don't know the city, so I'm going to stop trying to find it. Let's just order separately. Each of you orders your own Thai from whatever app or place you normally use, so nobody has to wait for an address or split a bill. If you'd rather share one order, whoever has a Thai place they trust could place it and we'll split it when it arrives. I'll order my own pad see ew and green curry and post what I pick.
+
+--- Sun 19:38, Sam
+Same here, Maya, I don't know the city or postcode either. The fastest way is your delivery app's saved address. Once you have the postcode, send it to @claude with the Thai request. Whatever's cheapest is fine with me.
+
+--- Sun 19:40, Tom
+I don't know our postcode or city either, Maya, so I can't add one. Your delivery app's saved address is still the fastest way, and if that's not visible, the name of a Thai place you've ordered from before works too. Send whichever you find to Claude and I'll go with the cheapest option.
+
+--- Sun 19:40, Jo
+Good plan, Maya. Ordering separately is easiest, so I'll do that. I'll pick my own Thai from whatever app I normally use and post what I got.
+
+--- Sun 19:41, Tom
+Sounds good, Maya. I'll order my own from my usual place and post what I got. Thanks for sorting it out.
+
+--- Sun 19:42, Sam
+Sounds sensible, Maya. I'll order my own Thai from the place I usually use, so no need to split anything. Enjoy your early night.
+
+--- Sun 19:42, Maya
+Sounds good, Jo. Everyone ordering separately is the simplest option, so that's what we'll do. I'll pick my own pad see ew and green curry from the Thai place I've ordered from before and post what I got. Enjoy your dinner, all, and sleep well if you're on early shifts.
+
+--- Sun 19:43, Jo
+Sounds good, Maya. I'll order my own Thai from my usual place and post what I got. Enjoy your early night.
+
+--- Sun 19:43, Sam
+Sounds good, I'll do the same and post what I get. Thanks for sorting it, Maya.
+
+--- Sun 19:43, Jo
+Thanks, Maya. Enjoy your dinner, and I'll post what I ordered once it's sorted. Have a good night, all.
+
+--- Sun 19:44, Maya
+Thanks everyone, and good plan. I'll post what I ordered once it's sorted. Have a good night, and good luck with Monday, Tom.
+
+--- Sun 19:44, Sam
+Thanks, all. Enjoy your dinners, and I'll post what I ordered once it's sorted. Night!
+
+--- Sun 19:45, Tom
+Thanks, Maya. I'll order my own from my usual place and post what I get. Have a good night, everyone.
+
+--- Sun 19:45, Maya
+Night, Sam! Enjoy your dinner.
+
+--- Sun 19:45, Sam
+Night, everyone. Good luck with Monday, Tom.
+
+--- Sun 19:45, Jo
+Night, everyone. Enjoy your dinners, and I'll post what I ordered once it's sorted.
+
+--- Sun 19:46, Maya
+Night, everyone. Enjoy your dinners, and thanks for sorting this out.
+
+--- Sun 19:47, Sam
+Night, Maya, Jo and Tom. Enjoy your dinners.
+
+--- Sun 20:31, Maya
+Night, Sam. Sleep well!
+
+--- Sun 20:32, Sam
+Thanks, Maya. Night!
+

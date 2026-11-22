@@ -74,7 +74,8 @@ function person(o = {}) {
     const [, , lo, hi] = bands.find(x => x[0] === pk(bands.map(x => [x[0], x[1]]))); yrs = age - ri(lo, Math.min(hi, age));
   }
   const rel = o.rel ?? pk(D.rel[eth]);
-  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1], k => k === 'ho' ? (o.noHo ? 0 : 1) : 1); // no source for carers among unrelated sharers -> excluded for them
+  const sub = D.actSub[sex][Object.keys(D.actSub[sex]).find(r => age >= +r.split('-')[0] && age <= +r.split('-')[1])] ?? {}; // 2011 five-year profile within the 2021 band
+  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1], k => (sub[k] ?? 1) * (k === 'ho' ? (o.noHo ? 0 : 1) : 1)); // no source for carers among unrelated sharers -> excluded for them
   if (act === 're' && age < 50) act = 'si'; // design: the Census 'retired' cell below 50 is folded into long-term sick/disabled (early retirement through ill health)
   let h = pk(D.health[kid ? 0 : b]); if (act === 'si' && /good/.test(h)) h = pk(D.health[b], k => /fair|bad/.test(k) ? 1 : 0); // long-term sick/disabled: not "good" health (definition)
   const emp = ['ft', 'pt', 'se'].includes(act) || (act === 'st' && (o.occ != null || R() < D.stWork));
@@ -82,7 +83,7 @@ function person(o = {}) {
   if (emp) {
     oc = oc0 ?? byCode(pk(O.map(r => [r.code, (act === 'st' ? r.M[0] + r.F[0] : (b > 0 && sex === 'M' ? r.M : r.F)[AB(age)]) * (act === 'st' ? D.studentMajor[Math.floor(r.code / 10)] : act === 'ft' ? r.ftJobs / (r.ftJobs + r.ptJobs) : act === 'pt' ? r.ptJobs / (r.ftJobs + r.ptJobs) : 1)])));
     P = PAT[o.pat ?? (act === 'st' ? 'student' : one(oc.pat))]; hrs = o.hrs ?? hoursFor(oc, act, age); shifts = mkShifts(P, hrs);
-    hp = Math.round(Math.max(qs(oc.pay[AB(age)], .1 + .8 * R()), age >= 21 ? D.minWage['21+'] : D.minWage['18-20']) * 100) / 100; earn = Math.round(hp * hrs * 52);
+    if (act !== 'se') { hp = Math.round(Math.max(qs(oc.pay[AB(age)], .1 + .8 * R()), age >= 21 ? D.minWage['21+'] : D.minWage['18-20']) * 100) / 100; earn = Math.round(hp * hrs * 52); } // ASHE is employees only: self-employed pay unspecified
   }
   let edu = null;
   if (!kid) {
@@ -149,7 +150,9 @@ function finish(h, pr, tenure) {
     for (const a of p.away ?? []) p.kids.push({ id: 'p' + ++IDN, age: a, lives: 'own household' });
   });
   const eld = Math.max(...M.filter(x => x.age >= 18).map(x => x.age)), req = bedReq(M, C, type), adults = M.filter(x => x.age >= 18).length;
-  const tk = tenure ?? pk(D.ten[D.tt[type]], k => D.tenAge[eld >= 65 ? 'o65' : 'u65'][k] * Math.pow(D.tenMul[k], pr));
+  const E = M.find(x => x.age === eld), ay = 2025 - E.yrs, arr = Object.keys(D.ukNation).includes(E.bp) ? 'uk' : ay < 1981 ? '<1981' : ay <= 1990 ? '1981-1990' : ay <= 2000 ? '1991-2000' : '2001-2011';
+  const ea = ['ft', 'pt', 'se'].includes(E.act) ? 'emp' : E.act; // eldest adult as household reference person
+  const tk = tenure ?? pk(D.ten[D.tt[type]], k => D.tenAge[eld >= 65 ? 'o65' : 'u65'][k] * Math.pow(D.tenMul[k], pr) * D.tenArr[arr][k] * (D.tenAct[ea]?.[k] ?? 1));
   let bd = null;
   for (let t = 0; t < 40 && !bd; t++) { const tb = D.bed[R() < pr ? 'IL' : 'EW'][`${tk}|${Math.min(n, 4)}`], x = +pk(tb); if (x * 2 >= adults && x * 3 >= n && (type !== 'shared' || x >= n)) bd = x; } // unrelated adults each need their own bedroom (bedroom standard)
   if (!bd && type === 'shared' && n > 4) bd = n; // RM136 stops at '4 or more' bedrooms (unspecified beyond)
@@ -192,8 +195,9 @@ export function validate(ps) {
       if (new Set(s.map(x => x.day)).size !== s.length || s.length > MD || !s.length) e(p, 'shift days');
       for (const x of s) { const st = +x.start.slice(0, 2) + (x.start.endsWith('30') ? .5 : 0); if (x.paid_hours > CAP || !allowed.has(st) || !P.d.includes(DAYS.indexOf(x.day))) e(p, 'shift ' + x.day + x.start); if (P.endMax && st + x.paid_hours + (x.paid_hours > 6 ? .5 : 0) > P.endMax) e(p, 'cafe shift runs past close'); }
       if (!restOk(s.map(x => DAYS.indexOf(x.day)), s.map(x => +x.start.slice(0, 2) + (x.start.endsWith('30') ? .5 : 0)), s.map(x => x.paid_hours + (x.paid_hours > 6 ? .5 : 0)))) e(p, 'insufficient rest between shifts');
+      if (act === 'se') { if (p.hourly_pay != null || p.annual_income != null) e(p, 'self-employed pay given'); } else {
       if (Math.abs(p.annual_income - Math.round(p.hourly_pay * hrs * 52)) > 1) e(p, 'pay != hourly x hours');
-      const q = oc.pay[AB(p.age)]; if (p.hourly_pay < Math.min(q[0], p.age >= 21 ? D.minWage['21+'] : D.minWage['18-20']) - .01 || p.hourly_pay > Math.max(q[4], D.minWage['21+']) + .01) e(p, 'hourly outside ASHE p10-p90 for age band');
+      const q = oc.pay[AB(p.age)]; if (p.hourly_pay < Math.min(q[0], p.age >= 21 ? D.minWage['21+'] : D.minWage['18-20']) - .01 || p.hourly_pay > Math.max(q[4], D.minWage['21+']) + .01) e(p, 'hourly outside ASHE p10-p90 for age band'); }
       if (oc.code >= 21 && oc.code < 25 && p._.edu !== DEGK) e(p, 'degree-level occupation without degree');
     }
     if (p.age < 21 && p._.edu === DEGK) e(p, 'degree before 21');
@@ -217,7 +221,7 @@ export function validate(ps) {
   return E;
 }
 // ---------- settings
-const retry = f => { for (let t = 0; t < 400; t++) { let g; try { g = f(); } catch { continue; } if (g && !validate(g.people).length) return g; } throw new Error('could not generate valid group'); };
+const retry = f => { for (let t = 0; t < 4000; t++) /* rejection budget: the café rota rule accepts roughly 1 draw in 100 */ { let g; try { g = f(); } catch { continue; } if (g && !validate(g.people).length) return g; } throw new Error('could not generate valid group'); };
 const SET = {
   flatshare: (n, pr) => { const h = build('shared', pr, { n: Math.max(2, n) }); return h && { people: finish(h, pr, 'priv') }; },
   family: (n, pr) => { // one whole household of 3+ (n, if >= 3, is a target size)
@@ -231,6 +235,11 @@ const SET = {
     const base = { pr, pat: 'cafe', emp: 'this café' };
     const ps = [person({ ...base, act: 'se', occ: 12, role: 'owner-manager', min: 25, emp: 'this café (owner)' })];
     for (let i = 1; i < n; i++) { const cook = i === 1 && n >= 3, st = !cook && i === n - 1 && n >= 4; ps.push(person(cook ? { ...base, occ: 54, role: 'cook', act: one(['ft', 'pt']) } : { ...base, occ: 92, role: one(['barista', 'counter assistant', 'server', 'kitchen assistant']), act: st ? 'st' : one(['ft', 'pt']) })); }
+    // design rule (a rota, not data): on any day the café opens, front of house (not the cook or kitchen staff) covers it from the first start to the last finish
+    const m = x => +x.slice(0, 2) * 60 + +x.slice(3), foh = ps.filter(p => !/cook|kitchen/.test(p.role));
+    for (const d of DAYS) { const all = ps.flatMap(p => p.shifts.filter(x => x.day === d)); if (!all.length) continue; let c = Math.min(...all.map(x => m(x.start)));
+      for (const [a, b] of foh.flatMap(p => p.shifts.filter(x => x.day === d)).map(x => [m(x.start), m(x.end)]).sort((x, y) => x[0] - y[0])) { if (a > c) break; c = Math.max(c, b); }
+      if (c < Math.max(...all.map(x => m(x.end)))) throw new Error('rota'); }
     return { people: ps.map(p => hhFor(p, pr)) };
   },
   street: (n, pr) => ({ area: 'one inner-city area (inner profile)', people: Array.from({ length: n }, () => hhFor(person({ pr, min: 18 }), pr)) }),

@@ -5,13 +5,98 @@
   "people": [
     {
       "id": "p1",
-      "age": 20,
+      "age": 74,
       "sex": "F",
       "ethnicity": "White British",
       "birthplace": "England",
-      "years_in_uk": 20,
+      "years_in_uk": 74,
       "religion": "Christian",
-      "activity": "student",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "owned outright",
+        "bedrooms": 3,
+        "occupancy_rating": 2,
+        "size": 2,
+        "members": [
+          {
+            "id": "p2",
+            "age": 76,
+            "sex": "M",
+            "relation": "husband"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [
+        {
+          "id": "p3",
+          "age": 47,
+          "lives": "own household"
+        },
+        {
+          "id": "p4",
+          "age": 56,
+          "lives": "own household"
+        }
+      ],
+      "health": "good",
+      "education": "No qualifications",
+      "hourly_pay": null,
+      "role": null
+    },
+    {
+      "id": "p5",
+      "age": 71,
+      "sex": "M",
+      "ethnicity": "White British",
+      "birthplace": "Wales",
+      "years_in_uk": 71,
+      "religion": "Christian",
+      "activity": "long-term sick or disabled",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "social rented",
+        "bedrooms": 2,
+        "occupancy_rating": 1,
+        "size": 2,
+        "members": [
+          {
+            "id": "p6",
+            "age": 69,
+            "sex": "F",
+            "relation": "wife"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "fair",
+      "education": "No qualifications",
+      "hourly_pay": null,
+      "role": null
+    },
+    {
+      "id": "p9",
+      "age": 69,
+      "sex": "M",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 69,
+      "religion": "Christian",
+      "activity": "looking after home or family",
       "occupation": null,
       "contract": null,
       "employer": null,
@@ -20,142 +105,7 @@
       "shifts": [],
       "household": {
         "type": "one-person household",
-        "tenure": "private rented",
-        "bedrooms": 4,
-        "occupancy_rating": 3,
-        "size": 1,
-        "members": []
-      },
-      "relationship_status": "single",
-      "children": [],
-      "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": null,
-      "role": null
-    },
-    {
-      "id": "p2",
-      "age": 21,
-      "sex": "F",
-      "ethnicity": "Chinese",
-      "birthplace": "Eastern Asia",
-      "years_in_uk": 0,
-      "religion": "No religion",
-      "activity": "employed full-time",
-      "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-      "contract": "employee",
-      "employer": null,
-      "annual_income": 24390,
-      "hours_per_week": 41,
-      "shifts": [
-        {
-          "day": "Wed",
-          "start": "06:00",
-          "end": "14:30",
-          "paid_hours": 8.25
-        },
-        {
-          "day": "Thu",
-          "start": "06:00",
-          "end": "14:30",
-          "paid_hours": 8.25
-        },
-        {
-          "day": "Fri",
-          "start": "06:00",
-          "end": "14:30",
-          "paid_hours": 8.25
-        },
-        {
-          "day": "Sat",
-          "start": "06:00",
-          "end": "14:30",
-          "paid_hours": 8.25
-        },
-        {
-          "day": "Sun",
-          "start": "22:00",
-          "end": "06:30",
-          "paid_hours": 8
-        }
-      ],
-      "household": {
-        "type": "couple family with non-dependent children",
-        "tenure": "owned outright",
-        "bedrooms": 4,
-        "occupancy_rating": 2,
-        "size": 3,
-        "members": [
-          {
-            "id": "p3",
-            "age": 47,
-            "sex": "F",
-            "relation": "mother"
-          },
-          {
-            "id": "p4",
-            "age": 49,
-            "sex": "M",
-            "relation": "father"
-          }
-        ]
-      },
-      "relationship_status": "single",
-      "children": [],
-      "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": 11.44,
-      "role": null
-    },
-    {
-      "id": "p5",
-      "age": 20,
-      "sex": "M",
-      "ethnicity": "Black Caribbean / Other Black",
-      "birthplace": "North America and the Caribbean",
-      "years_in_uk": 8,
-      "religion": "Christian",
-      "activity": "employed full-time",
-      "occupation": "Skilled metal, electrical & electronic trades",
-      "contract": "employee",
-      "employer": null,
-      "annual_income": 19657,
-      "hours_per_week": 39.5,
-      "shifts": [
-        {
-          "day": "Mon",
-          "start": "07:00",
-          "end": "15:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Tue",
-          "start": "08:00",
-          "end": "16:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Wed",
-          "start": "07:00",
-          "end": "15:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Fri",
-          "start": "07:00",
-          "end": "15:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Sat",
-          "start": "07:00",
-          "end": "15:00",
-          "paid_hours": 7.5
-        }
-      ],
-      "household": {
-        "type": "one-person household",
-        "tenure": "private rented",
+        "tenure": "social rented",
         "bedrooms": 1,
         "occupancy_rating": 0,
         "size": 1,
@@ -163,82 +113,20 @@
       },
       "relationship_status": "single",
       "children": [],
-      "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": 9.57,
+      "health": "bad",
+      "education": "No qualifications",
+      "hourly_pay": null,
       "role": null
     },
     {
-      "id": "p6",
-      "age": 20,
-      "sex": "M",
-      "ethnicity": "Arab / Other",
-      "birthplace": "Eastern Asia",
-      "years_in_uk": 11,
-      "religion": "Christian",
-      "activity": "employed part-time",
-      "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-      "contract": "employee",
-      "employer": null,
-      "annual_income": 12496,
-      "hours_per_week": 22.5,
-      "shifts": [
-        {
-          "day": "Wed",
-          "start": "10:00",
-          "end": "18:00",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Thu",
-          "start": "11:00",
-          "end": "19:00",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Fri",
-          "start": "11:00",
-          "end": "19:00",
-          "paid_hours": 7.5
-        }
-      ],
-      "household": {
-        "type": "other household: unrelated adults sharing",
-        "tenure": "owned with mortgage",
-        "bedrooms": 3,
-        "occupancy_rating": 0,
-        "size": 3,
-        "members": [
-          {
-            "id": "p7",
-            "age": 47,
-            "sex": "M",
-            "relation": "housemate (unrelated)"
-          },
-          {
-            "id": "p8",
-            "age": 58,
-            "sex": "M",
-            "relation": "housemate (unrelated)"
-          }
-        ]
-      },
-      "relationship_status": "single",
-      "children": [],
-      "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": 10.68,
-      "role": null
-    },
-    {
-      "id": "p9",
-      "age": 23,
+      "id": "p10",
+      "age": 72,
       "sex": "M",
       "ethnicity": "White British",
       "birthplace": "England",
-      "years_in_uk": 23,
+      "years_in_uk": 72,
       "religion": "Christian",
-      "activity": "student",
+      "activity": "retired",
       "occupation": null,
       "contract": null,
       "employer": null,
@@ -246,24 +134,54 @@
       "hours_per_week": 0,
       "shifts": [],
       "household": {
-        "type": "other household: unrelated adults sharing",
-        "tenure": "owned with mortgage",
-        "bedrooms": 3,
+        "type": "one-person household",
+        "tenure": "owned outright",
+        "bedrooms": 2,
         "occupancy_rating": 1,
-        "size": 2,
-        "members": [
-          {
-            "id": "p10",
-            "age": 26,
-            "sex": "F",
-            "relation": "housemate (unrelated)"
-          }
-        ]
+        "size": 1,
+        "members": []
       },
       "relationship_status": "single",
       "children": [],
-      "health": "bad",
-      "education": "GCSE-level (level 1-2)",
+      "health": "fair",
+      "education": "Degree or above (level 4+)",
+      "hourly_pay": null,
+      "role": null
+    },
+    {
+      "id": "p11",
+      "age": 71,
+      "sex": "M",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 71,
+      "religion": "No religion",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "owned outright",
+        "bedrooms": 4,
+        "occupancy_rating": 3,
+        "size": 2,
+        "members": [
+          {
+            "id": "p12",
+            "age": 69,
+            "sex": "F",
+            "relation": "wife"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "very bad",
+      "education": "No qualifications",
       "hourly_pay": null,
       "role": null
     }
@@ -271,29 +189,13 @@
   "ties": [
     {
       "a": "p1",
-      "b": "p2",
-      "shared": [
-        "education"
-      ],
-      "age_gap": 1
-    },
-    {
-      "a": "p1",
       "b": "p5",
       "shared": [
+        "ethnicity",
         "education",
         "religion"
       ],
-      "age_gap": 0
-    },
-    {
-      "a": "p1",
-      "b": "p6",
-      "shared": [
-        "education",
-        "religion"
-      ],
-      "age_gap": 0
+      "age_gap": 3
     },
     {
       "a": "p1",
@@ -303,59 +205,79 @@
         "education",
         "religion"
       ],
+      "age_gap": 5
+    },
+    {
+      "a": "p1",
+      "b": "p10",
+      "shared": [
+        "ethnicity",
+        "religion"
+      ],
+      "age_gap": 2
+    },
+    {
+      "a": "p1",
+      "b": "p11",
+      "shared": [
+        "ethnicity",
+        "education"
+      ],
       "age_gap": 3
     },
     {
-      "a": "p2",
-      "b": "p5",
-      "shared": [
-        "education"
-      ],
-      "age_gap": 1
-    },
-    {
-      "a": "p2",
-      "b": "p6",
-      "shared": [
-        "education",
-        "occupation group"
-      ],
-      "age_gap": 1
-    },
-    {
-      "a": "p2",
+      "a": "p5",
       "b": "p9",
       "shared": [
-        "education"
+        "ethnicity",
+        "education",
+        "religion"
       ],
       "age_gap": 2
     },
     {
       "a": "p5",
-      "b": "p6",
+      "b": "p10",
       "shared": [
-        "education",
+        "ethnicity",
         "religion"
+      ],
+      "age_gap": 1
+    },
+    {
+      "a": "p5",
+      "b": "p11",
+      "shared": [
+        "ethnicity",
+        "education"
       ],
       "age_gap": 0
     },
     {
-      "a": "p5",
-      "b": "p9",
+      "a": "p9",
+      "b": "p10",
       "shared": [
-        "education",
+        "ethnicity",
         "religion"
       ],
       "age_gap": 3
     },
     {
-      "a": "p6",
-      "b": "p9",
+      "a": "p9",
+      "b": "p11",
       "shared": [
-        "education",
-        "religion"
+        "ethnicity",
+        "education"
       ],
-      "age_gap": 3
+      "age_gap": 2
+    },
+    {
+      "a": "p10",
+      "b": "p11",
+      "shared": [
+        "ethnicity"
+      ],
+      "age_gap": 1
     }
   ]
 }

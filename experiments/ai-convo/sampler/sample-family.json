@@ -33,7 +33,7 @@
       ],
       "household": {
         "type": "couple family with dependent children",
-        "tenure": "private rented",
+        "tenure": "owned with mortgage",
         "bedrooms": 4,
         "occupancy_rating": 2,
         "size": 3,
@@ -118,7 +118,7 @@
       ],
       "household": {
         "type": "couple family with dependent children",
-        "tenure": "private rented",
+        "tenure": "owned with mortgage",
         "bedrooms": 4,
         "occupancy_rating": 2,
         "size": 3,
@@ -167,7 +167,7 @@
       "shifts": [],
       "household": {
         "type": "couple family with dependent children",
-        "tenure": "private rented",
+        "tenure": "owned with mortgage",
         "bedrooms": 4,
         "occupancy_rating": 2,
         "size": 3,

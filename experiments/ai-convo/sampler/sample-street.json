@@ -5,215 +5,12 @@
   "area": "one inner-city area (inner profile)",
   "people": [
     {
-      "id": "p1",
-      "age": 42,
-      "sex": "F",
-      "ethnicity": "White Other (incl. Irish, Eastern European)",
-      "birthplace": "EU (2004-2011 accession)",
-      "years_in_uk": 8,
-      "religion": "Muslim",
-      "activity": "employed full-time",
-      "occupation": "Business & public-service associate professionals",
-      "contract": "employee",
-      "employer": null,
-      "annual_income": 43367,
-      "hours_per_week": 37,
-      "shifts": [
-        {
-          "day": "Mon",
-          "start": "09:00",
-          "end": "17:00",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Tue",
-          "start": "08:30",
-          "end": "16:30",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Wed",
-          "start": "08:30",
-          "end": "16:30",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Thu",
-          "start": "08:30",
-          "end": "16:30",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Fri",
-          "start": "08:30",
-          "end": "16:00",
-          "paid_hours": 7
-        }
-      ],
-      "household": {
-        "type": "couple family with dependent children",
-        "tenure": "owned with mortgage",
-        "bedrooms": 3,
-        "occupancy_rating": 1,
-        "size": 4,
-        "members": [
-          {
-            "id": "p2",
-            "age": 44,
-            "sex": "M",
-            "relation": "husband"
-          },
-          {
-            "id": "p3",
-            "age": 9,
-            "sex": "M",
-            "relation": "son"
-          },
-          {
-            "id": "p4",
-            "age": 13,
-            "sex": "M",
-            "relation": "son"
-          }
-        ]
-      },
-      "relationship_status": "married",
-      "children": [
-        {
-          "id": "p3",
-          "age": 9,
-          "lives": "with me"
-        },
-        {
-          "id": "p4",
-          "age": 13,
-          "lives": "with me"
-        }
-      ],
-      "health": "fair",
-      "education": "Degree or above (level 4+)",
-      "hourly_pay": 22.54,
-      "role": null
-    },
-    {
-      "id": "p5",
-      "age": 51,
-      "sex": "F",
-      "ethnicity": "Black African",
-      "birthplace": "EU (2004-2011 accession)",
-      "years_in_uk": 43,
-      "religion": "Christian",
-      "activity": "long-term sick or disabled",
-      "occupation": null,
-      "contract": null,
-      "employer": null,
-      "annual_income": null,
-      "hours_per_week": 0,
-      "shifts": [],
-      "household": {
-        "type": "one-person household",
-        "tenure": "private rented",
-        "bedrooms": 4,
-        "occupancy_rating": 3,
-        "size": 1,
-        "members": []
-      },
-      "relationship_status": "separated or divorced",
-      "children": [],
-      "health": "fair",
-      "education": "A-level or apprenticeship (level 3)",
-      "hourly_pay": null,
-      "role": null
-    },
-    {
-      "id": "p6",
-      "age": 44,
+      "id": "p34",
+      "age": 64,
       "sex": "F",
       "ethnicity": "White British",
       "birthplace": "England",
-      "years_in_uk": 44,
-      "religion": "No religion",
-      "activity": "long-term sick or disabled",
-      "occupation": null,
-      "contract": null,
-      "employer": null,
-      "annual_income": null,
-      "hours_per_week": 0,
-      "shifts": [],
-      "household": {
-        "type": "multi-generation family household",
-        "tenure": "social rented",
-        "bedrooms": 2,
-        "occupancy_rating": -2,
-        "size": 6,
-        "members": [
-          {
-            "id": "p7",
-            "age": 46,
-            "sex": "M",
-            "relation": "husband"
-          },
-          {
-            "id": "p8",
-            "age": 10,
-            "sex": "F",
-            "relation": "daughter"
-          },
-          {
-            "id": "p9",
-            "age": 11,
-            "sex": "F",
-            "relation": "daughter"
-          },
-          {
-            "id": "p10",
-            "age": 17,
-            "sex": "F",
-            "relation": "daughter"
-          },
-          {
-            "id": "p11",
-            "age": 81,
-            "sex": "F",
-            "relation": "mother"
-          }
-        ]
-      },
-      "relationship_status": "married",
-      "children": [
-        {
-          "id": "p8",
-          "age": 10,
-          "lives": "with me"
-        },
-        {
-          "id": "p9",
-          "age": 11,
-          "lives": "with me"
-        },
-        {
-          "id": "p10",
-          "age": 17,
-          "lives": "with me"
-        },
-        {
-          "id": "p12",
-          "age": 20,
-          "lives": "own household"
-        }
-      ],
-      "health": "fair",
-      "education": "No qualifications",
-      "hourly_pay": null,
-      "role": null
-    },
-    {
-      "id": "p13",
-      "age": 76,
-      "sex": "M",
-      "ethnicity": "White British",
-      "birthplace": "England",
-      "years_in_uk": 76,
+      "years_in_uk": 64,
       "religion": "No religion",
       "activity": "retired",
       "occupation": null,
@@ -224,148 +21,197 @@
       "shifts": [],
       "household": {
         "type": "one-person household",
-        "tenure": "private rented",
+        "tenure": "owned outright",
         "bedrooms": 2,
         "occupancy_rating": 1,
         "size": 1,
         "members": []
       },
-      "relationship_status": "single",
-      "children": [],
-      "health": "very good",
-      "education": "No qualifications",
+      "relationship_status": "separated or divorced",
+      "children": [
+        {
+          "id": "p35",
+          "age": 33,
+          "lives": "own household"
+        },
+        {
+          "id": "p36",
+          "age": 37,
+          "lives": "own household"
+        }
+      ],
+      "health": "fair",
+      "education": "Degree or above (level 4+)",
       "hourly_pay": null,
       "role": null
     },
     {
-      "id": "p14",
-      "age": 55,
-      "sex": "F",
-      "ethnicity": "Arab / Other",
-      "birthplace": "Middle East",
-      "years_in_uk": 15,
-      "religion": "Muslim",
-      "activity": "employed full-time",
-      "occupation": "Elementary trades & related occupations",
-      "contract": "employee",
+      "id": "p37",
+      "age": 24,
+      "sex": "M",
+      "ethnicity": "Mixed / multiple",
+      "birthplace": "England",
+      "years_in_uk": 24,
+      "religion": "No religion",
+      "activity": "student",
+      "occupation": null,
+      "contract": null,
       "employer": null,
-      "annual_income": 30851,
-      "hours_per_week": 48,
-      "shifts": [
-        {
-          "day": "Mon",
-          "start": "14:00",
-          "end": "22:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Tue",
-          "start": "14:00",
-          "end": "22:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Wed",
-          "start": "14:00",
-          "end": "22:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Thu",
-          "start": "14:00",
-          "end": "22:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Fri",
-          "start": "14:00",
-          "end": "22:30",
-          "paid_hours": 8
-        },
-        {
-          "day": "Sat",
-          "start": "14:00",
-          "end": "22:30",
-          "paid_hours": 8
-        }
-      ],
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
       "household": {
-        "type": "other household: unrelated adults sharing",
-        "tenure": "social rented",
-        "bedrooms": 2,
-        "occupancy_rating": 0,
-        "size": 2,
+        "type": "couple family with non-dependent children",
+        "tenure": "owned with mortgage",
+        "bedrooms": 4,
+        "occupancy_rating": 2,
+        "size": 3,
         "members": [
           {
-            "id": "p15",
-            "age": 31,
+            "id": "p38",
+            "age": 54,
             "sex": "F",
-            "relation": "housemate (unrelated)"
+            "relation": "mother"
+          },
+          {
+            "id": "p39",
+            "age": 56,
+            "sex": "M",
+            "relation": "father"
           }
         ]
       },
-      "relationship_status": "separated or divorced",
-      "children": [
-        {
-          "id": "p16",
-          "age": 21,
-          "lives": "own household"
-        },
-        {
-          "id": "p17",
-          "age": 25,
-          "lives": "own household"
-        }
-      ],
+      "relationship_status": "single",
+      "children": [],
       "health": "very good",
-      "education": "Degree or above (level 4+)",
-      "hourly_pay": 12.36,
+      "education": "A-level or apprenticeship (level 3)",
+      "hourly_pay": null,
       "role": null
     },
     {
-      "id": "p18",
-      "age": 34,
+      "id": "p40",
+      "age": 26,
       "sex": "M",
-      "ethnicity": "Mixed / multiple",
-      "birthplace": "Central and South America",
-      "years_in_uk": 3,
+      "ethnicity": "White British",
+      "birthplace": "Antarctica and Oceania (including Australasia)",
+      "years_in_uk": 12,
       "religion": "No religion",
-      "activity": "self-employed",
-      "occupation": "Other managers & proprietors (incl. cafe and shop owners)",
-      "contract": "self-employed",
-      "employer": "self-employed",
-      "annual_income": 19448,
-      "hours_per_week": 25,
+      "activity": "employed full-time",
+      "occupation": "Science, research, engineering & technology professionals",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 44625,
+      "hours_per_week": 38.5,
       "shifts": [
         {
           "day": "Mon",
+          "start": "09:00",
+          "end": "17:30",
+          "paid_hours": 7.75
+        },
+        {
+          "day": "Tue",
           "start": "09:30",
-          "end": "18:30",
-          "paid_hours": 8.25
+          "end": "17:30",
+          "paid_hours": 7.75
         },
         {
           "day": "Wed",
-          "start": "09:00",
+          "start": "08:00",
+          "end": "16:30",
+          "paid_hours": 7.75
+        },
+        {
+          "day": "Thu",
+          "start": "09:30",
           "end": "17:30",
-          "paid_hours": 8.25
+          "paid_hours": 7.75
         },
         {
           "day": "Fri",
-          "start": "08:30",
-          "end": "17:30",
+          "start": "08:00",
+          "end": "16:00",
+          "paid_hours": 7.5
+        }
+      ],
+      "household": {
+        "type": "lone-parent family with non-dependent children",
+        "tenure": "owned with mortgage",
+        "bedrooms": 3,
+        "occupancy_rating": 1,
+        "size": 2,
+        "members": [
+          {
+            "id": "p41",
+            "age": 55,
+            "sex": "F",
+            "relation": "mother"
+          }
+        ]
+      },
+      "relationship_status": "single",
+      "children": [],
+      "health": "good",
+      "education": "Degree or above (level 4+)",
+      "hourly_pay": 22.29,
+      "role": null
+    },
+    {
+      "id": "p42",
+      "age": 54,
+      "sex": "M",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 54,
+      "religion": "No religion",
+      "activity": "employed full-time",
+      "occupation": "Skilled metal, electrical & electronic trades",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 28523,
+      "hours_per_week": 42,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "08:00",
+          "end": "17:00",
           "paid_hours": 8.5
+        },
+        {
+          "day": "Tue",
+          "start": "07:30",
+          "end": "16:30",
+          "paid_hours": 8.5
+        },
+        {
+          "day": "Wed",
+          "start": "07:00",
+          "end": "16:00",
+          "paid_hours": 8.5
+        },
+        {
+          "day": "Thu",
+          "start": "08:00",
+          "end": "17:00",
+          "paid_hours": 8.5
+        },
+        {
+          "day": "Sat",
+          "start": "07:30",
+          "end": "16:00",
+          "paid_hours": 8
         }
       ],
       "household": {
         "type": "couple family, no children",
         "tenure": "private rented",
-        "bedrooms": 2,
-        "occupancy_rating": 1,
+        "bedrooms": 1,
+        "occupancy_rating": 0,
         "size": 2,
         "members": [
           {
-            "id": "p19",
-            "age": 32,
+            "id": "p43",
+            "age": 52,
             "sex": "F",
             "relation": "wife"
           }
@@ -374,8 +220,131 @@
       "relationship_status": "married",
       "children": [],
       "health": "very good",
-      "education": "GCSE-level (level 1-2)",
-      "hourly_pay": 14.96,
+      "education": "Degree or above (level 4+)",
+      "hourly_pay": 13.06,
+      "role": null
+    },
+    {
+      "id": "p45",
+      "age": 30,
+      "sex": "M",
+      "ethnicity": "White Other (incl. Irish, Eastern European)",
+      "birthplace": "South and Eastern Africa",
+      "years_in_uk": 10,
+      "religion": "No religion",
+      "activity": "employed full-time",
+      "occupation": "Science, engineering & technology associate professionals",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 28398,
+      "hours_per_week": 36,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Tue",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Wed",
+          "start": "09:00",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Thu",
+          "start": "09:00",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Fri",
+          "start": "08:30",
+          "end": "16:00",
+          "paid_hours": 7
+        }
+      ],
+      "household": {
+        "type": "multi-generation family household",
+        "tenure": "owned outright",
+        "bedrooms": 3,
+        "occupancy_rating": 0,
+        "size": 4,
+        "members": [
+          {
+            "id": "p46",
+            "age": 28,
+            "sex": "F",
+            "relation": "partner"
+          },
+          {
+            "id": "p47",
+            "age": 1,
+            "sex": "M",
+            "relation": "son"
+          },
+          {
+            "id": "p48",
+            "age": 66,
+            "sex": "F",
+            "relation": "mother-in-law"
+          }
+        ]
+      },
+      "relationship_status": "cohabiting",
+      "children": [
+        {
+          "id": "p47",
+          "age": 1,
+          "lives": "with me"
+        }
+      ],
+      "health": "good",
+      "education": "Degree or above (level 4+)",
+      "hourly_pay": 15.17,
+      "role": null
+    },
+    {
+      "id": "p49",
+      "age": 82,
+      "sex": "M",
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 82,
+      "religion": "No religion",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "owned outright",
+        "bedrooms": 3,
+        "occupancy_rating": 2,
+        "size": 2,
+        "members": [
+          {
+            "id": "p50",
+            "age": 80,
+            "sex": "F",
+            "relation": "wife"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "good",
+      "education": "No qualifications",
+      "hourly_pay": null,
       "role": null
     }
   ]

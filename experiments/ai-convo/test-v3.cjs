@@ -6,9 +6,10 @@ const fs = require('fs'), path = require('path')
 require('child_process').execFileSync('node', [path.join(__dirname, 'build.cjs')]) // test what gets launched: workflow/dist/*.js
 const AsyncFn = Object.getPrototypeOf(async function () {}).constructor
 const load = (f) => { const src = fs.readFileSync(path.join(__dirname, 'workflow', 'dist', f), 'utf8'); if (!/^export const meta = /.test(src)) throw new Error(f + ': meta must come first'); return new AsyncFn('agent', 'parallel', 'pipeline', 'log', 'phase', 'args', src.replace(/^export const meta = /, 'const meta = ')) }
-const run = load('sim.js'), runAudit = load('audit.js')
+const run = load('sim.js')
 const SETTINGS = { flatshare: 'a rented shared flat in an English city', family: 'a family home in England', cafe: 'an independent café in an English town and the homes of the people who work there',
   street: 'one residential street in an English inner-city area', friends: 'a group of friends in an English city, each in their own home' }
+const BG = { present: 0, approach: 0, bgScenes: 0, stepTurns: 0 } // background presence exercised somewhere
 const SLOW = [] // long conversations that others' turns ran alongside, per slowTalk run
 const DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
@@ -46,18 +47,23 @@ function mock(people, opts = {}) {
   }
   function answer(prompt, o) {
     const s = o.schema.properties
-    const kind = s.profile ? 'person' : s.places ? 'world' : s.decisions ? 'resolve' : s.come ? 'hear' : s.say ? 'say' : s.keep_plan ? 'turn' : s.imagined ? 'audit' : s.recurring ? 'compare' : '?'
+    const kind = s.profile ? 'person' : s.sets ? 'namer' : s.places ? 'world' : s.decisions ? 'resolve' : s.come ? 'hear' : s.say ? 'say' : s.keep_plan ? 'turn' : '?'
     seen.kinds[kind] = (seen.kinds[kind] || 0) + 1
-    if (kind !== 'person' && kind !== 'world' && r() < (opts.nullRate ?? 0.04)) return null
+    if (!['person', 'world', 'namer'].includes(kind) && r() < (opts.nullRate ?? 0.04)) return null
     if (kind === 'person') return { profile: 'You are ordinary.', speech: 'plain', texting: 'short', contacts: [{ relation: 'friend', about: 'texts in full sentences' }, { relation: 'sister', about: 'quiet' }] }
-    if (kind === 'world') {
-      const ids = [...prompt.matchAll(/"id":"(p\d+)"/g)].map((m) => m[1]), give = [...new Set(ids)].filter((id, i) => opts.skipName !== true || i > 0).map((id) => ({ id, name: `Named ${id.toUpperCase()} Person` }))
-      names = people.map((a) => a.name || give.find((g) => g.id === a.id)?.name || a.id)
-      return { background: 'An ordinary place.', common_knowledge: ['Bins go out Thursday'], know_each_other: opts.strangers ? [] : [names.slice(0, 2)],
-        places: [...names.map((n) => ({ name: `${n.split(' ')[0]}'s room`, kind: 'private', building: opts.strangers ? n : 'Home', access: [n] })), { name: 'Kitchen', kind: 'shared', building: 'Home', access: opts.strangers ? [names[0]] : names }, { name: 'Work', kind: 'public', building: '', access: [] }, { name: 'Supermarket', kind: 'public', building: '', access: [] }],
-        workplace: names.map((n) => ({ person: n, place: 'Work' })),
-        contacts: [{ name: 'Priya at Larch Lettings', role: 'letting agent', about: 'brisk', linked_to: names }, { name: 'Dev', role: 'shopkeeper', about: 'friendly', linked_to: [], place: 'Supermarket' }],
-        names: give, contact_names: names.flatMap((n) => [{ person: n, relation: 'friend', name: 'Sam' }, { person: n, relation: 'sister', name: `Jo ${n.split(' ')[0]}` }])}
+    if (kind === 'namer') { const ids = [...new Set([...prompt.matchAll(/"id":"(p\d+)"/g)].map((m) => m[1]))].filter((id, i) => !opts.skipName || i > 0)
+      return { sets: [0, 1, 2].map((k) => ids.map((id) => ({ id, name: `N${k}${id} Fam${k}` }))) } }
+    if (kind === 'world') { // like the real builder: it refers to people by whatever keys it was shown (ids if ids leak in, else names)
+      names = [...(prompt.split('PEOPLE (simulated):\n')[1] || '').matchAll(/^(.+?): \{/gm)].map((m) => m[1])
+      const ids = [...new Set([...prompt.matchAll(/"id":"(p\d+)"/g)].map((m) => m[1]))], key = ids.length ? ids : names
+      const others = [...new Set([...prompt.matchAll(/"name":"([^"]+)"/g)].map((m) => m[1]))].filter((n) => !names.includes(n))
+      const rel = (n) => [...((prompt.split(`contacts written for ${n}: `)[1] || '').split('\n')[0].matchAll(/(?:^|; )([^;(]+) \(/g))].map((m) => m[1].trim())
+      return { background: 'An ordinary place.', common_knowledge: ['Bins go out Thursday'], know_each_other: opts.strangers ? [] : [{ people: key.slice(0, 2), level: 'numbers saved' }, { people: key.slice(2), level: 'by sight' }],
+        places: [...names.map((n) => ({ name: `${n.split(' ')[0]}'s room`, kind: 'private', building: opts.strangers ? n : 'Home', access: [n] })), ...others.slice(0, 1).map((m) => ({ name: `${m}'s bedroom`, kind: 'private', building: 'Home', access: [m] })),
+          { name: 'Kitchen', kind: 'shared', building: 'Home', access: opts.strangers ? [names[0]] : [...names, ...others] }, { name: 'Work', kind: 'public', building: '', access: [] }, { name: 'Supermarket', kind: 'public', building: '', access: [] }],
+        workplace: key.map((n) => ({ person: n, place: 'Work' })),
+        contacts: [{ name: 'Priya at Larch Lettings', role: 'letting agent', about: 'brisk', linked_to: key }, { name: 'Dev', role: 'shopkeeper', about: 'friendly', linked_to: [], place: 'Supermarket' }],
+        contact_map: names.flatMap((n, i) => rel(n).map((x) => x === 'friend' && i === 0 && names[1] ? { person: n, relation: x, same_as: names[1], name: '' } : { person: n, relation: x, same_as: '', name: x === 'friend' ? 'Sam' : `Jo ${n.split(' ')[0]}` })) }
     }
     if (kind === 'turn') {
       const me = names.find((n) => prompt.includes(`YOU: ${n}.`)), now = nowOf(prompt)
@@ -76,16 +82,21 @@ function mock(people, opts = {}) {
       return out
     }
     if (kind === 'say') { const n = ((prompt.split('SO FAR')[1] || '').match(/\n[^\n(]+: "/g) || []).length
-      if (/RINGING|phone is ringing/.test(prompt) && r() < 0.3) return { say: '', do: '', to: '', minutes: 0, leave: true, done: true }
-      const end = r() < 0.15 * n, here = (/(?:ONLY THESE PEOPLE ARE HERE|ON THE LINE): ([^.]*)/.exec(prompt)?.[1] || '').split(', ').map((x) => x.replace(/ \(.*/, ''))
-      return { say: r() < 0.1 ? '' : `line ${n} #${seen.calls}`, do: r() < 0.3 ? 'shrugs' : '', to: pick([...here, 'everyone', '']), minutes: opts.slowTalk ? pick([5, 10]) : pick([0, 1, 2, 5]), call_over: !prompt.includes('ON THE PHONE') && r() < 0.15 ? pick(names) : '', leave: end && r() < 0.5, done: end } }
+      if (/RINGING|phone is ringing/.test(prompt) && r() < 0.3) return { say: '', do: '', to: '', minutes: 0, leave: true }
+      const end = r() < 0.12 * n, here = (/(?:ONLY THESE PEOPLE ARE HERE|ON THE LINE): ([^.]*)/.exec(prompt)?.[1] || '').split(', ').map((x) => x.replace(/ \(.*/, ''))
+      return { say: end || r() < 0.15 ? '' : `line ${n} #${seen.calls}`, do: r() < 0.3 ? 'shrugs' : '', to: pick([...here, 'everyone', '']), minutes: opts.slowTalk ? pick([5, 10]) : pick([0, 1, 2, 5]), call_over: !prompt.includes('ON THE PHONE') && r() < 0.15 ? pick(names) : '', leave: end && r() < 0.5 } }
     if (kind === 'hear') return { come: r() < 0.6, say: r() < 0.5 ? 'coming' : '' }
     if (kind === 'resolve') { const lines = prompt.split('\n').filter((l) => /^\d+\. \[/.test(l))
       return { decisions: lines.flatMap((l, i) => { if (r() < 0.08) return []; const who = names.find((m) => l.includes(m)) || names[0]
+        if (/\[step\]/.test(l)) { const bg = (l.match(/could be there: ([^.]*)\./)?.[1] || '').split(', ').filter((x) => x && x !== 'none listed'), cs = (l.match(/contacts: ([^.]*)\.$/)?.[1] || '').split(', ').filter((x) => x && x !== 'none')
+          const out = []
+          if (bg.length && r() < 0.5) out.push({ item: i + 1, kind: 'present', who, from: pick(bg), text: 'making tea', delay_minutes: pick([0, 10]), minutes: pick([20, 60]), reason: 'home' })
+          if (r() < 0.2) out.push({ item: i + 1, kind: 'present', who, from: 'A customer', about: 'a regular', text: 'browsing', delay_minutes: 0, minutes: 15, reason: 'open' })
+          if (bg.length && r() < 0.25) out.push({ item: i + 1, kind: 'speak', who, from: pick(bg), text: `hiya ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 5]), reason: 'says hello' })
+          if (cs.length && r() < 0.2) out.push({ item: i + 1, kind: pick(['text', 'call']), who, from: pick(cs), text: `checking in ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 30]), reason: 'usual' })
+          return out.length ? out : [{ item: i + 1, kind: 'none', who, text: '', reason: 'quiet' }] }
         const kd = /\[action\]/.test(l) ? pick(['result', 'result', 'none']) : pick(['result', 'text', 'call', 'none'])
         return [{ item: i + 1, kind: kd, who, from: pick(['Priya at Larch Lettings', 'Dev', 'Sam', 'Unknown']), text: `outcome ${i + 1} for ${who.split(' ')[0]} ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 5, 60]), reason: 'because' }] }) } }
-    if (kind === 'audit') return { imagined: ['a'], missing_texture: [], stereotyping: [], breakers: [], issues: [{ issue: 'x', evidence: 'y', cause: 'c', ai_first: 'z' }], score: 6, verdict: 'ok' }
-    if (kind === 'compare') { if (!/AI-first/.test(prompt) || (prompt.match(/^## /gm) || []).length < 2) throw new Error('compare prompt lacks AI-first or runs'); return { recurring: [{ issue: 'x', runs: ['a'], cause: 'c', ai_first: 'z', code_must_own: '' }], one_offs: [], strengths: [], score: 6, verdict: 'ok' } }
     throw new Error('unknown call ' + JSON.stringify(Object.keys(s)))
   }
   return { agent, seen }
@@ -95,7 +106,7 @@ async function test(label, smp, extra = {}) {
   const raw = smp.people, { agent, seen } = mock(raw, extra)
   const parallel = async (th) => { const out = []; for (let i = 0; i < th.length; i += 2) out.push(...(await Promise.all(th.slice(i, i + 2).map((f) => f().catch(() => null))))); return out }
   const logs = []
-  const args = { label: 't', setting: SETTINGS[smp.setting], sample: extra.noSample ? undefined : smp, dateNote: 'mid-November 2026', startDow: extra.startDow ?? 4, startHour: 16, hours: extra.hours || 30, seed: extra.seed || 301,
+  const args = { label: 't', setting: SETTINGS[smp.setting], sample: extra.noSample ? undefined : smp, dateNote: 'mid-November 2026', startDow: extra.startDow ?? 4, startHour: extra.startHour ?? 16, hours: extra.hours || 30, seed: extra.seed || 301,
     ...(extra.roleAgent ? { roleAgent: extra.roleAgent } : {}), ...(extra.maxCalls ? { maxCalls: extra.maxCalls } : {}),
     events: [{ text: 'A parcel arrives for you', who: 'each', p_per_day: 0.9, hours: [9, 20], source: 'test fixture' }, { text: 'unsourced thing', who: 'each', p_per_day: 1 }] }
   const out = await run(agent, parallel, null, (m) => logs.push(m), () => {}, args)
@@ -113,9 +124,10 @@ async function test(label, smp, extra = {}) {
   const all = people.flatMap((a) => [a, ...(a.household?.members || []), ...(a.children || [])])
   if (all.some((m) => m.name == null)) fail('someone left unnamed')
   for (const a of people) for (const m of a.household?.members || []) { const q = people.find((x) => x.id === m.id); if (q && q.name !== m.name) fail(`household name mismatch: ${m.name} vs ${q.name}`) }
-  // ethnicity never reaches a character model
+  // ethnicity reaches only the namer (names do follow it), never a character model, the world builder or the world role
   const eth = [...new Set(people.map((a) => a.ethnicity).filter(Boolean))]
-  for (const c of out.calls.filter((c) => true)) { const t = full(c); if (/ethnicity/i.test(t) || eth.some((e) => t.includes(`"${e}"`) || t.includes(`: ${e};`))) fail('ethnicity shown in ' + c.label) }
+  if (!/ethnicity/.test(out.calls.find((c) => c.label === 'name people')?.prompt || 'ethnicity')) fail('namer not shown ethnicity')
+  for (const c of out.calls.filter((c) => c.label !== 'name people')) { const t = full(c); if (/ethnicity/i.test(t) || eth.some((e) => t.includes(`"${e}"`) || t.includes(`: ${e};`))) fail('ethnicity shown in ' + c.label) }
   // no guessed data: calendar is exactly the sampled shifts in the window (plus things people arranged); unsourced events dropped; no money
   const shifts = out.calendar.filter((o) => o.by === 'sampler')
   for (const o of shifts) { const a = people.find((p) => p.name === o.who[0]), sh = a.shifts.find((s) => s.day === o.at.slice(0, 3) && s.start === o.at.slice(4, 9)); if (!sh) fail('calendar item not from a sampled shift: ' + JSON.stringify(o)) }
@@ -126,6 +138,26 @@ async function test(label, smp, extra = {}) {
   if (!Object.values(out.heads).every((h) => h.includes("this year's TV"))) fail('date rule missing')
   // households from the sampler: members who are simulated know each other; others are contacts at home
   for (const a of people) for (const m of a.household?.members || []) if (!names.includes(m.name) && !out.world.contacts.some((c) => c.name === m.name && c.linked.includes(a.name))) fail(`household member not a contact: ${m.name}`)
+  // the world builder sees names, never ids, so everything it writes links up (round 1: ids silently dropped every link)
+  const wb = out.calls.find((c) => c.label === 'build world')
+  if (/"id":/.test(wb.prompt)) fail('ids shown to the world builder')
+  const K = out.world.knows_at_start
+  if (!extra.strangers && names.length > 1 && !(K[names[0]].numbers.includes(names[1]) && K[names[1]].numbers.includes(names[0]))) fail('know_each_other not applied')
+  if (!extra.strangers && names.length > 2 && !names.slice(3).every((n) => K[names[2]].by_sight.includes(n) || K[names[2]].by_name.includes(n))) fail('by-sight level not applied')
+  if (names.length > 1 && out.world.contacts.some((c) => c.role === `${names[0]}'s friend`)) fail('writer contact mapped to a simulated person was duplicated')
+  for (const o of shifts) if (o.place !== 'Work') fail('shift not at the assigned workplace: ' + JSON.stringify(o))
+  for (const c of out.world.contacts.filter((c) => c.name === 'Priya at Larch Lettings')) if (c.linked.length !== names.length) fail('shared contact not linked')
+  // access is a hard fact: a background person's bedroom stays theirs
+  for (const m of L.filter((e) => e.kind === 'move' && !/to talk to|called over/.test(e.doing))) { const pl = out.world.places.find((x) => x.name === m.to); if (pl && pl.access.length && !pl.access.includes(m.who)) fail(`${m.who} went into ${m.to} (access ${pl.access})`) }
+  // each step of a person's own plan gives them a turn (round 1: plans ran for hours with no decision)
+  for (const m of L.filter((e) => e.kind === 'move' && !/to talk to|called over|sleep/.test(e.doing))) { const prev = L.filter((e) => e.kind === 'turn' && e.who === m.who && e.t <= m.t).slice(-1)[0]
+    const stop = L.find((e) => e.kind === 'stopped')?.t ?? out.window.hours * 60
+    if (!prev || prev.t === m.t || m.t > stop - 6) continue
+    const ok = L.some((e) => e.kind === 'turn' && e.who === m.who && e.t >= m.t && e.t <= m.t + 5) || L.some((e) => (e.kind === 'scene' || e.kind === 'call') && e.present.includes(m.who) && e.t <= m.t + 5 && e.t + e.minutes >= m.t)
+    if (!ok) fail(`no turn at the start of ${m.who}'s step at ${m.t} (${m.doing})`); BG.stepTurns++ }
+  BG.present += L.filter((e) => e.kind === 'present').length; BG.approach += L.filter((e) => e.kind === 'approach' && e.ok).length
+  BG.bgScenes += L.filter((e) => e.kind === 'scene' && out.world.contacts.some((c) => c.name === e.present[0])).length
+  for (const e of L.filter((e) => e.kind === 'present')) { const pl = out.world.places.find((x) => x.name === e.place); if (pl && pl.access.length && !pl.access.includes(e.who)) fail(`${e.who} placed in ${e.place} without access`) }
   // errands: each step's errand goes to the world exactly once, at the step's place
   const errands = out.calls.filter((c) => c.for === 'world').flatMap((c) => c.prompt.split('\n').filter((l) => /^\d+\. \[action\]/.test(l)).map((l) => l.replace(/^\d+\. /, '')))
   if (new Set(errands).size !== errands.length) fail('an errand was sent twice: ' + errands.find((e, i) => errands.indexOf(e) !== i))
@@ -135,11 +167,11 @@ async function test(label, smp, extra = {}) {
     if (nextTurn && !nextTurn.seen.some((x) => x.includes(res.text))) fail(`result not shown at next turn: ${res.who} ${res.text}`) }
   // own messages appear in the sender's later prompts the same day
   for (const m of L.filter((e) => (e.kind === 'chat' || e.kind === 'dm') && names.includes(e.from))) {
-    const later = personaCalls.filter((c) => c.for === m.from && c.i > out.calls.findIndex((x) => x.for === m.from && x.prompt.includes(`IT IS NOW ${fmtOf(out, m.t)}`)) && /IT IS NOW/.test(c.prompt) && toMin(c.prompt, out) > m.t && toMin(c.prompt, out) - m.t < 240 && Math.floor((16 * 60 + toMin(c.prompt, out)) / 1440) === Math.floor((16 * 60 + m.t) / 1440))
+    const later = personaCalls.filter((c) => c.for === m.from && c.i > out.calls.findIndex((x) => x.for === m.from && x.prompt.includes(`IT IS NOW ${fmtOf(out, m.t)}`)) && /IT IS NOW/.test(c.prompt) && toMin(c.prompt, out) > m.t && toMin(c.prompt, out) - m.t < 240 && Math.floor((H0(out) + toMin(c.prompt, out)) / 1440) === Math.floor((H0(out) + m.t) / 1440))
     for (const c of later) if (!c.prompt.includes(m.text)) fail(`own message missing from later prompt: ${m.from}: ${m.text}`) }
   // conversations: only those present speak; the addressed person (or someone else) answers, never the speaker twice
   for (const e of L.filter((e) => e.kind === 'scene' || e.kind === 'call')) {
-    for (const l of e.lines) if (l.name !== '—' && !e.present.includes(l.name)) fail(`line by someone not present: ${l.name} @${e.where}`)
+    for (const l of e.lines) if (l.name !== '—' && !e.present.includes(l.name) && !/^from /.test(l.do)) fail(`line by someone not present: ${l.name} @${e.where}`)
     if (new Set(e.present).size !== e.present.length) fail('someone listed twice in a conversation')
     if (!e.failed) for (let i = 1; i < e.lines.length; i++) if (e.lines[i].name === e.lines[i - 1].name && e.lines[i].name !== '—' && e.lines[i].do !== 'comes in' && e.lines[i - 1].do !== 'comes in') fail('same speaker twice') }
   for (const mv of L.filter((e) => e.kind === 'move' && /called over/.test(e.doing))) if (!L.some((s) => s.kind === 'scene' && s.present.includes(mv.who) && s.where === mv.to)) fail('called-over person not in scene')
@@ -156,7 +188,7 @@ async function test(label, smp, extra = {}) {
   const outside = longScenes.filter((e) => L.some((t) => (t.kind === 'turn' || t.kind === 'move') && !e.present.includes(t.who) && t.t > e.t && t.t < e.t + e.minutes))
   if (extra.slowTalk) SLOW.push(outside.length) // others may legitimately be idle or all in the scene; at least one run must show the world moving
   // after every conversation each participant gets a turn, and that turn condenses it
-  for (const e of L.filter((e) => e.kind === 'scene' && e.ended !== 'not answered')) for (const n of e.present.filter((x) => names.includes(x))) {
+  for (const e of L.filter((e) => e.kind === 'scene' && e.ended !== 'not answered' && e.ended !== 'window ended')) for (const n of e.present.filter((x) => names.includes(x))) {
     if (e.t + e.minutes < out.window.hours * 60 - 5 && !L.some((t) => t.kind === 'turn' && t.who === n && t.t >= e.t && t.t <= e.t + e.minutes + 40)) fail(`no turn after conversation for ${n} @${e.t}`) }
   for (const n of names) { const j = out.final[n].journal, lastTurn = L.filter((e) => e.kind === 'turn' && e.who === n && !e.failed).slice(-1)[0]
     const ungisted = out.calls.filter((c) => c.for === n && c.result && c.prompt.includes('YOUR JOURNAL')).length && j.filter((x) => /\[ref /.test(x) && !/gist of/.test(x))
@@ -169,32 +201,30 @@ async function test(label, smp, extra = {}) {
   if (extra.show) { console.log(out.transcript.slice(0, 1500)); const c = personaCalls.filter((c) => /IT IS NOW/.test(c.prompt)).slice(-1)[0]; console.log('--- a late turn prompt ---\n' + full(c)); const w = out.calls.find((c) => c.label.startsWith('write person')); console.log('--- writer prompt ---\n' + w.prompt) }
   return out
 }
+const H0 = (out) => +out.window.from.slice(4, 6) * 60
 function toMin(prompt, out) { const m = prompt.match(/IT IS (?:NOW )?(\w{3}) (\d\d):(\d\d)/); return m ? rel(out, m[1], +m[2] * 60 + +m[3]) : -1 }
 function toMinFmt(out, s) { const m = s.match(/^(\w{3}) (\d\d):(\d\d)/); return m ? rel(out, m[1], +m[2] * 60 + +m[3]) : -1 }
 function rel(out, d, mins) { const d0 = out.window.from.slice(0, 3), h0 = +out.window.from.slice(4, 6) * 60 + +out.window.from.slice(7, 9); const dd = (DOW.indexOf(d) - DOW.indexOf(d0) + 7) % 7; return dd * 1440 + mins - h0 }
-function fmtOf(out, t) { const h = 16 * 60 + t, r = h % 1440, d = Math.floor(h / 1440); return `${DOW[(DOW.indexOf(out.window.from.slice(0, 3)) + d) % 7]} ${String(Math.floor(r / 60)).padStart(2, '0')}:${String(r % 60).padStart(2, '0')}` }
+function fmtOf(out, t) { const h = +out.window.from.slice(4, 6) * 60 + t, r = h % 1440, d = Math.floor(h / 1440); return `${DOW[(DOW.indexOf(out.window.from.slice(0, 3)) + d) % 7]} ${String(Math.floor(r / 60)).padStart(2, '0')}:${String(r % 60).padStart(2, '0')}` }
 
 if (process.env.PEEK) module.exports = { test }
 else (async () => {
   const fixtures = Object.keys(SETTINGS).map((s) => [s, JSON.parse(fs.readFileSync(path.join(__dirname, 'sampler', `sample-${s}.json`), 'utf8'))])
   const outs = []
   for (const [s, smp] of fixtures) for (const seed of [1, 2, 3]) { const o = await test(s, smp, { seed }); if (seed === 1) outs.push({ ...o, label: s }) }
-  // audit: save each run as save.cjs does, build args with audit-args.cjs, run workflow/dist/audit.js over all five together
+  // saved run folders hold what an auditor needs to find causes
   const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'v3-')), round = '_test-' + path.basename(tmp), cp = require('child_process')
   try {
-    for (const o of outs) { const f = path.join(tmp, o.label + '.json'); fs.writeFileSync(f, JSON.stringify(o)); cp.execFileSync('node', [path.join(__dirname, 'save.cjs'), f, round]) }
-    const aargs = JSON.parse(cp.execFileSync('node', [path.join(__dirname, 'audit-args.cjs'), round], { maxBuffer: 1 << 28 }).toString())
-    const { agent, seen } = mock(fixtures[0][1].people), logs = []
-    const parallel = async (th) => { const out = []; for (let i = 0; i < th.length; i += 2) out.push(...(await Promise.all(th.slice(i, i + 2).map((f) => f())))); return out }
-    const a = await runAudit(agent, parallel, null, (m) => logs.push(m), () => {}, aargs)
-    if (Object.keys(a.reports).length !== 5 || !a.compare || seen.kinds.audit !== 5 || seen.kinds.compare !== 1) throw new Error('audit did not cover the five runs')
-    const f = path.join(tmp, 'audit.json'); fs.writeFileSync(f, JSON.stringify(a)); cp.execFileSync('node', [path.join(__dirname, 'audit-args.cjs'), '--save', f, round])
-    if (!fs.existsSync(path.join(__dirname, 'rounds', round, 'audit-compare.json'))) throw new Error('audit not saved')
-    console.log(`audit over ${aargs.runs.length} saved runs: ok (${(JSON.stringify(aargs).length / 1e3).toFixed(0)} KB args)`)
+    for (const o of outs) { const f = path.join(tmp, o.label + '.json'); fs.writeFileSync(f, JSON.stringify(o)); cp.execFileSync('node', [path.join(__dirname, 'save.cjs'), f, round])
+      const d = path.join(__dirname, 'rounds', round, 'o'.length ? o.label : ''), w = JSON.parse(fs.readFileSync(path.join(d, 'world.json'))), run = JSON.parse(fs.readFileSync(path.join(d, 'run.json')))
+      for (const k of ['knows_at_start', 'knows_at_end', 'places', 'contacts', 'workplace', 'names']) if (!w[k]) throw new Error(`saved world.json lacks ${k}`)
+      if (!run.stats.turns || !run.stats.byFor) throw new Error('saved run.json lacks turns per person') }
+    console.log(`saved ${outs.length} runs: world.json and run.json carry the audit facts`)
   } finally { fs.rmSync(path.join(__dirname, 'rounds', round), { recursive: true, force: true }); fs.rmSync(tmp, { recursive: true, force: true }) }
   const { sample } = await import(path.join(__dirname, 'sampler', 'index.mjs'))
   for (const [s, n] of [['flatshare', 4], ['family', 0], ['cafe', 5], ['street', 6], ['friends', 5]]) await test(`fresh ${s}`, sample(s, n, 'test-' + s), { seed: 5 })
   for (const s of Object.keys(SETTINGS)) await test(`round-1 ${s}`, sample(s, 4, 'r1'), { seed: 11 }) // the draws round 1 launches with
+  await test('check cafe', sample('cafe', 4, 'r1'), { startDow: 2, startHour: 10, hours: 3, seed: 1101 }) // the short real check
   await test('flatshare', fixtures[0][1], { skipName: true, seed: 2, hours: 6 })
   await test('flatshare', fixtures[0][1], { show: true, seed: 4 })
   await test('cafe', fixtures[2][1], { slowTalk: true, seed: 6 })
@@ -206,6 +236,8 @@ else (async () => {
   await test('street', fixtures[3][1], { strangers: true, hours: 24, seed: 4 })
   await test('cafe', fixtures[2][1], { hours: 168, seed: 9, startDow: 0 })
   try { await test('flatshare', fixtures[0][1], { noSample: true }); throw new Error('ran without people') } catch (e) { if (!/required/.test(e.message)) throw e; console.log('no people -> refused: ok') }
+  if (!BG.present || !BG.approach || !BG.bgScenes || !BG.stepTurns) throw new Error('background presence / step turns never exercised: ' + JSON.stringify(BG))
+  console.log('background:', JSON.stringify(BG))
   if (!SLOW.some((k) => k > 0)) throw new Error('no long conversation ran alongside other turns: time-freeze check never exercised')
   console.log('ALL OK')
 })().catch((e) => { console.error(e.message, e.stack.split('\n').slice(1, 4).join('\n')); process.exit(1) })

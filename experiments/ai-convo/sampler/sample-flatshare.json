@@ -237,18 +237,7 @@
         ]
       },
       "relationship_status": "separated or divorced",
-      "children": [
-        {
-          "id": "p5",
-          "age": 35,
-          "lives": "own household"
-        },
-        {
-          "id": "p6",
-          "age": 40,
-          "lives": "own household"
-        }
-      ],
+      "children": [],
       "health": "fair",
       "education": "A-level or apprenticeship (level 3)",
       "hourly_pay": 11.57,
@@ -262,42 +251,30 @@
       "birthplace": "England",
       "years_in_uk": 58,
       "religion": "No religion",
-      "activity": "self-employed",
-      "occupation": "Business, media & public-service professionals",
-      "contract": "self-employed",
-      "employer": "self-employed",
-      "annual_income": 58305,
-      "hours_per_week": 37.5,
+      "activity": "employed part-time",
+      "occupation": "Administrative occupations",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 14791,
+      "hours_per_week": 21.5,
       "shifts": [
         {
           "day": "Mon",
-          "start": "09:30",
-          "end": "17:30",
-          "paid_hours": 7.5
+          "start": "09:00",
+          "end": "16:30",
+          "paid_hours": 7.25
         },
         {
           "day": "Tue",
-          "start": "09:00",
-          "end": "17:00",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Wed",
-          "start": "09:30",
-          "end": "17:30",
-          "paid_hours": 7.5
-        },
-        {
-          "day": "Thu",
-          "start": "09:30",
-          "end": "17:30",
-          "paid_hours": 7.5
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.25
         },
         {
           "day": "Fri",
           "start": "09:30",
-          "end": "17:30",
-          "paid_hours": 7.5
+          "end": "17:00",
+          "paid_hours": 7
         }
       ],
       "household": {
@@ -330,19 +307,14 @@
       "relationship_status": "separated or divorced",
       "children": [
         {
-          "id": "p7",
-          "age": 24,
-          "lives": "own household"
-        },
-        {
-          "id": "p8",
-          "age": 29,
+          "id": "p5",
+          "age": 33,
           "lives": "own household"
         }
       ],
       "health": "very good",
-      "education": "Degree or above (level 4+)",
-      "hourly_pay": 29.9,
+      "education": "No qualifications",
+      "hourly_pay": 13.23,
       "role": null
     }
   ]

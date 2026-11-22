@@ -14,7 +14,7 @@ for (const [s, n] of Object.entries(N)) {
   errs.forEach(fail);
   for (const p of people) {
     const w = p.shifts.reduce((a, x) => a + x.paid_hours, 0); if (Math.abs(w - p.hours_per_week) > .01) fail('shifts!=hours ' + p.id);
-    if (p.occupation) { const r = occ[p.occupation], q = r.pay[ABA(p.age)], floor = p.age >= 21 ? 11.44 : 8.6; if (p.hourly_pay < Math.min(q[0], floor) - .01 || p.hourly_pay > Math.max(q[4], 11.44) + .01 || Math.abs(p.annual_income - p.hourly_pay * p.hours_per_week * 52) > 1) fail('pay ' + p.id); }
+    if (p.occupation && p.contract !== 'self-employed') { const r = occ[p.occupation], q = r.pay[ABA(p.age)], floor = p.age >= 21 ? 11.44 : 8.6; if (p.hourly_pay < Math.min(q[0], floor) - .01 || p.hourly_pay > Math.max(q[4], 11.44) + .01 || Math.abs(p.annual_income - p.hourly_pay * p.hours_per_week * 52) > 1) fail('pay ' + p.id); }
     if (p.activity === 'student' && p.hours_per_week > stuMax) fail('student hours ' + p.id);
     if (!p.id || [...p.household.members, ...p.children].some(m => !m.id)) fail('missing id ' + p.id);
     if (JSON.stringify(p).includes('"name"')) fail('sampler output has a name ' + p.id); // the simulation's world builder names everyone

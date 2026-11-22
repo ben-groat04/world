@@ -138,6 +138,7 @@ const LOCAL = {
   'civic.bins': (w, ev, p) => ({ head: 'Missed bin collections', body: `Residents on ${streetName(w, p.street)} report bins left uncollected.` }),
 };
 LOCAL['health.outbreak'] = (w, ev, p) => { const heat = /heat/i.test(p.name || ''), over = p.phase === 'over' || p.phase === 'end';
+  if (/warm spell/i.test(p.name || '')) return { head: 'A warm spell', body: 'Unseasonably mild for the time of year, but not hot enough to be a health risk. Coats stay on the hook for a few days.' };
   return heat ? { head: over ? 'The heat breaks' : 'Heat health warning for Larkfield', body: over ? 'Cooler nights at last. The park is emptier and the fans go back in the cupboard.' : 'Flats on the top floors are stifling. Older and unwell residents are being checked on by neighbours; drink water and keep curtains shut by day.' }
     : { head: over ? `${cap1(p.name || 'The outbreak')} is easing` : `${cap1(p.name || 'A virus')} is going round`, body: over ? `Fewer people are off sick${p.ill ? ` (about ${p.ill} cases locally)` : ''}. The surgery says appointments are returning to normal.` : 'The surgery is busier than usual and schools report absences. Older relatives and anyone with a health condition are being urged to take care.' }; };
 for (const k of Object.keys(CRIME)) LOCAL[k] = () => ({ head: CRIME[k][0], body: CRIME[k][1] });

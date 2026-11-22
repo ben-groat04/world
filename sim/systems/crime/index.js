@@ -45,6 +45,10 @@ export const PARAMS = {
   repeatBoost: 3.0, repeatDays: 120, overlap: 1.6, // recent-victim hazard multiplier (1 + boost x e^(-t/days)); victim-offender overlap multiplier
   sexPair: 0.47,          // women's relative chance of being the counterpart of a stranger fight: male aggressors (~80%) pick same-sex peers (~80%) => victims ~68% male (CSEW: stranger violence victims ~2:1 male)
   sexualKnown: 0.04,      // relative weight of a sexual offence against someone he knows in a male offender's offence mix (~80% of CSEW perpetrators are known to the victim); tuned so experienced prevalence ~ CSEW
+  // DOMESTIC ABUSE is concentrated: fewer abusive relationships, each with many incidents. Walby & Allen 2004 (Home Office Research Study 276) and CSEW: domestic-abuse victims are the bulk of repeat violent victims
+  // and experience several incidents a year (the mean is pulled up by a high-frequency minority). Round 8 had 0.006/day (2 incidents a year) over 0.017 onset; now 0.015/day (~5.5 a year) over 0.0068 onset,
+  // the same expected volume of incidents but on 2.5x fewer victims (hand-set concentration; the repeat share it produces is reported, not tuned).
+  domRate: 0.015, domOnset: 0.0068,
   domSexual: 0.045,        // share of incidents within an abusive relationship that are sexual (ONS domestic abuse: sexual assault by a partner is a minority of DA)
   served: 0.4,            // share of a determinate custodial sentence actually served in prison (Standard Determinate Sentence release at 40% from Oct 2024; 50% before)
   fraud: 0.08,            // per-adult annual probability scale of a successful fraud (CSEW: 7% of adults a victim of any fraud, most refunded)
@@ -375,7 +379,7 @@ export function createCrime() {
     }
     // domestic abuse: ongoing relationship state (sensitive; invisible in rumours/feed)
     for (const k of Object.keys(C.dom)) { const d = C.dom[k], a = W.people.get(d.o), b = W.people.get(d.v); if (!a || !b || !a.alive || !b.alive || !a.romance || a.romance.partnerId !== b.id) { delete C.dom[k]; continue; }
-      if (r.next() < 0.006) commit(r.next() < PARAMS.domSexual ? 'sexual' : r.next() < 0.45 ? 'assault' : 'harass', { off: a, vic: b, hh: hhOf(b), known: 1, dom: true, injury: 'none', place: a.homeId }); // roughly one recorded-or-not incident every 3 weeks within a relationship
+      if (r.next() < PARAMS.domRate) commit(r.next() < PARAMS.domSexual ? 'sexual' : r.next() < 0.45 ? 'assault' : 'harass', { off: a, vic: b, hh: hhOf(b), known: 1, dom: true, injury: 'none', place: a.homeId }); // roughly one recorded-or-not incident every 3 weeks within a relationship
     }
   }
   function weekly(w) {
@@ -397,7 +401,7 @@ export function createCrime() {
     // domestic abuse onset: couples, hazard rises with the riskier partner's propensity, drinking and stress
     for (const hh of liveHh(w)) { if (hh.gone) continue; const ms = hh.members.map((i) => w.people.get(i)).filter((p) => p && p.alive && p.romance && p.romance.partnerId != null && ageOf(p) >= 16);
       for (const a of ms) { const b = w.people.get(a.romance.partnerId); if (!b || a.id > b.id || !b.alive) continue; const key = a.id + '_' + b.id; if (C.dom[key]) continue;
-        const ra = domRisk(a), rb = domRisk(b), o = ra >= rb ? a : b, v = o === a ? b : a; if (r.next() < 0.017 / 12 * Math.max(ra, rb)) { C.dom[key] = { o: o.id, v: v.id, t0: w.tick }; cnt('domStart', 'n'); } }
+        const ra = domRisk(a), rb = domRisk(b), o = ra >= rb ? a : b, v = o === a ? b : a; if (r.next() < PARAMS.domOnset / 12 * Math.max(ra, rb)) { C.dom[key] = { o: o.id, v: v.id, t0: w.tick }; cnt('domStart', 'n'); } }
     }
     for (const k of Object.keys(C.dom)) if (r.next() < 0.04) { delete C.dom[k]; cnt('domEnd', 'n'); } // ends: separation, leaving, intervention (abusive relationships typically last years)
     // fear and watch

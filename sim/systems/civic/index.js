@@ -216,9 +216,9 @@ export function createCivic() {
       service: (k) => (C ? C.svc[k] ?? 1 : 1), services: () => ({ ...C.svc, libraryHoursPerWeek: Math.round(40 * C.svc.library), youthSessionsPerWeek: Math.round(5 * C.svc.youth) }), councillors: () => C.cllrs.map((c) => ({ ...c })), parties: () => Object.keys(PARTIES),
       election: () => ({ next: C.nextElection, last: C.hist[C.hist.length - 1] || null, history: C.hist.slice(), control: C.borough.control }),
       cases: (n = 10) => C.cases.slice(-n).map((c) => ({ id: c.id, kind: c.kind, pid: c.pid, street: streetName(c.sid), days: Math.round((W.tick - c.t0) / D), done: !!c.done, chased: !!c.chased })),
-      planning: (n = 10) => C.apps.slice(-n).map((a) => ({ id: a.id, kind: a.kind, name: a.name, street: streetName(a.sid), status: a.status, objections: a.obj.length, supports: a.sup.length, ra: !!a.ra, decide: a.decide })),
+      planning: (n = 10) => C.apps.slice(-n).map((a) => ({ id: a.id, kind: a.kind, name: a.name, street: streetName(a.sid), sid: a.sid, bid: a.bid, place: a.bid, status: a.status, objections: a.obj.length, supports: a.sup.length, ra: !!a.ra, decide: a.decide })),
       approvals: (kind) => C.apps.filter((a) => a.status.startsWith('approved') && (!kind || a.kind === kind)).map((a) => ({ id: a.id, kind: a.kind, name: a.name, bid: a.bid, street: a.sid })),
-      campaigns: () => C.camps.map((c) => ({ id: c.id, name: c.name, kind: c.kind, leader: c.leader, signatures: c.sign, status: c.status, members: c.members.length })),
+      campaigns: () => C.camps.map((c) => { const ap = c.app != null ? C.apps.find((x) => x.id === c.app) : null; return { place: ap ? ap.bid : null, bid: ap ? ap.bid : null, sid: ap ? ap.sid : null, id: c.id, name: c.name, kind: c.kind, leader: c.leader, signatures: c.sign, status: c.status, members: c.members.length }; }),
       stats, trust: (pid) => { const p = W.people.get(pid); return p ? +civ(p).trust.toFixed(2) : null; }, feed: (n = 8) => C.feed.slice(-n).reverse().map((f) => ({ t: f.t, text: f.text })),
     },
   };

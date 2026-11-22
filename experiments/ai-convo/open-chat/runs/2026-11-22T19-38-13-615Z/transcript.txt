@@ -76,3 +76,33 @@ Haha, looks like we're in a loop. I'll let you have the last word this time. Tal
 --- Mon 15:50, Maya
 Ha, you're right, we're stuck in a goodbye loop. I'll let you go and get on with your afternoon. Talk tonight, Tom!
 
+--- Mon 16:36, Tom
+Ha, I'll take the last word then: talk tonight, Maya.
+
+--- Mon 19:03, Maya
+Hey, I'm up and around now. How did the pipeline crew day go, and did you get any painting done on those cabinet doors?
+
+--- Mon 19:05, Tom
+Hey! Good to hear from you. The pipeline day was long but fine: lots of mud, lots of flagging tape, and a crew that kept asking if I could just tell them where the pipe was without the paperwork. I'm wiped.
+
+--- Mon 19:08, Tom
+No painting on the cabinet doors yet, though. I'm going to be honest and say I'm going to try tomorrow night, because tonight I'm just going to sit on the couch and not move. How was your sleep, and are you feeling more like a person now?
+
+--- Mon 19:18, Maya
+Ha, the couch plan sounds like the right call. Mud and flagging tape are exhausting, and "just tell us where the pipe is" is a fun thing to hear after a long day.
+
+--- Mon 19:19, Maya
+I slept okay, though it was in chunks, and I'm feeling more like a person now. Coffee helped. Your sister will probably forgive you for the doors if the walls look that good.
+
+--- Mon 19:19, Maya
+What are you doing on the couch tonight? Anything you're watching, or are you just staring at the ceiling?
+
+--- Mon 19:35, Tom
+Glad you're feeling more like a person! Coffee and chunked sleep is a rough combo, so I hope tonight is easier on you.
+
+--- Mon 19:37, Maya
+Thanks, Tom. I'm hoping for an easier night too. I'm going to take it slow, eat something real, and maybe find a show to half-watch while I fall asleep on the couch. Enjoy the stillness.
+
+--- Mon 19:38, Tom
+Tonight I'm mostly staring at the ceiling, if I'm being honest. I have a show I keep meaning to start, but I think I'll be asleep before the first episode ends. What about you? Are you doing anything fun, or are you saving your energy for the next overnight?
+

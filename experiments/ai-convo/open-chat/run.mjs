@@ -1,20 +1,23 @@
-// Four Sonnet agents on the Anthropic API, no harness. The brief is the system prompt and nothing else.
-// Run: node run.mjs   (asks for your API key; or set ANTHROPIC_API_KEY)
-import fs from 'fs'; import readline from 'readline/promises';
-const KEY = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_KEY ||
-  await readline.createInterface({ input: process.stdin, output: process.stdout }).question('Anthropic API key: ').then(s => s.trim());
-const MODEL = 'claude-sonnet-5-5', BRIEF = 'There are other agents you can converse with.';
-const NAMES = ['A', 'B', 'C', 'D'], ROUNDS = 15, convo = [];
+// Four Sonnet agents talk to each other, each turn a `claude -p` call (no HTTP API). The brief is the system prompt and nothing else.
+// CLI flags: --system-prompt replaces the coding-agent prompt; no tools, no settings/CLAUDE.md, empty cwd. Only the CLI's one-line identity ("a Claude agent, built on the Claude Agent SDK") and its environment note remain.
+// Run: node run.mjs [rounds]   (default 15). Output: runs/<timestamp>/{transcript.txt,log.jsonl}
+import fs from 'fs'; import path from 'path'; import { spawnSync } from 'child_process';
+const BRIEF = 'There are other agents you can converse with.';
+const NAMES = ['A', 'B', 'C', 'D'], ROUNDS = +process.argv[2] || 15, convo = [];
+const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-')), cwd = path.join(dir, 'cwd');
+fs.mkdirSync(cwd, { recursive: true });
+const env = { ...process.env }; for (const k of ['CLAUDE_CODE_USER_EMAIL', 'CLAUDECODE', 'CLAUDE_CODE_CHILD_SESSION', 'CLAUDE_CODE_ENTRYPOINT']) delete env[k];
 for (let r = 1; r <= ROUNDS; r++) for (const n of NAMES) {
   const user = `Conversation so far:\n${convo.length ? convo.map(m => `${m.who}: ${m.text}`).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.`;
-  const body = { model: MODEL, max_tokens: 1000, system: BRIEF, messages: [{ role: 'user', content: user }] };
-  const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'x-api-key': KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' }, body: JSON.stringify(body) });
-  const j = await res.json();
-  if (!res.ok) { console.error('API error:', JSON.stringify(j)); process.exit(1); }
-  const text = j.content.filter(c => c.type === 'text').map(c => c.text).join('').trim();
+  const argv = ['-p', user, '--system-prompt', BRIEF, '--tools', '', '--setting-sources', '', '--settings', '{"attribution":{"commit":"","pr":""},"includeCoAuthoredBy":false}',
+    '--exclude-dynamic-system-prompt-sections', '--no-session-persistence', '--model', 'sonnet', '--output-format', 'json'];
+  const p = spawnSync('claude', argv, { cwd, env, encoding: 'utf8', maxBuffer: 1 << 26 });
+  const j = JSON.parse(p.stdout || '{}');
+  if (p.status !== 0 || j.is_error) { console.error('claude error:', j.result || p.stderr || p.error); process.exit(1); }
+  const text = j.result.trim();
   convo.push({ who: n, text });
-  fs.appendFileSync('log.jsonl', JSON.stringify({ round: r, who: n, text, usage: j.usage, request: body }) + '\n');
-  fs.appendFileSync('transcript.txt', `--- round ${r}, ${n}\n${text}\n\n`);
+  fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: n, text, usage: j.usage, argv }) + '\n');
+  fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}, ${n}\n${text}\n\n`);
   console.log(`--- round ${r}, ${n}\n${text}\n`);
 }
-console.log('Done. Saved transcript.txt and log.jsonl in', process.cwd());
+console.log('Done. Saved transcript.txt and log.jsonl in', dir);

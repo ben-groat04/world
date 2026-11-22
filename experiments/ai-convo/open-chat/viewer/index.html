@@ -247,7 +247,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 
   function renderInfo() {
     $('info').innerHTML = `<div class="meta"><span><b>${esc(run.model)}</b></span><span>${esc(fmtDate(run.started))}</span></div>
-      <p><span class="label">Topic</span>${run.topic ? esc(run.topic) : 'none'}</p>`;
+      <p><span class="label">Topic</span>${run.topic ? esc(run.topic) : 'none'}</p>${Object.entries(run.secrets || {}).map(([w, t]) => `<p class="who-${w}" style="color:var(--who)"><span class="label" style="color:inherit">${w}'s secret</span>${esc(t)}</p>`).join('')}`;
   }
 
   function render(animateLast, follow) {

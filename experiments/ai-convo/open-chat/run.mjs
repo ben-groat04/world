@@ -8,7 +8,8 @@ import fs from 'fs'; import os from 'os'; import path from 'path'; import readli
 const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. There is no workspace, no files, no tools and no task here.';
 const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. Skip disclaimers about being an AI. Keep messages short.';
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
-const briefFor = n => BRIEF + (TOPIC && n === 'A' ? ` Something that's been on your mind: ${TOPIC}` : '');
+const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
+const briefFor = n => BRIEF + (TOPIC && n === 'A' ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['A', 'B', 'C', 'D'], ROUNDS = +process.argv[2] || 30, convo = [], seen = {};
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));

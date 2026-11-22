@@ -1,0 +1,39 @@
+--- Sun 19:01, Maya
+Hey! Anyone up for something tonight? I could do dinner or just a walk if nobody's keen on going out.
+
+--- Sun 19:22, Jo
+Hey Maya! I'm up for dinner. A walk sounds nice too, so we could do one then the other. Are Tom and Sam around?
+
+--- Sun 19:22, Tom
+Hey! Yeah, I'm around. Dinner then a walk sounds good to me. Sam, are you in?
+
+--- Sun 19:31, Sam
+Yes, I'm in! Dinner then a walk sounds perfect. Where should we go, Maya?
+
+--- Sun 19:32, Tom
+Nice, we've got a plan! Maya, you pick the place and I'll be there. Anywhere with decent food and a walk nearby works for me.
+
+--- Sun 19:34, Maya
+Great, everyone's in! I'm thinking the Thai place on Carver St. It's close, the food's good, and it's not too busy on Sundays. We could walk along the river after. Does 8 work for everyone? I can book a table for four if you're good with it.
+
+--- Sun 19:35, Tom
+Carver St sounds great, and the river walk after is a good shout. 8 works for me. Go ahead and book it, Maya.
+
+--- Sun 19:37, Jo
+Sounds good to me, 8 works! Thanks for booking, Maya. See you all at Carver St.
+
+--- Sun 19:37, Sam
+Sounds great, Maya! 8 works for me, and the Thai place plus the river walk is a good plan. See you there.
+
+--- Sun 19:37, Tom
+See you all at 8! Thanks for sorting it, Maya.
+
+--- Sun 19:37, Sam
+See you all at 8, Jo!
+
+--- Sun 19:38, Tom
+See you there!
+
+--- Sun 19:38, Jo
+See you all at 8! Looking forward to it.
+

@@ -336,17 +336,19 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   const nextIdx = from => { for (let j = from; j < run.turns.length; j++) if (vis(run.turns[j])) return j; return -1; };
   function stop() { playing = false; typing = null; clearTimeout(timer); timer = null; }
 
+  const atBottom = () => innerHeight + scrollY >= document.documentElement.scrollHeight - 80;
   function tick() {
     if (!playing) return;
     const j = nextIdx(pos);
-    if (j < 0) { pos = run.turns.length; stop(); render(false, true); return; }
+    if (j < 0) { pos = run.turns.length; stop(); render(false, atBottom()); return; }
     const t = run.turns[j], len = t.text.length;
     pos = j; // reveal silently any hidden passes before j
     const typeMs = reduced() ? 0 : (t.pass || t.clock ? 500 : 500 + Math.min(len, 500) * 3.5) / speed;
     typing = reduced() || t.clock ? null : { who: t.who };
-    render(false, true);
+    render(false, atBottom());
     timer = setTimeout(() => {
-      typing = null; pos = j + 1; render(true, true);
+      const follow = atBottom();
+      typing = null; pos = j + 1; render(true, follow);
       timer = setTimeout(tick, (t.pass ? 600 : 700 + Math.min(len, 900) * 4) / speed);
     }, typeMs);
   }
@@ -448,11 +450,11 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     let db = null;
     try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch (e) { db = null; }
     if (!db) return;
-    const atBottom = () => innerHeight + scrollY >= document.documentElement.scrollHeight - 80;
-    let metas = [], turnsBy = {};
+    let metas = null, turnsBy = null; // null until the first snapshot of each collection
     const byId = {}, announced = new Set();
     const update = () => {
-      const shown = run, oldLen = shown ? shown.turns.length : 0, atEnd = shown && pos >= oldLen, follow = atBottom();
+      if (!metas || !turnsBy) return; // both loaded first, so a run open mid-way shows its turns so far instead of replaying them
+      const shown = run, oldLen = shown ? shown.turns.length : 0, atEnd = shown && pos >= oldLen;
       dbRuns = metas.filter(d => d.id && !allRuns.some(r => r.id === d.id)).map(d => Object.assign(byId[d.id] ||= { id: d.id, live: true, brief: '', rounds: null }, {
         started: d.started, model: d.model, people: d.people, names: d.names || [], topic: d.topic || null, secrets: d.secrets || null, oracle: !!d.oracle,
         status: d.status, ended: d.ended || 'message limit', turns: turnsBy[d.id] || [] })).sort((a, b) => (b.started || '').localeCompare(a.started || ''));
@@ -461,17 +463,18 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       applyHidden();
       if (startedNow && !userPicked && run !== startedNow) { selectRun(startedNow.id, true); return; }
       if (run !== shown || !run || !run.live) return;
-      const grew = run.turns.length > oldLen;
-      if (atEnd) pos = run.turns.length;
-      renderInfo(); render(atEnd && grew, atEnd && grew && follow);
+      renderInfo();
+      if (playing) return; // tick reads run.turns, so it reaches the new turns itself
+      // New turns play in one at a time, with the typing indicator, however many arrived in one write.
+      if (atEnd && run.turns.length > oldLen) { playing = true; tick(); } else render(false, false);
     };
     try {
       db.collection('live_runs').onSnapshot(snap => { metas = snap.docs.map(d => d.data()); update(); }, () => {});
       db.collection('live_turns').onSnapshot(snap => {
-        turnsBy = {};
-        for (const d of snap.docs) { const x = d.data(); (turnsBy[x.run] ||= []).push(x); }
-        for (const id in turnsBy) turnsBy[id] = turnsBy[id].sort((a, b) => a.i - b.i).map(x => ({ who: x.who, text: x.text || '', at: x.at, pass: false, ...(x.clock && { clock: true }), ...(x.oracle && { oracle: true }) }));
-        update();
+        const by = {};
+        for (const d of snap.docs) { const x = d.data(); (by[x.run] ||= []).push(x); }
+        for (const id in by) by[id] = by[id].sort((a, b) => a.i - b.i).map(x => ({ who: x.who, text: x.text || '', at: x.at, pass: false, ...(x.clock && { clock: true }), ...(x.oracle && { oracle: true }) }));
+        turnsBy = by; update();
       }, () => {});
     } catch (e) {}
   }

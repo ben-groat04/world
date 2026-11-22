@@ -1,6 +1,7 @@
 // Turns kernel events into short human sentences and "Larkfield Local" news items. Pure; worker-safe.
 import { projectPhrase } from '../sim/sifter/projectwords.js';
 import { jobNoun } from '../sim/text/jobs.js';
+import { deslash } from '../sim/text/mods.js';
 const isPrivateEv = (ev) => /^crime\.(domestic|sexual)|^health\.substance$|^social\.secret$/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
 export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
@@ -12,7 +13,7 @@ const phrase = (w, id) => { if (!PHR) { PHR = new Map(); try { for (const t of w
 
 // "a few months" / "1 year" / "7 years" (never "0 years")
 const span = (y) => { const n = +y; return !(n >= 0) ? 'a few years' : n < 0.75 ? 'a few months' : n < 1.5 ? 'about a year' : `${Math.round(n)} years`; };
-const fixText = (t) => (t == null ? t : String(t).replace(/\b(zero|0|no) years\b/gi, 'less than a year').replace(/\bone years\b/g, 'one year'));
+const fixText = (t) => (t == null ? t : deslash(String(t)).replace(/\b(zero|0|no) years\b/gi, 'less than a year').replace(/\bone years\b/g, 'one year'));
 // [line(s, o, pl, ctx), news?]  s = subject name, o = second actor or payload name, pl = payload
 const T = {
   'life.birth': (s, o, p) => `${s} and ${o} had a baby, ${p.baby || 'a new arrival'}`,

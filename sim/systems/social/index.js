@@ -112,7 +112,7 @@ function cmdRumour(w, a) {
   const subj = w.people.get(about); if (!subj) return false;
   // a rumour (not a fact): nothing in world.soc.facts backs it unless the claim happens to be true
   const seeds = a.seeds || 3; const pool = a.from != null ? [a.from] : [...(psOf(w, S, about)?.top || [])];
-  let n = 0; const ids = pool.length ? pool : [...S.ppl.keys()].slice(0, 20);
+  let n = 0; const ids = pool.length ? pool : w.living().slice(0, 20).map((q) => q.id);
   for (let i = 0; i < Math.max(seeds, 1) && ids.length; i++) { const id = ids[(r.next() * ids.length) | 0], ps = psOf(w, S, id); if (!ps || id === about) continue; learn(S, ps, mkBelief(S, kind, about, cl.obj || 0, cl.m || 1, 0.7, -5, 1, w.tick, undefined, { d: 1 })); n++; }
   w.emit('social.rumour', { actors: [about], salience: 0.15, tags: ['gossip'], payload: { kind, hops: 1, distorted: true, truth: !!truthOf(S, kind, about, cl.obj || 0, cl.m || 1) } });
   return n;

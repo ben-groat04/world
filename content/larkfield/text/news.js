@@ -42,8 +42,8 @@ export default {
   'news:school.result': ['{s.name} achieved a {p.grade} at school, the best in the year. "I just did the work," {s.they} {s.v:say}, "and ate a lot of toast."'],
   'headline:social.fallout': [{ t: 'Neighbours at odds over fence', when: { 'p.over': '' } }],
   'news:social.fallout': [{ t: 'A dispute between {s.name} and {o.name} has been rumbling for weeks. Observers say the cause is "a combination of parking and tone". Both parties declined to comment, then commented.', when: { 'p.over': '' } }],
-  'headline:social.reconcile': ['Truce at last for {s.first} and {o.first}'],
-  'news:social.reconcile': [{ t: '{s.name} and {o.name} were seen sharing a pot of tea at the cafe on {when|dow}, ending a long-running disagreement. #quote.reconcile#', when: { 'p.over': '' } }],
+  'headline:social.reconcile': ['Peace between {s.first} and {o.first}', 'Truce for {s.first} and {o.first}'],
+  'news:social.reconcile': [{ t: '{s.name} and {o.name} were seen sharing a pot of tea at the cafe on {when|dow}, ending a disagreement. #quote.reconcile#', when: { 'p.over': '' } }],
   'headline:*': ['Something happened in Larkfield', 'Neighbourhood notes: {s.name}'],
   'news:*': ['Details are still emerging. {s.name} was not immediately available for comment.'],
   // Arc-level feature pieces. render('news:arc.<kind>') with ctx.a/b protagonists and p.beats

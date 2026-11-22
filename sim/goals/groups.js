@@ -227,6 +227,7 @@ export class Groups {
       if (g.status === 'dissolved') continue;
       if (g.status === 'forming') { if (now - g.born > 120 * TICKS_PER_DAY * this.e.cfg.dayScale && g.goal === 0) this.dissolve(g, 'never got going'); continue; }
       if (g.nextMeet <= now) this.meet(g);
+      else if (Math.floor(now / TICKS_PER_DAY) % 14 === g.id % 14) for (const id of Object.keys(g.members).map(Number)) { const q = w.people.get(id); if (q && q.alive && !this.fit(g, q)) this.removeMember(g, id, 'no longer able to take part'); } // a diagnosis between meetings ends a sports membership within a fortnight
     }
   }
   meet(g) {

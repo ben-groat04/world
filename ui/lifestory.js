@@ -2,6 +2,7 @@
 // Pure over (world, person, facts); worker-safe. Nothing private or sensitive is shown: events/memories about mental health, addiction, crime, pregnancy loss and secrets are dropped.
 import { clauseOf, occLabel } from '../sim/sifter/storylines.js';
 import { jobNoun } from '../sim/text/jobs.js';
+import { deslash } from '../sim/text/mods.js';
 
 const hsh = (n) => { let x = Math.imul(n | 0, 2654435761) >>> 0; x ^= x >>> 15; x = Math.imul(x, 2246822519) >>> 0; return (x ^ (x >>> 13)) >>> 0; };
 const cap1 = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
@@ -11,7 +12,8 @@ const SENSITIVE = /bad patch|took over for a while|depress|anxi|mental|ptsd|psyc
 const WHY = { 'downsize or care': 'to downsize', 'bigger home': 'for a bigger home', buy: 'to buy', job: 'for work', partner: 'to be with a partner', 'eviction or sale': 'after a notice to leave', 'better schools': 'for the schools', 'schools suburbs': 'for the schools', space: 'for more space', rent: 'to bring the rent down', 'tenancy ends': 'when the tenancy ended', health: 'for health reasons', relationship: 'after a relationship ended', bereavement: 'after a bereavement', 'business sale': 'after selling the business', retirement: 'on retiring', family: 'to be near family', 'with the family': 'with the family', 'family nearby': 'to be near family', 'nearer family': 'to be nearer family', 'housing offer': 'after a housing offer', graduate: 'after graduating', housemates: 'to share with friends', 'flatmates leave': 'after the flatmates moved on', upsize: 'for a bigger home', downsize: 'to downsize', divorce: 'after a divorce', overcrowding: 'to escape overcrowding', 'status change': 'after a change in status', 'chain migration cluster': 'to be near relatives', 'lease end': 'when the lease ended', 'kids schools': 'for the schools' };
 
 /** Rewrites one stored memory into a plain timeline line, or null if it should not be shown. */
-export function memText(w, m) {
+export const memText = (w, m) => { const t = memText0(w, m); return t == null ? t : deslash(t); };
+function memText0(w, m) {
   let t = String(m.text || '').trim(); if (!t || SENSITIVE.test(t) || m.type === 'goal') return null;
   let r;
   if ((r = /^Moved to (.+?) \(([^)]*)\)\.?$/.exec(t))) return `Moved to ${r[1]}${WHY[r[2]] ? ' ' + WHY[r[2]] : ''}.`;
@@ -97,7 +99,7 @@ export function summaryOf(w, p, f) {
   else if (home) sents.push(`${cap1(he)} ${home}.`);
   // 4. the last turning points: recent events of the person's own that mattered (event wording only: it is subject-free and past tense)
   const rec = (f.timeline || []).filter((x) => x.ev && x.et !== 'health' && x.tick > w.tick - (w.TPY || 52560) * 3 && x.imp >= 3 && x.tick <= w.tick).slice(-2);
-  if (rec.length) { const lc1 = (t) => t.replace(/[.)]+$/, '').replace(/^[A-Z](?![A-Z])/, (c) => c.toLowerCase()); const W = (x) => when(w, x.tick), cp = (t) => cap1(t);
+  if (rec.length) { const lc1 = (t) => t.replace(/\.+$/, '').replace(/^[A-Z](?![A-Z])/, (c) => c.toLowerCase()); const W = (x) => when(w, x.tick), cp = (t) => cap1(t);
     const one = `${cp(W(rec[0]))} ${he} ${lc1(rec[0].text)}`, two = rec[1] ? (W(rec[1]) === W(rec[0]) ? `, and ${lc1(rec[1].text)}` : `, and ${W(rec[1])} ${he} ${lc1(rec[1].text)}`) : ''; sents.push(`${one}${two}.`); }
   return sents.join(' ');
 }

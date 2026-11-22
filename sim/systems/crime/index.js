@@ -143,7 +143,7 @@ export function createCrime() {
   const watchOf = (sid) => (C.watch[sid] ? 1 : 0);
 
   // ------------------------------------------------------------------ attempts. each returns true if an offence was committed
-  const rndHh = (r) => { const L = W.lf.households; for (let i = 0; i < 8; i++) { const h = L[(r.next() * L.length) | 0]; if (h && !h.gone && h.members.length) return h; } return null; };
+  const rndHh = (r) => { const L = liveHh(W); /* live households only: lf.households keeps every household ever (ids = index), so indexing the full array failed ~all picks by year 50 */ for (let i = 0; i < 8; i++) { const h = L[(r.next() * L.length) | 0]; if (h && !h.gone && h.members.length) return h; } return null; };
   const adultOf = (hh, r) => { const m = hh.members.map((i) => W.people.get(i)).filter((p) => p && p.alive && ageOf(p) >= 16); return m.length ? r.pick(m) : null; };
   function burglary(o, r) {
     const s = snap(), nc = 3, cands = []; const hot = C.hotL || (C.hotL = Object.keys(C.hot));

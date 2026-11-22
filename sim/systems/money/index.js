@@ -324,7 +324,7 @@ function monthly(w) {
     else if (f.pressured && stress < 0.4) f.pressured = false;
     if (stress >= 0.62) nPressured++;
     if (unpaidTot <= 0) f.hunger = 0;
-    for (const p of ps) { const fin = p.ext.pop.fin; fin.stress = f.stress; fin.savings = p.money; fin.debt = (fin.cc || 0) + (fin.payday || 0) + Math.max(0, -p.money); fin.arrears = p === head ? f.rentArrears + f.billArrears : 0; fin.gross = Math.round((fin.monthGross || 0) * 12); fin.net = Math.round((fin.monthNet || 0) * 12); p.debt = fin.debt; }
+    for (const p of ps) { const fin = p.ext.pop.fin; fin.stress = f.stress; fin.savings = Math.max(0, p.money); /* an overdraft is debt (counted below), not negative savings */ fin.debt = (fin.cc || 0) + (fin.payday || 0) + Math.max(0, -p.money); fin.arrears = p === head ? f.rentArrears + f.billArrears : 0; fin.gross = Math.round((fin.monthGross || 0) * 12); fin.net = Math.round((fin.monthNet || 0) * 12); p.debt = fin.debt; }
     // rare windfalls (bonus, prize, gift, inheritance from off-map kin)
     for (const p of adults) {
       const a = w.ageOf(p); if (!rng.chance(a >= 40 && a <= 72 ? 0.0011 : 0.0004)) continue;
@@ -390,7 +390,7 @@ export function createMoney() {
     },
     query: {
       balance: (id) => W.ledger.balance(id),
-      pressure: (x) => { const h = hhOfAny(W, x); if (!h || !h.fin) return null; const f = h.fin; return { stress: f.stress, ratio: f.ratio, buffer: f.buffer, arrears: f.rentArrears + f.billArrears, rentArrears: f.rentArrears, hunger: f.hunger, debt: livePeople(W, h).reduce((s, p) => s + (p.ext.pop.fin.cc || 0) + (p.ext.pop.fin.payday || 0), 0), claiming: f.claim, spiral: !!f.spiralEv }; },
+      pressure: (x) => { const h = hhOfAny(W, x); if (!h || !h.fin) return null; const f = h.fin; return { stress: f.stress, ratio: f.ratio, buffer: f.buffer, arrears: f.rentArrears + f.billArrears, rentArrears: f.rentArrears, hunger: f.hunger, debt: livePeople(W, h).reduce((s, p) => s + (p.ext.pop.fin.cc || 0) + (p.ext.pop.fin.payday || 0), 0), claiming: f.claim, spiral: !!f.spiralEv && livePeople(W, h).some((p) => ((p.ext.pop.fin.cc || 0) + (p.ext.pop.fin.payday || 0)) > 0) /* the flag outlives the borrowing by a year: only say 'borrowing' while high-cost debt is actually owed */ }; },
       // Household monthly budget. `income` and all cost lines are for the WHOLE HOUSEHOLD (partners' pay + benefits); when x is a person id the result also carries
       // that person's own take-home (`personNetMonth`/`personNetYear`, the same figure as p.ext.pop.fin.net) so a UI can show 'you £X of the household's £Y'
       // (the inspector earlier printed household income next to the person's own annual net, which looked inconsistent).

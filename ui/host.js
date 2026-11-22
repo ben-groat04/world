@@ -234,15 +234,15 @@ export class Host {
     const co = { press, unit, goals: goalList, partner: part, lst, ties: S(() => q.social.query.ties(id), []), now, wb };
     const richNow = now ? activityLabel(w, p, now, {}) : '';
     return {
-      id, name: nm(p), first: p.firstName, last: p.lastName, age: Math.floor(age), ageF: age, sex: p.sex, alive: !!p.alive, cause: p.causeOfDeath || null,
+      id, name: nm(p), first: p.firstName, last: p.lastName, age: Math.floor(age), ageF: age, sex: p.sex, alive: !!p.alive, died: !p.alive && p.deathTick != null, movedAway: !p.alive && !!p.emigrated, movedTo: p.emigratedTo || null, cause: p.causeOfDeath || null,
       seg: pop.seg, segLabel: SEG_LABEL[pop.seg] || '', role: pop.role, eth: pop.eth, born: pop.birthplace, bornUK: pop.bornUK, religion: pop.religion, yearsAtAddress: pop.yearsAtAddress, edu: pop.edu, car: !!pop.car, pets: pop.pets,
       home, household: { size: hh ? (hh.members ? hh.members.length : null) : null, members: mem }, unit: unit ? { tenure: unit.tenure, rent: unit.rent, bedrooms: unit.bedrooms, cond: r2(unit.cond), damp: !!unit.damp, notice: !!unit.notice, landlord: unit.landlord != null && w.people.has(unit.landlord) ? this.ref(unit.landlord) : null, address: unit.address, value: unit.value } : null,
       job: p.job, occLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', activity: pop.activity, jobInfo: job, workplace,
       money: { pressure: press, budget: bud, savings: Math.round(fin.savings || 0), debt: Math.round(fin.debt || 0), arrears: Math.round(fin.arrears || 0), net: Math.round(fin.net || 0), gross: Math.round(fin.gross || 0), burden: S(() => q.housing.query.rentBurden(id), 0) },
       health: { status: hst, mental: men, wellbeing: wb, mood: r2(p.mood || 0) }, needs: p.needs,
-      now: now ? { act: now.act, cat: now.cat, off: now.off, label: richNow || now.label, plain: now.label } : null, thought: thoughtFor(w, this.text, p, co) || '', bio, loc, offmap: !!(now && now.off),
+      now: now && p.alive ? { act: now.act, cat: now.cat, off: now.off, label: richNow || now.label, plain: now.label } : null, thought: p.alive ? thoughtFor(w, this.text, p, co) || '' : '', bio, loc, offmap: !!(now && now.off),
       story: this.safe(() => storyOf(this.sifter, w, id), null), goals: goalList, groups, partner: part, lifeStatus: lst, ties, life, drives: pop.drives, personality: p.personality, traits: p.traits, interests: p.interests,
-      portrait: { id: String(p.id), genes: p.genes, sex: p.sex, age, mood: p.mood, health: p.health, alive: !!p.alive }, tick: w.tick,
+      portrait: { id: String(p.id), genes: p.genes, sex: p.sex, age, mood: p.mood, health: p.health, alive: !!p.alive || !!p.emigrated }, tick: w.tick,
     };
   }
   buildingDetail(id) {

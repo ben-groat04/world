@@ -49,7 +49,7 @@ export function checkTimeline(w, p, tl) {
 
 export function lifeCheck(seed = 1, years = 10, log = () => {}) {
   const w = createLarkfieldWorld(seed), TPY = w.calendar.ticksPerYear, violations = [], bump = (v) => { for (const x of v) violations.push(x); };
-  const yrs0 = new Map(), unit0 = new Map(), movers = new Set(); for (const p of w.living()) { const q = p.ext.pop; if (q) { yrs0.set(p.id, q.yearsAtAddress); unit0.set(p.id, q.unit); } }
+  const yrs0 = new Map(), unit0 = new Map(), movers = new Set(), strikes = new Map(); for (const p of w.living()) { const q = p.ext.pop; if (q) { yrs0.set(p.id, q.yearsAtAddress); unit0.set(p.id, q.unit); } }
   const t0 = w.tick, end = t0 + Math.round(years * TPY); let month = 0;
   const stateCheck = () => {
     for (const p of w.living()) { const q = p.ext.pop; if (q && unit0.has(p.id) && unit0.get(p.id) !== q.unit) movers.add(p.id); }
@@ -67,18 +67,21 @@ export function lifeCheck(seed = 1, years = 10, log = () => {}) {
       if (age > 0 && q.yearsAtAddress > age + 0.3) bad('years at address > age', `${q.yearsAtAddress} > ${age.toFixed(1)}`);
       if (!(q.yearsAtAddress >= 0)) bad('bad yearsAtAddress', String(q.yearsAtAddress));
     }
-    // groups: members must be fit and old enough for what the group does
+    // groups: members must be fit and old enough for what the group does (rule restated here independently of the sim's own gate)
     try {
-      const G = w.goals && w.goals.groups; const list = G && (G.list ? G.list() : G.all ? G.all() : null);
-      if (list) for (const g of list) for (const id of (g.members || [])) { const m = w.people.get(id); if (!m || !m.alive) continue; const a = w.ageOf(m), h = m.ext.pop && m.ext.pop.health || {};
-        if (/five|football|run|sport|gym|climb|swim|yoga/i.test(g.kind || g.type || g.name || '') && (a > 68 || (h.limiting === 2) || (m.ext.pop.health && m.ext.pop.health.conds && m.ext.pop.health.conds.some((c) => /stroke|dementia|heart|copd|arthritis/.test(c)) && a > 60))) violations.push({ rule: 'group eligibility', id: m.id, name: m.firstName + ' ' + m.lastName, text: `${g.name || g.kind} member age ${a.toFixed(0)} ${h.limiting === 2 ? 'limiting condition' : ''}` });
-        if (a < 5 && /club|team|group/i.test(g.kind || g.name || '')) violations.push({ rule: 'group eligibility', id: m.id, name: m.firstName, text: `${g.name} member age ${a.toFixed(1)}` }); }
-    } catch { /* group API differs: ignored */ }
+      const Q = w.sys.goals.query;
+      for (const g of Q.groups({})) { const full = Q.group(g.id); if (!full) continue; const phys = /five-a-side|football|runner|cricket|netball|rugby|climb|swim/i.test(g.name) || g.kind === 'team';
+        for (const m of full.members) { const q = w.people.get(m.id); if (!q || !q.alive) continue; const a = w.ageOf(q), h = (q.ext.pop && q.ext.pop.health) || {}, conds = h.conds || [];
+          const bad = (why) => { const k = g.id + ':' + q.id + ':' + why; if (!strikes.has(k)) { strikes.set(k, 1); return; } /* a diagnosis lands between sweeps: only a member still unfit at the NEXT check (two months later) is a violation */ violations.push({ rule: 'group eligibility', id: q.id, name: `${q.firstName} ${q.lastName}`, text: `${g.name} (${g.kind}) member aged ${a.toFixed(0)}: ${why}` }); };
+          if (a < 8) bad('too young for any group');
+          if (phys && a > 72) bad('too old for a sports group'); if (phys && /five-a-side|football|team/i.test(g.name + g.kind) && a > 62) bad('too old for five-a-side');
+          if (phys && (h.limiting >= 2 || conds.some((c) => /stroke|mobility|dementia|heart|copd/i.test(c)))) bad(`physical group with ${h.limiting >= 2 ? 'a limiting condition' : conds.join('/')}`); } }
+    } catch (e) { violations.push({ rule: 'group check crashed', id: -1, name: '', text: String(e && e.message) }); }
   };
   while (w.tick < end) { w.run(TPD * 30); month++; if (month % 2 === 0) stateCheck(); }
   // end of run: tenure tracked the move-in date for people who did not move
   let tenureChecked = 0;
-  for (const p of w.living()) { const q = p.ext.pop; if (!q || !yrs0.has(p.id) || unit0.get(p.id) !== q.unit || movers.has(p.id)) continue; const exp = yrs0.get(p.id) + years; tenureChecked++; if (Math.abs(q.yearsAtAddress - exp) > 0.35) violations.push({ rule: 'tenure not updating', id: p.id, name: `${p.firstName} ${p.lastName}`, text: `years here ${q.yearsAtAddress} expected ~${exp.toFixed(1)}` }); }
+  for (const p of w.living()) { const q = p.ext.pop; if (!q || !yrs0.has(p.id) || unit0.get(p.id) !== q.unit || movers.has(p.id) || p.memories.some((m) => m.tick > t0 && /^Moved back in|^Moved out of the family|^Left home/.test(m.text))) continue; /* a person who left home and came back starts a new stay */ const exp = yrs0.get(p.id) + years; tenureChecked++; if (Math.abs(q.yearsAtAddress - exp) > 0.35) violations.push({ rule: 'tenure not updating', id: p.id, name: `${p.firstName} ${p.lastName}`, text: `years here ${q.yearsAtAddress} expected ~${exp.toFixed(1)}` }); }
   // timelines
   let people = 0, lines = 0;
   for (const p of w.people.values()) {

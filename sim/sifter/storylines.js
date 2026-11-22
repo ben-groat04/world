@@ -4,6 +4,7 @@
 //   - rank = salience carried by the beats x recency x variety of what happened (distinct event types) x kind weight (what a viewer cares about).
 import { projectPhrase } from './projectwords.js';
 import { jobNoun } from '../text/jobs.js';
+import { deslash } from '../text/mods.js';
 import { beatSentence } from './beatwords.js';
 const MAXKIND = 3;
 const KIND_W = { romance: 1.35, new_family: 1.3, bereavement: 1.2, illness: 1.15, job_loss: 1.1, breakup: 1.1, money_squeeze: 1.05, falling_out: 1.0, welcome: 1.0, ambition: 0.95, newcomer: 0.85, career: 0.8, scandal: 0.9, group_saga: 0.9 };
@@ -122,7 +123,7 @@ export function clauseOf(ev, w, ids) {
   const f = PH[ev.type]; if (!f) return null;
   const names = ids.map((i) => firstName(w, i)); let r;
   try { r = f(ev.payload || {}, { w, ev, ids: new Set(ids), names, his: hisOf(w, ids) }); } catch (e) { return null; }
-  if (!r) return null; if (typeof r === 'string') r = { t: r }; return { t: r.t, x: r.x || '', st: r.st || '', key: KEY(ev.type), type: ev.type };
+  if (!r) return null; if (typeof r === 'string') r = { t: r }; return { t: deslash(r.t), x: deslash(r.x || ''), st: r.st || '', key: KEY(ev.type), type: ev.type };
 }
 
 /** Plain recent beats of an arc as [{tick, text, st, key, type, eid, actors}], oldest first, noise removed, duplicates in a row collapsed. */

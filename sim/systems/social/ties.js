@@ -16,7 +16,7 @@ export { doorDist };
 
 // Extra need for company under 25 (Luhmann & Hawkley 2016). Was 0.25; lowered to 0.15 once school/online ties existed (the larger value double-counted network formation, which the youth now go through explicitly).
 const YOUTH_NEED = 0.15;
-export function psOf(w, S, id) { let s = S.ppl.get(id); if (s === undefined) { const p = w.people.get(id); s = p ? importPerson(w, S, p) : null; } return s; }
+export function psOf(w, S, id) { let s = S.ppl.get(id); if (s === undefined) { const p = w.people.get(id); s = p && !p._arch ? importPerson(w, S, p) : null; } return s; } // archived stubs are not re-imported (would resurrect their social state for ever)
 
 /** Build a person's social state from the generated network (p.ext.pop.ties) and personal parameters. */
 export function importPerson(w, S, p) {

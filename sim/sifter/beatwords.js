@@ -11,7 +11,7 @@ const nw = (n) => (n >= 0 && n < NUM.length ? NUM[n] : String(n));
 const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
 const round = (n) => (n >= 2000 ? Math.round(n / 500) * 500 : n >= 400 ? Math.round(n / 50) * 50 : Math.round(n / 10) * 10);
 const lst = (a) => (a.length <= 1 ? a.join('') : a.length === 2 ? a.join(' and ') : a.length === 3 ? a.slice(0, 2).join(', ') + ' and ' + a[2] : a.slice(0, 2).join(', ') + ' and ' + nw(a.length - 2) + ' others');
-import { a_an as aAn } from '../text/mods.js';
+import { a_an as aAn, deslash } from '../text/mods.js';
 
 /** Lead-in phrases by gap since the previous beat (days). */
 function leads(g, h) {
@@ -130,6 +130,6 @@ export function beatSentence(b, p, c, fallback) {
   if (lead && t[0] !== '{' && !(c.keep || []).some((k) => k && t.startsWith(k))) t = t[0].toLowerCase() + t.slice(1);
   let s = (lead ? lead + ' ' : '') + t + tail;
   s = s.replace(/\{(\w+)\}/g, (m, k) => (k === 'n' ? c.n : k === 'they' ? c.pro : k === 'They' ? c.pro[0].toUpperCase() + c.pro.slice(1) : k === 'their' ? c.their : k === 'them' ? c.them : k === 'was' ? (c.one && c.pro !== 'they' ? 'was' : c.one ? 'was' : 'were') : k === 'has' ? (c.one && c.pro !== 'they' ? 'has' : 'have') : k === 'is' ? (c.one && c.pro !== 'they' ? 'is' : 'are') : k === 'at' ? c.at || '' : k === 'o' ? c.o || '' : m));
-  return s[0].toUpperCase() + s.slice(1);
+  s = deslash(s); return s[0].toUpperCase() + s.slice(1);
 }
 export const hasBeatWords = (type) => !!TV[type];

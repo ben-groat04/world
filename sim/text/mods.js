@@ -45,7 +45,9 @@ function tidyBase(s) {
 }
 
 const SING = { days: 'day', weeks: 'week', months: 'month', years: 'year', hours: 'hour', minutes: 'minute', mins: 'min', replies: 'reply', times: 'time', messages: 'message', likes: 'like', comments: 'comment', posts: 'post', things: 'thing', visits: 'visit', people: 'person', neighbours: 'neighbour', households: 'household', residents: 'resident', notices: 'notice', letters: 'letter' };
+/** "hearing/sight loss" -> "hearing or sight loss": taxonomy slashes never belong in prose (and/or, w/, 24/7, s/he excepted). */
+export const deslash = (s) => String(s).replace(/(?<![\w/])([A-Za-z]{2,})\/([A-Za-z]{2,})(?![\w/])/g, (m, a, b) => (/^(and|w|n|a|s|he|him|his|they|yes)$/i.test(a) && /^(or|c|a|e|she|her|them|their|no)$/i.test(b) ? m : `${a} or ${b}`));
 /** Final tidy: spacing, punctuation, articles by sound, doubled words, and number agreement ("1 replies" -> "1 reply", "for 0 days" -> "for less than a day"). */
 export function tidy(s) {
-  return tidyBase(s).replace(/\bfor 0 (day|week|month|year|hour)s\b/g, 'for less than a $1').replace(/(^|[^\d.,£/:-])1 (days|weeks|months|years|hours|minutes|mins|replies|times|messages|likes|comments|posts|things|visits|people|neighbours|households|residents|notices|letters)\b/g, (m, pre, n) => pre + '1 ' + SING[n]);
+  return deslash(tidyBase(s)).replace(/\bfor 0 (day|week|month|year|hour)s\b/g, 'for less than a $1').replace(/(^|[^\d.,£/:-])1 (days|weeks|months|years|hours|minutes|mins|replies|times|messages|likes|comments|posts|things|visits|people|neighbours|households|residents|notices|letters)\b/g, (m, pre, n) => pre + '1 ' + SING[n]);
 }

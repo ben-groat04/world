@@ -28,7 +28,7 @@ const STR = { burglary: 'a burglary', theft: 'a theft', vehicle: 'a vehicle brea
 // tunable mechanism parameters (meaning in comments); OUT = outsider attempts per year at full opportunity (a motivated stranger passing through)
 export const PARAMS = {
   K: 0.22,                // baseline offending episodes/yr of a peak-age male with average risk factors (most episodes are petty and local or elsewhere in the city)
-  impulse: 2.2,           // log-hazard weight of the impulse-control driver at its maximum (teens): the age gradient of offending comes from this plus the bonds, not from a curve
+  impulse: 1.0,           // log-hazard weight of the impulse-control driver at its maximum (teens): the age gradient of offending comes from this plus the bonds, not from a curve
   away: 0.55,             // share of resident episodes that happen elsewhere in the city (still feed their record)
   OUT: { burglary: 20, theft: 45, vehicle: 55, bike: 40, theftperson: 50, shoplift: 85, damage: 72, asb: 60, assault: 300, harass: 100, publicorder: 14, sexual: 6 },
   // NIGHT-TIME-ECONOMY EXPOSURE (residents on a night out in the city centre, off the map): hazard per person-hour at the Friday/Saturday peak, before drink and sex pairing.
@@ -40,6 +40,7 @@ export const PARAMS = {
   // (previously 20% of young men a year, ~5x CSEW). visitorShare = share of anonymous-stranger confrontations on the map whose target is a non-resident. Set so that resident prevalence matches CSEW
   // (stranger violence 0.7% of adults, 2.2% of 16-24s; ONS Nature of violent crime YE Mar 2024); the attempt stream (OUT.assault) is unchanged, so recorded totals are kept.
   visitorShare: 0.9,
+  nteElast: 0.4,          // elasticity of the visitor stream (assault / public order) to the number of open licensed premises
   lifeW: 3.0,             // log-hazard of being out in risky settings per unit of low conscientiousness (self-control); heterogeneity that makes the same people victims again
   repeatBoost: 3.0, repeatDays: 120, overlap: 1.6, // recent-victim hazard multiplier (1 + boost x e^(-t/days)); victim-offender overlap multiplier
   sexPair: 0.47,          // women's relative chance of being the counterpart of a stranger fight: male aggressors (~80%) pick same-sex peers (~80%) => victims ~68% male (CSEW: stranger violence victims ~2:1 male)
@@ -90,8 +91,9 @@ export function createCrime() {
   // accumulate with it (Sampson & Laub 1993 / 2003: a good marriage, steady work and parenthood each cut offending; Moffitt 1993: adolescence-limited offending).
   //   IMPULSE   sensation seeking / weak impulse control: high through the teens, falls through the 20s as self-regulation matures (Steinberg 2008 Dev Review; Duell et al. 2018 in 11 countries). Logistic, midpoint 21 y.
   //   AUTONOMY  unsupervised time with peers away from adults: rises through adolescence, and is what makes offending possible at 11-14 (Osgood et al. 1996, routine activities and deviant behaviour). Logistic, midpoint 13.5 y.
+  //   CAPACITY  physical capacity and routine exposure for street offending, falls from the 50s (strength, stamina, fewer nights out): logistic, midpoint 58 y.
   //   BONDS     partner (cohabiting/married more than dating), job, child, in `risk` below; offending peers (monthlyRisk) and an offending record (state dependence) accumulate with age and make desistance gradual.
-  const IMPULSE = (a) => 1 / (1 + Math.exp((a - 21) / 3.5)), AUTONOMY = (a) => 1 / (1 + Math.exp(-(a - 13.5) / 1.1)), X0 = 2.31;
+  const IMPULSE = (a) => 1 / (1 + Math.exp((a - 21) / 3.5)), AUTONOMY = (a) => 1 / (1 + Math.exp(-(a - 13.5) / 1.1)), CAPACITY = (a) => 1 / (1 + Math.exp((a - 58) / 5)), X0 = 1.76;
   function risk(p) {
     const a = ageOf(p), c = crOf(p); if (a < 11 || a > 80 || !p.alive) return 0; const q = p.ext.pop, hl = p.ext.hl, pe = p.personality, hh = hhOf(p), M = p.sex === 'M';
     let x = (M ? 1.1 : 0) + 1.4 * (0.5 - pe.conscientiousness) + 1.0 * (0.5 - pe.agreeableness) + (p.traits.includes('hothead') ? 0.45 : 0) + PARAMS.impulse * IMPULSE(a);
@@ -101,7 +103,7 @@ export function createCrime() {
     if (q) { if (q.activity === 'employed') x -= 0.4; if (q.edu === 'none') x += 0.25; }
     if (p.romance && p.romance.partnerId != null) x -= p.romance.status === 'dating' ? 0.3 : 0.7; if (p.family.childrenIds.length) x -= 0.3;
     if (c.vt.assault) x += 0.3;
-    return PARAMS.K * AUTONOMY(a) * Math.exp(Math.min(x - X0, 2.0));
+    return PARAMS.K * AUTONOMY(a) * CAPACITY(a) * Math.exp(Math.min(x - X0, 2.0));
   }
   function monthlyRisk() {
     const act = [], S = W.sys.social ? W.sys.social.query : null; let tot = 0;
@@ -332,7 +334,7 @@ export function createCrime() {
     for (const t of Object.keys(PARAMS.OUT)) {
       let lam = PARAMS.OUT[t] / H * (PROFILE[PROF_OF[t]](h, dow) / C.norm[t]); if (wave && (!wave.type || wave.type === t)) lam *= wave.mult;
       if (t === 'asb') lam *= 1 + 0.5 * (1 - svc('youth')) + 0.3 * (1 - svc('bins'));
-      if (t === 'publicorder' || t === 'assault') lam *= 1 + 0.1 * (1 - C.police.cap);
+      if (t === 'publicorder' || t === 'assault') { lam *= 1 + 0.1 * (1 - C.police.cap); lam *= C.nteF; } // visitors come for the night-time economy: the stream follows the number of licensed premises (see monthly)
       let n = pois(r, lam); while (n-- > 0) ATTEMPT[t](null, r);
     }
     // night-time-economy exposure of residents who are out in the city centre (off the map): stranger violence, theft from the person and sexual offences, with the same guardianship logic
@@ -384,6 +386,10 @@ export function createCrime() {
   }
   function monthly(w) {
     const r = R(w.tick, 'mo'); monthlyRisk();
+    // NIGHT-TIME-ECONOMY SIZE. Visitors (the anonymous stranger stream) are drawn by pubs, bars, restaurants and takeaways, so their volume follows how many of those are open relative to day 1, with an
+    // elasticity below 1 (violence rises with licensed-outlet density, ~0.2-0.5: Livingston 2008 Addiction, Home Office 2012 alcohol-related-violence reviews). Without this the stream was a fixed per-ward
+    // number, so per-resident recorded violence fell whenever the population grew.
+    { let n = 0; for (const b of w.buildings.values()) if (b.lf && PUBS.has(b.lf.template)) n++; if (C.pub0 == null) C.pub0 = Math.max(1, n); C.nteF = Math.pow(Math.max(1, n) / C.pub0, PARAMS.nteElast); }
     // drug offences are found by police (stop and search, searches during other contact), not reported by victims; dealing is small and mostly invisible
     for (const p of w.living()) { const hl = p.ext.hl; if (!hl || !hl.drug || ageOf(p) < 14) continue; const c = crOf(p);
       c.deal = c.deal || (c.lam > 0.5 && hl.drug > 0 && r.next() < 0.02 ? 1 : 0); const vis = (ageOf(p) < 30 ? 1.4 : 0.7) * (hl.drug === 2 ? 1.3 : 1);
@@ -440,7 +446,7 @@ export function createCrime() {
     init(world) {
       W = world; for (const [t] of EV) if (!world.events.registry.has(t)) world.registerEventType(t, { doc: 'A crime incident', payload: { kind: 'string', rec: 'boolean' }, template: t });
       for (const [t, d, pl] of EV2) if (!world.events.registry.has(t)) world.registerEventType(t, { doc: d, payload: pl, template: t });
-      C = world.lf.crime = { seq: 1, exp: {}, rec: {}, rep: {}, det: {}, ch: {}, conv: {}, sent: {}, away: {}, vicBand: {}, offBand: {}, log: [], q: [], moveQ: [], hot: {}, sec: {}, watch: {}, street: {}, dom: {}, shopLoss: {}, attend: [], police: { cap: 1 }, wave: null, act: [], cum: [], lamTot: 0, t0: world.tick, norm: {}, hom: {}, moved: {}, domStart: {}, domEnd: {} };
+      C = world.lf.crime = { seq: 1, nteF: 1, pub0: null, exp: {}, rec: {}, rep: {}, det: {}, ch: {}, conv: {}, sent: {}, away: {}, vicBand: {}, offBand: {}, log: [], q: [], moveQ: [], hot: {}, sec: {}, watch: {}, street: {}, dom: {}, shopLoss: {}, attend: [], police: { cap: 1 }, wave: null, act: [], cum: [], lamTot: 0, t0: world.tick, norm: {}, hom: {}, moved: {}, domStart: {}, domEnd: {} };
       for (const t of Object.keys(PARAMS.OUT)) { let s = 0; for (let dw = 0; dw < 7; dw++) for (let h = 0; h < 24; h++) s += PROFILE[PROF_OF[t]](h, dw); C.norm[t] = s / 168; }
       // day-1 inputs: prior records sampled from the same propensity that drives later offending (persistent offenders exist before the record starts)
       for (const p of world.living()) { const c = crOf(p); const lam = risk(p), a = ageOf(p); if (a > 18 && R(p.id, 'prior').next() < 1 - Math.exp(-lam * Math.min(8, a - 14) * 0.3)) c.pri = 1 + (R(p.id, 'p2').next() < 0.3 ? 1 : 0); }

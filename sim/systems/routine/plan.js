@@ -168,7 +168,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
     else if (rel === 'Muslim' && rec.dow === 6 && dice(id, D, 61) < q.religiosity * 0.3) add(10, 11.5, A.worship, 1, wb);
     else if ((rel === 'Hindu' || rel === 'Sikh') && rec.dow === 6 && dice(id, D, 60) < q.religiosity * 0.5) { const d = dest('hindu_temple_gurdwara'); add(10, 10.5, A.commute, 4, d * 8 + (q.car ? MODE_IDX.drive : MODE_IDX.bus)); add(10.5, 12.3, A.worship, 3, d); add(12.3, 12.8, A.commute, 4, d * 8 + (q.car ? MODE_IDX.drive : MODE_IDX.bus), 1); }
   }
-  const fixed = blocks.filter((b) => true).sort((x, y) => x.a - y.a);
+  const fixed = blocks.sort((x, y) => x.a - y.a);
   // resolve overlaps among anchors (keep earlier-starting; trim later)
   const tl = []; let cur = wake;
   for (const b of fixed) { if (b.b <= cur) continue; if (b.a < cur) b.a = cur; tl.push(b); cur = b.b; }
@@ -253,15 +253,15 @@ export function buildPlan(W, p, D, wakeTickAt) {
   const add2 = (a, b, act) => { if (b - a > 0.02) final.push({ a, b, act, pt: act === A.nap && false ? 0 : 0, pid: 0, aux: 0 }); };
   const parts = []; // merged timeline
   c = wake;
-  for (const b of tl) { if (b.a > c) { fill(c, b.a); } parts.push(...final.splice(0)); parts.push(b); c = Math.max(c, b.b); }
-  fill(c, Math.max(c, bed)); parts.push(...final.splice(0));
+  for (const b of tl) { if (b.a > c) { fill(c, b.a); } for (let i = 0; i < final.length; i++) parts.push(final[i]); final.length = 0; parts.push(b); c = Math.max(c, b.b); }
+  fill(c, Math.max(c, bed)); for (let i = 0; i < final.length; i++) parts.push(final[i]); final.length = 0;
   parts.sort((x, y) => x.a - y.a);
   // ---- emit entries (merge contiguous identical states), then the sleep block and the BUILD sentinel at the next wake
-  const e = []; let lastKey = '', prev = wakeTickAt - 1;
+  const e = []; let lAct = -1, lPt = -1, lPid = -1, lAux = -1, prev = wakeTickAt - 1;
   for (const b of parts) {
     if (b.b - b.a < 0.45 && b.pt === 0 && e.length && (b.act >= A.tv || b.act === A.chores) ) continue; // too short to be its own activity: previous state runs on
     if (b.b - b.a < 0.3 && b.pt === 0 && e.length && (b.act === A.dinner || b.act === A.lunch || b.act === A.breakfast)) continue; // a 10-minute 'meal' squeezed between two trips is not a meal
-    const k = b.act + ':' + b.pt + ':' + b.pid + ':' + (b.aux || 0); if (k === lastKey) continue; lastKey = k;
+    const ax = b.aux || 0; if (b.act === lAct && b.pt === lPt && b.pid === lPid && ax === lAux) continue; lAct = b.act; lPt = b.pt; lPid = b.pid; lAux = ax;
     const tk = Math.max(hourToTick(cal, D, b.a), prev + 1); prev = tk;
     e.push(tk, b.act, b.pt, b.pid, b.aux || 0);
   }
@@ -278,6 +278,7 @@ const HOME_W = {
   teen: [['gaming', 3], ['phone', 3], ['tv', 2], ['homework', 2], ['online', 2]],
   adult: [['tv', 2.5], ['phone', 2], ['chores', 3.2], ['rest', 1.5], ['gaming', 0.8], ['cook', 0.8], ['online', 1]],
 };
+const ADULT_W = new Float64Array(7), ADULT_ACT = HOME_W.adult.map(([a]) => A[a]);
 function pickHome(W, p, rec, h, age, wend, ev, D, k, q) {
   const id = p.id, r = dice(id, D, 400 + k);
   if (age < 12) { if (h < 17 && !wend && rec.schoolDay) return A.play; const l = HOME_W.child; return pickW(l, r); }
@@ -293,7 +294,8 @@ function pickHome(W, p, rec, h, age, wend, ev, D, k, q) {
   if (h >= 8 && h < 13 && wend && r < 0.25) return A.chores;
   if (q.activity === 'retired' && h < 17 && r < 0.18) return A.garden;
   if (q.activity === 'retired' && r < 0.3) return A.tv;
-  const w = HOME_W.adult.map(([a, x]) => [a, x * (a === 'gaming' ? (age < 35 ? 1.6 : 0.4) : a === 'chores' ? (h < 12 ? 1.4 : 1) : a === 'cook' ? 0 : a === 'tv' ? (ev ? 2 : 0.9) : a === 'online' ? (L.digital ? 1.3 : 0.6) : 1)]);
-  return pickW(w, r);
+  // adult home-activity weights (tv, phone, chores, rest, gaming, cook, online), same values as HOME_W.adult x the modifiers below, drawn without allocating (this runs for every gap of every plan)
+  const W7 = ADULT_W; W7[0] = 2.5 * (ev ? 2 : 0.9); W7[1] = 2; W7[2] = 3.2 * (h < 12 ? 1.4 : 1); W7[3] = 1.5; W7[4] = 0.8 * (age < 35 ? 1.6 : 0.4); W7[5] = 0; W7[6] = L.digital ? 1.3 : 0.6;
+  let tw = 0; for (let i = 0; i < 7; i++) tw += W7[i]; let x = r * tw; for (let i = 0; i < 7; i++) { x -= W7[i]; if (x <= 0) return ADULT_ACT[i]; } return ADULT_ACT[0];
 }
 function pickW(list, r) { let t = 0; for (const [, w] of list) t += w; r *= t; for (const [a, w] of list) { r -= w; if (r <= 0) return A[a]; } return A[list[0][0]]; }

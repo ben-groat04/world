@@ -16,13 +16,14 @@ import { makeLife, makeCtx } from './life.js';
 const CATS = ['sleep', 'work', 'commute', 'errand', 'out', 'social', 'home', 'chores', 'care', 'eat'];
 export const TU_CATS = CATS;
 
+const HOME_TH = ACT_LABEL.map((l) => l + ' at home'); // the common case, built once instead of a string concat per transition
 function enter(world, ctx, p, rt, act, pt, pid, aux, tick) {
   // time-use accounting of the activity just finished
   if (ctx.tu !== null && rt.since >= 0 && rt.adult) { const k = (rt.dow >= 5 ? 1 : 0) * ctx.nseg + rt.seg; ctx.tu[k * CATS.length + rt.cat] += tick - rt.since; if (rt.pt === 0) ctx.tuh[k] += tick - rt.since; }
   const same = (pt === 0 && p.locationId === p.homeId) || (pt === 1 && p.locationId === pid);
   if (same) { // same place, new activity: no movement/occupancy work
     const b = world.buildings.get(p.locationId);
-    p.thought = ACT_LABEL[act] + (p.locationId === p.homeId ? ' at home' : ' at ' + b.name);
+    p.thought = p.locationId === p.homeId ? HOME_TH[act] : ACT_LABEL[act] + ' at ' + b.name;
     rt.act = act; rt.cat = CATS.indexOf(ACT_CAT[act]); rt.since = tick; rt.dow = world.time.dow; rt.pt = pt; rt.pid = pid; p.lastAction = ACTS[act][0]; return;
   }
   const pb = p.locationId;
@@ -36,7 +37,7 @@ function enter(world, ctx, p, rt, act, pt, pid, aux, tick) {
     const bb = world.buildings.get(bid);
     p.locationId = bid; bb.occupants.add(p); p.x = bb.door.x; p.y = bb.door.y;
     if (bb.open) { p.x += (tick * 7 + p.id * 3) % 9 - 4; world._gridAdd(p); } else p.inside = true;
-    th = ACT_LABEL[act] + (bid === p.homeId ? ' at home' : ' at ' + bb.name);
+    th = bid === p.homeId ? HOME_TH[act] : ACT_LABEL[act] + ' at ' + bb.name;
     if (act === A.visit && aux) { const f = world.people.get(aux); if (f) th = 'Visiting ' + f.firstName + ' at ' + bb.name; }
   } else if (pt === 2) {
     const hb = world.buildings.get(p.homeId); p.x = hb.door.x; p.y = hb.door.y; world._gridAdd(p); th = ACT_LABEL[act] + ' nearby';
@@ -58,6 +59,7 @@ function venueOpenNow(world, bid, ticksAhead = 0) {
   return (iv => isOpenAt(iv, t.hour + t.minute / 60) && isOpenAt(iv, Math.min(23.9, t.hour + t.minute / 60 + ticksAhead / 6) - 0.01))(openingsFor(world.pack, v, t.dow, t.bankHoliday));
 }
 
+const SLOT = { tick: 0, until: 0, act: '', ptype: 0, pid: 0 };
 export function wake(world, ctx, p) {
   const rt = p.ext.rt, tick = world.tick;
   let pl = rt.plan, i = rt.pi;
@@ -69,7 +71,8 @@ export function wake(world, ctx, p) {
   const nt = pl[o + STRIDE];
   const gs = world.sys.goals;
   if (gs !== undefined && gs.query && gs.query.override) {
-    let ov = gs.query.override(p, { tick, until: nt, act: ACTS[act][0], ptype: pt, pid });
+    const sl = SLOT; sl.tick = tick; sl.until = nt; sl.act = ACTS[act][0]; sl.ptype = pt; sl.pid = pid; // one reused slot object (override only reads it): wake runs ~10x per person-day
+    let ov = gs.query.override(p, sl);
     // goal-driven visits to a venue (coffee with a friend, club meeting) must respect its opening hours (no 03:30 cafe customers): a closed venue means the goal step waits, the plan slot stands
     if (ov && ov.ptype === 1 && ov.pid != null && !venueOpenNow(world, ov.pid, nt - tick)) ov = null;
     if (ov) { act = A.goal; pt = ov.ptype ?? pt; pid = ov.pid ?? pid; aux = ov.aux || 0; rt.goalLabel = ov.label || 'Pursuing a goal'; }

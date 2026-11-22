@@ -109,6 +109,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .status { margin: 0; font-size: .85rem; color: var(--muted); min-width: 0; overflow-wrap: anywhere; }
 .status.err { color: var(--d); }
 .chat { display: flex; flex-direction: column; gap: 1rem; min-height: 12rem; }
+.livedot { display: inline-block; width: .5rem; height: .5rem; border-radius: 50%; background: var(--d); margin-right: .35rem; animation: blink 1.4s infinite; }
 .time { font-weight: 400; letter-spacing: 0; color: var(--muted); margin-left: .4rem; }
 .round { display: flex; align-items: center; gap: .75rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: .5rem; }
 .round::before, .round::after { content: ""; flex: 1; height: 1px; background: var(--line); }
@@ -169,7 +170,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .seg button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
 .count { margin-left: auto; font-family: var(--font-mono); font-size: .75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 @media (max-width: 520px) { .count { margin-left: 0; } .btn { padding: 0 .5rem; } .group:first-child { flex-wrap: wrap; } }
-@media (prefers-reduced-motion: reduce) { .new, .typing .bubble i { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .new, .typing .bubble i, .livedot { animation: none; } }
 </style>
 
 <div class="wrap">
@@ -270,7 +271,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   const nonPass = r => r.turns.filter(t => !t.pass && !t.clock).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
-  let allRuns = [], runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
+  let allRuns = [], liveRun = null, userPicked = false, runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
   let speed = +store.get('chatSpeed') || 1; if (!SPEEDS.includes(speed)) speed = 1;
   const vis = () => true;
 
@@ -285,7 +286,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   // Recompute the visible list; if the shown run is gone, switch to the newest remaining.
   function applyHidden(initial) {
     store.set('chatHidden', JSON.stringify(hidden));
-    runs = allRuns.filter(r => !hidden.includes(r.id));
+    runs = (liveRun ? [liveRun] : []).concat(allRuns.filter(r => !hidden.includes(r.id)));
     $('cleared').hidden = runs.length > 0;
     $('layout').hidden = $('barOuter').hidden = !runs.length;
     if (runs.length) { if (!run || !runs.includes(run)) selectRun(runs[0].id, initial); else renderPicker(); }
@@ -294,11 +295,11 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   function hideRun(id) { if (!hidden.includes(id)) hidden.push(id); applyHidden(); }
   function renderPicker() {
     $('runs').innerHTML = runs.map(r => `<li><button class="run" type="button" data-id="${esc(r.id)}" aria-current="${r === run}">
-      <span class="run-l1"><span>${esc(fmtDate(r.started))}</span><span>${esc(r.model)}</span></span>
+      <span class="run-l1"><span>${r.live && r.status === 'running' ? '<i class="livedot"></i>Live \u00b7 ' : ''}${esc(fmtDate(r.started))}</span><span>${esc(r.model)}</span></span>
       <span class="run-l2">${r.topic ? esc(r.topic) : 'Open conversation'}</span>
       <span class="run-l3">${nonPass(r)} messages</span></button>
       <button class="run-x" type="button" data-x="${esc(r.id)}" aria-label="Remove ${esc(fmtDate(r.started))} ${r.topic ? esc(r.topic.slice(0, 40)) : 'open conversation'} from list">\u00d7</button></li>`).join('');
-    $('runSelect').innerHTML = runs.map(r => `<option value="${esc(r.id)}"${r === run ? ' selected' : ''}>${esc(fmtDate(r.started))} \u00b7 ${esc(r.model)} \u00b7 ${r.topic ? esc(r.topic.slice(0, 40)) : 'open'}</option>`).join('');
+    $('runSelect').innerHTML = runs.map(r => `<option value="${esc(r.id)}"${r === run ? ' selected' : ''}>${r.live && r.status === 'running' ? 'Live \u00b7 ' : ''}${esc(fmtDate(r.started))} \u00b7 ${esc(r.model)} \u00b7 ${r.topic ? esc(r.topic.slice(0, 40)) : 'open'}</option>`).join('');
   }
 
   function renderInfo() {
@@ -319,7 +320,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     if (typing) {
       html += `<div class="msg typing ${cls(typing.who)}" aria-label="${esc(typing.who)} is typing"><div class="avatar" aria-hidden="true">${esc(typing.who[0])}</div><div class="bubble"><i></i><i></i><i></i></div></div>`;
     }
-    if (pos >= turns.length) {
+    if (run.live && run.status === 'running' && pos >= turns.length && !typing && !reduced()) html += '<div class="msg typing who-O" aria-label="Conversation in progress"><div class="avatar" aria-hidden="true">\u2026</div><div class="bubble"><i></i><i></i><i></i></div></div>';
+    if (pos >= turns.length && !(run.live && run.status === 'running')) {
       html += run.ended === 'everyone passed' ? '<div class="end">End</div>' : '<div class="end">Cut off</div>';
     }
     $('chat').innerHTML = html;
@@ -368,12 +370,13 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   function init() {
     $('speeds').innerHTML = SPEEDS.map(s => `<button type="button" data-s="${s}" aria-pressed="${s === speed}">${s}x</button>`).join('');
     $('runs').addEventListener('click', e => {
+      userPicked = true;
       const x = e.target.closest('.run-x'); if (x) { hideRun(x.dataset.x); return; }
       const b = e.target.closest('.run'); if (b) selectRun(b.dataset.id);
     });
     $('selRemove').addEventListener('click', () => hideRun($('runSelect').value));
     $('showAll').addEventListener('click', () => { hidden = []; applyHidden(true); });
-    $('runSelect').addEventListener('change', e => selectRun(e.target.value));
+    $('runSelect').addEventListener('change', e => { userPicked = true; selectRun(e.target.value); });
     $('play').addEventListener('click', () => playing ? pause() : play());
     $('fwd').addEventListener('click', () => step(1));
     $('back').addEventListener('click', () => step(-1));
@@ -439,12 +442,48 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   }
   initNew();
 
+  // Live view: Claude writes doc live/current and collection live_turns; the page only reads them.
+  async function initLive() {
+    let db = null, unsubTurns = null;
+    try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch (e) { db = null; }
+    if (!db) return;
+    const atBottom = () => innerHeight + scrollY >= document.documentElement.scrollHeight - 80;
+    const refresh = (select) => { applyHidden(); if (select && !userPicked && liveRun) selectRun(liveRun.id, true); };
+    const watchTurns = id => db.collection('live_turns').where('run', '==', id).orderBy('i').onSnapshot(snap => {
+      if (!liveRun || liveRun.id !== id) return;
+      const was = run === liveRun && pos >= liveRun.turns.length, follow = atBottom();
+      liveRun.turns = snap.docs.map(d => { const x = d.data(); return { who: x.who, text: x.text || '', at: x.at, pass: false, ...(x.clock && { clock: true }), ...(x.oracle && { oracle: true }) }; });
+      if (run === liveRun) { if (was) pos = liveRun.turns.length; renderPicker(); render(was, was && follow); }
+      else renderPicker();
+    }, () => {});
+    try {
+      db.doc('live/current').onSnapshot(snap => {
+        const d = snap.exists ? snap.data() : null;
+        if (!d || !d.id || allRuns.some(r => r.id === d.id)) { // nothing live, or the run is already in runs.json
+          if (unsubTurns) unsubTurns(); unsubTurns = null;
+          if (liveRun) { const was = run === liveRun; liveRun = null; if (was) run = null; refresh(); }
+          return;
+        }
+        const fresh = !liveRun || liveRun.id !== d.id;
+        if (fresh) {
+          if (unsubTurns) unsubTurns();
+          liveRun = { id: d.id, live: true, turns: [], brief: '', rounds: null, ended: 'message limit' };
+          unsubTurns = watchTurns(d.id);
+        }
+        Object.assign(liveRun, { started: d.started, model: d.model, people: d.people, names: d.names || [], topic: d.topic || null, secrets: d.secrets || null, oracle: !!d.oracle, status: d.status });
+        refresh(fresh);
+        if (run === liveRun) { renderInfo(); render(false, false); }
+      }, () => {});
+    } catch (e) {}
+  }
+
   fetch('runs.json').then(r => { if (!r.ok) throw new Error('runs.json returned HTTP ' + r.status + '.'); return r.json(); })
     .then(data => {
       if (!Array.isArray(data) || !data.length) throw new Error('runs.json has no conversations.');
       allRuns = data;
       init();
       applyHidden(true);
+      initLive();
     })
     .catch(err => showError(err && err.message ? err.message : 'The request failed.'));
 })();

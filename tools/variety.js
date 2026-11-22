@@ -37,7 +37,7 @@ export async function textVariety(seed = 1, years = 3, log = console.log) {
   for (const l of lines) { const k = norm(l.s); cnt.set(k, (cnt.get(k) || 0) + 1); const m = Math.floor(l.tick / (TPD * 30)) + '|' + l.s; if (mm.has(m)) rep++; mm.add(m); }
   const by = {}; for (const l of lines) (by[l.g] ||= []).push(l.s);
   log(`lines ${lines.length}  distinct ${(new Set(lines.map((l) => l.s)).size / lines.length).toFixed(3)}  exact repeats within a game-month ${rep} (${(rep / lines.length * 100).toFixed(2)}%)`);
-  for (const [g, a] of Object.entries(by)) log(`  ${g.padEnd(12)} n=${String(a.length).padStart(6)} distinct ${(new Set(a).size / a.length).toFixed(2)}`);
+  for (const [g, a] of Object.entries(by)) log(`  ${g.padEnd(12)} n=${String(a.length).padStart(6)} distinct ${(new Set(a).size / a.length).toFixed(2)}  masked-distinct ${(new Set(a.map(norm)).size / a.length).toFixed(2)}`);
   log('  top templates:'); for (const [k, n] of [...cnt].sort((a, b) => b[1] - a[1]).slice(0, 8)) log(`   ${(100 * n / lines.length).toFixed(2)}%  ${k.slice(0, 100)}`);
   return { lines, distinct: new Set(lines.map((l) => l.s)).size / lines.length, rep };
 }

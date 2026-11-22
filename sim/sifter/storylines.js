@@ -2,6 +2,7 @@
 // Pure over (sifter, accessors); worker-safe. Selection rules (all structural, nothing tuned to a name or an outcome):
 //   - one storyline per protagonist (the strongest), at most MAXKIND per kind, nothing quiet, nothing that lapsed long ago;
 //   - rank = salience carried by the beats x recency x variety of what happened (distinct event types) x kind weight (what a viewer cares about).
+import { beatSentence } from './beatwords.js';
 const MAXKIND = 3;
 const KIND_W = { romance: 1.35, new_family: 1.3, bereavement: 1.2, illness: 1.15, job_loss: 1.1, breakup: 1.1, money_squeeze: 1.05, falling_out: 1.0, welcome: 1.0, ambition: 0.95, newcomer: 0.85, career: 0.8, scandal: 0.9, group_saga: 0.9 };
 const NOISE = /^goal\.(step|effect|planned|replanned|deferred|formed)$|^social\.rumour$|^group\.meeting$|^kernel\.|^comms\./;
@@ -167,9 +168,17 @@ export function headlineOf(arc, w, beats = beatsOf(arc, w, 40)) {
 }
 
 // "Tom lost his job when the firm closed": a beat with its subject (who in the story it happened to), for a card's list.
-function beatLine(b, w, arc) {
+function beatLine(b, w, arc, prevTick, tpd) {
   const ids = protagonists(arc, w), who = ids.filter((i) => b.actors.includes(i)); const pick = who.length ? who : ids.slice(0, 1);
-  return cap1(`${nameList(w, ids).filter((n, i) => pick.includes(ids[i])).join(' and ')} ${pick.length > 1 ? b.text.replace(/^was /, 'were ') : b.text}${b.x || ''}`);
+  const n = nameList(w, ids).filter((nm, i) => pick.includes(ids[i])).join(' and '), plain = cap1(`${n} ${pick.length > 1 ? b.text.replace(/^was /, 'were ') : b.text}${b.x || ''}`);
+  try {
+    const ev = w.events.get ? w.events.get(b.eid) : null; if (!ev) return plain;
+    const P = pick.map((i) => w.people.get(i)).filter(Boolean), one = pick.length === 1, sex = one && P[0] ? P[0].sex : null, ms = P.map((x) => x.mood).filter((x) => typeof x === 'number');
+    const o = other({ ids: new Set(ids), w }, ev), dead = ev.type === 'life.death' ? (ev.actors && ev.actors[0] != null && !ids.includes(ev.actors[0]) ? first(w, ev.actors[0]) : null) : ev.type === 'life.funeral' ? (() => { const d = deceasedOf(w, ev); return d != null && !ids.includes(d) ? first(w, d) : null; })() : null;
+    const pl = ev.payload || {};
+    const c = { n, one, pro: sex === 'F' ? 'she' : sex === 'M' ? 'he' : 'they', their: sex === 'F' ? 'her' : sex === 'M' ? 'his' : 'their', them: sex === 'F' ? 'her' : sex === 'M' ? 'him' : 'them', mood: ms.length ? ms.reduce((x, y) => x + y, 0) / ms.length : null, o, at: placeOf(w, ev), wl: b.wl, dead, occ: pl.occ ? occLabel(w, pl.occ) : '', gap: prevTick != null ? Math.max(0, (b.tick - prevTick) / tpd) : null, id: b.eid, keep: [...(b.wl || []), dead, o].filter(Boolean) };
+    const t = beatSentence(b, pl, c, null); return t || plain;
+  } catch (e) { return plain; }
 }
 /**
  * The stories worth following right now.
@@ -191,7 +200,7 @@ export function storylines(sifter, w, { limit = 6, now = w.tick } = {}) {
     const beats = beatsOf(a, w, 5); if (beats.length < 2) continue;
     used.add(a.actors[0]); for (const x of a.actors) used.add(x); perKind[a.kind] = (perKind[a.kind] || 0) + 1;
     out.push({ id: a.id, kind: a.kind, label: kindLabel(a.kind), status: a.status, outcome: a.outcome, headline: headlineOf(a, w), actors: a.actors.filter((x) => typeof x === 'number').slice(0, 3).map((id) => ({ id, name: firstName(w, id) + ' ' + (w.people.get(id)?.lastName || '') })),
-      beats: beats.map((b) => ({ tick: b.tick, date: w.calendar.formatDate(b.tick), text: beatLine(b, w, a) })), since: Math.max(1, Math.round((now - a.start) / tpd)), idle: Math.round((now - a.last) / tpd), rank: Math.round(c.rank * 100) / 100 });
+      beats: beats.map((b, i) => ({ tick: b.tick, date: w.calendar.formatDate(b.tick), text: beatLine(b, w, a, i ? beats[i - 1].tick : null, tpd) })), since: Math.max(1, Math.round((now - a.start) / tpd)), idle: Math.round((now - a.last) / tpd), rank: Math.round(c.rank * 100) / 100 });
     if (out.length >= limit) break;
   }
   return out;

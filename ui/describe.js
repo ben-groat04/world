@@ -236,7 +236,7 @@ function foldItem(w, text, ev, host, it) {
   return it;
 }
 
-export function newsFor(w, text, ev, host) {
+function newsFor0(w, text, ev, host) {
   const min = MIN_SAL[ev.type] ?? 0.3; if (ev.salience < min) return null;
   if (/^health\.(episode|substance)$/.test(ev.type)) return null; // sober: nobody's mental health or drinking is named in the public feed (it stays in their own profile and the storylines)
   let nth = 1;
@@ -251,7 +251,7 @@ export function newsFor(w, text, ev, host) {
   const ppl = a.slice(0, 4).map((id) => { const p = w.people.get(id); return p ? { id, name: nm(p) } : null; }).filter(Boolean);
   let head = d.line, body = null;
   const key = ev.type === 'health.ill' && /heat/.test(ev.payload?.name || '') ? 'health.heat' : MAP[ev.type] || ev.type;
-  const solo = PAIR.has(key) && (a.length < 2 || !w.people.get(a[1])); const sk = solo && text.has && text.has('headline:' + key + '.solo') ? key + '.solo' : key; // no resident on the other side: never print "and someone"
+  const solo = PAIR.has(key) && (a.length < 2 || !w.people.get(a[1])); let sk = solo && text.has && text.has('headline:' + key + '.solo') ? key + '.solo' : key; if (ev._v && text.has && text.has('headline:' + key + '.' + ev._v)) sk = key + '.' + ev._v; // no resident on the other side: never print "and someone"
   if (text.has && text.has('headline:' + sk)) {
     const ctx = newsCtx(w, ev, { nth, nthw: nth > 1 ? 'Again: ' : '' });
     try {
@@ -262,6 +262,28 @@ export function newsFor(w, text, ev, host) {
   const place = ev.place != null ? w.buildings.get(ev.place) : null;
   const out = { tick: ev.tick, date: w.calendar.formatDate(ev.tick), time: w.time.hour != null ? `${String(w.time.hour).padStart(2, '0')}:${String(w.time.minute || 0).padStart(2, '0')}` : '', type: ev.type, kind: ev.type.split('.')[0], head, body, line: d.line, ppl, sal: ev.salience, place: place ? { id: place.id, name: place.name } : null };
   return foldItem(w, text, ev, host, out);
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+// One happening, one line. Several systems describe the same change in the same breath (a move shows up as housing.moved_out, life.move_out and life.cohabit; an illness and the
+// hospital dash it causes; arrears and the borrowing that follows). The feed keeps the most specific line, drops the echoes, and writes a follow-up that says what it follows from.
+const DAY = 144;
+// later type -> [earlier types for the same person that already tell the story, window in days]
+const ECHO = { 'life.cohabit': [['housing.moved_out', 'life.move_out', 'life.move_in', 'housing.moved_in'], 2], 'life.move_out': [['housing.moved_out', 'life.cohabit'], 2], 'life.move_in': [['housing.moved_in'], 2], 'housing.moved_out': [['life.move_out', 'life.cohabit'], 2] };
+// later type -> [earlier type, variant key, window days]: the follow-up is written as a consequence ("... as the arrears mount")
+const FOLLOW = { 'money.debt_spiral': ['money.arrears', 'after_arrears', 21], 'health.crisis': ['health.ill', 'after_ill', 4], 'housing.eviction': ['housing.notice_served', 'after_notice', 60] };
+export function newsFor(w, text, ev, host) {
+  const ids = (ev.actors || []).filter((a) => typeof a === 'number').slice(0, 2);
+  if (host && ids.length) {
+    const seen = host._seen || (host._seen = new Map()), recent = (t, days) => { for (const a of ids) for (const r of seen.get(a) || []) if (r.type === t && ev.tick - r.tick <= DAY * days && ev.tick >= r.tick) return r; return null; };
+    if (ev.type === 'housing.moved_out' && ev.payload && ev.payload.to === 'local') return null; // they stay in the area: the arrival is the story ("changes address")
+    const e = ECHO[ev.type]; if (e && e[0].some((t) => recent(t, e[1]))) return null;
+    const f = FOLLOW[ev.type]; if (f) { const r = recent(f[0], f[2]); if (r) ev = { ...ev, _v: f[1], payload: { ...(ev.payload || {}), prior: String(r.p || '').replace(/_/g, ' '), gap: Math.max(0, Math.round((ev.tick - r.tick) / DAY)) } }; }
+    if (ev.type === 'housing.moved_in' && ev.payload && ev.payload.from === 'local' && !ev._v) ev = { ...ev, _v: 'local' };
+  }
+  const it = newsFor0(w, text, ev, host);
+  if (it && host && ids.length) { const seen = host._seen; for (const a of ids) { const l = seen.get(a) || []; l.push({ type: ev.type, tick: ev.tick, p: ev.payload && (ev.payload.name || ev.payload.kind) }); if (l.length > 8) l.shift(); seen.set(a, l); } if (seen.size > 4000) seen.delete(seen.keys().next().value); }
+  return it;
 }
 
 const ACT = { home_family: 'Home & family', other_inactive: 'Not working', unemployed: 'Looking for work', student: 'Student', retired: 'Retired', long_term_sick: 'Long-term sick', employed: 'Working', sick: 'Long-term sick', carer: 'Carer' };

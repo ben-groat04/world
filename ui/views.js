@@ -42,7 +42,7 @@ export function mountFeed(el, store) {
     return `<article class="card news k-${it.kind}${it.conseq ? ' conseq' : ''}${it.sal >= 0.5 ? ' big' : ''}"><div class="ni">${ic}</div><div class="nb"><div class="nh">${esc(it.head)}</div>${it.because ? `<div class="because">↳ because of: ${esc(it.because)}</div>` : ''}${it.body ? `<p>${esc(it.body)}</p>` : it.line && it.line !== it.head ? `<p>${esc(it.line)}</p>` : ''}<div class="nm"><time>${esc(it.date)}</time>${it.conseq ? '<em>consequence</em>' : ''}${it.place ? ' · ' + bl(it.place.id, it.place.name) : ''}${(it.ppl || []).slice(0, 3).map((p) => ' ' + pl(p.id, p.name)).join('')}</div></div></article>`;
   }
   function renderLocal() {
-    const TOWN = new Set(['business', 'crime', 'civic']); const items = store.s.news.filter((x) => lf === 'all' || (lf === 'town' ? TOWN.has(x.kind) && x.town : !(TOWN.has(x.kind) && x.town))).slice(-80).reverse();
+    const TOWN = new Set(['business', 'crime', 'civic', 'health']); const items = store.s.news.filter((x) => lf === 'all' || (lf === 'town' ? TOWN.has(x.kind) && x.town : !(TOWN.has(x.kind) && x.town))).slice(-80).reverse();
     if (lf === 'town' && !items.length) return '<p class="empty">Nothing to report from the high street, the council or the police yet. Shops opening and closing, planning decisions, council cuts and elections appear here.</p>';
     return items.length ? items.map(news).join('') : '<p class="empty">A quiet start. Local news will appear here as things happen: arrivals, jobs, rows, weddings, rent rises…</p>';
   }

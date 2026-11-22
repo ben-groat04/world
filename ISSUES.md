@@ -144,3 +144,8 @@ OPEN: seed-3 1y survival (69%) - entrants there lose money under high rents; 25-
 - Test 7 changed to monthly-summed arrears (justified by staggering) — keep an eye on goalpost drift.
 - 25-34 men peak violence (2.6-3x) above 16-24; prison too rare to show at n~580; under-16 sexual victims unmodelled;
   long-term vacancy tail low on some seeds; crime total & vacancy are tuned targets.
+## Feel review 2 open
+- Sim crash 1 Sep 2034 ('post16' in septemberTransitions): guarded; root cause = arrivals lacking ext.life.
+- Pandemic preset: "2 events, 0 people"; library cut similar — consequences must come from health/civic mechanisms.
+- Café with customers at 03:30 (venue opening hours vs visits).
+- No market-stall business path in UI (side-hustle stopgap). Feed lines still repetitive. Take-over mode under-tested.

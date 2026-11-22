@@ -2,6 +2,7 @@
 const isPrivateEv = (ev) => /^crime\.domestic/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
 export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
+const cap1 = (s) => (s ? String(s)[0].toUpperCase() + String(s).slice(1) : s);
 const nm = (p) => (p ? `${p.firstName} ${p.lastName}` : 'someone');
 const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
 let PHR = null;
@@ -136,10 +137,13 @@ const LOCAL = {
   'civic.campaign_outcome': (w, ev, p) => ({ head: p.won ? 'Campaign succeeds' : 'Campaign ends without success', body: p.won ? 'The council has responded to local pressure.' : 'Campaigners say they will keep raising the issue.' }),
   'civic.bins': (w, ev, p) => ({ head: 'Missed bin collections', body: `Residents on ${streetName(w, p.street)} report bins left uncollected.` }),
 };
+LOCAL['health.outbreak'] = (w, ev, p) => { const heat = /heat/i.test(p.name || ''), over = p.phase === 'over' || p.phase === 'end';
+  return heat ? { head: over ? 'The heat breaks' : 'Heat health warning for Larkfield', body: over ? 'Cooler nights at last. The park is emptier and the fans go back in the cupboard.' : 'Flats on the top floors are stifling. Older and unwell residents are being checked on by neighbours; drink water and keep curtains shut by day.' }
+    : { head: over ? `${cap1(p.name || 'The outbreak')} is easing` : `${cap1(p.name || 'A virus')} is going round`, body: over ? `Fewer people are off sick${p.ill ? ` (about ${p.ill} cases locally)` : ''}. The surgery says appointments are returning to normal.` : 'The surgery is busier than usual and schools report absences. Older relatives and anyone with a health condition are being urged to take care.' }; };
 for (const k of Object.keys(CRIME)) LOCAL[k] = () => ({ head: CRIME[k][0], body: CRIME[k][1] });
 export const LOCAL_TYPES = Object.keys(LOCAL);
 export const LOCAL_KINDS = new Set(['business', 'crime', 'civic']);
-export const NEWS_TYPES = ['life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.ill', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school', ...LOCAL_TYPES];
+export const NEWS_TYPES = ['health.outbreak', 'life.birth', 'life.death', 'life.marriage', 'life.couple', 'life.engaged', 'life.breakup', 'life.divorce', 'life.cohabit', 'life.pregnant', 'life.move_in', 'life.move_out', 'life.kin_death', 'life.caring_start', 'labour.hired', 'labour.job_lost', 'labour.promoted', 'labour.quit', 'labour.retired', 'labour.firm_closed', 'labour.second_job', 'housing.moved_in', 'housing.moved_out', 'housing.notice_served', 'housing.eviction', 'housing.homeless', 'housing.rent_rise', 'housing.disrepair', 'health.diagnosis', 'health.crisis', 'health.accident', 'health.episode', 'health.ill', 'health.substance', 'money.debt_spiral', 'money.windfall', 'money.arrears', 'social.scandal', 'social.fallout', 'social.reconcile', 'group.founded', 'group.dissolved', 'goal.invented', 'life.funeral', 'life.school', ...LOCAL_TYPES];
 const MIN_SAL = { 'crime.assault': 0.4, 'crime.burglary': 0.38, 'crime.theft': 0.4, 'crime.vehicle': 0.4, 'crime.damage': 0.4, 'crime.antisocial': 0.4, 'crime.fraud': 0.4, 'crime.harassment': 0.4, 'crime.bike_theft': 0.4, 'crime.drugs': 0.4, 'crime.disorder': 0.4, 'civic.bins': 0.1, 'civic.planning_application': 0.1, 'civic.planning_decision': 0.1, 'business.rent_review': 0.15, 'business.recovered': 0.15, 'health.ill': 0.35, 'life.funeral': 0.35, 'life.school': 0.3, 'civic.complaint': 0.1, 'money.arrears': 0.45, 'housing.rent_rise': 0.2, 'life.caring_start': 0.4, 'goal.invented': 0.3, 'labour.second_job': 0.25 };
 const PAIR = new Set(['life.couple', 'life.breakup', 'life.marriage', 'life.cohabit', 'life.engaged', 'life.pregnant', 'social.reconcile', 'social.fallout']);
 const MAP = { 'labour.hired': 'work.hired', 'labour.job_lost': 'work.fired', 'labour.promoted': 'work.promoted', 'housing.moved_in': 'life.move_in', 'housing.moved_out': 'life.move_out', 'housing.notice_served': 'home.eviction', 'housing.eviction': 'home.eviction', 'housing.rent_rise': 'home.rent_rise', 'life.divorce': 'life.breakup' };
@@ -183,7 +187,7 @@ export function newsFor(w, text, ev, host) {
   const key = ev.type === 'health.ill' && /heat/.test(ev.payload?.name || '') ? 'health.heat' : MAP[ev.type] || ev.type;
   const solo = PAIR.has(key) && (a.length < 2 || !w.people.get(a[1])); const sk = solo && text.has && text.has('headline:' + key + '.solo') ? key + '.solo' : key; // no resident on the other side: never print "and someone"
   if (text.has && text.has('headline:' + sk)) {
-    const ctx = { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), biz: ev.payload?.name || DEFAULTS.biz }, date: w.calendar.dateOf(ev.tick), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
+    const ctx = { genre: 'headline', a: view(w, w.people.get(a[0])), b: view(w, w.people.get(a[1])), people: (id) => view(w, w.people.get(id)), p: { ...DEFAULTS, ...ev.payload, ...humanPayload(w, ev), biz: ev.payload?.name || DEFAULTS.biz }, date: ((x) => ({ ...x, weekday: x.dow, day: x.d, month: x.m, year: x.y }))(w.calendar.dateOf(ev.tick)), placeName: ev.place != null ? w.buildings.get(ev.place)?.name : undefined };
     try {
       const e2 = { ...ev, type: sk }; const h = text.render(e2, ctx, w);
       if (h && !/[{}#\[]/.test(h)) { head = fixText(h); const b = text.render(e2, { ...ctx, genre: 'news' }, w); if (b && !/[{}#\[]|Details are still/.test(b)) body = fixText(b); }

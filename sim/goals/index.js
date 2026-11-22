@@ -27,6 +27,7 @@ export function createGoals(opts = {}) {
       const bad = E.methods.validateAll(E.tplList.filter((t) => t.id !== 'ad_hoc_move')); if (bad.length) throw new Error('goals: bad methods: ' + bad.slice(0, 5).join('; '));
       world.goals = E;   // debug/tools handle (not a cross-system write path)
       E.seedPeople();
+      world.archiveHooks.push((p) => { E.S.ps.delete(p.id); }); // departed people: drop per-person goal state (kernel/archive.js)
     },
     clocks: { hour: () => E.hourly(), day: () => E.daily(), year: () => E.yearly() },
     serialize() { return E.serialize(); },

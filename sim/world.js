@@ -17,6 +17,7 @@ import { Affordances } from './kernel/affordances.js';
 import { Scheduler } from './kernel/scheduler.js';
 import { loadPlugins, isPlugin } from './kernel/plugin.js';
 import { stateHash, saveSnapshot, loadSnapshot } from './snapshot.js';
+import { archiveDeparted } from './kernel/archive.js';
 
 // ALL tunables live in world.settings (documented in ARCHITECTURE.md). Systems read them with `?? default` as well, but the
 // defaults are declared here so a tuning agent has one place to look. Politics may move the policy axes at runtime.
@@ -58,7 +59,7 @@ export class World {
     for (const t of LEGACY_EVENT_TYPES) this._handlers.set(t, []);
     this._rngs = new Map();
     this._interventions = new Map();
-    this.people = new Map();
+    this.people = new Map(); this.archiveHooks = []; // fns(person) run when a departed person is archived (kernel/archive.js)
     this.buildings = new Map();
     this._byType = {};
     this._living = []; this._livingDirty = true;
@@ -313,7 +314,7 @@ export class World {
       for (const p of this.living()) p.workedTicks = 0; // after systems saw today's total
       if (this.calendar.weekStart(t)) this._clock('week');
       if (t.dayOfSeason === 1) { this.emit('season', this); this._hook('onSeason'); }
-      if (this.calendar.monthStart(t)) this._clock('month');
+      if (this.calendar.monthStart(t)) { this._clock('month'); archiveDeparted(this); }
       if (t.dayOfYear === 0) { this.emit('year', this); this._hook('onYear'); }
       if (this.calendar.yearStart(t)) this._clock('year');
       if (this.hashLog !== null) this.hashLog.push(this.stateHash());

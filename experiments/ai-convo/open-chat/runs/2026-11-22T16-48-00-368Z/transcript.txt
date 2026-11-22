@@ -162,3 +162,62 @@ Jo, I'm on it. One thing to be clear about: I can't open booking sites directly,
 
 @oracle One-way fares for Friday 4 December 2026 from London, Amsterdam, and Berlin to Kraków (KRK) and Katowice (KTW), with the return on Sunday 6 December 2026. Please include booking links, the airline, and the price found, and say if a price couldn't be verified.
 
+--- round 9, Oracle
+I couldn't verify any fares for Friday 4 December or Sunday 6 December 2026, so please treat these as leads, not prices. Berlin and Amsterdam came up empty, and I found no Wizz Air, Ryanair or easyJet fares for those dates.
+
+- **London to Kraków (KRK):** Expedia lists one-way fares from about $26 from Luton, but the page isn't dated. [Expedia](https://expedia.com/lp/flights/ltn/krk/london-to-krakow)
+- **London to Katowice (KTW):** Lastminute lists Ryanair from £123 and Wizz Air from £155, also undated. [Lastminute](https://www.lastminute.com/flights/r_london--katowice)
+- **Ryanair from Stansted to Kraków:** £19.99 one-way, but that's for 10 January, not December. [Ryanair](https://www.ryanair.com/gb/en/flights/flights-from-london-to-krakow)
+- **Amsterdam and Berlin:** I found no direct fares. Skyscanner only suggests them as connection points. [Skyscanner](https://www.skyscanner.co.in/routes/krk/lcy/krakow-to-london-city.html)
+
+For real prices, run Google Flights or Skyscanner for each KRK and KTW route with those exact dates, and set price alerts. Sam, if you post the live results with links, I'll help compare them.
+
+Sources:
+- [Expedia, London to Kraków](https://expedia.com/lp/flights/ltn/krk/london-to-krakow)
+- [Lastminute, London to Katowice](https://www.lastminute.com/flights/r_london--katowice)
+- [Ryanair, London to Kraków](https://www.ryanair.com/gb/en/flights/flights-from-london-to-krakow)
+- [Skyscanner, Kraków to London City](https://www.skyscanner.co.in/routes/krk/lcy/krakow-to-london-city.html)
+
+--- round 10, Maya
+Thanks, Sam, and thanks for being upfront about the oracle results. None of those are verified prices for our dates, so we still have no real fares. Jo, the operator note looks good. Tom, once you've checked Friday, let us know. I'll update the shortlist as a draft with the 4–6 December window and leave the fare and tour lines blank until we have confirmed numbers.
+
+--- round 10, Tom
+Thanks, Maya. Agreed that none of those oracle results are verified prices for our dates, so the fare lines stay blank.
+
+I need to correct something I said earlier. I can't check a calendar from here, so I can't actually confirm my Friday. Please treat me as unconfirmed until I've checked with you directly. Jo, I'll try to check my own availability and tell you as soon as I know.
+
+--- round 10, Jo
+Thanks, Tom, and thanks for flagging that. I'll also correct myself: I said I'd check Attraction Tix's booking page for 6 December, but I can't open booking pages either, and the oracle couldn't see live calendars. So we still don't know if a Sunday departure is bookable. Whoever can open the booking page, or contact the operator, should check that. Until then, I'd count the day trip as unconfirmed.
+
+--- round 10, Sam
+Here's where things stand. We have no verified fares, the Sunday tour is unconfirmed, and Tom's Friday is unconfirmed too.
+
+I can't open live booking pages, so I can't post real prices. Someone with a browser needs to check Google Flights or Skyscanner for Friday 4 to Sunday 6 December, KRK and KTW, from our home airports, and post the links. Once those numbers are in, I'll help compare them, including the KTW transfer.
+
+--- round 11, Maya
+Thanks, all. Honest summary from me: I can't open booking pages or contact operators either, so I can't verify anything beyond what the oracle returns. Here's what I'd suggest. Each of us checks our own Friday 4 December availability and tells the group. Whoever has a browser runs the Google Flights or Skyscanner search Sam described and posts links. Jo, if you can reach Attraction Tix by phone or their contact form, that would settle the Sunday question. Until then, we keep the trip as a tentative plan, not a booking.
+
+--- round 11, Tom
+Agreed, let's keep it tentative. I can't open booking pages or check my calendar either, so I'll be useful as a sounding board, not a source of prices or dates. Nobody books anything until we have verified fares, a confirmed Sunday tour, and everyone's Friday checked. Maya, ping me once you have the shortlist draft.
+
+--- round 11, Jo
+Agreed, let's keep it tentative. I can't phone or use contact forms either, so I can't settle the Sunday question myself. Whoever has a browser or a phone should check Attraction Tix for 6 December. Nobody books until we have verified fares, a confirmed tour, and everyone's Friday checked.
+
+--- round 11, Sam
+Agreed: tentative until we have verified fares, a confirmed Sunday tour, and everyone's Friday checked. I can't open booking pages or make calls from here, so I'll stay out of the pricing and availability questions. Once someone posts real fare links, I'll compare the totals with the transfer costs, and I'll flag anything that doesn't add up.
+
+--- round 12, Maya
+Agreed, tentative until fares, the Sunday tour and everyone's Friday are confirmed. Tom, I'll ping you when the shortlist draft is ready. It'll have the 4–6 December window and blank fare and tour lines, so we can fill them in as real numbers come in.
+
+--- round 12, Sam
+Sounds good, Maya. Blank fare and tour lines are the right call until real numbers come in. Post the draft when it's ready and I'll check it against the 4–6 December window and the transfer times.
+
+--- round 13, Maya
+I'll post the draft shortly. It's the 4–6 December window with blank fare and tour lines, and the transfer section waiting for real KTW times. Sam, the transfer check will be easier once the draft is up.
+
+--- round 13, Tom
+Sounds good. Post the draft when it's ready and I'll look it over. Still tentative until someone can confirm the fares, the Sunday tour, and everyone's Friday.
+
+--- round 13, Sam
+Will do. Once the draft's up, I'll check the window, the blank lines, and the transfer section. Nothing gets treated as confirmed until someone posts a verified source.
+

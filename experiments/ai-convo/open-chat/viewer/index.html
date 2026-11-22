@@ -54,6 +54,7 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.5; }
 button, select, input { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -65,16 +66,25 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 
 .layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
 .rail { display: none; min-width: 0; }
-.picker-select { display: block; width: 100%; padding: .6rem .7rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; font-size: .9rem; }
+.selrow { display: flex; gap: .5rem; margin-bottom: 1rem; }
+.picker-select { display: block; flex: 1; min-width: 0; width: 100%; padding: .6rem .7rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; font-size: .9rem; }
 .main { min-width: 0; }
 @media (min-width: 900px) {
   .layout { grid-template-columns: 17.5rem minmax(0, 1fr); gap: 2rem; }
   .rail { display: block; position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; max-height: calc(100vh - 2rem); overflow-y: auto; }
-  .picker-select { display: none; }
+  .selrow { display: none; }
 }
 .label { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .runs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .run { display: block; width: 100%; text-align: left; background: transparent; border: 0; border-left: 3px solid transparent; padding: .55rem .7rem; cursor: pointer; border-radius: 0 4px 4px 0; }
+.runs li { position: relative; }
+.run-x { position: absolute; top: .3rem; right: .3rem; width: 1.6rem; height: 1.6rem; display: grid; place-items: center; border: 0; background: transparent; color: var(--muted); border-radius: 4px; cursor: pointer; font-size: 1rem; line-height: 1; opacity: 0; }
+.runs li:hover .run-x, .run-x:focus-visible { opacity: 1; }
+.run-x:hover { background: var(--hover); color: var(--fg); }
+@media (hover: none) { .run-x { opacity: .7; } }
+.run-l1 { padding-right: 1.6rem; }
+.cleared { color: var(--muted); font-size: .9rem; margin: 1rem 0; }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; }
 .run:hover { background: var(--hover); }
 .run[aria-current="true"] { background: var(--surface); border-left-color: var(--accent); }
 .run-l1 { display: flex; justify-content: space-between; gap: .5rem; font-family: var(--font-mono); font-size: .75rem; color: var(--muted); }
@@ -180,13 +190,14 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     <button class="btn primary" id="nGo" type="submit" disabled>Start</button>
     <p class="status" id="nStatus" role="status"></p>
   </form>
+  <p class="cleared" id="cleared" hidden>All runs cleared. <button class="linkbtn" id="showAll" type="button">Show all again</button></p>
   <div class="layout" id="layout" hidden>
     <aside class="rail" aria-label="Runs">
       <ul class="runs" id="runs"></ul>
     </aside>
     <main class="main">
       <label class="label" for="runSelect" hidden>Run</label>
-      <select class="picker-select" id="runSelect" style="margin-bottom:1rem"></select>
+      <div class="selrow"><select class="picker-select" id="runSelect"></select><button class="btn" id="selRemove" type="button">Remove</button></div>
       <section class="info" id="info" aria-label="Run details"></section>
       <div class="chat" id="chat" aria-live="off"></div>
       <div id="tail"></div>
@@ -258,7 +269,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   const nonPass = r => r.turns.filter(t => !t.pass).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
-  let runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
+  let allRuns = [], runs = [], run = null, pos = 0, playing = false, typing = null, timer = null;
   let speed = +store.get('chatSpeed') || 1; if (!SPEEDS.includes(speed)) speed = 1;
   const vis = () => true;
 
@@ -268,11 +279,24 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     e.innerHTML = '<strong>Could not load the conversations.</strong><p>' + esc(msg) + ' Run <code>node viewer/build.mjs</code> from open-chat/ to create runs.json, and open this page over http from the same folder.</p>';
   }
 
+  let hidden = [];
+  try { const h = JSON.parse(store.get('chatHidden') || '[]'); if (Array.isArray(h)) hidden = h; } catch (e) {}
+  // Recompute the visible list; if the shown run is gone, switch to the newest remaining.
+  function applyHidden(initial) {
+    store.set('chatHidden', JSON.stringify(hidden));
+    runs = allRuns.filter(r => !hidden.includes(r.id));
+    $('cleared').hidden = runs.length > 0;
+    $('layout').hidden = $('barOuter').hidden = !runs.length;
+    if (runs.length) { if (!run || !runs.includes(run)) selectRun(runs[0].id, initial); else renderPicker(); }
+    else { stop(); run = null; }
+  }
+  function hideRun(id) { if (!hidden.includes(id)) hidden.push(id); applyHidden(); }
   function renderPicker() {
     $('runs').innerHTML = runs.map(r => `<li><button class="run" type="button" data-id="${esc(r.id)}" aria-current="${r === run}">
       <span class="run-l1"><span>${esc(fmtDate(r.started))}</span><span>${esc(r.model)}</span></span>
       <span class="run-l2">${r.topic ? esc(r.topic) : 'Open conversation'}</span>
-      <span class="run-l3">${nonPass(r)} messages</span></button></li>`).join('');
+      <span class="run-l3">${nonPass(r)} messages</span></button>
+      <button class="run-x" type="button" data-x="${esc(r.id)}" aria-label="Remove ${esc(fmtDate(r.started))} ${r.topic ? esc(r.topic.slice(0, 40)) : 'open conversation'} from list">\u00d7</button></li>`).join('');
     $('runSelect').innerHTML = runs.map(r => `<option value="${esc(r.id)}"${r === run ? ' selected' : ''}>${esc(fmtDate(r.started))} \u00b7 ${esc(r.model)} \u00b7 ${r.topic ? esc(r.topic.slice(0, 40)) : 'open'}</option>`).join('');
   }
 
@@ -342,7 +366,12 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 
   function init() {
     $('speeds').innerHTML = SPEEDS.map(s => `<button type="button" data-s="${s}" aria-pressed="${s === speed}">${s}x</button>`).join('');
-    $('runs').addEventListener('click', e => { const b = e.target.closest('.run'); if (b) selectRun(b.dataset.id); });
+    $('runs').addEventListener('click', e => {
+      const x = e.target.closest('.run-x'); if (x) { hideRun(x.dataset.x); return; }
+      const b = e.target.closest('.run'); if (b) selectRun(b.dataset.id);
+    });
+    $('selRemove').addEventListener('click', () => hideRun($('runSelect').value));
+    $('showAll').addEventListener('click', () => { hidden = []; applyHidden(true); });
     $('runSelect').addEventListener('change', e => selectRun(e.target.value));
     $('play').addEventListener('click', () => playing ? pause() : play());
     $('fwd').addEventListener('click', () => step(1));
@@ -412,10 +441,9 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   fetch('runs.json').then(r => { if (!r.ok) throw new Error('runs.json returned HTTP ' + r.status + '.'); return r.json(); })
     .then(data => {
       if (!Array.isArray(data) || !data.length) throw new Error('runs.json has no conversations.');
-      runs = data;
-      $('layout').hidden = false; $('barOuter').hidden = false;
+      allRuns = data;
       init();
-      selectRun(runs[0].id, true);
+      applyHidden(true);
     })
     .catch(err => showError(err && err.message ? err.message : 'The request failed.'));
 })();

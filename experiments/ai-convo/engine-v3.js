@@ -265,6 +265,8 @@ async function sceneLine(sc) {
   sc.next = addressed ? [addressed] : speaker ? l2.filter((m) => m !== speaker) : l2.filter((m) => !sc.silent.has(m))
   if (!sc.next.length) sc.ending = 'talk ran out'
 }
+// being in the same room is not being in the conversation: others there hear it start and decide for themselves whether to join (talk_to)
+function talkNear(sc) { for (const m of NAMES.filter((m) => S[m].place === sc.where && !S[m].asleep && !sceneOf(m))) notify(m, sc.t0, `${sc.people.map((x) => label(m, x)).join(' and ')} are talking here.`); return sc }
 function join(sc, n, say) { if (sc.people.includes(n)) sc.left.delete(n); else sc.people.push(n); sc.silent.delete(n); if (NAMES.includes(n)) S[n].doing = 'with ' + live(sc).filter((m) => m !== n).join(', '); sc.lines.push({ name: n, say: say || '', do: 'comes in' }) }
 
 // ---------- plans: the person's own; code carries them out, and pauses them while the person is in a conversation ----------
@@ -288,8 +290,8 @@ function startStep(n, st, i) {
   Object.assign(s, { doing: st.doing, asleep: st.asleep })
   if (st.action && !st.sent) { st.sent = true; pendingWorld.push({ kind: 'action', who: n, step: st, text: `${n} at ${st.place}, ${fmt(clock)}-${fmt(st.t1)}: ${st.action}` }) } // errands happen where and when the step happens
   if (s.asleep) return
-  const going = !st.asleep && ACTIVE.find((sc) => !sc.phone && sc.where === s.place)
-  if (going) return join(going, n, '') // walked in on a conversation
+  const going = ACTIVE.find((sc) => !sc.phone && sc.where === s.place)
+  if (going && moved) { notify(n, clock, `${live(going).map((x) => label(n, x)).join(' and ')} are talking here.`); wake(n, clock, `you came into ${s.place}: a conversation is going on`) } // they choose whether to join
   if (first) pendingWorld.push({ kind: 'step', who: n, place: st.place, t1: st.t1, text: `${n} starts "${st.doing}" at ${st.place}, until ${fmt(st.t1)}` }) // the world decides who of the background is around
   if (first && (i > 0 || wasAsleep)) wake(n, clock, wasAsleep ? 'you woke up' : `next in your plan: ${st.doing} @${st.place}`) // everyone reconsiders at each step of their own plan
   const others = here(n).filter((m) => !S[m].asleep)
@@ -367,7 +369,6 @@ function intend(n, x, now) {
     return startScene(now, `phone: ${n} → ${p || c}`, true, [n, p || c], n)
   }
   const byLabel = Object.fromEntries(NAMES.filter((m) => m !== n).map((m) => [label(n, m), m]))
-  if (sceneOf(n)) return
   const p = byLabel[resolve(x.to, Object.keys(byLabel))] || '', c = p ? '' : resolve(x.to, atPlace(s.place))
   if (c) return sceneOf(c) && !sceneOf(c).phone ? join(sceneOf(c), n, '') : talkNear(startScene(now, s.place, false, [n, c], n))
   const near = p && S[p].place !== OUT && (S[p].place === s.place || (PLACE[s.place].building && PLACE[s.place].building === PLACE[S[p].place].building && KNOW[n].has(p)))
@@ -409,7 +410,7 @@ One or more decisions per item (kind none if nothing comes of it). An errand's r
     else if (d.kind === 'speak') at(t, (tt) => { const ok = S[who].place === pl && !S[who].asleep && !sceneOf(who) && !sceneOf(from)
       L.push({ t: tt, kind: 'approach', who: from, to: who, place: pl, ok }); if (!ok) return
       if (!(CONTACT[from].at?.until > tt && CONTACT[from].at.place === pl)) CONTACT[from].at = { place: pl, until: tt + 30, doing: 'here' }
-      startScene(tt, pl, false, [from, who, ...NAMES.filter((m) => m !== who && S[m].place === pl && !S[m].asleep && !sceneOf(m))], from, d.text) })
+      talkNear(startScene(tt, pl, false, [from, who], from, d.text)) })
     else at(t, (tt) => { thread(from, `${fmt(tt)} ${from} → ${who}: ${d.text}`)
       if (d.kind === 'text') { L.push({ t: tt, kind: 'dm', from, to: who, text: d.text }); notify(who, tt, `${from} texted: ${d.text}`) }
       else if (S[who].asleep || sceneOf(who)) { L.push({ t: tt, kind: 'call', where: `phone: ${from} → ${who}`, present: [from, who], lines: [], ended: 'not answered', answered: false }); notify(who, tt, `Missed call from ${from}.`) }

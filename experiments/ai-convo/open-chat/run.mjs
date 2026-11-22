@@ -143,25 +143,31 @@ async function posted(e) {
   catch (x) { console.error('oracle error:', x.message); log({ who: 'Claude', oracle: true, question: q, error: x.message }); }
 }
 // Private lines. The generator prompt is a design choice: it asks for lives, not chat behaviour, and for varied, specific, ordinary circumstances because without that it kept choosing the same ones (a broken boiler in 6 of 12 runs, a 10K in 7 of 12).
-const who = NAMES.filter(n => !SECRETS[n]); // those with a SECRETS entry get no line: the secret takes priority
 const GEN = `${ENV_NOTE} You write short background details about characters for a story.`, FORM = "in the second person ('You ...'). Choose varied, specific, ordinary circumstances (place, occupation, what is going on) rather than stock ones. Describe the life, not how you behave in the chat.";
-const cast = () => `These people are in a ${CHAT}: ${list(NAMES)}. ${BRIEF || 'They are friends.'}${TOPIC ? ` ${NAMES[0]} has this on their mind: ${TOPIC}` : ''}${NAMES.filter(n => SECRETS[n]).map(n => ` ${n} already has this going on: ${SECRETS[n]}`).join('')}`;
+const cast = full => `These people are in a ${CHAT}: ${list(NAMES)}. ${BRIEF || 'They are friends.'}${full && TOPIC ? ` ${NAMES[0]} has this on their mind: ${TOPIC}` : ''}${full ? NAMES.filter(n => SECRETS[n]).map(n => ` ${n} already has this going on: ${SECRETS[n]} (${n}'s line must not restate it.)`).join('') : ''}`; // the daily refresh gets no topic or secrets
 const gen = (input, what) => claude(mkArgv(GEN), input).catch(e => { console.error(what, e.message); process.exit(1); });
 log({ config_dir: env.CLAUDE_CONFIG_DIR }); // kept after the run: the CLI's session files show what the models saw
 const twice = async (f, what) => { for (let i = 0; i < 2; i++) { const r = await f(); if (r) return r; console.error(what, i ? 'unusable again, giving up' : 'unusable, retrying'); } process.exit(1); }; // the generator must give every line: one retry, then fail the run (never run with empty lines)
-if (PRIVATE) { // one call: the shared setting and a line per person
-  const j = await twice(async () => { const j = await gen(`${cast()}\n\nFirst write one line starting "Setting:": one sentence in the second person for ${NAMES.length > 2 ? 'the whole group' : 'both of them'}, saying where you ${NAMES.length > 2 ? 'all ' : 'both '}live (a real or plausible town, city or area) and how you know each other, fitting the situation. Then for each of ${list(who)}, one line starting with their name and a colon, about their life this week, ${FORM} Each line must agree with the setting (the same town or area, the same way of knowing each other). Make the people clearly different from each other. Reply with only these lines.`, 'private lines:');
+if (PRIVATE && process.env.LINES_FROM) { // the setting, day-0 lines and any other fields come from an earlier run's first private_lines row: arms of one seed share a world
+  const { usage, ...row } = fs.readFileSync(path.join(process.env.LINES_FROM, 'log.jsonl'), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)).find(r => r.private_lines && r.setting);
+  setting = row.setting; Object.assign(lines, row.private_lines);
+  if (!NAMES.every(n => lines[n])) { console.error('LINES_FROM has no line for', NAMES.filter(n => !lines[n]).join(', ')); process.exit(1); }
+  log({ ...row, lines_from: process.env.LINES_FROM });
+} else if (PRIVATE) { // one call: the shared setting and a line per person
+  const j = await twice(async () => { const j = await gen(`${cast(true)}\n\nFirst write one line starting "Setting:": one sentence in the second person for ${NAMES.length > 2 ? 'the whole group' : 'both of them'}, saying where you ${NAMES.length > 2 ? 'all ' : 'both '}live (a real or plausible town, city or area) and how you know each other, fitting the situation. Then for each of ${list(NAMES)}, one line starting with their name and a colon, about their life this week, ${FORM} Each line must agree with the setting (the same town or area, the same way of knowing each other). Make the people clearly different from each other. Reply with only these lines.`, 'private lines:');
   // Labelled lines, not JSON: free text inside model-written JSON broke parsing (raw line breaks, unescaped quotes).
   const field = k => j.text.match(new RegExp(`^\\W*${k}[*_\\s]*:[*_\\s]*(.+)$`, 'im'))?.[1].trim();
-  setting = field('Setting'); for (const n of who) lines[n] = field(n);
-  return setting && who.every(n => lines[n]) && j; }, 'private lines:');
+  setting = field('Setting'); for (const n of NAMES) lines[n] = field(n);
+  return setting && NAMES.every(n => lines[n]) && j; }, 'private lines:');
   log({ private_lines: lines, setting, usage: j.usage });
 }
-const lineDay = Object.fromEntries(NAMES.map(n => [n, START.toDateString()]));
-async function refresh(n) { // a new in-story day (the first check-in after waking): n's line carries on from yesterday's
+if (process.env.GEN_ONLY === '1') { console.log('Generated only. Saved log.jsonl in', dir); process.exit(0); }
+const lineDay = Object.fromEntries(NAMES.map(n => [n, START.toDateString()])), since = Object.fromEntries(NAMES.map(n => [n, START]));
+async function refresh(n) { // a new in-story day (the first check-in after waking): n's day-0 line stays as their identity; only today's events are generated, from what n posted since the last refresh
   lineDay[n] = clock.toDateString();
-  const j = await twice(async () => { const j = await gen(`${cast()}\nSetting: ${setting}\n\nIt is a new day. Yesterday ${n}'s line was: ${lines[n]}\n\nWrite ${n}'s line for today, ${FORM} Carry on from yesterday's: some things move on or resolve, and new ordinary things come up. Reply with only the line.`, `private line ${n}:`); return j.text.trim() && j; }, `private line ${n}:`);
-  lines[n] = j.text.trim(); log({ private_lines: { [n]: lines[n] }, day: iso(clock).slice(0, 10), usage: j.usage });
+  const mine = convo.filter(m => m.who === n && m.at > since[n]); since[n] = clock;
+  const j = await twice(async () => { const j = await gen(`${cast(false)}\nSetting: ${setting}\n\nIt is a new day. ${n}'s life (fixed): ${lines[n]}${today[n] ? `\nYesterday: ${today[n]}` : ''}\n\n${mine.length ? `What ${n} posted in the chat since then:\n${mine.map(line).join('\n\n')}\n\n` : ''}Write what is going on with ${n} today, in the second person ('You ...'): how the things ${n} said they would do outside the chat went (some done, some slipping, as fits), and what is going on today. Keep where ${n} lives and their occupation as in their life. A few sentences; reply with only this.`, `today ${n}:`); return j.text.trim() && j; }, `today ${n}:`);
+  today[n] = j.text.trim(); log({ private_lines: { [n]: today[n] }, day: iso(clock).slice(0, 10), usage: j.usage });
 }
 NAMES.forEach((n, i) => sched(n, +START + (i ? rf(FIRST_SPREAD_MIN) * MIN : 0)));
 let end;

@@ -17,14 +17,16 @@ const SLEEP_START = [22.5, 24], SLEEP_END = [6, 8]; // hours of day, drawn once 
 const FIRST_SPREAD_MIN = [5, 120]; // minutes after START at which the agents other than Maya first look. design parameter, unsourced (TODO: source)
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
 const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. The relay shows you the chat whenever you look at it. To stay quiet, reply with only the word PASS: the relay drops it and nobody in the chat ever sees it.';
-const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. You have lives outside this chat. Skip disclaimers about being an AI or about your limits. Keep messages short.';
+// The brief describes the situation, not behaviour: who you are, what this chat is, who's in it. (Earlier briefs were behaviour instructions: "talk as you would with friends", "keep messages short", "skip disclaimers about being an AI"; agents that didn't know they were friends texting on phones wrote polished, assistant-like prose.) An argv[3] brief replaces it.
+const list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1);
+const BRIEF = process.argv[3], situation = n => BRIEF || `This is a group chat on your phone with your friends ${list(NAMES.filter(x => x !== n))}. You all live in the same city.`;
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
 // Optional (ORACLE=1): agents can ask Claude the way a person would. A line starting @claude goes to that agent's own Claude chat (one saved session per agent, so it remembers their earlier questions), which can search the web and open pages. Claude sees only the question, not the group chat; its answer is posted to the group as 'Claude', as if the asker pasted it in. ORACLE_MODEL picks its model (default sonnet).
 const ORACLE = process.env.ORACLE === '1', ORACLE_MODEL = process.env.ORACLE_MODEL || 'sonnet';
 const ORACLE_LINE = ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.';
 // System prompt order: BRIEF, oracle line, A's topic, the agent's secret.
-const briefFor = n => `You are ${n}. ` + BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this, at least at first: ${SECRETS[n]}` : '');
+const briefFor = n => `You are ${n}. ` + situation(n) + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this, at least at first: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, Math.min(8, Math.max(2, +process.env.PEOPLE || 4))), // env PEOPLE: 2-8 agents, default 4
    MESSAGES = +(process.env.MESSAGES || process.argv[2]) || 120, DAYS = +process.env.DAYS || 3, convo = [], seen = {}, looked = {};

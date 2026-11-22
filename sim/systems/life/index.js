@@ -10,6 +10,7 @@
 // INTENTS to housing (optional; life falls back to its own move code when absent): housing.moveTogether{a,b} -> {ok} ; housing.leaveHome{pid,reason,dependants?,dest?} -> {ok} ; housing.separate{leaver,stayer} -> {ok}
 //   housing.returnHome{pid} ; housing.inherit{from,heirs} ; labour.assign{pid} -> bool.   EVENTS: life.* (couple cohabit engaged marriage breakup divorce pregnant miscarriage birth move_in move_out leave_home boomerang
 //   school graduate retire kin_death funeral caring_start caring_end death will) — all carry `cause` where one exists.
+import { dayOfMonth, slotDay } from '../../util.js';
 import { registerEvents, runQueue, HANDLERS, later, months, ageOf, fullName, clamp, rec, bump, metro, hhOf, tieOf } from './util.js';
 import { initLife, lifeFor } from './init.js';
 import { matchmaking, coupleStep, relHandlers, formCouple, endRel, engage, wedding, cohabit, wantsSex, accepts, makeOffPartner, seekRate } from './rels.js';
@@ -60,8 +61,8 @@ function monthly(w) {
   const rng = w.rngFor('life.month'), people = w.living();
   ensure(w, people);
   accumulate(w, people);
-  coupleStep(w, rng, people); matchmaking(w, rng, people); monthlyFertility(w, rng, people);
-  leavingHome(w, rng, people); boomerangScan(w, rng); if (!w.commands.has('labour.retire')) retirement(w, rng, people); preschool(w, rng, people);
+  matchmaking(w, rng, people); monthlyFertility(w, rng, people); // (conceptions are already delayed 1-27 days)
+  boomerangScan(w, rng); if (!w.commands.has('labour.retire')) retirement(w, rng, people); preschool(w, rng, people);
   kinMonthly(w, rng); careScan(w, rng, people);
 }
 let SUBS = new WeakSet();
@@ -93,7 +94,8 @@ export function createLife() {
   },
   clocks: {
     hour: (w) => runQueue(w),
-    day: (w) => { subscribe(w); const t = w.time; if (t.month === 8 && t.dom === 1) septemberTransitions(w, w.living()); },
+    day: (w) => { subscribe(w); const t = w.time; if (t.month === 8 && t.dom === 1) septemberTransitions(w, w.living());
+      const dom = dayOfMonth(w), sl = w.living().filter((p) => p.ext.life && slotDay(p.id, dom)); if (sl.length) { const r = w.rngFor('life.stagger', w.tick); coupleStep(w, r, sl); leavingHome(w, r, sl); } }, // couple dynamics and leaving home: each person on their own day of the month
     month: (w) => monthly(w),
   },
   query: {

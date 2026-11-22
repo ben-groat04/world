@@ -366,7 +366,7 @@ export function createBusiness() {
     S().biz[bid] = nb;
     const staff = staffFor(fid, f, B.m2, owner); applyVenue(bid, f.tmpl, f.variant, nm);
     W.cmd('labour.openFirm', { bid, name: nm, staff });
-    if (p) { let ok = false; try { const r = W.cmd('labour.hire', { pid: p.id, bid, occ: f.ownerOcc || staff[0].occ }); ok = r && r.ok && p.ext.pop.workplace.bid === bid; } catch (e) { ok = false; } if (!ok) nb.own = { kind: 'indie', pid: null }; }
+    if (p) { let ok = false; try { const r = W.cmd('labour.hire', { pid: p.id, bid, occ: f.ownerOcc || staff[0].occ }); ok = r && r.ok && p.ext.pop.workplace.bid === bid; } catch (e) { ok = false; } if (!ok) nb.own = { kind: 'indie', pid: null }; else { p.ext.pop.contract = 'self_employed'; p.ext.pop.contractEnd = 0; } } // an owner works for themselves: no fixed-term contract that ends (this bug closed ~1/3 of resident-owned start-ups within a year as 'owner retired')
     S().ftMean = S().ftMean || {};
     bump('open', fid);
     const jobs = staff.reduce((n, x) => n + x.n, 0), who = owner.kind === 'resident' ? `${p.firstName} ${p.lastName}` : owner.kind === 'chain' ? 'the chain' : owner.kind === 'charity' ? 'the charity' : 'a new operator';

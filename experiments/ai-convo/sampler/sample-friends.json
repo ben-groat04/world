@@ -4,19 +4,80 @@
  "seed": "1",
  "people": [
   {
-   "name": "Sanjay Joshi",
-   "age": 31,
-   "sex": "M",
-   "ethnicity": "Other Asian",
-   "birthplace": "Sri Lanka",
-   "years_in_uk": 9,
-   "religion": "Hindu",
+   "name": "Rachel Moore",
+   "age": 36,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 36,
+   "religion": "No religion",
+   "activity": "employed part-time",
+   "occupation": "Caring personal service occupations",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 6994,
+   "hours_per_week": 10,
+   "shifts": [
+    {
+     "day": "Wed",
+     "start": "07:00",
+     "end": "17:30",
+     "paid_hours": 10
+    }
+   ],
+   "household": {
+    "type": "multi-generation family household",
+    "tenure": "owned outright",
+    "bedrooms": 4,
+    "occupancy_rating": 1,
+    "size": 4,
+    "members": [
+     {
+      "name": "Jack White",
+      "age": 38,
+      "sex": "M",
+      "relation": "husband"
+     },
+     {
+      "name": "Amelia White",
+      "age": 12,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Jean Moore",
+      "age": 68,
+      "sex": "F",
+      "relation": "mother"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Amelia White",
+     "age": 12,
+     "lives": "with me"
+    }
+   ],
+   "health": "very good",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 13.45,
+   "role": null
+  },
+  {
+   "name": "Nadia Chaudhry",
+   "age": 33,
+   "sex": "F",
+   "ethnicity": "Pakistani",
+   "birthplace": "England",
+   "years_in_uk": 33,
+   "religion": "Muslim",
    "activity": "employed full-time",
    "occupation": "Business & public-service associate professionals",
-   "contract": "permanent",
-   "employer": "Estate agency or finance firm",
-   "annual_income": 36710,
-   "earnings_from_work": 36710,
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 43425,
    "hours_per_week": 37,
    "shifts": [
     {
@@ -27,8 +88,8 @@
     },
     {
      "day": "Tue",
-     "start": "08:00",
-     "end": "16:00",
+     "start": "09:00",
+     "end": "17:00",
      "paid_hours": 7.5
     },
     {
@@ -45,232 +106,166 @@
     },
     {
      "day": "Fri",
-     "start": "08:00",
-     "end": "15:30",
+     "start": "08:30",
+     "end": "16:00",
      "paid_hours": 7
     }
    ],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 3,
-    "occupancy_rating": 1,
+    "tenure": "owned outright",
+    "bedrooms": 4,
+    "occupancy_rating": 2,
     "size": 4,
     "members": [
      {
-      "name": "Rohan Pandya",
-      "age": 34,
-      "sex": "M",
-      "relation": "partner"
-     },
-     {
-      "name": "Rahul Joshi",
-      "age": 2,
-      "sex": "M",
-      "relation": "son"
-     },
-     {
-      "name": "Nikhil Joshi",
-      "age": 1,
-      "sex": "M",
-      "relation": "son"
-     }
-    ]
-   },
-   "relationship_status": "cohabiting",
-   "children": [
-    {
-     "name": "Rahul Joshi",
-     "age": 2,
-     "lives": "with me"
-    },
-    {
-     "name": "Nikhil Joshi",
-     "age": 1,
-     "lives": "with me"
-    }
-   ],
-   "health": "very good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 19.08,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Soraya Kim",
-   "age": 25,
-   "sex": "F",
-   "ethnicity": "Other Asian",
-   "birthplace": "Philippines",
-   "years_in_uk": 2,
-   "religion": "Muslim",
-   "activity": "employed full-time",
-   "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-   "contract": "permanent",
-   "employer": "Cleaning contractor",
-   "annual_income": 22308,
-   "earnings_from_work": 22308,
-   "hours_per_week": 37.5,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Wed",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Thu",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Fri",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Sun",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "social rented",
-    "bedrooms": 3,
-    "occupancy_rating": 0,
-    "size": 3,
-    "members": [
-     {
-      "name": "Christopher Brown",
-      "age": 27,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Sofia Kowalski",
-      "age": 30,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "in a relationship (living apart)",
-   "children": [],
-   "health": "very good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 11.44,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Pooja Verma",
-   "age": 28,
-   "sex": "F",
-   "ethnicity": "Other Asian",
-   "birthplace": "Other",
-   "years_in_uk": 1,
-   "religion": "Hindu",
-   "activity": "employed full-time",
-   "occupation": "Teaching & other educational professionals",
-   "contract": "permanent",
-   "employer": "Independent school",
-   "annual_income": 55542,
-   "earnings_from_work": 55542,
-   "hours_per_week": 36,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Wed",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Thu",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Fri",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
-    }
-   ],
-   "household": {
-    "type": "couple family, no children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 4,
-    "occupancy_rating": 3,
-    "size": 2,
-    "members": [
-     {
-      "name": "Suresh Patel",
-      "age": 26,
+      "name": "Adam Khan",
+      "age": 35,
       "sex": "M",
       "relation": "husband"
+     },
+     {
+      "name": "Zain Khan",
+      "age": 5,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Mohammed Khan",
+      "age": 6,
+      "sex": "M",
+      "relation": "son"
      }
     ]
    },
    "relationship_status": "married",
-   "children": [],
-   "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 29.67,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
+   "children": [
+    {
+     "name": "Zain Khan",
+     "age": 5,
+     "lives": "with me"
+    },
+    {
+     "name": "Mohammed Khan",
+     "age": 6,
+     "lives": "with me"
+    }
+   ],
+   "health": "very good",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 22.57,
+   "role": null
   },
   {
-   "name": "Ryan Tanaka",
-   "age": 31,
-   "sex": "M",
-   "ethnicity": "Other Asian",
-   "birthplace": "Nepal",
-   "years_in_uk": 10,
+   "name": "Ebony Bailey",
+   "age": 41,
+   "sex": "F",
+   "ethnicity": "Mixed / multiple",
+   "birthplace": "England",
+   "years_in_uk": 41,
    "religion": "No religion",
-   "activity": "unemployed",
+   "activity": "employed full-time",
+   "occupation": "Administrative occupations",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 25623,
+   "hours_per_week": 37.5,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Tue",
+     "start": "08:00",
+     "end": "16:00",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Wed",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "17:00",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Fri",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    }
+   ],
+   "household": {
+    "type": "lone-parent family with dependent children",
+    "tenure": "private rented",
+    "bedrooms": 3,
+    "occupancy_rating": 1,
+    "size": 3,
+    "members": [
+     {
+      "name": "Harry Bailey",
+      "age": 10,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Kai Bailey",
+      "age": 13,
+      "sex": "M",
+      "relation": "son"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [
+    {
+     "name": "Harry Bailey",
+     "age": 10,
+     "lives": "with me"
+    },
+    {
+     "name": "Kai Bailey",
+     "age": 13,
+     "lives": "with me"
+    }
+   ],
+   "health": "very good",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 13.14,
+   "role": null
+  },
+  {
+   "name": "Tariq Rehman",
+   "age": 34,
+   "sex": "M",
+   "ethnicity": "Pakistani",
+   "birthplace": "England",
+   "years_in_uk": 34,
+   "religion": "Muslim",
+   "activity": "long-term sick or disabled",
    "occupation": null,
    "contract": null,
    "employer": null,
-   "annual_income": 6717,
-   "earnings_from_work": null,
+   "annual_income": null,
    "hours_per_week": 0,
    "shifts": [],
    "household": {
     "type": "couple family, no children",
     "tenure": "private rented",
-    "bedrooms": 3,
-    "occupancy_rating": 2,
+    "bedrooms": 2,
+    "occupancy_rating": 1,
     "size": 2,
     "members": [
      {
-      "name": "Kirsty Tanaka",
-      "age": 29,
+      "name": "Fatima Ali",
+      "age": 32,
       "sex": "F",
       "relation": "partner"
      }
@@ -278,184 +273,157 @@
    },
    "relationship_status": "cohabiting",
    "children": [],
-   "health": "good",
-   "education": "GCSE-level (level 1-2)",
+   "health": "bad",
+   "education": "Degree or above (level 4+)",
    "hourly_pay": null,
-   "income_source": "benefits (UC / JSA)",
-   "role": null,
-   "former_occupation": "Protective service occupations"
+   "role": null
   },
   {
-   "name": "Sunita Silva",
-   "age": 24,
+   "name": "Amy Hill",
+   "age": 36,
    "sex": "F",
-   "ethnicity": "Other Asian",
-   "birthplace": "Sri Lanka",
-   "years_in_uk": 15,
-   "religion": "Christian",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 36,
+   "religion": "No religion",
    "activity": "employed full-time",
-   "occupation": "Culture, media & sports occupations",
-   "contract": "permanent",
-   "employer": "Creative agency",
-   "annual_income": 28277,
-   "earnings_from_work": 28277,
+   "occupation": "Health professionals (doctors, nurses, therapists)",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 50902,
    "hours_per_week": 38,
    "shifts": [
     {
      "day": "Mon",
-     "start": "10:00",
+     "start": "08:30",
      "end": "16:30",
-     "paid_hours": 6.25
-    },
-    {
-     "day": "Tue",
-     "start": "10:00",
-     "end": "16:30",
-     "paid_hours": 6.25
+     "paid_hours": 7.5
     },
     {
      "day": "Wed",
-     "start": "10:00",
-     "end": "16:30",
-     "paid_hours": 6.25
+     "start": "09:00",
+     "end": "17:00",
+     "paid_hours": 7.5
     },
     {
      "day": "Fri",
-     "start": "09:30",
+     "start": "08:30",
      "end": "16:30",
-     "paid_hours": 6.25
+     "paid_hours": 7.5
     },
     {
      "day": "Sat",
-     "start": "10:00",
+     "start": "08:30",
      "end": "16:30",
-     "paid_hours": 6.25
+     "paid_hours": 7.5
     },
     {
      "day": "Sun",
-     "start": "10:00",
-     "end": "17:30",
-     "paid_hours": 6.75
+     "start": "08:30",
+     "end": "17:00",
+     "paid_hours": 8
     }
    ],
    "household": {
     "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 3,
+    "tenure": "social rented",
+    "bedrooms": 2,
     "occupancy_rating": 0,
-    "size": 3,
+    "size": 2,
     "members": [
      {
-      "name": "Pierre Horvath",
-      "age": 34,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Marek Silva",
-      "age": 20,
-      "sex": "M",
+      "name": "Abena Ibrahim",
+      "age": 26,
+      "sex": "F",
       "relation": "housemate (unrelated)"
      }
     ]
    },
-   "relationship_status": "single",
+   "relationship_status": "widowed",
    "children": [],
    "health": "very good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 14.31,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": 25.76,
+   "role": null
   }
  ],
  "ties": [
   {
-   "a": "Sanjay Joshi",
-   "b": "Soraya Kim",
+   "a": "Rachel Moore",
+   "b": "Nadia Chaudhry",
    "shared": [
-    "ethnicity",
     "education"
    ],
-   "age_gap": 6
+   "age_gap": 3
   },
   {
-   "a": "Sanjay Joshi",
-   "b": "Pooja Verma",
+   "a": "Rachel Moore",
+   "b": "Ebony Bailey",
+   "shared": [
+    "education",
+    "religion"
+   ],
+   "age_gap": 5
+  },
+  {
+   "a": "Rachel Moore",
+   "b": "Tariq Rehman",
+   "shared": [],
+   "age_gap": 2
+  },
+  {
+   "a": "Rachel Moore",
+   "b": "Amy Hill",
    "shared": [
     "ethnicity",
     "religion"
    ],
-   "age_gap": 3
-  },
-  {
-   "a": "Sanjay Joshi",
-   "b": "Ryan Tanaka",
-   "shared": [
-    "ethnicity",
-    "education"
-   ],
    "age_gap": 0
   },
   {
-   "a": "Sanjay Joshi",
-   "b": "Sunita Silva",
+   "a": "Nadia Chaudhry",
+   "b": "Ebony Bailey",
    "shared": [
-    "ethnicity",
     "education"
    ],
-   "age_gap": 7
+   "age_gap": 8
   },
   {
-   "a": "Soraya Kim",
-   "b": "Pooja Verma",
-   "shared": [
-    "ethnicity"
-   ],
-   "age_gap": 3
-  },
-  {
-   "a": "Soraya Kim",
-   "b": "Ryan Tanaka",
+   "a": "Nadia Chaudhry",
+   "b": "Tariq Rehman",
    "shared": [
     "ethnicity",
-    "education"
-   ],
-   "age_gap": 6
-  },
-  {
-   "a": "Soraya Kim",
-   "b": "Sunita Silva",
-   "shared": [
-    "ethnicity",
-    "education"
+    "religion"
    ],
    "age_gap": 1
   },
   {
-   "a": "Pooja Verma",
-   "b": "Ryan Tanaka",
-   "shared": [
-    "ethnicity"
-   ],
+   "a": "Nadia Chaudhry",
+   "b": "Amy Hill",
+   "shared": [],
    "age_gap": 3
   },
   {
-   "a": "Pooja Verma",
-   "b": "Sunita Silva",
-   "shared": [
-    "ethnicity"
-   ],
-   "age_gap": 4
+   "a": "Ebony Bailey",
+   "b": "Tariq Rehman",
+   "shared": [],
+   "age_gap": 7
   },
   {
-   "a": "Ryan Tanaka",
-   "b": "Sunita Silva",
+   "a": "Ebony Bailey",
+   "b": "Amy Hill",
    "shared": [
-    "ethnicity",
+    "religion"
+   ],
+   "age_gap": 5
+  },
+  {
+   "a": "Tariq Rehman",
+   "b": "Amy Hill",
+   "shared": [
     "education"
    ],
-   "age_gap": 7
+   "age_gap": 2
   }
  ]
 }

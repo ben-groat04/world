@@ -56,6 +56,7 @@ D['design']=["Shift timetables (days allowed, start times, shift lengths) per jo
  "'city'/'inner' profile strength pr in [0,1]: 0 = E&W tables, 1 = Inner London tables; fractional values interpolate (geometric for multipliers, mixture for bedroom tables).",
  "Cafe scenario: owner + staff; cook only when 3+ people; counter staff otherwise; some staff are full-time students. Role mix is a scenario choice.",
  "Friends scenario: friends' ages must be within FRIEND_AGE_WINDOW years of the anchor (a parameter, default 5) and every friend shares at least one attribute with another friend; no probabilities are assumed.",
+ "Census 'retired' cells below age 50 (a few hundred early retirements) are folded into long-term sick/disabled so no 20-year-old pensioners appear.",
  "Uniform interpolation inside published bands (single years inside 5-year birth-age bands, arrival-age bands, ASHE percentiles linear between published percentiles).",
  "Co-resident adult children in 'couple/lone parent with adult children' households: all of the mother's children (all >=18) live there. Sibling relations of adult children living with parents are not generated."]
 D['unspecified']=[
@@ -75,6 +76,12 @@ D['unspecified']=[
  "Child sex ratio at birth: child sex drawn from the Census population sex ratio at that age.",
  "Names: modest illustrative lists, equal weights (not frequency-weighted); cohort grouping is by decade of birth.",
  "Number of unrelated housemates in street/friends/cafe households: proxied by Census household size (TS017) for 2+ person households; not specific to sharers.",
+ "Tenure by age of reference person: RM201 only separates 16-64 and 65+, so under-65 households share one age effect.",
+ "Births to mothers under 16 and number of children '4 or more' (treated as 4): not sourced; the under-20 birth band is drawn from 16-19.",
+ "Bedrooms: RM136 stops at '4 or more' (treated as 4); sharers in 5+ person households get one bedroom each.",
+ "Health: the split inside Good (very good/good) and Not good (fair/bad/very bad) uses national TS037 ratios, not age-specific ones.",
+ "Student job occupation mix: ASHE 18-21 jobs weighted by the Census RM103 ratio of employed full-time students to all employed, by SOC major group.",
+ "Co-residence of adult children in households with dependent children: not sourced -> only dependent children are listed as co-resident; adult children are listed as living in their own household.",
  "First-degree age floor: nobody under 21 holds a degree (validity rule from UK higher-education timelines, not a Census table)."]
 json.dump(D,open('/home/user/world/experiments/ai-convo/sampler/data.json','w'),separators=(',',':'))
 print('ok',len(json.dumps(D)))

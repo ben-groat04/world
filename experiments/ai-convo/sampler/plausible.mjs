@@ -23,8 +23,8 @@ for (const g of groups) {
     if (p.activity === 'retired' && p.age < 50) flag(hard, 'retired under 50', p);
     if (p.activity === 'retired' && work) flag(hard, 'retired with job', p);
     if (p.age >= 75 && work && p.hours_per_week > 30) flag(soft, '75+ working >30h (Census 65+ band only)', p);
-    if (p.activity === 'student' && p.hours_per_week > 16) flag(hard, 'student job >16h', p);
-    if (p.activity === 'student' && p.age > 60) flag(hard, 'student over 60', p);
+    if (p.activity === 'student' && p.hours_per_week > 30) flag(hard, 'student job over 30h (full-time hours)', p);
+    if (p.activity === 'student' && p.age > 60) flag(soft, 'student over 60', p);
     if (p.activity === 'student' && p.age > 30) flag(soft, 'student over 30', p);
     if (work && p.hourly_pay < (p.age >= 21 ? 11.44 : 8.6)) flag(hard, 'below minimum wage', p, p.hourly_pay);
     if (work && Math.abs(p.annual_income - p.hourly_pay * p.hours_per_week * 52) > 2) flag(hard, 'pay != hourly x hours', p);
@@ -39,7 +39,7 @@ for (const g of groups) {
       let mx = 0; for (let i = 0; i < s.length; i++) { const j = (i + 1) % s.length, gap = s[j][0] + (j <= i ? 168 : 0) - s[i][1]; if (s.length > 1 && gap < 11) flag(hard, 'less than 11h rest', p, JSON.stringify(p.shifts.map(x => x.day + x.start))); mx = Math.max(mx, gap); }
       if (s.length > 1 && mx < 35) flag(hard, 'no weekly rest', p);
       if (wk > 60) flag(hard, 'over 60 paid hours', p);
-      if (p.activity === 'student' && p.shifts.length > 3) flag(hard, 'student 4+ shifts', p);
+      if (p.activity === 'student' && p.shifts.length > 5) flag(soft, 'student 6 shifts a week', p);
     } else if (p.shifts.length) flag(hard, 'shifts without job', p);
     if (p.education.includes('Degree') === false && /^(Health professionals|Teaching)/.test(p.occupation ?? '')) flag(hard, 'professional without degree', p);
     if (p.activity === 'long-term sick or disabled' && p.health === 'very good') flag(hard, 'sick but very good health', p);

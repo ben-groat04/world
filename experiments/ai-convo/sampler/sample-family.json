@@ -4,265 +4,158 @@
  "seed": "1",
  "people": [
   {
-   "name": "Omar Nasser",
+   "name": "Wendy Smith",
    "age": 46,
-   "sex": "M",
-   "ethnicity": "Arab / Other",
-   "birthplace": "Iraq",
-   "years_in_uk": 43,
-   "religion": "Muslim",
-   "activity": "employed full-time",
-   "occupation": "Secretarial & related occupations",
-   "contract": "permanent",
-   "employer": "Local authority",
-   "annual_income": 25629,
-   "earnings_from_work": 25629,
-   "hours_per_week": 38,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 46,
+   "religion": "No religion",
+   "activity": "employed part-time",
+   "occupation": "Caring personal service occupations",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 16681,
+   "hours_per_week": 18.5,
    "shifts": [
     {
-     "day": "Mon",
-     "start": "09:30",
-     "end": "17:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
-    },
-    {
      "day": "Wed",
-     "start": "09:30",
-     "end": "17:30",
-     "paid_hours": 7.5
+     "start": "07:00",
+     "end": "16:30",
+     "paid_hours": 9.25
     },
     {
-     "day": "Thu",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Fri",
-     "start": "09:00",
-     "end": "17:30",
-     "paid_hours": 8
+     "day": "Sun",
+     "start": "07:00",
+     "end": "16:30",
+     "paid_hours": 9.25
     }
    ],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "private rented",
-    "bedrooms": 2,
-    "occupancy_rating": 0,
-    "size": 4,
+    "tenure": "owned outright",
+    "bedrooms": 3,
+    "occupancy_rating": 1,
+    "size": 3,
     "members": [
      {
-      "name": "Nour Nasser",
-      "age": 44,
-      "sex": "F",
-      "relation": "wife"
-     },
-     {
-      "name": "Samira Nasser",
-      "age": 16,
-      "sex": "F",
-      "relation": "daughter"
-     },
-     {
-      "name": "Leila Nasser",
-      "age": 15,
-      "sex": "F",
-      "relation": "daughter"
-     }
-    ]
-   },
-   "relationship_status": "married",
-   "children": [
-    {
-     "name": "Samira Nasser",
-     "age": 16,
-     "lives": "with me"
-    },
-    {
-     "name": "Leila Nasser",
-     "age": 15,
-     "lives": "with me"
-    }
-   ],
-   "health": "very good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 12.97,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Nour Nasser",
-   "age": 44,
-   "sex": "F",
-   "ethnicity": "Arab / Other",
-   "birthplace": "Turkey",
-   "years_in_uk": 12,
-   "religion": "Muslim",
-   "activity": "student",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 6107,
-   "earnings_from_work": null,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "couple family with dependent children",
-    "tenure": "private rented",
-    "bedrooms": 2,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Omar Nasser",
-      "age": 46,
+      "name": "Kevin Clarke",
+      "age": 48,
       "sex": "M",
-      "relation": "husband"
+      "relation": "partner"
      },
      {
-      "name": "Samira Nasser",
+      "name": "Tommy Clarke",
       "age": 16,
-      "sex": "F",
-      "relation": "daughter"
-     },
-     {
-      "name": "Leila Nasser",
-      "age": 15,
-      "sex": "F",
-      "relation": "daughter"
+      "sex": "M",
+      "relation": "son"
      }
     ]
    },
-   "relationship_status": "married",
+   "relationship_status": "cohabiting",
    "children": [
     {
-     "name": "Samira Nasser",
+     "name": "Tommy Clarke",
      "age": 16,
-     "lives": "with me"
-    },
-    {
-     "name": "Leila Nasser",
-     "age": 15,
      "lives": "with me"
     }
    ],
    "health": "good",
    "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": null,
-   "income_source": "student support (maintenance loan)",
-   "role": null,
-   "former_occupation": null
+   "hourly_pay": 17.34,
+   "role": null
   },
   {
-   "name": "Samira Nasser",
+   "name": "Kevin Clarke",
+   "age": 48,
+   "sex": "M",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 48,
+   "religion": "No religion",
+   "activity": "looking after home or family",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "owned outright",
+    "bedrooms": 3,
+    "occupancy_rating": 1,
+    "size": 3,
+    "members": [
+     {
+      "name": "Wendy Smith",
+      "age": 46,
+      "sex": "F",
+      "relation": "partner"
+     },
+     {
+      "name": "Tommy Clarke",
+      "age": 16,
+      "sex": "M",
+      "relation": "son"
+     }
+    ]
+   },
+   "relationship_status": "cohabiting",
+   "children": [
+    {
+     "name": "Tommy Clarke",
+     "age": 16,
+     "lives": "with me"
+    }
+   ],
+   "health": "very good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": null,
+   "role": null
+  },
+  {
+   "name": "Tommy Clarke",
    "age": 16,
-   "sex": "F",
-   "ethnicity": "Arab / Other",
+   "sex": "M",
+   "ethnicity": "White British",
    "birthplace": "England",
    "years_in_uk": 16,
-   "religion": "Muslim",
+   "religion": "No religion",
    "activity": "school pupil",
    "occupation": null,
    "contract": null,
    "employer": null,
    "annual_income": null,
-   "earnings_from_work": null,
    "hours_per_week": 0,
    "shifts": [],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "private rented",
-    "bedrooms": 2,
-    "occupancy_rating": 0,
-    "size": 4,
+    "tenure": "owned outright",
+    "bedrooms": 3,
+    "occupancy_rating": 1,
+    "size": 3,
     "members": [
      {
-      "name": "Omar Nasser",
+      "name": "Wendy Smith",
       "age": 46,
-      "sex": "M",
-      "relation": "father"
-     },
-     {
-      "name": "Nour Nasser",
-      "age": 44,
       "sex": "F",
       "relation": "mother"
      },
      {
-      "name": "Leila Nasser",
-      "age": 15,
-      "sex": "F",
-      "relation": "sister"
+      "name": "Kevin Clarke",
+      "age": 48,
+      "sex": "M",
+      "relation": "father"
      }
     ]
    },
    "relationship_status": "single",
    "children": [],
-   "health": "very good",
+   "health": "good",
    "education": "secondary school / college",
    "hourly_pay": null,
-   "income_source": null,
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Leila Nasser",
-   "age": 15,
-   "sex": "F",
-   "ethnicity": "Arab / Other",
-   "birthplace": "England",
-   "years_in_uk": 15,
-   "religion": "Muslim",
-   "activity": "school pupil",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": null,
-   "earnings_from_work": null,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "couple family with dependent children",
-    "tenure": "private rented",
-    "bedrooms": 2,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Omar Nasser",
-      "age": 46,
-      "sex": "M",
-      "relation": "father"
-     },
-     {
-      "name": "Nour Nasser",
-      "age": 44,
-      "sex": "F",
-      "relation": "mother"
-     },
-     {
-      "name": "Samira Nasser",
-      "age": 16,
-      "sex": "F",
-      "relation": "sister"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "very good",
-   "education": "secondary school / college",
-   "hourly_pay": null,
-   "income_source": null,
-   "role": null,
-   "former_occupation": null
+   "role": null
   }
  ]
 }

@@ -5,292 +5,146 @@
  "area": "one inner-city area (inner profile)",
  "people": [
   {
-   "name": "Jasmine Henry",
+   "name": "Aoife Garcia",
    "age": 42,
    "sex": "F",
-   "ethnicity": "Black Caribbean / Other Black",
-   "birthplace": "England",
-   "years_in_uk": 42,
+   "ethnicity": "White Other (incl. Irish, Eastern European)",
+   "birthplace": "EU (2004-2011 accession)",
+   "years_in_uk": 8,
    "religion": "Muslim",
-   "activity": "looking after home or family",
-   "occupation": null,
-   "contract": null,
+   "activity": "employed full-time",
+   "occupation": "Business & public-service associate professionals",
+   "contract": "employee",
    "employer": null,
-   "annual_income": 2097,
-   "earnings_from_work": null,
-   "hours_per_week": 0,
-   "shifts": [],
+   "annual_income": 43367,
+   "hours_per_week": 37,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "09:00",
+     "end": "17:00",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Tue",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Wed",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Thu",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Fri",
+     "start": "08:30",
+     "end": "16:00",
+     "paid_hours": 7
+    }
+   ],
    "household": {
-    "type": "couple family with dependent children",
-    "tenure": "owned with mortgage",
+    "type": "multi-generation family household",
+    "tenure": "social rented",
     "bedrooms": 3,
-    "occupancy_rating": 1,
-    "size": 4,
+    "occupancy_rating": 0,
+    "size": 5,
     "members": [
      {
-      "name": "Ben Williams",
-      "age": 38,
+      "name": "Pierre Horvath",
+      "age": 44,
       "sex": "M",
       "relation": "partner"
      },
      {
-      "name": "Sami Williams",
-      "age": 16,
+      "name": "Ewa Horvath",
+      "age": 7,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Mateusz Horvath",
+      "age": 14,
       "sex": "M",
       "relation": "son"
      },
      {
-      "name": "Kai Williams",
-      "age": 12,
-      "sex": "M",
-      "relation": "son"
+      "name": "Niamh Garcia",
+      "age": 72,
+      "sex": "F",
+      "relation": "mother"
      }
     ]
    },
    "relationship_status": "cohabiting",
    "children": [
     {
-     "name": "Sami Williams",
-     "age": 16,
+     "name": "Ewa Horvath",
+     "age": 7,
      "lives": "with me"
     },
     {
-     "name": "Kai Williams",
-     "age": 12,
+     "name": "Mateusz Horvath",
+     "age": 14,
      "lives": "with me"
     }
    ],
    "health": "fair",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": null,
-   "income_source": "Carer's Allowance / child benefit",
-   "role": null,
-   "former_occupation": "Secretarial & related occupations"
-  },
-  {
-   "name": "Kwabena Eze",
-   "age": 28,
-   "sex": "M",
-   "ethnicity": "Black African",
-   "birthplace": "Nigeria",
-   "years_in_uk": 20,
-   "religion": "Christian",
-   "activity": "long-term sick or disabled",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 13433,
-   "earnings_from_work": null,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Maria Lopez",
-      "age": 53,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Natalia Wisniewski",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Luke Williams",
-      "age": 34,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "bad",
    "education": "Degree or above (level 4+)",
-   "hourly_pay": null,
-   "income_source": "benefits (UC LCWRA, ESA, PIP)",
-   "role": null,
-   "former_occupation": "Science, research, engineering & technology professionals"
+   "hourly_pay": 22.54,
+   "role": null
   },
   {
-   "name": "Jan Garcia",
-   "age": 24,
+   "name": "Jamie Clarke",
+   "age": 44,
    "sex": "M",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
-   "birthplace": "Turkey",
-   "years_in_uk": 1,
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 44,
    "religion": "No religion",
    "activity": "employed full-time",
-   "occupation": "Teaching & other educational professionals",
-   "contract": "permanent",
-   "employer": "State school",
-   "annual_income": 44097,
-   "earnings_from_work": 44097,
-   "hours_per_week": 34.5,
+   "occupation": "Culture, media & sports occupations",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 60963,
+   "hours_per_week": 39.5,
    "shifts": [
     {
      "day": "Mon",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
+     "start": "09:30",
+     "end": "18:00",
+     "paid_hours": 8
     },
     {
      "day": "Wed",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
+     "start": "11:00",
+     "end": "19:30",
+     "paid_hours": 8
     },
     {
      "day": "Thu",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
+     "start": "09:30",
+     "end": "18:00",
+     "paid_hours": 8
     },
     {
      "day": "Fri",
-     "start": "08:00",
-     "end": "15:00",
-     "paid_hours": 6.5
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Ava Scott",
-      "age": 22,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Daniel Edwards",
-      "age": 27,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Iqra Sheikh",
-      "age": 34,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "very good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 24.58,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Mohammed Demir",
-   "age": 69,
-   "sex": "M",
-   "ethnicity": "Arab / Other",
-   "birthplace": "Syria",
-   "years_in_uk": 50,
-   "religion": "Muslim",
-   "activity": "retired",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 21278,
-   "earnings_from_work": null,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "one-person household",
-    "tenure": "social rented",
-    "bedrooms": 2,
-    "occupancy_rating": 1,
-    "size": 1,
-    "members": []
-   },
-   "relationship_status": "separated or divorced",
-   "children": [
-    {
-     "name": "Hassan Demir",
-     "age": 42,
-     "lives": "own household"
+     "start": "09:30",
+     "end": "18:00",
+     "paid_hours": 8
     },
     {
-     "name": "Sara Demir",
-     "age": 38,
-     "lives": "own household"
-    }
-   ],
-   "health": "fair",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": null,
-   "income_source": "State Pension plus other pension",
-   "role": null,
-   "former_occupation": "Business, media & public-service professionals"
-  },
-  {
-   "name": "Liam Garcia",
-   "age": 21,
-   "sex": "M",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
-   "birthplace": "Portugal",
-   "years_in_uk": 1,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Transport & mobile machine drivers and operatives",
-   "contract": "permanent",
-   "employer": "Haulage or courier firm",
-   "annual_income": 30370,
-   "earnings_from_work": 30370,
-   "hours_per_week": 46.5,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "12:00",
-     "end": "21:30",
-     "paid_hours": 9.25
-    },
-    {
-     "day": "Tue",
-     "start": "12:00",
-     "end": "21:30",
-     "paid_hours": 9.25
-    },
-    {
-     "day": "Thu",
-     "start": "12:00",
-     "end": "21:30",
-     "paid_hours": 9.25
-    },
-    {
-     "day": "Fri",
-     "start": "12:00",
-     "end": "21:30",
-     "paid_hours": 9.25
-    },
-    {
-     "day": "Sun",
-     "start": "12:00",
-     "end": "22:00",
-     "paid_hours": 9.5
+     "day": "Sat",
+     "start": "11:00",
+     "end": "19:00",
+     "paid_hours": 7.5
     }
    ],
    "household": {
@@ -301,78 +155,298 @@
     "size": 3,
     "members": [
      {
-      "name": "Ioana Russo",
-      "age": 49,
+      "name": "Lauren Edwards",
+      "age": 42,
       "sex": "F",
-      "relation": "mother"
+      "relation": "partner"
      },
      {
-      "name": "Sean Garcia",
-      "age": 55,
-      "sex": "M",
-      "relation": "father"
+      "name": "Chloe Clarke",
+      "age": 26,
+      "sex": "F",
+      "relation": "daughter"
      }
     ]
    },
-   "relationship_status": "single",
-   "children": [],
-   "health": "very good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 12.56,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
+   "relationship_status": "cohabiting",
+   "children": [
+    {
+     "name": "Chloe Clarke",
+     "age": 26,
+     "lives": "with me"
+    }
+   ],
+   "health": "very bad",
+   "education": "No qualifications",
+   "hourly_pay": 29.68,
+   "role": null
   },
   {
-   "name": "Rania Shah",
-   "age": 81,
+   "name": "Rachel Harrison",
+   "age": 28,
    "sex": "F",
-   "ethnicity": "Arab / Other",
-   "birthplace": "Lebanon",
-   "years_in_uk": 47,
-   "religion": "Muslim",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 28,
+   "religion": "No religion",
    "activity": "long-term sick or disabled",
    "occupation": null,
    "contract": null,
    "employer": null,
-   "annual_income": 18256,
-   "earnings_from_work": null,
+   "annual_income": null,
    "hours_per_week": 0,
    "shifts": [],
    "household": {
-    "type": "couple family, no children",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 3,
-    "size": 2,
+    "type": "multi-generation family household",
+    "tenure": "social rented",
+    "bedrooms": 2,
+    "occupancy_rating": -1,
+    "size": 5,
     "members": [
      {
-      "name": "Mustafa Shah",
-      "age": 80,
+      "name": "Matthew White",
+      "age": 30,
       "sex": "M",
       "relation": "husband"
+     },
+     {
+      "name": "Jacob White",
+      "age": 0,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Freddie White",
+      "age": 1,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Joanna Harrison",
+      "age": 65,
+      "sex": "F",
+      "relation": "mother"
      }
     ]
    },
    "relationship_status": "married",
    "children": [
     {
-     "name": "Nour Shah",
-     "age": 49,
+     "name": "Jacob White",
+     "age": 0,
+     "lives": "with me"
+    },
+    {
+     "name": "Freddie White",
+     "age": 1,
+     "lives": "with me"
+    }
+   ],
+   "health": "bad",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": null,
+   "role": null
+  },
+  {
+   "name": "Darren Davies",
+   "age": 46,
+   "sex": "M",
+   "ethnicity": "White British",
+   "birthplace": "EU (2004-2011 accession)",
+   "years_in_uk": 39,
+   "religion": "No religion",
+   "activity": "self-employed",
+   "occupation": "Business, media & public-service professionals",
+   "contract": "self-employed",
+   "employer": "self-employed",
+   "annual_income": 33730,
+   "hours_per_week": 28.5,
+   "shifts": [
+    {
+     "day": "Tue",
+     "start": "09:30",
+     "end": "17:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Wed",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Thu",
+     "start": "09:30",
+     "end": "17:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Fri",
+     "start": "09:30",
+     "end": "16:30",
+     "paid_hours": 6.75
+    }
+   ],
+   "household": {
+    "type": "one-person household",
+    "tenure": "social rented",
+    "bedrooms": 2,
+    "occupancy_rating": 1,
+    "size": 1,
+    "members": []
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": 22.76,
+   "role": null
+  },
+  {
+   "name": "Baljit Singh",
+   "age": 48,
+   "sex": "F",
+   "ethnicity": "Arab / Other",
+   "birthplace": "Middle East",
+   "years_in_uk": 15,
+   "religion": "Sikh",
+   "activity": "student",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 5,
+    "occupancy_rating": 0,
+    "size": 5,
+    "members": [
+     {
+      "name": "Kamal Ahmed",
+      "age": 34,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Sofia Moreau",
+      "age": 30,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Alison Evans",
+      "age": 62,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Imogen Evans",
+      "age": 25,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [
+    {
+     "name": "Taran Singh",
+     "age": 19,
      "lives": "own household"
     },
     {
-     "name": "Hamid Shah",
-     "age": 49,
+     "name": "Amandeep Singh",
+     "age": 26,
      "lives": "own household"
     }
    ],
-   "health": "very bad",
-   "education": "GCSE-level (level 1-2)",
+   "health": "good",
+   "education": "Degree or above (level 4+)",
    "hourly_pay": null,
-   "income_source": "benefits (UC LCWRA, ESA, PIP)",
-   "role": null,
-   "former_occupation": "Customer service occupations"
+   "role": null
+  },
+  {
+   "name": "Andrew Jones",
+   "age": 62,
+   "sex": "M",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 62,
+   "religion": "Christian",
+   "activity": "employed full-time",
+   "occupation": "Business, media & public-service professionals",
+   "contract": "employee",
+   "employer": null,
+   "annual_income": 60186,
+   "hours_per_week": 36.5,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Tue",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Wed",
+     "start": "09:00",
+     "end": "16:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Thu",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
+    },
+    {
+     "day": "Fri",
+     "start": "08:00",
+     "end": "16:00",
+     "paid_hours": 7.5
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 4,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Cian Wisniewski",
+      "age": 64,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Grace Brown",
+      "age": 24,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Archie Smith",
+      "age": 20,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "fair",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": 31.71,
+   "role": null
   }
  ]
 }

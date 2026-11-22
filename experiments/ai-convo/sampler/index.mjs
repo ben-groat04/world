@@ -63,7 +63,7 @@ function mkShifts(P, h) {
 }
 const restOk = (days, st, els) => { const n = days.length; let mx = 0; for (let i = 0; i < n; i++) { const j = (i + 1) % n, g = days[j] * 24 + st[j] + (j <= i ? 168 : 0) - (days[i] * 24 + st[i] + els[i]); if (n > 1 && g < 11) return false; mx = Math.max(mx, g); } return n === 1 || mx >= 35; };
 function firstName(eth, rel, sex, age) {
-  let alt = ['pk', 'bd', 'ao', 'oa', 'mx', 'cn'].includes(eth) ? { Sikh: 'sikh', Hindu: 'in', Jewish: 'wb' }[rel] : null; // names follow faith where the ethnic pool would clash
+  let alt = ['pk', 'bd', 'ao', 'oa', 'mx', 'cn'].includes(eth) ? { Sikh: 'sikh', Hindu: 'in', Jewish: 'wb', Buddhist: 'oa' }[rel] : null; // names follow faith where the ethnic pool would clash
   if (eth === 'mx' && !alt) alt = rel === 'Muslim' ? one(['pk', 'ao', 'wb']) : one(['wb', 'wb', 'bc']);
   let pool = D.names[alt ?? (eth === 'in' ? (rel === 'Sikh' ? 'sikh' : rel === 'Muslim' ? 'pk' : 'in') : eth)];
   const v = pool[sex]; if (typeof v === 'string') return [one(v.split(' ')), one(pool.S)];
@@ -82,7 +82,8 @@ function person(o = {}) {
     const [, , lo, hi] = bands.find(x => x[0] === pk(bands.map(x => [x[0], x[1]]))); yrs = age - ri(lo, Math.min(hi, age));
   }
   const rel = o.rel ?? pk(D.rel[eth]);
-  const act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1]);
+  let act = kid ? (age < 4 ? 'pre' : 'sc') : o.act ?? pk(D.act[sex][b - 1]);
+  if (act === 're' && age < 50) act = 'si'; // design: the Census 'retired' cell below 50 is folded into long-term sick/disabled (early retirement through ill health)
   let h = pk(D.health[kid ? 0 : b]); if (act === 'si' && /good/.test(h)) h = pk(D.health[b], k => /fair|bad/.test(k) ? 1 : 0); // long-term sick/disabled: not "good" health (definition)
   const emp = ['ft', 'pt', 'se'].includes(act) || (act === 'st' && (o.occ != null || R() < D.stWork));
   let oc = null, P = null, hrs = 0, hp = null, shifts = [], earn = null;
@@ -107,7 +108,7 @@ function bedReq(M, C, type) { // ONS bedroom standard
   M.forEach((p, i) => { if (cp.has(i)) return; if (p.age >= 21) r++; else if (p.age >= 10) p.sex === 'M' ? m++ : f++; else y++; });
   return r + Math.ceil(m / 2) + Math.ceil(f / 2) + Math.ceil(Math.max(0, y - (m % 2 + f % 2)) / 2);
 }
-const bandAge = k => { const [lo, hi] = k === 'under 20' ? [15, 19] : k === '45 and over' ? [45, 49] : k.split(' to ').map(Number); return ri(lo, hi); }; // ONS Table 16 bands (under 20 taken as 15-19, 45+ as 45-49)
+const bandAge = k => { const [lo, hi] = k === 'under 20' ? [16, 19] : k === '45 and over' ? [45, 49] : k.split(' to ').map(Number); return ri(lo, hi); }; // ONS Table 16 bands (under 20 taken as 16-19 - births to under-16s are unspecified - and 45+ as 45-49)
 const BAGE = ['under 20', '20 to 24', '25 to 29', '30 to 34', '35 to 39', '40 to 44', '45 and over'];
 const anyBirthAge = () => bandAge(pk(BAGE.map((k, i) => [k, Object.values(D.birthAge).reduce((s, r) => s + r[i], 0)])));
 function kidsOf(m) { // children of a woman: number from ONS cohort table, ages from ONS births by parity

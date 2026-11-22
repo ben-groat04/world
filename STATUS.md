@@ -11,13 +11,13 @@
   (gap: grammar pools too small -> repetition; event names guessed, verify vs real registry)
 - UI: worker-based app, speed tiers, dock panels, mobile, portraits (ui/**)
 
-## In progress when paused (partial files on disk; resume by relaunching with "continue from disk state")
-- W1-H population + pre-history + routine plugin + createLarkfieldWorld (sim/population/**, sim/systems/routine/**,
-  sim/larkfield.js, tools/report-larkfield.js, ui/worker.js ?pack=larkfield) — early stage
-- W1-B goals/planner/self-model/groups (sim/goals/**, drives.js, goal-templates.js) — early stage
-
-## Next
-- W1-C housing/labour/money, W1-D life course/health, W1-E social/comms, W1-F UI for Larkfield
-- Then Wave 2 (institutions, off-map city, crime/civic, player + god mode, fork lab, online life), Wave 3 polish
-- Orchestration rules: Sonnet agents only; max 2 concurrent agents (user wants usage to climb slowly);
-  direct Agent tool rather than Workflow (workflows cap at 2 on this 4-CPU box anyway); poll progress every 5 min.
+## Since resume (Larkfield only; medieval world deleted)
+- Population/pre-history/routine, goals/planner/groups, housing/labour/money, life/health, social/comms,
+  crime/civic, business/high-street — all live in sim/larkfield.js.
+- UI: Larkfield-only app (map, Watch/People/Town/God tabs, mobile-first), player mode (newcomer/take-over,
+  here-and-now actions, dating, onboarding), god mode (presets + consequences tracker).
+- Live private build: https://claude.ai/artifact/UUPZPrk3GWap8RBiwnnqGx (rebuild: esbuild ui/app.js + ui/worker.js
+  into scratchpad/pub, concat CSS, republish).
+- Principles: PRINCIPLES.md (emergence over fudging; evidence-grounded fixes; forced-vs-emergent reporting).
+- Open issues: ISSUES.md. Calibration method: docs/CALIBRATION-METHOD.md.
+- Orchestration rules: Sonnet agents only; max 2 concurrent; poll every 10 min with substantive metrics.

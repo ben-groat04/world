@@ -139,3 +139,8 @@ FIXED: (1) crime report has ONE metric (recorded per 1000 residents/yr, resident
 (7) month-start clumping: housing, money, health, couple/leaving-home steps now run on each household's/person's own day of the month (day-1 share of events: housing 95% -> 3%, money 99% -> 3%, health 28% -> 4%); heat park trip replaced by temperature/flat-responsive park wish in the routine plan.
 EXTRA: civic.query.planning()/campaigns() now carry `bid`/`place`/`sid`; business.start has credit-checked loan, shared unit, and no-premises routes (market stall, pop-up, van, home-based); `business.query.startOptions(pid, unit)`.
 OPEN: seed-3 1y survival (69%) - entrants there lose money under high rents; 25-34 male violence over-peak; recorded totals 10-20% under target on some seeds (tuned streams not re-fitted per seed); life.graduate (1 Sept cohort) and matchmaking remain month-start; prison per 100k not reachable at n=580 without more serious-offence routes; under-16 sexual-offence victims not modelled; `tests/material` 'deterministic' and 'calibration bands' still fail (pre-existing).
+## Round 5 open (orchestrator)
+- 2 old material tests fail (deterministic calibration bands) — fix or replace with tolerant checks.
+- Test 7 changed to monthly-summed arrears (justified by staggering) — keep an eye on goalpost drift.
+- 25-34 men peak violence (2.6-3x) above 16-24; prison too rare to show at n~580; under-16 sexual victims unmodelled;
+  long-term vacancy tail low on some seeds; crime total & vacancy are tuned targets.

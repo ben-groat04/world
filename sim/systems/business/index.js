@@ -168,9 +168,9 @@ export function createBusiness() {
       const profit = rev - rev * (1 - gmEff) - A.wage - extWage - rent - rates - energy - over - interest;
       B.last = { rev: Math.round(rev), resid: Math.round(A.res), profit: Math.round(profit), rent: Math.round(rent), wages: Math.round(A.wage + extWage), rates: Math.round(rates), margin: rev > 0 ? profit / rev : 0 };
       B.rev6.push(rev); if (B.rev6.length > 6) B.rev6.shift();
-      if (s.m < 6) { B.pm = null; B.loss = 0; B.ok = 0; } else B.pm = B.pm == null ? profit : 0.5 * B.pm + 0.5 * profit; if (s.m >= 6) B.loss = B.pm < 0 ? B.loss + 1 : 0; B.ok = B.pm > 0 ? B.ok + 1 : 0; // two-month smoothing: one bad month is not distress
+      if (s.m < 6) { B.pm = null; B.loss = 0; B.ok = 0; } else B.pm = B.pm == null ? profit : 0.5 * B.pm + 0.5 * profit; if (s.m >= 6) B.loss = B.pm < -0.03 * rev ? B.loss + 1 : 0; B.ok = B.pm > 0 ? B.ok + 1 : 0; // two-month smoothing: one bad month is not distress
       // --- who covers a loss: chain HQ, resident owner's own money, off-map owner's reserve, then the overdraft
-      let cash = w.ledger.balance(acct);
+      let cash = w.ledger.balance(acct); const keep = Math.max(4000, 2 * fixed);
       if (cash < 0) {
         const need = -cash;
         if (B.own.kind === 'chain') { if (B.loss < CHAIN_CLOSE_STREAK) pay('metropolis', acct, need, 'chain_funding'); }
@@ -180,7 +180,7 @@ export function createBusiness() {
           if (p && p.alive && p.money > 100) { got = Math.min(need, p.money * 0.6); pay(p.id, acct, got, 'owner_injection'); }
           const r2 = Math.min(B.reserve, need - got); if (r2 > 0) { B.reserve -= r2; pay('metropolis', acct, r2, 'owner_reserve'); }
         }
-      } else if (B.own.kind !== 'chain' && cash > 6000 && B.own.kind !== 'charity') { pay(acct, 'metropolis', cash - 4000, 'owner_draw'); B.reserve += Math.min(2000, (cash - 4000) * 0.2); } // surplus is taken out; a share builds the reserve
+      } else if (B.own.kind !== 'chain' && B.own.kind !== 'charity' && cash > keep + 2000 && (w.tick - B.born) > 12 * MONTH) { const dr = cash - keep; pay(acct, 'metropolis', dr, 'owner_draw'); B.reserve += Math.min(3000, dr * 0.25); } // new owners keep their working capital for a year; later, surplus above ~2 months' costs is drawn and a quarter is saved
       cash = w.ledger.balance(acct); B.cash = cash;
       // --- owner stress follows the business
       const op = B.own.pid != null ? w.people.get(B.own.pid) : null;
@@ -206,10 +206,10 @@ export function createBusiness() {
     const b = W.buildings.get(B.bid), cash = B.cash, indie = B.own.kind !== 'chain' && B.own.kind !== 'charity', fixed = B.rent + (B.last ? B.last.wages : 0) * 0.3 + 400;
     // closure triggers: insolvency (cash + reserve + overdraft gone), chain rationalisation, owner gives up after a long losing run, owner exit (retire/die/leave)
     let why = null;
-    if (indie && cash < -OVERDRAFT && B.reserve <= 0 && B.loss >= 4) why = 'insolvent'; // lenders tolerate a short dip, not a run of losses
+    if (indie && cash < -OVERDRAFT && B.reserve <= 0 && B.loss >= 5) why = 'insolvent'; // lenders tolerate a short dip, not a run of losses
     else if (B.own.kind === 'chain' && B.loss >= CHAIN_CLOSE_STREAK) why = 'chain_rationalisation';
     else if (B.own.kind === 'chain' && macro().recession > 0.5 && B.loss >= 4 && rng.chance(0.08)) why = 'chain_restructuring';
-    else if (indie && B.loss >= 6 && rng.chance(Math.min(0.5, 0.06 * (B.loss - 4)))) why = 'owner_gave_up';
+    else if (indie && B.loss >= 8 && rng.chance(Math.min(0.5, 0.08 * (B.loss - 6)))) why = 'owner_gave_up'; // after most of a year of losses
     else if (B.own.kind === 'charity' && B.loss >= 12) why = 'charity_withdrew';
     const op = B.own.pid != null ? W.people.get(B.own.pid) : null;
     if (!why && B.own.kind === 'resident' && (!op || !op.alive || !op.ext.pop || op.ext.pop.workplace.bid !== B.bid)) { succession(B, rng); if (B.status !== 'trading') return; }
@@ -223,7 +223,7 @@ export function createBusiness() {
       const dow = (v && W.pack.venues[B.tmpl].hours && W.pack.venues[B.tmpl].hours.sun) ? 6 : 0;
       if (want >= 1) { v.trim = { days: [dow], eve: want >= 2 ? 1.5 : 1 }; B.trim = v.trim; } else { v.trim = null; B.trim = null; }
       const sc = want === 3 ? 0.6 : want === 2 ? 0.8 : 1;
-      if (sc !== B.scale) { B.scale = sc; W.cmd('labour.resizeFirm', { bid: B.bid, scale: sc }); }
+      if (sc !== B.scale) { B.scale = sc; W.cmd('labour.resizeFirm', { bid: B.bid, scale: sc, protect: B.own.pid }); }
       if (want > was) { W.emit('business.struggling', { place: B.bid, actors: B.own.pid != null ? [B.own.pid] : [], salience: 0.3, tags: ['business', 'loss'], payload: { name: B.name, stage: want, rent: B.rent } }); if (want >= 2) news(`${B.name} has cut staff and opening hours.`, 'struggling', B.bid, 2); }
       else if (want === 0 && was > 0) W.emit('business.recovered', { place: B.bid, salience: 0.15, tags: ['business'], payload: { name: B.name } });
     }
@@ -234,7 +234,7 @@ export function createBusiness() {
     B.own = { kind: 'indie', pid: null }; B.reserve = Math.round(Math.exp(rng.gauss(Math.log(6000), 0.7)));
     if (x > 0.85 && B.fid) { const f = FORMATS[B.fid]; const nm = makeName(rng, B.fid, ctxNames(rng)); renameBusiness(B, nm); }
     W.emit('business.owner_change', { place: B.bid, salience: 0.2, tags: ['business'], payload: { name: B.name } });
-    W.cmd('labour.resizeFirm', { bid: B.bid, scale: B.scale });
+    W.cmd('labour.resizeFirm', { bid: B.bid, scale: B.scale, protect: B.own.pid });
   }
   function renameBusiness(B, nm) { const was = B.name; B.name = nm; applyVenue(B.bid, B.tmpl, B.variant, nm); news(`${was} is now ${nm}.`, 'rename', B.bid, 1); }
 
@@ -303,9 +303,10 @@ export function createBusiness() {
     return { surname, given, place: street, cuisineW, taken };
   }
   function entryCost(B, fid, f) { const takeover = B.prev && B.prev.tmpl === f.tmpl ? 0.3 : B.prev && FAV_SLOT[B.prev.tmpl] && FAV_SLOT[B.prev.tmpl] === FAV_SLOT[f.tmpl] ? 0.55 : 1; return f.fit * B.m2 * takeover + 3 * B.ask + 1.5 * (B.ask + 2200); }
-  function expectedRev(fid) { const f = FORMATS[fid], inc = trading().filter((B) => B.tmpl === f.tmpl && B.rev6.length >= 3 && (B.fid === fid || !B.fid)); const same = trading().filter((B) => B.tmpl === f.tmpl && B.rev6.length >= 3);
-    const pool = inc.length ? inc : same; return pool.length ? pool.reduce((s, B) => s + B.rev6.reduce((a, x) => a + x, 0) / B.rev6.length, 0) / pool.length * (inc.length ? 1 : 0.9) : f.rev0 * demandIdx(); }
-  function viable(B, fid, tol = 0.1) { const f = FORMATS[fid], rev = expectedRev(fid), st = W.pack.venues[f.tmpl].staff || [], wages = st.reduce((s, x) => s + ((Array.isArray(x.n) ? (x.n[0] + x.n[1]) / 2 : x.n) * (f.own === 'chain' ? 1 : 0.7)) * 2000, 0) * 0.85;
+  function expectedRev(fid) { const f = FORMATS[fid], same = trading().filter((B) => B.tmpl === f.tmpl && B.rev6.length >= 3), pool = same.filter((B) => B.fid === fid).concat(same.length && !same.some((B) => B.fid === fid) ? same : []);
+    if (!pool.length) return f.rev0 * demandIdx(); const mean = pool.reduce((s2, B) => s2 + B.rev6.reduce((a2, x) => a2 + x, 0) / B.rev6.length, 0) / pool.length; return mean * Math.pow(same.length / (same.length + 1), 0.7); } // an entrant splits the incumbents' pie
+  function viable(B, fid, tol = 0.1, owner = { kind: 'indie' }) { const f = FORMATS[fid], rev = expectedRev(fid), OCC = W._occ || (W._occ = Object.fromEntries(W.pack.jobs.map((o) => [o.id, o])));
+    const wages = staffFor(fid, f, B.m2, owner).reduce((s2, x) => s2 + x.n * ((OCC[x.occ] ? OCC[x.occ].pay.median : 25000) / 12) * 1.1, 0);
     const rv = B.ask * 12 * 0.95, rates = rv <= SBRR_FULL ? 0 : rv * S().ratesMult * (rv < SBRR_TAPER ? (rv - SBRR_FULL) / 3000 : 1) / 12, profit = rev * f.gm - wages - B.ask - rates - B.m2 * ENERGY_M2 / 12 - OVERHEAD_FIX - rev * CARD_FEE;
     return profit > -tol * rev; }
   function formatWeights(B, kind, pid, capital, rng) {
@@ -314,7 +315,7 @@ export function createBusiness() {
     for (const fid of ids) {
       const f = FORMATS[fid]; if (f.w0 <= 0) continue; if (kind === 'chain' && f.own !== 'chain' && !(f.chains && f.chainShare)) continue; if (kind === 'charity' && f.own !== 'charity') continue; if ((kind === 'resident' || kind === 'indie') && f.own !== 'indie' && !(f.chainShare)) continue;
       if (B.m2 < f.area[0] * 0.75 || B.m2 > f.area[1] * 1.5) continue; if (f.own === 'chain' && kind !== 'chain') continue;
-      const cost = entryCost(B, fid, f); if (capital != null && cost > capital) continue; if (!viable(B, fid, kind === 'chain' ? 0.25 : 0.1)) continue;
+      const cost = entryCost(B, fid, f); if (capital != null && cost > capital) continue; if (!viable(B, fid, kind === 'chain' ? 0.05 : -0.01, { kind })) continue; // entrants need an expected profit (chains tolerate thinner store margins)
       let w = f.w0 * Math.exp(f.afflu * (A - 1) * 1.6);
       const base = S().mix0[fid] || S().mix0[f.tmpl] || 0; const here = inUse.filter((x) => x.tmpl === f.tmpl).length; w *= Math.exp(-0.45 * Math.max(0, here - Math.max(1, (S().mix0[f.tmpl] || 1))));  // crowding: more of a kind than the neighbourhood sustained at the start
       const inc = inUse.filter((x) => x.tmpl === f.tmpl && x.last); if (inc.length) { const mg = inc.reduce((s2, x) => s2 + x.last.margin, 0) / inc.length; w *= clamp(1 + 7 * (mg - 0.03), 0.3, 2.4); } // entrants chase observed profits
@@ -333,7 +334,7 @@ export function createBusiness() {
     const nm = opts.name || makeName(rng, fid, { ...ctx, chain: chain || charity });
     const wasVac = B.since != null ? Math.round((W.tick - B.since) / MONTH) : null; if (wasVac != null) { S().voids.push({ bid, months: wasVac, t: W.tick, init: !!B.initVoid }); if (S().voids.length > 300) S().voids.shift(); }
     owner.brand = chain || charity ? nm : undefined;
-    const nb = { bid, vid: B.vid, m2: B.m2, zone: B.zone, id: S().nextId++, status: 'trading', fid, tmpl: f.tmpl, variant: f.variant || null, name: nm, own: owner, born: W.tick, price: 1, q: rng.gauss(-0.05, 0.35), rating: 3.5, ft: { vh: 0, ema: null }, loan: null, trim: null, scale: 1, loss: 0, ok: 0, last: null, regs: 0, stage: 0, fillR: 1, rev6: [], reserve: 0, q0: 0,
+    const nb = { bid, vid: B.vid, m2: B.m2, zone: B.zone, id: S().nextId++, status: 'trading', fid, tmpl: f.tmpl, variant: f.variant || null, name: nm, own: owner, born: W.tick, price: 1, q: rng.gauss(-0.03, 0.22), rating: 3.5, ft: { vh: 0, ema: null }, loan: null, trim: null, scale: 1, loss: 0, ok: 0, last: null, regs: 0, stage: 0, fillR: 1, rev6: [], reserve: 0, q0: 0,
       k: catchmentFor(f), rent: Math.round(opts.rent || Math.max(B.ask || 0, 0) * (chain ? 1.05 : 1)), reviewAt: W.tick + REVIEW_MONTHS * MONTH, leaseEnd: W.tick + LEASE_MONTHS * MONTH, prev: B.prev || null, opened: W.tick };
     if (!nb.rent) nb.rent = marketRent(B);
     // capital: resident owner's own money + start-up loan; off-map owners bring a lognormal pot; chains are funded centrally

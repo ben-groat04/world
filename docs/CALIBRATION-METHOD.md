@@ -80,3 +80,12 @@ Day-1 age structure (input): children per family 1.9->2.1 mean (KID_COUNT), crow
 | TFR | metric = period TFR from woman-year exposure; conception hazard = ASFR/(1-0.11) at age+0.75 | NHS/RCOG miscarriage ~1 in 8; ASFR by age at birth | TFR is HELD-OUT (not tuned) |
 | home/family return | 1.2%/month x0.6 child<11 x0.35 Pakistani/Bangladeshi | ethnicity-facts-figures 2021; ONS Families & labour market | hand-set |
 Not tuned: employed share (target 55%), student share, TFR (held-out), loneliness age profile (held-out). Only `LONE_THRESHOLD` was refit (overall loneliness).
+
+## Business (high street lifecycle, `sim/systems/business`)
+Evidence used (cited in code): ONS Business Demography (1y survival ~92-93%, 5y ~39-40%, accommodation & food ~33%); Local Data Company / BRC vacancy 11-14% (London ~7-10%), ~1/3 of vacant units empty 3y+ (Property Week/LDC);
+PwC/LDC openings & closures (net growth: coffee shops, barbers/beauty/nail, vape shops, convenience, discounters, gyms; net decline: banks, betting, pubs); Sage/Toast/ATO cafe benchmarks (COGS ~30%, staff 30-38%, rent 10-15%, net 2-8%);
+UK commercial leases (5-yearly upward-only rent reviews, 10y terms); UK Start Up Loans (<=25k, 6%); small business rate relief (100% under RV 12k, taper to 15k, multiplier 49.9p); BBPA/CAMRA (pub closures ~1/day nationally; pubs as anti-loneliness infrastructure).
+- **Inputs**: day-1 venue set (map), owner occupations from slot fills, category spending shares (ONS Family Spending proportions, rounded), RENT_M2 (sets rent ~8-12% of day-1 turnover), cost shares, SBRR, loan terms, lease/review cycle.
+- **Day-1 input, not an outcome**: each incumbent's off-map catchment (`k`) is sized over three observation months so it starts near a typical margin (mean 7%, sd 5%): an established business exists because it is viable. After that nothing is clamped.
+- **Tuned (mechanism parameters)**: SIGMA_Q (idiosyncratic persistent demand quality), MATCH_RATE (entrants per vacant unit-month), loss-tolerance rules (insolvency after >=4 loss months beyond reserve+overdraft; owner gives up after 8+ months). Tuned to the 5-year survival and vacancy band only.
+- **Held-out (reported, never tuned)**: 1-year survival, void-duration tail, closure rate of incumbents, mix change, owner-type mix, rent/revenue.

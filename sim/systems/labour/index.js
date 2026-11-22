@@ -276,11 +276,11 @@ export function createLabour() {
     return true;
   }
   // Scale a firm's staffing (business plugin: short-time working, redundancies, expansion). Slots keep s.base (their size when first scaled); owner slots are never cut below 1.
-  function resizeFirm(bid, scale, cause) {
+  function resizeFirm(bid, scale, cause, protect) {
     let cut = 0;
     for (const s of slotsOf(bid)) {
       if (s.base === undefined) s.base = s.n; const want = Math.max(s.n > 0 && /owner|manager|publican|supervisor/.test(s.occ) ? 1 : 0, Math.round(s.base * scale)); let d = s.n - want;
-      if (d > 0) { while (d > 0 && s.vac.length) { s.vac.pop(); s.n--; d--; } while (d > 0 && s.ext > 0) { s.ext--; s.n--; d--; } while (d > 0 && s.filled.length) { const id = s.filled[s.filled.length - 1]; const p = typeof id === 'number' ? W.people.get(id) : null; if (p && p.alive && p.ext.pop) { loseJob(p, 'redundancy', cause || 0, { noVacancy: true }); cut++; } else { s.filled.pop(); s.n--; } d--; } }
+      if (d > 0) { while (d > 0 && s.vac.length) { s.vac.pop(); s.n--; d--; } while (d > 0 && s.ext > 0) { s.ext--; s.n--; d--; } while (d > 0 && s.filled.length) { let id = s.filled[s.filled.length - 1]; if (protect != null && id === protect) { if (s.filled.length < 2) break; s.filled.unshift(s.filled.pop()); id = s.filled[s.filled.length - 1]; if (id === protect) break; } const p = typeof id === 'number' ? W.people.get(id) : null; if (p && p.alive && p.ext.pop) { loseJob(p, 'redundancy', cause || 0, { noVacancy: true }); cut++; } else { s.filled.pop(); s.n--; } d--; } }
       else if (d < 0) { for (let i = 0; i < -d; i++) s.vac.push({ since: W.tick, occ: s.occ }); s.n += -d; }
       syncStaff(s);
     }
@@ -333,7 +333,7 @@ export function createLabour() {
       'labour.quit': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.ext.pop || p.ext.pop.activity !== 'employed') return false; loseJob(p, 'quit', a.cause || 0); return true; },
       'labour.layoffs': (w, a) => layoffs(a.sector, a.share ?? 0.25, a.cause),
       'labour.closeFirm': (w, a) => closeFirm(a.bid, a.reason || 'closed', a.cause || 0, !!a.permanent),
-      'labour.resizeFirm': (w, a) => resizeFirm(a.bid, a.scale, a.cause),
+      'labour.resizeFirm': (w, a) => resizeFirm(a.bid, a.scale, a.cause, a.protect),
       'labour.raise': (w, a) => { const p = w.people.get(a.pid); if (!p || p.ext.pop.activity !== 'employed') return false; p.ext.pop.pay = Math.round(p.ext.pop.pay * (1 + (a.pct ?? 5) / 100)); w.emit('labour.pay_rise', { actors: [p.id], salience: 0.3, cause: a.cause || 0, tags: ['labour', 'money'], payload: { pct: a.pct ?? 5 } }); return true; },
       'labour.retire': (w, a) => { const p = w.people.get(a.pid); if (!p || p.ext.pop.activity === 'retired') return false; if (p.ext.pop.activity === 'employed') retire(p); else { p.ext.pop.activity = 'retired'; p.job = 'retired'; } return true; },
       'labour.secondJob': (w, a) => { const p = w.people.get(a.pid); return !!p && secondJob(p, a.hours || 8); },

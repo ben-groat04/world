@@ -1,12 +1,14 @@
 // Four Sonnet agents talk to each other, each turn a `claude -p` call (no HTTP API). The brief is the system prompt and nothing else.
-// CLI flags: --system-prompt replaces the coding-agent prompt; no tools, no settings/CLAUDE.md, empty cwd. Only the CLI's one-line identity ("a Claude agent, built on the Claude Agent SDK") and its environment note remain.
-// Run: node run.mjs [rounds]   (default 15). Output: runs/<timestamp>/{transcript.txt,log.jsonl}
-import fs from 'fs'; import path from 'path'; import { spawnSync } from 'child_process';
-const BRIEF = 'There are other agents you can converse with.';
+// What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out.
+// Run: node run.mjs [rounds] [brief]   (default 15 rounds). Output: runs/<timestamp>/{transcript.txt,log.jsonl}
+import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawnSync } from 'child_process';
+const BRIEF = process.argv[3] || 'There are others you can converse with.';
 const NAMES = ['A', 'B', 'C', 'D'], ROUNDS = +process.argv[2] || 15, convo = [];
-const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-')), cwd = path.join(dir, 'cwd');
-fs.mkdirSync(cwd, { recursive: true });
+const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
+fs.mkdirSync(dir, { recursive: true });
+const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
 const env = { ...process.env }; for (const k of ['CLAUDE_CODE_USER_EMAIL', 'CLAUDECODE', 'CLAUDE_CODE_CHILD_SESSION', 'CLAUDE_CODE_ENTRYPOINT']) delete env[k];
+env.CLAUDE_CONFIG_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
 for (let r = 1; r <= ROUNDS; r++) for (const n of NAMES) {
   const user = `Conversation so far:\n${convo.length ? convo.map(m => `${m.who}: ${m.text}`).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.`;
   const argv = ['-p', user, '--system-prompt', BRIEF, '--tools', '', '--setting-sources', '', '--settings', '{"attribution":{"commit":"","pr":""},"includeCoAuthoredBy":false}',

@@ -7,30 +7,33 @@ const split = (s, mark) => { const m = typeof mark === 'string' ? (s.includes(ma
 const SINCE = '2026-11-22T16-37'; // earlier runs were tests: kept in runs/, left out of the viewer
 const ORACLE_LINES = [' There is also an oracle that can look things up online: start a line with @oracle and your question.', // runs before 2026-11-22 18:00
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.'];
+const PERSON = /^You are [A-Z][a-z]+\. /; // runs from 2026-11-22 evening put the name first in the system prompt, per person
+const dayLabel = at => { const d = new Date(at); return `(It's now ${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()]} ${d.getDate()} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()]}.)`; };
 const runs = [];
 for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const file = path.join(runsDir, id, 'log.jsonl');
   if (!fs.existsSync(file)) continue;
-  const all = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)).filter(r => !r.error); // oracle failures are logged but not shown
+  const every = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)), endRow = every.find(r => r.end);
+  const all = every.filter(r => !r.error && !r.end); // oracle failures are logged but not shown; the end row only sets `ended`
   const rows = all.filter(r => !r.oracle && !r.clock); // agent turns; Oracle and Clock rows stay in turns only
   if (!rows.length) continue;
   const m = id.match(/^(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d)-(\d\d)-(\d{3})Z$/);
   const started = m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null;
-  const byWho = w => rows.find(r => r.who === w)?.argv;
+  const byWho = w => rows.find(r => r.who === w && r.argv)?.argv; // later messages of one reply carry no argv
   const names = [...new Set(rows.map(r => r.who))], secrets = {};
-  const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt'), SECRET); if (sec) secrets[w] = sec; return ORACLE_LINES.reduce((s, l) => s.replace(l, ''), b); };
-  const oracle = ORACLE_LINES.some(l => arg(rows[0].argv, '--system-prompt').includes(l));
+  const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt'), SECRET); if (sec) secrets[w] = sec; return ORACLE_LINES.reduce((s, l) => s.replace(l, ''), b.replace(PERSON, '')); };
+  const oracle = ORACLE_LINES.some(l => arg(byWho(names[0]), '--system-prompt').includes(l));
   const [, topic] = split(brief(names[0]), MARK);
   const briefB = brief(names[1]); names.slice(2).forEach(brief);
   if (id < SINCE) continue;
-  // New runs (rows carry `step`, no rounds): turns are the posted messages, clock notes and oracle answers; unsent replies and passes are only counted.
-  const isNew = rows[0].step != null, lastRows = rows.filter(r => r.round === rows.at(-1).round);
+  // Three log formats: events (rows carry `checkin`: one row per posted message or PASS, in time order, plus an end row), steps (`step`: clock rows, unsent replies) and rounds (`round`). Turns are the posted messages and oracle answers (plus clock rows, or a day marker where an events run enters a new day); passes and unsent replies are only counted.
+  const events = rows[0].checkin != null, isNew = events || rows[0].step != null, lastRows = rows.filter(r => r.round === rows.at(-1).round);
   runs.push({
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,
     names, people: names.length, oracle, topic, secrets: Object.keys(secrets).length ? secrets : null,
     ...(isNew ? { passes: rows.filter(r => r.pass).length, unsent: rows.filter(r => r.posted === false && !r.pass).length } : { rounds: rows.at(-1).round }),
-    ended: isNew ? (all.filter(r => r.step === all.at(-1).step && !r.clock).every(r => r.pass) ? 'everyone passed' : 'message limit') : !all.at(-1).clock && lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
-    turns: all.filter(r => r.posted !== false).map(r => ({ ...(r.round != null && { round: r.round }), who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) })),
+    ended: events ? (endRow?.end === 'date' ? 'end date' : 'message limit') : isNew ? (all.filter(r => r.step === all.at(-1).step && !r.clock).every(r => r.pass) ? 'everyone passed' : 'message limit') : !all.at(-1).clock && lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
+    turns: all.filter(r => r.posted !== false).flatMap((r, i, a) => [...(events && r.at && (i ? a[i - 1].at.slice(0, 10) !== r.at.slice(0, 10) : false) ? [{ who: 'Clock', text: dayLabel(r.at), pass: false, clock: true, at: r.at }] : []), { ...(r.round != null && { round: r.round }), who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) }]),
   });
 }
 const out = JSON.stringify(runs);

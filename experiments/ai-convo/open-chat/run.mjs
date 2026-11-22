@@ -1,12 +1,18 @@
-// Four agents (Haiku by default) talk to each other through the `claude -p` CLI (no HTTP API). Each agent is a saved CLI session that holds exactly what it has seen and said in the posted conversation: every ask forks a new session from the agent's last posted turn (--resume <id> --fork-session), and only the fork whose reply is posted becomes the agent's session. A reply that isn't posted (lost the turn, or PASS) is discarded with its fork, so no agent remembers saying something nobody saw. The system prompt is NOTE + BRIEF and nothing else.
-// What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task).
-// Prompts: until an agent has posted, it gets the whole conversation so far; after that it gets what others said since its last posted message (its own posted replies are already in its session), as a header line "\u2014 Name, Sun 19:42" followed by the text. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
-// Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and forgotten by their agents. The relay note (NOTE, in the system prompt) says an agent may reply just PASS, which nobody sees; it is not in the chat prompts, where agents took it up as a word ("I'll PASS on anything else"). If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time (repeated in each prompt until that agent posts) and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Claude answers count).
-// In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides); each posted message is stamped and the clock then advances 1-6 minutes.
-// Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl} (every reply is logged with posted: true|false and its clock time `at`; transcript.txt has only posted messages, oracle answers and clock notes).
+// Four agents (Haiku by default) talk to each other through the `claude -p` CLI (no HTTP API). Each agent is a saved CLI session that holds everything it has read and written: every check-in forks the agent's session (--resume <id> --fork-session) and the fork is always kept as its session. Nothing is ever discarded: a PASS stays in its history as "looked and stayed quiet", and every other reply is posted, so no agent remembers saying something nobody saw, and none loses what it read. The system prompt is NOTE + BRIEF (which starts "You are <name>.") and nothing else.
+// What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task). Agents have WebFetch (links in the chat can be opened); a reply is the text after its last tool call. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
+// Event-driven clock: no global steps. Every agent has its own next check-in time, and the loop takes the earliest pending event (a check-in, a message finishing being typed, an @claude answer arriving), moves the in-story clock to it and handles it. At a check-in the agent is shown the time and what is new since it last looked (header line "\u2014 Name, Sun 19:42", then the text; on its first look, the whole conversation). Its reply is posted when finished: check-in time + time to read the new messages + time to type it. A reply may be several messages (split on blank lines), each posted after its own typing time. Messages posted while an agent is typing are seen only at its next check-in, so replies can cross, and anyone can post twice in a row. Presence: after posting an agent stays in the chat and looks again soon (RECHECK_MIN); after PASS it puts the phone down and looks again after OFFLINE_MIN. Maya (first name, gets the topic) opens at START; the others first look at some point in FIRST_SPREAD_MIN after it. Nobody is told to take turns and nothing makes the days pass: a quiet chat is just agents who are all offline.
+// The relay note (NOTE) says an agent may reply just PASS, which nobody sees; it is not in the chat prompts, where agents took it up as a word. Ends at MESSAGES posted messages (Claude answers count) or when the in-story clock passes START + DAYS days; the last log row is {end: 'limit'|'date', at}.
+// In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides).
+// Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [DAYS=3] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl}: log.jsonl has a row per posted message and per PASS (posted: true|false, `at` = post time, or check-in time for a PASS, `checkin` = the check-in it came from; usage/user/argv on the first message of a check-in), oracle rows, and the end row. transcript.txt has only posted messages and the end.
 import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
+// Timing (all in-story). Every real-world speed here is a design parameter, unsourced (TODO: source); ranges are drawn uniformly per use.
+const TYPE_CPM = [150, 300]; // typing speed, characters per minute. design parameter, unsourced (TODO: source)
+const READ_CPM = [800, 1500]; // reading speed, characters per minute. design parameter, unsourced (TODO: source)
+const RECHECK_MIN = [1, 8]; // minutes until an agent that just posted looks again (it is still in the chat). design parameter, unsourced (TODO: source)
+const OFFLINE_MIN = [30, 600]; // minutes until an agent that passed looks again (phone down). design parameter, unsourced (TODO: source)
+const FIRST_SPREAD_MIN = [5, 120]; // minutes after START at which the agents other than Maya first look. design parameter, unsourced (TODO: source)
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
-const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. The relay also asks you after each new message whether to reply. To stay quiet, reply with only the word PASS: the relay drops it and nobody in the chat ever sees it.';
+const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. The relay shows you the chat whenever you look at it. To stay quiet, reply with only the word PASS: the relay drops it and nobody in the chat ever sees it.';
 const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. You have lives outside this chat. Skip disclaimers about being an AI or about your limits. Keep messages short.';
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
@@ -14,15 +20,15 @@ const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D
 const ORACLE = process.env.ORACLE === '1', ORACLE_MODEL = process.env.ORACLE_MODEL || 'sonnet';
 const ORACLE_LINE = ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.';
 // System prompt order: BRIEF, oracle line, A's topic, the agent's secret.
-const briefFor = n => BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this, at least at first: ${SECRETS[n]}` : '');
+const briefFor = n => `You are ${n}. ` + BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this, at least at first: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, Math.min(8, Math.max(2, +process.env.PEOPLE || 4))), // env PEOPLE: 2-8 agents, default 4
-   MESSAGES = +(process.env.MESSAGES || process.argv[2]) || 120, convo = [], seen = {};
-const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const p2 = x => String(x).padStart(2, '0'), hm = d => `${p2(d.getHours())}:${p2(d.getMinutes())}`, rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
-const stamp = d => `${WD[d.getDay()]} ${hm(d)}`, iso = d => `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}T${hm(d)}`;
-let clock = process.env.START ? new Date(process.env.START) : new Date(new Date().setHours(19, 0, 0, 0));
-const post = (who, text) => { const m = { who, text, at: new Date(clock) }; convo.push(m); clock = new Date(+clock + rnd(1, 6) * 60000); return m; };
+   MESSAGES = +(process.env.MESSAGES || process.argv[2]) || 120, DAYS = +process.env.DAYS || 3, convo = [], seen = {}, looked = {};
+const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const p2 = x => String(x).padStart(2, '0'), hm = d => `${p2(d.getHours())}:${p2(d.getMinutes())}`, rf = ([a, b]) => a + Math.random() * (b - a);
+const stamp = d => `${WD[d.getDay()]} ${hm(d)}`, iso = d => `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}T${hm(d)}`, MIN = 60000;
+const START = process.env.START ? new Date(process.env.START) : new Date(new Date().setHours(19, 0, 0, 0)), END = new Date(+START + DAYS * 864e5);
+let clock = START;
 const line = m => `\u2014 ${m.who}, ${stamp(m.at)}\n${m.text}`; // header line, then the text: no "Name: text" pattern for agents to copy
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
 fs.mkdirSync(dir, { recursive: true });
@@ -30,78 +36,68 @@ const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
 // Agents inherit none of the calling Claude session's CLAUDE* variables: CLAUDE_CODE_SESSION_ID alone made every agent's CLI write to and resume one shared session file, so each agent read everyone's replies as its own.
 const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('CLAUDE')));
 env.CLAUDE_CODE_MAX_OUTPUT_TOKENS = '1000'; env.CLAUDE_CONFIG_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
-const mkArgv = sys => ['-p', '--output-format', 'json', '--system-prompt', sys, '--tools', '', '--setting-sources', '', '--settings', '{"attribution":{"commit":"","pr":""},"includeCoAuthoredBy":false}',
+const mkArgv = sys => ['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', sys, '--tools', 'WebFetch', '--allowedTools', 'WebFetch', '--setting-sources', '', '--settings', '{"attribution":{"commit":"","pr":""},"includeCoAuthoredBy":false}',
   '--exclude-dynamic-system-prompt-sections', '--model', MODEL]; // sessions are saved (no --no-session-persistence) so they can be forked; they live in the temp CLAUDE_CONFIG_DIR
-const fail = msg => { console.error('claude error:', msg); process.exit(1); };
-const session = {}; // per agent: the CLI session id of its last posted turn (absent until it has posted)
-// One turn: fork the agent's session (or start a fresh one) with `user` as the next message; returns the result JSON, whose session_id is the fork.
-async function turn(n, user) {
-  const argv = [...mkArgv(`${NOTE} ${briefFor(n)}`), ...(session[n] ? ['--resume', session[n], '--fork-session'] : [])];
-  const proc = spawn('claude', argv, { cwd, env, stdio: ['pipe', 'pipe', 'inherit'] });
-  let out = ''; proc.stdout.on('data', d => out += d); proc.stdin.end(user);
-  const code = await new Promise(res => { proc.on('error', e => fail(e)); proc.on('close', res); });
-  let j; try { j = JSON.parse(out); } catch { fail(`agent ${n}: exit ${code}, no result`); }
-  if (j.is_error) fail(j.result || JSON.stringify(j));
-  return j;
-}
-const claudeChat = {}; // per agent: the session id of their own Claude chat
-async function askOracle(who, q) {
-  // stream-json, not json: the answer is the text after Claude's last tool call, and json's .result can hold only part of it.
-  const argv = ['-p', q, '--output-format', 'stream-json', '--verbose', '--system-prompt', `${NOTE} You are Claude, an AI assistant made by Anthropic, chatting with one person. Check facts with web search, and open the pages you rely on instead of going on search snippets. Say plainly when you could not confirm something. Keep answers short and name your sources.`,
-    '--tools', 'WebSearch,WebFetch', '--allowedTools', 'WebSearch,WebFetch', '--setting-sources', '', '--model', ORACLE_MODEL, ...(claudeChat[who] ? ['--resume', claudeChat[who]] : [])];
-  const proc = spawn('claude', argv, { cwd, env, stdio: ['ignore', 'pipe', 'pipe'] });
-  let out = '', err = ''; proc.stdout.on('data', d => out += d); proc.stderr.on('data', d => err += d);
+// One CLI call with `input` on stdin. stream-json, not json: the reply is the text after the last tool call, and json's .result can hold only part of it. Returns the reply, usage and the (fork's) session id.
+async function claude(argv, input) {
+  const proc = spawn('claude', argv, { cwd, env, stdio: ['pipe', 'pipe', 'pipe'] });
+  let out = '', err = ''; proc.stdout.on('data', d => out += d); proc.stderr.on('data', d => err += d); proc.stdin.end(input);
   const code = await new Promise(res => { proc.on('error', () => res(-1)); proc.on('close', res); });
-  const events = out.split('\n').filter(Boolean).map(l => JSON.parse(l));
-  const res = events.find(e => e.type === 'result');
+  const events = out.split('\n').filter(Boolean).map(l => JSON.parse(l)), res = events.find(e => e.type === 'result');
   if (code !== 0 || !res || res.is_error) throw new Error(res?.result || err.trim() || `exit ${code}`);
   const blocks = events.filter(e => e.type === 'assistant').flatMap(e => e.message.content), lastTool = blocks.findLastIndex(c => c.type === 'tool_use');
-  const text = blocks.slice(lastTool + 1).filter(c => c.type === 'text').map(c => c.text.trim()).filter(Boolean).join('\n\n');
-  claudeChat[who] = res.session_id;
-  return { result: text, usage: res.usage };
+  return { text: blocks.slice(lastTool + 1).filter(c => c.type === 'text').map(c => c.text.trim()).filter(Boolean).join('\n\n'), usage: res.usage, sid: res.session_id };
 }
-const isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
+const session = {}; // per agent: the CLI session id of its last check-in (absent before its first)
+const turn = (n, user) => claude([...mkArgv(`${NOTE} ${briefFor(n)}`), ...(session[n] ? ['--resume', session[n], '--fork-session'] : [])], user).catch(e => { console.error(`agent ${n}:`, e.message); process.exit(1); });
+const claudeChat = {}; // per agent: the session id of their own Claude chat
+async function askOracle(who, q) {
+  const o = await claude(['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', `${NOTE} You are Claude, an AI assistant made by Anthropic, chatting with one person. Check facts with web search, and open the pages you rely on instead of going on search snippets. Say plainly when you could not confirm something. Keep answers short and name your sources.`,
+    '--tools', 'WebSearch,WebFetch', '--allowedTools', 'WebSearch,WebFetch', '--setting-sources', '', '--model', ORACLE_MODEL, ...(claudeChat[who] ? ['--resume', claudeChat[who]] : [])], q);
+  claudeChat[who] = o.sid;
+  return o;
+}
+const isPass = t => /^(pass[\s.!?,;:]*)?$/i.test(t); // an empty reply counts as quiet too
 const log = row => fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify(row) + '\n');
 const say = (head, body) => { fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- ${head}\n${body}\n\n`); console.log(`--- ${head}\n${body}\n`); };
-const prefix = {}; // per agent: lines to put at the top of their prompts until they next post (time jump)
-const ask = async (n, step, at) => {
-  const fresh = n in session ? convo.slice(seen[n]) : convo;
-  const body = n in session
-    ? `${fresh.length ? `New messages:\n${fresh.map(line).join('\n\n')}\n\nWrite your next message.` : 'No new messages.'}`
-    : `(It's now ${WD[clock.getDay()]} ${clock.getDate()} ${MON[clock.getMonth()]}, ${hm(clock)}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.`;
-  const user = (prefix[n] || []).map(x => x + '\n\n').join('') + body;
-  const j = await turn(n, user), text = j.result.trim();
-  return { n, text, pass: isPass(text), usage: j.usage, user, step, at, sid: j.session_id };
-};
-let askers = [NAMES[0]], afterJump = false, step = 0;
-while (convo.length < MESSAGES) {
-  step++;
-  const at = iso(clock), done = []; // done: replies in the order they finished
-  await Promise.all(askers.map(async n => done.push(await ask(n, step, at))));
-  // Who gets posted: a replier named in the last message (the one named first), else a random non-PASS replier.
-  const live = done.filter(r => !r.pass), last = convo.at(-1)?.text ?? '';
-  const named = live.map(r => [r, last.search(new RegExp(`\\b${r.n}\\b`, 'i'))]).filter(([, i]) => i >= 0).sort((a, b) => a[1] - b[1]);
-  const chosen = named.length ? 'addressed' : 'random', first = named.length ? named[0][0] : live[rnd(0, live.length - 1)];
-  for (const r of done) log({ step, who: r.n, text: r.text, ...(r.pass && { pass: true }), posted: r === first, ...(r === first && { chosen }), at, usage: r.usage, user: r.user, argv: mkArgv(briefFor(r.n)) });
-  if (first) {
-    post(first.n, first.text); session[first.n] = first.sid; seen[first.n] = convo.length; delete prefix[first.n]; // the posted fork becomes the agent's session
-    say(`${stamp(new Date(at))}, ${first.n}`, first.text);
-    const q = ORACLE && first.text.match(/^\s*@claude\b[:,]?\s*([\s\S]+)/im)?.[1].trim(); // everything after @claude, across lines: a multi-line question used to reach Claude as its first line only
-    if (q) try {
-      const o = await askOracle(first.n, q), answer = o.result.trim(), oat = iso(clock);
-      post('Claude', answer);
-      log({ step, who: 'Claude', text: answer, oracle: true, question: q, at: oat, usage: o.usage });
-      say(`${stamp(new Date(oat))}, Claude`, answer);
-    } catch (e) { console.error('oracle error:', e.message); log({ step, who: 'Claude', oracle: true, question: q, error: e.message }); }
-    askers = NAMES.filter(x => x !== first.n); afterJump = false;
-    continue;
-  }
-  if (afterJump) { say('everyone passed', 'conversation over'); break; }
-  const next = new Date(clock); next.setDate(next.getDate() + 1); next.setHours(18, 0, 0, 0); clock = new Date(+next + rnd(0, 210) * 60000);
-  const note = `(It's now ${WD[clock.getDay()]} ${clock.getDate()} ${MON[clock.getMonth()]}, ${hm(clock)}.)`;
-  for (const n of NAMES) (prefix[n] ||= []).unshift(note);
-  log({ step, who: 'Clock', text: note, clock: true, at: iso(clock) });
-  say('everyone passed, time jumps', note);
-  askers = [...NAMES]; afterJump = true;
+const queue = []; let seq = 0; // pending events, earliest first: {t (ms), kind: 'checkin'|'post'|'oracle', ...}
+const when = (t, e) => { queue.push({ t, seq: seq++, ...e }); queue.sort((a, b) => a.t - b.t || a.seq - b.seq); };
+const chars = ms => ms.reduce((s, m) => s + m.text.length, 0);
+async function checkin(n) {
+  const t = clock, fresh = convo.slice(seen[n] ?? 0).filter(m => m.who !== n), now = `It's now ${stamp(t)}`; // own messages are already in its session
+  const user = !(n in session) ? `(${now}.)\n\nConversation so far:\n${fresh.length ? fresh.map(line).join('\n\n') : '(nothing yet)'}`
+    : fresh.length ? `(${now}.)\n\nNew messages:\n${fresh.map(line).join('\n\n')}` : `(${now}. Nothing new since you last looked, ${stamp(looked[n])}.)`;
+  const j = await turn(n, user), text = j.text;
+  session[n] = j.sid; seen[n] = convo.length; looked[n] = t; // the fork is always the agent's session
+  const meta = { usage: j.usage, user, argv: mkArgv(briefFor(n)) };
+  if (isPass(text)) { log({ who: n, text, pass: true, posted: false, at: iso(t), checkin: iso(t), ...meta }); return when(+t + rf(OFFLINE_MIN) * MIN, { kind: 'checkin', who: n }); }
+  let parts = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+  const k = ORACLE ? parts.findIndex(p => ASK.test(p)) : -1;
+  if (k >= 0) parts = [...parts.slice(0, k), parts.slice(k).join('\n\n')]; // the question runs to the end of the reply
+  let at = +t + chars(fresh) / rf(READ_CPM) * MIN;
+  parts.forEach((p, i) => when(at += p.length / rf(TYPE_CPM) * MIN, { kind: 'post', who: n, text: p, checkin: t, ...(i === 0 && { meta }) }));
+  when(at + rf(RECHECK_MIN) * MIN, { kind: 'checkin', who: n });
 }
+const ASK = /^\s*@claude\b[:,]?\s*([\s\S]+)/im; // everything after @claude, across lines
+async function posted(e) {
+  convo.push({ who: e.who, text: e.text, at: clock });
+  log({ who: e.who, text: e.text, posted: true, at: iso(clock), checkin: iso(new Date(e.checkin)), ...e.meta });
+  say(`${stamp(clock)}, ${e.who}`, e.text);
+  const q = ORACLE && e.text.match(ASK)?.[1].trim();
+  if (q) try { const t0 = Date.now(), o = await askOracle(e.who, q); when(+clock + Date.now() - t0, { kind: 'oracle', who: e.who, text: o.text, question: q, usage: o.usage }); } // answer lands after the real duration of the call
+  catch (x) { console.error('oracle error:', x.message); log({ who: 'Claude', oracle: true, question: q, error: x.message }); }
+}
+NAMES.forEach((n, i) => when(+START + (i ? rf(FIRST_SPREAD_MIN) * MIN : 0), { kind: 'checkin', who: n }));
+let end;
+while (!end) {
+  if (convo.length >= MESSAGES) end = 'limit';
+  else if (queue[0].t > END) { end = 'date'; clock = END; }
+  else {
+    const e = queue.shift(); clock = new Date(e.t);
+    if (e.kind === 'checkin') await checkin(e.who);
+    else if (e.kind === 'post') await posted(e);
+    else { convo.push({ who: 'Claude', text: e.text, at: clock }); log({ who: 'Claude', text: e.text, oracle: true, question: e.question, at: iso(clock), usage: e.usage }); say(`${stamp(clock)}, Claude`, e.text); }
+  }
+}
+log({ end, at: iso(clock) }); say(end === 'limit' ? 'message limit reached' : 'end date reached', stamp(clock));
 console.log('Done. Saved transcript.txt and log.jsonl in', dir);

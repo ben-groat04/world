@@ -322,7 +322,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     }
     if (run.live && run.status === 'running' && pos >= turns.length && !typing && !reduced()) html += '<div class="msg typing who-O" aria-label="Conversation in progress"><div class="avatar" aria-hidden="true">\u2026</div><div class="bubble"><i></i><i></i><i></i></div></div>';
     if (pos >= turns.length && !(run.live && run.status === 'running')) {
-      html += run.ended === 'everyone passed' ? '<div class="end">End</div>' : '<div class="end">Cut off</div>';
+      html += ['everyone passed', 'end date'].includes(run.ended) ? '<div class="end">End</div>' : '<div class="end">Cut off</div>';
     }
     $('chat').innerHTML = html;
     const shown = turns.slice(0, pos).filter(t => !t.pass && !t.clock).length, total = nonPass(run);

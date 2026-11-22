@@ -1,0 +1,26 @@
+[
+ {
+  "what": "Kickabout with best mate",
+  "who": [
+   "Jack Whitfield"
+  ],
+  "place": "Park",
+  "t0": 180,
+  "t1": 270,
+  "by": "Jack Whitfield",
+  "at": "Sat 11:00",
+  "until": "Sat 12:30"
+ },
+ {
+  "what": "Pub with best mate",
+  "who": [
+   "Jack Whitfield"
+  ],
+  "place": "elsewhere",
+  "t0": 480,
+  "t1": 540,
+  "by": "Jack Whitfield",
+  "at": "Sat 16:00",
+  "until": "Sat 17:00"
+ }
+]

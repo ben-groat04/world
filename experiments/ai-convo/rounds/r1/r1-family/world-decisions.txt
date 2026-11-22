@@ -1,0 +1,39 @@
+[Sat 08:00] none best mate → Jack Whitfield: 
+   item: Jack Whitfield texted best mate: "morning mate"
+   reason: A greeting alone; the reply comes with the next message.
+[Sat 08:00] text (at Sat 08:10) best mate → Jack Whitfield: morning! just up. kickabout sounds good, pub after defo 😂 what time?
+   item: Jack Whitfield texted best mate: "anything on today? fancy a kickabout or pub later 😂"
+   reason: Friendly, banter-heavy mate who is always up for the pub would ordinarily reply fairly soon on a Saturday morning.
+[Sat 08:10] text (at Sat 08:12) best mate → Jack Whitfield: 11 works, see you there 👍
+   item: Jack Whitfield texted best mate: "11 at the park?"
+   reason: Friend already agreed to a kickabout and just needs the time confirmed.
+[Sat 08:10] text (at Sat 08:13) best mate → Jack Whitfield: haha classic, yeah I'll bring mine. don't blame me if it's a bit scuffed too 😂
+   item: Jack Whitfield texted best mate: "bring a ball i think mine's flat 😂"
+   reason: He was asked to bring a ball and would ordinarily say he will.
+[Sat 08:10] text (at Sat 08:14) best mate → Jack Whitfield: 4ish sounds good, first round's on whoever loses 😂
+   item: Jack Whitfield texted best mate: "pub after defo, 4ish"
+   reason: Friend had already said pub after defo, so he confirms the time in a banter-style reply.
+[Sat 08:14] text (at Sat 08:16) best mate → Jack Whitfield: haha see you at 4 then. loser buys, no excuses 🍻
+   item: Jack Whitfield texted best mate: "ha deal, scuffed ball it is 😂"
+   reason: Friend naturally replies to the banter; conversation is wrapping up, so a short sign-off is ordinary.
+[Sat 08:16] none best mate → Jack Whitfield: 
+   item: Jack Whitfield texted best mate: "haha deal, loser buys 🍻"
+   reason: This just confirms the bet and the plan. The mate already said loser buys, so nothing more is needed.
+[Sat 08:16] text (at Sat 08:18) best mate → Jack Whitfield: 11?? we said 4 mate 😂 are you ok, or did you mean something else?
+   item: Jack Whitfield texted best mate: "you're on, see you at 11 😂"
+   reason: Jack's 'see you at 11' contradicts the 4ish plan the mate just confirmed, so the mate would ask about it in a joking way.
+[Sat 08:20] text (at Sat 08:23) best mate → Jack Whitfield: ha right, fair enough, kickabout at 11 then pub at 4. don't be late or you're buying the first round anyway 😂
+   item: Jack Whitfield texted best mate: "haha oops my bad, 11 for the kickabout, 4 for the pub 😂"
+   reason: Mate understands the clarification and replies in a banter-heavy, casual way.
+[Sat 08:20] none best mate → Jack Whitfield: 
+   item: Jack Whitfield texted best mate: "two different things mate, i'm not that drunk yet 🤣"
+   reason: Second message is part of the same clarification, so one reply to the pair covers it.
+[Sat 08:25] none best mate → Jack Whitfield: The message is delivered and read. Nothing more is needed, since the plan is settled: kickabout at 11, pub at 4.
+   item: Jack Whitfield texted best mate: "haha yeah that's it, don't panic 😂"
+   reason: Jack's message closes the exchange, and the mate already confirmed the plan, so a reply isn't needed.
+[Sat 11:00] result (at Sat 11:00) Julie Whitfield: The shops are fairly busy for a Saturday morning, with a short queue at the deli counter. You find a block of mature cheddar for the scones and pick up the other bits you wanted. One item is out of stock, so you take a similar alternative. You pay and are done well within the hour.
+   item: Julie Whitfield at Local shops, Sat 11:00-Sat 12:00: Buy cheese for the scones and a few bits from the shops
+   reason: An ordinary Saturday shop where the errand succeeds, with one minor stock snag.
+[Sat 11:15] result (at Sat 11:30) Andrew Whitfield: The butcher has a modest queue on a Saturday morning, and you wait a few minutes. They have lean mince in stock and weigh out a pound, wrapping it in paper and a bag. You pay and leave with it.
+   item: Andrew Whitfield at Local shops, Sat 11:15-Sat 12:30: buy a pound of lean mince at the butcher
+   reason: Ordinary routine errand; a busy Saturday queue is the only snag and the item is normally stocked.

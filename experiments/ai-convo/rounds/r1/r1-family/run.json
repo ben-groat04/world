@@ -1,0 +1,40 @@
+{
+ "label": "r1-family",
+ "seed": 1101,
+ "args": {
+  "label": "r1-family",
+  "setting": "A family household in England.",
+  "dateNote": "mid-November 2026",
+  "startDow": 5,
+  "startHour": 8,
+  "hours": 12,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Sat 08:00",
+  "to": "Sat 20:00",
+  "hours": 12
+ },
+ "totalTokens": 931967,
+ "agentCount": 158,
+ "stats": {
+  "calls": 158,
+  "simCalls": 153,
+  "maxCalls": 360,
+  "byFor": {
+   "generator": 5,
+   "Julie Whitfield": 28,
+   "Andrew Whitfield": 29,
+   "Jack Whitfield": 47,
+   "Sophie Whitfield": 40,
+   "world": 8,
+   "best mate": 1
+  },
+  "sceneLines": 101,
+  "promptChars": 639221,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

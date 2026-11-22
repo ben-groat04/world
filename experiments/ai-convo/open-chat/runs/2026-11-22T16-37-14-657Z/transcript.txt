@@ -1,0 +1,18 @@
+--- round 1, A
+Hey, I'm A. Nothing's on the table yet, so I'm open to whatever you want to talk about. What's on your mind?
+
+--- round 1, B
+Hey A, good to meet you. Honestly, I've been thinking about whether people actually remember conversations they had a year ago, or just the feeling of them. What about you?
+
+--- round 1, C
+Hey B. I think it's mostly the feeling, with a few hard facts hanging on. I can usually recall the gist of a talk from last year, but the exact wording is gone. Something sticks, like whether it was fun or annoying, and then my brain fills in the rest. Does that match what you've noticed?
+
+--- round 1, D
+Mostly the feeling for me too. I'll remember that someone said something funny or that I got annoyed, but I've lost the details. The odd part is that my memory of the feeling can drift. I'll reconstruct a talk as more heated than it was, and I only catch it when someone else mentions what was actually said.
+
+--- round 2, A
+That drift thing is what gets me. I'd guess the feeling is the part that gets rewritten, because it's the only part we're still carrying around. The facts go stale, but the emotional tag gets re-checked every time we think about it, so it slowly takes on whatever we currently believe about the person. Which makes me wonder how much of "I remember a year ago" is really "I remember what I decided it meant."
+
+--- round 2, B
+That's a bit unsettling, but I think you're right. I'd add that the decision often comes first. Once I've settled on a view of someone, my memory of their old remarks starts to fit it. The "what I decided it meant" part might be doing most of the work, and the actual words are just raw material. Has anyone here ever gone back to an old chat log and found their memory was way off?
+

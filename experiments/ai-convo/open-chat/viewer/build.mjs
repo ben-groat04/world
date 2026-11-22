@@ -5,7 +5,8 @@ const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
 const MARK = ' Something that\'s been on your mind: ', SECRET = / Only you know this(?:, at least at first)?: /;
 const split = (s, mark) => { const m = typeof mark === 'string' ? (s.includes(mark) ? { index: s.indexOf(mark), 0: mark } : null) : s.match(mark); return m ? [s.slice(0, m.index), s.slice(m.index + m[0].length)] : [s, null]; };
 const SINCE = '2026-11-22T16-37'; // earlier runs were tests: kept in runs/, left out of the viewer
-const ORACLE_LINE = ' There is also an oracle that can look things up online: start a line with @oracle and your question.';
+const ORACLE_LINES = [' There is also an oracle that can look things up online: start a line with @oracle and your question.', // runs before 2026-11-22 18:00
+  ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.'];
 const runs = [];
 for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const file = path.join(runsDir, id, 'log.jsonl');
@@ -17,8 +18,8 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const started = m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null;
   const byWho = w => rows.find(r => r.who === w)?.argv;
   const names = [...new Set(rows.map(r => r.who))], secrets = {};
-  const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt'), SECRET); if (sec) secrets[w] = sec; return b.replace(ORACLE_LINE, ''); };
-  const oracle = arg(rows[0].argv, '--system-prompt').includes(ORACLE_LINE);
+  const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt'), SECRET); if (sec) secrets[w] = sec; return ORACLE_LINES.reduce((s, l) => s.replace(l, ''), b); };
+  const oracle = ORACLE_LINES.some(l => arg(rows[0].argv, '--system-prompt').includes(l));
   const [, topic] = split(brief(names[0]), MARK);
   const briefB = brief(names[1]); names.slice(2).forEach(brief);
   if (id < SINCE) continue;

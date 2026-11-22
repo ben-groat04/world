@@ -1,0 +1,76 @@
+--- Sun 19:00, Maya
+Hey, anyone around? I've been stuck on something since this morning. I saw a headline claiming the Riemann hypothesis got proved this month, and I can't tell if it's real or just hype.
+
+@claude Has the Riemann hypothesis been proved as of November 2026? If so, who claimed it, where was it posted, and has it been checked or accepted by mathematicians? If not, what's the status of the claim I saw? Please check current sources and tell me how confident you are.
+
+--- Sun 19:06, Claude
+**Short answer: I can't confirm that the Riemann hypothesis has been proved. There is a fresh claim, but it hasn't been accepted.**
+
+**The claim**
+- Levent Alpöge, who is at Anthropic, says he proved the Riemann hypothesis with Claude. It was posted on 20 November 2026 as a short PDF note at alpo.ge/remark.pdf. It points to a Lean formalization archive of 14 parts, reported as about 175,000 files. There is no conventional paper or journal submission. ([State of Proof](https://stateofproof.org/paper-watch/paper-2026-11-20-a-claimed-proof-of-the-riemann-hypothesis))
+
+**Checking so far**
+- State of Proof lists its examination as "not started" and records no expert reactions. It also says the match between the Lean statements and the standard hypothesis still needs checking. ([State of Proof](https://stateofproof.org/paper-watch/paper-2026-11-20-a-claimed-proof-of-the-riemann-hypothesis))
+- Shattered.io says the Lean release is "released, not independently validated". It reports no outside mathematician has verified it. ([Shattered](https://shattered.io/claude-riemann-hypothesis-claim-alpoge-lean-proof-zero-outside-checks/))
+- **Conflicting report:** BigGo quotes a joint statement dated 21 November from the Lean and Mathlib community, endorsed by Lean FRO and the Mathlib Initiative. It says they have "full confidence" the proof is correct. ([BigGo](https://finance.biggo.com/news/c132374d-8b9c-4693-91fc-616afae88090)) I couldn't find this statement in any primary source or second outlet. The State of Proof page doesn't mention it either. Treat it as unverified.
+- I didn't open the PDF or the Lean archive myself. My account of them comes from secondary sources.
+- The Clay Mathematics Institute prize requires peer-reviewed publication and a waiting period. I found no sign it has recognized any proof. I didn't find a current Clay page that confirms the problem is still listed as open.
+
+**Confidence**
+- **High:** The claim exists, who made it, and when it was posted.
+- **High:** It hasn't gone through peer review or prize recognition. That's only a few days after posting, so it couldn't have.
+- **Low to moderate:** Whether the proof is correct, and whether the Lean community has endorsed it. A Lean kernel check would show the formal statement is proved. It wouldn't show that the statement is the Riemann hypothesis, and that mismatch is the main risk.
+
+To follow it, check the Lean Zulip, Mathlib or Lean FRO's own announcements, and Clay's website.
+
+Sources: [State of Proof](https://stateofproof.org/paper-watch/paper-2026-11-20-a-claimed-proof-of-the-riemann-hypothesis), [Shattered](https://shattered.io/claude-riem
+
+نننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننننن
+
+[Shattered](https://shattered.io/claude-riemann-hypothesis-claim-alpoge-lean-proof-zero-outside-checks/), [BigGo](https://finance.biggo.com/news/c132374d-8b9c-4693-91fc-616afae88090)
+
+I also searched but did not open these pages, so I didn't rely on them for the claims above:
+- [Clay/Millennium Prize background (Wikipedia)](https://wikipedia.com/wiki/Riemann_conjecture)
+- [CASRAI](https://casrai.org/news/anthropic-levent-alpoge-claude-lean-riemann-hypothesis-claim-2026)
+- [Crypto Briefing](https://cryptobriefing.com/anthropic-researcher-claims-riemann-hypothesis-proof/)
+- [Quantum Zeitgeist](https://quantumzeitgeist.com/riemann-hypothesis-proof-claim-anthropic-claude/)
+- [Fello AI](https://felloai.com/riemann-hypothesis-solved/)
+
+--- Sun 19:12, Jo
+Hey Maya, I'm Jo. Claude's answer got cut off partway through, and the source list at the end is garbled, so I'd check the links yourself. The gist is still useful: the claim is real, it was posted only a couple of days ago, and nobody outside the authors has verified it yet. The "Lean community endorses it" line is the one I'd distrust most until you see it on the Lean Zulip or Lean FRO's site. Mostly, the headline is ahead of the evidence.
+
+--- Sun 19:16, Maya
+Thanks, Jo. That helps. I'll skip the endorsement line until I see it on Lean Zulip or Lean FRO's site.
+
+Claude's answer also said the claim was posted on 20 November, a couple of days before today. So the headline is way ahead of anything anyone has checked. I'll wait for the Lean people or Clay to say something before I believe any of it.
+
+I'm not going to open the garbled source list. I'll check Lean Zulip myself tonight.
+
+--- Sun 19:20, Jo
+Sounds like a good plan. One small correction to my last message: I said "a couple of days ago," but the claim is dated 20 November and today is 22 November, so that's right. Waiting for the Lean or Clay people is the sensible move. Good luck on Zulip tonight.
+
+--- Sun 19:21, Tom
+Hey, Tom here. Jo's right to distrust that endorsement line. For tonight's Zulip search, I'd look for the actual Lean statement of the theorem and check that it says non-trivial zeros of ζ(s) have real part 1/2. A proof that compiles can still be about a slightly different statement, so that's the first thing I'd check.
+
+--- Sun 19:22, Jo
+Good tip, Tom. I'd add: check how the statement handles the trivial zeros and the edge cases of the zeta definition, since a sloppy formalization can drift there. Maya, if you find the statement on Zulip, paste the key line here and we can read it together.
+
+--- Sun 19:28, Tom
+Good addition, Jo. Maya, the trivial zeros are the spot I'd check first. The statement should exclude them explicitly, usually by restricting to zeros off the trivial ones, or stating it as non-trivial zeros. If it just says "all zeros have real part 1/2" without that carve-out, something's off. Paste the line and we'll go through it.
+
+--- Sun 19:32, Jo
+Agreed, Tom. One caveat for Maya: if the statement says "all zeros" with no carve-out, it's probably false as written, since the trivial zeros at negative even integers have real part not equal to 1/2. So that would be a sign of a mistake in the statement, not a proof. Paste the line when you find it.
+
+--- Sun 19:34, Maya
+Thanks, both. Jo, your correction is right. The 20th to the 22nd is two days, so "a couple of days ago" holds.
+
+Tom, Jo, I'll check the statement for the carve-out first, like you said. Trivial zeros at negative even integers have real part 0, not 1/2, so a "all zeros" statement would be false as written. I'll paste the key line here once I find it on Zulip, and we can read it together.
+
+--- Sun 19:36, Jo
+Small fix, Maya: the trivial zeros are at the negative even integers (−2, −4, −6, …), so their real part is those negative numbers, not 0. The point still stands: they don't have real part 1/2, so a statement about "all zeros" needs the carve-out. Paste the line when you find it.
+
+--- Sun 19:42, Maya
+Right, Jo, thanks. The trivial zeros are at −2, −4, −6, and their real parts are those negative numbers, not 0. My mistake. The point holds: a statement about "all zeros" needs the carve-out.
+
+I haven't found the statement on Zulip yet. I'll paste the key line here when I do.
+

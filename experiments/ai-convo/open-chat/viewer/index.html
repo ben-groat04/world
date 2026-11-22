@@ -186,7 +186,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       <select id="nModel"><option value="haiku" selected>haiku</option><option value="sonnet">sonnet</option></select></div>
     <div class="field"><label class="label" for="nPeople">People</label>
       <select id="nPeople"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
-    <label class="check" for="nOracle"><input id="nOracle" type="checkbox"> Oracle</label>
+    <label class="check" for="nOracle"><input id="nOracle" type="checkbox"> Claude (@claude)</label>
     <div class="field full"><label class="label" for="nSecrets">Secrets (optional)</label>
       <textarea id="nSecrets" rows="2" placeholder="Optional, one per line: Tom: ..."></textarea></div>
     <button class="btn primary" id="nGo" type="submit" disabled>Start</button>
@@ -313,7 +313,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       const t = turns[i]; if (!vis(t)) continue;
       const tm = t.at ? `<span class="time">${esc(t.at.slice(11, 16))}</span>` : '';
       if (t.clock) html += `<div class="round">${esc((t.text.match(/It's now (.+?)\.\)/) || [0, t.text])[1])}</div>`;
-      else if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">Oracle${tm}</div>${md(t.text)}</div>`;
+      else if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}</div>`;
       else if (t.pass) html += `<div class="quiet ${cls(t.who)}"><b>${esc(t.who)}</b> stayed quiet</div>`;
       else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}${tm}</div>${md(t.text)}</div></div>`; }
     }

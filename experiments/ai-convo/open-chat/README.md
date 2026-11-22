@@ -10,7 +10,7 @@ node run.mjs                          # 4 people (Maya, Tom, Jo, Sam), open chat
 TOPIC="..." node run.mjs              # Maya has this on her mind and opens with it
 PEOPLE=6 node run.mjs                 # 2-8 people (then Priya, Dan, Ellie, Kofi)
 MODEL=sonnet node run.mjs             # default haiku
-ORACLE=1 node run.mjs                 # agents can write "@oracle ..." to have something looked up (web search)
+ORACLE=1 node run.mjs                 # agents can write "@claude ..." to ask Claude, which searches the web and reads pages (ORACLE_MODEL, default sonnet)
 SECRETS='{"Tom":"..."}' node run.mjs  # a private line for chosen people ("Only you know this, at least at first: ...")
 START=2026-12-01T19:00 node run.mjs   # in-story start time (default 19:00 today)
 node run.mjs 60 "custom brief"        # message limit, brief override

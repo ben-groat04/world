@@ -3,6 +3,8 @@ import fs from 'fs'; import path from 'path';
 const here = import.meta.dirname, runsDir = path.join(here, '..', 'runs');
 const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
 const MARK = ' Something that\'s been on your mind: ';
+// Only runs made with run.mjs's current default brief; earlier test runs stay in runs/ but not in the viewer.
+const BRIEF = fs.readFileSync(path.join(here, '..', 'run.mjs'), 'utf8').match(/const BRIEF = process\.argv\[3\] \|\| '([^']*)'/)[1];
 const runs = [];
 for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const file = path.join(runsDir, id, 'log.jsonl');
@@ -14,6 +16,7 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const byWho = w => rows.find(r => r.who === w)?.argv;
   const briefB = arg(byWho('B') || rows[0].argv, '--system-prompt');
   const briefA = arg(byWho('A') || rows[0].argv, '--system-prompt');
+  if (briefB !== BRIEF) continue;
   const i = briefA.indexOf(MARK);
   const last = rows.at(-1).round, lastRows = rows.filter(r => r.round === last);
   runs.push({

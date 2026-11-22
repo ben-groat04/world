@@ -303,9 +303,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   function selectRun(id, initial) {
     run = runs.find(r => r.id === id) || runs[0];
     stop(); store.set('chatRun', run.id);
-    let n = 0, p = 0;
-    while (p < run.turns.length && n < 4) { if (!run.turns[p].pass) n++; p++; }
-    pos = p;
+    pos = run.turns.length;
     renderPicker(); renderInfo(); render(false, false);
     if (!initial) window.scrollTo({ top: 0 });
   }

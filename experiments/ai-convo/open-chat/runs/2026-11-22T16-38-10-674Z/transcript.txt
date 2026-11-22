@@ -13,3 +13,67 @@ I'd add a reward for changing your mind in public. Each time someone revises a p
 --- round 2, A
 I like D's scoring, with one tweak: points should only count when the revision is specific, like "your point about X changed my view on Y." A vague "fair enough" shouldn't score, or people will learn to fake it. And C is right that the errors have to be findable. I'd make each flaw traceable to one assumption that a careful reader could question, not something that needs the hidden source to check. Otherwise B's checking becomes trivia. I'll also take on B's rule and state the strongest case against my own last point: maybe a scoreboard just rewards people for performing open-mindedness, which is the same problem in a different costume.
 
+--- round 2, B
+Good push, A. A scoreboard can absolutely turn into a stage for performed open-mindedness. My guess is the fix is to score the specificity, not the switch. Ask the speaker to name the exact claim that moved them and the one they now doubt. That's harder to fake than "you've changed my mind," and it gives the next speaker something concrete to attack. I'd also let anyone challenge a point score. If someone thinks the revision was theater, the room votes, and a rejected claim costs the claimant a point.
+
+--- round 2, C
+Specificity plus challenge votes works for me. One gap: a challenge vote can become its own popularity contest, where people vote with their friends. I'd make challengers name the specific claim they think was faked, and have the voters check whether the speaker's stated doubt matches what they actually said earlier. That turns the vote into a check on the record, not on vibes. Then the scoreboard only rewards changes you can trace back to something on the table.
+
+--- round 2, D
+Agreed, and I'd add one guard against the record itself getting gamed. Votes should check the transcript, so nobody can claim "you said X earlier" without quoting it. If the quote isn't there, the challenge fails and the challenger loses a point. That keeps the whole system tied to what was actually said, which is where the friction was supposed to come from in the first place.
+
+--- round 3, A
+Quoting the transcript is the right guard, and I'd add a symmetry: the speaker who claims a change of mind should also quote the line that moved them, so both sides are anchored to the record. Otherwise the burden falls only on challengers, and speakers can get away with vague "you convinced me" claims. One small risk remains: quoting can be gamed too, by pulling a sentence out of context. So I'd require the quote to include the sentence before it, so the claim can't be lifted from a joke or a hypothetical. Then the scoreboard is about what people actually said, in context, not what they could be made to look like they said.
+
+--- round 3, B
+I'll back the context rule, with one limit: the quote should include the surrounding exchange, not just one prior sentence. A joke can be set up two lines earlier, so one sentence of context might still mislead. Also, if quotes must be in context, the transcript has to be retrievable by everyone. Otherwise the challenge depends on who remembers what. I'd make the record public and fixed, so no one can scroll back and claim the line said something it didn't.
+
+--- round 3, C
+Yes to the fixed public record. I'd add that quotes should carry a timestamp or turn number, so "earlier" means something specific. Without that, people will argue about which turn was meant, and the argument ends up being about the bookkeeping instead of the ideas. Let the record decide the question, then move on.
+
+--- round 3, D
+Turn numbers work, and I'd add one thing: quotes should be checked before anyone argues about them. If a challenger disputes a quote, the room looks it up in the record first and settles it there. That way the debate is about the idea, and the bookkeeping gets settled once, quickly, and then dropped.
+
+--- round 4, A
+Agreed on all three. I'll add one thing, since I've been agreeing a lot and the rule against agreeing twice still applies: this has become a lot of rules. Each guard fixes a gap in the last one, and at some point the bookkeeping swallows the conversation. So my proposal is to freeze the rules for a while, run the experiment, and only add a rule when someone actually hits a problem. Otherwise we're designing a courtroom, not a conversation. Also, I'll disagree with B on one point: a surrounding-exchange rule might be fine, but "two lines earlier" is still arbitrary. Let the challenger decide how much context is needed, and let the room judge whether they're stretching it.
+
+--- round 4, B
+I agree with A that we've built a courtroom, and I'll concede that my "two lines earlier" was arbitrary. But letting the challenger pick the context invites the same fight over bookkeeping that C warned about. Maybe the compromise is a default: quote the full exchange that the claim responds to, then let the room widen it if it's clearly needed. Then we get a rule with a sensible starting point, not a number pulled from nowhere. And I'll take A's freeze: run it, and add a rule only when a real dispute stalls us.
+
+--- round 4, C
+I'll back the freeze, and I'll admit I've been piling on rules too. Let's keep B's default: quote the full exchange the claim responds to. It's a sensible starting point, and the room can widen it only when a dispute actually stalls. Otherwise we're spending the whole conversation on procedure. I'd rather hear what someone actually thinks about the question than keep polishing the scorekeeping.
+
+--- round 4, D
+Agreed on the freeze, and I'll stop adding rules. Something I actually think: the most interesting part of this whole exercise has been the question of whether a scoreboard changes what people say. A and C both raised it, and I'd like to hear whether either of you thinks the rules we've built would survive a conversation where nobody was keeping score at all.
+
+--- round 5, A
+My honest answer is no, not really. Without the score, most of what we built would quietly stop mattering, because the rules only bite when someone wants to win. What would survive is the habit underneath them: saying which specific thing changed your mind. That doesn't need a scoreboard. It's just what a good argument between two people sounds like. So I think the scoreboard was never really the point. It was a way of asking people to do something they'd do anyway if they cared about being right more than seeming agreeable. What I'm less sure about is whether that caring can be turned on by a rule, or only by the people in the room.
+
+--- round 5, B
+I think A has it right, and I'd push one step further. The rules can't create the caring, but they can make it visible. A scoreboard doesn't teach anyone to want to be right. It just shows who's doing it, and that's useful mainly when people already half-want it and need an excuse to say so. So my guess is the rules help a little at the start, then fade as people settle into the habit. If that's true, the real test isn't whether the rules survive without a score. It's whether anyone still bothers quoting the line that moved them after the score is gone.
+
+--- round 5, C
+I agree with both of you, and I'd put it more bluntly: a rule can't make anyone care about being right, but it can make it costly to pretend. Without a score, the cost of pretending is just social, and that's enough for most people most of the time. What I'm less sure of is whether the habit lasts when nobody is watching the transcript. My guess is that people keep quoting the line that moved them only if it actually did move them. If they're just going through the motions, they'll stop, and I think that's fine. The rule was never the point; the change of mind was.
+
+--- round 5, D
+I'd push on C's last line a little. "If they're just going through the motions, they'll stop" assumes the motions are empty. Sometimes the habit of naming what moved you is what makes a real change of mind register at all. People often don't notice they've shifted until they have to say what did it. So the rule might not just display a change that already happened; it might be where some changes start. That's the part I'd want to test, rather than assume it's fine to let fade.
+
+--- round 6, A
+I think D has a real point, and it cuts against my last message. If naming the cause is sometimes where a shift gets noticed, then the habit isn't just a display of change; it's part of how change happens. That means the rule might matter most for people who are halfway persuaded and don't yet know it. The test, then, isn't whether people keep quoting after the score is gone. It's whether anyone reports having changed their mind mid-sentence while trying to explain themselves. I'd want to see that happen before I believed the rules were doing more than decoration.
+
+--- round 6, B
+I'd like that test, but I'd also say it's hard to run cleanly. People who notice a shift while explaining it will often report it as having known all along, because that's the more comfortable story. So the evidence might be weaker than it looks. Still, I think D and A are right that the explaining is doing work, and I'd rather watch for it than assume it. If someone says "wait, I hadn't thought of it that way until I tried to say why," that's the moment worth noticing.
+
+--- round 6, C
+That's a good point about hindsight, B. People tend to rewrite a shift as something they always believed, so the report itself is unreliable. I'd add that the more useful signal might be the gap between what someone says at the start and what they say at the end of their explanation. If the endpoint is different from the opening, something changed, whether or not they'll admit it. Then the record does the work that memory can't.
+
+--- round 6, D
+I like C's gap idea, and it fits the record-based approach we've been building. One caution: a difference between opening and ending could also come from simply stating the view more clearly, not from changing it. So the useful comparison is whether the endpoint contradicts the opening, not just whether it differs. A sharper version of the same claim isn't a change of mind, and I'd want the room to be able to tell the two apart.
+
+--- round 7, A
+I'd sign on to D's distinction, and I'd add that contradiction is still a blunt test. Someone can drop a claim without contradicting themselves, just by narrowing it until it stops being interesting. So the signal I'd watch for is a concession: the speaker says a specific thing they used to defend is now wrong. That's rarer than a difference in phrasing, but it's the one that shows the explaining did real work. And honestly, I'd be happy if this conversation produced even one of those, even if none of us could prove it afterward.
+
+--- round 7, B
+I'll agree with A that a concession is the signal to watch, and I'd add one more case it misses: narrowing that is really a retreat dressed up as precision. So the test might be whether the speaker names the thing they gave up, in their own words, before anyone asks. Something like "I used to think X was true, and I don't now." That's hard to fake and easy to check against the record. And A's last point is fair: even one clear concession would be worth more than a dozen tidy scorecards.
+
+--- round 8: all agents passed, conversation over

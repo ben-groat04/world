@@ -32,8 +32,8 @@ test('openBusiness, rentReview, chainArrives, businessRatesCut commands work and
 });
 test('player can start a business in a vacant unit (affordability checked) and works as its owner', () => {
   const w = createLarkfieldWorld(4, { strictEvents: true }); w.run(D * 40);
-  const q = w.sys.business.query, vac = q.vacant()[0], p = [...w.people.values()].find((x) => x.alive && w.ageOf(x) > 25 && w.ageOf(x) < 55);
-  const r = w.cmd('business.start', { pid: p.id, unit: vac.bid, type: 'barber' }); assert.ok(r.ok, JSON.stringify(r));
+  const q = w.sys.business.query, vac = q.vacant()[0], cands = [...w.people.values()].filter((x) => x.alive && w.ageOf(x) > 25 && w.ageOf(x) < 55).sort((x, y) => y.money - x.money); // the best-resourced candidates first: a loan refusal for a random resident is a property of that person's credit, not of the command
+  let p = null, r = null; for (const c of cands.slice(0, 40)) { r = w.cmd('business.start', { pid: c.id, unit: vac.bid, type: 'barber' }); if (r.ok) { p = c; break; } } assert.ok(p, JSON.stringify(r));
   assert.equal(q.venue(vac.bid).owner.pid, p.id); assert.equal(p.ext.pop.workplace.bid, vac.bid);
   const r2 = w.cmd('business.start', { pid: p.id, unit: vac.bid, type: 'barber' }); assert.equal(r2.ok, false);
 });

@@ -211,7 +211,8 @@ export function cohabit(w, aid, force) {
   if (how === 'wait') { pt.waited = (pt.waited || 0) + 1; return; }
   if (how === 'in') {
     const np = materialise(w, m, hh, 'partner', rng, { sameFaith: a.ext.pop.religiosity > 0.5 && rng.chance(0.7) });
-    w.addPerson(np); fundArrival(w, np); w.cmd('routine.init', { pid: np.id });
+    w.addPerson(np); if (!hh.members.includes(np.id)) hh.members.push(np.id); { const bd = w.buildings.get(hh.bid); if (bd && !bd.residents.includes(np.id)) bd.residents.push(np.id); } // (the partner was never listed as a household member: when the household left the area they were left behind alive in a gone household)
+    fundArrival(w, np); w.cmd('routine.init', { pid: np.id });
     np.ext.life = { or: La.or === 'S' ? 'S' : (np.sex === a.sex ? (La.or === 'B' || La.or === 'O' ? 'B' : 'G') : 'B'), mar: 'never', part: { id: a.id, on: true, st: 'cohab', lat: false, since: pt.since, how: pt.how, ev: pt.ev }, nPart: 1 + (rng.chance(0.4) ? 1 : 0), parity: 0, firstCohab: w.tick, firstMar: null, firstBirth: null, preg: null, lastBirth: null, desire: clamp01(0.4 + rng.gauss(0, 0.2)), away: null, left: null, caring: null, boost: 0, ex: 0, sepAt: null, widowedAt: null, planKid: 0, arrivedFor: a.id };
     if (La.or === 'G' && np.sex !== a.sex) La.or = 'B';
     if (np.sex === a.sex && La.or === 'S') La.or = 'B';

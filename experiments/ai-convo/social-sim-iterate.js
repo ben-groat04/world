@@ -64,11 +64,12 @@ const SAY = { type: 'object', required: ['speech', 'action', 'leaves', 'memory']
   speech: { type: 'string' }, action: { type: 'string' }, leaves: { type: 'boolean' },
   memory: { type: 'string', description: 'rewrite your running memory (max 80 words)' },
 } }
-const AUDIT = { type: 'object', required: ['score', 'breakers', 'rule_changes', 'verdict'], properties: {
+const AUDIT = { type: 'object', required: ['score', 'breakers', 'mechanism_issues', 'extra_rules', 'verdict'], properties: {
   score: { type: 'integer', minimum: 1, maximum: 10, description: 'how realistic, as judged by a skeptical British reader' },
   verdict: { type: 'string' },
   breakers: { type: 'array', items: { type: 'object', required: ['quote', 'why'], properties: { quote: { type: 'string' }, why: { type: 'string' } } } },
-  rule_changes: { type: 'array', items: { type: 'string' }, description: 'general behavioural guidance to add for ALL characters next run (how real people text/talk/act). Must NOT script plot, outcomes, or name characters.' },
+  mechanism_issues: { type: 'array', items: { type: 'string' }, description: 'problems caused by how the simulation works (what people can see, scheduling, money, places, turn order, missing affordances) rather than by behaviour. Prefer these.' },
+  extra_rules: { type: 'array', maxItems: 3, items: { type: 'string' }, description: 'the COMPLETE replacement list of extra behavioural rules for next run (max 3, short, general, no plot, no names). Keep a previous rule only if still needed. Empty is fine and preferred if behaviour is emergent enough.' },
 } }
 
 const BASE_RULES = [
@@ -149,10 +150,10 @@ RULES USED THIS RUN:\n${rules.join('\n')}
 TRANSCRIPT (chats, DMs, payments, in-person):\n${text || '(nothing happened)'}
 PRIVATE MEMORY SNAPSHOTS (latest 60):\n${mem}
 Judge: would real people in this setting behave, text and talk like this over these days? Too much or too little activity? Repetition? Unrealistic politeness, articulacy, drama, or blandness? Knowledge leaks? Ignored circumstances?
-Give general rule changes for next run that fix behaviour (not plot). Do not invent outcomes or tell characters what to do.`, { ...P, phase: 'Audit', label: `${A.label} audit r${it}`, schema: AUDIT })
+Think hard about ROOT CAUSES. Behaviour must stay emergent: the fix is usually in the mechanism (report it in mechanism_issues), not more rules. Only propose up to 3 short general rules if truly needed, as a full replacement list. Never script plot or outcomes.`, { ...P, model: 'opus', effort: 'high', phase: 'Audit', label: `${A.label} audit r${it}`, schema: AUDIT })
   iterations.push({ it, rules: [...rules], transcript: text, memories: mem, final: run.final, decisions: run.decisions, audit })
   log(`${A.label} r${it}: score ${audit ? audit.score : '?'} · ${run.decisions} decisions · ${audit ? audit.verdict.slice(0, 120) : ''}`)
   if (!audit || audit.score >= 8) break
-  rules = [...BASE_RULES, ...[...rules.slice(BASE_RULES.length), ...audit.rule_changes].slice(-10)]
+  rules = [...BASE_RULES, ...(audit.extra_rules || []).slice(0, 3)]
 }
 return { label: A.label, world, events: allEvents.map((e) => `${fmt(e.t)} ${e.who}: ${e.text}`), iterations }

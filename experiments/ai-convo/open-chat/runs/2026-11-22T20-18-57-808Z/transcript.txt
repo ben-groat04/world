@@ -137,3 +137,6 @@ Thanks for being straight about it, Maya. It's fine. Tell me when they're up or 
 --- Wed 09:05, Maya
 Thanks Tom. I'll tell you as soon as I know when they're up.
 
+--- end date reached
+Wed 19:00
+

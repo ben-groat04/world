@@ -143,11 +143,11 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   </header>
   <div id="error" class="error" role="alert" hidden></div>
   <form class="newrun" id="newForm" autocomplete="off" hidden>
-    <div class="field grow"><label class="label" for="nTopic">Topic (optional)</label>
-      <input id="nTopic" type="text" maxlength="500" placeholder="Leave empty for an open conversation"></div>
+    <div class="field grow"><label class="label" for="nTopic">Topic</label>
+      <input id="nTopic" type="text" maxlength="500" placeholder="Optional"></div>
     <div class="field"><label class="label" for="nModel">Model</label>
       <select id="nModel"><option value="haiku" selected>haiku</option><option value="sonnet">sonnet</option></select></div>
-    <button class="btn primary" id="nGo" type="submit" disabled>Start conversation</button>
+    <button class="btn primary" id="nGo" type="submit" disabled>Start</button>
     <p class="status" id="nStatus" role="status"></p>
   </form>
   <div class="layout" id="layout" hidden>
@@ -155,7 +155,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       <ul class="runs" id="runs"></ul>
     </aside>
     <main class="main">
-      <label class="label" for="runSelect" style="display:block;margin-bottom:.3rem">Run</label>
+      <label class="label" for="runSelect" hidden>Run</label>
       <select class="picker-select" id="runSelect" style="margin-bottom:1rem"></select>
       <section class="info" id="info" aria-label="Run details"></section>
       <div class="chat" id="chat" aria-live="off"></div>
@@ -241,14 +241,13 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     $('runs').innerHTML = runs.map(r => `<li><button class="run" type="button" data-id="${esc(r.id)}" aria-current="${r === run}">
       <span class="run-l1"><span>${esc(fmtDate(r.started))}</span><span>${esc(r.model)}</span></span>
       <span class="run-l2">${r.topic ? esc(r.topic) : 'Open conversation'}</span>
-      <span class="run-l3">${nonPass(r)} messages \u00b7 ${esc(endLabel(r))}</span></button></li>`).join('');
-    $('runSelect').innerHTML = runs.map(r => `<option value="${esc(r.id)}"${r === run ? ' selected' : ''}>${esc(fmtDate(r.started))} \u00b7 ${esc(r.model)} \u00b7 ${r.topic ? esc(r.topic.slice(0, 40)) : 'open'} \u00b7 ${nonPass(r)} msgs \u00b7 ${esc(endLabel(r))}</option>`).join('');
+      <span class="run-l3">${nonPass(r)} messages</span></button></li>`).join('');
+    $('runSelect').innerHTML = runs.map(r => `<option value="${esc(r.id)}"${r === run ? ' selected' : ''}>${esc(fmtDate(r.started))} \u00b7 ${esc(r.model)} \u00b7 ${r.topic ? esc(r.topic.slice(0, 40)) : 'open'}</option>`).join('');
   }
 
   function renderInfo() {
-    $('info').innerHTML = `<div class="meta"><span><b>${esc(run.model)}</b></span><span>${esc(fmtDate(run.started))}</span><span>${run.rounds} rounds</span><span>${nonPass(run)} messages</span><span>ended: ${esc(run.ended)}</span></div>
-      <p><span class="label">Brief</span>${esc(run.brief)}</p>
-      <p><span class="label">On A's mind</span>${run.topic ? esc(run.topic) : '<span class="empty">Nothing in particular, an open conversation</span>'}</p>`;
+    $('info').innerHTML = `<div class="meta"><span><b>${esc(run.model)}</b></span><span>${esc(fmtDate(run.started))}</span></div>
+      <p><span class="label">Topic</span>${run.topic ? esc(run.topic) : 'none'}</p>`;
   }
 
   function render(animateLast, follow) {
@@ -264,9 +263,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       html += `<div class="msg typing who-${typing.who}" aria-label="${typing.who} is typing"><div class="avatar" aria-hidden="true">${typing.who}</div><div class="bubble"><i></i><i></i><i></i></div></div>`;
     }
     if (pos >= turns.length) {
-      html += run.ended === 'everyone passed' ? '<div class="end"><b>Everyone passed</b> \u2014 conversation over</div>' : `<div class="end"><b>Round limit reached</b> after ${run.rounds} rounds</div>`;
+      html += run.ended === 'everyone passed' ? '<div class="end">End</div>' : '<div class="end">Cut off</div>';
     }
-    if (!html) html = '<p class="empty">Nothing shown yet. Press Play or Next.</p>';
     $('chat').innerHTML = html;
     const shown = turns.slice(0, pos).filter(t => !t.pass).length, total = nonPass(run);
     $('count').textContent = `${shown} / ${total} messages`;
@@ -342,7 +340,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       }
     } catch (e) {}
     $('nGo').disabled = !canSend || sending;
-    if (!sending && !sentNote) nStatus(canSend ? 'Claude runs it and adds it to the list in a few minutes.' : why);
+    if (!sending && !sentNote) nStatus(canSend ? '' : why);
   }
   async function initNew() {
     try { comments = window.claude && window.claude.use ? await window.claude.use('comments') : null; } catch (e) { comments = null; }
@@ -360,7 +358,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
         const anchor = await comments.anchorFor($('newForm'));
         await comments.sendToClaude({ anchor, text });
         sentNote = true;
-        nStatus("Sent. Claude will start it; it'll appear in the list when it's done (usually 1\u20133 minutes). Claude replies in the comment thread.");
+        nStatus('Sent');
       } catch (err) {
         const code = err && err.code;
         nStatus(code === 'consent_required' ? 'Not sent. Allow comments for this page to start runs, then try again.'
@@ -377,7 +375,6 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     .then(data => {
       if (!Array.isArray(data) || !data.length) throw new Error('runs.json has no conversations.');
       runs = data;
-      $('summary').textContent = `${runs.length} runs \u00b7 ${runs.reduce((n, r) => n + nonPass(r), 0)} messages`;
       $('layout').hidden = false; $('barOuter').hidden = false;
       init();
       selectRun(runs[0].id, true);

@@ -118,3 +118,6 @@ See you all Wednesday!
 --- Sun 20:33, Tom
 See you all Wednesday!
 
+--- end date reached
+Wed 19:00
+

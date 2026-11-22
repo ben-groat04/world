@@ -53,7 +53,7 @@ if (!ATTR.length) throw new Error('args.sample (sampler output) or args.attribut
 // Anything without a source (interests, tastes, way of talking) is written blind to identity: no name, sex, ethnicity, birthplace or religion.
 // Given any identity cue, models fill gaps with stereotype (smoke runs: reggae, jerk seasoning, an accent from a name alone). The writer keeps
 // the practical facts of a life (age, work, household, health) and the temperament. Ethnicity is also kept from the players; the audit sees it.
-const IDENTITY = new Set(['name', 'sex', 'ethnicity', 'birthplace', 'years_in_uk', 'religion'])
+const IDENTITY = new Set(['name', 'id', 'sex', 'ethnicity', 'birthplace', 'years_in_uk', 'religion'])
 const blind = (a) => JSON.parse(JSON.stringify(a, (k, v) => IDENTITY.has(k) ? undefined : v))
 const shown = (a) => JSON.parse(JSON.stringify(a, (k, v) => k === 'ethnicity' ? undefined : v))
 // temperament drawn by code, independent of everything; low/high = bottom/top quarter of people, so 1/4 each by definition
@@ -68,8 +68,7 @@ FACTS (sampled from census data): ${JSON.stringify(blind(a))}
 TEMPERAMENT (drawn at random; low/high = bottom/top quarter of people): ${TEMPER[i]}
 Some identity facts are deliberately withheld. Choose interests and tastes as you would for a random person with this age, work, household, health and temperament. No figures, dates or events beyond the facts. Ordinary life: no secrets, crises or plot hooks.`,
   PERSON, { phase: 'Generate', label: `write person ${i + 1}`, for: 'generator' })))
-const PEOPLE = ATTR.map((a, i) => { const g = gen[i] || {}; return { name: a.name || `Person ${i + 1}`, attributes: a, temperament: TEMPER[i], profile: g.profile || '', speech: g.speech || '', texting: g.texting || '', contacts: g.contacts || [] } })
-const NAMES = PEOPLE.map((p) => p.name), P = Object.fromEntries(PEOPLE.map((p) => [p.name, p]))
+const PEOPLE = ATTR.map((a, i) => { const g = gen[i] || {}; return { name: a.name, attributes: a, temperament: TEMPER[i], profile: g.profile || '', speech: g.speech || '', texting: g.texting || '', contacts: g.contacts || [] } })
 const members = (n) => (P[n].attributes.household?.members || P[n].attributes.household?.lives_with || []).filter((m) => m && m.name)
 
 const WORLD = obj({ background: { type: 'string', description: '2-4 sentences of shared context, only what the setting and facts say or plainly imply; no figures' },
@@ -80,13 +79,19 @@ const WORLD = obj({ background: { type: 'string', description: '2-4 sentences of
   workplace: arr(obj({ person: str, place: str }), { description: 'for each person who works: which of the places above' }),
   contacts: arr(obj({ name: str, role: str, about: { type: 'string', description: '1 line incl. how they talk' }, linked_to: arr(str), place: { type: 'string', description: 'where they can be met in person, or empty' } }, ['name', 'role', 'about', 'linked_to']),
     { description: 'shared background characters the facts imply (letting agent for renters, a manager for employees)' }),
+  names: arr(obj({ id: str, name: str }), { description: 'a full name for every person, household member and child whose name is null, by id' }),
   contact_names: arr(obj({ person: str, relation: str, name: str }), { description: 'a first name for each person\'s contacts listed below, following naming patterns for that person\'s background and generation' }) })
 const W = await call('role', `${roleOf('world builder')}Supply the structure these lives already have. No plot, and never guess data: nothing the setting or facts do not give.
 SETTING: ${SETTING}${Object.keys(CONTEXT).length ? `\nSAMPLE CONTEXT: ${JSON.stringify(CONTEXT)}` : ''}
 WINDOW: ${fmt(0)} for ${HOURS} hours${DATE}.
-PEOPLE:\n${PEOPLE.map((p) => `${p.name}: ${JSON.stringify(shown(p.attributes))}\n  contacts to name: ${p.contacts.map((c) => c.relation).join('; ') || 'none'}`).join('\n')}
-Use only these names for the people.`, WORLD, { phase: 'Generate', label: 'build world', for: 'generator' })
+PEOPLE:\n${PEOPLE.map((p) => `${p.name || p.attributes.id}: ${JSON.stringify(shown(p.attributes))}\n  contacts to name: ${p.contacts.map((c) => c.relation).join('; ') || 'none'}`).join('\n')}
+Where a name is null (no sourced name list applies), choose a full name, as people with that birth year, birthplace, religion and family are actually named; keep a household's names consistent with each other; no two alike. Refer to the people by their names (the ones you give, where null).`, WORLD, { phase: 'Generate', label: 'build world', for: 'generator' })
 if (!W) throw new Error('world generation returned nothing')
+const GIVEN = Object.fromEntries((W.names || []).map((x) => [x.id, x.name]))
+const named = (o) => { if (o && typeof o === 'object') { if ('name' in o && o.name == null && o.id) o.name = GIVEN[o.id] || o.id; Object.values(o).forEach(named) } } // id = visible failure if the builder skipped one
+ATTR.forEach(named); PEOPLE.forEach((p) => { p.name = p.attributes.name })
+const NAMES = PEOPLE.map((p) => p.name), P = Object.fromEntries(PEOPLE.map((p) => [p.name, p]))
+const simOf = (m) => NAMES.find((n) => m.id ? P[n].attributes.id === m.id : n === m.name) || '' // a household member who is also simulated
 
 // ---------- normalise into hard facts ----------
 const PLACES = [...(W.places || []).filter((p) => p.name && p.name !== OUT).map((p) => ({ name: p.name, kind: p.kind || 'public', building: p.building || '', access: (p.access || []).map((n) => resolve(n, NAMES)).filter(Boolean) })), { name: OUT, kind: 'public', building: '', access: [] }]
@@ -105,7 +110,7 @@ for (const p of PEOPLE) {
 const contactsOf = (n) => Object.values(CONTACT).filter((c) => c.linked.includes(n)).map((c) => c.name)
 // who knows whom (by name, with numbers): sampled households plus groups the setting states; everyone else is a stranger until they learn
 const KNOW = Object.fromEntries(NAMES.map((n) => [n, new Set()])), NUM = Object.fromEntries(NAMES.map((n) => [n, new Set()]))
-const groups = [...(W.know_each_other || []).map((g) => (g || []).map((m) => resolve(m, NAMES)).filter(Boolean)), ...NAMES.map((n) => [n, ...members(n).map((m) => resolve(m.name, NAMES)).filter(Boolean)])]
+const groups = [...(W.know_each_other || []).map((g) => (g || []).map((m) => resolve(m, NAMES)).filter(Boolean)), ...NAMES.map((n) => [n, ...members(n).map(simOf).filter(Boolean)])]
 for (const g of groups) for (const a of g) for (const b of g) if (a !== b) { KNOW[a].add(b); NUM[a].add(b) }
 const desc = (m) => { const a = P[m].attributes; return [a.sex, Number.isFinite(+a.age) ? `${Math.floor(a.age / 10) * 10}s` : ''].filter(Boolean).join(', ') || 'someone' }
 const label = (v, m) => !NAMES.includes(m) || v === m || KNOW[v].has(m) ? m : `stranger (${desc(m)})`
@@ -133,7 +138,7 @@ const RULES = ['You are one real person, not an assistant. You know only what yo
   'Talk the way you talk and text the way you text, but most of what anyone says is plain. Speech is spoken words in normal sentence case.',
   'Silence, short replies and doing nothing are normal. No speeches, therapy-speak or tidy resolutions.',
   `It is ${fmt(0).slice(0, 3)}${DATE}. You do not know the specifics of this year's TV, sport, charts or news; keep such references general.`, ...(A.rules || [])]
-const facts = (a) => Object.entries(shown(a)).filter(([k]) => k !== 'name').map(([k, v]) => `${k}: ${typeof v === 'object' ? JSON.stringify(v) : v}`).join('; ')
+const facts = (a) => Object.entries(shown(a)).filter(([k]) => k !== 'name' && k !== 'id').map(([k, v]) => `${k}: ${typeof v === 'object' ? JSON.stringify(v) : v}`).join('; ')
 for (const p of PEOPLE) HEADS[p.name] = `RULES:\n${list(RULES)}\n\nYOU: ${p.name}. ${facts(p.attributes)}\nTemperament (low/high = bottom/top quarter of people): ${p.temperament}\n${p.profile}\nHOW YOU SPEAK: ${p.speech}\nHOW YOU TEXT: ${p.texting}\n\nWHERE YOU LIVE: ${W.background || ''}\nEVERYONE HERE KNOWS:\n${list(W.common_knowledge || [])}`
 
 const L = [] // the full event log; every entry has t and kind
@@ -235,7 +240,7 @@ Your turn. Your journal shows what you have already said and done. You can say n
   sc.next = addressed || order.find((m) => !sc.done[m])
   if (!sc.next) sc.ending = 'talk ran out'
 }
-function join(sc, n, say) { sc.people.push(n); sc.done[n] = false; S[n].doing = 'with ' + sc.people.filter((m) => m !== n && !sc.left.has(m)).join(', '); sc.lines.push({ name: n, say: say || '', do: 'comes in' }) }
+function join(sc, n, say) { if (sc.people.includes(n)) sc.left.delete(n); else sc.people.push(n); sc.done[n] = false; S[n].doing = 'with ' + sc.people.filter((m) => m !== n && !sc.left.has(m)).join(', '); sc.lines.push({ name: n, say: say || '', do: 'comes in' }) }
 
 // ---------- plans: the person's own; code carries them out, and pauses them while the person is in a conversation ----------
 function setPlan(n, steps, now) {

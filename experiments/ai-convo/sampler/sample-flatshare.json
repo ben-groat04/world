@@ -1,301 +1,350 @@
 {
- "setting": "flatshare",
- "n": 4,
- "seed": "1",
- "people": [
-  {
-   "name": "Stephanie Moore",
-   "age": 55,
-   "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "Wales",
-   "years_in_uk": 55,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Health professionals (doctors, nurses, therapists)",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 73092,
-   "hours_per_week": 38,
-   "shifts": [
+  "setting": "flatshare",
+  "n": 4,
+  "seed": "1",
+  "people": [
     {
-     "day": "Wed",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
+      "name": null,
+      "id": "p1",
+      "age": 40,
+      "sex": "M",
+      "ethnicity": "Black African",
+      "birthplace": "Central and Western Africa",
+      "years_in_uk": 23,
+      "religion": "Christian",
+      "activity": "employed full-time",
+      "occupation": "Business, media & public-service professionals",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 56579,
+      "hours_per_week": 36.5,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Tue",
+          "start": "08:00",
+          "end": "15:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Wed",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Thu",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.25
+        },
+        {
+          "day": "Fri",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.5
+        }
+      ],
+      "household": {
+        "type": "other household: unrelated adults sharing",
+        "tenure": "private rented",
+        "bedrooms": 4,
+        "occupancy_rating": 0,
+        "size": 4,
+        "members": [
+          {
+            "name": null,
+            "id": "p2",
+            "age": 34,
+            "sex": "M",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": "Maureen Robinson",
+            "id": "p3",
+            "age": 60,
+            "sex": "F",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": "Katie Williams",
+            "id": "p4",
+            "age": 36,
+            "sex": "F",
+            "relation": "housemate (unrelated)"
+          }
+        ]
+      },
+      "relationship_status": "single",
+      "children": [],
+      "health": "good",
+      "education": "Degree or above (level 4+)",
+      "hourly_pay": 29.81,
+      "role": null
     },
     {
-     "day": "Thu",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
+      "name": null,
+      "id": "p2",
+      "age": 34,
+      "sex": "M",
+      "ethnicity": "White Other (incl. Irish, Eastern European)",
+      "birthplace": "South and Eastern Africa",
+      "years_in_uk": 9,
+      "religion": "No religion",
+      "activity": "employed full-time",
+      "occupation": "Business & public-service associate professionals",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 70824,
+      "hours_per_week": 40,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "09:00",
+          "end": "17:30",
+          "paid_hours": 8
+        },
+        {
+          "day": "Tue",
+          "start": "09:00",
+          "end": "17:30",
+          "paid_hours": 8
+        },
+        {
+          "day": "Wed",
+          "start": "09:00",
+          "end": "17:30",
+          "paid_hours": 8
+        },
+        {
+          "day": "Thu",
+          "start": "08:30",
+          "end": "17:00",
+          "paid_hours": 8
+        },
+        {
+          "day": "Fri",
+          "start": "09:00",
+          "end": "17:30",
+          "paid_hours": 8
+        }
+      ],
+      "household": {
+        "type": "other household: unrelated adults sharing",
+        "tenure": "private rented",
+        "bedrooms": 4,
+        "occupancy_rating": 0,
+        "size": 4,
+        "members": [
+          {
+            "name": null,
+            "id": "p1",
+            "age": 40,
+            "sex": "M",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": "Maureen Robinson",
+            "id": "p3",
+            "age": 60,
+            "sex": "F",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": "Katie Williams",
+            "id": "p4",
+            "age": 36,
+            "sex": "F",
+            "relation": "housemate (unrelated)"
+          }
+        ]
+      },
+      "relationship_status": "single",
+      "children": [],
+      "health": "good",
+      "education": "No qualifications",
+      "hourly_pay": 34.05,
+      "role": null
     },
     {
-     "day": "Fri",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Sat",
-     "start": "08:30",
-     "end": "16:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Sun",
-     "start": "08:00",
-     "end": "16:30",
-     "paid_hours": 8
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Sarah Taylor",
+      "name": "Maureen Robinson",
+      "id": "p3",
       "age": 60,
       "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Natalia Wisniewski",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Katie Green",
-      "age": 31,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "separated or divorced",
-   "children": [
-    {
-     "name": "Ruby Moore",
-     "age": 18,
-     "lives": "own household"
+      "ethnicity": "White British",
+      "birthplace": "Wales",
+      "years_in_uk": 60,
+      "religion": "Christian",
+      "activity": "employed full-time",
+      "occupation": "Customer service occupations",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 22862,
+      "hours_per_week": 38,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Tue",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Wed",
+          "start": "08:30",
+          "end": "16:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Thu",
+          "start": "09:30",
+          "end": "17:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Fri",
+          "start": "09:00",
+          "end": "17:30",
+          "paid_hours": 8
+        }
+      ],
+      "household": {
+        "type": "other household: unrelated adults sharing",
+        "tenure": "private rented",
+        "bedrooms": 4,
+        "occupancy_rating": 0,
+        "size": 4,
+        "members": [
+          {
+            "name": null,
+            "id": "p1",
+            "age": 40,
+            "sex": "M",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": null,
+            "id": "p2",
+            "age": 34,
+            "sex": "M",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": "Katie Williams",
+            "id": "p4",
+            "age": 36,
+            "sex": "F",
+            "relation": "housemate (unrelated)"
+          }
+        ]
+      },
+      "relationship_status": "single",
+      "children": [
+        {
+          "name": "Katie Robinson",
+          "id": "p5",
+          "age": 37,
+          "lives": "own household"
+        }
+      ],
+      "health": "fair",
+      "education": "A-level or apprenticeship (level 3)",
+      "hourly_pay": 11.57,
+      "role": null
     },
     {
-     "name": "Lily Moore",
-     "age": 22,
-     "lives": "own household"
-    },
-    {
-     "name": "Joel Moore",
-     "age": 27,
-     "lives": "own household"
+      "name": "Katie Williams",
+      "id": "p4",
+      "age": 36,
+      "sex": "F",
+      "ethnicity": "White Other (incl. Irish, Eastern European)",
+      "birthplace": "England",
+      "years_in_uk": 36,
+      "religion": "Christian",
+      "activity": "employed full-time",
+      "occupation": "Business & public-service associate professionals",
+      "contract": "employee",
+      "employer": null,
+      "annual_income": 43290,
+      "hours_per_week": 37,
+      "shifts": [
+        {
+          "day": "Mon",
+          "start": "09:30",
+          "end": "17:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Tue",
+          "start": "09:00",
+          "end": "17:00",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Wed",
+          "start": "09:30",
+          "end": "17:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Thu",
+          "start": "09:30",
+          "end": "17:30",
+          "paid_hours": 7.5
+        },
+        {
+          "day": "Fri",
+          "start": "09:30",
+          "end": "17:00",
+          "paid_hours": 7
+        }
+      ],
+      "household": {
+        "type": "other household: unrelated adults sharing",
+        "tenure": "private rented",
+        "bedrooms": 4,
+        "occupancy_rating": 0,
+        "size": 4,
+        "members": [
+          {
+            "name": null,
+            "id": "p1",
+            "age": 40,
+            "sex": "M",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": null,
+            "id": "p2",
+            "age": 34,
+            "sex": "M",
+            "relation": "housemate (unrelated)"
+          },
+          {
+            "name": "Maureen Robinson",
+            "id": "p3",
+            "age": 60,
+            "sex": "F",
+            "relation": "housemate (unrelated)"
+          }
+        ]
+      },
+      "relationship_status": "single",
+      "children": [],
+      "health": "very good",
+      "education": "GCSE-level (level 1-2)",
+      "hourly_pay": 22.5,
+      "role": null
     }
-   ],
-   "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 36.99,
-   "role": null
-  },
-  {
-   "name": "Sarah Taylor",
-   "age": 60,
-   "sex": "F",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
-   "birthplace": "England",
-   "years_in_uk": 60,
-   "religion": "Christian",
-   "activity": "employed part-time",
-   "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 6773,
-   "hours_per_week": 9.5,
-   "shifts": [
-    {
-     "day": "Thu",
-     "start": "15:00",
-     "end": "01:00",
-     "paid_hours": 9.5
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Stephanie Moore",
-      "age": 55,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Natalia Wisniewski",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Katie Green",
-      "age": 31,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "good",
-   "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 13.71,
-   "role": null
-  },
-  {
-   "name": "Natalia Wisniewski",
-   "age": 25,
-   "sex": "F",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
-   "birthplace": "EU (2004-2011 accession)",
-   "years_in_uk": 0,
-   "religion": "No religion",
-   "activity": "employed part-time",
-   "occupation": "Teaching & other educational professionals",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 14641,
-   "hours_per_week": 15,
-   "shifts": [
-    {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Wed",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Stephanie Moore",
-      "age": 55,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Sarah Taylor",
-      "age": 60,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Katie Green",
-      "age": 31,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 18.77,
-   "role": null
-  },
-  {
-   "name": "Katie Green",
-   "age": 31,
-   "sex": "F",
-   "ethnicity": "White Other (incl. Irish, Eastern European)",
-   "birthplace": "Central and South America",
-   "years_in_uk": 14,
-   "religion": "No religion",
-   "activity": "employed full-time",
-   "occupation": "Corporate managers & directors",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 75525,
-   "hours_per_week": 40,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "08:00",
-     "end": "16:30",
-     "paid_hours": 8
-    },
-    {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "16:30",
-     "paid_hours": 8
-    },
-    {
-     "day": "Wed",
-     "start": "09:30",
-     "end": "18:00",
-     "paid_hours": 8
-    },
-    {
-     "day": "Thu",
-     "start": "08:30",
-     "end": "17:00",
-     "paid_hours": 8
-    },
-    {
-     "day": "Fri",
-     "start": "09:00",
-     "end": "17:30",
-     "paid_hours": 8
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Stephanie Moore",
-      "age": 55,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Sarah Taylor",
-      "age": 60,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Natalia Wisniewski",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "separated or divorced",
-   "children": [],
-   "health": "very good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 36.31,
-   "role": null
-  }
- ]
+  ]
 }

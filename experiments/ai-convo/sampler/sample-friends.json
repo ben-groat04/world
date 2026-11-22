@@ -1,437 +1,272 @@
 {
- "setting": "friends",
- "n": 5,
- "seed": "1",
- "people": [
-  {
-   "name": "Amy Morgan",
-   "age": 32,
-   "sex": "F",
-   "ethnicity": "Mixed / multiple",
-   "birthplace": "England",
-   "years_in_uk": 32,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Skilled metal, electrical & electronic trades",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 33747,
-   "hours_per_week": 37,
-   "shifts": [
+  "setting": "friends",
+  "n": 5,
+  "seed": "1",
+  "people": [
     {
-     "day": "Mon",
-     "start": "07:30",
-     "end": "15:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Wed",
-     "start": "07:30",
-     "end": "15:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Thu",
-     "start": "07:30",
-     "end": "15:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Fri",
-     "start": "07:30",
-     "end": "15:30",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Sat",
-     "start": "07:30",
-     "end": "15:00",
-     "paid_hours": 7
-    }
-   ],
-   "household": {
-    "type": "couple family with non-dependent children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 2,
-    "occupancy_rating": 0,
-    "size": 3,
-    "members": [
-     {
-      "name": "Janice Taylor",
-      "age": 58,
+      "name": "Heather Moore",
+      "id": "p1",
+      "age": 74,
       "sex": "F",
-      "relation": "mother"
-     },
-     {
-      "name": "Clive Morgan",
-      "age": 60,
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 74,
+      "religion": "Christian",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "one-person household",
+        "tenure": "owned outright",
+        "bedrooms": 1,
+        "occupancy_rating": 0,
+        "size": 1,
+        "members": []
+      },
+      "relationship_status": "separated or divorced",
+      "children": [
+        {
+          "name": "Steven Moore",
+          "id": "p2",
+          "age": 42,
+          "lives": "own household"
+        },
+        {
+          "name": "Ruth Moore",
+          "id": "p3",
+          "age": 51,
+          "lives": "own household"
+        }
+      ],
+      "health": "good",
+      "education": "No qualifications",
+      "hourly_pay": null,
+      "role": null
+    },
+    {
+      "name": "Ian Cooper",
+      "id": "p4",
+      "age": 72,
       "sex": "M",
-      "relation": "father"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "very good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 17.54,
-   "role": null
-  },
-  {
-   "name": "Demi Walker",
-   "age": 28,
-   "sex": "F",
-   "ethnicity": "Black Caribbean / Other Black",
-   "birthplace": "South and Eastern Africa",
-   "years_in_uk": 23,
-   "religion": "No religion",
-   "activity": "self-employed",
-   "occupation": "Business, media & public-service professionals",
-   "contract": "self-employed",
-   "employer": "self-employed",
-   "annual_income": 19614,
-   "hours_per_week": 23,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "08:00",
-     "end": "16:30",
-     "paid_hours": 7.75
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 72,
+      "religion": "No religion",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "owned outright",
+        "bedrooms": 3,
+        "occupancy_rating": 2,
+        "size": 2,
+        "members": [
+          {
+            "name": "Anita Jones",
+            "id": "p5",
+            "age": 70,
+            "sex": "F",
+            "relation": "wife"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "very good",
+      "education": "A-level or apprenticeship (level 3)",
+      "hourly_pay": null,
+      "role": null
     },
     {
-     "day": "Wed",
-     "start": "08:30",
-     "end": "16:30",
-     "paid_hours": 7.75
-    },
-    {
-     "day": "Thu",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
-    }
-   ],
-   "household": {
-    "type": "lone-parent family with dependent children",
-    "tenure": "social rented",
-    "bedrooms": 1,
-    "occupancy_rating": -1,
-    "size": 2,
-    "members": [
-     {
-      "name": "Ariana Walker",
-      "age": 8,
-      "sex": "F",
-      "relation": "daughter"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [
-    {
-     "name": "Ariana Walker",
-     "age": 8,
-     "lives": "with me"
-    }
-   ],
-   "health": "very good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 16.4,
-   "role": null
-  },
-  {
-   "name": "Joanna Young",
-   "age": 28,
-   "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 28,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 22605,
-   "hours_per_week": 38,
-   "shifts": [
-    {
-     "day": "Tue",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Wed",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Thu",
-     "start": "22:00",
-     "end": "06:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Sat",
-     "start": "06:00",
-     "end": "14:00",
-     "paid_hours": 7.5
-    },
-    {
-     "day": "Sun",
-     "start": "22:00",
-     "end": "06:30",
-     "paid_hours": 8
-    }
-   ],
-   "household": {
-    "type": "couple family with non-dependent children",
-    "tenure": "social rented",
-    "bedrooms": 3,
-    "occupancy_rating": 1,
-    "size": 3,
-    "members": [
-     {
-      "name": "Sarah Green",
-      "age": 66,
-      "sex": "F",
-      "relation": "mother"
-     },
-     {
-      "name": "Peter Young",
-      "age": 68,
+      "name": "Barrie Hill",
+      "id": "p9",
+      "age": 78,
       "sex": "M",
-      "relation": "father"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "good",
-   "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 11.44,
-   "role": null
-  },
-  {
-   "name": "Natalie Joshi",
-   "age": 31,
-   "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 31,
-   "religion": "No religion",
-   "activity": "employed full-time",
-   "occupation": "Corporate managers & directors",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 82883,
-   "hours_per_week": 42,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "08:00",
-     "end": "17:00",
-     "paid_hours": 8.5
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 78,
+      "religion": "Christian",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "one-person household",
+        "tenure": "owned outright",
+        "bedrooms": 3,
+        "occupancy_rating": 2,
+        "size": 1,
+        "members": []
+      },
+      "relationship_status": "separated or divorced",
+      "children": [],
+      "health": "fair",
+      "education": "No qualifications",
+      "hourly_pay": null,
+      "role": null
     },
     {
-     "day": "Tue",
-     "start": "09:00",
-     "end": "18:00",
-     "paid_hours": 8.5
-    },
-    {
-     "day": "Wed",
-     "start": "08:00",
-     "end": "17:00",
-     "paid_hours": 8.5
-    },
-    {
-     "day": "Thu",
-     "start": "08:30",
-     "end": "17:30",
-     "paid_hours": 8.5
-    },
-    {
-     "day": "Fri",
-     "start": "08:00",
-     "end": "16:30",
-     "paid_hours": 8
-    }
-   ],
-   "household": {
-    "type": "couple family with non-dependent children",
-    "tenure": "owned outright",
-    "bedrooms": 4,
-    "occupancy_rating": 2,
-    "size": 3,
-    "members": [
-     {
-      "name": "Stephanie Evans",
-      "age": 67,
-      "sex": "F",
-      "relation": "mother"
-     },
-     {
-      "name": "Kunal Joshi",
-      "age": 69,
+      "name": "Jeffrey Walker",
+      "id": "p10",
+      "age": 71,
       "sex": "M",
-      "relation": "father"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "very good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 37.95,
-   "role": null
-  },
-  {
-   "name": "George Walker",
-   "age": 28,
-   "sex": "M",
-   "ethnicity": "White British",
-   "birthplace": "Wales",
-   "years_in_uk": 28,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Administrative occupations",
-   "contract": "employee",
-   "employer": null,
-   "annual_income": 32532,
-   "hours_per_week": 36.5,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "09:30",
-     "end": "17:30",
-     "paid_hours": 7.25
+      "ethnicity": "White British",
+      "birthplace": "England",
+      "years_in_uk": 71,
+      "religion": "No religion",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "one-person household",
+        "tenure": "owned outright",
+        "bedrooms": 2,
+        "occupancy_rating": 1,
+        "size": 1,
+        "members": []
+      },
+      "relationship_status": "widowed",
+      "children": [],
+      "health": "very bad",
+      "education": "No qualifications",
+      "hourly_pay": null,
+      "role": null
     },
     {
-     "day": "Tue",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Wed",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Thu",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7.25
-    },
-    {
-     "day": "Fri",
-     "start": "08:00",
-     "end": "16:00",
-     "paid_hours": 7.5
+      "name": null,
+      "id": "p11",
+      "age": 75,
+      "sex": "M",
+      "ethnicity": "Bangladeshi",
+      "birthplace": "Southern Asia",
+      "years_in_uk": 50,
+      "religion": "Muslim",
+      "activity": "retired",
+      "occupation": null,
+      "contract": null,
+      "employer": null,
+      "annual_income": null,
+      "hours_per_week": 0,
+      "shifts": [],
+      "household": {
+        "type": "couple family, no children",
+        "tenure": "owned outright",
+        "bedrooms": 1,
+        "occupancy_rating": 0,
+        "size": 2,
+        "members": [
+          {
+            "name": null,
+            "id": "p12",
+            "age": 73,
+            "sex": "F",
+            "relation": "wife"
+          }
+        ]
+      },
+      "relationship_status": "married",
+      "children": [],
+      "health": "very good",
+      "education": "A-level or apprenticeship (level 3)",
+      "hourly_pay": null,
+      "role": null
     }
-   ],
-   "household": {
-    "type": "couple family, no children",
-    "tenure": "private rented",
-    "bedrooms": 3,
-    "occupancy_rating": 2,
-    "size": 2,
-    "members": [
-     {
-      "name": "Paige Jackson",
-      "age": 26,
-      "sex": "F",
-      "relation": "partner"
-     }
-    ]
-   },
-   "relationship_status": "cohabiting",
-   "children": [],
-   "health": "very good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 17.14,
-   "role": null
-  }
- ],
- "ties": [
-  {
-   "a": "Amy Morgan",
-   "b": "Demi Walker",
-   "shared": [
-    "education"
-   ],
-   "age_gap": 4
-  },
-  {
-   "a": "Amy Morgan",
-   "b": "Joanna Young",
-   "shared": [
-    "religion"
-   ],
-   "age_gap": 4
-  },
-  {
-   "a": "Amy Morgan",
-   "b": "Natalie Joshi",
-   "shared": [],
-   "age_gap": 1
-  },
-  {
-   "a": "Amy Morgan",
-   "b": "George Walker",
-   "shared": [
-    "religion"
-   ],
-   "age_gap": 4
-  },
-  {
-   "a": "Demi Walker",
-   "b": "Joanna Young",
-   "shared": [],
-   "age_gap": 0
-  },
-  {
-   "a": "Demi Walker",
-   "b": "Natalie Joshi",
-   "shared": [
-    "religion"
-   ],
-   "age_gap": 3
-  },
-  {
-   "a": "Demi Walker",
-   "b": "George Walker",
-   "shared": [],
-   "age_gap": 0
-  },
-  {
-   "a": "Joanna Young",
-   "b": "Natalie Joshi",
-   "shared": [
-    "ethnicity"
-   ],
-   "age_gap": 3
-  },
-  {
-   "a": "Joanna Young",
-   "b": "George Walker",
-   "shared": [
-    "ethnicity",
-    "religion"
-   ],
-   "age_gap": 0
-  },
-  {
-   "a": "Natalie Joshi",
-   "b": "George Walker",
-   "shared": [
-    "ethnicity",
-    "education"
-   ],
-   "age_gap": 3
-  }
- ]
+  ],
+  "ties": [
+    {
+      "a": "p1",
+      "b": "p4",
+      "shared": [
+        "ethnicity"
+      ],
+      "age_gap": 2
+    },
+    {
+      "a": "p1",
+      "b": "p9",
+      "shared": [
+        "ethnicity",
+        "education",
+        "religion"
+      ],
+      "age_gap": 4
+    },
+    {
+      "a": "p1",
+      "b": "p10",
+      "shared": [
+        "ethnicity",
+        "education"
+      ],
+      "age_gap": 3
+    },
+    {
+      "a": "p1",
+      "b": "p11",
+      "shared": [],
+      "age_gap": 1
+    },
+    {
+      "a": "p4",
+      "b": "p9",
+      "shared": [
+        "ethnicity"
+      ],
+      "age_gap": 6
+    },
+    {
+      "a": "p4",
+      "b": "p10",
+      "shared": [
+        "ethnicity",
+        "religion"
+      ],
+      "age_gap": 1
+    },
+    {
+      "a": "p4",
+      "b": "p11",
+      "shared": [
+        "education"
+      ],
+      "age_gap": 3
+    },
+    {
+      "a": "p9",
+      "b": "p10",
+      "shared": [
+        "ethnicity",
+        "education"
+      ],
+      "age_gap": 7
+    },
+    {
+      "a": "p9",
+      "b": "p11",
+      "shared": [],
+      "age_gap": 3
+    },
+    {
+      "a": "p10",
+      "b": "p11",
+      "shared": [],
+      "age_gap": 4
+    }
+  ]
 }

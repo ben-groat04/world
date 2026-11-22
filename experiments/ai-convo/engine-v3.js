@@ -87,11 +87,12 @@ const OTHERS = [...new Set(PEOPLE.flatMap((p) => [...members(p.name), ...(p.attr
 const WORLD = obj({ background: { type: 'string', description: '2-4 sentences of shared context, only what the setting and facts say or plainly imply; no figures' },
   common_knowledge: arr(str, { maxItems: 8, description: 'what these people all know, only from the setting and facts' }),
   know_each_other: arr(obj({ people: arr(str), level: { type: 'string', enum: ['by sight', 'by name', 'numbers saved'] } }), { description: 'who among these people already know each other and how well, as the setting and facts imply (housemates, coworkers, friends, neighbours)' }),
-  places: arr(obj({ name: str, kind: { type: 'string', enum: ['private', 'shared', 'public'] }, building: { type: 'string', description: 'same label = one building (within earshot); empty for public' }, access: arr(str, { description: 'only for places the public cannot walk into (rooms in a home, staff-only areas): the names of everyone, simulated or not, who may go in. Empty for anywhere customers or the public go.' }) }),
+  places: arr(obj({ name: str, kind: { type: 'string', enum: ['private', 'shared', 'public'] }, building: { type: 'string', description: 'same label = same building, within earshot of each other (a café floor and its kitchen, a house\'s rooms); empty only for open-air places' }, access: arr(str, { description: 'only for places the public cannot walk into (rooms in a home, staff-only areas): the names of everyone, simulated or not, who may go in. Empty for anywhere customers or the public go.' }) }),
     { description: "each household's home (a private room per person who has one, plus shared rooms), workplaces as the facts describe them, a few generic public places; no brand names" }),
   workplace: arr(obj({ person: str, place: str }), { description: 'for each person who works: which of the places above' }),
-  contacts: arr(obj({ name: str, role: str, about: { type: 'string', description: '1 line: who they are and how they talk (manner, register; no accent or language unless the facts state it)' }, linked_to: arr(str, { description: 'people above who have their number' }), place: { type: 'string', description: 'where they are usually found, or empty' } }, ['name', 'role', 'about', 'linked_to']),
+  contacts: arr(obj({ name: str, role: str, about: { type: 'string', description: '1 line: who they are and how they talk (manner, register; no accent or language unless the facts state it)' }, linked_to: arr(str, { description: 'people above who have their number' }), place: { type: 'string', description: 'where they are usually found, or empty' }, hours: { type: 'string', description: 'when they are usually there (e.g. their working hours), or empty' } }, ['name', 'role', 'about', 'linked_to']),
     { description: 'shared background characters the facts imply (letting agent for renters, a manager for employees, regulars at a workplace)' }),
+  group_chats: arr(obj({ name: str, members: arr(str) }), { description: 'group chats these people already have, as people like them usually do (housemates, colleagues, a friend group, family): a name as it would show on the phone, and the simulated members' }),
   contact_map: arr(obj({ person: str, relation: str, same_as: { type: 'string', description: 'if this contact is one of the people above, a household member, or a shared background character: that exact name; else empty' }, name: { type: 'string', description: 'if not same_as: a full name for them' } }),
     { description: 'one entry per contact written for each person (listed below)' }) })
 const W = await call('role', `${roleOf('world builder')}Supply the structure these lives already have. No plot, and never guess data: nothing the setting or facts do not give.
@@ -111,7 +112,7 @@ const homeOf = (n) => PLACES.find((p) => p.kind === 'private' && p.access.includ
 const CONTACT = {}
 const addContact = (name, role, about, linked, place, home = '') => { if (!name || NAMES.includes(name)) return; const x = CONTACT[name] ||= { name, role, about, linked: [], place: '', home: '', at: null }
   for (const n of linked) if (!x.linked.includes(n)) x.linked.push(n); if (place && !x.place) x.place = place; if (home && !x.home) x.home = home; return name }
-for (const c of W.contacts || []) addContact(c.name, c.role, c.about || '', (c.linked_to || []).map((n) => resolve(n, NAMES)).filter(Boolean), placeOf(c.place))
+for (const c of W.contacts || []) addContact(c.name, c.role, (c.about || '') + (c.hours ? ` Usually there: ${c.hours}.` : ''), (c.linked_to || []).map((n) => resolve(n, NAMES)).filter(Boolean), placeOf(c.place))
 const KNOW = Object.fromEntries(NAMES.map((n) => [n, new Set()])), NUM = Object.fromEntries(NAMES.map((n) => [n, new Set()])), SIGHT = Object.fromEntries(NAMES.map((n) => [n, new Set()]))
 const knowAll = (g, level) => { for (const a of g) for (const b of g) if (a !== b) { (level === 'by sight' ? SIGHT : KNOW)[a].add(b); if (level === 'numbers saved') NUM[a].add(b) } }
 for (const p of PEOPLE) {
@@ -128,7 +129,8 @@ for (const g of W.know_each_other || []) knowAll((g.people || []).map((m) => res
 const contactsOf = (n) => Object.values(CONTACT).filter((c) => c.linked.includes(n)).map((c) => c.name)
 const desc = (m) => { const a = P[m].attributes; return [a.sex, Number.isFinite(+a.age) ? `${Math.floor(a.age / 10) * 10}s` : ''].filter(Boolean).join(', ') || 'someone' }
 const label = (v, m) => !NAMES.includes(m) || v === m || KNOW[v].has(m) ? m : SIGHT[v].has(m) ? `someone you know by sight (${desc(m)})` : `stranger (${desc(m)})`
-const CHATS = [] // group chats exist once someone starts one
+const CHATS = (W.group_chats || []).map((g) => ({ name: noEmoji(g.name) || 'group', members: [...new Set((g.members || []).map((m) => resolve(m, NAMES)).filter(Boolean))] })).filter((g) => g.members.length > 1) // groups the setting implies; more start when someone messages several people
+for (const g of CHATS) knowAll(g.members, 'numbers saved')
 // calendar: the sampler's structured shifts, at the workplace the world builder assigned
 const CAL = [], WORK = Object.fromEntries((W.workplace || []).map((w) => [resolve(w.person, NAMES), placeOf(w.place)]).filter(([n]) => n))
 const addOcc = (what, who, place, t0, t1, by) => { if (t1 > 0 && t0 < END && !Number.isNaN(t0)) CAL.push({ what, who, place: placeOf(place) || OUT, t0, t1, by }) }
@@ -142,7 +144,7 @@ for (const e of A.events || []) { if (!e.source || !(Number(e.p_per_day) >= 0)) 
   for (let d = 0; d < NDAYS; d++) for (const n of who) if (rnd() < clamp(e.p_per_day, 0, 1)) { const t = atDay(d, '00:00') + Math.floor((h0 + rnd() * Math.max(0, h1 - h0)) * 60); if (t >= 0 && t < END) EVENTS.push({ t, who: n, text: e.text, from: resolve(e.from, Object.keys(CONTACT)), source: e.source }) } }
 EVENTS.sort((a, b) => a.t - b.t)
 const knows = () => Object.fromEntries(NAMES.map((n) => [n, { by_name: [...KNOW[n]], numbers: [...NUM[n]], by_sight: [...SIGHT[n]].filter((m) => !KNOW[n].has(m)), contacts: contactsOf(n) }]))
-const world = { setting: SETTING, context: CONTEXT, background: W.background, common_knowledge: W.common_knowledge || [], names: { sets: SETS, picked: SETS.indexOf(pickSet) }, knows_at_start: knows(), workplace: WORK, people: PEOPLE, places: PLACES, contacts: Object.values(CONTACT), dropped: DROPPED, events_given: A.events || [] }
+const world = { chats_at_start: CHATS.map((c) => ({ ...c })), setting: SETTING, context: CONTEXT, background: W.background, common_knowledge: W.common_knowledge || [], names: { sets: SETS, picked: SETS.indexOf(pickSet) }, knows_at_start: knows(), workplace: WORK, people: PEOPLE, places: PLACES, contacts: Object.values(CONTACT), dropped: DROPPED, events_given: A.events || [] }
 log(`${A.label}: ${NAMES.join(', ')} · ${PLACES.length} places · ${CAL.length} shifts · ${EVENTS.length} events · ${Object.keys(CONTACT).length} contacts`)
 
 // ---------- 2. simulate ----------
@@ -331,11 +333,11 @@ What do you do now? Your journal shows what you have already said and done. Most
 
 function send(from, to, text, t) {
   text = String(text || '').trim(); if (!text) return
-  let chat = CHATS.find((c) => c.name === resolve(to, CHATS.filter((c) => c.members.includes(from)).map((c) => c.name)))
   const names = String(to || '').split(/,| and | & /).map((x) => resolve(x, phoneBook(from))).filter(Boolean)
+  let chat = CHATS.find((c) => c.members.includes(from) && c.name.toLowerCase() === String(to || '').trim().replace(/^group:?\s*/i, '').toLowerCase()) // a group only by its exact name: never a DM sent to a group by a first-name match
   if (!chat && names.length > 1) { const members = [from, ...new Set(names)], name = 'group: ' + members.map((m) => m.split(' ')[0]).sort().join(', ')
     chat = CHATS.find((c) => c.name === name) || (CHATS.push({ name, members }), CHATS[CHATS.length - 1]) }
-  const p = names.length === 1 ? names[0] : '', c = resolve(to, contactsOf(from))
+  const p = !chat && names.length === 1 ? names[0] : '', c = resolve(to, contactsOf(from))
   if (chat) { L.push({ t, kind: 'chat', to: chat.name, from, text }); jot(from, t, `you → [${chat.name}]: ${text}`); for (const m of chat.members) if (m !== from) notify(m, t, `[${chat.name}] ${from}: ${text}`) }
   else if (p) { L.push({ t, kind: 'dm', from, to: p, text }); jot(from, t, `you → ${p}: ${text}`); NUM[p].add(from); KNOW[p].add(from); notify(p, t, `${from} texted: ${text}`) }
   else if (c) { L.push({ t, kind: 'dm', from, to: c, text }); jot(from, t, `you → ${c}: ${text}`); thread(c, `${fmt(t)} ${from} → ${c}: ${text}`); pendingWorld.push({ kind: 'message', who: from, from: c, text: `${from} texted ${c}: "${text}"` }) }
@@ -365,15 +367,15 @@ function intend(n, x, now) {
     return startScene(now, `phone: ${n} → ${p || c}`, true, [n, p || c], n)
   }
   const byLabel = Object.fromEntries(NAMES.filter((m) => m !== n).map((m) => [label(n, m), m]))
+  if (sceneOf(n)) return
   const p = byLabel[resolve(x.to, Object.keys(byLabel))] || '', c = p ? '' : resolve(x.to, atPlace(s.place))
-  if (c) return startScene(now, s.place, false, [n, c], n)
+  if (c) return sceneOf(c) && !sceneOf(c).phone ? join(sceneOf(c), n, '') : talkNear(startScene(now, s.place, false, [n, c], n))
   const near = p && S[p].place !== OUT && (S[p].place === s.place || (PLACE[s.place].building && PLACE[s.place].building === PLACE[S[p].place].building && KNOW[n].has(p)))
   if (!near) return notify(n, now, `${x.to} isn't around here.`)
   if (S[p].asleep) return notify(n, now, `${label(n, p)} seems to be asleep.`)
   const pl = S[p].place; moveTo(n, pl, now, `to talk to ${label(n, p)}`)
-  const live = ACTIVE.find((sc) => !sc.phone && sc.where === pl)
-  if (live) return join(live, n, '')
-  startScene(now, pl, false, [n, ...NAMES.filter((m) => m !== n && S[m].place === pl && !S[m].asleep && !sceneOf(m))], n)
+  if (sceneOf(p) && !sceneOf(p).phone) return join(sceneOf(p), n, '')
+  talkNear(startScene(now, pl, false, [n, p], n))
 }
 
 // ---------- the world role: everything outside the simulated people, each decision with a reason ----------

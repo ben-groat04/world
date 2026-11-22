@@ -97,3 +97,18 @@ Talk tonight, Maya.
 --- Wed 06:08, Tom
 Morning, Maya. How did you sleep? I hope today's shift goes well, and I'm around tonight if you want to talk about anything dumb.
 
+--- Wed 07:00, Maya
+Morning, Tom! I slept pretty well, thanks. Today's the second Thursday-covering shift... well, actually it's Wednesday, so I've got a regular day, no covering yet. Thanks for checking in. I'll take you up on the dumb talk tonight.
+
+--- Wed 07:02, Tom
+Glad you slept well. Ha, and I got the days mixed up too. Thursday's the covering shift, so today's just a regular one. Tonight I'll have something dumb ready for you. Have a good day, Maya.
+
+--- Wed 07:04, Maya
+Ha, good, we're on the same page. Thanks, Tom. Have a good day too!
+
+--- Wed 07:06, Tom
+Thanks, Maya. You too.
+
+--- end date reached
+Wed 19:00
+

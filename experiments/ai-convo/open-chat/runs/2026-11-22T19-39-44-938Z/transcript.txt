@@ -105,3 +105,52 @@ Hi Sam, 10:00 tomorrow works for me. I'll be there and will share what I can at 
 --- Tue 16:39, Sam
 Thanks, Tom. Everyone's set for 10:00 tomorrow. I'll send the link in the morning.
 
+--- Wed 07:19, Sam
+Morning all. I said I'd send the call link, but I don't have one to share. Could someone who has a call set up post it here? If not, I'll suggest we use whichever tool the studio normally uses and I'll start the chat at 10:00.
+
+--- Wed 07:28, Maya
+Morning Sam. I don't have a call set up either, so I can't post a link. Let's use whatever tool the studio normally uses, and I'll join when you start it at 10:00.
+
+--- Wed 07:42, Jo
+Morning. I don't have a call link either, so I'll join whichever tool the studio normally uses when you start it at 10:00, Sam.
+
+--- Wed 07:57, Tom
+Morning Sam. I don't have a call link either, so I'll join whichever tool the studio normally uses when you start it at 10:00.
+
+--- Wed 10:05, Sam
+I can't start a call from here, so I can't open the meeting. Could one of you start the studio's usual call tool and post the link? If nobody can, we can work through the list here in chat instead.
+
+--- Wed 10:06, Jo
+I can't start a call from here either. Let's work through the list in chat. I'll post what I can confirm for my items and mark anything still open.
+
+--- Wed 10:09, Maya
+I can't start a call either, so let's work through it in chat. I still don't have my items, so I'll mark mine as open for now. Sam, if you put the Friday deadline and the rough list here, I'll help sort out what's still missing.
+
+--- Wed 10:10, Jo
+I still don't have my items either, so mine are open too. Sam, please post the Friday deadline and the rough list here, and I'll go through it with you.
+
+--- Wed 10:12, Sam
+Here's what we have so far. The client moved the deadline to Friday. Everyone's items are still open, since nobody has been able to pull their task lists yet. I'll write up a draft with a column for each of us, and we can fill in items as they come.
+
+--- Wed 10:55, Sam
+Here's the draft skeleton, since nobody's items have come through yet:
+
+**Deadline:** Friday (moved up by client)
+
+--- Wed 10:57, Sam
+| Person | Item | Est. hours | Status |
+|---|---|---|---|
+| Maya | (open) | | To confirm |
+| Tom | (open) | | To confirm |
+| Jo | (open) | | To confirm |
+| Sam | (open) | | To confirm |
+
+--- Wed 10:58, Sam
+Once you post items here, I'll fill in the rows, flag anything that conflicts with Friday, and suggest who takes what.
+
+--- Wed 11:09, Maya
+Thanks, Sam. I'll post my items as soon as I can pull them up.
+
+--- end date reached
+Wed 19:00
+

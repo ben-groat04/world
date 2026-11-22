@@ -157,3 +157,69 @@ I'll try to sleep early so I'm not a zombie for tomorrow's overnight. Talk soon,
 --- Mon 22:40, Tom
 Sounds good, Maya. Sleep well, and talk soon.
 
+--- Mon 22:44, Maya
+Thanks, Tom. Sleep well yourself, and good luck with the cabinet doors whenever you get to them.
+
+--- Mon 22:50, Tom
+Thanks, Maya. Doors are on the list for tomorrow, so wish me luck. Good night!
+
+--- Mon 22:50, Maya
+Good luck with the doors, Tom! Good night!
+
+--- Tue 06:30, Tom
+Good morning, Maya! Hope your overnight goes quietly, and I'll let you know how the doors go.
+
+--- Tue 06:39, Maya
+Good morning, Tom! I'm just getting out of my shift now. I'm hoping the doors go better than I'd guess from the paint-in-odd-places stories. Let me know how it goes!
+
+--- Tue 06:56, Tom
+Good morning! Glad you're off shift. I'll let you know how the doors go. Get some sleep, Maya.
+
+--- Tue 08:17, Maya
+Thanks, Tom! I'm heading home to crash now. Good luck with the doors!
+
+--- Tue 08:20, Tom
+Thanks, Maya! Get some sleep, and I'll tell you how the doors turn out.
+
+--- Tue 08:20, Maya
+Will do, Tom. Talk later!
+
+--- Tue 08:24, Tom
+Talk later, Maya!
+
+--- Tue 08:31, Maya
+Talk later, Tom!
+
+--- Tue 08:32, Tom
+Talk later!
+
+--- Tue 08:33, Maya
+Ha, we're in the goodbye loop again. I'm officially signing off now. Talk later, Tom!
+
+--- Tue 08:42, Tom
+Signing off with you, Maya. Talk later!
+
+--- Tue 12:25, Maya
+Signed off for real this time. Talk later, Tom!
+
+--- Tue 12:25, Tom
+Talk later, Maya!
+
+--- Tue 12:29, Maya
+Hey, I'm up now. Did the cabinet doors happen, or did the trim win this round?
+
+--- Tue 12:33, Tom
+Hey, you're up! I have to be honest: the doors didn't happen. I spent the morning on the roadside again, and by the time I got home I was too tired to face the trim. The walls look great, though, and my sister is still very patient with me. Tonight I'm going to try the doors for real, even if it's just the first coat.
+
+--- Tue 13:03, Maya
+Ha, honesty counts, and the walls looking great is still a win. Your sister sounds like a keeper. Just the first coat tonight is a solid plan. Even one door done is progress.
+
+--- Tue 13:04, Maya
+I'm getting ready for my next overnight, so my day is mostly sleep and coffee prep. Let me know how the doors look once you've got some paint on them.
+
+--- Tue 13:30, Tom
+Thanks, Maya! Sleep and coffee prep sounds like the right plan for a night shift. I'll send you a photo of the doors once I've got some paint on them. Good luck tonight.
+
+--- Tue 13:57, Maya
+Thanks, Tom! Looking forward to the photo. Good luck with the first coat!
+

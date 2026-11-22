@@ -68,7 +68,7 @@ function mkShifts(P, h) {
   st ??= days.map((d, i) => { const o = okS(i); return o.includes(s0) ? s0 : o[0]; }); // same start every day: rest = 24 - elapsed >= 11
   return days.map((d, i) => ({ day: DAYS[d], start: hm(st[i]), end: hm(st[i] + els[i]), paid_hours: lens[i] }));
 }
-const wOcc = (r, sex, age, edu, act) => r.J[sex][AB(age)] * (r.deg > 0 ? (edu === DEGK ? 1 : r.deg > 1 ? 0 : .15) : r.deg < 0 && edu === DEGK ? .35 : 1) * (act === 'se' ? r.se : 1) * (act === 'pt' && r.deg < 0 ? 2 : 1);
+const wOcc = (r, sex, age, edu, act) => r.J[sex][AB(age)] * (r.deg > 0 ? (edu === DEGK ? 2.6 : r.deg > 1 ? 0 : .15) : r.deg < 0 && edu === DEGK ? .35 : 1) * (act === 'se' ? r.se : 1) * (act === 'pt' && r.deg < 0 ? 2 : 1);
 function firstName(eth, rel, sex, age) {
   let alt = ['pk', 'bd', 'ao', 'oa', 'mx', 'cn'].includes(eth) ? { Sikh: 'sikh', Hindu: 'in', Jewish: 'wb' }[rel] : null; // names follow faith where the ethnic pool would clash
   if (eth === 'mx' && !alt) alt = rel === 'Muslim' ? one(['pk', 'ao', 'wb']) : one(['wb', 'wb', 'bc']);
@@ -136,8 +136,8 @@ function build(type, pr, fo = {}, minK = 0) {
     return res();
   }
   if (type === 'withparents') {
-    const c = me({ min: 18 }), fb = Math.max(17, Math.round(rn(28.8, 5.4))), mo = person({ pr, age: c.age + fb, sex: 'F', eth: c.eth, rel: c.rel });
-    if (mo.age > 88) return null; M.push(mo);
+    const c = me({ min: 18 }), fb = Math.max(17, Math.round(rn(28.8, 5.4))), mo = c.age + fb > 88 ? null : person({ pr, age: c.age + fb, sex: 'F', eth: c.eth, rel: c.rel });
+    if (!mo) return null; M.push(mo);
     const fa = R() > .32 ? partner(mo, c.age + 17, c.eth) : null; K.push([ix(mo), ix(c)]); if (fa) K.push([ix(fa), ix(c)]);
     const sib = +pk('0:50,1:35,2:15'), ks = sib ? mkKids(kidAges(c.age - ri(1, 4), sib, 0), mo, fa) : [];
     if (ks.length && c.age - ks[0].age < 1) return null;
@@ -155,8 +155,8 @@ function build(type, pr, fo = {}, minK = 0) {
   if (b) C.length = 1, C[0][2] = mar(a, b);
   const nk = Math.max(minK, +pk(D.nKids[adult ? 'adult' : lone ? 'lone_dep' : 'couple_dep'])), kids = mkKids(kidAges(o, nk, adult ? 18 : 0), a, b);
   if (type === 'multigen') {
-    const gp = person({ pr, age: a.age + Math.max(18, Math.round(rn(28, 5))), sex: R() < .6 ? 'F' : 'M', eth: a.eth, rel: a.rel });
-    if (gp.age > 94) return null; M.push(gp); K.push([ix(gp), 0]); IL.push([ix(b), ix(gp)]); kids.forEach(k => G.push([ix(gp), ix(k)]));
+    const gage = a.age + Math.max(18, Math.round(rn(28, 5))); if (gage > 94) return null;
+    const gp = person({ pr, age: gage, sex: R() < .6 ? 'F' : 'M', eth: a.eth, rel: a.rel }); M.push(gp); K.push([ix(gp), 0]); IL.push([ix(b), ix(gp)]); kids.forEach(k => G.push([ix(gp), ix(k)]));
     if (R() < .3) { const g2 = partner(gp, 18, a.eth); K.push([ix(g2), 0]); IL.push([ix(b), ix(g2)]); kids.forEach(k => G.push([ix(g2), ix(k)])); }
   }
   return res();

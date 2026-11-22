@@ -5,118 +5,83 @@
  "area": "one inner-city area (inner profile)",
  "people": [
   {
-   "name": "Mary Balogun",
-   "age": 30,
+   "name": "Jasmine Henry",
+   "age": 42,
    "sex": "F",
-   "ethnicity": "Black African",
+   "ethnicity": "Black Caribbean / Other Black",
    "birthplace": "England",
-   "years_in_uk": 30,
-   "religion": "Christian",
-   "activity": "employed full-time",
-   "occupation": "Security & protective services",
-   "contract": "permanent",
-   "employer": "Public body",
-   "annual_income": 28989,
-   "hours_per_week": 44,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "15:00",
-     "end": "00:30",
-     "paid_hours": 8.75
-    },
-    {
-     "day": "Tue",
-     "start": "23:00",
-     "end": "08:30",
-     "paid_hours": 8.75
-    },
-    {
-     "day": "Wed",
-     "start": "07:00",
-     "end": "16:30",
-     "paid_hours": 8.75
-    },
-    {
-     "day": "Sat",
-     "start": "23:00",
-     "end": "08:30",
-     "paid_hours": 8.75
-    },
-    {
-     "day": "Sun",
-     "start": "23:00",
-     "end": "08:30",
-     "paid_hours": 9
-    }
-   ],
+   "years_in_uk": 42,
+   "religion": "Muslim",
+   "activity": "looking after home or family",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 2461,
+   "earnings_from_work": null,
+   "hours_per_week": 0,
+   "shifts": [],
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
     "bedrooms": 4,
-    "occupancy_rating": 1,
-    "size": 3,
+    "occupancy_rating": 2,
+    "size": 2,
     "members": [
      {
-      "name": "Finley Edwards",
-      "age": 25,
+      "name": "Jan Russo",
+      "age": 43,
       "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Amy Wood",
-      "age": 27,
-      "sex": "F",
       "relation": "housemate (unrelated)"
      }
     ]
    },
    "relationship_status": "single",
    "children": [],
-   "health": "very good",
-   "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 12.67,
-   "income_source": "earnings",
+   "health": "fair",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": null,
+   "income_source": "benefits or partner support",
    "role": null,
-   "former_occupation": null
+   "former_occupation": "Secretarial & related occupations"
   },
   {
-   "name": "Imran Butt",
-   "age": 20,
+   "name": "Archie Thompson",
+   "age": 22,
    "sex": "M",
-   "ethnicity": "Pakistani",
-   "birthplace": "Other",
-   "years_in_uk": 2,
-   "religion": "Muslim",
-   "activity": "unemployed",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 22,
+   "religion": "No religion",
+   "activity": "student",
    "occupation": null,
    "contract": null,
    "employer": null,
-   "annual_income": 6373,
+   "annual_income": 8787,
+   "earnings_from_work": null,
    "hours_per_week": 0,
    "shifts": [],
    "household": {
     "type": "couple family with non-dependent children",
-    "tenure": "social rented",
-    "bedrooms": 3,
-    "occupancy_rating": 0,
+    "tenure": "owned with mortgage",
+    "bedrooms": 2,
+    "occupancy_rating": -1,
     "size": 4,
     "members": [
      {
-      "name": "Hina Mahmood",
-      "age": 47,
+      "name": "Helen Thompson",
+      "age": 46,
       "sex": "F",
       "relation": "mother"
      },
      {
-      "name": "Omar Butt",
-      "age": 51,
+      "name": "Sam Thompson",
+      "age": 45,
       "sex": "M",
       "relation": "father"
      },
      {
-      "name": "Nadia Butt",
-      "age": 19,
+      "name": "Ruby Thompson",
+      "age": 18,
       "sex": "F",
       "relation": "sister"
      }
@@ -124,223 +89,78 @@
    },
    "relationship_status": "in a relationship (living apart)",
    "children": [],
-   "health": "very good",
-   "education": "No qualifications",
+   "health": "fair",
+   "education": "Degree or above (level 4+)",
    "hourly_pay": null,
-   "income_source": "benefits",
+   "income_source": "student support",
    "role": null,
    "former_occupation": null
   },
   {
-   "name": "Kenneth Davies",
-   "age": 70,
-   "sex": "M",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 70,
-   "religion": "No religion",
-   "activity": "retired",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 11936,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "couple family, no children",
-    "tenure": "private rented",
-    "bedrooms": 1,
-    "occupancy_rating": 0,
-    "size": 2,
-    "members": [
-     {
-      "name": "Elaine Wood",
-      "age": 70,
-      "sex": "F",
-      "relation": "partner"
-     }
-    ]
-   },
-   "relationship_status": "cohabiting",
-   "children": [
-    {
-     "name": "Ben Davies",
-     "age": 38,
-     "lives": "own household"
-    },
-    {
-     "name": "James Davies",
-     "age": 37,
-     "lives": "own household"
-    }
-   ],
-   "health": "good",
-   "education": "No qualifications",
-   "hourly_pay": null,
-   "income_source": "pension",
-   "role": null,
-   "former_occupation": "Administrative & secretarial"
-  },
-  {
-   "name": "Rebecca Brown",
-   "age": 33,
+   "name": "Sofia Costa",
+   "age": 45,
    "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "Scotland",
-   "years_in_uk": 33,
+   "ethnicity": "White Other (incl. Irish, Eastern European)",
+   "birthplace": "Australia",
+   "years_in_uk": 8,
    "religion": "Christian",
-   "activity": "employed part-time",
-   "occupation": "Business, finance & public-service professionals",
+   "activity": "employed full-time",
+   "occupation": "Health & social-care associate professionals",
    "contract": "permanent",
-   "employer": "Bank or insurer",
-   "annual_income": 35680,
-   "hours_per_week": 24,
+   "employer": "NHS trust",
+   "annual_income": 30663,
+   "earnings_from_work": 30663,
+   "hours_per_week": 36,
    "shifts": [
     {
      "day": "Mon",
-     "start": "08:30",
-     "end": "17:00",
-     "paid_hours": 8
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
     },
     {
      "day": "Tue",
      "start": "08:00",
-     "end": "16:30",
-     "paid_hours": 8
+     "end": "15:30",
+     "paid_hours": 7.25
     },
     {
-     "day": "Wed",
-     "start": "09:30",
-     "end": "18:00",
-     "paid_hours": 8
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 5,
-    "occupancy_rating": 2,
-    "size": 3,
-    "members": [
-     {
-      "name": "Kasun Noori",
-      "age": 33,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Laura Turner",
-      "age": 28,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "single",
-   "children": [],
-   "health": "good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": 28.59,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Arjun Atwal",
-   "age": 56,
-   "sex": "M",
-   "ethnicity": "Indian",
-   "birthplace": "India",
-   "years_in_uk": 31,
-   "religion": "Sikh",
-   "activity": "long-term sick or disabled",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 12248,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "one-person household",
-    "tenure": "private rented",
-    "bedrooms": 1,
-    "occupancy_rating": 0,
-    "size": 1,
-    "members": []
-   },
-   "relationship_status": "separated or divorced",
-   "children": [
-    {
-     "name": "Navdeep Atwal",
-     "age": 19,
-     "lives": "own household"
-    }
-   ],
-   "health": "very bad",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": null,
-   "income_source": "benefits",
-   "role": null,
-   "former_occupation": "Other managers & proprietors (hospitality, retail, services)"
-  },
-  {
-   "name": "Daisy Harrison",
-   "age": 20,
-   "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 20,
-   "religion": "Christian",
-   "activity": "student",
-   "occupation": "Elementary food & drink service (barista, server, kitchen assistant)",
-   "contract": "fixed term",
-   "employer": "Hotel",
-   "annual_income": 8137,
-   "hours_per_week": 16,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "10:00",
+     "day": "Thu",
+     "start": "08:00",
      "end": "15:30",
-     "paid_hours": 5.25
+     "paid_hours": 7.25
     },
     {
      "day": "Fri",
-     "start": "10:00",
-     "end": "15:30",
-     "paid_hours": 5.25
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.25
     },
     {
      "day": "Sun",
-     "start": "17:00",
-     "end": "22:30",
-     "paid_hours": 5.5
+     "start": "09:00",
+     "end": "16:30",
+     "paid_hours": 7
     }
    ],
    "household": {
-    "type": "couple family with dependent children",
-    "tenure": "private rented",
-    "bedrooms": 4,
+    "type": "couple family with non-dependent children",
+    "tenure": "owned outright",
+    "bedrooms": 3,
     "occupancy_rating": 1,
-    "size": 4,
+    "size": 3,
     "members": [
      {
-      "name": "Helen White",
-      "age": 46,
+      "name": "Maria Costa",
+      "age": 68,
       "sex": "F",
       "relation": "mother"
      },
      {
-      "name": "Darren Harrison",
-      "age": 47,
+      "name": "Mihai Costa",
+      "age": 67,
       "sex": "M",
       "relation": "father"
-     },
-     {
-      "name": "Oliver Harrison",
-      "age": 17,
-      "sex": "M",
-      "relation": "brother"
      }
     ]
    },
@@ -348,10 +168,206 @@
    "children": [],
    "health": "very good",
    "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 9.78,
+   "hourly_pay": 16.38,
    "income_source": "earnings",
    "role": null,
    "former_occupation": null
+  },
+  {
+   "name": "Khalid Haddad",
+   "age": 64,
+   "sex": "M",
+   "ethnicity": "Arab / Other",
+   "birthplace": "Syria",
+   "years_in_uk": 54,
+   "religion": "No religion",
+   "activity": "long-term sick or disabled",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 11034,
+   "earnings_from_work": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family, no children",
+    "tenure": "owned outright",
+    "bedrooms": 3,
+    "occupancy_rating": 2,
+    "size": 2,
+    "members": [
+     {
+      "name": "Sonia Haddad",
+      "age": 68,
+      "sex": "F",
+      "relation": "wife"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Sami Haddad",
+     "age": 33,
+     "lives": "own household"
+    },
+    {
+     "name": "Shirin Haddad",
+     "age": 32,
+     "lives": "own household"
+    }
+   ],
+   "health": "bad",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": null,
+   "income_source": "benefits",
+   "role": null,
+   "former_occupation": "Skilled metal, electrical & electronic trades"
+  },
+  {
+   "name": "James Evans",
+   "age": 41,
+   "sex": "M",
+   "ethnicity": "Mixed / multiple",
+   "birthplace": "Other",
+   "years_in_uk": 9,
+   "religion": "No religion",
+   "activity": "employed full-time",
+   "occupation": "Health & social-care associate professionals",
+   "contract": "permanent",
+   "employer": "NHS trust",
+   "annual_income": 25838,
+   "earnings_from_work": 25838,
+   "hours_per_week": 37.5,
+   "shifts": [
+    {
+     "day": "Tue",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Wed",
+     "start": "08:00",
+     "end": "16:00",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Thu",
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Fri",
+     "start": "08:00",
+     "end": "16:00",
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Sun",
+     "start": "09:00",
+     "end": "17:00",
+     "paid_hours": 7.5
+    }
+   ],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "private rented",
+    "bedrooms": 3,
+    "occupancy_rating": 0,
+    "size": 5,
+    "members": [
+     {
+      "name": "Alesha Clarke",
+      "age": 39,
+      "sex": "F",
+      "relation": "partner"
+     },
+     {
+      "name": "Archie Evans",
+      "age": 12,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Kai Evans",
+      "age": 11,
+      "sex": "M",
+      "relation": "son"
+     },
+     {
+      "name": "Alfie Evans",
+      "age": 8,
+      "sex": "M",
+      "relation": "son"
+     }
+    ]
+   },
+   "relationship_status": "cohabiting",
+   "children": [
+    {
+     "name": "Archie Evans",
+     "age": 12,
+     "lives": "with me"
+    },
+    {
+     "name": "Kai Evans",
+     "age": 11,
+     "lives": "with me"
+    },
+    {
+     "name": "Alfie Evans",
+     "age": 8,
+     "lives": "with me"
+    }
+   ],
+   "health": "fair",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": 13.25,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Ebony Scott",
+   "age": 31,
+   "sex": "F",
+   "ethnicity": "Mixed / multiple",
+   "birthplace": "England",
+   "years_in_uk": 31,
+   "religion": "Christian",
+   "activity": "unemployed",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 5985,
+   "earnings_from_work": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family, no children",
+    "tenure": "social rented",
+    "bedrooms": 2,
+    "occupancy_rating": 1,
+    "size": 2,
+    "members": [
+     {
+      "name": "Sam Scott",
+      "age": 35,
+      "sex": "M",
+      "relation": "husband"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [],
+   "health": "bad",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": null,
+   "income_source": "benefits",
+   "role": null,
+   "former_occupation": "Health professionals (doctors, nurses, therapists)"
   }
  ]
 }

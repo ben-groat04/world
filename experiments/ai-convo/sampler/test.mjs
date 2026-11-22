@@ -27,6 +27,9 @@ for (const [s, n] of Object.entries(N)) {
   row('ethnicity (people aged 25+; target = Census residents 25+, RM032)', cnt(people.filter(p => p.age >= 25), p => ETHK[p.ethnicity]), Object.keys(D.ethLabel), tgt(T.eth25[pf]));
   row('activity (adults 18+; target 16+ from table)', cnt(ad, p => ACTK[p.activity]), Object.keys(tgt(T.act.ew)), tgt(T.act.ew));
   row('tenure (per person; target=households)', cnt(people, p => TENK[p.household.tenure]), Object.keys(D.tenLabel), tgt(T.ten[pf]));
+  const E = people.filter(p => p.occupation && p.activity === 'employed full-time' || p.occupation && p.activity === 'employed part-time'), jt = D.O.reduce((a, r) => a + r[3].concat(r[4]).reduce((x, y) => x + y), 0);
+  const dev = Math.max(...D.O.map(r => Math.abs(100 * E.filter(p => p.occupation === r[1]).length / E.length - 100 * r[3].concat(r[4]).reduce((x, y) => x + y) / jt)));
+  console.log(`occupation share: max deviation from ASHE jobs mix ${dev.toFixed(1)} pts (settings are skewed on purpose; fail only if > 12, cafe exempt: roles are fixed by design)`); if (dev > 12 && s !== 'cafe') fail('occupation mix far from ASHE');
   const over = people.filter(p => p.household.occupancy_rating < 0).length / people.length * 100;
   console.log(`overcrowded (rating<0): ${over.toFixed(1)}%  target ${T.overcrowded[pf]}%   mean size ${(people.reduce((a, p) => a + p.household.size, 0) / people.length).toFixed(2)}`);
 }

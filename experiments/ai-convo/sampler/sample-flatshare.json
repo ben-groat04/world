@@ -4,74 +4,198 @@
  "seed": "1",
  "people": [
   {
-   "name": "Sunita Park",
-   "age": 25,
+   "name": "Gemma Wood",
+   "age": 34,
    "sex": "F",
-   "ethnicity": "Other Asian",
-   "birthplace": "Vietnam",
-   "years_in_uk": 19,
-   "religion": "Hindu",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 34,
+   "religion": "No religion",
    "activity": "employed full-time",
-   "occupation": "Security & protective services",
+   "occupation": "Business, media & public-service professionals",
    "contract": "permanent",
-   "employer": "Public body",
-   "annual_income": 28989,
-   "hours_per_week": 44,
+   "employer": "Local authority or civil service",
+   "annual_income": 41259,
+   "earnings_from_work": 41259,
+   "hours_per_week": 36,
    "shifts": [
     {
      "day": "Mon",
-     "start": "15:00",
-     "end": "00:30",
-     "paid_hours": 8.75
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
     },
     {
      "day": "Tue",
-     "start": "23:00",
-     "end": "08:30",
-     "paid_hours": 8.75
+     "start": "08:30",
+     "end": "16:30",
+     "paid_hours": 7.25
     },
     {
      "day": "Wed",
-     "start": "07:00",
-     "end": "16:30",
-     "paid_hours": 8.75
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
     },
     {
-     "day": "Sat",
-     "start": "23:00",
-     "end": "08:30",
-     "paid_hours": 8.75
+     "day": "Thu",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7.25
     },
     {
-     "day": "Sun",
-     "start": "23:00",
-     "end": "08:30",
-     "paid_hours": 9
+     "day": "Fri",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
     }
    ],
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
+    "bedrooms": 5,
+    "occupancy_rating": 1,
     "size": 4,
     "members": [
      {
-      "name": "Hannah White",
-      "age": 27,
+      "name": "Rebecca Hall",
+      "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Nuwan Reyes",
-      "age": 28,
-      "sex": "M",
+      "name": "Marta Petrov",
+      "age": 33,
+      "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Abdul Rahman",
-      "age": 38,
-      "sex": "M",
+      "name": "Lucy Wright",
+      "age": 32,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": 22.04,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Rebecca Hall",
+   "age": 33,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 33,
+   "religion": "No religion",
+   "activity": "looking after home or family",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 977,
+   "earnings_from_work": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 5,
+    "occupancy_rating": 1,
+    "size": 4,
+    "members": [
+     {
+      "name": "Gemma Wood",
+      "age": 34,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Marta Petrov",
+      "age": 33,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Lucy Wright",
+      "age": 32,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": null,
+   "income_source": "benefits or partner support",
+   "role": null,
+   "former_occupation": "Teaching & other educational professionals"
+  },
+  {
+   "name": "Marta Petrov",
+   "age": 33,
+   "sex": "F",
+   "ethnicity": "White Other (incl. Irish, Eastern European)",
+   "birthplace": "Australia",
+   "years_in_uk": 11,
+   "religion": "Christian",
+   "activity": "employed full-time",
+   "occupation": "Caring personal service occupations",
+   "contract": "agency",
+   "employer": "Private care provider",
+   "annual_income": 24636,
+   "earnings_from_work": 24636,
+   "hours_per_week": 36,
+   "shifts": [
+    {
+     "day": "Fri",
+     "start": "19:00",
+     "end": "07:30",
+     "paid_hours": 12
+    },
+    {
+     "day": "Sat",
+     "start": "19:00",
+     "end": "07:30",
+     "paid_hours": 12
+    },
+    {
+     "day": "Sun",
+     "start": "19:00",
+     "end": "07:30",
+     "paid_hours": 12
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 5,
+    "occupancy_rating": 1,
+    "size": 4,
+    "members": [
+     {
+      "name": "Gemma Wood",
+      "age": 34,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Rebecca Hall",
+      "age": 33,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Lucy Wright",
+      "age": 32,
+      "sex": "F",
       "relation": "housemate (unrelated)"
      }
     ]
@@ -80,216 +204,84 @@
    "children": [],
    "health": "very good",
    "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 12.67,
+   "hourly_pay": 13.16,
    "income_source": "earnings",
    "role": null,
    "former_occupation": null
   },
   {
-   "name": "Hannah White",
-   "age": 27,
+   "name": "Lucy Wright",
+   "age": 32,
    "sex": "F",
    "ethnicity": "White British",
    "birthplace": "England",
-   "years_in_uk": 27,
-   "religion": "Christian",
-   "activity": "student",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 9195,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Sunita Park",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Nuwan Reyes",
-      "age": 28,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Abdul Rahman",
-      "age": 38,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "separated or divorced",
-   "children": [],
-   "health": "very good",
-   "education": "Degree or above (level 4+)",
-   "hourly_pay": null,
-   "income_source": "student support",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Nuwan Reyes",
-   "age": 28,
-   "sex": "M",
-   "ethnicity": "Other Asian",
-   "birthplace": "Philippines",
-   "years_in_uk": 5,
-   "religion": "Buddhist",
-   "activity": "student",
-   "occupation": "Leisure, travel & personal services (hair, beauty, fitness)",
-   "contract": "zero hours",
-   "employer": "Salon or gym",
-   "annual_income": 9173,
-   "hours_per_week": 14,
+   "years_in_uk": 32,
+   "religion": "No religion",
+   "activity": "employed part-time",
+   "occupation": "Business, media & public-service professionals",
+   "contract": "permanent",
+   "employer": "Bank or insurer",
+   "annual_income": 33848,
+   "earnings_from_work": 33848,
+   "hours_per_week": 27.5,
    "shifts": [
     {
      "day": "Mon",
-     "start": "10:00",
-     "end": "14:30",
-     "paid_hours": 4.75
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
     },
     {
-     "day": "Fri",
-     "start": "10:00",
-     "end": "14:30",
-     "paid_hours": 4.75
+     "day": "Tue",
+     "start": "08:30",
+     "end": "16:00",
+     "paid_hours": 7
     },
     {
-     "day": "Sat",
-     "start": "18:00",
-     "end": "22:30",
-     "paid_hours": 4.5
+     "day": "Wed",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Thu",
+     "start": "08:00",
+     "end": "15:00",
+     "paid_hours": 6.5
     }
    ],
    "household": {
     "type": "other household: unrelated adults sharing",
     "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
+    "bedrooms": 5,
+    "occupancy_rating": 1,
     "size": 4,
     "members": [
      {
-      "name": "Sunita Park",
-      "age": 25,
+      "name": "Gemma Wood",
+      "age": 34,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Hannah White",
-      "age": 27,
+      "name": "Rebecca Hall",
+      "age": 33,
       "sex": "F",
       "relation": "housemate (unrelated)"
      },
      {
-      "name": "Abdul Rahman",
-      "age": 38,
-      "sex": "M",
+      "name": "Marta Petrov",
+      "age": 33,
+      "sex": "F",
       "relation": "housemate (unrelated)"
      }
     ]
    },
    "relationship_status": "single",
    "children": [],
-   "health": "very good",
-   "education": "A-level or apprenticeship (level 3)",
-   "hourly_pay": 12.6,
-   "income_source": "earnings",
-   "role": null,
-   "former_occupation": null
-  },
-  {
-   "name": "Abdul Rahman",
-   "age": 38,
-   "sex": "M",
-   "ethnicity": "Bangladeshi",
-   "birthplace": "Bangladesh",
-   "years_in_uk": 7,
-   "religion": "Muslim",
-   "activity": "self-employed",
-   "occupation": "Other managers & proprietors (hospitality, retail, services)",
-   "contract": "self-employed",
-   "employer": "self-employed (own account)",
-   "annual_income": 33568,
-   "hours_per_week": 42,
-   "shifts": [
-    {
-     "day": "Mon",
-     "start": "12:00",
-     "end": "19:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Tue",
-     "start": "12:00",
-     "end": "19:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Wed",
-     "start": "10:00",
-     "end": "17:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Thu",
-     "start": "07:00",
-     "end": "14:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Sat",
-     "start": "08:00",
-     "end": "15:30",
-     "paid_hours": 7
-    },
-    {
-     "day": "Sun",
-     "start": "12:00",
-     "end": "19:30",
-     "paid_hours": 7
-    }
-   ],
-   "household": {
-    "type": "other household: unrelated adults sharing",
-    "tenure": "private rented",
-    "bedrooms": 4,
-    "occupancy_rating": 0,
-    "size": 4,
-    "members": [
-     {
-      "name": "Sunita Park",
-      "age": 25,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Hannah White",
-      "age": 27,
-      "sex": "F",
-      "relation": "housemate (unrelated)"
-     },
-     {
-      "name": "Nuwan Reyes",
-      "age": 28,
-      "sex": "M",
-      "relation": "housemate (unrelated)"
-     }
-    ]
-   },
-   "relationship_status": "separated or divorced",
-   "children": [],
-   "health": "fair",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": 15.37,
+   "health": "good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": 23.67,
    "income_source": "earnings",
    "role": null,
    "former_occupation": null

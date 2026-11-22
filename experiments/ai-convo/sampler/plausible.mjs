@@ -62,12 +62,13 @@ for (const g of groups) {
 }
 // aggregates against real data: sex mix by occupation (ASHE jobs counts) and childlessness (ONS fertility)
 const occ = {}; for (const p of groups.flat()) if (p.occupation && p.activity !== 'student') (occ[p.occupation] ??= { M: 0, F: 0 })[p.sex]++;
-for (const r of D.O) { const o = occ[r[1]]; if (!o || o.M + o.F < 25) continue; const jm = r[3].reduce((a, b) => a + b), jf = r[4].reduce((a, b) => a + b), real = jf / (jm + jf), got = o.F / (o.M + o.F); if (Math.abs(real - got) > .22) flag(soft, 'sex mix off ASHE', { name: r[1], age: '', sex: '' }, `sample F ${got.toFixed(2)} vs ASHE ${real.toFixed(2)}`); }
+if (nPeople >= 200) for (const r of D.O) { const o = occ[r[1]]; if (!o || o.M + o.F < 25) continue; const jm = r[3].reduce((a, b) => a + b), jf = r[4].reduce((a, b) => a + b), real = jf / (jm + jf), got = o.F / (o.M + o.F); if (Math.abs(real - got) > .22) flag(soft, 'sex mix off ASHE', { name: r[1], age: '', sex: '' }, `sample F ${got.toFixed(2)} vs ASHE ${real.toFixed(2)}`); }
 const bands = [[40, 49, 2], [50, 64, 3]], women = groups.flat().filter(p => p.sex === 'F');
-for (const [lo, hi, i] of bands) { const w = women.filter(p => p.age >= lo && p.age <= hi); if (w.length < 60) continue; const cl = w.filter(p => !p.children.length).length / w.length, real = D.childless.F[i]; if (Math.abs(cl - real) > .12) flag(soft, 'childlessness off ONS', { name: `women ${lo}-${hi}`, age: '', sex: '' }, `sample ${cl.toFixed(2)} vs ONS ${real}`); }
+if (nPeople >= 200) for (const [lo, hi, i] of bands) { const w = women.filter(p => p.age >= lo && p.age <= hi); if (w.length < 60) continue; const cl = w.filter(p => !p.children.length).length / w.length, real = D.childless.F[i]; if (Math.abs(cl - real) > .12) flag(soft, 'childlessness off ONS', { name: `women ${lo}-${hi}`, age: '', sex: '' }, `sample ${cl.toFixed(2)} vs ONS ${real}`); }
 const H = Object.entries(hard), S = Object.entries(soft);
 console.log(`audited ${nPeople} people in ${groups.length} groups`);
 console.log(H.length ? 'HARD FLAGS:' : 'no hard flags'); H.forEach(([r, n]) => console.log(`  ${n}  ${r}  e.g. ${seen[r].join(' | ')}`));
 console.log('soft flags (rate-capped at 3% of people each):'); S.forEach(([r, n]) => console.log(`  ${n} (${(100 * n / nPeople).toFixed(1)}%)  ${r}  e.g. ${seen[r].join(' | ')}`));
-const bad = H.length || S.some(([r, n]) => n / nPeople > .03 && !/off (ASHE|ONS)/.test(r)) || S.some(([r]) => /off (ASHE|ONS)/.test(r));
+const big = nPeople >= 200; // rate caps and aggregate comparisons are meaningless on a handful of people
+const bad = H.length || (big && (S.some(([r, n]) => n / nPeople > .03 && !/off (ASHE|ONS)/.test(r)) || S.some(([r]) => /off (ASHE|ONS)/.test(r))));
 console.log(bad ? 'PLAUSIBILITY FAILED' : 'PLAUSIBILITY OK'); process.exit(bad ? 1 : 0);

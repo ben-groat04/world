@@ -4,118 +4,74 @@
  "seed": "1",
  "people": [
   {
-   "name": "Jessica Roberts",
-   "age": 26,
-   "sex": "F",
-   "ethnicity": "White British",
-   "birthplace": "Zimbabwe",
-   "years_in_uk": 17,
-   "religion": "No religion",
-   "activity": "unemployed",
-   "occupation": null,
-   "contract": null,
-   "employer": null,
-   "annual_income": 4278,
-   "hours_per_week": 0,
-   "shifts": [],
-   "household": {
-    "type": "couple family with dependent children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 4,
-    "occupancy_rating": 2,
-    "size": 3,
-    "members": [
-     {
-      "name": "Luke Roberts",
-      "age": 31,
-      "sex": "M",
-      "relation": "husband"
-     },
-     {
-      "name": "Olivia Roberts",
-      "age": 5,
-      "sex": "F",
-      "relation": "daughter"
-     }
-    ]
-   },
-   "relationship_status": "married",
-   "children": [
-    {
-     "name": "Olivia Roberts",
-     "age": 5,
-     "lives": "with me"
-    }
-   ],
-   "health": "good",
-   "education": "GCSE-level (level 1-2)",
-   "hourly_pay": null,
-   "income_source": "benefits",
-   "role": null,
-   "former_occupation": "Corporate managers & directors"
-  },
-  {
-   "name": "Luke Roberts",
-   "age": 31,
+   "name": "Omar Nasser",
+   "age": 46,
    "sex": "M",
-   "ethnicity": "White British",
-   "birthplace": "England",
-   "years_in_uk": 31,
-   "religion": "No religion",
+   "ethnicity": "Arab / Other",
+   "birthplace": "Iraq",
+   "years_in_uk": 43,
+   "religion": "Muslim",
    "activity": "employed full-time",
-   "occupation": "Other managers & proprietors (hospitality, retail, services)",
-   "contract": "zero hours",
-   "employer": "Retail or hospitality chain",
-   "annual_income": 32781,
-   "hours_per_week": 40,
+   "occupation": "Secretarial & related occupations",
+   "contract": "permanent",
+   "employer": "Local authority",
+   "annual_income": 25629,
+   "earnings_from_work": 25629,
+   "hours_per_week": 38,
    "shifts": [
     {
-     "day": "Tue",
-     "start": "09:00",
+     "day": "Mon",
+     "start": "09:30",
      "end": "17:30",
-     "paid_hours": 8
+     "paid_hours": 7.5
+    },
+    {
+     "day": "Tue",
+     "start": "08:00",
+     "end": "16:00",
+     "paid_hours": 7.5
     },
     {
      "day": "Wed",
-     "start": "10:00",
-     "end": "18:30",
-     "paid_hours": 8
+     "start": "09:30",
+     "end": "17:30",
+     "paid_hours": 7.5
     },
     {
      "day": "Thu",
-     "start": "10:00",
-     "end": "18:30",
-     "paid_hours": 8
+     "start": "08:00",
+     "end": "16:00",
+     "paid_hours": 7.5
     },
     {
-     "day": "Sat",
+     "day": "Fri",
      "start": "09:00",
      "end": "17:30",
-     "paid_hours": 8
-    },
-    {
-     "day": "Sun",
-     "start": "07:00",
-     "end": "15:30",
      "paid_hours": 8
     }
    ],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 4,
-    "occupancy_rating": 2,
-    "size": 3,
+    "tenure": "private rented",
+    "bedrooms": 2,
+    "occupancy_rating": 0,
+    "size": 4,
     "members": [
      {
-      "name": "Jessica Roberts",
-      "age": 26,
+      "name": "Nour Nasser",
+      "age": 44,
       "sex": "F",
       "relation": "wife"
      },
      {
-      "name": "Olivia Roberts",
-      "age": 5,
+      "name": "Samira Nasser",
+      "age": 16,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Leila Nasser",
+      "age": 15,
       "sex": "F",
       "relation": "daughter"
      }
@@ -124,58 +80,185 @@
    "relationship_status": "married",
    "children": [
     {
-     "name": "Olivia Roberts",
-     "age": 5,
+     "name": "Samira Nasser",
+     "age": 16,
+     "lives": "with me"
+    },
+    {
+     "name": "Leila Nasser",
+     "age": 15,
      "lives": "with me"
     }
    ],
    "health": "very good",
-   "education": "No qualifications",
-   "hourly_pay": 15.76,
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": 12.97,
    "income_source": "earnings",
    "role": null,
    "former_occupation": null
   },
   {
-   "name": "Olivia Roberts",
-   "age": 5,
+   "name": "Nour Nasser",
+   "age": 44,
    "sex": "F",
-   "ethnicity": "White British",
+   "ethnicity": "Arab / Other",
+   "birthplace": "Turkey",
+   "years_in_uk": 12,
+   "religion": "Muslim",
+   "activity": "student",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 4850,
+   "earnings_from_work": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "private rented",
+    "bedrooms": 2,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Omar Nasser",
+      "age": 46,
+      "sex": "M",
+      "relation": "husband"
+     },
+     {
+      "name": "Samira Nasser",
+      "age": 16,
+      "sex": "F",
+      "relation": "daughter"
+     },
+     {
+      "name": "Leila Nasser",
+      "age": 15,
+      "sex": "F",
+      "relation": "daughter"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Samira Nasser",
+     "age": 16,
+     "lives": "with me"
+    },
+    {
+     "name": "Leila Nasser",
+     "age": 15,
+     "lives": "with me"
+    }
+   ],
+   "health": "good",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": null,
+   "income_source": "student support",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Samira Nasser",
+   "age": 16,
+   "sex": "F",
+   "ethnicity": "Arab / Other",
    "birthplace": "England",
-   "years_in_uk": 5,
-   "religion": "No religion",
+   "years_in_uk": 16,
+   "religion": "Muslim",
    "activity": "school pupil",
    "occupation": null,
    "contract": null,
    "employer": null,
    "annual_income": null,
+   "earnings_from_work": null,
    "hours_per_week": 0,
    "shifts": [],
    "household": {
     "type": "couple family with dependent children",
-    "tenure": "owned with mortgage",
-    "bedrooms": 4,
-    "occupancy_rating": 2,
-    "size": 3,
+    "tenure": "private rented",
+    "bedrooms": 2,
+    "occupancy_rating": 0,
+    "size": 4,
     "members": [
      {
-      "name": "Jessica Roberts",
-      "age": 26,
+      "name": "Omar Nasser",
+      "age": 46,
+      "sex": "M",
+      "relation": "father"
+     },
+     {
+      "name": "Nour Nasser",
+      "age": 44,
       "sex": "F",
       "relation": "mother"
      },
      {
-      "name": "Luke Roberts",
-      "age": 31,
-      "sex": "M",
-      "relation": "father"
+      "name": "Leila Nasser",
+      "age": 15,
+      "sex": "F",
+      "relation": "sister"
      }
     ]
    },
    "relationship_status": "single",
    "children": [],
    "health": "very good",
-   "education": "primary school",
+   "education": "secondary school / college",
+   "hourly_pay": null,
+   "income_source": null,
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Leila Nasser",
+   "age": 15,
+   "sex": "F",
+   "ethnicity": "Arab / Other",
+   "birthplace": "England",
+   "years_in_uk": 15,
+   "religion": "Muslim",
+   "activity": "school pupil",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "earnings_from_work": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "private rented",
+    "bedrooms": 2,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Omar Nasser",
+      "age": 46,
+      "sex": "M",
+      "relation": "father"
+     },
+     {
+      "name": "Nour Nasser",
+      "age": 44,
+      "sex": "F",
+      "relation": "mother"
+     },
+     {
+      "name": "Samira Nasser",
+      "age": 16,
+      "sex": "F",
+      "relation": "sister"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "secondary school / college",
    "hourly_pay": null,
    "income_source": null,
    "role": null,

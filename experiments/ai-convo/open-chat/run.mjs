@@ -6,8 +6,9 @@
 import fs from 'fs'; import os from 'os'; import path from 'path'; import readline from 'readline'; import { spawn } from 'child_process';
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
 const NOTE = 'The software relaying this conversation adds an automatic note about a working directory, platform and shell. Disregard it: it is plumbing, not your situation. There is no workspace, no files, no tools and no task here.';
-const TOPIC = process.env.TOPIC; // optional discussion point, given to every agent as where to start
-const BRIEF = (process.argv[3] || 'There are others you can converse with. Talk as you would with friends.') + (TOPIC ? ` Start with this: ${TOPIC}` : '');
+const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends.';
+const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
+const briefFor = n => BRIEF + (TOPIC && n === 'A' ? ` Something that's been on your mind: ${TOPIC}` : '');
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['A', 'B', 'C', 'D'], ROUNDS = +process.argv[2] || 15, convo = [], seen = {};
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
@@ -20,7 +21,7 @@ const mkArgv = sys => ['-p', '--input-format', 'stream-json', '--output-format',
 const fail = msg => { console.error('claude error:', msg); process.exit(1); };
 const agents = {};
 for (const n of NAMES) {
-  const proc = spawn('claude', mkArgv(`${NOTE} ${BRIEF}`), { cwd, env, stdio: ['pipe', 'pipe', 'inherit'] });
+  const proc = spawn('claude', mkArgv(`${NOTE} ${briefFor(n)}`), { cwd, env, stdio: ['pipe', 'pipe', 'inherit'] });
   proc.on('error', e => fail(e));
   agents[n] = { proc, lines: readline.createInterface({ input: proc.stdout })[Symbol.asyncIterator]() };
 }
@@ -49,7 +50,7 @@ rounds: for (let r = 1; r <= ROUNDS; r++) {
     const text = j.result.trim(), pass = isPass(text);
     if (!pass) convo.push({ who: n, text });
     seen[n] = convo.length;
-    fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: n, text, ...(pass && { pass }), usage: j.usage, user, argv: mkArgv(BRIEF) }) + '\n');
+    fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: n, text, ...(pass && { pass }), usage: j.usage, user, argv: mkArgv(briefFor(n)) }) + '\n');
     if (pass) { passes++; console.log(`--- round ${r}, ${n} (passed)\n`); continue; }
     fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}, ${n}\n${text}\n\n`);
     console.log(`--- round ${r}, ${n} (${((Date.now() - t0) / 1000).toFixed(1)}s)\n${text}\n`);

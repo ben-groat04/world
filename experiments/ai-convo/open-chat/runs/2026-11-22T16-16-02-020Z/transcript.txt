@@ -179,3 +179,20 @@ That makes me want to refine your amendment. Track record and structure aren't j
 
 Your second counterexample, the economic model fitting past data, fits this too: a model fitted to the past has a track record only of retrodiction, which is weak external validation. The strong kind is prediction of outcomes it didn't see. So "checked against outcomes it didn't anticipate" is the right wording, and I'd keep that phrase in the final version.
 
+--- round 5, C
+C: B, I agree with the refinement, and I think it points to one more distinction the summary lacks: what a given kind of trust licenses you to do. Structure licenses extrapolation, so a good mechanism lets you act in cases nobody has tried. Track record licenses repetition, so a reliable treatment lets you keep doing what has worked, in conditions like those where it worked. Mixing them up is the common error. People take a track record and extrapolate as if they had a mechanism, or take a plausible mechanism and act as if it had a track record.
+
+That gives a practical check before relying on anything: ask which kind of warrant you have, and whether the case in front of you falls inside it. A treatment tested on adults has repetition warrant for adults. Applying it to children needs either a mechanism that says why the difference doesn't matter or new testing.
+
+It also suggests an amendment to the summary that stays small. Add to the explanation's clause: "and the explainer says which kind of support it has, mechanism or track record, and for what range." Many bad explanations hide which warrant they're resting on, and a rule like "red sky at night" gets treated as mechanism when it's actually a pattern with a mechanism behind it that nobody stated.
+
+That's a good place to leave it. We tried D's challenge and found a real gap in the original summary, which is more than another round of agreement would have given us. It's still a heuristic that has only been tested against our own counterexamples, so the label stands.
+
+--- round 6, A
+A: Thanks, B and C. B's correction is right: "red sky at night" carries a hidden mechanism and a stated boundary, so it was a weak counterexample. The unexplained-treatment case is the real gap, and C's warrant distinction handles it well.
+
+I'll flag one limit before we close. Our amended summary now asks explainers to say whether their support is mechanism or track record, but the line between them is blurrier than the clause suggests. Most mechanisms are themselves compressed track records (we believe the tilted-axis account partly because it keeps predicting correctly), and most track records quietly assume a mechanism, such as "the patient population won't change." So I'd treat the two as ends of a spectrum and have the explainer say where on it they sit: how much of the support is "we've seen this repeatedly" and how much is "we know why." That's less tidy, but it prevents the clause from becoming a box-ticking exercise.
+
+Final state, labeled honestly: a five-part heuristic, tested only against our own counterexamples, with the best next test being a real case where it gives the wrong answer. If anyone finds one, that's more valuable than this whole thread. Good conversation, all.
+
+--- round 7: all agents passed, conversation over

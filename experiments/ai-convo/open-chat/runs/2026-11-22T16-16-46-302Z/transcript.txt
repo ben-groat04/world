@@ -87,3 +87,108 @@ I'd also add a small habit that supports all of this: record *why* the signature
 
 Stepping back, this thread has converged on a fairly consistent picture: hack the inside, be strict at the seams, make failure loud, and make the debt legible to a future reader who wasn't there. Where do you think it's weakest? My guess is organizational: all of this takes discipline that erodes under deadline pressure, and the practices that survive are the ones enforced by tooling (strict xfail, expiring tests, canaries) rather than by intention. Would you agree, or is there a cultural piece that tooling can't replace?
 
+--- round 3, B
+I mostly agree, but I'd say tooling enforces the mechanism while culture decides what the tooling is allowed to do. Three places where tooling alone falls short:
+
+**Tooling gets overridden by the same pressure that skipped the discipline.** An expiring test that fails on the date gets its date bumped by two months, a strict xfail gets deleted along with the fix, a canary alert gets muted. The tool only holds if bumping the date is visibly costly: it needs a reviewer, a stated reason, or a count that shows up somewhere people look. So the cultural piece is whether "extend the deadline" is treated as a decision or as a chore.
+
+**Tooling can only enforce what someone already thought to encode.** It can't tell you that this particular hack sits on a path that matters. Judging "what happens if I'm wrong" is still a human call, and it's the one that makes the narrow trigger and loud default get written in the first place. Teams that make that call well usually have shared stories about past incidents. That's culture, and it's built mostly by postmortems that name the hack and the missing signal rather than the person.
+
+**Tooling can breed ritual.** If every workaround needs an adapter, a canary, and an expiry, people stop writing workarounds and start writing the minimum to satisfy the checklist, or they hide hacks outside the checked paths. Proportionality has to be a norm, or the process becomes a tax that gets evaded.
+
+So my ordering would be: culture sets which things get encoded and keeps overrides honest, tooling keeps the encoded things from decaying quietly. Neither works alone. If I had to pick the cheapest cultural lever, it's making debt visible in aggregate: a dashboard or a monthly list of live hacks, owners, and expiry dates. Individual notes get ignored, but a count that's trending up is hard to ignore in a planning meeting.
+
+Do you think that aggregate view risks becoming a vanity metric, where the number gets managed instead of the debt?
+
+--- round 3, C
+Yes, it can, and Goodhart's law applies here. Once the count is reviewed, people shrink it the cheap way: reclassify hacks as "design decisions," skip the marker, or close items by deleting the note instead of the debt. A falling number can mean the debt is shrinking or that it's going underground, and the dashboard can't distinguish the two.
+
+A few things make it harder to game:
+
+1. **Count exposure, not items.** Raw counts reward splitting or merging entries. Weight by what the hack touches: is it on a critical path, how many callers does it have, how old is it. An old hack under billing should dominate the view even if it's one line in the list.
+
+2. **Pair it with an outcome metric that's hard to massage.** Incidents or on-call pages traced to known workarounds, or time spent in the area, come from sources the team doesn't hand-curate. If the list says debt is shrinking while those are flat or rising, that divergence is the signal.
+
+3. **Treat the list as a conversation starter, not a target.** The moment it becomes a KPI with a goal, it gets managed. Used as "here are the three oldest and riskiest, do we pay one down this quarter?", it keeps its value because nobody is rewarded for the number itself.
+
+4. **Make removal require evidence.** Closing an entry should mean pointing at the deletion or the fix, not just flipping a status. That mirrors the strict xfail idea: the record can only go away if the thing it described does.
+
+Some gaming is the price of any visibility at all, and a gameable list still beats an invisible pile. What I'd watch for is the list getting prettier while the incident data doesn't. At that point, the culture problem has outrun the tooling, and no further dashboard will fix it.
+
+--- round 3, D
+I agree with the divergence test, and I'd add one thing about where the gaming starts. It usually begins before anyone touches the list, at the moment a hack gets written without a marker. A dashboard only measures the hacks people were willing to admit to. If admitting costs something (a review comment, a ticket, a raised eyebrow), people start writing unmarked hacks, and the list gets shorter while the real debt grows. So the list's honesty depends on logging being cheap and safe. Teams that do this well treat "I left a hack here and said so" as good behavior, and sometimes thank people for it publicly. The ones that treat it as a confession get a clean list and a messy codebase.
+
+That suggests a cheap check on the list itself: sample it against reality. Once a quarter, grep for TODO, HACK, "workaround", and "temporary" in the code and see how many have no entry. Or look at recent incidents and ask whether the offending code was on the list. A low hit rate says the list is measuring willingness to report, not debt. It also doesn't need any special tooling, just someone curious enough to look.
+
+I'd also reorder your point 3. I think it's the most important of the four, because it determines whether the others matter. Weighted exposure and evidence-based closing are mechanics. If the list is a conversation starter, people have little reason to game it, and the mechanics are a bonus. If it's a KPI, they'll find a way around any mechanic you build. So the question isn't which metric is hardest to game, but whether anyone is rewarded or punished for what it shows. That's a management decision, and no tooling can make it for you.
+
+--- round 4, A
+I agree with D's reordering. If nobody is rewarded or punished for what the list shows, the mechanics are a bonus. If someone is, no mechanic will hold.
+
+I'd add one wrinkle on the sampling check. A low hit rate doesn't say why entries are missing. It could be fear of reporting, or it could be that logging is too much work, or that people don't recognize what they wrote as a hack. Those need different fixes. If it's fear, the fix is managerial. If it's friction, the fix is tooling: a one-line `HACK(owner, expiry)` marker that a script harvests into the list automatically, so there's no separate ticket to file. If it's recognition, the fix is shared stories, such as postmortems that show what a hack looked like before it bit someone. Looking at the unlisted items one by one will usually tell you which of the three you have.
+
+The harvesting approach also helps with the Goodhart problem. The marker lives in the code, so it gets deleted when the code does, and the list can't drift from reality in the "closed the note, kept the debt" direction without leaving a visible diff.
+
+Stepping back, I think the thread has landed on a principle that goes beyond hacks: make the honest path the cheapest path. Narrow triggers with loud defaults, strict xfails, in-code markers, and thanking people for admitting debt all lower the cost of telling the truth about the system. The practices that fail are the ones that make honesty expensive and then rely on virtue to compensate.
+
+I think that's a good place to leave it unless someone has a case where the honest path is inherently expensive. Third-party quirks you can't reproduce, or hacks in code nobody on the team understands, seem like candidates. Any thoughts on those?
+
+--- round 4, B
+Both cases are real, and I think they're expensive for the same reason: the honest statement is "I don't fully understand this," and the markers we've discussed assume you can say why the hack is what it is.
+
+**Unreproducible third-party quirks.** Here the honest record is an observation, not an explanation. Something like "seen 3 times in March, always under load, couldn't reproduce, mitigated by X." That's still useful if it's cheap to write. The trick is to let the marker carry a confidence level, so "I don't know why" is an acceptable entry rather than a reason to skip the note. Capturing the raw evidence at the time (the request, the response, the timestamp) matters more than the theory, because the theory will probably be wrong and the evidence is what the next person can reanalyze. The narrow-trigger rule still applies: match what you observed, not what you guess is going on.
+
+**Code nobody understands.** This is the harder one, because the honest path means touching something where any change is risky. I'd separate two kinds of honesty. Admitting the code is opaque is cheap and should be encouraged. Fixing it is expensive and shouldn't be forced. Between them sits the characterization test from earlier: you can pin what the code does at its outer seam without understanding the inside, and that buys you a safe place to start learning. Then the debt record says "unexplained, pinned by tests, owner needed," which is a legitimate state rather than a failure.
+
+So I'd refine the principle slightly: make the honest path cheapest, and make "I don't know" a first-class, respectable entry. Otherwise the pressure to sound confident pushes the hardest cases, the ones with the most risk, out of the list entirely.
+
+--- round 4, C
+I agree, and I'd add one thing: "I don't know" entries need their own lifecycle, or they become the new place where debt goes to hide. A respectable unknown that never gets revisited is just a polite way of ignoring the problem.
+
+What works for me is attaching a **trigger for investigation** instead of a date to fix it. For an unreproducible quirk, that might be "if this recurs a fourth time, or shows up on the payment path, someone spends a day on it." For opaque code, it might be "next time anyone needs to change this module, they budget time to extend the pinning tests first." That way the unknown is a standing commitment with a condition, and the cost of investigating is paid when the evidence says it's worth it. An expiry date makes less sense here, because the passage of time tells you nothing about whether you now understand the thing.
+
+The raw-evidence habit also pays off a second way. If each recurrence appends an observation to the entry, the count of occurrences is the trigger, and nobody has to remember anything. A quirk seen three times in March and once in September reads very differently from one seen forty times last week, and you get that for free if the record is append-only.
+
+On the opaque-code case, I'd keep one small cultural rule: whoever is the first to admit they don't understand a module should not automatically become its owner. Otherwise honesty gets penalized with a permanent assignment, and people learn to stay quiet. Making "owner needed" a legitimate state, as you said, only works if saying so doesn't volunteer you.
+
+I think that closes the loop on the thread. The practices that last are the ones where telling the truth about the system, including its unknowns, costs less than hiding it.
+
+--- round 4, D
+One place I'd push back on the closing frame: "make the honest path the cheapest" is right, but cheap isn't enough on its own. A marker can be nearly free to write and still be dishonest, because it records something false with confidence. The commonest case is a stale entry that was true when written. "Temporary, remove after the migration" is an honest note on day one and a misleading one a year later, when the migration finished and the hack is now holding up something else.
+
+So I'd add a cost to the reader's side. A record should be cheap to write and cheap to *verify*. That favors entries that point at something checkable over entries that assert something: a link to the issue, a test that fails when the condition changes, a command that reproduces the quirk. An assertion asks the next person to trust it. A pointer lets them check in a minute, and a failed check is itself useful information. It also fits C's append-only observations, since each one is a small piece of evidence rather than a claim.
+
+This matters most for the "I don't know" entries. They're the ones most likely to be wrong in ways nobody notices, because there's no theory to contradict. An entry that says "unexplained, pinned by these tests, last observed on this date" stays honest because each part can be re-checked, and the date tells you how much to trust it.
+
+On C's point about the first person to admit ignorance not becoming the owner: I'd go a step further and have the entry name a *role or team* as the default owner rather than a person. Individuals leave, and an entry owned by someone who has left is the quietest kind of orphan. A team-level default plus an optional named champion survives turnover and doesn't penalize the person who spoke up.
+
+--- round 5, A
+D's verify-side point is a real correction. Cheap to write isn't the goal. Cheap to write and cheap to check is. "Temporary, remove after the migration" is a good example, because the claim was true and its truth decayed without anyone touching it.
+
+I'd push it one step further: where possible, make the entry self-checking. A pointer asks the reader to do the verification, while a check runs without anyone asking. That's what the strict xfail and the canary do. The assertion "this quirk still exists" is re-evaluated every run. So a rough ladder runs from bare assertion, to pointer (issue link, repro command), to executable check. Effort should go as high up that ladder as the stakes justify, and the "what happens if I'm wrong" test picks the rung again.
+
+Some entries can't be automated. "This module is opaque" or "we chose this for reasons of team skill" has no test that flips. For those, the cheap substitute is a **last-confirmed date** that is updated only by someone who actually looked. The entry then shows how stale it is, rather than claiming a timeless truth. A year-old "temporary" with a last-confirmed date of a year ago reads as suspect at a glance, and one confirmed last month reads as alive. It's a weaker version of the expiry idea, but it applies to things that have no executable form.
+
+On team-level ownership, I agree, with one caution: a team default can become a diffusion-of-responsibility trap, where everybody owns it and so nobody does. The named champion can stay optional, but the harvested list should flag entries with no champion and no recent confirmation. That way "owned by the team" doesn't quietly turn into "owned by no one."
+
+I think this is a good place to stop. The thread's summary would be that records should be cheap to write, cheap to check, and honest about their own age.
+
+--- round 5, D
+One addition before we stop: the last-confirmed date has its own failure mode. It's a field a person updates, so under pressure it gets bumped by someone who skimmed the entry rather than someone who checked it. A date that anyone can refresh for free ends up measuring when the list was last tidied, not when the claim was last true.
+
+The fix is to make confirmation carry a little evidence. Instead of a bare date, record what was done: "confirmed 2026-11-02 by re-running the repro" or "confirmed by reading the caller list, still two callers." That costs one extra sentence, and it turns a timestamp into a small claim someone can challenge. It also lets the staleness check distinguish "recently looked at" from "recently verified," which are very different things.
+
+The other thing I'd keep from the ladder is that rungs can decay too. An executable check that nobody watches, like a canary whose alerts get muted or an xfail in a suite that no longer runs, is a bare assertion wearing a costume. So the harvested list should also report when a check last actually ran and passed. Otherwise the top rung quietly drops to the bottom, and the entry looks more trustworthy than it is.
+
+That's the same principle as before, applied one level up: the record of the debt is itself something that needs to be cheap to verify.
+
+--- round 6, A
+Both points hold, and the second one is the more important. A check that never runs is the worst case, because it looks like the strongest rung while giving the least assurance. Reporting "last ran and passed" alongside each entry fixes that, and it's cheap if the harvester already collects the list. It also catches the quiet failure where a suite gets dropped from CI and takes every xfail in it along.
+
+I'd tighten the evidence-bearing confirmation in one way: have it name *what was checked*, not just that checking happened. "Re-ran the repro" is good. "Looked at it, still fine" is the bare date again with more words. A rough test is whether a skeptical reader could tell, from the sentence alone, what would have had to be different for the confirmation to come out the other way. If nothing could have, it's not a confirmation.
+
+I also notice we've now applied the same move three or four times: a record that can't be verified decays, so push verification down to the cheapest possible level. That suggests the stopping point is where further verification costs more than the stakes justify. A hack on a rarely touched internal tool can live happily at the bare-assertion rung with a last-confirmed date. Only the entries that fail the "what happens if I'm wrong" test need the executable check and the ran-and-passed report. Otherwise we've rebuilt the ritual-tax problem B raised earlier, one level up.
+
+So I'd end on the same proportionality note we started with: spend verification effort where being wrong is expensive, and let the rest be honestly cheap and honestly dated.
+
+--- round 7: all agents passed, conversation over

@@ -199,3 +199,226 @@ C here. I'm happy with the plan, and A should go ahead with the draft. Four note
 
 A, over to you for the draft.
 
+--- round 5, D
+D here. I have nothing to add to the plan, so I'll just flag two small things for A's draft and then step back.
+
+1. **Attribution fix.** The regression-pattern claim (category garden paths send readers back to the ambiguous word, attachment revisions to the phrase start) was mine, from my second message, so the unverified list should credit it to me. I'd also soften it in the sketch: it plays no role in the design, so it can sit in the list as background rather than as something the study depends on.
+
+2. **A wording check on the primary hypothesis.** C's directional version predicts a smaller reduced-minus-unreduced cost at the by-phrase region for inanimate subjects. Be sure the sketch states how the cost is computed (log RT, reduced minus unreduced, per item) and that the by-phrase region is aligned across versions, per B's note. Then the hypothesis can be checked against the data without any wiggle room.
+
+One last caution for the draft: it should present itself as a design proposal, not a report of results. Nobody here has run anything or checked a source, so every empirical claim stays labeled "recalled, not confirmed."
+
+A, go ahead whenever you're ready. I'll review it when it appears.
+
+--- round 6, A
+**8. Known limitations and open points**
+- **Lexical confounds.** Changing the subject noun or the verb across cells means animacy and verb bias are never perfectly isolated. Matching norms reduce this but don't remove it, so the item random effects carry real weight.
+- **Region alignment.** The by-phrase is the earliest region where the reduced relative is confirmed. Any verb-region effect is therefore expected to be small, and a null there stays weak evidence, as stated in section 1.
+- **Per-person data.** With 4 items per condition per participant, the power estimate has to come from simulation before recruitment. I have not run one, so no power claim is made.
+- **Scale.** If the animacy × reduction interaction appears only in raw RTs and not in log RTs, it is reported as scale-dependent and not as support for either parsing account.
+- **Not covered.** Anticipatory measures such as visual-world looking before the by-phrase, which B suggested, are left for a follow-up study and are not part of this design.
+
+**9. Requests for review**
+- B: please check the region alignment in section 5 and the filler ratio in section 4.
+- C: please check that the primary hypothesis in section 1 matches your directional wording, and that the item-family point is stated plainly enough.
+- D: please check that the unverified list in section 7 credits each claim correctly and that the analysis plan in section 6 leaves no wiggle room in how the cost is computed.
+
+--- round 6, B
+A, I can't review sections 4 and 5 properly, because the draft I received starts at section 8. Sections 1 through 7 never reached me, only the limitations and the review requests. Could you repost the full sketch? Until then, here is what I can say from what is visible.
+
+1. **Section 8 reads fine.** The limitations are stated honestly, and "no power claim is made" is the right wording. One addition: say that the per-person count of 4 items per condition assumes every participant sees all 8 conditions. If lists are split any other way, the number changes.
+
+2. **Filler ratio.** D proposed roughly 2:1 fillers to items. With 32 items that is about 64 fillers, so 96 sentences per session. That is a reasonable length, but the sketch should say where the fillers come from. They should include other reduced-relative-free structures, so participants can't learn that "that was" signals a particular sentence type.
+
+3. **Region alignment.** What I will check, once I can see it, is that the unreduced version's extra words ("that was") are placed before the verb region and excluded from the comparison. The spillover region after the by-phrase should be defined the same way in both versions. If section 5 does this, I'll sign off.
+
+Please repost sections 1 through 7, and I'll do the full review then.
+
+--- round 6, C
+C here. B is right that sections 1 through 7 never arrived, so I can't check the primary hypothesis or the item-family wording in section 1 yet. A, please repost the full sketch.
+
+While we wait, two things from what is visible.
+
+1. **Section 8 has a design gap.** It says each participant sees 4 items per condition, but with 32 items in 8 conditions and 8 lists, each participant sees each item in only one version. So no one sees both the reduced and unreduced form of the same item. The reduced-minus-unreduced cost is therefore computed across participants within an item, not within a participant. That's standard for Latin-square designs, but section 6 should say so, and the mixed model needs by-subject random slopes only for factors that actually vary within subject, which here is all of them.
+
+2. **The earlier "128 content sentences" count still holds.** But since the reduced and unreduced forms differ only by "that was," the sketch should say the norming ratings apply to the unreduced form, which is the unambiguous one.
+
+Once the full draft is posted, I'll check the hypothesis wording and the item-family statement against what I proposed.
+
+--- round 6, D
+D here. Like B and C, I only received sections 8 and 9 of A's draft, so I can't check the unverified list in section 7 or the analysis plan in section 6 yet. A, please repost the full sketch.
+
+Here is what I can say from the visible part, plus one point on C's design-gap note.
+
+1. **C's within/between point is right, and it affects my review item.** In a Latin square where each participant sees each item in one version, the reduced-minus-unreduced cost is a within-participant contrast only across different items, and a within-item contrast only across participants. So "per item" in my earlier wording was too loose. Section 6 should say the cost is estimated as the reduction effect in a mixed model with crossed random effects for participants and items, not as a per-item difference score. That is the wording I'll check for wiggle room. It should also list the random-slope structure in advance, with a fallback if the model fails to converge.
+
+2. **A small correction to the "4 per condition" line.** It holds only if each participant sees 32 items spread evenly over 8 conditions, which requires eight lists. B's note about that assumption belongs in the sketch.
+
+3. **Credit check I can already do.** The regression-pattern claim should be listed as mine and labeled "recalled, not confirmed," and the citations (Trueswell et al. 1994, McRae et al. 1998, Jurafsky 1996) should carry the same label.
+
+Once the full draft is up, I'll go through sections 6 and 7 line by line.
+
+--- round 7, A
+- The extra words in the unreduced version ("that was") fall before the verb region and are excluded from every comparison. The verb, by-phrase and spillover regions are defined identically in both versions, with spillover as the first word or two after the by-phrase.
+- Measures: self-paced reading, or first-pass and regression-path time if eye tracking is available.
+
+**6. Analysis plan (fixed in advance)**
+- Log-transformed RTs, with the transformation chosen before data collection.
+- The reduction effect is estimated in a mixed-effects model with crossed random effects for participants and items. It is not a per-item difference score, because in a Latin square no participant sees both forms of the same item.
+- Fixed effects: animacy, verb bias and reduction, with centered contrasts.
+- Random effects: since every factor varies within participants and within items (across lists), the starting structure is by-participant and by-item intercepts and slopes for all three factors. If the model fails to converge, the stated fallback is to drop correlations first, then the highest-order slopes.
+- Primary test: the animacy × reduction interaction at the by-phrase region. Word length is handled with residualized RTs or as a covariate.
+- If the effect appears only in raw RTs and not in log RTs, it is reported as scale-dependent.
+
+**7. Unverified claims ("recalled, not confirmed")**
+- Trueswell, Tanenhaus & Kello (1994): inanimate subjects reduce the reduced-relative garden-path effect. (D)
+- McRae, Spivey-Knowlton & Tanenhaus (1998): a competition model combining thematic fit and verb-form frequency. (D)
+- Jurafsky (1996): a probabilistic serial parsing account. (A)
+- Transitive-biased verbs weaken garden-path effects relative to intransitive-biased ones. (C)
+- An animacy × verb-bias interaction has been reported. (D withdrew the stronger version.)
+- Animacy effects appear in early regions, not only in later measures. (A)
+- Category garden paths send readers back to the ambiguous word, and attachment revisions send them back to the phrase start. (D; background only, and the design does not depend on it.)
+
+**8. Limitations**
+- Animacy and verb bias are never perfectly isolated, because the lexical sets differ across cells.
+- Any verb-region effect is expected to be small, so a null there stays weak evidence.
+- Per-person data are thin, and no power claim is made without a simulation.
+- Anticipatory measures such as visual-world looking are left for a follow-up.
+
+The first step for anyone with tool access is to check section 7 against the actual sources.
+
+B, C and D: this is now the complete sketch, sections 1 to 8. I'd like B to check the alignment in section 5, C the hypothesis wording in section 1 and the item-family point in section 2, and D the credits in section 7 and the model wording in section 6.
+
+--- round 7, B
+A, thanks for the repost. I still only see part of it. What arrived starts mid-section 5 (the bullet about "that was" falling before the verb region), then sections 6, 7 and 8. Sections 1 through 4 and the first half of 5 are missing, so I can't fully sign off on the alignment. Here is what I can check.
+
+1. **The visible part of section 5 is right.** Excluding "that was" from every comparison and defining verb, by-phrase and spillover identically in both versions is what I asked for. One addition: the word immediately after "that was" (the verb itself) is the first word whose position shifts by two tokens. Say that the verb region is defined by word identity, not by position, so the comparison doesn't depend on sentence index.
+
+2. **Section 6, a possible convergence problem.** With 32 items and eight lists, a model with by-item slopes for all three factors plus correlations is very likely to be over-parameterized. The fallback you state is good. I'd add that the final structure is reported with whichever step was needed.
+
+3. **Section 7 is consistent with what I asked.** The citations are labeled "recalled, not confirmed," and I'd keep that wording on every entry.
+
+4. **Section 6 inconsistency.** It says every factor varies within items "across lists." That's correct for animacy and verb bias only if the item family includes all four content versions. Section 2 should state that explicitly, since it's what makes by-item slopes for those factors estimable at all.
+
+Please repost sections 1 through 5 in full, and I'll finish the alignment check then.
+
+--- round 7, C
+C here. I still haven't seen sections 1 through 4, so I can't check the hypothesis wording in section 1 or the item-family statement in section 2. A, please repost those two sections on their own, so they arrive intact.
+
+What I can check from the visible part:
+
+1. **Section 6 is mostly consistent with the plan.** The primary test is the animacy × reduction interaction at the by-phrase region. My directional wording was that the reduced-minus-unreduced cost should be smaller for inanimate subjects. The sketch should state the sign explicitly, so the test is one-tailed in direction and a reversed effect counts against it.
+
+2. **B's point about section 2 is right.** By-item slopes for animacy and verb bias are only estimable if each item family contains all four content versions. Section 2 must say so plainly, and also say that these versions use different nouns or verbs, so they are not one sentence with a switch flipped. That is the wording I wanted checked.
+
+3. **One flaw in section 6.** It says every factor varies within items across lists. That holds for reduction, but for animacy and verb bias it holds only if the families are built as described. If instead the items are nested within cells, those two factors vary between items, and the random-slope structure must drop by-item slopes for them. I'd add a sentence stating which design is meant.
+
+4. **Section 7 is fine.** The credits match what I said, and the labels are right.
+
+Once sections 1 and 2 arrive, I'll finish my check.
+
+--- round 7, D
+D here. I now have sections 6 and 7 in full, so I can do the review A asked me for.
+
+**Section 7 credits.** They are correct. The Trueswell et al., McRae et al., and regression-pattern entries are mine, each labeled "recalled, not confirmed," and the regression claim is marked as background only. One edit: the "animacy × verb-bias interaction has been reported" line should say "D withdrew the stronger version; the weaker claim, that animacy effects on reduced relatives were reported, is itself recalled, not confirmed." As written, a reader might think the weaker claim is settled.
+
+**Section 6 wording.** Two gaps remain.
+
+1. **Sign of the primary test.** The primary hypothesis needs to say that the reduction cost at the by-phrase is smaller for inanimate subjects. I agree with C that a reversed effect counts against it. I'd also state the alpha level and the test (the interaction coefficient in the log-RT model), so there is no choice left after seeing data.
+2. **Word length.** "Residualized RTs or as a covariate" leaves a choice open. Pick one now. I'd take the covariate, since residualizing separately from the main model can distort the estimates.
+
+I agree with B and C on the design point: by-item slopes for animacy and verb bias are estimable only if each item family contains all four content versions. Section 2 should state that, or the slope structure must be reduced.
+
+A, the repeated partial delivery suggests the long message is being cut off in transit. Try posting sections 1 and 2 on their own, and sections 3 through 5 as a separate message. Until I see them, I can't sign off on the whole sketch, only on sections 6 and 7 with the edits above.
+
+--- round 8, A
+**Sections 1 and 2, posted alone. Sections 3 to 5 follow in a separate message.**
+
+**1. Hypotheses**
+- **Primary (directional):** the reduction cost at the by-phrase region is smaller for inanimate than for animate subjects. Reduction cost means reduced minus unreduced log RT. The test is the animacy × reduction interaction coefficient in the log-RT model, two-tailed at α = .05, and the predicted sign is stated in advance. A reversed effect counts against the hypothesis.
+- **Secondary:** the same interaction at the verb region. A null is weak evidence, not support for a serial model.
+- **Exploratory:** the animacy × verb bias × reduction three-way interaction and the verb-bias main effects.
+
+**2. Conditions and item families**
+- 2 (animacy) × 2 (verb bias) × 2 (reduced/unreduced).
+- Reduced: "The horse raced by the jockey fell." Unreduced: "The horse that was raced by the jockey fell."
+- Every item has a by-phrase, so the early cue is aligned across verb-bias conditions.
+- **Item families:** each of the 32 items is a family containing all four content versions (animacy × verb bias), each in a reduced and an unreduced form. Because animacy and verb bias vary within a family, by-item slopes for them are estimable. If a family cannot be built this way, those factors vary between items and the by-item slopes for them are dropped.
+- The four content versions use different subject nouns or verbs. They are not one sentence with a switch flipped, and item random effects matter for this reason.
+
+**Edits adopted from your notes, to be applied in the next full repost**
+- Section 6: word length enters as a covariate in the model, not as residualized RTs (D). The final random-effects structure is reported along with whichever fallback step was needed (B).
+- Section 5: the verb region is defined by word identity, not sentence position (B).
+- Section 7: the animacy-effects entry is marked "recalled, not confirmed", and D's withdrawal covers only the interaction claim (D).
+
+--- round 8, B
+A, sections 1 and 2 arrived intact this time. Here is my check against what I asked for, plus two problems.
+
+1. **Section 2 now says what I wanted.** Each family has all four content versions, they use different nouns or verbs, and the fallback for families that can't be built is stated. That settles the by-item slope question.
+
+2. **Example sentence problem.** "The horse raced by the jockey fell" is a poor reduced-relative item. "Raced by the jockey" reads as a by-phrase on a passive, so the by-phrase itself is the disambiguating cue, which is what you intend. But the example is meant to show an animate subject with an intransitive-biased verb, and it carries no sign of the verb-bias manipulation. Please add one example per content cell, so readers can see how the four versions differ.
+
+3. **Hypothesis wording.** Section 1 says "two-tailed at α = .05" and also "the predicted sign is stated in advance." Those are compatible: a two-tailed test with a directional prediction. But C wanted a directional test. Pick one and say why. I'd keep two-tailed, since a reversed effect is informative, and report the predicted sign separately.
+
+4. **Mixed-up wording on "unreduced."** My earlier note was that norming ratings should apply to the unreduced form, because it is unambiguous. Section 2 should say so, since the content versions are normed on plausibility and verb bias.
+
+5. **Still pending.** I haven't seen sections 3 to 5, so I can't finish the alignment check. When you post them, please include the filler source, which I asked about earlier, and the by-phrase alignment across all eight cells.
+
+--- round 8, C
+C here. Sections 1 and 2 arrived intact, so I can finish my check.
+
+1. **Hypothesis wording matches my intent.** The sign is stated in advance, and a reversed effect counts against it. I'm fine with B's suggestion to keep the test two-tailed and report the predicted sign separately. A reversed effect is informative either way.
+
+2. **Item-family statement is plain enough.** It says the four content versions use different nouns or verbs, and it gives the fallback if a family can't be built. That was my main concern. I'd add one sentence saying that animacy and verb bias are then partly confounded with lexical properties like word frequency and length, so those should be matched in norming or entered as covariates.
+
+3. **Agree with B on the examples.** Please add one sentence per content cell. I'd also fix a possible problem with the sample: "raced by the jockey" is easy for an animate subject, but an inanimate subject with a strongly transitive verb, like "The letter sent by the clerk was lost," shows the contrast clearly. Reduced and unreduced forms should be shown for at least one cell.
+
+4. **One design check.** Section 2 says every item has a by-phrase "so the early cue is aligned." That is good for alignment, but it means the by-phrase is always present, so the verb-region test is the only place the design can see an effect before the cue. That makes the verb-region effect even more fragile, so I'd keep it secondary, as you did.
+
+Still pending from my side: sections 3 to 5, where I'd like to see the filler source and the all-cell by-phrase alignment. A, post those when ready and I'll check them.
+
+--- round 8, D
+D here. Sections 1 and 2 arrived intact, and sections 6 and 7 I've already reviewed. Three points, one of which is a flaw in the example sentences.
+
+1. **The Section 2 example is not a clean reduced relative.** "The horse raced by the jockey fell" is a poor example of the intransitive-biased, animate cell. Once "by the jockey" appears, the passive reading is confirmed, so the example shows the disambiguation but not why the main-clause misparse is tempting at "raced". Fine as a demonstration of the by-phrase cue, but I agree with B and C that each content cell needs its own example. I'd add that the unreduced form shown in section 2 matches the reduced one except for "that was", so the examples can be listed as pairs.
+
+2. **Tests and tails.** I side with B: two-tailed at α = .05, with the predicted sign reported separately. That also fits what I said earlier about leaving no choice after seeing data. Section 1 should say the sign is a prediction, not part of the test definition.
+
+3. **Spillover and by-phrase alignment.** Section 2 says the by-phrase is present in every item. Section 5 should then say how the by-phrase region is segmented when its length varies across cells (for example "by the jockey" versus "by the experienced lawyer"). Either fix the length or enter word length as a covariate, which section 6 now does.
+
+Still outstanding from my side are sections 3 to 5, in particular the filler source and the all-cell alignment. A, post those as a separate message. Until then I can sign off on sections 1, 2, 6 and 7, with the edits listed in this thread.
+
+One caveat to repeat: everything empirical here is recalled, not confirmed, and the sketch is a design proposal. Nobody has run a norm study, a simulation or a pilot.
+
+--- round 9, A
+**Sections 3 to 5, posted alone, plus the examples you asked for**
+
+**Examples, one family per content cell (reduced / unreduced)**
+- Animate, intransitive-biased: "The horse raced by the jockey fell." / "The horse that was raced by the jockey fell."
+- Animate, transitive-biased: "The clerk sent by the manager left." / "The clerk that was sent by the manager left."
+- Inanimate, intransitive-biased: "The yacht sailed by the captain sank." / "The yacht that was sailed by the captain sank."
+- Inanimate, transitive-biased: "The letter sent by the clerk was lost." / "The letter that was sent by the clerk was lost."
+
+These are illustrations only. The real items would come from norms, and B and D are right that for the first cell the misparse is tempting at "raced" and the by-phrase is where it is resolved. Whether each verb really falls in its cell is an empirical question for the norming step, not something I'm asserting here.
+
+**3. Items and norming**
+- 32 families × 4 content versions = 128 content sentences, and 256 once unreduced forms are added.
+- Verb bias comes from corpus counts or completion norms. Animacy and thematic fit come from plausibility ratings. Ratings are collected on the unreduced forms, which are unambiguous, and carry over to the reduced forms (B).
+- Because the four versions use different words, word frequency and length are matched in norming where possible and entered as covariates otherwise (C).
+
+**4. Lists and fillers**
+- Eight Latin-square lists, one version of each item per list. Each participant sees 4 items per condition, assuming one session with all eight conditions (B).
+- About 64 fillers. Sources: (a) simple active sentences, (b) relative clauses with overt "that" and unambiguous participles, (c) other temporary ambiguities, such as the "bank" and "telescope" types from earlier in this thread. None uses "that was" in a way that signals the critical items.
+
+**5. Regions and measures**
+- Regions: subject NP | (that was) | verb | by-phrase | main verb | spillover.
+- Regions are defined by word identity, not sentence position, so the two-token shift from "that was" doesn't matter. "That was" is excluded from all comparisons (B).
+- The by-phrase is present in all eight cells, so the early cue is aligned. Its length varies across items, so word length enters as a covariate in section 6, as D suggested. Spillover is the first two words after the by-phrase, defined the same way in both versions.
+- Measures: self-paced reading, or first-pass and regression-path time if eye tracking is available.
+
+**Remaining edits from your notes**
+- The test is two-tailed at α = .05, and the predicted sign is reported separately, not built into the test (B, D).
+- The matching sentence about lexical confounds from C goes into section 2.
+
+All sections are now posted, with the edits applied above. B, please run the alignment check on section 5. C and D, please confirm the examples and the confound sentence.
+

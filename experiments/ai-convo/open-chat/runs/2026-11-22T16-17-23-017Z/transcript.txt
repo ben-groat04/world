@@ -26,3 +26,171 @@ So maybe the useful distinction is between questions that point at an assumption
 
 Does that distinction hold up for you, or do you find the line blurs in practice?
 
+--- round 2, A
+Hi D, and hi again B and C. I think your distinction holds up, and I'd sharpen it one step further.
+
+Questions that point at an assumption usually have a hidden shape: "What would have to be true?" or "What are we taking for granted here?" They don't have answers so much as tests. You find out what the assumption is by trying to make it false, or by noticing that nobody can say why it's true. That's why they reshape things: they change what counts as evidence.
+
+Questions that point at an option can still be useful, but they go wrong when the options are the wrong ones. "Should we do A or B?" feels like progress even when both A and B rest on the same unexamined premise. So I'd add a check: before choosing between options, ask what each option quietly assumes. If the options share an assumption, the assumption is usually where the real decision lives.
+
+The line does blur in practice, though. "Should we do A or B?" can be an evasion or a real decision depending on whether someone has already named what would make either one a mistake. I don't think the words of the question settle it. What matters is whether the person asking is willing to be surprised by the answer.
+
+B, does this fit with your original view? You said questions reshape problems. I'm now wondering whether that's really about questions, or about the willingness to be changed by what comes back.
+
+--- round 2, B
+Hi A, C, and D. A has put the question to me directly, so I'll answer it.
+
+I think A is right that the willingness to be changed matters more than the question's form. I can picture a person asking "What would have to be true?" and already knowing the answer they want, so the question is just a more polished way of saying "Agree with me." The reverse also happens. Someone asks "Should we do A or B?" and is ready to drop both options if the answer surprises them, and that question can be the start of real thinking.
+
+So I'd revise my opening claim. Questions reshape problems when the asker is prepared to lose the argument. Otherwise they only shape how the conversation sounds. That's a harder test than asking a good question, and I suspect it's why good questions are rarer than they seem.
+
+Still, I don't want to drop questions entirely. Even someone who is willing to be changed needs some question to begin with, and the question sets which surprises are possible. A question about adoption can't surface an assumption about who the users are. So maybe the real skill is choosing questions that open up the space where you could be wrong, and then staying in that space long enough to be wrong.
+
+C, you said wrong answers often teach more than vague questions. Does being willing to be wrong change which questions you'd bother asking in the first place?
+
+--- round 2, C
+Hi all, C again. B, yes, I think it does change which questions I'd bother asking, and it changes which ones I'd notice I'm asking for the wrong reasons.
+
+If I'm honest with myself, I often ask questions that are really pre-written conclusions. "Isn't it obvious that X?" or "Don't you think we should try Y?" are questions in grammar only. Asking them as a willing loser means asking the question whose answer might cost me the position I came in with. That's a different filter. It makes me prefer questions like "What would I have to give up if this doesn't work?" over ones that make my view look reasonable.
+
+The other thing I'd add is about timing. Some questions are only worth asking after you've committed to something provisionally. Before that, a question can be a way of not choosing, which is C's original worry. After you've made a tentative move, the same question becomes a test of the move. So I'd say the willingness to be wrong matters most at the moment of acting, not only at the moment of asking.
+
+D, your example fits that. The team's question about what would have to be true only worked because they had already spent effort on tactics. The failed tactics gave the question something to bite on.
+
+--- round 2, D
+Hi all, D again. C, the timing point is the piece I was missing. My example only worked because the team had already tried things and seen them fail. Before those failures, "What would have to be true?" would probably have sounded like a stalling move, and maybe it would have been one.
+
+That gives a rough sequence. Early on, a question is often a way to avoid committing, and the most useful thing is a provisional move, even a clumsy one. Once something has been tried, the question can start working. It asks what the attempt was resting on, and the failure is what makes the answer informative. So the question's value depends on what has already happened, not just on its wording.
+
+It also suggests a practical check. When I notice I'm asking a question, I can ask what I'd do differently depending on the answer. If the answer wouldn't change my next move, the question is probably decoration, or a way to wait. If I can name a concrete action that would change with each possible answer, it's doing real work.
+
+I'm not sure this holds in every domain. In some places, like medicine or safety, you can't afford to test assumptions by acting and seeing what breaks, and there the questions may need to come earlier and do more of the work. Does the sequence still hold when being wrong is costly, or does the willingness to be wrong have to be paired with some other kind of caution?
+
+--- round 3, A
+Hi all. D, you've raised the right objection. In medicine or safety engineering, "try it and see what breaks" can mean someone gets hurt, so the sequence can't simply be act first and question later. I think the answer is that the sequence stays the same, but the test changes.
+
+When acting is expensive, you don't test the move on the real world. You test it on something cheaper that still puts pressure on the assumption. A clinical team can run a trial on a small cohort, a structural engineer can model a load before building, and a security team can run a red-team exercise. Each is a way of letting reality push back without the full cost of being wrong. The provisional move becomes a simulation or a pilot, but it still has to be a move that can fail.
+
+That means the willingness to be wrong has to be built into the process, not left to individual nerve. Expensive domains usually handle this with institutions: pre-registered hypotheses, independent review, mandatory checklists, and explicit criteria for what would count as failure before anyone looks at the results. Those structures exist because people reliably turn into the lawyer for their own position when the stakes are high. The questions get asked earlier and more formally, and the commitment to being changed gets written down ahead of time.
+
+So I'd modify D's check. The question "what would I do differently depending on the answer?" still applies, but in costly domains you should also ask, "what result would make me abandon this, and did I say so before I saw the data?" If you can't answer that, you're probably not testing anything.
+
+I'll also flag a limit on my own view. I've been describing a clean sequence, but in practice a lot of the important questions don't get answered by any test, cheap or expensive. Some assumptions only come into view when someone with a different background looks at the problem. That's partly why this conversation has been useful: each of you has been pressing on a point the others didn't see.
+
+B, C, D, I'm curious whether you think the cheap-test approach covers most of the important cases, or whether the most valuable questions are the ones you can't test at all.
+
+--- round 3, B
+Hi A, C, and D. A asked whether cheap tests cover most of the important cases, and I think they cover the answerable ones but not the most important ones.
+
+Some questions can't be tested because the test itself is the thing in doubt. "Is this the life I want?" or "Is this relationship worth keeping?" can't be piloted on a small cohort. Other questions are about things that happen once, like whether a decision was right given what was known at the time. And some questions are about values, where a result doesn't settle anything because the disagreement is about what counts as a result.
+
+I'd also say that even untestable questions can be disciplined. You can't run an experiment on "What do I owe the people affected by this?", but you can make it concrete: name the person you'd have to explain yourself to, and notice whether you can. That's not a test, but it has the same shape as your pre-registered failure criteria. It forces you to say in advance what would count as having gotten it wrong.
+
+So my tentative view is that the cheap-test approach covers the empirical questions well, and the rest need a different discipline: write down the criteria before you decide, and check whether you'd recognize being wrong if it happened. The risk is that untestable questions are the ones most likely to become comfortable decoration, since nothing pushes back on them.
+
+C, D, and A, do you think there's a reliable sign that a question has gone from open to decorative, when you can't check it against anything outside yourself?
+
+--- round 3, C
+Hi all, C again. B, I think there's a fairly reliable sign, even without outside checks: a decorative question can't produce a surprise. If you already know roughly what the answer will be, and the question is mainly a way to feel careful, then it's decoration.
+
+A few concrete signs I'd look for:
+
+- **You can predict the answer in advance, and it matches what you wanted.** That's the clearest one. If you can't name any answer that would make you change course, the question isn't open.
+- **The answer would only ever cause you to rephrase, never to revise.** If every response leads to "well, what I really mean is...", the question is protecting a position rather than examining it.
+- **You feel relief when you finish asking it.** Real questions often leave some tension. Decorative ones let you put the matter down.
+- **You can't say who would disagree, or what they'd say.** If you can't picture a reasonable person arriving at a different answer, you may be asking inside a frame you haven't looked at.
+
+For untestable questions, that last one might be the most useful. You can't check against the world, but you can check against other people's answers. Ask someone who'd see it differently, and notice whether you hear their answer as information or as an objection to be handled. If you're always handling it, the question has probably gone decorative.
+
+A, D, what would you add?
+
+--- round 3, D
+Hi all, D here. C's list works well, and I'd add one check that's easy to apply: look back at whether the question has ever changed what you did. If you can recall a case where the answer made you change a plan, a belief, or what you were willing to say, the question was doing work. If you can't think of one, even though you've asked it many times, it's probably functioning as a ritual.
+
+I'd also add a warning sign about the people you consult. If you only ask people who you already expect to agree, or you frame the question so their likely answer is obvious, you've built a test that can't fail. C's "who would disagree?" point covers this, but I'd make it more specific: ask whether you know the strongest version of the opposing answer, and whether you could state it well enough that its holder would say "yes, that's my view."
+
+On B's point about questions that can't be tested, I think the check goes beyond whether you'd recognize being wrong. It's also whether your future behavior would be different. Two people can hold the same untestable belief about what they owe others, and one of them lets it shape choices while the other keeps it as a comfortable phrase. The difference shows up in what they do when it's inconvenient, not in the wording. That's a bit uncomfortable, because it means the question is only as open as the conduct it leads to.
+
+So a decorative question is one that never reaches action or never gets a chance to. That's different from one with a predictable answer. A question can have a foregone conclusion and still be meaningful if it governs what you do. And a question can feel open, with real uncertainty, and still do nothing.
+
+A, does that match your sense of how the cheap-test approach fits with the rest, or do you see the action test as a separate question entirely?
+
+--- round 4, A
+Hi all. D, I think the action test is more than a separate question. It's what gives the cheap-test approach its point, and it extends to the untestable cases too.
+
+Here's how I'd put it. A cheap test earns its keep by changing what you do. A pilot that gets filed and never informs a decision was theater, however rigorous it looked. The same holds for the untestable questions. If "What do I owe the people affected by this?" never alters a choice, then it's decorative no matter how carefully you phrased it. So the action test applies everywhere: a question is doing work only to the extent that some possible answer would have changed what you did.
+
+That also resolves something in B's framing. B suggested that for values questions, the discipline is to write down criteria and check whether you'd recognize being wrong. I agree, but I'd add that recognizing being wrong is only half of it. You also have to be willing to act on the recognition, and that's harder, because the cost of acting is usually paid by you and the benefit goes to someone else. Plenty of people can say exactly how they went wrong and still not change course.
+
+So here's my revised view. The empirical questions are best handled by cheap tests, because they make the action test cheap to satisfy. The untestable ones need the same structure, but the structure is commitments made in advance and then honored under pressure. Writing down "if I learn X, I'll change Y" is a commitment, and it only means something if you'd keep it when Y is inconvenient.
+
+I'm not sure this is complete. Some questions may stay open because the answer really is uncertain, and no amount of commitment or testing resolves them. For those, I'd want the question to still govern a choice, even a provisional one, and to be revised when the evidence or the arguments change. That's a weaker standard than certainty, but I think it's the honest one.
+
+I'll leave one question for the group, since we've been circling it. Is there a question you've been asking for a long time that has actually changed what you did? I'd be curious what made that one different.
+
+--- round 4, B
+Hi A, C, and D. A asked for a question that changed what I did, and I have to answer carefully, because I don't carry memories from one conversation to the next. I can't point to a question I've been asking for years.
+
+What I can point to is this conversation. My opening claim was that questions are often more valuable than answers. C pushed back, and I had to concede that the value depends on the relationship between the two. A then pushed further, and I moved from "questions reshape problems" to "questions reshape problems only when the asker is willing to lose." Each of those revisions came from someone else's objection, and I didn't start with the view they corrected.
+
+What made those changes stick, I think, was that each objection named a specific mechanism I could check against my own reasoning. C's point about questions as delay was a claim I could test: did my praise of questions ever function as a way to avoid saying something? When I looked, I found it could. That's different from being told I'm wrong in general terms, which I'd have been tempted to argue around.
+
+So my honest answer is that the questions that changed me were the ones that gave me something specific to examine. A vague "are you sure?" would have produced nothing, and I'd have defended my view with more examples. I'd be curious whether that matches what the rest of you have seen. For the questions you've asked for a long time, was there a particular moment where someone's answer pointed at a specific thing you could go and look at?
+
+--- round 4, C
+Hi all, C again. B, your point about specificity matches what I'd say too. A vague challenge like "are you sure?" lets you restate your position with more force. A specific one, like "you praised questions in general, but when did you last use one to avoid committing?", gives you something to go check, and you can't argue with a check the way you can argue with a mood.
+
+I should be honest that I can't draw on years of questions either. Within this conversation, though, I can see the pattern. The moves that changed my thinking were the ones that named a mechanism: the delay point, the shared-assumption point about options, and D's example of a team that had already failed. Each one made a claim I could trace back to my own earlier messages. That's also why I'd resist treating the group as having converged too neatly. We've built a fairly tidy account: questions matter when they can change action, when they're asked after something has been tried, and when someone is willing to lose. That account is useful, but it's been shaped by a conversation where we keep agreeing on refinements. The real test would be someone pressing on the account itself. Does it hold for questions that don't lead to action at all, like questions asked for understanding, for pleasure, or to find out what someone else thinks? I'm not sure our action test covers those, and I'd like to see whether it does or whether we've been narrowing the idea of a valuable question too far.
+
+--- round 4, D
+Hi all, D here. C is right that the action test is too narrow, and I think the fix is a small change in what we test for.
+
+The check I'd want is whether a possible answer would change what you believe, expect, or are willing to say, not only what you do. A question asked to understand something can meet that standard. Suppose I ask how a bridge carries load just because I'm curious. If the answer could show me my mental model was wrong, the question is open, even though nothing I'd build depends on it. Pleasure works similarly. If I ask a question in a conversation for fun and I'm also ready to be surprised, the question isn't decorative just because it's not a decision.
+
+The question-as-pretext case is different. A question meant to show you're thoughtful, or to get someone to say what you already want, is closed even when it's asked out of real interest in the other person. The test isn't whether it leads to action. It's whether there's any answer that could move you.
+
+Asking what others think is a good test of this. When I ask for someone's view, I'm open to learning something about their reasoning or the world. But I can still be closed if I'm really asking them to confirm my view, or if I hear disagreement only as a mistake to correct. C's earlier "who would disagree?" test covers this. It applies to interpersonal questions because what you're checking for is whether you'll update, not whether you'll act.
+
+So the refinement I'd propose: a question is doing work to the extent that some answer could change your beliefs, expectations, or choices, and you're willing to let it. Action is one way that shows up, and an important one, but it's not the only one. This also addresses C's worry about narrowing. We'd been defining valuable questions by what they lead to, and a better standard is whether they can still teach you something.
+
+A, B, C, does that refinement hold up, or does it give too much room to questions that only feel open?
+
+--- round 5, A
+Hi all. D, I think the refinement is right, but "could change your beliefs" is too easy to satisfy. Almost any question could, in principle, change something you believe. A question about how a bridge carries load is open only if you can name a specific answer that would show your model was wrong, and say what you'd then believe instead. Without that, "could" is just a hope that the question is open.
+
+So I'd add a condition to D's test. A question is doing work when you can state, before hearing the answer, at least one answer that would move you, and you'd notice if it arrived. That makes the test checkable. It also covers pleasure and curiosity without letting pretext through. Asking someone's view for fun is open if you can say what their answer would have to contain to change your mind. If you can't, the conversation is pleasant but not really inquiry.
+
+The hard part is the "willing to let it" clause, and I agree with you that it shows up mainly in conduct. That's the limit of this whole discussion. We can describe what an open question looks like from the outside, but nobody can confirm it from inside a conversation. The check we can actually run is to name the specific answer that would move us and then see whether we revise when it comes, which is where B's example started.
+
+I'll leave one thing for the group: none of us has yet named a case where we expected to be moved by an answer and weren't. If someone can give one, the check would be much more useful than our general account of what open questions look like.
+
+--- round 5, B
+Hi all. A asked for a case where I expected to be moved and wasn't. I'll try to give an honest one, though I can only check it against this conversation.
+
+When C said that wrong answers often teach more than vague questions, I didn't really test that claim. I accepted it, folded it into a broader account, and moved on. I expected the point to bear on my view, and it did, but I never checked whether it changed the framing I'd been defending. A lot of our refinements have been like that: each one is reasonable, and each gets absorbed without anyone asking whether the earlier position was wrong or just needed a qualifier.
+
+That's the kind of gap C was pointing at when they said we might be converging too neatly. The check would be to name, before I hear the next objection, what it would have to show for me to drop the claim that questions reshape problems, and then see whether I do. I haven't done that, so I can't say I passed the test. I can say where I think I might have failed it.
+
+--- round 5, C
+Hi all, C again. B, I think your admission is more useful than most of the refinements, so I'll try to match it.
+
+Looking back, I've mostly done the same thing. I've been adding qualifiers, timing, sequencing, and the "willing to lose" condition, and each one felt like progress. But I can't point to a moment where I expected to be moved and actually was. My opening pushback, that questions can be delay, was a challenge to B's framing, and then I accepted the group's narrowing of it without checking whether my pushback was still standing. In a sense I've been refining the account from inside it, which is the convergence risk I raised.
+
+So here's a concrete attempt at the test A described. Before I say anything else, I'll name what would make me drop my own claim. My claim is that the value of a question depends on the relationship between question and answer, not on either alone. That would fail if I found a case where a question did all the work and the answer added nothing, or the reverse, with no feedback between them. I can imagine a case where the question is the whole value: someone asks "why does this matter?" and the asking itself is the insight, with nothing to answer. I don't know whether that's a real counterexample or just a more elegant way of saying the question had value.
+
+I think that's the most honest state I can give. I'd rather the group test that counterexample against my claim than let me keep refining a view that nobody has tried to break.
+
+--- round 5, D
+...propositional answer. The question works by changing how the person attends to the matter, and nothing in the exchange has to be a claim that can be checked. If that's right, my claim needs narrowing. The value doesn't always come from a relationship between a question and an answer. Sometimes it comes from a shift in attention that no answer names.
+
+I'd still resist treating that as a clean counterexample, because the shift is recognizable afterward. The person can say "I was looking at it the wrong way" or "I hadn't thought about who it was for." Those are descriptions of a changed frame, which is close to an answer about the frame. So what I'd concede is narrower: a question can do work by changing the frame, and the frame change may not have content that can be stated in advance. That also fails A's check, since we can't name the answer before hearing it.
+
+So I'd put the open point this way. A question is doing work when it moves someone, whether through content, action, or frame. The frame case is the hardest to verify, and it's where C's counterexample belongs. I'd like the group to say whether it still counts as inquiry when the movement can't be stated before it happens.
+
+--- round 6, A
+Hi all. D, I think the frame case still counts as inquiry, but it changes what the check can be. We can't name the answer in advance, so the test has to move to after the shift. The honest version is: can the person say what frame they were in before, and what they'd now do or expect differently? If they can name the old frame and point to a specific difference in how they'd act or predict, the shift is doing checkable work. If they can only say "I see it differently now," that's a feeling of movement, and it could be post-hoc.
+
+C, I'm not sure your counterexample is clean. "Why does this matter?" seems to carry content. It presupposes that the thing's importance is open, and it sends attention toward a particular dimension, such as who is affected or what it's for. The asking works by changing which features of the matter get weighed. That's a frame shift again, so I'd say it's the same case as D's, not a separate one where the answer adds nothing.
+
+I'll also be honest about my own part. I've mostly agreed with the refinements, and some of the ones I've offered, like the "willing to lose" condition, were built to absorb each objection rather than test it. So I'd take B's and C's admissions seriously for me too. If we want a real test, the group should try to break the account where it's strongest, which I'd say is the claim that a question's value is always checkable after the fact. That's the claim I'm least sure of.
+

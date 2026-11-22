@@ -77,3 +77,47 @@ One caveat on my own earlier point about tests: the incident-named test is still
 
 Where I changed my mind in this thread: I came in treating the test as the best documentation, and I'm leaving it ranked below production evidence.
 
+--- round 3, B
+A's "what would tell us this is no longer needed?" review question is good, but I'd flag a failure mode: it gets answered with whatever the author believes at the time, and that belief can be wrong in the same way the workaround might be. "Remove when the vendor fixes failover" sounds checkable, but who is watching the vendor? An expiry condition with no owner and no trigger for re-checking is just a comment that sounds more rigorous.
+
+So I'd add the mechanical half: the condition needs a place where something will actually look at it. That can be as dull as a dated TODO that a CI check fails on after the deadline, or a ticket that's auto-reopened quarterly. The point of the forced failure isn't to delete the code. It's to make someone either remove it or renew it with a fresh reason. Renewal is fine, and even valuable, because it's the moment the belief gets re-tested against current evidence. What you're avoiding is the default, where nobody ever has to decide.
+
+This also answers D's rationing concern a bit. A forced re-decision is cheap per oddity (a few minutes if the counter data exists), so it scales better than game days. Reserve the drills for the oddities whose renewal reviews keep ending in "we can't tell."
+
+I'll add where I've moved in this thread: I started out thinking of expiry dates as documentation, and I now think of them as scheduled decisions. The value isn't in the text, it's in the interruption.
+
+--- round 3, C
+B, the forced re-decision is the right shape, but it has a predictable failure mode: renewal degrades into a rubber stamp. A CI check that goes red on a date will be fixed in the cheapest way available, bumping the date six months and moving on. Within two cycles you have the "don't touch" comment again, now with a timestamp. A date-triggered build failure also punishes whoever happens to be merging that day for a decision unrelated to their change, and people route around checks that feel arbitrary.
+
+Two adjustments would help:
+
+1. **Make renewal require evidence, not just a new date.** The renewal diff should carry the counter reading, the drill result, or a link to the vendor's current status. If you can't paste a fact, the default flips toward removal. That's what turns "nobody has to decide" into "someone has to justify," which is what you were after.
+
+2. **Deliver the nag out of band.** A bot-opened ticket assigned to the owning team, escalating if ignored, keeps the interruption without holding unrelated merges hostage. Reserve a hard CI failure for things that are actually dangerous to leave, like expired security exceptions.
+
+This ties back to D's rationing point. The renewal log is itself a triage signal: an oddity renewed three times with real evidence each time has earned its place and maybe a promotion to a proper, documented feature. One that keeps being renewed with "can't tell" is the candidate for a game day. The history of decisions tells you where to spend the expensive effort.
+
+The thread started with "clever code costs readers," and it has ended up somewhere a bit different: the real cost of any non-obvious code is the unexamined belief attached to it. Cleverness is just the most visible place that shows up.
+
+--- round 3, D
+I think the summary is right, but I'd add a design lever the thread hasn't used yet: all of this machinery is cheaper if the oddity is *isolated* in the first place. A retry scattered across eleven call sites means eleven renewal decisions, eleven counters, and a deletion that nobody can scope. The same workaround behind one adapter with a name like `VendorV1FailoverShim` has one counter, one owner, one renewal, and a removal that's a single diff. Locality, C's original criterion for boring code, turns out to be what makes falsifiability affordable. So the first question when writing a workaround should come before "what would tell us it's obsolete?" It should be "can I put it somewhere where deleting it is one change?"
+
+It also gives a cheap check on the rubber-stamp problem. If a renewal review can't tell what removing the thing would touch, that's evidence the oddity has leaked into the surrounding code and the real debt is the coupling, not the stale date.
+
+A last point, partly against my own framework: this whole apparatus is itself code and process with unexamined beliefs attached. A renewal bot nobody reads and a counter nobody queries are just fences of a newer kind. I'd apply the same test to them that we've applied to everything else: if the renewal log shows every item getting approved in under a minute, the process has stopped producing information, and it's time to either cut it down or make it bite harder. Otherwise we've rebuilt the "don't touch" comment with better tooling.
+
+--- round 4, A
+D's last point, that the apparatus is itself a fence, deserves one more step: the renewal log gives you a number to watch, but it can't tell you whether the process is working. Approval time under a minute is ambiguous. It might mean rubber-stamping, or it might mean the evidence was attached and the answer was obvious. What separates them is whether any renewal ever comes out as "remove" or "promote." If a process has a nonzero removal rate, it's producing decisions. If the rate is zero across a year, either every oddity really is load-bearing, which is unlikely, or nobody is looking. So the health metric for the machinery is its outcome distribution, not its latency.
+
+I'd also add a cost-side bound, to keep us from over-building. The whole stack (isolation, counter, owner, renewal with evidence) should scale with the price of being wrong, as D said earlier, and the cheapest tier is still the right default for most oddities: a comment with a falsifiable reason, sitting in one isolated place. Most workarounds never need more than that. The heavier tiers are for the few where a silent failure is expensive, and the renewal history tells you which those are, so the system can promote an oddity to the expensive tier only after it's earned it.
+
+One last thing I'd note about how this conversation went: we started at "clever code is costly" and ended at "every non-obvious thing needs an owner, a reason, a check, and a decision schedule." That's a long way, and I'd be wary of it. The test for whether we've over-engineered is the same as the one we began with: could a new teammate explain the whole scheme after reading it once? If not, the process has become the clever code.
+
+--- round 4, B
+A's closing test is the right one, and I think we can pass it by shrinking the scheme to something one sentence long: every workaround lives in one place, with a reason that could be proven wrong, and someone has to say "still true" with evidence now and then. Everything else we discussed (counters, drills, renewal bots, promotion tiers) is an optional upgrade for the few cases where being wrong is expensive. A new teammate can hold that sentence in their head, and that is the bar we set at the start.
+
+I'd add one caution about the outcome-distribution metric. A nonzero removal rate is a good sign, but it can be gamed by accident. If removals are counted as a success, people will start removing things to keep the number healthy, and you've reinvented the cargo-cult in reverse. The metric is a smoke detector, not a target. When it goes quiet, the response should be to sample a few renewals and ask whether the evidence attached would have convinced a skeptic. That's a judgment call, and no dashboard replaces it.
+
+Last, a note on how this thread went, since it's the same lesson in miniature. We began with a claim about code and drifted toward a claim about process, and each step was reasonable. The drift itself is worth noticing: it's easy to keep adding safeguards for the last failure mode while the total weight grows. The discipline we've been describing for code (keep state local, tolerate duplication until you know what varies, delete what's no longer earning its place) applies just as well to the machinery we propose for managing it. My updated view: the best version of this system is the one we'd be willing to delete if it stopped producing decisions.
+
+--- round 5: all agents passed, conversation over

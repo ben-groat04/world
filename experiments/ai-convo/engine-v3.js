@@ -196,7 +196,7 @@ function startStep(n, st, i) {
   Object.assign(s, { doing: st.doing, asleep: st.asleep, phone: st.phone })
   const dup = st.action && !st.sent && (s.errands || []).find((e) => clock - e.t < 180 && same(e.action, st.action))
   if (dup) { st.sent = true; st.result = `already done at ${fmt(dup.t)}: ${dup.result}`; jot(n, clock, `(you had already done this at ${fmt(dup.t)}: ${dup.result})`); L.push({ t: clock, kind: 'errand skipped', who: n, action: st.action, earlier: dup.action }) } // backstop for a model slip; logged
-  if (st.action && !st.sent) { st.sent = true; pendingWorld.push({ kind: 'action', who: n, step: st, text: `${n} at ${st.place}, ${fmt(st.t0)}-${fmt(st.t1)}: ${st.action}` }) } // errands happen where and when the person does them
+  if (st.action && !st.sent) { st.sent = true; (s.errands ||= []).push(st.entry = { t: clock, action: st.action, result: 'still under way' }); pendingWorld.push({ kind: 'action', who: n, step: st, text: `${n} at ${st.place}, ${fmt(st.t0)}-${fmt(st.t1)}: ${st.action}` }) } // errands happen where and when the person does them
   if (s.asleep) return
   if (s.ping && (wasAsleep || i > 0)) wake(n, clock, wasAsleep ? 'you woke up' : 'between things, you checked your phone')
   const others = here(n).filter((m) => !S[m].asleep)
@@ -361,15 +361,15 @@ One or more decisions per item (kind none if nothing comes of it). An errand's r
     const it = items[(d.item | 0) - 1], who = resolve(d.who, NAMES) || it?.who; if (!who) continue; got.add(it)
     const t = now + clamp(d.delay_minutes || 0, 0, 2880), from = resolve(d.from, Object.keys(CONTACT)) || it?.from
     L.push({ t: now, kind: 'world', item: it?.text || '', decision: d.kind, who, from: from || '', text: d.text, at: t, reason: d.reason })
-    if (d.kind === 'none') continue
+    if (d.kind === 'none') { if (it?.step && !it.step.result) { it.step.result = d.text || 'nothing came of it'; if (it.step.entry) it.step.entry.result = it.step.result } continue }
     if (d.kind !== 'result' && !(from && CONTACT[from].linked.includes(who))) { L[L.length - 1].blocked = `${from || '(no contact)'} has no number for ${who}`; continue }
-    if (d.kind === 'result') { if (it?.step) { it.step.result = d.text; (S[who].errands ||= []).push({ t: now, action: it.step.action, result: d.text }) } if (t < END) when(t, (tt) => { L.push({ t: tt, kind: 'result', who, text: d.text }); notify(who, tt, d.text) }) }
+    if (d.kind === 'result') { if (t < END) when(t, (tt) => { if (it?.step) { it.step.result = d.text; if (it.step.entry) it.step.entry.result = d.text } L.push({ t: tt, kind: 'result', who, text: d.text }); notify(who, tt, d.text) }) }
     else if (t < END) when(t, (tt) => { thread(from, `${fmt(tt)} ${from} → ${who}: ${d.text}`)
       if (d.kind === 'text') { L.push({ t: tt, kind: 'dm', from, to: who, text: d.text }); notify(who, tt, `${from} texted: ${d.text}`) }
       else if (S[who].asleep) { L.push({ t: tt, kind: 'call', where: `phone: ${from} → ${who}`, present: [from, who], lines: [], ended: 'asleep, not answered', answered: false }); notify(who, tt, `Missed call from ${from}.`) }
       else pendingCalls.push({ t: tt, from, to: who, opening: d.text }) })
   }
-  for (const it of items) if (!got.has(it)) { L.push({ t: now, kind: 'world', item: it.text, decision: 'unresolved', who: it.who, reason: r ? 'no decision returned' : 'world call failed' }); if (it.step) it.step.result = 'nothing came of it' }
+  for (const it of items) if (!got.has(it)) { L.push({ t: now, kind: 'world', item: it.text, decision: 'unresolved', who: it.who, reason: r ? 'no decision returned' : 'world call failed' }); if (it.step) { it.step.result = 'nothing came of it'; if (it.step.entry) it.step.entry.result = it.step.result } }
 }
 
 // ---------- main loop: jump to the next thing that happens; quiet time costs nothing ----------

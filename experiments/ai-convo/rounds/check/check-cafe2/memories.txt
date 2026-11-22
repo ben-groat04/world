@@ -1,0 +1,81 @@
+## Claire Doherty
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @The café: work
+   plan: until Wed 10:30: Serving at the counter with Chloe, wiping tables, chatting to regulars @The café / until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 10:13 [you looked up from what you were doing; after the conversation] @The café: Serving at the counter with Chloe, wiping tables, chatting to regulars (kept plan)
+   remembers: Chloe said it's dead and had already wiped tables twice. I sent her to do the fridge shelves, check dates and pull anything out tomorrow, so the milk is sorted before Stephen arrives at half ten.
+   plan: until Wed 10:30: Serving at the counter with Chloe, wiping tables, chatting to regulars @The café / until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 10:23 [you looked up from what you were doing; after the conversation] @The café: Serving at the counter with Chloe, wiping tables, chatting to regulars (kept plan)
+   remembers: Regular came in wanting his usual tea and a cheese and tomato toastie. Chloe is making them and he's sat by the window.
+   plan: until Wed 10:30: Serving at the counter with Chloe, wiping tables, chatting to regulars @The café / until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 10:37 [after the conversation] @The café: Working the floor, lunch rush, checking in with Stephen in the kitchen (kept plan)
+   remembers: Toastie for Mr Hollis nearly caught but Chloe rescued it and took it over with his tea. I asked her to wipe the counter and put the milk dates on the list for Stephen, who's due any minute.
+   plan: until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 11:43 [next in your plan: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café; you looked up from what you were doing; after the conversation] @The café: Working the floor, lunch rush, checking in with Stephen in the kitchen (kept plan) | talk to Chloe Baxter
+   remembers: Got tea from Chloe, put leek and potato on the board. Stephen is late and not like him. I rang and left a voicemail. Chloe offered to text him too.
+   plan: until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 12:30 [you looked up from what you were doing; after the conversation] @The café: Working the floor, lunch rush, checking in with Stephen in the kitchen (kept plan)
+   remembers: Panicked about Stephen not showing, rang his mobile and home, turned out he'd been in the kitchen since 10:30 and had texted me. Embarrassing, his wife got a call. Then helped Chloe with sandwiches through the lunch rush.
+   plan: until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 12:40 [you looked up from what you were doing] @The café: Working the floor, lunch rush, checking in with Stephen in the kitchen (kept plan)
+   plan: until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+Wed 12:50 [you looked up from what you were doing] @The café: Working the floor, lunch rush, checking in with Stephen in the kitchen (kept plan)
+   plan: until Wed 14:00: Working the floor, lunch rush, checking in with Stephen in the kitchen @The café / until Wed 16:30: Afternoon service, tidy up, count till twice, cash up @The café
+
+## Stephen Marsh
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @Stephen and Julie's bedroom: 
+   plan: until Wed 10:20: finish getting ready, grab bag and coat @Marsh house kitchen and living room / until Wed 10:30: walk to the café @High street / until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 10:00   -> Marsh house kitchen and living room (finish getting ready, grab bag and coat)
+Wed 10:07 [after the conversation] @Marsh house kitchen and living room: finish getting ready, grab bag and coat (kept plan)
+   remembers: Lily couldn't find her reading book. I suggested the post pile or her bag, and she's checking her school bag now.
+   plan: until Wed 10:20: finish getting ready, grab bag and coat @Marsh house kitchen and living room / until Wed 10:30: walk to the café @High street / until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 10:20   -> High street (walk to the café)
+Wed 10:20 [next in your plan: walk to the café @High street] @High street: walk to the café (kept plan)
+   plan: until Wed 10:30: walk to the café @High street / until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 10:30   -> Café kitchen (cooking soup, bakes and lunch specials)
+Wed 10:30 [next in your plan: cooking soup, bakes and lunch specials @Café kitchen] @Café kitchen: cooking soup, bakes and lunch specials (kept plan)
+   plan: until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 11:00 [you looked up from what you were doing] @Café kitchen: cooking soup, bakes and lunch specials (kept plan)
+   plan: until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 11:30 [you looked up from what you were doing] @Café kitchen: cooking soup, bakes and lunch specials (kept plan)
+   plan: until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 12:00 [you looked up from what you were doing] @Café kitchen: cooking soup, bakes and lunch specials (kept plan)
+   plan: until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 12:30 [you looked up from what you were doing] @Café kitchen: cooking soup, bakes and lunch specials | talk to Claire Doherty
+   plan: until Wed 12:45: finish lunch service, then pop out to see Claire at the counter @Café kitchen / until Wed 15:30: cooking soup, bakes and lunch specials @Café kitchen
+Wed 12:40 [you looked up from what you were doing] @Café kitchen: finish lunch service, then pop out to see Claire at the counter
+   plan: until Wed 13:00: finish lunch orders, tidy station @Café kitchen / until Wed 15:30: cooking soup, bakes and lunch specials, clean down @Café kitchen
+Wed 12:50 [you looked up from what you were doing] @Café kitchen: finish lunch orders, tidy station
+   plan: until Wed 13:15: finish lunch orders, tidy station, then pop out to the café to say hi to Claire @Café kitchen / until Wed 15:30: cooking soup, bakes and lunch specials, clean down @Café kitchen
+
+## Chloe Baxter
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @The café: work | talk to Claire Doherty
+   plan: until Wed 11:00: working the counter, wiping tables, chatting to regulars @The café / until Wed 14:00: counter shift, lunch rush @The café
+Wed 10:13 [you looked up from what you were doing; after the conversation] @The café: work
+   remembers: Told Claire it was dead. She had me do the fridge shelves, check dates and pull anything out tomorrow, milk sorted before Stephen comes in at half ten.
+   plan: until Wed 10:35: sorting fridge shelves, checking dates @The café / until Wed 11:00: counter, wiping tables, chatting to regulars @The café / until Wed 14:00: counter shift, lunch rush @The café
+Wed 10:23 [you looked up from what you were doing; after the conversation] @The café: sorting fridge shelves, checking dates
+   remembers: Regular came in for his usual tea and a cheese and tomato toastie. Told him to sit down and I'd bring the tea over. Toastie's in the oven.
+   plan: until Wed 10:35: making tea, bringing toastie to regular, chatting @The café / until Wed 11:00: finish fridge shelves, wipe tables @The café / until Wed 14:00: counter shift, lunch rush @The café
+Wed 10:37 [you looked up from what you were doing; after the conversation] @The café: making tea, bringing toastie to regular, chatting
+   remembers: Nearly burnt Mr Hollis's toastie again, Tanya and Claire teased me. Plated it fine and took it over with his tea. Claire wants counter wiped and milk dates on the list for Stephen.
+   plan: until Wed 10:50: wipe counter, write milk dates list for Stephen @The café / until Wed 11:00: finish fridge shelves, wipe tables @The café / until Wed 14:00: counter shift, lunch rush @The café
+Wed 11:43 [you looked up from what you were doing; after the conversation] @The café: counter shift, lunch rush (kept plan)
+   remembers: Did the counter, oat milk dates list, window tables, tea round and sugar bowls with Claire and Tanya. Stephen's late and not answering Claire's call, so I offered to text him.
+   plan: until Wed 14:00: counter shift, lunch rush @The café
+Wed 12:30 [next in your plan: counter shift, lunch rush @The café; you looked up from what you were doing; after the conversation] @The café: counter shift, lunch rush (kept plan)
+   remembers: Claire thought Stephen hadn't turned up and asked if I had his number. I don't. Turned out he'd been in the kitchen since half ten, false alarm. She's helping on sandwiches in the lunch rush.
+   plan: until Wed 14:00: counter shift, lunch rush @The café
+Wed 12:45 [you looked up from what you were doing] @The café: counter shift, lunch rush (kept plan)
+   plan: until Wed 14:00: counter shift, lunch rush @The café
+
+## Callum Reid
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @Callum's bedroom: 
+   plan: until Wed 12:00: studying at desk @Callum's bedroom / until Wed 12:30: making lunch @Reid house kitchen and living room / until Wed 14:00: more study @Reid house kitchen and living room / until Wed 15:30: walk to the park and back @Town park
+Wed 11:00 [you looked up from what you were doing] @Callum's bedroom: studying at desk (kept plan)
+   plan: until Wed 12:00: studying at desk @Callum's bedroom / until Wed 12:30: making lunch @Reid house kitchen and living room / until Wed 14:00: more study @Reid house kitchen and living room / until Wed 15:30: walk to the park and back @Town park
+Wed 12:00   -> Reid house kitchen and living room (making lunch)
+Wed 12:25 [next in your plan: making lunch @Reid house kitchen and living room; after the conversation] @Reid house kitchen and living room: making lunch (kept plan)
+   remembers: Made eggs and toast for two with mum. Told her I'm not swapping Friday with Jordan because of study. Doing past exam questions this afternoon.
+   plan: until Wed 12:30: making lunch @Reid house kitchen and living room / until Wed 14:00: more study @Reid house kitchen and living room / until Wed 15:30: walk to the park and back @Town park
+Wed 12:30 [next in your plan: more study @Reid house kitchen and living room] @Reid house kitchen and living room: more study (kept plan)
+   plan: until Wed 14:00: more study @Reid house kitchen and living room / until Wed 15:30: walk to the park and back @Town park

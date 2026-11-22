@@ -1,0 +1,49 @@
+{
+ "label": "check-cafe2",
+ "seed": 1101,
+ "args": {
+  "label": "check-cafe2",
+  "setting": "an independent café in an English town and the homes of the people who work there",
+  "dateNote": "Wednesday 25 November 2026",
+  "startDow": 2,
+  "startHour": 10,
+  "hours": 3,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Wed 10:00",
+  "to": "Wed 13:00",
+  "hours": 3
+ },
+ "totalTokens": 1032492,
+ "agentCount": 183,
+ "stats": {
+  "turns": {
+   "Claire Doherty": 8,
+   "Stephen Marsh": 10,
+   "Chloe Baxter": 7,
+   "Callum Reid": 4
+  },
+  "calls": 183,
+  "simCalls": 177,
+  "maxCalls": 360,
+  "byFor": {
+   "generator": 6,
+   "Claire Doherty": 52,
+   "Stephen Marsh": 12,
+   "Chloe Baxter": 55,
+   "Callum Reid": 12,
+   "world": 13,
+   "Lily Marsh": 2,
+   "a regular customer": 2,
+   "Tanya Pearce": 21,
+   "Tracey Reid": 8
+  },
+  "sceneLines": 135,
+  "promptChars": 663923,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

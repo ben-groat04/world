@@ -1,0 +1,94 @@
+{
+ "Claire Doherty": {
+  "place": "The café",
+  "doing": "Working the floor, lunch rush, checking in with Stephen in the kitchen",
+  "turns": 8,
+  "days": {},
+  "journal": [
+   "Wed 10:13 conversation at The café with Chloe Baxter [ref 10:00]: Chloe said it's dead and had already wiped tables twice. I sent her to do the fridge shelves, check dates and pull anything out tomorrow, so the milk is sorted before Stephen arrives at half ten.",
+   "Wed 10:13 Tanya Pearce is here (Is on the same shift, restocking the cake display and sorting the milk order behind the counter.).",
+   "Wed 10:16 a regular customer is here (An older regular comes in for a morning tea and a toastie, and sits by the window with a newspaper.).",
+   "Wed 10:23 conversation at The café with a regular customer, Chloe Baxter [ref 10:16]: Regular came in wanting his usual tea and a cheese and tomato toastie. Chloe is making them and he's sat by the window.",
+   "Wed 10:23 Tanya Pearce is here (Wiping tables and restocking the cups near the counter until her shift ends.).",
+   "Wed 10:23 a regular customer is here (Mr Hollis sits at his usual table by the window, waiting for his tea and toastie.).",
+   "Wed 10:37 conversation at The café with Tanya Pearce, Chloe Baxter [ref 10:24]: Toastie for Mr Hollis nearly caught but Chloe rescued it and took it over with his tea. I asked her to wipe the counter and put the milk dates on the list for Stephen, who's due any minute.",
+   "Wed 10:37 Tanya Pearce is here (Working the counter and tables alongside Chloe, clearing cups and keeping an eye on the toastie orders.).",
+   "Wed 10:37 a regular customer is here (Mr Hollis is sitting at his table finishing his tea and toastie, taking his time.).",
+   "Wed 10:39 Tanya Pearce is here (Restocking the cake display near the counter and chatting to Chloe about the milk list.).",
+   "Wed 11:43 conversation at The café with Tanya Pearce, Chloe Baxter [ref 10:40]: Got tea from Chloe, put leek and potato on the board. Stephen is late and not like him. I rang and left a voicemail. Chloe offered to text him too.",
+   "Wed 11:43 you → Stephen Marsh: Hi Stephen, Claire here. Just checking you're ok as you're not in yet? Let us know when you can, no rush. x",
+   "Wed 11:43 Tanya Pearce is here (Working the counter alongside Chloe, restocking the cake display and tidying receipts, teasing Chloe lightly.).",
+   "Wed 11:43 Mr Hollis is here (Still sitting at his table finishing his tea, chatting about the cold and his knees.).",
+   "Wed 11:55 a lunch customer is here (Comes in for a lunch order, probably soup and a sandwich, and queues at the counter.).",
+   "Wed 12:00 Stephen Marsh texted: hi claire, i'm in the kitchen, been here since half ten. soup's on and the bakes are done. sorry, did you want me for something? i'll pop out in a minute",
+   "Wed 12:30 conversation at The café with Chloe Baxter [ref 11:43]: Panicked about Stephen not showing, rang his mobile and home, turned out he'd been in the kitchen since 10:30 and had texted me. Embarrassing, his wife got a call. Then helped Chloe with sandwiches through the lunch rush.",
+   "Wed 12:30 you → Stephen Marsh: Sorry Stephen, total muddle on my part! Didn't see you come in. Soup smells lovely, thanks for getting on with it. Sorry about ringing your house too! x",
+   "Wed 12:40 Stephen Marsh texted: no worries at all, easily done. i'll pop out in a few minutes once the lunch rush has eased"
+  ]
+ },
+ "Stephen Marsh": {
+  "place": "Café kitchen",
+  "doing": "finish lunch orders, tidy station, then pop out to the café to say hi to Claire",
+  "turns": 10,
+  "days": {},
+  "journal": [
+   "Wed 10:00 you went to Marsh house kitchen and living room: finish getting ready, grab bag and coat",
+   "Wed 10:01 Lily Marsh is here (Lily is hunting for her book bag and shoes by the front door, chatting away.).",
+   "Wed 10:07 conversation at Marsh house kitchen and living room with Lily Marsh [ref 10:02]: Lily couldn't find her reading book. I suggested the post pile or her bag, and she's checking her school bag now.",
+   "Wed 10:20 you went to High street: walk to the café",
+   "Wed 10:30 you went to Café kitchen: cooking soup, bakes and lunch specials",
+   "Wed 11:43 Claire Doherty texted: Hi Stephen, Claire here. Just checking you're ok as you're not in yet? Let us know when you can, no rush. x",
+   "Wed 12:00 you → Claire Doherty: hi claire, i'm in the kitchen, been here since half ten. soup's on and the bakes are done. sorry, did you want me for something? i'll pop out in a minute",
+   "Wed 12:30 Claire Doherty texted: Sorry Stephen, total muddle on my part! Didn't see you come in. Soup smells lovely, thanks for getting on with it. Sorry about ringing your house too! x",
+   "Wed 12:30 Claire Doherty isn't around here.",
+   "Wed 12:40 you → Claire Doherty: no worries at all, easily done. i'll pop out in a few minutes once the lunch rush has eased"
+  ]
+ },
+ "Chloe Baxter": {
+  "place": "The café",
+  "doing": "counter shift, lunch rush",
+  "turns": 7,
+  "days": {},
+  "journal": [
+   "Wed 10:13 conversation at The café with Claire Doherty [ref 10:00]: Told Claire it was dead. She had me do the fridge shelves, check dates and pull anything out tomorrow, milk sorted before Stephen comes in at half ten.",
+   "Wed 10:13 Tanya Pearce is here (Is on the same shift, restocking the cake display and sorting the milk order behind the counter.).",
+   "Wed 10:16 a regular customer is here (An older regular comes in for a morning tea and a toastie, and sits by the window with a newspaper.).",
+   "Wed 10:21 Megan Foster texted: ok what are we doing Saturday?? I have ideas. also look at this cat 😂",
+   "Wed 10:23 conversation at The café with a regular customer, Claire Doherty [ref 10:16]: Regular came in for his usual tea and a cheese and tomato toastie. Told him to sit down and I'd bring the tea over. Toastie's in the oven.",
+   "Wed 10:23 you → Megan Foster: haha that cat 😂😂",
+   "Wed 10:23 you → Megan Foster: saturday im working till half 2 so anything after that. pub? then somewhere out",
+   "Wed 10:23 you → Megan Foster: send me the ideas!! on shift rn",
+   "Wed 10:23 Tanya Pearce is here (Wiping tables and restocking the cups near the counter until her shift ends.).",
+   "Wed 10:23 a regular customer is here (Mr Hollis sits at his usual table by the window, waiting for his tea and toastie.).",
+   "Wed 10:25 Megan Foster texted: RIGHT?? he's so offended 😂 ok saturday after half 2 works, pub first def. will send ideas on ur break",
+   "Wed 10:37 conversation at The café with Tanya Pearce, Claire Doherty [ref 10:24]: Nearly burnt Mr Hollis's toastie again, Tanya and Claire teased me. Plated it fine and took it over with his tea. Claire wants counter wiped and milk dates on the list for Stephen.",
+   "Wed 10:37 Tanya Pearce is here (Working the counter and tables alongside Chloe, clearing cups and keeping an eye on the toastie orders.).",
+   "Wed 10:37 a regular customer is here (Mr Hollis is sitting at his table finishing his tea and toastie, taking his time.).",
+   "Wed 10:39 Tanya Pearce is here (Restocking the cake display near the counter and chatting to Chloe about the milk list.).",
+   "Wed 10:46 Megan Foster texted: ok ideas!! 1. pub quiz at the Crown 2. that new pizza place 3. bowling?? voting open 😂",
+   "Wed 11:43 conversation at The café with Tanya Pearce, Claire Doherty [ref 10:40]: Did the counter, oat milk dates list, window tables, tea round and sugar bowls with Claire and Tanya. Stephen's late and not answering Claire's call, so I offered to text him.",
+   "Wed 11:43 Your message to \"Stephen Marsh\" could not be sent (no number for them).",
+   "Wed 11:43 Tanya Pearce is here (Working the counter alongside Chloe, restocking the cake display and tidying receipts, teasing Chloe lightly.).",
+   "Wed 11:43 Mr Hollis is here (Still sitting at his table finishing his tea, chatting about the cold and his knees.).",
+   "Wed 11:51 Megan Foster texted: voting update: pizza is winning in my head 😂 u in?? also did u eat yet",
+   "Wed 11:55 a lunch customer is here (Comes in for a lunch order, probably soup and a sandwich, and queues at the counter.).",
+   "Wed 12:30 conversation at The café with Claire Doherty [ref 11:43]: Claire thought Stephen hadn't turned up and asked if I had his number. I don't. Turned out he'd been in the kitchen since half ten, false alarm. She's helping on sandwiches in the lunch rush."
+  ]
+ },
+ "Callum Reid": {
+  "place": "Reid house kitchen and living room",
+  "doing": "more study",
+  "turns": 4,
+  "days": {},
+  "journal": [
+   "Wed 12:00 you went to Reid house kitchen and living room: making lunch",
+   "Wed 12:05 Tracey Reid is here (Pottering about the kitchen putting the kettle on and wiping the worktop, then sitting down with a cuppa and her phone.).",
+   "Wed 12:12 Jordan Wells texted: Mate can you swap Friday with me? Early again, I owe you a pint. Also this meme is you at 6am",
+   "Wed 12:25 conversation at Reid house kitchen and living room with Tracey Reid [ref 12:00]: Made eggs and toast for two with mum. Told her I'm not swapping Friday with Jordan because of study. Doing past exam questions this afternoon.",
+   "Wed 12:25 you → Jordan Wells: sorry mate can't do friday, got study. good meme though",
+   "Wed 12:29 Jordan Wells texted: all good, worth a shot haha. good luck with the study",
+   "Wed 12:30 Tracey Reid is here (Clearing the lunch plates, wiping the table, then putting the washing on and pottering about the kitchen and living room with the radio on low.).",
+   "Wed 12:55 Hannah Doyle texted: Hiya, are you going over the past papers today? I've got the 2023 one with the marking notes if you want it. Can send a photo of my notes after."
+  ]
+ }
+}

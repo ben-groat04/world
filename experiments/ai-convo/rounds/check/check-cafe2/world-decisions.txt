@@ -1,0 +1,114 @@
+[Wed 10:00] present (at Wed 10:01) Lily Marsh → Stephen Marsh: Lily is hunting for her book bag and shoes by the front door, chatting away.
+   item: Stephen Marsh starts "finish getting ready, grab bag and coat" at Marsh house kitchen and living room, until Wed 10:20
+   reason: Wednesday morning, a 7-year-old is likely still around getting ready.
+[Wed 10:00] speak (at Wed 10:02) Lily Marsh → Stephen Marsh: Dad, have you seen my reading book? It was on the table last night.
+   item: Stephen Marsh starts "finish getting ready, grab bag and coat" at Marsh house kitchen and living room, until Wed 10:20
+   reason: Ordinary morning scramble for a child.
+[Wed 10:00] none Callum Reid: 
+   item: Callum Reid starts "studying at desk" at Callum's bedroom, until Wed 12:00
+   reason: Quiet study; Tracey is likely busy elsewhere and nothing comes of it.
+[Wed 10:13] present (at Wed 10:13) Tanya Pearce → Claire Doherty: Is on the same shift, restocking the cake display and sorting the milk order behind the counter.
+   item: Claire Doherty starts "Serving at the counter with Chloe, wiping tables, chatting to regulars" at The café, until Wed 10:30
+   reason: Tanya works Chloe's shifts, so she is ordinarily in.
+[Wed 10:13] present (at Wed 10:16) a regular customer → Claire Doherty: An older regular comes in for a morning tea and a toastie, and sits by the window with a newspaper.
+   item: Claire Doherty starts "Serving at the counter with Chloe, wiping tables, chatting to regulars" at The café, until Wed 10:30
+   reason: Claire chats to regulars at this time.
+[Wed 10:13] speak (at Wed 10:16) a regular customer → Claire Doherty: Morning, love. Cold one out there, isn't it? Just the usual tea please, and I'll have a toastie if the oven's on.
+   item: Claire Doherty starts "Serving at the counter with Chloe, wiping tables, chatting to regulars" at The café, until Wed 10:30
+   reason: Regular opens a chat while ordering.
+[Wed 10:13] speak (at Wed 10:18) Tanya Pearce → Chloe Baxter: Found anything past its date in there yet, or are you still on the top shelf? Don't just shove the oat milk to the back, Chloe.
+   item: Chloe Baxter starts "sorting fridge shelves, checking dates" at The café, until Wed 10:35
+   reason: Tanya teases Chloe gently while working nearby.
+[Wed 10:13] text (at Wed 10:21) Megan Foster → Chloe Baxter: ok what are we doing Saturday?? I have ideas. also look at this cat 😂
+   item: Chloe Baxter starts "sorting fridge shelves, checking dates" at The café, until Wed 10:35
+   reason: Megan loves a plan and sends memes most weeks.
+[Wed 10:13] none Claire Doherty: 
+   item: Claire Doherty starts "Serving at the counter with Chloe, wiping tables, chatting to regulars" at The café, until Wed 10:30
+   reason: No contact reaches Claire in this stretch of a normal morning.
+[Wed 10:20] none Stephen Marsh: 
+   item: Stephen Marsh starts "walk to the café" at High street, until Wed 10:30
+   reason: A quiet mid-morning walk along the high street; no one listed is there and nothing in particular comes of it.
+[Wed 10:23] text (at Wed 10:25) Megan Foster → Chloe Baxter: RIGHT?? he's so offended 😂 ok saturday after half 2 works, pub first def. will send ideas on ur break
+   item: Chloe Baxter texted Megan Foster: "haha that cat 😂😂"
+   reason: Megan is chatty and replies quickly to Chloe's text.
+[Wed 10:23] none Megan Foster → Chloe Baxter: 
+   item: Chloe Baxter texted Megan Foster: "saturday im working till half 2 so anything after that. pub? then somewhere out"
+   reason: Megan's reply is covered under item 1; nothing further.
+[Wed 10:23] none Megan Foster → Chloe Baxter: 
+   item: Chloe Baxter texted Megan Foster: "send me the ideas!! on shift rn"
+   reason: Megan already replied and will send ideas later; no separate action.
+[Wed 10:23] present (at Wed 10:23) Tanya Pearce → Chloe Baxter: Wiping tables and restocking the cups near the counter until her shift ends.
+   item: Chloe Baxter starts "making tea, bringing toastie to regular, chatting" at The café, until Wed 10:35
+   reason: Tanya is at the café until 10:30 on Chloe's shift.
+[Wed 10:23] speak (at Wed 10:24) Tanya Pearce → Chloe Baxter: Oi, Chloe, that toastie's been in a while. Don't let it catch like last week.
+   item: Chloe Baxter starts "making tea, bringing toastie to regular, chatting" at The café, until Wed 10:35
+   reason: Tanya teases Chloe about slips in an ordinary way.
+[Wed 10:23] present (at Wed 10:23) a regular customer → Chloe Baxter: Mr Hollis sits at his usual table by the window, waiting for his tea and toastie.
+   item: Chloe Baxter starts "making tea, bringing toastie to regular, chatting" at The café, until Wed 10:35
+   reason: He is there until 10:31, waiting for his order.
+[Wed 10:30] none Stephen Marsh: 
+   item: Stephen Marsh starts "cooking soup, bakes and lunch specials" at Café kitchen, until Wed 15:30
+   reason: Quiet mid-morning prep in the kitchen alone; no one listed is there and nothing prompts a contact to get in touch right now.
+[Wed 10:37] present (at Wed 10:37) Tanya Pearce → Claire Doherty: Working the counter and tables alongside Chloe, clearing cups and keeping an eye on the toastie orders.
+   item: Claire Doherty starts "Working the floor, lunch rush, checking in with Stephen in the kitchen" at The café, until Wed 14:00
+   reason: Tanya is already on shift with Chloe and Claire this morning.
+[Wed 10:37] present (at Wed 10:37) a regular customer → Claire Doherty: Mr Hollis is sitting at his table finishing his tea and toastie, taking his time.
+   item: Claire Doherty starts "Working the floor, lunch rush, checking in with Stephen in the kitchen" at The café, until Wed 14:00
+   reason: He ordered at 10:16 and is slow and unhurried, so he is still there.
+[Wed 10:37] speak (at Wed 10:45) a regular customer → Claire Doherty: That was a lovely toastie, love, nice and golden in the end. Cold's gone right into my knees today, mind.
+   item: Claire Doherty starts "Working the floor, lunch rush, checking in with Stephen in the kitchen" at The café, until Wed 14:00
+   reason: Mr Hollis is chatty and friendly and would say something to Claire as she passes his table.
+[Wed 10:37] none Claire Doherty: 
+   item: Claire Doherty starts "Working the floor, lunch rush, checking in with Stephen in the kitchen" at The café, until Wed 14:00
+   reason: No contact would ordinarily get in touch on a Wednesday mid-morning during work. Helen's rota chat can wait.
+[Wed 10:37] present (at Wed 10:39) Tanya Pearce → Chloe Baxter: Restocking the cake display near the counter and chatting to Chloe about the milk list.
+   item: Chloe Baxter starts "wipe counter, write milk dates list for Stephen" at The café, until Wed 10:50
+   reason: Tanya works Chloe's shifts and helps cover her tasks.
+[Wed 10:37] speak (at Wed 10:40) Tanya Pearce → Chloe Baxter: Don't forget to check the oat milk dates too, Chlo, Stephen went on about it last week. And no, you can't leave the list until the end of your shift.
+   item: Chloe Baxter starts "wipe counter, write milk dates list for Stephen" at The café, until Wed 10:50
+   reason: Tanya teases Chloe and helps with her tasks in a light, ordinary way.
+[Wed 10:37] text (at Wed 10:46) Megan Foster → Chloe Baxter: ok ideas!! 1. pub quiz at the Crown 2. that new pizza place 3. bowling?? voting open 😂
+   item: Chloe Baxter starts "wipe counter, write milk dates list for Stephen" at The café, until Wed 10:50
+   reason: Megan said she would send her ideas on Chloe's break, but she is impatient and loves a plan, so she sends them a little early.
+[Wed 11:43] present (at Wed 11:43) Tanya Pearce → Chloe Baxter: Working the counter alongside Chloe, restocking the cake display and tidying receipts, teasing Chloe lightly.
+   item: Chloe Baxter starts "counter shift, lunch rush" at The café, until Wed 14:00
+   reason: She is on shift with Chloe and was there all morning.
+[Wed 11:43] present (at Wed 11:43) Mr Hollis → Chloe Baxter: Still sitting at his table finishing his tea, chatting about the cold and his knees.
+   item: Chloe Baxter starts "counter shift, lunch rush" at The café, until Wed 14:00
+   reason: He came in at 10:16 and is slow and friendly, so he may still be there.
+[Wed 11:43] speak (at Wed 11:46) Mr Hollis → Chloe Baxter: Lovely toastie, love. Bit golden this time. Any chance of a top-up on the tea before these knees make me move?
+   item: Chloe Baxter starts "counter shift, lunch rush" at The café, until Wed 14:00
+   reason: A regular who is friendly would ask for a refill.
+[Wed 11:43] present (at Wed 11:55) a lunch customer → Chloe Baxter: Comes in for a lunch order, probably soup and a sandwich, and queues at the counter.
+   item: Chloe Baxter starts "counter shift, lunch rush" at The café, until Wed 14:00
+   reason: Lunch rush is starting, with a couple of customers arriving.
+[Wed 11:43] text (at Wed 11:51) Megan Foster → Chloe Baxter: voting update: pizza is winning in my head 😂 u in?? also did u eat yet
+   item: Chloe Baxter starts "counter shift, lunch rush" at The café, until Wed 14:00
+   reason: Megan sent ideas earlier and is a chatty texter wanting votes.
+[Wed 12:00] present (at Wed 12:05) Tracey Reid → Callum Reid: Pottering about the kitchen putting the kettle on and wiping the worktop, then sitting down with a cuppa and her phone.
+   item: Callum Reid starts "making lunch" at Reid house kitchen and living room, until Wed 12:30
+   reason: Lives with Callum; ordinary for her to be home at lunchtime.
+[Wed 12:00] speak (at Wed 12:00) Tracey Reid → Callum Reid: Are you making enough for two, love? And there's bread in the bin if you want toast.
+   item: Callum Reid starts "making lunch" at Reid house kitchen and living room, until Wed 12:30
+   reason: Ordinary small kitchen chat from a mum.
+[Wed 12:00] text (at Wed 12:12) Jordan Wells → Callum Reid: Mate can you swap Friday with me? Early again, I owe you a pint. Also this meme is you at 6am
+   item: Callum Reid starts "making lunch" at Reid house kitchen and living room, until Wed 12:30
+   reason: Jordan is chatty and swaps shifts; a lunchtime text is typical.
+[Wed 12:26] text (at Wed 12:29) Jordan Wells → Callum Reid: all good, worth a shot haha. good luck with the study
+   item: Callum Reid texted Jordan Wells: "sorry mate can't do friday, got study. good meme though"
+   reason: Easygoing Jordan accepts the refusal and replies briefly, as a chatty colleague would.
+[Wed 12:30] present (at Wed 12:30) Tracey Reid → Callum Reid: Clearing the lunch plates, wiping the table, then putting the washing on and pottering about the kitchen and living room with the radio on low.
+   item: Callum Reid starts "more study" at Reid house kitchen and living room, until Wed 14:00
+   reason: She lives there and has just finished lunch with Callum, so she would tidy up for a bit.
+[Wed 12:30] text (at Wed 12:55) Hannah Doyle → Callum Reid: Hiya, are you going over the past papers today? I've got the 2023 one with the marking notes if you want it. Can send a photo of my notes after.
+   item: Callum Reid starts "more study" at Reid house kitchen and living room, until Wed 14:00
+   reason: Hannah is an organised coursemate who shares notes, and Callum is studying for Friday.
+[Wed 12:30] none Stephen Marsh: 
+   item: Stephen Marsh starts "finish lunch service, then pop out to see Claire at the counter" at Café kitchen, until Wed 12:45
+   reason: Quiet end of lunch service in the kitchen with no one else around; no one present or in touch is what ordinarily happens midweek.
+[Wed 12:40] none Stephen Marsh: 
+   item: Stephen Marsh starts "finish lunch orders, tidy station" at Café kitchen, until Wed 13:00
+   reason: Quiet end of lunch service in the kitchen with nobody else around; no one visits and none of his contacts would ordinarily get in touch at 12:40 on a weekday.
+[Wed 12:50] none Stephen Marsh: 
+   item: Stephen Marsh starts "finish lunch orders, tidy station, then pop out to the café to say hi to Claire" at Café kitchen, until Wed 13:15
+   reason: Quiet stretch finishing lunch orders alone in the kitchen; no one listed is there and nothing in particular prompts a contact to get in touch at lunchtime on a school day.

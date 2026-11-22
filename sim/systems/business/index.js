@@ -84,7 +84,7 @@ export function createBusiness() {
   function mixCount() { const o = {}; for (const B of Object.values(S().biz)) if (isTrading(B)) { const k = B.fid || B.tmpl; o[k] = (o[k] || 0) + 1; } return o; }
   const unitsHs = () => Object.values(S().biz).filter((B) => B.zone === 'hs' || B.zone === 'side');
   function vacancyRate() { const u = unitsHs(); return u.length ? u.filter((B) => B.status === 'vacant').length / u.length : 0; }
-  function demandIdx() { const m = macro(); return clamp(0.4 + 0.6 * S().A, 0.3, 2.2) * (1 - 1.4 * (m.recession || 0)) * clamp(W.living().length / (S().pop0 || 1), 0.6, 1.4); }
+  function demandIdx() { const m = macro(); return clamp(0.4 + 0.6 * S().A, 0.3, 2.2) * (1 - 0.3 * (m.recession || 0)) * clamp(W.living().length / (S().pop0 || 1), 0.6, 1.4); }
   const marketRentM2 = (zone) => (RENT_M2[zone] || 100) * S().rentIdx;
   const marketRent = (B) => Math.round(marketRentM2(B.zone) * B.m2 / 12);
 
@@ -136,7 +136,7 @@ export function createBusiness() {
     // expected resident revenue = group's resident spend x this venue's share of the weights money used (smooths the multinomial noise of ~250 households choosing once a month)
     const G = { f: 0, l: 0 }, Wt = { f: 0, l: 0 }; for (const B of trading()) { if (!FOODSET.has(B.tmpl)) continue; const g = FOODG.has(B.tmpl) ? 'f' : 'l'; B.wt = weightOf(B.bid) || 0; G[g] += (acc[B.bid] ? acc[B.bid].res : 0); Wt[g] += B.wt; }
     for (const B of trading()) { if (!FOODSET.has(B.tmpl)) continue; const g = FOODG.has(B.tmpl) ? 'f' : 'l'; B.E = Wt[g] > 0 ? G[g] * B.wt / Wt[g] : 0; }
-    const live = s.m >= 3, pay = (a, b2, x, r, c) => (live ? money(a, b2, x, r, c) : 0); // the first months only observe (partial payroll/spending months): no P&L is posted
+    const live = s.m >= 6, pay = (a, b2, x, r, c) => (live ? money(a, b2, x, r, c) : 0); // the first months only observe (partial payroll/spending months): no P&L is posted
     for (const B of trading()) {
       const f = fmt(B), A = acc[B.bid] || { res: 0, wage: 0 }, b = w.buildings.get(B.bid), acct = 'b:' + B.bid;
       B.ft.ema = B.ft.ema == null ? B.ft.vh : 0.7 * B.ft.ema + 0.3 * B.ft.vh; B.ft.vh = 0;
@@ -152,11 +152,12 @@ export function createBusiness() {
       // --- revenue: residents (via money's routing, share set by footfall/reputation/price) + off-map catchment customers (passers-by, workers, the wider area the 550-person sample stands in for)
       const fixedRev = !FOODSET.has(B.tmpl); // lettings fees, NHS contracts: not household shop/leisure spending
       B.resEma = B.E || 0; if (B.q0 === undefined) B.q0 = B.q;
-      if (!fixedRev && B.k == null && s.m >= 3) { // day-1 input: an incumbent exists because its catchment sustains it; size each one's off-map catchment so it starts near a typical margin (sector benchmark 2-8%), with spread
-        const m0 = clamp(rng.gauss(0.07, 0.05), -0.03, 0.2), den = f.gm - CARD_FEE - (B.own.kind === 'chain' ? 0.03 : 0) - m0, need = den > 0.1 ? fixed / den : 0;
-        B.k = clamp(need > 0 && B.resEma > 200 ? (need - B.resEma) / B.resEma : f.off, 0.1, 8); B.q0 = B.q;
+      if (!fixedRev && B.k == null && s.m >= 3) { // day-1 input: an incumbent exists because its catchment sustains it; over three observation months size each one's off-map catchment so it starts near a typical margin (sector benchmark 2-8%), with spread
+        B.cE = (B.cE || 0) + B.resEma; B.cF = (B.cF || 0) + fixed;
+        if (s.m === 5) { const E = B.cE / 3, F = B.cF / 3, m0 = clamp(rng.gauss(0.07, 0.05), -0.03, 0.2), den = f.gm - CARD_FEE - (B.own.kind === 'chain' ? 0.03 : 0) - m0, need = den > 0.1 ? F / den : 0;
+          B.k = clamp(need > 0 && E > 200 ? (need - E) / E : f.off, 0.1, 8); B.q0 = B.q; delete B.cE; delete B.cF; }
       }
-      const recess = 1 - 0.5 * (m.recession || 0);
+      const recess = 1 - 0.15 * (m.recession || 0); // retail/hospitality sales fall a few % to ~10% in a deep recession (ONS retail sales GFC/2020); estate-agency volumes more (demandIdx)
       const off = fixedRev ? (f.rev0 || 20000) * (f.nhs ? 1 : demandIdx()) * Math.exp(B.q * 0.5) * (1 + rng.gauss(0, 0.05)) : (B.k ?? f.off) * B.resEma * Math.exp(0.5 * (B.q - B.q0)) * recess * (1 + rng.gauss(0, 0.05)) * (B.trim ? 1 - 0.1 * B.trim.days.length : 1);
       pay('metropolis', acct, off, 'offmap_sales'); const rev = A.res + off;
       const gmEff = 1 - (1 - f.gm) / B.price; pay(acct, 'metropolis', rev * (1 - gmEff), 'stock');
@@ -167,7 +168,7 @@ export function createBusiness() {
       const profit = rev - rev * (1 - gmEff) - A.wage - extWage - rent - rates - energy - over - interest;
       B.last = { rev: Math.round(rev), resid: Math.round(A.res), profit: Math.round(profit), rent: Math.round(rent), wages: Math.round(A.wage + extWage), rates: Math.round(rates), margin: rev > 0 ? profit / rev : 0 };
       B.rev6.push(rev); if (B.rev6.length > 6) B.rev6.shift();
-      if (s.m < 3) { B.pm = null; B.loss = 0; B.ok = 0; } else B.pm = B.pm == null ? profit : 0.5 * B.pm + 0.5 * profit; if (s.m >= 3) B.loss = B.pm < 0 ? B.loss + 1 : 0; B.ok = B.pm > 0 ? B.ok + 1 : 0; // two-month smoothing: one bad month is not distress
+      if (s.m < 6) { B.pm = null; B.loss = 0; B.ok = 0; } else B.pm = B.pm == null ? profit : 0.5 * B.pm + 0.5 * profit; if (s.m >= 6) B.loss = B.pm < 0 ? B.loss + 1 : 0; B.ok = B.pm > 0 ? B.ok + 1 : 0; // two-month smoothing: one bad month is not distress
       // --- who covers a loss: chain HQ, resident owner's own money, off-map owner's reserve, then the overdraft
       let cash = w.ledger.balance(acct);
       if (cash < 0) {
@@ -190,7 +191,7 @@ export function createBusiness() {
       // --- rent review / lease end
       if (w.tick >= B.reviewAt) rentReview(B, rng); if (w.tick >= B.leaseEnd) B.leaseEnd = w.tick + LEASE_MONTHS * MONTH;
       // --- distress stages and closure
-      if (s.m >= 3) distress(B, rng);
+      if (s.m >= 6) distress(B, rng);
     }
     for (const k in acc) delete acc[k];
   }

@@ -84,6 +84,10 @@ export function createLabour() {
     const lf = w.lf; if (lf.labour) return;
     lf.labour = { firms: {}, durations: [], stats: { hired: 0, lost: 0, referral: 0, retired: 0, promoted: 0, closures: 0, quits: 0 }, shocks: {}, noReferral: false };
     const rng = w.rngFor('labour.init'), OCC = occMap(w);
+    // repair: population left person objects/undefined in slot.filled (ids were not assigned yet), so firm closures could not find their staff. Rebuild from workplaces.
+    for (const s of lf.slots) s.filled = [];
+    for (const p of w.people.values()) { const q = p.ext && p.ext.pop; if (q && q.occ && q.workplace && q.workplace.kind === 'onmap') { const s = lf.slots.find((x) => x.bid === q.workplace.bid && x.vid === q.workplace.vid && x.occ === q.occ); if (s) s.filled.push(p.id); } }
+    for (const s of lf.slots) { const b = w.buildings.get(s.bid), e = b && b.lf.staff.find((x) => x.vid === s.vid && x.occ === s.occ); if (e) e.filled = s.filled.slice(); }
     for (const s of lf.slots) { s.ext = Math.max(0, s.n - s.filled.length); s.vac = []; }
     for (const b of w.buildings.values()) if (b.lf && b.lf.staff && b.lf.staff.length) lf.labour.firms[b.id] = { bid: b.id, sector: sectorOfBuilding(w, b), closedUntil: 0, closedAt: 0, name: b.name };
     for (const p of w.people.values()) {

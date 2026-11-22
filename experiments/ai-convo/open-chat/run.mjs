@@ -9,7 +9,10 @@ const NOTE = 'The software relaying this conversation adds an automatic note abo
 const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. Skip disclaimers about being an AI. Keep messages short.';
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
-const briefFor = n => BRIEF + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
+const ORACLE = process.env.ORACLE === '1'; // optional oracle: agents may start a line with @oracle to have a web-searching haiku answer; its answer joins the conversation as 'Oracle'
+const ORACLE_LINE = ' There is also an oracle that can look things up online: start a line with @oracle and your question.';
+// System prompt order: BRIEF, oracle line, A's topic, the agent's secret.
+const briefFor = n => BRIEF + (ORACLE ? ORACLE_LINE : '') + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
 const NAMES = ['Maya', 'Tom', 'Jo', 'Sam'], ROUNDS = +process.argv[2] || 30, convo = [], seen = {};
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
@@ -38,6 +41,17 @@ async function turn(n, user) {
     return j;
   }
 }
+async function askOracle(who, q) {
+  const ctx = convo.slice(-6).map(m => `${m.who}: ${m.text}`).join('\n\n');
+  const argv = ['-p', `Recent conversation:\n${ctx}\n\nQuestion from ${who}: ${q}`, '--output-format', 'json', '--system-prompt', `${NOTE} You are the oracle in a group chat of friends. Answer the question in a few plain sentences. Name a source when it matters.`,
+    '--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--setting-sources', '', '--no-session-persistence', '--model', 'haiku'];
+  const proc = spawn('claude', argv, { cwd, env, stdio: ['ignore', 'pipe', 'pipe'] });
+  let out = ''; proc.stdout.on('data', d => out += d); proc.stderr.on('data', d => out += d);
+  const code = await new Promise(res => { proc.on('error', () => res(-1)); proc.on('close', res); });
+  const j = JSON.parse(out); // a non-JSON failure throws and is reported by the caller
+  if (code !== 0 || j.is_error) throw new Error(j.result || `exit ${code}`);
+  return j;
+}
 const PASS = '(If you have nothing to say, reply with just PASS.)', isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
 rounds: for (let r = 1; r <= ROUNDS; r++) {
   let passes = 0;
@@ -55,6 +69,14 @@ rounds: for (let r = 1; r <= ROUNDS; r++) {
     if (pass) { passes++; console.log(`--- round ${r}, ${n} (passed)\n`); continue; }
     fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}, ${n}\n${text}\n\n`);
     console.log(`--- round ${r}, ${n} (${((Date.now() - t0) / 1000).toFixed(1)}s)\n${text}\n`);
+    const q = ORACLE && text.match(/^\s*@oracle\b[:,]?\s*(.+)$/im)?.[1];
+    if (q) try {
+      const o = await askOracle(n, q), answer = o.result.trim();
+      convo.push({ who: 'Oracle', text: answer });
+      fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: 'Oracle', text: answer, oracle: true, question: q, usage: o.usage }) + '\n');
+      fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}, Oracle\n${answer}\n\n`);
+      console.log(`--- round ${r}, Oracle\n${answer}\n`);
+    } catch (e) { console.error('oracle error:', e.message); fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: 'Oracle', oracle: true, question: q, error: e.message }) + '\n'); }
   }
   if (passes === NAMES.length) {
     fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}: all agents passed, conversation over\n`);

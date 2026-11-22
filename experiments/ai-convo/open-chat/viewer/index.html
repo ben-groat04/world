@@ -103,6 +103,13 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .who-B { --who: var(--b); --who-soft: var(--b-soft); }
 .who-C { --who: var(--c); --who-soft: var(--c-soft); }
 .who-D { --who: var(--d); --who-soft: var(--d-soft); }
+.who-O { --who: var(--muted); --who-soft: var(--surface); }
+.oracle { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .5rem .85rem; font-size: .9rem; color: var(--muted); overflow-wrap: anywhere; }
+.oracle .name { color: var(--muted); }
+.oracle p { margin: 0 0 .5em; } .oracle p:last-child { margin-bottom: 0; }
+.bubble a, .oracle a { color: var(--accent); }
+.check { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.25rem; font-size: .9rem; cursor: pointer; }
+.check input { accent-color: var(--accent); width: 1rem; height: 1rem; }
 .quiet { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); padding-left: 2.65rem; }
 .quiet b { color: var(--who); font-weight: 600; }
 .new { animation: arrive .25s ease-out; }
@@ -147,6 +154,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       <input id="nTopic" type="text" maxlength="500" placeholder="Optional"></div>
     <div class="field"><label class="label" for="nModel">Model</label>
       <select id="nModel"><option value="haiku" selected>haiku</option><option value="sonnet">sonnet</option></select></div>
+    <label class="check" for="nOracle"><input id="nOracle" type="checkbox"> Oracle</label>
     <button class="btn primary" id="nGo" type="submit" disabled>Start</button>
     <p class="status" id="nStatus" role="status"></p>
   </form>
@@ -194,7 +202,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   function inline(s) {
     return s.split(/(`[^`]+`)/).map((p, i) => {
       if (i % 2) return '<code>' + p.slice(1, -1) + '</code>';
-      return p.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      return p.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/(^|[^\w*])\*([^\s*][^*]*?)\*(?![\w*])/g, '$1<em>$2</em>')
         .replace(/(^|[^\w])_([^\s_][^_]*?)_(?!\w)/g, '$1<em>$2</em>');
     }).join('');
@@ -224,7 +232,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     try { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso)); }
     catch (e) { return iso; }
   };
-  const cls = w => 'who-' + 'ABCD'[Math.max(0, run.names.indexOf(w))]; // colour by slot in run.names
+  const cls = w => run.names.includes(w) ? 'who-' + 'ABCD'[run.names.indexOf(w)] : 'who-O'; // colour by slot in run.names
   const nonPass = r => r.turns.filter(t => !t.pass).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
@@ -256,7 +264,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     for (let i = 0; i < pos; i++) {
       const t = turns[i]; if (!vis(t)) continue;
       if (t.round !== lastRound) { html += `<div class="round">Round ${t.round}</div>`; lastRound = t.round; }
-      if (t.pass) html += `<div class="quiet ${cls(t.who)}"><b>${esc(t.who)}</b> stayed quiet</div>`;
+      if (t.oracle) html += `<div class="oracle${animateLast && i === pos - 1 ? ' new' : ''}"><div class="name">Oracle</div>${md(t.text)}</div>`;
+      else if (t.pass) html += `<div class="quiet ${cls(t.who)}"><b>${esc(t.who)}</b> stayed quiet</div>`;
       else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}</div>${md(t.text)}</div></div>`; }
     }
     if (typing) {
@@ -351,7 +360,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       if (!comments || !canSend || sending) return;
       const topic = $('nTopic').value.replace(/\s+/g, ' ').trim().slice(0, 500);
       const model = $('nModel').value === 'sonnet' ? 'sonnet' : 'haiku';
-      const text = `START RUN\nmodel: ${model}\nrounds: 30\ntopic: ${topic || '(none)'}`;
+      const text = `START RUN\nmodel: ${model}\nrounds: 30\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}`;
       sending = true; $('nGo').disabled = true; nStatus('Sending\u2026');
       try {
         const anchor = await comments.anchorFor($('newForm'));

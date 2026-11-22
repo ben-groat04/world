@@ -277,7 +277,7 @@ export function pickFirst(rng, origin, sex, birthYear = 1990) {
   const g = GROUPS[origin.firstGroup] || GROUPS[origin.group]; const src = subOf(g, origin.firstSub || origin.sub);
   return fixup(surfaceName(pickW(rng, firstFrom(src, sex, cohortOf(birthYear)))));
 }
-const femForm = (rng, src, l, sex) => { if (sex !== 'F' || !src.fem || typeof src.fem !== 'object') return l; const f = src.fem[l]; return Array.isArray(f) ? f[rng.chance(0.5) ? 0 : 1] : f || l; };
+const femForm = (rng, src, l, sex, kid = false) => { if (sex !== 'F' || !src.fem || typeof src.fem !== 'object') return l; const f = src.fem[l]; return Array.isArray(f) ? f[kid ? 1 : rng.chance(0.5) ? 0 : 1] : f || l; }; // Lithuanian daughters take -aitė (unmarried form)
 export function pickSurname(rng, origin, sex) {
   const g = GROUPS[origin.lastGroup] || GROUPS[origin.group]; const src = subOf(g, origin.sub);
   let l = pickW(rng, src.last.filter(([, k]) => k > 0)); l = fixup(surfaceName(l));
@@ -293,7 +293,7 @@ export function childSurname(rng, origin, sex, father, mother, useFather = true)
   const from = (useFather && father) || mother || father; if (!from) return pickSurname(rng, origin, sex);
   let l = from.last;
   if (src.fem && typeof src.fem === 'object' && !(src.fem === 'kaur' || src.fem === 'begum')) { // recover the masculine base form, then re-inflect for the child
-    const base = Object.keys(src.fem).find((k) => [].concat(src.fem[k]).includes(l)) || l; l = femForm(rng, src, base, sex);
+    const base = Object.keys(src.fem).find((k) => [].concat(src.fem[k]).includes(l)) || l; l = femForm(rng, src, base, sex, true);
   }
   return l;
 }

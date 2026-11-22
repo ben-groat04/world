@@ -24,7 +24,7 @@ const EVENTS = [
 const RENT_M2 = { hs: 240, side: 170, arch: 60, special: 130 };   // GBP/m2/yr: inner-city secondary high street; set so rent is ~8-12% of day-1 turnover (Sage/ATO cafe benchmarks 10-15%)
 const ENERGY_M2 = 75, OVERHEAD_FIX = 330, CARD_FEE = 0.016;      // GBP/m2/yr; insurance+licences+accounts per month; card/platform fees share of sales
 const RATES_MULT = 0.499, SBRR_FULL = 12000, SBRR_TAPER = 15000; // small business multiplier 2024/25; small business rate relief: 100% under RV 12k tapering to 0 at 15k
-const OVERDRAFT = 8000, LOAN_MAX = 25000, LOAN_RATE = 0.06, LOAN_MONTHS = 60; // UK Start Up Loans: up to 25k, fixed 6%, 1-5 years
+const OVERDRAFT = 10000, LOAN_MAX = 25000, LOAN_RATE = 0.06, LOAN_MONTHS = 60; // UK Start Up Loans: up to 25k, fixed 6%, 1-5 years
 const REVIEW_MONTHS = 60, LEASE_MONTHS = 120;                    // 5-yearly upward-only rent reviews, 10-year leases (standard UK commercial lease)
 const SIGMA_Q = 0.3, RHO_Q = 0.95;                                // persistent idiosyncratic quality (Jovanovic learning model); sd of monthly innovation scaled below
 const MATCH_RATE = 0.05;                                          // monthly per-unit chance an entrant is found for a typical vacant unit (implies ~12-20 month voids; fits ~11-14% vacancy)
@@ -52,7 +52,7 @@ export function createBusiness() {
       if (v.template === 'vacant_unit') { B.status = 'vacant'; B.since = w.tick - rng.int(0, 14) * MONTH; B.ask = B.rent; B.initVoid = true; S0.biz[b.id] = B; continue; }
       const f = formatFor(v, rng); Object.assign(B, { id: S0.nextId++, status: 'trading', fid: f.fid, tmpl: v.template, variant: v.variant || f.variant || null, name: v.name, born: w.tick - rng.int(2, 80) * MONTH, init: true,
         price: 1, q: rng.gauss(0, SIGMA_Q), rating: 3.6, ft: { vh: 0, ema: null }, loan: null, trim: null, scale: 1, loss: 0, ok: 0, last: null, regs: 0, stage: 0, fillR: 1, chainBack: f.own === 'chain' });
-      B.own = ownerOf(b.id, f, rng); B.reserve = B.own.kind === 'chain' ? 0 : Math.round(Math.exp(rng.gauss(Math.log(7000), 0.8))); B.rev6 = [];
+      B.own = ownerOf(b.id, f, rng); B.reserve = B.own.kind === 'chain' ? 0 : Math.round(Math.exp(rng.gauss(Math.log(15000), 0.8))); B.rev6 = [];
       S0.biz[b.id] = B;
     }
     S0.pop0 = w.living().length; const st = affluence(); S0.inc0 = st.inc || 1; S0.prof0 = st.prof || 0.1; S0.A = 1;
@@ -114,7 +114,7 @@ export function createBusiness() {
   // a category grows slowly with variety (n^0.3) rather than fixed, so a new cafe takes share from the old ones but also widens the market.
   const CAT = { corner_shop: 0.22, small_supermarket: 0.42, ethnic_grocer: 0.16, bakery: 0.08, off_licence: 0.06, discount_store: 0.1, cafe: 0.17, pub: 0.2, takeaway: 0.2, restaurant: 0.2, barber: 0.05, salon: 0.06, launderette: 0.03, bookmaker: 0.03, gym: 0.05, charity_shop: 0.025, money_phone: 0.025, vape_shop: 0.02 };
   let tsCache = { tick: -1, o: {} };
-  const attract = (B) => { const ft = B.ft.ema == null ? 1 : Math.max(0.25, B.ft.ema / (S().ftMean[B.tmpl] || B.ft.ema || 1)); return (0.5 + 0.5 * Math.min(2, ft)) * Math.pow(B.rating / 3.6, 2.5) * Math.pow(B.price, -1.3) * (1 - (B.trim ? B.trim.days.length / 7 : 0)); };
+  const attract = (B) => { const ft = B.ft.ema == null ? 1 : Math.max(0.25, B.ft.ema / (S().ftMean[B.tmpl] || B.ft.ema || 1)); return (0.7 + 0.3 * Math.min(2, ft)) * Math.pow(B.rating / 3.6, 2) * Math.pow(B.price, -1.3) * (1 - (B.trim ? B.trim.days.length / 7 : 0)); };
   function typeSums() { if (tsCache.tick === W.tick) return tsCache.o; const o = {}; for (const B of trading()) { const t = (o[B.tmpl] || (o[B.tmpl] = { sum: 0, n: 0 })); t.sum += attract(B); t.n++; } tsCache = { tick: W.tick, o }; return o; }
   function weightOf(bid) {
     const B = S().biz[bid]; if (!B) return null; if (B.status !== 'trading') return 0; const c = CAT[B.tmpl]; if (c === undefined) return null; const t = typeSums()[B.tmpl];
@@ -205,7 +205,7 @@ export function createBusiness() {
     const b = W.buildings.get(B.bid), cash = B.cash, indie = B.own.kind !== 'chain' && B.own.kind !== 'charity', fixed = B.rent + (B.last ? B.last.wages : 0) * 0.3 + 400;
     // closure triggers: insolvency (cash + reserve + overdraft gone), chain rationalisation, owner gives up after a long losing run, owner exit (retire/die/leave)
     let why = null;
-    if (indie && cash < -OVERDRAFT && B.reserve <= 0) why = 'insolvent';
+    if (indie && cash < -OVERDRAFT && B.reserve <= 0 && B.loss >= 4) why = 'insolvent'; // lenders tolerate a short dip, not a run of losses
     else if (B.own.kind === 'chain' && B.loss >= CHAIN_CLOSE_STREAK) why = 'chain_rationalisation';
     else if (B.own.kind === 'chain' && macro().recession > 0.5 && B.loss >= 4 && rng.chance(0.08)) why = 'chain_restructuring';
     else if (indie && B.loss >= 6 && rng.chance(Math.min(0.5, 0.06 * (B.loss - 4)))) why = 'owner_gave_up';

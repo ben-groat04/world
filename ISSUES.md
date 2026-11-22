@@ -117,3 +117,10 @@ REMAINING / FOR OTHERS:
   Still ~1.2: 20-29 band births are 0.4-0.75 x ASFR because only ~25% of women 20-29 are in a cohabiting/married union (student-heavy). Partnership formation in the 20s is the open lever.
 - Employed 58-60% (was 64-67%): the excess was students->employed drain. Home/family return-to-work was a flat 2%/month (now 1.2%, x0.6 child <11, x0.35 Pakistani/Bangladeshi: ethnicity-facts-figures 2021 51% of
   women inactive). Remaining 4 pts above 55%: retired share 12% (input age structure), arrivals more employed than day-1 residents (selection by segment tilt).
+## Crime/civic review (orchestrator)
+- Report inconsistent: "recorded ~100/1000/yr ... against calibration 64" but also "22% under calibration" — reconcile
+  the metric definitions (per 1000 residents vs per 500; force-wide vs inner-city uplift ~128).
+- Recorded totals are a tuned target (outsider attempt rate PARAMS.OUT fitted) — not evidence; per-type mix is emergent.
+- Young men under-victimised (in reality 16-24 men have the highest violence victimisation) — mechanism check.
+- Violence 31 vs 45/1000; charge/caution 19% vs ~6-12%; sexual offences absent; prisoners stay in routine layer.
+- UI must hide crime.domestic (private/sensitive) and surface crime/civic feeds, campaigns, planning, elections.

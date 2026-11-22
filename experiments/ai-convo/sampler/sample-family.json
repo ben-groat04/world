@@ -1,0 +1,185 @@
+{
+ "setting": "family",
+ "n": 0,
+ "seed": "1",
+ "people": [
+  {
+   "name": "Jessica Roberts",
+   "age": 26,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "Zimbabwe",
+   "years_in_uk": 17,
+   "religion": "No religion",
+   "activity": "unemployed",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 4278,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "owned with mortgage",
+    "bedrooms": 4,
+    "occupancy_rating": 2,
+    "size": 3,
+    "members": [
+     {
+      "name": "Luke Roberts",
+      "age": 31,
+      "sex": "M",
+      "relation": "husband"
+     },
+     {
+      "name": "Olivia Roberts",
+      "age": 5,
+      "sex": "F",
+      "relation": "daughter"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Olivia Roberts",
+     "age": 5,
+     "lives": "with me"
+    }
+   ],
+   "health": "good",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": null,
+   "income_source": "benefits",
+   "role": null,
+   "former_occupation": "Corporate managers & directors"
+  },
+  {
+   "name": "Luke Roberts",
+   "age": 31,
+   "sex": "M",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 31,
+   "religion": "No religion",
+   "activity": "employed full-time",
+   "occupation": "Other managers & proprietors (hospitality, retail, services)",
+   "contract": "zero hours",
+   "employer": "Retail or hospitality chain",
+   "annual_income": 32781,
+   "hours_per_week": 40,
+   "shifts": [
+    {
+     "day": "Tue",
+     "start": "09:00",
+     "end": "17:30",
+     "paid_hours": 8
+    },
+    {
+     "day": "Wed",
+     "start": "10:00",
+     "end": "18:30",
+     "paid_hours": 8
+    },
+    {
+     "day": "Thu",
+     "start": "10:00",
+     "end": "18:30",
+     "paid_hours": 8
+    },
+    {
+     "day": "Sat",
+     "start": "09:00",
+     "end": "17:30",
+     "paid_hours": 8
+    },
+    {
+     "day": "Sun",
+     "start": "07:00",
+     "end": "15:30",
+     "paid_hours": 8
+    }
+   ],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "owned with mortgage",
+    "bedrooms": 4,
+    "occupancy_rating": 2,
+    "size": 3,
+    "members": [
+     {
+      "name": "Jessica Roberts",
+      "age": 26,
+      "sex": "F",
+      "relation": "wife"
+     },
+     {
+      "name": "Olivia Roberts",
+      "age": 5,
+      "sex": "F",
+      "relation": "daughter"
+     }
+    ]
+   },
+   "relationship_status": "married",
+   "children": [
+    {
+     "name": "Olivia Roberts",
+     "age": 5,
+     "lives": "with me"
+    }
+   ],
+   "health": "very good",
+   "education": "No qualifications",
+   "hourly_pay": 15.76,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Olivia Roberts",
+   "age": 5,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 5,
+   "religion": "No religion",
+   "activity": "school pupil",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": null,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with dependent children",
+    "tenure": "owned with mortgage",
+    "bedrooms": 4,
+    "occupancy_rating": 2,
+    "size": 3,
+    "members": [
+     {
+      "name": "Jessica Roberts",
+      "age": 26,
+      "sex": "F",
+      "relation": "mother"
+     },
+     {
+      "name": "Luke Roberts",
+      "age": 31,
+      "sex": "M",
+      "relation": "father"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "primary school",
+   "hourly_pay": null,
+   "income_source": null,
+   "role": null,
+   "former_occupation": null
+  }
+ ]
+}

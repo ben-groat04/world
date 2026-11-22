@@ -1,0 +1,422 @@
+{
+ "setting": "friends",
+ "n": 5,
+ "seed": "1",
+ "people": [
+  {
+   "name": "Mary Balogun",
+   "age": 25,
+   "sex": "F",
+   "ethnicity": "Black African",
+   "birthplace": "England",
+   "years_in_uk": 25,
+   "religion": "Christian",
+   "activity": "employed full-time",
+   "occupation": "Security & protective services",
+   "contract": "permanent",
+   "employer": "Public body",
+   "annual_income": 28989,
+   "hours_per_week": 44,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "15:00",
+     "end": "00:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Tue",
+     "start": "23:00",
+     "end": "08:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Wed",
+     "start": "07:00",
+     "end": "16:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Sat",
+     "start": "23:00",
+     "end": "08:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Sun",
+     "start": "23:00",
+     "end": "08:30",
+     "paid_hours": 9
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 4,
+    "occupancy_rating": 2,
+    "size": 2,
+    "members": [
+     {
+      "name": "Ioana Novak",
+      "age": 49,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": 12.67,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Finley Scott",
+   "age": 24,
+   "sex": "M",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 24,
+   "religion": "No religion",
+   "activity": "self-employed",
+   "occupation": "Elementary trades, storage, cleaning & labouring",
+   "contract": "self-employed",
+   "employer": "self-employed (own account)",
+   "annual_income": 16174,
+   "hours_per_week": 27,
+   "shifts": [
+    {
+     "day": "Tue",
+     "start": "06:00",
+     "end": "15:30",
+     "paid_hours": 9
+    },
+    {
+     "day": "Thu",
+     "start": "22:00",
+     "end": "07:30",
+     "paid_hours": 9
+    },
+    {
+     "day": "Fri",
+     "start": "14:00",
+     "end": "23:30",
+     "paid_hours": 9
+    }
+   ],
+   "household": {
+    "type": "couple family, no children",
+    "tenure": "private rented",
+    "bedrooms": 1,
+    "occupancy_rating": 0,
+    "size": 2,
+    "members": [
+     {
+      "name": "Millie Brown",
+      "age": 22,
+      "sex": "F",
+      "relation": "partner"
+     }
+    ]
+   },
+   "relationship_status": "cohabiting",
+   "children": [],
+   "health": "very good",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": 11.52,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Blessing Eze",
+   "age": 19,
+   "sex": "F",
+   "ethnicity": "Black African",
+   "birthplace": "Sudan",
+   "years_in_uk": 12,
+   "religion": "Christian",
+   "activity": "employed full-time",
+   "occupation": "Elementary food & drink service (barista, server, kitchen assistant)",
+   "contract": "permanent",
+   "employer": "Cafe or restaurant",
+   "annual_income": 19469,
+   "hours_per_week": 40,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "16:00",
+     "end": "23:30",
+     "paid_hours": 6.75
+    },
+    {
+     "day": "Tue",
+     "start": "16:00",
+     "end": "23:30",
+     "paid_hours": 6.75
+    },
+    {
+     "day": "Wed",
+     "start": "17:00",
+     "end": "00:30",
+     "paid_hours": 6.75
+    },
+    {
+     "day": "Thu",
+     "start": "17:00",
+     "end": "00:30",
+     "paid_hours": 6.75
+    },
+    {
+     "day": "Sat",
+     "start": "11:00",
+     "end": "18:30",
+     "paid_hours": 6.75
+    },
+    {
+     "day": "Sun",
+     "start": "17:00",
+     "end": "23:30",
+     "paid_hours": 6.25
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 3,
+    "occupancy_rating": 0,
+    "size": 3,
+    "members": [
+     {
+      "name": "Harry Evans",
+      "age": 22,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Ali Karimi",
+      "age": 32,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 9.36,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Kwabena Boateng",
+   "age": 23,
+   "sex": "M",
+   "ethnicity": "Black African",
+   "birthplace": "England",
+   "years_in_uk": 23,
+   "religion": "Christian",
+   "activity": "employed full-time",
+   "occupation": "Other managers & proprietors (hospitality, retail, services)",
+   "contract": "permanent",
+   "employer": "Small private business",
+   "annual_income": 26754,
+   "hours_per_week": 37.5,
+   "shifts": [
+    {
+     "day": "Thu",
+     "start": "09:00",
+     "end": "19:00",
+     "paid_hours": 9.5
+    },
+    {
+     "day": "Fri",
+     "start": "12:00",
+     "end": "22:00",
+     "paid_hours": 9.5
+    },
+    {
+     "day": "Sat",
+     "start": "12:00",
+     "end": "22:00",
+     "paid_hours": 9.5
+    },
+    {
+     "day": "Sun",
+     "start": "10:00",
+     "end": "19:30",
+     "paid_hours": 9
+    }
+   ],
+   "household": {
+    "type": "couple family with non-dependent children",
+    "tenure": "private rented",
+    "bedrooms": 3,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Esther Boateng",
+      "age": 56,
+      "sex": "F",
+      "relation": "mother"
+     },
+     {
+      "name": "Tendai Boateng",
+      "age": 51,
+      "sex": "M",
+      "relation": "father"
+     },
+     {
+      "name": "Adwoa Boateng",
+      "age": 19,
+      "sex": "F",
+      "relation": "sister"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "fair",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 13.72,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Simran Grewal",
+   "age": 24,
+   "sex": "M",
+   "ethnicity": "Indian",
+   "birthplace": "India",
+   "years_in_uk": 6,
+   "religion": "Sikh",
+   "activity": "unemployed",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 4508,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "couple family with non-dependent children",
+    "tenure": "private rented",
+    "bedrooms": 5,
+    "occupancy_rating": 2,
+    "size": 4,
+    "members": [
+     {
+      "name": "Baljit Grewal",
+      "age": 51,
+      "sex": "F",
+      "relation": "mother"
+     },
+     {
+      "name": "Kuldeep Grewal",
+      "age": 50,
+      "sex": "M",
+      "relation": "father"
+     },
+     {
+      "name": "Kiran Grewal",
+      "age": 20,
+      "sex": "F",
+      "relation": "sister"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": null,
+   "income_source": "benefits",
+   "role": null,
+   "former_occupation": null
+  }
+ ],
+ "ties": [
+  {
+   "a": "Mary Balogun",
+   "b": "Finley Scott",
+   "shared": [
+    "education"
+   ],
+   "age_gap": 1
+  },
+  {
+   "a": "Mary Balogun",
+   "b": "Blessing Eze",
+   "shared": [
+    "ethnicity",
+    "religion"
+   ],
+   "age_gap": 6
+  },
+  {
+   "a": "Mary Balogun",
+   "b": "Kwabena Boateng",
+   "shared": [
+    "ethnicity",
+    "religion"
+   ],
+   "age_gap": 2
+  },
+  {
+   "a": "Mary Balogun",
+   "b": "Simran Grewal",
+   "shared": [
+    "education"
+   ],
+   "age_gap": 1
+  },
+  {
+   "a": "Finley Scott",
+   "b": "Blessing Eze",
+   "shared": [],
+   "age_gap": 5
+  },
+  {
+   "a": "Finley Scott",
+   "b": "Kwabena Boateng",
+   "shared": [],
+   "age_gap": 1
+  },
+  {
+   "a": "Finley Scott",
+   "b": "Simran Grewal",
+   "shared": [
+    "education"
+   ],
+   "age_gap": 0
+  },
+  {
+   "a": "Blessing Eze",
+   "b": "Kwabena Boateng",
+   "shared": [
+    "ethnicity",
+    "education",
+    "religion"
+   ],
+   "age_gap": 4
+  },
+  {
+   "a": "Blessing Eze",
+   "b": "Simran Grewal",
+   "shared": [],
+   "age_gap": 5
+  },
+  {
+   "a": "Kwabena Boateng",
+   "b": "Simran Grewal",
+   "shared": [],
+   "age_gap": 1
+  }
+ ]
+}

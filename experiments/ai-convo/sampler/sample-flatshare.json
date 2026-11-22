@@ -1,0 +1,298 @@
+{
+ "setting": "flatshare",
+ "n": 4,
+ "seed": "1",
+ "people": [
+  {
+   "name": "Sunita Park",
+   "age": 25,
+   "sex": "F",
+   "ethnicity": "Other Asian",
+   "birthplace": "Vietnam",
+   "years_in_uk": 19,
+   "religion": "Hindu",
+   "activity": "employed full-time",
+   "occupation": "Security & protective services",
+   "contract": "permanent",
+   "employer": "Public body",
+   "annual_income": 28989,
+   "hours_per_week": 44,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "15:00",
+     "end": "00:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Tue",
+     "start": "23:00",
+     "end": "08:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Wed",
+     "start": "07:00",
+     "end": "16:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Sat",
+     "start": "23:00",
+     "end": "08:30",
+     "paid_hours": 8.75
+    },
+    {
+     "day": "Sun",
+     "start": "23:00",
+     "end": "08:30",
+     "paid_hours": 9
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 4,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Hannah White",
+      "age": 27,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Nuwan Reyes",
+      "age": 28,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Abdul Rahman",
+      "age": 38,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "in a relationship (living apart)",
+   "children": [],
+   "health": "very good",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": 12.67,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Hannah White",
+   "age": 27,
+   "sex": "F",
+   "ethnicity": "White British",
+   "birthplace": "England",
+   "years_in_uk": 27,
+   "religion": "Christian",
+   "activity": "student",
+   "occupation": null,
+   "contract": null,
+   "employer": null,
+   "annual_income": 9195,
+   "hours_per_week": 0,
+   "shifts": [],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 4,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Sunita Park",
+      "age": 25,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Nuwan Reyes",
+      "age": 28,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Abdul Rahman",
+      "age": 38,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "separated or divorced",
+   "children": [],
+   "health": "very good",
+   "education": "Degree or above (level 4+)",
+   "hourly_pay": null,
+   "income_source": "student support",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Nuwan Reyes",
+   "age": 28,
+   "sex": "M",
+   "ethnicity": "Other Asian",
+   "birthplace": "Philippines",
+   "years_in_uk": 5,
+   "religion": "Buddhist",
+   "activity": "student",
+   "occupation": "Leisure, travel & personal services (hair, beauty, fitness)",
+   "contract": "zero hours",
+   "employer": "Salon or gym",
+   "annual_income": 9173,
+   "hours_per_week": 14,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "10:00",
+     "end": "14:30",
+     "paid_hours": 4.75
+    },
+    {
+     "day": "Fri",
+     "start": "10:00",
+     "end": "14:30",
+     "paid_hours": 4.75
+    },
+    {
+     "day": "Sat",
+     "start": "18:00",
+     "end": "22:30",
+     "paid_hours": 4.5
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 4,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Sunita Park",
+      "age": 25,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Hannah White",
+      "age": 27,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Abdul Rahman",
+      "age": 38,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "single",
+   "children": [],
+   "health": "very good",
+   "education": "A-level or apprenticeship (level 3)",
+   "hourly_pay": 12.6,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  },
+  {
+   "name": "Abdul Rahman",
+   "age": 38,
+   "sex": "M",
+   "ethnicity": "Bangladeshi",
+   "birthplace": "Bangladesh",
+   "years_in_uk": 7,
+   "religion": "Muslim",
+   "activity": "self-employed",
+   "occupation": "Other managers & proprietors (hospitality, retail, services)",
+   "contract": "self-employed",
+   "employer": "self-employed (own account)",
+   "annual_income": 33568,
+   "hours_per_week": 42,
+   "shifts": [
+    {
+     "day": "Mon",
+     "start": "12:00",
+     "end": "19:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Tue",
+     "start": "12:00",
+     "end": "19:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Wed",
+     "start": "10:00",
+     "end": "17:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Thu",
+     "start": "07:00",
+     "end": "14:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Sat",
+     "start": "08:00",
+     "end": "15:30",
+     "paid_hours": 7
+    },
+    {
+     "day": "Sun",
+     "start": "12:00",
+     "end": "19:30",
+     "paid_hours": 7
+    }
+   ],
+   "household": {
+    "type": "other household: unrelated adults sharing",
+    "tenure": "private rented",
+    "bedrooms": 4,
+    "occupancy_rating": 0,
+    "size": 4,
+    "members": [
+     {
+      "name": "Sunita Park",
+      "age": 25,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Hannah White",
+      "age": 27,
+      "sex": "F",
+      "relation": "housemate (unrelated)"
+     },
+     {
+      "name": "Nuwan Reyes",
+      "age": 28,
+      "sex": "M",
+      "relation": "housemate (unrelated)"
+     }
+    ]
+   },
+   "relationship_status": "separated or divorced",
+   "children": [],
+   "health": "fair",
+   "education": "GCSE-level (level 1-2)",
+   "hourly_pay": 15.37,
+   "income_source": "earnings",
+   "role": null,
+   "former_occupation": null
+  }
+ ]
+}

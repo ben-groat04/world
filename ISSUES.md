@@ -176,5 +176,4 @@ OPEN (needs sim owners):
 - labour: retired people never return to work (resolveApplications skips them). Fine for 78-year-olds, odd for 56-year-olds with arrears (e.g. Mateusz L.): needs a mechanism (pension-age rule, work after early retirement).
 - housing: housing.rentFlat only checks cash >= 60% of rent and charges no deposit: UI says "needs about 60% of a month's rent in hand".
 - god: heatwave/pandemic/crime-wave cannot be ended early (no stop command), rates cut / council cuts cannot be reversed without side effects (councilCuts negative pct restores ALL services); add explicit end/undo commands.
-- Take-over: players lose nothing when they release; reputation about the player only in Me. NPC requests to the player remain rare (see above).
 - social: `ties()` rows have layer `L` not `lv`; UI code that used `t.lv` on ties() rows was always undefined (only tie(a,b) has `lv`). personChip is fine (uses tie()).

@@ -1,0 +1,63 @@
+[Wed 10:00] present BLOCKED ((nobody) cannot be at Café front of house) (at Wed 10:03) Anna Nowak: Gordon Pryce comes in for his usual mid-morning tea and sits at his table by the window with the paper.
+   item: Anna Nowak starts "Working the floor, serving regulars, wiping tables" at Café front of house, until Wed 10:30
+   reason: He is a retired regular who comes in most mornings.
+[Wed 10:00] speak BLOCKED (Gordon Pryce cannot be at Café front of house) (at Wed 10:00) Gordon Pryce → Anna Nowak: Morning, Anna. Bit nippy out there, isn't it? Have you seen they're digging up the high street again?
+   item: Anna Nowak starts "Working the floor, serving regulars, wiping tables" at Café front of house, until Wed 10:30
+   reason: Gordon is chatty and nosy about town news.
+[Wed 10:00] present BLOCKED ((nobody) cannot be at Stephen and Julie's bedroom) (at Wed 10:00) Stephen Hargreaves: Julie is in the bedroom tidying the bed and looking for her keys before she heads out.
+   item: Stephen Hargreaves starts "getting dressed, gathering bag" at Stephen and Julie's bedroom, until Wed 10:15
+   reason: She lives with Stephen and could ordinarily be around.
+[Wed 10:00] speak (at Wed 10:00) Julie Hargreaves → Stephen Hargreaves: Have you seen my keys? I thought I left them on the dresser.
+   item: Stephen Hargreaves starts "getting dressed, gathering bag" at Stephen and Julie's bedroom, until Wed 10:15
+   reason: An ordinary household snag.
+[Wed 10:00] none Megan Fletcher: Nothing beyond the regulars already coming in.
+   item: Megan Fletcher starts "serving at the counter, chatting to regulars" at Café front of house, until Wed 11:30
+   reason: Gordon's visit is covered under Anna's item; no one else reaches out.
+[Wed 10:00] none Ryan Bailey: Quiet morning, nothing happens.
+   item: Ryan Bailey starts "studying, then a baking video" at Ryan's bedroom, until Wed 11:30
+   reason: Most moments nothing comes of it; Tracey is not listed as at home.
+[Wed 10:15] none Stephen Hargreaves: The ride along the high street is uneventful. Traffic is light, and you lock the bike up outside the café.
+   item: Stephen Hargreaves starts "cycling to the café" at Town high street, until Wed 10:30
+   reason: Ordinary cycle to work on a Wednesday morning, nothing notable; Chloe works in a shop and has no reason to be there, and no contact has anything pressing to send.
+[Wed 10:30] present BLOCKED ((nobody) cannot be at Café front of house) (at Wed 10:40) Anna Nowak: A regular, a retired man in a flat cap, comes in for his usual tea and a toasted teacake and chats about the cold snap.
+   item: Anna Nowak starts "Lunch prep and service with Megan and Stephen" at Café front of house, until Wed 13:00
+   reason: Ordinary weekday trade before lunch; a regular fits the front of house.
+[Wed 10:30] none Anna Nowak: 
+   item: Anna Nowak starts "Lunch prep and service with Megan and Stephen" at Café front of house, until Wed 13:00
+   reason: No contact gets in touch right now; most moments nothing comes of it.
+[Wed 10:30] none Stephen Hargreaves: 
+   item: Stephen Hargreaves starts "lunch prep and service, soup and bakes" at Café kitchen, until Wed 15:30
+   reason: Quiet kitchen shift with nobody else around; nothing notable happens and no contact reaches out now.
+[Wed 11:30] present BLOCKED ((nobody) cannot be at Café front of house) (at Wed 11:35) Megan Fletcher: Comes in for his usual mid-morning tea and sits by the window with the paper, lingering into the lunch trade.
+   item: Megan Fletcher starts "lunch rush, then quick break" at Café front of house, until Wed 12:00
+   reason: He is a regular who comes most mornings and the café is where he lives out his routine.
+[Wed 11:30] speak BLOCKED (Gordon Pryce cannot be at Café front of house) (at Wed 11:30) Gordon Pryce → Megan Fletcher: Morning, love. Busy one today? Did you see they're finally digging up the high street again?
+   item: Megan Fletcher starts "lunch rush, then quick break" at Café front of house, until Wed 12:00
+   reason: He is kindly, nosy and chats about the town to whoever serves him.
+[Wed 11:30] none Megan Fletcher: 
+   item: Megan Fletcher starts "lunch rush, then quick break" at Café front of house, until Wed 12:00
+   reason: Nobody in her contacts has a reason to get in touch during the lunch rush.
+[Wed 11:30] present BLOCKED ((nobody) cannot be at Bailey house living room and kitchen) (at Wed 11:40) Ryan Bailey: Wanders into the kitchen to put a load of washing away and make herself a cuppa, then hangs around while Ryan finishes up.
+   item: Ryan Bailey starts "making lunch, tidying kitchen" at Bailey house living room and kitchen, until Wed 12:30
+   reason: She lives there and it is a normal weekday late morning.
+[Wed 11:30] speak (at Wed 11:30) Tracey Bailey → Ryan Bailey: Are you making enough for me as well, or shall I sort myself out? And mind the pan, you've left it on the side again.
+   item: Ryan Bailey starts "making lunch, tidying kitchen" at Bailey house living room and kitchen, until Wed 12:30
+   reason: Ordinary mum chat while he is making lunch.
+[Wed 11:30] text (at Wed 11:45) Callum Reeve → Ryan Bailey: Just seen this one and thought of you lol. Walk later if it stays dry? Might be a bit late though
+   item: Ryan Bailey starts "making lunch, tidying kitchen" at Bailey house living room and kitchen, until Wed 12:30
+   reason: Callum texts memes and plans walks and is easygoing and late.
+[Wed 12:00] none Callum Reeve → Ryan Bailey: 
+   item: Ryan Bailey texted Callum Reeve: "haha yeah. walk's fine, just let me know when. i'll be at the park from about half twelve"
+   reason: Ryan's reply just closes the exchange; Callum is easygoing and late, so no immediate reply is needed.
+[Wed 12:00] present BLOCKED ((nobody) cannot be at Café front of house) (at Wed 12:10) Megan Fletcher: Gordon sits at his usual table by the window with a tea and the paper, glancing up to watch the lunchtime comings and goings.
+   item: Megan Fletcher starts "serving, wiping tables, tidying up" at Café front of house, until Wed 14:00
+   reason: Retired regular who ordinarily drops in around now.
+[Wed 12:00] speak BLOCKED (Gordon Pryce cannot be at Café front of house) (at Wed 12:00) Gordon Pryce → Megan Fletcher: Morning, love. Well, afternoon nearly. Did you see they're digging up the high street again? Never ends, does it.
+   item: Megan Fletcher starts "serving, wiping tables, tidying up" at Café front of house, until Wed 14:00
+   reason: Chatty, nosy regular makes small talk about the town.
+[Wed 12:00] text (at Wed 12:20) Chloe Barnes → Megan Fletcher: are you free friday night?? thinking drinks at the Crown, everyone's coming. say yes
+   item: Megan Fletcher starts "serving, wiping tables, tidying up" at Café front of house, until Wed 14:00
+   reason: Chloe texts constantly and organises nights out; a lunchtime break is typical.
+[Wed 12:30] text (at Wed 12:55) Callum Reeve → Ryan Bailey: On my way soon, leaving in about 20 mins. Dry so far. Meet by the pond?
+   item: Ryan Bailey starts "walk" at Town park, until Wed 14:30
+   reason: Callum planned a walk and is easygoing but late; he'd text to confirm timing.

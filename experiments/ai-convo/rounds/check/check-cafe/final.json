@@ -1,0 +1,43 @@
+{
+ "Anna Nowak": {
+  "place": "Café front of house",
+  "doing": "Lunch prep and service with Megan and Stephen",
+  "turns": 2,
+  "days": {},
+  "journal": []
+ },
+ "Stephen Hargreaves": {
+  "place": "Café kitchen",
+  "doing": "lunch prep and service, soup and bakes",
+  "turns": 4,
+  "days": {},
+  "journal": [
+   "Wed 10:03 conversation at Stephen and Julie's bedroom with Julie Hargreaves [ref 10:00]: Julie couldn't find her keys. I hadn't seen them and suggested the kitchen counter, where she had them doing Ruby's book bag. She went to look.",
+   "Wed 10:15 you went to Town high street: cycling to the café",
+   "Wed 10:30 you went to Café kitchen: lunch prep and service, soup and bakes"
+  ]
+ },
+ "Megan Fletcher": {
+  "place": "Café front of house",
+  "doing": "serving, wiping tables, tidying up",
+  "turns": 3,
+  "days": {},
+  "journal": [
+   "Wed 12:20 Chloe Barnes texted: are you free friday night?? thinking drinks at the Crown, everyone's coming. say yes"
+  ]
+ },
+ "Ryan Bailey": {
+  "place": "Town park",
+  "doing": "walk",
+  "turns": 4,
+  "days": {},
+  "journal": [
+   "Wed 11:30 you went to Bailey house living room and kitchen: making lunch, tidying kitchen",
+   "Wed 11:38 conversation at Bailey house living room and kitchen with Tracey Bailey [ref 11:30]: Mum asked if I was making enough toasties for her too. Said yes, cheese toasties in ten minutes, and moved the pan she'd complained about.",
+   "Wed 11:45 Callum Reeve texted: Just seen this one and thought of you lol. Walk later if it stays dry? Might be a bit late though",
+   "Wed 11:46 you → Callum Reeve: haha yeah. walk's fine, just let me know when. i'll be at the park from about half twelve",
+   "Wed 12:30 you went to Town park: walk",
+   "Wed 12:55 Callum Reeve texted: On my way soon, leaving in about 20 mins. Dry so far. Meet by the pond?"
+  ]
+ }
+}

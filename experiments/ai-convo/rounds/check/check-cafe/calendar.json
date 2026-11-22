@@ -1,0 +1,38 @@
+[
+ {
+  "what": "work",
+  "who": [
+   "Anna Nowak"
+  ],
+  "place": "Café front of house",
+  "t0": -210,
+  "t1": 390,
+  "by": "sampler",
+  "at": "Wed 06:30",
+  "until": "Wed 16:30"
+ },
+ {
+  "what": "work",
+  "who": [
+   "Stephen Hargreaves"
+  ],
+  "place": "Café kitchen",
+  "t0": 30,
+  "t1": 330,
+  "by": "sampler",
+  "at": "Wed 10:30",
+  "until": "Wed 15:30"
+ },
+ {
+  "what": "work",
+  "who": [
+   "Megan Fletcher"
+  ],
+  "place": "Café front of house",
+  "t0": -180,
+  "t1": 240,
+  "by": "sampler",
+  "at": "Wed 07:00",
+  "until": "Wed 14:00"
+ }
+]

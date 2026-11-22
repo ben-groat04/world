@@ -1,0 +1,1291 @@
+{
+ "setting": "an independent café in an English town and the homes of the people who work there",
+ "context": {},
+ "background": "An independent café in an English town is owned and run by Anna Nowak, with Stephen Hargreaves as cook and Megan Fletcher and Ryan Bailey as counter assistants. The window is a Wednesday morning, when Anna, Megan and Stephen are on shift and Ryan is not. Each person goes home to a separate family household in the town.",
+ "common_knowledge": [
+  "Anna Nowak owns and manages the café and sets the rota and menu.",
+  "Stephen Hargreaves is the café cook and Megan Fletcher and Ryan Bailey work the counter.",
+  "On Wednesdays Anna works 06:30 to 16:30, Megan 07:00 to 14:00 and Stephen 10:30 to 15:30.",
+  "Ryan Bailey does not work Wednesdays; his café shifts are Monday, Tuesday and Saturday.",
+  "Rota and menu messages come from Anna to the staff.",
+  "Some regulars come in most mornings, and a local baker delivers bread early."
+ ],
+ "names": {
+  "sets": [
+   [
+    {
+     "id": "p1",
+     "name": "Claire Doherty"
+    },
+    {
+     "id": "p2",
+     "name": "Martin Doherty"
+    },
+    {
+     "id": "p3",
+     "name": "Cian Doherty"
+    },
+    {
+     "id": "p4",
+     "name": "Niamh Doherty"
+    },
+    {
+     "id": "p5",
+     "name": "Andrew Whitlock"
+    },
+    {
+     "id": "p6",
+     "name": "Karen Whitlock"
+    },
+    {
+     "id": "p7",
+     "name": "Poppy Whitlock"
+    },
+    {
+     "id": "p8",
+     "name": "Evie Whitlock"
+    },
+    {
+     "id": "p9",
+     "name": "Chloe Marsh"
+    },
+    {
+     "id": "p10",
+     "name": "Linda Marsh"
+    },
+    {
+     "id": "p11",
+     "name": "Graham Marsh"
+    },
+    {
+     "id": "p12",
+     "name": "Jack Pearce"
+    },
+    {
+     "id": "p13",
+     "name": "Sandra Pearce"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Anna Nowak"
+    },
+    {
+     "id": "p2",
+     "name": "Marek Nowak"
+    },
+    {
+     "id": "p3",
+     "name": "Jakub Nowak"
+    },
+    {
+     "id": "p4",
+     "name": "Kasia Nowak"
+    },
+    {
+     "id": "p5",
+     "name": "Stephen Hargreaves"
+    },
+    {
+     "id": "p6",
+     "name": "Julie Hargreaves"
+    },
+    {
+     "id": "p7",
+     "name": "Ruby Hargreaves"
+    },
+    {
+     "id": "p8",
+     "name": "Isla Hargreaves"
+    },
+    {
+     "id": "p9",
+     "name": "Megan Fletcher"
+    },
+    {
+     "id": "p10",
+     "name": "Susan Fletcher"
+    },
+    {
+     "id": "p11",
+     "name": "Keith Fletcher"
+    },
+    {
+     "id": "p12",
+     "name": "Ryan Bailey"
+    },
+    {
+     "id": "p13",
+     "name": "Tracey Bailey"
+    }
+   ],
+   [
+    {
+     "id": "p1",
+     "name": "Bernadette Gallagher"
+    },
+    {
+     "id": "p2",
+     "name": "Kevin Gallagher"
+    },
+    {
+     "id": "p3",
+     "name": "Finn Gallagher"
+    },
+    {
+     "id": "p4",
+     "name": "Aoife Gallagher"
+    },
+    {
+     "id": "p5",
+     "name": "Neil Thornton"
+    },
+    {
+     "id": "p6",
+     "name": "Alison Thornton"
+    },
+    {
+     "id": "p7",
+     "name": "Maisie Thornton"
+    },
+    {
+     "id": "p8",
+     "name": "Grace Thornton"
+    },
+    {
+     "id": "p9",
+     "name": "Hannah Kendall"
+    },
+    {
+     "id": "p10",
+     "name": "Christine Kendall"
+    },
+    {
+     "id": "p11",
+     "name": "Roger Kendall"
+    },
+    {
+     "id": "p12",
+     "name": "Liam Rowe"
+    },
+    {
+     "id": "p13",
+     "name": "Denise Rowe"
+    }
+   ]
+  ],
+  "picked": 1
+ },
+ "knows_at_start": {
+  "Anna Nowak": {
+   "by_name": [
+    "Stephen Hargreaves",
+    "Megan Fletcher",
+    "Ryan Bailey"
+   ],
+   "numbers": [
+    "Stephen Hargreaves",
+    "Megan Fletcher",
+    "Ryan Bailey"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Dennis Walsh",
+    "Carol Eastwood",
+    "Helen Doyle",
+    "Marek Nowak",
+    "Jakub Nowak",
+    "Kasia Nowak",
+    "Carol Eastwood (Anna's sister)",
+    "Helen Doyle (Anna's friend from the school gates)",
+    "Dennis Walsh (Anna's café supplier)"
+   ]
+  },
+  "Stephen Hargreaves": {
+   "by_name": [
+    "Anna Nowak",
+    "Ryan Bailey",
+    "Megan Fletcher"
+   ],
+   "numbers": [
+    "Anna Nowak",
+    "Ryan Bailey"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Paul Greaves",
+    "Mark Tennant",
+    "Julie Hargreaves",
+    "Ruby Hargreaves",
+    "Isla Hargreaves",
+    "Paul Greaves (Stephen's friend from university)",
+    "Mark Tennant (Stephen's neighbour)"
+   ]
+  },
+  "Megan Fletcher": {
+   "by_name": [
+    "Anna Nowak",
+    "Stephen Hargreaves",
+    "Ryan Bailey"
+   ],
+   "numbers": [
+    "Anna Nowak"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Gordon Pryce",
+    "Debbie Marsh",
+    "Chloe Barnes",
+    "Liam Fletcher",
+    "Susan Fletcher",
+    "Keith Fletcher",
+    "Chloe Barnes (Megan's best friend from school)",
+    "Debbie Marsh (Megan's older coworker)",
+    "Liam Fletcher (Megan's cousin)",
+    "Gordon Pryce (Megan's café regular)"
+   ]
+  },
+  "Ryan Bailey": {
+   "by_name": [
+    "Stephen Hargreaves",
+    "Anna Nowak",
+    "Megan Fletcher"
+   ],
+   "numbers": [
+    "Stephen Hargreaves",
+    "Anna Nowak"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Callum Reeve",
+    "Owen Bailey",
+    "Tracey Bailey",
+    "Callum Reeve (Ryan's friend from school)",
+    "Owen Bailey (Ryan's cousin)"
+   ]
+  }
+ },
+ "workplace": {
+  "Anna Nowak": "Café front of house",
+  "Stephen Hargreaves": "Café kitchen",
+  "Megan Fletcher": "Café front of house"
+ },
+ "people": [
+  {
+   "name": "Anna Nowak",
+   "attributes": {
+    "id": "p1",
+    "age": 49,
+    "sex": "F",
+    "ethnicity": "White Other (incl. Irish, Eastern European)",
+    "birthplace": "England",
+    "years_in_uk": 49,
+    "religion": "Christian",
+    "activity": "self-employed",
+    "occupation": "Other managers & proprietors (incl. cafe and shop owners)",
+    "contract": "self-employed",
+    "employer": "this café (owner)",
+    "annual_income": null,
+    "hours_per_week": 19,
+    "shifts": [
+     {
+      "day": "Wed",
+      "start": "06:30",
+      "end": "16:30",
+      "paid_hours": 9.5
+     },
+     {
+      "day": "Fri",
+      "start": "08:00",
+      "end": "18:00",
+      "paid_hours": 9.5
+     }
+    ],
+    "household": {
+     "type": "couple family with dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 1,
+     "size": 4,
+     "members": [
+      {
+       "id": "p2",
+       "age": 51,
+       "sex": "M",
+       "relation": "husband",
+       "name": "Marek Nowak"
+      },
+      {
+       "id": "p3",
+       "age": 13,
+       "sex": "M",
+       "relation": "son",
+       "name": "Jakub Nowak"
+      },
+      {
+       "id": "p4",
+       "age": 16,
+       "sex": "F",
+       "relation": "daughter",
+       "name": "Kasia Nowak"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p3",
+      "age": 13,
+      "lives": "with me",
+      "name": "Jakub Nowak"
+     },
+     {
+      "id": "p4",
+      "age": 16,
+      "lives": "with me",
+      "name": "Kasia Nowak"
+     }
+    ],
+    "health": "very good",
+    "education": "A-level or apprenticeship (level 3)",
+    "hourly_pay": null,
+    "role": "owner-manager",
+    "name": "Anna Nowak"
+   },
+   "temperament": "openness average, conscientiousness high, extraversion high, agreeableness high, emotional stability average",
+   "profile": "You own the café and work the floor on Wednesdays and Fridays, opening early on Wednesday and running a long Friday. The rest of the week you do the ordering, rota, books and school run from home, and you pop in when needed. You are organised to a fault: lists, labelled shelves, a calendar on the fridge that everyone else ignores. You like talking to the regulars and know most of their orders. You take on too much, find it hard to say no to a favour or a swap of shifts, and can fuss when others don't follow through. You are not bothered by small stresses but a bad morning rattles you for a bit. Outside work you walk the dog on the footpath by the river, bake for the family, watch whatever drama your husband has picked, and half-heartedly plan a holiday you never quite book.",
+   "speech": "Warm, chatty and quick. Medium-length sentences, friendly and direct, with lots of questions back to the other person. Tends to say yes and offer help. Gets slightly bossy when organising things, then softens it with a laugh. Remembers details people told her before.",
+   "texting": "Fairly quick replies, usually within minutes unless she is mid-service. Proper sentences, mostly sentence case, correct punctuation. A few exclamation marks and the occasional smiley emoji. Medium length, often ends with a question or a \"thanks so much\".",
+   "contacts": [
+    {
+     "relation": "husband",
+     "about": "Lives with you. Easygoing, dry humour, leaves the logistics to you and says 'yes, boss' when you list jobs."
+    },
+    {
+     "relation": "sister",
+     "about": "Older, lives a couple of hours away. Rings on Sunday evenings, gossipy and affectionate, teases you about overworking."
+    },
+    {
+     "relation": "friend from the school gates",
+     "about": "Mum of one of your son's friends. Swaps lifts and tea with you, talks fast and laughs a lot."
+    },
+    {
+     "relation": "café supplier",
+     "about": "Local baker who delivers bread early. Brisk and friendly, chats about the weather and who's buying what."
+    }
+   ]
+  },
+  {
+   "name": "Stephen Hargreaves",
+   "attributes": {
+    "id": "p5",
+    "age": 52,
+    "sex": "M",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 52,
+    "religion": "Christian",
+    "activity": "employed part-time",
+    "occupation": "Textiles, printing & other skilled trades (incl. chefs and cooks)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 9917,
+    "hours_per_week": 16,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "10:00",
+      "end": "15:30",
+      "paid_hours": 5.25
+     },
+     {
+      "day": "Wed",
+      "start": "10:30",
+      "end": "15:30",
+      "paid_hours": 5.25
+     },
+     {
+      "day": "Sat",
+      "start": "08:30",
+      "end": "14:00",
+      "paid_hours": 5.5
+     }
+    ],
+    "household": {
+     "type": "couple family with dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 2,
+     "size": 4,
+     "members": [
+      {
+       "id": "p6",
+       "age": 50,
+       "sex": "F",
+       "relation": "wife",
+       "name": "Julie Hargreaves"
+      },
+      {
+       "id": "p7",
+       "age": 7,
+       "sex": "F",
+       "relation": "daughter",
+       "name": "Ruby Hargreaves"
+      },
+      {
+       "id": "p8",
+       "age": 13,
+       "sex": "F",
+       "relation": "daughter",
+       "name": "Isla Hargreaves"
+      }
+     ]
+    },
+    "relationship_status": "married",
+    "children": [
+     {
+      "id": "p7",
+      "age": 7,
+      "lives": "with me",
+      "name": "Ruby Hargreaves"
+     },
+     {
+      "id": "p8",
+      "age": 13,
+      "lives": "with me",
+      "name": "Isla Hargreaves"
+     }
+    ],
+    "health": "very good",
+    "education": "Degree or above (level 4+)",
+    "hourly_pay": 11.92,
+    "role": "cook",
+    "name": "Stephen Hargreaves"
+   },
+   "temperament": "openness high, conscientiousness average, extraversion average, agreeableness average, emotional stability high",
+   "profile": "You cook at the café three days a week: Monday and Wednesday through the lunch rush, and Saturday mornings from early. You do soups, bakes, quiches and whatever the daily special turns out to be, and you like a tidy station and a short list of prep. The rest of the week goes on school runs, the house and your two daughters, with your wife, who you've been with for years, sharing the load. You have a degree you don't use directly, and the part-time hours suit you fine. You're curious and a bit restless in the kitchen, always wanting to try a new spice or a fermented thing, which sometimes annoys people who just want the usual menu. You're steady and rarely rattled, even when tickets stack up. You can be vague about deadlines and let small admin pile up until it nags. Outside work you grow herbs and chillies on the back step, read a lot of odd non-fiction, and potter on a secondhand bike.",
+   "speech": "Calm, unhurried, plain spoken. Medium-length sentences, often wandering into a tangent about food or an idea before coming back. Fairly direct but mild, rarely sharp. Asks curious questions back. Dry humour now and then.",
+   "texting": "Short to medium messages, mostly lowercase with light punctuation, no emoji. Replies within an hour or so when not at work, slower mid-shift. Occasionally forgets to answer a practical question until reminded.",
+   "contacts": [
+    {
+     "relation": "wife",
+     "about": "Lives with you, practical and warm, teases you about your kitchen experiments, texts in quick logistics."
+    },
+    {
+     "relation": "café owner",
+     "about": "Your boss, friendly and busy, talks fast, sends rota and menu messages."
+    },
+    {
+     "relation": "friend from university",
+     "about": "Old friend in another city, swaps book recommendations and long rambling messages every few weeks."
+    },
+    {
+     "relation": "neighbour",
+     "about": "Parent from down the road, shares school pickup favours, chatty and easygoing."
+    }
+   ]
+  },
+  {
+   "name": "Megan Fletcher",
+   "attributes": {
+    "id": "p9",
+    "age": 22,
+    "sex": "F",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 22,
+    "religion": "Christian",
+    "activity": "employed full-time",
+    "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 22903,
+    "hours_per_week": 38.5,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "08:30",
+      "end": "15:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Tue",
+      "start": "08:30",
+      "end": "15:30",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Wed",
+      "start": "07:00",
+      "end": "14:00",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Thu",
+      "start": "07:00",
+      "end": "14:00",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Fri",
+      "start": "09:00",
+      "end": "16:00",
+      "paid_hours": 6.5
+     },
+     {
+      "day": "Sat",
+      "start": "08:30",
+      "end": "14:30",
+      "paid_hours": 6
+     }
+    ],
+    "household": {
+     "type": "couple family with non-dependent children",
+     "tenure": "owned outright",
+     "bedrooms": 3,
+     "occupancy_rating": 1,
+     "size": 3,
+     "members": [
+      {
+       "id": "p10",
+       "age": 65,
+       "sex": "F",
+       "relation": "mother",
+       "name": "Susan Fletcher"
+      },
+      {
+       "id": "p11",
+       "age": 67,
+       "sex": "M",
+       "relation": "father",
+       "name": "Keith Fletcher"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "good",
+    "education": "No qualifications",
+    "hourly_pay": 11.44,
+    "role": "counter assistant",
+    "name": "Megan Fletcher"
+   },
+   "temperament": "openness average, conscientiousness low, extraversion high, agreeableness average, emotional stability average",
+   "profile": "You are 22 and work as a counter assistant at the café, six days a week, mostly early starts. You live with your mum and dad in their paid-off three-bed house, in the smallest bedroom, and you have no real plans to move out yet. You left school without qualifications and don't dwell on it. You like the job because you get to talk to people all day, and you know the regulars' orders by heart. You're chatty and warm, and you can be late, forget things like the milk delivery note or your own lunch, and leave jobs half done when someone interesting walks in. Your mood goes up and down a bit with the weather and how the morning rush went. You like going out with mates on Saturday nights even though you have a shift the next morning. You also like football on the telly, charity-shop jackets, and getting through a series with your mum in the evenings.",
+   "speech": "Friendly, quick and talkative. You use short to medium sentences, say what you think straight away, and tend to fill silences. You joke easily and tease people gently. You ramble a bit when excited and sometimes lose the end of a story. You're plain-spoken and casual, with no fancy words.",
+   "texting": "Lowercase, loose punctuation, quick short messages, sometimes several in a row. Uses emoji now and then, mostly laughing faces. Replies fast when on a break or at home, but can forget to answer for hours if busy, and sometimes replies late with an apology.",
+   "contacts": [
+    {
+     "relation": "best friend from school",
+     "about": "Same age, works in a shop in town, loud and funny, organises nights out, texts constantly."
+    },
+    {
+     "relation": "older coworker",
+     "about": "Mid-forties, has worked at the café for years, patient and dry, nudges you to be on time."
+    },
+    {
+     "relation": "cousin",
+     "about": "A few years older, lives nearby, easygoing, shares football banter and the odd lift."
+    },
+    {
+     "relation": "café regular",
+     "about": "Retired man who comes in most mornings, chats about the news and the town, kindly and a bit nosy."
+    }
+   ]
+  },
+  {
+   "name": "Ryan Bailey",
+   "attributes": {
+    "id": "p12",
+    "age": 23,
+    "sex": "M",
+    "ethnicity": "White British",
+    "birthplace": "England",
+    "years_in_uk": 23,
+    "religion": "Christian",
+    "activity": "student",
+    "occupation": "Elementary administration & service (cleaners, kitchen assistants, servers, security guards, etc.)",
+    "contract": "employee",
+    "employer": "this café",
+    "annual_income": 12195,
+    "hours_per_week": 20.5,
+    "shifts": [
+     {
+      "day": "Mon",
+      "start": "07:30",
+      "end": "14:30",
+      "paid_hours": 6.75
+     },
+     {
+      "day": "Tue",
+      "start": "07:00",
+      "end": "14:30",
+      "paid_hours": 6.75
+     },
+     {
+      "day": "Sat",
+      "start": "08:30",
+      "end": "16:00",
+      "paid_hours": 7
+     }
+    ],
+    "household": {
+     "type": "lone-parent family with non-dependent children",
+     "tenure": "owned with mortgage",
+     "bedrooms": 4,
+     "occupancy_rating": 2,
+     "size": 2,
+     "members": [
+      {
+       "id": "p13",
+       "age": 58,
+       "sex": "F",
+       "relation": "mother",
+       "name": "Tracey Bailey"
+      }
+     ]
+    },
+    "relationship_status": "single",
+    "children": [],
+    "health": "good",
+    "education": "No qualifications",
+    "hourly_pay": 11.44,
+    "role": "counter assistant",
+    "name": "Ryan Bailey"
+   },
+   "temperament": "openness average, conscientiousness average, extraversion average, agreeableness average, emotional stability average",
+   "profile": "You work the counter at the café three days a week: early Monday and Tuesday, then a long Saturday. You're a student, though you don't have any qualifications yet, and you fit your studying around shifts. You live with your mum in her four-bedroom house, so there's plenty of room and you get on fine, though you bicker about the kitchen and who's turn it is to do the bins. You're fairly even-tempered. You get a bit flustered when the queue backs up and can be short with people for a minute, then feel bad about it. You like being useful and will cover a favour, but you don't enjoy being pushed into extra shifts. Outside work you watch a lot of baking and true-crime videos, go for walks with a friend, and are slowly saving for a driving test.",
+   "speech": "Plain, friendly, mid-length sentences. Fairly direct but softens things with a bit of hedging when unsure. Chatty with regulars, quieter with new people. Occasionally trails off when tired from early starts.",
+   "texting": "Short messages, mostly lowercase, light punctuation, an occasional emoji. Replies within an hour or so unless on shift, then it can be hours.",
+   "contacts": [
+    {
+     "relation": "friend from school",
+     "about": "Lives nearby, texts memes and plans walks and cheap dinners; easygoing and a bit late to everything."
+    },
+    {
+     "relation": "coworker at the café",
+     "about": "Older, works the kitchen, dry sense of humour, talks you through busy rushes."
+    },
+    {
+     "relation": "cousin",
+     "about": "Similar age, studies away, calls now and then to moan about coursework and ask for advice."
+    }
+   ]
+  }
+ ],
+ "places": [
+  {
+   "name": "Café front of house",
+   "kind": "shared",
+   "building": "Café",
+   "access": [
+    "Anna Nowak",
+    "Stephen Hargreaves",
+    "Megan Fletcher",
+    "Ryan Bailey"
+   ]
+  },
+  {
+   "name": "Café kitchen",
+   "kind": "shared",
+   "building": "Café",
+   "access": [
+    "Anna Nowak",
+    "Stephen Hargreaves",
+    "Megan Fletcher",
+    "Ryan Bailey"
+   ]
+  },
+  {
+   "name": "Nowak house living room and kitchen",
+   "kind": "shared",
+   "building": "Nowak house",
+   "access": [
+    "Anna Nowak",
+    "Marek Nowak",
+    "Jakub Nowak",
+    "Kasia Nowak"
+   ]
+  },
+  {
+   "name": "Anna and Marek's bedroom",
+   "kind": "private",
+   "building": "Nowak house",
+   "access": [
+    "Anna Nowak",
+    "Marek Nowak"
+   ]
+  },
+  {
+   "name": "Jakub's bedroom",
+   "kind": "private",
+   "building": "Nowak house",
+   "access": [
+    "Jakub Nowak"
+   ]
+  },
+  {
+   "name": "Kasia's bedroom",
+   "kind": "private",
+   "building": "Nowak house",
+   "access": [
+    "Kasia Nowak"
+   ]
+  },
+  {
+   "name": "Hargreaves house living room and kitchen",
+   "kind": "shared",
+   "building": "Hargreaves house",
+   "access": [
+    "Stephen Hargreaves",
+    "Julie Hargreaves",
+    "Ruby Hargreaves",
+    "Isla Hargreaves"
+   ]
+  },
+  {
+   "name": "Stephen and Julie's bedroom",
+   "kind": "private",
+   "building": "Hargreaves house",
+   "access": [
+    "Stephen Hargreaves",
+    "Julie Hargreaves"
+   ]
+  },
+  {
+   "name": "Ruby's bedroom",
+   "kind": "private",
+   "building": "Hargreaves house",
+   "access": [
+    "Ruby Hargreaves"
+   ]
+  },
+  {
+   "name": "Isla's bedroom",
+   "kind": "private",
+   "building": "Hargreaves house",
+   "access": [
+    "Isla Hargreaves"
+   ]
+  },
+  {
+   "name": "Fletcher house living room and kitchen",
+   "kind": "shared",
+   "building": "Fletcher house",
+   "access": [
+    "Megan Fletcher",
+    "Susan Fletcher",
+    "Keith Fletcher"
+   ]
+  },
+  {
+   "name": "Megan's bedroom",
+   "kind": "private",
+   "building": "Fletcher house",
+   "access": [
+    "Megan Fletcher"
+   ]
+  },
+  {
+   "name": "Susan and Keith's bedroom",
+   "kind": "private",
+   "building": "Fletcher house",
+   "access": [
+    "Susan Fletcher",
+    "Keith Fletcher"
+   ]
+  },
+  {
+   "name": "Bailey house living room and kitchen",
+   "kind": "shared",
+   "building": "Bailey house",
+   "access": [
+    "Ryan Bailey",
+    "Tracey Bailey"
+   ]
+  },
+  {
+   "name": "Ryan's bedroom",
+   "kind": "private",
+   "building": "Bailey house",
+   "access": [
+    "Ryan Bailey"
+   ]
+  },
+  {
+   "name": "Tracey's bedroom",
+   "kind": "private",
+   "building": "Bailey house",
+   "access": [
+    "Tracey Bailey"
+   ]
+  },
+  {
+   "name": "Town high street",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Town park",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "Bus stop",
+   "kind": "public",
+   "building": "",
+   "access": []
+  },
+  {
+   "name": "elsewhere",
+   "kind": "public",
+   "building": "",
+   "access": []
+  }
+ ],
+ "contacts": [
+  {
+   "name": "Dennis Walsh",
+   "role": "Local baker and café supplier",
+   "about": "Brisk and friendly; chats about the weather and who's buying what.",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Gordon Pryce",
+   "role": "Retired café regular",
+   "about": "Kindly and a bit nosy; chats about the news and the town.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "Café front of house",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Debbie Marsh",
+   "role": "Longtime café coworker",
+   "about": "Mid-forties, patient and dry; nudges Megan to be on time.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "Café front of house",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Carol Eastwood",
+   "role": "Anna's older sister",
+   "about": "Lives a couple of hours away; gossipy and affectionate, rings Sunday evenings and teases about overworking.",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Helen Doyle",
+   "role": "Friend from the school gates",
+   "about": "Mum of a friend of Jakub; swaps lifts and tea, talks fast and laughs a lot.",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Paul Greaves",
+   "role": "Stephen's friend from university",
+   "about": "Lives in another city; swaps book recommendations and long rambling messages every few weeks.",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Mark Tennant",
+   "role": "Stephen's neighbour",
+   "about": "Parent from down the road; shares school pickup favours, chatty and easygoing.",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Chloe Barnes",
+   "role": "Megan's best friend from school",
+   "about": "Works in a shop in town; loud and funny, organises nights out, texts constantly.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "Town high street",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Liam Fletcher",
+   "role": "Megan's cousin",
+   "about": "A few years older, lives nearby; easygoing, shares football banter and the odd lift.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Callum Reeve",
+   "role": "Ryan's friend from school",
+   "about": "Lives nearby; texts memes, plans walks and cheap dinners, easygoing and a bit late to everything.",
+   "linked": [
+    "Ryan Bailey"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Owen Bailey",
+   "role": "Ryan's cousin",
+   "about": "Similar age, studies away; calls now and then to moan about coursework and ask for advice.",
+   "linked": [
+    "Ryan Bailey"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Marek Nowak",
+   "role": "Anna Nowak's husband",
+   "about": "51 husband, lives with Anna Nowak",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "Nowak house",
+   "at": null
+  },
+  {
+   "name": "Jakub Nowak",
+   "role": "Anna Nowak's son",
+   "about": "13 son, lives with Anna Nowak",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "Nowak house",
+   "at": null
+  },
+  {
+   "name": "Kasia Nowak",
+   "role": "Anna Nowak's daughter",
+   "about": "16 daughter, lives with Anna Nowak",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "Nowak house",
+   "at": null
+  },
+  {
+   "name": "Carol Eastwood (Anna's sister)",
+   "role": "Anna Nowak's sister",
+   "about": "Older, lives a couple of hours away. Rings on Sunday evenings, gossipy and affectionate, teases you about overworking.",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Helen Doyle (Anna's friend from the school gates)",
+   "role": "Anna Nowak's friend from the school gates",
+   "about": "Mum of one of your son's friends. Swaps lifts and tea with you, talks fast and laughs a lot.",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Dennis Walsh (Anna's café supplier)",
+   "role": "Anna Nowak's café supplier",
+   "about": "Local baker who delivers bread early. Brisk and friendly, chats about the weather and who's buying what.",
+   "linked": [
+    "Anna Nowak"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Julie Hargreaves",
+   "role": "Stephen Hargreaves's wife",
+   "about": "50 wife, lives with Stephen Hargreaves",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "Hargreaves house",
+   "at": {
+    "place": "Stephen and Julie's bedroom",
+    "until": 30,
+    "doing": "here"
+   }
+  },
+  {
+   "name": "Ruby Hargreaves",
+   "role": "Stephen Hargreaves's daughter",
+   "about": "7 daughter, lives with Stephen Hargreaves",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "Hargreaves house",
+   "at": null
+  },
+  {
+   "name": "Isla Hargreaves",
+   "role": "Stephen Hargreaves's daughter",
+   "about": "13 daughter, lives with Stephen Hargreaves",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "Hargreaves house",
+   "at": null
+  },
+  {
+   "name": "Paul Greaves (Stephen's friend from university)",
+   "role": "Stephen Hargreaves's friend from university",
+   "about": "Old friend in another city, swaps book recommendations and long rambling messages every few weeks.",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Mark Tennant (Stephen's neighbour)",
+   "role": "Stephen Hargreaves's neighbour",
+   "about": "Parent from down the road, shares school pickup favours, chatty and easygoing.",
+   "linked": [
+    "Stephen Hargreaves"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Susan Fletcher",
+   "role": "Megan Fletcher's mother",
+   "about": "65 mother, lives with Megan Fletcher",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "Fletcher house",
+   "at": null
+  },
+  {
+   "name": "Keith Fletcher",
+   "role": "Megan Fletcher's father",
+   "about": "67 father, lives with Megan Fletcher",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "Fletcher house",
+   "at": null
+  },
+  {
+   "name": "Chloe Barnes (Megan's best friend from school)",
+   "role": "Megan Fletcher's best friend from school",
+   "about": "Same age, works in a shop in town, loud and funny, organises nights out, texts constantly.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Debbie Marsh (Megan's older coworker)",
+   "role": "Megan Fletcher's older coworker",
+   "about": "Mid-forties, has worked at the café for years, patient and dry, nudges you to be on time.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Liam Fletcher (Megan's cousin)",
+   "role": "Megan Fletcher's cousin",
+   "about": "A few years older, lives nearby, easygoing, shares football banter and the odd lift.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Gordon Pryce (Megan's café regular)",
+   "role": "Megan Fletcher's café regular",
+   "about": "Retired man who comes in most mornings, chats about the news and the town, kindly and a bit nosy.",
+   "linked": [
+    "Megan Fletcher"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Tracey Bailey",
+   "role": "Ryan Bailey's mother",
+   "about": "58 mother, lives with Ryan Bailey",
+   "linked": [
+    "Ryan Bailey"
+   ],
+   "place": "",
+   "home": "Bailey house",
+   "at": {
+    "place": "Bailey house living room and kitchen",
+    "until": 120,
+    "doing": "here"
+   }
+  },
+  {
+   "name": "Callum Reeve (Ryan's friend from school)",
+   "role": "Ryan Bailey's friend from school",
+   "about": "Lives nearby, texts memes and plans walks and cheap dinners; easygoing and a bit late to everything.",
+   "linked": [
+    "Ryan Bailey"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  },
+  {
+   "name": "Owen Bailey (Ryan's cousin)",
+   "role": "Ryan Bailey's cousin",
+   "about": "Similar age, studies away, calls now and then to moan about coursework and ask for advice.",
+   "linked": [
+    "Ryan Bailey"
+   ],
+   "place": "",
+   "home": "",
+   "at": null
+  }
+ ],
+ "dropped": [],
+ "events_given": [],
+ "knows_at_end": {
+  "Anna Nowak": {
+   "by_name": [
+    "Stephen Hargreaves",
+    "Megan Fletcher",
+    "Ryan Bailey"
+   ],
+   "numbers": [
+    "Stephen Hargreaves",
+    "Megan Fletcher",
+    "Ryan Bailey"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Dennis Walsh",
+    "Carol Eastwood",
+    "Helen Doyle",
+    "Marek Nowak",
+    "Jakub Nowak",
+    "Kasia Nowak",
+    "Carol Eastwood (Anna's sister)",
+    "Helen Doyle (Anna's friend from the school gates)",
+    "Dennis Walsh (Anna's café supplier)"
+   ]
+  },
+  "Stephen Hargreaves": {
+   "by_name": [
+    "Anna Nowak",
+    "Ryan Bailey",
+    "Megan Fletcher"
+   ],
+   "numbers": [
+    "Anna Nowak",
+    "Ryan Bailey"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Paul Greaves",
+    "Mark Tennant",
+    "Julie Hargreaves",
+    "Ruby Hargreaves",
+    "Isla Hargreaves",
+    "Paul Greaves (Stephen's friend from university)",
+    "Mark Tennant (Stephen's neighbour)"
+   ]
+  },
+  "Megan Fletcher": {
+   "by_name": [
+    "Anna Nowak",
+    "Stephen Hargreaves",
+    "Ryan Bailey"
+   ],
+   "numbers": [
+    "Anna Nowak"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Gordon Pryce",
+    "Debbie Marsh",
+    "Chloe Barnes",
+    "Liam Fletcher",
+    "Susan Fletcher",
+    "Keith Fletcher",
+    "Chloe Barnes (Megan's best friend from school)",
+    "Debbie Marsh (Megan's older coworker)",
+    "Liam Fletcher (Megan's cousin)",
+    "Gordon Pryce (Megan's café regular)"
+   ]
+  },
+  "Ryan Bailey": {
+   "by_name": [
+    "Stephen Hargreaves",
+    "Anna Nowak",
+    "Megan Fletcher"
+   ],
+   "numbers": [
+    "Stephen Hargreaves",
+    "Anna Nowak"
+   ],
+   "by_sight": [],
+   "contacts": [
+    "Callum Reeve",
+    "Owen Bailey",
+    "Tracey Bailey",
+    "Callum Reeve (Ryan's friend from school)",
+    "Owen Bailey (Ryan's cousin)"
+   ]
+  }
+ }
+}

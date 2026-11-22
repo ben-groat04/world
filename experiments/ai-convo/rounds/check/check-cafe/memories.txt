@@ -1,0 +1,39 @@
+## Anna Nowak
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @Café front of house: work
+   plan: until Wed 10:30: Working the floor, serving regulars, wiping tables @Café front of house / until Wed 13:00: Lunch prep and service with Megan and Stephen @Café front of house / until Wed 16:30: Afternoon service, cash up, tidy and close @Café front of house
+Wed 10:30 [next in your plan: Lunch prep and service with Megan and Stephen @Café front of house] @Café front of house: Lunch prep and service with Megan and Stephen (kept plan)
+   plan: until Wed 13:00: Lunch prep and service with Megan and Stephen @Café front of house / until Wed 16:30: Afternoon service, cash up, tidy and close @Café front of house
+
+## Stephen Hargreaves
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @Stephen and Julie's bedroom: 
+   plan: until Wed 10:15: getting dressed, gathering bag @Stephen and Julie's bedroom / until Wed 10:30: cycling to the café @Town high street / until Wed 15:30: lunch prep and service, soup and bakes @Café kitchen / until Wed 16:00: cycling home @Town high street
+Wed 10:03 [after the conversation] @Stephen and Julie's bedroom: getting dressed, gathering bag (kept plan)
+   remembers: Julie couldn't find her keys. I hadn't seen them and suggested the kitchen counter, where she had them doing Ruby's book bag. She went to look.
+   plan: until Wed 10:15: getting dressed, gathering bag @Stephen and Julie's bedroom / until Wed 10:30: cycling to the café @Town high street / until Wed 15:30: lunch prep and service, soup and bakes @Café kitchen / until Wed 16:00: cycling home @Town high street
+Wed 10:15   -> Town high street (cycling to the café)
+Wed 10:15 [next in your plan: cycling to the café @Town high street] @Town high street: cycling to the café (kept plan)
+   plan: until Wed 10:30: cycling to the café @Town high street / until Wed 15:30: lunch prep and service, soup and bakes @Café kitchen / until Wed 16:00: cycling home @Town high street
+Wed 10:30   -> Café kitchen (lunch prep and service, soup and bakes)
+Wed 10:30 [next in your plan: lunch prep and service, soup and bakes @Café kitchen] @Café kitchen: lunch prep and service, soup and bakes (kept plan)
+   plan: until Wed 15:30: lunch prep and service, soup and bakes @Café kitchen / until Wed 16:00: cycling home @Town high street
+
+## Megan Fletcher
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @Café front of house: work
+   plan: until Wed 11:30: serving at the counter, chatting to regulars @Café front of house / until Wed 12:00: lunch rush, then quick break @Café front of house / until Wed 14:00: serving, wiping tables, tidying up @Café front of house / until Wed 15:00: home, lunch and tea with mum @Fletcher house living room and kitchen
+Wed 11:30 [next in your plan: lunch rush, then quick break @Café front of house] @Café front of house: lunch rush, then quick break (kept plan)
+   plan: until Wed 12:00: lunch rush, then quick break @Café front of house / until Wed 14:00: serving, wiping tables, tidying up @Café front of house / until Wed 15:00: home, lunch and tea with mum @Fletcher house living room and kitchen
+Wed 12:00 [next in your plan: serving, wiping tables, tidying up @Café front of house] @Café front of house: serving, wiping tables, tidying up (kept plan)
+   plan: until Wed 14:00: serving, wiping tables, tidying up @Café front of house / until Wed 15:00: home, lunch and tea with mum @Fletcher house living room and kitchen
+
+## Ryan Bailey
+Wed 10:00 [the simulation starts: decide where you are and what you are doing] @Ryan's bedroom: 
+   plan: until Wed 11:30: studying, then a baking video @Ryan's bedroom / until Wed 12:30: making lunch, tidying kitchen @Bailey house living room and kitchen / until Wed 14:30: walk @Town park
+Wed 11:30   -> Bailey house living room and kitchen (making lunch, tidying kitchen)
+Wed 11:38 [next in your plan: making lunch, tidying kitchen @Bailey house living room and kitchen; after the conversation] @Bailey house living room and kitchen: making lunch, tidying kitchen (kept plan)
+   remembers: Mum asked if I was making enough toasties for her too. Said yes, cheese toasties in ten minutes, and moved the pan she'd complained about.
+   plan: until Wed 12:30: making lunch, tidying kitchen @Bailey house living room and kitchen / until Wed 14:30: walk @Town park
+Wed 11:46 [looked at your phone (Callum Reeve texted: Just seen this one and though)] @Bailey house living room and kitchen: making lunch, tidying kitchen (kept plan)
+   plan: until Wed 12:30: making lunch, tidying kitchen @Bailey house living room and kitchen / until Wed 14:30: walk @Town park
+Wed 12:30   -> Town park (walk)
+Wed 12:30 [next in your plan: walk @Town park] @Town park: walk (kept plan)
+   plan: until Wed 14:30: walk @Town park

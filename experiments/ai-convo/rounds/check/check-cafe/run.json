@@ -1,0 +1,47 @@
+{
+ "label": "check-cafe",
+ "seed": 1101,
+ "args": {
+  "label": "check-cafe",
+  "setting": "an independent café in an English town and the homes of the people who work there",
+  "dateNote": "Wednesday 25 November 2026",
+  "startDow": 2,
+  "startHour": 10,
+  "hours": 3,
+  "seed": 1101,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Wed 10:00",
+  "to": "Wed 13:00",
+  "hours": 3
+ },
+ "totalTokens": 148573,
+ "agentCount": 31,
+ "stats": {
+  "turns": {
+   "Anna Nowak": 2,
+   "Stephen Hargreaves": 4,
+   "Megan Fletcher": 3,
+   "Ryan Bailey": 4
+  },
+  "calls": 31,
+  "simCalls": 25,
+  "maxCalls": 135,
+  "byFor": {
+   "generator": 6,
+   "Anna Nowak": 2,
+   "Stephen Hargreaves": 5,
+   "Megan Fletcher": 3,
+   "Ryan Bailey": 6,
+   "world": 6,
+   "Julie Hargreaves": 1,
+   "Tracey Bailey": 2
+  },
+  "sceneLines": 6,
+  "promptChars": 70533,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

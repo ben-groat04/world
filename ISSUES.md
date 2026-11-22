@@ -124,3 +124,7 @@ REMAINING / FOR OTHERS:
 - Young men under-victimised (in reality 16-24 men have the highest violence victimisation) — mechanism check.
 - Violence 31 vs 45/1000; charge/caution 19% vs ~6-12%; sexual offences absent; prisoners stay in routine layer.
 - UI must hide crime.domestic (private/sensitive) and surface crime/civic feeds, campaigns, planning, elections.
+## Business review (orchestrator)
+- Held-out misses: new-business 1y survival 64-76% vs ONS ~92% (too many early failures — check startup capital,
+  rent-free/fit-out, founder persistence); void tail >3y almost absent (UK ~1/3 of vacant units); rent/revenue 3-6% vs
+  10-15%. 5y survival & vacancy were tuning targets (not evidence). Incumbent margins fitted at day 1 (input).

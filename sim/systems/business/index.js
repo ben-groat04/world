@@ -146,7 +146,7 @@ export function createBusiness() {
       const cap = Math.max(1, v_cap(B)), crowd = Math.max(0, B.ft.ema / Math.max(1, cap * 60) - 1);
       B.rating = clamp(3.55 + 0.9 * Math.tanh(B.q * 1.4) + 0.5 * (B.fillR - 0.9) - 0.25 * Math.max(0, B.price - 1.05) * 4 * (f.pl === 1 ? 1 : 0.4) - 0.3 * Math.min(1, crowd) + rng.gauss(0, 0.12), 1, 5);
       // --- fixed costs first (they also size the catchment of day-1 incumbents, below)
-      const rent = B.rent, rv = B.rent * 12 * 0.95, relief = B.own.kind === 'charity' ? 0.8 : rv <= SBRR_FULL ? 1 : rv < SBRR_TAPER ? 1 - (rv - SBRR_FULL) / (SBRR_TAPER - SBRR_FULL) : 0;
+      const rent = B.rentFree && w.tick < B.rentFree ? 0 : B.rent, rv = B.rent * 12 * 0.95, relief = B.own.kind === 'charity' ? 0.8 : rv <= SBRR_FULL ? 1 : rv < SBRR_TAPER ? 1 - (rv - SBRR_FULL) / (SBRR_TAPER - SBRR_FULL) : 0;
       const rates = rv * s.ratesMult * (1 - Math.min(1, relief * (s.ratesRelief || 1) + (s.ratesCut || 0))) / 12;
       const energy = B.m2 * ENERGY_M2 / 12 * (m.energy || 1) * SEASON_ENERGY[mo] * (B.tmpl === 'launderette' ? 3 : 1) * (B.trim ? 0.93 : 1), fixed = rent + rates + energy + OVERHEAD_FIX + extWage + A.wage;
       // --- revenue: residents (via money's routing, share set by footfall/reputation/price) + off-map catchment customers (passers-by, workers, the wider area the 550-person sample stands in for)
@@ -335,7 +335,7 @@ export function createBusiness() {
     const wasVac = B.since != null ? Math.round((W.tick - B.since) / MONTH) : null; if (wasVac != null) { S().voids.push({ bid, months: wasVac, t: W.tick, init: !!B.initVoid }); if (S().voids.length > 300) S().voids.shift(); }
     owner.brand = chain || charity ? nm : undefined;
     const nb = { bid, vid: B.vid, m2: B.m2, zone: B.zone, id: S().nextId++, status: 'trading', fid, tmpl: f.tmpl, variant: f.variant || null, name: nm, own: owner, born: W.tick, price: 1, q: rng.gauss(-0.03, 0.22), rating: 3.5, ft: { vh: 0, ema: null }, loan: null, trim: null, scale: 1, loss: 0, ok: 0, last: null, regs: 0, stage: 0, fillR: 1, rev6: [], reserve: 0, q0: 0,
-      k: catchmentFor(f), rent: Math.round(opts.rent || Math.max(B.ask || 0, 0) * (chain ? 1.05 : 1)), reviewAt: W.tick + REVIEW_MONTHS * MONTH, leaseEnd: W.tick + LEASE_MONTHS * MONTH, prev: B.prev || null, opened: W.tick };
+      k: catchmentFor(f), rent: Math.round(opts.rent || Math.max(B.ask || 0, 0) * (chain ? 1.05 : 1)), reviewAt: W.tick + REVIEW_MONTHS * MONTH, leaseEnd: W.tick + LEASE_MONTHS * MONTH, prev: B.prev || null, opened: W.tick, rentFree: W.tick + (chain ? 6 : 4) * MONTH }; // new 10-year leases typically carry a 3-6 month rent-free fit-out period
     if (!nb.rent) nb.rent = marketRent(B);
     // capital: resident owner's own money + start-up loan; off-map owners bring a lognormal pot; chains are funded centrally
     const cost = entryCost(B, fid, f) * (opts.cost == null ? 1 : opts.cost); const p = owner.pid != null ? W.people.get(owner.pid) : null; let loan = 0, own = 0;

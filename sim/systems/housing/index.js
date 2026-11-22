@@ -7,6 +7,7 @@
 //          housing.void housing.let housing.built housing.overcrowded housing.right_to_buy housing.landlord_sale housing.bought housing.unit_claimed
 //   Consumes goals' goal.effect (find_flat/new_tenancy -> move, move_out_of_parents, buy_home, get_repair_done, downsize...) and project.effect (unit_claimed).
 import { clamp, registerEvents, livePeople, bedNeed, isSharers } from '../money/util.js';
+import { dayOfMonth, slotDay } from '../../util.js';
 import { createArrivalHousehold, createSharer, savingsFor } from './arrivals.js';
 
 const EVENTS = [
@@ -153,11 +154,12 @@ export function createHousing() {
   }
   // ---------------------------------------------------------------- monthly
   function monthly(w) {
-    const S = H(w), rng = w.rngFor('housing.month'), tick = w.tick, mc = macro(), mo = w.time.month, SEG = w._segById || (w._segById = Object.fromEntries(w.pack.meta.segments.map((s) => [s.id, s])));
-    countCafes(w);
+    const dom = dayOfMonth(w), S = H(w), rng = w.rngFor('housing.month', w.tick), tick = w.tick, mc = macro(), mo = w.time.month, SEG = w._segById || (w._segById = Object.fromEntries(w.pack.meta.segments.map((s) => [s.id, s])));
+    if (dom === 1) countCafes(w);
     const money = w.sys.money;
     // --- units
     for (const u of S.list) {
+      if (!slotDay(u.id, dom)) continue;
       // value tracking
       if (u.hh >= 0) {
         const hh = w.lf.households[u.hh];
@@ -193,7 +195,7 @@ export function createHousing() {
     // --- households: arrears/eviction, overcrowding, moving decisions, leaving home
     const hhs = w.lf.households;
     for (let i = 0; i < hhs.length; i++) {
-      const hh = hhs[i]; if (hh.gone) continue;
+      const hh = hhs[i]; if (hh.gone || !slotDay(hh.id ?? i, dom)) continue;
       const u = U(hh.unit), ps = hhLive(hh); if (!ps.length) { hh.gone = true; if (u) { u.hh = -1; vacate(u, 'empty'); } continue; }
       if (!u) continue;
       const seg = SEG[hh.seg], adults = ps.filter((p) => w.ageOf(p) >= 16);
@@ -221,15 +223,15 @@ export function createHousing() {
       }
     }
     // --- market clearing
-    clearMarket(rng);
+    clearMarket(rng, dom);
     // --- pending flatmate rooms
     for (let i = S.pendingRooms.length - 1; i >= 0; i--) {
-      const r = S.pendingRooms[i], hh = hhs[r.hh]; if (!hh || hh.gone) { S.pendingRooms.splice(i, 1); continue; }
+      const r = S.pendingRooms[i], hh = hhs[r.hh]; if (!hh || hh.gone) { S.pendingRooms.splice(i, 1); continue; } if (!slotDay(r.hh, dom)) continue;
       if (rng.chance(hh.seg === 'students' ? studentRoomFill(mo) : 0.55)) { const p = createSharer(w, rng, hh, r.age); S.pendingRooms.splice(i, 1); finishSharer(hh, p, rng); }
     }
     // --- waiting list upkeep
     S.wait = S.wait.filter((x) => { const hh = hhs[x.hh]; return hh && !hh.gone && (hh.search || x.points > 0 || isSocial(hh.tenure) === false); });
-    for (const x of S.wait) x.points += 0.25;
+    if (dom === 1) for (const x of S.wait) x.points += 0.25;
     // --- supply: voids -> demand vs vacancies stats
   }
   function rentRise(u, hh, pct, cause, social) {
@@ -361,20 +363,20 @@ export function createHousing() {
     const s = hh.search, S = H(W);
     return S.list.filter((u) => u.hh < 0 && u.listed && u.id !== hh.unit && (!u.studentLet || hh.seg === 'students') && (s.buy ? (u.tenure === 'mortgage' || u.tenure === 'owned_outright') : u.tenure === 'private_rent') && u.bedrooms >= s.beds && u.bedrooms <= s.beds + 1 && (s.buy ? valueOf(W, u) * 0.9 <= Math.max(1, (hh.income ? hh.income.gross : 30000)) * 4.5 : u.rent <= s.maxRent * 1.05));
   }
-  function clearMarket(rng) {
+  function clearMarket(rng, dom) {
     const w = W, S = H(w), tick = w.tick, hhs = w.lf.households;
     const taken = new Set();
     // 1. social waiting list gets social vacancies
     S.wait.sort((a, b) => b.points - a.points || a.hh - b.hh);
     for (const u of S.list) {
-      if (u.hh >= 0 || !u.listed || !isSocial(u.tenure)) continue;
+      if (u.hh >= 0 || !u.listed || !isSocial(u.tenure) || !slotDay(u.id, dom)) continue;
       const x = S.wait.find((e) => { const hh = hhs[e.hh]; return hh && !hh.gone && hh.unit !== u.id && U(hh.unit) && bedNeed(w, hhLive(hh)) <= u.bedrooms && bedNeed(w, hhLive(hh)) >= u.bedrooms - 1 && (hh.search || hh.forced || hh.crowded || !isSocial(hh.tenure)); });
       if (x) { const hh = hhs[x.hh]; S.wait.splice(S.wait.indexOf(x), 1); taken.add(u.id); moveLocal(hh, u, 'social_allocation', hh.forced ? hh.forced.eid : 0); continue; }
       if (rng.chance(0.75)) { taken.add(u.id); arrive(u, rng.chance(0.55) ? 'benefit_dependent' : null); }
     }
     // 2. local searchers
     for (const hh of hhs) {
-      if (hh.gone || !hh.search) continue; const s = hh.search;
+      if (hh.gone || !hh.search || !slotDay(hh.id, dom)) continue; const s = hh.search;
       const c = candidates(hh).filter((u) => !taken.has(u.id));
       c.sort((a, b) => (s.buy ? valueOf(w, a) - valueOf(w, b) : a.rent - b.rent) || a.id - b.id);
       let done = false;
@@ -391,6 +393,7 @@ export function createHousing() {
     // 3. arrivals fill remaining private/owner vacancies
     const demand = clamp(0.5 + 0.1 * (macro().rentGrowth - 3) - 0.3 * macro().recession, 0.2, 0.9);
     for (const u of S.list) {
+      if (!slotDay(u.id, dom)) continue;
       if (u.hh >= 0 || !u.listed || isSocial(u.tenure) || taken.has(u.id) || u.tenure === 'shared_ownership') { if (u.hh < 0 && u.listed && u.tenure === 'shared_ownership' && rng.chance(0.3)) arrive(u, null); continue; }
       let p = u.tenure === 'private_rent' ? Math.min(0.95, demand + 0.2) : demand * 0.85;
       if (u.studentLet && !(w.time.month === 7 || w.time.month === 8 || w.time.month === 9)) p *= 0.2; // student lets are let for the September intake (agents market Jan-Aug)
@@ -411,7 +414,7 @@ export function createHousing() {
   };
   const plugin = {
     name: 'housing', version: '1.0.0', eventTypes: EVENTS.map((e) => e[0]),
-    clocks: { month: (w) => monthly(w) },
+    clocks: { day: (w) => monthly(w) }, // staggered: each unit/household is processed on its own day of the month
     init(world) {
       W = world; registerEvents(world, EVENTS); initState(world);
       if (world.events.registry.has('goal.effect')) world.events.on('goal.effect', onGoalEffect);

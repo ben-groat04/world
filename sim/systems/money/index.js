@@ -8,6 +8,8 @@
 //   EVENTS money.windfall money.arrears money.arrears_cleared money.cost_pressure money.debt_spiral money.benefit_claim money.loan money.loan_default money.estate money.macro_shift
 import { MoneyLedger } from './ledger.js';
 import { taxNI, employerNI, minHourly, universalCredit, childBenefit, statePensionMonth, pensionCreditFloor, lhaFor } from './tax.js';
+import { dayOfMonth, slotDay } from '../../util.js';
+const ACC = new WeakMap();
 import { clamp, sat, livePeople, isSharers, bedNeed, registerEvents, SEASON_ENERGY, gini, median } from './util.js';
 
 const EVENTS = [
@@ -122,11 +124,12 @@ function grossMonth(w, p, rng, macro, firmHealth) {
 
 // ------------------------------------------------------------------ monthly cycle
 function monthly(w) {
-  const S = M(w), macro = S.macro, rng = w.rngFor('money.month'), mo = w.time.month, pack = w.pack, T = pack.meta.tax, B = pack.meta.benefits, L = w.ledger, lf = w.lf;
-  stepMacro(w);
+  const S = M(w), macro = S.macro, rng = w.rngFor('money.month', w.tick), mo = w.time.month, pack = w.pack, T = pack.meta.tax, B = pack.meta.benefits, L = w.ledger, lf = w.lf;
+  const dom = dayOfMonth(w), boundary = dom === 1; // households are processed on their own day of the month (no 1st-of-month event clump); macro, venues, loans and settlement stay monthly
+  if (boundary) stepMacro(w);
   const OCC = w._occ || (w._occ = Object.fromEntries(pack.jobs.map((o) => [o.id, o])));
   const tick = w.tick, stats = S.stats, SEG = w._segById || (w._segById = Object.fromEntries(pack.meta.segments.map((s) => [s.id, s])));
-  const venueIn = new Map(), wages = new Map();
+  const acc0 = ACC.get(S) || ACC.set(S, { vin: new Map(), wag: new Map() }).get(S), venueIn = acc0.vin, wages = acc0.wag; // spend/wages accumulated over the month's staggered household runs (not serialised)
   const foodVenues = [], leisureVenues = [];
   for (const v of w.map.lf.venues) {
     const t = v.template, st = pack.venues[t] && pack.venues[t].staff; let wt = (st ? st.reduce((s, x) => s + (Array.isArray(x.n) ? (x.n[0] + x.n[1]) / 2 : x.n), 0) : 1) + 0.5;
@@ -138,7 +141,7 @@ function monthly(w) {
   let nPressured = 0, nHH = 0;
   const hv = (bid) => S.venueHealth[bid] ?? 1;
   for (const hh of lf.households) {
-    if (hh.gone) continue;
+    if (hh.gone || !slotDay(hh.id, dom)) continue;
     const ps = livePeople(w, hh); if (!ps.length) continue;
     const f = hh.fin, adults = ps.filter((p) => w.ageOf(p) >= 16), kids = ps.filter((p) => w.ageOf(p) < 16), nKids = kids.length;
     if (!adults.length) continue;
@@ -326,6 +329,8 @@ function monthly(w) {
       if (amt > 900) w.emit('money.windfall', { actors: [p.id], salience: amt > 8000 ? 0.45 : 0.25, tags: ['money'], payload: { amount: Math.round(amt), source: big ? 'inheritance' : 'windfall' } });
     }
   }
+  { const cyc = S.cyc || (S.cyc = { pressured: 0, households: 0, tax: 0, benefits: 0 }), dt = (L.flows.tax || 0) - taxBefore, db = (L.flows.benefit || 0) - benBefore; cyc.pressured += nPressured; cyc.households += nHH; cyc.tax += dt; cyc.benefits += db; stats.taxIn += dt; stats.benefitsOut += db; }
+  if (!boundary) return;
   // ---------- informal loans repaid / defaulted
   const loans = S.loans;
   for (let i = loans.length - 1; i >= 0; i--) {
@@ -354,8 +359,8 @@ function monthly(w) {
   for (const k of Object.keys(L.balances)) { const v = L.balances[k]; if (k.startsWith('l:') && v > 0) L.transfer(k, 'metropolis', v * 0.93, 'landlord_remit'); else if (k.startsWith('e:') && v !== 0) { if (v > 0) L.transfer(k, 'metropolis', v, 'org_settle'); else L.transfer('metropolis', k, -v, 'org_settle'); } }
   { const tr = w.town.treasury; if (tr > 40000) L.transfer('council', 'metropolis', tr - 20000, 'council_services'); else if (tr < 5000) L.transfer('metropolis', 'council', 20000, 'central_grant'); }
   { const hb = L.balances.hmrc; if (hb > 0) L.transfer('hmrc', 'metropolis', hb, 'fiscal_settle'); else if (hb < 0) L.transfer('metropolis', 'hmrc', -hb, 'fiscal_settle'); }
-  stats.months++; stats.taxIn += (L.flows.tax || 0) - taxBefore; stats.benefitsOut += (L.flows.benefit || 0) - benBefore;
-  S.last = { pressured: nPressured, households: nHH, tax: Math.round((L.flows.tax || 0) - taxBefore), benefits: Math.round((L.flows.benefit || 0) - benBefore) };
+  venueIn.clear(); wages.clear();
+  stats.months++; S.last = { pressured: S.cyc.pressured, households: S.cyc.households, tax: Math.round(S.cyc.tax), benefits: Math.round(S.cyc.benefits) }; S.cyc = null;
 }
 
 function estate(w, p) {
@@ -374,7 +379,7 @@ export function createMoney() {
   const plugin = {
     name: 'money', version: '1.0.0',
     eventTypes: EVENTS.map((e) => e[0]),
-    clocks: { month: (w) => monthly(w) },
+    clocks: { day: (w) => monthly(w) },
     init(world) {
       W = world; MoneyLedger.upgrade(world); registerEvents(world, EVENTS); initState(world);
       if (typeof world.on === 'function') world.on('death', (ev) => { if (ev && ev.person) estate(world, ev.person); });

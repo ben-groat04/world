@@ -48,7 +48,7 @@ export function graduate(w, p, rng) {
   assignWork(w, p, rng);
   w.emit('life.graduate', { actors: [p.id], salience: 0.35, tags: ['school'], payload: { course: q.occ || 'a degree' } });
   w.addMemory(p, { type: 'education', text: 'Graduated from university.', otherIds: [], weight: 0.8, importance: 3 });
-  if (p.ext.life.away && !p.alive && rng.chance(0.4)) later(w, months(rng.float(1, 6)), 'boom', { pid: p.id });
+  if (p.ext.life && p.ext.life.away && !p.alive && rng.chance(0.4)) later(w, months(rng.float(1, 6)), 'boom', { pid: p.id });
   rehome(w, p);
 }
 /** university students (term-time away) leave home */

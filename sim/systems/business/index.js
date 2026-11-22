@@ -27,12 +27,18 @@ const RATES_MULT = 0.499, SBRR_FULL = 12000, SBRR_TAPER = 15000; // small busine
 const OVERDRAFT = 10000, LOAN_MAX = 25000, LOAN_RATE = 0.06, LOAN_MONTHS = 60; // UK Start Up Loans: up to 25k, fixed 6%, 1-5 years
 const REVIEW_MONTHS = 60, LEASE_MONTHS = 120;                    // 5-yearly upward-only rent reviews, 10-year leases (standard UK commercial lease)
 const SIGMA_Q = 0.3, RHO_Q = 0.95;                                // persistent idiosyncratic quality (Jovanovic learning model); sd of monthly innovation scaled below
-const MATCH_RATE = 0.05;                                          // monthly per-unit chance an entrant is found for a typical vacant unit (implies ~12-20 month voids; fits ~11-14% vacancy)
+const RENT_TURNOVER = 0.11;                                       // open-market rent settles near ~11% of a unit's turnover (valuers/occupancy-cost surveys: rent 8-15% of sales for food/retail; Sage/ATO/BRC): landlords reprice to what the trade can bear
+const MATCH_RATE = 0.075;                                          // monthly per-unit chance an entrant is found for a typical vacant unit (implies ~12-20 month voids; fits ~11-14% vacancy)
 const ASK_DECAY = 0.015;                                          // vacant units' asking rent falls 1.5%/month toward the clearing rent
 const RAMP_MONTHS = 8, RAMP_START = 0.6;                          // soft-launch: off-map catchment (passers-by, word of mouth, delivery apps) builds from 60% to 100% over ~8 months (new hospitality/retail openings take 6-12 months to reach run-rate)
 const RUNWAY_MEDIAN = 5, RUNWAY_SD = 0.5;                          // founders raise working capital for ~5 months of fixed costs (UK Start Up Loans / British Business Bank guidance: 3-6 months), lognormal across founders
 const COND_DECAY = 0.012, COND_FLOOR = 0.3, VOID_GRACE = 6;        // a unit empty > 6 months deteriorates (damp, services, shopfront) by ~1.2%/month; condition scales entry cost and entrant interest
 const HOLDOUT_SHARE = 0.3, HOLDOUT_DECAY = 0.003, REDEV_SHARE = 0.08; // 30% of landlords (institutions/absentees valuing the asset on headline rent) concede only 0.3%/month; 8% of units are withheld for redevelopment/conversion for years (LDC/Savills/CBRE long-term vacancy drivers)
+// Low-capital routes for a would-be owner (player or resident): no premises needed. Start-up sums and running costs from UK Start Up Loans / NCASBA (market traders) / British Business Bank guidance:
+// average Start Up Loan ~GBP 10-12k, market pitch GBP 15-40/day, mobile food/trade van GBP 5-15k, home-based services a few hundred pounds. gm = gross margin, fixed = monthly fixed costs (pitch, van, insurance), rev0 = mature monthly sales.
+const SOLO = { market_stall: { label: 'a market stall', cost: 1500, fixed: 320, gm: 0.42, rev0: 3600 }, pop_up: { label: 'a pop-up food stall', cost: 2500, fixed: 450, gm: 0.55, rev0: 4300 },
+  mobile_trade: { label: 'a mobile trade (van)', cost: 9000, fixed: 380, gm: 0.62, rev0: 5200 }, home_based: { label: 'a home-based business', cost: 600, fixed: 90, gm: 0.8, rev0: 2200 } };
+const LOAN_APPROVAL = 0.6; // Start Up Loans / bank lending to a start-up is a credit check + business-plan assessment, not automatic (hand-set; no credit => refused)
 const CHAIN_CLOSE_STREAK = 9;                                     // chains rationalise stores after ~9 months of negative store contribution
 
 export function createBusiness() {
@@ -201,7 +207,7 @@ export function createBusiness() {
   }
   const v_cap = (B) => { const v = venueOf(B.bid); return v ? v.capacity : 10; };
   function rentReview(B, rng, pct) {
-    const mkt = marketRent(B), old = B.rent; let nw = pct != null ? old * (1 + pct / 100) : Math.max(old, mkt * rng.float(0.92, 1.08)); // upward-only (standard clause; ban only for new leases from 2026)
+    const mkt = marketRent(B), old = B.rent; const rv6 = B.rev6 && B.rev6.length >= 3 ? B.rev6.reduce((a, x) => a + x, 0) / B.rev6.length : 0; let nw = pct != null ? old * (1 + pct / 100) : Math.max(old, mkt * rng.float(0.92, 1.08), B.own && B.own.kind === 'chain' ? 0 : 0.9 * RENT_TURNOVER * rv6); // review also sees the tenant's turnover (comparables/turnover evidence) // upward-only (standard clause; ban only for new leases from 2026)
     B.reviewAt = W.tick + REVIEW_MONTHS * MONTH; nw = Math.round(nw); if (nw === old) return;
     B.rent = nw; const p = Math.round((nw / old - 1) * 100);
     if (Math.abs(p) >= 3) W.emit('business.rent_review', { place: B.bid, actors: B.own.pid != null ? [B.own.pid] : [], salience: p >= 15 ? 0.4 : 0.15, tags: ['business', 'rent'], payload: { name: B.name, pct: p, from: old, to: nw } });
@@ -251,8 +257,8 @@ export function createBusiness() {
     const bal = W.ledger.balance('b:' + bid); if (bal > 0) money('b:' + bid, 'metropolis', bal, 'business_wind_down'); else if (bal < 0) money('metropolis', 'b:' + bid, -bal, 'business_wind_down'); // creditors absorb the loss
     if (B.loan) { B.loan = null; }
     const rec = { id: B.id, bid, fid: B.fid, tmpl: B.tmpl, name: B.name, born: B.born, died: W.tick, why, own: B.own.kind, init: !!B.init, jobs: staff }; S().past.push(rec); if (S().past.length > 400) S().past.shift(); bump('close', B.fid || B.tmpl);
-    const old = { fid: B.fid, tmpl: B.tmpl, rent: B.rent, name: B.name };
-    S().biz[bid] = { bid, vid: B.vid, m2: B.m2, zone: B.zone, status: 'vacant', since: W.tick, ask: Math.round(B.rent * 1.02), rent: B.rent, qual: B.qual ?? Math.exp(rng2().gauss(0, 0.7)), prev: old, reviewAt: 0, leaseEnd: 0, cond: 1, hold: rng2().chance(HOLDOUT_SHARE), redev: rng2().chance(REDEV_SHARE) ? W.tick + Math.round((24 + 48 * rng2().next()) * MONTH) : 0 };
+    const old = { fid: B.fid, tmpl: B.tmpl, rent: B.rent, name: B.name }, prevRev = B.rev6 && B.rev6.length ? B.rev6.reduce((a, x) => a + x, 0) / B.rev6.length : 0;
+    S().biz[bid] = { bid, vid: B.vid, m2: B.m2, zone: B.zone, status: 'vacant', since: W.tick, ask: Math.round(Math.max(B.rent * 1.02, B.own && B.own.kind === 'chain' ? 0 : 0.1 * prevRev)), rent: B.rent, qual: B.qual ?? Math.exp(rng2().gauss(0, 0.7)), prev: old, reviewAt: 0, leaseEnd: 0, cond: 1, hold: rng2().chance(HOLDOUT_SHARE), redev: rng2().chance(REDEV_SHARE) ? W.tick + Math.round((24 + 48 * rng2().next()) * MONTH) : 0 };
     applyVenue(bid, 'vacant_unit', null, 'TO LET');
     reassignFavs(bid, regulars);
     const lines = { insolvent: 'ran out of money', owner_gave_up: 'closed after a hard year', owner_retired: 'closed as the owner retired', chain_rationalisation: 'shut in a chain cost-cutting round', chain_restructuring: 'shut in a chain restructuring', chain_closing_branches: 'is one of the branches the company is closing', owner_moved_on: 'closed; the owners have moved on', charity_withdrew: 'closed, the charity pulling out', god: 'closed down' };
@@ -408,6 +414,27 @@ export function createBusiness() {
     const fid = rng.weighted(ws.map((x) => x[0]), ws.map((x) => x[1])); s.lastClaim = { bid: B.bid, tick: W.tick };
     openBusiness(B, fid, owner, { cause: a.cause || 0 }); return true;
   }
+  function startSolo(p, type, loanOk, loanAsked) {
+    const T = SOLO[type]; if ((S().solo || []).some((x) => x.pid === p.id && x.on)) return { ok: false, why: 'already running one' };
+    const own = Math.min(Math.max(0, p.money) * 0.8, T.cost), want = T.cost - own, loan = want > 0 && loanOk ? Math.min(LOAN_MAX, want) : 0;
+    if (own + loan < T.cost) return { ok: false, why: `needs about £${T.cost}` + (loanAsked && !loanOk ? ' and the start-up loan was refused (credit check/assessment)' : ''), cost: T.cost, loanRefused: loanAsked && !loanOk };
+    if (own > 0) money(p.id, 'metropolis', own, 'business_capital');
+    (S().solo || (S().solo = [])).push({ pid: p.id, type, on: true, t0: W.tick, q: W.rngFor('business.solo', p.id, W.tick).gauss(0, 0.25), loan: loan ? { left: loan, pm: Math.round(loan / LOAN_MONTHS + 1) } : null, loss: 0 });
+    W.emit('business.opened', { actors: [p.id], place: type === 'home_based' ? p.homeId : null, salience: 0.4, tags: ['business', 'success'], payload: { name: T.label, fid: type, owner: 'resident', rent: 0, jobs: 1, loan: Math.round(loan), voidMonths: null } });
+    return { ok: true, cost: T.cost, loan: Math.round(loan), kind: type };
+  }
+  function soloMonthly() { // sole-trader P&L: sales ramp over 8 months, persistent quality, fixed costs and loan service paid by the owner; closes after 6 loss months or when the owner dies/leaves
+    const rng = rngm('solo'), dm = demandIdx();
+    for (const x of S().solo || []) {
+      if (!x.on) continue; const p = W.people.get(x.pid), T = SOLO[x.type]; if (!p || !p.alive) { x.on = false; continue; }
+      x.q = RHO_Q * x.q + rng.gauss(0, SIGMA_Q * Math.sqrt(1 - RHO_Q * RHO_Q)); const ageM = (W.tick - x.t0) / MONTH, ramp = 0.5 + 0.5 * Math.min(1, ageM / RAMP_MONTHS);
+      const rev = T.rev0 * dm * Math.exp(x.q * 1.2) * ramp * (1 + rng.gauss(0, 0.08)), svc = x.loan ? Math.min(x.loan.left, x.loan.pm) + x.loan.left * LOAN_RATE / 12 : 0, profit = rev * T.gm - T.fixed;
+      if (x.loan) { x.loan.left -= Math.min(x.loan.left, x.loan.pm); if (x.loan.left < 1) x.loan = null; }
+      const net = profit - svc; if (net > 0) money('metropolis', p.id, net, 'self_employed_income'); else money(p.id, 'metropolis', Math.min(-net, Math.max(0, p.money)), 'business_loss');
+      x.last = { rev: Math.round(rev), profit: Math.round(net) }; x.loss = net < 0 ? x.loss + 1 : 0;
+      if (x.loss >= 6 || (ageM > 12 && W.rngFor('business.solo.x', p.id, W.tick).chance(0.004))) { x.on = false; W.emit('business.closed', { actors: [p.id], place: null, salience: 0.35, tags: ['business', 'loss'], payload: { name: T.label, reason: x.loss >= 6 ? 'insolvent' : 'owner_moved_on', fid: x.type, tmpl: x.type, ageMonths: Math.round(ageM), jobs: 1, regulars: 0, own: 'resident' } }); if (p.ext.hl) p.ext.hl.stress = Math.min(1, (p.ext.hl.stress || 0) + 0.15); }
+    }
+  }
   function typeToFid(type, B) { if (FORMATS[type]) return type; const ids = TMPL_FORMATS[type] || []; if (!ids.length) return null; return ids.slice().sort((x, y) => FORMATS[y].w0 - FORMATS[x].w0)[0]; }
   const commands = {
     'business.claimUnit': (w, a) => claimUnit(a),
@@ -417,11 +444,16 @@ export function createBusiness() {
       const B = S().biz[bid]; const f = FORMATS[fid], p = a.pid != null ? w.people.get(a.pid) : null; const owner = p ? { kind: 'resident', pid: p.id } : { kind: a.chain || f.own === 'chain' ? 'chain' : f.own === 'charity' ? 'charity' : 'indie', pid: null };
       openBusiness(B, fid, owner, { cause: a.cause || 0, name: a.name }); return true;
     },
-    'business.start': (w, a) => { // player: start a business in a vacant unit with savings + optional start-up loan
-      const p = w.people.get(a.pid), B = S().biz[a.unit ?? a.bid]; if (!p || !B || B.status !== 'vacant') return { ok: false, why: 'unit not vacant' };
-      const fid = typeToFid(a.type || a.fid); if (!fid) return { ok: false, why: 'unknown type' }; const f = FORMATS[fid], cost = entryCost(B, fid, f), cap = Math.max(0, p.money) * 0.8 + (a.loan === false ? 0 : LOAN_MAX);
-      if (f.own === 'chain') return { ok: false, why: 'chain format' }; if (cost > cap) return { ok: false, why: 'needs about £' + Math.round(cost) + ' (savings + loan up to £25k)', cost: Math.round(cost) };
-      openBusiness(B, fid, { kind: 'resident', pid: p.id }, { loan: a.loan !== false }); return { ok: true, cost: Math.round(cost) };
+    'business.start': (w, a) => { // player/resident: start a business with savings + optional credit-checked start-up loan; cheap routes: stall/pop-up/van/home-based (no unit), `share:true` = share a unit (half fit-out, 60% rent)
+      const p = w.people.get(a.pid); if (!p) return { ok: false, why: 'no such person' }; const type = a.type || a.fid;
+      const fin = p.ext.pop && p.ext.pop.fin; let loanOk = a.loan !== false; if (loanOk && fin && fin.noCredit) loanOk = false; else if (loanOk && !W.rngFor('business.loan', W.tick, p.id).chance(LOAN_APPROVAL + (p.ext.pop && p.ext.pop.edu === 'level4plus' ? 0.1 : 0))) loanOk = false;
+      const lowCost = Object.entries(SOLO).map(([k, v]) => ({ type: k, cost: v.cost }));
+      if (SOLO[type]) return startSolo(p, type, loanOk, a.loan !== false);
+      const B = S().biz[a.unit ?? a.bid]; if (!B || B.status !== 'vacant') return { ok: false, why: 'unit not vacant', cheaper: lowCost };
+      const fid = typeToFid(type); if (!fid) return { ok: false, why: 'unknown type' }; const f = FORMATS[fid], sh = a.share ? 0.55 : 1, cost = entryCost(B, fid, f) * sh, cap = Math.max(0, p.money) * 0.8 + (loanOk ? LOAN_MAX : 0);
+      if (f.own === 'chain') return { ok: false, why: 'chain format' };
+      if (cost > cap) return { ok: false, why: 'needs about £' + Math.round(cost) + (loanOk ? ' (savings + loan up to £25k)' : a.loan === false ? '' : ' and the start-up loan was refused (credit check/assessment)'), cost: Math.round(cost), loanRefused: !loanOk && a.loan !== false, cheaper: lowCost.concat([{ type: 'share a unit', cost: Math.round(entryCost(B, fid, f) * 0.55) }]) };
+      openBusiness(B, fid, { kind: 'resident', pid: p.id }, { loan: loanOk, cost: sh, rent: a.share ? B.ask * 0.6 : undefined }); return { ok: true, cost: Math.round(cost) };
     },
     'business.closeBusiness': (w, a) => { const B = S().biz[a.bid ?? a.unit]; if (!B || B.status !== 'trading') return false; close(B, a.reason || 'god', a.cause); return true; },
     'business.rentReview': (w, a) => { const B = S().biz[a.unit ?? a.bid]; if (!B || B.status !== 'trading') return false; rentReview(B, rng2(), a.pct ?? 20); return true; },
@@ -452,7 +484,7 @@ export function createBusiness() {
         return T0(from, to, amount, reason, cause, opts);
       };
     },
-    clocks: { hour: (w) => hourly(w), month: (w) => { monthlyBusiness(w); matching(); churnFavs(); } },
+    clocks: { hour: (w) => hourly(w), month: (w) => { monthlyBusiness(w); matching(); soloMonthly(); churnFavs(); } },
     serialize: () => ({}),
     deserialize() { for (const B of Object.values(S().biz)) { const v = venueOf(B.bid); if (!v) continue; if (B.status === 'vacant') { v.template = 'vacant_unit'; v.name = 'TO LET'; v.category = 'vacant'; v.capacity = 0; } else { const T = W.pack.venues[B.tmpl]; v.template = B.tmpl; v.name = B.name; v.variant = B.variant; v.category = T.category; v.capacity = T.capacity || 0; v.trim = B.trim; } } W._shopNames = null; },
     on: {},
@@ -461,6 +493,7 @@ export function createBusiness() {
       list: () => Object.values(S().biz).map(view), vacant: () => vacants().map(view), vacancyRate: () => vacancyRate(), mix: () => mixCount(), mix0: () => ({ ...S().mix0 }), rentIndex: () => S().rentIdx, affluence: () => S().A,
       news: (n = 10) => S().log.slice(-n).reverse(), survival: () => survival(), voids: () => S().voids.map((x) => ({ ...x })), vacTail: () => ({ unitMonths: S().vacM || 0, longMonths: S().vacL || 0 }), past: () => S().past.map((x) => ({ ...x })), yearly: () => JSON.parse(JSON.stringify(S().yr)),
       jobs: () => W.lf.slots.filter((s) => S().biz[s.bid] && S().biz[s.bid].status === 'trading').reduce((n, s) => n + s.filled.filter((x) => typeof x === 'number').length, 0), formats: () => Object.keys(FORMATS),
+      startOptions: (pid, unit) => { const B = unit != null ? S().biz[unit] : null; return { solo: Object.entries(SOLO).map(([k, v]) => ({ type: k, label: v.label, cost: v.cost })), unit: B && B.status === 'vacant' ? Object.keys(FORMATS).filter((id) => FORMATS[id].own !== 'chain').map((id) => ({ type: id, cost: Math.round(entryCost(B, id, FORMATS[id])), sharedCost: Math.round(entryCost(B, id, FORMATS[id]) * 0.55) })) : null, loan: { max: LOAN_MAX, rate: LOAN_RATE, approval: LOAN_APPROVAL } }; }, solo: () => (S().solo || []).map((x) => ({ pid: x.pid, type: x.type, on: x.on, last: x.last || null })),
       stats: () => ({ trading: trading().length, vacant: vacants().length, vacancyRate: vacancyRate(), rentIdx: S().rentIdx, affluence: S().A, favMoves: S().favMoves || 0 }),
     },
     commands,

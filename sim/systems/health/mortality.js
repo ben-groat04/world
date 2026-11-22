@@ -19,12 +19,13 @@ export function frailOf(p) {
 }
 const bucket = (a, sex) => `${sex}${a < 15 ? 0 : a < 30 ? 1 : Math.min(8, Math.floor(a / 10))}`;
 
-export function monthlyMortality(w, rng, people) {
+export function monthlyMortality(w, rng, people, all = people) {
   const cal = w.pack.calibration, st = w.lf.health, mult = st.mortMult || 1;
   const sums = new Map(), list = [];
-  for (const p of people) {
+  const inSlice = new Set(people);
+  for (const p of all) {
     const hl = p.ext.hl; if (!hl || hl.dying) continue; const a = ageOf(w, p); const f = hl.frail = frailOf(p), k = bucket(a, p.sex);
-    const s = sums.get(k) || (sums.set(k, [0, 0]).get(k)); s[0] += f; s[1]++; list.push([p, a, f, k]);
+    const s = sums.get(k) || (sums.set(k, [0, 0]).get(k)); s[0] += f; s[1]++; if (inSlice.has(p)) list.push([p, a, f, k]);
   }
   for (const [p, a, f, k] of list) {
     const s = sums.get(k), pm = qxAnnual(cal, a, p.sex) / 12 * (f / (s[0] / s[1])) * (a >= 65 ? mult : 1) * (a < 1 ? 1 : 1);

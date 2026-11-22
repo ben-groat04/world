@@ -10,6 +10,7 @@
 // EVENTS  health.diagnosis health.recovered health.ill health.crisis health.accident health.episode health.treatment health.substance health.outbreak  (+ life.death / life.funeral / life.will from mortality)
 import { registerEvents, HANDLERS, ageOf, later, laterAt, months, days, clamp, bump } from '../life/util.js';
 import { hlFor } from './init.js';
+import { dayOfMonth, slotDay } from '../../util.js';
 import { initService, weeklyAcute, dailySick, monthlyGP, acuteHandlers, startWave, injure, hs } from './acute.js';
 import { monthlyChronic, chronicHandlers, updateScore } from './chronic.js';
 import { monthlyMental, mentalHandlers, supportOf } from './mental.js';
@@ -34,10 +35,10 @@ const GRIEF_REL = { mother: 0.85, father: 0.85, 'son/daughter': 1, son: 1, daugh
 
 function ensureHl(w, people) { const rng = w.rngFor('health.init'); for (const p of people) if (!p.ext.hl && p.ext.pop) p.ext.hl = hlFor(w, p, rng, ageOf(w, p) < 2); }
 
-function monthly(w) {
-  const rng = w.rngFor('health.month'), people = w.living();
-  ensureHl(w, people);
-  monthlyChronic(w, rng, people); monthlyMental(w, rng, people); monthlyGP(w, rng, people); monthlyMortality(w, rng, people);
+function monthly(w) { // staggered: each person's monthly health step runs on their own day of the month (no 1st-of-month clump); mortality renormalises frailty over everyone
+  const rng = w.rngFor('health.month', w.tick), all = w.living(), dom = dayOfMonth(w);
+  ensureHl(w, all); const people = all.filter((p) => p.ext.life && slotDay(p.id, dom));
+  monthlyChronic(w, rng, people); monthlyMental(w, rng, people); monthlyGP(w, rng, people); monthlyMortality(w, rng, people, all);
 }
 let SUBS = new WeakSet();
 const STRESSORS = { 'money.arrears': 0.2, 'money.debt_spiral': 0.3, 'work.fired': 0.4, 'work.redundant': 0.4, 'home.eviction': 0.45, 'crime.burglary': 0.2, 'crime.assault': 0.35 };
@@ -72,9 +73,8 @@ export function createHealth() {
       for (const p of world.people.values()) if (p.alive && p.ext.hl) { const hl = p.ext.hl; hl.base = p.health; hl.burden0 = hl.burden0; }
     },
     clocks: {
-      day: (w) => { subscribe(w); dailySick(w); },
+      day: (w) => { subscribe(w); dailySick(w); monthly(w); },
       week: (w) => weeklyAcute(w, w.rngFor('health.week'), w.living()),
-      month: (w) => monthly(w),
     },
     query: {
       status: (pid) => { const p = W.people.get(pid); return p ? statusOf(W, p) : null; },

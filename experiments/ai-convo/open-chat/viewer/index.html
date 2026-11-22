@@ -420,7 +420,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
         secrets[name] = m[2].replace(/\s+/g, ' ').slice(0, 300);
       }
       const model = $('nModel').value === 'sonnet' ? 'sonnet' : 'haiku';
-      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nrounds: 30\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}\nsecrets: ${JSON.stringify(secrets)}`;
+      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nmessages: 120\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}\nsecrets: ${JSON.stringify(secrets)}`;
       sending = true; $('nGo').disabled = true; nStatus('Sending\u2026');
       try {
         const anchor = await comments.anchorFor($('newForm'));

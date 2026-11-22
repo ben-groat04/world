@@ -22,16 +22,17 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const [, topic] = split(brief(names[0]), MARK);
   const briefB = brief(names[1]); names.slice(2).forEach(brief);
   if (id < SINCE) continue;
-  const last = rows.at(-1).round, lastRows = rows.filter(r => r.round === last);
+  // New runs (rows carry `step`, no rounds): turns are the posted messages, clock notes and oracle answers; unsent replies and passes are only counted.
+  const isNew = rows[0].step != null, lastRows = rows.filter(r => r.round === rows.at(-1).round);
   runs.push({
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,
     names, people: names.length, oracle, topic, secrets: Object.keys(secrets).length ? secrets : null,
-    rounds: last,
-    ended: !all.at(-1).clock && lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
-    turns: all.map(r => ({ round: r.round, who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) })),
+    ...(isNew ? { passes: rows.filter(r => r.pass).length, unsent: rows.filter(r => r.posted === false && !r.pass).length } : { rounds: rows.at(-1).round }),
+    ended: isNew ? (all.filter(r => r.step === all.at(-1).step && !r.clock).every(r => r.pass) ? 'everyone passed' : 'message limit') : !all.at(-1).clock && lastRows.length === names.length && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
+    turns: all.filter(r => r.posted !== false).map(r => ({ ...(r.round != null && { round: r.round }), who: r.who, text: r.text, pass: !!r.pass, ...(r.oracle && { oracle: true }), ...(r.clock && { clock: true }), ...(r.at && { at: r.at }) })),
   });
 }
 const out = JSON.stringify(runs);
 fs.writeFileSync(path.join(here, 'runs.json'), out);
 console.log(`${runs.length} runs, ${(out.length / 1024).toFixed(0)} KB -> viewer/runs.json`);
-for (const r of runs) console.log(`${r.id}  ${r.model.padEnd(7)} ${String(r.turns.filter(t => !t.pass).length).padStart(3)} msgs  ${r.rounds}r  ${r.ended}  ${r.topic ? r.topic.slice(0, 40) : 'open'}`);
+for (const r of runs) console.log(`${r.id}  ${r.model.padEnd(7)} ${String(r.turns.filter(t => !t.pass).length).padStart(3)} msgs  ${r.rounds != null ? r.rounds + 'r' : 'new'}  ${r.ended}  ${r.topic ? r.topic.slice(0, 40) : 'open'}`);

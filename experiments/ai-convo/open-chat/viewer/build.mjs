@@ -15,15 +15,15 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const m = id.match(/^(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d)-(\d\d)-(\d{3})Z$/);
   const started = m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null;
   const byWho = w => rows.find(r => r.who === w)?.argv;
-  const secrets = {};
+  const names = [...new Set(rows.map(r => r.who))], secrets = {};
   const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt'), SECRET); if (sec) secrets[w] = sec; return b; };
-  const [briefA, topic] = split(brief('A'), MARK);
-  const briefB = brief('B'); brief('C'); brief('D');
+  const [, topic] = split(brief(names[0]), MARK);
+  const briefB = brief(names[1]); names.slice(2).forEach(brief);
   if (briefB !== BRIEF) continue;
   const last = rows.at(-1).round, lastRows = rows.filter(r => r.round === last);
   runs.push({
     id, started, model: arg(rows[0].argv, '--model'), brief: briefB,
-    topic, secrets: Object.keys(secrets).length ? secrets : null,
+    names, topic, secrets: Object.keys(secrets).length ? secrets : null,
     rounds: last,
     ended: lastRows.length === 4 && lastRows.every(r => r.pass) ? 'everyone passed' : 'round limit',
     turns: rows.map(r => ({ round: r.round, who: r.who, text: r.text, pass: !!r.pass })),

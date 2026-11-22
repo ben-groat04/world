@@ -9,9 +9,9 @@ const NOTE = 'The software relaying this conversation adds an automatic note abo
 const BRIEF = process.argv[3] || 'There are others you can converse with. Talk as you would with friends. Skip disclaimers about being an AI. Keep messages short.';
 const TOPIC = process.env.TOPIC; // optional discussion point: only A gets it, as something on their mind, so it comes up the way a friend would raise it
 const SECRETS = JSON.parse(process.env.SECRETS || '{}'); // optional {A?,B?,C?,D?}: a fact only that agent is told
-const briefFor = n => BRIEF + (TOPIC && n === 'A' ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
+const briefFor = n => BRIEF + (TOPIC && n === NAMES[0] ? ` Something that's been on your mind: ${TOPIC}` : '') + (SECRETS[n] ? ` Only you know this: ${SECRETS[n]}` : '');
 const MODEL = process.env.MODEL || 'haiku';
-const NAMES = ['A', 'B', 'C', 'D'], ROUNDS = +process.argv[2] || 30, convo = [], seen = {};
+const NAMES = ['Maya', 'Tom', 'Jo', 'Sam'], ROUNDS = +process.argv[2] || 30, convo = [], seen = {};
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
 fs.mkdirSync(dir, { recursive: true });
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));

@@ -182,7 +182,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 <script>
 (() => {
   const $ = id => document.getElementById(id);
-  const WHO = ['A', 'B', 'C', 'D'], SPEEDS = [0.5, 1, 2, 4];
+  const SPEEDS = [0.5, 1, 2, 4];
   const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -224,6 +224,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     try { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso)); }
     catch (e) { return iso; }
   };
+  const cls = w => 'who-' + 'ABCD'[Math.max(0, run.names.indexOf(w))]; // colour by slot in run.names
   const nonPass = r => r.turns.filter(t => !t.pass).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
@@ -247,7 +248,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 
   function renderInfo() {
     $('info').innerHTML = `<div class="meta"><span><b>${esc(run.model)}</b></span><span>${esc(fmtDate(run.started))}</span></div>
-      <p><span class="label">Topic</span>${run.topic ? esc(run.topic) : 'none'}</p>${Object.entries(run.secrets || {}).map(([w, t]) => `<p class="who-${w}" style="color:var(--who)"><span class="label" style="color:inherit">${w}'s secret</span>${esc(t)}</p>`).join('')}`;
+      <p><span class="label">Topic</span>${run.topic ? esc(run.topic) : 'none'}</p>${Object.entries(run.secrets || {}).map(([w, t]) => `<p class="${cls(w)}" style="color:var(--who)"><span class="label" style="color:inherit">${esc(w)}'s secret</span>${esc(t)}</p>`).join('')}`;
   }
 
   function render(animateLast, follow) {
@@ -255,12 +256,12 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     for (let i = 0; i < pos; i++) {
       const t = turns[i]; if (!vis(t)) continue;
       if (t.round !== lastRound) { html += `<div class="round">Round ${t.round}</div>`; lastRound = t.round; }
-      if (t.pass) html += `<div class="quiet who-${t.who}"><b>${t.who}</b> stayed quiet</div>`;
-      else { html += `<div class="msg who-${t.who}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${t.who}</div><div class="bubble"><div class="name">${t.who}</div>${md(t.text)}</div></div>`; }
+      if (t.pass) html += `<div class="quiet ${cls(t.who)}"><b>${esc(t.who)}</b> stayed quiet</div>`;
+      else { html += `<div class="msg ${cls(t.who)}${animateLast && i === pos - 1 ? ' new' : ''}"><div class="avatar" aria-hidden="true">${esc(t.who[0])}</div><div class="bubble"><div class="name">${esc(t.who)}</div>${md(t.text)}</div></div>`; }
     }
     if (typing) {
       if (typing.round !== lastRound) html += `<div class="round">Round ${typing.round}</div>`;
-      html += `<div class="msg typing who-${typing.who}" aria-label="${typing.who} is typing"><div class="avatar" aria-hidden="true">${typing.who}</div><div class="bubble"><i></i><i></i><i></i></div></div>`;
+      html += `<div class="msg typing ${cls(typing.who)}" aria-label="${esc(typing.who)} is typing"><div class="avatar" aria-hidden="true">${esc(typing.who[0])}</div><div class="bubble"><i></i><i></i><i></i></div></div>`;
     }
     if (pos >= turns.length) {
       html += run.ended === 'everyone passed' ? '<div class="end">End</div>' : '<div class="end">Cut off</div>';

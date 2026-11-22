@@ -177,3 +177,9 @@ OPEN (needs sim owners):
 - housing: housing.rentFlat only checks cash >= 60% of rent and charges no deposit: UI says "needs about 60% of a month's rent in hand".
 - god: heatwave/pandemic/crime-wave cannot be ended early (no stop command), rates cut / council cuts cannot be reversed without side effects (councilCuts negative pct restores ALL services); add explicit end/undo commands.
 - social: `ties()` rows have layer `L` not `lv`; UI code that used `t.lv` on ties() rows was always undefined (only tie(a,b) has `lv`). personChip is fine (uses tie()).
+
+## Orchestrator review of play pass (03:4x)
+- Ask-out reasons: UI copies life.askOut weights to name the weakest factor — fragile. Move to sim: askOut should return its term breakdown; UI just displays it. Same for rent deposit (60%) and bank limit text — expose via queries, not duplicated constants.
+- Heatwave preset can run at 6°C in November: shocks must be season-relative (Met Office heatwave = 3+ days above local threshold, ~25–28°C) or unavailable out of season.
+- After a successful ask-out the Phone tab still shows the dating-app pitch below; collapse it once seeing someone.
+- Result cards are wordy for mobile; trim to one line + "more".

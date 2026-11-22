@@ -162,3 +162,19 @@ OPEN: seed-3 1y survival (69%) - entrants there lose money under high rents; 25-
 - OPEN: on-map stranger-violence pool includes cafes/restaurants/takeaways at any hour; should be dusk/night and licensed premises. 25-34 men still sometimes exceed 16-24 men in single windows (n of 16-24 men ~25).
 - OPEN: prison per 100k is 0-110 (tiny ward, 0-2 people); not stable enough to compare with the national ~139-170.
 - OPEN: no demolition / loss of dwellings, no HMO conversion changing the unit count.
+## Play / God mode pass (UI agent, docs/screenshots/play2-*)
+FIXED (UI + sim/player only; outcomes still come from the sim): take-over picker has filters (students, struggling, retired, looking for work, renters) and shows activity/tenure/money; "About you" card (study/work, home, money, income, partner, ties) and tailored "Ways forward";
+take-over intro (the newcomer intro was wrong for residents); retired people no longer get a job list or silent never-answered applications (player.apply says so); ask-out no longer says "did not work out": the reason is read from the same inputs life.askOut weighs
+(attraction/affinity/familiarity/age gap, odds %); bank/payday/family refusals say why (credit record, income-based limit, already owed); rent refusals show the cash needed; a stall / pop-up / van / home-based business path (business.start solo routes) with costs and risks;
+goals grouped by theme with suggestions for your kind of life; groups ranked by how many members you know; "Lately" now lists real events you are part of; money change and warmth change are shown after each action; £NaN/£-359 formatting fixed; 44px tap targets; God mode: time resumes on send,
+panel jumps to Consequences, each intervention says when it ends or that it cannot be recalled, and rent shock / police cuts can be reversed (a NEW intervention, the damage stays).
+OPEN (needs sim owners):
+- business: no query for a player's solo business (stall/home trade) P&L, so the UI can only say "started on X" and money moves monthly; add `business.query.soloOf(pid)` {type, since, lastRev, lastProfit, loan}, and a `business.stopSolo` command.
+- business: SOLO costs/margins are not exposed by `startOptions` (label/cost only), so monthly running costs cannot be previewed in numbers.
+- health: god Heatwave preset runs in November at 6C (no weather link): heat effects should depend on the weather/season, or the preset should refuse/warn.
+- life.askOut returns only {ok,p}: the UI re-derives the odds ingredients from getRel (attraction/affinity/familiarity) in sim/player; better if life returned its own breakdown. No way to ask someone out who you know only a little (tie level gate is in sim/player: lv>=2).
+- labour: retired people never return to work (resolveApplications skips them). Fine for 78-year-olds, odd for 56-year-olds with arrears (e.g. Mateusz L.): needs a mechanism (pension-age rule, work after early retirement).
+- housing: housing.rentFlat only checks cash >= 60% of rent and charges no deposit: UI says "needs about 60% of a month's rent in hand".
+- god: heatwave/pandemic/crime-wave cannot be ended early (no stop command), rates cut / council cuts cannot be reversed without side effects (councilCuts negative pct restores ALL services); add explicit end/undo commands.
+- Take-over: players lose nothing when they release; reputation about the player only in Me. NPC requests to the player remain rare (see above).
+- social: `ties()` rows have layer `L` not `lv`; UI code that used `t.lv` on ties() rows was always undefined (only tie(a,b) has `lv`). personChip is fine (uses tie()).

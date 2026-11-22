@@ -1,6 +1,7 @@
 // Four Sonnet agents talk to each other, each agent one long-lived `claude -p` process (stream-json in/out, no HTTP API), so startup cost is paid once and each agent keeps its own history. The system prompt is NOTE + BRIEF and nothing else.
 // What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task).
 // Prompts: an agent's first turn gets the whole conversation so far; later turns get only what others said since it last spoke (its own replies are already in its history). Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
+// Every prompt ends by saying an agent may reply just PASS. A PASS reply is left out of the conversation and transcript.txt (log.jsonl keeps it with pass: true); if all four pass in one round, the conversation is over and the run stops. "New messages" holds only non-pass messages since the agent last spoke.
 // Run: node run.mjs [rounds] [brief]   (default 15 rounds). Output: runs/<timestamp>/{transcript.txt,log.jsonl}
 import fs from 'fs'; import os from 'os'; import path from 'path'; import readline from 'readline'; import { spawn } from 'child_process';
 // NOTE is sent as part of the system prompt but left out of log.jsonl, which logs only BRIEF.
@@ -33,18 +34,29 @@ async function turn(n, user) {
     return j;
   }
 }
-for (let r = 1; r <= ROUNDS; r++) for (const n of NAMES) {
-  const user = n in seen
-    ? `New messages:\n${convo.slice(seen[n]).map(m => `${m.who}: ${m.text}`).join('\n\n')}\n\nWrite your next message.`
-    : `Conversation so far:\n${convo.length ? convo.map(m => `${m.who}: ${m.text}`).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.`;
-  const t0 = Date.now();
-  const j = await turn(n, user);
-  const text = j.result.trim();
-  convo.push({ who: n, text });
-  seen[n] = convo.length;
-  fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: n, text, usage: j.usage, user, argv: mkArgv(BRIEF) }) + '\n');
-  fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}, ${n}\n${text}\n\n`);
-  console.log(`--- round ${r}, ${n} (${((Date.now() - t0) / 1000).toFixed(1)}s)\n${text}\n`);
+const PASS = '(If you have nothing to say, reply with just PASS.)', isPass = t => /^pass[\s.!?,;:]*$/i.test(t);
+rounds: for (let r = 1; r <= ROUNDS; r++) {
+  let passes = 0;
+  for (const n of NAMES) {
+    const fresh = n in seen ? convo.slice(seen[n]) : convo;
+    const user = n in seen
+      ? `${fresh.length ? `New messages:\n${fresh.map(m => `${m.who}: ${m.text}`).join('\n\n')}\n\nWrite your next message.` : 'No new messages.'}\n\n${PASS}`
+      : `Conversation so far:\n${fresh.length ? fresh.map(m => `${m.who}: ${m.text}`).join('\n\n') : '(nothing yet)'}\n\nYou are ${n}. Write your next message.\n\n${PASS}`;
+    const t0 = Date.now();
+    const j = await turn(n, user);
+    const text = j.result.trim(), pass = isPass(text);
+    if (!pass) convo.push({ who: n, text });
+    seen[n] = convo.length;
+    fs.appendFileSync(path.join(dir, 'log.jsonl'), JSON.stringify({ round: r, who: n, text, ...(pass && { pass }), usage: j.usage, user, argv: mkArgv(BRIEF) }) + '\n');
+    if (pass) { passes++; console.log(`--- round ${r}, ${n} (passed)\n`); continue; }
+    fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}, ${n}\n${text}\n\n`);
+    console.log(`--- round ${r}, ${n} (${((Date.now() - t0) / 1000).toFixed(1)}s)\n${text}\n`);
+  }
+  if (passes === NAMES.length) {
+    fs.appendFileSync(path.join(dir, 'transcript.txt'), `--- round ${r}: all agents passed, conversation over\n`);
+    console.log(`--- round ${r}: all agents passed, conversation over\n`);
+    break rounds;
+  }
 }
 for (const n of NAMES) agents[n].proc.stdin.end();
 console.log('Done. Saved transcript.txt and log.jsonl in', dir);

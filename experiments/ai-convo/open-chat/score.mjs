@@ -37,6 +37,15 @@
 //                     text differs from the draft (posted, changed), and share dropped (pass after draft).
 //                     '-' if no row has a draft.
 //  reacts             react rows per check-in with new messages. '-' if the run has no react rows.
+//  started            1 if the run has at least one posted message, else 0 (MEAN = start rate). Every per-message
+//                     metric above and below is '-' for a run with no messages, so empty runs don't skew means.
+//  named              share of messages containing (whole word, case-insensitive) the name of another participant
+//                     (participants = speakers in the run, as for hand)
+//  md                 share of messages with markdown: a line starting with -, *, • or digits + '.'/')' (then a
+//                     space), a **bold** span, a '#' heading line, or a line that is just ---
+//  frag               share of messages that are a fragment of a split list/email: trimmed text ends with ':',
+//                     is only '---', or every non-empty line is a list line (as in md)
+//  byeRun             longest run of consecutive messages that are all sign-offs/acks (the bye test above)
 //  oracle             number of oracle rows (private ones included)
 //  end                how the run ended (`end` row: limit / date); '-' if none
 
@@ -53,6 +62,10 @@ const FRAME = [
   /\bfrom here\b/i, /\bI['’]?m an AI\b/i, /\bas an AI\b/i, /\bI can only message\b/i, /\bonly chat here\b/i,
   /\bin my context\b/i, /\bmaking things up\b/i, /\bbe upfront\b/i, /\bcan['’]?t (book|ring|call|phone|search|open)\b/i,
 ];
+const LIST_LINE = /^\s*([-*\u2022]|\d+[.)])\s/;
+const isBye = m => words(m.text) < 25 && BYE.test(m.text);
+const isMd = t => t.split('\n').some(l => LIST_LINE.test(l) || /^\s*#+\s/.test(l) || /^\s*---\s*$/.test(l)) || /\*\*[^*]+\*\*/.test(t);
+const isFrag = t => { t = t.trim(); const ls = t.split('\n').filter(l => l.trim()); return t.endsWith(':') || t === '---' || (ls.length > 0 && ls.every(l => LIST_LINE.test(l))); };
 const norm = s => s.toLowerCase().replace(/\s+/g, ' ').trim().replace(/[\p{P}\p{S}\s]+$/u, '');
 const hasNew = u => u == null ? null
   : /New messages:/.test(u) || (/Conversation so far:/.test(u) && /^— .+, \w{3} \d\d:\d\d/m.test(u)) ? true
@@ -123,7 +136,7 @@ function score(dir) {
     wMed: msgs.length ? q(sorted, 0.5) : null, wP90: msgs.length ? q(sorted, 0.9) : null,
     qEnd: share(msgs, m => m.text.trimEnd().endsWith('?')),
     echo: msgs.length ? msgs.filter((m, i) => echoes(m, msgs[i - 1])).length / msgs.length : null,
-    bye: share(msgs, m => words(m.text) < 25 && BYE.test(m.text)),
+    bye: share(msgs, isBye),
     top: msgs.length ? Math.max(...Object.values(counts)) / msgs.length : null,
     dbl: msgs.length > 1 ? msgs.filter((m, i) => i && m.who === msgs[i - 1].who).length / (msgs.length - 1) : null,
     hand: share(msgs, handoff),
@@ -138,6 +151,11 @@ function score(dir) {
     draftChg: share(drafts, r => r.posted === true && r.text !== r.draft),
     draftDrop: share(drafts, r => r.pass === true),
     reacts: reacts && newChecks.length ? reacts / newChecks.length : null,
+    started: msgs.length ? 1 : 0,
+    named: share(msgs, m => names.some(n => n !== m.who && new RegExp(`\\b${esc(n)}\\b`, 'i').test(m.text))),
+    md: share(msgs, m => isMd(m.text)),
+    frag: share(msgs, m => isFrag(m.text)),
+    byeRun: msgs.length ? msgs.reduce((a, m) => { const c = isBye(m) ? a.c + 1 : 0; return { c, max: Math.max(a.max, c) }; }, { c: 0, max: 0 }).max : null,
     oracle,
     end,
   };

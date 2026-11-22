@@ -256,7 +256,7 @@ export class Host {
     return { id, name: b.name, address: lf.address || b.name, type: b.type, kind: lf.kind, cat: lf.category, tpl: lf.template, arch: lf.archetype, hours: iv ? hoursText(iv) : null, open: iv ? iv.some(([a, b2]) => (w.time.hourFloat >= a && w.time.hourFloat < b2)) : null, capacity: v ? v.capacity : null, inside, residents: P(b.residents).slice(0, 16), employees: P(b.employees).slice(0, 16), units, owner, firm: staff, year: w.map.lf.buildings[id]?.year, storeys: w.map.lf.buildings[id]?.storeys, biz: this.safe(() => bizBrief(this, id), null), notices: this.safe(() => noticesAt(this, id), []), fresh: this.fresh.has(id) ? this.fresh.get(id) : null, now: w.tick };
   }
   directory() {
-    const w = this.w, out = []; for (const p of w.living()) { const pop = p.ext.pop || {}; out.push([p.id, nm(p), Math.floor(w.ageOf(p)), SEG_IDS.indexOf(pop.seg), shortJob(p.job), (this.byBid.get(p.homeId)?.name || ''), pop.fin?.stress ?? 0, p.sex === 'F' ? 1 : 0, p.ext.rt && p.ext.rt.off ? 1 : 0]); }
+    const w = this.w, out = []; for (const p of w.living()) { const pop = p.ext.pop || {}; out.push([p.id, nm(p), Math.floor(w.ageOf(p)), SEG_IDS.indexOf(pop.seg), shortJob(p.job), (this.byBid.get(p.homeId)?.name || ''), pop.fin?.stress ?? 0, p.sex === 'F' ? 1 : 0, p.ext.rt && p.ext.rt.off ? 1 : 0, pop.activity || '', Math.round(p.money || 0), (pop.role === 'adult_child' || pop.role === 'child' ? 'family' : (this.w.lf.households[pop.hh] || {}).tenure || ''), Math.round((pop.fin || {}).arrears || 0) + Math.round((pop.fin || {}).debt || 0)]); }
     return out;
   }
 

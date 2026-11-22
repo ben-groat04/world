@@ -152,3 +152,13 @@ OPEN: seed-3 1y survival (69%) - entrants there lose money under high rents; 25-
 ## Text (after variety pass) open
 - Done (second text pass): storyline premises composed from protagonists/places/causes (sim/sifter/storylines.js), life story paragraph + timeline (ui/lifestory.js), situational thoughts wired into the inspector (ui/describe.js thoughtFor + thoughts3.js), richer activity labels (describe.js activityLabel), host batch lines via the text pack (batch.js), forum replies 0.91 distinct (replies2.js).
 - Still open: forum posts 0.85 distinct; the routine's own plain labels are unchanged (richer wording is UI-side only); storyline beat lists still reuse a small verb vocabulary.
+
+## Round 7 (50y realism: stock, TFR, loneliness, violence age, prison) - status
+- FIXED: dwelling stock explicit and slow-growing (planning supply no longer scales with residents; ~0.7%/yr; realistic tenure mix of new builds). Population now tracks stock x household size; churn 10-13% in / 10-13% out / 4-7% local movers per year; overcrowding 8-14% (Census 2021 inner London 13-21%).
+- FIXED: founding child-desire baseline inconsistent with the fertility reference woman (0.31 vs 0.5). Union prevalence was checked against Census 2021 and found within inner-London range, so union hazards were left alone.
+- FIXED: youth loneliness (online-formed ties added); peer-age assortment in violence; per-class custody rates and remand.
+- OPEN: TFR is 0.9-1.65 by decade window and seed (n ~ 25-30 births per 5 years; sampling noise +-0.3) and averages ~1.25-1.3, below the ~1.45 target; inner London actual ~1.3-1.4. 0-14 share settles near 15-17%.
+- OPEN: out-migration of families is a flat segment probability (MOVE_OUT_P); it should depend on whether a suitably sized affordable home exists locally (ONS internal migration: net outflow of 0-4s and parents 30-44 from London).
+- OPEN: on-map stranger-violence pool includes cafes/restaurants/takeaways at any hour; should be dusk/night and licensed premises. 25-34 men still sometimes exceed 16-24 men in single windows (n of 16-24 men ~25).
+- OPEN: prison per 100k is 0-110 (tiny ward, 0-2 people); not stable enough to compare with the national ~139-170.
+- OPEN: no demolition / loss of dwellings, no HMO conversion changing the unit count.

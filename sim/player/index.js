@@ -51,6 +51,7 @@ export function createPlayer() {
   function competition(o) { let n = 0; for (const id of W.sys.labour.query.searchers()) { const x = W.people.get(id), lo = x && x.ext.pop.lastOcc; if (id !== W.player && lo && occMap(W)[lo] && occMap(W)[lo].soc === o.soc) n++; } return n; }
   function applyFor(p, occ, bid, quiet) {
     const OCC = occMap(W), o = OCC[occ]; if (!o) return fail('unknown job');
+    if (p.ext.pop && p.ext.pop.activity === 'retired') return { ok: false, why: 'you are retired', retired: true }; // the labour model never takes retirees back (resolveApplications skips them), so say so up front instead of a silent no-reply
     if (S.pending.filter((x) => x.pid === p.id).length >= 3) return fail('you already have three applications in');
     if (S.pending.some((x) => x.pid === p.id && x.occ === occ)) return fail('you have already applied for that');
     const lag = W.rngFor('player.lag', p.id, W.tick).int(5, 21); S.pending.push({ pid: p.id, occ, bid, due: W.tick + lag * tpd(), sent: W.tick });
@@ -159,9 +160,11 @@ export function createPlayer() {
       if (!single(q)) return fail('they are already seeing someone'); const t = tieOf(q.id, p.id); if (!t || t.lv < 2) return fail('you have not really met them yet');
       if (!w.sys.social.query.attractionPossible(p.id, q.id)) return { ok: false, why: 'not a match', plausible: false };
       const key = p.id + ':' + q.id, last = S.asked[key] ?? -1e9; if (w.tick - last < ASK_COOLDOWN_DAYS * tpd()) return { ok: false, why: 'asked recently', days: Math.ceil(ASK_COOLDOWN_DAYS - (w.tick - last) / tpd()) };
+      // the inputs life.askOut weighs (read before the call, which dents attraction on a no): lets the UI say WHY it was a yes or a no
+      const rl0 = w.getRel(p, q), fx = { att: rl0.attraction || 0, aff: rl0.affinity || 0, fam: rl0.familiarity || 0, gap: Math.round(Math.abs(w.ageOf(p) - w.ageOf(q))) };
       S.asked[key] = w.tick; const r = call('life.askOut', { pid: p.id, target: q.id });
       if (r && r.ok) note(`${nm(q)} said yes: you are seeing each other.`); else note(`${nm(q)} turned you down.`);
-      return { ok: !!(r && r.ok), couple: !!(r && r.ok), low: !!(r && r.p != null && r.p < 0.1), l: t.l, inPerson: p.locationId != null && p.locationId === q.locationId };
+      return { ok: !!(r && r.ok), couple: !!(r && r.ok), low: !!(r && r.p != null && r.p < 0.1), p: r && r.p != null ? Math.round(r.p * 100) / 100 : null, fx, l: t.l, inPerson: p.locationId != null && p.locationId === q.locationId };
     },
     'player.buy': (w, a) => {
       const p = me(a); if (!p || !p.ext.rt) return fail('no player'); const price = a.item === 'pint' ? 5 : 3.2; if (p.money < price) return fail('not enough money');
@@ -172,7 +175,11 @@ export function createPlayer() {
     'player.quit': (w, a) => { const p = me(a); if (!p) return fail('no player'); const ok = call('labour.quit', { pid: p.id }); if (ok) note('You handed in your notice.'); return { ok: !!ok }; },
     'player.rent': (w, a) => { const p = me(a); if (!p) return fail('no player'); const r = call('housing.rentFlat', { pid: p.id, unit: a.unit, reason: 'player' }); if (r && r.ok) note('You signed a new lease.'); return r || fail('failed'); },
     'player.lend': (w, a) => { const p = me(a); if (!p) return fail('no player'); const ok = call('money.lend', { from: p.id, to: a.to, amount: +a.amount, months: a.months || 6 }); if (ok) note(`You lent ${nm(w.people.get(a.to))} £${Math.round(a.amount)}.`); return { ok: !!ok, why: ok ? '' : 'not enough money' }; },
-    'player.borrow': (w, a) => { const p = me(a); if (!p) return fail('no player'); const r = call('money.borrow', { pid: p.id, amount: +a.amount, kind: a.kind || 'bank' }); if (r && r.ok) note(`You borrowed £${Math.round(r.amount || a.amount)} (${a.kind || 'bank'}).`); return r || fail('failed'); },
+    'player.borrow': (w, a) => {
+      const p = me(a); if (!p) return fail('no player'); const r = call('money.borrow', { pid: p.id, amount: +a.amount, kind: a.kind || 'bank' }); if (r && r.ok) note(`You borrowed £${Math.round(r.amount || a.amount)} (${a.kind || 'bank'}).`);
+      if (r && r.ok) return r; const f = (p.ext.pop && p.ext.pop.fin) || {}, room = w.sys.money && w.sys.money.query.creditRoom ? w.sys.money.query.creditRoom(p.id) : null; // why a lender said no: the same inputs the money plugin uses (credit record, income-based limit, what is already owed)
+      return { ok: false, why: 'declined', kind: a.kind || 'bank', noCredit: !!f.noCredit, owed: Math.round((f.cc || 0) + (f.payday || 0)), cc: Math.round(f.cc || 0), payday: Math.round(f.payday || 0), monthNet: Math.round(f.monthNet || 0), room: room == null ? null : Math.round(room) };
+    },
     'player.join': (w, a) => {
       const p = me(a); if (!p) return fail('no player'); const gq = w.sys.goals && w.sys.goals.query, g = gq && gq.group(a.group); if (!g) return fail('that group no longer exists');
       if (gq.groupsOf(p.id).some((x) => x.id === g.id)) return fail('you are already in that group'); const ok = call('groups.join', { person: p.id, group: a.group });

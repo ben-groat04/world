@@ -5,14 +5,15 @@ import { esc } from '../views.js';
 
 const lc = (s) => String(s || '').replace(/_/g, ' ');
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
-const gbp = (n) => '£' + Math.round(n).toLocaleString('en-GB');
+const gbp = (n) => { const v = Number.isFinite(+n) ? Math.round(+n) : null; return v == null ? '£–' : (v < 0 ? '-£' : '£') + Math.abs(v).toLocaleString('en-GB'); };
 const TALK_EASY = [['small', 'Small talk'], ['joke', 'Make a joke'], ['news', 'Share news']];
 const TALK_CLOSE = [['advise', 'Offer advice'], ['comfort', 'Comfort'], ['confide', 'Confide'], ['flirt', 'Flirt'], ['favour', 'Ask a favour']];
 const TALK_EDGY = [['complain', 'Complain'], ['gossip', 'Gossip'], ['apologise', 'Apologise'], ['argue', 'Argue']];
 const FORUM_KINDS = [['question', 'Ask a question'], ['recommend', 'Recommend something'], ['event', 'Announce an event'], ['noise', 'Complain about noise'], ['parking', 'Parking gripe'], ['freebie', 'Offer a freebie']];
 const MOOD = (m) => (m > 0.45 ? '😄' : m > 0.15 ? '🙂' : m > -0.15 ? '😐' : m > -0.45 ? '🙁' : '😟');
 const warmWord = (l) => (l == null ? 'not met' : l > 0.5 ? 'close' : l > 0.2 ? 'friendly' : l > -0.15 ? 'acquaintance' : 'cool');
-const TABS = [['menu', 'Here & now'], ['places', 'Go somewhere'], ['phone', 'Phone'], ['work', 'Life admin'], ['goals', 'Goals & groups'], ['me', 'Me']];
+const TABS = [['menu', 'Now'], ['places', 'Go'], ['phone', 'Phone'], ['work', 'Life'], ['goals', 'Goals'], ['me', 'Me']];
+const TAB_FULL = { menu: 'Here & now', places: 'Go somewhere', phone: 'Phone', work: 'Life admin: work, money, home', goals: 'Goals & groups', me: 'Me & the street' };
 const TAB_OF = { menu: 'menu', talk: 'menu', places: 'places', phone: 'phone', people: 'phone', dating: 'phone', work: 'work', goals: 'goals', me: 'me' };
 const INTRO = [
   ['Welcome to Larkfield', 'You are a newcomer. The map shows the neighbourhood and the little figures are your neighbours. Your character is highlighted, and the bar at the top of the map shows where they are and what they are doing.'],
@@ -21,6 +22,11 @@ const INTRO = [
   ['Things to try', 'Meet your neighbours. Find a job. Join a group. Make a friend. A small checklist in Do ticks them off as they really happen. Start by saying hello to someone.'],
 ];
 
+const INTRO_TAKE = [
+  ['You are {name}', 'This person already lives here, with a job or course, a home, money worries and people who know them. The card at the top of Do says who they are right now. Everything you do runs through the same rules as everyone else in Larkfield.'],
+  ['They carry on without you', 'Your character sleeps, eats, studies or works on their own routine while the clock runs. You step in only to change something: talk to someone, apply for work, ask someone out, move, start a small business.'],
+  ['Tap Do, read, then act', 'Time pauses while Do is open. Each action says what it costs and roughly how long it takes. Afterwards you get the reason it worked or did not, and "Lately" shows how people reacted.'],
+];
 export function mountPlay(store, hooks) {
   const $ = (id) => document.getElementById(id);
   const wrap = $('map-wrap');
@@ -57,9 +63,9 @@ export function mountPlay(store, hooks) {
   function showIntro(step) {
     if (step == null) step = 0; P.introStep = step; if (step >= INTRO.length) { endIntro(); return; }
     if (intro.hidden && store.s.tier !== 'pause') { P.introTier = store.s.tier; store.setSpeed('pause'); }
-    const [t, b] = INTRO[step], last = step === INTRO.length - 1;
+    const IN = P.mode === 'take' ? INTRO_TAKE : INTRO, [t0, b] = IN[step], t = t0.replace('{name}', (P.s && P.s.name) || 'someone new'), last = step === IN.length - 1;
     intro.hidden = false; card.hidden = true;
-    intro.innerHTML = `<div class="pib"><div class="pidots">${INTRO.map((_, i) => `<i class="${i === step ? 'on' : ''}"></i>`).join('')}</div><h3>${esc(t)}</h3><p>${esc(b)}</p>
+    intro.innerHTML = `<div class="pib"><div class="pidots">${IN.map((_, i) => `<i class="${i === step ? 'on' : ''}"></i>`).join('')}</div><h3>${esc(t)}</h3><p>${esc(b)}</p>
       <div class="pia"><button class="pb ghost" data-intro="skip">Skip</button><button class="pb go" data-intro="next">${last ? 'Start playing' : 'Next'}</button></div></div>`;
   }
   function endIntro() { intro.hidden = true; lsSet('lf_play_intro', '1'); if (P.introTier && store.s.tier === 'pause') store.setSpeed(P.introTier); P.introTier = null; paintStrip(); }

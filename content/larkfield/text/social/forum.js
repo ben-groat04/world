@@ -197,14 +197,5 @@ export default {
   'feedreply.alert.argue': ['They never give warning. Typical.'],
   'feedreply.thanks': ['Thank you, that is really helpful!', 'Lovely, cheers.', 'Brilliant, will do.', 'Appreciate it.'],
   // personal feed (Insta/Facebook style) beyond the older post.* keys: a wider daily mix
-  'post2.mood': [
-    ...V('teen', 'bored', 'why is it always raining when i have to walk home', 'literally cannot be bothered with anything today', 'sixth form common room is a vibe and also a health hazard'),
-    ...V('student', 'week 7 and the fridge contains one lemon', 'just paid £9 for a salad and a tiny cup of regret', 'seminar at 9am should be a human rights violation', 'someone in my house has used all the toilet roll and replaced it with hope'),
-    ...V('young_pro', 'Sunday scaries but make it a quarterly planning meeting', 'Bought a plant. It is already looking at me', 'Nobody tells you that adulting is mostly emails about bins', 'Cycling home in the rain. Character building.'),
-    ...V('parent', 'Hiding in the bathroom with a biscuit. Do not tell the children.', 'School shoes: three pairs in five months. Who is eating them?', 'Soft play is the circle of hell Dante forgot', 'We have achieved clean uniform AND packed lunch. Nobody clap, you will wake it.'),
-    ...V('retiree', 'Beautiful frost on the allotment this morning. The leeks are unbothered.', 'Had a lovely chat with the girl at the Post Office. She remembered my name.', 'Thinking of everyone who is on their own today. Pop round for a cuppa.', 'The bus was on time. Mark the date.'),
-    ...V('adult', 'Quiet night in. Phone on silent. Feels illegal.', 'Realised I have been wearing the same jumper since Tuesday and nobody has said a word', 'Long drive home. Radio 4 is carrying me.'),
-  ],
-  'post2.photo': ['Sunset over the rooftops tonight. Not bad for a Tuesday.', 'Park looking lovely.', 'Sunday roast and no regrets.', 'Look what the cat did.', 'Market stall haul. Too many tomatoes, obviously.', 'First frost of the year on the canal.', 'Home-made sourdough. It is a bit flat but it is MY flat.', 'Little one\'s first day at the new school. Brave pants.'],
   'post2.share': ['Shared from the local group: {p.thing}', 'This is the third time. Sharing in case it helps someone.', 'Please read and share. It could be your street next.'],
 };

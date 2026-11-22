@@ -10,6 +10,7 @@
 //   commands: routine.replan {pid}, routine.insert {...}.
 import { A, ACT_LABEL, ACT_CAT, MODES, MODE_VERB, STRIDE, ACTS } from './acts.js';
 import { buildPlan, hourToTick, workToday } from './plan.js';
+import { openingsFor, isOpenAt } from '../../population/venues.js';
 import { makeLife, makeCtx } from './life.js';
 
 const CATS = ['sleep', 'work', 'commute', 'errand', 'out', 'social', 'home', 'chores', 'care', 'eat'];
@@ -50,6 +51,13 @@ function enter(world, ctx, p, rt, act, pt, pid, aux, tick) {
   if (bid !== null && world._handlers.get('arrive') !== undefined && world._handlers.get('arrive').length) world.emit('arrive', { person: p, buildingId: bid });
 }
 
+/** true when building bid is not a venue with hours, or is open now (hours from the pack venue template, incl. business trims). */
+function venueOpenNow(world, bid, ticksAhead = 0) {
+  const b = world.buildings.get(bid), v = b && b.lf; if (!v || !v.template) return true;
+  const t = world.time; if (!world.pack.venues[v.template] || !world.pack.venues[v.template].hours) return true;
+  return (iv => isOpenAt(iv, t.hour + t.minute / 60) && isOpenAt(iv, Math.min(23.9, t.hour + t.minute / 60 + ticksAhead / 6) - 0.01))(openingsFor(world.pack, v, t.dow, t.bankHoliday));
+}
+
 export function wake(world, ctx, p) {
   const rt = p.ext.rt, tick = world.tick;
   let pl = rt.plan, i = rt.pi;
@@ -61,7 +69,9 @@ export function wake(world, ctx, p) {
   const nt = pl[o + STRIDE];
   const gs = world.sys.goals;
   if (gs !== undefined && gs.query && gs.query.override) {
-    const ov = gs.query.override(p, { tick, until: nt, act: ACTS[act][0], ptype: pt, pid });
+    let ov = gs.query.override(p, { tick, until: nt, act: ACTS[act][0], ptype: pt, pid });
+    // goal-driven visits to a venue (coffee with a friend, club meeting) must respect its opening hours (no 03:30 cafe customers): a closed venue means the goal step waits, the plan slot stands
+    if (ov && ov.ptype === 1 && ov.pid != null && !venueOpenNow(world, ov.pid, nt - tick)) ov = null;
     if (ov) { act = A.goal; pt = ov.ptype ?? pt; pid = ov.pid ?? pid; aux = ov.aux || 0; rt.goalLabel = ov.label || 'Pursuing a goal'; }
   }
   enter(world, ctx, p, rt, act, pt, pid, aux, tick);

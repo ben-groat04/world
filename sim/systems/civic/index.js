@@ -17,7 +17,7 @@ import { PARTIES, SERVICES, APP_KINDS, CASE_KINDS } from './data.js';
 
 const D = 144, clamp = (x, a, b) => (x < a ? a : x > b ? b : x), sig = (z) => 1 / (1 + Math.exp(-z));
 const EV = [['civic.planning_application', 'A planning application was lodged nearby', { kind: 'string', n: 'number' }], ['civic.planning_decision', 'The council decided a planning application', { kind: 'string', outcome: 'string', objections: 'number' }],
-  ['civic.election', 'A ward election was held', { turnout: 'number', winner: 'string' }], ['civic.councillor_elected', 'A resident was elected as a councillor', { party: 'string' }], ['civic.service_cut', 'A council service was cut', { service: 'string', pct: 'number' }],
+  ['civic.election', 'A ward election was held', { turnout: 'number', winner: 'string' }], ['civic.councillor_elected', 'A resident was elected as a councillor', { party: 'string' }], ['civic.service_cut', 'A council service was cut', { service: 'string', pct: 'number' }], ['civic.service_lost', 'A regular user lost a council service they relied on', { service: 'string', why: 'string' }],
   ['civic.service_restored', 'A council service was partly restored', { service: 'string' }], ['civic.campaign', 'A local campaign began', { cause: 'string', kind: 'string' }], ['civic.campaign_outcome', 'A local campaign ended', { kind: 'string', won: 'boolean' }],
   ['civic.bins', 'Bin collections failed on a street', { street: 'number' }], ['civic.case_closed', 'A council case was closed', { kind: 'string', days: 'number' }]];
 export const PARAMS = { turnoutIntercept: -0.75, regOwner: 0.95, regRenter: 0.82, objBase: 1, nationalSwingSd: 0.12, grvThreshold: 6, grvHalfLifeDays: 70 };
@@ -40,7 +40,18 @@ export function createCivic() {
   // ------------------------------------------------------------------ services & budget
   function applyCut(pct, only) { // pct of net budget removed; discretionary services take the larger share (CIPFA / Unison / YMCA 2010-19)
     for (const [k, S] of Object.entries(SERVICES)) { if (only && only !== k) continue; const before = C.svc[k]; C.svc[k] = clamp(before * (1 - pct * S.exposure), 0.15, 1); const d = before - C.svc[k];
-      if (d > 0.04) { const e = W.emit('civic.service_cut', { salience: 0.4, tags: ['civic', 'closure', 'community_problem'], payload: { service: k, pct: +(d / before).toFixed(2) } }); C.cutEv[k] = e; feedAdd(S.cutText(C.svc[k]), 3); C.grv[k] = (C.grv[k] || 0) + 14 * (d / before) * 4; } }
+      if (d > 0.04) { const e = W.emit('civic.service_cut', { salience: 0.4, tags: ['civic', 'closure', 'community_problem'], payload: { service: k, pct: +(d / before).toFixed(2) } }); C.cutEv[k] = e; feedAdd(S.cutText(C.svc[k]), 3); if (k === 'library') libraryLost(e, d / before); C.grv[k] = (C.grv[k] || 0) + 14 * (d / before) * 4; } }
+  }
+  // Cutting library hours lands on its regulars (visits ~ every 10 days or more, set in routine): older people lose a warm, free place to meet people, students and
+  // children a quiet study space and internet access (Libraries Taskforce / CILIP / Carnegie UK: older, jobless and young users are the heaviest library users).
+  // Each regular gets a caused event + a small stress (the routine layer separately cuts their visits in proportion to the hours lost).
+  function libraryLost(cause, frac) {
+    for (const p of W.living()) {
+      const lv = p.ext.rt && p.ext.rt.life && p.ext.rt.life.lv, use = lv ? lv.library : 0; if (!(use >= 0.6)) continue;
+      const a = ageOf(p), why = a >= 65 ? 'lost a warm place to meet people' : a < 25 ? 'lost a quiet place to study' : 'lost a free place to use the computers';
+      W.emit('civic.service_lost', { actors: [p.id], place: null, cause, salience: 0.15, tags: ['civic', 'community_problem'], payload: { service: 'library', why } });
+      if (W.commands.has('health.stress')) W.cmd('health.stress', { pid: p.id, amount: +(0.1 * frac * Math.min(1.5, use)).toFixed(3), why: 'the library cut', cause });
+    }
   }
   function annual() { // borough budget: central grant pressure (exogenous, random walk) is passed down via the ruling party's priorities
     const r = R(W.tick, 'budget'); C.borough.grant = clamp(C.borough.grant + r.gauss(-0.01, 0.03), -0.2, 0.15);

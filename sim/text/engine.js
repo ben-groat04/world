@@ -117,7 +117,7 @@ export class TextEngine {
     }
     if (root === 'place') return st.place ?? 'round the corner';
     if (root === 'v') return this._venue(prop, st);
-    if (root === 'r') { const m = /^(\d+)-(\d+)$/.exec(prop); return m ? String(+m[1] + Math.floor(st.rng.next() * (+m[2] - +m[1] + 1))) : ''; }
+    if (root === 'r') { if (/^\d+$/.test(prop)) return prop; const m = /^(\d+)-(\d+)$/.exec(prop); return m ? String(+m[1] + Math.floor(st.rng.next() * (+m[2] - +m[1] + 1))) : ''; }
     if (key === 'tick') return st.ev?.tick ?? '';
     const v = st.ctx.vars?.[key] ?? st.ctx[key]; return v == null ? '' : v;
   }

@@ -95,6 +95,11 @@ function bedHour(W, p, D, rec, w) {
 
 const ALL_OUT = ['shop', 'cafe', 'pub', 'gym', 'park', 'library', 'community', 'pharmacy', 'launderette', 'takeaway', 'visit', 'offsocial', 'family_off', 'retail_trip', 'nightout', 'barber'];
 
+function openThrough(W, bid, rec, h0, h1) {
+  const b = W.world.buildings.get(bid), v = b && b.lf; if (!v || !v.template || !W.world.pack.venues[v.template] || !W.world.pack.venues[v.template].hours) return true;
+  const iv = openingsFor(W.world.pack, v, rec.dow, rec.bankHoliday); return isOpenAt(iv, h0 + 0.01) && isOpenAt(iv, Math.min(h1, 23.9) - 0.01);
+}
+
 /** Build the plan for the day on which the person wakes (day D). Returns flat array. */
 export function buildPlan(W, p, D, wakeTickAt) {
   const q = p.ext.pop, rt = p.ext.rt, L = rt.life, rec = W.cal.recAt(D), age = W.ageOf(p), id = p.id, cal = W.cal;
@@ -170,6 +175,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
   // ---- outings (weekly-rate sampling), placed into free gaps
   const kidsHomeOnly = age < 12;
   const wishes = [];
+  const libSvc = W.world.sys.civic && W.world.sys.civic.query.service ? W.world.sys.civic.query.service('library') : 1; // fewer library hours -> proportionally fewer visits
   const lv = L.lv;
   const dayF = wend ? 2.3 : 0.85, mild = rec.regime === 'rain' ? 0.8 : 1;
   const rain = 1;
@@ -187,7 +193,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
       want('cafe', lv.cafe, 9, 16.5, 0.9 + dice(id, D, 6) * 0.8);
       want('pub', lv.pub, wend ? 13 : 17.5, wend ? 23 : 22.5, 1.4 + dice(id, D, 7) * 1.8);
       want('gym', lv.gym, wend ? 9 : 17.5, wend ? 17 : 21, 1.1);
-      want('library', lv.library, 10, 16.5, 0.8); want('community', lv.community, 10, 16, 1.5); want('pharmacy', lv.pharmacy, 9.5, 17.5, 0.3); want('launderette', lv.launderette, 9, 19, 1.2);
+      want('library', lv.library * libSvc, 10, 16.5, 0.8); want('community', lv.community, 10, 16, 1.5); want('pharmacy', lv.pharmacy, 9.5, 17.5, 0.3); want('launderette', lv.launderette, 9, 19, 1.2);
       want('takeaway', lv.takeaway, 17.5, 21.5, 0.35); want('barber', lv.barber, 10, 17.5, 0.8);
       if (L.dog) want('park', 5, 6.8, 8.6, 0.6, { dog: true, noDay: true });
       want('park', lv.park * (L.dog ? 0.6 : 1) * parkHeat, wend ? (parkEve ? 16 : 9.5) : (parkEve ? 17.8 : 16.5), wend ? (parkEve ? 20.5 : 17) : (parkEve ? 20.8 : 19.5), 0.7 + dice(id, D, 9) * 0.9);
@@ -214,6 +220,7 @@ export function buildPlan(W, p, D, wakeTickAt) {
       let a = Math.max(wsh.a - blk.tripBefore, g0 + 0.1);
       if (a + tot > g1 - 0.1) { if (g1 - g0 - 0.2 >= tot && a > g0 + 0.1) a = g1 - 0.1 - tot; else continue; }
       if (a < g0 + 0.05) continue;
+      if (blk.pt === 1 && !openThrough(W, blk.pid, rec, a + blk.tripBefore, a + blk.tripBefore + blk.dur)) continue; // gap-fitting may shift the slot: it must still be inside the venue's opening hours
       const parts = []; let t = a;
       if (blk.tripBefore) { parts.push({ a: t, b: t + blk.tripBefore, act: A.commute, pt: 4, pid: blk.tripId, aux: 0 }); t += blk.tripBefore; }
       parts.push({ a: t, b: t + blk.dur, act: blk.act, pt: blk.pt, pid: blk.pid, aux: blk.aux || 0 }); t += blk.dur;

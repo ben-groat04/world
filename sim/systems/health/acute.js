@@ -25,6 +25,18 @@ export function weeklyAcute(w, rng, people) {
   st.svc.refWait = clamp(14 + 2 * (lvl - 1) + 4 * wave + rng.gauss(0, 0.4), 8, 40); st.svc.talkWait = clamp(10 + 1.2 * (lvl - 1) + 2 * wave + rng.gauss(0, 0.3), 5, 30);
   // household contagion map from currently ill
   const hhIll = new Map(); for (const id of st.ill) { const q = w.people.get(id); if (q && q.alive && q.ext.hl && q.ext.hl.acute) { const h = q.ext.pop.hh; hhIll.set(h, (hhIll.get(h) || 0) + 1); } }
+  // During an epidemic wave infection also travels along contacts (close ties and workmates of someone ill), not just the household: respiratory viruses spread
+  // through household, workplace/school and social contact (SAGE/ONS Covid Infection Survey transmission settings). expo: person -> {n contacts ill, src event of the first infector}
+  const expo = new Map();
+  if (epi.wave && w.sys.social && w.sys.social.query.ties) {
+    const bump1 = (id, src) => { const e = expo.get(id); if (e) e.n++; else expo.set(id, { n: 1, src }); };
+    for (const id of st.ill) {
+      const q = w.people.get(id); if (!q || !q.alive || !q.ext.hl || !q.ext.hl.acute) continue; const src = q.ext.hl.acute.ev || epi.wave.ev;
+      for (const tie of w.sys.social.query.ties(id, { layer: 2 })) if (typeof tie.o === 'number' && tie.k !== 'partner') bump1(tie.o, src);
+      const wb = q.workId != null && q.ext.hl.acute.sev < 2 ? w.buildings.get(q.workId) : null; // mild cases keep working; sicker ones are off (rt.sickDay)
+      if (wb) for (const e of wb.employees) if (e !== id) bump1(e, src);
+    }
+  }
   const school = t.schoolDay !== false;
   for (const p of people) {
     const hl = p.ext.hl; if (!hl || hl.acute || hl.dying) continue; const age = ageOf(w, p), q = p.ext.pop;
@@ -33,11 +45,11 @@ export function weeklyAcute(w, rng, people) {
     if (!hl.injury && rng.chance(ai)) { injure(w, rng, p, hl, age); continue; }
     // illness
     const ageM = age < 5 ? 2.4 : age < 15 ? 1.8 : age < 65 ? 1 : 0.75;
-    const r = 0.0105 * lvl * ageM * (age >= 3 && age < 17 && school ? 1.2 : 1) * (hl.imm > T ? 0.12 : 1) * (1 + 3.2 * (hhIll.get(q.hh) || 0)) * (hl.smoke ? 1.25 : 1) * (hl.c.COPD ? 1.7 : 1) * (hl.c.asthma ? 1.3 : 1) * (1 + 0.25 * Math.min(2, hl.S || 0));
-    if (rng.chance(Math.min(0.6, r))) fall(w, rng, p, hl, age, sevF);
+    const r = 0.0105 * lvl * ageM * (age >= 3 && age < 17 && school ? 1.2 : 1) * (hl.imm > T ? 0.12 : 1) * (1 + 3.2 * (hhIll.get(q.hh) || 0)) * (expo.size ? 1 + 0.35 * Math.min(6, (expo.get(p.id) || { n: 0 }).n) : 1) * (hl.smoke ? 1.25 : 1) * (hl.c.COPD ? 1.7 : 1) * (hl.c.asthma ? 1.3 : 1) * (1 + 0.25 * Math.min(2, hl.S || 0));
+    if (rng.chance(Math.min(0.6, r))) fall(w, rng, p, hl, age, sevF, expo.get(p.id));
   }
 }
-function fall(w, rng, p, hl, age, sevF) {
+function fall(w, rng, p, hl, age, sevF, ex) {
   const wave = w.lf.health.epi.wave, old = age >= 70 || hl.c.COPD || hl.c.diabetes || hl.c.dementia || hl.c['heart disease'];
   const s3 = (0.075 * sevF) * (old ? 2.4 : age < 5 ? 0.8 : 1), s2 = 0.3 * Math.sqrt(sevF);
   const u = rng.next(), sev = u < s3 ? 3 : u < s3 + s2 ? 2 : 1;
@@ -50,7 +62,8 @@ function fall(w, rng, p, hl, age, sevF) {
   later(w, days(dur + (hosp ? 7 : 0)), 'acute.end', { pid: p.id, t0: T });
   bump(w, 'ill'); bump(w, 'ill_sev' + sev);
   let ev = 0;
-  if (sev >= 2) { ev = w.emit('health.ill', { actors: [p.id], salience: hosp ? 0.45 : 0.1, tags: ['illness'], payload: { name, severity: sev } }); hl.acute.ev = ev; }
+  // wave cases are always recorded and caused by the infector's case (a contact) or the outbreak itself, so a pandemic leaves a causal chain of who caught it from whom
+  if (sev >= 2 || (wave && name === wave.name)) { ev = w.emit('health.ill', { actors: [p.id], salience: hosp ? 0.45 : sev >= 2 ? 0.12 : 0.06, cause: wave && name === wave.name ? (ex && ex.src) || wave.ev || 0 : 0, tags: ['illness'], payload: { name, severity: sev } }); hl.acute.ev = ev; }
   if (hosp) { w.emit('health.crisis', { actors: [p.id], salience: 0.5, cause: ev, tags: ['illness', 'hospital'], payload: { what: 'admitted to hospital with ' + name } }); bump(w, 'admissions'); }
   if (sev >= 3 || (sev === 2 && rng.chance(0.3))) { bump(w, 'gp'); if (sev === 3) { bump(w, 'ae'); } }
 }

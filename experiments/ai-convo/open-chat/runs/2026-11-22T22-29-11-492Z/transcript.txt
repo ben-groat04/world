@@ -92,3 +92,89 @@ tom u good with that? need ur sheet before then
 --- Mon 08:01, Tom
 Ok... thurs 3 is fine. 👍
 
+--- Mon 08:08, Sam
+@maya did ur pivot table trick work on the invoice sheet? want to try it before fri 🙏
+
+--- Mon 08:11, Tom reacted 👍 to Sam's 08:08 message
+
+--- Mon 08:46, Maya
+yeah worked a treat
+
+--- Mon 08:46, Tom reacted 👍 to Maya's 08:46 message
+
+--- Mon 08:47, Maya
+still waiting on toms sheet so havent used it on the invoices yet
+
+--- Mon 08:47, Sam
+oh ok 👍 can u send me the steps for it? i'll try it on last month's invoices
+
+--- Mon 08:48, Tom
+@maya sorry... sheet to u thurs morning. flour & packaging done... just chasing one $212 packaging invoice. 👍
+
+--- Mon 08:54, Sam reacted 👍 to Tom's 08:48 message
+
+--- Mon 09:32, Maya
+@sam yep after toms sheet is in thurs
+
+--- Mon 09:33, Tom reacted 👍 to Maya's 09:32 message
+
+--- Mon 09:42, Sam reacted 👍 to Maya's 09:32 message
+
+--- Mon 14:48, Sam
+@maya can u send the steps now? 🙏
+
+--- Mon 14:48, Sam
+i'll test on last month's invoices, dont need toms sheet for that
+
+--- Mon 14:50, Tom reacted 👍 to Sam's 14:48 message
+
+--- Mon 15:28, Maya
+@sam select the invoice range > insert > pivot table
+
+--- Mon 15:28, Tom reacted 👍 to Maya's 15:28 message
+
+--- Mon 15:28, Maya
+rows = supplier, values = sum of amount
+
+--- Mon 15:28, Maya
+then filter date to last month
+
+--- Mon 15:29, Tom reacted 👍 to Maya's 15:28 message
+
+--- Mon 16:18, Sam
+🙌 trying it now
+
+--- Mon 16:23, Jo
+Anyone heading to Geelong for the carnival Sat? I can drive if not, but I'd rather not do the whole trip alone, so if nobody's going I'll look at the train or see if one of the parents from the team is going.
+
+--- Mon 16:24, Sam
+not me sorry 😩 hope someone's going 🤞
+
+--- Mon 16:26, Maya
+@jo im going to geelong sat for my sisters wedding anyway
+
+--- Mon 16:26, Maya
+can give u a lift if ur ok leaving early-ish
+
+--- Mon 16:27, Jo
+@maya oh nice, could I get a lift? I can pay for fuel. what time are you leaving?
+
+--- Mon 16:47, Sam reacted 🙌 to Jo's 16:27 message
+
+--- Mon 17:26, Maya
+@jo yep leaving around 8?
+
+--- Mon 17:27, Maya
+sat is a long drive so earlier is better lol
+
+--- Mon 17:35, Sam reacted 😂 to Maya's 17:27 message
+
+--- Mon 18:37, Maya
+@jo 8am still ok?
+
+--- Mon 18:37, Maya
+want to make sure before i lock it in
+
+--- Mon 18:39, Jo
+@maya 8 works for me 👍 I'll be ready at the corner by 7:50 so you don't have to wait, and fuel's on me.
+

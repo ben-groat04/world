@@ -208,7 +208,7 @@ export const VENUE_TEMPLATES = {
     id: 'mosque', label: 'Mosque (converted building) with madrasa', category: 'worship', religion: 'Muslim', zone: 'special', count: [1, 1], footprint: { w: 12, d: 12 },
     hours: { wk: [[4.5, 22.5]], sat: [[4.5, 22.5]], sun: [[4.5, 22.5]], bank: 'sun', prayerLinked: true }, capacity: 400,
     sessions: [{ kind: 'jumuah', days: D.fri, from: 12.5, to: 14, fill: 0.7, regulars: 0.8 }, { kind: 'daily_prayer', days: D.all, from: 5, to: 22, fill: 0.08, regulars: 0.95, prayerTimes: true }, { kind: 'madrasa', days: D.wk, from: 16.5, to: 18.5, fill: 0.3, term: true, regulars: 0.95 }, { kind: 'taraweeh', days: D.all, from: 21, to: 23, fill: 0.5, event: 'ramadan', regulars: 0.8 }, { kind: 'eid_prayers', days: D.all, from: 7.5, to: 10.5, fill: 1, event: 'eid' }, { kind: 'community_iftar', days: D.all, from: 19.5, to: 21, fill: 0.5, event: 'ramadan' }],
-    staff: [{ occ: 'imam', n: [1, 2], pattern: 'flexible' }], volunteers: [10, 20],
+    staff: [{ occ: 'imam', n: [1, 1], pattern: 'flexible' }, { occ: 'religious_teacher', n: [1, 2], pattern: 'flexible' }], volunteers: [10, 20],
     names: ['Masjid Al-Noor', 'Larkfield Islamic Centre', 'Jamia Masjid Bilal', 'Masjid Umar'], tags: ['worship', 'muslim', 'regulars', 'weddings_funerals'],
   },
   // ---------------- business / trade ----------------

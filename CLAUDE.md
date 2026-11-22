@@ -1,3 +1,3 @@
 
 ## Data rule (from the user)
-Never guess data. Ever. Every number must come from a cited source. If no source exists, say so and leave it out or unspecified; never substitute an estimate, multiplier or "reasonable assumption".
+"Never guess data. Ever." This covers facts about the real world (population stats, pay, rates, prices, base rates): they must be sourced, or left unspecified if no source exists. It does not cover design parameters (engine timings, backstops, defaults), which are design choices, not data.

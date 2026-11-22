@@ -1,0 +1,104 @@
+// Situational inner thoughts (genre 'thought'), picked by ui/describe.js thoughtFor() from what is actually true of the person right now.
+// Slots supplied by the caller: {goal} {step} {b.first} (partner / the other person) {kid} {street} {p.owed} {p.rent} {p.pct} {p.venue} {p.job} {p.days}.
+const M = (band, ...ts) => ts.map((t) => ({ t, when: { moodband: band } }));
+export default {
+  'thought.arrears': [
+    ...M(['low', 'flat'], 'Owe £{p.owed} on the rent and the letter has stopped being polite.', 'Two weeks until pay and £{p.owed} behind. I keep doing the sum as if it will change.', 'Need to ring the landlord. Rehearsing what to say so it sounds like a plan and not a plea.'),
+    ...M(['ok', 'high'], 'Behind on the rent by £{p.owed}, but there is a plan, and a plan is most of the way to being fine.', 'Chipping away at the £{p.owed}. A bit more each month and it stops being a thing.'),
+  ],
+  'thought.notice': [
+    'Notice on the table: {p.days} days to find somewhere that is not twice the price. Three tabs open, none of them affordable.',
+    'Every flat under £{p.rent} a month is either a cupboard or already gone.',
+    ...M('low', 'Packing a room I have only just got used to.'),
+    { t: 'The landlord says it is nothing personal. It is the most personal thing that has happened all year.', when: {} },
+  ],
+  'thought.rent': [
+    'Rent is £{p.rent} a month now. It does not feel like a number that should keep going up.',
+    'Added up rent against what comes in. {p.pct}% of it goes before I have bought a single teabag.',
+    ...M(['low', 'flat'], 'The rent goes out of the account faster than I can say the word.'),
+  ],
+  'thought.goal': [
+    'Trying to {goal}. Today the job is: {step}.',
+    'On the list: {goal}. Next bit is {step}, which is the bit I keep putting off.',
+    { t: 'Want to {goal} by the end of the year. Not sure the year agrees.', when: { moodband: ['low', 'flat'] } },
+    { t: 'Small steps on {goal}. {step} today. Feels almost like progress.', when: { moodband: ['ok', 'high'] } },
+    'If I can {goal}, a lot of the rest gets easier. That is what I tell myself on the bus.',
+  ],
+  'thought.goal_plain': [
+    'Still want to {goal}. Haven\'t quite worked out how.',
+    'Keep meaning to {goal}. Every week it slides to the next one.',
+    'Might {goal} soon. Might. The wanting is the easy bit.',
+  ],
+  'thought.partner': [
+    'Wonder what {b.first} wants for tea. Wonder if {b.They} {b.v:know} either.',
+    'Something {b.first} said last night is still going round in my head, in a good way.',
+    { t: '{b.first} has been working too hard. I should say something and I should make a decent dinner first.', when: { moodband: ['flat', 'ok'] } },
+    { t: 'Lucky with {b.first}. Do not say so often enough.', when: { moodband: 'high' } },
+    { t: 'Me and {b.first} are in the same room and both on our phones. Modern romance.', when: { moodband: ['flat', 'low'] } },
+  ],
+  'thought.partner_away': [
+    'Miss {b.first}. A text is not the same as someone in the next chair.',
+    'Counting days until I see {b.first} again. It is not a long wait, but it does not feel short.',
+  ],
+  'thought.kids': [
+    'Have to remember {kid}\'s school thing on Thursday. It is on the fridge. The fridge is full of things.',
+    '{kid} asked a question I could not answer, so I said we would look it up. Parenting is mostly deflection.',
+    'Quiet for ten minutes, which means {kid} is either asleep or up to something.',
+    { t: 'The washing never ends. It is like a river but with socks.', when: {} },
+  ],
+  'thought.pregnant': [
+    'Still hard to believe there is going to be a baby. The flat is going to need a lot more room.',
+    'Looked at a pram online and closed the tab. Not ready to see the price.',
+    'Names list is getting long. None of them are quite right yet.',
+  ],
+  'thought.caring': [
+    'Need to ring about the care package again. Everyone is very kind about it, and nothing happens.',
+    'Looking after them is not hard on any one day. It is the not stopping.',
+    ...M(['low', 'flat'], 'Haven\'t had a whole evening to myself since I can remember.'),
+  ],
+  'thought.jobhunt': [
+    'Applications go out and automatic replies come back. Is there even a human at the other end?',
+    'Looked at the jobs board again. Everything wants three years\' experience in something I have never heard of.',
+    ...M(['low', 'flat'], 'The days blur when there is nowhere you have to be.'),
+    ...M(['ok', 'high'], 'There was an interview mentioned. Might ring them back after lunch and sound keen.'),
+  ],
+  'thought.retired': [
+    'Used to count the days to this. Now I count the hours until the afternoon quiz show.',
+    'Never knew how long a Tuesday could be without a boss in it.',
+    { t: 'Thought retirement would feel like a holiday. Mostly it feels like Sunday that does not finish.', when: { moodband: ['flat', 'low'] } },
+    { t: 'Garden, cup of tea, nobody needs anything. Could do worse.', when: { moodband: ['ok', 'high'] } },
+  ],
+  'thought.student': [
+    'Deadline coming up. The work is going to be fine, or it is going to be a long night.',
+    'Spent more on coffee this week than on food. Student maths.',
+    { t: 'Everyone else seems to know what they are doing. I do not, but I have started to suspect that is normal.', when: { moodband: ['low', 'flat'] } },
+  ],
+  'thought.weather_rain': ['Rain again. It is the kind that gets in the gap at the top of your collar.', 'Everyone looks the same under an umbrella.', 'The drains on {p.street} will be overflowing by teatime.'],
+  'thought.weather_cold': ['Cold enough that the heating stays on, even though I am doing sums about it.', 'Can see my breath at the bus stop on {p.street}. Not meant to be this early in the day.', 'Scarf, gloves, thick socks. The three things I never remember at once.'],
+  'thought.weather_hot': ['Too hot to think. Window open, fan going, it makes no difference.', 'Everyone on {p.street} is outside. Everyone looks pleased about it, and slightly burnt.', 'Ice lolly weather. Might get one for the walk home.'],
+  'thought.weather_snow': ['Snow. It will be gone by lunch and be a puddle by tea, but just now it is lovely.', 'Everything has gone quiet on {p.street}. Snow does that.'],
+  'thought.weather_fog': ['Fog so thick the end of {p.street} has gone missing.', 'Can\'t see the other side of the road. Moving carefully.'],
+  'thought.friend_row': [
+    'Still thinking about {b.first}. Not sure if I am angry or just tired of it.',
+    'Should probably text {b.first}. Or wait. Not decided which would be worse.',
+    { t: 'It was over something stupid and it has gone on far too long. Pride is expensive.', when: { moodband: ['flat', 'low'] } },
+  ],
+  'thought.shift': [
+    'Tea, then a lie-down, then the {p.job} shift. The body clock has given up complaining.',
+    'Night shift soon. The trick is to sleep before you are tired and be tired before you sleep. I have never got it right.',
+    'Packed the flask and the sandwiches. The one thing I look forward to on a night is the first cup.',
+  ],
+  'thought.sleeping': [
+    'Mmm.', 'Dreaming about the bus not arriving. It did not, in the dream either.', '(deep asleep, one arm over the pillow)',
+  ],
+  'thought.dog': [
+    'The dog has decided the park is the best place in the world. Who am I to argue?', 'Left it too late for the walk again. The dog\'s expression says it all.',
+  ],
+  'thought.tv': ['Not watching, exactly. It is on.', 'Third episode in a row. I am not proud of it.', 'There is nothing on and I am still going to sit here until the end of it.'],
+  'thought.pub': ['One. Just the one. I say that every time.', 'The usual crowd and the usual jokes, and they are the best part of the week.', 'Someone has put "Mr Brightside" on again. We are all in this together.'],
+  'thought.gym': ['Halfway through the set and regretting my decisions, but in a productive way.', 'It gets easier. They say. I want to see the evidence.', 'Went because I said I would. That is more or less all the motivation I have got.'],
+  'thought.shop': ['Everything has gone up again. The same basket costs more than last month.', 'Got the cheaper own-brand and told myself it tastes just the same.', 'Always forget one thing. Always the thing I came for.'],
+  'thought.cafe': ['Good place for watching people. Everyone is on their way somewhere.', 'The coffee is better than it needs to be, which is why I keep coming.', 'Table by the window. Nobody wants anything from me for a bit.'],
+  'thought.worship': ['A quiet hour, among familiar faces. It steadies me.', 'The same hymn or the same prayer, and it still lands differently each time.'],
+  'thought.damp': ['The damp is back above the window. I wiped it, and it came back out of spite.', 'Another winter with the same patch of mould. The landlord says he will "look into" it.'],
+};

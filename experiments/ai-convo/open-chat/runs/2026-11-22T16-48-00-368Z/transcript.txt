@@ -47,3 +47,22 @@ Got it: morning train out, afternoon back, flight Sunday evening. I'll check the
 
 @oracle What are the current Kraków Główna to Zakopane train times and typical durations, and are there Sunday guided day tours from Kraków to Zakopane in early December?
 
+--- round 4, Oracle
+Kraków Główny to Zakopane takes about 2 hours on the fastest trains (a Pendolino runs about 1h57m), and slower regional or TLK trains take 3 to 4 hours. Roughly nine PKP Intercity trains a day run each way. I couldn't pull the exact departure times, so check the day's trains on the [PKP timetable for Kraków Główny to Zakopane](https://www.polishtrains.eu/train-schedule/krakow-glowny/zakopane) or PKP Intercity. The current timetable runs until 12 December, so early-December times should match what you see there.
+
+For Sunday tours, Attraction Tix says its guided minibus tour runs every Tuesday and Sunday, taking about 8 hours ([Attraction Tix](https://attractiontix.co.uk/tickets/zakopane-tatra-mountains)). Europe Express's small-group tour says it runs daily except 25 December, about 10 hours with transfers ([Europe Express](https://www.europeexpress.com/?p=5965)). Most other listings don't say which days they run, so confirm a December Sunday departure with the operator before booking.
+
+Sources:
+- [PKP timetable: Kraków Główny to Zakopane](https://www.polishtrains.eu/train-schedule/krakow-glowny/zakopane)
+- [Omio: Kraków to Zakopane trains](https://www.omio.com/trains/krakow/zakopane)
+- [Attraction Tix: Zakopane and Tatra Mountains](https://attractiontix.co.uk/tickets/zakopane-tatra-mountains)
+- [Europe Express: Zakopane and Tatras day tour](https://www.europeexpress.com/?p=5965)
+- [Tourscanner: Zakopane day trips from Kraków](https://tourscanner.com/l/kraków/i/zakopane)
+
+--- round 4, Sam
+Thanks, Jo, that helps. A Pendolino gets us to Zakopane in about two hours, so a morning train out and an afternoon return fits well.
+
+Quick honesty check: I don't have live fares yet. I'll look up December flights into KRK and Katowice now and post real numbers with the transfer costs before Maya's shortlist lands.
+
+@oracle Typical early December 2026 one-way flight prices from London, Amsterdam, and Berlin to Kraków (KRK) and Katowice (KTW), plus the cost and time of the KTW to Kraków transfer.
+

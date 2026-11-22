@@ -92,6 +92,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
 .field { display: grid; gap: .3rem; min-width: 0; }
 .field.grow { flex: 1 1 16rem; }
 .field input, .field select { width: 100%; min-width: 0; min-height: 2.25rem; padding: .35rem .6rem; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; font-size: .9rem; }
+.field.full { flex: 1 1 100%; }
+.field textarea { width: 100%; min-width: 0; padding: .35rem .6rem; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; font-size: .9rem; resize: vertical; }
 .newrun .status { flex: 1 1 100%; }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
 .status { margin: 0; font-size: .85rem; color: var(--muted); min-width: 0; overflow-wrap: anywhere; }
@@ -173,6 +175,8 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     <div class="field"><label class="label" for="nPeople">People</label>
       <select id="nPeople"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
     <label class="check" for="nOracle"><input id="nOracle" type="checkbox"> Oracle</label>
+    <div class="field full"><label class="label" for="nSecrets">Secrets (optional)</label>
+      <textarea id="nSecrets" rows="2" placeholder="Optional, one per line: Tom: ..."></textarea></div>
     <button class="btn primary" id="nGo" type="submit" disabled>Start</button>
     <p class="status" id="nStatus" role="status"></p>
   </form>
@@ -250,7 +254,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     try { return new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso)); }
     catch (e) { return iso; }
   };
-  const cls = w => run.names.includes(w) ? 'who-' + 'ABCDEFGH['[run.names.indexOf(w)] : 'who-O'; // colour by slot in run.names
+  const cls = w => run.names.includes(w) ? 'who-' + 'ABCDEFGH'[run.names.indexOf(w)] : 'who-O'; // colour by slot in run.names
   const nonPass = r => r.turns.filter(t => !t.pass).length;
   const endLabel = r => r.ended === 'everyone passed' ? 'everyone passed' : 'round limit';
 
@@ -378,8 +382,15 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       if (!comments || !canSend || sending) return;
       const topic = $('nTopic').value.replace(/\s+/g, ' ').trim().slice(0, 500);
       const people = Math.min(8, Math.max(2, +$('nPeople').value || 4));
+      const pool = ['Maya', 'Tom', 'Jo', 'Sam', 'Priya', 'Dan', 'Ellie', 'Kofi'].slice(0, people), secrets = {};
+      for (const line of $('nSecrets').value.split('\n')) {
+        if (!line.trim()) continue;
+        const m = line.match(/^\s*([^:]+?)\s*:\s*(.+?)\s*$/), name = m && pool.find(n => n.toLowerCase() === m[1].toLowerCase());
+        if (!name) { nStatus(`Secrets: use "Name: secret", with a name from the first ${people} people (${pool.join(', ')}).`, true); return; }
+        secrets[name] = m[2].replace(/\s+/g, ' ').slice(0, 300);
+      }
       const model = $('nModel').value === 'sonnet' ? 'sonnet' : 'haiku';
-      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nrounds: 30\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}`;
+      const text = `START RUN\nmodel: ${model}\npeople: ${people}\nrounds: 30\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\ntopic: ${topic || '(none)'}\nsecrets: ${JSON.stringify(secrets)}`;
       sending = true; $('nGo').disabled = true; nStatus('Sending\u2026');
       try {
         const anchor = await comments.anchorFor($('newForm'));

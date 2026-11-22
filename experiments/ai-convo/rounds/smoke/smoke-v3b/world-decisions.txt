@@ -1,0 +1,12 @@
+[Fri 16:00] text (at Fri 17:35) Helen → Yousif Al-Ani: Hello Yousif, thank you for sending this. It looks lovely, I'll have a proper look over the weekend and let you know. Kind regards, Helen
+   item: Yousif Al-Ani texted Helen: "hi helen, revised logo is attached. let me know if its ok and ill send the invoice"
+   reason: Helen is formal and vague and slow; a polite non-committal acknowledgement later on a Friday evening is ordinary.
+[Fri 16:00] text (at Fri 16:10) Dan (Yousif's university friend) → Yousif Al-Ani: No worries mate, let me know by about 7. If not tonight, another time.
+   item: Yousif Al-Ani texted Dan (Yousif's university friend): "maybe. not sure ill be up for it tonight, will tell you later"
+   reason: Dan is used to Yousif saying maybe and replies casually without pressure.
+[Fri 20:44] none Landlord's letting agent → Hayley Johnson: Friday evening, outside office hours, so no reply comes tonight. The agent will likely respond in the next working days, probably asking for photos.
+   item: Hayley Johnson texted Landlord's letting agent: "Hello, I'm one of the tenants at the flat. There's a patch of mould in the bathroom that's been growing over the last few weeks, and I'd be grateful if someone could come and take a look. Happy to send photos if useful. Thanks very much, Hayley Johnson"
+   reason: It is 20:44 on a Friday and a formal agency is closed, so nothing comes back until the working week.
+[Fri 22:40] text (at Fri 22:55) Dan (Yousif's university friend) → Yousif Al-Ani: No worries mate, get some rest. Next week then, give me a shout.
+   item: Yousif Al-Ani texted Dan (Yousif's university friend): "sorry late reply. not this week, tired. maybe next"
+   reason: Dan already said another time was fine; a brief, easygoing reply fits.

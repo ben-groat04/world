@@ -1,0 +1,93 @@
+## Hayley Johnson
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Hayley's bedroom: 
+   memory: It's Friday afternoon, wrapping up work at home. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Chest a bit tight in the cold, so I'm finding my inhaler.
+   plan: until Fri 16:30: finish work, find inhaler @Hayley's bedroom / until Fri 18:30: make tea, cook dinner, chat to whoever is in @Flat kitchen
+Fri 16:28 [looked at your phone (Yousif Al-Ani texted: thanks hayley, ill cook my o)] @Hayley's bedroom: finish work, find inhaler
+   memory: It's Friday afternoon, wrapping up work at home. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Chest a bit tight in the cold, so I'm finding my inhaler. Yousif said no to dinner tonight (cooking his own). Junior offered a big pot of food in the group.
+   plan: until Fri 16:40: finish work, find inhaler @Hayley's bedroom / until Fri 18:30: chat to Junior, help with dinner @Flat kitchen
+Fri 16:31 [looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: ha)] @Hayley's bedroom: finish work, find inhaler
+   memory: It's Friday afternoon, wrapping up work at home. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Chest a bit tight in the cold, finding my inhaler. Yousif said no to dinner (cooking his own). Junior is cooking chicken and chickpea stew with scotch bonnet, ready about 7; I offered to make a pudding.
+   plan: until Fri 16:45: finish work, find inhaler @Hayley's bedroom / until Fri 17:00: get baking ingredients out, start apple crumble @Flat kitchen / until Fri 19:00: bake pudding, chat to Junior while he cooks @Flat kitchen
+Fri 16:42 [looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: ap)] @Hayley's bedroom: finish work, find inhaler (kept plan)
+   memory: It's Friday afternoon, wrapping up work at home. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Chest a bit tight in the cold, finding my inhaler. Yousif said no to dinner (cooking his own). Junior is cooking chicken and chickpea stew with scotch bonnet, ready about 7; I offered to make a pudding.
+   plan: until Fri 16:45: finish work, find inhaler @Hayley's bedroom / until Fri 17:00: get baking ingredients out, start apple crumble @Flat kitchen / until Fri 19:00: bake pudding, chat to Junior while he cooks @Flat kitchen
+Fri 16:45   -> Flat kitchen (get baking ingredients out, start apple crumble)
+Fri 16:45 [you came into Flat kitchen: Junior Edwards here] @Flat kitchen: get baking ingredients out, start apple crumble (kept plan) | talk to Junior Edwards
+   memory: It's Friday afternoon, wrapping up work at home. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Chest a bit tight in the cold, finding my inhaler. Yousif said no to dinner (cooking his own). Junior is cooking chicken and chickpea stew with scotch bonnet, ready about 7; I'm making apple crumble to bring through about 7.
+   plan: until Fri 17:00: get baking ingredients out, start apple crumble @Flat kitchen / until Fri 19:00: bake pudding, chat to Junior while he cooks @Flat kitchen
+Fri 18:36 [after the conversation] @Flat kitchen: bake pudding, chat to Junior while he cooks (kept plan)
+   memory: It's Friday afternoon, wrapping up work at home. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Chest a bit tight in the cold, finding my inhaler. Yousif said no to dinner (cooking his own). Junior is cooking chicken and chickpea stew with scotch bonnet, ready about 7; I'm making apple crumble to bring through about 7.
+   plan: until Fri 19:00: bake pudding, chat to Junior while he cooks @Flat kitchen
+Fri 18:39 [looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: st)] @Flat kitchen: bake pudding, chat to Junior while he cooks | talk to Junior Edwards
+   memory: It's Friday evening. Still need to message the landlord about the bathroom mould, and want to float a flat dinner before Christmas. Yousif said no to dinner (cooking his own). Junior is cooking chicken and chickpea stew with scotch bonnet, ready about 7; I'm making apple crumble to bring through about 7.
+   plan: until Fri 19:00: finish crumble, chat to Junior while he cooks @Flat kitchen / until Fri 20:00: eat stew and crumble with Junior @Flat kitchen
+Fri 20:37 [after the conversation; your plan ran out] @Flat kitchen: eat stew and crumble with Junior | talk to Yousif Al-Ani
+   memory: It's Friday evening. Still need to message the landlord's agent about the bathroom mould, and want to float a flat dinner before Christmas. Yousif said no to dinner (cooking his own). Junior cooked chicken and chickpea stew with scotch bonnet; I made apple crumble and we ate together. Junior has left the kitchen; he works Sat/Sun 7-7.
+   plan: until Fri 21:00: Wash up, chat to Yousif @Flat kitchen / until Fri 21:20: Message letting agent about bathroom mould @Hayley's bedroom [errand: Message the letting agent about the mould] / until Fri 23:00: Reality TV on the sofa @Flat living room
+Fri 20:44 [after the conversation] @Flat kitchen: Wash up, chat to Yousif
+   memory: It's Friday evening. Messaged the letting agent about the bathroom mould at 20:37 (waiting for reply). Yousif said no to a flat dinner (cooking his own). Junior cooked chicken and chickpea stew with scotch bonnet; I made apple crumble and we ate together. Junior is in the living room with soul records; he works Sat/Sun 7-7. Still want to float a flat dinner before Christmas.
+   plan: until Fri 21:00: Finish washing up, small bowl of stew @Flat kitchen / until Fri 23:00: Soul records and chat with Junior, then reality TV @Flat living room
+Fri 21:00   -> Flat living room (Soul records and chat with Junior, then reality TV)
+Fri 21:00 [you came into Flat living room: Junior Edwards here] @Flat living room: Soul records and chat with Junior, then reality TV (kept plan) | talk to Junior Edwards
+   memory: It's Friday evening. Messaged the letting agent about the bathroom mould at 20:37 (waiting for reply). Yousif said no to a flat dinner (cooking his own). Junior cooked chicken and chickpea stew with scotch bonnet; I made apple crumble and we ate together. Junior is in the living room with soul records; he works Sat/Sun 7-7. Still want to float a flat dinner before Christmas.
+   plan: until Fri 23:00: Soul records and chat with Junior, then reality TV @Flat living room
+Fri 22:40 [after the conversation] @Flat living room: Soul records and chat with Junior, then reality TV
+   memory: It's Friday night. Messaged the letting agent about the bathroom mould at 20:37 (waiting for reply). Yousif said no to a flat dinner. Junior cooked scotch bonnet stew and I made apple crumble; we ate together. Junior's up for a flat meal the week after next and will chase the agent Monday. I promised him a flapjack (oats and golden syrup, no raisins) to leave on the side by 06:45 tomorrow; he works Sat/Sun 7-7.
+   plan: until Fri 23:30: Watching reality TV, finishing water @Flat living room / until Fri 23:45: Getting ready for bed, setting alarm for flapjack @Hayley's bedroom / until Sat 06:15: Sleeping @Hayley's bedroom (asleep)
+Fri 23:30   -> Hayley's bedroom (Getting ready for bed, setting alarm for flapjack)
+
+## Junior Edwards
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Junior's bedroom: 
+   memory: Home from shift, feet aching. Working Sat and Sun 07:00-19:00. Tonight is my free evening. Need to top up electric and wash up my stuff.
+   plan: until Fri 16:30: change, put a soul record on, rest knees @Junior's bedroom / until Fri 17:00: wash up, top up electric on phone, see who's about @Flat kitchen / until Fri 20:00: cook a big pot of something and offer it round @Flat kitchen / until Fri 22:30: eat, chat, records or football radio @Flat living room
+Fri 16:30   -> Flat kitchen (wash up, top up electric on phone, see who's about)
+Fri 16:30 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Oo); between things, you checked your phone] @Flat kitchen: wash up, top up electric on phone, see who's about (kept plan)
+   memory: Home from shift, feet aching. Working Sat and Sun 07:00-19:00. Tonight is my free evening. Need to top up electric and wash up my stuff. Hayley said yes to my big pot tonight and offered a side or pudding.
+   plan: until Fri 17:00: wash up, top up electric on phone, see who's about @Flat kitchen / until Fri 20:00: cook a big pot of something and offer it round @Flat kitchen / until Fri 22:30: eat, chat, records or football radio @Flat living room
+Fri 16:33 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Br)] @Flat kitchen: wash up, top up electric on phone, see who's about (kept plan)
+   memory: Home from shift, feet aching. Working Sat and Sun 07:00-19:00. Tonight is my free evening. Need to top up electric and wash up my stuff. Hayley said yes to my big pot tonight and is making an apple pudding. Told them stew ready about 7.
+   plan: until Fri 17:00: wash up, top up electric on phone, see who's about @Flat kitchen / until Fri 20:00: cook a big pot of something and offer it round @Flat kitchen / until Fri 22:30: eat, chat, records or football radio @Flat living room
+Fri 18:36 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Ha); after the conversation; between things, you checked your phone] @Flat kitchen: cook a big pot of something and offer it round (kept plan)
+   memory: Home from shift, feet aching. Working Sat and Sun 07:00-19:00. Tonight is my free evening. Need to top up electric and wash up my stuff. Hayley said yes to my big pot tonight and is making an apple pudding. Told them stew ready about 7.
+   plan: until Fri 20:00: cook a big pot of something and offer it round @Flat kitchen / until Fri 22:30: eat, chat, records or football radio @Flat living room
+Fri 20:37   -> Flat living room (eat, chat, records or football radio)
+Fri 20:37 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Cr); after the conversation; between things, you checked your phone] @Flat living room: eat, chat, records or football radio (kept plan)
+   memory: Home from shift, feet aching. Working Sat and Sun 07:00-19:00. Tonight is my free evening. Need to top up electric and wash up my stuff. Hayley said yes to my big pot tonight and is making an apple pudding. Told them stew ready about 7. Now in living room after eating, nobody about yet.
+   plan: until Fri 22:30: eat, chat, records or football radio @Flat living room
+Fri 22:40 [after the conversation; your plan ran out] @Flat living room: eat, chat, records or football radio
+   memory: Home from shift, feet aching. Working Sat and Sun 07:00-19:00, leaving 06:45. Had a lovely Friday evening: stew shared, Al Green and Bill Withers records with Hayley. Hayley is leaving a flapjack (oats and golden syrup) on the kitchen side for me tomorrow. Said I'd chase the letting agent about the bathroom mould on Monday. Flat meal for everyone planned the week after this one, need to get Yousif along. Still need to top up electric and wash up my stuff.
+   plan: until Fri 23:15: getting ready for bed, setting alarm @Junior's bedroom / until Sat 06:00: sleeping @Junior's bedroom (asleep)
+Fri 22:40   -> Junior's bedroom (getting ready for bed, setting alarm)
+
+## Yousif Al-Ani
+Fri 16:00 [the simulation starts: decide where you are and what you are doing] @Yousif's bedroom: 
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 17:30: finishing logo revision for Helen @Yousif's bedroom / until Fri 18:30: cooking rice and lamb if kitchen is tolerable @Flat kitchen / until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 16:22 [looked at your phone (Dan (Yousif's university friend) texted: No worrie)] @Yousif's bedroom: finishing logo revision for Helen (kept plan)
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 17:30: finishing logo revision for Helen @Yousif's bedroom / until Fri 18:30: cooking rice and lamb if kitchen is tolerable @Flat kitchen / until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 16:30 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Oo); looked at your phone (Hayley Johnson texted: No worries at all, another ); looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: ha)] @Yousif's bedroom: finishing logo revision for Helen (kept plan)
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 17:30: finishing logo revision for Helen @Yousif's bedroom / until Fri 18:30: cooking rice and lamb if kitchen is tolerable @Flat kitchen / until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 16:42 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Br); looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: ap); looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Ha)] @Yousif's bedroom: finishing logo revision for Helen (kept plan)
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 17:30: finishing logo revision for Helen @Yousif's bedroom / until Fri 18:30: cooking rice and lamb if kitchen is tolerable @Flat kitchen / until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 18:36   -> Flat kitchen (cooking rice and lamb if kitchen is tolerable)
+Fri 18:36   -> Yousif's bedroom (watching film essay, sketching)
+Fri 18:36 [you came into Flat kitchen: Hayley Johnson, Junior Edwards here; between things, you checked your phone; looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: st)] @Yousif's bedroom: watching film essay, sketching (kept plan)
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 19:00   -> Flat kitchen (called over by Junior Edwards)
+Fri 20:37 [looked at your phone ([group: Hayley, Junior, Yousif] Hayley Johnson: Cr); after the conversation; looked at your phone ([group: Hayley, Junior, Yousif] Junior Edwards: an)] @Flat kitchen: with Hayley Johnson, Junior Edwards (kept plan)
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 20:44 [after the conversation] @Flat kitchen: with Hayley Johnson, Junior Edwards (kept plan)
+   memory: It is Friday afternoon and getting dark. I am finishing a logo revision for Helen and hoping she approves it so I can send the invoice. The kitchen was a mess this morning and I am already annoyed about it. I might cook later, but I don't know if I can be bothered. Dan asked about a drink and I haven't answered.
+   plan: until Fri 22:30: watching film essay, sketching @Yousif's bedroom
+Fri 22:40 [your plan ran out] @Flat kitchen: with Hayley Johnson, Junior Edwards
+   memory: Helen got the logo and will reply over the weekend. Had Junior's stew and Hayley's crumble on Friday evening. Dan asked about a drink and I haven't answered.
+   plan: until Fri 23:45: sketching, watching film essay @Yousif's bedroom / until Sat 07:30: sleep @Yousif's bedroom (asleep)
+Fri 22:40   -> Yousif's bedroom (sketching, watching film essay)
+Fri 23:14 [looked at your phone (Dan (Yousif's university friend) texted: No worrie)] @Yousif's bedroom: sketching, watching film essay (kept plan)
+   memory: Helen got the logo and will reply over the weekend. Had Junior's stew and Hayley's crumble on Friday evening. Dan asked about a drink and I haven't answered.
+   plan: until Fri 23:45: sketching, watching film essay @Yousif's bedroom / until Sat 07:30: sleep @Yousif's bedroom (asleep)

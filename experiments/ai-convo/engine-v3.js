@@ -1,15 +1,13 @@
-export const meta = {
-  name: 'social-sim-v3',
-  description: "Social simulation: one agent per person plans its own time, talks or doesn't, ends conversations itself and condenses its own memories; code keeps each person's first-hand journal, the clock, places, calendar, who knows whom, sourced events and full logs; a world role resolves consequences with reasons",
-  phases: [{ title: 'Generate' }, { title: 'Simulate' }],
-}
 // args: { label, setting (a description), dateNote, startDow (0=Mon), startHour, hours, seed, sample: sampler output {setting, people, ...} | attributes: [...],
-//         events?: [{text, who, p_per_day, hours?, from?, source}], rules?: [str], maxCalls?, roleAgent?: 'persona'|'sim' }
+//         events?: [{text, who, p_per_day, hours?, from?, source}], rules?: [str], maxCalls? }
 // The model makes every judgment. Code keeps facts and logs everything. No real-world figure is guessed: people, households and shift times
 // come from the sampler; event rates only from args.events with a source; anything unsourced is left out, not made up.
 // Memory: each person's journal (what they saw, heard, said and did) is kept verbatim by code and shown back in every call. When a
 // conversation or a day ends, the person condenses it in their own words while the full record is in front of them.
-const A = args || {}
+// Plain JavaScript, no runtime specifics. host = { ask(kind, prompt, {schema, label, phase, model?, effort?}) -> object | null (kind 'persona' plays a
+// person, 'role' is a simulation role), parallel(thunks), log(text), phase(title) }. workflow/sim.js runs it as a Workflow script (node build.cjs).
+async function simulate(A, host) {
+const { parallel, log, phase } = host
 const HOURS = A.hours || 24, START_H = A.startHour ?? 8, START_DOW = A.startDow ?? 0, END = HOURS * 60
 const OUT = 'elsewhere', MAX_LINES = 40 // runaway backstop for one conversation (logged as ended 'cap')
 const DATE = A.dateNote ? ` (${A.dateNote})` : ''
@@ -36,22 +34,13 @@ const resolve = (name, pool) => { const q = String(name || '').trim().toLowerCas
 
 // ---------- every model call is logged in order: sim time, who for, why, prompt, result ----------
 const CALLS = [], HEADS = {}
-let clock = 0, ROLE_AT = A.roleAgent || 'persona' // 'persona' = known-cheap no-tool agent; 'sim' (.claude/agents/sim.md) once loaded
+let clock = 0
 const roleOf = (r) => `THIS CALL: you are not playing a person. You are the simulation's ${r}.\n`
 async function call(kind, prompt, schema, o) {
-  const at = kind === 'persona' ? 'persona' : ROLE_AT
-  const rec = { i: CALLS.length, t: fmt(clock), phase: o.phase || 'Simulate', label: o.label, for: o.for, agent: at, model: o.model || '', head: o.head || '', why: o.why || '', prompt, result: null }
+  const rec = { i: CALLS.length, t: fmt(clock), phase: o.phase || 'Simulate', label: o.label, for: o.for, kind, model: o.model || '', head: o.head || '', why: o.why || '', prompt, result: null }
   CALLS.push(rec)
-  const opts = { agentType: at, schema, label: o.label, phase: rec.phase, ...(o.model ? { model: o.model } : {}), ...(o.effort ? { effort: o.effort } : {}) }
-  const full = (o.head ? HEADS[o.head] + '\n\n' : '') + prompt
-  let r = null
-  try { r = await agent(full, opts) } catch (e) { rec.error = String(e?.message || e).slice(0, 300) }
-  if (r == null && at !== 'persona') { // custom role agent missing (agent files load at session start): persona for the rest of the run
-    ROLE_AT = 'persona'; rec.fallback = 'persona'; log(`role agent "${at}" unavailable; using persona for role calls`)
-    try { r = await agent(full, { ...opts, agentType: 'persona' }) } catch (e) { rec.error = String(e?.message || e).slice(0, 300) }
-  }
-  rec.result = r ?? null
-  return r
+  try { rec.result = (await host.ask(kind, (o.head ? HEADS[o.head] + '\n\n' : '') + prompt, { schema, label: o.label, phase: rec.phase, model: o.model, effort: o.effort })) ?? null } catch (e) { rec.error = String(e?.message || e).slice(0, 300) }
+  return rec.result
 }
 
 // ---------- 1. generate ----------
@@ -217,6 +206,7 @@ const SAY = obj({ say: { type: 'string', description: 'words said out loud, or e
 const HEAR = obj({ come: { type: 'boolean', description: 'you go to them' }, say: { type: 'string', description: 'anything you call back, or empty' } })
 const personaCtx = (n, now, max) => `YOUR JOURNAL (what you saw, heard, said and did):\n${journal(n, now, max)}\nYOUR PLAN: ${planView(n, now).slice(0, 2).join(' / ') || '(none)'}\n\n`
 async function sceneLine(sc) {
+  if (sc.ending) return endScene(sc, sc.ending) // the last line has finished
   const speaker = sc.next, now = sc.t, live = () => sc.people.filter((x) => !sc.left.has(x)), others = live().filter((x) => x !== speaker)
   const ringing = sc.phone && speaker !== sc.starter && !sc.lines.some((l) => l.name === speaker), me = NAMES.includes(speaker)
   const soFar = (sc.lines.length > 20 ? `(${sc.lines.length - 20} earlier lines)\n` : '') + (sceneText(sc.lines.slice(-20), me && speaker) || '(nothing yet: you start)')
@@ -238,12 +228,12 @@ Your turn. Your journal shows what you have already said and done. You can say n
     if (h?.come) { moveTo(x, sc.where, Math.ceil(sc.t), 'called over by ' + speaker); join(sc, x, noEmoji(h.say)) }
     else sc.lines.push(h && String(h.say || '').trim() ? { name: x, say: noEmoji(h.say), do: `from ${S[x].place}` } : { name: '—', say: '', do: `no answer from ${r.call_over}` })
   }
-  const l2 = live(); if (l2.length < 2) return endScene(sc, sc.phone ? 'hung up' : 'walked off')
-  if (sc.lines.length >= MAX_LINES) return endScene(sc, 'cap')
+  const l2 = live(); if (l2.length < 2) return void (sc.ending = sc.phone ? 'hung up' : 'walked off')
+  if (sc.lines.length >= MAX_LINES) return void (sc.ending = 'cap')
   const last = sc.lines[sc.lines.length - 1]?.name, addressed = r && resolve(r.to, l2.filter((m) => m !== speaker && m !== last))
   const order = l2.filter((m) => m !== speaker && m !== last).sort((a, b) => sc.lines.map((l) => l.name).lastIndexOf(a) - sc.lines.map((l) => l.name).lastIndexOf(b))
   sc.next = addressed || order.find((m) => !sc.done[m])
-  if (!sc.next) endScene(sc, 'talk ran out')
+  if (!sc.next) sc.ending = 'talk ran out'
 }
 function join(sc, n, say) { sc.people.push(n); sc.done[n] = false; S[n].doing = 'with ' + sc.people.filter((m) => m !== n && !sc.left.has(m)).join(', '); sc.lines.push({ name: n, say: say || '', do: 'comes in' }) }
 
@@ -414,9 +404,10 @@ const timelines = (L) => NAMES.map((n) => `## ${n}\n` + L.filter((e) => e.who ==
 const worldLog = (L) => L.filter((e) => e.kind === 'world').map((e) => `[${fmt(e.t)}] ${e.decision}${e.blocked ? ' BLOCKED (' + e.blocked + ')' : ''}${e.decision !== 'none' && e.decision !== 'unresolved' ? ` (at ${fmt(e.at)})` : ''} ${e.from ? e.from + ' → ' : ''}${e.who}: ${e.text || ''}\n   item: ${e.item}\n   reason: ${e.reason}`).join('\n')
 const transcript = render(L), memories = timelines(L)
 const final = Object.fromEntries(NAMES.map((n) => [n, { place: S[n].place, doing: S[n].doing, turns: S[n].turns, days: S[n].days, journal: J[n].map((e) => `${fmt(e.t)} ${e.gist ? e.head + ': ' + e.gist : e.text}`) }]))
-const stats = { calls: CALLS.length, simCalls, maxCalls: MAX_CALLS, byFor: CALLS.reduce((m, c) => (m[c.for] = (m[c.for] || 0) + 1, m), {}), sceneLines: CALLS.filter((c) => c.why === 'scene line').length, promptChars: CALLS.reduce((k, c) => k + c.prompt.length, 0), failed: CALLS.filter((c) => c.result == null).length, roleAgent: ROLE_AT, stoppedAt: stopped == null ? null : fmt(stopped) }
+const stats = { calls: CALLS.length, simCalls, maxCalls: MAX_CALLS, byFor: CALLS.reduce((m, c) => (m[c.for] = (m[c.for] || 0) + 1, m), {}), sceneLines: CALLS.filter((c) => c.why === 'scene line').length, promptChars: CALLS.reduce((k, c) => k + c.prompt.length, 0), failed: CALLS.filter((c) => c.result == null).length, stoppedAt: stopped == null ? null : fmt(stopped) }
 log(`${A.label}: ${stats.simCalls} sim calls (${stats.sceneLines} scene lines), ${L.filter((e) => e.kind === 'scene').length} scenes, ${L.filter((e) => e.kind === 'call').length} calls, ${L.filter((e) => e.kind === 'chat' || e.kind === 'dm').length} messages${stopped != null ? ', stopped early' : ''}`)
 
-// the audit is a separate workflow (audit-v3.js) over the saved outputs of several runs
+// the audit is separate (audit-v3.js) and reads the saved outputs of several runs
 return { version: 3, label: A.label, seed: A.seed, args: { ...A, attributes: undefined, sample: undefined }, window: { from: fmt(0), to: fmt(END), hours: HOURS }, world, events: EVENTS.map((e) => `${fmt(e.t)} ${e.who}${e.from ? ' (from ' + e.from + ')' : ''}: ${e.text} [source: ${e.source}]`),
   log: L, transcript, memories, worldLog: worldLog(L), calendar: CAL.map((o) => ({ ...o, at: fmt(o.t0), until: fmt(o.t1) })), final, stats, calls: CALLS, heads: HEADS }
+}

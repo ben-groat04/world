@@ -3,11 +3,10 @@
 // The fake agent returns schema-valid, varied answers (seeded), occasionally null, so every path runs. It cannot judge realism; it checks
 // that the engine gives each agent what it needs (its own journal, errand results, earlier conversations) and keeps facts straight.
 const fs = require('fs'), path = require('path')
-const SRC = fs.readFileSync(path.join(__dirname, 'engine-v3.js'), 'utf8')
-const body = SRC.replace(/^export const meta = /m, 'const meta = ')
-if (/Math\.random|Date\.now|new Date\(\)/.test(body)) throw new Error('script uses non-deterministic APIs')
+require('child_process').execFileSync('node', [path.join(__dirname, 'build.cjs')]) // test what gets launched: workflow/dist/*.js
 const AsyncFn = Object.getPrototypeOf(async function () {}).constructor
-const run = new AsyncFn('agent', 'parallel', 'pipeline', 'log', 'phase', 'args', body)
+const load = (f) => { const src = fs.readFileSync(path.join(__dirname, 'workflow', 'dist', f), 'utf8'); if (!/^export const meta = /.test(src)) throw new Error(f + ': meta must come first'); return new AsyncFn('agent', 'parallel', 'pipeline', 'log', 'phase', 'args', src.replace(/^export const meta = /, 'const meta = ')) }
+const run = load('sim.js'), runAudit = load('audit.js')
 const SETTINGS = { flatshare: 'a rented shared flat in an English city', family: 'a family home in England', cafe: 'an independent café in an English town and the homes of the people who work there',
   street: 'one residential street in an English inner-city area', friends: 'a group of friends in an English city, each in their own home' }
 const DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -46,7 +45,7 @@ function mock(people, opts = {}) {
   }
   function answer(prompt, o) {
     const s = o.schema.properties
-    const kind = s.profile ? 'person' : s.places ? 'world' : s.decisions ? 'resolve' : s.come ? 'hear' : s.say ? 'say' : s.keep_plan ? 'turn' : s.imagined ? 'audit' : '?'
+    const kind = s.profile ? 'person' : s.places ? 'world' : s.decisions ? 'resolve' : s.come ? 'hear' : s.say ? 'say' : s.keep_plan ? 'turn' : s.imagined ? 'audit' : s.recurring ? 'compare' : '?'
     seen.kinds[kind] = (seen.kinds[kind] || 0) + 1
     if (kind !== 'person' && kind !== 'world' && r() < (opts.nullRate ?? 0.04)) return null
     if (kind === 'person') return { profile: 'You are ordinary.', speech: 'plain', texting: 'short', contacts: [{ relation: 'friend', about: 'texts in full sentences' }, { relation: 'sister', about: 'quiet' }] }
@@ -76,13 +75,14 @@ function mock(people, opts = {}) {
     if (kind === 'say') { const n = ((prompt.split('SO FAR')[1] || '').match(/\n[^\n(]+: "/g) || []).length
       if (/RINGING|phone is ringing/.test(prompt) && r() < 0.3) return { say: '', do: '', to: '', minutes: 0, leave: true, done: true }
       const end = r() < 0.15 * n, here = (/(?:ONLY THESE PEOPLE ARE HERE|ON THE LINE): ([^.]*)/.exec(prompt)?.[1] || '').split(', ').map((x) => x.replace(/ \(.*/, ''))
-      return { say: r() < 0.1 ? '' : `line ${n} #${seen.calls}`, do: r() < 0.3 ? 'shrugs' : '', to: pick([...here, 'everyone', '']), minutes: pick([0, 1, 2, 5]), call_over: !prompt.includes('ON THE PHONE') && r() < 0.15 ? pick(names) : '', leave: end && r() < 0.5, done: end } }
+      return { say: r() < 0.1 ? '' : `line ${n} #${seen.calls}`, do: r() < 0.3 ? 'shrugs' : '', to: pick([...here, 'everyone', '']), minutes: opts.slowTalk ? pick([5, 10]) : pick([0, 1, 2, 5]), call_over: !prompt.includes('ON THE PHONE') && r() < 0.15 ? pick(names) : '', leave: end && r() < 0.5, done: end } }
     if (kind === 'hear') return { come: r() < 0.6, say: r() < 0.5 ? 'coming' : '' }
     if (kind === 'resolve') { const lines = prompt.split('\n').filter((l) => /^\d+\. \[/.test(l))
       return { decisions: lines.flatMap((l, i) => { if (r() < 0.08) return []; const who = names.find((m) => l.includes(m)) || names[0]
         const kd = /\[action\]/.test(l) ? pick(['result', 'result', 'none']) : pick(['result', 'text', 'call', 'none'])
         return [{ item: i + 1, kind: kd, who, from: pick(['Priya at Larch Lettings', 'Dev', 'Sam', 'Unknown']), text: `outcome ${i + 1} for ${who.split(' ')[0]} ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 5, 60]), reason: 'because' }] }) } }
-    if (kind === 'audit') return { imagined: ['a'], missing_texture: [], stereotyping: [], breakers: [], mechanism_issues: [{ issue: 'x', evidence: 'y', ai_first: 'z' }], score: 6, verdict: 'ok' }
+    if (kind === 'audit') return { imagined: ['a'], missing_texture: [], stereotyping: [], breakers: [], issues: [{ issue: 'x', evidence: 'y', cause: 'c', ai_first: 'z' }], score: 6, verdict: 'ok' }
+    if (kind === 'compare') { if (!/AI-first/.test(prompt) || (prompt.match(/^## /gm) || []).length < 2) throw new Error('compare prompt lacks AI-first or runs'); return { recurring: [{ issue: 'x', runs: ['a'], cause: 'c', ai_first: 'z', code_must_own: '' }], one_offs: [], strengths: [], score: 6, verdict: 'ok' } }
     throw new Error('unknown call ' + JSON.stringify(Object.keys(s)))
   }
   return { agent, seen }
@@ -93,7 +93,7 @@ async function test(label, smp, extra = {}) {
   const parallel = async (th) => { const out = []; for (let i = 0; i < th.length; i += 2) out.push(...(await Promise.all(th.slice(i, i + 2).map((f) => f().catch(() => null))))); return out }
   const logs = []
   const args = { label: 't', setting: SETTINGS[smp.setting], sample: extra.noSample ? undefined : smp, dateNote: 'mid-November 2026', startDow: extra.startDow ?? 4, startHour: 16, hours: extra.hours || 30, seed: extra.seed || 301,
-    ...(extra.roleAgent ? { roleAgent: extra.roleAgent } : {}), ...(extra.maxCalls ? { maxCalls: extra.maxCalls } : {}), ...(extra.audit === false ? { audit: false } : {}),
+    ...(extra.roleAgent ? { roleAgent: extra.roleAgent } : {}), ...(extra.maxCalls ? { maxCalls: extra.maxCalls } : {}),
     events: [{ text: 'A parcel arrives for you', who: 'each', p_per_day: 0.9, hours: [9, 20], source: 'test fixture' }, { text: 'unsourced thing', who: 'each', p_per_day: 1 }] }
   const out = await run(agent, parallel, null, (m) => logs.push(m), () => {}, args)
   const fail = (m) => { const e = new Error(`${label} ${JSON.stringify(extra)}: ${m}`); e.out = out; throw e }
@@ -108,10 +108,10 @@ async function test(label, smp, extra = {}) {
     if (/"(sex|ethnicity|birthplace|religion|years_in_uk)"/.test(p)) fail('writer saw an identity field: ' + p.match(/"(sex|ethnicity|birthplace|religion|years_in_uk)"/)[1]) }
   // ethnicity never reaches a character model
   const eth = [...new Set(people.map((a) => a.ethnicity).filter(Boolean))]
-  for (const c of out.calls.filter((c) => c.for !== 'auditor')) { const t = full(c); if (/ethnicity/i.test(t) || eth.some((e) => t.includes(`"${e}"`) || t.includes(`: ${e};`))) fail('ethnicity shown in ' + c.label) }
+  for (const c of out.calls.filter((c) => true)) { const t = full(c); if (/ethnicity/i.test(t) || eth.some((e) => t.includes(`"${e}"`) || t.includes(`: ${e};`))) fail('ethnicity shown in ' + c.label) }
   // no guessed data: calendar is exactly the sampled shifts in the window (plus things people arranged); unsourced events dropped; no money
   const shifts = out.calendar.filter((o) => o.by === 'sampler')
-  for (const o of shifts) { const a = people.find((p) => p.name === o.who[0]), sh = a.shifts.find((s) => s.day === o.at.slice(0, 3) && s.start === o.at.slice(4)); if (!sh) fail('calendar item not from a sampled shift: ' + JSON.stringify(o)) }
+  for (const o of shifts) { const a = people.find((p) => p.name === o.who[0]), sh = a.shifts.find((s) => s.day === o.at.slice(0, 3) && s.start === o.at.slice(4, 9)); if (!sh) fail('calendar item not from a sampled shift: ' + JSON.stringify(o)) }
   const want = people.reduce((k, a) => k + (a.shifts || []).length, 0); if (want && !shifts.length && (extra.hours || 30) >= 168) fail('sampled shifts missing from calendar')
   if (out.calendar.some((o) => o.by !== 'sampler' && !names.includes(o.by))) fail('calendar item from nowhere')
   if (out.events.some((e) => e.includes('unsourced thing'))) fail('unsourced event kept')
@@ -146,6 +146,7 @@ async function test(label, smp, extra = {}) {
   // turns of people not in a conversation still happen while it runs (time does not freeze)
   const longScenes = L.filter((e) => e.kind === 'scene' && e.minutes >= 30)
   const outside = longScenes.filter((e) => L.some((t) => t.kind === 'turn' && !e.present.includes(t.who) && t.t > e.t && t.t < e.t + e.minutes))
+  if (extra.slowTalk && !(longScenes.length && outside.length)) fail(`world froze during long conversations: ${outside.length}/${longScenes.length} had turns by others`)
   // after every conversation each participant gets a turn, and that turn condenses it
   for (const e of L.filter((e) => e.kind === 'scene' && e.ended !== 'not answered')) for (const n of e.present.filter((x) => names.includes(x))) {
     if (e.t + e.minutes < out.window.hours * 60 - 5 && !L.some((t) => t.kind === 'turn' && t.who === n && t.t >= e.t && t.t <= e.t + e.minutes + 40)) fail(`no turn after conversation for ${n} @${e.t}`) }
@@ -168,15 +169,31 @@ function fmtOf(out, t) { const h = 16 * 60 + t, r = h % 1440, d = Math.floor(h /
 if (process.env.PEEK) module.exports = { test }
 else (async () => {
   const fixtures = Object.keys(SETTINGS).map((s) => [s, JSON.parse(fs.readFileSync(path.join(__dirname, 'sampler', `sample-${s}.json`), 'utf8'))])
-  for (const [s, smp] of fixtures) for (const seed of [1, 2, 3]) await test(s, smp, { seed })
+  const outs = []
+  for (const [s, smp] of fixtures) for (const seed of [1, 2, 3]) { const o = await test(s, smp, { seed }); if (seed === 1) outs.push({ ...o, label: s }) }
+  // audit: save each run as save.cjs does, build args with audit-args.cjs, run workflow/dist/audit.js over all five together
+  const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'v3-')), round = '_test-' + path.basename(tmp), cp = require('child_process')
+  try {
+    for (const o of outs) { const f = path.join(tmp, o.label + '.json'); fs.writeFileSync(f, JSON.stringify(o)); cp.execFileSync('node', [path.join(__dirname, 'save.cjs'), f, round]) }
+    const aargs = JSON.parse(cp.execFileSync('node', [path.join(__dirname, 'audit-args.cjs'), round], { maxBuffer: 1 << 28 }).toString())
+    const { agent, seen } = mock(fixtures[0][1].people), logs = []
+    const parallel = async (th) => { const out = []; for (let i = 0; i < th.length; i += 2) out.push(...(await Promise.all(th.slice(i, i + 2).map((f) => f())))); return out }
+    const a = await runAudit(agent, parallel, null, (m) => logs.push(m), () => {}, aargs)
+    if (Object.keys(a.reports).length !== 5 || !a.compare || seen.kinds.audit !== 5 || seen.kinds.compare !== 1) throw new Error('audit did not cover the five runs')
+    const f = path.join(tmp, 'audit.json'); fs.writeFileSync(f, JSON.stringify(a)); cp.execFileSync('node', [path.join(__dirname, 'audit-args.cjs'), '--save', f, round])
+    if (!fs.existsSync(path.join(__dirname, 'rounds', round, 'audit-compare.json'))) throw new Error('audit not saved')
+    console.log(`audit over ${aargs.runs.length} saved runs: ok (${(JSON.stringify(aargs).length / 1e3).toFixed(0)} KB args)`)
+  } finally { fs.rmSync(path.join(__dirname, 'rounds', round), { recursive: true, force: true }); fs.rmSync(tmp, { recursive: true, force: true }) }
   const { sample } = await import(path.join(__dirname, 'sampler', 'index.mjs'))
   for (const [s, n] of [['flatshare', 4], ['family', 0], ['cafe', 5], ['street', 6], ['friends', 5]]) await test(`fresh ${s}`, sample(s, n, 'test-' + s), { seed: 5 })
   await test('flatshare', fixtures[0][1], { show: true, seed: 4 })
+  await test('cafe', fixtures[2][1], { slowTalk: true, seed: 6 })
+  await test('street', fixtures[3][1], { slowTalk: true, seed: 7 })
   await test('cafe', fixtures[2][1], { roleAgent: 'sim', noSim: true, hours: 6 })
   await test('family', fixtures[1][1], { nullRate: 0.5, hours: 12 })
   await test('friends', fixtures[4][1], { maxCalls: 15 })
   await test('street', fixtures[3][1], { strangers: true, hours: 24, seed: 4 })
-  await test('cafe', fixtures[2][1], { hours: 168, seed: 9, audit: false, startDow: 0 })
+  await test('cafe', fixtures[2][1], { hours: 168, seed: 9, startDow: 0 })
   try { await test('flatshare', fixtures[0][1], { noSample: true }); throw new Error('ran without people') } catch (e) { if (!/required/.test(e.message)) throw e; console.log('no people -> refused: ok') }
   console.log('ALL OK')
 })().catch((e) => { console.error(e.message, e.stack.split('\n').slice(1, 4).join('\n')); process.exit(1) })

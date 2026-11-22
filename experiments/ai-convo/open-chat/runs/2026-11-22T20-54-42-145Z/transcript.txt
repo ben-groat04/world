@@ -85,3 +85,6 @@ See you Thursday, Tom!
 --- Mon 11:14, Tom
 See you Thursday, Maya!
 
+--- end date reached
+Wed 19:00
+

@@ -85,3 +85,6 @@ Talk later, Tom.
 --- Mon 08:02, Tom
 Later, Maya.
 
+--- end date reached
+Wed 19:00
+

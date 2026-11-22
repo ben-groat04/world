@@ -38,7 +38,7 @@ export function createComms() {
     const seed = (o.seed || 0);
     const dest = ['Tenerife', 'Cornwall', 'Portugal', 'Lanzarote', 'the Lakes', 'Turkey', 'Wales', 'Greece', 'Scotland', 'Bangladesh', 'Poland', 'Jamaica'];
     const p = { street: ap ? streetName(ap) : 'Newport Road', name: PET[seed % PET.length], shop: shops()[(seed >> 2) % shops().length] || 'the corner shop', day: DAYS[(seed >> 1) % 7], road: ap ? streetName(ap) : 'Newport Road', thing: THING[seed % THING.length], place: shops()[(seed >> 3) % shops().length] || 'the corner shop', n: 1 + (seed % 40), ...(key.endsWith('.holiday') ? { place: dest[seed % dest.length] } : {}), ...(o.p || {}) };
-    try { return E.render(key, { a: av, b: view(bp), s: view(typeof o.s === 'number' ? W.people.get(o.s) : o.s), o: view(typeof o.o === 'number' ? W.people.get(o.o) : o.o), actors: [typeof o.s === 'object' && o.s ? o.s.id : o.s, typeof o.o === 'object' && o.o ? o.o.id : o.o].filter((x) => x != null), people: (id) => view(W.people.get(id)), seed, p, genre: 'ev', date: W.calendar.dateOf ? W.calendar.dateOf(W.tick) : undefined, memory: o.memory }, W); } catch (e) { return '[' + key + ']'; }
+    try { return E.render(key, { a: av, b: view(bp), s: view(typeof o.s === 'number' ? W.people.get(o.s) : o.s), o: view(typeof o.o === 'number' ? W.people.get(o.o) : o.o), actors: [typeof o.s === 'object' && o.s ? o.s.id : o.s, typeof o.o === 'object' && o.o ? o.o.id : o.o].filter((x) => x != null), people: (id) => view(W.people.get(id)), seed, p, genre: 'ev', date: W.calendar.dateOf ? W.calendar.dateOf(o.t != null ? o.t : W.tick) : undefined, memory: o.memory }, W); /* dated by when the post was written, so a post is never dressed in a later month's weather or season */ } catch (e) { return '[' + key + ']'; }
   }
   const plugin = {
     name: 'comms', version: '1.0.0', deps: ['social'],
@@ -72,14 +72,14 @@ export function createComms() {
     },
   };
   // ----- text of stored structures
-  function chatText(c, m) { return render('chat.' + (m.k || c.kind), m.au, { seed: m.sd, b: m.bo, p: { thing: 'the plan' } }); }
+  function chatText(c, m) { return render('chat.' + (m.k || c.kind), m.au, { seed: m.sd, b: m.bo, t: m.t, p: { thing: 'the plan' } }); }
   // replies come from the topic's own pool (feedreply.<topic>.<tone>) so an answer fits the post; topics without one use the generic tone pool
   const replyKey = (kind, tone) => (E && E.has('feedreply.' + kind + '.' + tone) ? 'feedreply.' + kind + '.' + tone : 'feedreply.' + tone);
   function postText(p, forum) {
     if (p.ev) { const ev = W.events.get(p.ev); if (ev) { try { return E.render(ev, { genre: 'post', a: view(W.people.get(p.au)), people: (id) => view(W.people.get(id)), seed: p.sd, date: W.calendar.dateOf(p.t), p: ev.payload }, W); } catch (e) { /* fall through */ } } }
-    if (forum || p.k.startsWith('f:')) return render('feed.' + (p.k.startsWith('f:') ? p.k.slice(2) : p.k), p.au, { seed: p.sd, s: p.ab, p: p.ab != null ? {} : undefined });
+    if (forum || p.k.startsWith('f:')) return render('feed.' + (p.k.startsWith('f:') ? p.k.slice(2) : p.k), p.au, { seed: p.sd, s: p.ab, t: p.t, p: p.ab != null ? {} : undefined });
     const key = p.k === 'daily' ? ['post.daily', 'post2.mood', 'post2.mood', 'post2.photo'][p.sd % 4] : p.k === 'goal' ? 'feed.goal' : 'post.daily';
-    return render(key, p.au, { seed: p.sd });
+    return render(key, p.au, { seed: p.sd, t: p.t });
   }
   function adultsOf(ids) { return ids.map((i) => W.people.get(i)).filter((p) => p && p.alive); }
   // ----- group chats

@@ -63,7 +63,7 @@ const ADJ = {
   cuisine: { turkish: ['Anatolia', 'Istanbul', 'Bosphorus', 'Ephesus', 'Izmir', 'Antalya'], south_asian: ['Lahore', 'Dhaka', 'Shalimar', 'Sylhet', 'Punjab', 'Delhi', 'Karachi', 'Mumbai'], caribbean: ['Kingston', 'Jerk', 'Island', 'Rasta Pot', 'Caribbean'], italian: ['Rossi', 'Napoli', 'Roma', 'Sorrento'], chinese: ['Jade', 'Golden', 'Lucky', 'Happy', 'Peking'], polish: ['Polonia', 'Krakow', 'Babcia'], african: ['Lagos', 'Accra', 'Mama Ngozi', 'Addis'] },
 };
 const PAT = {
-  hip: ['{A} & {N}', '{A} {N}', '{S} {N}', '{N} & Co', 'The {A} {N}', '{P} {N}'], plain: ['{S}\'s {N}', '{A} {N}', '{P} {N}', 'The {A} {N}', '{G}\'s {N}', '{S} & Sons {N}'], pub: ['The {A} {N}', 'The {A2}', 'The {A} {N}'], cuisine: ['{C} {N}', '{C} {N}', 'The {C} {N}'],
+  hip: ['{A} & {N}', '{A} {N}', '{S} {N}', '{N} & Co', 'The {A} {N}', '{P} {N}'], plain: ['{S}\'s {N}', '{A} {N}', '{P} {N}', '{A} {N}', '{G}\'s {N}', '{S} & Sons {N}'] /* no "The {A} {N}": "The Larkfield Kutz" is a barber, not a pub */, pub: ['The {A} {N}', 'The {A2}', 'The {A} {N}'], cuisine: ['{C} {N}', '{C} {N}', 'The {C} {N}'],
 };
 const PUB = ['Railway Tavern', 'Prince Albert', 'Crown & Anchor', 'Lord Nelson', 'Wheatsheaf', 'Black Horse', 'Drovers', 'Greyhound', 'Navigation', 'Royal Oak', 'Red Lion', 'Fox & Hounds', 'Bell', 'Plough', 'Rose & Crown', 'Duke of York', 'Cross Keys'];
 const PUB_GASTRO = ['Wren & Wheat', 'The Tap Room', 'Hops & Hearth', 'The Foundry Arms', 'The Larder & Lamb', 'Social Anchor'];

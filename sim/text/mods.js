@@ -27,7 +27,9 @@ export function timePhrase(h, m = 0) {
   return m < 30 ? `${words(m)} past ${h12(h)}` : `${words(60 - m)} to ${nxt}`;
 }
 export const datePhrase = (d) => (d ? `${d.weekday != null ? DAYS[d.weekday] + ' ' : ''}${ord(d.day)} ${MONTHS[d.month]}` : '');
-export const a_an = (s) => (/^(hour|honest|heir|[aeiou](?!ni|se|u[^bmnr]|ur[^ib]))/i.test(s.trim()) || /^(MP|MOT|SEN|X-|F-|NHS|LED|HGV|HMO)/.test(s.trim()) ? 'an ' : 'a ') + s;
+/** "a" or "an" for a phrase: by SOUND, not spelling. Acronyms go by their first letter's name (an HR, an HGV, an NHS, a GP), "hour/honest/heir/honour" take "an", "uni-/use/eu-/one" take "a". The one rule everything shares. */
+export const articleFor = (s) => { const w = String(s).trim().split(/[\s-]/)[0]; if (/^[A-Z]{2,}\b/.test(w)) return /^[AEFHILMNORSX]/.test(w) ? 'an' : 'a'; return /^(hour|honest|heir|honou?r)/i.test(w) || (/^[aeiou]/i.test(w) && !/^(uni([^nm]|$)|use|usu|uti|ute|ura|uro|eu|one|once|ubiq|ufo)/i.test(w)) ? 'an' : 'a'; };
+export const a_an = (s) => articleFor(s) + ' ' + s;
 export const plural = (s) => s.replace(/(\w+)$/, (w) => (/(s|x|z|ch|sh)$/i.test(w) ? w + 'es' : /[^aeiou]y$/i.test(w) ? w.slice(0, -1) + 'ies' : /^(man)$/.test(w) ? 'men' : /^woman$/.test(w) ? 'women' : /^child$/.test(w) ? 'children' : w + 's'));
 export const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
 export const sent = (s) => s.replace(/(^|[.!?]\s+|\n)([a-z])/g, (m, a, b) => a + b.toUpperCase());
@@ -38,6 +40,12 @@ export const MODS = {
   pct: (s) => `${Math.round(+s * (+s <= 1 ? 100 : 1))}%`, nowords: (s) => (isNaN(+s) ? s : +s < 13 ? words(+s) : String(s)),
 };
 /** Final tidy: spacing, punctuation, stray articles. */
+function tidyBase(s) {
+  return s.replace(/\u0001/g, '#').replace(/[ \t]+/g, ' ').replace(/ +([,.!?;:])/g, '$1').replace(/([,;:])\1+/g, '$1').replace(/ ?\n ?/g, '\n').replace(/\.\.(?!\.)/g, '.').replace(/,\./g, '.').replace(/\b(an?) (an?) (?=[A-Za-z])/gi, (m, a1, a2) => (a1[0] === 'A' ? 'A' : 'a') + ' ').replace(/\b(an?|An?) ([A-Za-z][\w'-]*)/g, (m, art, w) => { const want = articleFor(w), up = art[0] === 'A'; const ok = art.toLowerCase() === want; return ok ? m : (up ? want[0].toUpperCase() + want.slice(1) : want) + ' ' + w; }).replace(/\b(the|The) The\b/g, '$1').replace(/\b(the|The) the\b/g, '$1').replace(/(^|[.!?]\s+)the /g, (m, a) => a + 'The ').trim();
+}
+
+const SING = { days: 'day', weeks: 'week', months: 'month', years: 'year', hours: 'hour', minutes: 'minute', mins: 'min', replies: 'reply', times: 'time', messages: 'message', likes: 'like', comments: 'comment', posts: 'post', things: 'thing', visits: 'visit', people: 'person', neighbours: 'neighbour', households: 'household', residents: 'resident', notices: 'notice', letters: 'letter' };
+/** Final tidy: spacing, punctuation, articles by sound, doubled words, and number agreement ("1 replies" -> "1 reply", "for 0 days" -> "for less than a day"). */
 export function tidy(s) {
-  return s.replace(/\u0001/g, '#').replace(/[ \t]+/g, ' ').replace(/ +([,.!?;:])/g, '$1').replace(/([,;:])\1+/g, '$1').replace(/ ?\n ?/g, '\n').replace(/\.\.(?!\.)/g, '.').replace(/,\./g, '.').replace(/\bA ([aeiou])/g, 'An $1').replace(/\ba ([aeiou][a-z]*)/g, (m, w) => (/^(un[iu]|use|eu|one)/.test(w) ? m : 'an ' + w)).trim();
+  return tidyBase(s).replace(/\bfor 0 (day|week|month|year|hour)s\b/g, 'for less than a $1').replace(/(^|[^\d.,£/:-])1 (days|weeks|months|years|hours|minutes|mins|replies|times|messages|likes|comments|posts|things|visits|people|neighbours|households|residents|notices|letters)\b/g, (m, pre, n) => pre + '1 ' + SING[n]);
 }

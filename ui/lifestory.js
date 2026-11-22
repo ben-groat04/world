@@ -1,10 +1,11 @@
 // A short readable life story for the inspector: one paragraph plus a timeline, built from the person's real data (memories, events, household, job).
 // Pure over (world, person, facts); worker-safe. Nothing private or sensitive is shown: events/memories about mental health, addiction, crime, pregnancy loss and secrets are dropped.
 import { clauseOf, occLabel } from '../sim/sifter/storylines.js';
+import { jobNoun } from '../sim/text/jobs.js';
 
 const hsh = (n) => { let x = Math.imul(n | 0, 2654435761) >>> 0; x ^= x >>> 15; x = Math.imul(x, 2246822519) >>> 0; return (x ^ (x >>> 13)) >>> 0; };
 const cap1 = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
-const aAn = (s) => (/^([aeiou]|HR\b|IT\b|MOT\b)/i.test(s) && !/^(uni|use|eu)/i.test(s) ? 'an ' : 'a ') + s;
+import { a_an as aAn } from '../sim/text/mods.js';
 const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 const SENSITIVE = /bad patch|took over for a while|depress|anxi|mental|ptsd|psych|bipolar|eating|addict|alcohol|drug|substance|pregnancy|miscarr|burgled|assault|abuse|domestic|harass|robbed|mugg|secret|affair|arrest|convict/i;
 const WHY = { 'downsize or care': 'to downsize', 'bigger home': 'for a bigger home', buy: 'to buy', job: 'for work', partner: 'to be with a partner', 'eviction or sale': 'after a notice to leave', 'better schools': 'for the schools', 'schools suburbs': 'for the schools', space: 'for more space', rent: 'to bring the rent down', 'tenancy ends': 'when the tenancy ended', health: 'for health reasons', relationship: 'after a relationship ended', bereavement: 'after a bereavement', 'business sale': 'after selling the business', retirement: 'on retiring', family: 'to be near family', 'with the family': 'with the family', 'family nearby': 'to be near family', 'nearer family': 'to be nearer family', 'housing offer': 'after a housing offer', graduate: 'after graduating', housemates: 'to share with friends', 'flatmates leave': 'after the flatmates moved on', upsize: 'for a bigger home', downsize: 'to downsize', divorce: 'after a divorce', overcrowding: 'to escape overcrowding', 'status change': 'after a change in status', 'chain migration cluster': 'to be near relatives', 'lease end': 'when the lease ended', 'kids schools': 'for the schools' };
@@ -15,7 +16,7 @@ export function memText(w, m) {
   let r;
   if ((r = /^Moved to (.+?) \(([^)]*)\)\.?$/.exec(t))) return `Moved to ${r[1]}${WHY[r[2]] ? ' ' + WHY[r[2]] : ''}.`;
   if ((r = /^Started seeing (.+?) \(met (.*)\)\.?$/.exec(t))) return `Started seeing ${r[1]}, having met ${r[2]}.`;
-  if ((r = /^(Started|Left|Lost)( an? earlier job| the last job)? as (.+?)(?: \([^)]*\))?\.?$/.exec(t)) || (r = /^(Started|Left|Lost)( an? earlier job| the last job)?:? ?as (.+?)\.?$/.exec(t))) { const lab = String(r[3]).toLowerCase().replace(/\s*\([^)]*\)/g, '').trim(); const j = (w.pack && w.pack.jobs || []).find((x) => String(x.label).toLowerCase().replace(/\s*\([^)]*\)/g, '').trim() === lab || String(x.label).toLowerCase().startsWith(lab)); const nm = j ? occLabel(w, j.id) : lab.split(' / ')[0]; return `${r[1] === 'Started' ? 'Started work' : r[1] === 'Left' ? 'Left work' : 'Lost work'} as ${aAn(nm)}.`; }
+  if ((r = /^(Started|Left|Lost)( an? earlier job| the last job)? as (.+?)(?: \([^)]*\))?\.?$/.exec(t)) || (r = /^(Started|Left|Lost)( an? earlier job| the last job)?:? ?as (.+?)\.?$/.exec(t))) { const lab = String(r[3]).toLowerCase().replace(/\s*\([^)]*\)/g, '').replace(/^(an?|the) /, '').trim(); const j = (w.pack && w.pack.jobs || []).find((x) => String(x.label).toLowerCase().replace(/\s*\([^)]*\)/g, '').trim() === lab || String(x.label).toLowerCase().startsWith(lab)); const nm = j ? occLabel(w, j.id) : jobNoun(lab).replace(/^(an?|the) /, ''); return `${r[1] === 'Started' ? 'Started work' : r[1] === 'Left' ? 'Left work' : 'Lost work'} as ${aAn(nm)}.`; }
   if ((r = /^(.*) an earlier job as (an? )?(.+?)\.?$/.exec(t))) return `Worked as ${aAn(r[3])} for a while.`;
   if (/ill health/i.test(t)) return 'Had to stop working.';
   if (/health scare/i.test(t)) return 'Spent a spell in hospital.';
@@ -74,7 +75,7 @@ export function summaryOf(w, p, f) {
   if (origin && f.age >= 5) sents.push([`${F} ${origin}, and ${is} now ${f.age}.`, `${F} is ${f.age}. ${cap1(he)} ${origin}.`, `Now ${f.age}, ${F} ${origin}.`][h % 3]);
   else sents.push(`${F} is ${f.age}${f.street ? ' and lives on ' + f.street : ''}.`);
   // 2. school / work
-  const act = f.activity, jl = (pop.occ && occLabel(w, pop.occ)) || (f.jobLabel ? f.jobLabel.toLowerCase().split(' / ')[0] : '');
+  const act = f.activity, jl = (pop.occ && occLabel(w, pop.occ)) || (f.jobLabel ? jobNoun(f.jobLabel) : '');
   const bornY = w.calendar && w.calendar.dateOf ? w.calendar.dateOf(p.birthTick).y : 1990, gc = bornY + 16 >= 1988 ? 'GCSEs' : 'O-levels', edu = pop.bornUK === false ? ({ level4plus: 'a degree', level3: 'school qualifications from abroad', apprenticeship: 'an apprenticeship' }[pop.edu]) : { level4plus: 'a degree', level3: 'A-levels or similar', apprenticeship: 'an apprenticeship', level2: gc, level1: bornY + 16 >= 1988 ? 'a few GCSEs' : 'a few CSEs' }[pop.edu];
   if (act === 'employed' && jl) sents.push([`${cap1(he)} works as ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}${edu && f.age < 60 ? ', and left education with ' + edu : ''}.`, `${cap1(he)} ${is} ${aAn(jl)}${f.workplace ? ' ' + f.workplace : ''}.`][(h >>> 2) % 2]);
   else if (act === 'retired') { const r = mem(/^Retired/); sents.push(r ? `${cap1(he)} retired ${when(w, r.tick)}${jl ? ', having worked as ' + aAn(jl) : ''}.` : `${cap1(he)} is retired${jl ? ' after a working life as ' + aAn(jl) : ''}.`); }

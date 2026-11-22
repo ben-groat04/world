@@ -18,6 +18,7 @@ const REASON_OK = {
 };
 
 const THE_PLACES = /^(Philippines|Netherlands|Gambia|Bahamas|Czech Republic|United States|Maldives|Seychelles|Congo|Ivory Coast|United Arab Emirates|UAE)$/;
+const bornAt = (place) => (/^elsewhere /.test(place) ? place : /^the (south|north|east|west)/.test(place) ? 'on ' + place : 'in ' + place);
 const inPlace = (c) => (THE_PLACES.test(c) ? 'the ' + c : c);
 
 export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
@@ -34,7 +35,7 @@ export function writeBiographies(world, rng, hhs, people, { UK_PLACES }) {
     const birthYear = cl.dateOf(p.birthTick).y;
     const nativeHere = q.bornUK && rng.chance(q.seg === 'older_longterm' ? 0.35 : 0.1);
     q.grewUp = q.bornUK ? (nativeHere ? 'Larkfield (this neighbourhood)' : rng.pick(UK_PLACES.slice(1))) : q.birthplace;
-    mem(p, age, q.bornUK ? `Born in ${q.grewUp === 'Larkfield (this neighbourhood)' ? 'the city, grew up in Larkfield' : q.grewUp}.` : `Born in ${q.birthplace}.`, 0.4, 3);
+    mem(p, age, q.bornUK ? (q.grewUp === 'Larkfield (this neighbourhood)' ? 'Born in the city, grew up in Larkfield.' : `Born ${bornAt(q.grewUp)}.`) : `Born in ${inPlace(q.birthplace)}.`, 0.4, 3);
     // arrival: years ago. Never before birth, never after the current address was taken up.
     let ukYears = age; // years the person has been in the UK
     if (!q.bornUK) {

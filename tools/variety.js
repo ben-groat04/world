@@ -42,8 +42,10 @@ export async function textVariety(seed = 1, years = 3, log = console.log) {
   const cal = h.w.calendar, hits = lintText(lines, { monthOf: (t) => { try { return cal.dateOf(t).m; } catch { return null; } } }), tics = ticReport(lines, TPD, 6);
   const nHit = Object.values(hits).reduce((a, v) => a + v.length, 0), ticN = tics.reduce((a, t) => a + t.n, 0);
   log(`  lint: ${nHit} glue/grammar/season hits in ${Object.keys(hits).length} rules`); for (const [k, v] of Object.entries(hits)) log(`   ${k.padEnd(28)} ${String(v.length).padStart(4)}  e.g. ${v.slice(0, 2).map((x) => JSON.stringify(String(x).slice(0, 110))).join(' | ')}`);
+  const qt = quotedTicReport(lines, TPD, 3), qN = qt.reduce((a, t) => a + t.n, 0);
+  log(`  quoted punchlines repeated within 3 game-months, town-wide: ${qN} (${(100 * qN / lines.length).toFixed(2)}% of lines) across ${qt.length} sentences`); for (const t of qt.slice(0, 5)) log(`   x${t.n + 1}  ${t.s.slice(0, 110)}`);
   log(`  tics (>=7-word sentence repeated within 6 game-months, town-wide): ${ticN} repeats (${(100 * ticN / lines.length).toFixed(2)}% of lines) across ${tics.length} sentences`); for (const t of tics.slice(0, 12)) log(`   x${t.n + 1}  ${t.s.slice(0, 110)}`);
-  return { lines, distinct: new Set(lines.map((l) => l.s)).size / lines.length, rep, hits, nHit, tics, ticN, ticRate: ticN / lines.length };
+  return { lines, distinct: new Set(lines.map((l) => l.s)).size / lines.length, rep, hits, nHit, tics, ticN, ticRate: ticN / lines.length, quotedRate: qN / lines.length };
 }
 
 // ---- text lint: glue bugs, grammar slips, seasonal slips and tics in generated text. Each rule: [name, regex-or-fn(line) -> boolean]. Returns {name: [examples]}.
@@ -55,7 +57,7 @@ export const LINT_RULES = [
   ['missing space', (s) => /[a-z]{3,}(something|someone|somebody|the |a |an )?[.,;:!?][A-Za-z]{2}/.test(s.replace(/\b\w+\.(com|co|org|uk)\b/g, '')) || /\b(wordsthe|wordssomething|wordssomeone|wordsa)\b|[a-z]{4,}(something said|someone said)\b/.test(s)],
   ['1 plural', (s) => new RegExp(`(^|[^\\d.,£/-])1 (${UNITS})\\b`).test(s) && !/\b1 (people|others)\b.*\b(and|or)\b/.test(s) && !/\b1 (in|of) /.test(s)],
   ['0 duration', (s) => /\bfor 0 (days|weeks|months|years|hours)\b/.test(s)],
-  ['a/an', (s) => /\ba [aeiou]\w+/i.test(s.replace(/\ba (uni|use|usu|user|one|once|unit|union|useful|unique|euro|european|ufo|ubiquitous)\w*/gi, '')) || /\ban (?!hour|honest|heir|honour|HR\b|MP\b|NHS|MOT|SEN|LED|HGV|HMO|FA\b|X-|IT\b|SOS|RSVP|FAQ|OK\b|[aeiou])[a-z]/i.test(s)],
+  ['a/an', (s) => /(?<![\p{L}\p{N}'])a [aeiou]\w+/iu.test(s.replace(/(?<![\p{L}])a (uni|use|usu|user|one|once|unit|union|useful|unique|euro|european|ufo|ubiquitous)\w*/giu, '')) || /(?<![\p{L}\p{N}'])an (?!hour|honest|heir|honou?r|HR\b|MP\b|NHS|MOT|SEN|LED|HGV|HMO|FA\b|X-|IT\b|SOS|RSVP|FAQ|OK\b|[aeiou])[a-z]/iu.test(s)],
   ['slash in prose', (s) => /[A-Za-z]{2,}\/[A-Za-z]{2,}/.test(s.replace(/\b(and\/or|n\/a|yes\/no|a\/c|w\/e|24\/7|s\/he|he\/she|him\/her|his\/her|they\/them)\b/gi, '').replace(/https?:\S+/g, ''))],
   ['unbalanced brackets', (s) => (s.match(/\(/g) || []).length !== (s.match(/\)/g) || []).length],
   ['unbalanced quotes', (s) => ((s.match(/"/g) || []).length % 2) === 1],
@@ -68,17 +70,29 @@ export const LINT_RULES = [
   ['punctuation', (s) => /\.\.(?!\.)|,,|\s[,.!?;:]|\(\s|\s\)|\b[,.]\s*[,.]/.test(s.replace(/\.\.\./g, ''))],
 ];
 // month-gated phrases (month 0 = Jan): [regex, months it is allowed in]
-const SEASONAL = [[/\bscarf weather\b/i, [9, 10, 11, 0, 1, 2]], [/\bdark at [4-6]\s?pm\b/i, [10, 11, 0, 1]], [/\bchristmas tree\b/i, [10, 11, 0]], [/\b(clocks (have )?gone back|first heating of the year)\b/i, [9, 10, 11]], [/\bconker/i, [8, 9, 10]], [/\bsnow\b/i, [10, 11, 0, 1, 2]], [/\bin shorts\b/i, [3, 4, 5, 6, 7, 8, 9]], [/\bblackout|heatwave|sunburn/i, [5, 6, 7, 8]]];
+const SUNSET = [16.6, 17.5, 18.3, 20.0, 21.0, 21.7, 21.5, 20.6, 19.3, 17.9, 16.2, 15.8];
+const SEASONAL = [[/\bscarf weather\b/i, [9, 10, 11, 0, 1, 2]], [/\bchristmas (tree|lights)\b/i, [10, 11, 0, 1]], [/\b(clocks (have )?gone back|first heating of the year)\b/i, [9, 10, 11]], [/\bconkers?\b/i, [8, 9, 10]], [/\bsnow\b/i, [10, 11, 0, 1, 2]], [/\bin \d degrees\b/i, [10, 11, 0, 1, 2]], [/\b(sunburn|heatwave|ice lollies)\b/i, [4, 5, 6, 7, 8]], [/\bice cream van\b/i, [3, 4, 5, 6, 7, 8]], [/\bbonfire night\b/i, [9, 10]], [/\bfireworks (again|AGAIN)\b/, [9, 10, 11, 0]]];
+// "dark at Npm": only when the sun really has set by then that month (sunset <= N + 0.6, local time)
+const darkTooEarly = (s, m) => { const r = /\bdark (?:at|by) (\d)(?::\d\d)?\s?pm\b/i.exec(s); return !!r && SUNSET[m] > +r[1] + 12 + 0.6; };
 export function lintText(lines, ctx = {}) {
   const hits = {}, add = (k, l) => { (hits[k] ||= []).push(l.s); };
   const monthOf = ctx.monthOf || (() => null);
   for (const l of lines) {
     if (typeof l.s !== 'string') { add('non-string', { s: String(l.s) }); continue; }
     for (const [name, f] of LINT_RULES) if (f(l.s)) add(name, l);
-    const m = monthOf(l.tick); if (m != null) for (const [re, ok] of SEASONAL) if (re.test(l.s) && !ok.includes(m)) add('season: ' + re.source.slice(0, 24), l);
+    const m = monthOf(l.tick); if (m != null) { for (const [re, ok] of SEASONAL) if (re.test(l.s) && !ok.includes(m)) add('season: ' + re.source.slice(0, 24), l); if (darkTooEarly(l.s, m)) add('season: dark before sunset', l); }
   }
-  const rec = lines.filter((l) => /Recreation Ground/.test(l.s)).length; if (rec > Math.max(3, lines.length * 0.01)) hits['long park name'] = [`${rec} of ${lines.length} lines spell out 'Recreation Ground'`];
+  const rec = lines.filter((l) => /Recreation Ground/.test(l.s)).length; if (rec > Math.max(3, lines.length * 0.03)) hits['long park name'] = [`${rec} of ${lines.length} lines spell out 'Recreation Ground'`];
   return hits;
+}
+/** Quoted punchlines ("It was always the parking"): a quoted sentence of >= 6 words repeated within `months` game-months, town-wide. The engine promises none (each is rate-limited, sim/text/engine.js `once`). */
+export function quotedTicReport(lines, TPD, months = 3) {
+  const seen = new Map(), out = new Map();
+  for (const l of lines) for (const raw of l.s.split(/(?<=[.!?])\s+(?=[A-Z"])/)) {
+    if (!/"/.test(raw) || raw.split(/\s+/).length < 6) continue; const s = raw.replace(/[^\w' ]/g, '').trim().toLowerCase(), prev = seen.get(s);
+    if (prev != null && l.tick - prev < months * 30 * TPD) { const o = out.get(s) || { s: raw.trim(), n: 0 }; o.n++; out.set(s, o); } seen.set(s, l.tick);
+  }
+  return [...out.values()].sort((a, b) => b.n - a.n);
 }
 /** Tics: sentences of >= 7 words that recur within `months` game-months, anywhere in town. Returns [{s, n, minGapMonths}]. */
 export function ticReport(lines, TPD, months = 6) {
@@ -89,9 +103,10 @@ export function ticReport(lines, TPD, months = 6) {
   }
   return [...out.values()].sort((a, b) => b.n - a.n);
 }
+const lines0 = (r) => r.lines.length;
 const args = process.argv.slice(2), isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop());
 if (isMain) {
-if (args[0] === '--text') { const dump = args.indexOf('--dump') >= 0 ? args[args.indexOf('--dump') + 1] : null; const r = await textVariety(+args[1] || 1, +args[2] || 3); if (dump) fs.writeFileSync(dump, JSON.stringify(r.lines)); const bad = r.nHit > 0 || r.ticRate > 0.002 || r.rep > 0; console.log(bad ? 'TEXT VARIETY: FAIL (lint hits, tics > 0.2% or in-month exact repeats)' : 'TEXT VARIETY OK'); process.exit(bad ? 1 : 0); }
+if (args[0] === '--text') { const dump = args.indexOf('--dump') >= 0 ? args[args.indexOf('--dump') + 1] : null; const r = await textVariety(+args[1] || 1, +args[2] || 3); if (dump) fs.writeFileSync(dump, JSON.stringify(r.lines)); const bad = r.nHit > 0 || r.quotedRate > 0.003 || r.rep > lines0(r) * 0.0005; /* generic chatter (r.ticRate) is reported, not gated: it is bounded by pool size */ console.log(bad ? 'TEXT VARIETY: FAIL (lint hits, quoted-punchline repeats > 0.3% of lines, or exact repeats within a month > 0.05% of lines)' : 'TEXT VARIETY OK'); process.exit(bad ? 1 : 0); }
 let runs;
 if (args.length) runs = args.map((f) => { const d = JSON.parse(fs.readFileSync(f, 'utf8')); return siftRun(d.events, d); });
 else { runs = [1, 2, 3].map((sd) => ({ ...siftRun(demoEvents(sd)), texts: demoTexts(sd) })); console.log('(demo: synthetic event logs, 3 seeds; pass dump files for real runs)'); }

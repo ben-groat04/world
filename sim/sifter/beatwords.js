@@ -11,7 +11,7 @@ const nw = (n) => (n >= 0 && n < NUM.length ? NUM[n] : String(n));
 const money = (n) => '£' + Math.round(n).toLocaleString('en-GB');
 const round = (n) => (n >= 2000 ? Math.round(n / 500) * 500 : n >= 400 ? Math.round(n / 50) * 50 : Math.round(n / 10) * 10);
 const lst = (a) => (a.length <= 1 ? a.join('') : a.length === 2 ? a.join(' and ') : a.length === 3 ? a.slice(0, 2).join(', ') + ' and ' + a[2] : a.slice(0, 2).join(', ') + ' and ' + nw(a.length - 2) + ' others');
-const aAn = (s) => (/^[aeiou]/i.test(s) && !/^(uni|use|eu)/i.test(s) ? 'an ' : 'a ') + s;
+import { a_an as aAn } from '../text/mods.js';
 
 /** Lead-in phrases by gap since the previous beat (days). */
 function leads(g, h) {

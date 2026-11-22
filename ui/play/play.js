@@ -180,7 +180,7 @@ export function mountPlay(store, hooks) {
       <h5>Post</h5><div class="pgrid2">${btn('Post online', 'data-post="feed"')}${FORUM_KINDS.slice(0, 4).map(([k, l]) => btn(l, `data-post="forum" data-kind="${k}"`)).join('')}</div>
       <h5>Message someone</h5><div class="pchips">${d.contacts.map((c) => `<button class="pchip" data-msg="${c.id}">${esc(c.name)}</button>`).join('') || '<span class="pdim">No contacts yet. Meet people first.</span>'}</div>
       <h5>Chats</h5>${d.chats.length ? d.chats.map((c) => `<div class="pchat"><b>${esc(cap(lc(c.name)))}</b><small>${c.n} people</small>${c.last.map((m) => `<p><i>${esc(m.au.split(' ')[0])}</i> ${esc(m.text)}</p>`).join('')}</div>`).join('') : '<p class="pdim">No group chats yet. They appear as you get to know people.</p>'}
-      <h5>Neighbourhood forum</h5>${d.forum.length ? d.forum.map((f) => `<div class="pchat"><b>${esc(f.au)}</b><small>${esc(f.kind)} · ${esc(f.date)}${f.replies ? ` · ${f.replies} replies` : ''}</small><p>${esc(f.text)}</p></div>`).join('') : '<p class="pdim">Nothing yet.</p>'}`);
+      <h5>Neighbourhood forum</h5>${d.forum.length ? d.forum.map((f) => `<div class="pchat"><b>${esc(f.au)}</b><small>${esc(f.kind)} · ${esc(f.date)}${f.replies ? ` · ${f.replies} repl${f.replies === 1 ? "y" : "ies"}` : ''}</small><p>${esc(f.text)}</p></div>`).join('') : '<p class="pdim">Nothing yet.</p>'}`);
   }
   function datingView(d) {
     if (!d) return loading('dating', 'Dating');

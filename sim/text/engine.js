@@ -24,10 +24,12 @@ function prepAlt(a) {
   if (m) { a.t = a.t.slice(m[0].length); for (const tok of m[1].trim().split(/\s+/)) { const [k, v] = tok.split('='); if (k === 'm') a.months = v.split(',').map(Number); else if (k === 'once') a.once = v === undefined || v === '' ? true : +v; } }
   if (a.months && a.months.length) a.when = { ...(a.when || {}), month: a.months };
   if (a.once === true) a.once = 6;
+  const refs = [...String(a.t || '').matchAll(/#([\w:*.-]+)(?:\|\w+)*#/g)].map((m) => m[1]); a._refs = refs.length ? refs : null;
+  if (!a.once && /"[^"{}#]{3,}"/.test(a.t || '')) a.once = QUOTE_MONTHS; // a leaf line with a quoted punchline is a joke: once per N months town-wide
   const lit = String(a.t || '').replace(/\{[^}]*\}|#[^#]*#|\[[^\]]*\]/g, ' ').split(/\s+/).filter(Boolean).length; a._lit = lit;
   return a;
 }
-const DISTINCT_WORDS = 9, SOFT_DAYS = 45;
+const DISTINCT_WORDS = 9, SOFT_DAYS = 45, QUOTE_MONTHS = 3;
 function evalCond(val, c) {
   if (Array.isArray(c)) return c.some((x) => evalCond(val, x));
   if (typeof c === 'string') {
@@ -103,6 +105,7 @@ export class TextEngine {
       const a = alts[i];
       if (a.when) { let pass = true; for (const k in a.when) if (!evalCond(st.f[k], a.when[k])) { pass = false; break; } if (!pass) continue; }
       let w = a.w ?? 1;
+      if (mem && a._refs) for (const r of a._refs) w *= this._avail(r, st); // back-pressure: a template that leans on a pool whose jokes are all spoken for is chosen less
       if (mem && alts.length > 1 && (a.once || a._lit >= DISTINCT_WORDS)) { // town-wide freshness for distinctive lines
         const t = this.rare.get(name + '#' + i);
         if (t !== undefined) {
@@ -125,6 +128,15 @@ export class TextEngine {
     const idx = ok[j];
     if (st.ctx.memory !== false && alts.length > 1) { st.used.push(name + '#' + idx); if (alts[idx].once || alts[idx]._lit >= DISTINCT_WORDS) (st.rareUsed ||= []).push(name + '#' + idx); }
     return this._expand(alts[idx].t, st, depth + 1);
+  }
+  /** Fraction (0.05..1) of a rule's rate-limited lines that are currently free to use; 1 for rules with nothing rate-limited. */
+  _avail(name, st) {
+    const alts = this.rules.get(name); if (!alts) return 1;
+    if (alts._tr === undefined) alts._tr = alts.some((a) => a.once);
+    if (!alts._tr) return 1;
+    let n = 0, free = 0;
+    for (let i = 0; i < alts.length; i++) { const a = alts[i]; n++; if (!a.once) { free++; continue; } const t = this.rare.get(name + '#' + i); if (t === undefined || st.day - t >= a.once * 30) free++; }
+    return n ? Math.max(0.05, free / n) : 1;
   }
   _ref(key, arg, st) {
     const dot = key.indexOf('.'); const root = dot < 0 ? key : key.slice(0, dot), prop = dot < 0 ? '' : key.slice(dot + 1);
@@ -160,7 +172,7 @@ export class TextEngine {
       try { idx.street = [...new Set(Object.values(w.map.lf.streets).map((x) => x.name))]; } catch { idx.street = []; }
     }
     const arr = idx[kind]; if (!arr || !arr.length) return FALL[kind] || 'round the corner';
-    return arr[Math.floor(st.rng.next() * arr.length)];
+    return shortRef(arr[Math.floor(st.rng.next() * arr.length)], st.rng);
   }
   _expand(s, st, depth) {
     if (depth > 14) return '';
@@ -208,6 +220,15 @@ export class TextEngine {
     if (ck) { this.cache.set(ck, out); if (this.cache.size > 8000) this.cache.delete(this.cache.keys().next().value); }
     return out;
   }
+}
+/** How a local would say a long venue name: "Holly Road Recreation Ground" is "the rec" most of the time, "Holly Road Library & Community Hub" is "the library". Full names stay available (~20-25%). */
+function shortRef(name, rng) {
+  const r = rng.next(); let m;
+  if ((m = /^(.*?) Recreation Ground$/i.exec(name))) return r < 0.45 ? 'the rec' : r < 0.65 ? `${m[1]} Rec` : r < 0.8 ? `the rec on ${m[1]}` : name;
+  if (/ Library\b/i.test(name) && name.length > 18) return r < 0.5 ? 'the library' : r < 0.65 ? name.replace(/ (&|and) .*$/i, '') : name;
+  if ((m = /^(.*?) (Primary|Junior|Infant) (Academy|School)$/i.exec(name))) return r < 0.4 ? 'the school' : r < 0.55 ? `${m[1]} Primary` : name;
+  if (/ (Community|Leisure) (Centre|Hub)$/i.test(name) && name.length > 20) return r < 0.4 ? 'the community centre' : name;
+  return name;
 }
 const roleKey = new Set(['a', 'b', 'c', 'x', 's', 'o']);
 const SUNSET = [16.6, 17.5, 18.3, 20.0, 21.0, 21.7, 21.5, 20.6, 19.3, 17.9, 16.2, 15.8]; // Jan..Dec, clock time with BST (month-mean; ~Manchester)

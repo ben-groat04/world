@@ -1,5 +1,6 @@
 // Turns kernel events into short human sentences and "Larkfield Local" news items. Pure; worker-safe.
 import { projectPhrase } from '../sim/sifter/projectwords.js';
+import { jobNoun } from '../sim/text/jobs.js';
 const isPrivateEv = (ev) => /^crime\.(domestic|sexual)|^health\.substance$|^social\.secret$/.test(ev.type) || (ev.tags || []).some((t) => t === 'private' || t === 'sensitive');
 export { isPrivateEv };
 const lc = (s) => String(s || '').replace(/_/g, ' ');
@@ -157,7 +158,7 @@ const WHY = { job: ['a new job', 'a job offer', 'work'], afford: ['rent they cou
 const EMP = { city_centre_offices: ['an office in the city centre', 'a city-centre firm', 'a small agency in town'], business_park: ['a firm out at the business park', 'an operations team at the business park'], industrial_estate: ['a firm on the industrial estate', 'a workshop on the estate'], teaching_hospital: ['the teaching hospital', 'the hospital'], secondary_school: ['a secondary school', 'a school across town'], university: ['the university'], home: ['a firm that lets them work from home', 'themselves, from the spare room'], city_centre_retail_leisure: ['a shop in town', 'a restaurant in town', 'a bar in the centre'], other_neighbourhood: ['a firm across town', 'a place in the next neighbourhood'], retail_park: ['a store at the retail park'], logistics_park: ['a distribution centre', 'a warehouse on the ring road'], airport: ['the airport'] };
 const hsh = (n) => { let x = (n | 0) * 2654435761 >>> 0; x ^= x >>> 15; return x >>> 0; };
 const pickBy = (arr, n) => arr[hsh(n) % arr.length];
-const roleLabel = (w, id) => { const o = (w.pack && w.pack.jobs || []).find((j) => j.id === id); const t = String(o ? o.label : lc(id)).replace(/\s*\([^)]*\)?/g, '').replace(/ \/ /g, '/').trim(); return /^[A-Z]{2,}/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1); };
+const roleLabel = (w, id) => { const o = (w.pack && w.pack.jobs || []).find((j) => j.id === id); return jobNoun(o ? o.label : lc(id), id); };
 function humanPayload(w, ev) {
   const pl = ev.payload || {}, out = {}; if (pl.occ) { out.role = roleLabel(w, pl.occ); const o = (w.pack.jobs || []).find((j) => j.id === pl.occ); const venue = ev.place != null ? w.buildings.get(ev.place) : null;
     out.employer = venue && venue.name ? venue.name : o ? pickBy(EMP[o.dest || o.where] || ['a local employer'], ev.id) : 'a local employer'; }

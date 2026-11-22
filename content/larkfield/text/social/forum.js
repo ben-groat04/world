@@ -28,7 +28,7 @@ export default {
     'Looking for a #fx.trade# round here. Someone local, not a call centre. #fx.thanks#',
     'Recommendations for a #fx.trade#, please. Had two quotes and one of them laughed.',
     'Does anyone know a #fx.trade# who does evenings or weekends? Happy to pay properly.',
-    'New here. Where do you all get your coffee/bread/haircut? Be kind, I have only found the Co-op.',
+    'New here. Where do you all get your coffee, bread and haircut? Be kind, I have only found the Co-op.',
     'Anyone tried the new place by {p.shop}? Wondering if it is worth the hype.',
     'Where is the best fish and chips round here? Settle a family argument.',
   ],
@@ -51,8 +51,8 @@ export default {
   'feed.noise': [
     'Not wanting to name and shame but the party at the flats on {p.street} went on until 4am #fx.when#. Some of us have work.',
     'Whoever is drilling at 8pm on a Sunday, please stop. I would like to hear my own telly.',
-    'Is it just me or has the noise from the bar/pub got worse lately? Windows rattling at 11.30 on a school night.',
-    'Fireworks AGAIN. The dog is under the bed. Do people not read the notices?',
+    'Is it just me or has the noise from the pub got worse lately? Windows rattling at 11.30 on a school night.',
+    '<<m=9,10,0>>Fireworks AGAIN. The dog is under the bed. Do people not read the notices?',
     'Dogs barking all day at number 22. I have no problem with dogs, I have a problem with a dog on its own for ten hours.',
   ],
   'feed.bins': [
@@ -80,7 +80,7 @@ export default {
   ],
   'feed.freebie': [
     'Free to a good home: single bed frame, buyer collects. Ground floor, {p.street}.',
-    'Giving away a box of kids\' books and a slightly sad Christmas tree. First come, first served.',
+    '<<m=11,0>>Giving away a box of kids\' books and a slightly sad Christmas tree. First come, first served.',
     'Free: two big bags of clothes, ladies size 10-12, from a clear-out. Porch pickup on {p.street}.',
     'Does anyone need a working microwave? Upgraded, do not want it to go to landfill.',
     'Moving out and need to get rid of a sofa. It is a nice sofa. It is also very heavy. Free for anyone with a van.',

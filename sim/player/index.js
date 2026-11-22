@@ -100,7 +100,7 @@ export function createPlayer() {
   function settle(w, a) {
       const rng = w.rngFor('player.create'); const u = (w.lf.housing.byId.get ? w.lf.housing.byId.get(a.unit) : w.lf.housing.byId[a.unit]);
       if (!u || u.hh >= 0 || !RENTED.has(u.tenure)) return fail('that home is no longer available');
-      const budget = Math.max(0, Math.round(a.budget ?? 3000)); if (budget < u.rent * 0.6) return fail('not enough for the deposit and first rent');
+      const budget = Math.max(0, Math.round(a.budget ?? 3000)); const need = w.sys.housing.query.moveInCash(u.id); if (budget < need) return fail('not enough for the deposit and first rent');
       const seg = a.seg || 'early_career';
       const hh = { id: w.lf.households.length, unit: u.id, bid: u.bid, seg, arch: 'one_person_u66', members: [], tenure: u.tenure, rentPcm: u.rent, mortgagePcm: 0, income: { gross: 0, net: 0, benefits: 0 }, cars: 0, dogs: 0, cats: 0, since: w.tick, group: 'white_british', landlord: u.landlord, address: u.address, bedrooms: u.bedrooms, sav: { savings: 0, debt: 0, arrears: 0, spend: 0 } };
       w.lf.households.push(hh); u.hh = hh.id; u.since = w.tick; u.voidUntil = 0; u.listed = false; u.lastRise = w.tick;
@@ -160,11 +160,9 @@ export function createPlayer() {
       if (!single(q)) return fail('they are already seeing someone'); const t = tieOf(q.id, p.id); if (!t || t.lv < 2) return fail('you have not really met them yet');
       if (!w.sys.social.query.attractionPossible(p.id, q.id)) return { ok: false, why: 'not a match', plausible: false };
       const key = p.id + ':' + q.id, last = S.asked[key] ?? -1e9; if (w.tick - last < ASK_COOLDOWN_DAYS * tpd()) return { ok: false, why: 'asked recently', days: Math.ceil(ASK_COOLDOWN_DAYS - (w.tick - last) / tpd()) };
-      // the inputs life.askOut weighs (read before the call, which dents attraction on a no): lets the UI say WHY it was a yes or a no
-      const rl0 = w.getRel(p, q), fx = { att: rl0.attraction || 0, aff: rl0.affinity || 0, fam: rl0.familiarity || 0, gap: Math.round(Math.abs(w.ageOf(p) - w.ageOf(q))) };
       S.asked[key] = w.tick; const r = call('life.askOut', { pid: p.id, target: q.id });
       if (r && r.ok) note(`${nm(q)} said yes: you are seeing each other.`); else note(`${nm(q)} turned you down.`);
-      return { ok: !!(r && r.ok), couple: !!(r && r.ok), low: !!(r && r.p != null && r.p < 0.1), p: r && r.p != null ? Math.round(r.p * 100) / 100 : null, fx, l: t.l, inPerson: p.locationId != null && p.locationId === q.locationId };
+      return { ok: !!(r && r.ok), couple: !!(r && r.ok), low: !!(r && r.p != null && r.p < 0.1), p: r && r.p != null ? Math.round(r.p * 100) / 100 : null, terms: r && r.terms, weakest: r && r.weakest, l: t.l, inPerson: p.locationId != null && p.locationId === q.locationId };
     },
     'player.buy': (w, a) => {
       const p = me(a); if (!p || !p.ext.rt) return fail('no player'); const price = a.item === 'pint' ? 5 : 3.2; if (p.money < price) return fail('not enough money');
@@ -178,7 +176,7 @@ export function createPlayer() {
     'player.borrow': (w, a) => {
       const p = me(a); if (!p) return fail('no player'); const r = call('money.borrow', { pid: p.id, amount: +a.amount, kind: a.kind || 'bank' }); if (r && r.ok) note(`You borrowed £${Math.round(r.amount || a.amount)} (${a.kind || 'bank'}).`);
       if (r && r.ok) return r; const f = (p.ext.pop && p.ext.pop.fin) || {}, room = w.sys.money && w.sys.money.query.creditRoom ? w.sys.money.query.creditRoom(p.id) : null; // why a lender said no: the same inputs the money plugin uses (credit record, income-based limit, what is already owed)
-      return { ok: false, why: 'declined', kind: a.kind || 'bank', noCredit: !!f.noCredit, owed: Math.round((f.cc || 0) + (f.payday || 0)), cc: Math.round(f.cc || 0), payday: Math.round(f.payday || 0), monthNet: Math.round(f.monthNet || 0), room: room == null ? null : Math.round(room) };
+      return { ok: false, why: 'declined', kind: a.kind || 'bank', noCredit: !!f.noCredit, owed: Math.round((f.cc || 0) + (f.payday || 0)), cc: Math.round(f.cc || 0), payday: Math.round(f.payday || 0), monthNet: Math.round(f.monthNet || 0), room: room == null ? null : Math.round(room), limit: w.sys.money && w.sys.money.query.limits ? w.sys.money.query.limits(p.id) : null };
     },
     'player.join': (w, a) => {
       const p = me(a); if (!p) return fail('no player'); const gq = w.sys.goals && w.sys.goals.query, g = gq && gq.group(a.group); if (!g) return fail('that group no longer exists');

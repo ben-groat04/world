@@ -90,8 +90,9 @@ function stepMacro(w) {
 }
 
 // ------------------------------------------------------------------ credit
+const CC_MONTHS = 2.2; // card limit in months of take-home pay (UK card limits are typically 1-3x monthly income)
 const odLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp((f.monthNet || 0) * 0.6, 0, 1800) / 50) * 50; };
-const ccLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp((f.monthNet || 0) * 2.2, 0, 7000) / 100) * 100; };
+const ccLimit = (p) => { const f = p.ext.pop.fin; return f.noCredit ? 0 : Math.round(clamp((f.monthNet || 0) * CC_MONTHS, 0, 7000) / 100) * 100; };
 /** Pay what cash + overdraft allow (never borrows on the card). Returns pounds paid. */
 function payCash(w, p, to, amount, reason) { const room = Math.max(0, p.money + odLimit(p)), x = Math.min(Math.round(amount), room); if (x > 0) w.ledger.transfer(p.id, to, x, reason); return x; }
 /** Pay `amount` from p to `to`. Waterfall: cash -> overdraft -> credit card -> payday (essentials only) -> unpaid. Returns {paid, unpaid, spiral}. */
@@ -398,6 +399,8 @@ export function createMoney() {
       macro: () => ({ ...M(W).macro }),
       arrears: (x) => { const h = hhOfAny(W, x); if (!h || !h.fin) return { rent: 0, bills: 0, months: 0 }; return { rent: h.fin.rentArrears, bills: h.fin.billArrears, months: h.rentPcm > 0 ? h.fin.rentArrears / h.rentPcm : 0 }; },
       debt: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.pop) return 0; const f = p.ext.pop.fin; return (f.cc || 0) + (f.payday || 0); },
+      // borrowing limits as the lender applies them: card = 2.2 x monthly net pay (max 7000), overdraft = 0.6 x (max 1800); 0 with a poor credit record
+      limits: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.pop) return null; const f = p.ext.pop.fin; return { card: ccLimit(p), overdraft: odLimit(p), cardMonths: CC_MONTHS, noCredit: !!f.noCredit, monthNet: Math.round(f.monthNet || 0), cardOwed: Math.round(f.cc || 0) }; },
       creditRoom: (pid) => { const p = W.people.get(pid); return p ? Math.max(0, ccLimit(p) - p.ext.pop.fin.cc) + Math.max(0, odLimit(p) + Math.min(0, p.money)) : 0; },
       income: (pid) => { const p = W.people.get(pid); return p && p.ext.pop ? { gross: p.ext.pop.fin.monthGross || 0, net: p.ext.pop.fin.monthNet || 0 } : null; },
       netWorth: (x) => { const h = hhOfAny(W, x); if (!h) return 0; const ps = livePeople(W, h); let v = ps.reduce((s, p) => s + p.money + (p.ext.pop.fin.pension || 0) - (p.ext.pop.fin.cc || 0) - (p.ext.pop.fin.payday || 0) - (p.ext.pop.fin.studentLoan || 0) * 0.0, 0); const hs = W.sys.housing; if (hs) { const e = hs.query.equity(h.id); v += e || 0; } return v; },

@@ -5,7 +5,7 @@
 // PERSON  p.ext.life = { or (S|G|B|O orientation), mar (never|married|divorced|widowed|separated), part:{id (person id | 'm<n>' off-map), on, st (dating|cohab|engaged|married), lat (living apart), since, how, ev},
 //                        nPart, ex, parity, firstCohab, firstMar, firstBirth, lastBirth, preg:{t0,due,father,fOn}|null, desire, away (left the sim), left, caring:{for,hrs,since,kind}|null, ... }
 //   p.romance {partnerId, status} and p.family.spouseId mirror the live-in partner for the other packages (money, goals).  GLOBAL  world.lf.life = {q (scheduled work), rec (report records), stats}.
-// QUERY  world.sys.life.query: partner(pid) status(pid) careLoad(pid) summary(pid) stats() records()
+// QUERY  world.sys.life.query: askOutOdds(pid,target) {p,terms,weakest} partner(pid) status(pid) careLoad(pid) summary(pid) stats() records()
 // COMMANDS  life.matchmake{a,b} life.askOut{pid,target} life.propose{pid} life.breakUp{pid} life.moveIn{pid} life.marry{pid} life.tryForBaby{pid} life.babyBoom{pct,months} life.adopt{pid}
 // INTENTS to housing (optional; life falls back to its own move code when absent): housing.moveTogether{a,b} -> {ok} ; housing.leaveHome{pid,reason,dependants?,dest?} -> {ok} ; housing.separate{leaver,stayer} -> {ok}
 //   housing.returnHome{pid} ; housing.inherit{from,heirs} ; labour.assign{pid} -> bool.   EVENTS: life.* (couple cohabit engaged marriage breakup divorce pregnant miscarriage birth move_in move_out leave_home boomerang
@@ -82,6 +82,17 @@ function partnerView(w, p) {
   const m = metro(w, pt.id); return { kind: 'off', id: pt.id, name: m ? m.name : '?', st: pt.st, lat: pt.lat, since: pt.since, how: pt.how };
 }
 
+// ASK-OUT ODDS: the single place the weights live. Each term is {w: weight, v: input value, c: contribution to the probability, max: its largest possible contribution}; `weakest` is the term furthest below
+// its maximum (the UI names it as the reason; it never recomputes the odds). Base 0.22 + 0.4 attraction + 0.3 affinity + 0.25 familiarity - age gap / 40, clamped to 0.02..0.85 (0.01 if orientation does not fit).
+const ASK = { base: 0.22, att: 0.4, aff: 0.3, fam: 0.25, gapYears: 40, lo: 0.02, hi: 0.85, unfit: 0.01 };
+export function askOutOdds(w, x, t) {
+  const rl = w.getRel(x, t), fit = accepts(t.ext.life, t.sex, x.sex) && accepts(x.ext.life, x.sex, t.sex), gap = Math.abs(ageOf(w, x) - ageOf(w, t));
+  const terms = { attraction: { w: ASK.att, v: rl.attraction || 0, c: ASK.att * (rl.attraction || 0), max: ASK.att }, affinity: { w: ASK.aff, v: rl.affinity || 0, c: ASK.aff * (rl.affinity || 0), max: ASK.aff },
+    familiarity: { w: ASK.fam, v: rl.familiarity || 0, c: ASK.fam * (rl.familiarity || 0), max: ASK.fam }, ageGap: { w: -1 / ASK.gapYears, v: Math.round(gap), c: -gap / ASK.gapYears, max: 0 } };
+  let weakest = null, lack = 0.02; for (const [k, tm] of Object.entries(terms)) { const l = tm.max - tm.c; if (l > lack) { lack = l; weakest = k; } }
+  const raw = ASK.base + terms.attraction.c + terms.affinity.c + terms.familiarity.c + terms.ageGap.c;
+  return { p: fit ? clamp(raw, ASK.lo, ASK.hi) : ASK.unfit, fit, raw, base: ASK.base, terms, weakest };
+}
 export function createLife() {
   let W = null;
   const plugin = {
@@ -99,6 +110,7 @@ export function createLife() {
     month: (w) => monthly(w),
   },
   query: {
+    askOutOdds: (pid, target) => { const x = W.people.get(pid), t = W.people.get(target); return x && t && x.ext.life && t.ext.life ? askOutOdds(W, x, t) : null; },
     partner: (pid) => { const p = W.people.get(pid); return p ? partnerView(W, p) : null; },
     status: (pid) => { const p = W.people.get(pid); if (!p || !p.ext.life) return null; const L = p.ext.life; return { orientation: L.or, legal: L.mar, partnered: !!L.part, living_together: !!L.part && !L.part.lat, parity: L.parity, pregnant: !!L.preg, careing: !!L.caring, away: !!L.away }; },
     careLoad: (pid) => { const p = W.people.get(pid); return p && p.ext.life && p.ext.life.caring ? { hrs: p.ext.life.caring.hrs, kind: p.ext.life.caring.kind, since: p.ext.life.caring.since } : null; },
@@ -117,13 +129,10 @@ export function createLife() {
     'life.askOut': (w, a, cmd) => {
       const x = w.people.get(a.pid), t = typeof a.target === 'number' ? w.people.get(a.target) : null; if (!x || !x.alive || x.ext.life.part) return { ok: false, why: 'taken' };
       if (!t || !t.alive || t.ext.life.part) { w.emit('life.ask_out', { actors: [x.id].concat(t ? [t.id] : []), salience: 0.2, payload: { ok: false } }); return { ok: false, why: 'unavailable' }; }
-      const rng = w.rngFor('life.askout', w.tick, x.id), rl = w.getRel(x, t);
-      const fit = accepts(t.ext.life, t.sex, x.sex) && accepts(x.ext.life, x.sex, t.sex);
-      const gap = Math.abs(ageOf(w, x) - ageOf(w, t));
-      const p = fit ? clamp(0.22 + 0.4 * (rl.attraction || 0) + 0.3 * (rl.affinity || 0) + 0.25 * (rl.familiarity || 0) - gap / 40, 0.02, 0.85) : 0.01;
+      const rng = w.rngFor('life.askout', w.tick, x.id), od = askOutOdds(w, x, t), p = od.p;
       const ok = rng.chance(p); w.emit('life.ask_out', { actors: [x.id, t.id], salience: 0.3, payload: { ok } });
-      if (ok) formCouple(w, x, t, 'asked out'); else { rl.attraction = clamp((rl.attraction || 0) - 0.1, 0, 1); }
-      return { ok, p };
+      if (ok) formCouple(w, x, t, 'asked out'); else { const rl = w.getRel(x, t); rl.attraction = clamp((rl.attraction || 0) - 0.1, 0, 1); }
+      return { ok, p, terms: od.terms, weakest: od.weakest, fit: od.fit };
     },
     'life.propose': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.alive || !p.ext.life.part) return { ok: false }; const pt = p.ext.life.part; if (pt.st === 'engaged' || pt.st === 'married') return { ok: false }; const rng = w.rngFor('life.propose', w.tick, p.id); const prob = clamp(0.4 + 0.1 * Math.min(4, (w.tick - pt.since) / w.calendar.ticksPerYear) + (pt.lat ? -0.1 : 0.15), 0.1, 0.9); const ok = rng.chance(prob); if (ok) engage(w, p.id); return { ok, p: prob }; },
     'life.marry': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.ext.life.part || p.ext.life.part.st !== 'engaged') return false; wedding(w, p.id); return true; },

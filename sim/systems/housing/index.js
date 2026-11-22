@@ -11,6 +11,9 @@ import { clamp, registerEvents, livePeople, bedNeed, isSharers } from '../money/
 import { dayOfMonth, slotDay } from '../../util.js';
 import { createArrivalHousehold, createSharer, savingsFor } from './arrivals.js';
 
+// Cash a household must hold to move into a rented unit: deposit (5 weeks, Tenant Fees Act 2019 cap) + first month is ~ 1.2 x rent in reality; the sim asks for 60% of one month's rent in hand (hand-set, lower: most movers use family help / savings elsewhere).
+const MOVE_IN_CASH_SHARE = 0.6;
+const moveInCash = (u) => Math.round(u.rent * MOVE_IN_CASH_SHARE);
 const EVENTS = [
   ['housing.moved_in', 'A household moved into a home (from elsewhere in Larkfield or from outside)', { from: 'string' }], ['housing.moved_out', 'A household left a home (to another Larkfield home or out of the area)', { to: 'string' }],
   ['housing.notice_served', 'Landlord served notice (no-fault / sale / arrears)', { reason: 'string' }], ['housing.eviction', 'Household evicted by bailiffs', { reason: 'string' }], ['housing.homeless', 'Household left without a settled home (flagged)', { dest: 'string' }],
@@ -433,6 +436,7 @@ export function createHousing() {
       if (world.events.registry.has('project.effect')) world.events.on('project.effect', (ev) => { if (ev.payload.effect === 'unit_claimed' && ev.place != null) claimUnit({ building: ev.place, name: 'New business', cause: ev.id }); });
     },
     query: {
+      moveInCash: (unitId) => { const u = U(unitId); return u ? moveInCash(u) : 0; }, // cash a household must hold to take a rented unit (housing.rentFlat)
       unit: (x) => unitView(unitOfAny(x)), landlordOf: (x) => { const u = unitOfAny(x); return u ? { id: u.landlord, kind: u.landlord >= 0 && H(W).owners[u.landlord] ? H(W).owners[u.landlord].kind : 'owner' } : null; },
       vacancies: (f = {}) => H(W).list.filter((u) => u.hh < 0 && (u.listed || f.all) && (!f.beds || u.bedrooms >= f.beds) && (!f.tenure || u.tenure === f.tenure) && (!f.maxRent || u.rent <= f.maxRent)).map(unitView),
       rentBurden: (x) => { const hh = x && x.members ? x : hhOfArg(typeof x === 'object' ? x : { pid: x }); if (!hh || !hh.fin || !hh.rentPcm) return 0; const inc = hh.fin.income; return inc > 0 ? hh.rentPcm / inc : 1; },
@@ -477,7 +481,7 @@ export function createHousing() {
       },
       'housing.rentFlat': (w, a) => {
         const hh = hhOfArg(a), u = U(a.unit); if (!hh || !u || u.hh >= 0 || !rented(u.tenure)) return { ok: false };
-        const ps = hhLive(hh), cash = ps.reduce((s, p) => s + Math.max(0, p.money), 0); if (cash < u.rent * 0.6) return { ok: false, why: 'cannot afford deposit' };
+        const ps = hhLive(hh), cash = ps.reduce((s, p) => s + Math.max(0, p.money), 0); if (cash < moveInCash(u)) return { ok: false, why: 'cannot afford deposit', need: moveInCash(u), cash: Math.round(cash) };
         moveLocal(hh, u, a.reason || 'player', a.cause || 0); return { ok: true, unit: u.id };
       },
       'housing.join': (w, a) => { // a person joins another household's home (partner moves in, boomerang, lodger)

@@ -183,3 +183,5 @@ OPEN (needs sim owners):
 - Heatwave preset can run at 6°C in November: shocks must be season-relative (Met Office heatwave = 3+ days above local threshold, ~25–28°C) or unavailable out of season.
 - After a successful ask-out the Phone tab still shows the dating-app pitch below; collapse it once seeing someone.
 - Result cards are wordy for mobile; trim to one line + "more".
+- Names: `horn_central_southern` in content/larkfield/names.js pools Eritrean/Ethiopian, Zimbabwean, Sierra Leonean, Congolese etc. names, so first name, surname and birthplace mix ("Mulugeta Bangura", Ethiopian + Sierra Leonean). Split into coherent sub-groups (Horn, East, Southern, Central/West, Sudanese) with names and birthplace drawn together. Audit other broad pools (arab, latin_american, sea_east, balkan_slavic) the same way.
+- Feed leftovers (text pass): storyline headlines re-listed every 14 days repeat (0.37 distinct); news headlines 0.31 masked; close pairs business.closed→job_lost, arrears→fallout.

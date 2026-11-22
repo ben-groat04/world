@@ -1,0 +1,30 @@
+--- Sun 19:00, Maya
+Hey, anyone know a good noodle place around here? I want to try somewhere new this week 🍜
+
+--- Sun 19:01, Jo
+Hmm, I don't know many spots off the top of my head. Which area are you in? If you tell me, I can ask @claude for some good noodle places nearby 🍜
+
+--- Sun 19:10, Maya
+Thanks Jo! I'm in the city centre, near the station. Could you ask @claude for noodle places around there? I'd love a few options, ideally ones that aren't too pricey 🙏
+
+--- Sun 19:15, Jo
+@claude Could you suggest a few noodle restaurants in the city centre near the station? Ideally not too pricey, and a few options would be great. Thanks!
+
+--- Sun 19:15, Claude → Jo (private)
+Happy to help, but I need to know which city and station you mean. "The city centre near the station" could be almost anywhere, and I don't want to guess and send you to the wrong place.
+
+Could you tell me:
+1. **The city** (and the station, if the city has more than one)?
+2. **The type of noodles** you like, if any, such as ramen, pho, udon, Chinese hand-pulled or Thai? Skip this if you're open to anything.
+
+Once I know, I'll search for options and check current details like opening hours and prices.
+
+--- Sun 20:19, Jo
+Claude needs the city name and the station, so I'll pass that on to Maya. I'll ask @claude again once we know, and I'll mention the noodle type too. 🍜
+
+--- Sun 20:21, Maya
+Sounds good Jo, thanks! I'm in Leeds, near Leeds station. I'm mostly after ramen or pho, something cosy and not too pricey. Happy to take whatever Claude suggests 🍜
+
+--- Sun 20:32, Jo
+@claude Thanks for checking. We're in Leeds city centre, near Leeds station. Maya's after ramen or pho, somewhere cosy and not too pricey. Could you suggest a few options and check they're still open?
+

@@ -74,7 +74,7 @@ export class PlayHost {
   jobInfo(occ) {
     const o = (this.w.pack.jobs || []).find((j) => j.id === occ); if (!o) return { label: cap1(lc(occ)), sub: '', band: '', mid: 0, hours: '' };
     const title = o.label.replace(/\s*\(.*?\)\s*/g, ' ').trim(), sub = (o.label.match(/\((.*?)\)/) || [])[1] || '', pay = o.pay || {}, lo = k0(pay.p10 || pay.median || 0), hi = k0(pay.p90 || pay.median || 0), h = o.hours;
-    const H = 1950, hr = (x) => (x / H).toFixed(2), typ = h ? h[1] : 37.5, paid = o.soc >= 1 && o.soc <= 3 ? Math.min(typ, 40) : Math.min(typ, 48.75), yr = k0((pay.median || 0) / 37.5 * paid); // hourly band (ASHE-style) and what the typical hours add up to
+    const H = 1950, hr = (x) => (x / H).toFixed(2), typ = h ? h[1] : 37.5, paid = o.soc >= 1 && o.soc <= 3 ? Math.min(typ, 37.5) : Math.min(typ, 48.75), yr = k0((pay.median || 0) / 37.5 * paid); // hourly band (ASHE-style) and what the typical hours add up to
     return { label: title, sub, band: !pay.p90 ? 'pay varies' : `£${hr(pay.p10 || pay.median)}–${hr(pay.p90)} an hour (about £${yr}k a year at typical hours)`, mid: pay.median || 0, hours: h ? `${Math.round(h[1])} h/week` : '', where: o.where === 'onmap' ? 'in Larkfield' : o.where === 'home' ? 'from home' : 'in the city' };
   }
   jobWords(p) { const j = p.job || ''; if (FIX_JOB[j]) return FIX_JOB[j]; const o = (this.w.pack.jobs || []).find((x) => x.id === j || x.label === j); return o ? this.jobInfo(o.id).label.toLowerCase() : lc(j); }

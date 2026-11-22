@@ -17,7 +17,7 @@ const EVENTS = [
   ['labour.second_job', 'Took a second job / gig shifts', { hours: 'number' }], ['labour.sector_shock', 'Shock to a sector of the labour market', { sector: 'string' }],
   ['labour.went_inactive', 'Left the labour force (sickness, caring, discouraged)', { why: 'string' }], ['labour.graduated', 'Finished study and entered the job market', { age: 'number' }], ['labour.applied', 'A job application and its result', { ok: 'boolean' }],
 ];
-const MIN_TIME_TO_HIRE = 1; // months
+const MIN_TIME_TO_HIRE = 0.5; // months (about 2 weeks: agency, hospitality and retail starts can be that quick; nothing starts within days of a quit)
 const GRAD_SHARE = [['nurse', 0.05], ['allied_health', 0.03], ['teacher', 0.04], ['solicitor', 0.025], ['doctor', 0.02], ['social_worker', 0.01], ['pharmacist', 0.006], ['dentist', 0.003]];
 const MONTH = 4380;
 const L = (w) => w.lf.labour;
@@ -276,7 +276,7 @@ export function createLabour() {
     const hf = (q.health && q.health.limiting ? 0.7 : 1);
     let f = 0.165 * (1 - 0.55 * mc.recession) * Math.exp(-dur / 14) * (0.85 + 0.3 * C) * (1 + ref) * hf * (age > 55 ? 0.65 : age < 25 ? 1.1 : 1) * (q.search.kind === 'entry' ? 1.25 : 1);
     f = clamp(f, 0, 0.7); q.search.tries++;
-    if (dur < MIN_TIME_TO_HIRE) return; // application, interview, references/vetting and the new employer's start date: 4-8 weeks from deciding to look to a first day (CIPD/REC hiring surveys), never 10 days
+    if (dur < MIN_TIME_TO_HIRE) return; // application, interview, references/vetting and the new employer's start date: 2-8 weeks from deciding to look to a first day (CIPD/REC hiring surveys), never 10 days
     if (!rng.chance(f)) return;
     const o = drawOccupation(W, rng, p, { prior: q.lastOcc, onlyOffmap: true });
     if (!o) return;

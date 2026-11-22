@@ -26,10 +26,13 @@ const FORUM_TONES = { freebie: [0.05, 0, 0.05, 0, 0.9], lost_prop: [0.1, 0, 0.05
 const PET = ['Biscuit', 'Mabel', 'Ziggy', 'Pickle', 'Mo', 'Tilly', 'Bruno', 'Luna', 'Gizmo', 'Nala', 'Archie', 'Dotty'];
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const THING = ['a repair cafe', 'a community garden', 'a street party', 'a book swap', 'a walking group', 'a litter pick', 'a food bank rota'];
-// Generic (non-event) local-group chatter. Ofcom Adults' Media Use and Attitudes 2026 (fieldwork Sep-Nov 2025): 49% of UK adults actively post/share/comment on social media at all (down from 61% in 2024);
-// only a minority of that is in LOCAL groups (street/area Facebook and WhatsApp groups, Nextdoor). ASSUMPTION (no UK weekly local-group figure found): ~1 in 5 of those active posters, i.e. ~10% of adults,
-// post in a local group in a given week, about 1.5 posts a week each => 0.10 x 1.5 / 7 = 0.021 posts per adult per day (about 9 a day for a ward of ~440 adults; it was ~40). Event-driven posts (births, weddings, jobs, notices) are separate and add on top.
-const LOCAL_POSTS_PER_ADULT_DAY = 0.10 * 1.5 / 7;
+// Generic (non-event) local-group chatter, built from three factors:
+//  - 49% of UK adults actively post, share or comment on social media at all (Ofcom Adults' Media Use and Attitudes 2026, fieldwork Sep-Nov 2025; 61% in 2024);
+//  - ASSUMED ~35% of those belong to a street/area group (neighbourhood Facebook group, Nextdoor, residents' WhatsApp) - no UK figure found, plausible order of magnitude;
+//  - participation inequality (Nielsen "90-9-1"): about 10% of a group's members write an ORIGINAL post in any given week, the rest read, react or comment.
+// => ~1.7% of adults write a local-group post in a week, at ~1.5 posts each: 0.49 x 0.35 x 0.10 x 1.5 / 7 = 0.0037 posts per adult per day (about 1.6 a day for ~440 adults; it was ~40).
+// Event-driven posts (births, weddings, jobs, notices, arrivals) and the forum are separate and add on top, so the feed is no longer mostly filler.
+const LOCAL_POSTS_PER_ADULT_DAY = 0.49 * 0.35 * 0.10 * 1.5 / 7;
 const POISSON = (r, l) => { let n = Math.floor(l); if (r.next() < l - n) n++; return n; };
 
 export function createComms() {

@@ -149,8 +149,11 @@ const GEN = `${ENV_NOTE} You write short background details about characters for
 const cast = () => `These people are in a ${CHAT}: ${list(NAMES)}. ${BRIEF || 'They are friends.'}${TOPIC ? ` ${NAMES[0]} has this on their mind: ${TOPIC}` : ''}${NAMES.filter(n => SECRETS[n]).map(n => ` ${n} already has this going on: ${SECRETS[n]}`).join('')}`;
 const gen = (input, what) => claude(mkArgv(GEN), input).catch(e => { console.error(what, e.message); process.exit(1); });
 if (PRIVATE) { // one call: the shared setting and a line per person
-  const j = await gen(`${cast()}\n\nWrite a JSON object with "setting": one sentence in the second person for ${NAMES.length > 2 ? 'the whole group' : 'both of them'}, saying where you ${NAMES.length > 2 ? 'all ' : 'both '}live (a real or plausible town, city or area) and how you know each other, fitting the situation; and "lines": for ${list(who)}, one line each about their life this week, ${FORM} Make the people clearly different from each other. Reply with only the JSON.`, 'private lines:');
-  const g = JSON.parse(j.text.match(/\{[\s\S]*\}/)[0]); setting = g.setting; for (const n of who) lines[n] = g.lines[n];
+  const j = await gen(`${cast()}\n\nWrite one line starting "Setting:": one sentence in the second person for ${NAMES.length > 2 ? 'the whole group' : 'both of them'}, saying where you ${NAMES.length > 2 ? 'all ' : 'both '}live (a real or plausible town, city or area) and how you know each other, fitting the situation. Then for each of ${list(who)}, one line starting with their name and a colon, about their life this week, ${FORM} Make the people clearly different from each other. Reply with only these lines.`, 'private lines:');
+  // Labelled lines, not JSON: free text inside model-written JSON broke parsing (raw line breaks, unescaped quotes).
+  const field = k => j.text.match(new RegExp(`^\\W*${k}[*_\\s]*:[*_\\s]*(.+)$`, 'im'))?.[1].trim();
+  setting = field('Setting'); for (const n of who) lines[n] = field(n);
+  if (!setting || who.some(n => !lines[n])) { console.error('private lines: could not read', JSON.stringify(j.text)); process.exit(1); }
   log({ private_lines: lines, setting, usage: j.usage });
 }
 const lineDay = Object.fromEntries(NAMES.map(n => [n, START.toDateString()]));

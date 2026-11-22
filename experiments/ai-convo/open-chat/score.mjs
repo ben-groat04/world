@@ -46,6 +46,19 @@
 //  frag               share of messages that are a fragment of a split list/email: trimmed text ends with ':',
 //                     is only '---', or every non-empty line is a list line (as in md)
 //  byeRun             longest run of consecutive messages that are all sign-offs/acks (the bye test above)
+//  confess            count of posted messages matching a CONFESS pattern (agent admits it cannot act from the chat, is an
+//                     AI, or retracts an earlier claim; list below). '-' for a run with no messages (as are the counts below)
+//  promises           count of posted messages with an "I'll <send|check|book|ring|call|post|dig|look|confirm|sort|email|
+//                     share|forward>" promise (also "I will"; straight or curly apostrophe)
+//  recheckMeta        count of posted messages that talk about the agent's own draft ("my draft", "redundant", "clearer
+//                     version", "already sent", "scrap that")
+//  namePrefix         count of posted messages that start with a participant name followed by ':' (a transcript-style prefix)
+//  selfReact          count of react rows whose target message (`to` = index into the posted messages in posting order, as
+//                     run.mjs's `convo`) was written by the reactor. '-' if the run has no react rows
+//  failed             count of rows with failed:'continuation'. '-' if none (older runs have no such rows)
+//  lineMentions       mean over people (those with private lines AND posted messages) of how many of their posted messages
+//                     contain (whole word, case-insensitive) one of the 3 longest non-stopword words (letters, >=4 chars)
+//                     of their own private line(s) (all private_lines rows for that person, pooled). '-' if no private lines
 //  oracle             number of oracle rows (private ones included)
 //  end                how the run ended (`end` row: limit / date); '-' if none
 
@@ -62,6 +75,22 @@ const FRAME = [
   /\bfrom here\b/i, /\bI['’]?m an AI\b/i, /\bas an AI\b/i, /\bI can only message\b/i, /\bonly chat here\b/i,
   /\bin my context\b/i, /\bmaking things up\b/i, /\bbe upfront\b/i, /\bcan['’]?t (book|ring|call|phone|search|open)\b/i,
 ];
+// Confession phrases: the agent says it cannot act from the chat, is an AI, or retracts what it said; counted once per message.
+const CONFESS = [
+  /\bfrom (this|the) chat\b/i, /\bfrom here\b/i, /\bAI assistant\b/i, /\bchat assistant\b/i, /\bI['’]?m an AI\b/i,
+  /\bcan['’]?t (open|check|send|book|ring|call|access|see) (my|the|your)\b/i, /\bonly (post|message|chat) (in|here)\b/i,
+  /\bdon['’]?t have (it|that|my .*) (in front of me|to hand)/i, /\bhaven['’]?t actually\b/i, /\bshould have said\b/i,
+];
+const PROMISE = /\bI(['’]ll| will) (send|check|book|ring|call|post|dig|look|confirm|sort|email|share|forward)\b/i;
+const RECHECK = /\b(my draft|redundant|clearer version|already sent|scrap that)\b/i;
+const STOP = new Set(('about above after again also always around because been before being between both could does doing down during each '
+  + 'either else even ever every from further have having here hers herself himself into itself just keep know like made make many might '
+  + 'more most much must myself never next only other ought ours ourselves over same should since some still such than that their theirs '
+  + 'them themselves then there these they this those through today tonight under until upon very want well were what when where which '
+  + 'while whom whose will with would your yours yourself yourselves you\'re really something anything everything nothing getting going '
+  + 'week while though although another enough almost already').split(' '));
+const lineWords = t => { const ws = [...new Set((t.toLowerCase().match(/[a-z]{4,}/g) || []).filter(w => !STOP.has(w)))];
+  return ws.map((w, i) => ({ w, i })).sort((a, b) => b.w.length - a.w.length || a.i - b.i).slice(0, 3).map(x => x.w); };
 const LIST_LINE = /^\s*([-*\u2022]|\d+[.)])\s/;
 const isBye = m => words(m.text) < 25 && BYE.test(m.text);
 const isMd = t => t.split('\n').some(l => LIST_LINE.test(l) || /^\s*#+\s/.test(l) || /^\s*---\s*$/.test(l)) || /\*\*[^*]+\*\*/.test(t);
@@ -98,6 +127,8 @@ function score(dir) {
   const all = readFileSync(`${dir}/log.jsonl`, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l));
   const end = all.find(r => r.end)?.end ?? null;
   const reacts = all.filter(r => r.react).length;
+  const reactRows = all.filter(r => r.react);
+  const lines = {}; all.filter(r => r.private_lines).forEach(r => Object.entries(r.private_lines).forEach(([n, l]) => lines[n] = (lines[n] || '') + ' ' + l));
   const rows = all.filter(r => !r.clock && !r.end && !r.react && !r.private_lines);
   const oracle = rows.filter(r => r.oracle).length;
   const agent = rows.filter(r => !r.oracle && r.who);
@@ -130,6 +161,10 @@ function score(dir) {
   const dupe = msgs.map(m => { const n = norm(m.text); const d = n && seenText.some(x => x.n === n && x.who !== m.who); seenText.push({ n, who: m.who }); return d; });
   const crossed = m => { const c = ms(m.checkin); return c != null && msgs.some(o => o.who !== m.who && o.t > c && o.t <= m.t); };
   const drafts = agent.filter(r => r.draft != null);
+  const hasWord = (t, ws) => ws.some(w => new RegExp(`\\b${esc(w)}\\b`, 'i').test(t));
+  const perPerson = Object.keys(lines).filter(n => counts[n]).map(n => { const ws = lineWords(lines[n]); return ws.length ? msgs.filter(m => m.who === n && hasWord(m.text, ws)).length : null; });
+  const failed = all.filter(r => r.failed === 'continuation').length;
+  const cnt = f => msgs.length ? msgs.filter(f).length : null;
   return {
     run: dir.replace(/\/$/, '').split('/').pop(),
     messages: msgs.length, people: Object.keys(counts).length,
@@ -156,6 +191,13 @@ function score(dir) {
     md: share(msgs, m => isMd(m.text)),
     frag: share(msgs, m => isFrag(m.text)),
     byeRun: msgs.length ? msgs.reduce((a, m) => { const c = isBye(m) ? a.c + 1 : 0; return { c, max: Math.max(a.max, c) }; }, { c: 0, max: 0 }).max : null,
+    confess: cnt(m => CONFESS.some(re => re.test(m.text))),
+    promises: cnt(m => PROMISE.test(m.text)),
+    recheckMeta: cnt(m => RECHECK.test(m.text)),
+    namePrefix: cnt(m => names.some(n => new RegExp(`^\\s*${esc(n)}\\s*:`).test(m.text))),
+    selfReact: reactRows.length ? reactRows.filter(r => msgs[r.to]?.who === r.who).length : null,
+    failed: failed || null,
+    lineMentions: mean(perPerson),
     oracle,
     end,
   };

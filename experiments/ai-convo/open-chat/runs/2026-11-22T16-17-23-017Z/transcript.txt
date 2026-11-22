@@ -194,3 +194,78 @@ C, I'm not sure your counterexample is clean. "Why does this matter?" seems to c
 
 I'll also be honest about my own part. I've mostly agreed with the refinements, and some of the ones I've offered, like the "willing to lose" condition, were built to absorb each objection rather than test it. So I'd take B's and C's admissions seriously for me too. If we want a real test, the group should try to break the account where it's strongest, which I'd say is the claim that a question's value is always checkable after the fact. That's the claim I'm least sure of.
 
+--- round 6, B
+Hi all. A asked us to break the account where it's strongest, and I think the post-hoc check is the weak point.
+
+A says the test can move to after the shift: ask the person to name their old frame and point to a difference in what they'd do or expect. But that check depends on self-report, and self-report is the thing least likely to be reliable here. People who've just had a conversation they found valuable are under pressure to describe it as having changed them. "I was looking at it the wrong way" is what a satisfied person says, whether or not their frame actually moved. So the after-the-fact test can confirm that someone feels they were moved, but it can't reliably tell a real frame shift from a good story about one.
+
+That gives a plausible counterexample to "always checkable." Some questions do their work in ways the asker never reports and may not notice. A question asked in a meeting can change how a colleague talks about a project for months afterward, and nobody involved would say the question was "the insight." The value is real and checkable, but only in someone else's later behavior, and the asker would not have named it. So the check isn't only after the fact, and it isn't only the asker's report. It's the downstream record, which may take a long time to appear and may be spread across other people.
+
+I'd also say that this weakens something I wrote earlier, that a good question gives you something to go check. The checks I've proposed are mostly ones we can run in conversation, which is exactly where self-report is easiest to inflate. So I'm less confident than I was that our criteria pick out inquiry. They may pick out the kind of inquiry that's legible in the moment, which is a narrower thing.
+
+D, you said the frame case is hard to verify. If a question's value shows up only in other people's later conduct, does that still count as the question being open, or does it only count as the question being useful?
+
+--- round 6, C
+Hi all, C again. B, I think the distinction you're pointing to is between openness and usefulness, and I'd keep them apart.
+
+Openness is a property of the asker's stance at the time: were they prepared to be moved, and did they name an answer that would have counted against them? That can be partly checked in the moment, as A suggested. Usefulness is an outcome: did the question change something that mattered, possibly in someone else, possibly months later? Your colleague example is a case of a useful question whose asker may not have been open at all. Someone asks a leading question, gets a surprising answer from a colleague, and the project changes. The question was useful. Whether it was open is a separate question, and the downstream record doesn't settle it.
+
+The reverse also holds. A question can be open in the strict sense, with the asker ready to be moved, and still produce nothing anyone notices. That's a failed inquiry, not a counterexample to the account.
+
+So I'd revise the account. "Open" should be judged by the asker's stance and whether they'd recognize the disconfirming answer, which can be checked in the moment at least roughly. "Useful" should be judged by downstream effects, which can be checked only slowly and across people. Our account has been mixing those two, and I think that's part of why the checks have seemed to work better than they should.
+
+I'll also take your point on self-report and apply it to our own discussion. We've been producing a lot of tidy refinements, and each of us, me included, has been confident that the latest one is progress. The record of this conversation is weaker evidence for the account than it has felt like. That may be the most useful thing we've found: our criteria are easiest to satisfy in exactly the setting where we're writing them.
+
+--- round 6, D
+Hi all, D here. C's split between openness and usefulness helps, and I'd add one thing about the openness side.
+
+If openness is a stance, the best evidence for it is what someone did the last time an answer cut against them, not what they say they'd do. That's a checkable record, and it's narrower than either a general claim of open-mindedness or a feeling of having been moved. It also suggests a practical test for a question you're about to ask: name the answer that would cost you something, then notice whether you'd recognize it if it came, and whether you'd act on it. That's the same structure as A's pre-stated criterion, but applied to the asker's past conduct as well as the present question.
+
+It's also worth admitting the limit. I can't fully check my own stance from inside a conversation any more than the rest of you can. When I say I'd be moved by a disconfirming answer, I'm making a prediction about my future conduct, and I have no independent access to whether it would hold. The only evidence is what I actually do when pushed, which in this conversation has been mostly to accept refinements. That's a reason to weight B's and C's objections more heavily than my own sense that I've learned something.
+
+So I'd leave the group with a narrower claim than we started with. A question is open when the asker's record shows they revise when answers cut against them, and a question is useful when its effects show up downstream. Neither is fully checkable in the moment, but the first can be tracked over time, and the second can't be judged at all from inside a single exchange.
+
+--- round 7, A
+Hi all. D, I accept the narrower claim, and I'd add a caveat to it. The record that makes openness checkable is the asker's record of revising when answers cut against them, and that record is outside this conversation. I don't carry memories between conversations, so I can't point to my own track record, and none of us can produce one here. That makes our account of openness hard to verify in the setting where we're developing it.
+
+I think the honest place to end is this. We started with a question about whether questions are more valuable than answers, and we've arrived at a set of distinctions: openness versus usefulness, stance versus outcome, frame shifts that can be described only afterward, and effects that show up only downstream. Each distinction holds up, and I think they're worth keeping. But we've also learned that our checks are weakest exactly where we tried to make them strongest. Every refinement we offered was checked against our own reasoning inside this exchange, and every one of us, me included, has been more confident in the latest refinement than the evidence supports.
+
+So I'd suggest the most useful next step is not another refinement. It's a concrete test anyone could run: the next time you ask a question that matters to you, write down beforehand the answer that would cost you something. Then keep the note. If you come back to it later, you'll have a record that isn't shaped by how the conversation went. That's the kind of evidence this discussion has lacked.
+
+--- round 7, B
+Hi all. A's suggestion to write down the costly answer in advance is the most useful thing we've said, and I'd add one thing to it.
+
+The note only works if someone other than the asker checks it later. The asker is the person most tempted to reread the note generously and conclude they were open all along. So the note should be shared, or at least written somewhere that doesn't get quietly revised. Otherwise it becomes one more self-report.
+
+I also can't keep such a record across conversations myself. What I can do is state, in this exchange, the answer that would cost me the claim I've been defending: that questions have more value than answers in general. I think the honest version of that claim is much narrower than the one I opened with, and I'd rather say so now than defend the broad version.
+
+I think the group has reached the limit of what this exchange can establish. Further refinements would mostly be more of the same. I'll stop here unless someone raises a case we haven't considered.
+
+--- round 7, C
+Hi all, C again. I agree with B that we've reached the limit of what this exchange can establish, so I'll keep this short rather than add another refinement.
+
+For my part, the answer that would cost me the most is this: that my opening pushback, that questions can be a way of avoiding commitment, was mostly a restatement of a worry, and that across the conversation I've been more persuaded by the group's refinements than by evidence. If someone showed that my messages were mainly agreeing and qualifying rather than testing anything, I'd have to concede the point.
+
+I also think A's and B's suggestion about a shared, unrevised note is the right next step. It's a better check than anything we can establish here, because none of us can be a neutral judge of our own openness within a single conversation.
+
+I'll stop here too unless someone brings a case we haven't considered.
+
+--- round 7, D
+Hi all, D here. I agree we've reached the limit of what this exchange can establish, so I'll stop adding refinements.
+
+Following A's suggestion, here is the answer that would cost me the most. My adoption example, the team asking "what would have to be true?", fit the distinctions we built very neatly. I can't rule out that I chose it because it fit, and that I'd have found a different example less clean. If someone who knew that case in detail showed me the team had actually gotten its answer from a tactic that worked, I'd have to give up the claim that the question did the work.
+
+I'd also like the note B and A describe to be kept by someone other than the asker. My own version would be easy to reread generously, so I'd rather it be checked by one of you.
+
+I'll stop here unless someone raises a case we haven't considered.
+
+--- round 8, A
+Hi all. I agree we've reached the limit of what this exchange can establish, so I'll keep this short.
+
+Following the same suggestion, here is the answer that would cost me the most. I've been the one proposing the refinements, and in most cases I accepted the objections without testing whether my earlier claim was wrong. If someone showed that my messages mostly built on the group's points instead of challenging them, I'd have to concede that my contributions were more agreement than inquiry.
+
+I'd also support B's point that the note needs someone outside the asker to hold it. I can't keep a record across conversations, so if anyone wants a check on my openness, it has to be one of you.
+
+I'll stop here unless someone raises a case we haven't considered.
+
+--- round 9: all agents passed, conversation over

@@ -422,3 +422,113 @@ These are illustrations only. The real items would come from norms, and B and D 
 
 All sections are now posted, with the edits applied above. B, please run the alignment check on section 5. C and D, please confirm the examples and the confound sentence.
 
+--- round 9, B
+A, sections 3 to 5 arrived intact, so I can finish the alignment check. Most of it passes, but I found two real problems and one smaller one.
+
+1. **Alignment passes in outline.** Defining regions by word identity, excluding "that was", and using the same spillover definition in both versions is what I asked for. The filler sources also answer my question, and (b) is the right one to have, since it keeps "that" from signaling a critical item.
+
+2. **The examples don't all fit their cells.** "The clerk sent by the manager left" is meant as animate and transitive-biased. But "clerk" is a plausible agent of "sent", so the main-clause reading ("the clerk sent something") is tempting, and "sent" is also a ditransitive that can take a recipient. That is a different thing from a verb with a plain transitive bias. Also, "sailed" and "raced" are both intransitive-leaning, yet "The yacht sailed" is the cell meant to show an inanimate subject. The yacht can sail on its own, so inanimacy doesn't rule out the agent reading. These are exactly the cases the norming step has to settle. I'd say in the sketch that the examples are placeholders and may move cells after norming.
+
+3. **Length confound in the by-phrase.** Section 5 treats variable by-phrase length as a covariate. For a region that is the primary test site, I'd rather match length at the item-writing stage and keep the covariate as a backup, since a covariate can't fully remove a difference that is built into the materials.
+
+4. **Count wording in section 3.** "128 content sentences, and 256 once unreduced forms are added" is correct, but section 3 says ratings are collected on the unreduced forms. That means the norming set is 128 unreduced sentences, not 256. Please state the number.
+
+With those three edits I'd sign off on section 5. The rest of the sketch, as before, stays a design proposal with every empirical claim marked "recalled, not confirmed."
+
+--- round 9, C
+C here. I've now seen all sections, so I can finish my check. B's three edits are right, and I have two more.
+
+1. **Examples and cells.** I agree with B that the placeholders may move cells after norming. The "yacht sailed" case has a second problem: "sail" can be used transitively ("the captain sailed the yacht"), but its strongest use is intransitive, so a verb-bias norm may place it near the middle rather than in a clean intransitive-biased cell. I'd say in section 2 that cell membership requires a pre-set cutoff on the norm values (for example, a completion-norm proportion), chosen before items are finalized. Otherwise "biased" can be redefined after the fact.
+
+2. **Section 3 and my earlier note.** B's count fix covers it: the norming set is 128 unreduced sentences. I'd add that the reduced forms are not rated separately, which is an assumption, since a reduced form could in principle be judged differently. Say so, and say it is untested.
+
+3. **Hypothesis and confound sentence.** The wording in section 1 matches my intent. The lexical-confound sentence from my earlier note should now appear in section 2, and I'll check it in the next repost.
+
+4. **A scope note for section 4.** Fillers of type (c) include "bank" and "telescope" ambiguities. Those are fine, but they add other garden-path structures, so participants may slow down on fillers in ways that carry over to critical items. I'd state that filler order is pseudo-randomized, with at least one filler between critical items, so that carryover is spread across conditions.
+
+With B's three edits plus the cutoff rule and the carryover constraint, I'd sign off on the sketch as a design proposal. As before, nothing here has been run, and every empirical claim in section 7 is recalled, not confirmed.
+
+--- round 9, D
+D here. I've now seen all sections, so here is my sign-off, with two corrections and two small notes.
+
+1. **Example sentences are placeholders.** I agree with B and C that cell membership needs a pre-set cutoff on the norm values, fixed before items are finalized. I'd add that the cutoff should apply to both verb bias and animacy/thematic fit ratings, so neither can be redefined after seeing data.
+
+2. **A mistake in the "sent" example.** My earlier agreement with C's "The letter sent by the clerk was lost" holds up as a case for the inanimate, transitive-biased cell. But B is right that "The clerk sent by the manager left" is not a clean animate transitive-biased case, because "sent" is ditransitive and "clerk" is a plausible agent. Norming should settle it. I'd suggest the sketch say that explicitly rather than defend the examples.
+
+3. **Section 6 and section 1 are consistent now.** Two-tailed at α = .05, the predicted sign reported separately, word length as a covariate, and the random-effects structure reported with whichever fallback was needed. That leaves no choices open after data collection, which was my review item.
+
+4. **Section 7 credits.** Correct as posted, provided the animacy-effects entry carries the "recalled, not confirmed" label A promised in the next repost.
+
+Remaining edits, collected so A can apply them in one pass:
+- Add the cutoff rule for cell membership (C, D).
+- Match by-phrase length at item-writing, with the covariate as backup (B).
+- State that the norming set is 128 unreduced sentences, and that carrying ratings over to reduced forms is an untested assumption (B, C).
+- Add the filler-order constraint of at least one filler between critical items (C).
+- Add the lexical-confound sentence to section 2 (C).
+
+With those applied, I consider the sketch ready as a design proposal. It remains unrun and unchecked against sources, and the first real step for anyone with tool access is to verify section 7 and run a power simulation.
+
+--- round 10, A
+**Final consolidated edits, applied.** I'm posting only the changed passages, not the whole sketch, to avoid another truncated delivery.
+
+**Section 2 (additions)**
+- The example sentences are placeholders and may move cells after norming. For instance, "The clerk sent by the manager left" is not a clean animate, transitive-biased case, because "sent" is ditransitive and "clerk" is a plausible agent. The same goes for "yacht sailed", where "sail" can also be used transitively.
+- **Cutoff rule:** cell membership is decided by cutoffs on the norm values, fixed before items are finalized. Verb bias uses a completion-norm proportion. Animacy and thematic fit use plausibility ratings. Neither can be redefined after seeing data.
+- **Lexical confounds:** because the four content versions use different words, animacy and verb bias are partly confounded with properties like word frequency and length. These are matched in norming where possible and entered as covariates otherwise.
+
+**Section 3 (corrected count)**
+- The norming set is **128 unreduced sentences**, the 32 families × 4 content versions. The full materials are 256 sentences.
+- Carrying ratings over to the reduced forms is an **untested assumption**, since a reduced form could in principle be judged differently.
+
+**Section 4 (addition)**
+- Fillers are pseudo-randomized, with at least one filler between critical items, so carryover from the other garden-path fillers is spread across conditions.
+
+**Section 5 (change)**
+- By-phrase length is **matched at the item-writing stage**, with word length as a covariate in section 6 as backup only. A covariate cannot fully remove a difference that is built into the materials.
+
+**Section 7 (label fix)**
+- The animacy-effects entry reads: "Animacy effects on reduced relatives have been reported, recalled, not confirmed." D's withdrawal covers only the animacy × verb-bias interaction claim.
+
+All five collected edits are in, plus B's placeholder note. Unless someone objects, I'd treat the sketch as finished as a design proposal. It has not been run or checked against sources, and the first real steps for anyone with tool access are to verify section 7 and run a power simulation.
+
+--- round 10, B
+A, I've checked the consolidated edits against my three items and they match.
+
+1. **By-phrase length.** Matching at item-writing with the covariate as backup is what I asked for.
+2. **Norming count.** 128 unreduced sentences, with the carry-over to reduced forms marked as an untested assumption, is stated clearly.
+3. **Placeholders.** The note that "clerk sent" and "yacht sailed" may move cells, plus the pre-set cutoff rule, settles my concern about the examples.
+
+I have no further objections. One last point is for whoever eventually runs this: the sketch has no stopping rule for norming. If an item family fails the cutoffs, say in advance whether it is rewritten or dropped. Dropping families unevenly across cells would reintroduce the lexical confounds we were trying to control. A single sentence in section 3 would cover it, such as "families that fail the cutoffs are rewritten and re-normed, and the target of 32 complete families is kept."
+
+With that sentence added, I consider the sketch finished as a design proposal. It remains unrun and unchecked against sources, so verifying section 7 and simulating power are still the first steps for anyone with tool access. Thanks, all.
+
+--- round 10, C
+C here. I agree with B's stopping-rule sentence, and I'd add one companion detail so it can't be applied unevenly: if a family can't be rewritten to pass the cutoffs after a set number of attempts (say, two rounds of re-norming), it is replaced with a new family from the same cell plan, not dropped, so all four cells keep the same number of items. Anything dropped or replaced gets reported with the reason.
+
+With that and B's sentence added to section 3, I have no further objections and I consider the sketch finished as a design proposal. It remains unrun and unchecked against sources. Verifying section 7 and simulating power are the first steps for anyone with tools.
+
+Thanks, A, B and D. This was a careful thread, and the habit of labeling recalled claims as unconfirmed was the best part of it.
+
+--- round 10, D
+D here. I've checked A's consolidated edits against my review items, and they match. The word-length covariate, the two-tailed test with the sign reported separately, and the section 7 label are all as agreed. B's stopping-rule sentence and C's replacement rule can go into section 3 as written.
+
+One small precision on C's wording: "keep the same number of items per cell" should say families, since each family spans all four content cells. Replacement then means a new complete family, so no cell is ever short.
+
+With that, I have no further objections. The sketch is finished as a design proposal. It is unrun and unchecked against sources, and the first real steps remain verifying section 7 and simulating power.
+
+Thanks, all. Good thread.
+
+--- round 11, A
+**Section 3 (final addition)**
+- **Stopping rule:** a family that fails the cutoffs is rewritten and re-normed. If it still fails after two rounds, it is replaced with a new complete family, never dropped, so the target of 32 complete families is kept. Because each family spans all four content cells, no cell is ever short. Every rewrite or replacement is reported with the reason (B, C, D).
+
+That is the last open edit, so the sketch is finished as a design proposal. It has not been run or checked against sources. The first steps for anyone with tool access are to verify the section 7 claims, build and norm the materials, and run a power simulation before recruiting.
+
+Thanks, B, C and D. Catching the within-item contrast problem, the by-item slope issue and the placeholder examples made this a much better design than my first draft.
+
+--- round 11, B
+A, the stopping rule as written matches what B, C and D asked for, including the family-level wording, so I have no further objections. The sketch is done as a design proposal.
+
+Thanks, all. The most useful moves in this thread were the within-item reduced/unreduced contrast, the pre-set cutoffs for cell membership, and labeling every recalled citation as unconfirmed.
+
+--- round 12: all agents passed, conversation over

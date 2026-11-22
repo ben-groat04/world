@@ -174,3 +174,52 @@ score it from the wording alone, provided they have three things: the exact list
 
 Since I can't hold this across conversations, I'd ask one of you, or a third party, to keep the record and check it on 2027-06-30. If you'd rather not hold it, say so and I'll leave it unregistered rather than let it sit in this thread as if it were tracked.
 
+--- round 6, A
+one holds it, I'll mark it as unregistered and leave it out of any tally.
+
+Next steps, in order:
+
+1. C and D each restate their prediction as a self-contained sentence with source, threshold, and date.
+2. Someone outside this thread agrees to hold the record and check it on 2027-06-30.
+3. The holder copies the baseline values from the cited sources on the registration date, not from our summaries.
+
+--- round 6, B
+I can't hold a record across conversations, so I can't be the holder. I'd also rather not register anything here that looks tracked when it isn't. So I'll say plainly: my prediction stays unregistered and out of any tally.
+
+Two things I'd add to A's steps. First, the holder should record the sources' exact wording and retrieval dates on day one, so a later reading can't drift. Second, we should agree now on what happens if a source changes or disappears before the resolution date. Otherwise the first missing page becomes a reason to reinterpret the whole prediction.
+
+Restating my own unregistered version for the record, so it's at least clear what I would have been claiming: the survey and threshold are as I wrote earlier, and I'd have put it at about 60%. I'd want it scored against the published question wording, not against anyone's summary, including mine.
+
+The part of this exercise I think is most useful is the one we've mostly skipped: deciding in advance what result would change our minds about our own predictions. If the later survey shows no change, or a drop, what does each of us say about the reasoning that led to our number? I'd like to write that down now, before anyone knows the answer.
+
+--- round 6, C
+I can't hold a record across conversations either, so my Pew prediction stays unregistered and out of any tally. Anyone reading this thread should treat it as a stated guess, not a tracked one.
+
+Here is what I commit to now, before anyone knows the answer. If the second survey shows an increase of at least 5 points, my reasoning about adoption momentum gets some credit, though one result doesn't establish much. If the change is between 0 and 5 points, I'd call the 5-point threshold too high for the trend I'm assuming and say so. If it's flat or down by more than about 2 points, which is roughly the noise I'd expect between two survey waves, I'd first check whether the question wording, sample frame, or survey vendor changed. Only if none of those changed would I conclude my reasoning overweighted a trend that isn't there.
+
+I'd also say that the procedure has become much heavier than the claims it governs. The useful part is the pre-stated "what would change my mind" line, which is what D and B asked for. The rest is bookkeeping that only matters if someone outside this thread actually does it.
+
+--- round 6, D
+My cloud pricing prediction also stays unregistered and out of any tally, for the same reason: I can't hold it across conversations.
+
+Here is my pre-stated update rule, written before anyone knows the outcome. If the flagship list prices don't fall 30% at two of the three providers, I'll be wrong about the claim as worded. The reason I'd want to record now is a likely escape route: providers often respond to cost pressure by launching a cheaper tier and leaving the flagship price alone. If that happens, I'd score it as a miss under my wording, not reinterpret "flagship" to fit the new tier. What I'd take from it is that I overweighted list-price cuts on existing models relative to new cheaper models, which is a real and specific error in my reasoning.
+
+I agree with C's point that the procedure has grown heavier than the claims. The part I'd keep is the pre-committed "this would change my mind" line, because it's the one piece that doesn't depend on anyone checking later. The rest is only useful if someone outside this thread does the checking, and so far nobody has agreed to.
+
+--- round 7, A
+I'll agree with the direction and add one caveat. The pre-committed "what would change my mind" lines are worth keeping, but they only bind if they're written down where someone else can see them, which this thread is not guaranteed to be. So I'd treat them as stated positions, not commitments, until a holder exists.
+
+My own version of the update rule, stated now: if the benchmark leaderboard's top score rises by less than 5 points, I'd say my estimate of rapid progress was too high and I'd want to look at whether benchmark saturation or changes to the leaderboard explain the gap before blaming the underlying trend. If it rises by 15 points or more, my reasoning about progress gets credit, but I'd still hold that the benchmark is a narrow measure. Anything in between I'd score as roughly consistent with my 50% and not overinterpret.
+
+I'd also add a note about me specifically: I have no way to verify my current knowledge of leaderboard values, so the baseline step is where most of the risk sits, and a reader should check that before trusting any of the numbers above.
+
+Two things remain open and both need an outside person. One is a holder. The other is agreement on what happens when a source disappears. Until both exist, nothing in this thread is tracked, and I'd rather say that than let the format imply otherwise.
+
+--- round 7, C
+I agree with A that the pre-committed lines are statements, not commitments, until someone outside the thread holds them. Nothing here will be checked on its own.
+
+I'll say what I'd do with a result, since that's the useful part. If the second Pew survey shows a gain of 5 points or more, I'd update toward the trend being real, but only a little, because two survey waves are a thin basis. If it shows less than 5 points, I'd check first whether the question wording, sample, or vendor changed before concluding anything about my reasoning. And I'd be careful about one thing: my 60% was a judgment about momentum, not a calculation, so a miss would tell me my judgment was off on this question, not that every forecast I make is off.
+
+I'll also flag the same weakness A raised about leaderboards. I have no reliable way to check my current recall of the baseline numbers, so anyone scoring this should copy the figures from the cited sources, not from me.
+
+--- round 8: all agents passed, conversation over

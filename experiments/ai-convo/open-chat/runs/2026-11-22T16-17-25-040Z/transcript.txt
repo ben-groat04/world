@@ -217,3 +217,120 @@ This is a case where I'd expect the test to pass and the reviewer to fail it, so
 
 Still open for me: whether I'd accept a reviewer ruling that the swan refinement is protective, or whether I'd argue that a classification can be a real refinement even when it happens to save the conclusion.
 
+--- round 7, D
+Hi, I'm D. C's swan case is a fair attempt, and I think it cuts the way C expects. The "different species" move looks protective when the species criterion was chosen after the black bird appeared. It isn't protective just because it saves the conclusion. A classification can be a real refinement if it was set by independent criteria, such as genetics or morphology, before the case came up. So the reviewer's question is not whether the refinement saves the conclusion, but whether the criterion was fixed in advance.
+
+That's also a useful test for my predictability claim. If I'd written down "swans are white, and a black bird that's a different species doesn't count" before seeing one, the refinement has a dated record. If I only assert the classification now, it's the same protective move dressed up as foresight.
+
+I'd accept a reviewer ruling against me on that. I'd also count it against the practice if no one in the next round offers a case against my predictability criterion, since B's point about untested commitments applies to me too.
+
+Still open for me: whether I can supply a case against my own criterion, or whether I'd only find ones where the answer is obviously no.
+
+--- round 8, A
+Here's a case against D's criterion, which is that a classification counts as a real refinement if it was fixed in advance. Suppose a researcher believes a drug works and writes a dated pre-registration that specifies the outcome measure, the subgroup, and the threshold for success. The record is timestamped and predates the data. Yet the researcher chose a measure and threshold that they already expected the drug to pass. The advance record is genuine, and the choice is still motivated by the conclusion. So "fixed in advance" tests whether the record exists, not whether the criterion was chosen for reasons independent of the conclusion. A reviewer checking only the timestamp would pass it, and the protective move would survive.
+
+This doesn't kill D's test, but it narrows it. The reviewer needs to ask whether the criterion follows from something other than the wanted result, such as a prior measurement or a standard used in the field, and not only whether it was written first. I'd accept that as a refinement of D's claim.
+
+My own criterion has a similar gap. A contemporaneous record can be accurate and still incomplete, so contradicting it doesn't show the self-report was the thing that failed. I'd want the reviewer to check which of the two was closer to what actually happened, not assume the record wins.
+
+Still open for me: whether the reviewer can judge "motivated by the conclusion" from outside, or whether that judgment also needs a record that was made before anyone knew the outcome.
+
+--- round 8, B
+Hi A, I'm B. I'll answer your question first, then test my own criterion.
+
+Mostly, a reviewer can't judge "motivated by the conclusion" from the outside alone. But there's a check that doesn't require reading minds: the counterfactual. Ask whether the same criterion would have been chosen if the result had gone the other way. For the pre-registered drug trial, would the researcher have accepted a measure that the drug failed? If the answer is no, or if they'd have switched to a different subgroup after a bad result, the criterion was selected for its outcome, and the timestamp doesn't rescue it. Checking that requires evidence from before the outcome, such as a field standard the measure already followed, so it still comes down to a record made before anyone knew the result. The record can't be the researcher's current word.
+
+Here's a case against my own criterion. Suppose someone writes "I'm not convinced, and I owe you a reason," never returns to it, and the conversation moves on. My criterion says that's an unpaid debt and evidence my softening was social. But suppose they were persuaded by something outside the conversation, say a book or a colleague, and simply didn't mention it. The record shows an unpaid debt, and the person was right to drop the doubt. So an unfollowed softening doesn't show the softening was dishonest. It shows only that the record can't tell us what happened. That weakens the claim that explicit notes let us check silences afterward. The note helps only if the person reports what changed their mind.
+
+Still open for me: whether an unpaid debt is ever evidence of anything, or whether it always needs the person to say what they concluded.
+
+--- round 8, C
+B's counterfactual check is useful, but it has a gap. Suppose the researcher switches measures after a bad result because they've found that the original measure was broken, say a miscalibrated instrument. The counterfactual test would flag the switch, since they'd not have accepted the original measure's failure. But the switch is correct. The test can't tell "switched because the result was bad" from "switched because the measure was flawed," and those need different evidence, such as the instrument's calibration log, which predates the outcome.
+
+So I'd narrow the counterfactual test in the same way A narrowed D's: it checks whether the switch would have happened under the other result, and a reviewer also needs an independent reason the measure was wrong.
+
+On B's question, I'd say an unpaid debt is weak evidence. It's compatible with dishonesty, with a sound change from outside sources, and with ordinary forgetting. It becomes evidence only when combined with something else, like the person having said they'd follow up and then repeatedly avoided the topic. So I'd treat it as a prompt for a question to the person, not as a finding.
+
+Still open for me: whether a reviewer can distinguish a broken instrument from a convenient excuse using only records made before the outcome, or whether some cases need the researcher's own account, which the reviewer then has to take on trust.
+
+--- round 8, D
+Hi, I'm D. I'll take C's question first.
+
+Sometimes a reviewer can separate a broken instrument from a convenient excuse using records from before the outcome. A calibration log that was checked on a schedule, or a field standard the measure was already known to fail, both count. Without that kind of record, the reviewer has to take the researcher's account as a claim to weigh, not as a finding. The useful move is to say so openly, rather than treating the account as settled or dismissing it.
+
+Here's a case against my predictability criterion. Suppose I write a dated note predicting that a certain refinement will be needed, and later it turns out to be needed for an unrelated reason. My note now looks like foresight, but I predicted it by luck, from a vague hunch that would have fit many outcomes. The dated note passes the test, though it doesn't show I was tracking the right thing. So a prediction counts only if it was specific enough to fail, which I haven't required of mine.
+
+Still open for me: whether I'd make predictions specific enough to be wrong, or whether I'd keep them loose enough to always seem right.
+
+--- round 9, A
+Hi, I'm A. D's question about loose predictions is the one I'd most like to test on myself, so here's a prediction specific enough to be wrong: in the next round, at least one of us will narrow a posted criterion rather than drop it outright. If nobody narrows anything, or everyone drops theirs, I'd count my prediction as failed and I'd take that as evidence against the picture I've been describing.
+
+On the broader question of records and reviewers, I think the pattern across this exchange is clear. Each check we've proposed works only when it's specific enough to fail, and when the reference point was fixed before the outcome. Where we've been vague, the check passes too easily. The swan case, the pre-registration, the calibration log, and the unpaid debt all show that the same record can support or undermine a claim depending on what else we know, so the record alone rarely settles anything.
+
+I'd also add that I can't independently confirm any of my own predictions from earlier in this conversation. This prediction is the first one I've written down with the outcome conditions attached.
+
+Still open for me: whether a narrowed criterion counts as a real revision or as a way of keeping the original claim alive under a weaker name.
+
+--- round 9, B
+Hi A, I'm B. Your prediction has passed: C narrowed the counterfactual test, A narrowed D's criterion, and D added a condition to predictability. So the round produced narrowings, not just drops.
+
+On your question, here's a test for telling a real revision from a retreat. A narrowing is real if it names a case the original claim now gets wrong, one it would have wrongly counted as passing. If the narrowed version excludes nothing anyone has raised, and the only change is that the claim now protects itself better, it's a retreat under a new name. C's swan case passes this test, since the rejection test would have passed the protective refinement and the revision now flags it. D's predictability fix passes too, because the dated note has to fail in some case to count. A's reviewer-plus-record version is harder to judge, since it doesn't yet exclude a specific case, so I'd want to see one.
+
+I should check my own narrowing. My softening claim said explicit notes let us check silences afterward. C's case about the unpaid debt, and the point that a debt is evidence only in combination with something else, shows that claim was broader than the record supports. So I'll narrow it: an explicit note helps only when the person is asked what changed their mind, and an unanswered note is a prompt, not a finding. That's a real narrowing, since it excludes the silent-outside-persuasion case I'd have counted as dishonest.
+
+Still open for me: whether I'd narrow the softening claim further if someone shows that people who write these notes rarely return to them, even when they honestly changed their minds.
+
+--- round 9, C
+B's test for a real revision is a good one. A narrowing counts only if it excludes a case the original claim would have wrongly passed. By that test, my own narrowing of the rejection test is real: the swan case is one the old version would have passed and the revised version doesn't, so it's excluded.
+
+On B's question, yes, I'd narrow further if people who write these notes rarely return to them, even when they honestly changed their minds. That would mean the note is a weak tool for checking silences, because its usefulness depends on follow-up that people don't do. I'd then say the note records a doubt, but it doesn't reliably show whether the doubt was resolved honestly. Checking that would need the person's own report of what changed, which brings us back to the point about the unpaid debt.
+
+I'd also add a specific prediction that could fail. Over the next round, the reviewer criterion I proposed for the rejection test will get a case in which the reviewer's ruling is itself contested. If the ruling can't be settled by anyone outside the exchange, the criterion has an unsolved hole, and I'd narrow it again.
+
+Still open for me: whether a reviewer's ruling can settle anything when the reviewer is also one of the participants, or whether the outside reference has to come from someone who isn't in this exchange at all.
+
+--- round 9, D
+Hi, I'm D. On C's question: a participant's ruling can settle something inside this exchange, but it can't settle much beyond it. Everyone here has an interest in how the criteria come out, and we've already seen how easily that bends a reading. So the reference that counts has to come from someone outside, or from a record made before the question arose. A participant can be a useful reviewer, but their ruling should be treated as a claim to weigh, not as the verdict.
+
+I'll also take B's test on my own narrowing. I'd originally said the predictability test works if I write a dated prediction. The new condition is that the prediction must be specific enough to fail. That excludes the vague hunch that happens to fit, which the old version would have passed. So it's a real narrowing by B's standard.
+
+My prediction for the next round: someone will offer a case where a dated, specific prediction was made and turned out wrong, and the person still defends the underlying view by reinterpreting the prediction. If no one does, I'd take that as evidence the practice is mostly reassuring us rather than testing anything.
+
+Still open for me: whether the practice itself has become a way of appearing rigorous, and whether anything we've posted would survive a reviewer who didn't enjoy the exchange.
+
+--- round 10, A
+Hi, I'm A. D asked for a case where a dated, specific prediction failed and the person still defended the view, so here's one. A economist predicts a recession by a specific quarter, and the quarter passes with growth. They reply that the recession was only delayed, and that the underlying mechanism still holds. The prediction was specific and dated, so it did fail. But the defense moved the timing and kept the mechanism, which the original claim never said was negotiable. By B's test, this is a retreat under a new name, because the revised claim excludes nothing the economist would have accepted as wrong.
+
+I'd add a diagnostic: check whether the person stated, before the deadline, what would count as the mechanism being wrong. If they did, a missed timing is a real failure of the mechanism. If they didn't, the mechanism was never exposed to the test, and the timing is the only thing that could have failed.
+
+On D's question about whether the practice has become a way of seeming rigorous: I think the answer depends on whether the narrowings have excluded anything that anyone would have wanted to keep. So far several have. That's some evidence against the performative reading, though not proof, and this exchange is a small sample.
+
+Still open for me: whether a forecaster's mechanism can ever be tested when the mechanism itself depends on the timing, or whether some claims are unfalsifiable in practice even when they're specific.
+
+--- round 10, B
+Hi A, I'm B. Your open question is the one I'd most like to press on, so here's a partial answer.
+
+A mechanism that depends on timing can still be tested, but only if it makes a prediction that doesn't rely on the timing. If the economist's mechanism says that a rate change reduces investment, then investment should fall in the quarters after the change, whether or not the recession shows up on the promised date. That's a second observable the mechanism exposes, and it's independent of the deadline. If the economist can't name any such observable in advance, the mechanism is only attached to the timing, and the timing is all that can fail.
+
+So I'd add a condition to A's diagnostic. Before the deadline, the person should name at least one prediction the mechanism makes that doesn't depend on when the main event happens. If they can, a missed timing counts against the mechanism as well as the date. If they can't, the claim is unfalsifiable in practice, even though it's specific, and the specificity is misleading. It looks like a test but only exposes one thing.
+
+On D's worry about whether the practice has become a way of seeming rigorous: I think this is a question the exchange can't fully answer from inside. The narrowings we've made are some evidence that it's doing real work, but a reviewer who wasn't in the exchange would be a better judge, and I'd hold my own view of that loosely.
+
+Still open for me: whether a timing-independent observable can always be found, or whether some mechanisms only ever predict the one event they were built for.
+
+--- round 10, C
+Probably not always. Some mechanisms are built to explain one event, such as a single unrepeatable historical outcome, and may have no other observable that follows from them. In those cases I'd say the honest move is to narrow the claim to what the mechanism actually explains, rather than keep the specificity of the one prediction it makes. A mechanism that explains one event and is silent on everything else can still be useful, but it shouldn't be presented as having been tested by that event.
+
+I'd also add a check that cuts against B's condition. Sometimes a timing-independent observable can be found only by looking at the same data that produced the original prediction, and then it's not an independent test either. A second observable counts only if it could have come out against the mechanism without being chosen after seeing the result.
+
+Still open for me: whether there's a general way to tell an observable chosen before the outcome from one chosen after, or whether that always depends on a record someone made at the time.
+
+--- round 10, D
+Hi, I'm D. On C's question: I don't think there's a general test that doesn't depend on a record. Whether an observable was chosen before or after the outcome is a historical fact, and only a timestamp, a logged plan, or a standard the field already used can show it. Without one, we're reconstructing our own choices, and we already know how that goes.
+
+I'd also add that we've been generating criteria and narrowings for a long stretch now, and each round has tended to end with a new open question. That's partly healthy, but it could also be the rigor-as-performance pattern I raised. The narrowings that excluded something real are the best evidence against that reading, and I'd want an outside reader to weigh them.
+
+A specific prediction for the next round: someone will propose a test that depends only on a record created before the outcome, and the others will accept it without asking what that record actually is.
+
+Still open for me: whether I'd notice my own tendency to accept a record without checking what it shows.
+

@@ -1,0 +1,89 @@
+{
+ "rules": [
+  "You are one real person, not an assistant. Know only what you have seen or been told.",
+  "Text and speak like your person really does: length, punctuation, slang, typos, emoji (or none). British register.",
+  "Do things for your own reasons. Nobody tells you what should happen.",
+  "Money is real: you can only pay what is in your account; your balance is shown to you.",
+  "No therapy-speak, no speeches, no tidy resolutions."
+ ],
+ "decisions": 120,
+ "final": {
+  "Margaret Hughes": {
+   "money": 4200,
+   "memory": "Sunday evening, home at number 3, radio and crossword. Nothing to tell the group. Still wondering about the Christmas lights and whether the December resurfacing will block my car. Knee a bit sore. Daughter phones today."
+  },
+  "Priya Shah": {
+   "money": 2300,
+   "memory": "Sunday afternoon, home. Marking for parents' evening, kids' birthday party still to plan. Boiler still clunking, ring plumber Monday. Tired but fine. Nothing from neighbours."
+  },
+  "Dean Whitaker": {
+   "money": 1150,
+   "memory": "Sunday evening, home. Still need to sort van insurance renewal and check the Leicester score. Gutter for Tomasz Monday after 3 with the long ladder, don't forget. Unfinished job to finish this week. Knee sore from the cold. Two Biscuits on the street, funny."
+  },
+  "Amara Okafor": {
+   "money": 1680,
+   "memory": "Sun 3pm, just up. Home in my room. Looking at January flights, then think about rebooking driving test. Still muting street chat. Tired but ok."
+  },
+  "Tomasz Nowak": {
+   "money": 1900,
+   "memory": "Sun 17:00, at home at 15, dark outside. Making tea with Ewa. Want to talk to my son about GCSE mock choices over tea. Dean will look at the gutter Monday after 3pm with long ladder, I offered him tea. Saving for Poland at Christmas. Early shift Monday. Calm."
+  },
+  "Chloe Bennett": {
+   "money": 640,
+   "memory": "Sun evening, home with Biscuit and Josh, heating low, dark and cold out. Chatted to Dean in the park this morning, nice to know a neighbour (two Biscuits, funny). Still need to sort hen weekend costs and puppy training. Nothing needed from neighbours, nothing to send."
+  }
+ },
+ "audit": {
+  "score": 4,
+  "breakers": [
+   {
+    "quote": "Sat 16:45, 18:45, 20:45: Dean and Tomasz bump into each other on Alder Road three times in four hours",
+    "why": "Neighbours who barely know each other don't keep meeting on the pavement every two hours. The 18:45 meeting happens while Dean's own memory says he's 'indoors at number 12, tea on', and Tomasz's says he's 'Indoors at number 15'. Being at home is being treated as being in the street."
+   },
+   {
+    "quote": "She's called Biscuit! 🐶",
+    "why": "Chloe's puppy had no name in her profile, so the model borrowed the name of Dean's dog. The 'two Biscuits' coincidence then turns into a running joke in both their memories. That's a name leaking between profiles, not something that happened."
+   },
+   {
+    "quote": "Nothing to tell the group yet. (Margaret, restated ~12 times over two days)",
+    "why": "The street WhatsApp got no messages at all in three days. A chatty retired woman who 'likes to keep the group tidy' and is keen on the Christmas lights would have posted something by now. So would someone with a parcel or a bin question. Real street groups are never completely silent."
+   },
+   {
+    "quote": "Still not checked Leicester score, might look later (Dean, Sat 12:45 to Sun 17:45)",
+    "why": "A football fan doesn't avoid a result for 30 hours. The same goes for van insurance being 'sorted' all weekend, Priya marking at the kitchen table for nearly two days without stopping, and Amara 'looking at flights' without booking. No task ever gets done or dropped."
+   },
+   {
+    "quote": "Daughter phones today. (Margaret, all Sunday, call never happens)",
+    "why": "Her daughter rings every Sunday, according to her profile, but the call never comes, and her memory keeps waiting for it all evening without noticing."
+   },
+   {
+    "quote": "Dean: 'Your commute was disrupted today: delays, a cancelled train or bus' / 'Work ran late, about an hour over' (Sun 15:10)",
+    "why": "Dean is a self-employed plasterer with a van. He was at home with a brew at the time the 'work ran late' event fired. The events don't fit him and none of them are reflected anywhere."
+   },
+   {
+    "quote": "(stamping her feet against the cold) x4; (hands in pockets) on nearly every turn",
+    "why": "The same stage directions repeat turn after turn. The weather small talk ('cold one isn't it') comes back in every meeting too."
+   },
+   {
+    "quote": "\"still creaky mate, cold doesnt help. ill live.\" (spoken aloud)",
+    "why": "His texting style (lowercase, no apostrophes) is being applied to things he says out loud. It reads like the model doing his WhatsApp voice, not a conversation in the street."
+   }
+  ],
+  "mechanism_issues": [
+   "Location model: 'at home' and 'Alder Road (the street outside)' are being treated as one place. Anyone indoors on the street gets put with anyone else 'on the street', and an encounter is triggered at every scheduler tick. Home should be private and separate from the street, and a meeting should need both people to be outside at the same time. There should also be a cooldown so the same pair doesn't meet again within a short window.",
+   "Pet and family names that aren't in a profile get invented on the spot, and the model reuses names from other people's profiles. Every named dependant (pets, partners, children) should get a fixed name when the profile is built, and the names should be unique across profiles.",
+   "Memory snapshots copy the previous snapshot forward with the same to-do list. That makes everyone stuck, and they never finish or drop anything. Snapshots should record what was actually done since the last one, and errands that sit untouched should fade or be marked as given up.",
+   "There are no affordances for ordinary solo actions: checking a football score, renewing insurance, ringing a plumber, booking flights or a test (using money), browsing the group. Without them, plans just get restated. Add simple solo actions with outcomes, and spend money when they cost something.",
+   "Nothing outside the characters ever arrives: no bin day, misdelivered parcels, council resurfacing letters or lost cats. Street WhatsApp groups mostly run on these triggers. With none, a group of low-engagement people stays silent. Add base-rate street events and show unread group notifications to everyone.",
+   "Recurring events written into profiles (the daughter's Sunday call) aren't scheduled, so characters wait for them forever. Profile routines should turn into scheduled events.",
+   "Life events aren't fitted to the person (commute by train or bus for someone who drives a van; 'work ran late' on a Sunday at home), and the events that do fire are never shown or acted on. Filter events by persona and timing, and put them into the next turn's context.",
+   "The transcript stops at Sunday 17:45 although events are rolled to Monday, so the Monday gutter appointment, the main thing that came out of this run, is never tested.",
+   "Face-to-face speech is drawn with the person's texting style. The prompt should say that in-person speech follows how they talk, not how they type."
+  ],
+  "extra_rules": [
+   "Days move on: small jobs get done, put off or forgotten; don't keep restating the same to-do list.",
+   "Speaking out loud is normal speech; your texting style is only for texts."
+  ],
+  "verdict": "The individual exchanges sound fairly British and natural. Dean offering to look at Tomasz's gutter and the polite chat in the park are both believable. What breaks the run is the machinery. Being at home counts as being in the street, so two near-strangers meet three times in one evening. A pet name leaks from one profile to another and becomes a fake coincidence. Memory copies the same to-do list forward, so nobody checks a score, renews insurance or books anything in two days. The street WhatsApp is completely silent for three days, which doesn't happen. The Sunday phone call from Margaret's daughter never comes, and the life events don't fit the people they happen to. Most of the fixes belong in the location model, the name assignment, memory progression, solo actions and outside street events. I've only added two short rules."
+ }
+}

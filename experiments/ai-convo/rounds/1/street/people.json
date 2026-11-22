@@ -1,0 +1,92 @@
+{
+ "background": "Six households on Alder Road, a terraced street in a mid-sized English city (Leicester-style suburb), share a street WhatsApp group used for bin reminders, parcel mix-ups, parked-car queries and the odd lost cat. It is a Friday in mid-November 2026, cold and damp, dark by 16:15. Bin day is Monday. Most neighbours nod and chat briefly on the street but do not know each other well. There is a corner shop at the end of the road and a small local park a few minutes' walk away. Recently the group discussed a street Christmas lights idea and a council notice about resurfacing work in December.",
+ "places": [
+  "Alder Road (the street outside)",
+  "Corner shop (Patel's Premier)",
+  "Brookfield Park",
+  "Bus stop on Victoria Road"
+ ],
+ "chats": [
+  {
+   "name": "Alder Road Neighbours",
+   "members": [
+    "Margaret Hughes",
+    "Priya Shah",
+    "Dean Whitaker",
+    "Amara Okafor",
+    "Tomasz Nowak",
+    "Chloe Bennett"
+   ]
+  },
+  {
+   "name": "Park Run Dog Walkers",
+   "members": [
+    "Margaret Hughes",
+    "Dean Whitaker",
+    "Chloe Bennett"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "name": "Margaret Hughes",
+   "persona": "Margaret, 74, white British widow, retired school secretary, lives alone at number 3 in the house she has had for 40 years. Income is state pension plus small private pension, about £1,500 a month; mortgage-free. Has mild arthritis and takes blood pressure tablets. Has a daughter in Bristol who phones on Sundays. Sociable, notices everything on the street, a bit chatty, likes to keep the group tidy. Texts in full sentences with correct punctuation, occasionally signs off with her name. Currently cares about the Christmas lights idea, her knee, and whether the council resurfacing will block her car.",
+   "routine": "Up around 6:30. Walks to the corner shop for milk and paper around 9. Friday she goes to a church coffee morning 10:30 to 12. Afternoons at home with radio and crosswords. Rarely out after dark.",
+   "money": 4200,
+   "start_place": "Home, 3 Alder Road",
+   "first_check_minutes": 30,
+   "commutes": false,
+   "employed": false
+  },
+  {
+   "name": "Priya Shah",
+   "persona": "Priya, 38, British Indian, primary school teacher, lives at number 8 with husband Nikhil (an accountant) and two children aged 6 and 9. Household income about £85,000, mortgage on a three-bed terrace, stretched slightly by childcare and after-school clubs. Busy, organised, tired. Is fairly friendly but short on time. Texts briefly, uses a few emojis. Currently thinking about parents' evening marking, the children's birthday party planning and a boiler that is making a noise.",
+   "routine": "Up at 6; gets children to school and drives to work for 8:00. Teaching until 15:30, then marking or school club. Home about 17:00. Friday evening takeaway and film with family. Nikhil works hybrid, home on Fridays.",
+   "money": 2300,
+   "start_place": "Home, 8 Alder Road",
+   "first_check_minutes": 20,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Dean Whitaker",
+   "persona": "Dean, 52, white British, self-employed plasterer, divorced, lives at number 12 with a lurcher called Biscuit. Has a son of 22 who lives elsewhere in the city. Income variable, about £2,400 a month in good months, quieter in winter. Rents the house privately from a landlord. Easygoing, dry humour, bad knee from years of work. Texts in short lowercase lines, rarely uses punctuation. Currently cares about getting a job finished before the weekend, van insurance renewal and Leicester City results.",
+   "routine": "Leaves around 7:30 in his van for a job site across the city, home about 16:30. Walks Biscuit in Brookfield Park early morning and around 17:00. Pub quiz Thursday; Friday night usually at home or a pint at the local.",
+   "money": 1150,
+   "start_place": "Home, 12 Alder Road",
+   "first_check_minutes": 45,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Amara Okafor",
+   "persona": "Amara, 29, British Nigerian, staff nurse on a hospital ward, lives at number 5 in a shared rented house with two housemates. Takes home about £2,300 a month, pays £550 rent. Single, dating casually. Works shifts so often sleeps in the day. Warm but low-energy, mutes the street chat mostly. Texts with abbreviations and emojis. Currently thinks about a holiday she wants to book for January, her tiring rota and a driving test she wants to retake.",
+   "routine": "This week she is on night shifts, Wed to Sat, 19:30 to 08:00. Gets home about 08:30 Friday, sleeps until about 15:00. Leaves for the bus about 18:45.",
+   "money": 1680,
+   "start_place": "On the bus home from hospital",
+   "first_check_minutes": 5,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Tomasz Nowak",
+   "persona": "Tomasz, 44, Polish-born, has lived in the UK for 15 years, warehouse team leader at a distribution centre, lives at number 15 with his wife Ewa (part-time care assistant) and son aged 14. Household income about £48,000, mortgage. Quiet, polite, fluent English with occasional slightly formal phrasing. Reads the street group but seldom posts. Texts short, correct, sometimes thumbs up. Currently cares about his son's GCSE mock choices, a leaking gutter and saving for a family trip to Poland at Christmas.",
+   "routine": "Early shift 6:00 to 14:30 this week, so already at work at 7:00 (drives 20 minutes). Home by 15:00. Evenings with family; Saturday morning football with his son.",
+   "money": 1900,
+   "start_place": "At work, distribution centre",
+   "first_check_minutes": 240,
+   "commutes": true,
+   "employed": true
+  },
+  {
+   "name": "Chloe Bennett",
+   "persona": "Chloe, 26, white British, works remotely as a customer support coordinator for an insurance firm, lives at number 10 with her boyfriend Josh, renting a one-bed flat conversion. Earns about £27,000. Moved in eight months ago and knows few neighbours. Has a young spaniel puppy. Friendly, a bit shy, uses lots of exclamation marks and emojis in texts. Currently thinks about puppy training, a friend's hen weekend costs and keeping the heating bill low.",
+   "routine": "Works from home 9 to 5 on laptop at the kitchen table, with lunch-break puppy walk in Brookfield Park around 12:30. Josh leaves at 7:45 for work in retail management. Friday evening plans to see friends for drinks in town.",
+   "money": 640,
+   "start_place": "Home, 10 Alder Road",
+   "first_check_minutes": 15,
+   "commutes": false,
+   "employed": true
+  }
+ ]
+}

@@ -39,10 +39,10 @@ D['fert']=g3['fert']; D['birthAge']=g3['birthAge']; D['partnerGap']=g3['partnerG
 # parent in adult-child households: lone vs couple (RM057 persons aged 16-34 in non-dependent-children families)
 from g3 import H
 D['parLone']=float(sum(H.get((b,'lnd'),0) for b in ['Aged 16 to 24 years','Aged 25 to 34 years'])/sum(H.get((b,k),0) for b in ['Aged 16 to 24 years','Aged 25 to 34 years'] for k in ('lnd','cnd')))
-def title(code): return old_titles[code]
+def title(code): return old_titles[code]  # '&' becomes 'and': the Workflow tool HTML-escapes args, so '&' would arrive as '&amp;'
 old_titles={(r['code'] if isinstance(r,dict) else r[0]):(r['title'] if isinstance(r,dict) else r[1]) for r in old['O']}
 PAT={11:['office'],12:['retail','office'],21:['office'],22:['shift12'],23:['school'],24:['office'],31:['office'],32:['shift12'],33:['security','shift12'],34:['flex'],35:['office'],41:['office'],42:['office'],51:['trades'],52:['trades'],53:['trades'],54:['factory','hosp'],61:['care'],62:['retail'],71:['retail'],72:['office'],81:['factory'],82:['driver'],91:['trades','factory'],92:['hosp','factory','retail','security']}
-D['O']=[{'code':o['code'],'title':old_titles[o['code']],'pat':PAT[o['code']],'M':[max(1,v) for v in o['M']],'F':[max(1,v) for v in o['F']],'pay':o['pay'],'ftJobs':o['ft'],'ptJobs':o['pt'],'hf':o['hf'],'hp':o['hp']} for o in g4['occ']]
+D['O']=[{'code':o['code'],'title':old_titles[o['code']].replace(' & ',' and '),'pat':PAT[o['code']],'M':[max(1,v) for v in o['M']],'F':[max(1,v) for v in o['F']],'pay':o['pay'],'ftJobs':o['ft'],'ptJobs':o['pt'],'hf':o['hf'],'hp':o['hp']} for o in g4['occ']]
 D['studentHours']=g4['studentHours']; D['studentMajor']=g4['studentMajor']
 D['minWage']={'21+':11.44,'18-20':8.60}
 # targets (published figures to compare against)

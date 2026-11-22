@@ -69,10 +69,10 @@ function mock(people, opts = {}) {
       const me = names.find((n) => prompt.includes(`YOU: ${n}.`)), now = nowOf(prompt)
       const others = names.filter((n) => n !== me), places = (prompt.match(/PLACES: (.*)/) || [])[1].split(' | ')
       const first = prompt.includes('the simulation starts'), x = r()
-      const plan = first || x < 0.35 ? [{ until: hh(now + 20 + Math.floor(r() * 40)), place: pick(places), doing: 'pottering', phone_minutes: pick([0, 5, 30]) },
-        { until: hh(now + 120), place: 'Supermarket', doing: 'shopping', phone_minutes: 10, action: r() < 0.6 ? 'buy food for dinner' : '' },
-        { until: hh(now + 220), place: pick(places), doing: 'cooking', phone_minutes: 30 },
-        ...(r() < 0.4 ? [{ until: hh(now + 600), place: pick(places), doing: 'sleep', asleep: true, phone_minutes: 0 }] : [])] : []
+      const plan = first || x < 0.35 ? [{ until: hh(now + 20 + Math.floor(r() * 40)), place: pick(places), doing: 'pottering', next_look_minutes: pick([0, 5, 30]) },
+        { until: hh(now + 120), place: 'Supermarket', doing: 'shopping', next_look_minutes: 10, action: r() < 0.6 ? 'buy food for dinner' : '' },
+        { until: hh(now + 220), place: pick(places), doing: 'cooking', next_look_minutes: 30 },
+        ...(r() < 0.4 ? [{ until: hh(now + 600), place: pick(places), doing: 'sleep', asleep: true, next_look_minutes: 0 }] : [])] : []
       const out = { keep_plan: plan.length === 0, plan,
         talk_to: r() < 0.3 ? pick([...others, 'Dev', 'Nobody', 'stranger']) : '', call: r() < 0.12 ? pick([...others, 'Sam', 'Ghostbusters']) : '',
         messages: r() < 0.3 ? [{ to: pick([...others, others.join(', '), 'Priya', 'nobody']), text: `msg ${me.split(' ')[0]} ${hh(now)} ${Math.floor(r() * 1e6)}` }] : [],
@@ -94,7 +94,7 @@ function mock(people, opts = {}) {
           if (r() < 0.2) out.push({ item: i + 1, kind: 'present', who, from: 'A customer', about: 'a regular', text: 'browsing', delay_minutes: 0, minutes: 15, reason: 'open' })
           if (bg.length && r() < 0.25) out.push({ item: i + 1, kind: 'speak', who, from: pick(bg), text: `hiya ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 5]), reason: 'says hello' })
           if (cs.length && r() < 0.2) out.push({ item: i + 1, kind: pick(['text', 'call']), who, from: pick(cs), text: `checking in ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 30]), reason: 'usual' })
-          return out.length ? out : [{ item: i + 1, kind: 'none', who, text: '', reason: 'quiet' }] }
+          return out.length ? out : [{ item: i + 1, kind: 'none', who, from: '', text: '', reason: 'quiet' }] }
         const kd = /\[action\]/.test(l) ? pick(['result', 'result', 'none']) : pick(['result', 'text', 'call', 'none'])
         return [{ item: i + 1, kind: kd, who, from: pick(['Priya at Larch Lettings', 'Dev', 'Sam', 'Unknown']), text: `outcome ${i + 1} for ${who.split(' ')[0]} ${Math.floor(r() * 1e6)}`, delay_minutes: pick([0, 5, 60]), reason: 'because' }] }) } }
     throw new Error('unknown call ' + JSON.stringify(Object.keys(s)))
@@ -179,7 +179,7 @@ async function test(label, smp, extra = {}) {
   for (const e of L.filter((e) => e.kind === 'scene')) for (const n of e.present.filter((x) => names.includes(x))) {
     const t1 = e.t + e.minutes, mv = L.filter((m) => m.kind === 'move' && m.who === n && m.t > e.t && m.t < t1 - 1 && m.to !== e.where && !/to talk to|called over/.test(m.doing))
     const left = L.some((x) => x.kind === 'scene' && x === e) && e.lines.some((l) => l.name === n && false)
-    if (mv.length && !left && !e.lines.some((l, i) => l.name === n)) continue // joined late: fine
+    if (e.lines.find((l) => l.name === n)?.do === 'comes in' || !e.lines.some((l) => l.name === n)) continue // joined late (lines carry no times): skip
     if (mv.length && !mv.every((m) => L.some((t) => t.kind === 'turn' && t.who === n && t.t <= m.t && t.t > e.t))) fail(`${n} moved by plan during a conversation at ${e.where} ${e.t}: ${mv[0].to} @${mv[0].t}`) }
   const moves = L.filter((e) => e.kind === 'move')
   for (let i = 1; i < moves.length; i++) { const a = moves[i - 1], b = moves.slice(i).find((m) => m.who === a.who); if (b && b.t === a.t && b.to === a.from && !L.slice(L.indexOf(a), L.indexOf(b)).some((e) => e.kind === 'turn' && e.who === a.who)) fail(`${a.who} bounced ${a.from}->${a.to}->${b.to} at ${a.t}`) }

@@ -87,7 +87,7 @@ const OTHERS = [...new Set(PEOPLE.flatMap((p) => [...members(p.name), ...(p.attr
 const WORLD = obj({ background: { type: 'string', description: '2-4 sentences of shared context, only what the setting and facts say or plainly imply; no figures' },
   common_knowledge: arr(str, { maxItems: 8, description: 'what these people all know, only from the setting and facts' }),
   know_each_other: arr(obj({ people: arr(str), level: { type: 'string', enum: ['by sight', 'by name', 'numbers saved'] } }), { description: 'who among these people already know each other and how well, as the setting and facts imply (housemates, coworkers, friends, neighbours)' }),
-  places: arr(obj({ name: str, kind: { type: 'string', enum: ['private', 'shared', 'public'] }, building: { type: 'string', description: 'same label = one building (within earshot); empty for public' }, access: arr(str, { description: 'names of everyone (simulated or not) who may normally go in; empty = anyone' }) }),
+  places: arr(obj({ name: str, kind: { type: 'string', enum: ['private', 'shared', 'public'] }, building: { type: 'string', description: 'same label = one building (within earshot); empty for public' }, access: arr(str, { description: 'only for places the public cannot walk into (rooms in a home, staff-only areas): the names of everyone, simulated or not, who may go in. Empty for anywhere customers or the public go.' }) }),
     { description: "each household's home (a private room per person who has one, plus shared rooms), workplaces as the facts describe them, a few generic public places; no brand names" }),
   workplace: arr(obj({ person: str, place: str }), { description: 'for each person who works: which of the places above' }),
   contacts: arr(obj({ name: str, role: str, about: { type: 'string', description: '1 line: who they are and how they talk (manner, register; no accent or language unless the facts state it)' }, linked_to: arr(str, { description: 'people above who have their number' }), place: { type: 'string', description: 'where they are usually found, or empty' } }, ['name', 'role', 'about', 'linked_to']),
@@ -123,7 +123,7 @@ for (const p of PEOPLE) {
     const same = resolve(m.same_as, NAMES), known = !same && resolve(m.same_as, Object.keys(CONTACT))
     if (same) { knowAll([p.name, same], 'numbers saved'); continue }
     if (known) { CONTACT[known].linked.includes(p.name) || CONTACT[known].linked.push(p.name); continue }
-    const nm = m.name || c.relation; addContact(CONTACT[nm] ? `${nm} (${p.name.split(' ')[0]}'s ${c.relation})` : nm, `${p.name}'s ${c.relation}`, c.about || '', [p.name], '') } }
+    const nm = m.name || `${p.name.split(' ')[0]}'s ${c.relation}`; if (CONTACT[nm]) CONTACT[nm].linked.includes(p.name) || CONTACT[nm].linked.push(p.name); else addContact(nm, `${p.name}'s ${c.relation}`, c.about || '', [p.name], '') } } // a name the builder already used is that person
 for (const g of W.know_each_other || []) knowAll((g.people || []).map((m) => resolve(m, NAMES)).filter(Boolean), g.level)
 const contactsOf = (n) => Object.values(CONTACT).filter((c) => c.linked.includes(n)).map((c) => c.name)
 const desc = (m) => { const a = P[m].attributes; return [a.sex, Number.isFinite(+a.age) ? `${Math.floor(a.age / 10) * 10}s` : ''].filter(Boolean).join(', ') || 'someone' }
@@ -158,13 +158,13 @@ for (const p of PEOPLE) HEADS[p.name] = `RULES:\n${list(RULES)}\n\nYOU: ${p.name
 
 const L = [] // the full event log; every entry has t and kind
 const shiftNow = (n) => CAL.find((o) => o.who.includes(n) && o.t0 <= 0 && o.t1 > 0 && o.place !== OUT) // someone mid-shift at the start is at work
-const S = Object.fromEntries(NAMES.map((n) => [n, { place: shiftNow(n)?.place || homeOf(n), doing: shiftNow(n)?.what || '', asleep: false, phone: 0, plan: [], pv: 0, next: 0, why: ['the simulation starts: decide where you are and what you are doing'], last: -1, turns: 0, days: {} }]))
+const S = Object.fromEntries(NAMES.map((n) => [n, { place: shiftNow(n)?.place || homeOf(n), doing: shiftNow(n)?.what || '', asleep: false, plan: [], pv: 0, next: 0, why: ['the simulation starts: decide where you are and what you are doing'], last: -1, turns: 0, days: {} }]))
 const Q = []; let qs = 0
 const at = (t, run) => { Q.push({ t, run, s: qs++ }); Q.sort((a, b) => a.t - b.t || a.s - b.s) }
 const drain = () => { while (Q.length && Q[0].t <= clock) Q.shift().run(clock) }
 const pendingWorld = [], threads = {} // threads[contact]: every exchange with that contact in the window (facts the world role sees)
 const thread = (c, line) => (threads[c] ||= []).push(line)
-const MAX_CALLS = A.maxCalls || Math.round(60 + NAMES.length * 150 * HOURS / 24) // runaway backstop only, never pacing
+const MAX_CALLS = A.maxCalls || Math.round(60 + NAMES.length * 600 * HOURS / 24) // runaway backstop only (a loop gone wrong), never pacing
 let simCalls = 0, stopped = null
 const ask = (kind, prompt, schema, o) => { simCalls++; return call(kind, prompt, schema, o) }
 
@@ -182,15 +182,11 @@ function journal(n, now, max) {
   return [...days, ...out.reverse()].join('\n') || '(nothing yet)'
 }
 const wake = (n, t, why) => { const s = S[n]; s.why.push(why); s.next = Math.min(s.next, Math.max(t, s.last + 3)) }
-// news reaches a person when they would look: at their own chosen phone-check rhythm; otherwise they see it at their next turn (each step of their plan, or waking)
-function notify(n, t, text, urgent = true) {
-  jot(n, t, text, false); if (!urgent) return
-  const s = S[n]; if (s.asleep || !s.phone) return
-  wake(n, t + Math.floor(rnd() * s.phone), `looked at your phone (${text.slice(0, 50)})`)
-}
+// news waits in the journal (NEW) until the person next looks: at the rhythm they chose for this step, at the next step, or on waking
+const notify = (n, t, text) => jot(n, t, text, false)
 const here = (n, pl = S[n].place) => NAMES.filter((m) => m !== n && S[m].place === pl && pl !== OUT)
 const moveTo = (n, pl, t, why) => { const s = S[n], from = s.place; if (from === pl) return
-  for (const m of here(n, from).filter((m) => !S[m].asleep)) notify(m, t, `${label(m, n)} left ${from}.`, false)
+  for (const m of here(n, from).filter((m) => !S[m].asleep)) notify(m, t, `${label(m, n)} left ${from}.`)
   s.place = pl; L.push({ t, kind: 'move', who: n, from, to: pl, doing: why }); jot(n, t, `you went to ${pl}${why ? ': ' + why : ''}`) }
 
 // ---------- conversations: live processes in the event loop, one line per event, so the world keeps moving while people talk ----------
@@ -204,7 +200,7 @@ function startScene(t, where, phone, people, starter, opening) {
 }
 function release(sc, n, t, ended) { // a person leaves a conversation: it goes into their journal, and they decide what next
   if (!NAMES.includes(n)) return
-  if (ended === 'not answered') { if (n === sc.starter) { jot(n, t, `you rang ${sc.people.find((x) => x !== n)}; no answer`); wake(n, t, 'no answer') } else notify(n, t, `Missed call from ${label(n, sc.starter)}.`, false); return }
+  if (ended === 'not answered') { if (n === sc.starter) { jot(n, t, `you rang ${sc.people.find((x) => x !== n)}; no answer`); wake(n, t, 'no answer') } else notify(n, t, `Missed call from ${label(n, sc.starter)}.`); return }
   const head = `${sc.phone ? 'call' : 'conversation at ' + sc.where} with ${sc.people.filter((x) => x !== n).map((m) => label(n, m)).join(', ')} [ref ${fmt(sc.t0).slice(4)}]`
   jot(n, t, `${head}:\n${sceneText(sc.lines, n)}`, true, { ref: fmt(sc.t0).slice(4), head })
   wake(n, t, 'after the conversation')
@@ -275,17 +271,19 @@ function setPlan(n, steps, now) {
   for (const st of (steps || []).slice(0, 8)) {
     let t1 = after(st.until, t); if (Number.isNaN(t1) || t1 - t > 23 * 60) continue; t1 = Math.min(t1, now + 20 * 60) // >23h = a time just past: a slip, not a plan
     const pl = placeOf(st.place) || s.place
-    s.plan.push({ t0: t, t1, place: canGo(n, pl) ? pl : s.place, doing: noEmoji(st.doing) || '', asleep: !!st.asleep, phone: clamp(st.phone_minutes, 0, 240), action: String(st.action || '').trim() }); t = t1
+    s.plan.push({ t0: t, t1, place: canGo(n, pl) ? pl : s.place, doing: noEmoji(st.doing) || '', asleep: !!st.asleep, look: st.asleep ? 0 : clamp(st.next_look_minutes, 0, 240), action: String(st.action || '').trim() }); t = t1
     if (t >= now + 20 * 60) break }
-  if (!s.plan.length) s.plan.push({ t0: now, t1: now + 60, place: s.place, doing: s.doing, asleep: s.asleep, phone: s.phone, action: '', auto: true })
+  if (!s.plan.length) s.plan.push({ t0: now, t1: now + 60, place: s.place, doing: s.doing, asleep: s.asleep, look: 0, action: '', auto: true })
   s.plan.forEach((st, i) => at(st.t0, () => s.pv === v && startStep(n, st, i)))
+  const tick = (st, t) => at(t, () => { if (s.pv !== v || t >= st.t1) return; wake(n, t, 'you looked up from what you were doing'); tick(st, t + st.look) }) // their own rhythm; code never rations it
+  for (const st of s.plan) if (st.look) tick(st, st.t0 + st.look)
   const end = s.plan[s.plan.length - 1].t1; at(end, () => s.pv === v && wake(n, end, 'your plan ran out'))
 }
 function startStep(n, st, i) {
   if (sceneOf(n)) return // mid-conversation: the plan resumes when they come out of it (syncToPlan)
   const s = S[n], wasAsleep = s.asleep, moved = s.place !== st.place, first = !st.started; st.started = true
   moveTo(n, st.place, clock, st.doing)
-  Object.assign(s, { doing: st.doing, asleep: st.asleep, phone: st.phone })
+  Object.assign(s, { doing: st.doing, asleep: st.asleep })
   if (st.action && !st.sent) { st.sent = true; pendingWorld.push({ kind: 'action', who: n, step: st, text: `${n} at ${st.place}, ${fmt(clock)}-${fmt(st.t1)}: ${st.action}` }) } // errands happen where and when the step happens
   if (s.asleep) return
   const going = !st.asleep && ACTIVE.find((sc) => !sc.phone && sc.where === s.place)
@@ -293,7 +291,7 @@ function startStep(n, st, i) {
   if (first) pendingWorld.push({ kind: 'step', who: n, place: st.place, t1: st.t1, text: `${n} starts "${st.doing}" at ${st.place}, until ${fmt(st.t1)}` }) // the world decides who of the background is around
   if (first && (i > 0 || wasAsleep)) wake(n, clock, wasAsleep ? 'you woke up' : `next in your plan: ${st.doing} @${st.place}`) // everyone reconsiders at each step of their own plan
   const others = here(n).filter((m) => !S[m].asleep)
-  if (moved && others.length) { wake(n, clock, `you came into ${s.place}: ${others.map((m) => label(n, m)).join(', ')} here`); for (const m of others) notify(m, clock, `${label(m, n)} came into ${s.place}.`, false) }
+  if (moved && others.length) { wake(n, clock, `you came into ${s.place}: ${others.map((m) => label(n, m)).join(', ')} here`); for (const m of others) notify(m, clock, `${label(m, n)} came into ${s.place}.`) }
 }
 const syncToPlan = (n) => { const i = S[n].plan.findIndex((p) => p.t0 <= clock && clock < p.t1); if (i >= 0) startStep(n, S[n].plan[i], i) }
 
@@ -310,8 +308,8 @@ const hereView = (n, pl = S[n].place) => [...here(n, pl).map((m) => `${label(n, 
 const phoneBook = (n) => NAMES.filter((m) => m !== n && NUM[n].has(m))
 const TURN = obj({ keep_plan: { type: 'boolean', description: 'true if your current plan still stands (then plan may be empty)' },
   plan: arr(obj({ until: { type: 'string', description: 'HH:MM clock time this step lasts until' }, place: str, doing: { type: 'string', description: 'a few words' }, asleep: bool,
-    phone_minutes: { type: 'integer', description: 'how often you would glance at your phone during this (0 = not at all)' },
-    action: { type: 'string', description: 'an errand done in this step that depends on the outside world (buy, book, order, ask, check an app); it happens when the step starts, at its place. Else empty.' } }, ['until', 'place', 'doing', 'phone_minutes']),
+    next_look_minutes: { type: 'integer', description: "your judgement: minutes until you'd next look up from this, notice who is around, check your phone or do something different. Often a few minutes with people around or while waiting; longer when absorbed. 0 = not until the step ends" },
+    action: { type: 'string', description: 'an errand done in this step that depends on the outside world (buy, book, order, ask, check an app); it happens when the step starts, at its place. Else empty.' } }, ['until', 'place', 'doing', 'next_look_minutes']),
     { maxItems: 8, description: 'your next few hours (up to ~16h) as consecutive steps from now, sleep included' }),
   talk_to: { type: 'string', description: 'someone here or in the same building you go and speak to NOW; else empty' },
   call: { type: 'string', description: 'ring someone NOW; else empty' },
@@ -341,7 +339,7 @@ function send(from, to, text, t) {
   if (chat) { L.push({ t, kind: 'chat', to: chat.name, from, text }); jot(from, t, `you → [${chat.name}]: ${text}`); for (const m of chat.members) if (m !== from) notify(m, t, `[${chat.name}] ${from}: ${text}`) }
   else if (p) { L.push({ t, kind: 'dm', from, to: p, text }); jot(from, t, `you → ${p}: ${text}`); NUM[p].add(from); KNOW[p].add(from); notify(p, t, `${from} texted: ${text}`) }
   else if (c) { L.push({ t, kind: 'dm', from, to: c, text }); jot(from, t, `you → ${c}: ${text}`); thread(c, `${fmt(t)} ${from} → ${c}: ${text}`); pendingWorld.push({ kind: 'message', who: from, from: c, text: `${from} texted ${c}: "${text}"` }) }
-  else notify(from, t, `Your message to "${to}" could not be sent (no number for them).`, false)
+  else notify(from, t, `Your message to "${to}" could not be sent (no number for them).`)
 }
 function applyTurn(n, r, now) {
   const s = S[n], why = [...new Set(s.why)]; s.last = now; s.next = Infinity; s.why = []; s.turns++
@@ -362,7 +360,7 @@ function intend(n, x, now) {
   const s = S[n]
   if (x.kind === 'call') {
     const p = resolve(x.to, phoneBook(n)), c = p ? '' : resolve(x.to, contactsOf(n))
-    if (!p && !c) return notify(n, now, `You can't ring "${x.to}": no number for them.`, false)
+    if (!p && !c) return notify(n, now, `You can't ring "${x.to}": no number for them.`)
     if (p && (S[p].asleep || sceneOf(p))) { L.push({ t: now, kind: 'call', where: `phone: ${n} → ${p}`, present: [n, p], lines: [], ended: S[p].asleep ? 'asleep, not answered' : 'busy, not answered', answered: false }); NUM[p].add(n); notify(p, now, `Missed call from ${n}.`); jot(n, now, `you rang ${p}; no answer`); return }
     return startScene(now, `phone: ${n} → ${p || c}`, true, [n, p || c], n)
   }
@@ -370,8 +368,8 @@ function intend(n, x, now) {
   const p = byLabel[resolve(x.to, Object.keys(byLabel))] || '', c = p ? '' : resolve(x.to, atPlace(s.place))
   if (c) return startScene(now, s.place, false, [n, c], n)
   const near = p && S[p].place !== OUT && (S[p].place === s.place || (PLACE[s.place].building && PLACE[s.place].building === PLACE[S[p].place].building && KNOW[n].has(p)))
-  if (!near) return notify(n, now, `${x.to} isn't around here.`, false)
-  if (S[p].asleep) return notify(n, now, `${label(n, p)} seems to be asleep.`, false)
+  if (!near) return notify(n, now, `${x.to} isn't around here.`)
+  if (S[p].asleep) return notify(n, now, `${label(n, p)} seems to be asleep.`)
   const pl = S[p].place; moveTo(n, pl, now, `to talk to ${label(n, p)}`)
   const live = ACTIVE.find((sc) => !sc.phone && sc.where === pl)
   if (live) return join(live, n, '')
@@ -380,9 +378,9 @@ function intend(n, x, now) {
 
 // ---------- the world role: everything outside the simulated people, each decision with a reason ----------
 const RESOLVE = obj({ decisions: arr(obj({ item: int, kind: { type: 'string', enum: ['result', 'text', 'call', 'present', 'speak', 'none'] }, who: { type: 'string', description: 'the simulated person affected' },
-  from: { type: 'string', description: 'text/call/present/speak: the background person' }, text: { type: 'string', description: "result: what they see or what happens, second person. text/call/speak: the words, in that person's voice. present: what they are doing there" },
+  from: { type: 'string', description: 'text/call/present/speak: the background person who acts (their name); empty for result/none' }, text: { type: 'string', description: "result: what they see or what happens, second person. text/call/speak: the words, in that person's voice. present: what they are doing there" },
   delay_minutes: int, minutes: { type: 'integer', description: 'present: how long they stay' }, about: { type: 'string', description: 'only for someone new (e.g. a customer): who they are and how they talk' },
-  reason: { type: 'string', description: 'one line: why' } }, ['item', 'kind', 'who', 'text', 'reason'])) })
+  reason: { type: 'string', description: 'one line: why' } }, ['item', 'kind', 'who', 'from', 'text', 'reason'])) })
 const around = (pl) => pl === OUT ? [] : Object.values(CONTACT).filter((c) => canGo(c.name, pl) && (c.place === pl || (PLACE[pl].building && c.home === PLACE[pl].building) || atPlace(pl).includes(c.name))).map((c) => c.name)
 const whereNow = (c) => CONTACT[c].at && CONTACT[c].at.until > clock ? `at ${CONTACT[c].at.place} until ${fmt(CONTACT[c].at.until).slice(4)}` : 'whereabouts not shown yet'
 async function resolveWorld(now) {
@@ -405,7 +403,7 @@ One or more decisions per item (kind none if nothing comes of it). An errand's r
     if (t >= END) continue
     if (d.kind === 'result') at(t, (tt) => { finish(it, d.text); L.push({ t: tt, kind: 'result', who, text: d.text }); notify(who, tt, d.text) })
     else if (d.kind === 'present') at(t, (tt) => { CONTACT[from].at = { place: pl, until: tt + clamp(d.minutes || 30, 1, 960), doing: noEmoji(d.text) }; L.push({ t: tt, kind: 'present', who: from, place: pl, doing: d.text, until: CONTACT[from].at.until })
-      for (const m of NAMES.filter((m) => S[m].place === pl && !S[m].asleep)) notify(m, tt, `${from} is here (${noEmoji(d.text)}).`, false) })
+      for (const m of NAMES.filter((m) => S[m].place === pl && !S[m].asleep)) notify(m, tt, `${from} is here (${noEmoji(d.text)}).`) })
     else if (d.kind === 'speak') at(t, (tt) => { const ok = S[who].place === pl && !S[who].asleep && !sceneOf(who) && !sceneOf(from)
       L.push({ t: tt, kind: 'approach', who: from, to: who, place: pl, ok }); if (!ok) return
       if (!(CONTACT[from].at?.until > tt && CONTACT[from].at.place === pl)) CONTACT[from].at = { place: pl, until: tt + 30, doing: 'here' }

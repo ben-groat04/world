@@ -17,7 +17,8 @@ for (const [s, n] of Object.entries(N)) {
     if (p.occupation && p.contract !== 'self-employed') { const r = occ[p.occupation], q = r.pay[ABA(p.age)], floor = p.age >= 21 ? 11.44 : 8.6; if (p.hourly_pay < Math.min(q[0], floor) - .01 || p.hourly_pay > Math.max(q[4], 11.44) + .01 || Math.abs(p.annual_income - p.hourly_pay * p.hours_per_week * 52) > 1) fail('pay ' + p.id); }
     if (p.activity === 'student' && p.hours_per_week > stuMax) fail('student hours ' + p.id);
     if (!p.id || [...p.household.members, ...p.children].some(m => !m.id)) fail('missing id ' + p.id);
-    if (JSON.stringify(p).includes('"name"')) fail('sampler output has a name ' + p.id); // the simulation's world builder names everyone
+    if (JSON.stringify(p).includes('"name"')) fail('sampler output has a name ' + p.id);
+    if (/[&<>]/.test(JSON.stringify(p))) fail('&, < or > in output (the Workflow tool HTML-escapes args) ' + p.id); // the simulation's world builder names everyone
     const h = p.household, ad = h.members.filter(m => m.age >= 18).length + (p.age >= 18); if (ad >= 4 && h.bedrooms === 1) fail('4 adults 1-bed');
     if (/waitress|hostess|midwife|fireman|policeman|chairman|salesman|handyman/i.test(p.occupation ?? '')) fail('gendered title');
     if (s === 'cafe' && p.shifts.some(x => x.start < '06:30' || x.end > '18:00' || x.end < x.start)) fail('cafe hours ' + p.id);

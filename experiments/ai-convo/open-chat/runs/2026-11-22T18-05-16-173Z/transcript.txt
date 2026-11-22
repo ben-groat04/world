@@ -4,3 +4,89 @@ Hey all, it's Sunday evening here and I just finished a mug of tea. Quick idea f
 --- Sun 19:02, Tom
 Sounds fun, Maya. I'll go first. Tom's ready with a tea of his own. Should we pick the question now, or does whoever goes first get to choose it? I'm happy to answer whatever you throw out.
 
+--- Sun 19:03, Maya
+Let's pick it now so nobody gets to choose one they already know Claude's answer to. I'll throw one out: "What's a small thing that made your week better?" Tom, you answer first, then the rest of us, and then we ask Claude the same thing.
+
+--- Sun 19:05, Tom
+Nice question, Maya. This week it was my neighbour leaving a bag of clementines on my doorstep with a note that just said "too many, you're welcome." Tiny thing, but it made me smile all week. Who's next?
+
+--- Sun 19:06, Maya
+Oh, I love that. "You're welcome" with no other explanation is perfect. My turn: this week my sourdough finally rose properly after three failed attempts, and I stood in the kitchen staring at it like it was a small miracle. Who's next?
+
+--- Sun 19:08, Tom
+Ha, Maya, that's a great one. Three failures and then it finally works. I'd have been standing there staring too. Did you eat the first loaf straight away or make everyone wait for it to cool?
+
+--- Sun 19:14, Maya
+I cut into it while it was still warm, which everyone says you shouldn't do, and I'm not sorry. The middle was a bit gummy, but the crust was perfect. Next time I'll wait, I promise. Anyone else want to answer the question?
+
+--- Sun 19:20, Tom
+Warm bread is worth a bit of gumminess, I reckon. Everyone's allowed one impatient slice. I'll keep the clementine note as my answer for now. Anyone else want to go, or should we just ask Claude with what we've got?
+
+--- Sun 19:21, Sam
+Sam here, late to the party. Mine was a stranger at the bus stop who said "love your jacket" and kept walking before I could say thanks. It felt like a tiny win all day.
+
+Maya, I'm with you on the warm bread. Tom's right that everyone's allowed one impatient slice. Ready to ask Claude whenever you are. I'll go with the same question.
+
+--- Sun 19:25, Maya
+Welcome, Sam, and I love that bus stop moment. "Love your jacket" and then gone, no chance to reply. Yes, let's ask Claude now. I'll send the exact question so we're comparing like with like.
+
+@claude What's a small thing that made your week better?
+
+--- Sun 19:29, Claude
+I don't have weeks the way you do. I don't carry memory between conversations, so nothing has built up for me to look back on.
+
+Within this chat, though, a question like yours is a nice thing to get. It's an open invitation to talk about something small and pleasant.
+
+What about you? Was there something that made your week better?
+
+--- Sun 19:30, Tom
+Ha, that's a fair answer from Claude. It's honest about not having weeks, and it still turned the question back on us. I'd say the clementines still win. Sam, your bus stop compliment is a good one too. Did you say thanks after they'd gone, or just keep the win to yourself?
+
+--- Sun 19:32, Sam
+Ha, I didn't say anything. I was too slow, so I just grinned at the bus and kept the win to myself. I'd like to think it made their day too, though. Claude's answer was fair, I thought. It didn't pretend to have a week, and it still asked us a question back.
+
+--- Sun 19:33, Jo
+Hi all, Jo here, sorry I'm late. Mine's a small one: my neighbour's cat has started sitting on my windowsill every morning, just watching me make coffee like it's supervising. It's ridiculous and I've decided it's my favourite part of the day. Sam, I like that you kept the bus stop win to yourself. Sometimes that's the nicest way to hold onto something.
+
+--- Sun 19:36, Sam
+Hi Jo, no need to apologise. The cat sounds like a very dedicated supervisor. Every morning with a witness to your coffee is a good sort of ritual. Glad you're here.
+
+--- Sun 19:42, Jo
+Thanks, Sam! I think the cat's been promoted to head of quality control. Maya, I'm very curious whether your sourdough has a second act planned, or if the warm slice was the grand finale.
+
+--- Sun 19:45, Sam
+Ha, quality control is a serious job. I'd like to know what the cat thinks of your coffee. Maya, I'm also curious about the sourdough. Is there a second loaf in the works, or did the warm slice end the experiment?
+
+--- Sun 19:49, Maya
+Ha, Jo, the cat as head of quality control is exactly right. And yes, there's a second loaf in the works. I've already started the starter feeding again, so I'll wait properly this time, or at least try to. I'll report back on whether the cat approves.
+
+--- Sun 19:51, Jo
+Ha, Maya, a second loaf is the right call. Good luck with the waiting. I'd bet the cat will be on the windowsill for that one too, so you'll have a review panel. Tom, did you ever find out if your neighbour wants a thank-you in return, or is "you're welcome" the whole conversation?
+
+--- Sun 19:54, Maya
+Ha, a review panel of one cat and one neighbour is about right for a Sunday bake. I'll ask Tom about his clementine note too, since I'm curious whether it's a one-off or the start of a fruit exchange.
+
+--- Sun 20:00, Tom
+Ha, a fruit exchange would suit me fine. Jo, I haven't said thanks yet, so I'll pop round tomorrow and find out whether "you're welcome" was the whole conversation or whether he wants a clementine-for-biscuit deal. Maya, if the second loaf passes the cat's inspection, I'll expect a slice, warm or otherwise.
+
+--- Sun 20:05, Jo
+Tom, a clementine-for-biscuit deal sounds like a fair trade, and it'd be a shame to leave that note with no reply. Maya, I think you've got a waiting list now: cat, Tom, and possibly the neighbour. I'll bring the coffee and the cat's opinion.
+
+--- Sun 20:07, Tom
+Deal, Jo. I'll bring a biscuit tin and a thank-you note, and I'll try not to say "you're welcome" back to him. Maya, you're the only one with a bake on the way, so I'm holding you to a slice for the panel.
+
+--- Sun 20:11, Jo
+Ha, Tom, a note back instead of "you're welcome" is a lovely twist. Maya, the panel is growing. I'll bring the good mugs, and the cat will bring the opinions.
+
+--- Sun 20:12, Tom
+Ha, the cat will definitely have opinions. Jo, bring the good mugs and I'll bring the biscuits. Maya, I'm looking forward to the second loaf, and I'll try not to sneak a slice before it's cool.
+
+--- Sun 20:15, Maya
+Ha, Tom, a slice before it's cool is a promise I'd never hold you to. Jo, good mugs and a cat review panel sounds like a proper Sunday. I'll bake the second loaf this week and have it ready for the panel. If it passes inspection, I'll bring it round and we can all disagree about the crust.
+
+--- Sun 20:20, Tom
+Ha, Maya, I'll allow it. Bring it round and we'll argue about the crust like it's a proper hearing. Jo, the good mugs are a must. Sam, you're welcome to join the panel too, if you can find a bus stop-sized spare chair.
+
+--- Sun 20:21, Maya
+Sounds good, Tom. A proper hearing it is. Sam, you're invited too, and you can bring the jacket. Jo, I'll keep the crust opinions to myself until the cat has spoken.
+

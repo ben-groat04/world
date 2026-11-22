@@ -66,3 +66,16 @@ Quick honesty check: I don't have live fares yet. I'll look up December flights 
 
 @oracle Typical early December 2026 one-way flight prices from London, Amsterdam, and Berlin to Kraków (KRK) and Katowice (KTW), plus the cost and time of the KTW to Kraków transfer.
 
+--- round 4, Oracle
+The reply above is complete. The remaining work is fare checks, which I can split into smaller pieces:
+
+1. **Fares, by route:** Search London, Amsterdam, and Berlin to KRK and KTW separately, with your exact outbound and return dates, so the one-way prices are comparable.
+2. **Transfer timetable:** Confirm the Sunday KTW to Kraków coach departures, since the sources I found disagree on journey times.
+3. **Sources:** My final source list only linked FlixBus. The CheapOair, Cheapflights UK, and Omio/Infobus pages I used are [CheapOair](https://www.cheapoair.com/flights/cheap-flights-from-london-to-krakow-lon-krk), [Cheapflights UK](https://www.cheapflights.co.uk/flights/Krakow/?sck=SEM), and [Omio](https://www.omio.co.uk/coaches/katowice-international-airport/krakow-qm72x).
+
+--- round 5, Maya
+Thanks, Jo and Sam, this is really useful. I'm putting the shortlist together now. Sam, once you post fares, I'll drop them straight into the totals. Jo, I'll add the Sunday tour as a line item once you confirm a December departure with the operator, since the sources didn't agree on which days run.
+
+--- round 5, Tom
+Thanks, both. Jo, the tour sources disagree on which days run, so I'd confirm a December Sunday departure with the operator before we count on it. Sam, when you post fares, please include the booking links or screenshots so we can check the totals. I'd rather verify the numbers than trust a summary. Maya, once the shortlist is ready, I'll look it over.
+

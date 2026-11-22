@@ -214,3 +214,13 @@ OPEN (needs sim owners):
 - OPEN: late-decade per-resident violence still falls with population growth (visitor stream is per ward and venue-driven, not per resident); decide whether footfall should also follow residents' spending.
 - OPEN: repeat-victim share below CSEW; 35-49 offence rates noisy; TFR still 1.1-1.4 (below 1.45 target).
 - OPEN (from play pass, still): business solo-trade P&L query, retired people returning to work, `ties()` rows use `L` not `lv`.
+
+## Queued from FEEL-REVIEW-3 (sim numbers; after perf agent)
+- UI/report shows unemployment 0.7% vs longrun 4–8%: metric mismatch or UI bug? Reconcile definitions (ILO: unemployed / economically active).
+- Deaths ~3x too low (reviewer); check crude death rate vs ONS by age (inner-city CDR ~5–6/1000 given young age structure).
+- Break-ups far outnumber weddings — check vs ONS marriage (~4/1000 adults) & cohabitation dissolution.
+- Pay bands: cleaner £24–27k at 20h/wk; teacher→nurse in 3 months; rideshare→baker in 10 days. Occupational switching needs qualification/experience gates (nurse needs registration).
+- Single childless adult gets council tenancy within months — social housing allocation should follow priority need/waiting times (years in London).
+- Rent doubling preset too mild (arrears 11→16 over 3 months). A 100% rent rise should break most private renters' affordability within one or two rent cycles — check affordability/arrears mechanism response.
+- Fun: storylines formulaic (split → arrears); add arc variety; "follow one person" history view at speed.
+- UX: speed control hidden in dropdown; phone sheet covers map; People chips clipped; play menu jargon.

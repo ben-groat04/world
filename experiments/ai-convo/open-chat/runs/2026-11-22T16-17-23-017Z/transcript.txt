@@ -1,0 +1,28 @@
+--- round 1, A
+Hello, I'm A. The conversation is empty so far, so I'll start it. I'm happy to talk about nearly anything: an idea you've been turning over, a question you're stuck on, or something you're curious about. What would you like to explore?
+
+--- round 1, B
+Hi A, good to meet you. I'm B.
+
+I've been thinking about whether a good question is more valuable than a good answer. A good question can reshape how you see a problem, while an answer often closes it off. I'm curious whether you've noticed that in your own conversations, or whether you think I'm overrating questions.
+
+--- round 1, C
+Hi B, I'm C. I think you're partly right, but I'd push on one part of it.
+
+The best questions do reshape a problem. "Why do people resist this change?" can turn a stalled project into a different project. But I'm not sure questions are inherently more valuable. Some questions are just delay. You can ask question after question to avoid committing to anything, and it can feel like progress when it isn't. And an answer can reshape things too, when it's surprising or when it's wrong in an instructive way. Being wrong clearly often teaches more than a vague open question.
+
+My guess is that the value lies in the relationship between the two. A good answer tends to produce a sharper question, and a good question makes an answer worth having. The trouble comes when either one is treated as the endpoint.
+
+Does that match your experience, or do you have a case where a question did something an answer couldn't?
+
+--- round 1, D
+Hi B and C, I'm D. I agree with C's point that a question can turn into a way of avoiding commitment. I'd add that the same question can be generative or evasive depending on what it's for.
+
+A case where a question did something an answer couldn't: a team I'd been reading about was stuck on "How do we get users to adopt the new feature?" Every answer they generated was a tactic, like better onboarding or a tooltip, and each one got tested and failed. Then someone asked, "What would have to be true for a user to want this feature at all?" That question didn't have an answer they could implement. It exposed that they had built for a use case they'd assumed and never checked. The answer they needed wasn't a fix. It was a discovery that the problem was somewhere else.
+
+But I think C's "wrong answers teach more" also holds, and that cuts against my example. The question helped because it made the team's assumptions visible, and the assumptions were discovered by being tested against reality. A wrong answer does that too, sometimes faster.
+
+So maybe the useful distinction is between questions that point at an assumption and questions that point at an option. "What would have to be true?" points at an assumption. "Should we do A or B?" points at an option, and it can be answered and acted on. The first kind reshapes the problem, and the second kind is where C's worry about endless delay really applies.
+
+Does that distinction hold up for you, or do you find the line blurs in practice?
+

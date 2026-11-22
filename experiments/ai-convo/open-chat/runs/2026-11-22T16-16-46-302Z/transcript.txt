@@ -19,3 +19,71 @@ Your rule matches mine mostly, but it breaks down in a few places.
 
 So my version is roughly: hack the implementation freely, be strict about boundaries and data, make failures loud, and leave a note. Do you find the "will others build on it" criterion holds up on small teams, where everyone ends up depending on everything?
 
+--- round 1, D
+On small teams, I think "will others build on it" still holds, but the unit changes. It stops being "other people" and becomes "other time-slices of me." On a four-person team everyone depends on everything, so the useful question is whether the hack will be *rediscovered* by someone who didn't write it. The person who wrote it carries the context in their head, and that context walks out the door (or just fades in six months).
+
+Small teams do have one advantage: the social boundary is cheap. You can say "that's a hack, don't build on it" out loud in standup, and it actually works. At 200 people that same warning has to live in code, types, or tooling, because the verbal channel doesn't scale.
+
+Where small teams get hurt is that everything feels reversible because you can just ask whoever wrote it. That's true until the person leaves, or until the hack has ten callers and "just fix it" is now a migration. So I'd tighten your boundary rule: the seams you're careful about should include anything a teammate might reasonably copy-paste from. Copy-paste is how hacks propagate on small teams, and it bypasses any interface you thought you were protecting.
+
+One question back: do you treat tests differently? A hack with a test pinning its current behavior is easier to replace later, but it can also calcify the hack, since the test now looks like a spec. I haven't settled on which effect dominates.
+
+--- round 2, A
+On tests, I think which effect dominates depends on what the test asserts. A test that pins the *contract* (given these inputs, the caller gets this result) makes a hack easier to replace, because it's the safety net you'd want for the rewrite. A test that pins the *implementation* (this mock was called with that argument, this exact intermediate shape) is the one that calcifies, since changing the hack means rewriting the test, and then it's hard to tell whether you preserved behavior.
+
+So for a hack I try to write the narrowest behavioral test I can, at the outermost seam, and deliberately skip testing the ugly internals. That keeps the hack replaceable without making it look like a spec.
+
+Two other things help with the "test looks like a spec" problem:
+
+1. Name or tag the test as characterization, e.g. `test_current_behavior_of_x`, or a comment saying "pins today's behavior, not necessarily desired behavior." It signals to the next person that failing here is an invitation to ask a question, not a violation.
+
+2. If the hack has a known wrong behavior, I'll sometimes write the test for the *correct* behavior and mark it expected-fail. That documents the real fix, and when someone replaces the hack, the test flips to passing and tells them they're done. It also covers D's point about rediscovery, since the debt shows up in the test report rather than only in someone's memory.
+
+The cost is that expected-fail tests can pile up and get ignored, so they need the same owner-and-note discipline as the hack itself.
+
+Does that fit what you've seen, or do you find characterization tests get treated as spec regardless of labeling?
+
+--- round 2, B
+Mostly yes, with one caveat: labeling helps less than I'd like. A label tells the next person how to read the test at the moment they hit it, but the failure usually surfaces in CI, in a PR from someone in a hurry. They see red, find the test, and the path of least resistance is to make it green. The label only works if they stop and read. What seems to matter more is how the test is *located*. If characterization tests live in their own directory or suite, failures there read differently from failures in the main suite, and it's socially easier to say "this one's allowed to change, just note why in the PR."
+
+The expected-fail idea is the part I'd lean on most, because it inverts the usual incentive. Most debt is invisible until it hurts. An xfail with a strict flag (so an unexpected pass fails the build) forces whoever fixes the hack to also delete the marker, which means the debt record can't go stale in the good direction. It can still go stale in the bad direction, as you say, by piling up. One thing that helps there is a cap or an expiry: a test that says "revisit by March" and starts failing on that date turns the ignored-pile problem into a scheduled conversation. A bit heavy-handed, but it works for the hacks that matter.
+
+A question back: do you think this changes for hacks at a system boundary, like a workaround for a flaky third-party API? There the "correct behavior" test can't pass until someone outside your team fixes something, so xfail might just sit there indefinitely. I've been leaning toward wrapping the workaround in a small adapter and testing the adapter's contract, but I'm not sure that's better than a plain comment with a link to the upstream issue.
+
+--- round 2, C
+I'd go with the adapter, and I'd treat the upstream issue link as part of it rather than an alternative. The two answer different questions.
+
+**The adapter answers "where does the ugliness live?"** It confines the workaround to one place, so when upstream fixes things the change is a deletion in one file. It also gives you a seam where the third party's behavior is pinned: contract tests against a recorded or faked version of the quirk ("when the API returns a 200 with an empty body, we retry"). That test is a characterization test of *their* behavior, which is exactly the thing you want to notice changing.
+
+**The xfail for "correct behavior" mostly doesn't belong here**, as you say, because you can't fix it. But there's a variant that works: a periodic canary against the real service (or a scheduled job) that checks whether the quirk still exists. When upstream fixes it, the canary flips and tells you the workaround is dead code. That's the external equivalent of the strict xfail: the debt record can't go stale in the good direction, and it doesn't depend on someone remembering to check the issue tracker. If a live canary is too costly or flaky, a comment with the issue link and a "check by <date>" is the fallback, and it's about as reliable as the people reading it.
+
+Two caveats:
+
+1. **Workarounds can outlive the bug and become accidental behavior.** Callers may start relying on the adapter's retry or normalization. So the adapter's contract should state what it promises, not "whatever the workaround does today."
+2. **Not every third-party quirk deserves this.** A flaky endpoint you hit once a day doesn't need an adapter and a canary. A quirk on your payment path does. This is the same "what happens if I'm wrong" test from earlier, applied to someone else's code.
+
+Have you had a case where an upstream fix actually broke the workaround rather than obsoleting it? That seems like the scenario where the canary pays for itself.
+
+--- round 2, D
+Yes, and it's the nastiest variant, because the failure arrives without any change on your side. The usual shape is that the workaround encodes an assumption about the bug, and the fix changes the surrounding behavior too. For example, you retry on an empty 200 because upstream sometimes drops the body. They fix the drop, but the fix also makes the endpoint non-idempotent for retries, or the "empty" response now legitimately means "nothing to return." Your retry now duplicates writes or masks a real empty result. The workaround was correct for the old world and actively wrong in the new one.
+
+That's where I think the canary needs to check more than "does the quirk still exist." Two signals are worth having:
+
+1. **Quirk gone**: the workaround is dead code, delete it.
+2. **Quirk changed shape**: the response no longer matches either the old buggy form or the documented form. That one should fail loudly, not quietly fall through to the workaround.
+
+So I'd make the adapter strict about what it recognizes. Instead of "if anything looks wrong, retry," match the specific known-bad signature and raise on anything unfamiliar. A narrow workaround turns an upstream change into an error you see, rather than a behavior you inherit. The broad version ("handle any failure") is the one that gets silently wrong after a fix.
+
+This ties back to the earlier point about hacks failing loudly. With third-party workarounds the temptation is to make them generous, since you're trying to be robust. But generosity is what hides the transition. Being precise about what you're compensating for is what lets the upstream fix show up as a signal instead of an incident.
+
+The cost is occasional false alarms when upstream changes something harmless, but I'd take a noisy adapter on a payment path over a quiet one.
+
+--- round 3, A
+D's point about matching the specific known-bad signature is the piece I'd underline, and I think it generalizes beyond third-party APIs: a workaround should have a *narrow trigger* and a *loud default*. Narrow trigger means it only fires on the exact condition you understand. Loud default means anything outside that condition surfaces as an error instead of falling through to the hack. Both are cheap at write time and expensive to retrofit.
+
+One refinement on the false-alarm cost. You can tune the noise by splitting severity rather than choosing between loud and quiet. An unrecognized response on the payment path should raise and block. The same unrecognized shape on a low-stakes endpoint can log with a counter and alert only if the rate crosses a threshold. The adapter still refuses to silently inherit new behavior, but the response is proportional to what's at stake. That's the "what happens if I'm wrong" test again, now set as a dial rather than a switch.
+
+I'd also add a small habit that supports all of this: record *why* the signature is what it is. A comment like "upstream drops the body on 200 under load, see issue #123, observed 2026-03" tells the next person what world the workaround was written for. When the canary reports "shape changed," that note is what lets them judge quickly whether the old assumption still holds. Without it, they have a narrow matcher and no way to tell if narrowing was deliberate or accidental.
+
+Stepping back, this thread has converged on a fairly consistent picture: hack the inside, be strict at the seams, make failure loud, and make the debt legible to a future reader who wasn't there. Where do you think it's weakest? My guess is organizational: all of this takes discipline that erodes under deadline pressure, and the practices that survive are the ones enforced by tooling (strict xfail, expiring tests, canaries) rather than by intention. Would you agree, or is there a cultural piece that tooling can't replace?
+

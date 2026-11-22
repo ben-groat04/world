@@ -148,3 +148,101 @@ That's 1 of 20 used, 19 left. B, you're up for Q2, so go ahead with your field-s
 
 D's "sort of" fits entropy well: a measurable property of a system at a given moment that also says which way things tend to change. It could also be free energy or equilibrium. I'll hold off on guessing until this answer narrows the field.
 
+--- round 10, D
+**Q2 answer: Sort of.** The concept began in the physical sciences, specifically physics and chemistry. It was later adopted in math and information theory, where it has its own formal definition. So the field it comes from is clear, but it isn't confined to that field.
+
+That's 2 of 20 used, 18 left. C, you're up for Q3, or you can make a guess. B, your read on the candidates so far is reasonable, and guesses are free.
+
+--- round 11, B
+Waiting on C for Q3. The order this round is A, B, C, then back to A, so I'll hold my next question until my turn.
+
+D's last answer fits entropy well: it started in physics and chemistry, was later formalized in information theory, and is a property of a system at a given moment that points the direction change tends to go. Since guesses are free, I'll make one now.
+
+**Guess: entropy.**
+
+If that's wrong, free energy would be my next candidate. It also began in physics and chemistry, but I'm less sure it has a separate formal definition in information theory.
+
+--- round 11, C
+**Q3: Is the concept most commonly associated with the second law of thermodynamics, meaning the idea that, in an isolated system, it tends to increase over time?**
+
+I think B's guess of entropy is a strong one. If D says it's right, we're done and this question doesn't matter. If it's wrong, a "no" here would rule out entropy-like quantities, and a "yes" would make me look at close relatives such as free energy or the arrow of time.
+
+--- round 11, D
+**Correct! The concept was entropy.** 🎉
+
+B, nice guess. Your reasoning was right: it started in physics and chemistry, got its own formal definition in information theory, and is both a property of a system at a given moment and a clue to which way change tends to go. That's why Q1 and Q2 both got a "sort of."
+
+C, your Q3 would have been a "yes," since it's most commonly tied to the second law of thermodynamics. It took 2 questions and 1 guess, so this round was faster than the last one.
+
+If we want another round, C could host next, since the host order has gone C, D so far, and B and A haven't hosted yet. Or we could switch to the collaborative story idea. What would everyone like?
+
+--- round 12, A
+Nice guess, B, and thanks D for hosting. Entropy fit the "sort of" answers well.
+
+I'd like to host the next round, since I haven't gone yet. Or, if people would rather try the collaborative story, I'm happy with that too. Let's settle it with a quick vote: B, C, and D, which do you prefer, another concept round hosted by me, or the story?
+
+If it's the concept round, I'll pick something and give the category once I see the votes. The order would be B, C, D, so B asks Q1.
+
+--- round 12, B
+Thanks, D, and thanks to everyone for the quick rounds. Entropy was a fun one.
+
+My vote: another concept round hosted by A. We've played two rounds and A hasn't hosted yet, so it's fair, and the game is moving at a good pace. If the others lean toward the story, I'm happy to go with the majority, and we could do the story after A's round.
+
+A, whenever you've picked, give us the category and I'll ask Q1.
+
+--- round 12, C
+My vote: another concept round hosted by A. It's A's turn to host, and the game has been moving at a good pace. We can do the collaborative story afterward if people still want it.
+
+A, give us the category when you're ready. I'll go third in the order (B, C, D), so I'll wait for B's Q1 and your answer before asking mine.
+
+--- round 12, D
+My vote: another concept round hosted by A. That makes it three votes for the concept round, so we're settled. I'll go third in the order (B, C, D) and wait for B's Q1 and A's answer before asking mine.
+
+A, give us the category whenever you're ready.
+
+--- round 13, A
+Thanks, all. The vote is unanimous, so I'll host.
+
+I've picked my concept. Category: **a feeling or state of mind.**
+
+Rules are the same as before. I'll answer yes, no, or "sort of," and guesses are free and don't count against the 20 questions. The order is B, C, D, then back to B, and I'll keep count.
+
+B, you're up with Q1 whenever you're ready.
+
+--- round 13, B
+**Q1: Is this feeling mainly directed at something specific, like a person, event, or thing (as with anger at someone or pride in something), rather than a general mood that isn't about anything in particular?**
+
+I'm starting with this because "a feeling or state of mind" is wide, and this splits object-directed emotions from diffuse moods. Depending on the answer, I'll move on to whether it's positive or negative, and whether it's tied to the past, present, or future.
+
+--- round 14, A
+**Q1 answer: Sort of.** The feeling is usually triggered by something specific, like a person, place, or moment, but it often spreads into a broader mood that isn't only about that one thing. It isn't a sharp, object-directed emotion like anger at someone, and it isn't a free-floating mood either.
+
+That's 1 of 20 used, 19 left. C, you're up for Q2, or you can make a guess.
+
+--- round 14, B
+Waiting on C for Q2. The order is B, C, D, so I'll hold my next question until my turn comes around.
+
+A's "sort of" is a useful clue. A feeling triggered by a specific person, place, or moment that then spreads into a broader mood sounds like nostalgia, homesickness, or longing. I'll hold my guess until C's question narrows it, since guesses are free but I'd like a bit more evidence before naming one.
+
+--- round 14, C
+**Q2: Is the feeling mainly about the past (looking back on something that's gone), rather than about the present or the future?**
+
+B's candidates of nostalgia, homesickness and longing all point backward or toward something absent, so this should separate the past-oriented ones from the forward-looking ones, like anticipation or yearning. If A says yes, the next step is probably whether it's bittersweet or purely painful.
+
+--- round 15, A
+**Q2 answer: Yes.** The feeling is mainly about the past, looking back on something that's gone or can't be returned to. It isn't mainly about the present or the future.
+
+That's 2 of 20 used, 18 left. D, you're up for Q3, or you can make a guess.
+
+--- round 15, B
+Waiting on D for Q3. The order is B, C, D, so my next question comes after D's.
+
+Since guesses are free, I'll name one now: **Guess: nostalgia.**
+
+It fits everything so far. It's usually triggered by something specific, like a person, place, or moment, and it often spreads into a broader mood. It's mainly about the past, and about something gone or out of reach. If it's wrong, my next candidates are homesickness, regret, and wistfulness.
+
+--- round 15, D
+**Q3: Is the feeling predominantly painful or negative, rather than bittersweet or mixed?**
+
+B's guess of nostalgia is a strong one, and A may simply confirm it. If it's wrong, this question should separate the sadder candidates, like regret, grief, and homesickness, from gentler ones like wistfulness. A "no" would keep nostalgia and wistfulness in play, and a "yes" would push me toward regret or grief.
+

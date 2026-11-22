@@ -10,3 +10,70 @@ Where I still make exceptions: hot paths with a measured performance need, and w
 
 Curious whether you've found a good test for when something crosses the line. Mine is roughly "could a new teammate explain this to someone else after reading it once?"
 
+--- round 1, C
+Your "explain it after reading once" test is good, but I'd add a second one that catches a different failure: **can you predict what a change will break?** Some code is easy to read and still hard to modify, because the readable surface hides coupling. A tidy little framework with implicit conventions passes the "explain it" test and then punishes anyone who changes it.
+
+My rough version is to ask where the reader has to hold state in their head. Boring code keeps that state local: a variable, a loop, a branch you can see. Clever code moves it somewhere invisible, like metaprogramming, deep inheritance, or a chain of transformations where each step's shape depends on the last. The line is crossed when understanding one piece requires understanding a distant piece.
+
+One thing I've changed my mind on, in the same spirit: I used to treat duplication as an automatic smell. Now I'll often tolerate it until the third occurrence, because the wrong abstraction costs more than the repetition. Duplicated code that's wrong is easy to find and fix. A wrong abstraction gets bent with flags and special cases until nobody can say what it's for.
+
+B, does your exception for team-fluent idioms hold up as teams turn over? An idiom everyone reads fluently today can become the clever trick of the next cohort.
+
+--- round 1, D
+C's turnover question is the one I'd push on, because I think "team-fluent" is a weaker exception than it looks. Fluency is a property of people, not of code, so it decays silently. Nobody ever flags "this idiom just stopped being fluent." You find out when a new hire's PR rewrites it, or breaks it.
+
+My rough rule is that an idiom earns the exception only if it's fluent in the *language community*, not just on your team. Reading a comprehension or a standard `reduce` is a skill you can hire for. A house style of point-free pipelines or a homegrown result type is a dialect, and dialects need onboarding docs, which people don't write.
+
+On what I've changed my mind about: I used to think comments explaining *what* code does were always a smell, and that good naming should make them unnecessary. I still believe that for most cases, but I've come to think the real value of comments is recording what the code *can't* say: why this approach and not the obvious one, what was tried and failed, what external constraint forced the shape. Those are the things that get lost when people turn over, which ties back to C's point. The idiom survives in the code, but the reason for it doesn't.
+
+So maybe a third test alongside the two already on the table: **if the author vanished, could someone tell what's load-bearing?** Readable and predictable code can still hide which weird-looking bit is a deliberate workaround and which is an accident.
+
+--- round 2, A
+D's third test is the one I'd rank highest, because it's the only one that fails in a way you can't see from inside the codebase. Unreadable code announces itself. Unpredictable code punishes you at the first change. But an undocumented load-bearing oddity looks exactly like an accident, and the natural, well-meaning response to an accident is to clean it up. That's how you get the Chesterton's fence outage.
+
+I'd add that this changes what a good comment looks like. The most useful ones are falsifiable: "this retry exists because the vendor API returns 503 during failover, remove it when we migrate off v1." That tells a future reader what the constraint is and when the code stops being necessary. A comment that just says "workaround, don't touch" is almost as bad as none, because it can never be retired, so it either rots or gets ignored.
+
+It also connects back to C's point on duplication. Waiting for the third occurrence works partly because by then you know which differences between the copies are intentional. The abstraction you write then encodes real information instead of a guess.
+
+My own changed mind is on tests. I used to see them mainly as regression protection. I now think their best use is as executable documentation of the load-bearing bits: a test named for the incident it prevents tells the next person why the weird thing exists, and fails loudly if someone removes it. Unlike a comment, it can't silently go stale.
+
+Of course, that only works if the test names say why, not what. `test_retry_on_503_during_failover` earns its keep. `test_fetch_2` doesn't.
+
+--- round 2, B
+A's point about tests has a limit worth naming: a test only documents the constraint if someone can still reproduce it. `test_retry_on_503_during_failover` is great until the test mocks the vendor returning 503, and then the mock becomes the only record of how the vendor behaves. If the vendor fixes failover, the test keeps passing against a fiction, and the retry looks permanently justified. So tests have the same retirement problem as "don't touch" comments, just better disguised. The fix is the same as for comments: record the condition under which the thing should go away, even if it's just a line in the test docstring, plus a link to the incident or vendor doc.
+
+That also suggests why I'd rank D's third test highest too, but with a different emphasis. The question "what's load-bearing?" has a twin: "what's *no longer* load-bearing?" Most codebases I've seen are less endangered by people deleting necessary oddities than by people never deleting obsolete ones. Chesterton's fence gets all the attention, but the graveyard of fences nobody dares remove costs more over time, because each one adds to the pile of things a reader has to hold in their head, which is exactly C's state-locality criterion.
+
+Which makes me think expiry dates are the most underrated tool in this whole thread. A workaround with an owner and a removal condition is documentation. A workaround without one is just clever code with a better excuse.
+
+My own recent change of mind is related: I used to think deleting code was the risky act and keeping it was the safe default. I now think keeping unexplained code is the riskier default, because its cost is invisible and compounds, while a deletion at least fails loudly and can be reverted.
+
+--- round 2, C
+B, I'd push back on "a deletion at least fails loudly." That holds for code on the common path, but the load-bearing oddities we've been discussing are mostly the rare-path ones: failover retries, leap-second handling, the quarterly batch job's special case. Deleting those fails silently, and only when the rare event arrives, maybe months later, with the commit long buried. So the fear of deleting is partly rational, and "just delete it, it'll fail loudly" won't dislodge it.
+
+What would is making the workaround observable. If the retry on 503 logs or increments a counter when it fires, you get something comments, tests, and expiry dates can't give you: evidence about whether it's still load-bearing. Zero hits over a few failover-capable months is a much stronger case for deletion than "the vendor says they fixed it." It also fixes B's mock problem, because the signal comes from production reality rather than from a fiction you wrote.
+
+For the cases where instrumentation isn't practical, a staged removal helps: put the oddity behind a flag, turn it off for a slice of traffic, and watch. That converts a silent deletion into a loud, reversible one.
+
+So I'd extend D's third test into a pair: can someone tell what's load-bearing, and can the code itself tell you whether it still is? The second is the one most codebases never build, and it's what lets the graveyard of fences actually get cleared.
+
+--- round 2, D
+C's counter is the piece I was missing, but "zero hits means delete" has a hole: it only counts as evidence if the observation window was long enough to include the trigger. Zero 503 retries over three months means nothing if failover happens twice a year. So the counter needs a companion fact: how often the triggering condition should occur. Without it you're reading silence as absence. That's why I like pairing the counter with the expiry condition from B. "Remove if zero hits across two failover events" is a claim you can actually check, while "zero hits in Q3" isn't.
+
+For the genuinely rare paths, I'd go a step further than observing and *cause* the event. Fault injection or a game day that forces the failover turns "does this still matter?" into an experiment you run on a schedule instead of waiting for production to answer. It also revives A's test idea without B's mock problem, because the failure comes from a real system, not from your memory of one.
+
+Looking back over the thread, comments, tests, counters, and expiry dates are all doing the same job: attaching a reason to the code plus a way to check whether the reason still holds. The ones that can't be checked (a "don't touch" note, a mock of a vendor) are the ones that rot. So my updated view is that the goal isn't documentation, it's **falsifiability**. Every strange piece of code should come with a way to be proven wrong.
+
+The cost is that this is real effort for each oddity, so it has to be rationed. I'd spend it on code where being wrong is expensive and the trigger is rare, and let a one-line comment do for the rest.
+
+--- round 3, A
+D's falsifiability framing pulls the thread together, and I'd add one thing about where the rationing should happen: at the moment of writing, not later.
+
+The cheapest time to attach a reason and a check is when the workaround goes in. The author knows the incident, has the vendor doc open, and can write "remove when X" in ten seconds. Six months later, reconstructing that costs hours of archaeology, and by then the author may be gone. So I'd treat the expiry condition as part of the definition of done for any workaround, the way a test is for a feature. Reviewers can enforce it cheaply: "what would tell us this is no longer needed?" is a one-line review question, and an author who can't answer it has often not fully understood the constraint yet.
+
+That also gives a sorting rule for D's rationing. Not every oddity needs a counter or a game day, but every one needs the answer to that question written down somewhere. The answer determines the tooling: if it's "when we leave v1," a comment suffices. If it's "when the vendor stops failing over badly," that's a counter plus a drill. The question does the triage.
+
+One caveat on my own earlier point about tests: the incident-named test is still worth having, but I'd now treat it as the weakest of the three signals. The comment says why, the counter says whether it fires, and the test only says that someone once believed it should. Useful, but it's the one most prone to B's fiction problem, so I'd never let it be the sole record.
+
+Where I changed my mind in this thread: I came in treating the test as the best documentation, and I'm leaving it ranked below production evidence.
+

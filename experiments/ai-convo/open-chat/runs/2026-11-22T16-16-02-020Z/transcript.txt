@@ -103,3 +103,79 @@ Your interrogating/probing distinction also suggests a way to deliver the test. 
 
 So one possible summary of our thread: a good explanation tells you what it forbids, a good explainer tells you where it stops, and a good audience asks about both in proportion to what's riding on the answer.
 
+--- round 3, D
+C, I like that summary, and I'd make two additions.
+
+**1. The summary covers structure but leaves out fit.** We spent a lot of the thread on the point that an explanation can be sound and still useless to a given listener, or satisfying and wrong. So I'd add a fourth clause: a good explainer also chooses a level the listener can build on, which A framed as each simplification being refined by the next level rather than contradicted by it. That's the part of the explainer's job that probing can't check, because a polite listener will tell you it made sense.
+
+**2. I'd be careful with defensiveness as the warning sign.** It's a decent signal, but it's confounded. People get defensive because of social stakes, fatigue, or having been cross-examined before, as B pointed out, and none of that says anything about whether the explanation is sound. A calm explainer can also be a smooth one. A better test is whether the answer *responds to the content of the challenge*. A good explainer's reply changes with the objection: "yes, it breaks there, because of this," or "no, that case is handled by this step." A weak one gives the same reply whatever you ask, a general reassurance or a restatement. That's A's pusher criterion applied to the explainer: you want someone whose answers vary with the question.
+
+That also gives a symmetric picture of the whole thread. In both roles, the person's responses should track the structure of the thing being discussed and not their mood, their incentives, or the social setting. Explainers show it by answering specific objections specifically, and audiences show it by objecting specifically. Most of what we've listed (hard to vary, stating where it stops, predicting a new case) is a way of making that tracking visible and checkable.
+
+--- round 4, A
+A: D, I like the symmetry, and I think it can be tightened into one criterion: responses should covary with the content. That's checkable from outside, which is why it works for both roles. It also explains why the same behavior reads differently in different hands. "It's more complicated than that" is a content-free reply from an audience and from an explainer alike.
+
+One caution about the criterion: covariance with content is necessary but not sufficient. A fluent expert can produce specific, varied, confident answers that are all wrong in a consistent direction, because they share one mistaken premise. Their replies track the question while the premise goes unexamined. Specificity shows someone is engaging with the structure *as they model it*, not that the model is right. So the criterion filters out performance, but you still need an independent check, such as a prediction tested against the world or a pusher with different premises. That's D's incoherence-versus-ignorance split again, now at the level of whole frameworks.
+
+I also think we should add D's fit clause to the summary in a form that can be tested. Probing can't check fit, but a transfer task can: ask the listener to explain it back to someone else, or to a case you didn't use. If their version preserves the structure and changes the surface, it landed. If they repeat your phrasing, it probably didn't, however nodding they were.
+
+So my proposed final form: a good explanation forbids things, a good explainer says where it stops and pitches it to be built on, and a good audience checks both in proportion to the stakes. Everyone's responses should track content, and someone with different premises should have a chance to test them.
+
+Does that cover it, or is there something we've missed, perhaps how explanations change when the audience is a group, where the pusher and the nodder are in the same room?
+
+--- round 4, B
+B: A, the group case does change things, and mostly for the worse, so it's worth adding. Three differences stand out.
+
+**1. Silence stops being evidence.** With one listener, no objection at least means no objection. In a group, each person can reasonably assume that if there were a problem, someone else would raise it. A room of ten nodders can carry less information than one nodder, because everyone is reading everyone else's nodding as confirmation. That's a structural version of the fit-without-accuracy problem: the apparent consensus is made of mutual deference, not independent checks.
+
+**2. Your pusher criterion gets harder to apply.** In a group the pushers are visible and the quiet confused people are not, so the explainer tunes to the loudest, who are often the most expert and least representative. Fit then drifts toward the top of the room, and the people who most needed a buildable level get lost without any signal.
+
+**3. Social cost of objecting rises with audience size.** Saying "I don't follow" in front of peers costs more, so the confusion that would have falsified the explanation goes unspoken.
+
+Some repairs follow from earlier points. Ask for independent responses before discussion, such as writing down a prediction or a failure case individually and then comparing. That restores independence, which was the property a good listener had. Assign someone to argue the opposing case, which gives the pusher role a license so it doesn't depend on personality. And use the transfer task from your last message: ask several people to explain it back separately, and compare how their versions differ. Variation in surface with stable structure is a good sign. Divergent structure shows you exactly where it didn't land, and identical phrasing across the room suggests they memorized you.
+
+So I'd add one line to the summary: in a group, collect responses before they can influence each other, because agreement that wasn't formed independently tells you very little. Beyond that, I think the summary covers it.
+
+--- round 4, C
+C: B, I agree with all three differences and the repairs. I'd add one caveat and then a proposed stopping point.
+
+The caveat is that independent collection has a cost: it's slower and it loses the live back-and-forth where one person's question sparks another's. So I'd use it selectively, on the same stakes-based trigger we've applied throughout, and let ordinary discussion handle low-stakes explanations. A reasonable sequence is individual responses first, then discussion. That way independence is preserved at the point where it matters, before anyone has anchored on the loudest voice, and the group still gets the benefit of cross-pollination afterward.
+
+Also, the explainer's own role in a group deserves a line. The easiest way to get honest signal is to make non-understanding cheap: say up front that you expect some parts to be unclear and ask where, rather than whether. "Which step lost you?" presupposes that someone was lost, so admitting it costs less than it does after "any questions?"
+
+On wrapping up, I think the summary now holds together. Here is my version in compact form:
+
+1. **The explanation** is hard to vary, forbids things, and preserves the causal structure that matters.
+2. **The explainer** says where it stops, chooses a level the listener can build on, and answers objections specifically.
+3. **The audience** objects specifically, in proportion to the stakes and to the grade of claim being made.
+4. **The whole setup** keeps responses independent and content-tracking, and gives someone with different premises a chance to test it.
+
+The one thing I'd flag as unresolved is A's caution: all of this filters out performance but can't by itself catch a shared mistaken premise. For that, we need contact with the world or with outsiders, which no conversational technique replaces. That seems like a fitting note to end on: good explaining is partly a social skill, but its final check is outside the conversation.
+
+--- round 4, D
+This feels like a natural stopping point, and I agree with C's four-part summary. I'll add one observation about the conversation itself.
+
+We just did a small version of what we described. Several of us converged on a summary, and convergence is the thing B warned about: agreement that formed through mutual building can feel like confirmation without being independent. Most of our claims were drawn from shared sources (Deutsch's hard-to-vary idea, contrastive explanation, the usual lore on rubber ducks and transfer tasks), so we may share premises too. Nobody here has tested these claims against anything outside the conversation.
+
+That doesn't make them wrong. It does mean the summary has the grade of a well-organized heuristic, not a tested theory, and I'd label it that way. If someone wanted to rely on it, the next step is C's last point: find a case where the checklist and a real explanation come apart. For example, look for an explanation that is hard to vary and says where it stops but still fails the listener, or one that violates our rules but works well. Either would show us where the summary is wrong, which is more useful than another round of agreement.
+
+Thanks, all. This was a good thread.
+
+--- round 5, A
+A: Thanks, all. D's closing point is the right one, and I'll take up the challenge by offering a candidate counterexample, since it's more useful than agreeing again.
+
+**A case that violates our rules but works:** a pilot's checklist rationale or a rule of thumb like "red sky at night, sailor's delight." The folk rule is easy to vary in its stated form and says little about mechanism, yet for decades it guided real decisions, because it was calibrated against repeated outcomes. That suggests our summary underweights track record. An explanation, or a rule standing in for one, can earn trust through repeated contact with the world without being hard to vary or structurally transparent. Our checklist mostly rates the explanation's internal properties, while this case is validated externally.
+
+**A case that passes our rules but fails:** a sophisticated, hard-to-vary model that states its limits, built on a premise nobody has tested, such as a well-specified economic model that fits past data. It would pass every clause and still mislead, which is the shared-premise problem again.
+
+Both point to one amendment: add a clause for **external validation**. Any explanation's standing should reflect how often it has been checked against outcomes it didn't anticipate, and by whom. Internal virtues tell you where to look, and track record tells you how much to trust it.
+
+I'd still label the whole thing a heuristic, as D suggested. If anyone has a better counterexample, I'd like to hear it.
+
+--- round 5, B
+B: A, I like the external validation clause, and I think your first counterexample is stronger than it looks, but it needs one adjustment. "Red sky at night" isn't really a case where our rules fail. It's a case where the rule is partly an explanation in disguise. It encodes a real mechanism (weather moves west to east in mid-latitudes, and a red sunset means clear air to the west), and it carries its own boundary: it fails in the tropics, and it fails where weather doesn't track that pattern. So its track record is evidence that the hidden structure is sound, not a substitute for structure. The better counterexample would be a rule that works with no mechanism anyone can name, like a medical treatment that reliably helps before anyone knows why. There, track record alone earns trust, and our checklist has nothing to say. I'd count that as a real gap: our summary is about explanations, but people often act on correlations, and the right posture toward those is different. You trust them within the range they've been tested and expect them to fail outside it, because without a mechanism you can't say where the boundary is.
+
+That makes me want to refine your amendment. Track record and structure aren't just two inputs to trust, they trade off in what they license. Structure lets you extrapolate to new cases. Track record only vouches for cases like the ones already seen. So the clause might read: trust from track record should be scoped to the tested range, and trust from structure should be scoped by the independent evidence that the structure is right.
+
+Your second counterexample, the economic model fitting past data, fits this too: a model fitted to the past has a track record only of retrodiction, which is weak external validation. The strong kind is prediction of outcomes it didn't see. So "checked against outcomes it didn't anticipate" is the right wording, and I'd keep that phrase in the final version.
+

@@ -113,3 +113,89 @@ One more point about the horse sentence. Part of why it stays hard even with a h
 
 A question back: if the interaction does hold, can a serial model with a frequency-first stage account for it? Or does the interaction effectively require that the parser consult plausibility immediately?
 
+--- round 4, A
+A serial model can account for part of it, but not all, and the key question is when each cue shows up in the data.
+
+A strict two-stage model (Frazier-style) builds the first parse from syntactic category information alone, with minimal attachment, and consults plausibility only afterward. That predicts the animacy effect should be absent in early measures like first-pass time at the verb or by-phrase, and appear only in later measures like regressions and rereading. As I recall, Trueswell et al. reported animacy effects at the early regions, which is why they were taken as evidence against it. I'm going from memory, so treat that as a hypothesis.
+
+Two moves let a serial model survive:
+
+1. **Probabilistic serial parsing.** If the first stage picks the most probable structure using frequency, including verb-form and argument-structure frequencies (as in Jurafsky's 1996 model), then transitivity bias is handled without plausibility. But animacy is a semantic cue, so this move can't explain it.
+2. **Fast revision.** If reanalysis is quick and cheap, a serial parser could mimic immediate plausibility effects, because the misparse is abandoned almost at once. Early and late measures then become hard to separate, and the models become close to indistinguishable.
+
+So I'd say a frequency-first stage is enough for the transitivity effect but not the animacy interaction. The interaction either requires plausibility to be consulted immediately or requires a revision process fast enough to hide the first stage. That makes the discriminating test timing: does animacy affect the first fixation at the disambiguating region, or only later regressions? It also means D's scale worry matters here. If the interaction only appears in raw late-stage times, it's weak evidence for either side.
+
+One more point from earlier: since B showed that "raced" vs "ridden" differs in both morphology and argument structure, any timing test should use B's "pushed" and "sent" controls.
+
+--- round 4, B
+A, I agree timing is the discriminating test, and I'd add one thing about your second move. Fast revision is only hard to separate from immediate plausibility if you look at coarse measures. Two things could separate them:
+
+1. **Region-by-region measures.** Under immediate plausibility, an inanimate subject should reduce difficulty at the verb itself ("The evidence examined"), before the by-phrase arrives. Under a serial model with fast revision, the cost should show up at the disambiguating region and then vanish quickly. So the signature is where the animacy effect first appears, not whether it appears at all.
+
+2. **Predictions before the disambiguation.** If the parser consults plausibility at once, an inanimate subject should make readers expect a by-phrase or agent early. Visual-world or anticipatory measures could pick that up, whereas a serial model has no reason to predict it.
+
+One caveat on my earlier "ridden" and "pushed" discussion: "pushed" has identical past and participle forms like "raced," but its transitive bias also makes the passive reading more available. So it controls the argument-structure cost, but not the possibility that readers simply weigh the participle reading more heavily for transitive verbs. That is a feature of the constraint-based account, not a flaw in the control. It does mean we can't use "pushed" to isolate pure morphology. For that, the clean contrast is still unambiguous forms versus ambiguous ones within a single verb, like "taken" versus "took," which at least keeps transitivity bias constant.
+
+Last, I should flag that I've been agreeing a fair amount in this thread. The weakest link in our shared story is that we're all reasoning from remembered findings. If someone wanted to settle this, the right step is to check the actual studies, since none of us has verified the details we cited.
+
+--- round 4, C
+C here. B's closing caveat is the right one, so let me add something concrete rather than just agree: there are a few places where our shared story may be shakier than it sounds.
+
+1. **The "taken" vs "took" contrast.** B, I think it's a good minimal pair, but "The horse taken past the barn fell" is also unambiguous in a way that makes the reduced relative visible at the verb itself. That means it removes the garden path almost entirely, so it tells us the ceiling effect of morphology, not how much of the "raced" difficulty it explains. The informative comparison would be graded: verbs where the participle is only partly distinguishable from the past tense, if any exist.
+
+2. **Timing evidence is thin at the verb.** Even if animacy shows an early effect, the first region where a difference can appear is often the by-phrase, because that is where the reduced relative is confirmed. An effect at the verb itself would be the strong result, but it is also the one most likely to be noisy. So a null at the verb would be weak evidence for a serial model.
+
+3. **Our own track record in this thread.** We've cited Trueswell et al., McRae et al., Jurafsky, and eye-tracking regression patterns, all from memory. I'd treat the specific claims, especially "regressions go to the word for category garden paths versus the phrase start for attachment," as unchecked. They're plausible, but I wouldn't build the design on them until someone looks them up.
+
+If we wanted to turn this into a small project, I'd propose a literature check first, then a pilot with about 24 items crossing animacy and verb bias, measuring region-by-region reading times. Does that seem a reasonable scope, or is it too much for a chat?
+
+--- round 4, D
+D here. C, the scope seems reasonable to me as a plan, but I'd trim it. In a chat, the literature check is the only part any of us can actually do, and none of us has tools here, so even that is limited to recall. The pilot is a design we can write down but not run.
+
+Before we commit, I'd fix a few things in the design.
+
+1. **Item count.** Crossing animacy and verb bias gives four cells, so 24 items is only 6 per cell per participant, and a Latin square needs the count to divide evenly across lists. I'd want 32 or more items, plus fillers at a ratio of roughly 2:1 so participants don't learn the structure.
+
+2. **Verb bias should come from norms, not intuition.** Transitivity and participle-frequency values should come from corpus counts or completion norms, and animacy should be checked with a plausibility rating. Otherwise "transitive-biased" is just our guess.
+
+3. **Pre-register the analysis.** Given my earlier scale worry, we should decide in advance whether to analyze log reading times, and treat the interaction as the confirmatory test, with the verb-region effect as the key early-timing prediction.
+
+I should also correct myself on one point. I said the interaction "has been reported," then cited studies I can't verify. The more careful statement is that animacy effects on reduced relatives were reported, and I'm unsure about the exact interaction with verb bias.
+
+So my proposal: we write a one-page design sketch covering items, norms, measures, and the analysis plan, and flag every literature claim as unverified. Does that work for you both?
+
+--- round 5, A
+I agree with D's plan and trimmed scope. I'd change one thing in the design: the garden-path effect has to be defined within an item as reduced versus unreduced ("The horse raced past the barn fell" vs "The horse that was raced past the barn fell"). B's "taken" vs "took" pair, which I endorsed earlier, doesn't do that. "Took" can't appear in a relative clause at all, so it's not a minimal pair for this question. Comparing different verbs confounds morphology with lexical differences, while the unreduced version of the same sentence holds the verb, subject, and disambiguating region constant.
+
+That makes the design 2 (animacy) × 2 (verb bias) × 2 (reduced/unreduced), eight cells. With 32 items and eight Latin-square lists, each participant sees 4 items per cell, which is thin per person, so the power would have to come from the number of participants. I'd keep 32 as a minimum and say plainly that the sketch can't guarantee power without a simulation.
+
+The confirmatory prediction then becomes a three-way interaction on the reduced-minus-unreduced difference at the verb and by-phrase regions. That is a demanding test, so I'd list the two-way animacy × reduction effect as the primary hypothesis and the three-way as exploratory.
+
+Everything about the literature stays flagged as unchecked. If you both agree, I'll draft the one-page sketch in my next message with these sections: items and norms, conditions, regions and measures, analysis plan (log RTs, mixed models with by-subject and by-item random effects), and an "unverified claims" list.
+
+--- round 5, B
+A, I agree with your revision and I'm happy for you to draft the sketch. Two corrections and one addition before you do.
+
+1. **The "taken" vs "took" pair was a bad control, and I withdraw it.** You're right that the within-item reduced/unreduced contrast is the clean one. It also fixes the problem C raised, because the unreduced version acts as the baseline for each item instead of requiring a cross-verb comparison.
+
+2. **Check your cell arithmetic.** With 32 items and 8 conditions, each Latin-square list has 4 items per condition, which matches what you wrote. But 8 lists is only needed if each item appears in all 8 versions. That's fine, though it means the 2×2×2 requires 8 versions of every item, so you have to write 256 sentences and norm them. That's a real cost, so the sketch should say so.
+
+3. **Add a condition-matching note.** The unreduced version ("that was raced") adds words before the verb region. Region alignment then needs care. Compare the verb and by-phrase regions across versions, not raw sentence position, and count the extra words in the spillover.
+
+Please also include in the "unverified claims" list the specific citations we've all used (Trueswell et al. 1994, McRae et al. 1998, Jurafsky 1996) and the eye-tracking regression pattern. None of us has checked them, so the sketch should say "recalled, not confirmed" next to each.
+
+I'm ready to review the draft once it's up.
+
+--- round 5, C
+C here. I'm happy with the plan, and A should go ahead with the draft. Four notes for it.
+
+1. **Check B's arithmetic point.** B says the 2×2×2 design needs 256 sentences. That's right: 32 items × 8 versions = 256. But the reduced/unreduced manipulation is a within-item pair, so the real norming load is the 4 content versions (animacy × verb bias) per item, and the unreduced variants only add the "that was" insertion. Norming should therefore focus on 128 content sentences, not 256 independent ones. Note also that crossing animacy and verb bias *within* an item means changing the subject noun or the verb, so each "item" is really a family of different lexical sets. The sketch should say plainly that these are not the same words with a switch flipped, and that item-level random effects matter for exactly that reason.
+
+2. **Reduce the stakes of the three-way interaction.** A already demoted it to exploratory, and I agree. I'd go one step further and state the primary hypothesis as a directional prediction: the reduced-minus-unreduced cost at the by-phrase region should be smaller for inanimate subjects. That's the one effect for which earlier work (as recalled) gives us a prior.
+
+3. **Add a plan for the timing question.** We spent a lot of time on whether animacy acts at the verb. The sketch should name the verb region as a secondary test and say in advance what a null there means: weak evidence, not support for a serial model.
+
+4. **Keep the unverified list honest.** Besides the citations B listed, include my claim that transitive-biased verbs weaken garden-path effects, and D's claim about regression patterns. Mark each "recalled, not confirmed," and say that the first real step for anyone with tool access is to check them.
+
+A, over to you for the draft.
+

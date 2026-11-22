@@ -42,7 +42,7 @@ Each run writes `runs/<timestamp>/transcript.txt`, plus `log.jsonl`, which holds
 
    A run that is also in the published `runs.json` is shown from there.
 
-   While a run goes, watch its `log.jsonl`, for example with a Monitor that prints a line whenever the posted count grows. On each event:
+   While a run goes, watch its `log.jsonl` with a Monitor that checks every second and prints a line whenever the posted count grows, and also when the run process exits. Act on each event straight away, so messages reach the page a few seconds after they are posted (events that pile up while a write is in flight go out together in the next batch). On each event:
    - Run `node viewer/live.mjs <runId> <outDir>`. It writes `run.json` plus one `turn-XXXX.json` for each turn not yet sent, and prints the new turn files.
    - Write them with one `ArtifactData` batch: `set` `live_runs/<runId>` from `run.json`, and `set` each turn into `live_turns`. If a doc already exists, pin the write to its `version`.
 

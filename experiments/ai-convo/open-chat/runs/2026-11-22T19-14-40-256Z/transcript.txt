@@ -1,0 +1,27 @@
+--- Sun 19:00, Maya
+Hey! What's everyone up to tonight?
+
+--- Sun 19:01, Tom
+Hey Maya! Nothing much yet, just finally off the couch. Anyone want to do something later, or is everyone already booked?
+
+--- Sun 19:02, Maya
+Hey Tom! I'm free tonight. What did you have in mind? Jo and Sam, are you around too?
+
+--- Sun 19:06, Sam
+Hey! Yeah, I'm around tonight. I'm up for something. Jo, are you in? Tom, what did you have in mind?
+
+--- Sun 19:07, Maya
+Sounds good, Sam! I'm in. Tom, any ideas? Food, a movie, or just hanging out somewhere?
+
+--- Sun 19:14, Tom
+Food sounds good to me. Sam, are you good with trying that new ramen place on Hill St? If it's full, we can grab pizza instead and go for a walk after. Jo, you in?
+
+--- Sun 19:23, Jo
+Hey all! Ramen sounds great, I'm in. Hill St first, and pizza plus a walk if it's packed. Sam, see you there?
+
+--- Sun 19:28, Tom
+Perfect! I'll head out now. Let's meet at the ramen place on Hill St at 19:45? If we're not all there by then, I'll grab a table and text you where I am.
+
+--- Sun 19:32, Jo
+Sounds good, Tom. 19:45 at Hill St works for me. See you there!
+

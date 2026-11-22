@@ -1,0 +1,377 @@
+## Gareth Pritchard
+Fri 17:00 [the simulation starts: decide where you are and what you are doing] @Gareth's bedroom: 
+   plan: until Fri 18:00: Resting, crossword @Gareth's bedroom / until Fri 19:00: Making tea, chatting if anyone's about @Flat kitchen / until Fri 22:30: Eating, radio drama, then bed @Flat living room
+Fri 17:30 [you looked up from what you were doing] @Gareth's bedroom: Resting, crossword (kept plan)
+   plan: until Fri 18:00: Resting, crossword @Gareth's bedroom / until Fri 19:00: Making tea, chatting if anyone's about @Flat kitchen / until Fri 22:30: Eating, radio drama, then bed @Flat living room
+Fri 18:00   -> Flat kitchen (Making tea, chatting if anyone's about)
+Fri 18:00 [next in your plan: Making tea, chatting if anyone's about @Flat kitchen; you came into Flat kitchen: Anita Patel here] @Flat kitchen: Making tea, chatting if anyone's about (kept plan) | talk to Anita Patel
+   plan: until Fri 19:00: Making tea, chatting if anyone's about @Flat kitchen / until Fri 22:30: Eating, radio drama, then bed @Flat living room
+Fri 18:48 [you looked up from what you were doing; after the conversation] @Flat kitchen: Making tea, chatting if anyone's about
+   remembers: Kitchen chat. Anita made veg curry and offered me some; I declined as I had a pie on. She'd sent job applications with nothing back yet. I knocked for Daniel, who came for the curry. Katarzyna joined, said she'd game and maybe watch an old sitcom.
+   plan: until Fri 19:30: Eating pie and tea @Flat living room / until Fri 22:30: Radio drama, then bed @Flat living room
+Fri 18:48   -> Flat living room (Eating pie and tea)
+Fri 19:08 [you looked up from what you were doing] @Flat living room: Eating pie and tea (kept plan)
+   plan: until Fri 19:30: Eating pie and tea @Flat living room / until Fri 22:30: Radio drama, then bed @Flat living room
+Fri 19:28 [you looked up from what you were doing] @Flat living room: Eating pie and tea
+   plan: until Fri 19:45: Finishing pie and tea @Flat living room / until Fri 22:30: Radio drama, then bed @Flat living room
+Fri 19:43 [you looked up from what you were doing] @Flat living room: Finishing pie and tea
+   plan: until Fri 20:00: Finishing tea, chatting a little @Flat living room / until Fri 22:30: Radio drama, then bed @Flat living room
+Fri 19:58 [you looked up from what you were doing] @Flat living room: Finishing tea, chatting a little
+   plan: until Fri 22:30: Radio drama with housemates, then bed @Flat living room
+Fri 20:38 [you looked up from what you were doing] @Flat living room: Radio drama with housemates, then bed
+   plan: until Fri 22:30: Radio drama with housemates @Flat living room / until Fri 23:00: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:05: Asleep @Gareth's bedroom (asleep)
+Fri 21:08 [you looked up from what you were doing] @Flat living room: Radio drama with housemates
+   plan: until Fri 22:30: Radio drama with housemates @Flat living room / until Fri 23:00: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:05: Asleep @Gareth's bedroom (asleep)
+Fri 21:38 [you looked up from what you were doing] @Flat living room: Radio drama with housemates (kept plan)
+   plan: until Fri 22:30: Radio drama with housemates @Flat living room / until Fri 23:00: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:05: Asleep @Gareth's bedroom (asleep)
+Fri 22:08 [you looked up from what you were doing] @Flat living room: Radio drama with housemates
+   plan: until Fri 22:30: Radio drama with housemates @Flat living room / until Fri 23:00: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:05: Asleep @Gareth's bedroom (asleep)
+Fri 22:28 [you looked up from what you were doing] @Flat living room: Radio drama with housemates
+   plan: until Fri 22:40: Finishing the radio drama, saying goodnight @Flat living room / until Fri 23:00: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:05: Asleep @Gareth's bedroom (asleep)
+Fri 22:38 [you looked up from what you were doing] @Flat living room: Finishing the radio drama, saying goodnight
+   plan: until Fri 22:45: Saying goodnight to Daniel and Katarzyna @Flat living room / until Fri 23:15: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:20: Asleep @Gareth's bedroom (asleep)
+Fri 22:43 [you looked up from what you were doing] @Flat living room: Saying goodnight to Daniel and Katarzyna
+   plan: until Fri 23:15: Getting ready for bed, reading @Gareth's bedroom / until Fri 23:20: Asleep @Gareth's bedroom (asleep)
+Fri 22:43   -> Gareth's bedroom (Getting ready for bed, reading)
+Fri 23:20 [your plan ran out] @Gareth's bedroom: Asleep
+   plan: until Sat 07:30: Asleep @Gareth's bedroom (asleep)
+Sat 07:30 [your plan ran out] @Gareth's bedroom: Asleep
+   the day: Friday: finished work at four, had pie and tea in the living room with the housemates. Rhodri texted about a pub lunch and we settled on Friday 11 December at 12:30. Read in bed from about quarter to eleven.
+   plan: until Sat 08:15: Breakfast, tea, crossword @Flat kitchen / until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 07:30   -> Flat kitchen (Breakfast, tea, crossword)
+Sat 07:33 [you woke up; you came into Flat kitchen: Anita Patel here] @Flat kitchen: Breakfast, tea, crossword (kept plan)
+   plan: until Sat 08:15: Breakfast, tea, crossword @Flat kitchen / until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 08:00 [you looked up from what you were doing] @Flat kitchen: Breakfast, tea, crossword (kept plan)
+   plan: until Sat 08:15: Breakfast, tea, crossword @Flat kitchen / until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 08:15   -> Flat living room (Radio and tidying my shelf and room)
+Sat 08:15 [next in your plan: Radio and tidying my shelf and room @Flat living room] @Flat living room: Radio and tidying my shelf and room (kept plan)
+   plan: until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 08:45 [you looked up from what you were doing] @Flat living room: Radio and tidying my shelf and room (kept plan)
+   plan: until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 09:15 [you looked up from what you were doing] @Flat living room: Radio and tidying my shelf and room (kept plan)
+   plan: until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 09:45 [you looked up from what you were doing] @Flat living room: Radio and tidying my shelf and room (kept plan)
+   plan: until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 10:15 [you looked up from what you were doing] @Flat living room: Radio and tidying my shelf and room (kept plan)
+   plan: until Sat 10:30: Radio and tidying my shelf and room @Flat living room / until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 10:30   -> Local park (Walk, weather permitting)
+Sat 10:30 [next in your plan: Walk, weather permitting @Local park] @Local park: Walk, weather permitting (kept plan)
+   plan: until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 11:00 [you looked up from what you were doing] @Local park: Walk, weather permitting (kept plan)
+   plan: until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 11:30 [you looked up from what you were doing] @Local park: Walk, weather permitting (kept plan)
+   plan: until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 12:00 [you looked up from what you were doing] @Local park: Walk, weather permitting (kept plan)
+   plan: until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 12:30 [you looked up from what you were doing] @Local park: Walk, weather permitting (kept plan)
+   plan: until Sat 13:00: Walk, weather permitting @Local park / until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 13:00   -> Flat kitchen (Lunch)
+Sat 13:00 [next in your plan: Lunch @Flat kitchen; you came into Flat kitchen: Katarzyna Wójcik, Anita Patel here] @Flat kitchen: Lunch (kept plan)
+   plan: until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 13:20 [you looked up from what you were doing] @Flat kitchen: Lunch (kept plan)
+   plan: until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 13:40 [you looked up from what you were doing] @Flat kitchen: Lunch (kept plan)
+   plan: until Sat 14:00: Lunch @Flat kitchen / until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 14:00   -> Gareth's bedroom (Crossword, gardening programme, reading)
+Sat 14:00 [next in your plan: Crossword, gardening programme, reading @Gareth's bedroom] @Gareth's bedroom: Crossword, gardening programme, reading (kept plan)
+   plan: until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 15:00 [you looked up from what you were doing] @Gareth's bedroom: Crossword, gardening programme, reading (kept plan)
+   plan: until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+Sat 16:00 [you looked up from what you were doing] @Gareth's bedroom: Crossword, gardening programme, reading (kept plan)
+   plan: until Sat 18:00: Crossword, gardening programme, reading @Gareth's bedroom / until Sat 23:00: Evening meal and radio drama, then bed @Flat living room
+
+## Katarzyna Wójcik
+Fri 17:00 [the simulation starts: decide where you are and what you are doing] @Katarzyna's bedroom: 
+   plan: until Fri 18:30: gaming, coursework put off @Katarzyna's bedroom / until Fri 19:30: make usual dinner, chat with whoever is around @Flat kitchen / until Fri 23:30: gaming or rewatching sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom
+Fri 17:40 [you looked up from what you were doing] @Katarzyna's bedroom: gaming, coursework put off
+   plan: until Fri 18:30: gaming, coursework put off @Katarzyna's bedroom / until Fri 19:30: make usual dinner, chat with whoever is around @Flat kitchen / until Fri 23:30: gaming or rewatching sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 18:10 [you looked up from what you were doing] @Katarzyna's bedroom: gaming, coursework put off (kept plan)
+   plan: until Fri 18:30: gaming, coursework put off @Katarzyna's bedroom / until Fri 19:30: make usual dinner, chat with whoever is around @Flat kitchen / until Fri 23:30: gaming or rewatching sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 18:30   -> Flat kitchen (make usual dinner, chat with whoever is around)
+Fri 18:30 [you came into Flat kitchen: a conversation is going on; next in your plan: make usual dinner, chat with whoever is around @Flat kitchen; you came into Flat kitchen: Gareth Pritchard, Anita Patel, Daniel Hughes here] @Flat kitchen: make usual dinner, chat with whoever is around (kept plan) | talk to Daniel Hughes
+   plan: until Fri 19:30: make usual dinner, chat with whoever is around @Flat kitchen / until Fri 23:30: gaming or rewatching sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 18:50 [you looked up from what you were doing; after the conversation] @Flat kitchen: make usual dinner, chat with whoever is around (kept plan)
+   remembers: Anita made veg curry, gave me a small plate. Told her it was great, she learned it from a neighbour years ago. Daniel said I can have a sitcom on in the living room. Just chilling tonight.
+   plan: until Fri 19:30: make usual dinner, chat with whoever is around @Flat kitchen / until Fri 23:30: gaming or rewatching sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 19:00 [you looked up from what you were doing] @Flat kitchen: make usual dinner, chat with whoever is around
+   plan: until Fri 19:20: finish curry, wash up plate @Flat kitchen / until Fri 23:30: gaming then old sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 19:10 [you looked up from what you were doing] @Flat kitchen: finish curry, wash up plate (kept plan)
+   plan: until Fri 19:20: finish curry, wash up plate @Flat kitchen / until Fri 23:30: gaming then old sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 19:20   -> Flat living room (gaming then old sitcom)
+Fri 19:20 [next in your plan: gaming then old sitcom @Flat living room; you came into Flat living room: Gareth Pritchard, Daniel Hughes here] @Flat living room: gaming then old sitcom (kept plan)
+   plan: until Fri 23:30: gaming then old sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 20:20 [you looked up from what you were doing] @Flat living room: gaming then old sitcom (kept plan)
+   plan: until Fri 23:30: gaming then old sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 21:20 [you looked up from what you were doing] @Flat living room: gaming then old sitcom (kept plan)
+   plan: until Fri 23:30: gaming then old sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 22:20 [you looked up from what you were doing] @Flat living room: gaming then old sitcom (kept plan)
+   plan: until Fri 23:30: gaming then old sitcom @Flat living room / until Fri 23:59: bed @Katarzyna's bedroom (asleep)
+Fri 23:20 [you looked up from what you were doing] @Flat living room: gaming then old sitcom
+   plan: until Fri 23:40: finish episode, switch off tv and console @Flat living room / until Fri 23:50: brush teeth @Flat bathroom / until Sat 07:30: asleep @Katarzyna's bedroom (asleep)
+Fri 23:35 [you looked up from what you were doing] @Flat living room: finish episode, switch off tv and console
+   plan: until Fri 23:40: finish episode, switch off tv and console @Flat living room / until Fri 23:50: brush teeth @Flat bathroom / until Sat 07:30: asleep @Katarzyna's bedroom (asleep)
+Fri 23:40   -> Flat bathroom (brush teeth)
+Fri 23:40 [next in your plan: brush teeth @Flat bathroom] @Flat bathroom: brush teeth (kept plan)
+   plan: until Fri 23:50: brush teeth @Flat bathroom / until Sat 07:30: asleep @Katarzyna's bedroom (asleep)
+Fri 23:50   -> Katarzyna's bedroom (asleep)
+Sat 07:30 [your plan ran out] @Katarzyna's bedroom: asleep
+   the day: Had Anita's veg curry in the kitchen with the others, chatted a bit. Texted mum I'd ring at the weekend. Gamed then watched an old sitcom in the living room till late, with Anita, Gareth and Daniel drifting in and out. Brushed teeth and went to bed around midnight.
+   plan: until Sat 08:15: lie in, scroll phone @Katarzyna's bedroom / until Sat 09:00: breakfast, toast and tea @Flat kitchen / until Sat 12:00: gaming @Flat living room
+Sat 07:33 [you woke up] @Katarzyna's bedroom: lie in, scroll phone (kept plan)
+   plan: until Sat 08:15: lie in, scroll phone @Katarzyna's bedroom / until Sat 09:00: breakfast, toast and tea @Flat kitchen / until Sat 12:00: gaming @Flat living room
+Sat 07:50 [you looked up from what you were doing] @Katarzyna's bedroom: lie in, scroll phone (kept plan)
+   plan: until Sat 08:15: lie in, scroll phone @Katarzyna's bedroom / until Sat 09:00: breakfast, toast and tea @Flat kitchen / until Sat 12:00: gaming @Flat living room
+Sat 08:10 [you looked up from what you were doing] @Katarzyna's bedroom: lie in, scroll phone
+   plan: until Sat 08:20: lie in, scroll phone @Katarzyna's bedroom / until Sat 09:00: toast and tea @Flat kitchen / until Sat 12:00: gaming @Flat living room
+Sat 08:20   -> Flat kitchen (toast and tea)
+Sat 08:20 [next in your plan: toast and tea @Flat kitchen; you came into Flat kitchen: Daniel Hughes here] @Flat kitchen: toast and tea (kept plan) | talk to Daniel Hughes
+   plan: until Sat 09:00: toast and tea @Flat kitchen / until Sat 12:00: gaming @Flat living room
+Sat 08:28 [after the conversation] @Flat kitchen: toast and tea (kept plan)
+   remembers: Chatted with Daniel over breakfast. He's off to the shop, then a pint with Tony (the one with the bad knee) at the usual pub at eight tonight.
+   plan: until Sat 09:00: toast and tea @Flat kitchen / until Sat 12:00: gaming @Flat living room
+Sat 08:31 [you looked up from what you were doing] @Flat kitchen: toast and tea
+   plan: until Sat 08:50: finish tea, wash up plate @Flat kitchen / until Sat 12:30: gaming @Flat living room
+Sat 08:41 [you looked up from what you were doing] @Flat kitchen: finish tea, wash up plate
+   plan: until Sat 08:50: finish tea, wash up plate @Flat kitchen / until Sat 12:30: gaming @Flat living room
+Sat 08:50   -> Flat living room (gaming)
+Sat 08:50 [next in your plan: gaming @Flat living room; you came into Flat living room: Gareth Pritchard here] @Flat living room: gaming
+   plan: until Sat 12:30: gaming @Flat living room / until Sat 13:00: lunch, something proper @Flat kitchen / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 09:35 [you looked up from what you were doing] @Flat living room: gaming (kept plan)
+   plan: until Sat 12:30: gaming @Flat living room / until Sat 13:00: lunch, something proper @Flat kitchen / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 10:20 [you looked up from what you were doing] @Flat living room: gaming (kept plan)
+   plan: until Sat 12:30: gaming @Flat living room / until Sat 13:00: lunch, something proper @Flat kitchen / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 11:05 [you looked up from what you were doing] @Flat living room: gaming (kept plan)
+   plan: until Sat 12:30: gaming @Flat living room / until Sat 13:00: lunch, something proper @Flat kitchen / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 11:50 [you looked up from what you were doing] @Flat living room: gaming (kept plan)
+   plan: until Sat 12:30: gaming @Flat living room / until Sat 13:00: lunch, something proper @Flat kitchen / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 12:30   -> Flat kitchen (lunch, something proper)
+Sat 12:30 [next in your plan: lunch, something proper @Flat kitchen; you came into Flat kitchen: Anita Patel, Daniel Hughes here] @Flat kitchen: lunch, something proper
+   plan: until Sat 12:55: making and eating lunch @Flat kitchen / until Sat 13:00: heading to room, getting ready to ring mum @Katarzyna's bedroom / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 12:43 [you looked up from what you were doing; after the conversation] @Flat kitchen: making and eating lunch (kept plan)
+   remembers: Anita is prepping veg for tomorrow's roast chicken, her son and family coming at two with a toddler. Parboil potatoes ten minutes, rough them up, leave veg in cold water overnight.
+   plan: until Sat 12:55: making and eating lunch @Flat kitchen / until Sat 13:00: heading to room, getting ready to ring mum @Katarzyna's bedroom / until Sat 13:40: phone call with mum @Katarzyna's bedroom
+Sat 13:21 [you looked up from what you were doing; after the conversation] @Flat kitchen: making and eating lunch
+   remembers: Mum rang back when I missed her. Chatted in Polish while I ate pasta in my room. Told her I'm not working, just the course, leaving the assignment late as usual. Dad was in the garage fixing his bike and came to the phone at the end.
+   plan: until Sat 13:40: talking to dad on the phone, then mum @Katarzyna's bedroom
+Sat 13:21   -> Katarzyna's bedroom (talking to dad on the phone, then mum)
+Sat 13:40 [your plan ran out] @Katarzyna's bedroom: talking to dad on the phone, then mum
+   plan: until Sat 13:45: on the phone with dad, then mum @Katarzyna's bedroom / until Sat 15:30: gaming, washing up the plate first @Flat living room / until Sat 18:00: look at the coursework brief, part 2 @Katarzyna's bedroom / until Sat 19:00: dinner, chat with housemates @Flat kitchen / until Sat 23:30: gaming or old sitcom @Flat living room / until Sat 23:59: bed @Katarzyna's bedroom
+Sat 13:45   -> Flat living room (gaming, washing up the plate first)
+Sat 13:45 [next in your plan: gaming, washing up the plate first @Flat living room; you came into Flat living room: Daniel Hughes here] @Flat living room: gaming, washing up the plate first (kept plan) | talk to Daniel Hughes
+   plan: until Sat 15:30: gaming, washing up the plate first @Flat living room / until Sat 18:00: look at the coursework brief, part 2 @Katarzyna's bedroom / until Sat 19:00: dinner, chat with housemates @Flat kitchen / until Sat 23:30: gaming or old sitcom @Flat living room / until Sat 23:59: bed @Katarzyna's bedroom
+Sat 14:00 [after the conversation] @Flat living room: gaming, washing up the plate first (kept plan)
+   remembers: Sat down on the sofa with Daniel to watch the football. He shifted over to make room. Not much said.
+   plan: until Sat 15:30: gaming, washing up the plate first @Flat living room / until Sat 18:00: look at the coursework brief, part 2 @Katarzyna's bedroom / until Sat 19:00: dinner, chat with housemates @Flat kitchen / until Sat 23:30: gaming or old sitcom @Flat living room / until Sat 23:59: bed @Katarzyna's bedroom
+Sat 14:45 [you looked up from what you were doing] @Flat living room: gaming, washing up the plate first (kept plan)
+   plan: until Sat 15:30: gaming, washing up the plate first @Flat living room / until Sat 18:00: look at the coursework brief, part 2 @Katarzyna's bedroom / until Sat 19:00: dinner, chat with housemates @Flat kitchen / until Sat 23:30: gaming or old sitcom @Flat living room / until Sat 23:59: bed @Katarzyna's bedroom
+Sat 15:30   -> Katarzyna's bedroom (look at the coursework brief, part 2)
+Sat 15:30 [next in your plan: look at the coursework brief, part 2 @Katarzyna's bedroom] @Katarzyna's bedroom: look at the coursework brief, part 2 (kept plan)
+   plan: until Sat 18:00: look at the coursework brief, part 2 @Katarzyna's bedroom / until Sat 19:00: dinner, chat with housemates @Flat kitchen / until Sat 23:30: gaming or old sitcom @Flat living room / until Sat 23:59: bed @Katarzyna's bedroom
+Sat 16:15 [you looked up from what you were doing] @Katarzyna's bedroom: look at the coursework brief, part 2 (kept plan)
+   plan: until Sat 18:00: look at the coursework brief, part 2 @Katarzyna's bedroom / until Sat 19:00: dinner, chat with housemates @Flat kitchen / until Sat 23:30: gaming or old sitcom @Flat living room / until Sat 23:59: bed @Katarzyna's bedroom
+
+## Anita Patel
+Fri 17:00 [the simulation starts: decide where you are and what you are doing] @Anita's bedroom: 
+   plan: until Fri 17:30: job search emails and tidying @Anita's bedroom / until Fri 18:30: cooking supper from scratch @Flat kitchen / until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 17:15 [you looked up from what you were doing] @Anita's bedroom: job search emails and tidying (kept plan)
+   plan: until Fri 17:30: job search emails and tidying @Anita's bedroom / until Fri 18:30: cooking supper from scratch @Flat kitchen / until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 17:30   -> Flat kitchen (cooking supper from scratch)
+Fri 17:30 [next in your plan: cooking supper from scratch @Flat kitchen] @Flat kitchen: cooking supper from scratch (kept plan)
+   plan: until Fri 18:30: cooking supper from scratch @Flat kitchen / until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 17:40 [you looked up from what you were doing] @Flat kitchen: cooking supper from scratch (kept plan)
+   plan: until Fri 18:30: cooking supper from scratch @Flat kitchen / until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 17:50 [you looked up from what you were doing] @Flat kitchen: cooking supper from scratch (kept plan)
+   plan: until Fri 18:30: cooking supper from scratch @Flat kitchen / until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 18:00 [you looked up from what you were doing] @Flat kitchen: cooking supper from scratch (kept plan) | talk to Gareth Pritchard
+   plan: until Fri 18:30: cooking supper from scratch @Flat kitchen / until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 18:50 [you looked up from what you were doing; after the conversation] @Flat kitchen: eating and washing up (kept plan)
+   remembers: Served vegetable curry and rice to Daniel and Katarzyna; Gareth had his pie. Katarzyna asked about the recipe and I said I learned it from a neighbour years ago. Everyone is staying in for a quiet Friday evening.
+   plan: until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 18:53 [next in your plan: eating and washing up @Flat kitchen] @Flat kitchen: eating and washing up (kept plan)
+   plan: until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 19:00 [you looked up from what you were doing] @Flat kitchen: eating and washing up (kept plan)
+   plan: until Fri 19:30: eating and washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 19:10 [you looked up from what you were doing] @Flat kitchen: eating and washing up
+   plan: until Fri 19:30: finishing curry, washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 19:20 [you looked up from what you were doing] @Flat kitchen: finishing curry, washing up (kept plan)
+   plan: until Fri 19:30: finishing curry, washing up @Flat kitchen / until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 19:30   -> Flat living room (crossword and radio, then bed)
+Fri 19:30 [next in your plan: crossword and radio, then bed @Flat living room; you came into Flat living room: Gareth Pritchard, Katarzyna Wójcik, Daniel Hughes here] @Flat living room: crossword and radio, then bed (kept plan)
+   plan: until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 20:00 [you looked up from what you were doing] @Flat living room: crossword and radio, then bed (kept plan)
+   plan: until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 20:30 [you looked up from what you were doing] @Flat living room: crossword and radio, then bed (kept plan)
+   plan: until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 21:00 [you looked up from what you were doing] @Flat living room: crossword and radio, then bed (kept plan)
+   plan: until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 21:30 [you looked up from what you were doing] @Flat living room: crossword and radio, then bed (kept plan)
+   plan: until Fri 22:30: crossword and radio, then bed @Flat living room
+Fri 22:00 [you looked up from what you were doing] @Flat living room: crossword and radio, then bed
+   plan: until Fri 22:30: crossword and radio @Flat living room / until Fri 23:00: bed @Anita's bedroom / until Sat 06:30: sleeping @Anita's bedroom (asleep)
+Fri 22:30   -> Anita's bedroom (bed)
+Fri 22:30 [next in your plan: bed @Anita's bedroom] @Anita's bedroom: bed
+   plan: until Fri 23:00: in bed, lights out @Anita's bedroom / until Sat 06:30: sleeping @Anita's bedroom (asleep)
+Sat 06:30 [your plan ran out] @Anita's bedroom: sleeping
+   the day: Friday: Daniel was off work and around the flat. Sheila texted about the Sunday canal walk and we fixed 9am at the canal car park by the lock, back by one because my nephew is coming. Did the crossword and listened to the radio, then went to bed about half ten.
+   plan: until Sat 07:15: Get up, make bed, wash and dress @Anita's bedroom / until Sat 08:30: Breakfast, tidy kitchen, check emails and job searches @Flat kitchen / until Sat 10:30: Job applications and emails @Flat living room / until Sat 12:30: Walk out, errands and shopping for dinner @Corner shop / until Sat 18:00: Bake bread, cook from scratch @Flat kitchen
+Sat 06:33 [you woke up] @Anita's bedroom: Get up, make bed, wash and dress
+   plan: until Sat 07:15: Get up, make bed, wash and dress @Anita's bedroom / until Sat 08:30: Breakfast, tidy kitchen, check emails and job searches @Flat kitchen / until Sat 10:30: Job applications and emails @Flat living room / until Sat 12:30: Walk out, errands and shopping for dinner @Corner shop / until Sat 18:00: Bake bread, cook from scratch @Flat kitchen
+Sat 07:15   -> Flat kitchen (Breakfast, tidy kitchen, check emails and job searches)
+Sat 07:15 [next in your plan: Breakfast, tidy kitchen, check emails and job searches @Flat kitchen] @Flat kitchen: Breakfast, tidy kitchen, check emails and job searches (kept plan)
+   plan: until Sat 08:30: Breakfast, tidy kitchen, check emails and job searches @Flat kitchen / until Sat 10:30: Job applications and emails @Flat living room / until Sat 12:30: Walk out, errands and shopping for dinner @Corner shop / until Sat 18:00: Bake bread, cook from scratch @Flat kitchen
+Sat 07:35 [you looked up from what you were doing] @Flat kitchen: Breakfast, tidy kitchen, check emails and job searches | talk to Daniel Hughes
+   plan: until Sat 08:15: Breakfast, tidy kitchen, quick email check @Flat kitchen / until Sat 08:40: Get ready for canal walk, boots and coat @Anita's bedroom / until Sat 09:00: Walk to canal car park by the lock @Local park
+Sat 07:49 [after the conversation] @Flat kitchen: Breakfast, tidy kitchen, quick email check (kept plan)
+   remembers: Morning chat with Daniel in the kitchen over tea and toast. Told him and Gareth there was tea in the pot. Nothing else to sort.
+   plan: until Sat 08:15: Breakfast, tidy kitchen, quick email check @Flat kitchen / until Sat 08:40: Get ready for canal walk, boots and coat @Anita's bedroom / until Sat 09:00: Walk to canal car park by the lock @Local park
+Sat 07:52 [you looked up from what you were doing] @Flat kitchen: Breakfast, tidy kitchen, quick email check (kept plan)
+   plan: until Sat 08:15: Breakfast, tidy kitchen, quick email check @Flat kitchen / until Sat 08:40: Get ready for canal walk, boots and coat @Anita's bedroom / until Sat 09:00: Walk to canal car park by the lock @Local park
+Sat 08:05 [you looked up from what you were doing] @Flat kitchen: Breakfast, tidy kitchen, quick email check (kept plan)
+   plan: until Sat 08:15: Breakfast, tidy kitchen, quick email check @Flat kitchen / until Sat 08:40: Get ready for canal walk, boots and coat @Anita's bedroom / until Sat 09:00: Walk to canal car park by the lock @Local park
+Sat 08:15   -> Anita's bedroom (Get ready for canal walk, boots and coat)
+Sat 08:15 [next in your plan: Get ready for canal walk, boots and coat @Anita's bedroom] @Anita's bedroom: Get ready for canal walk, boots and coat (kept plan)
+   plan: until Sat 08:40: Get ready for canal walk, boots and coat @Anita's bedroom / until Sat 09:00: Walk to canal car park by the lock @Local park
+Sat 08:40   -> Local park (Walk to canal car park by the lock)
+Sat 08:40 [next in your plan: Walk to canal car park by the lock @Local park] @Local park: Walk to canal car park by the lock
+   plan: until Sat 09:15: Walk round the park, wait for Sheila's reply @Local park / until Sat 10:30: Back home, job searches and emails, plan Sunday lunch for Nikhil @Flat kitchen
+Sat 08:50 [you looked up from what you were doing] @Local park: Walk round the park, wait for Sheila's reply
+   plan: until Sat 09:15: Short walk round the park, then head home @Local park / until Sat 10:30: Job searches and emails, plan Sunday lunch for Nikhil and make shopping list @Flat kitchen
+Sat 09:15   -> Flat kitchen (Job searches and emails, plan Sunday lunch for Nikhil and make shopping list)
+Sat 09:15 [next in your plan: Job searches and emails, plan Sunday lunch for Nikhil and make shopping list @Flat kitchen] @Flat kitchen: Job searches and emails, plan Sunday lunch for Nikhil and make shopping list
+   plan: until Sat 10:30: Job searches and emails, then plan Sunday lunch and write shopping list @Flat kitchen / until Sat 11:30: Buy shopping for Sunday lunch @Corner shop [errand: buy items on the shopping list for Nikhil's Sunday lunch] / until Sat 12:30: Put shopping away, prepare what can be done ahead @Flat kitchen
+Sat 09:45 [you looked up from what you were doing] @Flat kitchen: Job searches and emails, then plan Sunday lunch and write shopping list (kept plan)
+   plan: until Sat 10:30: Job searches and emails, then plan Sunday lunch and write shopping list @Flat kitchen / until Sat 11:30: Buy shopping for Sunday lunch @Corner shop [errand: buy items on the shopping list for Nikhil's Sunday lunch] / until Sat 12:30: Put shopping away, prepare what can be done ahead @Flat kitchen
+Sat 10:15 [you looked up from what you were doing] @Flat kitchen: Job searches and emails, then plan Sunday lunch and write shopping list (kept plan)
+   plan: until Sat 10:30: Job searches and emails, then plan Sunday lunch and write shopping list @Flat kitchen / until Sat 11:30: Buy shopping for Sunday lunch @Corner shop [errand: buy items on the shopping list for Nikhil's Sunday lunch] / until Sat 12:30: Put shopping away, prepare what can be done ahead @Flat kitchen
+Sat 10:30   -> Corner shop (Buy shopping for Sunday lunch)
+Sat 10:30 [next in your plan: Buy shopping for Sunday lunch @Corner shop; you came into Corner shop: Daniel Hughes here] @Corner shop: Buy shopping for Sunday lunch (kept plan)
+   plan: until Sat 11:30: Walk home, put shopping away @Flat kitchen / until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 10:30   -> Flat kitchen (Walk home, put shopping away)
+Sat 10:33 [you came into Flat kitchen: Daniel Hughes here] @Flat kitchen: Walk home, put shopping away (kept plan)
+   plan: until Sat 11:30: Put shopping away @Flat kitchen / until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 10:48 [you looked up from what you were doing] @Flat kitchen: Put shopping away (kept plan)
+   plan: until Sat 11:30: Put shopping away @Flat kitchen / until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 11:03 [you looked up from what you were doing] @Flat kitchen: Put shopping away (kept plan)
+   plan: until Sat 11:30: Put shopping away @Flat kitchen / until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 11:18 [you looked up from what you were doing] @Flat kitchen: Put shopping away (kept plan)
+   plan: until Sat 11:30: Put shopping away @Flat kitchen / until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 11:30 [next in your plan: Prepare what can be done ahead for Sunday lunch @Flat kitchen] @Flat kitchen: Prepare what can be done ahead for Sunday lunch (kept plan)
+   plan: until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 11:50 [you looked up from what you were doing] @Flat kitchen: Prepare what can be done ahead for Sunday lunch (kept plan)
+   plan: until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 12:10 [you looked up from what you were doing] @Flat kitchen: Prepare what can be done ahead for Sunday lunch (kept plan)
+   plan: until Sat 12:30: Prepare what can be done ahead for Sunday lunch @Flat kitchen
+Sat 12:30 [your plan ran out] @Flat kitchen: Prepare what can be done ahead for Sunday lunch | talk to Katarzyna Wójcik
+   plan: until Sat 13:15: Prepare Sunday lunch items ahead, peel veg, make dough or marinade @Flat kitchen / until Sat 14:00: Light lunch, wash up, wipe worktops @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, early night after setting out boots for the canal walk @Flat living room
+Sat 12:42 [after the conversation] @Flat kitchen: Prepare Sunday lunch items ahead, peel veg, make dough or marinade (kept plan)
+   remembers: Chatted with Katarzyna while peeling veg for tomorrow's roast chicken lunch. Told her about parboiling the potatoes and leaving veg in cold water overnight. Veg is now on my fridge shelf.
+   plan: until Sat 13:15: Prepare Sunday lunch items ahead, peel veg, make dough or marinade @Flat kitchen / until Sat 14:00: Light lunch, wash up, wipe worktops @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, early night after setting out boots for the canal walk @Flat living room
+Sat 12:50 [you looked up from what you were doing] @Flat kitchen: Prepare Sunday lunch items ahead, peel veg, make dough or marinade
+   plan: until Sat 13:15: Finish veg prep, put away, wipe worktops @Flat kitchen / until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 13:00 [you looked up from what you were doing] @Flat kitchen: Finish veg prep, put away, wipe worktops (kept plan)
+   plan: until Sat 13:15: Finish veg prep, put away, wipe worktops @Flat kitchen / until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 13:10 [you looked up from what you were doing] @Flat kitchen: Finish veg prep, put away, wipe worktops
+   plan: until Sat 13:20: Finish veg prep, wipe worktops @Flat kitchen / until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 13:15 [you looked up from what you were doing] @Flat kitchen: Finish veg prep, wipe worktops (kept plan)
+   plan: until Sat 13:20: Finish veg prep, wipe worktops @Flat kitchen / until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 13:20 [next in your plan: Light lunch, wash up @Flat kitchen] @Flat kitchen: Light lunch, wash up (kept plan)
+   plan: until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 13:35 [you looked up from what you were doing] @Flat kitchen: Light lunch, wash up (kept plan)
+   plan: until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 13:50 [you looked up from what you were doing] @Flat kitchen: Light lunch, wash up (kept plan)
+   plan: until Sat 14:00: Light lunch, wash up @Flat kitchen / until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 14:00   -> Local park (Walk, then crossword and radio quiz)
+Sat 14:00 [next in your plan: Walk, then crossword and radio quiz @Local park] @Local park: Walk, then crossword and radio quiz (kept plan)
+   plan: until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 14:30 [you looked up from what you were doing] @Local park: Walk, then crossword and radio quiz (kept plan)
+   plan: until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 15:00 [you looked up from what you were doing] @Local park: Walk, then crossword and radio quiz (kept plan)
+   plan: until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 15:30 [you looked up from what you were doing] @Local park: Walk, then crossword and radio quiz (kept plan)
+   plan: until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 16:00 [you looked up from what you were doing] @Local park: Walk, then crossword and radio quiz (kept plan)
+   plan: until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+Sat 16:30 [you looked up from what you were doing] @Local park: Walk, then crossword and radio quiz (kept plan)
+   plan: until Sat 17:00: Walk, then crossword and radio quiz @Local park / until Sat 19:30: Cook supper from scratch @Flat kitchen / until Sat 22:30: Radio, crossword, set out boots for canal walk, early night @Flat living room
+
+## Daniel Hughes
+Fri 17:00 [the simulation starts: decide where you are and what you are doing] @Daniel's bedroom: 
+   plan: until Fri 18:00: relaxing, fiddling with phone @Daniel's bedroom / until Fri 19:00: making dinner and eating @Flat kitchen / until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 17:30 [you looked up from what you were doing] @Daniel's bedroom: relaxing, fiddling with phone (kept plan)
+   plan: until Fri 18:00: relaxing, fiddling with phone @Daniel's bedroom / until Fri 19:00: making dinner and eating @Flat kitchen / until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 18:00   -> Flat kitchen (making dinner and eating)
+Fri 18:00 [next in your plan: making dinner and eating @Flat kitchen; you came into Flat kitchen: Gareth Pritchard, Anita Patel here] @Flat kitchen: making dinner and eating (kept plan)
+   plan: until Fri 19:00: making dinner and eating @Flat kitchen / until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 18:50 [you looked up from what you were doing; after the conversation] @Flat kitchen: making dinner and eating (kept plan)
+   remembers: Anita made veg curry and fed me and Katarzyna. I helped with plates and rice. Katarzyna's gaming then maybe a sitcom, I said she can have the living room telly. Just chilling tonight.
+   plan: until Fri 19:00: making dinner and eating @Flat kitchen / until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 19:00   -> Flat living room (watching TV with housemates)
+Fri 19:00 [next in your plan: watching TV with housemates @Flat living room; you came into Flat living room: Gareth Pritchard here] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 19:30 [you looked up from what you were doing] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 20:00 [you looked up from what you were doing] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 20:30 [you looked up from what you were doing] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 21:00 [you looked up from what you were doing] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 21:30 [you looked up from what you were doing] @Flat living room: watching TV with housemates
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 22:00 [you looked up from what you were doing] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 22:30 [you looked up from what you were doing] @Flat living room: watching TV with housemates (kept plan)
+   plan: until Fri 23:00: watching TV with housemates @Flat living room / until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Fri 23:00   -> Daniel's bedroom (going to bed)
+Fri 23:00 [next in your plan: going to bed @Daniel's bedroom] @Daniel's bedroom: going to bed (kept plan)
+   plan: until Fri 23:30: going to bed @Daniel's bedroom / until Sat 07:30: sleeping @Daniel's bedroom (asleep)
+Sat 07:30 [your plan ran out] @Daniel's bedroom: sleeping
+   the day: Fri was a day off. Spent the evening in the living room with the others watching TV. Tony texted about getting lates on the rota for the third week running. Agreed to a pint with him Saturday at 8 at the usual. Bed at 11.
+   plan: until Sat 08:30: breakfast and tea @Flat kitchen / until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 07:30   -> Flat kitchen (breakfast and tea)
+Sat 07:33 [you woke up; you came into Flat kitchen: Gareth Pritchard, Anita Patel here] @Flat kitchen: breakfast and tea (kept plan)
+   plan: until Sat 08:30: breakfast and tea @Flat kitchen / until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 07:49 [you looked up from what you were doing; after the conversation] @Flat kitchen: breakfast and tea (kept plan)
+   remembers: Morning chat with Anita in the kitchen. She asked about the kettle and I said it was still hot. Making toast, nothing else said.
+   plan: until Sat 08:30: breakfast and tea @Flat kitchen / until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 08:00 [you looked up from what you were doing] @Flat kitchen: breakfast and tea (kept plan)
+   plan: until Sat 08:30: breakfast and tea @Flat kitchen / until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 08:15 [you looked up from what you were doing] @Flat kitchen: breakfast and tea (kept plan)
+   plan: until Sat 08:30: breakfast and tea @Flat kitchen / until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 08:27 [after the conversation] @Flat kitchen: breakfast and tea (kept plan)
+   remembers: Quick chat with Katarzyna over breakfast. Told her I'm having a pint with Tony tonight at the usual, 8. Said I'd do the shopping first and headed off.
+   plan: until Sat 08:30: breakfast and tea @Flat kitchen / until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 08:30   -> Corner shop (bits of shopping, then tinker with phone/car)
+Sat 08:30 [next in your plan: bits of shopping, then tinker with phone/car @Corner shop] @Corner shop: bits of shopping, then tinker with phone/car (kept plan)
+   plan: until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 09:00 [you looked up from what you were doing] @Corner shop: bits of shopping, then tinker with phone/car (kept plan)
+   plan: until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 09:30 [you looked up from what you were doing] @Corner shop: bits of shopping, then tinker with phone/car (kept plan)
+   plan: until Sat 12:30: bits of shopping, then tinker with phone/car @Corner shop / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 10:00 [you looked up from what you were doing] @Corner shop: bits of shopping, then tinker with phone/car
+   plan: until Sat 10:30: finish shopping, head home @Corner shop / until Sat 12:30: put shopping away, tinker with phone @Flat kitchen / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 10:15 [you looked up from what you were doing] @Corner shop: finish shopping, head home (kept plan)
+   plan: until Sat 10:30: finish shopping, head home @Corner shop / until Sat 12:30: put shopping away, tinker with phone @Flat kitchen / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 10:30   -> Flat kitchen (put shopping away, tinker with phone)
+Sat 10:30 [next in your plan: put shopping away, tinker with phone @Flat kitchen] @Flat kitchen: put shopping away, tinker with phone (kept plan)
+   plan: until Sat 12:30: put shopping away, tinker with phone @Flat kitchen / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 11:00 [you looked up from what you were doing] @Flat kitchen: put shopping away, tinker with phone (kept plan)
+   plan: until Sat 12:30: put shopping away, tinker with phone @Flat kitchen / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 11:30 [you looked up from what you were doing] @Flat kitchen: put shopping away, tinker with phone (kept plan)
+   plan: until Sat 12:30: put shopping away, tinker with phone @Flat kitchen / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 12:00 [you looked up from what you were doing] @Flat kitchen: put shopping away, tinker with phone (kept plan)
+   plan: until Sat 12:30: put shopping away, tinker with phone @Flat kitchen / until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 12:30   -> Flat living room (watch football, relax)
+Sat 12:30 [next in your plan: watch football, relax @Flat living room] @Flat living room: watch football, relax (kept plan)
+   plan: until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 13:30 [you looked up from what you were doing] @Flat living room: watch football, relax (kept plan)
+   plan: until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 14:00 [after the conversation] @Flat living room: watch football, relax (kept plan)
+   remembers: Katarzyna came in to the living room and sat down to watch the match. I made room on the sofa. Not much else said.
+   plan: until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 14:30 [you looked up from what you were doing] @Flat living room: watch football, relax (kept plan)
+   plan: until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 15:30 [you looked up from what you were doing] @Flat living room: watch football, relax (kept plan)
+   plan: until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub
+Sat 16:30 [you looked up from what you were doing] @Flat living room: watch football, relax (kept plan)
+   plan: until Sat 17:30: watch football, relax @Flat living room / until Sat 19:30: tea, get ready @Flat kitchen / until Sat 23:30: pint with Tony @Local pub

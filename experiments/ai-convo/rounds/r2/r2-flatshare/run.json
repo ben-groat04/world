@@ -1,0 +1,46 @@
+{
+ "label": "r2-flatshare",
+ "seed": 2201,
+ "args": {
+  "label": "r2-flatshare",
+  "setting": "a rented shared flat in an English city",
+  "dateNote": "Friday 27 November 2026",
+  "startDow": 4,
+  "startHour": 17,
+  "seed": 2201,
+  "hours": 24,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Fri 17:00",
+  "to": "Sat 17:00",
+  "hours": 24
+ },
+ "totalTokens": 1999860,
+ "agentCount": 346,
+ "stats": {
+  "turns": {
+   "Gareth Pritchard": 35,
+   "Katarzyna Wójcik": 36,
+   "Anita Patel": 54,
+   "Daniel Hughes": 34
+  },
+  "calls": 346,
+  "simCalls": 340,
+  "maxCalls": 2460,
+  "byFor": {
+   "generator": 6,
+   "Gareth Pritchard": 46,
+   "Katarzyna Wójcik": 65,
+   "Anita Patel": 80,
+   "Daniel Hughes": 57,
+   "world": 81,
+   "Halina Wójcik": 11
+  },
+  "sceneLines": 98,
+  "promptChars": 1261801,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

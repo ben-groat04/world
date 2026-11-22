@@ -1,0 +1,363 @@
+[Fri 17:00] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Resting, crossword" at Gareth's bedroom, until Fri 18:00
+   reason: Quiet rest in his room; nothing prompts contact right now.
+[Fri 17:00] text (at Fri 17:10) Priya Nair → Katarzyna Wójcik: hey are you doing the coursework over the weekend? I've not started either lol. did you get what the brief wants for part 2?
+   item: Katarzyna Wójcik starts "gaming, coursework put off" at Katarzyna's bedroom, until Fri 18:30
+   reason: Course mate casually checks in on deadline on a Friday evening.
+[Fri 17:00] none Anita Patel: 
+   item: Anita Patel starts "job search emails and tidying" at Anita's bedroom, until Fri 17:30
+   reason: She is busy with emails and tidying; nothing comes of it.
+[Fri 17:00] text (at Fri 17:15) Callum Hughes → Daniel Hughes: you around Sunday? mum wants us both for dinner. also look at this https://youtu.be/dQw4w
+   item: Daniel Hughes starts "relaxing, fiddling with phone" at Daniel's bedroom, until Fri 18:00
+   reason: Brother texts family plans and a meme on a Friday evening.
+[Fri 17:30] text (at Fri 17:50) Nikhil Patel → Anita Patel: Hi mum, are we still on for Sunday? Can I bring the car seat back then?
+   item: Anita Patel starts "cooking supper from scratch" at Flat kitchen, until Fri 18:30
+   reason: Nikhil is brief and practical and texts rather than calls; a Friday evening logistics message is ordinary.
+[Fri 17:40] text (at Fri 17:44) Callum Hughes → Daniel Hughes: 2ish i think. mum said come hungry
+   item: Daniel Hughes texted Callum Hughes: "yeah sunday's fine. what time?"
+   reason: Callum answers the time question briefly, as a relaxed younger brother would, a few minutes after Daniel's text.
+[Fri 17:40] text (at Fri 17:48) Priya Nair → Katarzyna Wójcik: haha same. ok part 2 plus reflection makes sense, I'll check the brief tomorrow too. let me know if you find out anything 😂
+   item: Katarzyna Wójcik texted Priya Nair: "hey sorry only just saw this. not started either lol. i think part 2 wants the analysis bit plus the short reflection? not 100% sure, will look at the brief properly tomorrow 😅"
+   reason: Classmate replies casually to the text just sent.
+[Fri 17:40] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "gaming, coursework put off" at Katarzyna's bedroom, until Fri 18:30
+   reason: Alone in her bedroom gaming; nobody is placed there and nothing else ordinarily comes of it right now.
+[Fri 18:00] none Nikhil Patel → Anita Patel: 
+   item: Anita Patel texted Nikhil Patel: "Hello Nikhil. Yes, Sunday is still fine. Bring the car seat back then, and let me know roughly what time you will arrive."
+   reason: Nikhil has just been answered; he would reply later if at all, and nothing needs to happen now.
+[Fri 18:00] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Making tea, chatting if anyone's about" at Flat kitchen, until Fri 19:00
+   reason: Making tea in the kitchen with Anita and Daniel there; no background person is placed and none of his contacts has a reason to get in touch right now.
+[Fri 18:00] text (at Fri 18:05) Callum Hughes → Daniel Hughes: cool, i'll tell mum. you bringing anything or just yourself
+   item: Daniel Hughes starts "making dinner and eating" at Flat kitchen, until Fri 19:00
+   reason: Callum is mid-conversation about Sunday dinner and would plausibly follow up shortly after Daniel's last reply.
+[Fri 18:00] none Callum Hughes → Daniel Hughes: 
+   item: Daniel Hughes texted Callum Hughes: "ok see you then"
+   reason: The exchange has reached its natural end; Callum has no need to reply to 'ok see you then' and nothing else is prompting contact.
+[Fri 18:19] text (at Fri 18:25) Callum Hughes → Daniel Hughes: will ask her. probably wants nothing lol
+   item: Daniel Hughes texted Callum Hughes: "just me. unless mum wants something picking up"
+   reason: Callum is brief and relaxed; a short reply to Daniel's offer is natural.
+[Fri 18:30] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "make usual dinner, chat with whoever is around" at Flat kitchen, until Fri 19:30
+   reason: Housemates Gareth, Anita and Daniel are already in the kitchen; no extra background person needed, and nothing else needs to happen.
+[Fri 18:30] text (at Fri 18:45) Halina Wójcik → Katarzyna Wójcik: Cześć kochanie, jadłaś już coś ciepłego dzisiaj? Zadzwoń jak będziesz miała chwilę w weekend 🙂
+   item: Katarzyna Wójcik starts "make usual dinner, chat with whoever is around" at Flat kitchen, until Fri 19:30
+   reason: Her mum texts a few times a week and worries about her eating; Friday dinner time fits.
+[Fri 18:48] text (at Fri 19:02) Rhodri Evans → Gareth Pritchard: Alright Gareth, fancy a pub lunch some time in December before everyone disappears for Christmas? My treat if you pick the place.
+   item: Gareth Pritchard starts "Eating pie and tea" at Flat living room, until Fri 19:30
+   reason: Rhodri is an occasional fond texter; a Friday evening message about a lunch is ordinary and low-key.
+[Fri 18:53] none Halina Wójcik → Katarzyna Wójcik: 
+   item: Katarzyna Wójcik texted Halina Wójcik: "hej mamo, jem teraz curry 🙂 zadzwonię w weekend"
+   reason: Halina has already had her reply and will wait for the weekend call; nothing more now.
+[Fri 18:53] none Anita Patel: 
+   item: Anita Patel starts "eating and washing up" at Flat kitchen, until Fri 19:30
+   reason: Katarzyna and Daniel are already in the kitchen, no one else is there, and no contact reaches out during a short meal on a Friday evening.
+[Fri 19:00] none Daniel Hughes: 
+   item: Daniel Hughes starts "watching TV with housemates" at Flat living room, until Fri 23:00
+   reason: Quiet Friday evening with Gareth already in the room; no background person needs to be present or start talking.
+[Fri 19:00] text (at Fri 19:25) Tony Briggs → Daniel Hughes: mate did you see the rota for next week, they've got me on lates again
+   item: Daniel Hughes starts "watching TV with housemates" at Flat living room, until Fri 23:00
+   reason: Tony is a fellow driver who sends shift moans on a Friday evening; short and ordinary.
+[Fri 19:00] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "finish curry, wash up plate" at Flat kitchen, until Fri 19:20
+   reason: Quiet moment finishing curry; her mum and Priya were already dealt with recently, nothing new due.
+[Fri 19:00] text (at Fri 19:08) Sheila Barker → Anita Patel: Hi Anita! Are you still up for the walk Sunday morning? I found a nice route round the canal, about 6 miles. Let me know 🙂
+   item: Anita Patel starts "eating and washing up" at Flat kitchen, until Fri 19:30
+   reason: Walking friend ordinarily texts about weekend routes on a Friday evening.
+[Fri 19:10] text (at Fri 19:22) Rhodri Evans → Gareth Pritchard: Friday the 11th suits me fine. I'll find somewhere with a decent fire and book us a table for 12:30. Will text you the name nearer the time.
+   item: Gareth Pritchard texted Rhodri Evans: "Evening Rhodri. A pub lunch would be good, thank you. I'm at work weekdays but any Friday in December suits me. Shall we say Friday the 11th? You can pick the place, I'll see to the next round."
+   reason: Rhodri is an occasional fond texter and would reply briefly to confirm the date.
+[Fri 19:10] text (at Fri 19:16) Sheila Barker → Anita Patel: Lovely! How about 9am at the canal car park by the lock? That should get us back well before one. I'll bring a flask 🙂
+   item: Anita Patel texted Sheila Barker: "Hello Sheila. Yes, I am still up for Sunday. Six miles round the canal sounds good. What time and where shall we meet? I have my nephew bringing something round later in the day, so I would like to be back by about one."
+   reason: Sheila replies to Anita's question about time and place, a few minutes after the text.
+[Fri 19:10] none Anita Patel: 
+   item: Anita Patel starts "finishing curry, washing up" at Flat kitchen, until Fri 19:30
+   reason: Katarzyna is already placed in the kitchen. No one else is needed, and nothing else comes up while Anita washes up.
+[Fri 19:20] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "gaming then old sitcom" at Flat living room, until Fri 23:30
+   reason: Evening in with housemates already present; nothing further needed, and recent texts from Halina and Priya were already answered.
+[Fri 19:22] none Sheila Barker → Anita Patel: 
+   item: Anita Patel texted Sheila Barker: "9am at the canal car park by the lock is fine. See you there on Sunday. A flask is a good idea."
+   reason: The arrangements are settled and Anita's message is a closing confirmation, so Sheila has no need to reply and nothing else comes of it right now.
+[Fri 19:28] none Rhodri Evans → Gareth Pritchard: 
+   item: Gareth Pritchard texted Rhodri Evans: "Good, the 11th at 12:30 it is. I'll look out for the name of the place."
+   reason: Plans are settled; Rhodri has no need to reply to a closing text.
+[Fri 19:28] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Finishing pie and tea" at Flat living room, until Fri 19:45
+   reason: Quiet end of a Friday meal with flatmates; no background person is placed there and nothing needs to intrude.
+[Fri 19:30] none Anita Patel: 
+   item: Anita Patel starts "crossword and radio, then bed" at Flat living room, until Fri 22:30
+   reason: Quiet Friday evening with crossword and radio; she has already settled Sunday plans with Nikhil and Sheila, so nothing more needs to come of it.
+[Fri 19:43] text (at Fri 19:47) Tony Briggs → Daniel Hughes: third week running mate. think someone upstairs has it in for me haha. you on earlies?
+   item: Daniel Hughes texted Tony Briggs: "nah haven't looked. that's rubbish though, how many in a row now"
+   reason: Tony replies to Daniel's question in his usual joking, moaning style; a quick answer is ordinary.
+[Fri 19:43] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Finishing tea, chatting a little" at Flat living room, until Fri 20:00
+   reason: Quiet end of tea with flatmates; Rhodri's arrangement is settled and no one else would plausibly get in touch right now.
+[Fri 19:58] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Radio drama with housemates, then bed" at Flat living room, until Fri 22:30
+   reason: Housemates already present for the radio drama; no extra background people fit, and no contact is likely to get in touch right now after Rhodri's earlier exchange.
+[Fri 20:13] text (at Fri 20:19) Tony Briggs → Daniel Hughes: ha lucky you, mon to thu. i'll live. pint at the weekend to cheer me up?
+   item: Daniel Hughes texted Tony Briggs: "nah mate, haven't looked. i work mon to thu anyway, same as always. rough on the lates though"
+   reason: Tony naturally replies to Daniel's text with a short joking message and a casual offer, in keeping with their shift-moan chat.
+[Fri 20:38] text (at Fri 20:50) Tony Briggs → Daniel Hughes: sound, saturday at the usual. 8ish? i'll try not to moan about the rota too much haha
+   item: Daniel Hughes texted Tony Briggs: "go on then. saturday evening at the usual?"
+   reason: Tony is mid-chat and would naturally confirm the pint plan shortly.
+[Fri 20:38] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Radio drama with housemates" at Flat living room, until Fri 22:30
+   reason: Evening in with housemates listening to a radio drama; no background people are placed in the flat and nothing ordinary calls for a contact to get in touch, since Rhodri already settled plans earlier.
+[Fri 21:08] none Tony Briggs → Daniel Hughes: 
+   item: Daniel Hughes texted Tony Briggs: "8 is fine. see you there"
+   reason: The plan is settled and the conversation has naturally ended, so Tony has no need to reply.
+[Fri 21:08] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Radio drama with housemates" at Flat living room, until Fri 22:30
+   reason: Friday evening radio drama with housemates; Rhodri already texted and arranged things earlier, and no other contact would ordinarily get in touch now.
+[Fri 21:30] none Daniel Hughes: 
+   item: Daniel Hughes starts "watching TV with housemates" at Flat living room, until Fri 23:00
+   reason: Quiet Friday evening with housemates; he just texted Tony and Callum, nothing further needed right now.
+[Fri 22:00] none Anita Patel: 
+   item: Anita Patel starts "crossword and radio" at Flat living room, until Fri 22:30
+   reason: Quiet Friday evening with crossword and radio; flatmates are already placed and nothing needs adding, and her contacts have just arranged Sunday so no further contact is needed.
+[Fri 22:08] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Radio drama with housemates" at Flat living room, until Fri 22:30
+   reason: Friday late evening during a radio drama with housemates; no background people are placed there, and Rhodri has just finished arranging lunch, so nobody else needs to get in touch.
+[Fri 22:28] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Finishing the radio drama, saying goodnight" at Flat living room, until Fri 22:40
+   reason: Late Friday evening, the flat mates are winding down; the contacts have no reason to get in touch now, and Rhodri has already settled plans.
+[Fri 22:30] none Anita Patel: 
+   item: Anita Patel starts "bed" at Anita's bedroom, until Fri 23:00
+   reason: Late Friday night, Anita is going to bed alone; the day's messages are already settled and nothing more is due.
+[Fri 22:30] none Anita Patel: 
+   item: Anita Patel starts "in bed, lights out" at Anita's bedroom, until Fri 23:00
+   reason: Anita is in bed with lights out at 22:30 on a Friday; plans for Sunday are already settled and nobody would ordinarily get in touch.
+[Fri 22:38] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Saying goodnight to Daniel and Katarzyna" at Flat living room, until Fri 22:45
+   reason: A quiet goodnight at the end of the evening; no background person is placed in the flat and nothing ordinary calls for one to turn up or contact him in these few minutes.
+[Fri 22:43] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Getting ready for bed, reading" at Gareth's bedroom, until Fri 23:15
+   reason: Late Friday night, winding down alone in bed; Rhodri's plan is already settled and nobody else would ordinarily get in touch.
+[Fri 23:00] none Daniel Hughes: 
+   item: Daniel Hughes starts "going to bed" at Daniel's bedroom, until Fri 23:30
+   reason: Late Friday night, going to bed; plans with Tony and Callum already settled, nobody listed in the flat, so nothing comes of it.
+[Fri 23:20] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "finish episode, switch off tv and console" at Flat living room, until Fri 23:40
+   reason: Late Friday night alone in the living room finishing an episode; nobody else is listed there and nothing prompts contact. Mum and Priya already messaged earlier and agreed to follow up over the weekend.
+[Fri 23:35] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "finish episode, switch off tv and console" at Flat living room, until Fri 23:40
+   reason: Late Friday night, alone in the living room finishing an episode; nobody else is placed there and nothing needs to interrupt. Mum and Priya already messaged earlier and both are settled until the weekend.
+[Fri 23:40] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "brush teeth" at Flat bathroom, until Fri 23:50
+   reason: Brushing teeth alone late on a Friday night; nobody else is placed there and no contact is likely to get in touch at 23:40 after earlier exchanges.
+[Sat 06:30] none Anita Patel: 
+   item: Anita Patel starts "Get up, make bed, wash and dress" at Anita's bedroom, until Sat 07:15
+   reason: Early Saturday morning routine alone in her bedroom; no one is placed there and nothing ordinarily comes of it at 06:30.
+[Sat 06:33] none Anita Patel: 
+   item: Anita Patel starts "Get up, make bed, wash and dress" at Anita's bedroom, until Sat 07:15
+   reason: Early Saturday morning routine alone in her bedroom; nobody is placed there and nothing ordinary prompts contact at 06:33.
+[Sat 07:15] none Anita Patel: 
+   item: Anita Patel starts "Breakfast, tidy kitchen, check emails and job searches" at Flat kitchen, until Sat 08:30
+   reason: Quiet Saturday morning alone in the kitchen; nobody listed is there and nothing needs to come of it.
+[Sat 07:30] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Breakfast, tea, crossword" at Flat kitchen, until Sat 08:15
+   reason: Quiet Saturday breakfast in the kitchen with flatmates; nothing needs to happen.
+[Sat 07:30] text (at Sat 07:30) Jess Turner → Katarzyna Wójcik: morning. did you see the match last night?? absolute scenes. also are you alive or still in bed 😂
+   item: Katarzyna Wójcik starts "lie in, scroll phone" at Katarzyna's bedroom, until Sat 08:15
+   reason: Jess is a relaxed texting mate and a Saturday morning meme or football message is ordinary.
+[Sat 07:30] none Daniel Hughes: 
+   item: Daniel Hughes starts "breakfast and tea" at Flat kitchen, until Sat 08:30
+   reason: Evening plans with Tony and Sunday dinner are already arranged; nothing new is needed at breakfast.
+[Sat 07:35] text (at Sat 07:38) Jess Turner → Katarzyna Wójcik: right?? that last ten minutes. my heart. anyway get up lazy, what are you doing today
+   item: Katarzyna Wójcik texted Jess Turner: "alive 😂 still in bed. yeah that match was mad, cant believe that ending"
+   reason: Jess is mid-chat and relaxed; a quick natural reply keeps the banter going.
+[Sat 07:50] none Anita Patel: 
+   item: Anita Patel starts "Breakfast, tidy kitchen, quick email check" at Flat kitchen, until Sat 08:15
+   reason: Quiet Saturday breakfast with flatmates Gareth and Daniel already there; nothing needs to intrude, and Sunday plans with Nikhil and Sheila are already settled.
+[Sat 07:52] text (at Sat 07:58) Jess Turner → Katarzyna Wójcik: lol classic. i'm off to my nan's for lunch then probably football on the sofa. send me a screenshot if you actually win something 😂
+   item: Katarzyna Wójcik texted Jess Turner: "nothing much, toast then probably gaming all morning 😂 you?"
+   reason: Jess is a chatty mate and would naturally reply to the question asked about her day.
+[Sat 08:10] none Jess Turner → Katarzyna Wójcik: 
+   item: Katarzyna Wójcik texted Jess Turner: "will do 😂 enjoy your nan's lunch"
+   reason: Jess already signed off for the nan's lunch; no reply needed.
+[Sat 08:10] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "lie in, scroll phone" at Katarzyna's bedroom, until Sat 08:20
+   reason: Quiet lie-in alone in her room; nobody is placed there and nothing ordinary prompts contact in these ten minutes.
+[Sat 08:15] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Radio and tidying my shelf and room" at Flat living room, until Sat 10:30
+   reason: Quiet Saturday morning tidying alone; nothing pending from contacts, Rhodri's plan is already settled.
+[Sat 08:15] text (at Sat 08:15) Nikhil Patel → Anita Patel: Morning mum. We should get to you about 2 on Sunday if that's ok. Will bring the car seat.
+   item: Anita Patel starts "Get ready for canal walk, boots and coat" at Anita's bedroom, until Sat 08:40
+   reason: Nikhil was asked for a rough arrival time and replies practically by text.
+[Sat 08:20] none Nikhil Patel → Anita Patel: 
+   item: Anita Patel texted Nikhil Patel: "Morning. Two o'clock on Sunday is fine. I will have lunch ready for you, so don't eat on the way."
+   reason: Anita's reply already ends the exchange; Nikhil has no need to answer further.
+[Sat 08:20] present BLOCKED ((nobody) cannot be at Flat kitchen) (at Sat 08:20) Daniel Hughes: 
+   item: Katarzyna Wójcik starts "toast and tea" at Flat kitchen, until Sat 09:00
+   reason: Daniel is already placed in the flat kitchen; no background person needs adding.
+[Sat 08:20] text (at Sat 08:35) Priya Nair → Katarzyna Wójcik: morning! did you manage to look at the brief yet? I'm going to open it after breakfast, will tell you if part 2 is what we think 😅
+   item: Katarzyna Wójcik starts "toast and tea" at Flat kitchen, until Sat 09:00
+   reason: Priya said she'd check the brief Saturday and is casual and last-minute, so a follow-up fits.
+[Sat 08:30] result (at Sat 08:30) Daniel Hughes: You pick up your bits at the corner shop without any fuss. The shop is quiet at this hour, with the odd person nipping in for milk or a paper, and the till is quick.
+   item: Daniel Hughes starts "bits of shopping, then tinker with phone/car" at Corner shop, until Sat 12:30
+   reason: Ordinary quiet Saturday morning errand with nothing notable happening.
+[Sat 08:30] text (at Sat 08:55) Callum Hughes → Daniel Hughes: mum says just bring yourself tomorrow. she's doing a roast. also she wants to know if you're still eating veg lol
+   item: Daniel Hughes starts "bits of shopping, then tinker with phone/car" at Corner shop, until Sat 12:30
+   reason: Callum followed up on the Sunday dinner question he said he'd ask Mum about; a brief, relaxed text fits.
+[Sat 08:31] text (at Sat 08:40) Halina Wójcik → Katarzyna Wójcik: Dzień dobry kochanie! Masz chwilę dzisiaj na telefon? Tata pytał jak się masz 🙂
+   item: Katarzyna Wójcik starts "finish tea, wash up plate" at Flat kitchen, until Sat 08:50
+   reason: Halina asked her to ring this weekend and a Saturday morning check-in is ordinary; delay is short so it lands during the step.
+[Sat 08:31] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "finish tea, wash up plate" at Flat kitchen, until Sat 08:50
+   reason: Alone in the kitchen, no housemates listed; Jess and Priya have just texted or will reach out later, so nothing else now.
+[Sat 08:40] none Anita Patel: 
+   item: Anita Patel starts "Walk to canal car park by the lock" at Local park, until Sat 09:00
+   reason: A short walk to the park on a Saturday morning with nobody listed there; nothing ordinarily comes of it, and her contacts have all just been in touch.
+[Sat 08:40] text (at Sat 08:46) Sheila Barker → Anita Patel: Morning Anita! Yes, it's tomorrow, Sunday, 9am at the canal car park by the lock. Today's Saturday so you're not imagining the empty park 😄 See you tomorrow!
+   item: Anita Patel texted Sheila Barker: "Morning, Sheila. Just checking that our canal walk is tomorrow, Sunday, at 9 at the car park by the lock. I am at the park now and nobody is here, so I may have my days muddled."
+   reason: Sheila is easygoing and chatty, and she would reply to a simple check soon after, confirming the plan already agreed.
+[Sat 08:40] none Anita Patel: 
+   item: Anita Patel starts "Walk round the park, wait for Sheila's reply" at Local park, until Sat 09:15
+   reason: No background people are listed at the park, and nobody else comes of it; Sheila's reply covers the moment.
+[Sat 08:41] text (at Sat 08:47) Priya Nair → Katarzyna Wójcik: haha ok will do, opening it now 😂
+   item: Katarzyna Wójcik texted Priya Nair: "morning, not yet sorry 😅 will look after a bit of gaming. let me know what part 2 is"
+   reason: Priya said she'd check the brief after breakfast; a short reply is natural, but no result item needed.
+[Sat 08:41] text (at Sat 08:45) Halina Wójcik → Katarzyna Wójcik: Dobrze, koło pierwszej będzie super. Tylko zjedz coś porządnego wcześniej 🙂 Tata pozdrawia!
+   item: Katarzyna Wójcik texted Halina Wójcik: "hej mamo! tak, zadzwonię dziś po południu, koło pierwszej ok? pozdrów tatę 🙂"
+   reason: Mum confirms the call time and mentions eating, as she usually does.
+[Sat 08:41] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "finish tea, wash up plate" at Flat kitchen, until Sat 08:50
+   reason: Nobody else is in the kitchen; a quiet wash-up is the ordinary outcome.
+[Sat 08:50] text (at Sat 09:10) Priya Nair → Katarzyna Wójcik: ok opened the brief. part 2 is the analysis plus the reflection, like we thought. word counts are in the appendix, I'll screenshot it if you want 😅
+   item: Katarzyna Wójcik starts "gaming" at Flat living room, until Sat 12:30
+   reason: Priya said she was opening the brief now and promised to report back; a natural follow-up.
+[Sat 08:50] none Gareth Pritchard: 
+   item: Katarzyna Wójcik starts "gaming" at Flat living room, until Sat 12:30
+   reason: Gareth is already placed in the living room; nothing further needs adding for him or other background people at this time.
+[Sat 08:50] none Halina Wójcik → Katarzyna Wójcik: 
+   item: Katarzyna Wójcik texted Halina Wójcik: "super, to do pierwszej 🙂"
+   reason: Conversation has reached its natural end; Halina has already agreed to the one o'clock call.
+[Sat 08:50] none Sheila Barker → Anita Patel: 
+   item: Anita Patel texted Sheila Barker: "Thank you, Sheila. I have muddled my days, so I will see you tomorrow at nine by the lock."
+   reason: Anita's reply closes the exchange; nothing more needed from Sheila.
+[Sat 08:50] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "gaming" at Flat living room, until Sat 12:30
+   reason: Jess and Priya have both just messaged and Halina's call is set for the afternoon, so nothing new comes in during the first part of the gaming session.
+[Sat 08:50] none Anita Patel: 
+   item: Anita Patel starts "Short walk round the park, then head home" at Local park, until Sat 09:15
+   reason: Quiet park, no one listed there, and her contacts have all just been in touch; nothing further around now.
+[Sat 09:10] text (at Sat 09:16) Callum Hughes → Daniel Hughes: 2ish like i said lol. mum'll have it on the table about half 2
+   item: Daniel Hughes texted Callum Hughes: "ha yeah still eating veg. see you tomorrow, what time?"
+   reason: Callum answers briefly; he already said 2ish, so a light reply fits his relaxed style.
+[Sat 09:15] none Anita Patel: 
+   item: Anita Patel starts "Job searches and emails, plan Sunday lunch for Nikhil and make shopping list" at Flat kitchen, until Sat 10:30
+   reason: Quiet Saturday morning alone in the flat kitchen; nothing in particular prompts anyone to turn up or get in touch, and the Sunday plans with Nikhil and Sheila are already settled.
+[Sat 09:15] text (at Sat 09:40) Meera Patel → Anita Patel: Morning mum! Nikhil says you're doing lunch tomorrow. Have you made a list yet? 😄 Shall I bring a pudding?
+   item: Anita Patel starts "Job searches and emails, then plan Sunday lunch and write shopping list" at Flat kitchen, until Sat 10:30
+   reason: Meera is chatty and teases about lists; she'd plausibly hear about Sunday lunch from Nikhil and offer help by text on a Saturday morning.
+[Sat 09:15] none Anita Patel: 
+   item: Anita Patel starts "Job searches and emails, then plan Sunday lunch and write shopping list" at Flat kitchen, until Sat 10:30
+   reason: Nobody else is in the flat kitchen; no housemate listed, so the job searches and emails go on undisturbed.
+[Sat 09:35] none Callum Hughes → Daniel Hughes: 
+   item: Daniel Hughes texted Callum Hughes: "👍 2ish then"
+   reason: Conversation has reached its natural end with the thumbs-up; Callum has nothing more to add right now.
+[Sat 09:40] none Priya Nair → Katarzyna Wójcik: 
+   item: Katarzyna Wójcik texted Priya Nair: "cheers, no need for the screenshot. i'll have a look later today 😅"
+   reason: Conversation has naturally wound down; Priya has already given the info and would most likely just leave it or react with a thumbs-up, nothing needed.
+[Sat 09:50] text (at Sat 09:54) Meera Patel → Anita Patel: No nuts, travels well, got it! I'll do something in a tin. Want me to bring anything else or just the pud? Don't forget to put pudding on your list 😄
+   item: Anita Patel texted Meera Patel: "Morning, Meera. I am making the list now. A pudding would be lovely, thank you. Something that travels well, please, and nothing with nuts because of the little one."
+   reason: Meera replies chattily to her mum's message, as she ordinarily would.
+[Sat 10:00] result (at Sat 10:00) Daniel Hughes: The shop is quiet on a Saturday morning. You pick up what you need, pay at the counter without any fuss and head out with your bag.
+   item: Daniel Hughes starts "finish shopping, head home" at Corner shop, until Sat 10:30
+   reason: Ordinary uneventful shop trip; no background people are listed there.
+[Sat 10:00] none Daniel Hughes: 
+   item: Daniel Hughes starts "finish shopping, head home" at Corner shop, until Sat 10:30
+   reason: Contacts already settled plans for tonight and tomorrow; nothing new needs to come in during this short errand.
+[Sat 10:20] none Meera Patel → Anita Patel: 
+   item: Anita Patel texted Meera Patel: "Just the pudding, thank you. I will do the rest. Two o'clock tomorrow, so lunch will be ready for then."
+   reason: Meera has the answer she needed and just the pudding to bring; nothing more is needed right now, and she rings on Sundays.
+[Sat 10:30] result (at Sat 10:30) Gareth Pritchard: The park is quiet this late-November morning, damp underfoot and grey but dry. A few dog walkers pass at a distance and you have the paths mostly to yourself.
+   item: Gareth Pritchard starts "Walk, weather permitting" at Local park, until Sat 13:00
+   reason: Ordinary quiet park walk, nothing notable.
+[Sat 10:30] result (at Sat 10:30) Anita Patel: The corner shop has most of what you need. You find the items on your list without trouble, though they are out of one of the smaller things, so you pick the nearest alternative. The assistant rings it all up and you pay.
+   item: Anita Patel at Corner shop, Sat 10:30-Sat 11:30: buy items on the shopping list for Nikhil's Sunday lunch
+   reason: Ordinary errand with a minor stock snag.
+[Sat 10:30] none Anita Patel: 
+   item: Anita Patel starts "Buy shopping for Sunday lunch" at Corner shop, until Sat 11:30
+   reason: Step duplicates the errand; no background person or contact activity needed.
+[Sat 10:30] none Daniel Hughes: 
+   item: Daniel Hughes starts "put shopping away, tinker with phone" at Flat kitchen, until Sat 12:30
+   reason: Quiet morning at home; his contacts have already arranged Sunday and tonight.
+[Sat 10:30] none Anita Patel: 
+   item: Anita Patel starts "Walk home, put shopping away" at Flat kitchen, until Sat 11:30
+   reason: Quiet morning putting shopping away; her family and friend have all just texted and nothing new is due.
+[Sat 10:33] none Anita Patel: 
+   item: Anita Patel starts "Put shopping away" at Flat kitchen, until Sat 11:30
+   reason: Quiet put-away in the kitchen with Daniel already there; the contacts have all just texted and nothing new is due.
+[Sat 11:30] present BLOCKED ((nobody) cannot be at Flat kitchen) (at Sat 11:30) Daniel Hughes: Is already in the flat kitchen, making himself a late breakfast and tea, and moving around Anita's things to find space on the counter.
+   item: Anita Patel starts "Prepare what can be done ahead for Sunday lunch" at Flat kitchen, until Sat 12:30
+   reason: Daniel is simulated and listed as being in the kitchen; reuse him rather than inventing anyone else.
+[Sat 11:30] none Anita Patel: 
+   item: Anita Patel starts "Prepare what can be done ahead for Sunday lunch" at Flat kitchen, until Sat 12:30
+   reason: No contact needs to get in touch now. Meera and Nikhil have already settled Sunday by text, and Sheila's walk is confirmed. Nothing more is due this hour.
+[Sat 12:30] call (at Sat 12:50) Halina Wójcik → Katarzyna Wójcik: [Ringing] Cześć kochanie! Mówiłaś, że zadzwonisz koło pierwszej, to pomyślałam, że sama zadzwonię. Masz chwilę? Jadłaś coś już?
+   item: Katarzyna Wójcik starts "lunch, something proper" at Flat kitchen, until Sat 13:00
+   reason: Agreed to a call around one; mum, who worries about her eating, rings a bit early as lunch is being made.
+[Sat 12:30] none Anita Patel: 
+   item: Katarzyna Wójcik starts "lunch, something proper" at Flat kitchen, until Sat 13:00
+   reason: Anita is already simulated in the kitchen; nothing extra needed from the world.
+[Sat 12:30] none Daniel Hughes: 
+   item: Daniel Hughes starts "watch football, relax" at Flat living room, until Sat 17:30
+   reason: Plans with Tony tonight and Callum tomorrow are already settled; nothing new comes of it during the football.
+[Sat 12:43] none Anita Patel: 
+   item: Anita Patel starts "Prepare Sunday lunch items ahead, peel veg, make dough or marinade" at Flat kitchen, until Sat 13:15
+   reason: Quiet Saturday prep in the kitchen with Katarzyna already there; family and Sheila have all just confirmed plans this morning, so nobody has a reason to get in touch now.
+[Sat 12:50] call (at Sat 12:50) Halina Wójcik → Katarzyna Wójcik: Cześć kochanie! Mówiłaś, że zadzwonisz koło pierwszej, to pomyślałam, że sama zadzwonię. Masz chwilę? Jadłaś coś już?
+   item: Katarzyna Wójcik starts "making and eating lunch" at Flat kitchen, until Sat 12:55
+   reason: Her mum's call is already ringing at 12:50, as the log shows, about the agreed first-o'clock chat.
+[Sat 12:50] none Anita Patel: 
+   item: Katarzyna Wójcik starts "making and eating lunch" at Flat kitchen, until Sat 12:55
+   reason: Anita is already in the kitchen as a simulated person; nothing extra from her is needed.
+[Sat 12:50] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "making and eating lunch" at Flat kitchen, until Sat 12:55
+   reason: Jess is at her nan's for lunch and has already chatted this morning.
+[Sat 12:50] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "making and eating lunch" at Flat kitchen, until Sat 12:55
+   reason: Priya has already passed on the brief details and has nothing new to say now.
+[Sat 12:50] none Anita Patel: 
+   item: Anita Patel starts "Finish veg prep, put away, wipe worktops" at Flat kitchen, until Sat 13:15
+   reason: Quiet kitchen tidy-up; family have already texted this morning and nothing more is due right now.
+[Sat 13:00] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Lunch" at Flat kitchen, until Sat 14:00
+   reason: Quiet Saturday lunch with flatmates; no background person is placed there and no contact has a reason to get in touch right now.
+[Sat 13:10] none Anita Patel: 
+   item: Anita Patel starts "Finish veg prep, wipe worktops" at Flat kitchen, until Sat 13:20
+   reason: Ten quiet minutes of veg prep with housemates already there; family and Sheila have all settled plans this morning, so no one needs to get in touch.
+[Sat 13:15] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik is not at Katarzyna's bedroom for "ring mum" (due Sat 13:00); they are at Flat kitchen
+   reason: She is in the kitchen, not in her room for the call; nothing in particular comes of it, and the missed ring is hers to do when she chooses.
+[Sat 13:20] none Anita Patel: 
+   item: Anita Patel starts "Light lunch, wash up" at Flat kitchen, until Sat 14:00
+   reason: Quiet Saturday lunch in the flat kitchen with the two flatmates already placed; no background person needed, and her family and Sheila have already settled tomorrow's plans.
+[Sat 13:21] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "talking to dad on the phone, then mum" at Katarzyna's bedroom, until Sat 13:40
+   reason: She is alone in her room on a call with her parents; Halina is already on the line and no one else is placed there, so nothing else comes of it.
+[Sat 13:40] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "on the phone with dad, then mum" at Katarzyna's bedroom, until Sat 13:45
+   reason: Katarzyna is mid-call with her dad then mum in her room, and the step ends at 13:45. Nobody else is placed there, and friends texting during a call can wait.
+[Sat 13:45] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "gaming, washing up the plate first" at Flat living room, until Sat 15:30
+   reason: Katarzyna just finished a long call with her mum and Priya and Jess were last in touch this morning, so nobody has a reason to get in touch now. Daniel is already in the room and no other background person needs to appear.
+[Sat 14:00] none Gareth Pritchard: 
+   item: Gareth Pritchard starts "Crossword, gardening programme, reading" at Gareth's bedroom, until Sat 18:00
+   reason: Quiet Saturday afternoon alone in his room; nobody is placed there and no contact has a reason to get in touch now.
+[Sat 14:00] none Anita Patel: 
+   item: Anita Patel starts "Walk, then crossword and radio quiz" at Local park, until Sat 17:00
+   reason: She is at the park alone; her family and friends have already sorted tomorrow's plans this morning, so nothing more is needed now.
+[Sat 15:30] text (at Sat 15:50) Priya Nair → Katarzyna Wójcik: ok I've started part 2, the analysis is longer than I thought 😅 are you doing the reflection bit as a separate section or just at the end?
+   item: Katarzyna Wójcik starts "look at the coursework brief, part 2" at Katarzyna's bedroom, until Sat 18:00
+   reason: Priya is a last-minute classmate working on the same coursework, so a check-in fits mid-afternoon.
+[Sat 15:30] none Katarzyna Wójcik: 
+   item: Katarzyna Wójcik starts "look at the coursework brief, part 2" at Katarzyna's bedroom, until Sat 18:00
+   reason: Nobody else is in the bedroom, and mum and Jess have already been in touch today, so nothing else comes of it.
+[Sat 16:30] text (at Sat 16:42) Priya Nair → Katarzyna Wójcik: same, at the end is easier I think 😂 I'm doing it after the analysis. word count for it is tiny anyway
+   item: Katarzyna Wójcik texted Priya Nair: "probably just at the end tbh, haven't properly looked yet 😅 you?"
+   reason: Priya replies casually to the ongoing coursework chat; she is mid-work and responsive.

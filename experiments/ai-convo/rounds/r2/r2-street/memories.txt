@@ -1,0 +1,166 @@
+## Muhammad Hafiz Ismail
+Sat 10:00 [the simulation starts: decide where you are and what you are doing] @Ismail-Pritchard house: Hafiz's bedroom: 
+   plan: until Sat 10:45: breakfast, tidy up, check phone list @Ismail-Pritchard house: kitchen and living room / until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:30: shower, lunch @Ismail-Pritchard house: kitchen and living room
+Sat 10:00   -> Ismail-Pritchard house: kitchen and living room (breakfast, tidy up, check phone list)
+Sat 10:14 [after the conversation] @Ismail-Pritchard house: kitchen and living room: breakfast, tidy up, check phone list
+   remembers: Joanne mentioned the boiler clunking again. I said I'd bleed the radiators and check pressure later, and ring the housing lot if it still clunks. She made me a tea.
+   plan: until Sat 10:45: finish tea, tidy up, check phone list @Ismail-Pritchard house: kitchen and living room / until Sat 11:15: bleed radiators, check boiler pressure @Ismail-Pritchard house: kitchen and living room / until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:30: shower, lunch @Ismail-Pritchard house: kitchen and living room
+Sat 10:29 [you looked up from what you were doing] @Ismail-Pritchard house: kitchen and living room: finish tea, tidy up, check phone list (kept plan)
+   plan: until Sat 10:45: finish tea, tidy up, check phone list @Ismail-Pritchard house: kitchen and living room / until Sat 11:15: bleed radiators, check boiler pressure @Ismail-Pritchard house: kitchen and living room / until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:30: shower, lunch @Ismail-Pritchard house: kitchen and living room
+Sat 10:44 [you looked up from what you were doing] @Ismail-Pritchard house: kitchen and living room: finish tea, tidy up, check phone list (kept plan)
+   plan: until Sat 10:45: finish tea, tidy up, check phone list @Ismail-Pritchard house: kitchen and living room / until Sat 11:15: bleed radiators, check boiler pressure @Ismail-Pritchard house: kitchen and living room / until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:30: shower, lunch @Ismail-Pritchard house: kitchen and living room
+Sat 10:47 [next in your plan: bleed radiators, check boiler pressure @Ismail-Pritchard house: kitchen and living room] @Ismail-Pritchard house: kitchen and living room: bleed radiators, check boiler pressure
+   plan: until Sat 11:00: wipe up, put key and tools away @Ismail-Pritchard house: kitchen and living room / until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 11:01 [after the conversation] @Ismail-Pritchard house: kitchen and living room: wipe up, put key and tools away
+   remembers: Joanne asked me to bleed her cold radiator too. Told her I'd done the upstairs ones and topped up the pressure, and I'd do hers now. She warned me about the drip by the window.
+   plan: until Sat 11:15: bleed Joanne's radiator, wipe up, put key away @Ismail-Pritchard house: kitchen and living room / until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 11:15   -> Ismail-Pritchard house: Hafiz's bedroom (tinkering with bike and old electronics)
+Sat 11:15 [after the conversation] @Ismail-Pritchard house: Hafiz's bedroom: tinkering with bike and old electronics (kept plan)
+   remembers: Joanne checked her radiator is warming up and made me another tea, one milk. Told her it should be right now.
+   plan: until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 11:18 [next in your plan: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom] @Ismail-Pritchard house: Hafiz's bedroom: tinkering with bike and old electronics (kept plan)
+   plan: until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 11:45 [you looked up from what you were doing] @Ismail-Pritchard house: Hafiz's bedroom: tinkering with bike and old electronics (kept plan)
+   plan: until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 12:15 [you looked up from what you were doing] @Ismail-Pritchard house: Hafiz's bedroom: tinkering with bike and old electronics (kept plan)
+   plan: until Sat 12:30: tinkering with bike and old electronics @Ismail-Pritchard house: Hafiz's bedroom / until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 12:30   -> The street (short run round the park)
+Sat 12:30 [you came into The street: a conversation is going on; next in your plan: short run round the park @The street; you came into The street: someone you know by sight (F, 70s) here] @The street: short run round the park (kept plan) | talk to Pauline Doyle
+   plan: until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 12:33 [after the conversation] @The street: short run round the park (kept plan)
+   remembers: Passed Pauline sweeping leaves and an older woman with her paper. Pauline warned about slippery leaves. Said morning and carried on jogging to the park.
+   plan: until Sat 13:30: short run round the park @The street / until Sat 14:20: shower, lunch @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: get there early, pint with Callum for the game @Local pub
+Sat 13:30   -> Ismail-Pritchard house: kitchen and living room (shower, lunch)
+Sat 13:30 [next in your plan: shower, lunch @Ismail-Pritchard house: kitchen and living room] @Ismail-Pritchard house: kitchen and living room: shower, lunch
+   plan: until Sat 14:00: shower, quick lunch @Ismail-Pritchard house: kitchen and living room / until Sat 14:10: grab wallet with tenner, coat, leave @Ismail-Pritchard house: kitchen and living room / until Sat 15:00: pint with Callum, watching the game @Local pub
+Sat 13:57 [after the conversation] @Ismail-Pritchard house: kitchen and living room: shower, quick lunch
+   remembers: Joanne made me a cheese and pickle sandwich, said her radiator's properly warm now. Told her I'm off to the pub for the match with the lads. Washed my plate and left.
+   plan: until Sat 14:10: walking to the pub @The street / until Sat 15:00: pint with Callum and the lads, watching the game @Local pub
+Sat 13:57   -> The street (walking to the pub)
+
+## Margaret Holloway
+Sat 10:00 [the simulation starts: decide where you are and what you are doing] @Holloway house: main bedroom: 
+   plan: until Sat 10:30: breakfast things, tea, check houseplants @Holloway house: kitchen and living room / until Sat 12:30: walk to the shops via the park, pick up bits from corner shop @Local park / until Sat 14:00: lunch with Derek, radio play @Holloway house: kitchen and living room
+Sat 10:00   -> Holloway house: kitchen and living room (breakfast things, tea, check houseplants)
+Sat 10:23 [you looked up from what you were doing; after the conversation] @Holloway house: kitchen and living room: breakfast things, tea, check houseplants
+   remembers: Derek says I'm overwatering the droopy plant; I disagree. He's finished the paper, crossword half done. I'm walking to the shops via the park and will get him a Saturday paper from the newsagent's on the way back. He warned me the park will be slippery.
+   plan: until Sat 10:30: putting coat on, leaving the house @The street / until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 10:23   -> The street (putting coat on, leaving the house)
+Sat 10:26 [after the conversation] @The street: putting coat on, leaving the house (kept plan)
+   remembers: Pauline Doyle waved over her wall and said she has my parcel from yesterday and will bring it round later. Her knee is grumbling in the damp. I'm off to the shops.
+   plan: until Sat 10:30: putting coat on, leaving the house @The street / until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 10:29 [you looked up from what you were doing] @The street: putting coat on, leaving the house (kept plan)
+   plan: until Sat 10:30: putting coat on, leaving the house @The street / until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 10:30   -> Local park (walking through the park slowly, then shops for bits and Derek's Saturday paper)
+Sat 10:32 [next in your plan: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park; you came into Local park: someone you know by sight (F, 30s) here] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper (kept plan)
+   plan: until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 10:40 [after the conversation] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper (kept plan)
+   remembers: Met Doreen by the park gate. Her hip is bad in the damp and she's pulling her tin-laden trolley over slippery leaves. She sends her morning to Derek. I told her to take care going home.
+   plan: until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 10:50 [you looked up from what you were doing] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper (kept plan)
+   plan: until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 11:10 [you looked up from what you were doing] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper (kept plan)
+   plan: until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 11:30 [you looked up from what you were doing] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper (kept plan)
+   plan: until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 11:50 [you looked up from what you were doing] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper (kept plan)
+   plan: until Sat 12:15: walking through the park slowly, then shops for bits and Derek's Saturday paper @Local park / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 12:10 [you looked up from what you were doing] @Local park: walking through the park slowly, then shops for bits and Derek's Saturday paper
+   plan: until Sat 12:30: picking up bits and Derek's Saturday paper, then heading home @Corner shop / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 12:10   -> Corner shop (picking up bits and Derek's Saturday paper, then heading home)
+Sat 12:20 [you looked up from what you were doing] @Corner shop: picking up bits and Derek's Saturday paper, then heading home
+   plan: until Sat 12:35: walking home from the shops with the paper, mindful of wet leaves @The street / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 12:20   -> The street (walking home from the shops with the paper, mindful of wet leaves)
+Sat 12:31 [you looked up from what you were doing; after the conversation] @The street: walking home from the shops with the paper, mindful of wet leaves (kept plan)
+   remembers: Passed Pauline at her wall again. She'll bring my parcel round this afternoon. Told her to mind her knee. A man I know by sight turned up and I nodded, then headed home with Derek's paper.
+   plan: until Sat 12:35: walking home from the shops with the paper, mindful of wet leaves @The street / until Sat 14:00: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room
+Sat 12:35   -> Holloway house: kitchen and living room (lunch with Derek, radio play, crossword)
+Sat 13:32 [next in your plan: lunch with Derek, radio play, crossword @Holloway house: kitchen and living room; you looked up from what you were doing; after the conversation] @Holloway house: kitchen and living room: lunch with Derek, radio play, crossword
+   remembers: Had soup and tea with Derek, got Cagey for seven across, Damson pencilled in for eight. Pauline will bring my parcel round this afternoon; her knee is bad in the damp.
+   plan: until Sat 14:00: tea and biscuit, crossword with Derek, radio play @Holloway house: kitchen and living room / until Sat 15:30: radio play, watering houseplants, wait for Pauline's parcel @Holloway house: kitchen and living room
+Sat 13:52 [you looked up from what you were doing] @Holloway house: kitchen and living room: tea and biscuit, crossword with Derek, radio play (kept plan)
+   plan: until Sat 14:00: tea and biscuit, crossword with Derek, radio play @Holloway house: kitchen and living room / until Sat 15:30: radio play, watering houseplants, wait for Pauline's parcel @Holloway house: kitchen and living room
+
+## Harpreet Kaur Sandhu
+Sat 10:00 [the simulation starts: decide where you are and what you are doing] @Sandhu house: parents' bedroom: 
+   plan: until Sat 10:30: coffee, tidy kitchen table, sort kids @Sandhu house: kitchen and living room / until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 10:00   -> Sandhu house: kitchen and living room (coffee, tidy kitchen table, sort kids)
+Sat 10:15 [you looked up from what you were doing] @Sandhu house: kitchen and living room: coffee, tidy kitchen table, sort kids (kept plan)
+   plan: until Sat 10:30: coffee, tidy kitchen table, sort kids @Sandhu house: kitchen and living room / until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 10:30   -> Local park (walk to park with flask and kids)
+Sat 10:30 [next in your plan: walk to park with flask and kids @Local park] @Local park: walk to park with flask and kids (kept plan)
+   plan: until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 10:50 [you looked up from what you were doing] @Local park: walk to park with flask and kids (kept plan)
+   plan: until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 11:10 [you looked up from what you were doing] @Local park: walk to park with flask and kids (kept plan)
+   plan: until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 11:30 [you looked up from what you were doing] @Local park: walk to park with flask and kids (kept plan)
+   plan: until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 11:50 [you looked up from what you were doing] @Local park: walk to park with flask and kids (kept plan)
+   plan: until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 12:10 [you looked up from what you were doing] @Local park: walk to park with flask and kids (kept plan)
+   plan: until Sat 12:30: walk to park with flask and kids @Local park / until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 12:30   -> Sandhu house: kitchen and living room (lunch, then catch up on late invoices)
+Sat 12:46 [next in your plan: lunch, then catch up on late invoices @Sandhu house: kitchen and living room; after the conversation] @Sandhu house: kitchen and living room: lunch, then catch up on late invoices (kept plan)
+   remembers: Gurpreet has dal on, lunch in ten. I said I'd do a couple of invoices until then. Park with Becky at two.
+   plan: until Sat 14:00: lunch, then catch up on late invoices @Sandhu house: kitchen and living room
+Sat 13:00 [you looked up from what you were doing] @Sandhu house: kitchen and living room: lunch, then catch up on late invoices
+   plan: until Sat 13:15: lunch with family @Sandhu house: kitchen and living room / until Sat 13:50: invoices on laptop, then get kids' coats on @Sandhu house: kitchen and living room / until Sat 15:30: playdate with Becky, flask of coffee @Local park
+Sat 13:15 [you looked up from what you were doing; after the conversation] @Sandhu house: kitchen and living room: lunch with family
+   remembers: Lunch with the kids. Arjun can take his scooter and helmet to the park, helmet stays off at the table. Coats on at quarter to two, park with Becky at 2.
+   plan: until Sat 13:45: invoices on laptop @Sandhu house: kitchen and living room / until Sat 14:00: coats on, pack flask and leave @Sandhu house: kitchen and living room / until Sat 15:30: playdate with Becky, flask of coffee @Local park
+Sat 13:32 [after the conversation] @Sandhu house: kitchen and living room: invoices on laptop (kept plan)
+   remembers: Gurpreet offered dal again; I'd already eaten with Arjun. Told him I'd finish one invoice then sort the coats. He's tidying up the kitchen.
+   plan: until Sat 13:45: invoices on laptop @Sandhu house: kitchen and living room / until Sat 14:00: coats on, pack flask and leave @Sandhu house: kitchen and living room / until Sat 15:30: playdate with Becky, flask of coffee @Local park
+Sat 13:35 [you looked up from what you were doing] @Sandhu house: kitchen and living room: invoices on laptop
+   plan: until Sat 13:45: finishing last invoice on laptop @Sandhu house: kitchen and living room / until Sat 14:00: coats on, flask packed, leave for park @Sandhu house: kitchen and living room / until Sat 15:30: playdate with Becky, flask of coffee @Local park
+Sat 13:44 [after the conversation] @Sandhu house: kitchen and living room: finishing last invoice on laptop (kept plan)
+   remembers: Gurpreet offered to find Simran's hat and get her in the buggy. I said yes, hat's in the basket by the door, and I'm two minutes from done with the invoice.
+   plan: until Sat 13:45: finishing last invoice on laptop @Sandhu house: kitchen and living room / until Sat 14:00: coats on, flask packed, leave for park @Sandhu house: kitchen and living room / until Sat 15:30: playdate with Becky, flask of coffee @Local park
+Sat 13:55 [next in your plan: coats on, flask packed, leave for park @Sandhu house: kitchen and living room; you looked up from what you were doing; after the conversation] @Sandhu house: kitchen and living room: coats on, flask packed, leave for park (kept plan)
+   remembers: Got Arjun's shoes and coat sorted, locked up and left for the park with the flask and bag. Gurpreet has Simran in the buggy. Meeting Becky at the swings.
+   plan: until Sat 14:00: coats on, flask packed, leave for park @Sandhu house: kitchen and living room / until Sat 15:30: playdate with Becky, flask of coffee @Local park
+
+## Aoife Brennan
+Sat 10:00 [the simulation starts: decide where you are and what you are doing] @Brennan-Maguire flat: bedroom: 
+   plan: until Sat 10:30: breakfast, coffee, checking budget sheet and making a list @Brennan-Maguire flat: kitchen and living room / until Sat 12:30: walk to high street, errands, thrift shop look, maybe coffee @High street café / until Sat 13:30: pick up groceries for Sunday meal prep, chat @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 10:00   -> Brennan-Maguire flat: kitchen and living room (breakfast, coffee, checking budget sheet and making a list)
+Sat 10:15 [you looked up from what you were doing] @Brennan-Maguire flat: kitchen and living room: breakfast, coffee, checking budget sheet and making a list (kept plan) | talk to Conor Maguire
+   plan: until Sat 10:30: breakfast, coffee, checking budget sheet and making a list @Brennan-Maguire flat: kitchen and living room / until Sat 12:30: walk to high street, errands, thrift shop look, maybe coffee @High street café / until Sat 13:30: pick up groceries for Sunday meal prep, chat @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 10:18 [after the conversation] @Brennan-Maguire flat: kitchen and living room: breakfast, coffee, checking budget sheet and making a list
+   remembers: Told Conor we'll get cheap coffee, not the fancy place, tenner for the day. Thrift shops first, then eggs, oats and cheap veg for Sunday prep. He's finding shoes.
+   plan: until Sat 10:30: finishing list, waiting for Conor, getting coat on @Brennan-Maguire flat: kitchen and living room / until Sat 12:30: walk to high street, thrift shops, cheap coffee @High street café / until Sat 13:30: groceries for Sunday prep: eggs, oats, cheap veg @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 10:23 [you looked up from what you were doing; after the conversation] @Brennan-Maguire flat: kitchen and living room: finishing list, waiting for Conor, getting coat on
+   remembers: Conor found his trainer under the coat pile. Keys and wallet sorted, we're heading out. I said thrift first, coffee after.
+   plan: until Sat 12:30: walk to high street, thrift shops, then cheap coffee with Conor @elsewhere / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 10:23   -> elsewhere (walk to high street, thrift shops, then cheap coffee with Conor)
+Sat 10:43 [you looked up from what you were doing] @elsewhere: walk to high street, thrift shops, then cheap coffee with Conor (kept plan)
+   plan: until Sat 12:30: walk to high street, thrift shops, then cheap coffee with Conor @elsewhere / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 11:03 [you looked up from what you were doing] @elsewhere: walk to high street, thrift shops, then cheap coffee with Conor (kept plan)
+   plan: until Sat 12:30: walk to high street, thrift shops, then cheap coffee with Conor @elsewhere / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 11:23 [you looked up from what you were doing] @elsewhere: walk to high street, thrift shops, then cheap coffee with Conor (kept plan)
+   plan: until Sat 12:30: walk to high street, thrift shops, then cheap coffee with Conor @elsewhere / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 11:43 [you looked up from what you were doing] @elsewhere: walk to high street, thrift shops, then cheap coffee with Conor (kept plan)
+   plan: until Sat 12:30: walk to high street, thrift shops, then cheap coffee with Conor @elsewhere / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 12:03 [you looked up from what you were doing] @elsewhere: walk to high street, thrift shops, then cheap coffee with Conor (kept plan)
+   plan: until Sat 12:30: walk to high street, thrift shops, then cheap coffee with Conor @elsewhere / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:00: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 12:23 [you looked up from what you were doing] @elsewhere: walk to high street, thrift shops, then cheap coffee with Conor
+   plan: until Sat 12:45: cheap coffee with Conor @High street café / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:15: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 12:23   -> High street café (cheap coffee with Conor)
+Sat 12:38 [you looked up from what you were doing] @High street café: cheap coffee with Conor (kept plan)
+   plan: until Sat 12:45: cheap coffee with Conor @High street café / until Sat 13:30: buy eggs, oats, cheap veg for Sunday prep @Corner shop / until Sat 14:15: lunch at home @Brennan-Maguire flat: kitchen and living room
+Sat 12:45   -> Corner shop (buy eggs, oats, cheap veg for Sunday prep)
+Sat 12:53 [next in your plan: buy eggs, oats, cheap veg for Sunday prep @Corner shop; after the conversation] @Corner shop: buy eggs, oats, cheap veg for Sunday prep
+   remembers: Corner shop had eggs, oats and a small veg stand. Picked carrots, onions, a small cabbage, oats and eggs. Shopkeeper was quiet and friendly enough.
+   plan: until Sat 13:05: paying for eggs, oats and veg @Corner shop / until Sat 14:15: lunch at home with Conor, put shopping away @Brennan-Maguire flat: kitchen and living room
+Sat 12:56 [after the conversation] @Corner shop: paying for eggs, oats and veg
+   remembers: Paid for eggs, oats, carrots, onions and cabbage at the corner shop. Own bag, no fuss.
+   plan: until Sat 13:05: finishing paying, bagging shopping @Corner shop / until Sat 14:15: lunch with Conor, put shopping away @Brennan-Maguire flat: kitchen and living room
+Sat 12:59 [after the conversation] @Corner shop: finishing paying, bagging shopping
+   remembers: Paid at the corner shop, said cheers to the shopkeeper and left with eggs, oats and veg for Sunday prep.
+   plan: until Sat 13:15: walk home, put shopping away @Brennan-Maguire flat: kitchen and living room / until Sat 14:15: lunch with Conor @Brennan-Maguire flat: kitchen and living room
+Sat 12:59   -> Brennan-Maguire flat: kitchen and living room (walk home, put shopping away)
+Sat 13:42 [you looked up from what you were doing; after the conversation] @Brennan-Maguire flat: kitchen and living room: walk home, put shopping away
+   remembers: Had scrambled eggs on toast with Conor, told him I'm on the late Tuesday (11-7) after swapping with Chloe. Agreed park first, then tea at the café and thrift shops on the high street. Heading out now.
+   plan: until Sat 14:45: walk in the park with Conor @Local park / until Sat 15:15: tea with Conor @High street café / until Sat 16:30: browsing thrift shops on the high street @elsewhere
+Sat 13:42   -> Local park (walk in the park with Conor)

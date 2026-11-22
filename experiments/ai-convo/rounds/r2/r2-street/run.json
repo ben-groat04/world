@@ -1,0 +1,53 @@
+{
+ "label": "r2-street",
+ "seed": 2204,
+ "args": {
+  "label": "r2-street",
+  "setting": "one residential street in an English inner-city area",
+  "dateNote": "Saturday 28 November 2026",
+  "startDow": 5,
+  "startHour": 10,
+  "seed": 2204,
+  "hours": 4,
+  "roleAgent": "sim"
+ },
+ "window": {
+  "from": "Sat 10:00",
+  "to": "Sat 14:00",
+  "hours": 4
+ },
+ "totalTokens": 1429060,
+ "agentCount": 259,
+ "stats": {
+  "turns": {
+   "Muhammad Hafiz Ismail": 14,
+   "Margaret Holloway": 15,
+   "Harpreet Kaur Sandhu": 15,
+   "Aoife Brennan": 15
+  },
+  "calls": 259,
+  "simCalls": 253,
+  "maxCalls": 460,
+  "byFor": {
+   "generator": 6,
+   "Muhammad Hafiz Ismail": 30,
+   "Margaret Holloway": 48,
+   "Harpreet Kaur Sandhu": 30,
+   "Aoife Brennan": 39,
+   "world": 34,
+   "Joanne Pritchard": 12,
+   "Derek Holloway": 24,
+   "Conor Maguire": 17,
+   "Pauline Doyle": 3,
+   "Doreen Hollis": 2,
+   "Gurpreet Singh Sandhu": 5,
+   "Shopkeeper": 1,
+   "Arjun Singh Sandhu": 8
+  },
+  "sceneLines": 160,
+  "promptChars": 1031625,
+  "failed": 0,
+  "stoppedAt": null,
+  "roleAgent": "sim"
+ }
+}

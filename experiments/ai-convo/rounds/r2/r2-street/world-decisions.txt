@@ -1,0 +1,303 @@
+[Sat 10:00] text (at Sat 10:06) Conor Maguire → Aoife Brennan: morning. just about. yeah go on, I'll come. can we get a proper coffee on the way
+   item: Aoife Brennan texted Conor Maguire: "morning, you up? thinking of heading to the high street later, thrift shops and the shop for sunday prep. want to come?"
+   reason: Partner replies to her text; ordinary quick answer.
+[Sat 10:00] present (at Sat 10:05) Joanne Pritchard → Muhammad Hafiz Ismail: Making tea in the kitchen, then heading back up with her mug.
+   item: Muhammad Hafiz Ismail starts "breakfast, tidy up, check phone list" at Ismail-Pritchard house: kitchen and living room, until Sat 10:45
+   reason: Housemate plausibly around on a Saturday morning.
+[Sat 10:00] speak (at Sat 10:06) Joanne Pritchard → Muhammad Hafiz Ismail: Morning. Did you hear the boiler clunking again last night? Might be worth a look at some point.
+   item: Muhammad Hafiz Ismail starts "breakfast, tidy up, check phone list" at Ismail-Pritchard house: kitchen and living room, until Sat 10:45
+   reason: Ordinary household chat, small snag.
+[Sat 10:00] present (at Sat 10:00) Derek Holloway → Margaret Holloway: Sitting at the kitchen table with his tea and the paper.
+   item: Margaret Holloway starts "breakfast things, tea, check houseplants" at Holloway house: kitchen and living room, until Sat 10:30
+   reason: Husband at home Saturday morning.
+[Sat 10:00] speak (at Sat 10:10) Derek Holloway → Margaret Holloway: You've watered that one twice this week, love. It'll drown.
+   item: Margaret Holloway starts "breakfast things, tea, check houseplants" at Holloway house: kitchen and living room, until Sat 10:30
+   reason: Gentle household teasing about houseplants.
+[Sat 10:00] present (at Sat 10:02) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Wandering in asking for more cereal and where his football socks are.
+   item: Harpreet Kaur Sandhu starts "coffee, tidy kitchen table, sort kids" at Sandhu house: kitchen and living room, until Sat 10:30
+   reason: Six-year-old up on a Saturday morning.
+[Sat 10:00] present (at Sat 10:00) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Feeding Simran in the high chair and drinking coffee.
+   item: Harpreet Kaur Sandhu starts "coffee, tidy kitchen table, sort kids" at Sandhu house: kitchen and living room, until Sat 10:30
+   reason: Husband at home with the toddler.
+[Sat 10:00] text (at Sat 10:12) Becky Thornton → Harpreet Kaur Sandhu: Hi! Are you two free for a playdate this afternoon? Park around 2 if it stays dry. Let me know x
+   item: Harpreet Kaur Sandhu starts "coffee, tidy kitchen table, sort kids" at Sandhu house: kitchen and living room, until Sat 10:30
+   reason: Organised school-gate friend arranges weekend playdate.
+[Sat 10:00] present (at Sat 10:08) Conor Maguire → Aoife Brennan: Wanders into the kitchen in a t-shirt, yawning, to see about coffee.
+   item: Aoife Brennan starts "breakfast, coffee, checking budget sheet and making a list" at Brennan-Maguire flat: kitchen and living room, until Sat 10:30
+   reason: He replied he is up and lives there.
+[Sat 10:14] present (at Sat 10:14) Joanne Pritchard → Muhammad Hafiz Ismail: Making a cuppa in the kitchen, then heads through to the living room with it.
+   item: Muhammad Hafiz Ismail starts "finish tea, tidy up, check phone list" at Ismail-Pritchard house: kitchen and living room, until Sat 10:45
+   reason: She is placed at the house until 10:15, so she is briefly there.
+[Sat 10:14] text (at Sat 10:26) Callum Reid → Muhammad Hafiz Ismail: Pint later? Game's on at 3. Also have you seen this ref, absolute shocker
+   item: Muhammad Hafiz Ismail starts "finish tea, tidy up, check phone list" at Ismail-Pritchard house: kitchen and living room, until Sat 10:45
+   reason: Callum is a banter-heavy mate and Saturday is a natural time to text about football and a pint.
+[Sat 10:15] text (at Sat 10:18) Becky Thornton → Harpreet Kaur Sandhu: Brilliant, see you there at 2! I'll bring snacks x
+   item: Harpreet Kaur Sandhu texted Becky Thornton: "yes we're in. park at 2 is fine, we'll be there anyway"
+   reason: Becky is chatty and organised, so she'd reply briefly to confirm the plan.
+[Sat 10:18] present (at Sat 10:20) Conor Maguire → Aoife Brennan: Hunting for his other shoe by the door, then pulling his jacket on.
+   item: Aoife Brennan starts "finishing list, waiting for Conor, getting coat on" at Brennan-Maguire flat: kitchen and living room, until Sat 10:30
+   reason: Conor said five minutes for shoes and is placed at the flat until 10:28.
+[Sat 10:18] speak (at Sat 10:18) Conor Maguire → Aoife Brennan: Have you seen my other trainer? I swear it was by the door last night.
+   item: Aoife Brennan starts "finishing list, waiting for Conor, getting coat on" at Brennan-Maguire flat: kitchen and living room, until Sat 10:30
+   reason: Ordinary small snag while he gets ready.
+[Sat 10:18] text (at Sat 10:24) Orla Keane → Aoife Brennan: saw this and thought of you, gig at the Lamp in January, cheap tickets https://example.com/gig lol. coffee soon?
+   item: Aoife Brennan starts "finishing list, waiting for Conor, getting coat on" at Brennan-Maguire flat: kitchen and living room, until Sat 10:30
+   reason: Orla sends gig links and memes now and then; a casual Saturday text fits.
+[Sat 10:23] present (at Sat 10:26) Pauline Doyle → Margaret Holloway: Is putting out her recycling box a few doors down and notices Margaret on the pavement.
+   item: Margaret Holloway starts "putting coat on, leaving the house" at The street, until Sat 10:30
+   reason: Neighbour a few doors down, ordinary street encounter as Margaret leaves.
+[Sat 10:23] speak (at Sat 10:23) Pauline Doyle → Margaret Holloway: Morning, Margaret! Off out? Your parcel came to me yesterday, I'll pop it round later.
+   item: Margaret Holloway starts "putting coat on, leaving the house" at The street, until Sat 10:30
+   reason: Pauline trades parcels and street news; brief friendly chat.
+[Sat 10:23] none Aoife Brennan: 
+   item: Aoife Brennan starts "walk to high street, thrift shops, then cheap coffee with Conor" at elsewhere, until Sat 12:30
+   reason: Walk to the high street is uneventful; Conor is with her and nothing else comes of it right now.
+[Sat 10:30] text (at Sat 10:33) Callum Reid → Muhammad Hafiz Ismail: Usual it is. Get there early, I'm not standing at the back again. Ref was a joke
+   item: Muhammad Hafiz Ismail texted Callum Reid: "yeah go on. where, usual? i'll be there for 2:30"
+   reason: Callum replies to confirm the pint in his banter-heavy style.
+[Sat 10:30] none Harpreet Kaur Sandhu: 
+   item: Harpreet Kaur Sandhu starts "walk to park with flask and kids" at Local park, until Sat 12:30
+   reason: Walking to the park with kids and a flask; the playdate is already arranged for 2, so nothing new comes up now.
+[Sat 10:30] present (at Sat 10:35) Doreen Hollis → Margaret Holloway: Doreen is walking slowly along the path by the park gate in a raincoat, with a shopping trolley, heading for the shops.
+   item: Margaret Holloway starts "walking through the park slowly, then shops for bits and Derek's Saturday paper" at Local park, until Sat 12:15
+   reason: Doreen keeps an eye on the street and could plausibly be out on a Saturday morning; she's a neighbour of Harpreet, so she may be spotted by either.
+[Sat 10:30] speak (at Sat 10:35) Doreen Hollis → Margaret Holloway: Morning! Mind the leaves by the gate, they're like glass this morning. Are you off to the shops? I've been out since nine and my hip's telling me about it.
+   item: Margaret Holloway starts "walking through the park slowly, then shops for bits and Derek's Saturday paper" at Local park, until Sat 12:15
+   reason: Doreen talks a lot and would greet someone she passes in the park.
+[Sat 10:44] text (at Sat 10:47) Orla Keane → Aoife Brennan: its on the link, think it was under a tenner-ish for early ones but double check, might sell out
+   item: Aoife Brennan texted Orla Keane: "ha go on then, how cheap is cheap? send me the price"
+   reason: Orla sent the link and would answer a price question casually; avoids stating a firm figure.
+[Sat 10:44] text (at Sat 10:49) Orla Keane → Aoife Brennan: ah can't today, got stuff on. next week yeah? i'll message you monday
+   item: Aoife Brennan texted Orla Keane: "and yes coffee, im on the high street today til about 12:30 if you're about. otherwise next week"
+   reason: Ordinary outcome: Orla is not placed nearby now, so she suggests next week as Aoife offered.
+[Sat 10:45] none Callum Reid → Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail texted Callum Reid: "ha ok, i'll be there early"
+   reason: Callum already confirmed the plan and Hafiz's reply is a closing message; nothing more needed.
+[Sat 10:45] result (at Sat 10:45) Muhammad Hafiz Ismail: You go round the radiators with the key. The upstairs ones hiss out a bit of air before a trickle of water comes, and the one in the back bedroom takes a while. The boiler pressure gauge has dropped a little below where it should be, so you top it up with the filling loop until it sits back in the right range.
+   item: Muhammad Hafiz Ismail starts "bleed radiators, check boiler pressure" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: Ordinary outcome of bleeding radiators: some air released and pressure dipping slightly, needing a top up.
+[Sat 10:45] present (at Sat 10:55) Joanne Pritchard → Muhammad Hafiz Ismail: Comes through the kitchen with a mug, pauses to see what you are doing, then settles on the sofa in the living room with her phone.
+   item: Muhammad Hafiz Ismail starts "bleed radiators, check boiler pressure" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: Housemate Joanne is home on a Saturday morning and already knew about the boiler.
+[Sat 10:45] speak (at Sat 10:57) Joanne Pritchard → Muhammad Hafiz Ismail: Any luck? The one in my room's always cold at the bottom, if you're going round them anyway.
+   item: Muhammad Hafiz Ismail starts "bleed radiators, check boiler pressure" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: Natural small chat from a housemate while he is bleeding radiators.
+[Sat 10:47] none Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail starts "wipe up, put key and tools away" at Ismail-Pritchard house: kitchen and living room, until Sat 11:00
+   reason: Short tidy-up alone; Joanne already had her chat earlier and nothing more is needed. Callum's texts are settled for the pub.
+[Sat 11:01] result (at Sat 11:01) Muhammad Hafiz Ismail: You fit the key and give the valve a slow quarter turn. There's a hiss, a bit of spluttering air, then a thin dribble of water, so you close it up. The radiator is already warming at the top. You dab the drip by the window with a cloth and put the key back in your pocket.
+   item: Muhammad Hafiz Ismail starts "bleed Joanne's radiator, wipe up, put key away" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: Ordinary successful bleed with a small drip, matching Joanne's earlier carpet warning.
+[Sat 11:01] present (at Sat 11:04) Joanne Pritchard → Muhammad Hafiz Ismail: Passing through her room doorway with a mug, then back downstairs to the kitchen, glancing at the radiator.
+   item: Muhammad Hafiz Ismail starts "bleed Joanne's radiator, wipe up, put key away" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: She is already in the house until 11:10 and asked for her radiator to be done.
+[Sat 11:01] speak (at Sat 11:01) Joanne Pritchard → Muhammad Hafiz Ismail: Is it warming up at the bottom now? Cheers for doing it. Want another tea?
+   item: Muhammad Hafiz Ismail starts "bleed Joanne's radiator, wipe up, put key away" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: Natural housemate check-in after the favour.
+[Sat 11:01] text (at Sat 11:07) Callum Reid → Muhammad Hafiz Ismail: Lads are saying be there for 2 not 2:30 if we want the seats by the telly. You in?
+   item: Muhammad Hafiz Ismail starts "bleed Joanne's radiator, wipe up, put key away" at Ismail-Pritchard house: kitchen and living room, until Sat 11:15
+   reason: Callum is organising the pub plan for the game and might ordinarily follow up.
+[Sat 11:04] none Orla Keane → Aoife Brennan: 
+   item: Aoife Brennan texted Orla Keane: "no bother, monday's grand"
+   reason: Orla's last message was just a sign-off; she said she'd message Monday, so no reply is needed now.
+[Sat 11:04] none Orla Keane → Aoife Brennan: 
+   item: Aoife Brennan texted Orla Keane: "will check the link, under a tenner is good 👍"
+   reason: Orla has already said she's busy today and the chat has wound down, so she wouldn't text again within minutes.
+[Sat 11:10] text (at Sat 11:14) Callum Reid → Muhammad Hafiz Ismail: Good man. Saved you a spot, bring a tenner for the kitty if you've got it
+   item: Muhammad Hafiz Ismail texted Callum Reid: "yep in. i'll be there for 2"
+   reason: Callum is banter-heavy and would reply briefly to confirm the plan; a short natural reply, no drama.
+[Sat 11:18] none Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail starts "tinkering with bike and old electronics" at Ismail-Pritchard house: Hafiz's bedroom, until Sat 12:30
+   reason: Quiet Saturday tinkering alone in his bedroom; Joanne is elsewhere in the house and nothing needs her, so nothing comes of it.
+[Sat 11:18] none Callum Reid → Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail texted Callum Reid: "👍 got a tenner"
+   reason: Callum already closed the plan with a thumbs-up; no reply needed.
+[Sat 12:10] result (at Sat 12:10) Margaret Holloway: The corner shop is quiet. You find the bits you came for and Saturday's paper is on the rack by the till. The shopkeeper rings you through without fuss and you're done in a few minutes.
+   item: Margaret Holloway starts "picking up bits and Derek's Saturday paper, then heading home" at Corner shop, until Sat 12:30
+   reason: Ordinary errand outcome, no snags needed.
+[Sat 12:10] present (at Sat 12:10) Shopkeeper → Margaret Holloway: Behind the till, serving and tidying the paper rack.
+   item: Margaret Holloway starts "picking up bits and Derek's Saturday paper, then heading home" at Corner shop, until Sat 12:30
+   reason: A shop needs someone serving; none was listed, so a new one fits.
+[Sat 12:10] none Margaret Holloway: 
+   item: Margaret Holloway starts "picking up bits and Derek's Saturday paper, then heading home" at Corner shop, until Sat 12:30
+   reason: No contact gets in touch; most moments nothing comes of it.
+[Sat 12:20] present (at Sat 12:28) Pauline Doyle → Margaret Holloway: Is in her front garden sweeping wet leaves off the path, and looks up as Margaret passes.
+   item: Margaret Holloway starts "walking home from the shops with the paper, mindful of wet leaves" at The street, until Sat 12:35
+   reason: Pauline lives a few doors down and was already placed on the street this morning; a brief wall chat is ordinary.
+[Sat 12:20] speak (at Sat 12:28) Pauline Doyle → Margaret Holloway: Hello again, Margaret! Got your paper, I see. I haven't forgotten your parcel, I'll bring it round this afternoon. These leaves are treacherous, aren't they?
+   item: Margaret Holloway starts "walking home from the shops with the paper, mindful of wet leaves" at The street, until Sat 12:35
+   reason: Pauline promised to drop the parcel round, so a brief reminder as Margaret walks past is natural.
+[Sat 12:23] present (at Sat 12:23) Conor Maguire → Aoife Brennan: Is at the café with Aoife, grabbing a table and checking his phone while she orders, then chatting about what's left on the list.
+   item: Aoife Brennan starts "cheap coffee with Conor" at High street café, until Sat 12:45
+   reason: Conor came along to the high street and coffee was agreed, so he is with her.
+[Sat 12:23] text (at Sat 12:31) Chloe Patel → Aoife Brennan: hey, any chance you can swap my Tuesday late for your early next week? no stress if not, customer from hell again yesterday btw
+   item: Aoife Brennan starts "cheap coffee with Conor" at High street café, until Sat 12:45
+   reason: A chatty colleague plausibly texts about work on a Saturday; ordinary and low stakes.
+[Sat 12:23] none Aoife Brennan: 
+   item: Aoife Brennan starts "cheap coffee with Conor" at High street café, until Sat 12:45
+   reason: No other background people are at the café and nobody else needs to get in touch now.
+[Sat 12:30] present (at Sat 12:30) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Is in the kitchen asking what's for lunch and whether they can go to the park soon, then drifts off to play with his toys.
+   item: Harpreet Kaur Sandhu starts "lunch, then catch up on late invoices" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: Her six-year-old is at home on a Saturday lunchtime and has the park playdate in mind.
+[Sat 12:30] present (at Sat 12:30) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Is around the kitchen and living room, helping get lunch on the table and keeping an eye on Simran.
+   item: Harpreet Kaur Sandhu starts "lunch, then catch up on late invoices" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: Her husband is home at the weekend and was already in the house this morning.
+[Sat 12:30] speak (at Sat 12:30) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Lunch in ten? I've put the dal on. Don't forget you've got the park at two, I'll sort Simran's things.
+   item: Harpreet Kaur Sandhu starts "lunch, then catch up on late invoices" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: Ordinary household chat about lunch and the planned afternoon.
+[Sat 12:30] none Harpreet Kaur Sandhu: 
+   item: Harpreet Kaur Sandhu starts "lunch, then catch up on late invoices" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: No other contacts get in touch; Becky already confirmed the park at 2 and Priya's brief can wait until the weekend is over.
+[Sat 12:30] present (at Sat 12:30) Pauline Doyle → Muhammad Hafiz Ismail: Is heading back along the pavement with her shopping bag, near her gate.
+   item: Muhammad Hafiz Ismail starts "short run round the park" at The street, until Sat 13:30
+   reason: She is already placed on the street until 12:32, so he passes her as he leaves.
+[Sat 12:30] speak (at Sat 12:30) Pauline Doyle → Muhammad Hafiz Ismail: Morning, love. Well, afternoon nearly. Off for a run? Mind the leaves, they're slippery by the park gate.
+   item: Muhammad Hafiz Ismail starts "short run round the park" at The street, until Sat 13:30
+   reason: Friendly brief street chat, matching her character and the damp leaves already mentioned.
+[Sat 12:30] none Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail starts "short run round the park" at The street, until Sat 13:30
+   reason: He already arranged the pub with Callum and his mum rings on Sundays, so no contact is needed during a short run.
+[Sat 12:35] present (at Sat 12:35) Derek Holloway → Margaret Holloway: Sitting in the living room with the half-done crossword, glad to see Margaret back with the paper; pottering about and putting the radio on while lunch gets sorted.
+   item: Margaret Holloway starts "lunch with Derek, radio play, crossword" at Holloway house: kitchen and living room, until Sat 14:00
+   reason: Derek lives there and is home; he is the natural companion for lunch and the radio play.
+[Sat 12:35] speak (at Sat 12:35) Derek Holloway → Margaret Holloway: There you are, love. Did you get my Saturday paper? Pauline's not been keeping you chatting out there, has she?
+   item: Margaret Holloway starts "lunch with Derek, radio play, crossword" at Holloway house: kitchen and living room, until Sat 14:00
+   reason: Ordinary greeting from a husband when his wife comes in from the shops.
+[Sat 12:40] text (at Sat 12:43) Chloe Patel → Aoife Brennan: it's the normal late, so a fair bit after your 5:30 finish, but you'd be on the early so you'd be done way before me. will check the rota to be sure x
+   item: Aoife Brennan texted Chloe Patel: "hey, what time is your tuesday late til? i'm 9:30-5:30 so depends how late"
+   reason: Chloe is chatty and keen for the swap, so she answers the shift question quickly.
+[Sat 12:40] text (at Sat 12:46) Chloe Patel → Aoife Brennan: omg so he rang back after I'd already sorted it and insisted nobody had called him. then wanted to speak to a manager about it. I'll tell you properly Monday
+   item: Aoife Brennan texted Chloe Patel: "probably fine though, will confirm properly in a bit. ugh what did the customer do this time"
+   reason: Chloe swaps customer gripes with Aoife, so she replies to the second text with an ordinary moan.
+[Sat 12:45] present (at Sat 12:45) Shopkeeper → Aoife Brennan: Behind the counter, serving and restocking shelves.
+   item: Aoife Brennan starts "buy eggs, oats, cheap veg for Sunday prep" at Corner shop, until Sat 13:30
+   reason: Shopkeeper is the one placed at the corner shop and would be there on a Saturday lunchtime.
+[Sat 12:45] result (at Sat 12:45) Aoife Brennan: The shop has eggs and oats on the shelves. The veg is a small stand by the door, with a few loose bits like carrots, onions and cabbage. It's not a big choice, but there's enough for a basic prep.
+   item: Aoife Brennan starts "buy eggs, oats, cheap veg for Sunday prep" at Corner shop, until Sat 13:30
+   reason: An ordinary small corner shop has the basics, with limited veg.
+[Sat 12:45] speak (at Sat 12:45) Shopkeeper → Aoife Brennan: Afternoon. Basket's by the door if you want one.
+   item: Aoife Brennan starts "buy eggs, oats, cheap veg for Sunday prep" at Corner shop, until Sat 13:30
+   reason: A brisk, polite greeting fits the shopkeeper.
+[Sat 12:45] text (at Sat 12:51) Chloe Patel → Aoife Brennan: just checked the rota, tuesday late is 11-7. so you'd be 9:30-5:30 on the early, fine? thank you thank you x
+   item: Aoife Brennan starts "buy eggs, oats, cheap veg for Sunday prep" at Corner shop, until Sat 13:30
+   reason: Chloe said she would check the rota and confirm the swap.
+[Sat 12:46] text (at Sat 12:49) Chloe Patel → Aoife Brennan: you absolute star, thank you!! 🙏 owe you a coffee
+   item: Aoife Brennan texted Chloe Patel: "yeah that's fine, swap works. i'll take your late, you take my early 👍"
+   reason: Chloe is chatty and grateful; natural quick reply to the swap agreeing.
+[Sat 12:46] text (at Sat 12:51) Chloe Patel → Aoife Brennan: will look at the rota properly and send you the exact times shortly. and ha, monday, you'll need a brew for this one x
+   item: Aoife Brennan texted Chloe Patel: "check the rota and let me know the times so i can confirm. and monday for the customer story, i want the full thing"
+   reason: She said she'd check the rota; she acknowledges it and agrees to save the story for Monday, without inventing shift times.
+[Sat 12:53] text (at Sat 12:56) Chloe Patel → Aoife Brennan: perfect, thank you!! so tues you're 11-7 and I'm on your 9:30-5:30. I'll put it on the rota Monday and confirm x
+   item: Aoife Brennan texted Chloe Patel: "11-7 on the late is fine, i'll take it. so i'm on the late tuesday and you're on my 9:30-5:30. just send me the rota times when you've checked and i'll confirm 👍"
+   reason: Chloe replies to the swap confirmation, a natural short reply from a chatty colleague.
+[Sat 12:53] present (at Sat 12:53) Shopkeeper → Aoife Brennan: Behind the counter, rings up Aoife's eggs, oats and veg and bags them.
+   item: Aoife Brennan starts "paying for eggs, oats and veg" at Corner shop, until Sat 13:05
+   reason: Shopkeeper is at the shop until 13:30 and serves at the till.
+[Sat 12:53] speak (at Sat 12:54) Shopkeeper → Aoife Brennan: Do you need a bag? That's the lot, is it?
+   item: Aoife Brennan starts "paying for eggs, oats and veg" at Corner shop, until Sat 13:05
+   reason: Brisk, polite till pleasantries.
+[Sat 12:53] result (at Sat 12:53) Aoife Brennan: You put the eggs, oats, carrots, onions and cabbage on the counter. The shopkeeper scans each item, the card reader takes a second to wake up, then your payment goes through and you pack everything into your bag.
+   item: Aoife Brennan starts "paying for eggs, oats and veg" at Corner shop, until Sat 13:05
+   reason: Ordinary uneventful purchase.
+[Sat 12:56] text (at Sat 12:58) Chloe Patel → Aoife Brennan: haha deal, bring a brew and I'll tell all. have a good weekend x
+   item: Aoife Brennan texted Chloe Patel: "grand, tues 11-7 for me then. see you monday for the story 👍"
+   reason: Chloe would naturally send a brief friendly sign-off; the swap is settled.
+[Sat 12:56] present (at Sat 12:56) Shopkeeper → Aoife Brennan: Finishes ringing up Aoife's basket at the till, takes payment and waits while she packs her own bag.
+   item: Aoife Brennan starts "finishing paying, bagging shopping" at Corner shop, until Sat 13:05
+   reason: Shopkeeper is already at the shop until 12:58 and is completing the sale.
+[Sat 12:56] speak (at Sat 12:57) Shopkeeper → Aoife Brennan: That's all done. Have a good one.
+   item: Aoife Brennan starts "finishing paying, bagging shopping" at Corner shop, until Sat 13:05
+   reason: Brisk pleasantry as the payment finishes, matching the shopkeeper's character.
+[Sat 12:59] present (at Sat 12:59) Conor Maguire → Aoife Brennan: Got back with Aoife, putting his shoes by the door and unpacking a bag or two onto the kitchen counter, then drifting to the sofa with his phone.
+   item: Aoife Brennan starts "walk home, put shopping away" at Brennan-Maguire flat: kitchen and living room, until Sat 13:15
+   reason: He went out with her and would come home with her; ordinary shared unpacking.
+[Sat 12:59] speak (at Sat 13:01) Conor Maguire → Aoife Brennan: Where do you want the eggs, fridge door? And did we actually get oats or just talk about it?
+   item: Aoife Brennan starts "walk home, put shopping away" at Brennan-Maguire flat: kitchen and living room, until Sat 13:15
+   reason: Natural small talk while helping put shopping away.
+[Sat 12:59] none Aoife Brennan: 
+   item: Aoife Brennan starts "walk home, put shopping away" at Brennan-Maguire flat: kitchen and living room, until Sat 13:15
+   reason: Chloe and Orla just finished their threads; no one else would plausibly contact her in this short window.
+[Sat 13:00] present (at Sat 13:00) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Serving the dal and rice onto plates at the table, asking if she wants the roti warmed, then eating with her.
+   item: Harpreet Kaur Sandhu starts "lunch with family" at Sandhu house: kitchen and living room, until Sat 13:15
+   reason: He said lunch at ten past and is already in the kitchen until 13:30.
+[Sat 13:00] present (at Sat 13:02) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Sitting at the table pushing rice around his plate, chatting about going to the park and whether he can take his scooter.
+   item: Harpreet Kaur Sandhu starts "lunch with family" at Sandhu house: kitchen and living room, until Sat 13:15
+   reason: Six-year-old at family lunch before the park playdate.
+[Sat 13:00] present (at Sat 13:02) Simran Kaur Sandhu → Harpreet Kaur Sandhu: In her high chair at the table, eating bits of roti and dal with her fingers and making a mess.
+   item: Harpreet Kaur Sandhu starts "lunch with family" at Sandhu house: kitchen and living room, until Sat 13:15
+   reason: A 1-year-old would be fed with the family at lunch.
+[Sat 13:00] speak (at Sat 13:00) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Mum, can I bring my scooter to the park? Becky's Max will have his, he said.
+   item: Harpreet Kaur Sandhu starts "lunch with family" at Sandhu house: kitchen and living room, until Sat 13:15
+   reason: Ordinary kid chatter about the afternoon's plans.
+[Sat 13:00] none Harpreet Kaur Sandhu: 
+   item: Harpreet Kaur Sandhu starts "lunch with family" at Sandhu house: kitchen and living room, until Sat 13:15
+   reason: No contact needs to get in touch during lunch; Becky already confirmed the park.
+[Sat 13:15] present (at Sat 13:15) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Is in the kitchen finishing the dal, stirring it and setting the table for lunch.
+   item: Harpreet Kaur Sandhu starts "invoices on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: He put the dal on and lunch was planned for about 13:10-13:15; he's already placed in the kitchen.
+[Sat 13:15] present (at Sat 13:15) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Is playing with his toys on the living room floor, then comes over to the table for lunch.
+   item: Harpreet Kaur Sandhu starts "invoices on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: He is placed there until 13:17.
+[Sat 13:15] present (at Sat 13:15) Simran Kaur Sandhu → Harpreet Kaur Sandhu: Is on the living room floor babbling and banging a spoon on a pot.
+   item: Harpreet Kaur Sandhu starts "invoices on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: She is placed there until 13:17.
+[Sat 13:15] speak (at Sat 13:17) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Dal's ready whenever you are. Can you shut the laptop for ten minutes and come and eat? Then you can get to the park.
+   item: Harpreet Kaur Sandhu starts "invoices on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: Lunch was planned for about now, so he calls her to eat.
+[Sat 13:30] present (at Sat 13:38) Joanne Pritchard → Muhammad Hafiz Ismail: Comes into the kitchen to make herself a sandwich and wipes the worktop down while she's at it.
+   item: Muhammad Hafiz Ismail starts "shower, lunch" at Ismail-Pritchard house: kitchen and living room, until Sat 14:20
+   reason: Housemate at home on a Saturday, ordinary kitchen presence around lunch.
+[Sat 13:30] speak (at Sat 13:40) Joanne Pritchard → Muhammad Hafiz Ismail: Radiator in my room's properly warm now, ta again. You off out for the match later? Want a sandwich while I'm at it?
+   item: Muhammad Hafiz Ismail starts "shower, lunch" at Ismail-Pritchard house: kitchen and living room, until Sat 14:20
+   reason: Natural small chat while sharing the kitchen, following up on the radiator.
+[Sat 13:30] text (at Sat 13:55) Callum Reid → Muhammad Hafiz Ismail: Few of the lads are here already, seats by the telly sorted. Don't be late, 2 sharp 😂
+   item: Muhammad Hafiz Ismail starts "shower, lunch" at Ismail-Pritchard house: kitchen and living room, until Sat 14:20
+   reason: Callum arranged the 2 o'clock meet and would nudge him beforehand.
+[Sat 13:30] none Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail starts "shower, quick lunch" at Ismail-Pritchard house: kitchen and living room, until Sat 14:00
+   reason: Quiet Saturday lunchtime before heading out at 2 for the pub; Joanne already had tea with him this morning, nothing needs to come of it.
+[Sat 13:32] present (at Sat 13:32) Derek Holloway → Margaret Holloway: Sitting with his tea and digestive, pencil in hand, working on the crossword and listening to the radio play with Margaret.
+   item: Margaret Holloway starts "tea and biscuit, crossword with Derek, radio play" at Holloway house: kitchen and living room, until Sat 14:00
+   reason: Derek is placed in the kitchen and living room until 14:00 and is doing the crossword with her.
+[Sat 13:32] none Margaret Holloway: 
+   item: Margaret Holloway starts "tea and biscuit, crossword with Derek, radio play" at Holloway house: kitchen and living room, until Sat 14:00
+   reason: Pauline said she would bring the parcel this afternoon, but it is too soon after her sweeping and lunch. Nobody else needs to get in touch now.
+[Sat 13:35] present (at Sat 13:35) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Finishing rinsing the pan and wiping the hob, then tidying the kitchen while Harpreet types.
+   item: Harpreet Kaur Sandhu starts "finishing last invoice on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: He is placed in the kitchen until 13:45 and was clearing up after lunch.
+[Sat 13:35] speak (at Sat 13:40) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Quarter to is coming up. Want me to find Simran's hat and get her in the buggy while you finish that?
+   item: Harpreet Kaur Sandhu starts "finishing last invoice on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: He said he would sort Simran's things for the park, so a practical offer fits.
+[Sat 13:35] none Harpreet Kaur Sandhu: 
+   item: Harpreet Kaur Sandhu starts "finishing last invoice on laptop" at Sandhu house: kitchen and living room, until Sat 13:45
+   reason: No one else texts or calls now. Becky is already sorted for 2pm and the others have no reason to get in touch this minute.
+[Sat 13:42] none Aoife Brennan: 
+   item: Aoife Brennan starts "walk in the park with Conor" at Local park, until Sat 14:45
+   reason: A quiet Saturday park walk with Conor; no background person is listed there and nothing needs to come of it.
+[Sat 13:42] text (at Sat 14:02) Niamh Maguire → Aoife Brennan: was just thinking, are you and Conor about tomorrow? I'm over your way and might drop in for a cuppa. also your music taste is still criminal x
+   item: Aoife Brennan starts "walk in the park with Conor" at Local park, until Sat 14:45
+   reason: Niamh is Conor's sibling who jokes with Aoife; a casual weekend text is ordinary and low-key.
+[Sat 13:45] present (at Sat 13:45) Gurpreet Singh Sandhu → Harpreet Kaur Sandhu: Finding Simran's hat in the basket by the door, getting her into the buggy and zipping her coat, then checking the flask and bag by the kitchen counter.
+   item: Harpreet Kaur Sandhu starts "coats on, flask packed, leave for park" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: He offered at 13:40 to sort the hat and buggy, so he is in the house helping them leave.
+[Sat 13:45] present (at Sat 13:45) Simran Kaur Sandhu → Harpreet Kaur Sandhu: One-year-old being put in her hat and buggy, babbling and tugging at the straps.
+   item: Harpreet Kaur Sandhu starts "coats on, flask packed, leave for park" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: She is at home and being got ready for the park.
+[Sat 13:45] present (at Sat 13:45) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Waiting in the hall in his scooter helmet next to his scooter, asking whether it's time yet and needing his coat and shoes done up.
+   item: Harpreet Kaur Sandhu starts "coats on, flask packed, leave for park" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: He put his helmet on in the hall earlier and is eager to go.
+[Sat 13:45] speak (at Sat 13:45) Arjun Singh Sandhu → Harpreet Kaur Sandhu: Mum, are we going now? I've got my helmet on. Can I carry the snacks? Max'll be there already.
+   item: Harpreet Kaur Sandhu starts "coats on, flask packed, leave for park" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: A six-year-old impatient to leave for the park.
+[Sat 13:45] text (at Sat 13:50) Becky Thornton → Harpreet Kaur Sandhu: Heading out now, got the snacks! Dry so far. See you by the swings in a bit x
+   item: Harpreet Kaur Sandhu starts "coats on, flask packed, leave for park" at Sandhu house: kitchen and living room, until Sat 14:00
+   reason: Becky is organised and likely to check in just before the two o'clock meet-up.
+[Sat 13:55] none Becky Thornton → Harpreet Kaur Sandhu: 
+   item: Harpreet Kaur Sandhu texted Becky Thornton: "leaving now, see you at the swings"
+   reason: Becky already replied to the plan and is on her way; a short 'leaving now' text needs no answer, so nothing comes of it.
+[Sat 13:57] none Muhammad Hafiz Ismail: 
+   item: Muhammad Hafiz Ismail starts "walking to the pub" at The street, until Sat 14:10
+   reason: A short walk down a residential street on a Saturday afternoon; nobody is placed there and nothing ordinarily comes of it.
+[Sat 13:57] text (at Sat 14:01) Trevor Marsh → Muhammad Hafiz Ismail: Hafiz, you about later? Got a plug socket in the back room that's gone dead, wondered if you'd have a look when you've a minute. No rush.
+   item: Muhammad Hafiz Ismail starts "walking to the pub" at The street, until Sat 14:10
+   reason: Trevor ordinarily asks for small electrical favours; a casual, low-urgency text on a Saturday fits.

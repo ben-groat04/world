@@ -204,6 +204,7 @@ function startScene(t, where, phone, people, starter, opening) {
 function release(sc, n, t, ended) { // a person leaves a conversation: it goes into their journal, and they decide what next
   if (!NAMES.includes(n)) return
   if (ended === 'not answered') { if (n === sc.starter) { jot(n, t, `you rang ${sc.people.find((x) => x !== n)}; no answer`); wake(n, t, 'no answer') } else notify(n, t, `Missed call from ${label(n, sc.starter)}.`); return }
+  if (!sc.lines.length) return wake(n, t, 'you broke off before anything was said') // nothing to remember
   const head = `${sc.phone ? 'call' : 'conversation at ' + sc.where} with ${sc.people.filter((x) => x !== n).map((m) => label(n, m)).join(', ')} [ref ${fmt(sc.t0).slice(4)}]`
   jot(n, t, `${head}:\n${sceneText(sc.lines, n)}`, true, { ref: fmt(sc.t0).slice(4), head })
   wake(n, t, 'after the conversation')

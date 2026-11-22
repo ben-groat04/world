@@ -249,7 +249,8 @@ else (async () => {
   const { sample } = await import(path.join(__dirname, 'sampler', 'index.mjs'))
   for (const [s, n] of [['flatshare', 4], ['family', 0], ['cafe', 5], ['street', 6], ['friends', 5]]) await test(`fresh ${s}`, sample(s, n, 'test-' + s), { seed: 5 })
   for (const s of Object.keys(SETTINGS)) await test(`round-1 ${s}`, sample(s, 4, 'r1'), { seed: 11 }) // the draws round 1 launches with
-  await test('check cafe', sample('cafe', 4, 'r1'), { startDow: 2, startHour: 10, hours: 3, seed: 1101 }) // the short real check
+  for (const f of fs.existsSync(path.join(__dirname, 'suite-r2')) ? fs.readdirSync(path.join(__dirname, 'suite-r2')) : []) { const a = JSON.parse(fs.readFileSync(path.join(__dirname, 'suite-r2', f))) // the suite as it will launch
+    await test(a.label, a.sample, { startDow: a.startDow, startHour: a.startHour, hours: a.hours, seed: a.seed }) }
   await test('flatshare', fixtures[0][1], { skipName: true, seed: 2, hours: 6 })
   await test('flatshare', fixtures[0][1], { show: true, seed: 4 })
   await test('cafe', fixtures[2][1], { slowTalk: true, seed: 6 })

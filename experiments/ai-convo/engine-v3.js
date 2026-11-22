@@ -69,7 +69,7 @@ const NAMER = obj({ sets: arr(arr(obj({ id: str, name: str })), { description: '
 const [nm, ...gen] = await parallel([() => ids.length ? call('role', `${roleOf('namer')}Give full names to the people in a social simulation set in: ${SETTING}.
 PEOPLE (sampled from census data; each id is one person, and the same id can appear in several households' lists):\n${ATTR.map((a) => JSON.stringify(a)).join('\n')}
 Name every id as people with that birth year, ethnicity, birthplace, religion and family are actually named in the UK; names within a family fit together as they would for that family. No two alike.`, NAMER, { phase: 'Generate', label: 'name people', for: 'generator' }) : null,
-  ...ATTR.map((a, i) => () => call('persona', `${roleOf('character writer')}Write one person for a social simulation set in: ${SETTING}.
+  ...ATTR.map((a, i) => () => call('role', `${roleOf('character writer')}Write one person for a social simulation set in: ${SETTING}.
 FACTS (sampled from census data): ${JSON.stringify(blind(a))}
 TEMPERAMENT (drawn at random; low/high = bottom/top quarter of people): ${TEMPER[i]}
 Some identity facts are deliberately withheld. Choose interests and tastes as you would for a random person with this age, work, household, health and temperament. No figures, dates or events beyond the facts. Ordinary life: no secrets, crises or plot hooks.`,
@@ -228,7 +228,7 @@ const SAY = obj({ say: { type: 'string', description: 'words said out loud, or e
 const SAYP = obj({ ...SAY.properties, messages: arr(obj({ to: str, text: str }), { maxItems: 2, description: 'texts you send now (to a person, contact or group)' }),
   call: { type: 'string', description: 'someone you ring now (you step out of this conversation to do it); else empty' }, action: { type: 'string', description: 'an errand that depends on the outside world, done now (look something up, order, pay); else empty' } }, SAY.required)
 const HEAR = obj({ come: { type: 'boolean', description: 'you go to them' }, say: { type: 'string', description: 'anything you call back, or empty' } })
-const personaCtx = (n, now, max) => `YOUR JOURNAL (what you saw, heard, said and did):\n${journal(n, now, max)}\nYOUR PLAN: ${planView(n, now).slice(0, 2).join(' / ') || '(none)'}\n\n`
+const personaCtx = (n, now, max) => `YOUR JOURNAL (what you saw, heard, said and did):\n${journal(n, now, max)}\nYOUR PLAN: ${planView(n, now).slice(0, 2).join(' / ') || '(none)'}\n${phoneLine(n)}\n\n`
 const live = (sc) => sc.people.filter((x) => !sc.left.has(x))
 function lineFrom(sc, speaker, floor) { // one person's next bit of a conversation; floor = anyone may speak now, nobody has to
   const now = sc.t, others = live(sc).filter((x) => x !== speaker), me = NAMES.includes(speaker)
@@ -262,7 +262,7 @@ async function sceneLine(sc) {
   else { for (const n of cands) sc.silent.add(n)
     const r1 = cands.length === 1 && rs[0] && !rs[0].leave && !rs[0].aside ? rs[0] : null
     sc.lines.push(r1 ? { name: cands[0], say: '', do: noEmoji(r1.do) } : { name: '—', say: '', do: 'pause' }); sc.t = t0 + Math.max(0.5, clamp(r1?.minutes, 0, 10)); outward(sc, cands[0], r1) }
-  if (sc.held && sc.answered) { sc.lines.push({ name: sc.starter, say: sc.held, do: '' }); sc.held = null; sc.t += 0.5 } // the caller speaks once picked up
+  const held = sc.held && sc.answered && live(sc).includes(sc.starter); if (held) { sc.lines.push({ name: sc.starter, say: sc.held, do: '' }); sc.held = null; sc.t += 0.5 } // the caller speaks once picked up
   if (r?.call_over && !sc.phone && !resolve(r.call_over, live(sc))) { // the person called for decides for themselves
     const me = NAMES.includes(speaker), x = resolve(r.call_over, NAMES.filter((k) => !live(sc).includes(k) && (!me || KNOW[speaker].has(k)))), bg = !x && resolve(r.call_over, bgNear(sc))
     const reach = x && !sceneOf(x) && !S[x].asleep && PLACE[S[x].place]?.building && PLACE[S[x].place].building === PLACE[sc.where]?.building
@@ -277,7 +277,8 @@ async function sceneLine(sc) {
   if (back) { sc.aside.delete(back); join(sc, back, '') } // spoken to again after stepping back
   const addressed = speaker && resolve(r.to, live(sc).filter((m) => m !== speaker))
   sc.addressed = !!addressed // spoken to: that person answers or stays quiet; otherwise anyone else may speak, and talk ends when nobody does
-  sc.next = addressed ? [addressed] : speaker ? live(sc).filter((m) => m !== speaker) : live(sc).filter((m) => !sc.silent.has(m))
+  sc.next = held ? live(sc).filter((m) => m !== sc.starter) : addressed ? [addressed] : speaker ? live(sc).filter((m) => m !== speaker) : live(sc).filter((m) => !sc.silent.has(m))
+  if (held) sc.silent.clear()
   if (!sc.next.length) sc.ending = 'talk ran out'
 }
 // being in the same room is not being in the conversation: others there hear it start and decide for themselves whether to join (talk_to)
@@ -288,8 +289,8 @@ function join(sc, n, say) { const back = sc.people.includes(n); if (back) sc.lef
 function setPlan(n, steps, now) {
   const s = S[n], v = ++s.pv; s.plan = []; let t = now
   for (const st of (steps || []).slice(0, 8)) {
-    let t1 = after(st.until, t); if (Number.isNaN(t1) || t1 - t > 23 * 60) continue; t1 = Math.min(t1, now + 20 * 60) // >23h = a time just past: a slip, not a plan
-    const pl = placeOf(st.place) || s.place
+    let t1 = after(st.until, t); if (Number.isNaN(t1) || t1 - t > 18 * 60) { notify(n, now, `Plan step "${st.doing} until ${st.until}" skipped: that time had already passed.`); continue } t1 = Math.min(t1, now + 20 * 60)
+    const pl = placeOf(st.place) || s.place; if (!canGo(n, pl)) notify(n, now, `You can't go into ${pl}; you stay at ${s.place}.`)
     s.plan.push({ t0: t, t1, place: canGo(n, pl) ? pl : s.place, doing: noEmoji(st.doing) || '', asleep: !!st.asleep, look: st.asleep ? 0 : clamp(st.next_look_minutes, 0, 240), action: String(st.action || '').trim() }); t = t1
     if (t >= now + 20 * 60) break }
   if (!s.plan.length) s.plan.push({ t0: now, t1: now + 60, place: s.place, doing: s.doing, asleep: s.asleep, look: 0, action: '', auto: true })
@@ -325,6 +326,7 @@ const planView = (n, now) => S[n].plan.filter((p) => p.t1 > now && !p.auto).map(
 const atPlace = (pl) => pl === OUT ? [] : Object.values(CONTACT).filter((c) => c.at && c.at.place === pl && c.at.until > clock).map((c) => c.name) // background people the world role put here
 const hereView = (n, pl = S[n].place) => [...here(n, pl).map((m) => `${label(n, m)} (${S[m].asleep ? 'asleep' : S[m].doing})`), ...atPlace(pl).map((c) => `${c} (${CONTACT[c].at.doing || CONTACT[c].role})`)].join(', ') || 'nobody'
 const phoneBook = (n) => NAMES.filter((m) => m !== n && NUM[n].has(m))
+const phoneLine = (n) => `PHONE: people ${phoneBook(n).join(', ') || 'none'}; contacts ${contactsOf(n).join(', ') || 'none'}; groups ${CHATS.filter((c) => c.members.includes(n)).map((c) => c.name).join(', ') || 'none'}.`
 const TURN = obj({ keep_plan: { type: 'boolean', description: 'true if your current plan still stands (then plan may be empty)' },
   plan: arr(obj({ until: { type: 'string', description: 'HH:MM clock time this step lasts until' }, place: str, doing: { type: 'string', description: 'a few words' }, asleep: bool,
     next_look_minutes: { type: 'integer', description: "your judgement: minutes until you'd next look up from this, notice who is around, check your phone or do something different. Often a few minutes with people around or while waiting; longer when absorbed. 0 = not until the step ends" },
@@ -345,7 +347,7 @@ WHERE YOU ARE: ${s.place}${s.doing ? ', ' + s.doing : ''}${s.asleep ? ' (asleep 
 YOUR PLAN (as you left it):\n${list(planView(n, now))}
 CALENDAR (next 24h):\n${list(calView(n, now))}
 PLACES: ${PLACES.filter((p) => canGo(n, p.name)).map((p) => p.name).join(' | ')}
-PHONE: people ${phoneBook(n).join(', ') || 'none'}; contacts ${contactsOf(n).join(', ') || 'none'}; groups ${CHATS.filter((c) => c.members.includes(n)).map((c) => c.name).join(', ') || 'none'}.
+${phoneLine(n)}
 What do you do now? Your journal shows what you have already said and done. Most moments change little.` }
 
 function send(from, to, text, t) {
@@ -364,7 +366,7 @@ function applyTurn(n, r, now) {
   const s = S[n], why = [...new Set(s.why)]; s.last = now; s.next = Infinity; s.why = []; s.turns++
   if (!r) { L.push({ t: now, kind: 'turn', who: n, why, failed: true }); s.why = why; s.next = now + 30; return } // unseen journal stays NEW for the retry
   const seen = J[n].filter((e) => !e.seen).map((e) => `${fmt(e.t)} ${e.text}`); for (const e of J[n]) e.seen = true
-  for (const g of r.gists || []) { const e = J[n].find((e) => e.ref && !e.gist && e.ref === String(g.ref || '').trim()) || J[n].find((e) => e.ref && !e.gist); if (e && g.gist) e.gist = noEmoji(g.gist) }
+  for (const g of r.gists || []) { const e = J[n].find((e) => e.ref && !e.gist && e.ref === String(g.ref || '').trim()); if (e && g.gist) e.gist = noEmoji(g.gist) } // unmatched: it stays open and is asked for again
   if (r.day && dayOf(now) > 0) s.days[dayOf(now) - 1] = noEmoji(r.day)
   if (r.keep_plan && s.plan.some((p) => p.t1 > now && !p.auto) && !(r.plan || []).length) syncToPlan(n); else setPlan(n, r.plan, now)
   for (const m of r.messages || []) send(n, m.to, m.text, now)
@@ -400,7 +402,7 @@ const RESOLVE = obj({ decisions: arr(obj({ item: int, kind: { type: 'string', en
   delay_minutes: int, minutes: { type: 'integer', description: 'present: how long they stay' }, about: { type: 'string', description: 'only for someone new (e.g. a customer): who they are and how they talk' },
   reason: { type: 'string', description: 'one line: why' } }, ['item', 'kind', 'who', 'from', 'text', 'reason'])) })
 const around = (pl) => pl === OUT ? [] : Object.values(CONTACT).filter((c) => canGo(c.name, pl) && (c.place === pl || (PLACE[pl].building && c.home === PLACE[pl].building) || atPlace(pl).includes(c.name))).map((c) => c.name)
-const whereNow = (c) => CONTACT[c].at && CONTACT[c].at.until > clock ? `at ${CONTACT[c].at.place} until ${fmt(CONTACT[c].at.until).slice(4)}` : 'whereabouts not shown yet'
+const whereNow = (c) => (CONTACT[c].at && CONTACT[c].at.until > clock ? `now at ${CONTACT[c].at.place} until ${fmt(CONTACT[c].at.until).slice(4)}` : 'not placed now') + (CONTACT[c].seen ? `; you placed them: ${CONTACT[c].seen.join(', ')}` : '') // the world keeps to what it already said
 async function resolveWorld(now) {
   if (!pendingWorld.length) return
   const items = pendingWorld.splice(0)
@@ -408,7 +410,7 @@ async function resolveWorld(now) {
   const r = await ask('role', `${roleOf('world: shops, services, apps, workplaces and every background person (household members, colleagues, customers, family and friends)')}Background people have their own lives and act on their own as they ordinarily would, given who they are and the relationship: a housemate is in the kitchen, a regular comes in, a mum rings, a mate texts about the weekend. Only when that is what would happen, not by default; most moments nothing comes of it. No drama, plot or crises. Outcomes as they ordinarily go, including ordinary snags. Every decision gets a one-line reason. Don't state prices, totals or other figures you would have to guess.
 SETTING: ${SETTING}. NOW: ${fmt(now)}${DATE}.
 ${cs.length ? `BACKGROUND PEOPLE (with everything between them and the simulated people so far):\n${cs.map((c) => `${c} (${CONTACT[c].role}; has the number of: ${CONTACT[c].linked.join(', ') || 'nobody here'}; ${whereNow(c)}): ${CONTACT[c].about}${(threads[c] || []).length ? '\n  ' + threads[c].join('\n  ') : ''}`).join('\n')}\n` : ''}ITEMS:\n${items.map((x, i) => `${i + 1}. [${x.kind}] ${x.kind === 'gets in touch' ? `${x.from} gets in touch with ${x.who} about: ${x.text} (write what ${x.from} actually sends or says)` : x.kind === 'step' ? `${x.text}. Others simulated there: ${here(x.who, x.place).join(', ') || 'none'}. Background people who could be there: ${around(x.place).join(', ') || 'none listed'}. ${x.who}'s contacts: ${contactsOf(x.who).join(', ') || 'none'}.` : x.text}`).join('\n')}
-One or more decisions per item (kind none if nothing comes of it). An errand's result arrives while the person is there doing it. For a [step]: who of the background is there during it (present: delay_minutes from now, minutes staying; someone new such as a customer is fine where it fits, with about), whether one of them starts talking to the person (speak, with their opening words), and whether any of the person's contacts gets in touch around now (text or call; only contacts who have their number).`, RESOLVE, { label: `${A.label} world ${fmt(now)}`, for: 'world', why: items.map((x) => x.kind).join(', ') })
+One or more decisions per item (kind none if nothing comes of it). An errand's result arrives while the person is there doing it. For a [step]: keep to where you already placed people, and reuse a background person rather than inventing a second one for the same role. Who of the background is there during it (present: delay_minutes from now, minutes staying; someone new such as a customer is fine where it fits, with about), whether one of them starts talking to the person (speak, with their opening words), and whether any of the person's contacts gets in touch around now (text or call; only contacts who have their number).`, RESOLVE, { label: `${A.label} world ${fmt(now)}`, for: 'world', why: items.map((x) => x.kind).join(', ') })
   const got = new Set(), finish = (it, text) => { if (it?.step && !it.step.result) it.step.result = text }
   for (const d of r?.decisions || []) {
     const it = items[(d.item | 0) - 1], who = resolve(d.who, NAMES) || it?.who; if (!who) continue; got.add(it)
@@ -420,7 +422,7 @@ One or more decisions per item (kind none if nothing comes of it). An errand's r
     if ((d.kind === 'present' || d.kind === 'speak') && !(from && pl !== OUT && canGo(from, pl))) { L[L.length - 1].blocked = `${from || '(nobody)'} cannot be at ${pl}`; continue }
     if (t >= END) continue
     if (d.kind === 'result') at(t, (tt) => { finish(it, d.text); L.push({ t: tt, kind: 'result', who, text: d.text }); notify(who, tt, d.text) })
-    else if (d.kind === 'present') at(t, (tt) => { CONTACT[from].at = { place: pl, until: tt + clamp(d.minutes || 30, 1, 960), doing: noEmoji(d.text) }; L.push({ t: tt, kind: 'present', who: from, place: pl, doing: d.text, until: CONTACT[from].at.until })
+    else if (d.kind === 'present') at(t, (tt) => { CONTACT[from].at = { place: pl, until: tt + clamp(d.minutes || 30, 1, 960), doing: noEmoji(d.text) }; (CONTACT[from].seen ||= []).push(`${fmt(tt).slice(4)}-${fmt(CONTACT[from].at.until).slice(4)} at ${pl}`); L.push({ t: tt, kind: 'present', who: from, place: pl, doing: d.text, until: CONTACT[from].at.until })
       for (const m of NAMES.filter((m) => S[m].place === pl && !S[m].asleep)) notify(m, tt, `${from} is here (${noEmoji(d.text)}).`) })
     else if (d.kind === 'speak') at(t, (tt) => { const ok = S[who].place === pl && !S[who].asleep && !sceneOf(who) && !sceneOf(from)
       L.push({ t: tt, kind: 'approach', who: from, to: who, place: pl, ok }); if (!ok) return

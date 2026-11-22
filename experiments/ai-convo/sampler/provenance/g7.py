@@ -48,9 +48,10 @@ D['sources']['S17'] = "Nomis NM_750_1 DC6107EW (2011) economic activity by sex b
 D['design'] = [d for d in D['design'] if not d.startswith('Activity within a 2021 age band')] + [
  "Activity within a 2021 age band follows the 2011 five-year profile inside that band (actSub multiplies the 2021 band row; assumes the within-band shape held from 2011 to 2021).",
  "Tenure multiplies independent multipliers (age of eldest adult, year of arrival of the eldest adult, economic activity of the eldest adult as HRP proxy): a naive-Bayes combination; joint tables are not published. Arrivals after 2011 use the 2001-2011 row."]
-D['unspecified'] = [x for x in D['unspecified'] if not x.startswith(('Partners\' economic activity', 'Ages of unrelated sharers', 'Pay of the self-employed'))] + [
+D['unspecified'] = [x for x in D['unspecified'] if not x.startswith(('Partners\' economic activity', 'Ages of unrelated sharers', 'Pay of the self-employed', 'Friends: friends are matched'))] + [
  "Partners' economic activity: no published joint table was found, so each partner's activity is drawn separately (given sex and age). Combinations such as two early-retired partners can come out more often than in reality.",
  "Ages of unrelated sharers: each housemate's age is drawn separately from the sharer age distribution. Whether sharers cluster in age is not sourced.",
- "Pay of the self-employed: ASHE covers employees only, so self-employed people have hourly_pay and annual_income null (unspecified)."]
+ "Pay of the self-employed: ASHE covers employees only, so self-employed people have hourly_pay and annual_income null (unspecified).",
+ "Friends: friends are matched by a shared attribute (ethnicity, education, religion, occupation group) within an age window around one anchor person. This is a design rule, not sourced data, and it acts as a selection effect: friends samples come out older, and more often White British, retired and owner-occupiers, than the inner-city profile they are drawn from (see test.mjs)."]
 json.dump(D, open('data.json', 'w'), separators=(',', ':'), ensure_ascii=False)
 print(json.dumps(D['actSub']['M']['50-54']), json.dumps(D['tenArr']['2001-2011']), json.dumps(D['tenAct']['re']))

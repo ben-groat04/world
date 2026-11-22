@@ -6,10 +6,10 @@
 //   flatshare: n adults of one private-rented, non-family (sharer) household        family: one household with >= max(3,n) members, everyone in it
 //   cafe: n people = 1 self-employed cafe owner + (n-1) food-service/hospitality staff, students or part-timers doing such jobs
 //   street: n adults, one each from n different households, all on the same street
-import { createLarkfieldWorld } from '../../sim/larkfield.js';
-import { RNG } from '../../sim/rng.js';
-import { PATTERNS } from '../../content/larkfield/jobs.js';
-import NAMES from '../../content/larkfield/names.js';
+import { createLarkfieldWorld } from '../../../../sim/larkfield.js';
+import { RNG } from '../../../../sim/rng.js';
+import { PATTERNS } from '../../../../content/larkfield/jobs.js';
+import NAMES from '../../../../content/larkfield/names.js';
 
 const [scenario, nArg, seedArg] = process.argv.slice(2);
 const SCENARIOS = ['flatshare', 'family', 'cafe', 'street'];

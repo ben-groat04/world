@@ -9,7 +9,7 @@ const ORACLE_LINES = [' There is also an oracle that can look things up online: 
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.', // until the answer went to the asker alone
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer comes back to you alone.'];
 const PRIVATE = / What's going on with you at the moment: .*?(?: Today: .*?)?(?= Something that's been on your mind: | Something on your mind \(| Only you know this|$)/s; // EXP_PRIVATE line, per person: kept out of the shared brief
-const PERSON = /^(?:You are [A-Z][a-z]+|You write [A-Z][a-z]+'s messages in this chat)\. /; // runs from 2026-11-22 evening put the name first in the system prompt, per person (EXP_FICTION: "You write <Name>'s messages")
+const PERSON = /^(?:You are [^.(]+?(?: \([^)]*\))?|You write [A-Z][a-z]+'s messages in this chat)\. /u; // runs from 2026-11-22 evening put the name first in the system prompt, per person (EXP_FICTION: "You write <Name>'s messages"); the cast runs add "(age, gender, role)"
 const FICTION = / [A-Z][a-z]+'s life outside the chat is yours to decide: .*? and how things went\./; // EXP_FICTION sentence, per person
 const dayLabel = at => { const d = new Date(at); return `(It's now ${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()]} ${d.getDate()} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()]}.)`; };
 const runs = [];
@@ -26,7 +26,7 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
   const names = [...new Set(rows.map(r => r.who))], secrets = {};
   const brief = w => { const [b, sec] = split(arg(byWho(w) || rows[0].argv, '--system-prompt').replace(STYLE, ''), SECRET); if (sec) secrets[w] = sec; return ORACLE_LINES.reduce((s, l) => s.replace(l, ''), b.replace(PERSON, '').replace(FICTION, '').replace(PRIVATE, '')); };
   const oracle = ORACLE_LINES.some(l => arg(byWho(names[0]), '--system-prompt').includes(l));
-  const [, topic] = split(brief(names[0]), MARK);
+  const cast = every.find(r => r.cast), [, topic0] = split(brief(names[0]), MARK), topic = cast ? cast.topic : topic0; // cast runs log the topic: it is only in the opener's first turn
   const briefB = brief(names[1]); names.slice(2).forEach(brief);
   if (id < SINCE) continue;
   // Three log formats: events (rows carry `checkin`: one row per posted message or PASS, in time order, plus an end row), steps (`step`: clock rows, unsent replies) and rounds (`round`). Turns are the posted messages and oracle answers (plus clock rows, or a day marker where an events run enters a new day); passes and unsent replies are only counted.

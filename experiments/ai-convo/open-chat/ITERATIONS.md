@@ -39,3 +39,5 @@ Goal: blind judges can't tell runs from real people texting (target 8/10), Haiku
 
 **13 (in progress).** Remove wants and reasons; topic only in the opener's first turn; one casting call builds names, ages, roles, relations and a per-person texting description with own examples (replaces fixed cards); voice applied once in polish with recent-message awareness; reactions only where a reaction is the answer, others' shown as counts; fewer names.
 - Watch: removing the reason must not bring back silent chats (it fixed openers in round 12).
+- Coder checks: re-asks 25/25 → 0/25; openers 99% after rewording the topic cue (first wording 80%); notification replay 69% → 65%; casting maps roles (needed a first-person clause for briefs like "my ex"); night workers 3/71; names cluster (Priya, Tom). Polish replay showed no big drop in tics (drafts were written under the old cards, so it can't show the change).
+- Live smoke run (allotment, 3 people): 7 messages, then silent for 3 days. Day 'small things' had no tie to the group (a fox, a muffin); now must connect to these people. Untested live.

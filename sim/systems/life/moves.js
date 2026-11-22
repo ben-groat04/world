@@ -89,7 +89,7 @@ export function assignWork(w, p, rng, o = {}) {
 /** Build the full ext.pop record for a person created mid-run (newborn, partner moving in, arrival). */
 export function buildPop(w, p, o) {
   const age = ageOf(w, p), hh = o.hh, rng = o.rng, pack = w.pack, seg = pack.meta.segments.find((s) => s.id === hh.seg) || pack.meta.segments[0];
-  const origin = o.origin || NAMES.pickOrigin(rng, o.group, 2026 - Math.floor(age));
+  const origin = o.origin || NAMES.pickOrigin(rng, o.group, 2026 - Math.floor(age), o.like || null);
   const pers = p.personality;
   p.needsTick = Number.MAX_SAFE_INTEGER;
   const h = age < 1 ? { general: 'very good', conds: [], disabled: false, limiting: 0, score: 0.97 } : healthFor(rng, pack.calibration, age, seg.health, false);
@@ -116,8 +116,10 @@ export function materialise(w, m, hh, role, rng, o = {}) {
   const [first, ...rest] = m.name.split(' '); const last = rest.join(' ') || (owner ? owner.lastName : 'Smith');
   const pers = personalityFor(rng, age, m.sex);
   const p = w.createPerson({ sex: m.sex, firstName: first, lastName: last, homeId: hh.bid, birthTick: w.tick - Math.round(age * w.calendar.ticksPerYear) - rng.int(0, 300), personality: pers, money: 0 });
-  const g = owner && rng.chance(0.72) ? owner.ext.pop.eth : wpick(rng, Object.entries(w.pack.calibration.ethnicity.detail).map(([k, v]) => [NAMES.ETHNICITY_TO_GROUP[k], v]));
-  const origin = NAMES.pickOrigin(rng, g, 2026 - Math.floor(age));
+  // the name was drawn from a tradition when the placeholder was made (m.g / m.sub): keep it, so first name, surname and birthplace stay together; older placeholders without one share the owner's tradition when of the same group
+  const g = m.g || (owner && rng.chance(0.72) ? owner.ext.pop.eth : wpick(rng, Object.entries(w.pack.calibration.ethnicity.detail).map(([k, v]) => [NAMES.ETHNICITY_TO_GROUP[k], v])));
+  const like = m.sub ? { sub: m.sub } : owner && g === owner.ext.pop.eth ? owner.ext.pop : null;
+  const origin = NAMES.pickOrigin(rng, g, 2026 - Math.floor(age), like);
   const religion = owner && o.sameFaith ? owner.ext.pop.religion : wpick(rng, Object.entries(NAMES.RELIGION_BY_GROUP[g === 'mixed' ? 'mixed' : g] || { 'No religion': 1 }));
   buildPop(w, p, { hh, rng, group: g, origin, role, religion, bornUK: origin.bornUK, edu: o.edu || wpick(rng, [['level4plus', 0.45], ['level3', 0.25], ['level2', 0.2], ['apprenticeship', 0.1]]), grewUp: m.where, arrived: origin.bornUK ? null : w.tick - Math.round(rng.float(1, 8) * w.calendar.ticksPerYear) });
   p.ext.pop.fin.savings = Math.round(o.money ?? rng.float(200, 4000));
@@ -134,8 +136,8 @@ export function fundArrival(w, p) { const sv = p.ext.pop.fin.savings; if (sv > 0
 /** A few off-map ties for a person who just arrived (friends, parents) so they are not socially empty. */
 export function giveNetwork(w, p, rng) {
   const q = p.ext.pop, age = ageOf(w, p);
-  const names = (sex) => { const o = NAMES.pickOrigin(rng, q.eth, 2026 - Math.floor(age)); return NAMES.pickName(rng, o, sex, 2026 - Math.floor(age)).full; };
-  const mk = (rel, ageV, sex, how, kin) => newMetro(w, p.id, { name: names(sex), age: ageV, sex, rel, how, kin, where: wpick(rng, [['elsewhere in the city', 5], ['another UK city', 3], ['a nearby town', 2]]) });
+  const names = (sex, kin) => { const o = NAMES.pickOrigin(rng, q.eth, 2026 - Math.floor(age), kin ? q : null); return NAMES.pickName(rng, o, sex, 2026 - Math.floor(age)).full; };
+  const mk = (rel, ageV, sex, how, kin) => newMetro(w, p.id, { name: names(sex, kin), age: ageV, sex, rel, how, kin, where: wpick(rng, [['elsewhere in the city', 5], ['another UK city', 3], ['a nearby town', 2]]) });
   for (let i = 0; i < 3 + rng.int(0, 2); i++) { const sx = rng.chance(0.5) ? 'F' : 'M'; const m = mk('friend', clamp(age + rng.gauss(0, 4), 18, 80), sx, wpick(rng, [['work', 3], ['university', 2], ['school', 2], ['club/gym', 1]])); setOffTie(p, m.id, 'friend', 'friend', i < 3 ? 1 : 2, 0.5 + rng.float(0, 0.3), m.how); }
   if (rng.chance(clamp(1.05 - Math.max(0, age - 25) * 0.012, 0.2, 0.95))) { const m = mk('mother', age + rng.int(22, 34), 'F', 'family', true); setOffTie(p, m.id, 'kin', 'mother', 2, 0.6, 'family'); }
   if (rng.chance(clamp(1.0 - Math.max(0, age - 25) * 0.015, 0.15, 0.9))) { const m = mk('father', age + rng.int(24, 38), 'M', 'family', true); setOffTie(p, m.id, 'kin', 'father', 2, 0.5, 'family'); }

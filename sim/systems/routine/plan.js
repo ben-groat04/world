@@ -180,8 +180,8 @@ export function buildPlan(W, p, D, wakeTickAt) {
   const dayF = wend ? 2.3 : 0.85, mild = rec.regime === 'rain' ? 0.8 : 1;
   const rain = 1;
   // Heat shifts the park routine (replaces a forced 20-35% evening park trip): park visits rise with temperature (Natural England People & Nature Survey, MENE: warm days and evenings are peak park use;
-  // Met Office/UKHSA: people without gardens and in top-floor flats use parks as refuge), more so in flats, less for the very old, and move to the cooler evening once it is hot. +7 C stands in for a god-set heatwave.
-  const wxN = W.world.weather, hsN = W.world.lf && W.world.lf.health && W.world.lf.health.heat, hotN = Math.max(0, (wxN && wxN.temp != null ? wxN.temp : 14) + (hsN && hsN.until > wakeTickAt ? 7 : 0) - 20);
+  // Met Office/UKHSA: people without gardens and in top-floor flats use parks as refuge), more so in flats, less for the very old, and move to the cooler evening once it is hot. A god heatwave now raises the weather temperature itself (world weather shock).
+  const wxN = W.world.weather, hotN = Math.max(0, (wxN && wxN.temp != null ? wxN.temp : 14) - 20);
   const homeB = W.world.buildings.get(home), flatN = !!(homeB && homeB.lf && homeB.lf.units && homeB.lf.units.length > 1);
   const parkHeat = hotN > 0 ? (1 + 0.15 * Math.min(hotN, 10)) * (flatN ? 1.25 : 1) * (age >= 75 ? 0.6 : 1) : 1, parkEve = hotN >= 4;
   const want = (kind, rate, a, b, dur, opts = {}) => { if (rate <= 0) return; if (dice(id, D, 100 + wishes.length + kind.length) > clamp(rate / 7 * dayF * (opts.noDay ? 1 : mild), 0, 0.92)) return; const s = a + dice(id, D, 200 + kind.length) * Math.max(0, b - a - dur); wishes.push({ kind, a: s, dur, opts }); };

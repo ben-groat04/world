@@ -47,6 +47,7 @@ export class World {
     this.time = {};
     this._setTime();
     this.weather = { type: 'clear', temp: 12 };
+    this.weatherShock = null; // god weather shock {kind:'heat', until, anomaly}: degrees ABOVE the day's seasonal draw (so it is season-relative), applied in _dailyWeather
     this.player = null;
     this.stats = { births: 0, deaths: 0 };
     this.town = { name: 'Hollowmere', treasury: 2000 };
@@ -54,7 +55,7 @@ export class World {
     this.recordTrails = false;
     this.prof = null;
     // world keys holding persistent system state (serialized by sim/snapshot.js). Systems may push their own namespace.
-    this.stateKeys = ['stats', 'town', 'weather', 'player', 'social', 'culture', 'econ', 'healthState', 'migrationState', 'politics', 'romanceState', 'crime'];
+    this.stateKeys = ['stats', 'town', 'weather', 'player', 'social', 'culture', 'econ', 'healthState', 'migrationState', 'politics', 'romanceState', 'crime', 'weatherShock'];
     this._handlers = new Map();
     for (const t of LEGACY_EVENT_TYPES) this._handlers.set(t, []);
     this._rngs = new Map();
@@ -368,6 +369,10 @@ export class World {
     this.weather = { type, temp, regime };
   }
   _dailyWeather() {
+    this._baseWeather(); const s = this.weatherShock;
+    if (s) { if (s.until <= this.tick) this.weatherShock = null; else { this.weather.temp += s.anomaly; this.weather.shock = s.kind; } }
+  }
+  _baseWeather() {
     if (this.calendar.recAt && this.calendar.yearTable && this.time.rec) return this._realWeather(this.time.rec);
     const s = this.time.season, r = this.rngFor('weather');
     const x = r.next();

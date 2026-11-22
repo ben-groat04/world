@@ -120,11 +120,13 @@ export function createCivic() {
     W.emit('civic.planning_decision', { place: app.bid, cause: app.eid, salience: K.major ? 0.35 : 0.1, tags: ['civic', 'visible', ...(K.major ? ['community_problem'] : [])], payload: { kind: app.kind, outcome: out, objections: app.obj.length } });
     feedAdd(`The council ${out} ${app.name} on ${streetName(app.sid)}${app.obj.length ? ` after ${app.obj.length} objection${app.obj.length > 1 ? 's' : ''}` : ''}.`, K.major ? 2 : 1);
     for (const id of app.obj) { const p = W.people.get(id); if (p) { const c = civ(p); c.trust = clamp(c.trust + (lost ? -0.05 : 0.03), 0.05, 1); } }
-    if (out.startsWith('approved') && app.kind === 'flats') C.build.push({ t: W.tick + 330 * D, n: app.n });
+    if (out.startsWith('approved') && (app.kind === 'flats' || app.kind === 'conversion')) C.build.push({ t: W.tick + (K.buildDays || 330) * D, n: app.n, small: app.kind === 'conversion' });
     if (camp) { camp.status = 'closed'; endCampaign(camp, out === 'refused'); }
   }
   function monthlyApps(r) {
-    for (const [k, K] of Object.entries(APP_KINDS)) if (r.next() < K.perMonth * (K.fixed ? 1 : W.living().length / 550)) newApp(k, null); // `fixed`: the supply of development sites does not grow with the number of residents
+    const stock = W.sys.housing && W.sys.housing.query.stats ? W.sys.housing.query.stats().units : 270;
+    for (const [k, K] of Object.entries(APP_KINDS)) { if (K.perStock) { if (r.next() < K.perStock * stock / 100) newApp(k, null, { n: 1 + r.int(0, K.maxN - 1) }); continue; }
+      if (r.next() < K.perMonth * (K.fixed ? 1 : W.living().length / 550)) newApp(k, null); } // `fixed`: the supply of development sites does not grow with the number of residents
   }
 
   // ------------------------------------------------------------------ campaigns
@@ -194,7 +196,7 @@ export function createCivic() {
   // ------------------------------------------------------------------ clocks
   function daily(w) { const r = R(w.tick, 'd'); issuesDaily(r); casesDaily(r); for (const k of Object.keys(C.cutEv)) if (w.tick - 365 * D > 0 && false) delete C.cutEv[k];
     for (const a of C.apps) if (a.status === 'open' && a.decide <= w.tick) decide(a, r);
-    for (const b of C.build.splice(0)) { if (b.t <= w.tick) w.cmd('housing.buildFlats', { n: b.n }); else C.build.push(b); } }
+    for (const b of C.build.splice(0)) { if (b.t <= w.tick) w.cmd('housing.buildFlats', { n: b.n, small: !!b.small }); else C.build.push(b); } }
   const hourly = (w) => { if (w.time.hour === 21 && w.tick >= C.nextElection && electionDay(w)) runElection(); };
   function weekly(w) { const r = R(w.tick, 'w'); campaignsWeekly(r); if (C.apps.length > 40) C.apps = C.apps.filter((a) => a.status === 'open' || w.tick - a.t0 < 400 * D); }
   function monthly(w) { const r = R(w.tick, 'm'); monthlyApps(r); campaignsMonthly(r); for (const k of Object.keys(C.svc)) if (k !== 'library' && C.svc[k] < 1) C.svc[k] = Math.min(1, C.svc[k] + 0.0015); }
@@ -215,7 +217,9 @@ export function createCivic() {
     },
     clocks: { hour: hourly, day: daily, week: weekly, month: monthly, year: annual },
     commands: {
-      'civic.councilCuts': (w, a) => { if ((a.pct ?? 0.1) < 0) { for (const k of Object.keys(C.svc)) C.svc[k] = clamp(C.svc[k] - a.pct, 0.15, 1); return true; } applyCut(a.pct ?? 0.1, a.service || null); return true; },
+      'civic.councilCuts': (w, a) => { // negative pct = reverse an earlier cut of that size: the exact inverse of applyCut's multiplier, for the named service only (all services only when none is named)
+        const pc = a.pct ?? 0.1; if (pc < 0) { for (const [k, S] of Object.entries(SERVICES)) { if (a.service && a.service !== k) continue; C.svc[k] = clamp(C.svc[k] / Math.max(0.05, 1 + pc * S.exposure), 0.15, 1); } return true; }
+        applyCut(pc, a.service || null); return true; },
       'civic.newDevelopment': (w, a) => !!newApp(a.kind || 'flats', a.street ?? null, { n: a.n, name: a.name }),
       'civic.callElection': (w) => { runElection(); return true; },
       'civic.complain': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; return !!openCase(a.kind || 'bins', p, streetOf(p), 0); },

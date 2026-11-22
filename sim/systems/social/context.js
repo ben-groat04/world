@@ -39,7 +39,7 @@ export function contextTies(w, S, p, r) {
     const [rate, c0, fq, via] = CTX[name]; const lam = rate * mult * (0.5 + E) * ageF * (1 - sat); let k = Math.floor(lam) + (r.next() < lam - Math.floor(lam) ? 1 : 0);
     while (k-- > 0) {
       const lf = w.lf, sex = r.next() < 0.5 ? 'F' : 'M', ag = age < 16 ? clamp(Math.round(age + r.gauss(0, 1.2)), 10, 17) : clamp(Math.round(age + r.gauss(0, 4)), 16, 85), by = 2026 - ag;
-      const nm = NAMES.pickName(r, NAMES.pickOrigin(r, q.eth, by), sex, by), id = 'm' + (lf.metro.length + 1);
+      const nm = NAMES.pickName(r, NAMES.pickOrigin(r, q.eth, by, r.chance(0.5) ? q : null), sex, by), id = 'm' + (lf.metro.length + 1);
       const m = { id, name: `${nm.first} ${nm.last}`, age: ag, sex, rel: name === 'school' ? 'school friend' : name === 'study' ? 'course-mate' : name === 'work' ? 'colleague' : name === 'flat' ? 'flatmate\'s friend' : name === 'online' ? 'online friend' : 'friend from a club', where: FRIEND_WHERE[r.int(0, 2)], how: via, owner: p.id, freq: fq };
       lf.metro.push(m); S.metro.set(id, m);
       const tie = mkTie(id, { k: 'friend', r: m.rel, L: 3, c: clamp(c0 * (0.75 + 0.5 * r.next()), 0.05, 0.6), l: 0.35, e: 0.35, v: via, on: 0, lv: 2 }, w.tick); tie.fq = fq;

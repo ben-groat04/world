@@ -18,7 +18,7 @@ export function weeklyAcute(w, rng, people) {
   if (!epi.wave && rng.chance(0.028 / 52)) startWave(w, rng, { name: 'a new respiratory virus', weeks: rng.int(12, 20), beta: rng.float(2, 3.6), sev: rng.float(1.3, 2.0), mort: rng.float(0.25, 0.7) });
   let wave = 0;
   if (epi.wave) { const e = epi.wave, k = (T - e.start) / (e.weeks * 7 * 144); if (k >= 1) { w.emit('health.outbreak', { salience: 0.4, tags: ['epidemic'], cause: e.ev || 0, payload: { name: e.name, phase: 'over', ill: e.cases || 0 } }); epi.wave = null; } else wave = e.beta * Math.sin(Math.PI * k) ** 2; }
-  const heat = st.heat && st.heat.until > T ? st.heat.mort : 0; if (st.heat && st.heat.until <= T) st.heat = null;
+  const heat = (st.heatAcc || 0) / 7; st.heatAcc = 0; // excess-mortality multiplier averaged over the last week's heatwave days (see dailyHeat)
   const lvl = SEAS[t.month] * epi.flu + wave, sevF = epi.wave ? epi.wave.sev : 1;
   st.level = lvl; st.mortMult = 1 + 0.05 * Math.max(0, lvl - 1) + (epi.wave ? wave / epi.wave.beta * epi.wave.mort : 0) + heat;
   st.svc.gpWait = clamp(7 + 4 * (lvl - 1) + 6 * wave + rng.gauss(0, 0.8), 3, 40); st.svc.aeWait = clamp(3.1 + 1.0 * (lvl - 1) + 1.5 * wave + rng.gauss(0, 0.2), 2, 12);
@@ -98,9 +98,21 @@ export function startWave(w, rng, o) {
   epi.wave = { name: o.name, start: w.tick, weeks: o.weeks, beta: o.beta, sev: o.sev, mort: o.mort, cases: 0 };
   epi.wave.ev = w.emit('health.outbreak', { salience: 0.6, tags: ['epidemic'], payload: { name: o.name, phase: 'start', ill: 0 } }); return true;
 }
+// HEAT follows the weather, not a flag. Met Office heatwave definition: a run of >= 3 consecutive days at or above a local daily-maximum threshold (28 C for London / the south-east; 25-28 C elsewhere).
+// The sim's weather carries the daily MEAN temperature; a summer day's maximum is ~5 C above its mean, so the threshold on the mean is 23 C (hand-set conversion). A god heatwave (health.heatwave) is a
+// weather shock that adds degrees to the seasonal draw (world._dailyWeather), so in winter it makes a mild spell and never reaches the threshold; natural hot spells now count too.
+export const HEAT_MEAN_C = 23, HEAT_RUN_DAYS = 3;
+export function dailyHeat(w) {
+  const st = hs(w), T = w.weather && w.weather.temp != null ? w.weather.temp : 0;
+  st.hotRun = T >= HEAT_MEAN_C ? (st.hotRun || 0) + 1 : 0;
+  if (st.hotRun >= HEAT_RUN_DAYS) {
+    const sev = clamp((T - HEAT_MEAN_C) / 6, 0, 1); st.heat = { until: w.tick + 144, mort: 0.1 + 0.2 * sev }; st.heatAcc = (st.heatAcc || 0) + st.heat.mort;
+    if (!st.heatOn) { st.heatOn = 1; w.emit('health.outbreak', { salience: 0.5, tags: ['heat'], payload: { name: 'heatwave', phase: 'start', ill: 0 } }); }
+  } else { st.heat = null; if (st.heatOn) { st.heatOn = 0; w.emit('health.outbreak', { salience: 0.3, tags: ['heat'], payload: { name: 'heatwave', phase: 'over', ill: 0 } }); } }
+}
 /** daily: sick days for ill workers (routine layer reads rt.sickDay) */
 export function dailySick(w) {
-  const st = hs(w), D = w.calendar.dayIdxOf(w.tick);
+  dailyHeat(w); const st = hs(w), D = w.calendar.dayIdxOf(w.tick);
   for (let i = 0; i < st.ill.length; i++) { const p = w.people.get(st.ill[i]); if (!p || !p.alive) continue; const a = p.ext.hl.acute; if (a && a.sev >= 2 && p.ext.rt) p.ext.rt.sickDay = D; else if (a && p.ext.rt && w.rngFor('health.sickday', p.id, D).chance(0.4)) p.ext.rt.sickDay = D; }
   for (const p of w.living()) { const hl = p.ext.hl; if (hl && hl.injury && hl.injury.sev >= 0.5 && p.ext.rt && p.ext.pop.activity === 'employed') p.ext.rt.sickDay = D; }
 }

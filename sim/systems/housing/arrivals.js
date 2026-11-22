@@ -55,14 +55,17 @@ function startCourse(w, rng, q, age) {
 function makePerson(w, rng, hh, m, seg, hhKids, opts = {}) {
   const pack = w.pack, cal = pack.calibration, cl = w.calendar, age = m.age, share = ethShare(pack);
   const group = opts.group || m.group;
-  const by = 2026 - Math.floor(age), origin = NAMES.pickOrigin(rng, group, by); if (seg.id === 'recent_arrivals' && age >= 18) { origin.bornUK = false; if (origin.birthplace === 'United Kingdom') origin.birthplace = (NAMES.GROUPS[group].birth.other || [['Poland', 1]])[0][0]; }
+  const by = 2026 - Math.floor(age), origin = NAMES.pickOrigin(rng, group, by, opts.like || null); if (seg.id === 'recent_arrivals' && age >= 18) { origin.bornUK = false; if (origin.birthplace === 'United Kingdom') origin.birthplace = (NAMES.GROUPS[group].birth.other || [['Poland', 1]])[0][0]; }
   const nm = NAMES.pickName(rng, origin, m.sex, by);
+  // surname: a child takes a parent's by the origin's convention (patronymic / gendered forms), a partner usually the head's, everyone else their own tradition's
+  const par = opts.parents || [], fa = par.find((x) => x.sex === 'M'), mo = par.find((x) => x.sex === 'F'), rec = (x) => x && { first: x.firstName, last: x.lastName};
+  if (par.length) nm.last = NAMES.childSurname(rng, origin, m.sex, rec(fa), rec(mo), !!fa && (!mo || rng.chance(0.85))); else if (opts.sameLast) nm.last = opts.sameLast;
   const pers = personalityFor(rng, age, m.sex);
   const act = actFor(w, rng, seg, m, hhKids), edu = eduDraw(rng, cal, age, seg.id, act);
   const rel = (NAMES.RELIGION_BY_SUB[origin.sub] || NAMES.RELIGION_BY_GROUP[group] || NAMES.RELIGION_BY_GROUP.white_british); const religion = wpick(rng, Object.entries(rel));
   const religiosity = religion === 'No religion' ? rng.float(0, 0.12) : clamp01(Math.pow(rng.next(), 0.8));
   const hs = healthFor(rng, cal, age, seg.health, act === 'sick_disabled');
-  const p = w.createPerson({ sex: m.sex, firstName: nm.first, lastName: m.lastName || nm.last, homeId: hh.bid, birthTick: w.tick - Math.round(age * cl.ticksPerYear) - rng.int(0, cl.ticksPerYear - 1), personality: pers, money: 0 });
+  const p = w.createPerson({ sex: m.sex, firstName: nm.first, lastName: nm.last, homeId: hh.bid, birthTick: w.tick - Math.round(age * cl.ticksPerYear) - rng.int(0, cl.ticksPerYear - 1), personality: pers, money: 0 });
   p.skills = skillsFor(rng, age, edu, null, pers); p.skills.languages = origin.bornUK ? 0 : rng.int(1, 3);
   p.interests = interestsFor(rng, age, m.sex, religiosity > 0.45, false);
   p.values = { tradition: clamp01(rng.gauss(0.45, 0.18)), wealth: clamp01(rng.gauss(0.5, 0.2)), family: clamp01(rng.gauss(0.6, 0.2)), freedom: clamp01(rng.gauss(0.55, 0.2)), community: clamp01(rng.gauss(0.5, 0.2)), piety: religiosity };
@@ -86,7 +89,7 @@ function addTies(w, rng, hh, people) {
     const n = rng.int(2, 4);
     for (let i = 0; i < n; i++) {
       const [rel, k] = REL_OFF[rng.int(0, REL_OFF.length - 1)], id = 'm' + (lf.metro.length + 1), age = clamp(Math.round(w.ageOf(a) + (rel === 'mother' || rel === 'father' ? 28 : rng.int(-4, 4))), 18, 95), sex = rel === 'mother' ? 'F' : rel === 'father' ? 'M' : rng.chance(0.5) ? 'F' : 'M';
-      const nm = NAMES.pickName(rng, NAMES.pickOrigin(rng, q.eth, 2026 - age), sex, 2026 - age);
+      const nm = NAMES.pickName(rng, NAMES.pickOrigin(rng, q.eth, 2026 - age, k === 'kin' ? q : null), sex, 2026 - age);
       lf.metro.push({ id, name: `${nm.first} ${nm.last}`, age, sex, rel, where: rng.pick(['elsewhere in the city', 'a nearby town', 'London', 'a Midlands town', 'a town in the north']), how: k, owner: a.id, freq: rng.pick(['weekly', 'a few times a month', 'a few times a year']) });
       q.ties.push({ o: id, k, rel, t: i === 0 ? 1 : 2, s: +rng.float(0.4, 0.85).toFixed(2), v: k === 'kin' ? 'family' : 'friends', on: 0 });
     }
@@ -101,10 +104,11 @@ export function createArrivalHousehold(w, rng, unit, forceSeg) {
   const group = wpick(rng, GROUPS.map((g) => [g, (share[g] || 0.001) * (tilt[g] ?? 1)]));
   const hh = { id: lf.households.length, unit: unit.id, bid: unit.bid, seg: spec.seg, arch: spec.arch, members: [], tenure: unit.tenure, rentPcm: 0, mortgagePcm: 0, income: { gross: 0, net: 0, benefits: 0 }, cars: 0, dogs: 0, cats: 0, since: w.tick, group, landlord: unit.landlord, address: unit.address, bedrooms: unit.bedrooms, sav: null };
   const kids = M.some((m) => m.role === 'child' && m.age < 12), people = [];
-  const headLast = NAMES.pickName(rng, NAMES.pickOrigin(rng, group, 1990), 'M', 1990).last;
-  for (const m of M) { m.group = m.role === 'sharer' && rng.chance(0.4) ? wpick(rng, GROUPS.map((g) => [g, share[g] || 0.001])) : group; if (m.role === 'child' || m.role === 'partner' && rng.chance(0.6)) m.lastName = headLast; }
-  M[0].lastName = M[0].lastName || (M[0].role === 'head' ? headLast : undefined);
-  for (const m of M) { const p = makePerson(w, rng, hh, m, seg, kids); m.person = p; people.push(p); hh.members.push(p.id); }
+  for (const m of M) m.group = m.role === 'sharer' && rng.chance(0.4) ? wpick(rng, GROUPS.map((g) => [g, share[g] || 0.001])) : group;
+  for (const m of M) { // household members share ONE naming tradition: a child follows a parent (already created), a partner usually the head's, so a household never mixes Horn-of-Africa and Sierra Leonean names
+    const pr = m.parents && m.role !== 'sharer' ? m.parents.map((k) => M[k] && M[k].person).filter(Boolean) : [], headP = M[0] !== m ? M[0].person : null;
+    const like = pr.length ? pr[0].ext.pop : m.role === 'partner' && headP && rng.chance(0.9) ? headP.ext.pop : null;
+    const p = makePerson(w, rng, hh, m, seg, kids, { like, parents: pr, sameLast: m.role === 'partner' && like && headP && rng.chance(0.6) ? headP.lastName : null }); m.person = p; people.push(p); hh.members.push(p.id); }
   for (const m of M) {
     const p = m.person;
     if (m.partnerOf !== undefined) { const q = M[m.partnerOf].person; p.family.spouseId = q.id; q.family.spouseId = p.id; const married = spec.arch.includes('married') || spec.arch === 'couple_66plus'; p.romance = { partnerId: q.id, status: married ? 'married' : 'dating', sinceTick: w.tick - rng.int(0, 3 * w.calendar.ticksPerYear) }; q.romance = { partnerId: p.id, status: married ? 'married' : 'dating', sinceTick: p.romance.sinceTick }; }

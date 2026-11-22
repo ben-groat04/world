@@ -51,8 +51,8 @@ export function makeOffPartner(w, rng, p, how) {
   let sex = wantsSex(L, p.sex); if (sex === null) sex = rng.chance(0.58) ? (p.sex === 'M' ? 'F' : 'M') : p.sex;
   const gap = (sex === p.sex ? 0 : p.sex === 'F' ? 2.2 : -2.2) + rng.gauss(0, 4.2), pa = clamp(age + gap, 17, 88);
   const g = rng.chance(0.78) ? q.eth : wpick(rng, Object.entries(w.pack.calibration.ethnicity.detail).map(([k, v]) => [NAMES.ETHNICITY_TO_GROUP[k], v]));
-  const o = NAMES.pickOrigin(rng, g, 2026 - Math.floor(pa)), nm = NAMES.pickName(rng, o, sex, 2026 - Math.floor(pa));
-  return newMetro(w, p.id, { name: nm.full, age: pa, sex, rel: 'partner', where: wpick(rng, [['elsewhere in the city', 5], ['the city centre', 3], ['another UK city', 2], ['a nearby town', 2]]), how, freq: 'daily messages' });
+  const o = NAMES.pickOrigin(rng, g, 2026 - Math.floor(pa), g === q.eth && rng.chance(0.9) ? q : null), nm = NAMES.pickName(rng, o, sex, 2026 - Math.floor(pa));
+  return newMetro(w, p.id, { name: nm.full, age: pa, sex, rel: 'partner', g, sub: o.sub, where: wpick(rng, [['elsewhere in the city', 5], ['the city centre', 3], ['another UK city', 2], ['a nearby town', 2]]), how, freq: 'daily messages' });
 }
 
 export function matchmaking(w, rng, people) {

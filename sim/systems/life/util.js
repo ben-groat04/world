@@ -76,7 +76,8 @@ export function metro(w, id) {
 export function newMetro(w, owner, o) {
   const lf = w.lf.life; const id = 'mx' + (lf.mid++); // own id space ('m<n>' belongs to the population / housing generators, which allocate by array length)
   const m = { id, name: o.name, age: Math.round(o.age), sex: o.sex, rel: o.rel, where: o.where || 'elsewhere in the city', how: o.how || '', owner, freq: o.freq || 'weekly call', t0: w.tick };
-  if (o.kin) m.kin = true; w.lf.metro.push(m); return m;
+  if (o.kin) m.kin = true; if (o.g) { m.g = o.g; m.sub = o.sub; } // g/sub: the naming tradition the name was drawn from, so a placeholder who later moves in keeps coherent name, origin and birthplace
+  w.lf.metro.push(m); return m;
 }
 export function metroAge(w, m) { return m.age + (w.tick - (m.t0 ?? 0)) / w.calendar.ticksPerYear; }
 

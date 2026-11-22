@@ -5,13 +5,13 @@
 // PERSON  p.ext.hl = { c:{cond:{t0,sev,dx,tx}}, mh:{st 0|1(anxiety)|2(depression), sev, tx, n, trig}, stress, S, lone/lonely, smoke, alc 0-2, drug 0-2, acute, injury, dying:{cause,tick}, grief[], adh, base }
 //   mirrored for others: p.health (0..1 score), p.illness (acute, legacy shape), p.ext.pop.health {general, conds[], disabled, limiting}, p.ext.rt.sickDay (call in sick).
 // QUERY  world.sys.health.query: status(pid) conditions(pid) mental(pid) services() prevalence() stats() lifeTable()
-// COMMANDS  health.stress{pid,amount,why,cause} health.grief{pid,rel,strength,cause,name} | god: health.pandemic{weeks,severity,name} health.heatwave{days} health.illness{pid,name,severity} health.cure{pid,cond}
+// COMMANDS  health.stress{pid,amount,why,cause} health.grief{pid,rel,strength,cause,name} | god: health.pandemic{weeks,severity,name} health.pandemicEnd{} health.heatwave{days,severity} health.heatwaveEnd{} health.illness{pid,name,severity} health.cure{pid,cond}
 //           health.diagnose{pid,cond} health.injure{pid} | player: health.seekCare{pid} health.callInSick{pid} health.joinSupport{pid}
 // EVENTS  health.diagnosis health.recovered health.ill health.crisis health.accident health.episode health.treatment health.substance health.outbreak  (+ life.death / life.funeral / life.will from mortality)
 import { registerEvents, HANDLERS, ageOf, later, laterAt, months, days, clamp, bump } from '../life/util.js';
 import { hlFor } from './init.js';
 import { dayOfMonth, slotDay } from '../../util.js';
-import { initService, weeklyAcute, dailySick, monthlyGP, acuteHandlers, startWave, injure, hs } from './acute.js';
+import { initService, weeklyAcute, dailySick, HEAT_MEAN_C, monthlyGP, acuteHandlers, startWave, injure, hs } from './acute.js';
 import { monthlyChronic, chronicHandlers, updateScore } from './chronic.js';
 import { monthlyMental, mentalHandlers, supportOf } from './mental.js';
 import { monthlyMortality, healthDeathHandlers, applyGrief, diagnose, startDying, die, obituary } from './mortality.js';
@@ -91,7 +91,12 @@ export function createHealth() {
       'health.stress': (w, a) => addStress(w, a.pid, a.amount ?? 0.2, a.why || 'stress', a.cause),
       'health.grief': (w, a) => { const p = w.people.get(a.pid); if (!p) return false; applyGrief(w, p, a.rel, clamp((a.strength ?? 0.5) * (GRIEF_REL[a.rel] ?? 0.5) * 1.3, 0, 1), a.cause, a.name); return true; },
       'health.pandemic': (w, a) => startWave(w, w.rngFor('health.cmd'), { name: a.name || 'a new respiratory virus', weeks: a.weeks ?? 14, beta: 1.6 + 2.4 * (a.severity ?? 0.5), sev: 1 + 1.2 * (a.severity ?? 0.5), mort: 0.2 + 0.8 * (a.severity ?? 0.5) }),
-      'health.heatwave': (w, a) => { hs(w).heat = { until: w.tick + days(a.days ?? 6), mort: 0.1 + 0.2 * (a.severity ?? 0.5) }; w.emit('health.outbreak', { salience: 0.5, tags: ['heat'], payload: { name: 'heatwave', phase: 'start', ill: 0 } }); return true; },
+      // god: a weather SHOCK of `anomaly` degrees above the seasonal norm for `days` days (severity 0..1 -> +6..+12 C). Whether it is a heatwave is decided by the temperature that results (HEAT_MEAN_C for 3+ days, acute.js):
+      // in July it is, in November it is a mild spell. Returns what the season makes of it.
+      'health.heatwave': (w, a) => { const sev = a.severity ?? 0.5, anomaly = 6 + 6 * sev, before = w.weatherShock ? w.weatherShock.anomaly : 0; w.weatherShock = { kind: 'heat', until: w.tick + days(a.days ?? 6), anomaly }; w.weather.temp += anomaly - before; w.weather.shock = 'heat';
+        const reaches = w.weather.temp >= HEAT_MEAN_C; w.emit('health.outbreak', { salience: 0.5, tags: ['heat', 'god'], payload: { name: reaches ? 'heat spell' : 'warm spell', phase: 'start', ill: 0 } }); return { ok: true, anomaly, temp: w.weather.temp, heatwave: reaches }; },
+      'health.heatwaveEnd': (w) => { const s = w.weatherShock; if (!s) return false; w.weather.temp -= s.anomaly; w.weatherShock = null; w.weather.shock = null; return true; },
+      'health.pandemicEnd': (w) => { const e = hs(w).epi.wave; if (!e) return false; w.emit('health.outbreak', { salience: 0.4, tags: ['epidemic', 'god'], cause: e.ev || 0, payload: { name: e.name, phase: 'over', ill: e.cases || 0 } }); hs(w).epi.wave = null; return true; },
       'health.illness': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.alive || !p.ext.hl || p.ext.hl.acute) return false; const hl = p.ext.hl, T = w.tick, sev = a.severity ?? 2, dur = a.days ?? (sev === 1 ? 4 : sev === 2 ? 8 : 16); hl.acute = { name: a.name || 'flu', sev, t0: T, until: T + days(dur), hosp: false }; p.illness = { name: hl.acute.name, severity: sev, contagious: true, sinceTick: T }; hs(w).ill.push(p.id); later(w, days(dur), 'acute.end', { pid: p.id, t0: T }); w.emit('health.ill', { actors: [p.id], salience: sev >= 2 ? 0.4 : 0.2, cause: a.cause || 0, tags: ['illness', 'god'], payload: { name: hl.acute.name, severity: sev } }); return true; },
       'health.cure': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.ext.hl) return false; const hl = p.ext.hl; const names = a.cond ? [a.cond] : Object.keys(hl.c); let n = 0; for (const k of names) if (hl.c[k]) { delete hl.c[k]; n++; const q = p.ext.pop.health; q.conds = q.conds.filter((x) => x !== k); w.emit('health.recovered', { actors: [p.id], salience: 0.35, tags: ['illness', 'god'], payload: { condition: k } }); } if (!a.cond) { hl.mh.st = 0; hl.acute = null; p.illness = null; hl.injury = null; } if (hl.dying && (!a.cond || hl.dying.cause === a.cond)) hl.dying = null; updateScore(w, p, hl); return n > 0; },
       'health.diagnose': (w, a) => { const p = w.people.get(a.pid); if (!p || !p.ext.hl) return false; const hl = p.ext.hl; if (!hl.c[a.cond]) hl.c[a.cond] = { t0: w.tick, sev: 0.3, dx: null, tx: 0 }; diagnose(w, p, a.cond, false); return true; },

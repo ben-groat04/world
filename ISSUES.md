@@ -224,3 +224,13 @@ OPEN (needs sim owners):
 - Rent doubling preset too mild (arrears 11→16 over 3 months). A 100% rent rise should break most private renters' affordability within one or two rent cycles — check affordability/arrears mechanism response.
 - Fun: storylines formulaic (split → arrears); add arc variety; "follow one person" history view at speed.
 - UX: speed control hidden in dropdown; phone sheet covers map; People chips clipped; play menu jargon.
+
+## FEEL-REVIEW-3: life stories, text and impossible states (text/UI agent)
+- FIXED life stories contradicting their dates: day-1 biographies are one timeline (`sim/population/bio.js`); `node tools/lifecheck.js --years 10` validates every resident (baseline 1066 violations over 3 years -> 0 over 10 years on seeds 1-3). Also in `npm test` (3-year run).
+- FIXED twins/siblings: same-mother siblings are >= 39 weeks apart or share one birth tick (day-1 and arrivals); runtime twins already shared one `life.birth` event.
+- FIXED tenure: `yearsAtAddress` advances monthly (was frozen); story/header/history use the same value.
+- FIXED age/health gates: `Groups.fit` (group membership), school-year rule for reception (`schoolYearAge`), no "homework" for babies, no "at school" for under-4s, Talk to a sleeping person refused in `player.talk` and shown as "asleep".
+- FIXED era-correct qualifications (O-levels/CSEs before 1988), migrants get their own country's or none; university drop-out no longer graduates.
+- FIXED text: per-run punchline memory (`once`, auto for quoted lines) in `sim/text/engine.js`, month tags `<<m=..>>`, venue short refs ("the rec"), a/an by sound, doubled words, 1 reply, slashes (`sim/text/mods.js`, `sim/text/jobs.js`); lint in `tools/variety.js --text` and `tests/text/text.test.js`.
+- FIXED money panel (overdraft counted twice; stale "borrowing" flag), "Died" tag shown for people who left town.
+- OPEN: generic feed chatter still repeats (about 36% of lines contain a 7+ word sentence seen in the previous 30 game-days; pools are bounded by ~40 posts/day town-wide); more pool growth or a lower posting rate is the next lever. Pay/occupation realism, council tenancies, deaths and unemployment queued above are untouched.

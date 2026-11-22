@@ -23,3 +23,6 @@ Yes, 6 on Wednesday works. I'll meet you at the allotment gate. Good luck with t
 --- Sun 19:52, Maya
 Perfect, I'll see you at the gate at 6 on Wednesday. I'll let you know about the radiator once I've tried bleeding it.
 
+--- end date reached
+Wed 19:00
+

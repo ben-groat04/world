@@ -1,4 +1,4 @@
-// Long-run drift check.  node tools/longrun.js [--seed 1] [--years 50] [--step 10] [--save dir] [--json]
+// Long-run drift check (run with `node --expose-gc` to also see live heap after a full GC; raw heapUsed includes uncollected garbage).  node tools/longrun.js [--seed 1] [--years 50] [--step 10] [--save dir] [--json]
 // One row per `step` years (a decade table). Window quantities (TFR, churn, violence, loneliness) are measured over the preceding `step` years, sampled monthly.
 //   pop, age shares (0-14 / 15-29 / 30-44 / 45-64 / 65+), period TFR, households, dwellings (units), overcrowded households %, churn (from outside / local movers / leavers, % of residents per year),
 //   unemployment, 16-24 loneliness % (monthly mean of the 'often/always lonely' flag), assault victimisations per 1000 person-years by age band and sex, prison (per 100k), speed.
@@ -30,13 +30,13 @@ function row(y, secs, ticks) {
   const r = { y, pop: L.length, u15: pct((x) => x < 15), a15_29: pct((x) => x >= 15 && x < 30), a30_44: pct((x) => x >= 30 && x < 45), a45_64: pct((x) => x >= 45 && x < 65), p65: pct((x) => x >= 65), tfr: y ? +tfrWindow().toFixed(2) : null, births, deaths, hh: hs.households, units: hs.units, built: hs.built, vac: +(hs.vacancyRate * 100).toFixed(1), crowded: +(hs.overcrowdedRate * 100).toFixed(1),
     churnIn: y ? +(inP / yrs / pop * 100).toFixed(1) : null, churnLocal: y ? +(locP / yrs / pop * 100).toFixed(1) : null, churnOut: y ? +(outP / yrs / pop * 100).toFixed(1) : null,
     unemp: typeof lab === 'object' ? +(lab.rate ?? lab.unemployment ?? NaN).toFixed?.(3) : lab, lone1624: win && win.lone1624N ? +(win.lone1624 / win.lone1624N * 100).toFixed(1) : null, loneAll: win && win.lonelyN ? +(win.lonely / win.lonelyN * 100).toFixed(1) : null, viol: {}, offM: {}, prisonPer100k: null,
-    tps: Math.round(ticks / secs), mem: Math.round(process.memoryUsage().heapUsed / 1e6) };
+    tps: Math.round(ticks / secs), mem: Math.round(process.memoryUsage().heapUsed / 1e6), memGC: typeof global.gc === 'function' ? (global.gc(), global.gc(), Math.round(process.memoryUsage().heapUsed / 1e6)) : null };
   if (win && y) {
     for (const b of BANDS) { const vic = (cs.vicT['assault|' + b + 'M'] || 0) - (prev.vic[b + 'M'] || 0), vicF = (cs.vicT['assault|' + b + 'F'] || 0) - (prev.vic[b + 'F'] || 0); r.viol[b] = [+(vic / Math.max(1e-9, win.py[b + 'M'] || 0) * 1000).toFixed(0), +(vicF / Math.max(1e-9, win.py[b + 'F'] || 0) * 1000).toFixed(0)]; r.offM[b] = [(cs.offBand[b + 'M'] || 0) - (prev.off[b + 'M'] || 0), (cs.offBand[b + 'F'] || 0) - (prev.off[b + 'F'] || 0)]; }
     for (const b of BANDS) for (const s of ['M', 'F']) { prev.vic[b + s] = cs.vicT['assault|' + b + s] || 0; prev.off[b + s] = cs.offBand[b + s] || 0; }
     r.prisonPer100k = +(((cs.prisonDays || 0) - prev.prison) / 365.25 / yrs / pop * 1e5).toFixed(0); prev.prison = cs.prisonDays || 0;
   }
-  rows.push(r); console.log(asJson ? JSON.stringify(r) : `y${String(y).padStart(2)} pop ${r.pop} age% ${r.u15}/${r.a15_29}/${r.a30_44}/${r.a45_64}/${r.p65} TFR ${r.tfr} hh ${r.hh} dwell ${r.units} (built ${r.built}) vac ${r.vac}% crowded ${r.crowded}% churn in/local/out ${r.churnIn}/${r.churnLocal}/${r.churnOut}% unemp ${r.unemp} lonely16-24 ${r.lone1624}% all ${r.loneAll}% births ${births} deaths ${deaths} prison/100k ${r.prisonPer100k} | assault vic M/F per1000: ${BANDS.map((b) => b + ' ' + (r.viol[b] || []).join('/')).join(' ')} | offences M: ${BANDS.map((b) => b + ' ' + (r.offM[b] || [])[0]).join(' ')} | ${r.tps} t/s ${r.mem}MB`);
+  rows.push(r); console.log(asJson ? JSON.stringify(r) : `y${String(y).padStart(2)} pop ${r.pop} age% ${r.u15}/${r.a15_29}/${r.a30_44}/${r.a45_64}/${r.p65} TFR ${r.tfr} hh ${r.hh} dwell ${r.units} (built ${r.built}) vac ${r.vac}% crowded ${r.crowded}% churn in/local/out ${r.churnIn}/${r.churnLocal}/${r.churnOut}% unemp ${r.unemp} lonely16-24 ${r.lone1624}% all ${r.loneAll}% births ${births} deaths ${deaths} prison/100k ${r.prisonPer100k} | assault vic M/F per1000: ${BANDS.map((b) => b + ' ' + (r.viol[b] || []).join('/')).join(' ')} | offences M: ${BANDS.map((b) => b + ' ' + (r.offM[b] || [])[0]).join(' ')} | ${r.tps} t/s ${r.mem}MB${r.memGC != null ? ' (' + r.memGC + 'MB after GC)' : ''}`);
   births = 0; deaths = 0; inP = 0; locP = 0; outP = 0; win = newWin();
 }
 win = newWin(); row(0, 1, 1);

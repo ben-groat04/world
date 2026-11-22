@@ -16,9 +16,9 @@ import { PlayHost } from './play/host-play.js';
 export const TIER_LIST = [
   { id: 'pause', label: 'Pause', hint: 'Space' },
   { id: 'scene', label: 'Scene', hint: 'Watch the street live: about 1 game-hour per second' },
-  { id: 'life', label: 'Lifetime', hint: 'A 70-year life in about an hour' },
-  { id: 'x5', label: '×5', hint: 'Five times Lifetime' },
-  { id: 'x20', label: '×20', hint: 'Twenty times Lifetime' },
+  { id: 'life', label: 'Lifetime', hint: 'An 80-year life in about an hour' },
+  { id: 'x3', label: '×3', hint: 'Three times Lifetime: a life in about 20 minutes' },
+  { id: 'x8', label: '×8', hint: 'Eight times Lifetime (a fast device may reach it; otherwise as fast as it can)' },
   { id: 'max', label: 'Max', hint: 'As fast as this device can go' },
 ];
 const SEG_SHORT = { older_longterm: 'Older locals', family_couples: 'Established families', lone_parents: 'Lone parents', students: 'Students', young_sharers: 'Young sharers', early_career: 'Early-career renters', settled_professionals: 'Settled professionals', shift_workers: 'Shift & service workers', recent_arrivals: 'Recent arrivals', local_business_families: 'Business families', benefit_dependent: 'Out of work / long-term ill' };
@@ -38,8 +38,8 @@ export class Host {
     this.sifter = installSifter(w);
     this.text = new TextEngine(textPack, { seed });
     this.TPY = w.calendar.ticksPerYear; this.TPD = 144;
-    const lifeTps = this.TPY / 50; // 50 s per game-year = a 70 year life in ~1 hour
-    this.tiers = { pause: 0, scene: 6, life: lifeTps, x5: lifeTps * 5, x20: lifeTps * 20, max: Infinity };
+    const lifeTps = this.TPY / 45; // 45 s per game-year = 80 game-years per real hour (the user's target: one lifetime in about an hour)
+    this.tiers = { pause: 0, scene: 6, life: lifeTps, x3: lifeTps * 3, x8: lifeTps * 8, max: Infinity };
     this.tier = 'pause'; this.tps = 0; this.acc = 0; this.rate = 0; this.selected = null; this.jump = null;
     this.news = []; this.newsOut = []; this.forumSeen = 0; this.feedSeen = 0; this.lastDetail = 0; this.lastSlow = 0; this.lastRoster = -1;
     this.series = []; this.pendingSeries = []; this.godWatch = null; this.lastStatTick = -1e9; this.nextNewsId = 1;
@@ -163,7 +163,7 @@ export class Host {
     if (now - this.lastSlow > (this.tps > 3000 ? 2500 : 1200)) { this.lastSlow = now; this.slowFeeds(); }
     if (this.pendingSeries.length) { this.send({ t: 'stats', samples: this.pendingSeries.splice(0), stats: this.statsDetail() }); }
     this.play.tickFrame();
-    const gap = this.tps > 3000 ? 700 : 260;
+    const gap = this.tps > 3000 ? 900 : 300;
     if (this.selected != null && now - this.lastDetail > gap) { this.lastDetail = now; const d = this.personDetail(this.selected); if (d) this.send({ t: 'detail', p: d }); }
   }
   slowFeeds() {

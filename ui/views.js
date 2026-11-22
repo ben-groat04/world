@@ -66,7 +66,10 @@ export function mountFeed(el, store) {
   // premise sentence with the protagonists' names turned into links
   const storyHead = (a) => { let t = esc(a.headline); for (const x of a.actors) { const f = esc(x.name.split(' ')[0]); t = t.replace(new RegExp('\\b' + f + '\\b'), `<a class="pl" data-pid="${x.id}">${f}</a>`); } return t; };
   function render() { const top = body.scrollTop; el.querySelector('#lfilter').hidden = mode !== 'local'; body.innerHTML = mode === 'local' ? renderLocal() : mode === 'forum' ? renderForum() : mode === 'posts' ? renderPosts() : renderStories(); body.scrollTop = top; }
-  let dirty = false; const mark = () => { if (!dirty) { dirty = true; setTimeout(() => { dirty = false; render(); }, 400); } };
+  // Skip all work while the pane is hidden (another tab, or the inspector open) and re-render once when it is shown again; slow down while time-lapsing.
+  let dirty = false, stale = false; const seen = () => el.offsetParent !== null;
+  const mark = () => { if (!seen()) { stale = true; return; } if (!dirty) { dirty = true; setTimeout(() => { dirty = false; if (seen()) render(); else stale = true; }, /^(x3|x8|max)$/.test(store.s.tier) ? 1500 : 400); } };
+  el.addEventListener('shown', () => { if (stale) { stale = false; render(); } });
   store.on('news', mark); store.on('posts', mark); store.on('arcs', mark); store.on('ready', mark); render();
 }
 
@@ -225,7 +228,8 @@ export function mountTown(el, store) {
     <p class="mute small">Sampled every 14 game days · ${ser.length} samples since ${esc(first.date || '')}</p>`;
     root.scrollTop = top;
   }
-  let t = 0; const mark = () => { clearTimeout(t); t = setTimeout(render, 250); };
+  let t = 0, stale = false; const mark = () => { if (el.offsetParent === null) { stale = true; return; } clearTimeout(t); t = setTimeout(render, /^(x3|x8|max)$/.test(store.s.tier) ? 1200 : 250); };
+  el.addEventListener('shown', () => { if (stale) { stale = false; render(); } });
   const ask = () => { if (el.offsetParent !== null || !store.s.town) store.post({ cmd: 'town' }); };
   store.on('stats', mark); store.on('ready', () => { ask(); mark(); }); store.on('town', mark); render(); setInterval(() => { if (el.offsetParent !== null) ask(); }, 3500);
 }

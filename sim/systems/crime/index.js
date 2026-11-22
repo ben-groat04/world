@@ -32,8 +32,13 @@ export const PARAMS = {
   OUT: { burglary: 20, theft: 45, vehicle: 55, bike: 40, theftperson: 50, shoplift: 85, damage: 72, asb: 60, assault: 200, harass: 100, publicorder: 14, sexual: 6 },
   // NIGHT-TIME-ECONOMY EXPOSURE (residents on a night out in the city centre, off the map): hazard per person-hour at the Friday/Saturday peak, before drink and sex pairing.
   // Anchored to ONS/CSEW: roughly a fifth of violence happens in or around pubs and clubs, ~40% of violent incidents involve an offender believed to be drunk.
-  NTE: { assault: 0.0030, theftperson: 0.0006, sexual: 0.0006 },
+  NTE: { assault: 0.0006, theftperson: 0.0006, sexual: 0.0006 },
   drinkRisk: 0.6,         // extra hazard per level of alcohol use (heavy drinkers are both targets and fight-starters)
+  // VISITOR VICTIMS. ONS recorded crime per head is higher in inner-city wards because many victims are not residents (commuters, shoppers, visitors, night-out crowds), and police-recorded violence also
+  // includes victims the CSEW does not sample (under 16s, people in institutions, non-household). A resident-only pool of ~500 therefore cannot absorb recorded totals without implausible prevalence
+  // (previously 20% of young men a year, ~5x CSEW). visitorShare = share of anonymous-stranger confrontations on the map whose target is a non-resident. Set so that resident prevalence matches CSEW
+  // (stranger violence 0.7% of adults, 2.2% of 16-24s; ONS Nature of violent crime YE Mar 2024); the attempt stream (OUT.assault) is unchanged, so recorded totals are kept.
+  visitorShare: 0.85,
   sexPair: 0.47,          // women's relative chance of being the counterpart of a stranger fight: male aggressors (~80%) pick same-sex peers (~80%) => victims ~68% male (CSEW: stranger violence victims ~2:1 male)
   sexualKnown: 0.04,      // relative weight of a sexual offence against someone he knows in a male offender's offence mix (~80% of CSEW perpetrators are known to the victim); tuned so experienced prevalence ~ CSEW
   domSexual: 0.045,        // share of incidents within an abusive relationship that are sexual (ONS domestic abuse: sexual assault by a partner is a minority of DA)
@@ -175,11 +180,16 @@ export function createCrime() {
   function assault(o, r) {
     const s = snap(); let v = null, known = 0; const nte = (W.time.dow === 4 || W.time.dow === 5) && (W.time.hour >= 21 || W.time.hour < 3);
     if (o && r.next() < 0.62) { v = conflictTarget(o, r, -0.1); if (v) known = 1; }
-    if (!v) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; // counterpart of a stranger confrontation: whoever is out, with male aggressors mostly squaring up to same-sex peers and drink lowering restraint on both sides; age enters through who is out at night and through peer-age assortment (peerOf)
+    let visitor = false; // the stranger's target is a non-resident (commuter, shopper, tourist, night-out visitor) with the same sex/age/drink selection as any other person out
+    if (!v && !o && r.next() < PARAMS.visitorShare) { const poolN = s.pub.length + s.out.length; if (poolN < 2) return false;
+      for (let i = 0; i < 3 && !visitor; i++) { const vs = r.next() < 0.5 ? 'M' : 'F', va = 16 + r.next() * 48, al = r.next() < 0.35 ? 1 : 0; if (r.next() < (vs === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al) * peerOfAnon(va)) visitor = true; }
+      if (!visitor) return false; }
+    if (!v && !visitor) { const pool = s.pub.concat(s.out); if (pool.length < 2) return false; // counterpart of a stranger confrontation: whoever is out, with male aggressors mostly squaring up to same-sex peers and drink lowering restraint on both sides; age enters through who is out at night and through peer-age assortment (peerOf)
       for (let i = 0; i < 3 && !v; i++) { const c = pool[(r.next() * pool.length) | 0]; if (ageOf(c) < 16 || c === o) continue; const al = c.ext.hl && c.ext.hl.alc ? 1 : 0; if (r.next() < (c.sex === 'M' ? 1 : PARAMS.sexPair) * (0.62 + 0.38 * al) * (o ? peerOf(ageOf(c), ageOf(o)) : peerOfAnon(ageOf(c)))) v = c; }
       if (!v) return false; if (v.ext.cr && v.ext.cr.avoid && r.next() < 0.5) return false; }
     if (!o && !nte && r.next() < 0.7) return false; const g = nte ? 0.25 : 0.1; if (r.next() > 0.7 * (1 - g)) return false;
-    const u = r.next(); return commit('assault', { off: o, vic: v, hh: hhOf(v), known, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null });
+    const u = r.next(); if (visitor) { cnt('vis', 'assault'); return commit('assault', { off: null, vic: null, visitor: 1, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null, rep0: TYPES.assault.rep }); }
+    return commit('assault', { off: o, vic: v, hh: hhOf(v), known, injury: u < 0.58 ? 'none' : u < 0.97 ? 'minor' : 'serious', place: null });
   }
   function harass(o, r) { const v = conflictTarget(o, r, -0.25) || (!o ? (() => { const p = W.living()[(r.next() * W.people.size) | 0]; return p && ageOf(p) > 16 && r.next() < 0.3 ? p : null; })() : null); if (!v) return false; return commit('harass', { off: o, vic: v, hh: hhOf(v), known: o ? 1 : 0.1, place: null }); }
   function publicorder(o, r) { const s = snap(); if (s.pub.length + s.out.length < 3) return false; if (r.next() > 0.5) return false; return commit('publicorder', { off: o, place: null, silent: true }); }
@@ -346,7 +356,7 @@ export function createCrime() {
     }
     // domestic abuse: ongoing relationship state (sensitive; invisible in rumours/feed)
     for (const k of Object.keys(C.dom)) { const d = C.dom[k], a = W.people.get(d.o), b = W.people.get(d.v); if (!a || !b || !a.alive || !b.alive || !a.romance || a.romance.partnerId !== b.id) { delete C.dom[k]; continue; }
-      if (r.next() < 0.009) commit(r.next() < PARAMS.domSexual ? 'sexual' : r.next() < 0.55 ? 'assault' : 'harass', { off: a, vic: b, hh: hhOf(b), known: 1, dom: true, injury: 'none', place: a.homeId }); // roughly one recorded-or-not incident every 3 weeks within a relationship
+      if (r.next() < 0.006) commit(r.next() < PARAMS.domSexual ? 'sexual' : r.next() < 0.45 ? 'assault' : 'harass', { off: a, vic: b, hh: hhOf(b), known: 1, dom: true, injury: 'none', place: a.homeId }); // roughly one recorded-or-not incident every 3 weeks within a relationship
     }
   }
   function weekly(w) {

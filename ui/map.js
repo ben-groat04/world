@@ -55,7 +55,7 @@ export class MapView {
 
   // ------------------------------------------------------------------ data in
   ingest(m, now) {
-    const t = m.time, a = m.people, first = this.P.size === 0; this.time = t; this.tps = this.store.s.tps; this.occ = this.store.s.occ; this.off = t.off || 0;
+    const t = m.time, a = m.people, first = this.P.size === 0; this.time = t; this.ingests = (this.ingests || 0) + 1; this.tps = this.store.s.tps; this.occ = this.store.s.occ; this.off = t.off || 0;
     const slow = this.tps > 0 && this.tps < 20 && !this.timelapse; const dTicks = Math.max(1, t.tick - this.lastTick); this.lastTick = t.tick;
     const dur = slow ? clamp(dTicks / Math.max(1, this.tps), 0.15, 1.0) : 0;
     const seen = new Set();
@@ -249,7 +249,7 @@ export class MapView {
       ctx.fillStyle = '#ffd36b'; ctx.strokeStyle = 'rgba(20,14,0,.8)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(sx, sy, 5, 0, 7); ctx.fill(); ctx.stroke();
     }
     // count badges: smoothed per building over real time, hysteresis (show >=3, hide <2), faded; never at x5 and faster
-    const tier = this.store.s.tier, fast = tier === 'x5' || tier === 'x20' || tier === 'max';
+    const tier = this.store.s.tier, fast = tier === 'x3' || tier === 'x8' || tier === 'max';
     for (const [id, d] of this.disp) {
       const b = this.byId.get(id); let want = false;
       if (b && !fast && z >= 5 && d.v > 0) {

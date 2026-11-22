@@ -147,9 +147,20 @@ export function createHousing() {
     const w = W, ps = hhLive(hh), need = bedNeed(w, ps), net = (hh.fin && hh.fin.income) || (hh.income && hh.income.net / 12) || 1800;
     hh.search = { since: w.tick, beds: need, reason, forced: forced || 0, maxRent: Math.max(450, net * 0.42), cause: cause || 0, tries: 0, buy: reason === 'buy' };
   }
+  // Number of vacant, listed homes in the ward a household with this need could actually take (right size, rent within its means or price within 4.5x gross income).
+  function suitableLocal(hh) {
+    const ps = hhLive(hh), beds = bedNeed(W, ps), net = (hh.fin && hh.fin.income) || (hh.income && hh.income.net / 12) || 1800, maxRent = Math.max(450, net * 0.42), gross = hh.income ? hh.income.gross : 30000; let n = 0;
+    for (const u of H(W).list) { if (u.hh >= 0 || !u.listed || u.id === hh.unit || u.studentLet || isSocial(u.tenure) || u.bedrooms < beds || u.bedrooms > beds + 1) continue;
+      if (u.tenure === 'private_rent' ? u.rent <= maxRent * 1.05 : (u.tenure === 'mortgage' || u.tenure === 'owned_outright') && valueOf(W, u) * 0.9 <= gross * 4.5) n++; }
+    return n;
+  }
   function seekDestination(hh, seg, rng, why, cause, forced) {
-    const out = MOVE_OUT_P[hh.seg] ?? 0.5, young = hhLive(hh).some((p) => W.ageOf(p) < 5);
-    const goOut = rng.chance(out * (forced ? 1.0 : 1) * (SUBURB_SEGS.has(hh.seg) && young ? 1.15 : 1));
+    let out = MOVE_OUT_P[hh.seg] ?? 0.5; const kids = hhLive(hh).some((p) => W.ageOf(p) < 16), young = hhLive(hh).some((p) => W.ageOf(p) < 5);
+    // FAMILIES LEAVE WHEN THERE IS NO HOME FOR THEM HERE. ONS internal migration (ONS/GLA 2019-23): London has a net outflow of children 0-4 and parents aged 30-44 to outer London and the South East, driven by the cost and
+    // scarcity of larger homes (Whitehead & Kleinhans; GLA Housing Needs of Londoners). The segment probability MOVE_OUT_P is the typical case; for a household with children it is scaled by the supply of suitable, affordable vacant homes
+    // in the ward: x1.4 when none, falling to x0.6 when many (x1 at ~1-2 homes).
+    if (kids && !forced) { const n = suitableLocal(hh); out = clamp(out * (0.6 + 0.8 / (1 + n)), 0, 0.95); }
+    const goOut = rng.chance(out * (forced ? 1.0 : 1) * (SUBURB_SEGS.has(hh.seg) && young && !kids ? 1.15 : 1));
     if (goOut) { hh.departAt = W.tick + rng.int(0, 2) * MONTH; hh.departWhy = why; hh.departCause = cause || 0; hh.departDest = hh.seg === 'students' ? 'elsewhere' : SUBURB_SEGS.has(hh.seg) && rng.chance(0.55) ? 'suburbs' : hh.seg === 'older_longterm' ? 'family_or_care' : 'metropolis'; }
     else startSearch(hh, why, forced, cause);
   }

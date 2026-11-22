@@ -11,7 +11,7 @@ const store = createSource({ seed: +(qs.get('seed') || 1), forceLocal: qs.has('l
 const canvas = $('map'), wrap = $('map-wrap'), view = new MapView(canvas, store);
 window.larkfield = { store, view };
 const mobile = () => matchMedia('(max-width:820px)').matches;
-const TL = new Set(['life', 'x5', 'x20', 'max']);
+const TL = new Set(['life', 'x3', 'x8', 'max']);
 
 // ------------------------------------------------------------------ tabs + panes
 const TABS = [['feed', 'Watch', '✉'], ['people', 'People', '☺'], ['town', 'Town', '▤'], ['god', 'God', '★']];
@@ -26,7 +26,7 @@ function setSheet(s) { sheet = s; side.dataset.sheet = s; sizeSync(); }
 function setTab(k, open = true) {
   if (k === 'inspect') { showInspector(true); k = 'people'; }
   tab = k; document.querySelectorAll('#tabs button').forEach((b) => { b.classList.toggle('on', b.dataset.tab === k); b.setAttribute('aria-selected', b.dataset.tab === k); });
-  document.querySelectorAll('.pane').forEach((p) => { p.hidden = p.dataset.pane !== k; });
+  document.querySelectorAll('.pane').forEach((p) => { const was = p.hidden; p.hidden = p.dataset.pane !== k; if (was && !p.hidden) p.dispatchEvent(new Event('shown')); });
   if (k === 'people' && !inspOn) people.refresh(); if (mobile() && open && sheet === 'peek') setSheet('half');
 }
 $('tabs').addEventListener('click', (e) => { const b = e.target.closest('[data-tab]'); if (!b) return; if (mobile() && b.dataset.tab === tab && sheet !== 'peek') setSheet('peek'); else { if (b.dataset.tab === 'people' && tab === 'people' && inspOn) showInspector(false); setTab(b.dataset.tab); } });
@@ -88,7 +88,7 @@ store.on('frame', (m) => {
 });
 
 // ------------------------------------------------------------------ digest ("while you were fast-forwarding") + first-visit welcome
-const FAST = new Set(['x5', 'x20', 'max']); const TPD = 144;
+const FAST = new Set(['x3', 'x8', 'max']); const TPD = 144;
 const COUNTS = [['life.birth', 'baby', 'babies'], ['life.death', 'death', 'deaths'], ['life.marriage', 'wedding', 'weddings'], ['life.breakup', 'break-up', 'break-ups'], ['life.move_in', 'arrival', 'arrivals'], ['life.move_out', 'departure', 'departures'], ['labour.hired', 'new job', 'new jobs'], ['labour.job_lost', 'job lost', 'jobs lost'], ['business.opened', 'shop opened', 'shops opened'], ['business.closed', 'business closed', 'businesses closed']];
 let fast = null, jumpedFlag = false;
 const digestEl = document.createElement('div'); digestEl.id = 'digest'; digestEl.hidden = true; wrap.appendChild(digestEl);
@@ -203,6 +203,17 @@ function sizeSync() {
 new ResizeObserver(sizeSync).observe(wrap); addEventListener('resize', sizeSync);
 side.addEventListener('transitionend', sizeSync);
 let ltick = 0;
-function frame(now) { try { if (mobile() && now - ltick > 120) { ltick = now; sizeSync(); } view.draw(now); } catch (e) { console.error(e); } requestAnimationFrame(frame); }
+// Time-lapse tiers only change the picture when a new frame arrives (about 10/s), so redraw on new data, camera/selection change or every 250 ms
+// (weather, pulses) rather than at 60 fps: this halves main-thread draw cost at Lifetime and above and keeps taps and pans snappy.
+let lastDraw = 0, lastSig = '', lastIngest = -1;
+function frame(now) {
+  try {
+    if (mobile() && now - ltick > 250) { ltick = now; sizeSync(); }
+    const c = view.cam, sig = `${c.x.toFixed(2)},${c.y.toFixed(2)},${c.z.toFixed(3)},${view.w},${view.h},${view.selected},${view.selB},${view.hoverB},${view.follow},${view.goal ? 1 : 0},${view.overlay || ''},${view.inset}`;
+    const stale = view.timelapse && store.s.tier !== 'pause' && sig === lastSig && view.ingests === lastIngest && now - lastDraw < 250;
+    if (!stale) { view.draw(now); lastDraw = now; lastSig = sig; lastIngest = view.ingests; }
+  } catch (e) { console.error(e); }
+  requestAnimationFrame(frame);
+}
 requestAnimationFrame(frame);
 store.on('error', (m) => toast('Simulation error: ' + esc(String(m).split('\n')[0]), 8000));

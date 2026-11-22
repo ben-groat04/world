@@ -59,6 +59,7 @@ export function mountGod(el, store, hooks) {
     if (box.dataset.kind === 'preset') store.post({ cmd: 'godPreset', id: box.dataset.n, picks: args }); else store.god(box.dataset.n, args);
     go.textContent = 'Sent ✓'; G.consOpen = true; G.open = null; setTimeout(() => { render(); root.scrollTop = 0; const c = root.querySelector('.gcons'); if (c) c.open = true; }, 350); setTimeout(() => { go.textContent = box.dataset.kind === 'preset' ? 'Do it' : 'Send'; }, 1400);
   });
-  store.on('conseq', (m) => { store.s.conseq = m.list; if (!root.querySelector('.gcons') || G.open === null || true) { const d = root.querySelector('.gcons'); const tmp = document.createElement('div'); tmp.innerHTML = conseq(); if (d && tmp.firstChild) { const open = d.open; d.replaceWith(tmp.firstChild); root.querySelector('.gcons').open = open; } else render(); } });
+  let gstale = false; el.addEventListener('shown', () => { if (gstale) { gstale = false; render(); } });
+  store.on('conseq', (m) => { store.s.conseq = m.list; if (el.offsetParent === null) { gstale = true; return; } if (!root.querySelector('.gcons') || G.open === null || true) { const d = root.querySelector('.gcons'); const tmp = document.createElement('div'); tmp.innerHTML = conseq(); if (d && tmp.firstChild) { const open = d.open; d.replaceWith(tmp.firstChild); root.querySelector('.gcons').open = open; } else render(); } });
   store.on('ready', render); if (store.s.god) render();
 }

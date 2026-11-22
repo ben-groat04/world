@@ -453,7 +453,7 @@ export class PlayHost {
     this.scanFrom = Math.min(end, this.scanFrom + n);
   }
   sendConseq() {
-    const w = this.w, sig = this.ivs.map((i) => i.id + ':' + i.n).join(',') + ':' + Math.floor(w.tick / 144); if (sig === this.convSig) return; this.convSig = sig;
+    const w = this.w, sig = this.ivs.map((i) => i.id + ':' + i.n).join(',') + (this.ivs.length ? ':' + Math.floor(w.tick / 144) : ':none'); if (sig === this.convSig) return; /* no interventions: nothing changes with the date, so send once, not daily */ this.convSig = sig;
     const list = this.ivs.slice().reverse().map((iv) => {
       iv.top.sort((a, c) => c.s - a.s || a.tick - c.tick); const top = [];
       for (const t of iv.top.slice(0, 6)) { const r = w.events.get(t.id); if (!r || isPrivate(r)) continue; const d = this.S(() => describeEvent(w, r, this.h.text)); if (d && d.line) top.push({ date: w.calendar.formatDate(r.tick), text: d.line, pid: typeof r.actors[0] === 'number' ? r.actors[0] : null }); }

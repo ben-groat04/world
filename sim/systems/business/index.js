@@ -6,6 +6,7 @@
 //   EVENTS business.opened business.closed business.struggling business.recovered business.rent_review business.owner_change business.venueChanged business.start_failed business.rates
 // Evidence is cited in docs/CALIBRATION-METHOD.md ("Business"); constants carry a one-line meaning. Money flows only through world.ledger; owners are real residents when they are
 // (goals' start_business projects), otherwise off-map independents, chains (names already in the pack) or charities.
+import { liveHh } from '../../kernel/archive.js';
 import { FORMATS, STATIC, MANAGED, TMPL_FORMATS, FAV_SLOT, makeName } from './types.js';
 import { SOC } from '../social/encounters.js';
 import { registerEvents, clamp, SEASON_ENERGY } from '../money/util.js';
@@ -86,7 +87,7 @@ export function createBusiness() {
   // ============================================================================================================== indices
   function affluence() {
     let inc = 0, n = 0, prof = 0, hs = 0;
-    for (const h of W.lf.households) { if (h.gone) continue; hs++; const x = h.income && h.income.net; if (x > 0) { inc += x; n++; } if (h.seg === 'settled_professionals' || h.seg === 'early_career') prof++; }
+    for (const h of liveHh(W)) { if (h.gone) continue; hs++; const x = h.income && h.income.net; if (x > 0) { inc += x; n++; } if (h.seg === 'settled_professionals' || h.seg === 'early_career') prof++; }
     return { inc: n ? inc / n : 0, prof: hs ? prof / hs : 0 };
   }
   const trading = () => Object.values(S().biz).filter(isTrading);

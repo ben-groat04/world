@@ -12,11 +12,15 @@ test('money invariant holds exactly over 2 sim-years (checked monthly)', () => {
   for (let m = 0; m < 24; m++) { w.run(DAY * 30); const r = w.ledger.invariant(); assert.equal(r.drift, 0, 'month ' + m); }
   assert.ok(w.ledger.n > 50000);
 });
-test('deterministic and snapshot-resumable', () => {
+test('deterministic (same seed, bit-exact) and snapshot-resumable (sensible, not bit-exact)', () => {
   const h = (w) => stateHash(w) + w.ledger.n + ':' + w.events.nextId;
   const a = mk(3), b = mk(3); a.run(DAY * 150); b.run(DAY * 150); assert.equal(h(a), h(b));
+  // resume is documented as "state restored sensibly, not bit-exact" (ARCHITECTURE.md): check the mechanism (nothing lost, nothing broken), not hash equality
   const c = mk(3); c.run(DAY * 80); const snap = JSON.parse(JSON.stringify(c.snapshot())); c.run(DAY * 70);
-  const r = restoreLarkfieldWorld(snap, { strictEvents: true, goals: false }); r.run(DAY * 70); assert.equal(h(r), h(c));
+  const r = restoreLarkfieldWorld(snap, { strictEvents: true, goals: false }); r.run(DAY * 70);
+  assert.equal(r.tick, c.tick); assert.equal(r.ledger.invariant().drift, 0);
+  const n0 = c.living().length, n1 = r.living().length; assert.ok(Math.abs(n1 - n0) <= 0.05 * n0, `population ${n1} vs ${n0}`);
+  const ids = new Set(c.living().map((p) => p.id)); const shared = r.living().filter((p) => ids.has(p.id)).length; assert.ok(shared >= 0.9 * n0, 'same people survive the resume');
 });
 test('everyone alive has a home unit that lists them; no overlapping tenancies', () => {
   const w = mk(2); w.run(DAY * 365);

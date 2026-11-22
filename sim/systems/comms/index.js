@@ -5,6 +5,7 @@
 //   COMMANDS comms.message{from,to,text} comms.call{from,to} comms.post{author,kind,cause} comms.forumPost{author,kind,about,street} comms.viralPost{author,kind}
 //            comms.matchOnApp{a,b} comms.createChat{kind,members,name}
 //   EVENTS comms.post comms.viral comms.pileon comms.chat_created comms.chat_row comms.chat_left comms.match
+import { liveHh } from '../../kernel/archive.js';
 import { TextEngine } from '../../text/engine.js';
 import baseText from '../../../content/larkfield/text/index.js';
 import socialText from '../../../content/larkfield/text/social/index.js';
@@ -91,7 +92,7 @@ export function createComms() {
   function buildAll(w, S) {
     const r = w.rngFor('comms.build'), seen = new Set(); const sig = (ids) => ids.slice().sort((a, b) => a - b).join(',');
     const add = (kind, ids, name, nx) => { const s = kind + sig(ids); if (seen.has(s)) return; seen.add(s); mkChat(w, S, kind, ids, name, nx); };
-    for (const hh of w.lf.households) {
+    for (const hh of liveHh(w)) {
       const live = hh.members.map((i) => w.people.get(i)).filter((p) => p && p.alive && p.ext.pop && w.ageOf(p) >= 14);
       if (!live.length) continue;
       if (hh.arch === 'sharers_students_multigen' && live.length >= 3) add('flat', live.map((p) => p.id), 'House chat');

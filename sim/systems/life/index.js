@@ -94,7 +94,7 @@ export function createLife() {
   },
   clocks: {
     hour: (w) => runQueue(w),
-    day: (w) => { subscribe(w); const t = w.time; if (t.month === 8 && t.dom === 1) septemberTransitions(w, w.living());
+    day: (w) => { subscribe(w); const t = w.time; ensure(w, w.living()); /* arrivals/new flatmates get life state the day they appear, not at the next month tick */ if (t.month === 8 && t.dom === 1) septemberTransitions(w, w.living());
       const dom = dayOfMonth(w), sl = w.living().filter((p) => p.ext.life && slotDay(p.id, dom)); if (sl.length) { const r = w.rngFor('life.stagger', w.tick); coupleStep(w, r, sl); leavingHome(w, r, sl); } }, // couple dynamics and leaving home: each person on their own day of the month
     month: (w) => monthly(w),
   },

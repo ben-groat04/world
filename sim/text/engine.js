@@ -37,7 +37,7 @@ function conj(v, plural) {
 
 export class TextEngine {
   constructor(grammar = {}, opts = {}) {
-    this.rules = new Map(); this.counter = 0; this.last = new Map(); this.recent = []; this.recentN = opts.recentN || 60;
+    this.rules = new Map(); this.counter = 0; this.last = new Map(); this.recent = []; this.recentSet = new Map(); this.cache = new Map(); this.recentN = opts.recentN || 1500;
     this.memoryWindow = opts.memoryWindow || 40; this.stats = { renders: 0, missing: new Map(), retries: 0 }; this.worldSeed = opts.seed || 0;
     this.sentiment = grammar.sentiment || {}; this.add(grammar);
   }
@@ -60,12 +60,16 @@ export class TextEngine {
     let place = ctx.placeName ?? p.placeName ?? ctx.place;
     if (place == null && ev?.place != null) { try { place = world?.venueName?.(ev.place) ?? world?.venues?.get?.(ev.place)?.name; } catch { /* none */ } }
     let when = ctx.date; if (!when && ev && world?.calendar?.date) { try { when = world.calendar.date(ev.tick); } catch { /* none */ } }
+    if (when && (when.weekday == null || when.day == null)) when = { ...when, weekday: when.weekday ?? when.dow, day: when.day ?? when.d, month: when.month ?? when.m, year: when.year ?? when.y }; // calendar.dateOf uses dow/d/m/y
     const A = roles.a, B = roles.b;
     const f = { genre: ctx.genre || 'ev', type: ev?.type, reg: ctx.register || 'plain', rel: ctx.rel, mood: ctx.mood ?? A?.mood ?? 0.5, age: A?.age, seg: A?.segment, tags: ev?.tags || ctx.tags || [], salience: ev?.salience, ...(ctx.features || {}) };
     f.voice = ctx.voice || voiceOf(A); f.moodband = moodBand(f.mood); f.ageband = ageBand(A?.age); f['a.voice'] = f.voice; f['b.voice'] = voiceOf(B); f['b.age'] = B?.age;
     f['a.they'] = pronounsOf(A).they; f['b.they'] = pronounsOf(B).they; f.sex = A?.sex; f.self = roles.a && roles.a === roles.s ? 'yes' : 'no'; f['s.voice'] = voiceOf(roles.s); f.place = place != null ? 'yes' : 'no';
     for (const r of ['a', 'b']) for (const [k, v] of Object.entries(roles[r]?.traits || {})) f[`${r}.trait.${k}`] = v;
-    if (when) { f.hour = when.hour; f.weekend = when.weekday >= 5 ? 'yes' : 'no'; }
+    if (when) { f.hour = when.hour; f.weekend = when.weekday >= 5 ? 'yes' : 'no'; f.dow = when.weekday; if (when.hour != null) f.dp = when.hour < 5 ? 'night' : when.hour < 12 ? 'morning' : when.hour < 17 ? 'afternoon' : when.hour < 22 ? 'evening' : 'night'; }
+    if (when && when.month != null) { const m = when.month; f.month = m; f.season = m >= 2 && m <= 4 ? 'spring' : m >= 5 && m <= 7 ? 'summer' : m >= 8 && m <= 10 ? 'autumn' : 'winter'; f.cold = m === 11 || m <= 1 ? 'yes' : 'no';
+      const wx = world?.weather, cur = world?.calendar?.dateOf?.(world.tick); // weather is only claimed for posts written today (it is the weather now, not at the time of an old item)
+      if (wx && cur && cur.d === (when.day ?? when.d) && cur.m === m) { let t = wx.type; if (t === 'snow' && !(m === 11 || m <= 1)) t = 'rain'; if (t === 'fog' && m >= 5 && m <= 7) t = 'cloudy'; if (t === 'rain' && m >= 6 && m <= 7 && wx.temp > 20) t = 'clear'; f.wx = t; f.warm = wx.temp >= 20 && m >= 4 && m <= 9 ? 'yes' : 'no'; } }
     if (ev && f['p.sentiment'] === undefined && !p.sentiment) f['p.sentiment'] = this.sentiment[ev.type] || 'neutral';
     for (const [k, v] of Object.entries(p)) if (f['p.' + k] === undefined && (typeof v !== 'object')) f['p.' + k] = v;
     return { ev, ctx, roles, p, place, when, f, vars: {}, rng: new RNG(hash32(ctx.seed ?? 0, this.worldSeed, ev ? ev.id ?? 0 : 0, typeof evOrKey === 'string' ? evOrKey : ev.type, A?.id ?? 0, salt)), author: A, world };
@@ -83,7 +87,7 @@ export class TextEngine {
       if (a.when) w *= 1 + 0.15 * Object.keys(a.when).length; // more specific -> slightly favoured
       if (alts.length > 1) {
         const id = name + '#' + i;
-        if (mem) { const l = this.last.get(id); if (l !== undefined) { const d = this.counter - l; if (d < this.memoryWindow) w *= 0.08 + 0.92 * (d / this.memoryWindow) ** 1.5; } }
+        if (mem) { const l = this.last.get(id); if (l !== undefined) { const d = this.counter - l, win = Math.max(this.memoryWindow, Math.min(2500, alts.length * 3)); if (d < win) w *= 0.02 + 0.98 * (d / win) ** 1.5; } }
         if (idio) w *= 0.45 + 1.1 * (hash32(st.author.id, id) / 4294967296);
       }
       ok.push(i); ws.push(w);
@@ -112,8 +116,24 @@ export class TextEngine {
       return prop[0] && prop[0] === prop[0].toUpperCase() && prop[0] !== prop[0].toLowerCase() ? cap(String(v)) : v;
     }
     if (root === 'place') return st.place ?? 'round the corner';
+    if (root === 'v') return this._venue(prop, st);
+    if (root === 'r') { const m = /^(\d+)-(\d+)$/.exec(prop); return m ? String(+m[1] + Math.floor(st.rng.next() * (+m[2] - +m[1] + 1))) : ''; }
     if (key === 'tick') return st.ev?.tick ?? '';
     const v = st.ctx.vars?.[key] ?? st.ctx[key]; return v == null ? '' : v;
+  }
+  /** Named real places from the world: {v.cafe} {v.pub} {v.shop} {v.park} {v.street} ... (deterministic per render; falls back to generic words when no world). */
+  _venue(kind, st) {
+    const w = st.world, FALL = { cafe: 'the cafe', pub: 'the pub', eat: 'the takeaway', bakery: 'the bakery', shop: 'the corner shop', park: 'the park', school: 'the school', library: 'the library', gym: 'the gym', surgery: 'the surgery', pharmacy: 'the chemist', church: 'the church', community: 'the community centre', barber: 'the barber', laundry: 'the launderette', street: 'the High Street', nursery: 'the nursery', allotment: 'the allotments', market: 'the market', worship: 'church' };
+    if (!w) return FALL[kind] || 'round the corner';
+    let idx = w._txVenues;
+    if (!idx) {
+      idx = w._txVenues = {}; const G = { cafe: ['cafe'], pub: ['pub'], eat: ['restaurant', 'takeaway'], bakery: ['bakery'], shop: ['small_supermarket', 'ethnic_grocer', 'off_licence', 'charity_shop', 'bakery', 'pharmacy', 'launderette'], park: ['park'], school: ['primary_school'], library: ['library'], gym: ['gym'], surgery: ['gp_surgery'], pharmacy: ['pharmacy'], church: ['church'], worship: ['church', 'mosque'], community: ['community_centre'], barber: ['barber', 'salon'], laundry: ['launderette'], nursery: ['nursery'], allotment: ['allotments'] };
+      const byT = new Map(); try { for (const b of w.buildings.values()) { const t = b.lf?.template; if (t && b.name && !/^(vacant|TO LET)/i.test(b.name)) (byT.get(t) || byT.set(t, []).get(t)).push(b.name); } } catch { /* none */ }
+      for (const [k, ts] of Object.entries(G)) idx[k] = ts.flatMap((t) => byT.get(t) || []);
+      try { idx.street = [...new Set(Object.values(w.map.lf.streets).map((x) => x.name))]; } catch { idx.street = []; }
+    }
+    const arr = idx[kind]; if (!arr || !arr.length) return FALL[kind] || 'round the corner';
+    return arr[Math.floor(st.rng.next() * arr.length)];
   }
   _expand(s, st, depth) {
     if (depth > 14) return '';
@@ -122,7 +142,7 @@ export class TextEngine {
       const out = this._pick(name, st, depth); if (out == null) return m === '#' ? m : m.replace(/#/g, PH);
       return mods ? this._mods(out, mods, st) : out;
     });
-    return s.replace(/\{([$\w.]+)(?::([^}|?]*))?(?:\?([^}|]*))?((?:\|\w+)*)\}/g, (m, key, arg, fb, mods) => {
+    return s.replace(/\{([$\w.-]+)(?::([^}|?]*))?(?:\?([^}|]*))?((?:\|\w+)*)\}/g, (m, key, arg, fb, mods) => {
       if (key === 'when') return this._when(mods, st);
       let out = String(this._ref(key, arg, st)); if (out === '' && fb !== undefined) out = fb; return mods ? this._mods(out, mods, st) : out;
     });
@@ -148,14 +168,17 @@ export class TextEngine {
     const genre = ctx.genre || 'ev'; const keys = this._keys(evOrKey, genre).filter((k) => this.rules.has(k));
     if (!keys.length) return typeof evOrKey === 'string' ? `[${evOrKey}]` : `[${evOrKey.type}]`;
     this.stats.renders++;
+    const A0 = ctx.a?.id ?? (typeof ctx.a === 'number' ? ctx.a : ''), ck = ctx.seed != null && ctx.cache !== false ? `${keys[0]}|${genre}|${ctx.seed}|${A0}|${typeof evOrKey === 'object' ? evOrKey.id : ''}|${ctx.b?.id ?? ''}|${ctx.s?.id ?? ''}` : null; // same post, same words every time it is shown
+    if (ck && this.cache.has(ck)) return this.cache.get(ck);
     let out = '';
-    for (let attempt = 0; attempt < 4; attempt++) {
+    for (let attempt = 0; attempt < 6; attempt++) {
       const st = this._state(evOrKey, ctx, world, attempt); st.used = []; out = '';
       for (const key of keys) { out = tidy(this._pick(key, st, 0) ?? ''); if (out) break; }
-      if (ctx.memory === false || !out || !this.recent.includes(out) || attempt === 3) { this.counter++; for (const id of st.used) this.last.set(id, this.counter); break; }
+      if (ctx.memory === false || !out || !this.recentSet.has(out) || attempt === 5) { this.counter++; for (const id of st.used) this.last.set(id, this.counter); break; }
       this.stats.retries++; this.counter++; for (const id of st.used) this.last.set(id, this.counter);
     }
-    if (ctx.memory !== false) { this.recent.push(out); if (this.recent.length > this.recentN) this.recent.shift(); }
+    if (ctx.memory !== false) { this.recent.push(out); this.recentSet.set(out, (this.recentSet.get(out) || 0) + 1); if (this.recent.length > this.recentN) { const o = this.recent.shift(), n = this.recentSet.get(o) - 1; if (n > 0) this.recentSet.set(o, n); else this.recentSet.delete(o); } }
+    if (ck) { this.cache.set(ck, out); if (this.cache.size > 8000) this.cache.delete(this.cache.keys().next().value); }
     return out;
   }
 }

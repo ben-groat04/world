@@ -6,6 +6,7 @@
 //   CMD    money.windfall{pid,amount,reason} money.transfer{from,to,amount,reason} money.lend{from,to,amount} money.borrow{pid,amount,kind} money.repay{pid,amount}
 //          money.energyShock{pct} money.setRate{rate}
 //   EVENTS money.windfall money.arrears money.arrears_cleared money.cost_pressure money.debt_spiral money.benefit_claim money.loan money.loan_default money.estate money.macro_shift
+import { liveHh } from '../../kernel/archive.js';
 import { MoneyLedger } from './ledger.js';
 import { taxNI, employerNI, minHourly, universalCredit, childBenefit, statePensionMonth, pensionCreditFloor, lhaFor } from './tax.js';
 import { dayOfMonth, slotDay } from '../../util.js';
@@ -78,9 +79,11 @@ function stepMacro(w) {
   m.price *= 1 + m.cpi / 1200;
   m.wageGrowth = clamp(1.4 + 0.55 * m.cpi + 1.3 - 3.0 * m.recession, -1, 8);
   m.wage *= 1 + m.wageGrowth / 1200;
-  m.rentGrowth = clamp(3.0 + 0.7 * m.cpi - 3.5 * m.recession + rng.gauss(0, 0.4), -3, 12);
+  // long-run anchoring (ONS PIPR/AWE: private rents have tracked or slightly lagged earnings, ~3.9% vs wages ~4.2% nominal at cpi 2.8); was 3.0+0.7cpi = 5.0%/yr which outran wages 0.8 pt/yr and compounds to +50% real rent burden over 50y
+  m.rentGrowth = clamp(1.4 + 0.9 * m.cpi - 3.5 * m.recession + rng.gauss(0, 0.4), -3, 12);
   m.rent *= 1 + m.rentGrowth / 1200;
-  m.hpiGrowth = clamp(2.8 + 0.5 * (m.cpi - 2.8) - 1.0 * (m.mortRate - 4.8) - 6 * m.recession + rng.gauss(0, 0.5), -12, 12);
+  // house prices track earnings over the long run (ONS HPI/AWE ratio fluctuates round a slowly rising mean): base 3.9% not 2.8% so affordability does not improve without limit
+  m.hpiGrowth = clamp(3.9 + 0.5 * (m.cpi - 2.8) - 1.0 * (m.mortRate - 4.8) - 6 * m.recession + rng.gauss(0, 0.5), -12, 12);
   m.hpi *= 1 + m.hpiGrowth / 1200;
   if (mo === 3) { m.benefit = m.price; m.nmw *= 1 + 0.04; } // April uprating
   if (mo === 3 && w.time.year >= 2028) m.taxIdx = m.price / 1.0;
@@ -140,7 +143,7 @@ function monthly(w) {
   const taxBefore = L.flows.tax || 0, benBefore = L.flows.benefit || 0;
   let nPressured = 0, nHH = 0;
   const hv = (bid) => S.venueHealth[bid] ?? 1;
-  for (const hh of lf.households) {
+  for (const hh of liveHh(w)) {
     if (hh.gone || !slotDay(hh.id, dom)) continue;
     const ps = livePeople(w, hh); if (!ps.length) continue;
     const f = hh.fin, adults = ps.filter((p) => w.ageOf(p) >= 16), kids = ps.filter((p) => w.ageOf(p) < 16), nKids = kids.length;

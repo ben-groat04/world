@@ -10,6 +10,7 @@
 //   CMD   god: crime.wave{days,mult,type} crime.policeCuts{pct} crime.policeBoost{pct}   player: crime.report{pid,type?} crime.joinWatch{pid} crime.lockUp{pid}
 //   EVENTS crime.burglary crime.bike_theft crime.antisocial crime.assault crime.theft crime.vehicle crime.damage crime.fraud crime.harassment crime.domestic crime.drugs crime.disorder crime.sexual (private/sensitive: never in public feeds)
 //          crime.reported crime.arrest crime.sentenced crime.watch_started crime.watch_lapsed crime.moved_away
+import { liveHh } from '../../kernel/archive.js';
 import { TYPES, TYPE_IDS, PROFILE, PROF_OF, CAL_GROUPS } from './data.js';
 import { A } from '../routine/acts.js';
 
@@ -94,7 +95,7 @@ export function createCrime() {
       else if (p.locationId == null) { if (!(p.ext.rt && p.ext.rt.off)) out.push(p); else if (p.ext.rt.act === A.nightout || (p.ext.rt.act === A.offsocial && (hr >= 20 || hr < 4))) nte.push(p); }
       else { const b = W.buildings.get(p.locationId); if (b && b.lf && PUBS.has(b.lf.template) && ageOf(p) >= 18) pub.push(p); }
     }
-    for (const hh of W.lf.households) { if (hh.gone) continue; const s = streetOfHh(hh), e = st.get(s) || [0, 0]; e[1]++; if (occ.has(hh.id)) e[0]++; st.set(s, e); }
+    for (const hh of liveHh(W)) { if (hh.gone) continue; const s = streetOfHh(hh), e = st.get(s) || [0, 0]; e[1]++; if (occ.has(hh.id)) e[0]++; st.set(s, e); }
     return (SNAP = { occ, out, pub, nte, st });
   }
   const dark = () => { const t = W.time, h = t.hourFloat; return t.sunset != null ? (h < t.sunrise || h > t.sunset) : (h < 7 || h > 18); };
@@ -338,7 +339,7 @@ export function createCrime() {
       c.deal = c.deal || (c.lam > 0.5 && hl.drug > 0 && r.next() < 0.02 ? 1 : 0); const vis = (ageOf(p) < 30 ? 1.4 : 0.7) * (hl.drug === 2 ? 1.3 : 1);
       if (r.next() < 0.035 * C.police.cap * vis * (c.deal ? 1.5 : 1)) commit('drugs', { off: p, place: null, silent: true }); }
     // domestic abuse onset: couples, hazard rises with the riskier partner's propensity, drinking and stress
-    for (const hh of w.lf.households) { if (hh.gone) continue; const ms = hh.members.map((i) => w.people.get(i)).filter((p) => p && p.alive && p.romance && p.romance.partnerId != null && ageOf(p) >= 16);
+    for (const hh of liveHh(w)) { if (hh.gone) continue; const ms = hh.members.map((i) => w.people.get(i)).filter((p) => p && p.alive && p.romance && p.romance.partnerId != null && ageOf(p) >= 16);
       for (const a of ms) { const b = w.people.get(a.romance.partnerId); if (!b || a.id > b.id || !b.alive) continue; const key = a.id + '_' + b.id; if (C.dom[key]) continue;
         const ra = domRisk(a), rb = domRisk(b), o = ra >= rb ? a : b, v = o === a ? b : a; if (r.next() < 0.017 / 12 * Math.max(ra, rb)) { C.dom[key] = { o: o.id, v: v.id, t0: w.tick }; cnt('domStart', 'n'); } }
     }

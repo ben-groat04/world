@@ -29,3 +29,13 @@ export function archiveDeparted(w) {
   for (const p of w.living()) for (const k of p.relationships.keys()) { if (gone.has(k)) p.relationships.delete(k); else { const o = w.people.get(k); if (o && o._arch) p.relationships.delete(k); } }
   return fresh.length;
 }
+
+// Households are indexed by id (lf.households[id]) and never removed, so "for every household" loops would slow with history.
+// liveHh returns the non-gone ones (same order). Cached per lf; rebuilt when households were added or every ~month (a household that
+// went gone since the last rebuild is still listed, which callers already skip via `hh.gone`).
+const LIVE = new WeakMap();
+export function liveHh(w) {
+  const lf = w.lf, h = lf.households; let c = LIVE.get(lf);
+  if (!c || c.n !== h.length || w.tick - c.t > 4320 || c.t > w.tick) { const a = []; for (let i = 0; i < h.length; i++) if (!h[i].gone) a.push(h[i]); c = { a, n: h.length, t: w.tick }; LIVE.set(lf, c); }
+  return c.a;
+}

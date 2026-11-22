@@ -29,7 +29,7 @@ export class Scheduler {
     if (this.farMin <= tick + WHEEL - 1) this._promote(tick);
     const slot = tick & MASK, b = this.wheel[slot];
     if (b.length === 0) return;
-    if (b.length > 1) { if (b.length > 24) b.sort(byId); else for (let i = 1; i < b.length; i++) { const x = b[i], id = x.id; let j = i - 1; while (j >= 0 && b[j].id > id) { b[j + 1] = b[j]; j--; } b[j + 1] = x; } }
+    if (b.length > 1) { if (b.length > 64) b.sort(byId); else for (let i = 1; i < b.length; i++) { const x = b[i], id = x.id; let j = i - 1; while (j >= 0 && b[j].id > id) { b[j + 1] = b[j]; j--; } b[j + 1] = x; } }
     const attn = w.index._attention; attn.length = 0;
     for (let i = 0; i < b.length; i++) {
       const p = b[i];

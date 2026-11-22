@@ -6,6 +6,7 @@
 //   EVENTS housing.moved_in housing.moved_out housing.notice_served housing.eviction housing.homeless housing.rent_rise housing.rent_shock housing.repair_needed housing.disrepair housing.repaired
 //          housing.void housing.let housing.built housing.overcrowded housing.right_to_buy housing.landlord_sale housing.bought housing.unit_claimed
 //   Consumes goals' goal.effect (find_flat/new_tenancy -> move, move_out_of_parents, buy_home, get_repair_done, downsize...) and project.effect (unit_claimed).
+import { liveHh } from '../../kernel/archive.js';
 import { clamp, registerEvents, livePeople, bedNeed, isSharers } from '../money/util.js';
 import { dayOfMonth, slotDay } from '../../util.js';
 import { createArrivalHousehold, createSharer, savingsFor } from './arrivals.js';
@@ -193,9 +194,9 @@ export function createHousing() {
       }
     }
     // --- households: arrears/eviction, overcrowding, moving decisions, leaving home
-    const hhs = w.lf.households;
-    for (let i = 0; i < hhs.length; i++) {
-      const hh = hhs[i]; if (hh.gone || !slotDay(hh.id ?? i, dom)) continue;
+    const hhs = w.lf.households, hhl = liveHh(w);
+    for (let i = 0; i < hhl.length; i++) {
+      const hh = hhl[i]; if (hh.gone || !slotDay(hh.id ?? i, dom)) continue;
       const u = U(hh.unit), ps = hhLive(hh); if (!ps.length) { hh.gone = true; if (u) { u.hh = -1; vacate(u, 'empty'); } continue; }
       if (!u) continue;
       const seg = SEG[hh.seg], adults = ps.filter((p) => w.ageOf(p) >= 16);
@@ -375,7 +376,7 @@ export function createHousing() {
       if (rng.chance(0.75)) { taken.add(u.id); arrive(u, rng.chance(0.55) ? 'benefit_dependent' : null); }
     }
     // 2. local searchers
-    for (const hh of hhs) {
+    for (const hh of liveHh(w)) {
       if (hh.gone || !hh.search || !slotDay(hh.id, dom)) continue; const s = hh.search;
       const c = candidates(hh).filter((u) => !taken.has(u.id));
       c.sort((a, b) => (s.buy ? valueOf(w, a) - valueOf(w, b) : a.rent - b.rent) || a.id - b.id);

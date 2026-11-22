@@ -89,7 +89,7 @@ export function lifeCheck(seed = 1, years = 10, log = () => {}) {
     if (!p.ext.pop) continue; people++;
     const tl = timelineOf(w, p, w.events.query({ actor: p.id, minSalience: 0.12, limit: 400 })); lines += tl.length; bump(checkTimeline(w, p, tl));
     // people who ARRIVED during the run (new households, flatmates, partners moving in; born before the run began, not day-1 residents) must carry the same backstory as the founding residents
-    if (!day1.has(p.id) && p.birthTick < t0) { arrivals++; const q = p.ext.pop;
+    if (p.alive && !day1.has(p.id) && p.birthTick < t0) { arrivals++; /* (the dead are archived without memories) */ const q = p.ext.pop;
       if (!tl.some((x) => /^Born /.test(x.text))) violations.push({ rule: 'arrival without backstory', id: p.id, name: `${p.firstName} ${p.lastName}`, text: 'no "Born" entry' });
       if (q.bornUK === false && q.birthplace && q.birthplace !== 'United Kingdom' && !tl.some((x) => /^Moved to the UK/.test(x.text))) violations.push({ rule: 'migrant arrival without UK entry', id: p.id, name: `${p.firstName} ${p.lastName}`, text: q.birthplace }); }
   }

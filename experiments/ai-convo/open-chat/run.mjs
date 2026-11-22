@@ -86,7 +86,7 @@ while (convo.length < MESSAGES) {
   if (first) {
     post(first.n, first.text); session[first.n] = first.sid; seen[first.n] = convo.length; delete prefix[first.n]; // the posted fork becomes the agent's session
     say(`${stamp(new Date(at))}, ${first.n}`, first.text);
-    const q = ORACLE && first.text.match(/^\s*@claude\b[:,]?\s*(.+)$/im)?.[1];
+    const q = ORACLE && first.text.match(/^\s*@claude\b[:,]?\s*([\s\S]+)/im)?.[1].trim(); // everything after @claude, across lines: a multi-line question used to reach Claude as its first line only
     if (q) try {
       const o = await askOracle(first.n, q), answer = o.result.trim(), oat = iso(clock);
       post('Claude', answer);

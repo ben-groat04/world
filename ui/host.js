@@ -7,7 +7,8 @@ import { TextEngine } from '../sim/text/engine.js';
 import textPack from '../content/larkfield/text/index.js';
 import { SEGMENTS } from '../content/larkfield/segments.js';
 import { openingsFor } from '../sim/population/venues.js';
-import { describeEvent, newsFor, NEWS_TYPES, shortJob } from './describe.js';
+import { describeEvent, newsFor, NEWS_TYPES, shortJob, thoughtFor, activityLabel } from './describe.js';
+import { timelineOf, summaryOf } from './lifestory.js';
 import { isPrivate, townData, bizBrief, noticesAt, pinList, crimeSample, adminData, fmtLabel } from './town.js';
 import { GOD_COMMANDS, GOD_PRESETS, themeOf } from './godcatalogue.js';
 import { PlayHost } from './play/host-play.js';
@@ -215,11 +216,15 @@ export class Host {
     const groups = S(() => q.goals.query.groupsOf(id), []).map((g) => ({ id: g.id, name: g.name, kind: g.kind, size: g.size, role: g.role || (g.leader === id ? 'leader' : 'member'), venue: this.place(g.venue) }));
     const part = S(() => q.life.query.partner(id)), lst = S(() => q.life.query.status(id));
     const ties = S(() => q.social.query.ties(id), []).map((t) => ({ id: t.o, name: t.name, k: t.k, r: t.r, strength: r2(t.c), warmth: r2(t.l), trust: r2(t.t), on: !!t.on, via: t.v, conf: !!t.cf }));
-    const bio = []; for (const m of p.memories || []) if (m.type === 'biography') bio.push({ tick: m.tick, date: w.calendar.formatDate(m.tick), text: m.text, imp: m.importance || 2 });
-    const evs = []; for (const ev of w.events.query({ actor: id, minSalience: 0.2, limit: 120 })) { if (isPrivate(ev) || /^crime\./.test(ev.type)) continue; const d = describeEvent(w, ev, this.text, id); if (d && !/^goal\./.test(ev.type)) evs.push({ tick: ev.tick, date: w.calendar.formatDate(ev.tick), text: d.line, imp: Math.round(ev.salience * 5) }); }
-    const life = bio.concat(evs).sort((a, b) => a.tick - b.tick);
+    const life = timelineOf(w, p, w.events.query({ actor: id, minSalience: 0.12, limit: 400 })).map((l) => ({ tick: l.tick, date: w.calendar.formatDate(l.tick), text: l.text, imp: l.imp, ev: !!l.ev }));
     const hh = S(() => w.lf.households[pop.hh]), mem = hh && hh.members ? hh.members.filter((x) => x !== id).map((x) => this.ref(x)) : [];
     const loc = p.locationId != null ? this.place(p.locationId) : null;
+    const street = S(() => w.map.lf.streets[w.buildings.get(p.homeId).lf.streetId].name, '');
+    const kidsF = (p.family?.childrenIds || []).map((k) => w.people.get(k)).filter((k) => k && k.alive).map((k) => ({ name: k.firstName, age: Math.floor(w.ageOf(k)) }));
+    const wpl2 = workplace ? (workplace.offmap ? 'in the city' : 'at ' + workplace.name) : '';
+    const bio = S(() => summaryOf(w, p, { age: Math.floor(age), partner: part, kids: kidsF, jobLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', workplace: wpl2, activity: pop.activity, yearsAtAddress: pop.yearsAtAddress, street, tenure: unit && unit.tenure, household: hh && hh.members ? hh.members.length : 1, timeline: life.map((l) => ({ ...l })) }), '');
+    const co = { press, unit, goals: goalList, partner: part, lst, ties: S(() => q.social.query.ties(id), []), now, wb };
+    const richNow = now ? activityLabel(w, p, now, {}) : '';
     return {
       id, name: nm(p), first: p.firstName, last: p.lastName, age: Math.floor(age), ageF: age, sex: p.sex, alive: !!p.alive, cause: p.causeOfDeath || null,
       seg: pop.seg, segLabel: SEG_LABEL[pop.seg] || '', role: pop.role, eth: pop.eth, born: pop.birthplace, bornUK: pop.bornUK, religion: pop.religion, yearsAtAddress: pop.yearsAtAddress, edu: pop.edu, car: !!pop.car, pets: pop.pets,
@@ -227,7 +232,7 @@ export class Host {
       job: p.job, occLabel: job && job.occ ? shortJob((w.pack.jobs.find((j) => j.id === job.occ) || {}).label || job.occ) : '', activity: pop.activity, jobInfo: job, workplace,
       money: { pressure: press, budget: bud, savings: Math.round(fin.savings || 0), debt: Math.round(fin.debt || 0), arrears: Math.round(fin.arrears || 0), net: Math.round(fin.net || 0), gross: Math.round(fin.gross || 0), burden: S(() => q.housing.query.rentBurden(id), 0) },
       health: { status: hst, mental: men, wellbeing: wb, mood: r2(p.mood || 0) }, needs: p.needs,
-      now: now ? { act: now.act, cat: now.cat, off: now.off, label: now.label } : null, thought: p.thought || '', loc, offmap: !!(now && now.off),
+      now: now ? { act: now.act, cat: now.cat, off: now.off, label: richNow || now.label, plain: now.label } : null, thought: thoughtFor(w, this.text, p, co) || '', bio, loc, offmap: !!(now && now.off),
       story: this.safe(() => storyOf(this.sifter, w, id), null), goals: goalList, groups, partner: part, lifeStatus: lst, ties, life, drives: pop.drives, personality: p.personality, traits: p.traits, interests: p.interests,
       portrait: { id: String(p.id), genes: p.genes, sex: p.sex, age, mood: p.mood, health: p.health, alive: !!p.alive }, tick: w.tick,
     };

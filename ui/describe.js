@@ -271,15 +271,126 @@ export function shortJob(label) {
   return t ? t[0].toUpperCase() + t.slice(1) : '';
 }
 
-/** An inner thought for a person right now, from the grammar (thought.*), keyed to their situation and the hour. Deterministic per person and half-day. For the UI to show beside the activity label. */
-export function thoughtFor(w, text, p) {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// What a person is doing and thinking right now, in words, from the sim's activity plus what is true of them.
+// The routine owns the plain activity label ("Asleep at home"); this renders richer wording from it and the context. Deterministic, never claims what the data does not show.
+const hh32 = (n) => { let x = Math.imul(n | 0, 2654435761) >>> 0; x ^= x >>> 15; x = Math.imul(x, 2246822519) >>> 0; return (x ^ (x >>> 13)) >>> 0; };
+const theName = (n) => (/^[a-z]/.test(n) ? 'the ' + n : n);
+const lowerFirst = (t) => (t ? t[0].toLowerCase() + t.slice(1) : t);
+const ROLE = { nurse: 'On the ward', practice_nurse: 'Seeing patients', primary_teacher: 'In the classroom', secondary_teacher: 'In the classroom', teaching_assistant: 'In the classroom', barista_waiter: 'Behind the counter', cook_chef: 'In the kitchen', chef_offmap: 'In the kitchen', kitchen_porter_cook: 'In the kitchen', bar_staff: 'Behind the bar', publican: 'Behind the bar', retail_assistant: 'On the shop floor', retail_city: 'On the shop floor', shop_supervisor: 'On the shop floor', store_manager: 'On the shop floor', warehouse_operative: 'On the warehouse floor', warehouse_picker: 'Picking orders', delivery_rider: 'Out on deliveries', delivery_courier_app: 'Out on deliveries', delivery_driver: 'On the road with a van', taxi_driver: 'Out on a fare', rideshare_driver: 'Out on a fare', receptionist: 'On reception', gp: 'In surgery', care_worker: 'On a care round', cleaner_housekeeper: 'Cleaning', security_guard: 'On the door', barber_hairdresser: 'Cutting hair', builder_labourer_trades: 'On site', electrician_plumber: 'On a job', carpenter_joiner: 'On a job', mechanic_engineering_trades: 'In the workshop', vehicle_technician: 'In the workshop' };
+const wxOf = (w) => { const wx = w.weather, m = w.time?.rec?.month ?? 0; if (!wx) return null; const win = m === 11 || m <= 1; let t = wx.type; if (t === 'snow' && !win) t = 'rain'; if (t === 'fog' && m >= 5 && m <= 7) t = 'cloudy'; if (t === 'rain' && m >= 6 && m <= 7 && wx.temp > 20) t = 'clear'; const mean = [5, 5, 8, 10, 13, 16, 19, 19, 16, 12, 8, 5][m], legacy = [11, 22, 10, -1][w.time.season ?? 0]; return { type: t, temp: Math.round(mean + ((wx.temp ?? 10) - legacy) * 0.6) }; };
+const S = (f, d = null) => { try { const v = f(); return v === undefined ? d : v; } catch (e) { return d; } };
+/** Household members and the partner currently in the same building as p: [{id, firstName, age}] (on-map only). */
+function companions(w, p) {
+  const b = p.locationId != null ? w.buildings.get(p.locationId) : null; if (!b || !b.occupants) return [];
+  const pop = p.ext?.pop || {}, hh = S(() => w.lf.households[pop.hh]), kin = new Set((hh && hh.members || []).map((m) => (typeof m === 'object' ? m.id : m)));
+  const sp = p.family?.spouseId; if (sp != null) kin.add(sp); for (const k of p.family?.childrenIds || []) kin.add(k); kin.delete(p.id);
+  const out = []; for (const o of b.occupants) if (o && o.id !== p.id && kin.has(o.id) && o.alive !== false) out.push({ id: o.id, firstName: o.firstName, age: Math.floor(w.ageOf(o)), sp: o.id === sp, kid: (p.family?.childrenIds || []).includes(o.id) });
+  return out;
+}
+const joinNames = (a) => (a.length <= 1 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1));
+
+/** A richer label for what p is doing right now. now = routine.query.now(p) ({act, cat, off, label}). Returns the sim's own label if nothing better can honestly be said. */
+export function activityLabel(w, p, now, x = {}) {
+  if (!now) return '';
+  const base = String(now.label || '').replace(/ at home at home$/, ' at home'), act = now.act, h = w.time.hour ?? 12, rec = w.time.rec || {}, dow = rec.dow ?? 0, weekend = dow >= 5;
+  const pop = p.ext?.pop || {}, seed = hh32(p.id * 31 + Math.floor(w.tick / 9)), pick = (...a) => a[seed % a.length];
+  const at = (/^.* at (?!home$)(.+)$/.exec(base) || [])[1] || (/\(([^)]+)\)$/.exec(base) || [])[1] || '';
+  const home = p.locationId === p.homeId, co = x.co || companions(w, p), kids = co.filter((c) => c.kid && c.age < 12), partner = co.find((c) => c.sp), job = pop.occ, occN = ROLE[job] || '';
+  const stress = pop.fin?.stress ?? 0, mood = p.mood ?? 0, wx = wxOf(w), rain = wx && /rain/.test(wx.type), dog = (pop.pets?.dogs || 0) > 0;
+  const next = x.next || S(() => w.sys.routine.query.plan(p).find((e) => e.tick > w.tick && /^(work|night_work|business|work_home)$/.test(e.act)), null);
+  const toShift = next && next.tick - w.tick < 130 ? next.act : null; let m;
+  switch (act) {
+    case 'sleep': return h < 6 || h >= 22 ? pick('Fast asleep', 'Asleep, phone charging by the bed', 'Dead to the world') : weekend ? pick('Having a lie-in', 'Sleeping in, nowhere to be') : 'Asleep at home';
+    case 'sleep_day': return pick('Sleeping off a night shift', 'Asleep after a night shift, curtains drawn');
+    case 'nap': return pick('Having a rest', 'Resting their eyes');
+    case 'getup': return toShift === 'night_work' ? 'Up and getting ready for tonight\'s shift' : kids.length ? pick('Getting the kids up and ready', `Getting ${kids[0].firstName} ready for the day`) : toShift && pop.activity === 'employed' ? pick('Getting ready for work', 'Getting up and out for work') : pick('Getting up and putting the kettle on', 'Getting up and ready at home');
+    case 'breakfast': return kids.length ? pick('Breakfast with the kids', `Breakfast with ${joinNames(kids.slice(0, 2).map((k) => k.firstName))}`) : partner ? `Breakfast with ${partner.firstName}` : pick('Toast and tea at home', 'Having breakfast at home');
+    case 'lunch': return at && /work/i.test(base) ? 'Lunch break at ' + theName(at) : pick('Having lunch at home', 'Making some lunch');
+    case 'dinner': return toShift === 'night_work' && home ? 'Making tea before the night shift' : kids.length ? pick('Cooking dinner for the family', `Sorting dinner while ${kids[0].firstName} does homework`) : partner ? `Cooking dinner with ${partner.firstName}` : home ? pick('Sorting something for tea', 'Cooking dinner for one', 'Having dinner at home') : base;
+    case 'cook': return partner ? `Cooking with ${partner.firstName}` : kids.length ? 'Cooking with the kids around' : 'Cooking something proper';
+    case 'tv': { const fb = (p.interests || []).includes('football') && ((dow === 5 && h >= 12 && h < 18) || (h >= 19 && h < 22)); const wi = partner || co[0]; return fb ? (wi ? `Watching the match with ${wi.firstName}` : 'Watching the match') : wi ? `Watching TV with ${wi.firstName}` : kids.length ? 'Watching something with the kids' : pick('On the sofa with the telly on', 'Watching TV at home'); }
+    case 'gaming': return co[0] ? `Gaming with ${co[0].firstName} in the room` : 'Gaming at home';
+    case 'phone': return stress > 0.6 || mood < -0.3 ? 'Scrolling, not really taking it in' : pick('Messaging friends', 'Scrolling on the sofa');
+    case 'online': return pick('Chatting online with friends', 'Online with friends');
+    case 'chores': return kids.length ? 'Picking up after the kids' : pick('Catching up on the washing', 'Doing the housework', 'Tidying round the flat');
+    case 'childcare': return kids.length ? `Looking after ${joinNames(kids.slice(0, 3).map((k) => k.firstName))}` : 'Looking after the children';
+    case 'garden': return pick('Out in the garden', 'Pottering in the garden or on the allotment');
+    case 'sick': return pick('Under the weather at home', 'Off sick and resting');
+    case 'jobsearch': return pop.activity === 'unemployed' ? pick('Going through job ads', 'Working on applications') : 'Sorting out paperwork';
+    case 'carer': return 'Caring for a relative';
+    case 'bedtime': return pick('Winding down for bed', 'Getting ready for bed');
+    case 'homework': case 'study': return pick('Getting on with homework', 'Studying at home');
+    case 'work': case 'night_work': case 'business': case 'work_home': {
+      if (act === 'work_home') return pick('Working from home, laptop open', 'On a call from home');
+      if (act === 'business') return at ? 'Running the business at ' + at : 'Running the business';
+      const place = at ? ' at ' + theName(at) : ''; if (act === 'night_work') return (occN ? occN + ' on' : 'On') + ' the night shift' + place;
+      return occN && at ? `${occN}${place}` : at ? `At work${place}` : base; }
+    case 'commute': if ((m = /^(Walking|Cycling|On the bus|On the train|Driving) (to|home from) (.+)$/.exec(base))) { return `${m[1]} ${m[2]} ${theName(m[3])}${rain && /Walking|Cycling/.test(m[1]) ? ' in the rain' : ''}`; } return base;
+    case 'school_run': return kids.length ? `Taking ${kids[0].firstName} to school` : h > 12 ? 'Collecting the kids from school' : 'On the school run';
+    case 'shop': return at ? (stress > 0.6 ? `At ${at}, watching the total` : pick(`Picking up bits at ${at}`, `Shopping at ${at}`)) : base;
+    case 'errand': return at ? `Popping into ${at}` : base;
+    case 'cafe': return at ? pick(`Coffee at ${at}`, `Having a coffee at ${at}`) : base;
+    case 'pub': return at ? pick(`Out at ${at}`, `Catching up at ${at}`) : base;
+    case 'gym': return at ? `Working out at ${at}` : base;
+    case 'park': return at ? (dog ? `Walking the dog in ${at}` : `Out in ${at}`) : dog ? 'Out walking the dog' : base;
+    case 'worship': return at ? `At ${at}` : base;
+    case 'community': case 'library': return at ? `At ${at}` : base;
+    default: return base;
+  }
+}
+
+const SENS_GOAL = /smok|drink|drug|alcohol|debt|therapy|counsel|mental|condition|immigration|visa|grievance|irregular|relationship|ask_out|partner/i;
+/**
+ * One current inner thought for p, keyed to what is true of them right now: money pressure, a goal step, partner, weather, the shift coming up, what they are doing.
+ * Stable within about four game-hours, then moves on to something else true. x = optional facts already gathered ({press, unit, goals, partner, ties, lst, now, wb}).
+ */
+export function thoughtFor(w, text, p, x = {}) {
   if (!p || !text || !text.has) return '';
-  const h = w.time.hour ?? 12, pop = p.ext?.pop || {}, st = pop.fin?.stress ?? 0, lonely = !!(p.ext?.hl && p.ext.hl.lonely), working = pop.activity === 'employed';
-  const key = h >= 23 || h < 5 ? 'thought.night' : lonely && h % 5 === 0 ? 'thought.lonely' : st > 0.6 && h % 3 === 0 ? 'thought.money' : working && ((h >= 7 && h <= 9) || (h >= 17 && h <= 19)) ? 'thought.commute' : working && h >= 9 && h <= 17 ? 'thought.work' : (p.family?.childrenIds || []).length && h % 4 === 0 ? 'thought.family' : h % 3 === 0 ? 'thought.home' : 'thought.idle';
-  if (!text.has(key)) return '';
-  try {
-    const d = w.calendar.dateOf(w.tick); const ctx = { genre: 'thought', a: { id: p.id, firstName: p.firstName, lastName: p.lastName, sex: p.sex, age: Math.floor(w.ageOf(p)), segment: pop.seg, mood: ((p.mood || 0) + 1) / 2, job: p.job, children: p.family?.childrenIds || [] }, seed: p.id * 8 + Math.floor((w.tick % 14400) / 720) + (d ? d.d * 977 : 0), date: ((x) => ({ ...x, weekday: x.dow, day: x.d, month: x.m, year: x.y }))(d),
-      p: { street: (() => { try { const b = w.buildings.get(p.homeId); return w.map.lf.streets[b.lf.streetId].name; } catch (e) { return 'the road'; } })() } };
-    const t = text.render(key, ctx, w); return okText(t) ? t : '';
-  } catch (e) { return ''; }
+  const id = p.id, pop = p.ext?.pop || {}, h = w.time.hour ?? 12, q = w.sys, fin = pop.fin || {}, stress = x.press?.stress ?? pop.fin?.stress ?? 0;
+  const now = x.now ?? S(() => q.routine.query.now(p)), act = now?.act || '', cat = now?.cat || '';
+  const unit = x.unit ?? S(() => q.housing.query.unit(id)), goals = x.goals ?? S(() => q.goals.query.goalsOf(id), []), partner = x.partner ?? S(() => q.life.query.partner(id)), lst = x.lst ?? S(() => q.life.query.status(id), {});
+  const wb = x.wb ?? S(() => q.health.query.wellbeing(id), {}), ties = x.ties ?? S(() => q.social.query.ties(id), []), wx = wxOf(w), co = companions(w, p), home = p.locationId === p.homeId;
+  const mood01 = ((p.mood || 0) + 1) / 2, age = Math.floor(w.ageOf(p)), C = []; // candidates [key, weight, extras]
+  const add = (k, wt, ex) => { if (text.has(k)) C.push([k, wt, ex || {}]); };
+  const asleep = act === 'sleep' || act === 'sleep_day' || act === 'nap';
+  if (asleep) add('thought.sleeping', 3); else if (h >= 1 && h < 5) add('thought.night', 3);
+  if (!asleep) {
+    const burden = S(() => q.housing.query.rentBurden(id), 0), renter = unit && unit.rent > 0 && !/own|mortgage/.test(unit.tenure || '');
+    if ((fin.arrears || 0) > 60) add('thought.arrears', 3.2, { p: { owed: Math.round(fin.arrears) } });
+    if (unit && unit.notice) add('thought.notice', 3.4, { p: { rent: Math.round((unit.rent || 900) * 1.0) } });
+    if (renter && burden > 0.4) add('thought.rent', 1.6, { p: { rent: Math.round(unit.rent).toLocaleString('en-GB'), pct: Math.round(burden * 100) } });
+    if (stress > 0.6) add('thought.money', 2);
+    if (unit && unit.damp && home) add('thought.damp', 1.4);
+    const g = goals.find((g) => g.status === 'active' && !g.secret && g.phrase && !SENS_GOAL.test(g.id || '') && !SENS_GOAL.test(g.phrase));
+    if (g) { const st = g.step && g.step.label; if (st) add('thought.goal', 2.3, { goal: g.phrase, step: lowerFirst(st) }); else add('thought.goal_plain', 1, { goal: g.phrase }); }
+    if (partner && partner.id != null && h >= 17 && h < 24) { const P = w.people.get(partner.id); if (P && partner.kind === 'on' && home) add('thought.partner', 1.7, { b: P }); }
+    if (partner && partner.kind === 'off' && partner.id != null && h >= 8) { const P = w.people.get(partner.id); if (P) add('thought.partner_away', 1.2, { b: P }); }
+    const kid = (p.family?.childrenIds || []).map((k) => w.people.get(k)).find((k) => k && k.alive && w.ageOf(k) < 15);
+    if (kid && h >= 7 && h < 22) add('thought.kids', 1.5, { kid: kid.firstName });
+    if (lst && lst.pregnant) add('thought.pregnant', 2.2); if (lst && lst.careing) add('thought.caring', 2);
+    if (pop.activity === 'unemployed' && h >= 9 && h < 21) add('thought.jobhunt', 2.2);
+    if (pop.activity === 'retired' && h >= 9 && h < 21) add('thought.retired', 1.5);
+    if (pop.activity === 'student' && age >= 17 && h >= 9 && h < 22) add('thought.student', 1.5);
+    if (wb && wb.lonely) add('thought.lonely', 2);
+    if (wx && (cat === 'commute' || cat === 'errand' || cat === 'out' || (h >= 7 && h <= 9))) { const t = wx.type, k = t === 'rain' ? 'rain' : t === 'snow' ? 'snow' : t === 'fog' ? 'fog' : wx.temp <= 2 ? 'cold' : wx.temp >= 24 ? 'hot' : ''; if (k) add('thought.weather_' + k, 1.8); }
+    const fr = ties.find((t) => t.on && (t.k === 'friction' || t.l < -0.25) && w.people.get(t.o)); if (fr) add('thought.friend_row', 1.3, { b: w.people.get(fr.o) });
+    const nx = S(() => q.routine.query.plan(p).find((e) => e.tick > w.tick && /^(work|night_work|business|work_home)$/.test(e.act)), null);
+    if (nx && nx.act === 'night_work' && nx.tick - w.tick < 130 && cat !== 'work' && home) add('thought.shift', 2.6, { p: { job: p.job ? String(p.job).split(/[ /(]/)[0].toLowerCase() : 'shift' } });
+    const A = { tv: 'tv', pub: 'pub', gym: 'gym', shop: 'shop', cafe: 'cafe', worship: 'worship', park: (pop.pets?.dogs || 0) ? 'dog' : '', commute: 'commute', work: 'work', business: 'work' }[act]; if (A) add('thought.' + A, 1.9);
+    if (home && act !== 'tv') add('thought.home', 0.8); if (!pop.hh || co.length === 0) add('thought.idle', 0.5);
+    if ((p.family?.childrenIds || []).length && home && h % 4 === 0) add('thought.family', 0.6);
+  }
+  if (!C.length) return '';
+  const d = w.calendar.dateOf(w.tick) || {}, win = Math.floor(w.tick / Math.max(6, Math.floor((w.TPD || 144) / 6))), base = hh32(id * 977 + win * 131);
+  let tot = 0; for (const c of C) tot += c[1]; let r = (base % 10000) / 10000 * tot, ci = 0; for (; ci < C.length - 1; ci++) { r -= C[ci][1]; if (r < 0) break; }
+  const order = [ci, ...C.map((_, i) => i).filter((i) => i !== ci)];
+  const street = S(() => w.map.lf.streets[w.buildings.get(p.homeId).lf.streetId].name, 'the road');
+  const view = (q2) => (q2 ? { id: q2.id, firstName: q2.firstName, lastName: q2.lastName, sex: q2.sex, age: Math.floor(w.ageOf(q2)), segment: q2.ext?.pop?.seg, mood: ((q2.mood || 0) + 1) / 2, job: q2.job, children: q2.family?.childrenIds || [] } : null);
+  for (const i of order.slice(0, 3)) {
+    const [key, , ex] = C[i];
+    const ctx = { genre: 'thought', memory: false, a: view(p), b: ex.b ? view(ex.b) : undefined, seed: id * 8 + win * 3 + (d.d || 0) * 977, date: { ...d, weekday: d.dow, day: d.d, month: d.m, year: d.y, hour: h }, goal: ex.goal, step: ex.step, kid: ex.kid, p: { street, ...(ex.p || {}) }, features: { 'a.age': age } };
+    try { const t = text.render(key, ctx, w); if (okText(t)) return t; } catch (e) { /* next */ }
+  }
+  return '';
 }

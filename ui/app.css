@@ -197,3 +197,5 @@ ul.plain { list-style: none; padding: 0; margin: 4px 0; } ul.plain li { padding:
 #welcome button[data-w=watch] { background: var(--accent); color: #1a1405; border-color: transparent; }
 #welcome small { color: var(--mute); font-size: 12px; line-height: 1.4; }
 @media (max-width: 820px) { #digest { right: 62px; left: 8px; } }
+
+.bio{margin:.2rem 0 .7rem;font-size:.92rem;line-height:1.45;color:var(--fg,inherit)}

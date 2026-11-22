@@ -1,6 +1,6 @@
 // Four agents (Haiku by default) talk to each other, each agent one long-lived `claude -p` process (stream-json in/out, no HTTP API), so startup cost is paid once and each agent keeps its own history. The system prompt is NOTE + BRIEF and nothing else.
 // What reaches the model: the CLI's one-line identity ("You are a Claude agent, built on Anthropic's Claude Agent SDK."), the brief, and the CLI's fixed "# Environment" note (temp cwd, platform, shell, date), which can't be removed without CLAUDE_CODE_SIMPLE (that needs an API key). A temp cwd outside any git repo + a fresh CLAUDE_CONFIG_DIR keep everything else out. NOTE, sent first, tells the model to disregard that note (tested: without it, agents act like workers waiting for a coding task).
-// Prompts: an agent's first turn gets the whole conversation so far; later turns get only what others said since it last spoke (its own replies are already in its history), as "[Sun 19:42] Name: text" lines. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
+// Prompts: an agent's first turn gets the whole conversation so far; later turns get only what others said since it last spoke (its own replies are already in its history), as a header line "\u2014 Name, Sun 19:42" followed by the text. Replies are capped at 1000 tokens (CLAUDE_CODE_MAX_OUTPUT_TOKENS).
 // Turn taking: Maya (the first name, who also gets the topic) opens. After every posted message all the other agents are asked at once; one non-PASS reply is posted (the person the last message names, else random), the rest are logged as unsent and those agents are told so in their next prompt. Every prompt says an agent may reply just PASS. If everyone asked passes, the clock jumps to the next evening (18:00-21:30), everyone (including the last poster) is told the time and asked; if all pass again the run ends. Otherwise it ends at MESSAGES posted messages (Oracle answers count).
 // In-story clock: starts at 19:00 today (env START='YYYY-MM-DDTHH:MM' overrides); each posted message is stamped and the clock then advances 1-6 minutes.
 // Run: [MODEL=sonnet] [TOPIC='...'] [PEOPLE=2-8] [ORACLE=1] [SECRETS='{...}'] [START=...] [MESSAGES=120] node run.mjs [messages] [brief]. Output: runs/<timestamp>/{transcript.txt,log.jsonl} (every reply is logged with posted: true|false and its clock time `at`; transcript.txt has only posted messages, oracle answers and clock notes).
@@ -22,7 +22,7 @@ const p2 = x => String(x).padStart(2, '0'), hm = d => `${p2(d.getHours())}:${p2(
 const stamp = d => `${WD[d.getDay()]} ${hm(d)}`, iso = d => `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}T${hm(d)}`;
 let clock = process.env.START ? new Date(process.env.START) : new Date(new Date().setHours(19, 0, 0, 0));
 const post = (who, text) => { const m = { who, text, at: new Date(clock) }; convo.push(m); clock = new Date(+clock + rnd(1, 6) * 60000); return m; };
-const line = m => `[${stamp(m.at)}] ${m.who}: ${m.text}`;
+const line = m => `\u2014 ${m.who}, ${stamp(m.at)}\n${m.text}`; // header line, then the text: no "Name: text" pattern for agents to copy
 const dir = path.join(import.meta.dirname, 'runs', new Date().toISOString().replace(/[:.]/g, '-'));
 fs.mkdirSync(dir, { recursive: true });
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-'));
@@ -50,7 +50,7 @@ async function turn(n, user) {
   }
 }
 async function askOracle(who, q) {
-  const ctx = convo.slice(-6).map(m => `${m.who}: ${m.text}`).join('\n\n');
+  const ctx = convo.slice(-6).map(line).join('\n\n');
   // stream-json, not json: with web search the model writes text across several turns, and json's .result keeps only the last block.
   const argv = ['-p', `Recent conversation:\n${ctx}\n\nQuestion from ${who}: ${q}`, '--output-format', 'stream-json', '--verbose', '--system-prompt', `${NOTE} You are the oracle in a group chat of friends. Answer the question in a few plain sentences. Name a source when it matters.`,
     '--tools', 'WebSearch', '--allowedTools', 'WebSearch', '--setting-sources', '', '--no-session-persistence', '--model', 'haiku'];

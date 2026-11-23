@@ -1,0 +1,73 @@
+--- Sat 12:10, Maria
+Can anyone open the tool shed before the autumn work day? Need the rakes and the wheelbarrow bl.a. 🌱
+(👍 1)
+
+--- Sat 12:41, Sara
+Hej 😊 I don't have a key. Henrik has the main one I think
+
+--- Sat 13:20, Nils
+The spare is in my desk with the board papers. I can bring it to the plot tomorrow around 10 if someone is there
+
+--- Sat 14:05, Axel
+[photo: padlock]
+the lock was sticking on tuesday so I sprayed it. Might open now, haven't tried
+
+--- Sat 14:30, Maria
+Ok. Nils, bring the spare tomorrow then 👍
+(👍 2)
+
+--- Sat 15:02, Nils
+I'll be there
+
+--- Sat 15:41, Henrik
+sorry, just up. Main key is in my jacket at home, Sara can grab it. I'm on nights tonight so can't come by
+
+--- Sat 15:44, Sara
+Ok! I'll take it from the jacket before I go to bed
+
+--- Sat 23:12, Henrik
+break. Axel did the lock fine? if it's still sticky just leave the padlock off the hasp and we'll look at it Monday
+
+--- Sun 00:40, Axel
+It opens. Grease did it. The water sensor on my plot is still logging weird readings though, not sure why
+
+--- Sun 06:52, Maria
+Is the autumn work day still Sat 5 Dec or did it move? Need to tell the list 🌱
+(👍 1)
+
+--- Sun 07:20, Sara
+Hej 😊 I have the main key. Took it from the jacket last night, it's in my bag
+
+--- Sun 07:24, Sara
+Work day is 5 Dec I think, it's in the October minutes. I can check
+
+--- Sun 08:10, Maria
+Ok, 5 Dec then. Sara can you put it in the notice 👍
+
+--- Sun 08:12, Sara
+Ok!
+
+--- Sun 10:30, Nils
+Spare key: Mon 10 at the plot as I said. Who will be there with me? Don't want to stand at the gate
+
+--- Sun 11:05, Maria
+I'll come by at 10 if I can. Walk first
+
+--- Sun 11:50, Nils
+Good. Axel, you'll be there? You asked about the water bill
+
+--- Sun 13:12, Axel
+[photo: logger screen]
+sorry, between lab and project group. This is last night's readings. Flat at 0, then spikes to about 900 l/h for a minute, then back to 0. 4 times
+
+--- Sun 13:14, Axel
+Could be the logger, could be someone opening a tap on the main line. Not sure
+
+--- Sun 19:20, Nils
+If the readings are wrong we can dispute it with the utility, but only with the actual meter numbers from October. Don't guess. Send me the figures when you have them
+
+--- Sun 23:12, Henrik
+break. Are you sure it's not the pressure valve at the tap? That one bangs when the pump kicks in. The blue one
+
+--- Sun 23:40, Axel
+Hadn't thought of that. Will look Monday before class. Won't touch the valve before someone who knows it is there

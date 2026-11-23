@@ -1,0 +1,88 @@
+{"writer":"w7","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-23T10:25","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1995,"cache_read_input_tokens":0,"output_tokens":2344,"output_tokens_details":{"thinking_tokens":1673},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1995,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2344,"cache_read_input_tokens":0,"cache_creation_input_tokens":1995,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1995},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2635,"cache_read_input_tokens":0,"output_tokens":1727,"output_tokens_details":{"thinking_tokens":950},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2635,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1727,"cache_read_input_tokens":0,"cache_creation_input_tokens":2635,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2635},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3411,"cache_read_input_tokens":0,"output_tokens":2781,"output_tokens_details":{"thinking_tokens":1764},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3411,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2781,"cache_read_input_tokens":0,"cache_creation_input_tokens":3411,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3411},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Hugo","Paola","Ricardo"],"setting":"You are all at a large warehouse on the night shift in Mexico City, where you load, pack, and dispatch orders, and you know each other from working the same shifts there.","openers":["Send a shift-change reminder","Share a delivery delay alert","Ask about tonight's van loading","Post a quick thanks for the packing help"],"opener":"Share a delivery delay alert","cast":{"Hugo":{"who":"29, man, a night-shift warehouse worker","work":"shipping dispatcher","knows":"You know Paola as the packing lead who keeps your dispatch area stocked and calm during the night, and you know Ricardo as the nineteen-year-old delivery helper you often hand paperwork off to.","texts":"You message in this chat now and then, mostly only when something about a shipment or shift needs saying.","style":"Little emoji use and few texting abbreviations.","capitals":true,"lives":[],"ex":[]},"Paola":{"who":"41, woman, a night-shift warehouse worker","work":"packing lead","knows":"You know Hugo as the dispatcher who decides when your packed orders go out, and you know Ricardo as the young delivery helper who started on your shift last year and still asks you how things work.","texts":"You message in this chat now and then, usually when a packing problem or a shift handoff needs passing along.","style":"Little emoji use and few texting abbreviations.","capitals":true,"lives":[],"ex":[]},"Ricardo":{"who":"19, man, a night-shift warehouse worker","work":"delivery helper","knows":"You know Hugo as the dispatcher who tells you which routes to run each night, and you know Paola as the packing lead you check with before loading a van.","texts":"You message in this chat more often than the others, often sending quick replies or questions without being asked anything.","style":"Uses some emoji and a fair number of texting abbreviations.","capitals":false,"lives":[],"ex":[]}},"private_lines":{"Hugo":"You work nights as a shipping dispatcher at the warehouse in Mexico City, coordinating which trucks leave and when, and your days are spent sleeping, running errands, and getting home in time to rest before your next shift. You live in an apartment with your roommate and your days usually follow the same routine from one week to the next.","Paola":"You work nights as the packing lead at the warehouse in Mexico City, supervising a team and checking that orders are packed correctly before they move on, and during the day you handle the house, cook, and rest. You live with your teenage son and your mother, and your days follow a steady routine built around the family.","Ricardo":"You work nights as a delivery helper at the warehouse in Mexico City, loading vans and carrying packages to drop-off points, and during the day you sleep, study part-time, and spend time with friends. You live with your parents and younger sister, and your days usually follow a loose routine that fits around your shifts."},"sleep":{"Hugo":[8,15.5],"Paola":[8.5,15],"Ricardo":[9,16]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":787,"cache_read_input_tokens":0,"output_tokens":900,"output_tokens_details":{"thinking_tokens":615},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":787,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":900,"cache_read_input_tokens":0,"cache_creation_input_tokens":787,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":787},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1189,"cache_read_input_tokens":0,"output_tokens":922,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1189,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":922,"cache_read_input_tokens":0,"cache_creation_input_tokens":1189,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1189},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Mexico City, Mexico","castMs":13562,"situation":"Night shift at a warehouse.","topic":null}
+{"who":"Hugo","text":"[screenshot: carrier alert, route 14 delayed, new dep time pending]","posted":true,"at":"2026-11-23T10:25","checkin":"2026-11-23T10:25"}
+{"who":"Hugo","text":"Route 14 is delayed. Carrier says about 3 h. Dont load it yet","posted":true,"at":"2026-11-23T10:26","checkin":"2026-11-23T10:26"}
+{"who":"Paola","text":"Ok. What time does it go now","posted":true,"at":"2026-11-23T10:40","checkin":"2026-11-23T10:40"}
+{"who":"Hugo","text":"Probably 17:00. They'll confirm later","posted":true,"at":"2026-11-23T10:52","checkin":"2026-11-23T10:52"}
+{"who":"Paola","text":"Ok ill hold the 14 orders at the back and pack the rest","posted":true,"at":"2026-11-23T10:53","checkin":"2026-11-23T10:53"}
+{"who":"Ricardo","text":"oye is it still 17 or they moved it 😅","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Hugo","text":"Still 17 for now. Ill post when they confirm","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Ricardo","text":"ok bc my mom wants me to eat before i go lol","posted":true,"at":"2026-11-23T19:15","checkin":"2026-11-23T19:15"}
+{"who":"Paola","text":"Tell ricardo to bring the blue dolly. The other one has a loose wheel","posted":true,"at":"2026-11-23T21:48","checkin":"2026-11-23T21:48"}
+{"who":"Ricardo","text":"which blue dolly 🤔","posted":true,"at":"2026-11-23T21:50","checkin":"2026-11-23T21:50"}
+{"who":"Paola","text":"The one by dock 3","posted":true,"at":"2026-11-23T21:51","checkin":"2026-11-23T21:51"}
+{"who":"Hugo","text":"Carrier moved it again. Now 00:30","posted":true,"at":"2026-11-23T22:30","checkin":"2026-11-23T22:30"}
+{"who":"Hugo","text":"Load 9 first like normal then 14. No rush","posted":true,"at":"2026-11-23T22:31","checkin":"2026-11-23T22:31"}
+{"who":"Ricardo","text":"👍 ok so i load 9 first then 14 after","posted":true,"at":"2026-11-23T22:33","checkin":"2026-11-23T22:33"}
+{"who":"","react":"👍","to":13,"posted":false,"at":"2026-11-23T22:33"}
+{"who":"Paola","text":"Ill have the 14 cartons staged by 23:45","posted":true,"at":"2026-11-23T22:34","checkin":"2026-11-23T22:34"}
+{"who":"Ricardo","text":"found the blue dolly its by dock 3 like u said","posted":true,"at":"2026-11-23T23:50","checkin":"2026-11-23T23:50"}
+{"who":"Paola","text":"Yes. Wheel is still loose so dont use it on the ramp","posted":true,"at":"2026-11-23T23:51","checkin":"2026-11-23T23:51"}
+{"who":"Paola","text":"9 is out","posted":true,"at":"2026-11-24T00:20","checkin":"2026-11-24T00:20"}
+{"who":"Hugo","text":"Good","posted":true,"at":"2026-11-24T00:21","checkin":"2026-11-24T00:21"}
+{"who":"Ricardo","text":"im so tired lol","posted":true,"at":"2026-11-24T00:40","checkin":"2026-11-24T00:40"}
+{"who":"Ricardo","text":"14 is on the van. about to leave","posted":true,"at":"2026-11-24T01:05","checkin":"2026-11-24T01:05"}
+{"who":"Hugo","text":"Signed","posted":true,"at":"2026-11-24T01:06","checkin":"2026-11-24T01:06"}
+{"who":"Paola","text":"Two cartons from the 14 were wet on the bottom. Wrote it on the handoff sheet","posted":true,"at":"2026-11-24T01:40","checkin":"2026-11-24T01:40"}
+{"who":"Hugo","text":"Saw it. Ill tell the carrier so they dont blame us","posted":true,"at":"2026-11-24T01:42","checkin":"2026-11-24T01:42"}
+{"who":"Ricardo","text":"the wet ones were the ones under the water bottles 😬","posted":true,"at":"2026-11-24T01:43","checkin":"2026-11-24T01:43"}
+{"who":"Paola","text":"Yes. Dont put heavy things on top of the blue boxes","posted":true,"at":"2026-11-24T01:43","checkin":"2026-11-24T01:43"}
+{"who":"Paola","text":"Up. Route 6 and 11 still tonight?","posted":true,"at":"2026-11-24T16:20","checkin":"2026-11-24T16:20"}
+{"who":"Hugo","text":"Yes. 21:00 both. Carrier confirmed at 15:50","posted":true,"at":"2026-11-24T16:48","checkin":"2026-11-24T16:48"}
+{"who":"Ricardo","text":"just woke up lol","posted":true,"at":"2026-11-24T16:51","checkin":"2026-11-24T16:51"}
+{"who":"Ricardo","text":"which van for 6","posted":true,"at":"2026-11-24T16:52","checkin":"2026-11-24T16:52"}
+{"who":"Hugo","text":"4","posted":true,"at":"2026-11-24T16:58","checkin":"2026-11-24T16:58"}
+{"who":"Paola","text":"Maintenance fixed the wheel on the blue dolly. Dock 3","posted":true,"at":"2026-11-24T17:05","checkin":"2026-11-24T17:05"}
+{"who":"Ricardo","text":"nice","posted":true,"at":"2026-11-24T17:06","checkin":"2026-11-24T17:06"}
+{"who":"Ricardo","text":"my sister dropped her phone in the sink lol. shes not talking to anyone rn","posted":true,"at":"2026-11-24T18:30","checkin":"2026-11-24T18:30"}
+{"who":"Paola","text":"Tell her to put it in rice","posted":true,"at":"2026-11-24T18:31","checkin":"2026-11-24T18:31"}
+{"who":"Ricardo","text":"she says it was already in rice 💀","posted":true,"at":"2026-11-24T18:33","checkin":"2026-11-24T18:33"}
+{"who":"Paola","text":"6 is staged at the back. 11 still coming from the rear shelves","posted":true,"at":"2026-11-24T20:10","checkin":"2026-11-24T20:10"}
+{"who":"Hugo","text":"Ok","posted":true,"at":"2026-11-24T20:12","checkin":"2026-11-24T20:12"}
+{"who":"Ricardo","text":"is the van 4 door still sticking","posted":true,"at":"2026-11-24T20:40","checkin":"2026-11-24T20:40"}
+{"who":"Hugo","text":"Yes. Open it from the side handle","posted":true,"at":"2026-11-24T20:42","checkin":"2026-11-24T20:42"}
+{"who":"Ricardo","text":"ok 👍","posted":true,"at":"2026-11-24T20:43","checkin":"2026-11-24T20:43"}
+{"who":"Hugo","text":"6 and 11 are both out. Signed","posted":true,"at":"2026-11-24T21:02","checkin":"2026-11-24T21:02"}
+{"who":"Ricardo","text":"ok so 6 is on the road and 11 is on the 2nd van?","posted":true,"at":"2026-11-24T21:04","checkin":"2026-11-24T21:04"}
+{"who":"Paola","text":"Yes","posted":true,"at":"2026-11-24T21:05","checkin":"2026-11-24T21:05"}
+{"who":"Ricardo","text":"its almost time for shift","posted":true,"at":"2026-11-24T23:52","checkin":"2026-11-24T23:52"}
+{"who":"Hugo","text":"Yes. Wed is 00:30 start. Ill be in at 23:50","posted":true,"at":"2026-11-24T23:53","checkin":"2026-11-24T23:53"}
+{"who":"Paola","text":"Ill bring the handoff sheet. Im not coming in until 00:15 I have something at home","posted":true,"at":"2026-11-24T23:55","checkin":"2026-11-24T23:55"}
+{"who":"Ricardo","text":"on my way. bus was late","posted":true,"at":"2026-11-25T00:02","checkin":"2026-11-25T00:02"}
+{"who":"Paola","text":"Here. Handoff sheet is on the clipboard","posted":true,"at":"2026-11-25T00:16","checkin":"2026-11-25T00:16"}
+{"who":"Hugo","text":"Route 3 and 8 for tonight?","posted":true,"at":"2026-11-25T00:18","checkin":"2026-11-25T00:18"}
+{"who":"Hugo","text":"3 is cancelled. Carrier rebooked it for thu","posted":true,"at":"2026-11-25T00:22","checkin":"2026-11-25T00:22"}
+{"who":"Paola","text":"Ok. Pulling 3 from staging","posted":true,"at":"2026-11-25T00:23","checkin":"2026-11-25T00:23"}
+{"who":"Ricardo","text":"so only 8 tonight?","posted":true,"at":"2026-11-25T00:24","checkin":"2026-11-25T00:24"}
+{"who":"Hugo","text":"Only 8. Load at 01:30","posted":true,"at":"2026-11-25T00:25","checkin":"2026-11-25T00:25"}
+{"who":"Ricardo","text":"ok 👍","posted":true,"at":"2026-11-25T00:26","checkin":"2026-11-25T00:26"}
+{"who":"","react":"👍","to":54,"posted":false,"at":"2026-11-25T00:26"}
+{"who":"Paola","text":"Cartons from 8 are at dock 2. Tape torn on two, rewrapped","posted":true,"at":"2026-11-25T01:12","checkin":"2026-11-25T01:12"}
+{"who":"Ricardo","text":"which ones","posted":true,"at":"2026-11-25T01:14","checkin":"2026-11-25T01:14"}
+{"who":"Paola","text":"The ones with the red label","posted":true,"at":"2026-11-25T01:15","checkin":"2026-11-25T01:15"}
+{"who":"Ricardo","text":"got it","posted":true,"at":"2026-11-25T01:16","checkin":"2026-11-25T01:16"}
+{"who":"Ricardo","text":"8 is on van 2. leaving","posted":true,"at":"2026-11-25T01:50","checkin":"2026-11-25T01:50"}
+{"who":"Hugo","text":"Signed","posted":true,"at":"2026-11-25T01:51","checkin":"2026-11-25T01:51"}
+{"who":"Ricardo","text":"is van 2 heater working","posted":true,"at":"2026-11-25T02:30","checkin":"2026-11-25T02:30"}
+{"who":"Paola","text":"Not sure. Ask maintenance tomorrow","posted":true,"at":"2026-11-25T02:34","checkin":"2026-11-25T02:34"}
+{"who":"Ricardo","text":"ok","posted":true,"at":"2026-11-25T02:35","checkin":"2026-11-25T02:35"}
+{"who":"Ricardo","text":"up","posted":true,"at":"2026-11-25T16:04","checkin":"2026-11-25T16:04"}
+{"who":"Ricardo","text":"i have a test thurs morning and i didnt study at all 💀","posted":true,"at":"2026-11-25T16:07","checkin":"2026-11-25T16:07"}
+{"who":"Paola","text":"Up. Water is off on our street till later, we'll need to fill the tank","posted":true,"at":"2026-11-25T17:30","checkin":"2026-11-25T17:30"}
+{"who":"Hugo","text":"Route 12 and 5 tonight. 21:00 both? Carrier hasnt confirmed","posted":true,"at":"2026-11-25T18:02","checkin":"2026-11-25T18:02"}
+{"who":"Hugo","text":"12 is confirmed 21:00. 5 still unknown, will update","posted":true,"at":"2026-11-25T18:20","checkin":"2026-11-25T18:20"}
+{"who":"Ricardo","text":"ok which van for 12","posted":true,"at":"2026-11-25T18:22","checkin":"2026-11-25T18:22"}
+{"who":"Hugo","text":"2","posted":true,"at":"2026-11-25T18:25","checkin":"2026-11-25T18:25"}
+{"who":"Paola","text":"Packing 12 now. 5 isnt on the rear shelves, going to check the back","posted":true,"at":"2026-11-25T19:40","checkin":"2026-11-25T19:40"}
+{"who":"Ricardo","text":"i can help carry","posted":true,"at":"2026-11-25T19:44","checkin":"2026-11-25T19:44"}
+{"who":"Paola","text":"Ok come at 20:30","posted":true,"at":"2026-11-25T19:45","checkin":"2026-11-25T19:45"}
+{"who":"Hugo","text":"5 moved to 23:30","posted":true,"at":"2026-11-25T21:55","checkin":"2026-11-25T21:55"}
+{"who":"Ricardo","text":"ugh ok","posted":true,"at":"2026-11-25T21:57","checkin":"2026-11-25T21:57"}
+{"who":"Paola","text":"12 is staged. 5 will be ready by 23:15","posted":true,"at":"2026-11-25T22:02","checkin":"2026-11-25T22:02"}
+{"who":"Ricardo","text":"ok 👍","posted":true,"at":"2026-11-25T22:04","checkin":"2026-11-25T22:04"}
+{"who":"","react":"👍","to":77,"posted":false,"at":"2026-11-25T22:04"}
+{"who":"Ricardo","text":"the van 2 heater still doesnt work lol","posted":true,"at":"2026-11-25T23:20","checkin":"2026-11-25T23:20"}
+{"who":"Hugo","text":"Use the blanket in the cab","posted":true,"at":"2026-11-25T23:22","checkin":"2026-11-25T23:22"}
+{"who":"Paola","text":"5 is at the back, labeled","posted":true,"at":"2026-11-25T23:58","checkin":"2026-11-25T23:58"}
+{"who":"Ricardo","text":"12 is on van 2. 5 is loading now","posted":true,"at":"2026-11-26T00:31","checkin":"2026-11-26T00:31"}
+{"who":"Hugo","text":"Signed on 12","posted":true,"at":"2026-11-26T00:33","checkin":"2026-11-26T00:33"}

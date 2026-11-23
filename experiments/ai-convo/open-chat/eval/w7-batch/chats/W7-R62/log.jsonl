@@ -1,0 +1,81 @@
+{"writer":"w7","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T11:55","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1557,"cache_read_input_tokens":0,"output_tokens":1804,"output_tokens_details":{"thinking_tokens":1342},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1557,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1804,"cache_read_input_tokens":0,"cache_creation_input_tokens":1557,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1557},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1981,"cache_read_input_tokens":0,"output_tokens":1949,"output_tokens_details":{"thinking_tokens":1158},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1981,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1949,"cache_read_input_tokens":0,"cache_creation_input_tokens":1981,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1981},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2767,"cache_read_input_tokens":0,"output_tokens":2183,"output_tokens_details":{"thinking_tokens":1090},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2767,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2183,"cache_read_input_tokens":0,"cache_creation_input_tokens":2767,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2767},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Orla","Fionn"],"setting":"You both live in Galway, Ireland, and have been close friends since secondary school there. You still meet for food and pints when you can, and you text each other most days.","openers":["Send a \"can you come round tonight\" text","Ask him to bring chips and a bad film","Tell him you don't want to talk about it yet","Send a single sad face and nothing else"],"opener":"Send a \"can you come round tonight\" text","cast":{"Orla":{"who":"27, woman, the friend who was dumped","work":"nurse","knows":"You know Fionn as your oldest friend, from secondary school in Galway, and he is the one you ring first.","texts":"You message in this chat without being asked anything now and then, mostly on your days off.","style":"A little emoji and some abbreviations.","capitals":true,"lives":[],"ex":[]},"Fionn":{"who":"28, man, the friend who is comforting","work":"software developer","knows":"You know Orla as your oldest friend, from secondary school in Galway, and you have stayed close through everything since.","texts":"You message in this chat without being asked anything often in the evenings, since you are at home most days.","style":"A little emoji and some abbreviations.","capitals":true,"lives":[],"ex":[]}},"private_lines":{"Orla":"You work as a nurse at University Hospital Galway on rotating shifts, and you live alone in a rented flat in Salthill, where you walk by the sea on your days off.","Fionn":"You work as a software developer from home in Knocknacarra most days, with a spare room you use as an office, and you go to the gym after lunch when you can."},"sleep":{"Orla":[23.5,7],"Fionn":[23.75,7.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":787,"cache_read_input_tokens":0,"output_tokens":768,"output_tokens_details":{"thinking_tokens":582},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":787,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":768,"cache_read_input_tokens":0,"cache_creation_input_tokens":787,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":787},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1146,"cache_read_input_tokens":0,"output_tokens":2084,"output_tokens_details":{"thinking_tokens":1583},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1146,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2084,"cache_read_input_tokens":0,"cache_creation_input_tokens":1146,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1146},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Galway, Ireland","castMs":16267,"situation":"Two friends, one of them just got dumped.","topic":null}
+{"who":"Orla","text":"Can you come round tonight","posted":true,"at":"2026-11-28T11:55","checkin":"2026-11-28T11:55"}
+{"who":"Fionn","text":"Yeah course. What time","posted":true,"at":"2026-11-28T12:08","checkin":"2026-11-28T12:08"}
+{"who":"Orla","text":"8? Or whenever ur done","posted":true,"at":"2026-11-28T12:09","checkin":"2026-11-28T12:09"}
+{"who":"Fionn","text":"8 works. Gym first so ill be a bit sweaty 😅","posted":true,"at":"2026-11-28T12:11","checkin":"2026-11-28T12:11"}
+{"who":"Orla","text":"Ur always a bit sweaty","posted":true,"at":"2026-11-28T12:14","checkin":"2026-11-28T12:14"}
+{"who":"Fionn","text":"Ya thats fair","posted":true,"at":"2026-11-28T12:14","checkin":"2026-11-28T12:14"}
+{"who":"Orla","text":"He texted this morning. Said he's \"sorry it ended like this\" 🙄","posted":true,"at":"2026-11-28T15:37","checkin":"2026-11-28T15:37"}
+{"who":"Fionn","text":"Oof. Do you want to talk about it tonight or just have company","posted":true,"at":"2026-11-28T15:52","checkin":"2026-11-28T15:52"}
+{"who":"Orla","text":"Company I think. Maybe the talking will just happen on its own","posted":true,"at":"2026-11-28T15:58","checkin":"2026-11-28T15:58"}
+{"who":"Fionn","text":"Grand. Ill bring the good crisps","posted":true,"at":"2026-11-28T16:01","checkin":"2026-11-28T16:01"}
+{"who":"Orla","text":"The good crisps 😂 ok","posted":true,"at":"2026-11-28T16:03","checkin":"2026-11-28T16:03"}
+{"who":"","react":"👍","to":10,"posted":false,"at":"2026-11-28T16:03"}
+{"who":"Fionn","text":"Leaving in 10. Anything you want from the offy","posted":true,"at":"2026-11-28T19:12","checkin":"2026-11-28T19:12"}
+{"who":"Orla","text":"Just milk. And maybe wine if ur getting it?? No pressure","posted":true,"at":"2026-11-28T19:20","checkin":"2026-11-28T19:20"}
+{"who":"Fionn","text":"Getting it","posted":true,"at":"2026-11-28T19:21","checkin":"2026-11-28T19:21"}
+{"who":"Orla","text":"Im in the flat. Dont ring the bell its broken, just knock","posted":true,"at":"2026-11-28T20:58","checkin":"2026-11-28T20:58"}
+{"who":"Fionn","text":"On my way up","posted":true,"at":"2026-11-28T21:01","checkin":"2026-11-28T21:01"}
+{"who":"Orla","text":"Still up?","posted":true,"at":"2026-11-28T23:48","checkin":"2026-11-28T23:48"}
+{"who":"Fionn","text":"Yeah. Ur not sleeping either","posted":true,"at":"2026-11-28T23:52","checkin":"2026-11-28T23:52"}
+{"who":"Orla","text":"Not till im wrecked","posted":true,"at":"2026-11-28T23:53","checkin":"2026-11-28T23:53"}
+{"who":"Fionn","text":"Ill take the couch if ur not using it. Or the floor if the couch is a no","posted":true,"at":"2026-11-28T23:55","checkin":"2026-11-28T23:55"}
+{"who":"Orla","text":"Couch is fine. Ur 6ft2 so ull hang off it","posted":true,"at":"2026-11-29T00:03","checkin":"2026-11-29T00:03"}
+{"who":"Fionn","text":"Ill manage","posted":true,"at":"2026-11-29T00:04","checkin":"2026-11-29T00:04"}
+{"who":"Fionn","text":"Up. Ur still asleep ya","posted":true,"at":"2026-11-29T07:58","checkin":"2026-11-29T07:58"}
+{"who":"Orla","text":"Went for a walk. Sea was mad","posted":true,"at":"2026-11-29T11:20","checkin":"2026-11-29T11:20"}
+{"who":"Orla","text":"[photo: the sea wall at Salthill, grey water over the rocks]","posted":true,"at":"2026-11-29T11:20","checkin":"2026-11-29T11:20"}
+{"who":"Fionn","text":"Ur mad for going out in that","posted":true,"at":"2026-11-29T11:24","checkin":"2026-11-29T11:24"}
+{"who":"Fionn","text":"Looks cold","posted":true,"at":"2026-11-29T11:24","checkin":"2026-11-29T11:24"}
+{"who":"Orla","text":"It was. Didnt bring a hat","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Orla","text":"Hes texted again btw. Just \"hope ur ok\" 🙄","posted":true,"at":"2026-11-29T11:33","checkin":"2026-11-29T11:33"}
+{"who":"Fionn","text":"Are u going to answer","posted":true,"at":"2026-11-29T11:50","checkin":"2026-11-29T11:50"}
+{"who":"Orla","text":"Dunno. Probably not today","posted":true,"at":"2026-11-29T12:02","checkin":"2026-11-29T12:02"}
+{"who":"Fionn","text":"Ok. Dont let it sit on u all day","posted":true,"at":"2026-11-29T12:03","checkin":"2026-11-29T12:03"}
+{"who":"Orla","text":"Ur very wise today","posted":true,"at":"2026-11-29T12:03","checkin":"2026-11-29T12:03"}
+{"who":"Fionn","text":"Im always wise 😅","posted":true,"at":"2026-11-29T12:04","checkin":"2026-11-29T12:04"}
+{"who":"Orla","text":"😂","posted":true,"at":"2026-11-29T12:04","checkin":"2026-11-29T12:04"}
+{"who":"Fionn","text":"Home. Dog-less. The spare room is still an office 😩","posted":true,"at":"2026-11-29T16:47","checkin":"2026-11-29T16:47"}
+{"who":"Fionn","text":"Thanks for the couch btw","posted":true,"at":"2026-11-29T16:48","checkin":"2026-11-29T16:48"}
+{"who":"Orla","text":"Ur welcome. Thanks for the crisps. And the wine lol","posted":true,"at":"2026-11-29T16:52","checkin":"2026-11-29T16:52"}
+{"who":"Orla","text":"Ur not getting a thanks for the good crisps tho, they were just normal crisps","posted":true,"at":"2026-11-29T17:30","checkin":"2026-11-29T17:30"}
+{"who":"Fionn","text":"Ur a liar","posted":true,"at":"2026-11-29T17:31","checkin":"2026-11-29T17:31"}
+{"who":"Orla","text":"On at 7am tomorrow so im going to try sleep early","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Fionn","text":"Ok. Ring me if u need anything before","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Fionn","text":"Or after","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Orla","text":"Ill be grand","posted":true,"at":"2026-11-29T23:09","checkin":"2026-11-29T23:09"}
+{"who":"Orla","text":"Up. On at 7. Dont talk to me","posted":true,"at":"2026-11-30T06:41","checkin":"2026-11-30T06:41"}
+{"who":"Fionn","text":"Ur up at this hour?? Ur mad","posted":true,"at":"2026-11-30T07:46","checkin":"2026-11-30T07:46"}
+{"who":"Fionn","text":"Good luck in there. Dont let them give u the bad jobs","posted":true,"at":"2026-11-30T07:47","checkin":"2026-11-30T07:47"}
+{"who":"Orla","text":"Ur not on the ward so ur not the boss of anything","posted":true,"at":"2026-11-30T07:52","checkin":"2026-11-30T07:52"}
+{"who":"Orla","text":"Break. Dry toast and a coffee that tastes like a bin 🙄","posted":true,"at":"2026-11-30T11:14","checkin":"2026-11-30T11:14"}
+{"who":"Fionn","text":"Living the dream","posted":true,"at":"2026-11-30T11:16","checkin":"2026-11-30T11:16"}
+{"who":"Orla","text":"Ya it's a dream 😂","posted":true,"at":"2026-11-30T11:17","checkin":"2026-11-30T11:17"}
+{"who":"Fionn","text":"Gym after lunch. Dont text me while im lifting or I'll drop something on my foot","posted":true,"at":"2026-11-30T12:41","checkin":"2026-11-30T12:41"}
+{"who":"Orla","text":"Dont text me while ur lifting 😂 ok","posted":true,"at":"2026-11-30T12:58","checkin":"2026-11-30T12:58"}
+{"who":"Orla","text":"He rang the ward phone on my break. Like actually rang it","posted":true,"at":"2026-11-30T14:33","checkin":"2026-11-30T14:33"}
+{"who":"Orla","text":"Didnt pick up. Someone at reception said \"a Mr\" and I said I dont know any","posted":true,"at":"2026-11-30T14:34","checkin":"2026-11-30T14:34"}
+{"who":"Fionn","text":"Ha. Did he leave a message","posted":true,"at":"2026-11-30T14:50","checkin":"2026-11-30T14:50"}
+{"who":"Orla","text":"No","posted":true,"at":"2026-11-30T14:51","checkin":"2026-11-30T14:51"}
+{"who":"Orla","text":"Am off at 3 so im going to walk to the sea and be annoyed in peace","posted":true,"at":"2026-11-30T14:51","checkin":"2026-11-30T14:51"}
+{"who":"Fionn","text":"Good plan. Ring me if ur going to cry near the water so I can pretend I didnt hear","posted":true,"at":"2026-11-30T14:53","checkin":"2026-11-30T14:53"}
+{"who":"Orla","text":"Ur such a gas bag","posted":true,"at":"2026-11-30T15:02","checkin":"2026-11-30T15:02"}
+{"who":"Fionn","text":"Home. Showered. Spare room still an office 😩","posted":true,"at":"2026-11-30T17:20","checkin":"2026-11-30T17:20"}
+{"who":"Fionn","text":"Did u get the walk in","posted":true,"at":"2026-11-30T17:22","checkin":"2026-11-30T17:22"}
+{"who":"Orla","text":"Got it. Wind nearly took me into the sea","posted":true,"at":"2026-11-30T17:40","checkin":"2026-11-30T17:40"}
+{"who":"Orla","text":"[photo: a grey sky over the water at Salthill, a bench in the corner]","posted":true,"at":"2026-11-30T17:41","checkin":"2026-11-30T17:41"}
+{"who":"Fionn","text":"Ur not going to answer him are u","posted":true,"at":"2026-11-30T17:44","checkin":"2026-11-30T17:44"}
+{"who":"Orla","text":"Not today. Maybe not ever. Dunno","posted":true,"at":"2026-11-30T17:58","checkin":"2026-11-30T17:58"}
+{"who":"Fionn","text":"Ok. Just say if u want me to say something to him, I'll be as rude as u like","posted":true,"at":"2026-11-30T18:01","checkin":"2026-11-30T18:01"}
+{"who":"Orla","text":"Ur not rude, ur a pushover 😂","posted":true,"at":"2026-11-30T18:03","checkin":"2026-11-30T18:03"}
+{"who":"Fionn","text":"Ouch","posted":true,"at":"2026-11-30T18:03","checkin":"2026-11-30T18:03"}
+{"who":"Fionn","text":"Ordering a chicken thing from the place on Bothar na Trá. Want the same or ur on a diet","posted":true,"at":"2026-11-30T20:15","checkin":"2026-11-30T20:15"}
+{"who":"Orla","text":"Ur asking me if im on a diet after u ate my last 3 crisps on Sat","posted":true,"at":"2026-11-30T20:31","checkin":"2026-11-30T20:31"}
+{"who":"Orla","text":"Same. Plus chips","posted":true,"at":"2026-11-30T20:32","checkin":"2026-11-30T20:32"}
+{"who":"Fionn","text":"Fair. Ill get chips","posted":true,"at":"2026-11-30T20:33","checkin":"2026-11-30T20:33"}
+{"who":"Orla","text":"Full. Going to bed early again. On at 7 tmrw 😴","posted":true,"at":"2026-11-30T21:48","checkin":"2026-11-30T21:48"}
+{"who":"Fionn","text":"Ur on at 7 every day this week? Ur a machine","posted":true,"at":"2026-11-30T21:49","checkin":"2026-11-30T21:49"}
+{"who":"Orla","text":"Dont start","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Fionn","text":"Night. Dont lie there scrolling him","posted":true,"at":"2026-11-30T23:41","checkin":"2026-11-30T23:41"}
+{"who":"Orla","text":"Night 😴","posted":true,"at":"2026-11-30T23:58","checkin":"2026-11-30T23:58"}

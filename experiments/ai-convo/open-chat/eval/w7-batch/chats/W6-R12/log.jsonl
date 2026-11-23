@@ -1,0 +1,70 @@
+{"writer":"w6","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T07:25","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2022,"cache_read_input_tokens":0,"output_tokens":3562,"output_tokens_details":{"thinking_tokens":2850},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2022,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3562,"cache_read_input_tokens":0,"cache_creation_input_tokens":2022,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2022},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2652,"cache_read_input_tokens":0,"output_tokens":2285,"output_tokens_details":{"thinking_tokens":1516},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2652,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2285,"cache_read_input_tokens":0,"cache_creation_input_tokens":2652,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2652},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3420,"cache_read_input_tokens":0,"output_tokens":2792,"output_tokens_details":{"thinking_tokens":1842},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3420,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2792,"cache_read_input_tokens":0,"cache_creation_input_tokens":3420,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3420},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Jiho","Yerin","Changmin"],"setting":"You are all on the night shift at a warehouse in Seoul, South Korea, where you work together as coworkers. You know each other from the shifts you share, so you know each other's jobs, usual routines, and how the nights tend to go.","opener":"Ask who is on the dock tonight so the 2 a.m. wave does not stall.","cast":{"Jiho":{"who":"34, man, a warehouse picker on the night shift","work":"warehouse order picker","knows":"You know Yerin is a packer on your shift and a barista on her other days, and that she is quick and dependable at the packing line. You know Changmin is your night shift supervisor and checks the quality of what you pick before it leaves the building.","texts":"You message the group mostly when there is something about the shift to pass along, and otherwise you just reply now and then.","style":"ㅋㅋ and ㅇㅇ, with no emoji.","capitals":false,"lives":[],"ex":[]},"Yerin":{"who":"26, woman, a warehouse packer on the night shift","work":"barista","knows":"You know Jiho is an order picker on your shift who is easygoing and always willing to swap a break. You know Changmin is your night shift supervisor, fair but strict about packing standards and the inspection checks.","texts":"You message the group fairly often, sharing shift news and chatting between tasks, though you are not always the first to write.","style":"☕ and ㅎㅎ now and then.","capitals":true,"lives":[],"ex":[]},"Changmin":{"who":"45, man, the night shift supervisor","work":"quality control inspector","knows":"You know Jiho is one of your most reliable pickers, and you trust his counts. You know Yerin is a sharp packer who works hard, and that she also keeps a café job on her days off.","texts":"You message the group now and then, mostly for shift instructions and checks rather than casual chat.","style":"none","capitals":true,"lives":[],"ex":[]}},"private_lines":{"Jiho":"You work as an order picker on the night shift at the Seoul warehouse, pulling items through the aisles and staying on pace for the dispatch deadlines. You live alone in a small apartment in Seoul, and your days are mostly sleep, errands, and a long walk when you can manage one.","Yerin":"You pack orders on the night shift at the Seoul warehouse and work as a barista at a café in Seoul on your daytime shifts. You share a small flat in Seoul with a roommate who is not on your shift, and your days run from café shifts to sleep to your night shift.","Changmin":"You supervise the night shift at the Seoul warehouse and also inspect product quality before dispatch, so you are on the floor and at the QC station for most of the night. You live in Seoul with your wife and your teenage daughter, and your days are work, family meals, and a few hours of rest."},"sleep":{"Jiho":[9,16.5],"Yerin":[9.5,16],"Changmin":[8.5,15.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":744,"cache_read_input_tokens":0,"output_tokens":994,"output_tokens_details":{"thinking_tokens":698},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":744,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":994,"cache_read_input_tokens":0,"cache_creation_input_tokens":744,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":744},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1173,"cache_read_input_tokens":0,"output_tokens":1699,"output_tokens_details":{"thinking_tokens":771},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1173,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1699,"cache_read_input_tokens":0,"cache_creation_input_tokens":1173,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1173},"type":"message"}],"speed":"standard","fallback_credit":null}],"castMs":17035,"situation":"Night shift at a warehouse.","topic":null}
+{"who":"Jiho","text":"오늘 밤 도크 누가 봐? 2시 웨이브 밀리면 안 되는데","posted":true,"at":"2026-11-27T07:25","checkin":"2026-11-27T07:25"}
+{"who":"Yerin","text":"도크는 모르겠어요. 저 2라인 패킹이요 ☕","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Changmin","text":"도크 오늘 3명. 나머지 피킹 그대로. 지게차 1대 정비 들어가서 2대로 돈다. 2시 전에 밀린 거 있으면 바로 말해","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Jiho","text":"ㅇㅇ","posted":true,"at":"2026-11-27T16:55","checkin":"2026-11-27T16:55"}
+{"who":"Yerin","text":"아까 카페에서 그라인더 하나 고장나서 오전 내내 난리였음 ㅎㅎ","posted":true,"at":"2026-11-27T17:12","checkin":"2026-11-27T17:12"}
+{"who":"Jiho","text":"ㅋㅋ 무슨 고장","posted":true,"at":"2026-11-27T17:20","checkin":"2026-11-27T17:20"}
+{"who":"Yerin","text":"원두 걸려서 안 돌아감. 사장님 혼자 분해하다가 손 찧음","posted":true,"at":"2026-11-27T17:34","checkin":"2026-11-27T17:34"}
+{"who":"Yerin","text":"출근함","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Changmin","text":"고정","posted":true,"at":"2026-11-27T21:58","checkin":"2026-11-27T21:58"}
+{"who":"Jiho","text":"3구역 들어감","posted":true,"at":"2026-11-27T22:14","checkin":"2026-11-27T22:14"}
+{"who":"Changmin","text":"C구역 재고 안 맞는 거 있음. 피킹 전에 체크","posted":true,"at":"2026-11-27T23:40","checkin":"2026-11-27T23:40"}
+{"who":"Jiho","text":"어디요","posted":true,"at":"2026-11-27T23:44","checkin":"2026-11-27T23:44"}
+{"who":"Changmin","text":"C-14 다음 칸. 개수 3개 차이","posted":true,"at":"2026-11-27T23:46","checkin":"2026-11-27T23:46"}
+{"who":"Jiho","text":"확인함. 2개밖에 없음 1개 빠짐","posted":true,"at":"2026-11-27T23:51","checkin":"2026-11-27T23:51"}
+{"who":"Changmin","text":"사진 찍어서 올려","posted":true,"at":"2026-11-27T23:58","checkin":"2026-11-27T23:58"}
+{"who":"Jiho","text":"[photo: shelf C-14, half-empty bay with a loose label]","posted":true,"at":"2026-11-27T23:59","checkin":"2026-11-27T23:59"}
+{"who":"Yerin","text":"패킹 박스 다 떨어짐. 다음 웨이브 기다리는 중","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Changmin","text":"박스 보충 요청함. 1시 전에 옴","posted":true,"at":"2026-11-28T00:20","checkin":"2026-11-28T00:20"}
+{"who":"Jiho","text":"2시 웨이브 준비됨?","posted":true,"at":"2026-11-28T00:41","checkin":"2026-11-28T00:41"}
+{"who":"Changmin","text":"웨이브 물량 나왔음. 2시 전에 준비 끝남. 도크 3번 비어있는지만 확인","posted":true,"at":"2026-11-28T00:44","checkin":"2026-11-28T00:44"}
+{"who":"Jiho","text":"ㅇㅇ 3번 비어있음","posted":true,"at":"2026-11-28T00:47","checkin":"2026-11-28T00:47"}
+{"who":"Yerin","text":"박스 왔어요 ☕ 2라인 다시 돌아감","posted":true,"at":"2026-11-28T01:05","checkin":"2026-11-28T01:05"}
+{"who":"Changmin","text":"ㅇㅇ","posted":true,"at":"2026-11-28T01:06","checkin":"2026-11-28T01:06"}
+{"who":"Jiho","text":"C-14 옆 칸에 1개 잘못 들어가 있었음\n\n[photo: shelf C-13, a box with a loose label pushed into the bay]","posted":true,"at":"2026-11-28T01:30","checkin":"2026-11-28T01:30"}
+{"who":"Changmin","text":"그거 옆 칸으로 옮기고 재고 조정 올려. 빠진 1개는 입고 기록부터 봐","posted":true,"at":"2026-11-28T01:38","checkin":"2026-11-28T01:38"}
+{"who":"Jiho","text":"입고 기록 확인 중","posted":true,"at":"2026-11-28T01:52","checkin":"2026-11-28T01:52"}
+{"who":"Yerin","text":"C구역 박스는 저 안 건드렸어요 ㅎㅎ","posted":true,"at":"2026-11-28T02:15","checkin":"2026-11-28T02:15"}
+{"who":"Changmin","text":"ㅇㅇ 기록만 맞으면 됨","posted":true,"at":"2026-11-28T02:20","checkin":"2026-11-28T02:20"}
+{"who":"Jiho","text":"입고 기록에는 2개 들어왔는데 출고가 1개 찍혀있음","posted":true,"at":"2026-11-28T02:41","checkin":"2026-11-28T02:41"}
+{"who":"Changmin","text":"출고 주문번호 뭔데","posted":true,"at":"2026-11-28T02:43","checkin":"2026-11-28T02:43"}
+{"who":"Jiho","text":"잠깐만 찾아봄","posted":true,"at":"2026-11-28T02:50","checkin":"2026-11-28T02:50"}
+{"who":"Yerin","text":"2라인 마감했어요. 3시에 한 번 더 체크할게요","posted":true,"at":"2026-11-28T03:34","checkin":"2026-11-28T03:34"}
+{"who":"Changmin","text":"ㅇㅇ","posted":true,"at":"2026-11-28T03:36","checkin":"2026-11-28T03:36"}
+{"who":"Jiho","text":"주문번호 찾음. 출고 취소된 건인데 시스템에 반영이 안 돼 있음. 수정 요청 올림","posted":true,"at":"2026-11-28T03:58","checkin":"2026-11-28T03:58"}
+{"who":"Changmin","text":"수정 되면 알려","posted":true,"at":"2026-11-28T04:02","checkin":"2026-11-28T04:02"}
+{"who":"Changmin","text":"1라인 지게차 정비 끝났다고 함. 아침 물량은 그대로","posted":true,"at":"2026-11-28T05:20","checkin":"2026-11-28T05:20"}
+{"who":"Yerin","text":"커피 마시고 싶다 ㅎㅎ 저 아직 살아있음","posted":true,"at":"2026-11-28T06:10","checkin":"2026-11-28T06:10"}
+{"who":"Jiho","text":"ㅋㅋ 퇴근하고 자라","posted":true,"at":"2026-11-28T06:14","checkin":"2026-11-28T06:14"}
+{"who":"Changmin","text":"오늘 저녁 물량 확인하고 2라인 몇 명 필요한지 알려줘","posted":true,"at":"2026-11-28T06:20","checkin":"2026-11-28T06:20"}
+{"who":"Jiho","text":"ㅇㅇ 자고 일어나서 봄","posted":true,"at":"2026-11-28T06:31","checkin":"2026-11-28T06:31"}
+{"who":"Jiho","text":"일어남","posted":true,"at":"2026-11-28T16:44","checkin":"2026-11-28T16:44"}
+{"who":"Yerin","text":"저 카페 대타 감 ☕ 8시까지","posted":true,"at":"2026-11-28T16:58","checkin":"2026-11-28T16:58"}
+{"who":"Jiho","text":"ㅋㅋ 또?","posted":true,"at":"2026-11-28T17:03","checkin":"2026-11-28T17:03"}
+{"who":"Yerin","text":"ㅎㅎ 동료가 아파서요","posted":true,"at":"2026-11-28T17:06","checkin":"2026-11-28T17:06"}
+{"who":"Changmin","text":"2라인 2명 필요함. 한 명은 Yerin 빼고 확보해","posted":true,"at":"2026-11-28T17:40","checkin":"2026-11-28T17:40"}
+{"who":"Jiho","text":"내가 2라인 가도 됨","posted":true,"at":"2026-11-28T17:52","checkin":"2026-11-28T17:52"}
+{"who":"Changmin","text":"ㅇㅇ 그럼 3구역 누가 맡음","posted":true,"at":"2026-11-28T17:55","checkin":"2026-11-28T17:55"}
+{"who":"Jiho","text":"나중에 정하면 안 됨?","posted":true,"at":"2026-11-28T18:02","checkin":"2026-11-28T18:02"}
+{"who":"Changmin","text":"지금 정해","posted":true,"at":"2026-11-28T18:04","checkin":"2026-11-28T18:04"}
+{"who":"Jiho","text":"그럼 3구역 내가","posted":true,"at":"2026-11-28T18:10","checkin":"2026-11-28T18:10"}
+{"who":"Changmin","text":"ㅇㅇ","posted":true,"at":"2026-11-28T18:11","checkin":"2026-11-28T18:11"}
+{"who":"Jiho","text":"C-14 재고 조정 승인 떨어짐","posted":true,"at":"2026-11-28T23:15","checkin":"2026-11-28T23:15"}
+{"who":"Changmin","text":"ㅇㅇ","posted":true,"at":"2026-11-28T23:17","checkin":"2026-11-28T23:17"}
+{"who":"Yerin","text":"도크 2번 막혔어요? 라벨 프린터가 안 찍어요","posted":true,"at":"2026-11-29T00:05","checkin":"2026-11-29T00:05"}
+{"who":"Changmin","text":"아니 프린터 용지. 지금 교체함","posted":true,"at":"2026-11-29T00:09","checkin":"2026-11-29T00:09"}
+{"who":"Yerin","text":"ㅎㅎ 다시 돌아감","posted":true,"at":"2026-11-29T00:11","checkin":"2026-11-29T00:11"}
+{"who":"Changmin","text":"딸 시험 끝나서 집에서 고기 구움. 야간 전 연락 안 되면 이 방에 남겨","posted":true,"at":"2026-11-29T14:50","checkin":"2026-11-29T14:50"}
+{"who":"Jiho","text":"일어남","posted":true,"at":"2026-11-29T16:48","checkin":"2026-11-29T16:48"}
+{"who":"Jiho","text":"한강 쪽 걸어옴 ㅋㅋ 바람 세네","posted":true,"at":"2026-11-29T17:30","checkin":"2026-11-29T17:30"}
+{"who":"Yerin","text":"[photo: latte with leaf-shaped foam on a café counter]","posted":true,"at":"2026-11-29T17:34","checkin":"2026-11-29T17:34"}
+{"who":"Yerin","text":"잘 나왔음 ☕","posted":true,"at":"2026-11-29T17:36","checkin":"2026-11-29T17:36"}
+{"who":"Changmin","text":"오늘 밤 2라인 누가 함","posted":true,"at":"2026-11-29T19:02","checkin":"2026-11-29T19:02"}
+{"who":"Yerin","text":"저요 ☕","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Jiho","text":"나 1시 웨이브 피킹 함","posted":true,"at":"2026-11-29T19:21","checkin":"2026-11-29T19:21"}
+{"who":"Changmin","text":"ㅇㅇ 박스 재고 부족하면 바로 말해","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Yerin","text":"출근함","posted":true,"at":"2026-11-29T21:50","checkin":"2026-11-29T21:50"}
+{"who":"Changmin","text":"고정","posted":true,"at":"2026-11-29T21:57","checkin":"2026-11-29T21:57"}
+{"who":"Jiho","text":"3구역 들어감","posted":true,"at":"2026-11-29T22:14","checkin":"2026-11-29T22:14"}

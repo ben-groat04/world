@@ -1,0 +1,112 @@
+{"writer":"w7","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-25T12:25","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2656,"cache_read_input_tokens":0,"output_tokens":2153,"output_tokens_details":{"thinking_tokens":1262},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2656,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2153,"cache_read_input_tokens":0,"cache_creation_input_tokens":2656,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2656},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3504,"cache_read_input_tokens":0,"output_tokens":4502,"output_tokens_details":{"thinking_tokens":3447},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3504,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4502,"cache_read_input_tokens":0,"cache_creation_input_tokens":3504,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3504},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4564,"cache_read_input_tokens":0,"output_tokens":4043,"output_tokens_details":{"thinking_tokens":2896},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4564,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4043,"cache_read_input_tokens":0,"cache_creation_input_tokens":4564,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4564},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Amira","Fares","Maram","Noureddine","Najet","Iyed"],"setting":"You are all in Tunis, Tunisia, and you know each other through the wedding: Amira and Maram have been close since secondary school, Fares and Iyed met at university, and Noureddine and Najet are Amira's parents.","openers":["Share a link to the playlist draft","Ask who has picked up the rings","Send a photo of the invitation design","Check everyone's ideas for the seating plan"],"opener":"Send a photo of the invitation design","cast":{"Amira":{"who":"29, woman, the bride","work":"graphic designer","knows":"You know Fares as your fiancé, whom you met through friends and are marrying this year. You know Maram as your closest friend since secondary school. You know Noureddine as your father, a retired teacher. You know Najet as your mother, a retired nurse. You know Iyed as Fares's close friend and your best man.","texts":"You message this group now and then, mostly to share small things.","style":"Some emoji and light abbreviations.","capitals":true,"lives":["Fares"],"ex":[]},"Fares":{"who":"31, man, the groom","work":"architect","knows":"You know Amira as your fiancée, and you are marrying her this year. You know Maram as Amira's best friend since school. You know Noureddine as Amira's father, a retired teacher. You know Najet as Amira's mother, a retired nurse. You know Iyed as a friend from university and your best man.","texts":"You message this group now and then, mostly when something needs deciding.","style":"Few emoji and almost no abbreviations.","capitals":false,"lives":["Amira"],"ex":[]},"Maram":{"who":"27, woman, the maid of honour","work":"marketing assistant","knows":"You know Amira as your best friend since secondary school. You know Fares as Amira's fiancé, whom you have known for several years. You know Noureddine as Amira's father, a retired teacher. You know Najet as Amira's mother, a retired nurse. You know Iyed as Fares's university friend and the best man.","texts":"You message this group often, since you are in it every day and like keeping everyone updated.","style":"Lots of emoji and abbreviations.","capitals":false,"lives":[],"ex":[]},"Noureddine":{"who":"58, man, the bride's father","work":"retired teacher","knows":"You know Amira as your daughter. You know Fares as your future son-in-law, whom you have come to like. You know Maram as Amira's close friend from school. You know Najet as your wife and Amira's mother. You know Iyed as Fares's friend and the best man.","texts":"You message this group rarely, only when something important comes up.","style":"None.","capitals":true,"lives":["Najet"],"ex":[]},"Najet":{"who":"55, woman, the bride's mother","work":"retired nurse","knows":"You know Amira as your daughter. You know Fares as the man Amira is marrying, and you are fond of him. You know Maram as Amira's best friend since school. You know Noureddine as your husband and Amira's father. You know Iyed as Fares's friend and the best man.","texts":"You message this group now and then, mostly to check in on everyone.","style":"Some emoji and few abbreviations.","capitals":true,"lives":["Noureddine"],"ex":[]},"Iyed":{"who":"34, man, the best man","work":"lawyer","knows":"You know Fares as a friend from university, and you have known him for over ten years. You know Amira as Fares's fiancée. You know Maram as Amira's best friend and a friend of the couple. You know Noureddine as Amira's father, a retired teacher. You know Najet as Amira's mother, a retired nurse.","texts":"You message this group now and then, usually to chime in briefly.","style":"Few emoji and some abbreviations.","capitals":true,"lives":[],"ex":[]}},"private_lines":{"Amira":"You work as a graphic designer from a studio in central Tunis, and you share a flat in Lafayette with Fares. Your days are mostly desk work and client emails, with a weekly lunch at your parents' house.","Fares":"You work as an architect at a firm in Tunis, and you share a flat with Amira. Your days go to site visits and drafting at the office, and your evenings are usually quiet at home.","Maram":"You work as a marketing assistant at an agency in Tunis, and you live alone in a rented flat in Menzah. Your days are office hours, with the gym after work and weekends spent with friends.","Noureddine":"You are a retired teacher living in Tunis with your wife. Your mornings are spent at the café with old friends, your afternoons in the garden or with a book.","Najet":"You are a retired nurse living in Tunis with your husband. Your days are full of visits from grandchildren, errands in the neighbourhood and time with family.","Iyed":"You are a lawyer working in Tunis, and you live alone in an apartment near the lake. Your days are long court and office hours, and your evenings are usually spent working or relaxing alone."},"sleep":{"Amira":[23.5,7],"Fares":[23,6.5],"Maram":[0,7.5],"Noureddine":[22.5,6],"Najet":[22.5,6.5],"Iyed":[1,8]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":787,"cache_read_input_tokens":0,"output_tokens":1651,"output_tokens_details":{"thinking_tokens":1160},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":787,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1651,"cache_read_input_tokens":0,"cache_creation_input_tokens":787,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":787},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1222,"cache_read_input_tokens":0,"output_tokens":3879,"output_tokens_details":{"thinking_tokens":2247},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1222,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3879,"cache_read_input_tokens":0,"cache_creation_input_tokens":1222,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1222},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Tunis, Tunisia","castMs":25650,"situation":"Group chat for a wedding party.","topic":null}
+{"who":"Amira","text":"[photo: invitation design]","posted":true,"at":"2026-11-25T12:25","checkin":"2026-11-25T12:25"}
+{"who":"Amira","text":"Tell me honestly","posted":true,"at":"2026-11-25T12:27","checkin":"2026-11-25T12:27"}
+{"who":"","react":"😍","to":1,"posted":false,"at":"2026-11-25T12:27"}
+{"who":"","react":"😍","to":1,"posted":false,"at":"2026-11-25T12:27"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-11-25T12:27"}
+{"who":"Maram","text":"ouuu it's beautiful 😍😍 the gold on the border","posted":true,"at":"2026-11-25T12:31","checkin":"2026-11-25T12:31"}
+{"who":"Maram","text":"which font is the name","posted":true,"at":"2026-11-25T12:32","checkin":"2026-11-25T12:32"}
+{"who":"Amira","text":"The serif one. The calligraphy is only for the couple names","posted":true,"at":"2026-11-25T12:40","checkin":"2026-11-25T12:40"}
+{"who":"Fares","text":"looks good. the date line seems slightly off-centre?","posted":true,"at":"2026-11-25T12:52","checkin":"2026-11-25T12:52"}
+{"who":"Amira","text":"It's not, it's the arabic line","posted":true,"at":"2026-11-25T12:54","checkin":"2026-11-25T12:54"}
+{"who":"Fares","text":"ok","posted":true,"at":"2026-11-25T12:55","checkin":"2026-11-25T12:55"}
+{"who":"Najet","text":"Very nice habibti. Your father wants to know if the printer has the guest list","posted":true,"at":"2026-11-25T13:10","checkin":"2026-11-25T13:10"}
+{"who":"Amira","text":"Baba has the list? He was supposed to send it to me","posted":true,"at":"2026-11-25T13:11","checkin":"2026-11-25T13:11"}
+{"who":"Najet","text":"He says he sent it Monday","posted":true,"at":"2026-11-25T13:12","checkin":"2026-11-25T13:12"}
+{"who":"Noureddine","text":"I sent it to your email. Please confirm you received it","posted":true,"at":"2026-11-25T13:20","checkin":"2026-11-25T13:20"}
+{"who":"Amira","text":"Got it thank you baba","posted":true,"at":"2026-11-25T13:24","checkin":"2026-11-25T13:24"}
+{"who":"Iyed","text":"Good work. Fares, the hall called about the 14th, they want the deposit by Friday","posted":true,"at":"2026-11-25T14:05","checkin":"2026-11-25T14:05"}
+{"who":"Fares","text":"I'll go by after the site visit. Iyed can you send me the transfer details","posted":true,"at":"2026-11-25T14:09","checkin":"2026-11-25T14:09"}
+{"who":"Iyed","text":"Sent","posted":true,"at":"2026-11-25T14:10","checkin":"2026-11-25T14:10"}
+{"who":"Maram","text":"ok I'm not going to make the tasting on Saturday, my cousin's thing. I'll send gift money instead lol","posted":true,"at":"2026-11-25T15:30","checkin":"2026-11-25T15:30"}
+{"who":"Amira","text":"😒 ok","posted":true,"at":"2026-11-25T15:33","checkin":"2026-11-25T15:33"}
+{"who":"Maram","text":"kidding I'll come after","posted":true,"at":"2026-11-25T15:34","checkin":"2026-11-25T15:34"}
+{"who":"Najet","text":"Amira, did you eat","posted":true,"at":"2026-11-25T17:48","checkin":"2026-11-25T17:48"}
+{"who":"Amira","text":"Yes mama","posted":true,"at":"2026-11-25T18:02","checkin":"2026-11-25T18:02"}
+{"who":"Maram","text":"who's printing the menus? I can design them if needed, I have canva","posted":true,"at":"2026-11-25T19:41","checkin":"2026-11-25T19:41"}
+{"who":"Amira","text":"I've got it. Thanks","posted":true,"at":"2026-11-25T19:44","checkin":"2026-11-25T19:44"}
+{"who":"Fares","text":"the printer wants the final file by Sunday","posted":true,"at":"2026-11-25T20:15","checkin":"2026-11-25T20:15"}
+{"who":"Amira","text":"They'll get it Thursday","posted":true,"at":"2026-11-25T20:16","checkin":"2026-11-25T20:16"}
+{"who":"Iyed","text":"Court was a nightmare. Eating and then sleeping","posted":true,"at":"2026-11-25T21:30","checkin":"2026-11-25T21:30"}
+{"who":"Maram","text":"Amira look at this dress\n[link: dress listing]","posted":true,"at":"2026-11-25T22:58","checkin":"2026-11-25T22:58"}
+{"who":"Amira","text":"No","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}
+{"who":"Maram","text":"rude","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}
+{"who":"Amira","text":"It's pretty but not for the wedding lol","posted":true,"at":"2026-11-25T23:20","checkin":"2026-11-25T23:20"}
+{"who":"Maram","text":"fine","posted":true,"at":"2026-11-25T23:21","checkin":"2026-11-25T23:21"}
+{"who":"Maram","text":"🙃 going to bed. goodnight","posted":true,"at":"2026-11-26T00:40","checkin":"2026-11-26T00:40"}
+{"who":"Amira","text":"Morning. Printer sent the file back, they want 3mm extra bleed on the gold border","posted":true,"at":"2026-11-26T07:04","checkin":"2026-11-26T07:04"}
+{"who":"Amira","text":"[photo: printer message]","posted":true,"at":"2026-11-26T07:06","checkin":"2026-11-26T07:06"}
+{"who":"Najet","text":"Good morning. Did you sleep","posted":true,"at":"2026-11-26T07:20","checkin":"2026-11-26T07:20"}
+{"who":"Amira","text":"More or less mama","posted":true,"at":"2026-11-26T07:22","checkin":"2026-11-26T07:22"}
+{"who":"Maram","text":"morning 🙃 what's the bleed thing","posted":true,"at":"2026-11-26T07:50","checkin":"2026-11-26T07:50"}
+{"who":"Amira","text":"Just the border. I'll fix it today","posted":true,"at":"2026-11-26T07:58","checkin":"2026-11-26T07:58"}
+{"who":"Fares","text":"site visit at the lac from 9. will go to the hall after. they want a receipt not just the transfer","posted":true,"at":"2026-11-26T08:15","checkin":"2026-11-26T08:15"}
+{"who":"Iyed","text":"They need the receipt, not the transfer screenshot","posted":true,"at":"2026-11-26T08:16","checkin":"2026-11-26T08:16"}
+{"who":"Fares","text":"ok","posted":true,"at":"2026-11-26T08:20","checkin":"2026-11-26T08:20"}
+{"who":"Najet","text":"Noureddine says the café was full today. The men are arguing about football again","posted":true,"at":"2026-11-26T09:02","checkin":"2026-11-26T09:02"}
+{"who":"Noureddine","text":"The guest list has 212 names. I counted twice. Some names came from your mother's list and I am not sure they are on ours. Confirm before the printer","posted":true,"at":"2026-11-26T09:30","checkin":"2026-11-26T09:30"}
+{"who":"Amira","text":"Baba those are all ours. Mama's cousins are in the family column","posted":true,"at":"2026-11-26T09:44","checkin":"2026-11-26T09:44"}
+{"who":"Najet","text":"I told him","posted":true,"at":"2026-11-26T09:45","checkin":"2026-11-26T09:45"}
+{"who":"Najet","text":"Amira eat something","posted":true,"at":"2026-11-26T10:10","checkin":"2026-11-26T10:10"}
+{"who":"Amira","text":"Had coffee mama","posted":true,"at":"2026-11-26T10:12","checkin":"2026-11-26T10:12"}
+{"who":"Fares","text":"hall says deposit received. they'll send the receipt tomorrow","posted":true,"at":"2026-11-26T11:03","checkin":"2026-11-26T11:03"}
+{"who":"Amira","text":"Good","posted":true,"at":"2026-11-26T11:05","checkin":"2026-11-26T11:05"}
+{"who":"Maram","text":"[link: canva menu template, just in case, not sending it lol]","posted":true,"at":"2026-11-26T13:22","checkin":"2026-11-26T13:22"}
+{"who":"Amira","text":"Thanks 👍","posted":true,"at":"2026-11-26T13:40","checkin":"2026-11-26T13:40"}
+{"who":"Iyed","text":"Court got moved. Free till 17 if anyone needs anything","posted":true,"at":"2026-11-26T14:15","checkin":"2026-11-26T14:15"}
+{"who":"Fares","text":"nothing I think. amira's doing the file","posted":true,"at":"2026-11-26T14:20","checkin":"2026-11-26T14:20"}
+{"who":"Amira","text":"[photo: invitation, bleed fixed]","posted":true,"at":"2026-11-26T16:02","checkin":"2026-11-26T16:02"}
+{"who":"Amira","text":"Sent to printer. Thursday not Sunday","posted":true,"at":"2026-11-26T16:03","checkin":"2026-11-26T16:03"}
+{"who":"","react":"👍","to":54,"posted":false,"at":"2026-11-26T16:03"}
+{"who":"Najet","text":"Thank God. Come for dinner Sunday, your father wants to talk to Fares about the car","posted":true,"at":"2026-11-26T16:10","checkin":"2026-11-26T16:10"}
+{"who":"Fares","text":"ok","posted":true,"at":"2026-11-26T16:12","checkin":"2026-11-26T16:12"}
+{"who":"Maram","text":"gym done 💪 I'm dead","posted":true,"at":"2026-11-26T18:30","checkin":"2026-11-26T18:30"}
+{"who":"Maram","text":"Fares did you tell Iyed about Sunday or should I","posted":true,"at":"2026-11-26T18:31","checkin":"2026-11-26T18:31"}
+{"who":"Iyed","text":"Sunday is fine. What time","posted":true,"at":"2026-11-26T18:50","checkin":"2026-11-26T18:50"}
+{"who":"Fares","text":"ask mama","posted":true,"at":"2026-11-26T18:55","checkin":"2026-11-26T18:55"}
+{"who":"Amira","text":"Fares I left the charger at the office again","posted":true,"at":"2026-11-26T21:02","checkin":"2026-11-26T21:02"}
+{"who":"Fares","text":"I'll bring it tomorrow","posted":true,"at":"2026-11-26T21:03","checkin":"2026-11-26T21:03"}
+{"who":"Maram","text":"can we stop talking about the dress. I'm sorry about the dress","posted":true,"at":"2026-11-26T23:10","checkin":"2026-11-26T23:10"}
+{"who":"Amira","text":"You're fine. It was pretty","posted":true,"at":"2026-11-26T23:14","checkin":"2026-11-26T23:14"}
+{"who":"Amira","text":"Bring your own dress lol","posted":true,"at":"2026-11-26T23:15","checkin":"2026-11-26T23:15"}
+{"who":"","react":"😂","to":65,"posted":false,"at":"2026-11-26T23:15"}
+{"who":"Maram","text":"😒","posted":true,"at":"2026-11-26T23:16","checkin":"2026-11-26T23:16"}
+{"who":"Iyed","text":"Still at the office. Najet what time Sunday","posted":true,"at":"2026-11-27T00:20","checkin":"2026-11-27T00:20"}
+{"who":"Amira","text":"Morning. Printer confirmed Thursday, they're happy with the bleed","posted":true,"at":"2026-11-27T07:04","checkin":"2026-11-27T07:04"}
+{"who":"Fares","text":"hall receipt came in. forwarding to amira","posted":true,"at":"2026-11-27T07:31","checkin":"2026-11-27T07:31"}
+{"who":"Najet","text":"Good. Sunday 8 o'clock, not lunch. I'm doing the lamb in the morning. Iyed come hungry","posted":true,"at":"2026-11-27T07:33","checkin":"2026-11-27T07:33"}
+{"who":"Iyed","text":"8 is fine. I'll bring wine","posted":true,"at":"2026-11-27T08:05","checkin":"2026-11-27T08:05"}
+{"who":"Noureddine","text":"Guest list confirmed. 212. Najet and I went through the family column","posted":true,"at":"2026-11-27T09:12","checkin":"2026-11-27T09:12"}
+{"who":"Amira","text":"Thanks baba","posted":true,"at":"2026-11-27T09:20","checkin":"2026-11-27T09:20"}
+{"who":"Najet","text":"He's happy now","posted":true,"at":"2026-11-27T09:21","checkin":"2026-11-27T09:21"}
+{"who":"Maram","text":"tasting is at 4? I'll be there by 5, traffic from Menzah is insane on Saturdays","posted":true,"at":"2026-11-27T10:44","checkin":"2026-11-27T10:44"}
+{"who":"Amira","text":"4:30 start. 5 is fine","posted":true,"at":"2026-11-27T10:52","checkin":"2026-11-27T10:52"}
+{"who":"Fares","text":"wind at the lac is killing the scaffolding. contractor wants to push it to monday","posted":true,"at":"2026-11-27T11:30","checkin":"2026-11-27T11:30"}
+{"who":"Iyed","text":"Tell him no. Hall needs the site cleared before the 14th","posted":true,"at":"2026-11-27T11:34","checkin":"2026-11-27T11:34"}
+{"who":"Fares","text":"I know. telling him","posted":true,"at":"2026-11-27T11:36","checkin":"2026-11-27T11:36"}
+{"who":"Maram","text":"amira you at your mum's for lunch today?","posted":true,"at":"2026-11-27T12:05","checkin":"2026-11-27T12:05"}
+{"who":"Amira","text":"Yes. Fares is at site","posted":true,"at":"2026-11-27T12:09","checkin":"2026-11-27T12:09"}
+{"who":"Iyed","text":"Judge went to lunch at 12:30 and hasn't come back. Sandwich in the corridor","posted":true,"at":"2026-11-27T13:50","checkin":"2026-11-27T13:50"}
+{"who":"Najet","text":"Amira take the leftover chicken home, it's in the blue dish","posted":true,"at":"2026-11-27T14:20","checkin":"2026-11-27T14:20"}
+{"who":"Amira","text":"Mama I'm not taking your chicken","posted":true,"at":"2026-11-27T14:22","checkin":"2026-11-27T14:22"}
+{"who":"Najet","text":"Take it","posted":true,"at":"2026-11-27T14:23","checkin":"2026-11-27T14:23"}
+{"who":"Fares","text":"charger is on my desk at the office. I'll bring it tonight","posted":true,"at":"2026-11-27T15:02","checkin":"2026-11-27T15:02"}
+{"who":"Amira","text":"Ok. Don't forget again","posted":true,"at":"2026-11-27T15:05","checkin":"2026-11-27T15:05"}
+{"who":"Maram","text":"who's doing the seating chart? I can help if you want, I'm free this weekend","posted":true,"at":"2026-11-27T16:40","checkin":"2026-11-27T16:40"}
+{"who":"Amira","text":"Menu draft is attached if you want to look. Printer already has the final","posted":true,"at":"2026-11-27T17:55","checkin":"2026-11-27T17:55"}
+{"who":"Amira","text":"[file: menu_draft_v3.pdf]","posted":true,"at":"2026-11-27T17:55","checkin":"2026-11-27T17:55"}
+{"who":"Maram","text":"🥹 it looks so good. the arabic is perfect","posted":true,"at":"2026-11-27T18:14","checkin":"2026-11-27T18:14"}
+{"who":"Maram","text":"can I still help with the seating chart tho","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Amira","text":"Yes. Sunday after dinner","posted":true,"at":"2026-11-27T18:30","checkin":"2026-11-27T18:30"}
+{"who":"Maram","text":"💪 deal","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Najet","text":"Did anyone eat","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Fares","text":"yes mama. amira made pasta","posted":true,"at":"2026-11-27T19:48","checkin":"2026-11-27T19:48"}
+{"who":"Najet","text":"Good","posted":true,"at":"2026-11-27T19:50","checkin":"2026-11-27T19:50"}
+{"who":"Iyed","text":"Still in the office. Printer deal is fine on my end, Fares tell the hall the deposit is paid","posted":true,"at":"2026-11-27T21:10","checkin":"2026-11-27T21:10"}
+{"who":"Fares","text":"they already have it","posted":true,"at":"2026-11-27T21:12","checkin":"2026-11-27T21:12"}
+{"who":"Maram","text":"anyone watching the match tonight or is it just me","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Amira","text":"Sleeping. Fares turn off the light","posted":true,"at":"2026-11-27T23:20","checkin":"2026-11-27T23:20"}
+{"who":"Fares","text":"ok","posted":true,"at":"2026-11-27T23:21","checkin":"2026-11-27T23:21"}
+{"who":"Iyed","text":"Home. Sunday 8 works for me. Najet tell me if the lamb needs help","posted":true,"at":"2026-11-28T00:41","checkin":"2026-11-28T00:41"}
+{"who":"Maram","text":"I'm watching it alone then 😒","posted":true,"at":"2026-11-28T00:43","checkin":"2026-11-28T00:43"}

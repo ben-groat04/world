@@ -1,0 +1,64 @@
+{"writer":"w6","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T11:55","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1666,"cache_read_input_tokens":0,"output_tokens":1288,"output_tokens_details":{"thinking_tokens":903},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1666,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1288,"cache_read_input_tokens":0,"cache_creation_input_tokens":1666,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1666},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1971,"cache_read_input_tokens":0,"output_tokens":1549,"output_tokens_details":{"thinking_tokens":1038},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1971,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1549,"cache_read_input_tokens":0,"cache_creation_input_tokens":1971,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1971},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2480,"cache_read_input_tokens":0,"output_tokens":2272,"output_tokens_details":{"thinking_tokens":1388},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2480,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2272,"cache_read_input_tokens":0,"cache_creation_input_tokens":2480,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2480},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Tiffany","Kevin"],"setting":"You are both in Hong Kong, where you both live, and you have been close friends since university. You know each other's families, jobs and usual routines, and you know that Tiffany's relationship with her boyfriend of two years ended last week.","opener":"Ask Kevin whether he's free for dinner tonight.","cast":{"Tiffany":{"who":"27, woman, the friend who was dumped","work":"public relations associate","knows":"You know Kevin is your closest friend, whom you met at university and have seen through several relationships and jobs.","texts":"You mostly message Kevin only when you need something or want company, and now and then you send him a random photo or link.","style":"lol, omg, 🥲 and 💔, with \"ok\" and \"pls\" as abbreviations.","capitals":false,"lives":[],"ex":[]},"Kevin":{"who":"29, man, the close friend","work":"insurance broker","knows":"You know Tiffany is your closest friend from university, and you know her ex only by sight and from what she has told you.","texts":"You message Tiffany now and then without being asked, usually to check in or share something small from your day.","style":"haha, ok, and 👍 or 😂, with \"u\" and \"rn\" as abbreviations.","capitals":false,"lives":[],"ex":[]}},"private_lines":{"Tiffany":"You work as a PR associate at an agency in Central, spend your days on client calls and press releases, and live alone in a small flat in Kennedy Town, going to the gym or meeting friends after work.","Kevin":"You work as an insurance broker in Admiralty, handling commercial policies and client meetings, and live alone in a flat in Wan Chai, where you usually cook at home, play badminton on weekends and see your parents once a month."},"sleep":{"Tiffany":[23.5,7.5],"Kevin":[0,7]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":743,"cache_read_input_tokens":0,"output_tokens":972,"output_tokens_details":{"thinking_tokens":789},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":743,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":972,"cache_read_input_tokens":0,"cache_creation_input_tokens":743,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":743},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1138,"cache_read_input_tokens":0,"output_tokens":1756,"output_tokens_details":{"thinking_tokens":1179},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1138,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1756,"cache_read_input_tokens":0,"cache_creation_input_tokens":1138,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1138},"type":"message"}],"speed":"standard","fallback_credit":null}],"castMs":16401,"situation":"Two friends, one of them just got dumped.","topic":null}
+{"who":"Tiffany","text":"are u free for dinner tonight","posted":true,"at":"2026-11-28T11:55","checkin":"2026-11-28T11:55"}
+{"who":"Kevin","text":"played badminton this morning so i'm still at the court lol. free yeah. where","posted":true,"at":"2026-11-28T12:40","checkin":"2026-11-28T12:40"}
+{"who":"Tiffany","text":"anywhere not loud pls","posted":true,"at":"2026-11-28T12:43","checkin":"2026-11-28T12:43"}
+{"who":"Kevin","text":"ok. shower first then i'll pick","posted":true,"at":"2026-11-28T12:50","checkin":"2026-11-28T12:50"}
+{"who":"Tiffany","text":"[link: a Sheung Wan cha chaan teng with a 4.6 rating]","posted":true,"at":"2026-11-28T14:12","checkin":"2026-11-28T14:12"}
+{"who":"Kevin","text":"u want the one that has a 2 hr wait on sat 😂","posted":true,"at":"2026-11-28T14:20","checkin":"2026-11-28T14:20"}
+{"who":"Tiffany","text":"no lol","posted":true,"at":"2026-11-28T14:22","checkin":"2026-11-28T14:22"}
+{"who":"Kevin","text":"7 at the place near ur flat? sichuan one","posted":true,"at":"2026-11-28T17:03","checkin":"2026-11-28T17:03"}
+{"who":"Tiffany","text":"ok 7","posted":true,"at":"2026-11-28T17:05","checkin":"2026-11-28T17:05"}
+{"who":"Tiffany","text":"thx for not asking how im doing today 💔","posted":true,"at":"2026-11-28T17:06","checkin":"2026-11-28T17:06"}
+{"who":"Kevin","text":"haha ok. we can talk about it tonight if u want. or not","posted":true,"at":"2026-11-28T17:10","checkin":"2026-11-28T17:10"}
+{"who":"Kevin","text":"ur call","posted":true,"at":"2026-11-28T17:11","checkin":"2026-11-28T17:11"}
+{"who":"Tiffany","text":"ok 🥲","posted":true,"at":"2026-11-28T17:14","checkin":"2026-11-28T17:14"}
+{"who":"Kevin","text":"on the mtr. 40 min lol","posted":true,"at":"2026-11-28T17:21","checkin":"2026-11-28T17:21"}
+{"who":"Tiffany","text":"ok. i'll get the table by the window so u have to find me","posted":true,"at":"2026-11-28T17:24","checkin":"2026-11-28T17:24"}
+{"who":"Kevin","text":"👍","posted":true,"at":"2026-11-28T17:25","checkin":"2026-11-28T17:25"}
+{"who":"Tiffany","text":"here. they put us by the kitchen door","posted":true,"at":"2026-11-28T19:58","checkin":"2026-11-28T19:58"}
+{"who":"Kevin","text":"coming up the hill now","posted":true,"at":"2026-11-28T20:01","checkin":"2026-11-28T20:01"}
+{"who":"Tiffany","text":"home. i ate too much mapo tofu and now i'm sad about it lol","posted":true,"at":"2026-11-28T21:46","checkin":"2026-11-28T21:46"}
+{"who":"Kevin","text":"haha ok. home too. dont be sad about tofu","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Tiffany","text":"he texted at 9 \"hope ur doing ok\" like. no","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Kevin","text":"what did u say","posted":true,"at":"2026-11-28T23:16","checkin":"2026-11-28T23:16"}
+{"who":"Tiffany","text":"nothing yet. he can wait","posted":true,"at":"2026-11-28T23:17","checkin":"2026-11-28T23:17"}
+{"who":"Kevin","text":"👍","posted":true,"at":"2026-11-28T23:18","checkin":"2026-11-28T23:18"}
+{"who":"","react":"😂","to":23,"posted":false,"at":"2026-11-28T23:18"}
+{"who":"Tiffany","text":"im going to bed soon. don't be up all night on my account","posted":true,"at":"2026-11-28T23:19","checkin":"2026-11-28T23:19"}
+{"who":"Kevin","text":"i'm up till 12 always lol. go sleep","posted":true,"at":"2026-11-28T23:20","checkin":"2026-11-28T23:20"}
+{"who":"Tiffany","text":"slept like a rock. did u get any sleep","posted":true,"at":"2026-11-29T09:12","checkin":"2026-11-29T09:12"}
+{"who":"Kevin","text":"yeah around 1. badminton at 3 if u want to come watch and cheer me on","posted":true,"at":"2026-11-29T09:40","checkin":"2026-11-29T09:40"}
+{"who":"Tiffany","text":"maybe. i'll see how i feel. ill text by 2","posted":true,"at":"2026-11-29T10:05","checkin":"2026-11-29T10:05"}
+{"who":"Kevin","text":"ok","posted":true,"at":"2026-11-29T10:06","checkin":"2026-11-29T10:06"}
+{"who":"Tiffany","text":"ok im coming. dont make me sit in the sun","posted":true,"at":"2026-11-29T13:52","checkin":"2026-11-29T13:52"}
+{"who":"Kevin","text":"its indoors lol. sports centre on hennessy rd, court 4, 3pm","posted":true,"at":"2026-11-29T13:55","checkin":"2026-11-29T13:55"}
+{"who":"Tiffany","text":"ok","posted":true,"at":"2026-11-29T13:56","checkin":"2026-11-29T13:56"}
+{"who":"Kevin","text":"[photo: scoreboard, 1-1]","posted":true,"at":"2026-11-29T15:48","checkin":"2026-11-29T15:48"}
+{"who":"Tiffany","text":"u lost","posted":true,"at":"2026-11-29T15:49","checkin":"2026-11-29T15:49"}
+{"who":"Kevin","text":"lost the 3rd 21-19 😂 the guy kept hitting it to my backhand","posted":true,"at":"2026-11-29T15:51","checkin":"2026-11-29T15:51"}
+{"who":"Tiffany","text":"omg ur so bad at this","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Kevin","text":"haha ok.","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Tiffany","text":"going home. my shoes smell","posted":true,"at":"2026-11-29T16:30","checkin":"2026-11-29T16:30"}
+{"who":"Kevin","text":"ok. ur welcome for the cheering","posted":true,"at":"2026-11-29T16:31","checkin":"2026-11-29T16:31"}
+{"who":"Tiffany","text":"i replied to him finally. just \"ok thx\"","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Kevin","text":"ok. how do u feel","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Tiffany","text":"meh. fine. lol","posted":true,"at":"2026-11-29T21:22","checkin":"2026-11-29T21:22"}
+{"who":"Kevin","text":"ok","posted":true,"at":"2026-11-29T21:23","checkin":"2026-11-29T21:23"}
+{"who":"Tiffany","text":"he sent a heart. like a heart emoji. who does that","posted":true,"at":"2026-11-29T21:40","checkin":"2026-11-29T21:40"}
+{"who":"Kevin","text":"haha not me","posted":true,"at":"2026-11-29T21:44","checkin":"2026-11-29T21:44"}
+{"who":"Tiffany","text":"im going to bed. night","posted":true,"at":"2026-11-29T23:02","checkin":"2026-11-29T23:02"}
+{"who":"Tiffany","text":"client sent 14 edits at 7am on a press release. omg","posted":true,"at":"2026-11-30T08:41","checkin":"2026-11-30T08:41"}
+{"who":"Kevin","text":"rn?? that's brutal","posted":true,"at":"2026-11-30T08:43","checkin":"2026-11-30T08:43"}
+{"who":"Tiffany","text":"its 6 pages and they changed the company name 😭","posted":true,"at":"2026-11-30T08:44","checkin":"2026-11-30T08:44"}
+{"who":"Kevin","text":"haha","posted":true,"at":"2026-11-30T08:46","checkin":"2026-11-30T08:46"}
+{"who":"Kevin","text":"line at the dai pai dong near our office is 40 min. going to the cold noodle place instead","posted":true,"at":"2026-11-30T12:31","checkin":"2026-11-30T12:31"}
+{"who":"Tiffany","text":"im in central same, going to pret","posted":true,"at":"2026-11-30T12:34","checkin":"2026-11-30T12:34"}
+{"who":"Tiffany","text":"the sandwich is sad today","posted":true,"at":"2026-11-30T12:35","checkin":"2026-11-30T12:35"}
+{"who":"Kevin","text":"ok. lunch was ok here 👍","posted":true,"at":"2026-11-30T12:50","checkin":"2026-11-30T12:50"}
+{"who":"Tiffany","text":"gym or home. cant decide 🥲","posted":true,"at":"2026-11-30T18:20","checkin":"2026-11-30T18:20"}
+{"who":"Kevin","text":"home. i'm making the pork chop thing if u want it","posted":true,"at":"2026-11-30T18:24","checkin":"2026-11-30T18:24"}
+{"who":"Tiffany","text":"maybe. not tonight pls","posted":true,"at":"2026-11-30T18:26","checkin":"2026-11-30T18:26"}
+{"who":"Kevin","text":"ok. the offer stands","posted":true,"at":"2026-11-30T18:27","checkin":"2026-11-30T18:27"}
+{"who":"Tiffany","text":"did the gym. now i'm eating cereal over the sink","posted":true,"at":"2026-11-30T21:58","checkin":"2026-11-30T21:58"}
+{"who":"Kevin","text":"haha that's a meal","posted":true,"at":"2026-11-30T22:01","checkin":"2026-11-30T22:01"}

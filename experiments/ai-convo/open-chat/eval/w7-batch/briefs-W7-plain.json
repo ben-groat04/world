@@ -1,0 +1,146 @@
+[
+ {
+  "label": "W7-R11",
+  "people": 3,
+  "brief": "Night shift at a warehouse.",
+  "start": "2026-11-23T10:25"
+ },
+ {
+  "label": "W7-R12",
+  "people": 3,
+  "brief": "Night shift at a warehouse.",
+  "start": "2026-11-27T07:25"
+ },
+ {
+  "label": "W7-R13",
+  "people": 3,
+  "brief": "Night shift at a warehouse.",
+  "start": "2026-11-26T11:00"
+ },
+ {
+  "label": "W7-R21",
+  "people": 2,
+  "brief": "My brother.",
+  "start": "2026-11-28T19:25"
+ },
+ {
+  "label": "W7-R22",
+  "people": 2,
+  "brief": "My brother.",
+  "start": "2026-11-23T20:00"
+ },
+ {
+  "label": "W7-R23",
+  "people": 2,
+  "brief": "My brother.",
+  "start": "2026-11-28T10:25"
+ },
+ {
+  "label": "W7-R31",
+  "people": 5,
+  "brief": "Allotment society.",
+  "start": "2026-11-26T12:50"
+ },
+ {
+  "label": "W7-R32",
+  "people": 5,
+  "brief": "Allotment society.",
+  "start": "2026-11-28T12:10"
+ },
+ {
+  "label": "W7-R33",
+  "people": 5,
+  "brief": "Allotment society.",
+  "start": "2026-11-23T22:20"
+ },
+ {
+  "label": "W7-R41",
+  "people": 6,
+  "brief": "Group chat for a wedding party.",
+  "start": "2026-11-24T09:50"
+ },
+ {
+  "label": "W7-R42",
+  "people": 6,
+  "brief": "Group chat for a wedding party.",
+  "start": "2026-11-25T18:05"
+ },
+ {
+  "label": "W7-R43",
+  "people": 6,
+  "brief": "Group chat for a wedding party.",
+  "start": "2026-11-25T12:25"
+ },
+ {
+  "label": "W7-R51",
+  "people": 5,
+  "brief": "Teachers at a primary school.",
+  "start": "2026-11-25T19:00"
+ },
+ {
+  "label": "W7-R52",
+  "people": 5,
+  "brief": "Teachers at a primary school.",
+  "start": "2026-11-27T14:40"
+ },
+ {
+  "label": "W7-R53",
+  "people": 5,
+  "brief": "Teachers at a primary school.",
+  "start": "2026-11-23T22:55"
+ },
+ {
+  "label": "W7-R61",
+  "people": 2,
+  "brief": "Two friends, one of them just got dumped.",
+  "start": "2026-11-26T10:00"
+ },
+ {
+  "label": "W7-R62",
+  "people": 2,
+  "brief": "Two friends, one of them just got dumped.",
+  "start": "2026-11-28T11:55"
+ },
+ {
+  "label": "W7-R63",
+  "people": 2,
+  "brief": "Two friends, one of them just got dumped.",
+  "start": "2026-11-29T13:35"
+ },
+ {
+  "label": "W7-R71",
+  "people": 3,
+  "brief": "Dog walkers at the park.",
+  "start": "2026-11-25T09:25"
+ },
+ {
+  "label": "W7-R72",
+  "people": 3,
+  "brief": "Dog walkers at the park.",
+  "start": "2026-11-26T22:35"
+ },
+ {
+  "label": "W7-R73",
+  "people": 3,
+  "brief": "Dog walkers at the park.",
+  "start": "2026-11-24T07:40"
+ },
+ {
+  "label": "W7-R81",
+  "people": 4,
+  "brief": "Friends planning a surprise party for someone.",
+  "start": "2026-11-26T09:40"
+ },
+ {
+  "label": "W7-R82",
+  "people": 4,
+  "brief": "Friends planning a surprise party for someone.",
+  "start": "2026-11-29T20:45"
+ },
+ {
+  "label": "W7-R83",
+  "people": 4,
+  "brief": "Friends planning a surprise party for someone.",
+  "start": "2026-11-24T12:20"
+ }
+]

@@ -1,0 +1,44 @@
+[
+ {
+  "label": "W6-S11",
+  "people": 2,
+  "brief": "A couple planning a weekend in Edinburgh.",
+  "topic": "Is Edinburgh Castle open on Mondays in winter, and how much is a ticket?",
+  "start": "2026-11-25T11:20"
+ },
+ {
+  "label": "W6-S12",
+  "people": 2,
+  "brief": "A couple planning a weekend in Edinburgh.",
+  "topic": "Is Edinburgh Castle open on Mondays in winter, and how much is a ticket?",
+  "start": "2026-11-29T20:35"
+ },
+ {
+  "label": "W6-S13",
+  "people": 2,
+  "brief": "A couple planning a weekend in Edinburgh.",
+  "topic": "Is Edinburgh Castle open on Mondays in winter, and how much is a ticket?",
+  "start": "2026-11-27T17:05"
+ },
+ {
+  "label": "W6-S21",
+  "people": 4,
+  "brief": "Friends going to a gig.",
+  "topic": "What time does the last Tube leave Brixton on a Saturday night?",
+  "start": "2026-11-24T08:45"
+ },
+ {
+  "label": "W6-S22",
+  "people": 4,
+  "brief": "Friends going to a gig.",
+  "topic": "What time does the last Tube leave Brixton on a Saturday night?",
+  "start": "2026-11-27T09:10"
+ },
+ {
+  "label": "W6-S23",
+  "people": 4,
+  "brief": "Friends going to a gig.",
+  "topic": "What time does the last Tube leave Brixton on a Saturday night?",
+  "start": "2026-11-23T11:10"
+ }
+]

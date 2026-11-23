@@ -6,6 +6,7 @@ Start here when picking this up in a new session. Then read `ITERATIONS.md` (eve
 Simulated text chats, group or 1:1, that blind judges can't tell from real people texting. The target is 8/10, for any situation a user types in, and users often give only a minimal one. Haiku writes the characters, because it's cheap. Don't overfit to the test scenarios.
 
 ## User's rules and preferences
+- It is a LIVE chat app: the chat plays out in story time in the viewer as it is generated, started from the Start form, and @claude must be able to answer a character mid-chat. Every change must work in that setting (generated a little ahead, released message by message). No after-the-fact rewrites of whole chats. Keep the work tied to the running app, not to offline transcripts.
 - `/home/user/world/CLAUDE.md`: real-world facts (stats, prices, rates) must never be guessed; source them or leave them out. Design choices and example text are fine. Fix root causes, not symptoms.
 - The orchestrating session doesn't steer. Diagnosis is an Opus cold read, coding is done by Sonnet agents, and blind judges are Sonnet with a neutral prompt.
   - Don't give judges or the cold read priorities or specific questions. Pass the user's observations on neutrally, labelled as theirs.

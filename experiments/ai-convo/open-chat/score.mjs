@@ -68,6 +68,10 @@
 //  dropRate           share of replies that reached the rewrite pass and were DROPped (rows with `raw`)
 //  addStyle, addAll   rewrite fidelity over posted rows with `raw`: emoji + slang tokens not in the raw draft, and all new tokens (emoji included), per token posted (prompts.mjs added())
 //  oracle             number of oracle rows (private ones included)
+//  perTurn            posted messages per turn (a turn = a row with the agent's `user` prompt that is not a failed call; a REACT and a PASS are turns). Round 18's cold read: 0.53, 0.45, 0.39, 0.35 over rounds 7-10 (pooled over the runs of a round: sum of messages / sum of turns; the MEAN row here is the mean of per-run values, which comes out higher), the number that fell while judges' scores did not show it
+//  reactPer           reaction rows per posted message (0.29 and 0.37 for rounds 7-8, 0.65 and 0.64 for rounds 9-10 in the same read: reactions replacing replies). '-' for a run with no messages
+//  qAny               share of messages containing a '?' anywhere (qEnd counts only a final one): how often a message hands the next person something to answer
+//  wake90             share of messages posted from 30 min before to 90 min after their writer's wake time (the end of the cast row's `sleep` hours; first looks are moved to wake time plus a jitter of -25 to +40 min). '-' for runs whose log has no cast row. Round 18: 21% of posts at 06:00-07:59
 //  end                how the run ended (`end` row: limit / date); '-' if none
 
 import { readFileSync } from 'node:fs'; import { added } from './prompts.mjs';
@@ -171,7 +175,8 @@ function score(dir) {
   const drafts = agent.filter(r => r.draft != null);
   const hasWord = (t, ws) => ws.some(w => new RegExp(`\\b${esc(w)}\\b`, 'i').test(t));
   const perPerson = Object.keys(lines).filter(n => counts[n]).map(n => { const ws = lineWords(lines[n]); return ws.length ? msgs.filter(m => m.who === n && hasWord(m.text, ws)).length : null; });
-  const failed = all.filter(r => r.failed).length;
+  const failed = all.filter(r => r.failed).length, turns = all.filter(r => r.user && r.who && !r.failed).length, sleepOf = all.find(r => r.cast)?.sleep;
+  const nearWake = m => { const w = sleepOf?.[m.who]?.[1]; if (w == null) return null; const mins = +m.at.slice(11, 13) * 60 + +m.at.slice(14, 16), d = ((mins - w * 60) % 1440 + 1440) % 1440; return d < 90 || d >= 1410; };
   const cnt = f => msgs.length ? msgs.filter(f).length : null;
   const looks = agent.filter(r => r.user && r.checkin), firstL = looks.reduce((a, r) => !a || r.checkin < a.checkin ? r : a, null), sit = r => {
     if (r === firstL) return 'Open'; if (!/You last looked/.test(r.user)) return 'First'; const ev = /Not on your phone/.test(r.user), nu = /\(new\)/.test(r.user), empty = /\(no messages\)/.test(r.user);
@@ -218,6 +223,10 @@ function score(dir) {
     passFirst: passBy('First'), passEvEmpty: passBy('EvEmpty'), passEvQuiet: passBy('EvQuiet'), passEvNew: passBy('EvNew'), passNotif: passBy('Notif'),
     dropRate: polished.length ? polished.filter(r => r.polishDrop).length / polished.length : null,
     addStyle: tok ? sum(x => x.emoji + x.slang) / tok : null, addAll: tok ? sum(x => x.words) / tok : null,
+    perTurn: turns ? msgs.length / turns : null,
+    reactPer: msgs.length ? reactRows.length / msgs.length : null,
+    qAny: share(msgs, m => m.text.includes('?')),
+    wake90: msgs.length && sleepOf ? msgs.filter(m => nearWake(m)).length / msgs.filter(m => nearWake(m) != null).length : null,
     oracle,
     end,
   };

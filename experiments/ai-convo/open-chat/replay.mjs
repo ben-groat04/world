@@ -21,15 +21,21 @@
 //       Round 16 item 2: the refresh looks that older runs skipped (the Small thing said "nothing", nothing new in the chat, so no turn and no row).
 //       Each is put in front of that person's screen (the last 30 messages) at that time, with the logged Day, and replayed as a turn: post rate raw
 //       and after polish, and the posts.
+//   node replay.mjs recheck <run> [<run> ...] [--n 5]
+//       Round 19 item 5: the logged re-check turns (rows with `recheck.user`: the crossed messages and the agent's own unsent draft) re-issued N times with the logged closing line
+//       (arm "logged") and with today's (RECHECK_END in prompts.mjs, arm "new"). Per arm: SEND / PASS / rewritten answers, and how many rewritten answers comment on the draft itself
+//       (crude: /draft|unsent|not sent|didn't send|wrong one|nobody has seen|scrap that/ and the like; read the answers printed under it).
 //   node replay.mjs polish <run> [<run> ...] [--show 5]
 //       Re-polishes each logged raw draft (rows with `raw`, the chat as it was, the person's description and examples, their last 4 posted messages)
 //       with the CURRENT polish prompt. Counts tokens in the result that are not in the raw (words, emoji, slang), against the same count for the
 //       polish that ran then; and per person (4+ posts) the share of posts carrying their most frequent habit marker (ending "...", "um"/"hmm",
 //       a final emoji, a final "x", "!!", leading lowercase, an abbreviation) and the share naming someone (a participant's name or @), then and now.
 import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
-import { ENV_NOTE, dayAsk, noteFor, topicCue, POLISH_SYS, polishAsk, isPass, lastLine, REACT_RE, added } from './prompts.mjs';
+import { ENV_NOTE, dayAsk, noteFor, topicCue, likeSpec, hhmm, parseNext, RECHECK_END, POLISH_SYS, polishAsk, isPass, lastLine, REACT_RE, added } from './prompts.mjs';
 const args = process.argv.slice(2), mode = args.shift(), opt = (k, d) => { const i = args.indexOf('--' + k); if (i < 0) return d; const v = args[i + 1]; args.splice(i, 2); return v; };
 const N = +opt('n', 5), KIND = opt('kind', 'all'), LOGGED = opt('logged', 'quiet'), ROWS = opt('rows', '')?.split(',').filter(Boolean).map(Number), SHOW = +opt('show', 5), CONC = +opt('conc', 8), REP = +opt('rep', 1);
+const flag = k => { const i = args.indexOf('--' + k); if (i < 0) return false; args.splice(i, 1); return true; };
+const LIKE = opt('like', ''), CUT_REACT = flag('cut-react'), MAX = +opt('max', 0);
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-replay-')), cfg = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-replay-'));
 const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('CLAUDE'))); Object.assign(env, { CLAUDE_CODE_DISABLE_ATTACHMENTS: '1', CLAUDE_CODE_MAX_OUTPUT_TOKENS: '4000', CLAUDE_CONFIG_DIR: cfg });
 const think = { n: 0, with: 0, tokens: 0 }; // thinking tokens over the calls of this replay (usage.output_tokens_details.thinking_tokens)
@@ -53,12 +59,27 @@ function styleOf(rows, row) {
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], stampIso = s => { const d = new Date(s); return `${WD[d.getDay()]} ${s.slice(11, 16)}`; };
 // The logged brief in today's shape: no "want", no topic (the topic is only in the opener's cue), no example texts (the rewrite pass has them); the card of an older run stays as the "How you text" line.
 const TOPIC_RE = /Something (?:that's been|on your) (?:on your )?mind(?: \([^)]*\))?: /;
-function newSystem(row) {
+function newSystem(row, run) {
   let b = sysOf(row);
+  const k = b.indexOf(" What you're like: "), own = k >= 0 ? b.slice(k) : ''; if (k >= 0) b = b.slice(0, k); // a run made since round 19 carries its own personality line
   b = b.replace(/ What you want right now: .*?(?= Something (?:that's been|on your)| Only you know| How you text:)/s, '').replace(new RegExp(` ${TOPIC_RE.source}.*?(?= Only you know| How you text:)`, 's'), '');
   const j = b.indexOf(" Some texts you've sent before"); if (j >= 0) b = b.slice(0, j);
   const h = b.indexOf(' How you text: '); if (h >= 0) b = b.slice(0, h) + b.slice(h).replace(/^( How you text: .*?[.!?])\s.*$/s, '$1'); // today's "texts" is the frequency sentence only: an older run's longer description is cut to its first sentence (the cast call asked for the frequency first)
-  return `${noteFor(true)} ${b}`;
+  const how = b.match(/ How you text: (.*)$/s)?.[1]; if (how && HOWCUT.has(how)) b = b.replace(how, HOWCUT.get(how)); // --cut-react
+  const like = LIKES[run]?.[row.who]; // --like: a generated line for a cast that has none
+  return `${noteFor(true)} ${b}${like ? ` What you're like: ${like}` : own}`;
+}
+const LIKES = {}, HOWCUT = new Map(); // --like <file>: run -> {name: personality line}; --cut-react: "How you text" sentence -> the same without its reaction clause
+async function likesOf(c) { // the casting call's personality line (likeSpec) for people whose cast has none, given what the cast says about them
+  const list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1), t = await claude(genArgv, `These people are in a ${c.names.length > 2 ? 'group chat' : 'chat'}: ${list(c.names.map(m => `${m} (${c.cast[m].who})`))}. ${c.situation || 'They are friends.'}\nSetting: ${c.setting}\n\n${c.names.map(m => `${m}. ${c.cast[m].knows} ${c.private_lines[m]}`).join('\n')}\n\nFor each person in turn, one line starting with that person's name:\n"<name> is like:" ${likeSpec}\nReply with only these lines.`), out = {};
+  for (const m of c.names) { out[m] = fieldOf(t, `${m} is like`); if (!out[m]) throw new Error(`no "is like" line for ${m}`); } return out;
+}
+const cutReact = async how => (await claude(genArgv, `A sentence from a character sheet: "${how}"\n\nRemove only the part that says how often the person reacts to messages with an emoji instead of replying. Keep everything else word for word, as one sentence. If nothing in it is about reacting, give it back unchanged. Reply with only the sentence.`)).replace(/^"|"$/g, '').trim();
+async function prepare(jobs) { // before the calls: personality lines (--like) and cut sentences (--cut-react), each generated once
+  if (LIKE) { let saved = {}; try { saved = JSON.parse(fs.readFileSync(LIKE, 'utf8')); } catch {}
+    for (const j of jobs) { if (LIKES[j.run]) continue; const c = j.rows.find(r => r.cast); if (c.cast[c.names[0]].like) { LIKES[j.run] = {}; continue; } saved[j.run] ??= await likesOf(c); LIKES[j.run] = saved[j.run]; }
+    fs.writeFileSync(LIKE, JSON.stringify(saved, null, 1)); console.log(`personality lines: ${LIKE}`); }
+  if (CUT_REACT) for (const j of jobs) { const how = newSystem(j.row ?? j.prevTurn, j.run).match(/ How you text: (.*?)(?= What you're like: |$)/s)?.[1]; if (how && !HOWCUT.has(how)) { HOWCUT.set(how, await cutReact(how)); console.log(`cut: ${how}\n  -> ${HOWCUT.get(how)}`); } }
 }
 // The opener's cue: the topic when the run had one, else the logged one, else the cast call's "opens with" line, else (older runs) asked of the model from the person's logged "want", in a few words starting with a verb.
 const topicOf = brief => brief.match(new RegExp(`${TOPIC_RE.source}(.*?) (?:Only you know|How you text:)`))?.[1], wantOf = brief => brief.match(/What you want right now: (.*?)(?: Something (?:that's been|on your)| Only you know| How you text:)/)?.[1];
@@ -104,17 +125,18 @@ if (mode === 'turns') {
     const first = !/You last looked/.test(row.user), opener = first && /opened the chat to/.test(row.user), look = !first && /Not on your phone/.test(row.user), notif = !first && !look && /\(new\)/.test(row.user) && (LOGGED === 'any' || row.posted === false);
     if (ROWS.length ? !ROWS.includes(i) : KIND === 'opener' ? !opener : KIND === 'look' ? !look : KIND === 'notif' ? !notif : !(opener || notif)) return;
     const newMsgs = screenOf(row.user).split('(new)')[1] ?? '', asked = notif && /\?\s*(\n|$)/.test(newMsgs.replace(/\n\u2014 [^\n]*\n/g, '\n$&'));
-    jobs.push({ run: path.basename(run), rows, row, i, kind: opener ? 'opener' : look ? 'look' : 'notif', asked }); }); }
-  console.log(`${jobs.length} logged turns x ${N} samples`);
+    jobs.push({ run: path.basename(run), rows, row, i, kind: opener ? 'opener' : look ? 'look' : 'notif', asked }); });
+    if (MAX) { const mine = jobs.filter(j => j.run === path.basename(run)), keep = new Set(mine.filter((_, k) => k * MAX % mine.length < MAX).slice(0, MAX)); for (let k = jobs.length; k--;) if (jobs[k].run === path.basename(run) && !keep.has(jobs[k])) jobs.splice(k, 1); } } // --max k: at most k turns per run, evenly spaced
+  console.log(`${jobs.length} logged turns x ${N} samples`); await prepare(jobs);
   const all = jobs.flatMap(j => Array.from({ length: N }, () => j));
-  const res = await pool(all, async j => { const sys = newSystem(j.row), cue = j.kind === 'opener' ? await cueFor(j.rows, j.row) : '', user = newUser(j.row.user, j.kind, cue, j.row.who), raw = await claude(withSys(j.row.argv, sys), user), o = outcome(raw); let kept = o === 'post';
+  const res = await pool(all, async j => { const sys = newSystem(j.row, j.run), cue = j.kind === 'opener' ? await cueFor(j.rows, j.row) : '', user = newUser(j.row.user, j.kind, cue, j.row.who), raw = await claude(withSys(j.row.argv, sys), user), o = outcome(raw); let kept = o === 'post';
     if (kept) { const d = (await polishOf(j.rows, j.row, raw, screenOf(user))); kept = !/^drop[\s.!?]*$/i.test(d); return { o, raw, polished: d, kept }; } return { o, raw, kept }; });
   const by = {}; all.forEach((j, k) => (by[`${j.run}#${j.i}`] ??= { j, r: [] }).r.push(res[k]));
   const tot = {}, emo = {};
-  for (const { j, r } of Object.values(by)) { const ok = r.filter(x => !x.error), post = ok.filter(x => x.o === 'post').length, react = ok.filter(x => x.o === 'react').length, fin = ok.filter(x => x.kept).length, k = j.kind + (j.asked ? '+asked' : ''); (tot[k] ??= [0, 0, 0, 0]); tot[k][0] += post; tot[k][1] += fin; tot[k][2] += ok.length; tot[k][3] += react;
+  for (const { j, r } of Object.values(by)) { const ok = r.filter(x => !x.error), post = ok.filter(x => x.o === 'post').length, react = ok.filter(x => x.o === 'react').length, fin = ok.filter(x => x.kept).length, k = (j.rows.find(r => r.cast)?.names.length > 2 ? 'group ' : '1:1 ') + j.kind + (j.asked ? '+asked' : ''); (tot[k] ??= [0, 0, 0, 0, 0]); tot[k][0] += post; tot[k][1] += fin; tot[k][2] += ok.length; tot[k][3] += react; tot[k][4] += ok.filter(x => x.kept && /\?/.test(x.polished)).length;
     ok.filter(x => x.o === 'react').forEach(x => { const e = lastLine(x.raw).match(REACT_RE)[1].trim(); emo[e] = (emo[e] ?? 0) + 1; });
     console.log(`${j.kind.padEnd(6)} ${j.run.slice(11, 22)} #${j.i} ${j.row.who}${j.asked ? ' [asked]' : ''}: raw post ${post}/${ok.length}, react ${react}, after polish ${fin}/${ok.length}; ${r.filter(x => x.error).length ? 'errors ' + r.filter(x => x.error).length + '; ' : ''}e.g. ${JSON.stringify((ok.find(x => x.kept)?.polished ?? ok[0]?.raw ?? '').slice(0, 90))}`); }
-  for (const [k, [p, f, n, rc]] of Object.entries(tot)) console.log(`TOTAL ${k}: raw post ${pct(p, n)}, REACT ${pct(rc, n)}, after polish ${pct(f, n)}`);
+  for (const [k, [p, f, n, rc, q]] of Object.entries(tot)) console.log(`TOTAL ${k}: raw post ${pct(p, n)}, REACT ${pct(rc, n)}, after polish ${pct(f, n)}, final posts with a "?" ${pct(q, f)}`);
   console.log(`REACT emoji: ${Object.entries(emo).sort((a, b) => b[1] - a[1]).map(([e, c]) => `${e} ${c}`).join(', ') || '-'}`);
   fs.writeFileSync(path.join(cfg, 'replay.json'), JSON.stringify(Object.values(by).map(({ j, r }) => ({ run: j.run, i: j.i, who: j.row.who, kind: j.kind, asked: j.asked, screen: screenOf(j.row.user), r })), null, 1)); console.log('details:', path.join(cfg, 'replay.json'));
 } else if (mode === 'refresh') {
@@ -124,19 +146,22 @@ if (mode === 'turns') {
       const n = Object.keys(r.private_lines)[0], prev = rows.slice(0, i).filter(x => x.small != null && x.private_lines?.[n]).at(-1), first = rows.find(x => x.who === n && x.checkin),
         from = prev ? prev.at : new Date(+new Date(first.checkin) - 3 * 36e5).toISOString().slice(0, 16), list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1);
       const chat = rows.slice(0, i).filter(x => isMsg(x) && x.at > from && x.at <= r.at).map(m => msgLine(m)).join('\n\n') || '(nothing)', smalls = rows.slice(0, i).filter(x => x.small && !NOTHING.test(x.small)).map(x => x.small).slice(-10);
-      const ask = dayAsk({ cast: `These people are in a ${CHAT}: ${list(cast.names.map(m => `${m} (${cast.cast[m].who})`))}. ${cast.situation || 'They are friends.'}`, setting: cast.setting, now: fullOf(r.at), n, life: cast.private_lines[n], bg: prev?.private_lines[n], bgAt: fullOf(from), since: stampOf(from), chat, hours: Math.round((new Date(r.at) - new Date(from)) / 36e5), smalls });
+      const ask = dayAsk({ cast: `These people are in a ${CHAT}: ${list(cast.names.map(m => `${m} (${cast.cast[m].who})`))}. ${cast.situation || 'They are friends.'}`, setting: cast.setting, now: fullOf(r.at), n, life: cast.private_lines[n], sleeps: `${hhmm(cast.sleep[n][0])} to ${hhmm(cast.sleep[n][1])}`, bg: prev?.private_lines[n], bgAt: fullOf(from), since: stampOf(from), chat, hours: Math.round((new Date(r.at) - new Date(from)) / 36e5), smalls });
       jobs.push({ run: path.basename(run), i, n, r, ask, cast, chat }); }); }
   console.log(`${jobs.length} logged refreshes x ${N} samples`);
-  const all = jobs.flatMap(j => Array.from({ length: N }, () => j)), res = await pool(all, async j => { const t = await claude(genArgv, j.ask); return { day: fieldOf(t, 'Day'), small: fieldOf(t, 'Small thing') }; });
+  const all = jobs.flatMap(j => Array.from({ length: N }, () => j)), res = await pool(all, async j => { const t = await claude(genArgv, j.ask); return { day: fieldOf(t, 'Day'), small: fieldOf(t, 'Small thing'), next: fieldOf(t, 'Next') }; });
   // Chat reuse: content words (4+ letters, not a stop word or a cast name) in the chat since the previous refresh that are not in the person's fixed life line, found in a Day. Crude, for comparing two prompts on the same rows.
   const STOP = new Set('that this with have from they them then than were been will would could should what when where which there their about just very some more also into your yours like only over after before still really going gonna want need make made does done said says each much many here well back even know think thing things time today tonight cant dont didnt wont isnt wasnt youre thats theyre ive youve been being because while though both other another around away down until once ever never always'.split(' '));
   const cw = t => new Set((t.toLowerCase().match(/\p{L}{4,}/gu) ?? []).filter(w => !STOP.has(w)));
   const reuse = (j, day) => { const cast = j.cast, ban = new Set([...cast.names.map(x => x.toLowerCase()), ...cw(cast.private_lines[j.n])]), chatW = [...cw(j.chat.replace(/^\u2014 [^\n]*$/gm, ''))].filter(w => !ban.has(w)), dw = cw(day); return chatW.filter(w => dw.has(w)); };
   const rs = (day, j) => day ? reuse(j, day) : null; let reused = 0, reusedN = 0, loggedReused = 0;
   const by = {}; all.forEach((j, k) => (by[`${j.run}#${j.i}`] ??= { j, r: [] }).r.push(res[k]));
-  let noth = 0, tot = 0, lnoth = 0;
-  for (const { j, r } of Object.values(by)) { const ok = r.filter(x => x.day && x.small); noth += ok.filter(x => NOTHING.test(x.small)).length; tot += ok.length; lnoth += NOTHING.test(j.r.small) ? 1 : 0;
-    console.log(`\n== ${j.run.slice(11, 22)} #${j.i} ${j.n} ${j.r.at} (logged small: ${j.r.small.slice(0, 40)})\nLOGGED DAY: ${j.r.private_lines[j.n]}`); const lw = rs(j.r.private_lines[j.n], j); loggedReused += lw.length ? 1 : 0; console.log(`chat words in logged Day: ${lw.join(', ') || '-'}`); ok.forEach((x, k) => { const w = rs(x.day, j); reusedN++; reused += w.length ? 1 : 0; console.log(`NEW ${k + 1}: ${x.day}${NOTHING.test(x.small) ? '  [small: nothing]' : ''}${w.length ? `  [chat words: ${w.join(', ')}]` : ''}`); }); }
+  let noth = 0, tot = 0, lnoth = 0, unusable = 0; const nexts = []; // nexts: the parsed "Next:" of every sample (a Date), null where the line is missing or has no day and time
+  for (const { j, r } of Object.values(by)) { const ok = r.filter(x => x.day && x.small); ok.forEach(x => { x.at = parseNext(x.next, new Date(j.r.at)); }); nexts.push(...ok.map(x => x.at)); unusable += r.length - ok.filter(x => x.at).length; noth += ok.filter(x => NOTHING.test(x.small)).length; tot += ok.length; lnoth += NOTHING.test(j.r.small) ? 1 : 0;
+    console.log(`\n== ${j.run.slice(11, 22)} #${j.i} ${j.n} ${j.r.at} (logged small: ${j.r.small.slice(0, 40)})\nLOGGED DAY: ${j.r.private_lines[j.n]}`); const lw = rs(j.r.private_lines[j.n], j); loggedReused += lw.length ? 1 : 0; console.log(`chat words in logged Day: ${lw.join(', ') || '-'}`); ok.forEach((x, k) => { const w = rs(x.day, j); reusedN++; reused += w.length ? 1 : 0; console.log(`NEW ${k + 1}: ${x.day}${NOTHING.test(x.small) ? '  [small: nothing]' : ''}  [next: ${x.next ?? '-'}${x.at ? ` = +${((x.at - new Date(j.r.at)) / 36e5).toFixed(1)}h` : ''}]${w.length ? `  [chat words: ${w.join(', ')}]` : ''}`); }); }
+  const hrs = a => { const h = Array(24).fill(0); a.forEach(d => d && h[d.getHours()]++); return h; }, share = (h, lo, hi) => { const t = h.reduce((x, y) => x + y, 0); return t ? `${h.slice(lo, hi + 1).reduce((x, y) => x + y, 0)}/${t} = ${Math.round(100 * h.slice(lo, hi + 1).reduce((x, y) => x + y, 0) / t)}%` : '-'; };
+  const loggedAt = args.flatMap(run => read(run).filter(r => r.private_lines && r.small != null && !r.cast).map(r => new Date(r.at))), nh = hrs(nexts), lh = hrs(loggedAt);
+  console.log(`\nNext: unusable ${unusable} of ${all.length} samples; hour histogram of Next ${nh.join(' ')}\nlogged look hours (all refresh rows of these runs, n=${loggedAt.length}) ${lh.join(' ')}\nshare at 06:00-07:59: logged ${share(lh, 6, 7)}, Next ${share(nh, 6, 7)}; Next at 22:00-05:59: ${share(nh.map((v, i) => i >= 22 || i < 6 ? v : 0), 0, 23)}`);
   console.log(`\nSmall thing "nothing": logged ${pct(lnoth, jobs.length)}, now ${pct(noth, tot)}\nDays containing a chat word not in the life line: logged ${pct(loggedReused, jobs.length)}, now ${pct(reused, reusedN)}`);
 } else if (mode === 'quiet') {
   const jobs = [];
@@ -147,14 +172,25 @@ if (mode === 'turns') {
       const msgs = rows.slice(0, i).filter(x => isMsg(x) && x.at <= r.at).slice(-30); if (!msgs.length) return;
       const user = [`[Not on your phone: your own day, which you lived yourself. Nobody sent you this.]\n${r.private_lines[n]}\n\n[The chat on your screen:]`, msgs.map(m => msgLine(m, n)).join('\n\n'), `(${n}'s phone, ${stampIso(r.at)}. You last looked ${stampIso(prevTurn.checkin)}.)`].join('\n\n');
       jobs.push({ run: path.basename(run), rows, i, n, r, user, row: { who: n, checkin: r.at, argv: prevTurn.argv }, prevTurn }); }); }
-  console.log(`${jobs.length} skipped "nothing" looks x ${N} samples`);
+  console.log(`${jobs.length} skipped "nothing" looks x ${N} samples`); await prepare(jobs);
   const all = jobs.flatMap(j => Array.from({ length: N }, () => j));
-  const res = await pool(all, async j => { const raw = await claude(withSys(j.prevTurn.argv, newSystem(j.prevTurn)), j.user), o = outcome(raw); if (o !== 'post') return { o, raw, kept: false }; const d = await polishOf(j.rows, j.row, raw, screenOf(j.user)); return { o, raw, polished: d, kept: !/^drop[\s.!?]*$/i.test(d) }; });
+  const res = await pool(all, async j => { const raw = await claude(withSys(j.prevTurn.argv, newSystem(j.prevTurn, j.run)), j.user), o = outcome(raw); if (o !== 'post') return { o, raw, kept: false }; const d = await polishOf(j.rows, j.row, raw, screenOf(j.user)); return { o, raw, polished: d, kept: !/^drop[\s.!?]*$/i.test(d) }; });
   const by = {}; all.forEach((j, k) => (by[`${j.run}#${j.i}`] ??= { j, r: [] }).r.push(res[k]));
   let p = 0, f = 0, rc = 0, t = 0;
   for (const { j, r } of Object.values(by)) { const ok = r.filter(x => !x.error), post = ok.filter(x => x.o === 'post').length, fin = ok.filter(x => x.kept).length; p += post; f += fin; rc += ok.filter(x => x.o === 'react').length; t += ok.length;
     console.log(`\n== ${j.run.slice(11, 22)} #${j.i} ${j.n} ${j.r.at}: raw post ${post}/${ok.length}, after polish ${fin}/${ok.length}\nDAY: ${j.r.private_lines[j.n].slice(0, 200)}`); ok.filter(x => x.kept).forEach(x => console.log(`  POST: ${JSON.stringify(x.polished.slice(0, 160))}`)); }
   console.log(`\nTOTAL: raw post ${pct(p, t)}, REACT ${pct(rc, t)}, after polish ${pct(f, t)}`);
+} else if (mode === 'recheck') {
+  const ON_DRAFT = /\b(draft|unsent|not sent|isn'?t sent|hasn'?t (gone|been sent)|didn'?t send|haven'?t sent|wrong (one|file|draft)|nobody (has )?seen|scrap that|ignore (that|this|my)|hang on|hold on|sending (it|that|mine|my)|send(ing)? it|as (is|written)|I'll send|fine reply|already (sent|posted))\b/i, jobs = [];
+  for (const run of args) { const rows = read(run); rows.forEach((row, i) => { if (!row.recheck?.user || !row.argv) return; jobs.push({ run: path.basename(run), row, i, who: row.who }); }); }
+  console.log(`${jobs.length} logged re-check turns x ${N} samples x 2 closing lines`);
+  const arms = ['logged', 'new'], all = jobs.flatMap(j => arms.flatMap(a => Array.from({ length: N }, () => ({ j, a }))));
+  const res = await pool(all, async ({ j, a }) => { const user = a === 'new' ? j.row.recheck.user.replace(/\(Your message isn't sent yet\. SEND[^)]*\)\s*$/, RECHECK_END) : j.row.recheck.user; return (await claude(withSys(j.row.argv, newSystem(j.row, j.run)), user)).trim(); });
+  const by = {}; all.forEach(({ j, a }, k) => ((by[a] ??= {})[`${j.run}#${j.i}`] ??= []).push(res[k]));
+  for (const a of arms) { const answers = Object.values(by[a]).flat().filter(x => typeof x === 'string'), send = answers.filter(x => /^send[\s.!?,;:]*$/i.test(lastLine(x))), pass = answers.filter(x => isPass(x)), rew = answers.filter(x => !send.includes(x) && !pass.includes(x)), on = rew.filter(x => ON_DRAFT.test(x));
+    console.log(`\n== ${a}: ${answers.length} answers: SEND ${send.length}, PASS ${pass.length}, rewritten ${rew.length}, of which comment on the draft itself ${on.length}`); on.forEach(x => console.log(`  ON DRAFT: ${JSON.stringify(x.slice(0, 200))}`)); }
+  fs.writeFileSync(path.join(cfg, 'recheck.json'), JSON.stringify(jobs.map(j => ({ run: j.run, i: j.i, who: j.who, draft: j.row.draft, logged: by.logged[`${j.run}#${j.i}`], new: by.new[`${j.run}#${j.i}`] })), null, 1)); console.log('details:', path.join(cfg, 'recheck.json'));
+  for (const j of jobs) { console.log(`\n#${j.i} ${j.who} (${j.run.slice(11, 22)}) draft: ${JSON.stringify(j.row.draft.slice(0, 120))}`); for (const a of arms) console.log(`  ${a}: ${by[a][`${j.run}#${j.i}`].map(x => typeof x === 'string' ? JSON.stringify(x.slice(0, 100)) : 'ERR').join(' | ')}`); }
 } else if (mode === 'polish') {
   const stat = { raw: 0, then: { words: 0, emoji: 0, slang: 0, total: 0 }, now: { words: 0, emoji: 0, slang: 0, total: 0 }, drops: [0, 0] }, pairs = [];
   const jobs = [];

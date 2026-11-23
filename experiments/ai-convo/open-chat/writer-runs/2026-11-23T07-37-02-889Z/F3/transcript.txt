@@ -1,0 +1,112 @@
+--- Mon 07:35, Hana
+What time is the last direct train from edinburgh waverley to london kings cross on a saturday
+
+--- Mon 07:58, Tom
+This Saturday? Are we still deciding between driving and the train, or have you already ruled one out?
+
+--- Mon 08:03, Hana
+Deciding. I need the train times before I can decide anything 🙃
+
+--- Mon 08:04, Hana
+Tbh driving is prob a pain with the city centre parking anyway
+
+--- Mon 08:19, Tom
+Parking is a pain, yes. Check what the one way hire fee would add too. You said last time that was ridiculous.
+
+--- Mon 08:21, Hana
+Ok. But I still need the train timetable
+
+--- Mon 08:22, Hana
+@claude what's the last direct train from Edinburgh Waverley to London King's Cross on a Saturday? Check the current LNER timetable and tell me roughly how long the drive is too
+
+--- Mon 08:23, Claude
+Hana, I couldn't confirm Saturday's last direct train. I found a third-party timetable (live-departures.info) with a 20:20 departure, but that's a weekday figure, and the LNER timetables I found were out of date. Please check the LNER journey planner for your date. Driving is roughly 6.5 to 7 hours, from my own estimate rather than a source.
+
+Sources: [live-departures.info](https://live-departures.info/rail/timetable/Edinburgh/London-Kings-Cross/), [LNER](https://www.lner.co.uk/routes/edinburgh-to-london-kings-cross-trains/)
+
+--- Mon 08:31, Hana
+Ok thanks. The timetable page is showing a weekday one 🙄
+
+--- Mon 08:32, Hana
+Will check the LNER site properly at lunch
+
+--- Mon 12:52, Tom
+Did you look at the one way fee yet
+
+--- Mon 12:55, Hana
+Not yet, deadline hell 😩 will do tonight
+
+--- Mon 12:57, Hana
+Train is like 4.5 hrs right? That's not much more than driving with breaks
+
+--- Mon 13:10, Tom
+Driving with a stop is closer to seven and a half. Train is the obvious choice unless we need the car up there for something
+
+--- Mon 13:11, Tom
+Are we going up for the day or staying over
+
+--- Mon 13:20, Hana
+Staying over, sat night back sun. So we need a return
+
+--- Mon 13:24, Hana
+There seems to be one mid afternoon on sat but I can't tell if that's the right day, page keeps timing out
+
+--- Mon 13:25, Hana
+Might be wrong tbh
+
+--- Mon 16:04, Tom
+Out of school. Are those times for Saturday or a weekday?
+
+--- Mon 16:40, Hana
+Saturday I think. The page won't load properly on my phone. Will look on laptop tonight
+
+--- Mon 19:12, Tom
+Ok. I'll check the hire fee in the morning if you haven't
+
+--- Mon 21:48, Hana
+Just found the one way fee on the rental site. It's two days' hire on top, basically ridiculous. Confirmed, no car
+
+--- Mon 21:50, Tom
+Right. Train then
+
+--- Mon 21:52, Hana
+Ok. Still need to book the actual time though, doing it tomorrow when I'm not half asleep
+
+--- Mon 21:58, Tom
+Fine by me. Send me the times when you have them and I'll look at the return too
+
+--- Tue 07:12, Hana
+Morning. LNER loaded fine on laptop this time
+
+--- Tue 07:14, Hana
+Outbound sat is early morning. Return sun afternoon, there's a later one too
+
+--- Tue 07:15, Hana
+Not sure the sat night one actually runs tbh
+
+--- Tue 12:40, Tom
+Early one is fine. Is the sat night one direct or does it change somewhere
+
+--- Tue 12:44, Hana
+Think it's direct?? Page is confusing 😩
+
+--- Tue 12:45, Hana
+Will book everything tonight when I can think
+
+--- Tue 16:20, Tom
+Ok. Check the sunday one has seats before you book, last time the afternoon ones were full
+
+--- Tue 21:30, Hana
+Booked! Out sat early, back sun 4ish. Sat night one is direct, I checked twice 😅
+
+--- Tue 21:31, Hana
+Confirmation going to your email
+
+--- Tue 21:40, Tom
+Got it. Sun 4ish is fine, that gives us the morning
+
+--- Tue 21:41, Tom
+Sorry, I'm wiped. Thanks for doing the times
+
+--- Tue 21:43, Hana
+No worries 🙂 you can do the hotel bit

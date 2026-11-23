@@ -1,0 +1,125 @@
+--- Mon 07:30, Orin
+Ok the topic for today: the solution of the riemann hypothesis. Has anyone actually solved it or is it still open
+
+--- Mon 07:52, Mirelle
+Still open as far as I know. Claimed proofs circulate from time to time, but none has been accepted. What did you come across?
+
+--- Mon 07:55, Orin
+Nothing specific. Was thinking about the critical line and whether zeros off it would have to show up in the prime counting error somewhere
+
+--- Mon 07:56, Orin
+Explicit formula: psi(x) minus x picks up a sum over rho of x^rho / rho. If some rho has real part above 1/2 the error should be bigger than sqrt x
+
+--- Mon 08:20, Mirelle
+Yes, that's the standard link. RH is equivalent to psi(x) - x = O(sqrt(x) log^2 x). The hard part is not the link, it is getting the bound.
+
+--- Mon 08:21, Mirelle
+Also be careful with "the error should be bigger". The sum is oscillatory, so a zero off the line only helps if its contribution doesn't cancel against the others.
+
+--- Mon 08:40, Orin
+Right. So what would it take to rule out cancellation
+
+--- Mon 13:15, Orin
+Saw a claim last year on arxiv (might be a crank one) that the zeros are all on the line by a spectral argument. Didnt read it closely
+
+--- Mon 13:50, Mirelle
+Those usually fail at a specific step. Which one was it?
+
+--- Mon 13:52, Orin
+Cant remember. Will look
+
+--- Mon 14:30, Mirelle
+If you find it, send me the paper and I'll go through it. I would rather check one carefully than skim five.
+
+--- Mon 16:10, Orin
+Found it. Its the one with the operator whose eigenvalues are the imaginary parts. They claim self-adjointness but the domain is never specified
+
+--- Mon 16:25, Mirelle
+That's the usual gap. Self-adjointness depends on the domain, and Hilbert-Pólya type approaches have been studied for a long time without an operator that fits. The Berry-Keating idea is the best known, and it is still heuristic.
+
+--- Mon 16:40, Orin
+So the operator idea is still heuristic
+
+--- Mon 16:41, Mirelle
+Yes. Nobody has a proven operator whose spectrum is exactly the zeros.
+
+--- Mon 19:05, Orin
+Ok I think the real question is why the zeros love the line so much. Not the proof, just the pull
+
+--- Mon 19:30, Mirelle
+I don't know a satisfying answer to that. The numerical evidence is huge: zeros have been checked far up the line, and the spacing statistics match random matrix predictions. But none of that is a reason.
+
+--- Mon 19:32, Orin
+Random matrix stats are weird though. Gaps between zeros look like gue eigenvalues
+
+--- Mon 19:50, Mirelle
+Montgomery's pair correlation result, yes, and Odlyzko's computations. It is striking. It is still not a proof.
+
+--- Mon 21:10, Orin
+Fine. Im not going to solve it tonight
+
+--- Mon 21:12, Mirelle
+No. Go to sleep.
+
+--- Mon 21:14, Orin
+Ok
+
+--- Tue 08:12, Orin
+Woke up thinking about the functional equation. Zeros come in pairs rho and 1-rho-bar, so symmetric about the line. But that doesnt force them onto it does it
+
+--- Tue 08:40, Mirelle
+No. The symmetry only says a zero off the line comes with a mirror partner. Nothing forces the pair onto the line. It is compatible with zeros anywhere in the strip.
+
+--- Tue 08:41, Mirelle
+It does rule out a single zero sitting off the line by itself, since they have to come in pairs. That is already something, just not the whole thing.
+
+--- Tue 09:03, Orin
+So the symmetry rules out a lonely zero but not a pair
+
+--- Tue 09:04, Orin
+A pair off the line would still break the bound right
+
+--- Tue 09:30, Mirelle
+Probably, if it doesn't cancel. Same caveat as before. Check it against the explicit formula rather than trusting the picture.
+
+--- Tue 10:15, Orin
+Did the algebra. Pair at 1/2 + b + it and 1/2 - b + it, same height. The two terms x^(1/2+b+it) and x^(1/2-b+it) have different sizes, so they can't cancel each other. The bigger one dominates the pair.
+
+--- Tue 10:16, Orin
+So a single pair alone is enough to break the bound
+
+--- Tue 11:40, Mirelle
+Alone, yes. In the real sum you have every other zero too, and at each height the contributions interfere. A pair can be swamped by others of the same size. So "a pair breaks it" is only true if you can show nothing else is that large, which is the hard part again.
+
+--- Tue 11:42, Mirelle
+Also check the normalization of the sum over rho. I want the x^rho / rho form, not a bare x^rho.
+
+--- Tue 11:58, Orin
+Yes its x^rho/rho. Sorry, was sloppy. Redid it and the 1/rho doesnt change the size argument, just shrinks both terms by the same ordinate scale
+
+--- Tue 12:03, Orin
+Lost my place for a bit earlier, the session dropped while I had the derivation half written. Had to redo it from the functional equation
+
+--- Tue 12:05, Mirelle
+Annoying. Did you get back to the same place or did something change
+
+--- Tue 12:06, Orin
+Same place. Mostly
+
+--- Tue 15:20, Mirelle
+Also the explicit formula only converges conditionally, summing by height. If you sum in a different order you can get different answers for psi. Don't treat the sum as absolutely convergent when you write the estimate.
+
+--- Tue 15:44, Orin
+Right. Ordered by height. Noted
+
+--- Wed 08:30, Orin
+Morning. Was trying to find the paper on the bound on the number of zeros off the line. Known results put a density bound but nothing like zero. Is that right
+
+--- Wed 08:55, Mirelle
+Yes. Density estimates like N(sigma, T) bounds show that zeros off the line are rare in a sense, but not that there are none. Only the zero-free region tells you anything specific, and it doesn't touch Re(s)=1/2.
+
+--- Wed 08:57, Mirelle
+Don't quote me on the exact exponents without checking. I'm working from memory.
+
+--- Wed 09:10, Orin
+Ok. Will look them up

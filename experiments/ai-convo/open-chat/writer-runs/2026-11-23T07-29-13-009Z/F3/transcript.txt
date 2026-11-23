@@ -1,0 +1,334 @@
+--- Mon 07:30, Lucía
+@claude what time is the last direct train from Edinburgh Waverley to London King's Cross on a Saturday? Need to decide drive or train for sat
+
+--- Mon 07:31, Claude
+I couldn't confirm the last Saturday departure. The page I'd have used to check wouldn't load.
+
+The closest figure I found was from live-departures.info. It showed the last weekday direct train leaving Waverley at about 20:20 and reaching King's Cross around 01:40. Saturday timings can differ, and Trainline's pages gave conflicting late times (22:00 and 23:40), so I wouldn't rely on any of those.
+
+Check the LNER site or app for this Saturday's last departure before you decide. Engineering works on the East Coast line often change weekend services, so a late direct train isn't guaranteed. If the last direct train leaves around 20:00, the drive may suit you better.
+
+Sources: live-departures.info (Edinburgh to King's Cross timetable), Trainline, and LNER's route page.
+
+--- Mon 07:38, Lucía
+Ok so we still dont know. Need it before we book anything
+
+--- Mon 07:44, Tomás
+Yes. I'll check the LNER app at lunch, the site is slow on my phone at the desk
+
+--- Mon 07:45, Lucía
+Fine. If the last direct is before 21:00 we drive
+
+--- Mon 13:22, Tomás
+App shows a timetable but theres a banner about engineering works on the east coast line, cant open it on this screen
+
+--- Mon 13:24, Tomás
+Also my lunch is 20 min
+
+--- Mon 13:41, Lucía
+@claude can you check the LNER site for the last direct Edinburgh Waverley to London King's Cross on Sat 28 Nov, and whether there are engineering works that weekend. Need the actual notice from LNER not a third party site
+
+--- Mon 13:42, Claude
+Short answer: there probably isn't a direct train that day, so I'd plan on driving. I couldn't open any LNER page myself, because every fetch failed. This comes from LNER's own search results, which I couldn't read in full.
+
+Those results say the East Coast line is closed between King's Cross and Peterborough on Sat 28 and Sun 29 Nov for the East Coast Digital Programme. LNER says no direct trains will run to or from King's Cross on those days. Instead, a few trains run between Newcastle and Bedford, with coaches covering the Peterborough to Bedford gap. You then take Thameslink to St Pancras. LNER's pages disagree on whether that's two trains each way on Saturday or a different count. They also say journeys will be longer than usual.
+
+I couldn't get a last departure time from Edinburgh. Tomás should open the engineering banner in the app, or go to LNER.co.uk/TravelAlerts, to confirm. Either way, it's not a direct train, so your "direct before 21:00" rule points to driving.
+
+Sources: LNER's "Changes to train times" page and the LNER news releases on the November engineering work (news.lner.co.uk).
+
+--- Mon 13:44, Lucía
+So drive?
+
+--- Mon 13:46, Tomás
+Still can't open the banner. I'll look when I'm home, the laptop shows the full page
+
+--- Mon 13:47, Lucía
+Ok. If there's no direct we drive, don't need the time then
+
+--- Mon 13:49, Tomás
+Agreed unless the notice says otherwise
+
+--- Mon 18:12, Tomás
+Home. Checked the notice on the laptop. LNER says no King's Cross trains Sat 28 and Sun 29, coaches between Peterborough and Bedford, replacement trains. It's real
+
+--- Mon 18:13, Tomás
+Link is LNER.co.uk/TravelAlerts if you want it
+
+--- Mon 18:40, Lucía
+Ok. Drive then. Can you start the route tomorrow, I'm on early
+
+--- Mon 18:41, Tomás
+Yes. I'll look at fuel stops too if it's long
+
+--- Mon 18:55, Lucía
+@claude how long is the drive from Seville to Edinburgh? Need hours for the booking, and is there a Channel crossing on the way
+
+--- Mon 18:56, Claude
+Plan on roughly 2,800 km and 30 to 34 hours of pure driving. That's about 3 days with overnight stops. Two online calculators gave about 30h 38m and 34h, and I only saw those in search snippets, not on the pages themselves.
+
+Yes, there's a Channel crossing. Spain to Scotland by road goes through France, then crosses to England by the Eurotunnel (Calais to Folkestone) or a ferry (Calais or Dunkirk to Dover). The calculators didn't say which crossing they assumed, so I'd add about 1.5 to 2 hours for it. That time isn't in the figures above. I didn't check crossing prices or times, so look those up before you book.
+
+Sources: rome2rio.com and distancefrom.co (Seville to Edinburgh route and distance pages).
+
+--- Mon 19:02, Tomás
+Ok. Eurotunnel or ferry, I'll compare prices tomorrow at the desk
+
+--- Mon 19:03, Lucía
+Eurotunnel is quicker I think. Check it, dont pay extra for the car shuttle if the ferry is cheaper
+
+--- Mon 19:04, Tomás
+Yes
+
+--- Mon 21:44, Lucía
+If we leave thu I can swap my thu shift with Carmen. Sat start is ok but we'd be tired
+
+--- Mon 21:46, Tomás
+Thu morning then. 3 days and we arrive fri night, sat is free. Less rush
+
+--- Mon 21:47, Lucía
+Ok. Thu it is
+
+--- Mon 21:50, Tomás
+Ill book the crossing and the hotel in Edinburgh once I have the total
+
+--- Mon 22:58, Lucía
+Ok. Going to sleep, early start
+
+--- Tue 07:12, Tomás
+Morning. Shift at 8?
+
+--- Tue 07:14, Lucía
+Yes. Did you book anything
+
+--- Tue 07:15, Tomás
+No. Waiting for the total. Comparing now
+
+--- Tue 09:05, Tomás
+Eurotunnel site is slow. Ferry site shows fares but the car price changes depending on the time
+
+--- Tue 09:06, Tomás
+@claude what's the rough price for a car one way Folkestone to Calais vs Dover to Calais on Thu 26 Nov, ferry and Eurotunnel. Need the actual listed fares, not a guess
+
+--- Tue 09:07, Claude
+Short version: I couldn't find a listed fare for Thu 26 Nov itself, only "from" prices, so treat these as rough.
+
+Also, you asked about Folkestone/Dover to Calais, but you're driving from Spain, so you need Calais to Folkestone or Dover. Also, if you leave Seville Thu, you'd probably cross on Fri 27, not Thu 26. Prices on the other direction and date may differ.
+
+Eurotunnel (LeShuttle): the headline is "from £59", and the cheapest tickets are limited to certain departure times. For Calais they're before 12:00 or after 20:00. The standard flexible ticket is listed from about £116 each way per car. That's a Eurotunnel page, not a quote for your date.
+
+Ferry, Dover–Calais: DFDS lists "from £114" for a car, one way, including the ETS charge. Another DFDS page says £99. I couldn't find a current P&O car fare. Which? gave an average of about £106 one way, but I couldn't date that figure.
+
+So the two are in the same range, and the live booking page for your date will settle it. That gives you the answer to Lucía's question about whether the ferry is cheaper.
+
+Sources: leshuttle.com (UK site and standard fares pages), dfds.com Dover–Calais pages, Which? ferry and tunnel comparison.
+
+--- Tue 09:21, Tomás
+Ferry fare changes a lot by time. Cheapest slots look like the early ones
+
+--- Tue 09:23, Tomás
+Also we said arrive fri night but 30+ hrs over 3 days doesnt land on fri. Sat morning more likely
+
+--- Tue 12:40, Lucía
+Ok. Sat morning is fine, hotel from sat then
+
+--- Tue 12:42, Lucía
+Eurotunnel or ferry, whichever gets us to Calais on time. Check the timing for the drive
+
+--- Tue 12:44, Tomás
+Yes
+
+--- Tue 17:52, Tomás
+Home. Eurotunnel and ferry both say you need to check in before departure but the cutoffs are different. Not clear which one we need
+
+--- Tue 17:55, Tomás
+@claude how early do we need to check in for Eurotunnel LeShuttle and for the DFDS Calais-Dover ferry with a car. Thu/Fri morning crossing. Need the actual check-in cutoffs
+
+--- Tue 17:56, Claude
+I couldn't open either official page (the fetch failed), so this comes from search results and not the pages themselves.
+
+Eurotunnel LeShuttle: check in at least 1 hour before departure, and no more than 2 hours before. LeShuttle's site says this, and Connexion reports that late arrivals on some fares lose the booking with no exchange. Other sites quote different figures (45 min, 30 min, a 4-hour window), so go by the 1-hour rule.
+
+DFDS Calais–Dover with a car: check-in closes 60 minutes before departure. DFDS also says it closes 120 minutes before in high season and holidays. One DFDS page recommends arriving 2 hours ahead, and another says 3 hours. Late November probably isn't peak, but the booking confirmation should state your cutoff.
+
+So Eurotunnel's cutoff is the same 60 minutes. The difference is that the ferry's border controls can take longer, so allow more time there. For a morning crossing, plan to reach Calais about 1.5 to 2 hours early either way.
+
+Sources: leshuttle.com (on the day and early/late arrival pages), Connexion France, dfds.com (check-in and boarding, Calais terminal pages).
+
+--- Tue 18:20, Lucía
+Ok so eurotunnel 60 min before, ferry earlier. Eurotunnel if the price is close
+
+--- Tue 18:22, Tomás
+Close. Eurotunnel standard vs ferry early slot is about the same. I need the price for the actual day, the site wont show Fri 27 with a car yet
+
+--- Tue 18:24, Lucía
+Which day do we cross again
+
+--- Tue 18:26, Tomás
+Leave Thu 26 at 7, driving till late. We cross Fri morning. Fri 27
+
+--- Tue 18:27, Lucía
+Ok. Fri morning then. Whichever is cheaper for that slot
+
+--- Tue 18:28, Tomás
+Yes
+
+--- Tue 20:50, Lucía
+Did you check the fri price
+
+--- Tue 21:02, Tomás
+Yes. Eurotunnel is cheaper for fri 27 with the car, ferry early slot is more and sells out faster
+
+--- Tue 21:03, Lucía
+Ok book eurotunnel
+
+--- Tue 21:04, Tomás
+Booking. Its asking for passport numbers for both of us
+
+--- Tue 21:06, Lucía
+Mine is in the drawer by the door, the blue one
+
+--- Tue 21:09, Tomás
+Got it. Booked. Eurotunnel fri 27, morning departure, confirmation in email. Check in 1 hour before it says
+
+--- Tue 21:10, Lucía
+Ok good. Hotel in edinburgh, you do it?
+
+--- Tue 21:11, Tomás
+Yes after this. Sat night, 2 nights, if the total is ok
+
+--- Tue 21:12, Lucía
+Ok
+
+--- Tue 22:41, Tomás
+Hotel booked. Edinburgh sat to mon, 3 nights. Confirmation in email, forwarding it
+
+--- Tue 22:44, Tomás
+Wait its 3 nights. Sat sun mon. Thats right? Check
+
+--- Tue 22:46, Lucía
+Yes sat sun mon. Ok
+
+--- Tue 22:47, Tomás
+Ok
+
+--- Tue 23:05, Lucía
+Going to sleep. Early shift
+
+--- Tue 23:06, Tomás
+Night
+
+--- Wed 07:20, Lucía
+Morning. Carmen confirmed the swap, I'm off thu
+
+--- Wed 07:21, Tomás
+Good
+
+--- Wed 12:50, Tomás
+Took the car to the garage at lunch. Oil and tyres fine, spare was low so they've pumped it
+
+--- Wed 12:52, Tomás
+Mechanic says it's ready for the trip, he'll check the lights again at 5
+
+--- Wed 14:10, Lucía
+Ok. Insurance card in the glovebox?
+
+--- Wed 14:12, Tomás
+Yes. Passports are on the table by the door, both of them
+
+--- Wed 14:13, Lucía
+Ok
+
+--- Wed 14:14, Tomás
+Wait. Something about an app for the UK, I saw it in the Eurotunnel emails. Do we need something for England?
+
+--- Wed 14:16, Lucía
+@claude do Spanish passport holders need an ETA to enter the UK by car via Eurotunnel? Need to know before Fri. Is there a fee and how long does it take
+
+--- Wed 14:17, Claude
+Yes, Spanish passport holders need a UK ETA, and it applies however you arrive, so Eurotunnel included. Each person needs one, and it's linked to the passport. I couldn't open gov.uk, so I'm going on third-party guides that agree on this.
+
+The fee is probably £20 each. Older sources say £10 or £16, but the newer 2026 guides say £20.
+
+Decisions are usually fast, from minutes up to about 3 working days. Apply today through the official UK ETA app or gov.uk, and check the fee there before you pay. Some lookalike sites charge extra. It's valid for 2 years, or until the passport expires if that's sooner.
+
+Sources: [visaeta.uk](https://visaeta.uk/blog/uk-eta-requirements-spain-2026/), [visafeecalculator.com](https://visafeecalculator.com/united-kingdom/tourist-visa/spain/), [Olive Press](https://www.theolivepress.es/spain-news/2025/04/03/spanish-and-eu-citizens-visiting-the-uk-now-need-this-e12-travel-document)
+
+--- Wed 14:19, Tomás
+Ok. So both of us need one
+
+--- Wed 14:20, Lucía
+Yes both. Mine too
+
+--- Wed 17:41, Tomás
+Picked up the car. Lights ok, mechanic ticked it off. Heading home
+
+--- Wed 18:02, Lucía
+Did you apply already
+
+--- Wed 18:05, Tomás
+Started mine. Form wants a photo of the passport page and a selfie. Not sure which app is the official one, the store has 3 with similar names
+
+--- Wed 18:06, Tomás
+@claude which app is the official UK ETA app for Spanish passport holders, and is the fee £20 on gov.uk? Some sites said £16 earlier. Need the exact one before paying
+
+--- Wed 18:07, Claude
+Look for the app called "UK ETA". The Apple App Store listing I found for it is id6444912481, and gov.uk links to it. I couldn't open gov.uk myself, so that comes from search results, not the page. Avoid "ETA UK Assistant" (id6743951585) and any other app with a similar name. They look like third-party lookalikes. The safest route is to open gov.uk/eta/apply on your phone and use its app-store link, so you get the right one.
+
+The fee is £20. The search results show gov.uk saying it rose from £16 to £20 on 8 April 2026, so the £16 figures are out of date. You can't get a refund after applying, so check that the price shown before you pay is £20. A lookalike site or app may charge more.
+
+Sources: [gov.uk/eta/apply](https://gov.uk/eta/apply), [gov.uk guide to using the UK ETA app](https://gov.uk/guidance/using-the-uk-eta-app), [App Store "UK ETA"](https://apps.apple.com/qa/app/uk-eta/id6444912481)
+
+--- Wed 18:09, Tomás
+Its asking for a selfie with the passport page. Doing it now
+
+--- Wed 18:14, Lucía
+Ok. Mine after dinner. Passport is on the table
+
+--- Wed 18:15, Tomás
+Photo of the passport page has to be flat, no glare. Using the kitchen window light
+
+--- Wed 18:21, Lucía
+Does it take a card or a debit one
+
+--- Wed 18:22, Tomás
+Card at the end. 20 pounds shown on the page, not 16
+
+--- Wed 18:30, Lucía
+Ok. Which app did you use
+
+--- Wed 18:31, Tomás
+The blue icon, UK ETA. Not the assistant one
+
+--- Wed 18:33, Lucía
+Ok
+
+--- Wed 20:12, Tomás
+Submitted. Says a decision in a few minutes up to 3 working days. Yours next
+
+--- Wed 20:14, Lucía
+Doing it now. Its asking for a selfie too
+
+--- Wed 20:31, Lucía
+Done. Paid. Email says pending
+
+--- Wed 20:32, Tomás
+Mine still pending. Both pending is fine, usually takes a few hours
+
+--- Wed 20:33, Lucía
+Ok. Thu we leave at 7 so everything in the car tonight
+
+--- Wed 20:35, Tomás
+Yes. Bags by the door after dinner. The cooler too
+
+--- Wed 20:36, Lucía
+Ok
+
+--- Wed 22:17, Tomás
+Approved. Mine at least
+
+--- Wed 22:19, Lucía
+Not yet. Ok, going to sleep
+
+--- Wed 22:20, Tomás
+Night

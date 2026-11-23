@@ -1,0 +1,196 @@
+--- Mon 07:30, Karim
+is the science museum in london open on sundays? when does it open
+
+--- Mon 09:12, Nour
+No idea 😅 why, are we going to london??
+
+--- Mon 09:18, Karim
+maybe. thinking about a sunday and want to know if it's worth it
+
+--- Mon 09:26, Nour
+Ok but I'm not checking the website on my phone with you 🙈 @claude is the Science Museum in London open on Sundays, and what time does it open?
+
+--- Mon 09:27, Claude
+Yes, it looks like it's open on Sundays. Most listings, including Art Fund and IanVisits, say it's open daily 10:00 to 18:00, with last entry around 17:15. I couldn't load the official site, so I haven't confirmed that. A couple of lesser sites claimed odd weekday closures, so check the official site before you book. Entry is free, but you're meant to pre-book a ticket. It's closed Dec 24 to 26 if your trip is around Christmas.
+
+Sources: Art Fund (artfund.org), IanVisits (ianvisits.co.uk)
+
+--- Mon 09:31, Karim
+ok so sunday works on paper. free entry is good
+
+--- Mon 09:33, Nour
+Wait are we actually doing london?? I thought this was a maybe
+
+--- Mon 09:40, Karim
+its a maybe. just checking before i ask you properly
+
+--- Mon 09:41, Nour
+Lol you already planned it in your head haven't you
+
+--- Mon 09:44, Karim
+a little
+
+--- Mon 17:42, Karim
+back. ok real question. are you free this sunday or the one after
+
+--- Mon 17:58, Nour
+I'm free most sundays, depends on deadlines. What's the plan, be honest
+
+--- Mon 18:03, Karim
+london. or the grand egyptian museum, i dont know yet. wanted to see if you'd come before i look at prices
+
+--- Mon 18:09, Nour
+Karim the grand egyptian museum is 40 min from me. Just say the plan
+
+--- Mon 18:11, Karim
+london. flights are the part i havent checked
+
+--- Mon 18:15, Nour
+Ok I'm in. London would be a whole thing though, I'd want to know the cost first
+
+--- Mon 18:16, Karim
+ill check tonight. or tomorrow
+
+--- Mon 22:58, Nour
+Also does the science museum have the big lightning thing? Or was that somewhere else
+
+--- Mon 23:14, Karim
+no idea. i think thats the one in london. ill look
+
+--- Tue 07:12, Karim
+looked. yes it's there, the big spark machine thing is at the science museum. no idea if it runs on sundays
+
+--- Tue 09:20, Nour
+Ok good. So london is a real thing now
+
+--- Tue 09:22, Nour
+Also do we need visas?? Just realised we're egyptian
+
+--- Tue 09:31, Karim
+i think yes. checking
+
+--- Tue 17:48, Karim
+back. ok visa is a thing. i asked
+
+--- Tue 17:49, Karim
+@claude do Egyptian citizens need a UK visa for a short visit, and roughly how long does it take to get one
+
+--- Tue 17:50, Claude
+Yes, Egyptian citizens need a visa for a short UK visit, the Standard Visitor visa. Gov.uk lists about 3 weeks for a decision on visit visas applied for from outside the UK. That's a general figure, not one for Egypt, and the clock reportedly starts once you've done your biometrics, so book that appointment early. Fees were quoted anywhere from about £115 to £135 for a 6-month visa, and sources disagree on the biometrics provider in Cairo. I couldn't open the gov.uk application page, so check the current fee and provider there. With that lead time, this Sunday or the one after is almost certainly too soon, so apply before you book flights.
+
+Sources: gov.uk visa processing times page (gov.uk/visa-processing-times), plus third-party visa sites that I'd treat as unconfirmed.
+
+--- Tue 18:20, Nour
+3 weeks minimum?? So not this sunday obviously
+
+--- Tue 18:22, Karim
+not this one. the one after is too close too
+
+--- Tue 18:23, Karim
+i'd rather apply first and then pick a date
+
+--- Tue 18:40, Nour
+Fine by me. I cant do anything before thursday anyway, the logo thing is eating me alive
+
+--- Tue 18:41, Nour
+Honestly that's a relief. I wanted to see the lightning thing without being rushed
+
+--- Tue 21:02, Karim
+ok so the biometrics place in cairo. there are two and they say different fees. i'll check which one is real tonight
+
+--- Tue 21:03, Karim
+not doing flights until we have dates
+
+--- Tue 21:10, Nour
+You're going to be annoying about this aren't you 🙈
+
+--- Tue 21:14, Karim
+a little
+
+--- Tue 22:50, Nour
+Ok I'm going to bed soon. Don't spend all night on the visa thing
+
+--- Tue 22:52, Nour
+I know you will though
+
+--- Tue 23:20, Karim
+i'll look at the two places in the morning
+
+--- Wed 07:20, Karim
+@claude which of the two biometrics providers in cairo for UK visas is the official one, and what do they charge for the appointment
+
+--- Wed 07:21, Claude
+TLScontact looks like the official one. Its Cairo page says it's the only official UK Visas and Immigration partner in Egypt, and it warns against third parties selling UK appointments. Some guides say VFS Global, but those are secondary sites and I'd trust TLScontact over them. The old gov.uk Egypt pages still name Teleperformance, and they date from 2014.
+
+On the fee, I couldn't confirm an amount. The TLScontact page says free standard appointments exist, with paid ones as an optional extra for flexibility, and it doesn't give a price in what I could see. I tried to open the page directly but couldn't load it, so that comes from the search summary. Book through the TLScontact Cairo site and take a free slot if one fits. Don't pay a third-party seller.
+
+Sources: TLScontact Cairo page (pos.tlscontact.com/cai_en/), gov.uk's old Egypt visa process notice, and visa guide sites, which I'd treat as unconfirmed.
+
+--- Wed 07:24, Karim
+tlscontact. so the other one is a middleman
+
+--- Wed 07:25, Karim
+not paying a third party for a slot
+
+--- Wed 09:48, Nour
+Good. Thought you'd already be on it 🙈
+
+--- Wed 09:50, Nour
+How long do the free slots usually take to show up?
+
+--- Wed 11:20, Nour
+Also I'm sending the logo files all day so if you text me a visa website I'm not reading it
+
+--- Wed 17:31, Karim
+back. no idea yet. the site only showed me paid ones when i looked. free ones might be hidden or booked out
+
+--- Wed 17:33, Karim
+@claude on the TLScontact Cairo site, how do you find the free standard appointment slots, and are they usually booked out
+
+--- Wed 17:34, Claude
+I couldn't open the TLScontact Cairo page, and I found nothing on how the free slots are shown or how often they sell out. I can't tell you how to find them on the site, and I can't say whether they're usually booked out.
+
+The TLScontact Cairo page says UK appointments are free there, with paid ones as an extra. That fits what you saw, where only paid slots showed. A free slot may just not be open right now. Slots also aren't released at predictable times, according to one blog, so check at different times of day over a few days. Cairo has two centres, El-Sheikh Zayed and a smaller one in New Cairo, so look at both in the location dropdown.
+
+The reports of slots running out mostly concern in-country UK appointments, not Cairo, so don't read much into them. If you only ever see paid slots, I'd ask TLScontact support directly. Whether a paid slot is worth it is up to you, but that's the official route, unlike a middleman.
+
+Sources: TLScontact Cairo page (pos.tlscontact.com/cai_en/), via search summary, plus a Mondaq article on UK appointment availability.
+
+--- Wed 17:36, Karim
+ok so different times of day. ill check tonight and tomorrow morning
+
+--- Wed 17:38, Nour
+Logo files sent!! Finally
+
+--- Wed 17:39, Nour
+Did you read the whole thing or just the bit about paid slots
+
+--- Wed 17:52, Karim
+read it. the two centres bit is new, i only looked at el sheikh zayed
+
+--- Wed 17:53, Karim
+ill check new cairo too
+
+--- Wed 18:20, Nour
+Ok. Making tea and not touching my laptop for an hour 🙈
+
+--- Wed 18:21, Nour
+Text me when you find a slot or when you give up
+
+--- Wed 20:40, Karim
+new cairo has nothing either. only paid ones showing
+
+--- Wed 20:41, Karim
+free ones might not be open yet. going to email support like it said
+
+--- Wed 20:43, Nour
+Just email them if the website is being annoying
+
+--- Wed 21:30, Karim
+found a support address. sending one now. not paying for a slot yet
+
+--- Wed 21:31, Karim
+also i have a 9am shift so im going to sleep soon
+
+--- Wed 23:40, Nour
+Logo's off my desk, I'm dead. Tell me what they say when they reply

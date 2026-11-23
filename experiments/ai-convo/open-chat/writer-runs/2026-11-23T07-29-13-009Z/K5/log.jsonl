@@ -1,0 +1,154 @@
+{"writer":"w5","model":"haiku","effort":"medium","days":2,"oracle":false,"complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":3731,"cache_read_input_tokens":0,"output_tokens":5446,"output_tokens_details":{"thinking_tokens":3797},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3731,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5446,"cache_read_input_tokens":0,"cache_creation_input_tokens":3731,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3731},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":5348,"cache_read_input_tokens":0,"output_tokens":3626,"output_tokens_details":{"thinking_tokens":2285},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5348,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3626,"cache_read_input_tokens":0,"cache_creation_input_tokens":5348,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5348},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":6704,"cache_read_input_tokens":0,"output_tokens":4971,"output_tokens_details":{"thinking_tokens":3645},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":6704,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4971,"cache_read_input_tokens":0,"cache_creation_input_tokens":6704,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":6704},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Aoife","Cian","Niamh","Tadhg","Saoirse","Oisín","Ellen","Dara"],"setting":"You are all students on the same one-year MA cohort at University of Galway, and you have spent every weekday since September in the same seminar room and library. The group chat was set up by the course for timetable and assignment news, and it has become where you all talk about everything else. Aoife and Ellen knew each other from undergrad, and the other six met through the cohort itself.","opener":"Ask the group whether anyone has the reading list for Thursday's seminar.","cast":{"Aoife":{"who":"24, woman, the student who started the chat's pile of questions","knows":"You know Ellen best, since you both did undergrad here and share a flat in Salthill. Cian is the one who always has the reading sorted, and Dara is loud and generous. Niamh is someone you've shared a project group with and trust. Tadhg is quiet and dry, and he lives with Oisín, who is always late. Saoirse is kind and organised, and you have sat beside her in most seminars.","like":"You're practical and warm, and you tend to take charge when a group needs someone to organise it.","texts":"You mostly reply in the chat and only now and then start a message yourself.","style":"You use the odd emoji and \"tbh\" or \"x\" now and then, but not much.","capitals":true,"lives":["Ellen"],"ex":[]},"Cian":{"who":"25, man, a student on the cohort who keeps the group's reading in order","knows":"You know Dara well, since you share a flat with him in Newcastle. Aoife is the one who organises things and is easy to work with. Niamh is quick and funny in seminars. Tadhg is dry and says less than most people in the chat. Saoirse is careful and reliable. Oisín is friendly but always running late. Ellen is sharp, and you've been on the same reading group.","like":"You're steady and a bit reserved, and you only speak up when you have something useful to say.","texts":"You mostly read the chat and reply, and only now and then start something yourself.","style":"You rarely use emoji and mostly write in full words.","capitals":false,"lives":["Dara"],"ex":[]},"Niamh":{"who":"23, woman, a student on the cohort who tutors first-years on the side","knows":"You know Saoirse well, since you live together in Shantalla. Aoife is someone you've worked on a project with and you get on well. Cian is quick and funny in seminars. Tadhg is quiet and can be unexpectedly sharp. Oisín is warm and a bit scattered. Dara is loud and kind, and he always brings biscuits to the seminars. Ellen is funny and always up for a plan.","like":"You're upbeat and quick, and you enjoy getting people to laugh.","texts":"You message in the chat quite often, sometimes just to say something silly.","style":"You use emoji often and abbreviations like \"lol\" and \"pls\" now and then.","capitals":true,"lives":["Saoirse"],"ex":[]},"Tadhg":{"who":"26, man, a student on the cohort who is older than most of the group","knows":"You know Oisín well, since you share a house in Shantalla with him. Aoife is organised and you rely on her for notes. Cian is steady and not one for small talk. Niamh is funny and always cheerful. Saoirse is careful and kind. Dara is loud, friendly and generous. Ellen is sharp, and you've been on the same reading group.","like":"You're easygoing and dry, and you let other people do most of the talking.","texts":"You rarely start a conversation and mostly only reply when someone else does.","style":"You rarely use emoji and write in short lowercase sentences.","capitals":false,"lives":["Oisín"],"ex":[]},"Saoirse":{"who":"24, woman, a student on the cohort who is careful and organised","knows":"You know Niamh well, since you live together in Shantalla. Aoife is kind and organised, and you have sat beside her in most seminars. Cian is steady and reliable. Tadhg is dry and quiet, and he is always the last to reply. Oisín is friendly but scattered. Dara is loud and generous. Ellen is funny, and you're in the same reading group.","like":"You're thoughtful and a little anxious, and you like things to be planned.","texts":"You mostly reply in the chat and now and then send a message to check in.","style":"You use a few emoji and write \"x\" or \"thanks\" now and then.","capitals":true,"lives":["Niamh"],"ex":[]},"Oisín":{"who":"27, man, a student on the cohort who is the oldest in the group","knows":"You know Tadhg well, since you share a house in Shantalla with him. Aoife is organised and helpful. Cian is steady, and you think he's the most reliable person in the cohort. Niamh is warm and a bit chaotic. Saoirse is careful and kind. Dara is loud and friendly. Ellen is sharp and funny, and you've been in a group project with her.","like":"You're relaxed and friendly, and you're happy to go along with whatever the group wants.","texts":"You message the group now and then, mostly when you have news or a question.","style":"You use a lot of emoji and send lots of short messages.","capitals":false,"lives":["Tadhg"],"ex":[]},"Ellen":{"who":"23, woman, a student on the cohort who is quick and sharp","knows":"You know Aoife well, since you did undergrad together and share a flat in Salthill. Cian is steady and sharp, and you've been in the same reading group. Niamh is funny and always up for a plan. Tadhg is dry and quiet. Saoirse is kind and careful. Oisín is friendly and can be chaotic. Dara is loud and generous, and he always has a story.","like":"You're witty and quick, and you tend to say the thing other people are thinking.","texts":"You message in the chat quite often and tend to jump into conversations.","style":"You use emoji now and then and abbreviations like \"tbh\" and \"omg\" often.","capitals":true,"lives":["Aoife"],"ex":[]},"Dara":{"who":"25, man, a student on the cohort who is loud, friendly and generous","knows":"You know Cian well, since you share a house in Newcastle with him. Aoife is organised and always helpful. Niamh is funny and warm. Tadhg is dry and quiet, but you like him a lot. Saoirse is careful and kind. Oisín is friendly and scattered. Ellen is sharp and funny, and she always has a story to tell.","like":"You're outgoing and generous, and you like to keep the group feeling connected.","texts":"You message the chat quite often and tend to start conversations just to check in.","style":"You use emoji often and write \"lol\" or \"haha\" now and then.","capitals":true,"lives":["Cian"],"ex":[]}},"private_lines":{"Aoife":"You're a part-time barista on Shop Street on Tuesdays and Saturdays, and you write your dissertation on weekday mornings in the library. You live with Ellen in a rented two-bed in Salthill and usually cook dinner together around seven.","Cian":"You work two evening shifts a week in a bar on Eyre Square and spend most mornings in the library reading for your thesis. You live with Dara in a rented house in Newcastle, and you usually cycle to campus.","Niamh":"You tutor two first-year students on Wednesdays and do library shifts on Fridays. You live with Saoirse in a small terrace house in Shantalla, and your days are mostly spent between the library and home.","Tadhg":"You work part-time in a call centre in the city three evenings a week and spend the mornings reading in the library. You live with Oisín in a rented house in Shantalla, and you usually cook at home after work.","Saoirse":"You work as a library assistant on campus two days a week and spend the rest of your time on your thesis. You live with Niamh in a small terrace house in Shantalla, and your routine is mostly quiet and regular.","Oisín":"You work weekends as a delivery driver and spend weekday mornings in the library. You live with Tadhg in a rented house in Shantalla, and you usually eat late and get to bed after midnight.","Ellen":"You work two shifts a week in a bookshop on Quay Street and spend the rest of your time on your dissertation. You live with Aoife in a rented two-bed in Salthill, and your days are busy and a bit unstructured.","Dara":"You work in a sports shop on Shop Street three days a week and spend your mornings in the library. You live with Cian in a rented house in Newcastle, and you usually cycle to the city centre after work."},"sleep":{"Aoife":[0,8],"Cian":[23.5,7.5],"Niamh":[0.5,8.5],"Tadhg":[0,8],"Saoirse":[23.75,7.75],"Oisín":[1,9],"Ellen":[1.5,9.5],"Dara":[0,8]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1341,"cache_read_input_tokens":0,"output_tokens":5405,"output_tokens_details":{"thinking_tokens":2237},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5405,"cache_read_input_tokens":0,"cache_creation_input_tokens":1341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1341},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"An open chat of eight people.","topic":null}
+{"who":"Aoife","text":"Anyone have the reading list for thurs seminar? Cant find the email","posted":true,"at":"2026-11-23T07:30","checkin":"2026-11-23T07:30"}
+{"who":"Cian","text":"Week 6 list is on the module page under Readings. The three are Hallam, Ó Gallchóir and the Keane chapter. PDFs are in the shared folder too.","posted":true,"at":"2026-11-23T07:52","checkin":"2026-11-23T07:52"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-11-23T07:52"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-11-23T07:52"}
+{"who":"Aoife","text":"Ah thank u x","posted":true,"at":"2026-11-23T07:53","checkin":"2026-11-23T07:53"}
+{"who":"Dara","text":"Cian you legend. Aoife are you at the library already","posted":true,"at":"2026-11-23T08:04","checkin":"2026-11-23T08:04"}
+{"who":"Aoife","text":"Yeah second floor by the window, come up","posted":true,"at":"2026-11-23T08:06","checkin":"2026-11-23T08:06"}
+{"who":"Dara","text":"On my way, bringing biscuits","posted":true,"at":"2026-11-23T08:20","checkin":"2026-11-23T08:20"}
+{"who":"Saoirse","text":"Cian is the Keane chapter the one from the course pack or separate","posted":true,"at":"2026-11-23T08:41","checkin":"2026-11-23T08:41"}
+{"who":"Cian","text":"Separate. It's in the folder as Keane_ch4. Course pack only has the first two.","posted":true,"at":"2026-11-23T08:44","checkin":"2026-11-23T08:44"}
+{"who":"Saoirse","text":"Thanks, found it","posted":true,"at":"2026-11-23T08:45","checkin":"2026-11-23T08:45"}
+{"note":"08:50-11:40 Aoife, Dara and Saoirse in the library, second floor","at":"2026-11-23T08:45"}
+{"who":"Niamh","text":"Lol I'm just up. Has anyone got the tutorial sheet for wednesday or is that just me","posted":true,"at":"2026-11-23T12:15","checkin":"2026-11-23T12:15"}
+{"who":"Cian","text":"Wednesday isn't us. That's the first years.","posted":true,"at":"2026-11-23T12:17","checkin":"2026-11-23T12:17"}
+{"who":"Niamh","text":"I KNOW I just wanted to be sure I wasnt forgetting my own sheet 😭","posted":true,"at":"2026-11-23T12:18","checkin":"2026-11-23T12:18"}
+{"who":"Ellen","text":"You've been doing their sheets for 3 weeks niamh","posted":true,"at":"2026-11-23T12:19","checkin":"2026-11-23T12:19"}
+{"who":"Niamh","text":"Pls dont","posted":true,"at":"2026-11-23T12:31","checkin":"2026-11-23T12:31"}
+{"who":"Oisín","text":"is the thursday seminar still in 2.04 or has it moved","posted":true,"at":"2026-11-23T13:02","checkin":"2026-11-23T13:02"}
+{"who":"Aoife","text":"Still 2.04 I think? Check the timetable email","posted":true,"at":"2026-11-23T13:08","checkin":"2026-11-23T13:08"}
+{"who":"Oisín","text":"no email. ok","posted":true,"at":"2026-11-23T13:10","checkin":"2026-11-23T13:10"}
+{"who":"Cian","text":"Still 2.04. Timetable was updated on the 4th.","posted":true,"at":"2026-11-23T13:14","checkin":"2026-11-23T13:14"}
+{"who":"Oisín","text":"legend thanks cian","posted":true,"at":"2026-11-23T13:20","checkin":"2026-11-23T13:20"}
+{"who":"Dara","text":"A man tried to return a kayak he'd used. It had been in a river. Long story","posted":true,"at":"2026-11-23T14:40","checkin":"2026-11-23T14:40"}
+{"who":"Ellen","text":"I need the whole thing","posted":true,"at":"2026-11-23T14:42","checkin":"2026-11-23T14:42"}
+{"who":"Dara","text":"Tomorrow at the library, I'll tell it with biscuits","posted":true,"at":"2026-11-23T14:44","checkin":"2026-11-23T14:44"}
+{"who":"Tadhg","text":"same three as thurs?","posted":true,"at":"2026-11-23T18:30","checkin":"2026-11-23T18:30"}
+{"who":"Aoife","text":"Yep Cian's list","posted":true,"at":"2026-11-23T18:33","checkin":"2026-11-23T18:33"}
+{"who":"Tadhg","text":"keane ch4 is like 40 pages","posted":true,"at":"2026-11-23T18:34","checkin":"2026-11-23T18:34"}
+{"who":"Cian","text":"It is. Skim the first ten and read the conclusion.","posted":true,"at":"2026-11-23T18:36","checkin":"2026-11-23T18:36"}
+{"who":"Tadhg","text":"bold","posted":true,"at":"2026-11-23T18:37","checkin":"2026-11-23T18:37"}
+{"who":"Aoife","text":"Making pasta with ellen at 7ish. Anyone fancy a drink thurs after the seminar? The quays","posted":true,"at":"2026-11-23T18:47","checkin":"2026-11-23T18:47"}
+{"who":"Niamh","text":"Yes pls 🙏 the big one on the quays not the small one","posted":true,"at":"2026-11-23T18:55","checkin":"2026-11-23T18:55"}
+{"who":"Saoirse","text":"I can do thurs, not tues I'm in early","posted":true,"at":"2026-11-23T18:58","checkin":"2026-11-23T18:58"}
+{"who":"Dara","text":"In. Cian?","posted":true,"at":"2026-11-23T19:02","checkin":"2026-11-23T19:02"}
+{"who":"Cian","text":"Thursday's fine.","posted":true,"at":"2026-11-23T19:03","checkin":"2026-11-23T19:03"}
+{"who":"Ellen","text":"I'll bring the story","posted":true,"at":"2026-11-23T19:10","checkin":"2026-11-23T19:10"}
+{"who":"Dara","text":"The kayak story?","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Ellen","text":"The kayak story","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Oisín","text":"tadhg and I are in for thurs if it's not a school night thing. some of us have a 9am","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Aoife","text":"It's a quiet one oisín, pints and home by 10","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Oisín","text":"deal","posted":true,"at":"2026-11-23T19:46","checkin":"2026-11-23T19:46"}
+{"who":"Tadhg","text":"ok","posted":true,"at":"2026-11-23T19:50","checkin":"2026-11-23T19:50"}
+{"who":"Niamh","text":"Ok I've had a thought. What if the keane chapter is just the first chapter in a different font","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"","react":"😂","to":39,"posted":false,"at":"2026-11-23T20:30"}
+{"who":"","react":"😂","to":39,"posted":false,"at":"2026-11-23T20:30"}
+{"who":"","react":"😂","to":39,"posted":false,"at":"2026-11-23T20:30"}
+{"who":"Cian","text":"It isn't.","posted":true,"at":"2026-11-23T20:33","checkin":"2026-11-23T20:33"}
+{"who":"Niamh","text":"Lol cian's been checking","posted":true,"at":"2026-11-23T20:34","checkin":"2026-11-23T20:34"}
+{"who":"Saoirse","text":"I checked just now and Cian is right","posted":true,"at":"2026-11-23T20:35","checkin":"2026-11-23T20:35"}
+{"who":"Niamh","text":"Ugh","posted":true,"at":"2026-11-23T20:36","checkin":"2026-11-23T20:36"}
+{"who":"Dara","text":"Night all. Kayak story is tomorrow Ellen","posted":true,"at":"2026-11-23T22:15","checkin":"2026-11-23T22:15"}
+{"who":"Ellen","text":"I will hold you to it","posted":true,"at":"2026-11-23T22:20","checkin":"2026-11-23T22:20"}
+{"who":"Aoife","text":"Tomorrow's library: 9am second floor. Who's coming","posted":true,"at":"2026-11-23T23:50","checkin":"2026-11-23T23:50"}
+{"who":"Saoirse","text":"I'll be there 8:45","posted":true,"at":"2026-11-23T23:52","checkin":"2026-11-23T23:52"}
+{"who":"Oisín","text":"tadhg fell asleep mid sentence on the couch","posted":true,"at":"2026-11-24T00:04","checkin":"2026-11-24T00:04"}
+{"who":"Ellen","text":"Is he the one who answers last or just the one who sleeps","posted":true,"at":"2026-11-24T00:06","checkin":"2026-11-24T00:06"}
+{"who":"Oisín","text":"both","posted":true,"at":"2026-11-24T00:11","checkin":"2026-11-24T00:11"}
+{"who":"Ellen","text":"Aoife asleep already?","posted":true,"at":"2026-11-24T00:40","checkin":"2026-11-24T00:40"}
+{"who":"Ellen","text":"Just me then. Kayak story sleep","posted":true,"at":"2026-11-24T01:05","checkin":"2026-11-24T01:05"}
+{"who":"Niamh","text":"Has anyone seen my good pen 😭","posted":true,"at":"2026-11-24T08:31","checkin":"2026-11-24T08:31"}
+{"who":"Dara","text":"Library in 10 mins. Biscuits are in the bag already","posted":true,"at":"2026-11-24T08:40","checkin":"2026-11-24T08:40"}
+{"who":"Cian","text":"Second floor, by the window. Aoife's there.","posted":true,"at":"2026-11-24T08:44","checkin":"2026-11-24T08:44"}
+{"who":"Saoirse","text":"Here. Dara you've already eaten one","posted":true,"at":"2026-11-24T08:46","checkin":"2026-11-24T08:46"}
+{"who":"Dara","text":"It was a broken one","posted":true,"at":"2026-11-24T08:47","checkin":"2026-11-24T08:47"}
+{"note":"08:50-11:40 Aoife, Cian, Dara and Saoirse on the second floor. Dara tells the kayak story. Twice, because Cian was there and corrected him.","at":"2026-11-24T08:47"}
+{"who":"Oisín","text":"not making 9. 9:30ish","posted":true,"at":"2026-11-24T09:02","checkin":"2026-11-24T09:02"}
+{"who":"Aoife","text":"Ok. We're on the second floor, tell the desk you're with the ma group","posted":true,"at":"2026-11-24T09:03","checkin":"2026-11-24T09:03"}
+{"who":"Oisín","text":"will do","posted":true,"at":"2026-11-24T09:04","checkin":"2026-11-24T09:04"}
+{"who":"Tadhg","text":"read the keane conclusion. it's fine","posted":true,"at":"2026-11-24T09:48","checkin":"2026-11-24T09:48"}
+{"who":"Cian","text":"It's the best part.","posted":true,"at":"2026-11-24T09:49","checkin":"2026-11-24T09:49"}
+{"who":"Tadhg","text":"it's ok","posted":true,"at":"2026-11-24T09:51","checkin":"2026-11-24T09:51"}
+{"who":"Ellen","text":"Ok I'm up. Kayak story where","posted":true,"at":"2026-11-24T09:51","checkin":"2026-11-24T09:51"}
+{"who":"Dara","text":"Second floor. It's been told twice already, you'll hear it live","posted":true,"at":"2026-11-24T09:51","checkin":"2026-11-24T09:51"}
+{"who":"Ellen","text":"Not fair","posted":true,"at":"2026-11-24T09:51","checkin":"2026-11-24T09:51"}
+{"who":"Dara","text":"You'll get the dog bit","posted":true,"at":"2026-11-24T09:51","checkin":"2026-11-24T09:51"}
+{"who":"Ellen","text":"What dog","posted":true,"at":"2026-11-24T09:51","checkin":"2026-11-24T09:51"}
+{"who":"Niamh","text":"Lol I'm up. Someone send me the first years sheet pls I'm not doing it","posted":true,"at":"2026-11-24T12:19","checkin":"2026-11-24T12:19"}
+{"who":"Ellen","text":"You're doing it arent you","posted":true,"at":"2026-11-24T12:20","checkin":"2026-11-24T12:20"}
+{"who":"Niamh","text":"I'm doing it","posted":true,"at":"2026-11-24T12:21","checkin":"2026-11-24T12:21"}
+{"who":"Oisín","text":"at library now. where's everyone","posted":true,"at":"2026-11-24T12:40","checkin":"2026-11-24T12:40"}
+{"who":"Aoife","text":"Gone for lunch, back at 1. Saoirse's still up there","posted":true,"at":"2026-11-24T12:41","checkin":"2026-11-24T12:41"}
+{"who":"Saoirse","text":"I'm here","posted":true,"at":"2026-11-24T12:42","checkin":"2026-11-24T12:42"}
+{"who":"Aoife","text":"Ellen we're out of milk","posted":true,"at":"2026-11-24T14:10","checkin":"2026-11-24T14:10"}
+{"who":"Ellen","text":"Buy it","posted":true,"at":"2026-11-24T14:11","checkin":"2026-11-24T14:11"}
+{"who":"Aoife","text":"U buy it","posted":true,"at":"2026-11-24T14:11","checkin":"2026-11-24T14:11"}
+{"who":"Ellen","text":"I'm on shift at 4 and you're on the wall","posted":true,"at":"2026-11-24T14:12","checkin":"2026-11-24T14:12"}
+{"who":"Aoife","text":"Ok fine. I'll get it on the way back from shop st","posted":true,"at":"2026-11-24T14:13","checkin":"2026-11-24T14:13"}
+{"who":"Ellen","text":"Thank you","posted":true,"at":"2026-11-24T14:15","checkin":"2026-11-24T14:15"}
+{"who":"Tadhg","text":"oisin is asleep on the couch again","posted":true,"at":"2026-11-24T17:52","checkin":"2026-11-24T17:52"}
+{"who":"Oisín","text":"not asleep, in the bath","posted":true,"at":"2026-11-24T18:20","checkin":"2026-11-24T18:20"}
+{"who":"Tadhg","text":"same thing","posted":true,"at":"2026-11-24T18:21","checkin":"2026-11-24T18:21"}
+{"who":"Dara","text":"Kayak story wasnt even the best bit. The best bit was the guy's dog","posted":true,"at":"2026-11-24T19:31","checkin":"2026-11-24T19:31"}
+{"who":"Ellen","text":"TELL ME","posted":true,"at":"2026-11-24T19:33","checkin":"2026-11-24T19:33"}
+{"who":"Dara","text":"Cian was there","posted":true,"at":"2026-11-24T19:34","checkin":"2026-11-24T19:34"}
+{"who":"Cian","text":"I was there.","posted":true,"at":"2026-11-24T19:36","checkin":"2026-11-24T19:36"}
+{"who":"Ellen","text":"Why won't anyone just tell me","posted":true,"at":"2026-11-24T19:36","checkin":"2026-11-24T19:36"}
+{"who":"Cian","text":"It's a long story. Dara has the details.","posted":true,"at":"2026-11-24T19:40","checkin":"2026-11-24T19:40"}
+{"who":"Dara","text":"The dog was called Biscuit","posted":true,"at":"2026-11-24T19:42","checkin":"2026-11-24T19:42"}
+{"who":"Ellen","text":"I hate all of you","posted":true,"at":"2026-11-24T19:42","checkin":"2026-11-24T19:42"}
+{"who":"Niamh","text":"If the keane chapter was a kayak it would have been returned","posted":true,"at":"2026-11-24T21:04","checkin":"2026-11-24T21:04"}
+{"who":"Saoirse","text":"It's a chapter, Niamh","posted":true,"at":"2026-11-24T21:05","checkin":"2026-11-24T21:05"}
+{"who":"Niamh","text":"It's been in a river","posted":true,"at":"2026-11-24T21:05","checkin":"2026-11-24T21:05"}
+{"who":"Aoife","text":"Thurs drinks still on. Cian you coming to the quays or are you doing a shift","posted":true,"at":"2026-11-24T21:09","checkin":"2026-11-24T21:09"}
+{"who":"Cian","text":"Coming. Shift's Friday.","posted":true,"at":"2026-11-24T21:31","checkin":"2026-11-24T21:31"}
+{"who":"Saoirse","text":"Night all. Dara don't bring biscuits to the seminar tomorrow, I already have some","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"Dara","text":"No promises","posted":true,"at":"2026-11-24T23:14","checkin":"2026-11-24T23:14"}
+{"who":"Ellen","text":"Ok I'm not sleeping until someone tells me about the dog","posted":true,"at":"2026-11-25T00:14","checkin":"2026-11-25T00:14"}
+{"who":"Ellen","text":"Oisín you were there. You know something","posted":true,"at":"2026-11-25T00:19","checkin":"2026-11-25T00:19"}
+{"who":"Oisín","text":"i got there when they were on the biscuits","posted":true,"at":"2026-11-25T00:24","checkin":"2026-11-25T00:24"}
+{"who":"Ellen","text":"Useless","posted":true,"at":"2026-11-25T00:25","checkin":"2026-11-25T00:25"}
+{"who":"Oisín","text":"the dog was on a lead the whole time. thats all i got","posted":true,"at":"2026-11-25T00:31","checkin":"2026-11-25T00:31"}
+{"who":"Ellen","text":"That's not a story, that's a fact","posted":true,"at":"2026-11-25T00:33","checkin":"2026-11-25T00:33"}
+{"who":"Aoife","text":"Up. Library 9? Ellen you alive","posted":true,"at":"2026-11-25T08:02","checkin":"2026-11-25T08:02"}
+{"who":"Aoife","text":"Oh she's asleep. Cian you coming","posted":true,"at":"2026-11-25T08:03","checkin":"2026-11-25T08:03"}
+{"who":"Cian","text":"Yes. Hallam's in the folder if anyone's reading ahead for Thurs","posted":true,"at":"2026-11-25T08:09","checkin":"2026-11-25T08:09"}
+{"who":"Aoife","text":"I'll read it at the library. Obviously","posted":true,"at":"2026-11-25T08:10","checkin":"2026-11-25T08:10"}
+{"who":"Dara","text":"Bag is packed. No biscuits, per Saoirse. It's a sad bag","posted":true,"at":"2026-11-25T08:21","checkin":"2026-11-25T08:21"}
+{"who":"Saoirse","text":"Thank you","posted":true,"at":"2026-11-25T08:22","checkin":"2026-11-25T08:22"}
+{"who":"Dara","text":"I've got one for myself that's different","posted":true,"at":"2026-11-25T08:23","checkin":"2026-11-25T08:23"}
+{"who":"Niamh","text":"Lol I'm up. First years at 11 and I haven't done the sheet pls","posted":true,"at":"2026-11-25T08:30","checkin":"2026-11-25T08:30"}
+{"who":"Aoife","text":"Niamh you have the sheet. You made it Monday, you told me","posted":true,"at":"2026-11-25T08:33","checkin":"2026-11-25T08:33"}
+{"who":"Niamh","text":"I made the WRONG sheet","posted":true,"at":"2026-11-25T08:34","checkin":"2026-11-25T08:34"}
+{"who":"Saoirse","text":"Which one","posted":true,"at":"2026-11-25T08:35","checkin":"2026-11-25T08:35"}
+{"who":"Niamh","text":"Last year's","posted":true,"at":"2026-11-25T08:36","checkin":"2026-11-25T08:36"}
+{"who":"Cian","text":"Library in 10 mins. Second floor","posted":true,"at":"2026-11-25T08:40","checkin":"2026-11-25T08:40"}
+{"who":"Dara","text":"Legend","posted":true,"at":"2026-11-25T08:41","checkin":"2026-11-25T08:41"}
+{"note":"08:50-12:50 Aoife, Cian, Dara and Saoirse on the second floor. Saoirse has a tin of her own biscuits in her bag and doesn't mention it. Niamh at home, redoing the sheet.","at":"2026-11-25T08:41"}
+{"who":"Oisín","text":"not making it. tadhg says hes not up","posted":true,"at":"2026-11-25T09:50","checkin":"2026-11-25T09:50"}
+{"who":"Tadhg","text":"im up","posted":true,"at":"2026-11-25T09:52","checkin":"2026-11-25T09:52"}
+{"who":"Oisín","text":"he's lying","posted":true,"at":"2026-11-25T09:52","checkin":"2026-11-25T09:52"}
+{"who":"Tadhg","text":"read the keane conclusion. still fine","posted":true,"at":"2026-11-25T09:58","checkin":"2026-11-25T09:58"}
+{"who":"Cian","text":"Still the best part","posted":true,"at":"2026-11-25T10:01","checkin":"2026-11-25T10:01"}
+{"who":"Tadhg","text":"no","posted":true,"at":"2026-11-25T10:03","checkin":"2026-11-25T10:03"}
+{"who":"Ellen","text":"Woke up and nobody has told me anything. Brilliant","posted":true,"at":"2026-11-25T10:03","checkin":"2026-11-25T10:03"}
+{"who":"Ellen","text":"Coming up to the library now. Dara, dog","posted":true,"at":"2026-11-25T12:20","checkin":"2026-11-25T12:20"}
+{"who":"Dara","text":"Get your lunch first, it's a long one","posted":true,"at":"2026-11-25T12:24","checkin":"2026-11-25T12:24"}
+{"who":"Niamh","text":"Tutorial done. One of them asked if the Keane chapter is on the exam. I said yes because it sounded like the right answer","posted":true,"at":"2026-11-25T13:04","checkin":"2026-11-25T13:04"}
+{"who":"Saoirse","text":"Is it on the exam","posted":true,"at":"2026-11-25T13:06","checkin":"2026-11-25T13:06"}
+{"who":"Niamh","text":"Idk","posted":true,"at":"2026-11-25T13:07","checkin":"2026-11-25T13:07"}
+{"who":"Cian","text":"Check the module page. Exam info is under Assessment","posted":true,"at":"2026-11-25T13:07","checkin":"2026-11-25T13:07"}
+{"who":"Niamh","text":"Oh. I didn't know it was there","posted":true,"at":"2026-11-25T13:09","checkin":"2026-11-25T13:09"}
+{"who":"Oisín","text":"is thurs still 10 pints or is it a hard 10","posted":true,"at":"2026-11-25T18:12","checkin":"2026-11-25T18:12"}
+{"who":"Aoife","text":"Hard 10 oisin","posted":true,"at":"2026-11-25T18:14","checkin":"2026-11-25T18:14"}
+{"who":"Oisín","text":"ok","posted":true,"at":"2026-11-25T18:15","checkin":"2026-11-25T18:15"}
+{"who":"Ellen","text":"Aoife tell me the dog story while we cook","posted":true,"at":"2026-11-25T19:02","checkin":"2026-11-25T19:02"}
+{"who":"Aoife","text":"I wasn't there for the dog. I was there for the kayak","posted":true,"at":"2026-11-25T19:04","checkin":"2026-11-25T19:04"}
+{"who":"Ellen","text":"You were there for both","posted":true,"at":"2026-11-25T19:04","checkin":"2026-11-25T19:04"}
+{"who":"Aoife","text":"I was looking at my chapter. I think the dog was called Biscuit","posted":true,"at":"2026-11-25T19:06","checkin":"2026-11-25T19:06"}
+{"who":"Ellen","text":"Everyone keeps saying Biscuit","posted":true,"at":"2026-11-25T19:06","checkin":"2026-11-25T19:06"}
+{"who":"Dara","text":"Thurs. Dog. I'll bring a pint for the story","posted":true,"at":"2026-11-25T21:50","checkin":"2026-11-25T21:50"}
+{"who":"Ellen","text":"Bring two","posted":true,"at":"2026-11-25T21:52","checkin":"2026-11-25T21:52"}
+{"who":"Dara","text":"Bring my own biscuits","posted":true,"at":"2026-11-25T21:58","checkin":"2026-11-25T21:58"}

@@ -1,0 +1,147 @@
+--- Mon 07:35, Lucia
+Is the Science Museum in London open on Sundays? And when does it open?
+
+--- Mon 08:12, Mateo
+No idea. Why, are we going to London?
+
+--- Mon 08:14, Lucia
+Maybe. Sunday 6th Dec. Would need a morning flight though, so it depends on the times 😅
+
+--- Mon 16:05, Mateo
+Flights from Seville on a Sunday aren't usually bad. Morning ones are the issue. Find out about the museum first and I'll look at flights tonight.
+
+--- Mon 16:09, Lucia
+@claude Is the Science Museum in London open on Sunday 6 December 2026, and what time does it open that day?
+
+--- Mon 16:10, Claude
+Very likely yes. The Science Museum is normally open every day, including Sundays, from 10:00 to 18:00, with last entry at 17:15. That comes from Art Fund and IanVisits. I couldn't open the official site to confirm 6 December 2026 specifically, so check it before booking. Free tickets should be pre-booked.
+
+Sources: [Art Fund](https://www.artfund.org/explore/museums-and-galleries/science-museum), [IanVisits](https://www.ianvisits.co.uk/articles/tag/science-museum/)
+
+--- Mon 16:14, Lucia
+Perfect, 10 to 6 works 👍 we'd need to land by about 9 to make it
+
+--- Mon 16:31, Mateo
+Ryanair and easyJet both fly early from here but I don't know the timetable for that date. Don't want to guess.
+
+--- Mon 19:42, Lucia
+@claude What are the earliest direct flights from Seville to London on Sunday 6 December 2026, and what time do they land? Only Seville to Gatwick, Stansted, Luton or Heathrow.
+
+--- Mon 19:43, Claude
+I couldn't find a reliable timetable for Sunday 6 Dec 2026, so I can't give you confirmed landing times. The aggregator pages were mixed and partly out of date.
+
+The earliest departures they list are Ryanair to Stansted (from about 06:30 in some schedule periods), Luton (from about 07:15) and Gatwick (from about 06:55). Heathrow (Vueling) looks like midday at the earliest. London is an hour behind Seville, so a 07:00 departure would land around 08:30 local, which would work for your 9:00 target. Please check Ryanair and easyJet directly for that date.
+
+Sources: [FlightsFrom STN](https://www.flightsfrom.com/SVQ-STN), [FlightsFrom LGW](https://www.flightsfrom.com/SVQ-LGW), [FlightsFrom LTN](https://www.flightsfrom.com/SVQ-LTN), [FlightsFrom LHR](https://www.flightsfrom.com/SVQ-LHR)
+
+--- Mon 19:58, Mateo
+Ryanair has a 06:30 from Seville to Stansted on the 6th, but it might just be the summer schedule. Their site doesn't say for sure.
+
+--- Mon 20:04, Lucia
+6:30 is too early for me honestly. Gatwick 6:55 then? That's landing around 8:55 local?
+
+--- Mon 20:06, Mateo
+Gatwick is further out. Depends what the train costs. I'd rather not spend two hours on a train before the museum opens.
+
+--- Mon 20:11, Lucia
+Gatwick Express goes to Victoria, right? Not sure how long it takes
+
+--- Mon 21:44, Lucia
+@claude How long does the Gatwick Express take from Gatwick airport to London Victoria, and roughly what does a single ticket cost?
+
+--- Mon 21:45, Claude
+The Gatwick Express is non-stop and takes about 30 minutes to Victoria, with trains roughly every 15 minutes. Sources disagree on the single fare. Most say about £20 to £24, and one older page says £16.90. Southern and Thameslink trains take about 30 to 45 minutes and cost roughly £10 to £11 off-peak, so they're cheaper. Check National Rail for the current fares.
+
+Sources: [Trip.com](https://uk.trip.com/trains/uk/companies/gatwick-express/), [Trainline](https://www.thetrainline.com/train-times/london-victoria-to-gatwick-airport), [Top Tip London](https://www.toptiplondon.com/transport/airports/gatwick), [Omio](https://www.omio.com/companies/trains/gatwick-express), [LastTrip](https://lasttrip.uk/blog/cheapest-way-london-to-gatwick.html)
+
+--- Mon 21:52, Mateo
+Twenty pounds each way for two people is not nothing. Let's see the Stansted option before we decide.
+
+--- Mon 21:55, Lucia
+Stansted's the 6:30 and I already said no to that 😅 Gatwick 6:55 is the only one I could handle, and that train is £20+
+
+--- Mon 21:58, Lucia
+@claude How long does the Stansted Express take from Stansted airport to London Liverpool Street, and roughly what does a single cost?
+
+--- Mon 21:59, Claude
+The Stansted Express takes about 48 minutes from the airport to Liverpool Street, though other sites quote 45 to 53. Advance singles start around £9.90, but they're limited. A standard single is about £25 on Trainline. I didn't open the pages myself, so check current fares for 6 Dec. One notice mentioned platform closures at Liverpool Street, but it looked outdated.
+
+Sources: [Stansted Express](https://stanstedexpress.com/travel-information/popular-journeys/stansted-airport-to-london-liverpool-street), [Trainline](https://thetrainline.com/train-times/stansted-airport-to-london-liverpool-street), [Greater Anglia](https://www.greateranglia.co.uk/travel-information/airports/stansted-airport)
+
+--- Mon 22:04, Mateo
+Stansted is 50 minutes on the train and the 6:30 is out. Gatwick at 6:55 means leaving the flat around 4:30. I'm not doing that for a museum.
+
+--- Mon 22:09, Lucia
+Then what, we skip it? 😕
+
+--- Mon 23:24, Lucia
+Luton maybe. The Airport Express might be cheaper, not sure about the times
+
+--- Mon 23:25, Lucia
+@claude How long does the Luton Airport Express take from Luton airport to London St Pancras, and roughly what does a single cost?
+
+--- Mon 23:26, Claude
+The train from Luton Parkway to St Pancras takes about 25 to 45 minutes, usually around 35 to 40. You also need the shuttle (DART) from the terminal to Parkway, which is a few minutes and about £4.90. I couldn't find a clear current standard single fare. Advance tickets start around £3, and one older page listed about £24. Check Trainline or National Rail for 6 Dec.
+
+Sources: [Trainline](https://www.thetrainline.com/train-times/luton-airport-parkway-to-london-st-pancras-international), [Luton Airport](https://www.london-luton.co.uk/luton-airport-express), [Top Tip London](https://www.toptiplondon.com/luton-airport/), [Trip.com](https://uk.trip.com/trains/uk/route/luton-to-london)
+
+--- Mon 23:27, Lucia
+Ok so Luton is the shuttle plus about 40 min on the train. Under an hour once you're at the terminal, not bad
+
+--- Mon 23:28, Lucia
+Mateo you awake?
+
+--- Tue 07:04, Mateo
+Awake now. I was asleep before your message. What time is Luton?
+
+--- Tue 07:06, Lucia
+Claude said from about 07:15, but that might only be the summer schedule. I need to check Ryanair directly
+
+--- Tue 07:09, Mateo
+That's a taxi at 05:30 from my flat. Doable. Not thrilled.
+
+--- Tue 07:11, Lucia
+05:30 for you is 04:45 for me 😅 Taxi from Triana is 15 min so I'd leave at 05:45
+
+--- Tue 13:12, Lucia
+Tried the Ryanair page for the 6th at lunch. It won't show that date, maybe it isn't on sale yet
+
+--- Tue 15:41, Mateo
+Out of class. I think easyJet flies to Luton from here too but I'm not sure. Check them as well
+
+--- Tue 19:50, Lucia
+@claude Which airlines fly Seville to Luton, and what are the earliest departures on Sunday 6 December 2026?
+
+--- Tue 19:51, Claude
+I couldn't confirm any departure times for Sunday 6 Dec 2026, so I can't give you a reliable earliest flight.
+
+Ryanair is the airline most sources list for Seville to Luton. Kayak also lists Wizz Air, with Sunday departures. One site says easyJet flies it, but FlightsFrom shows its last flight in 2021, so it probably doesn't. Sources disagree on frequency, and some are dated. I couldn't open FlightsFrom to check, so please check Ryanair and Wizz Air directly.
+
+Sources: [Kayak](https://www.kayak.co.uk/flight-routes/Sevilla-SVQ/London-Luton-LTN), [FlightConnections](https://www.flightconnections.com/flights-from-svq-to-ltn), [Skyscanner](https://www.skyscanner.ie/routes/svq/ltn/seville-to-london-luton.html)
+
+--- Tue 20:44, Lucia
+Wizz Air's page shows Sunday flights to Luton but nothing for the 6th specifically. Not sure they've loaded December yet
+
+--- Tue 20:46, Lucia
+Can you check Ryanair tonight? I'm going to bed soon
+
+--- Tue 21:37, Mateo
+I'll look now. The app sometimes shows dates the website doesn't. Give me ten minutes
+
+--- Tue 21:52, Mateo
+Nothing for the 6th on either. Might not be on sale yet
+
+--- Tue 22:10, Lucia
+Ok. Maybe it isn't on sale yet. We could be planning around flights that don't exist 😅
+
+--- Tue 22:12, Lucia
+Don't want to lock in the 6th if there's nothing to book
+
+--- Tue 22:40, Mateo
+Agreed. Let's see when they open sales and go from there
+
+--- Tue 22:41, Mateo
+Going to sleep. Night
+
+--- Tue 22:55, Lucia
+Night. I'll check Wizz again tomorrow lunchtime

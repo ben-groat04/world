@@ -1,0 +1,129 @@
+{"writer":"w8","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-25T10:15","complete":true,"rejects":0,"stretches":7,"quiet":2,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1605,"cache_read_input_tokens":0,"output_tokens":1214,"output_tokens_details":{"thinking_tokens":778},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1605,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1214,"cache_read_input_tokens":0,"cache_creation_input_tokens":1605,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1605},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2059,"cache_read_input_tokens":0,"output_tokens":1430,"output_tokens_details":{"thinking_tokens":906},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2059,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1430,"cache_read_input_tokens":0,"cache_creation_input_tokens":2059,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2059},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2581,"cache_read_input_tokens":0,"output_tokens":1033,"output_tokens_details":{"thinking_tokens":678},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2581,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1033,"cache_read_input_tokens":0,"cache_creation_input_tokens":2581,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2581},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2936,"cache_read_input_tokens":0,"output_tokens":378,"output_tokens_details":{"thinking_tokens":371},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2936,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":378,"cache_read_input_tokens":0,"cache_creation_input_tokens":2936,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2936},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2934,"cache_read_input_tokens":0,"output_tokens":1231,"output_tokens_details":{"thinking_tokens":895},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2934,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1231,"cache_read_input_tokens":0,"cache_creation_input_tokens":2934,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2934},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3272,"cache_read_input_tokens":0,"output_tokens":1258,"output_tokens_details":{"thinking_tokens":589},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3272,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1258,"cache_read_input_tokens":0,"cache_creation_input_tokens":3272,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3272},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3941,"cache_read_input_tokens":0,"output_tokens":1968,"output_tokens_details":{"thinking_tokens":1673},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3941,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1968,"cache_read_input_tokens":0,"cache_creation_input_tokens":3941,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3941},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4234,"cache_read_input_tokens":0,"output_tokens":1668,"output_tokens_details":{"thinking_tokens":977},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4234,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1668,"cache_read_input_tokens":0,"cache_creation_input_tokens":4234,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4234},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4924,"cache_read_input_tokens":0,"output_tokens":408,"output_tokens_details":{"thinking_tokens":401},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4924,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":408,"cache_read_input_tokens":0,"cache_creation_input_tokens":4924,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4924},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Yan","Tao"],"setting":"You, Yan, are in Chengdu, China, living in your own flat in Jinjiang. You, Tao, are in Chengdu too, in a rented room in Wuhou. You used to share a flat, and you know each other as old flatmates who still keep in touch.","openers":["Ask how the dispatch hub is treating you","Send a photo of the hotpot place we never tried","Check whether you still have my hair straightener","Suggest getting tea together on the weekend"],"opener":"Ask how the dispatch hub is treating you","cast":{"Yan":{"who":"30, woman, the speaker who used to live with the flatmate","work":"software tester","knows":"You know Tao as your former flatmate from the years you shared a flat, and you still message him now and then.","texts":"","style":"a fair amount of emoji and some texting abbreviations.","capitals":true,"lives":[],"ex":[]},"Tao":{"who":"31, man, the old flatmate","work":"delivery dispatcher","knows":"You know Yan as your former flatmate, the one you lived with before you both moved to separate places in Chengdu.","texts":"","style":"very little emoji and some texting abbreviations.","capitals":false,"lives":[],"ex":[]}},"private_lines":{"Yan":"You work as a software tester at a company in the Tianfu area, so your days go to test cases, bug reports, and the occasional lunch with coworkers. You live alone in your flat in Jinjiang.","Tao":"You work as a delivery dispatcher for a logistics hub in Wuhou, so your days go to assigning riders, tracking routes, and handling calls about late parcels. You rent a room in a shared-free flat in Wuhou, living on your own."},"sleep":{"Yan":[23.5,7.5],"Tao":[0.5,8]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":780,"cache_read_input_tokens":0,"output_tokens":1416,"output_tokens_details":{"thinking_tokens":1230},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":780,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1416,"cache_read_input_tokens":0,"cache_creation_input_tokens":780,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":780},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":780,"output_tokens":973,"output_tokens_details":{"thinking_tokens":790},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":973,"cache_read_input_tokens":780,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1057,"cache_read_input_tokens":0,"output_tokens":1623,"output_tokens_details":{"thinking_tokens":1109},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1057,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1623,"cache_read_input_tokens":0,"cache_creation_input_tokens":1057,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1057},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Chengdu, China","castMs":25533,"situation":"My old flatmate.","topic":null}
+{"who":"Yan","text":"How's the hub treating u 😅","posted":true,"at":"2026-11-25T10:15","checkin":"2026-11-25T10:15","stretch":1}
+{"who":"Tao","text":"busy","posted":true,"at":"2026-11-25T10:47","checkin":"2026-11-25T10:47","stretch":1}
+{"who":"Tao","text":"same as always. 3 riders off sick","posted":true,"at":"2026-11-25T10:47","checkin":"2026-11-25T10:47","stretch":1}
+{"who":"Yan","text":"Oh no. So who's doing the routes 💀","posted":true,"at":"2026-11-25T10:52","checkin":"2026-11-25T10:52","stretch":1}
+{"who":"Tao","text":"me and the new girl. she's ok. keeps asking which road is which","posted":true,"at":"2026-11-25T10:58","checkin":"2026-11-25T10:58","stretch":1}
+{"who":"Yan","text":"Lol they should give u a map that's not 5 yrs old","posted":true,"at":"2026-11-25T10:59","checkin":"2026-11-25T10:59","stretch":1}
+{"who":"Tao","text":"it's the map that's 5 yrs old. the routes are fine","posted":true,"at":"2026-11-25T11:20","checkin":"2026-11-25T11:20","stretch":1}
+{"who":"Yan","text":"Ur so grumpy today 😂","posted":true,"at":"2026-11-25T11:21","checkin":"2026-11-25T11:21","stretch":1}
+{"who":"Tao","text":"no","posted":true,"at":"2026-11-25T11:40","checkin":"2026-11-25T11:40","stretch":1}
+{"who":"Yan","text":"Ok ok. Did u eat","posted":true,"at":"2026-11-25T11:41","checkin":"2026-11-25T11:41","stretch":1}
+{"who":"Tao","text":"not yet","posted":true,"at":"2026-11-25T12:55","checkin":"2026-11-25T12:55","stretch":1}
+{"who":"Yan","text":"Go eat 🍜 it's almost 1","posted":true,"at":"2026-11-25T12:56","checkin":"2026-11-25T12:56","stretch":1}
+{"who":"Tao","text":"[photo: dispatch whiteboard with rider names crossed out in red]","posted":true,"at":"2026-11-25T13:30","checkin":"2026-11-25T13:30","stretch":1}
+{"who":"Yan","text":"Omg is that the whole list","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31","stretch":1}
+{"who":"Tao","text":"not the whole. 6 of them","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31","stretch":1}
+{"who":"Yan","text":"💀 that's a lot. U gonna be ok","posted":true,"at":"2026-11-25T13:33","checkin":"2026-11-25T13:33","stretch":1}
+{"who":"Tao","text":"im ok. eating now finally","posted":true,"at":"2026-11-25T13:48","checkin":"2026-11-25T13:48","stretch":2}
+{"who":"Yan","text":"Good 👍 what are u eating","posted":true,"at":"2026-11-25T13:49","checkin":"2026-11-25T13:49","stretch":2}
+{"who":"Tao","text":"dan dan noodles from the place by the gate. they put too much chili oil again","posted":true,"at":"2026-11-25T13:52","checkin":"2026-11-25T13:52","stretch":2}
+{"who":"Yan","text":"Ur gonna regret it lol","posted":true,"at":"2026-11-25T13:53","checkin":"2026-11-25T13:53","stretch":2}
+{"who":"Tao","text":"already do","posted":true,"at":"2026-11-25T14:10","checkin":"2026-11-25T14:10","stretch":2}
+{"who":"Yan","text":"Ok so a dev just told me a bug is \"not a bug, its a feature\" 🙃 we're in a meeting about it for an hour","posted":true,"at":"2026-11-25T15:37","checkin":"2026-11-25T15:37","stretch":2}
+{"who":"Tao","text":"who","posted":true,"at":"2026-11-25T15:38","checkin":"2026-11-25T15:38","stretch":2}
+{"who":"Yan","text":"Dont worry about it 😭","posted":true,"at":"2026-11-25T15:38","checkin":"2026-11-25T15:38","stretch":2}
+{"who":"Tao","text":"ok","posted":true,"at":"2026-11-25T15:40","checkin":"2026-11-25T15:40","stretch":2}
+{"who":"Tao","text":"rider just called. parcel got rained on, customer screaming. asking me to fix it","posted":true,"at":"2026-11-25T16:22","checkin":"2026-11-25T16:22","stretch":2}
+{"who":"Yan","text":"Oof 😬 can u fix it","posted":true,"at":"2026-11-25T16:23","checkin":"2026-11-25T16:23","stretch":2}
+{"who":"Tao","text":"not really. i told him to send the photo to the complaints team","posted":true,"at":"2026-11-25T16:25","checkin":"2026-11-25T16:25","stretch":2}
+{"who":"Yan","text":"Thats the most ur ever said 😂","posted":true,"at":"2026-11-25T16:26","checkin":"2026-11-25T16:26","stretch":2}
+{"who":"Yan","text":"Did u get out today or r u still at the hub","posted":true,"at":"2026-11-25T18:04","checkin":"2026-11-25T18:04","stretch":2}
+{"who":"Tao","text":"still here. new girl left at 6. she asked me to check her route for tmr","posted":true,"at":"2026-11-25T18:20","checkin":"2026-11-25T18:20","stretch":2}
+{"who":"Yan","text":"Did u check it","posted":true,"at":"2026-11-25T18:21","checkin":"2026-11-25T18:21","stretch":2}
+{"who":"Tao","text":"yes","posted":true,"at":"2026-11-25T18:21","checkin":"2026-11-25T18:21","stretch":2}
+{"who":"Yan","text":"Ur good to her 🥹","posted":true,"at":"2026-11-25T18:22","checkin":"2026-11-25T18:22","stretch":2}
+{"who":"Tao","text":"dont","posted":true,"at":"2026-11-25T18:22","checkin":"2026-11-25T18:22","stretch":2}
+{"who":"Yan","text":"Lol ok 😌 just dont let her ask u which road is which 5 times tmr","posted":true,"at":"2026-11-25T18:25","checkin":"2026-11-25T18:25","stretch":3}
+{"who":"Tao","text":"she will","posted":true,"at":"2026-11-25T18:26","checkin":"2026-11-25T18:26","stretch":3}
+{"who":"Yan","text":"Did u eat or r u surviving on the chili oil","posted":true,"at":"2026-11-25T18:40","checkin":"2026-11-25T18:40","stretch":3}
+{"who":"Tao","text":"leaving now. stopping at the stall by the bus stop","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12","stretch":3}
+{"who":"Yan","text":"Get the egg one not the spicy one 😭","posted":true,"at":"2026-11-25T19:13","checkin":"2026-11-25T19:13","stretch":3}
+{"who":"Tao","text":"home","posted":true,"at":"2026-11-25T21:47","checkin":"2026-11-25T21:47","stretch":3}
+{"who":"Yan","text":"Finally 👍 u ate?","posted":true,"at":"2026-11-25T21:49","checkin":"2026-11-25T21:49","stretch":3}
+{"who":"Tao","text":"bought a bowl of rice and some greens. thats it","posted":true,"at":"2026-11-25T21:55","checkin":"2026-11-25T21:55","stretch":3}
+{"who":"Yan","text":"Thats not a meal 🙃 but ok","posted":true,"at":"2026-11-25T21:56","checkin":"2026-11-25T21:56","stretch":3}
+{"who":"Yan","text":"Im gonna shower and sleep early, sprint review is tmr at 9 💀 the PM already sent 3 emails about it","posted":true,"at":"2026-11-25T22:10","checkin":"2026-11-25T22:10","stretch":3}
+{"who":"Tao","text":"good luck","posted":true,"at":"2026-11-25T22:14","checkin":"2026-11-25T22:14","stretch":3}
+{"who":"Yan","text":"Thx 🫠","posted":true,"at":"2026-11-25T22:14","checkin":"2026-11-25T22:14","stretch":3}
+{"who":"Yan","text":"Morning 🫠 review at 9 and I still dont know what to say about the login bug","posted":true,"at":"2026-11-26T07:42","checkin":"2026-11-26T07:42","stretch":4}
+{"who":"Tao","text":"say its a feature","posted":true,"at":"2026-11-26T08:06","checkin":"2026-11-26T08:06","stretch":4}
+{"who":"Yan","text":"🙃 ur not helping","posted":true,"at":"2026-11-26T08:07","checkin":"2026-11-26T08:07","stretch":4}
+{"who":"Tao","text":"ok","posted":true,"at":"2026-11-26T08:07","checkin":"2026-11-26T08:07","stretch":4}
+{"who":"Yan","text":"Review done. PM said \"lets take this offline\" 💀","posted":true,"at":"2026-11-26T09:48","checkin":"2026-11-26T09:48","stretch":4}
+{"who":"Tao","text":"what does that mean","posted":true,"at":"2026-11-26T09:49","checkin":"2026-11-26T09:49","stretch":4}
+{"who":"Yan","text":"Means no","posted":true,"at":"2026-11-26T09:50","checkin":"2026-11-26T09:50","stretch":4}
+{"who":"Tao","text":"new girl asked which road is which. 4 times this morning","posted":true,"at":"2026-11-26T12:34","checkin":"2026-11-26T12:34","stretch":4}
+{"who":"Yan","text":"Ur counting 😂","posted":true,"at":"2026-11-26T12:35","checkin":"2026-11-26T12:35","stretch":4}
+{"who":"Tao","text":"yes","posted":true,"at":"2026-11-26T12:35","checkin":"2026-11-26T12:35","stretch":4}
+{"who":"Yan","text":"Did u eat","posted":true,"at":"2026-11-26T12:58","checkin":"2026-11-26T12:58","stretch":4}
+{"who":"Tao","text":"not yet. rider just called again","posted":true,"at":"2026-11-26T13:20","checkin":"2026-11-26T13:20","stretch":4}
+{"who":"Yan","text":"Go eat 🍜 the rider can wait","posted":true,"at":"2026-11-26T13:21","checkin":"2026-11-26T13:21","stretch":4}
+{"who":"Tao","text":"he cant","posted":true,"at":"2026-11-26T13:22","checkin":"2026-11-26T13:22","stretch":4}
+{"who":"Yan","text":"Ok but he can wait 10 min 🙃 ur gonna choke on the chili oil","posted":true,"at":"2026-11-26T13:24","checkin":"2026-11-26T13:24","stretch":5}
+{"who":"Tao","text":"he's at the gate already","posted":true,"at":"2026-11-26T13:26","checkin":"2026-11-26T13:26","stretch":5}
+{"who":"Tao","text":"going","posted":true,"at":"2026-11-26T13:26","checkin":"2026-11-26T13:26","stretch":5}
+{"who":"Yan","text":"PM wants the login bug ticket written up by 5. I have 2 lines","posted":true,"at":"2026-11-26T15:02","checkin":"2026-11-26T15:02","stretch":5}
+{"who":"Tao","text":"say its a feature","posted":true,"at":"2026-11-26T15:04","checkin":"2026-11-26T15:04","stretch":5}
+{"who":"Yan","text":"😭😭 ur so unhelpful today","posted":true,"at":"2026-11-26T15:04","checkin":"2026-11-26T15:04","stretch":5}
+{"who":"Tao","text":"ur the one who asked","posted":true,"at":"2026-11-26T15:05","checkin":"2026-11-26T15:05","stretch":5}
+{"who":"Yan","text":"Did u leave on time for once","posted":true,"at":"2026-11-26T17:48","checkin":"2026-11-26T17:48","stretch":5}
+{"who":"Tao","text":"no","posted":true,"at":"2026-11-26T17:50","checkin":"2026-11-26T17:50","stretch":5}
+{"who":"Tao","text":"2 more riders called in. 1 is coming back","posted":true,"at":"2026-11-26T17:50","checkin":"2026-11-26T17:50","stretch":5}
+{"who":"Yan","text":"So u have to stay 💀","posted":true,"at":"2026-11-26T17:52","checkin":"2026-11-26T17:52","stretch":5}
+{"who":"Tao","text":"yes","posted":true,"at":"2026-11-26T17:52","checkin":"2026-11-26T17:52","stretch":5}
+{"who":"Yan","text":"Ticket's done. 3 lines. PM says \"great, can we make it 5\"","posted":true,"at":"2026-11-26T18:30","checkin":"2026-11-26T18:30","stretch":5}
+{"who":"Tao","text":"ur going to be here till midnight","posted":true,"at":"2026-11-26T18:31","checkin":"2026-11-26T18:31","stretch":5}
+{"who":"Yan","text":"Not doing that 😭 I'm leaving at 7 and pretending I got a call","posted":true,"at":"2026-11-26T18:32","checkin":"2026-11-26T18:32","stretch":5}
+{"who":"Tao","text":"lol","posted":true,"at":"2026-11-26T18:33","checkin":"2026-11-26T18:33","stretch":5}
+{"who":"Tao","text":"new girl asked which road is which again. i told her the same thing","posted":true,"at":"2026-11-26T20:15","checkin":"2026-11-26T20:15","stretch":5}
+{"who":"Tao","text":"she said ok. then she asked again","posted":true,"at":"2026-11-26T20:15","checkin":"2026-11-26T20:15","stretch":5}
+{"who":"Yan","text":"Maybe she's testing u 😂","posted":true,"at":"2026-11-26T20:17","checkin":"2026-11-26T20:17","stretch":5}
+{"who":"Tao","text":"she's not that clever","posted":true,"at":"2026-11-26T20:18","checkin":"2026-11-26T20:18","stretch":5}
+{"who":"Yan","text":"Did u eat","posted":true,"at":"2026-11-26T20:40","checkin":"2026-11-26T20:40","stretch":5}
+{"who":"Tao","text":"home","posted":true,"at":"2026-11-26T21:12","checkin":"2026-11-26T21:12","stretch":5}
+{"who":"Yan","text":"Ate? 👀","posted":true,"at":"2026-11-26T21:13","checkin":"2026-11-26T21:13","stretch":5}
+{"who":"Tao","text":"not yet. will do it","posted":true,"at":"2026-11-26T21:20","checkin":"2026-11-26T21:20","stretch":5}
+{"who":"Yan","text":"Ur impossible 🙃 go eat something with actual vegetables","posted":true,"at":"2026-11-26T21:21","checkin":"2026-11-26T21:21","stretch":5}
+{"who":"Tao","text":"ok","posted":true,"at":"2026-11-26T21:21","checkin":"2026-11-26T21:21","stretch":5}
+{"who":"Tao","text":"[photo: bowl of rice, stir-fried greens, fried egg on top]","posted":true,"at":"2026-11-26T21:38","checkin":"2026-11-26T21:38","stretch":6}
+{"who":"Yan","text":"Thats a meal 👀","posted":true,"at":"2026-11-26T21:39","checkin":"2026-11-26T21:39","stretch":6}
+{"who":"Tao","text":"egg one","posted":true,"at":"2026-11-26T21:39","checkin":"2026-11-26T21:39","stretch":6}
+{"who":"Yan","text":"🥹 ok good. Sleep","posted":true,"at":"2026-11-26T21:40","checkin":"2026-11-26T21:40","stretch":6}
+{"who":"Tao","text":"ok","posted":true,"at":"2026-11-26T21:40","checkin":"2026-11-26T21:40","stretch":6}
+{"who":"Yan","text":"Morning 🫠 hub still on fire?","posted":true,"at":"2026-11-27T07:44","checkin":"2026-11-27T07:44","stretch":6}
+{"who":"Tao","text":"2 riders out today. new girl asked which road is which 3 times already","posted":true,"at":"2026-11-27T12:51","checkin":"2026-11-27T12:51","stretch":6}
+{"who":"Yan","text":"Ur counting again 😂","posted":true,"at":"2026-11-27T12:52","checkin":"2026-11-27T12:52","stretch":6}
+{"who":"Tao","text":"yes","posted":true,"at":"2026-11-27T12:52","checkin":"2026-11-27T12:52","stretch":6}
+{"who":"Yan","text":"Did u eat","posted":true,"at":"2026-11-27T12:58","checkin":"2026-11-27T12:58","stretch":6}
+{"who":"Tao","text":"not yet","posted":true,"at":"2026-11-27T13:06","checkin":"2026-11-27T13:06","stretch":6}
+{"who":"Yan","text":"Go eat 🍜","posted":true,"at":"2026-11-27T13:07","checkin":"2026-11-27T13:07","stretch":6}
+{"who":"Tao","text":"ok going","posted":true,"at":"2026-11-27T13:21","checkin":"2026-11-27T13:21","stretch":7}
+{"who":"Tao","text":"ate. the gate place again","posted":true,"at":"2026-11-27T13:52","checkin":"2026-11-27T13:52","stretch":7}
+{"who":"Yan","text":"The chili oil one? 😭","posted":true,"at":"2026-11-27T13:53","checkin":"2026-11-27T13:53","stretch":7}
+{"who":"Tao","text":"no. the other one. they were out","posted":true,"at":"2026-11-27T13:53","checkin":"2026-11-27T13:53","stretch":7}
+{"who":"Yan","text":"Ur lying 🙃","posted":true,"at":"2026-11-27T13:54","checkin":"2026-11-27T13:54","stretch":7}
+{"who":"Tao","text":"dont start","posted":true,"at":"2026-11-27T13:54","checkin":"2026-11-27T13:54","stretch":7}
+{"who":"Yan","text":"Dev just asked me to retest a bug that was closed LAST sprint 💀 said \"just to be safe\"","posted":true,"at":"2026-11-27T15:19","checkin":"2026-11-27T15:19","stretch":7}
+{"who":"Tao","text":"safe for who","posted":true,"at":"2026-11-27T15:21","checkin":"2026-11-27T15:21","stretch":7}
+{"who":"Yan","text":"Lol. Him probably 😂","posted":true,"at":"2026-11-27T15:21","checkin":"2026-11-27T15:21","stretch":7}
+{"who":"","react":"😂","to":107,"posted":false,"at":"2026-11-27T15:21"}
+{"who":"Tao","text":"new girl got lost on her route. came back 2 hrs late","posted":true,"at":"2026-11-27T15:22","checkin":"2026-11-27T15:22","stretch":7}
+{"who":"Yan","text":"Oh no. Is she ok?","posted":true,"at":"2026-11-27T15:23","checkin":"2026-11-27T15:23","stretch":7}
+{"who":"Tao","text":"yes. she said sorry 4 times","posted":true,"at":"2026-11-27T15:26","checkin":"2026-11-27T15:26","stretch":7}
+{"who":"Yan","text":"Ur being nice 🥹","posted":true,"at":"2026-11-27T15:27","checkin":"2026-11-27T15:27","stretch":7}
+{"who":"Tao","text":"no","posted":true,"at":"2026-11-27T15:27","checkin":"2026-11-27T15:27","stretch":7}
+{"who":"Yan","text":"Ok 😌","posted":true,"at":"2026-11-27T15:28","checkin":"2026-11-27T15:28","stretch":7}
+{"who":"Yan","text":"Leaving at 6 for once 🥳 going for hotpot with the team. The sad pot not the spicy one","posted":true,"at":"2026-11-27T17:58","checkin":"2026-11-27T17:58","stretch":7}
+{"who":"Tao","text":"nice","posted":true,"at":"2026-11-27T18:04","checkin":"2026-11-27T18:04","stretch":7}
+{"who":"Yan","text":"Did u leave on time 👀","posted":true,"at":"2026-11-27T18:04","checkin":"2026-11-27T18:04","stretch":7}
+{"who":"Tao","text":"no. still got 1 rider out","posted":true,"at":"2026-11-27T18:20","checkin":"2026-11-27T18:20","stretch":7}
+{"who":"Yan","text":"Ur always still there 😭","posted":true,"at":"2026-11-27T18:21","checkin":"2026-11-27T18:21","stretch":7}
+{"who":"Tao","text":"its fine","posted":true,"at":"2026-11-27T18:21","checkin":"2026-11-27T18:21","stretch":7}
+{"who":"Tao","text":"home","posted":true,"at":"2026-11-27T21:31","checkin":"2026-11-27T21:31","stretch":7}
+{"who":"Yan","text":"Did u eat? 👀","posted":true,"at":"2026-11-27T21:33","checkin":"2026-11-27T21:33","stretch":7}
+{"who":"Yan","text":"Hello??","posted":true,"at":"2026-11-27T22:05","checkin":"2026-11-27T22:05","stretch":7}
+{"who":"Tao","text":"sorry. ate the greens. sleeping now","posted":true,"at":"2026-11-27T22:41","checkin":"2026-11-27T22:41","stretch":7}
+{"who":"Yan","text":"Ur not allowed to sleep yet 😭 it's only 10","posted":true,"at":"2026-11-27T22:42","checkin":"2026-11-27T22:42","stretch":7}
+{"who":"Yan","text":"Night 🫠","posted":true,"at":"2026-11-27T23:14","checkin":"2026-11-27T23:14","stretch":7}

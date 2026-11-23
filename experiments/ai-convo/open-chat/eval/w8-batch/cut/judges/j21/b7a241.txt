@@ -1,0 +1,119 @@
+--- Sat 10:40, Helena
+Ok so for when we land, airport to the centre. Cheapest way and how long?
+
+--- Sat 10:40, Helena
+[link: Metro de Lisboa network map]
+
+--- Sat 10:43, Gonçalo
+I think the red line goes straight from the airport but I don't know the fare offhand. Don't trust me on the time either
+
+--- Sat 10:44, Helena
+Ok 🤷‍♀️ @claude cheapest way from Lisbon airport to the centre, and how long it takes
+
+--- Sat 10:45, Claude
+The metro is the cheapest option, and Gonçalo is right that the Red Line runs from the airport. One guide gives a single ticket as about €1.90, plus a one-off €0.50 for the reusable card. It says the ride to the centre takes roughly 20–30 minutes. Fares may have changed, so check before you go. Source: https://blog.wego.com/lisbon-airport-to-city-centre/
+
+--- Sat 10:47, Gonçalo
+Metro's fine. A taxi from the airport is a set fare into the centre, I think, but I don't know what it is now.
+
+--- Sat 10:48, Helena
+How much more tho
+
+--- Sat 10:49, Gonçalo
+No idea. Could be double. Worth checking if our bags are heavy though.
+
+--- Sat 10:51, Helena
+Ok metro then 🙂
+
+--- Sat 10:51, Helena
+We have 2 big suitcases tho
+
+--- Sat 10:58, Gonçalo
+Then we'll see what the platform's like. The red line has lifts at most stations I think, but I'd check that as well.
+
+--- Sat 13:14, Helena
+Ok I think we keep the two big ones. Don't want to be dragging stuff around with 2 small bags 🙃
+
+--- Sat 13:15, Helena
+Also do you still have the chargers in the blue bag or did you move them
+
+--- Sat 16:02, Gonçalo
+Blue bag, front pocket. I put them back after the last trip. The adapters are in there too.
+
+--- Sat 16:03, Gonçalo
+Sorry, I was on a call with the team until now. The deploy's going to slip to Monday. Fine, but annoying.
+
+--- Sat 16:20, Helena
+Oof. Did they say why
+
+--- Sat 16:24, Gonçalo
+Someone merged something Friday that broke login in staging. They're still on it. Not my part, thankfully.
+
+--- Sat 17:10, Helena
+My mum asked if we're free for lunch sunday. I said we'd check
+
+--- Sat 17:12, Helena
+@claude do the red line stations have lifts? Is the airport one step free?
+
+--- Sat 17:13, Claude
+I couldn't confirm this from a page I could open. Search snippets suggest Aeroporto has lifts and counts as step-free, but I couldn't check that or the lifts at the other Red Line stations. The same snippets mention lift breakdowns on the Red Line, so check Metro de Lisboa's site or app before you travel. With two big suitcases, it's worth having a backup plan.
+
+--- Sat 17:16, Gonçalo
+I'm fairly sure the airport one has lifts. The rest I'd have to check in the app.
+
+--- Sat 17:18, Helena
+Ok so backup is taxi 😅
+
+--- Sat 17:21, Gonçalo
+Probably. Depends how many stairs are between the platform and the exit.
+
+--- Sat 17:24, Helena
+Anyway lunch sunday. Your mum or mine lol
+
+--- Sat 17:31, Gonçalo
+Mine would be fine with me. Did yours say where?
+
+--- Sat 17:33, Helena
+Yes mine, she said the usual place at 1. Wants to see the kitchen renovation pics 🙄
+
+--- Sat 17:33, Gonçalo
+Ok. I can do 1. Can we be back by 4? If the deploy goes badly I might need to be on the laptop Monday morning anyway
+
+--- Sat 17:36, Helena
+We'll be back when we're back 😂 I'll tell her you're on call
+
+--- Sat 17:52, Gonçalo
+Not on call. Just annoyed.
+
+--- Sat 17:53, Helena
+Fair 🙃
+
+--- Sat 21:05, Helena
+Did you eat or should I make something
+
+--- Sat 21:09, Gonçalo
+Not yet. Whatever's easy
+
+--- Sat 21:10, Helena
+Eggs?
+
+--- Sat 21:10, Gonçalo
+Yes
+
+--- Sun 08:42, Gonçalo
+Morning. Did your mum say if we should bring anything
+
+--- Sun 09:15, Helena
+She said bring nothing and then she'll complain we didnt bring anything 🙄
+
+--- Sun 09:16, Helena
+[photo: kitchen tile samples on the counter]
+
+--- Sun 09:20, Gonçalo
+Those are the ones you picked? The grey
+
+--- Sun 09:21, Helena
+Yes grey. The other option was "greige" which is just beige 😒
+
+--- Sun 09:30, Gonçalo
+Looks good. Deploy's still Monday then

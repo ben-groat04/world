@@ -1,0 +1,224 @@
+--- Wed 07:30, Sipho
+who's doing the spreadsheet this season? still you sizwe?
+
+--- Wed 08:12, Sizwe
+Yes, still me unless someone wants it. I said in October I'd step back but nobody took it up.
+
+--- Wed 08:14, Sipho
+ok so still you 👍
+
+--- Wed 08:15, Sizwe
+Lynette says I have to hand it over by March so someone else learns the formulas.
+
+--- Wed 08:31, Lynette
+He says that every year.
+
+--- Wed 12:47, Naledi
+I can take a look if you want help Sizwe. I'm decent in Excel, not sure about the scoring formulas though
+
+--- Wed 13:05, Sizwe
+Thank you Naledi. Mostly it's the clean sheet bonus and the captain doubling. I'll send you the file tonight.
+
+--- Wed 13:06, Naledi
+👍
+
+--- Wed 17:22, Lwazi
+Anyone know if the trade window closes Friday or Sunday
+
+--- Wed 17:40, Sizwe
+Sunday at midnight. Check the rules tab.
+
+--- Wed 17:41, Lwazi
+Cheers
+
+--- Wed 19:58, Lwazi
+Chiefs game was rubbish 😤
+
+--- Wed 20:03, Sipho
+that 2nd half was painful 😂
+
+--- Wed 21:14, Naledi
+Did the file come through Sizwe? Nothing in my inbox yet
+
+--- Wed 21:20, Sizwe
+Sent to your email at 21:19. Let me know if the formulas break.
+
+--- Wed 21:26, Naledi
+Got it, thanks
+
+--- Thu 06:52, Sizwe
+Morning. Walked to the reservoir and back. Clean sheet bonus looked like it was double counting in row 40 on the old file, check it's fixed in the new one
+
+--- Thu 07:20, Sipho
+morning all. early session done, 6 clients 😅
+
+--- Thu 08:04, Naledi
+Formulas look ok on my end. Captain doubling fine. Clean sheet one I'm not sure about, the cell refs look different from last year's file
+
+--- Thu 08:10, Sizwe
+Different on purpose. Last year used column K for the defence list, moved it to M when we added the GK row. Should be right.
+
+--- Thu 08:11, Naledi
+ok will test it on last week's scores tonight
+
+--- Thu 09:45, Lwazi
+Anyone following the trade window. Thinking of moving Mokoena for a defender. Lynette what do you think
+
+--- Thu 10:30, Lynette
+Depends who. Send me the name and I'll tell you what I'd want back
+
+--- Thu 10:33, Lwazi
+Sibisi or whoever is cheaper, Pirates side
+
+--- Thu 10:34, Lynette
+Sibisi is out til at least the 10th. Check the physio notes before you pay for him
+
+--- Thu 10:40, Naledi
+Yes, hamstring. Not a big one but a few weeks
+
+--- Thu 10:52, Lwazi
+Ok scratch that. Cheers
+
+--- Thu 13:15, Lynette
+Lunch at my desk again. Sizwe what's the plan for tonight
+
+--- Thu 13:20, Sizwe
+Pick up bread from the Spar in Tokai on your way home. I'll do the chicken.
+
+--- Thu 15:02, Naledi
+One of my patients cancelled so I've got a free hour. Catching up on notes
+
+--- Thu 16:40, Sipho
+anyone know if the gym in Obs is closed Sat for the rugby
+
+--- Thu 16:58, Sizwe
+Not that I know. Club's open Sat mornings.
+
+--- Thu 17:05, Sipho
+cool
+
+--- Thu 18:30, Lwazi
+[photo: wiring diagram for a DB board in Durbanville]
+
+--- Thu 18:34, Sizwe
+Is the neutral bar earthed on the same bar? Looks like it from here
+
+--- Thu 18:41, Lwazi
+No it's on its own, I took the pic before I moved it. Wrong sorry
+
+--- Thu 18:42, Sizwe
+Good. Do not let the homeowner touch it
+
+--- Thu 20:15, Lynette
+Sizwe the chicken needs another 20 min
+
+--- Thu 20:16, Sizwe
+Yes dear
+
+--- Thu 21:03, Naledi
+Ran last week's scores through the new file. Totals match the league page except Mokoena's. Sizwe do you want the cell ref for that
+
+--- Thu 21:20, Sizwe
+Send it. Probably a bonus not applied. Lynette, didn't you have him on the bench in week 9?
+
+--- Thu 21:24, Lynette
+I did not. Ask Sipho, he's the one who changes his captain at 2am
+
+--- Thu 21:25, Lynette
+Joking. He's asleep, it's 9:25 on a Thursday
+
+--- Thu 21:31, Naledi
+Sent the cell ref to Sizwe. Going to bed with my book
+
+--- Thu 21:40, Sizwe
+Got it. Bonus was missing on his row. I'll fix it in the master and send it round tomorrow
+
+--- Fri 05:41, Sipho
+up. first client 6am 💪
+
+--- Fri 06:02, Lwazi
+Durbanville roof job first thing. Back by lunch
+
+--- Fri 06:50, Sizwe
+[link: league scoring file v2]
+
+--- Fri 06:52, Sizwe
+Row 40 fixed, Mokoena bonus is in the master now. Naledi can you check row 40 again against last week
+
+--- Fri 07:48, Naledi
+Checked. Row 40 fine now, Mokoena 74 matches the league page
+
+--- Fri 07:49, Sizwe
+Good
+
+--- Fri 08:20, Lynette
+Did you put the bins out
+
+--- Fri 08:22, Sizwe
+Yes
+
+--- Fri 09:10, Lwazi
+Anyone want Mokoena for Ndlovu + a bit of cash. Lynette?
+
+--- Fri 09:14, Naledi
+Ndlovu is on the injury list on the league page, marked doubtful
+
+--- Fri 09:15, Lwazi
+Saw that. Thought it was cleared
+
+--- Fri 09:21, Lynette
+Doubtful is doubtful. Not for Mokoena
+
+--- Fri 09:22, Lwazi
+👍
+
+--- Fri 12:48, Naledi
+Patient cancelled again. Lunch then notes
+
+--- Fri 13:30, Lynette
+Sizwe lineups lock at first kickoff Sat or Sun?
+
+--- Fri 13:34, Sizwe
+First kickoff of the gameweek. Rules tab, row 3
+
+--- Fri 13:35, Lynette
+Thanks 🙄
+
+--- Fri 14:02, Sizwe
+Off to the garden meeting in Tokai. Back around 5
+
+--- Fri 16:20, Lwazi
+Bellville job ran over. Bigger than I thought. Trade talk later
+
+--- Fri 17:40, Sipho
+anyone watching the bulls tonight 🏉
+
+--- Fri 17:52, Lwazi
+Braai and the news at 8 for me
+
+--- Fri 18:05, Sipho
+ok I'll just have the game on mute then
+
+--- Fri 19:05, Lynette
+Sizwe you're doing the spreadsheet tonight?
+
+--- Fri 19:12, Sizwe
+Not tonight. TV
+
+--- Fri 20:30, Naledi
+Ran the new file through all the formulas. Captain doubling and GK row both fine
+
+--- Fri 20:33, Sizwe
+Good. Will post it to the league page tomorrow
+
+--- Fri 21:44, Lwazi
+Bulls win 😂
+
+--- Fri 21:45, Sipho
+finally
+
+--- Fri 22:12, Lynette
+Lwazi you have until Sunday midnight for that trade. Don't leave it
+
+--- Fri 22:14, Lwazi
+Noted

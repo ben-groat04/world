@@ -1,0 +1,485 @@
+--- Wed 11:20, Dana
+[link: Riverside_DoorSched_rev_D.xlsx]
+
+--- Wed 11:20, Dana
+Rev D. Fixed the hardware group for 104-110 🙏
+
+--- Wed 11:23, Adam
+Pulling it into the model now
+
+--- Wed 11:23, Grace
+Is rev D the one w the fire ratings on the frames or just the leafs
+
+--- Wed 11:25, Dana
+Frames too. 20 min on the corridor ones
+
+--- Wed 11:31, Sean
+Do the shop sizes change for the 3' doors or same as rev C
+
+--- Wed 11:34, Dana
+Same. Only hardware changed on 104-110
+
+--- Wed 11:34, Sean
+Ok
+
+--- Wed 11:40, Diane
+Adam can you check the 201 corridor tags against the model before it goes to the consultant
+
+--- Wed 11:44, Adam
+On it. 201 looks off by one, hang on
+
+--- Wed 11:51, Adam
+Ok its the schedule not the model. Dana the tag on D-214 is still C
+
+--- Wed 11:58, Dana
+Ugh. Fixing. Rev E in a sec
+
+--- Wed 12:02, Grace
+Is it bad that I still have the tutorial open from last week lol
+
+--- Wed 12:04, Adam
+Not bad. Skip to part 4 the nested stuff is there
+
+--- Wed 12:05, Grace
+Oh thank god
+
+--- Wed 12:19, Dana
+[link: Riverside_DoorSched_rev_E.xlsx]
+
+--- Wed 12:19, Dana
+Rev E. D-214 fixed
+
+--- Wed 12:21, Adam
+Got it, syncing
+
+--- Wed 12:24, Peter
+Approved for the consultant set. Diane, send it when Adam confirms.
+
+--- Wed 12:31, Diane
+Will do
+
+--- Wed 12:33, Sean
+Shop's ordering the 3' ply tomorrow if anyone needs anything cut
+
+--- Wed 12:40, Adam
+Rev E synced, model's good to go
+
+--- Wed 12:41, Diane
+Sending now
+
+--- Wed 12:58, Grace
+Sean do you know if the oak veneer for the lobby model is still the one from last month or did they switch
+
+--- Wed 13:20, Sean
+Switched to the walnut-look. Same sheet size. Leftover oak is in the back rack if you want it for the stair
+
+--- Wed 13:22, Grace
+Ok thanks! 🙏
+
+--- Wed 13:45, Dana
+Adam did you get the stair nosing thing sorted or is that still open
+
+--- Wed 13:50, Adam
+Still open. Clash check came back with 14 on the stair core, working through them after lunch 😩
+
+--- Wed 13:52, Dana
+Ugh ok. Ping me if any are on the doors
+
+--- Wed 17:40, Peter
+Harlow wants Thursday, not Friday. Diane can you move it
+
+--- Wed 17:55, Diane
+Yes. I'll confirm with them first thing tomorrow
+
+--- Wed 18:30, Grace
+Anyone want to climb thurs after work. Gym has the new wall up
+
+--- Wed 18:34, Adam
+Cooking tonight, can't do thurs either 😅
+
+--- Wed 18:52, Sean
+Cant thurs, shop has the ply delivery first thing and im in early
+
+--- Wed 19:08, Grace
+Ok no worries. Dana ur still on for thurs?
+
+--- Wed 20:46, Dana
+Prob yes if we're out by 7:30. Dog needs his walk 🐶
+
+--- Wed 20:49, Grace
+Perfect. 6:30 then
+(👍 1)
+
+--- Wed 20:51, Dana
+Yep
+
+--- Thu 06:14, Diane
+Harlow confirmed, Thursday 2pm. Sending them the updated invite now
+
+--- Thu 06:38, Dana
+Dog walk then coffee. Adam is the stair clash still open or did you finish it last night
+
+--- Thu 07:21, Sean
+Ply truck's here early. Anyone need sheets cut before 9 say now
+
+--- Thu 07:26, Grace
+Ooh I might need the 3mm for the stair test. Can I come grab it at lunch
+
+--- Thu 07:30, Sean
+Lunch is fine
+
+--- Thu 07:48, Adam
+Got through most of it. Down to 9 from 14. 4 are on doors 😩
+
+--- Thu 07:49, Dana
+Which 4
+
+--- Thu 07:55, Adam
+[link: Clash_StairCore_Thu.pdf]
+
+--- Thu 07:58, Dana
+Ugh. 212 and 214 again. Rev E hardware is hitting the stair core wall. Will look after coffee
+
+--- Thu 08:02, Diane
+Dana you can take the door swings to Peter at the 9:30 if they're ready
+
+--- Thu 08:04, Dana
+Ok
+
+--- Thu 08:10, Grace
+Still on for tonight? 6:30? 🧗
+
+--- Thu 08:12, Dana
+Yep. Tell the gym I'm bringing my bad attitude
+
+--- Thu 08:19, Dana
+Coffee in hand. Looking at 212/214 now
+
+--- Thu 08:31, Adam
+Hardware on 212 is 3mm too deep for the stair wall. Could shift the strike or swap to the shallow one
+
+--- Thu 08:36, Dana
+Shallow one's in the catalogue right? Rev E still has the std
+
+--- Thu 08:37, Adam
+Yeah it's the one from the Mesa job. Want me to swap it in the model or are you doing the sched
+
+--- Thu 08:39, Dana
+You swap model, I'll do sched. Don't know if 214 needs the same
+
+--- Thu 08:41, Adam
+Ok
+
+--- Thu 09:12, Grace
+Sean can I still grab the 3mm at lunch or is the shop closed for the ply delivery
+
+--- Thu 09:15, Sean
+Ply's unloaded. Shop's open. Come by 12
+
+--- Thu 09:16, Grace
+Perfect thanks
+
+--- Thu 09:44, Dana
+[photo: door swing sketch, A3, pencil notes]
+
+--- Thu 09:44, Dana
+Peter's got these. Dont know how he reads my handwriting 🙃
+
+--- Thu 09:58, Peter
+Got them. 212 is fine if the strike moves. 214 needs a look with Dana before Diane sends
+
+--- Thu 10:03, Dana
+Ok. Adam's swapping the strike on 212 now. Will check 214 with him
+
+--- Thu 10:40, Adam
+212 swapped. Stair core clash is down to 2. Both on 214, door swing into the landing
+
+--- Thu 10:44, Dana
+Ugh 214. Try the shallow one there too and see
+
+--- Thu 11:15, Adam
+Doesn't clear it. 214 needs the swing reversed or a smaller leaf. Dana?
+
+--- Thu 11:20, Dana
+Peter said 214 has to stay swing into the room for fire egress. So smaller leaf. Checking 2'-8" with Diane first
+
+--- Thu 11:31, Diane
+2'-8" is fine if the fire rating holds. Run it past Peter before you rev
+
+--- Thu 11:33, Dana
+Ok
+
+--- Thu 11:40, Grace
+Going to grab the 3mm at 12 then lunch. Anyone want something from the deli
+
+--- Thu 11:41, Adam
+Nah I'm good. Bring back a pickle if they have the good ones 🥒
+
+--- Thu 12:08, Grace
+Got the 3mm. Sean says the walnut-look is in the back too if the stair needs it
+
+--- Thu 12:09, Sean
+Yeah
+
+--- Thu 12:15, Dana
+Rev F going out after lunch. 214 is 2'-8" swing into room. Adam sync the model when it's in
+
+--- Thu 12:17, Adam
+Will do
+
+--- Thu 13:52, Diane
+Harlow in 8 min. Dana you coming to the room
+
+--- Thu 13:52, Dana
+Coming. Rev F link in a sec
+
+--- Thu 13:53, Dana
+[link: Riverside_DoorSched_rev_F.xlsx]
+
+--- Thu 14:21, Diane
+Harlow want the tiles on the lobby plinth moved. Peter's in with them. Grace can you pull the elevations after
+
+--- Thu 14:24, Grace
+Yes! Just let me finish the stair detail first
+
+--- Thu 16:02, Peter
+Rev F approved for consultant. Diane send when Adam confirms
+
+--- Thu 16:04, Adam
+Confirming now. Stair clash is 0 on rev F. Model's good
+
+--- Thu 16:06, Diane
+Sending
+
+--- Thu 17:48, Grace
+Dana are we still on for 6:30 or is the meeting going long
+
+--- Thu 17:52, Dana
+Should be out by 6. Walking the dog then I'll come, maybe 7
+
+--- Thu 17:55, Grace
+Ok. I'll be there 🧗
+
+--- Thu 18:20, Adam
+Drink tmrw after work? Cooking tonight so not tonight
+
+--- Thu 18:27, Sean
+Fri works. Shop closes at 3 so after that
+
+--- Thu 18:29, Grace
+Im in! Dana r u still coming, 6:30 turned into 7 lol
+
+--- Thu 18:41, Dana
+Dog found half a burrito in the alley. Walk takes longer now 🙃
+
+--- Thu 18:41, Dana
+Leaving in 5. Start without me
+
+--- Thu 18:43, Grace
+Ok 🧗 saving you a rope
+
+--- Thu 18:44, Adam
+Fri could work. Where at
+
+--- Thu 18:46, Sean
+Ill bring the bike. The place on Roosevelt is fine
+
+--- Thu 18:47, Adam
+Ok 🍻 Dana?
+
+--- Thu 18:49, Grace
+Adam come too. Its happy hour til 6 but we'll be late anyway
+
+--- Thu 19:02, Dana
+Fri I'm out. Going to my sister's in Tucson for the weekend. Dog's coming 🐶
+
+--- Thu 19:03, Adam
+Ah ok. Next time
+
+--- Thu 19:31, Dana
+Just got here. Sorry 😩
+
+--- Thu 19:33, Grace
+All good. Im on the blue route, come up 🧗
+
+--- Thu 19:52, Adam
+[photo: pot of chili on the stove]
+
+--- Thu 19:53, Adam
+Doubled it cause my partner's roommate wants leftovers 😅
+
+--- Thu 20:14, Peter
+Harlow sent the plinth note. Diane has it. Grace, the elevations can wait until Monday.
+
+--- Thu 20:16, Grace
+Ok thanks Peter. Stair detail is nearly done
+
+--- Thu 20:38, Grace
+Dana the blue route is cursed
+
+--- Thu 20:40, Dana
+Just flash it. You've done it twice already 😂
+
+--- Thu 20:41, Grace
+Ok ok 🙃
+
+--- Thu 20:44, Dana
+Ok I got it. Hold my chalk
+
+--- Thu 20:46, Grace
+Did u get it
+
+--- Thu 20:51, Dana
+Almost 🙃 that hold is greasy
+
+--- Thu 20:58, Grace
+The greasy one is the best one tho
+
+--- Thu 21:03, Dana
+Maybe for you. Going home after this one. Dog's tired and so am I
+
+--- Thu 21:04, Grace
+Ok. Tell the dog hi
+
+--- Thu 21:09, Dana
+Will do. Leaving at 6 tmrw for Tucson so I'm out til monday
+
+--- Thu 21:10, Grace
+Have fun 🧗
+
+--- Thu 22:47, Grace
+Home. Forearms are done
+
+--- Thu 23:02, Grace
+Adam did u see Harlow's invite update, Diane said it went out
+
+--- Fri 05:14, Dana
+Up. Dog's already in the car 🐶
+
+--- Fri 05:38, Diane
+Safe drive, Dana. Monday 9:00 for the Harlow redlines
+
+--- Fri 05:41, Dana
+Ok. Will be back by then
+
+--- Fri 05:52, Dana
+On the road. Not touching my phone for 90 min 🙃
+
+--- Fri 07:06, Adam
+Roosevelt still on tonight? Dana's out so it's just us
+
+--- Fri 07:09, Grace
+Yes! 5pm?
+
+--- Fri 07:21, Sean
+Shop closes at 3, I'll ride over after. Could be 5:30
+
+--- Fri 07:22, Adam
+5:30 works. I'll grab a table
+
+--- Fri 08:03, Grace
+👍
+(👍 1)
+
+--- Fri 08:14, Adam
+Yeah it went out at 6. Only the time changed, rest is the same
+
+--- Fri 08:15, Grace
+Ok thanks. I thought I missed something
+
+--- Fri 08:40, Diane
+Dana, don't touch the Harlow redlines this weekend. Adam can you put the 212/214 notes into the markup for Monday
+
+--- Fri 08:52, Adam
+Ok. Will need Dana to read her own handwriting Monday 🙃
+
+--- Fri 09:03, Diane
+She'll be back Monday, she can answer questions then
+
+--- Fri 09:51, Dana
+Made it to Tucson. Dog already took the good spot on my sister's couch 🐶
+
+--- Fri 09:53, Adam
+Lol
+
+--- Fri 11:05, Grace
+[photo: stair nosing detail, pencil]
+
+--- Fri 11:06, Grace
+Peter can you look at the nosing before I ink it? Not sure about the riser
+
+--- Fri 11:40, Peter
+Riser dimension is wrong. Dimension it off the tread line, not the nosing. Otherwise right
+
+--- Fri 11:44, Grace
+Ok, fixing it now
+
+--- Fri 12:31, Adam
+Pickle in the fridge or did u forget
+
+--- Fri 12:40, Grace
+[photo: pickle in deli wrap]
+
+--- Fri 12:41, Grace
+Got the good one
+
+--- Fri 12:44, Adam
+🥒 legend
+(😂 1)
+
+--- Fri 15:02, Sean
+Shop closed. Ply came in 2 sheets short so tomorrow's cut is off
+
+--- Fri 15:04, Sean
+Bike's at the rack. Riding over after
+
+--- Fri 17:10, Adam
+Here. Got the table by the window
+
+--- Fri 17:14, Grace
+Omw, 15 min 🧗
+
+--- Fri 17:19, Sean
+Parking the bike, 5 min
+
+--- Fri 17:20, Adam
+Ordered the wings 🍗
+
+--- Fri 17:22, Grace
+Wait for me
+
+--- Fri 22:14, Grace
+Sean did u get home ok? Its dark out and no lights on ur bike lol
+
+--- Fri 22:31, Sean
+Home. Lights work, I just don't use them 🙃
+
+--- Fri 22:33, Grace
+Ok dad
+
+--- Fri 22:35, Adam
+Grace you need a ride or u good
+
+--- Fri 22:37, Grace
+Good! Walking, its like 10 min
+
+--- Fri 23:48, Adam
+Home. Chili round 2 tomorrow if anyone wants it
+
+--- Sat 09:40, Dana
+[photo: dog asleep on sister's couch]
+
+--- Sat 09:41, Dana
+He has claimed it officially
+
+--- Sat 09:43, Grace
+Lol he looks so happy
+
+--- Sat 10:12, Diane
+Adam, the 212/214 notes in the markup. Are they on the redline sheet or the schedule
+
+--- Sat 10:20, Adam
+Redline sheet. Schedule has the new 2'-8" leaf too. Printing for Monday
+
+--- Sat 10:21, Diane
+Good

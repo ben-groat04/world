@@ -1,0 +1,299 @@
+--- Sat 10:40, Helena
+Ok so for when we land, airport to the centre. Cheapest way and how long?
+
+--- Sat 10:40, Helena
+[link: Metro de Lisboa network map]
+
+--- Sat 10:43, Gonçalo
+I think the red line goes straight from the airport but I don't know the fare offhand. Don't trust me on the time either
+
+--- Sat 10:44, Helena
+Ok 🤷‍♀️ @claude cheapest way from Lisbon airport to the centre, and how long it takes
+
+--- Sat 10:45, Claude
+The metro is the cheapest option, and Gonçalo is right that the Red Line runs from the airport. One guide gives a single ticket as about €1.90, plus a one-off €0.50 for the reusable card. It says the ride to the centre takes roughly 20–30 minutes. Fares may have changed, so check before you go. Source: https://blog.wego.com/lisbon-airport-to-city-centre/
+
+--- Sat 10:47, Gonçalo
+Metro's fine. A taxi from the airport is a set fare into the centre, I think, but I don't know what it is now.
+
+--- Sat 10:48, Helena
+How much more tho
+
+--- Sat 10:49, Gonçalo
+No idea. Could be double. Worth checking if our bags are heavy though.
+
+--- Sat 10:51, Helena
+Ok metro then 🙂
+
+--- Sat 10:51, Helena
+We have 2 big suitcases tho
+
+--- Sat 10:58, Gonçalo
+Then we'll see what the platform's like. The red line has lifts at most stations I think, but I'd check that as well.
+
+--- Sat 13:14, Helena
+Ok I think we keep the two big ones. Don't want to be dragging stuff around with 2 small bags 🙃
+
+--- Sat 13:15, Helena
+Also do you still have the chargers in the blue bag or did you move them
+
+--- Sat 16:02, Gonçalo
+Blue bag, front pocket. I put them back after the last trip. The adapters are in there too.
+
+--- Sat 16:03, Gonçalo
+Sorry, I was on a call with the team until now. The deploy's going to slip to Monday. Fine, but annoying.
+
+--- Sat 16:20, Helena
+Oof. Did they say why
+
+--- Sat 16:24, Gonçalo
+Someone merged something Friday that broke login in staging. They're still on it. Not my part, thankfully.
+
+--- Sat 17:10, Helena
+My mum asked if we're free for lunch sunday. I said we'd check
+
+--- Sat 17:12, Helena
+@claude do the red line stations have lifts? Is the airport one step free?
+
+--- Sat 17:13, Claude
+I couldn't confirm this from a page I could open. Search snippets suggest Aeroporto has lifts and counts as step-free, but I couldn't check that or the lifts at the other Red Line stations. The same snippets mention lift breakdowns on the Red Line, so check Metro de Lisboa's site or app before you travel. With two big suitcases, it's worth having a backup plan.
+
+--- Sat 17:16, Gonçalo
+I'm fairly sure the airport one has lifts. The rest I'd have to check in the app.
+
+--- Sat 17:18, Helena
+Ok so backup is taxi 😅
+
+--- Sat 17:21, Gonçalo
+Probably. Depends how many stairs are between the platform and the exit.
+
+--- Sat 17:24, Helena
+Anyway lunch sunday. Your mum or mine lol
+
+--- Sat 17:31, Gonçalo
+Mine would be fine with me. Did yours say where?
+
+--- Sat 17:33, Helena
+Yes mine, she said the usual place at 1. Wants to see the kitchen renovation pics 🙄
+
+--- Sat 17:33, Gonçalo
+Ok. I can do 1. Can we be back by 4? If the deploy goes badly I might need to be on the laptop Monday morning anyway
+
+--- Sat 17:36, Helena
+We'll be back when we're back 😂 I'll tell her you're on call
+
+--- Sat 17:52, Gonçalo
+Not on call. Just annoyed.
+
+--- Sat 17:53, Helena
+Fair 🙃
+
+--- Sat 21:05, Helena
+Did you eat or should I make something
+
+--- Sat 21:09, Gonçalo
+Not yet. Whatever's easy
+
+--- Sat 21:10, Helena
+Eggs?
+
+--- Sat 21:10, Gonçalo
+Yes
+
+--- Sun 08:42, Gonçalo
+Morning. Did your mum say if we should bring anything
+
+--- Sun 09:15, Helena
+She said bring nothing and then she'll complain we didnt bring anything 🙄
+
+--- Sun 09:16, Helena
+[photo: kitchen tile samples on the counter]
+
+--- Sun 09:20, Gonçalo
+Those are the ones you picked? The grey
+
+--- Sun 09:21, Helena
+Yes grey. The other option was "greige" which is just beige 😒
+
+--- Sun 09:30, Gonçalo
+Looks good. Deploy's still Monday then
+
+--- Sun 09:33, Helena
+Thought it was slipping to monday
+
+--- Sun 09:35, Gonçalo
+It is Monday. They're running the full suite again. Login's fixed in staging, so that's something
+
+--- Sun 09:36, Helena
+Ok good
+
+--- Sun 11:52, Helena
+I'll check the metro app later for the lifts. Don't let me forget
+
+--- Sun 11:54, Gonçalo
+Ok
+
+--- Sun 14:37, Helena
+Home. She sent us home with leftover tart so we're not allowed to complain about lunch 🙃
+
+--- Sun 14:40, Gonçalo
+Good. Not telling her it was dry
+
+--- Sun 15:02, Helena
+Ok I'm going to nap on the sofa
+
+--- Sun 15:03, Gonçalo
+You'll sleep till 6
+
+--- Sun 15:03, Helena
+Wont
+
+--- Sun 21:18, Helena
+Metro app says the lift at the airport is "operational". Reading the rest now
+
+--- Sun 21:21, Helena
+One of the red line ones says lift out of service. Cant read the name, the screen's tiny
+
+--- Sun 21:22, Gonçalo
+Which line exactly. Send me a screenshot
+
+--- Sun 21:22, Helena
+Cant find where to screenshot in the app 🤷‍♀️
+
+--- Sun 21:30, Gonçalo
+Ok. I'll look on my phone when I'm done with the suite
+
+--- Sun 23:44, Gonçalo
+Suite's still red. Going to bed, I'll read it in the morning
+
+--- Mon 07:42, Helena
+Morning. Did you read the metro stuff
+
+--- Mon 08:14, Gonçalo
+Morning. Suite finished about an hour ago and it's green. Reading the app now
+
+--- Mon 08:15, Helena
+Ok 🙃 which lift is out? The name's still tiny
+
+--- Mon 08:33, Helena
+[photo: phone screen showing the metro app, a station list with one entry marked "lift out of service"]
+
+--- Mon 08:40, Gonçalo
+Can't read it either. It's the second one from the top I think. Zoom in
+
+--- Mon 08:52, Helena
+Zoomed. The word's cut off 🤷‍♀️ It starts with something like "Cam"
+
+--- Mon 08:53, Gonçalo
+Then it's not Aeroporto, that one's operational. Doesn't tell us if it's on our route though
+
+--- Mon 08:55, Helena
+Ok so the metro's still on. Backup taxi if the lift's the one we'd use
+
+--- Mon 08:56, Gonçalo
+Yes. I'll look at the station list on the website later, the app is hard to read on my phone too
+
+--- Mon 08:57, Helena
+Deal. Also the kitchen guy says Thurs now not Wed 🙄
+
+--- Mon 09:04, Gonçalo
+Ok. Does Thurs clash with anything
+
+--- Mon 09:06, Helena
+No. Just means I'm cancelling my Wed coffee with Inês
+
+--- Mon 09:07, Gonçalo
+Tell her I said sorry for the kitchen
+
+--- Mon 12:41, Helena
+Told Inês. She says she wants the coffee refunded in tart 😂
+
+--- Mon 12:44, Gonçalo
+Tell her I'll buy the coffee when we're back
+
+--- Mon 17:58, Gonçalo
+Station list is on the website now. Which one starts with "Cam"? There's a few on the list
+
+--- Mon 18:02, Helena
+Still at the desk, can't check. Ask claude 🙃
+
+--- Mon 18:03, Gonçalo
+@claude which Red Line station name starts with "Cam", and is the lift out of service there?
+
+--- Mon 18:04, Claude
+I couldn't confirm it. If you're on Lisbon's metro, no Red Line station starts with "Cam". The closest is Cabo Ruivo, so the cut-off word may be that, but I couldn't check its lift status. Campo Grande and Campo Pequeno are on other lines. The live equipment status on metrolisboa.pt should settle it.
+
+--- Mon 18:09, Helena
+Cabo Ruivo is the one by the river right? Near the cruise terminal
+
+--- Mon 18:11, Gonçalo
+I think so. Are you sure the name was Cabo Ruivo though? The screenshot cut it off
+
+--- Mon 18:12, Helena
+No. Could be anything starting with cam 🤷‍♀️
+
+--- Mon 18:14, Gonçalo
+I'll try the live status page. It's slow
+
+--- Mon 18:26, Gonçalo
+Status page won't load on my phone. Times out
+
+--- Mon 18:31, Gonçalo
+Still nothing on the laptop either. Might just be down
+
+--- Mon 18:32, Helena
+Ok. Backup taxi then. Do we know the set fare or not
+
+--- Mon 18:34, Gonçalo
+Don't know the number. We'll see on the day
+
+--- Mon 18:40, Helena
+Eggs again? 🙃
+
+--- Mon 18:41, Gonçalo
+Anything but eggs
+
+--- Mon 18:42, Helena
+Pasta then. Stop looking at the station list, you'll go blind
+
+--- Mon 18:43, Gonçalo
+Ok
+
+--- Mon 19:12, Helena
+Water's boiling. Coming or still staring at the map
+
+--- Mon 19:14, Gonçalo
+Coming
+
+--- Mon 19:58, Helena
+[photo: two plates of pasta on the table, one with the lid of a tin of tomatoes next to it]
+
+--- Mon 20:01, Gonçalo
+Looks better than eggs
+
+--- Mon 20:02, Helena
+Obviously 😂
+
+--- Mon 22:47, Gonçalo
+Status page still won't load. I'll check tomorrow from the office laptop
+
+--- Mon 23:19, Helena
+Ok. Don't stay up on it
+
+--- Mon 23:20, Helena
+Going to sleep
+
+--- Tue 00:08, Gonçalo
+Still not loading. Going to bed
+
+--- Tue 07:44, Helena
+Morning. Did it load
+
+--- Tue 08:21, Gonçalo
+No. I'll try from the office laptop when I'm in
+
+--- Tue 08:24, Helena
+Ok 🙃 so still metro?
+
+--- Tue 08:26, Gonçalo
+Still metro until we know otherwise

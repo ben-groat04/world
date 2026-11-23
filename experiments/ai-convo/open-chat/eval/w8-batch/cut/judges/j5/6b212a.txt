@@ -1,0 +1,119 @@
+--- Sun 23:44, Gonçalo
+Suite's still red. Going to bed, I'll read it in the morning
+
+--- Mon 07:42, Helena
+Morning. Did you read the metro stuff
+
+--- Mon 08:14, Gonçalo
+Morning. Suite finished about an hour ago and it's green. Reading the app now
+
+--- Mon 08:15, Helena
+Ok 🙃 which lift is out? The name's still tiny
+
+--- Mon 08:33, Helena
+[photo: phone screen showing the metro app, a station list with one entry marked "lift out of service"]
+
+--- Mon 08:40, Gonçalo
+Can't read it either. It's the second one from the top I think. Zoom in
+
+--- Mon 08:52, Helena
+Zoomed. The word's cut off 🤷‍♀️ It starts with something like "Cam"
+
+--- Mon 08:53, Gonçalo
+Then it's not Aeroporto, that one's operational. Doesn't tell us if it's on our route though
+
+--- Mon 08:55, Helena
+Ok so the metro's still on. Backup taxi if the lift's the one we'd use
+
+--- Mon 08:56, Gonçalo
+Yes. I'll look at the station list on the website later, the app is hard to read on my phone too
+
+--- Mon 08:57, Helena
+Deal. Also the kitchen guy says Thurs now not Wed 🙄
+
+--- Mon 09:04, Gonçalo
+Ok. Does Thurs clash with anything
+
+--- Mon 09:06, Helena
+No. Just means I'm cancelling my Wed coffee with Inês
+
+--- Mon 09:07, Gonçalo
+Tell her I said sorry for the kitchen
+
+--- Mon 12:41, Helena
+Told Inês. She says she wants the coffee refunded in tart 😂
+
+--- Mon 12:44, Gonçalo
+Tell her I'll buy the coffee when we're back
+
+--- Mon 17:58, Gonçalo
+Station list is on the website now. Which one starts with "Cam"? There's a few on the list
+
+--- Mon 18:02, Helena
+Still at the desk, can't check. Ask claude 🙃
+
+--- Mon 18:03, Gonçalo
+@claude which Red Line station name starts with "Cam", and is the lift out of service there?
+
+--- Mon 18:04, Claude
+I couldn't confirm it. If you're on Lisbon's metro, no Red Line station starts with "Cam". The closest is Cabo Ruivo, so the cut-off word may be that, but I couldn't check its lift status. Campo Grande and Campo Pequeno are on other lines. The live equipment status on metrolisboa.pt should settle it.
+
+--- Mon 18:09, Helena
+Cabo Ruivo is the one by the river right? Near the cruise terminal
+
+--- Mon 18:11, Gonçalo
+I think so. Are you sure the name was Cabo Ruivo though? The screenshot cut it off
+
+--- Mon 18:12, Helena
+No. Could be anything starting with cam 🤷‍♀️
+
+--- Mon 18:14, Gonçalo
+I'll try the live status page. It's slow
+
+--- Mon 18:26, Gonçalo
+Status page won't load on my phone. Times out
+
+--- Mon 18:31, Gonçalo
+Still nothing on the laptop either. Might just be down
+
+--- Mon 18:32, Helena
+Ok. Backup taxi then. Do we know the set fare or not
+
+--- Mon 18:34, Gonçalo
+Don't know the number. We'll see on the day
+
+--- Mon 18:40, Helena
+Eggs again? 🙃
+
+--- Mon 18:41, Gonçalo
+Anything but eggs
+
+--- Mon 18:42, Helena
+Pasta then. Stop looking at the station list, you'll go blind
+
+--- Mon 18:43, Gonçalo
+Ok
+
+--- Mon 19:12, Helena
+Water's boiling. Coming or still staring at the map
+
+--- Mon 19:14, Gonçalo
+Coming
+
+--- Mon 19:58, Helena
+[photo: two plates of pasta on the table, one with the lid of a tin of tomatoes next to it]
+
+--- Mon 20:01, Gonçalo
+Looks better than eggs
+
+--- Mon 20:02, Helena
+Obviously 😂
+
+--- Mon 22:47, Gonçalo
+Status page still won't load. I'll check tomorrow from the office laptop
+
+--- Mon 23:19, Helena
+Ok. Don't stay up on it
+
+--- Mon 23:20, Helena
+Going to sleep

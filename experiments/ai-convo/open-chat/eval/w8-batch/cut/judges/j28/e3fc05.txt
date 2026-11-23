@@ -1,0 +1,119 @@
+--- Fri 09:45, Claire
+[file: consultant contact list rev 11-27.pdf]
+
+--- Fri 09:46, Claire
+Structural and MEP are updated. Civil still has the old pm from before they changed firms, dont use that one
+
+--- Fri 09:52, Anika
+Is the new mech guy the one from the Allen job?
+
+--- Fri 09:54, Claire
+Yes
+
+--- Fri 10:03, Tyler
+🙏 ok updating the model title block too
+
+--- Fri 10:07, Lily
+is the fire protection person still on this list or did they drop out
+
+--- Fri 10:11, Claire
+Still on. He is slow to answer email, call him
+
+--- Fri 10:12, Lily
+ok
+
+--- Fri 11:30, Victor
+Civil guy changed firms? Which firm is he at now
+
+--- Fri 11:38, Claire
+Harrow & Pell. Same phone, new email on the sheet
+
+--- Fri 11:40, Victor
+Ok got it, pricing the civil scope off that
+
+--- Fri 13:15, Brian
+[photo: copier service invoice]
+
+--- Fri 13:16, Brian
+Is this the one claire wanted to hold
+
+--- Fri 13:40, Claire
+Hold it. I'll look monday
+
+--- Fri 14:02, Tyler
+😩 my workstation 3 keeps crashing when i open the mep linked file. anyone else
+
+--- Fri 14:04, Lily
+mine did yesterday. i restarted and it was fine
+
+--- Fri 14:09, Tyler
+it did not fix it for me 😭
+
+--- Fri 14:10, Brian
+I'll get it looked at monday, nobody is closing the office today
+
+--- Fri 16:48, Anika
+[photo: massing study for the library, cardboard and foam core]
+
+--- Fri 16:49, Anika
+📷 need to decide on the setbacks before I cut the second version
+
+--- Fri 16:52, Lily
+the one on the left looks like the setbacks are already there
+
+--- Fri 16:53, Anika
+Thats the first one. Ignore left
+
+--- Fri 17:20, Claire
+Send me the setback options monday morning. I want to see them before the tues call
+
+--- Fri 19:05, Tyler
+going to be in the model until late 💀 the mep file is still broken
+
+--- Fri 19:06, Tyler
+if anyone needs me im in the civil coordination view
+
+--- Fri 21:12, Lily
+anyone know if the 2nd floor plan stamp is needed on the set or only the cover
+
+--- Fri 21:40, Tyler
+only cover. sheet A-201 has its own stamp block
+
+--- Fri 21:41, Lily
+👍 ty
+
+--- Sat 00:14, Tyler
+the file finally opened 🎉 turns out the link path changed. fixed it
+
+--- Sat 00:15, Tyler
+sorry for the late messages im going to sleep now
+
+--- Sat 08:12, Tyler
+😴 back up. mep linked file opens for me now. path was the problem, if yours still crashes ping me
+
+--- Sat 08:41, Lily
+mine opens fine too. thanks ty 🙏
+
+--- Sat 09:30, Brian
+Field at Memorial is soaked. Game may move to 1pm, will confirm by 10
+
+--- Sat 09:33, Brian
+Copier tech can come Monday 8am if someone lets him in
+
+--- Sat 09:40, Claire
+I'll be in at 8. Don't need you there Brian
+
+--- Sat 10:15, Anika
+[photo: climbing wall, blue volumes with tape marks]
+
+--- Sat 10:16, Anika
+Arms are cooked 😅
+
+--- Sat 11:58, Claire
+[photo: bayou at Sabine, fog still on the water]
+
+--- Sat 12:40, Victor
+Back from golf. Anika the library second floor counts, do you have them yet or should I pull from Tyler's model
+
+--- Sat 12:47, Anika
+Tyler's model is current as of thurs, pull from that. I'll flag if I change anything before monday

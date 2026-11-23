@@ -1,0 +1,44 @@
+[
+ {
+  "label": "W8-Y11",
+  "people": 2,
+  "brief": "A couple planning a trip to Lisbon.",
+  "topic": "What is the cheapest way to get from Lisbon airport to the city centre, and how long does it take?",
+  "start": "2026-11-28T10:40"
+ },
+ {
+  "label": "W8-Y12",
+  "people": 2,
+  "brief": "A couple planning a trip to Lisbon.",
+  "topic": "What is the cheapest way to get from Lisbon airport to the city centre, and how long does it take?",
+  "start": "2026-11-26T15:05"
+ },
+ {
+  "label": "W8-Y13",
+  "people": 2,
+  "brief": "A couple planning a trip to Lisbon.",
+  "topic": "What is the cheapest way to get from Lisbon airport to the city centre, and how long does it take?",
+  "start": "2026-11-26T19:55"
+ },
+ {
+  "label": "W8-Y21",
+  "people": 4,
+  "brief": "Friends going to a football match.",
+  "topic": "What is the bag size limit at the Emirates Stadium?",
+  "start": "2026-11-27T19:50"
+ },
+ {
+  "label": "W8-Y22",
+  "people": 4,
+  "brief": "Friends going to a football match.",
+  "topic": "What is the bag size limit at the Emirates Stadium?",
+  "start": "2026-11-27T23:15"
+ },
+ {
+  "label": "W8-Y23",
+  "people": 4,
+  "brief": "Friends going to a football match.",
+  "topic": "What is the bag size limit at the Emirates Stadium?",
+  "start": "2026-11-28T15:50"
+ }
+]

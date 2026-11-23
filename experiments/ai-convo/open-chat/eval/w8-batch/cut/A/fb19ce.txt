@@ -1,0 +1,120 @@
+--- Wed 11:20, Dana
+[link: Riverside_DoorSched_rev_D.xlsx]
+
+--- Wed 11:20, Dana
+Rev D. Fixed the hardware group for 104-110 🙏
+
+--- Wed 11:23, Adam
+Pulling it into the model now
+
+--- Wed 11:23, Grace
+Is rev D the one w the fire ratings on the frames or just the leafs
+
+--- Wed 11:25, Dana
+Frames too. 20 min on the corridor ones
+
+--- Wed 11:31, Sean
+Do the shop sizes change for the 3' doors or same as rev C
+
+--- Wed 11:34, Dana
+Same. Only hardware changed on 104-110
+
+--- Wed 11:34, Sean
+Ok
+
+--- Wed 11:40, Diane
+Adam can you check the 201 corridor tags against the model before it goes to the consultant
+
+--- Wed 11:44, Adam
+On it. 201 looks off by one, hang on
+
+--- Wed 11:51, Adam
+Ok its the schedule not the model. Dana the tag on D-214 is still C
+
+--- Wed 11:58, Dana
+Ugh. Fixing. Rev E in a sec
+
+--- Wed 12:02, Grace
+Is it bad that I still have the tutorial open from last week lol
+
+--- Wed 12:04, Adam
+Not bad. Skip to part 4 the nested stuff is there
+
+--- Wed 12:05, Grace
+Oh thank god
+
+--- Wed 12:19, Dana
+[link: Riverside_DoorSched_rev_E.xlsx]
+
+--- Wed 12:19, Dana
+Rev E. D-214 fixed
+
+--- Wed 12:21, Adam
+Got it, syncing
+
+--- Wed 12:24, Peter
+Approved for the consultant set. Diane, send it when Adam confirms.
+
+--- Wed 12:31, Diane
+Will do
+
+--- Wed 12:33, Sean
+Shop's ordering the 3' ply tomorrow if anyone needs anything cut
+
+--- Wed 12:40, Adam
+Rev E synced, model's good to go
+
+--- Wed 12:41, Diane
+Sending now
+
+--- Wed 12:58, Grace
+Sean do you know if the oak veneer for the lobby model is still the one from last month or did they switch
+
+--- Wed 13:20, Sean
+Switched to the walnut-look. Same sheet size. Leftover oak is in the back rack if you want it for the stair
+
+--- Wed 13:22, Grace
+Ok thanks! 🙏
+
+--- Wed 13:45, Dana
+Adam did you get the stair nosing thing sorted or is that still open
+
+--- Wed 13:50, Adam
+Still open. Clash check came back with 14 on the stair core, working through them after lunch 😩
+
+--- Wed 13:52, Dana
+Ugh ok. Ping me if any are on the doors
+
+--- Wed 17:40, Peter
+Harlow wants Thursday, not Friday. Diane can you move it
+
+--- Wed 17:55, Diane
+Yes. I'll confirm with them first thing tomorrow
+
+--- Wed 18:30, Grace
+Anyone want to climb thurs after work. Gym has the new wall up
+
+--- Wed 18:34, Adam
+Cooking tonight, can't do thurs either 😅
+
+--- Wed 18:52, Sean
+Cant thurs, shop has the ply delivery first thing and im in early
+
+--- Wed 19:08, Grace
+Ok no worries. Dana ur still on for thurs?
+
+--- Wed 20:46, Dana
+Prob yes if we're out by 7:30. Dog needs his walk 🐶
+
+--- Wed 20:49, Grace
+Perfect. 6:30 then
+(👍 1)
+
+--- Wed 20:51, Dana
+Yep
+
+--- Thu 06:14, Diane
+Harlow confirmed, Thursday 2pm. Sending them the updated invite now
+
+--- Thu 06:38, Dana
+Dog walk then coffee. Adam is the stair clash still open or did you finish it last night

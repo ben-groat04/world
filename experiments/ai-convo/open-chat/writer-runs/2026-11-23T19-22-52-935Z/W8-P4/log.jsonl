@@ -1,0 +1,215 @@
+{"writer":"w8","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T16:55","complete":true,"rejects":2,"stretches":7,"quiet":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2578,"cache_read_input_tokens":0,"output_tokens":3129,"output_tokens_details":{"thinking_tokens":2010},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2578,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3129,"cache_read_input_tokens":0,"cache_creation_input_tokens":2578,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2578},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3727,"cache_read_input_tokens":0,"output_tokens":1763,"output_tokens_details":{"thinking_tokens":1416},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3727,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1763,"cache_read_input_tokens":0,"cache_creation_input_tokens":3727,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3727},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4074,"cache_read_input_tokens":0,"output_tokens":2109,"output_tokens_details":{"thinking_tokens":1814},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4074,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2109,"cache_read_input_tokens":0,"cache_creation_input_tokens":4074,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4074},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4370,"cache_read_input_tokens":0,"output_tokens":3188,"output_tokens_details":{"thinking_tokens":1766},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4370,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3188,"cache_read_input_tokens":0,"cache_creation_input_tokens":4370,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4370},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":5791,"cache_read_input_tokens":0,"output_tokens":5358,"output_tokens_details":{"thinking_tokens":4006},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5791,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5358,"cache_read_input_tokens":0,"cache_creation_input_tokens":5791,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5791},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":5791,"output_tokens":1796,"output_tokens_details":{"thinking_tokens":1173},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1796,"cache_read_input_tokens":5791,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":5791,"output_tokens":2338,"output_tokens_details":{"thinking_tokens":1452},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2338,"cache_read_input_tokens":5791,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":6676,"cache_read_input_tokens":0,"output_tokens":4460,"output_tokens_details":{"thinking_tokens":2888},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":6676,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4460,"cache_read_input_tokens":0,"cache_creation_input_tokens":6676,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":6676},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":8247,"cache_read_input_tokens":0,"output_tokens":3414,"output_tokens_details":{"thinking_tokens":2373},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":8247,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3414,"cache_read_input_tokens":0,"cache_creation_input_tokens":8247,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":8247},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":8247,"output_tokens":3145,"output_tokens_details":{"thinking_tokens":2556},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3145,"cache_read_input_tokens":8247,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Priya","Siddharth","Anjali","Manish","Kriti","Sunil"],"setting":"You are all in Bengaluru, India, messaging from your homes and workplaces here. Priya and Siddharth are the couple, Anjali and Kriti are Priya's friends from college, Manish is Siddharth's college friend, and Sunil is Siddharth's father.","openers":["Send a photo of the mehendi designs","Ask who has the spare phone charger","Share the link to the shared playlist","Remind everyone the dress code is ethnic formal"],"opener":"Send a photo of the mehendi designs","cast":{"Priya":{"who":"29, woman, the bride","work":"UX designer","knows":"You are the bride, and Siddharth is your fiancé of three years. Anjali is your maid of honour and closest friend since college. Kriti is your bridesmaid and a college friend you see often. Manish is Siddharth's best friend and the best man. Sunil is Siddharth's father, whom you have known since the engagement.","texts":"Priya texts in this chat a lot.","capitals":true,"lives":["Siddharth"],"ex":[]},"Siddharth":{"who":"30, man, the groom","work":"product manager","knows":"You are the groom, and Priya is your fiancée of three years. Manish is your college roommate and closest friend, and he is your best man. Anjali is Priya's closest friend and maid of honour, whom you know well from wedding planning. Kriti is Priya's college friend and bridesmaid, whom you have met often. Sunil is your father, whom you have known all your life.","texts":"Siddharth texts in this chat only now and again.","capitals":false,"lives":["Priya"],"ex":[]},"Anjali":{"who":"28, woman, the maid of honour","work":"schoolteacher","knows":"You are the maid of honour, and Priya is your best friend since college. Siddharth is Priya's fiancé, whom you have often seen at dinners. Kriti is your college friend and fellow bridesmaid. Manish is the best man, whom you know through Siddharth. Sunil is Siddharth's father, whom you have met a few times.","texts":"Anjali texts in this chat now and then.","capitals":true,"lives":["Kriti"],"ex":[]},"Manish":{"who":"31, man, the best man","work":"doctor","knows":"You are the best man, and Siddharth is your college roommate and closest friend. Priya is Siddharth's fiancée, whom you have known for years through him. Anjali is the maid of honour, whom you know from wedding planning. Kriti is the bridesmaid, whom you have met at group events. Sunil is Siddharth's father, whom you know from family gatherings.","texts":"Manish texts in this chat now and then.","capitals":true,"lives":[],"ex":[]},"Kriti":{"who":"27, woman, the bridesmaid","work":"research assistant","knows":"You are the bridesmaid, and Priya is your college friend. Siddharth is Priya's fiancé, whom you have met a few times. Anjali is your college friend and fellow member of the bridal party. Manish is the best man, whom you met at a pre-wedding dinner. Sunil is Siddharth's father, whom you have met at family events.","texts":"Kriti texts in this chat only now and again.","capitals":false,"lives":["Anjali"],"ex":[]},"Sunil":{"who":"58, man, the groom's father","work":"part-time consultant","knows":"You are the groom's father. Siddharth is your son, whom you have known all his life. Priya is your son's fiancée, whom you have known since the engagement. Anjali is the maid of honour, whom you know only through the wedding. Manish is your son's best friend and the best man, whom you have known for years. Kriti is the bridesmaid, whom you have met at wedding events.","texts":"Sunil texts in this chat only now and again.","capitals":true,"lives":[],"ex":[]}},"private_lines":{"Priya":"You work as a UX designer at a Bengaluru design studio, spending your days on user research and client reviews. You live in a flat in Indiranagar.","Siddharth":"You work as a product manager at a Bengaluru tech company, with days full of roadmap meetings and sprint reviews. You live in a flat in Indiranagar.","Anjali":"You teach Grade 7 at a school in Bengaluru, with days of lesson planning and marking. You share a flat in Jayanagar with Kriti.","Manish":"You work as a doctor at a Bengaluru hospital, with long shifts and a rota that changes each month. You live alone in a flat in Koramangala.","Kriti":"You work as a research assistant at a Bengaluru research institute, with lab work and data sessions most days. You share a flat in Jayanagar with Anjali.","Sunil":"You work part-time as a consultant for several Bengaluru firms, with a few client calls and meetings each week. You live alone in a house in Malleswaram."},"sleep":{"Priya":[23.5,7],"Siddharth":[23.75,7.25],"Anjali":[22.5,6],"Manish":[0.5,7.5],"Kriti":[0,8],"Sunil":[23,6.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":783,"cache_read_input_tokens":0,"output_tokens":1494,"output_tokens_details":{"thinking_tokens":993},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":783,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1494,"cache_read_input_tokens":0,"cache_creation_input_tokens":783,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":783},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1087,"cache_read_input_tokens":0,"output_tokens":4351,"output_tokens_details":{"thinking_tokens":2884},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1087,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4351,"cache_read_input_tokens":0,"cache_creation_input_tokens":1087,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1087},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bengaluru, India","castMs":27400,"situation":"Wedding party group chat.","topic":null}
+{"who":"Priya","text":"[photo: mehendi design sheets, three pages]","posted":true,"at":"2026-11-27T16:55","checkin":"2026-11-27T16:55"}
+{"who":"Priya","text":"The left one is the one the aunty wants. I want the middle. Anjali be honest","posted":true,"at":"2026-11-27T16:55","checkin":"2026-11-27T16:55"}
+{"who":"Anjali","text":"Middle. The left one looks like wallpaper","posted":true,"at":"2026-11-27T17:02","checkin":"2026-11-27T17:02"}
+{"who":"","react":"👍","to":2,"posted":false,"at":"2026-11-27T17:02"}
+{"who":"Anjali","text":"Also the bottom right is too much for the palm","posted":true,"at":"2026-11-27T17:02","checkin":"2026-11-27T17:02"}
+{"who":"Kriti","text":"middle. but the artist will do what she wants anyway","posted":true,"at":"2026-11-27T17:09","checkin":"2026-11-27T17:09"}
+{"who":"Priya","text":"She's booked for haldi so I can't push her much","posted":true,"at":"2026-11-27T17:11","checkin":"2026-11-27T17:11"}
+{"who":"Priya","text":"[photo: test patch on my wrist from sunday]","posted":true,"at":"2026-11-27T17:14","checkin":"2026-11-27T17:14"}
+{"who":"Kriti","text":"the lines are so clean. is that the same artist","posted":true,"at":"2026-11-27T17:15","checkin":"2026-11-27T17:15"}
+{"who":"Priya","text":"Yes. It lasted nine days","posted":true,"at":"2026-11-27T17:15","checkin":"2026-11-27T17:15"}
+{"who":"Manish","text":"Middle one is good. Don't go with the peacock, it's already on the invites","posted":true,"at":"2026-11-27T17:21","checkin":"2026-11-27T17:21"}
+{"who":"Priya","text":"The peacock is on the invites not the hands manish","posted":true,"at":"2026-11-27T17:24","checkin":"2026-11-27T17:24"}
+{"who":"Manish","text":"Ok fair","posted":true,"at":"2026-11-27T17:24","checkin":"2026-11-27T17:24"}
+{"who":"Anjali","text":"Did you tell her about the bangles","posted":true,"at":"2026-11-27T17:40","checkin":"2026-11-27T17:40"}
+{"who":"Priya","text":"She'll leave the wrist clear. I'll wear the chooda over it","posted":true,"at":"2026-11-27T17:41","checkin":"2026-11-27T17:41"}
+{"who":"Kriti","text":"in the lab since 2. one of the controls is off again and nobody will say why","posted":true,"at":"2026-11-27T17:55","checkin":"2026-11-27T17:55"}
+{"who":"Anjali","text":"Rip. Marking 60 essays on the monsoon and I'm on number 23","posted":true,"at":"2026-11-27T18:03","checkin":"2026-11-27T18:03"}
+{"who":"Anjali","text":"A 7B kid wrote \"the river was angry like my dad\" and I'm just sitting with that","posted":true,"at":"2026-11-27T18:04","checkin":"2026-11-27T18:04"}
+{"who":"Priya","text":"Lol. Keep it","posted":true,"at":"2026-11-27T18:10","checkin":"2026-11-27T18:10"}
+{"who":"","react":"😂","to":17,"posted":false,"at":"2026-11-27T18:10"}
+{"who":"","react":"😂","to":17,"posted":false,"at":"2026-11-27T18:10"}
+{"who":"Sunil","text":"Looks nice. Whichever you pick is fine with us.","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Priya","text":"Thank you uncle. Middle probably","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Priya","text":"I'll confirm with the artist tomorrow morning","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Siddharth","text":"the peacock is cool","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Priya","text":"You haven't seen any of them","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Siddharth","text":"i saw the one on the invite","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Manish","text":"He's right about the invite","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Kriti","text":"anjali are you still marking","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Anjali","text":"Yes. 31 left. Eating dal rice out of the steel tiffin on my bed","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Anjali","text":"Don't ask me to do the seating chart tonight","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Kriti","text":"wasn't going to. i'm fried","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Kriti","text":"the institute ran out of the good pipette tips again","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Manish","text":"Just out of a 14 hour shift, not reading properly. What's the middle one","posted":true,"at":"2026-11-27T19:58","checkin":"2026-11-27T19:58"}
+{"who":"Priya","text":"[photo: middle design, close-up]","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Priya","text":"Paisley vines and small dots on the knuckles","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Manish","text":"Looks good. The knuckle dots are a lot but fine","posted":true,"at":"2026-11-27T20:09","checkin":"2026-11-27T20:09"}
+{"who":"Priya","text":"You are not allowed to have opinions on hands","posted":true,"at":"2026-11-27T20:09","checkin":"2026-11-27T20:09"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-11-27T20:09"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-11-27T20:09"}
+{"who":"Manish","text":"Understood","posted":true,"at":"2026-11-27T20:10","checkin":"2026-11-27T20:10"}
+{"who":"Anjali","text":"Done. 60 essays. One kid wrote the monsoon was \"a sad auntie who forgot her umbrella\" so he's getting full marks","posted":true,"at":"2026-11-27T21:14","checkin":"2026-11-27T21:14"}
+{"who":"Priya","text":"Lol","posted":true,"at":"2026-11-27T21:16","checkin":"2026-11-27T21:16"}
+{"who":"Priya","text":"The artist hasn't replied. I'll message at 8","posted":true,"at":"2026-11-27T21:31","checkin":"2026-11-27T21:31"}
+{"who":"Manish","text":"Just got home. Did anyone decide","posted":true,"at":"2026-11-27T21:40","checkin":"2026-11-27T21:40"}
+{"who":"Priya","text":"Middle. Artist confirms tomorrow","posted":true,"at":"2026-11-27T21:44","checkin":"2026-11-27T21:44"}
+{"who":"","react":"👍","to":40,"posted":false,"at":"2026-11-27T21:44"}
+{"who":"","react":"👍","to":40,"posted":false,"at":"2026-11-27T21:44"}
+{"who":"Priya","text":"Manish you get a veto on the palm and nothing else","posted":true,"at":"2026-11-27T21:44","checkin":"2026-11-27T21:44"}
+{"who":"Manish","text":"Fair","posted":true,"at":"2026-11-27T21:46","checkin":"2026-11-27T21:46"}
+{"who":"Siddharth","text":"middle is fine. peacock still cool","posted":true,"at":"2026-11-27T22:12","checkin":"2026-11-27T22:12"}
+{"who":"Priya","text":"Go to sleep","posted":true,"at":"2026-11-27T22:12","checkin":"2026-11-27T22:12"}
+{"who":"Anjali","text":"I can do the seating chart now if anyone's up","posted":true,"at":"2026-11-27T22:50","checkin":"2026-11-27T22:50"}
+{"who":"Sunil","text":"Siddharth, call me when you're free tomorrow. About the mandap.","posted":true,"at":"2026-11-27T22:58","checkin":"2026-11-27T22:58"}
+{"who":"Manish","text":"Anjali go to sleep. The chart can wait till morning","posted":true,"at":"2026-11-27T23:04","checkin":"2026-11-27T23:04"}
+{"who":"Anjali","text":"Can't, the monsoon kid is in my head","posted":true,"at":"2026-11-27T23:09","checkin":"2026-11-27T23:09"}
+{"who":"Kriti","text":"you should sleep. i'm about to crash","posted":true,"at":"2026-11-27T23:10","checkin":"2026-11-27T23:10"}
+{"who":"Priya","text":"Siddharth did you see uncle's msg","posted":true,"at":"2026-11-27T23:14","checkin":"2026-11-27T23:14"}
+{"who":"Siddharth","text":"yeah. will call him tmrw","posted":true,"at":"2026-11-27T23:31","checkin":"2026-11-27T23:31"}
+{"who":"Priya","text":"Ok. Artist is at 10 so don't forget","posted":true,"at":"2026-11-27T23:31","checkin":"2026-11-27T23:31"}
+{"who":"Anjali","text":"Up. Chart is not happening before tea","posted":true,"at":"2026-11-28T06:21","checkin":"2026-11-28T06:21"}
+{"who":"","react":"👍","to":53,"posted":false,"at":"2026-11-28T06:21"}
+{"who":"Priya","text":"Tea first. Then uncle","posted":true,"at":"2026-11-28T07:40","checkin":"2026-11-28T07:40"}
+{"who":"Kriti","text":"did the artist confirm","posted":true,"at":"2026-11-28T08:04","checkin":"2026-11-28T08:04"}
+{"who":"Priya","text":"Not yet. I'll message at 9","posted":true,"at":"2026-11-28T08:06","checkin":"2026-11-28T08:06"}
+{"who":"Priya","text":"Artist confirmed. Middle, knuckle dots and all","posted":true,"at":"2026-11-28T09:02","checkin":"2026-11-28T09:02"}
+{"who":"Priya","text":"She can do it Thursday before haldi if we send a sketch by Tuesday","posted":true,"at":"2026-11-28T09:02","checkin":"2026-11-28T09:02"}
+{"who":"Anjali","text":"Good. Thank god","posted":true,"at":"2026-11-28T09:05","checkin":"2026-11-28T09:05"}
+{"who":"","react":"👍","to":59,"posted":false,"at":"2026-11-28T09:05"}
+{"who":"Kriti","text":"i'm at the institute till 1 on a saturday. the pipette thing again","posted":true,"at":"2026-11-28T09:11","checkin":"2026-11-28T09:11"}
+{"who":"Manish","text":"Was that the second or third time this week","posted":true,"at":"2026-11-28T09:12","checkin":"2026-11-28T09:12"}
+{"who":"Kriti","text":"third","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Siddharth","text":"uncle wants to see the mandap frame. the guy in malleswaram","posted":true,"at":"2026-11-28T09:30","checkin":"2026-11-28T09:30"}
+{"who":"Priya","text":"Today?","posted":true,"at":"2026-11-28T09:31","checkin":"2026-11-28T09:31"}
+{"who":"Siddharth","text":"monday. he says the owner is only free after 6","posted":true,"at":"2026-11-28T09:33","checkin":"2026-11-28T09:33"}
+{"who":"Anjali","text":"Monday is a school day for me. Can't come","posted":true,"at":"2026-11-28T09:41","checkin":"2026-11-28T09:41"}
+{"who":"Priya","text":"Nobody's asking you to come","posted":true,"at":"2026-11-28T09:44","checkin":"2026-11-28T09:44"}
+{"who":"Sunil","text":"Monday 6:30 at the site works for me. Siddharth, you coming?","posted":true,"at":"2026-11-28T10:12","checkin":"2026-11-28T10:12"}
+{"who":"Siddharth","text":"yeah","posted":true,"at":"2026-11-28T10:20","checkin":"2026-11-28T10:20"}
+{"who":"Kriti","text":"out. rickshaw from the institute to the metro. driver wanted to talk about cricket the whole way","posted":true,"at":"2026-11-28T13:05","checkin":"2026-11-28T13:05"}
+{"who":"Manish","text":"Cricket is a safe topic","posted":true,"at":"2026-11-28T13:06","checkin":"2026-11-28T13:06"}
+{"who":"Kriti","text":"he kept asking if I was a teacher","posted":true,"at":"2026-11-28T13:06","checkin":"2026-11-28T13:06"}
+{"who":"Anjali","text":"You look like one","posted":true,"at":"2026-11-28T13:09","checkin":"2026-11-28T13:09"}
+{"who":"Kriti","text":"rude","posted":true,"at":"2026-11-28T13:10","checkin":"2026-11-28T13:10"}
+{"who":"Manish","text":"Just woke up. On tonight so this is my day","posted":true,"at":"2026-11-28T15:47","checkin":"2026-11-28T15:47"}
+{"who":"Manish","text":"Did anyone sort the seating chart","posted":true,"at":"2026-11-28T15:48","checkin":"2026-11-28T15:48"}
+{"who":"Anjali","text":"No. Priya needs to send the cousins list first","posted":true,"at":"2026-11-28T15:55","checkin":"2026-11-28T15:55"}
+{"who":"Priya","text":"[photo: handwritten list, two pages]","posted":true,"at":"2026-11-28T16:20","checkin":"2026-11-28T16:20"}
+{"who":"Priya","text":"Aunty added four more since Thursday","posted":true,"at":"2026-11-28T16:21","checkin":"2026-11-28T16:21"}
+{"who":"Anjali","text":"Who is R","posted":true,"at":"2026-11-28T16:22","checkin":"2026-11-28T16:22"}
+{"who":"Priya","text":"The cousin from Pune who's bringing someone she hasn't told us about","posted":true,"at":"2026-11-28T16:23","checkin":"2026-11-28T16:23"}
+{"who":"Anjali","text":"Of course","posted":true,"at":"2026-11-28T16:23","checkin":"2026-11-28T16:23"}
+{"who":"Kriti","text":"can we put R at the back table with the cousins who are also bringing someone","posted":true,"at":"2026-11-28T16:30","checkin":"2026-11-28T16:30"}
+{"who":"Priya","text":"Yes. That's the plan","posted":true,"at":"2026-11-28T16:31","checkin":"2026-11-28T16:31"}
+{"who":"Sunil","text":"Spoke to the mandap guy. He says the frame will be ready by the 10th. Siddharth, bring the measurements from the hall","posted":true,"at":"2026-11-28T17:44","checkin":"2026-11-28T17:44"}
+{"who":"Siddharth","text":"will do","posted":true,"at":"2026-11-28T17:46","checkin":"2026-11-28T17:46"}
+{"who":"Priya","text":"Chart tonight? Anjali you said you'd try","posted":true,"at":"2026-11-28T19:02","checkin":"2026-11-28T19:02"}
+{"who":"Anjali","text":"Trying. Dal rice first","posted":true,"at":"2026-11-28T19:05","checkin":"2026-11-28T19:05"}
+{"who":"Anjali","text":"Also the monsoon essay kid has a sister in 5B and she wrote about the same river","posted":true,"at":"2026-11-28T19:06","checkin":"2026-11-28T19:06"}
+{"who":"Kriti","text":"are they doing the same class project??","posted":true,"at":"2026-11-28T19:07","checkin":"2026-11-28T19:07"}
+{"who":"Anjali","text":"No idea. I'm not going to ask","posted":true,"at":"2026-11-28T19:08","checkin":"2026-11-28T19:08"}
+{"who":"Siddharth","text":"priya can we talk about the mandap budget tomorrow. i got a number from uncle's guy and it's higher than we said","posted":true,"at":"2026-11-28T20:30","checkin":"2026-11-28T20:30"}
+{"who":"Priya","text":"Tomorrow yes. Don't do the math tonight","posted":true,"at":"2026-11-28T20:33","checkin":"2026-11-28T20:33"}
+{"who":"Siddharth","text":"ok","posted":true,"at":"2026-11-28T20:35","checkin":"2026-11-28T20:35"}
+{"who":"Anjali","text":"Chart is 70% done. Table 9 is cursed","posted":true,"at":"2026-11-28T22:48","checkin":"2026-11-28T22:48"}
+{"who":"Kriti","text":"who's at table 9","posted":true,"at":"2026-11-28T22:49","checkin":"2026-11-28T22:49"}
+{"who":"Anjali","text":"R and the cousin who's bringing someone","posted":true,"at":"2026-11-28T22:50","checkin":"2026-11-28T22:50"}
+{"who":"Kriti","text":"so they're together","posted":true,"at":"2026-11-28T22:51","checkin":"2026-11-28T22:51"}
+{"who":"Anjali","text":"Yes. I'm not sorry","posted":true,"at":"2026-11-28T22:51","checkin":"2026-11-28T22:51"}
+{"who":"Priya","text":"Go to sleep both of you","posted":true,"at":"2026-11-28T23:04","checkin":"2026-11-28T23:04"}
+{"who":"Kriti","text":"going. night","posted":true,"at":"2026-11-28T23:10","checkin":"2026-11-28T23:10"}
+{"who":"Manish","text":"Break. Found a biscuit packet in the staff room from 2019. Ate one. Nothing happened","posted":true,"at":"2026-11-29T00:38","checkin":"2026-11-29T00:38"}
+{"who":"Priya","text":"That's not a recommendation","posted":true,"at":"2026-11-29T00:39","checkin":"2026-11-29T00:39"}
+{"who":"Manish","text":"It's not a warning either","posted":true,"at":"2026-11-29T00:41","checkin":"2026-11-29T00:41"}
+{"who":"Manish","text":"Quiet ward. Two patients asleep, one telling me about his cricket team in his sleep","posted":true,"at":"2026-11-29T01:52","checkin":"2026-11-29T01:52"}
+{"who":"Manish","text":"Going back in","posted":true,"at":"2026-11-29T01:53","checkin":"2026-11-29T01:53"}
+{"who":"Anjali","text":"Up. Chart at 90%. Table 9 now has its own page","posted":true,"at":"2026-11-29T06:14","checkin":"2026-11-29T06:14"}
+{"who":"Anjali","text":"R and the someone are at 11 with the aunties. Table 9 is just the cousin from Ooty and her two sons, who have asked for the door seat","posted":true,"at":"2026-11-29T06:15","checkin":"2026-11-29T06:15"}
+{"who":"Priya","text":"You're up at 6 on a Sunday. Send me the pdf before I'm awake enough to argue","posted":true,"at":"2026-11-29T07:04","checkin":"2026-11-29T07:04"}
+{"who":"Siddharth","text":"morning. calling uncle now","posted":true,"at":"2026-11-29T07:20","checkin":"2026-11-29T07:20"}
+{"who":"Sunil","text":"Siddharth, the hall measurements in writing please. The mandap man wants them on paper, not from memory","posted":true,"at":"2026-11-29T07:31","checkin":"2026-11-29T07:31"}
+{"who":"Siddharth","text":"will send in 10","posted":true,"at":"2026-11-29T07:33","checkin":"2026-11-29T07:33"}
+{"who":"Kriti","text":"up. no lab today, but procurement emailed me at 7am to say the pipette tips are \"in transit\"","posted":true,"at":"2026-11-29T08:10","checkin":"2026-11-29T08:10"}
+{"who":"Kriti","text":"they've been in transit since october","posted":true,"at":"2026-11-29T08:11","checkin":"2026-11-29T08:11"}
+{"who":"Manish","text":"Tell them the tips are a clinical matter","posted":true,"at":"2026-11-29T08:12","checkin":"2026-11-29T08:12"}
+{"who":"Kriti","text":"lol they'd just ask for a form","posted":true,"at":"2026-11-29T08:12","checkin":"2026-11-29T08:12"}
+{"who":"Priya","text":"Siddharth, the budget. Let's do it after breakfast, not on here","posted":true,"at":"2026-11-29T09:02","checkin":"2026-11-29T09:02"}
+{"who":"Siddharth","text":"ok","posted":true,"at":"2026-11-29T09:10","checkin":"2026-11-29T09:10"}
+{"who":"Priya","text":"Also I'm not doing the math on a phone","posted":true,"at":"2026-11-29T09:10","checkin":"2026-11-29T09:10"}
+{"who":"Siddharth","text":"ok","posted":true,"at":"2026-11-29T09:14","checkin":"2026-11-29T09:14"}
+{"who":"Anjali","text":"[file: seating chart v7.pdf]","posted":true,"at":"2026-11-29T10:31","checkin":"2026-11-29T10:31"}
+{"who":"Anjali","text":"Final. Don't ask about v1 to v6","posted":true,"at":"2026-11-29T10:31","checkin":"2026-11-29T10:31"}
+{"who":"Priya","text":"Why is there a v7 when you said this was the final","posted":true,"at":"2026-11-29T10:36","checkin":"2026-11-29T10:36"}
+{"who":"Anjali","text":"V1 to v6 were in my head and I needed to get them out","posted":true,"at":"2026-11-29T10:38","checkin":"2026-11-29T10:38"}
+{"who":"Kriti","text":"is table 9 at the back","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Anjali","text":"Table 9 is by the exit with the Ooty cousin and her two sons. They asked for the door seat. I said yes","posted":true,"at":"2026-11-29T10:41","checkin":"2026-11-29T10:41"}
+{"who":"Anjali","text":"R is at 11 with the someone. I'm not sorry","posted":true,"at":"2026-11-29T10:41","checkin":"2026-11-29T10:41"}
+{"who":"Priya","text":"Ok. Forwarding to the aunty","posted":true,"at":"2026-11-29T10:44","checkin":"2026-11-29T10:44"}
+{"who":"Priya","text":"She's going to ask why table 11 has a plus one on the card and nobody can say why","posted":true,"at":"2026-11-29T10:44","checkin":"2026-11-29T10:44"}
+{"who":"Manish","text":"Tell her it's a clerical error and let her fix it herself","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Siddharth","text":"[photo: hall measurements, handwritten]","posted":true,"at":"2026-11-29T11:02","checkin":"2026-11-29T11:02"}
+{"who":"Siddharth","text":"sending to uncle too","posted":true,"at":"2026-11-29T11:03","checkin":"2026-11-29T11:03"}
+{"who":"Priya","text":"Aunty wants the table 11 card to say only R, not the someone","posted":true,"at":"2026-11-29T11:20","checkin":"2026-11-29T11:20"}
+{"who":"Priya","text":"I said we can't stop her from writing whatever she likes on a card","posted":true,"at":"2026-11-29T11:21","checkin":"2026-11-29T11:21"}
+{"who":"Anjali","text":"Tell her plus ones get cards","posted":true,"at":"2026-11-29T11:24","checkin":"2026-11-29T11:24"}
+{"who":"Anjali","text":"Also I'm going back to bed","posted":true,"at":"2026-11-29T11:24","checkin":"2026-11-29T11:24"}
+{"who":"Kriti","text":"does the mehendi artist do the back of the hand or just palm. aunty is asking about my hands and it feels wrong","posted":true,"at":"2026-11-29T11:40","checkin":"2026-11-29T11:40"}
+{"who":"Priya","text":"Back and palm for the bride. Bridesmaids get palm only, artist said so yesterday","posted":true,"at":"2026-11-29T11:44","checkin":"2026-11-29T11:44"}
+{"who":"Kriti","text":"good. i don't want knuckle dots","posted":true,"at":"2026-11-29T11:45","checkin":"2026-11-29T11:45"}
+{"who":"Manish","text":"Knuckle dots are a lot","posted":true,"at":"2026-11-29T11:45","checkin":"2026-11-29T11:45"}
+{"who":"Priya","text":"Manish","posted":true,"at":"2026-11-29T11:46","checkin":"2026-11-29T11:46"}
+{"who":"Manish","text":"Nothing","posted":true,"at":"2026-11-29T11:46","checkin":"2026-11-29T11:46"}
+{"who":"Sunil","text":"Got the sheet. Good. Did you speak to Priya about the number","posted":true,"at":"2026-11-29T13:15","checkin":"2026-11-29T13:15"}
+{"who":"Siddharth","text":"not yet. she's doing the aunty thing","posted":true,"at":"2026-11-29T13:18","checkin":"2026-11-29T13:18"}
+{"who":"Priya","text":"I'm right here and I can read","posted":true,"at":"2026-11-29T13:19","checkin":"2026-11-29T13:19"}
+{"who":"Priya","text":"After lunch. Not during","posted":true,"at":"2026-11-29T13:20","checkin":"2026-11-29T13:20"}
+{"who":"Manish","text":"Up. Sleeping through the afternoon is my only real hobby","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Kriti","text":"your hobby is sleep. noted","posted":true,"at":"2026-11-29T15:53","checkin":"2026-11-29T15:53"}
+{"who":"Anjali","text":"Table 11 card is fixed. Aunty did it herself. She wrote \"R & guest\" in pen","posted":true,"at":"2026-11-29T16:10","checkin":"2026-11-29T16:10"}
+{"who":"Anjali","text":"I'm calling it a win","posted":true,"at":"2026-11-29T16:10","checkin":"2026-11-29T16:10"}
+{"who":"Priya","text":"In pen. So it's permanent now","posted":true,"at":"2026-11-29T16:12","checkin":"2026-11-29T16:12"}
+{"who":"Siddharth","text":"[photo: hall plan sketch]","posted":true,"at":"2026-11-29T16:30","checkin":"2026-11-29T16:30"}
+{"who":"Siddharth","text":"mandap goes here. that's 4 meters from the buffet, is that too close","posted":true,"at":"2026-11-29T16:31","checkin":"2026-11-29T16:31"}
+{"who":"Manish","text":"Too close. Buffet line will block the mandap cameras","posted":true,"at":"2026-11-29T16:35","checkin":"2026-11-29T16:35"}
+{"who":"Manish","text":"Also the buffet is 12 meters from the bar and the bar guy will be unhappy","posted":true,"at":"2026-11-29T16:36","checkin":"2026-11-29T16:36"}
+{"who":"Kriti","text":"does the mandap need photographing or is it just a backdrop","posted":true,"at":"2026-11-29T16:40","checkin":"2026-11-29T16:40"}
+{"who":"Priya","text":"Photographed. Uncle's cousin's shoot is booked for it","posted":true,"at":"2026-11-29T16:41","checkin":"2026-11-29T16:41"}
+{"who":"Priya","text":"Siddharth come talk. Budget","posted":true,"at":"2026-11-29T17:50","checkin":"2026-11-29T17:50"}
+{"who":"Siddharth","text":"ok","posted":true,"at":"2026-11-29T17:51","checkin":"2026-11-29T17:51"}
+{"who":"Kriti","text":"the lab sent a photo of the pipette tips. they're on a shelf in the corridor. not in transit","posted":true,"at":"2026-11-29T18:20","checkin":"2026-11-29T18:20"}
+{"who":"Kriti","text":"i'm not even surprised","posted":true,"at":"2026-11-29T18:21","checkin":"2026-11-29T18:21"}
+{"who":"Manish","text":"Clinical matter","posted":true,"at":"2026-11-29T18:22","checkin":"2026-11-29T18:22"}
+{"who":"Kriti","text":"manish","posted":true,"at":"2026-11-29T18:22","checkin":"2026-11-29T18:22"}
+{"who":"Siddharth","text":"talked. not a fight. number is about 3 lakh higher than we said","posted":true,"at":"2026-11-29T19:10","checkin":"2026-11-29T19:10"}
+{"who":"Priya","text":"Manageable. We'll call it manageable","posted":true,"at":"2026-11-29T19:12","checkin":"2026-11-29T19:12"}
+{"who":"Siddharth","text":"ok manageable","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Priya","text":"Drawing the sketch tonight. Anjali you check it before I send it to the artist","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Anjali","text":"Yes. Send it to me first, not the artist","posted":true,"at":"2026-11-29T19:41","checkin":"2026-11-29T19:41"}
+{"who":"Siddharth","text":"[photo: sketch of middle design, half done]","posted":true,"at":"2026-11-29T19:55","checkin":"2026-11-29T19:55"}
+{"who":"Siddharth","text":"the knuckle dots are uneven","posted":true,"at":"2026-11-29T19:56","checkin":"2026-11-29T19:56"}
+{"who":"Priya","text":"Yes I drew them by hand at 7. That's my mistake","posted":true,"at":"2026-11-29T19:58","checkin":"2026-11-29T19:58"}
+{"who":"Manish","text":"Looks fine","posted":true,"at":"2026-11-29T20:00","checkin":"2026-11-29T20:00"}
+{"who":"Sunil","text":"Siddharth, Monday 6:30 at the site. Don't be late","posted":true,"at":"2026-11-29T21:12","checkin":"2026-11-29T21:12"}
+{"who":"Siddharth","text":"not late","posted":true,"at":"2026-11-29T21:13","checkin":"2026-11-29T21:13"}
+{"who":"Sunil","text":"You were late for everything in 2012","posted":true,"at":"2026-11-29T21:13","checkin":"2026-11-29T21:13"}
+{"who":"Siddharth","text":"that was one time","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Anjali","text":"Monday is school at 7. Going to bed at 10:30 like a child","posted":true,"at":"2026-11-29T22:20","checkin":"2026-11-29T22:20"}
+{"who":"Kriti","text":"10:30 is ambitious for you","posted":true,"at":"2026-11-29T22:21","checkin":"2026-11-29T22:21"}
+{"who":"Anjali","text":"Watch me","posted":true,"at":"2026-11-29T22:22","checkin":"2026-11-29T22:22"}
+{"who":"Priya","text":"Sketch goes to the artist at 9 tomorrow. Anjali, approve by 8 or I'm sending it anyway","posted":true,"at":"2026-11-29T22:50","checkin":"2026-11-29T22:50"}
+{"who":"Anjali","text":"Approve by 8. Night","posted":true,"at":"2026-11-29T22:52","checkin":"2026-11-29T22:52"}
+{"who":"Priya","text":"Siddharth come to bed. Stop looking at the mandap sketch","posted":true,"at":"2026-11-29T23:26","checkin":"2026-11-29T23:26"}
+{"who":"Siddharth","text":"in the kitchen","posted":true,"at":"2026-11-29T23:31","checkin":"2026-11-29T23:31"}
+{"who":"Priya","text":"Why","posted":true,"at":"2026-11-29T23:31","checkin":"2026-11-29T23:31"}
+{"who":"Siddharth","text":"want to see if the dal from last night is still good","posted":true,"at":"2026-11-29T23:32","checkin":"2026-11-29T23:32"}
+{"who":"Kriti","text":"anjali you up","posted":true,"at":"2026-11-29T23:58","checkin":"2026-11-29T23:58"}
+{"who":"Kriti","text":"ok i'm going. pipette tips are not my problem tonight","posted":true,"at":"2026-11-30T00:02","checkin":"2026-11-30T00:02"}
+{"who":"Manish","text":"Rota came out. Nights start Wednesday. So tonight and tomorrow are mine","posted":true,"at":"2026-11-30T00:21","checkin":"2026-11-30T00:21"}
+{"who":"Priya","text":"Sleep then","posted":true,"at":"2026-11-30T00:22","checkin":"2026-11-30T00:22"}
+{"who":"Manish","text":"Going","posted":true,"at":"2026-11-30T00:22","checkin":"2026-11-30T00:22"}
+{"who":"Anjali","text":"Up. Sketch approved. The knuckle dots are uneven, Priya owns them","posted":true,"at":"2026-11-30T06:09","checkin":"2026-11-30T06:09"}
+{"who":"Priya","text":"I'm awake at 6am for a dot","posted":true,"at":"2026-11-30T06:11","checkin":"2026-11-30T06:11"}
+{"who":"Priya","text":"Fine. Sending at 9 like I said","posted":true,"at":"2026-11-30T06:11","checkin":"2026-11-30T06:11"}
+{"who":"Anjali","text":"Good","posted":true,"at":"2026-11-30T06:12","checkin":"2026-11-30T06:12"}
+{"who":"","react":"👍","to":194,"posted":false,"at":"2026-11-30T06:12"}
+{"who":"Sunil","text":"Siddharth, 6:30 is evening. Not morning. Confirming","posted":true,"at":"2026-11-30T07:03","checkin":"2026-11-30T07:03"}
+{"who":"Siddharth","text":"yes dad. 6:30 pm. i know","posted":true,"at":"2026-11-30T07:09","checkin":"2026-11-30T07:09"}
+{"who":"Sunil","text":"Good. Bring the measurements printed. Not on the phone","posted":true,"at":"2026-11-30T07:10","checkin":"2026-11-30T07:10"}
+{"who":"Siddharth","text":"printed. got them","posted":true,"at":"2026-11-30T07:10","checkin":"2026-11-30T07:10"}
+{"who":"Kriti","text":"procurement says the tips are being \"expedited\"","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Kriti","text":"i'm writing that down","posted":true,"at":"2026-11-30T08:15","checkin":"2026-11-30T08:15"}
+{"who":"","react":"😂","to":200,"posted":false,"at":"2026-11-30T08:15"}
+{"who":"Manish","text":"Expedited doesn't mean anything","posted":true,"at":"2026-11-30T08:19","checkin":"2026-11-30T08:19"}

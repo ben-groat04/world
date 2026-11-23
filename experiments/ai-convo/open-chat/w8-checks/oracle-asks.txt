@@ -1,0 +1,25 @@
+Q: What are the opening hours of the Louvre on Tuesdays?
+  searches 1, fetches 0, fetches returning a page 0; fetched: -
+  answer URL: https://www.louvre.fr/en/visit/hours-admission (not fetched)
+  A: The Louvre is closed on Tuesdays. It's open 9:00 to 18:00 on Monday, Thursday, Saturday and Sunday, and until 21:00 on Wednesday and Friday. Check the official hours page before you go, since some rooms or opening times can change: https://www.louvre.fr/en/visit/hours-admission
+
+Q: How long does the Eurostar from London St Pancras to Paris take?
+  searches 1, fetches 0, fetches returning a page 0; fetched: -
+  answer URL: -
+  A: About 2 hours 15 to 2 hours 20 minutes on a direct train to Paris Gare du Nord. That doesn't include check-in and security, so arrive at St Pancras earlier than that. Some services may run a bit longer, so check the live timetable at https://www.eurostar.com
+
+Q: When does the Sagrada Familia open on Sundays and what does a ticket cost?
+  searches 1, fetches 0, fetches returning a page 0; fetched: -
+  answer URL: https://sagradafamilia.org/en/faqs (not fetched)
+  A: Sundays are later than other days. One source gives a 10:30 opening in winter, with closing around 6pm. Hours vary by season and event, so check before you go. The official basic ticket (basilica plus audioguide) is about €26, and children under 11 get in free. Official site: https://sagradafamilia.org/en/faqs
+
+Q: Is the Tate Modern open on Mondays, and is it free to go in?
+  searches 0, fetches 1, fetches returning a page 1; fetched: tate.org.uk
+  answer URL: https://www.tate.org.uk/visit/tate-modern (a host that was fetched)
+  A: Yes, Tate Modern is open on Mondays, 10:00 to 18:00, and Tate's page says last entry is 30 minutes before closing. Entry to the collection displays is free. Paid exhibitions need a ticket, and booking is recommended. Details: https://www.tate.org.uk/visit/tate-modern
+
+Q: What is the best way to get from Heathrow to central London after midnight?
+  searches 1, fetches 0, fetches returning a page 0; fetched: -
+  answer URL: -
+  A: On Friday and Saturday nights, take the Night Tube on the Piccadilly line. It doesn't serve Terminal 4. On other nights the Elizabeth line and Tube have stopped by then, so the N9 night bus to Trafalgar Square is the cheap option, at about an hour or more. A taxi is faster but costs much more. Check live times at heathrow.com before you travel.
+

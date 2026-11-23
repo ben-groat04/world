@@ -2,3 +2,22 @@ W8-F3: day 1: 21 messages in 2 stretches
 W8-F1: day 1: 17 messages in 2 stretches
 W8-F4: day 1: 12 messages in 2 stretches
 W8-F4: day 2: 13 messages in 2 stretches
+W8-F2: @claude at Sun 10:05
+W8-F1: @claude at Sun 13:43
+W8-F3: day 2: 45 messages in 3 stretches
+W8-F4: day 3: 12 messages in 2 stretches
+W8-F4: 37 messages, 2026-11-23T21:05 to 2026-11-26T10:12
+W8-F2: day 1: 26 messages in 3 stretches
+W8-F2: day 2: 13 messages in 1 stretches
+W8-F3: day 3: 41 messages in 2 stretches
+W8-F3: 107 messages, 2026-11-25T14:05 to 2026-11-28T09:17
+W8-F1: day 2: 62 messages in 5 stretches
+W8-F2: @claude at Mon 21:34
+W8-F2: stamps out of order or before the span, retrying
+W8-F1: day 3: 68 messages in 4 stretches
+W8-F1: 147 messages, 2026-11-28T20:20 to 2026-12-01T08:52
+W8-F2: stamps out of order or before the span, retrying
+W8-F2: stamps out of order or before the span, giving up
+W8-F2: day 3: 6 messages in 2 stretches
+W8-F2: 45 messages, 2026-11-28T22:00 to 2026-11-30T21:35
+list: /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-22-52-936Z/list.txt

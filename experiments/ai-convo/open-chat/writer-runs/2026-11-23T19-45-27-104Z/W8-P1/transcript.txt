@@ -1,0 +1,411 @@
+--- Tue 22:55, Karim
+[photo: pallet count sheet, B-07, system vs physical]
+
+--- Tue 22:56, Karim
+system says 48 cartons, physical 42. recounted twice
+
+--- Tue 23:04, Fatma
+Is that the monday supplier load or old stock
+
+--- Tue 23:05, Karim
+old stock. monday's is on bay 3 already
+
+--- Tue 23:09, Fares
+did the dock sign off the monday receipt or did they just drop it
+
+--- Tue 23:12, Karim
+dropped it. nobody scanned it in. prob part of it
+
+--- Tue 23:12, Fatma
+😬 so you're short 6 or the system is over by 6
+
+--- Tue 23:14, Karim
+system is over. i think its a mis-scan from the 14th, not sure yet
+
+--- Tue 23:20, Fares
+dont change the system till you have the dock log. they wrote the transfers on paper friday
+
+--- Tue 23:21, Karim
+ok. where's the paper
+
+--- Tue 23:33, Fares
+supervisor desk. blue folder
+
+--- Tue 23:38, Fatma
+Exam thursday and I have read chapter 4 twice and understood none of it 💀
+
+--- Tue 23:41, Karim
+found the folder
+
+--- Tue 23:43, Fares
+transfers page, friday. 2nd sheet
+
+--- Tue 23:44, Karim
+got it. 14th line says 6 cartons to B-07 but scanned to B-17
+
+--- Tue 23:45, Fares
+so B-17 is over, not B-07. check B-17 before you touch anything
+
+--- Tue 23:47, Fatma
+Chapter 4 is the fifo lifo stuff right?
+
+--- Tue 23:49, Karim
+fifo lifo is ch 3 i think. ch 4 is cost layers
+
+--- Tue 23:50, Fatma
+So I need to reread 3 😅
+
+--- Tue 23:52, Karim
+send me the questions if you want, ill look when im up
+
+--- Wed 00:20, Karim
+its B-17. dock log matches. 6 cartons. changing B-07 and B-17 now
+
+--- Wed 00:22, Fares
+good. put the adjustment ref on the sheet so the supervisor sees it
+
+--- Wed 00:24, Karim
+ok 👍
+(👍 1)
+
+--- Wed 01:12, Fatma
+Read ch 3 again. The fifo example with 4 layers finally makes sense
+
+--- Wed 01:14, Fatma
+Ok thats the most I can do tonight, my brain is done
+
+--- Wed 02:41, Karim
+2 trucks late. bay 5 still empty. ur not missing much
+
+--- Wed 02:58, Fares
+came in 2:50. bay 5 now
+
+--- Wed 15:47, Karim
+up. system and sheet match now for B-07 and B-17
+
+--- Wed 16:03, Fatma
+[photo: exam questions ch 3-4, 12 pages]
+
+--- Wed 16:05, Fatma
+Do the first 3 pages I think. The rest is cost layers and I dont trust my numbers
+
+--- Wed 16:31, Karim
+q4 the lifo layer is wrong. you took the oldest layer first
+
+--- Wed 16:34, Fatma
+Wait lifo is newest first? 😩
+
+--- Wed 16:35, Karim
+newest out first yes. thats the whole trick
+
+--- Wed 16:36, Fatma
+Ok so I did it backwards on 3 questions. Good to know before thursday
+
+--- Wed 17:52, Fares
+supervisor saw the adjustment ref. said leave it, he'll sign friday
+
+--- Wed 17:53, Karim
+👍
+(👍 1)
+
+--- Wed 18:20, Fatma
+Redid q4 with newest first and it works. The answer matches the key at the back 🎉
+
+--- Wed 18:21, Karim
+nice
+
+--- Wed 18:22, Fatma
+Ok going to eat then one more pass before bed. Don't need to answer this
+
+--- Wed 20:31, Fares
+trucks from the south route are early. 3 on the list before midnight
+
+--- Wed 20:33, Karim
+ok. leaving at 21. bus is late again
+
+--- Wed 21:04, Fatma
+In a taxi with my book open. Don't talk to me 📖
+
+--- Wed 21:06, Karim
+👀
+
+--- Wed 21:30, Fares
+bay 5 is free for the first truck. take B-17 before the dock asks about it
+
+--- Wed 21:31, Karim
+yes
+
+--- Wed 23:10, Fatma
+Thursday exam is at 9 right? Not 8
+
+--- Wed 23:12, Karim
+9. room 2 i think. check the email
+
+--- Wed 23:14, Fatma
+Ok checking. The email is from March lol
+
+--- Wed 23:40, Fares
+scanner on dock 2 is down again. they said tomorrow
+
+--- Wed 23:41, Karim
+figures. im using 1
+
+--- Thu 01:02, Karim
+bay 5 counted. matches the dock log
+
+--- Thu 01:58, Fatma
+Done with the cost layers. Still not sure about q9 but I'm going to sleep 😴
+
+--- Thu 05:18, Karim
+last 2 trucks in. bay 3 clear. leaving
+
+--- Thu 05:20, Fares
+dock 2 still down. they say tomorrow again
+
+--- Thu 06:41, Fares
+home. all trucks checked in, bay 5 matches
+
+--- Thu 07:14, Fatma
+Up. Room 2 yes, checked the door sheet 😅
+
+--- Thu 07:16, Fatma
+Q9 is still the one I dont get. Anyone
+
+--- Thu 08:04, Fatma
+On the bus. Wish me luck 🤞
+
+--- Thu 11:22, Fatma
+Done. Q9 was a mess, think I got 2 of 3 parts
+
+--- Thu 15:12, Fares
+how was it
+
+--- Thu 15:40, Fatma
+Dont know yet. Q4 was the lifo one again lol
+
+--- Thu 15:52, Karim
+ok good. that one should be free marks then
+
+--- Thu 16:20, Fatma
+Slept till 15. Head still full of layers 😩
+
+--- Thu 16:22, Karim
+q9 was the one with the opening balance thing right
+
+--- Thu 16:25, Fatma
+Yes. I went back to the opening balance first, I think I messed up the last step
+
+--- Thu 16:26, Karim
+thats the usual mistake. ur part 3 is prob just the wrong layer again
+
+--- Thu 16:40, Fares
+dock 2 is still dead. tech came at 14:00 and left. they are ordering a part
+
+--- Thu 16:41, Karim
+so 1 scanner for the whole night again
+
+--- Thu 16:42, Fares
+yes. and the dock 5 ramp is loose, dont park on it
+
+--- Thu 17:58, Fatma
+Results are on the portal from 9 tomorrow they said 🤞 cant check till then
+
+--- Thu 18:00, Karim
+ok so u dont know till fri
+
+--- Thu 18:01, Fatma
+Yeah. Going to pretend I dont care
+
+--- Thu 19:12, Karim
+bus is late again. leaving 20:30 this time
+
+--- Thu 19:14, Fares
+take the 4, its faster. or split a taxi
+
+--- Thu 20:47, Fatma
+Anyone seen the new schedule? Mine says bay 1 both nights this week
+
+--- Thu 20:55, Fares
+bay 1 is fine. quiet bay
+
+--- Thu 20:58, Karim
+i think ur with fares on bay 1 both nights. i see it too
+
+--- Thu 21:03, Fatma
+Ok 👍
+(👍 1)
+
+--- Thu 22:31, Fatma
+Here. Bay 1 is so quiet it's suspicious
+
+--- Thu 22:33, Fares
+quiet until 1am then not
+
+--- Thu 23:58, Karim
+south trucks have no seal numbers on the log. anyone know if they still want them
+
+--- Thu 23:59, Fares
+yes. on the sheet not the log
+
+--- Fri 00:03, Karim
+ok
+(👍 1)
+
+--- Fri 00:40, Fatma
+Anyone have q9 part 2? Not the answer, just which layer I should use
+
+--- Fri 00:44, Karim
+opening balance is the first layer. sales take from the newest purchase. ur part 3 is the same mistake
+
+--- Fri 00:46, Fatma
+Ok ok. One more try then I leave it. Already tired of layers 😩
+
+--- Fri 01:30, Fares
+bay 3 has the monday load still. 14 pallets. supervisor says leave them, lift is broken
+
+--- Fri 01:33, Karim
+of course
+
+--- Fri 02:15, Karim
+bay 3 counted 14. matches the sheet. they didnt scan 2 of them so fixing
+
+--- Fri 02:17, Fares
+sheet or system
+
+--- Fri 02:18, Karim
+both. ref same as before
+
+--- Fri 02:50, Fatma
+[photo: q9 worked out on paper, 3 lines]
+
+--- Fri 02:52, Karim
+part 2 is right now. part 3 is still off by the same layer
+
+--- Fri 02:55, Fatma
+Argh. Ok that's it, going home, I'm done with cost layers 😭
+
+--- Fri 05:18, Karim
+last 2 trucks in. bay 3 clear. leaving
+
+--- Fri 05:20, Fares
+dock 2 still down. they say tomorrow again
+
+--- Fri 06:41, Fares
+home. all trucks checked in
+
+--- Fri 09:03, Fatma
+Portal is up. Checking now 🤞
+
+--- Fri 09:05, Fatma
+[screenshot: exam results portal, grade shown]
+
+--- Fri 09:05, Fatma
+Passed. Q9 cost me 4 marks but I passed 😅
+
+--- Fri 09:09, Fatma
+Calling my brother. He's going to say it was easy 😂
+
+--- Fri 09:11, Fatma
+Ok sleeping now. Dont wake me, I have to be at work at 9pm lol
+
+--- Fri 15:04, Fares
+good. 4 marks is fine
+
+--- Fri 15:41, Karim
+congrats 🎉 q9 was the hard one
+
+--- Fri 16:12, Fatma
+Thanks. I'm not doing any more layers till the next exam
+
+--- Fri 16:14, Karim
+💀
+(👍 1)
+
+--- Fri 20:18, Karim
+leaving 20:50. bus again
+
+--- Fri 20:21, Fares
+south trucks early again. 2 on the list before 11
+
+--- Fri 20:27, Fatma
+Taxi again, the bus route is dead after 8. Rent is too high for this
+
+--- Fri 20:29, Karim
+take the 4
+(👍 1)
+
+--- Fri 20:31, Fatma
+I literally always take the 4 lol. It's the bus I'm worried about
+
+--- Fri 20:35, Fares
+bay 1 for the first one. bay 5 is still under the bad ramp
+
+--- Fri 20:36, Karim
+ok
+
+--- Fri 21:12, Karim
+[photo: bay 5 seal sheet, 3 rows filled in]
+
+--- Fri 21:13, Karim
+sheet not log, yes?
+
+--- Fri 21:15, Fares
+yes
+
+--- Fri 23:04, Karim
+bay 1 counted. quiet like u said
+
+--- Fri 23:06, Fatma
+Fares said quiet till 1 🙃 what did I miss
+
+--- Fri 23:10, Fares
+nothing yet. 2 trucks from the north route, bay 2 is loading
+
+--- Sat 00:37, Fares
+bay 5 ramp still bad. they put cones on it. dont use it
+
+--- Sat 00:40, Karim
+ok 👍
+(👍 1)
+
+--- Sat 01:15, Karim
+north seal sheet has 2 blanks. bay 2. who loaded it
+
+--- Sat 01:21, Fares
+driver. i asked him. he wrote them on the back of the manifest
+
+--- Sat 01:22, Karim
+ok copying them over
+
+--- Sat 01:58, Fatma
+Anyone else's scanner acting weird or just mine
+
+--- Sat 02:03, Karim
+dock 2 is down. wait ur on 1?
+
+--- Sat 02:04, Fatma
+Yes on 1. It keeps dropping the last scan
+
+--- Sat 02:09, Fares
+restart it, hold the side button 10 sec. if its still bad tell the supervisor, not the tech
+
+--- Sat 02:12, Fatma
+Worked. Kind of 😅
+
+--- Sat 03:30, Fares
+south truck is late. 40 min. told them to wait at the gate
+
+--- Sat 05:18, Karim
+last 2 in. bay 3 clear. leaving
+
+--- Sat 05:20, Fares
+dock 2 still down. guess tomorrow
+
+--- Sat 06:12, Fatma
+Last one in. Taxi, too tired for the 4 😩
+
+--- Sat 06:41, Fares
+home. all trucks checked in, bay 5 taped off
+
+--- Sat 07:52, Fatma
+Home. Not sleeping yet, too wired. Results still in my head lol

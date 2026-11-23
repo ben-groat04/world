@@ -1,0 +1,999 @@
+=== W8-P1 2026-11-30T03:42 to 2026-11-30T04:00, attempt 1
+--- Mon 05:12, Martín
+oficina dice que el 14 lo movieron al 41 el jueves, lo corrigen en sistema
+
+--- Mon 05:13, Julieta
+ahí está. el 4483 queda cerrado sin el 14 entonces
+
+--- Mon 05:14, Martín
+sí, avisé
+
+--- Mon 06:24, Julieta
+llegó el camión, 6 y cuarto. descargando
+
+--- Mon 06:25, Gonzalo
+parcial a las 10 y yo sin dormir
+
+--- Mon 06:31, Martín
+dale
+
+--- Mon 15:02, Gonzalo
+terminé. la de costos estaba jodida pero creo que bien
+
+--- Mon 15:03, Gonzalo
+no sé
+
+--- Mon 16:40, Julieta
+recién me levanto. el 3 sigue andando?
+
+--- Mon 18:15, Martín
+sí, la batería aguanta. cargué otra vez a la tarde por las dudas
+
+--- Mon 18:16, Julieta
+👍
+(👍 1)
+
+--- Mon 18:20, Gonzalo
+martín el martes me explicás lo de las horquillas? antes del turno
+
+--- Mon 18:44, Martín
+a las 22 llego temprano, te espero en el 2
+
+=== W8-P1 2026-11-30T03:42 to 2026-11-30T04:00, attempt 2
+--- Mon 05:48, Martín
+oficina dice que el 14 está en devolución, lo tiene Rulo
+
+--- Mon 05:49, Julieta
+o sea que no faltaba
+
+--- Mon 05:49, Julieta
+cerré el pedido como faltante igual
+
+--- Mon 06:12, Gonzalo
+salgo ya
+
+--- Mon 06:13, Gonzalo
+martín el 3 quedó bien después de cargarlo o hay que mirar la batería
+
+--- Mon 06:40, Martín
+bien. mirá la batería igual a la tarde
+
+--- Mon 10:21, Gonzalo
+terminé el parcial
+creo que bien
+
+--- Mon 10:22, Gonzalo
+la última de costos me la sé de memoria, la otra no sé
+
+--- Mon 16:07, Martín
+bien ahí
+
+=== W8-P3 2026-11-29T07:26 to 2026-11-30T04:00, attempt 1
+--- Mon 05:58, Tom
+Sprouts netted. Did the lot before shift, frost on the net
+
+--- Mon 06:03, Tom
+Tap washer's gone again btw. Not touching it till Tues
+
+--- Mon 07:12, Janet
+Thank you Tom. Derek's up if you want to tell him about the tap yourself
+
+--- Mon 07:14, Derek
+Which tap
+
+--- Mon 07:31, Sarah
+Insurance figure's in the folder. Derek check it before it goes to Janet, the old one's still in the agenda pdf
+
+--- Mon 07:33, Derek
+Checked. Old one's in item 4. Janet can you redo the agenda
+
+--- Mon 07:40, Janet
+Rather you did it, I've got the library at ten. It's a two line change
+
+--- Mon 07:41, Derek
+Fine
+
+--- Mon 08:12, Sarah
+Boiler quote's in the folder too. Needs your sign off before I can pay, Derek
+
+--- Mon 08:14, Derek
+Will look tonight
+
+--- Mon 09:40, Chloe
+Just seen this. Did Tom do the sprouts? Thank you!!
+
+--- Mon 09:41, Tom
+Yeah. Frost on the net, you'll be fine
+
+--- Mon 12:20, Tom
+Who's got the gate key. Chain's still sagging, want to tighten it before Tues
+
+--- Mon 12:34, Janet
+Locksmith's doing the whole lot Tues. Leave it
+
+--- Mon 12:35, Tom
+Ok
+
+--- Mon 17:02, Chloe
+Can I still come Tues? I've got a lecture till 11 but after that's fine
+
+--- Mon 17:40, Janet
+Come after 11. He's there till about 12
+
+--- Mon 18:20, Derek
+Bowser on the agenda once now, right?
+
+--- Mon 18:25, Janet
+Yes. Item 5 only
+
+--- Mon 20:05, Sarah
+Derek, boiler needs signing before 9am Tues or it's another week
+
+--- Mon 20:41, Derek
+Signed. Sending it to you now
+
+--- Mon 21:12, Tom
+Off to bed. Gate's still a bodge
+
+=== W8-P2 2026-11-26T22:18 to 2026-11-27T04:00, attempt 1
+--- Fri 07:08, Laura
+Milo ok?
+
+--- Fri 07:11, Mikko
+slept on the radiator all night. got off at 6 for a wee and got straight back on
+
+--- Fri 07:11, Mikko
+he's fine. he's a radiator dog now
+
+--- Fri 07:14, Laura
+Is the drain man digging today
+
+--- Fri 07:15, Mikko
+10. he's bringing a mini digger that doesnt fit through the gate
+
+--- Fri 07:16, Laura
+Classic
+
+--- Fri 07:16, Mikko
+yeah
+
+--- Fri 12:47, Laura
+Lunch was a sad little salad. Going to be a sad afternoon
+
+--- Fri 13:09, Mikko
+[photo: a mini digger wedged in a gateway, the gatepost leaning]
+
+--- Fri 13:10, Laura
+Did he take the gatepost off
+
+--- Fri 13:11, Mikko
+he took the gatepost off
+
+--- Fri 13:11, Laura
+Whose gatepost
+
+--- Fri 13:12, Mikko
+not mine. i'm just the electrician
+
+--- Fri 13:14, Laura
+Blue box man came in again. No story this time, just stood there
+
+--- Fri 13:16, Mikko
+progress
+
+--- Fri 13:17, Laura
+He asked if I was the one who'd told him about the dose. I said yes. He said thanks and left
+
+--- Fri 13:17, Mikko
+thats almost a normal conversation
+
+--- Fri 16:40, Laura
+Mum rang. Asked if you'd looked at the boiler
+
+--- Fri 16:44, Mikko
+i'm in a basement
+
+--- Fri 16:44, Laura
+Thought so. I said that
+
+--- Fri 16:45, Mikko
+what did she say
+
+--- Fri 16:47, Laura
+She said basements are where the boilers live
+
+--- Fri 16:48, Mikko
+she's not wrong
+
+--- Fri 19:22, Mikko
+panel guy turned up. looked at the box and said it's older than both of us
+
+--- Fri 19:22, Laura
+Is that good
+
+--- Fri 19:24, Mikko
+its not good
+
+--- Fri 19:25, Laura
+Will they have to replace it
+
+--- Fri 19:31, Mikko
+he's going to write it up. then someone will write back. then probably the landlord says should be fine
+
+--- Fri 19:33, Laura
+Classic
+
+--- Fri 19:34, Mikko
+you've said that
+
+--- Fri 19:35, Laura
+It's still classic
+
+=== W8-P1 2026-11-30T03:42 to 2026-11-30T04:00, attempt 3
+--- Mon 04:06, Julieta
+el 14 apareció, estaba en el 13 mal puesto
+
+--- Mon 04:07, Julieta
+alguien lo movió seguro
+
+--- Mon 04:15, Martín
+lo vi, lo dejé en el 14. no fue el sistema
+
+--- Mon 04:16, Julieta
+ok
+
+--- Mon 06:41, Martín
+[photo: planilla de faltantes, pedido 4483 tachado]
+
+--- Mon 06:42, Martín
+la 22 la dieron de baja oficina
+
+--- Mon 06:44, Julieta
+👍
+
+--- Mon 16:20, Gonzalo
+salí del parcial
+el de costos seguro mal
+
+--- Mon 16:22, Julieta
+ya me levanté. cuántos puntos crees
+
+--- Mon 16:31, Gonzalo
+no sé. 6 o 7 si tengo suerte
+
+--- Mon 16:33, Julieta
+suerte nada, estudiaste
+
+--- Mon 16:40, Gonzalo
+jaja dale
+
+--- Mon 17:12, Martín
+gonzo el 3 arranca sin humo ya? me dijeron que lo revisen antes del turno
+
+--- Mon 17:30, Gonzalo
+no sé, llego a las 22 y lo veo
+
+=== W8-P4 2026-11-29T00:41 to 2026-11-29T04:00, attempt 1
+--- Sun 06:04, Anjali
+Table 9 is done. Don't ask
+
+--- Sun 07:14, Priya
+Lol. Sending the cousins list to aunty now, she wants it before breakfast
+
+--- Sun 07:16, Anjali
+[photo: seating chart draft, colour coded]
+
+--- Sun 07:16, Anjali
+Green is family side, blue is college, yellow is R
+
+--- Sun 07:22, Kriti
+who is yellow
+
+--- Sun 07:22, Anjali
+Table 9 and the Pune cousins
+
+--- Sun 07:25, Priya
+Yellow is fine. Table 9 is near the fan at least
+
+--- Sun 07:31, Manish
+Off in an hour. Yellow table, got it. Anything else I need to know before the veto
+
+--- Sun 07:33, Priya
+Stand near the stage and look like a best man
+
+--- Sun 07:33, Manish
+Can do that
+
+--- Sun 08:12, Kriti
+institute is shut for sunday. i'm staying in bed
+
+--- Sun 08:12, Kriti
+who's doing the sketch for the artist
+
+--- Sun 08:15, Priya
+Me. Photo of the middle one with the knuckle dots marked. Tuesday
+
+--- Sun 08:40, Manish
+Off. Going home. Don't text me till 3
+
+--- Sun 08:41, Priya
+Go
+
+--- Sun 09:22, Sunil
+Siddharth. Hall measurements. Caterer wants the final count by Wednesday and the mandap man wants the width before Monday
+
+--- Sun 09:29, Siddharth
+sending. 22 x 40 ft, pillars at 9 ft
+
+--- Sun 09:31, Sunil
+Good. Send it to the decorator too
+
+--- Sun 09:31, Siddharth
+ok
+
+--- Sun 10:48, Kriti
+how's the budget talk. are you alive priya
+
+--- Sun 10:52, Priya
+Alive. He has a calculator and a notebook and is making the face
+
+--- Sun 10:58, Priya
+It's more than we said. We're fixing it. Please don't ask me the figure
+
+--- Sun 10:59, Kriti
+not asking
+
+--- Sun 10:59, Anjali
+Not asking
+
+--- Sun 11:20, Sunil
+Anjali, can my side go near the front? The knee is not good for the back rows
+
+--- Sun 11:24, Anjali
+Done uncle. Front row, near the aisle
+
+--- Sun 11:24, Sunil
+Thank you
+
+--- Sun 13:40, Manish
+Slept five hours. Nothing happened
+
+--- Sun 13:41, Priya
+Good
+
+--- Sun 13:44, Manish
+Did the mandap guy say brass or gold
+
+--- Sun 13:46, Priya
+Brass. Siddharth is still looking at gold
+
+--- Sun 13:46, Manish
+Tell him brass has a nice finish now
+
+--- Sun 13:47, Priya
+You tell him
+
+--- Sun 15:12, Anjali
+A parent just messaged me asking if the "sad auntie" essay is fiction
+
+--- Sun 15:13, Kriti
+what did you say
+
+--- Sun 15:14, Anjali
+That he has a strong voice and I'm not allowed to confirm anything
+
+--- Sun 15:15, Kriti
+iconic
+
+--- Sun 16:30, Priya
+[photo: the peacock on the invite, next to the sketch]
+
+--- Sun 16:31, Priya
+Same bird. I'm just saying
+
+--- Sun 16:33, Siddharth
+the peacock is still cool
+
+--- Sun 16:34, Priya
+Thank you
+
+--- Sun 19:12, Kriti
+eating dal rice for the third time today. wedding brain
+
+--- Sun 19:14, Anjali
+Same. Table 9 is still cursed
+
+--- Sun 19:40, Siddharth
+sorry about the number. calculator was loud
+
+--- Sun 19:44, Priya
+We're fine. Go to sleep
+
+--- Sun 19:45, Siddharth
+ok
+
+=== W8-P3 2026-11-29T23:05 to 2026-12-01T04:00, attempt 1 (format)
+--- Mon 05:52, Tom
+On the floor. I'm on the early Tues so I'll miss the locksmith. Someone tell me what he says
+
+--- Mon 07:20, Derek
+I'll be there
+
+--- Mon 07:22, Janet
+Derek will be there and will tell you what he said for an hour
+
+--- Mon 07:30, Tom
+Ta
+
+--- Mon 08:03, Sarah
+Insurance figure's in your email Derek. Use that one. Last year's is in the folder marked old
+
+--- Mon 08:15, Derek
+Got it. Circulating after lunch
+
+--- Mon 08:31, Janet
+Thank you Sarah
+
+--- Mon 09:40, Chloe
+Morning. Netting sprouts before lectures. Is the net in the shed or the green box
+
+--- Mon 09:44, Janet
+Shed. Green box has the fleece
+
+--- Mon 09:46, Chloe
+Found it
+
+--- Mon 09:48, Tom
+Tie the corners not the middle or the birds get under
+
+--- Mon 10:02, Derek
+Boiler quote's come through from Sarah as well. £1,240. I'll put it on Thursday's list
+
+--- Mon 10:04, Tom
+Who's the quote from
+
+--- Mon 10:20, Sarah
+Hartley & Sons. They came out Friday, part's on order. Not from the bowser fund
+
+--- Mon 10:21, Derek
+Right
+
+--- Mon 12:15, Janet
+Sprouts done?
+
+--- Mon 12:48, Chloe
+Done. Took forty mins, one got tangled. Tom did the tall ones
+
+--- Mon 13:02, Tom
+Did two
+
+--- Mon 13:05, Janet
+Good
+
+--- Mon 14:30, Derek
+Agenda's updated and circulated. Item 4 holding for Sarah's figure. Item 5 moved to AOB
+
+--- Mon 14:34, Janet
+Why AOB
+
+--- Mon 14:41, Derek
+It's not an agenda item. It's a bowser
+
+--- Mon 14:50, Sarah
+(😂 1)
+
+--- Mon 21:40, Tom
+Tap's still dripping. Need a proper washer not a bodge
+
+--- Mon 21:52, Derek
+Locksmith can look at it Tues
+
+--- Mon 22:04, Janet
+Tues. Let him do it
+
+--- Mon 22:06, Tom
+Ok. Not doing it myself then
+
+--- Mon 22:10, Janet
+(👍 1)
+
+=== W8-P4 2026-11-29T00:41 to 2026-11-29T04:00, attempt 2 (format)
+--- Sun 06:12, Anjali
+Up. Table 9 still cursed. Moving R to the other side of the pillar
+
+--- Sun 06:14, Anjali
+Don't tell Priya I said that
+
+--- Sun 07:26, Priya
+Tell me what
+
+--- Sun 07:27, Anjali
+Nothing. Table 9
+
+--- Sun 07:28, Priya
+Ok I'll look at the chart properly when I'm up
+
+--- Sun 08:40, Manish
+Off shift. Going to sleep. Don't wake me unless someone's in hospital. Nobody be in hospital
+
+--- Sun 08:41, Priya
+Nobody in hospital
+
+--- Sun 09:15, Siddharth
+priya budget talk now or after chai
+
+--- Sun 09:16, Priya
+After chai. What did uncle's guy quote
+
+--- Sun 09:17, Siddharth
+18% over. he says the lights are the reason
+
+--- Sun 09:18, Priya
+Lights are always the reason
+
+--- Sun 09:30, Kriti
+out of bed. institute is closed sunday thank god
+
+--- Sun 09:31, Anjali
+Come for lunch. We're making the sambar that burns
+
+--- Sun 09:33, Kriti
+ok but you're on dishes
+
+--- Sun 10:47, Priya
+[photo: pot of sambar, black on the bottom]
+
+--- Sun 10:47, Priya
+Anjali
+
+--- Sun 10:49, Anjali
+It's fine. It's the smoky version
+
+--- Sun 10:49, Kriti
+i'm bringing bread
+
+--- Sun 11:50, Sunil
+Siddharth, the lights. Let's discuss on call. I'm not sure the venue guy is wrong
+
+--- Sun 11:52, Siddharth
+ok. call after lunch
+
+--- Sun 11:53, Priya
+(👍 1)
+
+=== W8-P1 2026-12-02T02:53 to 2026-12-02T04:00, attempt 1
+--- Wed 03:05, Martín
+del 22 nada todavía, avisé en oficina otra vez
+
+--- Wed 03:06, Julieta
+ya les pedí que manden a alguien a ver el pallet
+
+--- Wed 03:08, Gonzalo
+el 3 se apagó otra vez?
+
+--- Wed 03:11, Martín
+sí, ya sé qué es. lo reviso a las 4
+
+--- Wed 03:11, Gonzalo
+ok
+
+--- Wed 03:30, Julieta
+[photo: pantalla de la pistola, "pedido 4490 faltante - ubicación 22A"]
+
+--- Wed 03:31, Julieta
+ahí está el pedido, dice 22A y el 22 vacío
+
+--- Wed 03:33, Martín
+la 22A no existe, es un error de carga. dejá el pedido para la mañana
+
+--- Wed 03:34, Julieta
+ok
+
+--- Wed 04:12, Martín
+el 3 arranca
+
+--- Wed 04:13, Gonzalo
+👍
+(👍 1)
+
+--- Wed 06:44, Julieta
+salimos. el camión no vino todavía
+
+--- Wed 06:45, Julieta
+martín la tupper de ayer la tenés o la dejaste en la oficina
+
+--- Wed 06:58, Martín
+la tengo, te la dejo en el casillero
+
+--- Wed 07:02, Julieta
+ok
+
+--- Wed 08:11, Gonzalo
+llegué a casa. el 4483 sigue abierto?
+
+--- Wed 08:13, Julieta
+sí
+
+--- Wed 08:13, Gonzalo
+ok, a dormir
+
+--- Wed 15:58, Gonzalo
+me levanté. hoy es lunes de nuevo? no, miércoles, perdón
+
+--- Wed 16:03, Martín
+miércoles
+
+--- Wed 16:20, Julieta
+me levanté recién. el camión llegó al final?
+
+--- Wed 16:41, Martín
+a las 7 y algo, después de que te fuiste
+
+--- Wed 16:42, Julieta
+hm ok
+
+--- Wed 17:05, Gonzalo
+martín el martes que viene me explicás las horquillas en serio? con el 3 y todo
+
+--- Wed 17:19, Martín
+dale. si no se apaga
+
+--- Wed 17:20, Gonzalo
+👀
+(👍 1)
+
+=== W8-P5 2026-12-01T06:21 to 2026-12-02T04:00, attempt 1
+--- Tue 08:34, Chiaki
+3-1 say it isn't theirs. 3-2 thinks it might be Yuna's but she has a red one. It's on the lost property shelf now
+
+--- Tue 08:36, Ayaka
+Fine. Leave it there
+
+--- Tue 12:17, Kohei
+Ayaka can I ask you something when you have a sec. Ryota hasn't handed in his reading log for three weeks and I don't know whether to call home or wait
+
+--- Tue 12:22, Hiroshi
+Call
+
+--- Tue 18:50, Ayaka
+Call home. Ask how the book is going, not about the log. There's usually a reason
+
+--- Tue 18:55, Kohei
+ok thanks
+
+--- Wed 07:40, Setsuko
+Hiroshi the display boards are in the hall behind the piano, not the store room. Blue tape, not masking
+
+--- Wed 07:48, Hiroshi
+Ok
+
+--- Wed 13:02, Chiaki
+[photo: 3-2 window, slush on the path outside]
+
+--- Wed 13:03, Chiaki
+It's melted already. Tomorrow they'll want to go out again
+
+--- Thu 07:15, Ayaka
+Still not outside tomorrow even if it's dry
+
+--- Thu 07:16, Chiaki
+Yes
+
+--- Thu 13:25, Hiroshi
+Library done. 14 returns. One had a bus ticket from 2019 in it as a bookmark
+
+--- Thu 13:26, Chiaki
+Whose
+
+--- Thu 13:31, Hiroshi
+Didn't say
+
+--- Fri 12:58, Chiaki
+Lunch done. 3-2 were fine. Not snowing either
+
+--- Fri 13:10, Ayaka
+Good
+
+=== W8-P4 2026-11-29T22:52 to 2026-11-30T04:00, attempt 1
+--- Mon 06:02, Anjali
+Up. Sketch checked on the bed with my eyes half shut
+
+--- Mon 06:03, Anjali
+Dots are uneven. Artist can fix them in person, she's good at that
+
+--- Mon 06:20, Priya
+Morning. Approved?
+
+--- Mon 06:21, Anjali
+Approved
+
+--- Mon 06:21, Priya
+Sending at 9 like I said
+
+--- Mon 06:22, Anjali
+Good. I'm in assembly at 7, so don't message me about anything before 7:45
+
+--- Mon 07:19, Siddharth
+up
+
+--- Mon 07:22, Sunil
+Make it 6:00. Malleswaram road is bad on Mondays
+
+--- Mon 07:24, Siddharth
+6:10 at best. review ends at 5:45
+
+--- Mon 07:25, Sunil
+6:00
+
+--- Mon 07:25, Siddharth
+ok
+
+--- Mon 08:40, Kriti
+procurement replied. they want a form for the pipette tips
+
+--- Mon 08:41, Kriti
+[file: procurement_request_form_v3.pdf]
+
+--- Mon 08:42, Manish
+Told you. Clinical
+
+--- Mon 08:42, Kriti
+stop
+
+--- Mon 09:04, Priya
+Sent to the artist. Thursday 11am if she confirms
+
+--- Mon 09:06, Anjali
+Good
+
+--- Mon 09:07, Priya
+She says the knuckle dots are "hand-drawn, that's the point." I said yes
+
+--- Mon 09:07, Manish
+Still a lot
+
+--- Mon 09:08, Priya
+Manish
+
+--- Mon 10:15, Manish
+Up. Slept through the whole morning, which I'm told is the plan
+
+--- Mon 10:15, Manish
+Was the chart finished
+
+--- Mon 10:17, Priya
+It's v7. Final. Don't ask about v1 to v6
+
+--- Mon 10:17, Manish
+Who told you that
+
+--- Mon 10:18, Priya
+Anjali
+
+--- Mon 13:42, Anjali
+Lunch in the staff room. Chair rocks. Nobody has fixed it since 2019
+
+--- Mon 13:43, Anjali
+Sad auntie monsoon kid is in 7A now. He's telling people his name is also the monsoon
+
+--- Mon 13:44, Kriti
+he's going places
+
+--- Mon 14:10, Siddharth
+uncle wants the hall deposit receipt. where is it
+
+--- Mon 14:12, Priya
+Blue folder. Under the wedding bills, not the other wedding bills
+
+--- Mon 14:14, Siddharth
+found it
+
+--- Mon 17:33, Kriti
+out of the lab at 5 for once. the rickshaw driver asked if I'm a teacher again
+
+--- Mon 17:33, Anjali
+I told you
+
+--- Mon 17:34, Kriti
+you look like one
+
+--- Mon 17:58, Sunil
+Siddharth, leave by 5:30. I'll be at the gate at 6
+
+--- Mon 18:01, Siddharth
+ok
+
+=== W8-P8 2026-11-28T23:58 to 2026-11-30T04:00, attempt 1 (format)
+--- Sun 00:03, Siddharth
+Drive has 14 because the three from monday are on the college tab, not the main one
+
+--- Sun 00:05, Kavya
+Which tab is that
+
+--- Sun 00:06, Siddharth
+Sheet 2. Orange rows. No plus ones column
+
+--- Sun 00:09, Kavya
+So 14 main and 3 college is 17, minus the 2 who said no is 15
+
+--- Sun 00:10, Siddharth
+Yes
+
+--- Sun 00:10, Kavya
+Then the cake is 15?
+
+--- Sun 00:11, Siddharth
+15 I think. Check the 2 out ones aren't also on the college tab
+
+--- Sun 00:14, Kavya
+They're not
+
+--- Sun 00:24, Siddharth
+Going to sleep. Study block is cancelled, the auditor's files are on my desk for tomorrow
+
+--- Sun 00:25, Kavya
+😩
+
+--- Sun 06:12, Sanjay
+Venue says 15 is fine if the balcony stays closed. Confirm before they open the list to others
+
+--- Sun 07:41, Shalini
+[photo: second page, four names circled in pen]
+
+--- Sun 07:42, Shalini
+Akash, Rhea, Tanvi and one I can't read. Not on the sheet
+
+--- Sun 07:44, Kavya
+Rhea and Tanvi said no last week
+
+--- Sun 07:44, Shalini
+Then it's 2 names. Akash and the unreadable one
+
+--- Sun 08:03, Siddharth
+Ok I see it. Is the unreadable one Mihir?
+
+--- Sun 08:05, Shalini
+Could be. Looks like an M
+
+--- Sun 08:06, Kavya
+Put Akash on the sheet and ask Mihir directly. Cake is ordered tomorrow
+
+--- Sun 08:09, Siddharth
+(👍 2)
+
+--- Sun 11:30, Shalini
+Booked the sangeet shoot for February so weekends are gone till then. Tell me before you pick a date for anything near 14 dec
+
+--- Sun 11:32, Kavya
+Noted
+
+--- Sun 19:17, Sanjay
+Confirmed venue for 15. Sent the deposit receipt to Kavya
+
+--- Mon 08:40, Siddharth
+Lower parel is empty. Auditor left at 6 yesterday, so the files are mine now
+
+--- Mon 08:52, Kavya
+Cake order is in. 15 names, Akash added, Mihir still pending
+
+--- Mon 08:53, Kavya
+Not counting Mihir
+
+--- Mon 09:04, Siddharth
+(😂 1)
+
+=== W8-P6 2026-11-27T00:38 to 2026-11-27T04:00, attempt 1
+--- Fri 05:54, Unai
+up
+
+--- Fri 05:57, Miren
+of course you are
+
+--- Fri 05:57, Miren
+is the mug where you left it
+
+--- Fri 06:01, Unai
+yes. i checked twice. i'm not proud
+
+--- Fri 06:03, Miren
+ok
+
+--- Fri 06:06, Unai
+ramon's already got the cover off with a screwdriver. cousin's coming at 9 in a hi-vis vest he's borrowed. he's very serious about it
+
+--- Fri 06:08, Miren
+text me at break
+
+--- Fri 06:08, Unai
+ok
+
+--- Fri 10:41, Unai
+break. the cousin came. he has the vest on over a jumper. he's done the hinge
+
+--- Fri 10:44, Miren
+so the motor was fine all along
+
+--- Fri 10:45, Unai
+the motor was never on trial
+
+--- Fri 10:47, Miren
+break here too. woman in 9 wants to know if i'm still not her daughter
+
+--- Fri 10:49, Unai
+tell her yes
+
+--- Fri 10:49, Miren
+she already knows, she's just deciding whether to be annoyed about it
+
+--- Fri 10:52, Unai
+did you eat
+
+--- Fri 10:52, Miren
+half a sandwich. the other half is in a drawer
+
+--- Fri 10:53, Unai
+that's not a meal
+
+--- Fri 10:53, Unai
+i had a biscuit. ramon's watching me like a hawk. the tin's nearly done
+
+--- Fri 14:03, Unai
+shift done. shutter's down and it closes like a normal shutter
+
+--- Fri 14:04, Miren
+well done to the cousin
+
+--- Fri 14:05, Miren
+on till 21:00. how's the legs
+
+--- Fri 14:19, Unai
+fine. i've not been to the gym. i'm going to go later and not lift anything
+
+--- Fri 14:20, Miren
+that's the plan
+
+--- Fri 14:20, Miren
+sofa's still free
+
+--- Fri 14:31, Unai
+i'll come round about 9. i'll bring something
+
+--- Fri 14:32, Unai
+not the mug
+
+--- Fri 14:33, Miren
+i wasn't expecting the mug
+
+--- Fri 14:33, Unai
+i'm joking
+
+--- Fri 14:34, Miren
+i know. i'm not sure you are
+
+--- Fri 19:52, Unai
+gym. did the bike for 20 mins. that's it. it counts
+
+--- Fri 19:54, Miren
+it counts
+
+--- Fri 21:12, Miren
+off. walking out now. legs are hanging off
+
+--- Fri 21:12, Miren
+the chips place is open till 11 if you're on your way
+
+--- Fri 21:20, Unai
+on the bus. the good place or the bad chairs place
+
+--- Fri 21:21, Miren
+bad chairs. i've already sat down in my head
+
+--- Fri 21:55, Unai
+outside. no buzzer on the street door? it's just a dead button
+
+--- Fri 21:56, Miren
+push it harder. it's the one with the sticker that says it's broken
+
+--- Fri 21:56, Miren
+you're in
+

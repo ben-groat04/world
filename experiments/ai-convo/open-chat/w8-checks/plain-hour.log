@@ -1,0 +1,38 @@
+W8-P2: day 1: 67 messages in 5 stretches
+W8-P3: day 1: 42 messages in 3 stretches
+W8-P1: stamps out of order or before the span, retrying
+W8-P4: day 1: 56 messages in 3 stretches, then quiet
+W8-P2: day 2: 48 messages in 3 stretches, then quiet
+W8-P1: day 1: 62 messages in 5 stretches
+W8-P3: stamps out of order or before the span, retrying
+W8-P3: day 2: 17 messages in 1 stretches, then quiet
+W8-P1: day 2: 38 messages in 2 stretches
+W8-P2: day 3: 71 messages in 3 stretches
+W8-P2: 186 messages, 2026-11-24T07:55 to 2026-11-27T08:05
+W8-P1: day 3: 35 messages in 2 stretches
+W8-P1: 135 messages, 2026-11-24T22:55 to 2026-11-28T07:52
+W8-P4: day 2: 74 messages in 4 stretches
+W8-P3: day 3: 50 messages in 3 stretches
+W8-P3: 109 messages, 2026-11-23T17:40 to 2026-11-26T06:48
+W8-P4: not in the format, retrying
+W8-P5: day 1: 46 messages in 4 stretches
+W8-P6: day 1: 47 messages in 3 stretches
+W8-P7: not in the format, retrying
+W8-P7: day 1: 17 messages in 2 stretches
+W8-P6: day 2: 32 messages in 2 stretches, then quiet
+W8-P5: not in the format, retrying
+W8-P4: day 3: 49 messages in 1 stretches
+W8-P4: 179 messages, 2026-11-29T11:00 to 2026-12-02T13:20
+W8-P7: day 2: 25 messages in 3 stretches
+W8-P5: day 2: 41 messages in 3 stretches, then quiet
+W8-P6: day 3: 59 messages in 4 stretches
+W8-P6: 138 messages, 2026-11-25T15:55 to 2026-11-28T15:23
+W8-P7: day 3: 17 messages in 2 stretches, then quiet
+W8-P7: 59 messages, 2026-11-29T10:05 to 2026-12-01T21:20
+W8-P8: day 1: 49 messages in 4 stretches
+W8-P8: day 2: 15 messages in 1 stretches
+W8-P5: day 3: 84 messages in 3 stretches, then quiet
+W8-P5: 171 messages, 2026-11-24T13:15 to 2026-11-26T22:51
+W8-P8: day 3: 27 messages in 2 stretches
+W8-P8: 91 messages, 2026-11-23T14:35 to 2026-11-26T12:14
+list: /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-45-27-104Z/list.txt

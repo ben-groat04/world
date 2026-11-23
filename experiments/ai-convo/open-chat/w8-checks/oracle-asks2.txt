@@ -1,0 +1,25 @@
+Q: What are the opening hours of the Louvre on Tuesdays?
+  searches 0, fetches 1, fetches returning a page 1; fetched: louvre.fr
+  answer URL: https://www.louvre.fr/en/visit/hours-admission (a host that was fetched)
+  A: The Louvre is closed every Tuesday, according to its official hours page. It's open 9am to 6pm on Monday, Thursday, Saturday and Sunday, and 9am to 9pm on Wednesday and Friday. https://www.louvre.fr/en/visit/hours-admission
+
+Q: Is the Tate Modern open on Mondays, and is it free to go in?
+  searches 0, fetches 1, fetches returning a page 1; fetched: tate.org.uk
+  answer URL: https://www.tate.org.uk/visit/tate-modern (a host that was fetched)
+  A: Yes, Tate Modern is open on Mondays, from 10:00 to 18:00. Entry to the collection is free. Paid exhibitions need a ticket. Booking is recommended. Details are at https://www.tate.org.uk/visit/tate-modern
+
+Q: When does the Sagrada Familia open on Sundays and what does a ticket cost?
+  searches 1, fetches 1, fetches returning a page 1; fetched: sagradafamilia.org
+  answer URL: https://sagradafamilia.org/en/faqs (a host that was fetched)
+  A: Third-party sites say the Sagrada Família opens at 10:30 on Sundays, later than other days. In winter it closes around 18:00. A basic ticket is about €26. I couldn't confirm any of this on the official site, which currently says the basilica is temporarily closed to the public, so check before you go: https://sagradafamilia.org/en/faqs
+
+Q: What is the best way to get from Heathrow to central London after midnight?
+  searches 1, fetches 0, fetches returning a page 0; fetched: -
+  answer URL: https://www.heathrow.com/transport-and-directions/getting-to-central-london (not fetched)
+  A: Night buses and taxis are your options after midnight. The N9 night bus runs about every 30 minutes from Heathrow to Trafalgar Square and takes roughly 60 to 80 minutes. Taxis or minicabs are faster but cost more. The Piccadilly line's Night Tube only runs on Friday and Saturday nights, and it doesn't serve Terminal 4.  https://www.heathrow.com/transport-and-directions/getting-to-central-london
+
+Q: How long does the Eurostar from London St Pancras to Paris take?
+  searches 1, fetches 0, fetches returning a page 0; fetched: -
+  answer URL: https://www.eurostar.com/uk-en/train/london-to-paris (not fetched)
+  A: About 2 hours 20 minutes on a direct train to Paris Gare du Nord. The fastest services take roughly 2h15, and some take up to about 2h30. Exact times depend on the service, so check the timetable before you book: https://www.eurostar.com/uk-en/train/london-to-paris
+

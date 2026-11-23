@@ -1,0 +1,4 @@
+W8-F1 /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-22-52-936Z/W8-F1
+W8-F2 /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-22-52-936Z/W8-F2
+W8-F3 /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-22-52-936Z/W8-F3
+W8-F4 /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-22-52-936Z/W8-F4

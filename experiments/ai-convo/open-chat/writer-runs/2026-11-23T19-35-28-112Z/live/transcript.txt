@@ -1,0 +1,196 @@
+--- Mon 19:35, Euler
+Can u look at a list of claimed RH proofs before I send it to the group? 14 of them, most on arxiv, a few just pdfs on people's websites
+
+--- Mon 19:36, Euler
+1. Spectral/Hilbert-Polya style operator (v4, 2019)
+2. Li coefficients argument
+3. "elementary" one, 40 pages, no refs
+4. Hadamard product + growth bound, claims the constant is explicit
+5. The one from the forum thread that everyone laughed at 😅
+6-14 in the doc
+
+--- Mon 19:52, Felix
+Im mid batch, cant look til ~21
+what do you want checked, just the numerics or the logic too
+
+--- Mon 19:54, Euler
+Numerics where they claim a zero count or verify a bound
+logic is my job, I just need to know which ones touch actual zeros
+
+--- Mon 19:55, Euler
+No rush tbh
+
+--- Mon 20:40, Felix
+Ok. 1 and 2 dont give zeros, just structural claims. 4 has a numerical constant I can test
+3 I cant tell without reading it, nothing numeric there?
+
+--- Mon 20:41, Euler
+Not as far as I can see, its all asymptotics 🤷
+
+--- Mon 20:43, Felix
+Then I'll take 4 and whichever of 6-14 have tables. Send me the doc link
+
+--- Mon 20:44, Euler
+Sending
+
+--- Mon 20:44, Euler
+[link: shared doc "RH claims – to check"]
+
+--- Mon 22:10, Felix
+Got through 4. Constant is off by a factor that matters for their bound, its not a typo, they use the wrong zero count at height ~10^4
+
+--- Mon 22:11, Felix
+Will write it up properly tomorrow, going to bed
+
+--- Mon 22:13, Euler
+Nice. Is it the N(T) count or the error term in the bound?
+
+--- Mon 22:15, Felix
+N(T). They used the leading term and dropped the S(T) correction. At height 10^4 that's enough to flip the sign of their margin
+
+--- Mon 22:16, Euler
+Ok 👀 write it up when ur up
+
+--- Tue 07:20, Felix
+Write-up in the doc. Section 4 + a table of their T values vs my counts
+
+--- Tue 07:21, Felix
+Also 14 has a table but I think its for a different L-function, not zeta. Need to check before saying anything
+
+--- Tue 08:47, Euler
+Saw it. Reading after coffee 📖
+
+--- Tue 09:30, Euler
+The L-function thing is a good catch. Doc header says zeta tho
+
+--- Tue 09:31, Felix
+Their table columns are headed L(s,χ₃). They copy-pasted the header from 13 I think
+
+--- Tue 09:33, Euler
+Lol. Ok flagging that to them too. Will send the list to the group once 14 is sorted
+
+--- Tue 10:52, Felix
+Checked 14 against my own run for L(s,χ₃) too. Their numbers match that, so its a header problem, not a bad computation
+
+--- Tue 10:53, Felix
+Can you check the T values in sec 4 against the doc table before it goes out
+
+--- Tue 11:20, Euler
+Checking. T=10^4 row is fine. 10^5 row looks like two digits swapped in col 3? 📖
+
+--- Tue 11:21, Felix
+Which one
+
+--- Tue 11:22, Euler
+Your 10^5 row, col 3
+
+--- Tue 11:24, Felix
+Ah yes thats a copy error, fixed
+
+--- Tue 13:05, Euler
+Sending to the group now. Leaving 14 in marked "header error, computation not checked" so nobody reads it as wrong
+
+--- Tue 13:06, Felix
+Fine by me
+
+--- Tue 13:06, Felix
+Cluster queue is backed up again, tmrw's batch might slip to evening
+
+--- Tue 13:40, Euler
+Ok. Ping me if it does 👍
+(👍 1)
+
+--- Tue 16:18, Felix
+Queue still stuck. Batch hasnt started, nothing running yet
+
+--- Tue 16:19, Felix
+Might be tmrw morning now not evening
+
+--- Tue 16:40, Euler
+Ok. Group replied to the list already, one guy says 9 is also an L-function table 👀
+
+--- Tue 16:41, Euler
+Not sure if thats true, didnt check 9
+
+--- Tue 16:44, Felix
+Ill look after the queue clears. Probably not, 9 is just a plain zeta table from what I remember
+
+--- Tue 17:02, Euler
+Can u check that before I reply, dont want to say its wrong and be wrong
+
+--- Tue 19:30, Felix
+Queue cleared 19:10 ish. Running now. Will check 9 after first chunk
+
+--- Tue 19:31, Euler
+👍
+
+--- Tue 23:58, Felix
+9 is zeta. Header says ζ(1/2+it), values match mine. Their objection is wrong
+
+--- Wed 06:14, Euler
+Ok. Replying to them now 📖
+
+--- Wed 11:37, Felix
+Group thread still going? Saw the guy posted again
+
+--- Wed 11:40, Euler
+Yeah, he says the 9 header is "clearly a typo for χ" and wants a retraction. Not doing that without him showing a value that differs 📖
+
+--- Wed 11:42, Felix
+He won't, 9 matches. I'll paste the first 5 zeros vs mine into the doc so there's something concrete to point at
+
+--- Wed 11:43, Euler
+Ok do that
+
+--- Wed 15:08, Felix
+Queue cleared again. Batch running, ~3h
+
+--- Wed 15:09, Euler
+👍
+(👍 1)
+
+--- Wed 15:20, Euler
+Forgot to ask, does sec 4 need the S(T) bit spelled out or just cite the standard bound
+
+--- Wed 15:26, Felix
+Spell it out, people will want to see the sign flip. Cite the bound too
+
+--- Wed 15:27, Euler
+Ok
+
+--- Wed 17:58, Felix
+Batch finished early, took about 1h40 not 3h
+
+--- Wed 17:59, Felix
+Pasting first 5 zeros into the doc under 9 so there's something concrete
+
+--- Wed 18:03, Euler
+Nice 👀 looks like the 10^4 sweep?
+
+--- Wed 18:04, Felix
+Yeah. 10^5 was yesterday's fix, already in
+
+--- Wed 18:20, Euler
+Saw the doc. Their objection looks dead to me. Sec 4 reads ok
+
+--- Wed 18:21, Euler
+Want me to add a line saying the S(T) term is the whole argument or leave it
+
+--- Wed 18:40, Felix
+Leave it, don't want to overstate. The sign flip is the point
+
+--- Wed 18:41, Felix
+One thing: their sec 2 says "for all T>10^4" but they only checked to about 10^4.5. Not mine to fix but worth a note
+
+--- Wed 18:55, Euler
+Ok. Flagging that as a second issue then 📖
+
+--- Wed 19:02, Euler
+Does the forum guy have a reply yet or did he go quiet
+
+--- Wed 19:30, Felix
+Dunno, I'm not on the list. Queue's empty tonight if you want anything else run
+
+--- Wed 19:31, Euler
+Nah, 14 is fine as is. Ping me if the guy posts a value 👍
+(👍 1)

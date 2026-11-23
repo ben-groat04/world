@@ -1,0 +1,320 @@
+--- Wed 14:05, Hannah
+Does anyone know which broadband providers are actually fastest? Like average speeds. Has anyone checked ofcom's broadband data or is that a whole rabbit hole
+
+--- Wed 14:09, Kieran
+rabbit hole yeah. we're still on the move-in deal aren't we
+
+--- Wed 14:11, Hannah
+I think so? The one that went up in april
+
+--- Wed 14:12, Ryan
+Ofcom publishes that stuff I think. I've not looked. Wouldn't trust my memory on which one's top
+
+--- Wed 14:14, Kieran
+my mate said his has been flaky since they changed the router. dunno if that's the provider or his street
+
+--- Wed 14:20, Hannah
+So nobody's checked
+
+--- Wed 14:22, Ryan
+Not me. Might have a look tonight if I've got energy
+
+--- Wed 14:31, Kieran
+lol "if i've got energy" he's going to make a dashboard
+
+--- Wed 14:33, Ryan
+No
+
+--- Wed 14:33, Ryan
+Maybe
+
+--- Wed 15:02, Hannah
+Also the contract ends in march so we should decide before then, not after
+
+--- Wed 15:40, Kieran
+agreed. pin it in here
+
+--- Wed 17:18, Ryan
+Ok
+
+--- Wed 22:47, Kieran
+ryan did you look or is that a no
+
+--- Thu 00:12, Ryan
+Ofcom page is up. It's a lot of tables
+
+--- Thu 00:13, Ryan
+Not doing it at midnight
+
+--- Thu 00:14, Kieran
+lol fair
+
+--- Thu 07:38, Hannah
+It's the april one. End date's in the pdf
+
+--- Thu 07:38, Hannah
+[file: broadband_contract_apr.pdf]
+
+--- Thu 07:41, Kieran
+ok so march. we can do it after work
+
+--- Thu 08:55, Ryan
+I'll look at the tables on lunch. No promises on the dashboard
+
+--- Thu 12:41, Ryan
+Ok the tables are a nightmare. Every provider has four different columns for "average"
+
+--- Thu 12:43, Hannah
+Lol. Is there a summary tab
+
+--- Thu 12:44, Ryan
+There's a summary tab. It's a different summary tab to the one on the other page
+
+--- Thu 12:58, Ryan
+[link: ofcom broadband speeds page]
+
+--- Thu 17:46, Kieran
+home. can we do the broadband thing on the sofa or do we need to sit at the table like adults
+
+--- Thu 17:49, Hannah
+Sofa's fine. I'm marking till about 8 so start without me
+
+--- Thu 17:50, Kieran
+not allowed to start without you
+
+--- Thu 18:21, Ryan
+On the bus. Will read the tables on the bus. Don't wait up
+
+--- Thu 18:23, Kieran
+lol
+
+--- Thu 18:34, Kieran
+got the laptop out already
+
+--- Thu 19:02, Ryan
+Home. Bus was rammed
+
+--- Thu 19:03, Ryan
+Summary tab on the second page has a different median to the first one. No idea which is the real figure yet
+
+--- Thu 19:10, Kieran
+just pick the first one lol
+
+--- Thu 19:11, Ryan
+Not picking anything till Hannah's here
+
+--- Thu 20:14, Hannah
+Done. Forty one books and a spelling test I'm not doing again
+
+--- Thu 20:15, Hannah
+Right. Which tab
+
+--- Thu 20:16, Kieran
+the one ryan says is wrong
+
+--- Thu 20:19, Ryan
+Neither's wrong. They're measuring different things. One's peak hours, one's all day
+
+--- Thu 20:20, Hannah
+So peak matters more? We're all on in the evenings
+
+--- Thu 20:21, Ryan
+Yeah that's the one I'd look at
+
+--- Thu 20:23, Kieran
+ok so which provider is top on peak
+
+--- Thu 20:31, Ryan
+Need to scroll. Give me a sec
+
+--- Thu 20:38, Ryan
+[screenshot: peak speeds table]
+
+--- Thu 20:44, Hannah
+Is the red one the bad one
+
+--- Thu 20:44, Ryan
+Red is bad yeah
+
+--- Thu 20:45, Kieran
+our one is red
+
+--- Thu 20:45, Ryan
+Our one is red
+
+--- Thu 20:47, Hannah
+Oh no
+
+--- Thu 20:48, Kieran
+the move-in deal was red and we put up with it for a year
+
+--- Thu 20:50, Hannah
+Can we switch without paying the thing
+
+--- Thu 20:52, Ryan
+Depends on the exit fee. It's in the pdf
+
+--- Thu 20:53, Hannah
+Page 4 I think
+
+--- Thu 21:05, Ryan
+Yeah. Not nothing
+
+--- Thu 21:06, Kieran
+so do we switch or do we just complain at them for a year
+
+--- Thu 21:09, Hannah
+Compare the exit fee against the difference in speed and then decide
+
+--- Thu 21:10, Ryan
+That's the sensible answer and I hate it
+
+--- Thu 21:10, Kieran
+lol
+
+--- Thu 22:31, Kieran
+ok i'm going to bed in a bit but who's doing the comparison
+
+--- Thu 22:44, Ryan
+I'll do the exit fee sum tomorrow. Need to find the notice period too, not on page 4
+
+--- Thu 22:46, Kieran
+legend
+
+--- Thu 23:12, Kieran
+night
+
+--- Fri 07:19, Hannah
+Morning. Did anyone do the sum or is that still tomorrow's problem
+
+--- Fri 07:54, Ryan
+Not yet. On the bus. Notice bit isn't on 4
+
+--- Fri 07:56, Hannah
+I think it's on 6
+
+--- Fri 08:41, Kieran
+morning. im up. who's doing it
+
+--- Fri 08:52, Ryan
+Doing it at lunch. Spreadsheet, not the pdf
+
+--- Fri 12:34, Ryan
+[photo: page 6 of broadband_contract_apr.pdf]
+
+--- Fri 12:35, Ryan
+Notice is 30 days. Exit fee is on this page not 4 so hannah was right
+
+--- Fri 12:36, Kieran
+you are on the bus again aren't you
+
+--- Fri 12:36, Ryan
+Lunch. At desk. It's a spreadsheet, not a bus
+
+--- Fri 12:41, Hannah
+Is 30 days from when we tell them or when the contract ends
+
+--- Fri 12:42, Ryan
+Read it as from when we tell them. So if we tell them before dec 1 we're out by end of dec
+
+--- Fri 12:42, Ryan
+Is that the same as 'before march'
+
+--- Fri 12:44, Hannah
+Not if we want to leave in march
+
+--- Fri 12:45, Kieran
+can we just leave in march. i don't want to pay twice
+
+--- Fri 15:17, Hannah
+Break's done. Kids have eaten half the glue. Did the sum happen
+
+--- Fri 15:58, Ryan
+Sum is in the sheet. Tab called sum
+
+--- Fri 16:02, Kieran
+ok so is it cheaper to switch or pay the fee
+
+--- Fri 16:20, Ryan
+Switch at the start of march. The fee's less than the bill for the months we'd be stuck with the red one anyway
+
+--- Fri 16:21, Ryan
+And the new one is top of the peak table by a fair margin, not a rounding thing
+
+--- Fri 16:22, Hannah
+So we switch
+
+--- Fri 16:24, Kieran
+switch. ryan you're doing the phone call
+
+--- Fri 16:25, Ryan
+No
+
+--- Fri 16:25, Kieran
+you did the dashboard
+
+--- Fri 16:26, Ryan
+There was no dashboard
+
+--- Fri 17:31, Kieran
+so who's calling them
+
+--- Fri 17:44, Ryan
+Not me
+
+--- Fri 17:45, Hannah
+I can't do calls during the day, I'm in a classroom. Would have to be from the car
+
+--- Fri 17:46, Kieran
+car's fine
+
+--- Fri 17:52, Ryan
+Not in the car
+
+--- Fri 21:15, Kieran
+is there anything in the house that's actually for dinner
+
+--- Fri 21:20, Hannah
+Pasta and a jar of something
+
+--- Fri 21:21, Ryan
+What jar
+
+--- Fri 21:22, Hannah
+The red one. Behind the oats
+
+--- Fri 21:22, Kieran
+that's a jar of pesto that's been there since august
+
+--- Fri 21:30, Ryan
+Pasta and pesto is still pasta
+
+--- Fri 21:31, Kieran
+ok
+
+--- Fri 22:58, Kieran
+do the bins go out tomorrow or is it monday
+
+--- Fri 23:04, Hannah
+Think it's Monday. Check the calendar on the fridge
+
+--- Fri 23:05, Kieran
+the fridge calendar is from march
+
+--- Fri 23:40, Kieran
+anyone up
+
+--- Sat 00:52, Kieran
+ok night
+
+--- Sat 08:58, Ryan
+Morning. Did anyone ring them
+
+--- Sat 09:14, Hannah
+Not yet. Still in bed
+
+--- Sat 09:16, Kieran
+ryan you said you'd ring them
+
+--- Sat 09:17, Ryan
+I said no

@@ -1,0 +1,141 @@
+{"writer":"w8","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-24T11:50","complete":true,"rejects":1,"stretches":7,"quiet":1,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1450,"cache_read_input_tokens":0,"output_tokens":276,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1450,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":276,"cache_read_input_tokens":0,"cache_creation_input_tokens":1450,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1450},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1750,"cache_read_input_tokens":0,"output_tokens":1008,"output_tokens_details":{"thinking_tokens":653},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1750,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1008,"cache_read_input_tokens":0,"cache_creation_input_tokens":1750,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1750},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2108,"cache_read_input_tokens":0,"output_tokens":858,"output_tokens_details":{"thinking_tokens":769},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2108,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":858,"cache_read_input_tokens":0,"cache_creation_input_tokens":2108,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2108},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2196,"cache_read_input_tokens":0,"output_tokens":207,"output_tokens_details":{"thinking_tokens":200},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2196,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":207,"cache_read_input_tokens":0,"cache_creation_input_tokens":2196,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2196},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2196,"cache_read_input_tokens":0,"output_tokens":1286,"output_tokens_details":{"thinking_tokens":922},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2196,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1286,"cache_read_input_tokens":0,"cache_creation_input_tokens":2196,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2196},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2563,"cache_read_input_tokens":0,"output_tokens":2406,"output_tokens_details":{"thinking_tokens":1760},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2563,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2406,"cache_read_input_tokens":0,"cache_creation_input_tokens":2563,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2563},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3206,"cache_read_input_tokens":0,"output_tokens":2017,"output_tokens_details":{"thinking_tokens":841},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3206,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2017,"cache_read_input_tokens":0,"cache_creation_input_tokens":3206,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3206},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4381,"cache_read_input_tokens":0,"output_tokens":1638,"output_tokens_details":{"thinking_tokens":793},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4381,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1638,"cache_read_input_tokens":0,"cache_creation_input_tokens":4381,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4381},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":4381,"output_tokens":1921,"output_tokens_details":{"thinking_tokens":1136},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1921,"cache_read_input_tokens":4381,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Laura","Mikko"],"setting":"You are both in Helsinki, Finland, where you each live in your own place in the city. You are siblings, grown up together, and you talk regularly, so you know each other's habits, jobs and moods well.","openers":["Send a photo of the dinner you made","Ask how the new job site went","Remind him about Sunday lunch","Tell him to check on Mum's boiler"],"opener":"Ask how the new job site went","cast":{"Laura":{"who":"34, woman, the sister","work":"pharmacy technician","knows":"You know Mikko as your younger brother, an electrician, and you have known him all your life.","texts":"","capitals":true,"lives":[],"ex":[]},"Mikko":{"who":"31, man, the brother","work":"electrician","knows":"You know Laura as your older sister, a pharmacy technician, and you have known her all your life.","texts":"","capitals":false,"lives":[],"ex":[]}},"private_lines":{"Laura":"You work as a pharmacy technician at a pharmacy in Helsinki, filling prescriptions, serving customers and keeping the stock in order. You live in a flat in central Helsinki and spend your evenings there, cooking, reading or going for walks along the harbour.","Mikko":"You work as an electrician in Helsinki, going to jobs across the city for installations and repairs. You live in a flat in a suburb of Helsinki, and your days go to work, errands and time with your dog or friends in the evenings."},"sleep":{"Laura":[23,7],"Mikko":[23.5,7]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":778,"cache_read_input_tokens":0,"output_tokens":905,"output_tokens_details":{"thinking_tokens":735},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":778,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":905,"cache_read_input_tokens":0,"cache_creation_input_tokens":778,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":778},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":998,"cache_read_input_tokens":0,"output_tokens":446,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":998,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":446,"cache_read_input_tokens":0,"cache_creation_input_tokens":998,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":998},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Helsinki, Finland","castMs":9837,"situation":"My brother.","topic":null}
+{"who":"Laura","text":"How did the new site go","posted":true,"at":"2026-11-24T11:50","checkin":"2026-11-24T11:50"}
+{"who":"Mikko","text":"ok. old wiring in the basement was worse than they said","posted":true,"at":"2026-11-24T12:14","checkin":"2026-11-24T12:14"}
+{"who":"Mikko","text":"had to pull the whole run back to the panel. took all morning","posted":true,"at":"2026-11-24T12:15","checkin":"2026-11-24T12:15"}
+{"who":"Laura","text":"Ugh. Did they know before you got there or no","posted":true,"at":"2026-11-24T12:31","checkin":"2026-11-24T12:31"}
+{"who":"Mikko","text":"nobody told me anything. the landlord just said \"should be fine\"","posted":true,"at":"2026-11-24T12:33","checkin":"2026-11-24T12:33"}
+{"who":"Laura","text":"Classic","posted":true,"at":"2026-11-24T12:40","checkin":"2026-11-24T12:40"}
+{"who":"Mikko","text":"yeah","posted":true,"at":"2026-11-24T12:41","checkin":"2026-11-24T12:41"}
+{"who":"Laura","text":"You eat","posted":true,"at":"2026-11-24T13:02","checkin":"2026-11-24T13:02"}
+{"who":"Mikko","text":"sort of. sandwich in the van","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Laura","text":"Mikko","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Mikko","text":"it was a good sandwich","posted":true,"at":"2026-11-24T13:22","checkin":"2026-11-24T13:22"}
+{"who":"Laura","text":"It was a good sandwich?? What kind","posted":true,"at":"2026-11-24T17:48","checkin":"2026-11-24T17:48"}
+{"who":"Mikko","text":"egg and the cheap rye. dont start","posted":true,"at":"2026-11-24T17:52","checkin":"2026-11-24T17:52"}
+{"who":"Laura","text":"Wasnt going to","posted":true,"at":"2026-11-24T17:53","checkin":"2026-11-24T17:53"}
+{"who":"Laura","text":"Are you going back out tomorrow or is it the basement thing still","posted":true,"at":"2026-11-24T17:55","checkin":"2026-11-24T17:55"}
+{"who":"Mikko","text":"basement thing till thursd probably. the panel guy is coming friday","posted":true,"at":"2026-11-24T18:10","checkin":"2026-11-24T18:10"}
+{"who":"Mikko","text":"home now. picking milo up from ilkka's first","posted":true,"at":"2026-11-24T18:11","checkin":"2026-11-24T18:11"}
+{"who":"Laura","text":"Someone came in asking if the sleeping pills were the same as the ones in the blue box. I said which blue box. They had a whole story","posted":true,"at":"2026-11-24T19:30","checkin":"2026-11-24T19:30"}
+{"who":"Mikko","text":"were they the same","posted":true,"at":"2026-11-24T19:32","checkin":"2026-11-24T19:32"}
+{"who":"Laura","text":"Different dose. I said that about four times","posted":true,"at":"2026-11-24T19:33","checkin":"2026-11-24T19:33"}
+{"who":"Mikko","text":"did mum call you","posted":true,"at":"2026-11-24T22:40","checkin":"2026-11-24T22:40"}
+{"who":"Mikko","text":"she called me about the boiler again","posted":true,"at":"2026-11-24T22:41","checkin":"2026-11-24T22:41"}
+{"who":"Laura","text":"No. She called me sunday about the boiler","posted":true,"at":"2026-11-24T22:58","checkin":"2026-11-24T22:58"}
+{"who":"Mikko","text":"she thinks its the pressure valve. says she read about it","posted":true,"at":"2026-11-24T23:07","checkin":"2026-11-24T23:07"}
+{"who":"Mikko","text":"i said dont tell her i said that","posted":true,"at":"2026-11-24T23:09","checkin":"2026-11-24T23:09"}
+{"who":"Mikko","text":"milo already on the bed. going to bed too","posted":true,"at":"2026-11-24T23:24","checkin":"2026-11-24T23:24"}
+{"who":"Laura","text":"Did you tell her you said dont tell her","posted":true,"at":"2026-11-25T07:14","checkin":"2026-11-25T07:14"}
+{"who":"Mikko","text":"no. she'd just ring you about it","posted":true,"at":"2026-11-25T07:19","checkin":"2026-11-25T07:19"}
+{"who":"Mikko","text":"milo woke me at 6 wanting out. dog has no concept of time","posted":true,"at":"2026-11-25T07:20","checkin":"2026-11-25T07:20"}
+{"who":"Laura","text":"She'll ring me by lunch anyway","posted":true,"at":"2026-11-25T07:22","checkin":"2026-11-25T07:22"}
+{"who":"Laura","text":"Ate a real lunch. Soup from the place on fredrikinkatu","posted":true,"at":"2026-11-25T12:38","checkin":"2026-11-25T12:38"}
+{"who":"Mikko","text":"what kind","posted":true,"at":"2026-11-25T12:52","checkin":"2026-11-25T12:52"}
+{"who":"Mikko","text":"no. dont answer","posted":true,"at":"2026-11-25T12:52","checkin":"2026-11-25T12:52"}
+{"who":"Laura","text":"Lentil. Wasnt going to start","posted":true,"at":"2026-11-25T12:54","checkin":"2026-11-25T12:54"}
+{"who":"Mikko","text":"basement has water in one corner now. not from my stuff","posted":true,"at":"2026-11-25T17:31","checkin":"2026-11-25T17:31"}
+{"who":"Laura","text":"Whose stuff","posted":true,"at":"2026-11-25T17:33","checkin":"2026-11-25T17:33"}
+{"who":"Mikko","text":"the drain. landlord's guy is coming to look thurs","posted":true,"at":"2026-11-25T17:34","checkin":"2026-11-25T17:34"}
+{"who":"Laura","text":"So you're there thursday too","posted":true,"at":"2026-11-25T17:35","checkin":"2026-11-25T17:35"}
+{"who":"Mikko","text":"yeah. might be the same sandwich","posted":true,"at":"2026-11-25T17:36","checkin":"2026-11-25T17:36"}
+{"who":"Laura","text":"Hope the sandwich was at least warm","posted":true,"at":"2026-11-25T17:40","checkin":"2026-11-25T17:40"}
+{"who":"Mikko","text":"it was from the kiosk by the metro. they dont heat anything","posted":true,"at":"2026-11-25T17:44","checkin":"2026-11-25T17:44"}
+{"who":"Laura","text":"Mikko","posted":true,"at":"2026-11-25T17:45","checkin":"2026-11-25T17:45"}
+{"who":"Mikko","text":"i know","posted":true,"at":"2026-11-25T17:45","checkin":"2026-11-25T17:45"}
+{"who":"Laura","text":"Blue box man came back. Different story, same dose","posted":true,"at":"2026-11-25T18:30","checkin":"2026-11-25T18:30"}
+{"who":"Mikko","text":"did you give him the leaflet","posted":true,"at":"2026-11-25T18:31","checkin":"2026-11-25T18:31"}
+{"who":"Laura","text":"I gave him the leaflet. He read it standing at the counter","posted":true,"at":"2026-11-25T18:31","checkin":"2026-11-25T18:31"}
+{"who":"Mikko","text":"milo ate half a tennis ball","posted":true,"at":"2026-11-25T19:05","checkin":"2026-11-25T19:05"}
+{"who":"Laura","text":"Is he ok","posted":true,"at":"2026-11-25T19:06","checkin":"2026-11-25T19:06"}
+{"who":"Mikko","text":"hes asleep on the radiator. so yeah","posted":true,"at":"2026-11-25T19:08","checkin":"2026-11-25T19:08"}
+{"who":"Mikko","text":"ilkka wants to know if dogs can have ibuprofen","posted":true,"at":"2026-11-25T19:08","checkin":"2026-11-25T19:08"}
+{"who":"Laura","text":"No. If he's off his food ring the vet line, don't go by ilkka","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Mikko","text":"he didnt ask me. he asked milo","posted":true,"at":"2026-11-25T19:14","checkin":"2026-11-25T19:14"}
+{"who":"Mikko","text":"mum rang again. boiler. i said i'd look at it saturday","posted":true,"at":"2026-11-25T22:47","checkin":"2026-11-25T22:47"}
+{"who":"Mikko","text":"not looking at it","posted":true,"at":"2026-11-25T22:48","checkin":"2026-11-25T22:48"}
+{"who":"Laura","text":"Did you look at it","posted":true,"at":"2026-11-26T06:58","checkin":"2026-11-26T06:58"}
+{"who":"Mikko","text":"she sent a photo of a gauge. its at 0.4","posted":true,"at":"2026-11-26T07:01","checkin":"2026-11-26T07:01"}
+{"who":"Laura","text":"That's the pressure valve","posted":true,"at":"2026-11-26T07:01","checkin":"2026-11-26T07:01"}
+{"who":"Mikko","text":"dont","posted":true,"at":"2026-11-26T07:02","checkin":"2026-11-26T07:02"}
+{"who":"Laura","text":"I'm only saying she was right about the one thing","posted":true,"at":"2026-11-26T07:03","checkin":"2026-11-26T07:03"}
+{"who":"Mikko","text":"dont say that to her","posted":true,"at":"2026-11-26T07:04","checkin":"2026-11-26T07:04"}
+{"who":"Laura","text":"Ringing her at lunch then","posted":true,"at":"2026-11-26T07:05","checkin":"2026-11-26T07:05"}
+{"who":"Mikko","text":"you're going to say something","posted":true,"at":"2026-11-26T07:06","checkin":"2026-11-26T07:06"}
+{"who":"Laura","text":"Wasn't going to","posted":true,"at":"2026-11-26T07:06","checkin":"2026-11-26T07:06"}
+{"who":"Mikko","text":"milo threw up on the stairs. once","posted":true,"at":"2026-11-26T07:38","checkin":"2026-11-26T07:38"}
+{"who":"Laura","text":"Food or the tennis ball","posted":true,"at":"2026-11-26T07:40","checkin":"2026-11-26T07:40"}
+{"who":"Mikko","text":"no idea. ate his breakfast after. looks fine","posted":true,"at":"2026-11-26T07:41","checkin":"2026-11-26T07:41"}
+{"who":"Laura","text":"If he goes off his food, the vet line. Not ilkka","posted":true,"at":"2026-11-26T07:41","checkin":"2026-11-26T07:41"}
+{"who":"Mikko","text":"noted","posted":true,"at":"2026-11-26T07:42","checkin":"2026-11-26T07:42"}
+{"who":"Mikko","text":"landlords guy is here. stood in the water in wellies and said \"hm\"","posted":true,"at":"2026-11-26T09:15","checkin":"2026-11-26T09:15"}
+{"who":"Mikko","text":"hm is not a diagnosis","posted":true,"at":"2026-11-26T09:16","checkin":"2026-11-26T09:16"}
+{"who":"Laura","text":"Did he say anything else","posted":true,"at":"2026-11-26T09:18","checkin":"2026-11-26T09:18"}
+{"who":"Mikko","text":"he said roots","posted":true,"at":"2026-11-26T09:19","checkin":"2026-11-26T09:19"}
+{"who":"Laura","text":"Roots where","posted":true,"at":"2026-11-26T09:19","checkin":"2026-11-26T09:19"}
+{"who":"Mikko","text":"drain outside the wall. he's going to dig and see","posted":true,"at":"2026-11-26T09:24","checkin":"2026-11-26T09:24"}
+{"who":"Laura","text":"That's a whole different job","posted":true,"at":"2026-11-26T09:25","checkin":"2026-11-26T09:25"}
+{"who":"Mikko","text":"yeah i said that. he said it's not my job either","posted":true,"at":"2026-11-26T09:31","checkin":"2026-11-26T09:31"}
+{"who":"Laura","text":"Rang mum","posted":true,"at":"2026-11-26T12:20","checkin":"2026-11-26T12:20"}
+{"who":"Mikko","text":"and?","posted":true,"at":"2026-11-26T12:26","checkin":"2026-11-26T12:26"}
+{"who":"Laura","text":"Gauge is back up to 1.2. She's very pleased with herself","posted":true,"at":"2026-11-26T12:33","checkin":"2026-11-26T12:33"}
+{"who":"Mikko","text":"she read about it","posted":true,"at":"2026-11-26T12:34","checkin":"2026-11-26T12:34"}
+{"who":"Laura","text":"She did say that","posted":true,"at":"2026-11-26T12:34","checkin":"2026-11-26T12:34"}
+{"who":"Mikko","text":"i'm not telling her she was right","posted":true,"at":"2026-11-26T12:40","checkin":"2026-11-26T12:40"}
+{"who":"Laura","text":"You don't have to. I did it for you","posted":true,"at":"2026-11-26T12:41","checkin":"2026-11-26T12:41"}
+{"who":"Mikko","text":"ha","posted":true,"at":"2026-11-26T12:41","checkin":"2026-11-26T12:41"}
+{"who":"Mikko","text":"[photo: a sandwich on the dashboard of a van]","posted":true,"at":"2026-11-26T13:05","checkin":"2026-11-26T13:05"}
+{"who":"Laura","text":"Is that egg","posted":true,"at":"2026-11-26T13:06","checkin":"2026-11-26T13:06"}
+{"who":"Mikko","text":"it's the cheap rye","posted":true,"at":"2026-11-26T13:07","checkin":"2026-11-26T13:07"}
+{"who":"Laura","text":"Mikko","posted":true,"at":"2026-11-26T13:07","checkin":"2026-11-26T13:07"}
+{"who":"Mikko","text":"dont","posted":true,"at":"2026-11-26T13:08","checkin":"2026-11-26T13:08"}
+{"who":"Laura","text":"Walked down to the harbour after work. Dark already. Wind is awful","posted":true,"at":"2026-11-26T17:50","checkin":"2026-11-26T17:50"}
+{"who":"Laura","text":"[photo: grey water, the ferry lights far out]","posted":true,"at":"2026-11-26T17:52","checkin":"2026-11-26T17:52"}
+{"who":"Mikko","text":"nice","posted":true,"at":"2026-11-26T18:20","checkin":"2026-11-26T18:20"}
+{"who":"Mikko","text":"got the drain one. roots, like he said. he's digging tomorrow","posted":true,"at":"2026-11-26T18:21","checkin":"2026-11-26T18:21"}
+{"who":"Laura","text":"So you're there Friday too","posted":true,"at":"2026-11-26T18:22","checkin":"2026-11-26T18:22"}
+{"who":"Mikko","text":"panel guy is friday. i'm there friday too","posted":true,"at":"2026-11-26T18:24","checkin":"2026-11-26T18:24"}
+{"who":"Laura","text":"Lucky you","posted":true,"at":"2026-11-26T18:25","checkin":"2026-11-26T18:25"}
+{"who":"Mikko","text":"milo's on the radiator again","posted":true,"at":"2026-11-26T19:40","checkin":"2026-11-26T19:40"}
+{"who":"Mikko","text":"he's taken over the radiator","posted":true,"at":"2026-11-26T19:41","checkin":"2026-11-26T19:41"}
+{"who":"Laura","text":"He'll be fine on it. Is he eating","posted":true,"at":"2026-11-26T19:44","checkin":"2026-11-26T19:44"}
+{"who":"Mikko","text":"yes. the radiator is also his","posted":true,"at":"2026-11-26T19:46","checkin":"2026-11-26T19:46"}
+{"who":"Mikko","text":"mum sent a photo of the gauge again","posted":true,"at":"2026-11-26T22:12","checkin":"2026-11-26T22:12"}
+{"who":"Laura","text":"Don't open it","posted":true,"at":"2026-11-26T22:12","checkin":"2026-11-26T22:12"}
+{"who":"Mikko","text":"already opened it. it's at 1.2 she says","posted":true,"at":"2026-11-26T22:13","checkin":"2026-11-26T22:13"}
+{"who":"Laura","text":"Then it's fine","posted":true,"at":"2026-11-26T22:13","checkin":"2026-11-26T22:13"}
+{"who":"Mikko","text":"she wants to know if you are eating properly","posted":true,"at":"2026-11-26T22:15","checkin":"2026-11-26T22:15"}
+{"who":"Laura","text":"Tell her I had lentils","posted":true,"at":"2026-11-26T22:16","checkin":"2026-11-26T22:16"}
+{"who":"Mikko","text":"she'll ask what kind","posted":true,"at":"2026-11-26T22:16","checkin":"2026-11-26T22:16"}
+{"who":"Laura","text":"Red. Going to bed","posted":true,"at":"2026-11-26T22:17","checkin":"2026-11-26T22:17"}
+{"who":"Mikko","text":"milo's already on it","posted":true,"at":"2026-11-26T22:18","checkin":"2026-11-26T22:18"}
+{"who":"Laura","text":"Did the drain guy dig already or is that later","posted":true,"at":"2026-11-27T07:09","checkin":"2026-11-27T07:09"}
+{"who":"Mikko","text":"later. he's coming at 8. panel guy at 10 maybe","posted":true,"at":"2026-11-27T07:14","checkin":"2026-11-27T07:14"}
+{"who":"Mikko","text":"milo ate breakfast. all of it. no stairs incident","posted":true,"at":"2026-11-27T07:15","checkin":"2026-11-27T07:15"}
+{"who":"Laura","text":"Good","posted":true,"at":"2026-11-27T07:16","checkin":"2026-11-27T07:16"}
+{"who":"Laura","text":"Is mum going to ring about the gauge or is she done","posted":true,"at":"2026-11-27T07:30","checkin":"2026-11-27T07:30"}
+{"who":"Mikko","text":"she's never done","posted":true,"at":"2026-11-27T07:38","checkin":"2026-11-27T07:38"}
+{"who":"Mikko","text":"she asked if you're going to the dentist","posted":true,"at":"2026-11-27T07:39","checkin":"2026-11-27T07:39"}
+{"who":"Laura","text":"I'm not going to the dentist","posted":true,"at":"2026-11-27T07:40","checkin":"2026-11-27T07:40"}
+{"who":"Laura","text":"Did you tell her I'm going to the dentist","posted":true,"at":"2026-11-27T07:40","checkin":"2026-11-27T07:40"}
+{"who":"Mikko","text":"i said i didnt know. which is true","posted":true,"at":"2026-11-27T07:44","checkin":"2026-11-27T07:44"}
+{"who":"Laura","text":"Blue box man is back","posted":true,"at":"2026-11-27T12:12","checkin":"2026-11-27T12:12"}
+{"who":"Laura","text":"Says he's sleeping fine now. Wanted to know if that means he can stop","posted":true,"at":"2026-11-27T12:12","checkin":"2026-11-27T12:12"}
+{"who":"Mikko","text":"can he","posted":true,"at":"2026-11-27T12:15","checkin":"2026-11-27T12:15"}
+{"who":"Laura","text":"I said ask the doctor. He said the doctor is the one who wrote it","posted":true,"at":"2026-11-27T12:15","checkin":"2026-11-27T12:15"}
+{"who":"Mikko","text":"ok thats a loop","posted":true,"at":"2026-11-27T12:16","checkin":"2026-11-27T12:16"}
+{"who":"Laura","text":"Yes","posted":true,"at":"2026-11-27T12:16","checkin":"2026-11-27T12:16"}
+{"who":"Mikko","text":"[photo: a trench in the grass, a black root across it, a spade leaning on the wall]","posted":true,"at":"2026-11-27T12:47","checkin":"2026-11-27T12:47"}
+{"who":"Laura","text":"Is that the root","posted":true,"at":"2026-11-27T12:48","checkin":"2026-11-27T12:48"}
+{"who":"Mikko","text":"its a root","posted":true,"at":"2026-11-27T12:48","checkin":"2026-11-27T12:48"}
+{"who":"Laura","text":"Ok","posted":true,"at":"2026-11-27T12:49","checkin":"2026-11-27T12:49"}
+{"who":"Laura","text":"Did you eat","posted":true,"at":"2026-11-27T12:51","checkin":"2026-11-27T12:51"}
+{"who":"Mikko","text":"soup from the kiosk. it was hot","posted":true,"at":"2026-11-27T13:30","checkin":"2026-11-27T13:30"}
+{"who":"Laura","text":"Which kiosk","posted":true,"at":"2026-11-27T13:30","checkin":"2026-11-27T13:30"}
+{"who":"Mikko","text":"dont","posted":true,"at":"2026-11-27T13:31","checkin":"2026-11-27T13:31"}
+{"who":"Laura","text":"Wasn't going to","posted":true,"at":"2026-11-27T13:31","checkin":"2026-11-27T13:31"}
+{"who":"Mikko","text":"panel guy says the panel is fine. just the run was bad. so the old wiring was the problem after all","posted":true,"at":"2026-11-27T14:22","checkin":"2026-11-27T14:22"}
+{"who":"Laura","text":"So the landlord was right","posted":true,"at":"2026-11-27T14:23","checkin":"2026-11-27T14:23"}
+{"who":"Mikko","text":"landlord said should be fine","posted":true,"at":"2026-11-27T14:24","checkin":"2026-11-27T14:24"}
+{"who":"Laura","text":"He says that about everything","posted":true,"at":"2026-11-27T14:25","checkin":"2026-11-27T14:25"}
+{"who":"Mikko","text":"yeah","posted":true,"at":"2026-11-27T14:26","checkin":"2026-11-27T14:26"}

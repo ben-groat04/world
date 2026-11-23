@@ -1,0 +1,154 @@
+{"writer":"w8","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-24T07:35","complete":true,"rejects":1,"stretches":6,"quiet":1,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1449,"cache_read_input_tokens":0,"output_tokens":1428,"output_tokens_details":{"thinking_tokens":990},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1449,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1428,"cache_read_input_tokens":0,"cache_creation_input_tokens":1449,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1449},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1898,"cache_read_input_tokens":0,"output_tokens":1690,"output_tokens_details":{"thinking_tokens":1122},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1898,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1690,"cache_read_input_tokens":0,"cache_creation_input_tokens":1898,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1898},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2465,"cache_read_input_tokens":0,"output_tokens":1445,"output_tokens_details":{"thinking_tokens":1210},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2465,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1445,"cache_read_input_tokens":0,"cache_creation_input_tokens":2465,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2465},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2699,"cache_read_input_tokens":0,"output_tokens":1877,"output_tokens_details":{"thinking_tokens":1057},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2699,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1877,"cache_read_input_tokens":0,"cache_creation_input_tokens":2699,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2699},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3518,"cache_read_input_tokens":0,"output_tokens":1743,"output_tokens_details":{"thinking_tokens":1212},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3518,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1743,"cache_read_input_tokens":0,"cache_creation_input_tokens":3518,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3518},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4046,"cache_read_input_tokens":0,"output_tokens":2438,"output_tokens_details":{"thinking_tokens":1265},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4046,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2438,"cache_read_input_tokens":0,"cache_creation_input_tokens":4046,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4046},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":5218,"cache_read_input_tokens":0,"output_tokens":2284,"output_tokens_details":{"thinking_tokens":1228},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5218,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2284,"cache_read_input_tokens":0,"cache_creation_input_tokens":5218,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5218},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":5218,"output_tokens":421,"output_tokens_details":{"thinking_tokens":414},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":421,"cache_read_input_tokens":5218,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Unai","Miren"],"setting":"You are both in Bilbao, Spain, where you both live, and you have been close friends since secondary school there. You still meet up for drinks when your shifts line up, and you text each other most days.","openers":["send \"she left, can you come over\"","send a broken-heart emoji on its own","write \"i'm at the bar on calle ledesma, come get me\"","send \"i should have seen this coming\""],"opener":"send \"i should have seen this coming\"","cast":{"Unai":{"who":"27, man, the friend who was dumped","work":"barista","knows":"You know Miren as your oldest close friend, the one you call first when something goes wrong.","texts":"","capitals":false,"lives":[],"ex":[]},"Miren":{"who":"28, woman, the friend listening","work":"nurse","knows":"You know Unai as your best friend since school, someone you have shared almost everything with for more than a decade.","texts":"","capitals":false,"lives":[],"ex":[]}},"private_lines":{"Unai":"You work the early shift at a café in the Casco Viejo, pulling espressos and opening the shutters before eight, and you rent a small flat in Basurto on your own, where your days are mostly work, the gym and a few beers with friends.","Miren":"You work as a nurse on day shifts at a hospital in Bilbao, and you live alone in a flat in Deusto, where your days are long shifts, running along the river and catching up on sleep when you can."},"sleep":{"Unai":[23,6],"Miren":[23.5,7]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":786,"cache_read_input_tokens":0,"output_tokens":651,"output_tokens_details":{"thinking_tokens":478},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":651,"cache_read_input_tokens":0,"cache_creation_input_tokens":786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1007,"cache_read_input_tokens":0,"output_tokens":1645,"output_tokens_details":{"thinking_tokens":1219},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1007,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1645,"cache_read_input_tokens":0,"cache_creation_input_tokens":1007,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1007},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bilbao, Spain","castMs":14948,"situation":"Two friends, one just got dumped.","topic":null}
+{"who":"Unai","text":"i should have seen this coming","posted":true,"at":"2026-11-24T07:35","checkin":"2026-11-24T07:35"}
+{"who":"Miren","text":"what happened","posted":true,"at":"2026-11-24T07:41","checkin":"2026-11-24T07:41"}
+{"who":"Unai","text":"she said it last night. said she'd been thinking about it for months","posted":true,"at":"2026-11-24T07:44","checkin":"2026-11-24T07:44"}
+{"who":"Unai","text":"i was there for those months","posted":true,"at":"2026-11-24T07:45","checkin":"2026-11-24T07:45"}
+{"who":"Miren","text":"are you at work","posted":true,"at":"2026-11-24T07:52","checkin":"2026-11-24T07:52"}
+{"who":"Unai","text":"walking there. opening with ramon today","posted":true,"at":"2026-11-24T07:53","checkin":"2026-11-24T07:53"}
+{"who":"Miren","text":"you didnt sleep","posted":true,"at":"2026-11-24T07:58","checkin":"2026-11-24T07:58"}
+{"who":"Unai","text":"no","posted":true,"at":"2026-11-24T08:02","checkin":"2026-11-24T08:02"}
+{"who":"Unai","text":"the shutter's stuck again btw","posted":true,"at":"2026-11-24T08:02","checkin":"2026-11-24T08:02"}
+{"who":"Miren","text":"handover till 9 then the ward is mad. text me when you're on a break","posted":true,"at":"2026-11-24T08:10","checkin":"2026-11-24T08:10"}
+{"who":"Unai","text":"ok","posted":true,"at":"2026-11-24T08:11","checkin":"2026-11-24T08:11"}
+{"who":"Unai","text":"[photo: the shutter, half up, a crowbar leaning on it]","posted":true,"at":"2026-11-24T09:26","checkin":"2026-11-24T09:26"}
+{"who":"Miren","text":"tell him it's the hinge not the motor","posted":true,"at":"2026-11-24T09:31","checkin":"2026-11-24T09:31"}
+{"who":"Unai","text":"he doesn't listen to me","posted":true,"at":"2026-11-24T09:31","checkin":"2026-11-24T09:31"}
+{"who":"Unai","text":"break. the espresso machine is also broken now","posted":true,"at":"2026-11-24T12:14","checkin":"2026-11-24T12:14"}
+{"who":"Miren","text":"eat something","posted":true,"at":"2026-11-24T12:20","checkin":"2026-11-24T12:20"}
+{"who":"Unai","text":"i had a croissant","posted":true,"at":"2026-11-24T12:21","checkin":"2026-11-24T12:21"}
+{"who":"Unai","text":"don't tell my mum","posted":true,"at":"2026-11-24T12:21","checkin":"2026-11-24T12:21"}
+{"who":"Miren","text":"break. did you tell ramon about the hinge","posted":true,"at":"2026-11-24T13:05","checkin":"2026-11-24T13:05"}
+{"who":"Unai","text":"he's getting a man in friday","posted":true,"at":"2026-11-24T13:09","checkin":"2026-11-24T13:09"}
+{"who":"Unai","text":"i said it was the hinge and he said \"that's what i said\"","posted":true,"at":"2026-11-24T13:09","checkin":"2026-11-24T13:09"}
+{"who":"Miren","text":"he did not say that","posted":true,"at":"2026-11-24T13:15","checkin":"2026-11-24T13:15"}
+{"who":"Unai","text":"he said it in spanish so it counts","posted":true,"at":"2026-11-24T13:15","checkin":"2026-11-24T13:15"}
+{"who":"Unai","text":"she left a mug at mine. the green one","posted":true,"at":"2026-11-24T13:31","checkin":"2026-11-24T13:31"}
+{"who":"Miren","text":"do you want me to come round tonight","posted":true,"at":"2026-11-24T13:33","checkin":"2026-11-24T13:33"}
+{"who":"Unai","text":"no","posted":true,"at":"2026-11-24T13:48","checkin":"2026-11-24T13:48"}
+{"who":"Unai","text":"maybe. i don't know","posted":true,"at":"2026-11-24T13:48","checkin":"2026-11-24T13:48"}
+{"who":"Miren","text":"on till 21:00. then home. flat's a mess but the sofa's free","posted":true,"at":"2026-11-24T13:52","checkin":"2026-11-24T13:52"}
+{"who":"Unai","text":"ok","posted":true,"at":"2026-11-24T14:20","checkin":"2026-11-24T14:20"}
+{"who":"Unai","text":"can't sleep","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"Miren","text":"you're not meant to be up","posted":true,"at":"2026-11-24T23:14","checkin":"2026-11-24T23:14"}
+{"who":"Unai","text":"i'm lying here looking at the ceiling. same thing","posted":true,"at":"2026-11-24T23:16","checkin":"2026-11-24T23:16"}
+{"who":"Miren","text":"is the mug still there","posted":true,"at":"2026-11-24T23:30","checkin":"2026-11-24T23:30"}
+{"who":"Unai","text":"yes","posted":true,"at":"2026-11-24T23:31","checkin":"2026-11-24T23:31"}
+{"who":"Unai","text":"not throwing it out tonight","posted":true,"at":"2026-11-24T23:31","checkin":"2026-11-24T23:31"}
+{"who":"Miren","text":"nobody's asking you to","posted":true,"at":"2026-11-24T23:33","checkin":"2026-11-24T23:33"}
+{"who":"Miren","text":"can't either. ward's been on my head all day and then i came home and sat on the floor for a bit","posted":true,"at":"2026-11-25T00:52","checkin":"2026-11-25T00:52"}
+{"who":"Unai","text":"you're on at 7","posted":true,"at":"2026-11-25T00:58","checkin":"2026-11-25T00:58"}
+{"who":"Miren","text":"yeah","posted":true,"at":"2026-11-25T00:58","checkin":"2026-11-25T00:58"}
+{"who":"Miren","text":"put the mug somewhere you won't see it","posted":true,"at":"2026-11-25T01:03","checkin":"2026-11-25T01:03"}
+{"who":"Unai","text":"ok","posted":true,"at":"2026-11-25T01:20","checkin":"2026-11-25T01:20"}
+{"who":"Unai","text":"up. gave up","posted":true,"at":"2026-11-25T05:52","checkin":"2026-11-25T05:52"}
+{"who":"Miren","text":"did you sleep at all","posted":true,"at":"2026-11-25T05:54","checkin":"2026-11-25T05:54"}
+{"who":"Unai","text":"an hour maybe. ceiling got boring","posted":true,"at":"2026-11-25T05:58","checkin":"2026-11-25T05:58"}
+{"who":"Miren","text":"i'm up too. leaving in 20","posted":true,"at":"2026-11-25T06:01","checkin":"2026-11-25T06:01"}
+{"who":"Unai","text":"mug is in the cupboard above the kettle","posted":true,"at":"2026-11-25T06:03","checkin":"2026-11-25T06:03"}
+{"who":"Unai","text":"not the bin","posted":true,"at":"2026-11-25T06:03","checkin":"2026-11-25T06:03"}
+{"who":"Miren","text":"good","posted":true,"at":"2026-11-25T06:09","checkin":"2026-11-25T06:09"}
+{"who":"Miren","text":"that's a start","posted":true,"at":"2026-11-25T06:09","checkin":"2026-11-25T06:09"}
+{"who":"Unai","text":"dont","posted":true,"at":"2026-11-25T06:11","checkin":"2026-11-25T06:11"}
+{"who":"Miren","text":"text me at break","posted":true,"at":"2026-11-25T06:14","checkin":"2026-11-25T06:14"}
+{"who":"Unai","text":"ok","posted":true,"at":"2026-11-25T06:15","checkin":"2026-11-25T06:15"}
+{"who":"Unai","text":"break","posted":true,"at":"2026-11-25T10:38","checkin":"2026-11-25T10:38"}
+{"who":"Miren","text":"did you eat","posted":true,"at":"2026-11-25T10:39","checkin":"2026-11-25T10:39"}
+{"who":"Unai","text":"yes. ramon bought a tin of those biscuits from the place on calle ledesma. the good ones","posted":true,"at":"2026-11-25T10:41","checkin":"2026-11-25T10:41"}
+{"who":"Miren","text":"that's his apology","posted":true,"at":"2026-11-25T10:43","checkin":"2026-11-25T10:43"}
+{"who":"Unai","text":"he doesn't apologise. he buys tins","posted":true,"at":"2026-11-25T10:43","checkin":"2026-11-25T10:43"}
+{"who":"Miren","text":"break. old man on 4 had a fall this morning. he's ok, bruised hip. been doing paperwork since","posted":true,"at":"2026-11-25T12:58","checkin":"2026-11-25T12:58"}
+{"who":"Unai","text":"is he ok","posted":true,"at":"2026-11-25T13:04","checkin":"2026-11-25T13:04"}
+{"who":"Miren","text":"yeah. he asked me three times if i was the one who took his bloods. i wasn't","posted":true,"at":"2026-11-25T13:04","checkin":"2026-11-25T13:04"}
+{"who":"Unai","text":"haha","posted":true,"at":"2026-11-25T13:06","checkin":"2026-11-25T13:06"}
+{"who":"Unai","text":"she texted","posted":true,"at":"2026-11-25T13:19","checkin":"2026-11-25T13:19"}
+{"who":"Unai","text":"not about anything. \"hope the mug's ok\"","posted":true,"at":"2026-11-25T13:19","checkin":"2026-11-25T13:19"}
+{"who":"Miren","text":"you don't have to answer that tonight","posted":true,"at":"2026-11-25T13:22","checkin":"2026-11-25T13:22"}
+{"who":"Unai","text":"not going to","posted":true,"at":"2026-11-25T13:23","checkin":"2026-11-25T13:23"}
+{"who":"Unai","text":"i just looked at it for a while","posted":true,"at":"2026-11-25T13:23","checkin":"2026-11-25T13:23"}
+{"who":"Miren","text":"ok","posted":true,"at":"2026-11-25T13:30","checkin":"2026-11-25T13:30"}
+{"who":"Unai","text":"shift's done. ramon's gone to the bank. shutter's still up","posted":true,"at":"2026-11-25T14:12","checkin":"2026-11-25T14:12"}
+{"who":"Miren","text":"don't touch it","posted":true,"at":"2026-11-25T14:14","checkin":"2026-11-25T14:14"}
+{"who":"Unai","text":"wasn't going to","posted":true,"at":"2026-11-25T14:14","checkin":"2026-11-25T14:14"}
+{"who":"Unai","text":"going to the gym. might go. might just stand there","posted":true,"at":"2026-11-25T17:48","checkin":"2026-11-25T17:48"}
+{"who":"Miren","text":"go. even if you only do the bike","posted":true,"at":"2026-11-25T17:50","checkin":"2026-11-25T17:50"}
+{"who":"Unai","text":"went. couldn't lift anything. came home","posted":true,"at":"2026-11-25T19:26","checkin":"2026-11-25T19:26"}
+{"who":"Miren","text":"on the way out of the ward now. legs are done","posted":true,"at":"2026-11-25T19:30","checkin":"2026-11-25T19:30"}
+{"who":"Miren","text":"sofa's still free if you want it. i'll get chips","posted":true,"at":"2026-11-25T19:31","checkin":"2026-11-25T19:31"}
+{"who":"Unai","text":"not tonight. thanks","posted":true,"at":"2026-11-25T20:10","checkin":"2026-11-25T20:10"}
+{"who":"Miren","text":"ok. tomorrow","posted":true,"at":"2026-11-25T20:11","checkin":"2026-11-25T20:11"}
+{"who":"Miren","text":"you can keep the mug, i don't want it back","posted":true,"at":"2026-11-25T20:11","checkin":"2026-11-25T20:11"}
+{"who":"Unai","text":"it's a green mug miren","posted":true,"at":"2026-11-25T20:14","checkin":"2026-11-25T20:14"}
+{"who":"Unai","text":"you just can't stand it","posted":true,"at":"2026-11-25T20:14","checkin":"2026-11-25T20:14"}
+{"who":"Unai","text":"ceiling again","posted":true,"at":"2026-11-25T22:47","checkin":"2026-11-25T22:47"}
+{"who":"Miren","text":"i know. i'm in bed too, pretending","posted":true,"at":"2026-11-25T22:49","checkin":"2026-11-25T22:49"}
+{"who":"Miren","text":"go to sleep","posted":true,"at":"2026-11-25T22:50","checkin":"2026-11-25T22:50"}
+{"who":"Unai","text":"trying","posted":true,"at":"2026-11-25T22:58","checkin":"2026-11-25T22:58"}
+{"who":"Unai","text":"you asleep","posted":true,"at":"2026-11-26T00:41","checkin":"2026-11-26T00:41"}
+{"who":"Miren","text":"no","posted":true,"at":"2026-11-26T00:44","checkin":"2026-11-26T00:44"}
+{"who":"Miren","text":"you said trying","posted":true,"at":"2026-11-26T00:44","checkin":"2026-11-26T00:44"}
+{"who":"Unai","text":"tried. it's like lying in a lift that won't move","posted":true,"at":"2026-11-26T00:46","checkin":"2026-11-26T00:46"}
+{"who":"Miren","text":"do you want me to call","posted":true,"at":"2026-11-26T00:50","checkin":"2026-11-26T00:50"}
+{"who":"Unai","text":"no. just let me text","posted":true,"at":"2026-11-26T00:53","checkin":"2026-11-26T00:53"}
+{"who":"Unai","text":"i'm not going to do anything stupid if that's what you're on about","posted":true,"at":"2026-11-26T00:53","checkin":"2026-11-26T00:53"}
+{"who":"Miren","text":"wasn't. i was on about the bike","posted":true,"at":"2026-11-26T00:55","checkin":"2026-11-26T00:55"}
+{"who":"Unai","text":"ha","posted":true,"at":"2026-11-26T00:58","checkin":"2026-11-26T00:58"}
+{"who":"Miren","text":"i'm here. phone's on the pillow","posted":true,"at":"2026-11-26T01:02","checkin":"2026-11-26T01:02"}
+{"who":"Unai","text":"keep thinking about the last thing she said before she left. not even the big one. just \"it's on the side\"","posted":true,"at":"2026-11-26T01:30","checkin":"2026-11-26T01:30"}
+{"who":"Miren","text":"what was on the side","posted":true,"at":"2026-11-26T01:36","checkin":"2026-11-26T01:36"}
+{"who":"Unai","text":"the mug","posted":true,"at":"2026-11-26T01:37","checkin":"2026-11-26T01:37"}
+{"who":"Miren","text":"ok that's a horrible one","posted":true,"at":"2026-11-26T01:39","checkin":"2026-11-26T01:39"}
+{"who":"Unai","text":"it's a green mug","posted":true,"at":"2026-11-26T01:40","checkin":"2026-11-26T01:40"}
+{"who":"Unai","text":"up","posted":true,"at":"2026-11-26T05:58","checkin":"2026-11-26T05:58"}
+{"who":"Miren","text":"you're a disaster","posted":true,"at":"2026-11-26T06:00","checkin":"2026-11-26T06:00"}
+{"who":"Unai","text":"ramon's already in. he's had the cover off the shutter with a screwdriver","posted":true,"at":"2026-11-26T06:01","checkin":"2026-11-26T06:01"}
+{"who":"Unai","text":"it's the hinge","posted":true,"at":"2026-11-26T06:01","checkin":"2026-11-26T06:01"}
+{"who":"Miren","text":"told you","posted":true,"at":"2026-11-26T06:03","checkin":"2026-11-26T06:03"}
+{"who":"Unai","text":"don't","posted":true,"at":"2026-11-26T06:03","checkin":"2026-11-26T06:03"}
+{"who":"Miren","text":"text me at break","posted":true,"at":"2026-11-26T06:10","checkin":"2026-11-26T06:10"}
+{"who":"Unai","text":"ok","posted":true,"at":"2026-11-26T06:11","checkin":"2026-11-26T06:11"}
+{"who":"Unai","text":"break. ramon's got the man coming in friday now, not monday. says he's \"sorted it\"","posted":true,"at":"2026-11-26T10:37","checkin":"2026-11-26T10:37"}
+{"who":"Miren","text":"sorted how","posted":true,"at":"2026-11-26T10:41","checkin":"2026-11-26T10:41"}
+{"who":"Unai","text":"he rang his cousin","posted":true,"at":"2026-11-26T10:42","checkin":"2026-11-26T10:42"}
+{"who":"Unai","text":"the cousin is a plumber","posted":true,"at":"2026-11-26T10:42","checkin":"2026-11-26T10:42"}
+{"who":"Miren","text":"a hinge is not a plumbing job","posted":true,"at":"2026-11-26T10:50","checkin":"2026-11-26T10:50"}
+{"who":"Unai","text":"i said that. he's now telling everyone the cousin \"does doors\"","posted":true,"at":"2026-11-26T10:52","checkin":"2026-11-26T10:52"}
+{"who":"Unai","text":"i've eaten 2 of the biscuits. dont tell him","posted":true,"at":"2026-11-26T10:53","checkin":"2026-11-26T10:53"}
+{"who":"Miren","text":"the good ones?","posted":true,"at":"2026-11-26T10:58","checkin":"2026-11-26T10:58"}
+{"who":"Unai","text":"the good ones","posted":true,"at":"2026-11-26T10:58","checkin":"2026-11-26T10:58"}
+{"who":"Miren","text":"break. woman in 9 asked me if i was her daughter. i said no, i'm the nurse. she said \"same thing\"","posted":true,"at":"2026-11-26T13:02","checkin":"2026-11-26T13:02"}
+{"who":"Unai","text":"honestly that's fair","posted":true,"at":"2026-11-26T13:06","checkin":"2026-11-26T13:06"}
+{"who":"Miren","text":"rude","posted":true,"at":"2026-11-26T13:06","checkin":"2026-11-26T13:06"}
+{"who":"Unai","text":"did you eat","posted":true,"at":"2026-11-26T13:11","checkin":"2026-11-26T13:11"}
+{"who":"Miren","text":"yes. banana. it counts","posted":true,"at":"2026-11-26T13:14","checkin":"2026-11-26T13:14"}
+{"who":"Unai","text":"it doesn't","posted":true,"at":"2026-11-26T13:15","checkin":"2026-11-26T13:15"}
+{"who":"Unai","text":"shift done. walked past the bakery on ledesma and nearly went in for a tin","posted":true,"at":"2026-11-26T14:40","checkin":"2026-11-26T14:40"}
+{"who":"Miren","text":"don't","posted":true,"at":"2026-11-26T14:41","checkin":"2026-11-26T14:41"}
+{"who":"Unai","text":"didn't. stood outside for a bit though","posted":true,"at":"2026-11-26T14:41","checkin":"2026-11-26T14:41"}
+{"who":"Miren","text":"that's the same as going in","posted":true,"at":"2026-11-26T14:42","checkin":"2026-11-26T14:42"}
+{"who":"Unai","text":"it isn't","posted":true,"at":"2026-11-26T14:42","checkin":"2026-11-26T14:42"}
+{"who":"Unai","text":"moved the mug. it's above the kettle now. i keep opening the cupboard to check it's still there","posted":true,"at":"2026-11-26T17:20","checkin":"2026-11-26T17:20"}
+{"who":"Miren","text":"that's not insane. it's a cupboard","posted":true,"at":"2026-11-26T17:24","checkin":"2026-11-26T17:24"}
+{"who":"Miren","text":"how many times today","posted":true,"at":"2026-11-26T17:25","checkin":"2026-11-26T17:25"}
+{"who":"Unai","text":"four","posted":true,"at":"2026-11-26T17:26","checkin":"2026-11-26T17:26"}
+{"who":"Unai","text":"five","posted":true,"at":"2026-11-26T17:26","checkin":"2026-11-26T17:26"}
+{"who":"Miren","text":"going to the bike or the ceiling","posted":true,"at":"2026-11-26T17:30","checkin":"2026-11-26T17:30"}
+{"who":"Unai","text":"bike. i'll try","posted":true,"at":"2026-11-26T17:31","checkin":"2026-11-26T17:31"}
+{"who":"Miren","text":"off. legs are gone again. home now","posted":true,"at":"2026-11-26T21:14","checkin":"2026-11-26T21:14"}
+{"who":"Miren","text":"sofa's free tomorrow if you want. friday. chips and whatever's on telly","posted":true,"at":"2026-11-26T21:15","checkin":"2026-11-26T21:15"}
+{"who":"Unai","text":"ok. yes","posted":true,"at":"2026-11-26T21:40","checkin":"2026-11-26T21:40"}
+{"who":"Unai","text":"not the chips place by yours though. the one with the bad chairs","posted":true,"at":"2026-11-26T21:41","checkin":"2026-11-26T21:41"}
+{"who":"Miren","text":"the bad chairs place is the good place","posted":true,"at":"2026-11-26T21:43","checkin":"2026-11-26T21:43"}
+{"who":"Unai","text":"i'll sit on the floor then","posted":true,"at":"2026-11-26T21:43","checkin":"2026-11-26T21:43"}
+{"who":"Miren","text":"you're not sitting on the floor in my flat","posted":true,"at":"2026-11-26T21:44","checkin":"2026-11-26T21:44"}
+{"who":"Miren","text":"that's the whole reason i got the sofa","posted":true,"at":"2026-11-26T21:44","checkin":"2026-11-26T21:44"}
+{"who":"Unai","text":"can't","posted":true,"at":"2026-11-26T23:47","checkin":"2026-11-26T23:47"}
+{"who":"Miren","text":"wall or ceiling","posted":true,"at":"2026-11-26T23:49","checkin":"2026-11-26T23:49"}
+{"who":"Unai","text":"wall. ceiling's had enough","posted":true,"at":"2026-11-26T23:50","checkin":"2026-11-26T23:50"}
+{"who":"Miren","text":"ok. go to sleep if you can, if not text me","posted":true,"at":"2026-11-26T23:52","checkin":"2026-11-26T23:52"}
+{"who":"Unai","text":"ok","posted":true,"at":"2026-11-26T23:52","checkin":"2026-11-26T23:52"}
+{"who":"Unai","text":"the kettle cupboard light doesn't come on. i just stood in the kitchen in the dark opening it","posted":true,"at":"2026-11-27T00:30","checkin":"2026-11-27T00:30"}
+{"who":"Miren","text":"you're going to have to stop doing that","posted":true,"at":"2026-11-27T00:33","checkin":"2026-11-27T00:33"}
+{"who":"Unai","text":"i know","posted":true,"at":"2026-11-27T00:34","checkin":"2026-11-27T00:34"}
+{"who":"Miren","text":"go to bed unai","posted":true,"at":"2026-11-27T00:35","checkin":"2026-11-27T00:35"}
+{"who":"Unai","text":"going","posted":true,"at":"2026-11-27T00:38","checkin":"2026-11-27T00:38"}

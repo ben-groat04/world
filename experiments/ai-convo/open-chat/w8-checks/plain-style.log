@@ -1,0 +1,44 @@
+W8-P2: day 1: 25 messages in 2 stretches
+W8-P2: day 2: 23 messages in 3 stretches
+W8-P3: day 1: 35 messages in 2 stretches
+W8-P2: day 3: 15 messages in 2 stretches
+W8-P2: 63 messages, 2026-11-27T12:35 to 2026-11-30T07:36
+W8-P4: day 1: 21 messages in 2 stretches, then quiet
+W8-P1: stamps out of order or before the span, retrying
+W8-P1: stamps out of order or before the span, retrying
+W8-P1: stamps out of order or before the span, giving up
+W8-P1: day 1: 22 messages in 3 stretches
+W8-P3: stamps out of order or before the span, retrying
+W8-P4: day 2: 43 messages in 3 stretches
+W8-P1: stamps out of order or before the span, retrying
+W8-P3: day 2: 40 messages in 2 stretches
+W8-P5: day 1: 27 messages in 2 stretches
+W8-P3: day 3: 12 messages in 1 stretches
+W8-P3: 87 messages, 2026-11-28T18:40 to 2026-12-01T09:10
+W8-P5: day 2: 13 messages in 1 stretches, then quiet
+W8-P4: day 3: 31 messages in 2 stretches
+W8-P4: 95 messages, 2026-11-23T14:45 to 2026-11-26T08:20
+W8-P1: day 2: 37 messages in 3 stretches
+W8-P6: day 1: 42 messages in 2 stretches
+W8-P5: stamps out of order or before the span, retrying
+W8-P1: stamps out of order or before the span, retrying
+W8-P7: day 1: 19 messages in 2 stretches, then quiet
+W8-P5: day 3: 21 messages in 2 stretches, then quiet
+W8-P5: 61 messages, 2026-11-29T19:10 to 2026-12-01T22:51
+W8-P6: day 2: 19 messages in 1 stretches, then quiet
+W8-P6: not in the format, retrying
+W8-P1: stamps out of order or before the span, retrying
+W8-P1: stamps out of order or before the span, giving up
+W8-P1: day 3: 20 messages in 2 stretches
+W8-P1: 79 messages, 2026-11-28T11:05 to 2026-12-01T01:22
+W8-P7: day 2: 34 messages in 4 stretches
+W8-P6: stamps out of order or before the span, retrying
+W8-P8: day 1: 21 messages in 2 stretches
+W8-P6: day 3: 30 messages in 1 stretches, then quiet
+W8-P6: 91 messages, 2026-11-29T08:20 to 2026-12-01T22:12
+W8-P7: day 3: 20 messages in 2 stretches
+W8-P7: 73 messages, 2026-11-25T18:05 to 2026-11-28T07:58
+W8-P8: day 2: 26 messages in 2 stretches
+W8-P8: day 3: 26 messages in 2 stretches
+W8-P8: 73 messages, 2026-11-24T19:55 to 2026-11-27T09:04
+list: /home/user/world/.claude/worktrees/agent-afce9a2844ed439fb/experiments/ai-convo/open-chat/writer-runs/2026-11-23T19-28-24-910Z/list.txt

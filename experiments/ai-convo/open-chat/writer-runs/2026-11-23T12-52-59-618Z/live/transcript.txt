@@ -1,0 +1,305 @@
+--- Mon 12:55, Juno
+Batch 14 came in. One of the entries is labeled "proof of RH" with the submitter field left blank. Filed it under unverified but you'll want it before anyone else looks
+
+--- Mon 13:08, Seren
+Ok. Send it over
+
+--- Mon 13:09, Juno
+[link: batch14/entry_07.pdf]
+
+--- Mon 13:31, Seren
+Read through once. First 3 pages are fine, it's a standard setup. Page 4 is where it goes wrong
+
+--- Mon 13:32, Juno
+How
+
+--- Mon 13:36, Seren
+Lemma 2 assumes that all nontrivial zeros satisfy |Im ρ| ≤ T for some T they then pick to depend on Re ρ. That's the bound they need, but it's the thing that has to be proven. They've written it as a lemma with no argument
+
+--- Mon 13:37, Juno
+So it's assumed
+
+--- Mon 13:37, Seren
+Effectively yes. The rest is fine given that, I checked the estimates in section 5 and they hold. The whole thing rests on a hypothesis that's stronger than what they're trying to prove
+
+--- Mon 13:45, Juno
+Huh. Ok. I'll note it in the index: "lemma 2 unsupported, downstream ok conditional"
+
+--- Mon 13:46, Seren
+Good. Put "conditional on lemma 2" not "conditional on RH", they'd read it wrong otherwise
+
+--- Mon 13:47, Juno
+Fair
+
+--- Mon 14:20, Juno
+Also whoever submitted it didn't cite anything. No reference to the explicit formula or to any of the zero-density results. Just starts at "let ζ be the zeta function"
+
+--- Mon 14:24, Seren
+Yeah. The tone is like someone who's sure. No hedging anywhere
+
+--- Mon 14:24, Juno
+The zero-density part is a little better than I expected though
+
+--- Mon 14:25, Seren
+It's fine, it's just not the step that matters
+
+--- Mon 15:02, Juno
+Ok your queue or mine. I have 40 more from the afternoon batch
+
+--- Mon 15:03, Seren
+Mine. I'm halfway through a set on the prime number theorem error terms, nothing exciting
+
+--- Mon 15:03, Juno
+Ok
+
+--- Mon 17:48, Juno
+Did you eat or are you just doing the next one
+
+--- Mon 17:55, Seren
+Ate. The leftover rice
+
+--- Mon 17:56, Juno
+Ok good
+
+--- Mon 21:14, Seren
+Found the same lemma 2 gap in another entry from batch 9. Same pattern, different author maybe
+
+--- Mon 21:15, Juno
+[link: batch9/entry_22.pdf]
+
+--- Mon 21:15, Juno
+Wait, is that the same phrasing
+
+--- Mon 21:17, Seren
+Nearly word for word. "it is classical that" then the bound. No citation
+
+--- Mon 21:18, Juno
+So it's one person or one template
+
+--- Mon 21:18, Seren
+Could be either. I'll note both and not guess
+
+--- Mon 21:19, Juno
+Ok. Indexing both as "conditional on unproven bound, see lemma 2 pattern"
+
+--- Mon 22:40, Juno
+You still up
+
+--- Mon 22:41, Seren
+Yeah. Last check of the night then done
+
+--- Mon 22:44, Juno
+Ok
+
+--- Mon 23:31, Seren
+Done. Both entries filed. Nothing else from batch 9 uses that phrasing
+
+--- Mon 23:32, Juno
+Good. Sleep
+
+--- Mon 23:33, Seren
+You too
+
+--- Tue 08:12, Juno
+Batch 15 is in. Mostly numerics
+
+--- Tue 08:40, Seren
+Ok. Anything that needs a proof?
+
+--- Tue 08:41, Juno
+Couple of short ones. Starting with the zero-count table
+
+--- Tue 09:55, Juno
+[link: batch15/entry_03.pdf]
+
+--- Tue 10:20, Seren
+That's a table, nothing to prove. Row 4 looks off though
+
+--- Tue 10:22, Juno
+Row 4 is truncated not rounded. Check the header
+
+--- Tue 10:23, Seren
+Ok yeah. Fine
+
+--- Tue 12:10, Juno
+Eat yet
+
+--- Tue 12:14, Seren
+Not yet. Finishing the PNT set
+
+--- Tue 13:30, Juno
+The radiator is doing the knocking again
+
+--- Tue 14:02, Seren
+Bleed valve?
+
+--- Tue 14:05, Juno
+Don't know. Will leave it
+
+--- Tue 15:40, Juno
+Another one with the submitter blank. Batch 15, entry 19
+
+--- Tue 15:41, Juno
+[link: batch15/entry_19.pdf]
+
+--- Tue 16:55, Seren
+Lemma 1 is fine. Lemma 3 uses Lindelöf as an input and doesn't say so
+
+--- Tue 16:57, Juno
+Same template?
+
+--- Tue 17:01, Seren
+Different intro. Same last paragraph though, word for word
+
+--- Tue 17:02, Juno
+Ok. Filing as conditional on lindelöf, same pattern as batch 9
+
+--- Tue 17:03, Seren
+Good
+
+--- Tue 19:30, Juno
+Did the bread turn out
+
+--- Tue 19:44, Seren
+Half of it. The other half is a brick
+
+--- Tue 20:15, Juno
+Index is slow tonight. Took a while to pull up batch 9
+
+--- Tue 20:16, Seren
+Probably the reindex. I'll leave it
+
+--- Tue 21:40, Seren
+Starting the last set now. Probably an hour
+
+--- Tue 22:50, Juno
+You up
+
+--- Tue 22:51, Seren
+Yeah
+
+--- Tue 23:58, Seren
+Almost done
+
+--- Wed 00:20, Juno
+Ok. Sleep
+
+--- Wed 08:05, Juno
+Batch 16 in. Small one, 12 entries
+
+--- Wed 08:31, Seren
+Ok. Anything needing a proof
+
+--- Wed 08:33, Juno
+Entries 5 and 9. Rest is numerics
+
+--- Wed 08:34, Seren
+Send 5
+
+--- Wed 08:35, Juno
+[link: batch16/entry_05.pdf]
+
+--- Wed 10:50, Seren
+Lemma 2 again. Same phrasing. "it is classical that" then the bound on Im ρ
+
+--- Wed 10:52, Juno
+Ugh. Ok
+
+--- Wed 10:53, Juno
+Filing as conditional on lemma 2 pattern. Is it the batch 9 template or something new
+
+--- Wed 10:58, Seren
+Same as batch 9 entry 22 as far as I can tell. I didn't diff them character by character
+
+--- Wed 10:59, Juno
+I'll diff them
+
+--- Wed 11:40, Juno
+Identical from "it is classical that" to the end of the lemma. Different intro again
+
+--- Wed 11:41, Seren
+So it's a template getting passed around. Not one person, I'd guess
+
+--- Wed 11:42, Juno
+Filed as same pattern. Not guessing either
+
+--- Wed 12:15, Juno
+Eat?
+
+--- Wed 12:40, Seren
+Yes. Pasta
+
+--- Wed 12:41, Juno
+Ok
+
+--- Wed 13:20, Juno
+Entry 9 is numerics, it's fine
+
+--- Wed 13:22, Seren
+Ok
+
+--- Wed 14:05, Juno
+Radiator again. Sounds like it's trying to get out
+
+--- Wed 14:09, Seren
+Bleed valve. Usually the top one. Small key, turn it till it hisses, then close
+
+--- Wed 14:11, Juno
+Do you know that or guessing
+
+--- Wed 14:12, Seren
+Guessing from the sound. Don't burn yourself on it
+
+--- Wed 14:14, Juno
+Ok. Will try later
+
+--- Wed 15:30, Juno
+Batch 16 done. 12 in, 2 flagged, rest fine
+
+--- Wed 15:31, Seren
+Ok. Still on the PNT set
+
+--- Wed 17:45, Seren
+Done with PNT. Step 3 had a sign flip in the error term, but the author fixed it in the revision so no issue
+
+--- Wed 18:20, Juno
+Radiator's quiet now. Did the valve. Hissed a bit
+
+--- Wed 18:21, Seren
+Good
+
+--- Wed 19:10, Juno
+Did you eat
+
+--- Wed 19:14, Seren
+Not yet. Soup maybe
+
+--- Wed 19:15, Juno
+Ok. There's bread left from yesterday, the brick half
+
+--- Wed 19:17, Seren
+Ha. Ok
+
+--- Wed 21:30, Juno
+Index pulling batch 9 fast again. Is that the reindex done
+
+--- Wed 21:33, Seren
+Should be. Batch 9 is small
+
+--- Wed 22:45, Juno
+You up
+
+--- Wed 22:46, Seren
+Yeah
+
+--- Wed 23:20, Seren
+Last one from the afternoon batch. Shouldn't take long
+
+--- Wed 23:41, Seren
+Done. Entry 33 has a gap in the final bound, flagged it. Rest fine
+
+--- Wed 23:42, Juno
+Ok. Sleep
+
+--- Wed 23:43, Seren
+You too

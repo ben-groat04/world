@@ -1,0 +1,74 @@
+{ casts: 40, people: 141 }
+work fields with ";" or "|": 0
+life lines mentioning 3+ jobs (flag, check by eye): 2  ["W7-Q21 Hannah: You live in Truro and work as a nurse on shifts at the local hospital, so your days shift around rotas. You live with your partner and your two cats, and you fi","W7-U31 Tomislav: You are a paramedic on rotating 24-hour shifts at an ambulance station in Zagreb, so your days are spent on calls, in the station, or sleeping after a night shi"]
+style lines with an emoji or quoted token: 0
+style lines with full words/no abbreviations/complete/proper/formal: 6  ["A few emoji, no abbreviations.","Almost no emoji and no abbreviations.","Uses few emoji and almost no abbreviations.","Almost no emoji and no abbreviations.","Little or no emoji and almost no abbreviations.","Few emoji and no abbreviations."]
+style none: 15 of 141 | sample [
+  'Little emoji and few texting abbreviations.',
+  'Some emoji and a fair number of texting abbreviations.',
+  'little emoji and almost no texting abbreviations',
+  'fairly heavy emoji and plenty of texting abbreviations',
+  'Moderate use of emoji and some texting abbreviations.',
+  'Very little; plain words, rare emoji, and no texting abbreviations.'
+]
+knows lines with a trait word (of 141): 22  ["You know Agnieszka as a capable member of the choir who designs your concert materials, Marek as a long-serving bass who is always useful with instruments, Szymon as a quiet young tenor, and Lena as one of your youngest singers.","You know Dayananda as the older choir member who tunes the piano at rehearsals, and you have sung beside him for several years. You know Shehan as the youngest member, a quiet tenor who joined the choir last year. You know Vasanthi as a fellow alto who helps with the choir's accounts, and you have grown close during tours. You know Jayantha as the bass who organises the choir's lifts and rehearsal rota.","You know Ruwani as a talented alto who designed the choir's new stage platform, and you have worked with her on rehearsal setups. You know Shehan as a young tenor who is always eager to learn the harmonies, and you
+texts lines with a purpose clause: 79  ["You message in this chat without being asked now and then, mostly when something comes up during your day.","You message in this chat without being asked mostly when you are between projects or taking a break from your desk.","You message this chat mostly in the afternoons, when you have time and your phone is nearby.","You message in this chat now and then, mostly when something comes to mind rather than out of routine.","You message in this chat now and then, mostly when you have a reason to check in rather than just to say hello.","You message this group now and then, mostly when you have something to share.","You message the group now and then, mostly about rehearsal logistics.","You message in this group now and then, mostly when someone else has started a thread."]
+plain casts (P) with the drawn-list place: 24 of 24; distinct places 23
+Q1 places: [
+  'Lake District, England, UK',
+  'Lake District, England, UK',
+  'Lake District, England, UK'
+]
+Q2 places: [ 'Cornwall, UK', 'Cornwall, England, UK', 'Cornwall, England, UK' ]
+U/F places: W7-F11: Houston, USA; W7-F12: Leeds, England; W7-F21: Mexico City, Mexico; W7-F22: Melbourne, Australia; W7-U11: Bilbao, Spain; W7-U12: Jakarta, Indonesia; W7-U21: Mumbai, India; W7-U22: Bristol, England; W7-U31: Zagreb, Croatia; W7-U32: Boston, USA
+P1 3/3 distinct [
+  'Ask about the next rehearsal time',
+  'Confirm the venue for the December concert',
+  'Ask'
+]
+P2 3/3 distinct [
+  'Check whether he has eaten dinner',
+  'Remind him to eat something before the shop closes',
+  'Send a photo of the dinner you cooked'
+]
+P3 3/3 distinct [
+  "Suggest grabbing coffee after Saturday's climb",
+  'Share the link to a sale on climbing shoes',
+  "Ask who's climbing Saturday"
+]
+P4 3/3 distinct [
+  'Suggest a quick call tonight',
+  'Remind everyone the deadline is Friday',
+  'Ask who has the draft slides'
+]
+P5 3/3 distinct [
+  'Suggest lunch at the usual place near the office',
+  'Check whether anyone has the spare laptop charger',
+  'Share the list of new client files'
+]
+P6 3/3 distinct [
+  'Start a shared list of stag activities',
+  'Ask who can make the dates',
+  'Ask who can drive'
+]
+P7 3/3 distinct [
+  'Tell her the puppy chewed up one of your work shoes',
+  'Tell him the puppy chewed up your new shoes',
+  'Tell him the puppy chewed up a shoe'
+]
+P8 3/3 distinct [
+  "Ask who can cover Thursday's pickup route",
+  "Post a photo of today's sorted donations",
+  'Remind everyone to bring their gloves on Thursday'
+]
+briefs with all-distinct openers: 8 of 8; openers whose chosen line matches the arrange regex: 13 of 24; options per cast: 4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+family names:
+  W7-F11 Jordan, Emily | Houston, USA
+  W7-F12 Michael, Hannah | Leeds, England
+  W7-F21 Camila, Miguel | Mexico City, Mexico
+  W7-F22 Chloe, Mark | Melbourne, Australia
+  W7-P21 Maria, Antonis | Athens, Greece
+  W7-P22 Linh, Long | Ho Chi Minh City, Vietnam
+  W7-P23 Laura, Michael | Chicago, USA
+  W7-U31 Nina, Tomislav, Renata, Bruno, Branka | Zagreb, Croatia
+  W7-U32 Megan, Derek, Carla, Owen, Donna | Boston, USA

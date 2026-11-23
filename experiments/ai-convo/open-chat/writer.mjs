@@ -154,7 +154,7 @@ Then, for each person in turn, these lines, each starting with that person's nam
 "<name> texts:" one plain sentence, in the second person, on how often you message in this chat without being asked anything (how often, not what about), as follows from your life and the group. Use frequency words ("now and then", "mostly") rather than "always".
 "<name> style:" in a few plain words, how much <name> uses emoji and texting abbreviations, without naming any, or "none".
 "<name> capitals:" yes or no, whether <name>'s messages start with a capital letter.${topic ? '' : `
-Last, one line starting "${people[0].name} opens with:", four different things, each starting with a verb and separated by " | ", that ${people[0].name} might pick up the phone to send ${N > 2 ? 'the group' : 'the other'}, fitting the situation.`}`; };
+Last, one line starting "${people[0].name} opens with:", four different things, each a short phrase starting with a verb (what is sent, not just the verb) and separated by " | ", that ${people[0].name} might pick up the phone to send ${N > 2 ? 'the group' : 'the other'}, fitting the situation.`}`; };
 const fieldOf = (text, k) => text.match(new RegExp(`^\\W*${k}[*_\\s]*:[*_\\s]*(.+)$`, 'im'))?.[1].trim();
 function parseCast(text, people, topic) {
   const f = k => fieldOf(text, k)?.replace(new RegExp(`^${k}\\s*:\\s*`), ''), names = people.map(p => p.name);

@@ -51,7 +51,7 @@ Each run writes `runs/<timestamp>/transcript.txt`, plus `log.jsonl`, which has a
 - **Header comments:** the top of `run.mjs` explains the details.
 
 ## Viewer (claude.ai Artifact)
-- **`node viewer/build.mjs`** writes `viewer/runs.json`. That holds every run since 2026-11-22 16:37 (`SINCE` in build.mjs; earlier ones were tests). Runs from the cast version log the topic and situation in the cast row; the viewer's Start form still sends situation, topic, people and secrets by the default names.
+- **`node viewer/build.mjs`** writes `viewer/runs.json`. That holds every run since 2026-11-23 07:12 UTC (`SINCE` in build.mjs; earlier ones were tests, cleared from the viewer at the user's request). Runs from the cast version log the topic and situation in the cast row; the viewer's Start form still sends situation, topic, people and secrets by the default names.
 - **`viewer/index.html`** plays the runs back. Publish it with the Artifact tool:
   - `file_path`: `viewer/index.html`
   - `files`: `{"runs.json": "<absolute path>/viewer/runs.json"}`

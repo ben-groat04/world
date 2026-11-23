@@ -4,7 +4,7 @@ const here = import.meta.dirname, runsDir = path.join(here, '..', 'runs');
 const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
 const MARK = / Something (?:that's been|on your) (?:on your )?mind(?: \(put it your own way, not in these words\))?: /, STYLE = / How you text: .*$/s, SECRET = / Only you know this(?:, at least at first)?: /;
 const split = (s, mark) => { const m = typeof mark === 'string' ? (s.includes(mark) ? { index: s.indexOf(mark), 0: mark } : null) : s.match(mark); return m ? [s.slice(0, m.index), s.slice(m.index + m[0].length)] : [s, null]; };
-const SINCE = '2026-11-22T16-37'; // earlier runs were tests: kept in runs/, left out of the viewer
+const SINCE = '2026-11-23T07-12'; // earlier runs were tests: kept in runs/ and writer-runs/, left out of the viewer
 const ORACLE_LINES = [' There is also an oracle that can look things up online: start a line with @oracle and your question.', // runs before 2026-11-22 18:00
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer is shared here.', // until the answer went to the asker alone
   ' You can also ask Claude, an AI assistant that can search the web and read pages: start a line with @claude and your question. Claude sees only your question, not this chat, and remembers what you asked it before. Its answer comes back to you alone.'];
@@ -45,7 +45,7 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
 // Single-writer live runs (writer.mjs --live): the log has a header row with `live: true`, the cast row, one row per message (oracle rows are @claude answers) and reactions as rows with `to` = index among the non-oracle messages.
 const writerDir = path.join(here, '..', 'writer-runs');
 for (const id of fs.existsSync(writerDir) ? fs.readdirSync(writerDir).sort().reverse() : []) {
-  const file = path.join(writerDir, id, 'live', 'log.jsonl'); if (!fs.existsSync(file)) continue;
+  const file = path.join(writerDir, id, 'live', 'log.jsonl'); if (id < SINCE || !fs.existsSync(file)) continue;
   const every = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)), head = every[0], cast = every.find(r => r.cast);
   if (!head.live || !cast) continue;
   const posted = every.filter(r => r.posted === true && r.text), people = posted.filter(r => !r.oracle), m = id.match(/^(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d)-(\d\d)-(\d{3})Z$/), secrets = every.find(r => r.secrets)?.secrets;

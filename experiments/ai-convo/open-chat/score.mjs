@@ -55,7 +55,7 @@
 //  namePrefix         count of posted messages that start with a participant name followed by ':' (a transcript-style prefix)
 //  selfReact          count of react rows whose target message (`to` = index into the posted messages in posting order, as
 //                     run.mjs's `convo`) was written by the reactor. '-' if the run has no react rows
-//  failed             count of rows with failed:'continuation'. '-' if none (older runs have no such rows)
+//  failed             count of rows with a `failed` field ('continuation' or 'refusal'). '-' if none (older runs have no such rows)
 //  lineMentions       mean over people (those with private lines AND posted messages) of how many of their posted messages
 //                     contain (whole word, case-insensitive) one of the 3 longest non-stopword words (letters, >=4 chars)
 //                     of their own private line(s) (all private_lines rows for that person, pooled). '-' if no private lines
@@ -171,7 +171,7 @@ function score(dir) {
   const drafts = agent.filter(r => r.draft != null);
   const hasWord = (t, ws) => ws.some(w => new RegExp(`\\b${esc(w)}\\b`, 'i').test(t));
   const perPerson = Object.keys(lines).filter(n => counts[n]).map(n => { const ws = lineWords(lines[n]); return ws.length ? msgs.filter(m => m.who === n && hasWord(m.text, ws)).length : null; });
-  const failed = all.filter(r => r.failed === 'continuation').length;
+  const failed = all.filter(r => r.failed).length;
   const cnt = f => msgs.length ? msgs.filter(f).length : null;
   const looks = agent.filter(r => r.user && r.checkin), firstL = looks.reduce((a, r) => !a || r.checkin < a.checkin ? r : a, null), sit = r => {
     if (r === firstL) return 'Open'; if (!/You last looked/.test(r.user)) return 'First'; const ev = /Not on your phone/.test(r.user), nu = /\(new\)/.test(r.user), empty = /\(no messages\)/.test(r.user);

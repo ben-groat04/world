@@ -8,13 +8,14 @@
 //     B = the run's last W messages (needs >= 2W, so that B starts after A ends; otherwise skipped for that run).
 //   Runs that die early are not padded or squeezed into shorter windows: <out>/runs.tsv records, per run, its message count
 //   and status (dead = 0 messages, short = 1..W-1, A-only = W..2W-1, full = >= 2W), and --tally prints them separately.
-//   A reaction is included if its target is in the window and it was logged between the window's first and last message.
+//   A reaction is counted if its target is in the window and it was logged between the window's first and last message.
 //   Anchors: any further arguments are files of real chat text (same "--- Sun 19:41, ..." block format; a header may have no
 //   name). The first W blocks of each are mixed in blind as window "real", label REAL-<file name>, and tallied as arm REAL.
-//   Output, in transcript.txt format ("--- Sun 19:41, Name", text, blank line; "--- Sun 20:01, Sam reacted 👍 to Tom's 19:50 message"):
+//   Output, in transcript.txt format ("--- Sun 19:41, Name", text, blank line); a message's reactions are a count under it, "(👍 2, 😂 1)", as a phone screen shows them (not timestamped "X reacted" lines):
 //     <out>/A/<id>.txt, <out>/B/<id>.txt, <out>/real/<id>.txt   id = random 6 hex chars, no label in the name or text
 //     <out>/key.tsv                        id, label, window, message count
 //     <out>/runs.tsv                       label, messages, status
+//     <out>/judge-note.txt                 the plain fact to tell every judge: a window is an excerpt from a longer chat
 //     <out>/judges/j1..jN/<id>.txt         each file goes to 3 distinct judges (about 8 files per judge, N >= 6 so that
 //                                          the A and B windows of one run never share a judge)
 // Judging: each judge scores every file in its folder 0-10; collect all judgements as scores.tsv, lines "id<TAB>score"
@@ -54,11 +55,11 @@ if (process.argv[2] === '--tally') {
     runStatus.push([label, n, status].join('\t'));
     for (const [win, start] of [['A', 0], ['B', n - W]]) {
       if (n < (win === 'A' ? W : 2 * W)) continue;
-      const m = msgs.slice(start, start + W), idx = new Set(m.map(x => msgs.indexOf(x))), lo = m[0].i, hi = m.at(-1).i, out_ = [];
+      const m = msgs.slice(start, start + W), idx = new Set(m.map(x => msgs.indexOf(x))), lo = m[0].i, hi = m.at(-1).i, out_ = [], counts = {}; // counts: window message index -> {emoji: n}
+      for (let i = lo; i <= hi; i++) { const r = rows[i]; if (r.react && idx.has(r.to) && msgs[r.to]) { const c = counts[r.to] ??= {}; c[r.react] = (c[r.react] ?? 0) + 1; } }
       for (let i = lo; i <= hi; i++) {
         const r = rows[i];
-        if (r.posted === true && !r.private && typeof r.text === 'string') out_.push(`--- ${stamp(r.at)}, ${r.who}\n${r.text.trim()}\n`);
-        else if (r.react && idx.has(r.to) && msgs[r.to]) out_.push(`--- ${stamp(r.at)}, ${r.who} reacted ${r.react} to ${msgs[r.to].who}'s ${hm(msgs[r.to].at)} message\n`);
+        if (r.posted === true && !r.private && typeof r.text === 'string') { const c = counts[msgs.findIndex(x => x.i === i)]; out_.push(`--- ${stamp(r.at)}, ${r.who}\n${r.text.trim()}${c ? `\n(${Object.entries(c).map(([e, k]) => `${e} ${k}`).join(', ')})` : ''}\n`); } // reactions as a count under the message, as a phone screen (and the agents) show them
       }
       files.push({ label, win, n: m.length, text: out_.join('\n') });
     }
@@ -76,5 +77,6 @@ if (process.argv[2] === '--tally') {
     const pick = shuffle([...load.keys()]).filter(j => !taken.has(j)).sort((a, b) => load[a] - load[b]).slice(0, COPIES);
     for (const j of pick) { taken.add(j); load[j]++; const d = path.join(out, 'judges', 'j' + (j + 1)); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, f.id + '.txt'), f.text); }
   }
+  fs.writeFileSync(path.join(out, 'judge-note.txt'), 'Each file is an excerpt from a longer chat: it may start or end in the middle of a conversation. A line like "(\u{1F44D} 2)" under a message shows the reactions that message got.\n'); // give this to every judge with the usual neutral "score 0-10, explain" ask
   console.log(`${files.length} files, ${N} judges, loads ${load.join(',')}`);
 }

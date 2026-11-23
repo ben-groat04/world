@@ -19,12 +19,11 @@
 //     <out>/key.tsv                        id, label, window, message count
 //     <out>/runs.tsv                       label, messages, messages in A, messages in B, status
 //     <out>/judge-note.txt                 the plain fact to tell every judge: a window is an excerpt from a longer chat
-//     <out>/judge-detect.txt               optional: the second question (chance it is real, 0-100), asked after the score
 //     <out>/judges/j1..jN/<id>.txt         each file goes to 3 distinct judges (about 8 files per judge, N >= 6 so that
 //                                          the A and B windows of one run never share a judge)
 // Judging: each judge scores every file in its folder 0-10 (the neutral "score 0-10, explain" ask, first); collect all judgements as scores.tsv, lines "id<TAB>score" or
-//   "id<TAB>score<TAB>p_real" (one per judgement, so each id appears 3 times). The join with key.tsv is by id. p_real is the optional detection question, asked
-//   after the score: "how likely, 0-100, is it that this is real people texting?" (<out>/judge-detect.txt has the wording); the tally then prints its mean per group
+//   "id<TAB>score<TAB>p_real" (one per judgement, so each id appears 3 times). The join with key.tsv is by id. p_real is the detection question (judge.mjs asks it every time), asked
+//   after the score: "how likely, 0-100, is it that this is real people texting?" (judge.mjs asks it itself, every time); the tally then prints its mean per group
 //   next to the score, so "AI windows score like real windows" can be read as a detection rate too, not only a score.
 // Tally:  node eval-prep.mjs --tally <out dir> <scores.tsv>
 //   prints n and mean score per arm (label prefix before '-') by window, by scenario (label after '-' minus the trailing
@@ -86,6 +85,5 @@ if (process.argv[2] === '--tally') {
     for (const j of pick) { taken.add(j); load[j]++; const d = path.join(out, 'judges', 'j' + (j + 1)); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, f.id + '.txt'), f.text); }
   }
   fs.writeFileSync(path.join(out, 'judge-note.txt'), 'Each file is an excerpt from a longer chat: it may start or end in the middle of a conversation. A line like "(\u{1F44D} 2)" under a message shows the reactions that message got.\n'); // give this to every judge with the usual neutral "score 0-10, explain" ask
-  fs.writeFileSync(path.join(out, 'judge-detect.txt'), 'After scoring the file, answer one more question: how likely is it, from 0 to 100, that this chat is between real people texting? Give the number as the last thing you write for that file.\n'); // optional second question (round 19), asked after the score so the score stays neutral
   console.log(`${files.length} files, ${N} judges, loads ${load.join(',')}`);
 }

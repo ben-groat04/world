@@ -1,0 +1,82 @@
+{"writer":"w5","model":"haiku","effort":"medium","days":2,"oracle":false,"complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1612,"cache_read_input_tokens":0,"output_tokens":3054,"output_tokens_details":{"thinking_tokens":2211},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1612,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3054,"cache_read_input_tokens":0,"cache_creation_input_tokens":1612,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1612},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2391,"cache_read_input_tokens":0,"output_tokens":1279,"output_tokens_details":{"thinking_tokens":813},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2391,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1279,"cache_read_input_tokens":0,"cache_creation_input_tokens":2391,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2391},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":2391,"output_tokens":944,"output_tokens_details":{"thinking_tokens":675},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":944,"cache_read_input_tokens":2391,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2661,"cache_read_input_tokens":0,"output_tokens":2464,"output_tokens_details":{"thinking_tokens":1346},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2661,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2464,"cache_read_input_tokens":0,"cache_creation_input_tokens":2661,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2661},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Maya","Tom"],"setting":"You are both in Boston, Massachusetts, and you have been close friends since college, so you know each other's families, jobs and habits well. You both know Maya just got a puppy, and you both know Tom has been hoping to meet it.","opener":"Send Tom a photo of the puppy asleep in its new bed and ask when he can come meet it.","cast":{"Maya":{"who":"27, woman, the one who just got the puppy","knows":"You know Tom is your oldest friend, and you have talked with him about getting a dog for years.","like":"You are warm and a little anxious, and you tend to fuss over the things you love.","texts":"You message in this chat now and then, mostly when something happens that you want to share.","style":"You use a few emoji and almost no abbreviations.","capitals":true,"lives":[],"ex":[]},"Tom":{"who":"28, man, the friend who has not yet met the puppy","knows":"You know Maya is your closest friend from college, and you know she has wanted a dog for a long time.","like":"You are easygoing and dry, and you rarely make a fuss about anything.","texts":"You mostly reply in this chat and rarely start a conversation.","style":"You use no emoji and only the most common abbreviations.","capitals":false,"lives":[],"ex":[]}},"private_lines":{"Maya":"You work as a UX designer at an insurance company in Boston, and you live alone in an apartment in Somerville. Your days are office work, a walk at lunch, and evenings home, and since the puppy arrived you have been up early to take it out.","Tom":"You work as a paralegal at a small law firm in Cambridge, and you live alone in an apartment in Allston. Your days are busy at work, with the evenings usually spent cooking or watching games."},"sleep":{"Maya":[23.5,7.5],"Tom":[0,8]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1343,"cache_read_input_tokens":0,"output_tokens":1551,"output_tokens_details":{"thinking_tokens":904},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1343,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1551,"cache_read_input_tokens":0,"cache_creation_input_tokens":1343,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1343},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Two friends, one of them just got a puppy.","topic":null}
+{"who":"Maya","text":"She fell asleep in the new bed like 4 min after I put her in it 😭","posted":true,"at":"2026-11-29T15:40","checkin":"2026-11-29T15:40"}
+{"who":"Maya","text":"Photo","posted":true,"at":"2026-11-29T15:40","checkin":"2026-11-29T15:40"}
+{"who":"","react":"😍","to":1,"posted":false,"at":"2026-11-29T15:40"}
+{"who":"Tom","text":"ok that's a good photo","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Tom","text":"she looks like a loaf","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Maya","text":"She's a loaf!! 🥹 when can you come meet her. I'm off tues and wed","posted":true,"at":"2026-11-29T15:55","checkin":"2026-11-29T15:55"}
+{"who":"Tom","text":"tues. I'm at the firm till 7 probably","posted":true,"at":"2026-11-29T16:20","checkin":"2026-11-29T16:20"}
+{"who":"Tom","text":"can do 7:30","posted":true,"at":"2026-11-29T16:21","checkin":"2026-11-29T16:21"}
+{"who":"Maya","text":"7:30 is good. She'll be wiped from the day","posted":true,"at":"2026-11-29T16:24","checkin":"2026-11-29T16:24"}
+{"who":"Maya","text":"She's been at the window since 6 this morning. I honestly don't know what she'll do when she sees you","posted":true,"at":"2026-11-29T16:26","checkin":"2026-11-29T16:26"}
+{"note":"Sun 17:00-19:30 Maya walks the puppy around the block twice, then back home","at":"2026-11-29T16:26"}
+{"who":"Maya","text":"She ate half her food then sat in the bowl. Not sure that's normal","posted":true,"at":"2026-11-29T19:48","checkin":"2026-11-29T19:48"}
+{"who":"Tom","text":"google it","posted":true,"at":"2026-11-29T19:50","checkin":"2026-11-29T19:50"}
+{"who":"Tom","text":"or ask the vet lady you mentioned","posted":true,"at":"2026-11-29T19:50","checkin":"2026-11-29T19:50"}
+{"who":"Maya","text":"I did google it, every site says something different 😩","posted":true,"at":"2026-11-29T19:52","checkin":"2026-11-29T19:52"}
+{"who":"Tom","text":"ok so it's a puppy","posted":true,"at":"2026-11-29T19:53","checkin":"2026-11-29T19:53"}
+{"who":"Maya","text":"Ok. Also does she need a name by tues. I can't keep calling her \"puppy\" to people","posted":true,"at":"2026-11-29T20:10","checkin":"2026-11-29T20:10"}
+{"who":"Tom","text":"you have like 3 names on your list","posted":true,"at":"2026-11-29T20:14","checkin":"2026-11-29T20:14"}
+{"who":"Maya","text":"I have 3 names and they're all bad","posted":true,"at":"2026-11-29T20:15","checkin":"2026-11-29T20:15"}
+{"who":"Tom","text":"say them","posted":true,"at":"2026-11-29T20:16","checkin":"2026-11-29T20:16"}
+{"who":"Maya","text":"Juniper, bagel, and ruth","posted":true,"at":"2026-11-29T20:19","checkin":"2026-11-29T20:19"}
+{"who":"Maya","text":"Ruth is my grandma's name, don't","posted":true,"at":"2026-11-29T20:19","checkin":"2026-11-29T20:19"}
+{"who":"Tom","text":"bagel","posted":true,"at":"2026-11-29T20:22","checkin":"2026-11-29T20:22"}
+{"who":"Maya","text":"No","posted":true,"at":"2026-11-29T20:23","checkin":"2026-11-29T20:23"}
+{"note":"Sun 21:00-22:30 Tom cooking dinner, game on mute in the other room","at":"2026-11-29T20:23"}
+{"who":"Tom","text":"wait is she in your bed","posted":true,"at":"2026-11-29T22:37","checkin":"2026-11-29T22:37"}
+{"who":"Maya","text":"No she's in the crate with the blanket she chose. I'm going to bed soon","posted":true,"at":"2026-11-29T22:41","checkin":"2026-11-29T22:41"}
+{"who":"Maya","text":"She's making a noise right now like a tiny kazoo","posted":true,"at":"2026-11-29T22:41","checkin":"2026-11-29T22:41"}
+{"who":"Tom","text":"go to bed","posted":true,"at":"2026-11-29T22:44","checkin":"2026-11-29T22:44"}
+{"who":"Maya","text":"She's asleep. Going","posted":true,"at":"2026-11-29T22:45","checkin":"2026-11-29T22:45"}
+{"who":"Tom","text":"tues still good?","posted":true,"at":"2026-11-29T23:10","checkin":"2026-11-29T23:10"}
+{"who":"Maya","text":"Yes tues still good 🙂","posted":true,"at":"2026-11-30T07:48","checkin":"2026-11-30T07:48"}
+{"who":"Maya","text":"She woke me up at 6:10 by sneezing directly on my face","posted":true,"at":"2026-11-30T07:49","checkin":"2026-11-30T07:49"}
+{"who":"Tom","text":"is that normal","posted":true,"at":"2026-11-30T12:31","checkin":"2026-11-30T12:31"}
+{"who":"Maya","text":"Google says yes 😩","posted":true,"at":"2026-11-30T12:33","checkin":"2026-11-30T12:33"}
+{"who":"Tom","text":"ok","posted":true,"at":"2026-11-30T12:34","checkin":"2026-11-30T12:34"}
+{"note":"12:20-12:50 Maya walks the puppy around the block on her lunch break, then eats a sandwich on the bench outside the office","at":"2026-11-30T12:34"}
+{"who":"Maya","text":"She tried to eat a whole leaf and I had to fish it out","posted":true,"at":"2026-11-30T12:52","checkin":"2026-11-30T12:52"}
+{"who":"Maya","text":"Photo","posted":true,"at":"2026-11-30T12:52","checkin":"2026-11-30T12:52"}
+{"who":"Tom","text":"she still looks like a loaf","posted":true,"at":"2026-11-30T13:20","checkin":"2026-11-30T13:20"}
+{"who":"Tom","text":"a loaf that ate a leaf","posted":true,"at":"2026-11-30T13:21","checkin":"2026-11-30T13:21"}
+{"who":"Maya","text":"She's asleep in the crate with her face on a sock. I'm going back to work","posted":true,"at":"2026-11-30T13:58","checkin":"2026-11-30T13:58"}
+{"who":"Tom","text":"which sock","posted":true,"at":"2026-11-30T14:02","checkin":"2026-11-30T14:02"}
+{"who":"Maya","text":"One of mine. The grey one","posted":true,"at":"2026-11-30T14:03","checkin":"2026-11-30T14:03"}
+{"who":"Maya","text":"She has taste","posted":true,"at":"2026-11-30T14:03","checkin":"2026-11-30T14:03"}
+{"note":"Mon 14:10-17:50 Tom at the firm, on a brief due Thursday","at":"2026-11-30T14:03"}
+{"who":"Tom","text":"you still going to make me bring a toy","posted":true,"at":"2026-11-30T18:30","checkin":"2026-11-30T18:30"}
+{"who":"Maya","text":"No toys, she eats them. Bring a treat if you want, the soft kind","posted":true,"at":"2026-11-30T18:32","checkin":"2026-11-30T18:32"}
+{"who":"Maya","text":"Not the bone ones, the vet said no bones","posted":true,"at":"2026-11-30T18:33","checkin":"2026-11-30T18:33"}
+{"who":"Tom","text":"ok no bones","posted":true,"at":"2026-11-30T18:40","checkin":"2026-11-30T18:40"}
+{"who":"Maya","text":"I think I've decided on juniper","posted":true,"at":"2026-11-30T21:14","checkin":"2026-11-30T21:14"}
+{"who":"Maya","text":"She looks nothing like a juniper","posted":true,"at":"2026-11-30T21:14","checkin":"2026-11-30T21:14"}
+{"who":"Tom","text":"you're the one who wanted juniper","posted":true,"at":"2026-11-30T21:20","checkin":"2026-11-30T21:20"}
+{"who":"Maya","text":"I know. I wanted it for her but she is not a juniper","posted":true,"at":"2026-11-30T21:22","checkin":"2026-11-30T21:22"}
+{"who":"Tom","text":"go to bed","posted":true,"at":"2026-11-30T21:23","checkin":"2026-11-30T21:23"}
+{"who":"Maya","text":"She's sneezing again. This is my life now","posted":true,"at":"2026-11-30T21:23","checkin":"2026-11-30T21:23"}
+{"who":"Maya","text":"She brought me a sock at 5:50 and dropped it on my head","posted":true,"at":"2026-12-01T07:34","checkin":"2026-12-01T07:34"}
+{"who":"Maya","text":"Photo","posted":true,"at":"2026-12-01T07:35","checkin":"2026-12-01T07:35"}
+{"who":"Maya","text":"It's the grey one, obviously","posted":true,"at":"2026-12-01T07:35","checkin":"2026-12-01T07:35"}
+{"who":"Tom","text":"partner wants the deposition summary by thurs. not today, just fyi","posted":true,"at":"2026-12-01T12:18","checkin":"2026-12-01T12:18"}
+{"who":"Tom","text":"i'm eating a yogurt at my desk like a sad man","posted":true,"at":"2026-12-01T12:19","checkin":"2026-12-01T12:19"}
+{"who":"Maya","text":"[she tried to chase a pigeon on the walk and pulled me into a bike rack. No one hurt, the pigeon left. I'm fine]","posted":true,"at":"2026-12-01T12:40","checkin":"2026-12-01T12:40"}
+{"who":"Maya","text":"She ate some of a bike rack ad off the sidewalk. Not sure that's normal either","posted":true,"at":"2026-12-01T12:44","checkin":"2026-12-01T12:44"}
+{"who":"Tom","text":"google it","posted":true,"at":"2026-12-01T12:46","checkin":"2026-12-01T12:46"}
+{"who":"Maya","text":"😩","posted":true,"at":"2026-12-01T12:46","checkin":"2026-12-01T12:46"}
+{"who":"Tom","text":"leaving the office now, will be late by ten min","posted":true,"at":"2026-12-01T18:52","checkin":"2026-12-01T18:52"}
+{"who":"Maya","text":"Ok. She's been at the door since 6:40 so it doesn't really matter","posted":true,"at":"2026-12-01T18:53","checkin":"2026-12-01T18:53"}
+{"who":"Tom","text":"parking is a nightmare, i'm walking from davis","posted":true,"at":"2026-12-01T19:44","checkin":"2026-12-01T19:44"}
+{"who":"Tom","text":"do not let her out the door","posted":true,"at":"2026-12-01T19:44","checkin":"2026-12-01T19:44"}
+{"who":"Maya","text":"She is in the crate with the grey sock and she is judging me","posted":true,"at":"2026-12-01T19:46","checkin":"2026-12-01T19:46"}
+{"note":"Tue 19:50-22:40 Tom at Maya's apartment, the puppy hiding under the table, then coming out to lick his shoe","at":"2026-12-01T19:46"}
+{"who":"Maya","text":"She came out. She is licking tom's shoe. It's a whole thing","posted":true,"at":"2026-12-01T19:58","checkin":"2026-12-01T19:58"}
+{"who":"Maya","text":"She finally fell asleep on your jacket","posted":true,"at":"2026-12-01T23:02","checkin":"2026-12-01T23:02"}
+{"who":"Maya","text":"Is that a compliment","posted":true,"at":"2026-12-01T23:03","checkin":"2026-12-01T23:03"}
+{"who":"Tom","text":"yes","posted":true,"at":"2026-12-01T23:09","checkin":"2026-12-01T23:09"}
+{"who":"Tom","text":"she has good taste like you","posted":true,"at":"2026-12-01T23:10","checkin":"2026-12-01T23:10"}
+{"who":"Tom","text":"still bagel","posted":true,"at":"2026-12-01T23:14","checkin":"2026-12-01T23:14"}
+{"who":"Maya","text":"Absolutely not","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Maya","text":"She's making the kazoo noise again. Don't wake her up with the door","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Tom","text":"go to bed maya","posted":true,"at":"2026-12-02T00:04","checkin":"2026-12-02T00:04"}

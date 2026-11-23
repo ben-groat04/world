@@ -31,6 +31,7 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 | Multi-agent characters (run.mjs, retired) | Haiku | Opus characters were ruled out as too expensive. |
 
 ## Where things stand (2026-11-23)
+- **W6 built, and judged against W5** (`eval/w6-batch/`, results under W6 in ITERATIONS.md): 10 fresh briefs x 3 seeds, each arm with its own casting (the casting changed), same briefs, seeds and start times. Score 7.44 (W5) vs 7.31 (W6), p_real 78 vs 79, n=110/108: within noise (window A 7.67/78 vs 7.55/79, B 7.16/78 vs 7.02/79). W6 chats are about 25% shorter (42 vs 57 messages). W6 is not shown to be better on the judges' scores; the cold read of these chats is the next step. (Scores are comparable only within a batch.)
 - **W5 judged** (`eval/w5/`, results under W5 in ITERATIONS.md): paired W4 vs W5 on fresh briefs, 3 seeds, shared casts: score 7.11 (W4) vs 6.97 (W5), p_real 70 vs 73, n=114/118; within noise. W4 re-judged on the current judge: 6.69, p_real 58.
 - **Multi-agent simulation** (`run.mjs`, rounds 1-19): stateless Haiku characters see a phone screen, with a generated cast, life updates and a Haiku polish pass.
   - Judged scores plateaued at about 5-6/10 over rounds 15-18.

@@ -1,0 +1,6 @@
+W5-Q11 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W5-oracle/W5-Q11
+W5-Q12 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W5-oracle/W5-Q12
+W5-Q13 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W5-oracle/W5-Q13
+W5-Q21 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W5-oracle/W5-Q21
+W5-Q22 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W5-oracle/W5-Q22
+W5-Q23 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W5-oracle/W5-Q23

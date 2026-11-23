@@ -1,0 +1,185 @@
+--- Wed 14:55, Maja
+Draft of methods section is in the folder (methods_v3). Can someone check the sampling table tonight? Need it before we submit friday
+
+--- Wed 15:12, Sofie
+Ok! I can look after dinner, prob around 8
+btw did you change n in the table or is that the old number
+
+--- Wed 15:40, Maja
+Changed to 212, old one was from before the exclusions
+im on at the café till 21:30 so not me
+
+--- Wed 15:58, Jonas
+just woke up lol
+what's the sampling table
+
+--- Wed 16:03, Maja
+The one in the draft, page 4
+can you do it tonight or should I ask someone else
+
+--- Wed 16:10, Jonas
+can prob do it tmrw? will be at the shop from 12
+
+--- Wed 18:31, Sofie
+Maja can you send me the exclusion criteria, I dont see them in the draft
+
+--- Wed 18:40, Maja
+Appendix tab, bottom. On shift, will reply later
+
+--- Wed 21:05, Mikkel
+I can check the table tonight, if no one has started. Is it just sample size and the quota columns or the whole thing?
+
+--- Wed 21:09, Sofie
+Whole thing pls, the quotas were off last time
+still doing dishes, cant really focus. You take it if you want
+
+--- Wed 21:12, Mikkel
+Whole table then. I'll reply here when done.
+
+--- Wed 22:50, Sofie
+Going to bed, running at 7. If you need the quota numbers I have the old version on my laptop, not the new one
+
+--- Wed 23:10, Mikkel
+Thanks. Found a discrepancy already, row 9 quota is 40 not 30. Working through the rest.
+
+--- Wed 23:58, Mikkel
+Done. Table is consistent except the age bands in the appendix, which dont match page 4. Wasn't sure whether to change the appendix or the table so I left both and marked them yellow.
+
+--- Thu 00:20, Maja
+Back. Thx mikkel. Yellow is fine, ill decide in the morning
+did anyone ask jonas about the age bands? No? Ok
+(👍 2)
+
+--- Thu 00:41, Jonas
+in bed but awake lol. what's the age band thing
+
+--- Thu 00:47, Maja
+Page 4 is 18-24 / 25-34 / 35-44 / 45+
+appendix is 18-25 / 26-35 / 36-45 / 46+
+so not the same, obviously
+
+--- Thu 00:49, Jonas
+ah. the appendix is mine, i did it off an old template i think
+
+--- Thu 00:50, Jonas
+which one is right tho
+
+--- Thu 00:52, Maja
+No idea, thats the question. Going to bed. Decide in morning
+
+--- Thu 01:11, Jonas
+sorry lol. i'll look
+
+--- Thu 06:52, Mikkel
+Checked the codebook in the folder (codebook_final, p.3). Age is coded 18-24, 25-34, 35-44, 45+. So page 4 matches the data and the appendix doesn't.
+
+--- Thu 07:21, Sofie
+Ran 5k. Ok so codebook agrees with page 4?
+Btw I'd still ping Jonas since he wrote the appendix
+
+--- Thu 07:34, Maja
+Yes. Page 4 is right. Changing appendix now
+(👍 2)
+
+--- Thu 07:36, Maja
+Also mikkel thx for the table. Yellow's gone
+
+--- Thu 09:48, Jonas
+just up. sorry. appendix fixed?
+
+--- Thu 09:51, Maja
+Yes, 07:50. Check if you want
+
+--- Thu 09:53, Jonas
+ok will look later. row 9 was that me too?
+
+--- Thu 10:14, Sofie
+Row 9 is 40, my laptop numbers say so. I had 30 in the old one
+btw mikkel good catch
+
+--- Thu 10:16, Jonas
+ok cool 👍
+
+--- Thu 13:02, Mikkel
+Sent the codebook page to the folder as well so it's in one place. Should I also add a line in the methods about the age bands, or leave that to whoever does the final read?
+
+--- Thu 13:40, Maja
+No line needed imo, the codebook is the reference. Ill leave it to the final read
+
+--- Thu 13:52, Sofie
+I can do the final read tomorrow before 12. Mikkel are you ok with that?
+
+--- Thu 13:55, Mikkel
+Yes.
+
+--- Thu 17:48, Jonas
+back. yeah dont think the methods needs a line, the appendix matches now so ok 👍
+
+--- Thu 17:50, Jonas
+reference list tho. theres like 3 entries with no doi and one with a title in caps
+
+--- Thu 18:14, Maja
+Can you fix those tonight? I'm on campus tmrw 9-11 then library, so sofie's read is first
+
+--- Thu 18:16, Jonas
+will try. i'm up late anyway lol
+
+--- Thu 22:37, Mikkel
+Ref list: I can take the figure numbering and captions if no one has. Figure 2 caption and the text on p.7 may not agree.
+
+--- Thu 22:41, Sofie
+Yes please, thanks. Im going to bed, run at 7
+
+--- Thu 23:24, Jonas
+on it. slow rn
+
+--- Fri 00:43, Jonas
+ref list done except one book that i cant find a doi for. left a comment on it, not sure if it matters
+
+--- Fri 07:14, Sofie
+Ran 5k. Ok so whats left? Mikkel did you check figs?
+
+--- Fri 07:50, Maja
+Morning. Ref list done?
+
+--- Fri 08:20, Jonas
+mostly. the book thing is in a comment on the doc
+
+--- Fri 09:31, Mikkel
+Figure 2 caption says n=212. Text on p.7 says 208. 208 looks like the old number.
+
+--- Fri 09:40, Maja
+Yes old one. Fix p.7 to 212
+
+--- Fri 09:42, Sofie
+Ill fix it in the read
+
+--- Fri 11:52, Sofie
+Final read in progress. Found two missing commas, a "the the", and the table caption says "Table 2" but it's table 3 now. Fixing
+
+--- Fri 12:40, Maja
+Ok submitting at 16:00 unless anyone objects
+
+--- Fri 12:44, Jonas
+no objections. book comment is fine i think, whatever
+
+--- Fri 12:46, Sofie
+Ok. Mikkel can you look at the final version once before 16?
+
+--- Fri 13:30, Mikkel
+Yes. I'll look at 14:30.
+
+--- Fri 14:52, Mikkel
+Looks consistent. Figure and table numbers match. Nothing else from me.
+
+--- Fri 15:58, Maja
+Submitted
+
+--- Fri 16:02, Sofie
+Yay 🎉 thanks everyone
+
+--- Fri 16:05, Jonas
+🎉 finally. i'm going to sleep for 3 days
+
+--- Fri 16:09, Mikkel
+Confirmation email received.

@@ -1,0 +1,197 @@
+--- Mon 20:35, Aisyah
+Anyone free to take the Tan reconciliation first thing tmrw? Bank file only came in this afternoon, needs to be done before the 10:00 call
+
+--- Mon 20:41, Farid
+I can. What time do I need to start
+
+--- Mon 20:43, Aisyah
+8:30 at the latest. It's mostly matching, the difference is in the november fees
+
+--- Mon 20:44, Farid
+Ok
+
+--- Mon 21:02, Ravi
+Is the bank file in the shared folder or still in email
+
+--- Mon 21:03, Aisyah
+Shared folder, tan/nov26/bank
+
+--- Mon 21:03, Ravi
+Ok
+
+--- Mon 21:26, Hafiz
+I'm still at the office. Can I help farid with tan
+
+--- Mon 21:30, Aisyah
+Don't stay late for it. You've been here since 8
+
+--- Mon 21:31, Hafiz
+I'm almost done with my own stuff
+
+--- Mon 21:33, Aisyah
+Farid can take it. You can check the fees tomorrow if he wants a second pair of eyes
+
+--- Mon 21:34, Farid
+Pls yes
+
+--- Mon 21:52, Mei
+Aisyah is the 10:00 call still with Tan or has it moved? I need to know whether to keep the small room
+
+--- Mon 21:58, Aisyah
+Still 10. They confirmed this afternoon
+
+--- Mon 21:58, Mei
+Ok keeping it
+
+--- Mon 22:40, Hafiz
+Farid did you eat
+
+--- Mon 22:44, Farid
+No. Ordering from the mamak downstairs, want anything
+
+--- Mon 22:45, Hafiz
+Teh ais
+
+--- Mon 22:45, Farid
+Lol ok
+
+--- Mon 22:51, Ravi
+Farid if the fees don't match the schedule in the engagement letter, it's usually the late-payment charge. Check the old file, last quarter had the same thing
+
+--- Mon 22:58, Farid
+Oh thanks, I was about to ask
+
+--- Mon 23:04, Aisyah
+Farid the schedule is in tan/engagement. If the charge is on the bank side and not on the invoice, flag it to me, don't adjust it
+
+--- Mon 23:05, Farid
+Ok
+
+--- Mon 23:12, Farid
+Aisyah the fees on the bank side show 2 charges not on the invoice. 45 and 120. Do I flag both or just the 120
+
+--- Mon 23:31, Hafiz
+Mamak came?
+
+--- Mon 23:33, Farid
+Yeah. Teh ais is in the bag, you want it or not
+
+--- Mon 23:34, Hafiz
+Lol yes
+
+--- Mon 23:40, Farid
+Ravi the 120 one, is that the late charge or something else
+
+--- Tue 07:02, Mei
+Hafiz your leave form for 12 Dec still not in. Need it by Thu pls
+
+--- Tue 07:24, Aisyah
+Farid did you get through the fees
+
+--- Tue 07:31, Farid
+Mostly. 2 charges I can't match to invoices. Put the list in tan/nov26/notes
+
+--- Tue 07:33, Aisyah
+Ok. Don't wait for a second pair of eyes, I'll look before 9
+
+--- Tue 07:36, Hafiz
+Farid want me to look at the 120 or you good
+
+--- Tue 07:38, Farid
+Pls look. I think it's the late fee from last quarter but the rate looks different
+
+--- Tue 08:02, Ravi
+Late fee is 1.5% a month on overdue, clause 4 of the engagement letter. If the rate's off it's usually the invoice date, not the amount
+
+--- Tue 08:10, Farid
+Oh. Ok that makes sense thanks
+
+--- Tue 09:01, Mei
+Tan call still 10. Small room is booked 9:50 to 10:30
+
+--- Tue 09:03, Aisyah
+Ok
+
+--- Tue 12:20, Farid
+Lunch? Nasi kandar on the corner, anyone
+
+--- Tue 12:24, Hafiz
+Can, after the call
+
+--- Tue 18:41, Hafiz
+Still here. Lim dividend schedule doesn't match the minutes. Ask Aisyah or wait till tmrw
+
+--- Tue 18:55, Aisyah
+Tomorrow. Don't stay past 7
+
+--- Tue 19:10, Hafiz
+Ok
+
+--- Tue 19:11, Hafiz
+Leaving now
+
+--- Tue 19:44, Farid
+Tan fees done. Both charges flagged in tan/nov26/notes
+
+--- Tue 20:15, Aisyah
+Got it. Will look after dinner
+
+--- Tue 22:08, Aisyah
+Farid the 45 is a bank service charge, not a late fee. Leave it on the list for now. The 120 is the one to chase with the client
+
+--- Tue 22:10, Farid
+Ok
+
+--- Tue 22:11, Farid
+Want me to email them or you
+
+--- Tue 22:19, Aisyah
+I'll do it. Don't send anything yet
+
+--- Wed 07:04, Mei
+Hafiz your leave form still not in. Thu deadline, pls don't forget
+
+--- Wed 07:40, Hafiz
+Will do it today
+
+--- Wed 08:15, Hafiz
+Lim dividend, I'll ask Aisyah at 9
+
+--- Wed 08:22, Aisyah
+Send me the minutes and the schedule now, not at 9
+
+--- Wed 08:23, Hafiz
+Sending
+
+--- Wed 08:31, Ravi
+Minutes p3 has the board resolution date. Schedule is using the AGM date. That's the mismatch
+
+--- Wed 08:33, Hafiz
+Oh
+
+--- Wed 08:45, Aisyah
+Ok. Ravi thanks. Hafiz redo the schedule with the resolution date and tell me the new total
+
+--- Wed 09:50, Mei
+Anyone need the small room after 11
+
+--- Wed 09:52, Farid
+Nope
+
+--- Wed 12:10, Farid
+Lunch? Mamak or nasi kandar again
+
+--- Wed 12:14, Hafiz
+Mamak. Can't do nasi kandar again, my stomach
+
+--- Wed 12:15, Ravi
+Go on, I'll meet you there
+
+--- Wed 17:48, Hafiz
+Total is 14,260 with the resolution date. Did it before 6
+
+--- Wed 17:52, Aisyah
+Ok check it against the minutes once more then send
+
+--- Wed 18:20, Hafiz
+Checked. Sent

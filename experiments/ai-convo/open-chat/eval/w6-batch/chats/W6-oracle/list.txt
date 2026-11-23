@@ -1,0 +1,6 @@
+W6-Q11 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W6-oracle/W6-Q11
+W6-Q12 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W6-oracle/W6-Q12
+W6-Q13 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W6-oracle/W6-Q13
+W6-Q21 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W6-oracle/W6-Q21
+W6-Q22 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W6-oracle/W6-Q22
+W6-Q23 /home/user/world/.claude/worktrees/agent-a9c36928a5e394b1b/experiments/ai-convo/open-chat/eval/w6-batch/chats/W6-oracle/W6-Q23

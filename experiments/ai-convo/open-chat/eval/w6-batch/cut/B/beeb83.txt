@@ -1,0 +1,47 @@
+--- Fri 07:14, Sofie
+Ran 5k. Ok so whats left? Mikkel did you check figs?
+
+--- Fri 07:50, Maja
+Morning. Ref list done?
+
+--- Fri 08:20, Jonas
+mostly. the book thing is in a comment on the doc
+
+--- Fri 09:31, Mikkel
+Figure 2 caption says n=212. Text on p.7 says 208. 208 looks like the old number.
+
+--- Fri 09:40, Maja
+Yes old one. Fix p.7 to 212
+
+--- Fri 09:42, Sofie
+Ill fix it in the read
+
+--- Fri 11:52, Sofie
+Final read in progress. Found two missing commas, a "the the", and the table caption says "Table 2" but it's table 3 now. Fixing
+
+--- Fri 12:40, Maja
+Ok submitting at 16:00 unless anyone objects
+
+--- Fri 12:44, Jonas
+no objections. book comment is fine i think, whatever
+
+--- Fri 12:46, Sofie
+Ok. Mikkel can you look at the final version once before 16?
+
+--- Fri 13:30, Mikkel
+Yes. I'll look at 14:30.
+
+--- Fri 14:52, Mikkel
+Looks consistent. Figure and table numbers match. Nothing else from me.
+
+--- Fri 15:58, Maja
+Submitted
+
+--- Fri 16:02, Sofie
+Yay 🎉 thanks everyone
+
+--- Fri 16:05, Jonas
+🎉 finally. i'm going to sleep for 3 days
+
+--- Fri 16:09, Mikkel
+Confirmation email received.

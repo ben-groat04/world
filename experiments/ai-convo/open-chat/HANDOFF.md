@@ -18,6 +18,16 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 - Opus only for hard thinking (cold reads). Coders are Sonnet; characters are Haiku.
 - Commit and push to branch `ccr-982e4403-t5vbsu` often (a stop hook asks for this).
 
+## Models: which for what
+| Job | Model | Notes |
+|---|---|---|
+| Cold read (diagnosis, plans) | Opus | Only Opus job ("Opus only for hard thinking"). Read only; writes its report to notes/diagnoses/. |
+| Coding (implementing a plan, cheap checks) | Sonnet | Agent tool with model sonnet. |
+| Blind judges | Sonnet | Neutral prompt from README "Judging"; about 1-2 judges per window, many windows. |
+| Writer and casting (the chats themselves) | Haiku | `writer.mjs` default, effort medium. Sonnet as writer tested no better (7.06 vs 7.05), so stay on Haiku. |
+| @claude inside chats | Sonnet | With web search; sourced answer or "couldn't find it". |
+| Multi-agent characters (run.mjs, retired) | Haiku | Opus characters were ruled out as too expensive. |
+
 ## Where things stand (2026-11-23)
 - **Multi-agent simulation** (`run.mjs`, rounds 1-19): stateless Haiku characters see a phone screen, with a generated cast, life updates and a Haiku polish pass.
   - Judged scores plateaued at about 5-6/10 over rounds 15-18.

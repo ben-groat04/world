@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// W4 single writer (plan: notes/diagnoses/w4-diagnosis.md). W4 changes: the span lines name the weekday after midnight, a later day continues from the last message (not from a fixed 04:00) and rejected chunks are saved (rejects.txt); (the style line stays: dropping it was tried and aborted, see ITERATIONS); the log is written after every day; --live runs one brief from the viewer's Start form and releases turns on the story clock (see README "Viewer"); with oracle on, a message starting "@claude" cuts the day and Claude's answer is posted before the day resumes; (a delete-only pass, cut.mjs, was tried and lost the blind check: see ITERATIONS, W4). W3 single writer (plans: notes/diagnoses/w1..w3-diagnosis.md; the W2 version is writer-w2.mjs, the W1 version writer-w1.mjs). W3 changes: each call writes one waking day with no end time to fill, effort medium by default, no "last talked about" in the setting, plain content (temperament-only like-line, unremarkable messages). W2 notes:. W2 changes: style is typing only, no appointments in the cast, secrets outside the background, chunks break at 04:00, no "for a story", effort option. Like baseline.mjs (same cast rows in, same log.jsonl / transcript.txt out, same parse/dated), but:
+// W5 single writer (plan: notes/diagnoses/w5-diagnosis.md; the W4 version is writer-w4.mjs). W5 changes: casting keeps what the situation says the participants are and invents no world facts; the writer says nothing untrue about the world, @claude gets the chat and answers as a chat message; capitals are applied by code from a per-person yes/no; days are not episodes (a day may be silent, no bedtime close); later days do not restate the opening situation; bracketed offline lines [..] for what happens off the phone; a same-weekday backwards stamp is an ordering slip, not a week jump. W4 single writer (plan: notes/diagnoses/w4-diagnosis.md). W4 changes: the span lines name the weekday after midnight, a later day continues from the last message (not from a fixed 04:00) and rejected chunks are saved (rejects.txt); (the style line stays: dropping it was tried and aborted, see ITERATIONS); the log is written after every day; --live runs one brief from the viewer's Start form and releases turns on the story clock (see README "Viewer"); with oracle on, a message starting "@claude" cuts the day and Claude's answer is posted before the day resumes; (a delete-only pass, cut.mjs, was tried and lost the blind check: see ITERATIONS, W4). W3 single writer (plans: notes/diagnoses/w1..w3-diagnosis.md; the W2 version is writer-w2.mjs, the W1 version writer-w1.mjs). W3 changes: each call writes one waking day with no end time to fill, effort medium by default, no "last talked about" in the setting, plain content (temperament-only like-line, unremarkable messages). W2 notes:. W2 changes: style is typing only, no appointments in the cast, secrets outside the background, chunks break at 04:00, no "for a story", effort option. Like baseline.mjs (same cast rows in, same log.jsonl / transcript.txt out, same parse/dated), but:
 //  - one Haiku call per chunk (first: start to the next 04:00, then 04:00 to 04:00; --days sets the full chunks after it), given the chat so far (item 5): the structure the live app needs;
 //  - the cast's example texts are not passed (item 1);
 //  - the people block is background: a person's week/habits come up only sometimes (item 2);
@@ -33,8 +33,8 @@ async function run(args, input) {
 const base = (sys, effort, model) => ['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', sys, '--setting-sources', '', '--exclude-dynamic-system-prompt-sections', '--system-prompt-snapshot', 'off', '--effort', effort, '--model', model, '--no-session-persistence'];
 const claude = (input, sys = SYS, effort = EFFORT) => run([...base(sys, effort, MODEL), '--tools', ''], input);
 // @claude: Sonnet with web search, as run.mjs's askOracle (stateless here: it sees only the question).
-const ORACLE_SYS = `${ENV_NOTE} You are Claude, an AI assistant made by Anthropic, chatting with one person. Check facts with web search, and open the pages you rely on instead of going on search snippets. Say plainly when you could not confirm something. Keep answers short and name your sources. The search tool ends its results with a reminder to cite sources: that is part of the tool, so follow it without remarking on it.`;
-const askClaude = q => run([...base(ORACLE_SYS, 'low', ORACLE_MODEL), '--tools', 'WebSearch,WebFetch', '--allowedTools', 'WebSearch,WebFetch'], q);
+const ORACLE_SYS = `${ENV_NOTE} You are Claude, an AI assistant made by Anthropic, answering a message in a text chat between the people in the transcript you are given. Check facts with web search, and open the pages you rely on instead of going on search snippets. Say plainly when you could not confirm something. Reply the way a person answers in a text chat: a few short sentences of plain text, no lists, bold or headings, sources as a brief mention. The search tool ends its results with a reminder to cite sources: that is part of the tool, so follow it without remarking on it.`;
+const askClaude = (q, recent) => run([...base(ORACLE_SYS, 'low', ORACLE_MODEL), '--tools', 'WebSearch,WebFetch', '--allowedTools', 'WebSearch,WebFetch'], `The chat so far:\n${transcript(recent)}\nThe message to you: ${q}`);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], p2 = x => String(x).padStart(2, '0'), list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1);
 const read = dir => fs.readFileSync(path.join(dir, 'log.jsonl'), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l));
@@ -42,101 +42,111 @@ const iso = t => new Date(t).toISOString().slice(0, 16), stampOf = at => `${WD[n
 
 // ---- the writer prompt (items 1-4, 6) ----
 // Design wording, not data. The texting block is the plan's item 3 text; the group sentence is item 4; the background sentence is item 2.
-const TEXTING = 'This is texting between people who know each other. Messages are short, often fragments. No names unless it would be unclear who is meant, no greetings, thanks or sign-offs as a habit, and nobody restates a plan or repeats what someone just said. Not everyone answers everything: some people say little for hours, a question can sit unanswered, a thread gets dropped, someone goes off on something unrelated. Nobody texts while asleep, and people they are with in person they talk to there. Quiet stretches of hours are normal. Most messages are unremarkable (a plain answer, a time, ok, a half-thought); nobody is writing for an audience, so jokes are occasional and often fall flat, and someone who types with capitals and full stops talks as plainly as the rest. Write as many messages as these people would really send in this time.';
+const TEXTING = 'This is texting between people who know each other. Messages are short, often fragments. No names unless it would be unclear who is meant, no greetings, thanks or sign-offs as a habit, and nobody restates a plan or repeats what someone just said. Not everyone answers everything: some people say little for hours, a question can sit unanswered, a thread gets dropped, someone goes off on something unrelated. What anyone says about the real world is true or plainly unsure. Quiet stretches of hours are normal. Most messages are unremarkable (a plain answer, a time, ok, a half-thought); nobody is writing for an audience, so jokes are occasional and often fall flat. Write as many messages as these people would really send in this time.';
 const BACKGROUND = 'This is background you know as the writer. Their days are ordinary and you know what happens in them; now and then something from someone\'s day comes up, unplanned. A person\'s typing habits show in some messages, not all; most messages are plain.';
 const BIGGROUP = 'In a group this size most messages come from two or three people; the others chime in once in a while or say nothing for long stretches.';
 // In a group of 5+ only the first FULL people (cast order) get the "what they are like" and typing lines: given to all eight, every member got a role and a tic (judges: "scripted ensemble"). FULL is a design parameter.
 const FULL = 3, BIG = 5;
-const block = c => c.names.map((n, i) => { const p = c.cast[n], full = c.names.length < BIG || i < FULL; return `${n} (${p.who}). ${p.knows} ${c.private_lines[n]}${full && p.like ? ' ' + p.like : ''} Usually asleep ${hhmm(c.sleep[n][0])} to ${hhmm(c.sleep[n][1])}. ${p.texts}${p.lives?.length ? ` ${n} lives with ${list(p.lives)}: when they are home together they talk face to face and do not text each other.` : ''}${full ? ` How ${n} types, when it shows: ${p.style}` : ''}`; }).join('\n\n');
+const block = c => c.names.map((n, i) => { const p = c.cast[n], full = c.names.length < BIG || i < FULL; return `${n} (${p.who}). ${p.knows} ${c.private_lines[n]}${full && p.like ? ' ' + p.like : ''} Usually asleep ${hhmm(c.sleep[n][0])} to ${hhmm(c.sleep[n][1])}. ${p.texts}${p.lives?.length ? ` ${n} lives with ${list(p.lives)}.` : ''}${full ? ` How ${n} types, when it shows: ${p.style}` : ''}`; }).join('\n\n');
 const secretLines = secrets => Object.entries(secrets ?? {}).map(([n, s]) => `Only ${n} knows this, at least at first: ${s.replace(/\s*$/, '')} It is on ${n}'s mind; ${n} may hint at it or tell someone in the chat when it fits, or not yet. Nobody else knows it until ${n} says it in the chat.`).join('\n');
-const transcript = ms => ms.map(m => `--- ${stampOf(m.at)}, ${m.who}\n${m.text}${m.reacts.length ? `\n(${m.reacts.map(([e, n]) => `${e} ${n}`).join(', ')})` : ''}\n`).join('\n');
-const ASK = 'Anyone can ask Claude, an AI assistant that searches the web, by starting a message with "@claude"; stop right after such a message. When the chat needs a fact the people would not know offhand (a timetable, opening hours, a price, a rule), someone asks Claude, and nobody states such a fact until Claude has posted it.';
+// notes: the writer's own offline lines go back in place for the writer (never into the eval transcript or the live feed)
+const transcript = (ms, notes = false) => ms.map(m => `${notes && m.before?.length ? m.before.map(n => `[${n}]\n`).join('') + '\n' : ''}--- ${stampOf(m.at)}, ${m.who}\n${m.text}${m.reacts.length ? `\n(${m.reacts.map(([e, n]) => `${e} ${n}`).join(', ')})` : ''}\n${notes && m.notes?.length ? '\n' + m.notes.map(n => `[${n}]`).join('\n') + '\n' : ''}`).join('\n');
+const ASK = 'Anyone can ask Claude, an AI assistant in this chat that reads it and searches the web, by starting a message with "@claude"; stop right after such a message. When the chat needs a fact about the real world (news, research, timetables, prices, rules, history) that they would not know offhand, someone asks Claude, and nobody states it until Claude has posted it.';
 // resume: the stamp after Claude's answer, when the day is being continued after an @claude question.
 function promptFor(c, secrets, so_far, from, to, resume, dayStart) {
   const nx = nextWd(dayStart), group = c.names.length > 2, chat = group ? 'group chat' : 'chat', first = c.names[0], h = +from.slice(11, 13);
   const opening = so_far.length ? '' : `\n\n${c.topic ? `${first} has this on their mind and starts the chat with it: ${c.topic}` : `${first} picks up the phone to ${c.opener.replace(/\.$/, '')}.`}`;
-  const span = resume ? `Continue the chat from ${stampOf(from)}, until the last stops for the night (a message after midnight is headed ${nx}). The next day is written separately.`
-    : so_far.length ? `Continue the chat from after the last message above, in the order the messages were sent, through ${stampOf(dayStart).slice(0, 3)} (from whenever the first of them picks up the phone) until the last stops for the night (a message after midnight is headed ${nx}). The next day is written separately.`
-    : `Write ${h >= 17 ? "this evening's" : 'the'} messages in the order they were sent, starting with ${first}'s first message at ${stampOf(from)}, until the last of them stops for the night (a message after midnight is headed ${nx}, e.g. "${nx} 00:40"). The next day is written separately.`;
-  return `These people are in a ${chat}: ${list(c.names.map(n => `${n} (${c.cast[n].who})`))}. ${c.situation || 'They are friends.'}\nSetting: ${c.setting}\n\n${block(c)}\n\n${BACKGROUND}${secrets ? '\n\n' + secretLines(secrets) : ''}${opening}\n\nThe chat so far:\n${so_far.length ? transcript(so_far) : '(nothing yet)'}\n\n${span}\n\n${TEXTING}${c.names.length >= BIG ? ' ' + BIGGROUP : ''}${ORACLE ? ' ' + ASK : ''}\n\nWrite each message as a header line "--- Mon 19:41, Name" (weekday, 24-hour time, the sender), then the message text, then a blank line. If a message got emoji reactions, put a line like "(\u{1F44D} 2, \u{1F602} 1)" directly under it. Reply with only the new messages.`;
+  const wd = stampOf(dayStart).slice(0, 3), span = resume ? `Continue the chat from ${stampOf(from)}, through ${wd}. The next day is written separately.`
+    : so_far.length ? `Continue the chat from after the last message above, in the order the messages were sent, through ${wd} (a message after midnight is headed ${nx}). Some days nobody texts: then reply only (no messages). The next day is written separately.`
+    : `Write the messages in the order they were sent, starting with ${first}'s first message at ${stampOf(from)}, through tonight (a message after midnight is headed ${nx}, e.g. "${nx} 00:40"). The next day is written separately.`;
+  return `These people are in a ${chat}: ${list(c.names.map(n => `${n} (${c.cast[n].who})`))}.${so_far.length ? '' : ` ${c.situation || 'They are friends.'}`}\nSetting: ${c.setting}\n\n${block(c)}\n\n${BACKGROUND}${secrets ? '\n\n' + secretLines(secrets) : ''}${opening}\n\nThe chat so far:\n${so_far.length ? transcript(so_far, true) : '(nothing yet)'}\n\n${span}\n\n${TEXTING}${c.names.length >= BIG ? ' ' + BIGGROUP : ''}${ORACLE ? ' ' + ASK : ''}\n\nWrite each message as a header line "--- Mon 19:41, Name" (weekday, 24-hour time, the sender), then the message text, then a blank line. If a message got emoji reactions, put a line like "(\u{1F44D} 2, \u{1F602} 1)" directly under it. Between messages you may put a line of its own (no header) in square brackets for what happens off the phone, e.g. "[19:30-22:00 Ross, Kirsty and Nadia at the King's Arms]"; nobody sees these lines, and people who are together talk there, not in the chat. Reply with only the new messages.`;
 }
-// baseline.mjs's parse/dated (same format), with a minimum count: a later day may be quiet.
+// baseline.mjs's parse/dated (same format). A later day may be silent: min 0 accepts a reply that is only "(no messages)". A paragraph after a message's own text that is only "[...]" lines is an offline note (kept as m.notes, or m.before for one ahead of the first message), never message text.
+const ASKS = /@claude\b/i, NOTE = /^\[(.*)\]$/, noteLines = t => t.split('\n').map(l => l.trim()).filter(Boolean).map(l => l.match(NOTE)?.[1].trim());
 function parse(text, names, min) {
-  const msgs = []; for (const b of text.split(/^(?=--- )/m).filter(x => x.startsWith('--- '))) {
+  if (min === 0 && /^\(no messages\)\.?$/i.test(text.trim())) return [];
+  const msgs = [], blocks = text.split(/^(?=--- )/m), lead = blocks[0].startsWith('--- ') ? '' : blocks.shift(), before = noteLines(lead).filter(Boolean);
+  for (const b of blocks) {
     const m = b.match(/^--- (\w{3}) (\d{1,2}):(\d\d), ([^\n]+)\n([\s\S]*)$/); if (!m || !WD.includes(m[1]) || !names.includes(m[4].trim()) || +m[2] > 23) return null;
-    const body = m[5].trim().split('\n'), last = body.at(-1)?.trim(), rc = last?.match(/^\(((?:\p{Extended_Pictographic}️?[^,()]*? \d+)(?:, \p{Extended_Pictographic}️?[^,()]*? \d+)*)\)$/u);
-    msgs.push({ who: m[4].trim(), text: (rc ? body.slice(0, -1) : body).join('\n').trim(), wd: WD.indexOf(m[1]), hm: `${p2(m[2])}:${m[3]}`, reacts: rc ? rc[1].split(', ').map(x => { const k = x.lastIndexOf(' '); return [x.slice(0, k), +x.slice(k + 1)]; }) : [] });
-  } return msgs.length >= min && msgs.every(m => m.text) ? msgs : null;
+    const paras = m[5].trim().split(/\n\s*\n/), notes = []; while (paras.length > 1 && noteLines(paras.at(-1)).every(Boolean)) notes.unshift(...noteLines(paras.pop()));
+    const body = paras.join('\n\n').split('\n'), last = body.at(-1)?.trim(), rc = last?.match(/^\(((?:\p{Extended_Pictographic}️?[^,()]*? \d+)(?:, \p{Extended_Pictographic}️?[^,()]*? \d+)*)\)$/u);
+    msgs.push({ who: m[4].trim(), text: (rc ? body.slice(0, -1) : body).join('\n').trim(), wd: WD.indexOf(m[1]), hm: `${p2(m[2])}:${m[3]}`, reacts: rc ? rc[1].split(', ').map(x => { const k = x.lastIndexOf(' '); return [x.slice(0, k), +x.slice(k + 1)]; }) : [], ...(notes.length && { notes }) });
+  } if (msgs.length && before.length) msgs[0].before = before;
+  return msgs.length && msgs.length >= min && msgs.every(m => m.text) ? msgs : null;
 }
+// A stamp earlier than the previous message's on the same weekday is the writer interleaving threads, not a week jump: it takes the previous time (never earlier than the span's start). A different weekday goes a week ahead.
 function dated(msgs, startAt) {
-  const day0 = new Date(startAt.slice(0, 10) + 'T00:00:00Z'); let last = +new Date(startAt + ':00Z') - 1;
-  return msgs.map(m => { let t = +day0 + (((m.wd - day0.getUTCDay()) + 7) % 7) * 864e5 + (+m.hm.slice(0, 2) * 60 + +m.hm.slice(3)) * 6e4; while (t < last) t += 7 * 864e5; last = t; return { ...m, at: iso(t) }; });
+  const day0 = new Date(startAt.slice(0, 10) + 'T00:00:00Z'), t0 = +new Date(startAt + ':00Z'); let last = t0 - 1;
+  return msgs.map(m => { let t = +day0 + (((m.wd - day0.getUTCDay()) + 7) % 7) * 864e5 + (+m.hm.slice(0, 2) * 60 + +m.hm.slice(3)) * 6e4; if (t < last && new Date(t).getUTCDay() === new Date(last).getUTCDay()) t = Math.max(last, t0); while (t < last) t += 7 * 864e5; last = t; return { ...m, at: iso(t) }; });
 }
+// Capitals are what the phone does to the letters, not a register: for a person cast with capitals "yes" the code capitalises the first letter of the message and of each sentence and a standalone "i"; everything else stays as written (casts without the field are left alone).
+const caps = t => t.replace(/^\p{Ll}/u, x => x.toUpperCase()).replace(/([.!?]\s+)(\p{Ll})/gu, (_, a, x) => a + x.toUpperCase()).replace(/(?<![\p{L}\p{N}'’.-])i(?![\p{L}\p{N}.-])/gu, 'I');
 // Chunks break at 04:00, when the chat is quietest: the first runs from the start to the next 04:00 (the one after, if that is under 6 h away), then 04:00 to 04:00; DAYS full chunks follow the first.
 function chunkEnds(startAt, days) {
   const t0 = +new Date(startAt + ':00Z'), d = new Date(t0); d.setUTCHours(4, 0, 0, 0); let t = +d; while (t <= t0) t += 864e5; if (t - t0 < 6 * 36e5) t += 864e5;
   return Array.from({ length: days + 1 }, (_, k) => iso(t + k * 864e5));
 }
-// One chunk: the parsed messages must fall inside [from, to] (a stamp before `from` or going back in time jumps a week ahead in dated(): reject and retry; a few stamps past `to` are dropped). Rejected texts are kept in rejects.txt.
+// One chunk (an @claude message ends it early, so the usual minimum count is lowered to 1 when one is present): the parsed messages must fall inside [from, to] (a stamp a week ahead after dated() is rejected and retried; a few stamps past `to` are dropped). Rejected texts are kept in rejects.txt.
 async function chunk(c, secrets, so_far, from, to, label, min, resume, dayStart) {
   const usages = [];
   for (let a = 0; a < 3; a++) {
     const r = await claude(promptFor(c, secrets, so_far, from, to, resume, dayStart)).catch(e => { console.error(`${label}: ${e.message}`); return null; }); if (!r) continue; usages.push(r.usage);
-    const ms = parse(r.text, c.names, min); if (!ms) { console.error(`${label}: not in the format, ${a < 2 ? 'retrying' : 'giving up'}`); continue; }
-    const dm = dated(ms, from), limit = +new Date(to + ':00Z');
+    const ms = parse(r.text, c.names, ORACLE && ASKS.test(r.text) ? Math.min(min, 1) : min); if (!ms) { console.error(`${label}: not in the format, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1} (format)\n${r.text}\n\n`); continue; }
+    const dm = dated(ms, from).map(m => c.cast[m.who]?.capitals ? { ...m, text: caps(m.text) } : m), limit = +new Date(to + ':00Z');
     if (dm.some(m => +new Date(m.at + ':00Z') > limit + 12 * 36e5)) { console.error(`${label}: stamps out of order or before the span, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1}\n${r.text}\n\n`); usages.rejected = (usages.rejected ?? 0) + 1; continue; }
     return { dm: dm.filter(m => +new Date(m.at + ':00Z') <= limit), usages };
   } return usages.length ? { dm: null, usages } : null;
 }
-const ASKS = /^@claude\b/i, MAX_ASKS = 5; // design parameter: questions answered per day
+const MAX_ASKS = 5; // design parameter: questions answered per day
 // One day. With the oracle on, a message starting "@claude" ends the chunk there: Claude's answer is posted (stamped after the real call time), and the same day is resumed from that stamp.
 async function writeDay(c, secrets, so_far, from, to, label, dayStart) {
   const day = [], usages = []; let resume = null, rejects = 0;
   for (let asks = 0; ; asks++) {
-    const r = await chunk(c, secrets, [...so_far, ...day], resume ?? from, to, label, resume ? 1 : so_far.length ? 2 : 5, !!resume, dayStart);
+    const r = await chunk(c, secrets, [...so_far, ...day], resume ?? from, to, label, resume ? 1 : so_far.length ? 0 : 5, !!resume, dayStart);
     if (!r) return day.length ? { dm: day, usages, rejects } : null; usages.push(...r.usages); rejects += r.usages.rejected ?? 0;
     if (!r.dm) return day.length ? { dm: day, usages, rejects } : null;
-    const i = ORACLE && asks < MAX_ASKS ? r.dm.findIndex(m => ASKS.test(m.text.trim())) : -1;
+    const i = ORACLE && asks < MAX_ASKS ? r.dm.findIndex(m => ASKS.test(m.text)) : -1;
     if (i < 0) { day.push(...r.dm); return { dm: day, usages, rejects }; }
     const q = r.dm[i], t0 = Date.now(); day.push(...r.dm.slice(0, i + 1));
-    const a = await askClaude(q.text.trim().replace(ASKS, '').trim()).catch(e => (console.error(`${label}: @claude failed: ${e.message}`), null));
+    const a = await askClaude(q.text.trim().replace(ASKS, '').trim(), [...so_far, ...day].slice(-30)).catch(e => (console.error(`${label}: @claude failed: ${e.message}`), null));
     const at = iso(Math.max(+new Date(q.at + ':00Z') + 6e4, +new Date(q.at + ':00Z') + Math.ceil((Date.now() - t0) / 6e4) * 6e4));
     day.push({ who: 'Claude', text: a?.text || "I couldn't look that up just now.", oracle: true, question: q.text, wd: new Date(at + ':00Z').getUTCDay(), hm: at.slice(11, 16), reacts: [], at }); if (a) usages.push(a.usage); resume = at;
     console.log(`${label}: @claude at ${stampOf(q.at)}`);
   }
 }
 // ---- casting (item 9): run.mjs's casting call without examples, one plain sentence of style ----
-const GENSYS = `${ENV_NOTE} You write short background details about characters for a story.`;
+const GENSYS = `${ENV_NOTE} You write short background details about the participants of a simulated chat.`;
 const likeSpec = 'in the second person, one short sentence: your temperament. An ordinary person, not a type.';
 // Where people live when the brief doesn't say: drawn in code from this list (a design choice for variety, not data about the places). Asked to list places and pick the r-th, the model gave the same few places over and over (Porto in 11 of 46 casts).
 const PLACES = ['Manchester, England', 'Leeds, England', 'Bristol, England', 'Cardiff, Wales', 'Glasgow, Scotland', 'Belfast, Northern Ireland', 'Dublin, Ireland', 'Galway, Ireland', 'Lyon, France', 'Lille, France', 'Toulouse, France', 'Madrid, Spain', 'Seville, Spain', 'Bilbao, Spain', 'Lisbon, Portugal', 'Porto, Portugal', 'Naples, Italy', 'Turin, Italy', 'Bologna, Italy', 'Munich, Germany', 'Hamburg, Germany', 'Leipzig, Germany', 'Vienna, Austria', 'Zurich, Switzerland', 'Rotterdam, the Netherlands', 'Antwerp, Belgium', 'Copenhagen, Denmark', 'Gothenburg, Sweden', 'Oslo, Norway', 'Helsinki, Finland', 'Tallinn, Estonia', 'Warsaw, Poland', 'Krakow, Poland', 'Prague, Czechia', 'Budapest, Hungary', 'Bucharest, Romania', 'Athens, Greece', 'Thessaloniki, Greece', 'Istanbul, Turkey', 'Zagreb, Croatia', 'Lagos, Nigeria', 'Accra, Ghana', 'Nairobi, Kenya', 'Kampala, Uganda', 'Johannesburg, South Africa', 'Cape Town, South Africa', 'Cairo, Egypt', 'Casablanca, Morocco', 'Tunis, Tunisia', 'Addis Ababa, Ethiopia', 'Beirut, Lebanon', 'Amman, Jordan', 'Mumbai, India', 'Delhi, India', 'Bengaluru, India', 'Chennai, India', 'Kolkata, India', 'Karachi, Pakistan', 'Dhaka, Bangladesh', 'Colombo, Sri Lanka', 'Kathmandu, Nepal', 'Bangkok, Thailand', 'Hanoi, Vietnam', 'Ho Chi Minh City, Vietnam', 'Manila, the Philippines', 'Jakarta, Indonesia', 'Kuala Lumpur, Malaysia', 'Singapore', 'Seoul, South Korea', 'Osaka, Japan', 'Sapporo, Japan', 'Taipei, Taiwan', 'Hong Kong', 'Chengdu, China', 'Auckland, New Zealand', 'Wellington, New Zealand', 'Sydney, Australia', 'Melbourne, Australia', 'Perth, Australia', 'Brisbane, Australia', 'Toronto, Canada', 'Vancouver, Canada', 'Montreal, Canada', 'Halifax, Canada', 'Chicago, USA', 'Houston, USA', 'Atlanta, USA', 'Seattle, USA', 'Boston, USA', 'Phoenix, USA', 'Mexico City, Mexico', 'Monterrey, Mexico', 'Bogota, Colombia', 'Medellin, Colombia', 'Lima, Peru', 'Santiago, Chile', 'Buenos Aires, Argentina', 'Sao Paulo, Brazil', 'Recife, Brazil', 'Kingston, Jamaica'];
 const castPrompt = (N, brief, topic, secretText = '') => { const P = k => `Person ${k + 1}`, chat = N > 2 ? 'group chat' : 'chat';
-  return `These ${N} people, ${P(0)} to ${P(N - 1)}, are in a ${chat}. ${brief || 'They are friends.'}${topic ? ` ${P(0)} has this on their mind: ${topic}` : ''}${secretText}
+  return `These ${N} participants, ${P(0)} to ${P(N - 1)}, are in a ${chat}. ${brief || 'They are friends.'}${topic ? ` ${P(0)} has this on their mind: ${topic}` : ''}${secretText}
 
-Cast them as one coherent group, working from the situation above however short it is. Every role it names (parent, adult child, partner, ex, neighbour, team-mate, ...) goes to exactly one person, and if it is written from one person's side ("my ex", "me and my mum") that person is Person 1, and the lines must agree with each other (the same place, the same way of knowing each other). People in a group of one cohort (old friends, a team, flatmates) text in much the same register as each other; family members can differ.
+Cast them as what the situation says they are (people, unless it says otherwise), as one coherent group, working from the situation above however short it is. Every role it names (parent, adult child, partner, ex, neighbour, team-mate, ...) goes to exactly one person, and if it is written from one person's side ("my ex", "me and my mum") that person is Person 1, and the lines must agree with each other (the same place, the same way of knowing each other). People in a group of one cohort (old friends, a team, flatmates) text in much the same register as each other; family members can differ.
 
-If the situation doesn't already say where they live, they live in ${PLACES[Math.floor(Math.random() * PLACES.length)]}.
+If they are people and the situation doesn't already say where they live, they live in ${PLACES[Math.floor(Math.random() * PLACES.length)]}.
 
 Reply with only these lines, each on one line, in this order:
-First, one line per person: "Person k name:" and a first name (one word) that fits the place, culture and age of that person, all different.
-Then one line starting "Setting:": a few sentences in the second person for ${N > 2 ? 'the whole group' : 'both of them'}, saying where you ${N > 2 ? 'all ' : 'both '}live (that place), how you know each other and what you ${N > 2 ? 'all ' : 'both '}already know about each other.${topic ? ' If the topic concerns something you share include the facts you all know about it.' : ''}
+First, one line per person: "Person k name:" and a name (one word) that fits who that participant is, all different.
+Then one line starting "Setting:": a few sentences in the second person for ${N > 2 ? 'the whole group' : 'both of them'}, saying where you ${N > 2 ? 'all ' : 'both '}live (that place), how you know each other and what you ${N > 2 ? 'all ' : 'both '}already know about each other. Do not invent public facts or events (news, publications, research results, records): only what these participants would really know, true in the real world.${topic ? ' If the topic concerns something you share include the facts you all know about it.' : ''}
 Then, for each person in turn, these lines, each starting with that person's name from their "Person k name:" line:
-"<name> is:" their age, gender and role in this situation, in a few words, e.g. "58, woman, the parent".
+"<name> is:" what they are and their role in this situation, in a few words, e.g. "58, woman, the parent" for a person.
 "<name> knows:" in the second person ('You ...'), who each of the others is to you and what you know about them, a short sentence each.
 "<name> life:" in the second person ('You ...'), where you live, your occupation, who you live with and how your days usually go. Ordinary circumstances that fit the situation; no appointments or events for this week. Describe the life, not how you behave in the chat.
 "<name> is like:" ${likeSpec}
 "<name> lives with:" the names of the others in this chat who live in the same home as you, or "nobody".
 "<name> sleeps:" the hours they usually sleep as HH:MM-HH:MM, following from their life (most people sleep overnight).
 "<name> texts:" one plain sentence, in the second person, on how often you message in this chat without being asked anything, as follows from your life and the group. Use frequency words ("now and then", "mostly") rather than "always".
-"<name> style:" one plain sentence, in the second person, on how you type: capitals, punctuation, emoji, abbreviations. Only the typing, not tone, length or politeness; most people type in a fairly ordinary way.${topic ? '' : `
+"<name> style:" one plain sentence, in the second person, on emoji and abbreviations only; most people use few.
+"<name> capitals:" yes or no, whether <name>'s messages start with a capital letter.${topic ? '' : `
 Last, one line starting "<name of ${P(0)}> opens with:", saying in a few words, starting with a verb, what ${P(0)} picks up the phone to send ${N > 2 ? 'the group' : 'the other'} tonight, fitting the situation.`}`; };
 const fieldOf = (text, k) => text.match(new RegExp(`^\\W*${k}[*_\\s]*:[*_\\s]*(.+)$`, 'im'))?.[1].trim();
 function parseCast(text, N, topic) {
   const f = k => fieldOf(text, k)?.replace(new RegExp(`^${k}\\s*:\\s*`), ''), names = Array.from({ length: N }, (_, k) => f(`Person ${k + 1} name`)?.replace(/[*_"']/g, '').trim());
-  if (!names.every(x => x && /^[\p{L}\p{M}-]+$/u.test(x)) || new Set(names.map(x => x.toLowerCase())).size < N) return null;
+  if (!names.every(x => x && /^[\p{L}\p{M}\d-]+$/u.test(x)) || new Set(names.map(x => x.toLowerCase())).size < N) return null;
   const c = { names, setting: f('Setting'), opener: topic ? '' : f(`${names[0]} opens with`), cast: {}, private_lines: {}, sleep: {} };
   for (const n of names) { const h = f(`${n} sleeps`)?.match(/(\d{1,2})(?::(\d\d))?\s*(?:-|–|to)\s*(\d{1,2})(?::(\d\d))?/); if (h) c.sleep[n] = [+h[1] + +(h[2] ?? 0) / 60, +h[3] + +(h[4] ?? 0) / 60];
-    c.cast[n] = { who: f(`${n} is`)?.replace(/[.\s]+$/, ''), knows: f(`${n} knows`), like: f(`${n} is like`), texts: f(`${n} texts`), style: f(`${n} style`), lives: c.names.filter(o => o !== n && new RegExp(`\\b${o}\\b`, 'u').test(f(`${n} lives with`) ?? '')), ex: [] }; c.private_lines[n] = f(`${n} life`); }
+    c.cast[n] = { who: f(`${n} is`)?.replace(/[.\s]+$/, ''), knows: f(`${n} knows`), like: f(`${n} is like`), texts: f(`${n} texts`), style: f(`${n} style`), capitals: (v => v && /^\W*(yes|no)\b/i.test(v) ? /^\W*yes/i.test(v) : undefined)(f(`${n} capitals`)), lives: c.names.filter(o => o !== n && new RegExp(`\\b${o}\\b`, 'u').test(f(`${n} lives with`) ?? '')), ex: [] }; c.private_lines[n] = f(`${n} life`); }
   return c.setting && (topic || c.opener) && names.every(n => Object.values(c.cast[n]).every(v => v !== undefined) && c.private_lines[n] && c.sleep[n]) && c;
 }
 
@@ -171,9 +181,10 @@ await Promise.all(Array.from({ length: CONC }, async () => { while (k < items.le
   const days = it.gen?.days ?? DAYS, all = [], usage = []; let ok = true, rejects = 0;
   const sink = it.live ? liveSink(LIVE_OUT || path.join(out, 'export'), { id: `${ts}-${it.label}`, started: new Date().toISOString(), model: MODEL, people: c.names.length, names: c.names, brief: c.situation || '', topic: c.topic, secrets, oracle: ORACLE }) : null; sink?.start();
   const flush = complete => { // the log after every day, so a run in progress can be read
-    const log = [{ writer: 'w4', ...(it.live && { live: true }), source, model: MODEL, effort: EFFORT, days, oracle: ORACLE, complete, rejects, usage }, c, ...(secrets ? [{ secrets }] : [])]; let j = 0;
+    const log = [{ writer: 'w5', ...(it.live && { live: true }), source, model: MODEL, effort: EFFORT, days, oracle: ORACLE, complete, rejects, usage }, c, ...(secrets ? [{ secrets }] : [])]; let j = 0;
     for (const m of all) { if (m.oracle) { log.push({ who: m.who, text: m.text, oracle: true, question: m.question, posted: true, at: m.at, checkin: m.at }); continue; }
-      log.push({ who: m.who, text: m.text, posted: true, at: m.at, checkin: m.at }); for (const [emoji, n] of m.reacts) for (let q = 0; q < n; q++) log.push({ who: '', react: emoji, to: j, posted: false, at: m.at }); j++; }
+      for (const note of m.before ?? []) log.push({ note, at: m.at });
+      log.push({ who: m.who, text: m.text, posted: true, at: m.at, checkin: m.at }); for (const [emoji, n] of m.reacts) for (let q = 0; q < n; q++) log.push({ who: '', react: emoji, to: j, posted: false, at: m.at }); for (const note of m.notes ?? []) log.push({ note, at: m.at }); j++; }
     fs.writeFileSync(path.join(dir, 'log.jsonl'), log.map(r => JSON.stringify(r)).join('\n') + '\n'); fs.writeFileSync(path.join(dir, 'transcript.txt'), transcript(all)); };
   const cs = chunkEnds(startAt, days);
   for (let d = 0; d < cs.length; d++) { const dayStart = d ? cs[d - 1] : startAt, from = d ? all.at(-1).at : startAt, r = await writeDay(c, secrets, all, from, cs[d], it.label, dayStart); if (!r) { ok = false; break; } rejects += r.rejects; usage.push(...r.usages);

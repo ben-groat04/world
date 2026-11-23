@@ -1,0 +1,51 @@
+=== F6 2026-11-23T07:25 to 2026-11-24T04:00, attempt 1 (format)
+--- Mon 07:25, Mette
+morning! quick one. is the science museum in london open on sundays? and what time does it open? trying to work out if we can fit it in after the british museum
+
+--- Mon 13:12, Jonas
+no idea 😅 will check tonight, on shift now
+
+--- Mon 13:40, Mette
+no rush! just want to know before i book anything
+
+--- Mon 21:05, Mette
+@claude is the Science Museum in London open on Sundays, and what time does it open?
+
+=== F1 2026-11-23T07:25 to 2026-11-24T04:00, attempt 1 (format)
+--- Mon 07:25, Bea
+Is the Science Museum in London open on Sundays, and when does it open?
+
+[07:30-12:00 Paolo on site in Makati]
+
+--- Mon 12:40, Paolo
+no idea. went once on a weekday
+
+--- Mon 12:44, Bea
+ok. was hoping you knew
+
+[13:00-18:00 Bea in meetings at the agency]
+
+--- Mon 18:20, Bea
+@claude is the Science Museum in London open on Sundays? and what time does it open
+
+=== F6 2026-11-23T07:25 to 2026-11-24T04:00, attempt 2 (format)
+--- Mon 07:25, Mette
+@claude Is the Science Museum in London open on Sundays, and when does it open?
+
+=== F1 2026-11-23T07:25 to 2026-11-24T04:00, attempt 2 (format)
+--- Mon 07:25, Bea
+is the science museum in london open on sundays? and what time does it open
+
+--- Mon 07:38, Paolo
+london? i thought march was the cebu one
+
+--- Mon 07:40, Bea
+its still london in march 🙂 i'm just checking the sunday plan before i book anything. @claude
+
+=== F1 2026-11-23T07:25 to 2026-11-24T04:00, attempt 3 (format)
+--- Mon 07:25, Bea
+is the science museum in london open on sundays? and when does it open
+
+--- Mon 07:26, Bea
+@claude is the Science Museum in London open on Sundays, and what time does it open?
+

@@ -1,0 +1,114 @@
+--- Mon 07:20, Hana
+What time is the last direct train from Edinburgh Waverley to London King's Cross on a Saturday?
+
+--- Mon 08:04, Tom
+no idea. lner i think. prob early evening? seems early for a saturday
+
+--- Mon 08:05, Tom
+check the timetable on the lner site not the journey planner, they show weird stuff
+
+--- Mon 17:12, Hana
+Checked. The site only shows Saturday trains up to about 17:30, but I can't tell if that's the full list or just what's bookable this week. The drive is about 5 hours too. Can you look at the cost side?
+
+--- Mon 19:44, Tom
+ok. checking the hire car drop fee now
+
+--- Mon 21:10, Tom
+one site says around £300 one way :( not sure thats right though. thats the killer
+
+--- Mon 21:14, Hana
+I don't want to guess the timetable. Can someone check it properly?
+
+--- Mon 21:15, Hana
+@claude what is the last direct LNER train from Edinburgh Waverley to London King's Cross on a Saturday, and roughly how long does it take? Does the timetable show every Saturday or only certain dates?
+
+--- Mon 21:16, Claude
+I couldn't confirm the last Saturday train, so please don't treat any time below as settled.
+
+- **Last train:** I found no official LNER source that gives the last Saturday departure from Edinburgh. The only figures I saw came from third-party sites, and those conflict. One suggests a 19:00 departure arriving at 23:55, and another suggests 20:20. Neither is clearly Saturday-specific. I'd trust neither of them over LNER itself. Your 17:30 cutoff looks too early, but I can't prove that either way.
+- **Journey time:** Direct trains take roughly 4h20 to 4h45. The 19:00 to 23:55 entry would be about 4h55, which suggests a slower evening service.
+- **Which dates the timetable covers:** It isn't a single all-year timetable. LNER publishes two guides: 17 May to 12 December 2026, and 13 December 2026 to 15 May 2027. Saturday times can differ between them. Engineering works and bank holidays can also change individual Saturdays.
+- **Why your site may stop at 17:30:** Booking usually opens only about 12 weeks ahead. Later trains may exist but not yet be bookable, or may be affected by engineering works.
+
+To settle it, open the LNER timetable PDF that covers your travel date and read the Edinburgh to King's Cross Saturday page. You can also check National Rail Enquiries for that exact date. If you can tell me the date, I can try again.
+
+Sources: LNER timetables page (lner.co.uk/travel-information/timetables), live-departures.info and busmaps.com. I couldn't open the LNER PDFs themselves.
+
+--- Mon 21:19, Tom
+ok. the 300 is one site only, I'll ring the hire place tomorrow and get a real quote for the one-way drop
+
+--- Mon 21:22, Hana
+Saturday the 28th, so the 17 May to 12 Dec guide should cover it. I'll check the PDF tomorrow on my break
+
+--- Mon 21:23, Tom
+ok
+
+--- Mon 22:31, Hana
+The PDF is in the LNER timetables page under "Edinburgh & Scotland". Want me to save it?
+(👍 1)
+
+--- Mon 22:33, Tom
+yeah save it. I'll print the Saturday page if it's readable
+
+--- Mon 22:34, Hana
+It's a big file, I'll check the page numbers
+
+--- Tue 10:52, Tom
+rang the hire place. one way drop in edinburgh is £285 plus the car. they'll email a written quote, I'll forward it
+
+--- Tue 13:05, Hana
+On break. Found the Saturday page, p.22 of the PDF. Last Edinburgh to KX on Saturdays looks like 18:30 in the table, not 19:00 or 20:20. Print is small and a bit blurry
+
+--- Tue 13:09, Tom
+which column
+
+--- Tue 13:11, Hana
+Saturday. There's a footnote under the table about engineering works, can't read it
+
+--- Tue 13:15, Tom
+ok so 18:30 then. thats about 4h30 on the train, car is 5 hrs plus the 285. train's looking better
+
+--- Tue 13:20, Hana
+Send me the screenshot. I'll check it against the planner tonight, not guessing
+
+--- Tue 18:08, Tom
+written quote came through. £285 one way, plus the daily hire on top, so the car is well over £400 total
+
+--- Tue 18:10, Tom
+sending the train fares next, checking now
+
+--- Tue 19:02, Tom
+cheapest advance I can see for the 18:30 is about £40 each but it only shows for some dates. flexible is way more. couldn't see the 28th clearly
+
+--- Tue 19:04, Hana
+Which dates does it show?
+
+--- Tue 19:06, Tom
+the 21st and 14th, not the 28th. so not sure yet
+
+--- Tue 22:41, Hana
+Screenshot checked against the planner. 18:30 is in it, but the planner also lists a 19:00 on the 28th. Two different sources, and I'm not booking until I can see the 28th on LNER itself
+
+--- Tue 22:43, Tom
+agreed. no booking till it shows on the 28th. I'll set a check on the site for when advance opens
+
+--- Wed 07:48, Tom
+28th shows now. 18:30 advance is £41 each, flexible £89
+
+--- Wed 07:51, Tom
+the 19:00 isn't on the LNER site for saturdays as far as I can see. only the planner
+
+--- Wed 08:30, Hana
+Did you screenshot the 28th?
+
+--- Wed 08:31, Tom
+yeah sending
+
+--- Wed 17:20, Hana
+Screenshot matches p.22 of the PDF. 18:30 is there. Still can't read the footnote
+
+--- Wed 17:22, Tom
+it just says "no change" on the site. I'll ask them tomorrow
+
+--- Wed 17:24, Hana
+LNER's page says "engineering works may affect services" but gives no dates. @claude are there any engineering works or known disruptions on the East Coast main line for Saturday 28 November 2026, Edinburgh to London?

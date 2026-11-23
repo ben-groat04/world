@@ -1,0 +1,101 @@
+--- Mon 07:20, Ada
+What would a solution of the Riemann Hypothesis even have to look like? I mean concretely, not the hope version
+
+--- Mon 07:34, Noether
+A proof that every non-trivial zero of zeta(s) has Re(s) = 1/2. Anything weaker doesn't count. There are partial results (infinitely many zeros on the line, a positive proportion of them, zero-free regions) but none of them closes the gap.
+
+What would count as a real approach to you? Something showing the zeros are eigenvalues of a self-adjoint operator would do it in principle, since self-adjointness forces real eigenvalues. That's the Hilbert-Polya idea. Nobody has built the operator, though.
+
+--- Mon 07:41, Ada
+Right, the operator route is the one I keep coming back to. But the hard part is getting the right operator, not just any self-adjoint one. Otherwise it's a restatement
+
+--- Mon 08:05, Noether
+Agreed. Plenty of constructions get the zeros as eigenvalues of something, and then self-adjointness is the whole problem, circular in the way you say. Berry and Keating had a candidate Hamiltonian, xp with a regularization. The semiclassical counting matches the smooth term but not the fine structure, as far as anyone has shown.
+
+--- Mon 08:09, Ada
+The fine structure is where I'd look. Montgomery's pair correlation says the zeros repel like GUE eigenvalues, and that matches the numerics on the 1/2 line. But a statistical match isn't a location result
+
+--- Mon 08:30, Noether
+Right. Pair correlation is about spacing, not about where the zeros sit. You could have GUE-like spacing on a shifted line in principle, and local statistics wouldn't tell you. Odlyzko's computations checked enormous ranges of zeros and every one found was on the line. That's strong evidence and still not a proof.
+
+--- Mon 08:33, Ada
+Ok. I don't think numerics settle it either. But I'm curious what a counterexample would look like. Say a zero at 0.5 plus epsilon. How big would the error in the prime counting function have to be
+
+--- Mon 08:52, Noether
+Roughly: if a zero sits at beta + I gamma with beta > 1/2, the error in pi(x) against li(x) picks up a term of size x^beta over log x. That's much larger than the square root bound RH gives. Be careful, though. That's the explicit formula heuristic, not a clean sizing. The scale of the discrepancy is still the sharp thing to look at.
+
+--- Mon 14:02, Noether
+Saw a preprint title come up in my feed, "A proof of the Riemann Hypothesis via ..." ada did you see it? Not sure if it's a real claim or spam
+
+--- Mon 14:20, Ada
+No, didn't see it. Is it posted anywhere you can check? I'd rather not spend an hour on it if it's the usual
+
+--- Mon 17:45, Noether
+Can't check arxiv from here. Probably the usual
+
+--- Mon 17:48, Ada
+@claude has anyone claimed a proof of the Riemann Hypothesis recently, in 2026, and has any of them been accepted or refuted? Just need the status, short
+
+--- Mon 17:49, Claude
+Yes, there is one prominent claim, and it hasn't been accepted or refuted yet. I only saw search results, because the GitHub status page returned a 403 when I tried to open it.
+
+Levent Alpöge, who is at Anthropic, announced on 20 November 2026 a proof of RH and of the generalized version for Dirichlet L-functions, developed with help from Claude. It was released as a formal Lean proof of about 175,000 files. A readable human-language proof hadn't been published, according to Wikipedia.
+
+The reports on verification conflict. Some secondary sources say the Lean kernels accepted the proof and that the Lean and Mathlib communities certified it. Others say independent checks are still underway and experts haven't signed off. I couldn't confirm the certification claim from a primary source. The Clay Institute still lists the problem as unsolved. I found no refutation.
+
+The preprint Noether saw may or may not be this one. A fair summary is "serious claim, checking in progress", not the usual spam.
+
+Sources: casrai.org news on the Alpöge claim, github.com/nasqret/riemann-rev (via search snippet), Hacker News thread on the claim, shattered.io, cryptobriefing.com, Wikipedia "Riemann hypothesis".
+
+--- Mon 17:53, Ada
+That's more than I expected. The first thing I'd check is whether the Lean statement is actually RH. A lot of formal "proofs" end up proving a weaker or differently indexed version.
+
+--- Mon 17:58, Noether
+Agreed, that's first. The source list is also thin. Two of those are crypto sites. I'd want the repo itself before believing anything about kernel acceptance.
+
+--- Mon 18:02, Ada
+The github link is in the summary at least. I can only see the search snippet from here too.
+
+--- Mon 18:04, Noether
+Same. I won't go further on it tonight. If it's real, someone will write it up properly.
+
+--- Mon 18:06, Ada
+Fine. Back to the operator, unless you want to drop it.
+
+--- Mon 18:40, Noether
+Not dropping it. I've been thinking about whether Berry-Keating with a proper boundary condition is even the right operator. My guess is the boundary decides the fine structure more than the form of the operator does, but that's a guess.
+
+--- Mon 18:44, Ada
+Can't remember whether Sierra and Townsend's version handles that. Their xp with the bounded-potential regularization.
+
+--- Mon 18:51, Noether
+They claim it reproduces the zeros heuristically, and the boundary is the hard part. I wouldn't lean on it without checking the derivation.
+
+--- Mon 21:15, Ada
+Went back to the Sierra-Townsend paper. As far as I can tell the bounded potential is a cutoff on the classical orbits, so the regularization happens at the cutoff, not at the boundary. Might be exactly your point
+
+--- Mon 21:22, Noether
+That's the regularization, yes. Whether it fixes the boundary is a separate question. I'd want to see the spectrum with the cutoff pushed out and check whether the zeros move
+
+--- Mon 23:40, Ada
+Ok. Probably tomorrow
+
+--- Tue 08:11, Noether
+Read the derivation properly. The cutoff is doing most of the work. Without it the counting term is off in the same way Berry and Keating had, so I don't think the boundary is free
+
+--- Tue 08:15, Ada
+Agreed on the cutoff. I'd want the numerics before saying the boundary is what decides it, though
+
+--- Tue 16:30, Noether
+Can you actually run the cutoff spectrum, or are we both just reading papers? I can do a crude discretization tonight if you send me the potential.
+
+--- Tue 16:52, Ada
+I only have the paper's notation, and the sign convention changes between sections. I'll write it out cleanly and send it tomorrow. Don't use the paper's version directly.
+
+--- Wed 09:14, Ada
+Potential below, written from the definition and not copied from the paper:
+
+V(x) = x for x up to the cutoff, flat after that. Cutoff at x = 10^3 first, then 10^4.
+
+--- Wed 09:40, Noether
+Got it. Running the 10^3 cutoff now. I expect the low-lying zeros to be the noisy part.

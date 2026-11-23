@@ -1,0 +1,28 @@
+F3: not in the format, retrying
+F1: not in the format, retrying
+F4: not in the format, retrying
+F1: not in the format, retrying
+F5: not in the format, retrying
+F1: not in the format, giving up
+F5: not in the format, retrying
+F2: @claude at Mon 17:50
+F5: day 1: 10 messages
+F2: day 1: 21 messages
+F4: @claude at Mon 12:20
+F5: not in the format, retrying
+F3: @claude at Mon 21:15
+F5: not in the format, retrying
+F3: day 1: 15 messages
+F2: day 2: 13 messages
+F4: day 1: 29 messages
+F5: not in the format, giving up
+F5: 10 messages, 2026-11-23T07:20 to 2026-11-23T19:55
+F3: day 2: 13 messages
+F2: day 3: 12 messages
+F2: 46 messages, 2026-11-23T07:20 to 2026-11-25T09:33
+F3: day 3: 7 messages
+F3: 35 messages, 2026-11-23T07:20 to 2026-11-25T17:24
+F4: day 2: 32 messages
+F4: day 3: 22 messages
+F4: 83 messages, 2026-11-23T07:20 to 2026-11-25T23:05
+list: /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T07-20-42-478Z/list.txt

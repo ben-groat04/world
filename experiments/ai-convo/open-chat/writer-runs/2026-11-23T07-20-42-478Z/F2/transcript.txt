@@ -1,0 +1,153 @@
+--- Mon 07:20, Leila
+Which restaurants near King's Cross station in London have a private room?
+
+--- Mon 12:14, Omar
+Private room for how many?
+
+--- Mon 12:40, Rana
+Ok first check the budget. Whats the cap per head, is it still 45 gbp or did it change after the q3 review
+
+--- Mon 12:58, Omar
+45 per head including drinks. Drinks come out of the same 45, not on top.
+
+--- Mon 13:05, Leila
+Around 14 of us. Venue needs to hold 14 in a room, and they need to do a set menu at about 35 so the drinks fit.
+
+--- Mon 13:07, Rana
+Thx. 14 x 45 = 630 so tight but ok if its a set menu
+
+--- Mon 13:20, Omar
+Thursday 10 Dec or Friday 11 Dec. I can do either. Pick one and I'll check with the others.
+
+--- Mon 13:31, Leila
+Thu 10 I think, more people are free. Will look at places now
+
+--- Mon 13:33, Omar
+ok
+
+--- Mon 15:02, Rana
+Lol King's Cross is so many places now. Pls dont pick one with the sad basement
+
+--- Mon 15:20, Leila
+I'll look. Nothing good in my first search, most sites just say "private dining" without giving the capacity.
+
+--- Mon 17:45, Omar
+Send me whatever shortlist you have before I go to the school pickup. I'll look on my phone after 7.
+
+--- Mon 17:50, Leila
+@claude which restaurants near King's Cross station in London have a private dining room that can seat about 14 people, and roughly what is a set menu per head there
+
+--- Mon 17:51, Claude
+I only read search summaries, not the venue pages, so treat all of this as unconfirmed. Most places don't publish per-head set menu prices, so each one needs an email.
+
+Rooms that seem to fit about 14:
+- BAO King's Cross: private room listed for up to 14, with a guide price of £35+ per person. It's the only one near your £35 target, and I don't know whether that includes drinks.
+- Drake & Morgan King's Cross: private dining room listed at 14 seated. I found no set menu price. It's a pub-style group venue, so it may be flexible on price.
+- Hawksmoor St Pancras (Sir Gilbert Scott's Room): one long table for 12-14. It's a steakhouse, so £35 is probably too low, but I found no price.
+- The Tasting Room at St Pancras by Searcys: seats up to 14, no price found.
+- The Midland Grand: a private room for up to 14, but the listing gave set menus at £75 and £125, so it's well over budget.
+
+Ruled out:
+- Decimo: seats 12, and set menus run £130-170 each.
+- Barrafina Coal Drops Yard: its room is for 8-22 seated, with minimum spends of £1,500-2,000. That's too big and too costly for your 14 at £630.
+- Granary Square Brasserie: listed at 20-38 seated, so too big.
+
+I couldn't tell which of these rooms are basements, which matters for Rana. I'd email BAO and Drake & Morgan first. Ask whether a Thursday 10 Dec room is free for 14, whether a £35 set menu is possible, and whether there's a minimum spend.
+
+Sources: SquareMeal, TagVenue, Hirespace, DesignMyNight and OpenTable listings, plus Barrafina's and Hawksmoor's own sites.
+
+--- Mon 18:04, Leila
+Thanks. I'll email BAO and Drake & Morgan tonight and ask about the basement question too
+
+--- Mon 18:09, Rana
+Pls ask them directly if the room is downstairs. Dont trust the photos
+
+--- Mon 18:11, Leila
+Yes, I'll ask
+
+--- Mon 19:44, Omar
+Fine with BAO and Drake. Hawksmoor is too expensive for the set menu. Send me the replies when they come
+
+--- Mon 19:46, Omar
+Also I need the cap confirmed in writing before we commit to anything. Rana can you check it against the q3 sheet
+
+--- Mon 20:31, Rana
+Will do tmrw. The q3 sheet has 45 but I want to see the approval email too
+
+--- Mon 20:33, Rana
+[and the rest of the chat is quiet until morning]
+
+--- Tue 07:08, Leila
+Bao auto-replied. Nothing from Drake & Morgan yet
+
+--- Tue 08:31, Rana
+Q3 sheet says 45 incl drinks. Found the approval email from Feb, Omar signed it, same wording. Still 45
+
+--- Tue 09:05, Omar
+Good. Confirmed in writing then
+
+--- Tue 09:12, Leila
+Bao replied. Room is upstairs, first floor, not a basement. Set menu from £38 pp, drinks extra. They want a deposit, min spend not stated
+
+--- Tue 09:20, Rana
+38 x 14 = 532. Leaves 98 for drinks across 14 people, thats 7 each. Thats not really drinks
+
+--- Tue 09:22, Omar
+So Bao only works if people drink water. Wait for Drake
+
+--- Tue 09:25, Rana
+Drake might be cheaper but ask if service is on top. Last time one of those added 12.5% on the bill
+
+--- Tue 09:31, Leila
+Will ask. Also asked Drake about the Thu room, no answer yet
+
+--- Tue 14:18, Leila
+Drake replied. Room is ground floor, through the bar. Set menu £32 pp, drinks not included, 12.5% service added on the bill
+
+--- Tue 14:21, Rana
+32 + 4 service = 36 before drinks. 9 each for drinks. No
+
+--- Tue 14:26, Omar
+Neither works with drinks at 45 all in. Leila ask Drake if they have a drinks package we can cap per head
+
+--- Tue 14:29, Leila
+Asking now
+
+--- Tue 22:50, Leila
+Drake hasn't answered the drinks question. Will chase in the morning
+
+--- Tue 23:14, Rana
+Pls also ask if they'd do service included in the price instead of on top. Easier to compare
+
+--- Wed 07:12, Leila
+Will do. Chasing Drake now
+
+--- Wed 07:19, Omar
+Don't send Bao a deposit yet
+
+--- Wed 07:21, Leila
+Not sending anything till we have Drake
+
+--- Wed 09:02, Leila
+Drake replied. Drinks package is £18 pp for 2 hours: house wine, beer, prosecco, soft drinks. Service stays on top at 12.5%, they won't include it
+
+--- Wed 09:08, Rana
+So 32 + 18 = 50, + 12.5% = 56.25 pp. That's 11 over the cap
+
+--- Wed 09:15, Omar
+Then Drake is out. Bao is out unless we drop drinks
+
+--- Wed 09:17, Rana
+If we drop to 12 people: 12 x 38 = 456, leaves 84 for drinks = 7 each. Same problem
+
+--- Wed 09:22, Omar
+Not deciding this in the chat. I'll put it to the team tonight whether they'd cover the gap or we stay at 45 and do food only
+
+--- Wed 09:23, Leila
+Food only means people pay their own drinks at the bar?
+
+--- Wed 09:31, Omar
+Yes. Or we keep looking. Leila, check whether anything else near King's Cross does a set menu at 28-30 with a private room. Don't email anyone new until I've replied tonight
+
+--- Wed 09:33, Leila
+Ok

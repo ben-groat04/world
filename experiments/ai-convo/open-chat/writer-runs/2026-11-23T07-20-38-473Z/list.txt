@@ -1,0 +1,4 @@
+K1 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T07-20-38-473Z/K1
+K2 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T07-20-38-473Z/K2
+R1 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T07-20-38-473Z/R1
+R2 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T07-20-38-473Z/R2

@@ -1,0 +1,25 @@
+RUN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/run.json
+live: day 1: 13 messages
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0000.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0001.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0002.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0003.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0004.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0005.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0006.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0007.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0008.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0009.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0010.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0011.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0012.json
+live: day 2: 1 messages
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0013.json
+live: not in the format, retrying
+live: day 3: 3 messages
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0014.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0015.json
+TURN /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/turn-0016.json
+DONE /tmp/claude-0/-home-user-world/3ac9dcaf-4272-5062-96e0-e82bec555307/scratchpad/live/run.json
+live: 17 messages, 2026-11-23T07:20 to 2026-11-23T22:09
+list: /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T07-20-42-483Z/list.txt

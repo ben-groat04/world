@@ -1,0 +1,56 @@
+--- Mon 07:20, Jonas
+Up early, couldn't sleep. Keep thinking about the zeros again. You ever wonder what a proof would even look like
+
+--- Mon 07:48, Mira
+you're up at 7 on a monday?
+
+what would it look like, you tell me. i'm guessing not a 200 page thing from some guy in a basement
+
+--- Mon 07:55, Jonas
+Ha. Probably not
+
+but if you could bound the error term in the explicit formula sharply enough, the zeros would have to sit where they're supposed to
+
+--- Mon 08:12, Mira
+i don't know what that means yet 🙃 say it like i'm on the tram
+
+--- Mon 08:20, Jonas
+Ok. The zeros control how primes are distributed. If you know exactly where the zeros are, you know the primes pretty well. RH says they all lie on the line Re(s) = 1/2. Proving it means showing the error in the prime count is as small as it could possibly be
+
+--- Mon 08:26, Mira
+so the whole thing is about how tight a bound can get
+
+--- Mon 08:27, Mira
+ok that's actually clearer than i expected
+
+--- Mon 08:41, Jonas
+Yeah. The hard part is nobody has a method that gets that tight. Lots of partial results, zeros on the line up to a huge height, but not all
+
+--- Mon 09:03, Mira
+[08:30-17:00 Mira at the office, Jonas in the seminar room]
+
+--- Mon 18:15, Mira
+home. did you get anywhere with the thing you were thinking about or was it just a restless morning
+
+--- Mon 18:52, Jonas
+Mostly restless. Got stuck on whether a certain sum converges the way I need it to. Spent the afternoon in the library and then gave up
+
+--- Mon 19:10, Mira
+sounds like a good way to lose an afternoon 😅
+
+--- Mon 21:37, Jonas
+Btw, did anyone post a claimed proof lately? I think there was a title going around but I don't remember the details
+
+@claude is there any recent claimed proof of the Riemann Hypothesis that got attention, on arXiv or elsewhere, and did any of it hold up?
+
+--- Mon 21:52, Mira
+i'd rather wait for the thing that can search than guess 🙃
+
+--- Mon 21:58, Jonas
+Fair. I'll wait
+
+--- Mon 22:04, Mira
+how's the sum thing. still stuck?
+
+--- Mon 22:09, Jonas
+Yeah. Will look at it again tomorrow

@@ -1,0 +1,55 @@
+# Handoff: open-chat
+
+Start here when picking this up in a new session. Then read `ITERATIONS.md` (every round, what failed, process lessons) and `README.md` (how to run things).
+
+## Goal
+Simulated text chats, group or 1:1, that blind judges can't tell from real people texting. The target is 8/10, for any situation a user types in, and users often give only a minimal one. Haiku writes the characters, because it's cheap. Don't overfit to the test scenarios.
+
+## User's rules and preferences
+- `/home/user/world/CLAUDE.md`: real-world facts (stats, prices, rates) must never be guessed; source them or leave them out. Design choices and example text are fine. Fix root causes, not symptoms.
+- The orchestrating session doesn't steer. Diagnosis is an Opus cold read, coding is done by Sonnet agents, and blind judges are Sonnet with a neutral prompt.
+  - Don't give judges or the cold read priorities or specific questions. Pass the user's observations on neutrally, labelled as theirs.
+- Workflow: runs → Opus cold read → Sonnet coder → cheap checks → runs. Don't launch runs or change code between those steps on a hunch.
+- Keep agent-facing prompts lean. Don't pile rules onto them, or follow-up notes onto a running coder.
+- Run things in the background, keep replies responsive, and give short progress updates.
+- No real-chat anchors for now: compare versions against each other.
+- Opus only for hard thinking (cold reads). Coders are Sonnet; characters are Haiku.
+- Commit and push to branch `ccr-982e4403-t5vbsu` often (a stop hook asks for this).
+
+## Where things stand (2026-11-23)
+- **Multi-agent simulation** (`run.mjs`, rounds 1-19): stateless Haiku characters see a phone screen, with a generated cast, life updates and a Haiku polish pass.
+  - Judged scores plateaued at about 5-6/10 over rounds 15-18.
+  - The round 19 changes (personality line, the Day schedules the next look, etc.) are built and cheap-checked, but haven't been through a batch.
+- **One-call baseline** (`baseline.mjs`): one Haiku call writes the whole chat from the same cast. It scored the same as multi-agent (5.6 vs 5.4) on round 18's casts.
+  - So the main effort moved to a **single writer**.
+- **W1 (in progress when this was written):** `writer.mjs` is being built from `notes/diagnoses/w1-diagnosis.md`. It has no example texts, the people block is background, texting rules, floating volume, secrets, and one call per story day.
+  - Its outputs go to `writer-runs/` and a blind judging set to `eval/w1/`.
+  - If `writer.mjs` is missing or half-finished, check `git log` and the W1 entry in ITERATIONS.md, and finish or redo it from that plan.
+
+## Next steps
+1. Judge the `eval/w1/` set blind (W1 writer vs the one-call baseline). Use 6-9 Sonnet judges with the neutral prompt from README "Judging", including the excerpt/reactions note.
+2. Opus cold read of the W1 results, then a Sonnet coder, as in the workflow above.
+3. Later W items from the plan: @claude as a cut-and-resume line, effort/model arms, then wiring the writer into the live app (generate day N+1 while day N plays, release messages on the story clock, write to `live_turns`).
+4. Use paired comparisons on shared casts, with 3 seeds per scenario and fresh briefs each round. Six windows can only show differences of about 1.8 points or more.
+
+## Files
+- `notes/diagnoses/`: every Opus cold read, which are the plans each round implemented.
+- `notes/judging/`: judge reports, scores, keys and run lists per batch:
+  - p4 = round 12
+  - p7 = round 15
+  - p8 = round 16
+  - p9 = round 17
+  - p10 = round 18
+  - baseline-vs-r18 = one-call vs multi-agent
+- `notes/scenarios/sc.sh`: the six tuning scenarios (T1-T6). Run it from the project folder: `bash notes/scenarios/sc.sh T3 [ENV=...]`.
+  - The unseen briefs used each round were U1 "You're housemates." (4 people), U2 "Old school friends who live in different cities now." (2 people) and U3 "Cousins." (5 people), each with DAYS=3.
+  - The held-out set, never used for tuning: friends arguing about a film, restaurant kitchen staff, siblings clearing a grandparent's flat, a couple planning a first trip, an 8-person open chat, a friend who owes money. Shuffle names and who opens.
+- `runs/`: multi-agent runs. Each has `transcript.txt` and `log.jsonl`; the user turn each agent saw is in the log.
+- `baselines/`: one-call chats. `writer-runs/`: single-writer chats.
+
+## Moving to a new account
+- **The viewer artifact won't carry over.** The live viewer (`viewer/index.html`, published at https://claude.ai/artifact/SFk1AueBg7k9g7SSqu7uqb) belongs to the old account, and so does its database (`live_runs`, `live_turns`) and comment-driven Start button.
+  - In the new account, publish `viewer/index.html` as a new artifact with capabilities `{comments: {}, db: {}}`, and follow README "Viewer" to wire up Start and live writes.
+  - The Start form sends `START RUN` with situation, topic, people, secrets, model and oracle.
+- **The `claude` CLI must be logged in** in the new environment: run.mjs, baseline.mjs and writer.mjs call `claude -p` with Haiku, and Sonnet for @claude.
+- **The scratchpad (`/tmp/...`) won't exist.** Everything needed is in this folder.

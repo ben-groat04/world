@@ -1,3 +1,114 @@
 --- Mon 19:00, Priya
 Can you send the supplier invoice spreadsheet over tonight or first thing tomorrow? I need to get through it before Friday's close
 
+--- Mon 19:06, Dan
+Yep, sending tonight. Still got a couple of late statements to add so might be after 9.
+
+--- Mon 19:41, Priya reacted 👍 to Dan's 19:06 message
+
+--- Tue 05:51, Ahmed
+Did the invoice sheet come through last night? I need it before the partners' meeting Thursday.
+
+--- Tue 07:00, Dan
+Sent Mon night, around 9:20. Priya should have it.
+
+--- Tue 07:09, Priya
+Checking my inbox now, will say in a bit.
+
+--- Tue 07:19, Dan
+Should be there. Shout if its not and I'll resend.
+
+--- Tue 07:20, Priya
+Got it, it's here.
+
+--- Tue 07:21, Dan reacted 👍 to Priya's 07:20 message
+
+--- Thu 14:46, Ahmed
+Recs to me by 12 tomorrow, please. I need to sign off Friday.
+
+--- Thu 14:46, Dan
+Will have them to you by 12.
+
+--- Thu 14:48, Priya
+Mine are reconciled up to the last supplier line, so I'm fine for Friday. Dan, do you need anything from me to get yours to Ahmed by 12?
+
+--- Thu 14:49, Dan
+Think Im fine, just two statements left to tick off. Might ask you for the posting export if the totals dont match.
+
+--- Thu 14:52, Chloe
+yeah, ping me if you need the posting export
+
+--- Thu 14:52, Chloe
+the reporting screen shows the right totals now
+
+--- Thu 14:53, Dan reacted 👍 to Chloe's 14:52 message
+
+--- Thu 16:32, Priya reacted 👍 to Chloe's 14:52 message
+
+--- Thu 17:03, Ahmed reacted 👍 to Chloe's 14:52 message
+
+--- Fri 06:04, Ahmed
+Have the recs come in yet? I need them before I approve today.
+
+--- Fri 06:45, Priya
+I've done mine, sending them over now. Not sure about Dan's, he said he'd have them by 12 yesterday.
+
+--- Fri 06:53, Ahmed
+Dan, where are the recs? I need them ahead of approving today.
+
+--- Fri 07:07, Dan
+Sorry, didnt get them over last night. One set is still open because a supplier statement came in late. Aiming to have them to you by 9.
+
+--- Fri 07:08, Ahmed
+Have them to me by 9 at the latest. If the late statement isn't in by then, send what you have and flag the open line.
+
+--- Fri 07:20, Priya reacted 👍 to Ahmed's 07:08 message
+
+--- Fri 07:51, Dan reacted 👍 to Ahmed's 07:08 message
+
+--- Fri 07:59, Chloe
+if the totals are off just shout and ill send the export straight over
+
+--- Fri 11:19, Dan
+Ahmed, missed the 9. Sending what I've got now with the open line flagged.
+
+--- Fri 11:19, Dan
+@Chloe yes please, the export would help with the open one
+
+--- Fri 11:20, Chloe
+sending it now
+
+--- Fri 11:20, Chloe
+[file: posting_export_nov.csv]
+
+--- Fri 11:20, Dan reacted 🙏 to Chloe's 11:20 message
+
+--- Fri 11:22, Ahmed
+Dan, leave the open line flagged and I'll approve the rest this afternoon.
+
+--- Fri 11:34, Dan reacted 👍 to Ahmed's 11:22 message
+
+--- Fri 12:56, Dan
+Printer invoices all matched now, the corrected copy from the supplier came in at 12:30. Only the late statement line is still open. Sending the full recs now with that flagged.
+
+--- Fri 12:58, Ahmed reacted 👍 to Dan's 12:56 message
+
+--- Fri 13:14, Chloe reacted 👍 to Dan's 12:56 message
+
+--- Fri 17:16, Priya reacted 👍 to Dan's 12:56 message
+
+--- Fri 17:48, Dan
+Late statement's corrected figure landed around 3 and that line matches now. Recs fully closed as of half four, nothing open.
+
+--- Fri 17:49, Ahmed
+I saw it. I'll sign off the last line now.
+
+--- Fri 17:53, Dan reacted 👍 to Ahmed's 17:49 message
+
+--- Fri 17:56, Chloe reacted 🙌 to Ahmed's 17:49 message
+
+--- Fri 18:04, Priya reacted 🙌 to Ahmed's 17:49 message
+
+--- end date reached
+Sun 01:00
+

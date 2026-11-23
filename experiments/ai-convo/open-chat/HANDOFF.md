@@ -16,6 +16,7 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 - Run things in the background, keep replies responsive, and give short progress updates.
 - No real-chat anchors for now: compare versions against each other.
 - Opus only for hard thinking (cold reads). Coders are Sonnet; characters are Haiku.
+- No silent days: the app is there to show conversations, so every story day has messages (user, 2026-11-23; W5's silent-day allowance is to come out).
 - Background coders run with `isolation: "worktree"` and push to the branch from there, so their unfinished edits never sit in the main checkout (the stop hook flags those).
 - Commit and push to branch `ccr-982e4403-t5vbsu` often (a stop hook asks for this).
 

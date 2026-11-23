@@ -23,11 +23,11 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 - **One-call baseline** (`baseline.mjs`): one Haiku call writes the whole chat from the same cast. It scored the same as multi-agent (5.6 vs 5.4) on round 18's casts.
   - So the main effort moved to a **single writer**.
 - **W1 built and checked** (`writer.mjs`, plan in `notes/diagnoses/w1-diagnosis.md`): no example texts (pasted lines 25% → 1%), people block as background, texting rules, floating volume, secrets (no leaks in 9 casts, but owners never raise them either), one call per story day. Names 23% → 12% and sign-offs 11% → 6% (both missed targets of 10% and 4%); about 28% fewer messages; lowercase habit markers rose. Chats in `writer-runs/`, checks in `w1-checks/`.
-- **W1 blind judging**: set built at `eval/w1/` (W1 vs one-call baseline, judges j1-j11). Judging was launched from the old session; if `eval/w1/scores.tsv` is missing, judge it (step 1 below).
+- **W1 blind judging done**: W1 6.1 vs one-call 5.4 on the same casts (best so far). Reports and scores in `eval/w1/judges.md` and `eval/w1/scores.tsv`.
 
 ## Next steps
-1. Judge the `eval/w1/` set blind (W1 writer vs the one-call baseline). Use 6-9 Sonnet judges with the neutral prompt from README "Judging", including the excerpt/reactions note.
-2. Opus cold read of the W1 results, then a Sonnet coder, as in the workflow above.
+1. (Done: W1 judged 6.1.)
+2. Opus cold read of the W1 results (in progress at handoff; output goes to `notes/diagnoses/w2-diagnosis.md` — if missing, redo it), then a Sonnet coder, as in the workflow above.
 3. Later W items from the plan: @claude as a cut-and-resume line, effort/model arms, then wiring the writer into the live app (generate day N+1 while day N plays, release messages on the story clock, write to `live_turns`).
 4. Use paired comparisons on shared casts, with 3 seeds per scenario and fresh briefs each round. Six windows can only show differences of about 1.8 points or more.
 

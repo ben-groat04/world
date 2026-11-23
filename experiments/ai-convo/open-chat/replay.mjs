@@ -10,8 +10,8 @@
 //       message, as the current screen shows them. Prints per turn how often the agent posted (raw reply is not PASS/REACT), reacted, and still posts
 //       after polish (not DROP), and the overall rates, the REACT rate and the emoji used. A notification turn where someone put a question to the
 //       agent is flagged "asked".
-//       Limits: stateful runs resumed a saved session at each check-in; a replay is a fresh call with the logged screen only (the last 6
-//       messages and the new ones), so it tests the prompts, not the memory. The setting and life lines in the logged brief are the old ones.
+//       Limits: a replay is a fresh call with the logged screen only (runs before round 17 may have shown only the last 6 messages and the new ones);
+//       the setting and life lines in the logged brief are the old ones.
 //   node replay.mjs refresh <run> [<run> ...] [--rows 12,40] [--n 5]
 //       Re-issues the logged daily-refresh calls (rows with `private_lines` and `small`) with the CURRENT refresh prompt (prompts.mjs dayAsk):
 //       the person's fixed life, their previous Day as background, the chat since their previous refresh, as it was. (The first refresh's start
@@ -26,10 +26,7 @@
 //       with the CURRENT polish prompt. Counts tokens in the result that are not in the raw (words, emoji, slang), against the same count for the
 //       polish that ran then; and per person (4+ posts) the share of posts carrying their most frequent habit marker (ending "...", "um"/"hmm",
 //       a final emoji, a final "x", "!!", leading lowercase, an abbreviation) and the share naming someone (a participant's name or @), then and now.
-//   node replay.mjs session <run> <person> <fromISO> [--n 5]
-//       F3: copies <person>'s last saved CLI session of <run> (its config_dir must still exist), removes every PASS look from the copy
-//       (the look's user turn and the PASS reply) and replays that person's later logged check-ins on the original and on the copy.
-import fs from 'fs'; import crypto from 'crypto'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
+import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
 import { ENV_NOTE, dayAsk, noteFor, topicCue, POLISH_SYS, polishAsk, isPass, lastLine, REACT_RE, added } from './prompts.mjs';
 const args = process.argv.slice(2), mode = args.shift(), opt = (k, d) => { const i = args.indexOf('--' + k); if (i < 0) return d; const v = args[i + 1]; args.splice(i, 2); return v; };
 const N = +opt('n', 5), KIND = opt('kind', 'all'), LOGGED = opt('logged', 'quiet'), ROWS = opt('rows', '')?.split(',').filter(Boolean).map(Number), SHOW = +opt('show', 5), CONC = +opt('conc', 8);
@@ -47,7 +44,7 @@ const read = r => fs.readFileSync(path.join(r, 'log.jsonl'), 'utf8').split('\n')
 const sysOf = row => row.argv[row.argv.indexOf('--system-prompt') + 1], withSys = (argv, sys) => argv.map((a, i) => argv[i - 1] === '--system-prompt' ? sys : a);
 // The person's way of texting and example texts: from the run's cast row, or (an older run, which had style cards) from the logged brief.
 function styleOf(rows, row) {
-  const c = rows.find(r => r.cast)?.cast[row.who]; if (c) return { how: c.texts, ex: c.ex };
+  const c = rows.find(r => r.cast)?.cast[row.who]; if (c) return { how: c.style ?? c.texts, ex: c.ex };
   const b = sysOf(row), i = b.indexOf(' How you text: '), j = b.indexOf(" Some texts you've sent before"), k = b.indexOf(':', j), e = b.indexOf(' You put an emoji on a message', k);
   return { how: b.slice(i + 15, j).trim(), ex: b.slice(k + 1, e < 0 ? undefined : e).split(' / ').map(x => x.trim()).filter(Boolean) };
 }
@@ -58,12 +55,13 @@ function newSystem(row) {
   let b = sysOf(row);
   b = b.replace(/ What you want right now: .*?(?= Something (?:that's been|on your)| Only you know| How you text:)/s, '').replace(new RegExp(` ${TOPIC_RE.source}.*?(?= Only you know| How you text:)`, 's'), '');
   const j = b.indexOf(" Some texts you've sent before"); if (j >= 0) b = b.slice(0, j);
+  const h = b.indexOf(' How you text: '); if (h >= 0) b = b.slice(0, h) + b.slice(h).replace(/^( How you text: .*?[.!?])\s.*$/s, '$1'); // today's "texts" is the frequency sentence only: an older run's longer description is cut to its first sentence (the cast call asked for the frequency first)
   return `${noteFor(true)} ${b}`;
 }
 // The opener's cue: the topic when the run had one, else the logged one, else the cast call's "opens with" line, else (older runs) asked of the model from the person's logged "want", in a few words starting with a verb.
 const topicOf = brief => brief.match(new RegExp(`${TOPIC_RE.source}(.*?) (?:Only you know|How you text:)`))?.[1], wantOf = brief => brief.match(/What you want right now: (.*?)(?: Something (?:that's been|on your)| Only you know| How you text:)/)?.[1];
 const GEN_SYS = `${noteFor(false).split(' The relay')[0]} You write short background details about characters for a story.`;
-async function cueFor(rows, row) { const brief = sysOf(row), t = topicOf(brief); if (t) return topicCue(t); const logged = row.user.match(CUE)?.[1]; if (logged && logged !== 'send something' && !/^bring up what's on your mind/.test(logged)) return logged; const o = rows.find(r => r.opener)?.opener; if (o) return o.replace(/\.$/, ''); const w = wantOf(brief); if (!w) return 'send the group something';
+async function cueFor(rows, row) { const brief = sysOf(row), t = topicOf(brief); if (t) return topicCue(t); const logged = row.user.match(CUE)?.[1]; if (logged?.startsWith('send something about this:')) return logged; const o = rows.find(r => r.opener)?.opener; if (o) return topicCue(o); const w = wantOf(brief); if (!w) return 'send the group something';
   return (await claude(['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', GEN_SYS, '--tools', '', '--setting-sources', '', '--system-prompt-snapshot', 'off', '--effort', 'low', '--model', 'haiku', '--no-session-persistence'], `${w}\n\nSay in a few words, starting with a verb, what this person picks up the phone to send the group tonight. Reply with only those words.`)).replace(/\.$/, ''); }
 const CUE = /\n\n\(You've opened the chat to ([\s\S]*)\.\)\s*$/;
 // Old screens show a reaction as a line "(Tom reacted E to Maya's 19:42 message)" (or "to your ..."); today's show a count under the message.
@@ -151,7 +149,7 @@ if (mode === 'turns') {
   const stat = { raw: 0, then: { words: 0, emoji: 0, slang: 0, total: 0 }, now: { words: 0, emoji: 0, slang: 0, total: 0 }, drops: [0, 0] }, pairs = [];
   const jobs = [];
   for (const run of args) { const rows = read(run); rows.forEach(row => { if (!row.raw || row.draft != null) return; // rows whose posted text is the polish of raw (a re-check's draft is skipped)
-    const at = row.checkin, convo = rows.filter(r => r.posted && r.at <= at && r.who).slice(-12), last = convo.map(m => `\u2014 ${m.who}${m.who === row.who ? ' (you)' : ''}, ${stampIso(m.at)}\n${m.text}`).join('\n\n') || '(nothing yet)'; jobs.push({ run: path.basename(run), rows, row, last, names: [...new Set(rows.filter(r => r.who && r.posted !== undefined).map(r => r.who))] }); }); }
+    const at = row.checkin, convo = rows.filter(r => r.posted && r.at <= at && r.who && !(r.who === row.who && r.checkin === row.checkin)).slice(-12) /* not the reply being re-polished: a short one posts in its check-in's minute and showed up as already in the chat, inflating DROPs */, last = convo.map(m => `\u2014 ${m.who}${m.who === row.who ? ' (you)' : ''}, ${stampIso(m.at)}\n${m.text}`).join('\n\n') || '(nothing yet)'; jobs.push({ run: path.basename(run), rows, row, last, names: [...new Set(rows.filter(r => r.who && r.posted !== undefined).map(r => r.who))] }); }); }
   console.log(`${jobs.length} logged drafts`);
   const res = await pool(jobs, j => polishOf(j.rows, j.row, j.row.raw, j.last));
   jobs.forEach((j, k) => { const now = res[k]; if (now?.error || now == null) return; stat.raw++; const dn = /^drop[\s.!?]*$/i.test(now); stat.drops[0] += j.row.pass ? 1 : 0; stat.drops[1] += dn ? 1 : 0;
@@ -174,33 +172,4 @@ if (mode === 'turns') {
   const pick = [...pairs.filter(p => p.a && /\?/.test(p.raw)).slice(0, 2), ...pairs.filter(p => p.a && !/\?/.test(p.raw) && p.raw.split(/\s+/).length > 12).slice(0, SHOW)].slice(0, SHOW);
   for (const p of pick) console.log(`\n[${p.who}] raw: ${p.raw.slice(0, 300)}\n  then: ${p.then.slice(0, 200)}\n  now:  ${p.now.slice(0, 200)}`);
   fs.writeFileSync(path.join(cfg, 'polish.json'), JSON.stringify(pairs, null, 1)); console.log('\ndetails:', path.join(cfg, 'polish.json'));
-} else if (mode === 'session') { // F3: late looks of one person, replayed on their real session and on a copy without the PASS looks (and a screen from the first message the copy has not seen)
-  const [run, who] = args, rows = read(run), mine = rows.filter(r => r.who === who && r.user && r.argv), cdir = rows.find(r => r.config_dir).config_dir, root = path.join(cdir, 'projects');
-  const files = fs.readdirSync(root).flatMap(d => fs.readdirSync(path.join(root, d)).map(f => path.join(root, d, f)).filter(f => f.endsWith('.jsonl')));
-  const parse = f => fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)), txt = r => [].concat(r.message.content).map(c => typeof c === 'string' ? c : c.text ?? '').join('');
-  const lastU = mine.at(-1).user.slice(0, 60), file = files.map(f => [f, parse(f)]).filter(([, p]) => p.some(r => r.type === 'user' && txt(r).startsWith(lastU))).sort((a, b) => b[1].length - a[1].length)[0];
-  if (!file) throw new Error('no session file for ' + who); const [src, ses] = file, cwd0 = ses.find(r => r.cwd).cwd, projDir = path.basename(path.dirname(src));
-  const uIdx = ses.map((r, k) => r.type === 'user' ? k : -1).filter(k => k >= 0), aOf = k => ses.findIndex((r, j) => j > k && r.type === 'assistant');
-  const isP = k => isPass(txt(ses[aOf(k)]));
-  const msgs = rows.filter(r => r.posted && r.who).map(r => ({ who: r.who, text: r.text, at: r.at })), K = +opt('last', 6), probes = uIdx.slice(-K);
-  const sysFor = newSystem(mine.at(-1));
-  const header = u => u.slice(0, u.indexOf('\n\n') < 0 ? u.length : u.indexOf('\n\n')), evs = u => u.includes('[The chat on your screen:]') ? u.slice(u.indexOf('\n\n'), u.indexOf('[The chat on your screen:]') + '[The chat on your screen:]'.length) : '';
-  const jobsS = [];
-  for (const k of probes) { const logged = mine.find(m => txt(ses[k]).startsWith(m.user.slice(0, 60)) && m.checkin); if (!logged) continue;
-    const cut = ses.slice(0, k), drop = new Set(); cut.forEach((r, j) => { if (r.type === 'user' && j >= 5) { const a = aOf(j); if (a < k && isPass(txt(ses[a]))) for (let x = j; x <= a; x++) drop.add(x); } });
-    const kept = cut.filter((_, j) => !drop.has(j)).map((r, j, arr) => r); // relink parents across removed pairs
-    const byU = new Map(cut.map(r => [r.uuid, r])), alive = new Set(kept.map(r => r.uuid)), up = id => { let p = id; while (p && !alive.has(p)) p = byU.get(p)?.parentUuid; return p ?? null; };
-    kept.forEach(r => { if (r.parentUuid && !alive.has(r.parentUuid)) r.parentUuid = up(r.parentUuid); });
-    const own = msgs.filter(m => m.who === who && m.at <= logged.checkin).at(-1), keptIdx = own ? msgs.findIndex(m => m === own) + 1 : 0, upto = msgs.filter(m => m.at <= logged.checkin), mark = m => `— ${m.who}${m.who === who ? ' (you)' : ''}, ${stampIso(m.at)}\n${m.text}`;
-    const scr = [...upto.slice(Math.max(0, keptIdx - 6), keptIdx).map(mark), ...(keptIdx ? ['(new)'] : []), ...upto.slice(keptIdx).map(mark)].join('\n\n'), probeB = header(logged.user) + evs(logged.user) + `\n\n${scr}`;
-    jobsS.push({ k, logged, A: cut, B: kept, probeA: logged.user, probeB, dropped: drop.size / 2 }); }
-  const wr = (rowsX, tag) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-replay-')), sid = crypto.randomUUID(), pd = path.join(d, 'projects', projDir); fs.mkdirSync(pd, { recursive: true }); fs.writeFileSync(path.join(pd, sid + '.jsonl'), rowsX.map(r => JSON.stringify({ ...r, sessionId: sid })).join('\n') + '\n'); return { d, sid }; };
-  fs.mkdirSync(cwd0, { recursive: true });
-  const calls = jobsS.flatMap(j => ['A', 'B'].flatMap(c => Array.from({ length: N }, () => ({ j, c }))));
-  const prepared = new Map(); jobsS.forEach(j => ['A', 'B'].forEach(c => prepared.set(j.k + c, wr(j[c], c))));
-  const out = await pool(calls, async ({ j, c }) => { const { d, sid } = prepared.get(j.k + c); return outcome(await claude(withSys(j.logged.argv, sysFor).concat(['--resume', sid, '--fork-session']), newUser(c === 'A' ? j.probeA : j.probeB, 'notif', '', who), { ...env, CLAUDE_CONFIG_DIR: d }, cwd0)); });
-  const tally = {}; calls.forEach(({ j, c }, n) => { const t = (tally[j.k] ??= { A: [0, 0], B: [0, 0], j }); if (out[n].error) return; t[c][1]++; if (out[n] === 'post') t[c][0]++; });
-  let ta = [0, 0], tb = [0, 0];
-  for (const t of Object.values(tally)) { console.log(`look ${t.j.logged.checkin} (logged: ${t.j.logged.posted ? 'post' : 'pass'}), PASS pairs removed in B: ${t.j.dropped}: with PASS history ${t.A[0]}/${t.A[1]}, without ${t.B[0]}/${t.B[1]}`); ta = [ta[0] + t.A[0], ta[1] + t.A[1]]; tb = [tb[0] + t.B[0], tb[1] + t.B[1]]; }
-  console.log(`TOTAL ${who}: with PASS history ${pct(...ta)}, PASS looks removed ${pct(...tb)}`);
 }

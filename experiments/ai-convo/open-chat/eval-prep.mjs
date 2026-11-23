@@ -84,6 +84,6 @@ if (process.argv[2] === '--tally') {
     const pick = shuffle([...load.keys()]).filter(j => !taken.has(j)).sort((a, b) => load[a] - load[b]).slice(0, COPIES);
     for (const j of pick) { taken.add(j); load[j]++; const d = path.join(out, 'judges', 'j' + (j + 1)); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, f.id + '.txt'), f.text); }
   }
-  fs.writeFileSync(path.join(out, 'judge-note.txt'), 'Each file is an excerpt from a longer chat: it may start or end in the middle of a conversation. A line like "(\u{1F44D} 2)" under a message shows the reactions that message got.\n'); // give this to every judge with the usual neutral "score 0-10, explain" ask
+  fs.writeFileSync(path.join(out, 'judge-note.txt'), 'Each file is an excerpt from a longer chat: it may start or end in the middle of a conversation. A line like "(\u{1F44D} 2)" under a message shows the reactions that message got. A line like [photo: ...] stands for a photo, link or file sent in the chat.\n'); // give this to every judge with the usual neutral "score 0-10, explain" ask
   console.log(`${files.length} files, ${N} judges, loads ${load.join(',')}`);
 }

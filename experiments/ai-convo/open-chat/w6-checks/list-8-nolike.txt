@@ -1,0 +1,8 @@
+W5-N11 w6-checks/nolike/W5-N11
+W5-N21 w6-checks/nolike/W5-N21
+W5-N31 w6-checks/nolike/W5-N31
+W5-N41 w6-checks/nolike/W5-N41
+W5-N51 w6-checks/nolike/W5-N51
+W5-N61 w6-checks/nolike/W5-N61
+W5-N71 w6-checks/nolike/W5-N71
+W5-N81 w6-checks/nolike/W5-N81

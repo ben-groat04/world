@@ -8,7 +8,7 @@ for(const lf of process.argv.slice(2)) for(const l of fs.readFileSync(lf,'utf8')
  let cw=[],lw=[];for(const m of ms){const w=m.text.split(/\s+/).length;(/^\p{Lu}/u.test(m.text)?cw:lw).push(w);if(/^\p{Lu}/u.test(m.text))T.capmsg++;if(/\[[^\]]*\]/.test(m.text))T.bracket++;if(/\b(group chat|this chat|in a chat|typing|doing the thing)\b/i.test(m.text))T.aware++;}
  if(cw.length&&lw.length)gaps.push(cw.reduce((a,b)=>a+b,0)/cw.length-lw.reduce((a,b)=>a+b,0)/lw.length);
  T.notes+=r.filter(x=>x.note).length; T.asks+=r.filter(x=>x.oracle).length;
- for(const x of r.filter(x=>x.oracle)){ if(/[*#|]|\n-/.test(x.text))T.md++; }
+ for(const x of r.filter(x=>x.oracle)){ if(/\]\(|[*#|]|\n-|^Sources?:/im.test(x.text))T.md++; }
  // days: group by date of 04:00 shift
  const byDay={};for(const m of ms){const t=new Date(m.at+':00Z');t.setUTCHours(t.getUTCHours()-4);const k=t.toISOString().slice(0,10);(byDay[k]??=[]).push(m)}
  const keys=Object.keys(byDay).sort();const first=new Date(ms[0].at+':00Z');const lastK=Object.keys(byDay).sort().at(-1);

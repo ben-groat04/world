@@ -1,0 +1,83 @@
+--- Mon 12:15, Callum
+Right, time to sort the trains for the day out. @claude what time is the first train from manchester piccadilly to liverpool lime street on a sunday
+
+--- Mon 12:16, Claude
+I couldn't confirm a Sunday first train. The pages I found gave weekday or undated times, and they disagreed: 05:03, 05:42 and 05:54 from Piccadilly. Sunday services usually start later than weekday ones, so I wouldn't rely on any of those. Check the exact date on the Northern journey planner: https://www.northernrailway.co.uk/trains/manchester-piccadilly-to-liverpool-lime-street
+
+--- Mon 12:19, Reece
+Probably not worth getting up for that tbh
+
+--- Mon 12:21, Callum
+Fair. Later one then
+
+--- Mon 13:02, Sophie
+Is this a Sunday day out? Which Sunday? X
+
+--- Mon 13:06, Callum
+6th or 13th. Liverpool or Manchester still undecided, was thinking Liverpool for the docks and then food
+(👍 1)
+
+--- Mon 13:09, Sophie
+13th works for me, 6th I've got Pilates and then my cousin's thing x
+
+--- Mon 13:11, Reece
+6th is a deadline for me, could do 13th
+
+--- Mon 18:37, Sophie
+Ok I'll make a sheet with train options and times x
+
+--- Mon 18:40, Callum
+Cheers. Don't go too crazy with it lol
+
+--- Mon 18:41, Sophie
+No promises x
+
+--- Mon 23:48, Reece
+13th fine. Not doing a 5am train tho
+(😂 2)
+
+--- Tue 12:44, Callum
+Lunch. Any preference on the return, earlier or later
+
+--- Tue 13:03, Reece
+Later
+
+--- Tue 18:22, Sophie
+[link: Liverpool day trip sheet]
+Trains tab has the options. Not many after 8 tbh x
+(👍 1)
+
+--- Tue 18:26, Sophie
+Some of the cheaper ones change at Warrington x
+
+--- Tue 21:10, Callum
+Going to the gym, will look properly after. Cheers Soph
+
+--- Wed 00:14, Reece
+Sheet looks good ngl. Warrington one doesnt bother me
+(😂 1)
+
+--- Wed 13:02, Callum
+Can you sort the return ones by time not price
+
+--- Wed 13:31, Sophie
+Done, Warrington ones are the grey rows x
+
+--- Wed 13:33, Callum
+Legend. @claude what's the last train from liverpool lime street back to manchester piccadilly on a sunday
+
+--- Wed 13:34, Claude
+I couldn't confirm a Sunday last train from Lime Street. The pages I found were weekday or undated, and they disagreed (00:18, 00:15 and 23:36). Sunday is often earlier, so don't rely on any of them. The 13th is also the day the new timetable starts, so check the exact date on the Northern journey planner before you commit.
+
+--- Wed 13:41, Sophie
+Ok I'll check the planner tonight and fix the sheet x
+
+--- Wed 13:44, Callum
+Yeah go on
+
+--- Wed 22:58, Reece
+Is the 13th actually the new timetable day or did the bot just say that lol
+(😂 1)
+
+--- Wed 23:05, Sophie
+Will check when I'm home x

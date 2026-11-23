@@ -1,0 +1,119 @@
+--- Mon 12:15, Leonora
+The RH submission came through the portal this morning. Claims a full proof, 41 pages. Want a second pair of eyes before it goes to triage
+
+--- Mon 12:22, Mateo
+Ok. Who's the author, any affiliation
+
+--- Mon 12:24, Leonora
+No affiliation. Generic email address. Abstract is confident but cites nothing from the zero-density literature
+
+--- Mon 12:31, Mateo
+That's bad but not disqualifying. Have you reached section 4
+
+--- Mon 12:33, Leonora
+Reading it now. They claim a uniform bound on the argument of zeta on the critical line and then write "by standard estimates" for the step that is the whole problem
+
+--- Mon 12:40, Mateo
+Yeah. That's the step everyone has tried. If it were standard it wouldn't be open
+
+--- Mon 12:41, Leonora
+Exactly. Flagging it. Not sure it's wrong, just unsupported
+
+--- Mon 13:05, Mateo
+Send me the section and the line where they cite it. I'll check whether the reference says what they claim
+
+--- Mon 13:09, Leonora
+[link: submission PDF, p.19]
+
+--- Mon 13:14, Mateo
+The cited paper is an older result about a different range. Doesn't cover the critical strip. So the citation doesn't support the step
+
+--- Mon 13:16, Leonora
+So a citation error or a gap they're hiding behind a citation. I'd call it the second
+
+--- Mon 13:18, Mateo
+Agree. I'll log it for the editor. Not making a call on whether the whole thing is wrong
+
+--- Mon 16:40, Leonora
+Went through the rest. A lot of the middle is fine, real algebra. But the ending uses a lemma from section 2 that needs the bound from section 4
+
+--- Mon 16:42, Leonora
+So it hangs on that one step
+
+--- Mon 17:55, Mateo
+Ok. I'll write the referee note tonight, short. Editor will want a yes/no on sending it to a full panel
+
+--- Mon 18:10, Leonora
+Should I reply to the author asking for the source of the bound or leave it for the editor
+
+--- Mon 18:12, Mateo
+Leave it. The editor decides what goes out. We don't correspond with authors on our own
+
+--- Mon 22:31, Leonora
+People will read the abstract and assume it's real. The journal's name is on the submission form
+
+--- Mon 22:33, Mateo
+It's on the form, not the proof. Nobody's publishing this
+
+--- Mon 22:34, Leonora
+I know. Just saying
+
+--- Tue 08:47, Mateo
+Referee note is in the editor queue. Recommendation is don't send to full panel yet, ask them for the source of the bound first
+
+--- Tue 08:52, Leonora
+Ok. Appendix B cites the same paper twice, once with the wrong year
+
+--- Tue 09:04, Mateo
+Checked. Both point to the same old result, neither covers the critical strip. Logged it under the section 4 note
+
+--- Tue 09:06, Leonora
+Good
+
+--- Tue 14:20, Leonora
+Portal sent the author an auto-reply saying "under review." did we trigger that or is it just the system
+
+--- Tue 14:31, Mateo
+System. It fires on every new submission, generic template. We didn't send anything
+
+--- Tue 14:33, Leonora
+Ok, just checking. Didn't want the author thinking someone's already looked at it
+
+--- Tue 14:34, Mateo
+Someone has. The author just doesn't know who
+
+--- Wed 08:58, Leonora
+Anything back from the editor on the RH note
+
+--- Wed 09:20, Mateo
+Not yet. Queue says read, no decision
+
+--- Wed 09:21, Leonora
+Ok
+
+--- Wed 11:46, Mateo
+Editor replied. Wants the source of the bound before anything goes to panel. Portal request goes out tomorrow
+
+--- Wed 11:50, Leonora
+Good. Nothing from the author yet
+
+--- Wed 15:03, Leonora
+Different one. Ref list on a lattice paper has three entries that don't resolve. Sending you the list
+
+--- Wed 15:04, Leonora
+[link: refs_lattice_draft.pdf]
+
+--- Wed 15:30, Mateo
+Two are typos in the arXiv IDs. Third doesn't exist under that title. Could be a renamed preprint but I can't find it
+
+--- Wed 15:33, Leonora
+Logging it as unresolved, not fabricated. Editor can decide
+
+--- Wed 15:34, Mateo
+Works for me
+
+--- Wed 21:12, Leonora
+Going to sleep. Check the portal inbox before you log off
+
+--- Wed 21:15, Mateo
+Will do

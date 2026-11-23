@@ -27,6 +27,9 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 - **W1 built and checked** (`writer.mjs`, plan in `notes/diagnoses/w1-diagnosis.md`): no example texts (pasted lines 25% → 1%), people block as background, texting rules, floating volume, secrets (no leaks in 9 casts, but owners never raise them either), one call per story day. Names 23% → 12% and sign-offs 11% → 6% (both missed targets of 10% and 4%); about 28% fewer messages; lowercase habit markers rose. Chats in `writer-runs/`, checks in `w1-checks/`.
 - **W1 blind judging done**: W1 6.1 vs one-call 5.4 on the same casts (best so far). Reports and scores in `eval/w1/judges.md` and `eval/w1/scores.tsv`.
 
+## If this session ended mid-W4
+The W4 coder may have been cut off. Check `git log` and `git diff` (uncommitted work may be in the last WIP commit), compare writer.mjs against notes/diagnoses/w4-diagnosis.md, and finish the remaining items with their cheap checks. Then wire the writer into the live app in the new account (republish viewer/index.html; see 'Moving to a new account').
+
 ## Next steps
 1. (Done: W1 judged 6.1.)
 2. (Done: W2 built in `writer.mjs`, W1 kept as `writer-w1.mjs`; checks under W2 in ITERATIONS.md.) Paired batch W1 / W2 / W2-medium on held-out briefs is built at `eval/w2/` (judges j1-j53, 3 per file). Judged: W1 6.7, W2 6.7, W2-medium 6.9 (within noise; best level yet). W3 built (writer.mjs; W2 kept as writer-w2.mjs, run with --effort medium). Paired batch W2M vs W3 judging set at eval/w3/ (judges j1-j22, 2 per window). Judged: W3 6.84 vs W2M 6.62 (keep W3). W4 plan in notes/diagnoses/w4-diagnosis.md (all items plus its 'Not now' items) is being implemented, including running the writer in the live app. Note: W3 had more chunk rejects (18/74 vs 14/80) and lost one run, uninvestigated, then a Sonnet coder, as in the workflow above.

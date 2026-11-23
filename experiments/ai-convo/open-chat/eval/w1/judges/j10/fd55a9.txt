@@ -1,0 +1,65 @@
+--- Wed 07:42, Ahmed
+Good morning. Priya, where are we on the reconciliation? Dan, please confirm the EUR statement is with the supplier. Keep me posted on any blockers.
+
+--- Wed 07:58, Priya
+Morning. Two clients done, third is waiting on the last statement. Dan, could you send the full file by lunch pls? I'll flag the EUR line as provisional in the meantime.
+
+--- Wed 08:05, Dan
+Supplier has replied. Confirming the rate today. Full file by 12.
+(👍 1)
+
+--- Wed 08:30, Chloe
+morning all ☕
+
+--- Wed 09:15, Dan
+Full file sent. The rate from the supplier's email is on row 34. Check it against the statement.
+
+--- Wed 09:20, Priya
+Got it, thank you 🙂
+
+--- Wed 10:45, Chloe
+priya could you check my bank reference on the Harlow batch? i think i've put a dash where the slash should be
+
+--- Wed 10:58, Priya
+Yes, it has to match the invoice number exactly. Send me the batch ref and I'll look.
+
+--- Wed 11:02, Chloe
+ok sending
+
+--- Wed 11:30, Priya
+Fixed. The slash was in the wrong place. You can drop the leading zeros too.
+
+--- Wed 11:31, Chloe
+ahh ok. thank u 🙏
+
+--- Wed 13:10, Ahmed
+Priya, Dan, Chloe, please confirm when the reconciliation is ready for review. I'll look at it this afternoon.
+(👍 1)
+
+--- Wed 14:22, Priya
+Two of the three are ready. The third is ready once the EUR line is confirmed.
+
+--- Wed 15:40, Dan
+Supplier confirmed. I'll update the file and send again shortly.
+
+--- Wed 16:05, Dan
+Updated file sent.
+(👍 1)
+
+--- Wed 17:30, Chloe
+anyone want biscuits tomorrow? i'm bringing a tin 🍪
+
+--- Wed 17:34, Dan
+Yes please.
+
+--- Wed 17:50, Ahmed
+Chloe, that would be welcome. Thank you.
+
+--- Wed 18:20, Priya
+Ginger ones if you're bringing them, Chloe?
+
+--- Wed 18:24, Chloe
+yes obviously 😂
+
+--- Wed 18:55, Ahmed
+Priya, once the third client is through, please send me your review notes. Friday remains the deadline for the payment run.

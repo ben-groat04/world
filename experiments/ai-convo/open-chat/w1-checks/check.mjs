@@ -1,0 +1,18 @@
+// W1 cheap checks. node w1-checks/check.mjs <list file> [<list file> ...]   (each list: "<label> <run folder>"; arm = label prefix before '-')
+// Over each run's first 36 h: names (message names another participant), sign-offs/thanks (score.mjs BYE, < 25 words), pasted examples (the message contains one of the cast's example texts word for word, ignoring case/punctuation; examples are in the cast row though the writer never saw them), messages per 24 h, per-person share (top person's share; people with 0 messages), top habit marker share per person (4+ messages; markers from replay.mjs).
+import fs from 'node:fs';
+const BYE = /\b(good ?night|night|bye|see you|talk soon|thanks|thank you|take care|sleep well)\b/i, norm = t => t.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim(), words = t => t.trim().split(/\s+/).length, esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const ABBR = /^(rn|idk|tmrw|tmr|thx|ty|pls|plz|wknd|np|u|ur|r|ppl|obv|hbu|tbh|ngl|lol|lmao|omg|tbf|imo|prob|abt|b4)$/i;
+const MARK = { dots: t => /(\.{2,}|…)\s*\p{Extended_Pictographic}?️?\s*$/u.test(t), um: t => /\b(um+|erm|hmm+|so yeah)\b/i.test(t), endEmoji: t => /\p{Extended_Pictographic}️?\s*$/u.test(t), endX: t => /(^|\s)xx?\s*$/i.test(t), bang: t => /!!/.test(t), lower: t => /^[a-z]/.test(t.trim()), abbr: t => (t.match(/[\p{L}']+/gu) ?? []).some(w => ABBR.test(w)) };
+const rows = d => fs.readFileSync(d + '/log.jsonl', 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l));
+const arms = {};
+for (const f of process.argv.slice(2)) for (const l of fs.readFileSync(f, 'utf8').split('\n').filter(x => x.trim())) {
+  const [label, dir] = l.trim().split(/\s+/), r = rows(dir), c = r.find(x => x.cast), all = r.filter(x => x.posted === true && x.text), t0 = +new Date(all[0].at + ':00Z'), m = all.filter(x => +new Date(x.at + ':00Z') < t0 + 36 * 36e5), arm = label.split('-')[0], names = c.names;
+  const ex = names.flatMap(n => (c.cast[n].ex ?? []).map(norm)).filter(e => e.length >= 3);
+  const a = arms[arm] ??= { runs: 0, n: 0, named: 0, bye: 0, pasted: 0, perDay: [], top: [], silent: 0, people: 0, mk: [], per: [] }; a.runs++; a.n += m.length; a.perDay.push(m.length / 1.5);
+  for (const x of m) { if (names.some(n => n !== x.who && new RegExp(`\\b${esc(n)}\\b`, 'i').test(x.text))) a.named++; if (words(x.text) < 25 && BYE.test(x.text)) a.bye++; const t = norm(x.text); if (ex.some(e => t.includes(e))) a.pasted++; }
+  const cnt = Object.fromEntries(names.map(n => [n, m.filter(x => x.who === n).length])); a.top.push(Math.max(...Object.values(cnt)) / m.length); a.silent += Object.values(cnt).filter(v => v === 0).length; a.people += names.length; a.per.push(`${label.split('-')[1]}:${names.map(n => cnt[n]).join('/')}`);
+  for (const n of names) { const v = m.filter(x => x.who === n); if (v.length < 4) continue; const top = Object.entries(MARK).map(([k, fn]) => [k, v.filter(p => fn(p.text)).length]).sort((p, q) => q[1] - p[1])[0]; a.mk.push(top[1] / v.length); }
+}
+const mean = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : NaN, pc = (x, n) => `${x}/${n} = ${(100 * x / n).toFixed(0)}%`;
+for (const [arm, a] of Object.entries(arms)) console.log(`${arm}: ${a.runs} runs, ${a.n} msgs in 36h; per 24h mean ${mean(a.perDay).toFixed(1)} (min ${Math.min(...a.perDay).toFixed(1)}); names ${pc(a.named, a.n)}; sign-offs/thanks ${pc(a.bye, a.n)}; pasted examples ${pc(a.pasted, a.n)}; top person's share mean ${(100 * mean(a.top)).toFixed(0)}%; silent people ${a.silent}/${a.people}; top habit-marker share (${a.mk.length} people) ${mean(a.mk).toFixed(2)}\n   msgs per person: ${a.per.join('  ')}`);

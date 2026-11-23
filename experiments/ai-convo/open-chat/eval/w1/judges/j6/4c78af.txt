@@ -1,0 +1,67 @@
+--- Mon 19:00, Priya
+Dan, I need the supplier invoice spreadsheet before the end of Friday. Can you send it over when you get a chance? Thanks 🙂
+(👍 1)
+
+--- Mon 19:52, Dan
+Working through the late statements. Will get it to you.
+
+--- Mon 20:15, Chloe
+omg is it just me or is the new payment system so confusing 😩
+(😂 2)
+
+--- Mon 20:17, Chloe
+i keep getting the bank reference field wrong
+
+--- Mon 20:40, Priya
+Yes, it's fiddly. Make sure the reference matches the invoice number exactly, otherwise the matching fails.
+
+--- Mon 20:41, Chloe
+ah ok that makes sense, thank you!!
+
+--- Tue 08:12, Ahmed
+Close needs to be signed off by Friday 27th so the client payment run goes out on time. Please keep me posted on any blockers.
+
+--- Tue 08:30, Priya
+Will do. Still need Dan's spreadsheet to finish the reconciliation though.
+
+--- Tue 09:05, Dan
+Almost there. Should have it to you by lunch.
+(👍 1)
+
+--- Tue 13:20, Dan
+Sorry, one of the statements has a different currency on it. Checking with the supplier.
+
+--- Tue 13:24, Priya
+Ok. Could you at least send what you have so far? I can start on the ones that are done 🙏
+
+--- Tue 19:10, Dan
+Sent you the partial one by email, Priya. The Hallworth lines are the ones still open.
+(👍 1)
+
+--- Tue 19:14, Priya
+Got it, thanks. Starting on the ones that are done.
+
+--- Tue 19:40, Chloe
+does the payment system log you out if you leave it open? lost my batch twice tbh 😩
+
+--- Tue 19:55, Priya
+It does after about 20 mins I think. Save the batch before you go to the next screen.
+
+--- Tue 19:56, Chloe
+ohh ok. cheers priya
+
+--- Tue 21:02, Priya
+Dan, is the Hallworth line the EUR one? If so I can book it at the rate on the statement and flag it as provisional.
+
+--- Tue 21:40, Dan
+Yes, EUR. Use the rate on the statement, don't convert it yourself. I'll check it with the supplier.
+(👍 1)
+
+--- Tue 22:50, Chloe
+omg just realised i posted the Kendal invoices to the wrong cost centre 😬
+
+--- Tue 22:52, Chloe
+fixed. nobody panic
+
+--- Wed 06:55, Dan
+Morning. Rest of the statements are in. Only the EUR one is outstanding.

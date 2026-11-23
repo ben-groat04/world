@@ -22,9 +22,8 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
   - The round 19 changes (personality line, the Day schedules the next look, etc.) are built and cheap-checked, but haven't been through a batch.
 - **One-call baseline** (`baseline.mjs`): one Haiku call writes the whole chat from the same cast. It scored the same as multi-agent (5.6 vs 5.4) on round 18's casts.
   - So the main effort moved to a **single writer**.
-- **W1 (in progress when this was written):** `writer.mjs` is being built from `notes/diagnoses/w1-diagnosis.md`. It has no example texts, the people block is background, texting rules, floating volume, secrets, and one call per story day.
-  - Its outputs go to `writer-runs/` and a blind judging set to `eval/w1/`.
-  - If `writer.mjs` is missing or half-finished, check `git log` and the W1 entry in ITERATIONS.md, and finish or redo it from that plan.
+- **W1 built and checked** (`writer.mjs`, plan in `notes/diagnoses/w1-diagnosis.md`): no example texts (pasted lines 25% → 1%), people block as background, texting rules, floating volume, secrets (no leaks in 9 casts, but owners never raise them either), one call per story day. Names 23% → 12% and sign-offs 11% → 6% (both missed targets of 10% and 4%); about 28% fewer messages; lowercase habit markers rose. Chats in `writer-runs/`, checks in `w1-checks/`.
+- **W1 blind judging**: set built at `eval/w1/` (W1 vs one-call baseline, judges j1-j11). Judging was launched from the old session; if `eval/w1/scores.tsv` is missing, judge it (step 1 below).
 
 ## Next steps
 1. Judge the `eval/w1/` set blind (W1 writer vs the one-call baseline). Use 6-9 Sonnet judges with the neutral prompt from README "Judging", including the excerpt/reactions note.

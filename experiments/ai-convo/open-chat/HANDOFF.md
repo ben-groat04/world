@@ -16,7 +16,6 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 - Run things in the background, keep replies responsive, and give short progress updates.
 - No real-chat anchors for now: compare versions against each other.
 - Opus only for hard thinking (cold reads). Coders are Sonnet; characters are Haiku.
-- Live runs: the orchestrator doesn't mirror turns to the viewer database itself (too expensive). A Haiku agent does the mirroring (watch writer output, ArtifactData writes); the orchestrator only starts the run and replies in the comment thread.
 - Commit and push to branch `ccr-982e4403-t5vbsu` often (a stop hook asks for this).
 
 ## Models: which for what

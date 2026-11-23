@@ -1,0 +1,99 @@
+K3-K31: day 1: 25 messages
+K1-K12: day 1: 19 messages
+K1-K11: day 1: 35 messages
+K1-K13: day 1: 25 messages
+K2-K22: day 1: 12 messages
+K3-K32: day 1: 38 messages
+K3-K31: day 2: 18 messages
+K1-K12: day 2: 26 messages
+K2-K23: day 1: 20 messages
+K1-K11: day 2: 27 messages
+K1-K13: day 2: 37 messages
+K2-K22: day 2: 24 messages
+K3-K31: day 3: 23 messages
+K3-K31: 66 messages, 2026-11-23T19:00 to 2026-11-26T00:41
+K3-K32: day 2: 31 messages
+K1-K12: day 3: 24 messages
+K1-K12: 69 messages, 2026-11-23T19:02 to 2026-11-26T00:41
+K2-K21: day 1: 26 messages
+K2-K23: day 2: 17 messages
+K3-K32: day 3: 31 messages
+K3-K32: 100 messages, 2026-11-23T19:00 to 2026-11-25T23:20
+K1-K13: day 3: 37 messages
+K1-K13: 99 messages, 2026-11-23T19:00 to 2026-11-26T00:09
+K1-K11: day 3: 39 messages
+K1-K11: 101 messages, 2026-11-23T19:00 to 2026-11-25T23:41
+K2-K21: day 2: 33 messages
+K4-K41: day 1: 11 messages
+K3-K33: day 1: 28 messages
+K2-K23: day 3: 30 messages
+K2-K23: 67 messages, 2026-11-23T19:00 to 2026-11-26T00:29
+K2-K21: day 3: 47 messages
+K2-K21: 106 messages, 2026-11-23T19:00 to 2026-11-26T00:27
+K4-K42: day 1: 19 messages
+K4-K43: day 1: 15 messages
+K2-K22: day 3: 27 messages
+K2-K22: 63 messages, 2026-11-23T19:00 to 2026-11-25T23:58
+K4-K41: day 2: 19 messages
+K3-K33: day 2: 36 messages
+K3-K33: day 3: 28 messages
+K3-K33: 92 messages, 2026-11-23T19:00 to 2026-11-25T23:58
+K4-K42: day 2: 28 messages
+K4-K43: day 2: 19 messages
+K4-K41: day 3: 22 messages
+K4-K41: 52 messages, 2026-11-23T19:00 to 2026-11-25T23:14
+K6-K61: day 1: 16 messages
+K5-K51: day 1: 31 messages
+K4-K42: day 3: 24 messages
+K4-K42: 71 messages, 2026-11-23T19:00 to 2026-11-26T00:20
+K4-K43: day 3: 28 messages
+K4-K43: 62 messages, 2026-11-23T19:00 to 2026-11-25T23:09
+K6-K61: day 2: 16 messages
+K5-K53: day 1: 23 messages
+K6-K61: day 3: 33 messages
+K6-K61: 65 messages, 2026-11-23T19:00 to 2026-11-25T23:09
+K6-K63: day 1: 13 messages
+K5-K53: day 2: 6 messages
+K6-K62: day 1: 30 messages
+K6-K63: day 2: 8 messages
+K7-K71: day 1: 22 messages
+K6-K62: day 2: 15 messages
+K6-K63: day 3: 6 messages
+K6-K63: 27 messages, 2026-11-23T19:04 to 2026-11-25T19:45
+K5-K52: day 1: 37 messages
+K7-K72: day 1: 24 messages
+K6-K62: day 3: 21 messages
+K6-K62: 66 messages, 2026-11-23T19:04 to 2026-11-25T23:12
+K7-K71: day 2: 13 messages
+K5-K51: day 2: 57 messages
+K8-K81: day 1: 22 messages
+K7-K72: day 2: 10 messages
+K8-K82: day 1: 11 messages
+K7-K71: day 3: 28 messages
+K7-K71: 63 messages, 2026-11-23T19:00 to 2026-11-25T23:38
+K5-K51: day 3: 57 messages
+K5-K51: 145 messages, 2026-11-23T19:00 to 2026-11-25T23:58
+K8-K81: day 2: 19 messages
+K8-K82: day 2: 9 messages
+K7-K73: day 1: 22 messages
+K7-K72: not in the format, retrying
+K5-K52: stamps out of order or before the span, retrying
+K8-K82: day 3: 15 messages
+K8-K82: 35 messages, 2026-11-23T19:00 to 2026-11-26T00:06
+K8-K81: day 3: 11 messages
+K8-K81: 52 messages, 2026-11-23T19:00 to 2026-11-26T00:41
+K8-K83: day 1: 14 messages
+K7-K73: day 2: 21 messages
+K8-K83: day 2: 6 messages
+K5-K53: day 3: 50 messages
+K5-K53: 79 messages, 2026-11-23T19:00 to 2026-11-26T00:21
+K7-K72: day 3: 22 messages
+K7-K72: 56 messages, 2026-11-23T19:00 to 2026-11-26T00:03
+K7-K73: day 3: 23 messages
+K7-K73: 66 messages, 2026-11-23T19:00 to 2026-11-25T23:58
+K8-K83: day 3: 11 messages
+K8-K83: 31 messages, 2026-11-23T19:00 to 2026-11-26T00:41
+K5-K52: day 2: 36 messages
+K5-K52: day 3: 35 messages
+K5-K52: 108 messages, 2026-11-23T19:00 to 2026-11-26T00:52
+list: /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-54-59-684Z/list.txt

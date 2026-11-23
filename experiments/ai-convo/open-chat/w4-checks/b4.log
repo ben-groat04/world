@@ -1,0 +1,28 @@
+B4-K21: day 1: 26 messages
+B4-K53: day 1: 21 messages
+B4-K51: day 1: 25 messages
+B4-K52: day 1: 26 messages
+B4-K23: day 1: 22 messages
+B4-K22: day 1: 29 messages
+B4-K52: day 2: 22 messages
+B4-K21: day 2: 18 messages
+B4-K23: stamps out of order or before the span, retrying
+B4-K51: day 2: 22 messages
+B4-K53: not in the format, retrying
+B4-K22: day 2: 22 messages
+B4-K21: not in the format, retrying
+B4-K23: day 2: 29 messages
+B4-K51: day 3: 32 messages
+B4-K51: 79 messages, 2026-11-23T19:00 to 2026-11-26T00:18
+B4-K53: day 2: 26 messages
+B4-K22: day 3: 38 messages
+B4-K22: 89 messages, 2026-11-23T19:00 to 2026-11-26T00:44
+B4-K52: day 3: 35 messages
+B4-K52: 83 messages, 2026-11-23T19:00 to 2026-11-26T00:09
+B4-K21: day 3: 29 messages
+B4-K21: 73 messages, 2026-11-23T19:00 to 2026-11-26T00:21
+B4-K53: day 3: 33 messages
+B4-K53: 80 messages, 2026-11-23T19:00 to 2026-11-26T00:36
+B4-K23: day 3: 24 messages
+B4-K23: 75 messages, 2026-11-23T19:00 to 2026-11-26T00:03
+list: /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-52-19-365Z/list.txt

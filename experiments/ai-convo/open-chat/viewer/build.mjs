@@ -1,4 +1,4 @@
-// Reads every runs/<timestamp>/log.jsonl and writes viewer/runs.json (newest first) for index.html.
+// Reads every runs/<timestamp>/log.jsonl, and every writer-runs/<timestamp>/live/log.jsonl (single-writer runs started from the viewer: `writer.mjs --live`), and writes viewer/runs.json (newest first) for index.html.
 import fs from 'fs'; import path from 'path';
 const here = import.meta.dirname, runsDir = path.join(here, '..', 'runs');
 const arg = (argv, flag) => argv[argv.indexOf(flag) + 1];
@@ -42,6 +42,18 @@ for (const id of fs.readdirSync(runsDir).sort().reverse()) {
     turns,
   });
 }
+// Single-writer live runs (writer.mjs --live): the log has a header row with `live: true`, the cast row, one row per message (oracle rows are @claude answers) and reactions as rows with `to` = index among the non-oracle messages.
+const writerDir = path.join(here, '..', 'writer-runs');
+for (const id of fs.existsSync(writerDir) ? fs.readdirSync(writerDir).sort().reverse() : []) {
+  const file = path.join(writerDir, id, 'live', 'log.jsonl'); if (!fs.existsSync(file)) continue;
+  const every = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)), head = every[0], cast = every.find(r => r.cast);
+  if (!head.live || !cast) continue;
+  const posted = every.filter(r => r.posted === true && r.text), people = posted.filter(r => !r.oracle), m = id.match(/^(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d)-(\d\d)-(\d{3})Z$/), secrets = every.find(r => r.secrets)?.secrets;
+  const turns = posted.flatMap((r, i, a) => [...(i && a[i - 1].at.slice(0, 10) !== r.at.slice(0, 10) ? [{ who: 'Clock', text: dayLabel(r.at + ':00'), pass: false, clock: true, at: r.at }] : []), { who: r.who, text: r.text, pass: false, ...(r.oracle && { oracle: true }), at: r.at }]);
+  const msgs = turns.filter(t => !t.clock && !t.oracle); for (const r of every.filter(r => r.react)) (msgs[r.to].reactions ??= []).push({ who: r.who, emoji: r.react });
+  runs.push({ id: `${id}-live`, started: m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null, model: head.model, brief: cast.setting, names: cast.names, people: cast.names.length, oracle: !!head.oracle, topic: cast.topic, secrets: secrets ?? null, privateLines: cast.private_lines, passes: 0, unsent: 0, ended: head.complete ? 'end date' : 'message limit', turns });
+}
+runs.sort((a, b) => (b.started || '').localeCompare(a.started || ''));
 const out = JSON.stringify(runs);
 fs.writeFileSync(path.join(here, 'runs.json'), out);
 console.log(`${runs.length} runs, ${(out.length / 1024).toFixed(0)} KB -> viewer/runs.json`);

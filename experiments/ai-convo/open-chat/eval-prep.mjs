@@ -81,7 +81,7 @@ if (process.argv[2] === '--tally') {
   // Judge split: each file to COPIES distinct judges, least-loaded first, never a judge who already has a window of the same run.
   const N = Math.max(2 * COPIES, Math.ceil(files.length * COPIES / PER_JUDGE)), load = Array(N).fill(0), used = {};
   for (const f of shuffle([...files])) {
-    const taken = used[f.label] ??= new Set();
+    const taken = used[process.env.PAIR ? f.label.split('-').slice(1).join('-') : f.label] ??= new Set(); // PAIR=1: all windows of one cast (the arms' versions of a chat) go to different judges
     const pick = shuffle([...load.keys()]).filter(j => !taken.has(j)).sort((a, b) => load[a] - load[b]).slice(0, COPIES);
     for (const j of pick) { taken.add(j); load[j]++; const d = path.join(out, 'judges', 'j' + (j + 1)); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, f.id + '.txt'), f.text); }
   }

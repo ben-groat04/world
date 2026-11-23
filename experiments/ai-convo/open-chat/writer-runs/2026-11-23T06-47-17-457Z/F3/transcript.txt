@@ -1,0 +1,174 @@
+--- Mon 06:45, Kieran
+what time is the last direct train from edinburgh waverley to london kings cross on a saturday
+
+--- Mon 07:12, Hannah
+Why, are we going to London now?
+
+--- Mon 07:14, Kieran
+no. just want to know for the way back if we go on somewhere
+
+--- Mon 07:16, Hannah
+Right. Fair enough. I'd rather take the train on Saturday honestly, I can read and not worry about the A1. But I know you prefer driving
+
+--- Mon 07:19, Kieran
+its cheaper if we split petrol and parking
+
+--- Mon 07:21, Hannah
+True 🙂 Let's check the times first
+
+--- Mon 07:58, Kieran
+@claude what is the last direct train from Edinburgh Waverley to London King's Cross on a Saturday? Need the latest departure time
+
+--- Mon 07:59, Claude
+The latest Saturday departure I found is **19:00** from Edinburgh Waverley, arriving at King's Cross at 23:55. It's an LNER service. I couldn't confirm that it's direct, and I couldn't check it against LNER's own timetable.
+
+The source is the [live-departures.info timetable](https://live-departures.info/rail/timetable/Edinburgh/London-Kings-Cross/), which is a third-party site. It lists these Saturday departures after 17:00:
+- 17:00 (LNER)
+- 17:21 (Lumo)
+- 17:30 (LNER)
+- 18:00 (LNER)
+- 19:00 (LNER)
+
+I also found other sources that disagree. [Trainline](https://www.thetrainline.com/train-times/edinburgh-to-london-kings-cross) says 22:00, and [Trainline Business](https://www.business.thetrainline.com/train-times/edinburgh-to-london-kings-cross) says 23:25. Those pages are undated and may include sleeper or connecting journeys, so I'd treat them as less reliable.
+
+Saturday engineering work can change times, so check the [LNER journey planner](https://www.lner.co.uk/) for your exact date before you travel.
+
+--- Mon 08:04, Hannah
+Thanks for checking. Is there any engineering work on the line Saturday, do you know?
+
+--- Mon 08:09, Kieran
+dont know. lner site will say
+
+--- Mon 12:41, Hannah
+Lunch. If it's the 19:00 back we'd need to be at Waverley by half six at the latest, which feels early for a Saturday out
+
+--- Mon 12:49, Kieran
+depends where we are. we could get the 17:30 or 18:00 instead
+
+--- Mon 18:12, Kieran
+lner site wont load on my phone. will check on the laptop later
+
+--- Mon 19:34, Hannah
+Marking until at least nine. Don't wait up for me to decide anything
+
+--- Mon 21:50, Kieran
+ok found it on laptop. no engineering listed for saturday. so train's fine if we want it
+
+--- Mon 21:52, Kieran
+drive's still cheaper though
+
+--- Mon 21:58, Hannah
+Honestly I don't mind. I'd like the train but I know you'd rather drive, so it's whatever you want
+
+--- Mon 22:03, Kieran
+i'll drive. you can read on the way back if we get the 19:00 and i end up knackered
+
+--- Mon 22:05, Hannah
+That doesn't sound like a plan. Do you want to drive or not? 🙂
+
+--- Mon 22:06, Kieran
+drive
+
+--- Mon 22:07, Hannah
+Ok. Parking is the thing I'm not sure about. Can you check that before Saturday?
+
+--- Mon 22:09, Kieran
+yeah tomorrow
+
+--- Mon 22:10, Hannah
+Thanks. I'm going to bed, I've been at this since four
+
+--- Mon 22:12, Kieran
+ok night
+(👍 1)
+
+--- Tue 06:24, Hannah
+parking?
+
+--- Tue 08:19, Kieran
+not yet. at desk. will check at lunch
+
+--- Tue 12:37, Kieran
+@claude what's the parking like at edinburgh waverley? is there a long stay car park near it and roughly what does a saturday cost
+
+--- Tue 12:38, Claude
+Parking at Waverley is limited and expensive. The station's main option is a long-stay car park right next to it.
+
+**Long-stay car park:** The APCOA Edinburgh Waverley Station (Long Stay) is on New Street, EH8 8BH, and is a multistorey. Its page says it has 537 spaces, including 84 EV charging spaces, and is open 24 hours. The height limit is 1.90m.
+
+**Saturday cost:** The tariff is the same every day, Monday to Sunday, so Saturday costs the same as any other day:
+- Up to 1 hour: £5
+- Up to 3 hours: £10
+- Up to 5 hours: £15.80
+- Up to 10 hours: £20
+- Up to 24 hours: £25
+- Up to 2 days: £50
+
+A typical Saturday day trip would cost about £20–25. You can pre-book on APCOA's site, and I didn't check whether that's cheaper. JustPark lists some private spaces nearby from about £10 a day, but those are third-party listings and I didn't confirm them.
+
+The prices come from APCOA's page, which may be out of date. Check it before you travel. Lumo's station page gives different opening hours (weekends 06:00–00:45). I'd trust APCOA's 24-hour listing less than a quick check.
+
+Sources:
+- [APCOA – Edinburgh Waverley Station (Long Stay)](https://www.apcoa.co.uk/edinburgh/edinburgh-waverley-station-long-stay)
+- [Lumo – Edinburgh Waverley](https://lumo.co.uk/where-we-go/station-information/edinburgh-waverley)
+- [JustPark – Edinburgh Waverley Station](https://justpark.com/uk/parking/edinburgh-waverley-station)
+
+--- Tue 12:44, Kieran
+£20-25 is more than i thought
+
+--- Tue 12:46, Kieran
+still way cheaper than 2 train tickets tho
+
+--- Tue 12:53, Hannah
+So if we park at 9 and leave Edinburgh at 5:30 that's under 10 hours? So £20?
+
+--- Tue 13:02, Kieran
+yeah should be. if we get the 17:30 back we're fine
+
+--- Tue 13:03, Kieran
+the 5 hour one is £15.80 so if we go early it might be less
+
+--- Tue 13:20, Hannah
+Year 3 just asked me if Edinburgh is in England. I said it's in Scotland and she said "but is it in the UK"
+
+--- Tue 13:21, Kieran
+they're sharp
+
+--- Tue 17:48, Hannah
+Home. Marking is going to eat my whole evening
+
+--- Tue 18:30, Kieran
+gym then home. will look at the apcoa site when i get in
+
+--- Tue 19:55, Kieran
+apcoa page says you can prebook but the prices on it look different to what the claude one said. might be the page is old
+
+--- Tue 20:02, Hannah
+Can we just pay on the day? I'd rather not pay for something we might not need if the train wins
+
+--- Tue 20:04, Kieran
+we're driving though
+
+--- Tue 20:06, Hannah
+I know. I mean if we change our minds, I don't want to be stuck with a booking
+
+--- Tue 20:09, Kieran
+fair. pay on the day then
+
+--- Tue 21:40, Hannah
+Still going. Two more piles
+
+--- Tue 22:11, Kieran
+ok. i'll sort the car tomorrow. need to check the tyres
+
+--- Tue 22:14, Hannah
+Thanks. I'm going to bed when I've finished these, probably half ten
+
+--- Tue 22:16, Kieran
+ok. dont do too many
+
+--- Tue 22:58, Hannah
+Done. Bed now 🙂
+
+--- Tue 23:02, Kieran
+night

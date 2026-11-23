@@ -1,0 +1,83 @@
+{"writer":"w4","source":"/home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-38-15-411Z/K3","model":"haiku","effort":"medium","days":2,"oracle":false,"cut":false,"complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1849,"cache_read_input_tokens":0,"output_tokens":3111,"output_tokens_details":{"thinking_tokens":2249},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1849,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3111,"cache_read_input_tokens":0,"cache_creation_input_tokens":1849,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1849},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2653,"cache_read_input_tokens":0,"output_tokens":3317,"output_tokens_details":{"thinking_tokens":2467},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2653,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3317,"cache_read_input_tokens":0,"cache_creation_input_tokens":2653,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2653},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3502,"cache_read_input_tokens":0,"output_tokens":1474,"output_tokens_details":{"thinking_tokens":769},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3502,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1474,"cache_read_input_tokens":0,"cache_creation_input_tokens":3502,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3502},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Claire","Daniel","Sophie"],"setting":"You all live in Leeds, and you are siblings who grew up in Bradford, so you know each other's habits well. Your grandmother lived alone in her flat in Headingley for over forty years, and she died in the spring. You all know the flat is full of decades of belongings, that the landlord needs it empty by the end of the month, and that none of you has been able to face the job alone.","opener":"Suggests splitting the flat into rooms and asks who can take Saturday.","cast":{"Claire":{"who":"43, woman, the eldest grandchild and sibling","knows":"You know Daniel is your middle brother, practical and quick to make decisions. You know Sophie is your youngest sister, who has always been the one to notice small sentimental things.","like":"You are organised and steady, and you like things done properly even when you are worn out.","texts":"You message in this chat now and then, mostly when there is something to decide or arrange.","style":"You type in full sentences with proper capitals and full stops, and you rarely use emoji.","ex":[]},"Daniel":{"who":"39, man, the middle sibling","knows":"You know Claire is your eldest sibling, the one who organises everything. You know Sophie is your younger sister, who works from home and is usually online late.","like":"You are blunt and dry in manner, and you would rather get a job done than talk about it.","texts":"You message in this chat mostly when you have a concrete suggestion or need to say when you can come over.","style":"You write in lowercase with minimal punctuation and almost never use emoji.","ex":[]},"Sophie":{"who":"34, woman, the youngest sibling","knows":"You know Claire is your eldest sister, the one who keeps everyone on track. You know Daniel is your older brother, who is blunt but reliable with practical jobs.","like":"You are sensitive and thoughtful, and you tend to get attached to objects and memories.","texts":"You message in this chat most often, usually with reactions or small updates on what you have found.","style":"You type in lowercase with plenty of emoji and occasional trailing dots.","ex":[]}},"private_lines":{"Claire":"You live in Leeds with your partner Mark and your fifteen-year-old son, working as a ward nurse on rotating shifts at the infirmary. Your days are busy and tiring, with school runs and shifts squeezed around each other, and you are usually the one keeping track of the family admin.","Daniel":"You live alone in a flat in Armley and work as a warehouse supervisor on early and late shifts. Your days revolve around work, a few pints on Friday with old mates from school, and fixing things around your flat.","Sophie":"You live in a shared house in Leeds with your partner Ash, working remotely as a freelance illustrator. You work late into the night and sleep in the mornings, and you tend to be the one who drops by Nan's flat on quiet afternoons."},"sleep":{"Claire":[23.5,6.5],"Daniel":[0,7.5],"Sophie":[1,8.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":341,"cache_read_input_tokens":942,"output_tokens":2314,"output_tokens_details":{"thinking_tokens":1274},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2314,"cache_read_input_tokens":942,"cache_creation_input_tokens":341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":341},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Siblings clearing out a grandparent's flat.","topic":null}
+{"who":"Claire","text":"right. i think we need to split the flat up by room and do it properly. kitchen, front room, bedroom, hall cupboards. i'll make a list tonight. who can take saturday","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Daniel","text":"kitchen's easy. just needs bin bags and the van for the glass","posted":true,"at":"2026-11-23T19:06","checkin":"2026-11-23T19:06"}
+{"who":"Sophie","text":"the bedroom is going to take forever","posted":true,"at":"2026-11-23T19:09","checkin":"2026-11-23T19:09"}
+{"who":"Claire","text":"yes. that's why i said split it. bedroom me and sophie?","posted":true,"at":"2026-11-23T19:11","checkin":"2026-11-23T19:11"}
+{"who":"Sophie","text":"ok","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Sophie","text":"the wardrobe still has her good coat in it. the camel one","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Daniel","text":"van's sorted for sat, got a mate with one. can do sat after 2, i'm on early","posted":true,"at":"2026-11-23T19:52","checkin":"2026-11-23T19:52"}
+{"who":"Claire","text":"after 2 is fine. not sure about saturday yet, rota's out tomorrow. i'll tell you","posted":true,"at":"2026-11-23T20:03","checkin":"2026-11-23T20:03"}
+{"who":"Claire","text":"sophie don't open the coat yet","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Sophie","text":"too late","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Sophie","text":"it still smells of her","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Daniel","text":"dont sit with it too long soph","posted":true,"at":"2026-11-23T20:45","checkin":"2026-11-23T20:45"}
+{"who":"Sophie","text":"i'm not sitting with it. i'm just holding it","posted":true,"at":"2026-11-23T20:47","checkin":"2026-11-23T20:47"}
+{"who":"","react":"😢","to":12,"posted":false,"at":"2026-11-23T20:47"}
+{"who":"Claire","text":"ok. front room is dad's box and the sideboard. daniel can you take the sideboard and the hall cupboards","posted":true,"at":"2026-11-23T21:20","checkin":"2026-11-23T21:20"}
+{"who":"Daniel","text":"yeah. hall one's full of the old hoover and bags of wool","posted":true,"at":"2026-11-23T21:24","checkin":"2026-11-23T21:24"}
+{"who":"Claire","text":"keep the wool","posted":true,"at":"2026-11-23T21:26","checkin":"2026-11-23T21:26"}
+{"who":"Daniel","text":"obviously","posted":true,"at":"2026-11-23T21:27","checkin":"2026-11-23T21:27"}
+{"who":"Sophie","text":"found her button tin. the big one with the lighthouse on it","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Claire","text":"don't start on the buttons tonight please","posted":true,"at":"2026-11-23T22:12","checkin":"2026-11-23T22:12"}
+{"who":"Sophie","text":"not starting. just saying i found it","posted":true,"at":"2026-11-23T22:13","checkin":"2026-11-23T22:13"}
+{"who":"Daniel","text":"i'll bring the van round for sat 2ish if claire's on. text when you know","posted":true,"at":"2026-11-23T22:40","checkin":"2026-11-23T22:40"}
+{"who":"Claire","text":"will do. night","posted":true,"at":"2026-11-23T23:12","checkin":"2026-11-23T23:12"}
+{"who":"Sophie","text":"do you remember the lighthouse tin came from bridlington","posted":true,"at":"2026-11-23T23:48","checkin":"2026-11-23T23:48"}
+{"who":"Daniel","text":"that was the year dad got stung","posted":true,"at":"2026-11-23T23:55","checkin":"2026-11-23T23:55"}
+{"who":"Sophie","text":"he trod on a crab","posted":true,"at":"2026-11-23T23:56","checkin":"2026-11-23T23:56"}
+{"who":"Daniel","text":"same thing","posted":true,"at":"2026-11-23T23:57","checkin":"2026-11-23T23:57"}
+{"who":"Sophie","text":"ok going to bed. not sure what to do with the camel coat","posted":true,"at":"2026-11-24T00:40","checkin":"2026-11-24T00:40"}
+{"who":"Claire","text":"rota's out. sat i'm on 7 till 3","posted":true,"at":"2026-11-24T07:14","checkin":"2026-11-24T07:14"}
+{"who":"Claire","text":"so after 3 for me. daniel?","posted":true,"at":"2026-11-24T07:15","checkin":"2026-11-24T07:15"}
+{"who":"Sophie","text":"morning. the coat's on the chair in the bedroom. not bagging it yet","posted":true,"at":"2026-11-24T07:52","checkin":"2026-11-24T07:52"}
+{"who":"Claire","text":"fine. keep it out","posted":true,"at":"2026-11-24T08:04","checkin":"2026-11-24T08:04"}
+{"who":"Claire","text":"don't wear it","posted":true,"at":"2026-11-24T08:04","checkin":"2026-11-24T08:04"}
+{"who":"Sophie","text":"i wasn't going to","posted":true,"at":"2026-11-24T08:09","checkin":"2026-11-24T08:09"}
+{"who":"Sophie","text":"was going to try it on for like a second","posted":true,"at":"2026-11-24T08:10","checkin":"2026-11-24T08:10"}
+{"who":"Claire","text":"sophie","posted":true,"at":"2026-11-24T08:11","checkin":"2026-11-24T08:11"}
+{"who":"Sophie","text":"ok no","posted":true,"at":"2026-11-24T08:15","checkin":"2026-11-24T08:15"}
+{"who":"Daniel","text":"3 is fine. van's mine from 2 till the mate needs it back at 5","posted":true,"at":"2026-11-24T12:31","checkin":"2026-11-24T12:31"}
+{"who":"Claire","text":"that's enough if we're not stopping for tea","posted":true,"at":"2026-11-24T12:44","checkin":"2026-11-24T12:44"}
+{"who":"Daniel","text":"we'll stop for tea","posted":true,"at":"2026-11-24T12:45","checkin":"2026-11-24T12:45"}
+{"who":"Sophie","text":"did nan keep receipts for anything. found a shoebox of them. some from 1994","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Daniel","text":"bin them","posted":true,"at":"2026-11-24T13:52","checkin":"2026-11-24T13:52"}
+{"who":"Sophie","text":"not reading them just bin them??","posted":true,"at":"2026-11-24T13:53","checkin":"2026-11-24T13:53"}
+{"who":"Daniel","text":"ok keep the one from the piano man","posted":true,"at":"2026-11-24T13:55","checkin":"2026-11-24T13:55"}
+{"who":"Claire","text":"landlord emailed. wants keys on the 30th not the 29th. so the 30th is fine but don't leave it to the last minute","posted":true,"at":"2026-11-24T16:08","checkin":"2026-11-24T16:08"}
+{"who":"Sophie","text":"which one is the 30th again","posted":true,"at":"2026-11-24T16:40","checkin":"2026-11-24T16:40"}
+{"who":"Claire","text":"the one after the 29th","posted":true,"at":"2026-11-24T16:41","checkin":"2026-11-24T16:41"}
+{"who":"Claire","text":"home. mark's got him on the xbox. i'll do the wardrobe sat, soph you're on drawers. don't get stuck on the drawers","posted":true,"at":"2026-11-24T21:37","checkin":"2026-11-24T21:37"}
+{"who":"Sophie","text":"the drawers are the bit i'm worried about","posted":true,"at":"2026-11-24T21:40","checkin":"2026-11-24T21:40"}
+{"who":"Claire","text":"i know","posted":true,"at":"2026-11-24T21:41","checkin":"2026-11-24T21:41"}
+{"who":"Daniel","text":"sideboard first thing sat. it's heavy. might need someone else for the back end","posted":true,"at":"2026-11-24T22:15","checkin":"2026-11-24T22:15"}
+{"who":"Sophie","text":"ash is free. he's up for it","posted":true,"at":"2026-11-24T22:19","checkin":"2026-11-24T22:19"}
+{"who":"Claire","text":"good. ash does the heavy bit","posted":true,"at":"2026-11-24T22:20","checkin":"2026-11-24T22:20"}
+{"who":"Daniel","text":"cool","posted":true,"at":"2026-11-24T22:21","checkin":"2026-11-24T22:21"}
+{"who":"Sophie","text":"she wrote on the back of one of the receipts. \"buy wool for claire\" dated 2009","posted":true,"at":"2026-11-24T23:58","checkin":"2026-11-24T23:58"}
+{"who":"Sophie","text":"i've put the coat back on the hanger. it's on the back of the bedroom door. nobody touch it","posted":true,"at":"2026-11-25T00:20","checkin":"2026-11-25T00:20"}
+{"who":"Sophie","text":"ash says he can do sat after 1 actually. so the sideboard can start earlier if daniel wants","posted":true,"at":"2026-11-25T08:52","checkin":"2026-11-25T08:52"}
+{"who":"Daniel","text":"2 is fine. i'm on late tomorrow not today so cant do earlier","posted":true,"at":"2026-11-25T09:30","checkin":"2026-11-25T09:30"}
+{"who":"Daniel","text":"sideboard's got a back panel that needs taking off. bring a proper screwdriver not the little one","posted":true,"at":"2026-11-25T12:10","checkin":"2026-11-25T12:10"}
+{"who":"Sophie","text":"which is the proper one","posted":true,"at":"2026-11-25T12:14","checkin":"2026-11-25T12:14"}
+{"who":"Daniel","text":"the one that isn't the little one","posted":true,"at":"2026-11-25T12:15","checkin":"2026-11-25T12:15"}
+{"who":"Claire","text":"on nights thu and fri so can't do anything thu. sat still on","posted":true,"at":"2026-11-25T13:40","checkin":"2026-11-25T13:40"}
+{"who":"Sophie","text":"ok","posted":true,"at":"2026-11-25T13:44","checkin":"2026-11-25T13:44"}
+{"who":"Daniel","text":"nan's drawers are full of string","posted":true,"at":"2026-11-25T14:02","checkin":"2026-11-25T14:02"}
+{"who":"Sophie","text":"all of them?","posted":true,"at":"2026-11-25T14:03","checkin":"2026-11-25T14:03"}
+{"who":"Daniel","text":"the top one's got string and the bottom one's got more string","posted":true,"at":"2026-11-25T14:03","checkin":"2026-11-25T14:03"}
+{"who":"Sophie","text":"keep the string","posted":true,"at":"2026-11-25T14:20","checkin":"2026-11-25T14:20"}
+{"who":"Daniel","text":"i'm not bagging string","posted":true,"at":"2026-11-25T14:21","checkin":"2026-11-25T14:21"}
+{"who":"Sophie","text":"did anyone sort the final gas bill","posted":true,"at":"2026-11-25T16:30","checkin":"2026-11-25T16:30"}
+{"who":"Claire","text":"mark did it monday. it's done","posted":true,"at":"2026-11-25T16:48","checkin":"2026-11-25T16:48"}
+{"who":"Sophie","text":"thank you claire","posted":true,"at":"2026-11-25T16:49","checkin":"2026-11-25T16:49"}
+{"who":"Claire","text":"it was mark","posted":true,"at":"2026-11-25T16:49","checkin":"2026-11-25T16:49"}
+{"who":"Claire","text":"can we not start the drawers at 2am sophie. i mean it","posted":true,"at":"2026-11-25T21:05","checkin":"2026-11-25T21:05"}
+{"who":"Sophie","text":"i wasn't going to start at 2am","posted":true,"at":"2026-11-25T21:09","checkin":"2026-11-25T21:09"}
+{"who":"Sophie","text":"it's 2am for me that's when i'm awake","posted":true,"at":"2026-11-25T21:10","checkin":"2026-11-25T21:10"}
+{"who":"Daniel","text":"soph go to bed","posted":true,"at":"2026-11-25T21:12","checkin":"2026-11-25T21:12"}
+{"who":"Sophie","text":"found her glasses in the drawer. still in the case. the brown one","posted":true,"at":"2026-11-25T23:30","checkin":"2026-11-25T23:30"}
+{"who":"Daniel","text":"dont","posted":true,"at":"2026-11-25T23:31","checkin":"2026-11-25T23:31"}
+{"who":"Sophie","text":"ok not doing anything with them","posted":true,"at":"2026-11-25T23:33","checkin":"2026-11-25T23:33"}
+{"who":"Sophie","text":"i'm just going to look at the case","posted":true,"at":"2026-11-25T23:34","checkin":"2026-11-25T23:34"}
+{"who":"Sophie","text":"the coat's still on the back of the door. i checked","posted":true,"at":"2026-11-26T00:52","checkin":"2026-11-26T00:52"}

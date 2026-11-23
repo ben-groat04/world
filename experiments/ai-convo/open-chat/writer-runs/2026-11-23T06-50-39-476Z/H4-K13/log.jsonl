@@ -1,0 +1,144 @@
+{"writer":"w4","source":"/home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-21-41-430Z/K1-K13","model":"haiku","effort":"medium","days":2,"oracle":false,"cut":false,"complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2081,"cache_read_input_tokens":0,"output_tokens":3726,"output_tokens_details":{"thinking_tokens":2410},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2081,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3726,"cache_read_input_tokens":0,"cache_creation_input_tokens":2081,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2081},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":6,"cache_creation_input_tokens":11415,"cache_read_input_tokens":3351,"output_tokens":8630,"output_tokens_details":{"thinking_tokens":6654},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":11415,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":4,"output_tokens":630,"cache_read_input_tokens":3351,"cache_creation_input_tokens":8064,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":8064},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":5326,"cache_read_input_tokens":0,"output_tokens":3282,"output_tokens_details":{"thinking_tokens":1773},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5326,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3282,"cache_read_input_tokens":0,"cache_creation_input_tokens":5326,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5326},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sam","Priya","Connor"],"setting":"You are all in Manchester, and you met as housemates in a shared student house in Fallowfield about ten years ago, so you still see each other most weeks. You know each other's families, jobs and dating history well, and you have a long-running habit of arguing about films in this group chat. The film in question is a recent release you all watched on separate days, and it has split you.","opener":"Typing a long defence of the ending and tagging both of you.","cast":{"Sam":{"who":"31, man, the friend who started the argument","knows":"You know Priya as your oldest friend from the house, who you trust to be honest even when it stings. You know Connor as the friend who always has a contrarian take and who will defend anything once he's committed to it.","like":"You are quick to say what you think and quicker to laugh at yourself when you're wrong.","texts":"You mostly send the first message of the evening in this chat and now and then drop a link or a meme without being asked.","style":"You type in lowercase with few full stops, use the laughing-face emoji often, and abbreviate with \"tbh\" and \"rn\".","ex":[]},"Priya":{"who":"32, woman, the friend who thinks the ending is the best part","knows":"You know Sam as the friend you've shared a flat and a hundred takeaways with, and you know he will overthink every scene. You know Connor as the friend who loves to wind everyone up and who you have forgiven for many bad film recommendations.","like":"You are patient and warm, but you will hold your ground when you think you're right.","texts":"You now and then start a conversation in this chat, but mostly you reply when someone else has posted.","style":"You write with proper capitals and full punctuation, use emoji sparingly, and avoid abbreviations.","ex":[]},"Connor":{"who":"31, man, the friend who is deliberately provoking the argument","knows":"You know Sam as the friend who took the flat's bathroom too seriously and who always pretends not to care about your teasing. You know Priya as the friend who is always right about films, which you find very irritating.","like":"You are blunt and quick-witted, and you enjoy winding people up more than you let on.","texts":"You rarely start anything in this chat, and mostly you wait for someone else to post before you reply.","style":"You type in all lowercase with no punctuation, shorten words like \"nah\" and \"tbh\", and rarely use emoji.","ex":[]}},"private_lines":{"Sam":"You live alone in a rented flat in Levenshulme with a grumpy cat, and you work as a junior architect in an office in Ancoats. Your days are structured around commuting, a few drinks after work on Thursdays, and a run on weekends when the weather allows.","Priya":"You live in Chorlton with your partner Ola, and you teach Year 3 at a primary school in Withington. Your weekdays are full of lesson planning and marking, and your weekends are for a long walk, a bit of cooking, and catching up on the shows you've been meaning to watch.","Connor":"You live in Salford with your girlfriend Jess, and you work shifts at a logistics depot near the airport, so your hours change from week to week. Your days are a mix of early starts or late finishes, a pint with your mates when you can, and a lot of time spent on your phone."},"sleep":{"Sam":[23.5,7],"Priya":[22.5,6.5],"Connor":[23.75,7.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1276,"cache_read_input_tokens":0,"output_tokens":2433,"output_tokens_details":{"thinking_tokens":1287},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1276,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2433,"cache_read_input_tokens":0,"cache_creation_input_tokens":1276,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1276},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Friends arguing about a film.","topic":null}
+{"who":"Sam","text":"ok ive been thinking about the ending for three days and i need to get this out. i know i said it was a bit flat on tuesday but i was judging the wrong thing. the last ten minutes arent about whether the plot is tidy. theyre about her stopping needing the answer. every other scene shes chasing something and then the final shot she just doesnt. thats the whole film rn @Priya @Connor 😂","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Sam","text":"also the cut to black is doing a lot of work and people are sleeping on it","posted":true,"at":"2026-11-23T19:03","checkin":"2026-11-23T19:03"}
+{"who":"Priya","text":"Sam, that's a genuinely good argument and I'm annoyed you made it before I did. The stopping needing the answer thing is exactly it. I thought the cut was a bit cheeky at first and then it wasn't.","posted":true,"at":"2026-11-23T19:21","checkin":"2026-11-23T19:21"}
+{"who":"Connor","text":"nah","posted":true,"at":"2026-11-23T19:24","checkin":"2026-11-23T19:24"}
+{"who":"Sam","text":"connor you have to say more than nah","posted":true,"at":"2026-11-23T19:26","checkin":"2026-11-23T19:26"}
+{"who":"Connor","text":"it was a cut to black sam","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Priya","text":"Connor, you were complaining about the cut to black on the way out of the cinema. I was there.","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Connor","text":"was i","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Sam","text":"😂 he was","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"","react":"😂","to":8,"posted":false,"at":"2026-11-23T19:41"}
+{"who":"","react":"😂","to":8,"posted":false,"at":"2026-11-23T19:41"}
+{"who":"Sam","text":"anyway the phone call in the second act. priya you said that was the weak bit. im not having it","posted":true,"at":"2026-11-23T19:55","checkin":"2026-11-23T19:55"}
+{"who":"Priya","text":"I did say that. I still think it's the weak bit. It's the only place she explains herself and the film would have been braver without it. But I'll give you the ending.","posted":true,"at":"2026-11-23T20:10","checkin":"2026-11-23T20:10"}
+{"who":"Connor","text":"the phone call was the best bit tbh","posted":true,"at":"2026-11-23T20:12","checkin":"2026-11-23T20:12"}
+{"who":"Connor","text":"ok the phone call was the worst bit","posted":true,"at":"2026-11-23T20:12","checkin":"2026-11-23T20:12"}
+{"who":"Sam","text":"connor you cannot change your mind every 20 seconds","posted":true,"at":"2026-11-23T20:26","checkin":"2026-11-23T20:26"}
+{"who":"Connor","text":"i can if its the right call","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Priya","text":"I have thirty Year 3 persuasive essays about whether the Gruffalo is a good role model and I am going to stop reading them and reply to you lot instead","posted":true,"at":"2026-11-23T20:48","checkin":"2026-11-23T20:48"}
+{"who":"Connor","text":"the gruffalo is a menace","posted":true,"at":"2026-11-23T20:49","checkin":"2026-11-23T20:49"}
+{"who":"Sam","text":"the gruffalo is a menace 😂","posted":true,"at":"2026-11-23T20:49","checkin":"2026-11-23T20:49"}
+{"who":"Sam","text":"ok the ending. the reason it works is the score. the last note holds for longer than it should and youre left sitting in that, which is the whole point. the film isnt saying everythings resolved, its saying this is what it feels like when it isnt","posted":true,"at":"2026-11-23T21:15","checkin":"2026-11-23T21:15"}
+{"who":"Priya","text":"That's the best thing anyone's said about it. I'd have written that and I didn't.","posted":true,"at":"2026-11-23T21:17","checkin":"2026-11-23T21:17"}
+{"who":"Connor","text":"its a film about a woman not getting a phone call for 2 hours","posted":true,"at":"2026-11-23T21:22","checkin":"2026-11-23T21:22"}
+{"who":"Sam","text":"it's not","posted":true,"at":"2026-11-23T21:24","checkin":"2026-11-23T21:24"}
+{"who":"Connor","text":"it kind of is","posted":true,"at":"2026-11-23T21:24","checkin":"2026-11-23T21:24"}
+{"who":"Priya","text":"Connor I think you actually liked the middle bit and that's why you're being like this","posted":true,"at":"2026-11-23T21:40","checkin":"2026-11-23T21:40"}
+{"who":"Connor","text":"i did not like the middle bit","posted":true,"at":"2026-11-23T21:44","checkin":"2026-11-23T21:44"}
+{"who":"Connor","text":"the middle bit was fine","posted":true,"at":"2026-11-23T21:44","checkin":"2026-11-23T21:44"}
+{"who":"Priya","text":"Ola's already asleep and I'm going up soon. Sam, write your essay but send it to me in the morning, I'll read it with my tea.","posted":true,"at":"2026-11-23T22:05","checkin":"2026-11-23T22:05"}
+{"who":"Sam","text":"deal 😂","posted":true,"at":"2026-11-23T22:06","checkin":"2026-11-23T22:06"}
+{"who":"Sam","text":"im going to make a cup of tea and come back with a full case","posted":true,"at":"2026-11-23T22:52","checkin":"2026-11-23T22:52"}
+{"who":"Connor","text":"sam go to bed","posted":true,"at":"2026-11-23T23:02","checkin":"2026-11-23T23:02"}
+{"who":"Sam","text":"one more thing. the cut to black is a choice not a cop out. she isnt going to tell us. thats the ending","posted":true,"at":"2026-11-23T23:10","checkin":"2026-11-23T23:10"}
+{"who":"Connor","text":"ok sam","posted":true,"at":"2026-11-23T23:14","checkin":"2026-11-23T23:14"}
+{"who":"Sam","text":"ok thats all i've got 😂","posted":true,"at":"2026-11-23T23:16","checkin":"2026-11-23T23:16"}
+{"who":"Connor","text":"early start tomorrow. priya still thinks she won","posted":true,"at":"2026-11-23T23:40","checkin":"2026-11-23T23:40"}
+{"who":"Connor","text":"she didnt","posted":true,"at":"2026-11-23T23:41","checkin":"2026-11-23T23:41"}
+{"who":"Connor","text":"up","posted":true,"at":"2026-11-24T05:14","checkin":"2026-11-24T05:14"}
+{"who":"Connor","text":"they've got me on the airport side again. vans sitting in the rain","posted":true,"at":"2026-11-24T05:16","checkin":"2026-11-24T05:16"}
+{"who":"Priya","text":"Still waiting on the essay, Sam. I have a full day of Year 3 ahead and I would like to know what I'm arguing against before break.","posted":true,"at":"2026-11-24T06:33","checkin":"2026-11-24T06:33"}
+{"who":"Connor","text":"she's waiting on sam like a dog at a door","posted":true,"at":"2026-11-24T06:35","checkin":"2026-11-24T06:35"}
+{"who":"Priya","text":"Connor, that isn't a sentence.","posted":true,"at":"2026-11-24T06:52","checkin":"2026-11-24T06:52"}
+{"who":"Sam","text":"sorry asleep til 7 like a responsible adult 😂\npt 1 of 3","posted":true,"at":"2026-11-24T07:04","checkin":"2026-11-24T07:04"}
+{"who":"","react":"😂","to":40,"posted":false,"at":"2026-11-24T07:04"}
+{"who":"","react":"😂","to":40,"posted":false,"at":"2026-11-24T07:04"}
+{"who":"Sam","text":"the film is someone chasing an answer for two hours. the phone call is the only place we get told the answer and its the only place it stops mattering to her. the ending is her finally not needing it","posted":true,"at":"2026-11-24T07:04","checkin":"2026-11-24T07:04"}
+{"who":"Sam","text":"the score does the rest. last note holds past where you expect it to resolve and you're left with the feeling of not resolving. thats not a cop out thats the argument","posted":true,"at":"2026-11-24T07:05","checkin":"2026-11-24T07:05"}
+{"who":"Sam","text":"pt 2 is the cut. ill send it once i find my other shoe","posted":true,"at":"2026-11-24T07:08","checkin":"2026-11-24T07:08"}
+{"who":"Connor","text":"its a choice not a cop out. you wrote that last night like it was a fact","posted":true,"at":"2026-11-24T07:10","checkin":"2026-11-24T07:10"}
+{"who":"Priya","text":"Sam, I'm leaving at twenty to eight. Send me the second part before then or I'm reading it blind.","posted":true,"at":"2026-11-24T07:14","checkin":"2026-11-24T07:14"}
+{"who":"Sam","text":"its in the car. im in the car. shoe found","posted":true,"at":"2026-11-24T07:19","checkin":"2026-11-24T07:19"}
+{"who":"Priya","text":"Good. I'll read it at break.","posted":true,"at":"2026-11-24T07:22","checkin":"2026-11-24T07:22"}
+{"who":"Connor","text":"shift is dead. been loading the same pallet for an hour and a bloke keeps asking if it's the right pallet","posted":true,"at":"2026-11-24T09:03","checkin":"2026-11-24T09:03"}
+{"who":"Sam","text":"pt 2. the cut","posted":true,"at":"2026-11-24T09:31","checkin":"2026-11-24T09:31"}
+{"who":"Sam","text":"we want the phone call. she gives us the answer and it doesnt help. the cut is us getting exactly what we wanted and it still not being enough. thats why it stops. thats the choice","posted":true,"at":"2026-11-24T09:31","checkin":"2026-11-24T09:31"}
+{"who":"Priya","text":"Right. I've read it. The bit about the phone call being the thing we want is the best thing you've written since we were in Fallowfield, and I mean that. But I'm still not convinced the cut is a choice and not a dodge. You're asserting it. Give me the why at lunch and I'll concede.","posted":true,"at":"2026-11-24T10:41","checkin":"2026-11-24T10:41"}
+{"who":"Connor","text":"priya will never concede anything","posted":true,"at":"2026-11-24T10:52","checkin":"2026-11-24T10:52"}
+{"who":"Priya","text":"I conceded the ending on Monday. That's already a lot.","posted":true,"at":"2026-11-24T10:55","checkin":"2026-11-24T10:55"}
+{"who":"Sam","text":"thats a concession 😂 screenshotting it","posted":true,"at":"2026-11-24T11:10","checkin":"2026-11-24T11:10"}
+{"who":"Connor","text":"screenshotted","posted":true,"at":"2026-11-24T11:14","checkin":"2026-11-24T11:14"}
+{"who":"Sam","text":"pt 3 at lunch. the why is the last shot. shes not looking at her phone. thats it. thats the why. eating a sandwich now","posted":true,"at":"2026-11-24T12:40","checkin":"2026-11-24T12:40"}
+{"who":"Connor","text":"a shot of someone not looking at a phone. priya ur going to give him the win for that","posted":true,"at":"2026-11-24T12:44","checkin":"2026-11-24T12:44"}
+{"who":"Priya","text":"I'm going to think about it. It's a good shot.","posted":true,"at":"2026-11-24T13:02","checkin":"2026-11-24T13:02"}
+{"who":"Connor","text":"its a cop out with a nice shot","posted":true,"at":"2026-11-24T13:03","checkin":"2026-11-24T13:03"}
+{"who":"Sam","text":"connor you said the phone call was the best bit on monday","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Connor","text":"i said that for 20 seconds","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Sam","text":"cat has been sick on the rug and im not talking about it","posted":true,"at":"2026-11-24T14:47","checkin":"2026-11-24T14:47"}
+{"who":"Connor","text":"ur talking about it","posted":true,"at":"2026-11-24T14:48","checkin":"2026-11-24T14:48"}
+{"who":"Sam","text":"im talking about it 😂","posted":true,"at":"2026-11-24T14:50","checkin":"2026-11-24T14:50"}
+{"who":"","react":"😂","to":64,"posted":false,"at":"2026-11-24T14:50"}
+{"who":"","react":"😂","to":64,"posted":false,"at":"2026-11-24T14:50"}
+{"who":"","react":"😂","to":64,"posted":false,"at":"2026-11-24T14:50"}
+{"who":"Priya","text":"Ola says the Gruffalo essays are the best thing I've marked this term. She has no idea what I mean by that.","posted":true,"at":"2026-11-24T15:38","checkin":"2026-11-24T15:38"}
+{"who":"Priya","text":"Thursday drinks still on? Sam, Connor?","posted":true,"at":"2026-11-24T17:58","checkin":"2026-11-24T17:58"}
+{"who":"Sam","text":"yes obviously. the cat can sort itself out","posted":true,"at":"2026-11-24T18:20","checkin":"2026-11-24T18:20"}
+{"who":"Connor","text":"jess is on tues and thurs. might be able to swap. will say by wed","posted":true,"at":"2026-11-24T18:31","checkin":"2026-11-24T18:31"}
+{"who":"Priya","text":"Fine. I'll book the corner if we get there before the quiz people.","posted":true,"at":"2026-11-24T18:33","checkin":"2026-11-24T18:33"}
+{"who":"Priya","text":"Gruffalo essays done. Two say he's a good role model. One says he's a bully who has been mistaken for a hero, and it's the best argument of the lot. Year 3 are better at this than the three of us.","posted":true,"at":"2026-11-24T20:14","checkin":"2026-11-24T20:14"}
+{"who":"Connor","text":"the bully one is correct","posted":true,"at":"2026-11-24T20:16","checkin":"2026-11-24T20:16"}
+{"who":"Sam","text":"it's low","posted":true,"at":"2026-11-24T20:18","checkin":"2026-11-24T20:18"}
+{"who":"Sam","text":"found the director interview [link] she says the cut was the last thing they shot and they argued about it for a week","posted":true,"at":"2026-11-24T21:37","checkin":"2026-11-24T21:37"}
+{"who":"Priya","text":"Sam, I am not watching a director interview on a Tuesday.","posted":true,"at":"2026-11-24T21:52","checkin":"2026-11-24T21:52"}
+{"who":"Sam","text":"its 11 minutes","posted":true,"at":"2026-11-24T21:54","checkin":"2026-11-24T21:54"}
+{"who":"Connor","text":"11 minutes of her being annoyed at a journalist","posted":true,"at":"2026-11-24T21:55","checkin":"2026-11-24T21:55"}
+{"who":"Sam","text":"ok the why again but shorter. the film gives us the phone call so we know what she wants. the cut takes it away. we're left with wanting it and nothing to hold. thats the only shot where we do the not needing too","posted":true,"at":"2026-11-24T22:10","checkin":"2026-11-24T22:10"}
+{"who":"Priya","text":"That's the why. I'm conceding the cut. Not the phone call.","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Connor","text":"so ur both wrong about the phone call","posted":true,"at":"2026-11-24T22:15","checkin":"2026-11-24T22:15"}
+{"who":"Sam","text":"connor the phone call is the film","posted":true,"at":"2026-11-24T22:16","checkin":"2026-11-24T22:16"}
+{"who":"Connor","text":"the phone call is 9 minutes of explaining. thats what it is","posted":true,"at":"2026-11-24T22:19","checkin":"2026-11-24T22:19"}
+{"who":"Priya","text":"Night all. Connor, I am right about the phone call and you know it.","posted":true,"at":"2026-11-24T22:24","checkin":"2026-11-24T22:24"}
+{"who":"Connor","text":"night priya. still think ur wrong","posted":true,"at":"2026-11-24T22:26","checkin":"2026-11-24T22:26"}
+{"who":"Connor","text":"sam go to bed","posted":true,"at":"2026-11-24T23:08","checkin":"2026-11-24T23:08"}
+{"who":"Sam","text":"going. the cat has won 😂","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"","react":"😂","to":85,"posted":false,"at":"2026-11-24T23:12"}
+{"who":"Connor","text":"night sam","posted":true,"at":"2026-11-24T23:14","checkin":"2026-11-24T23:14"}
+{"who":"Connor","text":"jess swapped. im off thurs. drinks on","posted":true,"at":"2026-11-25T05:52","checkin":"2026-11-25T05:52"}
+{"who":"Priya","text":"Morning. Connor, is that a definite yes or a \"might\" with a fancy hat on it?","posted":true,"at":"2026-11-25T06:41","checkin":"2026-11-25T06:41"}
+{"who":"Priya","text":"Also Sam, did the cat survive last night?","posted":true,"at":"2026-11-25T06:44","checkin":"2026-11-25T06:44"}
+{"who":"Sam","text":"morning. cat is fine. cat ate half a rug tho","posted":true,"at":"2026-11-25T07:02","checkin":"2026-11-25T07:02"}
+{"who":"Sam","text":"vet is asking 40 quid to tell me what i already know 😂","posted":true,"at":"2026-11-25T07:03","checkin":"2026-11-25T07:03"}
+{"who":"Connor","text":"its a might. shes swapping with a lad called dean. dean is not confirmed","posted":true,"at":"2026-11-25T07:33","checkin":"2026-11-25T07:33"}
+{"who":"Priya","text":"Right. I'll book the corner for half seven and we'll see who turns up.","posted":true,"at":"2026-11-25T07:35","checkin":"2026-11-25T07:35"}
+{"who":"Connor","text":"dont put my name on anything priya","posted":true,"at":"2026-11-25T07:36","checkin":"2026-11-25T07:36"}
+{"who":"Sam","text":"[link]","posted":true,"at":"2026-11-25T07:52","checkin":"2026-11-25T07:52"}
+{"who":"Sam","text":"the cat in this video has the exact same face as the cat in my flat","posted":true,"at":"2026-11-25T07:52","checkin":"2026-11-25T07:52"}
+{"who":"Priya","text":"That is not a face, that is a cat making a decision about you.","posted":true,"at":"2026-11-25T08:10","checkin":"2026-11-25T08:10"}
+{"who":"Sam","text":"😂","posted":true,"at":"2026-11-25T08:11","checkin":"2026-11-25T08:11"}
+{"who":"Sam","text":"lunch. rug is in the bin. not talking about it","posted":true,"at":"2026-11-25T12:18","checkin":"2026-11-25T12:18"}
+{"who":"Connor","text":"ur talking about it","posted":true,"at":"2026-11-25T12:19","checkin":"2026-11-25T12:19"}
+{"who":"Connor","text":"been sat in a van 40 mins waiting for a trailer to get unloaded. nothing to do but think about the phone call","posted":true,"at":"2026-11-25T13:02","checkin":"2026-11-25T13:02"}
+{"who":"Sam","text":"connor please","posted":true,"at":"2026-11-25T13:04","checkin":"2026-11-25T13:04"}
+{"who":"Connor","text":"im serious. 9 minutes of explaining","posted":true,"at":"2026-11-25T13:04","checkin":"2026-11-25T13:04"}
+{"who":"Priya","text":"I have been marking all lunch. One child has written that the Gruffalo is a bully because he eats mice, and that the mice are \"just doing their jobs.\" I have never been prouder of anyone.","posted":true,"at":"2026-11-25T13:15","checkin":"2026-11-25T13:15"}
+{"who":"Sam","text":"😂","posted":true,"at":"2026-11-25T13:17","checkin":"2026-11-25T13:17"}
+{"who":"Connor","text":"ur being nice to the essay kid","posted":true,"at":"2026-11-25T13:19","checkin":"2026-11-25T13:19"}
+{"who":"Priya","text":"I'm being honest, which is harder.","posted":true,"at":"2026-11-25T13:22","checkin":"2026-11-25T13:22"}
+{"who":"Connor","text":"still on the airport side. one of the vans has a dog in it. wont say more","posted":true,"at":"2026-11-25T15:47","checkin":"2026-11-25T15:47"}
+{"who":"Sam","text":"say more","posted":true,"at":"2026-11-25T15:51","checkin":"2026-11-25T15:51"}
+{"who":"Connor","text":"its asleep in the footwell. dont think its meant to be in there","posted":true,"at":"2026-11-25T15:58","checkin":"2026-11-25T15:58"}
+{"who":"Priya","text":"Connor, please tell your depot manager that a dog in a van is not a logistics issue.","posted":true,"at":"2026-11-25T16:02","checkin":"2026-11-25T16:02"}
+{"who":"Connor","text":"im not telling anyone anything. im just watching it","posted":true,"at":"2026-11-25T16:03","checkin":"2026-11-25T16:03"}
+{"who":"Sam","text":"done for the day. the office has a new coffee machine and everyone's acting like it's a wedding","posted":true,"at":"2026-11-25T18:40","checkin":"2026-11-25T18:40"}
+{"who":"Sam","text":"pls send help","posted":true,"at":"2026-11-25T18:41","checkin":"2026-11-25T18:41"}
+{"who":"Connor","text":"jess is home. she says she hasnt seen the film and she'd rather watch the gruffalo","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Priya","text":"Jess has better taste than all three of us.","posted":true,"at":"2026-11-25T19:14","checkin":"2026-11-25T19:14"}
+{"who":"Connor","text":"wont argue with that","posted":true,"at":"2026-11-25T19:15","checkin":"2026-11-25T19:15"}
+{"who":"Connor","text":"ok im in for thurs. dont make me sit near the quiz people","posted":true,"at":"2026-11-25T19:20","checkin":"2026-11-25T19:20"}
+{"who":"Sam","text":"corner is booked. priya booked it at 7:35 am like a hostage negotiator 😂","posted":true,"at":"2026-11-25T19:22","checkin":"2026-11-25T19:22"}
+{"who":"Priya","text":"Someone had to.","posted":true,"at":"2026-11-25T19:23","checkin":"2026-11-25T19:23"}
+{"who":"Sam","text":"ok the phone call thing again. i know. i'm not doing a third essay. priya sorry for three days of essays","posted":true,"at":"2026-11-25T21:48","checkin":"2026-11-25T21:48"}
+{"who":"Priya","text":"Sam, you are forgiven, and I'd like the essays back in writing by Friday.","posted":true,"at":"2026-11-25T21:52","checkin":"2026-11-25T21:52"}
+{"who":"Sam","text":"😂 deal","posted":true,"at":"2026-11-25T21:53","checkin":"2026-11-25T21:53"}
+{"who":"Sam","text":"bed soon. the shoe thing happened again. i found it in the fridge","posted":true,"at":"2026-11-25T22:40","checkin":"2026-11-25T22:40"}
+{"who":"Connor","text":"how","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Sam","text":"i dont want to know","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Priya","text":"Ola's reading and I'm trying to get to bed before my Year 3 spelling test tomorrow. Night all.","posted":true,"at":"2026-11-25T22:58","checkin":"2026-11-25T22:58"}
+{"who":"Connor","text":"night priya. the gruffalo is still a menace","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}
+{"who":"Sam","text":"night. priya the essay stands","posted":true,"at":"2026-11-25T23:09","checkin":"2026-11-25T23:09"}
+{"who":"Priya","text":"It does not stand, Sam.","posted":true,"at":"2026-11-25T23:11","checkin":"2026-11-25T23:11"}
+{"who":"Connor","text":"bring it thurs. ill read it in the corner","posted":true,"at":"2026-11-25T23:13","checkin":"2026-11-25T23:13"}
+{"who":"Sam","text":"😂 night connor","posted":true,"at":"2026-11-25T23:14","checkin":"2026-11-25T23:14"}
+{"who":"Connor","text":"cant sleep. still think the phone call is 9 minutes","posted":true,"at":"2026-11-26T00:14","checkin":"2026-11-26T00:14"}

@@ -1,0 +1,23 @@
+RUN /tmp/claude-0/smoke/export/run.json
+live: day 1: 18 messages
+TURN /tmp/claude-0/smoke/export/turn-0000.json
+TURN /tmp/claude-0/smoke/export/turn-0001.json
+TURN /tmp/claude-0/smoke/export/turn-0002.json
+TURN /tmp/claude-0/smoke/export/turn-0003.json
+TURN /tmp/claude-0/smoke/export/turn-0004.json
+TURN /tmp/claude-0/smoke/export/turn-0005.json
+TURN /tmp/claude-0/smoke/export/turn-0006.json
+TURN /tmp/claude-0/smoke/export/turn-0007.json
+TURN /tmp/claude-0/smoke/export/turn-0008.json
+TURN /tmp/claude-0/smoke/export/turn-0009.json
+TURN /tmp/claude-0/smoke/export/turn-0010.json
+TURN /tmp/claude-0/smoke/export/turn-0011.json
+TURN /tmp/claude-0/smoke/export/turn-0012.json
+TURN /tmp/claude-0/smoke/export/turn-0013.json
+TURN /tmp/claude-0/smoke/export/turn-0014.json
+TURN /tmp/claude-0/smoke/export/turn-0015.json
+TURN /tmp/claude-0/smoke/export/turn-0016.json
+TURN /tmp/claude-0/smoke/export/turn-0017.json
+DONE /tmp/claude-0/smoke/export/run.json
+live: 18 messages, 2026-11-23T06:40 to 2026-11-23T21:03
+list: /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-38-223Z/list.txt

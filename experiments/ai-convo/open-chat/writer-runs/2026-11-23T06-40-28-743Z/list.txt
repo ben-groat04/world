@@ -1,0 +1,7 @@
+I3-K2 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K2
+I3-K3 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K3
+I3-K4 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K4
+I3-K5 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K5
+I3-K6 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K6
+I3-K7 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K7
+I3-K8 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T06-40-28-743Z/I3-K8

@@ -1,0 +1,353 @@
+--- Mon 06:45, Rhys
+is the snowdon ranger path open. and how long does it take
+
+--- Mon 07:18, Gethin
+dont know honestly. havent been up since october. wasnt snowing then
+
+--- Mon 07:22, Rhys
+ok who checks
+
+--- Mon 07:55, Nia
+I haven't checked either. Can we agree that nobody sets off without the summit forecast from the Met Office, not the Bangor one? I'll write a list of what we need to check and post it later.
+(👍 2)
+
+--- Mon 08:04, Gethin
+👍
+
+--- Mon 08:31, Gethin
+[photo]
+
+bramble got into the mud at llyn padarn again
+
+--- Mon 09:40, Eleri
+Only just up. Nia can I have the list when you've got it. I'm not going up without checking the forecast myself. The summit is a different place from the valley.
+
+--- Mon 09:44, Rhys
+its not a different place. its a hill
+
+--- Mon 10:12, Nia
+Three things for the list: path status, summit forecast, and what time it gets dark. Rhys, it's the same question, just with the answer we need.
+
+--- Mon 10:30, Rhys
+in a call till 12. cant look
+
+--- Mon 12:05, Gethin
+shop quiet for 2 mins. someone just ask claude, its faster than us guessing
+
+--- Mon 12:50, Rhys
+ok
+
+--- Mon 12:51, Rhys
+@claude is the snowdon ranger path open right now? and how long does it take to the summit in late november, snow or no snow. also the met office forecast for the summit for the next few days if you can find it
+
+--- Mon 12:52, Claude
+**Is the path open?** I couldn't confirm either way. The [Eryri National Park page for the Snowdon Ranger path](https://www.eryri.llyw.cymru/walk/snowdon-ranger/) shows no closure notice, but it isn't a live status page. It points to [yrwyddfa.live](https://yrwyddfa.live) for current ground conditions. My searches found no recent closure news. I'd check yrwyddfa.live before you set off.
+
+**Time to the summit:** The Eryri page gives 6 hours for the round trip, covering 13 km with 936 m of ascent. That puts the one-way distance at about 6.5 km. Other sources I found, [Walking Club](https://www.walkingclub.org.uk/walk/snowdon/) and [SummitPost](https://www.summitpost.org/route/156152/snowdon-ranger-path.html), give about 2¾ hours up in summer. [Snowdon Info](https://snowdoninfo.com/snowdon-in-winter/) says to allow almost double the normal time in deep snow. That would mean roughly 4–5½ hours up, which is my own estimate rather than a published figure. Late November also gives short daylight, so take a head torch. Once the snow is hard or icy, you'd need an ice axe and crampons, plus the skills to use them.
+
+**Met Office forecast** (issued 03:15 UTC, 23 Nov, from the [Met Office Snowdonia mountain page](https://weather.metoffice.gov.uk/specialist-forecasts/mountain/snowdonia)). The summit-specific section was empty, so these figures are for 900 m, and the summit is 1,085 m, so expect it to be harsher.
+- **Mon 23:** The wind is south-easterly at 17–26 mph, with gusts of 24–34 mph. It's 0–2°C, but feels like about −6°C. The freezing level is 700 m, rising later. There's a small chance of sleet by evening. The page contradicts itself on cloud and rain: one section says settled, another says rain and very poor visibility.
+- **Tue 24:** Conditions turn worse, with heavier rain possible in the morning.
+- **Wed 25:** Rain and drizzle clear by the afternoon, but it stays cloudy. The breeze is light and north-easterly. The freezing level is near the summits, lowering to 500 m.
+- **Thu 26:** It's dry and cloudy, with a light south-easterly breeze. The freezing level is 500 m, rising to just above the summits.
+- **Fri 27:** Rain moves in from the west, with strong southerly winds that ease later. Confidence in the timing is low.
+
+The best window looks like Wednesday or Thursday, though both will be cloudy. Because the freezing level sits around the summits, expect ice or wet snow up high. For a more detailed summit outlook, the [MWIS Snowdonia forecast](https://www.mwis.org.uk) is worth reading. I didn't find a current one.
+
+--- Mon 12:58, Eleri
+Read the whole forecast, not just the first line. It says settled in one place and rain and very poor visibility in another. The summit section was empty, so those numbers are for 900m. Claude said that too.
+
+--- Mon 13:03, Rhys
+so is it open or not
+
+--- Mon 13:04, Gethin
+no closure notice. thats all claude could say. yrwyddfa is the one, the rangers post real conditions. check the webcam too
+
+--- Mon 13:09, Rhys
+ok so yes?
+
+--- Mon 13:11, Gethin
+probably yes 👍
+
+--- Mon 13:14, Eleri
+"Probably" is what we're trying to get away from.
+
+--- Mon 13:20, Rhys
+its a hill eleri
+
+--- Mon 13:21, Eleri
+The part that matters is the top, and that's what the forecast is about. Valley weather isn't the same. I'm not arguing with you, I just want the right numbers.
+
+--- Mon 13:30, Nia
+List so far.
+Path status: yrwyddfa.live, check again the day we go, not just now.
+Summit forecast: MWIS, plus the Met Office summit section (it was blank today, so check again tomorrow).
+Dark time: need to look up for the day, I'll ask Claude.
+Anything else?
+(👍 2)
+
+--- Mon 13:33, Gethin
+kit. everyone check you've got a head torch with batteries. rhys yours is in your kitchen drawer i saw it
+
+--- Mon 13:35, Rhys
+i have a head torch
+
+--- Mon 13:36, Eleri
+If it's frozen we need an ice axe and crampons, not optional. Gethin you own crampons, don't you
+
+--- Mon 13:40, Gethin
+yeah. dont know if mine fit everyone's boots. can get more from the shop, staff discount
+
+--- Mon 13:44, Rhys
+ill sort my kit. gethin is it still a 7am start
+
+--- Mon 13:46, Gethin
+depends on the forecast. wed or thu is the window if it holds. 7am at the car is fine for thu
+
+--- Mon 13:50, Nia
+Wed or Thu, agreed. I'll put it in the group calendar once we've confirmed on the day.
+
+--- Mon 14:20, Eleri
+Just reading the forecast properly now. Nights this week, so I'm up at odd times.
+
+--- Mon 14:24, Rhys
+you already read it eleri
+
+--- Mon 14:26, Eleri
+Yes, and I'm reading it again. The Met Office summit section is still blank, so the best I've got is MWIS, which Claude couldn't find a current version of.
+
+--- Mon 14:28, Eleri
+I'll look for it myself and post what it says when I can get it to load.
+
+--- Mon 15:02, Gethin
+[photo]
+
+frost on the car this morning. bramble refused to get in
+
+--- Mon 15:06, Rhys
+ok thats cold
+
+--- Mon 15:20, Rhys
+flatmate's on nights so the kitchen's mine till whenever
+
+--- Mon 15:31, Gethin
+back at the shop. someone bought the whole winter range in ten mins. hats going fast
+
+--- Mon 15:33, Gethin
+gloves too
+
+--- Mon 15:48, Eleri
+MWIS won't load on my phone. Will try again when I'm on the laptop.
+
+--- Mon 15:50, Nia
+@claude what time is sunset in Llanberis on Wed 25 and Thu 26 Nov, and the sunrise times too, so we know how long the day is
+
+--- Mon 15:51, Claude
+Here are the times for Llanberis (UK time, GMT):
+
+| Date | Sunrise | Sunset | Day length |
+|---|---|---|---|
+| Wed 25 Nov | 7:54 am | 4:12 pm | about 8h 18m |
+| Thu 26 Nov | 7:55 am | 4:11 pm | about 8h 15m |
+
+The days are getting about 2½ minutes shorter each day. Sunset is around 4:10 pm, so you'll want to be off the hills by about then. Dusk adds a little usable light after sunset.
+
+I could only check one source, [sunrisesunset.io](https://sunrisesunset.io/gb/wales/llanberis/). I couldn't open timeanddate.com to cross-check, because it blocked me. Treat the times as accurate to within a minute or so.
+
+Sources:
+- [Sunrise Sunset – Llanberis](https://sunrisesunset.io/gb/wales/llanberis/)
+
+--- Mon 15:58, Nia
+Sunset is 4:12 Wed, so we need to be off the top by 3 at the latest. I've added that to the list.
+(👍 2)
+
+--- Mon 16:04, Gethin
+7am at the car means light by 8. off the summit by 3 is 8 hours. fine 👍
+
+--- Mon 16:06, Gethin
+if we're slow there's still dusk but dont count on it
+
+--- Mon 16:21, Rhys
+ok so 8 hours. who has a watch
+
+--- Mon 16:22, Gethin
+everyone has a phone rhys
+
+--- Mon 17:05, Gethin
+[photo]
+
+shop closes in 20. bramble waiting outside with her lead in her mouth 🐕
+
+--- Mon 17:40, Eleri
+I'm off to bed now and up again at 19:00 for tonight. Nia, the list is good. Crampon fit needs to go on it too. Boots should be checked, not guessed.
+
+--- Mon 18:02, Nia
+Winter kit list is drafted. I'll post it after tea. Boots noted.
+
+--- Mon 18:20, Rhys
+flatmate's out. im cooking. what does hiking food mean
+
+--- Mon 18:24, Gethin
+flapjack and something salty. flask too. dont eat the flapjack at the bottom its for the ridge 🍫
+
+--- Mon 18:25, Rhys
+bit late for a flask tonight. ill get one tomorrow
+
+--- Mon 19:12, Eleri
+Up. Laptop on. The MWIS page is loading slowly. I can see a section headed summit with a lot of blank cells, and I can't make out what's in it yet.
+
+--- Mon 19:40, Nia
+If the MWIS summit bit is hard to read, did you check the Met Office one again or just MWIS?
+
+--- Mon 19:44, Eleri
+Met Office was blank at 12, so I went to MWIS. I'll check the Met Office again after this.
+
+--- Mon 20:10, Gethin
+out with bramble. hill above the quarry clear. dusting on the tops though 🏔️
+
+--- Mon 20:12, Gethin
+[photo]
+
+dusting on the carneddau. enough to see from the path. snowdon is probably white up top
+
+--- Mon 20:20, Eleri
+That's a view from the carneddau, not the summit. Can we get the Met Office summit section before the snow decides it for us.
+
+--- Mon 20:24, Gethin
+yeah i know. its a view. just saying what i saw
+
+--- Mon 20:31, Rhys
+is this going to be a thing for the whole week
+
+--- Mon 20:33, Nia
+(Yes.)
+
+--- Mon 21:02, Eleri
+The Met Office summit section is loading now. It's still blank for today. The later days have something in them, but I'm not reading any of it out from memory.
+
+--- Mon 21:06, Eleri
+@claude can you pull the summit forecast from the Met Office Snowdonia page for Wed 25 and Thu 26 Nov, and the MWIS Snowdonia summit outlook for the same days if there is one. Wind, cloud, freezing level and visibility please. Say which bits you couldn't find.
+
+--- Mon 21:07, Claude
+I got both pages. Neither gave everything you asked for.
+
+**Met Office, Eryri/Snowdonia mountain forecast** (issued Mon 23 Nov, 03:15 UTC)
+
+| | Wed 25 Nov | Thu 26 Nov |
+|---|---|---|
+| Wind | Light north-easterly | Light south-easterly |
+| Cloud | Rain and drizzle clearing by the afternoon, but staying cloudy | Dry and cloudy all day |
+| Freezing level | Just above the summits, lowering to 500 m | 500 m, rising to just above the summits in the afternoon |
+| Visibility | Not stated | Not stated |
+
+**MWIS, Snowdonia summit forecast** (issued Sun 22 Nov, 3 pm)
+- **Thu 26 Nov:** There is nothing for this day. The forecast I could open only covers Mon 23 to Wed 25.
+- **Wed 25 Nov wind:** Easterly, 20–25 mph. Gusts may top 30 mph on the higher tops and some western slopes.
+- **Wed 25 Nov cloud:** Cloud banks over many hills in the morning, probably lasting over the eastern hills. It should thin towards the west.
+- **Wed 25 Nov freezing level:** MWIS gave no height. It said much of the high ground stays partly frozen above 500 m.
+- **Wed 25 Nov visibility:** Very good where it's dry, but poorer in early sleet or snow.
+
+**What I couldn't find**
+- The Met Office page gave no visibility for either day. It also gave no wind speeds or gusts and no cloud base heights.
+- There is no MWIS outlook for Thu 26 in the version I opened.
+- MWIS gave no freezing level height for Wed 25.
+
+**Where the two disagree for Wed 25**
+- The Met Office says "light" wind. MWIS says 20–25 mph with gusts over 30 mph.
+- The Met Office says rain and drizzle. MWIS mentions early sleet or snow.
+- MWIS is the older of the two forecasts. Check for a newer one before you rely on it.
+
+Sources:
+- [Met Office Eryri/Snowdonia mountain forecast](https://weather.metoffice.gov.uk/specialist-forecasts/mountain/snowdonia)
+- [MWIS Snowdonia forecast](https://www.mwis.org.uk/english-welsh-forecast/SD)
+
+--- Mon 21:19, Nia
+Thanks. MWIS says Wed is the rougher day, Met Office says light wind. Both can't be right for the same hill.
+
+--- Mon 21:22, Eleri
+They can both be wrong in different ways. MWIS is the older one. The Met Office summit section is still blank for today, so I'm not counting it yet.
+
+--- Mon 21:25, Rhys
+so wed is out?
+
+--- Mon 21:27, Nia
+Not out, just not decided. Thursday has no MWIS at all, so that's a gap too.
+
+--- Mon 21:29, Rhys
+thursday then. dry and cloudy. fine day for a hill
+
+--- Mon 21:31, Eleri
+Cloudy is fine. Freezing level at 500 and rising to just above the summits in the afternoon means ice up top after lunch.
+
+--- Mon 21:33, Rhys
+ice on top = axe and crampons. i heard you the first time
+
+--- Mon 21:34, Eleri
+Yes. Just making sure it's in the list.
+
+--- Mon 21:50, Nia
+I'll put Wed and Thu on the list as possible days. Decision on the day, not tonight. Check the summit section each morning, and MWIS again if there's a newer one.
+(👍 1)
+
+--- Mon 22:14, Rhys
+gethin's gone quiet. hes asleep isnt he
+
+--- Mon 22:16, Nia
+He'll be asleep by now. He'll see all this at six.
+
+--- Mon 22:40, Rhys
+found a flask. its my mums. lid doesnt fit
+
+--- Mon 22:44, Eleri
+A flask with a lid that doesn't fit is a bad idea on a ridge. Get a new one.
+
+--- Mon 22:47, Rhys
+ok ok
+
+--- Mon 23:02, Rhys
+will sort it tomorrow
+
+--- Mon 23:20, Rhys
+going to bed. dont decide anything without me
+
+--- Mon 23:24, Eleri
+We'll decide on the day, with the forecast. Not without you.
+
+--- Mon 23:58, Nia
+Writing the kit list now. Might be past midnight before it's up.
+
+--- Tue 00:41, Eleri
+Met Office summit section is still blank for today. I'll look again at 6 when the new one should be out. Rhys, what size are your boots? Crampons need checking against them.
+
+--- Tue 00:52, Nia
+Kit list is up in the group now. Boots, crampon fit, head torch with batteries, flask with a working lid, spare layers, food for the ridge.
+(👍 1)
+
+--- Tue 00:55, Eleri
+"Spare layers" needs a number. How many, and whose are they.
+
+--- Tue 06:14, Eleri
+Met Office summit section still blank for today. Refreshing. Will post what loads.
+
+--- Tue 06:31, Gethin
+up. 2 mid layers + 1 insulated each. own kit. i've got a spare puffy if anyone's short
+
+--- Tue 06:33, Gethin
+bramble wants her walk. out for 40 min 🏔️
+
+--- Tue 07:02, Rhys
+boots are 10. will get a flask at lunch. a proper one this time
+
+--- Tue 07:05, Nia
+Thanks Gethin. Rhys, boots 10 noted. Layers are in the list as 2 mid + 1 insulated each, own kit, spare puffy from Gethin. I'll repost the list at lunch.
+
+--- Tue 07:40, Rhys
+ok. is thu still a maybe or a yes
+
+--- Tue 07:52, Eleri
+Still a maybe. The forecast hasn't changed since last night, it's just a new day.
+
+--- Tue 08:21, Eleri
+Met Office summit section has loaded for today. I'm not reading it out from memory.
+
+@claude please pull the Met Office Snowdonia summit section for Wed 25 and Thu 26 Nov as it stands now: wind, gusts, cloud, freezing level and visibility. Also check whether MWIS has a newer Snowdonia issue than the one from Sun 22 Nov. Say what you couldn't find.

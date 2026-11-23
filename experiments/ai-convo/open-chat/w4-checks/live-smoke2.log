@@ -1,0 +1,23 @@
+06:55:40 RUN /tmp/claude-0/smoke/export2/run.json
+06:55:53 live: day 1: 20 messages
+06:55:53 TURN /tmp/claude-0/smoke/export2/turn-0000.json
+06:55:56 TURN /tmp/claude-0/smoke/export2/turn-0001.json
+06:55:56 TURN /tmp/claude-0/smoke/export2/turn-0002.json
+06:55:59 TURN /tmp/claude-0/smoke/export2/turn-0003.json
+06:56:03 live: day 2: 24 messages
+06:56:11 TURN /tmp/claude-0/smoke/export2/turn-0004.json
+06:56:11 TURN /tmp/claude-0/smoke/export2/turn-0005.json
+06:56:34 TURN /tmp/claude-0/smoke/export2/turn-0006.json
+06:56:40 TURN /tmp/claude-0/smoke/export2/turn-0007.json
+06:56:41 TURN /tmp/claude-0/smoke/export2/turn-0008.json
+06:57:23 TURN /tmp/claude-0/smoke/export2/turn-0009.json
+06:57:24 TURN /tmp/claude-0/smoke/export2/turn-0010.json
+06:57:26 TURN /tmp/claude-0/smoke/export2/turn-0011.json
+06:57:58 TURN /tmp/claude-0/smoke/export2/turn-0012.json
+06:58:07 TURN /tmp/claude-0/smoke/export2/turn-0013.json
+06:58:11 TURN /tmp/claude-0/smoke/export2/turn-0014.json
+06:58:13 TURN /tmp/claude-0/smoke/export2/turn-0015.json
+06:58:17 TURN /tmp/claude-0/smoke/export2/turn-0016.json
+06:58:19 TURN /tmp/claude-0/smoke/export2/turn-0017.json
+07:00:41 TURN /tmp/claude-0/smoke/export2/turn-0018.json
+07:00:45 TURN /tmp/claude-0/smoke/export2/turn-0019.json

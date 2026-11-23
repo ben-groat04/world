@@ -1,0 +1,109 @@
+{"writer":"w4","model":"haiku","effort":"medium","days":2,"oracle":false,"complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2095,"cache_read_input_tokens":0,"output_tokens":3678,"output_tokens_details":{"thinking_tokens":2308},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2095,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3678,"cache_read_input_tokens":0,"cache_creation_input_tokens":2095,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2095},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3407,"cache_read_input_tokens":0,"output_tokens":3086,"output_tokens_details":{"thinking_tokens":2014},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3407,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3086,"cache_read_input_tokens":0,"cache_creation_input_tokens":3407,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3407},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4478,"cache_read_input_tokens":0,"output_tokens":2558,"output_tokens_details":{"thinking_tokens":1529},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4478,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2558,"cache_read_input_tokens":0,"cache_creation_input_tokens":4478,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4478},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Lerato","Riaan","Nadia"],"setting":"You all live in Cape Town, South Africa. You are siblings who grew up together in Bellville, and you know each other's habits, moods and history. Your gran died in the spring, and her flat in Observatory has to be emptied and handed back at the end of the month. You all know the flat is full of forty years of stuff and that nobody has agreed yet on who takes what.","opener":"Suggesting we set a Saturday to split the rooms and decide on the wardrobe.","cast":{"Lerato":{"who":"42, woman, the eldest sibling","knows":"You know Riaan is your middle brother, the one who is always fixing something, and you know he can be stubborn about sentiment. You know Nadia is your youngest sister, the one who lives furthest from Gran and feels guilty about it.","like":"You are organised and practical, and you prefer to get things settled rather than let them drift.","texts":"You message the group now and then, mostly when something needs deciding or someone has to be reminded of a deadline.","style":"You type in full sentences with normal capitals and full stops, and you use the odd emoji but rarely.","lives":[],"ex":[]},"Riaan":{"who":"38, man, the middle sibling","knows":"You know Lerato is your big sister, the one who organises everyone and expects things done properly. You know Nadia is your little sister, the one you still half-think of as the baby, even though she is grown.","like":"You are warm and a bit impatient, and you say what you think quickly.","texts":"You message the group fairly often, especially with photos of things you find in the flat or random opinions about what to do with them.","style":"You type quickly in lowercase with few full stops, and you use abbreviations like \"ja\" and \"nah\" and the occasional thumbs-up emoji.","lives":[],"ex":[]},"Nadia":{"who":"33, woman, the youngest sibling","knows":"You know Lerato is your eldest sister, the one who has always been a bit of a parent to you. You know Riaan is your older brother, the one who will argue about anything and then help you carry it.","like":"You are gentle and a bit anxious, and you tend to agree with whoever spoke last.","texts":"You rarely start a conversation in the group and mostly reply or react when someone else messages.","style":"You type in normal sentences with capitals and proper punctuation, and you use emoji and heart reactions more than the others do.","lives":[],"ex":[]}},"private_lines":{"Lerato":"You live alone in a small flat in Mowbray with a grey cat called Sizwe. You work as a pharmacist at a pharmacy in Claremont, so your days are shift-based and fairly predictable. You cook a proper dinner most nights and go to bed early when you are on early shifts.","Riaan":"You live in Bellville, in a house you rent with a small backyard where you keep a bakkie and too many tools. You are an electrician and run your own small business, so your days start early and involve a lot of driving between jobs. You have a dog and a loud, friendly neighbour who you have a long running joke with.","Nadia":"You live in a shared flat in Woodstock with two flatmates who are not in this chat. You work as a graphic designer for a small agency, mostly from home, and you spend a lot of evenings on freelance work. Your days are fairly loose, with a run in the morning when you can manage it."},"sleep":{"Lerato":[23,6],"Riaan":[22.5,5.5],"Nadia":[0,7.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1292,"cache_read_input_tokens":0,"output_tokens":2644,"output_tokens_details":{"thinking_tokens":1425},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1292,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2644,"cache_read_input_tokens":0,"cache_creation_input_tokens":1292,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1292},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Siblings clearing out a grandparent's flat.","topic":null}
+{"who":"Lerato","text":"Can we pick a Saturday to do the rooms? And we need to decide the wardrobe. Keys go back on the 30th","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Riaan","text":"ja saturday works. morning? i can do after 9","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-11-23T19:12"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-11-23T19:12"}
+{"who":"Nadia","text":"Saturday works for me! I can do the morning too 🙂","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Lerato","text":"9 then? I'll bring coffee and bin bags. Riaan can you bring the bakkie for the wardrobe","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Riaan","text":"its a wardrobe lerato not a piano","posted":true,"at":"2026-11-23T19:21","checkin":"2026-11-23T19:21"}
+{"who":"Riaan","text":"yes ill bring it","posted":true,"at":"2026-11-23T19:23","checkin":"2026-11-23T19:23"}
+{"who":"Nadia","text":"Is it the big wooden one in her room? With the mirror?","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Lerato","text":"Yes. The one in the spare room is the old one. The mirror is in the hall","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Riaan","text":"[photo: old brass key on a bit of string] found this in the kitchen drawer. no idea what it opens","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Nadia","text":"Oh that's Gran's key ring?? The one with the Virgin Mary on it","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Riaan","text":"ja probably. nadia i think you should have it","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Nadia","text":"No you have it, you were there more","posted":true,"at":"2026-11-23T19:45","checkin":"2026-11-23T19:45"}
+{"who":"Lerato","text":"Let's not decide keys tonight. Put it in the box marked small things","posted":true,"at":"2026-11-23T19:46","checkin":"2026-11-23T19:46"}
+{"who":"Riaan","text":"box marked small things is full of rubbish","posted":true,"at":"2026-11-23T19:58","checkin":"2026-11-23T19:58"}
+{"who":"Lerato","text":"Then make a new box","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Riaan","text":"just got off a job in Milnerton. guy wanted a db board done in a day and a half. tell me why people do this","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Lerato","text":"Because the electrician is you and you are cheap","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Riaan","text":"nah","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Nadia","text":"Did you eat?","posted":true,"at":"2026-11-23T20:44","checkin":"2026-11-23T20:44"}
+{"who":"Riaan","text":"ja gatvol of chips","posted":true,"at":"2026-11-23T20:47","checkin":"2026-11-23T20:47"}
+{"who":"Lerato","text":"Cooked bobotie. Too much for one, as always. Anyone want some before the weekend? I'm not making it again","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Nadia","text":"Ooh I'd love some but I'm in Woodstock, that's a drive. Can I come Saturday and get it?","posted":true,"at":"2026-11-23T21:12","checkin":"2026-11-23T21:12"}
+{"who":"Lerato","text":"Saturday you'll get it with the dishes. Come after the rooms","posted":true,"at":"2026-11-23T21:14","checkin":"2026-11-23T21:14"}
+{"who":"Nadia","text":"Ok 😊","posted":true,"at":"2026-11-23T21:15","checkin":"2026-11-23T21:15"}
+{"who":"Lerato","text":"Still need to decide the wardrobe. Nobody has said they want it","posted":true,"at":"2026-11-23T21:30","checkin":"2026-11-23T21:30"}
+{"who":"Riaan","text":"i dont want a wardrobe lerato i have a bakkie and a dog","posted":true,"at":"2026-11-23T21:33","checkin":"2026-11-23T21:33"}
+{"who":"Nadia","text":"I'd like it but I don't have a place for it in Woodstock 🙁 maybe we could ask the flatmates","posted":true,"at":"2026-11-23T21:35","checkin":"2026-11-23T21:35"}
+{"who":"Lerato","text":"Your flatmates are not taking a 1950s wardrobe Nadia","posted":true,"at":"2026-11-23T21:36","checkin":"2026-11-23T21:36"}
+{"who":"Nadia","text":"No, I know. Sorry","posted":true,"at":"2026-11-23T21:37","checkin":"2026-11-23T21:37"}
+{"who":"Riaan","text":"sorry for what","posted":true,"at":"2026-11-23T21:40","checkin":"2026-11-23T21:40"}
+{"who":"Riaan","text":"[photo: stack of old Huisgenoot magazines, 1998 on the top one]","posted":true,"at":"2026-11-23T21:52","checkin":"2026-11-23T21:52"}
+{"who":"Nadia","text":"Oh no that's gran's stack. I thought we'd thrown those out","posted":true,"at":"2026-11-23T21:55","checkin":"2026-11-23T21:55"}
+{"who":"Lerato","text":"Put them in the recycling pile. Not the box","posted":true,"at":"2026-11-23T21:58","checkin":"2026-11-23T21:58"}
+{"who":"Riaan","text":"ok hang on, do we have a recycling pile or are we just going to keep saying that","posted":true,"at":"2026-11-23T22:03","checkin":"2026-11-23T22:03"}
+{"who":"Lerato","text":"We will have one by Saturday","posted":true,"at":"2026-11-23T22:05","checkin":"2026-11-23T22:05"}
+{"who":"Nadia","text":"Goodnight guys, I'm going to do some invoices and then sleep. Love you both 🤍","posted":true,"at":"2026-11-23T22:20","checkin":"2026-11-23T22:20"}
+{"who":"","react":"❤️","to":35,"posted":false,"at":"2026-11-23T22:20"}
+{"who":"Riaan","text":"nn","posted":true,"at":"2026-11-23T22:31","checkin":"2026-11-23T22:31"}
+{"who":"Lerato","text":"Night. Saturday 9, don't be late Riaan","posted":true,"at":"2026-11-23T22:33","checkin":"2026-11-23T22:33"}
+{"who":"Riaan","text":"morning. found another key. has a paper tag that says \"back door\" in gran's writing","posted":true,"at":"2026-11-24T05:41","checkin":"2026-11-24T05:41"}
+{"who":"Lerato","text":"Good. Small things box, please.","posted":true,"at":"2026-11-24T06:14","checkin":"2026-11-24T06:14"}
+{"who":"Riaan","text":"its full","posted":true,"at":"2026-11-24T06:15","checkin":"2026-11-24T06:15"}
+{"who":"Lerato","text":"Then a new box.","posted":true,"at":"2026-11-24T06:16","checkin":"2026-11-24T06:16"}
+{"who":"Nadia","text":"Morning! Is the back door the one with the sticky lock? I think she always used the spare","posted":true,"at":"2026-11-24T07:52","checkin":"2026-11-24T07:52"}
+{"who":"Lerato","text":"On shift. Riaan, the spare room light. Is it the bulb or the switch?","posted":true,"at":"2026-11-24T08:10","checkin":"2026-11-24T08:10"}
+{"who":"Riaan","text":"switch. ill look saturday","posted":true,"at":"2026-11-24T08:22","checkin":"2026-11-24T08:22"}
+{"who":"Lerato","text":"Thank you.","posted":true,"at":"2026-11-24T08:23","checkin":"2026-11-24T08:23"}
+{"who":"Riaan","text":"[photo: chipped enamel pot with a lid that doesnt match]\nthis goes in the rubbish pile or the box","posted":true,"at":"2026-11-24T11:20","checkin":"2026-11-24T11:20"}
+{"who":"Nadia","text":"Oh I love that pot. She made the rooibos in it every single day 🥲","posted":true,"at":"2026-11-24T11:24","checkin":"2026-11-24T11:24"}
+{"who":"","react":"❤️","to":47,"posted":false,"at":"2026-11-24T11:24"}
+{"who":"","react":"❤️","to":47,"posted":false,"at":"2026-11-24T11:24"}
+{"who":"Lerato","text":"Rubbish pile. We have one now, it's the corner by the bins.","posted":true,"at":"2026-11-24T13:05","checkin":"2026-11-24T13:05"}
+{"who":"Riaan","text":"ja ok","posted":true,"at":"2026-11-24T13:06","checkin":"2026-11-24T13:06"}
+{"who":"Riaan","text":"i was gonna keep it","posted":true,"at":"2026-11-24T13:06","checkin":"2026-11-24T13:06"}
+{"who":"Lerato","text":"Then keep it in the bakkie, not the box.","posted":true,"at":"2026-11-24T13:10","checkin":"2026-11-24T13:10"}
+{"who":"Nadia","text":"Do we need bin bags? I can grab some from Pick n Pay on the way Saturday","posted":true,"at":"2026-11-24T13:40","checkin":"2026-11-24T13:40"}
+{"who":"Lerato","text":"Yes. The thick ones, not the cheap ones that split.","posted":true,"at":"2026-11-24T13:52","checkin":"2026-11-24T13:52"}
+{"who":"Nadia","text":"🙂","posted":true,"at":"2026-11-24T13:53","checkin":"2026-11-24T13:53"}
+{"who":"Riaan","text":"job in durbanville ran late. dog ate a sock again. the vet is going to think im a terrible person","posted":true,"at":"2026-11-24T17:02","checkin":"2026-11-24T17:02"}
+{"who":"Nadia","text":"Is he okay??","posted":true,"at":"2026-11-24T17:30","checkin":"2026-11-24T17:30"}
+{"who":"Riaan","text":"ja he's fine. he just looks guilty","posted":true,"at":"2026-11-24T17:44","checkin":"2026-11-24T17:44"}
+{"who":"Lerato","text":"Home. Sizwe has been sitting by the door for an hour pretending he wasn't.","posted":true,"at":"2026-11-24T19:15","checkin":"2026-11-24T19:15"}
+{"who":"Nadia","text":"Aww 🥺","posted":true,"at":"2026-11-24T19:31","checkin":"2026-11-24T19:31"}
+{"who":"","react":"❤️","to":59,"posted":false,"at":"2026-11-24T19:31"}
+{"who":"Riaan","text":"lerato does anyone know what the little brass key in the spare room drawer is for","posted":true,"at":"2026-11-24T20:05","checkin":"2026-11-24T20:05"}
+{"who":"Lerato","text":"Not tonight. Small things box.","posted":true,"at":"2026-11-24T20:09","checkin":"2026-11-24T20:09"}
+{"who":"Riaan","text":"lol","posted":true,"at":"2026-11-24T20:10","checkin":"2026-11-24T20:10"}
+{"who":"Nadia","text":"Sorry, I was on a client call. Is that the wardrobe key? The little one?","posted":true,"at":"2026-11-24T21:48","checkin":"2026-11-24T21:48"}
+{"who":"Riaan","text":"maybe. or a bedside drawer. or nothing","posted":true,"at":"2026-11-24T21:50","checkin":"2026-11-24T21:50"}
+{"who":"Lerato","text":"Bed. Riaan, the tape measure is in the hall drawer if you want to check the wardrobe against the bakkie.","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Riaan","text":"ja","posted":true,"at":"2026-11-24T22:15","checkin":"2026-11-24T22:15"}
+{"who":"Nadia","text":"Random thought but what happens to Gran's armchair. It's the one by the window. Nobody's mentioned it","posted":true,"at":"2026-11-24T23:41","checkin":"2026-11-24T23:41"}
+{"who":"Nadia","text":"I can't sleep if I think about it too much so I'm going to stop 🤍","posted":true,"at":"2026-11-24T23:44","checkin":"2026-11-24T23:44"}
+{"who":"","react":"❤️","to":68,"posted":false,"at":"2026-11-24T23:44"}
+{"who":"Riaan","text":"morning. armchair is fine where it is","posted":true,"at":"2026-11-25T05:38","checkin":"2026-11-25T05:38"}
+{"who":"Riaan","text":"i think i'm keeping it","posted":true,"at":"2026-11-25T05:39","checkin":"2026-11-25T05:39"}
+{"who":"Lerato","text":"Morning. Riaan, you have a wardrobe and a bakkie. The armchair is not a decision you make at 5am.","posted":true,"at":"2026-11-25T06:21","checkin":"2026-11-25T06:21"}
+{"who":"Lerato","text":"Put it on the list for Saturday.","posted":true,"at":"2026-11-25T06:22","checkin":"2026-11-25T06:22"}
+{"who":"Nadia","text":"Morning 🙂 I think Riaan should have it. The dog would love it","posted":true,"at":"2026-11-25T07:58","checkin":"2026-11-25T07:58"}
+{"who":"Riaan","text":"ja the dog would love it","posted":true,"at":"2026-11-25T08:04","checkin":"2026-11-25T08:04"}
+{"who":"Riaan","text":"he already sleeps on everything of gran's","posted":true,"at":"2026-11-25T08:04","checkin":"2026-11-25T08:04"}
+{"who":"Lerato","text":"On shift until 14:00. Don't start anything without me.","posted":true,"at":"2026-11-25T08:10","checkin":"2026-11-25T08:10"}
+{"who":"Riaan","text":"bakkie making a noise again. ja i know. not today","posted":true,"at":"2026-11-25T11:42","checkin":"2026-11-25T11:42"}
+{"who":"Lerato","text":"Lunch. Did you measure the wardrobe?","posted":true,"at":"2026-11-25T13:20","checkin":"2026-11-25T13:20"}
+{"who":"Riaan","text":"2m tall 1.4 wide. bakkie bed is 2.3 inside so yes it fits","posted":true,"at":"2026-11-25T13:24","checkin":"2026-11-25T13:24"}
+{"who":"Riaan","text":"dont say it like that","posted":true,"at":"2026-11-25T13:25","checkin":"2026-11-25T13:25"}
+{"who":"Lerato","text":"Good.","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31"}
+{"who":"Lerato","text":"Thank you.","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31"}
+{"who":"Nadia","text":"Sorry, was on revisions all afternoon. Did anyone decide the pot or is it still in the bakkie","posted":true,"at":"2026-11-25T16:50","checkin":"2026-11-25T16:50"}
+{"who":"Riaan","text":"still in the bakkie. its wrapped in a towel on the passenger seat like a baby","posted":true,"at":"2026-11-25T17:12","checkin":"2026-11-25T17:12"}
+{"who":"Nadia","text":"🥹","posted":true,"at":"2026-11-25T17:13","checkin":"2026-11-25T17:13"}
+{"who":"Nadia","text":"Still on for the bobotie Saturday? I'll bring containers","posted":true,"at":"2026-11-25T18:40","checkin":"2026-11-25T18:40"}
+{"who":"Lerato","text":"Yes. Bring the big ones, not the yoghurt tubs.","posted":true,"at":"2026-11-25T18:52","checkin":"2026-11-25T18:52"}
+{"who":"Riaan","text":"can i come for the bobotie or do i have to be on wardrobe duty","posted":true,"at":"2026-11-25T18:53","checkin":"2026-11-25T18:53"}
+{"who":"Lerato","text":"You can come for the bobotie after wardrobe duty.","posted":true,"at":"2026-11-25T18:58","checkin":"2026-11-25T18:58"}
+{"who":"Riaan","text":"ok so i get the bobotie as a reward for lifting a wardrobe","posted":true,"at":"2026-11-25T19:02","checkin":"2026-11-25T19:02"}
+{"who":"Lerato","text":"Yes.","posted":true,"at":"2026-11-25T19:03","checkin":"2026-11-25T19:03"}
+{"who":"Riaan","text":"ok that's fair","posted":true,"at":"2026-11-25T19:05","checkin":"2026-11-25T19:05"}
+{"who":"Lerato","text":"Sizwe knocked a glass off the table. He looked at me the whole time. Unbelievable.","posted":true,"at":"2026-11-25T20:30","checkin":"2026-11-25T20:30"}
+{"who":"Nadia","text":"Did it break??","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Lerato","text":"No. It rolled under the couch. He is unbothered.","posted":true,"at":"2026-11-25T20:33","checkin":"2026-11-25T20:33"}
+{"who":"Nadia","text":"Typical 😂","posted":true,"at":"2026-11-25T20:34","checkin":"2026-11-25T20:34"}
+{"who":"Nadia","text":"Sorry, I'm so behind. Client sent six new versions of one logo","posted":true,"at":"2026-11-25T22:47","checkin":"2026-11-25T22:47"}
+{"who":"Nadia","text":"Is the little brass key still unknown or did someone figure it out","posted":true,"at":"2026-11-25T22:48","checkin":"2026-11-25T22:48"}
+{"who":"Nadia","text":"I'm going to sleep, I'll look at it Saturday. Night 🤍","posted":true,"at":"2026-11-25T23:20","checkin":"2026-11-25T23:20"}

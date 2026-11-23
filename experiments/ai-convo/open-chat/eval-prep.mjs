@@ -77,10 +77,11 @@ if (process.argv[2] === '--tally') {
   fs.mkdirSync(out, { recursive: true });
   fs.writeFileSync(path.join(out, 'runs.tsv'), runStatus.join('\n') + '\n');
   fs.writeFileSync(path.join(out, 'key.tsv'), 'id\tlabel\twindow\tmessages\n' + files.map(f => [f.id, f.label, f.win, f.n].join('\t')).join('\n') + '\n');
-  // Judge split: each file to COPIES distinct judges, least-loaded first, never a judge who already has a window of the same run.
-  const N = Math.max(2 * COPIES, Math.ceil(files.length * COPIES / PER_JUDGE)), load = Array(N).fill(0), used = {};
+  // Judge split: each file to COPIES distinct judges, least-loaded first, never a judge who already has a window of the same run. PAIR=1: the key is the brief (label W7-R11 is brief R1, seed 1), so a judge never sees two windows of one brief across seeds and arms (a user sees one chat, and judges scored the repeats as "templated"); there are then at least COPIES x (most windows of one brief) judges, so every file can be placed.
+  const briefOf = l => process.env.PAIR ? l.split('-').slice(1).join('-').match(/^[A-Za-z]+\d/)?.[0] ?? l : l, perBrief = {}; for (const f of files) perBrief[briefOf(f.label)] = (perBrief[briefOf(f.label)] ?? 0) + 1;
+  const N = Math.max(2 * COPIES, Math.ceil(files.length * COPIES / PER_JUDGE), process.env.PAIR ? COPIES * Math.max(...Object.values(perBrief)) : 0), load = Array(N).fill(0), used = {};
   for (const f of shuffle([...files])) {
-    const taken = used[process.env.PAIR ? f.label.split('-').slice(1).join('-') : f.label] ??= new Set(); // PAIR=1: all windows of one cast (the arms' versions of a chat) go to different judges
+    const taken = used[briefOf(f.label)] ??= new Set();
     const pick = shuffle([...load.keys()]).filter(j => !taken.has(j)).sort((a, b) => load[a] - load[b]).slice(0, COPIES);
     for (const j of pick) { taken.add(j); load[j]++; const d = path.join(out, 'judges', 'j' + (j + 1)); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, f.id + '.txt'), f.text); }
   }

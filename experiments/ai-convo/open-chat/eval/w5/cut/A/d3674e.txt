@@ -1,0 +1,171 @@
+--- Mon 07:40, Hana
+what time is the first train from manchester piccadilly to liverpool lime street on a sunday
+
+--- Mon 08:06, Mere
+omg early trip?? 😅 no idea but i can look lol
+
+--- Mon 08:22, Dylan
+depends if we want to be back for anything
+
+--- Mon 08:31, Hana
+not really. want to get there before the crowds
+
+--- Mon 08:33, Mere
+ok yes
+
+--- Mon 08:35, Hana
+@claude what time is the first train from Manchester Piccadilly to Liverpool Lime Street on a Sunday, and roughly how long does it take
+
+--- Mon 08:36, Claude
+I couldn't confirm the first Sunday departure. The page fetch failed, so I haven't opened any of these pages myself and am relying on search results alone.
+
+- **Journey time:** roughly 50 to 60 minutes. Southern Railway's journey page gives an average of about 56 minutes and a fastest of about 52.
+- **First train:** the figures I found don't agree, and none is clearly for a Sunday. They range from 05:03 on [Northern's journey planner](https://northernrailway.co.uk/journey-planner/manchester-piccadilly-to-liverpool-lime-street) to 05:54 on [Southern Railway](https://www.southernrailway.com/journey/manchester-piccadilly-to-liverpool-lime-street). [Live-departures.info](https://live-departures.info/rail/timetable/Manchester-Piccadilly/Liverpool-Lime-Street/) gives 05:54 for weekdays. Sunday first trains are usually later than weekday ones, so I'd expect a Sunday start in the morning rather than before 06:00. That's an assumption, not something I verified.
+
+For the exact time, check National Rail Enquiries or Northern's journey planner for the specific Sunday you're travelling.
+
+Sources:
+- [Northern Railway journey planner](https://northernrailway.co.uk/journey-planner/manchester-piccadilly-to-liverpool-lime-street)
+- [Southern Railway journey page](https://www.southernrailway.com/journey/manchester-piccadilly-to-liverpool-lime-street)
+- [Live-departures.info](https://live-departures.info/rail/timetable/Manchester-Piccadilly/Liverpool-Lime-Street/)
+
+--- Mon 08:40, Mere
+sunday timetables are different right?? i think they run less
+
+--- Mon 08:44, Dylan
+prob. northern usually does
+
+--- Mon 08:45, Hana
+ok so we check the sunday one specifically
+
+--- Mon 12:15, Hana
+on shift till 5, can't look properly
+(👍 1)
+
+--- Mon 15:52, Mere
+ok but the beatles story is at albert dock and it's like 10 min walk from lime street 😍 we should do that
+
+--- Mon 15:55, Dylan
+fine by me
+
+--- Mon 19:03, Dylan
+back from gym. liverpool sunday, lets do it
+
+--- Mon 21:17, Mere
+omg yes ok im putting it in the doc 😅 marking first though
+
+--- Mon 22:41, Hana
+@claude does the beatles story at albert dock open on sundays and what time, and is it worth booking ahead
+
+--- Mon 22:42, Claude
+I couldn't open the official pages, so I can't confirm Sunday hours for today's date.
+
+- **Sundays:** The official site doesn't appear to list Sunday as closed, so it most likely opens. A search summary of the official opening-times page gave 9am–6:30pm with last entry at 5pm. It said those times were subject to change and tied them to a date in March 2027, so they may not be the current winter hours. An older official listing gave Sunday–Friday as 9am–5:30pm, with last entry at 4:15pm. Third-party sites disagree with each other, so I wouldn't rely on them.
+- **Booking ahead:** Yes, I'd book. Entry is by timeslot, and the site asks you to pick a slot online for your date. That's worth doing on a Sunday, since weekends are busier. Booking also lets you see that day's availability and hours on the calendar.
+- **Location:** It's still at Royal Albert Dock. It's due to move to a new city-centre home, but it stays at Albert Dock as normal until 2028.
+
+Before you go, check the hours for your date on [beatlesstory.com/plan-your-visit/opening-times](https://www.beatlesstory.com/plan-your-visit/opening-times/).
+
+Sources: [Opening times](https://www.beatlesstory.com/plan-your-visit/opening-times/), [Plan your visit](https://www.beatlesstory.com/plan-your-visit/), [Tiqets](https://www.tiqets.com/en/the-beatles-story-tickets-l147687/), [Day Out With The Kids](https://www.dayoutwiththekids.co.uk/tickets/the-beatles-story-5fa45fe8)
+
+--- Mon 22:50, Mere
+ok so the beatles thing is the main one 😍 what do we do for lunch after
+
+--- Mon 22:53, Dylan
+pub near lime st?
+
+--- Mon 22:58, Mere
+omg yes there's loads 😅 i'll look at which are open sunday lol
+
+--- Mon 23:02, Dylan
+book the slot when you know the time
+
+--- Mon 23:06, Hana
+@claude last train back from liverpool lime street to manchester piccadilly on a sunday, roughly what time
+
+--- Mon 23:07, Claude
+I couldn't confirm a Sunday time. Both pages I tried to open (Northern and TransPennine Express) failed to load, so I have nothing I've actually read.
+
+Search snippets suggested the last departure is somewhere between about 23:30 and shortly after midnight. Those figures conflicted, and none of them was specific to Sundays. Sunday evening services are often earlier or less frequent than on other days, so treat that range as a rough guess. I'd plan to be on a train by about 22:30 to 23:00 on a Sunday.
+
+For the exact time, check National Rail Enquiries, the Trainline, or Northern's journey planner for your date. Engineering works sometimes change Sunday services, and a timetable change is due on 13 December 2026.
+
+Sources (search results only, not opened):
+- [Northern: Liverpool Lime Street to Manchester Piccadilly](https://www.northernrailway.co.uk/journey-planner/liverpool-lime-street-to-manchester-piccadilly)
+- [TransPennine Express: Liverpool Lime Street to Manchester Piccadilly](https://www.tpexpress.co.uk/travelling-with-us/routes/trains-from-liverpool-lime-street-to-manchester-piccadilly)
+
+--- Mon 23:10, Mere
+going to bed soon 😅 pls decide the train without me lol
+
+--- Mon 23:12, Dylan
+11ish is tight if we want lunch first
+
+--- Mon 23:14, Hana
+i'd rather not rush back. the answers are all over the place though
+
+--- Mon 23:15, Hana
+@claude can you find the last sunday train from liverpool lime street to manchester piccadilly, exact time if possible, or the sunday timetable
+
+--- Mon 23:16, Claude
+I couldn't confirm an exact time. The best figure I found is about 23:36 on a Sunday, but it isn't verified.
+
+My attempt to open the TransPennine Express page failed. That means the 23:36 comes from search-result summaries, not from a page I read myself. Those summaries also disagreed with each other in places. The TransPennine Express page may be around two years old. Sunday times and the operator's timetable can change, especially around engineering works.
+
+Before you travel, check the exact time on National Rail Enquiries (nationalrail.co.uk) or in the Trainline or TPE app for your date. Northern and TPE both run this route. A late Sunday train can also be replaced by a bus or changed because of engineering work.
+
+I didn't get a full Sunday timetable. Services on this route are usually frequent through the day.
+
+Sources:
+- [TransPennine Express: Liverpool Lime Street to Manchester Piccadilly](https://www.tpexpress.co.uk/travelling-with-us/routes/trains-from-liverpool-lime-street-to-manchester-piccadilly)
+- [Omio](https://www.omio.co.uk/trains/liverpool-lime-street/manchester-piccadilly-svf0d)
+- [Rome2rio](https://www.rome2rio.com/Train/Liverpool-Lime-Street/Manchester-Piccadilly-Station)
+- [MyTrainPal](https://www.mytrainpal.com/train-journey/liverpool-lime-street-to-manchester-piccadilly)
+
+--- Mon 23:19, Dylan
+23:36 works if we eat early
+
+--- Mon 23:24, Hana
+ok. we check the day before anyway
+(👍 1)
+
+--- Mon 23:31, Mere
+omg ok 😅 im in bed. put the train in the doc pls
+
+--- Mon 23:33, Hana
+going to sleep. dylan can you check the sunday one tmrw
+
+--- Mon 23:40, Dylan
+yeah
+
+--- Tue 06:41, Mere
+morning!! 😅 i found a place for lunch near lime st, the philharmonic dining rooms. proper old pub and they do sunday roast lol
+
+--- Tue 07:08, Hana
+morning. ok sounds good. i'll check if its open sunday
+
+--- Tue 07:10, Mere
+i'll check too 😅
+
+--- Tue 08:17, Dylan
+just up. not yet
+
+--- Tue 08:19, Dylan
+@claude sunday trains from manchester piccadilly to liverpool lime street, first one and last one back. can you confirm
+
+--- Tue 08:20, Claude
+I can't confirm the Sunday times. All three attempts to open the timetable pages failed with a "proxy refused the connection" error. The only thing I have is search snippets, and none of them is specific to Sundays.
+
+What the snippets showed, with no day of the week attached:
+- [Northern's route page](https://northernrailway.co.uk/journey-planner/manchester-piccadilly-to-liverpool-lime-street) gives a first train from Manchester Piccadilly at 05:03 and a last at 23:28.
+- [Southern's route page](https://www.southernrailway.com/journey/manchester-piccadilly-to-liverpool-lime-street) gives 05:54 and 23:41.
+- These two disagree with each other, and the weekday figures are likely to differ from Sunday. Sunday first trains are normally later.
+- I found nothing for the return direction (Liverpool to Manchester), which is the one you need for the last train back.
+
+Northern also publishes a timetable PDF for 13 Dec 2026 to 15 May 2027 ([link](https://www.northernrailway.co.uk/sites/default/files/templates/N16/2026-12-13-to-2027-05-15-1793360556.pdf)). A new timetable starts on 13 Dec, so Sunday times may change after that date. I couldn't open the PDF to check.
+
+To get reliable times, put your Sunday date into National Rail Enquiries or Northern's journey planner. Check the last train again on the day, because engineering works often change Sunday services.
+
+If you tell me the date, I can try again to find the times.
+
+--- Tue 08:24, Mere
+omg the answers are all over the place lol. i'll try the pub website 😅

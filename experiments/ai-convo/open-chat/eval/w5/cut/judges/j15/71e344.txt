@@ -1,0 +1,175 @@
+--- Mon 07:45, Andrei
+Which restaurants near Oxford Circus in London have a private room for ten?
+
+--- Mon 07:52, Ioana
+Morning. Do we have a date yet or is that still open?
+
+--- Mon 07:58, Mihai
+Before anyone books, what is the spend cap? I can approve up to 1200 pounds for the whole lunch, drinks included. Anything above that goes to the director first.
+
+--- Mon 08:09, Elena
+omg morning 😅 just got up. 1200 for 10 is fine right? that's like 120 each
+(👍 2)
+
+--- Mon 08:15, Andrei
+1200 total is fine. Date is open. Once we have a room that works we pick the day around it.
+
+--- Mon 08:21, Ioana
+@claude restaurants near Oxford Circus, London, with a private dining room for 10 people, budget about 120 pounds a head including drinks. Which ones can seat a group that size and what is the minimum spend?
+
+--- Mon 08:22, Claude
+I couldn't open any of the venue pages, so everything below comes from search-result snippets on booking sites. Treat the figures as unconfirmed and check them with each venue.
+
+Your budget is about £1,200 for 10 people. All of these minimums are well under that, so the minimum spend shouldn't be the limit. Your drinks and menu choices will decide the final bill.
+
+| Venue | Area | Seats 10? | Listed minimum spend |
+|---|---|---|---|
+| [Noble Rot Soho](https://hirespace.com/Spaces/London/319591/Noble-Rot-Soho/Private-Dining-Room/Events) | Soho | Yes, up to 10 | £500. Festive bookings (30 Nov–23 Dec) need £1,000 upfront. |
+| [IGNI](https://hirespace.com/Spaces/London/318867/IGNI/Private-Dining-Room/Business) | Mayfair | Yes, a 10-seat room | £2,000 for the room. A £49 per-person package is also mentioned. |
+| [Perini & Perini](https://hirespace.com/Spaces/London/138398/Perini-Perini/Private-Room/Dining) | Listed as Oxford Circus | Yes, a 10-person boardroom | From £3,000. That is above your budget. |
+| [Goodman Mayfair](https://hirespace.com/Spaces/London/185692/Goodman-Mayfair/Private-Dining-Room/Dining) | Mayfair | Yes, up to 27 | £2,000 for lunch, £2,500 for evenings. |
+| [Berners Tavern](https://mds-assets.marriott.com/cms-platform-for-marriott/loneb-berners-tavern/berners-tavern-private-dining-room.pdf) | Fitzrovia | Yes, up to 14 | Lunch figure of £750 (January–August) found. Other periods not found. |
+| [Sartoria](https://tagvenue.com/rooms/london/2296/sartoria/private-dining-room) | Savile Row | Not confirmed | Varies by day and month. |
+
+- **Noble Rot Soho** is the best fit for price. Today is 23 November, so the festive rule applies if your date falls between 30 November and 23 December.
+- **Luso** on Charlotte Street (up to 12 guests) and **Dehesa** in Soho (up to 14) also have private rooms. I found no minimum spend for either.
+- **Not confirmed:** I didn't find current availability or per-head menu prices for any venue.
+- **Unclear terms:** I couldn't tell whether the minimums include service charge or drinks.
+
+Tell me your date and whether it's lunch or dinner, and I can narrow this down.
+
+Sources: the venue listings linked in the table, plus [Luso and Dehesa details via privatediningrooms.co.uk](https://www.privatediningrooms.co.uk/london/by-capacity/private-dining-rooms-london-under-10-guests/page/10).
+
+--- Mon 08:24, Elena
+ooh noble rot looks so nice 😍 the room photos are gorgeous
+
+--- Mon 08:26, Andrei
+Noble Rot first then. I want the minimum spend confirmed in writing before anyone books.
+
+--- Mon 08:31, Ioana
+Dates. 3 Dec?
+(👍 1)
+
+--- Mon 08:33, Elena
+3rd works for me 🙌 the 10th is my friend's birthday so no
+
+--- Mon 08:40, Andrei
+3rd is fine. If we fly in that morning it's tight. Probably fly the night before.
+
+--- Mon 08:44, Ioana
+Night before means a hotel. Mihai, is that a separate claim or does it come out of the lunch budget?
+
+--- Mon 09:12, Mihai
+Separate. A hotel for the team is its own approval, and I need the number before anyone books anything. Lunch is 1200 total, drinks included.
+
+--- Mon 09:14, Mihai
+Festive rule. Is the 1000 a deposit or the full bill paid upfront? If it's the full bill, that's most of the budget before drinks.
+
+--- Mon 09:15, Ioana
+@claude For Noble Rot Soho, is the £1,000 upfront for festive bookings (30 Nov to 23 Dec) a deposit that comes off the final bill, or is it paid on top of the bill? And is it refundable if we cancel?
+
+--- Mon 09:16, Claude
+I couldn't confirm either point, so I can't say whether the £1,000 comes off the bill or is refundable.
+
+I tried to open the Noble Rot private dining page and the Hirespace listing to check the exact wording. Both fetches failed. All I have is a search summary, and I haven't read the pages themselves.
+
+The summary said:
+- **Noble Rot's own site:** The normal terms are a £500 minimum spend with a £250 deposit. A footnote says that from 24 November to 24 December, the deposit and minimum spend both rise to £1,000. Cancellations need at least two weeks' notice, after which deposits are non-refundable.
+- **Hirespace:** It gives the festive window as 30 Nov to 23 Dec and calls the £1,000 a minimum spend paid upfront. It doesn't clearly call it a deposit.
+
+The two sources disagree on the dates, and neither clearly says whether the money is deducted from the bill. A minimum spend usually counts toward the bill, but I couldn't confirm that for Noble Rot. On refunds, the site's two-week notice rule is the best lead, and I'd treat it as unverified until you've seen the page.
+
+Before you pay, I'd email sohoprivatedining@noblerot.co.uk and ask three things:
+- Does the £1,000 come off the final bill?
+- Is it refundable, and until when?
+- Which dates does the festive rule cover?
+
+Sources: [Noble Rot private dining](https://noblerot.co.uk/private-dining), [Hirespace listing](https://hirespace.com/Spaces/London/319591/Noble-Rot-Soho/Private-Dining-Room/Events), [Noble Rot Soho](https://noblerot.co.uk/soho)
+
+--- Mon 09:18, Andrei
+I'll email them now with the three questions
+
+--- Mon 09:19, Mihai
+Send me the reply when it comes. I approve on the written figure, not the website.
+
+--- Mon 09:31, Elena
+ok this is getting serious lol 😅 i'm just happy we have a restaurant now
+
+--- Mon 09:33, Ioana
+Noble Rot is still the best option though? I checked Mayfair and it's more.
+
+--- Mon 10:02, Andrei
+Yes. Waiting on them.
+(👍 1)
+
+--- Mon 10:04, Elena
+should we ask about the wine list too? ppl will want to drink 🍷
+
+--- Mon 10:10, Mihai
+Drinks are inside the 1200. Ask them for the price per head with drinks included. If they can't answer that, we don't book.
+
+--- Mon 13:47, Ioana
+Mihai do you know if the hotel is capped too or just lunch?
+
+--- Mon 14:20, Mihai
+Hotel is a separate approval. Send me the hotel name and the cost per night and I'll look at it. Don't book before that.
+
+--- Mon 14:22, Elena
+tbh i don't mind a hostel 😂 the budget ones near oxford circus look fine
+
+--- Mon 15:05, Andrei
+Not a hostel for me. I need a room with a desk.
+
+--- Mon 15:08, Ioana
+@claude budget hotels near Oxford Circus, London, for the night of 2 Dec, group of about 4-5 people, ideally walkable to Noble Rot Soho. Rough nightly prices and whether the rooms have a desk?
+
+--- Mon 15:09, Claude
+I couldn't confirm live prices for 2 Dec or whether any room has a desk. Both page fetches failed (the proxy refused the connection), so I only have search-result snippets, not the pages themselves.
+
+**Rough nightly prices (snippets, not dated to 2 Dec)**
+- Oxford Circus hotels on [Kayak UK](https://www.kayak.co.uk/London-Hotels_Oxford-Circus.L86812.28501.hotel.ksp) start around £33 for 2-star and £54 for 3-star. Those are the lowest "from" prices and are often for off-peak dates.
+- Names that came up repeatedly:
+  - Zedwell Piccadilly Circus: about £97.
+  - Central Park Hotel: about £73.
+  - Gresham Hotel Bloomsbury: about $142 on [Booking.com](https://www.booking.com/landmark/gb/oxford-circus.en-gb.html).
+  - Arosfa Hotel: about $117 on an older [Tripadvisor](https://www.tripadvisor.com/HotelsNear-g186338-d9571535-Oxford_Circus-London_England.html) listing.
+- Expect roughly £100–£200 a night for a central 3-star in early December. That's my estimate, not a sourced figure.
+
+**Desks:** I found nothing that says which rooms have one. Check each hotel's room amenities list, or ask before booking.
+
+**Group of 4–5:** Most budget rooms sleep 2–3, so you'd probably need 2–3 rooms. Look for family or quad rooms. Some of the cheapest listings are hostels or guesthouses.
+
+**Walkability:** Noble Rot Soho is at [2 Greek Street, W1D 4NB](https://www.designmynight.com/london/restaurants/soho/noble-rot-soho). That's roughly a 10-minute walk from Oxford Circus. This is my estimate, not from the sources. Zedwell Piccadilly Circus is probably the closest of the hotels above.
+
+Also check the restaurant's opening hours for 2 Dec. One source lists it as closed on Sundays, and I didn't confirm that against the [official site](https://noblerot.co.uk/soho).
+
+--- Mon 15:14, Andrei
+Who else from the team is coming? I need the number for rooms
+
+--- Mon 15:17, Ioana
+Not sure yet. I'll ask in the team channel
+
+--- Mon 15:19, Mihai
+Ten for lunch. I need the headcount for the hotel before I look at it. How many rooms, one night.
+(👍 1)
+
+--- Mon 15:21, Elena
+i'd share with someone!! 😅 a twin would be fine for me
+
+--- Mon 15:24, Andrei
+Two rooms at least. I'd rather not share. I need a desk.
+
+--- Mon 15:26, Ioana
+So 2 rooms for the night of 2 Dec, yes?
+
+--- Mon 15:27, Mihai
+One night. Two rooms. Send me the hotel and the total before anyone books.
+
+--- Mon 15:29, Elena
+ok i'll look at the zedwell rooms 👀
+
+--- Mon 16:52, Ioana
+Heading into a meeting, back later. Noble Rot still no reply?
+
+--- Mon 17:10, Andrei
+No reply yet

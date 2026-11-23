@@ -1,0 +1,120 @@
+--- Mon 07:45, Andrei
+Which restaurants near Oxford Circus in London have a private room for ten?
+
+--- Mon 08:12, Ioana
+Morning! Is this for the london lunch?
+
+--- Mon 08:14, Andrei
+Yes. Thursday 10 December, lunch at 13:00 if we can get it. Needs to be a room, not the main floor.
+
+--- Mon 08:20, Ioana
+Ok 👍 do we know who's coming? Is it just us four or the whole project?
+
+--- Mon 08:22, Andrei
+Whole project. Ten confirmed-ish, two maybes.
+
+--- Mon 08:31, Mihai
+What is the budget per head. I need a number before anyone books.
+
+--- Mon 08:33, Andrei
+Not set. Assume around 60 GBP a head before drinks?
+
+--- Mon 08:40, Mihai
+Drinks are not in the team budget. Food only, and I need the total before it is booked.
+
+--- Mon 10:15, Elena
+Omg london!!! 🇬🇧🇬🇧 sorry I was asleep lol. Is a private room actually necessary? It feels a bit much for a lunch tbh
+
+--- Mon 10:19, Andrei
+Ten people in one restaurant main floor is loud and we will be split across tables. A room keeps us together.
+
+--- Mon 10:21, Elena
+Fair 🙂 I just don't want to pay for a fancy room nobody uses
+
+--- Mon 12:05, Mihai
+Ask the restaurant for the minimum spend on the room. If it is above the per head figure the room is not approved.
+
+--- Mon 12:20, Ioana
+@claude can you find restaurants near Oxford Circus with a private dining room for about 10 people, and roughly what a set lunch costs per head at each? We need options for Thursday 10 December
+
+--- Mon 12:21, Claude
+Three places near Oxford Circus have private rooms that could seat ten: Berners Tavern (room for 12, a set lunch, and a lunch minimum spend of £750 listed for Jan–Aug), Les 110 de Taillevent (Lamennais room, 6–10 guests), and Bennie (private room, 10 or more). I couldn't confirm set lunch prices per head or any December minimum spend. Please ask each venue directly, since Mihai needs the minimum spend before booking. Sources: [SquareMeal](https://www.squaremeal.co.uk/private-group-dining/best/private-dining-rooms-for-10_388), [Berners Tavern](https://www.bernerstavern.com/private-dining), [Tagvenue](https://www.tagvenue.com/rooms/london/2319/les-110-de-taillevent/lamennais-room).
+
+--- Mon 12:34, Mihai
+Berners Tavern's £750 is for January to August only. We need the December figure from them. If it applies to a party of ten, that is £75 a head, which is above the £60 figure, so the room would not be approved as things stand.
+
+--- Mon 12:38, Andrei
+I will call Berners and Bennie this afternoon. Ioana can you try Taillevent since you have the contacts from the Krakow offsite
+
+--- Mon 12:40, Ioana
+Yes I can do Taillevent. Ok 👍
+
+--- Mon 12:41, Ioana
+@claude can you check whether Les 110 de Taillevent has a set lunch menu for December and roughly what it costs per head
+
+--- Mon 12:42, Claude
+I couldn't confirm a December set lunch or a current price for Les 110 de Taillevent. The only figures I found are old: about £23 for two courses and £28 for three in a 2018 blog post, and Hardens lists lunch at £29 and £36 with no date. Prices have likely gone up since then, so Ioana will need to ask them directly. Sources: [Gourmand Gunno](https://gourmandgunno.squarespace.com/blog/2018/6/19/les-110-de-taillevent-its-a-respect-thing-june-2018), [Hardens](https://hardens.com/az/restaurants/london/w1/les-110-de-taillevent.htm).
+
+--- Mon 12:43, Ioana
+I'll email Taillevent now
+
+--- Mon 13:28, Andrei
+Called Berners. Their listed £750 is for January to August only. December minimum for the room is £1,000. Room is free if we reach the minimum. Set lunch is £42 a head before service
+
+--- Mon 13:29, Andrei
+Bennie went to voicemail. Left a message
+
+--- Mon 13:36, Mihai
+£1,000 for ten is £100 a head. That is above £60, so the room is not approved at that figure. Ask whether the minimum can be lower on a weekday in December
+(👍 1)
+
+--- Mon 13:38, Andrei
+Asked. Minimum is fixed for December. They want a written request
+
+--- Mon 13:40, Ioana
+Ok. Taillevent hasn't replied yet. Will send the numbers when they do
+
+--- Mon 14:35, Elena
+Back at desk 🙂 just read all this. £1,000 for ten people is a lot for lunch 😅 is the long table option not an option?
+
+--- Mon 14:41, Andrei
+Berners do a long table on the ground floor. Not a room, but we would sit together. Could ask them to hold it
+
+--- Mon 14:44, Elena
+Yes pls ask!! 🙌 feels way more relaxed too
+
+--- Mon 15:10, Mihai
+A long table on the ground floor does not need approval unless it is above £60 a head. £42 plus service is within that. Ask them for the total with service and VAT before holding it
+
+--- Mon 15:12, Andrei
+Will do
+
+--- Mon 17:20, Ioana
+@claude can you check whether Bennie has a private room for around 10 and what they charge for a December lunch
+
+--- Mon 17:21, Claude
+Bennie does have a private room: listings say it takes 10 or more (up to about 20–26), but I couldn't confirm a December lunch price. Third-party minimum spends range from about £392 to £1,500 and don't agree, so Andrei's voicemail answer matters. Sources: [OpenTable](https://opentable.co.uk/private-dining/restaurant/341196), [Zipcube](https://www.zipcube.com/uk/ap/event/ehsnbg85h008), [Tagvenue](https://www.tagvenue.com/venues/london/35071/bennie-restaurant).
+
+--- Mon 17:44, Mihai
+Berners has not confirmed the December minimum in writing yet. I will not approve anything on a verbal figure.
+
+--- Mon 18:52, Andrei
+Back from football. Emailed Berners the written request for the December minimum and asked for a quote for the long table on the ground floor, with service and VAT.
+
+--- Mon 18:53, Andrei
+Bennie still voicemail.
+
+--- Mon 19:04, Elena
+Going out with Mara tonight 🍸 will read the thread later, can someone just tell me if we're getting a room or a table?? 😅
+
+--- Mon 20:11, Mihai
+Table, if the long table is quoted within the per head figure. Room only if the minimum is reduced in writing. Nothing else is approved.
+
+--- Mon 21:37, Ioana
+Taillevent still no reply. I'll try their phone line first thing tomorrow.
+
+--- Mon 21:40, Ioana
+Can someone make a headcount list with the two maybes marked? I'll set up the poll for the team once we have it.
+
+--- Mon 22:14, Andrei
+I will put the names in the sheet tonight.

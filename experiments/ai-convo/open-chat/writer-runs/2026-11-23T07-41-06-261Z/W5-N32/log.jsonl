@@ -1,0 +1,81 @@
+{"writer":"w5","model":"haiku","effort":"medium","days":2,"oracle":false,"complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2180,"cache_read_input_tokens":0,"output_tokens":2142,"output_tokens_details":{"thinking_tokens":1253},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2180,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2142,"cache_read_input_tokens":0,"cache_creation_input_tokens":2180,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2180},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3036,"cache_read_input_tokens":0,"output_tokens":1385,"output_tokens_details":{"thinking_tokens":851},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3036,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1385,"cache_read_input_tokens":0,"cache_creation_input_tokens":3036,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3036},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3568,"cache_read_input_tokens":0,"output_tokens":2331,"output_tokens_details":{"thinking_tokens":1440},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3568,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2331,"cache_read_input_tokens":0,"cache_creation_input_tokens":3568,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3568},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Hannah","Tariq","Megan","Joe"],"setting":"You are all colleagues at a small bakery in Manchester, England, and have worked early shifts together for a few years. You know each other's routines, who is good at what, and the usual shop gossip, but little of each other's home lives beyond what comes up over the ovens.","opener":"Ask who can cover the Saturday early shift.","cast":{"Hannah":{"who":"29, woman, the senior baker","knows":"You know Tariq runs the front counter and the rota, and you trust him to sort cover. You know Megan is the newest and keen, and you have been training her on laminated dough. You know Joe does the deliveries and is always first in.","like":"You are steady and practical, and you like things done properly without making a fuss.","texts":"You message the group now and then, mostly when something about shifts needs sorting.","style":"You use the odd emoji and very few abbreviations.","capitals":true,"lives":[],"ex":[]},"Tariq":{"who":"34, man, front counter and rota","knows":"You know Hannah sets the bake schedule and is the one to ask about production. You know Megan is quick on the till and good with regulars. You know Joe is funny on the early van run and pretends he is not tired.","like":"You are easygoing and quick with a joke, and you keep things moving.","texts":"You message the group mostly when there is a rota change or a question for the team.","style":"You use a few emoji and abbreviate only the occasional word.","capitals":true,"lives":[],"ex":[]},"Megan":{"who":"23, woman, junior baker","knows":"You know Hannah is a patient teacher who will show you the right way twice. You know Tariq handles the rota and the customers, and is easy to talk to. You know Joe has been at the bakery longest and is always moaning about the van.","like":"You are enthusiastic and a bit anxious about getting things right, and you ask a lot of questions.","texts":"You message the group fairly often, especially when you are unsure about something at work.","style":"You use a few emoji and the usual short texting abbreviations.","capitals":true,"lives":[],"ex":[]},"Joe":{"who":"41, man, baker and van driver","knows":"You know Hannah is the best baker you have worked with and sets high standards. You know Tariq keeps the shop running and organises everyone. You know Megan is keen and learning fast.","like":"You are dry and a bit grumpy in the mornings, but you are dependable and loyal to the team.","texts":"You message the group only now and then, usually about deliveries or when something has gone wrong.","style":"You rarely use emoji and keep your texts short.","capitals":true,"lives":[],"ex":[]}},"private_lines":{"Hannah":"You bake at the bakery most mornings, starting before dawn and finishing around midday. You live alone in a flat in Chorlton, and your afternoons go on a run, errands and an early dinner, with the sofa in the evening.","Tariq":"You work mostly day shifts on the front counter and do the rota at the bakery. You live alone in Levenshulme, and your days are shop, cooking, and a bit of football on the telly with a few mates.","Megan":"You are learning to bake and work the early shifts, and you live in a shared house in Fallowfield with two people who work in offices. Your days are mostly shifts, then gym or a film with flatmates.","Joe":"You do the early van run and help with baking, so you are up before most people. You live alone in Ancoats, and your evenings are quiet, with a bit of cycling at weekends and a pint now and then."},"sleep":{"Hannah":[21.5,5],"Tariq":[23,6.5],"Megan":[22.5,6.5],"Joe":[20.5,4.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1341,"cache_read_input_tokens":0,"output_tokens":3253,"output_tokens_details":{"thinking_tokens":1929},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3253,"cache_read_input_tokens":0,"cache_creation_input_tokens":1341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1341},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Colleagues at a small bakery.","topic":null}
+{"who":"Hannah","text":"Who can do Sat early? Need someone from 5 for the laminated stuff. Lewis is off","posted":true,"at":"2026-11-23T07:40","checkin":"2026-11-23T07:40"}
+{"who":"Tariq","text":"Checking the rota now","posted":true,"at":"2026-11-23T09:02","checkin":"2026-11-23T09:02"}
+{"who":"Joe","text":"Cant sat. Van at 6","posted":true,"at":"2026-11-23T09:04","checkin":"2026-11-23T09:04"}
+{"who":"Megan","text":"I can do it if someone shows me the lamination again 😅 not sure I'd get it right on my own","posted":true,"at":"2026-11-23T09:31","checkin":"2026-11-23T09:31"}
+{"who":"Hannah","text":"You'll be fine. I'll show you once more Wed and you'll have it","posted":true,"at":"2026-11-23T09:40","checkin":"2026-11-23T09:40"}
+{"who":"Megan","text":"Ok 👍","posted":true,"at":"2026-11-23T09:44","checkin":"2026-11-23T09:44"}
+{"note":"10:15-12:00 Hannah bakes the last batch of rye, then cleans down","at":"2026-11-23T09:44"}
+{"who":"Joe","text":"Van's making that noise again. The clutch or something","posted":true,"at":"2026-11-23T12:20","checkin":"2026-11-23T12:20"}
+{"who":"Megan","text":"Is it the van or you 😂","posted":true,"at":"2026-11-23T12:22","checkin":"2026-11-23T12:22"}
+{"who":"Joe","text":"Van","posted":true,"at":"2026-11-23T12:25","checkin":"2026-11-23T12:25"}
+{"who":"Tariq","text":"Sat sorted. Megan 6-2 on the counter with me, Hannah you're in from 4:30 as usual. Joe you're on the run as normal","posted":true,"at":"2026-11-23T13:50","checkin":"2026-11-23T13:50"}
+{"who":"Tariq","text":"Hannah can you do the sat bake sheet before you go","posted":true,"at":"2026-11-23T13:52","checkin":"2026-11-23T13:52"}
+{"who":"Hannah","text":"Yep","posted":true,"at":"2026-11-23T14:30","checkin":"2026-11-23T14:30"}
+{"who":"Hannah","text":"Megan you're not on the early bake then? Thought Tariq said","posted":true,"at":"2026-11-23T14:31","checkin":"2026-11-23T14:31"}
+{"who":"Tariq","text":"No 6 is counter, you'll be on the bench from 7 with Hannah","posted":true,"at":"2026-11-23T14:34","checkin":"2026-11-23T14:34"}
+{"who":"Megan","text":"Oh ok. So I'm not doing the lamination alone then","posted":true,"at":"2026-11-23T14:36","checkin":"2026-11-23T14:36"}
+{"who":"Hannah","text":"No. Wed, like I said","posted":true,"at":"2026-11-23T14:37","checkin":"2026-11-23T14:37"}
+{"who":"Joe","text":"Anyone know if the Chorlton order is still going out Sat or has it moved","posted":true,"at":"2026-11-23T18:05","checkin":"2026-11-23T18:05"}
+{"who":"Tariq","text":"Still going. 14 loaves and the focaccia. Megan can you make sure it's on the list","posted":true,"at":"2026-11-23T18:40","checkin":"2026-11-23T18:40"}
+{"who":"Megan","text":"Yes! Added","posted":true,"at":"2026-11-23T18:44","checkin":"2026-11-23T18:44"}
+{"who":"Tariq","text":"Anyone seen the spare keys for the back door","posted":true,"at":"2026-11-23T19:58","checkin":"2026-11-23T19:58"}
+{"who":"Joe","text":"In the tin by the kettle","posted":true,"at":"2026-11-23T20:03","checkin":"2026-11-23T20:03"}
+{"who":"Tariq","text":"Ta","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Joe","text":"Night","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Megan","text":"Flatmate has made a risotto that's just rice soup 😭 anyway goodnight everyone","posted":true,"at":"2026-11-23T21:12","checkin":"2026-11-23T21:12"}
+{"who":"Tariq","text":"Hope the film's good","posted":true,"at":"2026-11-23T21:14","checkin":"2026-11-23T21:14"}
+{"who":"Hannah","text":"Sat 4:30 for me. Megan 7 for the bench. Tariq counter 6. Joe on the run. That's the plan","posted":true,"at":"2026-11-23T22:20","checkin":"2026-11-23T22:20"}
+{"who":"Tariq","text":"Yep","posted":true,"at":"2026-11-23T22:21","checkin":"2026-11-23T22:21"}
+{"who":"Megan","text":"Film was ok. Ending was rubbish","posted":true,"at":"2026-11-23T22:41","checkin":"2026-11-23T22:41"}
+{"who":"Megan","text":"Night for real this time","posted":true,"at":"2026-11-23T22:42","checkin":"2026-11-23T22:42"}
+{"note":"04:30-05:10 Joe up, out to the van in the dark","at":"2026-11-23T22:42"}
+{"who":"Joe","text":"Van's out. Clutch is behaving for now","posted":true,"at":"2026-11-24T05:12","checkin":"2026-11-24T05:12"}
+{"note":"04:30-12:00 Hannah on the bake","at":"2026-11-24T05:12"}
+{"who":"Hannah","text":"Chorlton order's on the van?","posted":true,"at":"2026-11-24T06:58","checkin":"2026-11-24T06:58"}
+{"who":"Joe","text":"Yep","posted":true,"at":"2026-11-24T07:02","checkin":"2026-11-24T07:02"}
+{"who":"Hannah","text":"Ta","posted":true,"at":"2026-11-24T07:04","checkin":"2026-11-24T07:04"}
+{"note":"06:30-08:00 Tariq wakes, shop","at":"2026-11-24T07:04"}
+{"who":"Tariq","text":"Next week's rota is up on the board. Shout if it clashes with anything","posted":true,"at":"2026-11-24T07:45","checkin":"2026-11-24T07:45"}
+{"who":"Megan","text":"Looking now","posted":true,"at":"2026-11-24T07:46","checkin":"2026-11-24T07:46"}
+{"who":"Megan","text":"Thu's fine. Didn't I have Fri off though??","posted":true,"at":"2026-11-24T07:58","checkin":"2026-11-24T07:58"}
+{"who":"Tariq","text":"You did, it's been moved. Sorry, should've said. Swapped with Lewis","posted":true,"at":"2026-11-24T08:01","checkin":"2026-11-24T08:01"}
+{"who":"Megan","text":"Ah ok 👍","posted":true,"at":"2026-11-24T08:02","checkin":"2026-11-24T08:02"}
+{"note":"10:15-12:00 Hannah on the last batch, then cleaning down","at":"2026-11-24T08:02"}
+{"who":"Hannah","text":"Rye's out. Bench is clean","posted":true,"at":"2026-11-24T12:20","checkin":"2026-11-24T12:20"}
+{"who":"Megan","text":"Wed still 6 for the lamination?","posted":true,"at":"2026-11-24T12:22","checkin":"2026-11-24T12:22"}
+{"who":"Hannah","text":"6. Don't be late. Bring a bench scraper if you've got one","posted":true,"at":"2026-11-24T12:40","checkin":"2026-11-24T12:40"}
+{"who":"Megan","text":"I've got one. Got it off my nan","posted":true,"at":"2026-11-24T12:41","checkin":"2026-11-24T12:41"}
+{"who":"Hannah","text":"Good","posted":true,"at":"2026-11-24T12:43","checkin":"2026-11-24T12:43"}
+{"who":"Joe","text":"Chorlton order's in. Focaccia went on the wrong shelf, Tariq can sort it","posted":true,"at":"2026-11-24T14:10","checkin":"2026-11-24T14:10"}
+{"who":"Tariq","text":"Which shelf","posted":true,"at":"2026-11-24T14:12","checkin":"2026-11-24T14:12"}
+{"who":"Joe","text":"The one that isn't the right one","posted":true,"at":"2026-11-24T14:12","checkin":"2026-11-24T14:12"}
+{"who":"Megan","text":"Is that the one by the bin","posted":true,"at":"2026-11-24T14:20","checkin":"2026-11-24T14:20"}
+{"who":"Joe","text":"Yes","posted":true,"at":"2026-11-24T14:21","checkin":"2026-11-24T14:21"}
+{"note":"16:00-21:00 Megan at the gym, then the flat","at":"2026-11-24T14:21"}
+{"who":"Tariq","text":"Anyone want Lewis's sausage rolls Thu, he's dropped half a tray off to the counter","posted":true,"at":"2026-11-24T21:40","checkin":"2026-11-24T21:40"}
+{"who":"Megan","text":"Yes please 😭","posted":true,"at":"2026-11-24T21:58","checkin":"2026-11-24T21:58"}
+{"who":"Megan","text":"Going to be up at 5 on Wed to do my own alarm and then Hannah's","posted":true,"at":"2026-11-24T22:10","checkin":"2026-11-24T22:10"}
+{"who":"Tariq","text":"Set three","posted":true,"at":"2026-11-24T22:11","checkin":"2026-11-24T22:11"}
+{"who":"Megan","text":"Ok 😅","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Joe","text":"Van's out. Still got the noise. Not getting worse","posted":true,"at":"2026-11-25T04:38","checkin":"2026-11-25T04:38"}
+{"who":"Megan","text":"Bike has a flat 😭 walking, 10 mins","posted":true,"at":"2026-11-25T05:52","checkin":"2026-11-25T05:52"}
+{"who":"Hannah","text":"Walk fast","posted":true,"at":"2026-11-25T05:53","checkin":"2026-11-25T05:53"}
+{"who":"Megan","text":"Here","posted":true,"at":"2026-11-25T06:09","checkin":"2026-11-25T06:09"}
+{"note":"06:10-09:40 Hannah and Megan on the laminated dough, fold and chill, fold and chill","at":"2026-11-25T06:09"}
+{"who":"Hannah","text":"First set is ok. Edges were too warm, get them in the fridge sooner","posted":true,"at":"2026-11-25T09:52","checkin":"2026-11-25T09:52"}
+{"who":"Megan","text":"Ok 👍 thank you","posted":true,"at":"2026-11-25T09:54","checkin":"2026-11-25T09:54"}
+{"who":"Megan","text":"Is it normal that my hands are shaking a bit","posted":true,"at":"2026-11-25T09:56","checkin":"2026-11-25T09:56"}
+{"who":"Hannah","text":"Yes. Fridge for 20, then next fold","posted":true,"at":"2026-11-25T09:57","checkin":"2026-11-25T09:57"}
+{"who":"Tariq","text":"Tills need a new roll of paper, we've got one left for the counter","posted":true,"at":"2026-11-25T12:08","checkin":"2026-11-25T12:08"}
+{"who":"Megan","text":"I'll get some Thu on the way in","posted":true,"at":"2026-11-25T12:11","checkin":"2026-11-25T12:11"}
+{"who":"Tariq","text":"Ta","posted":true,"at":"2026-11-25T12:12","checkin":"2026-11-25T12:12"}
+{"note":"12:30-17:00 Joe on the van run, then deliveries","at":"2026-11-25T12:12"}
+{"who":"Joe","text":"Clutch is at the garage Thu morning. Van's out Fri","posted":true,"at":"2026-11-25T17:22","checkin":"2026-11-25T17:22"}
+{"who":"Tariq","text":"Fri counter's going to be full of people wanting to know where the bread is","posted":true,"at":"2026-11-25T17:25","checkin":"2026-11-25T17:25"}
+{"who":"Joe","text":"Good","posted":true,"at":"2026-11-25T17:26","checkin":"2026-11-25T17:26"}
+{"who":"Megan","text":"Hands are still cold lol","posted":true,"at":"2026-11-25T21:14","checkin":"2026-11-25T21:14"}
+{"who":"Megan","text":"Did the second set on my own. Hannah watched but didn't help 😂","posted":true,"at":"2026-11-25T21:15","checkin":"2026-11-25T21:15"}
+{"who":"Hannah","text":"You did it right. Edges held","posted":true,"at":"2026-11-25T21:19","checkin":"2026-11-25T21:19"}
+{"who":"Megan","text":"Ok 🙂","posted":true,"at":"2026-11-25T21:20","checkin":"2026-11-25T21:20"}

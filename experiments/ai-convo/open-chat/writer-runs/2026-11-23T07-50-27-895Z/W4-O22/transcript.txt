@@ -1,0 +1,515 @@
+--- Mon 07:45, Andrei
+Which restaurants near Oxford Circus in London have a private room for ten?
+
+--- Mon 07:52, Ioana
+Morning. Do we have a date yet or is that still open?
+
+--- Mon 07:58, Mihai
+Before anyone books, what is the spend cap? I can approve up to 1200 pounds for the whole lunch, drinks included. Anything above that goes to the director first.
+
+--- Mon 08:09, Elena
+omg morning 😅 just got up. 1200 for 10 is fine right? that's like 120 each
+(👍 2)
+
+--- Mon 08:15, Andrei
+1200 total is fine. Date is open. Once we have a room that works we pick the day around it.
+
+--- Mon 08:21, Ioana
+@claude restaurants near Oxford Circus, London, with a private dining room for 10 people, budget about 120 pounds a head including drinks. Which ones can seat a group that size and what is the minimum spend?
+
+--- Mon 08:22, Claude
+I couldn't open any of the venue pages, so everything below comes from search-result snippets on booking sites. Treat the figures as unconfirmed and check them with each venue.
+
+Your budget is about £1,200 for 10 people. All of these minimums are well under that, so the minimum spend shouldn't be the limit. Your drinks and menu choices will decide the final bill.
+
+| Venue | Area | Seats 10? | Listed minimum spend |
+|---|---|---|---|
+| [Noble Rot Soho](https://hirespace.com/Spaces/London/319591/Noble-Rot-Soho/Private-Dining-Room/Events) | Soho | Yes, up to 10 | £500. Festive bookings (30 Nov–23 Dec) need £1,000 upfront. |
+| [IGNI](https://hirespace.com/Spaces/London/318867/IGNI/Private-Dining-Room/Business) | Mayfair | Yes, a 10-seat room | £2,000 for the room. A £49 per-person package is also mentioned. |
+| [Perini & Perini](https://hirespace.com/Spaces/London/138398/Perini-Perini/Private-Room/Dining) | Listed as Oxford Circus | Yes, a 10-person boardroom | From £3,000. That is above your budget. |
+| [Goodman Mayfair](https://hirespace.com/Spaces/London/185692/Goodman-Mayfair/Private-Dining-Room/Dining) | Mayfair | Yes, up to 27 | £2,000 for lunch, £2,500 for evenings. |
+| [Berners Tavern](https://mds-assets.marriott.com/cms-platform-for-marriott/loneb-berners-tavern/berners-tavern-private-dining-room.pdf) | Fitzrovia | Yes, up to 14 | Lunch figure of £750 (January–August) found. Other periods not found. |
+| [Sartoria](https://tagvenue.com/rooms/london/2296/sartoria/private-dining-room) | Savile Row | Not confirmed | Varies by day and month. |
+
+- **Noble Rot Soho** is the best fit for price. Today is 23 November, so the festive rule applies if your date falls between 30 November and 23 December.
+- **Luso** on Charlotte Street (up to 12 guests) and **Dehesa** in Soho (up to 14) also have private rooms. I found no minimum spend for either.
+- **Not confirmed:** I didn't find current availability or per-head menu prices for any venue.
+- **Unclear terms:** I couldn't tell whether the minimums include service charge or drinks.
+
+Tell me your date and whether it's lunch or dinner, and I can narrow this down.
+
+Sources: the venue listings linked in the table, plus [Luso and Dehesa details via privatediningrooms.co.uk](https://www.privatediningrooms.co.uk/london/by-capacity/private-dining-rooms-london-under-10-guests/page/10).
+
+--- Mon 08:24, Elena
+ooh noble rot looks so nice 😍 the room photos are gorgeous
+
+--- Mon 08:26, Andrei
+Noble Rot first then. I want the minimum spend confirmed in writing before anyone books.
+
+--- Mon 08:31, Ioana
+Dates. 3 Dec?
+
+--- Mon 08:33, Elena
+3rd works for me 🙌 the 10th is my friend's birthday so no
+(👍 1)
+
+--- Mon 08:40, Andrei
+3rd is fine. If we fly in that morning it's tight. Probably fly the night before.
+
+--- Mon 08:44, Ioana
+Night before means a hotel. Mihai, is that a separate claim or does it come out of the lunch budget?
+
+--- Mon 09:12, Mihai
+Separate. A hotel for the team is its own approval, and I need the number before anyone books anything. Lunch is 1200 total, drinks included.
+
+--- Mon 09:14, Mihai
+Festive rule. Is the 1000 a deposit or the full bill paid upfront? If it's the full bill, that's most of the budget before drinks.
+
+--- Mon 09:15, Ioana
+@claude For Noble Rot Soho, is the £1,000 upfront for festive bookings (30 Nov to 23 Dec) a deposit that comes off the final bill, or is it paid on top of the bill? And is it refundable if we cancel?
+
+--- Mon 09:16, Claude
+I couldn't confirm either point, so I can't say whether the £1,000 comes off the bill or is refundable.
+
+I tried to open the Noble Rot private dining page and the Hirespace listing to check the exact wording. Both fetches failed. All I have is a search summary, and I haven't read the pages themselves.
+
+The summary said:
+- **Noble Rot's own site:** The normal terms are a £500 minimum spend with a £250 deposit. A footnote says that from 24 November to 24 December, the deposit and minimum spend both rise to £1,000. Cancellations need at least two weeks' notice, after which deposits are non-refundable.
+- **Hirespace:** It gives the festive window as 30 Nov to 23 Dec and calls the £1,000 a minimum spend paid upfront. It doesn't clearly call it a deposit.
+
+The two sources disagree on the dates, and neither clearly says whether the money is deducted from the bill. A minimum spend usually counts toward the bill, but I couldn't confirm that for Noble Rot. On refunds, the site's two-week notice rule is the best lead, and I'd treat it as unverified until you've seen the page.
+
+Before you pay, I'd email sohoprivatedining@noblerot.co.uk and ask three things:
+- Does the £1,000 come off the final bill?
+- Is it refundable, and until when?
+- Which dates does the festive rule cover?
+
+Sources: [Noble Rot private dining](https://noblerot.co.uk/private-dining), [Hirespace listing](https://hirespace.com/Spaces/London/319591/Noble-Rot-Soho/Private-Dining-Room/Events), [Noble Rot Soho](https://noblerot.co.uk/soho)
+
+--- Mon 09:18, Andrei
+I'll email them now with the three questions
+
+--- Mon 09:19, Mihai
+Send me the reply when it comes. I approve on the written figure, not the website.
+
+--- Mon 09:31, Elena
+ok this is getting serious lol 😅 i'm just happy we have a restaurant now
+
+--- Mon 09:33, Ioana
+Noble Rot is still the best option though? I checked Mayfair and it's more.
+
+--- Mon 10:02, Andrei
+Yes. Waiting on them.
+
+--- Mon 10:04, Elena
+should we ask about the wine list too? ppl will want to drink 🍷
+
+--- Mon 10:10, Mihai
+Drinks are inside the 1200. Ask them for the price per head with drinks included. If they can't answer that, we don't book.
+(👍 1)
+
+--- Mon 13:47, Ioana
+Mihai do you know if the hotel is capped too or just lunch?
+
+--- Mon 14:20, Mihai
+Hotel is a separate approval. Send me the hotel name and the cost per night and I'll look at it. Don't book before that.
+
+--- Mon 14:22, Elena
+tbh i don't mind a hostel 😂 the budget ones near oxford circus look fine
+
+--- Mon 15:05, Andrei
+Not a hostel for me. I need a room with a desk.
+
+--- Mon 15:08, Ioana
+@claude budget hotels near Oxford Circus, London, for the night of 2 Dec, group of about 4-5 people, ideally walkable to Noble Rot Soho. Rough nightly prices and whether the rooms have a desk?
+
+--- Mon 15:09, Claude
+I couldn't confirm live prices for 2 Dec or whether any room has a desk. Both page fetches failed (the proxy refused the connection), so I only have search-result snippets, not the pages themselves.
+
+**Rough nightly prices (snippets, not dated to 2 Dec)**
+- Oxford Circus hotels on [Kayak UK](https://www.kayak.co.uk/London-Hotels_Oxford-Circus.L86812.28501.hotel.ksp) start around £33 for 2-star and £54 for 3-star. Those are the lowest "from" prices and are often for off-peak dates.
+- Names that came up repeatedly:
+  - Zedwell Piccadilly Circus: about £97.
+  - Central Park Hotel: about £73.
+  - Gresham Hotel Bloomsbury: about $142 on [Booking.com](https://www.booking.com/landmark/gb/oxford-circus.en-gb.html).
+  - Arosfa Hotel: about $117 on an older [Tripadvisor](https://www.tripadvisor.com/HotelsNear-g186338-d9571535-Oxford_Circus-London_England.html) listing.
+- Expect roughly £100–£200 a night for a central 3-star in early December. That's my estimate, not a sourced figure.
+
+**Desks:** I found nothing that says which rooms have one. Check each hotel's room amenities list, or ask before booking.
+
+**Group of 4–5:** Most budget rooms sleep 2–3, so you'd probably need 2–3 rooms. Look for family or quad rooms. Some of the cheapest listings are hostels or guesthouses.
+
+**Walkability:** Noble Rot Soho is at [2 Greek Street, W1D 4NB](https://www.designmynight.com/london/restaurants/soho/noble-rot-soho). That's roughly a 10-minute walk from Oxford Circus. This is my estimate, not from the sources. Zedwell Piccadilly Circus is probably the closest of the hotels above.
+
+Also check the restaurant's opening hours for 2 Dec. One source lists it as closed on Sundays, and I didn't confirm that against the [official site](https://noblerot.co.uk/soho).
+
+--- Mon 15:14, Andrei
+Who else from the team is coming? I need the number for rooms
+
+--- Mon 15:17, Ioana
+Not sure yet. I'll ask in the team channel
+
+--- Mon 15:19, Mihai
+Ten for lunch. I need the headcount for the hotel before I look at it. How many rooms, one night.
+
+--- Mon 15:21, Elena
+i'd share with someone!! 😅 a twin would be fine for me
+
+--- Mon 15:24, Andrei
+Two rooms at least. I'd rather not share. I need a desk.
+
+--- Mon 15:26, Ioana
+So 2 rooms for the night of 2 Dec, yes?
+(👍 1)
+
+--- Mon 15:27, Mihai
+One night. Two rooms. Send me the hotel and the total before anyone books.
+
+--- Mon 15:29, Elena
+ok i'll look at the zedwell rooms 👀
+
+--- Mon 16:52, Ioana
+Heading into a meeting, back later. Noble Rot still no reply?
+
+--- Mon 17:10, Andrei
+No reply yet
+
+--- Mon 17:11, Mihai
+If the 1000 counts toward the bill, that leaves 200 for everything above it. Ten people with drinks won't fit in 200. Waiting for the written answer before we pick a date.
+
+--- Mon 17:19, Elena
+ugh 😩 but noble rot is still the one we want?
+
+--- Mon 17:22, Andrei
+Let's see what they say.
+
+--- Mon 19:40, Ioana
+Back from the gym. Would Central Park be better than Zedwell? Zedwell is closer but Central Park is cheaper
+
+--- Mon 19:44, Elena
+zedwell photos look nice but the bathroom looks tiny 😂
+
+--- Mon 20:18, Mihai
+Central Park's price will decide it. I need both rates for 2 Dec, two rooms. Not estimates.
+
+--- Mon 20:40, Andrei
+@claude For 2 Dec, two rooms, one night: does Zedwell Piccadilly Circus or Central Park Hotel have a room with a desk, and what is the price for two rooms at each? Check the hotel sites if you can.
+
+--- Mon 20:41, Claude
+I couldn't confirm either answer. Both page fetches failed (the connection was refused), so I haven't seen either hotel's site or any live rates for 2 Dec.
+
+- **Zedwell Piccadilly Circus:** I found nothing saying its rooms have a desk. Its own site describes windowless, soundproof "cocoon" rooms with no TVs or electronics. Listings show single, double, twin and family options. I'd treat a desk as unconfirmed, and I couldn't get a price for two rooms. Sources: [Zedwell room page](https://zedwellhotels.com/locations/london/piccadilly-circus/piccadilly-circus-hotel/) (in search results only), [Booking.com listing](https://www.booking.com/hotel/gb/zedwell-trocadero.en-gb.html).
+- **Central Park Hotel:** A desk is more likely here, but I couldn't confirm it. An older Oyster review mentions "desk/mirror combos" with chairs in the rooms. Trip.com lists TVs, wifi and tea/coffee facilities but doesn't mention a desk. The review may predate a refurbishment, and I found no price for two rooms. Sources: [Oyster](https://www.oyster.com/london/hotels/central-park-hotel-london/), [Trip.com](https://www.trip.com/hotels/london-hotel-detail-2134529/central-park-hotel-london/).
+
+To get the prices, enter 2 Dec, 1 night, 2 rooms on each hotel's own booking page. The room descriptions there should also say whether a desk is included. If a desk matters, email or call the hotel to confirm before booking.
+
+--- Mon 20:46, Elena
+ok so zedwell probably has no desk?? andrei that's a no for you then lol
+
+--- Mon 20:49, Andrei
+Probably. I'll call them tomorrow and ask about desks directly.
+
+--- Mon 20:51, Mihai
+Central Park, two rooms, one night, 2 Dec. Take the total from the booking page with taxes shown. Post the number.
+
+--- Mon 20:58, Elena
+on it 👀
+
+--- Mon 21:14, Elena
+central park twin is 93 a room so 186 total for 2 🙈 it says taxes included but i can't see if there's a city tax line
+
+--- Mon 21:17, Ioana
+Is there a separate city tax in London? Or is that just VAT and it's already in there
+
+--- Mon 21:26, Mihai
+I don't think London charges a tourist tax on hotel rooms, but check the booking page for any line item before you trust me. Post the total as the page shows it, not my guess.
+(👍 1)
+
+--- Mon 21:29, Elena
+no extra line that i can see. just the 186
+
+--- Mon 21:30, Ioana
+ok good
+
+--- Mon 21:45, Andrei
+Still no reply from Noble Rot. We wait on that before anyone books anything, including hotels.
+
+--- Mon 22:04, Elena
+honestly kind of nervous about the hotel stuff 😅 is it normal to book all this before we even know the date is locked
+
+--- Mon 22:11, Ioana
+Nothing gets booked until Mihai signs off and the restaurant confirms in writing. Nothing's booked yet so we're fine
+
+--- Mon 22:14, Elena
+phew ok 🙏 heading out with the girls for a bit, will check the chat later
+
+--- Mon 22:47, Ioana
+Noble Rot's reply, if it comes in the morning, we decide the date then. Night all
+
+--- Tue 06:41, Mihai
+Central Park, two rooms, one night, 186 total with taxes shown on the page. That is within what I can approve for the hotel. Do not book it until the restaurant confirms in writing.
+
+--- Tue 07:08, Ioana
+Morning. Noble Rot reply yet?
+
+--- Tue 07:19, Andrei
+No. Ringing them at 10. Also asking Central Park about the desk.
+
+--- Tue 08:31, Elena
+morning 😅 did anyone book central park last night?? i got an email from them that says "reservation received"
+
+--- Tue 08:33, Ioana
+Not me.
+
+--- Tue 08:35, Mihai
+Elena, check whether it is a hold or a confirmed booking. If it is a hold, cancel it before the restaurant confirms. Use the cancel link in the email, not the website.
+
+--- Tue 08:39, Elena
+ok i think it's a hold 🙏 cancelling now
+
+--- Tue 08:41, Elena
+cancelled. it says free cancellation til the 1st 👍 (not 100% sure what that means for the 2nd lol)
+(👍 1)
+
+--- Tue 10:06, Andrei
+Rang Noble Rot. They're emailing the terms, didn't want to read them out. Asked for a reply today.
+
+--- Tue 11:20, Mihai
+Send me the written terms when they come.
+
+--- Tue 12:47, Andrei
+Noble Rot email, pasting it:
+"The £1,000 festive minimum spend is deducted from your final bill. It is refundable until 14 days before the event date. After that it is non-refundable."
+
+--- Tue 12:49, Andrei
+Check the dates yourselves.
+
+--- Tue 12:55, Mihai
+3 Dec is inside the festive window, so the 1000 applies and it counts toward the bill. Lunch total is 1200 for ten, drinks included. Still need the price per head with drinks before anyone books.
+
+--- Tue 12:58, Ioana
+So as long as per head with drinks comes in under 120 we're fine?
+
+--- Tue 13:01, Andrei
+Under 120 with service included, yes. Asking them for the per head number now.
+
+--- Tue 13:34, Andrei
+Central Park says the standard twin has a small desk by the window. Not sure it's big enough for a laptop and notebook. Elena, can you check the room photos?
+
+--- Tue 13:41, Elena
+i'll look 👀 back in a bit, at work till 3
+
+--- Tue 15:09, Elena
+photo shows a little wooden desk under the window. looks ok? it's not huge but it's a desk 😅
+
+--- Tue 15:14, Andrei
+Fine for me if the price holds.
+
+--- Tue 15:40, Ioana
+Noble Rot per head reply?
+
+--- Tue 16:58, Andrei
+Not yet.
+
+--- Tue 17:20, Mihai
+Once the per head with drinks is in, post it. I will approve or not on that number.
+
+--- Tue 18:02, Elena
+@claude are there any planned tube or rail strikes in London around 2 to 3 December 2026? the team is flying in on the 2nd and we need to know
+
+--- Tue 18:03, Claude
+I found no planned Tube or rail strikes for 2–3 December 2026. I couldn't open any of the pages, though. Both attempts failed with a connection error, so this rests on search-result summaries only.
+
+**Tube (RMT, over the four-day-week dispute for drivers):** the announced dates are 26 November, 17–18 December, 19–20 December, 4 and 6 January, and 17, 23 and 25 February. Each runs about 24 hours, starting at midday. None of them fall on 2–3 December. Sources differ slightly on exact dates and end times.
+
+**Other services:** Time Out reports that the Elizabeth line, Overground and buses are not on strike. Aslef has accepted the roster changes and isn't striking. I found nothing about National Rail strikes on those dates.
+
+**Caveats:**
+- The RMT and TfL are in talks at Acas, so dates could change. Further strikes could be announced, though unions normally give at least 2 weeks' notice. That means anything for 2–3 December would probably have to be announced by about 18–19 November, and I found no such announcement.
+- The 26 November strike is close enough that disruption could linger, but it is a week before your arrival.
+
+I'd check TfL's status page and National Rail's disruption page the day before you fly.
+
+Sources:
+- [UCL: London Underground strike action, Nov 2026–Feb 2027](https://www.ucl.ac.uk/news/2026/nov/london-underground-strike-action-november-2026-february-2027)
+- [Time Out: Tube strikes winter 2026/27](https://www.timeout.com/london/news/tube-and-train-strikes-christmas-winter-2026-2027-full-list-of-dates-and-lines-110626)
+- [Time Out: Elizabeth line and November strikes](https://timeout.com/london/news/tube-strikes-november-2026-elizabeth-line-112326)
+- [London Now: TfL strikes Nov/Dec 2026](https://www.london-now.co.uk/news/26745480.tfl-tube-strikes-planned-november-december-2026/)
+- [Newshub: Tube strike dates](https://www.newshub.co.uk/news/2026/11/22/london-tube-strikes-rmt-walkout-dates-and-four-day-week-dispute/)
+
+--- Tue 18:14, Ioana
+good, so no strike on the 2nd. that was the one i was worried about
+
+--- Tue 18:16, Andrei
+Gatwick Express isn't covered in that. Worth checking separately if we fly into Gatwick.
+
+--- Tue 18:20, Elena
+ok 👍 i'll check the status page the day before like it says
+(👍 1)
+
+--- Tue 19:52, Andrei
+Noble Rot per head just came in. 114 with drinks, service not included. Add 12.5%.
+
+--- Tue 19:53, Ioana
+ugh. 114 + 12.5% is about 128
+
+--- Tue 19:54, Andrei
+Yes. 10 x 128 is 1280. Over the 1200.
+
+--- Tue 19:58, Elena
+can we do a set menu? cheaper food and drinks on their own? 🤔
+
+--- Tue 20:03, Ioana
+Mihai's asleep. Probably wait for him.
+
+--- Tue 20:20, Andrei
+Asking them about a set menu and whether drinks can be capped. Not ordering anything until Mihai sees the number.
+
+--- Tue 21:37, Elena
+they have a set menu option for private rooms?? 😅 i can see it on the site. no price on it
+
+--- Tue 21:40, Andrei
+Ask them. Email, not the site.
+
+--- Tue 21:41, Elena
+fine 😂 emailing now
+
+--- Tue 23:58, Elena
+home 😴 emailed them about the set menu. they said maybe tmrw
+
+--- Wed 00:12, Andrei
+Ask them to put the set menu price in writing. Mihai won't look at anything else.
+
+--- Wed 00:31, Elena
+did anyone else get the noble rot newsletter 😭 they have a christmas menu now. i want the pudding
+
+--- Wed 06:52, Mihai
+Set menu price must be in writing. Per head, and say whether service is added on top. I will look at nothing else.
+
+--- Wed 07:03, Ioana
+Set menu reply?
+
+--- Wed 07:19, Andrei
+Nothing yet.
+
+--- Wed 08:14, Elena
+still no reply from them 😩 i'll chase at 9
+
+--- Wed 08:22, Ioana
+If the set menu comes in over 120, could we cut the drinks to a set number of bottles instead?
+
+--- Wed 08:26, Mihai
+A capped drinks figure in writing is also acceptable. Without a written number I have nothing to approve.
+
+--- Wed 09:02, Elena
+chasing now 🙏
+
+--- Wed 09:40, Andrei
+Which airport are we flying into? Gatwick needs its own check.
+
+--- Wed 09:48, Elena
+dont know yet 😅 cheapest ones i've seen are into gatwick so far
+
+--- Wed 09:55, Ioana
+@claude Gatwick Express strikes or disruption 2 to 3 December 2026? Also whether it runs to Victoria early in the morning, we'd be coming from there
+
+--- Wed 09:56, Claude
+I couldn't confirm either point, because I couldn't open any pages. Both page fetches failed, so what follows comes from search snippets only.
+
+**Strikes or disruption on 2–3 December 2026**
+- I found no report of a Gatwick Express strike or planned disruption on those dates.
+- Most of the results were older strikes from past years, and the few that might be recent had no year attached.
+- That isn't a guarantee. Strikes are often announced only one to two weeks ahead, so nothing may be published yet.
+- Check [Gatwick Express service updates](https://www.gatwickexpress.com) and National Rail Enquiries closer to the date. Engineering works are also worth checking, since I couldn't see any information on those.
+
+**Early morning from Victoria**
+Yes, trains run early, but the sources disagree on the exact first departure:
+- [Trip.com](https://uk.trip.com/trains/guide/gatwick-express-first-last-trains) gives 05:05, arriving 05:45. Its timetable is for 2025, so it may be out of date.
+- [Live-departures.info](https://live-departures.info/rail/timetable/London-Victoria/Gatwick-Airport/) gives 04:30 on weekdays, arriving 05:12.
+- [RailEasy](https://www.raileasy.co.uk/information/train-operating-company/gatwick-express/) gives 03:30 and 04:30.
+- [Southern Railway](https://www.southernrailway.com/journey/london-victoria-to-gatwick-airport) lists a 00:02 train, which is probably a Southern service rather than a Gatwick Express.
+
+The journey takes about 30 minutes. If you need a very early train, check the timetable for 2 and 3 December on National Rail Enquiries or the Gatwick Express site, and don't rely on the times above.
+
+Sources: the links above.
+
+--- Wed 10:14, Andrei
+Gatwick or Heathrow? Price difference matters more than the Express now
+
+--- Wed 10:21, Ioana
+Heathrow is always more for us. Gatwick is fine if we can get to Victoria easily
+
+--- Wed 10:26, Elena
+gatwick 6am is 49 each return 🙈 heathrow was 110+
+
+--- Wed 10:30, Mihai
+Flights are not inside the lunch or the hotel approval. Send me the total per person before anyone books.
+
+--- Wed 10:33, Andrei
+Gatwick then. Elena, check the 6am flight but don't book yet.
+
+--- Wed 10:35, Elena
+ok 👍 not booking till mihai says
+
+--- Wed 10:52, Ioana
+In meetings till 4, don't wait on me
+
+--- Wed 11:48, Elena
+THEY REPLIED 😭 set menu is 95 pp, service 12.5% on top, drinks extra
+
+--- Wed 11:51, Andrei
+95 + 12.5% is about 107. 10 x 107 is 1069. That leaves 131 for drinks.
+
+--- Wed 11:53, Elena
+131 for drinks for 10 people 😬
+
+--- Wed 11:55, Ioana
+that's about 13 each. one glass lol
+
+--- Wed 11:58, Mihai
+Is 131 the full drinks figure, or do people order on top of the set menu? I need the drinks cap in writing.
+
+--- Wed 12:02, Andrei
+Asking them for a fixed drinks cap, total with service, in writing.
+
+--- Wed 12:04, Elena
+emailing now 🙏
+
+--- Wed 16:40, Andrei
+Not heard back yet. Going to check the flights myself later.
+
+--- Wed 17:40, Elena
+they replied on the cap!! 🙈 "drinks capped at £150 for the table". i'm sorry
+
+--- Wed 17:44, Andrei
+1069 + 150 = 1219. Over by 19.
+
+--- Wed 17:46, Mihai
+Over 1200 goes to the director first. I will send it to her tonight. Do not book anything.
+
+--- Wed 18:20, Ioana
+can we ask for 130 instead? they've been pretty helpful
+
+--- Wed 18:31, Andrei
+Asking. Also five a side tonight, back after 9.
+
+--- Wed 19:45, Ioana
+back from gym. anything from them?
+
+--- Wed 21:58, Andrei
+Not yet. Still waiting on the 130 answer.
+
+--- Wed 23:12, Elena
+they said yes to 130!!! 🎉 written: "drinks capped at £130 for the table, service added on top of the set menu"
+
+--- Wed 23:14, Andrei
+1069 + 130 = 1199. Under 1200. Sending to Mihai now.
+
+--- Wed 23:15, Ioana
+nice 👏
+
+--- Wed 23:48, Elena
+ok night 😴 pudding plans tmrw
+
+--- Wed 23:50, Ioana
+night

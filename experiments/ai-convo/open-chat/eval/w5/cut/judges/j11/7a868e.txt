@@ -1,0 +1,140 @@
+--- Tue 21:02, Hana
+no plan yet. just the train times and lunch. we book beatles after
+
+--- Tue 21:05, Mere
+beatles slot after we know the time 😅
+
+--- Tue 21:05, Dylan
+yeah that
+
+--- Tue 22:10, Hana
+gym?
+
+--- Tue 22:11, Dylan
+did legs. stairs at the house
+
+--- Tue 22:48, Mere
+bed. marking took forever 😴
+
+--- Tue 23:20, Hana
+ok. sleep. dylan tmrw the train
+
+--- Tue 23:40, Dylan
+yep
+
+--- Wed 00:14, Dylan
+going to bed. train thing first thing
+
+--- Wed 06:38, Mere
+morning 😅 going to ring the pub at lunch since the website is a mess
+
+--- Wed 07:15, Hana
+morning. on shift from 8. dylan u up?
+
+--- Wed 08:04, Dylan
+up
+
+--- Wed 08:05, Dylan
+doing the train now
+
+--- Wed 08:09, Dylan
+@claude can you check the sunday 29 november timetable for trains from manchester piccadilly to liverpool lime street, first one in the morning, and liverpool lime street back to manchester piccadilly, last one at night. the current timetable, not the one starting 13 dec
+
+--- Wed 08:10, Claude
+I couldn't confirm either time for Sunday 29 November 2026, so I don't have a first or last train to give you.
+
+My searches only turned up general first and last times, mostly for weekdays or with no date. Sunday times are often different. When I tried to open the timetable pages (Northern, TransPennine Express, live-departures.info) to check, every request failed with a "proxy refused the connection" error. That means I didn't read any of those pages, and I don't want to guess a Sunday time from search snippets.
+
+Here is what the snippets said, for what it's worth:
+- **Manchester Piccadilly to Liverpool Lime Street, first train:** [Northern](https://www.northernrailway.co.uk/trains/manchester-piccadilly-to-liverpool-lime-street) lists 05:03, while [Southern's page](https://www.southernrailway.com/journey/manchester-piccadilly-to-liverpool-lime-street) and [live-departures.info](https://live-departures.info/rail/timetable/Manchester-Piccadilly/Liverpool-Lime-Street/) give 05:54 for weekdays. None of them is specific to a Sunday.
+- **Liverpool Lime Street to Manchester Piccadilly, last train:** [live-departures.info](https://live-departures.info/rail/timetable/Liverpool-Lime-Street/Manchester-Piccadilly/) shows 00:18 on weekdays. A Trainline listing shows 23:36, but it's for a 2025 date. These could easily be wrong for a Sunday.
+
+To get the real times, put 29 November into the [Northern journey planner](https://www.northernrailway.co.uk/journey-planner/liverpool-lime-street-to-manchester-piccadilly) or National Rail Enquiries and check the earliest and latest results. The 13 December timetable change doesn't affect that date, so the current timetable will apply. I can try again if you'd like.
+
+Sources:
+- [Northern: Manchester Piccadilly to Liverpool Lime Street](https://www.northernrailway.co.uk/trains/manchester-piccadilly-to-liverpool-lime-street)
+- [Northern journey planner: Liverpool Lime Street to Manchester Piccadilly](https://www.northernrailway.co.uk/journey-planner/liverpool-lime-street-to-manchester-piccadilly)
+- [Southern Railway journey page](https://www.southernrailway.com/journey/manchester-piccadilly-to-liverpool-lime-street)
+- [live-departures.info: Manchester Piccadilly to Liverpool Lime Street](https://live-departures.info/rail/timetable/Manchester-Piccadilly/Liverpool-Lime-Street/)
+- [live-departures.info: Liverpool Lime Street to Manchester Piccadilly](https://live-departures.info/rail/timetable/Liverpool-Lime-Street/Manchester-Piccadilly/)
+
+--- Wed 08:12, Dylan
+useless
+
+--- Wed 08:14, Mere
+omg 😅 ok im at school now, going to ring the pub at lunch
+
+--- Wed 08:20, Hana
+on shift from 8. ill try nre on my break
+
+--- Wed 12:40, Mere
+rang the pub. no answer lol. left a msg 😅
+
+--- Wed 13:02, Hana
+nre still not loading for me
+
+--- Wed 13:03, Hana
+@claude can you try once more, sunday 29 nov, the last train from liverpool lime street back to manchester piccadilly and the first one from manchester. we need actual times not search stuff
+
+--- Wed 13:04, Claude
+I couldn't get actual times for Sunday 29 November. My tool can't open any of the timetable pages, because every fetch failed with "proxy refused the connection". All I have is search snippets, and you said you didn't want those. The snippets also disagree with each other and are out of date.
+
+What the snippets suggested, none of it verified for 29 Nov 2026:
+- **Last train from Liverpool Lime Street:** possibly 23:36 on a Sunday. Weekday listings show 00:18. This comes from the [TransPennine Express page](https://www.tpexpress.co.uk/travelling-with-us/routes/trains-from-liverpool-lime-street-to-manchester-piccadilly), which was about 650 days old, and from [Omio](https://www.omio.co.uk/trains/liverpool-lime-street/manchester-piccadilly-svf0d).
+- **First train from Manchester Piccadilly:** possibly 07:56 on a Sunday, from the [TransPennine Express page](https://www.tpexpress.co.uk/travelling-with-us/routes/trains-from-manchester-piccadilly-to-liverpool-lime-street). [Rome2rio](https://www.rome2rio.com/Train/Manchester-Piccadilly-Station/Liverpool-Lime-Street) showed an 08:15 Sunday departure on a past date.
+
+Those two times are old and unconfirmed, so please don't plan around them. Sunday services on this route are also often changed by engineering work.
+
+Before you rely on any time, check the live journey planner on National Rail Enquiries, Trainline, or the Northern or TransPennine Express sites for 29 Nov. Look at the earliest and latest results on the day. I can try again if you'd like, but the fetch failures may continue.
+
+--- Wed 13:19, Hana
+nre still not loading. ill try on my break again
+
+--- Wed 13:21, Dylan
+dont want to keep asking the bot
+
+--- Wed 13:22, Hana
+fair. ill check the day before anyway
+(👍 1)
+
+--- Wed 15:48, Mere
+out of school 😩 pub still hasnt rung back
+
+--- Wed 15:51, Dylan
+ok
+
+--- Wed 17:30, Hana
+home. shift was mad again. nre still broken for me
+
+--- Wed 17:33, Mere
+ok 😅 cant do anything tonight anyway
+
+--- Wed 18:02, Dylan
+back from gym
+
+--- Wed 18:10, Mere
+omg the philharmonic has a tripadvisor page with photos 😍 the tiles are insane
+
+--- Wed 18:11, Dylan
+sounds good
+
+--- Wed 21:30, Hana
+dylan are you actually going to do the train or is it me
+
+--- Wed 21:44, Dylan
+i tried. the site wont load for me either
+
+--- Wed 22:05, Mere
+thats the 4th time someone has said that lol 😭
+
+--- Wed 22:06, Hana
+ill do it first thing
+
+--- Wed 23:02, Mere
+bed 😴 🌙
+
+--- Wed 23:20, Hana
+ok. sleep
+
+--- Thu 00:16, Dylan
+bed. ill look at it tmrw

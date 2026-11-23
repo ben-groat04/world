@@ -1,0 +1,421 @@
+--- Mon 07:45, Hannah
+Which restaurants near Oxford Circus in London have a private room for ten?
+
+--- Mon 08:12, Chloe
+London?? we're in Mumbai 😅
+(😂 2)
+
+--- Mon 08:14, Hannah
+oh no, wrong tab. sorry. Mumbai
+
+--- Mon 09:02, Raj
+No problem. Which area works for everyone? Lower Parel is roughly central for most of us.
+
+--- Mon 09:08, Tomas
+Lower Parel is fine for me
+
+--- Mon 09:20, Chloe
+Lower Parel works 👍
+
+--- Mon 09:31, Hannah
+Lower Parel then. Ten people, private room, weekday lunch. Asking Claude
+
+--- Mon 09:33, Hannah
+@claude restaurants in Lower Parel, Mumbai with a private room or private dining space for about 10 people for a weekday lunch
+
+--- Mon 09:34, Claude
+I couldn't confirm a private room for 10 at any Lower Parel restaurant. My one attempt to open a source page failed, so everything below comes from search snippets only.
+
+- **Masque** (Laxmi Woollen Mills, Lower Parel): one guide says it handles team dinners of 12 to 30 with advance planning. That guide also says it runs a single seating most evenings. It's about dinner, so ask whether they do weekday lunch at all.
+- **The St. Regis Mumbai** (Lower Parel): it has several restaurants, including Seven Kitchens and Sette Mara, and suggests reservations. I found no private-room details, so ask the hotel's events or dining team.
+- **Wasabi by Morimoto**: one guide says it offers private dining rooms. That guide places it at the Taj Mahal Palace in Colaba, not Lower Parel, so it likely doesn't fit your area.
+- **Venuelook listings** show Lower Parel venues such as Cafe Free India (up to 75 guests) and Hideout Cafe and Bar (up to 80). These are generic capacity figures, not confirmed private rooms.
+- **The Bombay Canteen** is marked closed on its District listing, so skip it.
+
+Call each place to ask about a private room or a section that can be partitioned for 10, weekday lunch hours, and any minimum spend or set menu.
+
+Sources:
+- [5 Restaurants For Dining Clients In Mumbai](https://www.theculturetrip.com/asia/india/articles/5-restaurants-for-dining-clients-in-mumbai)
+- [Mumbai best restaurants team dinner 2026](https://restaurantsforkings.com/blog/mumbai-best-restaurants-team-dinner-2026)
+- [Dining at The St. Regis Mumbai](https://marriott.com/en-us/hotels/bomxr-the-st-regis-mumbai/dining)
+- [Venuelook: Group dining in Lower Parel](https://www.venuelook.com/group-dining-venues-in-mumbai/locality/lower-parel/venuetype/bars-and-pubs)
+- [District: The Bombay Canteen](https://www.district.in/dining/thebombaycanteen)
+
+--- Mon 09:41, Chloe
+masque sounds nice but prob too pricey for a team lunch 😬
+(😂 1)
+
+--- Mon 09:43, Raj
+Agreed on price. Pity about the Bombay Canteen, I liked it there.
+
+--- Mon 09:45, Hannah
+Cafe Free India doesn't sound like a private room kind of place to me. Want to check the St Regis first?
+
+--- Mon 09:52, Tomas
+St Regis is a hotel, will they do lunch for 10 on a weekday? Usually they want notice
+
+--- Mon 10:05, Raj
+I'll call the St Regis events team this afternoon.
+
+--- Mon 10:06, Hannah
+Can someone check Masque's lunch hours? I'll ask Claude
+
+--- Mon 10:07, Hannah
+@claude does Masque in Lower Parel serve weekday lunch, and do they have a private room or a separate section for 10?
+
+--- Mon 10:08, Claude
+I couldn't confirm either answer. Every attempt to open a page failed, so I haven't read any source in full. What follows comes from search-result snippets only.
+
+- **Location:** Masque is in Mahalaxmi, at Laxmi Woollen Mills, not in Lower Parel. It is close by, but check you have the right place.
+- **Weekday lunch:** The sources conflict.
+  - A Luxury Launches article lists lunch Tuesday to Sunday, 12:00–15:30, with last seating at 14:00. It may be out of date.
+  - EazyDiner appears to list dinner only, 7:00–10:00 PM.
+  - I'd assume lunch is not a sure thing until the restaurant confirms it.
+- **Group of 10:** Masque has a private space called The Lab. It reportedly seats about 12 around an open kitchen and doubles as a private dining room. That would fit 10, but I couldn't confirm whether it can be booked for lunch or what the minimum spend is.
+
+The Luxury Launches listing gives the phone number +91 22 24991010. Call to confirm lunch service, The Lab's availability and the booking terms.
+
+Sources:
+- [Luxury Launches – Masque 10-course experience menu](https://luxurylaunches.com/mumbai/masque-does-away-with-boring-dining-with-its-10-course-experience-menu/)
+- [EazyDiner – Masque, Mahalaxmi](https://www.eazydiner.com/mumbai/masque-mahalaxmi-south-mumbai-639820)
+- [The Infatuation – Masque](https://theinfatuation.com/mumbai/reviews/masque)
+
+--- Mon 10:15, Chloe
+the lab sounds nice. does it have its own door or is it just a table in the kitchen
+
+--- Mon 10:19, Hannah
+no idea. that's a question for the call
+
+--- Mon 10:21, Tomas
+mahalaxmi is fine for me, not far from where I am
+
+--- Mon 10:26, Raj
+I'll take the St Regis. Hannah can you do Masque? If the lab can't do lunch we go back to the list
+
+--- Mon 10:27, Hannah
+yes, I'll call after 12. they're usually quicker then
+
+--- Mon 13:52, Hannah
+Masque rang out twice. left a message asking for the events person
+
+--- Mon 14:30, Raj
+St Regis events picked up. They can host ten on a weekday but want a headcount ahead of time. They'll email the rest
+
+--- Mon 14:33, Tomas
+headcount when? we don't have ten confirmed yet
+
+--- Mon 14:41, Chloe
+i can ask the others on our project, prob 9 or 10, not sure yet 👍
+(👍 1)
+
+--- Mon 14:45, Raj
+ok. can we know by tomorrow morning
+
+--- Mon 15:10, Chloe
+yep. Hannah are you still on Masque or should I try
+
+--- Mon 16:05, Hannah
+still on it. no pickup. I'll try again tomorrow, maybe they're closed in the afternoon
+
+--- Mon 16:20, Hannah
+@claude any other places in Lower Parel with a private room or separate section for 10, weekday lunch? not Masque, not St Regis
+
+--- Mon 16:21, Claude
+I couldn't open any of the pages, so none of this is confirmed. Both page fetches failed. What follows comes from search-result snippets only.
+
+**Leads worth a call:**
+- **Seven Kitchens, Palladium Hotel (Senapati Bapat Marg).** A third-party listing says the hotel has private dining rooms for groups. This is the most direct match I found, but I saw no capacity, lunch availability or price. Ask the hotel's events team. ([Venuelook](https://venuelook.com/mumbai/seven-kitchens-of-palladium-hotel-in-lower-parel))
+- **The Bombay Canteen (Kamala Mills).** A ranking site mentions a private dining room used for seated events. I couldn't verify that. Its District page showed it as closed, while Elite Traveler lists normal hours, so check that it's open before relying on it. ([Elite Traveler](https://elitetraveler.com/restaurant/18475/the-bombay-canteen), [District](https://www.district.in/dining/thebombaycanteen))
+- **Wasabi.** One source says it offers private rooms for larger groups. I didn't see a source for that beyond the snippet, so treat it as unconfirmed.
+
+**Possible, but nothing mentions private rooms:** [Nayra](https://www.district.in/dining/mumbai/nayra-lower-parel) and [Millo](https://www.district.in/dining/mumbai/millo-lower-parel) in Kamala Mills, and [Punjab Grill](https://www.district.in/dining/mumbai/punjab-grill-lower-parel) in Palladium Mall. A group of 10 may fit at a long table or in a separate section, but ask them.
+
+When you call, ask whether the room is available at weekday lunch, whether there's a minimum spend, and whether there's a set menu.
+
+Sources: [Venuelook](https://venuelook.com/mumbai/seven-kitchens-of-palladium-hotel-in-lower-parel), [Elite Traveler](https://elitetraveler.com/restaurant/18475/the-bombay-canteen), [District – Bombay Canteen](https://www.district.in/dining/thebombaycanteen), [District – Nayra](https://www.district.in/dining/mumbai/nayra-lower-parel), [District – Millo](https://www.district.in/dining/mumbai/millo-lower-parel), [District – Punjab Grill](https://www.district.in/dining/mumbai/punjab-grill-lower-parel)
+
+--- Mon 16:40, Chloe
+i'll ask on the project chat for numbers. might take till tmrw
+
+--- Mon 16:52, Raj
+Fine. If the Palladium one has a room, I'd rather that than a long table
+
+--- Mon 17:10, Tomas
+Seven Kitchens is in the Palladium right? near the mall with the good chai
+
+--- Mon 18:33, Hannah
+Palladium works for me. Can someone else call them? I'm on the client deck until late
+
+--- Mon 18:35, Raj
+I can. Tomorrow morning, before the St Regis follow up
+
+--- Mon 19:02, Chloe
+ok so far: me, you, hannah, tomas. sam and priya said yes-ish. rest unsure
+(👍 1)
+
+--- Mon 19:05, Tomas
+who's yes-ish
+
+--- Mon 19:06, Chloe
+sam and priya. dont quote me
+
+--- Mon 21:14, Raj
+Chloe can you put the headcount in the project thread so it's written down
+
+--- Mon 21:20, Chloe
+will do 👍
+
+--- Mon 22:47, Tomas
+masque lunch is still unclear right? dont want to waste hannahs morning
+
+--- Mon 23:12, Hannah
+I'll try them first thing. If no answer by 10 we drop it
+
+--- Mon 23:38, Chloe
+ok going to bed. tell me if the lab thing works 😴
+
+--- Tue 06:52, Raj
+morning. I'll ring the palladium at 10 so Hannah isn't doing it alone
+
+--- Tue 07:12, Tomas
+morning. is the lab still in play or are we just going with the room at palladium
+
+--- Tue 07:30, Hannah
+morning. calling masque at 9, will know more then
+
+--- Tue 07:48, Chloe
+morning!! ok headcount so far: me, raj, hannah, tomas, sam = 5 🙌 priya maybe, tanvi and mo no. more coming hopefully
+(🙌 1, 👍 1)
+
+--- Tue 07:50, Tomas
+nice. 5 is a long way from 10
+
+--- Tue 07:52, Chloe
+i know 😅 asked dev and anjali too
+
+--- Tue 09:04, Hannah
+masque picked up finally. events person is out till 11, they'll call back. no idea on lab or lunch yet
+
+--- Tue 09:06, Raj
+ok. I'll ring palladium at 10
+
+--- Tue 09:09, Tomas
+i'm in a meeting 10 to 12 so text if anything
+
+--- Tue 10:14, Raj
+palladium events: they think the private room can take ten but they're checking the weekday lunch slots. call back after 3
+
+--- Tue 10:16, Hannah
+nice
+
+--- Tue 11:40, Hannah
+masque called back. the lab might be booked, they're checking. will confirm by 4
+
+--- Tue 11:48, Chloe
+ok so if masque fails it's palladium? i'm fine either way
+(👍 1)
+
+--- Tue 12:20, Tomas
+palladium works for me too. it's easier for most of us honestly
+
+--- Tue 13:05, Raj
+I'd rather palladium. Hannah, if masque confirms the lab can we still do it or do we go palladium anyway
+
+--- Tue 13:12, Hannah
+palladium unless masque says yes by 4. I don't want to split the headcount calls
+
+--- Tue 15:58, Raj
+palladium rang back, they're still checking. I'll go back at 4
+
+--- Tue 16:30, Hannah
+masque still hasn't confirmed. they said they'd email. I'm going with palladium unless someone objects
+
+--- Tue 16:34, Tomas
+no objection
+
+--- Tue 16:50, Chloe
+👍 going with palladium then. I'll update the thread
+(👍 2)
+
+--- Tue 17:20, Raj
+palladium says they can fit ten. they'll email the details. Chloe can you keep the headcount going
+
+--- Tue 17:24, Chloe
+will do. sam yes, priya yes, tanvi no
+(✅ 1)
+
+--- Tue 17:26, Tomas
+6 now
+
+--- Tue 17:40, Hannah
+still on the deck. finishing around 8
+
+--- Tue 19:12, Raj
+Hannah, when you're done email palladium to confirm we're going with them, I'll cc you. I'll email the St Regis to drop them, no need to call
+
+--- Tue 19:20, Chloe
+dev said maybe. anjali said yes. so 7 now 🎉
+(🎉 1, 👍 1)
+
+--- Tue 20:48, Hannah
+just got out. emailing palladium now
+
+--- Tue 21:03, Tomas
+sorry, was on a call. is the St Regis dropped
+
+--- Tue 21:05, Raj
+yes. I'll send the St Regis email tomorrow morning. they're a fallback if palladium falls through
+
+--- Tue 22:14, Chloe
+palladium replied already? lol hannah you're quick
+(😂 1)
+
+--- Tue 22:20, Hannah
+auto reply only. they'll send details tomorrow
+
+--- Tue 22:41, Tomas
+so when do we get the time. 1pm?
+
+--- Tue 22:58, Chloe
+i'd say 1pm works. i don't mind honestly
+
+--- Tue 23:19, Raj
+1pm is fine. I'll confirm with palladium when their email comes
+
+--- Tue 23:24, Hannah
+will sort the time when they email
+
+--- Tue 23:52, Chloe
+going to bed 😴 tell me if the palladium email comes through
+
+--- Wed 06:58, Raj
+morning. St Regis email sent, they're off the list
+
+--- Wed 07:31, Chloe
+morning!! still 7 for sure. dev said he'd know by noon
+
+--- Wed 07:40, Tomas
+morning. rn 7 is fine if they dont want a minimum headcount
+
+--- Wed 09:12, Hannah
+palladium email in. room confirmed for ten, weekday lunch, 1pm is open. they want final numbers by friday
+
+--- Wed 09:14, Raj
+good. so we chase dev and anjali
+
+--- Wed 09:16, Chloe
+i'll chase. dev said noon 👍
+
+--- Wed 09:30, Tomas
+does the email say what the menu is or is it a la carte
+
+--- Wed 09:44, Hannah
+they attached a set menu pdf. two courses and dessert. forwarding to the thread
+
+--- Wed 09:46, Raj
+ok. Hannah, can you check it has something for vegetarians
+
+--- Wed 09:51, Chloe
+@claude does seven kitchens at palladium have vegetarian and jain options on their lunch menu? we need to know before friday
+
+--- Wed 09:52, Claude
+I couldn't confirm it. Both listing pages failed to open, so what I have comes only from search-result snippets, and I didn't read the pages themselves.
+
+- **Location:** Seven Kitchens is at The St. Regis in Lower Parel, Mumbai, which is in the Phoenix Mills area. I couldn't confirm it's at Palladium. Palladium is the neighbouring mall, so check you have the right venue.
+- **Vegetarian:** EazyDiner's listing says the restaurant serves both veg and non-veg food.
+- **Jain:** The only Jain mention I found is a District reviewer saying the Jain food was good at a breakfast visit. I found nothing about Jain options at lunch.
+- **Format:** The listings disagree on whether lunch is a buffet or à la carte. Lunch hours are shown as about 12–3 PM.
+
+Since you need this by Friday, I'd call the restaurant or the hotel and ask three things:
+1. Is there a Jain menu at lunch, meaning no onion, garlic or root vegetables?
+2. Is lunch a buffet or à la carte?
+3. Can they confirm the location?
+
+Sources:
+- [EazyDiner – Seven Kitchens](https://www.eazydiner.com/mumbai/seven-kitchens-the-st-regis-lower-parel-223192/about)
+- [District – Seven Kitchens, The St. Regis](https://www.district.in/dining/mumbai/seven-kitchens-the-st-regis-mumbai-lower-parel)
+
+--- Wed 10:02, Tomas
+wait is seven kitchens the st regis? i thought palladium
+
+--- Wed 10:04, Hannah
+the email with the pdf came from palladium events, so I'd guess they run the room. I'll check when I call
+
+--- Wed 10:05, Raj
+ha. we dropped the st regis yesterday. I'll ask which building when I ring
+
+--- Wed 10:06, Chloe
+anjali is jain btw. so the jain question matters
+
+--- Wed 10:09, Hannah
+it does. can someone call? I'm in the client review at 11
+
+--- Wed 10:11, Raj
+I'll do it at 11:30
+
+--- Wed 10:13, Tomas
+ok
+
+--- Wed 11:04, Chloe
+dev said noon. tanvi and mo are both no, so it's 8 if dev says yes
+
+--- Wed 12:01, Chloe
+dev yes 🙌 so 8 now
+(🙌 1)
+
+--- Wed 12:04, Tomas
+8. do we still need 10 or is 8 fine
+
+--- Wed 12:06, Raj
+room holds ten, 8 is fine. we can always tell them less
+
+--- Wed 12:40, Raj
+rang seven kitchens. they're in the st regis, not palladium. they didn't know the jain menu off the top of their head, manager will email
+
+--- Wed 12:43, Hannah
+the email came from palladium events though. can you ask them which building the lunch is in
+
+--- Wed 12:45, Raj
+yes, will do
+
+--- Wed 12:52, Tomas
+jain is no onion, no garlic, no root veg right
+
+--- Wed 12:55, Chloe
+yes and no root veg. anjali will tell us what she's ok with
+
+--- Wed 15:10, Raj
+palladium events say it's in their building and they'll confirm the room by email tomorrow
+
+--- Wed 15:14, Hannah
+fine as long as it's the room we booked. I'll check the email tomorrow
+
+--- Wed 18:20, Tomas
+has anyone seen the jain email yet
+
+--- Wed 19:02, Raj
+not yet. I'll chase tomorrow before 10
+
+--- Wed 19:40, Hannah
+I'll send final numbers thursday. eight, plus anything that changes
+
+--- Wed 19:41, Raj
+good
+
+--- Wed 21:10, Tomas
+sorry, was out at dinner. still no jain email?
+
+--- Wed 21:12, Chloe
+no. I'm out with priya now, will check later
+
+--- Wed 22:55, Raj
+goodnight all
+
+--- Wed 23:08, Hannah
+goodnight. jain email first thing
+
+--- Wed 23:20, Tomas
+night
+
+--- Wed 23:48, Chloe
+ok night!! 😴

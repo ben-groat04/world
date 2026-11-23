@@ -1,0 +1,154 @@
+--- Mon 07:45, Priya
+Which restaurants near Oxford Circus in London have a private room for ten?
+
+--- Mon 07:58, Dana
+Need it booked this week. Thursday or Friday works for me.
+
+--- Mon 08:12, Marcus
+Thursday works. Somewhere walkable from the client office would be easiest.
+
+--- Mon 08:14, Tomas
+👍
+(👍 1)
+
+--- Mon 08:20, Priya
+@claude Which restaurants near Oxford Circus in London have a private dining room for about 10 people for a weekday lunch? I need names, whether they have a separate room (not just a reserved table), and whether they take group bookings online or only by phone.
+
+--- Mon 08:21, Claude
+I couldn't open any of the venue pages, because both fetches failed with "proxy refused the connection". Everything below comes from search-result snippets only. I haven't verified any of it on the venues' own sites.
+
+**Possible fits for about 10 people**
+
+| Venue | Separate room? | Weekday lunch? | Online or phone booking? |
+|---|---|---|---|
+| **Perini & Perini Bar** (John Prince's St) | Listed as a private dining room seating 10, hireable separately. | Listed as bookable daily, 09:00–22:00. A minimum spend of £3,000 or more is mentioned. | Unconfirmed. It's listed on Hirespace, which suggests an online enquiry, but I didn't confirm that. |
+| **IGNI** (Mayfair) | Listed as a private dining room for up to 10, set up as a chef's-table room. | Doubtful. The listing shows 18:00–22:30 only, with a £2,000 minimum spend. | Unconfirmed. It's listed on Tagvenue and Hirespace as an enquiry or quote. |
+| **KA at Atrium** (Hanover Sq) | Listed as a room. | Unclear. It's listed for up to 16 for dinner. | Unconfirmed. It's listed on Tagvenue. |
+| **1864 Rooftop Bar** | Listed as seating up to 10. | Unclear. Its listing mentions dinner and meetings. | Unconfirmed. Pricing is "on request". |
+
+Amici Soho takes group bookings and private hire, with a £55 per person minimum for parties of 9 or more. I didn't see whether it has a separate room.
+
+Square Meal also lists private and group rooms in the Fitzrovia and Oxford Street areas. Berners Tavern and The Ninth turned up there or on OpenTable, but I couldn't confirm their room sizes.
+
+**What I couldn't confirm:** for every venue, I couldn't confirm whether it takes group bookings online or only by phone. Most of the listings are third-party sites, which usually route you to an enquiry form. Whether the restaurant's own site does the same is unknown. Please phone or email Perini & Perini first, then ask the others about weekday lunch hours and minimum spend.
+
+Sources:
+- [Tagvenue – IGNI](https://www.tagvenue.com/rooms/greater-london/119935/igni-london/private-dining-room)
+- [Hirespace – IGNI](https://hirespace.com/Spaces/London/318867/IGNI/Private-Dining-Room/Business)
+- [Pontis – Perini & Perini Bar](https://pontis.co.uk/oxford-circus/private-hire)
+- [Hirespace – Perini & Perini](https://hirespace.com/Spaces/London/138397/Perini-Perini/Private-Room/Events)
+- [Tagvenue – KA at Atrium](https://www.tagvenue.com/rooms/london/116050/atrium-restaurant/ka)
+- [Square Meal – Fitzrovia private dining](https://squaremeal.co.uk/private-group-dining/fitzrovia-london)
+
+--- Mon 08:26, Priya
+Calling Perini now. Their Hirespace listing says the room is hireable separately, but I want to confirm it's the room and not the bar.
+
+--- Mon 08:31, Dana
+Good. Keep it under 3k if you can. Client wants us back by 14:30 so no long lunch.
+
+--- Mon 08:33, Marcus
+Oxford Circus side is fine for walking from the office.
+
+--- Mon 08:40, Priya
+Line's busy. Left a voicemail. Trying again at 9.
+
+--- Mon 09:18, Priya
+Spoke to someone. Private room for 10 is available Thursday. Minimum spend is £3,000 for the room, not per head. She said groups get the set menu only.
+
+--- Mon 09:20, Dana
+Set menu is fine. Confirm Thursday 12:30.
+
+--- Mon 09:24, Priya
+Confirming with them now. Anyone with dietary needs tell me before 10, the set menu has to go in today.
+
+--- Mon 09:31, Tomas
+No restrictions for me. Thanks for sorting this.
+
+--- Mon 09:52, Marcus
+No allergies, I'll eat what's put in front of me.
+
+--- Mon 13:10, Priya
+Booked. Confirmation email coming. Deposit is £500 due by Wednesday, I'll put it on the team card.
+
+--- Mon 13:14, Dana
+Put the confirmation here when it lands.
+(👍 1)
+
+--- Mon 13:15, Tomas
+👍
+
+--- Mon 19:48, Priya
+Confirmation in. Thursday 12:30, private room, set menu. Address is on the email. About 8 min walk from the client office if we go the usual way.
+
+--- Mon 19:55, Marcus
+Good. Thanks Priya.
+
+--- Mon 22:40, Tomas
+Sorry, just seeing this. Thursday 12:30 is in my calendar now.
+
+--- Tue 06:12, Dana
+Who's telling the client we're out Thursday? Need it in writing before they book anything for the afternoon.
+(👍 1)
+
+--- Tue 06:50, Marcus
+I'll send it this morning. Copying you.
+
+--- Tue 07:06, Priya
+@claude Perini & Perini's deposit invoice asks for a bank transfer. Can a £500 deposit for a London private room be paid by corporate credit card instead, and is there a surcharge for card payment? Need to know before I call them back.
+
+--- Tue 07:07, Claude
+I couldn't confirm Perini & Perini's own policy. I found nothing published about whether they take card for deposits or charge a surcharge. You'll need to ask them directly.
+
+**Surcharges on corporate cards:** I couldn't open the guidance page, so this part is from the search snippet and my own background knowledge. The UK ban on card surcharges covers consumer credit and debit cards. As I understand it, it does not cover corporate or commercial cards, so they may be allowed to charge extra for yours. Any surcharge is meant to be limited to what the payment costs them to process. Please check this against current rules before relying on it.
+
+**Questions for the call:**
+1. Can the £500 deposit be paid by corporate card, for example through a payment link, rather than by bank transfer?
+2. Is there a surcharge for corporate cards, and if so, how much (percentage or flat fee)?
+3. Is the deposit refundable, and does that depend on the payment method?
+
+**Sources:**
+- [Business Companion: payment surcharges and credit cards](https://www.businesscompanion.info/focus/practical-holiday-law/section-5-payment-surcharges-and-credit-cards) (seen only as a search result)
+- [Rules.co.uk](https://rules.co.uk/?p=1005) (a comparable London venue that takes private dining deposits online)
+
+--- Tue 07:19, Priya
+Calling them again at 9. Going to ask about the card and the surcharge before I pay anything.
+
+--- Tue 07:24, Dana
+If the surcharge is small, put it on the card. Don't want to be chasing a bank transfer on the 20th.
+
+--- Tue 07:31, Marcus
+Client email is sent. They replied already, 14:30 back is fine for them.
+
+--- Tue 07:33, Dana
+Good.
+
+--- Tue 09:04, Priya
+Line's busy again.
+(👍 1)
+
+--- Tue 09:40, Priya
+Got through. Card is possible through a payment link. Asking them to send the surcharge in writing before I pay.
+
+--- Tue 09:41, Tomas
+👍
+
+--- Tue 12:20, Tomas
+Is the room upstairs? Want to know if there's a lift for anyone who needs one.
+
+--- Tue 12:36, Priya
+Didn't ask. I'll add it to the next call.
+
+--- Tue 12:37, Marcus
+Worth asking. Dana's knee is still bad from the trip in September.
+
+--- Tue 12:39, Dana
+My knee is fine. Ask anyway.
+
+--- Tue 18:05, Priya
+Spoke to the events person again. Room is on the ground floor, no stairs. Surcharge is still not in writing, so I'm chasing it tomorrow.
+
+--- Tue 18:06, Dana
+Ground floor is good.
+
+--- Tue 19:30, Marcus
+Taking the dog out. Back on email after.

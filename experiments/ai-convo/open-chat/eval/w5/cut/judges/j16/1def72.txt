@@ -1,0 +1,119 @@
+--- Mon 07:40, Mateo
+first train from manchester piccadilly to liverpool lime street on a sunday? 🚆
+
+--- Mon 07:52, Ignacia
+Why are you asking at 7:40
+
+--- Mon 07:53, Mateo
+bc im up and want to settle it before work pq
+
+--- Mon 07:58, Ignacia
+Fair
+
+--- Mon 08:01, Mateo
+@claude What time is the first train from Manchester Piccadilly to Liverpool Lime Street on a Sunday?
+
+--- Mon 08:02, Claude
+I couldn't confirm the first Sunday train from Manchester Piccadilly to Liverpool Lime Street. My search results didn't give a Sunday time. I also couldn't open the timetable pages, because both fetches failed with "proxy refused the connection".
+
+The search results only suggested weekday first departures of around 05:42 to 05:54, and the sources disagreed with each other. Sunday services normally start later than weekday ones. I won't guess a Sunday time.
+
+To get the answer, you could:
+- Check the [Northern journey planner for Manchester Piccadilly to Liverpool Lime Street](https://www.northernrailway.co.uk/trains/manchester-piccadilly-to-liverpool-lime-street) and select a Sunday.
+- Use National Rail Enquiries, on 03457 48 49 50 or at nationalrail.co.uk.
+- Check engineering works first. Sunday services on this route are often changed.
+
+Sources: [Northern Railway](https://www.northernrailway.co.uk/trains/manchester-piccadilly-to-liverpool-lime-street), [live-departures.info](https://live-departures.info/rail/timetable/Manchester-Piccadilly/Liverpool-Lime-Street/)
+
+--- Mon 08:14, Camila
+buenos dias 🙏 sunday trains are later no? dont take the 5am one lol
+
+--- Mon 08:20, Mateo
+yeah the claude one said weekday first is ~5:45 so sunday prob later. need the actual number tho
+
+--- Mon 08:24, Ignacia
+Check for engineering works too. Mancs always has work on sundays
+
+--- Mon 08:26, Mateo
+bruh 🙄 ok ill check the northern site when im off this call
+
+--- Mon 08:41, Camila
+dont check at work mateo 😭
+
+--- Mon 09:15, Mateo
+lol
+
+--- Mon 12:30, Camila
+lunch break. thinking lime street then albert dock then the beatles thing, is that too much 🤔
+
+--- Mon 12:34, Ignacia
+Beatles thing will be a queue
+(😂 2)
+
+--- Mon 12:35, Camila
+its a queue in every city 😂 q
+
+--- Mon 13:02, Mateo
+fine. queue or not we need the train time first
+
+--- Mon 17:48, Mateo
+north site is down or im blind
+
+--- Mon 17:50, Ignacia
+Try the app
+
+--- Mon 18:10, Mateo
+app wants me to log in 🙃
+
+--- Mon 18:22, Camila
+ill check when im home, marking first 📚
+
+--- Mon 21:05, Ignacia
+Do we want to be back before dark. Its dark early there in November
+
+--- Mon 21:09, Mateo
+we are not doing 4 hrs of train 😭 we just want it early enough to do the docks
+
+--- Mon 22:40, Camila
+night all, ill sort the ticket thing tmr. dont book anything yet mateo 🫠
+
+--- Mon 22:41, Mateo
+not booking anything i just want to know
+
+--- Mon 23:36, Mateo
+@claude what time is the last train back from Liverpool Lime Street to Manchester Piccadilly on a Sunday
+
+--- Mon 23:37, Claude
+I couldn't confirm this against a live timetable, so treat the time as approximate.
+
+The search results suggest the last Sunday train from Liverpool Lime Street to Manchester Piccadilly leaves at about **23:36**. Rome2rio lists it as arriving around 00:37. I only saw search snippets. The TransPennine Express page that would have been the best source wouldn't open, so I couldn't read it directly. The snippet also said that page is quite old. Moovit showed a different late time (00:47), so the sources don't fully agree.
+
+Check National Rail Enquiries or the Trainline app for this Sunday's date before you travel. Late-night Sunday services are often changed by engineering works.
+
+Sources:
+- [TransPennine Express: Liverpool Lime Street to Manchester Piccadilly](https://www.tpexpress.co.uk/travelling-with-us/routes/trains-from-liverpool-lime-street-to-manchester-piccadilly)
+- [Rome2rio](https://www.rome2rio.com/Train/Liverpool-Lime-Street/Manchester-Piccadilly-Station)
+- [Omio](https://www.omio.co.uk/trains/liverpool-lime-street/manchester-piccadilly-svf0d)
+- [MyTrainPal](https://www.mytrainpal.com/train-journey/liverpool-lime-street-to-manchester-piccadilly)
+- [Moovit](https://moovitapp.com/index/en-gb/public_transportation-Liverpool_Lime_Street_LIV_to_Manchester_Piccadilly_MAN_Train-North_West-site_26039099-2105)
+
+--- Mon 23:39, Mateo
+so 23:36 or 00:37?? 🙄
+
+--- Mon 23:40, Mateo
+either way thats a late train pq
+
+--- Mon 23:47, Mateo
+ok going to bed. not booking anything
+
+--- Tue 07:02, Ignacia
+Did you get a number or did you go to bed
+
+--- Tue 07:31, Mateo
+went to bed. 23:36 vs 00:37 is a big gap pq
+
+--- Tue 08:06, Camila
+sorry was asleep 🫠 reading now. still not booking anything right
+
+--- Tue 08:12, Mateo
+not booking anything. @claude what time is the first train from Manchester Piccadilly to Liverpool Lime Street on a Sunday in December, and is there engineering work on that line on Sundays in December

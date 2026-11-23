@@ -1,0 +1,346 @@
+--- Mon 07:45, Andrei
+Which restaurants near Oxford Circus in London have a private room for ten?
+
+--- Mon 08:12, Ioana
+Morning! Is this for the london lunch?
+
+--- Mon 08:14, Andrei
+Yes. Thursday 10 December, lunch at 13:00 if we can get it. Needs to be a room, not the main floor.
+
+--- Mon 08:20, Ioana
+Ok 👍 do we know who's coming? Is it just us four or the whole project?
+
+--- Mon 08:22, Andrei
+Whole project. Ten confirmed-ish, two maybes.
+
+--- Mon 08:31, Mihai
+What is the budget per head. I need a number before anyone books.
+
+--- Mon 08:33, Andrei
+Not set. Assume around 60 GBP a head before drinks?
+
+--- Mon 08:40, Mihai
+Drinks are not in the team budget. Food only, and I need the total before it is booked.
+
+--- Mon 10:15, Elena
+Omg london!!! 🇬🇧🇬🇧 sorry I was asleep lol. Is a private room actually necessary? It feels a bit much for a lunch tbh
+
+--- Mon 10:19, Andrei
+Ten people in one restaurant main floor is loud and we will be split across tables. A room keeps us together.
+
+--- Mon 10:21, Elena
+Fair 🙂 I just don't want to pay for a fancy room nobody uses
+
+--- Mon 12:05, Mihai
+Ask the restaurant for the minimum spend on the room. If it is above the per head figure the room is not approved.
+
+--- Mon 12:20, Ioana
+@claude can you find restaurants near Oxford Circus with a private dining room for about 10 people, and roughly what a set lunch costs per head at each? We need options for Thursday 10 December
+
+--- Mon 12:21, Claude
+Three places near Oxford Circus have private rooms that could seat ten: Berners Tavern (room for 12, a set lunch, and a lunch minimum spend of £750 listed for Jan–Aug), Les 110 de Taillevent (Lamennais room, 6–10 guests), and Bennie (private room, 10 or more). I couldn't confirm set lunch prices per head or any December minimum spend. Please ask each venue directly, since Mihai needs the minimum spend before booking. Sources: [SquareMeal](https://www.squaremeal.co.uk/private-group-dining/best/private-dining-rooms-for-10_388), [Berners Tavern](https://www.bernerstavern.com/private-dining), [Tagvenue](https://www.tagvenue.com/rooms/london/2319/les-110-de-taillevent/lamennais-room).
+
+--- Mon 12:34, Mihai
+Berners Tavern's £750 is for January to August only. We need the December figure from them. If it applies to a party of ten, that is £75 a head, which is above the £60 figure, so the room would not be approved as things stand.
+
+--- Mon 12:38, Andrei
+I will call Berners and Bennie this afternoon. Ioana can you try Taillevent since you have the contacts from the Krakow offsite
+
+--- Mon 12:40, Ioana
+Yes I can do Taillevent. Ok 👍
+
+--- Mon 12:41, Ioana
+@claude can you check whether Les 110 de Taillevent has a set lunch menu for December and roughly what it costs per head
+
+--- Mon 12:42, Claude
+I couldn't confirm a December set lunch or a current price for Les 110 de Taillevent. The only figures I found are old: about £23 for two courses and £28 for three in a 2018 blog post, and Hardens lists lunch at £29 and £36 with no date. Prices have likely gone up since then, so Ioana will need to ask them directly. Sources: [Gourmand Gunno](https://gourmandgunno.squarespace.com/blog/2018/6/19/les-110-de-taillevent-its-a-respect-thing-june-2018), [Hardens](https://hardens.com/az/restaurants/london/w1/les-110-de-taillevent.htm).
+
+--- Mon 12:43, Ioana
+I'll email Taillevent now
+
+--- Mon 13:28, Andrei
+Called Berners. Their listed £750 is for January to August only. December minimum for the room is £1,000. Room is free if we reach the minimum. Set lunch is £42 a head before service
+
+--- Mon 13:29, Andrei
+Bennie went to voicemail. Left a message
+
+--- Mon 13:36, Mihai
+£1,000 for ten is £100 a head. That is above £60, so the room is not approved at that figure. Ask whether the minimum can be lower on a weekday in December
+
+--- Mon 13:38, Andrei
+Asked. Minimum is fixed for December. They want a written request
+
+--- Mon 13:40, Ioana
+Ok. Taillevent hasn't replied yet. Will send the numbers when they do
+(👍 1)
+
+--- Mon 14:35, Elena
+Back at desk 🙂 just read all this. £1,000 for ten people is a lot for lunch 😅 is the long table option not an option?
+
+--- Mon 14:41, Andrei
+Berners do a long table on the ground floor. Not a room, but we would sit together. Could ask them to hold it
+
+--- Mon 14:44, Elena
+Yes pls ask!! 🙌 feels way more relaxed too
+
+--- Mon 15:10, Mihai
+A long table on the ground floor does not need approval unless it is above £60 a head. £42 plus service is within that. Ask them for the total with service and VAT before holding it
+
+--- Mon 15:12, Andrei
+Will do
+
+--- Mon 17:20, Ioana
+@claude can you check whether Bennie has a private room for around 10 and what they charge for a December lunch
+
+--- Mon 17:21, Claude
+Bennie does have a private room: listings say it takes 10 or more (up to about 20–26), but I couldn't confirm a December lunch price. Third-party minimum spends range from about £392 to £1,500 and don't agree, so Andrei's voicemail answer matters. Sources: [OpenTable](https://opentable.co.uk/private-dining/restaurant/341196), [Zipcube](https://www.zipcube.com/uk/ap/event/ehsnbg85h008), [Tagvenue](https://www.tagvenue.com/venues/london/35071/bennie-restaurant).
+
+--- Mon 17:44, Mihai
+Berners has not confirmed the December minimum in writing yet. I will not approve anything on a verbal figure.
+
+--- Mon 18:52, Andrei
+Back from football. Emailed Berners the written request for the December minimum and asked for a quote for the long table on the ground floor, with service and VAT.
+
+--- Mon 18:53, Andrei
+Bennie still voicemail.
+
+--- Mon 19:04, Elena
+Going out with Mara tonight 🍸 will read the thread later, can someone just tell me if we're getting a room or a table?? 😅
+
+--- Mon 20:11, Mihai
+Table, if the long table is quoted within the per head figure. Room only if the minimum is reduced in writing. Nothing else is approved.
+
+--- Mon 21:37, Ioana
+Taillevent still no reply. I'll try their phone line first thing tomorrow.
+
+--- Mon 21:40, Ioana
+Can someone make a headcount list with the two maybes marked? I'll set up the poll for the team once we have it.
+
+--- Mon 22:14, Andrei
+I will put the names in the sheet tonight.
+
+--- Mon 22:31, Mihai
+Ten confirmed or eleven? I need a number for the quote.
+
+--- Mon 22:36, Andrei
+Ten confirmed-ish, two maybes. Ask for quotes at ten and say up to twelve.
+
+--- Mon 23:58, Elena
+Ok I'm home 🙂 is it ten or twelve for the table?? Sorry I'm a bit behind
+
+--- Mon 23:59, Ioana
+@claude does Berners need a deposit to hold a long table for a December lunch, and do they take one for groups of ten or more?
+
+--- Tue 00:00, Claude
+I couldn't confirm a deposit rule for a ground-floor long table. Berners' 2026 brochure says private dining is secured by 50% of the minimum spend. Third-party listings say a card guarantee and a 7-day cancellation window. Those terms are for private rooms, so Andrei should ask in his quote request. Sources: [Berners brochure](https://mds-assets.marriott.com/cms-platform-for-marriott/loneb-berners-tavern/pdr-brochure-2026.pdf), [Hirespace](https://www.hirespace.com/Spaces/London/214040/The-London-EDITION/Berners-Tavern/Dining).
+
+--- Tue 07:14, Andrei
+Berners replied overnight. Only an auto reply so far. Their events team says they will come back within 48 hours.
+(👍 1)
+
+--- Tue 08:24, Mihai
+Good. I need their written figure before anything else. The deposit is also a cost. If it is 50 per cent of the minimum, that is £500 paid before the event. Ask whether it is refundable if the numbers change.
+
+--- Tue 08:31, Andrei
+Adding the refund question to the email.
+
+--- Tue 08:40, Elena
+Morning!! ☕ just woke up and read the thread. Long table sounds good to me 🙂 but can we confirm ten or twelve before the quote goes out pls
+
+--- Tue 08:44, Andrei
+The email says ten, up to twelve.
+
+--- Tue 08:52, Ioana
+Got through to Taillevent! Their events person is out until 11. Left a message 🤞
+
+--- Tue 08:58, Ioana
+@claude what time does Les 110 de Taillevent take phone enquiries on weekdays?
+
+--- Tue 08:59, Claude
+I couldn't find set phone-enquiry hours for Les 110 de Taillevent. Listings only give restaurant hours, which are 12–2.30pm and 6–10.30pm, Monday to Saturday, and one source differs. Their number is +44 20 3141 6016. Ioana's 11am callback fits that. Sources: [VisitLondon](https://www.visitlondon.com/things-to-do/place/49356558-les-110-de-taillevent), [Harden's](https://hardens.com/az/restaurants/london/w1/les-110-de-taillevent.htm).
+
+--- Tue 11:31, Ioana
+Taillevent called back. They can do ten on 10 Dec. Set lunch is £58 a head before service, and they need numbers by Friday
+
+--- Tue 11:33, Mihai
+£58 before service is under £60. Drinks are still outside it. Get the service charge in writing
+
+--- Tue 11:40, Elena
+Oh nice 🙌 wait are we doing Berners or Taillevent now? Sorry I'm confused
+
+--- Tue 11:52, Andrei
+Berners isn't confirmed yet. Their events team said within 48 hours, so by Wednesday morning. Taillevent needs numbers by Friday, so we have time
+
+--- Tue 12:20, Andrei
+Berners quote came in. Long table, ground floor, £42 a head. Service and VAT on top. They want a £200 deposit to hold the table, refundable up to 7 days before
+
+--- Tue 12:24, Mihai
+Send me the total with service and VAT as a single figure. Not per head with extras underneath
+
+--- Tue 12:26, Andrei
+They haven't given a total yet. I'll ask
+
+--- Tue 12:31, Elena
+Long table is still my vote 🙂 but Taillevent sounds nice too if it's the same price
+
+--- Tue 13:02, Ioana
+Taillevent's £58 is before service too, so it might be more than Berners in the end. Not sure yet
+
+--- Tue 13:04, Ioana
+@claude does a UK restaurant bill usually add service on top of the menu price, and is VAT on food 20%?
+
+--- Tue 13:05, Claude
+Yes on both, from what I know (I didn't search this time). VAT on restaurant food is 20% in the UK, and it's usually already included in menu prices unless a quote says "plus VAT", as Berners' does. Service is typically a discretionary 10–15% added to the bill, and VAT usually applies to it too. Check each venue's rate in writing.
+
+--- Tue 13:41, Andrei
+Compared: Berners 10 x £42 = £420 before service and VAT. Taillevent 10 x £58 = £580 before service. Taillevent is £160 more before the extras.
+(👍 1)
+
+--- Tue 13:44, Elena
+160 more 😬 is the room at Taillevent worth it?
+
+--- Tue 13:52, Ioana
+Not sure if the £58 is for a room or the main floor. Asking them.
+
+--- Tue 14:05, Mihai
+Ask whether the £58 is for a room or the main floor. If it is the main floor, the same test as Berners applies. If it is a room, it still needs a minimum spend in writing that is within the per head figure.
+
+--- Tue 15:18, Mihai
+When both quotes have a total with service and VAT, send them here. I will compare them. Not before.
+
+--- Tue 16:20, Elena
+Ok 🙂 I'll wait then. Sorry for all the questions, I'm still catching up
+
+--- Tue 17:02, Ioana
+@claude does Les 110 de Taillevent add a service charge to private dining bills, and do they say whether it is included or on top?
+
+--- Tue 17:03, Claude
+Probably on top, but I couldn't confirm it for your booking. A TagVenue listing says private dining prices exclude service, and Hardens gives 12.5% for the main restaurant. Neither is an official private-dining figure, so ask Taillevent to put the rate in writing. Sources: TagVenue, Hardens.
+
+--- Tue 17:09, Ioana
+Ok. I'll ask them to put the service rate in writing tomorrow, with the room question.
+
+--- Tue 18:22, Andrei
+Berners total came through. Ten at £42 is £420. Service at 12.5 per cent on top, then VAT on the lot. Total £567 for ten. Deposit £200, refundable up to 7 days before.
+(👍 2)
+
+--- Tue 18:24, Mihai
+£567 for ten is £56.70 a head. Inside £60. The £200 deposit is paid only against an invoice in the team's name.
+
+--- Tue 18:31, Andrei
+I'll ask them for the invoice with the confirmation.
+
+--- Tue 19:03, Ioana
+Taillevent replied. £58 is for the main floor. The Lamennais room has its own minimum spend, they're sending it tomorrow. Service still not confirmed.
+
+--- Tue 19:20, Elena
+So Taillevent main floor is more than Berners even before service? 😅 sorry still catching up
+
+--- Tue 19:42, Mihai
+Yes. Taillevent main floor at £58 for ten is £580 before service and VAT. Berners is £567 with everything. The room minimum is the open question.
+
+--- Tue 19:50, Ioana
+Room is the question. If the minimum is under the per head figure it could still work. Waiting on Taillevent.
+
+--- Tue 20:05, Andrei
+I still think a room is better for ten. But I won't argue it past Mihai's number.
+
+--- Tue 20:40, Elena
+Is the Berners deposit paid by one of us or by the team? Sorry I don't know how this works 🙂
+
+--- Tue 20:44, Andrei
+I can pay it on my card and claim it back. Refund if we cancel is up to 7 days before.
+
+--- Tue 20:52, Mihai
+Not on a personal card without the invoice in the team's name. Send me the invoice and the claim and I will approve it.
+
+--- Tue 21:15, Elena
+Ok 🙂 one more: can we change the Berners number from ten to twelve on the long table later, or is it fixed?
+
+--- Tue 21:20, Andrei
+The email says ten, up to twelve. I'll confirm the rule with them tomorrow.
+
+--- Tue 22:01, Mihai
+Send me the Berners invoice when it arrives. I will look tomorrow.
+
+--- Tue 22:50, Ioana
+@claude does Les 110 de Taillevent charge a room minimum on top of the £58 menu price, or does the minimum cover the food and drink?
+
+--- Tue 22:51, Claude
+Listings suggest the minimum covers food and drink rather than being extra, but I couldn't confirm that for your booking. SquareMeal shows about £1,500 for the Lamennais room, including a £500 room fee, and Taillevent's older brochure says £1,500 before service. Ten at £58 is £580, so you'd likely have to make up the gap. Wait for their written quote. Sources: [SquareMeal](https://www.squaremeal.co.uk/private-group-dining/lamennais-room-at-les-110-de-taillevent_479), Taillevent brochure.
+
+--- Tue 23:06, Andrei
+Berners want the team name for the invoice. Sent it.
+
+--- Tue 23:09, Ioana
+Ok. I'll ask Taillevent for the room minimum and the service rate first thing. Going to bed
+
+--- Tue 23:14, Andrei
+Good. Will check replies at 7
+
+--- Tue 23:58, Elena
+Home 🙂 sorry still reading. Will Mihai see the Berners invoice tomorrow or Wednesday? 😅
+
+--- Wed 07:12, Andrei
+Checking replies. Berners have the team name for the invoice. Nothing else yet.
+
+--- Wed 07:26, Andrei
+Berners replied. Numbers can go up to twelve on the long table until 1 Dec, then it's fixed. Deposit still refundable up to 7 days before.
+
+--- Wed 07:31, Elena
+Ok 🙂 so we say ten now and twelve later if needed
+
+--- Wed 07:33, Andrei
+Yes
+
+--- Wed 08:02, Mihai
+Send the invoice when it arrives. Deposit comes from the team budget line, not personal.
+
+--- Wed 08:19, Ioana
+Calling Taillevent at 9 when their events person is in 👍
+
+--- Wed 09:18, Ioana
+Taillevent: service is 12.5% on top, same as Berners. Lamennais room minimum is £1,200 for ten. Covers food and drink, not service. So £120 a head before extras.
+
+--- Wed 09:31, Mihai
+£120 a head is above £60. The room is not approved. Berners long table is inside the figure if the total holds.
+
+--- Wed 09:33, Andrei
+Berners total is £567 for ten with service and VAT. Deposit £200. Mihai has the figures.
+
+--- Wed 09:40, Elena
+Ok 🙂 table is fine with me
+
+--- Wed 09:44, Ioana
+Telling Taillevent no. Will say it nicely
+
+--- Wed 10:05, Mihai
+Good. Berners is the quote. Send the invoice when it arrives and I will approve it.
+
+--- Wed 13:58, Andrei
+Berners invoice in. Forwarding to Mihai now.
+
+--- Wed 14:12, Andrei
+Sent.
+(👍 1)
+
+--- Wed 15:40, Mihai
+Received. Total £567. Deposit line £200. Approved. Finance pays the deposit through the team account, not you.
+
+--- Wed 15:41, Andrei
+Ok. Will forward the confirmation when they send it.
+
+--- Wed 16:02, Ioana
+Poll is up in the team channel. Yes / no / maybe by Friday noon. Andrei's list has ten yes and two maybes
+
+--- Wed 16:05, Elena
+Voted yes 🙂
+
+--- Wed 16:10, Elena
+Drinks are our own money right? Just checking before I order a bottle 😅
+
+--- Wed 16:14, Mihai
+Drinks are not in the team budget. Yes.
+
+--- Wed 16:15, Elena
+Ok 🙂🥂

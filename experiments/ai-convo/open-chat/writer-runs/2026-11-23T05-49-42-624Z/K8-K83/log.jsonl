@@ -1,0 +1,75 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1584,"cache_read_input_tokens":0,"output_tokens":2122,"output_tokens_details":{"thinking_tokens":1660},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1584,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2122,"cache_read_input_tokens":0,"cache_creation_input_tokens":1584,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1584},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":2003,"cache_read_input_tokens":0,"output_tokens":4715,"output_tokens_details":{"thinking_tokens":3684},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2003,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4715,"cache_read_input_tokens":0,"cache_creation_input_tokens":2003,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2003},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":3033,"cache_read_input_tokens":0,"output_tokens":2472,"output_tokens_details":{"thinking_tokens":1710},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3033,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2472,"cache_read_input_tokens":0,"cache_creation_input_tokens":3033,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3033},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0}]}
+{"names":["Jess","Tane"],"setting":"You both live in Auckland, New Zealand, and dated for about four years before splitting up roughly a year ago. You know each other's families, habits and old friends well, and you still share a few mutual friends. The last time you were in touch, you swapped messages about a mate's new dog.","opener":"Asking Tane whether he still has the spare key to her old flat.","cast":{"Jess":{"who":"35, woman, the ex","knows":"You know Tane is your ex-partner of four years, and you know he's an electrician who still works long days across the North Shore.","like":"You're dry, direct and quick to laugh at yourself, and you have strong opinions about bad coffee and people who don't return library books.","texts":"You message in this chat now and then, mostly when something reminds you of him or of a shared friend.","style":"You type with normal capitals and punctuation, and use an emoji occasionally.","ex":[]},"Tane":{"who":"37, man, the ex","knows":"You know Jess is your ex-partner of four years, and you know she's a physiotherapist who has moved flats since you split.","like":"You're easygoing, practical and mildly sarcastic, and you have firm opinions about rugby and about people who never fix their own taps.","texts":"You message in this chat rarely, only when something needs sorting or a mutual friend asks you to.","style":"You type in short lines with little punctuation, and you almost never use emoji.","ex":[]}},"private_lines":{"Jess":"You live alone in a small rented flat in Ponsonby with a grey cat, and you work as a physiotherapist at a clinic in Newmarket. Your days are busy with clients, then a run or gym session, and most evenings you're in with a book or a show.","Tane":"You live in Mount Albert with your younger brother, and you run your own small electrical business doing mostly домашние jobs and rentals. Your days start early with the first job at seven, and you're usually home by late afternoon for dinner and a bit of telly."},"sleep":{"Jess":[23.5,7],"Tane":[22,5.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1324,"cache_read_input_tokens":0,"output_tokens":2076,"output_tokens_details":{"thinking_tokens":1377},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1324,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2076,"cache_read_input_tokens":0,"cache_creation_input_tokens":1324,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1324},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},"situation":"My ex.","topic":null}
+{"who":"Jess","text":"Do you still have the spare key to my old flat in Grey Lynn?","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Tane","text":"maybe. why","posted":true,"at":"2026-11-23T19:24","checkin":"2026-11-23T19:24"}
+{"who":"Jess","text":"I left a box in the wardrobe. The new tenants emailed me about it. It's not my fault the box was in there","posted":true,"at":"2026-11-23T19:26","checkin":"2026-11-23T19:26"}
+{"who":"Tane","text":"what box","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Jess","text":"Books and my mum's kettle. Don't be weird about it","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Tane","text":"havent looked. might be in the drawer by the back door or might be in the van","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Jess","text":"Can you look","posted":true,"at":"2026-11-23T19:42","checkin":"2026-11-23T19:42"}
+{"who":"Tane","text":"looking tomorrow arvo maybe. got a job in Takapuna till 5","posted":true,"at":"2026-11-23T20:15","checkin":"2026-11-23T20:15"}
+{"who":"Jess","text":"Ok. Tomorrow's fine. Don't lose it","posted":true,"at":"2026-11-23T20:17","checkin":"2026-11-23T20:17"}
+{"who":"Tane","text":"dont lose a key","posted":true,"at":"2026-11-23T20:18","checkin":"2026-11-23T20:18"}
+{"who":"Jess","text":"Some people do","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Tane","text":"yeah you'd know","posted":true,"at":"2026-11-23T20:33","checkin":"2026-11-23T20:33"}
+{"who":"Jess","text":"Ha. Lovely 🙄","posted":true,"at":"2026-11-23T20:34","checkin":"2026-11-23T20:34"}
+{"who":"Jess","text":"Has Mere sent you the photos of her new dog? She's sent me forty and one of them is just the carpet","posted":true,"at":"2026-11-23T21:52","checkin":"2026-11-23T21:52"}
+{"who":"Jess","text":"Going to bed. Tell me if you find the kettle","posted":true,"at":"2026-11-23T23:14","checkin":"2026-11-23T23:14"}
+{"who":"Tane","text":"found the key. was in the van under the conduit","posted":true,"at":"2026-11-24T05:52","checkin":"2026-11-24T05:52"}
+{"who":"Jess","text":"Oh thank god. Did you check the drawer by the back door like I said","posted":true,"at":"2026-11-24T07:09","checkin":"2026-11-24T07:09"}
+{"who":"Tane","text":"van. dont start","posted":true,"at":"2026-11-24T07:11","checkin":"2026-11-24T07:11"}
+{"who":"Jess","text":"Didn't start anything. Box?","posted":true,"at":"2026-11-24T07:12","checkin":"2026-11-24T07:12"}
+{"who":"Tane","text":"not yet. got a job in takapuna till 5 remember","posted":true,"at":"2026-11-24T07:40","checkin":"2026-11-24T07:40"}
+{"who":"Jess","text":"I remember. Just checking you hadn't died in a ceiling cavity","posted":true,"at":"2026-11-24T07:43","checkin":"2026-11-24T07:43"}
+{"who":"Tane","text":"still alive","posted":true,"at":"2026-11-24T07:44","checkin":"2026-11-24T07:44"}
+{"who":"Jess","text":"Mere's sent me another one. It's the dog on a boat. There's a life jacket on it and it looks furious","posted":true,"at":"2026-11-24T12:18","checkin":"2026-11-24T12:18"}
+{"who":"Tane","text":"she sent me that one too. dog looks like it knows what it did","posted":true,"at":"2026-11-24T12:55","checkin":"2026-11-24T12:55"}
+{"who":"Jess","text":"Can you let me know by 5 if the box is there. I'm in clinic till 6 so I won't see it either way","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Tane","text":"at grey lynn. tenants not home till 7. might wait in the car","posted":true,"at":"2026-11-24T17:52","checkin":"2026-11-24T17:52"}
+{"who":"Jess","text":"Waiting in a car outside someone's flat. Very normal","posted":true,"at":"2026-11-24T17:53","checkin":"2026-11-24T17:53"}
+{"who":"Tane","text":"its my street too. did 3 years on that street","posted":true,"at":"2026-11-24T17:53","checkin":"2026-11-24T17:53"}
+{"who":"Tane","text":"got in. box is in the wardrobe. kettle's in it","posted":true,"at":"2026-11-24T19:06","checkin":"2026-11-24T19:06"}
+{"who":"Jess","text":"Thank god. Is it taped up","posted":true,"at":"2026-11-24T19:07","checkin":"2026-11-24T19:07"}
+{"who":"Tane","text":"yeah","posted":true,"at":"2026-11-24T19:07","checkin":"2026-11-24T19:07"}
+{"who":"Jess","text":"Was it taped when you packed it","posted":true,"at":"2026-11-24T19:08","checkin":"2026-11-24T19:08"}
+{"who":"Tane","text":"i didnt pack it you did","posted":true,"at":"2026-11-24T19:09","checkin":"2026-11-24T19:09"}
+{"who":"Jess","text":"I know. I'm asking if you'd noticed","posted":true,"at":"2026-11-24T19:09","checkin":"2026-11-24T19:09"}
+{"who":"Tane","text":"bottom of the box is a bit damp. might have been the window","posted":true,"at":"2026-11-24T19:12","checkin":"2026-11-24T19:12"}
+{"who":"Jess","text":"It was dry when I packed it","posted":true,"at":"2026-11-24T19:12","checkin":"2026-11-24T19:12"}
+{"who":"Tane","text":"its dry now","posted":true,"at":"2026-11-24T19:13","checkin":"2026-11-24T19:13"}
+{"who":"Jess","text":"So what do you want me to say","posted":true,"at":"2026-11-24T19:14","checkin":"2026-11-24T19:14"}
+{"who":"Tane","text":"nothing. want me to post it or drop it at yours. shouldnt post the kettle","posted":true,"at":"2026-11-24T19:20","checkin":"2026-11-24T19:20"}
+{"who":"Jess","text":"Post it then. The kettle's fragile, not the books. Don't keep it in your van","posted":true,"at":"2026-11-24T19:22","checkin":"2026-11-24T19:22"}
+{"who":"Tane","text":"not keeping it in the van","posted":true,"at":"2026-11-24T19:22","checkin":"2026-11-24T19:22"}
+{"who":"Jess","text":"Good","posted":true,"at":"2026-11-24T19:23","checkin":"2026-11-24T19:23"}
+{"who":"Jess","text":"Mere wants to know if we're both still coming to her thing on the 28th. Are you","posted":true,"at":"2026-11-24T21:40","checkin":"2026-11-24T21:40"}
+{"who":"Tane","text":"what thing","posted":true,"at":"2026-11-24T21:44","checkin":"2026-11-24T21:44"}
+{"who":"Jess","text":"Her birthday. Don't pretend you forgot","posted":true,"at":"2026-11-24T21:45","checkin":"2026-11-24T21:45"}
+{"who":"Tane","text":"ill come if im not on a call out","posted":true,"at":"2026-11-24T21:46","checkin":"2026-11-24T21:46"}
+{"who":"Jess","text":"Just come","posted":true,"at":"2026-11-24T21:47","checkin":"2026-11-24T21:47"}
+{"who":"Jess","text":"Actually can you hang onto the box till then. I'll be at Mere's anyway so I can grab it there. Less faff than posting","posted":true,"at":"2026-11-24T22:50","checkin":"2026-11-24T22:50"}
+{"who":"Jess","text":"Still in the van, I'm guessing","posted":true,"at":"2026-11-24T23:24","checkin":"2026-11-24T23:24"}
+{"who":"Tane","text":"up. box is in the van. obviously","posted":true,"at":"2026-11-25T05:44","checkin":"2026-11-25T05:44"}
+{"who":"Jess","text":"Obviously. Did the kettle survive the night","posted":true,"at":"2026-11-25T07:04","checkin":"2026-11-25T07:04"}
+{"who":"Tane","text":"its wrapped. got a job in new lynn at 7 so cant talk","posted":true,"at":"2026-11-25T07:06","checkin":"2026-11-25T07:06"}
+{"who":"Jess","text":"You're texting me","posted":true,"at":"2026-11-25T07:06","checkin":"2026-11-25T07:06"}
+{"who":"Tane","text":"at a light","posted":true,"at":"2026-11-25T07:08","checkin":"2026-11-25T07:08"}
+{"who":"Jess","text":"Mere's sent me the dog in a bath now. It's not even her dog, it's her sister's","posted":true,"at":"2026-11-25T07:09","checkin":"2026-11-25T07:09"}
+{"who":"Tane","text":"dog looks like it wants to be left alone","posted":true,"at":"2026-11-25T07:31","checkin":"2026-11-25T07:31"}
+{"who":"Jess","text":"Bruce. That's what I'm calling it","posted":true,"at":"2026-11-25T07:32","checkin":"2026-11-25T07:32"}
+{"who":"Tane","text":"bruce is a dog name","posted":true,"at":"2026-11-25T07:33","checkin":"2026-11-25T07:33"}
+{"who":"Jess","text":"It's a name for a man who sells insurance","posted":true,"at":"2026-11-25T07:34","checkin":"2026-11-25T07:34"}
+{"who":"Jess","text":"Man came in today with a shoulder like a loaf of bread and insisted it was the mattress. Had to pretend I'd never heard of mattresses","posted":true,"at":"2026-11-25T12:41","checkin":"2026-11-25T12:41"}
+{"who":"Jess","text":"Anyway. Did you get the box to Mere's or is it still wedged under the conduit","posted":true,"at":"2026-11-25T12:43","checkin":"2026-11-25T12:43"}
+{"who":"Tane","text":"still in the van. its fine","posted":true,"at":"2026-11-25T16:02","checkin":"2026-11-25T16:02"}
+{"who":"Jess","text":"Stop saying it's fine when I didn't ask if it was fine","posted":true,"at":"2026-11-25T16:04","checkin":"2026-11-25T16:04"}
+{"who":"Tane","text":"rental in mt roskill. tap dripping for 3 months. guy wanted me to do it for free","posted":true,"at":"2026-11-25T16:30","checkin":"2026-11-25T16:30"}
+{"who":"Tane","text":"charged him. he moaned. the washer was 4 bucks","posted":true,"at":"2026-11-25T16:31","checkin":"2026-11-25T16:31"}
+{"who":"Jess","text":"Did you do the tap or lecture him about it","posted":true,"at":"2026-11-25T16:33","checkin":"2026-11-25T16:33"}
+{"who":"Tane","text":"both","posted":true,"at":"2026-11-25T16:34","checkin":"2026-11-25T16:34"}
+{"who":"Jess","text":"Good. That's the most you've ever said about a tap","posted":true,"at":"2026-11-25T16:35","checkin":"2026-11-25T16:35"}
+{"who":"Jess","text":"Watching a documentary about lighthouse keepers. Hate it. Can't stop","posted":true,"at":"2026-11-25T19:48","checkin":"2026-11-25T19:48"}
+{"who":"Jess","text":"Are you coming to Mere's on the 28th or are you going to send me a photo of the van instead","posted":true,"at":"2026-11-25T21:12","checkin":"2026-11-25T21:12"}
+{"who":"Tane","text":"ill be there","posted":true,"at":"2026-11-25T21:15","checkin":"2026-11-25T21:15"}
+{"who":"Jess","text":"Thank you","posted":true,"at":"2026-11-25T21:15","checkin":"2026-11-25T21:15"}
+{"who":"Jess","text":"Night. Keep the kettle away from the conduit","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}

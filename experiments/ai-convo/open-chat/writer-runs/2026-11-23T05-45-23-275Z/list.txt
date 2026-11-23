@@ -1,0 +1,5 @@
+G1-G11 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-275Z/G1-G11
+G2-G21 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-275Z/G2-G21
+G3-G31 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-275Z/G3-G31
+G4-G41 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-275Z/G4-G41
+G5-G51 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-275Z/G5-G51

@@ -1,0 +1,122 @@
+[
+{
+"label": "K1-K11",
+"people": 3,
+"brief": "Friends arguing about a film."
+},
+{
+"label": "K1-K12",
+"people": 3,
+"brief": "Friends arguing about a film."
+},
+{
+"label": "K1-K13",
+"people": 3,
+"brief": "Friends arguing about a film."
+},
+{
+"label": "K2-K21",
+"people": 5,
+"brief": "Restaurant kitchen staff."
+},
+{
+"label": "K2-K22",
+"people": 5,
+"brief": "Restaurant kitchen staff."
+},
+{
+"label": "K2-K23",
+"people": 5,
+"brief": "Restaurant kitchen staff."
+},
+{
+"label": "K3-K31",
+"people": 3,
+"brief": "Siblings clearing out a grandparent's flat."
+},
+{
+"label": "K3-K32",
+"people": 3,
+"brief": "Siblings clearing out a grandparent's flat."
+},
+{
+"label": "K3-K33",
+"people": 3,
+"brief": "Siblings clearing out a grandparent's flat."
+},
+{
+"label": "K4-K41",
+"people": 2,
+"brief": "A couple planning their first trip together."
+},
+{
+"label": "K4-K42",
+"people": 2,
+"brief": "A couple planning their first trip together."
+},
+{
+"label": "K4-K43",
+"people": 2,
+"brief": "A couple planning their first trip together."
+},
+{
+"label": "K5-K51",
+"people": 8,
+"brief": "An open chat of eight people."
+},
+{
+"label": "K5-K52",
+"people": 8,
+"brief": "An open chat of eight people."
+},
+{
+"label": "K5-K53",
+"people": 8,
+"brief": "An open chat of eight people."
+},
+{
+"label": "K6-K61",
+"people": 2,
+"brief": "A friend who owes money, and the friend they owe."
+},
+{
+"label": "K6-K62",
+"people": 2,
+"brief": "A friend who owes money, and the friend they owe."
+},
+{
+"label": "K6-K63",
+"people": 2,
+"brief": "A friend who owes money, and the friend they owe."
+},
+{
+"label": "K7-K71",
+"people": 3,
+"brief": "Cousins."
+},
+{
+"label": "K7-K72",
+"people": 3,
+"brief": "Cousins."
+},
+{
+"label": "K7-K73",
+"people": 3,
+"brief": "Cousins."
+},
+{
+"label": "K8-K81",
+"people": 2,
+"brief": "My ex."
+},
+{
+"label": "K8-K82",
+"people": 2,
+"brief": "My ex."
+},
+{
+"label": "K8-K83",
+"people": 2,
+"brief": "My ex."
+}
+]

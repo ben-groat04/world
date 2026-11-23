@@ -1,0 +1,164 @@
+{"writer":"w2","source":"/home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-17-35-777Z/W1-U31","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":341,"cache_read_input_tokens":2536,"output_tokens":7031,"output_tokens_details":{"thinking_tokens":5241},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":7031,"cache_read_input_tokens":2536,"cache_creation_input_tokens":341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":341},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":2877,"output_tokens":5618,"output_tokens_details":{"thinking_tokens":3882},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5618,"cache_read_input_tokens":2877,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":4559,"cache_read_input_tokens":0,"output_tokens":6929,"output_tokens_details":{"thinking_tokens":5580},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4559,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":6929,"cache_read_input_tokens":0,"cache_creation_input_tokens":4559,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4559},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":4559,"output_tokens":7672,"output_tokens_details":{"thinking_tokens":6122},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":7672,"cache_read_input_tokens":4559,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":4,"cache_creation_input_tokens":12278,"cache_read_input_tokens":0,"output_tokens":14664,"output_tokens_details":{"thinking_tokens":13143},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":12278,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":6664,"cache_read_input_tokens":0,"cache_creation_input_tokens":6170,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":6170},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0}]}
+{"private_lines":{"Joshua":"You live in Quezon City and work as a nurse at a private hospital, on night shifts this week. You are saving for a small flat of your own. Your mother had minor surgery this week, so you are checking on her in the evenings.","Mia":"You live in Pasig and work freelance as a graphic designer from home. This week you have two client deadlines, and you are also planning a small birthday party for your friend.","Carlo":"You live in Makati and work as a civil engineer on a construction site. You are married with two children, and this week one of them has a school recital, so you have had to leave work early a couple of times.","Angelica":"You live with your parents in Ortigas and work as a call-center agent on a day shift. This week you are adjusting to your first regular salary and planning a small trip with friends for next month. You also help your mother with cooking on the weekend.","Miguel":"You live in Quezon City with your parents and go to senior high school, studying online this week because of a school break. You have exams next week and you play online games with friends in the evenings."},"setting":"You are all cousins on your father's side of the family, and you all live in Metro Manila: Quezon City, Pasig, Makati and Ortigas. You grew up at the same family gatherings in Quezon City, so you know each other well, though you now have separate households and jobs. You all know the family history, who has which job, and who has been dating whom. The chat is used for birthdays, family reunions and news about the elders.","names":["Joshua","Mia","Carlo","Angelica","Miguel"],"cast":{"Joshua":{"who":"34, man, the cousin","knows":"You know Mia is the cousin closest to you in age, the one you shared a room with at the summer house. You know Carlo is the eldest and the one who usually organizes reunions, and he has two kids. You know Angelica is the youngest adult, recently started her first job, and still lives with her parents. You know Miguel is the baby of the group, still in senior high school, and very good at games.","texts":"You message the group now and then without being asked, and you react with an emoji instead of replying fairly often, since you are often too tired to type long replies.","style":"You type in short, lowercase-leaning messages with few capitals, and you use a fair amount of punctuation like periods and question marks. You use an emoji now and then but not in every message.","ex":["sorry just woke up, will check the group later","can anyone bring the extra chairs on sunday?","how's mama doing today, did she eat","i'm on shift till 7am so reply later pls","ok count me in for the birthday lunch","haha same, i'm so tired rn"]},"Mia":{"who":"29, woman, the cousin","knows":"You know Joshua is the cousin you are closest to, and that he works nights as a nurse. You know Carlo is the older cousin you go to for advice about money and work. You know Angelica is your quiet cousin and you worry she is not sleeping enough at her new job. You know Miguel is the youngest and you still think of him as a kid, even though he is almost an adult.","texts":"You message the group fairly often without being asked, sharing links and photos, and you react with an emoji now and then instead of replying when a reply is not needed.","style":"You type in full sentences with normal capitals and punctuation, and you use emoji fairly often. Your messages are medium length, and you use some abbreviations like \"lol\" and \"omg\" when excited.","ex":["omg look at this photo from the 2019 reunion","is anyone free to help me move a desk on saturday?","yes please, i'll bring the cake","lol Miguel you're so dramatic","ok i'll send the link tonight","😂 that's so true"]},"Carlo":{"who":"41, man, the cousin","knows":"You know Joshua is the one who is always tired from shifts, and you admire how he takes care of his mother. You know Mia is the creative one who works from home, and you help her with her finances when she asks. You know Angelica is your youngest cousin who is still finding her footing at work. You know Miguel is the youngest and you keep an eye on him since his parents are busy.","texts":"You message the group now and then without being asked, usually to share a plan or a reminder, and you reply to messages in full most of the time, only using emoji when you are rushed.","style":"You type in complete sentences with proper capitals and punctuation, and your messages are usually a few lines long. You use emoji rarely, and you rarely use abbreviations.","ex":["Reminder that the reunion deposit is due this Friday.","Good morning everyone, hope you all slept well.","Joshua, please take care and get some rest after your shift.","Miguel, did you finish your exam requirements?","Thanks Mia, I will transfer the money tonight.","👍"]},"Angelica":{"who":"23, woman, the cousin","knows":"You know Joshua is a nurse who works nights, and you sometimes ask him for health advice. You know Mia is the cousin who designs things for a living and always has a project. You know Carlo is the eldest cousin who organizes everything, and you feel a little shy around him. You know Miguel is the youngest and you enjoy teasing him in the chat.","texts":"You message the group now and then without being asked, usually with a question or a funny picture, and you react with an emoji fairly often instead of writing back.","style":"You type casually with some lowercase, a lot of emoji, and short messages. You often use abbreviations like \"pls\", \"ur\" and \"omg\", and you sometimes send several short messages in a row.","ex":["omg who has the group photo from christmas??","pls someone tell me what time lunch is 🥺","lol Miguel stop","i'm so sleepy after work today 😭","can i bring my friend to the birthday?","haha yess 😂😂"]},"Miguel":{"who":"17, man, the cousin","knows":"You know Joshua is the nurse cousin who is always busy, and you have asked him about being a nurse. You know Mia is the cousin who is always sending you memes and links, which you like. You know Carlo is the oldest and you think he is serious and strict, but you respect him. You know Angelica is the cousin closest to your age among the adults, and you tease her in the chat.","texts":"You message the group now and then without being asked, mostly to joke or ask about family plans, and you react with an emoji often instead of replying, especially to older cousins.","style":"You type in","ex":["lol mia you sent 5 memes in a row 💀","wait is lunch on sunday or saturday","can someone help me with my math hw pls","i'm literally dying in online class rn","ok ok i'll be there, don't worry","haha angelica stop 😭"]}},"sleep":{"Joshua":[9,16.5],"Mia":[0.5,8.5],"Carlo":[23,6],"Angelica":[23.5,7.5],"Miguel":[1,9]},"opener":"sending a photo of the lunch spread he made for his mother and asking who can come on Sunday.","situation":"Cousins.","topic":null,"usage":{"input_tokens":6,"cache_creation_input_tokens":5428,"cache_read_input_tokens":1363,"output_tokens":4303,"output_tokens_details":{"thinking_tokens":1871},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5428,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":4,"output_tokens":303,"cache_read_input_tokens":1363,"cache_creation_input_tokens":4065,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4065},"type":"message"}],"speed":"standard","fallback_credit":null}}
+{"secrets":{"Carlo":"You took out a loan to cover debts and are short of money every month. Nobody in the family knows."}}
+{"who":"Joshua","text":"(photo: lunch spread)\nlunch for mama. adobo, kare kare, the usual. who can come sunday?","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"","react":"😍","to":0,"posted":false,"at":"2026-11-23T19:00"}
+{"who":"","react":"😍","to":0,"posted":false,"at":"2026-11-23T19:00"}
+{"who":"","react":"😍","to":0,"posted":false,"at":"2026-11-23T19:00"}
+{"who":"Mia","text":"omg that kare kare 😭 i can come if i finish my layout by saturday. will confirm later?","posted":true,"at":"2026-11-23T19:04","checkin":"2026-11-23T19:04"}
+{"who":"Angelica","text":"ooo sunday pls 🙏 im off!! what time","posted":true,"at":"2026-11-23T19:06","checkin":"2026-11-23T19:06"}
+{"who":"Joshua","text":"noon. mama said 12. she's still on soft food so no kare kare for her 😅","posted":true,"at":"2026-11-23T19:09","checkin":"2026-11-23T19:09"}
+{"who":"Miguel","text":"kare kare tho 😭😭 is there rice","posted":true,"at":"2026-11-23T19:11","checkin":"2026-11-23T19:11"}
+{"who":"Angelica","text":"miguel u always think about food","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Miguel","text":"ur the one who sent the lechon pic last week","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Carlo","text":"Sunday noon works for me. I need to check with Cheryl because of the recital schedule, so I'll confirm tomorrow. Is Tita's medicine still pickup on Tuesday?","posted":true,"at":"2026-11-23T19:15","checkin":"2026-11-23T19:15"}
+{"who":"Joshua","text":"yes tuesday. i'll get it after shift.","posted":true,"at":"2026-11-23T19:17","checkin":"2026-11-23T19:17"}
+{"who":"Mia","text":"recital? which one, the violin one? 🎻","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Carlo","text":"Yes. Sofia's school. She is still nervous after two weeks of practice. I left work at 3 today to rehearse with her.","posted":true,"at":"2026-11-23T19:21","checkin":"2026-11-23T19:21"}
+{"who":"Angelica","text":"aww sofia!! tell her good luck from tita angelica 💕","posted":true,"at":"2026-11-23T19:23","checkin":"2026-11-23T19:23"}
+{"who":"Carlo","text":"I will.","posted":true,"at":"2026-11-23T19:24","checkin":"2026-11-23T19:24"}
+{"who":"","react":"😊","to":12,"posted":false,"at":"2026-11-23T19:24"}
+{"who":"Miguel","text":"who's bringing the pancit. last time it was all cold","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Mia","text":"wait im on pancit?? 😤 fine. i'm bringing it cold and blaming miguel","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Miguel","text":"lol","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Mia","text":"client A moved their deadline to tomorrow noon. kill me","posted":true,"at":"2026-11-23T20:15","checkin":"2026-11-23T20:15"}
+{"who":"Angelica","text":"pls eat something 🥺","posted":true,"at":"2026-11-23T20:16","checkin":"2026-11-23T20:16"}
+{"who":"Joshua","text":"leaving for shift soon. carlo can you check tita's med list again? the dose on the paper is different from what they gave her","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Carlo","text":"I'll check after I put the kids down. I'll send you a photo.","posted":true,"at":"2026-11-23T20:36","checkin":"2026-11-23T20:36"}
+{"who":"Angelica","text":"guys im nervous. planning the baguio trip with friends next month and i already have 3 group chats for it 😭 anyone been to sagada? is it worth it","posted":true,"at":"2026-11-23T21:05","checkin":"2026-11-23T21:05"}
+{"who":"Joshua","text":"sagada yes. bring a jacket. the fog is real.","posted":true,"at":"2026-11-23T21:08","checkin":"2026-11-23T21:08"}
+{"who":"Angelica","text":"omg i was going to bring a hoodie lol thanks josh","posted":true,"at":"2026-11-23T21:09","checkin":"2026-11-23T21:09"}
+{"who":"Miguel","text":"u guys going without asking ur parents??","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Angelica","text":"i'm 23 miguel 💀","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Miguel","text":"ok ok","posted":true,"at":"2026-11-23T21:11","checkin":"2026-11-23T21:11"}
+{"who":"Mia","text":"sent the pancit list to whoever wants to split the cost 😅 cheap i promise","posted":true,"at":"2026-11-23T22:20","checkin":"2026-11-23T22:20"}
+{"who":"Carlo","text":"I'll cover the ice and drinks. Keep the pancit on your side, Mia.","posted":true,"at":"2026-11-23T22:45","checkin":"2026-11-23T22:45"}
+{"who":"Mia","text":"you don't have to carlo!!","posted":true,"at":"2026-11-23T22:46","checkin":"2026-11-23T22:46"}
+{"who":"Carlo","text":"I know.","posted":true,"at":"2026-11-23T22:47","checkin":"2026-11-23T22:47"}
+{"who":"Joshua","text":"mia pls confirm sunday when u can","posted":true,"at":"2026-11-23T22:50","checkin":"2026-11-23T22:50"}
+{"who":"Miguel","text":"guys pls someone help me with the chem exam. paper is due friday and i dont get stoichiometry","posted":true,"at":"2026-11-23T23:10","checkin":"2026-11-23T23:10"}
+{"who":"Mia","text":"send me the problem. i was a science kid before i became a designer lol","posted":true,"at":"2026-11-23T23:14","checkin":"2026-11-23T23:14"}
+{"who":"Miguel","text":"ur gonna be bad at this. josh??","posted":true,"at":"2026-11-23T23:20","checkin":"2026-11-23T23:20"}
+{"who":"Joshua","text":"on shift. mia u got this.","posted":true,"at":"2026-11-23T23:22","checkin":"2026-11-23T23:22"}
+{"who":"Mia","text":"ok send the problem here miguel, not in dm","posted":true,"at":"2026-11-23T23:31","checkin":"2026-11-23T23:31"}
+{"who":"Miguel","text":"(photo: worksheet)","posted":true,"at":"2026-11-23T23:36","checkin":"2026-11-23T23:36"}
+{"who":"Mia","text":"the limiting reagent is the one with fewer moles after you convert. do the division first","posted":true,"at":"2026-11-23T23:52","checkin":"2026-11-23T23:52"}
+{"who":"Miguel","text":"oh wait. ok ok thanks mia","posted":true,"at":"2026-11-23T23:55","checkin":"2026-11-23T23:55"}
+{"who":"","react":"❤️","to":38,"posted":false,"at":"2026-11-23T23:55"}
+{"who":"Mia","text":"im going to sleep in 20 min. deadline is in the morning and im falling apart","posted":true,"at":"2026-11-24T00:10","checkin":"2026-11-24T00:10"}
+{"who":"Miguel","text":"game w my friends at 1am if i dont show theyll kill me","posted":true,"at":"2026-11-24T00:20","checkin":"2026-11-24T00:20"}
+{"who":"Mia","text":"im off. dont text me till 9 lol. miguel finish that worksheet","posted":true,"at":"2026-11-24T00:41","checkin":"2026-11-24T00:41"}
+{"who":"Miguel","text":"ok","posted":true,"at":"2026-11-24T00:42","checkin":"2026-11-24T00:42"}
+{"who":"Joshua","text":"break now. mama says she wants to cook on sunday. i said no 😅","posted":true,"at":"2026-11-24T01:02","checkin":"2026-11-24T01:02"}
+{"who":"Joshua","text":"she said \"then you cook\" so i guess that's settled","posted":true,"at":"2026-11-24T01:03","checkin":"2026-11-24T01:03"}
+{"who":"","react":"😂","to":44,"posted":false,"at":"2026-11-24T01:03"}
+{"who":"","react":"😂","to":44,"posted":false,"at":"2026-11-24T01:03"}
+{"who":"Joshua","text":"quiet ward. anyone up?","posted":true,"at":"2026-11-24T02:15","checkin":"2026-11-24T02:15"}
+{"who":"Joshua","text":"ok. pls someone confirm sunday. i need a number for the rice 🍚","posted":true,"at":"2026-11-24T03:20","checkin":"2026-11-24T03:20"}
+{"who":"Joshua","text":"guess everyone's asleep","posted":true,"at":"2026-11-24T03:52","checkin":"2026-11-24T03:52"}
+{"who":"Carlo","text":"Morning. Cheryl and the kids will come Sunday. Count us in for noon. I'll bring the ice and drinks as I said.","posted":true,"at":"2026-11-24T06:12","checkin":"2026-11-24T06:12"}
+{"who":"Joshua","text":"going home. 12 noon. rice for 10 i think. mama says more","posted":true,"at":"2026-11-24T07:08","checkin":"2026-11-24T07:08"}
+{"who":"Angelica","text":"sunday 🙋‍♀️ on my way to work. is 10 enough? miguel eats 3 by himself","posted":true,"at":"2026-11-24T07:31","checkin":"2026-11-24T07:31"}
+{"who":"","react":"😂","to":50,"posted":false,"at":"2026-11-24T07:31"}
+{"who":"Carlo","text":"(photo: medicine paper)","posted":true,"at":"2026-11-24T08:04","checkin":"2026-11-24T08:04"}
+{"who":"Carlo","text":"Joshua, the paper says 5 mg twice a day. The pharmacy label says 2.5. Don't give the new one until you check with the pharmacist.","posted":true,"at":"2026-11-24T08:06","checkin":"2026-11-24T08:06"}
+{"who":"Mia","text":"im up. files go to client A at 11. they sent 2 more notes. one says make the logo bigger. one says make it smaller 💀","posted":true,"at":"2026-11-24T09:14","checkin":"2026-11-24T09:14"}
+{"who":"","react":"😭","to":53,"posted":false,"at":"2026-11-24T09:14"}
+{"who":"","react":"😭","to":53,"posted":false,"at":"2026-11-24T09:14"}
+{"who":"Miguel","text":"ok im up. who said 9 lol","posted":true,"at":"2026-11-24T09:20","checkin":"2026-11-24T09:20"}
+{"who":"Mia","text":"that was you. did you finish the worksheet","posted":true,"at":"2026-11-24T09:22","checkin":"2026-11-24T09:22"}
+{"who":"Miguel","text":"almost. the limiting reagent thing made sense after u explained it","posted":true,"at":"2026-11-24T09:25","checkin":"2026-11-24T09:25"}
+{"who":"Mia","text":"miguel","posted":true,"at":"2026-11-24T09:26","checkin":"2026-11-24T09:26"}
+{"who":"Miguel","text":"ok ok i did it myself","posted":true,"at":"2026-11-24T09:27","checkin":"2026-11-24T09:27"}
+{"who":"Mia","text":"proud of u 🥹","posted":true,"at":"2026-11-24T09:40","checkin":"2026-11-24T09:40"}
+{"who":"Angelica","text":"mia did u send it 🥺","posted":true,"at":"2026-11-24T12:18","checkin":"2026-11-24T12:18"}
+{"who":"Mia","text":"sent at 11:52! they said thanks and then asked for a different font. im going to sleep in the bathtub 🛁","posted":true,"at":"2026-11-24T12:30","checkin":"2026-11-24T12:30"}
+{"who":"","react":"😂","to":61,"posted":false,"at":"2026-11-24T12:30"}
+{"who":"","react":"😂","to":61,"posted":false,"at":"2026-11-24T12:30"}
+{"who":"","react":"😭","to":61,"posted":false,"at":"2026-11-24T12:30"}
+{"who":"Angelica","text":"pls eat","posted":true,"at":"2026-11-24T12:44","checkin":"2026-11-24T12:44"}
+{"who":"Mia","text":"eating a sad sandwich 🥪","posted":true,"at":"2026-11-24T12:46","checkin":"2026-11-24T12:46"}
+{"who":"Carlo","text":"Sofia's recital is Thursday at 2. Cheryl is driving the kids. If anyone wants to come, you can sit with us.","posted":true,"at":"2026-11-24T13:02","checkin":"2026-11-24T13:02"}
+{"who":"Angelica","text":"omg i'll try to get the afternoon off. pls don't let miguel sit next to me","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Miguel","text":"sitting next to u is the plan","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Joshua","text":"up. mama walked to the bathroom alone today. she says she's better. she's not. but she walked","posted":true,"at":"2026-11-24T16:41","checkin":"2026-11-24T16:41"}
+{"who":"","react":"❤️","to":67,"posted":false,"at":"2026-11-24T16:41"}
+{"who":"","react":"❤️","to":67,"posted":false,"at":"2026-11-24T16:41"}
+{"who":"","react":"❤️","to":67,"posted":false,"at":"2026-11-24T16:41"}
+{"who":"Carlo","text":"That's good news, Joshua. Tell her Sofia says hello.","posted":true,"at":"2026-11-24T16:44","checkin":"2026-11-24T16:44"}
+{"who":"Joshua","text":"ok. will ask the pharmacist tmrw","posted":true,"at":"2026-11-24T16:50","checkin":"2026-11-24T16:50"}
+{"who":"Miguel","text":"josh did u eat","posted":true,"at":"2026-11-24T17:10","checkin":"2026-11-24T17:10"}
+{"who":"Joshua","text":"ate before shift. i'm a nurse miguel 😅","posted":true,"at":"2026-11-24T17:12","checkin":"2026-11-24T17:12"}
+{"who":"Mia","text":"miguel send ur worksheet answer","posted":true,"at":"2026-11-24T19:30","checkin":"2026-11-24T19:30"}
+{"who":"Miguel","text":"(photo: worksheet)","posted":true,"at":"2026-11-24T19:45","checkin":"2026-11-24T19:45"}
+{"who":"Miguel","text":"is it 2 or 0.2","posted":true,"at":"2026-11-24T19:46","checkin":"2026-11-24T19:46"}
+{"who":"Mia","text":"2 is more reasonable. check your units","posted":true,"at":"2026-11-24T19:52","checkin":"2026-11-24T19:52"}
+{"who":"Miguel","text":"ok ok 2","posted":true,"at":"2026-11-24T20:10","checkin":"2026-11-24T20:10"}
+{"who":"Angelica","text":"guys my first payslip came. i cried a little 💸","posted":true,"at":"2026-11-24T21:05","checkin":"2026-11-24T21:05"}
+{"who":"","react":"😭","to":77,"posted":false,"at":"2026-11-24T21:05"}
+{"who":"","react":"😭","to":77,"posted":false,"at":"2026-11-24T21:05"}
+{"who":"","react":"😭","to":77,"posted":false,"at":"2026-11-24T21:05"}
+{"who":"Miguel","text":"u cried over 4k lol","posted":true,"at":"2026-11-24T21:08","checkin":"2026-11-24T21:08"}
+{"who":"Angelica","text":"it was after deductions ur not allowed to laugh","posted":true,"at":"2026-11-24T21:09","checkin":"2026-11-24T21:09"}
+{"who":"Carlo","text":"Angelica, congratulations. Save some of it before the Baguio trip. Not all of it.","posted":true,"at":"2026-11-24T21:30","checkin":"2026-11-24T21:30"}
+{"who":"Angelica","text":"yes kuya 🙏","posted":true,"at":"2026-11-24T21:33","checkin":"2026-11-24T21:33"}
+{"who":"Carlo","text":"Mia, when you have a free afternoon this week, can we get coffee? I want to run something by you. Nothing urgent.","posted":true,"at":"2026-11-24T22:40","checkin":"2026-11-24T22:40"}
+{"who":"Mia","text":"sure!! thursday after the recital? is everything ok 👀","posted":true,"at":"2026-11-24T22:44","checkin":"2026-11-24T22:44"}
+{"who":"Carlo","text":"Everything is fine. Thursday works.","posted":true,"at":"2026-11-24T22:51","checkin":"2026-11-24T22:51"}
+{"who":"Joshua","text":"quiet ward. angelica go to sleep. ur payslip will still be there tmrw","posted":true,"at":"2026-11-24T23:10","checkin":"2026-11-24T23:10"}
+{"who":"","react":"😊","to":85,"posted":false,"at":"2026-11-24T23:10"}
+{"who":"Joshua","text":"quiet ward again. 2 more hours of nothing","posted":true,"at":"2026-11-24T23:58","checkin":"2026-11-24T23:58"}
+{"who":"Mia","text":"going to sleep now. dont text me till 9. miguel i mean it","posted":true,"at":"2026-11-25T00:24","checkin":"2026-11-25T00:24"}
+{"who":"Miguel","text":"ok","posted":true,"at":"2026-11-25T00:25","checkin":"2026-11-25T00:25"}
+{"who":"Joshua","text":"still one patient awake. sunday i'll make the adobo and mama will supervise","posted":true,"at":"2026-11-25T02:30","checkin":"2026-11-25T02:30"}
+{"who":"","react":"😂","to":89,"posted":false,"at":"2026-11-25T02:30"}
+{"who":"","react":"😂","to":89,"posted":false,"at":"2026-11-25T02:30"}
+{"who":"Joshua","text":"nobody's awake lol","posted":true,"at":"2026-11-25T03:15","checkin":"2026-11-25T03:15"}
+{"who":"Joshua","text":"quiet ward. vending machine ate my coins","posted":true,"at":"2026-11-25T04:12","checkin":"2026-11-25T04:12"}
+{"who":"Carlo","text":"Morning. Joshua, when you get home, don't give the new dose until the pharmacy at the clinic confirms it. They open at 8. Cheryl can call them if you are asleep.","posted":true,"at":"2026-11-25T06:05","checkin":"2026-11-25T06:05"}
+{"who":"Joshua","text":"home. will call at 8. thanks carlo","posted":true,"at":"2026-11-25T07:22","checkin":"2026-11-25T07:22"}
+{"who":"Carlo","text":"Good. Let me know what they say.","posted":true,"at":"2026-11-25T07:24","checkin":"2026-11-25T07:24"}
+{"who":"Angelica","text":"morning!! edsa is a parking lot 🚗😭","posted":true,"at":"2026-11-25T07:40","checkin":"2026-11-25T07:40"}
+{"who":"Angelica","text":"josh ur still up?? pls sleep","posted":true,"at":"2026-11-25T07:41","checkin":"2026-11-25T07:41"}
+{"who":"Joshua","text":"sleeping now. 😴","posted":true,"at":"2026-11-25T07:48","checkin":"2026-11-25T07:48"}
+{"who":"Mia","text":"up. client A wants a call at 10 to \"walk through the logo.\" they are going to make me cry again 💀","posted":true,"at":"2026-11-25T08:47","checkin":"2026-11-25T08:47"}
+{"who":"","react":"😭","to":98,"posted":false,"at":"2026-11-25T08:47"}
+{"who":"Angelica","text":"ur strong mia 💪","posted":true,"at":"2026-11-25T08:49","checkin":"2026-11-25T08:49"}
+{"who":"Mia","text":"i am not strong i am a coffee with legs","posted":true,"at":"2026-11-25T08:55","checkin":"2026-11-25T08:55"}
+{"who":"Miguel","text":"ok im up. nobody say anything","posted":true,"at":"2026-11-25T09:03","checkin":"2026-11-25T09:03"}
+{"who":"Mia","text":"worksheet?","posted":true,"at":"2026-11-25T09:04","checkin":"2026-11-25T09:04"}
+{"who":"Miguel","text":"done. did 4 more. ur proud","posted":true,"at":"2026-11-25T09:05","checkin":"2026-11-25T09:05"}
+{"who":"Mia","text":"i am proud 🥹 send them","posted":true,"at":"2026-11-25T09:05","checkin":"2026-11-25T09:05"}
+{"who":"Miguel","text":"(photo: worksheet)","posted":true,"at":"2026-11-25T09:09","checkin":"2026-11-25T09:09"}
+{"who":"Mia","text":"number 3 units. otherwise ok","posted":true,"at":"2026-11-25T09:10","checkin":"2026-11-25T09:10"}
+{"who":"Carlo","text":"Mia, are you coming Sunday? Joshua needs a number for the rice.","posted":true,"at":"2026-11-25T11:30","checkin":"2026-11-25T11:30"}
+{"who":"Mia","text":"YES sunday coming. bringing the cold pancit. miguel's blame accepted","posted":true,"at":"2026-11-25T12:15","checkin":"2026-11-25T12:15"}
+{"who":"Miguel","text":"???? i didnt say anything","posted":true,"at":"2026-11-25T12:16","checkin":"2026-11-25T12:16"}
+{"who":"Angelica","text":"lol ok 🙋‍♀️ ill bring pancit fresh if u want mia","posted":true,"at":"2026-11-25T12:20","checkin":"2026-11-25T12:20"}
+{"who":"Joshua","text":"up. called the pharmacy. they're not sure either. calling the doctor tmrw morning. mama says \"again\"","posted":true,"at":"2026-11-25T16:48","checkin":"2026-11-25T16:48"}
+{"who":"Carlo","text":"Good that you called. Send me the doctor's number and I'll try their clinic too.","posted":true,"at":"2026-11-25T16:52","checkin":"2026-11-25T16:52"}
+{"who":"Joshua","text":"ok. thanks carlo","posted":true,"at":"2026-11-25T16:55","checkin":"2026-11-25T16:55"}
+{"who":"Carlo","text":"Mia, can you bring your laptop Thursday? I want you to look at a spreadsheet with me.","posted":true,"at":"2026-11-25T19:20","checkin":"2026-11-25T19:20"}
+{"who":"Mia","text":"omg ok now im panicking 😅 is this a money thing","posted":true,"at":"2026-11-25T19:31","checkin":"2026-11-25T19:31"}
+{"who":"Carlo","text":"Yes. Not that kind of panic.","posted":true,"at":"2026-11-25T19:40","checkin":"2026-11-25T19:40"}
+{"who":"Mia","text":"carlo i swear","posted":true,"at":"2026-11-25T19:41","checkin":"2026-11-25T19:41"}
+{"who":"Carlo","text":"Thursday. Bring the laptop. I'll bring coffee.","posted":true,"at":"2026-11-25T19:42","checkin":"2026-11-25T19:42"}
+{"who":"Angelica","text":"is it normal to have a headache after 8 hrs of talking? my ears are sore 😭","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Joshua","text":"normal. water. if it's still there tmrw see a doc.","posted":true,"at":"2026-11-25T20:36","checkin":"2026-11-25T20:36"}
+{"who":"Angelica","text":"ok nurse josh 🙏","posted":true,"at":"2026-11-25T20:37","checkin":"2026-11-25T20:37"}
+{"who":"Miguel","text":"exam tuesday. im fine","posted":true,"at":"2026-11-25T21:14","checkin":"2026-11-25T21:14"}
+{"who":"Miguel","text":"angelica ur ears are fine i can hear u breathing from here","posted":true,"at":"2026-11-25T21:15","checkin":"2026-11-25T21:15"}
+{"who":"Angelica","text":"miguel 💀","posted":true,"at":"2026-11-25T21:16","checkin":"2026-11-25T21:16"}
+{"who":"Mia","text":"party thing: chloe wants her bday at a karaoke in pasig. who is singing. i am not singing","posted":true,"at":"2026-11-25T22:10","checkin":"2026-11-25T22:10"}
+{"who":"Angelica","text":"u have to sing mia it's ur design era 😭","posted":true,"at":"2026-11-25T22:14","checkin":"2026-11-25T22:14"}
+{"who":"Joshua","text":"quiet ward. 2 more hrs of nothing","posted":true,"at":"2026-11-25T23:58","checkin":"2026-11-25T23:58"}
+{"who":"Miguel","text":"karaoke is a cursed idea","posted":true,"at":"2026-11-26T00:20","checkin":"2026-11-26T00:20"}
+{"who":"Mia","text":"it is a cursed idea and i am booking it anyway","posted":true,"at":"2026-11-26T00:21","checkin":"2026-11-26T00:21"}
+{"who":"Miguel","text":"josh is it bad im the only one awake in the family","posted":true,"at":"2026-11-26T01:12","checkin":"2026-11-26T01:12"}
+{"who":"Joshua","text":"ur not the only one. im here","posted":true,"at":"2026-11-26T01:20","checkin":"2026-11-26T01:20"}
+{"who":"Miguel","text":"ur on shift lol","posted":true,"at":"2026-11-26T01:21","checkin":"2026-11-26T01:21"}
+{"who":"Joshua","text":"still counts","posted":true,"at":"2026-11-26T01:22","checkin":"2026-11-26T01:22"}
+{"who":"Joshua","text":"fever broke on 4th floor. nice.","posted":true,"at":"2026-11-26T03:14","checkin":"2026-11-26T03:14"}
+{"who":"","react":"👍","to":134,"posted":false,"at":"2026-11-26T03:14"}
+{"who":"Miguel","text":"ok going to sleep. carlo if u send a worksheet i am not answering","posted":true,"at":"2026-11-26T03:40","checkin":"2026-11-26T03:40"}
+{"who":"Joshua","text":"go to sleep miguel","posted":true,"at":"2026-11-26T03:41","checkin":"2026-11-26T03:41"}

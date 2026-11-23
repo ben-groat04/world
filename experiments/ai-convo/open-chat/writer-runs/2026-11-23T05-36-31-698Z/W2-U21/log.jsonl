@@ -1,0 +1,87 @@
+{"writer":"w1","source":"/home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-17-35-777Z/W1-U21","model":"haiku","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1843,"cache_read_input_tokens":0,"output_tokens":3567,"output_tokens_details":{"thinking_tokens":2349},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1843,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3567,"cache_read_input_tokens":0,"cache_creation_input_tokens":1843,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1843},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3000,"cache_read_input_tokens":0,"output_tokens":2201,"output_tokens_details":{"thinking_tokens":1777},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3000,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2201,"cache_read_input_tokens":0,"cache_creation_input_tokens":3000,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3000},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3423,"cache_read_input_tokens":0,"output_tokens":3277,"output_tokens_details":{"thinking_tokens":2452},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3423,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3277,"cache_read_input_tokens":0,"cache_creation_input_tokens":3423,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3423},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"private_lines":{"Camille":"You live in the Croix-Rousse part of Lyon and work as a physiotherapist at a clinic that runs late on Tuesdays and Thursdays. This week is full of rescheduled appointments, and your mother's birthday lunch is on Saturday, which you are slightly dreading. You are trying to find time to go running again.","Thomas":"You live in Grenoble, near the river, and work as a civil engineer on a regional bridge inspection project. This week you have a report due Friday and a site visit on Wednesday in the rain. Your evenings are mostly quiet, with a flatmate who cooks too much."},"setting":"You both live in France now, Camille in Lyon and Thomas in Grenoble, about an hour and a half apart by train. You met at the lycée in Dijon when you were eleven and stayed close through school and university. You know each other's families, old flats, and most of each other's bad decisions. Your last chat was a few weeks ago, when you swapped photos of a sourdough loaf that had gone badly wrong.","names":["Camille","Thomas"],"cast":{"Camille":{"who":"34, woman, the one who opens the chat","knows":"You know Thomas is your oldest friend, the one who has heard every version of your work complaints and still answers at midnight. You know he is in Grenoble and that his job keeps him at a desk more than he likes.","texts":"You message Thomas unprompted now and then, and mostly you react with an emoji when he sends something quick, saving full replies for when you have time.","style":"You type in lowercase most of the time, with few capitals and the occasional full stop when you are annoyed. You use emoji fairly often and keep messages short, though you write longer ones when you have a lot to say.","ex":["ok I'm at the clinic till 7 but I'll call","lol he actually did that again","can you believe the bakery shut down","I'm wrecked, two back to back sessions today","does Saturday work for you or is that too soon","😂 you are impossible"]},"Thomas":{"who":"34, man, the friend who answers","knows":"You know Camille from the lycée in Dijon, and she is the person who will tell you the truth when nobody else will. You know she works long shifts in Lyon and that her family's birthday lunches are always a production.","texts":"You message Camille without being asked only occasionally, and you react with an emoji more often than you write back, especially on busy days.","style":"You type in normal sentence case with mostly correct punctuation, but you drop capitals in quick replies. You use emoji sparingly, mainly the laughing face, and your messages are short.","ex":["yeah, I can do Saturday if it's before noon","that's rough, sorry","the report's due Friday and I've barely started it","did you get the photos I sent","ha, classic","👍"]}},"sleep":{"Camille":[23.5,7],"Thomas":[0,7.5]},"opener":"asking Thomas whether he can come to her mum's birthday lunch on Saturday, since she needs someone to talk to.","situation":"Old school friends who live in different cities now.","topic":null,"usage":{"input_tokens":2,"cache_creation_input_tokens":1368,"cache_read_input_tokens":0,"output_tokens":2139,"output_tokens_details":{"thinking_tokens":1120},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1368,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2139,"cache_read_input_tokens":0,"cache_creation_input_tokens":1368,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1368},"type":"message"}],"speed":"standard","fallback_credit":null}}
+{"secrets":{"Thomas":"You split up with your girlfriend two weeks ago. You haven't told Camille."}}
+{"who":"Camille","text":"hey. saturday lunch at maman's. 12h30 and it goes on till 17h. are you coming or am i doing it alone with tante nicole","posted":true,"at":"2026-11-23T19:02","checkin":"2026-11-23T19:02"}
+{"who":"Thomas","text":"sorry, was buried in the report. saturday should be ok. why are you asking like that","posted":true,"at":"2026-11-23T19:09","checkin":"2026-11-23T19:09"}
+{"who":"Camille","text":"because i want someone at the table who isn't related to me 🙃","posted":true,"at":"2026-11-23T19:11","checkin":"2026-11-23T19:11"}
+{"who":"","react":"😂","to":2,"posted":false,"at":"2026-11-23T19:11"}
+{"who":"Thomas","text":"fair","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Camille","text":"i'm serious though. i need someone to talk to about it. everyone's going to ask about the clinic and when i'm finally going to slow down","posted":true,"at":"2026-11-23T19:15","checkin":"2026-11-23T19:15"}
+{"who":"Thomas","text":"i'll come. train gets me to part-dieu around 11h if i take the early one","posted":true,"at":"2026-11-23T19:16","checkin":"2026-11-23T19:16"}
+{"who":"Camille","text":"you're on the bridge job monday? you said you'd be at a desk","posted":true,"at":"2026-11-23T19:17","checkin":"2026-11-23T19:17"}
+{"who":"Thomas","text":"yes. monday desk, wednesday rain","posted":true,"at":"2026-11-23T19:18","checkin":"2026-11-23T19:18"}
+{"who":"Camille","text":"good 😊","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Camille","text":"also missed the run again today. clinic ran till 20h and i spent thursday on my feet so this week is dead. saturday morning maybe?","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Thomas","text":"you said that last week","posted":true,"at":"2026-11-23T19:45","checkin":"2026-11-23T19:45"}
+{"who":"Camille","text":"i know 😤","posted":true,"at":"2026-11-23T19:46","checkin":"2026-11-23T19:46"}
+{"who":"Thomas","text":"rain all week here. site visit wednesday at a motorway bridge outside voiron. i'm going to be wet and cold on a pier all day","posted":true,"at":"2026-11-23T19:52","checkin":"2026-11-23T19:52"}
+{"who":"Camille","text":"poor thing 🥲","posted":true,"at":"2026-11-23T20:03","checkin":"2026-11-23T20:03"}
+{"who":"Camille","text":"send me the pier","posted":true,"at":"2026-11-23T20:04","checkin":"2026-11-23T20:04"}
+{"who":"Thomas","text":"took photos of a crack in one of the piers. it's ugly. i'll show you saturday, my phone camera is bad in the rain","posted":true,"at":"2026-11-23T20:19","checkin":"2026-11-23T20:19"}
+{"who":"Camille","text":"ugly how","posted":true,"at":"2026-11-23T20:21","checkin":"2026-11-23T20:21"}
+{"who":"Thomas","text":"how long is a text","posted":true,"at":"2026-11-23T20:25","checkin":"2026-11-23T20:25"}
+{"who":"","react":"😂","to":17,"posted":false,"at":"2026-11-23T20:25"}
+{"who":"Camille","text":"you ok? you've gone quiet","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Thomas","text":"yeah. long week. flatmate made a lasagne for eight and i'm eating it for three days","posted":true,"at":"2026-11-23T21:40","checkin":"2026-11-23T21:40"}
+{"who":"Camille","text":"😂 who is the flatmate","posted":true,"at":"2026-11-23T21:41","checkin":"2026-11-23T21:41"}
+{"who":"Thomas","text":"marc. good cook, no off switch","posted":true,"at":"2026-11-23T21:43","checkin":"2026-11-23T21:43"}
+{"who":"Camille","text":"you said \"long week\" like there's more","posted":true,"at":"2026-11-23T21:50","checkin":"2026-11-23T21:50"}
+{"who":"Thomas","text":"there's some other stuff. not a text thing. saturday","posted":true,"at":"2026-11-23T21:58","checkin":"2026-11-23T21:58"}
+{"who":"Camille","text":"ok but you're not allowed to do the thing where you say saturday and then talk about the weather","posted":true,"at":"2026-11-23T22:03","checkin":"2026-11-23T22:03"}
+{"who":"Thomas","text":"no weather. promise","posted":true,"at":"2026-11-23T22:04","checkin":"2026-11-23T22:04"}
+{"who":"","react":"😊","to":25,"posted":false,"at":"2026-11-23T22:04"}
+{"who":"Camille","text":"you're bringing wine since i'm carrying the dessert","posted":true,"at":"2026-11-23T22:15","checkin":"2026-11-23T22:15"}
+{"who":"Thomas","text":"ok","posted":true,"at":"2026-11-23T22:16","checkin":"2026-11-23T22:16"}
+{"who":"Camille","text":"sorry, looking at tomorrow's rota. on at 8. i'll be asleep by half eleven so don't send me anything spicy at midnight","posted":true,"at":"2026-11-23T22:30","checkin":"2026-11-23T22:30"}
+{"who":"Thomas","text":"never","posted":true,"at":"2026-11-23T22:31","checkin":"2026-11-23T22:31"}
+{"who":"Thomas","text":"you'll be fine saturday. your mum will be fine. she'll ask about the job and you'll say it's great","posted":true,"at":"2026-11-23T22:58","checkin":"2026-11-23T22:58"}
+{"who":"Camille","text":"that's exactly what i'm scared of 😩","posted":true,"at":"2026-11-23T23:02","checkin":"2026-11-23T23:02"}
+{"who":"Thomas","text":"then tell her the truth and see what happens","posted":true,"at":"2026-11-23T23:04","checkin":"2026-11-23T23:04"}
+{"who":"Camille","text":"the truth is i'd rather be running","posted":true,"at":"2026-11-23T23:06","checkin":"2026-11-23T23:06"}
+{"who":"Thomas","text":"go to bed camille","posted":true,"at":"2026-11-23T23:08","checkin":"2026-11-23T23:08"}
+{"who":"Camille","text":"ok. night 🌙","posted":true,"at":"2026-11-23T23:09","checkin":"2026-11-23T23:09"}
+{"who":"Camille","text":"morning. 8h start 😩","posted":true,"at":"2026-11-24T07:12","checkin":"2026-11-24T07:12"}
+{"who":"Thomas","text":"morning. slept badly, rain on the window since 4","posted":true,"at":"2026-11-24T07:38","checkin":"2026-11-24T07:38"}
+{"who":"Camille","text":"stay dry wednesday 🙏","posted":true,"at":"2026-11-24T07:41","checkin":"2026-11-24T07:41"}
+{"who":"Camille","text":"lunch break. woman in room 3 said her knee was \"hurt by a sofa\" and i believed her for a full minute","posted":true,"at":"2026-11-24T12:47","checkin":"2026-11-24T12:47"}
+{"who":"Thomas","text":"did you ask about the sofa","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Camille","text":"i did not have the energy","posted":true,"at":"2026-11-24T13:24","checkin":"2026-11-24T13:24"}
+{"who":"","react":"😂","to":41,"posted":false,"at":"2026-11-24T13:24"}
+{"who":"Camille","text":"still here. 20h30 at least. nobody has eaten","posted":true,"at":"2026-11-24T19:58","checkin":"2026-11-24T19:58"}
+{"who":"Thomas","text":"have you eaten","posted":true,"at":"2026-11-24T21:12","checkin":"2026-11-24T21:12"}
+{"who":"Camille","text":"half a banana and a yoghurt that was not mine","posted":true,"at":"2026-11-24T21:14","checkin":"2026-11-24T21:14"}
+{"who":"Thomas","text":"classic","posted":true,"at":"2026-11-24T21:15","checkin":"2026-11-24T21:15"}
+{"who":"Camille","text":"going down. be nice to me saturday","posted":true,"at":"2026-11-24T23:14","checkin":"2026-11-24T23:14"}
+{"who":"Thomas","text":"always nice","posted":true,"at":"2026-11-24T23:19","checkin":"2026-11-24T23:19"}
+{"who":"Thomas","text":"rain stopped for once. weirdly quiet on the street","posted":true,"at":"2026-11-24T23:52","checkin":"2026-11-24T23:52"}
+{"who":"Thomas","text":"3am and marc is watching cooking videos at full volume. the man is making a soufflé in a cave somewhere","posted":true,"at":"2026-11-25T03:41","checkin":"2026-11-25T03:41"}
+{"who":"Thomas","text":"marc finally switched off. i'm still awake like an idiot","posted":true,"at":"2026-11-25T04:12","checkin":"2026-11-25T04:12"}
+{"who":"Camille","text":"morning. rain?","posted":true,"at":"2026-11-25T07:04","checkin":"2026-11-25T07:04"}
+{"who":"Thomas","text":"yes. site at nine. the pier is going to be a swamp","posted":true,"at":"2026-11-25T07:06","checkin":"2026-11-25T07:06"}
+{"who":"Camille","text":"wear the orange jacket 🙏","posted":true,"at":"2026-11-25T07:09","checkin":"2026-11-25T07:09"}
+{"who":"Thomas","text":"the orange one smells of the garage","posted":true,"at":"2026-11-25T07:10","checkin":"2026-11-25T07:10"}
+{"who":"Camille","text":"better than wet","posted":true,"at":"2026-11-25T07:11","checkin":"2026-11-25T07:11"}
+{"who":"Camille","text":"one patient cancelled so i get a sandwich sitting down. miracle","posted":true,"at":"2026-11-25T12:41","checkin":"2026-11-25T12:41"}
+{"who":"Thomas","text":"send me the sandwich","posted":true,"at":"2026-11-25T12:55","checkin":"2026-11-25T12:55"}
+{"who":"Camille","text":"ham and a tomato that gave up","posted":true,"at":"2026-11-25T13:02","checkin":"2026-11-25T13:02"}
+{"who":"Thomas","text":"😂","posted":true,"at":"2026-11-25T13:03","checkin":"2026-11-25T13:03"}
+{"who":"","react":"😂","to":59,"posted":false,"at":"2026-11-25T13:03"}
+{"who":"Thomas","text":"found another crack on the north pier. bigger than the first","posted":true,"at":"2026-11-25T14:18","checkin":"2026-11-25T14:18"}
+{"who":"Camille","text":"is that bad","posted":true,"at":"2026-11-25T14:20","checkin":"2026-11-25T14:20"}
+{"who":"Thomas","text":"it's for the report. not for tonight","posted":true,"at":"2026-11-25T14:31","checkin":"2026-11-25T14:31"}
+{"who":"Camille","text":"you're hiding behind the report","posted":true,"at":"2026-11-25T14:32","checkin":"2026-11-25T14:32"}
+{"who":"Thomas","text":"yes","posted":true,"at":"2026-11-25T14:33","checkin":"2026-11-25T14:33"}
+{"who":"Camille","text":"home. feet dead. i'm off friday so i'll be doing admin in my pyjamas all day","posted":true,"at":"2026-11-25T19:05","checkin":"2026-11-25T19:05"}
+{"who":"Camille","text":"that's the plan anyway","posted":true,"at":"2026-11-25T19:07","checkin":"2026-11-25T19:07"}
+{"who":"Thomas","text":"did you eat","posted":true,"at":"2026-11-25T21:33","checkin":"2026-11-25T21:33"}
+{"who":"Camille","text":"not yet. about to do pasta. marc is welcome to the leftovers he will not get","posted":true,"at":"2026-11-25T21:36","checkin":"2026-11-25T21:36"}
+{"who":"Thomas","text":"he'll get them","posted":true,"at":"2026-11-25T21:38","checkin":"2026-11-25T21:38"}
+{"who":"Thomas","text":"hey. can i ask you something not about saturday","posted":true,"at":"2026-11-25T23:10","checkin":"2026-11-25T23:10"}
+{"who":"Camille","text":"ok? ask","posted":true,"at":"2026-11-25T23:14","checkin":"2026-11-25T23:14"}
+{"who":"Thomas","text":"nvm. it's stupid. tomorrow","posted":true,"at":"2026-11-25T23:20","checkin":"2026-11-25T23:20"}
+{"who":"Camille","text":"you can't do that now. i'm in bed with the phone","posted":true,"at":"2026-11-25T23:21","checkin":"2026-11-25T23:21"}
+{"who":"Camille","text":"thomas","posted":true,"at":"2026-11-25T23:25","checkin":"2026-11-25T23:25"}
+{"who":"Thomas","text":"it's the other stuff. léa and i split up two weeks ago. i didn't want to say it in a text but you'd have known something was off by saturday anyway","posted":true,"at":"2026-11-25T23:58","checkin":"2026-11-25T23:58"}
+{"who":"Thomas","text":"don't reply now. you're asleep","posted":true,"at":"2026-11-26T00:04","checkin":"2026-11-26T00:04"}
+{"who":"Thomas","text":"rain's back","posted":true,"at":"2026-11-26T00:06","checkin":"2026-11-26T00:06"}
+{"who":"Thomas","text":"marc is asleep. the soufflé video is still going in my head","posted":true,"at":"2026-11-26T00:20","checkin":"2026-11-26T00:20"}

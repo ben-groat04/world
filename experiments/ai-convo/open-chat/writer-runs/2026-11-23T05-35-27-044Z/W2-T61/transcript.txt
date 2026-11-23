@@ -1,0 +1,124 @@
+--- Mon 19:00, Priya
+Dan, can you send me the supplier invoice spreadsheet? I need it before end of Friday to finish the reconciliation.
+
+--- Mon 19:12, Dan
+Sorry, been on the late supplier statements all day. Will send tomorrow.
+
+--- Mon 19:14, Priya
+Tomorrow works but Wed would be too late, the close is Friday 👍
+(👍 1)
+
+--- Mon 20:31, Chloe
+omg is anyone else's payment system doing the thing where it times out every time you go to approve
+
+--- Mon 20:33, Chloe
+tbh I've been staring at it for ages
+
+--- Mon 20:47, Priya
+Yes. Went through it three times today. Log out and back in usually works.
+
+--- Mon 20:48, Chloe
+ah ok ty 🙏
+
+--- Tue 07:58, Ahmed
+Reminder: client close sign-off is Friday 27th. Supplier reconciliations need to be complete by Thursday evening so I can review before the partners' meeting.
+
+--- Tue 08:10, Priya
+Noted. Dan, still hoping for the spreadsheet this morning if you can 🙂
+
+--- Tue 12:24, Dan
+Sending it now. Sorry, got pulled into a call.
+
+--- Tue 12:25, Dan
+Spreadsheet's in the shared folder under Nov Supplier Invoices.
+(👍 1)
+
+--- Tue 12:30, Priya
+Got it, thanks Dan 👍
+
+--- Tue 18:40, Chloe
+hey, quick thing, I think I posted one of the supplier payments to the wrong account last week. I'm looking into it before the close so it's fine, just flagging in case anyone sees a mismatch
+
+--- Tue 18:41, Priya
+Oh no. Do you want me to look at it with you? Send me the reference
+
+--- Tue 18:42, Chloe
+yeah would be great, I'll dm you 🙏
+
+--- Tue 19:06, Priya
+Ok. Dan, can you confirm the Nov invoices tab has everything up to 24 Nov? Want to make sure I'm not missing a batch.
+(👍 1)
+
+--- Tue 19:52, Dan
+Its got everything up to the 20th. Statements from Halvorsen and the Ardwick Print lot came in today so those are not on it yet. Will add tomorrow.
+
+--- Tue 19:54, Priya
+Ok. Can you add them first thing pls? I'm starting the Hadley ledger tomorrow and need those for the matching.
+
+--- Tue 20:15, Chloe
+ok I've sent the reference to priya, it's the Brandwell one 😬
+
+--- Tue 20:16, Chloe
+she's helping me check it, so no panic yet
+
+--- Tue 21:30, Priya
+Found it. Posted to the old sort code, the new one's on the remittance. Easy fix, we can reverse and repost tomorrow once I've checked the bank side.
+(😅 2, 👍 1)
+
+--- Tue 21:31, Chloe
+thank god. thank you 🙏🙏
+
+--- Tue 21:33, Priya
+Don't thank me yet, you still need to tell Ahmed before the payment run picks it up 🙂
+
+--- Tue 21:34, Chloe
+yeah I know. I'll do it tomorrow morning, I'm not gonna do it at 9:30pm lol
+
+--- Wed 07:41, Ahmed
+Morning all. Supplier reconciliations are due Thursday 19:00 at the latest. Please confirm your status on the Nov close by midday today.
+
+--- Wed 08:20, Priya
+Hadley is on track. Waiting on the Halvorsen and Ardwick statements from Dan, then I can finish matching.
+
+--- Wed 09:05, Dan
+Adding them now. Sorry, should have had them in last night.
+
+--- Wed 09:06, Dan
+Done. Halvorsen and Ardwick are both on the Nov tab.
+(👍 2)
+
+--- Wed 09:08, Priya
+Thanks Dan 👍
+
+--- Wed 09:40, Chloe
+morning ahmed, I need to flag something before the payment run. Brandwell payment from last week went to the old account. Priya and I have found the cause and I'm reversing and reposting today. Will send you the reference once it's done
+
+--- Wed 09:43, Ahmed
+Thank you for flagging it promptly, Chloe. Please send me the reference when reposted and copy Priya. We will check the bank side before Friday's run.
+
+--- Wed 09:45, Chloe
+will do, thank you 🙏
+
+--- Wed 12:10, Priya
+Reversal's gone through on my side. Repost after lunch, then I'll check the statement.
+(👍 1)
+
+--- Wed 12:14, Ahmed
+Good. Priya, let me know once the Brandwell line matches the bank.
+
+--- Wed 13:30, Chloe
+reposted! ref is on the bank screen now, sending to ahmed
+
+--- Wed 13:32, Chloe
+omg this payment system still times out every time I approve, had to log out and back in twice 😩
+
+--- Wed 13:35, Priya
+Same. Log out, back in, then approve again. Works about 3 times out of 4.
+(😂 1)
+
+--- Wed 17:50, Dan
+Off to the school play shortly. Will check the chat when I'm back. Holding the Thursday pack until I've reviewed the Ardwick lines.
+
+--- Wed 18:20, Priya
+Brandwell matches now. Ahmed, you're good on that one.
+(👍 2)

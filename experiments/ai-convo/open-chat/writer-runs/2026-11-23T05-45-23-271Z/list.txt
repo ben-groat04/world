@@ -1,0 +1,9 @@
+W2M-T11 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-T11
+W2M-T21 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-T21
+W2M-T31 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-T31
+W2M-T41 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-T41
+W2M-T51 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-T51
+W2M-T61 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-T61
+W2M-U11 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-U11
+W2M-U21 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-U21
+W2M-U31 /home/user/world/experiments/ai-convo/open-chat/writer-runs/2026-11-23T05-45-23-271Z/W2M-U31

@@ -27,7 +27,7 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 
 ## Next steps
 1. (Done: W1 judged 6.1.)
-2. (Done: W2 plan in `notes/diagnoses/w2-diagnosis.md`.) W2 is being implemented by a Sonnet coder; if `writer.mjs` lacks the W2 changes (check the W2 entry in ITERATIONS.md for check numbers), implement that plan, run its cheap checks, then a judged paired batch W1 vs W2 on fresh briefs (3 seeds), then a cold read, then a Sonnet coder, as in the workflow above.
+2. (Done: W2 built in `writer.mjs`, W1 kept as `writer-w1.mjs`; checks under W2 in ITERATIONS.md.) Paired batch W1 / W2 / W2-medium on held-out briefs is built at `eval/w2/` (judges j1-j53, 3 per file). Judging was started from the old session with a subset of judges; if `eval/w2/scores.tsv` is missing or thin, judge it, tally, then an Opus cold read, then a Sonnet coder, as in the workflow above.
 3. Later W items from the plan: @claude as a cut-and-resume line, effort/model arms, then wiring the writer into the live app (generate day N+1 while day N plays, release messages on the story clock, write to `live_turns`).
 4. Use paired comparisons on shared casts, with 3 seeds per scenario and fresh briefs each round. Six windows can only show differences of about 1.8 points or more.
 

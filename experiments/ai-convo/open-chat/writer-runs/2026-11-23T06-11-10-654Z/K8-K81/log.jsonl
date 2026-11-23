@@ -1,0 +1,94 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1713,"cache_read_input_tokens":0,"output_tokens":3044,"output_tokens_details":{"thinking_tokens":2124},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1713,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3044,"cache_read_input_tokens":0,"cache_creation_input_tokens":1713,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1713},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2585,"cache_read_input_tokens":0,"output_tokens":1753,"output_tokens_details":{"thinking_tokens":1121},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2585,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1753,"cache_read_input_tokens":0,"cache_creation_input_tokens":2585,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2585},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3216,"cache_read_input_tokens":0,"output_tokens":4467,"output_tokens_details":{"thinking_tokens":3360},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3216,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4467,"cache_read_input_tokens":0,"cache_creation_input_tokens":3216,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3216},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Hannah","Dan"],"setting":"You both live in Leeds, in the same part of the city where you spent most of your twenties together. You lived together for about five years, and you split up last year. You know each other's families, habits, and the stories people tell at parties, and you still know how the other one takes their tea.","opener":"Asks whether Dan still has the spare key to her old flat, since she needs it back.","cast":{"Hannah":{"who":"34, woman, the former partner, the one who picked up the phone","knows":"You know Dan as the man you lived with for five years, and you know he still lives across the city in Armley. You also know he drives buses and has always been better with people than with paperwork.","like":"You're dry, a bit impatient, and quick to laugh at yourself. You have strong opinions about bad parking, overpriced brunch, and people who don't return borrowed things.","texts":"You message in this chat now and then, usually only when something has come up that you feel you need to say.","style":"You type in full sentences with normal capitals and punctuation, and you use the occasional emoji but not many.","ex":[]},"Dan":{"who":"36, man, the ex, the one receiving the message","knows":"You are Hannah, the woman he lived with for five years, and you split up last year. You know she works in physio at the Infirmary and that she has a flatmate in Chapeltown.","like":"You're easygoing and blunt, with a dry sense of humour that you don't always think to explain. You have opinions about football, bus timetables, and anyone who talks loudly on the top deck.","texts":"You message mostly when something prompts you, and you can go a while without writing anything.","style":"You type mostly in lowercase, with minimal punctuation, and you rarely use emoji.","ex":[]}},"private_lines":{"Hannah":"You live in a two-bed flat in Chapeltown with a flatmate, Priya, who works nights at the hospital. You work as a physiotherapist at the Leeds General Infirmary, mostly on weekday daytime clinics. Your days are busy and fairly structured, and you usually wind down with a cup of tea and something on TV before bed.","Dan":"You live alone in a rented house in Armley. You drive buses for First, mostly on early and mid-morning routes, so your days start early and end around the middle of the afternoon. You spend evenings on the sofa, watching football when it's on, and you keep in touch with a couple of mates from the pub."},"sleep":{"Hannah":[23.5,7],"Dan":[22.5,6]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1321,"cache_read_input_tokens":0,"output_tokens":2074,"output_tokens_details":{"thinking_tokens":1218},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1321,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2074,"cache_read_input_tokens":0,"cache_creation_input_tokens":1321,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1321},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"My ex.","topic":null}
+{"who":"Hannah","text":"Hi, do you still have the spare key to the old flat? I need it back. The agent wants all the keys before the inventory on Friday.","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Dan","text":"think so. might be in the kitchen drawer","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Hannah","text":"The kitchen drawer is where things go to die, Dan.","posted":true,"at":"2026-11-23T19:16","checkin":"2026-11-23T19:16"}
+{"who":"Dan","text":"its where the takeaway menus go. thats different","posted":true,"at":"2026-11-23T19:17","checkin":"2026-11-23T19:17"}
+{"who":"Hannah","text":"Can you check? If it's not there I'll have to ask the agent for a replacement and they charge for that.","posted":true,"at":"2026-11-23T19:19","checkin":"2026-11-23T19:19"}
+{"who":"Dan","text":"not in the drawer","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Dan","text":"checked the hook by the back door too","posted":true,"at":"2026-11-23T19:42","checkin":"2026-11-23T19:42"}
+{"who":"","react":"😂","to":6,"posted":false,"at":"2026-11-23T19:42"}
+{"who":"Hannah","text":"Seriously?","posted":true,"at":"2026-11-23T19:55","checkin":"2026-11-23T19:55"}
+{"who":"Dan","text":"joking. its in my coat pocket. the grey one","posted":true,"at":"2026-11-23T20:03","checkin":"2026-11-23T20:03"}
+{"who":"Hannah","text":"Right. Can you drop it at the agent's? It's on Park Row.","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Dan","text":"i can drop it wed. finish at half 2","posted":true,"at":"2026-11-23T20:09","checkin":"2026-11-23T20:09"}
+{"who":"Hannah","text":"Wednesday's fine. I'm at the LGI all day Thursday so Wednesday's better anyway 👍","posted":true,"at":"2026-11-23T20:12","checkin":"2026-11-23T20:12"}
+{"who":"Dan","text":"wed then","posted":true,"at":"2026-11-23T20:14","checkin":"2026-11-23T20:14"}
+{"who":"Dan","text":"you watching the boat thing tonight","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Hannah","text":"What boat thing","posted":true,"at":"2026-11-23T20:33","checkin":"2026-11-23T20:33"}
+{"who":"Dan","text":"the one about the man who fixes boats. you said you'd watch it","posted":true,"at":"2026-11-23T20:33","checkin":"2026-11-23T20:33"}
+{"who":"Hannah","text":"I did not say that. Priya's watching it, I've fallen asleep on the sofa during it twice already.","posted":true,"at":"2026-11-23T20:34","checkin":"2026-11-23T20:34"}
+{"who":"Dan","text":"ok","posted":true,"at":"2026-11-23T20:36","checkin":"2026-11-23T20:36"}
+{"who":"Dan","text":"had a lad on the top deck this morning shouting down his phone for 20 mins. then wanted a refund","posted":true,"at":"2026-11-23T21:17","checkin":"2026-11-23T21:17"}
+{"who":"Hannah","text":"Did you put him off?","posted":true,"at":"2026-11-23T21:19","checkin":"2026-11-23T21:19"}
+{"who":"Dan","text":"nah. he was crying about his nan. had to be nice to him","posted":true,"at":"2026-11-23T21:20","checkin":"2026-11-23T21:20"}
+{"who":"Hannah","text":"You're too soft for that job.","posted":true,"at":"2026-11-23T21:24","checkin":"2026-11-23T21:24"}
+{"who":"Dan","text":"yeah","posted":true,"at":"2026-11-23T21:25","checkin":"2026-11-23T21:25"}
+{"who":"Hannah","text":"Sorry I've been a bit weird about the flat. It's just strange seeing it on a list of things to hand back.","posted":true,"at":"2026-11-23T22:48","checkin":"2026-11-23T22:48"}
+{"who":"Dan","text":"its fine","posted":true,"at":"2026-11-23T23:01","checkin":"2026-11-23T23:01"}
+{"who":"Hannah","text":"It's not really fine but thanks for checking the drawer.","posted":true,"at":"2026-11-23T23:04","checkin":"2026-11-23T23:04"}
+{"who":"Dan","text":"checked the hook too","posted":true,"at":"2026-11-23T23:06","checkin":"2026-11-23T23:06"}
+{"who":"Hannah","text":"Going to bed. Don't forget the key.","posted":true,"at":"2026-11-23T23:09","checkin":"2026-11-23T23:09"}
+{"who":"Dan","text":"wont forget. its in my coat","posted":true,"at":"2026-11-23T23:20","checkin":"2026-11-23T23:20"}
+{"who":"Dan","text":"bus 14 diverted again. roadworks on kirkstall rd. spent the first hour explaining to a man in a bungalow what a diversion is","posted":true,"at":"2026-11-24T06:52","checkin":"2026-11-24T06:52"}
+{"who":"Hannah","text":"Did you actually check the coat or are you just saying it's in the coat","posted":true,"at":"2026-11-24T13:08","checkin":"2026-11-24T13:08"}
+{"who":"Dan","text":"checked. still there","posted":true,"at":"2026-11-24T13:15","checkin":"2026-11-24T13:15"}
+{"who":"Hannah","text":"Good. Don't put it in the drawer.","posted":true,"at":"2026-11-24T13:16","checkin":"2026-11-24T13:16"}
+{"who":"Dan","text":"wasnt going to","posted":true,"at":"2026-11-24T13:16","checkin":"2026-11-24T13:16"}
+{"who":"Hannah","text":"Patient this morning insisted on doing his knee rehab standing on a chair. Nearly lost him twice.","posted":true,"at":"2026-11-24T13:40","checkin":"2026-11-24T13:40"}
+{"who":"Dan","text":"did he get down off the chair","posted":true,"at":"2026-11-24T13:52","checkin":"2026-11-24T13:52"}
+{"who":"Hannah","text":"Yes. Went fine. Mostly.","posted":true,"at":"2026-11-24T13:53","checkin":"2026-11-24T13:53"}
+{"who":"","react":"😂","to":36,"posted":false,"at":"2026-11-24T13:53"}
+{"who":"Dan","text":"finished. home now. sitting in the car park at the depot cos i cant be bothered to move yet","posted":true,"at":"2026-11-24T15:12","checkin":"2026-11-24T15:12"}
+{"who":"Dan","text":"did you watch the boat thing","posted":true,"at":"2026-11-24T15:20","checkin":"2026-11-24T15:20"}
+{"who":"Hannah","text":"No. Priya did. I was in the bath with my eyes shut and heard it through the wall","posted":true,"at":"2026-11-24T15:22","checkin":"2026-11-24T15:22"}
+{"who":"Dan","text":"thats not watching","posted":true,"at":"2026-11-24T15:23","checkin":"2026-11-24T15:23"}
+{"who":"Hannah","text":"It's close enough for me","posted":true,"at":"2026-11-24T15:23","checkin":"2026-11-24T15:23"}
+{"who":"Hannah","text":"Priya asked me last night why I keep texting you about keys when I could just say what I actually mean. I told her to mind her own business. She's annoyingly right though.","posted":true,"at":"2026-11-24T21:37","checkin":"2026-11-24T21:37"}
+{"who":"Dan","text":"what do you mean","posted":true,"at":"2026-11-24T21:58","checkin":"2026-11-24T21:58"}
+{"who":"Hannah","text":"I'm not doing this over text on a Tuesday","posted":true,"at":"2026-11-24T22:04","checkin":"2026-11-24T22:04"}
+{"who":"Dan","text":"ok","posted":true,"at":"2026-11-24T22:05","checkin":"2026-11-24T22:05"}
+{"who":"Dan","text":"key's in the coat","posted":true,"at":"2026-11-24T22:06","checkin":"2026-11-24T22:06"}
+{"who":"Hannah","text":"I know it is.","posted":true,"at":"2026-11-24T22:11","checkin":"2026-11-24T22:11"}
+{"who":"Dan","text":"night han","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Hannah","text":"Are you still going to the agent's today or do I need to sort it?","posted":true,"at":"2026-11-25T07:14","checkin":"2026-11-25T07:14"}
+{"who":"Dan","text":"am going. half 2ish. its in my coat","posted":true,"at":"2026-11-25T07:16","checkin":"2026-11-25T07:16"}
+{"who":"Hannah","text":"Dan.","posted":true,"at":"2026-11-25T07:17","checkin":"2026-11-25T07:17"}
+{"who":"Dan","text":"its in my coat han","posted":true,"at":"2026-11-25T07:17","checkin":"2026-11-25T07:17"}
+{"who":"Hannah","text":"Clinic running late. Man with a frozen shoulder who's convinced it's his neck. I keep having to explain the difference","posted":true,"at":"2026-11-25T13:22","checkin":"2026-11-25T13:22"}
+{"who":"Dan","text":"did you tell him its the shoulder","posted":true,"at":"2026-11-25T13:30","checkin":"2026-11-25T13:30"}
+{"who":"Hannah","text":"Obviously. He says his GP said neck","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31"}
+{"who":"Dan","text":"gp always says neck","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31"}
+{"who":"Dan","text":"at park row. girl on the desk took it. said itd go in the box with the rest","posted":true,"at":"2026-11-25T14:41","checkin":"2026-11-25T14:41"}
+{"who":"Hannah","text":"Thank you. Actually.","posted":true,"at":"2026-11-25T14:42","checkin":"2026-11-25T14:42"}
+{"who":"Hannah","text":"Did she ask you anything","posted":true,"at":"2026-11-25T14:42","checkin":"2026-11-25T14:42"}
+{"who":"Dan","text":"asked if i still lived there. said nah. she said right ok","posted":true,"at":"2026-11-25T14:46","checkin":"2026-11-25T14:46"}
+{"who":"Hannah","text":"Good. Glad that's done.","posted":true,"at":"2026-11-25T14:47","checkin":"2026-11-25T14:47"}
+{"who":"Dan","text":"you going to say it then","posted":true,"at":"2026-11-25T15:03","checkin":"2026-11-25T15:03"}
+{"who":"Hannah","text":"Not at work. And not from the LGI car park with a sandwich in my lap.","posted":true,"at":"2026-11-25T15:20","checkin":"2026-11-25T15:20"}
+{"who":"Dan","text":"ok","posted":true,"at":"2026-11-25T15:21","checkin":"2026-11-25T15:21"}
+{"who":"Dan","text":"thought i'd ask","posted":true,"at":"2026-11-25T15:21","checkin":"2026-11-25T15:21"}
+{"who":"Hannah","text":"I know you did. Thanks for the key.","posted":true,"at":"2026-11-25T15:58","checkin":"2026-11-25T15:58"}
+{"who":"Dan","text":"its fine","posted":true,"at":"2026-11-25T16:10","checkin":"2026-11-25T16:10"}
+{"who":"Dan","text":"its in the box now","posted":true,"at":"2026-11-25T16:10","checkin":"2026-11-25T16:10"}
+{"who":"","react":"👍","to":68,"posted":false,"at":"2026-11-25T16:10"}
+{"who":"Dan","text":"priya says the boat thing's on again. i said i'd see. no promises","posted":true,"at":"2026-11-25T20:47","checkin":"2026-11-25T20:47"}
+{"who":"Hannah","text":"You said that about the last one","posted":true,"at":"2026-11-25T20:49","checkin":"2026-11-25T20:49"}
+{"who":"Dan","text":"i was asleep before the end of the last one too","posted":true,"at":"2026-11-25T20:51","checkin":"2026-11-25T20:51"}
+{"who":"Hannah","text":"Same. Priya's on nights so it's just me and the telly. Going to bed early before I fall asleep in front of it again","posted":true,"at":"2026-11-25T20:52","checkin":"2026-11-25T20:52"}
+{"who":"Hannah","text":"Are you still up","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}
+{"who":"Dan","text":"yeah. sofa. team lost","posted":true,"at":"2026-11-25T23:14","checkin":"2026-11-25T23:14"}
+{"who":"Hannah","text":"Which team","posted":true,"at":"2026-11-25T23:16","checkin":"2026-11-25T23:16"}
+{"who":"Dan","text":"ours","posted":true,"at":"2026-11-25T23:16","checkin":"2026-11-25T23:16"}
+{"who":"Hannah","text":"Sorry","posted":true,"at":"2026-11-25T23:17","checkin":"2026-11-25T23:17"}
+{"who":"Dan","text":"you dont follow it","posted":true,"at":"2026-11-25T23:17","checkin":"2026-11-25T23:17"}
+{"who":"Hannah","text":"I follow it enough to know you cried at the last one","posted":true,"at":"2026-11-25T23:19","checkin":"2026-11-25T23:19"}
+{"who":"Dan","text":"i did not","posted":true,"at":"2026-11-25T23:20","checkin":"2026-11-25T23:20"}
+{"who":"Hannah","text":"Dan.","posted":true,"at":"2026-11-25T23:21","checkin":"2026-11-25T23:21"}
+{"who":"Hannah","text":"Yesterday you asked what I meant. I think I meant I miss the stupid stuff. Coming home and you'd have the bus timetable spread across the kitchen table for no reason","posted":true,"at":"2026-11-25T23:23","checkin":"2026-11-25T23:23"}
+{"who":"Hannah","text":"I know that's not a big thing. I just keep finding things I'd have told you","posted":true,"at":"2026-11-25T23:24","checkin":"2026-11-25T23:24"}
+{"who":"Dan","text":"you can tell me them","posted":true,"at":"2026-11-25T23:26","checkin":"2026-11-25T23:26"}
+{"who":"Hannah","text":"That's the problem","posted":true,"at":"2026-11-25T23:27","checkin":"2026-11-25T23:27"}
+{"who":"Dan","text":"i know","posted":true,"at":"2026-11-25T23:28","checkin":"2026-11-25T23:28"}
+{"who":"Hannah","text":"Going to bed. Night","posted":true,"at":"2026-11-25T23:29","checkin":"2026-11-25T23:29"}
+{"who":"Dan","text":"night han","posted":true,"at":"2026-11-25T23:31","checkin":"2026-11-25T23:31"}

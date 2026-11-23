@@ -1,0 +1,88 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1591,"cache_read_input_tokens":0,"output_tokens":2680,"output_tokens_details":{"thinking_tokens":1934},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1591,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2680,"cache_read_input_tokens":0,"cache_creation_input_tokens":1591,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1591},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2288,"cache_read_input_tokens":0,"output_tokens":1569,"output_tokens_details":{"thinking_tokens":888},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2288,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1569,"cache_read_input_tokens":0,"cache_creation_input_tokens":2288,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2288},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2968,"cache_read_input_tokens":0,"output_tokens":2213,"output_tokens_details":{"thinking_tokens":1210},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2968,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2213,"cache_read_input_tokens":0,"cache_creation_input_tokens":2968,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2968},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Callum","Priya"],"setting":"You both live in Glasgow, in a rented flat in Govanhill, and have been together for two years. You met through mutual friends at a quiz night, and you already know each other's families, jobs, and most of each other's habits. You have talked about a first big trip together for months but never settled on where to go.","opener":"Send Priya a screenshot of the ferry timetable and ask whether they should bring the car.","cast":{"Callum":{"who":"31, man, the partner","knows":"You know Priya is your partner of two years, and that she is a pharmacist who is careful with money and plans ahead.","like":"You are easygoing and practical, and you tend to go along with plans rather than push your own.","texts":"You mostly reply to Priya and only now and then start a conversation without being prompted.","style":"You type in ordinary sentences with capitals and full stops, and you use an emoji only occasionally.","ex":[]},"Priya":{"who":"29, woman, the partner","knows":"You know Callum is your partner of two years, an engineer who is relaxed about most things but gets stuck when choosing between options.","like":"You are organised and warm, and you like to have a clear plan before committing to anything.","texts":"You message Callum fairly often without being asked, especially when you have found something you want to share.","style":"You use proper capitals and punctuation and send the odd heart or thumbs-up.","ex":[]}},"private_lines":{"Callum":"You work as a civil engineer for a firm in the city centre, usually leaving the flat around half eight and getting home by six. You live with Priya, and most evenings you cook, watch something together, or go for a walk along the canal with the dog.","Priya":"You work as a pharmacist at a community pharmacy, mostly on early shifts that start at seven, so you are usually home by mid-afternoon. You live with Callum, and you spend a lot of your free time reading, sorting out the flat, and keeping track of bills and bookings."},"sleep":{"Callum":[23.5,7],"Priya":[22.25,6]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1275,"cache_read_input_tokens":0,"output_tokens":1793,"output_tokens_details":{"thinking_tokens":1105},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1275,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1793,"cache_read_input_tokens":0,"cache_creation_input_tokens":1275,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1275},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"A couple planning their first trip together.","topic":null}
+{"who":"Callum","text":"[screenshot: CalMac timetable, Oban to Craignure]\nShould we bring the car or not","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Priya","text":"Depends what we're doing once we're over\nAre we touring the whole island or basing ourselves somewhere","posted":true,"at":"2026-11-23T19:04","checkin":"2026-11-23T19:04"}
+{"who":"Callum","text":"Don't really know. Thought we'd see","posted":true,"at":"2026-11-23T19:06","checkin":"2026-11-23T19:06"}
+{"who":"Priya","text":"That's not a plan","posted":true,"at":"2026-11-23T19:07","checkin":"2026-11-23T19:07"}
+{"who":"Callum","text":"It's a bit of a plan","posted":true,"at":"2026-11-23T19:09","checkin":"2026-11-23T19:09"}
+{"who":"Priya","text":"Car is over 150 return with the ferry, plus fuel\nFoot passengers are way cheaper","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Callum","text":"Ok","posted":true,"at":"2026-11-23T19:16","checkin":"2026-11-23T19:16"}
+{"who":"Callum","text":"And Moss? Can dogs go on the ferry","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Priya","text":"Yes but they have to stay in the car or on deck\nChecking the cottage rules too","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Callum","text":"Moss will love the car","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Priya","text":"Found somewhere near Dervaig that takes dogs. Two nights, Friday to Sunday\n[link]","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Callum","text":"Looks good","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"","react":"👍","to":11,"posted":false,"at":"2026-11-23T20:31"}
+{"who":"Priya","text":"It's a bit more than I wanted but it has a wood burner\nDon't book yet","posted":true,"at":"2026-11-23T20:58","checkin":"2026-11-23T20:58"}
+{"who":"Callum","text":"Why not book","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"Priya","text":"Want to sort the car first","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"Callum","text":"Honestly whatever you think. Car's probably useful if we're out at Dervaig","posted":true,"at":"2026-11-23T21:06","checkin":"2026-11-23T21:06"}
+{"who":"Priya","text":"Ok, I'll book the car. The earlier sailing is 8am so we'd need to leave the flat by 6:30","posted":true,"at":"2026-11-23T21:40","checkin":"2026-11-23T21:40"}
+{"who":"Callum","text":"6:30 is fine","posted":true,"at":"2026-11-23T21:41","checkin":"2026-11-23T21:41"}
+{"who":"Priya","text":"Booked the cottage. Fri to Sun\nConfirmation's in your email","posted":true,"at":"2026-11-23T22:05","checkin":"2026-11-23T22:05"}
+{"who":"Callum","text":"Nice one","posted":true,"at":"2026-11-23T22:06","checkin":"2026-11-23T22:06"}
+{"who":"Priya","text":"Bin day is Wednesday not Thursday btw","posted":true,"at":"2026-11-23T22:09","checkin":"2026-11-23T22:09"}
+{"who":"Callum","text":"Moss is asleep on the sofa again","posted":true,"at":"2026-11-23T22:41","checkin":"2026-11-23T22:41"}
+{"who":"Callum","text":"Should I move him","posted":true,"at":"2026-11-23T22:42","checkin":"2026-11-23T22:42"}
+{"who":"Priya","text":"Leave him, he looks happy","posted":true,"at":"2026-11-24T06:12","checkin":"2026-11-24T06:12"}
+{"who":"Callum","text":"Ok","posted":true,"at":"2026-11-24T07:24","checkin":"2026-11-24T07:24"}
+{"who":"Callum","text":"Did you book the car or just the cottage","posted":true,"at":"2026-11-24T12:03","checkin":"2026-11-24T12:03"}
+{"who":"Priya","text":"Car as well, last night. Confirmation's in the same email","posted":true,"at":"2026-11-24T12:20","checkin":"2026-11-24T12:20"}
+{"who":"Callum","text":"Right saw it, didn't open it properly","posted":true,"at":"2026-11-24T12:21","checkin":"2026-11-24T12:21"}
+{"who":"Priya","text":"Of course you didn't","posted":true,"at":"2026-11-24T12:21","checkin":"2026-11-24T12:21"}
+{"who":"Callum","text":"Crane's up at the old Tradeston site. They've finally started the frame","posted":true,"at":"2026-11-24T13:47","checkin":"2026-11-24T13:47"}
+{"who":"Callum","text":"Lunch was on the wall above it, you can see the whole river from there","posted":true,"at":"2026-11-24T13:47","checkin":"2026-11-24T13:47"}
+{"who":"Priya","text":"Nice. Off shift now, going to the shop for milk","posted":true,"at":"2026-11-24T14:15","checkin":"2026-11-24T14:15"}
+{"who":"Priya","text":"Do we need anything else","posted":true,"at":"2026-11-24T14:16","checkin":"2026-11-24T14:16"}
+{"who":"Callum","text":"Bread maybe","posted":true,"at":"2026-11-24T14:50","checkin":"2026-11-24T14:50"}
+{"who":"Priya","text":"We have bread","posted":true,"at":"2026-11-24T15:02","checkin":"2026-11-24T15:02"}
+{"who":"Priya","text":"Found a walk near Dervaig, 6 miles, goes past a loch and a waterfall. Sending it","posted":true,"at":"2026-11-24T15:02","checkin":"2026-11-24T15:02"}
+{"who":"Priya","text":"[link]","posted":true,"at":"2026-11-24T15:03","checkin":"2026-11-24T15:03"}
+{"who":"Callum","text":"That's a good one","posted":true,"at":"2026-11-24T17:30","checkin":"2026-11-24T17:30"}
+{"who":"Callum","text":"Can Moss do it","posted":true,"at":"2026-11-24T17:31","checkin":"2026-11-24T17:31"}
+{"who":"Priya","text":"Says dogs on lead through the forest bit. Otherwise yes","posted":true,"at":"2026-11-24T17:33","checkin":"2026-11-24T17:33"}
+{"who":"Callum","text":"He'll pull the whole way","posted":true,"at":"2026-11-24T17:34","checkin":"2026-11-24T17:34"}
+{"who":"Priya","text":"Bin's out already, I did it when I got back","posted":true,"at":"2026-11-24T19:12","checkin":"2026-11-24T19:12"}
+{"who":"Priya","text":"So that's one thing","posted":true,"at":"2026-11-24T19:12","checkin":"2026-11-24T19:12"}
+{"who":"Callum","text":"Thanks","posted":true,"at":"2026-11-24T19:20","checkin":"2026-11-24T19:20"}
+{"who":"Priya","text":"Did you still want the wood burner or was that just me","posted":true,"at":"2026-11-24T21:48","checkin":"2026-11-24T21:48"}
+{"who":"Callum","text":"Both of us","posted":true,"at":"2026-11-24T22:30","checkin":"2026-11-24T22:30"}
+{"who":"Callum","text":"You're the one who found it though","posted":true,"at":"2026-11-24T22:31","checkin":"2026-11-24T22:31"}
+{"who":"Priya","text":"👍","posted":true,"at":"2026-11-24T22:33","checkin":"2026-11-24T22:33"}
+{"who":"Callum","text":"Moss has moved. He's on the rug now","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"Priya","text":"Off to the bus. Don't let Moss back on the sofa","posted":true,"at":"2026-11-25T06:24","checkin":"2026-11-25T06:24"}
+{"who":"Callum","text":"Too late","posted":true,"at":"2026-11-25T07:12","checkin":"2026-11-25T07:12"}
+{"who":"Callum","text":"Is the cottage one of those places with a proper kettle or the kettle with the lid","posted":true,"at":"2026-11-25T07:12","checkin":"2026-11-25T07:12"}
+{"who":"Priya","text":"Didn't check. Probably the lid one","posted":true,"at":"2026-11-25T07:55","checkin":"2026-11-25T07:55"}
+{"who":"Callum","text":"Great","posted":true,"at":"2026-11-25T08:31","checkin":"2026-11-25T08:31"}
+{"who":"Priya","text":"Had a woman in asking for a prescription refill for her husband who died in March. Didn't know what to do","posted":true,"at":"2026-11-25T12:48","checkin":"2026-11-25T12:48"}
+{"who":"Priya","text":"Sorry. Just wanted to say it to someone","posted":true,"at":"2026-11-25T12:50","checkin":"2026-11-25T12:50"}
+{"who":"Callum","text":"That's rough. Did you sort it?","posted":true,"at":"2026-11-25T13:10","checkin":"2026-11-25T13:10"}
+{"who":"Priya","text":"Yeah, got the GP to sign it off. Felt a bit weird","posted":true,"at":"2026-11-25T13:11","checkin":"2026-11-25T13:11"}
+{"who":"Callum","text":"You did the right thing","posted":true,"at":"2026-11-25T13:12","checkin":"2026-11-25T13:12"}
+{"who":"Priya","text":"👍","posted":true,"at":"2026-11-25T13:12","checkin":"2026-11-25T13:12"}
+{"who":"Callum","text":"Site meeting got moved to tomorrow so I'm off at four","posted":true,"at":"2026-11-25T15:34","checkin":"2026-11-25T15:34"}
+{"who":"Priya","text":"Nice. Want chips tonight or are you cooking","posted":true,"at":"2026-11-25T15:35","checkin":"2026-11-25T15:35"}
+{"who":"Callum","text":"Chips","posted":true,"at":"2026-11-25T15:36","checkin":"2026-11-25T15:36"}
+{"who":"Callum","text":"Can you get the bread on the way back","posted":true,"at":"2026-11-25T15:36","checkin":"2026-11-25T15:36"}
+{"who":"Priya","text":"We have bread","posted":true,"at":"2026-11-25T15:40","checkin":"2026-11-25T15:40"}
+{"who":"Callum","text":"We have the heel of a loaf","posted":true,"at":"2026-11-25T15:40","checkin":"2026-11-25T15:40"}
+{"who":"Priya","text":"Fine. Getting bread","posted":true,"at":"2026-11-25T15:41","checkin":"2026-11-25T15:41"}
+{"who":"Callum","text":"Home. Moss has done the whole stair","posted":true,"at":"2026-11-25T17:58","checkin":"2026-11-25T17:58"}
+{"who":"Priya","text":"Looking at weather for Friday. CalMac have put a wind warning on the Oban route","posted":true,"at":"2026-11-25T18:20","checkin":"2026-11-25T18:20"}
+{"who":"Priya","text":"Might be cancelled","posted":true,"at":"2026-11-25T18:21","checkin":"2026-11-25T18:21"}
+{"who":"Callum","text":"Would they just cancel it","posted":true,"at":"2026-11-25T18:22","checkin":"2026-11-25T18:22"}
+{"who":"Priya","text":"They do sometimes. Might check again tomorrow","posted":true,"at":"2026-11-25T18:40","checkin":"2026-11-25T18:40"}
+{"who":"Callum","text":"Wind's been bad all week though","posted":true,"at":"2026-11-25T18:41","checkin":"2026-11-25T18:41"}
+{"who":"Callum","text":"Chips are in","posted":true,"at":"2026-11-25T19:15","checkin":"2026-11-25T19:15"}
+{"who":"Priya","text":"Be there in 5","posted":true,"at":"2026-11-25T19:22","checkin":"2026-11-25T19:22"}
+{"who":"Priya","text":"Did you ever hear back from your mum about the thing","posted":true,"at":"2026-11-25T19:58","checkin":"2026-11-25T19:58"}
+{"who":"Callum","text":"Not yet. She'll ring when she's ready","posted":true,"at":"2026-11-25T20:10","checkin":"2026-11-25T20:10"}
+{"who":"Callum","text":"Should we get a takeaway on Saturday to fill the gap","posted":true,"at":"2026-11-25T20:11","checkin":"2026-11-25T20:11"}
+{"who":"Priya","text":"We're away Saturday","posted":true,"at":"2026-11-25T20:30","checkin":"2026-11-25T20:30"}
+{"who":"Callum","text":"Oh yeah","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Priya","text":"Found a second ferry time if Friday's cancelled. Pinning it in the group","posted":true,"at":"2026-11-25T21:45","checkin":"2026-11-25T21:45"}
+{"who":"Callum","text":"Ok","posted":true,"at":"2026-11-25T21:46","checkin":"2026-11-25T21:46"}
+{"who":"Priya","text":"Going up. Want to watch the last bit of the thing tomorrow, not tonight","posted":true,"at":"2026-11-25T22:50","checkin":"2026-11-25T22:50"}
+{"who":"Callum","text":"Fine by me","posted":true,"at":"2026-11-25T22:52","checkin":"2026-11-25T22:52"}
+{"who":"Callum","text":"Moss is on the bed. Not moving him","posted":true,"at":"2026-11-25T23:14","checkin":"2026-11-25T23:14"}

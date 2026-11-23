@@ -1,0 +1,118 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2082,"cache_read_input_tokens":0,"output_tokens":3429,"output_tokens_details":{"thinking_tokens":2225},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2082,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3429,"cache_read_input_tokens":0,"cache_creation_input_tokens":2082,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2082},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":3235,"cache_read_input_tokens":0,"output_tokens":3382,"output_tokens_details":{"thinking_tokens":2107},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3235,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3382,"cache_read_input_tokens":0,"cache_creation_input_tokens":3235,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3235},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":4509,"cache_read_input_tokens":0,"output_tokens":5319,"output_tokens_details":{"thinking_tokens":4037},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4509,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5319,"cache_read_input_tokens":0,"cache_creation_input_tokens":4509,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4509},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0}]}
+{"names":["Jolene","Kelvin","Zhen"],"setting":"You're three cousins from one extended family in Penang, Malaysia, and you all grew up going to Ah Ma's house in George Town for Sunday lunches. You know each other well from family gatherings and have known each other all your lives, and you each know the others' jobs, partners and routines in general terms. Your last chat was small talk about a photo someone posted of a durian stall that had sold out by noon.","opener":"Ask whether anyone has heard from Ah Ma's doctor about her hip.","cast":{"Jolene":{"who":"34, woman, the eldest cousin","knows":"You know Kelvin is your younger cousin on your mother's side, whom you helped with school when you were both kids and who works as an engineer. You know Zhen is your youngest cousin, the daughter of your uncle, who is studying at university and still lives in the hostel.","like":"You're organised, dry, and a bit protective of the family, and you have strong opinions about hawker food and bad driving. You're not a type, just someone who likes things done properly.","texts":"You message in the group chat now and then without being asked, mostly to check in on family or share something you've found.","style":"You type in lowercase with normal punctuation, rarely use emoji, and write short messages without abbreviations.","ex":[]},"Kelvin":{"who":"29, man, the middle cousin","knows":"You know Jolene is your eldest cousin, who has always been the one who gives advice, and that she works as a pharmacist. You know Zhen is your youngest cousin, a university student you still think of as the little one.","like":"You're easygoing, a bit lazy at replying, and funny in a deadpan way. You have opinions about football and cars, but you're happy to let others argue.","texts":"You message in the group chat only occasionally without being asked, mostly when something directly involves you.","style":"You type in lowercase without punctuation, sometimes using a single emoji at the end of a message.","ex":[]},"Zhen":{"who":"21, woman, the youngest cousin","knows":"You know Jolene is your eldest cousin, who you go to when you need serious advice, and that she's a pharmacist. You know Kelvin is your middle cousin, who is always busy and somewhat funny.","like":"You're chatty, expressive, and easily excited, with a sharp sense of humour and strong opinions about music and food. You can be a bit dramatic, but you're kind underneath.","texts":"You message in the group chat fairly often without being asked, in bursts when something catches your attention.","style":"You type in all lowercase with lots of emoji and frequent abbreviations.","ex":[]}},"private_lines":{"Jolene":"You live in a two-bedroom apartment in Bayan Lepas and work as a pharmacist in a clinic in George Town. You share the flat with a flatmate, Mei, and your days are shaped by shift work, so you usually get home after six, cook something simple, and wind down by scrolling until bed.","Kelvin":"You live in a terrace house in Gelugor with your girlfriend and work as a civil engineer on road projects around the island. Your days start early, you're often on site until late afternoon, and in the evenings you cook with your girlfriend or watch football.","Zhen":"You're a university student in Gelugor and live in a shared hostel room with two roommates. Your days are full of lectures, group projects and late nights studying, with a part-time job at a café on weekends."},"sleep":{"Jolene":[23.5,7],"Kelvin":[0,7.5],"Zhen":[1,9]},"usage":{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":1326,"output_tokens":3273,"output_tokens_details":{"thinking_tokens":2023},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3273,"cache_read_input_tokens":1326,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},"situation":"Cousins.","topic":null}
+{"who":"Jolene","text":"has anyone heard from ah ma's doctor about her hip","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Zhen","text":"not me 😭 mama said the scan was booked but no date yet","posted":true,"at":"2026-11-23T19:06","checkin":"2026-11-23T19:06"}
+{"who":"Jolene","text":"ok. i'll call the clinic tomorrow after my shift","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Kelvin","text":"haven't heard anything. ma said the physio wants her walking with a frame first","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Jolene","text":"that's not the scan though","posted":true,"at":"2026-11-23T19:22","checkin":"2026-11-23T19:22"}
+{"who":"Kelvin","text":"its what i got 🤷","posted":true,"at":"2026-11-23T19:24","checkin":"2026-11-23T19:24"}
+{"who":"Zhen","text":"omg you two 💀 ah ma is fine lah she was at the market this morning with the lady from upstairs","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Jolene","text":"she shouldn't be carrying the bags","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Zhen","text":"she carries them up 3 floors every day she says the stairs are good for her","posted":true,"at":"2026-11-23T19:35","checkin":"2026-11-23T19:35"}
+{"who":"Jolene","text":"the stairs are not good for a hip that hasn't been scanned","posted":true,"at":"2026-11-23T19:36","checkin":"2026-11-23T19:36"}
+{"who":"Kelvin","text":"can we just ask her on sunday. she'll tell us everything anyway","posted":true,"at":"2026-11-23T19:50","checkin":"2026-11-23T19:50"}
+{"who":"Jolene","text":"sunday is four days. i'd like to know before then","posted":true,"at":"2026-11-23T20:14","checkin":"2026-11-23T20:14"}
+{"who":"Jolene","text":"i'll ask mama to get the clinic number from the discharge papers","posted":true,"at":"2026-11-23T20:15","checkin":"2026-11-23T20:15"}
+{"who":"Zhen","text":"ok random but has anyone tried that new char kuey teow stall near the padang in gelugor?? the one with the cockles 🦪🔥","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"","react":"😋","to":13,"posted":false,"at":"2026-11-23T21:02"}
+{"who":"","react":"😋","to":13,"posted":false,"at":"2026-11-23T21:02"}
+{"who":"Kelvin","text":"the one next to the mamak","posted":true,"at":"2026-11-23T21:05","checkin":"2026-11-23T21:05"}
+{"who":"Zhen","text":"YES that one 😍","posted":true,"at":"2026-11-23T21:06","checkin":"2026-11-23T21:06"}
+{"who":"Kelvin","text":"queue was ridiculous last week. went after 9 and they were out of cockles 😔","posted":true,"at":"2026-11-23T21:08","checkin":"2026-11-23T21:08"}
+{"who":"Jolene","text":"cockles sold out by nine means they're popular for the wrong reasons. the wok is too hot and the lard is burnt","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Zhen","text":"jolene you are so judgy about hawker food 😭","posted":true,"at":"2026-11-23T21:11","checkin":"2026-11-23T21:11"}
+{"who":"Jolene","text":"i'm right about hawker food","posted":true,"at":"2026-11-23T21:11","checkin":"2026-11-23T21:11"}
+{"who":"Kelvin","text":"site was flooded today by the way. lorry stuck 3 hours at the bridge. boss shouting","posted":true,"at":"2026-11-23T21:40","checkin":"2026-11-23T21:40"}
+{"who":"Zhen","text":"the bridge on the new road??","posted":true,"at":"2026-11-23T21:41","checkin":"2026-11-23T21:41"}
+{"who":"Kelvin","text":"yeah. dont ask","posted":true,"at":"2026-11-23T21:42","checkin":"2026-11-23T21:42"}
+{"who":"Zhen","text":"ok i wont 🫠","posted":true,"at":"2026-11-23T21:43","checkin":"2026-11-23T21:43"}
+{"who":"Jolene","text":"did you get home ok kelvin","posted":true,"at":"2026-11-23T22:18","checkin":"2026-11-23T22:18"}
+{"who":"Kelvin","text":"yeah. girlfriend made kangkung and i ate two plates. football on now","posted":true,"at":"2026-11-23T22:50","checkin":"2026-11-23T22:50"}
+{"who":"Jolene","text":"which match","posted":true,"at":"2026-11-23T22:52","checkin":"2026-11-23T22:52"}
+{"who":"Kelvin","text":"liverpool. not going well 😩","posted":true,"at":"2026-11-23T22:53","checkin":"2026-11-23T22:53"}
+{"who":"Jolene","text":"go to bed kelvin","posted":true,"at":"2026-11-23T22:55","checkin":"2026-11-23T22:55"}
+{"who":"Kelvin","text":"after this","posted":true,"at":"2026-11-23T22:56","checkin":"2026-11-23T22:56"}
+{"who":"Jolene","text":"i'm off. ring the clinic first thing if you hear anything about ah ma's scan","posted":true,"at":"2026-11-23T23:20","checkin":"2026-11-23T23:20"}
+{"who":"","react":"👍","to":30,"posted":false,"at":"2026-11-23T23:20"}
+{"who":"Zhen","text":"cant sleep. group project due friday and my partner has done NOTHING 💀💀","posted":true,"at":"2026-11-23T23:40","checkin":"2026-11-23T23:40"}
+{"who":"Zhen","text":"anyone free to help me with the stats part tmrw","posted":true,"at":"2026-11-23T23:41","checkin":"2026-11-23T23:41"}
+{"who":"Kelvin","text":"stats is not my thing sorry 😅","posted":true,"at":"2026-11-23T23:58","checkin":"2026-11-23T23:58"}
+{"who":"Zhen","text":"ok ok i'll sleep. im going to bed for real 🥱","posted":true,"at":"2026-11-23T23:59","checkin":"2026-11-23T23:59"}
+{"who":"Jolene","text":"mama got the clinic number. calling the specialist's office at 8:30 before i go in","posted":true,"at":"2026-11-24T07:12","checkin":"2026-11-24T07:12"}
+{"who":"Kelvin","text":"morning. what number","posted":true,"at":"2026-11-24T07:40","checkin":"2026-11-24T07:40"}
+{"who":"Jolene","text":"mama's forwarding it to the group. don't call before 8","posted":true,"at":"2026-11-24T07:41","checkin":"2026-11-24T07:41"}
+{"who":"Kelvin","text":"wasn't going to 😅","posted":true,"at":"2026-11-24T07:43","checkin":"2026-11-24T07:43"}
+{"who":"Zhen","text":"ok im up. did i miss anything. did you talk to the clinic jolene 😭","posted":true,"at":"2026-11-24T09:14","checkin":"2026-11-24T09:14"}
+{"who":"Jolene","text":"on hold for 20 mins. i'll ring back","posted":true,"at":"2026-11-24T09:20","checkin":"2026-11-24T09:20"}
+{"who":"Kelvin","text":"site meeting. boss still going on about the bridge","posted":true,"at":"2026-11-24T10:31","checkin":"2026-11-24T10:31"}
+{"who":"Zhen","text":"stats partner finally replied. she said \"ok\" 💀💀 thats it","posted":true,"at":"2026-11-24T11:02","checkin":"2026-11-24T11:02"}
+{"who":"Kelvin","text":"ok is a good sign","posted":true,"at":"2026-11-24T11:05","checkin":"2026-11-24T11:05"}
+{"who":"Zhen","text":"not a good sign jk 🫠","posted":true,"at":"2026-11-24T11:06","checkin":"2026-11-24T11:06"}
+{"who":"Jolene","text":"clinic called back. scan is thursday 9am at the hospital. they had a slot free","posted":true,"at":"2026-11-24T13:47","checkin":"2026-11-24T13:47"}
+{"who":"Jolene","text":"ah ma already knew. she said she had the letter since last week and didn't tell us because we'd fuss","posted":true,"at":"2026-11-24T13:49","checkin":"2026-11-24T13:49"}
+{"who":"Kelvin","text":"typical","posted":true,"at":"2026-11-24T13:52","checkin":"2026-11-24T13:52"}
+{"who":"Zhen","text":"she really said that?? 😭😭 she's so funny","posted":true,"at":"2026-11-24T13:55","checkin":"2026-11-24T13:55"}
+{"who":"Jolene","text":"she's not joking","posted":true,"at":"2026-11-24T13:56","checkin":"2026-11-24T13:56"}
+{"who":"Kelvin","text":"can i come thursday. pour at 7 but i can be there by 10 probably","posted":true,"at":"2026-11-24T14:10","checkin":"2026-11-24T14:10"}
+{"who":"Jolene","text":"you're coming. she'll only tell you things if you're in the room","posted":true,"at":"2026-11-24T14:12","checkin":"2026-11-24T14:12"}
+{"who":"Kelvin","text":"fair 👍","posted":true,"at":"2026-11-24T14:14","checkin":"2026-11-24T14:14"}
+{"who":"Zhen","text":"lecture got cancelled!!! 🎉🎉 time to finish the stats","posted":true,"at":"2026-11-24T16:20","checkin":"2026-11-24T16:20"}
+{"who":"Zhen","text":"jolene do you know anything about regression 🥺","posted":true,"at":"2026-11-24T16:22","checkin":"2026-11-24T16:22"}
+{"who":"Jolene","text":"i did pharmacy. i know how to count pills","posted":true,"at":"2026-11-24T16:31","checkin":"2026-11-24T16:31"}
+{"who":"Zhen","text":"thats not a no 😭","posted":true,"at":"2026-11-24T16:32","checkin":"2026-11-24T16:32"}
+{"who":"Jolene","text":"it's a no","posted":true,"at":"2026-11-24T16:32","checkin":"2026-11-24T16:32"}
+{"who":"Kelvin","text":"bridge is open again. lorry finally out","posted":true,"at":"2026-11-24T18:45","checkin":"2026-11-24T18:45"}
+{"who":"Zhen","text":"ok so what actually happened at the bridge. you said dont ask. im asking now","posted":true,"at":"2026-11-24T18:46","checkin":"2026-11-24T18:46"}
+{"who":"Kelvin","text":"no","posted":true,"at":"2026-11-24T18:50","checkin":"2026-11-24T18:50"}
+{"who":"Zhen","text":"😤","posted":true,"at":"2026-11-24T18:51","checkin":"2026-11-24T18:51"}
+{"who":"Jolene","text":"home. mei's already eaten so it's just me and the rice cooker","posted":true,"at":"2026-11-24T19:34","checkin":"2026-11-24T19:34"}
+{"who":"Zhen","text":"jolene you need a hobby that isnt hospitals 💀","posted":true,"at":"2026-11-24T19:36","checkin":"2026-11-24T19:36"}
+{"who":"Jolene","text":"i have a hobby. it's this chat","posted":true,"at":"2026-11-24T19:37","checkin":"2026-11-24T19:37"}
+{"who":"Zhen","text":"ok who's going thursday. i have a 9am tutorial but i can skip it 🫡","posted":true,"at":"2026-11-24T21:10","checkin":"2026-11-24T21:10"}
+{"who":"Jolene","text":"you're going","posted":true,"at":"2026-11-24T21:12","checkin":"2026-11-24T21:12"}
+{"who":"Zhen","text":"fine 😤","posted":true,"at":"2026-11-24T21:13","checkin":"2026-11-24T21:13"}
+{"who":"Kelvin","text":"will be there","posted":true,"at":"2026-11-24T21:30","checkin":"2026-11-24T21:30"}
+{"who":"Kelvin","text":"liverpool result?","posted":true,"at":"2026-11-24T22:41","checkin":"2026-11-24T22:41"}
+{"who":"Jolene","text":"don't","posted":true,"at":"2026-11-24T22:44","checkin":"2026-11-24T22:44"}
+{"who":"Kelvin","text":"lost 🤷","posted":true,"at":"2026-11-24T22:45","checkin":"2026-11-24T22:45"}
+{"who":"Jolene","text":"go to bed kelvin","posted":true,"at":"2026-11-24T22:46","checkin":"2026-11-24T22:46"}
+{"who":"Kelvin","text":"already horizontal. typing with one eye","posted":true,"at":"2026-11-24T22:47","checkin":"2026-11-24T22:47"}
+{"who":"Zhen","text":"anyone else up. char kuey teow tmrw?? the cockles guy","posted":true,"at":"2026-11-24T23:52","checkin":"2026-11-24T23:52"}
+{"who":"Zhen","text":"no one. ok. im going to sleep 😴","posted":true,"at":"2026-11-24T23:58","checkin":"2026-11-24T23:58"}
+{"who":"Zhen","text":"actually cant sleep. thursday scan is going to be so weird 🥺","posted":true,"at":"2026-11-25T00:07","checkin":"2026-11-25T00:07"}
+{"who":"Zhen","text":"still awake 💀 stats partner sent a 40 page doc at 3am. i didn't ask for it","posted":true,"at":"2026-11-25T04:31","checkin":"2026-11-25T04:31"}
+{"who":"Zhen","text":"ok asleep for real this time 🥱","posted":true,"at":"2026-11-25T04:33","checkin":"2026-11-25T04:33"}
+{"who":"Jolene","text":"morning. ah ma's been on the balcony since six, mama says","posted":true,"at":"2026-11-25T07:06","checkin":"2026-11-25T07:06"}
+{"who":"Jolene","text":"don't let her carry the bags up","posted":true,"at":"2026-11-25T07:08","checkin":"2026-11-25T07:08"}
+{"who":"","react":"👍","to":80,"posted":false,"at":"2026-11-25T07:08"}
+{"who":"Kelvin","text":"mama sent me a photo of her with the bags. she looks happy about it 😅","posted":true,"at":"2026-11-25T07:52","checkin":"2026-11-25T07:52"}
+{"who":"Jolene","text":"i'll be at the clinic from nine. text me if she does anything silly","posted":true,"at":"2026-11-25T07:53","checkin":"2026-11-25T07:53"}
+{"who":"Kelvin","text":"she is silly. she's always been silly","posted":true,"at":"2026-11-25T07:55","checkin":"2026-11-25T07:55"}
+{"who":"Zhen","text":"ok im awake (sort of) 🫠 did ah ma say anything about the scan","posted":true,"at":"2026-11-25T09:40","checkin":"2026-11-25T09:40"}
+{"who":"Jolene","text":"she said \"see you thursday\" and asked mama what time i finish. nothing else","posted":true,"at":"2026-11-25T09:44","checkin":"2026-11-25T09:44"}
+{"who":"Zhen","text":"she's so sus 😭","posted":true,"at":"2026-11-25T09:45","checkin":"2026-11-25T09:45"}
+{"who":"Jolene","text":"three people at the counter asking for the same cough syrup. it's been a morning","posted":true,"at":"2026-11-25T11:18","checkin":"2026-11-25T11:18"}
+{"who":"Zhen","text":"jolene is a cough syrup pharmacist 💀","posted":true,"at":"2026-11-25T11:20","checkin":"2026-11-25T11:20"}
+{"who":"Jolene","text":"i'm a pharmacist. i'm on the counter. it's the same thing","posted":true,"at":"2026-11-25T11:21","checkin":"2026-11-25T11:21"}
+{"who":"Kelvin","text":"site lunch. nasi kandar from the stall by the gate. mamak uncle gave me extra gravy bc i look tired","posted":true,"at":"2026-11-25T12:03","checkin":"2026-11-25T12:03"}
+{"who":"Zhen","text":"ur always looking tired 😭","posted":true,"at":"2026-11-25T12:04","checkin":"2026-11-25T12:04"}
+{"who":"Kelvin","text":"rude","posted":true,"at":"2026-11-25T12:06","checkin":"2026-11-25T12:06"}
+{"who":"Zhen","text":"stats partner finally sent the analysis. 40 pages and half of it is screenshots of excel 🥲 someone please","posted":true,"at":"2026-11-25T13:30","checkin":"2026-11-25T13:30"}
+{"who":"Jolene","text":"send me the part you're stuck on. i can't promise anything","posted":true,"at":"2026-11-25T13:44","checkin":"2026-11-25T13:44"}
+{"who":"Zhen","text":"omg you're the best. sending now","posted":true,"at":"2026-11-25T13:46","checkin":"2026-11-25T13:46"}
+{"who":"Zhen","text":"you didn't read it yet 😭","posted":true,"at":"2026-11-25T14:02","checkin":"2026-11-25T14:02"}
+{"who":"Jolene","text":"i'm reading it. the table's wrong","posted":true,"at":"2026-11-25T14:31","checkin":"2026-11-25T14:31"}
+{"who":"Zhen","text":"which table","posted":true,"at":"2026-11-25T14:33","checkin":"2026-11-25T14:33"}
+{"who":"Jolene","text":"the p values one. you've copied the header twice","posted":true,"at":"2026-11-25T14:36","checkin":"2026-11-25T14:36"}
+{"who":"Kelvin","text":"fine. lorry driver reversed into the drain by the bridge. 3 hrs. boss blamed the drain. drain is not my fault","posted":true,"at":"2026-11-25T16:50","checkin":"2026-11-25T16:50"}
+{"who":"Zhen","text":"🤣🤣 i knew it was something dumb","posted":true,"at":"2026-11-25T16:53","checkin":"2026-11-25T16:53"}
+{"who":"Jolene","text":"home. mei's made spaghetti and put too much sugar in the sauce again","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Zhen","text":"ah ma just asked if we're eating at the hospital canteen or if she should make curry puffs for the doctor 💀","posted":true,"at":"2026-11-25T19:40","checkin":"2026-11-25T19:40"}
+{"who":"Kelvin","text":"hospital canteen. ah ma will hate it","posted":true,"at":"2026-11-25T19:44","checkin":"2026-11-25T19:44"}
+{"who":"Kelvin","text":"liverpool tonight. dont tell me the score yet 🙏","posted":true,"at":"2026-11-25T21:17","checkin":"2026-11-25T21:17"}
+{"who":"Zhen","text":"who's coming to the char kuey teow after the scan. kelvin you have to come","posted":true,"at":"2026-11-25T22:03","checkin":"2026-11-25T22:03"}
+{"who":"Jolene","text":"scan's at nine. kelvin the entrance is the side one by the car park, not the main gate","posted":true,"at":"2026-11-25T23:12","checkin":"2026-11-25T23:12"}
+{"who":"Kelvin","text":"i know which entrance. liverpool 1-0 down ffs","posted":true,"at":"2026-11-25T23:48","checkin":"2026-11-25T23:48"}
+{"who":"Jolene","text":"go to bed kelvin","posted":true,"at":"2026-11-25T23:50","checkin":"2026-11-25T23:50"}
+{"who":"Zhen","text":"finally done the stats. partner says the conclusion is \"mostly fine\" 😤 jolene you were right about the header","posted":true,"at":"2026-11-26T00:31","checkin":"2026-11-26T00:31"}
+{"who":"Zhen","text":"going to sleep before i change my mind 🥱","posted":true,"at":"2026-11-26T00:33","checkin":"2026-11-26T00:33"}

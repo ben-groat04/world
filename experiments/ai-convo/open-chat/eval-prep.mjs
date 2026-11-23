@@ -30,7 +30,7 @@
 //   prints n and mean score per arm (label prefix before '-') by window, by scenario (label after '-' minus the trailing
 //   seed digit; REAL is one scenario, "anchor"), and overall; n counts judgements. Then the runs per arm by status.
 import fs from 'node:fs'; import path from 'node:path'; import { randomBytes } from 'node:crypto';
-const SPAN_H = 36, MAX_W = 40, MIN_W = 8, PER_JUDGE = 8, COPIES = 3; // design parameters: window span (in-story hours), most messages in a window, fewest for a window to be judged, files per judge, judges per file
+const SPAN_H = 36, MAX_W = 40, MIN_W = 8, PER_JUDGE = 8, COPIES = +process.env.COPIES || 3; // (COPIES=2 env: 2 judges per file) design parameters: window span (in-story hours), most messages in a window, fewest for a window to be judged, files per judge, judges per file
 const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const stamp = at => `${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date(at + ':00Z').getUTCDay()]} ${at.slice(11, 16)}`;
 const hm = at => at.slice(11, 16), ms = at => Date.parse(at + ':00Z');

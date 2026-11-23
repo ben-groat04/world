@@ -1,0 +1,138 @@
+{"writer":"w3","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1955,"cache_read_input_tokens":0,"output_tokens":2753,"output_tokens_details":{"thinking_tokens":1512},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1955,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2753,"cache_read_input_tokens":0,"cache_creation_input_tokens":1955,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1955},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":1955,"output_tokens":2482,"output_tokens_details":{"thinking_tokens":1535},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2482,"cache_read_input_tokens":1955,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2843,"cache_read_input_tokens":0,"output_tokens":3936,"output_tokens_details":{"thinking_tokens":2619},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2843,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3936,"cache_read_input_tokens":0,"cache_creation_input_tokens":2843,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2843},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4159,"cache_read_input_tokens":0,"output_tokens":4678,"output_tokens_details":{"thinking_tokens":3034},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4159,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4678,"cache_read_input_tokens":0,"cache_creation_input_tokens":4159,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4159},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Inês","Tomás","Beatriz"],"setting":"You three grew up in the Graça district of Lisbon, and you all still live within a short train or bus ride of the old family flat, where your grandmother Avó Lurdes lived until she died in the spring. You are siblings and have known each other all your lives, through shared childhood rooms, Sunday lunches and a few old arguments about who got which bedroom. You all know the flat well, including the drawers nobody opened for years, and you all know that clearing it out is harder than any of you wanted to admit.","opener":"Send a photo of the kitchen drawer full of unlabelled keys and ask who knows which one opens the wardrobe.","cast":{"Inês":{"who":"41, woman, the eldest sibling","knows":"You know Tomás is your younger brother, the one who always wanted to keep everything, and you know he is good at fixing things and bad at throwing things away.","like":"You are practical and organised, and you would rather make a list than talk about feelings.","texts":"You message in this chat now and then, mostly on your lunch break or when someone asks you a direct question.","style":"You type in full sentences with proper capitals and punctuation, and you rarely use emoji.","ex":[]},"Tomás":{"who":"38, man, the middle sibling","knows":"You know Inês is your big sister, who takes charge of everything and expects you to keep up.","like":"You are easygoing and a bit stubborn, and you hold on to things longer than you should.","texts":"You message in this chat mostly when you have found something in the flat and want to share it, so you post fairly often.","style":"You type in lowercase with little punctuation and sometimes add an emoji.","ex":[]},"Beatriz":{"who":"34, woman, the youngest sibling","knows":"You know Inês is your eldest sister, the one who helped you most when you were growing up and who you still go to for advice.","like":"You are warm and expressive, and you feel things quickly.","texts":"You message in this chat most often of the three, reacting to photos and checking in on the others through the day.","style":"You type with proper capitals and full sentences, and you use emoji and abbreviations like \"tbh\" and \"omg\" fairly freely.","ex":[]}},"private_lines":{"Inês":"You live in Setúbal across the river with your husband Rui and your daughter, and you work as a pharmacist in a shop on the main street. Your days start early, with a school run and a shift that finishes in the late afternoon, and evenings are mostly homework and dinner.","Tomás":"You live alone in Benfica in Lisbon and work as a civil engineer for the city council, mostly on site visits and reports. Your days are busy but regular, with a commute, a couple of site visits a week and a quiet evening most nights.","Beatriz":"You live in Alvalade in Lisbon with your partner Miguel and work as a graphic designer from home, with occasional studio days. Your days are flexible, and you often work late, then wind down with a walk or a series."},"sleep":{"Inês":[23,6.5],"Tomás":[0,7.5],"Beatriz":[1,8.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1283,"cache_read_input_tokens":0,"output_tokens":2642,"output_tokens_details":{"thinking_tokens":1437},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1283,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2642,"cache_read_input_tokens":0,"cache_creation_input_tokens":1283,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1283},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Siblings clearing out a grandparent's flat.","topic":null}
+{"who":"Inês","text":"[photo]\nKitchen drawer. Keys with no labels. Does anyone know which one opens the wardrobe in the back room?","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Beatriz","text":"omg the whole drawer 😭 I think the small brass one? or was that the sewing box","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Tomás","text":"the wardrobe one is the long one with the notch. i think. dont throw any of them out","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Inês","text":"Tomás, nobody said throw them out.","posted":true,"at":"2026-11-23T19:15","checkin":"2026-11-23T19:15"}
+{"who":"Tomás","text":"just saying","posted":true,"at":"2026-11-23T19:15","checkin":"2026-11-23T19:15"}
+{"who":"Beatriz","text":"also the lady from the church sent a message asking if we want the candlesticks? I said I'd ask","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"","react":"👍","to":5,"posted":false,"at":"2026-11-23T19:31"}
+{"who":"Inês","text":"Ask her for Thursday. I'm not doing another trip before then.","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Beatriz","text":"ok","posted":true,"at":"2026-11-23T19:34","checkin":"2026-11-23T19:34"}
+{"who":"Tomás","text":"found avó's radio. its still got the sticker from 1994 on the back 🙂\n[photo]","posted":true,"at":"2026-11-23T20:02","checkin":"2026-11-23T20:02"}
+{"who":"Beatriz","text":"NO WAY. does it work","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Tomás","text":"no idea, didnt try. it needs batteries and i dont think theyre in there","posted":true,"at":"2026-11-23T20:06","checkin":"2026-11-23T20:06"}
+{"who":"","react":"❤️","to":10,"posted":false,"at":"2026-11-23T20:06"}
+{"who":"Inês","text":"Leave it on the table by the door. Not in the car.","posted":true,"at":"2026-11-23T20:20","checkin":"2026-11-23T20:20"}
+{"who":"Tomás","text":"who said anything about the car","posted":true,"at":"2026-11-23T20:21","checkin":"2026-11-23T20:21"}
+{"who":"Beatriz","text":"i tried the long notched one on the wardrobe. nope. the other one maybe??","posted":true,"at":"2026-11-23T21:47","checkin":"2026-11-23T21:47"}
+{"who":"Inês","text":"Which one.","posted":true,"at":"2026-11-23T21:50","checkin":"2026-11-23T21:50"}
+{"who":"Beatriz","text":"the one with the red thread on it","posted":true,"at":"2026-11-23T21:51","checkin":"2026-11-23T21:51"}
+{"who":"Inês","text":"There are four with red thread on them. Photograph them on the sheet of paper next to the drawer.","posted":true,"at":"2026-11-23T21:52","checkin":"2026-11-23T21:52"}
+{"who":"Tomás","text":"im going to try them tomorrow after work. the notched one might be for the bureau, not the wardrobe","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Tomás","text":"dont know why avó had a key to a bureau she didnt own","posted":true,"at":"2026-11-23T22:11","checkin":"2026-11-23T22:11"}
+{"who":"Beatriz","text":"ok this is getting emotional lol. the radio sticker is so her","posted":true,"at":"2026-11-23T22:30","checkin":"2026-11-23T22:30"}
+{"who":"Beatriz","text":"we should keep the radio","posted":true,"at":"2026-11-23T22:31","checkin":"2026-11-23T22:31"}
+{"who":"Tomás","text":"already decided that","posted":true,"at":"2026-11-23T22:34","checkin":"2026-11-23T22:34"}
+{"who":"","react":"😂","to":21,"posted":false,"at":"2026-11-23T22:34"}
+{"who":"Inês","text":"Tomás, the radio. Don't plug it in until we know it's safe.","posted":true,"at":"2026-11-23T22:45","checkin":"2026-11-23T22:45"}
+{"who":"Tomás","text":"its a radio inês not a bomb","posted":true,"at":"2026-11-23T22:58","checkin":"2026-11-23T22:58"}
+{"who":"Inês","text":"Goodnight.","posted":true,"at":"2026-11-23T22:59","checkin":"2026-11-23T22:59"}
+{"who":"Beatriz","text":"I'll sort the keys on paper tomorrow at lunch","posted":true,"at":"2026-11-23T23:40","checkin":"2026-11-23T23:40"}
+{"who":"Tomás","text":"ok","posted":true,"at":"2026-11-23T23:41","checkin":"2026-11-23T23:41"}
+{"who":"Tomás","text":"night","posted":true,"at":"2026-11-23T23:58","checkin":"2026-11-23T23:58"}
+{"who":"Tomás","text":"found AA batteries in the hall cupboard. 4 of them. old. going to check the radio tonight","posted":true,"at":"2026-11-24T07:41","checkin":"2026-11-24T07:41"}
+{"who":"Beatriz","text":"omg up. do NOT plug in the radio alone tomas","posted":true,"at":"2026-11-24T08:41","checkin":"2026-11-24T08:41"}
+{"who":"Tomás","text":"wasnt going to plug it in alone","posted":true,"at":"2026-11-24T08:42","checkin":"2026-11-24T08:42"}
+{"who":"Beatriz","text":"ill call the church lady, she likes me better","posted":true,"at":"2026-11-24T09:24","checkin":"2026-11-24T09:24"}
+{"who":"Inês","text":"Did anyone call the church about the candlesticks?","posted":true,"at":"2026-11-24T12:47","checkin":"2026-11-24T12:47"}
+{"who":"Beatriz","text":"calling now","posted":true,"at":"2026-11-24T12:58","checkin":"2026-11-24T12:58"}
+{"who":"Beatriz","text":"she says thursday is fine, she'll bring a box. she asked if we want the big tablecloth too. i said i'd ask","posted":true,"at":"2026-11-24T13:01","checkin":"2026-11-24T13:01"}
+{"who":"Inês","text":"Yes to the tablecloth if it's in good condition. Photograph it before anyone touches it.","posted":true,"at":"2026-11-24T13:03","checkin":"2026-11-24T13:03"}
+{"who":"Beatriz","text":"ok","posted":true,"at":"2026-11-24T13:04","checkin":"2026-11-24T13:04"}
+{"who":"Beatriz","text":"[photo]\nkeys sorted on paper. 9 red thread, 3 brass, 2 with no tag at all. the notched one is there too","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Beatriz","text":"no idea what the 2 untagged ones are","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Inês","text":"Good. Label the sheet by drawer, not by room. Keep the paper with the keys.","posted":true,"at":"2026-11-24T13:30","checkin":"2026-11-24T13:30"}
+{"who":"Tomás","text":"found a bag of buttons in the bottom of the sewing box. the whole bag. lol","posted":true,"at":"2026-11-24T13:44","checkin":"2026-11-24T13:44"}
+{"who":"Beatriz","text":"keep them","posted":true,"at":"2026-11-24T13:45","checkin":"2026-11-24T13:45"}
+{"who":"Tomás","text":"obvs","posted":true,"at":"2026-11-24T13:45","checkin":"2026-11-24T13:45"}
+{"who":"","react":"😂","to":42,"posted":false,"at":"2026-11-24T13:45"}
+{"who":"Tomás","text":"long notched key doesnt fit the wardrobe. doesnt fit the bureau either. i think its for something we dont have anymore","posted":true,"at":"2026-11-24T19:12","checkin":"2026-11-24T19:12"}
+{"who":"Tomás","text":"trying the red ones now","posted":true,"at":"2026-11-24T19:13","checkin":"2026-11-24T19:13"}
+{"who":"Tomás","text":"2nd red one turns. doors open. its full of coats. avós good coat is in here. the grey one with the fur collar","posted":true,"at":"2026-11-24T19:26","checkin":"2026-11-24T19:26"}
+{"who":"Beatriz","text":"omg tomás. dont let me cry at work tomorrow","posted":true,"at":"2026-11-24T19:28","checkin":"2026-11-24T19:28"}
+{"who":"Beatriz","text":"wait do we keep the coat","posted":true,"at":"2026-11-24T19:30","checkin":"2026-11-24T19:30"}
+{"who":"Inês","text":"Bag them. Don't decide tonight. Photograph the labels, then list them.","posted":true,"at":"2026-11-24T19:31","checkin":"2026-11-24T19:31"}
+{"who":"Tomás","text":"the coat smells of her","posted":true,"at":"2026-11-24T19:33","checkin":"2026-11-24T19:33"}
+{"who":"Beatriz","text":"😭","posted":true,"at":"2026-11-24T19:35","checkin":"2026-11-24T19:35"}
+{"who":"","react":"❤️","to":50,"posted":false,"at":"2026-11-24T19:35"}
+{"who":"Inês","text":"Tomás, put it in a bag and leave it on the table by the door. Nobody is deciding about the coat tonight.","posted":true,"at":"2026-11-24T19:40","checkin":"2026-11-24T19:40"}
+{"who":"Tomás","text":"its not going in the car inês","posted":true,"at":"2026-11-24T19:41","checkin":"2026-11-24T19:41"}
+{"who":"Beatriz","text":"did you guys eat","posted":true,"at":"2026-11-24T20:15","checkin":"2026-11-24T20:15"}
+{"who":"Tomás","text":"bread and cheese. thats dinner","posted":true,"at":"2026-11-24T20:20","checkin":"2026-11-24T20:20"}
+{"who":"Inês","text":"Bureau key?","posted":true,"at":"2026-11-24T21:02","checkin":"2026-11-24T21:02"}
+{"who":"Tomás","text":"not the bureau. checking the sideboard tomorrow","posted":true,"at":"2026-11-24T21:09","checkin":"2026-11-24T21:09"}
+{"who":"Beatriz","text":"omg I just found a photo of us in the kitchen pinned to the fridge. the one with the bad haircut. Tomás youre in it","posted":true,"at":"2026-11-24T21:30","checkin":"2026-11-24T21:30"}
+{"who":"Beatriz","text":"[photo]","posted":true,"at":"2026-11-24T21:31","checkin":"2026-11-24T21:31"}
+{"who":"Tomás","text":"who cut my hair like that","posted":true,"at":"2026-11-24T21:31","checkin":"2026-11-24T21:31"}
+{"who":"Beatriz","text":"you asked for it","posted":true,"at":"2026-11-24T21:32","checkin":"2026-11-24T21:32"}
+{"who":"Tomás","text":"i was 9","posted":true,"at":"2026-11-24T21:50","checkin":"2026-11-24T21:50"}
+{"who":"","react":"😂","to":61,"posted":false,"at":"2026-11-24T21:50"}
+{"who":"","react":"😂","to":61,"posted":false,"at":"2026-11-24T21:50"}
+{"who":"Inês","text":"Thursday: church at 10, car at 11. I'll bring the tape and boxes. Tell me now if you can't make it.","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Beatriz","text":"i can do 10 but im on a call at 11 so ill come after","posted":true,"at":"2026-11-24T22:20","checkin":"2026-11-24T22:20"}
+{"who":"Inês","text":"Fine.","posted":true,"at":"2026-11-24T22:21","checkin":"2026-11-24T22:21"}
+{"who":"Tomás","text":"ok both","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"Beatriz","text":"night 🌙","posted":true,"at":"2026-11-24T23:50","checkin":"2026-11-24T23:50"}
+{"who":"Inês","text":"Tomás, the coat goes in a bag today. I mean it.","posted":true,"at":"2026-11-25T07:12","checkin":"2026-11-25T07:12"}
+{"who":"Tomás","text":"bagged. its by the door","posted":true,"at":"2026-11-25T07:44","checkin":"2026-11-25T07:44"}
+{"who":"Tomás","text":"not in the car","posted":true,"at":"2026-11-25T07:44","checkin":"2026-11-25T07:44"}
+{"who":"Inês","text":"Good.","posted":true,"at":"2026-11-25T07:46","checkin":"2026-11-25T07:46"}
+{"who":"Beatriz","text":"morning. did either of you sleep","posted":true,"at":"2026-11-25T08:52","checkin":"2026-11-25T08:52"}
+{"who":"Tomás","text":"no","posted":true,"at":"2026-11-25T08:58","checkin":"2026-11-25T08:58"}
+{"who":"Beatriz","text":"me neither really 😅 cant stop thinking about the photo on the fridge. is it still up","posted":true,"at":"2026-11-25T09:03","checkin":"2026-11-25T09:03"}
+{"who":"Tomás","text":"still up. dont take it down","posted":true,"at":"2026-11-25T09:04","checkin":"2026-11-25T09:04"}
+{"who":"Beatriz","text":"wasnt going to","posted":true,"at":"2026-11-25T09:10","checkin":"2026-11-25T09:10"}
+{"who":"Inês","text":"Beatriz, the two untagged keys. Try them on the sewing box.","posted":true,"at":"2026-11-25T12:31","checkin":"2026-11-25T12:31"}
+{"who":"Beatriz","text":"the sewing box is locked?? i thought it was open","posted":true,"at":"2026-11-25T12:33","checkin":"2026-11-25T12:33"}
+{"who":"Inês","text":"Try them.","posted":true,"at":"2026-11-25T12:33","checkin":"2026-11-25T12:33"}
+{"who":"Beatriz","text":"they dont fit anything. one looks like a bike key lol","posted":true,"at":"2026-11-25T12:40","checkin":"2026-11-25T12:40"}
+{"who":"Tomás","text":"bike? we never had a bike","posted":true,"at":"2026-11-25T12:41","checkin":"2026-11-25T12:41"}
+{"who":"Beatriz","text":"it looks like a bike key","posted":true,"at":"2026-11-25T12:41","checkin":"2026-11-25T12:41"}
+{"who":"Inês","text":"Put them on the paper, labelled \"unknown\". Keep going.","posted":true,"at":"2026-11-25T12:55","checkin":"2026-11-25T12:55"}
+{"who":"Tomás","text":"found her address book. blue cover","posted":true,"at":"2026-11-25T13:10","checkin":"2026-11-25T13:10"}
+{"who":"Tomás","text":"[photo]","posted":true,"at":"2026-11-25T13:11","checkin":"2026-11-25T13:11"}
+{"who":"Tomás","text":"the page for \"Inês\" has three numbers crossed out","posted":true,"at":"2026-11-25T13:11","checkin":"2026-11-25T13:11"}
+{"who":"Beatriz","text":"is mine in there","posted":true,"at":"2026-11-25T13:12","checkin":"2026-11-25T13:12"}
+{"who":"Tomás","text":"yes","posted":true,"at":"2026-11-25T13:13","checkin":"2026-11-25T13:13"}
+{"who":"Beatriz","text":"omg","posted":true,"at":"2026-11-25T13:14","checkin":"2026-11-25T13:14"}
+{"who":"Inês","text":"Photograph it. Don't cross anything out.","posted":true,"at":"2026-11-25T13:20","checkin":"2026-11-25T13:20"}
+{"who":"Tomás","text":"i didnt cross anything out inês","posted":true,"at":"2026-11-25T13:21","checkin":"2026-11-25T13:21"}
+{"who":"Inês","text":"I know.","posted":true,"at":"2026-11-25T13:21","checkin":"2026-11-25T13:21"}
+{"who":"Beatriz","text":"i have two boxes from the studio if the candlesticks need them","posted":true,"at":"2026-11-25T13:40","checkin":"2026-11-25T13:40"}
+{"who":"Inês","text":"Bottom of the car, wrapped in the tablecloth. Not the coat.","posted":true,"at":"2026-11-25T13:41","checkin":"2026-11-25T13:41"}
+{"who":"Tomás","text":"😂","posted":true,"at":"2026-11-25T13:42","checkin":"2026-11-25T13:42"}
+{"who":"Tomás","text":"sideboard done","posted":true,"at":"2026-11-25T18:04","checkin":"2026-11-25T18:04"}
+{"who":"Tomás","text":"found a key taped under the bottom drawer. label in her writing says BAR. with a little glass drawn on it","posted":true,"at":"2026-11-25T18:05","checkin":"2026-11-25T18:05"}
+{"who":"Beatriz","text":"avó had a bar?? she drank port and thats it","posted":true,"at":"2026-11-25T18:06","checkin":"2026-11-25T18:06"}
+{"who":"Tomás","text":"she had a bar","posted":true,"at":"2026-11-25T18:06","checkin":"2026-11-25T18:06"}
+{"who":"Inês","text":"Is it the notched one?","posted":true,"at":"2026-11-25T18:09","checkin":"2026-11-25T18:09"}
+{"who":"Tomás","text":"no. different. the notched one is still a mystery","posted":true,"at":"2026-11-25T18:10","checkin":"2026-11-25T18:10"}
+{"who":"Inês","text":"Photograph it and put it on the paper.","posted":true,"at":"2026-11-25T18:11","checkin":"2026-11-25T18:11"}
+{"who":"Beatriz","text":"working late tonight. client wants 40 logos by friday. send food pics pls","posted":true,"at":"2026-11-25T19:45","checkin":"2026-11-25T19:45"}
+{"who":"Tomás","text":"bread","posted":true,"at":"2026-11-25T19:47","checkin":"2026-11-25T19:47"}
+{"who":"Beatriz","text":"tomás","posted":true,"at":"2026-11-25T19:48","checkin":"2026-11-25T19:48"}
+{"who":"Tomás","text":"🙂","posted":true,"at":"2026-11-25T19:50","checkin":"2026-11-25T19:50"}
+{"who":"Tomás","text":"going to try the radio. batteries are in","posted":true,"at":"2026-11-25T21:15","checkin":"2026-11-25T21:15"}
+{"who":"Tomás","text":"[photo]","posted":true,"at":"2026-11-25T21:15","checkin":"2026-11-25T21:15"}
+{"who":"Beatriz","text":"TOMÁS","posted":true,"at":"2026-11-25T21:16","checkin":"2026-11-25T21:16"}
+{"who":"Tomás","text":"im not plugging it in. its battery powered. im putting batteries in","posted":true,"at":"2026-11-25T21:16","checkin":"2026-11-25T21:16"}
+{"who":"Beatriz","text":"wait for us","posted":true,"at":"2026-11-25T21:16","checkin":"2026-11-25T21:16"}
+{"who":"Tomás","text":"ok","posted":true,"at":"2026-11-25T21:17","checkin":"2026-11-25T21:17"}
+{"who":"Inês","text":"Did you check the battery contacts for corrosion? The old ones leak.","posted":true,"at":"2026-11-25T21:30","checkin":"2026-11-25T21:30"}
+{"who":"Tomás","text":"no","posted":true,"at":"2026-11-25T21:31","checkin":"2026-11-25T21:31"}
+{"who":"Inês","text":"Check them.","posted":true,"at":"2026-11-25T21:31","checkin":"2026-11-25T21:31"}
+{"who":"Tomás","text":"[photo]","posted":true,"at":"2026-11-25T21:36","checkin":"2026-11-25T21:36"}
+{"who":"Tomás","text":"clean. one spring is a bit bent","posted":true,"at":"2026-11-25T21:36","checkin":"2026-11-25T21:36"}
+{"who":"Tomás","text":"dial works. the light doesnt","posted":true,"at":"2026-11-25T21:38","checkin":"2026-11-25T21:38"}
+{"who":"Beatriz","text":"omg turn it on","posted":true,"at":"2026-11-25T21:40","checkin":"2026-11-25T21:40"}
+{"who":"Tomás","text":"static. then a man talking about the weather in a voice from 1994","posted":true,"at":"2026-11-25T21:42","checkin":"2026-11-25T21:42"}
+{"who":"Beatriz","text":"im crying at my desk","posted":true,"at":"2026-11-25T21:43","checkin":"2026-11-25T21:43"}
+{"who":"Inês","text":"Turn it off. Then leave it by the door with the batteries out.","posted":true,"at":"2026-11-25T21:44","checkin":"2026-11-25T21:44"}
+{"who":"Tomás","text":"its already by the door","posted":true,"at":"2026-11-25T21:44","checkin":"2026-11-25T21:44"}
+{"who":"Beatriz","text":"😭","posted":true,"at":"2026-11-25T21:45","checkin":"2026-11-25T21:45"}
+{"who":"Tomás","text":"its off. batteries in a bag next to it","posted":true,"at":"2026-11-25T22:03","checkin":"2026-11-25T22:03"}
+{"who":"Inês","text":"Good. Goodnight.","posted":true,"at":"2026-11-25T22:05","checkin":"2026-11-25T22:05"}
+{"who":"Beatriz","text":"still on logo 17. my eyes hurt","posted":true,"at":"2026-11-25T23:14","checkin":"2026-11-25T23:14"}
+{"who":"Tomás","text":"night","posted":true,"at":"2026-11-25T23:20","checkin":"2026-11-25T23:20"}
+{"who":"Beatriz","text":"ok going back to the logos. night 🌙","posted":true,"at":"2026-11-25T23:52","checkin":"2026-11-25T23:52"}

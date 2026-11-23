@@ -1,0 +1,98 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2055,"cache_read_input_tokens":0,"output_tokens":2935,"output_tokens_details":{"thinking_tokens":2049},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2055,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2935,"cache_read_input_tokens":0,"cache_creation_input_tokens":2055,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2055},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2895,"cache_read_input_tokens":0,"output_tokens":2772,"output_tokens_details":{"thinking_tokens":1872},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2895,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2772,"cache_read_input_tokens":0,"cache_creation_input_tokens":2895,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2895},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3794,"cache_read_input_tokens":0,"output_tokens":3341,"output_tokens_details":{"thinking_tokens":2180},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3794,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3341,"cache_read_input_tokens":0,"cache_creation_input_tokens":3794,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3794},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Donna","Ryan","Sophie"],"setting":"You all live in Hull and grew up within a few streets of each other, so you know the city and each other's families well. You've been close enough to Gran that you took turns with her shopping and appointments, and you all know which of her things matter to whom. Ryan has handled most of the paperwork, Donna has been the one keeping everyone organised, and Sophie has mostly been the one who visits on Sundays and knows the flat's quirks.","opener":"Send a photo of Gran's kitchen drawers and ask who wants to take what.","cast":{"Donna":{"who":"46, woman, the eldest sibling","knows":"You know Ryan is your middle brother, a plumber who has always been practical and quick to fix things. You know Sophie is your youngest sibling, who works in a pharmacy and tends to hold things in until she can't.","like":"You're organised, a bit bossy when things feel out of hand, and you have a dry sense of humour that comes out when you're tired. You have firm opinions about tidiness, Sunday roast gravy, and whether charity shops should get the good china.","texts":"You message in the group now and then, mostly when there's a decision to make or a job to hand out.","style":"You type in normal sentences with proper capitals and full stops, and you add the odd kiss at the end of a message.","ex":[]},"Ryan":{"who":"42, man, the middle sibling","knows":"You know Donna is your older sister, who runs everyone and is usually right about it. You know Sophie is your youngest sister, who you still think of as the kid who needed looking after.","like":"You're easygoing and blunt, with a wry sense of humour that you rarely explain. You have opinions about football, cars, and the best way to fit a boiler.","texts":"You message in the group now and then, mostly to confirm something or drop in a short update from the flat.","style":"You type in lowercase with very little punctuation and use the thumbs-up emoji more than words.","ex":[]},"Sophie":{"who":"31, woman, the youngest sibling","knows":"You know Donna is your eldest sister, who means well but can be a lot. You know Ryan is your older brother, who is kind but never says much about how he's feeling.","like":"You're thoughtful and a little anxious, with a warm sense of humour that comes out in small jokes. You have opinions about good coffee, badly written bills, and which Hull chippy is best.","texts":"You message in the group mostly when something concrete needs saying, and you let longer stretches go by without posting.","style":"You type in ordinary sentences with standard punctuation, and you use the occasional emoji when it feels right.","ex":[]}},"private_lines":{"Donna":"You live in a terraced house in Hull with your teenage son, and you work as a receptionist at a secondary school. Your days are busy with school runs, work, and keeping up with the family WhatsApp, and you've been fitting the flat clear-out around your shifts.","Ryan":"You live in Cottingham on the edge of Hull with your wife and two primary-aged kids, and you run your own plumbing business with a van. Your days start early with jobs and finish with tea, homework, and time in front of the telly.","Sophie":"You live alone in a flat in central Hull and work as a pharmacy assistant on rotating shifts. Your days are a mix of early starts and late finishes, with time at the gym and visits to Gran's flat on weekends."},"sleep":{"Donna":[23.5,6.5],"Ryan":[23,6],"Sophie":[0,7.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1299,"cache_read_input_tokens":0,"output_tokens":2683,"output_tokens_details":{"thinking_tokens":1475},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1299,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2683,"cache_read_input_tokens":0,"cache_creation_input_tokens":1299,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1299},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"Siblings clearing out a grandparent's flat.","topic":null}
+{"who":"Donna","text":"[photo]\nRight. Kitchen drawers. Top two are cutlery and tea towels, bottom one is all the bits. Who wants what? Gravy boat is not going to a charity shop.","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Ryan","text":"what's in the bottom one","posted":true,"at":"2026-11-23T19:16","checkin":"2026-11-23T19:16"}
+{"who":"Sophie","text":"Recipe box is in the left cupboard I think, not the drawers. Can someone check before it goes in a bag","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Donna","text":"It's on the side by the bread bin. I've put it in the hall. Ryan can you look at the bottom drawer, there's a biscuit tin with string and batteries I haven't opened","posted":true,"at":"2026-11-23T19:22","checkin":"2026-11-23T19:22"}
+{"who":"Ryan","text":"tin of buttons too?","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Donna","text":"Possibly. I'm not opening it on my own","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Ryan","text":"fine","posted":true,"at":"2026-11-23T19:35","checkin":"2026-11-23T19:35"}
+{"who":"Sophie","text":"I'll take the recipe box. And the wooden spoon with the burnt end, don't argue","posted":true,"at":"2026-11-23T20:12","checkin":"2026-11-23T20:12"}
+{"who":"Donna","text":"Nobody is arguing about the spoon","posted":true,"at":"2026-11-23T20:12","checkin":"2026-11-23T20:12"}
+{"who":"","react":"😂","to":9,"posted":false,"at":"2026-11-23T20:12"}
+{"who":"Donna","text":"Gravy boat stays with me. I'm not having it go to the chapel sale","posted":true,"at":"2026-11-23T20:13","checkin":"2026-11-23T20:13"}
+{"who":"Ryan","text":"i'll take the tool drawer stuff if nobody wants it. the screwdrivers are proper ones","posted":true,"at":"2026-11-23T20:40","checkin":"2026-11-23T20:40"}
+{"who":"Sophie","text":"She never used any of those though 😂","posted":true,"at":"2026-11-23T20:44","checkin":"2026-11-23T20:44"}
+{"who":"Ryan","text":"she used the big spanner on the tap once","posted":true,"at":"2026-11-23T20:45","checkin":"2026-11-23T20:45"}
+{"who":"Donna","text":"Sunday for the wardrobe. I'm on earlies Saturday so I'm not doing it then","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"Sophie","text":"ok. I'll do Sunday morning, I'm off the late shift","posted":true,"at":"2026-11-23T21:05","checkin":"2026-11-23T21:05"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-23T21:06","checkin":"2026-11-23T21:06"}
+{"who":"Ryan","text":"city lost again","posted":true,"at":"2026-11-23T21:30","checkin":"2026-11-23T21:30"}
+{"who":"Donna","text":"Don't.","posted":true,"at":"2026-11-23T21:31","checkin":"2026-11-23T21:31"}
+{"who":"Sophie","text":"😭","posted":true,"at":"2026-11-23T21:33","checkin":"2026-11-23T21:33"}
+{"who":"","react":"😂","to":19,"posted":false,"at":"2026-11-23T21:33"}
+{"who":"","react":"😂","to":19,"posted":false,"at":"2026-11-23T21:33"}
+{"who":"Donna","text":"The good china is in the box marked KEEP. Not the one marked CHARITY. I've had to tell you twice now","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Ryan","text":"which box is the good china in","posted":true,"at":"2026-11-23T22:44","checkin":"2026-11-23T22:44"}
+{"who":"Donna","text":"The KEEP one. Not the CHARITY one","posted":true,"at":"2026-11-23T22:44","checkin":"2026-11-23T22:44"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-23T22:45","checkin":"2026-11-23T22:45"}
+{"who":"Sophie","text":"Night all. Don't let Ryan near the tin of buttons without me","posted":true,"at":"2026-11-23T22:58","checkin":"2026-11-23T22:58"}
+{"who":"Donna","text":"Night x","posted":true,"at":"2026-11-23T23:05","checkin":"2026-11-23T23:05"}
+{"who":"Ryan","text":"on the van. who's doing the bathroom cabinet","posted":true,"at":"2026-11-24T06:52","checkin":"2026-11-24T06:52"}
+{"who":"Donna","text":"Me, after work. Nobody touches it until I've photographed it","posted":true,"at":"2026-11-24T07:40","checkin":"2026-11-24T07:40"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-24T08:15","checkin":"2026-11-24T08:15"}
+{"who":"Sophie","text":"Just off. Who has the tin of buttons now","posted":true,"at":"2026-11-24T13:08","checkin":"2026-11-24T13:08"}
+{"who":"Ryan","text":"its in my van. not opened it again","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Sophie","text":"Ryan","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Ryan","text":"its in a bag","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Donna","text":"Buttons are going to Sophie. Do not open them in the van","posted":true,"at":"2026-11-24T14:03","checkin":"2026-11-24T14:03"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-24T14:04","checkin":"2026-11-24T14:04"}
+{"who":"Donna","text":"Has anyone seen the gravy boat lid? It's not in the KEEP box","posted":true,"at":"2026-11-24T17:30","checkin":"2026-11-24T17:30"}
+{"who":"Sophie","text":"I think it's in the sideboard with the napkins","posted":true,"at":"2026-11-24T17:45","checkin":"2026-11-24T17:45"}
+{"who":"Donna","text":"Why is the napkin drawer the sideboard now","posted":true,"at":"2026-11-24T17:46","checkin":"2026-11-24T17:46"}
+{"who":"Ryan","text":"dont think it had a lid. remember the crack","posted":true,"at":"2026-11-24T18:02","checkin":"2026-11-24T18:02"}
+{"who":"Sophie","text":"Bill came for her phone line. Says \"final notice\" then \"please disregard if paid\". Which is it","posted":true,"at":"2026-11-24T18:20","checkin":"2026-11-24T18:20"}
+{"who":"Ryan","text":"disregard if paid","posted":true,"at":"2026-11-24T18:25","checkin":"2026-11-24T18:25"}
+{"who":"Ryan","text":"is it paid","posted":true,"at":"2026-11-24T18:25","checkin":"2026-11-24T18:25"}
+{"who":"Sophie","text":"No. I'll ring them tomorrow","posted":true,"at":"2026-11-24T18:31","checkin":"2026-11-24T18:31"}
+{"who":"Donna","text":"Ring from the flat. I've got the folder, I'll find the account number","posted":true,"at":"2026-11-24T18:33","checkin":"2026-11-24T18:33"}
+{"who":"Ryan","text":"boiler in the flat is doing a knocking thing. probably the pump. not touching it til sunday","posted":true,"at":"2026-11-24T19:50","checkin":"2026-11-24T19:50"}
+{"who":"Donna","text":"Do not touch the boiler","posted":true,"at":"2026-11-24T19:52","checkin":"2026-11-24T19:52"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-24T19:52","checkin":"2026-11-24T19:52"}
+{"who":"Sophie","text":"Pharmacy was mental. Two people wanting the same cough mix and one man who wanted to argue about a sticker","posted":true,"at":"2026-11-24T21:14","checkin":"2026-11-24T21:14"}
+{"who":"Donna","text":"Did anyone move the good china out of the KEEP box? It's not where I left it","posted":true,"at":"2026-11-24T21:44","checkin":"2026-11-24T21:44"}
+{"who":"Ryan","text":"which box","posted":true,"at":"2026-11-24T21:44","checkin":"2026-11-24T21:44"}
+{"who":"Donna","text":"Don't.","posted":true,"at":"2026-11-24T21:44","checkin":"2026-11-24T21:44"}
+{"who":"Sophie","text":"It's in the hall under the coats. Sorry, I moved it when I was looking for the recipe box","posted":true,"at":"2026-11-24T22:20","checkin":"2026-11-24T22:20"}
+{"who":"Donna","text":"Right. Good. x","posted":true,"at":"2026-11-24T22:21","checkin":"2026-11-24T22:21"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-24T22:45","checkin":"2026-11-24T22:45"}
+{"who":"Sophie","text":"Night. Don't let Ryan near the buttons","posted":true,"at":"2026-11-24T23:02","checkin":"2026-11-24T23:02"}
+{"who":"Ryan","text":"too late","posted":true,"at":"2026-11-24T23:03","checkin":"2026-11-24T23:03"}
+{"who":"Donna","text":"Night x","posted":true,"at":"2026-11-24T23:14","checkin":"2026-11-24T23:14"}
+{"who":"Ryan","text":"on the van. boiler manual, is it in the folder or still in the cupboard","posted":true,"at":"2026-11-25T07:05","checkin":"2026-11-25T07:05"}
+{"who":"Donna","text":"Folder. Second pocket behind the bank letters. Ryan, you are not allowed to take the folder to the van","posted":true,"at":"2026-11-25T07:12","checkin":"2026-11-25T07:12"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-25T07:14","checkin":"2026-11-25T07:14"}
+{"who":"Donna","text":"Bathroom cabinet photographed. Three half-used bottles of Gaviscon, a box of plasters from about 2009 and a tube of something that says \"for cold sores\" on the front and is empty. Ryan you are not having the plasters","posted":true,"at":"2026-11-25T07:40","checkin":"2026-11-25T07:40"}
+{"who":"Ryan","text":"i wasn't going to","posted":true,"at":"2026-11-25T07:41","checkin":"2026-11-25T07:41"}
+{"who":"Ryan","text":"i was going to say the plasters are fine","posted":true,"at":"2026-11-25T07:41","checkin":"2026-11-25T07:41"}
+{"who":"Sophie","text":"Ringing the phone people on my break. Donna, where's the account number","posted":true,"at":"2026-11-25T12:30","checkin":"2026-11-25T12:30"}
+{"who":"Donna","text":"Top right of the bill, under the barcode. I've put a yellow Post-it on the folder","posted":true,"at":"2026-11-25T12:31","checkin":"2026-11-25T12:31"}
+{"who":"Sophie","text":"Found it","posted":true,"at":"2026-11-25T12:33","checkin":"2026-11-25T12:33"}
+{"who":"Sophie","text":"They put me on hold for forty minutes and then said it's a direct debit that stopped in October. So it's not unpaid. It's the bank","posted":true,"at":"2026-11-25T12:58","checkin":"2026-11-25T12:58"}
+{"who":"Donna","text":"So they've been sending final notices for a direct debit that stopped","posted":true,"at":"2026-11-25T13:02","checkin":"2026-11-25T13:02"}
+{"who":"Donna","text":"Right. I'll ring the bank tonight. Who's got her card","posted":true,"at":"2026-11-25T13:03","checkin":"2026-11-25T13:03"}
+{"who":"Ryan","text":"its in the coat pocket in the hall","posted":true,"at":"2026-11-25T13:05","checkin":"2026-11-25T13:05"}
+{"who":"Ryan","text":"under the china","posted":true,"at":"2026-11-25T13:05","checkin":"2026-11-25T13:05"}
+{"who":"Donna","text":"Under the china. Ryan, that is a sentence I never wanted to read","posted":true,"at":"2026-11-25T13:09","checkin":"2026-11-25T13:09"}
+{"who":"Donna","text":"Gravy boat lid. Found it in the tea caddy, under the tea","posted":true,"at":"2026-11-25T15:40","checkin":"2026-11-25T15:40"}
+{"who":"Ryan","text":"told you it had a crack","posted":true,"at":"2026-11-25T15:41","checkin":"2026-11-25T15:41"}
+{"who":"Donna","text":"You said it didn't have a lid","posted":true,"at":"2026-11-25T15:41","checkin":"2026-11-25T15:41"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-25T15:42","checkin":"2026-11-25T15:42"}
+{"who":"Sophie","text":"Off. Bus was late and I've got a bag of napkins on my knee that I'm pretending not to have","posted":true,"at":"2026-11-25T18:20","checkin":"2026-11-25T18:20"}
+{"who":"Donna","text":"Put them back in the sideboard","posted":true,"at":"2026-11-25T18:22","checkin":"2026-11-25T18:22"}
+{"who":"Sophie","text":"😂","posted":true,"at":"2026-11-25T18:22","checkin":"2026-11-25T18:22"}
+{"who":"Ryan","text":"boiler's knocking worse. not touching it. sunday","posted":true,"at":"2026-11-25T19:05","checkin":"2026-11-25T19:05"}
+{"who":"Donna","text":"Do not touch the boiler","posted":true,"at":"2026-11-25T19:06","checkin":"2026-11-25T19:06"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-25T19:06","checkin":"2026-11-25T19:06"}
+{"who":"Donna","text":"Right. Sunday. Ryan, bring the pump, but don't fit it in the flat. Sophie, the wardrobe. I'll do the coats. Nobody opens the tin of buttons until we're all there","posted":true,"at":"2026-11-25T20:30","checkin":"2026-11-25T20:30"}
+{"who":"Sophie","text":"Buttons are a Sunday thing?","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Donna","text":"Buttons are a Sunday thing","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Ryan","text":"👍","posted":true,"at":"2026-11-25T20:34","checkin":"2026-11-25T20:34"}
+{"who":"Sophie","text":"Did anyone take Gran's camel coat or is it still in the hall","posted":true,"at":"2026-11-25T21:50","checkin":"2026-11-25T21:50"}
+{"who":"Donna","text":"Hall. Under the china. x","posted":true,"at":"2026-11-25T21:52","checkin":"2026-11-25T21:52"}
+{"who":"Sophie","text":"Going to bed. Ryan don't","posted":true,"at":"2026-11-25T22:40","checkin":"2026-11-25T22:40"}
+{"who":"Ryan","text":"im in the bath","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Sophie","text":"Good","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Ryan","text":"night","posted":true,"at":"2026-11-25T22:44","checkin":"2026-11-25T22:44"}
+{"who":"Donna","text":"Night x","posted":true,"at":"2026-11-25T23:10","checkin":"2026-11-25T23:10"}

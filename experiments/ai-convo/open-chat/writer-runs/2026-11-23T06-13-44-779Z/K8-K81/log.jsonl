@@ -1,0 +1,83 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1586,"cache_read_input_tokens":0,"output_tokens":2761,"output_tokens_details":{"thinking_tokens":2170},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1586,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2761,"cache_read_input_tokens":0,"cache_creation_input_tokens":1586,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1586},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":1586,"output_tokens":1668,"output_tokens_details":{"thinking_tokens":1163},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1668,"cache_read_input_tokens":1586,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2051,"cache_read_input_tokens":0,"output_tokens":1564,"output_tokens_details":{"thinking_tokens":1047},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2051,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1564,"cache_read_input_tokens":0,"cache_creation_input_tokens":2051,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2051},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2567,"cache_read_input_tokens":0,"output_tokens":1560,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2567,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1560,"cache_read_input_tokens":0,"cache_creation_input_tokens":2567,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2567},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Hannah","Daniel"],"setting":"You both live in Leeds, in different neighbourhoods across the city. You were together for four years and split up last winter. You still speak civilly, and you each know the other's close friends and most of the rhythm of each other's week.","opener":"Message him asking whether he still has the spare key to your flat.","cast":{"Hannah":{"who":"34, woman, the former partner who is writing to the ex","knows":"You know Daniel as your ex-partner of four years, and you ended things together last winter without much drama.","like":"You are dry, warm once you relax, and a bit private about your feelings. You have strong opinions about bread, bad parking, and people who talk through films.","texts":"You message in this chat now and then, mostly replying and rarely starting a conversation.","style":"You type with proper capitals and punctuation, use full stops, and almost never use emoji.","ex":[]},"Daniel":{"who":"36, man, the ex who is being messaged","knows":"You know Hannah as your ex-partner of four years, and you still get on well enough to chat when you bump into each other.","like":"You are easygoing and a bit scatty, with a sharp, self-deprecating sense of humour. You have firm opinions about football, cars, and how long a kettle should take to boil.","texts":"You message in this chat mostly when you're replying, and only now and then start a conversation, usually late at night.","style":"You type in lowercase with very little punctuation, and you sometimes use a thumbs-up emoji.","ex":[]}},"private_lines":{"Hannah":"You live alone in a rented flat in Headingley, with a grey cat called Biscuit. You teach Year 4 at a primary school, so your days start early, with a bus in and a stack of marking at the kitchen table in the evening.","Daniel":"You live in Armley with your brother, who works nights, so the house is often quiet during the day. You run a small electrical contracting business, with jobs starting around eight and often finishing late."},"sleep":{"Hannah":[22.75,6.5],"Daniel":[0.25,7.5]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1285,"cache_read_input_tokens":0,"output_tokens":2251,"output_tokens_details":{"thinking_tokens":1546},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1285,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2251,"cache_read_input_tokens":0,"cache_creation_input_tokens":1285,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1285},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"My ex.","topic":null}
+{"who":"Hannah","text":"Do you still have the spare key to my flat","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Daniel","text":"think so. might be in the drawer by the door at mine. not sure. ill look when im home","posted":true,"at":"2026-11-23T19:26","checkin":"2026-11-23T19:26"}
+{"who":"Hannah","text":"The landlord's sending someone to look at the boiler on Thursday. I'm in school till gone four and he wants to let himself in if I'm not there","posted":true,"at":"2026-11-23T19:27","checkin":"2026-11-23T19:27"}
+{"who":"Daniel","text":"thursday's fine. if i find it ill drop it round. might be late, jobs running over","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Daniel","text":"still in headingley?","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Hannah","text":"Yes. Obviously","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Daniel","text":"ok","posted":true,"at":"2026-11-23T19:34","checkin":"2026-11-23T19:34"}
+{"who":"Daniel","text":"didnt want to bring it round and be stood outside a dead flat","posted":true,"at":"2026-11-23T19:34","checkin":"2026-11-23T19:34"}
+{"who":"Hannah","text":"Thursday. I'll be in by five","posted":true,"at":"2026-11-23T19:36","checkin":"2026-11-23T19:36"}
+{"who":"Daniel","text":"found it. was in a box of old cables. obviously","posted":true,"at":"2026-11-23T20:58","checkin":"2026-11-23T20:58"}
+{"who":"Hannah","text":"Obviously","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Hannah","text":"Thanks","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Daniel","text":"no bother","posted":true,"at":"2026-11-23T21:12","checkin":"2026-11-23T21:12"}
+{"who":"Daniel","text":"can probably do wed if the job in chapel allerton finishes early. dont hold your breath","posted":true,"at":"2026-11-23T21:12","checkin":"2026-11-23T21:12"}
+{"who":"","react":"👍","to":13,"posted":false,"at":"2026-11-23T21:12"}
+{"who":"Hannah","text":"Wednesday would be better actually. Boiler man might come earlier than they said","posted":true,"at":"2026-11-23T22:31","checkin":"2026-11-23T22:31"}
+{"who":"Daniel","text":"will do","posted":true,"at":"2026-11-23T22:33","checkin":"2026-11-23T22:33"}
+{"who":"Daniel","text":"morning. wed is fine if the chapel job goes to plan. ill text by 6 either way","posted":true,"at":"2026-11-24T07:58","checkin":"2026-11-24T07:58"}
+{"who":"Hannah","text":"Six is fine. I'm on the bus so I'll be slow to reply.","posted":true,"at":"2026-11-24T08:14","checkin":"2026-11-24T08:14"}
+{"who":"Daniel","text":"which bus","posted":true,"at":"2026-11-24T08:15","checkin":"2026-11-24T08:15"}
+{"who":"Hannah","text":"The 56. Standing, obviously.","posted":true,"at":"2026-11-24T08:19","checkin":"2026-11-24T08:19"}
+{"who":"Daniel","text":"👍","posted":true,"at":"2026-11-24T08:20","checkin":"2026-11-24T08:20"}
+{"who":"Daniel","text":"chapel allerton customer has now moved the socket three times and wants it back where it was","posted":true,"at":"2026-11-24T16:42","checkin":"2026-11-24T16:42"}
+{"who":"Hannah","text":"Did you tell him that's where it was originally","posted":true,"at":"2026-11-24T17:58","checkin":"2026-11-24T17:58"}
+{"who":"Daniel","text":"i did. he said he knows. he's paying so","posted":true,"at":"2026-11-24T18:03","checkin":"2026-11-24T18:03"}
+{"who":"Hannah","text":"Fair enough.","posted":true,"at":"2026-11-24T18:05","checkin":"2026-11-24T18:05"}
+{"who":"Hannah","text":"Year 4 have been told about the Victorians for three weeks and one of them has now asked whether they had Wi-Fi","posted":true,"at":"2026-11-24T18:40","checkin":"2026-11-24T18:40"}
+{"who":"Daniel","text":"what did you say","posted":true,"at":"2026-11-24T18:52","checkin":"2026-11-24T18:52"}
+{"who":"Hannah","text":"That they had something worse","posted":true,"at":"2026-11-24T19:30","checkin":"2026-11-24T19:30"}
+{"who":"Daniel","text":"😂","posted":true,"at":"2026-11-24T19:31","checkin":"2026-11-24T19:31"}
+{"who":"Hannah","text":"Is the key on your keys or is it still in the cable box","posted":true,"at":"2026-11-24T21:47","checkin":"2026-11-24T21:47"}
+{"who":"Daniel","text":"its in my coat pocket. been in my coat pocket since mon night. i checked twice","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Daniel","text":"will bring it wed","posted":true,"at":"2026-11-24T22:15","checkin":"2026-11-24T22:15"}
+{"who":"Hannah","text":"Good. Don't let the boiler man get it first.","posted":true,"at":"2026-11-24T22:19","checkin":"2026-11-24T22:19"}
+{"who":"Daniel","text":"morning. still on for later. might be later than 6 if the socket thing kicks off again","posted":true,"at":"2026-11-25T07:12","checkin":"2026-11-25T07:12"}
+{"who":"Hannah","text":"Still on. I'm in school till four so the key can go through the letterbox if you're not there when I'm out","posted":true,"at":"2026-11-25T07:40","checkin":"2026-11-25T07:40"}
+{"who":"Daniel","text":"letterbox it is. dont think the hall one works so you'll hear it land","posted":true,"at":"2026-11-25T07:41","checkin":"2026-11-25T07:41"}
+{"who":"Hannah","text":"Boiler man has text me. Says he'll be there between 4 and 6, not before","posted":true,"at":"2026-11-25T15:58","checkin":"2026-11-25T15:58"}
+{"who":"Daniel","text":"so much for thursday","posted":true,"at":"2026-11-25T16:04","checkin":"2026-11-25T16:04"}
+{"who":"Daniel","text":"chapel allerton has fucked off to his mums. i'll be done by 5. i'll come over after","posted":true,"at":"2026-11-25T16:05","checkin":"2026-11-25T16:05"}
+{"who":"Hannah","text":"You don't have to come over. Just post it through","posted":true,"at":"2026-11-25T16:06","checkin":"2026-11-25T16:06"}
+{"who":"Daniel","text":"ill come over. i can let the boiler man in if youre still at school. saves you getting back early","posted":true,"at":"2026-11-25T16:09","checkin":"2026-11-25T16:09"}
+{"who":"Hannah","text":"I'm not going to make you babysit a boiler man","posted":true,"at":"2026-11-25T16:11","checkin":"2026-11-25T16:11"}
+{"who":"Daniel","text":"its not babysitting its a bloke in a van","posted":true,"at":"2026-11-25T16:12","checkin":"2026-11-25T16:12"}
+{"who":"Hannah","text":"Fine. Be here by 5.30 or I'll assume you've gone to the pub","posted":true,"at":"2026-11-25T16:14","checkin":"2026-11-25T16:14"}
+{"who":"Daniel","text":"👍","posted":true,"at":"2026-11-25T16:14","checkin":"2026-11-25T16:14"}
+{"who":"Daniel","text":"on the way. bit of traffic on kirkstall rd. the 56 is probably less stressful","posted":true,"at":"2026-11-25T17:52","checkin":"2026-11-25T17:52"}
+{"who":"Hannah","text":"I'm not on the 56 at this time, I'm in the car park. Some of us have a car","posted":true,"at":"2026-11-25T17:53","checkin":"2026-11-25T17:53"}
+{"who":"Hannah","text":"Boiler man's not here yet","posted":true,"at":"2026-11-25T17:53","checkin":"2026-11-25T17:53"}
+{"who":"Daniel","text":"ha. so you drove to school today?","posted":true,"at":"2026-11-25T17:55","checkin":"2026-11-25T17:55"}
+{"who":"Hannah","text":"I drove to school because the 56 was a dog's breakfast this morning, which you already know","posted":true,"at":"2026-11-25T17:56","checkin":"2026-11-25T17:56"}
+{"who":"Daniel","text":"fair. no arguments","posted":true,"at":"2026-11-25T17:58","checkin":"2026-11-25T17:58"}
+{"who":"Daniel","text":"outside. van outside too, is that him","posted":true,"at":"2026-11-25T18:14","checkin":"2026-11-25T18:14"}
+{"who":"Hannah","text":"Yes. Let him in, he's got a key from the landlord as well so don't worry if he's already got it","posted":true,"at":"2026-11-25T18:15","checkin":"2026-11-25T18:15"}
+{"who":"Daniel","text":"he doesnt have a key, he has a clipboard. i'm not sure which is worse","posted":true,"at":"2026-11-25T18:16","checkin":"2026-11-25T18:16"}
+{"who":"Hannah","text":"Let him in then","posted":true,"at":"2026-11-25T18:16","checkin":"2026-11-25T18:16"}
+{"who":"Daniel","text":"he's in. says it's the pump not the boiler. says its going to be a week for the part","posted":true,"at":"2026-11-25T18:40","checkin":"2026-11-25T18:40"}
+{"who":"Hannah","text":"A week. Lovely. Thanks for going","posted":true,"at":"2026-11-25T18:42","checkin":"2026-11-25T18:42"}
+{"who":"Daniel","text":"no bother. he sends his regards to your radiators","posted":true,"at":"2026-11-25T18:43","checkin":"2026-11-25T18:43"}
+{"who":"Hannah","text":"Are you still here","posted":true,"at":"2026-11-25T18:50","checkin":"2026-11-25T18:50"}
+{"who":"Daniel","text":"just about. he's writing something on the clipboard and i'm stood in your hall like a lemon","posted":true,"at":"2026-11-25T18:51","checkin":"2026-11-25T18:51"}
+{"who":"Hannah","text":"Sit down then. The sofa's behind you","posted":true,"at":"2026-11-25T18:53","checkin":"2026-11-25T18:53"}
+{"who":"Daniel","text":"i'm not sitting on your sofa","posted":true,"at":"2026-11-25T18:53","checkin":"2026-11-25T18:53"}
+{"who":"Hannah","text":"Why not","posted":true,"at":"2026-11-25T18:54","checkin":"2026-11-25T18:54"}
+{"who":"Daniel","text":"because it's not my sofa anymore and i'd have to explain myself","posted":true,"at":"2026-11-25T18:56","checkin":"2026-11-25T18:56"}
+{"who":"Hannah","text":"Biscuit's on it. You'd be doing her a favour","posted":true,"at":"2026-11-25T18:58","checkin":"2026-11-25T18:58"}
+{"who":"Daniel","text":"ok the cat is a good argument","posted":true,"at":"2026-11-25T19:01","checkin":"2026-11-25T19:01"}
+{"who":"Hannah","text":"He's gone. Did you get your key back out of the box, or are you still carrying the spare around","posted":true,"at":"2026-11-25T19:04","checkin":"2026-11-25T19:04"}
+{"who":"Daniel","text":"you've got it. it's on the mat in front of you. i posted it under the door when i came in and then stood there like a lemon as well","posted":true,"at":"2026-11-25T19:06","checkin":"2026-11-25T19:06"}
+{"who":"Hannah","text":"Oh","posted":true,"at":"2026-11-25T19:08","checkin":"2026-11-25T19:08"}
+{"who":"Hannah","text":"Right. Good","posted":true,"at":"2026-11-25T19:08","checkin":"2026-11-25T19:08"}
+{"who":"Daniel","text":"should have just said i was staying for the cat","posted":true,"at":"2026-11-25T19:09","checkin":"2026-11-25T19:09"}
+{"who":"Hannah","text":"Are you staying for the cat","posted":true,"at":"2026-11-25T19:10","checkin":"2026-11-25T19:10"}
+{"who":"Daniel","text":"no. i've got a dinner at my brothers in 40 mins. he's up at 2 so it's dinner at 5 or no dinner","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Daniel","text":"i'll go","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Hannah","text":"Go on then. Thanks for the boiler","posted":true,"at":"2026-11-25T19:18","checkin":"2026-11-25T19:18"}
+{"who":"Daniel","text":"no bother","posted":true,"at":"2026-11-25T19:19","checkin":"2026-11-25T19:19"}
+{"who":"Hannah","text":"Biscuit has been sick on the stairs and I've had to clean it up with the bread knife","posted":true,"at":"2026-11-25T22:40","checkin":"2026-11-25T22:40"}
+{"who":"Daniel","text":"you are not a well woman","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Hannah","text":"I'm going to bed. Night","posted":true,"at":"2026-11-25T22:43","checkin":"2026-11-25T22:43"}
+{"who":"Daniel","text":"night","posted":true,"at":"2026-11-25T22:43","checkin":"2026-11-25T22:43"}

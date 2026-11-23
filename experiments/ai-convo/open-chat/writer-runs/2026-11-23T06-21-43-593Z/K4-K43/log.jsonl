@@ -1,0 +1,88 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1738,"cache_read_input_tokens":0,"output_tokens":4869,"output_tokens_details":{"thinking_tokens":3891},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1738,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4869,"cache_read_input_tokens":0,"cache_creation_input_tokens":1738,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1738},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":2653,"cache_read_input_tokens":0,"output_tokens":1855,"output_tokens_details":{"thinking_tokens":1204},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2653,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1855,"cache_read_input_tokens":0,"cache_creation_input_tokens":2653,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2653},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":2653,"output_tokens":1944,"output_tokens_details":{"thinking_tokens":1366},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1944,"cache_read_input_tokens":2653,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":3230,"cache_read_input_tokens":0,"output_tokens":1132,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3230,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1132,"cache_read_input_tokens":0,"cache_creation_input_tokens":3230,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3230},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0}]}
+{"names":["Inês","Tiago"],"setting":"You both live in Porto, Portugal, and share a flat in Bonfim. You have been a couple for about two years and have lived together for eight months. You know each other's families, habits and work routines well. Last time you were in touch in the chat, you were arguing about whose turn it was to take the recycling down.","opener":"Send Tiago a screenshot of the flight prices for the dates you have been looking at, asking whether he wants to book tonight.","cast":{"Inês":{"who":"34, woman, the partner planning the first trip with Tiago","knows":"You know Tiago is your partner, a secondary school history teacher who is patient with students and impatient with airline websites.","like":"You are organised and quick to laugh, with a sharp tongue when someone is being slow about plans. You have strong opinions about where to eat, what to pack and how long a trip should be.","texts":"You message in this chat now and then without being asked, mostly when something about the trip comes up during the day.","style":"You type in lowercase most of the time, use full stops sparingly, and add the occasional emoji when you are teasing.","ex":[]},"Tiago":{"who":"36, man, the partner planning the first trip with Inês","knows":"You know Inês is your partner, a physiotherapist at a clinic in Boavista who is organised, funny and always has a backup plan.","like":"You are easygoing and dry, with a quiet sense of humour that comes out when you are tired. You have strong opinions about train timetables, bad coffee and people who arrive late to the airport.","texts":"You message in this chat now and then without being asked, usually when a question about the trip needs an answer and you are free between classes.","style":"You type with proper capitals and full stops, rarely use emoji, and write in short sentences.","ex":[]}},"private_lines":{"Inês":"You live in Porto in a flat in Bonfim with Tiago. You work as a physiotherapist at a clinic in Boavista, so your days start early and end with a walk along the river when the weather allows. You cook most evenings and keep a shared calendar on the fridge that Tiago ignores.","Tiago":"You live in Porto in a flat in Bonfim with Inês. You teach history at a secondary school in the centre, so your days are full of classes and marking, and you often get home tired and want to sit down. You make coffee in the morning and leave the dishes for later."},"sleep":{"Inês":[23,6.5],"Tiago":[23.5,7]},"usage":{"input_tokens":2,"cache_creation_input_tokens":341,"cache_read_input_tokens":989,"output_tokens":2182,"output_tokens_details":{"thinking_tokens":1349},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2182,"cache_read_input_tokens":989,"cache_creation_input_tokens":341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":341},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},"situation":"A couple planning their first trip together.","topic":null}
+{"who":"Inês","text":"[screenshot]\nfunchal, 14th to 19th. the 6:40 is the cheap one with a bag, via lisbon. do you want to book tonight? they go up thursday","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Tiago","text":"Just finished the 11B essays. Some of them are not essays.\nVia Lisbon is fine. What's the direct one","posted":true,"at":"2026-11-23T19:38","checkin":"2026-11-23T19:38"}
+{"who":"Inês","text":"direct is 140 more and leaves at 7 in the morning which is brutal\nlisbon is 50 min, it's nothing","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Tiago","text":"Not booking until I've eaten.","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Inês","text":"you can eat and book at the same time. i'm making the rice, it's on","posted":true,"at":"2026-11-23T19:45","checkin":"2026-11-23T19:45"}
+{"who":"Tiago","text":"On the metro. Is it the chouriço one","posted":true,"at":"2026-11-23T20:15","checkin":"2026-11-23T20:15"}
+{"who":"Inês","text":"chouriço. don't get the bus, it's always late on mondays","posted":true,"at":"2026-11-23T20:16","checkin":"2026-11-23T20:16"}
+{"who":"Tiago","text":"I'm on the metro. I am not getting the bus.","posted":true,"at":"2026-11-23T20:17","checkin":"2026-11-23T20:17"}
+{"who":"Inês","text":"good 🙄","posted":true,"at":"2026-11-23T20:17","checkin":"2026-11-23T20:17"}
+{"who":"Tiago","text":"Back. Shoes off.\nAre we still doing your mum's on Sunday after we're back","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"Inês","text":"yes sunday. we land at 23:30 on the 19th so we're free. she knows. she made it a whole thing","posted":true,"at":"2026-11-23T21:04","checkin":"2026-11-23T21:04"}
+{"who":"Inês","text":"did you book","posted":true,"at":"2026-11-23T21:30","checkin":"2026-11-23T21:30"}
+{"who":"Tiago","text":"Not in front of you. You'll watch me.","posted":true,"at":"2026-11-23T21:31","checkin":"2026-11-23T21:31"}
+{"who":"Inês","text":"i will absolutely watch you","posted":true,"at":"2026-11-23T21:31","checkin":"2026-11-23T21:31"}
+{"who":"","react":"😂","to":13,"posted":false,"at":"2026-11-23T21:31"}
+{"who":"Tiago","text":"Back leg. The 1h20 connection. Is that the one that lands in Lisbon at the other terminal","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Inês","text":"same terminal. i checked. it's a one minute walk","posted":true,"at":"2026-11-23T22:12","checkin":"2026-11-23T22:12"}
+{"who":"Tiago","text":"Ok.","posted":true,"at":"2026-11-23T22:13","checkin":"2026-11-23T22:13"}
+{"who":"Tiago","text":"Booked. Check your email before you say anything.","posted":true,"at":"2026-11-23T22:40","checkin":"2026-11-23T22:40"}
+{"who":"Inês","text":"wait","posted":true,"at":"2026-11-23T22:41","checkin":"2026-11-23T22:41"}
+{"who":"Inês","text":"you booked it","posted":true,"at":"2026-11-23T22:41","checkin":"2026-11-23T22:41"}
+{"who":"Tiago","text":"6:40. Don't say it.","posted":true,"at":"2026-11-23T22:42","checkin":"2026-11-23T22:42"}
+{"who":"Inês","text":"i wasn't going to say anything. i was going to say 6:40 is brutal","posted":true,"at":"2026-11-23T22:42","checkin":"2026-11-23T22:42"}
+{"who":"Tiago","text":"I know.","posted":true,"at":"2026-11-23T22:43","checkin":"2026-11-23T22:43"}
+{"who":"Inês","text":"thank you. really","posted":true,"at":"2026-11-23T22:50","checkin":"2026-11-23T22:50"}
+{"who":"Tiago","text":"Sunday's the glass by the way","posted":true,"at":"2026-11-23T22:52","checkin":"2026-11-23T22:52"}
+{"who":"Inês","text":"glass is not recycling. glass is glass","posted":true,"at":"2026-11-23T22:53","checkin":"2026-11-23T22:53"}
+{"who":"Tiago","text":"It goes in the same bin.","posted":true,"at":"2026-11-23T22:53","checkin":"2026-11-23T22:53"}
+{"who":"Inês","text":"not the same bin tiago","posted":true,"at":"2026-11-23T22:54","checkin":"2026-11-23T22:54"}
+{"who":"Inês","text":"going to sleep. pick a seat that isn't next to the toilet","posted":true,"at":"2026-11-23T22:56","checkin":"2026-11-23T22:56"}
+{"who":"Tiago","text":"27B is still free. Taking it.","posted":true,"at":"2026-11-23T23:24","checkin":"2026-11-23T23:24"}
+{"who":"Inês","text":"awake. you're not","posted":true,"at":"2026-11-24T06:52","checkin":"2026-11-24T06:52"}
+{"who":"Tiago","text":"Up. Coffee's on the side that's not yours","posted":true,"at":"2026-11-24T07:21","checkin":"2026-11-24T07:21"}
+{"who":"Inês","text":"check-in opens 24h before so not today. passports where","posted":true,"at":"2026-11-24T07:23","checkin":"2026-11-24T07:23"}
+{"who":"Tiago","text":"Drawer by the printer","posted":true,"at":"2026-11-24T07:31","checkin":"2026-11-24T07:31"}
+{"who":"Inês","text":"which drawer","posted":true,"at":"2026-11-24T07:31","checkin":"2026-11-24T07:31"}
+{"who":"Tiago","text":"The one you said was the wrong drawer","posted":true,"at":"2026-11-24T07:32","checkin":"2026-11-24T07:32"}
+{"who":"Tiago","text":"Lunch was a sandwich I didn't choose. 11B have started a group chat about me","posted":true,"at":"2026-11-24T12:48","checkin":"2026-11-24T12:48"}
+{"who":"Inês","text":"patient cancelled so i have twenty minutes. did you ask your mum about sunday or is that me","posted":true,"at":"2026-11-24T13:10","checkin":"2026-11-24T13:10"}
+{"who":"Tiago","text":"I asked. She said bring the glass","posted":true,"at":"2026-11-24T13:14","checkin":"2026-11-24T13:14"}
+{"who":"Inês","text":"told you","posted":true,"at":"2026-11-24T13:14","checkin":"2026-11-24T13:14"}
+{"who":"Inês","text":"passports checked, both in the drawer. the fridge calendar says funchal in pen now. you're welcome","posted":true,"at":"2026-11-24T18:20","checkin":"2026-11-24T18:20"}
+{"who":"Tiago","text":"I saw. Didn't touch it","posted":true,"at":"2026-11-24T18:44","checkin":"2026-11-24T18:44"}
+{"who":"Inês","text":"that's how i know you saw it 🙄","posted":true,"at":"2026-11-24T18:45","checkin":"2026-11-24T18:45"}
+{"who":"Tiago","text":"Home at ten. Is there anything for dinner that isn't rice","posted":true,"at":"2026-11-24T21:50","checkin":"2026-11-24T21:50"}
+{"who":"Inês","text":"soup. it's the rice's cousin","posted":true,"at":"2026-11-24T21:52","checkin":"2026-11-24T21:52"}
+{"who":"Tiago","text":"Good","posted":true,"at":"2026-11-24T21:52","checkin":"2026-11-24T21:52"}
+{"who":"Inês","text":"going to sleep. wake me if the 6:40 gets moved","posted":true,"at":"2026-11-24T23:10","checkin":"2026-11-24T23:10"}
+{"who":"Tiago","text":"It won't","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"Inês","text":"wake me anyway","posted":true,"at":"2026-11-24T23:12","checkin":"2026-11-24T23:12"}
+{"who":"Tiago","text":"Fine. Sunday's the glass","posted":true,"at":"2026-11-24T23:38","checkin":"2026-11-24T23:38"}
+{"who":"Tiago","text":"Are you awake","posted":true,"at":"2026-11-25T04:00","checkin":"2026-11-25T04:00"}
+{"who":"Inês","text":"up. wait we're not meant to be up yet","posted":true,"at":"2026-11-25T06:41","checkin":"2026-11-25T06:41"}
+{"who":"Tiago","text":"You're the one who wanted the 6:40.","posted":true,"at":"2026-11-25T06:42","checkin":"2026-11-25T06:42"}
+{"who":"Inês","text":"i wanted the cheap one. there's a difference","posted":true,"at":"2026-11-25T06:42","checkin":"2026-11-25T06:42"}
+{"who":"Tiago","text":"Coffee's made. Bring the good mug, not the one with the chip","posted":true,"at":"2026-11-25T07:05","checkin":"2026-11-25T07:05"}
+{"who":"Inês","text":"which one is the good mug","posted":true,"at":"2026-11-25T07:06","checkin":"2026-11-25T07:06"}
+{"who":"Tiago","text":"The one you're not using","posted":true,"at":"2026-11-25T07:06","checkin":"2026-11-25T07:06"}
+{"who":"Inês","text":"clinic is quiet, mrs ferreira cancelled her hip again. can you check if the lisbon connection has a bag restriction or if it's just the funchal one","posted":true,"at":"2026-11-25T12:15","checkin":"2026-11-25T12:15"}
+{"who":"Tiago","text":"Checked. Both have the same allowance. Hand bag free, hold bag is the usual","posted":true,"at":"2026-11-25T12:52","checkin":"2026-11-25T12:52"}
+{"who":"Inês","text":"ok so the hold bag is the usual. i'm packing the big one then","posted":true,"at":"2026-11-25T12:53","checkin":"2026-11-25T12:53"}
+{"who":"Tiago","text":"You're packing for six days in the big one","posted":true,"at":"2026-11-25T12:53","checkin":"2026-11-25T12:53"}
+{"who":"Inês","text":"i'm packing for six days in the big one and you're carrying the sunscreen","posted":true,"at":"2026-11-25T12:54","checkin":"2026-11-25T12:54"}
+{"who":"Tiago","text":"Deal. Ask me about the 11B group chat, I'll tell you what they called me","posted":true,"at":"2026-11-25T13:20","checkin":"2026-11-25T13:20"}
+{"who":"Inês","text":"no. don't tell me","posted":true,"at":"2026-11-25T13:22","checkin":"2026-11-25T13:22"}
+{"who":"Tiago","text":"Ok","posted":true,"at":"2026-11-25T13:22","checkin":"2026-11-25T13:22"}
+{"who":"Inês","text":"tell me","posted":true,"at":"2026-11-25T13:30","checkin":"2026-11-25T13:30"}
+{"who":"Tiago","text":"Not in writing","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31"}
+{"who":"Inês","text":"home. tried to find the swimsuit you said was in the blue bag. it is not in the blue bag","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Tiago","text":"Back. I didn't say it was in the blue bag. I said it was in the drawer by the printer","posted":true,"at":"2026-11-25T19:20","checkin":"2026-11-25T19:20"}
+{"who":"Inês","text":"you have never once said where anything is correctly","posted":true,"at":"2026-11-25T19:21","checkin":"2026-11-25T19:21"}
+{"who":"Tiago","text":"Found it. Under the passports. Where it's always been","posted":true,"at":"2026-11-25T19:22","checkin":"2026-11-25T19:22"}
+{"who":"Inês","text":"👀","posted":true,"at":"2026-11-25T19:22","checkin":"2026-11-25T19:22"}
+{"who":"Tiago","text":"Rice tonight or do I get soup again","posted":true,"at":"2026-11-25T20:30","checkin":"2026-11-25T20:30"}
+{"who":"Inês","text":"you get what you're given. it's pork with the potatoes from the market","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Tiago","text":"That's a yes","posted":true,"at":"2026-11-25T20:31","checkin":"2026-11-25T20:31"}
+{"who":"Inês","text":"it's a yes. sit down. you've been on your feet since 8","posted":true,"at":"2026-11-25T20:44","checkin":"2026-11-25T20:44"}
+{"who":"Inês","text":"the glass is in the bag by the door. you're doing it","posted":true,"at":"2026-11-25T22:58","checkin":"2026-11-25T22:58"}
+{"who":"Tiago","text":"Doing it tomorrow. It's late","posted":true,"at":"2026-11-25T23:01","checkin":"2026-11-25T23:01"}
+{"who":"Inês","text":"it's 23:02 on a wednesday, it's not late, it's the time we go to sleep. so tomorrow then. before the car","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}
+{"who":"Tiago","text":"There's no car. We're taking the metro to the airport like normal people","posted":true,"at":"2026-11-25T23:02","checkin":"2026-11-25T23:02"}
+{"who":"Inês","text":"the metro is the car. sleep tiago","posted":true,"at":"2026-11-25T23:03","checkin":"2026-11-25T23:03"}
+{"who":"Tiago","text":"Still up. Marking the 11B thing, it's a sentence about the Treaty of Versailles that someone wrote as a poem","posted":true,"at":"2026-11-26T00:30","checkin":"2026-11-26T00:30"}
+{"who":"Inês","text":"ok that's not a thing i need to know at half twelve","posted":true,"at":"2026-11-26T00:31","checkin":"2026-11-26T00:31"}
+{"who":"Tiago","text":"You asked.","posted":true,"at":"2026-11-26T00:31","checkin":"2026-11-26T00:31"}
+{"who":"Inês","text":"can't sleep. you awake","posted":true,"at":"2026-11-26T03:12","checkin":"2026-11-26T03:12"}

@@ -1,0 +1,123 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1798,"cache_read_input_tokens":0,"output_tokens":2653,"output_tokens_details":{"thinking_tokens":1632},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1798,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2653,"cache_read_input_tokens":0,"cache_creation_input_tokens":1798,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1798},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2775,"cache_read_input_tokens":0,"output_tokens":2977,"output_tokens_details":{"thinking_tokens":1703},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2775,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2977,"cache_read_input_tokens":0,"cache_creation_input_tokens":2775,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2775},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4048,"cache_read_input_tokens":0,"output_tokens":3005,"output_tokens_details":{"thinking_tokens":1250},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4048,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3005,"cache_read_input_tokens":0,"cache_creation_input_tokens":4048,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4048},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ben","Anh"],"setting":"You both live in Melbourne, Australia, Ben in Fitzroy and Anh in Richmond, about a twenty-minute tram ride apart. You have been dating for about six months, after meeting at a friend's birthday drinks in Collingwood. You both know each other's families, work schedules, and the fact that you are both terrible at choosing restaurants. Last time you were in touch, you were swapping photos of your flatmates' dogs.","opener":"Send Anh a screenshot of two flight options and ask which one she likes better.","cast":{"Ben":{"who":"31, man, one half of the couple planning the trip","knows":"You know Anh is your girlfriend, that she is sharp and organised, and that she has been wanting to go somewhere warm since winter started.","like":"You are easygoing and quick with dry jokes, and you rarely get flustered about plans. You have strong opinions about coffee, and you think anyone who books a hotel without reading the reviews is asking for trouble.","texts":"You message Anh mostly when something makes you think of her, and now and then to check in during the working day.","style":"You type in lowercase with minimal punctuation, use the occasional emoji, and abbreviate words like \"ur\" and \"tmrw.\"","ex":[]},"Anh":{"who":"29, woman, the other half of the couple planning the trip","knows":"You know Ben is your boyfriend, that he is relaxed and sometimes too casual about logistics, and that he has promised to organise the accommodation.","like":"You are methodical and warm, with a deadpan sense of humour that takes people a moment to notice. You have firm opinions about typography, and you believe a good itinerary should leave room for doing nothing.","texts":"You message Ben a few times a day without being asked, mostly to share small things you notice, and you are usually the one to start a conversation.","style":"You use proper capitals and full stops, rarely use emoji, and type in complete sentences even when you're in a hurry.","ex":[]}},"private_lines":{"Ben":"You live in a share house in Fitzroy with two housemates, and you work as a physiotherapist at a clinic on Smith Street. Your days start early, with a run along the Yarra before work, and you usually get home around six to cook something simple and watch the footy highlights.","Anh":"You live alone in a one-bedroom flat in Richmond with a grey cat named Miso, and you work as a graphic designer for a small studio on Swan Street, mostly from home on Tuesdays and Thursdays. You usually work until six, then go to a pilates class or meet friends for a drink, and you spend quiet evenings reading or sketching."},"sleep":{"Ben":[23.5,7],"Anh":[23,7]},"usage":{"input_tokens":2,"cache_creation_input_tokens":339,"cache_read_input_tokens":989,"output_tokens":2052,"output_tokens_details":{"thinking_tokens":1131},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":339,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2052,"cache_read_input_tokens":989,"cache_creation_input_tokens":339,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":339},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"A couple planning their first trip together.","topic":null}
+{"who":"Ben","text":"[screenshot: two flights]\n\nwhich one do u like better. the cheap one is 170 less each but it goes via singapore and leaves 11:15pm","posted":true,"at":"2026-11-23T19:02","checkin":"2026-11-23T19:02"}
+{"who":"Anh","text":"Give me a minute. Are those times Melbourne time or local?","posted":true,"at":"2026-11-23T19:21","checkin":"2026-11-23T19:21"}
+{"who":"Ben","text":"melb i think. checked on the app","posted":true,"at":"2026-11-23T19:22","checkin":"2026-11-23T19:22"}
+{"who":"Anh","text":"You think.","posted":true,"at":"2026-11-23T19:22","checkin":"2026-11-23T19:22"}
+{"who":"Ben","text":"😅 yes","posted":true,"at":"2026-11-23T19:23","checkin":"2026-11-23T19:23"}
+{"who":"Anh","text":"The direct one is better if we're both working the day before. Singapore saves money but I'd rather not lose a whole afternoon in an airport.","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Ben","text":"ya thats what i was thinking too. direct","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Ben","text":"also the singapore one has bad reviews for the seats","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Anh","text":"Ben, you said the cheap one. You were going to pick the cheap one.","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Ben","text":"i was going to present the cheap one and let u veto it. thats different","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Anh","text":"It is not different.","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Ben","text":"ok fine. direct it is. 🙏","posted":true,"at":"2026-11-23T19:58","checkin":"2026-11-23T19:58"}
+{"who":"Anh","text":"Good. Now the accommodation, which you said you would do last week.","posted":true,"at":"2026-11-23T20:03","checkin":"2026-11-23T20:03"}
+{"who":"Ben","text":"im doing it. i have a list","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Ben","text":"[screenshot: three places]","posted":true,"at":"2026-11-23T20:05","checkin":"2026-11-23T20:05"}
+{"who":"Anh","text":"One of these has a review that says the pool is \"a bathtub with ambition.\"","posted":true,"at":"2026-11-23T20:06","checkin":"2026-11-23T20:06"}
+{"who":"Ben","text":"its a good bathtub","posted":true,"at":"2026-11-23T20:06","checkin":"2026-11-23T20:06"}
+{"who":"Anh","text":"Ben, I read all three reviews. The middle one has a photo of mould in the corner of a room.","posted":true,"at":"2026-11-23T20:20","checkin":"2026-11-23T20:20"}
+{"who":"Ben","text":"ok thats fair. the third one has 4.9 stars tho","posted":true,"at":"2026-11-23T20:22","checkin":"2026-11-23T20:22"}
+{"who":"Ben","text":"from 11 reviews","posted":true,"at":"2026-11-23T20:22","checkin":"2026-11-23T20:22"}
+{"who":"Anh","text":"I'm not doing the research on eleven reviews for you. Send me the link to the one with the most reviews and I'll look at it tomorrow after my call.","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Ben","text":"deal. ur the best at this","posted":true,"at":"2026-11-23T20:32","checkin":"2026-11-23T20:32"}
+{"who":"Ben","text":"(reading reviews is literally ur job tho i mean ur the one who finds the good stuff)","posted":true,"at":"2026-11-23T20:32","checkin":"2026-11-23T20:32"}
+{"who":"Anh","text":"It is not my job. I design logos.","posted":true,"at":"2026-11-23T20:33","checkin":"2026-11-23T20:33"}
+{"who":"Ben","text":"🙃 ok sending the link now","posted":true,"at":"2026-11-23T20:40","checkin":"2026-11-23T20:40"}
+{"who":"Anh","text":"Found the one with the most reviews. It's the one by the old lighthouse, not the bathtub one.","posted":true,"at":"2026-11-23T22:15","checkin":"2026-11-23T22:15"}
+{"who":"Ben","text":"oh nice. i was going to say that one","posted":true,"at":"2026-11-23T22:16","checkin":"2026-11-23T22:16"}
+{"who":"Ben","text":"(didnt)","posted":true,"at":"2026-11-23T22:16","checkin":"2026-11-23T22:16"}
+{"who":"Anh","text":"Mm. Going to bed. I'll look at the flight thing again in the morning and book if it still looks right.","posted":true,"at":"2026-11-23T22:31","checkin":"2026-11-23T22:31"}
+{"who":"Ben","text":"sounds good. sleep well 🌙","posted":true,"at":"2026-11-23T22:33","checkin":"2026-11-23T22:33"}
+{"who":"Anh","text":"Night.","posted":true,"at":"2026-11-23T22:58","checkin":"2026-11-23T22:58"}
+{"who":"Anh","text":"Read the lighthouse one properly. The last 2km is gravel, which is in the fine print under \"getting here.\"","posted":true,"at":"2026-11-24T07:12","checkin":"2026-11-24T07:12"}
+{"who":"Anh","text":"Not a dealbreaker. Just noting it.","posted":true,"at":"2026-11-24T07:13","checkin":"2026-11-24T07:13"}
+{"who":"Ben","text":"gravel is fine. were not renting a lamborghini","posted":true,"at":"2026-11-24T07:58","checkin":"2026-11-24T07:58"}
+{"who":"Ben","text":"just ran 8k along the river and a cyclist told me my form was \"gorgeous\". no idea what to do with that","posted":true,"at":"2026-11-24T08:01","checkin":"2026-11-24T08:01"}
+{"who":"Anh","text":"Did he mean your form or your running","posted":true,"at":"2026-11-24T08:03","checkin":"2026-11-24T08:03"}
+{"who":"Anh","text":"Those are different things","posted":true,"at":"2026-11-24T08:03","checkin":"2026-11-24T08:03"}
+{"who":"Ben","text":"🙃 same thing surely","posted":true,"at":"2026-11-24T08:04","checkin":"2026-11-24T08:04"}
+{"who":"Ben","text":"direct flight went up 40 since last night. still want it or do i panic","posted":true,"at":"2026-11-24T08:20","checkin":"2026-11-24T08:20"}
+{"who":"Anh","text":"Want it. Prices move around. Watching it won't make it cheaper.","posted":true,"at":"2026-11-24T08:24","checkin":"2026-11-24T08:24"}
+{"who":"Anh","text":"Book it today. Don't let it sit.","posted":true,"at":"2026-11-24T08:25","checkin":"2026-11-24T08:25"}
+{"who":"Ben","text":"yes boss","posted":true,"at":"2026-11-24T08:26","checkin":"2026-11-24T08:26"}
+{"who":"Anh","text":"Miso knocked a pen off my desk in the middle of a client call. He's now asleep on the invoice folder.","posted":true,"at":"2026-11-24T10:04","checkin":"2026-11-24T10:04"}
+{"who":"Ben","text":"a dog would have been better for ur image","posted":true,"at":"2026-11-24T10:05","checkin":"2026-11-24T10:05"}
+{"who":"Anh","text":"Ben, you do not get to rank the sounds my cat makes.","posted":true,"at":"2026-11-24T10:05","checkin":"2026-11-24T10:05"}
+{"who":"Ben","text":"had a guy in with a shoulder that clicks every time he reaches for his wallet. asked if it was serious. i said mate its the wallet","posted":true,"at":"2026-11-24T12:41","checkin":"2026-11-24T12:41"}
+{"who":"Ben","text":"he didnt think it was funny. he's paying me to be serious about his wallet apparently","posted":true,"at":"2026-11-24T12:42","checkin":"2026-11-24T12:42"}
+{"who":"Anh","text":"Did you book the flight","posted":true,"at":"2026-11-24T12:58","checkin":"2026-11-24T12:58"}
+{"who":"Ben","text":"the link doesnt work on my phone","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Ben","text":"do it on the laptop","posted":true,"at":"2026-11-24T13:21","checkin":"2026-11-24T13:21"}
+{"who":"Anh","text":"I'm not doing it on your laptop. Your laptop is in your share house and you're at work.","posted":true,"at":"2026-11-24T13:22","checkin":"2026-11-24T13:22"}
+{"who":"Anh","text":"Use the phone. Go to the site, not the app.","posted":true,"at":"2026-11-24T13:22","checkin":"2026-11-24T13:22"}
+{"who":"Ben","text":"ur so bossy when ur right","posted":true,"at":"2026-11-24T13:23","checkin":"2026-11-24T13:23"}
+{"who":"Ben","text":"booked. the direct one. i did it on the phone like a grown man","posted":true,"at":"2026-11-24T17:49","checkin":"2026-11-24T17:49"}
+{"who":"Anh","text":"Thank you. Confirmation email?","posted":true,"at":"2026-11-24T17:50","checkin":"2026-11-24T17:50"}
+{"who":"Ben","text":"its in my inbox. forwarding it now","posted":true,"at":"2026-11-24T17:52","checkin":"2026-11-24T17:52"}
+{"who":"Ben","text":"also the lighthouse place. can we do that tonight or is that a tomorrow thing","posted":true,"at":"2026-11-24T17:53","checkin":"2026-11-24T17:53"}
+{"who":"Anh","text":"Tonight is fine but I'm going to pilates at 6:30 and I'm not doing it sweaty on my phone. Ask me after.","posted":true,"at":"2026-11-24T18:30","checkin":"2026-11-24T18:30"}
+{"who":"Ben","text":"ok. making eggs on toast for dinner. the good toast","posted":true,"at":"2026-11-24T18:31","checkin":"2026-11-24T18:31"}
+{"who":"Ben","text":"(the toast u like that costs 6 dollars)","posted":true,"at":"2026-11-24T18:31","checkin":"2026-11-24T18:31"}
+{"who":"Anh","text":"Back. Miso has eaten a sock.","posted":true,"at":"2026-11-24T21:47","checkin":"2026-11-24T21:47"}
+{"who":"Anh","text":"Lighthouse. Do you want to pay the deposit tonight or wait for the cancellation terms to load? They didn't load on my end.","posted":true,"at":"2026-11-24T21:48","checkin":"2026-11-24T21:48"}
+{"who":"Ben","text":"ur asking me that like i know what a cancellation term is","posted":true,"at":"2026-11-24T21:58","checkin":"2026-11-24T21:58"}
+{"who":"Ben","text":"ok i'll read it. actually im knackered. can we do it tmrw","posted":true,"at":"2026-11-24T22:03","checkin":"2026-11-24T22:03"}
+{"who":"Anh","text":"Fine. Tomorrow. Check the cancellation terms before you do anything.","posted":true,"at":"2026-11-24T22:04","checkin":"2026-11-24T22:04"}
+{"who":"Ben","text":"yes boss 😴","posted":true,"at":"2026-11-24T22:05","checkin":"2026-11-24T22:05"}
+{"who":"Anh","text":"Did you get the confirmation email from the airline? The one with the seat numbers.","posted":true,"at":"2026-11-24T22:40","checkin":"2026-11-24T22:40"}
+{"who":"Anh","text":"Night.","posted":true,"at":"2026-11-24T22:58","checkin":"2026-11-24T22:58"}
+{"who":"Anh","text":"Morning. Did the airline email with the seat numbers come through, or did it get lost in your inbox again?","posted":true,"at":"2026-11-25T07:04","checkin":"2026-11-25T07:04"}
+{"who":"Ben","text":"morning. yes. 31A and 31B","posted":true,"at":"2026-11-25T07:31","checkin":"2026-11-25T07:31"}
+{"who":"Ben","text":"which is apparently over the wing. ur going to hate it","posted":true,"at":"2026-11-25T07:31","checkin":"2026-11-25T07:31"}
+{"who":"Anh","text":"I don't hate the wing. The wing is fine.","posted":true,"at":"2026-11-25T07:33","checkin":"2026-11-25T07:33"}
+{"who":"Ben","text":"ur the one who said \"we'll see\" when i asked if we wanted window","posted":true,"at":"2026-11-25T07:33","checkin":"2026-11-25T07:33"}
+{"who":"Anh","text":"Because I hadn't seen anything yet. Window is still better. Can you change it to a window?","posted":true,"at":"2026-11-25T07:40","checkin":"2026-11-25T07:40"}
+{"who":"Ben","text":"its 20 bucks each to change it. on the tram now, reading the lighthouse cancellation stuff","posted":true,"at":"2026-11-25T07:52","checkin":"2026-11-25T07:52"}
+{"who":"Ben","text":"50% back if u cancel inside 30 days of booking. nothing if u cancel inside 14","posted":true,"at":"2026-11-25T07:53","checkin":"2026-11-25T07:53"}
+{"who":"Ben","text":"no mention of what happens if THEY cancel. which feels like the important bit","posted":true,"at":"2026-11-25T07:53","checkin":"2026-11-25T07:53"}
+{"who":"Anh","text":"Good. That's the bit I wanted you to find. Is the deposit refundable if they cancel on us?","posted":true,"at":"2026-11-25T08:10","checkin":"2026-11-25T08:10"}
+{"who":"Ben","text":"no idea. im not a lawyer. im a physio","posted":true,"at":"2026-11-25T08:14","checkin":"2026-11-25T08:14"}
+{"who":"Anh","text":"You're a physio who told a patient \"mate it's the wallet.\"","posted":true,"at":"2026-11-25T08:15","checkin":"2026-11-25T08:15"}
+{"who":"Ben","text":"😂 he still hasnt forgiven me","posted":true,"at":"2026-11-25T08:15","checkin":"2026-11-25T08:15"}
+{"who":"Ben","text":"gonna ask the front desk at the place. theyll know","posted":true,"at":"2026-11-25T08:16","checkin":"2026-11-25T08:16"}
+{"who":"Anh","text":"Ask them in writing. Email, not phone.","posted":true,"at":"2026-11-25T08:30","checkin":"2026-11-25T08:30"}
+{"who":"Ben","text":"ur so scared of phones","posted":true,"at":"2026-11-25T08:31","checkin":"2026-11-25T08:31"}
+{"who":"Ben","text":"ok email","posted":true,"at":"2026-11-25T08:31","checkin":"2026-11-25T08:31"}
+{"who":"Ben","text":"the staff room coffee machine is a crime against humanity. just watched a 50 yr old man put his whole mug under the steam wand and call it a flat white","posted":true,"at":"2026-11-25T12:20","checkin":"2026-11-25T12:20"}
+{"who":"Anh","text":"You've mentioned the machine. Twice this week.","posted":true,"at":"2026-11-25T12:21","checkin":"2026-11-25T12:21"}
+{"who":"Ben","text":"it deserves it","posted":true,"at":"2026-11-25T12:21","checkin":"2026-11-25T12:21"}
+{"who":"Anh","text":"Miso has figured out how to open the bathroom cupboard. I did not know that was a skill he had.","posted":true,"at":"2026-11-25T12:44","checkin":"2026-11-25T12:44"}
+{"who":"Ben","text":"gods gift to cats","posted":true,"at":"2026-11-25T12:45","checkin":"2026-11-25T12:45"}
+{"who":"Ben","text":"send pic","posted":true,"at":"2026-11-25T12:45","checkin":"2026-11-25T12:45"}
+{"who":"Anh","text":"[photo]","posted":true,"at":"2026-11-25T12:52","checkin":"2026-11-25T12:52"}
+{"who":"Anh","text":"He's in the towels now. He is not sorry.","posted":true,"at":"2026-11-25T12:52","checkin":"2026-11-25T12:52"}
+{"who":"Ben","text":"he's perfect. ur going to have to get a lock","posted":true,"at":"2026-11-25T12:53","checkin":"2026-11-25T12:53"}
+{"who":"Anh","text":"I'm not putting a lock on a cupboard for a cat.","posted":true,"at":"2026-11-25T13:10","checkin":"2026-11-25T13:10"}
+{"who":"Ben","text":"ok but when he eats ur passport i'm not saying i told u so","posted":true,"at":"2026-11-25T13:11","checkin":"2026-11-25T13:11"}
+{"who":"Ben","text":"i am saying it","posted":true,"at":"2026-11-25T13:11","checkin":"2026-11-25T13:11"}
+{"who":"Ben","text":"finished. 3 back to back, one of them asked if he needs an mri for a sneeze. no. go home","posted":true,"at":"2026-11-25T17:48","checkin":"2026-11-25T17:48"}
+{"who":"Ben","text":"so tonight the lighthouse thing? or do u want to do it when ur home","posted":true,"at":"2026-11-25T17:49","checkin":"2026-11-25T17:49"}
+{"who":"Anh","text":"Priya's got me for a drink after work at the bar on Bridge Road. Back by nine.","posted":true,"at":"2026-11-25T17:58","checkin":"2026-11-25T17:58"}
+{"who":"Anh","text":"Deposit call at nine thirty. Don't book anything before I'm on the couch.","posted":true,"at":"2026-11-25T17:58","checkin":"2026-11-25T17:58"}
+{"who":"Ben","text":"ok. making the good toast 🍞","posted":true,"at":"2026-11-25T18:01","checkin":"2026-11-25T18:01"}
+{"who":"Ben","text":"(im going to get eggs anyway, dont tell u)","posted":true,"at":"2026-11-25T18:01","checkin":"2026-11-25T18:01"}
+{"who":"Anh","text":"Eggs are not a plan.","posted":true,"at":"2026-11-25T18:03","checkin":"2026-11-25T18:03"}
+{"who":"Anh","text":"Home. Priya says hi and that you still owe her a rematch at trivia.","posted":true,"at":"2026-11-25T21:12","checkin":"2026-11-25T21:12"}
+{"who":"Ben","text":"tell her i'm not scared of her","posted":true,"at":"2026-11-25T21:13","checkin":"2026-11-25T21:13"}
+{"who":"Ben","text":"tell her i am a bit scared of her","posted":true,"at":"2026-11-25T21:13","checkin":"2026-11-25T21:13"}
+{"who":"Anh","text":"She knows.","posted":true,"at":"2026-11-25T21:14","checkin":"2026-11-25T21:14"}
+{"who":"Anh","text":"Did the lighthouse place reply to your email?","posted":true,"at":"2026-11-25T21:32","checkin":"2026-11-25T21:32"}
+{"who":"Ben","text":"yes. they say if they cancel we get the full deposit back. in writing","posted":true,"at":"2026-11-25T21:40","checkin":"2026-11-25T21:40"}
+{"who":"Ben","text":"so that was ur question and i got it","posted":true,"at":"2026-11-25T21:40","checkin":"2026-11-25T21:40"}
+{"who":"Ben","text":"ok im on the couch with the footy on mute. ready when u are","posted":true,"at":"2026-11-25T21:41","checkin":"2026-11-25T21:41"}
+{"who":"Anh","text":"Good. Call me on video so I can see the screen while you pay.","posted":true,"at":"2026-11-25T21:44","checkin":"2026-11-25T21:44"}
+{"who":"Ben","text":"video? ur not even going to trust me with the card form","posted":true,"at":"2026-11-25T21:45","checkin":"2026-11-25T21:45"}
+{"who":"Ben","text":"fine 🙃","posted":true,"at":"2026-11-25T21:45","checkin":"2026-11-25T21:45"}
+{"who":"Anh","text":"Done. Deposit paid, confirmation in my inbox. Miso is now sitting on my keyboard, so I'm going to bed before he sends an invoice to a client.","posted":true,"at":"2026-11-25T22:20","checkin":"2026-11-25T22:20"}
+{"who":"Ben","text":"ok ur the boss. night","posted":true,"at":"2026-11-25T22:21","checkin":"2026-11-25T22:21"}
+{"who":"Ben","text":"ur allowed to say ur proud of me","posted":true,"at":"2026-11-25T22:22","checkin":"2026-11-25T22:22"}
+{"who":"Anh","text":"I'm proud of you for paying a deposit on the phone. Don't get used to it.","posted":true,"at":"2026-11-25T22:40","checkin":"2026-11-25T22:40"}
+{"who":"Ben","text":"😌 night","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Anh","text":"Night.","posted":true,"at":"2026-11-25T22:58","checkin":"2026-11-25T22:58"}

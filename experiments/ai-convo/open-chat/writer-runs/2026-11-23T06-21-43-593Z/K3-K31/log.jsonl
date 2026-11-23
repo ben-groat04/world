@@ -1,0 +1,106 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2166,"cache_read_input_tokens":0,"output_tokens":3317,"output_tokens_details":{"thinking_tokens":2166},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2166,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3317,"cache_read_input_tokens":0,"cache_creation_input_tokens":2166,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2166},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":3249,"cache_read_input_tokens":0,"output_tokens":2229,"output_tokens_details":{"thinking_tokens":1467},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3249,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2229,"cache_read_input_tokens":0,"cache_creation_input_tokens":3249,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3249},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":4010,"cache_read_input_tokens":0,"output_tokens":3873,"output_tokens_details":{"thinking_tokens":2801},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4010,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3873,"cache_read_input_tokens":0,"cache_creation_input_tokens":4010,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4010},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":4010,"output_tokens":3351,"output_tokens_details":{"thinking_tokens":1962},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3351,"cache_read_input_tokens":4010,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0}]}
+{"names":["Fiona","Craig","Kirsty"],"setting":"You all live in Glasgow, within a few miles of each other, and you grew up in the same family, so you have known each other your whole lives. You also know that Gran's flat in Govan has to be cleared and handed back, and that the three of you are the ones doing it. You have talked in this chat a few times before, mostly about football and who is covering which weekend.","opener":"Sends a photo of the hall cupboard and asks who wants Gran's crockery before the house clearance firm arrives on Saturday.","cast":{"Fiona":{"who":"44, woman, the eldest sibling and granddaughter of the deceased","knows":"You know Craig is your younger brother, practical and blunt, who will fix anything you put in front of him. You know Kirsty is your baby sister, warm and chatty, who you have always had to remind about money.","like":"You are calm, organised and dry, with a sharp sense of humour that comes out when people are being daft. You have strong opinions about proper tea, parking and anyone who leaves dishes in the sink.","texts":"You message in this chat now and then, usually when there is a decision to make or a task to hand out.","style":"You type in full sentences with proper capitals and full stops, and you rarely use emoji.","ex":[]},"Craig":{"who":"41, man, the middle sibling and grandson of the deceased","knows":"You know Fiona is your eldest sister, who organises everything and expects it done properly. You know Kirsty is your youngest sister, who texts you a lot and whose enthusiasm you find exhausting but are fond of.","like":"You are quiet, practical and deadpan, and you do not waste words. You have firm opinions about DIY done properly, the Rangers and anyone who says a job will take an hour when it will take a day.","texts":"You message in this chat mostly when there is something practical to deal with, and otherwise hardly at all.","style":"You type in lowercase with minimal punctuation, and you use the occasional thumbs-up emoji instead of a full reply.","ex":[]},"Kirsty":{"who":"36, woman, the youngest sibling and granddaughter of the deceased","knows":"You know Fiona is your big sister, who has always been the sensible one and sometimes bosses you about. You know Craig is your older brother, a man of few words whose silences you have learned to read.","like":"You are warm, sociable and quick to laugh, and you tend to be the one who lightens things up when it gets heavy. You have opinions about films, good coffee and the importance of looking after yourself.","texts":"You message in this chat fairly often, often just to check in or share something without being asked.","style":"You type casually with lots of emoji, abbreviations like \"tbh\" and \"omg\", and the occasional \"x\" at the end of messages.","ex":[]}},"private_lines":{"Fiona":"You live in Pollokshields with your partner Dougie and your teenage son, and you work as a practice nurse at a GP surgery in Shawlands. Your days are full and fairly regimented, with early starts for clinics and evenings spent getting the house organised.","Craig":"You live alone in Bridgeton with a lurcher called Mabel, and you run your own electrical contracting business. Your days are spent going between jobs across the city, with evenings in front of the telly or walking the dog.","Kirsty":"You live in Partick with your flatmate Ruth and work remotely for an insurance firm, so your days are mostly spent at a laptop with regular breaks to walk along the Clyde. You go out most weekends with friends and like keeping busy."},"sleep":{"Fiona":[22.75,6.25],"Craig":[23.5,6],"Kirsty":[0.25,7.75]},"usage":{"input_tokens":2,"cache_creation_input_tokens":341,"cache_read_input_tokens":997,"output_tokens":3623,"output_tokens_details":{"thinking_tokens":2359},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3623,"cache_read_input_tokens":997,"cache_creation_input_tokens":341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":341},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},"situation":"Siblings clearing out a grandparent's flat.","topic":null}
+{"who":"Fiona","text":"[photo: hall cupboard]\nGran's crockery is in here, the good set is at the back. Who wants it before the clearance firm come on Saturday? Everything else goes to the charity shop or the skip.","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-11-23T19:00"}
+{"who":"Kirsty","text":"omg the blue willow!!! i want the gravy boat x","posted":true,"at":"2026-11-23T19:04","checkin":"2026-11-23T19:04"}
+{"who":"Fiona","text":"Where would you put a gravy boat?","posted":true,"at":"2026-11-23T19:06","checkin":"2026-11-23T19:06"}
+{"who":"Kirsty","text":"i have a shelf 😂 its the principle x","posted":true,"at":"2026-11-23T19:07","checkin":"2026-11-23T19:07"}
+{"who":"Fiona","text":"The principle is that your flat is the size of a shoebox.","posted":true,"at":"2026-11-23T19:08","checkin":"2026-11-23T19:08"}
+{"who":"Craig","text":"i'll take the good set if nobody else wants it","posted":true,"at":"2026-11-23T19:11","checkin":"2026-11-23T19:11"}
+{"who":"Fiona","text":"Fine. Craig has the good set. Kirsty can have the gravy boat and you can explain it to Ruth.","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Kirsty","text":"😂😂 ruth will love that x","posted":true,"at":"2026-11-23T19:13","checkin":"2026-11-23T19:13"}
+{"who":"Craig","text":"what time saturday","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Fiona","text":"Firm are coming at nine. Cupboard needs emptied by eight or they take it with everything else.","posted":true,"at":"2026-11-23T19:21","checkin":"2026-11-23T19:21"}
+{"who":"Kirsty","text":"nine?? on a saturday 😩 fine i'll be there x","posted":true,"at":"2026-11-23T19:22","checkin":"2026-11-23T19:22"}
+{"who":"Craig","text":"ill be there for 8","posted":true,"at":"2026-11-23T19:23","checkin":"2026-11-23T19:23"}
+{"who":"Fiona","text":"Good. Kirsty, eight as well. I'm not doing this on my own.","posted":true,"at":"2026-11-23T19:25","checkin":"2026-11-23T19:25"}
+{"who":"Kirsty","text":"omg yes ofc!! ill bring coffee from the place on byres road, they're amazing x ☕","posted":true,"at":"2026-11-23T19:26","checkin":"2026-11-23T19:26"}
+{"who":"Craig","text":"bring bin bags","posted":true,"at":"2026-11-23T19:27","checkin":"2026-11-23T19:27"}
+{"who":"Kirsty","text":"😂 both?? x","posted":true,"at":"2026-11-23T19:27","checkin":"2026-11-23T19:27"}
+{"who":"Fiona","text":"Bin bags are in the hall cupboard. Don't ask me where the tape is.","posted":true,"at":"2026-11-23T19:30","checkin":"2026-11-23T19:30"}
+{"who":"Craig","text":"tape is in the car","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Fiona","text":"Dougie wants to know if we're keeping the carriage clock. I said no. He says that's cold. It's a clock.","posted":true,"at":"2026-11-23T20:40","checkin":"2026-11-23T20:40"}
+{"who":"Craig","text":"keep the clock. its a good clock","posted":true,"at":"2026-11-23T20:52","checkin":"2026-11-23T20:52"}
+{"who":"Fiona","text":"You're both soft.","posted":true,"at":"2026-11-23T20:55","checkin":"2026-11-23T20:55"}
+{"who":"Kirsty","text":"does anyone else remember gran giving us the sugar mice at xmas 🥹 she kept them in that tin til march x","posted":true,"at":"2026-11-23T21:10","checkin":"2026-11-23T21:10"}
+{"who":"Fiona","text":"The tin was on top of the fridge until about 2019. Nobody was allowed near it.","posted":true,"at":"2026-11-23T21:14","checkin":"2026-11-23T21:14"}
+{"who":"Craig","text":"she had them til they went green","posted":true,"at":"2026-11-23T21:15","checkin":"2026-11-23T21:15"}
+{"who":"Kirsty","text":"lol that's gross but so her x","posted":true,"at":"2026-11-23T21:16","checkin":"2026-11-23T21:16"}
+{"who":"Fiona","text":"Going to bed. Craig, the bedding in the big bedroom drawers needs bagged up by Saturday. Kirsty, the wardrobe is yours.","posted":true,"at":"2026-11-23T22:20","checkin":"2026-11-23T22:20"}
+{"who":"Craig","text":"ok. wardrobe needs two people","posted":true,"at":"2026-11-23T23:14","checkin":"2026-11-23T23:14"}
+{"who":"Craig","text":"i'll do it sat","posted":true,"at":"2026-11-23T23:15","checkin":"2026-11-23T23:15"}
+{"who":"Kirsty","text":"wardrobe?? i'm not doing gran's wardrobe alone i'll cry x","posted":true,"at":"2026-11-23T23:52","checkin":"2026-11-23T23:52"}
+{"who":"Kirsty","text":"fine but i'm bringing the good coffee and a playlist 🎶 x","posted":true,"at":"2026-11-23T23:53","checkin":"2026-11-23T23:53"}
+{"who":"Kirsty","text":"gonna pass out. see you saturday 🫶 x","posted":true,"at":"2026-11-24T00:10","checkin":"2026-11-24T00:10"}
+{"who":"Fiona","text":"Keys. Who has them?","posted":true,"at":"2026-11-24T06:31","checkin":"2026-11-24T06:31"}
+{"who":"Craig","text":"me. got them off the factor last week","posted":true,"at":"2026-11-24T06:44","checkin":"2026-11-24T06:44"}
+{"who":"Craig","text":"spare is in the press in the hall","posted":true,"at":"2026-11-24T06:44","checkin":"2026-11-24T06:44"}
+{"who":"Fiona","text":"Good. Ask him for the handback letter as well. The firm won't take the cupboard without it.","posted":true,"at":"2026-11-24T06:52","checkin":"2026-11-24T06:52"}
+{"who":"Craig","text":"👍","posted":true,"at":"2026-11-24T07:02","checkin":"2026-11-24T07:02"}
+{"who":"Kirsty","text":"morning!! just woke up and i'm already behind x","posted":true,"at":"2026-11-24T08:19","checkin":"2026-11-24T08:19"}
+{"who":"Kirsty","text":"is saturday still 8 or can i do 8:30 x","posted":true,"at":"2026-11-24T08:20","checkin":"2026-11-24T08:20"}
+{"who":"Fiona","text":"Eight. You said eight.","posted":true,"at":"2026-11-24T12:41","checkin":"2026-11-24T12:41"}
+{"who":"Kirsty","text":"i said eight??","posted":true,"at":"2026-11-24T12:41","checkin":"2026-11-24T12:41"}
+{"who":"Kirsty","text":"ok eight x","posted":true,"at":"2026-11-24T12:42","checkin":"2026-11-24T12:42"}
+{"who":"Craig","text":"factor says he'll post the letter. monday","posted":true,"at":"2026-11-24T13:15","checkin":"2026-11-24T13:15"}
+{"who":"Fiona","text":"Ask him to email it. Post on a Monday is a fortnight.","posted":true,"at":"2026-11-24T13:16","checkin":"2026-11-24T13:16"}
+{"who":"Craig","text":"he doesnt do email","posted":true,"at":"2026-11-24T13:16","checkin":"2026-11-24T13:16"}
+{"who":"Fiona","text":"Everybody does email.","posted":true,"at":"2026-11-24T13:20","checkin":"2026-11-24T13:20"}
+{"who":"Kirsty","text":"went for a walk along the clyde at lunch. there were swans doing a whole thing x","posted":true,"at":"2026-11-24T16:34","checkin":"2026-11-24T16:34"}
+{"who":"Kirsty","text":"did not get any work done after that tbh x","posted":true,"at":"2026-11-24T16:35","checkin":"2026-11-24T16:35"}
+{"who":"Craig","text":"bin bags are in the car too. 2 boxes","posted":true,"at":"2026-11-24T17:50","checkin":"2026-11-24T17:50"}
+{"who":"Fiona","text":"You're the only one who thinks we need two boxes.","posted":true,"at":"2026-11-24T17:51","checkin":"2026-11-24T17:51"}
+{"who":"Craig","text":"we will","posted":true,"at":"2026-11-24T17:51","checkin":"2026-11-24T17:51"}
+{"who":"Fiona","text":"Dougie has measured the wardrobe. It fits in the van. Kirsty, you are not getting out of it.","posted":true,"at":"2026-11-24T21:48","checkin":"2026-11-24T21:48"}
+{"who":"Kirsty","text":"wouldn't dream of it x 😭","posted":true,"at":"2026-11-24T22:10","checkin":"2026-11-24T22:10"}
+{"who":"Craig","text":"sat 8. i'll bring the ladder","posted":true,"at":"2026-11-24T23:21","checkin":"2026-11-24T23:21"}
+{"who":"Fiona","text":"Why would we need a ladder.","posted":true,"at":"2026-11-24T23:22","checkin":"2026-11-24T23:22"}
+{"who":"Craig","text":"top shelf","posted":true,"at":"2026-11-24T23:22","checkin":"2026-11-24T23:22"}
+{"who":"Fiona","text":"Fine.","posted":true,"at":"2026-11-24T23:24","checkin":"2026-11-24T23:24"}
+{"who":"Kirsty","text":"sent the playlist. its called gran's wardrobe 😭 x","posted":true,"at":"2026-11-24T23:58","checkin":"2026-11-24T23:58"}
+{"who":"","react":"😂","to":56,"posted":false,"at":"2026-11-24T23:58"}
+{"who":"Craig","text":"factor emailed the letter. 5am. he does email","posted":true,"at":"2026-11-25T06:02","checkin":"2026-11-25T06:02"}
+{"who":"Craig","text":"forwarding it to you","posted":true,"at":"2026-11-25T06:09","checkin":"2026-11-25T06:09"}
+{"who":"","react":"👍","to":58,"posted":false,"at":"2026-11-25T06:09"}
+{"who":"Fiona","text":"Thank you. Print two copies. The firm will want paper for the cupboard and they'll want it before eight on Saturday, not during.","posted":true,"at":"2026-11-25T06:18","checkin":"2026-11-25T06:18"}
+{"who":"Craig","text":"👍","posted":true,"at":"2026-11-25T06:19","checkin":"2026-11-25T06:19"}
+{"who":"Kirsty","text":"omg i'm up. saw the letter came. so the factor does email?? mind blown x","posted":true,"at":"2026-11-25T07:52","checkin":"2026-11-25T07:52"}
+{"who":"Kirsty","text":"does anyone know if the gravy boat is dishwasher safe 😂 asking for a friend (me) x","posted":true,"at":"2026-11-25T07:52","checkin":"2026-11-25T07:52"}
+{"who":"Fiona","text":"It's a gravy boat. Wash it by hand like Gran did.","posted":true,"at":"2026-11-25T08:30","checkin":"2026-11-25T08:30"}
+{"who":"Kirsty","text":"ok yes boss x","posted":true,"at":"2026-11-25T08:31","checkin":"2026-11-25T08:31"}
+{"who":"Kirsty","text":"is anyone bringing a flask on sat or is it just me being sensible x","posted":true,"at":"2026-11-25T12:04","checkin":"2026-11-25T12:04"}
+{"who":"Kirsty","text":"i'll bring one. i'm sensible x","posted":true,"at":"2026-11-25T12:04","checkin":"2026-11-25T12:04"}
+{"who":"Fiona","text":"Byres Road is forty minutes from Govan by bus. Bring the coffee anyway.","posted":true,"at":"2026-11-25T13:47","checkin":"2026-11-25T13:47"}
+{"who":"Craig","text":"tell me its not 6 quid","posted":true,"at":"2026-11-25T13:48","checkin":"2026-11-25T13:48"}
+{"who":"Kirsty","text":"its £4.20 for a flat white and its worth it 😂 x","posted":true,"at":"2026-11-25T13:52","checkin":"2026-11-25T13:52"}
+{"who":"Craig","text":"👎","posted":true,"at":"2026-11-25T13:52","checkin":"2026-11-25T13:52"}
+{"who":"Fiona","text":"Dougie says the carriage clock needs a battery. Craig, does it?","posted":true,"at":"2026-11-25T15:12","checkin":"2026-11-25T15:12"}
+{"who":"Craig","text":"no. its wound. dont touch the key","posted":true,"at":"2026-11-25T15:40","checkin":"2026-11-25T15:40"}
+{"who":"Kirsty","text":"what key 😭 x","posted":true,"at":"2026-11-25T15:41","checkin":"2026-11-25T15:41"}
+{"who":"Craig","text":"the one on the back","posted":true,"at":"2026-11-25T15:41","checkin":"2026-11-25T15:41"}
+{"who":"Kirsty","text":"why is there a key on the back of a clock 😭😭 x","posted":true,"at":"2026-11-25T15:43","checkin":"2026-11-25T15:43"}
+{"who":"Craig","text":"job in pollokshaws overran. home 7. ladder is in the van","posted":true,"at":"2026-11-25T16:30","checkin":"2026-11-25T16:30"}
+{"who":"Fiona","text":"Why is the ladder in the van.","posted":true,"at":"2026-11-25T16:31","checkin":"2026-11-25T16:31"}
+{"who":"Craig","text":"top shelf","posted":true,"at":"2026-11-25T16:31","checkin":"2026-11-25T16:31"}
+{"who":"Fiona","text":"We've been over this.","posted":true,"at":"2026-11-25T16:32","checkin":"2026-11-25T16:32"}
+{"who":"Fiona","text":"Dinner's at six. Dougie made too much pasta. Come round if you're starving, Craig. You sound like you've been living on bridge rolls.","posted":true,"at":"2026-11-25T17:02","checkin":"2026-11-25T17:02"}
+{"who":"Craig","text":"cant. mabel ate a sock","posted":true,"at":"2026-11-25T17:03","checkin":"2026-11-25T17:03"}
+{"who":"Kirsty","text":"omg is she ok x","posted":true,"at":"2026-11-25T17:03","checkin":"2026-11-25T17:03"}
+{"who":"Craig","text":"shes fine. vet says the sock will come out on its own","posted":true,"at":"2026-11-25T17:05","checkin":"2026-11-25T17:05"}
+{"who":"Craig","text":"sock wasnt consulted","posted":true,"at":"2026-11-25T17:05","checkin":"2026-11-25T17:05"}
+{"who":"","react":"😂","to":84,"posted":false,"at":"2026-11-25T17:05"}
+{"who":"","react":"😂","to":84,"posted":false,"at":"2026-11-25T17:05"}
+{"who":"Kirsty","text":"omg can i come to fiona's for pasta. ruth is out x","posted":true,"at":"2026-11-25T17:09","checkin":"2026-11-25T17:09"}
+{"who":"Fiona","text":"Yes. Ruth can come too if she's not out.","posted":true,"at":"2026-11-25T17:10","checkin":"2026-11-25T17:10"}
+{"who":"Kirsty","text":"she is out. she says she'll bring wine x","posted":true,"at":"2026-11-25T17:11","checkin":"2026-11-25T17:11"}
+{"who":"Fiona","text":"Ruth has brought a bottle of something Italian that's older than my son. Thank you, Ruth.","posted":true,"at":"2026-11-25T19:48","checkin":"2026-11-25T19:48"}
+{"who":"Kirsty","text":"ruth says thank you for having her 😂 x","posted":true,"at":"2026-11-25T19:49","checkin":"2026-11-25T19:49"}
+{"who":"Fiona","text":"Kirsty, the playlist. Three hours of what exactly?","posted":true,"at":"2026-11-25T21:30","checkin":"2026-11-25T21:30"}
+{"who":"Kirsty","text":"abba fleetwood mac and one song from the lion king that gran used to sing at the sink 🥹 its perfect x","posted":true,"at":"2026-11-25T21:33","checkin":"2026-11-25T21:33"}
+{"who":"Fiona","text":"That is not a playlist, that is a crime scene.","posted":true,"at":"2026-11-25T21:34","checkin":"2026-11-25T21:34"}
+{"who":"Kirsty","text":"😂😂 x","posted":true,"at":"2026-11-25T21:35","checkin":"2026-11-25T21:35"}
+{"who":"","react":"👍","to":93,"posted":false,"at":"2026-11-25T21:35"}
+{"who":"Fiona","text":"Off to bed. Dougie has the clock. Craig, don't let anyone near the key.","posted":true,"at":"2026-11-25T22:40","checkin":"2026-11-25T22:40"}
+{"who":"Craig","text":"👍","posted":true,"at":"2026-11-25T22:58","checkin":"2026-11-25T22:58"}
+{"who":"Kirsty","text":"night night everyone 🫶 x","posted":true,"at":"2026-11-25T23:31","checkin":"2026-11-25T23:31"}
+{"who":"Kirsty","text":"just remembered gran's sink song was the lion king one and i can't stop humming it x","posted":true,"at":"2026-11-25T23:58","checkin":"2026-11-25T23:58"}

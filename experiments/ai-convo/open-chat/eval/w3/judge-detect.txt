@@ -1,0 +1,1 @@
+After scoring the file, answer one more question: how likely is it, from 0 to 100, that this chat is between real people texting? Give the number as the last thing you write for that file.

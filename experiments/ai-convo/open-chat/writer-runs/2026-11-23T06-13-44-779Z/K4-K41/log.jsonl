@@ -1,0 +1,108 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1758,"cache_read_input_tokens":0,"output_tokens":2474,"output_tokens_details":{"thinking_tokens":1532},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1758,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2474,"cache_read_input_tokens":0,"cache_creation_input_tokens":1758,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1758},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2653,"cache_read_input_tokens":0,"output_tokens":907,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2653,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":907,"cache_read_input_tokens":0,"cache_creation_input_tokens":2653,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2653},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3559,"cache_read_input_tokens":0,"output_tokens":2799,"output_tokens_details":{"thinking_tokens":1628},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3559,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2799,"cache_read_input_tokens":0,"cache_creation_input_tokens":3559,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3559},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sophie","Tom"],"setting":"You both live in a rented terraced house in Headingley, Leeds, and have shared it for two years. You met through mutual friends, have been together for three years, and have met each other's families. You know each other's habits well, including who hogs the duvet, who panics about money, and who still hasn't booked the dentist. This trip is the first holiday you've planned as a couple, and neither of you has been abroad together before.","opener":"Send Tom a screenshot of two flights to Lisbon with a question mark.","cast":{"Sophie":{"who":"31, woman, the partner who started the trip planning","knows":"You know Tom is your partner of three years, a kind and steady man who makes you laugh when you're stressed and whose family you like more than you expected.","like":"You're organised, a bit anxious about cost and logistics, and quick to tease Tom when he is slow to decide something. You have firm opinions about good coffee, bad hotels, and any plan that involves a long queue.","texts":"You message Tom now and then without being asked, mostly when you've spotted something useful or funny during the day.","style":"You type in ordinary sentences with standard capitals and punctuation, and use the occasional emoji but not many.","ex":[]},"Tom":{"who":"33, man, the partner who is more relaxed about planning","knows":"You know Sophie is your partner of three years, sharp, organised, and the person who will hold you to a deadline you'd forgotten you set.","like":"You're easygoing, a bit dry, and happy to go with the flow until someone asks you to commit to a date. You have strong views about football, pubs with good beer, and people who talk through films.","texts":"You reply to Sophie quickly but seldom start a conversation with her unless something needs sorting.","style":"You type in short lines with lowercase now and then, and often leave out punctuation when you're busy.","ex":[]}},"private_lines":{"Sophie":"You live in Headingley with Tom and work as a primary school teacher. Your days start early with a quick breakfast and the walk to school, and you spend most of the day with children before marking and lesson planning eat into your evenings. You usually cook together on weeknights and watch something on the sofa before bed.","Tom":"You live in Headingley with Sophie and work as a civil engineer on a site across the city, so you leave the house early and come back in the evening. Some weeks you work from the office a couple of days, and you usually go to the gym or play five-a-side on weeknights."},"sleep":{"Sophie":[22.75,6.25],"Tom":[23.25,7]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1292,"cache_read_input_tokens":0,"output_tokens":1847,"output_tokens_details":{"thinking_tokens":984},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1292,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1847,"cache_read_input_tokens":0,"cache_creation_input_tokens":1292,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1292},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"A couple planning their first trip together.","topic":null}
+{"who":"Sophie","text":"[screenshot]\nthese two. first one's 06:40 direct, second is 09:10 direct, £30 more. which?","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Tom","text":"the 6.40 is a crime","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Sophie","text":"that's not an answer","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Tom","text":"ok the 9.10","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Sophie","text":"you said the 6.40 is a crime","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Tom","text":"that was a joke about the time","posted":true,"at":"2026-11-23T19:15","checkin":"2026-11-23T19:15"}
+{"who":"Sophie","text":"Ruby lost a tooth in the book corner today and asked me to tell her mum it was \"for the tooth fairy's cousin\"","posted":true,"at":"2026-11-23T19:19","checkin":"2026-11-23T19:19"}
+{"who":"Tom","text":"that's a very specific cover story","posted":true,"at":"2026-11-23T19:24","checkin":"2026-11-23T19:24"}
+{"who":"Sophie","text":"she's seven. she's been thinking about it for a week","posted":true,"at":"2026-11-23T19:24","checkin":"2026-11-23T19:24"}
+{"who":"","react":"😂","to":8,"posted":false,"at":"2026-11-23T19:24"}
+{"who":"Tom","text":"so the 6.40 means taxi at 4.45","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Sophie","text":"it means taxi at 4.45, yes, and you're paying for it","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Tom","text":"fine","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Tom","text":"can i sleep on the plane","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"Sophie","text":"you'll sleep on my shoulder for three hours and then complain about your neck","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Tom","text":"that's the 9.10 then","posted":true,"at":"2026-11-23T19:44","checkin":"2026-11-23T19:44"}
+{"who":"Sophie","text":"Tom","posted":true,"at":"2026-11-23T19:45","checkin":"2026-11-23T19:45"}
+{"who":"Tom","text":"6.40 is fine","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Tom","text":"or the other one. whichever one has the window","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Sophie","text":"I'm not picking the window one. pick the flight","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Tom","text":"6.40. book it","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"Sophie","text":"booking. you're doing the taxi app and the alarm","posted":true,"at":"2026-11-23T21:02","checkin":"2026-11-23T21:02"}
+{"who":"Tom","text":"deal","posted":true,"at":"2026-11-23T21:03","checkin":"2026-11-23T21:03"}
+{"who":"Sophie","text":"also did you ring the dentist","posted":true,"at":"2026-11-23T21:08","checkin":"2026-11-23T21:08"}
+{"who":"Tom","text":"tomorrow","posted":true,"at":"2026-11-23T21:20","checkin":"2026-11-23T21:20"}
+{"who":"Sophie","text":"you said that last week","posted":true,"at":"2026-11-23T21:20","checkin":"2026-11-23T21:20"}
+{"who":"Tom","text":"it's a different tomorrow","posted":true,"at":"2026-11-23T21:21","checkin":"2026-11-23T21:21"}
+{"who":"Tom","text":"5-a-side moved to thursday btw. nick's got a thing","posted":true,"at":"2026-11-23T21:55","checkin":"2026-11-23T21:55"}
+{"who":"Sophie","text":"ok. you're cooking thursday then","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Tom","text":"i cooked tuesday","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Sophie","text":"you did toast tuesday","posted":true,"at":"2026-11-23T22:11","checkin":"2026-11-23T22:11"}
+{"who":"Tom","text":"toast is a meal","posted":true,"at":"2026-11-23T22:11","checkin":"2026-11-23T22:11"}
+{"who":"Sophie","text":"booking confirmation's in the email if you want it. going to bed, 4am wakeup is not a joke","posted":true,"at":"2026-11-23T22:38","checkin":"2026-11-23T22:38"}
+{"who":"Tom","text":"night. 4.45 taxi, i've set two alarms","posted":true,"at":"2026-11-23T22:52","checkin":"2026-11-23T22:52"}
+{"who":"Tom","text":"morning. you up","posted":true,"at":"2026-11-24T07:02","checkin":"2026-11-24T07:02"}
+{"who":"Sophie","text":"I'm up. I've been up since 6, Ruby's dad hasn't stopped emailing about the trip","posted":true,"at":"2026-11-24T07:06","checkin":"2026-11-24T07:06"}
+{"who":"Sophie","text":"which trip. the school one. don't ask","posted":true,"at":"2026-11-24T07:06","checkin":"2026-11-24T07:06"}
+{"who":"Tom","text":"ha","posted":true,"at":"2026-11-24T07:08","checkin":"2026-11-24T07:08"}
+{"who":"Tom","text":"ok i'm out the door in 10. kettle's on if you want one","posted":true,"at":"2026-11-24T07:08","checkin":"2026-11-24T07:08"}
+{"who":"Sophie","text":"I'm not making it, I'll have the one at school","posted":true,"at":"2026-11-24T07:09","checkin":"2026-11-24T07:09"}
+{"who":"Sophie","text":"Dentist called me back, don't ask how. Thursday 8am. I've said yes on your behalf","posted":true,"at":"2026-11-24T12:33","checkin":"2026-11-24T12:33"}
+{"who":"Tom","text":"thursday is 5 a side","posted":true,"at":"2026-11-24T12:51","checkin":"2026-11-24T12:51"}
+{"who":"Tom","text":"8am is 8am though, it's fine, i'll go before 5 a side","posted":true,"at":"2026-11-24T12:51","checkin":"2026-11-24T12:51"}
+{"who":"Sophie","text":"you'll go before work, it's a 15 min appointment","posted":true,"at":"2026-11-24T12:52","checkin":"2026-11-24T12:52"}
+{"who":"Tom","text":"fine. put it in my calendar","posted":true,"at":"2026-11-24T12:52","checkin":"2026-11-24T12:52"}
+{"who":"Sophie","text":"already did","posted":true,"at":"2026-11-24T12:53","checkin":"2026-11-24T12:53"}
+{"who":"Tom","text":"on the site now. they've moved the crane and nobody told me. been stood in the rain for an hour","posted":true,"at":"2026-11-24T17:40","checkin":"2026-11-24T17:40"}
+{"who":"Sophie","text":"that's miserable. did you get the crane sorted","posted":true,"at":"2026-11-24T17:41","checkin":"2026-11-24T17:41"}
+{"who":"Tom","text":"no. they've said tomorrow","posted":true,"at":"2026-11-24T17:44","checkin":"2026-11-24T17:44"}
+{"who":"Tom","text":"i'm getting a bus home. don't cook for me","posted":true,"at":"2026-11-24T17:44","checkin":"2026-11-24T17:44"}
+{"who":"Sophie","text":"I wasn't going to. you're making toast","posted":true,"at":"2026-11-24T17:45","checkin":"2026-11-24T17:45"}
+{"who":"Tom","text":"toast is a meal","posted":true,"at":"2026-11-24T17:45","checkin":"2026-11-24T17:45"}
+{"who":"Sophie","text":"Ruby's left her reading book here, the one with the cat. I'm doing it on the bus tomorrow","posted":true,"at":"2026-11-24T18:20","checkin":"2026-11-24T18:20"}
+{"who":"Tom","text":"you've got a bus?","posted":true,"at":"2026-11-24T18:21","checkin":"2026-11-24T18:21"}
+{"who":"Sophie","text":"I've got a bus. I'm not a taxi woman like some","posted":true,"at":"2026-11-24T18:21","checkin":"2026-11-24T18:21"}
+{"who":"Tom","text":"bus was packed. got a seat next to a man eating a whole pasty","posted":true,"at":"2026-11-24T21:14","checkin":"2026-11-24T21:14"}
+{"who":"Sophie","text":"you could have moved","posted":true,"at":"2026-11-24T21:15","checkin":"2026-11-24T21:15"}
+{"who":"Tom","text":"i was too tired to be rude","posted":true,"at":"2026-11-24T21:15","checkin":"2026-11-24T21:15"}
+{"who":"Sophie","text":"Passport's in the drawer by the front door if you need it for anything. Just saying before the 4.45 thing","posted":true,"at":"2026-11-24T22:30","checkin":"2026-11-24T22:30"}
+{"who":"Tom","text":"i know where the passport is","posted":true,"at":"2026-11-24T22:31","checkin":"2026-11-24T22:31"}
+{"who":"Sophie","text":"you didn't know where the dentist letter was","posted":true,"at":"2026-11-24T22:31","checkin":"2026-11-24T22:31"}
+{"who":"Tom","text":"that was a different letter","posted":true,"at":"2026-11-24T22:33","checkin":"2026-11-24T22:33"}
+{"who":"Tom","text":"night soph","posted":true,"at":"2026-11-24T22:50","checkin":"2026-11-24T22:50"}
+{"who":"Sophie","text":"night. 4.45. I mean it","posted":true,"at":"2026-11-24T22:51","checkin":"2026-11-24T22:51"}
+{"who":"Sophie","text":"did you actually get up or did you just turn the first alarm off","posted":true,"at":"2026-11-25T06:52","checkin":"2026-11-25T06:52"}
+{"who":"Tom","text":"got up","posted":true,"at":"2026-11-25T07:04","checkin":"2026-11-25T07:04"}
+{"who":"Tom","text":"mostly","posted":true,"at":"2026-11-25T07:04","checkin":"2026-11-25T07:04"}
+{"who":"Sophie","text":"mostly is not a time","posted":true,"at":"2026-11-25T07:05","checkin":"2026-11-25T07:05"}
+{"who":"Tom","text":"on the bus. the good one this time. nobody eating anything","posted":true,"at":"2026-11-25T07:31","checkin":"2026-11-25T07:31"}
+{"who":"Sophie","text":"good","posted":true,"at":"2026-11-25T07:32","checkin":"2026-11-25T07:32"}
+{"who":"Tom","text":"crane's back. they're saying it's been moved back to where it was which is what i said yesterday","posted":true,"at":"2026-11-25T07:58","checkin":"2026-11-25T07:58"}
+{"who":"Sophie","text":"did you say it","posted":true,"at":"2026-11-25T08:00","checkin":"2026-11-25T08:00"}
+{"who":"Tom","text":"i said it to a man in a hi vis. he didn't write it down","posted":true,"at":"2026-11-25T08:01","checkin":"2026-11-25T08:01"}
+{"who":"Sophie","text":"that's the whole job isn't it","posted":true,"at":"2026-11-25T08:01","checkin":"2026-11-25T08:01"}
+{"who":"Sophie","text":"Ruby's cat book is now in my bag with a sticker on it saying \"CLASS 2 CAT CLUB\". she's very proud","posted":true,"at":"2026-11-25T12:15","checkin":"2026-11-25T12:15"}
+{"who":"Tom","text":"is that the one with the cat who doesn't like anyone","posted":true,"at":"2026-11-25T12:16","checkin":"2026-11-25T12:16"}
+{"who":"Sophie","text":"that's the one. she says he's like her uncle","posted":true,"at":"2026-11-25T12:16","checkin":"2026-11-25T12:16"}
+{"who":"Tom","text":"fair","posted":true,"at":"2026-11-25T12:20","checkin":"2026-11-25T12:20"}
+{"who":"Tom","text":"out of site. finished early for once. might go to the gym before it shuts","posted":true,"at":"2026-11-25T17:12","checkin":"2026-11-25T17:12"}
+{"who":"Sophie","text":"you could go to the gym or you could come home and be useful","posted":true,"at":"2026-11-25T17:13","checkin":"2026-11-25T17:13"}
+{"who":"Tom","text":"i'm going to the gym to be useful","posted":true,"at":"2026-11-25T17:13","checkin":"2026-11-25T17:13"}
+{"who":"Sophie","text":"Tom","posted":true,"at":"2026-11-25T17:14","checkin":"2026-11-25T17:14"}
+{"who":"Tom","text":"joke. home by 7. will do the bins","posted":true,"at":"2026-11-25T17:31","checkin":"2026-11-25T17:31"}
+{"who":"Sophie","text":"bins are Thursday","posted":true,"at":"2026-11-25T17:31","checkin":"2026-11-25T17:31"}
+{"who":"Tom","text":"i'll do them thursday then","posted":true,"at":"2026-11-25T17:32","checkin":"2026-11-25T17:32"}
+{"who":"Sophie","text":"you'll do them before 5 a side and before the dentist, I'm writing it on the fridge","posted":true,"at":"2026-11-25T17:33","checkin":"2026-11-25T17:33"}
+{"who":"Tom","text":"the fridge is full","posted":true,"at":"2026-11-25T17:33","checkin":"2026-11-25T17:33"}
+{"who":"Sophie","text":"Mrs Ahmed's been on the phone about the field trip again. I said yes to the bus, no to the wellies. she wants to know if the wellies are optional. I said they're optional the way the sun is optional in Leeds","posted":true,"at":"2026-11-25T19:48","checkin":"2026-11-25T19:48"}
+{"who":"Tom","text":"good line","posted":true,"at":"2026-11-25T19:49","checkin":"2026-11-25T19:49"}
+{"who":"Tom","text":"you should say that to her","posted":true,"at":"2026-11-25T19:49","checkin":"2026-11-25T19:49"}
+{"who":"Sophie","text":"I did","posted":true,"at":"2026-11-25T19:50","checkin":"2026-11-25T19:50"}
+{"who":"","react":"😂","to":89,"posted":false,"at":"2026-11-25T19:50"}
+{"who":"Tom","text":"home. got chips","posted":true,"at":"2026-11-25T20:15","checkin":"2026-11-25T20:15"}
+{"who":"Sophie","text":"I'm not eating chips in front of you","posted":true,"at":"2026-11-25T20:16","checkin":"2026-11-25T20:16"}
+{"who":"Tom","text":"you can eat them in front of me, that's the deal","posted":true,"at":"2026-11-25T20:16","checkin":"2026-11-25T20:16"}
+{"who":"Sophie","text":"what's the deal","posted":true,"at":"2026-11-25T20:17","checkin":"2026-11-25T20:17"}
+{"who":"Tom","text":"i get a chip and you don't mention the alarm once tonight","posted":true,"at":"2026-11-25T20:19","checkin":"2026-11-25T20:19"}
+{"who":"Sophie","text":"ok. one chip","posted":true,"at":"2026-11-25T20:20","checkin":"2026-11-25T20:20"}
+{"who":"Sophie","text":"ok ok I'm on the sofa, bring them","posted":true,"at":"2026-11-25T20:20","checkin":"2026-11-25T20:20"}
+{"who":"Sophie","text":"tv's off. you fell asleep at the end of that thing again","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Tom","text":"didn't","posted":true,"at":"2026-11-25T22:42","checkin":"2026-11-25T22:42"}
+{"who":"Tom","text":"the man was shouting about a boat","posted":true,"at":"2026-11-25T22:42","checkin":"2026-11-25T22:42"}
+{"who":"Sophie","text":"it was a documentary about bridges","posted":true,"at":"2026-11-25T22:43","checkin":"2026-11-25T22:43"}
+{"who":"Tom","text":"i know. it was a boat bridge","posted":true,"at":"2026-11-25T22:44","checkin":"2026-11-25T22:44"}
+{"who":"Sophie","text":"night Tom","posted":true,"at":"2026-11-25T22:45","checkin":"2026-11-25T22:45"}
+{"who":"Tom","text":"night soph. 4.45","posted":true,"at":"2026-11-25T22:46","checkin":"2026-11-25T22:46"}

@@ -1,0 +1,118 @@
+{"writer":"w2","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2261,"cache_read_input_tokens":0,"output_tokens":4310,"output_tokens_details":{"thinking_tokens":3118},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2261,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4310,"cache_read_input_tokens":0,"cache_creation_input_tokens":2261,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2261},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":3392,"cache_read_input_tokens":0,"output_tokens":5589,"output_tokens_details":{"thinking_tokens":4448},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3392,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5589,"cache_read_input_tokens":0,"cache_creation_input_tokens":3392,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3392},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},{"input_tokens":2,"cache_creation_input_tokens":4532,"cache_read_input_tokens":0,"output_tokens":7929,"output_tokens_details":{"thinking_tokens":6174},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4532,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":7929,"cache_read_input_tokens":0,"cache_creation_input_tokens":4532,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4532},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0}]}
+{"names":["Ciara","Conor","Niamh"],"setting":"You three all live in Cork, Ireland, and you are siblings who grew up in the same house in Blackpool. Your grandmother Kathleen lived alone in a second-floor flat in Shandon until she died in September, and the three of you are emptying it before the landlord's deadline at the end of the month. Each of you knows the others well, and you already know the flat's history, the furniture's quirks and which of Nana's things mean something to whom. Last week the group chat was mostly about Conor's dog getting into the bins.","opener":"Asking whether anyone wants Nana's brass clock before the house clearance firm takes the rest on Saturday.","cast":{"Ciara":{"who":"36, woman, the eldest sibling","knows":"You know Conor is your younger brother, and that he is good in a crisis but tends to leave jobs unfinished. You know Niamh is your youngest sibling, who gets emotional about objects and tends to keep everything.","like":"You are organised, practical and quietly dry, and you enjoy a well-run spreadsheet more than most people enjoy a holiday. You have strong opinions about the correct way to pack china and about people who say they will \"sort it\" without a plan.","texts":"You message in the group now and then, usually to set plans or ask a practical question, and you rarely start a chat without a reason.","style":"You use full sentences with proper capitals and full stops, rarely use emoji, and avoid abbreviations.","ex":[]},"Conor":{"who":"33, man, the middle sibling","knows":"You know Ciara is your eldest sister, who is organised and tends to take charge of plans. You know Niamh is your youngest sister, who is soft-hearted and gets upset over small things.","like":"You are easygoing and quick to laugh, with a dry, teasing sense of humour that sometimes lands badly on Niamh. You have strong opinions about football, bad builders and anyone who overcomplicates a simple job.","texts":"You mostly read the group and only post now and then, usually a photo or a quick joke rather than something that needs an answer.","style":"You type in lowercase, skip most punctuation and use the odd laughing emoji.","ex":[]},"Niamh":{"who":"29, woman, the youngest sibling","knows":"You know Ciara is your eldest sister, who is practical and can be bossy in a helpful way. You know Conor is your brother, who jokes his way through hard moments and whose dog is a menace.","like":"You are warm, sentimental and quick to tear up, but you are also funny in a self-aware way. You have strong opinions about keeping things that matter and about what counts as junk.","texts":"You message in the group quite often, sending photos, memories and questions, and you usually respond within minutes.","style":"You write in proper sentences with capitals, use exclamation marks and plenty of emoji, and sometimes type \"x\" at the end of messages.","ex":[]}},"private_lines":{"Ciara":"You live in a rented apartment in Cork city centre with your partner Mark, who is a secondary school history teacher. You work as a hospital pharmacist on weekday shifts that start at eight in the morning. Your days are regular: a quick run before work, a long dinner at home, and bed early.","Conor":"You live alone in a small terraced house in Douglas, on the south side of Cork, with your dog Biscuit, who you have been trying to train out of stealing bin bags. You work as a self-employed electrician, so your hours change with the jobs you get, and you usually start early and finish by mid-afternoon. Your evenings are for the telly, a pint with mates and walking the dog.","Niamh":"You live in a shared house in Wilton, Cork, with two housemates, and you work as a primary school teacher at a school near the city. Your mornings are busy with the school run and your evenings are spent marking, cooking or watching shows on the sofa. You are often up late with a cup of tea and your phone."},"sleep":{"Ciara":[22.75,6.25],"Conor":[23,5.75],"Niamh":[23.75,7.25]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1338,"cache_read_input_tokens":0,"output_tokens":3368,"output_tokens_details":{"thinking_tokens":1986},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1338,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3368,"cache_read_input_tokens":0,"cache_creation_input_tokens":1338,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1338},"type":"message"}],"speed":"standard","fallback_credit":null,"thinking_chars":0},"situation":"Siblings clearing out a grandparent's flat.","topic":null}
+{"who":"Ciara","text":"Does anyone want Nana's brass clock? It is on the hall press. The house clearance firm takes everything left on Saturday, so I need to know by Thursday.","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Niamh","text":"OH yes!! I want it x 😭","posted":true,"at":"2026-11-23T19:04","checkin":"2026-11-23T19:04"}
+{"who":"Conor","text":"the one that hasnt worked since 1998 😂","posted":true,"at":"2026-11-23T19:06","checkin":"2026-11-23T19:06"}
+{"who":"","react":"😂","to":2,"posted":false,"at":"2026-11-23T19:06"}
+{"who":"Niamh","text":"It works!! It's just on its own time Conor","posted":true,"at":"2026-11-23T19:07","checkin":"2026-11-23T19:07"}
+{"who":"Ciara","text":"It has said twenty past four since 2009. Nana said it was a matter of principle.","posted":true,"at":"2026-11-23T19:09","checkin":"2026-11-23T19:09"}
+{"who":"Conor","text":"principle 😂","posted":true,"at":"2026-11-23T19:10","checkin":"2026-11-23T19:10"}
+{"who":"Niamh","text":"Stop!! It's Nana's x","posted":true,"at":"2026-11-23T19:14","checkin":"2026-11-23T19:14"}
+{"who":"Conor","text":"biscuit got into the bins again. bag of bones all over the path. the neighbour has a face on him","posted":true,"at":"2026-11-23T19:31","checkin":"2026-11-23T19:31"}
+{"who":"Ciara","text":"Is the path clean.","posted":true,"at":"2026-11-23T19:33","checkin":"2026-11-23T19:33"}
+{"who":"Conor","text":"its clean ciara","posted":true,"at":"2026-11-23T19:34","checkin":"2026-11-23T19:34"}
+{"who":"Ciara","text":"Good. Conor, do you want the clock or not?","posted":true,"at":"2026-11-23T19:35","checkin":"2026-11-23T19:35"}
+{"who":"Conor","text":"dont mind. niamh has it. i dont need a clock to know whats the time","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Niamh","text":"Thank you Conor 🥹 x","posted":true,"at":"2026-11-23T19:43","checkin":"2026-11-23T19:43"}
+{"who":"","react":"❤️","to":12,"posted":false,"at":"2026-11-23T19:43"}
+{"who":"Ciara","text":"Clearance firm confirmed for Saturday at ten. Kitchen and bedrooms are on the spreadsheet, tab two. Please update your rows.","posted":true,"at":"2026-11-23T20:15","checkin":"2026-11-23T20:15"}
+{"who":"Conor","text":"tab two 😂","posted":true,"at":"2026-11-23T20:16","checkin":"2026-11-23T20:16"}
+{"who":"Niamh","text":"I've already updated mine!! Front room is nearly done. I found Nana's radio and the old tin of buttons x","posted":true,"at":"2026-11-23T20:18","checkin":"2026-11-23T20:18"}
+{"who":"Conor","text":"buttons? what for","posted":true,"at":"2026-11-23T20:40","checkin":"2026-11-23T20:40"}
+{"who":"Niamh","text":"Nana kept every button from every coat she ever had. I'm keeping them all obviously","posted":true,"at":"2026-11-23T20:41","checkin":"2026-11-23T20:41"}
+{"who":"Ciara","text":"Put them in a box, label it, and do not keep them in your flat.","posted":true,"at":"2026-11-23T20:44","checkin":"2026-11-23T20:44"}
+{"who":"Niamh","text":"Ciara it's a tin of buttons 😭","posted":true,"at":"2026-11-23T20:45","checkin":"2026-11-23T20:45"}
+{"who":"Conor","text":"ill bring the car sat. what time am i needed at","posted":true,"at":"2026-11-23T21:12","checkin":"2026-11-23T21:12"}
+{"who":"Ciara","text":"Be there for nine. The van arrives at ten and I want the furniture moved before the firm starts.","posted":true,"at":"2026-11-23T21:14","checkin":"2026-11-23T21:14"}
+{"who":"Conor","text":"ill be there by 10 ciara i have a job in ballincollig in the morning","posted":true,"at":"2026-11-23T21:16","checkin":"2026-11-23T21:16"}
+{"who":"Ciara","text":"Saturday, Conor.","posted":true,"at":"2026-11-23T21:16","checkin":"2026-11-23T21:16"}
+{"who":"Conor","text":"ill be there at 9 😂","posted":true,"at":"2026-11-23T21:19","checkin":"2026-11-23T21:19"}
+{"who":"Niamh","text":"Sending you the photo of Nana's chair by the window x\n(photo)","posted":true,"at":"2026-11-23T22:08","checkin":"2026-11-23T22:08"}
+{"who":"Ciara","text":"That chair goes to the charity shop unless someone wants it. Conor, can you take it?","posted":true,"at":"2026-11-23T22:20","checkin":"2026-11-23T22:20"}
+{"who":"Conor","text":"it smells of nana. i'll take it","posted":true,"at":"2026-11-23T22:24","checkin":"2026-11-23T22:24"}
+{"who":"Niamh","text":"Oh Conor 🥹","posted":true,"at":"2026-11-23T22:26","checkin":"2026-11-23T22:26"}
+{"who":"Ciara","text":"Good. Bed. The spreadsheet is saved in two places. Please use it.","posted":true,"at":"2026-11-23T22:45","checkin":"2026-11-23T22:45"}
+{"who":"Conor","text":"ciara you're still up. right im off. biscuit is on the bed already","posted":true,"at":"2026-11-23T22:52","checkin":"2026-11-23T22:52"}
+{"who":"Niamh","text":"Can't sleep. Are we keeping the good china though?? Nana's wedding set x","posted":true,"at":"2026-11-23T23:31","checkin":"2026-11-23T23:31"}
+{"who":"Niamh","text":"Is it bad that I'm lying here thinking about the buttons x","posted":true,"at":"2026-11-23T23:38","checkin":"2026-11-23T23:38"}
+{"who":"Niamh","text":"Still awake. Thinking about the china x","posted":true,"at":"2026-11-24T04:03","checkin":"2026-11-24T04:03"}
+{"who":"Niamh","text":"Twelve cups and the gravy boat on its own. Nana used it every Christmas though x","posted":true,"at":"2026-11-24T04:05","checkin":"2026-11-24T04:05"}
+{"who":"Conor","text":"biscuit got up on the counter and ate a whole sausage roll. no idea how. he is not sorry","posted":true,"at":"2026-11-24T06:12","checkin":"2026-11-24T06:12"}
+{"who":"Ciara","text":"The good china goes in its own box, marked fragile, wrapped in newspaper. Nothing goes on top of it. It is not going in a bin bag.","posted":true,"at":"2026-11-24T06:24","checkin":"2026-11-24T06:24"}
+{"who":"Niamh","text":"Yes ok 😭 Nana would have killed us x","posted":true,"at":"2026-11-24T06:26","checkin":"2026-11-24T06:26"}
+{"who":"Conor","text":"fair. she'd have done it herself 😂","posted":true,"at":"2026-11-24T06:31","checkin":"2026-11-24T06:31"}
+{"who":"","react":"😂","to":38,"posted":false,"at":"2026-11-24T06:31"}
+{"who":"Ciara","text":"Conor, the chair. Yes or no.","posted":true,"at":"2026-11-24T06:40","checkin":"2026-11-24T06:40"}
+{"who":"Conor","text":"yes. its in the hall already. ill get it in the car saturday","posted":true,"at":"2026-11-24T07:02","checkin":"2026-11-24T07:02"}
+{"who":"Niamh","text":"🥹 x","posted":true,"at":"2026-11-24T07:05","checkin":"2026-11-24T07:05"}
+{"who":"Conor","text":"at a job in ballincollig. fella has the sockets wired upside down. some people shouldnt be let near a screwdriver","posted":true,"at":"2026-11-24T08:27","checkin":"2026-11-24T08:27"}
+{"who":"Niamh","text":"Scrubbing porridge off a six year old. Send help x","posted":true,"at":"2026-11-24T08:52","checkin":"2026-11-24T08:52"}
+{"who":"Ciara","text":"Kitchen oven. Has anyone checked it is empty?","posted":true,"at":"2026-11-24T13:06","checkin":"2026-11-24T13:06"}
+{"who":"Niamh","text":"Checked! Empty except a tea towel that says \"Kiss the Cook\" 😭 x","posted":true,"at":"2026-11-24T13:40","checkin":"2026-11-24T13:40"}
+{"who":"Ciara","text":"Bin it.","posted":true,"at":"2026-11-24T13:42","checkin":"2026-11-24T13:42"}
+{"who":"Niamh","text":"NO. It's going in the box with the buttons x","posted":true,"at":"2026-11-24T13:43","checkin":"2026-11-24T13:43"}
+{"who":"Ciara","text":"Fine. Label it.","posted":true,"at":"2026-11-24T13:44","checkin":"2026-11-24T13:44"}
+{"who":"Niamh","text":"Found Nana's recipe book in the drawer under the phone. Her writing all over it. Half of it just says \"more butter\" 🥹 x","posted":true,"at":"2026-11-24T15:52","checkin":"2026-11-24T15:52"}
+{"who":"Conor","text":"she wasnt wrong","posted":true,"at":"2026-11-24T16:18","checkin":"2026-11-24T16:18"}
+{"who":"","react":"😂","to":50,"posted":false,"at":"2026-11-24T16:18"}
+{"who":"Niamh","text":"Stop!! x","posted":true,"at":"2026-11-24T16:19","checkin":"2026-11-24T16:19"}
+{"who":"Ciara","text":"Recipe book goes in the china box. Not on the table, not in the boot with the bin bags.","posted":true,"at":"2026-11-24T16:45","checkin":"2026-11-24T16:45"}
+{"who":"Niamh","text":"It's going on my kitchen table 🥹 I'll box it after x","posted":true,"at":"2026-11-24T17:02","checkin":"2026-11-24T17:02"}
+{"who":"Ciara","text":"After.","posted":true,"at":"2026-11-24T17:03","checkin":"2026-11-24T17:03"}
+{"who":"Conor","text":"biscuit is in the bath. dont ask","posted":true,"at":"2026-11-24T19:20","checkin":"2026-11-24T19:20"}
+{"who":"Ciara","text":"Mark has the boxes on Friday. Is there anything else anyone needs from the flat before Saturday? Please answer this one.","posted":true,"at":"2026-11-24T21:38","checkin":"2026-11-24T21:38"}
+{"who":"Conor","text":"the clock. ill take it if nobody else wants it 😂 niamh i know you want it","posted":true,"at":"2026-11-24T21:55","checkin":"2026-11-24T21:55"}
+{"who":"Niamh","text":"You are NOT having the clock!! You can have the chair x","posted":true,"at":"2026-11-24T21:58","checkin":"2026-11-24T21:58"}
+{"who":"Ciara","text":"Settle it between yourselves. The clock goes to whoever is willing to carry it.","posted":true,"at":"2026-11-24T22:14","checkin":"2026-11-24T22:14"}
+{"who":"Conor","text":"😂","posted":true,"at":"2026-11-24T22:15","checkin":"2026-11-24T22:15"}
+{"who":"Niamh","text":"Did anyone else cry in the kitchen today or is it just me x","posted":true,"at":"2026-11-24T23:14","checkin":"2026-11-24T23:14"}
+{"who":"Niamh","text":"Ok going to bed. Ignore me x","posted":true,"at":"2026-11-25T00:41","checkin":"2026-11-25T00:41"}
+{"who":"Niamh","text":"Found the buttons in two tins. There are TWO tins. I'm keeping both x 😭","posted":true,"at":"2026-11-25T01:55","checkin":"2026-11-25T01:55"}
+{"who":"Niamh","text":"Can't sleep x","posted":true,"at":"2026-11-25T04:10","checkin":"2026-11-25T04:10"}
+{"who":"Niamh","text":"Went through the buttons with the torch. There's one off a camel coat from the seventies. I know it's a button x","posted":true,"at":"2026-11-25T04:11","checkin":"2026-11-25T04:11"}
+{"who":"Niamh","text":"Sorry. I know I'm being mental. Ignore me 😭 x","posted":true,"at":"2026-11-25T04:23","checkin":"2026-11-25T04:23"}
+{"who":"Conor","text":"up with the dog. he's looking at me like i owe him money","posted":true,"at":"2026-11-25T05:50","checkin":"2026-11-25T05:50"}
+{"who":"Niamh","text":"Go back to sleep Conor x","posted":true,"at":"2026-11-25T06:03","checkin":"2026-11-25T06:03"}
+{"who":"Ciara","text":"Niamh, go to bed. You have a class at nine. Nobody is taking the buttons anywhere.","posted":true,"at":"2026-11-25T06:19","checkin":"2026-11-25T06:19"}
+{"who":"Niamh","text":"I have a class at nine and I'm not sleeping, I'm just lying here x","posted":true,"at":"2026-11-25T06:21","checkin":"2026-11-25T06:21"}
+{"who":"Ciara","text":"Then get up and shower. The spreadsheet has a row for the buttons. It says \"Niamh. Buttons. Box. Label.\" Please follow it.","posted":true,"at":"2026-11-25T06:22","checkin":"2026-11-25T06:22"}
+{"who":"Conor","text":"ciara has a row for the buttons 😂","posted":true,"at":"2026-11-25T06:25","checkin":"2026-11-25T06:25"}
+{"who":"","react":"😂","to":72,"posted":false,"at":"2026-11-25T06:25"}
+{"who":"Ciara","text":"Everyone has a row. That is the point of the spreadsheet.","posted":true,"at":"2026-11-25T06:26","checkin":"2026-11-25T06:26"}
+{"who":"Conor","text":"job in ballincollig. the fella who wired the sockets upside down is back. he's \"helping\" me. he has a drill out","posted":true,"at":"2026-11-25T07:40","checkin":"2026-11-25T07:40"}
+{"who":"Niamh","text":"Conor please don't let him near anything live x","posted":true,"at":"2026-11-25T07:42","checkin":"2026-11-25T07:42"}
+{"who":"Conor","text":"i wont. standing over him like a hawk. he's making me a cuppa. i'm scared to drink it","posted":true,"at":"2026-11-25T07:44","checkin":"2026-11-25T07:44"}
+{"who":"Ciara","text":"Mark is asking whether the bookcase in the hall is going in the clearance or whether anyone wants it. I need an answer for the spreadsheet by Thursday.","posted":true,"at":"2026-11-25T08:15","checkin":"2026-11-25T08:15"}
+{"who":"Niamh","text":"Bookcase is not going to the dump Ciara x","posted":true,"at":"2026-11-25T12:33","checkin":"2026-11-25T12:33"}
+{"who":"Niamh","text":"Nana's Reader's Digests are in it. The whole set. Do we know what they're worth 😭","posted":true,"at":"2026-11-25T12:33","checkin":"2026-11-25T12:33"}
+{"who":"Ciara","text":"Nothing. Are they staying?","posted":true,"at":"2026-11-25T12:50","checkin":"2026-11-25T12:50"}
+{"who":"Niamh","text":"Yes x","posted":true,"at":"2026-11-25T13:20","checkin":"2026-11-25T13:20"}
+{"who":"Ciara","text":"Tick. Mark will want the Reader's Digests for his classroom. He has been asking since 2019.","posted":true,"at":"2026-11-25T13:21","checkin":"2026-11-25T13:21"}
+{"who":"Conor","text":"ciara i'm not doing the bookcase on my own. it weighs more than biscuit","posted":true,"at":"2026-11-25T15:04","checkin":"2026-11-25T15:04"}
+{"who":"Ciara","text":"Ask Niamh to help you.","posted":true,"at":"2026-11-25T15:06","checkin":"2026-11-25T15:06"}
+{"who":"Conor","text":"she's at school all day ciara","posted":true,"at":"2026-11-25T15:06","checkin":"2026-11-25T15:06"}
+{"who":"Ciara","text":"Then Saturday. Bring a second person.","posted":true,"at":"2026-11-25T15:10","checkin":"2026-11-25T15:10"}
+{"who":"Niamh","text":"Went into Nana's room for the bedside lamp and sat on the bed for ten minutes x","posted":true,"at":"2026-11-25T17:30","checkin":"2026-11-25T17:30"}
+{"who":"Niamh","text":"Sorry. Eating toast in the car x","posted":true,"at":"2026-11-25T17:31","checkin":"2026-11-25T17:31"}
+{"who":"Conor","text":"you're grand. i sat in the chair for ten minutes. it's still in the hall but i sat in it anyway","posted":true,"at":"2026-11-25T17:45","checkin":"2026-11-25T17:45"}
+{"who":"Niamh","text":"Oh Conor 🥹 x","posted":true,"at":"2026-11-25T17:46","checkin":"2026-11-25T17:46"}
+{"who":"Conor","text":"don't. comfy chair, that's all","posted":true,"at":"2026-11-25T17:48","checkin":"2026-11-25T17:48"}
+{"who":"Ciara","text":"Conor, how many bags for the bins? The firm won't take anything that's already in a bag.","posted":true,"at":"2026-11-25T18:20","checkin":"2026-11-25T18:20"}
+{"who":"Conor","text":"bin bags. biscuit has eaten half the roll. there's a spare in the car if he doesn't get to it","posted":true,"at":"2026-11-25T18:31","checkin":"2026-11-25T18:31"}
+{"who":"Ciara","text":"Keep the car locked.","posted":true,"at":"2026-11-25T18:33","checkin":"2026-11-25T18:33"}
+{"who":"Niamh","text":"Honest question. I have a box of Nana's hair grips and I cannot throw them out x","posted":true,"at":"2026-11-25T19:02","checkin":"2026-11-25T19:02"}
+{"who":"Conor","text":"keep the hair grips niamh","posted":true,"at":"2026-11-25T19:03","checkin":"2026-11-25T19:03"}
+{"who":"Ciara","text":"Keep the hair grips. Label them. Do not let me see another item marked \"misc.\"","posted":true,"at":"2026-11-25T19:05","checkin":"2026-11-25T19:05"}
+{"who":"Niamh","text":"Going to bed for real x","posted":true,"at":"2026-11-25T19:12","checkin":"2026-11-25T19:12"}
+{"who":"Conor","text":"still the clock. niamh you know i'll look after it","posted":true,"at":"2026-11-25T20:30","checkin":"2026-11-25T20:30"}
+{"who":"Niamh","text":"You'll have it stopped at twenty past four the second you get it x","posted":true,"at":"2026-11-25T20:41","checkin":"2026-11-25T20:41"}
+{"who":"Conor","text":"it's already stopped at twenty past four 😂","posted":true,"at":"2026-11-25T20:42","checkin":"2026-11-25T20:42"}
+{"who":"Ciara","text":"Conor, I need one answer on the clock before Thursday. Yes or no from Niamh.","posted":true,"at":"2026-11-25T20:44","checkin":"2026-11-25T20:44"}
+{"who":"Niamh","text":"...yes. You can have the clock. Don't put it in the car with Biscuit x 🥹","posted":true,"at":"2026-11-25T21:02","checkin":"2026-11-25T21:02"}
+{"who":"Conor","text":"deal 😂","posted":true,"at":"2026-11-25T21:03","checkin":"2026-11-25T21:03"}
+{"who":"Ciara","text":"Noted. Row seven. Conor.","posted":true,"at":"2026-11-25T21:03","checkin":"2026-11-25T21:03"}
+{"who":"Niamh","text":"I've been crying at the hair grips. Ridiculous x","posted":true,"at":"2026-11-25T23:40","checkin":"2026-11-25T23:40"}
+{"who":"Conor","text":"the buttons are going to finish you off niamh","posted":true,"at":"2026-11-25T23:52","checkin":"2026-11-25T23:52"}
+{"who":"Niamh","text":"Yes. Going to bed. x","posted":true,"at":"2026-11-26T00:20","checkin":"2026-11-26T00:20"}
+{"who":"Niamh","text":"Found a photo of Nana stuck to the back of the bread bin with sellotape. Sending it tomorrow x","posted":true,"at":"2026-11-26T01:12","checkin":"2026-11-26T01:12"}
+{"who":"Niamh","text":"Still up. Going to bed at four like a proper adult x","posted":true,"at":"2026-11-26T03:40","checkin":"2026-11-26T03:40"}

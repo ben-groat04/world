@@ -1,0 +1,85 @@
+{"writer":"w3","model":"haiku","effort":"medium","days":2,"complete":true,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1817,"cache_read_input_tokens":0,"output_tokens":2996,"output_tokens_details":{"thinking_tokens":2021},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1817,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2996,"cache_read_input_tokens":0,"cache_creation_input_tokens":1817,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1817},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2738,"cache_read_input_tokens":0,"output_tokens":2393,"output_tokens_details":{"thinking_tokens":1378},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2738,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2393,"cache_read_input_tokens":0,"cache_creation_input_tokens":2738,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2738},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3751,"cache_read_input_tokens":0,"output_tokens":1978,"output_tokens_details":{"thinking_tokens":1195},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3751,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1978,"cache_read_input_tokens":0,"cache_creation_input_tokens":3751,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3751},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Inês","Tomás"],"setting":"You both live in Porto, Portugal, in a rented flat in Bonfim that you share. You have been together for three years, since you met at a friend's birthday dinner in Matosinhos. You already know each other's families, work schedules, and most of each other's habits, including how the other handles money, travel stress, and cancelled plans. This is the first trip you have planned together, so you are working out the details together for the first time.","opener":"Send Tomás a link to the Douro valley train timetable and ask whether they should book the Sunday boat.","cast":{"Inês":{"who":"34, woman, the one who starts the trip planning","knows":"You know Tomás is your partner of three years, the person you live with and plan everything around. You also know his sister Marta lives in Lisbon and always wants to be consulted about any trip.","like":"You are organised and warm, and you like to have the details settled before you relax.","texts":"You message in this chat now and then without being asked, mostly when you have something specific to say about the plans.","style":"You type with proper capitals and full punctuation, and you use an occasional emoji but no abbreviations.","ex":[]},"Tomás":{"who":"36, man, the partner who is more flexible about the trip","knows":"You know Inês is your partner of three years, the one who keeps the calendar and plans ahead. You also know her sister Ana lives in Braga and has strong opinions about where couples should stay.","like":"You are relaxed and easygoing, and you tend to go along with plans unless something really matters to you.","texts":"You message in this chat now and then without being asked, usually to add a thought or a joke after Inês has laid out a plan.","style":"You type in lowercase with light punctuation, and you sometimes use an emoji at the end of a message.","ex":[]}},"private_lines":{"Inês":"You live in Porto with Tomás in a third-floor flat in Bonfim, and you work as a pharmacist at a pharmacy in Campanhã. Your shifts usually start early, so your days are structured around morning coffee, a quick walk to work, and dinner at home together. Evenings are mostly quiet, with some reading or a film, and weekends are for the market or seeing friends.","Tomás":"You live in Porto with Inês in the flat in Bonfim, and you work remotely as a product designer for a software company, mostly from the kitchen table or a café near the river. Your days are fairly loose, with stretches of focused work broken up by walks, errands, and a run along the Foz waterfront when the weather is good. You cook dinner some nights and eat with Inês when she is home."},"sleep":{"Inês":[23.25,6.75],"Tomás":[0,8]},"usage":{"input_tokens":2,"cache_creation_input_tokens":1275,"cache_read_input_tokens":0,"output_tokens":1934,"output_tokens_details":{"thinking_tokens":1034},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1275,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1934,"cache_read_input_tokens":0,"cache_creation_input_tokens":1275,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1275},"type":"message"}],"speed":"standard","fallback_credit":null},"situation":"A couple planning their first trip together.","topic":null}
+{"who":"Inês","text":"Found the Douro line timetable. The 9:07 from Campanhã gets to Pinhão just before 11:30, which works for us. Here it is: https://www.cp.pt/horarios","posted":true,"at":"2026-11-23T19:00","checkin":"2026-11-23T19:00"}
+{"who":"Inês","text":"Should we book the Sunday boat back or wait? The train is easy, but the boat is the part I actually want.","posted":true,"at":"2026-11-23T19:02","checkin":"2026-11-23T19:02"}
+{"who":"Tomás","text":"the boat is the whole reason for going, no?","posted":true,"at":"2026-11-23T19:09","checkin":"2026-11-23T19:09"}
+{"who":"Inês","text":"Yes. That's why I'm asking whether to book it now or wait.","posted":true,"at":"2026-11-23T19:11","checkin":"2026-11-23T19:11"}
+{"who":"Tomás","text":"how many seats are left","posted":true,"at":"2026-11-23T19:12","checkin":"2026-11-23T19:12"}
+{"who":"Inês","text":"I don't know. I haven't checked the seats. I only just sent you the train.","posted":true,"at":"2026-11-23T19:20","checkin":"2026-11-23T19:20"}
+{"who":"Tomás","text":"fair 😅","posted":true,"at":"2026-11-23T19:21","checkin":"2026-11-23T19:21"}
+{"who":"Tomás","text":"ok wait. when does the boat leave and where does it stop","posted":true,"at":"2026-11-23T19:34","checkin":"2026-11-23T19:34"}
+{"who":"Inês","text":"Régua to Porto, leaving around 14:00, takes most of the afternoon. I'd rather book it before the train is final.","posted":true,"at":"2026-11-23T19:40","checkin":"2026-11-23T19:40"}
+{"who":"Inês","text":"Marta asked whether we're staying in Pinhão or coming back the same day. I said I'd check with you first.","posted":true,"at":"2026-11-23T19:41","checkin":"2026-11-23T19:41"}
+{"who":"Tomás","text":"tell marta same day. we're not staying anywhere that has a view of a vineyard for two nights if we can't afford the bottle\n\nhmm that's not quite a plan. same day is fine","posted":true,"at":"2026-11-23T19:58","checkin":"2026-11-23T19:58"}
+{"who":"","react":"😂","to":10,"posted":false,"at":"2026-11-23T19:58"}
+{"who":"Inês","text":"Tomás.","posted":true,"at":"2026-11-23T20:03","checkin":"2026-11-23T20:03"}
+{"who":"Inês","text":"She'll ask why and I'll have to say you mentioned a bottle.","posted":true,"at":"2026-11-23T20:04","checkin":"2026-11-23T20:04"}
+{"who":"Tomás","text":"i'm making the rice thing. want some","posted":true,"at":"2026-11-23T20:30","checkin":"2026-11-23T20:30"}
+{"who":"Inês","text":"Yes, half. I'm on the early run tomorrow so I'll eat it and go to bed soon after.","posted":true,"at":"2026-11-23T20:31","checkin":"2026-11-23T20:31"}
+{"who":"Tomás","text":"you said the boat wasn't urgent but you have four tabs open","posted":true,"at":"2026-11-23T20:45","checkin":"2026-11-23T20:45"}
+{"who":"Inês","text":"Two tabs. The other two are mine.","posted":true,"at":"2026-11-23T20:46","checkin":"2026-11-23T20:46"}
+{"who":"Inês","text":"Ok, I've looked. The boat has seats on the 14:00 but the morning one is nearly full. I'll book the afternoon one tomorrow after shift if you say yes.","posted":true,"at":"2026-11-23T21:52","checkin":"2026-11-23T21:52"}
+{"who":"Tomás","text":"yes. i'll pay half the boat, you do the train","posted":true,"at":"2026-11-23T22:10","checkin":"2026-11-23T22:10"}
+{"who":"Tomás","text":"and you don't have to wait for shift. book it from your phone on the bus","posted":true,"at":"2026-11-23T22:11","checkin":"2026-11-23T22:11"}
+{"who":"Inês","text":"I don't book on the bus. I'll do it when I'm home at 14:30.","posted":true,"at":"2026-11-23T22:14","checkin":"2026-11-23T22:14"}
+{"who":"Tomás","text":"ok","posted":true,"at":"2026-11-23T22:15","checkin":"2026-11-23T22:15"}
+{"who":"Inês","text":"Good dinner. Thank you for the rice.","posted":true,"at":"2026-11-23T23:02","checkin":"2026-11-23T23:02"}
+{"who":"Tomás","text":"booked?","posted":true,"at":"2026-11-23T23:40","checkin":"2026-11-23T23:40"}
+{"who":"Tomás","text":"ok i'll leave it to you tomorrow","posted":true,"at":"2026-11-23T23:52","checkin":"2026-11-23T23:52"}
+{"who":"Inês","text":"Marta texted me at 7am asking about the train again. I sent her the link.","posted":true,"at":"2026-11-24T07:52","checkin":"2026-11-24T07:52"}
+{"who":"Tomás","text":"she asked me last night too. i said ask inês","posted":true,"at":"2026-11-24T10:17","checkin":"2026-11-24T10:17"}
+{"who":"Tomás","text":"joking. i told her 9:07 and the boat, same day. she said that's a lot of train for one boat","posted":true,"at":"2026-11-24T10:19","checkin":"2026-11-24T10:19"}
+{"who":"Inês","text":"It's 1h40 on the train. That's not a lot.","posted":true,"at":"2026-11-24T10:40","checkin":"2026-11-24T10:40"}
+{"who":"Tomás","text":"that's what i said","posted":true,"at":"2026-11-24T10:41","checkin":"2026-11-24T10:41"}
+{"who":"Tomás","text":"she said \"that's what you always say\"","posted":true,"at":"2026-11-24T10:41","checkin":"2026-11-24T10:41"}
+{"who":"Inês","text":"Are you at the café or the table?","posted":true,"at":"2026-11-24T13:10","checkin":"2026-11-24T13:10"}
+{"who":"Tomás","text":"table. café wifi is down again. they say \"tomorrow\"","posted":true,"at":"2026-11-24T13:12","checkin":"2026-11-24T13:12"}
+{"who":"Inês","text":"Home. Booking the boat now.","posted":true,"at":"2026-11-24T14:41","checkin":"2026-11-24T14:41"}
+{"who":"Tomás","text":"the 14:00 still has seats?","posted":true,"at":"2026-11-24T14:44","checkin":"2026-11-24T14:44"}
+{"who":"Inês","text":"Checking.","posted":true,"at":"2026-11-24T14:46","checkin":"2026-11-24T14:46"}
+{"who":"Inês","text":"Booked. Two seats on the 14:00 from Régua. I used your email because mine kept rejecting the accent in my name.","posted":true,"at":"2026-11-24T14:58","checkin":"2026-11-24T14:58"}
+{"who":"Tomás","text":"got it. i see the confirmation. thank you 🙏","posted":true,"at":"2026-11-24T15:02","checkin":"2026-11-24T15:02"}
+{"who":"Tomás","text":"i'll send you half tonight","posted":true,"at":"2026-11-24T15:03","checkin":"2026-11-24T15:03"}
+{"who":"Inês","text":"No rush. Transfer when you transfer.","posted":true,"at":"2026-11-24T15:20","checkin":"2026-11-24T15:20"}
+{"who":"Tomás","text":"ok","posted":true,"at":"2026-11-24T15:22","checkin":"2026-11-24T15:22"}
+{"who":"Tomás","text":"does the boat have a bar","posted":true,"at":"2026-11-24T15:24","checkin":"2026-11-24T15:24"}
+{"who":"Inês","text":"Yes. It's a boat, Tomás, not a hotel.","posted":true,"at":"2026-11-24T15:31","checkin":"2026-11-24T15:31"}
+{"who":"Tomás","text":"i'll take that as a yes","posted":true,"at":"2026-11-24T15:31","checkin":"2026-11-24T15:31"}
+{"who":"Inês","text":"Tell Marta it's booked. Or I will.","posted":true,"at":"2026-11-24T16:05","checkin":"2026-11-24T16:05"}
+{"who":"Tomás","text":"you tell her. she'll only believe you","posted":true,"at":"2026-11-24T16:09","checkin":"2026-11-24T16:09"}
+{"who":"Inês","text":"She believes me because I have the printout.","posted":true,"at":"2026-11-24T16:10","checkin":"2026-11-24T16:10"}
+{"who":"Tomás","text":"there's no printout. it's an email","posted":true,"at":"2026-11-24T16:11","checkin":"2026-11-24T16:11"}
+{"who":"Inês","text":"I'm making one.","posted":true,"at":"2026-11-24T16:14","checkin":"2026-11-24T16:14"}
+{"who":"Tomás","text":"fish tonight? the thing with lemon","posted":true,"at":"2026-11-24T19:18","checkin":"2026-11-24T19:18"}
+{"who":"Inês","text":"Yes. I'm on at 7 tomorrow so I'd like to eat by 20:30 if that's possible.","posted":true,"at":"2026-11-24T19:24","checkin":"2026-11-24T19:24"}
+{"who":"Tomás","text":"possible. you want wine or are you doing the water thing","posted":true,"at":"2026-11-24T19:25","checkin":"2026-11-24T19:25"}
+{"who":"Inês","text":"Water. You have the wine.","posted":true,"at":"2026-11-24T19:27","checkin":"2026-11-24T19:27"}
+{"who":"Tomás","text":"ok so i'm drinking the bottle alone and feeling like a vineyard man","posted":true,"at":"2026-11-24T19:27","checkin":"2026-11-24T19:27"}
+{"who":"Inês","text":"Go to sleep after, then.","posted":true,"at":"2026-11-24T19:29","checkin":"2026-11-24T19:29"}
+{"who":"Tomás","text":"i don't go to sleep till midnight. you know this","posted":true,"at":"2026-11-24T19:30","checkin":"2026-11-24T19:30"}
+{"who":"Inês","text":"Goodnight. Printout's in the drawer by the door if Marta wants proof.","posted":true,"at":"2026-11-24T22:48","checkin":"2026-11-24T22:48"}
+{"who":"Tomás","text":"goodnight. i sent you the half.","posted":true,"at":"2026-11-24T23:58","checkin":"2026-11-24T23:58"}
+{"who":"Inês","text":"Printout is in the drawer. Going now, the 6:50 was full and I'm walking the rest.","posted":true,"at":"2026-11-25T07:04","checkin":"2026-11-25T07:04"}
+{"who":"Tomás","text":"morning. did you eat","posted":true,"at":"2026-11-25T08:22","checkin":"2026-11-25T08:22"}
+{"who":"Tomás","text":"you're on the walk right","posted":true,"at":"2026-11-25T08:23","checkin":"2026-11-25T08:23"}
+{"who":"Inês","text":"I'm at the pharmacy. I had a banana at the door like a person who plans ahead.","posted":true,"at":"2026-11-25T08:41","checkin":"2026-11-25T08:41"}
+{"who":"Tomás","text":"marta wants the timetable as a pdf, not a link","posted":true,"at":"2026-11-25T09:12","checkin":"2026-11-25T09:12"}
+{"who":"Inês","text":"She can open a link.","posted":true,"at":"2026-11-25T09:40","checkin":"2026-11-25T09:40"}
+{"who":"Tomás","text":"i said that. she said \"that's what you always say\"","posted":true,"at":"2026-11-25T09:41","checkin":"2026-11-25T09:41"}
+{"who":"Inês","text":"A woman just asked me for something for her son's cough, then asked whether I'd seen her husband's ex in the Continente car park. I told her I'm a pharmacist, not a witness.","posted":true,"at":"2026-11-25T11:05","checkin":"2026-11-25T11:05"}
+{"who":"Tomás","text":"which pharmacy did she think you were","posted":true,"at":"2026-11-25T11:07","checkin":"2026-11-25T11:07"}
+{"who":"Inês","text":"I gave her the syrup. The husband's ex is not my department.","posted":true,"at":"2026-11-25T11:09","checkin":"2026-11-25T11:09"}
+{"who":"Tomás","text":"wifi's back at the café. going now. want anything from the bakery","posted":true,"at":"2026-11-25T13:30","checkin":"2026-11-25T13:30"}
+{"who":"Inês","text":"No. There's rice in the fridge if you're hungry later.","posted":true,"at":"2026-11-25T13:31","checkin":"2026-11-25T13:31"}
+{"who":"Inês","text":"Off. Bus.","posted":true,"at":"2026-11-25T14:34","checkin":"2026-11-25T14:34"}
+{"who":"Tomás","text":"sent marta the confirmation. she wrote \"ok\"","posted":true,"at":"2026-11-25T15:10","checkin":"2026-11-25T15:10"}
+{"who":"Tomás","text":"from her that's basically applause","posted":true,"at":"2026-11-25T15:10","checkin":"2026-11-25T15:10"}
+{"who":"Inês","text":"Good. Forward me her reply so I can put it with the printout.","posted":true,"at":"2026-11-25T15:12","checkin":"2026-11-25T15:12"}
+{"who":"Tomás","text":"no","posted":true,"at":"2026-11-25T15:14","checkin":"2026-11-25T15:14"}
+{"who":"Tomás","text":"what do we pack for a boat. jacket?","posted":true,"at":"2026-11-25T19:02","checkin":"2026-11-25T19:02"}
+{"who":"Inês","text":"A light jacket. The wind comes up on the river after Régua. Sunscreen. Water. Hat if you have one.","posted":true,"at":"2026-11-25T19:20","checkin":"2026-11-25T19:20"}
+{"who":"Tomás","text":"the bottle is the whole reason we're going","posted":true,"at":"2026-11-25T19:21","checkin":"2026-11-25T19:21"}
+{"who":"Inês","text":"That is not true.","posted":true,"at":"2026-11-25T19:22","checkin":"2026-11-25T19:22"}
+{"who":"Tomás","text":"😂","posted":true,"at":"2026-11-25T19:22","checkin":"2026-11-25T19:22"}
+{"who":"Inês","text":"Going to bed. Phone's on the chair if anything about the train changes.","posted":true,"at":"2026-11-25T22:41","checkin":"2026-11-25T22:41"}
+{"who":"Tomás","text":"nothing's going to change. the boat has a bar, i checked again","posted":true,"at":"2026-11-25T23:48","checkin":"2026-11-25T23:48"}

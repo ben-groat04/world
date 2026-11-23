@@ -1,0 +1,253 @@
+--- Mon 07:15, Kenta
+have you seen the riemann preprint going round. claims a full proof
+
+--- Mon 07:16, Kenta
+🤯 maybe not 🤯
+
+--- Mon 07:52, Mio
+I saw it. I haven't read past the abstract. Is it the 40-page one or the short one?
+
+--- Mon 07:53, Kenta
+the 40 page one. author is some guy at a small institute nobody has heard of but the abstract is clean
+
+--- Mon 07:55, Kenta
+he uses a spectral operator to show all the nontrivial zeros sit on the line
+
+--- Mon 08:10, Mio
+Every few years someone claims that. It's usually a step that looks harmless. Which step is he leaning on?
+
+--- Mon 08:11, Kenta
+havent got that far. on the train
+
+--- Mon 08:30, Kenta
+section 4 is where it gets interesting i think
+
+--- Mon 12:40, Mio
+I have a free period at 1. I'll read it tonight. I don't want to say anything about it until I've read the actual argument.
+
+--- Mon 12:41, Kenta
+ok fair
+
+--- Mon 12:41, Kenta
+you always do this
+
+--- Mon 12:42, Mio
+Do what
+
+--- Mon 12:42, Kenta
+make me wait
+
+--- Mon 13:05, Kenta
+tried reading section 4 on my phone. the notation is awful
+
+--- Mon 19:20, Mio
+Back from a walk. I read the intro. The claim that it reduces to a positivity statement on a Hilbert space is plausible. The positivity is where I'd look.
+(😂 1)
+
+--- Mon 19:22, Kenta
+yeah that was my guess too. the lemma 4.7 part
+
+--- Mon 19:23, Kenta
+if that holds the rest kind of follows
+
+--- Mon 19:41, Mio
+Only if it holds. Lemma 4.7 is stated for a whole class of operators, but the proof only seems to check one.
+
+--- Mon 19:43, Kenta
+wait
+
+--- Mon 19:44, Kenta
+hold on let me look
+
+--- Mon 20:05, Kenta
+ok you might be right. it says "by a similar argument" and then nothing
+
+--- Mon 20:06, Kenta
+that's a lot of similar
+
+--- Mon 20:10, Mio
+Exactly. I'm writing down what it skips, so I'm not just saying "it looks wrong".
+
+--- Mon 21:30, Kenta
+still. even if this one is wrong the approach is kind of beautiful
+
+--- Mon 21:31, Kenta
+he's using something from random matrix theory that I didn't know could be applied like this
+
+--- Mon 21:45, Mio
+That's the bit I'd like to understand properly. Can you send me the reference he cites for it?
+
+--- Mon 21:47, Kenta
+sending. its a 2019 paper from a group in germany, ill find the link
+
+--- Mon 22:10, Mio
+Got it. Reading that tonight, I'll tell you tomorrow.
+
+--- Mon 23:05, Kenta
+🌙 going to sleep soon. if he's wrong im still going to be a bit sad lol
+
+--- Mon 23:48, Mio
+Section 4 also has a typo in the second line. Not sure it matters yet.
+
+--- Tue 06:41, Kenta
+morning. did you get through it
+
+--- Tue 07:26, Mio
+Most of it last night. Lemma 4.7 covers a family of operators indexed by t in [0,1], but the proof only checks t=0. The "similar argument" would need a bound that holds uniformly in t, and he never gives one.
+
+--- Tue 07:28, Kenta
+the 2019 paper gives a bound but only for fixed t right
+
+--- Tue 07:29, Mio
+Yes. That's the gap. If the uniform version holds, the whole thing survives. Nobody has shown that it does.
+
+--- Tue 07:31, Kenta
+so its not fatal necessarily
+
+--- Tue 07:32, Mio
+Not necessarily. But it's the step everything rests on.
+
+--- Tue 07:40, Kenta
+ok. honestly that's still a cool idea
+
+--- Tue 07:41, Mio
+It is a cool idea. I'd just like someone to write out the uniform bound before anyone calls it a proof.
+
+--- Tue 12:55, Mio
+Free period. The typo in line two is a sign flip in the exponent. Probably harmless, but I'll note it.
+
+--- Tue 13:20, Kenta
+told a coworker at 9 that it might be the riemann proof. he thinks i'm a genius now
+
+--- Tue 13:21, Kenta
+he doesn't know what a zeta function is
+
+--- Tue 13:24, Mio
+Nobody at your company knows what a zeta function is, Kenta.
+
+--- Tue 13:24, Kenta
+🤣
+
+--- Tue 13:25, Kenta
+i found the author's twitter. he replied to someone saying lemma 4.7 is fine and said "the details are standard"
+
+--- Tue 13:40, Mio
+Standard is doing a lot of work in that sentence.
+
+--- Tue 13:41, Kenta
+lol
+
+--- Tue 18:15, Mio
+Back from the walk. I've written the uniform bound I'd need and I can't get it from the 2019 paper without an extra assumption on the operator domain.
+
+--- Tue 18:17, Kenta
+so he needs the extra assumption or he needs a new paper
+
+--- Tue 18:20, Mio
+Either. Or the argument is wrong somewhere else and I haven't found it yet.
+
+--- Tue 19:02, Kenta
+cooking. making tonkatsu with the cabbage that's about to go off
+
+--- Tue 19:03, Kenta
+will read the domain thing after
+
+--- Tue 21:50, Mio
+Don't read it after eating. You'll just get more excited and miss the point.
+
+--- Tue 21:52, Kenta
+rude 😂
+
+--- Tue 23:12, Kenta
+🌙 going to bed. checking the uniform bound thing in the morning
+
+--- Tue 23:40, Mio
+Good night. Send me the author's reply if he posts again.
+
+--- Wed 06:52, Kenta
+morning. checked the domain thing in bed on my phone 😅 can't do it without a pen
+
+--- Wed 06:53, Kenta
+he replied to the twitter guy. "the details are standard, see appendix"
+
+--- Wed 07:24, Mio
+Morning. The appendix is three pages. It doesn't mention t at all.
+
+--- Wed 07:26, Kenta
+he also posted "i've been asked about lemma 4.7 by several people, the proof is in the revised version"
+
+--- Wed 07:27, Kenta
+arxiv has a v2 from last night. 41 pages
+
+--- Wed 07:40, Mio
+So he changed something and didn't say what. I'll compare v1 and v2 at lunch.
+
+--- Wed 07:41, Kenta
+you're going to diff a preprint at lunch
+
+--- Wed 07:41, Mio
+Yes
+
+--- Wed 12:50, Mio
+Lemma 4.7 in v2 has a uniform bound now. It's one paragraph using a Sobolev embedding I haven't seen cited in this context. I'll check it tonight.
+
+--- Wed 12:53, Kenta
+still in the office. ramen with the coworker who thinks im a genius
+
+--- Wed 12:55, Mio
+Tell him the genius is still unconfirmed.
+
+--- Wed 12:56, Kenta
+🤣 he says he'll google zeta function tonight
+
+--- Wed 13:10, Mio
+Good. Then he can google why it matters.
+
+--- Wed 18:02, Kenta
+on the train home. reading the sobolev paragraph on my phone again. notation is still awful
+
+--- Wed 18:04, Kenta
+i think it works? but i'm not the one who should say that
+
+--- Wed 18:30, Mio
+Walking now. I'll say it works once I've checked the embedding constant. Which I can't do on a walk.
+
+--- Wed 18:31, Kenta
+you're no fun
+
+--- Wed 18:33, Mio
+I'm very fun. Just not about this.
+(😂 1)
+
+--- Wed 19:15, Kenta
+ate the tonkatsu leftovers cold, don't judge me
+
+--- Wed 19:15, Mio
+Cold tonkatsu is fine. Cabbage?
+
+--- Wed 19:16, Kenta
+gone. it lived a good life
+
+--- Wed 21:40, Mio
+Found it. The embedding constant depends on t, and the bound in v2 only holds for t in [0, 1/2]. The family in 4.7 runs up to 1.
+
+--- Wed 21:42, Kenta
+oh no
+
+--- Wed 21:43, Kenta
+is that a real gap or a typo
+
+--- Wed 21:50, Mio
+Not a typo. He'd need a separate argument for (1/2, 1]. Maybe the appendix has one. I'll check tomorrow when I'm less tired.
+
+--- Wed 21:53, Kenta
+should i post something on the twitter or wait for you
+
+--- Wed 22:04, Mio
+Wait. Write it out first, then post. Better to be boring and right.
+
+--- Wed 22:06, Kenta
+🫡
+
+--- Wed 23:20, Kenta
+🌙 going to bed. if the appendix saves him i'll be happy. if it doesn't i'll be happy you're right

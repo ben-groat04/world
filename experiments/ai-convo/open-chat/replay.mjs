@@ -29,13 +29,15 @@
 import fs from 'fs'; import os from 'os'; import path from 'path'; import { spawn } from 'child_process';
 import { ENV_NOTE, dayAsk, noteFor, topicCue, POLISH_SYS, polishAsk, isPass, lastLine, REACT_RE, added } from './prompts.mjs';
 const args = process.argv.slice(2), mode = args.shift(), opt = (k, d) => { const i = args.indexOf('--' + k); if (i < 0) return d; const v = args[i + 1]; args.splice(i, 2); return v; };
-const N = +opt('n', 5), KIND = opt('kind', 'all'), LOGGED = opt('logged', 'quiet'), ROWS = opt('rows', '')?.split(',').filter(Boolean).map(Number), SHOW = +opt('show', 5), CONC = +opt('conc', 8);
+const N = +opt('n', 5), KIND = opt('kind', 'all'), LOGGED = opt('logged', 'quiet'), ROWS = opt('rows', '')?.split(',').filter(Boolean).map(Number), SHOW = +opt('show', 5), CONC = +opt('conc', 8), REP = +opt('rep', 1);
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-replay-')), cfg = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-replay-'));
 const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('CLAUDE'))); Object.assign(env, { CLAUDE_CODE_DISABLE_ATTACHMENTS: '1', CLAUDE_CODE_MAX_OUTPUT_TOKENS: '4000', CLAUDE_CONFIG_DIR: cfg });
+const think = { n: 0, with: 0, tokens: 0 }; // thinking tokens over the calls of this replay (usage.output_tokens_details.thinking_tokens)
 async function claude(argv, input, e = env, dir = cwd) {
   const proc = spawn('claude', argv, { cwd: dir, env: e, stdio: ['pipe', 'pipe', 'pipe'] }); let out = '', err = ''; proc.stdout.on('data', d => out += d); proc.stderr.on('data', d => err += d); proc.stdin.end(input);
   const code = await new Promise(res => { proc.on('error', () => res(-1)); proc.on('close', res); });
   const ev = out.split('\n').filter(Boolean).map(l => JSON.parse(l)), res = ev.find(x => x.type === 'result'); if (code !== 0 || !res || res.is_error) throw new Error(res?.result || err.trim() || `exit ${code}`);
+  think.n++; think.tokens += res.usage?.output_tokens_details?.thinking_tokens ?? 0; if (res.usage?.output_tokens_details?.thinking_tokens > 0) think.with++;
   const blocks = ev.filter(x => x.type === 'assistant').flatMap(x => x.message.content);
   return blocks.filter(c => c.type === 'text').map(c => c.text.trim()).filter(Boolean).join('\n\n');
 }
@@ -78,12 +80,15 @@ function newUser(u, kind, cue, me) {
   u = u.replace('[Not on your phone. Only you know this: your own day since you last looked. Nobody in the chat has seen it.]', '[Not on your phone: your own day, which you lived yourself. Nobody sent you this.]');
   u = u.replace(CUE, ''); // cueFor has already taken the logged cue into account
   const head = u.match(CLOCK_HEAD); if (head) u = u.slice(head[0].length) + `\n\n${head[1]}`; // an older run's user turn opens with the clock line; today's ends with it, after the chat
-  return reactionCounts(kind === 'opener' ? u + `\n\n(You've opened the chat to ${cue}.)` : u, me);
+  u = reactionCounts(kind === 'opener' ? u + `\n\n(You've opened the chat to ${cue}.)` : u, me);
+  return process.env.STRIP_COUNTS === '1' ? u.replace(/\n\((?:\p{Extended_Pictographic}\uFE0F?[^\n()]*? \d+)(?:, [^\n()]*? \d+)*\)(?=\n\n|$)/gu, '') : u; // STRIP_COUNTS=1: reaction counts under the messages removed (round 18 item 4)
 }
 const screenOf = u => (u.split('[The chat on your screen:]')[1] ?? u.replace(/^\([^)]*\)\s*/, '')).replace(CLOCK_ANY, '').replace(/\(You've opened the chat[^)]*\)/, '').trim();
 // What a person had posted before check-in `at` (their last 4 texts, as the rewrite pass is shown them).
 const mineOf = (rows, row) => rows.filter(r => r.posted && r.who === row.who && r.at <= row.checkin && r.checkin !== row.checkin && !r.oracle).slice(-4).map(r => r.text); // not the reply being re-polished: a short one posts in the same minute as its check-in
-async function polishOf(rows, row, draft, last) { return (await claude(['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', POLISH_SYS, '--tools', '', '--setting-sources', '', '--exclude-dynamic-system-prompt-sections', '--system-prompt-snapshot', 'off', '--effort', 'low', '--model', 'haiku', '--no-session-persistence'], polishAsk(row.who, styleOf(rows, row), last, draft, mineOf(rows, row)))).trim(); }
+// POLISH_EFFORT=low|medium|... (default medium, as run.mjs); POLISH_NOECHO=1 removes the echo-cut sentence from the polish prompt (a check of whether it does anything)
+const POLISH_EFFORT = process.env.POLISH_EFFORT || 'medium', withoutEcho = a => process.env.POLISH_NOECHO === '1' ? a.replace(/ If the draft opens by handing back[^\n]*?cut that opening and keep only what follows it\./, '') : a;
+async function polishOf(rows, row, draft, last) { return (await claude(['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', POLISH_SYS, '--tools', '', '--setting-sources', '', '--exclude-dynamic-system-prompt-sections', '--system-prompt-snapshot', 'off', '--effort', POLISH_EFFORT, '--model', 'haiku', '--no-session-persistence'], withoutEcho(polishAsk(row.who, styleOf(rows, row), last, draft, mineOf(rows, row))))).trim(); }
 const outcome = t => isPass(t) ? 'pass' : REACT_RE.test(lastLine(t)) ? 'react' : 'post';
 const NOTHING = /^(nothing|none|n\/a|no\b)/i, stampOf = s => stampIso(s), fullOf = s => `${stampIso(s).slice(0, 3)} ${s.slice(0, 10)} ${s.slice(11, 16)}`;
 const GEN = `${ENV_NOTE} You write short background details about characters for a story.`, genArgv = ['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', GEN, '--tools', '', '--setting-sources', '', '--exclude-dynamic-system-prompt-sections', '--system-prompt-snapshot', 'off', '--effort', 'low', '--model', process.env.MODEL || 'haiku', '--no-session-persistence'];
@@ -120,14 +125,19 @@ if (mode === 'turns') {
         from = prev ? prev.at : new Date(+new Date(first.checkin) - 3 * 36e5).toISOString().slice(0, 16), list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a.at(-1);
       const chat = rows.slice(0, i).filter(x => isMsg(x) && x.at > from && x.at <= r.at).map(m => msgLine(m)).join('\n\n') || '(nothing)', smalls = rows.slice(0, i).filter(x => x.small && !NOTHING.test(x.small)).map(x => x.small).slice(-10);
       const ask = dayAsk({ cast: `These people are in a ${CHAT}: ${list(cast.names.map(m => `${m} (${cast.cast[m].who})`))}. ${cast.situation || 'They are friends.'}`, setting: cast.setting, now: fullOf(r.at), n, life: cast.private_lines[n], bg: prev?.private_lines[n], bgAt: fullOf(from), since: stampOf(from), chat, hours: Math.round((new Date(r.at) - new Date(from)) / 36e5), smalls });
-      jobs.push({ run: path.basename(run), i, n, r, ask }); }); }
+      jobs.push({ run: path.basename(run), i, n, r, ask, cast, chat }); }); }
   console.log(`${jobs.length} logged refreshes x ${N} samples`);
   const all = jobs.flatMap(j => Array.from({ length: N }, () => j)), res = await pool(all, async j => { const t = await claude(genArgv, j.ask); return { day: fieldOf(t, 'Day'), small: fieldOf(t, 'Small thing') }; });
+  // Chat reuse: content words (4+ letters, not a stop word or a cast name) in the chat since the previous refresh that are not in the person's fixed life line, found in a Day. Crude, for comparing two prompts on the same rows.
+  const STOP = new Set('that this with have from they them then than were been will would could should what when where which there their about just very some more also into your yours like only over after before still really going gonna want need make made does done said says each much many here well back even know think thing things time today tonight cant dont didnt wont isnt wasnt youre thats theyre ive youve been being because while though both other another around away down until once ever never always'.split(' '));
+  const cw = t => new Set((t.toLowerCase().match(/\p{L}{4,}/gu) ?? []).filter(w => !STOP.has(w)));
+  const reuse = (j, day) => { const cast = j.cast, ban = new Set([...cast.names.map(x => x.toLowerCase()), ...cw(cast.private_lines[j.n])]), chatW = [...cw(j.chat.replace(/^\u2014 [^\n]*$/gm, ''))].filter(w => !ban.has(w)), dw = cw(day); return chatW.filter(w => dw.has(w)); };
+  const rs = (day, j) => day ? reuse(j, day) : null; let reused = 0, reusedN = 0, loggedReused = 0;
   const by = {}; all.forEach((j, k) => (by[`${j.run}#${j.i}`] ??= { j, r: [] }).r.push(res[k]));
   let noth = 0, tot = 0, lnoth = 0;
   for (const { j, r } of Object.values(by)) { const ok = r.filter(x => x.day && x.small); noth += ok.filter(x => NOTHING.test(x.small)).length; tot += ok.length; lnoth += NOTHING.test(j.r.small) ? 1 : 0;
-    console.log(`\n== ${j.run.slice(11, 22)} #${j.i} ${j.n} ${j.r.at} (logged small: ${j.r.small.slice(0, 40)})\nLOGGED DAY: ${j.r.private_lines[j.n]}`); ok.forEach((x, k) => console.log(`NEW ${k + 1}: ${x.day}${NOTHING.test(x.small) ? '  [small: nothing]' : ''}`)); }
-  console.log(`\nSmall thing "nothing": logged ${pct(lnoth, jobs.length)}, now ${pct(noth, tot)}`);
+    console.log(`\n== ${j.run.slice(11, 22)} #${j.i} ${j.n} ${j.r.at} (logged small: ${j.r.small.slice(0, 40)})\nLOGGED DAY: ${j.r.private_lines[j.n]}`); const lw = rs(j.r.private_lines[j.n], j); loggedReused += lw.length ? 1 : 0; console.log(`chat words in logged Day: ${lw.join(', ') || '-'}`); ok.forEach((x, k) => { const w = rs(x.day, j); reusedN++; reused += w.length ? 1 : 0; console.log(`NEW ${k + 1}: ${x.day}${NOTHING.test(x.small) ? '  [small: nothing]' : ''}${w.length ? `  [chat words: ${w.join(', ')}]` : ''}`); }); }
+  console.log(`\nSmall thing "nothing": logged ${pct(lnoth, jobs.length)}, now ${pct(noth, tot)}\nDays containing a chat word not in the life line: logged ${pct(loggedReused, jobs.length)}, now ${pct(reused, reusedN)}`);
 } else if (mode === 'quiet') {
   const jobs = [];
   for (const run of args) { const rows = read(run);
@@ -148,8 +158,8 @@ if (mode === 'turns') {
 } else if (mode === 'polish') {
   const stat = { raw: 0, then: { words: 0, emoji: 0, slang: 0, total: 0 }, now: { words: 0, emoji: 0, slang: 0, total: 0 }, drops: [0, 0] }, pairs = [];
   const jobs = [];
-  for (const run of args) { const rows = read(run); rows.forEach(row => { if (!row.raw || row.draft != null) return; // rows whose posted text is the polish of raw (a re-check's draft is skipped)
-    const at = row.checkin, convo = rows.filter(r => r.posted && r.at <= at && r.who && !(r.who === row.who && r.checkin === row.checkin)).slice(-12) /* not the reply being re-polished: a short one posts in its check-in's minute and showed up as already in the chat, inflating DROPs */, last = convo.map(m => `\u2014 ${m.who}${m.who === row.who ? ' (you)' : ''}, ${stampIso(m.at)}\n${m.text}`).join('\n\n') || '(nothing yet)'; jobs.push({ run: path.basename(run), rows, row, last, names: [...new Set(rows.filter(r => r.who && r.posted !== undefined).map(r => r.who))] }); }); }
+  for (const run of args) { const rows = read(run); rows.forEach((row, ri) => { if (!row.raw || row.draft != null || (ROWS.length && !ROWS.includes(ri))) return; // rows whose posted text is the polish of raw (a re-check's draft is skipped)
+    const at = row.checkin, convo = rows.filter(r => r.posted && r.at <= at && r.who && !(r.who === row.who && r.checkin === row.checkin)).slice(-12) /* not the reply being re-polished: a short one posts in its check-in's minute and showed up as already in the chat, inflating DROPs */, last = convo.map(m => `\u2014 ${m.who}${m.who === row.who ? ' (you)' : ''}, ${stampIso(m.at)}\n${m.text}`).join('\n\n') || '(nothing yet)'; for (let rep = 0; rep < REP; rep++) jobs.push({ run: path.basename(run), rows, row, last, names: [...new Set(rows.filter(r => r.who && r.posted !== undefined).map(r => r.who))] }); }); }
   console.log(`${jobs.length} logged drafts`);
   const res = await pool(jobs, j => polishOf(j.rows, j.row, j.row.raw, j.last));
   jobs.forEach((j, k) => { const now = res[k]; if (now?.error || now == null) return; stat.raw++; const dn = /^drop[\s.!?]*$/i.test(now); stat.drops[0] += j.row.pass ? 1 : 0; stat.drops[1] += dn ? 1 : 0;
@@ -171,5 +181,5 @@ if (mode === 'turns') {
   console.log(rows4.map(r => `${r.who}(${r.n}) ${r.top} ${r.then.toFixed(2)}->${r.now.toFixed(2)}`).join('; '));
   const pick = [...pairs.filter(p => p.a && /\?/.test(p.raw)).slice(0, 2), ...pairs.filter(p => p.a && !/\?/.test(p.raw) && p.raw.split(/\s+/).length > 12).slice(0, SHOW)].slice(0, SHOW);
   for (const p of pick) console.log(`\n[${p.who}] raw: ${p.raw.slice(0, 300)}\n  then: ${p.then.slice(0, 200)}\n  now:  ${p.now.slice(0, 200)}`);
-  fs.writeFileSync(path.join(cfg, 'polish.json'), JSON.stringify(pairs, null, 1)); console.log('\ndetails:', path.join(cfg, 'polish.json'));
+  fs.writeFileSync(path.join(cfg, 'polish.json'), JSON.stringify(pairs, null, 1)); console.log(`polish calls ${think.n}, with thinking tokens ${think.with}, mean thinking tokens ${(think.tokens / (think.n || 1)).toFixed(0)}`); console.log('\ndetails:', path.join(cfg, 'polish.json'));
 }

@@ -186,7 +186,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
     <div class="field grow"><label class="label" for="nTopic">Topic</label>
       <input id="nTopic" type="text" maxlength="500" placeholder="Optional"></div>
     <div class="field"><label class="label" for="nModel">Model</label>
-      <select id="nModel"><option value="haiku" selected>haiku</option><option value="sonnet">sonnet</option></select></div>
+      <select id="nModel"><option value="auto" selected>Auto (picked from the brief)</option><option value="haiku">haiku</option><option value="sonnet">sonnet</option></select></div>
     <div class="field"><label class="label" for="nPeople">People</label>
       <select id="nPeople"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
     <label class="check" for="nOracle"><input id="nOracle" type="checkbox"> Claude (@claude)</label>
@@ -306,7 +306,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
   }
 
   function renderInfo() {
-    $('info').innerHTML = `<div class="meta"><span><b>${esc(run.model)}</b></span><span>${esc(fmtDate(run.started))}</span></div>
+    $('info').innerHTML = `<div class="meta"><span><b>${esc(run.model)}</b></span><span>${esc(fmtDate(run.started))}</span></div>${run.modelWhy ? `<p><span class="label">Model</span>${esc(run.modelWhy)}</p>` : ""}
       <p><span class="label">Topic</span>${run.topic ? esc(run.topic) : 'none'}</p>${Object.entries(run.secrets || {}).map(([w, t]) => `<p class="${cls(w)}" style="color:var(--who)"><span class="label" style="color:inherit">${esc(w)}'s secret</span>${esc(t)}</p>`).join('')}`;
   }
 
@@ -428,7 +428,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
         if (!name) { nStatus(`Secrets: use "Name: secret", with a name from the first ${people} people (${pool.join(', ')}).`, true); return; }
         secrets[name] = m[2].replace(/\s+/g, ' ').slice(0, 300);
       }
-      const model = $('nModel').value === 'sonnet' ? 'sonnet' : 'haiku';
+      const model = ['haiku', 'sonnet'].includes($('nModel').value) ? $('nModel').value : 'auto';
       const situation = $('nSituation').value.replace(/\s+/g, ' ').trim().slice(0, 500);
       const text = `START RUN\nmodel: ${model}\npeople: ${people}\nmessages: 120\noracle: ${$('nOracle').checked ? 'yes' : 'no'}\nsituation: ${situation || '(none)'}\ntopic: ${topic || '(none)'}\nsecrets: ${JSON.stringify(secrets)}`;
       sending = true; $('nGo').disabled = true; nStatus('Sending\u2026');
@@ -461,7 +461,7 @@ h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; margin: 0; }
       if (!metas || !turnsBy) return; // both loaded first, so a run open mid-way shows its turns so far instead of replaying them
       const shown = run, oldLen = shown ? shown.turns.length : 0, atEnd = shown && pos >= oldLen;
       dbRuns = metas.filter(d => d.id && !allRuns.some(r => r.id === d.id)).map(d => Object.assign(byId[d.id] ||= { id: d.id, live: true, brief: '', rounds: null }, {
-        started: d.started, model: d.model, people: d.people, names: d.names || [], topic: d.topic || null, secrets: d.secrets || null, oracle: !!d.oracle,
+        started: d.started, model: d.model, modelWhy: d.modelWhy || null, people: d.people, names: d.names || [], topic: d.topic || null, secrets: d.secrets || null, oracle: !!d.oracle,
         status: d.status, ended: d.ended || 'message limit', turns: turnsBy[d.id] || [] })).sort((a, b) => (b.started || '').localeCompare(a.started || ''));
       const startedNow = dbRuns.find(r => r.status === 'running' && !announced.has(r.id));
       for (const r of dbRuns) announced.add(r.id);

@@ -51,7 +51,7 @@ for (const id of fs.existsSync(writerDir) ? fs.readdirSync(writerDir).sort().rev
   const posted = every.filter(r => r.posted === true && r.text), people = posted.filter(r => !r.oracle), m = id.match(/^(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d)-(\d\d)-(\d{3})Z$/), secrets = every.find(r => r.secrets)?.secrets;
   const turns = posted.flatMap((r, i, a) => [...(i && a[i - 1].at.slice(0, 10) !== r.at.slice(0, 10) ? [{ who: 'Clock', text: dayLabel(r.at + ':00'), pass: false, clock: true, at: r.at }] : []), { who: r.who, text: r.text, pass: false, ...(r.oracle && { oracle: true }), at: r.at }]);
   const msgs = turns.filter(t => !t.clock && !t.oracle); for (const r of every.filter(r => r.react)) (msgs[r.to].reactions ??= []).push({ who: r.who, emoji: r.react });
-  runs.push({ id: `${id}-live`, started: m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null, model: head.model, brief: cast.setting, names: cast.names, people: cast.names.length, oracle: !!head.oracle, topic: cast.topic, secrets: secrets ?? null, privateLines: cast.private_lines, passes: 0, unsent: 0, ended: head.complete ? 'end date' : 'message limit', turns });
+  runs.push({ id: `${id}-live`, started: m ? `${m[1]}T${m[2]}:${m[3]}:${m[4]}.${m[5]}Z` : null, model: head.model, modelWhy: head.modelWhy ?? null, brief: cast.setting, names: cast.names, people: cast.names.length, oracle: !!head.oracle, topic: cast.topic, secrets: secrets ?? null, privateLines: cast.private_lines, passes: 0, unsent: 0, ended: head.complete ? 'end date' : 'message limit', turns });
 }
 runs.sort((a, b) => (b.started || '').localeCompare(a.started || ''));
 const out = JSON.stringify(runs);

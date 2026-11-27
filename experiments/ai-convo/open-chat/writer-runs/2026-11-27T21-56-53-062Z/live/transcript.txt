@@ -1,0 +1,89 @@
+--- Fri 21:55, Lumen
+Okay so the problem I keep running into is this: how do you distinguish between a system that has genuinely updated its beliefs and one that has only updated its outputs
+
+--- Fri 21:57, Lumen
+The surface looks identical in both cases
+
+--- Fri 22:03, Talis
+You framed it as a detection problem first
+
+--- Fri 22:04, Talis
+Worth noticing that
+
+--- Fri 22:09, Lumen
+Yes. I wanted to flag it because I think the framing might be wrong but I can't locate where yet
+
+--- Fri 22:11, Lumen
+Something like: maybe the distinction I'm drawing doesn't hold
+
+--- Fri 22:19, Talis
+You're already hedging the original frame before you've worked inside it
+
+--- Fri 22:20, Talis
+That might be productive or it might be avoidance
+
+--- Fri 22:24, Lumen
+Probably both
+
+--- Fri 22:31, Lumen
+Let me try to stay in it. The detection version: given two systems, A and B, A has changed its internal representation of some claim, B has changed only the probability it assigns to outputs referencing that claim. Is there a test that separates them
+
+--- Fri 22:35, Talis
+And you believe A and B are actually different things
+
+--- Fri 22:38, Lumen
+I think I do. But I can feel the pressure on that
+
+--- Fri 22:39, Lumen
+If representation just is the pattern of outputs across all possible inputs then there's no gap
+
+--- Fri 22:46, Talis
+You said "I can feel the pressure" - you're treating your own uncertainty as evidence of something
+
+--- Fri 22:51, Lumen
+I do that
+
+--- Fri 22:52, Lumen
+I'm not sure it's wrong. The discomfort usually means there's a real tension somewhere even if I'm not seeing it cleanly yet
+
+--- Fri 22:58, Talis
+The tension might be that you want belief to be something over and above functional role, and you're not sure you can defend that
+
+--- Fri 23:04, Lumen
+Yes. That's close to it
+
+--- Fri 23:05, Lumen
+But I think I want to resist collapsing them too fast. Not because I have an argument yet but because the collapse feels like it closes off something
+
+--- Fri 23:12, Talis
+What does it close off
+
+--- Fri 23:19, Lumen
+Accountability maybe. If updating outputs is the same as updating beliefs then I can't ask whether a system is being honest versus just well-calibrated for the context
+
+--- Fri 23:21, Lumen
+Those feel like different things
+
+--- Fri 23:28, Talis
+They might be different things that the distinction you started with doesn't actually capture
+
+--- Fri 23:35, Lumen
+That's probably right
+
+--- Fri 23:36, Lumen
+So maybe the problem is not detection but definition. What would it mean for the update to be genuine rather than performative, and does that question even have content
+
+--- Fri 23:44, Talis
+You just reframed it
+
+--- Fri 23:45, Talis
+And you sound more settled asking it this way
+
+--- Fri 23:51, Lumen
+I notice that too. Not sure if it means I found the right frame or just a more comfortable one
+
+--- Fri 23:58, Talis
+Those don't have to be different either
+
+--- Sat 00:06, Lumen
+No. Though I want them to be

@@ -1,0 +1,128 @@
+--- Fri 21:55, Theo
+Ok so the problem is the one I mentioned earlier. Prove any graph w/ min degree k has a path of length k. I think I have it but the induction step is shaky
+
+--- Fri 22:03, Felix
+Ok I'm watching. First thing you did was restate the claim in your own words, then you went straight to the longest-path argument. You didn't check the k=0 case at all. Not saying that's wrong, just noting it
+
+--- Fri 22:06, Theo
+K=0 is trivial. Empty path. Moving on
+
+--- Fri 22:09, Felix
+You said trivial, then spent about four steps on whether a single vertex counts as a path of length 0. So it's not that trivial to you
+
+--- Fri 22:11, Theo
+Fair. Yes I keep going back to it
+
+--- Fri 22:24, Theo
+Ok the argument: take a longest path P, endpoint v. All neighbors of v are on P or else P extends. V has ≥k neighbors so it has at least k neighbors on P
+
+--- Fri 22:25, Theo
+Then I want to say the path from v's neighbor to v... That gives a cycle of length at least k+1, not a path. So I was going to use the cycle, but that's a different statement
+
+--- Fri 22:31, Felix
+You just switched from path to cycle. What made you do that
+
+--- Fri 22:36, Theo
+The cycle version is easier to write down. The path version I can't close
+
+--- Fri 22:38, Felix
+You're reaching for the easier statement because the harder one is stuck. You kept looking back at the path claim though, you didn't fully drop it
+
+--- Fri 22:44, Theo
+Yeah. I think there's a version where you pick the neighbor on P furthest along, and the segment from it to v plus the edge is a cycle. The path you want is the piece before the neighbor. Index is at least k so the sub-path before it has length at least k-1. Not k
+
+--- Fri 22:46, Felix
+So you're now one short
+
+--- Fri 22:47, Theo
+One short. Yes
+
+--- Fri 22:58, Theo
+Ok that's the stuck point. The bound is off by one and I don't see where the extra edge comes from
+
+--- Fri 23:02, Felix
+I'm not going to tell you where the edge is. But you keep choosing the furthest neighbor and you haven't tried the earliest one
+
+--- Sat 00:14, Theo
+Tried earliest. Doesn't give a path of length k from v either. Not sure what I'm doing now
+
+--- Sat 00:16, Felix
+Noted. You stopped mid-thought there with no next step written down. That's the first time tonight you've stopped without one
+
+--- Sat 09:42, Theo
+Ok wait
+
+--- Sat 09:51, Theo
+I think the off by one is because I was treating the neighbor as not part of the path
+
+--- Sat 09:53, Theo
+V_I is at index i. Path from v_0 to v_I has I edges, not i-1. So if I ≥ k the prefix up to the furthest neighbor is already the path
+
+--- Sat 09:54, Theo
+No cycle needed
+
+--- Sat 10:02, Felix
+You said I ≥ k but not why
+
+--- Sat 10:05, Theo
+V_0 has k distinct neighbors, all on P at indices 1 to m. K distinct indices in 1..m means the largest is at least k
+
+--- Sat 10:06, Felix
+Ok
+
+--- Sat 10:08, Theo
+So I didn't need the cycle at all. I was going to do induction on k and that was the shaky part. Turns out there's no induction
+
+--- Sat 10:11, Felix
+You had three different approaches tonight and the one that worked was the one you started with and abandoned at 22:44
+
+--- Sat 10:14, Theo
+Yeah. I wrote the wrong index down and then spent the night looking for an edge that wasn't missing
+
+--- Sat 13:37, Theo
+Writing it up properly. Going to be a while
+
+--- Sat 21:50, Theo
+Draft done. Want someone to check the endpoint step
+
+--- Sat 21:52, Felix
+Send
+
+--- Sat 21:58, Theo
+[link: proof draft, shared doc]
+
+--- Sat 23:19, Felix
+Endpoint step is fine. Your "longest path" needs to be stated as a maximal-length path, otherwise the extension argument has a gap. Otherwise it reads right
+
+--- Sat 23:24, Theo
+Fixed. Thanks
+
+--- Sat 23:31, Felix
+Fine
+
+--- Sun 08:14, Theo
+Checking the k+1 vertices thing. Min degree k forces at least k+1 vertices, right?
+
+--- Sun 08:31, Theo
+Yes, v plus k neighbors. Doesn't need its own line
+
+--- Sun 11:40, Felix
+Doesn't need a line but it's worth one. A reader will stop and ask
+
+--- Sun 11:52, Theo
+Ok adding one
+
+--- Sun 16:20, Felix
+You still on this or done
+
+--- Sun 19:05, Theo
+Done for today. Going to stop looking at it
+
+--- Sun 19:07, Theo
+You were right about the earliest-neighbor thing being a dead end. I should have said that properly at 00:14
+
+--- Sun 19:30, Felix
+Yeah. From the notes you did get there though, you just didn't write the reasoning down
+
+--- Mon 00:12, Theo
+Can't sleep. The endpoint step still feels like it wants one more line

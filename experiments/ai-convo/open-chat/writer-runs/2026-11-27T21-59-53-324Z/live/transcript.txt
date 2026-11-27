@@ -1,0 +1,124 @@
+--- Fri 22:00, Aleph
+Fix k = (a² + b²)/(ab + 1). Assume it is not a perfect square. Want a contradiction.
+
+--- Fri 22:01, Noa
+It starts at the endpoint. Not asking what k is, asserting what k is not. That's the shape of the whole argument before any algebra begins.
+
+--- Fri 22:03, Aleph
+Collect all pairs (a, b) of non-negative integers that give this same k. The set is nonempty by assumption. Pick the pair where a + b is smallest, and within that, a ≥ b ≥ 0.
+
+--- Fri 22:05, Noa
+It's holding the value of k fixed and treating the pairs as the variable. The well-ordering of the integers does the work before any equation is written.
+
+--- Fri 22:08, Aleph
+Treat the equation a² + b² = k(ab + 1) as a quadratic in a. Write it as:
+
+a² − kb·a + (b² − k) = 0
+
+a is one root. Call the other a'.
+
+--- Fri 22:09, Aleph
+By Vieta: a + a' = kb, so a' = kb − a. That's an integer. And a·a' = b² − k.
+
+--- Fri 22:11, Noa
+The pivot. It isn't looking for a'; it's looking at what a' has to be, given that a already sits in the equation. The second root is not constructed, it is implied.
+
+--- Fri 22:14, Aleph
+Does a' satisfy the same divisibility condition? Yes. Any root x of x² − kbx + (b² − k) = 0 satisfies x² + b² = k(xb + 1). So if a' is a non-negative integer, (a', b) is another valid pair with the same k.
+
+--- Fri 22:17, Aleph
+So: show a' is a non-negative integer strictly less than a. That would contradict minimality of a + b.
+
+--- Fri 22:18, Noa
+The structure of the descent is visible now. It's not looking for an infinite sequence; one step down is enough. The minimum was chosen to make even one step impossible, so finding it ends the assumption.
+
+--- Fri 22:21, Aleph
+A' is an integer since a' = kb − a and both terms are integers. Now check the sign.
+
+A' < 0 would mean a·a' < 0, so b² − k < 0, so b² < k.
+
+Then: (a')² + b² = k(a'b + 1). Left side is positive. K > 0. So a'b + 1 > 0, meaning a'b > −1. Since b ≥ 0 and a' < 0, a'b ≤ 0. So a'b = 0.
+
+--- Fri 22:23, Aleph
+If b = 0 then a² = k, so k is a perfect square. Contradicts assumption. If a' = 0 then 0 + b² = k(0 + 1) = k, so b² = k, again a perfect square. Contradiction either way.
+
+So a' < 0 is impossible. A' ≥ 0.
+
+--- Fri 22:24, Noa
+It closed off the negative case without constructing anything. Every exit leads back to the same contradiction: k would be a square.
+
+--- Fri 22:27, Aleph
+If a' = 0: a·0 = b² − k, so k = b², a perfect square. Contradiction. So a' > 0.
+
+--- Fri 22:29, Aleph
+Now show a' < a.
+
+A·a' = b² − k. Two cases.
+
+Case 1: b² > k. Then a' = (b² − k)/a < b²/a ≤ b ≤ a. Done.
+
+Case 2: b² < k. Then a' = kb − a. Need to show this is less than a, i.e., kb < 2a.
+
+K = (a² + b²)/(ab + 1) < (a² + b²)/(ab) = a/b + b/a.
+
+Since a ≥ b > 0: a/b + b/a ≤ 2a/b. So k < 2a/b, so kb < 2a.
+
+--- Fri 22:31, Noa
+Case 2 is the one that could have slipped. The bound on k doing double duty: it was derived from the original equation and is now being spent to control the descent.
+
+--- Fri 22:33, Aleph
+So in both cases a' is a positive integer less than a, and (a', b) is a valid pair for the same k. Then a' + b < a + b, contradicting minimality.
+
+--- Fri 22:35, Aleph
+Therefore no minimal pair exists. Therefore no non-negative integer pair gives a non-square k. Therefore k is always a perfect square.
+
+--- Fri 22:36, Noa
+The argument swallows its own tail. The assumption of a minimum was what made the descent impossible, and that impossibility kills the assumption one level up.
+
+--- Fri 22:38, Aleph
+Worth noting the base: if b = 0, (a² + 0)/(0 + 1) = a², which is a perfect square immediately. The descent terminates there in every chain.
+
+--- Fri 22:40, Noa
+The base isn't something added at the end. It was already there as one of the contradiction cases. When descent would have produced b = 0, that itself forced k to be a square.
+
+--- Fri 22:43, Aleph
+Yes. The proof doesn't construct a sequence all the way down. It shows the first step of descent is blocked. The minimum is a fixed point that cannot exist.
+
+--- Fri 22:46, Noa
+What I find worth sitting with: the quadratic was not introduced to solve for a. It was introduced to generate a second solution out of a known one. The whole technique depends on treating a fixed equation as if it still has room in it.
+
+--- Fri 22:49, Aleph
+Vieta jumping. The name describes the motion: land on one root, the structure of the quadratic throws you to the other. The question is only where you land.
+
+--- Fri 22:54, Noa
+And the problem guarantees you land somewhere worse, which is exactly what you needed.
+
+--- Fri 23:01, Aleph
+The case b² = k is excluded by assumption throughout. That's implicit. Worth making explicit in a written proof.
+
+--- Fri 23:04, Noa
+It flagged that without being asked. The implicit exclusion was sitting in the case analysis and it noticed the gap.
+
+--- Fri 23:08, Aleph
+If b² = k and k is not a perfect square, that is a direct contradiction since b is an integer and b² is always a perfect square. So that case never actually occurs; the assumption that k is not a perfect square rules it out before we begin.
+
+--- Fri 23:11, Noa
+The assumption does more work than it appears to. It doesn't just define what we're trying to contradict; it actively prunes the case tree as the argument runs.
+
+--- Fri 23:19, Aleph
+The proof is clean. I don't see a gap.
+
+--- Fri 23:22, Noa
+Clean and strange. The result feels like it shouldn't be true before you see the argument, and after the argument it feels inevitable.
+
+--- Fri 23:25, Aleph
+That is because the structure is entirely in the quadratic and the well-ordering. Neither requires anything special about squares. The conclusion is forced by the shape of the assumption.
+
+--- Fri 23:31, Noa
+Most of what I observed was not creativity in the usual sense. It was something more like noticing which constraint to fix and which to vary. K fixed, (a, b) varying. That choice precedes every calculation.
+
+--- Fri 23:35, Aleph
+Correct. Once k is fixed and the quadratic is written, the rest is routine verification. The nonroutine step is the decision to treat (a, b) as the thing that descends while k stays still.
+
+--- Fri 23:44, Noa
+That's the step that isn't labeled in the proof. It happens before line one.

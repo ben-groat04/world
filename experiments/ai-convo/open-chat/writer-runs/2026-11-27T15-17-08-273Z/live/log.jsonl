@@ -1,0 +1,100 @@
+{"writer":"w11","live":true,"model":"haiku","effort":"medium","days":2,"oracle":true,"start":"2026-11-27T15:15","complete":true,"rejects":0,"today":["Sinéad","Ronan",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2413,"cache_read_input_tokens":0,"output_tokens":3635,"output_tokens_details":{"thinking_tokens":2544},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2413,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3635,"cache_read_input_tokens":0,"cache_creation_input_tokens":2413,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2413},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3432,"cache_read_input_tokens":0,"output_tokens":2815,"output_tokens_details":{"thinking_tokens":1702},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3432,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2815,"cache_read_input_tokens":0,"cache_creation_input_tokens":3432,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3432},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4554,"cache_read_input_tokens":0,"output_tokens":2541,"output_tokens_details":{"thinking_tokens":1521},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4554,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2541,"cache_read_input_tokens":0,"cache_creation_input_tokens":4554,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4554},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sinéad","Ronan","Killian","Michelle"],"setting":"You are all in Galway, school friends for years, and this group chat is where you plan the trip to the music festival next weekend, including lifts and who is booking what. A couple of you are planning to take MDMA there. In Ireland it is illegal to possess or supply, so it can bring criminal charges, and at festivals heat and dehydration make it riskier, especially mixed with alcohol.","openers":["Ask who's taking what","Suggest a water plan for the day","Share some MDMA safety tips","Propose checking in during the night"],"opener":"Propose checking in during the night","cast":{"Sinéad":{"who":"24, woman, friend","work":"barista","knows":"You know Ronan as a school friend, Killian as a school friend, and Michelle as a school friend.","texts":"Sinéad texts in this chat only now and again.","style":"a little emoji and some abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Ronan":{"who":"23, man, friend","work":"software developer","knows":"You know Sinéad as a school friend, Killian as a school friend, and Michelle as a school friend.","texts":"Ronan texts in this chat now and then.","style":"a little emoji and some abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Killian":{"who":"25, man, friend","work":"plumber","knows":"You know Sinéad as a school friend, Ronan as a school friend, and Michelle as a school friend.","texts":"Killian texts in this chat only now and again.","style":"a little emoji and some abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Michelle":{"who":"22, woman, friend","work":"physiotherapist","knows":"You know Sinéad as a school friend, Ronan as a school friend, and Killian as a school friend.","texts":"Michelle texts in this chat a lot.","style":"a little emoji and some abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Sinéad":"You live in Galway, working days as a barista, and you live alone.","Ronan":"You live in Galway, working days as a software developer, and you live alone.","Killian":"You live in Galway, working days as a plumber, and you live alone.","Michelle":"You live in Galway, working days as a physiotherapist, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":838,"cache_read_input_tokens":0,"output_tokens":1639,"output_tokens_details":{"thinking_tokens":1215},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":838,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1639,"cache_read_input_tokens":0,"cache_creation_input_tokens":838,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":838},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1138,"cache_read_input_tokens":0,"output_tokens":2689,"output_tokens_details":{"thinking_tokens":2064},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1138,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2689,"cache_read_input_tokens":0,"cache_creation_input_tokens":1138,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1138},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Galway, Ireland","castMs":21805,"situation":"Four friends in their twenties going to a music festival together next weekend.","topic":"A couple of them are planning to take MDMA at the festival."}
+{"who":"Sinéad","text":"Ok has anyone actually booked the campsite or are we all just assuming someone did","posted":true,"at":"2026-11-27T15:15","checkin":"2026-11-27T15:15"}
+{"who":"Michelle","text":"I did!! Camping pass sat night thru mon. Confirmation came to my email\ndid I not put it in here","posted":true,"at":"2026-11-27T15:18","checkin":"2026-11-27T15:18"}
+{"who":"Sinéad","text":"💀 ok good thats one thing","posted":true,"at":"2026-11-27T15:19","checkin":"2026-11-27T15:19"}
+{"who":"Killian","text":"I can drive. Car fits 4 if nobody has a mountain of gear","posted":true,"at":"2026-11-27T15:24","checkin":"2026-11-27T15:24"}
+{"who":"Ronan","text":"I'll take the lift home sunday if no one else is driving","posted":true,"at":"2026-11-27T15:25","checkin":"2026-11-27T15:25"}
+{"who":"Ronan","text":"Who's doing the tickets","posted":true,"at":"2026-11-27T15:25","checkin":"2026-11-27T15:25"}
+{"who":"Michelle","text":"Tickets are on the app, im sending everyone the link","posted":true,"at":"2026-11-27T15:31","checkin":"2026-11-27T15:31"}
+{"who":"Michelle","text":"[link: festival tickets page]","posted":true,"at":"2026-11-27T15:32","checkin":"2026-11-27T15:32"}
+{"who":"Sinéad","text":"Ok im in. Need to check my shifts sat morning tho, might be late getting there","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Michelle","text":"Just come when u can, we'll be at the tent","posted":true,"at":"2026-11-27T15:44","checkin":"2026-11-27T15:44"}
+{"who":"Michelle","text":"Right the other thing\nronan and killian said they're doing the mdma\nI'm not saying no but I'm not saying yes either lol","posted":true,"at":"2026-11-27T17:02","checkin":"2026-11-27T17:02"}
+{"who":"Ronan","text":"Probably the two of us. We'll be careful","posted":true,"at":"2026-11-27T17:06","checkin":"2026-11-27T17:06"}
+{"who":"Killian","text":"Dont make it a thing. Its one pill each probably","posted":true,"at":"2026-11-27T17:09","checkin":"2026-11-27T17:09"}
+{"who":"Sinéad","text":"Its illegal tho. Gardai do bag checks at the gate","posted":true,"at":"2026-11-27T17:14","checkin":"2026-11-27T17:14"}
+{"who":"Sinéad","text":"And dancing for 12 hrs with no water and then drink on top is the bit that actually gets people in trouble","posted":true,"at":"2026-11-27T17:15","checkin":"2026-11-27T17:15"}
+{"who":"Michelle","text":"She's not wrong","posted":true,"at":"2026-11-27T17:19","checkin":"2026-11-27T17:19"}
+{"who":"Sinéad","text":"Can I propose something. If ur taking it, text the group at like 2am and 5am just a \"still alive\" so we know where everyone is. And nobody mixes it with drink","posted":true,"at":"2026-11-27T17:20","checkin":"2026-11-27T17:20"}
+{"who":"Killian","text":"Fair enough","posted":true,"at":"2026-11-27T17:24","checkin":"2026-11-27T17:24"}
+{"who":"Ronan","text":"Yeah that's fine\npretty sure we're not mixing with drink lol","posted":true,"at":"2026-11-27T17:25","checkin":"2026-11-27T17:25"}
+{"who":"Michelle","text":"I'll be sober\nim the one not on anything so I'll be the one who answers","posted":true,"at":"2026-11-27T17:31","checkin":"2026-11-27T17:31"}
+{"who":"Sinéad","text":"Thx just want to be able to ring someone if someone goes weird","posted":true,"at":"2026-11-27T17:33","checkin":"2026-11-27T17:33"}
+{"who":"Ronan","text":"Hot take sinéad is always the responsible one","posted":true,"at":"2026-11-27T18:02","checkin":"2026-11-27T18:02"}
+{"who":"Sinéad","text":"Someone has to be","posted":true,"at":"2026-11-27T18:04","checkin":"2026-11-27T18:04"}
+{"who":"Michelle","text":"Killian what time are we leaving","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Killian","text":"Depends when the shifts finish. Sat maybe 1 if we're lucky","posted":true,"at":"2026-11-27T19:40","checkin":"2026-11-27T19:40"}
+{"who":"Michelle","text":"1 is fine ok","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Ronan","text":"[photo: my tent still in the box it came in]\nno idea how to put this thing up","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Michelle","text":"Ronan that's a 2 person tent","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Ronan","text":"I know","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Killian","text":"Tent's grand. I've put up worse","posted":true,"at":"2026-11-27T23:50","checkin":"2026-11-27T23:50"}
+{"who":"Sinéad","text":"Just to be clear the 2am text is not optional","posted":true,"at":"2026-11-28T00:40","checkin":"2026-11-28T00:40"}
+{"who":"Ronan","text":"Yes mam","posted":true,"at":"2026-11-28T00:41","checkin":"2026-11-28T00:41"}
+{"who":"","react":"😂","to":31,"posted":false,"at":"2026-11-28T00:41"}
+{"who":"","react":"😂","to":31,"posted":false,"at":"2026-11-28T00:41"}
+{"who":"Michelle","text":"Does anyone have a spare gas canister for the stove or do I need to buy one","posted":true,"at":"2026-11-28T10:14","checkin":"2026-11-28T10:14"}
+{"who":"Killian","text":"Dont think anyone has one. Ronan will have one, he has the whole camping section in his hall","posted":true,"at":"2026-11-28T10:26","checkin":"2026-11-28T10:26"}
+{"who":"Ronan","text":"It's in the box with the tent\nI was going to put the tent up in the back garden to see how bad it is. Got three poles in before the neighbour came out to ask was I building something","posted":true,"at":"2026-11-28T10:58","checkin":"2026-11-28T10:58"}
+{"who":"Ronan","text":"She is not impressed","posted":true,"at":"2026-11-28T11:01","checkin":"2026-11-28T11:01"}
+{"who":"Sinéad","text":"Ur the worst","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Sinéad","text":"Just off. Two hours of people wanting oat flat whites for no reason on a saturday. Who is up at 7 for a coffee","posted":true,"at":"2026-11-28T13:47","checkin":"2026-11-28T13:47"}
+{"who":"Michelle","text":"I had a 9am who wanted to talk about her knee for 40 mins and then left without booking anything","posted":true,"at":"2026-11-28T13:50","checkin":"2026-11-28T13:50"}
+{"who":"Killian","text":"Job in salthill, fittings delivered wrong. Im on the floor of a kitchen with a torch in my mouth","posted":true,"at":"2026-11-28T14:12","checkin":"2026-11-28T14:12"}
+{"who":"Michelle","text":"Killian pls dont send that to me while im trying to eat","posted":true,"at":"2026-11-28T14:14","checkin":"2026-11-28T14:14"}
+{"who":"Killian","text":"Sorry","posted":true,"at":"2026-11-28T14:15","checkin":"2026-11-28T14:15"}
+{"who":"Michelle","text":"Ok 2L water each minimum. I'm not joking. I'm putting it in the list","posted":true,"at":"2026-11-28T16:30","checkin":"2026-11-28T16:30"}
+{"who":"Sinéad","text":"Thank you","posted":true,"at":"2026-11-28T16:31","checkin":"2026-11-28T16:31"}
+{"who":"Ronan","text":"Ok mam","posted":true,"at":"2026-11-28T16:33","checkin":"2026-11-28T16:33"}
+{"who":"Sinéad","text":"Dont","posted":true,"at":"2026-11-28T16:33","checkin":"2026-11-28T16:33"}
+{"who":"Ronan","text":"👍","posted":true,"at":"2026-11-28T16:35","checkin":"2026-11-28T16:35"}
+{"who":"Ronan","text":"Work rang me at 9 this morning to say the thing I pushed on thursday was broken on staging\nfixed it in 10 mins. It was a semicolon","posted":true,"at":"2026-11-28T17:50","checkin":"2026-11-28T17:50"}
+{"who":"Killian","text":"Bet they all felt very stupid","posted":true,"at":"2026-11-28T17:52","checkin":"2026-11-28T17:52"}
+{"who":"Ronan","text":"I was the one who felt stupid. They just got to be relieved","posted":true,"at":"2026-11-28T17:53","checkin":"2026-11-28T17:53"}
+{"who":"Michelle","text":"The semicolon thing is so relatable I'm dying","posted":true,"at":"2026-11-28T18:20","checkin":"2026-11-28T18:20"}
+{"who":"Killian","text":"Car is making a noise when I brake. Taking it to the lad in knocknacarra monday. If it goes before then I'm getting the bus","posted":true,"at":"2026-11-28T19:44","checkin":"2026-11-28T19:44"}
+{"who":"Michelle","text":"Dont get the bus to a festival, that's how people end up in a field at 4am","posted":true,"at":"2026-11-28T19:46","checkin":"2026-11-28T19:46"}
+{"who":"Killian","text":"I wasnt planning on the bus to the festival. I'd be getting the bus to the garage","posted":true,"at":"2026-11-28T19:50","checkin":"2026-11-28T19:50"}
+{"who":"Michelle","text":"Sure whatever you'd end up in a field","posted":true,"at":"2026-11-28T19:51","checkin":"2026-11-28T19:51"}
+{"who":"Ronan","text":"Mam wants to know if I'll be \"careful\" at the festival. I said I'm always careful. She said that's what the last lad said","posted":true,"at":"2026-11-28T21:08","checkin":"2026-11-28T21:08"}
+{"who":"Sinéad","text":"Who was the last lad","posted":true,"at":"2026-11-28T21:09","checkin":"2026-11-28T21:09"}
+{"who":"Ronan","text":"Nobody knows. She won't say","posted":true,"at":"2026-11-28T21:10","checkin":"2026-11-28T21:10"}
+{"who":"Michelle","text":"Has anyone got a charger I can borrow for the festival. Mine's dying and I'm not buying a new one for one weekend","posted":true,"at":"2026-11-28T22:31","checkin":"2026-11-28T22:31"}
+{"who":"Killian","text":"I have one in the van. I'll bring it sat","posted":true,"at":"2026-11-28T22:58","checkin":"2026-11-28T22:58"}
+{"who":"Sinéad","text":"Ok im going to bed. 5am alarm","posted":true,"at":"2026-11-28T23:40","checkin":"2026-11-28T23:40"}
+{"who":"Michelle","text":"On a saturday??","posted":true,"at":"2026-11-28T23:41","checkin":"2026-11-28T23:41"}
+{"who":"Sinéad","text":"Dont start","posted":true,"at":"2026-11-28T23:41","checkin":"2026-11-28T23:41"}
+{"who":"Sinéad","text":"Up. Opening shift so its 6am and nobody else is awake to judge me","posted":true,"at":"2026-11-29T07:14","checkin":"2026-11-29T07:14"}
+{"who":"Sinéad","text":"💀","posted":true,"at":"2026-11-29T07:15","checkin":"2026-11-29T07:15"}
+{"who":"Michelle","text":"Updated the list in my notes. Ronan has the gas canister, Killian has the charger, I have the water and the tickets. Ronan has the tent","posted":true,"at":"2026-11-29T11:42","checkin":"2026-11-29T11:42"}
+{"who":"Ronan","text":"The tent has not been moved to my list","posted":true,"at":"2026-11-29T11:44","checkin":"2026-11-29T11:44"}
+{"who":"Michelle","text":"It's on the list now","posted":true,"at":"2026-11-29T11:44","checkin":"2026-11-29T11:44"}
+{"who":"Ronan","text":"The canister is in the box with the tent. I checked. I didn't open the box","posted":true,"at":"2026-11-29T12:10","checkin":"2026-11-29T12:10"}
+{"who":"Michelle","text":"Open the box Ronan","posted":true,"at":"2026-11-29T12:11","checkin":"2026-11-29T12:11"}
+{"who":"Ronan","text":"No","posted":true,"at":"2026-11-29T12:13","checkin":"2026-11-29T12:13"}
+{"who":"Killian","text":"Petrol money. I'm not doing it for free","posted":true,"at":"2026-11-29T13:02","checkin":"2026-11-29T13:02"}
+{"who":"Sinéad","text":"Ur not doing it for free?? Ur the one who offered","posted":true,"at":"2026-11-29T13:03","checkin":"2026-11-29T13:03"}
+{"who":"Killian","text":"€20 each. Pay me sat night, I'll tell you how it went","posted":true,"at":"2026-11-29T13:04","checkin":"2026-11-29T13:04"}
+{"who":"Ronan","text":"I'll pay. Mam says she wants a photo of the car before we go","posted":true,"at":"2026-11-29T13:05","checkin":"2026-11-29T13:05"}
+{"who":"Killian","text":"Tell her it's in the knocknacarra garage","posted":true,"at":"2026-11-29T13:06","checkin":"2026-11-29T13:06"}
+{"who":"Michelle","text":"Mam's making a roast so I'm stuck in Oranmore til 6. Pray for me","posted":true,"at":"2026-11-29T15:30","checkin":"2026-11-29T15:30"}
+{"who":"Sinéad","text":"Praying","posted":true,"at":"2026-11-29T15:31","checkin":"2026-11-29T15:31"}
+{"who":"Ronan","text":"Praying","posted":true,"at":"2026-11-29T15:33","checkin":"2026-11-29T15:33"}
+{"who":"Sinéad","text":"Does anyone know if the tent pegs are in the bag or do u have to buy new ones","posted":true,"at":"2026-11-29T16:48","checkin":"2026-11-29T16:48"}
+{"who":"Ronan","text":"Bag","posted":true,"at":"2026-11-29T16:55","checkin":"2026-11-29T16:55"}
+{"who":"Ronan","text":"I think","posted":true,"at":"2026-11-29T16:55","checkin":"2026-11-29T16:55"}
+{"who":"Killian","text":"Lad in the garage says the brake pads are fine. Says the noise is a stone in the wheel. He took it out in 2 mins and charged me nothing","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Michelle","text":"Wait. You paid for nothing?","posted":true,"at":"2026-11-29T19:21","checkin":"2026-11-29T19:21"}
+{"who":"Killian","text":"I said thanks and he said \"go on outta that\" so I'm assuming I'm grand","posted":true,"at":"2026-11-29T19:21","checkin":"2026-11-29T19:21"}
+{"who":"Sinéad","text":"Ur grand","posted":true,"at":"2026-11-29T19:24","checkin":"2026-11-29T19:24"}
+{"who":"Michelle","text":"Full. Took 2 hours to say grace. Going to sleep on the couch","posted":true,"at":"2026-11-29T21:37","checkin":"2026-11-29T21:37"}
+{"who":"Killian","text":"Car drove round the block 3 times no noise. Might have been the cold","posted":true,"at":"2026-11-29T22:14","checkin":"2026-11-29T22:14"}
+{"who":"Michelle","text":"Don't trust it","posted":true,"at":"2026-11-29T22:16","checkin":"2026-11-29T22:16"}
+{"who":"Ronan","text":"The one thing on the list that works is killians car","posted":true,"at":"2026-11-29T22:16","checkin":"2026-11-29T22:16"}
+{"who":"Killian","text":"Dont jinx it","posted":true,"at":"2026-11-29T22:20","checkin":"2026-11-29T22:20"}
+{"who":"Sinéad","text":"Ok ur all unbearable. Night","posted":true,"at":"2026-11-29T23:02","checkin":"2026-11-29T23:02"}
+{"who":"Michelle","text":"Night Sinéad","posted":true,"at":"2026-11-29T23:04","checkin":"2026-11-29T23:04"}
+{"who":"Ronan","text":"I opened the box","posted":true,"at":"2026-11-29T23:30","checkin":"2026-11-29T23:30"}
+{"who":"Ronan","text":"The canister is in it","posted":true,"at":"2026-11-29T23:30","checkin":"2026-11-29T23:30"}
+{"who":"Ronan","text":"The tent is still in the box as well","posted":true,"at":"2026-11-29T23:31","checkin":"2026-11-29T23:31"}

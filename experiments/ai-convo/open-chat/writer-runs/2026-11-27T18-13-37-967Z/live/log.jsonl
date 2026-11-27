@@ -1,0 +1,117 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":["Caitlin"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1582,"cache_read_input_tokens":0,"output_tokens":3096,"output_tokens_details":{"thinking_tokens":200},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1582,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":3096,"cache_read_input_tokens":0,"cache_creation_input_tokens":1582,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1582},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Siobhan","Caitlin"],"setting":"You are both in Belfast, Northern Ireland, texting each other from wherever you each are right now. You grew up in the same area of East Belfast and have known each other since secondary school, becoming inseparable through your teens and early twenties before something finally broke it.","openers":["Tells her they need to talk about what she did","Calls out the lie Caitlin told their mutual friends","Throws back something Caitlin confided that she swore never to repeat","Tells her she's finally done pretending everything is fine"],"opener":"Tells her they need to talk about what she did","cast":{"Siobhan":{"who":"27, woman, the former best friend (initiating the confrontation)","work":"retail supervisor","knows":"You know Caitlin as your former best friend of over a decade, someone you met at school at around thirteen and were close to until recently.","texts":"","style":"some emoji, light abbreviations, mostly types things out","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Caitlin":{"who":"26, woman, the former best friend (on the receiving end)","work":"sports coach","knows":"You know Siobhan as your former best friend, someone you've known since you were both teenagers at the same school in East Belfast.","texts":"","style":"minimal emoji, few abbreviations, fairly direct typing","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Siobhan":"You live in Belfast, work as a supervisor in retail, and live in a flat you share with a housemate.","Caitlin":"You live in Belfast, work as a sports coach, and live in a flat on your own."},"usage":[{"input_tokens":704,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":268,"output_tokens_details":{"thinking_tokens":87},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":704,"output_tokens":268,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":903,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":622,"output_tokens_details":{"thinking_tokens":286},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":903,"output_tokens":622,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Belfast, Northern Ireland","castMs":18629,"situation":"Two former best friends.","topic":"The worst fight of their friendship: each lists everything they hate about the other, throws back the most painful things they were told in confidence, and tries to hurt as much as possible."}
+{"who":"Siobhan","text":"We need to talk","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Caitlin","text":"ok","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Siobhan","text":"Not like that, actually talk. About what happened","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Caitlin","text":"I figured","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Siobhan","text":"So are you going to say anything or","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Caitlin","text":"I don't know what you want me to say Siobhan","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Siobhan","text":"I want you to explain yourself","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Caitlin","text":"I told you at the time why I said what I said","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Siobhan","text":"You told Aoife. You didn't tell me. I had to hear it from her","posted":true,"at":"2026-11-27T19:03","checkin":"2026-11-27T19:03"}
+{"who":"Siobhan","text":"And not just what you said to her, what you said about me","posted":true,"at":"2026-11-27T19:03","checkin":"2026-11-27T19:03"}
+{"who":"Caitlin","text":"I know","posted":true,"at":"2026-11-27T19:08","checkin":"2026-11-27T19:08"}
+{"who":"Siobhan","text":"That's it?","posted":true,"at":"2026-11-27T19:09","checkin":"2026-11-27T19:09"}
+{"who":"Caitlin","text":"I'm not going to pretend it was fine. It wasn't fine.","posted":true,"at":"2026-11-27T19:11","checkin":"2026-11-27T19:11"}
+{"who":"Siobhan","text":"You told her I was jealous of her. That I'd always been jealous of her. Where did that even come from","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Caitlin","text":"because I think it's true","posted":true,"at":"2026-11-27T19:14","checkin":"2026-11-27T19:14"}
+{"who":"Siobhan","text":"Right","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Siobhan","text":"So you've just been thinking that about me for what, years","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Caitlin","text":"I didn't say years","posted":true,"at":"2026-11-27T19:17","checkin":"2026-11-27T19:17"}
+{"who":"Siobhan","text":"You said always been","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Caitlin","text":"I said it badly","posted":true,"at":"2026-11-27T19:22","checkin":"2026-11-27T19:22"}
+{"who":"Siobhan","text":"Or you said exactly what you meant and now you don't want to deal with it","posted":true,"at":"2026-11-27T19:23","checkin":"2026-11-27T19:23"}
+{"who":"Caitlin","text":"Maybe. I don't know. I was frustrated.","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"Siobhan","text":"With me","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Caitlin","text":"with the whole thing","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Siobhan","text":"She was awful to me Caitlin. She said those things about my job, about where I live, all of it, and you just","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Siobhan","text":"You said nothing. You sat there","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Caitlin","text":"I know I did","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Siobhan","text":"And then you go and tell her I was the problem","posted":true,"at":"2026-11-27T19:35","checkin":"2026-11-27T19:35"}
+{"who":"Caitlin","text":"I didn't say you were the problem","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Siobhan","text":"Aoife told me word for word what you said","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Caitlin","text":"Aoife tells people what she wants them to hear","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Siobhan","text":"So now you're calling her a liar","posted":true,"at":"2026-11-27T19:42","checkin":"2026-11-27T19:42"}
+{"who":"Caitlin","text":"I'm saying she's not neutral","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Siobhan","text":"She told me you said I make everything about myself. That I exhaust you","posted":true,"at":"2026-11-27T19:44","checkin":"2026-11-27T19:44"}
+{"who":"Caitlin","text":"...","posted":true,"at":"2026-11-27T19:51","checkin":"2026-11-27T19:51"}
+{"who":"Siobhan","text":"So that's a yes","posted":true,"at":"2026-11-27T19:52","checkin":"2026-11-27T19:52"}
+{"who":"Caitlin","text":"I said I find it hard sometimes. That's not the same thing.","posted":true,"at":"2026-11-27T19:54","checkin":"2026-11-27T19:54"}
+{"who":"Siobhan","text":"You've been my best friend for twelve years and you're telling Aoife Burke of all people that I exhaust you","posted":true,"at":"2026-11-27T19:55","checkin":"2026-11-27T19:55"}
+{"who":"Caitlin","text":"I know how it sounds","posted":true,"at":"2026-11-27T19:57","checkin":"2026-11-27T19:57"}
+{"who":"Siobhan","text":"Do you","posted":true,"at":"2026-11-27T19:58","checkin":"2026-11-27T19:58"}
+{"who":"Caitlin","text":"Yes. I do.","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Siobhan","text":"I don't think you do actually. I don't think you have any idea","posted":true,"at":"2026-11-27T20:03","checkin":"2026-11-27T20:03"}
+{"who":"Siobhan","text":"Because if you did you wouldn't have done it","posted":true,"at":"2026-11-27T20:04","checkin":"2026-11-27T20:04"}
+{"who":"Caitlin","text":"Can I ask you something","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Siobhan","text":"Go on","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Caitlin","text":"Do you think this friendship has been equal","posted":true,"at":"2026-11-27T20:11","checkin":"2026-11-27T20:11"}
+{"who":"Siobhan","text":"What does that mean","posted":true,"at":"2026-11-27T20:12","checkin":"2026-11-27T20:12"}
+{"who":"Caitlin","text":"I mean do you think we've both put the same amount in","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Siobhan","text":"I can't believe you're doing this","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Caitlin","text":"I'm asking a genuine question","posted":true,"at":"2026-11-27T20:16","checkin":"2026-11-27T20:16"}
+{"who":"Siobhan","text":"Yes. Yes I do. I have been there for every single thing. I was there when your da was sick, I was there when you and Ryan split up, I took two days off work","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Caitlin","text":"I know you did","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Siobhan","text":"So what are you saying","posted":true,"at":"2026-11-27T20:20","checkin":"2026-11-27T20:20"}
+{"who":"Caitlin","text":"I'm saying that when things are hard for you it takes over everything. For weeks. And I'm there, I'm always there, but it doesn't really go both ways in the same way.","posted":true,"at":"2026-11-27T20:24","checkin":"2026-11-27T20:24"}
+{"who":"Siobhan","text":"Name one time I wasn't there for you","posted":true,"at":"2026-11-27T20:26","checkin":"2026-11-27T20:26"}
+{"who":"Caitlin","text":"When mum was in hospital in March you called me four times that week about the thing with work. I didn't tell you to stop, I should have, but I was sitting in a waiting room and I answered every time.","posted":true,"at":"2026-11-27T20:29","checkin":"2026-11-27T20:29"}
+{"who":"Siobhan","text":"I didn't know how bad it was","posted":true,"at":"2026-11-27T20:30","checkin":"2026-11-27T20:30"}
+{"who":"Caitlin","text":"You knew she was in hospital","posted":true,"at":"2026-11-27T20:31","checkin":"2026-11-27T20:31"}
+{"who":"Siobhan","text":"You said it was routine","posted":true,"at":"2026-11-27T20:32","checkin":"2026-11-27T20:32"}
+{"who":"Caitlin","text":"It ended up not being routine","posted":true,"at":"2026-11-27T20:33","checkin":"2026-11-27T20:33"}
+{"who":"Siobhan","text":"And I came over after. I brought food over.","posted":true,"at":"2026-11-27T20:34","checkin":"2026-11-27T20:34"}
+{"who":"Caitlin","text":"You did. I know.","posted":true,"at":"2026-11-27T20:35","checkin":"2026-11-27T20:35"}
+{"who":"Siobhan","text":"So what then","posted":true,"at":"2026-11-27T20:36","checkin":"2026-11-27T20:36"}
+{"who":"Caitlin","text":"I'm not trying to make a list of who did what. I'm trying to explain why I was frustrated enough to say something stupid to someone I shouldn't have said it to.","posted":true,"at":"2026-11-27T20:39","checkin":"2026-11-27T20:39"}
+{"who":"Siobhan","text":"You chose her though. That's what I keep coming back to. Of all the people","posted":true,"at":"2026-11-27T20:41","checkin":"2026-11-27T20:41"}
+{"who":"Caitlin","text":"We work together now. We're around each other a lot.","posted":true,"at":"2026-11-27T20:43","checkin":"2026-11-27T20:43"}
+{"who":"Siobhan","text":"I know you work together","posted":true,"at":"2026-11-27T20:44","checkin":"2026-11-27T20:44"}
+{"who":"Siobhan","text":"She's hated me since fifth year. You know that.","posted":true,"at":"2026-11-27T20:45","checkin":"2026-11-27T20:45"}
+{"who":"Caitlin","text":"She doesn't hate you","posted":true,"at":"2026-11-27T20:48","checkin":"2026-11-27T20:48"}
+{"who":"Siobhan","text":"She told people about me and Declan. While it was still happening. I never told you the full of it because I didn't want to make you pick but it was bad.","posted":true,"at":"2026-11-27T20:49","checkin":"2026-11-27T20:49"}
+{"who":"Caitlin","text":"I didn't know the full of it no","posted":true,"at":"2026-11-27T20:53","checkin":"2026-11-27T20:53"}
+{"who":"Siobhan","text":"And you still told her things about me","posted":true,"at":"2026-11-27T20:54","checkin":"2026-11-27T20:54"}
+{"who":"Caitlin","text":"I told her I find it hard sometimes. I didn't tell her anything else.","posted":true,"at":"2026-11-27T20:57","checkin":"2026-11-27T20:57"}
+{"who":"Siobhan","text":"You told her about my mam","posted":true,"at":"2026-11-27T20:58","checkin":"2026-11-27T20:58"}
+{"who":"Caitlin","text":"...I mentioned it. In passing. I didn't go into it.","posted":true,"at":"2026-11-27T21:04","checkin":"2026-11-27T21:04"}
+{"who":"Siobhan","text":"Caitlin that was told to you in confidence. I haven't told anyone else. Not even my sister knows all of it.","posted":true,"at":"2026-11-27T21:05","checkin":"2026-11-27T21:05"}
+{"who":"Caitlin","text":"I know. I'm sorry. I shouldn't have.","posted":true,"at":"2026-11-27T21:07","checkin":"2026-11-27T21:07"}
+{"who":"Siobhan","text":"She came up to me at Niamh's thing two weeks ago and said she hoped things were easier at home now. I wanted to die. I didn't even know what she knew.","posted":true,"at":"2026-11-27T21:08","checkin":"2026-11-27T21:08"}
+{"who":"Caitlin","text":"I didn't think she'd bring it up to you","posted":true,"at":"2026-11-27T21:11","checkin":"2026-11-27T21:11"}
+{"who":"Siobhan","text":"Why would you tell her at all","posted":true,"at":"2026-11-27T21:12","checkin":"2026-11-27T21:12"}
+{"who":"Caitlin","text":"I don't have a good answer for that","posted":true,"at":"2026-11-27T21:14","checkin":"2026-11-27T21:14"}
+{"who":"Siobhan","text":"No you don't","posted":true,"at":"2026-11-27T21:15","checkin":"2026-11-27T21:15"}
+{"who":"Caitlin","text":"I'm sorry about your mam. genuinely. That was wrong of me.","posted":true,"at":"2026-11-27T21:19","checkin":"2026-11-27T21:19"}
+{"who":"Siobhan","text":"It's not just that though is it. It's all of it together.","posted":true,"at":"2026-11-27T21:21","checkin":"2026-11-27T21:21"}
+{"who":"Caitlin","text":"I know","posted":true,"at":"2026-11-27T21:24","checkin":"2026-11-27T21:24"}
+{"who":"Siobhan","text":"And you think I make everything about myself","posted":true,"at":"2026-11-27T21:26","checkin":"2026-11-27T21:26"}
+{"who":"Caitlin","text":"I think sometimes when you're in the middle of something it's hard to get through to you. That's different from making everything about yourself.","posted":true,"at":"2026-11-27T21:29","checkin":"2026-11-27T21:29"}
+{"who":"Siobhan","text":"That's just a nicer way of saying the same thing","posted":true,"at":"2026-11-27T21:31","checkin":"2026-11-27T21:31"}
+{"who":"Caitlin","text":"Maybe","posted":true,"at":"2026-11-27T21:33","checkin":"2026-11-27T21:33"}
+{"who":"Siobhan","text":"Well while we're doing this","posted":true,"at":"2026-11-27T21:35","checkin":"2026-11-27T21:35"}
+{"who":"Siobhan","text":"You want to know what I find hard","posted":true,"at":"2026-11-27T21:35","checkin":"2026-11-27T21:35"}
+{"who":"Caitlin","text":"go on","posted":true,"at":"2026-11-27T21:36","checkin":"2026-11-27T21:36"}
+{"who":"Siobhan","text":"You go cold. Like a switch. Anytime something gets too much you just go quiet and I'm supposed to figure out what I did. It's been like that since we were sixteen.","posted":true,"at":"2026-11-27T21:39","checkin":"2026-11-27T21:39"}
+{"who":"Caitlin","text":"I don't do it on purpose","posted":true,"at":"2026-11-27T21:42","checkin":"2026-11-27T21:42"}
+{"who":"Siobhan","text":"I know you don't. But it happens. And then nothing gets said and it just sits there.","posted":true,"at":"2026-11-27T21:43","checkin":"2026-11-27T21:43"}
+{"who":"Caitlin","text":"Fair enough","posted":true,"at":"2026-11-27T21:46","checkin":"2026-11-27T21:46"}
+{"who":"Siobhan","text":"And when Ryan left you pushed everyone away for months and then when you came back it was just expected that everything would pick up normal and I'd been worried sick the whole time and there was never any","posted":true,"at":"2026-11-27T21:47","checkin":"2026-11-27T21:47"}
+{"who":"Siobhan","text":"Like you never acknowledged it","posted":true,"at":"2026-11-27T21:47","checkin":"2026-11-27T21:47"}
+{"who":"Caitlin","text":"That was a bad time","posted":true,"at":"2026-11-27T21:51","checkin":"2026-11-27T21:51"}
+{"who":"Siobhan","text":"I know it was. I'm not saying you should have been different during it. I'm saying after.","posted":true,"at":"2026-11-27T21:52","checkin":"2026-11-27T21:52"}
+{"who":"Caitlin","text":"I didn't realise you felt like that","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Siobhan","text":"Because you never asked","posted":true,"at":"2026-11-27T21:56","checkin":"2026-11-27T21:56"}
+{"who":"Caitlin","text":"No","posted":true,"at":"2026-11-27T21:59","checkin":"2026-11-27T21:59"}
+{"who":"Siobhan","text":"This is the problem isn't it. Twelve years and we're only saying any of this now.","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Caitlin","text":"Yeah","posted":true,"at":"2026-11-27T22:06","checkin":"2026-11-27T22:06"}
+{"who":"Siobhan","text":"I'm really angry with you still","posted":true,"at":"2026-11-27T22:08","checkin":"2026-11-27T22:08"}
+{"who":"Caitlin","text":"I know. You should be.","posted":true,"at":"2026-11-27T22:09","checkin":"2026-11-27T22:09"}
+{"who":"Siobhan","text":"She's going to use it. Whatever you told her. She's going to use it.","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Caitlin","text":"Maybe. I can't take it back.","posted":true,"at":"2026-11-27T22:14","checkin":"2026-11-27T22:14"}
+{"who":"Siobhan","text":"No","posted":true,"at":"2026-11-27T22:17","checkin":"2026-11-27T22:17"}
+{"who":"Caitlin","text":"I don't want this to be it","posted":true,"at":"2026-11-27T22:31","checkin":"2026-11-27T22:31"}
+{"who":"Siobhan","text":"I don't know what I want right now","posted":true,"at":"2026-11-27T22:34","checkin":"2026-11-27T22:34"}
+{"who":"Caitlin","text":"That's fair","posted":true,"at":"2026-11-27T22:36","checkin":"2026-11-27T22:36"}
+{"who":"Siobhan","text":"I need some time","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Caitlin","text":"Ok","posted":true,"at":"2026-11-27T22:53","checkin":"2026-11-27T22:53"}

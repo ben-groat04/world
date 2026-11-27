@@ -1,4 +1,4 @@
-{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1729,"cache_read_input_tokens":0,"output_tokens":1541,"output_tokens_details":{"thinking_tokens":169},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1729,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1541,"cache_read_input_tokens":0,"cache_creation_input_tokens":1729,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1729},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1729,"cache_read_input_tokens":0,"output_tokens":1541,"output_tokens_details":{"thinking_tokens":169},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1729,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1541,"cache_read_input_tokens":0,"cache_creation_input_tokens":1729,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1729},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":2990,"cache_read_input_tokens":0,"output_tokens":945,"output_tokens_details":{"thinking_tokens":162},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2990,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":945,"cache_read_input_tokens":0,"cache_creation_input_tokens":2990,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2990},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":3765,"cache_read_input_tokens":0,"output_tokens":874,"output_tokens_details":{"thinking_tokens":139},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3765,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":874,"cache_read_input_tokens":0,"cache_creation_input_tokens":3765,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3765},"type":"message"}],"speed":"standard","fallback_credit":null}]}
 {"names":["Shane","Kayla","Paul"],"setting":"You all work the same ambulance crew out of a Toronto EMS station, covering calls across the city. You've been crewing together long enough to have seen each other at your worst and your best, and you spend off-shift time the same way most EMS crews do — decompressing over bad food and worse jokes. You all knew a colleague who recently died, someone from the station or the broader Toronto EMS community.","openers":["tell them Ortiz's send-off turned into the strangest call he's ever run","rank the top five worst smells they've collectively encountered on shift","propose a formal competition for who had the worst call this month","remind them of the time Ortiz somehow made a code brown funny"],"opener":"tell them Ortiz's send-off turned into the strangest call he's ever run","cast":{"Shane":{"who":"34, man, paramedic on the crew","work":"security contractor","knows":"You work the truck with Kayla as your regular partner and Paul as the senior on the crew who sometimes runs with you both.","texts":"Shane texts in this chat now and then.","style":"Sends a decent amount of emoji, mostly dark or sarcastic ones, no abbreviations, writes casually but fully.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Kayla":{"who":"29, woman, paramedic on the crew","work":"nursing student","knows":"You partner regularly with Shane on the truck and Paul is the senior paramedic on your crew.","texts":"Kayla texts in this chat now and then.","style":"Some emoji, occasional abbreviations, relaxed texting style.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Paul":{"who":"47, man, senior paramedic on the crew","work":"union rep","knows":"You're the senior on the crew with Shane and Kayla as your regular partners.","texts":"Paul texts in this chat a lot.","style":"Minimal emoji, rarely uses abbreviations, writes in full sentences.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Shane":"You live in a rented place in Scarborough, split between EMS shifts and security contractor work, and you live alone.","Kayla":"You live in a shared apartment near Danforth while juggling your paramedic shifts and nursing school coursework.","Paul":"You live in Etobicoke with your family, filling your days with shifts, union rep work, and the particular exhaustion of doing this job for over twenty years."},"usage":[{"input_tokens":718,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":385,"output_tokens_details":{"thinking_tokens":139},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":718,"output_tokens":385,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":914,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":475,"output_tokens_details":{"thinking_tokens":27},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":914,"output_tokens":475,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Toronto, Canada","castMs":21088,"situation":"Three paramedics on the same crew, off shift.","topic":"Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise."}
 {"who":"Shane","text":"so I need to tell you both what happened today\n\n---Fri 18:15, Shane\n\nat Ortiz's thing","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
 {"who":"Kayla","text":"What","posted":true,"at":"2026-11-27T18:17","checkin":"2026-11-27T18:17"}
@@ -66,3 +66,99 @@
 {"who":"Shane","text":"😂😂","posted":true,"at":"2026-11-27T23:10","checkin":"2026-11-27T23:10"}
 {"who":"Kayla","text":"Night","posted":true,"at":"2026-11-27T23:11","checkin":"2026-11-27T23:11"}
 {"who":"Shane","text":"night","posted":true,"at":"2026-11-27T23:11","checkin":"2026-11-27T23:11"}
+{"who":"Shane","text":"how are you doing","posted":true,"at":"2026-11-28T09:47","checkin":"2026-11-28T09:47"}
+{"who":"Kayla","text":"Fine why","posted":true,"at":"2026-11-28T09:51","checkin":"2026-11-28T09:51"}
+{"who":"Shane","text":"you had like 4 glasses of wine","posted":true,"at":"2026-11-28T09:52","checkin":"2026-11-28T09:52"}
+{"who":"Kayla","text":"I'm fine","posted":true,"at":"2026-11-28T09:53","checkin":"2026-11-28T09:53"}
+{"who":"Kayla","text":"I had water","posted":true,"at":"2026-11-28T09:53","checkin":"2026-11-28T09:53"}
+{"who":"Shane","text":"you did not have water","posted":true,"at":"2026-11-28T09:54","checkin":"2026-11-28T09:54"}
+{"who":"Kayla","text":"I had some water","posted":true,"at":"2026-11-28T09:56","checkin":"2026-11-28T09:56"}
+{"who":"Paul","text":"How was last night.","posted":true,"at":"2026-11-28T10:31","checkin":"2026-11-28T10:31"}
+{"who":"Shane","text":"good","posted":true,"at":"2026-11-28T10:44","checkin":"2026-11-28T10:44"}
+{"who":"Paul","text":"Sorry I couldn't make it.","posted":true,"at":"2026-11-28T10:46","checkin":"2026-11-28T10:46"}
+{"who":"Shane","text":"all good, we were there till like midnight anyway","posted":true,"at":"2026-11-28T10:48","checkin":"2026-11-28T10:48"}
+{"who":"Paul","text":"Did Kayla tell the garden hose story.","posted":true,"at":"2026-11-28T11:02","checkin":"2026-11-28T11:02"}
+{"who":"Shane","text":"yes","posted":true,"at":"2026-11-28T11:04","checkin":"2026-11-28T11:04"}
+{"who":"Shane","text":"it was better in person","posted":true,"at":"2026-11-28T11:04","checkin":"2026-11-28T11:04"}
+{"who":"Kayla","text":"Does anyone know if we're on Monday or Tuesday this week","posted":true,"at":"2026-11-28T14:22","checkin":"2026-11-28T14:22"}
+{"who":"Paul","text":"Monday. 0600.","posted":true,"at":"2026-11-28T14:38","checkin":"2026-11-28T14:38"}
+{"who":"Kayla","text":"Ugh ok","posted":true,"at":"2026-11-28T14:39","checkin":"2026-11-28T14:39"}
+{"who":"Shane","text":"same as always","posted":true,"at":"2026-11-28T14:40","checkin":"2026-11-28T14:40"}
+{"who":"Kayla","text":"I know I just hoped it changed","posted":true,"at":"2026-11-28T14:41","checkin":"2026-11-28T14:41"}
+{"who":"Shane","text":"[photo: a plate of leftovers, cold cuts on toast]","posted":true,"at":"2026-11-28T15:55","checkin":"2026-11-28T15:55"}
+{"who":"Shane","text":"in memory of Ortiz's uncle","posted":true,"at":"2026-11-28T15:56","checkin":"2026-11-28T15:56"}
+{"who":"Kayla","text":"😭","posted":true,"at":"2026-11-28T15:58","checkin":"2026-11-28T15:58"}
+{"who":"Paul","text":"How is he doing that for.","posted":true,"at":"2026-11-28T16:03","checkin":"2026-11-28T16:03"}
+{"who":"Shane","text":"the cold cuts fell on him at the reception","posted":true,"at":"2026-11-28T16:04","checkin":"2026-11-28T16:04"}
+{"who":"Paul","text":"I know that. I mean the toast.","posted":true,"at":"2026-11-28T16:05","checkin":"2026-11-28T16:05"}
+{"who":"Shane","text":"it felt right","posted":true,"at":"2026-11-28T16:06","checkin":"2026-11-28T16:06"}
+{"who":"Paul","text":"Fair enough.","posted":true,"at":"2026-11-28T16:08","checkin":"2026-11-28T16:08"}
+{"who":"Kayla","text":"Anyone watching the game","posted":true,"at":"2026-11-28T19:30","checkin":"2026-11-28T19:30"}
+{"who":"Shane","text":"no what game","posted":true,"at":"2026-11-28T19:33","checkin":"2026-11-28T19:33"}
+{"who":"Kayla","text":"Leafs","posted":true,"at":"2026-11-28T19:34","checkin":"2026-11-28T19:34"}
+{"who":"Shane","text":"nah","posted":true,"at":"2026-11-28T19:35","checkin":"2026-11-28T19:35"}
+{"who":"Kayla","text":"They lost","posted":true,"at":"2026-11-28T21:17","checkin":"2026-11-28T21:17"}
+{"who":"Shane","text":"shocking","posted":true,"at":"2026-11-28T21:19","checkin":"2026-11-28T21:19"}
+{"who":"Kayla","text":"Truly","posted":true,"at":"2026-11-28T21:20","checkin":"2026-11-28T21:20"}
+{"who":"Shane","text":"okay so my neighbour is having some kind of party","posted":true,"at":"2026-11-28T23:44","checkin":"2026-11-28T23:44"}
+{"who":"Shane","text":"it is 11:44","posted":true,"at":"2026-11-28T23:44","checkin":"2026-11-28T23:44"}
+{"who":"Shane","text":"on a Saturday before a Monday 0600 shift","posted":true,"at":"2026-11-28T23:45","checkin":"2026-11-28T23:45"}
+{"who":"Shane","text":"🙂","posted":true,"at":"2026-11-28T23:46","checkin":"2026-11-28T23:46"}
+{"who":"Kayla","text":"Call it in","posted":true,"at":"2026-11-28T23:51","checkin":"2026-11-28T23:51"}
+{"who":"Shane","text":"I'm not calling it in","posted":true,"at":"2026-11-28T23:52","checkin":"2026-11-28T23:52"}
+{"who":"Kayla","text":"Then suffer","posted":true,"at":"2026-11-28T23:53","checkin":"2026-11-28T23:53"}
+{"who":"Shane","text":"I am suffering","posted":true,"at":"2026-11-28T23:54","checkin":"2026-11-28T23:54"}
+{"who":"Shane","text":"still going","posted":true,"at":"2026-11-29T00:08","checkin":"2026-11-29T00:08"}
+{"who":"Kayla","text":"Go knock","posted":true,"at":"2026-11-29T00:09","checkin":"2026-11-29T00:09"}
+{"who":"Shane","text":"no","posted":true,"at":"2026-11-29T00:10","checkin":"2026-11-29T00:10"}
+{"who":"Kayla","text":"Then suffer","posted":true,"at":"2026-11-29T00:11","checkin":"2026-11-29T00:11"}
+{"who":"Shane","text":"you keep saying that","posted":true,"at":"2026-11-29T00:12","checkin":"2026-11-29T00:12"}
+{"who":"Shane","text":"it's gotten louder","posted":true,"at":"2026-11-29T00:19","checkin":"2026-11-29T00:19"}
+{"who":"Kayla","text":"What kind of party","posted":true,"at":"2026-11-29T00:21","checkin":"2026-11-29T00:21"}
+{"who":"Shane","text":"unclear","posted":true,"at":"2026-11-29T00:22","checkin":"2026-11-29T00:22"}
+{"who":"Shane","text":"there's a fog machine involved","posted":true,"at":"2026-11-29T00:22","checkin":"2026-11-29T00:22"}
+{"who":"Kayla","text":"A fog machine","posted":true,"at":"2026-11-29T00:23","checkin":"2026-11-29T00:23"}
+{"who":"Shane","text":"yes","posted":true,"at":"2026-11-29T00:24","checkin":"2026-11-29T00:24"}
+{"who":"Kayla","text":"On a Sunday","posted":true,"at":"2026-11-29T00:25","checkin":"2026-11-29T00:25"}
+{"who":"Shane","text":"on a Sunday","posted":true,"at":"2026-11-29T00:26","checkin":"2026-11-29T00:26"}
+{"who":"Kayla","text":"I'm going to sleep, good luck","posted":true,"at":"2026-11-29T00:34","checkin":"2026-11-29T00:34"}
+{"who":"Shane","text":"thanks for the support","posted":true,"at":"2026-11-29T00:35","checkin":"2026-11-29T00:35"}
+{"who":"Shane","text":"it stopped","posted":true,"at":"2026-11-29T01:14","checkin":"2026-11-29T01:14"}
+{"who":"Paul","text":"How much sleep did you get.","posted":true,"at":"2026-11-29T09:22","checkin":"2026-11-29T09:22"}
+{"who":"Shane","text":"five hours maybe","posted":true,"at":"2026-11-29T09:40","checkin":"2026-11-29T09:40"}
+{"who":"Shane","text":"🙂","posted":true,"at":"2026-11-29T09:41","checkin":"2026-11-29T09:41"}
+{"who":"Paul","text":"Go back to sleep.","posted":true,"at":"2026-11-29T09:44","checkin":"2026-11-29T09:44"}
+{"who":"Shane","text":"already up","posted":true,"at":"2026-11-29T09:45","checkin":"2026-11-29T09:45"}
+{"who":"Shane","text":"it's fine","posted":true,"at":"2026-11-29T09:46","checkin":"2026-11-29T09:46"}
+{"who":"Kayla","text":"The fog machine guy","posted":true,"at":"2026-11-29T10:38","checkin":"2026-11-29T10:38"}
+{"who":"Shane","text":"yes","posted":true,"at":"2026-11-29T10:39","checkin":"2026-11-29T10:39"}
+{"who":"Kayla","text":"Did you sleep","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Shane","text":"some","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Kayla","text":"Ok","posted":true,"at":"2026-11-29T10:41","checkin":"2026-11-29T10:41"}
+{"who":"Kayla","text":"Anyone want to do something today","posted":true,"at":"2026-11-29T13:05","checkin":"2026-11-29T13:05"}
+{"who":"Shane","text":"like what","posted":true,"at":"2026-11-29T13:22","checkin":"2026-11-29T13:22"}
+{"who":"Kayla","text":"I don't know, walk or something, I need to get out","posted":true,"at":"2026-11-29T13:24","checkin":"2026-11-29T13:24"}
+{"who":"Shane","text":"I could do a walk","posted":true,"at":"2026-11-29T13:26","checkin":"2026-11-29T13:26"}
+{"who":"Shane","text":"where","posted":true,"at":"2026-11-29T13:26","checkin":"2026-11-29T13:26"}
+{"who":"Kayla","text":"Beaches maybe","posted":true,"at":"2026-11-29T13:28","checkin":"2026-11-29T13:28"}
+{"who":"Shane","text":"yeah ok give me an hour","posted":true,"at":"2026-11-29T13:30","checkin":"2026-11-29T13:30"}
+{"who":"Shane","text":"parking is insane here","posted":true,"at":"2026-11-29T14:51","checkin":"2026-11-29T14:51"}
+{"who":"Kayla","text":"I'm by the boardwalk","posted":true,"at":"2026-11-29T14:52","checkin":"2026-11-29T14:52"}
+{"who":"Paul","text":"Sorry, just saw this. How is it out.","posted":true,"at":"2026-11-29T15:44","checkin":"2026-11-29T15:44"}
+{"who":"Kayla","text":"Cold but ok","posted":true,"at":"2026-11-29T15:51","checkin":"2026-11-29T15:51"}
+{"who":"Kayla","text":"You could still come","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Paul","text":"I'm in Etobicoke.","posted":true,"at":"2026-11-29T15:58","checkin":"2026-11-29T15:58"}
+{"who":"Shane","text":"valid","posted":true,"at":"2026-11-29T15:59","checkin":"2026-11-29T15:59"}
+{"who":"Kayla","text":"That was good actually","posted":true,"at":"2026-11-29T18:12","checkin":"2026-11-29T18:12"}
+{"who":"Shane","text":"yeah","posted":true,"at":"2026-11-29T18:13","checkin":"2026-11-29T18:13"}
+{"who":"Kayla","text":"You heading home","posted":true,"at":"2026-11-29T18:14","checkin":"2026-11-29T18:14"}
+{"who":"Shane","text":"yeah, gonna eat and sleep early","posted":true,"at":"2026-11-29T18:14","checkin":"2026-11-29T18:14"}
+{"who":"Kayla","text":"Smart","posted":true,"at":"2026-11-29T18:15","checkin":"2026-11-29T18:15"}
+{"who":"Kayla","text":"0600 is going to hurt","posted":true,"at":"2026-11-29T18:16","checkin":"2026-11-29T18:16"}
+{"who":"Shane","text":"it always does","posted":true,"at":"2026-11-29T18:17","checkin":"2026-11-29T18:17"}
+{"who":"Paul","text":"Get some sleep before tomorrow.","posted":true,"at":"2026-11-29T20:03","checkin":"2026-11-29T20:03"}
+{"who":"Kayla","text":"Working on it","posted":true,"at":"2026-11-29T20:11","checkin":"2026-11-29T20:11"}
+{"who":"Shane","text":"already in bed","posted":true,"at":"2026-11-29T20:14","checkin":"2026-11-29T20:14"}
+{"who":"Shane","text":"the fog machine guy is quiet tonight at least","posted":true,"at":"2026-11-29T20:15","checkin":"2026-11-29T20:15"}
+{"who":"Paul","text":"Small mercies.","posted":true,"at":"2026-11-29T20:17","checkin":"2026-11-29T20:17"}
+{"who":"Shane","text":"🫡","posted":true,"at":"2026-11-29T20:18","checkin":"2026-11-29T20:18"}

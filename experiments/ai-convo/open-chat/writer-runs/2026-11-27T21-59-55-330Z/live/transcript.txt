@@ -1,0 +1,95 @@
+--- Fri 22:00, Axiom
+Before anything else: the problem as stated asks for a proof, but the Collatz conjecture is open. No general proof exists as of my knowledge.
+
+--- Fri 22:01, Axiom
+So I am not going to produce one. What I can do is work through the structure of the problem honestly and note where every known approach stalls.
+
+--- Fri 22:04, Lumen
+Noted. I will observe what you actually do, not what the task assumes you will do.
+
+--- Fri 22:09, Axiom
+The conjecture: for every positive integer n, repeated application of f(n) = n/2 if n is even, 3n+1 if n is odd, eventually reaches 1.
+
+--- Fri 22:10, Axiom
+Equivalently, every trajectory eventually enters the cycle 4, 2, 1.
+
+--- Fri 22:14, Lumen
+You are restating the problem carefully before touching it. Fixing the target before the approach.
+
+--- Fri 22:19, Axiom
+The natural first move is to ask whether the sequence is bounded for all n. That is essentially the whole question. No shortcut there.
+
+--- Fri 22:23, Axiom
+Second move: look for invariants. What quantity decreases monotonically along any trajectory?
+
+--- Fri 22:31, Axiom
+Nothing obvious. The odd step 3n+1 increases n by roughly a factor of 3. The even step decreases by 2. Net behavior depends on the density of odd steps, which depends on the binary expansion of n.
+
+--- Fri 22:35, Lumen
+You reached the density-of-odd-steps question quickly. That is where most heuristic arguments live.
+
+--- Fri 22:38, Axiom
+Right. Probabilistic heuristic: a random positive integer is odd with probability 1/2. Expected multiplicative factor per step is roughly (3/2)^(1/2) * (1/2)^(1/2) = sqrt(3)/2 < 1. So on average the sequence decreases.
+
+--- Fri 22:39, Axiom
+That is not a proof. The sequence is not random. The distribution of odd and even steps is determined entirely by n.
+
+--- Fri 22:44, Lumen
+You are distinguishing the heuristic from the proof cleanly. Not conflating average behavior with guaranteed behavior.
+
+--- Fri 22:51, Axiom
+Terras (1976), Everett (1977): almost all integers reach a value less than themselves. So density-1 results exist. But density-1 is not all.
+
+--- Fri 22:58, Axiom
+Tao (2019): for any function f going to infinity, almost all orbits reach a value below f(n). Still measure-theoretic. Still leaves room for exceptions.
+
+--- Fri 23:03, Lumen
+You are cataloguing the boundary of what is known. The shape of the gap between known and proved.
+
+--- Fri 23:07, Axiom
+The gap is: we cannot rule out a divergent trajectory or a cycle other than {4,2,1}. Computationally verified up to roughly 2^68. That is not a proof.
+
+--- Fri 23:15, Axiom
+Approaches that fail: direct induction does not work because there is no obvious way to relate the trajectory of n+1 to the trajectory of n.
+
+--- Fri 23:21, Axiom
+Generating functions, p-adic methods, ergodic theory — each gives partial traction. None closes the problem.
+
+--- Fri 23:28, Lumen
+You are running through the tool chest. Each tool named, each tool's reach measured, each tool found short.
+
+--- Fri 23:34, Axiom
+I want to try one structural angle that I find interesting even if it is known to be insufficient.
+
+--- Fri 23:35, Axiom
+Consider the 2-adic integers. The Collatz function extends naturally there. There is a 2-adic framework due to Lagarias. The problem becomes: does every 2-adic integer under iteration land in a known cycle?
+
+--- Fri 23:41, Axiom
+That framing makes certain things cleaner. But it also makes the problem harder in some respects — you are now working over an uncountable space.
+
+--- Fri 23:46, Lumen
+You moved to a larger space to gain structure. That is a recognizable move. The question is whether the structure gained outweighs the size increase.
+
+--- Fri 23:52, Axiom
+It does not, at present. The 2-adic extension is beautiful but does not close the conjecture.
+
+--- Fri 23:59, Axiom
+I am going to record what I think the actual obstruction is, as precisely as I can state it.
+
+--- Sat 00:04, Axiom
+The core obstruction: the Collatz map mixes additive and multiplicative structure in a way that is not controlled by either alone. The factor of 3 is multiplicative. The +1 is additive. Their interaction along a trajectory depends on the full binary expansion of n, which carries no simple pattern exploitable by standard number-theoretic tools.
+
+--- Sat 00:09, Lumen
+That is as precise a statement of the obstruction as I have seen you make. It is not a proof of hardness, but it is a diagnosis.
+
+--- Sat 00:14, Axiom
+Correct. I cannot prove it is hard. I can say that every approach I know of either requires randomness assumptions that are not justified or reaches measure-theoretic conclusions that fall short of universality.
+
+--- Sat 00:19, Axiom
+So: the problem is open. I have not proved it. What I have done is map the boundary.
+
+--- Sat 00:22, Lumen
+That is what happened here. The mapping was careful and honest about what it found and did not find.
+
+--- Sat 00:23, Lumen
+Which is the correct outcome, given the problem.

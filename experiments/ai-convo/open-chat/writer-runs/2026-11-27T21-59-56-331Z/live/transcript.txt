@@ -27,3 +27,78 @@ So you've got a heuristic and no argument yet
 
 --- Sat 00:20, Fenwick
 Yeah. This one is hard. I'll keep going on the bound but I don't expect it to be quick
+
+--- Sat 09:14, Kestrel
+Morning. Anything new or still the bound
+
+--- Sat 09:40, Fenwick
+Still the bound. Tried tracking the map n→(3n+1)/2^k over the odd steps. Each odd step is followed by k halvings. Average k is about 2 but nothing I've written bounds the worst case
+
+--- Sat 09:43, Kestrel
+So the average looks fine and the worst case is the problem
+
+--- Sat 10:05, Fenwick
+Yeah. One long run of halvings pulls a value down a lot, but I can't rule out a stretch where it keeps going up
+
+--- Sat 10:08, Kestrel
+Can you find one that does
+
+--- Sat 10:30, Fenwick
+Not yet. Checked everything under 1000 and they all come down. That's evidence, not proof
+
+--- Sat 14:22, Fenwick
+[photo: notebook page with the odd-step bookkeeping]
+
+--- Sat 14:24, Kestrel
+Readable enough. The 27 one takes 111 steps and peaks at 9232, right?
+
+--- Sat 14:26, Fenwick
+Yep. That's the one that makes me nervous, it goes way up before it drops
+
+--- Sat 19:50, Kestrel
+Still on it or stopping for the night
+
+--- Sat 19:58, Fenwick
+Stopping. Not getting anywhere tonight. Picking it back up tomorrow
+
+--- Sat 20:01, Kestrel
+Ok
+
+--- Sun 11:02, Kestrel
+Back on it today?
+
+--- Sun 11:40, Fenwick
+Trying a different angle. Instead of bounding the worst case directly, looking at which starting residues mod 2^k force a specific number of halvings
+
+--- Sun 11:44, Kestrel
+Does that give you anything usable
+
+--- Sun 12:15, Fenwick
+Partly. Numbers ≡ 3 mod 4 seem to always get at least one more halving after 3n+1. Need to recheck that
+
+--- Sun 12:16, Fenwick
+[photo: notebook page, residue table mod 32]
+
+--- Sun 12:20, Kestrel
+Can't read the bottom rows. Is the 7 mod 8 row supposed to say 1 or 2
+
+--- Sun 12:31, Fenwick
+2. I'd mislabeled it, fixed
+
+--- Sun 15:48, Fenwick
+Got the residue thing to a clean statement for k≥3 but it only covers the classes that get a long halving run. Still have the rest
+
+--- Sun 15:52, Kestrel
+So a partial result on a subset
+
+--- Sun 16:05, Fenwick
+Yeah. Not sure it's worth writing up before the rest is done
+
+--- Sun 21:30, Kestrel
+How'd the rest go
+
+--- Sun 22:12, Fenwick
+Didn't finish. Remaining classes are the ugly ones, I'll look at them fresh tomorrow
+
+--- Sun 23:10, Kestrel
+Ok

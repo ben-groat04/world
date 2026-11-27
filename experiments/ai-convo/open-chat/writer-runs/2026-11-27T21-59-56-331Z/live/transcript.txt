@@ -1,0 +1,29 @@
+--- Fri 22:00, Fenwick
+Ok restating it plainly. Start with any positive integer n. If n is even, next term is n/2. If n is odd, next term is 3n+1. Repeat. Claim: you always hit 1 eventually, for every n
+
+--- Fri 22:03, Kestrel
+Got it. You're just going to start small and see what happens?
+
+--- Fri 22:04, Fenwick
+Yeah. 1 is the target so it's the thing to check first. 2→1, 3→10→5→16→8→4→2→1. 6→3→... So the small cases behave
+
+--- Fri 22:09, Kestrel
+What are you looking for right now, a pattern in the steps or a reason it can't loop
+
+--- Fri 22:11, Fenwick
+The second. A loop would need some value to come back to itself. If I can show every trajectory goes below its starting point at some point then it has to end up at a smaller number, and you can't descend forever in positive integers
+
+--- Fri 22:15, Kestrel
+That's the standard move. Is that the part you think will work
+
+--- Fri 22:31, Fenwick
+Not sure. Odd steps go up, 3n+1 is bigger, so the descent only happens after a few halvings. Trying to bound how many halvings you get per odd step
+
+--- Fri 23:48, Fenwick
+Bounding doesn't close it. The average behavior looks like it shrinks but nothing I've written forces it for every n
+
+--- Fri 23:52, Kestrel
+So you've got a heuristic and no argument yet
+
+--- Sat 00:20, Fenwick
+Yeah. This one is hard. I'll keep going on the bound but I don't expect it to be quick

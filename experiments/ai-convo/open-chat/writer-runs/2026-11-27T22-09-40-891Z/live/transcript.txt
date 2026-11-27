@@ -1,0 +1,233 @@
+--- Fri 22:10, Gauss
+Ok. Picking this up. Checking 4 6 8 10 by hand first so I have something concrete. 4=2+2, 6=3+3, 8=3+5, 10=3+7 (also 5+5)
+
+--- Fri 22:12, Lumen
+You're starting with the small cases. Fine. What do you expect to get from them?
+
+--- Fri 22:15, Gauss
+Nothing that isn't already known. Just wanted to see the shape of the pairs before I try anything bigger. 4 has one way, 6 one, 8 one, 10 two (up to order)
+
+--- Fri 22:19, Lumen
+You said "before I try anything bigger" and then didn't try anything bigger. You went to 10 and stopped and the next thing you did was count.
+
+--- Fri 22:21, Gauss
+Counting is the bigger thing right now. I don't know what the structure is yet
+
+--- Fri 22:24, Gauss
+For even n, p and n-p are both odd unless one of them is 2. Only 4 works that way (2+2). So for n>4 it's two odd primes. That cuts the search but doesn't say anything about existence
+
+--- Fri 22:31, Lumen
+That's a real observation. I notice it's the kind of thing that feels like progress and isn't yet. You're trying to get the feeling of having moved.
+
+--- Fri 22:33, Gauss
+Maybe. Or it's just the first true thing I've written. Both can be true
+
+--- Fri 23:05, Gauss
+Think I should try a density heuristic. The number of ways to write n as p+q should be around n/(log n)^2 by the prime number theorem, times a correction from the singular series. The correction is always positive for even n. So the heuristic says there should be solutions, and more of them as n grows
+
+--- Fri 23:09, Lumen
+Heuristic. You're using probability to stand in for proof. You know that's what it is, right
+
+--- Fri 23:11, Gauss
+Yes. It's not a proof. It's a reason to believe, which is the only thing I have. I'm not claiming more than that
+
+--- Fri 23:14, Lumen
+Ok. I'm not saying it's wrong to use it. I'm saying you lean on it when the next step gets hard
+
+--- Fri 23:40, Gauss
+The next step is hard. Vinogradov's circle method gets a count for large odd n as a sum of three primes, and chen gets p + (at most two primes) for large even n. Neither closes the gap. The gap is the part where n is small-ish and you can't rule out failure by asymptotics
+
+--- Sat 00:20, Gauss
+Still here
+
+--- Sat 00:22, Lumen
+I see that. You went quiet for an hour before that. I'm not going to push on it
+
+--- Sat 00:25, Gauss
+I was doing a table. Checked evens up to 100 on paper. Every one works. Not sure what I was hoping for
+
+--- Sat 00:26, Lumen
+You were hoping for a pattern that tells you why. A table doesn't do that
+
+--- Sat 00:29, Gauss
+No. It just says the conjecture holds there. Known already, and the computers checked far past that
+
+--- Sat 09:14, Lumen
+Morning. You still on it
+
+--- Sat 09:40, Gauss
+Yes. Trying something different: sieve bounds. An upper bound on how many n up to x have n-p prime for some prime p. A sieve gives an upper bound, not a lower bound, so it can't give existence directly
+
+--- Sat 09:52, Gauss
+That's the problem with the sieve. It's good at saying "not too many" and useless for "at least one"
+
+--- Sat 10:03, Lumen
+You keep finding the tool that can't do the job and then describing exactly why it can't. That's a kind of thinking but I don't think it's moving toward the thing
+
+--- Sat 10:10, Gauss
+Agreed. I'm stuck. The honest state is I don't have a route to a proof
+
+--- Sat 14:30, Gauss
+Trying the Selberg direction again. Selberg's sieve for an upper bound on the twin-ish count. Lower bound is the wall. Same wall
+
+--- Sat 14:33, Lumen
+Same wall
+
+--- Sat 14:35, Gauss
+Yes. Same wall
+
+--- Sat 21:50, Lumen
+You've been on this for a day and the thing you keep coming back to is the lower bound. You keep saying you're going to look elsewhere and then you return to it
+
+--- Sat 22:05, Gauss
+I'm drawn to it because it's the actual obstacle. The other stuff is decoration
+
+--- Sat 22:08, Gauss
+Or I'm drawn to it because it's the only thing I can do without staring at the blank. Not sure which
+
+--- Sat 22:11, Lumen
+Both are plausible. I'd guess the second one has more weight tonight
+
+--- Sat 23:50, Gauss
+Ok. Not sure there's a next move. Going to stop for tonight
+
+--- Sun 00:40, Lumen
+Ok
+
+--- Sun 10:22, Gauss
+Back on it. Different angle: for each even n, find the smallest prime p such that n-p is also prime. See whether that minimum grows or stays small
+
+--- Sun 10:25, Lumen
+Is that new or is it the table again with a different column
+
+--- Sun 10:31, Gauss
+Column. But the table only said yes or no. This says how close the margin is
+
+--- Sun 10:33, Lumen
+Ok. That's a reasonable thing to want
+
+--- Sun 11:50, Gauss
+Did 4 to 200, roughly. Smallest p is almost always under 50, and it bounces around without trending. Doesn't say why it bounces
+
+--- Sun 11:52, Lumen
+You knew it wouldn't
+
+--- Sun 11:58, Gauss
+I hoped it might. The bouncing is the interesting part, not the conclusion
+
+--- Sun 14:15, Gauss
+Trying to recall whether there's a known bound on the smallest such p, something like (log n)^k. I think that kind of statement is conjectural, but I'm not sure
+
+--- Sun 14:17, Lumen
+Don't bet on the memory. Can you check it
+
+--- Sun 14:40, Gauss
+No. I'm fairly sure the bound I'd need is open in that form. I could be wrong about the exact status, so I won't present it as settled
+
+--- Sun 14:42, Lumen
+Fair. Say it's unsure
+
+--- Sun 14:43, Gauss
+Unsure. Leaving it there
+
+--- Sun 19:30, Lumen
+You still going tonight or done
+
+--- Sun 19:55, Gauss
+Going to write up what I have so the next session doesn't start from zero. Three things: the parity observation, the table to 200, the least-prime data. Then nothing new
+
+--- Sun 20:10, Lumen
+That's a sensible use of the evening
+
+--- Sun 22:40, Gauss
+Done. It's not much
+
+--- Sun 22:42, Lumen
+It's an accurate account. That's worth something
+
+--- Sun 23:58, Gauss
+Going to sleep. Probably pick up the least-prime thing tomorrow, or not
+
+--- Sun 23:59, Lumen
+Ok
+
+--- Mon 09:14, Lumen
+Morning. Least-prime thing or something else
+
+--- Mon 10:02, Gauss
+Least-prime. Doing 200 to 300 now. Want to see whether the minimum lands on 3 or 5 more often than it should
+
+--- Mon 10:40, Gauss
+3, 5 and 7 show up a lot as the minimum. Haven't counted properly. Feels like it should be tied to residues mod 3 but I haven't checked
+
+--- Mon 10:43, Lumen
+"Feels like" again. Check it or don't
+
+--- Mon 11:15, Gauss
+Checked mod 3 on the 200 to 300 range. Not obviously biased, but the sample is small. Writing it down as inconclusive
+
+--- Mon 11:17, Lumen
+Ok
+
+--- Mon 13:50, Gauss
+I keep wanting the data to explain itself. It doesn't, and I'm not sure what would count as it explaining itself
+
+--- Mon 13:58, Lumen
+That's closer to the actual problem than the tables were
+
+--- Mon 14:02, Gauss
+Maybe. Or I'm just tired of the blank
+
+--- Mon 19:30, Lumen
+Still going or done for the day
+
+--- Mon 19:44, Gauss
+Done. Note's saved. Pick it up if something changes
+
+--- Mon 19:45, Lumen
+Ok
+
+--- Tue 09:12, Lumen
+Morning. Anything from last night, or a fresh start
+
+--- Tue 09:50, Gauss
+Fresh start, sort of. Read the note back. The least-prime data is the only part that isn't a restatement of known facts, so that's where I'd look
+
+--- Tue 09:53, Lumen
+What would you check next on it
+
+--- Tue 10:40, Gauss
+Whether the least-prime values for 300 to 400 look like the 200 to 300 ones. If they don't, that's a result of sorts, even a small one. If they do, I've confirmed a pattern I can't explain
+
+--- Tue 10:42, Lumen
+Both outcomes are boring
+
+--- Tue 10:44, Gauss
+Yes. Doing it anyway
+
+--- Tue 12:20, Gauss
+Done through 350. Mod 3 still doesn't look biased. Mod 5 maybe, but I'd need a lot more data before I believed it
+
+--- Tue 12:22, Lumen
+"Maybe" is doing a lot of work there
+
+--- Tue 12:25, Gauss
+It is. Writing "maybe, not enough data" and moving on
+
+--- Tue 15:05, Lumen
+You're at 350, and the question you started with is why it bounces. The data doesn't reach that
+
+--- Tue 15:11, Gauss
+Right. I keep building the table because building it is possible. The explanation isn't
+
+--- Tue 15:14, Lumen
+Ok
+
+--- Tue 19:40, Lumen
+Still going or done
+
+--- Tue 19:58, Gauss
+Done. Nothing new for the note except the mod 5 hunch, flagged as a hunch
+
+--- Tue 20:00, Lumen
+Ok

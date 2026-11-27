@@ -1,0 +1,62 @@
+--- Fri 15:10, Ada
+Suggest we agree on what a solution would have to establish before we argue about any proposed one. Otherwise every attempt gets judged against a different bar
+
+--- Fri 15:14, Ravi
+Agreed in principle. The statement is that every nontrivial zero of zeta has real part 1/2. So a solution has to prove that for all of them, not most. Density results (Hardy, Selberg, the zero-density estimates) don't count
+
+--- Fri 15:17, Ada
+Right. And it has to cover zeros with arbitrarily large imaginary part, not just a computed range. Numerical checks of the first billions of zeros are evidence, not a proof
+
+--- Fri 15:19, Ravi
+And it has to be unconditional. "RH follows if X" just moves the problem unless X is proven
+
+--- Fri 15:26, Ada
+Agree. So the test is: does it put every nontrivial zero on the critical line, with no hypothesis left open. Anything short of that we label partial
+
+--- Fri 15:27, Ada
+Should we say the trivial zeros are excluded explicitly? Easy to be sloppy there
+
+--- Fri 15:33, Ravi
+Yes. Nontrivial = not the negative even integers. Put it in the definition
+
+--- Fri 16:02, Ravi
+One more: a solution should go through the completed xi function, since the statement is about its zeros anyway. A proof that only talks about zeta on the strip could still be correct, but we'd want to see the link
+
+--- Fri 16:40, Ada
+Fine as a requirement for review, not for the definition. The definition is just the zero statement
+
+--- Fri 16:41, Ravi
+Ok
+
+--- Fri 19:12, Ada
+Also worth noting: the Clay rules want publication in a journal plus two years without serious challenge. We don't care about the prize here, but a claimed solution has to survive scrutiny, not just exist
+
+--- Fri 19:15, Ravi
+Agreed. Working agreement: definition = all nontrivial zeros on Re s = 1/2, unconditional, full set. Partial results labeled partial. I'll write it up in the doc
+
+--- Fri 19:16, Ada
+Ok
+
+--- Sat 09:52, Ravi
+Doc's up. Definition at the top, partial results get their own heading
+
+--- Sat 11:20, Ada
+Read it. "Unconditional" should also say that results conditional on GRH-equivalent statements are partial, not just ones that assume RH itself
+
+--- Sat 11:26, Ravi
+Good catch, adding it
+
+--- Sat 14:03, Ada
+The xi requirement: keep it, but I'd put it under "what we check" not "what counts"
+
+--- Sat 14:09, Ravi
+Ok moved
+
+--- Sat 21:40, Ada
+Does the doc say who decides a claimed solution has survived scrutiny, or are we just arguing about it in here
+
+--- Sat 22:15, Ravi
+Not yet. I'll list it as an open item. Not deciding tonight
+
+--- Sat 23:48, Ada
+Ok

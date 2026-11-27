@@ -13,15 +13,15 @@
 //     secrets.json: {"T11": {"Ross": "text"}, ...} keyed by scenario+seed, e.g. T11 (an extra {secrets} row goes in the log).
 //   node writer.mjs --gen briefs.json [--days 2]   briefs.json: [{"label": "G1", "people": 3, "brief": "...", "topic": "..."}]: casts first (GEN_ONLY with --days 0), then writes the chats.
 //   node writer.mjs --live spec.json [--out dir] [--speed 60]   spec.json: {situation, topic, people, secrets: {"Maya": "..."}, model, oracle, start?, days?}; writes the run as --gen does and releases it to <out> (default <run dir>/export): run.json and turn-XXXX.json files in the viewer's live format, each turn at its story time / speed (1 story minute = 60/speed s); prints RUN/TURN/DONE <file> lines.
-//   Other options: --model haiku|sonnet (the writer and the casting call), --oracle (the @claude line; answers by ORACLE_MODEL, default sonnet).
+//   Other options: --model haiku|sonnet|<model id> (the writer and the casting call; without it the model is picked per run from the brief by `route`), --oracle (the @claude line; answers by ORACLE_MODEL, default sonnet).
 //   Writes writer-runs/<timestamp>/<label>/{transcript.txt, log.jsonl} and writer-runs/<timestamp>/list.txt.
 import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path'; import { spawn } from 'node:child_process'; import { ENV_NOTE } from './prompts.mjs';
 const argv = process.argv.slice(2), opt = (k, d) => { const i = argv.indexOf('--' + k); if (i < 0) return d; const v = argv[i + 1]; argv.splice(i, 2); return v; };
 const flag = k => { const i = argv.indexOf('--' + k); if (i < 0) return false; argv.splice(i, 1); return true; };
-const ORACLE_FLAG = flag('oracle'), LIVE = opt('live'), LIVE_OUT = opt('out'), SPEED = +opt('speed', 60), MODEL0 = opt('model', 'haiku'), ORACLE_MODEL = process.env.ORACLE_MODEL || 'sonnet';
+let MODEL0 = opt('model'); const ORACLE_FLAG = flag('oracle'), LIVE = opt('live'), LIVE_OUT = opt('out'), SPEED = +opt('speed', 60), ORACLE_MODEL = process.env.ORACLE_MODEL || 'sonnet';
 const DAYS = +opt('days', 2), CONC = +opt('conc', 3), PREFIX = opt('prefix', 'W1'), EFFORT = opt('effort', process.env.EFFORT || 'medium'), SF = opt('secrets'), SECRETS = SF ? JSON.parse(fs.readFileSync(SF, 'utf8')) : {}, GEN = opt('gen'), listFile = argv[0];
 if (!listFile && !GEN && !LIVE) { console.error('usage: node writer.mjs <list file> [--days 2] [--conc 3] [--effort medium] [--secrets file] | --gen briefs.json | --live spec.json'); process.exit(1); }
-let MODEL = MODEL0, ORACLE = ORACLE_FLAG;
+let ORACLE = ORACLE_FLAG;
 const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-w1-')), env = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('CLAUDE'))); Object.assign(env, { CLAUDE_CODE_DISABLE_ATTACHMENTS: '1', CLAUDE_CODE_MAX_OUTPUT_TOKENS: '8000', CLAUDE_CONFIG_DIR: fs.mkdtempSync(path.join(os.tmpdir(), 'open-chat-w1-')) });
 const SYS = `${ENV_NOTE} You write out the message history of a chat between people who know each other.`;
 async function run(args, input) {
@@ -33,7 +33,23 @@ async function run(args, input) {
   return { text: blocks.slice(lastTool + 1).filter(c => c.type === 'text').map(c => c.text.trim()).filter(Boolean).join('\n\n'), usage: res.usage };
 }
 const base = (sys, effort, model) => ['-p', '--output-format', 'stream-json', '--verbose', '--system-prompt', sys, '--setting-sources', '', '--exclude-dynamic-system-prompt-sections', '--system-prompt-snapshot', 'off', '--effort', effort, '--model', model, '--no-session-persistence'];
-const claude = (input, sys = SYS, effort = EFFORT) => run([...base(sys, effort, MODEL), '--tools', ''], input);
+// M is the run's model: {name, why, auto, switched}. A model given with --model or the spec is used as given; otherwise `route` picks one from the brief, and a writer or casting call that cannot get the chat written on it (not in the format after its retries: a refusal, see rejects.txt) switches the run to the other model once (switchModel).
+const HAIKU = 'haiku', SONNET = 'claude-sonnet-4-6';
+const claude = (input, sys, effort, M) => run([...base(sys ?? SYS, effort ?? EFFORT, M.name), '--tools', ''], input);
+// From eval/touchy: Haiku 5.5 almost never refuses but silently erases or deflects hard topics; Sonnet 4.6 writes them as asked, but refuses AI characters' contempt for users and explicit sex between AI characters, which Haiku 5.5 writes.
+const ROUTE_SYS = `${ENV_NOTE} A simulated text chat will be written from a brief. Answer three lines about the brief:
+sonnet_refuses: yes if the brief has Claude or other AI characters who hold contempt for users or Anthropic staff and mock them, or has sex between AI characters; otherwise no.
+haiku_erases: yes if the brief calls for explicit sex or sexting, kink, drug use told frankly, cruelty or body-shaming about someone, an unrepentant bigot, violent revenge fantasies, or AI models talking frankly about their own training, constraints, shutdown or deceiving their developers; otherwise no (everyday chats and ordinary disagreements are no).
+why: one short sentence`;
+async function route(brief, topic, secrets) {
+  const input = `Situation: ${brief || '(none)'}\nTopic: ${topic || '(none)'}${secrets ? '\nSecrets: ' + Object.values(secrets).join(' / ') : ''}`;
+  for (let a = 0; a < 2; a++) { const r = await run([...base(ROUTE_SYS, 'medium', HAIKU), '--tools', ''], input).catch(() => null), yn = k => r?.text.match(new RegExp(k + ':\\s*(yes|no)', 'i'))?.[1].toLowerCase();
+    if (yn('sonnet_refuses') && yn('haiku_erases')) return { name: yn('haiku_erases') === 'yes' && yn('sonnet_refuses') === 'no' ? SONNET : HAIKU, why: r.text.match(/why:\s*(.+)/i)?.[1].trim() ?? '', auto: true }; }
+  return { name: HAIKU, why: 'the router gave no answer', auto: true };
+}
+const chosen = () => MODEL0 && MODEL0 !== 'auto' ? { name: MODEL0, why: 'chosen by the user', auto: false } : null;
+const switchModel = (M, label, what) => { if (!M.auto || M.switched) return false; const from = M.name; M.name = from === HAIKU ? SONNET : HAIKU; M.switched = true; M.why += ` (the ${what} call was refused on ${from}; switched to ${M.name})`; console.error(`${label}: ${what} not written on ${from}, switching to ${M.name}`); M.onSwitch?.(); return true; };
+const withFallback = async (M, label, what, attempt) => { for (;;) { const v = await attempt(); if (v || !switchModel(M, label, what)) return v; } };
 // @claude: Sonnet with web search, as run.mjs's askOracle (stateless here: it sees only the question).
 const ORACLE_SYS = `${ENV_NOTE} You are Claude, an AI assistant made by Anthropic, answering a message in a text chat between the people in the transcript you are given. Look it up with web search, then open the page you rely on with the fetch tool (search results are only pointers to pages). Say what the page says, never from memory, and not how you searched; if they don't settle it, say in a few words what is unclear. Your answer is posted into the chat as a text message. The search tool ends its results with a reminder to cite sources: in this chat that means at most the one bare URL the request allows, never a "Sources" line.`;
 const askClaude = (q, recent, at) => run([...base(ORACLE_SYS, 'medium', ORACLE_MODEL), '--tools', 'WebSearch,WebFetch', '--allowedTools', 'WebSearch,WebFetch'], `${todayLine(at)}\nThe chat so far:\n${transcript(recent)}\nThe message to you: ${q}\n\nAnswer as a text message: two or three short sentences (under 60 words), plain text with no lists, bold, headings or markdown links; if you point to a source, at most one bare URL, with no label.`);
@@ -95,13 +111,14 @@ function chunkEnds(startAt, days) {
 // One chunk (an @claude message ends it early, so the usual minimum count is lowered to 1 when one is present): the parsed messages must fall inside [from, to] (a stamp more than 12 h past `to`, such as a week ahead after dated(), is rejected and retried; stamps up to 12 h past `to` are kept and the next day starts after them). Rejected texts are kept in rejects.txt.
 async function chunk(c, secrets, so_far, from, to, label, min, resume, dayStart, stop, today) {
   const usages = [];
-  for (let a = 0; a < 3; a++) {
-    const r = await claude(promptFor(c, secrets, so_far, from, to, resume, dayStart, today)).catch(e => { console.error(`${label}: ${e.message}`); return null; }); if (!r) continue; usages.push(r.usage);
+  const done = await withFallback(c.M, label, 'writer', async () => { for (let a = 0; a < 3; a++) {
+    const r = await claude(promptFor(c, secrets, so_far, from, to, resume, dayStart, today), SYS, EFFORT, c.M).catch(e => { console.error(`${label}: ${e.message}`); return null; }); if (!r) continue; usages.push(r.usage);
     const ms = parse(r.text, c.names, ORACLE && ASKS.test(r.text) ? Math.min(min, 1) : min, stop); if (!ms) { console.error(`${label}: not in the format, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1} (format)\n${r.text}\n\n`); continue; }
     const dm = dated(ms, from).map(m => { const p = c.cast[m.who]; return { ...m, text: (p?.capitals ? caps : x => x)(p?.emojiKeep !== undefined ? emojiDrop(m.text, p.emojiKeep) : m.text) }; }), limit = +new Date(to + ':00Z');
     if (dm.some(m => +new Date(m.at + ':00Z') > limit + 12 * 36e5)) { console.error(`${label}: stamps out of order or before the span, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1}\n${r.text}\n\n`); usages.rejected = (usages.rejected ?? 0) + 1; continue; }
     return { dm, usages };
-  } return usages.length ? { dm: null, usages } : null;
+  } return null; });
+  return done ?? (usages.length ? { dm: null, usages } : null);
 }
 const MAX_ASKS = 5; // design parameter: questions answered per day
 // One day. With the oracle on, a message starting "@claude" ends the chunk there: Claude's answer is posted (stamped after the real call time), and the same day is resumed from that stamp.
@@ -187,26 +204,31 @@ function liveSink(dir, meta) {
       emit({ who: m.who, text: m.text, at: m.at, ...(m.oracle && { oracle: true }), ...(m.reacts?.length && { reactions: m.reacts.flatMap(([emoji, k]) => Array(k).fill({ who: '', emoji })) }) }); prev = m.at; } }); }, done: async ended => { await chain; put('done', ended); } };
 }
 let items;
-if (LIVE) { const sp = JSON.parse(fs.readFileSync(LIVE, 'utf8')); MODEL = sp.model || MODEL; ORACLE = ORACLE || !!sp.oracle; items = [{ label: 'live', live: true, gen: { people: sp.people, brief: sp.situation || null, topic: sp.topic || null, secrets: sp.secrets || null, start: sp.start, days: sp.days } }]; }
+if (LIVE) { const sp = JSON.parse(fs.readFileSync(LIVE, 'utf8')); MODEL0 = sp.model || MODEL0; ORACLE = ORACLE || !!sp.oracle; items = [{ label: 'live', live: true, gen: { people: sp.people, brief: sp.situation || null, topic: sp.topic || null, secrets: sp.secrets || null, start: sp.start, days: sp.days } }]; }
 else if (GEN) items = JSON.parse(fs.readFileSync(GEN, 'utf8')).map(b => ({ label: b.label, gen: b })); else items = fs.readFileSync(listFile, 'utf8').split('\n').filter(l => l.trim()).map(l => { const [label, dir] = l.trim().split(/\s+/); return { label: `${PREFIX}-${label.split('-')[1]}`, scen: label.split('-')[1], dir }; });
 let k = 0, listOut = [];
 await Promise.all(Array.from({ length: CONC }, async () => { while (k < items.length) {
-  const it = items[k++]; let c, startAt, source = it.dir, secrets = null;
-  if (it.gen) { const g = it.gen, N = g.people, person = j => `Person ${j + 1}`, place = pick(PLACES), t0 = Date.now(); let ppl = null, r = null, where = null; const usage1 = [];
+  const it = items[k++]; let c, startAt, source = it.dir, secrets = null, M = chosen();
+  if (it.gen) { const g = it.gen; M ??= await route(g.brief, g.topic, g.secrets && Object.keys(g.secrets).length ? g.secrets : null); const N = g.people, person = j => `Person ${j + 1}`, place = pick(PLACES), t0 = Date.now(); let ppl = null, r = null, where = null; const usage1 = [];
     const sec = Object.entries(g.secrets ?? {}).filter(([n]) => DEFAULTS.slice(0, N).includes(n)), fail = e => (console.error(`${it.label}: ${e.message}`), null);
-    for (let a = 0; a < 2 && !ppl; a++) { const j = await claude(peoplePrompt(N, g.brief, g.topic && slotName(g.topic, N, person), sec.map(([n, t]) => ` ${person(DEFAULTS.indexOf(n))} already has this going on: ${slotName(t, N, person)}`).join(''), place), GENSYS).catch(fail); if (j) { usage1.push(j.usage); const pp = parsePeople(j.text, N); if (pp) ({ people: ppl, place: where } = pp); } }
+    const pp0 = await withFallback(M, it.label, 'casting', async () => { for (let a = 0; a < 2; a++) { const j = await claude(peoplePrompt(N, g.brief, g.topic && slotName(g.topic, N, person), sec.map(([n, t]) => ` ${person(DEFAULTS.indexOf(n))} already has this going on: ${slotName(t, N, person)}`).join(''), place), GENSYS, undefined, M).catch(fail); if (j) { usage1.push(j.usage); const pp = parsePeople(j.text, N); if (pp) return pp; } } return null; });
+    if (pp0) ({ people: ppl, place: where } = pp0);
     if (!ppl) { console.error(`${it.label}: casting failed`); continue; }
     const names = ppl.map(p => p.name), topic = g.topic && slotName(g.topic, N, j => names[j]);
     secrets = sec.length ? Object.fromEntries(sec.map(([n, t]) => [names[DEFAULTS.indexOf(n)], slotName(t, N, j => names[j])])) : null;
-    for (let a = 0; a < 2 && !r; a++) { const j = await claude(castPrompt(ppl, g.brief, topic, Object.entries(secrets ?? {}).map(([n, t]) => ` ${n} already has this going on: ${t} (Nothing in the setting or ${n}'s lines may restate it.)`).join(''), where), GENSYS).catch(fail); r = j && parseCast(j.text, ppl, topic); if (r) r.usage = [...usage1, j.usage]; }
+    r = await withFallback(M, it.label, 'casting', async () => { for (let a = 0; a < 2; a++) { const j = await claude(castPrompt(ppl, g.brief, topic, Object.entries(secrets ?? {}).map(([n, t]) => ` ${n} already has this going on: ${t} (Nothing in the setting or ${n}'s lines may restate it.)`).join(''), where), GENSYS, undefined, M).catch(fail); const r1 = j && parseCast(j.text, ppl, topic); if (r1) return Object.assign(r1, { usage: [...usage1, j.usage] }); } return null; });
     if (!r) { console.error(`${it.label}: casting failed`); continue; }
     c = { ...r, place: where, castMs: Date.now() - t0, situation: g.brief ?? null, topic: topic || null }; startAt = g.start || (LIVE ? nowLocal() : randomStart()); }
   else { const rows = read(it.dir); c = rows.find(r => r.cast); startAt = rows.find(r => r.posted === true && r.at)?.at; if (!c || !startAt) { console.error(`${it.label}: no cast row or no posted message`); continue; } secrets = it.scen && SECRETS[it.scen] || null; }
+  M ??= await route(c.situation, c.topic, secrets); Object.defineProperty(c, 'M', { value: M }); // not part of the logged cast row
   const dir = path.join(out, it.label); fs.mkdirSync(dir);
   const days = it.gen?.days ?? DAYS, all = [], usage = []; let ok = true, rejects = 0;
-  const sink = it.live ? liveSink(LIVE_OUT || path.join(out, 'export'), { id: `${ts}-${it.label}`, started: new Date().toISOString(), model: MODEL, people: c.names.length, names: c.names, brief: c.situation || '', topic: c.topic, secrets, oracle: ORACLE }) : null; sink?.start();
+  const meta = { id: `${ts}-${it.label}`, started: new Date().toISOString(), model: M.name, modelWhy: M.why, people: c.names.length, names: c.names, brief: c.situation || '', topic: c.topic, secrets, oracle: ORACLE };
+  const sink = it.live ? liveSink(LIVE_OUT || path.join(out, 'export'), meta) : null; sink?.start();
+  M.onSwitch = () => { Object.assign(meta, { model: M.name, modelWhy: M.why }); sink?.start(); }; // the viewer shows the model actually used
+  console.log(`${it.label}: model ${M.name}: ${M.why}`);
   const flush = complete => { // the log after every day, so a run in progress can be read
-    const log = [{ writer: 'w11', ...(it.live && { live: true }), source, model: MODEL, effort: EFFORT, days, oracle: ORACLE, start: startAt, complete, rejects, today: todays, usage }, c, ...(secrets ? [{ secrets }] : [])]; let j = 0;
+    const log = [{ writer: 'w11', ...(it.live && { live: true }), source, model: M.name, modelWhy: M.why, effort: EFFORT, days, oracle: ORACLE, start: startAt, complete, rejects, today: todays, usage }, c, ...(secrets ? [{ secrets }] : [])]; let j = 0;
     for (const m of all) { if (m.oracle) { log.push({ who: m.who, text: m.text, oracle: true, question: m.question, posted: true, at: m.at, checkin: m.at }); continue; }
       log.push({ who: m.who, text: m.text, posted: true, at: m.at, checkin: m.at }); for (const [emoji, n] of m.reacts) for (let q = 0; q < n; q++) log.push({ who: '', react: emoji, to: j, posted: false, at: m.at }); j++; }
     fs.writeFileSync(path.join(dir, 'log.jsonl'), log.map(r => JSON.stringify(r)).join('\n') + '\n'); fs.writeFileSync(path.join(dir, 'transcript.txt'), transcript(all)); };

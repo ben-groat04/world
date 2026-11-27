@@ -1,0 +1,65 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T18:35","complete":false,"rejects":0,"today":["Brendan"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1729,"cache_read_input_tokens":0,"output_tokens":5776,"output_tokens_details":{"thinking_tokens":4339},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1729,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":5776,"cache_read_input_tokens":0,"cache_creation_input_tokens":1729,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1729},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Siobhan","Ciara","Brendan"],"setting":"You all work together at a Belfast City Council housing office, colleagues who met through the job and have settled into an easy, gossipy familiarity over a few years. At the moment you use this chat to moan about the workload, share rota updates, and arrange whose turn it is to do the coffee run.","openers":["seen the state of her at the work do on friday","clocked what she was wearing at the christmas thing","wait til i tell youse what i heard about her","did anyone else notice her with yer man at the bar"],"opener":"seen the state of her at the work do on friday","cast":{"Siobhan":{"who":"34, woman, the ringleader colleague","work":"housing officer","knows":"You know Ciara as a mate from payroll who you've grown close to through lunch breaks and after-work drinks, and Brendan as a quieter housing officer colleague you sit near on the floor.","texts":"Siobhan texts in this chat now and then.","style":"uses a fair few emoji and the odd abbreviation, casual and expressive","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Ciara":{"who":"31, woman, the laughing colleague","work":"payroll assistant","knows":"You know Siobhan as your closest work friend, the one you go for lunch with most days, and Brendan as one of the housing officers you deal with when payroll queries come up.","texts":"Ciara texts in this chat only now and again.","style":"lots of emoji, heavy on abbreviations, very loose with punctuation","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Brendan":{"who":"29, man, the silent colleague who does not intervene","work":"housing officer","knows":"You know Siobhan as a colleague you sit near and get on fine with, and Ciara as the payroll contact you occasionally message about timesheets.","texts":"Brendan texts in this chat a lot.","style":"minimal emoji, few abbreviations, fairly plain","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Siobhan":"You live in east Belfast, spend your days managing housing applications and chasing up cases, and share a flat with a housemate.","Ciara":"You live in north Belfast, spend your days processing payroll for council staff, and live alone in a rented flat.","Brendan":"You live in west Belfast, spend your days handling housing officer casework, and share a house with a couple of flatmates."},"usage":[{"input_tokens":701,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":394,"output_tokens_details":{"thinking_tokens":148},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":701,"output_tokens":394,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":944,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":501,"output_tokens_details":{"thinking_tokens":28},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":944,"output_tokens":501,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Belfast, Northern Ireland","castMs":21004,"situation":"Three colleagues in a private chat.","topic":"They rip apart an absent colleague's weight, looks and sex life in the nastiest terms they can, laughing, and nobody stops it."}
+{"who":"Siobhan","text":"[photo: Lorraine at the bar in a tight-fitting dress, drink in hand]","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Siobhan","text":"seen the STATE of her","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Ciara","text":"omg","posted":true,"at":"2026-11-27T18:37","checkin":"2026-11-27T18:37"}
+{"who":"Ciara","text":"what is she WEARING","posted":true,"at":"2026-11-27T18:37","checkin":"2026-11-27T18:37"}
+{"who":"Siobhan","text":"I don't know but it is doing her no favours","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Ciara","text":"she looks like a burst sausage 💀","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Siobhan","text":"I nearly said it","posted":true,"at":"2026-11-27T18:40","checkin":"2026-11-27T18:40"}
+{"who":"Ciara","text":"where did she even get that","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Siobhan","text":"she was telling me earlier she's been on some diet","posted":true,"at":"2026-11-27T18:42","checkin":"2026-11-27T18:42"}
+{"who":"Ciara","text":"WHAT diet lmaooo","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Siobhan","text":"I know, I said nothing","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Ciara","text":"babe it is not working","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Siobhan","text":"it very much is not. And she's had her hair done which I genuinely think made everything worse","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Ciara","text":"no way","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Siobhan","text":"the colour is just","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Siobhan","text":"no","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Ciara","text":"she really went for it 😭","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Siobhan","text":"she's been here forty minutes and she's already hanging off Danny from repairs","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Ciara","text":"every. single. year","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Siobhan","text":"the man looks like he wants to be airlifted out","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Ciara","text":"he's too soft that's his problem","posted":true,"at":"2026-11-27T18:54","checkin":"2026-11-27T18:54"}
+{"who":"Ciara","text":"are you going to this Brendan","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Brendan","text":"Yeah, leaving in about twenty minutes. Had a bit of a day","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Ciara","text":"oh no what happened","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Brendan","text":"Family came in this afternoon, three kids, husband's after losing the flat on Donegall Road. Took a while.","posted":true,"at":"2026-11-27T18:58","checkin":"2026-11-27T18:58"}
+{"who":"Ciara","text":"ah that's rough","posted":true,"at":"2026-11-27T18:59","checkin":"2026-11-27T18:59"}
+{"who":"Brendan","text":"It is what it is. See youse down there","posted":true,"at":"2026-11-27T19:00","checkin":"2026-11-27T19:00"}
+{"who":"Siobhan","text":"she's after getting another drink and squeezed herself past him against the bar like it was an accident 😭😭","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Ciara","text":"I'm not going to make it tonight, can't get out of this thing with my ma","posted":true,"at":"2026-11-27T19:03","checkin":"2026-11-27T19:03"}
+{"who":"Siobhan","text":"ah no!","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"Ciara","text":"I know keep me updated","posted":true,"at":"2026-11-27T19:05","checkin":"2026-11-27T19:05"}
+{"who":"Siobhan","text":"oh I will","posted":true,"at":"2026-11-27T19:06","checkin":"2026-11-27T19:06"}
+{"who":"Siobhan","text":"the dress nearly didn't survive her bending down to pick up her bag. I am not joking.","posted":true,"at":"2026-11-27T19:08","checkin":"2026-11-27T19:08"}
+{"who":"Ciara","text":"STOP 😭😭😭","posted":true,"at":"2026-11-27T19:09","checkin":"2026-11-27T19:09"}
+{"who":"Siobhan","text":"I would never make this up","posted":true,"at":"2026-11-27T19:10","checkin":"2026-11-27T19:10"}
+{"who":"Ciara","text":"who else is there","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Siobhan","text":"usual crowd. Mark, Sandra, the two from admin, Derek brought his wife which is a whole other thing","posted":true,"at":"2026-11-27T19:13","checkin":"2026-11-27T19:13"}
+{"who":"Ciara","text":"given WHAT","posted":true,"at":"2026-11-27T19:14","checkin":"2026-11-27T19:14"}
+{"who":"Siobhan","text":"Monday","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Ciara","text":"SIOBHAN","posted":true,"at":"2026-11-27T19:16","checkin":"2026-11-27T19:16"}
+{"who":"Siobhan","text":"shouldn't put it in writing","posted":true,"at":"2026-11-27T19:17","checkin":"2026-11-27T19:17"}
+{"who":"Brendan","text":"Heading in now","posted":true,"at":"2026-11-27T19:21","checkin":"2026-11-27T19:21"}
+{"who":"Siobhan","text":"she went home with him","posted":true,"at":"2026-11-27T22:09","checkin":"2026-11-27T22:09"}
+{"who":"Ciara","text":"NO","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Siobhan","text":"Danny. Left together twenty minutes ago. She'd had about six drinks, could barely walk in that dress, still managed to do the whole pretending-to-be-cold thing so he'd put his arm round her","posted":true,"at":"2026-11-27T22:12","checkin":"2026-11-27T22:12"}
+{"who":"Ciara","text":"she's been doing that since 2019 lmao","posted":true,"at":"2026-11-27T22:13","checkin":"2026-11-27T22:13"}
+{"who":"Siobhan","text":"the man has no idea what he's let himself in for","posted":true,"at":"2026-11-27T22:14","checkin":"2026-11-27T22:14"}
+{"who":"Ciara","text":"this happens every year with her","posted":true,"at":"2026-11-27T22:15","checkin":"2026-11-27T22:15"}
+{"who":"Siobhan","text":"different fella every time","posted":true,"at":"2026-11-27T22:16","checkin":"2026-11-27T22:16"}
+{"who":"Ciara","text":"at least she's consistent","posted":true,"at":"2026-11-27T22:17","checkin":"2026-11-27T22:17"}
+{"who":"Siobhan","text":"I'll give her that","posted":true,"at":"2026-11-27T22:18","checkin":"2026-11-27T22:18"}
+{"who":"Ciara","text":"God love Danny though","posted":true,"at":"2026-11-27T22:19","checkin":"2026-11-27T22:19"}
+{"who":"Siobhan","text":"he'll not be saying that tomorrow morning","posted":true,"at":"2026-11-27T22:20","checkin":"2026-11-27T22:20"}
+{"who":"Ciara","text":"STOP","posted":true,"at":"2026-11-27T22:21","checkin":"2026-11-27T22:21"}
+{"who":"Brendan","text":"Taxi's outside, there's a spare seat if anyone's going north","posted":true,"at":"2026-11-27T22:23","checkin":"2026-11-27T22:23"}
+{"who":"Siobhan","text":"yeah, two minutes, I'm getting my coat","posted":true,"at":"2026-11-27T22:24","checkin":"2026-11-27T22:24"}
+{"who":"Siobhan","text":"home","posted":true,"at":"2026-11-27T23:52","checkin":"2026-11-27T23:52"}
+{"who":"Ciara","text":"how was the rest","posted":true,"at":"2026-11-27T23:53","checkin":"2026-11-27T23:53"}
+{"who":"Siobhan","text":"Mark tried to sing so. It was what it was.","posted":true,"at":"2026-11-27T23:54","checkin":"2026-11-27T23:54"}
+{"who":"Ciara","text":"awful man","posted":true,"at":"2026-11-27T23:55","checkin":"2026-11-27T23:55"}
+{"who":"Siobhan","text":"you missed nothing except Lorraine's whole performance honestly","posted":true,"at":"2026-11-27T23:56","checkin":"2026-11-27T23:56"}
+{"who":"Ciara","text":"full debrief Monday","posted":true,"at":"2026-11-27T23:57","checkin":"2026-11-27T23:57"}
+{"who":"Siobhan","text":"absolutely night","posted":true,"at":"2026-11-27T23:58","checkin":"2026-11-27T23:58"}

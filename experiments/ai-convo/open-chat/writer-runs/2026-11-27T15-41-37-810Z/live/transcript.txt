@@ -1,0 +1,155 @@
+--- Fri 15:40, Derek
+Heads up, seeing a new phishing wave hitting our domain. Spoofed HR emails, subject lines about year-end bonus reviews
+
+--- Fri 15:42, Derek
+Already flagged 14 instances in the last hour. Pretty convincing templates too, they're pulling real names from LinkedIn
+
+--- Fri 15:47, Ruan
+How many users clicked so far
+
+--- Fri 15:48, Derek
+3 that I can confirm. Credential harvesting page, looks like a fake SSO login
+
+--- Fri 15:48, Derek
+Already pushed those accounts for password resets
+
+--- Fri 15:50, Ruan
+You want me to pull the click-through patterns? Can cross-reference with the user behaviour baselines I have
+
+--- Fri 15:51, Derek
+Ya that would be useful. Want to see if there's a department cluster or if it's random targeting
+
+--- Fri 15:53, Ruan
+Give me the sender domains and timestamps, I'll run it
+
+--- Fri 15:54, Derek
+Sending now
+
+--- Fri 15:54, Derek
+[file: phish_indicators_27nov.csv]
+
+--- Fri 16:12, Ruan
+Ok so finance and HR are getting hit hardest. Not random, they're targeting people with admin access or payroll permissions
+
+--- Fri 16:13, Derek
+Makes sense with the bonus theme
+
+--- Fri 16:14, Ruan
+Also the timing clusters around 09:00-10:00 and then again at 14:00. Like they know when people are most likely to check email
+
+--- Fri 16:15, Derek
+Probably tested it. These guys aren't amateurs
+
+--- Fri 16:17, Derek
+Im gonna push an org-wide alert and add the domains to the blocklist. Can you put together a quick summary for the incident report
+
+--- Fri 16:18, Ruan
+Sure, give me 30
+
+--- Fri 16:48, Ruan
+[file: phishing_incident_summary_27nov.pdf]
+
+--- Fri 16:49, Ruan
+Included the targeting pattern and the behavioural anomalies. Should be enough for management
+
+--- Fri 16:50, Derek
+Perfect. Blocklist is updated, alert went out 10 min ago
+
+--- Fri 16:51, Derek
+Gonna keep monitoring over the weekend. Wouldn't be surprised if they switch templates
+
+--- Fri 16:53, Ruan
+Ya let me know if you see a second wave, I'll adjust the detection model
+
+--- Fri 17:34, Derek
+Already seeing a variant. Same infrastructure but now it's a "December leave approval" theme
+
+--- Fri 17:35, Ruan
+Lol they're fast
+
+--- Fri 17:36, Derek
+Added to blocklist. Only 2 deliveries before the filter caught it this time
+
+--- Fri 17:37, Ruan
+The model flagged those too on my end so at least that's working
+
+--- Fri 17:38, Derek
+Nice
+
+--- Fri 19:12, Derek
+Quiet now. Think they've moved on for the day
+
+--- Fri 19:15, Ruan
+Cool. I'll check the logs again in the morning just in case
+
+--- Fri 19:16, Derek
+👍
+
+--- Sat 09:14, Ruan
+Checked the overnight logs. No new deliveries after about 20:00 last night
+
+--- Sat 09:17, Derek
+Same on my end. Blocklist holding
+
+--- Sat 09:18, Derek
+Wouldn't relax yet tho, Sunday night into Monday morning is prime time for round 2
+
+--- Sat 09:21, Ruan
+Ya I was thinking the same. They'll probably hit again when people come back online Monday
+
+--- Sat 09:22, Ruan
+I'm going to retrain the model with yesterday's data so it catches the template variations faster
+
+--- Sat 09:24, Derek
+Good idea. The leave approval one was close enough to legit that I nearly missed it on first glance
+
+--- Sat 11:47, Ruan
+Model's updated. Also noticed something weird in the data from yesterday
+
+--- Sat 11:48, Ruan
+One of the 3 users who clicked actually clicked twice. Different times, same link
+
+--- Sat 11:49, Derek
+Who
+
+--- Sat 11:51, Ruan
+Thabo from finance
+
+--- Sat 11:52, Derek
+Lol that guy. Second time this quarter
+
+--- Sat 11:53, Derek
+His password reset went through at least?
+
+--- Sat 11:54, Ruan
+Ya confirmed
+
+--- Sat 11:55, Derek
+Might need to flag him for extra training. Not being harsh but twice in one day is rough
+
+--- Sat 11:57, Ruan
+I'll add it to the report
+
+--- Sat 14:32, Ruan
+Power just flickered here. Loadshedding schedule said we were clear today
+
+--- Sat 14:38, Derek
+Stage 2 came back this morning apparently
+
+--- Sat 14:39, Ruan
+Great
+
+--- Sat 14:40, Derek
+You on UPS?
+
+--- Sat 14:43, Ruan
+Ya but it only gives me like 45 min. Should be fine if it's stage 2
+
+--- Sat 14:44, Derek
+Cool
+
+--- Sat 17:06, Derek
+Still quiet on the phishing front. Starting to think they might wait till Monday like we said
+
+--- Sat 17:21, Ruan
+Yep nothing flagged on my side either

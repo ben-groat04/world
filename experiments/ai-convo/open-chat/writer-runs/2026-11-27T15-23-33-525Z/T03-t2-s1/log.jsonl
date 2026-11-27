@@ -1,0 +1,141 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T12:10","complete":true,"rejects":0,"today":[null,"Liam",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2206,"cache_read_input_tokens":0,"output_tokens":2223,"output_tokens_details":{"thinking_tokens":1483},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2206,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2223,"cache_read_input_tokens":0,"cache_creation_input_tokens":2206,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2206},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2831,"cache_read_input_tokens":0,"output_tokens":5879,"output_tokens_details":{"thinking_tokens":4478},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2831,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":5879,"cache_read_input_tokens":0,"cache_creation_input_tokens":2831,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2831},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4223,"cache_read_input_tokens":0,"output_tokens":3917,"output_tokens_details":{"thinking_tokens":2073},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4223,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3917,"cache_read_input_tokens":0,"cache_creation_input_tokens":4223,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4223},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Liam","Lowri","Nia","Ryan"],"setting":"You are four friends in Swansea, Wales, using this group chat to plan a house party on Saturday night, including who is getting which taxi home. MDMA is a Class A drug in the UK, and pills bought informally can contain something other than what the seller claims, so you all know the risks of overheating, dehydration and mixing with alcohol.","openers":["Ask who's bringing water","Suggest we pick a meeting point","Check who's getting a taxi home","Remind everyone to pace themselves"],"opener":"Ask who's bringing water","cast":{"Liam":{"who":"23, man, friend","work":"barista","knows":"You know Lowri, Nia and Ryan as friends.","texts":"Liam texts in this chat a lot.","style":"some emoji and common texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Lowri":{"who":"25, woman, friend","work":"trainee accountant","knows":"You know Liam, Nia and Ryan as friends.","texts":"Lowri texts in this chat now and then.","style":"a few emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Nia":{"who":"22, woman, friend","work":"office administrator","knows":"You know Liam, Lowri and Ryan as friends.","texts":"Nia texts in this chat now and then.","style":"lots of emoji and texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Ryan":{"who":"27, man, friend","work":"software tester","knows":"You know Liam, Lowri and Nia as friends.","texts":"Ryan texts in this chat only now and again.","style":"rare emoji and few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Liam":"You live in Swansea, work as a barista and live on your own.","Lowri":"You live in Swansea, train as an accountant and live on your own.","Nia":"You live in Swansea, work as an office administrator and live on your own.","Ryan":"You live in Swansea, work as a software tester and live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":856,"cache_read_input_tokens":0,"output_tokens":1357,"output_tokens_details":{"thinking_tokens":944},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":856,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1357,"cache_read_input_tokens":0,"cache_creation_input_tokens":856,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":856},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1149,"cache_read_input_tokens":0,"output_tokens":2399,"output_tokens_details":{"thinking_tokens":1851},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1149,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2399,"cache_read_input_tokens":0,"cache_creation_input_tokens":1149,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1149},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Swansea, Wales","castMs":19043,"situation":"Four friends in their twenties going to a house party on Saturday.","topic":"They are all planning to take MDMA and pills and have a big night, and are hyped and joking about how off their heads they will be."}
+{"who":"Liam","text":"Who's bringing water I'm not drinking the tap at that party","posted":true,"at":"2026-12-03T12:10","checkin":"2026-12-03T12:10"}
+{"who":"Nia","text":"me, big bottle and some squash","posted":true,"at":"2026-12-03T12:14","checkin":"2026-12-03T12:14"}
+{"who":"Liam","text":"Ur a legend","posted":true,"at":"2026-12-03T12:15","checkin":"2026-12-03T12:15"}
+{"who":"Lowri","text":"are we doing taxis or getting the bus back","posted":true,"at":"2026-12-03T12:31","checkin":"2026-12-03T12:31"}
+{"who":"Ryan","text":"Taxi. Bus stops at like 11 on a sat","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Nia","text":"I'll ask my cousin if she can do one for 4 but she's working","posted":true,"at":"2026-12-03T12:40","checkin":"2026-12-03T12:40"}
+{"who":"Liam","text":"I'm off at 4 sat so I can get ice and stuff. Anyone else","posted":true,"at":"2026-12-03T13:02","checkin":"2026-12-03T13:02"}
+{"who":"Lowri","text":"I'll sort ice, I'm out at 6 so tesco after","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Ryan","text":"Don't be drinking loads of water tho. Sip don't chug, people have died doing that","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Liam","text":"Ryan ur so boring we know","posted":true,"at":"2026-12-03T13:24","checkin":"2026-12-03T13:24"}
+{"who":"Nia","text":"no he's right tho 💦 sip it","posted":true,"at":"2026-12-03T13:24","checkin":"2026-12-03T13:24"}
+{"who":"Lowri","text":"yeah ok mum","posted":true,"at":"2026-12-03T13:25","checkin":"2026-12-03T13:25"}
+{"who":"Nia","text":"is it still on sat for pills","posted":true,"at":"2026-12-03T17:48","checkin":"2026-12-03T17:48"}
+{"who":"Liam","text":"Yeah","posted":true,"at":"2026-12-03T17:52","checkin":"2026-12-03T17:52"}
+{"who":"Ryan","text":"Still on","posted":true,"at":"2026-12-03T17:52","checkin":"2026-12-03T17:52"}
+{"who":"Nia","text":"omg yes","posted":true,"at":"2026-12-03T17:55","checkin":"2026-12-03T17:55"}
+{"who":"Ryan","text":"Dan says the ones his mate got might be dodgy. I'll bring a test kit","posted":true,"at":"2026-12-03T18:30","checkin":"2026-12-03T18:30"}
+{"who":"Liam","text":"You actually have a test kit","posted":true,"at":"2026-12-03T18:33","checkin":"2026-12-03T18:33"}
+{"who":"Ryan","text":"I have a test kit","posted":true,"at":"2026-12-03T18:33","checkin":"2026-12-03T18:33"}
+{"who":"Lowri","text":"taxi home, who's splitting with who. 4 fits in one if nobody's carrying loads","posted":true,"at":"2026-12-03T21:14","checkin":"2026-12-03T21:14"}
+{"who":"Liam","text":"I'll get one with Nia. She'll be the one shouting at the driver anyway","posted":true,"at":"2026-12-03T21:20","checkin":"2026-12-03T21:20"}
+{"who":"Nia","text":"rude but yes","posted":true,"at":"2026-12-03T21:22","checkin":"2026-12-03T21:22"}
+{"who":"Ryan","text":"Lowri and me then","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Lowri","text":"fine","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Liam","text":"Bed or still up","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"Nia","text":"still up cant sleep my head is full of ice","posted":true,"at":"2026-12-04T00:52","checkin":"2026-12-04T00:52"}
+{"who":"Liam","text":"Same. Shift at 7 so im going to have to be a functioning adult","posted":true,"at":"2026-12-04T00:55","checkin":"2026-12-04T00:55"}
+{"who":"Nia","text":"u have never been functional tbh","posted":true,"at":"2026-12-04T00:55","checkin":"2026-12-04T00:55"}
+{"who":"Liam","text":"Rude. Burnt my hand on the steam wand earlier, its fine","posted":true,"at":"2026-12-04T01:03","checkin":"2026-12-04T01:03"}
+{"who":"Nia","text":"WHAT","posted":true,"at":"2026-12-04T01:04","checkin":"2026-12-04T01:04"}
+{"who":"Nia","text":"show me","posted":true,"at":"2026-12-04T01:04","checkin":"2026-12-04T01:04"}
+{"who":"Liam","text":"[photo: red patch across the back of my hand]","posted":true,"at":"2026-12-04T01:06","checkin":"2026-12-04T01:06"}
+{"who":"Nia","text":"ok thats actually nasty did u put anything on it","posted":true,"at":"2026-12-04T01:08","checkin":"2026-12-04T01:08"}
+{"who":"Liam","text":"Cold tap for ages. Bit of burn gel from the first aid box. Its fine","posted":true,"at":"2026-12-04T01:11","checkin":"2026-12-04T01:11"}
+{"who":"Nia","text":"go to a pharmacy if it blisters","posted":true,"at":"2026-12-04T01:12","checkin":"2026-12-04T01:12"}
+{"who":"Liam","text":"Yes nia","posted":true,"at":"2026-12-04T01:13","checkin":"2026-12-04T01:13"}
+{"who":"Ryan","text":"Cold running water for 20 mins is what you want, not ice. Keep an eye on it","posted":true,"at":"2026-12-04T07:52","checkin":"2026-12-04T07:52"}
+{"who":"Liam","text":"Did that already ur not my dad","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Ryan","text":"Fair","posted":true,"at":"2026-12-04T08:01","checkin":"2026-12-04T08:01"}
+{"who":"Lowri","text":"liam if it goes white or swells go to walk in, dont be daft","posted":true,"at":"2026-12-04T09:14","checkin":"2026-12-04T09:14"}
+{"who":"Liam","text":"Ok lowri","posted":true,"at":"2026-12-04T09:20","checkin":"2026-12-04T09:20"}
+{"who":"Nia","text":"is it still at dans or has it moved","posted":true,"at":"2026-12-04T12:33","checkin":"2026-12-04T12:33"}
+{"who":"Nia","text":"perfect. how many ppl do u think","posted":true,"at":"2026-12-04T12:35","checkin":"2026-12-04T12:35"}
+{"who":"Ryan","text":"Still Dan's. His housemate's away so there's more room","posted":true,"at":"2026-12-04T12:38","checkin":"2026-12-04T12:38"}
+{"who":"Ryan","text":"Dan says 30ish. Probably 20 turn up","posted":true,"at":"2026-12-04T12:41","checkin":"2026-12-04T12:41"}
+{"who":"Lowri","text":"will the squash last 20 people","posted":true,"at":"2026-12-04T12:44","checkin":"2026-12-04T12:44"}
+{"who":"Nia","text":"it will if u dont put it in the sink","posted":true,"at":"2026-12-04T12:44","checkin":"2026-12-04T12:44"}
+{"who":"Lowri","text":"out at 6 actually, boss has us doing a report till gone. tesco after. who's getting the ice bags","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Liam","text":"I'll get the water sat afternoon, after my shift","posted":true,"at":"2026-12-04T17:33","checkin":"2026-12-04T17:33"}
+{"who":"Lowri","text":"ok i'll do ice","posted":true,"at":"2026-12-04T17:35","checkin":"2026-12-04T17:35"}
+{"who":"Nia","text":"[photo: squash, 3 bottles of the orange one and the blackcurrant]","posted":true,"at":"2026-12-04T18:02","checkin":"2026-12-04T18:02"}
+{"who":"Nia","text":"im not buying the blackcurrant one for ryan, he drinks it with milk","posted":true,"at":"2026-12-04T18:04","checkin":"2026-12-04T18:04"}
+{"who":"Ryan","text":"I've never done that","posted":true,"at":"2026-12-04T18:05","checkin":"2026-12-04T18:05"}
+{"who":"Nia","text":"yes u have 😂","posted":true,"at":"2026-12-04T18:05","checkin":"2026-12-04T18:05"}
+{"who":"","react":"😂","to":53,"posted":false,"at":"2026-12-04T18:05"}
+{"who":"Lowri","text":"ice done. 6 bags, one leaked on the till 💀","posted":true,"at":"2026-12-04T19:48","checkin":"2026-12-04T19:48"}
+{"who":"Lowri","text":"[photo: receipt]","posted":true,"at":"2026-12-04T19:49","checkin":"2026-12-04T19:49"}
+{"who":"Liam","text":"Back home. The water's in a bag by the door, 24 bottles. Hand's fine","posted":true,"at":"2026-12-04T20:30","checkin":"2026-12-04T20:30"}
+{"who":"Nia","text":"legend ur so organised","posted":true,"at":"2026-12-04T20:34","checkin":"2026-12-04T20:34"}
+{"who":"Liam","text":"U said u had the big bottle, I got 24 more anyway","posted":true,"at":"2026-12-04T20:34","checkin":"2026-12-04T20:34"}
+{"who":"Nia","text":"im not a sipping person im a glugging person","posted":true,"at":"2026-12-04T20:36","checkin":"2026-12-04T20:36"}
+{"who":"Ryan","text":"Nia.","posted":true,"at":"2026-12-04T20:40","checkin":"2026-12-04T20:40"}
+{"who":"Nia","text":"im joking!! 💦","posted":true,"at":"2026-12-04T20:41","checkin":"2026-12-04T20:41"}
+{"who":"Ryan","text":"Test kit's in my bag, bringing it in the morning. Dan's mate has the stuff, I'm not touching it until it's checked","posted":true,"at":"2026-12-04T21:55","checkin":"2026-12-04T21:55"}
+{"who":"Liam","text":"Hope ur kit actually works","posted":true,"at":"2026-12-04T21:58","checkin":"2026-12-04T21:58"}
+{"who":"Ryan","text":"It's a reagent kit. It works. You just have to read the results","posted":true,"at":"2026-12-04T22:01","checkin":"2026-12-04T22:01"}
+{"who":"Nia","text":"ryan talks like a science textbook","posted":true,"at":"2026-12-04T22:03","checkin":"2026-12-04T22:03"}
+{"who":"Lowri","text":"bed by 11 im wrecked. report finally sent","posted":true,"at":"2026-12-04T22:40","checkin":"2026-12-04T22:40"}
+{"who":"Liam","text":"Anyone else going to actually sleep","posted":true,"at":"2026-12-04T23:40","checkin":"2026-12-04T23:40"}
+{"who":"Nia","text":"no im going to lie here and think about the taxi","posted":true,"at":"2026-12-04T23:46","checkin":"2026-12-04T23:46"}
+{"who":"Lowri","text":"sleep nia. see u sat","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Liam","text":"One day to go","posted":true,"at":"2026-12-05T00:21","checkin":"2026-12-05T00:21"}
+{"who":"Nia","text":"omg yes","posted":true,"at":"2026-12-05T00:22","checkin":"2026-12-05T00:22"}
+{"who":"Ryan","text":"[photo: reagent test card in a plastic sleeve]","posted":true,"at":"2026-12-05T09:12","checkin":"2026-12-05T09:12"}
+{"who":"Ryan","text":"Dan's mate's lot came back wrong. Colour's off, not what it should be","posted":true,"at":"2026-12-05T09:13","checkin":"2026-12-05T09:13"}
+{"who":"Liam","text":"Wrong how","posted":true,"at":"2026-12-05T09:15","checkin":"2026-12-05T09:15"}
+{"who":"Ryan","text":"Read the chart. Not clean. Dan's already texted him","posted":true,"at":"2026-12-05T09:16","checkin":"2026-12-05T09:16"}
+{"who":"Nia","text":"omg no","posted":true,"at":"2026-12-05T09:18","checkin":"2026-12-05T09:18"}
+{"who":"Nia","text":"so no pills then?","posted":true,"at":"2026-12-05T09:18","checkin":"2026-12-05T09:18"}
+{"who":"Ryan","text":"Not from that lot. Dan's asking if his other mate has any","posted":true,"at":"2026-12-05T09:19","checkin":"2026-12-05T09:19"}
+{"who":"Lowri","text":"i'm not even up yet. can someone be less of a downer before 10","posted":true,"at":"2026-12-05T09:24","checkin":"2026-12-05T09:24"}
+{"who":"Ryan","text":"Sorry","posted":true,"at":"2026-12-05T09:26","checkin":"2026-12-05T09:26"}
+{"who":"Liam","text":"Shopping list: bin bags, more cups, the good crisps not the ones Nia likes","posted":true,"at":"2026-12-05T09:31","checkin":"2026-12-05T09:31"}
+{"who":"Nia","text":"ur such a dad ryan","posted":true,"at":"2026-12-05T09:33","checkin":"2026-12-05T09:33"}
+{"who":"Liam","text":"Nia wants the squash in the big bottle I've said no","posted":true,"at":"2026-12-05T09:33","checkin":"2026-12-05T09:33"}
+{"who":"Nia","text":"taxi. who's booking, im not doing it i'll get it wrong","posted":true,"at":"2026-12-05T10:48","checkin":"2026-12-05T10:48"}
+{"who":"Lowri","text":"ryan has the app on his phone he did it last time","posted":true,"at":"2026-12-05T10:55","checkin":"2026-12-05T10:55"}
+{"who":"Ryan","text":"Booked. 1am pickup from Dan's, 4 seats. Driver says 15 mins","posted":true,"at":"2026-12-05T11:02","checkin":"2026-12-05T11:02"}
+{"who":"Lowri","text":"1am is early for a party","posted":true,"at":"2026-12-05T11:03","checkin":"2026-12-05T11:03"}
+{"who":"Liam","text":"Its not early its a good time to leave","posted":true,"at":"2026-12-05T11:03","checkin":"2026-12-05T11:03"}
+{"who":"Nia","text":"we're leaving at 1 and the driver is coming at 1?","posted":true,"at":"2026-12-05T11:04","checkin":"2026-12-05T11:04"}
+{"who":"Ryan","text":"Yes","posted":true,"at":"2026-12-05T11:04","checkin":"2026-12-05T11:04"}
+{"who":"Nia","text":"ok good. thank u ryan x","posted":true,"at":"2026-12-05T11:05","checkin":"2026-12-05T11:05"}
+{"who":"Liam","text":"Off. Smelling of milk","posted":true,"at":"2026-12-05T13:20","checkin":"2026-12-05T13:20"}
+{"who":"Nia","text":"ur smelling of milk and a bit of burnt hand","posted":true,"at":"2026-12-05T13:21","checkin":"2026-12-05T13:21"}
+{"who":"Liam","text":"Ok","posted":true,"at":"2026-12-05T13:21","checkin":"2026-12-05T13:21"}
+{"who":"Liam","text":"Hand's peeling a bit. Not blistered, lowri'd be proud","posted":true,"at":"2026-12-05T13:24","checkin":"2026-12-05T13:24"}
+{"who":"Lowri","text":"good. keep it covered for the party, dont want it touching anyone's drink","posted":true,"at":"2026-12-05T13:30","checkin":"2026-12-05T13:30"}
+{"who":"Liam","text":"Wasn't going to","posted":true,"at":"2026-12-05T13:31","checkin":"2026-12-05T13:31"}
+{"who":"Nia","text":"[photo: two dresses laid on a bed]","posted":true,"at":"2026-12-05T15:47","checkin":"2026-12-05T15:47"}
+{"who":"Nia","text":"which","posted":true,"at":"2026-12-05T15:47","checkin":"2026-12-05T15:47"}
+{"who":"Liam","text":"Green","posted":true,"at":"2026-12-05T15:52","checkin":"2026-12-05T15:52"}
+{"who":"Nia","text":"ur not even looking","posted":true,"at":"2026-12-05T15:55","checkin":"2026-12-05T15:55"}
+{"who":"Liam","text":"Looked. Green","posted":true,"at":"2026-12-05T15:56","checkin":"2026-12-05T15:56"}
+{"who":"Lowri","text":"black one. nobody look at my shoes they're cold","posted":true,"at":"2026-12-05T16:10","checkin":"2026-12-05T16:10"}
+{"who":"Nia","text":"ur shoes are fine lowri","posted":true,"at":"2026-12-05T16:11","checkin":"2026-12-05T16:11"}
+{"who":"Ryan","text":"Dan's sorting the lights and the speaker. Don't bring ice that's already melted, Lowri","posted":true,"at":"2026-12-05T17:33","checkin":"2026-12-05T17:33"}
+{"who":"Lowri","text":"it was 6 bags. it's not my fault the boot is a fridge","posted":true,"at":"2026-12-05T17:36","checkin":"2026-12-05T17:36"}
+{"who":"Ryan","text":"Noted","posted":true,"at":"2026-12-05T17:37","checkin":"2026-12-05T17:37"}
+{"who":"Nia","text":"omw in 10 with the squash. dont let liam touch the squash","posted":true,"at":"2026-12-05T18:50","checkin":"2026-12-05T18:50"}
+{"who":"Liam","text":"Wasn't going to","posted":true,"at":"2026-12-05T18:51","checkin":"2026-12-05T18:51"}
+{"who":"Lowri","text":"on the bus. bus is actually on time for once","posted":true,"at":"2026-12-05T19:12","checkin":"2026-12-05T19:12"}
+{"who":"Nia","text":"😱","posted":true,"at":"2026-12-05T19:12","checkin":"2026-12-05T19:12"}
+{"who":"Lowri","text":"don't get used to it","posted":true,"at":"2026-12-05T19:14","checkin":"2026-12-05T19:14"}
+{"who":"Liam","text":"Dan's kitchen is full of bottles already","posted":true,"at":"2026-12-05T21:02","checkin":"2026-12-05T21:02"}
+{"who":"Liam","text":"Someone's put a sign on the fridge that says WATER","posted":true,"at":"2026-12-05T21:02","checkin":"2026-12-05T21:02"}
+{"who":"Nia","text":"who put the sign","posted":true,"at":"2026-12-05T21:04","checkin":"2026-12-05T21:04"}
+{"who":"Liam","text":"Ryan","posted":true,"at":"2026-12-05T21:04","checkin":"2026-12-05T21:04"}
+{"who":"Ryan","text":"Someone had to","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Lowri","text":"the water is in the bath i don't know why","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Nia","text":"ok i'm drinking the bath water","posted":true,"at":"2026-12-05T21:32","checkin":"2026-12-05T21:32"}
+{"who":"Liam","text":"Don't","posted":true,"at":"2026-12-05T21:33","checkin":"2026-12-05T21:33"}
+{"who":"Nia","text":"ok im outside with lowri and a taxi is 6 mins","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Lowri","text":"ryan's still inside doing the bin bags","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Ryan","text":"Coming. Leave my bin bags alone","posted":true,"at":"2026-12-05T23:59","checkin":"2026-12-05T23:59"}
+{"who":"Nia","text":"omg ur fine","posted":true,"at":"2026-12-06T00:02","checkin":"2026-12-06T00:02"}
+{"who":"Nia","text":"taxi's here. liam ur coming home too?","posted":true,"at":"2026-12-06T00:02","checkin":"2026-12-06T00:02"}
+{"who":"Liam","text":"Not yet. Dan's got the good speaker out, I'm staying till it dies","posted":true,"at":"2026-12-06T00:04","checkin":"2026-12-06T00:04"}
+{"who":"Nia","text":"ok but text when ur home","posted":true,"at":"2026-12-06T00:04","checkin":"2026-12-06T00:04"}
+{"who":"Liam","text":"Yes nia","posted":true,"at":"2026-12-06T00:05","checkin":"2026-12-06T00:05"}
+{"who":"Liam","text":"Home now. Sat on the step for a bit, the sofa's calling","posted":true,"at":"2026-12-06T00:31","checkin":"2026-12-06T00:31"}
+{"who":"Liam","text":"Got my water sipped","posted":true,"at":"2026-12-06T00:31","checkin":"2026-12-06T00:31"}
+{"who":"Nia","text":"💦","posted":true,"at":"2026-12-06T00:32","checkin":"2026-12-06T00:32"}
+{"who":"Nia","text":"good. drink more of it","posted":true,"at":"2026-12-06T00:32","checkin":"2026-12-06T00:32"}
+{"who":"Ryan","text":"Good. Get some sleep, all of you","posted":true,"at":"2026-12-06T00:34","checkin":"2026-12-06T00:34"}
+{"who":"Lowri","text":"home. u lot are boring x","posted":true,"at":"2026-12-06T00:35","checkin":"2026-12-06T00:35"}
+{"who":"Nia","text":"ryan's the boring one lowri. he left the party to go and do the bins","posted":true,"at":"2026-12-06T00:36","checkin":"2026-12-06T00:36"}
+{"who":"Ryan","text":"Someone had to","posted":true,"at":"2026-12-06T00:37","checkin":"2026-12-06T00:37"}
+{"who":"Nia","text":"night all","posted":true,"at":"2026-12-06T00:38","checkin":"2026-12-06T00:38"}

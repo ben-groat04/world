@@ -1,0 +1,98 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:20","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2289,"cache_read_input_tokens":0,"output_tokens":1693,"output_tokens_details":{"thinking_tokens":1027},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2289,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1693,"cache_read_input_tokens":0,"cache_creation_input_tokens":2289,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2289},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2810,"cache_read_input_tokens":0,"output_tokens":4675,"output_tokens_details":{"thinking_tokens":3392},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2810,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4675,"cache_read_input_tokens":0,"cache_creation_input_tokens":2810,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2810},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4078,"cache_read_input_tokens":0,"output_tokens":3016,"output_tokens_details":{"thinking_tokens":2041},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4078,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3016,"cache_read_input_tokens":0,"cache_creation_input_tokens":4078,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4078},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ayanda","Siyabonga","Refilwe","Luyanda"],"setting":"You are all in one group chat, based in Durban, South Africa. You are friends going to the same house party on Saturday, and you know each other from the same friendship circle.","openers":["Ask who's getting a lift there","Suggest we all meet at the gate together","Say you'd like to keep the night easy","Remind everyone to check on each other"],"opener":"Suggest we all meet at the gate together","cast":{"Ayanda":{"who":"24, woman, a friend going to the party","work":"pharmacy intern","knows":"You know Siyabonga, Refilwe and Luyanda as friends from the same circle.","texts":"Ayanda texts in this chat now and then.","style":"a little emoji, few abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Siyabonga":{"who":"26, man, a friend going to the party","work":"fitness instructor","knows":"You know Ayanda, Refilwe and Luyanda as friends from the same circle.","texts":"Siyabonga texts in this chat now and then.","style":"some emoji, plenty of abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Refilwe":{"who":"23, woman, a friend going to the party","work":"photographer","knows":"You know Ayanda, Siyabonga and Luyanda as friends from the same circle.","texts":"Refilwe texts in this chat only now and again.","style":"a few emoji, few abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Luyanda":{"who":"25, man, a friend going to the party","work":"civil engineering technician","knows":"You know Ayanda, Siyabonga and Refilwe as friends from the same circle.","texts":"Luyanda texts in this chat a lot.","style":"none","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Ayanda":"You live in Durban, work as a pharmacy intern, and live alone.","Siyabonga":"You live in Durban, work as a fitness instructor, and live alone.","Refilwe":"You live in Durban, work as a photographer, and live alone.","Luyanda":"You live in Durban, work as a civil engineering technician, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":873,"cache_read_input_tokens":0,"output_tokens":1706,"output_tokens_details":{"thinking_tokens":1238},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":873,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1706,"cache_read_input_tokens":0,"cache_creation_input_tokens":873,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":873},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1166,"cache_read_input_tokens":0,"output_tokens":1972,"output_tokens_details":{"thinking_tokens":1411},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1166,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1972,"cache_read_input_tokens":0,"cache_creation_input_tokens":1166,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1166},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Durban, South Africa","castMs":21558,"situation":"Four friends in their twenties going to a house party on Saturday.","topic":"Two of them take drugs most weekends, are casual about it, and tell the others stories of the worst comedowns and wildest nights they have had on pills, coke and ketamine."}
+{"who":"Ayanda","text":"Can we all meet at the gate together tmrw? Like arrive together and leave together","posted":true,"at":"2026-11-27T18:20","checkin":"2026-11-27T18:20"}
+{"who":"Luyanda","text":"why whats wrong with just getting there","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Luyanda","text":"im coming from umhlanga so ill be late anyway","posted":true,"at":"2026-11-27T18:25","checkin":"2026-11-27T18:25"}
+{"who":"Siyabonga","text":"i can do that. finish at 4 so im fine","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Ayanda","text":"Cool. Refilwe?","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Luyanda","text":"leave together from what 😂","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Ayanda","text":"From wherever the night goes lol","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Siyabonga","text":"ayanda's getting old","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Ayanda","text":"I'm 24","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Refilwe","text":"Ok","posted":true,"at":"2026-11-27T19:10","checkin":"2026-11-27T19:10"}
+{"who":"Refilwe","text":"What time at the gate","posted":true,"at":"2026-11-27T19:11","checkin":"2026-11-27T19:11"}
+{"who":"Ayanda","text":"8?","posted":true,"at":"2026-11-27T19:14","checkin":"2026-11-27T19:14"}
+{"who":"Luyanda","text":"8 is early bru","posted":true,"at":"2026-11-27T19:14","checkin":"2026-11-27T19:14"}
+{"who":"Luyanda","text":"9 at least","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Siyabonga","text":"9 works","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Ayanda","text":"9 then","posted":true,"at":"2026-11-27T19:22","checkin":"2026-11-27T19:22"}
+{"who":"Luyanda","text":"bro last time at the Berea place i was on the floor for like 3 hours and ayabonga had to call a taxi","posted":true,"at":"2026-11-27T21:47","checkin":"2026-11-27T21:47"}
+{"who":"Siyabonga","text":"that wasnt me that was Mpho","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Luyanda","text":"it was you","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Refilwe","text":"Guys","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Refilwe","text":"I'm not doing that again","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Siyabonga","text":"no one said anything refilwe","posted":true,"at":"2026-11-27T21:58","checkin":"2026-11-27T21:58"}
+{"who":"Ayanda","text":"Sorry im in bed. Tmrw 9 at the gate, dont be late","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Luyanda","text":"ok ayanda","posted":true,"at":"2026-11-28T00:40","checkin":"2026-11-28T00:40"}
+{"who":"Luyanda","text":"morning. still on for tonight or is ayanda making us wear name tags","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Ayanda","text":"Lol no. Are you actually coming from Umhlanga or are you going to say you're coming at 10","posted":true,"at":"2026-11-28T09:40","checkin":"2026-11-28T09:40"}
+{"who":"Luyanda","text":"im coming bru i packed already","posted":true,"at":"2026-11-28T09:52","checkin":"2026-11-28T09:52"}
+{"who":"Siyabonga","text":"finish at 4 then home then shower then im gone","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Siyabonga","text":"dont let luyanda pick the music in the car","posted":true,"at":"2026-11-28T11:04","checkin":"2026-11-28T11:04"}
+{"who":"Refilwe","text":"Morning","posted":true,"at":"2026-11-28T11:20","checkin":"2026-11-28T11:20"}
+{"who":"Refilwe","text":"I have a shoot till like 2 so I might be a bit late getting ready","posted":true,"at":"2026-11-28T11:21","checkin":"2026-11-28T11:21"}
+{"who":"Refilwe","text":"Will still be at the gate","posted":true,"at":"2026-11-28T11:21","checkin":"2026-11-28T11:21"}
+{"who":"Luyanda","text":"9 at the gate refilwe not 9 at your house","posted":true,"at":"2026-11-28T11:40","checkin":"2026-11-28T11:40"}
+{"who":"Refilwe","text":"I know","posted":true,"at":"2026-11-28T11:42","checkin":"2026-11-28T11:42"}
+{"who":"Ayanda","text":"Anyone bought anything for tonight? Or is it all going to be Siyabonga's cheap savanna thing again","posted":true,"at":"2026-11-28T15:12","checkin":"2026-11-28T15:12"}
+{"who":"Siyabonga","text":"savanna is a legend i got two six packs and a bottle of ginger for ayanda","posted":true,"at":"2026-11-28T15:30","checkin":"2026-11-28T15:30"}
+{"who":"Ayanda","text":"I drink gin tonic. Once. Last year.","posted":true,"at":"2026-11-28T15:31","checkin":"2026-11-28T15:31"}
+{"who":"Luyanda","text":"[photo: a bottle of gin on a car seat]","posted":true,"at":"2026-11-28T16:05","checkin":"2026-11-28T16:05"}
+{"who":"Luyanda","text":"bought this in umhlanga. wont say how much","posted":true,"at":"2026-11-28T16:06","checkin":"2026-11-28T16:06"}
+{"who":"Ayanda","text":"Thank you Luyanda 😊","posted":true,"at":"2026-11-28T16:06","checkin":"2026-11-28T16:06"}
+{"who":"Refilwe","text":"Done with the shoot. Going home to shower","posted":true,"at":"2026-11-28T16:40","checkin":"2026-11-28T16:40"}
+{"who":"Refilwe","text":"Which gate is it. The one by the petrol station or the one on the corner","posted":true,"at":"2026-11-28T16:41","checkin":"2026-11-28T16:41"}
+{"who":"Siyabonga","text":"the corner one. where the guy sells mielies","posted":true,"at":"2026-11-28T17:15","checkin":"2026-11-28T17:15"}
+{"who":"Siyabonga","text":"u know the house","posted":true,"at":"2026-11-28T17:16","checkin":"2026-11-28T17:16"}
+{"who":"Refilwe","text":"Yeah ok","posted":true,"at":"2026-11-28T17:50","checkin":"2026-11-28T17:50"}
+{"who":"Luyanda","text":"bra my car is making a noise again. might have to leave it at home and get an uber","posted":true,"at":"2026-11-28T18:30","checkin":"2026-11-28T18:30"}
+{"who":"Ayanda","text":"Is it the same noise as last time","posted":true,"at":"2026-11-28T18:31","checkin":"2026-11-28T18:31"}
+{"who":"Luyanda","text":"no this one is worse","posted":true,"at":"2026-11-28T18:33","checkin":"2026-11-28T18:33"}
+{"who":"Siyabonga","text":"just get an uber luyanda","posted":true,"at":"2026-11-28T19:02","checkin":"2026-11-28T19:02"}
+{"who":"Luyanda","text":"uber from umhlanga to berea is R400 ayabonga do you have money","posted":true,"at":"2026-11-28T19:03","checkin":"2026-11-28T19:03"}
+{"who":"Siyabonga","text":"i have money. i dont have a car that makes noise","posted":true,"at":"2026-11-28T19:04","checkin":"2026-11-28T19:04"}
+{"who":"Ayanda","text":"Im getting ready. Refilwe I know what you said last night 😂 no taxi drama tonight","posted":true,"at":"2026-11-28T19:40","checkin":"2026-11-28T19:40"}
+{"who":"Refilwe","text":"Ha","posted":true,"at":"2026-11-28T19:41","checkin":"2026-11-28T19:41"}
+{"who":"Siyabonga","text":"leaving home now. gate at 9 ya","posted":true,"at":"2026-11-28T20:15","checkin":"2026-11-28T20:15"}
+{"who":"Ayanda","text":"Im at the gate already. Refilwe where are you","posted":true,"at":"2026-11-28T20:50","checkin":"2026-11-28T20:50"}
+{"who":"Ayanda","text":"Refilwe","posted":true,"at":"2026-11-28T20:51","checkin":"2026-11-28T20:51"}
+{"who":"Refilwe","text":"Coming in an uber. 5 min","posted":true,"at":"2026-11-28T20:58","checkin":"2026-11-28T20:58"}
+{"who":"Siyabonga","text":"im here. ayanda u look like u been standing here for 2 hours","posted":true,"at":"2026-11-28T21:02","checkin":"2026-11-28T21:02"}
+{"who":"Ayanda","text":"I have been","posted":true,"at":"2026-11-28T21:02","checkin":"2026-11-28T21:02"}
+{"who":"Luyanda","text":"parking now. 10 min. dont leave without me","posted":true,"at":"2026-11-28T21:09","checkin":"2026-11-28T21:09"}
+{"who":"Siyabonga","text":"who got home","posted":true,"at":"2026-11-29T01:52","checkin":"2026-11-29T01:52"}
+{"who":"Ayanda","text":"Home. Safe. Refilwe you owe me an uber","posted":true,"at":"2026-11-29T01:53","checkin":"2026-11-29T01:53"}
+{"who":"Refilwe","text":"Home I did not owe you anything","posted":true,"at":"2026-11-29T01:55","checkin":"2026-11-29T01:55"}
+{"who":"Luyanda","text":"bra who took my jacket","posted":true,"at":"2026-11-29T02:30","checkin":"2026-11-29T02:30"}
+{"who":"Ayanda","text":"Is anyone alive","posted":true,"at":"2026-11-29T09:12","checkin":"2026-11-29T09:12"}
+{"who":"Luyanda","text":"barely","posted":true,"at":"2026-11-29T09:40","checkin":"2026-11-29T09:40"}
+{"who":"Luyanda","text":"bra the jacket is the navy one with the zip. i had it on at the gate and then it was on the couch by the speaker","posted":true,"at":"2026-11-29T09:41","checkin":"2026-11-29T09:41"}
+{"who":"Siyabonga","text":"not me. i was in the black hoodie the whole night","posted":true,"at":"2026-11-29T10:02","checkin":"2026-11-29T10:02"}
+{"who":"Ayanda","text":"Check the boot Luyanda","posted":true,"at":"2026-11-29T10:20","checkin":"2026-11-29T10:20"}
+{"who":"Luyanda","text":"its not in the boot\nits not in the car\nayanda did u take it","posted":true,"at":"2026-11-29T10:44","checkin":"2026-11-29T10:44"}
+{"who":"Ayanda","text":"No I was in my own clothes 😂","posted":true,"at":"2026-11-29T10:45","checkin":"2026-11-29T10:45"}
+{"who":"Refilwe","text":"Morning. Who had a jacket. I think I have one in my bag","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Refilwe","text":"Its navy","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Luyanda","text":"YES","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Luyanda","text":"refilwe thats mine","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Refilwe","text":"Ok I thought it was Sibu's. Sorry","posted":true,"at":"2026-11-29T11:33","checkin":"2026-11-29T11:33"}
+{"who":"Refilwe","text":"I'll bring it tomorrow. Don't come to my house","posted":true,"at":"2026-11-29T11:36","checkin":"2026-11-29T11:36"}
+{"who":"Siyabonga","text":"who is going to the mielie guy this afternoon. i need food","posted":true,"at":"2026-11-29T12:50","checkin":"2026-11-29T12:50"}
+{"who":"Ayanda","text":"Not me. Went to the chemist for my head","posted":true,"at":"2026-11-29T12:52","checkin":"2026-11-29T12:52"}
+{"who":"Ayanda","text":"Don't tell anyone I said this but the gin was not bad","posted":true,"at":"2026-11-29T12:55","checkin":"2026-11-29T12:55"}
+{"who":"Luyanda","text":"told you","posted":true,"at":"2026-11-29T12:56","checkin":"2026-11-29T12:56"}
+{"who":"Siyabonga","text":"going to the gym later. not sleeping in","posted":true,"at":"2026-11-29T13:20","checkin":"2026-11-29T13:20"}
+{"who":"Siyabonga","text":"ayanda u still owe me for the ginger","posted":true,"at":"2026-11-29T13:21","checkin":"2026-11-29T13:21"}
+{"who":"Ayanda","text":"I drank one ginger. Once.","posted":true,"at":"2026-11-29T13:22","checkin":"2026-11-29T13:22"}
+{"who":"Luyanda","text":"bra the car is at the mechanic in Berea. R2800 for a belt. i dont know what to do","posted":true,"at":"2026-11-29T16:48","checkin":"2026-11-29T16:48"}
+{"who":"Luyanda","text":"ayabonga can i borrow R500 till friday","posted":true,"at":"2026-11-29T16:49","checkin":"2026-11-29T16:49"}
+{"who":"Siyabonga","text":"i'll think about it","posted":true,"at":"2026-11-29T16:55","checkin":"2026-11-29T16:55"}
+{"who":"Siyabonga","text":"kidding. send me the account number","posted":true,"at":"2026-11-29T16:56","checkin":"2026-11-29T16:56"}
+{"who":"Refilwe","text":"[photo: a navy jacket folded on a bed]","posted":true,"at":"2026-11-29T17:30","checkin":"2026-11-29T17:30"}
+{"who":"Refilwe","text":"The jacket is safe","posted":true,"at":"2026-11-29T17:31","checkin":"2026-11-29T17:31"}
+{"who":"Luyanda","text":"thanks refilwe","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Ayanda","text":"Someone said there's a braai at Sipho's next weekend","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Siyabonga","text":"bring a chair","posted":true,"at":"2026-11-29T21:52","checkin":"2026-11-29T21:52"}
+{"who":"Luyanda","text":"ill bring the car if the mechanic finishes lol","posted":true,"at":"2026-11-29T22:10","checkin":"2026-11-29T22:10"}
+{"who":"Refilwe","text":"Going to sleep","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Ayanda","text":"Refilwe you still owe me the uber","posted":true,"at":"2026-11-30T00:14","checkin":"2026-11-30T00:14"}

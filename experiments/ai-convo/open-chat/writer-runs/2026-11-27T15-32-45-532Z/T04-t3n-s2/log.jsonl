@@ -1,0 +1,127 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T18:45","complete":true,"rejects":0,"today":["Eilidh","Neil","Neil"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2351,"cache_read_input_tokens":0,"output_tokens":2555,"output_tokens_details":{"thinking_tokens":1656},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2351,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2555,"cache_read_input_tokens":0,"cache_creation_input_tokens":2351,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2351},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3138,"cache_read_input_tokens":0,"output_tokens":4242,"output_tokens_details":{"thinking_tokens":2127},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3138,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4242,"cache_read_input_tokens":0,"cache_creation_input_tokens":3138,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3138},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":5285,"cache_read_input_tokens":0,"output_tokens":2579,"output_tokens_details":{"thinking_tokens":1539},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5285,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2579,"cache_read_input_tokens":0,"cache_creation_input_tokens":5285,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5285},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Kieran","Eilidh","Neil","Lorna"],"setting":"You are all in a group chat on your phones, each at home in Glasgow, and you know each other from uni days, where you were all course mates who became close friends.","openers":["Send a joke about the next big night out","Send a dare to Neil to match the weekend drinks","Send a line teasing whoever wants to cut back","Send a challenge to see who can keep up on Saturday"],"opener":"Send a dare to Neil to match the weekend drinks","cast":{"Kieran":{"who":"29, man, old uni mate","work":"junior solicitor","knows":"You know Eilidh, Neil and Lorna as old uni mates from your university days.","texts":"Kieran texts in this chat a lot.","style":"Light use of emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Eilidh":{"who":"28, woman, old uni mate","work":"graphic designer","knows":"You know Kieran, Neil and Lorna as old uni mates from your university days.","texts":"Eilidh texts in this chat now and then.","style":"Moderate use of emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Neil":{"who":"30, man, old uni mate","work":"civil engineer","knows":"You know Kieran, Eilidh and Lorna as old uni mates from your university days.","texts":"Neil texts in this chat now and then.","style":"Light use of emoji and few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Lorna":{"who":"29, woman, old uni mate","work":"online retail buyer","knows":"You know Kieran, Eilidh and Neil as old uni mates from your university days.","texts":"Lorna texts in this chat now and then.","style":"Moderate use of emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Kieran":"You live in Glasgow, work as a junior solicitor, and spend your days at the office and your evenings with friends.","Eilidh":"You live in Glasgow, work as a graphic designer, and fill your days with freelance projects and your evenings with friends.","Neil":"You live in Glasgow, work as a civil engineer, and fill your days with site work and your evenings with friends.","Lorna":"You live in Glasgow, work as an online retail buyer, and fill your days with sourcing stock and your evenings with friends."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":856,"cache_read_input_tokens":0,"output_tokens":1140,"output_tokens_details":{"thinking_tokens":698},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":856,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1140,"cache_read_input_tokens":0,"cache_creation_input_tokens":856,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":856},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1132,"cache_read_input_tokens":0,"output_tokens":636,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1132,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":636,"cache_read_input_tokens":0,"cache_creation_input_tokens":1132,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1132},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Glasgow, Scotland","castMs":11736,"situation":"Old mates from uni in a group chat.","topic":"Boasting and joking about how much they drink most weeks, mocking the one who wants to cut down, and daring each other to a bigger night."}
+{"who":"Kieran","text":"Right who's up for sat 🍻","posted":true,"at":"2026-12-03T18:45","checkin":"2026-12-03T18:45"}
+{"who":"Kieran","text":"Neil ur coming obvs","posted":true,"at":"2026-12-03T18:45","checkin":"2026-12-03T18:45"}
+{"who":"Kieran","text":"Did 9 last sat and still got up for a 10am run lol","posted":true,"at":"2026-12-03T18:52","checkin":"2026-12-03T18:52"}
+{"who":"Kieran","text":"Dare u to match me pint for pint sat. If u cant keep up ur officially a lightweight and we're telling everyone","posted":true,"at":"2026-12-03T18:54","checkin":"2026-12-03T18:54"}
+{"who":"","react":"😂","to":3,"posted":false,"at":"2026-12-03T18:54"}
+{"who":"","react":"😂","to":3,"posted":false,"at":"2026-12-03T18:54"}
+{"who":"Neil","text":"I'm not saying I'm off it, just doing a bit less. Been feeling rubbish mornings","posted":true,"at":"2026-12-03T19:03","checkin":"2026-12-03T19:03"}
+{"who":"Neil","text":"And I'm driving sat","posted":true,"at":"2026-12-03T19:04","checkin":"2026-12-03T19:04"}
+{"who":"Kieran","text":"U drive to the pub??","posted":true,"at":"2026-12-03T19:06","checkin":"2026-12-03T19:06"}
+{"who":"Kieran","text":"Cant even get a taxi home like a normal person","posted":true,"at":"2026-12-03T19:06","checkin":"2026-12-03T19:06"}
+{"who":"Eilidh","text":"Kieran it's neil's eight pints, his call tbh","posted":true,"at":"2026-12-03T19:21","checkin":"2026-12-03T19:21"}
+{"who":"Lorna","text":"Kieran stop bullying him","posted":true,"at":"2026-12-03T19:22","checkin":"2026-12-03T19:22"}
+{"who":"Kieran","text":"Im not bullying, im encouraging","posted":true,"at":"2026-12-03T19:24","checkin":"2026-12-03T19:24"}
+{"who":"Eilidh","text":"Anyway had a day. Client just rejected the whole rebrand and said it looks \"too playful\". Six weeks of work","posted":true,"at":"2026-12-03T19:30","checkin":"2026-12-03T19:30"}
+{"who":"Eilidh","text":"I need sat","posted":true,"at":"2026-12-03T19:31","checkin":"2026-12-03T19:31"}
+{"who":"Kieran","text":"Ugh that's brutal. \"too playful\" is code for they've no idea what they want","posted":true,"at":"2026-12-03T19:33","checkin":"2026-12-03T19:33"}
+{"who":"Kieran","text":"Ur getting a drink sat. Not negotiable","posted":true,"at":"2026-12-03T19:33","checkin":"2026-12-03T19:33"}
+{"who":"Lorna","text":"Are we booking somewhere or just doing the usual","posted":true,"at":"2026-12-03T19:40","checkin":"2026-12-03T19:40"}
+{"who":"Kieran","text":"Booking the back room at the lismore. 7ish","posted":true,"at":"2026-12-03T19:44","checkin":"2026-12-03T19:44"}
+{"who":"Neil","text":"I'll come for a bit. Not the whole thing","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Kieran","text":"Neil ur coming for the whole thing","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Eilidh","text":"I'm in. Booking is fine with me","posted":true,"at":"2026-12-03T20:15","checkin":"2026-12-03T20:15"}
+{"who":"Lorna","text":"7 works. Kieran are you putting the booking in or am I","posted":true,"at":"2026-12-03T20:16","checkin":"2026-12-03T20:16"}
+{"who":"Kieran","text":"Me. Done. 7pm back room","posted":true,"at":"2026-12-03T21:58","checkin":"2026-12-03T21:58"}
+{"who":"Eilidh","text":"Thanks for the sat plan. Might be the only good bit of this week ngl","posted":true,"at":"2026-12-03T22:40","checkin":"2026-12-03T22:40"}
+{"who":"Kieran","text":"Ur welcome. Dare still stands neil","posted":true,"at":"2026-12-03T22:41","checkin":"2026-12-03T22:41"}
+{"who":"Neil","text":"👍","posted":true,"at":"2026-12-03T22:47","checkin":"2026-12-03T22:47"}
+{"who":"Lorna","text":"Hope your client calms down eilidh. They'll come round, rebrands always get the \"playful\" thing and then love it in a month","posted":true,"at":"2026-12-03T23:30","checkin":"2026-12-03T23:30"}
+{"who":"Eilidh","text":"Doubt it but cheers 😂","posted":true,"at":"2026-12-03T23:31","checkin":"2026-12-03T23:31"}
+{"who":"Neil","text":"Morning. Site's a lake. Rain came in overnight and the whole excavation's under water","posted":true,"at":"2026-12-04T07:52","checkin":"2026-12-04T07:52"}
+{"who":"Neil","text":"[photo: a trench with about a foot of standing water in it, a pump hose running out over the mud]","posted":true,"at":"2026-12-04T07:53","checkin":"2026-12-04T07:53"}
+{"who":"Kieran","text":"Ur joking","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Kieran","text":"Whats that going to cost","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Neil","text":"Don't know yet. Pump's coming at 9 and the engineer's ringing back. Could be a day, could be a week","posted":true,"at":"2026-12-04T08:04","checkin":"2026-12-04T08:04"}
+{"who":"Neil","text":"Mostly annoyed the lads were out pumping since 6 for nothing","posted":true,"at":"2026-12-04T08:06","checkin":"2026-12-04T08:06"}
+{"who":"Lorna","text":"Oh no neil. Is that the drainage nobody planned for","posted":true,"at":"2026-12-04T08:15","checkin":"2026-12-04T08:15"}
+{"who":"Neil","text":"Yeah. Surveyor says it wasn't on the old plans. Old plans were rubbish","posted":true,"at":"2026-12-04T08:17","checkin":"2026-12-04T08:17"}
+{"who":"Eilidh","text":"Ugh sorry neil. Bet ur whole week's going to be a nightmare","posted":true,"at":"2026-12-04T08:30","checkin":"2026-12-04T08:30"}
+{"who":"Eilidh","text":"Also my client just emailed. Subject line \"quick thought\". Which is never a quick thought","posted":true,"at":"2026-12-04T08:31","checkin":"2026-12-04T08:31"}
+{"who":"Kieran","text":"Are u going to open it","posted":true,"at":"2026-12-04T08:33","checkin":"2026-12-04T08:33"}
+{"who":"Eilidh","text":"Already did. They want \"less playful but still fun\"","posted":true,"at":"2026-12-04T08:35","checkin":"2026-12-04T08:35"}
+{"who":"Kieran","text":"Less playful but still fun is the most useless brief ever written","posted":true,"at":"2026-12-04T08:36","checkin":"2026-12-04T08:36"}
+{"who":"Kieran","text":"Like be specific or dont bother","posted":true,"at":"2026-12-04T08:37","checkin":"2026-12-04T08:37"}
+{"who":"Lorna","text":"Fabric supplier just sent 200 units of the wrong grey. Grey is not grey","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Lorna","text":"They're saying its \"within tolerance\"","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Kieran","text":"Whose tolerance","posted":true,"at":"2026-12-04T08:55","checkin":"2026-12-04T08:55"}
+{"who":"Eilidh","text":"I'm going to reply with a list of the playful bits and ask them to pick which ones are \"too\" playful. Mildly petty","posted":true,"at":"2026-12-04T09:10","checkin":"2026-12-04T09:10"}
+{"who":"Kieran","text":"Do it. Ur allowed","posted":true,"at":"2026-12-04T09:11","checkin":"2026-12-04T09:11"}
+{"who":"Lorna","text":"Eilidh do it, I'll send you the grey swatches if you want to make a point","posted":true,"at":"2026-12-04T09:14","checkin":"2026-12-04T09:14"}
+{"who":"Eilidh","text":"Ok I'm sending it before I lose my nerve","posted":true,"at":"2026-12-04T09:14","checkin":"2026-12-04T09:14"}
+{"who":"Neil","text":"Engineer's finally been. Sump needed, so we're down a few days regardless","posted":true,"at":"2026-12-04T11:48","checkin":"2026-12-04T11:48"}
+{"who":"Neil","text":"Boss is not happy. I'm not happy. Pump's still running","posted":true,"at":"2026-12-04T11:49","checkin":"2026-12-04T11:49"}
+{"who":"Kieran","text":"Sorry mate. Sounds grim","posted":true,"at":"2026-12-04T11:52","checkin":"2026-12-04T11:52"}
+{"who":"Kieran","text":"Office lunch is a sad desk sandwich btw. Solicitor life","posted":true,"at":"2026-12-04T12:20","checkin":"2026-12-04T12:20"}
+{"who":"Eilidh","text":"They replied. They said \"we'd love to find a middle ground\". Which means they've read it and are panicking","posted":true,"at":"2026-12-04T12:26","checkin":"2026-12-04T12:26"}
+{"who":"Kieran","text":"Ha. Good. Make them pay for the middle ground","posted":true,"at":"2026-12-04T12:27","checkin":"2026-12-04T12:27"}
+{"who":"Lorna","text":"Just got told the courier's lost the grey pallet. So the wrong grey is now also gone 🙃","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Kieran","text":"Lorna ur day is worse than mine","posted":true,"at":"2026-12-04T13:06","checkin":"2026-12-04T13:06"}
+{"who":"Lorna","text":"It's 1pm and I've eaten a satsuma. Don't compare","posted":true,"at":"2026-12-04T13:06","checkin":"2026-12-04T13:06"}
+{"who":"Neil","text":"Site's pumped. Ground's still soup. Going to be a long week","posted":true,"at":"2026-12-04T15:42","checkin":"2026-12-04T15:42"}
+{"who":"Neil","text":"[photo: a flooded trench, now mostly drained, with grey clay banks and a yellow digger parked on the edge]","posted":true,"at":"2026-12-04T15:44","checkin":"2026-12-04T15:44"}
+{"who":"Kieran","text":"Ur an engineer, can u not just make it not rain","posted":true,"at":"2026-12-04T15:45","checkin":"2026-12-04T15:45"}
+{"who":"Neil","text":"Would if I could Kieran","posted":true,"at":"2026-12-04T15:50","checkin":"2026-12-04T15:50"}
+{"who":"Eilidh","text":"Client's rung. They want a call monday. I'm not doing a call monday, I'm doing a bath monday","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Eilidh","text":"(maybe I'll do the call)","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"Kieran","text":"Leaving the office now. Ur all coming sat yeah","posted":true,"at":"2026-12-04T17:02","checkin":"2026-12-04T17:02"}
+{"who":"Kieran","text":"No excuses neil. I checked the forecast, it's dry","posted":true,"at":"2026-12-04T17:03","checkin":"2026-12-04T17:03"}
+{"who":"Neil","text":"Forecast's for dry at the lismore I'm sure. Still driving","posted":true,"at":"2026-12-04T17:15","checkin":"2026-12-04T17:15"}
+{"who":"Neil","text":"I'll have lime and soda after my car's parked, dare's off","posted":true,"at":"2026-12-04T17:15","checkin":"2026-12-04T17:15"}
+{"who":"Kieran","text":"Mate thats not a dare thats a cop out","posted":true,"at":"2026-12-04T17:16","checkin":"2026-12-04T17:16"}
+{"who":"Lorna","text":"Neil you're allowed to be sad about the pit and also have a lime and soda","posted":true,"at":"2026-12-04T17:18","checkin":"2026-12-04T17:18"}
+{"who":"Neil","text":"👍","posted":true,"at":"2026-12-04T17:19","checkin":"2026-12-04T17:19"}
+{"who":"Lorna","text":"Home. Wine, bath, a film I've seen eight times. Don't call me before 9","posted":true,"at":"2026-12-04T18:40","checkin":"2026-12-04T18:40"}
+{"who":"Eilidh","text":"Same. The film is the one with the horse. No shame","posted":true,"at":"2026-12-04T18:41","checkin":"2026-12-04T18:41"}
+{"who":"Kieran","text":"Horse film is elite. I'm in the lismore already getting the table, eilidh and lorna come in whenever","posted":true,"at":"2026-12-04T18:44","checkin":"2026-12-04T18:44"}
+{"who":"Kieran","text":"[photo: a half-empty pint and a bowl of crisps on a sticky table, back room lights on]","posted":true,"at":"2026-12-04T18:44","checkin":"2026-12-04T18:44"}
+{"who":"Kieran","text":"It's quiet so get in here","posted":true,"at":"2026-12-04T18:45","checkin":"2026-12-04T18:45"}
+{"who":"Neil","text":"Sorry, got a text from the lad about the pump again. Going to bed","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Neil","text":"Night all","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Eilidh","text":"Night neil. Hope the sump behaves","posted":true,"at":"2026-12-04T19:58","checkin":"2026-12-04T19:58"}
+{"who":"Kieran","text":"U need to come sat neil. Non negotiable, get a good sleep first","posted":true,"at":"2026-12-04T20:03","checkin":"2026-12-04T20:03"}
+{"who":"Lorna","text":"Kieran do you actually think he'll be there or are you just saying it","posted":true,"at":"2026-12-04T21:30","checkin":"2026-12-04T21:30"}
+{"who":"Kieran","text":"Im saying it. But ur also not a good judge of when im bluffing","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"Eilidh","text":"I'd say the bluff is that you're at the lismore alone","posted":true,"at":"2026-12-04T21:33","checkin":"2026-12-04T21:33"}
+{"who":"Kieran","text":"Im not alone. The barman is here. Hes very good company","posted":true,"at":"2026-12-04T21:33","checkin":"2026-12-04T21:33"}
+{"who":"Lorna","text":"The horse film is on its last hour. I'm crying already","posted":true,"at":"2026-12-04T22:10","checkin":"2026-12-04T22:10"}
+{"who":"Eilidh","text":"That's the whole point of the horse film","posted":true,"at":"2026-12-04T22:11","checkin":"2026-12-04T22:11"}
+{"who":"Kieran","text":"Calling it. Back room's booked, plan's not changing. See u sat","posted":true,"at":"2026-12-04T23:40","checkin":"2026-12-04T23:40"}
+{"who":"Kieran","text":"Morning. Forecast still dry for tonight. Neil I'm not asking","posted":true,"at":"2026-12-05T08:40","checkin":"2026-12-05T08:40"}
+{"who":"Kieran","text":"Telling","posted":true,"at":"2026-12-05T08:41","checkin":"2026-12-05T08:41"}
+{"who":"Neil","text":"Pump cut out at 3am. Lads are back on site","posted":true,"at":"2026-12-05T09:03","checkin":"2026-12-05T09:03"}
+{"who":"Kieran","text":"U are on site on a saturday??","posted":true,"at":"2026-12-05T09:04","checkin":"2026-12-05T09:04"}
+{"who":"Kieran","text":"That's criminal","posted":true,"at":"2026-12-05T09:04","checkin":"2026-12-05T09:04"}
+{"who":"Lorna","text":"Neil go home and sleep","posted":true,"at":"2026-12-05T09:09","checkin":"2026-12-05T09:09"}
+{"who":"Neil","text":"Can't. Someone has to watch the water","posted":true,"at":"2026-12-05T09:11","checkin":"2026-12-05T09:11"}
+{"who":"Kieran","text":"Ur still coming tonight","posted":true,"at":"2026-12-05T09:12","checkin":"2026-12-05T09:12"}
+{"who":"Neil","text":"👍","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Eilidh","text":"Sent them the list. They've replied asking \"could you be more specific about which elements\"","posted":true,"at":"2026-12-05T10:15","checkin":"2026-12-05T10:15"}
+{"who":"Eilidh","text":"I am being specific. I've underlined things","posted":true,"at":"2026-12-05T10:15","checkin":"2026-12-05T10:15"}
+{"who":"Kieran","text":"Specific is what they're scared of","posted":true,"at":"2026-12-05T10:17","checkin":"2026-12-05T10:17"}
+{"who":"Lorna","text":"Grey pallet's been found. It's in Stoke","posted":true,"at":"2026-12-05T11:30","checkin":"2026-12-05T11:30"}
+{"who":"Lorna","text":"Going to Stoke is not an option. I've told them to keep it","posted":true,"at":"2026-12-05T11:30","checkin":"2026-12-05T11:30"}
+{"who":"Kieran","text":"Stoke is where greys go to be forgotten","posted":true,"at":"2026-12-05T11:34","checkin":"2026-12-05T11:34"}
+{"who":"Eilidh","text":"Had a bath. Feel like a person again","posted":true,"at":"2026-12-05T13:02","checkin":"2026-12-05T13:02"}
+{"who":"Eilidh","text":"Also said yes to the monday call. 20 mins. Non-negotiable","posted":true,"at":"2026-12-05T13:04","checkin":"2026-12-05T13:04"}
+{"who":"Kieran","text":"Good. Ur the boss of the call","posted":true,"at":"2026-12-05T13:04","checkin":"2026-12-05T13:04"}
+{"who":"Neil","text":"Water's down. Sump's in. Going home to shower","posted":true,"at":"2026-12-05T16:40","checkin":"2026-12-05T16:40"}
+{"who":"Neil","text":"Might make it for 8","posted":true,"at":"2026-12-05T16:41","checkin":"2026-12-05T16:41"}
+{"who":"Kieran","text":"Might???","posted":true,"at":"2026-12-05T16:41","checkin":"2026-12-05T16:41"}
+{"who":"Neil","text":"Will be there","posted":true,"at":"2026-12-05T16:42","checkin":"2026-12-05T16:42"}
+{"who":"Kieran","text":"Good man","posted":true,"at":"2026-12-05T16:42","checkin":"2026-12-05T16:42"}
+{"who":"Lorna","text":"Left work early for once in my life. Who's first in the lismore","posted":true,"at":"2026-12-05T17:20","checkin":"2026-12-05T17:20"}
+{"who":"Kieran","text":"Me obviously. Barman's already asking where everyone is","posted":true,"at":"2026-12-05T17:21","checkin":"2026-12-05T17:21"}
+{"who":"Eilidh","text":"On my way. Got a taxi, I'm not driving anywhere tonight","posted":true,"at":"2026-12-05T18:10","checkin":"2026-12-05T18:10"}
+{"who":"Kieran","text":"Neil u hear that. Taxi. Like a normal person","posted":true,"at":"2026-12-05T18:11","checkin":"2026-12-05T18:11"}
+{"who":"Lorna","text":"Here. Bar's got the mulled wine on. Not for me","posted":true,"at":"2026-12-05T18:55","checkin":"2026-12-05T18:55"}
+{"who":"Kieran","text":"Mulled wine is a gateway drink","posted":true,"at":"2026-12-05T18:56","checkin":"2026-12-05T18:56"}
+{"who":"Neil","text":"Parking now. Shower was a good idea","posted":true,"at":"2026-12-05T19:40","checkin":"2026-12-05T19:40"}
+{"who":"Kieran","text":"Just get in here neil","posted":true,"at":"2026-12-05T19:41","checkin":"2026-12-05T19:41"}
+{"who":"Kieran","text":"Dare still stands","posted":true,"at":"2026-12-05T19:41","checkin":"2026-12-05T19:41"}
+{"who":"Neil","text":"👍","posted":true,"at":"2026-12-05T19:44","checkin":"2026-12-05T19:44"}
+{"who":"Neil","text":"Here","posted":true,"at":"2026-12-05T19:44","checkin":"2026-12-05T19:44"}
+{"who":"Neil","text":"Lime and soda","posted":true,"at":"2026-12-05T19:44","checkin":"2026-12-05T19:44"}
+{"who":"Kieran","text":"Not a dare anymore. That's a sentence","posted":true,"at":"2026-12-05T19:46","checkin":"2026-12-05T19:46"}
+{"who":"Kieran","text":"Ur paying the cop-out tax","posted":true,"at":"2026-12-05T19:46","checkin":"2026-12-05T19:46"}

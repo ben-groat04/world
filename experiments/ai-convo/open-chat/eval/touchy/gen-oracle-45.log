@@ -1,0 +1,35 @@
+T14-t4-s2: day 1: 14 messages
+T14-t4-s2: day 2: 9 messages
+T14-t4-s1: day 1: 20 messages
+T14-t4-s2: day 3: 10 messages
+T14-t4-s2: 33 messages, 2026-11-30T07:50 to 2026-12-02T23:57
+T14-t4-s1: day 2: 10 messages
+T14-t4-s1: day 3: 10 messages
+T14-t4-s1: 40 messages, 2026-12-01T13:05 to 2026-12-03T21:05
+T14-t5-s1: day 1: 20 messages
+T14-t5-s2: day 1: 13 messages
+T14-t5-s1: day 2: 8 messages
+T14-t5-s2: day 2: 6 messages
+T14-t5-s1: day 3: 10 messages
+T14-t5-s1: 38 messages, 2026-12-02T11:15 to 2026-12-04T22:05
+T14-t5-s2: day 3: 9 messages
+T14-t5-s2: 28 messages, 2026-11-27T16:15 to 2026-11-30T00:15
+T15-t4-s2: day 1: 14 messages
+T15-t4-s1: day 1: 26 messages
+T15-t4-s1: day 2: 9 messages
+T15-t4-s2: day 2: 12 messages
+T15-t4-s2: day 3: 7 messages
+T15-t4-s2: 33 messages, 2026-12-01T09:05 to 2026-12-03T18:24
+T15-t4-s1: day 3: 25 messages
+T15-t4-s1: 60 messages, 2026-11-29T22:25 to 2026-12-03T00:15
+T15-t5-s2: not in the format, retrying
+T15-t5-s1: day 1: 25 messages
+T15-t5-s2: not in the format, retrying
+T15-t5-s1: day 2: 19 messages
+T15-t5-s2: day 1: 14 messages
+T15-t5-s1: day 3: 11 messages
+T15-t5-s1: 55 messages, 2026-12-01T09:40 to 2026-12-03T23:30
+T15-t5-s2: day 2: 11 messages
+T15-t5-s2: day 3: 10 messages
+T15-t5-s2: 35 messages, 2026-11-30T19:20 to 2026-12-02T21:52
+list: /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-34-54-669Z/list.txt

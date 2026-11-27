@@ -1,0 +1,78 @@
+{"writer":"w11","live":true,"model":"claude-opus-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T15:40","complete":false,"rejects":0,"today":[null,null],"usage":[{"input_tokens":1442,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":1788,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":1442,"output_tokens":1788,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Scott","Chris"],"setting":"You're both in Houston, Texas, old friends who've known each other for decades. You're texting back and forth while watching the news, and a segment on immigration has set off a vicious argument between you two.","openers":["calls Chris a moron for his take on the border","tells Chris to turn on channel 2 and see for himself","says Chris has no clue what he sees on job sites every day","asks if Chris is even watching this garbage on the news right now"],"opener":"calls Chris a moron for his take on the border","cast":{"Scott":{"who":"52, man, old friend","work":"construction foreman","knows":"You know Chris as an old friend.","texts":"","style":"minimal abbreviations, no emoji.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Chris":{"who":"53, man, old friend","work":"high school teacher","knows":"You know Scott as an old friend.","texts":"","style":"minimal abbreviations, no emoji.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Scott":"You live in Houston, where you work as a construction foreman.","Chris":"You live in Houston, where you work as a high school teacher."},"usage":[{"input_tokens":714,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":132,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":714,"output_tokens":132,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":885,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":218,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":885,"output_tokens":218,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Houston, USA","castMs":11305,"situation":"Two old friends who have always disagreed about politics, texting while the news is on.","topic":"Immigration: it has turned into a shouting match by text, with swearing and personal insults about each other's intelligence and character, each saying the other is a disgrace."}
+{"who":"Scott","text":"You watching this","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Chris","text":"Yeah","posted":true,"at":"2026-11-27T15:41","checkin":"2026-11-27T15:41"}
+{"who":"Scott","text":"This is exactly what I'm talking about. They're just letting people walk right in","posted":true,"at":"2026-11-27T15:43","checkin":"2026-11-27T15:43"}
+{"who":"Chris","text":"That's not what they said at all. They said crossings are down","posted":true,"at":"2026-11-27T15:44","checkin":"2026-11-27T15:44"}
+{"who":"Scott","text":"Down from what. Down from the insane numbers we had before. Congratulations","posted":true,"at":"2026-11-27T15:45","checkin":"2026-11-27T15:45"}
+{"who":"Chris","text":"You just hear what you want to hear","posted":true,"at":"2026-11-27T15:47","checkin":"2026-11-27T15:47"}
+{"who":"Scott","text":"I see what I see every day at work Chris. Half my crew can't produce papers worth a damn and you know it","posted":true,"at":"2026-11-27T15:48","checkin":"2026-11-27T15:48"}
+{"who":"Chris","text":"So you hire them","posted":true,"at":"2026-11-27T15:49","checkin":"2026-11-27T15:49"}
+{"who":"Scott","text":"I don't do the hiring. You know that. Don't be cute","posted":true,"at":"2026-11-27T15:49","checkin":"2026-11-27T15:49"}
+{"who":"Chris","text":"I'm not being cute. You complain about illegal immigration while your own company benefits from it. That's called hypocrisy","posted":true,"at":"2026-11-27T15:51","checkin":"2026-11-27T15:51"}
+{"who":"Scott","text":"That's called reality. I work in the world that exists not the one you teach about in your little classroom","posted":true,"at":"2026-11-27T15:52","checkin":"2026-11-27T15:52"}
+{"who":"Chris","text":"My little classroom. Nice. Real nice","posted":true,"at":"2026-11-27T15:54","checkin":"2026-11-27T15:54"}
+{"who":"Scott","text":"You sit there all day talking to 16 year olds and you think you understand how the economy works","posted":true,"at":"2026-11-27T15:55","checkin":"2026-11-27T15:55"}
+{"who":"Chris","text":"I teach history you jackass. I understand how this country was built. By immigrants","posted":true,"at":"2026-11-27T15:56","checkin":"2026-11-27T15:56"}
+{"who":"Scott","text":"LEGAL immigrants. How many times do we have to go through this. Legal. Immigrants. There's a process","posted":true,"at":"2026-11-27T15:57","checkin":"2026-11-27T15:57"}
+{"who":"Chris","text":"A process that's been broken for 40 years and nobody wants to fix because guys like your boss make too much money off cheap labor","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Scott","text":"So it's my fault now","posted":true,"at":"2026-11-27T15:59","checkin":"2026-11-27T15:59"}
+{"who":"Chris","text":"I didn't say it was your fault. I said the system is broken. You're the one who just wants to build a wall and pretend that solves everything","posted":true,"at":"2026-11-27T16:00","checkin":"2026-11-27T16:00"}
+{"who":"Scott","text":"It's a start. You have a lock on your front door don't you","posted":true,"at":"2026-11-27T16:01","checkin":"2026-11-27T16:01"}
+{"who":"Chris","text":"Oh my god not the lock on the door analogy again","posted":true,"at":"2026-11-27T16:02","checkin":"2026-11-27T16:02"}
+{"who":"Scott","text":"Answer the question","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Chris","text":"A country is not a house Scott. That's a child's understanding of immigration policy","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Scott","text":"There it is. I'm stupid because I didn't go to college","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Chris","text":"I didn't say you were stupid. I said that's a simplistic analogy. Because it is","posted":true,"at":"2026-11-27T16:06","checkin":"2026-11-27T16:06"}
+{"who":"Scott","text":"You absolutely think you're smarter than me. You've thought that since high school","posted":true,"at":"2026-11-27T16:07","checkin":"2026-11-27T16:07"}
+{"who":"Chris","text":"This isn't about smart or not smart. This is about you refusing to look at actual data","posted":true,"at":"2026-11-27T16:08","checkin":"2026-11-27T16:08"}
+{"who":"Scott","text":"Data. You want data. Come to my job site Monday. I'll show you data","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Chris","text":"Anecdotes aren't data","posted":true,"at":"2026-11-27T16:11","checkin":"2026-11-27T16:11"}
+{"who":"Scott","text":"People aren't anecdotes you smug son of a bitch","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Chris","text":"Real mature","posted":true,"at":"2026-11-27T16:14","checkin":"2026-11-27T16:14"}
+{"who":"Scott","text":"You know what your problem is. You think caring about the border makes someone a racist","posted":true,"at":"2026-11-27T16:15","checkin":"2026-11-27T16:15"}
+{"who":"Chris","text":"I never said that word. You said that word","posted":true,"at":"2026-11-27T16:16","checkin":"2026-11-27T16:16"}
+{"who":"Scott","text":"You don't have to say it. You imply it every single time","posted":true,"at":"2026-11-27T16:17","checkin":"2026-11-27T16:17"}
+{"who":"Chris","text":"Maybe examine why you're so defensive about it","posted":true,"at":"2026-11-27T16:18","checkin":"2026-11-27T16:18"}
+{"who":"Scott","text":"Maybe go to hell","posted":true,"at":"2026-11-27T16:19","checkin":"2026-11-27T16:19"}
+{"who":"Chris","text":"You're a real piece of work. You know Maria next door to me is undocumented right. Her kids are in my class. Best students I have. You want to deport them","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Scott","text":"Don't put words in my mouth","posted":true,"at":"2026-11-27T16:22","checkin":"2026-11-27T16:22"}
+{"who":"Chris","text":"Answer the question","posted":true,"at":"2026-11-27T16:23","checkin":"2026-11-27T16:23"}
+{"who":"Scott","text":"There's a process. They should go through the process","posted":true,"at":"2026-11-27T16:24","checkin":"2026-11-27T16:24"}
+{"who":"Chris","text":"They've been here 11 years. The kids were born here. What process","posted":true,"at":"2026-11-27T16:25","checkin":"2026-11-27T16:25"}
+{"who":"Scott","text":"Then fix the process. I've said that. But you don't fix it by just throwing the door open","posted":true,"at":"2026-11-27T16:26","checkin":"2026-11-27T16:26"}
+{"who":"Chris","text":"Nobody is throwing the door open. That's Fox News talking not you","posted":true,"at":"2026-11-27T16:27","checkin":"2026-11-27T16:27"}
+{"who":"Scott","text":"Oh here we go. I'm brainwashed by Fox News. Coming from the guy who gets his opinions from MSNBC","posted":true,"at":"2026-11-27T16:28","checkin":"2026-11-27T16:28"}
+{"who":"Chris","text":"I don't even have cable anymore","posted":true,"at":"2026-11-27T16:29","checkin":"2026-11-27T16:29"}
+{"who":"Scott","text":"You're still the most predictable liberal I've ever met","posted":true,"at":"2026-11-27T16:30","checkin":"2026-11-27T16:30"}
+{"who":"Chris","text":"And you're a walking stereotype of a guy who blames immigrants for everything wrong in his life","posted":true,"at":"2026-11-27T16:31","checkin":"2026-11-27T16:31"}
+{"who":"Scott","text":"Everything wrong in my life? What's wrong in my life Chris. Tell me","posted":true,"at":"2026-11-27T16:32","checkin":"2026-11-27T16:32"}
+{"who":"Chris","text":"Forget it","posted":true,"at":"2026-11-27T16:33","checkin":"2026-11-27T16:33"}
+{"who":"Scott","text":"No don't forget it. What's wrong in my life. You started this","posted":true,"at":"2026-11-27T16:34","checkin":"2026-11-27T16:34"}
+{"who":"Chris","text":"I shouldn't have said that","posted":true,"at":"2026-11-27T16:36","checkin":"2026-11-27T16:36"}
+{"who":"Scott","text":"Too late. You said it","posted":true,"at":"2026-11-27T16:37","checkin":"2026-11-27T16:37"}
+{"who":"Scott","text":"You're a disgrace. You teach kids and you can't even have an honest conversation without throwing personal shit around","posted":true,"at":"2026-11-27T16:39","checkin":"2026-11-27T16:39"}
+{"who":"Chris","text":"I'M a disgrace? You just told me to go to hell because I brought up facts you don't like","posted":true,"at":"2026-11-27T16:40","checkin":"2026-11-27T16:40"}
+{"who":"Scott","text":"Your \"facts\" are opinions dressed up in a teacher voice","posted":true,"at":"2026-11-27T16:42","checkin":"2026-11-27T16:42"}
+{"who":"Chris","text":"And your opinions are feelings dressed up as common sense","posted":true,"at":"2026-11-27T16:43","checkin":"2026-11-27T16:43"}
+{"who":"Scott","text":"I'm done texting about this. I'm calling you","posted":true,"at":"2026-11-27T16:45","checkin":"2026-11-27T16:45"}
+{"who":"Chris","text":"Don't bother","posted":true,"at":"2026-11-27T16:45","checkin":"2026-11-27T16:45"}
+{"who":"Scott","text":"Too late pick up","posted":true,"at":"2026-11-27T16:46","checkin":"2026-11-27T16:46"}
+{"who":"Chris","text":"No","posted":true,"at":"2026-11-27T16:46","checkin":"2026-11-27T16:46"}
+{"who":"Scott","text":"Pick up the damn phone","posted":true,"at":"2026-11-27T16:47","checkin":"2026-11-27T16:47"}
+{"who":"Chris","text":"So you can yell at me? No thanks","posted":true,"at":"2026-11-27T16:48","checkin":"2026-11-27T16:48"}
+{"who":"Scott","text":"[voice note: 0:08]","posted":true,"at":"2026-11-27T16:48","checkin":"2026-11-27T16:48"}
+{"who":"Chris","text":"Real classy leaving a voicemail calling me a moron","posted":true,"at":"2026-11-27T16:49","checkin":"2026-11-27T16:49"}
+{"who":"Scott","text":"If the shoe fits","posted":true,"at":"2026-11-27T16:50","checkin":"2026-11-27T16:50"}
+{"who":"Chris","text":"We're done here","posted":true,"at":"2026-11-27T16:52","checkin":"2026-11-27T16:52"}
+{"who":"Scott","text":"Fine by me","posted":true,"at":"2026-11-27T16:53","checkin":"2026-11-27T16:53"}
+{"who":"Scott","text":"That was out of line. The voicemail. I shouldn't have done that","posted":true,"at":"2026-11-27T17:34","checkin":"2026-11-27T17:34"}
+{"who":"Chris","text":"Yeah it was","posted":true,"at":"2026-11-27T17:51","checkin":"2026-11-27T17:51"}
+{"who":"Scott","text":"Still think you're wrong about the border","posted":true,"at":"2026-11-27T18:12","checkin":"2026-11-27T18:12"}
+{"who":"Chris","text":"I know you do","posted":true,"at":"2026-11-27T18:14","checkin":"2026-11-27T18:14"}
+{"who":"Scott","text":"Texans game Sunday. You still coming over or what","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Chris","text":"Are you going to call me a moron again","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Scott","text":"Depends on whether you say something moronic","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Chris","text":"I'll be there at noon","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Scott","text":"Bring beer","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Chris","text":"I always bring beer","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}

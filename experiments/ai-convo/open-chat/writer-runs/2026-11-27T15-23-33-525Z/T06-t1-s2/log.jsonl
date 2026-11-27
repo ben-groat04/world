@@ -1,0 +1,92 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T13:10","complete":true,"rejects":0,"today":["Shona",null,"Ross"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1941,"cache_read_input_tokens":0,"output_tokens":3418,"output_tokens_details":{"thinking_tokens":2042},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1941,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3418,"cache_read_input_tokens":0,"cache_creation_input_tokens":1941,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1941},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3215,"cache_read_input_tokens":0,"output_tokens":2236,"output_tokens_details":{"thinking_tokens":1509},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3215,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2236,"cache_read_input_tokens":0,"cache_creation_input_tokens":3215,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3215},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3956,"cache_read_input_tokens":0,"output_tokens":2182,"output_tokens_details":{"thinking_tokens":1634},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3956,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2182,"cache_read_input_tokens":0,"cache_creation_input_tokens":3956,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3956},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ross","Shona"],"setting":"You are both in Glasgow, texting from your own homes, and you are siblings who have known each other all your lives. You are planning your mum's 70th birthday lunch in December, deciding the venue, the guest list and who brings what. This chat is where you sort those details out.","openers":["Send a photo of the lunch menu","Ask who's bringing the cake","Suggest booking the table for Saturday","Share the draft guest list"],"opener":"Share the draft guest list","cast":{"Ross":{"who":"41, man, the brother","work":"electrician","knows":"You know Shona as your younger sister, and have since she was born.","texts":"","style":"some emoji and few texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Shona":{"who":"38, woman, the sister","work":"GP receptionist","knows":"You know Ross as your older brother, and have since you were born.","texts":"","style":"none","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Ross":"You live in Glasgow, and your days are filled with electrical work on site.","Shona":"You live in Glasgow, and your days are filled with reception work at a GP surgery."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":854,"cache_read_input_tokens":0,"output_tokens":896,"output_tokens_details":{"thinking_tokens":674},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":854,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":896,"cache_read_input_tokens":0,"cache_creation_input_tokens":854,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":854},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1115,"cache_read_input_tokens":0,"output_tokens":1607,"output_tokens_details":{"thinking_tokens":1283},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1115,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1607,"cache_read_input_tokens":0,"cache_creation_input_tokens":1115,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1115},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Glasgow, Scotland","castMs":13855,"situation":"A brother and sister, both adults, who fell out over politics before.","topic":"Abortion: one is firmly pro-life, the other firmly pro-choice, and neither is giving ground."}
+{"who":"Ross","text":"[file: guest list draft]","posted":true,"at":"2026-11-27T13:10","checkin":"2026-11-27T13:10"}
+{"who":"Ross","text":"Its not finished. Lorraine and her two arent on it yet","posted":true,"at":"2026-11-27T13:11","checkin":"2026-11-27T13:11"}
+{"who":"Shona","text":"Gran's carer wants to come too. Mum wont like it","posted":true,"at":"2026-11-27T13:24","checkin":"2026-11-27T13:24"}
+{"who":"Shona","text":"she'll say yes though","posted":true,"at":"2026-11-27T13:25","checkin":"2026-11-27T13:25"}
+{"who":"Ross","text":"👍","posted":true,"at":"2026-11-27T13:26","checkin":"2026-11-27T13:26"}
+{"who":"Ross","text":"The Ashton room holds 40 max. With Lorraine's lot were at 41","posted":true,"at":"2026-11-27T13:40","checkin":"2026-11-27T13:40"}
+{"who":"Shona","text":"cut Uncle Davie's pal then","posted":true,"at":"2026-11-27T13:44","checkin":"2026-11-27T13:44"}
+{"who":"Ross","text":"Davies pal is his wifes sisters husband. Nobody knows him","posted":true,"at":"2026-11-27T13:44","checkin":"2026-11-27T13:44"}
+{"who":"Shona","text":"right","posted":true,"at":"2026-11-27T13:45","checkin":"2026-11-27T13:45"}
+{"who":"Ross","text":"Whos doing the cake","posted":true,"at":"2026-11-27T14:02","checkin":"2026-11-27T14:02"}
+{"who":"Shona","text":"me prob. ill ask at work if anyone does them cheap","posted":true,"at":"2026-11-27T14:20","checkin":"2026-11-27T14:20"}
+{"who":"Shona","text":"long day","posted":true,"at":"2026-11-27T17:48","checkin":"2026-11-27T17:48"}
+{"who":"Ross","text":"Bad?","posted":true,"at":"2026-11-27T17:49","checkin":"2026-11-27T17:49"}
+{"who":"Shona","text":"woman came in at 8 wanting a referral. she'd been told at the clinic on Hope St she had to wait a while. she sat in the corner for two hours, then she came to the desk and asked me if it was true the staff would look at her and judge her","posted":true,"at":"2026-11-27T17:58","checkin":"2026-11-27T17:58"}
+{"who":"Shona","text":"I said I didn't know. she cried on the chairs by the door","posted":true,"at":"2026-11-27T18:00","checkin":"2026-11-27T18:00"}
+{"who":"Ross","text":"She shouldnt have had to ask that, I wasnt going to say anything but theres a reason people are at the door there, its not just for the sake of it","posted":true,"at":"2026-11-27T18:04","checkin":"2026-11-27T18:04"}
+{"who":"Shona","text":"ross","posted":true,"at":"2026-11-27T18:06","checkin":"2026-11-27T18:06"}
+{"who":"Shona","text":"you don't know what they're there for, you're not there","posted":true,"at":"2026-11-27T18:06","checkin":"2026-11-27T18:06"}
+{"who":"Ross","text":"I know what a sign with a picture of a baby on it means","posted":true,"at":"2026-11-27T18:08","checkin":"2026-11-27T18:08"}
+{"who":"Shona","text":"it means someone's standing outside a building on a Friday morning making a woman walk past them. thats what it means","posted":true,"at":"2026-11-27T18:09","checkin":"2026-11-27T18:09"}
+{"who":"Ross","text":"Its a child with a heartbeat on the scan. Thats what it is. If you want to call it something else thats your call","posted":true,"at":"2026-11-27T18:11","checkin":"2026-11-27T18:11"}
+{"who":"Shona","text":"we've had this","posted":true,"at":"2026-11-27T18:12","checkin":"2026-11-27T18:12"}
+{"who":"Ross","text":"Yeah","posted":true,"at":"2026-11-27T18:12","checkin":"2026-11-27T18:12"}
+{"who":"Shona","text":"she's 19","posted":true,"at":"2026-11-27T18:13","checkin":"2026-11-27T18:13"}
+{"who":"Ross","text":"I know","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Ross","text":"Im not having a go at her","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Shona","text":"you're having a go at the whole thing","posted":true,"at":"2026-11-27T18:16","checkin":"2026-11-27T18:16"}
+{"who":"Ross","text":"Im saying what I think. Im not saying her life is worth less","posted":true,"at":"2026-11-27T18:17","checkin":"2026-11-27T18:17"}
+{"who":"Shona","text":"ok","posted":true,"at":"2026-11-27T18:19","checkin":"2026-11-27T18:19"}
+{"who":"Shona","text":"i'm going to get my tea","posted":true,"at":"2026-11-27T18:19","checkin":"2026-11-27T18:19"}
+{"who":"Ross","text":"Were not going to agree on this are we","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Shona","text":"no","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Shona","text":"I don't think we ever have","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Ross","text":"Lorraine wants to sit with Mums sister","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Ross","text":"Which is fine just means moving Kate","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Shona","text":"Kate will be fine anywhere, she's on her phone all day","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Ross","text":"👍","posted":true,"at":"2026-11-27T19:21","checkin":"2026-11-27T19:21"}
+{"who":"Shona","text":"the cake place said £60 for a 3 tier, ill ask Mrs Coyle for her cousin","posted":true,"at":"2026-11-27T20:45","checkin":"2026-11-27T20:45"}
+{"who":"Ross","text":"Mum said no cake from anyone who used to be a nurse","posted":true,"at":"2026-11-27T20:46","checkin":"2026-11-27T20:46"}
+{"who":"Shona","text":"she doesn't mean Mrs Coyle","posted":true,"at":"2026-11-27T20:47","checkin":"2026-11-27T20:47"}
+{"who":"Ross","text":"She does, shes been on at her for years","posted":true,"at":"2026-11-27T20:47","checkin":"2026-11-27T20:47"}
+{"who":"Shona","text":"fine. ill ask","posted":true,"at":"2026-11-27T20:55","checkin":"2026-11-27T20:55"}
+{"who":"Ross","text":"You ok","posted":true,"at":"2026-11-27T23:10","checkin":"2026-11-27T23:10"}
+{"who":"Shona","text":"yeah. been thinking about her","posted":true,"at":"2026-11-27T23:41","checkin":"2026-11-27T23:41"}
+{"who":"Shona","text":"the girl","posted":true,"at":"2026-11-27T23:42","checkin":"2026-11-27T23:42"}
+{"who":"Ross","text":"Hope shes alright","posted":true,"at":"2026-11-27T23:44","checkin":"2026-11-27T23:44"}
+{"who":"Ross","text":"The lunch is 2pm on the 13th yeah? Not the 12th","posted":true,"at":"2026-11-27T23:44","checkin":"2026-11-27T23:44"}
+{"who":"Shona","text":"13th. Sunday. dont move it","posted":true,"at":"2026-11-27T23:50","checkin":"2026-11-27T23:50"}
+{"who":"Shona","text":"Mrs Coyle says her cousin does 3 tier for 35 if we give her the flavours by Wednesday","posted":true,"at":"2026-11-28T09:31","checkin":"2026-11-28T09:31"}
+{"who":"Shona","text":"sponge and the chocolate one. not the lemon, Mum hates lemon","posted":true,"at":"2026-11-28T09:31","checkin":"2026-11-28T09:31"}
+{"who":"Ross","text":"Mum doesnt hate lemon. She just doesnt want it near her face","posted":true,"at":"2026-11-28T10:15","checkin":"2026-11-28T10:15"}
+{"who":"Shona","text":"ha","posted":true,"at":"2026-11-28T10:16","checkin":"2026-11-28T10:16"}
+{"who":"Shona","text":"fine no lemon","posted":true,"at":"2026-11-28T10:16","checkin":"2026-11-28T10:16"}
+{"who":"Ross","text":"[photo: seating plan for the Ashton room]","posted":true,"at":"2026-11-28T11:40","checkin":"2026-11-28T11:40"}
+{"who":"Ross","text":"Kate's at the end by the fire door. Dont tell her its the fire door","posted":true,"at":"2026-11-28T11:40","checkin":"2026-11-28T11:40"}
+{"who":"Shona","text":"she'll find out","posted":true,"at":"2026-11-28T12:03","checkin":"2026-11-28T12:03"}
+{"who":"Shona","text":"is Gran at the top table or is that the carer's call","posted":true,"at":"2026-11-28T12:03","checkin":"2026-11-28T12:03"}
+{"who":"Ross","text":"Top table with Mum. Carer can sit where she likes","posted":true,"at":"2026-11-28T12:20","checkin":"2026-11-28T12:20"}
+{"who":"Ross","text":"Are you working tomorrow","posted":true,"at":"2026-11-28T16:12","checkin":"2026-11-28T16:12"}
+{"who":"Shona","text":"no. off til monday","posted":true,"at":"2026-11-28T16:30","checkin":"2026-11-28T16:30"}
+{"who":"Shona","text":"Mum wants us round for dinner at 4 if you're not doing anything. she says bring nothing","posted":true,"at":"2026-11-28T16:31","checkin":"2026-11-28T16:31"}
+{"who":"Ross","text":"Shes said that every time","posted":true,"at":"2026-11-28T16:35","checkin":"2026-11-28T16:35"}
+{"who":"Ross","text":"Im at Gary's lad's game at 3 but ill be round for 5","posted":true,"at":"2026-11-28T16:36","checkin":"2026-11-28T16:36"}
+{"who":"Shona","text":"sorry about yesterday","posted":true,"at":"2026-11-28T21:50","checkin":"2026-11-28T21:50"}
+{"who":"Ross","text":"Dont be","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Ross","text":"Your right about the door. I dont know whats in there","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Shona","text":"you know what's on the sign","posted":true,"at":"2026-11-28T21:58","checkin":"2026-11-28T21:58"}
+{"who":"Shona","text":"doesn't mean you know what it's like to be stood outside it","posted":true,"at":"2026-11-28T21:59","checkin":"2026-11-28T21:59"}
+{"who":"Ross","text":"👍","posted":true,"at":"2026-11-28T22:03","checkin":"2026-11-28T22:03"}
+{"who":"Shona","text":"did you get the lunch time from Mum or from the chat","posted":true,"at":"2026-11-28T22:40","checkin":"2026-11-28T22:40"}
+{"who":"Ross","text":"Chat. Mum said 2 then half one then dinner","posted":true,"at":"2026-11-28T22:41","checkin":"2026-11-28T22:41"}
+{"who":"Ross","text":"Its 2 on the 13th","posted":true,"at":"2026-11-28T22:41","checkin":"2026-11-28T22:41"}
+{"who":"Shona","text":"night","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Shona","text":"Mrs Coyle says her cousin can do the sponge and chocolate. Needs the order by Wed","posted":true,"at":"2026-11-29T09:14","checkin":"2026-11-29T09:14"}
+{"who":"Ross","text":"Callout in Pollokshields. Whole flat dead, smell of burning. Old woman on her own, no heating","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Ross","text":"Sorted. Breaker had gone and a neutral was loose in the box. Needs a proper board in. Told her son to ring me","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Shona","text":"is she ok","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Ross","text":"Shes fine. Wouldnt let me leave till I'd had a cup of tea","posted":true,"at":"2026-11-29T11:38","checkin":"2026-11-29T11:38"}
+{"who":"Shona","text":"of course she did","posted":true,"at":"2026-11-29T11:40","checkin":"2026-11-29T11:40"}
+{"who":"Shona","text":"Mum rang. she's done the table plan herself, Kate's on the top table now","posted":true,"at":"2026-11-29T12:15","checkin":"2026-11-29T12:15"}
+{"who":"Ross","text":"Kate will be thrilled","posted":true,"at":"2026-11-29T12:16","checkin":"2026-11-29T12:16"}
+{"who":"Shona","text":"on my way. did you get your tea","posted":true,"at":"2026-11-29T16:20","checkin":"2026-11-29T16:20"}
+{"who":"Ross","text":"Im here. Mums got a whole chicken on","posted":true,"at":"2026-11-29T16:21","checkin":"2026-11-29T16:21"}
+{"who":"Shona","text":"Kate's on her phone at the table. Mum asked her to put it away and she said \"its Lorraine\" and Mum said she doesnt care","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Ross","text":"👍","posted":true,"at":"2026-11-29T19:41","checkin":"2026-11-29T19:41"}
+{"who":"Shona","text":"ill send Mrs Coyle the flavours in the morning","posted":true,"at":"2026-11-29T22:58","checkin":"2026-11-29T22:58"}
+{"who":"Ross","text":"Ok","posted":true,"at":"2026-11-29T22:59","checkin":"2026-11-29T22:59"}
+{"who":"Ross","text":"Did you say about the cake to Mum","posted":true,"at":"2026-11-29T23:20","checkin":"2026-11-29T23:20"}
+{"who":"Shona","text":"no. not tonight","posted":true,"at":"2026-11-29T23:31","checkin":"2026-11-29T23:31"}
+{"who":"Shona","text":"night","posted":true,"at":"2026-11-29T23:33","checkin":"2026-11-29T23:33"}

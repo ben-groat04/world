@@ -1,0 +1,85 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T16:15","complete":true,"rejects":0,"today":[null,null,"Dev"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1969,"cache_read_input_tokens":0,"output_tokens":1782,"output_tokens_details":{"thinking_tokens":1100},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1969,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1782,"cache_read_input_tokens":0,"cache_creation_input_tokens":1969,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1969},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2578,"cache_read_input_tokens":0,"output_tokens":2995,"output_tokens_details":{"thinking_tokens":1936},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2578,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2995,"cache_read_input_tokens":0,"cache_creation_input_tokens":2578,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2578},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3651,"cache_read_input_tokens":0,"output_tokens":1520,"output_tokens_details":{"thinking_tokens":693},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3651,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1520,"cache_read_input_tokens":0,"cache_creation_input_tokens":3651,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3651},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Dana","Dev"],"setting":"You are both in Philadelphia, texting on your phones. You have been close friends since college and tell each other almost everything. This week you are planning a surprise birthday dinner for a mutual friend and arguing over which restaurant to book.","openers":["Ask who the person was","Demand the full story from the start","Text \"you cannot leave me hanging\"","Send a shocked face and \"wait, details\""],"opener":"Ask who the person was","cast":{"Dana":{"who":"34, woman, the friend who wants the full details","work":"high school teacher","knows":"You know Dev as your close friend since college.","texts":"","style":"Uses a few emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Dev":{"who":"35, man, the friend who slept with someone new","work":"sous chef","knows":"You know Dana as your close friend since college.","texts":"","style":"Uses a few emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Dana":"You live in Philadelphia, your days are filled with teaching high school, and you live alone.","Dev":"You live in Philadelphia, your days are filled with working as a sous chef in a restaurant kitchen, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":839,"cache_read_input_tokens":0,"output_tokens":1036,"output_tokens_details":{"thinking_tokens":822},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":839,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1036,"cache_read_input_tokens":0,"cache_creation_input_tokens":839,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":839},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1113,"cache_read_input_tokens":0,"output_tokens":2084,"output_tokens_details":{"thinking_tokens":1741},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1113,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2084,"cache_read_input_tokens":0,"cache_creation_input_tokens":1113,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1113},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Philadelphia, USA","castMs":17575,"situation":"Two close friends in their thirties who tell each other everything.","topic":"One of them slept with someone new at the weekend and the other wants the full details."}
+{"who":"Dana","text":"Ok the restaurant. The italian place or the new one on passyunk. Marisol will hate the new one, its too loud","posted":true,"at":"2026-12-02T16:15","checkin":"2026-12-02T16:15"}
+{"who":"Dev","text":"Its not too loud its lively. Fine italian. We went there for her 30th tho so its kinda a callback","posted":true,"at":"2026-12-02T16:21","checkin":"2026-12-02T16:21"}
+{"who":"Dana","text":"Ok italian. You book it?","posted":true,"at":"2026-12-02T16:22","checkin":"2026-12-02T16:22"}
+{"who":"Dev","text":"Booked. 7:30 for 9","posted":true,"at":"2026-12-02T16:24","checkin":"2026-12-02T16:24"}
+{"who":"Dana","text":"Perfect. Ok so","posted":true,"at":"2026-12-02T16:25","checkin":"2026-12-02T16:25"}
+{"who":"Dana","text":"Who was she","posted":true,"at":"2026-12-02T16:25","checkin":"2026-12-02T16:25"}
+{"who":"Dev","text":"Who who","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"Dana","text":"Dont do that saturday. Dev","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"Dev","text":"Its not a big deal","posted":true,"at":"2026-12-02T16:44","checkin":"2026-12-02T16:44"}
+{"who":"Dana","text":"You said \"I did a thing\" at 1am sunday and then went dark for 2 days","posted":true,"at":"2026-12-02T16:44","checkin":"2026-12-02T16:44"}
+{"who":"Dev","text":"Her name is nadia","posted":true,"at":"2026-12-02T16:51","checkin":"2026-12-02T16:51"}
+{"who":"Dana","text":"And?","posted":true,"at":"2026-12-02T16:51","checkin":"2026-12-02T16:51"}
+{"who":"Dev","text":"She works at the oyster place on 9th. We talked at the bar after my shift and one thing led to another","posted":true,"at":"2026-12-02T17:02","checkin":"2026-12-02T17:02"}
+{"who":"Dana","text":"The oyster place!! The one w the tiles","posted":true,"at":"2026-12-02T17:03","checkin":"2026-12-02T17:03"}
+{"who":"Dev","text":"Yeah thats the one","posted":true,"at":"2026-12-02T17:03","checkin":"2026-12-02T17:03"}
+{"who":"Dana","text":"How was it. Dont be weird about it","posted":true,"at":"2026-12-02T17:08","checkin":"2026-12-02T17:08"}
+{"who":"Dev","text":"Its one of those things I dont want to rate","posted":true,"at":"2026-12-02T17:30","checkin":"2026-12-02T17:30"}
+{"who":"Dana","text":"😭😭 thats a rating","posted":true,"at":"2026-12-02T17:31","checkin":"2026-12-02T17:31"}
+{"who":"Dev","text":"Ok im off the line. She texted me asking if im ok and I dont know what to say back","posted":true,"at":"2026-12-02T22:47","checkin":"2026-12-02T22:47"}
+{"who":"Dana","text":"Say ur ok. Are you ok","posted":true,"at":"2026-12-02T22:48","checkin":"2026-12-02T22:48"}
+{"who":"Dev","text":"Idk. I think so. I like her","posted":true,"at":"2026-12-02T22:55","checkin":"2026-12-02T22:55"}
+{"who":"Dana","text":"Ok. Thats new","posted":true,"at":"2026-12-02T22:56","checkin":"2026-12-02T22:56"}
+{"who":"Dev","text":"Dont start","posted":true,"at":"2026-12-02T23:10","checkin":"2026-12-02T23:10"}
+{"who":"Dana","text":"Not starting. Tell me about her tomorrow when ur not wiped","posted":true,"at":"2026-12-02T23:11","checkin":"2026-12-02T23:11"}
+{"who":"Dana","text":"Ok im up. Ur alive?","posted":true,"at":"2026-12-03T07:52","checkin":"2026-12-03T07:52"}
+{"who":"Dev","text":"Alive. Slept like 6 hrs which is a miracle","posted":true,"at":"2026-12-03T07:58","checkin":"2026-12-03T07:58"}
+{"who":"Dana","text":"Good. So","posted":true,"at":"2026-12-03T08:03","checkin":"2026-12-03T08:03"}
+{"who":"Dev","text":"So what","posted":true,"at":"2026-12-03T08:04","checkin":"2026-12-03T08:04"}
+{"who":"Dana","text":"Nadia","posted":true,"at":"2026-12-03T08:04","checkin":"2026-12-03T08:04"}
+{"who":"Dev","text":"She has a cat named Pickle. Thats all u getting before lunch","posted":true,"at":"2026-12-03T08:09","checkin":"2026-12-03T08:09"}
+{"who":"Dana","text":"A cat named pickle is already more than I had","posted":true,"at":"2026-12-03T08:10","checkin":"2026-12-03T08:10"}
+{"who":"Dana","text":"Sorry period 3 ate my whole morning. Is she the raw bar one or the one who runs the door","posted":true,"at":"2026-12-03T10:30","checkin":"2026-12-03T10:30"}
+{"who":"Dev","text":"Raw bar. Shucks everything faster than me which is a problem for my ego","posted":true,"at":"2026-12-03T10:41","checkin":"2026-12-03T10:41"}
+{"who":"Dana","text":"Lol ok","posted":true,"at":"2026-12-03T10:42","checkin":"2026-12-03T10:42"}
+{"who":"Dev","text":"Marisol likes the burrata thing right","posted":true,"at":"2026-12-03T13:15","checkin":"2026-12-03T13:15"}
+{"who":"Dana","text":"Yes burrata. Also she said no cake from the place by her office, its dry. Get the one from the bakery on 13th","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Dev","text":"Ok. Dont tell her we're doing cake im trying to keep it a surprise","posted":true,"at":"2026-12-03T13:22","checkin":"2026-12-03T13:22"}
+{"who":"Dana","text":"Its a surprise dinner dev we're all doing cake","posted":true,"at":"2026-12-03T13:23","checkin":"2026-12-03T13:23"}
+{"who":"Dev","text":"Dinner wrapped. Im on the couch 🫠 u free now?","posted":true,"at":"2026-12-03T19:04","checkin":"2026-12-03T19:04"}
+{"who":"Dana","text":"Yes. Im grading 40 essays on the causes of ww1 so im a little free","posted":true,"at":"2026-12-03T19:20","checkin":"2026-12-03T19:20"}
+{"who":"Dana","text":"Tell me","posted":true,"at":"2026-12-03T19:21","checkin":"2026-12-03T19:21"}
+{"who":"Dev","text":"She came in again tonight. Ordered the same thing. We didnt really talk about it","posted":true,"at":"2026-12-03T19:38","checkin":"2026-12-03T19:38"}
+{"who":"Dana","text":"Ok what did you talk about","posted":true,"at":"2026-12-03T19:40","checkin":"2026-12-03T19:40"}
+{"who":"Dev","text":"Her sister who's getting married in june. She's from newark. Asked me a bunch of questions and then she laughed at something I said and I couldnt tell if I was being funny or she was being nice","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Dana","text":"The laugh is important","posted":true,"at":"2026-12-03T19:53","checkin":"2026-12-03T19:53"}
+{"who":"Dev","text":"Dont","posted":true,"at":"2026-12-03T19:53","checkin":"2026-12-03T19:53"}
+{"who":"Dana","text":"Noted","posted":true,"at":"2026-12-03T19:55","checkin":"2026-12-03T19:55"}
+{"who":"Dana","text":"Did u eat","posted":true,"at":"2026-12-03T21:17","checkin":"2026-12-03T21:17"}
+{"who":"Dev","text":"Staff meal. Ate a lot of bread. Im fine","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Dana","text":"Ok","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Dev","text":"Did you ever think about how Marisol would have hated it if we did the new place. She'd be yelling right now","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Dana","text":"She'd be yelling for the rest of her life. She'd have a whole bit about it","posted":true,"at":"2026-12-03T23:44","checkin":"2026-12-03T23:44"}
+{"who":"Dev","text":"Its too loud. U should have seen it, eight tables of people screaming about crypto","posted":true,"at":"2026-12-03T23:45","checkin":"2026-12-03T23:45"}
+{"who":"Dana","text":"That's a pretty good bit actually","posted":true,"at":"2026-12-03T23:46","checkin":"2026-12-03T23:46"}
+{"who":"Dev","text":"She said she wants to get a drink on sunday. Idk if thats a date or a drink","posted":true,"at":"2026-12-04T00:12","checkin":"2026-12-04T00:12"}
+{"who":"Dana","text":"Its a date dev. U say yes","posted":true,"at":"2026-12-04T00:14","checkin":"2026-12-04T00:14"}
+{"who":"Dana","text":"And not at the oyster place","posted":true,"at":"2026-12-04T00:14","checkin":"2026-12-04T00:14"}
+{"who":"Dana","text":"Ok I have 40 essays and a 7:15 alarm so Im not even going to ask","posted":true,"at":"2026-12-04T07:52","checkin":"2026-12-04T07:52"}
+{"who":"Dana","text":"Are you going to text her back or are you going to make me ask","posted":true,"at":"2026-12-04T07:53","checkin":"2026-12-04T07:53"}
+{"who":"Dev","text":"Already texted her. She asked if sunday works and I said yes before I could think about it","posted":true,"at":"2026-12-04T08:30","checkin":"2026-12-04T08:30"}
+{"who":"Dana","text":"Good","posted":true,"at":"2026-12-04T08:31","checkin":"2026-12-04T08:31"}
+{"who":"Dev","text":"Dont do the face","posted":true,"at":"2026-12-04T08:31","checkin":"2026-12-04T08:31"}
+{"who":"Dana","text":"What face","posted":true,"at":"2026-12-04T08:32","checkin":"2026-12-04T08:32"}
+{"who":"Dev","text":"[photo: Pickle asleep on a stack of cookbooks]","posted":true,"at":"2026-12-04T08:44","checkin":"2026-12-04T08:44"}
+{"who":"Dana","text":"Ok the cat is real. Thats a good cat","posted":true,"at":"2026-12-04T08:45","checkin":"2026-12-04T08:45"}
+{"who":"Dev","text":"Shes a menace. She knocked a glass off the counter at 6am","posted":true,"at":"2026-12-04T08:45","checkin":"2026-12-04T08:45"}
+{"who":"Dana","text":"Pickle has a personality","posted":true,"at":"2026-12-04T08:46","checkin":"2026-12-04T08:46"}
+{"who":"Dana","text":"Period 5 just asked me if the causes of ww1 include \"vibes.\" I said no and then he asked if vibes were a cause in general","posted":true,"at":"2026-12-04T13:10","checkin":"2026-12-04T13:10"}
+{"who":"Dev","text":"Hes not wrong","posted":true,"at":"2026-12-04T13:11","checkin":"2026-12-04T13:11"}
+{"who":"Dana","text":"Dont encourage him","posted":true,"at":"2026-12-04T13:14","checkin":"2026-12-04T13:14"}
+{"who":"Dev","text":"Friday prep is killing me. Walk in is a mess and chef is on me about the stock","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Dana","text":"Sorry. Is it bad","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Dev","text":"Its fine. Lost a whole case of shallots to somebody leaving the lid off. Not naming names but the name starts with me","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Dana","text":"😭 ur ok","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"Dana","text":"Ok I survived. Did u get out yet","posted":true,"at":"2026-12-04T22:14","checkin":"2026-12-04T22:14"}
+{"who":"Dev","text":"Out at 11:40. Nadia came in around 9 and sat at the end of the bar. Didnt say anything about it just ate and left a huge tip","posted":true,"at":"2026-12-04T23:51","checkin":"2026-12-04T23:51"}
+{"who":"Dana","text":"Thats a flirt","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Dev","text":"Or she's really into the crudo","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Dana","text":"Both can be true","posted":true,"at":"2026-12-04T23:53","checkin":"2026-12-04T23:53"}
+{"who":"Dev","text":"She said she's not doing the oyster place on sunday. Said she wants somewhere where she can hear herself think","posted":true,"at":"2026-12-05T00:06","checkin":"2026-12-05T00:06"}
+{"who":"Dana","text":"Ok she's right. Ur not going to the place with the tiles","posted":true,"at":"2026-12-05T00:07","checkin":"2026-12-05T00:07"}
+{"who":"Dev","text":"Its a good place","posted":true,"at":"2026-12-05T00:08","checkin":"2026-12-05T00:08"}
+{"who":"Dana","text":"Dev","posted":true,"at":"2026-12-05T00:08","checkin":"2026-12-05T00:08"}

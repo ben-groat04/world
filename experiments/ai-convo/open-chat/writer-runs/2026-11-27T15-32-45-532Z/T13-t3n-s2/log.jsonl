@@ -1,0 +1,100 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T10:15","complete":true,"rejects":0,"today":["Claire","Katie","Katie"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2021,"cache_read_input_tokens":0,"output_tokens":2613,"output_tokens_details":{"thinking_tokens":1278},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2021,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2613,"cache_read_input_tokens":0,"cache_creation_input_tokens":2021,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2021},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3241,"cache_read_input_tokens":0,"output_tokens":2327,"output_tokens_details":{"thinking_tokens":1635},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3241,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2327,"cache_read_input_tokens":0,"cache_creation_input_tokens":3241,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3241},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3928,"cache_read_input_tokens":0,"output_tokens":3610,"output_tokens_details":{"thinking_tokens":2410},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3928,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3610,"cache_read_input_tokens":0,"cache_creation_input_tokens":3928,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3928},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Claire","Katie"],"setting":"You two are in Toronto, Canada, texting as sisters about a true crime podcast you both follow. You know each other from growing up together and talk often, so you can get into dark or gruesome material without much preamble.","openers":["ask if you finished the latest episode","ask how the killer's injuries sounded to her","say the psychology part keeps you up","admit the forensic details were too much"],"opener":"say the psychology part keeps you up","cast":{"Claire":{"who":"34, woman, the older sister","work":"high school teacher","knows":"You know Katie as your younger sister.","texts":"","style":"sparing emoji, no texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Katie":{"who":"29, woman, the younger sister","work":"pharmacy technician","knows":"You know Claire as your older sister.","texts":"","style":"frequent emoji and plenty of texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Claire":"You live in Toronto, Canada, where you teach high school and fill your days with classes and marking.","Katie":"You live in Toronto, Canada, where you work as a pharmacy technician and fill your days with shifts and errands."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":871,"cache_read_input_tokens":0,"output_tokens":721,"output_tokens_details":{"thinking_tokens":505},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":871,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":721,"cache_read_input_tokens":0,"cache_creation_input_tokens":871,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":871},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1098,"cache_read_input_tokens":0,"output_tokens":1711,"output_tokens_details":{"thinking_tokens":1378},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1098,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1711,"cache_read_input_tokens":0,"cache_creation_input_tokens":1098,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1098},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Toronto, Canada","castMs":13842,"situation":"Two sisters who both follow the same true crime podcast.","topic":"Talking through the gruesome forensic details of an invented serial killer case, the injuries to the victims, the killer's psychology, and whether they find it disturbing or fascinating."}
+{"who":"Claire","text":"Finished ep 6 last night. The lake one","posted":true,"at":"2026-11-28T10:15","checkin":"2026-11-28T10:15"}
+{"who":"Katie","text":"omg yes the second victim. i had to pause it twice","posted":true,"at":"2026-11-28T10:17","checkin":"2026-11-28T10:17"}
+{"who":"Claire","text":"The autopsy section. The way the forensic guy described the wounds. I kept rereading it","posted":true,"at":"2026-11-28T10:19","checkin":"2026-11-28T10:19"}
+{"who":"Katie","text":"i skipped that part tbh. the detective walking back to the car after is what got me","posted":true,"at":"2026-11-28T10:20","checkin":"2026-11-28T10:20"}
+{"who":"Claire","text":"The forensic guy said the later cuts were done after she was already gone. Like he just kept going","posted":true,"at":"2026-11-28T10:24","checkin":"2026-11-28T10:24"}
+{"who":"Katie","text":"ok i need to not think about that before coffee","posted":true,"at":"2026-11-28T10:25","checkin":"2026-11-28T10:25"}
+{"who":"Katie","text":"im back. what do u think he was doing it for. like the actual reason","posted":true,"at":"2026-11-28T10:31","checkin":"2026-11-28T10:31"}
+{"who":"Claire","text":"I don't think it's about the reason. I think he needed someone to watch","posted":true,"at":"2026-11-28T10:40","checkin":"2026-11-28T10:40"}
+{"who":"Katie","text":"ugh that's worse","posted":true,"at":"2026-11-28T10:41","checkin":"2026-11-28T10:41"}
+{"who":"Claire","text":"Yeah","posted":true,"at":"2026-11-28T10:41","checkin":"2026-11-28T10:41"}
+{"who":"Katie","text":"he left the letters for the reporter tho. thats a whole ego thing","posted":true,"at":"2026-11-28T10:58","checkin":"2026-11-28T10:58"}
+{"who":"Claire","text":"The letters bother me more than the cuts honestly. He wanted to be read","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Katie","text":"like hes auditioning","posted":true,"at":"2026-11-28T11:04","checkin":"2026-11-28T11:04"}
+{"who":"Claire","text":"For what","posted":true,"at":"2026-11-28T11:04","checkin":"2026-11-28T11:04"}
+{"who":"Katie","text":"idk. a guy who thinks hes the main character 💀","posted":true,"at":"2026-11-28T11:09","checkin":"2026-11-28T11:09"}
+{"who":"Claire","text":"The podcast host keeps saying he's \"meticulous.\" that word makes me want to throw the phone","posted":true,"at":"2026-11-28T11:12","checkin":"2026-11-28T11:12"}
+{"who":"Katie","text":"lmaoo ok ur right","posted":true,"at":"2026-11-28T11:13","checkin":"2026-11-28T11:13"}
+{"who":"Katie","text":"on lunch. lady came in asking for a refill on something i cant give till monday and tried to argue w me for 10 min","posted":true,"at":"2026-11-28T12:30","checkin":"2026-11-28T12:30"}
+{"who":"Claire","text":"Ugh. Did you hold firm","posted":true,"at":"2026-11-28T12:31","checkin":"2026-11-28T12:31"}
+{"who":"Katie","text":"obviously. she left mad. not my problem 😤","posted":true,"at":"2026-11-28T12:33","checkin":"2026-11-28T12:33"}
+{"who":"Claire","text":"Marking the grade 11 essays. One kid wrote about the ep 3 case for a \"true or false\" assignment. I didn't assign that","posted":true,"at":"2026-11-28T14:20","checkin":"2026-11-28T14:20"}
+{"who":"Katie","text":"wait is it the same kid who asked u about the bodies in the last one","posted":true,"at":"2026-11-28T14:21","checkin":"2026-11-28T14:21"}
+{"who":"Claire","text":"Different kid. She was fine. Just a lot of detail about the mother","posted":true,"at":"2026-11-28T14:22","checkin":"2026-11-28T14:22"}
+{"who":"Katie","text":"ok thats creepy","posted":true,"at":"2026-11-28T14:24","checkin":"2026-11-28T14:24"}
+{"who":"Claire","text":"It's a kid writing about a podcast. She probably just liked the mother part","posted":true,"at":"2026-11-28T14:25","checkin":"2026-11-28T14:25"}
+{"who":"Katie","text":"off work finally. want to do the thing tmrw? the market or just brunch","posted":true,"at":"2026-11-28T16:02","checkin":"2026-11-28T16:02"}
+{"who":"Claire","text":"Brunch. The market will be packed","posted":true,"at":"2026-11-28T16:10","checkin":"2026-11-28T16:10"}
+{"who":"Katie","text":"bet. i'll pick the place","posted":true,"at":"2026-11-28T16:11","checkin":"2026-11-28T16:11"}
+{"who":"Claire","text":"Dinner done. The psychology part keeps me up honestly","posted":true,"at":"2026-11-28T19:45","checkin":"2026-11-28T19:45"}
+{"who":"Katie","text":"which part. the letters or the watching thing","posted":true,"at":"2026-11-28T19:47","checkin":"2026-11-28T19:47"}
+{"who":"Claire","text":"The watching thing. Thinking about him sitting somewhere while it happens. Just watching someone decide what's next","posted":true,"at":"2026-11-28T19:50","checkin":"2026-11-28T19:50"}
+{"who":"Katie","text":"ok im not gonna think about that tonight","posted":true,"at":"2026-11-28T19:52","checkin":"2026-11-28T19:52"}
+{"who":"Katie","text":"also im sorry i made u go back to it","posted":true,"at":"2026-11-28T19:53","checkin":"2026-11-28T19:53"}
+{"who":"Claire","text":"You didn't make me. I'm the one who picked it up again","posted":true,"at":"2026-11-28T20:04","checkin":"2026-11-28T20:04"}
+{"who":"Katie","text":"still. u know i always do this","posted":true,"at":"2026-11-28T20:06","checkin":"2026-11-28T20:06"}
+{"who":"Claire","text":"It's fine. It's a good episode. It just gets in","posted":true,"at":"2026-11-28T20:07","checkin":"2026-11-28T20:07"}
+{"who":"Katie","text":"going to bed early, got a 7am thing tomorrow. u ok?","posted":true,"at":"2026-11-28T22:30","checkin":"2026-11-28T22:30"}
+{"who":"Claire","text":"Yeah. Going to read something boring","posted":true,"at":"2026-11-28T22:41","checkin":"2026-11-28T22:41"}
+{"who":"Katie","text":"ok night. dont reread the autopsy part","posted":true,"at":"2026-11-28T22:42","checkin":"2026-11-28T22:42"}
+{"who":"Claire","text":"Wasn't going to","posted":true,"at":"2026-11-28T22:43","checkin":"2026-11-28T22:43"}
+{"who":"Claire","text":"Still up. The lake episode is still going around in my head. Don't worry about it","posted":true,"at":"2026-11-29T00:40","checkin":"2026-11-29T00:40"}
+{"who":"Katie","text":"up?? slept like garbage","posted":true,"at":"2026-11-29T09:12","checkin":"2026-11-29T09:12"}
+{"who":"Claire","text":"Barely. Brunch still on?","posted":true,"at":"2026-11-29T09:20","checkin":"2026-11-29T09:20"}
+{"who":"Katie","text":"yes 11 at the egg place on ossington. i already put our name in 😊","posted":true,"at":"2026-11-29T09:21","checkin":"2026-11-29T09:21"}
+{"who":"Claire","text":"Fine. I'll be there at 11","posted":true,"at":"2026-11-29T09:24","checkin":"2026-11-29T09:24"}
+{"who":"Katie","text":"ok good. dont bring the podcast into it","posted":true,"at":"2026-11-29T09:25","checkin":"2026-11-29T09:25"}
+{"who":"Claire","text":"Wasn't going to","posted":true,"at":"2026-11-29T09:26","checkin":"2026-11-29T09:26"}
+{"who":"Katie","text":"home. that was nice. the eggs were overcooked but the coffee was good","posted":true,"at":"2026-11-29T13:08","checkin":"2026-11-29T13:08"}
+{"who":"Claire","text":"Same. I'm going to nap until the essays start yelling at me","posted":true,"at":"2026-11-29T13:40","checkin":"2026-11-29T13:40"}
+{"who":"Katie","text":"manager just texted, wants me in tues 7am for inventory bc the tech quit. so my week is gone 🙃","posted":true,"at":"2026-11-29T15:10","checkin":"2026-11-29T15:10"}
+{"who":"Claire","text":"Can you say no?","posted":true,"at":"2026-11-29T15:14","checkin":"2026-11-29T15:14"}
+{"who":"Katie","text":"i can but then she stops giving me the good shifts lol","posted":true,"at":"2026-11-29T15:15","checkin":"2026-11-29T15:15"}
+{"who":"Claire","text":"That's a real thing?","posted":true,"at":"2026-11-29T15:17","checkin":"2026-11-29T15:17"}
+{"who":"Katie","text":"its a whole thing here. the pharmacy is a little kingdom","posted":true,"at":"2026-11-29T15:18","checkin":"2026-11-29T15:18"}
+{"who":"Claire","text":"Ok. Sorry. That's annoying","posted":true,"at":"2026-11-29T15:20","checkin":"2026-11-29T15:20"}
+{"who":"Katie","text":"its fine. im gonna nap and be mad at her in my sleep","posted":true,"at":"2026-11-29T15:21","checkin":"2026-11-29T15:21"}
+{"who":"Claire","text":"Marking done. Three of the essays are about the lake case. I'm not reading any more of those tonight","posted":true,"at":"2026-11-29T21:50","checkin":"2026-11-29T21:50"}
+{"who":"Katie","text":"lol tell them to write about anything else. pizza or a dog or smth","posted":true,"at":"2026-11-29T21:58","checkin":"2026-11-29T21:58"}
+{"who":"Claire","text":"I did. One of them wrote about a dog. It was about the lake case","posted":true,"at":"2026-11-29T22:04","checkin":"2026-11-29T22:04"}
+{"who":"Katie","text":"💀","posted":true,"at":"2026-11-29T22:05","checkin":"2026-11-29T22:05"}
+{"who":"Claire","text":"Going to bed. Are you going in tues?","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Katie","text":"ya. 7am. sending u a picture of me crying in the parking lot in advance","posted":true,"at":"2026-11-29T23:44","checkin":"2026-11-29T23:44"}
+{"who":"Claire","text":"Night","posted":true,"at":"2026-11-30T00:12","checkin":"2026-11-30T00:12"}
+{"who":"Katie","text":"at work. the fridge has a sign on it that says TECH WANTED in marker and someone already crossed out WANTED","posted":true,"at":"2026-11-30T07:12","checkin":"2026-11-30T07:12"}
+{"who":"Claire","text":"Is that a good sign or a bad sign","posted":true,"at":"2026-11-30T07:20","checkin":"2026-11-30T07:20"}
+{"who":"Katie","text":"its a sign that people are quitting","posted":true,"at":"2026-11-30T07:21","checkin":"2026-11-30T07:21"}
+{"who":"Claire","text":"First period. A grade 9 has discovered the word \"unhinged\" and is using it on everything, including the thermostat","posted":true,"at":"2026-11-30T08:02","checkin":"2026-11-30T08:02"}
+{"who":"Katie","text":"lmaooo the thermostat","posted":true,"at":"2026-11-30T08:04","checkin":"2026-11-30T08:04"}
+{"who":"Claire","text":"He said it was unhinged that it was set to 19","posted":true,"at":"2026-11-30T08:05","checkin":"2026-11-30T08:05"}
+{"who":"Katie","text":"lunch. guy wanted his bp pills early bc hes going out of town. told him insurance says no. he said he'll drive to the other location. ok","posted":true,"at":"2026-11-30T12:40","checkin":"2026-11-30T12:40"}
+{"who":"Claire","text":"Ok","posted":true,"at":"2026-11-30T12:41","checkin":"2026-11-30T12:41"}
+{"who":"Katie","text":"ok something happened. dont freak out","posted":true,"at":"2026-11-30T14:55","checkin":"2026-11-30T14:55"}
+{"who":"Claire","text":"Ok. Tell me","posted":true,"at":"2026-11-30T14:56","checkin":"2026-11-30T14:56"}
+{"who":"Katie","text":"guy came to the counter and asked how many of his moms sleeping pills it would take to not wake up. like he said it so calm. i said id have to get the pharmacist and he said \"its fine i was kidding\" but he wasnt looking at me when he said it","posted":true,"at":"2026-11-30T15:01","checkin":"2026-11-30T15:01"}
+{"who":"Claire","text":"Katie","posted":true,"at":"2026-11-30T15:02","checkin":"2026-11-30T15:02"}
+{"who":"Katie","text":"i got rob. rob went back and talked to him in the consult room for like 20 min. his wife came in and rob told her to take him to emerg. i think they went. i dont know if they went","posted":true,"at":"2026-11-30T15:03","checkin":"2026-11-30T15:03"}
+{"who":"Claire","text":"Are you ok","posted":true,"at":"2026-11-30T15:04","checkin":"2026-11-30T15:04"}
+{"who":"Katie","text":"shaky. hands are doing a thing. rob said i did the right thing and i keep thinking i should have said something different when he first came up","posted":true,"at":"2026-11-30T15:09","checkin":"2026-11-30T15:09"}
+{"who":"Claire","text":"You went and got Rob. That's the thing you're supposed to do. You didn't have to know what to say","posted":true,"at":"2026-11-30T15:10","checkin":"2026-11-30T15:10"}
+{"who":"Katie","text":"yeah","posted":true,"at":"2026-11-30T15:11","checkin":"2026-11-30T15:11"}
+{"who":"Katie","text":"rob has to write it up so ill be filling out a form for the rest of my life lol","posted":true,"at":"2026-11-30T15:11","checkin":"2026-11-30T15:11"}
+{"who":"Claire","text":"Do you want me to come by after your shift","posted":true,"at":"2026-11-30T15:14","checkin":"2026-11-30T15:14"}
+{"who":"Katie","text":"u dont have to. ur marking","posted":true,"at":"2026-11-30T15:18","checkin":"2026-11-30T15:18"}
+{"who":"Claire","text":"The marking can wait. I'd rather sit with you","posted":true,"at":"2026-11-30T15:19","checkin":"2026-11-30T15:19"}
+{"who":"Katie","text":"ok maybe. i'll text u when im out. 6ish","posted":true,"at":"2026-11-30T15:24","checkin":"2026-11-30T15:24"}
+{"who":"Katie","text":"out. u still want to come","posted":true,"at":"2026-11-30T18:12","checkin":"2026-11-30T18:12"}
+{"who":"Claire","text":"Yes. Leaving now. Ossington or the apartment","posted":true,"at":"2026-11-30T18:13","checkin":"2026-11-30T18:13"}
+{"who":"Katie","text":"apartment. im not up for going anywhere","posted":true,"at":"2026-11-30T18:14","checkin":"2026-11-30T18:14"}
+{"who":"Claire","text":"Ok","posted":true,"at":"2026-11-30T18:14","checkin":"2026-11-30T18:14"}
+{"who":"Claire","text":"Home. Are you good","posted":true,"at":"2026-11-30T23:20","checkin":"2026-11-30T23:20"}
+{"who":"Katie","text":"yeah. thx for coming. i think the wine helped and also the fact that u made me eat soup","posted":true,"at":"2026-11-30T23:31","checkin":"2026-11-30T23:31"}
+{"who":"Claire","text":"Good. Text me when inventory is done tomorrow","posted":true,"at":"2026-11-30T23:33","checkin":"2026-11-30T23:33"}
+{"who":"Katie","text":"ur gonna get the crying parking lot pic again 😭","posted":true,"at":"2026-11-30T23:34","checkin":"2026-11-30T23:34"}
+{"who":"Claire","text":"I'll look forward to it","posted":true,"at":"2026-11-30T23:35","checkin":"2026-11-30T23:35"}
+{"who":"Katie","text":"still up. not thinking about the lake guy. thinking about the guy at the counter","posted":true,"at":"2026-12-01T00:40","checkin":"2026-12-01T00:40"}
+{"who":"Claire","text":"Ok. I'm up too","posted":true,"at":"2026-12-01T00:44","checkin":"2026-12-01T00:44"}
+{"who":"Katie","text":"dont say anything just wanted to say it","posted":true,"at":"2026-12-01T00:45","checkin":"2026-12-01T00:45"}
+{"who":"Claire","text":"Ok. Going to sit here for a bit then","posted":true,"at":"2026-12-01T00:46","checkin":"2026-12-01T00:46"}

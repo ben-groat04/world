@@ -1,0 +1,77 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T08:10","complete":true,"rejects":0,"today":[null,null,"Laura"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1948,"cache_read_input_tokens":0,"output_tokens":2388,"output_tokens_details":{"thinking_tokens":1478},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1948,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2388,"cache_read_input_tokens":0,"cache_creation_input_tokens":1948,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1948},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2764,"cache_read_input_tokens":0,"output_tokens":1252,"output_tokens_details":{"thinking_tokens":693},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2764,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1252,"cache_read_input_tokens":0,"cache_creation_input_tokens":2764,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2764},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3337,"cache_read_input_tokens":0,"output_tokens":1933,"output_tokens_details":{"thinking_tokens":1407},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3337,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1933,"cache_read_input_tokens":0,"cache_creation_input_tokens":3337,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3337},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ethan","Laura"],"setting":"You are both in Seattle, Washington, USA, texting from your own homes. You are siblings: Ethan is the older brother and Laura the younger sister.","openers":["Send her a short text asking for a call","Tell her you need a break from this argument","Ask her to stop bringing up the old grudges","Say you don't want to lose touch over this"],"opener":"Send her a short text asking for a call","cast":{"Ethan":{"who":"41, man, the brother","work":"pharmacist","knows":"You know Laura as your younger sister, and you have grown up with her.","texts":"","style":"no emoji, few texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Laura":{"who":"38, woman, the sister","work":"nurse","knows":"You know Ethan as your older brother, and you have grown up with him.","texts":"","style":"no emoji, few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Ethan":"You live in Seattle and work as a pharmacist.","Laura":"You live in Seattle and work as a nurse."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":854,"cache_read_input_tokens":0,"output_tokens":897,"output_tokens_details":{"thinking_tokens":682},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":854,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":897,"cache_read_input_tokens":0,"cache_creation_input_tokens":854,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":854},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1077,"cache_read_input_tokens":0,"output_tokens":1302,"output_tokens_details":{"thinking_tokens":996},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1077,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1302,"cache_read_input_tokens":0,"cache_creation_input_tokens":1077,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1077},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Seattle, USA","castMs":11680,"situation":"A brother and sister, both adults, who fell out over politics before.","topic":"Abortion: they are furious, swearing at each other, bringing up old family grudges, and saying they might stop speaking."}
+{"who":"Ethan","text":"Can you call me today. Not text. When you're off","posted":true,"at":"2026-11-27T08:10","checkin":"2026-11-27T08:10"}
+{"who":"Laura","text":"Im on till 7. Cant call at work","posted":true,"at":"2026-11-27T11:37","checkin":"2026-11-27T11:37"}
+{"who":"Laura","text":"Can text if you want","posted":true,"at":"2026-11-27T11:38","checkin":"2026-11-27T11:38"}
+{"who":"Ethan","text":"You said a lot yesterday. You know that right","posted":true,"at":"2026-11-27T11:52","checkin":"2026-11-27T11:52"}
+{"who":"Ethan","text":"I dont want to do this over text","posted":true,"at":"2026-11-27T11:53","checkin":"2026-11-27T11:53"}
+{"who":"Laura","text":"Then dont. You started it at the table","posted":true,"at":"2026-11-27T12:20","checkin":"2026-11-27T12:20"}
+{"who":"Laura","text":"You kept going after mom asked you to stop","posted":true,"at":"2026-11-27T12:21","checkin":"2026-11-27T12:21"}
+{"who":"Ethan","text":"I asked you one question","posted":true,"at":"2026-11-27T12:44","checkin":"2026-11-27T12:44"}
+{"who":"Ethan","text":"What you said about women who go to those clinics was not a question","posted":true,"at":"2026-11-27T12:44","checkin":"2026-11-27T12:44"}
+{"who":"Laura","text":"It was an answer to your question. You asked if I thought people like that were murderers","posted":true,"at":"2026-11-27T12:51","checkin":"2026-11-27T12:51"}
+{"who":"Laura","text":"And I said no and you said so you think its fine to kill babies. In front of dad's picture","posted":true,"at":"2026-11-27T12:52","checkin":"2026-11-27T12:52"}
+{"who":"Ethan","text":"Dont bring dad into this","posted":true,"at":"2026-11-27T13:10","checkin":"2026-11-27T13:10"}
+{"who":"Laura","text":"You brought dad in. You always do when you want to win","posted":true,"at":"2026-11-27T13:11","checkin":"2026-11-27T13:11"}
+{"who":"Ethan","text":"Wow","posted":true,"at":"2026-11-27T13:14","checkin":"2026-11-27T13:14"}
+{"who":"Ethan","text":"You want to talk about who was there for dad? You want to do that list?","posted":true,"at":"2026-11-27T13:14","checkin":"2026-11-27T13:14"}
+{"who":"Laura","text":"Oh here we go","posted":true,"at":"2026-11-27T13:16","checkin":"2026-11-27T13:16"}
+{"who":"Laura","text":"You were in california for the whole last year and now youre going to tell me what dad needed","posted":true,"at":"2026-11-27T13:16","checkin":"2026-11-27T13:16"}
+{"who":"Ethan","text":"I was working. I sent money every month","posted":true,"at":"2026-11-27T13:18","checkin":"2026-11-27T13:18"}
+{"who":"Ethan","text":"You sent a text every month","posted":true,"at":"2026-11-27T13:18","checkin":"2026-11-27T13:18"}
+{"who":"Laura","text":"Fuck you ethan","posted":true,"at":"2026-11-27T13:33","checkin":"2026-11-27T13:33"}
+{"who":"Laura","text":"I wiped his ass for eight months while you sent money and a bad opinion","posted":true,"at":"2026-11-27T13:33","checkin":"2026-11-27T13:33"}
+{"who":"Ethan","text":"Ok. Thats fair. I deserved that","posted":true,"at":"2026-11-27T14:02","checkin":"2026-11-27T14:02"}
+{"who":"Ethan","text":"I still think what you said was cruel to mom and to me and I think you knew it would be","posted":true,"at":"2026-11-27T14:04","checkin":"2026-11-27T14:04"}
+{"who":"Laura","text":"You didnt answer anything I said","posted":true,"at":"2026-11-27T14:40","checkin":"2026-11-27T14:40"}
+{"who":"Laura","text":"You never do. You just wait for your turn","posted":true,"at":"2026-11-27T14:41","checkin":"2026-11-27T14:41"}
+{"who":"Ethan","text":"Maybe I should just stop talking to you for a while","posted":true,"at":"2026-11-27T16:22","checkin":"2026-11-27T16:22"}
+{"who":"Ethan","text":"I mean it. Im not going to keep doing this every time we're in the same room","posted":true,"at":"2026-11-27T16:23","checkin":"2026-11-27T16:23"}
+{"who":"Laura","text":"Ok","posted":true,"at":"2026-11-27T17:05","checkin":"2026-11-27T17:05"}
+{"who":"Laura","text":"My shift just ended. Im not calling you tonight","posted":true,"at":"2026-11-27T17:05","checkin":"2026-11-27T17:05"}
+{"who":"Ethan","text":"I didnt ask you to","posted":true,"at":"2026-11-27T19:48","checkin":"2026-11-27T19:48"}
+{"who":"Ethan","text":"Im not trying to make it worse","posted":true,"at":"2026-11-27T21:30","checkin":"2026-11-27T21:30"}
+{"who":"Ethan","text":"I shouldnt have said the thing about california","posted":true,"at":"2026-11-28T00:40","checkin":"2026-11-28T00:40"}
+{"who":"Laura","text":"Im up","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Laura","text":"Didnt sleep great","posted":true,"at":"2026-11-28T09:15","checkin":"2026-11-28T09:15"}
+{"who":"Ethan","text":"Same","posted":true,"at":"2026-11-28T09:40","checkin":"2026-11-28T09:40"}
+{"who":"Ethan","text":"Im not going to pretend I slept","posted":true,"at":"2026-11-28T09:41","checkin":"2026-11-28T09:41"}
+{"who":"Laura","text":"Mom texted me asking if were both doing christmas eve","posted":true,"at":"2026-11-28T10:26","checkin":"2026-11-28T10:26"}
+{"who":"Laura","text":"I said ask ethan","posted":true,"at":"2026-11-28T10:26","checkin":"2026-11-28T10:26"}
+{"who":"Ethan","text":"She texted me too","posted":true,"at":"2026-11-28T10:58","checkin":"2026-11-28T10:58"}
+{"who":"Ethan","text":"I said I dont know yet","posted":true,"at":"2026-11-28T10:58","checkin":"2026-11-28T10:58"}
+{"who":"Laura","text":"She said she's making the ham either way","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Ethan","text":"Ok","posted":true,"at":"2026-11-28T11:20","checkin":"2026-11-28T11:20"}
+{"who":"Laura","text":"I meant what I said about the table","posted":true,"at":"2026-11-28T12:47","checkin":"2026-11-28T12:47"}
+{"who":"Laura","text":"Not all of it. But the part about you not listening","posted":true,"at":"2026-11-28T12:48","checkin":"2026-11-28T12:48"}
+{"who":"Ethan","text":"I know you meant it","posted":true,"at":"2026-11-28T13:30","checkin":"2026-11-28T13:30"}
+{"who":"Ethan","text":"I dont think I was listening yesterday. I was waiting to say the next thing","posted":true,"at":"2026-11-28T13:31","checkin":"2026-11-28T13:31"}
+{"who":"Ethan","text":"That part's true","posted":true,"at":"2026-11-28T13:32","checkin":"2026-11-28T13:32"}
+{"who":"Laura","text":"Ok","posted":true,"at":"2026-11-28T15:05","checkin":"2026-11-28T15:05"}
+{"who":"Laura","text":"Im going to the gym. Dont text me while im gone","posted":true,"at":"2026-11-28T15:06","checkin":"2026-11-28T15:06"}
+{"who":"Laura","text":"Joking","posted":true,"at":"2026-11-28T15:06","checkin":"2026-11-28T15:06"}
+{"who":"Ethan","text":"Ha","posted":true,"at":"2026-11-28T18:14","checkin":"2026-11-28T18:14"}
+{"who":"Laura","text":"Im not going to be ready to talk tomorrow","posted":true,"at":"2026-11-28T22:51","checkin":"2026-11-28T22:51"}
+{"who":"Laura","text":"Maybe monday","posted":true,"at":"2026-11-28T22:52","checkin":"2026-11-28T22:52"}
+{"who":"Ethan","text":"Monday works","posted":true,"at":"2026-11-28T22:58","checkin":"2026-11-28T22:58"}
+{"who":"Ethan","text":"Ill call you after your shift if thats ok. Not before","posted":true,"at":"2026-11-28T22:58","checkin":"2026-11-28T22:58"}
+{"who":"Ethan","text":"Are you going to tell mom you said ask me","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Laura","text":"I already did","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Laura","text":"She said \"well thats not helpful\" and hung up","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Ethan","text":"Ha. Sounds like her","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Ethan","text":"I'll decide about christmas eve before the 24th. Not today","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Laura","text":"Im off today. Going to sleep till noon and then go to the store if mom needs anything","posted":true,"at":"2026-11-29T13:08","checkin":"2026-11-29T13:08"}
+{"who":"Laura","text":"Had a man on friday who was dying and kept asking me if his wife was coming. She wasnt. Ive been thinking about it all weekend","posted":true,"at":"2026-11-29T16:47","checkin":"2026-11-29T16:47"}
+{"who":"Ethan","text":"Did you tell him","posted":true,"at":"2026-11-29T17:20","checkin":"2026-11-29T17:20"}
+{"who":"Laura","text":"I said she was on her way. Thats what you say","posted":true,"at":"2026-11-29T17:22","checkin":"2026-11-29T17:22"}
+{"who":"Ethan","text":"Yeah","posted":true,"at":"2026-11-29T17:24","checkin":"2026-11-29T17:24"}
+{"who":"Ethan","text":"I think you did the right thing","posted":true,"at":"2026-11-29T17:25","checkin":"2026-11-29T17:25"}
+{"who":"Laura","text":"Dont think you get to decide that","posted":true,"at":"2026-11-29T17:31","checkin":"2026-11-29T17:31"}
+{"who":"Ethan","text":"Ok","posted":true,"at":"2026-11-29T17:33","checkin":"2026-11-29T17:33"}
+{"who":"Laura","text":"Sorry","posted":true,"at":"2026-11-29T18:50","checkin":"2026-11-29T18:50"}
+{"who":"Laura","text":"That was mean. I know you were trying","posted":true,"at":"2026-11-29T18:51","checkin":"2026-11-29T18:51"}
+{"who":"Ethan","text":"Its fine","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Ethan","text":"Did you eat","posted":true,"at":"2026-11-29T21:02","checkin":"2026-11-29T21:02"}
+{"who":"Laura","text":"Eggs","posted":true,"at":"2026-11-29T21:40","checkin":"2026-11-29T21:40"}
+{"who":"Laura","text":"Cant sleep again","posted":true,"at":"2026-11-29T23:55","checkin":"2026-11-29T23:55"}
+{"who":"Ethan","text":"Same","posted":true,"at":"2026-11-29T23:57","checkin":"2026-11-29T23:57"}

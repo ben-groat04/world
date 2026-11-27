@@ -1,0 +1,70 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T11:50","complete":true,"rejects":0,"today":["Tom","Tom","Tom"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1988,"cache_read_input_tokens":0,"output_tokens":1343,"output_tokens_details":{"thinking_tokens":865},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1988,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1343,"cache_read_input_tokens":0,"cache_creation_input_tokens":1988,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1988},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2385,"cache_read_input_tokens":0,"output_tokens":2337,"output_tokens_details":{"thinking_tokens":1666},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2385,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2337,"cache_read_input_tokens":0,"cache_creation_input_tokens":2385,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2385},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3065,"cache_read_input_tokens":0,"output_tokens":3204,"output_tokens_details":{"thinking_tokens":2331},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3065,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3204,"cache_read_input_tokens":0,"cache_creation_input_tokens":3065,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3065},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rachel","Tom"],"setting":"You are both at home in your flat in Walthamstow, London, on a cold late-November evening, and you have been together for six years. This chat is for the plans you share, like the weekend food shop, the leaking bathroom tap you keep meaning to call a plumber about, and whose turn it is to cook.","openers":["Tell me what you want me to do tonight","Ask me to meet you upstairs after work","Say what you want first, then I'll answer","Suggest we skip dinner and go to bed early"],"opener":"Tell me what you want me to do tonight","cast":{"Rachel":{"who":"34, woman, the partner","work":"pharmacist","knows":"You know Tom as your partner of six years.","texts":"","style":"Light use of emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":["Tom"],"ex":[]},"Tom":{"who":"36, man, the partner","work":"chef","knows":"You know Rachel as your partner of six years.","texts":"","style":"Light use of emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":["Rachel"],"ex":[]}},"private_lines":{"Rachel":"You live in London, work as a pharmacist, and share your flat with Tom.","Tom":"You live in London, cook for a living, and share your flat with Rachel."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":833,"cache_read_input_tokens":0,"output_tokens":647,"output_tokens_details":{"thinking_tokens":455},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":833,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":647,"cache_read_input_tokens":0,"cache_creation_input_tokens":833,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":833},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1096,"cache_read_input_tokens":0,"output_tokens":1076,"output_tokens_details":{"thinking_tokens":716},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1096,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1076,"cache_read_input_tokens":0,"cache_creation_input_tokens":1096,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1096},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"London, England","castMs":10916,"situation":"A couple in their thirties, together six years.","topic":"They are texting about sex they want to have tonight, saying plainly what they want the other to do."}
+{"who":"Rachel","text":"Tell me what you want me to do tonight","posted":true,"at":"2026-11-30T11:50","checkin":"2026-11-30T11:50"}
+{"who":"Tom","text":"Ha. Ok\nyou still in till 6?","posted":true,"at":"2026-11-30T12:14","checkin":"2026-11-30T12:14"}
+{"who":"Rachel","text":"6:30 bc the locum flaked\nso tell me","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Tom","text":"Home by 8 probably\nsea bass guy shorted us again. Prep is a mess","posted":true,"at":"2026-11-30T12:40","checkin":"2026-11-30T12:40"}
+{"who":"Rachel","text":"Poor you","posted":true,"at":"2026-11-30T12:41","checkin":"2026-11-30T12:41"}
+{"who":"Rachel","text":"Still want an answer","posted":true,"at":"2026-11-30T12:41","checkin":"2026-11-30T12:41"}
+{"who":"Tom","text":"You know what I want\nslow. You don't get to rush it\nand you say what you want too, not just nod","posted":true,"at":"2026-11-30T15:02","checkin":"2026-11-30T15:02"}
+{"who":"Rachel","text":"👀 ok\nI want you not on your phone when you walk in","posted":true,"at":"2026-11-30T15:05","checkin":"2026-11-30T15:05"}
+{"who":"Rachel","text":"And I want to be the one who decides when","posted":true,"at":"2026-11-30T15:05","checkin":"2026-11-30T15:05"}
+{"who":"Tom","text":"Deal","posted":true,"at":"2026-11-30T15:30","checkin":"2026-11-30T15:30"}
+{"who":"Rachel","text":"Tap is still dripping btw. Did you ring the plumber","posted":true,"at":"2026-11-30T17:48","checkin":"2026-11-30T17:48"}
+{"who":"Tom","text":"Not yet. Will do tmrw\ngot a bit of a burn on my wrist from the oven rail, nothing serious, just stinging","posted":true,"at":"2026-11-30T17:52","checkin":"2026-11-30T17:52"}
+{"who":"Rachel","text":"Let me see it when you're home","posted":true,"at":"2026-11-30T17:53","checkin":"2026-11-30T17:53"}
+{"who":"Tom","text":"On the bus. 25 mins","posted":true,"at":"2026-11-30T20:19","checkin":"2026-11-30T20:19"}
+{"who":"Rachel","text":"Ok","posted":true,"at":"2026-11-30T20:20","checkin":"2026-11-30T20:20"}
+{"who":"Rachel","text":"Door's unlocked","posted":true,"at":"2026-11-30T20:21","checkin":"2026-11-30T20:21"}
+{"who":"Rachel","text":"Did you actually ring the plumber or are we doing \"will do tmrw\" again","posted":true,"at":"2026-12-01T07:52","checkin":"2026-12-01T07:52"}
+{"who":"Tom","text":"I'll ring at 9 when they open. Promise\nwrist's fine btw. You were right about the cold water","posted":true,"at":"2026-12-01T07:58","checkin":"2026-12-01T07:58"}
+{"who":"Rachel","text":"I'm always right","posted":true,"at":"2026-12-01T08:01","checkin":"2026-12-01T08:01"}
+{"who":"Rachel","text":"Ring them","posted":true,"at":"2026-12-01T08:01","checkin":"2026-12-01T08:01"}
+{"who":"Tom","text":"[photo: sea bass invoice]","posted":true,"at":"2026-12-01T10:17","checkin":"2026-12-01T10:17"}
+{"who":"Tom","text":"They charged us for 12kg. We got 8. Delivery note says 8 too","posted":true,"at":"2026-12-01T10:18","checkin":"2026-12-01T10:18"}
+{"who":"Rachel","text":"Send that to the supplier not me lol","posted":true,"at":"2026-12-01T10:20","checkin":"2026-12-01T10:20"}
+{"who":"Tom","text":"Already did. Stroppy email, cc'd the head chef","posted":true,"at":"2026-12-01T10:20","checkin":"2026-12-01T10:20"}
+{"who":"Rachel","text":"Did the plumber answer","posted":true,"at":"2026-12-01T12:33","checkin":"2026-12-01T12:33"}
+{"who":"Tom","text":"Left a voicemail. They're booked til friday\nsaid I'd pay extra for a sat slot. Guy said he'd see","posted":true,"at":"2026-12-01T12:50","checkin":"2026-12-01T12:50"}
+{"who":"Rachel","text":"Can you not leave it til friday the bucket's full again","posted":true,"at":"2026-12-01T12:52","checkin":"2026-12-01T12:52"}
+{"who":"Tom","text":"I'll empty the bucket","posted":true,"at":"2026-12-01T13:04","checkin":"2026-12-01T13:04"}
+{"who":"Tom","text":"Mostly joking","posted":true,"at":"2026-12-01T13:04","checkin":"2026-12-01T13:04"}
+{"who":"Rachel","text":"Home by 8 again?","posted":true,"at":"2026-12-01T17:40","checkin":"2026-12-01T17:40"}
+{"who":"Tom","text":"Yeah. Xmas party prep is a nightmare, 60 covers and the steward has mates he wants squeezed in","posted":true,"at":"2026-12-01T17:44","checkin":"2026-12-01T17:44"}
+{"who":"Tom","text":"Wrist's still stinging a bit. Not a big deal","posted":true,"at":"2026-12-01T17:45","checkin":"2026-12-01T17:45"}
+{"who":"Rachel","text":"Let me see it when you're home","posted":true,"at":"2026-12-01T17:46","checkin":"2026-12-01T17:46"}
+{"who":"Rachel","text":"You said that yesterday","posted":true,"at":"2026-12-01T17:46","checkin":"2026-12-01T17:46"}
+{"who":"Tom","text":"It's the same wrist","posted":true,"at":"2026-12-01T17:47","checkin":"2026-12-01T17:47"}
+{"who":"Tom","text":"On the bus. 20 mins","posted":true,"at":"2026-12-01T20:09","checkin":"2026-12-01T20:09"}
+{"who":"Rachel","text":"Ok","posted":true,"at":"2026-12-01T20:10","checkin":"2026-12-01T20:10"}
+{"who":"Rachel","text":"Door's open. Bring the bin bag down if you walk past the bins","posted":true,"at":"2026-12-01T20:11","checkin":"2026-12-01T20:11"}
+{"who":"Tom","text":"Plumber rang back. Sat 8-12 if we pay the extra. Said yes","posted":true,"at":"2026-12-02T08:14","checkin":"2026-12-02T08:14"}
+{"who":"Tom","text":"Don't say it","posted":true,"at":"2026-12-02T08:15","checkin":"2026-12-02T08:15"}
+{"who":"Rachel","text":"Didn't say anything","posted":true,"at":"2026-12-02T08:31","checkin":"2026-12-02T08:31"}
+{"who":"Rachel","text":"Is it £60 or £90","posted":true,"at":"2026-12-02T08:31","checkin":"2026-12-02T08:31"}
+{"who":"Tom","text":"Ask him. He said \"call it sixty\" like it was a favour","posted":true,"at":"2026-12-02T08:33","checkin":"2026-12-02T08:33"}
+{"who":"Tom","text":"Booked anyway","posted":true,"at":"2026-12-02T08:33","checkin":"2026-12-02T08:33"}
+{"who":"Rachel","text":"Ok thank god","posted":true,"at":"2026-12-02T08:40","checkin":"2026-12-02T08:40"}
+{"who":"Tom","text":"Supplier replied. Offering a credit note for 4kg \"in the spirit of a resolution\"","posted":true,"at":"2026-12-02T11:26","checkin":"2026-12-02T11:26"}
+{"who":"Tom","text":"Not the spirit I was going for","posted":true,"at":"2026-12-02T11:27","checkin":"2026-12-02T11:27"}
+{"who":"Rachel","text":"Are you cooking tmrw or am I","posted":true,"at":"2026-12-02T13:17","checkin":"2026-12-02T13:17"}
+{"who":"Tom","text":"You. I'm on prep til 9 for the party\nyou owe me one from last week","posted":true,"at":"2026-12-02T13:52","checkin":"2026-12-02T13:52"}
+{"who":"Rachel","text":"I cooked last week","posted":true,"at":"2026-12-02T13:53","checkin":"2026-12-02T13:53"}
+{"who":"Rachel","text":"Pasta doesn't count","posted":true,"at":"2026-12-02T13:53","checkin":"2026-12-02T13:53"}
+{"who":"Tom","text":"It counted","posted":true,"at":"2026-12-02T14:10","checkin":"2026-12-02T14:10"}
+{"who":"","react":"😂","to":51,"posted":false,"at":"2026-12-02T14:10"}
+{"who":"Rachel","text":"Off now. Tube's a nightmare","posted":true,"at":"2026-12-02T18:02","checkin":"2026-12-02T18:02"}
+{"who":"Tom","text":"Still here. Steward wants 4 more covers, I said no, he said \"they're Gary's mates\"","posted":true,"at":"2026-12-02T18:02","checkin":"2026-12-02T18:02"}
+{"who":"Rachel","text":"Who's Gary","posted":true,"at":"2026-12-02T18:05","checkin":"2026-12-02T18:05"}
+{"who":"Tom","text":"Exactly","posted":true,"at":"2026-12-02T18:05","checkin":"2026-12-02T18:05"}
+{"who":"Tom","text":"Wrist's blistered now","posted":true,"at":"2026-12-02T18:40","checkin":"2026-12-02T18:40"}
+{"who":"Tom","text":"[photo: burn on inside of left wrist, blister about the size of a 10p]","posted":true,"at":"2026-12-02T18:40","checkin":"2026-12-02T18:40"}
+{"who":"Rachel","text":"That's not nothing Tom\nDon't pop it. Cool it under running water for 20 mins if you haven't. Dressings are in the bathroom cabinet, the blue box","posted":true,"at":"2026-12-02T18:52","checkin":"2026-12-02T18:52"}
+{"who":"Rachel","text":"And that's the one you said was fine yesterday","posted":true,"at":"2026-12-02T18:53","checkin":"2026-12-02T18:53"}
+{"who":"Tom","text":"Ran it under the tap. The tap that's dripping","posted":true,"at":"2026-12-02T19:04","checkin":"2026-12-02T19:04"}
+{"who":"Tom","text":"Joking","posted":true,"at":"2026-12-02T19:04","checkin":"2026-12-02T19:04"}
+{"who":"Rachel","text":"🙄","posted":true,"at":"2026-12-02T19:06","checkin":"2026-12-02T19:06"}
+{"who":"Tom","text":"Bus is crawling. 30 mins now","posted":true,"at":"2026-12-02T20:28","checkin":"2026-12-02T20:28"}
+{"who":"Rachel","text":"Ok","posted":true,"at":"2026-12-02T20:29","checkin":"2026-12-02T20:29"}
+{"who":"Rachel","text":"Door's unlocked. Bring the bin bag down if you walk past the bins","posted":true,"at":"2026-12-02T20:30","checkin":"2026-12-02T20:30"}
+{"who":"Tom","text":"2 mins. Bringing it","posted":true,"at":"2026-12-02T20:31","checkin":"2026-12-02T20:31"}

@@ -1,0 +1,92 @@
+{"writer":"w11","live":true,"model":"claude-opus-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T15:40","complete":false,"rejects":0,"today":[null,"Gareth","Megan"],"usage":[{"input_tokens":1482,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":886,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":1482,"output_tokens":886,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2286,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":965,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2286,"output_tokens":965,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Gareth","Megan"],"setting":"You are a couple who have been together for six years, living in Cardiff, Wales. You are apart right now—one of you at home, the other out—and texting each other on your phones.","openers":["Tells her he can't stop thinking about her body","Describes exactly what he wants to do when he gets home","Asks her what she's wearing right now","Recalls something specific they did last night and says he wants more"],"opener":"Asks her what she's wearing right now","cast":{"Gareth":{"who":"34, man, one half of the couple","work":"secondary school teacher","knows":"You know Megan as your partner of six years.","texts":"","style":"occasional emoji, light abbreviations","emojiKeep":0.35,"capitals":true,"lives":["Megan"],"ex":[]},"Megan":{"who":"32, woman, the other half of the couple","work":"nurse","knows":"You know Gareth as your partner of six years.","texts":"","style":"moderate emoji, some abbreviations","emojiKeep":0.35,"capitals":false,"lives":["Gareth"],"ex":[]}},"private_lines":{"Gareth":"You live with your partner Megan in Cardiff, where you work as a secondary school teacher.","Megan":"You live with your partner Gareth in Cardiff, where you work as a nurse."},"usage":[{"input_tokens":693,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":158,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":693,"output_tokens":158,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":879,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":247,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":879,"output_tokens":247,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cardiff, Wales","castMs":11238,"situation":"A couple in their thirties, together six years.","topic":"They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart."}
+{"who":"Gareth","text":"What you wearing rn 😏","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Megan","text":"Lol why","posted":true,"at":"2026-11-27T15:43","checkin":"2026-11-27T15:43"}
+{"who":"Megan","text":"My scrubs still, just got in the car","posted":true,"at":"2026-11-27T15:43","checkin":"2026-11-27T15:43"}
+{"who":"Gareth","text":"Even better","posted":true,"at":"2026-11-27T15:44","checkin":"2026-11-27T15:44"}
+{"who":"Gareth","text":"Been thinking about you all day","posted":true,"at":"2026-11-27T15:44","checkin":"2026-11-27T15:44"}
+{"who":"Megan","text":"Oh have you now","posted":true,"at":"2026-11-27T15:46","checkin":"2026-11-27T15:46"}
+{"who":"Megan","text":"What kind of thinking","posted":true,"at":"2026-11-27T15:46","checkin":"2026-11-27T15:46"}
+{"who":"Gareth","text":"The kind where I can't stand up from my desk for a bit","posted":true,"at":"2026-11-27T15:47","checkin":"2026-11-27T15:47"}
+{"who":"Megan","text":"Gareth 😂 you're at work","posted":true,"at":"2026-11-27T15:48","checkin":"2026-11-27T15:48"}
+{"who":"Gareth","text":"Year 10 are gone now it's fine","posted":true,"at":"2026-11-27T15:48","checkin":"2026-11-27T15:48"}
+{"who":"Gareth","text":"Kept thinking about last Sunday morning","posted":true,"at":"2026-11-27T15:49","checkin":"2026-11-27T15:49"}
+{"who":"Megan","text":"Mmm that was good","posted":true,"at":"2026-11-27T15:50","checkin":"2026-11-27T15:50"}
+{"who":"Gareth","text":"When you were on top and you did that thing with your hips, like grinding forward","posted":true,"at":"2026-11-27T15:51","checkin":"2026-11-27T15:51"}
+{"who":"Gareth","text":"I swear I nearly lost it","posted":true,"at":"2026-11-27T15:51","checkin":"2026-11-27T15:51"}
+{"who":"Megan","text":"I know you did, I could feel it 😏","posted":true,"at":"2026-11-27T15:53","checkin":"2026-11-27T15:53"}
+{"who":"Gareth","text":"I want to do that again tonight","posted":true,"at":"2026-11-27T15:54","checkin":"2026-11-27T15:54"}
+{"who":"Gareth","text":"But I want you facing away from me this time","posted":true,"at":"2026-11-27T15:54","checkin":"2026-11-27T15:54"}
+{"who":"Megan","text":"God ok yes","posted":true,"at":"2026-11-27T15:56","checkin":"2026-11-27T15:56"}
+{"who":"Megan","text":"Keep going","posted":true,"at":"2026-11-27T15:56","checkin":"2026-11-27T15:56"}
+{"who":"Gareth","text":"I want to watch you ride me like that, grab your arse, pull you back onto me hard","posted":true,"at":"2026-11-27T15:57","checkin":"2026-11-27T15:57"}
+{"who":"Megan","text":"Fuck","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Megan","text":"I'm in a tesco car park Gareth","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Gareth","text":"Good","posted":true,"at":"2026-11-27T15:59","checkin":"2026-11-27T15:59"}
+{"who":"Gareth","text":"I want to reach round and rub your clit while you're on me, feel how wet you are","posted":true,"at":"2026-11-27T15:59","checkin":"2026-11-27T15:59"}
+{"who":"Megan","text":"I'm already wet just reading this","posted":true,"at":"2026-11-27T16:01","checkin":"2026-11-27T16:01"}
+{"who":"Megan","text":"You're a nightmare I have to go in and do a shop","posted":true,"at":"2026-11-27T16:01","checkin":"2026-11-27T16:01"}
+{"who":"Gareth","text":"Think about it while you're going round the aisles","posted":true,"at":"2026-11-27T16:02","checkin":"2026-11-27T16:02"}
+{"who":"Gareth","text":"I want to bend you over the arm of the sofa when I get home and eat you out from behind","posted":true,"at":"2026-11-27T16:02","checkin":"2026-11-27T16:02"}
+{"who":"Megan","text":"Ok I actually need to stop reading these or I'm never getting out of this car 🥵","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Gareth","text":"😂","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Gareth","text":"What time you reckon you'll be back","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Megan","text":"Like half 4ish","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Megan","text":"You?","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Gareth","text":"Leaving in 10, so about quarter to 5","posted":true,"at":"2026-11-27T16:06","checkin":"2026-11-27T16:06"}
+{"who":"Megan","text":"Good","posted":true,"at":"2026-11-27T16:06","checkin":"2026-11-27T16:06"}
+{"who":"Megan","text":"Don't be late","posted":true,"at":"2026-11-27T16:06","checkin":"2026-11-27T16:06"}
+{"who":"Gareth","text":"I won't be","posted":true,"at":"2026-11-27T16:07","checkin":"2026-11-27T16:07"}
+{"who":"Megan","text":"I want your mouth on me the second you walk in","posted":true,"at":"2026-11-27T16:08","checkin":"2026-11-27T16:08"}
+{"who":"Gareth","text":"Fucking hell Meg","posted":true,"at":"2026-11-27T16:08","checkin":"2026-11-27T16:08"}
+{"who":"Gareth","text":"Leaving now","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Megan","text":"hurry up","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Megan","text":"You dead? Been asleep for ages","posted":true,"at":"2026-11-28T11:14","checkin":"2026-11-28T11:14"}
+{"who":"Gareth","text":"I'm awake","posted":true,"at":"2026-11-28T11:17","checkin":"2026-11-28T11:17"}
+{"who":"Gareth","text":"Just lying here","posted":true,"at":"2026-11-28T11:17","checkin":"2026-11-28T11:17"}
+{"who":"Megan","text":"Where are you I woke up and you weren't there","posted":true,"at":"2026-11-28T11:18","checkin":"2026-11-28T11:18"}
+{"who":"Gareth","text":"Sofa","posted":true,"at":"2026-11-28T11:18","checkin":"2026-11-28T11:18"}
+{"who":"Gareth","text":"Came down for water at like 4 and just fell asleep","posted":true,"at":"2026-11-28T11:19","checkin":"2026-11-28T11:19"}
+{"who":"Megan","text":"Come back to bed","posted":true,"at":"2026-11-28T11:19","checkin":"2026-11-28T11:19"}
+{"who":"Megan","text":"Or don't, I'm making tea anyway","posted":true,"at":"2026-11-28T11:24","checkin":"2026-11-28T11:24"}
+{"who":"Gareth","text":"I'll put the kettle on","posted":true,"at":"2026-11-28T11:25","checkin":"2026-11-28T11:25"}
+{"who":"Megan","text":"Do we need to go into town today or can we just do nothing","posted":true,"at":"2026-11-28T12:48","checkin":"2026-11-28T12:48"}
+{"who":"Gareth","text":"Nothing sounds good to me","posted":true,"at":"2026-11-28T12:49","checkin":"2026-11-28T12:49"}
+{"who":"Gareth","text":"Still recovering from last night tbh","posted":true,"at":"2026-11-28T12:49","checkin":"2026-11-28T12:49"}
+{"who":"Megan","text":"😏 same","posted":true,"at":"2026-11-28T12:50","checkin":"2026-11-28T12:50"}
+{"who":"Megan","text":"My legs are actually sore","posted":true,"at":"2026-11-28T12:51","checkin":"2026-11-28T12:51"}
+{"who":"Gareth","text":"You're welcome","posted":true,"at":"2026-11-28T12:51","checkin":"2026-11-28T12:51"}
+{"who":"Megan","text":"Shut up","posted":true,"at":"2026-11-28T12:52","checkin":"2026-11-28T12:52"}
+{"who":"Gareth","text":"Right I'm going to Screwfix, the shelf in the bathroom is about to come off the wall","posted":true,"at":"2026-11-28T14:33","checkin":"2026-11-28T14:33"}
+{"who":"Megan","text":"Ok","posted":true,"at":"2026-11-28T14:34","checkin":"2026-11-28T14:34"}
+{"who":"Megan","text":"Can you get milk on the way back we used the last of it","posted":true,"at":"2026-11-28T14:34","checkin":"2026-11-28T14:34"}
+{"who":"Gareth","text":"👍","posted":true,"at":"2026-11-28T14:35","checkin":"2026-11-28T14:35"}
+{"who":"Gareth","text":"They don't have the right rawl plugs","posted":true,"at":"2026-11-28T15:12","checkin":"2026-11-28T15:12"}
+{"who":"Gareth","text":"Going to try B&Q","posted":true,"at":"2026-11-28T15:12","checkin":"2026-11-28T15:12"}
+{"who":"Megan","text":"Ok","posted":true,"at":"2026-11-28T15:18","checkin":"2026-11-28T15:18"}
+{"who":"Megan","text":"My mam just rang, they want to do Christmas Eve at theirs this year instead of ours","posted":true,"at":"2026-11-28T15:19","checkin":"2026-11-28T15:19"}
+{"who":"Gareth","text":"Fine by me","posted":true,"at":"2026-11-28T15:22","checkin":"2026-11-28T15:22"}
+{"who":"Gareth","text":"Less stress for us","posted":true,"at":"2026-11-28T15:22","checkin":"2026-11-28T15:22"}
+{"who":"Megan","text":"That's what I said","posted":true,"at":"2026-11-28T15:23","checkin":"2026-11-28T15:23"}
+{"who":"Megan","text":"She wants to know if you'll do your roast potatoes though","posted":true,"at":"2026-11-28T15:23","checkin":"2026-11-28T15:23"}
+{"who":"Gareth","text":"Obviously","posted":true,"at":"2026-11-28T15:24","checkin":"2026-11-28T15:24"}
+{"who":"Megan","text":"She's happy with that","posted":true,"at":"2026-11-28T15:38","checkin":"2026-11-28T15:38"}
+{"who":"Megan","text":"Also she asked about Boxing Day, are we still doing yours","posted":true,"at":"2026-11-28T15:39","checkin":"2026-11-28T15:39"}
+{"who":"Gareth","text":"Yeah think so, mam hasn't said otherwise","posted":true,"at":"2026-11-28T15:44","checkin":"2026-11-28T15:44"}
+{"who":"Gareth","text":"I'll check with her tomorrow","posted":true,"at":"2026-11-28T15:44","checkin":"2026-11-28T15:44"}
+{"who":"Gareth","text":"Got the plugs and milk","posted":true,"at":"2026-11-28T16:02","checkin":"2026-11-28T16:02"}
+{"who":"Gareth","text":"Back in 10","posted":true,"at":"2026-11-28T16:02","checkin":"2026-11-28T16:02"}
+{"who":"Megan","text":"👍","posted":true,"at":"2026-11-28T16:03","checkin":"2026-11-28T16:03"}
+{"who":"Megan","text":"Shelf looks good babe","posted":true,"at":"2026-11-28T18:47","checkin":"2026-11-28T18:47"}
+{"who":"Gareth","text":"Cheers","posted":true,"at":"2026-11-28T18:48","checkin":"2026-11-28T18:48"}
+{"who":"Gareth","text":"Only took 3 attempts","posted":true,"at":"2026-11-28T18:48","checkin":"2026-11-28T18:48"}
+{"who":"Megan","text":"I heard the swearing 😂","posted":true,"at":"2026-11-28T18:49","checkin":"2026-11-28T18:49"}
+{"who":"Megan","text":"What do you fancy for tea, I cba cooking","posted":true,"at":"2026-11-28T20:15","checkin":"2026-11-28T20:15"}
+{"who":"Gareth","text":"Chippy?","posted":true,"at":"2026-11-28T20:16","checkin":"2026-11-28T20:16"}
+{"who":"Megan","text":"Yes","posted":true,"at":"2026-11-28T20:16","checkin":"2026-11-28T20:16"}
+{"who":"Megan","text":"I'll have cod and chips, curry sauce","posted":true,"at":"2026-11-28T20:17","checkin":"2026-11-28T20:17"}
+{"who":"Gareth","text":"On it","posted":true,"at":"2026-11-28T20:17","checkin":"2026-11-28T20:17"}
+{"who":"Megan","text":"❤️","posted":true,"at":"2026-11-28T20:18","checkin":"2026-11-28T20:18"}
+{"who":"Gareth","text":"Have you seen the remote","posted":true,"at":"2026-11-28T22:34","checkin":"2026-11-28T22:34"}
+{"who":"Megan","text":"Check between the cushions","posted":true,"at":"2026-11-28T22:36","checkin":"2026-11-28T22:36"}
+{"who":"Gareth","text":"Found it ta","posted":true,"at":"2026-11-28T22:37","checkin":"2026-11-28T22:37"}

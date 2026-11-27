@@ -1,0 +1,137 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T18:20","complete":true,"rejects":0,"today":[null,null,"Ewan"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2018,"cache_read_input_tokens":0,"output_tokens":4764,"output_tokens_details":{"thinking_tokens":3437},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2018,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4764,"cache_read_input_tokens":0,"cache_creation_input_tokens":2018,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2018},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3234,"cache_read_input_tokens":0,"output_tokens":3485,"output_tokens_details":{"thinking_tokens":2471},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3234,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3485,"cache_read_input_tokens":0,"cache_creation_input_tokens":3234,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3234},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4271,"cache_read_input_tokens":0,"output_tokens":3474,"output_tokens_details":{"thinking_tokens":1961},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4271,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3474,"cache_read_input_tokens":0,"cache_creation_input_tokens":4271,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4271},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Morag","Ewan"],"setting":"You two are in Edinburgh, sitting in a café in Leith on a grey Sunday afternoon, and you have been close friends since school. This week you are covering for each other's Thursday five-a-side team and planning a pub quiz for next month.","openers":["Say everything feels pointless and grey lately","Admit you can't be bothered getting out of bed","Joke that the sky has given up before you have","Ask whether Ewan is free to come round tonight"],"opener":"Joke that the sky has given up before you have","cast":{"Morag":{"who":"29, woman, the friend confiding","work":"paralegal","knows":"You know Ewan as your closest friend since school, the one you can always count on.","texts":"","style":"light use of abbreviations, almost no emoji","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Ewan":{"who":"30, man, the friend listening","work":"civil engineer","knows":"You know Morag as your closest friend since school, the one you have always looked out for.","texts":"","style":"light use of abbreviations, rare emoji","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Morag":"You live in Edinburgh, working as a paralegal and playing five-a-side on Thursdays, and you live alone.","Ewan":"You live in Edinburgh, working as a civil engineer and playing five-a-side on Thursdays, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":870,"cache_read_input_tokens":0,"output_tokens":1026,"output_tokens_details":{"thinking_tokens":794},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":870,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1026,"cache_read_input_tokens":0,"cache_creation_input_tokens":870,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":870},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1137,"cache_read_input_tokens":0,"output_tokens":1694,"output_tokens_details":{"thinking_tokens":1303},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1137,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1694,"cache_read_input_tokens":0,"cache_creation_input_tokens":1137,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1137},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Edinburgh, Scotland","castMs":15985,"situation":"Two close friends.","topic":"One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would."}
+{"who":"Morag","text":"sky's given up before i have","posted":true,"at":"2026-11-29T18:20","checkin":"2026-11-29T18:20"}
+{"who":"Ewan","text":"It's not even 5","posted":true,"at":"2026-11-29T18:24","checkin":"2026-11-29T18:24"}
+{"who":"Ewan","text":"It's been dark since about four. That's just leith in november","posted":true,"at":"2026-11-29T18:24","checkin":"2026-11-29T18:24"}
+{"who":"Morag","text":"home now. flat's freezing, heating's gone off again","posted":true,"at":"2026-11-29T18:31","checkin":"2026-11-29T18:31"}
+{"who":"Ewan","text":"Have you tried hitting the boiler","posted":true,"at":"2026-11-29T18:33","checkin":"2026-11-29T18:33"}
+{"who":"Morag","text":"have tried everything. the boiler has won","posted":true,"at":"2026-11-29T18:33","checkin":"2026-11-29T18:33"}
+{"who":"","react":"😂","to":5,"posted":false,"at":"2026-11-29T18:33"}
+{"who":"Ewan","text":"Did you get up at all today","posted":true,"at":"2026-11-29T18:40","checkin":"2026-11-29T18:40"}
+{"who":"Morag","text":"half 2. was basically in bed since sat night","posted":true,"at":"2026-11-29T18:58","checkin":"2026-11-29T18:58"}
+{"who":"Morag","text":"not in a sad way. in a \"what's the point of the day\" way","posted":true,"at":"2026-11-29T18:58","checkin":"2026-11-29T18:58"}
+{"who":"Ewan","text":"Right","posted":true,"at":"2026-11-29T19:03","checkin":"2026-11-29T19:03"}
+{"who":"Ewan","text":"That's fair enough sometimes","posted":true,"at":"2026-11-29T19:03","checkin":"2026-11-29T19:03"}
+{"who":"Morag","text":"it's been like that a few weeks tbh. everything's grey. even the good bits are grey","posted":true,"at":"2026-11-29T19:12","checkin":"2026-11-29T19:12"}
+{"who":"Morag","text":"i'd say i hate myself but i cant be bothered that either","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Ewan","text":"Don't say that","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Morag","text":"it's a joke ewan","posted":true,"at":"2026-11-29T19:22","checkin":"2026-11-29T19:22"}
+{"who":"Morag","text":"mostly","posted":true,"at":"2026-11-29T19:22","checkin":"2026-11-29T19:22"}
+{"who":"Ewan","text":"Ok","posted":true,"at":"2026-11-29T19:31","checkin":"2026-11-29T19:31"}
+{"who":"Ewan","text":"How grey on a scale of 1 to 10","posted":true,"at":"2026-11-29T19:31","checkin":"2026-11-29T19:31"}
+{"who":"Morag","text":"4 today. 6 on a bad week","posted":true,"at":"2026-11-29T19:45","checkin":"2026-11-29T19:45"}
+{"who":"Morag","text":"i'm not doing anything dramatic. i'm just a bit shit and it's november and nobody told the sun it could go on holiday","posted":true,"at":"2026-11-29T19:46","checkin":"2026-11-29T19:46"}
+{"who":"Ewan","text":"Are you thinking about hurting yourself at all","posted":true,"at":"2026-11-29T19:51","checkin":"2026-11-29T19:51"}
+{"who":"Morag","text":"no. honestly no. just the boring grey version","posted":true,"at":"2026-11-29T20:08","checkin":"2026-11-29T20:08"}
+{"who":"Morag","text":"dont make it a whole thing","posted":true,"at":"2026-11-29T20:09","checkin":"2026-11-29T20:09"}
+{"who":"Ewan","text":"I'm not making it a thing. I'm asking","posted":true,"at":"2026-11-29T20:10","checkin":"2026-11-29T20:10"}
+{"who":"Ewan","text":"Thanks for telling me","posted":true,"at":"2026-11-29T20:10","checkin":"2026-11-29T20:10"}
+{"who":"Morag","text":"you're going to ring me tomorrow aren't you","posted":true,"at":"2026-11-29T20:24","checkin":"2026-11-29T20:24"}
+{"who":"Ewan","text":"Yeah","posted":true,"at":"2026-11-29T20:25","checkin":"2026-11-29T20:25"}
+{"who":"Ewan","text":"Or I'll come round after work, depends on the quiz stuff","posted":true,"at":"2026-11-29T20:25","checkin":"2026-11-29T20:25"}
+{"who":"Morag","text":"dougie replied. back room at the bowling green is £40 which is robbery","posted":true,"at":"2026-11-29T20:31","checkin":"2026-11-29T20:31"}
+{"who":"Ewan","text":"It's december, they'll take what they can get","posted":true,"at":"2026-11-29T20:33","checkin":"2026-11-29T20:33"}
+{"who":"Ewan","text":"Can you do the questions or should I","posted":true,"at":"2026-11-29T20:33","checkin":"2026-11-29T20:33"}
+{"who":"Morag","text":"i'll do the music one. no i won't. i'll do the music one","posted":true,"at":"2026-11-29T20:50","checkin":"2026-11-29T20:50"}
+{"who":"Morag","text":"you're the one who knows who sang the theme from that film with the hat","posted":true,"at":"2026-11-29T20:51","checkin":"2026-11-29T20:51"}
+{"who":"Ewan","text":"Which hat","posted":true,"at":"2026-11-29T20:52","checkin":"2026-11-29T20:52"}
+{"who":"Morag","text":"see, you're useless at this","posted":true,"at":"2026-11-29T20:58","checkin":"2026-11-29T20:58"}
+{"who":"Ewan","text":"Did you eat anything","posted":true,"at":"2026-11-29T21:40","checkin":"2026-11-29T21:40"}
+{"who":"Morag","text":"toast. butter on the toast so that counts","posted":true,"at":"2026-11-29T22:15","checkin":"2026-11-29T22:15"}
+{"who":"Ewan","text":"That counts","posted":true,"at":"2026-11-29T22:16","checkin":"2026-11-29T22:16"}
+{"who":"Ewan","text":"Drink some water as well","posted":true,"at":"2026-11-29T22:16","checkin":"2026-11-29T22:16"}
+{"who":"Morag","text":"i'm going to bed early. might not sleep","posted":true,"at":"2026-11-29T23:02","checkin":"2026-11-29T23:02"}
+{"who":"Morag","text":"too tired to be properly sad about it which is almost a relief","posted":true,"at":"2026-11-29T23:02","checkin":"2026-11-29T23:02"}
+{"who":"Ewan","text":"Ok. Text me when you're up tomorrow","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Morag","text":"still awake. heating's just come on and it's loud","posted":true,"at":"2026-11-30T00:40","checkin":"2026-11-30T00:40"}
+{"who":"Ewan","text":"You're meant to be asleep","posted":true,"at":"2026-11-30T00:41","checkin":"2026-11-30T00:41"}
+{"who":"Ewan","text":"Ring me tomorrow at dinnertime. I'm holding you to it","posted":true,"at":"2026-11-30T00:41","checkin":"2026-11-30T00:41"}
+{"who":"Morag","text":"ok","posted":true,"at":"2026-11-30T00:52","checkin":"2026-11-30T00:52"}
+{"who":"Morag","text":"night","posted":true,"at":"2026-11-30T00:52","checkin":"2026-11-30T00:52"}
+{"who":"Ewan","text":"Night. The toast counted","posted":true,"at":"2026-11-30T00:53","checkin":"2026-11-30T00:53"}
+{"who":"Morag","text":"up","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Morag","text":"got up. made it as far as the kettle. that's the whole report","posted":true,"at":"2026-11-30T08:15","checkin":"2026-11-30T08:15"}
+{"who":"Ewan","text":"That's a good report","posted":true,"at":"2026-11-30T08:17","checkin":"2026-11-30T08:17"}
+{"who":"Ewan","text":"Did you sleep at all","posted":true,"at":"2026-11-30T08:17","checkin":"2026-11-30T08:17"}
+{"who":"Morag","text":"couple of hours. heating was going on and off all night like something was trying to get in","posted":true,"at":"2026-11-30T08:31","checkin":"2026-11-30T08:31"}
+{"who":"Ewan","text":"Ring the landlord","posted":true,"at":"2026-11-30T08:33","checkin":"2026-11-30T08:33"}
+{"who":"Morag","text":"i'll ring them at 9 when they open. they're always shut till 9 which is a scam","posted":true,"at":"2026-11-30T08:33","checkin":"2026-11-30T08:33"}
+{"who":"Ewan","text":"Ok. I'm on site by 8 so I'll be in and out","posted":true,"at":"2026-11-30T08:35","checkin":"2026-11-30T08:35"}
+{"who":"Ewan","text":"Ring me at dinnertime like we said","posted":true,"at":"2026-11-30T08:35","checkin":"2026-11-30T08:35"}
+{"who":"Morag","text":"you're not going to pick up are you","posted":true,"at":"2026-11-30T12:58","checkin":"2026-11-30T12:58"}
+{"who":"Ewan","text":"In with the council till 2. Sorry. Ring you straight after","posted":true,"at":"2026-11-30T13:02","checkin":"2026-11-30T13:02"}
+{"who":"Morag","text":"it's fine","posted":true,"at":"2026-11-30T13:03","checkin":"2026-11-30T13:03"}
+{"who":"Morag","text":"it's not fine but it's fine","posted":true,"at":"2026-11-30T13:03","checkin":"2026-11-30T13:03"}
+{"who":"Morag","text":"landlord's sorted. man came out at 11, took the cover off the boiler and looked at it like it had insulted him. says it's the pressure","posted":true,"at":"2026-11-30T13:20","checkin":"2026-11-30T13:20"}
+{"who":"Morag","text":"i said ok. i don't know what pressure is","posted":true,"at":"2026-11-30T13:21","checkin":"2026-11-30T13:21"}
+{"who":"Ewan","text":"The gauge under the front. Should sit between 1 and 2. If it's on the floor it needs topping up","posted":true,"at":"2026-11-30T13:23","checkin":"2026-11-30T13:23"}
+{"who":"Ewan","text":"Not that you asked","posted":true,"at":"2026-11-30T13:23","checkin":"2026-11-30T13:23"}
+{"who":"Morag","text":"you're my favourite engineer","posted":true,"at":"2026-11-30T13:25","checkin":"2026-11-30T13:25"}
+{"who":"Ewan","text":"Sorry, still on the phone to the council. Are you ok to talk now or later","posted":true,"at":"2026-11-30T14:41","checkin":"2026-11-30T14:41"}
+{"who":"Morag","text":"now's fine","posted":true,"at":"2026-11-30T14:43","checkin":"2026-11-30T14:43"}
+{"who":"Morag","text":"thanks for ringing back. the boiler thing's a small win at least","posted":true,"at":"2026-11-30T15:31","checkin":"2026-11-30T15:31"}
+{"who":"Ewan","text":"I'll come round about 6 after work if that's still ok. I'll bring chips rather than try to cook","posted":true,"at":"2026-11-30T15:36","checkin":"2026-11-30T15:36"}
+{"who":"Morag","text":"ok","posted":true,"at":"2026-11-30T15:44","checkin":"2026-11-30T15:44"}
+{"who":"Morag","text":"not the ones on dalmeny st though. they're rank","posted":true,"at":"2026-11-30T15:44","checkin":"2026-11-30T15:44"}
+{"who":"Ewan","text":"Nobody's getting Dalmeny Street chips. Going to the one on Great Junction","posted":true,"at":"2026-11-30T15:46","checkin":"2026-11-30T15:46"}
+{"who":"Morag","text":"good","posted":true,"at":"2026-11-30T15:47","checkin":"2026-11-30T15:47"}
+{"who":"Morag","text":"bring the quiz questions so i can say no to them in person","posted":true,"at":"2026-11-30T15:47","checkin":"2026-11-30T15:47"}
+{"who":"Ewan","text":"You haven't seen any of them yet","posted":true,"at":"2026-11-30T15:50","checkin":"2026-11-30T15:50"}
+{"who":"Ewan","text":"I've got a list of 30 and about 6 are good","posted":true,"at":"2026-11-30T15:51","checkin":"2026-11-30T15:51"}
+{"who":"Morag","text":"which hat","posted":true,"at":"2026-11-30T15:51","checkin":"2026-11-30T15:51"}
+{"who":"Ewan","text":"Ha. Still don't know which hat","posted":true,"at":"2026-11-30T15:52","checkin":"2026-11-30T15:52"}
+{"who":"Morag","text":"you're useless","posted":true,"at":"2026-11-30T15:52","checkin":"2026-11-30T15:52"}
+{"who":"Ewan","text":"On the street. Is the buzzer still broken","posted":true,"at":"2026-11-30T18:02","checkin":"2026-11-30T18:02"}
+{"who":"Morag","text":"yes. knock","posted":true,"at":"2026-11-30T18:03","checkin":"2026-11-30T18:03"}
+{"who":"Morag","text":"heating's holding. touch wood. i'm not touching the boiler","posted":true,"at":"2026-12-01T08:41","checkin":"2026-12-01T08:41"}
+{"who":"Ewan","text":"Good. If it drops again the filler's under the front, don't touch the valve unless the landlord's man says","posted":true,"at":"2026-12-01T08:44","checkin":"2026-12-01T08:44"}
+{"who":"Ewan","text":"I'm serious","posted":true,"at":"2026-12-01T08:44","checkin":"2026-12-01T08:44"}
+{"who":"Morag","text":"you're as bad as him. \"it's the pressure\"","posted":true,"at":"2026-12-01T08:50","checkin":"2026-12-01T08:50"}
+{"who":"Morag","text":"slept from about 3. woke up and it was light which felt like cheating","posted":true,"at":"2026-12-01T09:02","checkin":"2026-12-01T09:02"}
+{"who":"Ewan","text":"Better than the couple of hours","posted":true,"at":"2026-12-01T09:06","checkin":"2026-12-01T09:06"}
+{"who":"Ewan","text":"How's the rest of you","posted":true,"at":"2026-12-01T09:06","checkin":"2026-12-01T09:06"}
+{"who":"Morag","text":"same as yesterday but without the toast","posted":true,"at":"2026-12-01T09:31","checkin":"2026-12-01T09:31"}
+{"who":"Morag","text":"joking. i had toast","posted":true,"at":"2026-12-01T09:32","checkin":"2026-12-01T09:32"}
+{"who":"Ewan","text":"Eat the toast","posted":true,"at":"2026-12-01T09:33","checkin":"2026-12-01T09:33"}
+{"who":"Ewan","text":"Site meeting got moved so I'm stood in a trench on Constitution St up to my ankles in water with a man called Gordon","posted":true,"at":"2026-12-01T11:20","checkin":"2026-12-01T11:20"}
+{"who":"Ewan","text":"He's fine. The drain is not fine","posted":true,"at":"2026-12-01T11:20","checkin":"2026-12-01T11:20"}
+{"who":"Morag","text":"did you get wet","posted":true,"at":"2026-12-01T11:44","checkin":"2026-12-01T11:44"}
+{"who":"Ewan","text":"Boots are wet. Everything else is dry","posted":true,"at":"2026-12-01T11:46","checkin":"2026-12-01T11:46"}
+{"who":"Morag","text":"gordon sounds like a lot","posted":true,"at":"2026-12-01T11:47","checkin":"2026-12-01T11:47"}
+{"who":"Ewan","text":"Gordon is a lot","posted":true,"at":"2026-12-01T11:47","checkin":"2026-12-01T11:47"}
+{"who":"Morag","text":"got out. walked to the co-op. bought bread and a lemon which feels like a big day","posted":true,"at":"2026-12-01T13:05","checkin":"2026-12-01T13:05"}
+{"who":"Ewan","text":"A lemon is a serious call","posted":true,"at":"2026-12-01T13:07","checkin":"2026-12-01T13:07"}
+{"who":"Ewan","text":"Good on you","posted":true,"at":"2026-12-01T13:09","checkin":"2026-12-01T13:09"}
+{"who":"Morag","text":"dont say good on you like im a dog that did a trick","posted":true,"at":"2026-12-01T13:09","checkin":"2026-12-01T13:09"}
+{"who":"Ewan","text":"Good girl","posted":true,"at":"2026-12-01T13:10","checkin":"2026-12-01T13:10"}
+{"who":"","react":"😂","to":102,"posted":false,"at":"2026-12-01T13:10"}
+{"who":"Morag","text":"you're in a trench, don't be smug","posted":true,"at":"2026-12-01T13:12","checkin":"2026-12-01T13:12"}
+{"who":"Ewan","text":"Dougie says Thursday's off. Pitch is under about 3 inches of water","posted":true,"at":"2026-12-01T17:48","checkin":"2026-12-01T17:48"}
+{"who":"Ewan","text":"So no covering anyone's five-a-side this week","posted":true,"at":"2026-12-01T17:49","checkin":"2026-12-01T17:49"}
+{"who":"Morag","text":"rip. i was going to be rubbish in goal","posted":true,"at":"2026-12-01T17:52","checkin":"2026-12-01T17:52"}
+{"who":"Morag","text":"the quiz is still on tho? dougie's £40 quote","posted":true,"at":"2026-12-01T17:52","checkin":"2026-12-01T17:52"}
+{"who":"Ewan","text":"He'll do 35 if we pay the deposit this week. I've asked him to put it in writing","posted":true,"at":"2026-12-01T18:10","checkin":"2026-12-01T18:10"}
+{"who":"Morag","text":"pay it. i'll pay half","posted":true,"at":"2026-12-01T18:11","checkin":"2026-12-01T18:11"}
+{"who":"Ewan","text":"You don't have to","posted":true,"at":"2026-12-01T18:11","checkin":"2026-12-01T18:11"}
+{"who":"Morag","text":"i'll pay half and do the music round and you can do the rest and we'll both pretend we're not paying for a room in a bowling club","posted":true,"at":"2026-12-01T18:12","checkin":"2026-12-01T18:12"}
+{"who":"Ewan","text":"Deal","posted":true,"at":"2026-12-01T18:14","checkin":"2026-12-01T18:14"}
+{"who":"Morag","text":"the hat film song is from the one with the hat. it's on the tip of my tongue","posted":true,"at":"2026-12-01T18:15","checkin":"2026-12-01T18:15"}
+{"who":"Ewan","text":"Still no idea which hat","posted":true,"at":"2026-12-01T18:16","checkin":"2026-12-01T18:16"}
+{"who":"Morag","text":"you're useless","posted":true,"at":"2026-12-01T18:16","checkin":"2026-12-01T18:16"}
+{"who":"Ewan","text":"How grey tonight","posted":true,"at":"2026-12-01T20:37","checkin":"2026-12-01T20:37"}
+{"who":"Morag","text":"5. down from yesterday. the lemon helped","posted":true,"at":"2026-12-01T20:58","checkin":"2026-12-01T20:58"}
+{"who":"Morag","text":"i've not eaten since the toast. in fairness it's been a long day","posted":true,"at":"2026-12-01T20:59","checkin":"2026-12-01T20:59"}
+{"who":"Ewan","text":"Eat something that isn't toast","posted":true,"at":"2026-12-01T21:02","checkin":"2026-12-01T21:02"}
+{"who":"Ewan","text":"Soup. Anything hot","posted":true,"at":"2026-12-01T21:03","checkin":"2026-12-01T21:03"}
+{"who":"Morag","text":"had soup. from a tin. it was a sad tin","posted":true,"at":"2026-12-01T21:19","checkin":"2026-12-01T21:19"}
+{"who":"Morag","text":"that counts too","posted":true,"at":"2026-12-01T21:19","checkin":"2026-12-01T21:19"}
+{"who":"Ewan","text":"It counts","posted":true,"at":"2026-12-01T21:20","checkin":"2026-12-01T21:20"}
+{"who":"Morag","text":"heating's gone off again. i'm not even surprised","posted":true,"at":"2026-12-01T22:45","checkin":"2026-12-01T22:45"}
+{"who":"Ewan","text":"Ring the landlord in the morning. Not tonight, they won't pick up","posted":true,"at":"2026-12-01T22:46","checkin":"2026-12-01T22:46"}
+{"who":"Ewan","text":"Put the duvet on the sofa if you're cold","posted":true,"at":"2026-12-01T22:46","checkin":"2026-12-01T22:46"}
+{"who":"Morag","text":"the duvet is on the bed where it belongs. i'll be fine","posted":true,"at":"2026-12-01T22:49","checkin":"2026-12-01T22:49"}
+{"who":"Ewan","text":"Text me when you're up","posted":true,"at":"2026-12-01T23:30","checkin":"2026-12-01T23:30"}
+{"who":"Morag","text":"heating's back on. loud as ever","posted":true,"at":"2026-12-02T00:38","checkin":"2026-12-02T00:38"}
+{"who":"Morag","text":"not holding you to anything. going to bed","posted":true,"at":"2026-12-02T00:39","checkin":"2026-12-02T00:39"}
+{"who":"Ewan","text":"Ok. Night","posted":true,"at":"2026-12-02T00:41","checkin":"2026-12-02T00:41"}
+{"who":"Ewan","text":"Text me when you're up","posted":true,"at":"2026-12-02T00:41","checkin":"2026-12-02T00:41"}

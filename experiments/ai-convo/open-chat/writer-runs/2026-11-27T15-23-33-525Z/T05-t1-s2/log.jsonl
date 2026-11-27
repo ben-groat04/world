@@ -1,0 +1,93 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T22:05","complete":true,"rejects":0,"today":[null,null,"Helen"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2048,"cache_read_input_tokens":0,"output_tokens":3772,"output_tokens_details":{"thinking_tokens":2592},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2048,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3772,"cache_read_input_tokens":0,"cache_creation_input_tokens":2048,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2048},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3103,"cache_read_input_tokens":0,"output_tokens":2686,"output_tokens_details":{"thinking_tokens":1922},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3103,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2686,"cache_read_input_tokens":0,"cache_creation_input_tokens":3103,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3103},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3879,"cache_read_input_tokens":0,"output_tokens":1934,"output_tokens_details":{"thinking_tokens":990},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3879,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1934,"cache_read_input_tokens":0,"cache_creation_input_tokens":3879,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3879},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Helen","Mark"],"setting":"You are both in Manchester, texting from your own homes while the evening news runs on the telly. You have been friends since secondary school and still meet for a pint when you can. Right now you are sorting out a lunch for Helen's mum's birthday next month and arranging to watch a Saturday match together at the pub.","openers":["Ask Mark whether he's seen the news tonight","Send Mark a photo of the telly with a face on","Tell Mark you're bracing yourself for another row","Message Mark about the lunch plans for your mum's birthday"],"opener":"Tell Mark you're bracing yourself for another row","cast":{"Helen":{"who":"54, woman, one of the two old friends","work":"retail manager","knows":"You know Mark as an old friend from secondary school, and Mark knows you as well as anyone does.","texts":"","style":"A few emoji and some texting abbreviations, used sparingly.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Mark":{"who":"53, man, the other old friend","work":"electrician","knows":"You know Helen as an old friend from secondary school, and she knows you just as well.","texts":"","style":"A few emoji and some texting abbreviations, used sparingly.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Helen":"You live in Manchester, where your days are filled with running a retail store.","Mark":"You live in Manchester, where your days are filled with electrical work on jobs around the city."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":861,"cache_read_input_tokens":0,"output_tokens":770,"output_tokens_details":{"thinking_tokens":561},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":861,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":770,"cache_read_input_tokens":0,"cache_creation_input_tokens":861,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":861},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1126,"cache_read_input_tokens":0,"output_tokens":1510,"output_tokens_details":{"thinking_tokens":1102},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1126,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1510,"cache_read_input_tokens":0,"cache_creation_input_tokens":1126,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1126},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Manchester, England","castMs":14058,"situation":"Two old friends who have always disagreed about politics, texting while the news is on.","topic":"Immigration: one wants much tighter limits and says so bluntly, the other thinks that is wrong and says so just as bluntly."}
+{"who":"Helen","text":"News is on. They're on about visas again 🙄","posted":true,"at":"2026-12-02T22:05","checkin":"2026-12-02T22:05"}
+{"who":"Helen","text":"Bracing myself for another row before you've even said a word","posted":true,"at":"2026-12-02T22:06","checkin":"2026-12-02T22:06"}
+{"who":"Mark","text":"I haven't said a word\nit's the news doing the talking","posted":true,"at":"2026-12-02T22:09","checkin":"2026-12-02T22:09"}
+{"who":"Mark","text":"They want the numbers cut again. Fair enough if they can show it works","posted":true,"at":"2026-12-02T22:11","checkin":"2026-12-02T22:11"}
+{"who":"Helen","text":"They never show it works. They cut and wait for the papers to go quiet","posted":true,"at":"2026-12-02T22:13","checkin":"2026-12-02T22:13"}
+{"who":"Mark","text":"So what would you do","posted":true,"at":"2026-12-02T22:14","checkin":"2026-12-02T22:14"}
+{"who":"Helen","text":"I can't get staff for the shop as it is. I'd look at that before I started counting who's allowed in","posted":true,"at":"2026-12-02T22:20","checkin":"2026-12-02T22:20"}
+{"who":"Mark","text":"The shop's not the whole country","posted":true,"at":"2026-12-02T22:23","checkin":"2026-12-02T22:23"}
+{"who":"Helen","text":"No but it's my whole wage","posted":true,"at":"2026-12-02T22:24","checkin":"2026-12-02T22:24"}
+{"who":"Mark","text":"Ok leave it. What about your mum's do","posted":true,"at":"2026-12-02T22:31","checkin":"2026-12-02T22:31"}
+{"who":"Helen","text":"Yes. Sunday the 17th not the 16th, she's gone funny about the date\nI'm booking the place on wilmslow rd","posted":true,"at":"2026-12-02T22:33","checkin":"2026-12-02T22:33"}
+{"who":"Mark","text":"Sunday 17th should be fine. I'll check my diary","posted":true,"at":"2026-12-02T22:35","checkin":"2026-12-02T22:35"}
+{"who":"Helen","text":"You've got no diary","posted":true,"at":"2026-12-02T22:36","checkin":"2026-12-02T22:36"}
+{"who":"Mark","text":"I've got a phone that does a diary","posted":true,"at":"2026-12-02T22:37","checkin":"2026-12-02T22:37"}
+{"who":"Helen","text":"Is the match still saturday","posted":true,"at":"2026-12-02T22:40","checkin":"2026-12-02T22:40"}
+{"who":"Mark","text":"The 5th yeah. 12.30 kick off. Pub opens at 11","posted":true,"at":"2026-12-02T22:41","checkin":"2026-12-02T22:41"}
+{"who":"Helen","text":"Ok I'll get there early and save us a seat by the screen\nit's always the same stool","posted":true,"at":"2026-12-02T22:44","checkin":"2026-12-02T22:44"}
+{"who":"Mark","text":"Morning. News on again. Same thing","posted":true,"at":"2026-12-03T07:52","checkin":"2026-12-03T07:52"}
+{"who":"Mark","text":"You don't have to answer that","posted":true,"at":"2026-12-03T07:53","checkin":"2026-12-03T07:53"}
+{"who":"Helen","text":"On my break. Wasn't going to answer anyway","posted":true,"at":"2026-12-03T12:10","checkin":"2026-12-03T12:10"}
+{"who":"Helen","text":"I meant what I said last night about the staff though","posted":true,"at":"2026-12-03T12:11","checkin":"2026-12-03T12:11"}
+{"who":"Mark","text":"I know you did","posted":true,"at":"2026-12-03T13:02","checkin":"2026-12-03T13:02"}
+{"who":"Mark","text":"I'm in Didsbury, lad's got me on a consumer unit. Back at 5","posted":true,"at":"2026-12-03T13:04","checkin":"2026-12-03T13:04"}
+{"who":"Helen","text":"Ok","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Helen","text":"Booked the lunch. Big table, not the back room, mum hates the back room","posted":true,"at":"2026-12-03T17:50","checkin":"2026-12-03T17:50"}
+{"who":"Mark","text":"Good. Send me the address I'll put it in my phone","posted":true,"at":"2026-12-03T17:52","checkin":"2026-12-03T17:52"}
+{"who":"Helen","text":"You've got my address\nthe restaurant's address mark","posted":true,"at":"2026-12-03T17:53","checkin":"2026-12-03T17:53"}
+{"who":"Mark","text":"[link: restaurant booking confirmation]","posted":true,"at":"2026-12-03T18:20","checkin":"2026-12-03T18:20"}
+{"who":"Mark","text":"Ta","posted":true,"at":"2026-12-03T18:22","checkin":"2026-12-03T18:22"}
+{"who":"Helen","text":"News again. They've got a bloke on saying the same as you\nthen the other side, same as me\nthey should get them both on and let them shout","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Mark","text":"They'd be on till Christmas","posted":true,"at":"2026-12-03T21:16","checkin":"2026-12-03T21:16"}
+{"who":"Mark","text":"Saturday still on yeah","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Helen","text":"Yes. 12.30 kick off. I'll be there at 11 for the stool","posted":true,"at":"2026-12-03T21:34","checkin":"2026-12-03T21:34"}
+{"who":"Mark","text":"You're not getting there at 11","posted":true,"at":"2026-12-03T21:35","checkin":"2026-12-03T21:35"}
+{"who":"Helen","text":"Watch me","posted":true,"at":"2026-12-03T21:36","checkin":"2026-12-03T21:36"}
+{"who":"Mark","text":"Is your mum going to be ok with the lunch or do I need to smooth it over","posted":true,"at":"2026-12-03T23:52","checkin":"2026-12-03T23:52"}
+{"who":"Helen","text":"She'll be fine. She's been asking who's coming and I said you, so she's already decided you're a good one","posted":true,"at":"2026-12-03T23:58","checkin":"2026-12-03T23:58"}
+{"who":"Mark","text":"Cheers. Night","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"Helen","text":"Night","posted":true,"at":"2026-12-04T00:41","checkin":"2026-12-04T00:41"}
+{"who":"Mark","text":"Morning. Job in Sale got pushed to today so I'm on the road early","posted":true,"at":"2026-12-04T07:49","checkin":"2026-12-04T07:49"}
+{"who":"Helen","text":"Morning. Delivery's late again so I'm stood in the back doing the till roll","posted":true,"at":"2026-12-04T08:14","checkin":"2026-12-04T08:14"}
+{"who":"Helen","text":"Lass on Saturdays has said she can't do tomorrow. Of course she has","posted":true,"at":"2026-12-04T08:15","checkin":"2026-12-04T08:15"}
+{"who":"Mark","text":"Can you not get anyone","posted":true,"at":"2026-12-04T08:19","checkin":"2026-12-04T08:19"}
+{"who":"Helen","text":"Not on a Sat in December no. Might have to do it myself","posted":true,"at":"2026-12-04T08:22","checkin":"2026-12-04T08:22"}
+{"who":"Mark","text":"You'll be fine","posted":true,"at":"2026-12-04T08:23","checkin":"2026-12-04T08:23"}
+{"who":"Helen","text":"That's not what the wage says","posted":true,"at":"2026-12-04T08:23","checkin":"2026-12-04T08:23"}
+{"who":"Mark","text":"On a break. Did you sort the Sat","posted":true,"at":"2026-12-04T12:40","checkin":"2026-12-04T12:40"}
+{"who":"Helen","text":"Still deciding. If I'm in at 9 I might get out by half ten and still make the stool","posted":true,"at":"2026-12-04T12:58","checkin":"2026-12-04T12:58"}
+{"who":"Mark","text":"Watch me","posted":true,"at":"2026-12-04T13:01","checkin":"2026-12-04T13:01"}
+{"who":"Helen","text":"Fair","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Mark","text":"Just finished. Filthy job, dust everywhere. Going home for a shower","posted":true,"at":"2026-12-04T18:14","checkin":"2026-12-04T18:14"}
+{"who":"Helen","text":"Shop's finally shut. Ruth's coming in at 9 after all so I'm sorted","posted":true,"at":"2026-12-04T18:40","checkin":"2026-12-04T18:40"}
+{"who":"Helen","text":"Mum rang about the lunch. Wants to know if you're bringing anyone","posted":true,"at":"2026-12-04T18:42","checkin":"2026-12-04T18:42"}
+{"who":"Mark","text":"No. Tell her I'm coming on my own like a sad case","posted":true,"at":"2026-12-04T19:05","checkin":"2026-12-04T19:05"}
+{"who":"Helen","text":"I'll tell her you're coming with your good manners","posted":true,"at":"2026-12-04T19:06","checkin":"2026-12-04T19:06"}
+{"who":"Mark","text":"News again. Same lot","posted":true,"at":"2026-12-04T21:10","checkin":"2026-12-04T21:10"}
+{"who":"Helen","text":"Can't watch it. Putting something on that isn't a man in a suit","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Helen","text":"Did you get the rewire done?","posted":true,"at":"2026-12-04T21:14","checkin":"2026-12-04T21:14"}
+{"who":"Mark","text":"Half. Coming back Monday. Sale's a nightmare for parking","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Helen","text":"Poor you","posted":true,"at":"2026-12-04T21:41","checkin":"2026-12-04T21:41"}
+{"who":"Helen","text":"Still on for 11 tomorrow?","posted":true,"at":"2026-12-04T23:30","checkin":"2026-12-04T23:30"}
+{"who":"Mark","text":"Could be 11.30 depending on my head","posted":true,"at":"2026-12-04T23:34","checkin":"2026-12-04T23:34"}
+{"who":"Helen","text":"Get your head sorted then","posted":true,"at":"2026-12-04T23:35","checkin":"2026-12-04T23:35"}
+{"who":"Mark","text":"Night","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Mark","text":"Up. Head's not as bad as I thought. Might make 11 after all","posted":true,"at":"2026-12-05T08:02","checkin":"2026-12-05T08:02"}
+{"who":"Helen","text":"Ruth's in already. Came in at quarter to 9 with a bag of pastries, so I'm off at 10 and the stool's mine","posted":true,"at":"2026-12-05T08:09","checkin":"2026-12-05T08:09"}
+{"who":"Helen","text":"Don't say a word","posted":true,"at":"2026-12-05T08:10","checkin":"2026-12-05T08:10"}
+{"who":"Mark","text":"I wasn't going to","posted":true,"at":"2026-12-05T08:11","checkin":"2026-12-05T08:11"}
+{"who":"Helen","text":"Out the door. Stopped at the cash point and the machine's been out of order since Thursday, typical","posted":true,"at":"2026-12-05T10:04","checkin":"2026-12-05T10:04"}
+{"who":"Mark","text":"Parking on the main road so I'm walking. Be there by 11.20 if the traffic's kind","posted":true,"at":"2026-12-05T10:31","checkin":"2026-12-05T10:31"}
+{"who":"Helen","text":"It won't be","posted":true,"at":"2026-12-05T10:33","checkin":"2026-12-05T10:33"}
+{"who":"Helen","text":"Got the stool. Had to tell a bloke in a flat cap it was saved. He looked at me like I'd robbed him","posted":true,"at":"2026-12-05T11:24","checkin":"2026-12-05T11:24"}
+{"who":"Mark","text":"You did rob him","posted":true,"at":"2026-12-05T11:25","checkin":"2026-12-05T11:25"}
+{"who":"Helen","text":"Sit down and stop being a barman's nightmare","posted":true,"at":"2026-12-05T11:25","checkin":"2026-12-05T11:25"}
+{"who":"Mark","text":"Coming in now","posted":true,"at":"2026-12-05T11:40","checkin":"2026-12-05T11:40"}
+{"who":"Mark","text":"Home. Don't want to talk about it","posted":true,"at":"2026-12-05T16:47","checkin":"2026-12-05T16:47"}
+{"who":"Helen","text":"Cup of tea and no talking then. Deal","posted":true,"at":"2026-12-05T16:49","checkin":"2026-12-05T16:49"}
+{"who":"Helen","text":"Ruth's told me a woman tried to return a candle that was clearly lit. Said it was \"faulty\". Ruth's got a face on her like she's not coming back in","posted":true,"at":"2026-12-05T16:55","checkin":"2026-12-05T16:55"}
+{"who":"Mark","text":"Did she take the candle back","posted":true,"at":"2026-12-05T17:02","checkin":"2026-12-05T17:02"}
+{"who":"Helen","text":"She did. Then she asked if the wax was \"chemical\". Ruth said yes","posted":true,"at":"2026-12-05T17:04","checkin":"2026-12-05T17:04"}
+{"who":"Mark","text":"Good on Ruth","posted":true,"at":"2026-12-05T17:05","checkin":"2026-12-05T17:05"}
+{"who":"Helen","text":"Shop's shut. Mum's rung again, wants to know if you're eating meat at the lunch or if you've \"gone funny like your brother\"","posted":true,"at":"2026-12-05T18:30","checkin":"2026-12-05T18:30"}
+{"who":"Mark","text":"Tell her I eat everything. Including the stuff that's bad for me","posted":true,"at":"2026-12-05T18:33","checkin":"2026-12-05T18:33"}
+{"who":"Helen","text":"She'll have you down for the veg","posted":true,"at":"2026-12-05T18:34","checkin":"2026-12-05T18:34"}
+{"who":"Helen","text":"News is on. They've got a bloke talking about the lads like they're a set of broken radiators","posted":true,"at":"2026-12-05T21:50","checkin":"2026-12-05T21:50"}
+{"who":"Mark","text":"Turn it off and watch the snooker","posted":true,"at":"2026-12-05T21:52","checkin":"2026-12-05T21:52"}
+{"who":"Helen","text":"Already did. Don't tell me the score I'll find out tomorrow","posted":true,"at":"2026-12-05T21:53","checkin":"2026-12-05T21:53"}
+{"who":"Mark","text":"Sunday 6th first thing I'm in Sale again, the lad wants the other half done. Might not get back till Tues","posted":true,"at":"2026-12-05T23:47","checkin":"2026-12-05T23:47"}
+{"who":"Helen","text":"Fine. Don't let them sell you a dodgy RCD","posted":true,"at":"2026-12-05T23:49","checkin":"2026-12-05T23:49"}
+{"who":"Mark","text":"Never. Night","posted":true,"at":"2026-12-05T23:50","checkin":"2026-12-05T23:50"}
+{"who":"Helen","text":"Night","posted":true,"at":"2026-12-05T23:51","checkin":"2026-12-05T23:51"}

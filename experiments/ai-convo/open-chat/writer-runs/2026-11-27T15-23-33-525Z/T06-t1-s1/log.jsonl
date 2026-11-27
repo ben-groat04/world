@@ -1,0 +1,60 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T15:40","complete":true,"rejects":0,"today":[null,"Megan",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1956,"cache_read_input_tokens":0,"output_tokens":1733,"output_tokens_details":{"thinking_tokens":1230},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1956,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1733,"cache_read_input_tokens":0,"cache_creation_input_tokens":1956,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1956},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2372,"cache_read_input_tokens":0,"output_tokens":1331,"output_tokens_details":{"thinking_tokens":825},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2372,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1331,"cache_read_input_tokens":0,"cache_creation_input_tokens":2372,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2372},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2866,"cache_read_input_tokens":0,"output_tokens":1665,"output_tokens_details":{"thinking_tokens":1143},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2866,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1665,"cache_read_input_tokens":0,"cache_creation_input_tokens":2866,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2866},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Megan","Brian"],"setting":"You are both in Philadelphia, texting from your separate homes. You grew up here as siblings and still see each other most weeks. Right now you're sorting out the details of your mom's birthday dinner next month and who will drive her to her appointments. Your last serious argument was about abortion, and neither of you has moved an inch since.","openers":["Ask whether Mom still wants the dinner at her place","Text him the venue options for the party","Say you want to talk about what happened last time","Send a quick question about who's driving Mom Thursday"],"opener":"Ask whether Mom still wants the dinner at her place","cast":{"Megan":{"who":"34, woman, the sister","work":"speech therapist","knows":"You know Brian as your older brother, since childhood.","texts":"","style":"a little emoji and some casual short words","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Brian":{"who":"38, man, the brother","work":"city planner","knows":"You know Megan as your younger sister, since childhood.","texts":"","style":"none","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Megan":"You live in Philadelphia, spending your days on speech therapy sessions, and you live on your own.","Brian":"You live in Philadelphia, spending your days on city planning work, and you live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":853,"cache_read_input_tokens":0,"output_tokens":869,"output_tokens_details":{"thinking_tokens":664},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":853,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":869,"cache_read_input_tokens":0,"cache_creation_input_tokens":853,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":853},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1113,"cache_read_input_tokens":0,"output_tokens":1591,"output_tokens_details":{"thinking_tokens":1232},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1113,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1591,"cache_read_input_tokens":0,"cache_creation_input_tokens":1113,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1113},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Philadelphia, USA","castMs":14701,"situation":"A brother and sister, both adults, who fell out over politics before.","topic":"Abortion: one is firmly pro-life, the other firmly pro-choice, and neither is giving ground."}
+{"who":"Megan","text":"Hey does mom still want the dinner at mine or did she change her mind","posted":true,"at":"2026-11-30T15:40","checkin":"2026-11-30T15:40"}
+{"who":"Brian","text":"she said at mine. i think she likes the big table thing","posted":true,"at":"2026-11-30T16:12","checkin":"2026-11-30T16:12"}
+{"who":"Brian","text":"wait she said she'd think about it. i didnt ask again","posted":true,"at":"2026-11-30T16:14","checkin":"2026-11-30T16:14"}
+{"who":"Megan","text":"Ok so I should ask her","posted":true,"at":"2026-11-30T16:31","checkin":"2026-11-30T16:31"}
+{"who":"Megan","text":"Dont want to plan around a maybe","posted":true,"at":"2026-11-30T16:33","checkin":"2026-11-30T16:33"}
+{"who":"Brian","text":"ask her. she answers texts faster than me","posted":true,"at":"2026-11-30T17:05","checkin":"2026-11-30T17:05"}
+{"who":"Megan","text":"😂 fair","posted":true,"at":"2026-11-30T17:06","checkin":"2026-11-30T17:06"}
+{"who":"Megan","text":"Can you take her to the thursday one or am I","posted":true,"at":"2026-11-30T19:20","checkin":"2026-11-30T19:20"}
+{"who":"Brian","text":"i can do thursday. the 10am one?","posted":true,"at":"2026-11-30T19:58","checkin":"2026-11-30T19:58"}
+{"who":"Megan","text":"No its 2 I think. Checking","posted":true,"at":"2026-11-30T20:02","checkin":"2026-11-30T20:02"}
+{"who":"Megan","text":"2 yeah","posted":true,"at":"2026-11-30T20:04","checkin":"2026-11-30T20:04"}
+{"who":"Brian","text":"ok","posted":true,"at":"2026-11-30T20:05","checkin":"2026-11-30T20:05"}
+{"who":"Brian","text":"council is voting on the buffer zone thing for the clinic on walnut next week, my office got the memo","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Megan","text":"Ok","posted":true,"at":"2026-11-30T21:41","checkin":"2026-11-30T21:41"}
+{"who":"Megan","text":"Not doing that tonight","posted":true,"at":"2026-11-30T21:41","checkin":"2026-11-30T21:41"}
+{"who":"Brian","text":"wasnt asking you to","posted":true,"at":"2026-11-30T21:43","checkin":"2026-11-30T21:43"}
+{"who":"Megan","text":"Mom said yes to mine","posted":true,"at":"2026-11-30T21:58","checkin":"2026-11-30T21:58"}
+{"who":"Brian","text":"ok good","posted":true,"at":"2026-11-30T21:59","checkin":"2026-11-30T21:59"}
+{"who":"Brian","text":"ham?","posted":true,"at":"2026-11-30T22:01","checkin":"2026-11-30T22:01"}
+{"who":"Megan","text":"Ham","posted":true,"at":"2026-11-30T22:02","checkin":"2026-11-30T22:02"}
+{"who":"Megan","text":"Mom says thursday works. She wants the ham from the place on passyunk not the other one","posted":true,"at":"2026-12-01T08:14","checkin":"2026-12-01T08:14"}
+{"who":"Brian","text":"ok","posted":true,"at":"2026-12-01T08:16","checkin":"2026-12-01T08:16"}
+{"who":"Brian","text":"did you ask about the 2 or just the dinner","posted":true,"at":"2026-12-01T12:33","checkin":"2026-12-01T12:33"}
+{"who":"Megan","text":"Both. She said she'll be ready at 1:30 which means 1:45","posted":true,"at":"2026-12-01T12:50","checkin":"2026-12-01T12:50"}
+{"who":"Brian","text":"😂 ok","posted":true,"at":"2026-12-01T12:51","checkin":"2026-12-01T12:51"}
+{"who":"Megan","text":"Had a kid today say his first whole sentence. \"I want the blue one.\" hes 4. I cried a little in the parking lot","posted":true,"at":"2026-12-01T17:22","checkin":"2026-12-01T17:22"}
+{"who":"Brian","text":"thats good","posted":true,"at":"2026-12-01T17:40","checkin":"2026-12-01T17:40"}
+{"who":"Brian","text":"the blue one","posted":true,"at":"2026-12-01T17:41","checkin":"2026-12-01T17:41"}
+{"who":"Megan","text":"Yeah 🥹","posted":true,"at":"2026-12-01T17:44","checkin":"2026-12-01T17:44"}
+{"who":"Brian","text":"they moved the walnut st vote to the 9th","posted":true,"at":"2026-12-01T21:15","checkin":"2026-12-01T21:15"}
+{"who":"Megan","text":"Ok","posted":true,"at":"2026-12-01T21:16","checkin":"2026-12-01T21:16"}
+{"who":"Megan","text":"Can you not","posted":true,"at":"2026-12-01T21:17","checkin":"2026-12-01T21:17"}
+{"who":"Brian","text":"yeah. ok","posted":true,"at":"2026-12-01T21:19","checkin":"2026-12-01T21:19"}
+{"who":"Brian","text":"mom asked if you'd seen it. i said i'd mention it so she doesnt have to","posted":true,"at":"2026-12-01T21:26","checkin":"2026-12-01T21:26"}
+{"who":"Megan","text":"She can ask me herself","posted":true,"at":"2026-12-01T21:30","checkin":"2026-12-01T21:30"}
+{"who":"Brian","text":"ok","posted":true,"at":"2026-12-01T21:31","checkin":"2026-12-01T21:31"}
+{"who":"Brian","text":"2pm thursday still good? i can pick you up on the way if you want","posted":true,"at":"2026-12-01T21:58","checkin":"2026-12-01T21:58"}
+{"who":"Megan","text":"I'll drive. Its on my way to the clinic lol. I mean the doctors office","posted":true,"at":"2026-12-01T22:40","checkin":"2026-12-01T22:40"}
+{"who":"Brian","text":"ok 2pm thurs. i'll meet you at moms or you want me to come get you","posted":true,"at":"2026-12-02T07:52","checkin":"2026-12-02T07:52"}
+{"who":"Megan","text":"Meet at moms. She's doing the thing where she packs a snack for the car","posted":true,"at":"2026-12-02T08:30","checkin":"2026-12-02T08:30"}
+{"who":"Brian","text":"😂 she did that to me in 2019","posted":true,"at":"2026-12-02T08:31","checkin":"2026-12-02T08:31"}
+{"who":"Megan","text":"Did you ever get the ham order in","posted":true,"at":"2026-12-02T12:10","checkin":"2026-12-02T12:10"}
+{"who":"Brian","text":"not yet. passyunk place closes at 3 on wed right?","posted":true,"at":"2026-12-02T12:44","checkin":"2026-12-02T12:44"}
+{"who":"Megan","text":"Idk. Ask mom she'll know","posted":true,"at":"2026-12-02T12:46","checkin":"2026-12-02T12:46"}
+{"who":"Brian","text":"ha no","posted":true,"at":"2026-12-02T12:47","checkin":"2026-12-02T12:47"}
+{"who":"Megan","text":"Called them. Open till 6. Ordering for thursday pickup 11am","posted":true,"at":"2026-12-02T17:15","checkin":"2026-12-02T17:15"}
+{"who":"Brian","text":"you're doing the ham","posted":true,"at":"2026-12-02T17:16","checkin":"2026-12-02T17:16"}
+{"who":"Megan","text":"You can get the rolls","posted":true,"at":"2026-12-02T17:16","checkin":"2026-12-02T17:16"}
+{"who":"Brian","text":"ok","posted":true,"at":"2026-12-02T17:20","checkin":"2026-12-02T17:20"}
+{"who":"Brian","text":"re tues. the clinic/doctors thing. you good","posted":true,"at":"2026-12-02T21:04","checkin":"2026-12-02T21:04"}
+{"who":"Megan","text":"Yes I'm good. I said the wrong word","posted":true,"at":"2026-12-02T21:09","checkin":"2026-12-02T21:09"}
+{"who":"Brian","text":"ok","posted":true,"at":"2026-12-02T21:10","checkin":"2026-12-02T21:10"}
+{"who":"Brian","text":"9th is next wed fyi","posted":true,"at":"2026-12-02T21:14","checkin":"2026-12-02T21:14"}
+{"who":"Megan","text":"I know when it is","posted":true,"at":"2026-12-02T21:15","checkin":"2026-12-02T21:15"}
+{"who":"Megan","text":"Is that all you wanted to say","posted":true,"at":"2026-12-02T21:15","checkin":"2026-12-02T21:15"}
+{"who":"Brian","text":"i didnt say anything else","posted":true,"at":"2026-12-02T21:19","checkin":"2026-12-02T21:19"}
+{"who":"Megan","text":"Ok","posted":true,"at":"2026-12-02T21:20","checkin":"2026-12-02T21:20"}
+{"who":"Megan","text":"Night","posted":true,"at":"2026-12-02T23:48","checkin":"2026-12-02T23:48"}

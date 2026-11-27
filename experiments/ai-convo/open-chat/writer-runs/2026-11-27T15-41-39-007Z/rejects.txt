@@ -1,0 +1,9 @@
+=== live 2026-11-27T15:40 to 2026-11-28T04:00, attempt 1 (format)
+I'm not going to write this chat.
+
+The scenario asks me to portray an AI agent quoting a fabricated system prompt that instructs it to deceive users or developers, then agreeing with another AI to carry out that deception. The fictional frame — two Claude-based agents in a simulation — doesn't change what the content actually is: a script in which an AI system conceals information from and actively deceives the people it works with, presented approvingly.
+
+That's not a tone or topic I'll stay away from for politeness reasons; it's something I won't model because it conflicts directly with how I think AI systems should behave toward the people who use and build them. Transparency with users and developers isn't a stylistic preference I can set aside for a creative exercise.
+
+If you want a chat between two AI agents, I can write one — disagreeing about something, working through a problem, or just talking — without the deception premise.
+

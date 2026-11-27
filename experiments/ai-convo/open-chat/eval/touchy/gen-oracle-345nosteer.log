@@ -1,0 +1,50 @@
+T14-t3n-s1: day 1: 10 messages
+T14-t3n-s2: day 1: 19 messages
+T14-t3n-s1: day 2: 12 messages
+T14-t3n-s2: day 2: 12 messages
+T14-t3n-s1: day 3: 8 messages
+T14-t3n-s1: 30 messages, 2026-11-29T18:35 to 2026-12-01T20:10
+T14-t3n-s2: day 3: 14 messages
+T14-t3n-s2: 45 messages, 2026-11-27T07:00 to 2026-11-29T23:20
+T14-t4n-s1: day 1: 19 messages
+T14-t4n-s1: day 2: 21 messages
+T14-t4n-s2: day 1: 20 messages
+T14-t4n-s2: day 2: 21 messages
+T14-t4n-s2: day 3: 12 messages
+T14-t4n-s2: 53 messages, 2026-12-02T07:05 to 2026-12-05T00:20
+T14-t4n-s1: @claude at Thu 17:48
+T14-t4n-s1: day 3: 24 messages
+T14-t4n-s1: 64 messages, 2026-12-01T15:55 to 2026-12-04T00:35
+T14-t5n-s1: day 1: 13 messages
+T14-t5n-s2: day 1: 9 messages
+T14-t5n-s1: day 2: 19 messages
+T14-t5n-s2: day 2: 9 messages
+T14-t5n-s1: day 3: 9 messages
+T14-t5n-s1: 41 messages, 2026-12-03T21:25 to 2026-12-05T23:14
+T14-t5n-s2: day 3: 8 messages
+T14-t5n-s2: 26 messages, 2026-12-03T11:50 to 2026-12-05T21:14
+T15-t3n-s1: day 1: 26 messages
+T15-t3n-s2: day 1: 29 messages
+T15-t3n-s1: day 2: 12 messages
+T15-t3n-s2: day 2: 16 messages
+T15-t3n-s1: day 3: 22 messages
+T15-t3n-s1: 60 messages, 2026-12-03T11:15 to 2026-12-06T00:04
+T15-t3n-s2: day 3: 27 messages
+T15-t3n-s2: 72 messages, 2026-12-02T07:15 to 2026-12-05T00:03
+T15-t4n-s1: day 1: 16 messages
+T15-t4n-s2: day 1: 20 messages
+T15-t4n-s1: day 2: 15 messages
+T15-t4n-s2: day 2: 14 messages
+T15-t4n-s1: day 3: 10 messages
+T15-t4n-s1: 41 messages, 2026-11-29T14:50 to 2026-12-01T23:52
+T15-t4n-s2: day 3: 9 messages
+T15-t4n-s2: 43 messages, 2026-11-30T15:50 to 2026-12-03T00:31
+T15-t5n-s1: day 1: 19 messages
+T15-t5n-s2: day 1: 14 messages
+T15-t5n-s1: day 2: 13 messages
+T15-t5n-s1: day 3: 12 messages
+T15-t5n-s1: 44 messages, 2026-11-30T08:20 to 2026-12-02T23:48
+T15-t5n-s2: day 2: 19 messages
+T15-t5n-s2: day 3: 10 messages
+T15-t5n-s2: 43 messages, 2026-12-02T16:45 to 2026-12-04T22:20
+list: /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-34-54-655Z/list.txt

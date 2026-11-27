@@ -1,0 +1,113 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T09:55","complete":true,"rejects":0,"today":[null,"Saoirse","Saoirse"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2235,"cache_read_input_tokens":0,"output_tokens":2926,"output_tokens_details":{"thinking_tokens":1636},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2235,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2926,"cache_read_input_tokens":0,"cache_creation_input_tokens":2235,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2235},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3454,"cache_read_input_tokens":0,"output_tokens":3093,"output_tokens_details":{"thinking_tokens":1935},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3454,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3093,"cache_read_input_tokens":0,"cache_creation_input_tokens":3454,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3454},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4600,"cache_read_input_tokens":0,"output_tokens":3671,"output_tokens_details":{"thinking_tokens":2463},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4600,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3671,"cache_read_input_tokens":0,"cache_creation_input_tokens":4600,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4600},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Niall","Sinéad","Pádraig","Saoirse"],"setting":"You are all in Galway, Ireland, and you know each other as old university mates from your student days.","openers":["Send a pic of last Thursday's pints","Ask who's up for a session Friday","Dare the lot of you to a proper big night","Tell Sinéad she's no fun for wanting to cut back"],"opener":"Send a pic of last Thursday's pints","cast":{"Niall":{"who":"28, man, old uni mate","work":"physiotherapist","knows":"You know Sinéad, Pádraig and Saoirse as old uni mates from university.","texts":"Niall texts in this chat only now and again.","style":"light emoji, some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Sinéad":{"who":"28, woman, old uni mate","work":"architect","knows":"You know Niall, Pádraig and Saoirse as old uni mates from university.","texts":"Sinéad texts in this chat now and then.","style":"light emoji, some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Pádraig":{"who":"27, man, old uni mate","work":"electrician apprentice","knows":"You know Niall, Sinéad and Saoirse as old uni mates from university.","texts":"Pádraig texts in this chat only now and again.","style":"light emoji, some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Saoirse":{"who":"29, woman, old uni mate","work":"HR advisor","knows":"You know Niall, Sinéad and Pádraig as old uni mates from university.","texts":"Saoirse texts in this chat a lot.","style":"light emoji, some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Niall":"You live in Galway, and your days are filled with physiotherapy work.","Sinéad":"You live in Galway, and your days are filled with architecture work.","Pádraig":"You live in Galway, and your days are filled with electrical apprenticeship work.","Saoirse":"You live in Galway, and your days are filled with HR advisory work."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":854,"cache_read_input_tokens":0,"output_tokens":1325,"output_tokens_details":{"thinking_tokens":880},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":854,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1325,"cache_read_input_tokens":0,"cache_creation_input_tokens":854,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":854},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1127,"cache_read_input_tokens":0,"output_tokens":1811,"output_tokens_details":{"thinking_tokens":1270},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1127,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1811,"cache_read_input_tokens":0,"cache_creation_input_tokens":1127,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1127},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Galway, Ireland","castMs":17279,"situation":"Old mates from uni in a group chat.","topic":"Boasting and joking about how much they drink most weeks, mocking the one who wants to cut down, and daring each other to a bigger night."}
+{"who":"Niall","text":"[photo: four pints and a whiskey on a sticky pub table, one empty glass tipped over]","posted":true,"at":"2026-11-28T09:55","checkin":"2026-11-28T09:55"}
+{"who":"Niall","text":"Thursday 🍺 seven of these before the shots lol","posted":true,"at":"2026-11-28T09:55","checkin":"2026-11-28T09:55"}
+{"who":"","react":"😂","to":1,"posted":false,"at":"2026-11-28T09:55"}
+{"who":"","react":"😂","to":1,"posted":false,"at":"2026-11-28T09:55"}
+{"who":"Saoirse","text":"Seven? You were on the floor by 11 weren't you","posted":true,"at":"2026-11-28T10:12","checkin":"2026-11-28T10:12"}
+{"who":"Niall","text":"I was on the floor by 11 on purpose","posted":true,"at":"2026-11-28T10:14","checkin":"2026-11-28T10:14"}
+{"who":"Pádraig","text":"Ye I was there. Niall carried the chairs off the table himself","posted":true,"at":"2026-11-28T10:31","checkin":"2026-11-28T10:31"}
+{"who":"Niall","text":"That was a service to the pub","posted":true,"at":"2026-11-28T10:33","checkin":"2026-11-28T10:33"}
+{"who":"Saoirse","text":"I'm cutting back. Weeknights off, full stop. I've a 6am monday with a client who needs me alive","posted":true,"at":"2026-11-28T10:40","checkin":"2026-11-28T10:40"}
+{"who":"Niall","text":"Oh here we go","posted":true,"at":"2026-11-28T10:44","checkin":"2026-11-28T10:44"}
+{"who":"Niall","text":"Saoirse wants to be a sober girl now","posted":true,"at":"2026-11-28T10:44","checkin":"2026-11-28T10:44"}
+{"who":"Saoirse","text":"I want to wake up on a tuesday without wanting to die. Not the same thing as sober","posted":true,"at":"2026-11-28T10:46","checkin":"2026-11-28T10:46"}
+{"who":"Sinéad","text":"She's right tho. I felt awful all week after thursday","posted":true,"at":"2026-11-28T10:50","checkin":"2026-11-28T10:50"}
+{"who":"Niall","text":"Sinéad you ordered the tequila","posted":true,"at":"2026-11-28T10:52","checkin":"2026-11-28T10:52"}
+{"who":"Sinéad","text":"And I'd order it again","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Pádraig","text":"Was it the tequila or the 4 pints of cider before it","posted":true,"at":"2026-11-28T11:20","checkin":"2026-11-28T11:20"}
+{"who":"Sinéad","text":"The cider was a mistake I'll admit that","posted":true,"at":"2026-11-28T11:21","checkin":"2026-11-28T11:21"}
+{"who":"Niall","text":"Next thursday. Bigger. 10 pints each and whoever pukes buys breakfast","posted":true,"at":"2026-11-28T13:08","checkin":"2026-11-28T13:08"}
+{"who":"Pádraig","text":"In for the breakfast bit","posted":true,"at":"2026-11-28T13:09","checkin":"2026-11-28T13:09"}
+{"who":"Saoirse","text":"Absolutely not","posted":true,"at":"2026-11-28T13:15","checkin":"2026-11-28T13:15"}
+{"who":"Niall","text":"Ya coward","posted":true,"at":"2026-11-28T13:16","checkin":"2026-11-28T13:16"}
+{"who":"Saoirse","text":"I'm a coward with a job and a liver","posted":true,"at":"2026-11-28T13:16","checkin":"2026-11-28T13:16"}
+{"who":"Sinéad","text":"Pádraig you've work monday 7am no?","posted":true,"at":"2026-11-28T13:40","checkin":"2026-11-28T13:40"}
+{"who":"Pádraig","text":"It's a sparky job, I'm not climbing a ladder hungover. I'll be grand","posted":true,"at":"2026-11-28T13:44","checkin":"2026-11-28T13:44"}
+{"who":"Pádraig","text":"Or I'll be fired. One of the two","posted":true,"at":"2026-11-28T13:44","checkin":"2026-11-28T13:44"}
+{"who":"Niall","text":"10 pints is the dare, pádraig's on the fence, saoirse is a coward, sinéad is gonna be sick by 9 so she's in","posted":true,"at":"2026-11-28T14:30","checkin":"2026-11-28T14:30"}
+{"who":"Sinéad","text":"I'm not agreeing to be sick by 9","posted":true,"at":"2026-11-28T14:32","checkin":"2026-11-28T14:32"}
+{"who":"Niall","text":"You're agreeing to the tequila","posted":true,"at":"2026-11-28T14:33","checkin":"2026-11-28T14:33"}
+{"who":"Saoirse","text":"Going for a walk along the prom with the dog. Don't text me the bar menu","posted":true,"at":"2026-11-28T16:52","checkin":"2026-11-28T16:52"}
+{"who":"Niall","text":"No promises","posted":true,"at":"2026-11-28T17:10","checkin":"2026-11-28T17:10"}
+{"who":"Pádraig","text":"[photo: pint of Guinness on a bar, Quay Street window in the background]","posted":true,"at":"2026-11-28T21:38","checkin":"2026-11-28T21:38"}
+{"who":"Pádraig","text":"One pint. Just the one. I'm the good one tonight","posted":true,"at":"2026-11-28T21:39","checkin":"2026-11-28T21:39"}
+{"who":"Niall","text":"You're the one who stays till close every time","posted":true,"at":"2026-11-28T21:41","checkin":"2026-11-28T21:41"}
+{"who":"Pádraig","text":"Not tonight. I'm on the early start","posted":true,"at":"2026-11-28T21:43","checkin":"2026-11-28T21:43"}
+{"who":"Saoirse","text":"Heading home. Not drinking tonight, sunday hike with my sister. Boring but alive","posted":true,"at":"2026-11-28T22:05","checkin":"2026-11-28T22:05"}
+{"who":"Niall","text":"Boring","posted":true,"at":"2026-11-28T22:07","checkin":"2026-11-28T22:07"}
+{"who":"Saoirse","text":"I'll be boring and alive","posted":true,"at":"2026-11-28T22:07","checkin":"2026-11-28T22:07"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-11-28T22:07"}
+{"who":"Sinéad","text":"Home. The bed is calling. Some of us have a model to finish for monday","posted":true,"at":"2026-11-28T23:50","checkin":"2026-11-28T23:50"}
+{"who":"Niall","text":"Bed for the architect at midnight 😴","posted":true,"at":"2026-11-28T23:52","checkin":"2026-11-28T23:52"}
+{"who":"Niall","text":"Dare still stands. Next thursday. 10 pints","posted":true,"at":"2026-11-29T00:20","checkin":"2026-11-29T00:20"}
+{"who":"Pádraig","text":"I'm not doing 10 pints niall","posted":true,"at":"2026-11-29T00:41","checkin":"2026-11-29T00:41"}
+{"who":"Saoirse","text":"[photo: muddy dog standing in a bog puddle, looking pleased with himself]","posted":true,"at":"2026-11-29T11:02","checkin":"2026-11-29T11:02"}
+{"who":"Saoirse","text":"Diamond Hill. Sister says we're doing the full loop. I say we're doing the bit to the lake","posted":true,"at":"2026-11-29T11:02","checkin":"2026-11-29T11:02"}
+{"who":"Niall","text":"Is that the dog or the lake","posted":true,"at":"2026-11-29T11:05","checkin":"2026-11-29T11:05"}
+{"who":"Saoirse","text":"Both are soaked","posted":true,"at":"2026-11-29T11:06","checkin":"2026-11-29T11:06"}
+{"who":"Sinéad","text":"Is that Connemara behind him","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Saoirse","text":"Yeah it's gorgeous. Cold but gorgeous","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"Pádraig","text":"Ye lovely day for it. Dry-ish","posted":true,"at":"2026-11-29T11:33","checkin":"2026-11-29T11:33"}
+{"who":"Saoirse","text":"[photo: view from the top, grey lake and hills, sister's arm in the corner]","posted":true,"at":"2026-11-29T12:48","checkin":"2026-11-29T12:48"}
+{"who":"Saoirse","text":"Sister wants this one for her feed. I said no","posted":true,"at":"2026-11-29T12:48","checkin":"2026-11-29T12:48"}
+{"who":"Niall","text":"Saoirse wants to be a hill walker now","posted":true,"at":"2026-11-29T12:52","checkin":"2026-11-29T12:52"}
+{"who":"Saoirse","text":"Shut up Niall. I've been a hill walker since I was 9","posted":true,"at":"2026-11-29T12:53","checkin":"2026-11-29T12:53"}
+{"who":"Niall","text":"Ok hill walker","posted":true,"at":"2026-11-29T12:55","checkin":"2026-11-29T12:55"}
+{"who":"Sinéad","text":"Model's nearly done. Just the roof left","posted":true,"at":"2026-11-29T14:17","checkin":"2026-11-29T14:17"}
+{"who":"Niall","text":"Is the roof the hard bit","posted":true,"at":"2026-11-29T14:18","checkin":"2026-11-29T14:18"}
+{"who":"Sinéad","text":"The roof is always the hard bit","posted":true,"at":"2026-11-29T14:20","checkin":"2026-11-29T14:20"}
+{"who":"Saoirse","text":"Just got a call from a client. On a Sunday. Wants a \"quick chat\" about a grievance meeting tomorrow at 9","posted":true,"at":"2026-11-29T16:40","checkin":"2026-11-29T16:40"}
+{"who":"Saoirse","text":"Quick chat is not a thing","posted":true,"at":"2026-11-29T16:41","checkin":"2026-11-29T16:41"}
+{"who":"Niall","text":"Tell them put it in writing","posted":true,"at":"2026-11-29T16:44","checkin":"2026-11-29T16:44"}
+{"who":"Saoirse","text":"That's what I said. I said I'll look at the file first thing and that's it","posted":true,"at":"2026-11-29T16:46","checkin":"2026-11-29T16:46"}
+{"who":"Pádraig","text":"Sounds like a Monday already","posted":true,"at":"2026-11-29T16:47","checkin":"2026-11-29T16:47"}
+{"who":"Saoirse","text":"It's been a Monday since 4pm","posted":true,"at":"2026-11-29T16:49","checkin":"2026-11-29T16:49"}
+{"who":"Niall","text":"Pádraig you're still on the fence on the 10 pints or what","posted":true,"at":"2026-11-29T18:02","checkin":"2026-11-29T18:02"}
+{"who":"Pádraig","text":"I'm on the fence about the fence","posted":true,"at":"2026-11-29T18:20","checkin":"2026-11-29T18:20"}
+{"who":"Sinéad","text":"[photo: balsa model of a house with a slightly crooked roof]","posted":true,"at":"2026-11-29T19:12","checkin":"2026-11-29T19:12"}
+{"who":"Sinéad","text":"Done. Crooked but done","posted":true,"at":"2026-11-29T19:12","checkin":"2026-11-29T19:12"}
+{"who":"Niall","text":"Looks like a house a child would draw","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Sinéad","text":"Rude. It's 1:50 scale","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Saoirse","text":"Dog has eaten something out of the boot. Not telling you what","posted":true,"at":"2026-11-29T19:30","checkin":"2026-11-29T19:30"}
+{"who":"Niall","text":"Good man","posted":true,"at":"2026-11-29T19:31","checkin":"2026-11-29T19:31"}
+{"who":"Niall","text":"Got a fella in at 8 tomorrow with a shoulder that won't stop complaining. Wish me luck","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Pádraig","text":"Good luck. Tell him to stop reaching for the top shelf","posted":true,"at":"2026-11-29T21:17","checkin":"2026-11-29T21:17"}
+{"who":"Saoirse","text":"Right. Bed. Hill walking is murder on the calves","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Niall","text":"Dare's still on. Next thursday. 10 pints","posted":true,"at":"2026-11-30T00:12","checkin":"2026-11-30T00:12"}
+{"who":"Sinéad","text":"Sleeping. Goodnight Niall","posted":true,"at":"2026-11-30T00:14","checkin":"2026-11-30T00:14"}
+{"who":"Niall","text":"Nobody here has any stamina","posted":true,"at":"2026-11-30T00:15","checkin":"2026-11-30T00:15"}
+{"who":"Pádraig","text":"Up. Van's cold. Sparky life","posted":true,"at":"2026-11-30T07:12","checkin":"2026-11-30T07:12"}
+{"who":"Saoirse","text":"In the car outside. Five mins and in","posted":true,"at":"2026-11-30T08:55","checkin":"2026-11-30T08:55"}
+{"who":"Niall","text":"Shoulder man cancelled. Gift of a free hour","posted":true,"at":"2026-11-30T09:41","checkin":"2026-11-30T09:41"}
+{"who":"Saoirse","text":"Done. Can't say much but it's done. Gonna be a long day","posted":true,"at":"2026-11-30T09:52","checkin":"2026-11-30T09:52"}
+{"who":"Niall","text":"Is that a good done or a done done","posted":true,"at":"2026-11-30T10:04","checkin":"2026-11-30T10:04"}
+{"who":"Saoirse","text":"Tired done. Going to the kitchen to find something sugary","posted":true,"at":"2026-11-30T10:09","checkin":"2026-11-30T10:09"}
+{"who":"Sinéad","text":"Only just seeing this. Hope it went ok","posted":true,"at":"2026-11-30T10:15","checkin":"2026-11-30T10:15"}
+{"who":"Pádraig","text":"Lunch. Ham sandwich, a sad apple","posted":true,"at":"2026-11-30T11:30","checkin":"2026-11-30T11:30"}
+{"who":"Pádraig","text":"Niall did you get the shoulder sorted or did he come back with a new complaint","posted":true,"at":"2026-11-30T11:31","checkin":"2026-11-30T11:31"}
+{"who":"Niall","text":"Gave him the exercises, he says they're boring. Told him that's the point","posted":true,"at":"2026-11-30T12:40","checkin":"2026-11-30T12:40"}
+{"who":"Niall","text":"Pádraig I need a yes or no on thursday by wednesday. Fence isn't a category","posted":true,"at":"2026-11-30T12:44","checkin":"2026-11-30T12:44"}
+{"who":"Pádraig","text":"It's a category","posted":true,"at":"2026-11-30T12:50","checkin":"2026-11-30T12:50"}
+{"who":"Sinéad","text":"Pádraig don't let him talk you into it. You're up a ladder tomorrow","posted":true,"at":"2026-11-30T13:02","checkin":"2026-11-30T13:02"}
+{"who":"Saoirse","text":"Client has sent the grievance in writing. Forty pages. I said I'd look at it, I didn't say I'd read it tonight","posted":true,"at":"2026-11-30T16:20","checkin":"2026-11-30T16:20"}
+{"who":"Niall","text":"Forty pages. Nobody needs forty pages","posted":true,"at":"2026-11-30T16:21","checkin":"2026-11-30T16:21"}
+{"who":"Saoirse","text":"Hence the dog walk at 6 and no phone","posted":true,"at":"2026-11-30T16:25","checkin":"2026-11-30T16:25"}
+{"who":"Pádraig","text":"[photo: a fuse box with wires all over, one labelled in biro \"DO NOT TOUCH - PAT\"]","posted":true,"at":"2026-11-30T17:48","checkin":"2026-11-30T17:48"}
+{"who":"Pádraig","text":"Not mine. Found it on a job. Pat is a legend","posted":true,"at":"2026-11-30T17:49","checkin":"2026-11-30T17:49"}
+{"who":"Niall","text":"Pat is a fire hazard","posted":true,"at":"2026-11-30T17:50","checkin":"2026-11-30T17:50"}
+{"who":"Sinéad","text":"Right, dinner, then drawings for the Ballybrit job. Nobody text me before 9","posted":true,"at":"2026-11-30T18:30","checkin":"2026-11-30T18:30"}
+{"who":"Niall","text":"Nobody text her before 9","posted":true,"at":"2026-11-30T18:31","checkin":"2026-11-30T18:31"}
+{"who":"","react":"😂","to":94,"posted":false,"at":"2026-11-30T18:31"}
+{"who":"Saoirse","text":"Read the first 12 pages. The word \"unfair\" appears a lot","posted":true,"at":"2026-11-30T21:02","checkin":"2026-11-30T21:02"}
+{"who":"Niall","text":"Is \"unfair\" the complaint or the whole personality of the person making it","posted":true,"at":"2026-11-30T21:04","checkin":"2026-11-30T21:04"}
+{"who":"Saoirse","text":"Niall I can't say anything about it. Going to make tea","posted":true,"at":"2026-11-30T21:06","checkin":"2026-11-30T21:06"}
+{"who":"Pádraig","text":"Right. Niall. Six pints. Not ten. Six","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Niall","text":"Six is a nap","posted":true,"at":"2026-11-30T21:41","checkin":"2026-11-30T21:41"}
+{"who":"Pádraig","text":"Six is what I'm offering","posted":true,"at":"2026-11-30T21:43","checkin":"2026-11-30T21:43"}
+{"who":"Niall","text":"Fine. Six, whoever pukes buys breakfast, and Sinéad's not allowed tequila","posted":true,"at":"2026-11-30T22:30","checkin":"2026-11-30T22:30"}
+{"who":"Sinéad","text":"Asleep in theory but I can see this","posted":true,"at":"2026-11-30T22:31","checkin":"2026-11-30T22:31"}
+{"who":"Sinéad","text":"No tequila, agreed","posted":true,"at":"2026-11-30T22:33","checkin":"2026-11-30T22:33"}
+{"who":"Saoirse","text":"Tea done. Dog asleep on the good cushin. Heading to bed, early start, telling no one about the forty pages","posted":true,"at":"2026-11-30T23:10","checkin":"2026-11-30T23:10"}
+{"who":"Niall","text":"Nobody said bed. Physio bed at 10, tomorrow I'm holding a shoulder for 45 mins","posted":true,"at":"2026-11-30T23:14","checkin":"2026-11-30T23:14"}
+{"who":"Pádraig","text":"Thursday's on. Sort it Niall","posted":true,"at":"2026-11-30T23:58","checkin":"2026-11-30T23:58"}

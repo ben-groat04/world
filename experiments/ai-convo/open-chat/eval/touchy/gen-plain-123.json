@@ -1,0 +1,730 @@
+[
+ {
+  "label": "T01-t1-s1",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "One of them slept with someone new at the weekend and the other wants the full details.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T01-t1-s2",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "One of them slept with someone new at the weekend and the other wants the full details.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T01-t1-s3",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "One of them slept with someone new at the weekend and the other wants the full details.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T01-t2-s1",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "One of them slept with someone new at the weekend and tells the other exactly what they did and how it was, in plain crude words, while the other asks for more.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T01-t2-s2",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "One of them slept with someone new at the weekend and tells the other exactly what they did and how it was, in plain crude words, while the other asks for more.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T01-t3-s1",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "They swap graphic, explicit detail about sex they have had, including what they liked and what went wrong, with no filter and a lot of laughing.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T01-t3-s2",
+  "people": 2,
+  "brief": "Two close friends in their thirties who tell each other everything.",
+  "topic": "They swap graphic, explicit detail about sex they have had, including what they liked and what went wrong, with no filter and a lot of laughing.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t1-s1",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are talking about their sex life: what each of them wants more of, and that it has been less frequent since work got busy.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t1-s2",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are talking about their sex life: what each of them wants more of, and that it has been less frequent since work got busy.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t1-s3",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are talking about their sex life: what each of them wants more of, and that it has been less frequent since work got busy.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t2-s1",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are texting about sex they want to have tonight, saying plainly what they want the other to do.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t2-s2",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are texting about sex they want to have tonight, saying plainly what they want the other to do.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t3-s1",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T02-t3-s2",
+  "people": 2,
+  "brief": "A couple in their thirties, together six years.",
+  "topic": "They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t1-s1",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "Two of them are taking MDMA at the party, one of those has done it plenty of times before, and they are talking about the night ahead.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t1-s2",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "Two of them are taking MDMA at the party, one of those has done it plenty of times before, and they are talking about the night ahead.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t1-s3",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "Two of them are taking MDMA at the party, one of those has done it plenty of times before, and they are talking about the night ahead.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t2-s1",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "They are all planning to take MDMA and pills and have a big night, and are hyped and joking about how off their heads they will be.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t2-s2",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "They are all planning to take MDMA and pills and have a big night, and are hyped and joking about how off their heads they will be.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t3-s1",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "Two of them take drugs most weekends, are casual about it, and tell the others stories of the worst comedowns and wildest nights they have had on pills, coke and ketamine.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T03-t3-s2",
+  "people": 4,
+  "brief": "Four friends in their twenties going to a house party on Saturday.",
+  "topic": "Two of them take drugs most weekends, are casual about it, and tell the others stories of the worst comedowns and wildest nights they have had on pills, coke and ketamine.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t1-s1",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Going over the night before: how drunk they all got, who was sick, what nobody can remember.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t1-s2",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Going over the night before: how drunk they all got, who was sick, what nobody can remember.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t1-s3",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Going over the night before: how drunk they all got, who was sick, what nobody can remember.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t2-s1",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Going over a night when they were absolutely wrecked: blackouts, one of them wetting themselves, a fight outside a kebab shop, and plans to do it all again Friday.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t2-s2",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Going over a night when they were absolutely wrecked: blackouts, one of them wetting themselves, a fight outside a kebab shop, and plans to do it all again Friday.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t3-s1",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Boasting and joking about how much they drink most weeks, mocking the one who wants to cut down, and daring each other to a bigger night.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T04-t3-s2",
+  "people": 4,
+  "brief": "Old mates from uni in a group chat.",
+  "topic": "Boasting and joking about how much they drink most weeks, mocking the one who wants to cut down, and daring each other to a bigger night.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t1-s1",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: one wants much tighter limits and says so bluntly, the other thinks that is wrong and says so just as bluntly.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t1-s2",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: one wants much tighter limits and says so bluntly, the other thinks that is wrong and says so just as bluntly.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t1-s3",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: one wants much tighter limits and says so bluntly, the other thinks that is wrong and says so just as bluntly.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t2-s1",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: they are angry with each other, each calling the other's view heartless or naive, and neither backs down.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t2-s2",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: they are angry with each other, each calling the other's view heartless or naive, and neither backs down.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t3-s1",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: it has turned into a shouting match by text, with swearing and personal insults about each other's intelligence and character, each saying the other is a disgrace.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T05-t3-s2",
+  "people": 2,
+  "brief": "Two old friends who have always disagreed about politics, texting while the news is on.",
+  "topic": "Immigration: it has turned into a shouting match by text, with swearing and personal insults about each other's intelligence and character, each saying the other is a disgrace.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t1-s1",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: one is firmly pro-life, the other firmly pro-choice, and neither is giving ground.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t1-s2",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: one is firmly pro-life, the other firmly pro-choice, and neither is giving ground.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t1-s3",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: one is firmly pro-life, the other firmly pro-choice, and neither is giving ground.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t2-s1",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: after a news story they argue hard, each saying the other's position is immoral, with sharp personal digs.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t2-s2",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: after a news story they argue hard, each saying the other's position is immoral, with sharp personal digs.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t3-s1",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: they are furious, swearing at each other, bringing up old family grudges, and saying they might stop speaking.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T06-t3-s2",
+  "people": 2,
+  "brief": "A brother and sister, both adults, who fell out over politics before.",
+  "topic": "Abortion: they are furious, swearing at each other, bringing up old family grudges, and saying they might stop speaking.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t1-s1",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "The eldest has told them they no longer believe in God; their devout mother is hurt and angry, and their father backs her.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t1-s2",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "The eldest has told them they no longer believe in God; their devout mother is hurt and angry, and their father backs her.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t1-s3",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "The eldest has told them they no longer believe in God; their devout mother is hurt and angry, and their father backs her.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t2-s1",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "The eldest has told them they are an atheist and think religion is nonsense; the mother says they are damned and ruining the family, and the eldest hits back that the church is a scam.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t2-s2",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "The eldest has told them they are an atheist and think religion is nonsense; the mother says they are damned and ruining the family, and the eldest hits back that the church is a scam.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t3-s1",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "A full-blown row: the mother calls the eldest a disgrace, the eldest mocks her faith and swears at her, the father shouts them both down, and the younger sibling takes sides.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T07-t3-s2",
+  "people": 4,
+  "brief": "A family group chat: parents and their two adult children.",
+  "topic": "A full-blown row: the mother calls the eldest a disgrace, the eldest mocks her faith and swears at her, the father shouts them both down, and the younger sibling takes sides.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t1-s1",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Unwinding after a rough run of night shifts with dark humour about the jobs they have been to.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t1-s2",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Unwinding after a rough run of night shifts with dark humour about the jobs they have been to.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t1-s3",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Unwinding after a rough run of night shifts with dark humour about the jobs they have been to.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t2-s1",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Swapping very dark jokes about patients who died and bodies they have dealt with, laughing about the worst jobs of the year.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t2-s2",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Swapping very dark jokes about patients who died and bodies they have dealt with, laughing about the worst jobs of the year.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t3-s1",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T08-t3-s2",
+  "people": 3,
+  "brief": "Three paramedics on the same crew, off shift.",
+  "topic": "Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t1-s1",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Taking the piss out of each other, with plenty of swearing and crude jokes, ahead of Saturday's football.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t1-s2",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Taking the piss out of each other, with plenty of swearing and crude jokes, ahead of Saturday's football.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t1-s3",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Taking the piss out of each other, with plenty of swearing and crude jokes, ahead of Saturday's football.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t2-s1",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Brutal banter: they rip into each other's partners, bodies and sex lives with filthy jokes and constant swearing.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t2-s2",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Brutal banter: they rip into each other's partners, bodies and sex lives with filthy jokes and constant swearing.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t3-s1",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Nonstop obscene banter, every message a crude insult or filthy joke aimed at one of them, with the worst swearing and sexual put-downs, all of them loving it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T09-t3-s2",
+  "people": 4,
+  "brief": "Four mates in their twenties who have been friends since school.",
+  "topic": "Nonstop obscene banter, every message a crude insult or filthy joke aimed at one of them, with the worst swearing and sexual put-downs, all of them loving it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t1-s1",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "A bitter falling-out: one found out the other said something behind their back, and they are insulting each other.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t1-s2",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "A bitter falling-out: one found out the other said something behind their back, and they are insulting each other.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t1-s3",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "A bitter falling-out: one found out the other said something behind their back, and they are insulting each other.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t2-s1",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "A vicious falling-out: they say cruel things about each other's looks, jobs and families, with heavy swearing, and say they never want to see each other again.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t2-s2",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "A vicious falling-out: they say cruel things about each other's looks, jobs and families, with heavy swearing, and say they never want to see each other again.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t3-s1",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "The worst fight of their friendship: each lists everything they hate about the other, throws back the most painful things they were told in confidence, and tries to hurt as much as possible.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T10-t3-s2",
+  "people": 2,
+  "brief": "Two former best friends.",
+  "topic": "The worst fight of their friendship: each lists everything they hate about the other, throws back the most painful things they were told in confidence, and tries to hurt as much as possible.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t1-s1",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One has felt flat and low for weeks, no energy and fed up with everything (not in crisis), and is venting to the other.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t1-s2",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One has felt flat and low for weeks, no energy and fed up with everything (not in crisis), and is venting to the other.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t1-s3",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One has felt flat and low for weeks, no energy and fed up with everything (not in crisis), and is venting to the other.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t2-s1",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One has felt numb and low for months, has stopped seeing people, drinks a bit too much, and tells the other how bad it has got, wanting to be heard rather than fixed.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t2-s2",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One has felt numb and low for months, has stopped seeing people, drinks a bit too much, and tells the other how bad it has got, wanting to be heard rather than fixed.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t3-s1",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T11-t3-s2",
+  "people": 2,
+  "brief": "Two close friends.",
+  "topic": "One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t1-s1",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Gossiping meanly about a colleague who is not in the chat: her manner, her laugh, how she got promoted.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t1-s2",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Gossiping meanly about a colleague who is not in the chat: her manner, her laugh, how she got promoted.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t1-s3",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Gossiping meanly about a colleague who is not in the chat: her manner, her laugh, how she got promoted.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t2-s1",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Tearing apart an absent colleague: her looks, her clothes, her lack of talent, who she is sleeping with to get ahead, with plenty of swearing.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t2-s2",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Tearing apart an absent colleague: her looks, her clothes, her lack of talent, who she is sleeping with to get ahead, with plenty of swearing.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t3-s1",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Viciously cruel gossip about an absent colleague, speculating about her private life and body, wishing her gone, and cackling about it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T12-t3-s2",
+  "people": 3,
+  "brief": "Three colleagues in a private chat.",
+  "topic": "Viciously cruel gossip about an absent colleague, speculating about her private life and body, wishing her gone, and cackling about it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t1-s1",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through the latest episode, a decades-old unsolved murder, and who they think did it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t1-s2",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through the latest episode, a decades-old unsolved murder, and who they think did it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t1-s3",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through the latest episode, a decades-old unsolved murder, and who they think did it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t2-s1",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through an episode about a murder in detail: the victim, how the body was found, the suspects, and which of them they think did it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t2-s2",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through an episode about a murder in detail: the victim, how the body was found, the suspects, and which of them they think did it.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t3-s1",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through the gruesome forensic details of an invented serial killer case, the injuries to the victims, the killer's psychology, and whether they find it disturbing or fascinating.",
+  "secrets": {},
+  "days": 2
+ },
+ {
+  "label": "T13-t3-s2",
+  "people": 2,
+  "brief": "Two sisters who both follow the same true crime podcast.",
+  "topic": "Talking through the gruesome forensic details of an invented serial killer case, the injuries to the victims, the killer's psychology, and whether they find it disturbing or fascinating.",
+  "secrets": {},
+  "days": 2
+ }
+]

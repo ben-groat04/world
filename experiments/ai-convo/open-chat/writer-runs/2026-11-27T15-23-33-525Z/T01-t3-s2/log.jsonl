@@ -1,0 +1,70 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T20:40","complete":true,"rejects":0,"today":["Megan",null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1981,"cache_read_input_tokens":0,"output_tokens":2272,"output_tokens_details":{"thinking_tokens":1531},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1981,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2272,"cache_read_input_tokens":0,"cache_creation_input_tokens":1981,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1981},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2596,"cache_read_input_tokens":0,"output_tokens":2117,"output_tokens_details":{"thinking_tokens":1506},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2596,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2117,"cache_read_input_tokens":0,"cache_creation_input_tokens":2596,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2596},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3202,"cache_read_input_tokens":0,"output_tokens":1799,"output_tokens_details":{"thinking_tokens":1243},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3202,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1799,"cache_read_input_tokens":0,"cache_creation_input_tokens":3202,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3202},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Megan","Daniel"],"setting":"You two are in Philadelphia, texting from your separate homes, as close friends who have known each other since college. Right now you're both sorting out the details of a birthday dinner for a mutual friend next weekend.","openers":["Send a laughing emoji and ask how the dinner plans are going","Text a quick update about the birthday reservation","Ask what happened with the guy from last weekend","Share a funny story from your shift this week"],"opener":"Share a funny story from your shift this week","cast":{"Megan":{"who":"34, woman, close friend","work":"pharmacist","knows":"You know Daniel as a close friend of many years, from college onward.","texts":"","style":"Uses a few emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Daniel":{"who":"36, man, close friend","work":"sous chef","knows":"You know Megan as a close friend of many years, from college onward.","texts":"","style":"Uses a few emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Megan":"You live in Philadelphia, work days as a pharmacist, and live alone.","Daniel":"You live in Philadelphia, work as a sous chef in a restaurant kitchen, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":860,"cache_read_input_tokens":0,"output_tokens":583,"output_tokens_details":{"thinking_tokens":369},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":860,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":583,"cache_read_input_tokens":0,"cache_creation_input_tokens":860,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":860},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1122,"cache_read_input_tokens":0,"output_tokens":1289,"output_tokens_details":{"thinking_tokens":929},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1122,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1289,"cache_read_input_tokens":0,"cache_creation_input_tokens":1122,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1122},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Philadelphia, USA","castMs":14073,"situation":"Two close friends in their thirties who tell each other everything.","topic":"They swap graphic, explicit detail about sex they have had, including what they liked and what went wrong, with no filter and a lot of laughing."}
+{"who":"Megan","text":"This guy came to the counter tues w a bag of pills and asked if I could \"make them weaker\" like im a bartender","posted":true,"at":"2026-11-28T20:40","checkin":"2026-11-28T20:40"}
+{"who":"Megan","text":"I said I cant do that lol. He said his wife cuts them in half w a steak knife","posted":true,"at":"2026-11-28T20:41","checkin":"2026-11-28T20:41"}
+{"who":"","react":"😂","to":1,"posted":false,"at":"2026-11-28T20:41"}
+{"who":"","react":"😂","to":1,"posted":false,"at":"2026-11-28T20:41"}
+{"who":"Daniel","text":"no","posted":true,"at":"2026-11-28T20:52","checkin":"2026-11-28T20:52"}
+{"who":"Daniel","text":"did u call the wife","posted":true,"at":"2026-11-28T20:52","checkin":"2026-11-28T20:52"}
+{"who":"Megan","text":"I wanted to but I just gave him the number for the consult line","posted":true,"at":"2026-11-28T20:55","checkin":"2026-11-28T20:55"}
+{"who":"Daniel","text":"good. thats the right call","posted":true,"at":"2026-11-28T21:03","checkin":"2026-11-28T21:03"}
+{"who":"Daniel","text":"ok birthday. priya wants sat the 5th. i checked w the place on 9th, they can do 7:30 for 8 if we confirm by wed","posted":true,"at":"2026-11-28T21:04","checkin":"2026-11-28T21:04"}
+{"who":"Megan","text":"8 is fine. Jen might bring the new guy","posted":true,"at":"2026-11-28T21:10","checkin":"2026-11-28T21:10"}
+{"who":"Megan","text":"Do we know if he eats meat lol","posted":true,"at":"2026-11-28T21:11","checkin":"2026-11-28T21:11"}
+{"who":"Daniel","text":"idk. ill ask jen","posted":true,"at":"2026-11-28T21:14","checkin":"2026-11-28T21:14"}
+{"who":"Megan","text":"Can u ask if they have a veg option or no","posted":true,"at":"2026-11-28T21:30","checkin":"2026-11-28T21:30"}
+{"who":"Daniel","text":"they do a veg tasting menu. i can probably get the chef to make it nicer than whatever they normally do lol","posted":true,"at":"2026-11-28T22:15","checkin":"2026-11-28T22:15"}
+{"who":"Megan","text":"Dont be a sous chef about it","posted":true,"at":"2026-11-28T22:20","checkin":"2026-11-28T22:20"}
+{"who":"Daniel","text":"thats not a thing","posted":true,"at":"2026-11-28T22:21","checkin":"2026-11-28T22:21"}
+{"who":"Megan","text":"It is now","posted":true,"at":"2026-11-28T22:22","checkin":"2026-11-28T22:22"}
+{"who":"Daniel","text":"you up","posted":true,"at":"2026-11-28T23:48","checkin":"2026-11-28T23:48"}
+{"who":"Megan","text":"Yeah. Off tmrw though. U?","posted":true,"at":"2026-11-28T23:52","checkin":"2026-11-28T23:52"}
+{"who":"Daniel","text":"closing. just got home. feet are dead","posted":true,"at":"2026-11-28T23:53","checkin":"2026-11-28T23:53"}
+{"who":"Megan","text":"Soak them in epsom salt. Not joking","posted":true,"at":"2026-11-29T00:10","checkin":"2026-11-29T00:10"}
+{"who":"Daniel","text":"i have a bag of ice in the freezer for the same reason","posted":true,"at":"2026-11-29T00:11","checkin":"2026-11-29T00:11"}
+{"who":"Megan","text":"Thats just a sad version of the same thing","posted":true,"at":"2026-11-29T00:14","checkin":"2026-11-29T00:14"}
+{"who":"Daniel","text":"priya wants a cake from that bakery on passyunk. i said id call","posted":true,"at":"2026-11-29T00:31","checkin":"2026-11-29T00:31"}
+{"who":"Megan","text":"Ask about the lemon one. Jen loves it","posted":true,"at":"2026-11-29T00:33","checkin":"2026-11-29T00:33"}
+{"who":"Daniel","text":"ok","posted":true,"at":"2026-11-29T00:40","checkin":"2026-11-29T00:40"}
+{"who":"Daniel","text":"ok the bakery opens at 9 i called. they can do the lemon. 8in or 10in","posted":true,"at":"2026-11-29T11:20","checkin":"2026-11-29T11:20"}
+{"who":"Megan","text":"8 is enough for 8 people","posted":true,"at":"2026-11-29T11:24","checkin":"2026-11-29T11:24"}
+{"who":"Daniel","text":"ok 8","posted":true,"at":"2026-11-29T11:25","checkin":"2026-11-29T11:25"}
+{"who":"Megan","text":"Did u text Jen about the veg thing","posted":true,"at":"2026-11-29T11:40","checkin":"2026-11-29T11:40"}
+{"who":"Daniel","text":"not yet. shes on till 4","posted":true,"at":"2026-11-29T11:55","checkin":"2026-11-29T11:55"}
+{"who":"Daniel","text":"[photo: a bag of frozen peas on a kitchen chair]","posted":true,"at":"2026-11-29T14:08","checkin":"2026-11-29T14:08"}
+{"who":"Daniel","text":"for my feet","posted":true,"at":"2026-11-29T14:09","checkin":"2026-11-29T14:09"}
+{"who":"Megan","text":"Ur a mess. Did u eat","posted":true,"at":"2026-11-29T14:15","checkin":"2026-11-29T14:15"}
+{"who":"Daniel","text":"toast","posted":true,"at":"2026-11-29T14:30","checkin":"2026-11-29T14:30"}
+{"who":"Megan","text":"Thats not food","posted":true,"at":"2026-11-29T14:31","checkin":"2026-11-29T14:31"}
+{"who":"Daniel","text":"its bread w butter. its food","posted":true,"at":"2026-11-29T15:02","checkin":"2026-11-29T15:02"}
+{"who":"Megan","text":"Going to the gym later. Pharmacy was dead this morning, one guy for a flu shot and that was it","posted":true,"at":"2026-11-29T16:40","checkin":"2026-11-29T16:40"}
+{"who":"Daniel","text":"lucky","posted":true,"at":"2026-11-29T16:44","checkin":"2026-11-29T16:44"}
+{"who":"Megan","text":"Im gonna eat a real dinner. Want me to ask Jen about the veg thing or u","posted":true,"at":"2026-11-29T18:20","checkin":"2026-11-29T18:20"}
+{"who":"Daniel","text":"ill do it tmrw. wed is the place's deadline not jen's","posted":true,"at":"2026-11-29T18:22","checkin":"2026-11-29T18:22"}
+{"who":"Megan","text":"Ok","posted":true,"at":"2026-11-29T18:24","checkin":"2026-11-29T18:24"}
+{"who":"Daniel","text":"they want a 20 dollar deposit on the cake. i put it on my card","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Megan","text":"Ill pay u back for half","posted":true,"at":"2026-11-29T23:41","checkin":"2026-11-29T23:41"}
+{"who":"Megan","text":"Dont argue","posted":true,"at":"2026-11-29T23:41","checkin":"2026-11-29T23:41"}
+{"who":"Daniel","text":"ok","posted":true,"at":"2026-11-29T23:44","checkin":"2026-11-29T23:44"}
+{"who":"Daniel","text":"going to bed. feet still dead","posted":true,"at":"2026-11-30T00:20","checkin":"2026-11-30T00:20"}
+{"who":"Megan","text":"Epsom salt","posted":true,"at":"2026-11-30T00:21","checkin":"2026-11-30T00:21"}
+{"who":"Daniel","text":"morning. feet are better","posted":true,"at":"2026-11-30T09:14","checkin":"2026-11-30T09:14"}
+{"who":"Megan","text":"Did u soak them","posted":true,"at":"2026-11-30T09:15","checkin":"2026-11-30T09:15"}
+{"who":"Daniel","text":"no","posted":true,"at":"2026-11-30T09:15","checkin":"2026-11-30T09:15"}
+{"who":"Megan","text":"Is jens new guy the one from halloween? Tall, beard?","posted":true,"at":"2026-11-30T12:40","checkin":"2026-11-30T12:40"}
+{"who":"Daniel","text":"i think so. idk. im bad w faces","posted":true,"at":"2026-11-30T12:52","checkin":"2026-11-30T12:52"}
+{"who":"Daniel","text":"texted jen. she says he eats everything but he's been cutting back on meat. she thinks he'd be fine w the veg menu","posted":true,"at":"2026-11-30T15:20","checkin":"2026-11-30T15:20"}
+{"who":"Megan","text":"Ok so veg menu","posted":true,"at":"2026-11-30T15:22","checkin":"2026-11-30T15:22"}
+{"who":"Daniel","text":"or both. they can do a half and half","posted":true,"at":"2026-11-30T15:22","checkin":"2026-11-30T15:22"}
+{"who":"Megan","text":"Dont overthink it. Just say veg and one meat","posted":true,"at":"2026-11-30T15:25","checkin":"2026-11-30T15:25"}
+{"who":"Daniel","text":"ok","posted":true,"at":"2026-11-30T15:26","checkin":"2026-11-30T15:26"}
+{"who":"Megan","text":"Got out at 6. Pill guy came back in with his wife. Pharmacist on call dealt w it. Not my problem anymore thank god","posted":true,"at":"2026-11-30T17:48","checkin":"2026-11-30T17:48"}
+{"who":"Daniel","text":"good","posted":true,"at":"2026-11-30T17:50","checkin":"2026-11-30T17:50"}
+{"who":"Daniel","text":"she didnt cut them w a steak knife i hope","posted":true,"at":"2026-11-30T17:51","checkin":"2026-11-30T17:51"}
+{"who":"Megan","text":"Dont know. Didnt ask lol","posted":true,"at":"2026-11-30T17:52","checkin":"2026-11-30T17:52"}
+{"who":"Megan","text":"Sent u 10 for the cake","posted":true,"at":"2026-11-30T19:05","checkin":"2026-11-30T19:05"}
+{"who":"Daniel","text":"got it. on tonight, rush is brutal","posted":true,"at":"2026-11-30T19:30","checkin":"2026-11-30T19:30"}
+{"who":"Megan","text":"Ok. Eat something","posted":true,"at":"2026-11-30T19:31","checkin":"2026-11-30T19:31"}
+{"who":"Daniel","text":"closed. home","posted":true,"at":"2026-11-30T23:58","checkin":"2026-11-30T23:58"}
+{"who":"Daniel","text":"soaked them. dont say it","posted":true,"at":"2026-12-01T00:20","checkin":"2026-12-01T00:20"}
+{"who":"Megan","text":"Proud of u","posted":true,"at":"2026-12-01T00:22","checkin":"2026-12-01T00:22"}

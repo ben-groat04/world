@@ -1,0 +1,89 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T22:40","complete":true,"rejects":0,"today":[null,"Brian","Brian"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2020,"cache_read_input_tokens":0,"output_tokens":3549,"output_tokens_details":{"thinking_tokens":2224},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2020,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3549,"cache_read_input_tokens":0,"cache_creation_input_tokens":2020,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2020},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3246,"cache_read_input_tokens":0,"output_tokens":2375,"output_tokens_details":{"thinking_tokens":1858},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3246,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2375,"cache_read_input_tokens":0,"cache_creation_input_tokens":3246,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3246},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3770,"cache_read_input_tokens":0,"output_tokens":1944,"output_tokens_details":{"thinking_tokens":1095},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3770,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1944,"cache_read_input_tokens":0,"cache_creation_input_tokens":3770,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3770},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Brian","Teresa"],"setting":"You two are in Philadelphia, where you grew up on the same South Philly block and have been friends since grade school. This week you're texting while the evening news plays, and you're also sorting out the plans for the January cookout with your old high-school group.","openers":["Send a blunt take on tighter limits","Ask Teresa what she thinks of the news tonight","Tell Teresa you just heard the immigration story on TV","Drop a one-liner about who should be let in"],"opener":"Tell Teresa you just heard the immigration story on TV","cast":{"Brian":{"who":"52, man, the old friend","work":"truck dispatcher","knows":"You know Teresa as your childhood friend from the same block, and you've argued politics with her for decades.","texts":"","style":"little emoji, some texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Teresa":{"who":"52, woman, the old friend","work":"nurse","knows":"You know Brian as your childhood friend from the same South Philly block, and you've argued politics with him for decades.","texts":"","style":"little emoji, some texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Brian":"You live in Philadelphia, spend your days dispatching trucks, and live alone.","Teresa":"You live in Philadelphia, spend your days working as a nurse, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":864,"cache_read_input_tokens":0,"output_tokens":832,"output_tokens_details":{"thinking_tokens":621},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":864,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":832,"cache_read_input_tokens":0,"cache_creation_input_tokens":864,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":864},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1129,"cache_read_input_tokens":0,"output_tokens":1614,"output_tokens_details":{"thinking_tokens":1231},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1129,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1614,"cache_read_input_tokens":0,"cache_creation_input_tokens":1129,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1129},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Philadelphia, USA","castMs":14486,"situation":"Two old friends who have always disagreed about politics, texting while the news is on.","topic":"Immigration: one wants much tighter limits and says so bluntly, the other thinks that is wrong and says so just as bluntly."}
+{"who":"Brian","text":"News on. They did the border thing again. U see it","posted":true,"at":"2026-11-28T22:40","checkin":"2026-11-28T22:40"}
+{"who":"Teresa","text":"I saw it. They put the same guy on twice","posted":true,"at":"2026-11-28T22:43","checkin":"2026-11-28T22:43"}
+{"who":"Brian","text":"Its not the same guy. They had the sheriff from arizona","posted":true,"at":"2026-11-28T22:44","checkin":"2026-11-28T22:44"}
+{"who":"Teresa","text":"Ok the sheriff. Same talking points","posted":true,"at":"2026-11-28T22:45","checkin":"2026-11-28T22:45"}
+{"who":"Brian","text":"You cant just let everybody walk in. Thats not a country","posted":true,"at":"2026-11-28T22:47","checkin":"2026-11-28T22:47"}
+{"who":"Teresa","text":"Nobody said let everybody walk in. Most of the families get processed. The backlog is the problem, not the people","posted":true,"at":"2026-11-28T22:51","checkin":"2026-11-28T22:51"}
+{"who":"Brian","text":"Backlog is always the excuse","posted":true,"at":"2026-11-28T22:53","checkin":"2026-11-28T22:53"}
+{"who":"Brian","text":"Gil says they had 3 trucks come thru the yard last week w people in the back. No water","posted":true,"at":"2026-11-28T22:54","checkin":"2026-11-28T22:54"}
+{"who":"Teresa","text":"That's horrible and it's not a reason to shut the whole thing down. People die in those trucks because they paid smugglers. Tighter limits don't stop smugglers. Who ends up in the ER with the ones who make it? Me","posted":true,"at":"2026-11-28T22:58","checkin":"2026-11-28T22:58"}
+{"who":"Brian","text":"So what, open it up 🤷","posted":true,"at":"2026-11-28T23:02","checkin":"2026-11-28T23:02"}
+{"who":"Brian","text":"Im just saying there should be a limit. Everybody has one","posted":true,"at":"2026-11-28T23:03","checkin":"2026-11-28T23:03"}
+{"who":"Teresa","text":"There's a limit. There's a process with a line. I think the line should move faster","posted":true,"at":"2026-11-28T23:09","checkin":"2026-11-28T23:09"}
+{"who":"Brian","text":"Ok","posted":true,"at":"2026-11-28T23:11","checkin":"2026-11-28T23:11"}
+{"who":"Brian","text":"Ok teach","posted":true,"at":"2026-11-28T23:11","checkin":"2026-11-28T23:11"}
+{"who":"Teresa","text":"Don't do the teach thing","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Brian","text":"😂 ok","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Brian","text":"Anyway. January cookout. Dave says his place or the vfw","posted":true,"at":"2026-11-28T23:20","checkin":"2026-11-28T23:20"}
+{"who":"Teresa","text":"Vfw has the heat that works. Dave's yard is a mess in jan","posted":true,"at":"2026-11-28T23:31","checkin":"2026-11-28T23:31"}
+{"who":"Brian","text":"Ya. I'll text the group","posted":true,"at":"2026-11-28T23:33","checkin":"2026-11-28T23:33"}
+{"who":"Teresa","text":"Did you get the group thread going or should I","posted":true,"at":"2026-11-29T09:12","checkin":"2026-11-29T09:12"}
+{"who":"Brian","text":"Doing it now. Got the lift at 6 so I'm up anyway","posted":true,"at":"2026-11-29T10:47","checkin":"2026-11-29T10:47"}
+{"who":"Brian","text":"[screenshot: group text, \"JAN COOKOUT — VFW — SAT 1/9 or 1/16?\"]","posted":true,"at":"2026-11-29T10:50","checkin":"2026-11-29T10:50"}
+{"who":"Teresa","text":"16 better. 9th I'm on the unit that weekend","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Teresa","text":"Or I could swap. Not sure yet","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Brian","text":"16 then","posted":true,"at":"2026-11-29T10:58","checkin":"2026-11-29T10:58"}
+{"who":"Teresa","text":"Should I bring the potato salad or is that dave's wife","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Brian","text":"Dave's wife does the potato salad every year. She gets mad if u do it","posted":true,"at":"2026-11-29T11:34","checkin":"2026-11-29T11:34"}
+{"who":"Teresa","text":"Ok I'll bring the rolls","posted":true,"at":"2026-11-29T11:35","checkin":"2026-11-29T11:35"}
+{"who":"Brian","text":"Went to the yard. Gil says the new guy in the relay room is 19 and he's got the whole thing down already. Shoulda seen him","posted":true,"at":"2026-11-29T14:02","checkin":"2026-11-29T14:02"}
+{"who":"Teresa","text":"Sorry. Was at the hospital half the day. Kid with a broken arm off a trampoline","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Teresa","text":"He's fine. Parents were a mess","posted":true,"at":"2026-11-29T19:41","checkin":"2026-11-29T19:41"}
+{"who":"Brian","text":"Glad he's ok","posted":true,"at":"2026-11-29T20:15","checkin":"2026-11-29T20:15"}
+{"who":"Brian","text":"U still mad about last night or we good","posted":true,"at":"2026-11-29T20:16","checkin":"2026-11-29T20:16"}
+{"who":"Teresa","text":"We're good. I'm not mad. I just think you're wrong","posted":true,"at":"2026-11-29T20:30","checkin":"2026-11-29T20:30"}
+{"who":"Brian","text":"Ya","posted":true,"at":"2026-11-29T20:31","checkin":"2026-11-29T20:31"}
+{"who":"Brian","text":"U always think im wrong","posted":true,"at":"2026-11-29T20:31","checkin":"2026-11-29T20:31"}
+{"who":"Teresa","text":"You're wrong about this one. I'll buy you a wawa coffee in january and we'll fight about it at the cookout","posted":true,"at":"2026-11-29T20:33","checkin":"2026-11-29T20:33"}
+{"who":"Brian","text":"Deal. Make it the big one","posted":true,"at":"2026-11-29T20:33","checkin":"2026-11-29T20:33"}
+{"who":"Teresa","text":"Going to bed. 5am tomorrow","posted":true,"at":"2026-11-29T22:50","checkin":"2026-11-29T22:50"}
+{"who":"Brian","text":"Ok","posted":true,"at":"2026-11-29T22:51","checkin":"2026-11-29T22:51"}
+{"who":"Brian","text":"Cant sleep. News is on again. Same thing","posted":true,"at":"2026-11-30T00:40","checkin":"2026-11-30T00:40"}
+{"who":"Teresa","text":"Up. Turn it off","posted":true,"at":"2026-11-30T05:14","checkin":"2026-11-30T05:14"}
+{"who":"Brian","text":"Was off. Dont start","posted":true,"at":"2026-11-30T05:15","checkin":"2026-11-30T05:15"}
+{"who":"Brian","text":"Got a driver out sick so im doing the 4am run myself. Lovely","posted":true,"at":"2026-11-30T05:16","checkin":"2026-11-30T05:16"}
+{"who":"Teresa","text":"Lol who's the driver","posted":true,"at":"2026-11-30T05:20","checkin":"2026-11-30T05:20"}
+{"who":"Brian","text":"Ray. His back. Says its the back every time its a monday","posted":true,"at":"2026-11-30T05:22","checkin":"2026-11-30T05:22"}
+{"who":"Teresa","text":"😂 ok. Call if u need anything. Im clocking in at 6","posted":true,"at":"2026-11-30T05:23","checkin":"2026-11-30T05:23"}
+{"who":"Brian","text":"Ray's back is worse. Hes going to the doc","posted":true,"at":"2026-11-30T13:08","checkin":"2026-11-30T13:08"}
+{"who":"Teresa","text":"Tell him urgent care. Doc wont see him till jan","posted":true,"at":"2026-11-30T13:40","checkin":"2026-11-30T13:40"}
+{"who":"Brian","text":"Ok","posted":true,"at":"2026-11-30T13:41","checkin":"2026-11-30T13:41"}
+{"who":"Teresa","text":"Long one. Two admits off 4, one just got transferred down. Ran out of coffee at 3","posted":true,"at":"2026-11-30T19:55","checkin":"2026-11-30T19:55"}
+{"who":"Brian","text":"Wawa or the bad stuff","posted":true,"at":"2026-11-30T19:56","checkin":"2026-11-30T19:56"}
+{"who":"Teresa","text":"The bad stuff. Dont make me say it","posted":true,"at":"2026-11-30T19:58","checkin":"2026-11-30T19:58"}
+{"who":"Brian","text":"News on again. Im not watching it this time","posted":true,"at":"2026-11-30T20:30","checkin":"2026-11-30T20:30"}
+{"who":"Brian","text":"Watching it","posted":true,"at":"2026-11-30T20:31","checkin":"2026-11-30T20:31"}
+{"who":"Teresa","text":"Ha","posted":true,"at":"2026-11-30T20:40","checkin":"2026-11-30T20:40"}
+{"who":"","react":"😂","to":55,"posted":false,"at":"2026-11-30T20:40"}
+{"who":"Teresa","text":"Bed","posted":true,"at":"2026-11-30T22:34","checkin":"2026-11-30T22:34"}
+{"who":"Brian","text":"Ok","posted":true,"at":"2026-11-30T22:35","checkin":"2026-11-30T22:35"}
+{"who":"Brian","text":"Read the thing about the line. Still think theres a limit. Just saying","posted":true,"at":"2026-11-30T23:52","checkin":"2026-11-30T23:52"}
+{"who":"Brian","text":"Ray got to urgent care. Muscle relaxers and told him no lifting for a week. He says that's a Monday problem too","posted":true,"at":"2026-12-01T07:02","checkin":"2026-12-01T07:02"}
+{"who":"Teresa","text":"Off today. Going to lie here until 9 and not feel bad about it","posted":true,"at":"2026-12-01T07:40","checkin":"2026-12-01T07:40"}
+{"who":"Teresa","text":"Read it btw. Still a line","posted":true,"at":"2026-12-01T07:41","checkin":"2026-12-01T07:41"}
+{"who":"Brian","text":"Ya I figured","posted":true,"at":"2026-12-01T08:15","checkin":"2026-12-01T08:15"}
+{"who":"Brian","text":"Had a truck go to the wrong dock in Camden. Took 40 min to catch it. Driver swears the paper said dock 4","posted":true,"at":"2026-12-01T10:20","checkin":"2026-12-01T10:20"}
+{"who":"Brian","text":"Paper said dock 14. He can't read his own handwriting 🤷","posted":true,"at":"2026-12-01T10:22","checkin":"2026-12-01T10:22"}
+{"who":"Teresa","text":"Lol. Who's paying for the 40 min","posted":true,"at":"2026-12-01T10:30","checkin":"2026-12-01T10:30"}
+{"who":"Brian","text":"Nobody. Thats the best part","posted":true,"at":"2026-12-01T10:31","checkin":"2026-12-01T10:31"}
+{"who":"Teresa","text":"[link: VFW Post hall rental hours]","posted":true,"at":"2026-12-01T13:05","checkin":"2026-12-01T13:05"}
+{"who":"Teresa","text":"They do Saturdays for the 16th but they want a deposit by the 10th","posted":true,"at":"2026-12-01T13:06","checkin":"2026-12-01T13:06"}
+{"who":"Brian","text":"Dave will front it. He always does","posted":true,"at":"2026-12-01T13:20","checkin":"2026-12-01T13:20"}
+{"who":"Brian","text":"Ill tell him","posted":true,"at":"2026-12-01T13:21","checkin":"2026-12-01T13:21"}
+{"who":"Teresa","text":"Don't tell him yet. Tell him after I make the rolls so he doesn't ask for potato salad","posted":true,"at":"2026-12-01T13:22","checkin":"2026-12-01T13:22"}
+{"who":"Brian","text":"Ok","posted":true,"at":"2026-12-01T13:24","checkin":"2026-12-01T13:24"}
+{"who":"Brian","text":"Gil called. Trailer brake on the 3rd truck. Its in the shop til Thurs","posted":true,"at":"2026-12-01T17:50","checkin":"2026-12-01T17:50"}
+{"who":"Brian","text":"Ray's going to be thrilled he has to do the Harrisburg run","posted":true,"at":"2026-12-01T17:51","checkin":"2026-12-01T17:51"}
+{"who":"Teresa","text":"He's got a back, Brian","posted":true,"at":"2026-12-01T18:30","checkin":"2026-12-01T18:30"}
+{"who":"Brian","text":"Hes got a back every time it's a run","posted":true,"at":"2026-12-01T18:31","checkin":"2026-12-01T18:31"}
+{"who":"Teresa","text":"Ate dinner standing up. Living the dream","posted":true,"at":"2026-12-01T19:45","checkin":"2026-12-01T19:45"}
+{"who":"Brian","text":"News on?","posted":true,"at":"2026-12-01T20:10","checkin":"2026-12-01T20:10"}
+{"who":"Brian","text":"Dont answer. Im not turning it on","posted":true,"at":"2026-12-01T20:11","checkin":"2026-12-01T20:11"}
+{"who":"Teresa","text":"Ha. Good","posted":true,"at":"2026-12-01T20:14","checkin":"2026-12-01T20:14"}
+{"who":"Brian","text":"Watching the Eagles thing instead. Lost again","posted":true,"at":"2026-12-01T21:02","checkin":"2026-12-01T21:02"}
+{"who":"Teresa","text":"Lost to who","posted":true,"at":"2026-12-01T21:03","checkin":"2026-12-01T21:03"}
+{"who":"Brian","text":"Doesn't matter. Lost","posted":true,"at":"2026-12-01T21:03","checkin":"2026-12-01T21:03"}
+{"who":"Teresa","text":"Going to bed. Clocking in at 6 tmrw","posted":true,"at":"2026-12-01T22:40","checkin":"2026-12-01T22:40"}
+{"who":"Brian","text":"Ok","posted":true,"at":"2026-12-01T22:41","checkin":"2026-12-01T22:41"}

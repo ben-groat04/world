@@ -1,0 +1,103 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T17:00","complete":true,"rejects":0,"today":[null,null,"Kate"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1997,"cache_read_input_tokens":0,"output_tokens":1728,"output_tokens_details":{"thinking_tokens":1156},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1997,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1728,"cache_read_input_tokens":0,"cache_creation_input_tokens":1997,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1997},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":1997,"output_tokens":3917,"output_tokens_details":{"thinking_tokens":3341},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3917,"cache_read_input_tokens":1997,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":1997,"output_tokens":4293,"output_tokens_details":{"thinking_tokens":3258},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4293,"cache_read_input_tokens":1997,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2932,"cache_read_input_tokens":0,"output_tokens":3512,"output_tokens_details":{"thinking_tokens":2457},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2932,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3512,"cache_read_input_tokens":0,"cache_creation_input_tokens":2932,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2932},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3991,"cache_read_input_tokens":0,"output_tokens":2046,"output_tokens_details":{"thinking_tokens":1332},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3991,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2046,"cache_read_input_tokens":0,"cache_creation_input_tokens":3991,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3991},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Kate","Callum"],"setting":"You are both in Bristol, in a group chat you still share with Ruby, a mutual friend whose fortieth birthday party you are both helping to plan, and the deposit for the venue is paid from a joint account you set up together years ago. You used to be inseparable, from school through your twenties, and you have not spoken properly in almost two years. The chat is now the only place you still have to deal with each other.","openers":["Send him the venue deposit receipt","Tell him you're done with this chat","Remind him what he told you in confidence","Ask him what he actually wants from you"],"opener":"Remind him what he told you in confidence","cast":{"Kate":{"who":"33, woman, the former best friend","work":"hospital pharmacist","knows":"You know Callum as your former best friend since school.","texts":"","style":"little emoji and few texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Callum":{"who":"33, man, the former best friend","work":"graphic designer","knows":"You know Kate as your former best friend since school.","texts":"","style":"little emoji and few texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Kate":"You live in Bristol, work shifts as a hospital pharmacist, and live alone.","Callum":"You live in Bristol, work as a graphic designer, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":853,"cache_read_input_tokens":0,"output_tokens":839,"output_tokens_details":{"thinking_tokens":618},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":853,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":839,"cache_read_input_tokens":0,"cache_creation_input_tokens":853,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":853},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1122,"cache_read_input_tokens":0,"output_tokens":1569,"output_tokens_details":{"thinking_tokens":1198},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1122,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1569,"cache_read_input_tokens":0,"cache_creation_input_tokens":1122,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1122},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bristol, England","castMs":14744,"situation":"Two former best friends.","topic":"The worst fight of their friendship: each lists everything they hate about the other, throws back the most painful things they were told in confidence, and tries to hurt as much as possible."}
+{"who":"Kate","text":"Venue want the balance by the 12th or they release the date. Ruby's 40th is the 19th","posted":true,"at":"2026-12-03T17:04","checkin":"2026-12-03T17:04"}
+{"who":"Kate","text":"Joint account can cover the deposit but not the balance too. Can you move your half over by friday","posted":true,"at":"2026-12-03T17:06","checkin":"2026-12-03T17:06"}
+{"who":"Callum","text":"My half of what","posted":true,"at":"2026-12-03T17:31","checkin":"2026-12-03T17:31"}
+{"who":"Kate","text":"The balance. 1,180. So 590 each. I'll cover it till I'm paid on the 15th if you can't","posted":true,"at":"2026-12-03T17:33","checkin":"2026-12-03T17:33"}
+{"who":"Callum","text":"I'll look tonight","posted":true,"at":"2026-12-03T17:40","checkin":"2026-12-03T17:40"}
+{"who":"Kate","text":"Ruby also needs to know 4 or 5 stems per table for the florist. Can someone answer that","posted":true,"at":"2026-12-03T18:02","checkin":"2026-12-03T18:02"}
+{"who":"Callum","text":"She's in london till sunday","posted":true,"at":"2026-12-03T18:20","checkin":"2026-12-03T18:20"}
+{"who":"Kate","text":"So it's us","posted":true,"at":"2026-12-03T18:21","checkin":"2026-12-03T18:21"}
+{"who":"Callum","text":"I don't know what she said about stems","posted":true,"at":"2026-12-03T18:22","checkin":"2026-12-03T18:22"}
+{"who":"Callum","text":"You were there","posted":true,"at":"2026-12-03T18:22","checkin":"2026-12-03T18:22"}
+{"who":"Kate","text":"I was at work callum","posted":true,"at":"2026-12-03T18:25","checkin":"2026-12-03T18:25"}
+{"who":"Callum","text":"Sending the 590 now","posted":true,"at":"2026-12-03T19:48","checkin":"2026-12-03T19:48"}
+{"who":"Callum","text":"[screenshot: bank transfer confirmation, £590.00 to Joint Account, reference \"RUBY 40\"]","posted":true,"at":"2026-12-03T19:48","checkin":"2026-12-03T19:48"}
+{"who":"Kate","text":"Got it","posted":true,"at":"2026-12-03T19:50","checkin":"2026-12-03T19:50"}
+{"who":"Callum","text":"The venue invoice says 1,240 not 1,180","posted":true,"at":"2026-12-03T21:12","checkin":"2026-12-03T21:12"}
+{"who":"Kate","text":"Chair hire. 60 quid. You said the chairs","posted":true,"at":"2026-12-03T21:14","checkin":"2026-12-03T21:14"}
+{"who":"Callum","text":"I said maybe the chairs. I didn't say go ahead and book them","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Kate","text":"You said \"get the chairs if they're cheap\" and then you didn't answer for three days","posted":true,"at":"2026-12-03T21:16","checkin":"2026-12-03T21:16"}
+{"who":"Callum","text":"I answered when I had something to say","posted":true,"at":"2026-12-03T21:18","checkin":"2026-12-03T21:18"}
+{"who":"Kate","text":"You never have something to say. You just decide later that you didn't agree","posted":true,"at":"2026-12-03T21:20","checkin":"2026-12-03T21:20"}
+{"who":"Callum","text":"I'm not doing this in the group","posted":true,"at":"2026-12-03T21:22","checkin":"2026-12-03T21:22"}
+{"who":"Kate","text":"Ruby's not even in here. She's never in here. That's why it's us","posted":true,"at":"2026-12-03T21:23","checkin":"2026-12-03T21:23"}
+{"who":"Callum","text":"She's in here","posted":true,"at":"2026-12-03T21:23","checkin":"2026-12-03T21:23"}
+{"who":"Callum","text":"I'm not doing this","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Kate","text":"You never do, that's the whole thing","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Callum","text":"You've been like this since june","posted":true,"at":"2026-12-03T23:04","checkin":"2026-12-03T23:04"}
+{"who":"Kate","text":"Like what","posted":true,"at":"2026-12-03T23:06","checkin":"2026-12-03T23:06"}
+{"who":"Callum","text":"Nothing. Forget it","posted":true,"at":"2026-12-03T23:07","checkin":"2026-12-03T23:07"}
+{"who":"Kate","text":"No say it","posted":true,"at":"2026-12-03T23:08","checkin":"2026-12-03T23:08"}
+{"who":"Callum","text":"You've been waiting to get at me since the barbecue and you keep finding ways to bring it up","posted":true,"at":"2026-12-03T23:10","checkin":"2026-12-03T23:10"}
+{"who":"Kate","text":"Bring up what","posted":true,"at":"2026-12-03T23:12","checkin":"2026-12-03T23:12"}
+{"who":"Kate","text":"You know what, fine. Since you want to talk about june","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Kate","text":"You told me in the car park at ruby's barbecue that you're seeing someone about your head. You said you were scared you were turning into your dad. You made me swear on my mum not to tell ruby","posted":true,"at":"2026-12-03T23:41","checkin":"2026-12-03T23:41"}
+{"who":"Kate","text":"So don't sit there and tell me I'm the one who's hard to be friends with","posted":true,"at":"2026-12-03T23:43","checkin":"2026-12-03T23:43"}
+{"who":"Callum","text":"Are you going to tell her","posted":true,"at":"2026-12-04T07:48","checkin":"2026-12-04T07:48"}
+{"who":"Kate","text":"No","posted":true,"at":"2026-12-04T08:30","checkin":"2026-12-04T08:30"}
+{"who":"Kate","text":"I said I wouldn't and I haven't. I haven't told anyone","posted":true,"at":"2026-12-04T08:31","checkin":"2026-12-04T08:31"}
+{"who":"Callum","text":"Ok","posted":true,"at":"2026-12-04T08:33","checkin":"2026-12-04T08:33"}
+{"who":"Callum","text":"I shouldn't have brought up june in here","posted":true,"at":"2026-12-04T08:35","checkin":"2026-12-04T08:35"}
+{"who":"Kate","text":"But","posted":true,"at":"2026-12-04T08:36","checkin":"2026-12-04T08:36"}
+{"who":"Callum","text":"No but. You don't get to use it as the thing you hit me with though","posted":true,"at":"2026-12-04T08:38","checkin":"2026-12-04T08:38"}
+{"who":"Kate","text":"I'm not using anything. You started it","posted":true,"at":"2026-12-04T08:41","checkin":"2026-12-04T08:41"}
+{"who":"Callum","text":"Yeah ok","posted":true,"at":"2026-12-04T08:44","checkin":"2026-12-04T08:44"}
+{"who":"Kate","text":"Also you sent 590. Invoice is 1240. Each is 620 so you're 30 short","posted":true,"at":"2026-12-04T09:02","checkin":"2026-12-04T09:02"}
+{"who":"Callum","text":"I can count","posted":true,"at":"2026-12-04T09:20","checkin":"2026-12-04T09:20"}
+{"who":"Callum","text":"Sending the 30 when I'm paid","posted":true,"at":"2026-12-04T09:21","checkin":"2026-12-04T09:21"}
+{"who":"Kate","text":"Friday isn't payday for you?","posted":true,"at":"2026-12-04T09:22","checkin":"2026-12-04T09:22"}
+{"who":"Callum","text":"Not this week","posted":true,"at":"2026-12-04T09:24","checkin":"2026-12-04T09:24"}
+{"who":"Kate","text":"Fine. Send it when you're paid then. I'll ring the chair people about cancelling, they said up to 7 days out is free","posted":true,"at":"2026-12-04T09:25","checkin":"2026-12-04T09:25"}
+{"who":"Callum","text":"Don't cancel them yet","posted":true,"at":"2026-12-04T09:26","checkin":"2026-12-04T09:26"}
+{"who":"Callum","text":"I want to see the room first","posted":true,"at":"2026-12-04T09:26","checkin":"2026-12-04T09:26"}
+{"who":"Kate","text":"We've seen the room. We've seen it twice","posted":true,"at":"2026-12-04T09:30","checkin":"2026-12-04T09:30"}
+{"who":"Callum","text":"Then I want to see it a third time","posted":true,"at":"2026-12-04T09:31","checkin":"2026-12-04T09:31"}
+{"who":"Kate","text":"Ok whatever. I'll ring them Monday","posted":true,"at":"2026-12-04T09:45","checkin":"2026-12-04T09:45"}
+{"who":"Kate","text":"Florist needs stems by Wednesday. Ruby's voice note said 5 per table. I've written that down so you don't have to remember","posted":true,"at":"2026-12-04T11:17","checkin":"2026-12-04T11:17"}
+{"who":"Callum","text":"5","posted":true,"at":"2026-12-04T11:58","checkin":"2026-12-04T11:58"}
+{"who":"Kate","text":"Good","posted":true,"at":"2026-12-04T11:59","checkin":"2026-12-04T11:59"}
+{"who":"Callum","text":"[photo: a gig poster draft, the lettering on the top line is wrong]","posted":true,"at":"2026-12-04T14:12","checkin":"2026-12-04T14:12"}
+{"who":"Kate","text":"The g","posted":true,"at":"2026-12-04T14:20","checkin":"2026-12-04T14:20"}
+{"who":"Callum","text":"I know the g is wrong","posted":true,"at":"2026-12-04T14:21","checkin":"2026-12-04T14:21"}
+{"who":"Callum","text":"Client wants it \"more Bristol\"","posted":true,"at":"2026-12-04T14:21","checkin":"2026-12-04T14:21"}
+{"who":"Kate","text":"It's a bit like the sign outside the Tesco on Gloucester Road","posted":true,"at":"2026-12-04T14:24","checkin":"2026-12-04T14:24"}
+{"who":"Callum","text":"Thank you that's the problem","posted":true,"at":"2026-12-04T14:25","checkin":"2026-12-04T14:25"}
+{"who":"","react":"😂","to":62,"posted":false,"at":"2026-12-04T14:25"}
+{"who":"Kate","text":"Did you send the 30","posted":true,"at":"2026-12-04T19:40","checkin":"2026-12-04T19:40"}
+{"who":"Callum","text":"Not yet","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Kate","text":"You said you were paid this week","posted":true,"at":"2026-12-04T20:05","checkin":"2026-12-04T20:05"}
+{"who":"Callum","text":"I said not this week","posted":true,"at":"2026-12-04T20:06","checkin":"2026-12-04T20:06"}
+{"who":"Kate","text":"Ruby's back sunday at 6 if anyone's asking","posted":true,"at":"2026-12-04T22:48","checkin":"2026-12-04T22:48"}
+{"who":"Kate","text":"I'm sorry I said that thing about the car park. In the group. I shouldn't have said it like that","posted":true,"at":"2026-12-04T23:30","checkin":"2026-12-04T23:30"}
+{"who":"Callum","text":"It's fine","posted":true,"at":"2026-12-04T23:36","checkin":"2026-12-04T23:36"}
+{"who":"Callum","text":"It's not fine. But it's fine to say it","posted":true,"at":"2026-12-04T23:37","checkin":"2026-12-04T23:37"}
+{"who":"Kate","text":"Ok","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Callum","text":"[photo: the function room at the venue, empty, chairs stacked against the wall]","posted":true,"at":"2026-12-05T10:14","checkin":"2026-12-05T10:14"}
+{"who":"Callum","text":"Third time","posted":true,"at":"2026-12-05T10:15","checkin":"2026-12-05T10:15"}
+{"who":"Kate","text":"Are those the 60 quid chairs","posted":true,"at":"2026-12-05T10:31","checkin":"2026-12-05T10:31"}
+{"who":"Callum","text":"They're the ones you booked","posted":true,"at":"2026-12-05T10:33","checkin":"2026-12-05T10:33"}
+{"who":"Callum","text":"They're fine. The room's fine","posted":true,"at":"2026-12-05T10:33","checkin":"2026-12-05T10:33"}
+{"who":"Kate","text":"Ok","posted":true,"at":"2026-12-05T10:40","checkin":"2026-12-05T10:40"}
+{"who":"Kate","text":"Off shift","posted":true,"at":"2026-12-05T16:12","checkin":"2026-12-05T16:12"}
+{"who":"Kate","text":"Someone collapsed in the main car park today. A visitor not a patient. They brought him through the corridor past the pharmacy hatch and I was the one who got the first set of obs down","posted":true,"at":"2026-12-05T16:12","checkin":"2026-12-05T16:12"}
+{"who":"Callum","text":"Is he ok","posted":true,"at":"2026-12-05T16:14","checkin":"2026-12-05T16:14"}
+{"who":"Kate","text":"Think so. They said he's stable. Didn't stop shaking for a while though","posted":true,"at":"2026-12-05T16:19","checkin":"2026-12-05T16:19"}
+{"who":"Callum","text":"That's shit","posted":true,"at":"2026-12-05T16:20","checkin":"2026-12-05T16:20"}
+{"who":"Kate","text":"Yeah","posted":true,"at":"2026-12-05T16:20","checkin":"2026-12-05T16:20"}
+{"who":"Callum","text":"You ok","posted":true,"at":"2026-12-05T16:35","checkin":"2026-12-05T16:35"}
+{"who":"Kate","text":"Fine. Just weird. I don't usually see the people after","posted":true,"at":"2026-12-05T16:51","checkin":"2026-12-05T16:51"}
+{"who":"Callum","text":"Ok","posted":true,"at":"2026-12-05T17:03","checkin":"2026-12-05T17:03"}
+{"who":"Kate","text":"Did you send the 30","posted":true,"at":"2026-12-05T19:40","checkin":"2026-12-05T19:40"}
+{"who":"Callum","text":"Not yet","posted":true,"at":"2026-12-05T19:58","checkin":"2026-12-05T19:58"}
+{"who":"Kate","text":"You're going to forget","posted":true,"at":"2026-12-05T20:01","checkin":"2026-12-05T20:01"}
+{"who":"Callum","text":"I'm not going to forget. I'll send it when it's sent","posted":true,"at":"2026-12-05T20:02","checkin":"2026-12-05T20:02"}
+{"who":"Callum","text":"Sent it","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Callum","text":"It's from my account not the joint one so it'll show as a separate thing","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Kate","text":"Got it. Thanks","posted":true,"at":"2026-12-05T21:09","checkin":"2026-12-05T21:09"}
+{"who":"Kate","text":"You don't have to be a dick about it","posted":true,"at":"2026-12-05T21:09","checkin":"2026-12-05T21:09"}
+{"who":"Callum","text":"I'm not being a dick","posted":true,"at":"2026-12-05T21:10","checkin":"2026-12-05T21:10"}
+{"who":"Callum","text":"I said I'd send it","posted":true,"at":"2026-12-05T21:10","checkin":"2026-12-05T21:10"}
+{"who":"Kate","text":"Ok","posted":true,"at":"2026-12-05T23:14","checkin":"2026-12-05T23:14"}
+{"who":"Kate","text":"I'll ring the chair people Monday. You can come see the room a fourth time if you want","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Callum","text":"Ha","posted":true,"at":"2026-12-06T00:03","checkin":"2026-12-06T00:03"}

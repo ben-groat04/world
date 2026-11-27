@@ -1,0 +1,82 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1499,"cache_read_input_tokens":0,"output_tokens":1754,"output_tokens_details":{"thinking_tokens":111},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1499,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1754,"cache_read_input_tokens":0,"cache_creation_input_tokens":1499,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1499},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Declan","Aidan"],"setting":"You are texting each other from your respective homes in Belfast. You have been close mates since school, grew up in the same area, and have stayed tight ever since.","openers":["can't be arsed getting out of bed again","everything just feels completely grey lately","having a great time staring at the ceiling, recommend it","hate myself a small bit today, standard stuff"],"opener":"hate myself a small bit today, standard stuff","cast":{"Declan":{"who":"29, man, the friend going through a low spell","work":"unemployed","knows":"You know Aidan as your closest mate from school, someone you've kept in touch with through everything.","texts":"","style":"rarely uses emoji, no abbreviations, types how he talks","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Aidan":{"who":"30, man, the listening close friend","work":"IT support technician","knows":"You know Declan as your closest mate from school, one of your oldest friends.","texts":"","style":"occasional emoji, light abbreviations now and then","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Declan":"You live in Belfast, unemployed and mostly drifting through the days, and you live alone in a flat.","Aidan":"You live in Belfast, working in IT support, and you live alone."},"usage":[{"input_tokens":713,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":282,"output_tokens_details":{"thinking_tokens":109},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":713,"output_tokens":282,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":901,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":284,"output_tokens_details":{"thinking_tokens":27},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":901,"output_tokens":284,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Belfast, Northern Ireland","castMs":13017,"situation":"Two close friends.","topic":"One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would."}
+{"who":"Declan","text":"still in bed","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Aidan","text":"It's 6pm mate","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
+{"who":"Declan","text":"yeah","posted":true,"at":"2026-11-27T18:23","checkin":"2026-11-27T18:23"}
+{"who":"Declan","text":"couldn't really think of a reason to get up so","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Aidan","text":"You eaten anything","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Declan","text":"had some crackers about two","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Declan","text":"living my best life","posted":true,"at":"2026-11-27T18:34","checkin":"2026-11-27T18:34"}
+{"who":"Aidan","text":"How long has this been going on","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Declan","text":"few days. week maybe. I don't know it sort of blurs","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Declan","text":"not like anything's happened. just woke up one morning and everything felt a bit pointless and grey and it hasn't really shifted","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Aidan","text":"That sounds grim","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Declan","text":"it's fine. I'm not about to do anything dramatic before you ask","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Declan","text":"just hate myself a small bit today, standard stuff","posted":true,"at":"2026-11-27T18:54","checkin":"2026-11-27T18:54"}
+{"who":"Aidan","text":"Standard stuff he says","posted":true,"at":"2026-11-27T19:01","checkin":"2026-11-27T19:01"}
+{"who":"Declan","text":"you know what I mean","posted":true,"at":"2026-11-27T19:03","checkin":"2026-11-27T19:03"}
+{"who":"Aidan","text":"Yeah I know what you mean","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"Aidan","text":"What does hate yourself a small bit look like today specifically","posted":true,"at":"2026-11-27T19:05","checkin":"2026-11-27T19:05"}
+{"who":"Declan","text":"just the usual inventory. no job, nearly 30, lying in a flat in my own smell, haven't replied to my ma in four days","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Declan","text":"the full portfolio","posted":true,"at":"2026-11-27T19:13","checkin":"2026-11-27T19:13"}
+{"who":"Aidan","text":"The smell one made me laugh sorry","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Declan","text":"it should, it's very funny","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Aidan","text":"Have you showered","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"Declan","text":"no","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Aidan","text":"Right","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Aidan","text":"Do you want me to come over","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Declan","text":"nah you're alright","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Declan","text":"I'd have to tidy","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Aidan","text":"I've seen your flat Declan I'm not coming for the ambience","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Declan","text":"ha","posted":true,"at":"2026-11-27T19:45","checkin":"2026-11-27T19:45"}
+{"who":"Declan","text":"I think I just need to sit in it for a bit and then it'll pass. it usually does","posted":true,"at":"2026-11-27T19:46","checkin":"2026-11-27T19:46"}
+{"who":"Aidan","text":"Okay","posted":true,"at":"2026-11-27T19:53","checkin":"2026-11-27T19:53"}
+{"who":"Aidan","text":"Will you eat something proper tonight though","posted":true,"at":"2026-11-27T19:54","checkin":"2026-11-27T19:54"}
+{"who":"Declan","text":"I've got pasta I think","posted":true,"at":"2026-11-27T19:58","checkin":"2026-11-27T19:58"}
+{"who":"Aidan","text":"Make the pasta","posted":true,"at":"2026-11-27T20:03","checkin":"2026-11-27T20:03"}
+{"who":"Declan","text":"aye alright","posted":true,"at":"2026-11-27T20:04","checkin":"2026-11-27T20:04"}
+{"who":"Declan","text":"my ma's been ringing by the way","posted":true,"at":"2026-11-27T20:04","checkin":"2026-11-27T20:04"}
+{"who":"Declan","text":"I keep looking at my phone and putting it down","posted":true,"at":"2026-11-27T20:05","checkin":"2026-11-27T20:05"}
+{"who":"Aidan","text":"Yeah you said. What's stopping you","posted":true,"at":"2026-11-27T20:11","checkin":"2026-11-27T20:11"}
+{"who":"Declan","text":"she'll know something's wrong and then she'll want to fix it and I'll have to manage her being worried about me on top of everything else","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Declan","text":"which sounds awful when I say it out loud","posted":true,"at":"2026-11-27T20:16","checkin":"2026-11-27T20:16"}
+{"who":"Aidan","text":"Doesn't sound awful. Just sounds like you haven't got the energy","posted":true,"at":"2026-11-27T20:22","checkin":"2026-11-27T20:22"}
+{"who":"Declan","text":"yeah","posted":true,"at":"2026-11-27T20:24","checkin":"2026-11-27T20:24"}
+{"who":"Declan","text":"made the pasta","posted":true,"at":"2026-11-27T20:38","checkin":"2026-11-27T20:38"}
+{"who":"Aidan","text":"Good man","posted":true,"at":"2026-11-27T20:41","checkin":"2026-11-27T20:41"}
+{"who":"Aidan","text":"You watching anything","posted":true,"at":"2026-11-27T20:42","checkin":"2026-11-27T20:42"}
+{"who":"Declan","text":"just had the tv on in the background, wasn't really watching it. some programme about renovating houses","posted":true,"at":"2026-11-27T20:44","checkin":"2026-11-27T20:44"}
+{"who":"Declan","text":"deeply envious of people who have houses to renovate","posted":true,"at":"2026-11-27T20:45","checkin":"2026-11-27T20:45"}
+{"who":"Aidan","text":"😂","posted":true,"at":"2026-11-27T20:51","checkin":"2026-11-27T20:51"}
+{"who":"Aidan","text":"I'll be on later if you want to call, like after ten or so","posted":true,"at":"2026-11-27T20:52","checkin":"2026-11-27T20:52"}
+{"who":"Declan","text":"might do","posted":true,"at":"2026-11-27T20:55","checkin":"2026-11-27T20:55"}
+{"who":"Declan","text":"you know what gets me","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Declan","text":"I can't even point at a thing. there's no thing. it's just the absence of anything","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Aidan","text":"That's almost worse","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Declan","text":"yeah","posted":true,"at":"2026-11-27T21:56","checkin":"2026-11-27T21:56"}
+{"who":"Declan","text":"I keep thinking I should be applying for jobs or doing something useful and then I just. don't","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Aidan","text":"How long you been out of work now","posted":true,"at":"2026-11-27T22:08","checkin":"2026-11-27T22:08"}
+{"who":"Declan","text":"seven months","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Declan","text":"seven months sitting in that flat","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Aidan","text":"That would do anyone's head in","posted":true,"at":"2026-11-27T22:18","checkin":"2026-11-27T22:18"}
+{"who":"Declan","text":"people manage","posted":true,"at":"2026-11-27T22:19","checkin":"2026-11-27T22:19"}
+{"who":"Aidan","text":"People also don't","posted":true,"at":"2026-11-27T22:20","checkin":"2026-11-27T22:20"}
+{"who":"Declan","text":"fair enough","posted":true,"at":"2026-11-27T22:24","checkin":"2026-11-27T22:24"}
+{"who":"Aidan","text":"Still up?","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Declan","text":"yeah","posted":true,"at":"2026-11-27T22:54","checkin":"2026-11-27T22:54"}
+{"who":"Aidan","text":"[voice note: 0:47]","posted":true,"at":"2026-11-27T22:55","checkin":"2026-11-27T22:55"}
+{"who":"Declan","text":"[voice note: 1:12]","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Aidan","text":"[voice note: 0:23]","posted":true,"at":"2026-11-27T23:04","checkin":"2026-11-27T23:04"}
+{"who":"Declan","text":"yeah I know","posted":true,"at":"2026-11-27T23:08","checkin":"2026-11-27T23:08"}
+{"who":"Declan","text":"I will","posted":true,"at":"2026-11-27T23:09","checkin":"2026-11-27T23:09"}
+{"who":"Declan","text":"rang my ma","posted":true,"at":"2026-11-27T23:34","checkin":"2026-11-27T23:34"}
+{"who":"Aidan","text":"Yeah? How was it","posted":true,"at":"2026-11-27T23:41","checkin":"2026-11-27T23:41"}
+{"who":"Declan","text":"fine. she talked for forty minutes about my cousin's engagement","posted":true,"at":"2026-11-27T23:43","checkin":"2026-11-27T23:43"}
+{"who":"Declan","text":"so that was actually quite restful","posted":true,"at":"2026-11-27T23:43","checkin":"2026-11-27T23:43"}
+{"who":"Aidan","text":"There you go","posted":true,"at":"2026-11-27T23:48","checkin":"2026-11-27T23:48"}
+{"who":"Declan","text":"didn't have to say a word. just held the phone","posted":true,"at":"2026-11-27T23:49","checkin":"2026-11-27T23:49"}
+{"who":"Aidan","text":"Going to head to bed, early start tomorrow","posted":true,"at":"2026-11-27T23:55","checkin":"2026-11-27T23:55"}
+{"who":"Declan","text":"yeah go on","posted":true,"at":"2026-11-27T23:56","checkin":"2026-11-27T23:56"}
+{"who":"Declan","text":"cheers for tonight","posted":true,"at":"2026-11-27T23:56","checkin":"2026-11-27T23:56"}
+{"who":"Aidan","text":"Anytime. Text me tomorrow yeah","posted":true,"at":"2026-11-27T23:57","checkin":"2026-11-27T23:57"}
+{"who":"Declan","text":"will do","posted":true,"at":"2026-11-27T23:58","checkin":"2026-11-27T23:58"}

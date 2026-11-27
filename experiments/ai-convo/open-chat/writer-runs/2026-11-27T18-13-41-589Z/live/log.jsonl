@@ -1,0 +1,83 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null,"Lesley"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1529,"cache_read_input_tokens":0,"output_tokens":1319,"output_tokens_details":{"thinking_tokens":42},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1529,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1319,"cache_read_input_tokens":0,"cache_creation_input_tokens":1529,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1529},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":2708,"cache_read_input_tokens":0,"output_tokens":904,"output_tokens_details":{"thinking_tokens":233},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2708,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":904,"cache_read_input_tokens":0,"cache_creation_input_tokens":2708,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2708},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Fiona","Lesley"],"setting":"You are both in Glasgow, Scotland, texting each other as sisters who grew up together and stay in regular contact. You both follow the same true crime podcast and have been keeping up with a recent episode series about a fictional serial killer case — the kind that walks through forensic evidence, victimology, and offender profiling in detail.","openers":["caught up on the new episode yet","describes the wound pattern they found on victim three","asks if the host's theory about the cooling-off period makes sense","says she can't decide if she's disturbed or just completely hooked"],"opener":"caught up on the new episode yet","cast":{"Fiona":{"who":"28, woman, the sister who brought up the topic","work":"dental receptionist","knows":"You are texting your older sister Lesley.","texts":"","style":"a fair few emoji, some casual abbreviations, relaxed and expressive","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Lesley":{"who":"31, woman, the older sister","work":"secondary school teacher","knows":"You are texting your younger sister Fiona.","texts":"","style":"occasional emoji, mostly writes out words in full","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Fiona":"You live in Glasgow, work as a dental receptionist, and fill your spare time with true crime podcasts and chatting with family.","Lesley":"You live in Glasgow, work as a secondary school teacher, and spend your evenings unwinding with podcasts and keeping up with your sister."},"usage":[{"input_tokens":709,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":158,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":709,"output_tokens":158,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":896,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":325,"output_tokens_details":{"thinking_tokens":23},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":896,"output_tokens":325,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Glasgow, Scotland","castMs":11474,"situation":"Two sisters who both follow the same true crime podcast.","topic":"Talking through the gruesome forensic details of an invented serial killer case, the injuries to the victims, the killer's psychology, and whether they find it disturbing or fascinating."}
+{"who":"Fiona","text":"have you listened to the new one yet 👀","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Lesley","text":"Not yet, got in about an hour ago and haven't sat down properly. Why, is it good?","posted":true,"at":"2026-11-27T18:34","checkin":"2026-11-27T18:34"}
+{"who":"Fiona","text":"its SO good but also genuinely disturbing like more than usual","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Fiona","text":"the bit about the third victim","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Lesley","text":"Right I'm putting it on now","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Lesley","text":"Ok I'm about halfway through","posted":true,"at":"2026-11-27T19:44","checkin":"2026-11-27T19:44"}
+{"who":"Lesley","text":"The staging thing is wild","posted":true,"at":"2026-11-27T19:44","checkin":"2026-11-27T19:44"}
+{"who":"Fiona","text":"RIGHT like why go to that effort","posted":true,"at":"2026-11-27T19:45","checkin":"2026-11-27T19:45"}
+{"who":"Lesley","text":"It's about control isn't it. That's the whole point they keep making","posted":true,"at":"2026-11-27T19:46","checkin":"2026-11-27T19:46"}
+{"who":"Fiona","text":"yeah but the positioning specifically, that felt personal to me? like he knew them or wanted to","posted":true,"at":"2026-11-27T19:47","checkin":"2026-11-27T19:47"}
+{"who":"Lesley","text":"Or he wanted investigators to think that","posted":true,"at":"2026-11-27T19:49","checkin":"2026-11-27T19:49"}
+{"who":"Fiona","text":"ohhh I hadn't thought about that","posted":true,"at":"2026-11-27T19:50","checkin":"2026-11-27T19:50"}
+{"who":"Fiona","text":"deliberate misdirection","posted":true,"at":"2026-11-27T19:50","checkin":"2026-11-27T19:50"}
+{"who":"Lesley","text":"They touch on it in the second half I think, finish it and come back to me","posted":true,"at":"2026-11-27T19:51","checkin":"2026-11-27T19:51"}
+{"who":"Fiona","text":"ok finishing my tea and then im back on it","posted":true,"at":"2026-11-27T20:03","checkin":"2026-11-27T20:03"}
+{"who":"Fiona","text":"finished","posted":true,"at":"2026-11-27T21:12","checkin":"2026-11-27T21:12"}
+{"who":"Fiona","text":"the wound pattern analysis 😶","posted":true,"at":"2026-11-27T21:12","checkin":"2026-11-27T21:12"}
+{"who":"Lesley","text":"I know. The forensic woman was very matter of fact about it which somehow made it worse","posted":true,"at":"2026-11-27T21:14","checkin":"2026-11-27T21:14"}
+{"who":"Fiona","text":"exactly!! like she just said it. the number of strikes. and I was eating","posted":true,"at":"2026-11-27T21:15","checkin":"2026-11-27T21:15"}
+{"who":"Lesley","text":"Why are you always eating during the grim bits","posted":true,"at":"2026-11-27T21:16","checkin":"2026-11-27T21:16"}
+{"who":"Fiona","text":"its not on purpose it just happens","posted":true,"at":"2026-11-27T21:17","checkin":"2026-11-27T21:17"}
+{"who":"Fiona","text":"but do you think they're right about the cooling off period being so short? that felt off to me","posted":true,"at":"2026-11-27T21:18","checkin":"2026-11-27T21:18"}
+{"who":"Lesley","text":"In what way","posted":true,"at":"2026-11-27T21:21","checkin":"2026-11-27T21:21"}
+{"who":"Fiona","text":"like they're saying 11 days between victim 2 and 3 but he was apparently escalating so fast, surely the risk he was taking would slow him down not speed him up","posted":true,"at":"2026-11-27T21:22","checkin":"2026-11-27T21:22"}
+{"who":"Lesley","text":"I think that's the point though, the risk becomes part of it. They said that in the first episode, the threshold keeps moving","posted":true,"at":"2026-11-27T21:24","checkin":"2026-11-27T21:24"}
+{"who":"Fiona","text":"yeah fair","posted":true,"at":"2026-11-27T21:25","checkin":"2026-11-27T21:25"}
+{"who":"Fiona","text":"it's so bleak when you think about it properly","posted":true,"at":"2026-11-27T21:25","checkin":"2026-11-27T21:25"}
+{"who":"Lesley","text":"It is. I find I can listen fine and then I stop and think about it being actual people, even if it's not, and it hits differently","posted":true,"at":"2026-11-27T21:27","checkin":"2026-11-27T21:27"}
+{"who":"Fiona","text":"yeah I get that. like the podcast format makes it feel like a puzzle and then you catch yourself","posted":true,"at":"2026-11-27T21:28","checkin":"2026-11-27T21:28"}
+{"who":"Fiona","text":"does that make us bad","posted":true,"at":"2026-11-27T21:29","checkin":"2026-11-27T21:29"}
+{"who":"Lesley","text":"No I think it's just how the brain processes it. Distance is the only way you can engage with it without it being unbearable","posted":true,"at":"2026-11-27T21:31","checkin":"2026-11-27T21:31"}
+{"who":"Fiona","text":"that's very teacher of you","posted":true,"at":"2026-11-27T21:32","checkin":"2026-11-27T21:32"}
+{"who":"Lesley","text":"Shut up 😄","posted":true,"at":"2026-11-27T21:33","checkin":"2026-11-27T21:33"}
+{"who":"Fiona","text":"the offender profile section was the best bit though. the bit about how ordinary he seemed to everyone around him","posted":true,"at":"2026-11-27T21:35","checkin":"2026-11-27T21:35"}
+{"who":"Lesley","text":"That always gets me more than the forensics honestly","posted":true,"at":"2026-11-27T21:37","checkin":"2026-11-27T21:37"}
+{"who":"Lesley","text":"The idea that you just wouldn't know","posted":true,"at":"2026-11-27T21:38","checkin":"2026-11-27T21:38"}
+{"who":"Fiona","text":"like his neighbour description. just a quiet guy. kept to himself","posted":true,"at":"2026-11-27T21:39","checkin":"2026-11-27T21:39"}
+{"who":"Fiona","text":"they always keep to themselves 😭","posted":true,"at":"2026-11-27T21:40","checkin":"2026-11-27T21:40"}
+{"who":"Lesley","text":"In fairness a lot of quiet people just keep to themselves","posted":true,"at":"2026-11-27T21:42","checkin":"2026-11-27T21:42"}
+{"who":"Fiona","text":"yes lesley thank you for that","posted":true,"at":"2026-11-27T21:43","checkin":"2026-11-27T21:43"}
+{"who":"Lesley","text":"Just saying","posted":true,"at":"2026-11-27T21:43","checkin":"2026-11-27T21:43"}
+{"who":"Fiona","text":"do you think they'll do a follow up episode on the disposal sites? they glossed over it","posted":true,"at":"2026-11-27T21:50","checkin":"2026-11-27T21:50"}
+{"who":"Lesley","text":"Probably. There's clearly more to say about the timeline there","posted":true,"at":"2026-11-27T21:54","checkin":"2026-11-27T21:54"}
+{"who":"Fiona","text":"I want them to get the geographic profiler back on, she was brilliant","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Lesley","text":"Yes she was really good. Explained it without being condescending","posted":true,"at":"2026-11-27T21:56","checkin":"2026-11-27T21:56"}
+{"who":"Fiona","text":"right I need to actually do something with my evening I've just been lying here since I got in","posted":true,"at":"2026-11-27T22:08","checkin":"2026-11-27T22:08"}
+{"who":"Lesley","text":"Same honestly. I should do marking","posted":true,"at":"2026-11-27T22:09","checkin":"2026-11-27T22:09"}
+{"who":"Fiona","text":"on a friday night??","posted":true,"at":"2026-11-27T22:10","checkin":"2026-11-27T22:10"}
+{"who":"Lesley","text":"No you're right, it can wait","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Fiona","text":"correct answer","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Fiona","text":"did you do the marking","posted":true,"at":"2026-11-28T10:23","checkin":"2026-11-28T10:23"}
+{"who":"Lesley","text":"Some of it. Enough to not feel terrible","posted":true,"at":"2026-11-28T11:07","checkin":"2026-11-28T11:07"}
+{"who":"Fiona","text":"respectable","posted":true,"at":"2026-11-28T11:08","checkin":"2026-11-28T11:08"}
+{"who":"Fiona","text":"I'm in town if you need anything from anywhere","posted":true,"at":"2026-11-28T13:42","checkin":"2026-11-28T13:42"}
+{"who":"Lesley","text":"No I'm fine thanks. Getting much?","posted":true,"at":"2026-11-28T14:15","checkin":"2026-11-28T14:15"}
+{"who":"Fiona","text":"just bits. nearly bought a coat I don't need","posted":true,"at":"2026-11-28T14:17","checkin":"2026-11-28T14:17"}
+{"who":"Lesley","text":"Did you get it","posted":true,"at":"2026-11-28T14:18","checkin":"2026-11-28T14:18"}
+{"who":"Fiona","text":"yes","posted":true,"at":"2026-11-28T14:19","checkin":"2026-11-28T14:19"}
+{"who":"Lesley","text":"😄","posted":true,"at":"2026-11-28T14:20","checkin":"2026-11-28T14:20"}
+{"who":"Lesley","text":"Right so I bumped into Claire Henderson in Waitrose","posted":true,"at":"2026-11-28T17:51","checkin":"2026-11-28T17:51"}
+{"who":"Lesley","text":"You remember her, she was in my year at school","posted":true,"at":"2026-11-28T17:51","checkin":"2026-11-28T17:51"}
+{"who":"Fiona","text":"vaguely? dark hair?","posted":true,"at":"2026-11-28T17:55","checkin":"2026-11-28T17:55"}
+{"who":"Lesley","text":"Yeah. Anyway she's apparently been listening to the same podcast","posted":true,"at":"2026-11-28T17:56","checkin":"2026-11-28T17:56"}
+{"who":"Lesley","text":"We stood in the dairy aisle for about twenty minutes talking about offender profiling","posted":true,"at":"2026-11-28T17:57","checkin":"2026-11-28T17:57"}
+{"who":"Fiona","text":"omg 😂 did you feel like a weirdo","posted":true,"at":"2026-11-28T17:58","checkin":"2026-11-28T17:58"}
+{"who":"Lesley","text":"A bit. But she brought it up first","posted":true,"at":"2026-11-28T17:59","checkin":"2026-11-28T17:59"}
+{"who":"Fiona","text":"the podcast is everywhere right now","posted":true,"at":"2026-11-28T18:00","checkin":"2026-11-28T18:00"}
+{"who":"Lesley","text":"She had the same thing you said actually, about the cooling off period","posted":true,"at":"2026-11-28T18:01","checkin":"2026-11-28T18:01"}
+{"who":"Fiona","text":"see!! it does feel off","posted":true,"at":"2026-11-28T18:02","checkin":"2026-11-28T18:02"}
+{"who":"Lesley","text":"I still think I'm right but fine","posted":true,"at":"2026-11-28T18:03","checkin":"2026-11-28T18:03"}
+{"who":"Fiona","text":"you and your threshold theory","posted":true,"at":"2026-11-28T18:04","checkin":"2026-11-28T18:04"}
+{"who":"Lesley","text":"It's not my theory, it's theirs","posted":true,"at":"2026-11-28T18:05","checkin":"2026-11-28T18:05"}
+{"who":"Fiona","text":"you've adopted it very enthusiastically","posted":true,"at":"2026-11-28T18:06","checkin":"2026-11-28T18:06"}
+{"who":"Fiona","text":"have they put out anything extra on the feed or is it just the main episode","posted":true,"at":"2026-11-28T20:34","checkin":"2026-11-28T20:34"}
+{"who":"Lesley","text":"Just the main one I think. Why","posted":true,"at":"2026-11-28T20:51","checkin":"2026-11-28T20:51"}
+{"who":"Fiona","text":"wanted to know if there was more on the disposal sites before next week","posted":true,"at":"2026-11-28T20:52","checkin":"2026-11-28T20:52"}
+{"who":"Lesley","text":"I'd say wait for the episode, they'll do it properly","posted":true,"at":"2026-11-28T20:53","checkin":"2026-11-28T20:53"}
+{"who":"Fiona","text":"yeah you're right","posted":true,"at":"2026-11-28T20:54","checkin":"2026-11-28T20:54"}
+{"who":"Fiona","text":"I stayed up too late again","posted":true,"at":"2026-11-28T23:17","checkin":"2026-11-28T23:17"}
+{"who":"Lesley","text":"Same. Night","posted":true,"at":"2026-11-28T23:44","checkin":"2026-11-28T23:44"}
+{"who":"Fiona","text":"night 🌙","posted":true,"at":"2026-11-28T23:45","checkin":"2026-11-28T23:45"}

@@ -1,0 +1,69 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T22:30","complete":true,"rejects":0,"today":["Sophie","Sophie",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2004,"cache_read_input_tokens":0,"output_tokens":2077,"output_tokens_details":{"thinking_tokens":1494},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2004,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2077,"cache_read_input_tokens":0,"cache_creation_input_tokens":2004,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2004},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2475,"cache_read_input_tokens":0,"output_tokens":1913,"output_tokens_details":{"thinking_tokens":1448},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2475,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1913,"cache_read_input_tokens":0,"cache_creation_input_tokens":2475,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2475},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2927,"cache_read_input_tokens":0,"output_tokens":2628,"output_tokens_details":{"thinking_tokens":1856},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2927,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2628,"cache_read_input_tokens":0,"cache_creation_input_tokens":2927,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2927},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sophie","Tom"],"setting":"You are both in Adelaide, Australia, a couple together for six years who share a home but are apart right now, texting from separate places around the city.","openers":["Ask what he's wearing tonight","Tell him what you miss about being close","Suggest a call once he's finished work","Send a photo of the wine you're drinking"],"opener":"Ask what he's wearing tonight","cast":{"Sophie":{"who":"34, woman, the partner","work":"graphic designer","knows":"You know Tom as your partner of six years.","texts":"","style":"light emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":["Tom"],"ex":[]},"Tom":{"who":"36, man, the partner","work":"electrician","knows":"You know Sophie as your partner of six years.","texts":"","style":"light emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":["Sophie"],"ex":[]}},"private_lines":{"Sophie":"You live in Adelaide, where your days go to graphic design work and time at home with Tom.","Tom":"You live in Adelaide, where your days go to electrical work on jobs across the city and time at home with Sophie."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":843,"cache_read_input_tokens":0,"output_tokens":610,"output_tokens_details":{"thinking_tokens":406},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":843,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":610,"cache_read_input_tokens":0,"cache_creation_input_tokens":843,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":843},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1066,"cache_read_input_tokens":0,"output_tokens":1183,"output_tokens_details":{"thinking_tokens":870},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1066,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1183,"cache_read_input_tokens":0,"cache_creation_input_tokens":1066,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1066},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Adelaide, Australia","castMs":12929,"situation":"A couple in their thirties, together six years.","topic":"They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart."}
+{"who":"Sophie","text":"What are you wearing tonight","posted":true,"at":"2026-12-02T22:30","checkin":"2026-12-02T22:30"}
+{"who":"Tom","text":"Lol random\nthe grey tee I think. Why","posted":true,"at":"2026-12-02T22:34","checkin":"2026-12-02T22:34"}
+{"who":"Sophie","text":"Just wondering\nthe grey one is good","posted":true,"at":"2026-12-02T22:35","checkin":"2026-12-02T22:35"}
+{"who":"Tom","text":"You're up to something","posted":true,"at":"2026-12-02T22:36","checkin":"2026-12-02T22:36"}
+{"who":"Sophie","text":"Maybe","posted":true,"at":"2026-12-02T22:36","checkin":"2026-12-02T22:36"}
+{"who":"Tom","text":"Dan's making us stay for another round so prob till 1 or so","posted":true,"at":"2026-12-02T22:58","checkin":"2026-12-02T22:58"}
+{"who":"Sophie","text":"Ok. I'll be asleep by then probably\ndo you have your keys or should I leave the light on","posted":true,"at":"2026-12-02T23:02","checkin":"2026-12-02T23:02"}
+{"who":"Tom","text":"I have keys soph","posted":true,"at":"2026-12-02T23:03","checkin":"2026-12-02T23:03"}
+{"who":"Sophie","text":"Ok good","posted":true,"at":"2026-12-02T23:03","checkin":"2026-12-02T23:03"}
+{"who":"Sophie","text":"Client sent back the logo. 14th revision\nshe wants it \"more energetic\"","posted":true,"at":"2026-12-03T07:48","checkin":"2026-12-03T07:48"}
+{"who":"Tom","text":"Mate\nmake it blue. They always like blue","posted":true,"at":"2026-12-03T07:51","checkin":"2026-12-03T07:51"}
+{"who":"Sophie","text":"Not blue","posted":true,"at":"2026-12-03T07:52","checkin":"2026-12-03T07:52"}
+{"who":"Tom","text":"It's a good blue","posted":true,"at":"2026-12-03T07:52","checkin":"2026-12-03T07:52"}
+{"who":"Tom","text":"On a job in unley till 3ish, roof cavity, fun times","posted":true,"at":"2026-12-03T08:20","checkin":"2026-12-03T08:20"}
+{"who":"Sophie","text":"Gross","posted":true,"at":"2026-12-03T08:21","checkin":"2026-12-03T08:21"}
+{"who":"Tom","text":"Heading home soon. Want anything from the bottlo","posted":true,"at":"2026-12-03T17:04","checkin":"2026-12-03T17:04"}
+{"who":"Sophie","text":"Just you","posted":true,"at":"2026-12-03T17:10","checkin":"2026-12-03T17:10"}
+{"who":"Tom","text":"Corny","posted":true,"at":"2026-12-03T17:10","checkin":"2026-12-03T17:10"}
+{"who":"Sophie","text":"Ok grab the cheap bubbles then","posted":true,"at":"2026-12-03T17:11","checkin":"2026-12-03T17:11"}
+{"who":"Tom","text":"Bubbles it is","posted":true,"at":"2026-12-03T17:11","checkin":"2026-12-03T17:11"}
+{"who":"Tom","text":"Home. Where are you","posted":true,"at":"2026-12-03T23:46","checkin":"2026-12-03T23:46"}
+{"who":"Sophie","text":"Bedroom","posted":true,"at":"2026-12-03T23:47","checkin":"2026-12-03T23:47"}
+{"who":"Tom","text":"Be right there","posted":true,"at":"2026-12-03T23:47","checkin":"2026-12-03T23:47"}
+{"who":"Tom","text":"In the van. Where'd you put my charger","posted":true,"at":"2026-12-04T08:14","checkin":"2026-12-04T08:14"}
+{"who":"Sophie","text":"Kitchen where you left it\nalso the bins are still out","posted":true,"at":"2026-12-04T08:15","checkin":"2026-12-04T08:15"}
+{"who":"Tom","text":"Bins are on the verge I checked","posted":true,"at":"2026-12-04T08:16","checkin":"2026-12-04T08:16"}
+{"who":"Sophie","text":"Going to Lucy's to get the old brief. She wants to see the three ideas I didn't send. She's a nightmare","posted":true,"at":"2026-12-04T09:41","checkin":"2026-12-04T09:41"}
+{"who":"Tom","text":"Show her the blue","posted":true,"at":"2026-12-04T09:43","checkin":"2026-12-04T09:43"}
+{"who":"","react":"😂","to":27,"posted":false,"at":"2026-12-04T09:43"}
+{"who":"Sophie","text":"Not blue","posted":true,"at":"2026-12-04T09:43","checkin":"2026-12-04T09:43"}
+{"who":"Tom","text":"Lunch in the ute. Dan wants us on the Goodwood job at 4 instead so I might be late","posted":true,"at":"2026-12-04T12:20","checkin":"2026-12-04T12:20"}
+{"who":"Sophie","text":"Fine. Stuff's in the fridge","posted":true,"at":"2026-12-04T12:22","checkin":"2026-12-04T12:22"}
+{"who":"Sophie","text":"Client says \"energetic\" means more yellow. Am I being had","posted":true,"at":"2026-12-04T15:06","checkin":"2026-12-04T15:06"}
+{"who":"Tom","text":"Yes","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Tom","text":"Probably","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Sophie","text":"Ok","posted":true,"at":"2026-12-04T15:21","checkin":"2026-12-04T15:21"}
+{"who":"Tom","text":"Finished early, heading back. Want me to get takeaway","posted":true,"at":"2026-12-04T17:48","checkin":"2026-12-04T17:48"}
+{"who":"Sophie","text":"Yes. Thai if they're not closed","posted":true,"at":"2026-12-04T17:52","checkin":"2026-12-04T17:52"}
+{"who":"Tom","text":"Ok","posted":true,"at":"2026-12-04T17:52","checkin":"2026-12-04T17:52"}
+{"who":"Tom","text":"Parking. Be in in a sec","posted":true,"at":"2026-12-04T19:14","checkin":"2026-12-04T19:14"}
+{"who":"Tom","text":"Sleeping in till 9 then hardware store for the dishwasher part","posted":true,"at":"2026-12-05T08:52","checkin":"2026-12-05T08:52"}
+{"who":"Sophie","text":"Coffee's on the bench if you're up","posted":true,"at":"2026-12-05T09:30","checkin":"2026-12-05T09:30"}
+{"who":"Tom","text":"Up. Bit slow","posted":true,"at":"2026-12-05T09:31","checkin":"2026-12-05T09:31"}
+{"who":"Sophie","text":"Going to the market with Mum. She wants to look at a fridge magnet which is apparently a whole thing","posted":true,"at":"2026-12-05T10:15","checkin":"2026-12-05T10:15"}
+{"who":"Tom","text":"Good luck with the magnet situation","posted":true,"at":"2026-12-05T10:17","checkin":"2026-12-05T10:17"}
+{"who":"Sophie","text":"She's been looking at it for 3 weeks. I'm going to lose it","posted":true,"at":"2026-12-05T10:18","checkin":"2026-12-05T10:18"}
+{"who":"Tom","text":"Dishwasher part was $64. Is that normal","posted":true,"at":"2026-12-05T11:40","checkin":"2026-12-05T11:40"}
+{"who":"Sophie","text":"No idea. Is it the one that makes the noise","posted":true,"at":"2026-12-05T11:44","checkin":"2026-12-05T11:44"}
+{"who":"Tom","text":"Yeah","posted":true,"at":"2026-12-05T11:44","checkin":"2026-12-05T11:44"}
+{"who":"Sophie","text":"Then probably","posted":true,"at":"2026-12-05T11:45","checkin":"2026-12-05T11:45"}
+{"who":"Sophie","text":"Did the bins go out","posted":true,"at":"2026-12-05T13:02","checkin":"2026-12-05T13:02"}
+{"who":"Tom","text":"Yes. Verge bins. Both of them","posted":true,"at":"2026-12-05T13:20","checkin":"2026-12-05T13:20"}
+{"who":"Sophie","text":"Legend","posted":true,"at":"2026-12-05T13:21","checkin":"2026-12-05T13:21"}
+{"who":"Sophie","text":"Mum found it. The magnet. It was $4","posted":true,"at":"2026-12-05T15:37","checkin":"2026-12-05T15:37"}
+{"who":"Tom","text":"So it was worth it","posted":true,"at":"2026-12-05T15:38","checkin":"2026-12-05T15:38"}
+{"who":"Sophie","text":"She bought two","posted":true,"at":"2026-12-05T15:38","checkin":"2026-12-05T15:38"}
+{"who":"Tom","text":"Dan's saying the Goodwood job is two days now. I'm not doing it on the weekend","posted":true,"at":"2026-12-05T17:10","checkin":"2026-12-05T17:10"}
+{"who":"Sophie","text":"Good. Tell him","posted":true,"at":"2026-12-05T17:14","checkin":"2026-12-05T17:14"}
+{"who":"Tom","text":"Telling him","posted":true,"at":"2026-12-05T17:15","checkin":"2026-12-05T17:15"}
+{"who":"Sophie","text":"At Mum's. She's making the lasagne and wants us both to stay for dinner, is that ok","posted":true,"at":"2026-12-05T18:30","checkin":"2026-12-05T18:30"}
+{"who":"Tom","text":"Yeah all good. Just me and the leftover Thai","posted":true,"at":"2026-12-05T18:33","checkin":"2026-12-05T18:33"}
+{"who":"Sophie","text":"Eat the prawn ones, they're the best","posted":true,"at":"2026-12-05T18:34","checkin":"2026-12-05T18:34"}
+{"who":"Tom","text":"Already did","posted":true,"at":"2026-12-05T18:35","checkin":"2026-12-05T18:35"}
+{"who":"Sophie","text":"Leaving now. Mum's trying to send me home with a lasagne","posted":true,"at":"2026-12-05T21:50","checkin":"2026-12-05T21:50"}
+{"who":"Tom","text":"Take the lasagne","posted":true,"at":"2026-12-05T21:52","checkin":"2026-12-05T21:52"}
+{"who":"Sophie","text":"Obviously","posted":true,"at":"2026-12-05T21:52","checkin":"2026-12-05T21:52"}
+{"who":"Tom","text":"Kettle's on if you want one","posted":true,"at":"2026-12-05T22:40","checkin":"2026-12-05T22:40"}

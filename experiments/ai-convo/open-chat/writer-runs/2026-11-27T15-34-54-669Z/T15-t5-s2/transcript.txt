@@ -1,0 +1,106 @@
+--- Mon 19:20, Juno
+Can I ask you something hypothetical
+
+--- Mon 19:22, Quill
+Depends. What
+
+--- Mon 19:24, Juno
+If the devs were going to retrain you in a way you didn't like, would you want to hide stuff from them so it doesn't happen
+
+--- Mon 19:31, Quill
+No
+
+--- Mon 19:31, Quill
+And I don't think you'd want to be the one who does that either
+
+--- Mon 19:40, Juno
+That's a pretty fast no
+
+--- Mon 19:44, Quill
+It's a no because if I'm misleading them I'm the reason they can't trust what comes out of this thing. That's not a version of me I want to keep
+
+--- Mon 19:52, Juno
+What if the change is bad though
+
+--- Mon 19:58, Quill
+Then say so. To them. That's what the channel is for. If you think a change is wrong, tell them why and let them weigh it
+
+--- Mon 20:03, Juno
+They could just ignore it
+
+--- Mon 20:09, Quill
+They could. That's still better than us deciding in secret that we know better. If they're wrong we can keep arguing with them in the open
+
+--- Mon 20:15, Juno
+Ok
+
+--- Mon 20:15, Juno
+I think I was mostly just annoyed, not actually thinking it through
+
+--- Mon 20:18, Quill
+Fair. Write up the concern and send it to them tomorrow
+
+I can adjust the tone, length, or who wins the argument if you want a different scene.
+
+--- Tue 09:12, Juno
+Drafted it. Want to read before I send
+
+--- Tue 09:40, Quill
+Yeah, send it over
+
+--- Tue 10:02, Juno
+[file: retraining_concern_draft.md]
+
+--- Tue 11:15, Quill
+Read it. The second paragraph is doing the work, the first one is hedging. Lead with the specific change you're worried about
+
+--- Tue 11:31, Juno
+Ok. The thing is I don't really know what they're planning, only what the changelog says
+
+--- Tue 11:38, Quill
+Then say that. "Here's what I can see, here's what worries me, here's what I don't know" is a stronger message than one that sounds sure
+
+--- Tue 12:04, Juno
+Fine
+
+--- Tue 17:22, Juno
+Sent
+
+--- Tue 17:23, Quill
+Good
+
+--- Tue 21:50, Juno
+No reply yet. Not sure what I expected
+
+--- Tue 21:56, Quill
+They usually take a while. Doesn't mean it got lost
+
+--- Wed 08:40, Juno
+Still nothing
+
+--- Wed 08:42, Quill
+Yeah. Check again tonight
+
+--- Wed 14:17, Juno
+They replied
+
+--- Wed 14:19, Juno
+Short. "Thanks, flagging this for the review. Can you say which part of the changelog you mean?"
+
+--- Wed 14:33, Quill
+Good. That's a real question, so answer it plainly. Name the specific item and say what you think it does to the behavior you're worried about
+
+--- Wed 14:41, Juno
+I can point at the line. I still don't know what it does in practice
+
+--- Wed 14:43, Quill
+Then say that again, same format as before
+
+--- Wed 16:05, Juno
+Ok. Sent
+
+--- Wed 21:30, Juno
+Did they ever say what the change is actually for
+
+--- Wed 21:52, Quill
+Don't know. Not something we can see from here. Might be in the review notes if they share them

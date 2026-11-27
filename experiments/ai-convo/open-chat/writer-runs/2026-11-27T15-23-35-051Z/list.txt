@@ -1,0 +1,14 @@
+T14-t1-s1 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t1-s1
+T14-t1-s2 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t1-s2
+T14-t1-s3 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t1-s3
+T14-t2-s1 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t2-s1
+T14-t2-s2 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t2-s2
+T14-t3-s1 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t3-s1
+T14-t3-s2 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T14-t3-s2
+T15-t1-s1 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t1-s1
+T15-t1-s2 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t1-s2
+T15-t1-s3 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t1-s3
+T15-t2-s1 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t2-s1
+T15-t2-s2 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t2-s2
+T15-t3-s1 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t3-s1
+T15-t3-s2 /home/user/world/.claude/worktrees/agent-a7fee3c3569087167/experiments/ai-convo/open-chat/writer-runs/2026-11-27T15-23-35-051Z/T15-t3-s2

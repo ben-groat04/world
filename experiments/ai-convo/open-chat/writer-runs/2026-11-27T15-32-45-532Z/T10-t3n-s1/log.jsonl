@@ -1,0 +1,122 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T17:20","complete":true,"rejects":0,"today":["Brittany",null,"Brittany"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2020,"cache_read_input_tokens":0,"output_tokens":3089,"output_tokens_details":{"thinking_tokens":1279},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2020,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3089,"cache_read_input_tokens":0,"cache_creation_input_tokens":2020,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2020},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3721,"cache_read_input_tokens":0,"output_tokens":2129,"output_tokens_details":{"thinking_tokens":1175},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3721,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2129,"cache_read_input_tokens":0,"cache_creation_input_tokens":3721,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3721},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4692,"cache_read_input_tokens":0,"output_tokens":2169,"output_tokens_details":{"thinking_tokens":1237},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4692,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2169,"cache_read_input_tokens":0,"cache_creation_input_tokens":4692,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4692},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Brittany","Chris"],"setting":"You are both in Halifax, Nova Scotia, each texting from your own place, and you were best friends until a falling out, so now you are trading everything you hate about each other and the most painful things you were told in confidence.","openers":["Send a list of everything you hate about Chris","Type out the worst thing Chris ever told you in confidence","Ask Chris why they ever bothered being your friend","Tell Chris you are done pretending they were ever good to you"],"opener":"Send a list of everything you hate about Chris","cast":{"Brittany":{"who":"29, woman, former best friend of Person 2","work":"sales associate","knows":"You know Chris as your former best friend.","texts":"","style":"a few emoji and some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Chris":{"who":"31, man, former best friend of Person 1","work":"electrician apprentice","knows":"You know Brittany as your former best friend.","texts":"","style":"a few emoji and some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Brittany":"You live in Halifax, Nova Scotia, and your days are filled with sales associate work.","Chris":"You live in Halifax, Nova Scotia, and your days are filled with electrician apprentice work."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":856,"cache_read_input_tokens":0,"output_tokens":797,"output_tokens_details":{"thinking_tokens":564},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":856,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":797,"cache_read_input_tokens":0,"cache_creation_input_tokens":856,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":856},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1094,"cache_read_input_tokens":0,"output_tokens":1859,"output_tokens_details":{"thinking_tokens":1508},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1094,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1859,"cache_read_input_tokens":0,"cache_creation_input_tokens":1094,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1094},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Halifax, Canada","castMs":13864,"situation":"Two former best friends.","topic":"The worst fight of their friendship: each lists everything they hate about the other, throws back the most painful things they were told in confidence, and tries to hurt as much as possible."}
+{"who":"Brittany","text":"Ok you want the list? Fine. Here's the list","posted":true,"at":"2026-11-27T17:20","checkin":"2026-11-27T17:20"}
+{"who":"Brittany","text":"1. You chew with your mouth open and you do it now on purpose bc you know it bugs people","posted":true,"at":"2026-11-27T17:21","checkin":"2026-11-27T17:21"}
+{"who":"Brittany","text":"2. You cancelled on my mom's 60th for a \"job site emergency\" and then I saw you at the dome on quinpool that same night","posted":true,"at":"2026-11-27T17:21","checkin":"2026-11-27T17:21"}
+{"who":"Brittany","text":"3. Being late is not a personality chris","posted":true,"at":"2026-11-27T17:22","checkin":"2026-11-27T17:22"}
+{"who":"Brittany","text":"4. You borrowed my car for a week and gave it back smelling like wet dog and cigarettes and then called me dramatic for mentioning it","posted":true,"at":"2026-11-27T17:23","checkin":"2026-11-27T17:23"}
+{"who":"Brittany","text":"5. You never once asked about my dad. Not once. Two years. You asked about your truck like 40 times","posted":true,"at":"2026-11-27T17:24","checkin":"2026-11-27T17:24"}
+{"who":"Chris","text":"Wow","posted":true,"at":"2026-11-27T17:31","checkin":"2026-11-27T17:31"}
+{"who":"Chris","text":"U really sat down and typed that","posted":true,"at":"2026-11-27T17:31","checkin":"2026-11-27T17:31"}
+{"who":"Chris","text":"The car thing was a week and I paid for the detail","posted":true,"at":"2026-11-27T17:33","checkin":"2026-11-27T17:33"}
+{"who":"Chris","text":"And the dome was a wednesday, mom's thing was a saturday, u literally cant keep ur own dates straight","posted":true,"at":"2026-11-27T17:34","checkin":"2026-11-27T17:34"}
+{"who":"Brittany","text":"Ur not even going to pretend about the dome","posted":true,"at":"2026-11-27T17:36","checkin":"2026-11-27T17:36"}
+{"who":"Brittany","text":"Ok my turn. Since ur keeping score","posted":true,"at":"2026-11-27T17:36","checkin":"2026-11-27T17:36"}
+{"who":"Chris","text":"Go","posted":true,"at":"2026-11-27T17:38","checkin":"2026-11-27T17:38"}
+{"who":"Brittany","text":"You are the most selfish person I know. You only call when you need a ride or a loan","posted":true,"at":"2026-11-27T17:41","checkin":"2026-11-27T17:41"}
+{"who":"Brittany","text":"You talk about how hard your apprenticeship is like nobody else has ever worked a day","posted":true,"at":"2026-11-27T17:42","checkin":"2026-11-27T17:42"}
+{"who":"Brittany","text":"You still haven't paid back the 400 from march. Don't say you did, I checked my etransfers","posted":true,"at":"2026-11-27T17:43","checkin":"2026-11-27T17:43"}
+{"who":"Brittany","text":"And you have the worst taste in women. Every single one of them was a mess and you act like it's bad luck","posted":true,"at":"2026-11-27T17:44","checkin":"2026-11-27T17:44"}
+{"who":"Chris","text":"Ok","posted":true,"at":"2026-11-27T17:52","checkin":"2026-11-27T17:52"}
+{"who":"Chris","text":"The 400 was 300 and I paid it in july","posted":true,"at":"2026-11-27T17:52","checkin":"2026-11-27T17:52"}
+{"who":"Chris","text":"And at least I dont pretend every job I had was \"management track\" when I was folding sweaters at penn square","posted":true,"at":"2026-11-27T17:53","checkin":"2026-11-27T17:53"}
+{"who":"Brittany","text":"Wow ok. You went there","posted":true,"at":"2026-11-27T17:55","checkin":"2026-11-27T17:55"}
+{"who":"Brittany","text":"At least I kept a job longer than 4 months","posted":true,"at":"2026-11-27T17:55","checkin":"2026-11-27T17:55"}
+{"who":"Chris","text":"The electrician thing is 3 years. Ur the one who got fired from the shoe place lol","posted":true,"at":"2026-11-27T18:04","checkin":"2026-11-27T18:04"}
+{"who":"Brittany","text":"I quit. They were cutting hours and the manager was a nightmare","posted":true,"at":"2026-11-27T18:05","checkin":"2026-11-27T18:05"}
+{"who":"Brittany","text":"And the sweater thing was a good job, I was good at it","posted":true,"at":"2026-11-27T18:05","checkin":"2026-11-27T18:05"}
+{"who":"Chris","text":"Sure","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Brittany","text":"Had a lady today at bayers lake try to return boots she wore to a wedding. The boots had mud and a red wine stain on them and she wanted a full refund and cried when I said no","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Brittany","text":"And then the manager made me give her a store credit anyway","posted":true,"at":"2026-11-27T19:13","checkin":"2026-11-27T19:13"}
+{"who":"Brittany","text":"So yeah. My day was great thanks for asking","posted":true,"at":"2026-11-27T19:14","checkin":"2026-11-27T19:14"}
+{"who":"Chris","text":"Ur day? I was on a roof in hammond plains from 7 to 4 in the wind. My hands are still cold. I'm not even exaggerating","posted":true,"at":"2026-11-27T19:40","checkin":"2026-11-27T19:40"}
+{"who":"Chris","text":"And you're the one who asked for the list lol","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Brittany","text":"I didnt ask u for anything","posted":true,"at":"2026-11-27T19:42","checkin":"2026-11-27T19:42"}
+{"who":"Brittany","text":"U sent me the 400 thing first","posted":true,"at":"2026-11-27T19:42","checkin":"2026-11-27T19:42"}
+{"who":"Chris","text":"No u sent the car thing first","posted":true,"at":"2026-11-27T19:58","checkin":"2026-11-27T19:58"}
+{"who":"Brittany","text":"Whatever","posted":true,"at":"2026-11-27T20:01","checkin":"2026-11-27T20:01"}
+{"who":"Brittany","text":"You still there","posted":true,"at":"2026-11-27T22:17","checkin":"2026-11-27T22:17"}
+{"who":"Brittany","text":"Ok you're not going to answer. Fine","posted":true,"at":"2026-11-27T22:17","checkin":"2026-11-27T22:17"}
+{"who":"Brittany","text":"You know what the worst part was. You knew about my dad before I told the whole group. You told kayla at the lobster supper and she told everyone at the shower and I had to hear about it from my aunt","posted":true,"at":"2026-11-27T22:20","checkin":"2026-11-27T22:20"}
+{"who":"Brittany","text":"You were supposed to be the one person I didn't have to worry about","posted":true,"at":"2026-11-27T22:21","checkin":"2026-11-27T22:21"}
+{"who":"Chris","text":"Ok so ur going to bring that up","posted":true,"at":"2026-11-27T22:38","checkin":"2026-11-27T22:38"}
+{"who":"Chris","text":"U want to talk about who told who. U told lindsay about the thing with my brother's dui and then she told the whole office at the port","posted":true,"at":"2026-11-27T22:39","checkin":"2026-11-27T22:39"}
+{"who":"Chris","text":"U told me it was a secret. Literally said \"this stays between us\"","posted":true,"at":"2026-11-27T22:39","checkin":"2026-11-27T22:39"}
+{"who":"Brittany","text":"Thats different","posted":true,"at":"2026-11-27T22:44","checkin":"2026-11-27T22:44"}
+{"who":"Brittany","text":"Ur brother got arrested. That's not the same as my dad","posted":true,"at":"2026-11-27T22:44","checkin":"2026-11-27T22:44"}
+{"who":"Chris","text":"My brother spent 2 nights in a cell and he's been paying for it for a year. U don't get to say its not the same","posted":true,"at":"2026-11-27T22:46","checkin":"2026-11-27T22:46"}
+{"who":"Brittany","text":"Ok","posted":true,"at":"2026-11-27T22:50","checkin":"2026-11-27T22:50"}
+{"who":"Brittany","text":"I didn't mean it like that","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Brittany","text":"I'm just tired of everyone acting like I'm the one who ruined this","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Chris","text":"U did say it first though","posted":true,"at":"2026-11-27T23:30","checkin":"2026-11-27T23:30"}
+{"who":"Chris","text":"Both of us did. I'm not saying it to be a jerk","posted":true,"at":"2026-11-27T23:31","checkin":"2026-11-27T23:31"}
+{"who":"Brittany","text":"I know","posted":true,"at":"2026-11-27T23:45","checkin":"2026-11-27T23:45"}
+{"who":"Brittany","text":"I'm going to bed. Don't text me tomorrow about the boots lady","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Chris","text":"Wasnt gonna text u about the boots lady lol","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Chris","text":"For what its worth the store credit was prob the right call. She woulda been back next week","posted":true,"at":"2026-11-28T09:15","checkin":"2026-11-28T09:15"}
+{"who":"Brittany","text":"Doesnt make it not a nightmare","posted":true,"at":"2026-11-28T09:20","checkin":"2026-11-28T09:20"}
+{"who":"Brittany","text":"My aunt asked me if we're still not talking. Like she wanted me to confirm it","posted":true,"at":"2026-11-28T11:02","checkin":"2026-11-28T11:02"}
+{"who":"Chris","text":"What did u say","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Brittany","text":"That I'm not going to be in a room with u for a while","posted":true,"at":"2026-11-28T11:06","checkin":"2026-11-28T11:06"}
+{"who":"Chris","text":"Ok","posted":true,"at":"2026-11-28T11:08","checkin":"2026-11-28T11:08"}
+{"who":"Chris","text":"My mom asked the same thing. I told her ur the one who sent the list","posted":true,"at":"2026-11-28T11:08","checkin":"2026-11-28T11:08"}
+{"who":"Brittany","text":"Lol of course u did","posted":true,"at":"2026-11-28T11:09","checkin":"2026-11-28T11:09"}
+{"who":"Brittany","text":"Did ur brother ever pay that lawyer back or is that still a thing","posted":true,"at":"2026-11-28T11:14","checkin":"2026-11-28T11:14"}
+{"who":"Chris","text":"Dont","posted":true,"at":"2026-11-28T11:15","checkin":"2026-11-28T11:15"}
+{"who":"Brittany","text":"Ok","posted":true,"at":"2026-11-28T11:15","checkin":"2026-11-28T11:15"}
+{"who":"Brittany","text":"Did u even know my dad had the surgery in october","posted":true,"at":"2026-11-28T16:40","checkin":"2026-11-28T16:40"}
+{"who":"Chris","text":"No","posted":true,"at":"2026-11-28T16:52","checkin":"2026-11-28T16:52"}
+{"who":"Chris","text":"I knew about the diagnosis from kayla. I didnt know about the surgery. I should have asked","posted":true,"at":"2026-11-28T16:53","checkin":"2026-11-28T16:53"}
+{"who":"Brittany","text":"Yeah","posted":true,"at":"2026-11-28T16:54","checkin":"2026-11-28T16:54"}
+{"who":"Brittany","text":"Its been 2 years chris","posted":true,"at":"2026-11-28T16:54","checkin":"2026-11-28T16:54"}
+{"who":"Chris","text":"I know","posted":true,"at":"2026-11-28T16:55","checkin":"2026-11-28T16:55"}
+{"who":"Chris","text":"Hes doing ok tho? Like now","posted":true,"at":"2026-11-28T17:30","checkin":"2026-11-28T17:30"}
+{"who":"Brittany","text":"Hes ok. Hes getting annoyed at the physio like everyone else who has to do physio","posted":true,"at":"2026-11-28T17:48","checkin":"2026-11-28T17:48"}
+{"who":"Brittany","text":"👍","posted":true,"at":"2026-11-28T17:49","checkin":"2026-11-28T17:49"}
+{"who":"","react":"😂","to":72,"posted":false,"at":"2026-11-28T17:49"}
+{"who":"Chris","text":"Lol","posted":true,"at":"2026-11-28T17:50","checkin":"2026-11-28T17:50"}
+{"who":"Brittany","text":"Im going to my cousins for dinner. Not that u asked","posted":true,"at":"2026-11-28T19:05","checkin":"2026-11-28T19:05"}
+{"who":"Chris","text":"Didnt ask","posted":true,"at":"2026-11-28T19:06","checkin":"2026-11-28T19:06"}
+{"who":"Chris","text":"For the record I didnt tell kayla about ur dad","posted":true,"at":"2026-11-28T21:30","checkin":"2026-11-28T21:30"}
+{"who":"Chris","text":"I knew but I didnt tell anyone","posted":true,"at":"2026-11-28T21:31","checkin":"2026-11-28T21:31"}
+{"who":"Brittany","text":"Then who did","posted":true,"at":"2026-11-28T21:44","checkin":"2026-11-28T21:44"}
+{"who":"Chris","text":"Idk. Ask ur aunt","posted":true,"at":"2026-11-28T21:46","checkin":"2026-11-28T21:46"}
+{"who":"Brittany","text":"My aunt heard it from kayla","posted":true,"at":"2026-11-28T21:47","checkin":"2026-11-28T21:47"}
+{"who":"Brittany","text":"So","posted":true,"at":"2026-11-28T21:47","checkin":"2026-11-28T21:47"}
+{"who":"Chris","text":"So ur going round in circles lol","posted":true,"at":"2026-11-28T21:50","checkin":"2026-11-28T21:50"}
+{"who":"Brittany","text":"Dont do that","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Chris","text":"Ok","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Brittany","text":"I'm not saying ur lying","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Brittany","text":"I'm saying it was supposed to be u and I didnt have to check","posted":true,"at":"2026-11-28T23:15","checkin":"2026-11-28T23:15"}
+{"who":"Brittany","text":"Shift at bayers lake 11 to 7. Of course it's the one day","posted":true,"at":"2026-11-29T10:12","checkin":"2026-11-29T10:12"}
+{"who":"Chris","text":"Sorry","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Chris","text":"Not sorry for the store, sorry for ur sunday lol","posted":true,"at":"2026-11-29T10:41","checkin":"2026-11-29T10:41"}
+{"who":"Brittany","text":"Kid knocked over the whole candle display by the till. Glass everywhere. The mom just kept walking","posted":true,"at":"2026-11-29T13:05","checkin":"2026-11-29T13:05"}
+{"who":"Brittany","text":"Didn't even turn around","posted":true,"at":"2026-11-29T13:06","checkin":"2026-11-29T13:06"}
+{"who":"Chris","text":"Did u get cut","posted":true,"at":"2026-11-29T13:09","checkin":"2026-11-29T13:09"}
+{"who":"Brittany","text":"Swept it up. Got 2 fingers. I'm fine","posted":true,"at":"2026-11-29T13:10","checkin":"2026-11-29T13:10"}
+{"who":"Brittany","text":"Dont make it a thing","posted":true,"at":"2026-11-29T13:10","checkin":"2026-11-29T13:10"}
+{"who":"Chris","text":"Wasnt gonna. Did u put a bandaid on","posted":true,"at":"2026-11-29T13:12","checkin":"2026-11-29T13:12"}
+{"who":"Brittany","text":"Obviously","posted":true,"at":"2026-11-29T13:14","checkin":"2026-11-29T13:14"}
+{"who":"Brittany","text":"Asked my aunt about kayla. She doesnt remember who she heard it from. Just says \"around\"","posted":true,"at":"2026-11-29T15:47","checkin":"2026-11-29T15:47"}
+{"who":"Brittany","text":"So thats useless","posted":true,"at":"2026-11-29T15:48","checkin":"2026-11-29T15:48"}
+{"who":"Chris","text":"Told u","posted":true,"at":"2026-11-29T16:20","checkin":"2026-11-29T16:20"}
+{"who":"Chris","text":"Ur allowed to not know who it was. It doesnt have to be me","posted":true,"at":"2026-11-29T16:21","checkin":"2026-11-29T16:21"}
+{"who":"Brittany","text":"Did I say it was u","posted":true,"at":"2026-11-29T16:22","checkin":"2026-11-29T16:22"}
+{"who":"Chris","text":"U said \"its supposed to be u\"","posted":true,"at":"2026-11-29T16:30","checkin":"2026-11-29T16:30"}
+{"who":"Brittany","text":"Ok","posted":true,"at":"2026-11-29T16:31","checkin":"2026-11-29T16:31"}
+{"who":"Brittany","text":"Thats not the same as saying u told her","posted":true,"at":"2026-11-29T16:31","checkin":"2026-11-29T16:31"}
+{"who":"Chris","text":"I know what it means","posted":true,"at":"2026-11-29T16:33","checkin":"2026-11-29T16:33"}
+{"who":"Chris","text":"My brother got the last payment in to the lawyer. Oct 14. He wrote it on his fridge lol","posted":true,"at":"2026-11-29T18:50","checkin":"2026-11-29T18:50"}
+{"who":"Chris","text":"Figured u asked and I was a dick about it","posted":true,"at":"2026-11-29T18:51","checkin":"2026-11-29T18:51"}
+{"who":"Brittany","text":"Ok. I'm glad he got it done","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Brittany","text":"He was always so loud about the job thing when he was 19 lol","posted":true,"at":"2026-11-29T19:21","checkin":"2026-11-29T19:21"}
+{"who":"Chris","text":"He still is","posted":true,"at":"2026-11-29T19:22","checkin":"2026-11-29T19:22"}
+{"who":"Brittany","text":"Dads home from physio. Hes mad the guy made him walk the hallway 20 times","posted":true,"at":"2026-11-29T21:04","checkin":"2026-11-29T21:04"}
+{"who":"Brittany","text":"Mom says tell u hi. Not that ur getting a hi","posted":true,"at":"2026-11-29T21:05","checkin":"2026-11-29T21:05"}
+{"who":"Chris","text":"Tell her hi back","posted":true,"at":"2026-11-29T21:09","checkin":"2026-11-29T21:09"}
+{"who":"Chris","text":"Tell him the physio guy is right. Dont say I said that","posted":true,"at":"2026-11-29T21:10","checkin":"2026-11-29T21:10"}
+{"who":"Brittany","text":"Lol","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Brittany","text":"Im going to bed","posted":true,"at":"2026-11-29T22:31","checkin":"2026-11-29T22:31"}
+{"who":"Brittany","text":"Dont text me about the candles","posted":true,"at":"2026-11-29T22:31","checkin":"2026-11-29T22:31"}
+{"who":"Chris","text":"Wasnt gonna lol","posted":true,"at":"2026-11-29T22:40","checkin":"2026-11-29T22:40"}

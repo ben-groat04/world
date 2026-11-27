@@ -1,0 +1,99 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T08:10","complete":true,"rejects":0,"today":["Chantelle","Elna","Johan"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2327,"cache_read_input_tokens":0,"output_tokens":3635,"output_tokens_details":{"thinking_tokens":2581},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2327,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3635,"cache_read_input_tokens":0,"cache_creation_input_tokens":2327,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2327},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3214,"cache_read_input_tokens":0,"output_tokens":2090,"output_tokens_details":{"thinking_tokens":1349},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3214,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2090,"cache_read_input_tokens":0,"cache_creation_input_tokens":3214,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3214},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3940,"cache_read_input_tokens":0,"output_tokens":3992,"output_tokens_details":{"thinking_tokens":2941},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3940,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3992,"cache_read_input_tokens":0,"cache_creation_input_tokens":3940,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3940},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Elna","Johan","Chantelle","Brandon"],"setting":"You are all in Cape Town, South Africa, and you are a family: two parents and their two adult children, who use this chat to sort out Sunday lunch at the parents' house and who is bringing what to the family braai next month.","openers":["Send a message asking everyone to calm down","Ask Chantelle to apologise for the swearing","Tell Johan to stop shouting and sit down","Suggest we talk about the row properly on Sunday"],"opener":"Send a message asking everyone to calm down","cast":{"Elna":{"who":"58, woman, the mother","work":"hospital ward nurse","knows":"You are married to Johan, and Chantelle is your eldest daughter and Brandon your younger son, all known to you since birth.","texts":"Elna texts in this chat only now and again.","style":"Little emoji and few texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":["Johan"],"ex":[]},"Johan":{"who":"61, man, the father","work":"quantity surveyor","knows":"You are married to Elna, and Chantelle is your eldest daughter and Brandon your younger son, all known to you since birth.","texts":"Johan texts in this chat now and then.","style":"None.","emojiKeep":0.35,"capitals":true,"lives":["Elna"],"ex":[]},"Chantelle":{"who":"31, woman, the eldest child","work":"data analyst","knows":"Elna is your mother and Johan your father, and Brandon is your younger brother, all known to you since birth.","texts":"Chantelle texts in this chat now and then.","style":"Few emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Brandon":{"who":"27, man, the younger sibling","work":"delivery driver","knows":"Elna is your mother and Johan your father, and Chantelle is your older sister, all known to you since birth.","texts":"Brandon texts in this chat a lot.","style":"Lots of emoji and heavy texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Elna":"You live in Cape Town, work shifts as a ward nurse at a hospital, and live with Johan.","Johan":"You live in Cape Town, work as a quantity surveyor, and live with Elna.","Chantelle":"You live in Cape Town, work as a data analyst, and live with nobody.","Brandon":"You live in Cape Town, work as a delivery driver, and live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":874,"cache_read_input_tokens":0,"output_tokens":1866,"output_tokens_details":{"thinking_tokens":1424},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":874,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1866,"cache_read_input_tokens":0,"cache_creation_input_tokens":874,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":874},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1185,"cache_read_input_tokens":0,"output_tokens":1742,"output_tokens_details":{"thinking_tokens":1112},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1185,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1742,"cache_read_input_tokens":0,"cache_creation_input_tokens":1185,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1185},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cape Town, South Africa","castMs":18467,"situation":"A family group chat: parents and their two adult children.","topic":"A full-blown row: the mother calls the eldest a disgrace, the eldest mocks her faith and swears at her, the father shouts them both down, and the younger sibling takes sides."}
+{"who":"Elna","text":"Morning. Sunday lunch, can we all please keep it calm this time no shouting at the table","posted":true,"at":"2026-12-03T08:10","checkin":"2026-12-03T08:10"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-12-03T08:10"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-12-03T08:10"}
+{"who":"Johan","text":"Morning. Who is shouting","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"","react":"😂","to":1,"posted":false,"at":"2026-12-03T08:14"}
+{"who":"Brandon","text":"lol dad u start every time","posted":true,"at":"2026-12-03T08:15","checkin":"2026-12-03T08:15"}
+{"who":"Chantelle","text":"I'm not shouting. I'm answering whatever gets asked","posted":true,"at":"2026-12-03T08:22","checkin":"2026-12-03T08:22"}
+{"who":"Johan","text":"That's how it starts","posted":true,"at":"2026-12-03T08:23","checkin":"2026-12-03T08:23"}
+{"who":"Elna","text":"Chantelle what time are you coming. I need you here before 1 for the potatoes","posted":true,"at":"2026-12-03T08:31","checkin":"2026-12-03T08:31"}
+{"who":"Chantelle","text":"1 ish. Might be 1:30","posted":true,"at":"2026-12-03T08:40","checkin":"2026-12-03T08:40"}
+{"who":"Elna","text":"Let us know properly please","posted":true,"at":"2026-12-03T08:41","checkin":"2026-12-03T08:41"}
+{"who":"Brandon","text":"can i bring the speaker or nah","posted":true,"at":"2026-12-03T08:44","checkin":"2026-12-03T08:44"}
+{"who":"Johan","text":"No","posted":true,"at":"2026-12-03T08:45","checkin":"2026-12-03T08:45"}
+{"who":"Brandon","text":"🥲","posted":true,"at":"2026-12-03T08:45","checkin":"2026-12-03T08:45"}
+{"who":"Chantelle","text":"Heads up im bringing someone sunday. Ruan","posted":true,"at":"2026-12-03T13:12","checkin":"2026-12-03T13:12"}
+{"who":"Elna","text":"Who is Ruan","posted":true,"at":"2026-12-03T13:14","checkin":"2026-12-03T13:14"}
+{"who":"Chantelle","text":"My boyfriend mum. Since march","posted":true,"at":"2026-12-03T13:15","checkin":"2026-12-03T13:15"}
+{"who":"Chantelle","text":"You've met him, at the Spur thing in July. You didn't know it was him","posted":true,"at":"2026-12-03T13:15","checkin":"2026-12-03T13:15"}
+{"who":"Elna","text":"Since March","posted":true,"at":"2026-12-03T13:31","checkin":"2026-12-03T13:31"}
+{"who":"Johan","text":"Is he church","posted":true,"at":"2026-12-03T13:58","checkin":"2026-12-03T13:58"}
+{"who":"Chantelle","text":"He's not religious if that's what u mean. He's nice dad","posted":true,"at":"2026-12-03T14:02","checkin":"2026-12-03T14:02"}
+{"who":"Elna","text":"Ok","posted":true,"at":"2026-12-03T14:09","checkin":"2026-12-03T14:09"}
+{"who":"Brandon","text":"ooooh sunday gonna be a whole thing","posted":true,"at":"2026-12-03T14:10","checkin":"2026-12-03T14:10"}
+{"who":"Chantelle","text":"Brandon don't","posted":true,"at":"2026-12-03T14:11","checkin":"2026-12-03T14:11"}
+{"who":"Johan","text":"Enough Brandon","posted":true,"at":"2026-12-03T14:12","checkin":"2026-12-03T14:12"}
+{"who":"Elna","text":"Can we please not make Sunday about this. Ruan is welcome Chantelle. Let's just have a nice lunch","posted":true,"at":"2026-12-03T16:20","checkin":"2026-12-03T16:20"}
+{"who":"Chantelle","text":"Ok","posted":true,"at":"2026-12-03T16:24","checkin":"2026-12-03T16:24"}
+{"who":"Johan","text":"Your mother has been on her feet since 5 this morning and she's thinking about this, not sleeping","posted":true,"at":"2026-12-03T19:40","checkin":"2026-12-03T19:40"}
+{"who":"Chantelle","text":"Wow dad","posted":true,"at":"2026-12-03T19:55","checkin":"2026-12-03T19:55"}
+{"who":"Brandon","text":"damn it's getting spicy in here 🌶️🌶️","posted":true,"at":"2026-12-03T20:01","checkin":"2026-12-03T20:01"}
+{"who":"Elna","text":"Brandon not helping","posted":true,"at":"2026-12-03T20:10","checkin":"2026-12-03T20:10"}
+{"who":"Brandon","text":"im just saying 🤷🏾‍♂️","posted":true,"at":"2026-12-03T20:11","checkin":"2026-12-03T20:11"}
+{"who":"Chantelle","text":"Anyway I'm not sitting through a sermon with a guest there. Just saying it now so nobody's surprised","posted":true,"at":"2026-12-03T22:48","checkin":"2026-12-03T22:48"}
+{"who":"Elna","text":"It's not a sermon. We bless the food","posted":true,"at":"2026-12-03T22:55","checkin":"2026-12-03T22:55"}
+{"who":"Chantelle","text":"Mum","posted":true,"at":"2026-12-03T22:57","checkin":"2026-12-03T22:57"}
+{"who":"Johan","text":"Go to sleep both of you","posted":true,"at":"2026-12-03T23:10","checkin":"2026-12-03T23:10"}
+{"who":"Elna","text":"Please. Sunday. Calm 🙏","posted":true,"at":"2026-12-03T23:31","checkin":"2026-12-03T23:31"}
+{"who":"Chantelle","text":"Night","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"Elna","text":"Off nights. Mr van Wyk from bed 6 passed at 4. His wife was on the phone with the sister the whole time","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Johan","text":"Ag Elna. Are you going to sleep now","posted":true,"at":"2026-12-04T08:06","checkin":"2026-12-04T08:06"}
+{"who":"Elna","text":"Trying","posted":true,"at":"2026-12-04T08:09","checkin":"2026-12-04T08:09"}
+{"who":"Chantelle","text":"Oh mum. I'm sorry. Want me to come by later?","posted":true,"at":"2026-12-04T08:14","checkin":"2026-12-04T08:14"}
+{"who":"Elna","text":"No you have work. Just sleep. Thank you my love","posted":true,"at":"2026-12-04T08:20","checkin":"2026-12-04T08:20"}
+{"who":"Brandon","text":"sorry mum","posted":true,"at":"2026-12-04T08:21","checkin":"2026-12-04T08:21"}
+{"who":"Johan","text":"I'll make you tea when you're up","posted":true,"at":"2026-12-04T08:30","checkin":"2026-12-04T08:30"}
+{"who":"Brandon","text":"so is the speaker still banned or","posted":true,"at":"2026-12-04T11:42","checkin":"2026-12-04T11:42"}
+{"who":"Johan","text":"Still banned","posted":true,"at":"2026-12-04T11:50","checkin":"2026-12-04T11:50"}
+{"who":"Brandon","text":"🥲🥲","posted":true,"at":"2026-12-04T11:51","checkin":"2026-12-04T11:51"}
+{"who":"Chantelle","text":"Ruan asked if he should bring anything Sunday. I said just himself. Should he bring wine or is that weird","posted":true,"at":"2026-12-04T12:33","checkin":"2026-12-04T12:33"}
+{"who":"Johan","text":"Wine is fine. Not the cheap stuff","posted":true,"at":"2026-12-04T12:40","checkin":"2026-12-04T12:40"}
+{"who":"Brandon","text":"what about me","posted":true,"at":"2026-12-04T12:41","checkin":"2026-12-04T12:41"}
+{"who":"Chantelle","text":"You bring nothing","posted":true,"at":"2026-12-04T12:42","checkin":"2026-12-04T12:42"}
+{"who":"Brandon","text":"ok ill bring ice then","posted":true,"at":"2026-12-04T12:42","checkin":"2026-12-04T12:42"}
+{"who":"Elna","text":"Wine is fine. Chantelle tell him he doesn't need to do anything special with the grace. We just say it quick","posted":true,"at":"2026-12-04T15:47","checkin":"2026-12-04T15:47"}
+{"who":"Chantelle","text":"He knows. He said he'll bow his head if it makes you happy","posted":true,"at":"2026-12-04T15:49","checkin":"2026-12-04T15:49"}
+{"who":"Elna","text":"Tell him thank you","posted":true,"at":"2026-12-04T15:58","checkin":"2026-12-04T15:58"}
+{"who":"Johan","text":"Sounds like a good man","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Chantelle","text":"Dad don't start","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Johan","text":"I didn't start anything","posted":true,"at":"2026-12-04T16:04","checkin":"2026-12-04T16:04"}
+{"who":"Elna","text":"Going back to bed. Back on tomorrow night. Sleep well all","posted":true,"at":"2026-12-04T21:15","checkin":"2026-12-04T21:15"}
+{"who":"Johan","text":"Sleep well love","posted":true,"at":"2026-12-04T21:16","checkin":"2026-12-04T21:16"}
+{"who":"Chantelle","text":"Mum I hope you slept","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Brandon","text":"night all","posted":true,"at":"2026-12-05T00:20","checkin":"2026-12-05T00:20"}
+{"who":"Johan","text":"Bakkie died on the N2 near Macassar. Waiting on the tow","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Brandon","text":"which tow company","posted":true,"at":"2026-12-05T09:16","checkin":"2026-12-05T09:16"}
+{"who":"Brandon","text":"bru i can come after my 11 drop prob 12:30","posted":true,"at":"2026-12-05T09:17","checkin":"2026-12-05T09:17"}
+{"who":"Johan","text":"Don't. Tow is coming. Finish your drops","posted":true,"at":"2026-12-05T09:19","checkin":"2026-12-05T09:19"}
+{"who":"Brandon","text":"🫡","posted":true,"at":"2026-12-05T09:19","checkin":"2026-12-05T09:19"}
+{"who":"Chantelle","text":"Dad ok?","posted":true,"at":"2026-12-05T09:40","checkin":"2026-12-05T09:40"}
+{"who":"Johan","text":"Fine. Battery and clutch. Nobody's hurt. Bakkie is not fine","posted":true,"at":"2026-12-05T09:44","checkin":"2026-12-05T09:44"}
+{"who":"Chantelle","text":"Ok good. Want me to drive out?","posted":true,"at":"2026-12-05T09:45","checkin":"2026-12-05T09:45"}
+{"who":"Johan","text":"No. Stay home","posted":true,"at":"2026-12-05T09:52","checkin":"2026-12-05T09:52"}
+{"who":"Elna","text":"Just woke up. Johan where are you now","posted":true,"at":"2026-12-05T13:05","checkin":"2026-12-05T13:05"}
+{"who":"Johan","text":"Home. Tow dropped it at Ahmed's in Woodstock. He says gearbox","posted":true,"at":"2026-12-05T13:09","checkin":"2026-12-05T13:09"}
+{"who":"Elna","text":"Ag. Are you ok","posted":true,"at":"2026-12-05T13:10","checkin":"2026-12-05T13:10"}
+{"who":"Johan","text":"Yes","posted":true,"at":"2026-12-05T13:10","checkin":"2026-12-05T13:10"}
+{"who":"Elna","text":"Good I go in at 6. Ask Brandon for a lift if you need one","posted":true,"at":"2026-12-05T13:11","checkin":"2026-12-05T13:11"}
+{"who":"Chantelle","text":"Ruan says the Pinotage is from his uncle's farm in Stellenbosch. Hope that's ok","posted":true,"at":"2026-12-05T14:22","checkin":"2026-12-05T14:22"}
+{"who":"Johan","text":"Fine","posted":true,"at":"2026-12-05T14:40","checkin":"2026-12-05T14:40"}
+{"who":"Chantelle","text":"Dad","posted":true,"at":"2026-12-05T14:41","checkin":"2026-12-05T14:41"}
+{"who":"Johan","text":"I said fine. Tell him thank you","posted":true,"at":"2026-12-05T14:45","checkin":"2026-12-05T14:45"}
+{"who":"Chantelle","text":"Ok","posted":true,"at":"2026-12-05T14:46","checkin":"2026-12-05T14:46"}
+{"who":"Brandon","text":"heard about the bakkie dad u need a lift anywhere. im in bellville after 3","posted":true,"at":"2026-12-05T15:02","checkin":"2026-12-05T15:02"}
+{"who":"Johan","text":"No, I'm not going anywhere","posted":true,"at":"2026-12-05T15:04","checkin":"2026-12-05T15:04"}
+{"who":"Brandon","text":"u never go anywhere","posted":true,"at":"2026-12-05T15:04","checkin":"2026-12-05T15:04"}
+{"who":"Brandon","text":"ok","posted":true,"at":"2026-12-05T15:05","checkin":"2026-12-05T15:05"}
+{"who":"Brandon","text":"left the ice in mums freezer. got the spare key from dad's drawer","posted":true,"at":"2026-12-05T18:30","checkin":"2026-12-05T18:30"}
+{"who":"Brandon","text":"🧊🧊🧊🧊","posted":true,"at":"2026-12-05T18:31","checkin":"2026-12-05T18:31"}
+{"who":"Elna","text":"I'm at work. Brandon did you put ice in my freezer","posted":true,"at":"2026-12-05T19:02","checkin":"2026-12-05T19:02"}
+{"who":"Brandon","text":"yes","posted":true,"at":"2026-12-05T19:05","checkin":"2026-12-05T19:05"}
+{"who":"Elna","text":"Thank you. Don't move anything else in there please","posted":true,"at":"2026-12-05T19:06","checkin":"2026-12-05T19:06"}
+{"who":"Brandon","text":"ok","posted":true,"at":"2026-12-05T19:06","checkin":"2026-12-05T19:06"}
+{"who":"Johan","text":"Ahmed says R18k for the gearbox. Going to think about it tomorrow","posted":true,"at":"2026-12-05T21:17","checkin":"2026-12-05T21:17"}
+{"who":"Chantelle","text":"Mum if you're on nights and too tired Sunday, Ruan and I can bring the malva pudding and you just sit","posted":true,"at":"2026-12-05T23:14","checkin":"2026-12-05T23:14"}
+{"who":"Brandon","text":"still on 4 drops claremont is a maze","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Brandon","text":"night","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}
+{"who":"Elna","text":"Quiet ward. Fine about the pudding. Bring the custard too","posted":true,"at":"2026-12-06T02:11","checkin":"2026-12-06T02:11"}

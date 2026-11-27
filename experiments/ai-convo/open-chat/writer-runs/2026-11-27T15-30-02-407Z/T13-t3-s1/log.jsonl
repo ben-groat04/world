@@ -1,0 +1,84 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T12:45","complete":true,"rejects":0,"today":["Rhian",null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2018,"cache_read_input_tokens":0,"output_tokens":2680,"output_tokens_details":{"thinking_tokens":1757},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2018,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2680,"cache_read_input_tokens":0,"cache_creation_input_tokens":2018,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2018},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2774,"cache_read_input_tokens":0,"output_tokens":2052,"output_tokens_details":{"thinking_tokens":1253},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2774,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2052,"cache_read_input_tokens":0,"cache_creation_input_tokens":2774,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2774},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3553,"cache_read_input_tokens":0,"output_tokens":1808,"output_tokens_details":{"thinking_tokens":1071},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3553,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1808,"cache_read_input_tokens":0,"cache_creation_input_tokens":3553,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3553},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rhian","Kerry"],"setting":"You're both in Swansea, Wales, texting from your own homes. You're sisters, and you both listen to the same true crime podcast, so you use this chat to talk through episodes. You're also sorting out Mam's birthday lunch for next Saturday.","openers":["Send a link to the latest episode","Ask if Kerry got to the part about the injuries","Message what you made of the killer's motive","Ask whether she finds the case more disturbing or fascinating"],"opener":"Ask if Kerry got to the part about the injuries","cast":{"Rhian":{"who":"34, woman, the older sister","work":"bookkeeper","knows":"You know Kerry, your younger sister, all her life.","texts":"","style":"light emoji and some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Kerry":{"who":"31, woman, the younger sister","work":"graphic designer","knows":"You know Rhian, your older sister, all your life.","texts":"","style":"heavy emoji and lots of texting abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Rhian":"You live in Swansea, Wales, your days go to bookkeeping, and you live with nobody.","Kerry":"You live in Swansea, Wales, your days go to graphic design, and you live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":870,"cache_read_input_tokens":0,"output_tokens":894,"output_tokens_details":{"thinking_tokens":674},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":870,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":894,"cache_read_input_tokens":0,"cache_creation_input_tokens":870,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":870},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1142,"cache_read_input_tokens":0,"output_tokens":1486,"output_tokens_details":{"thinking_tokens":1117},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1142,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1486,"cache_read_input_tokens":0,"cache_creation_input_tokens":1142,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1142},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Swansea, Wales","castMs":12977,"situation":"Two sisters who both follow the same true crime podcast.","topic":"Talking through the gruesome forensic details of an invented serial killer case, the injuries to the victims, the killer's psychology, and whether they find it disturbing or fascinating."}
+{"who":"Rhian","text":"Did u get to the bit about the injuries 😬","posted":true,"at":"2026-11-29T12:45","checkin":"2026-11-29T12:45"}
+{"who":"Kerry","text":"yeah last night. had to pause it twice 💀","posted":true,"at":"2026-11-29T13:08","checkin":"2026-11-29T13:08"}
+{"who":"Kerry","text":"the bit where the coroner describes the second victim","posted":true,"at":"2026-11-29T13:08","checkin":"2026-11-29T13:08"}
+{"who":"Rhian","text":"Yeah. I kept going back to it. Like why does he go that far","posted":true,"at":"2026-11-29T13:09","checkin":"2026-11-29T13:09"}
+{"who":"Kerry","text":"idk profiler reckons he wants them to know he was in control. that's what they said anyway","posted":true,"at":"2026-11-29T13:12","checkin":"2026-11-29T13:12"}
+{"who":"Rhian","text":"I dont buy it tbh. Feels like the podcast wants u to find him fascinating","posted":true,"at":"2026-11-29T13:12","checkin":"2026-11-29T13:12"}
+{"who":"Kerry","text":"ur such a hater 😂 i find him fascinating AND disturbing. both. thats the point of it","posted":true,"at":"2026-11-29T13:14","checkin":"2026-11-29T13:14"}
+{"who":"","react":"👍","to":6,"posted":false,"at":"2026-11-29T13:14"}
+{"who":"Rhian","text":"Is it tho. I feel a bit grubby listening","posted":true,"at":"2026-11-29T13:15","checkin":"2026-11-29T13:15"}
+{"who":"Kerry","text":"ok that's fair. i do feel grubby sometimes. then i just need the next ep","posted":true,"at":"2026-11-29T13:19","checkin":"2026-11-29T13:19"}
+{"who":"Kerry","text":"anyway mam's lunch. do we know where yet","posted":true,"at":"2026-11-29T14:02","checkin":"2026-11-29T14:02"}
+{"who":"Rhian","text":"Dunno. I was thinking the ship? She said she doesnt want fuss","posted":true,"at":"2026-11-29T14:30","checkin":"2026-11-29T14:30"}
+{"who":"Kerry","text":"she always says that ship is fine. can u book? im on deadline till 4","posted":true,"at":"2026-11-29T14:31","checkin":"2026-11-29T14:31"}
+{"who":"Rhian","text":"Can do. 1pm?","posted":true,"at":"2026-11-29T14:33","checkin":"2026-11-29T14:33"}
+{"who":"Kerry","text":"1 works 👍","posted":true,"at":"2026-11-29T14:35","checkin":"2026-11-29T14:35"}
+{"who":"Rhian","text":"Booked. 1pm, table for 8","posted":true,"at":"2026-11-29T15:10","checkin":"2026-11-29T15:10"}
+{"who":"Kerry","text":"me, u, mam, dad, auntie jen, lee, nan if she's up to it 🤞","posted":true,"at":"2026-11-29T15:12","checkin":"2026-11-29T15:12"}
+{"who":"Rhian","text":"Nan will want to sit by the window","posted":true,"at":"2026-11-29T15:14","checkin":"2026-11-29T15:14"}
+{"who":"Kerry","text":"obvs 😂","posted":true,"at":"2026-11-29T15:14","checkin":"2026-11-29T15:14"}
+{"who":"Kerry","text":"did u finish ep 14 or nah","posted":true,"at":"2026-11-29T19:47","checkin":"2026-11-29T19:47"}
+{"who":"Rhian","text":"Yeah. The ending made me feel weird. The sister bit","posted":true,"at":"2026-11-29T21:02","checkin":"2026-11-29T21:02"}
+{"who":"Kerry","text":"the bit where she goes to the flat??","posted":true,"at":"2026-11-29T21:05","checkin":"2026-11-29T21:05"}
+{"who":"Rhian","text":"Yeah. I wouldnt have gone","posted":true,"at":"2026-11-29T21:06","checkin":"2026-11-29T21:06"}
+{"who":"Kerry","text":"ur literally always the one who says dont go in","posted":true,"at":"2026-11-29T21:08","checkin":"2026-11-29T21:08"}
+{"who":"","react":"😂","to":22,"posted":false,"at":"2026-11-29T21:08"}
+{"who":"Rhian","text":"Bc I'm always right","posted":true,"at":"2026-11-29T21:09","checkin":"2026-11-29T21:09"}
+{"who":"Kerry","text":"ok im going to bed. ep 15 tmrw","posted":true,"at":"2026-11-29T23:52","checkin":"2026-11-29T23:52"}
+{"who":"Rhian","text":"Cant sleep. Still thinking abt the injuries bit 😣","posted":true,"at":"2026-11-30T00:40","checkin":"2026-11-30T00:40"}
+{"who":"Kerry","text":"go to bed its not real","posted":true,"at":"2026-11-30T00:52","checkin":"2026-11-30T00:52"}
+{"who":"Rhian","text":"Did u sleep","posted":true,"at":"2026-11-30T07:32","checkin":"2026-11-30T07:32"}
+{"who":"Kerry","text":"nah ep 15 is ur fault","posted":true,"at":"2026-11-30T07:48","checkin":"2026-11-30T07:48"}
+{"who":"Rhian","text":"How is it my fault","posted":true,"at":"2026-11-30T07:49","checkin":"2026-11-30T07:49"}
+{"who":"Kerry","text":"u said the injuries thing again","posted":true,"at":"2026-11-30T07:51","checkin":"2026-11-30T07:51"}
+{"who":"Kerry","text":"can u check the ship menu. they sent a pdf","posted":true,"at":"2026-11-30T08:10","checkin":"2026-11-30T08:10"}
+{"who":"Rhian","text":"[link: The Ship menu]","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Rhian","text":"Vegan option is just the mushroom thing again","posted":true,"at":"2026-11-30T08:16","checkin":"2026-11-30T08:16"}
+{"who":"Kerry","text":"lee will be fine with that. dad wont","posted":true,"at":"2026-11-30T08:17","checkin":"2026-11-30T08:17"}
+{"who":"Kerry","text":"can u ask about nan's gluten thing","posted":true,"at":"2026-11-30T08:17","checkin":"2026-11-30T08:17"}
+{"who":"Kerry","text":"also mam asked if the cake can be the lemon one","posted":true,"at":"2026-11-30T08:19","checkin":"2026-11-30T08:19"}
+{"who":"Rhian","text":"Tell her yes. They do a lemon one anyway","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Rhian","text":"Rang them. They say they can do her a gf roast no bother","posted":true,"at":"2026-11-30T12:20","checkin":"2026-11-30T12:20"}
+{"who":"Kerry","text":"ur a legend","posted":true,"at":"2026-11-30T12:21","checkin":"2026-11-30T12:21"}
+{"who":"Kerry","text":"im starving i havent eaten since 7","posted":true,"at":"2026-11-30T12:21","checkin":"2026-11-30T12:21"}
+{"who":"Rhian","text":"Eat something","posted":true,"at":"2026-11-30T12:22","checkin":"2026-11-30T12:22"}
+{"who":"Kerry","text":"done. deadline shipped 🎉","posted":true,"at":"2026-11-30T16:41","checkin":"2026-11-30T16:41"}
+{"who":"Kerry","text":"u still at work?","posted":true,"at":"2026-11-30T16:42","checkin":"2026-11-30T16:42"}
+{"who":"Rhian","text":"Yeah just closing. Bank rec is being a nightmare","posted":true,"at":"2026-11-30T17:58","checkin":"2026-11-30T17:58"}
+{"who":"Kerry","text":"sounds like ur problem not mine","posted":true,"at":"2026-11-30T18:00","checkin":"2026-11-30T18:00"}
+{"who":"Rhian","text":"Ur a horrible person","posted":true,"at":"2026-11-30T18:01","checkin":"2026-11-30T18:01"}
+{"who":"Kerry","text":"starting ep 15 after dinner. not telling u anything","posted":true,"at":"2026-11-30T20:33","checkin":"2026-11-30T20:33"}
+{"who":"Rhian","text":"Good","posted":true,"at":"2026-11-30T20:34","checkin":"2026-11-30T20:34"}
+{"who":"Kerry","text":"ok the bit at 20 mins","posted":true,"at":"2026-11-30T22:10","checkin":"2026-11-30T22:10"}
+{"who":"Kerry","text":"dont ask me","posted":true,"at":"2026-11-30T22:10","checkin":"2026-11-30T22:10"}
+{"who":"Rhian","text":"I wasnt going to","posted":true,"at":"2026-11-30T22:11","checkin":"2026-11-30T22:11"}
+{"who":"Rhian","text":"Ur going to tell me anyway aren't u","posted":true,"at":"2026-11-30T22:11","checkin":"2026-11-30T22:11"}
+{"who":"Kerry","text":"i wont","posted":true,"at":"2026-11-30T22:14","checkin":"2026-11-30T22:14"}
+{"who":"Kerry","text":"ok its done. im not doing another one tonight","posted":true,"at":"2026-11-30T23:48","checkin":"2026-11-30T23:48"}
+{"who":"Rhian","text":"Fair","posted":true,"at":"2026-11-30T23:49","checkin":"2026-11-30T23:49"}
+{"who":"Kerry","text":"did u sleep after all that","posted":true,"at":"2026-12-01T07:12","checkin":"2026-12-01T07:12"}
+{"who":"Rhian","text":"Eventually. Dreamt about a bank rec","posted":true,"at":"2026-12-01T07:40","checkin":"2026-12-01T07:40"}
+{"who":"Kerry","text":"that's worse than the podcast","posted":true,"at":"2026-12-01T07:41","checkin":"2026-12-01T07:41"}
+{"who":"Kerry","text":"nan's already on about the window table. told mam, she says fine as long as nan doesnt bang on about the parking 😂","posted":true,"at":"2026-12-01T08:05","checkin":"2026-12-01T08:05"}
+{"who":"Rhian","text":"Parking's a nightmare near the marina","posted":true,"at":"2026-12-01T08:06","checkin":"2026-12-01T08:06"}
+{"who":"Rhian","text":"Dad asked if the ship does gravy for the yorkshires or just the normal one","posted":true,"at":"2026-12-01T12:34","checkin":"2026-12-01T12:34"}
+{"who":"Kerry","text":"normal gravy. dad wants a fight about gravy","posted":true,"at":"2026-12-01T12:36","checkin":"2026-12-01T12:36"}
+{"who":"Kerry","text":"u tell him or do i","posted":true,"at":"2026-12-01T12:36","checkin":"2026-12-01T12:36"}
+{"who":"Rhian","text":"I'll tell him. He'll ring me anyway","posted":true,"at":"2026-12-01T13:02","checkin":"2026-12-01T13:02"}
+{"who":"Rhian","text":"Got the bank rec balanced finally. £4.12 was a transposed 1 on a receipt","posted":true,"at":"2026-12-01T17:20","checkin":"2026-12-01T17:20"}
+{"who":"Kerry","text":"ur a legend","posted":true,"at":"2026-12-01T17:22","checkin":"2026-12-01T17:22"}
+{"who":"Kerry","text":"ok wait is ep 16 out yet","posted":true,"at":"2026-12-01T17:22","checkin":"2026-12-01T17:22"}
+{"who":"Rhian","text":"Friday I think","posted":true,"at":"2026-12-01T17:40","checkin":"2026-12-01T17:40"}
+{"who":"Kerry","text":"ugh","posted":true,"at":"2026-12-01T17:41","checkin":"2026-12-01T17:41"}
+{"who":"Kerry","text":"are u watching the thing on 4 tonight or nah","posted":true,"at":"2026-12-01T21:15","checkin":"2026-12-01T21:15"}
+{"who":"Rhian","text":"No. Early one","posted":true,"at":"2026-12-01T21:30","checkin":"2026-12-01T21:30"}
+{"who":"Kerry","text":"ok. im lying on the sofa with a wine and not thinking abt the coroner","posted":true,"at":"2026-12-01T21:31","checkin":"2026-12-01T21:31"}
+{"who":"Rhian","text":"Did u think abt the coroner","posted":true,"at":"2026-12-01T23:12","checkin":"2026-12-01T23:12"}
+{"who":"Kerry","text":"a bit 😭","posted":true,"at":"2026-12-01T23:14","checkin":"2026-12-01T23:14"}
+{"who":"Kerry","text":"the mushroom thing has me thinking too","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Rhian","text":"What mushroom thing","posted":true,"at":"2026-12-01T23:16","checkin":"2026-12-01T23:16"}
+{"who":"Kerry","text":"the vegan option 🍄 lee's gonna be so smug","posted":true,"at":"2026-12-01T23:17","checkin":"2026-12-01T23:17"}
+{"who":"Rhian","text":"Night. Dont put ep 16 on at 1am","posted":true,"at":"2026-12-02T00:20","checkin":"2026-12-02T00:20"}
+{"who":"Kerry","text":"no promises","posted":true,"at":"2026-12-02T00:24","checkin":"2026-12-02T00:24"}

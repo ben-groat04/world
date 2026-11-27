@@ -1,0 +1,68 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T17:45","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1927,"cache_read_input_tokens":0,"output_tokens":2132,"output_tokens_details":{"thinking_tokens":1639},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1927,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2132,"cache_read_input_tokens":0,"cache_creation_input_tokens":1927,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1927},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2321,"cache_read_input_tokens":0,"output_tokens":1688,"output_tokens_details":{"thinking_tokens":994},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2321,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1688,"cache_read_input_tokens":0,"cache_creation_input_tokens":2321,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2321},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3013,"cache_read_input_tokens":0,"output_tokens":1676,"output_tokens_details":{"thinking_tokens":1022},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3013,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1676,"cache_read_input_tokens":0,"cache_creation_input_tokens":3013,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3013},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Luke","Chloe"],"setting":"You two are in Cape Town, a brother and sister who grew up together, and at the moment you are planning your mother's birthday lunch and dividing up who collects her from the airport.","openers":["send a calm apology for the swearing","suggest you pause this until the weekend","ask what actually set off this round","propose we talk about Mum's lunch instead"],"opener":"send a calm apology for the swearing","cast":{"Luke":{"who":"34, man, the brother","work":"plumber","knows":"You know Chloe as your older sister, from growing up together and from your family arguments over the years.","texts":"","style":"a few emoji and some texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Chloe":{"who":"38, woman, the sister","work":"journalist","knows":"You know Luke as your younger brother, from growing up together and from your family arguments over the years.","texts":"","style":"none","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Luke":"You live in Cape Town, plumbing jobs fill your days, and you live alone.","Chloe":"You live in Cape Town, reporting work fills your days, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":857,"cache_read_input_tokens":0,"output_tokens":832,"output_tokens_details":{"thinking_tokens":629},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":857,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":832,"cache_read_input_tokens":0,"cache_creation_input_tokens":857,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":857},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1116,"cache_read_input_tokens":0,"output_tokens":1974,"output_tokens_details":{"thinking_tokens":1649},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1116,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1974,"cache_read_input_tokens":0,"cache_creation_input_tokens":1116,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1116},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cape Town, South Africa","castMs":15995,"situation":"A brother and sister, both adults, who fell out over politics before.","topic":"Abortion: they are furious, swearing at each other, bringing up old family grudges, and saying they might stop speaking."}
+{"who":"Luke","text":"sorry for the swearing earlier. shouldnt have done that. i still think what i said but i could have said it better","posted":true,"at":"2026-11-30T17:45","checkin":"2026-11-30T17:45"}
+{"who":"Chloe","text":"Ok","posted":true,"at":"2026-11-30T18:02","checkin":"2026-11-30T18:02"}
+{"who":"Chloe","text":"Thanks for saying that. Calling me naive in front of mum wasnt great though","posted":true,"at":"2026-11-30T18:10","checkin":"2026-11-30T18:10"}
+{"who":"Luke","text":"fair. that was a dig","posted":true,"at":"2026-11-30T18:14","checkin":"2026-11-30T18:14"}
+{"who":"Chloe","text":"Anyway. Mum's lunch. She lands cpt 10:40 sat 12th. Who's getting her","posted":true,"at":"2026-11-30T18:40","checkin":"2026-11-30T18:40"}
+{"who":"Luke","text":"i can do it but i have a job in sea point till 11 so ill be late","posted":true,"at":"2026-11-30T19:02","checkin":"2026-11-30T19:02"}
+{"who":"Chloe","text":"You always say that","posted":true,"at":"2026-11-30T19:05","checkin":"2026-11-30T19:05"}
+{"who":"Luke","text":"ok ill be there by 12","posted":true,"at":"2026-11-30T19:09","checkin":"2026-11-30T19:09"}
+{"who":"Chloe","text":"Ill take her. You do the venue, you're better at the booking stuff","posted":true,"at":"2026-11-30T19:12","checkin":"2026-11-30T19:12"}
+{"who":"Luke","text":"fine. not the place with the terrible wine","posted":true,"at":"2026-11-30T19:30","checkin":"2026-11-30T19:30"}
+{"who":"Chloe","text":"Did you see mum's message in the family group","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Luke","text":"no, what","posted":true,"at":"2026-11-30T21:58","checkin":"2026-11-30T21:58"}
+{"who":"Chloe","text":"She asked if we're still not speaking","posted":true,"at":"2026-11-30T22:03","checkin":"2026-11-30T22:03"}
+{"who":"Luke","text":"tell her we're fine","posted":true,"at":"2026-11-30T22:20","checkin":"2026-11-30T22:20"}
+{"who":"Chloe","text":"We're not fine","posted":true,"at":"2026-11-30T22:21","checkin":"2026-11-30T22:21"}
+{"who":"Luke","text":"we're speaking. that's fine","posted":true,"at":"2026-11-30T22:24","checkin":"2026-11-30T22:24"}
+{"who":"Luke","text":"cant sleep. u still up","posted":true,"at":"2026-12-01T00:40","checkin":"2026-12-01T00:40"}
+{"who":"Chloe","text":"Yes. Cant either","posted":true,"at":"2026-12-01T00:58","checkin":"2026-12-01T00:58"}
+{"who":"Luke","text":"about the lunch or mum or\nthe other thing","posted":true,"at":"2026-12-01T01:03","checkin":"2026-12-01T01:03"}
+{"who":"Chloe","text":"The other thing","posted":true,"at":"2026-12-01T01:06","checkin":"2026-12-01T01:06"}
+{"who":"Luke","text":"i shouldnt have said naive. i said it cause i was annoyed about the house thing not really about you","posted":true,"at":"2026-12-01T01:09","checkin":"2026-12-01T01:09"}
+{"who":"Chloe","text":"Its the same thing luke","posted":true,"at":"2026-12-01T01:15","checkin":"2026-12-01T01:15"}
+{"who":"Chloe","text":"Go to sleep. Ill sort the flight stuff with mum tmrw","posted":true,"at":"2026-12-01T01:20","checkin":"2026-12-01T01:20"}
+{"who":"Luke","text":"ok","posted":true,"at":"2026-12-01T01:22","checkin":"2026-12-01T01:22"}
+{"who":"Chloe","text":"Her flight's confirmed for 10:40 Sat, nothing changed. I'll leave for the airport at 9:45","posted":true,"at":"2026-12-01T09:14","checkin":"2026-12-01T09:14"}
+{"who":"Chloe","text":"Venue: the one on Kloof with the decent wine? They want numbers by Thurs","posted":true,"at":"2026-12-01T09:16","checkin":"2026-12-01T09:16"}
+{"who":"Luke","text":"yeah kloof is fine. 8 for sure? or does mum want the friend from church","posted":true,"at":"2026-12-01T11:52","checkin":"2026-12-01T11:52"}
+{"who":"Chloe","text":"Mum said 8. Aunt Bev is coming and Gerald is bringing the cake","posted":true,"at":"2026-12-01T12:03","checkin":"2026-12-01T12:03"}
+{"who":"Chloe","text":"Dont let him bring the cake","posted":true,"at":"2026-12-01T12:04","checkin":"2026-12-01T12:04"}
+{"who":"Luke","text":"lol ok","posted":true,"at":"2026-12-01T12:20","checkin":"2026-12-01T12:20"}
+{"who":"Luke","text":"booked. sat 1pm for 8. confirmation email should come thru","posted":true,"at":"2026-12-01T17:48","checkin":"2026-12-01T17:48"}
+{"who":"Chloe","text":"Thanks","posted":true,"at":"2026-12-01T17:55","checkin":"2026-12-01T17:55"}
+{"who":"Luke","text":"no worries","posted":true,"at":"2026-12-01T17:56","checkin":"2026-12-01T17:56"}
+{"who":"","react":"👍","to":32,"posted":false,"at":"2026-12-01T17:56"}
+{"who":"Chloe","text":"Did you actually sleep last night","posted":true,"at":"2026-12-01T22:14","checkin":"2026-12-01T22:14"}
+{"who":"Luke","text":"no. was up at 4 fixing a geyser for some guy in Observatory who hasnt paid me yet","posted":true,"at":"2026-12-01T22:40","checkin":"2026-12-01T22:40"}
+{"who":"Chloe","text":"Is that the one you were arguing about with the Rondebosch people","posted":true,"at":"2026-12-01T22:41","checkin":"2026-12-01T22:41"}
+{"who":"Luke","text":"different one. same problem though","posted":true,"at":"2026-12-01T22:44","checkin":"2026-12-01T22:44"}
+{"who":"Chloe","text":"Go to bed Luke","posted":true,"at":"2026-12-01T22:46","checkin":"2026-12-01T22:46"}
+{"who":"Luke","text":"ur not my mum","posted":true,"at":"2026-12-01T22:47","checkin":"2026-12-01T22:47"}
+{"who":"Chloe","text":"Ok. I'll let that one go","posted":true,"at":"2026-12-02T08:31","checkin":"2026-12-02T08:31"}
+{"who":"Chloe","text":"Did the kloof confirmation come through or should I check","posted":true,"at":"2026-12-02T08:33","checkin":"2026-12-02T08:33"}
+{"who":"Luke","text":"came thru. forwarding to mum now","posted":true,"at":"2026-12-02T08:47","checkin":"2026-12-02T08:47"}
+{"who":"Luke","text":"sorry about last night. was being a bit of a dick","posted":true,"at":"2026-12-02T08:48","checkin":"2026-12-02T08:48"}
+{"who":"Chloe","text":"Yeah you were","posted":true,"at":"2026-12-02T09:30","checkin":"2026-12-02T09:30"}
+{"who":"Chloe","text":"Go sleep properly tonight","posted":true,"at":"2026-12-02T09:31","checkin":"2026-12-02T09:31"}
+{"who":"Chloe","text":"Gerald texted me. He's definitely bringing the cake","posted":true,"at":"2026-12-02T13:17","checkin":"2026-12-02T13:17"}
+{"who":"Luke","text":"ok so what do we do","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Chloe","text":"Tell mum we already ordered one","posted":true,"at":"2026-12-02T13:24","checkin":"2026-12-02T13:24"}
+{"who":"Luke","text":"we havent","posted":true,"at":"2026-12-02T13:25","checkin":"2026-12-02T13:25"}
+{"who":"Chloe","text":"I'll order one tmrw then","posted":true,"at":"2026-12-02T13:26","checkin":"2026-12-02T13:26"}
+{"who":"Luke","text":"ur paying for it","posted":true,"at":"2026-12-02T13:26","checkin":"2026-12-02T13:26"}
+{"who":"Chloe","text":"Fine","posted":true,"at":"2026-12-02T13:27","checkin":"2026-12-02T13:27"}
+{"who":"Luke","text":"mum replied in the group. says she's happy about the kloof place","posted":true,"at":"2026-12-02T18:40","checkin":"2026-12-02T18:40"}
+{"who":"Luke","text":"and asked again if were talking","posted":true,"at":"2026-12-02T18:41","checkin":"2026-12-02T18:41"}
+{"who":"Chloe","text":"What did you say","posted":true,"at":"2026-12-02T18:52","checkin":"2026-12-02T18:52"}
+{"who":"Luke","text":"told her we're talking. didnt say anything else","posted":true,"at":"2026-12-02T19:20","checkin":"2026-12-02T19:20"}
+{"who":"Chloe","text":"Ok","posted":true,"at":"2026-12-02T19:21","checkin":"2026-12-02T19:21"}
+{"who":"Luke","text":"u up","posted":true,"at":"2026-12-02T23:14","checkin":"2026-12-02T23:14"}
+{"who":"Chloe","text":"Yeah","posted":true,"at":"2026-12-02T23:30","checkin":"2026-12-02T23:30"}
+{"who":"Luke","text":"the house thing. i dont want it to be a whole thing at lunch","posted":true,"at":"2026-12-02T23:31","checkin":"2026-12-02T23:31"}
+{"who":"Chloe","text":"It won't be if you don't make it one","posted":true,"at":"2026-12-02T23:38","checkin":"2026-12-02T23:38"}
+{"who":"Luke","text":"ok","posted":true,"at":"2026-12-02T23:40","checkin":"2026-12-02T23:40"}
+{"who":"Chloe","text":"We can talk about it after mum's birthday. Not before","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Luke","text":"deal","posted":true,"at":"2026-12-02T23:44","checkin":"2026-12-02T23:44"}
+{"who":"Chloe","text":"Go to sleep Luke","posted":true,"at":"2026-12-02T23:45","checkin":"2026-12-02T23:45"}

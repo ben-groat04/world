@@ -1,0 +1,81 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T18:40","complete":true,"rejects":0,"today":["Kirsty",null,"Iain"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2048,"cache_read_input_tokens":0,"output_tokens":3668,"output_tokens_details":{"thinking_tokens":2729},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2048,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3668,"cache_read_input_tokens":0,"cache_creation_input_tokens":2048,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2048},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2859,"cache_read_input_tokens":0,"output_tokens":1876,"output_tokens_details":{"thinking_tokens":1162},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2859,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1876,"cache_read_input_tokens":0,"cache_creation_input_tokens":2859,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2859},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3571,"cache_read_input_tokens":0,"output_tokens":2741,"output_tokens_details":{"thinking_tokens":1671},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3571,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2741,"cache_read_input_tokens":0,"cache_creation_input_tokens":3571,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3571},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Iain","Kirsty"],"setting":"You are both in Glasgow, the city you grew up in, and you are brother and sister. At the moment you are planning your mum's seventieth birthday lunch for December and splitting the cost of her present. Abortion has split you before, and neither of you is giving ground. In Scotland it is available under the Abortion Act 1967 up to 24 weeks.","openers":["Text her about the lunch venue for Mum's birthday","Ask how her week at the salon has been","Send her the 24-week limit fact to check her view","Suggest you both split the cost of Mum's present this weekend"],"opener":"Ask how her week at the salon has been","cast":{"Iain":{"who":"41, man, the brother","work":"secondary school teacher","knows":"You know Kirsty as your sister, and you have known her all your life.","texts":"","style":"Rare emoji and no texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Kirsty":{"who":"38, woman, the sister","work":"hairdresser","knows":"You know Iain as your brother, and you have known him all your life.","texts":"","style":"Frequent emoji and texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Iain":"You live alone in Glasgow, where your days go to teaching at a secondary school and planning your mum's birthday lunch with your sister.","Kirsty":"You live alone in Glasgow, where your days go to hairdressing and planning your mum's birthday lunch with your brother."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":854,"output_tokens":1132,"output_tokens_details":{"thinking_tokens":921},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1132,"cache_read_input_tokens":854,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1120,"cache_read_input_tokens":0,"output_tokens":2037,"output_tokens_details":{"thinking_tokens":1600},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1120,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2037,"cache_read_input_tokens":0,"cache_creation_input_tokens":1120,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1120},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Glasgow, Scotland","castMs":17097,"situation":"A brother and sister, both adults, who fell out over politics before.","topic":"Abortion: one is firmly pro-life, the other firmly pro-choice, and neither is giving ground."}
+{"who":"Iain","text":"How was the week at the salon","posted":true,"at":"2026-12-02T18:40","checkin":"2026-12-02T18:40"}
+{"who":"Kirsty","text":"busy 3 blowdries sat already. fine tbh","posted":true,"at":"2026-12-02T18:58","checkin":"2026-12-02T18:58"}
+{"who":"Iain","text":"Good. The room at the place on Byres Road is 80 minimum spend, I said we'd take it","posted":true,"at":"2026-12-02T19:01","checkin":"2026-12-02T19:01"}
+{"who":"Kirsty","text":"ok perfect. u sorting the cake or me","posted":true,"at":"2026-12-02T19:02","checkin":"2026-12-02T19:02"}
+{"who":"Iain","text":"Me. I'll get it from the bakery on Dumbarton Road","posted":true,"at":"2026-12-02T19:09","checkin":"2026-12-02T19:09"}
+{"who":"Kirsty","text":"ok","posted":true,"at":"2026-12-02T19:11","checkin":"2026-12-02T19:11"}
+{"who":"Kirsty","text":"had a rough one today tho. girl in, 19, found out she's pregnant. sat in the chair crying the whole time. boyfriend wants her to keep it and her mum's saying the opposite so she's just stuck 😭","posted":true,"at":"2026-12-02T20:24","checkin":"2026-12-02T20:24"}
+{"who":"Iain","text":"That's awful. Did she say what she wanted","posted":true,"at":"2026-12-02T20:31","checkin":"2026-12-02T20:31"}
+{"who":"Kirsty","text":"she asked me what i'd do and i said it's her body, her choice, she should do what's right for her. she looked so relieved","posted":true,"at":"2026-12-02T20:33","checkin":"2026-12-02T20:33"}
+{"who":"Iain","text":"She shouldn't have been asking you that. I'm not having a go at her","posted":true,"at":"2026-12-02T20:38","checkin":"2026-12-02T20:38"}
+{"who":"Kirsty","text":"ur literally having a go at me","posted":true,"at":"2026-12-02T20:39","checkin":"2026-12-02T20:39"}
+{"who":"Iain","text":"I'm saying what I think, which is that the baby's a person from the start and somebody should have said that to her","posted":true,"at":"2026-12-02T20:41","checkin":"2026-12-02T20:41"}
+{"who":"Kirsty","text":"and somebody did. me. ur allowed to choose. ur allowed to not be forced into it by ppl who wont be the one carrying it","posted":true,"at":"2026-12-02T20:44","checkin":"2026-12-02T20:44"}
+{"who":"Iain","text":"Nobody's forcing her into anything by saying there's another life involved","posted":true,"at":"2026-12-02T20:47","checkin":"2026-12-02T20:47"}
+{"who":"Kirsty","text":"ok can we not do this tonight. we've done this every christmas since uni","posted":true,"at":"2026-12-02T20:52","checkin":"2026-12-02T20:52"}
+{"who":"Iain","text":"Fine","posted":true,"at":"2026-12-02T20:55","checkin":"2026-12-02T20:55"}
+{"who":"Iain","text":"Sorry. Didn't mean the chair thing badly","posted":true,"at":"2026-12-02T21:30","checkin":"2026-12-02T21:30"}
+{"who":"","react":"❤️","to":16,"posted":false,"at":"2026-12-02T21:30"}
+{"who":"Kirsty","text":"its fine. i know ur not a bad person. ur just wrong","posted":true,"at":"2026-12-02T21:34","checkin":"2026-12-02T21:34"}
+{"who":"Iain","text":"Ha. Ok","posted":true,"at":"2026-12-02T21:35","checkin":"2026-12-02T21:35"}
+{"who":"Kirsty","text":"ur my brother ur allowed to be wrong","posted":true,"at":"2026-12-02T21:36","checkin":"2026-12-02T21:36"}
+{"who":"Iain","text":"Back to the present. Cardigan or the lamp. Lamp's £60, cardigan's £95. She's been on about the cardigan","posted":true,"at":"2026-12-02T21:40","checkin":"2026-12-02T21:40"}
+{"who":"Kirsty","text":"cardigan. she'll never admit she wants it i'll send u my half once u tell me the total","posted":true,"at":"2026-12-02T21:44","checkin":"2026-12-02T21:44"}
+{"who":"Iain","text":"£47.50 each. I'll order it tomorrow","posted":true,"at":"2026-12-02T21:45","checkin":"2026-12-02T21:45"}
+{"who":"Kirsty","text":"u still up","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}
+{"who":"Iain","text":"Yeah marking","posted":true,"at":"2026-12-03T00:20","checkin":"2026-12-03T00:20"}
+{"who":"Kirsty","text":"go to bed ur gonna be a zombie","posted":true,"at":"2026-12-03T00:21","checkin":"2026-12-03T00:21"}
+{"who":"Iain","text":"Going. Essay 3 is a disaster","posted":true,"at":"2026-12-03T00:24","checkin":"2026-12-03T00:24"}
+{"who":"Iain","text":"Cardigan's ordered. Delivery to mine, I'll take it round to hers on the 13th","posted":true,"at":"2026-12-03T07:52","checkin":"2026-12-03T07:52"}
+{"who":"Kirsty","text":"ok sending ur half now","posted":true,"at":"2026-12-03T08:10","checkin":"2026-12-03T08:10"}
+{"who":"Kirsty","text":"[screenshot: bank transfer £47.50]","posted":true,"at":"2026-12-03T08:10","checkin":"2026-12-03T08:10"}
+{"who":"Iain","text":"Got it. Thanks","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Kirsty","text":"ur welcome grey or navy","posted":true,"at":"2026-12-03T08:15","checkin":"2026-12-03T08:15"}
+{"who":"Iain","text":"Grey. Navy's what she already has","posted":true,"at":"2026-12-03T08:17","checkin":"2026-12-03T08:17"}
+{"who":"Kirsty","text":"ur right she has like 4 navy ones 😂","posted":true,"at":"2026-12-03T08:17","checkin":"2026-12-03T08:17"}
+{"who":"Iain","text":"Cake's sorted. Sponge with raspberry, they're doing a 70 topper in gold. I went in on my free period","posted":true,"at":"2026-12-03T12:36","checkin":"2026-12-03T12:36"}
+{"who":"Kirsty","text":"ooh nice. she'll cry","posted":true,"at":"2026-12-03T12:41","checkin":"2026-12-03T12:41"}
+{"who":"Kirsty","text":"that girl from yesterday texted me btw. just said thanks for being honest with her","posted":true,"at":"2026-12-03T12:42","checkin":"2026-12-03T12:42"}
+{"who":"Iain","text":"Good","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Kirsty","text":"is that all u have to say","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Iain","text":"I don't know what else I'd say. I hope she's ok","posted":true,"at":"2026-12-03T13:58","checkin":"2026-12-03T13:58"}
+{"who":"Kirsty","text":"ok","posted":true,"at":"2026-12-03T14:03","checkin":"2026-12-03T14:03"}
+{"who":"Kirsty","text":"u want the lunch at the place on byres or the one with the terrace. terrace is nicer but its outdoors in december lol","posted":true,"at":"2026-12-03T17:46","checkin":"2026-12-03T17:46"}
+{"who":"Iain","text":"Byres. Mum will want to be inside","posted":true,"at":"2026-12-03T18:30","checkin":"2026-12-03T18:30"}
+{"who":"Kirsty","text":"obviously booking it then","posted":true,"at":"2026-12-03T18:31","checkin":"2026-12-03T18:31"}
+{"who":"Kirsty","text":"done. 1pm sat 13th for 12. i put ur name on it as the contact","posted":true,"at":"2026-12-03T23:12","checkin":"2026-12-03T23:12"}
+{"who":"Iain","text":"Fine","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Kirsty","text":"night bro 🫶","posted":true,"at":"2026-12-03T23:41","checkin":"2026-12-03T23:41"}
+{"who":"Iain","text":"Night","posted":true,"at":"2026-12-03T23:44","checkin":"2026-12-03T23:44"}
+{"who":"Kirsty","text":"morning. mum says her pal margaret might come to lunch too, is that ok","posted":true,"at":"2026-12-04T07:48","checkin":"2026-12-04T07:48"}
+{"who":"Iain","text":"Morning. Booking's for 12 already so I'd have to ask Byres. Is that 12 with margaret or without","posted":true,"at":"2026-12-04T08:02","checkin":"2026-12-04T08:02"}
+{"who":"Kirsty","text":"with. so 13 lol","posted":true,"at":"2026-12-04T08:03","checkin":"2026-12-04T08:03"}
+{"who":"Iain","text":"Ask them. I'm not ringing a restaurant from a classroom","posted":true,"at":"2026-12-04T08:05","checkin":"2026-12-04T08:05"}
+{"who":"Iain","text":"Fire alarm at 9. Stood in the car park with 4B for 40 mins in the sleet","posted":true,"at":"2026-12-04T09:20","checkin":"2026-12-04T09:20"}
+{"who":"Kirsty","text":"the classic was it a drill or someone burnt toast","posted":true,"at":"2026-12-04T09:21","checkin":"2026-12-04T09:21"}
+{"who":"Iain","text":"Nobody knows. Caretaker says drill. Caretaker also said that last time","posted":true,"at":"2026-12-04T09:24","checkin":"2026-12-04T09:24"}
+{"who":"Kirsty","text":"mad morning. woman came in wanting her roots done, said no to a fringe, then asked for the fringe 20 mins later","posted":true,"at":"2026-12-04T12:50","checkin":"2026-12-04T12:50"}
+{"who":"Iain","text":"She'll be back for a fringe trim in January","posted":true,"at":"2026-12-04T12:52","checkin":"2026-12-04T12:52"}
+{"who":"Kirsty","text":"100%","posted":true,"at":"2026-12-04T12:53","checkin":"2026-12-04T12:53"}
+{"who":"Iain","text":"One of my S4s got sent out again. Kid's dad's been in and out of hospital and she's not sleeping. Didn't say anything, just sat with her head on the desk","posted":true,"at":"2026-12-04T16:14","checkin":"2026-12-04T16:14"}
+{"who":"Kirsty","text":"aw that's shite. u ok?","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Iain","text":"Yeah. Just annoying. Sent her to pastoral. They'll get her a sandwich at least","posted":true,"at":"2026-12-04T16:31","checkin":"2026-12-04T16:31"}
+{"who":"Kirsty","text":"ur a good teacher ik that's not me being nice","posted":true,"at":"2026-12-04T16:32","checkin":"2026-12-04T16:32"}
+{"who":"Iain","text":"Cheers","posted":true,"at":"2026-12-04T16:40","checkin":"2026-12-04T16:40"}
+{"who":"Kirsty","text":"how's the girl from wed doing. she texted me again","posted":true,"at":"2026-12-04T17:55","checkin":"2026-12-04T17:55"}
+{"who":"Iain","text":"How is she","posted":true,"at":"2026-12-04T18:10","checkin":"2026-12-04T18:10"}
+{"who":"Kirsty","text":"booked her appt for next wk. she sounds ok i think. dont start","posted":true,"at":"2026-12-04T18:14","checkin":"2026-12-04T18:14"}
+{"who":"Iain","text":"Not starting anything. I'm glad she's sorted, whatever that looks like for her","posted":true,"at":"2026-12-04T18:16","checkin":"2026-12-04T18:16"}
+{"who":"Kirsty","text":"ok","posted":true,"at":"2026-12-04T18:18","checkin":"2026-12-04T18:18"}
+{"who":"Kirsty","text":"going out w shona tonight. wine bar on byres. u coming or marking","posted":true,"at":"2026-12-04T19:02","checkin":"2026-12-04T19:02"}
+{"who":"Iain","text":"Marking. Essay 3 is still a disaster and I have 26 of them","posted":true,"at":"2026-12-04T19:20","checkin":"2026-12-04T19:20"}
+{"who":"Kirsty","text":"ur such a nerd 😂 say hi to ur essays","posted":true,"at":"2026-12-04T19:21","checkin":"2026-12-04T19:21"}
+{"who":"Iain","text":"Enjoy. Don't let Shona order the bottle","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Kirsty","text":"too late she's already ordered 2 🥂","posted":true,"at":"2026-12-04T19:23","checkin":"2026-12-04T19:23"}
+{"who":"Kirsty","text":"shona says hi. she also says ur a snob for not coming","posted":true,"at":"2026-12-04T21:48","checkin":"2026-12-04T21:48"}
+{"who":"Iain","text":"Tell her I'm a tired snob","posted":true,"at":"2026-12-04T21:55","checkin":"2026-12-04T21:55"}
+{"who":"Kirsty","text":"ill tell her ur a snob and a nerd","posted":true,"at":"2026-12-04T21:56","checkin":"2026-12-04T21:56"}
+{"who":"Iain","text":"Marked 11. Going to bed before I start on the next lot","posted":true,"at":"2026-12-04T23:31","checkin":"2026-12-04T23:31"}
+{"who":"Kirsty","text":"ok night","posted":true,"at":"2026-12-04T23:33","checkin":"2026-12-04T23:33"}

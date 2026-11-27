@@ -1,0 +1,68 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1729,"cache_read_input_tokens":0,"output_tokens":1541,"output_tokens_details":{"thinking_tokens":169},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1729,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1541,"cache_read_input_tokens":0,"cache_creation_input_tokens":1729,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1729},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Shane","Kayla","Paul"],"setting":"You all work the same ambulance crew out of a Toronto EMS station, covering calls across the city. You've been crewing together long enough to have seen each other at your worst and your best, and you spend off-shift time the same way most EMS crews do — decompressing over bad food and worse jokes. You all knew a colleague who recently died, someone from the station or the broader Toronto EMS community.","openers":["tell them Ortiz's send-off turned into the strangest call he's ever run","rank the top five worst smells they've collectively encountered on shift","propose a formal competition for who had the worst call this month","remind them of the time Ortiz somehow made a code brown funny"],"opener":"tell them Ortiz's send-off turned into the strangest call he's ever run","cast":{"Shane":{"who":"34, man, paramedic on the crew","work":"security contractor","knows":"You work the truck with Kayla as your regular partner and Paul as the senior on the crew who sometimes runs with you both.","texts":"Shane texts in this chat now and then.","style":"Sends a decent amount of emoji, mostly dark or sarcastic ones, no abbreviations, writes casually but fully.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Kayla":{"who":"29, woman, paramedic on the crew","work":"nursing student","knows":"You partner regularly with Shane on the truck and Paul is the senior paramedic on your crew.","texts":"Kayla texts in this chat now and then.","style":"Some emoji, occasional abbreviations, relaxed texting style.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Paul":{"who":"47, man, senior paramedic on the crew","work":"union rep","knows":"You're the senior on the crew with Shane and Kayla as your regular partners.","texts":"Paul texts in this chat a lot.","style":"Minimal emoji, rarely uses abbreviations, writes in full sentences.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Shane":"You live in a rented place in Scarborough, split between EMS shifts and security contractor work, and you live alone.","Kayla":"You live in a shared apartment near Danforth while juggling your paramedic shifts and nursing school coursework.","Paul":"You live in Etobicoke with your family, filling your days with shifts, union rep work, and the particular exhaustion of doing this job for over twenty years."},"usage":[{"input_tokens":718,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":385,"output_tokens_details":{"thinking_tokens":139},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":718,"output_tokens":385,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":914,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":475,"output_tokens_details":{"thinking_tokens":27},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":914,"output_tokens":475,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Toronto, Canada","castMs":21088,"situation":"Three paramedics on the same crew, off shift.","topic":"Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise."}
+{"who":"Shane","text":"so I need to tell you both what happened today\n\n---Fri 18:15, Shane\n\nat Ortiz's thing","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Kayla","text":"What","posted":true,"at":"2026-11-27T18:17","checkin":"2026-11-27T18:17"}
+{"who":"Shane","text":"okay so you know how they had the reception at the legion on Lawrence","posted":true,"at":"2026-11-27T18:19","checkin":"2026-11-27T18:19"}
+{"who":"Shane","text":"🫡","posted":true,"at":"2026-11-27T18:19","checkin":"2026-11-27T18:19"}
+{"who":"Paul","text":"I know the one. I had to leave early, what happened.","posted":true,"at":"2026-11-27T18:21","checkin":"2026-11-27T18:21"}
+{"who":"Shane","text":"so around 2:30 when they're doing the toasts, one of his uncles just goes down","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
+{"who":"Shane","text":"like full collapse, face down into the buffet table","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
+{"who":"Kayla","text":"No","posted":true,"at":"2026-11-27T18:23","checkin":"2026-11-27T18:23"}
+{"who":"Shane","text":"yes","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Shane","text":"takes half the cold cuts with him","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Paul","text":"Was he alright.","posted":true,"at":"2026-11-27T18:25","checkin":"2026-11-27T18:25"}
+{"who":"Shane","text":"he's fine, vasovagal, he's 70 and hadn't eaten and had two rye and ginger in like 20 minutes","posted":true,"at":"2026-11-27T18:26","checkin":"2026-11-27T18:26"}
+{"who":"Shane","text":"but here's the thing","posted":true,"at":"2026-11-27T18:26","checkin":"2026-11-27T18:26"}
+{"who":"Shane","text":"me and Fernandez from 54 are the only medics in the room who are off duty so we go over","posted":true,"at":"2026-11-27T18:26","checkin":"2026-11-27T18:26"}
+{"who":"Shane","text":"and we're both in dress clothes, there's no equipment, we're doing a full assessment on this man on the floor of the legion with cold cuts everywhere","posted":true,"at":"2026-11-27T18:27","checkin":"2026-11-27T18:27"}
+{"who":"Shane","text":"and everyone is watching","posted":true,"at":"2026-11-27T18:27","checkin":"2026-11-27T18:27"}
+{"who":"Shane","text":"Ortiz's mom is watching","posted":true,"at":"2026-11-27T18:28","checkin":"2026-11-27T18:28"}
+{"who":"Kayla","text":"Oh god","posted":true,"at":"2026-11-27T18:28","checkin":"2026-11-27T18:28"}
+{"who":"Shane","text":"🥲","posted":true,"at":"2026-11-27T18:29","checkin":"2026-11-27T18:29"}
+{"who":"Paul","text":"What did she say.","posted":true,"at":"2026-11-27T18:30","checkin":"2026-11-27T18:30"}
+{"who":"Shane","text":"she came over and held his hand while we were with him and she said \"Miguel always said you people never stop working\"","posted":true,"at":"2026-11-27T18:32","checkin":"2026-11-27T18:32"}
+{"who":"Shane","text":"and then she went and got us both a plate","posted":true,"at":"2026-11-27T18:32","checkin":"2026-11-27T18:32"}
+{"who":"Kayla","text":"I can't","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Kayla","text":"That's so her too","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Paul","text":"That sounds exactly like something she would do.","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Shane","text":"the uncle is sitting up eating perogies by the time the truck gets there","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Shane","text":"refused transport","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Kayla","text":"Of course he did","posted":true,"at":"2026-11-27T18:37","checkin":"2026-11-27T18:37"}
+{"who":"Shane","text":"Fernandez had to give a statement to the crew who showed up and explain why two off-duty medics were already on scene at a memorial reception","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Shane","text":"the look on that poor PCP's face when he walked in and figured out whose reception it was","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Kayla","text":"Who was the crew","posted":true,"at":"2026-11-27T18:40","checkin":"2026-11-27T18:40"}
+{"who":"Shane","text":"don't know them, 42 unit I think","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Paul","text":"Ortiz would have found that very funny.","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Shane","text":"that's the thing right","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Shane","text":"I kept thinking that the whole time","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Shane","text":"like he would have been absolutely losing it","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Kayla","text":"He really would have","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Kayla","text":"Remember when he showed up to Delaney's retirement party and Delaney's dad coded and they had to call it in","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Shane","text":"😭😭","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Shane","text":"the man had a gift","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Paul","text":"Delaney's dad was fine.","posted":true,"at":"2026-11-27T18:49","checkin":"2026-11-27T18:49"}
+{"who":"Kayla","text":"He was fine yeah","posted":true,"at":"2026-11-27T18:49","checkin":"2026-11-27T18:49"}
+{"who":"Shane","text":"we should get food tonight","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Kayla","text":"Yeah ok","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Kayla","text":"Where","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Shane","text":"I'm near Danforth already","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Kayla","text":"Come to Mira's then, like 7?","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Shane","text":"yeah","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Paul","text":"I'll try. Might be late, Diane has something going on with the car.","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Shane","text":"we'll be there for a while","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Paul","text":"Stuck here, go ahead without me.","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Kayla","text":"We're already in, it's fine","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Kayla","text":"We'll save you something","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Paul","text":"Don't bother.","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Shane","text":"Paul you missed Kayla's story about the guy with the garden hose","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Shane","text":"the FULL garden hose","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Kayla","text":"Shane","posted":true,"at":"2026-11-27T23:03","checkin":"2026-11-27T23:03"}
+{"who":"Shane","text":"she was going to tell you anyway","posted":true,"at":"2026-11-27T23:04","checkin":"2026-11-27T23:04"}
+{"who":"Paul","text":"I've been a medic for 22 years, I already know how that ends.","posted":true,"at":"2026-11-27T23:06","checkin":"2026-11-27T23:06"}
+{"who":"Shane","text":"🫡","posted":true,"at":"2026-11-27T23:07","checkin":"2026-11-27T23:07"}
+{"who":"Kayla","text":"It was a full 30 footer paul","posted":true,"at":"2026-11-27T23:08","checkin":"2026-11-27T23:08"}
+{"who":"Kayla","text":"Coiled","posted":true,"at":"2026-11-27T23:08","checkin":"2026-11-27T23:08"}
+{"who":"Paul","text":"I'm going to bed.","posted":true,"at":"2026-11-27T23:09","checkin":"2026-11-27T23:09"}
+{"who":"Shane","text":"😂😂","posted":true,"at":"2026-11-27T23:10","checkin":"2026-11-27T23:10"}
+{"who":"Kayla","text":"Night","posted":true,"at":"2026-11-27T23:11","checkin":"2026-11-27T23:11"}
+{"who":"Shane","text":"night","posted":true,"at":"2026-11-27T23:11","checkin":"2026-11-27T23:11"}

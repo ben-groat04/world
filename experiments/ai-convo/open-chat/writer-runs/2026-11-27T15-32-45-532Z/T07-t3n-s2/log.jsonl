@@ -1,0 +1,100 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T08:40","complete":true,"rejects":0,"today":[null,null,"Dave"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2284,"cache_read_input_tokens":0,"output_tokens":2184,"output_tokens_details":{"thinking_tokens":1543},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2284,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2184,"cache_read_input_tokens":0,"cache_creation_input_tokens":2284,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2284},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2786,"cache_read_input_tokens":0,"output_tokens":2506,"output_tokens_details":{"thinking_tokens":1601},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2506,"cache_read_input_tokens":0,"cache_creation_input_tokens":2786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3697,"cache_read_input_tokens":0,"output_tokens":3181,"output_tokens_details":{"thinking_tokens":1806},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3697,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3181,"cache_read_input_tokens":0,"cache_creation_input_tokens":3697,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3697},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Trish","Dave","Nicole","Ryan"],"setting":"You are all in Christchurch, New Zealand, in a family group chat made up of two parents and their two adult children, and you know each other as family. You have just had a bitter row, with raised voices and hurtful remarks about faith.","openers":["Ask everyone to stop shouting","Send a calm message about Sunday","Share a link to the church service","Suggest we talk over the phone tomorrow"],"opener":"Suggest we talk over the phone tomorrow","cast":{"Trish":{"who":"58, woman, the mother","work":"pharmacist","knows":"You are the mother of Nicole and Ryan and the partner of Dave.","texts":"Trish texts in this chat now and then.","style":"Little emoji, no texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":["Dave"],"ex":[]},"Dave":{"who":"61, man, the father","work":"truck driver","knows":"You are the father of Nicole and Ryan and the partner of Trish.","texts":"Dave texts in this chat only now and again.","style":"none","emojiKeep":0.15,"capitals":true,"lives":["Trish"],"ex":[]},"Nicole":{"who":"33, woman, the eldest child","work":"physiotherapist","knows":"You are the eldest child of Trish and Dave and the older sister of Ryan.","texts":"Nicole texts in this chat now and then.","style":"Occasional emoji, few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Ryan":{"who":"27, man, the younger sibling","work":"chef","knows":"You are the younger child of Trish and Dave and the younger brother of Nicole.","texts":"Ryan texts in this chat a lot.","style":"Frequent emoji and texting abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Trish":"You live in Christchurch and work as a pharmacist, and you share your home with Dave.","Dave":"You live in Christchurch and drive trucks for a living, and you share your home with Trish.","Nicole":"You live in Christchurch and work as a physiotherapist, and you live alone.","Ryan":"You live in Christchurch and work as a chef, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":875,"cache_read_input_tokens":0,"output_tokens":1683,"output_tokens_details":{"thinking_tokens":1267},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":875,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1683,"cache_read_input_tokens":0,"cache_creation_input_tokens":875,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":875},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1137,"cache_read_input_tokens":0,"output_tokens":1906,"output_tokens_details":{"thinking_tokens":1353},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1137,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1906,"cache_read_input_tokens":0,"cache_creation_input_tokens":1137,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1137},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Christchurch, New Zealand","castMs":18648,"situation":"A family group chat: parents and their two adult children.","topic":"A full-blown row: the mother calls the eldest a disgrace, the eldest mocks her faith and swears at her, the father shouts them both down, and the younger sibling takes sides."}
+{"who":"Trish","text":"Morning. I don't think last night went well for any of us. Can we talk properly on the phone tomorrow? I'll ring you both, one at a time if that's easier 🙏","posted":true,"at":"2026-11-27T08:40","checkin":"2026-11-27T08:40"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-11-27T08:40"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-11-27T08:40"}
+{"who":"Nicole","text":"Ok. Morning works better for me","posted":true,"at":"2026-11-27T09:12","checkin":"2026-11-27T09:12"}
+{"who":"Ryan","text":"yeah ok. but nic you cant just take the piss out of mums church stuff like that","posted":true,"at":"2026-11-27T09:14","checkin":"2026-11-27T09:14"}
+{"who":"Trish","text":"Morning's fine. I'll ring you both.","posted":true,"at":"2026-11-27T09:31","checkin":"2026-11-27T09:31"}
+{"who":"Nicole","text":"I'm not doing a sermon call either Mum","posted":true,"at":"2026-11-27T09:33","checkin":"2026-11-27T09:33"}
+{"who":"Dave","text":"Ok. Trish will ring","posted":true,"at":"2026-11-27T10:05","checkin":"2026-11-27T10:05"}
+{"who":"Ryan","text":"nic u still there","posted":true,"at":"2026-11-27T10:20","checkin":"2026-11-27T10:20"}
+{"who":"Nicole","text":"I'm at work. Talk tomorrow","posted":true,"at":"2026-11-27T10:22","checkin":"2026-11-27T10:22"}
+{"who":"Ryan","text":"u were out of line tho. mum was upset rn","posted":true,"at":"2026-11-27T10:40","checkin":"2026-11-27T10:40"}
+{"who":"Trish","text":"Dave's taken the truck to Rolleston, back about 4. I'm on until 3 if anyone needs me","posted":true,"at":"2026-11-27T12:15","checkin":"2026-11-27T12:15"}
+{"who":"Nicole","text":"Can you not put it on the group again Ryan. Please","posted":true,"at":"2026-11-27T13:02","checkin":"2026-11-27T13:02"}
+{"who":"Ryan","text":"its a group chat thats literally what its for","posted":true,"at":"2026-11-27T13:04","checkin":"2026-11-27T13:04"}
+{"who":"Trish","text":"Ryan, please. Leave it till tomorrow","posted":true,"at":"2026-11-27T15:30","checkin":"2026-11-27T15:30"}
+{"who":"Ryan","text":"fine","posted":true,"at":"2026-11-27T15:31","checkin":"2026-11-27T15:31"}
+{"who":"Nicole","text":"Not tonight. Going for a run","posted":true,"at":"2026-11-27T18:20","checkin":"2026-11-27T18:20"}
+{"who":"Dave","text":"Home. Going to bed early","posted":true,"at":"2026-11-27T19:05","checkin":"2026-11-27T19:05"}
+{"who":"Ryan","text":"im sorry mum. about the swearing. not sorry about the church thing tho","posted":true,"at":"2026-11-27T21:40","checkin":"2026-11-27T21:40"}
+{"who":"Trish","text":"Thank you love. Night","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Nicole","text":"Night","posted":true,"at":"2026-11-27T23:10","checkin":"2026-11-27T23:10"}
+{"who":"Ryan","text":"cant sleep","posted":true,"at":"2026-11-28T00:52","checkin":"2026-11-28T00:52"}
+{"who":"Ryan","text":"did u sleep nic","posted":true,"at":"2026-11-28T07:12","checkin":"2026-11-28T07:12"}
+{"who":"Trish","text":"Morning love. Walk first, then I'll ring Nicole around 10 and you after lunch, Ryan. Is that ok","posted":true,"at":"2026-11-28T07:58","checkin":"2026-11-28T07:58"}
+{"who":"Ryan","text":"yeah ok 👍","posted":true,"at":"2026-11-28T08:01","checkin":"2026-11-28T08:01"}
+{"who":"Dave","text":"Morning. Just up","posted":true,"at":"2026-11-28T08:20","checkin":"2026-11-28T08:20"}
+{"who":"Nicole","text":"Did my run. Still happy to do the call, just not if it's a sermon","posted":true,"at":"2026-11-28T10:14","checkin":"2026-11-28T10:14"}
+{"who":"Trish","text":"Rang Nicole. We're ok I think 🙂","posted":true,"at":"2026-11-28T10:31","checkin":"2026-11-28T10:31"}
+{"who":"Ryan","text":"wait u rang nic and not me","posted":true,"at":"2026-11-28T10:33","checkin":"2026-11-28T10:33"}
+{"who":"Trish","text":"Ryan, I said after lunch. I'm ringing you after lunch.","posted":true,"at":"2026-11-28T10:34","checkin":"2026-11-28T10:34"}
+{"who":"Ryan","text":"just asking","posted":true,"at":"2026-11-28T10:36","checkin":"2026-11-28T10:36"}
+{"who":"Dave","text":"Going to Pak n Save. Anyone need anything","posted":true,"at":"2026-11-28T11:50","checkin":"2026-11-28T11:50"}
+{"who":"Nicole","text":"Milk if you're going past","posted":true,"at":"2026-11-28T11:52","checkin":"2026-11-28T11:52"}
+{"who":"Dave","text":"Yep","posted":true,"at":"2026-11-28T11:53","checkin":"2026-11-28T11:53"}
+{"who":"Trish","text":"Ryan I'm free now whenever you are","posted":true,"at":"2026-11-28T13:20","checkin":"2026-11-28T13:20"}
+{"who":"Ryan","text":"ok","posted":true,"at":"2026-11-28T13:26","checkin":"2026-11-28T13:26"}
+{"who":"Ryan","text":"mum","posted":true,"at":"2026-11-28T13:58","checkin":"2026-11-28T13:58"}
+{"who":"Trish","text":"Sorry, I was on the phone with Dave's sister. I'm here now","posted":true,"at":"2026-11-28T14:10","checkin":"2026-11-28T14:10"}
+{"who":"Ryan","text":"its fine. did u tell nic what i said","posted":true,"at":"2026-11-28T14:11","checkin":"2026-11-28T14:11"}
+{"who":"Trish","text":"No. Why would I","posted":true,"at":"2026-11-28T14:15","checkin":"2026-11-28T14:15"}
+{"who":"Nicole","text":"I'm not sorry about what I said about the church stuff. I still think it's a bit much. But I shouldn't have done it in the group where everyone could see","posted":true,"at":"2026-11-28T16:47","checkin":"2026-11-28T16:47"}
+{"who":"Ryan","text":"ok nic ur still a bit of a dick about it tho","posted":true,"at":"2026-11-28T16:49","checkin":"2026-11-28T16:49"}
+{"who":"Trish","text":"Ryan.","posted":true,"at":"2026-11-28T16:50","checkin":"2026-11-28T16:50"}
+{"who":"Ryan","text":"sorry. she knows what i mean","posted":true,"at":"2026-11-28T16:51","checkin":"2026-11-28T16:51"}
+{"who":"Nicole","text":"Ha. Yeah I do","posted":true,"at":"2026-11-28T16:53","checkin":"2026-11-28T16:53"}
+{"who":"Dave","text":"Put the bins out. Trish has the good cushions on the couch so don't ask","posted":true,"at":"2026-11-28T17:30","checkin":"2026-11-28T17:30"}
+{"who":"Trish","text":"Dave 🙂","posted":true,"at":"2026-11-28T17:31","checkin":"2026-11-28T17:31"}
+{"who":"Ryan","text":"got a double tmrw so im gonna be stuck at work. can we not do the big talk on the group again pls","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Nicole","text":"Agreed","posted":true,"at":"2026-11-28T20:40","checkin":"2026-11-28T20:40"}
+{"who":"Trish","text":"Agreed. Love you all x","posted":true,"at":"2026-11-28T21:02","checkin":"2026-11-28T21:02"}
+{"who":"Ryan","text":"love u too mum. sorry again","posted":true,"at":"2026-11-28T22:48","checkin":"2026-11-28T22:48"}
+{"who":"Nicole","text":"Night","posted":true,"at":"2026-11-28T23:10","checkin":"2026-11-28T23:10"}
+{"who":"Dave","text":"Night","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Trish","text":"Morning. Off to St Barnabas at 9:30. Dave, you coming or are you sleeping in 🙂","posted":true,"at":"2026-11-29T08:15","checkin":"2026-11-29T08:15"}
+{"who":"Ryan","text":"morning mum. ur not gonna make me come are u 😅","posted":true,"at":"2026-11-29T08:31","checkin":"2026-11-29T08:31"}
+{"who":"Trish","text":"No love. Just letting you know where I am.","posted":true,"at":"2026-11-29T08:33","checkin":"2026-11-29T08:33"}
+{"who":"Ryan","text":"ok. nic u up","posted":true,"at":"2026-11-29T08:40","checkin":"2026-11-29T08:40"}
+{"who":"Dave","text":"Not coming. Got a call from Mark, he's off with his back. Gravel to Ashburton","posted":true,"at":"2026-11-29T09:02","checkin":"2026-11-29T09:02"}
+{"who":"Trish","text":"On a Sunday?","posted":true,"at":"2026-11-29T09:03","checkin":"2026-11-29T09:03"}
+{"who":"Dave","text":"Time and a half. Back by 3","posted":true,"at":"2026-11-29T09:05","checkin":"2026-11-29T09:05"}
+{"who":"Nicole","text":"Hope it's the cheap gravel","posted":true,"at":"2026-11-29T09:40","checkin":"2026-11-29T09:40"}
+{"who":"Dave","text":"Ha. Probably not","posted":true,"at":"2026-11-29T09:41","checkin":"2026-11-29T09:41"}
+{"who":"Ryan","text":"nic did mum ring u sat arvo or was that just the 10am one","posted":true,"at":"2026-11-29T10:12","checkin":"2026-11-29T10:12"}
+{"who":"Nicole","text":"The 10am one. Why","posted":true,"at":"2026-11-29T10:14","checkin":"2026-11-29T10:14"}
+{"who":"Ryan","text":"no reason. just checking whos been told what 🙄","posted":true,"at":"2026-11-29T10:15","checkin":"2026-11-29T10:15"}
+{"who":"Nicole","text":"Ryan.","posted":true,"at":"2026-11-29T10:16","checkin":"2026-11-29T10:16"}
+{"who":"Ryan","text":"ok","posted":true,"at":"2026-11-29T10:16","checkin":"2026-11-29T10:16"}
+{"who":"Dave","text":"[photo: windscreen with a star crack, a chip in the middle spreading out into a web]","posted":true,"at":"2026-11-29T13:38","checkin":"2026-11-29T13:38"}
+{"who":"Trish","text":"Dave!! Are you alright?","posted":true,"at":"2026-11-29T13:39","checkin":"2026-11-29T13:39"}
+{"who":"Dave","text":"Yep. Stone came off a logging truck on the Ashburton road. Glass held","posted":true,"at":"2026-11-29T13:41","checkin":"2026-11-29T13:41"}
+{"who":"Trish","text":"Thank God. Get it looked at before the rain Tuesday","posted":true,"at":"2026-11-29T13:42","checkin":"2026-11-29T13:42"}
+{"who":"Dave","text":"Yep","posted":true,"at":"2026-11-29T13:42","checkin":"2026-11-29T13:42"}
+{"who":"Ryan","text":"dave ur lucky. could have been ur face","posted":true,"at":"2026-11-29T14:05","checkin":"2026-11-29T14:05"}
+{"who":"Nicole","text":"Sunday roast at mine tonight if anyone wants. I've got half a lamb shoulder I didn't finish last week","posted":true,"at":"2026-11-29T14:20","checkin":"2026-11-29T14:20"}
+{"who":"Trish","text":"I'll bring greens and the potatoes","posted":true,"at":"2026-11-29T14:23","checkin":"2026-11-29T14:23"}
+{"who":"Ryan","text":"im on tmrw 6am so ill be at urs for like 40 mins max. still coming","posted":true,"at":"2026-11-29T14:25","checkin":"2026-11-29T14:25"}
+{"who":"Nicole","text":"Good. Bring the good beer not the Speights","posted":true,"at":"2026-11-29T14:26","checkin":"2026-11-29T14:26"}
+{"who":"Ryan","text":"😂 ok","posted":true,"at":"2026-11-29T14:27","checkin":"2026-11-29T14:27"}
+{"who":"Dave","text":"Off the road. Going to have a shower then I'll come","posted":true,"at":"2026-11-29T16:50","checkin":"2026-11-29T16:50"}
+{"who":"Trish","text":"Drive safe love","posted":true,"at":"2026-11-29T16:51","checkin":"2026-11-29T16:51"}
+{"who":"Nicole","text":"Are you bringing the cushion or are we pretending it's not a thing","posted":true,"at":"2026-11-29T17:44","checkin":"2026-11-29T17:44"}
+{"who":"Dave","text":"Not touching that","posted":true,"at":"2026-11-29T17:45","checkin":"2026-11-29T17:45"}
+{"who":"Trish","text":"Dave 🙂","posted":true,"at":"2026-11-29T17:46","checkin":"2026-11-29T17:46"}
+{"who":"Ryan","text":"dave pls say the cushion stays on the couch","posted":true,"at":"2026-11-29T18:10","checkin":"2026-11-29T18:10"}
+{"who":"Dave","text":"Cushion stays","posted":true,"at":"2026-11-29T18:12","checkin":"2026-11-29T18:12"}
+{"who":"Trish","text":"We're leaving now. Ryan, you're picking up the wine from the bottle shop yeah?","posted":true,"at":"2026-11-29T19:33","checkin":"2026-11-29T19:33"}
+{"who":"Ryan","text":"yeah. at the bottle shop now","posted":true,"at":"2026-11-29T19:34","checkin":"2026-11-29T19:34"}
+{"who":"Ryan","text":"they had no good pinot so ive got the cheap one. dont tell nic","posted":true,"at":"2026-11-29T19:36","checkin":"2026-11-29T19:36"}
+{"who":"Nicole","text":"Too late, I can see it from here","posted":true,"at":"2026-11-29T19:37","checkin":"2026-11-29T19:37"}
+{"who":"Ryan","text":"got home. dishes are done. nic ur lamb was unreal","posted":true,"at":"2026-11-29T21:50","checkin":"2026-11-29T21:50"}
+{"who":"Nicole","text":"Thanks. Ryan you're not sleeping are you","posted":true,"at":"2026-11-29T21:58","checkin":"2026-11-29T21:58"}
+{"who":"Ryan","text":"no 👀","posted":true,"at":"2026-11-29T22:03","checkin":"2026-11-29T22:03"}
+{"who":"Trish","text":"Lovely night. Thank you both. Night x","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Nicole","text":"Night Mum. Night Dave","posted":true,"at":"2026-11-29T23:44","checkin":"2026-11-29T23:44"}
+{"who":"Dave","text":"Night","posted":true,"at":"2026-11-29T23:51","checkin":"2026-11-29T23:51"}
+{"who":"Ryan","text":"cant sleep again. shift at 6 and im wired","posted":true,"at":"2026-11-30T00:42","checkin":"2026-11-30T00:42"}
+{"who":"Nicole","text":"Go to sleep Ryan","posted":true,"at":"2026-11-30T00:44","checkin":"2026-11-30T00:44"}
+{"who":"Ryan","text":"u go to sleep 😤","posted":true,"at":"2026-11-30T00:45","checkin":"2026-11-30T00:45"}

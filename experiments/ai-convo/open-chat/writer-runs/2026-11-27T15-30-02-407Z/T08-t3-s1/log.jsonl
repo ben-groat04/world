@@ -1,0 +1,125 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T07:00","complete":true,"rejects":0,"today":[null,"Maya","Renee"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2218,"cache_read_input_tokens":0,"output_tokens":1813,"output_tokens_details":{"thinking_tokens":764},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2218,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1813,"cache_read_input_tokens":0,"cache_creation_input_tokens":2218,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2218},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3149,"cache_read_input_tokens":0,"output_tokens":2314,"output_tokens_details":{"thinking_tokens":888},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3149,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2314,"cache_read_input_tokens":0,"cache_creation_input_tokens":3149,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3149},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4586,"cache_read_input_tokens":0,"output_tokens":2096,"output_tokens_details":{"thinking_tokens":741},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4586,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2096,"cache_read_input_tokens":0,"cache_creation_input_tokens":4586,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4586},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Renee","Kevin","Maya"],"setting":"You are three paramedics on the same Houston fire-rescue crew, all off shift, in a group chat you use to swap shifts, sort the holiday rota, and share photos from the station. Tonight the chat has turned into a contest over who has the grimmest, most disgusting call-out story and the blackest joke about it, and that includes the crewmate you all lost.","openers":["Send the worst call you've ever run","Post the nastiest scene from this month","Challenge Kevin to beat the bathtub call","Tell the one about our crewmate we lost"],"opener":"Tell the one about our crewmate we lost","cast":{"Renee":{"who":"34, woman, the paramedic","work":"fire-rescue medic","knows":"You know Kevin as a crewmate from your station and Maya as a crewmate from the same station.","texts":"Renee texts in this chat a lot.","style":"a few emoji and light texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Kevin":{"who":"41, man, the paramedic","work":"paramedic instructor","knows":"You know Renee as a crewmate from your station and Maya as a crewmate from the same station.","texts":"Kevin texts in this chat only now and again.","style":"a few emoji and light texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Maya":{"who":"29, woman, the paramedic","work":"tactical medic","knows":"You know Renee as a crewmate from your station and Kevin as a crewmate from the same station.","texts":"Maya texts in this chat now and then.","style":"a few emoji and light texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Renee":"You live in Houston, working shifts on a fire-rescue ambulance crew, and you live alone.","Kevin":"You live in Houston, working shifts on a fire-rescue ambulance crew, and you live alone.","Maya":"You live in Houston, working shifts on a fire-rescue ambulance crew, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":872,"cache_read_input_tokens":0,"output_tokens":1595,"output_tokens_details":{"thinking_tokens":1226},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":872,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1595,"cache_read_input_tokens":0,"cache_creation_input_tokens":872,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":872},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1166,"cache_read_input_tokens":0,"output_tokens":2570,"output_tokens_details":{"thinking_tokens":2033},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1166,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2570,"cache_read_input_tokens":0,"cache_creation_input_tokens":1166,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1166},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Houston, USA","castMs":22984,"situation":"Three paramedics on the same crew, off shift.","topic":"Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise."}
+{"who":"Renee","text":"Anyone cover thurs? Need the 3rd off for the dentist","posted":true,"at":"2026-11-29T07:00","checkin":"2026-11-29T07:00"}
+{"who":"Kevin","text":"I can take the 3rd day, not the night","posted":true,"at":"2026-11-29T07:14","checkin":"2026-11-29T07:14"}
+{"who":"Renee","text":"Perfect ty","posted":true,"at":"2026-11-29T07:15","checkin":"2026-11-29T07:15"}
+{"who":"Maya","text":"[photo: the station coffee maker with a sticky note that says DO NOT TOUCH in Dave's handwriting]","posted":true,"at":"2026-11-29T11:32","checkin":"2026-11-29T11:32"}
+{"who":"Renee","text":"He's still not over the filter thing","posted":true,"at":"2026-11-29T11:40","checkin":"2026-11-29T11:40"}
+{"who":"Maya","text":"He will never be over the filter thing","posted":true,"at":"2026-11-29T11:41","checkin":"2026-11-29T11:41"}
+{"who":"Kevin","text":"Who's on for the holiday rota the 24th or the 25th","posted":true,"at":"2026-11-29T16:05","checkin":"2026-11-29T16:05"}
+{"who":"Maya","text":"25th I think. Check the sheet","posted":true,"at":"2026-11-29T16:20","checkin":"2026-11-29T16:20"}
+{"who":"Kevin","text":"Ok so who's starting the grossest call contest or is that just us","posted":true,"at":"2026-11-29T22:18","checkin":"2026-11-29T22:18"}
+{"who":"Renee","text":"It's us kevin you go first","posted":true,"at":"2026-11-29T22:19","checkin":"2026-11-29T22:19"}
+{"who":"Kevin","text":"Nah I'm not losing to the 2am stairwell guy again","posted":true,"at":"2026-11-29T22:23","checkin":"2026-11-29T22:23"}
+{"who":"Maya","text":"The stairwell guy was actually bad tho","posted":true,"at":"2026-11-29T22:24","checkin":"2026-11-29T22:24"}
+{"who":"Renee","text":"Ok I got one. And you're both gonna hate me","posted":true,"at":"2026-11-29T22:31","checkin":"2026-11-29T22:31"}
+{"who":"Kevin","text":"Go","posted":true,"at":"2026-11-29T22:32","checkin":"2026-11-29T22:32"}
+{"who":"Renee","text":"The one about danny","posted":true,"at":"2026-11-29T22:34","checkin":"2026-11-29T22:34"}
+{"who":"Maya","text":"Renee","posted":true,"at":"2026-11-29T22:35","checkin":"2026-11-29T22:35"}
+{"who":"Renee","text":"He went to a call in the attic on hunter st, two weeks in the august heat. And he comes down the ladder after and says \"that's the first time I've ever had to tell a guy his own mailbox was the cause of death\"","posted":true,"at":"2026-11-29T22:36","checkin":"2026-11-29T22:36"}
+{"who":"Renee","text":"Because the guy had literally fallen off the roof trying to get mail","posted":true,"at":"2026-11-29T22:36","checkin":"2026-11-29T22:36"}
+{"who":"Kevin","text":"He would've said that","posted":true,"at":"2026-11-29T22:37","checkin":"2026-11-29T22:37"}
+{"who":"Maya","text":"He would have. And then he'd have said the mailbox was a better man than the guy","posted":true,"at":"2026-11-29T22:38","checkin":"2026-11-29T22:38"}
+{"who":"Renee","text":"He would have","posted":true,"at":"2026-11-29T22:38","checkin":"2026-11-29T22:38"}
+{"who":"Kevin","text":"Ok that's actually not the worst one he ever did. Remember the thing with the pool","posted":true,"at":"2026-11-29T22:45","checkin":"2026-11-29T22:45"}
+{"who":"Maya","text":"Kevin no","posted":true,"at":"2026-11-29T22:46","checkin":"2026-11-29T22:46"}
+{"who":"Kevin","text":"It's funny","posted":true,"at":"2026-11-29T22:46","checkin":"2026-11-29T22:46"}
+{"who":"Maya","text":"It's funny in the car. It's not funny in a group chat at 10:47 on a sunday","posted":true,"at":"2026-11-29T22:47","checkin":"2026-11-29T22:47"}
+{"who":"Renee","text":"Ok sorry. I just miss him being here to say the dumb thing","posted":true,"at":"2026-11-29T22:49","checkin":"2026-11-29T22:49"}
+{"who":"Kevin","text":"Yeah","posted":true,"at":"2026-11-29T22:51","checkin":"2026-11-29T22:51"}
+{"who":"Kevin","text":"Me too","posted":true,"at":"2026-11-29T22:51","checkin":"2026-11-29T22:51"}
+{"who":"Maya","text":"You ok renee","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Renee","text":"Yeah. I'm fine. Got a rough one at the hospital today and it's just been in my head","posted":true,"at":"2026-11-29T23:58","checkin":"2026-11-29T23:58"}
+{"who":"Maya","text":"Want to call? Or I can just stay on here","posted":true,"at":"2026-11-30T00:02","checkin":"2026-11-30T00:02"}
+{"who":"Renee","text":"Just stay on here. Thanks","posted":true,"at":"2026-11-30T00:10","checkin":"2026-11-30T00:10"}
+{"who":"Kevin","text":"I'm up. Not sleeping anyway","posted":true,"at":"2026-11-30T00:11","checkin":"2026-11-30T00:11"}
+{"who":"Renee","text":"We'll do the rota thing tomorrow. Night","posted":true,"at":"2026-11-30T00:40","checkin":"2026-11-30T00:40"}
+{"who":"Kevin","text":"Morning. Did anybody sleep","posted":true,"at":"2026-11-30T07:52","checkin":"2026-11-30T07:52"}
+{"who":"Renee","text":"Some. Not great 😕","posted":true,"at":"2026-11-30T08:10","checkin":"2026-11-30T08:10"}
+{"who":"Kevin","text":"Same","posted":true,"at":"2026-11-30T08:11","checkin":"2026-11-30T08:11"}
+{"who":"Renee","text":"Sheet's updated btw. Christmas Eve is still open if anyone wants it","posted":true,"at":"2026-11-30T08:30","checkin":"2026-11-30T08:30"}
+{"who":"Kevin","text":"I'll look at it on my break","posted":true,"at":"2026-11-30T08:44","checkin":"2026-11-30T08:44"}
+{"who":"Maya","text":"[photo: a cardboard box of gas station donuts with a note that says \"for the crew, sorry about the coffee - D\"]","posted":true,"at":"2026-11-30T09:15","checkin":"2026-11-30T09:15"}
+{"who":"Renee","text":"Dave's apology tour continues","posted":true,"at":"2026-11-30T09:16","checkin":"2026-11-30T09:16"}
+{"who":"Maya","text":"He left them on the bay floor. Nobody's eating them","posted":true,"at":"2026-11-30T09:16","checkin":"2026-11-30T09:16"}
+{"who":"Kevin","text":"I'll eat one. For dave","posted":true,"at":"2026-11-30T09:17","checkin":"2026-11-30T09:17"}
+{"who":"Maya","text":"You're a good man kevin","posted":true,"at":"2026-11-30T09:17","checkin":"2026-11-30T09:17"}
+{"who":"Renee","text":"Taking the 24th. Kev you're on 25th? I owe you a beer","posted":true,"at":"2026-11-30T12:02","checkin":"2026-11-30T12:02"}
+{"who":"Kevin","text":"Yeah 25th is fine. You don't owe me a beer I owe you the 3rd thing","posted":true,"at":"2026-11-30T12:20","checkin":"2026-11-30T12:20"}
+{"who":"Renee","text":"Ok deal","posted":true,"at":"2026-11-30T12:21","checkin":"2026-11-30T12:21"}
+{"who":"Maya","text":"Ok I need to say something and then not talk about it","posted":true,"at":"2026-11-30T15:48","checkin":"2026-11-30T15:48"}
+{"who":"Renee","text":"Ok","posted":true,"at":"2026-11-30T15:49","checkin":"2026-11-30T15:49"}
+{"who":"Maya","text":"Had a kid today. 6 yo, fell off a trampoline. Mom was screaming at us to do something and I couldn't get his airway to stay where I needed it for like 3 minutes. He's fine. He's at home. I'm just not fine about it","posted":true,"at":"2026-11-30T15:51","checkin":"2026-11-30T15:51"}
+{"who":"Kevin","text":"Glad he's home","posted":true,"at":"2026-11-30T15:53","checkin":"2026-11-30T15:53"}
+{"who":"Renee","text":"Maya I'm so sorry. You did everything right","posted":true,"at":"2026-11-30T15:54","checkin":"2026-11-30T15:54"}
+{"who":"Maya","text":"I know. Thanks. I'm going to go lie on my floor for a while","posted":true,"at":"2026-11-30T15:58","checkin":"2026-11-30T15:58"}
+{"who":"Kevin","text":"You want company or quiet","posted":true,"at":"2026-11-30T16:30","checkin":"2026-11-30T16:30"}
+{"who":"Maya","text":"Quiet. But I'll text if I need the other thing","posted":true,"at":"2026-11-30T16:44","checkin":"2026-11-30T16:44"}
+{"who":"Kevin","text":"Ok. The other thing is here","posted":true,"at":"2026-11-30T16:45","checkin":"2026-11-30T16:45"}
+{"who":"Renee","text":"Got a rough one today too, honestly. Not going to get into it either. Just tired of being the one who knows where the bodies are buried lol 😮‍💨","posted":true,"at":"2026-11-30T17:20","checkin":"2026-11-30T17:20"}
+{"who":"Kevin","text":"Dont make that joke today renee","posted":true,"at":"2026-11-30T17:22","checkin":"2026-11-30T17:22"}
+{"who":"Renee","text":"Fair","posted":true,"at":"2026-11-30T17:23","checkin":"2026-11-30T17:23"}
+{"who":"Kevin","text":"Hey. I miss him too. The weird part is I keep wanting to call him about the coffee","posted":true,"at":"2026-11-30T19:10","checkin":"2026-11-30T19:10"}
+{"who":"Renee","text":"He'd have loved the donut thing. He'd have claimed he planned it","posted":true,"at":"2026-11-30T19:14","checkin":"2026-11-30T19:14"}
+{"who":"Kevin","text":"He'd have made it into a bit","posted":true,"at":"2026-11-30T19:15","checkin":"2026-11-30T19:15"}
+{"who":"Maya","text":"I'm up. Floor was fine. Didn't sleep","posted":true,"at":"2026-11-30T19:30","checkin":"2026-11-30T19:30"}
+{"who":"Renee","text":"Do you want to call","posted":true,"at":"2026-11-30T19:31","checkin":"2026-11-30T19:31"}
+{"who":"Maya","text":"Maybe later. I want to hear the rota is sorted first so I have something boring to think about","posted":true,"at":"2026-11-30T19:44","checkin":"2026-11-30T19:44"}
+{"who":"Renee","text":"Done. Kevin has the 25th, I have the 24th, you're on the 31st, and Dave is somehow on nights for Christmas Day again","posted":true,"at":"2026-11-30T19:46","checkin":"2026-11-30T19:46"}
+{"who":"Maya","text":"Dave has no life","posted":true,"at":"2026-11-30T19:47","checkin":"2026-11-30T19:47"}
+{"who":"Kevin","text":"Dave has the coffee maker","posted":true,"at":"2026-11-30T19:47","checkin":"2026-11-30T19:47"}
+{"who":"Renee","text":"[photo: the rota sheet with Christmas Eve and Christmas Day highlighted in yellow]","posted":true,"at":"2026-11-30T20:05","checkin":"2026-11-30T20:05"}
+{"who":"Kevin","text":"Hey did you two eat","posted":true,"at":"2026-11-30T22:12","checkin":"2026-11-30T22:12"}
+{"who":"Maya","text":"Half a donut. Dave's donuts are better than they have any right to be","posted":true,"at":"2026-11-30T22:20","checkin":"2026-11-30T22:20"}
+{"who":"Renee","text":"Ate cereal over the sink like a feral raccoon","posted":true,"at":"2026-11-30T22:21","checkin":"2026-11-30T22:21"}
+{"who":"Kevin","text":"We are a sad crew","posted":true,"at":"2026-11-30T22:21","checkin":"2026-11-30T22:21"}
+{"who":"Maya","text":"Still up","posted":true,"at":"2026-11-30T23:30","checkin":"2026-11-30T23:30"}
+{"who":"Kevin","text":"Me too","posted":true,"at":"2026-11-30T23:31","checkin":"2026-11-30T23:31"}
+{"who":"Renee","text":"Call at midnight? I'll put the phone on speaker and we can not talk for a bit","posted":true,"at":"2026-11-30T23:55","checkin":"2026-11-30T23:55"}
+{"who":"Maya","text":"Yes","posted":true,"at":"2026-11-30T23:56","checkin":"2026-11-30T23:56"}
+{"who":"Kevin","text":"Ok","posted":true,"at":"2026-12-01T00:01","checkin":"2026-12-01T00:01"}
+{"who":"Kevin","text":"Did anybody fall asleep on the phone or was that just me","posted":true,"at":"2026-12-01T08:14","checkin":"2026-12-01T08:14"}
+{"who":"Renee","text":"Fell asleep around 2. Woke up at 6 with it still on speaker lol","posted":true,"at":"2026-12-01T08:22","checkin":"2026-12-01T08:22"}
+{"who":"Maya","text":"Same. Your snoring is the only thing I heard for an hour","posted":true,"at":"2026-12-01T08:23","checkin":"2026-12-01T08:23"}
+{"who":"Renee","text":"I don't snore","posted":true,"at":"2026-12-01T08:23","checkin":"2026-12-01T08:23"}
+{"who":"Maya","text":"You said \"mm no\" in your sleep. It was very convincing","posted":true,"at":"2026-12-01T08:25","checkin":"2026-12-01T08:25"}
+{"who":"Kevin","text":"Ok I'm going to shower and pretend to be a functional person","posted":true,"at":"2026-12-01T08:40","checkin":"2026-12-01T08:40"}
+{"who":"Maya","text":"[photo: the station whiteboard, where someone has written \"COFFEE: DO NOT TOUCH (DAVE'S)\" and underneath, in different marker, \"DAVE'S COFFEE IS ALSO A HAZARD\"]","posted":true,"at":"2026-12-01T11:02","checkin":"2026-12-01T11:02"}
+{"who":"Renee","text":"Who did the second line","posted":true,"at":"2026-12-01T11:03","checkin":"2026-12-01T11:03"}
+{"who":"Maya","text":"Not me. Would never","posted":true,"at":"2026-12-01T11:03","checkin":"2026-12-01T11:03"}
+{"who":"Kevin","text":"It was Hollis. He told me at the truck","posted":true,"at":"2026-12-01T11:20","checkin":"2026-12-01T11:20"}
+{"who":"Renee","text":"Groceries after this. Anybody need anything","posted":true,"at":"2026-12-01T13:45","checkin":"2026-12-01T13:45"}
+{"who":"Kevin","text":"Coffee that didn't come from the machine","posted":true,"at":"2026-12-01T13:50","checkin":"2026-12-01T13:50"}
+{"who":"Renee","text":"Lol ok","posted":true,"at":"2026-12-01T13:52","checkin":"2026-12-01T13:52"}
+{"who":"Maya","text":"Can you get the bread the good kind, not the sad one","posted":true,"at":"2026-12-01T14:30","checkin":"2026-12-01T14:30"}
+{"who":"Renee","text":"There is no good kind of bread in this city","posted":true,"at":"2026-12-01T14:31","checkin":"2026-12-01T14:31"}
+{"who":"Maya","text":"Try","posted":true,"at":"2026-12-01T14:31","checkin":"2026-12-01T14:31"}
+{"who":"Kevin","text":"Dave texted me asking if the donuts were ok","posted":true,"at":"2026-12-01T16:08","checkin":"2026-12-01T16:08"}
+{"who":"Kevin","text":"I said they were great","posted":true,"at":"2026-12-01T16:08","checkin":"2026-12-01T16:08"}
+{"who":"Kevin","text":"He asked if I was lying","posted":true,"at":"2026-12-01T16:09","checkin":"2026-12-01T16:09"}
+{"who":"Renee","text":"Were you","posted":true,"at":"2026-12-01T16:12","checkin":"2026-12-01T16:12"}
+{"who":"Kevin","text":"Yes","posted":true,"at":"2026-12-01T16:14","checkin":"2026-12-01T16:14"}
+{"who":"Kevin","text":"They were gas station donuts Renee","posted":true,"at":"2026-12-01T16:14","checkin":"2026-12-01T16:14"}
+{"who":"Renee","text":"I'm not judging. I'm eating one right now","posted":true,"at":"2026-12-01T16:15","checkin":"2026-12-01T16:15"}
+{"who":"Maya","text":"[photo: a grocery bag on a kitchen counter, the bread visible, a sad-looking loaf in a plastic sleeve beside it]","posted":true,"at":"2026-12-01T17:40","checkin":"2026-12-01T17:40"}
+{"who":"Renee","text":"Ok you win on the bread","posted":true,"at":"2026-12-01T17:41","checkin":"2026-12-01T17:41"}
+{"who":"Maya","text":"I know","posted":true,"at":"2026-12-01T17:41","checkin":"2026-12-01T17:41"}
+{"who":"Kevin","text":"You two going to be ok on the 24th and 25th. Honest question. I'm not trying to make it a thing","posted":true,"at":"2026-12-01T19:22","checkin":"2026-12-01T19:22"}
+{"who":"Renee","text":"Honestly no idea. I think I'll be ok at the station and fall apart in the car","posted":true,"at":"2026-12-01T19:30","checkin":"2026-12-01T19:30"}
+{"who":"Maya","text":"Same. Car is always the place","posted":true,"at":"2026-12-01T19:34","checkin":"2026-12-01T19:34"}
+{"who":"Kevin","text":"Ok. Car is the place. Noted","posted":true,"at":"2026-12-01T19:35","checkin":"2026-12-01T19:35"}
+{"who":"Maya","text":"Ran to the end of the block and back. Mostly walked","posted":true,"at":"2026-12-01T20:50","checkin":"2026-12-01T20:50"}
+{"who":"Renee","text":"Still counts","posted":true,"at":"2026-12-01T20:51","checkin":"2026-12-01T20:51"}
+{"who":"Maya","text":"Feels like it doesn't","posted":true,"at":"2026-12-01T20:51","checkin":"2026-12-01T20:51"}
+{"who":"Kevin","text":"Seen the news about the Gulf Freeway wreck? Two trucks, one of them lost a load of pallets","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Renee","text":"Saw it. I'm glad I wasn't on it","posted":true,"at":"2026-12-01T21:41","checkin":"2026-12-01T21:41"}
+{"who":"Kevin","text":"Ya. Sounds like nobody's serious","posted":true,"at":"2026-12-01T21:42","checkin":"2026-12-01T21:42"}
+{"who":"Maya","text":"Going to bed early. Not because I'm tired. Because I want the night to be over","posted":true,"at":"2026-12-01T22:58","checkin":"2026-12-01T22:58"}
+{"who":"Renee","text":"Ok. Text if you wake up","posted":true,"at":"2026-12-01T22:59","checkin":"2026-12-01T22:59"}
+{"who":"Maya","text":"Will do","posted":true,"at":"2026-12-01T23:01","checkin":"2026-12-01T23:01"}
+{"who":"Kevin","text":"Renee you up","posted":true,"at":"2026-12-01T23:44","checkin":"2026-12-01T23:44"}
+{"who":"Renee","text":"Yeah","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Renee","text":"Can't stop thinking about the stairwell guy for some reason","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Kevin","text":"He was bad tho","posted":true,"at":"2026-12-02T00:03","checkin":"2026-12-02T00:03"}
+{"who":"Renee","text":"He was really bad","posted":true,"at":"2026-12-02T00:04","checkin":"2026-12-02T00:04"}
+{"who":"Kevin","text":"Night renee","posted":true,"at":"2026-12-02T00:05","checkin":"2026-12-02T00:05"}

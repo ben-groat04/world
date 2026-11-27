@@ -1,0 +1,95 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T13:15","complete":true,"rejects":0,"today":[null,null,"Lorraine"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2216,"cache_read_input_tokens":0,"output_tokens":2816,"output_tokens_details":{"thinking_tokens":1914},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2216,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2816,"cache_read_input_tokens":0,"cache_creation_input_tokens":2216,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2216},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3012,"cache_read_input_tokens":0,"output_tokens":2852,"output_tokens_details":{"thinking_tokens":2093},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3012,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2852,"cache_read_input_tokens":0,"cache_creation_input_tokens":3012,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3012},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3783,"cache_read_input_tokens":0,"output_tokens":2903,"output_tokens_details":{"thinking_tokens":1946},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3783,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2903,"cache_read_input_tokens":0,"cache_creation_input_tokens":3783,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3783},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Paddy","Lorraine","Ryan"],"setting":"You three are paramedics on the same ambulance crew in Belfast, chatting in a group chat while off shift, and you all knew a crewmate who has died.","openers":["Send the worst call-out you've ever had","Post the blackest joke you've been saving","Start a round of the grimmest stories","Tell the one about the job nobody else will touch"],"opener":"Post the blackest joke you've been saving","cast":{"Paddy":{"who":"34, man, paramedic on the crew","work":"paramedic","knows":"You know Lorraine and Ryan as fellow paramedics on your crew, colleagues you work shifts with.","texts":"Paddy texts in this chat only now and again.","style":"light, occasional use.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Lorraine":{"who":"41, woman, paramedic on the crew","work":"paramedic","knows":"You know Paddy and Ryan as fellow paramedics on your crew, colleagues you work shifts with.","texts":"Lorraine texts in this chat a lot.","style":"light, occasional use.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Ryan":{"who":"29, man, paramedic on the crew","work":"paramedic","knows":"You know Paddy and Lorraine as fellow paramedics on your crew, colleagues you work shifts with.","texts":"Ryan texts in this chat now and then.","style":"light, occasional use.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Paddy":"You live in Belfast, where your days are filled with paramedic shifts on the crew, and you live alone.","Lorraine":"You live in Belfast, where your days are filled with paramedic shifts on the crew, and you live alone.","Ryan":"You live in Belfast, where your days are filled with paramedic shifts on the crew, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":879,"cache_read_input_tokens":0,"output_tokens":1093,"output_tokens_details":{"thinking_tokens":878},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":879,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1093,"cache_read_input_tokens":0,"cache_creation_input_tokens":879,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":879},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1138,"cache_read_input_tokens":0,"output_tokens":2210,"output_tokens_details":{"thinking_tokens":1723},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1138,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2210,"cache_read_input_tokens":0,"cache_creation_input_tokens":1138,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1138},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Belfast, Northern Ireland","castMs":17312,"situation":"Three paramedics on the same crew, off shift.","topic":"Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise."}
+{"who":"Paddy","text":"Cant sleep so im bored. Whose turn for the worst job. Im going first","posted":true,"at":"2026-12-01T13:15","checkin":"2026-12-01T13:15"}
+{"who":"Paddy","text":"Bloke in Andersonstown, dead about 4 days, cat had started on his face. We had to bag the cat too","posted":true,"at":"2026-12-01T13:17","checkin":"2026-12-01T13:17"}
+{"who":"Lorraine","text":"Paddy that is vile","posted":true,"at":"2026-12-01T13:18","checkin":"2026-12-01T13:18"}
+{"who":"","react":"😂","to":2,"posted":false,"at":"2026-12-01T13:18"}
+{"who":"Lorraine","text":"The cat was only doing its job","posted":true,"at":"2026-12-01T13:18","checkin":"2026-12-01T13:18"}
+{"who":"Ryan","text":"Beat that","posted":true,"at":"2026-12-01T13:22","checkin":"2026-12-01T13:22"}
+{"who":"Ryan","text":"Ok mine. Fire brigade wouldnt take the lift out so we got the lad down the stairwell on the carry chair. He apologised every step. Kept saying sorry sorry. I said youre grand its only 4 floors","posted":true,"at":"2026-12-01T13:30","checkin":"2026-12-01T13:30"}
+{"who":"Ryan","text":"He went ok sorry","posted":true,"at":"2026-12-01T13:31","checkin":"2026-12-01T13:31"}
+{"who":"Lorraine","text":"Hes not getting away with that one","posted":true,"at":"2026-12-01T13:44","checkin":"2026-12-01T13:44"}
+{"who":"","react":"😂","to":7,"posted":false,"at":"2026-12-01T13:44"}
+{"who":"","react":"😂","to":7,"posted":false,"at":"2026-12-01T13:44"}
+{"who":"Lorraine","text":"Mine was the woman in Ballymena in the bath. Family had been out to the chipper and left her to soak","posted":true,"at":"2026-12-01T13:45","checkin":"2026-12-01T13:45"}
+{"who":"Lorraine","text":"We came in and the chips were still warm on the side","posted":true,"at":"2026-12-01T13:46","checkin":"2026-12-01T13:46"}
+{"who":"Paddy","text":"Right","posted":true,"at":"2026-12-01T14:02","checkin":"2026-12-01T14:02"}
+{"who":"Paddy","text":"Conor's finally the first pt we've had that made his own 999 call. Shame he didnt stay on the line for the rota","posted":true,"at":"2026-12-01T14:03","checkin":"2026-12-01T14:03"}
+{"who":"Paddy","text":"Sorry. Its what he'd have said","posted":true,"at":"2026-12-01T14:03","checkin":"2026-12-01T14:03"}
+{"who":"Lorraine","text":"Paddy","posted":true,"at":"2026-12-01T14:09","checkin":"2026-12-01T14:09"}
+{"who":"Lorraine","text":"He'd have said worse","posted":true,"at":"2026-12-01T14:09","checkin":"2026-12-01T14:09"}
+{"who":"Ryan","text":"He would","posted":true,"at":"2026-12-01T14:15","checkin":"2026-12-01T14:15"}
+{"who":"Ryan","text":"He'd have had us all on the rota for a month for that","posted":true,"at":"2026-12-01T14:16","checkin":"2026-12-01T14:16"}
+{"who":"Lorraine","text":"You alright ryan","posted":true,"at":"2026-12-01T14:20","checkin":"2026-12-01T14:20"}
+{"who":"Ryan","text":"Yeah. Just on the couch","posted":true,"at":"2026-12-01T14:31","checkin":"2026-12-01T14:31"}
+{"who":"Lorraine","text":"Are we doing the Dirty Onion tonight or are we all too wrecked","posted":true,"at":"2026-12-01T15:48","checkin":"2026-12-01T15:48"}
+{"who":"Paddy","text":"I'll go if someone else buys the first one","posted":true,"at":"2026-12-01T16:02","checkin":"2026-12-01T16:02"}
+{"who":"Lorraine","text":"You're on shift in the morning?","posted":true,"at":"2026-12-01T16:02","checkin":"2026-12-01T16:02"}
+{"who":"Paddy","text":"No. Off till thurs","posted":true,"at":"2026-12-01T16:05","checkin":"2026-12-01T16:05"}
+{"who":"Paddy","text":"Ryan?","posted":true,"at":"2026-12-01T16:05","checkin":"2026-12-01T16:05"}
+{"who":"Ryan","text":"Go on","posted":true,"at":"2026-12-01T17:40","checkin":"2026-12-01T17:40"}
+{"who":"Ryan","text":"I'll get the taxi from the Lisburn Rd","posted":true,"at":"2026-12-01T17:41","checkin":"2026-12-01T17:41"}
+{"who":"Lorraine","text":"Right I'm in the Onion. Ryan's not here yet","posted":true,"at":"2026-12-01T21:12","checkin":"2026-12-01T21:12"}
+{"who":"Paddy","text":"On my way","posted":true,"at":"2026-12-01T21:13","checkin":"2026-12-01T21:13"}
+{"who":"Ryan","text":"On the bus. 10 mins","posted":true,"at":"2026-12-01T21:29","checkin":"2026-12-01T21:29"}
+{"who":"Ryan","text":"Outside. Is it the bar or the snug","posted":true,"at":"2026-12-01T21:47","checkin":"2026-12-01T21:47"}
+{"who":"Lorraine","text":"Bar. Paddy's on the good stool","posted":true,"at":"2026-12-01T21:48","checkin":"2026-12-01T21:48"}
+{"who":"Paddy","text":"Home. Ryan did you get back alright","posted":true,"at":"2026-12-02T00:52","checkin":"2026-12-02T00:52"}
+{"who":"Ryan","text":"Yeah. Lorraine put me in the taxi","posted":true,"at":"2026-12-02T00:58","checkin":"2026-12-02T00:58"}
+{"who":"Lorraine","text":"Did not. He got in himself, I just held the door","posted":true,"at":"2026-12-02T00:58","checkin":"2026-12-02T00:58"}
+{"who":"","react":"😂","to":33,"posted":false,"at":"2026-12-02T00:58"}
+{"who":"Lorraine","text":"Dont be on the couch all night","posted":true,"at":"2026-12-02T01:03","checkin":"2026-12-02T01:03"}
+{"who":"Ryan","text":"Im not","posted":true,"at":"2026-12-02T01:04","checkin":"2026-12-02T01:04"}
+{"who":"Paddy","text":"Anyone know is it Monday or Friday for Conor. Mam's asking","posted":true,"at":"2026-12-02T09:12","checkin":"2026-12-02T09:12"}
+{"who":"Lorraine","text":"Monday. 11 at the chapel. Sheila rang me last night","posted":true,"at":"2026-12-02T09:20","checkin":"2026-12-02T09:20"}
+{"who":"Paddy","text":"Ok","posted":true,"at":"2026-12-02T09:21","checkin":"2026-12-02T09:21"}
+{"who":"Lorraine","text":"Are you wearing the uniform or a suit","posted":true,"at":"2026-12-02T09:24","checkin":"2026-12-02T09:24"}
+{"who":"Paddy","text":"Suit. I dont have a uniform for funerals","posted":true,"at":"2026-12-02T09:31","checkin":"2026-12-02T09:31"}
+{"who":"Ryan","text":"Any of you have Monday off. I want to be at the chapel","posted":true,"at":"2026-12-02T10:15","checkin":"2026-12-02T10:15"}
+{"who":"Lorraine","text":"Ive asked Maureen already. She said yes","posted":true,"at":"2026-12-02T10:19","checkin":"2026-12-02T10:19"}
+{"who":"Lorraine","text":"You're grand. You dont have to do the shift","posted":true,"at":"2026-12-02T10:20","checkin":"2026-12-02T10:20"}
+{"who":"Ryan","text":"Right ok","posted":true,"at":"2026-12-02T10:31","checkin":"2026-12-02T10:31"}
+{"who":"Paddy","text":"Im not doing the rota for the wake either so dont look at me","posted":true,"at":"2026-12-02T11:02","checkin":"2026-12-02T11:02"}
+{"who":"","react":"😂","to":45,"posted":false,"at":"2026-12-02T11:02"}
+{"who":"Lorraine","text":"Paddy","posted":true,"at":"2026-12-02T11:04","checkin":"2026-12-02T11:04"}
+{"who":"Ryan","text":"Sorry about the state of me last night","posted":true,"at":"2026-12-02T19:40","checkin":"2026-12-02T19:40"}
+{"who":"Lorraine","text":"You weren't in a state. You were sat there with a pint you didnt drink","posted":true,"at":"2026-12-02T19:41","checkin":"2026-12-02T19:41"}
+{"who":"Ryan","text":"Yeah","posted":true,"at":"2026-12-02T19:43","checkin":"2026-12-02T19:43"}
+{"who":"Lorraine","text":"Eat something tonight. Not crisps","posted":true,"at":"2026-12-02T19:44","checkin":"2026-12-02T19:44"}
+{"who":"Ryan","text":"Ok mum","posted":true,"at":"2026-12-02T19:47","checkin":"2026-12-02T19:47"}
+{"who":"Paddy","text":"Cant sleep again","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}
+{"who":"Lorraine","text":"Neither","posted":true,"at":"2026-12-03T00:04","checkin":"2026-12-03T00:04"}
+{"who":"Lorraine","text":"Go to bed Paddy","posted":true,"at":"2026-12-03T00:05","checkin":"2026-12-03T00:05"}
+{"who":"Paddy","text":"Starting at 8. Who's on with me","posted":true,"at":"2026-12-03T07:12","checkin":"2026-12-03T07:12"}
+{"who":"Lorraine","text":"Me. Bring the good tea","posted":true,"at":"2026-12-03T07:20","checkin":"2026-12-03T07:20"}
+{"who":"Paddy","text":"Cant promise","posted":true,"at":"2026-12-03T07:21","checkin":"2026-12-03T07:21"}
+{"who":"Ryan","text":"Had a toast. Dont tell Lorraine","posted":true,"at":"2026-12-03T09:40","checkin":"2026-12-03T09:40"}
+{"who":"Lorraine","text":"Good lad","posted":true,"at":"2026-12-03T09:44","checkin":"2026-12-03T09:44"}
+{"who":"Lorraine","text":"Mam fell in the kitchen this morning. Shes in the Royal. Think its her wrist","posted":true,"at":"2026-12-03T13:08","checkin":"2026-12-03T13:08"}
+{"who":"Lorraine","text":"Ciaran's doing my six, I'm sitting with her","posted":true,"at":"2026-12-03T13:09","checkin":"2026-12-03T13:09"}
+{"who":"Paddy","text":"Shit. Sorry Lorraine. Which ward","posted":true,"at":"2026-12-03T13:10","checkin":"2026-12-03T13:10"}
+{"who":"Lorraine","text":"Dont know yet. Shes in a corridor with a blanket on her telling the porter hes doing the chair wrong","posted":true,"at":"2026-12-03T13:12","checkin":"2026-12-03T13:12"}
+{"who":"","react":"😂","to":63,"posted":false,"at":"2026-12-03T13:12"}
+{"who":"","react":"😂","to":63,"posted":false,"at":"2026-12-03T13:12"}
+{"who":"Paddy","text":"Thats her","posted":true,"at":"2026-12-03T13:14","checkin":"2026-12-03T13:14"}
+{"who":"Ryan","text":"Want me to come down","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Lorraine","text":"No. Stay where you are. Im grand","posted":true,"at":"2026-12-03T13:24","checkin":"2026-12-03T13:24"}
+{"who":"Ryan","text":"Im not on the couch","posted":true,"at":"2026-12-03T13:24","checkin":"2026-12-03T13:24"}
+{"who":"Lorraine","text":"Ryan","posted":true,"at":"2026-12-03T13:25","checkin":"2026-12-03T13:25"}
+{"who":"Ryan","text":"Ok I am","posted":true,"at":"2026-12-03T13:26","checkin":"2026-12-03T13:26"}
+{"who":"Lorraine","text":"Scan's back. Not the hip. Wrist is broke, they're putting a cast on","posted":true,"at":"2026-12-03T15:51","checkin":"2026-12-03T15:51"}
+{"who":"Lorraine","text":"She wants to go home tonight. I said she can go home when she's able to open a tin","posted":true,"at":"2026-12-03T15:52","checkin":"2026-12-03T15:52"}
+{"who":"Paddy","text":"Good one","posted":true,"at":"2026-12-03T16:30","checkin":"2026-12-03T16:30"}
+{"who":"Lorraine","text":"Dr said she has to have someone in the house for a week. Guess who's the someone","posted":true,"at":"2026-12-03T17:14","checkin":"2026-12-03T17:14"}
+{"who":"Paddy","text":"Lorraine","posted":true,"at":"2026-12-03T17:15","checkin":"2026-12-03T17:15"}
+{"who":"Lorraine","text":"Lorraine","posted":true,"at":"2026-12-03T17:16","checkin":"2026-12-03T17:16"}
+{"who":"Ryan","text":"Im around Saturday if you want to get your stuff from your house","posted":true,"at":"2026-12-03T19:02","checkin":"2026-12-03T19:02"}
+{"who":"Lorraine","text":"Thanks Ryan. Might take you up on it","posted":true,"at":"2026-12-03T19:06","checkin":"2026-12-03T19:06"}
+{"who":"Lorraine","text":"Got her home and into the bed. She's asleep. I'm sat in the kitchen with the kettle, not sure who's looking after who","posted":true,"at":"2026-12-03T22:48","checkin":"2026-12-03T22:48"}
+{"who":"Paddy","text":"You're doing the looking after","posted":true,"at":"2026-12-03T22:50","checkin":"2026-12-03T22:50"}
+{"who":"Paddy","text":"Cant sleep again","posted":true,"at":"2026-12-03T23:01","checkin":"2026-12-03T23:01"}
+{"who":"Ryan","text":"Made the pasta. Ate half. Thats a win","posted":true,"at":"2026-12-03T23:19","checkin":"2026-12-03T23:19"}
+{"who":"Lorraine","text":"That's a win","posted":true,"at":"2026-12-03T23:20","checkin":"2026-12-03T23:20"}
+{"who":"Paddy","text":"Mon 11 still. Chapel. Ill pick you both up if you want, I've the car","posted":true,"at":"2026-12-03T23:52","checkin":"2026-12-03T23:52"}
+{"who":"Ryan","text":"Yeah","posted":true,"at":"2026-12-03T23:58","checkin":"2026-12-03T23:58"}
+{"who":"Lorraine","text":"Both of ye go to bed","posted":true,"at":"2026-12-04T00:06","checkin":"2026-12-04T00:06"}

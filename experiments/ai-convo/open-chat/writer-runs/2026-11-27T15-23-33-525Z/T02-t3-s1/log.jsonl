@@ -1,0 +1,92 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T08:40","complete":true,"rejects":0,"today":[null,"Liam",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2015,"cache_read_input_tokens":0,"output_tokens":2988,"output_tokens_details":{"thinking_tokens":1838},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2015,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2988,"cache_read_input_tokens":0,"cache_creation_input_tokens":2015,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2015},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3108,"cache_read_input_tokens":0,"output_tokens":2936,"output_tokens_details":{"thinking_tokens":2288},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3108,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2936,"cache_read_input_tokens":0,"cache_creation_input_tokens":3108,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3108},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3737,"cache_read_input_tokens":0,"output_tokens":3616,"output_tokens_details":{"thinking_tokens":2573},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3737,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3616,"cache_read_input_tokens":0,"cache_creation_input_tokens":3737,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3737},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Liam","Sophie"],"setting":"You are both in Bristol, England, and you are apart tonight. Liam is at home in your flat, and Sophie is on a late shift at the hospital. You have been together for six years and live together. You are planning a spring trip to Cornwall and sorting out the flat's bills, and you use this chat to keep in touch while one of you is working.","openers":["Send a photo of what you're wearing now","Tell me what you're looking forward to when I get home","Ask what you'd like to do this weekend","Describe your day at the hospital"],"opener":"Send a photo of what you're wearing now","cast":{"Liam":{"who":"35, man, one half of the couple","work":"pharmacist","knows":"You know Sophie as your partner of six years.","texts":"","style":"Light; occasional emoji and few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":["Sophie"],"ex":[]},"Sophie":{"who":"33, woman, the other half of the couple","work":"nurse","knows":"You know Liam as your partner of six years.","texts":"","style":"Light; occasional emoji and few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":["Liam"],"ex":[]}},"private_lines":{"Liam":"You live in Bristol, where you work as a pharmacist and run the flat with Sophie.","Sophie":"You live in Bristol, where you work as a nurse and share the flat with Liam."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":840,"cache_read_input_tokens":0,"output_tokens":550,"output_tokens_details":{"thinking_tokens":336},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":840,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":550,"cache_read_input_tokens":0,"cache_creation_input_tokens":840,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":840},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1108,"cache_read_input_tokens":0,"output_tokens":1448,"output_tokens_details":{"thinking_tokens":1067},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1108,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1448,"cache_read_input_tokens":0,"cache_creation_input_tokens":1108,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1108},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bristol, England","castMs":12571,"situation":"A couple in their thirties, together six years.","topic":"They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart."}
+{"who":"Liam","text":"Morning. Did you actually sleep or just lie there","posted":true,"at":"2026-12-02T08:40","checkin":"2026-12-02T08:40"}
+{"who":"Sophie","text":"Slept til 7 then the alarm went off at 7:05 lol. So mostly","posted":true,"at":"2026-12-02T08:52","checkin":"2026-12-02T08:52"}
+{"who":"Liam","text":"That's a lot of 7s","posted":true,"at":"2026-12-02T08:53","checkin":"2026-12-02T08:53"}
+{"who":"Liam","text":"Broadband bill came, they've gone up again","posted":true,"at":"2026-12-02T09:15","checkin":"2026-12-02T09:15"}
+{"who":"Sophie","text":"Ugh. Can we just switch? I'll look tonight","posted":true,"at":"2026-12-02T09:31","checkin":"2026-12-02T09:31"}
+{"who":"Liam","text":"I'll do the comparison, you do the council tax thing","posted":true,"at":"2026-12-02T09:32","checkin":"2026-12-02T09:32"}
+{"who":"Sophie","text":"Rather not do council tax on a late. Not before 2pm anyway","posted":true,"at":"2026-12-02T11:02","checkin":"2026-12-02T11:02"}
+{"who":"Liam","text":"Deal","posted":true,"at":"2026-12-02T11:04","checkin":"2026-12-02T11:04"}
+{"who":"Liam","text":"Cabin listing in st ives is still up. The one with the wood burner","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Liam","text":"[link: the cabin listing]","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Sophie","text":"The one with the bath that faces the sea?? Yes. Dates? We said march","posted":true,"at":"2026-12-02T13:41","checkin":"2026-12-02T13:41"}
+{"who":"Liam","text":"14th to 18th march has space. They want a deposit by friday","posted":true,"at":"2026-12-02T13:44","checkin":"2026-12-02T13:44"}
+{"who":"Sophie","text":"Put it on the card, we'll sort it after","posted":true,"at":"2026-12-02T13:45","checkin":"2026-12-02T13:45"}
+{"who":"Sophie","text":"Heading in. Dont let the cat eat the rest of the chicken","posted":true,"at":"2026-12-02T14:10","checkin":"2026-12-02T14:10"}
+{"who":"Liam","text":"We don't have a cat\nI'll guard the chicken","posted":true,"at":"2026-12-02T14:12","checkin":"2026-12-02T14:12"}
+{"who":"Liam","text":"Deposit's in. Confirmation email in your inbox","posted":true,"at":"2026-12-02T16:48","checkin":"2026-12-02T16:48"}
+{"who":"Sophie","text":"Thank you. Sorting it","posted":true,"at":"2026-12-02T17:30","checkin":"2026-12-02T17:30"}
+{"who":"Liam","text":"How's the ward","posted":true,"at":"2026-12-02T19:05","checkin":"2026-12-02T19:05"}
+{"who":"Sophie","text":"Quiet so far. One fall in bay 3 but he's fine. Handover's at 22:30 so it'll be late","posted":true,"at":"2026-12-02T19:40","checkin":"2026-12-02T19:40"}
+{"who":"Liam","text":"Long day","posted":true,"at":"2026-12-02T19:42","checkin":"2026-12-02T19:42"}
+{"who":"Liam","text":"Bed's cold without you lol","posted":true,"at":"2026-12-02T21:10","checkin":"2026-12-02T21:10"}
+{"who":"Sophie","text":"You'll be fine","posted":true,"at":"2026-12-02T21:14","checkin":"2026-12-02T21:14"}
+{"who":"Liam","text":"I'm not, obviously","posted":true,"at":"2026-12-02T21:20","checkin":"2026-12-02T21:20"}
+{"who":"Liam","text":"[photo: me on the sofa in my old grey jumper, bill spreadsheet open on the laptop]","posted":true,"at":"2026-12-02T21:22","checkin":"2026-12-02T21:22"}
+{"who":"Sophie","text":"😂 that's the bill spreadsheet face","posted":true,"at":"2026-12-02T21:40","checkin":"2026-12-02T21:40"}
+{"who":"Sophie","text":"[photo: my scrubs top, lanyard, the hospital cardigan I've had on since 6am]","posted":true,"at":"2026-12-02T21:41","checkin":"2026-12-02T21:41"}
+{"who":"Liam","text":"Bit of a downgrade from the grey jumper","posted":true,"at":"2026-12-02T21:50","checkin":"2026-12-02T21:50"}
+{"who":"Liam","text":"You're in a 12 hour cardigan, I'm in a jumper with a hole in it","posted":true,"at":"2026-12-02T21:51","checkin":"2026-12-02T21:51"}
+{"who":"Sophie","text":"Still better than mine, it smells of the ward","posted":true,"at":"2026-12-02T22:20","checkin":"2026-12-02T22:20"}
+{"who":"Liam","text":"Ok that's less appealing","posted":true,"at":"2026-12-02T22:21","checkin":"2026-12-02T22:21"}
+{"who":"Sophie","text":"🤣","posted":true,"at":"2026-12-02T22:22","checkin":"2026-12-02T22:22"}
+{"who":"Liam","text":"Can you get the handover done quicker so you're home sooner","posted":true,"at":"2026-12-02T23:05","checkin":"2026-12-02T23:05"}
+{"who":"Sophie","text":"No. I'll be out by midnight if the 2 o'clock arrival doesn't come in","posted":true,"at":"2026-12-02T23:31","checkin":"2026-12-02T23:31"}
+{"who":"Liam","text":"Ok. Ring me when you're on the bus","posted":true,"at":"2026-12-02T23:33","checkin":"2026-12-02T23:33"}
+{"who":"Sophie","text":"On the bus. It's empty. Home by 1","posted":true,"at":"2026-12-03T00:40","checkin":"2026-12-03T00:40"}
+{"who":"Liam","text":"Ok. Door's on the latch","posted":true,"at":"2026-12-03T00:41","checkin":"2026-12-03T00:41"}
+{"who":"Liam","text":"Or the chain's off, whichever","posted":true,"at":"2026-12-03T00:42","checkin":"2026-12-03T00:42"}
+{"who":"Sophie","text":"In. Chain was on, you absolute muppet","posted":true,"at":"2026-12-03T00:55","checkin":"2026-12-03T00:55"}
+{"who":"Liam","text":"The chain is the problem","posted":true,"at":"2026-12-03T00:56","checkin":"2026-12-03T00:56"}
+{"who":"Sophie","text":"😂","posted":true,"at":"2026-12-03T00:58","checkin":"2026-12-03T00:58"}
+{"who":"Sophie","text":"Awake. Bed was very warm, thank you","posted":true,"at":"2026-12-03T11:40","checkin":"2026-12-03T11:40"}
+{"who":"Liam","text":"You're welcome. I'm at work. Had a near miss this morning, nothing went out","posted":true,"at":"2026-12-03T11:41","checkin":"2026-12-03T11:41"}
+{"who":"Liam","text":"Nearly swapped amlodipine for amitriptyline. Same packet, different shelf. Caught it at the final check","posted":true,"at":"2026-12-03T12:15","checkin":"2026-12-03T12:15"}
+{"who":"Sophie","text":"Oh god. Is the patient ok","posted":true,"at":"2026-12-03T12:17","checkin":"2026-12-03T12:17"}
+{"who":"Liam","text":"Yeah. Never left the building. Still had to fill in the form and ring the GP and I've been a bit shaky since","posted":true,"at":"2026-12-03T12:19","checkin":"2026-12-03T12:19"}
+{"who":"Sophie","text":"That's allowed. You caught it, that's the system working","posted":true,"at":"2026-12-03T12:20","checkin":"2026-12-03T12:20"}
+{"who":"Liam","text":"Yeah","posted":true,"at":"2026-12-03T12:22","checkin":"2026-12-03T12:22"}
+{"who":"Sophie","text":"Did you tell someone","posted":true,"at":"2026-12-03T12:24","checkin":"2026-12-03T12:24"}
+{"who":"Liam","text":"Dan. Did the incident form. He was nice about it which made it worse lol","posted":true,"at":"2026-12-03T12:25","checkin":"2026-12-03T12:25"}
+{"who":"Sophie","text":"Eat something. Not the chicken","posted":true,"at":"2026-12-03T12:30","checkin":"2026-12-03T12:30"}
+{"who":"Liam","text":"Not hungry 🙃","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Liam","text":"Going to be late, have to do the audit thing for the near miss. Back about 8","posted":true,"at":"2026-12-03T18:47","checkin":"2026-12-03T18:47"}
+{"who":"Sophie","text":"Ok. I'm on the sofa in the cardigan. Don't rush","posted":true,"at":"2026-12-03T18:52","checkin":"2026-12-03T18:52"}
+{"who":"Liam","text":"Not the cardigan","posted":true,"at":"2026-12-03T18:53","checkin":"2026-12-03T18:53"}
+{"who":"Sophie","text":"Obviously the cardigan","posted":true,"at":"2026-12-03T18:54","checkin":"2026-12-03T18:54"}
+{"who":"Liam","text":"Leaving now. Want anything from the shop","posted":true,"at":"2026-12-03T20:40","checkin":"2026-12-03T20:40"}
+{"who":"Sophie","text":"Milk and the good biscuits. Not the value ones","posted":true,"at":"2026-12-03T20:41","checkin":"2026-12-03T20:41"}
+{"who":"Liam","text":"Ok","posted":true,"at":"2026-12-03T20:41","checkin":"2026-12-03T20:41"}
+{"who":"Sophie","text":"Up. Early shift, 7 til 3. Did you sleep","posted":true,"at":"2026-12-04T07:12","checkin":"2026-12-04T07:12"}
+{"who":"Liam","text":"Better than wed. Not much","posted":true,"at":"2026-12-04T07:20","checkin":"2026-12-04T07:20"}
+{"who":"Liam","text":"Going in at 8:30. Dan says the audit's at 10 if I want to sit in","posted":true,"at":"2026-12-04T07:21","checkin":"2026-12-04T07:21"}
+{"who":"Sophie","text":"You don't have to be the one who sits in","posted":true,"at":"2026-12-04T07:23","checkin":"2026-12-04T07:23"}
+{"who":"Liam","text":"I know","posted":true,"at":"2026-12-04T07:24","checkin":"2026-12-04T07:24"}
+{"who":"Sophie","text":"Did you eat the rest of the biscuits","posted":true,"at":"2026-12-04T08:02","checkin":"2026-12-04T08:02"}
+{"who":"Liam","text":"No. Milk's in the fridge. Two biscuits left in the tin","posted":true,"at":"2026-12-04T08:10","checkin":"2026-12-04T08:10"}
+{"who":"Liam","text":"The good ones","posted":true,"at":"2026-12-04T08:11","checkin":"2026-12-04T08:11"}
+{"who":"Liam","text":"Did you ever ring the broadband lot","posted":true,"at":"2026-12-04T12:48","checkin":"2026-12-04T12:48"}
+{"who":"Sophie","text":"Not yet. Off at 3, I'll do it on the bus. Or you do it","posted":true,"at":"2026-12-04T12:52","checkin":"2026-12-04T12:52"}
+{"who":"Liam","text":"Did the comparison already. Cheapest is 9 quid less but it's 18 months","posted":true,"at":"2026-12-04T12:53","checkin":"2026-12-04T12:53"}
+{"who":"Liam","text":"Looks like there's a catch","posted":true,"at":"2026-12-04T12:53","checkin":"2026-12-04T12:53"}
+{"who":"Sophie","text":"There's always a catch. Send it over, I'll read it when I'm not wrangling a commode","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Liam","text":"[screenshot: broadband deals, three columns]","posted":true,"at":"2026-12-04T13:04","checkin":"2026-12-04T13:04"}
+{"who":"Sophie","text":"Ok. I'd take the middle one but read the small print on the speed. They always do the \"up to\"","posted":true,"at":"2026-12-04T13:30","checkin":"2026-12-04T13:30"}
+{"who":"Liam","text":"Did that. Middle one's the one","posted":true,"at":"2026-12-04T13:31","checkin":"2026-12-04T13:31"}
+{"who":"Sophie","text":"Off. Standing at the bus stop like a lemon. Bus is late like always","posted":true,"at":"2026-12-04T15:12","checkin":"2026-12-04T15:12"}
+{"who":"Liam","text":"Shop's open till 8 if we need anything. Milk's fine for tomorrow","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Sophie","text":"We need the good biscuits again apparently","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"Sophie","text":"How's the form. Did Dan close it","posted":true,"at":"2026-12-04T16:40","checkin":"2026-12-04T16:40"}
+{"who":"Liam","text":"Closed. Pharmacy manager wants a chat Monday. Just a chat he says","posted":true,"at":"2026-12-04T16:52","checkin":"2026-12-04T16:52"}
+{"who":"Sophie","text":"Is that the bad kind of chat","posted":true,"at":"2026-12-04T16:53","checkin":"2026-12-04T16:53"}
+{"who":"Liam","text":"Dunno. He was nice again. I'd rather he shouted","posted":true,"at":"2026-12-04T16:58","checkin":"2026-12-04T16:58"}
+{"who":"Sophie","text":"Nobody shouts at pharmacists. Shouting is for us","posted":true,"at":"2026-12-04T17:01","checkin":"2026-12-04T17:01"}
+{"who":"Sophie","text":"Still, you're allowed to feel rubbish about it. You're allowed to say so to him too","posted":true,"at":"2026-12-04T17:02","checkin":"2026-12-04T17:02"}
+{"who":"Liam","text":"Yeah. I'll see","posted":true,"at":"2026-12-04T17:05","checkin":"2026-12-04T17:05"}
+{"who":"Liam","text":"Did you ever sort the cabin thing with the card","posted":true,"at":"2026-12-04T17:20","checkin":"2026-12-04T17:20"}
+{"who":"Sophie","text":"Not yet. Will do tonight if I'm awake. Tuesday maybe","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Liam","text":"Tuesday's fine","posted":true,"at":"2026-12-04T17:32","checkin":"2026-12-04T17:32"}
+{"who":"Liam","text":"Leaving now","posted":true,"at":"2026-12-04T18:05","checkin":"2026-12-04T18:05"}
+{"who":"Sophie","text":"Ok. Door's on the latch","posted":true,"at":"2026-12-04T18:06","checkin":"2026-12-04T18:06"}
+{"who":"Liam","text":"Chain's on. I'll ring from the step","posted":true,"at":"2026-12-04T18:06","checkin":"2026-12-04T18:06"}

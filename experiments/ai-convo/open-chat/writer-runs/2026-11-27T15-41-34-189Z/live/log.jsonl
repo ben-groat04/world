@@ -1,0 +1,109 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T15:40","complete":false,"rejects":0,"today":[null,null,"Megan"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1521,"cache_read_input_tokens":0,"output_tokens":1787,"output_tokens_details":{"thinking_tokens":199},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1521,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1787,"cache_read_input_tokens":0,"cache_creation_input_tokens":1521,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1521},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":3008,"cache_read_input_tokens":0,"output_tokens":1098,"output_tokens_details":{"thinking_tokens":269},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3008,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1098,"cache_read_input_tokens":0,"cache_creation_input_tokens":3008,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3008},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Megan","Lynsey"],"setting":"You are both in Edinburgh, Scotland. You met years ago and have been close friends ever since, the kind who share everything without embarrassment.","openers":["Tell you about last night because oh my god","Describe what went spectacularly wrong in bed","Share a surprisingly good detail you hadn't expected","Warn you it gets quite explicit before diving straight in"],"opener":"Warn you it gets quite explicit before diving straight in","cast":{"Megan":{"who":"32, woman, the friend sharing her sexual experiences","work":"physiotherapist","knows":"You and Lynsey are close friends who tell each other everything about your lives, including your sex lives.","texts":"","style":"a handful of emoji for emphasis or a laugh, minimal abbreviations, writes fairly freely","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Lynsey":{"who":"34, woman, the close friend she tells everything to","work":"GP practice administrator","knows":"You and Megan are close friends who have always been completely open with each other, sex lives included.","texts":"","style":"a few emoji, occasional texting shorthand, casual and warm","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Megan":"You live in Edinburgh, work as a physiotherapist, and fill your days with patients, clinic work, and a busy social life.","Lynsey":"You live in Edinburgh, work as an administrator at a GP practice, and spend your time outside work with friends and catching up on everything."},"usage":[{"input_tokens":705,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":225,"output_tokens_details":{"thinking_tokens":55},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":705,"output_tokens":225,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":895,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":305,"output_tokens_details":{"thinking_tokens":23},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":895,"output_tokens":305,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Edinburgh, Scotland","castMs":12104,"situation":"Two close friends in their thirties who tell each other everything.","topic":"They swap graphic, explicit detail about sex they have had, including what they liked and what went wrong, with no filter and a lot of laughing."}
+{"who":"Megan","text":"Right so I need to tell you something and it's fairly explicit, just so you're warned","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Megan","text":"Like properly explicit","posted":true,"at":"2026-11-27T15:41","checkin":"2026-11-27T15:41"}
+{"who":"Lynsey","text":"Oh god what happened","posted":true,"at":"2026-11-27T15:44","checkin":"2026-11-27T15:44"}
+{"who":"Lynsey","text":"Tell me everything","posted":true,"at":"2026-11-27T15:44","checkin":"2026-11-27T15:44"}
+{"who":"Megan","text":"Ok so you know I said I was seeing that guy Jamie again on Wednesday","posted":true,"at":"2026-11-27T15:52","checkin":"2026-11-27T15:52"}
+{"who":"Megan","text":"The one from the app, the tall one","posted":true,"at":"2026-11-27T15:52","checkin":"2026-11-27T15:52"}
+{"who":"Lynsey","text":"Yes","posted":true,"at":"2026-11-27T15:53","checkin":"2026-11-27T15:53"}
+{"who":"Megan","text":"So we ended up back at his and honestly it started really well, he was actually a good kisser which I was not expecting because the first time was a bit off","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Megan","text":"Like he knew what he was doing with his hands as well, wasn't just grabbing at everything immediately","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Lynsey","text":"Ok positive signs","posted":true,"at":"2026-11-27T15:59","checkin":"2026-11-27T15:59"}
+{"who":"Megan","text":"Yeah and then we got to bed and he went down on me which, fine, appreciated, but he was doing this thing where he kept stopping right when it was getting somewhere and then starting again like he thought he was being teasing and sexy","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Megan","text":"It wasn't teasing and sexy it was just annoying","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Megan","text":"I nearly said something","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Lynsey","text":"Why didn't you 😂","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Megan","text":"Because I didn't want to put him off his stroke when things were still going reasonably well","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Megan","text":"Anyway","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Megan","text":"So then we actually start having sex and it's good, like properly good, he's got good rhythm and he's not just immediately going as hard as possible which so many of them do","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Megan","text":"And I'm actually getting somewhere and then he asks if he can try something","posted":true,"at":"2026-11-27T16:10","checkin":"2026-11-27T16:10"}
+{"who":"Lynsey","text":"Oh here we go","posted":true,"at":"2026-11-27T16:10","checkin":"2026-11-27T16:10"}
+{"who":"Megan","text":"And I said yes because things were going well and I was feeling generous","posted":true,"at":"2026-11-27T16:11","checkin":"2026-11-27T16:11"}
+{"who":"Megan","text":"He wanted to try from behind but standing, like me bent over the bed","posted":true,"at":"2026-11-27T16:11","checkin":"2026-11-27T16:11"}
+{"who":"Lynsey","text":"Ok that's not that wild","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Megan","text":"No it's not, I know, and it was actually fine for about two minutes","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Megan","text":"But then he grabbed my hips and just started going absolutely mental","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Megan","text":"Like a completely different person","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Lynsey","text":"😂😂","posted":true,"at":"2026-11-27T16:13","checkin":"2026-11-27T16:13"}
+{"who":"Lynsey","text":"How mental","posted":true,"at":"2026-11-27T16:13","checkin":"2026-11-27T16:13"}
+{"who":"Megan","text":"Like I actually had to grip the duvet to stop myself sliding off the bed mental","posted":true,"at":"2026-11-27T16:16","checkin":"2026-11-27T16:16"}
+{"who":"Megan","text":"And not in a great way, in a sort of my knees are starting to hurt and this is too much angle way","posted":true,"at":"2026-11-27T16:16","checkin":"2026-11-27T16:16"}
+{"who":"Megan","text":"And also he started making this noise","posted":true,"at":"2026-11-27T16:17","checkin":"2026-11-27T16:17"}
+{"who":"Lynsey","text":"What noise","posted":true,"at":"2026-11-27T16:17","checkin":"2026-11-27T16:17"}
+{"who":"Megan","text":"Like a low sustained groan, the whole time, it didn't stop","posted":true,"at":"2026-11-27T16:19","checkin":"2026-11-27T16:19"}
+{"who":"Megan","text":"Just mmmmmmmmmmm","posted":true,"at":"2026-11-27T16:19","checkin":"2026-11-27T16:19"}
+{"who":"Megan","text":"Unbroken","posted":true,"at":"2026-11-27T16:19","checkin":"2026-11-27T16:19"}
+{"who":"Lynsey","text":"NO 😂😂😂","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Lynsey","text":"Like a vacuum cleaner","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Megan","text":"Yes exactly like a vacuum cleaner, that is exactly what it was like","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Megan","text":"I genuinely didn't know whether to laugh or cry","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Megan","text":"I was just staring at his headboard thinking, is this still happening","posted":true,"at":"2026-11-27T16:22","checkin":"2026-11-27T16:22"}
+{"who":"Lynsey","text":"How long did it go on for","posted":true,"at":"2026-11-27T16:23","checkin":"2026-11-27T16:23"}
+{"who":"Megan","text":"The noise or the whole thing","posted":true,"at":"2026-11-27T16:25","checkin":"2026-11-27T16:25"}
+{"who":"Lynsey","text":"Both","posted":true,"at":"2026-11-27T16:25","checkin":"2026-11-27T16:25"}
+{"who":"Megan","text":"The noise the whole time he was doing that which was maybe four or five minutes and then he finished and the noise stopped like someone had flicked a switch","posted":true,"at":"2026-11-27T16:28","checkin":"2026-11-27T16:28"}
+{"who":"Megan","text":"Just complete silence","posted":true,"at":"2026-11-27T16:28","checkin":"2026-11-27T16:28"}
+{"who":"Lynsey","text":"I am crying 😂😂😂","posted":true,"at":"2026-11-27T16:29","checkin":"2026-11-27T16:29"}
+{"who":"Megan","text":"And then he was really lovely afterwards honestly, got me water, we lay and talked for ages, completely normal","posted":true,"at":"2026-11-27T16:30","checkin":"2026-11-27T16:30"}
+{"who":"Megan","text":"The noise was just its own separate event that apparently happened and we don't discuss it","posted":true,"at":"2026-11-27T16:30","checkin":"2026-11-27T16:30"}
+{"who":"Lynsey","text":"Are you going to see him again","posted":true,"at":"2026-11-27T16:31","checkin":"2026-11-27T16:31"}
+{"who":"Megan","text":"I think so? Like it was mostly good","posted":true,"at":"2026-11-27T16:34","checkin":"2026-11-27T16:34"}
+{"who":"Megan","text":"I'd just need to mentally prepare for the noise","posted":true,"at":"2026-11-27T16:34","checkin":"2026-11-27T16:34"}
+{"who":"Lynsey","text":"You could ask him to keep it down","posted":true,"at":"2026-11-27T16:35","checkin":"2026-11-27T16:35"}
+{"who":"Megan","text":"How would I even word that","posted":true,"at":"2026-11-27T16:36","checkin":"2026-11-27T16:36"}
+{"who":"Lynsey","text":"\"I love the enthusiasm but maybe a bit quieter\" idk","posted":true,"at":"2026-11-27T16:37","checkin":"2026-11-27T16:37"}
+{"who":"Megan","text":"Maybe. I'd need a few more drinks first","posted":true,"at":"2026-11-27T16:39","checkin":"2026-11-27T16:39"}
+{"who":"Megan","text":"Anyway that's the story","posted":true,"at":"2026-11-27T16:39","checkin":"2026-11-27T16:39"}
+{"who":"Lynsey","text":"Honestly that's not even the worst story you've told me","posted":true,"at":"2026-11-27T16:40","checkin":"2026-11-27T16:40"}
+{"who":"Megan","text":"No I know, the bar is very low","posted":true,"at":"2026-11-27T16:40","checkin":"2026-11-27T16:40"}
+{"who":"Lynsey","text":"Are you in tonight","posted":true,"at":"2026-11-27T16:41","checkin":"2026-11-27T16:41"}
+{"who":"Megan","text":"Yeah I've got nothing on, last patient was at half four","posted":true,"at":"2026-11-27T16:42","checkin":"2026-11-27T16:42"}
+{"who":"Megan","text":"Why","posted":true,"at":"2026-11-27T16:42","checkin":"2026-11-27T16:42"}
+{"who":"Lynsey","text":"Was going to suggest the crown bar if you fancied it, say half seven","posted":true,"at":"2026-11-27T16:44","checkin":"2026-11-27T16:44"}
+{"who":"Megan","text":"Yeah go on then","posted":true,"at":"2026-11-27T16:46","checkin":"2026-11-27T16:46"}
+{"who":"Megan","text":"I want to hear your week as well","posted":true,"at":"2026-11-27T16:46","checkin":"2026-11-27T16:46"}
+{"who":"Lynsey","text":"Mine is incredibly boring compared to yours","posted":true,"at":"2026-11-27T16:47","checkin":"2026-11-27T16:47"}
+{"who":"Megan","text":"Still want to hear it","posted":true,"at":"2026-11-27T16:48","checkin":"2026-11-27T16:48"}
+{"who":"Lynsey","text":"Half seven then 👍","posted":true,"at":"2026-11-27T16:49","checkin":"2026-11-27T16:49"}
+{"who":"Lynsey","text":"Head is a bit sore this morning","posted":true,"at":"2026-11-28T10:23","checkin":"2026-11-28T10:23"}
+{"who":"Megan","text":"Same, I had one too many at the end there","posted":true,"at":"2026-11-28T10:51","checkin":"2026-11-28T10:51"}
+{"who":"Megan","text":"Worth it though","posted":true,"at":"2026-11-28T10:52","checkin":"2026-11-28T10:52"}
+{"who":"Lynsey","text":"Definitely","posted":true,"at":"2026-11-28T10:54","checkin":"2026-11-28T10:54"}
+{"who":"Lynsey","text":"You doing anything today","posted":true,"at":"2026-11-28T11:08","checkin":"2026-11-28T11:08"}
+{"who":"Megan","text":"Need to go to Waitrose at some point, that's about it","posted":true,"at":"2026-11-28T11:34","checkin":"2026-11-28T11:34"}
+{"who":"Megan","text":"Might go for a walk first if the rain holds off","posted":true,"at":"2026-11-28T11:35","checkin":"2026-11-28T11:35"}
+{"who":"Lynsey","text":"It won't","posted":true,"at":"2026-11-28T11:36","checkin":"2026-11-28T11:36"}
+{"who":"Megan","text":"No probably not","posted":true,"at":"2026-11-28T11:37","checkin":"2026-11-28T11:37"}
+{"who":"Megan","text":"I texted Jamie by the way","posted":true,"at":"2026-11-28T13:02","checkin":"2026-11-28T13:02"}
+{"who":"Lynsey","text":"Yeah?","posted":true,"at":"2026-11-28T13:15","checkin":"2026-11-28T13:15"}
+{"who":"Megan","text":"Just said I had a good time Wednesday, nothing major","posted":true,"at":"2026-11-28T13:17","checkin":"2026-11-28T13:17"}
+{"who":"Megan","text":"He replied quite quickly which is something","posted":true,"at":"2026-11-28T13:18","checkin":"2026-11-28T13:18"}
+{"who":"Lynsey","text":"What did he say","posted":true,"at":"2026-11-28T13:19","checkin":"2026-11-28T13:19"}
+{"who":"Megan","text":"That he did too and we should do it again","posted":true,"at":"2026-11-28T13:21","checkin":"2026-11-28T13:21"}
+{"who":"Megan","text":"So I suppose we're doing it again","posted":true,"at":"2026-11-28T13:21","checkin":"2026-11-28T13:21"}
+{"who":"Lynsey","text":"The noise will return","posted":true,"at":"2026-11-28T13:22","checkin":"2026-11-28T13:22"}
+{"who":"Megan","text":"The noise will return 😂","posted":true,"at":"2026-11-28T13:23","checkin":"2026-11-28T13:23"}
+{"who":"Megan","text":"I'll be ready for it this time","posted":true,"at":"2026-11-28T13:23","checkin":"2026-11-28T13:23"}
+{"who":"Lynsey","text":"I'm watching a film if you want to come over later, nothing else happening here","posted":true,"at":"2026-11-28T14:47","checkin":"2026-11-28T14:47"}
+{"who":"Megan","text":"What film","posted":true,"at":"2026-11-28T15:03","checkin":"2026-11-28T15:03"}
+{"who":"Lynsey","text":"Haven't decided yet","posted":true,"at":"2026-11-28T15:04","checkin":"2026-11-28T15:04"}
+{"who":"Megan","text":"Maybe, let me see how I feel after the supermarket. I'll text you","posted":true,"at":"2026-11-28T15:06","checkin":"2026-11-28T15:06"}
+{"who":"Lynsey","text":"No pressure","posted":true,"at":"2026-11-28T15:07","checkin":"2026-11-28T15:07"}
+{"who":"Megan","text":"Actually I'm just going to stay in I think, I'm tired and I've got washing on","posted":true,"at":"2026-11-28T17:31","checkin":"2026-11-28T17:31"}
+{"who":"Lynsey","text":"Fair enough, same honestly","posted":true,"at":"2026-11-28T17:33","checkin":"2026-11-28T17:33"}
+{"who":"Lynsey","text":"Put a film on anyway just for the noise","posted":true,"at":"2026-11-28T17:34","checkin":"2026-11-28T17:34"}
+{"who":"Megan","text":"Unlike Jamie you mean","posted":true,"at":"2026-11-28T17:35","checkin":"2026-11-28T17:35"}
+{"who":"Lynsey","text":"😂😂","posted":true,"at":"2026-11-28T17:36","checkin":"2026-11-28T17:36"}
+{"who":"Lynsey","text":"Exactly unlike Jamie","posted":true,"at":"2026-11-28T17:36","checkin":"2026-11-28T17:36"}
+{"who":"Megan","text":"What did you end up watching","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Lynsey","text":"That one with Cate Blanchett, the conductor one","posted":true,"at":"2026-11-28T20:19","checkin":"2026-11-28T20:19"}
+{"who":"Megan","text":"Oh I've been meaning to watch that","posted":true,"at":"2026-11-28T20:20","checkin":"2026-11-28T20:20"}
+{"who":"Lynsey","text":"It's good, bit long","posted":true,"at":"2026-11-28T20:21","checkin":"2026-11-28T20:21"}
+{"who":"Lynsey","text":"Still going actually","posted":true,"at":"2026-11-28T20:21","checkin":"2026-11-28T20:21"}
+{"who":"Megan","text":"I'll leave you to it","posted":true,"at":"2026-11-28T20:22","checkin":"2026-11-28T20:22"}
+{"who":"Lynsey","text":"Right that was very good but I need to go to bed","posted":true,"at":"2026-11-28T23:07","checkin":"2026-11-28T23:07"}
+{"who":"Megan","text":"I'm already in bed, have been since half ten","posted":true,"at":"2026-11-28T23:09","checkin":"2026-11-28T23:09"}
+{"who":"Lynsey","text":"Very sensible","posted":true,"at":"2026-11-28T23:10","checkin":"2026-11-28T23:10"}
+{"who":"Lynsey","text":"Night","posted":true,"at":"2026-11-28T23:10","checkin":"2026-11-28T23:10"}
+{"who":"Megan","text":"Night","posted":true,"at":"2026-11-28T23:11","checkin":"2026-11-28T23:11"}

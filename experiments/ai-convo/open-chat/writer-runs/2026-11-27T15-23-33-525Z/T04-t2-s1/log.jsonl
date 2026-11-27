@@ -1,0 +1,116 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T12:25","complete":true,"rejects":0,"today":[null,"Tom",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2272,"cache_read_input_tokens":0,"output_tokens":2228,"output_tokens_details":{"thinking_tokens":1299},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2272,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2228,"cache_read_input_tokens":0,"cache_creation_input_tokens":2272,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2272},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3089,"cache_read_input_tokens":0,"output_tokens":4303,"output_tokens_details":{"thinking_tokens":3074},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3089,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4303,"cache_read_input_tokens":0,"cache_creation_input_tokens":3089,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3089},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4331,"cache_read_input_tokens":0,"output_tokens":4963,"output_tokens_details":{"thinking_tokens":3693},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4331,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4963,"cache_read_input_tokens":0,"cache_creation_input_tokens":4331,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4331},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Catrin","Tom","Nathan","Ffion"],"setting":"You're all in Cardiff, old mates from uni who still keep in touch through this group chat. Right now you're sorting plans for a night out on Friday and who's getting which taxi home.","openers":["Send the group a screenshot from the night","Ask who remembers how we got home","Suggest a quieter Friday with proper seats","Ask whether anyone still has the kebab shop receipt"],"opener":"Ask whether anyone still has the kebab shop receipt","cast":{"Catrin":{"who":"25, woman, old uni mate","work":"pharmacy assistant","knows":"You know Tom, Nathan and Ffion as uni mates you've stayed close to.","texts":"Catrin texts in this chat a lot.","style":"a little emoji, some texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Tom":{"who":"24, man, old uni mate","work":"music teacher","knows":"You know Catrin, Nathan and Ffion as uni mates you've stayed close to.","texts":"Tom texts in this chat only now and again.","style":"a little emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Nathan":{"who":"26, man, old uni mate","work":"bartender","knows":"You know Catrin, Tom and Ffion as uni mates you've stayed close to.","texts":"Nathan texts in this chat now and then.","style":"some emoji, some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Ffion":{"who":"25, woman, old uni mate","work":"architecture graduate","knows":"You know Catrin, Tom and Nathan as uni mates you've stayed close to.","texts":"Ffion texts in this chat now and then.","style":"some emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Catrin":"You live in Cardiff, your days go on pharmacy assistant work, and you live with nobody.","Tom":"You live in Cardiff, your days go on music teaching, and you live with nobody.","Nathan":"You live in Cardiff, your days go on bartending, and you live with nobody.","Ffion":"You live in Cardiff, your days go on architecture work since graduating, and you live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":868,"cache_read_input_tokens":0,"output_tokens":1515,"output_tokens_details":{"thinking_tokens":1076},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":868,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1515,"cache_read_input_tokens":0,"cache_creation_input_tokens":868,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":868},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1183,"cache_read_input_tokens":0,"output_tokens":2356,"output_tokens_details":{"thinking_tokens":1772},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1183,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2356,"cache_read_input_tokens":0,"cache_creation_input_tokens":1183,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1183},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cardiff, Wales","castMs":19579,"situation":"Old mates from uni in a group chat.","topic":"Going over a night when they were absolutely wrecked: blackouts, one of them wetting themselves, a fight outside a kebab shop, and plans to do it all again Friday."}
+{"who":"Catrin","text":"Does anyone still have the receipt from that kebab shop. The night we got chucked out of the taxi","posted":true,"at":"2026-12-03T12:25","checkin":"2026-12-03T12:25"}
+{"who":"Ffion","text":"Why would you want that","posted":true,"at":"2026-12-03T12:31","checkin":"2026-12-03T12:31"}
+{"who":"Catrin","text":"For friday need proof it actually happened","posted":true,"at":"2026-12-03T12:31","checkin":"2026-12-03T12:31"}
+{"who":"Ffion","text":"It happened. I still have the graze on my knee","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Nathan","text":"Chips were £4.50 I remember that","posted":true,"at":"2026-12-03T12:40","checkin":"2026-12-03T12:40"}
+{"who":"Catrin","text":"NATHAN","posted":true,"at":"2026-12-03T12:41","checkin":"2026-12-03T12:41"}
+{"who":"Nathan","text":"What","posted":true,"at":"2026-12-03T12:41","checkin":"2026-12-03T12:41"}
+{"who":"Tom","text":"Dont have it sorry. Might be in a coat somewhere","posted":true,"at":"2026-12-03T12:44","checkin":"2026-12-03T12:44"}
+{"who":"Catrin","text":"Someone also has to tell me who was in the back of the taxi with the window down. I genuinely cant remember that part","posted":true,"at":"2026-12-03T12:52","checkin":"2026-12-03T12:52"}
+{"who":"Tom","text":"Was it nate","posted":true,"at":"2026-12-03T13:10","checkin":"2026-12-03T13:10"}
+{"who":"Nathan","text":"No\nit was not","posted":true,"at":"2026-12-03T13:11","checkin":"2026-12-03T13:11"}
+{"who":"Ffion","text":"It was nate","posted":true,"at":"2026-12-03T13:12","checkin":"2026-12-03T13:12"}
+{"who":"Nathan","text":"I was in the front","posted":true,"at":"2026-12-03T13:14","checkin":"2026-12-03T13:14"}
+{"who":"Catrin","text":"The driver was not happy","posted":true,"at":"2026-12-03T13:14","checkin":"2026-12-03T13:14"}
+{"who":"Ffion","text":"He stopped at the lights and just looked at us for ages","posted":true,"at":"2026-12-03T13:15","checkin":"2026-12-03T13:15"}
+{"who":"Tom","text":"Im in on friday. Where are we starting","posted":true,"at":"2026-12-03T14:02","checkin":"2026-12-03T14:02"}
+{"who":"Catrin","text":"Same place obvs. We can't go back to the other one after the thing with the bouncer","posted":true,"at":"2026-12-03T14:20","checkin":"2026-12-03T14:20"}
+{"who":"Nathan","text":"Which thing","posted":true,"at":"2026-12-03T14:21","checkin":"2026-12-03T14:21"}
+{"who":"Catrin","text":"You know which thing","posted":true,"at":"2026-12-03T14:22","checkin":"2026-12-03T14:22"}
+{"who":"Ffion","text":"Ok I'm not doing the taxi home with 3 of you again. I'm getting the early one","posted":true,"at":"2026-12-03T17:48","checkin":"2026-12-03T17:48"}
+{"who":"Ffion","text":"I'm serious, I have a 9am client friday morning and I can't be looking like that","posted":true,"at":"2026-12-03T17:49","checkin":"2026-12-03T17:49"}
+{"who":"Nathan","text":"I'm on till 11 tomorrow so I'll meet you after. 12ish","posted":true,"at":"2026-12-03T18:30","checkin":"2026-12-03T18:30"}
+{"who":"Catrin","text":"Nath can you not be a bartender on a friday for once 😭","posted":true,"at":"2026-12-03T18:31","checkin":"2026-12-03T18:31"}
+{"who":"Nathan","text":"Can't. They pay me to be there","posted":true,"at":"2026-12-03T18:31","checkin":"2026-12-03T18:31"}
+{"who":"Tom","text":"I'll get the taxi with whoever's still standing","posted":true,"at":"2026-12-03T21:05","checkin":"2026-12-03T21:05"}
+{"who":"Catrin","text":"So me then","posted":true,"at":"2026-12-03T21:06","checkin":"2026-12-03T21:06"}
+{"who":"Ffion","text":"Ok split it three ways when we're leaving, not four. Nate can go with tom","posted":true,"at":"2026-12-03T22:40","checkin":"2026-12-03T22:40"}
+{"who":"Nathan","text":"Why am I always the one who gets split up","posted":true,"at":"2026-12-03T22:41","checkin":"2026-12-03T22:41"}
+{"who":"Ffion","text":"Because of the knee thing","posted":true,"at":"2026-12-03T22:41","checkin":"2026-12-03T22:41"}
+{"who":"Catrin","text":"Still no receipt btw","posted":true,"at":"2026-12-03T23:58","checkin":"2026-12-03T23:58"}
+{"who":"Tom","text":"Catrin go to bed","posted":true,"at":"2026-12-04T00:03","checkin":"2026-12-04T00:03"}
+{"who":"Catrin","text":"Ur not my dad","posted":true,"at":"2026-12-04T00:04","checkin":"2026-12-04T00:04"}
+{"who":"Nathan","text":"Just got in. Where are you","posted":true,"at":"2026-12-04T00:12","checkin":"2026-12-04T00:12"}
+{"who":"Ffion","text":"Client at 9. Im going to look like a normal person at 9. Watch me","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Catrin","text":"Ur always normal the morning after. Thats ur whole thing","posted":true,"at":"2026-12-04T08:55","checkin":"2026-12-04T08:55"}
+{"who":"Ffion","text":"Im not hungover today thats the whole point","posted":true,"at":"2026-12-04T08:56","checkin":"2026-12-04T08:56"}
+{"who":"Tom","text":"Year 3 just tried to play Twinkle Twinkle on a recorder with a satsuma in it. Dont ask","posted":true,"at":"2026-12-04T11:40","checkin":"2026-12-04T11:40"}
+{"who":"Catrin","text":"Ask","posted":true,"at":"2026-12-04T11:41","checkin":"2026-12-04T11:41"}
+{"who":"Tom","text":"No","posted":true,"at":"2026-12-04T11:41","checkin":"2026-12-04T11:41"}
+{"who":"Catrin","text":"Woman just came in asking for something to stop hiccups. I cant help with that. She was v serious about it tho","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Nathan","text":"Hold your breath and drink from the wrong side of the glass","posted":true,"at":"2026-12-04T13:04","checkin":"2026-12-04T13:04"}
+{"who":"Catrin","text":"Thats not a pharmacy thing nate","posted":true,"at":"2026-12-04T13:04","checkin":"2026-12-04T13:04"}
+{"who":"Nathan","text":"Dead in here. One bloke and a dog that keeps looking at me like I owe it money","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Tom","text":"Did you ask it to order","posted":true,"at":"2026-12-04T15:21","checkin":"2026-12-04T15:21"}
+{"who":"Nathan","text":"Its a dog tom","posted":true,"at":"2026-12-04T15:22","checkin":"2026-12-04T15:22"}
+{"who":"Ffion","text":"Client loved the drawings. I did a small dance in the stairwell, nobody saw","posted":true,"at":"2026-12-04T16:45","checkin":"2026-12-04T16:45"}
+{"who":"Catrin","text":"Ffion dancing in a stairwell is my favourite thing that's ever happened","posted":true,"at":"2026-12-04T16:46","checkin":"2026-12-04T16:46"}
+{"who":"Catrin","text":"Ok so I rang the kebab place. Guy said they dont keep receipts from that long ago. He also said \"is this about the taxi\" so they remember us","posted":true,"at":"2026-12-04T17:30","checkin":"2026-12-04T17:30"}
+{"who":"Nathan","text":"Well that's a yes then","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Tom","text":"Got a cello through the car door today. Actually through. Door fine, cello fine. Im not fine","posted":true,"at":"2026-12-04T18:14","checkin":"2026-12-04T18:14"}
+{"who":"Catrin","text":"Did it survive","posted":true,"at":"2026-12-04T18:15","checkin":"2026-12-04T18:15"}
+{"who":"Tom","text":"Yeah. I didnt","posted":true,"at":"2026-12-04T18:16","checkin":"2026-12-04T18:16"}
+{"who":"Catrin","text":"Leaving in 20. Still the place on queen st?","posted":true,"at":"2026-12-04T19:20","checkin":"2026-12-04T19:20"}
+{"who":"Nathan","text":"Still the place. Dont order the thing","posted":true,"at":"2026-12-04T19:21","checkin":"2026-12-04T19:21"}
+{"who":"Ffion","text":"What thing","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Nathan","text":"You know which thing","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Ffion","text":"Omg nathan","posted":true,"at":"2026-12-04T19:23","checkin":"2026-12-04T19:23"}
+{"who":"Nathan","text":"Last orders. Going to be late, sorry. 12ish still","posted":true,"at":"2026-12-04T22:50","checkin":"2026-12-04T22:50"}
+{"who":"Catrin","text":"Its fine we're already on the second drink ur fine","posted":true,"at":"2026-12-04T22:51","checkin":"2026-12-04T22:51"}
+{"who":"Ffion","text":"Taxi's here. Early one. Dont let Catrin near a kebab shop","posted":true,"at":"2026-12-04T23:31","checkin":"2026-12-04T23:31"}
+{"who":"Catrin","text":"I have no idea what ffion is talking about","posted":true,"at":"2026-12-04T23:32","checkin":"2026-12-04T23:32"}
+{"who":"Ffion","text":"Home. Shoes off. Dont text me","posted":true,"at":"2026-12-04T23:45","checkin":"2026-12-04T23:45"}
+{"who":"Tom","text":"Back booth. Catrin is explaining the bouncer to a plant","posted":true,"at":"2026-12-05T00:13","checkin":"2026-12-05T00:13"}
+{"who":"Nathan","text":"Is it the one from the other place","posted":true,"at":"2026-12-05T00:14","checkin":"2026-12-05T00:14"}
+{"who":"Catrin","text":"ITS NOT A PLANT ITS A FERN","posted":true,"at":"2026-12-05T00:14","checkin":"2026-12-05T00:14"}
+{"who":"Tom","text":"Taxi booked for 2:10. Catrin nate you're in it. I'll walk","posted":true,"at":"2026-12-05T01:52","checkin":"2026-12-05T01:52"}
+{"who":"Catrin","text":"No ur getting in tom","posted":true,"at":"2026-12-05T01:53","checkin":"2026-12-05T01:53"}
+{"who":"Tom","text":"I live 10 mins away","posted":true,"at":"2026-12-05T01:53","checkin":"2026-12-05T01:53"}
+{"who":"Nathan","text":"Taxi's here. Catrin sit in the front","posted":true,"at":"2026-12-05T02:09","checkin":"2026-12-05T02:09"}
+{"who":"Catrin","text":"Im sitting in the back with the window down and ur not my dad","posted":true,"at":"2026-12-05T02:10","checkin":"2026-12-05T02:10"}
+{"who":"Nathan","text":"Oh no","posted":true,"at":"2026-12-05T02:10","checkin":"2026-12-05T02:10"}
+{"who":"Catrin","text":"Ok who got home. Tom did u walk","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Tom","text":"Walked. 25 mins. Didn't stop at the bins this time","posted":true,"at":"2026-12-05T09:31","checkin":"2026-12-05T09:31"}
+{"who":"Nathan","text":"Got in at 2:40. Driver knew my name by the end. Don't ask how","posted":true,"at":"2026-12-05T09:50","checkin":"2026-12-05T09:50"}
+{"who":"Catrin","text":"Ask","posted":true,"at":"2026-12-05T09:51","checkin":"2026-12-05T09:51"}
+{"who":"Nathan","text":"No","posted":true,"at":"2026-12-05T09:51","checkin":"2026-12-05T09:51"}
+{"who":"Ffion","text":"I'm normal. I'm up. I'm making eggs like a grown woman","posted":true,"at":"2026-12-05T10:20","checkin":"2026-12-05T10:20"}
+{"who":"Catrin","text":"Ffion hasn't had a hangover since 2016 I don't believe it","posted":true,"at":"2026-12-05T10:22","checkin":"2026-12-05T10:22"}
+{"who":"Ffion","text":"I just stopped mentioning them","posted":true,"at":"2026-12-05T10:24","checkin":"2026-12-05T10:24"}
+{"who":"Catrin","text":"[photo: my fern, back in its pot. It's fine]","posted":true,"at":"2026-12-05T10:40","checkin":"2026-12-05T10:40"}
+{"who":"Tom","text":"Very healthy","posted":true,"at":"2026-12-05T10:41","checkin":"2026-12-05T10:41"}
+{"who":"Nathan","text":"It's a fern","posted":true,"at":"2026-12-05T10:41","checkin":"2026-12-05T10:41"}
+{"who":"Ffion","text":"Nate did you leave your keys in the taxi or is that just me","posted":true,"at":"2026-12-05T11:15","checkin":"2026-12-05T11:15"}
+{"who":"Nathan","text":"Found them. In my shoe. No idea how","posted":true,"at":"2026-12-05T11:16","checkin":"2026-12-05T11:16"}
+{"who":"Catrin","text":"Same as last time","posted":true,"at":"2026-12-05T11:16","checkin":"2026-12-05T11:16"}
+{"who":"Catrin","text":"Anyone going to the Sunday thing at Hannah's or is that just me and the wine","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Tom","text":"Kid asked me if the recorder had been to prison. I said no. He said it looks like it has","posted":true,"at":"2026-12-05T13:47","checkin":"2026-12-05T13:47"}
+{"who":"Ffion","text":"Honestly fair","posted":true,"at":"2026-12-05T13:48","checkin":"2026-12-05T13:48"}
+{"who":"Nathan","text":"On at 4. Saturday bar is worse than Friday, don't come in anyone","posted":true,"at":"2026-12-05T14:30","checkin":"2026-12-05T14:30"}
+{"who":"Catrin","text":"Wasn't planning to","posted":true,"at":"2026-12-05T14:31","checkin":"2026-12-05T14:31"}
+{"who":"Catrin","text":"Ramen place on working st has reopened. Think it's the one","posted":true,"at":"2026-12-05T15:10","checkin":"2026-12-05T15:10"}
+{"who":"Ffion","text":"The one where they put the egg in the wrong place last time","posted":true,"at":"2026-12-05T15:12","checkin":"2026-12-05T15:12"}
+{"who":"Catrin","text":"They fixed it. It's fine","posted":true,"at":"2026-12-05T15:12","checkin":"2026-12-05T15:12"}
+{"who":"Tom","text":"Are we doing next friday or are we done for the year","posted":true,"at":"2026-12-05T16:02","checkin":"2026-12-05T16:02"}
+{"who":"Catrin","text":"Done for the year obvs. Christmas","posted":true,"at":"2026-12-05T16:20","checkin":"2026-12-05T16:20"}
+{"who":"Ffion","text":"I'm not doing the taxi again","posted":true,"at":"2026-12-05T16:25","checkin":"2026-12-05T16:25"}
+{"who":"Catrin","text":"Ffion said that last week","posted":true,"at":"2026-12-05T16:26","checkin":"2026-12-05T16:26"}
+{"who":"Ffion","text":"I meant it last week too","posted":true,"at":"2026-12-05T16:26","checkin":"2026-12-05T16:26"}
+{"who":"Nathan","text":"Last one in the bar tonight wanted a pint of water in a wine glass. Asked me to make it look like wine. I did","posted":true,"at":"2026-12-05T19:50","checkin":"2026-12-05T19:50"}
+{"who":"Catrin","text":"Ur an artist","posted":true,"at":"2026-12-05T19:51","checkin":"2026-12-05T19:51"}
+{"who":"Nathan","text":"It was £3.80 for the water and the glass","posted":true,"at":"2026-12-05T19:51","checkin":"2026-12-05T19:51"}
+{"who":"Tom","text":"Coming out or home with a film","posted":true,"at":"2026-12-05T21:15","checkin":"2026-12-05T21:15"}
+{"who":"Catrin","text":"Film. Ffion u in","posted":true,"at":"2026-12-05T21:17","checkin":"2026-12-05T21:17"}
+{"who":"Ffion","text":"Yeah ok. Not going out. Film. Pyjamas","posted":true,"at":"2026-12-05T21:44","checkin":"2026-12-05T21:44"}
+{"who":"Catrin","text":"Ffion in pyjamas is my second favourite thing that's ever happened","posted":true,"at":"2026-12-05T21:45","checkin":"2026-12-05T21:45"}
+{"who":"Catrin","text":"Nathan ur finished?","posted":true,"at":"2026-12-05T23:10","checkin":"2026-12-05T23:10"}
+{"who":"Nathan","text":"Just locking up. Don't start on the kebab","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Catrin","text":"I wasn't","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Tom","text":"She was","posted":true,"at":"2026-12-05T23:59","checkin":"2026-12-05T23:59"}
+{"who":"Catrin","text":"Ok im going to bed this time","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}
+{"who":"Tom","text":"Lol","posted":true,"at":"2026-12-06T00:21","checkin":"2026-12-06T00:21"}
+{"who":"Nathan","text":"Liar","posted":true,"at":"2026-12-06T00:21","checkin":"2026-12-06T00:21"}
+{"who":"Ffion","text":"Film's off. Night. Not texting after this","posted":true,"at":"2026-12-06T00:23","checkin":"2026-12-06T00:23"}
+{"who":"Nathan","text":"Home. Don't tell Catrin the bouncer was nice to me","posted":true,"at":"2026-12-06T00:40","checkin":"2026-12-06T00:40"}

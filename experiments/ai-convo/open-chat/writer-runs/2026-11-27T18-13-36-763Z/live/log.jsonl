@@ -1,0 +1,93 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":["Jade"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1778,"cache_read_input_tokens":0,"output_tokens":2334,"output_tokens_details":{"thinking_tokens":240},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1778,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2334,"cache_read_input_tokens":0,"cache_creation_input_tokens":1778,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1778},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Liam","Jake","Ellis","Jade"],"setting":"You're a tight-knit group of mates who've known each other since secondary school in Leeds. You're all in your twenties now, still living in and around the city, keeping in touch mostly through this group chat where absolutely nothing is off-limits.","openers":["roast Jake's mum being seen near Ellis's block","accuse Jake of shagging someone embarrassing","send a filthy nickname he's made up for Ellis","describe what Jade allegedly got up to last weekend"],"opener":"accuse Jake of shagging someone embarrassing","cast":{"Liam":{"who":"24, man, one of the school-friends group","work":"bar staff","knows":"You've known Jake, Ellis, and Jade since school. Jake and Ellis are your lads, Jade is one of the group.","texts":"Liam texts in this chat only now and again.","style":"barely any emoji, no abbreviations, writes it straight out","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Jake":{"who":"25, man, one of the school-friends group","work":"kitchen porter","knows":"You've known Liam, Ellis, and Jade since school. They're your oldest mates.","texts":"Jake texts in this chat a lot.","style":"a few emoji, occasional abbreviations","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Ellis":{"who":"23, man, one of the school-friends group","work":"courier","knows":"You've known Liam, Jake, and Jade since school and still see them regularly.","texts":"Ellis texts in this chat only now and again.","style":"lots of emoji, heavy on abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Jade":{"who":"24, woman, one of the school-friends group","work":"dental nurse receptionist","knows":"You've known Liam, Jake, and Ellis since school and they're still your closest mates.","texts":"Jade texts in this chat now and then.","style":"moderate emoji, some abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Liam":"You live in Leeds, work bar shifts most evenings and weekends, and share a flat with housemates.","Jake":"You live in Leeds, spend most of your working hours in a kitchen as a porter, and rent a place with a couple of mates.","Ellis":"You live in Leeds, spend your days out on courier runs across the city, and rent your own place.","Jade":"You live in Leeds, work at a dental practice as a receptionist, and share a flat with a friend."},"usage":[{"input_tokens":718,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":544,"output_tokens_details":{"thinking_tokens":214},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":718,"output_tokens":544,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":941,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":474,"output_tokens_details":{"thinking_tokens":28},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":941,"output_tokens":474,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Leeds, England","castMs":19490,"situation":"Four mates in their twenties who have been friends since school.","topic":"Nonstop obscene banter, every message a crude insult or filthy joke aimed at one of them, with the worst swearing and sexual put-downs, all of them loving it."}
+{"who":"Liam","text":"heard you shagged donna barker last weekend you absolute fucking state\n\n---","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Jake","text":"who told you that 😭\n\n---","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
+{"who":"Liam","text":"so you did\n\n---","posted":true,"at":"2026-11-27T18:23","checkin":"2026-11-27T18:23"}
+{"who":"Jake","text":"I'm not confirming anything\n\n---","posted":true,"at":"2026-11-27T18:23","checkin":"2026-11-27T18:23"}
+{"who":"Ellis","text":"LMAOOO DONNA BARKER\n\n---","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Liam","text":"she was in the year above us. she had a boyfriend for like six years\n\n---","posted":true,"at":"2026-11-27T18:25","checkin":"2026-11-27T18:25"}
+{"who":"Jake","text":"they broke up\n\n---","posted":true,"at":"2026-11-27T18:25","checkin":"2026-11-27T18:25"}
+{"who":"Ellis","text":"bro said \"they broke up\" like that's his defence\n\n( 2)\n\n---","posted":true,"at":"2026-11-27T18:26","checkin":"2026-11-27T18:26"}
+{"who":"Jade","text":"Wait WHAT\n\n---","posted":true,"at":"2026-11-27T18:27","checkin":"2026-11-27T18:27"}
+{"who":"Jade","text":"Donna from mr harris's form??\n\n---","posted":true,"at":"2026-11-27T18:27","checkin":"2026-11-27T18:27"}
+{"who":"Jake","text":"yes alright it happened once, it was fine, everyone can fuck off\n\n---","posted":true,"at":"2026-11-27T18:28","checkin":"2026-11-27T18:28"}
+{"who":"Ellis","text":"jake ur literally the village bicycle at this point ur shaggin the whole of south leeds\n\n( 3)\n\n---","posted":true,"at":"2026-11-27T18:29","checkin":"2026-11-27T18:29"}
+{"who":"Liam","text":"the whole of south leeds has standards\n\n---","posted":true,"at":"2026-11-27T18:30","checkin":"2026-11-27T18:30"}
+{"who":"Jake","text":"cheers liam really appreciated mate\n\n---","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Jade","text":"I'm not even gonna say anything\n\n---","posted":true,"at":"2026-11-27T18:32","checkin":"2026-11-27T18:32"}
+{"who":"Ellis","text":"jade say something\n\n---","posted":true,"at":"2026-11-27T18:32","checkin":"2026-11-27T18:32"}
+{"who":"Jade","text":"She always had massive teeth jake. I literally clean those for a living and I'm judging you\n\n(😂 2)\n\n---","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Jake","text":"right everyone shut up she's sound\n\n---","posted":true,"at":"2026-11-27T18:34","checkin":"2026-11-27T18:34"}
+{"who":"Liam","text":"sound as a foghorn\n\n---","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Ellis","text":"---","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Jake","text":"liam when did you last shag anyone? I'll wait\n\n---","posted":true,"at":"2026-11-27T18:37","checkin":"2026-11-27T18:37"}
+{"who":"Liam","text":"I'm not the one being cross examined here\n\n---","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Jake","text":"that's because you're a monk who works in a pub and goes home to cry\n\n( 1)\n\n---","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Ellis","text":"he's not wrong tho liam wen did u last\n\n---","posted":true,"at":"2026-11-27T18:40","checkin":"2026-11-27T18:40"}
+{"who":"Liam","text":"none of your fucking business\n\n---","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Jake","text":"so never 😂\n\n---","posted":true,"at":"2026-11-27T18:42","checkin":"2026-11-27T18:42"}
+{"who":"Jade","text":"Leave him alone he's shy\n\n---","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Liam","text":"I'm not shy jade cheers\n\n---","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Jade","text":"---","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Ellis","text":"anyway jake genuinely how was it tho\n\n---","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Jake","text":"fine\n\n---","posted":true,"at":"2026-11-27T18:54","checkin":"2026-11-27T18:54"}
+{"who":"Ellis","text":"fine 💀 bro said fine like it was a dentist appointment\n\n---","posted":true,"at":"2026-11-27T18:54","checkin":"2026-11-27T18:54"}
+{"who":"Jade","text":"I actually had a weird one at work today speaking of\n\n---","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Ellis","text":"go on\n\n---","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Jade","text":"Bloke comes in for a check up, right, turns out he hasn't been to a dentist in like nine years, and when dr patel looked in his mouth she actually went quiet for a second\n\n---","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Jade","text":"Just silence. That was the reaction\n\n---","posted":true,"at":"2026-11-27T18:58","checkin":"2026-11-27T18:58"}
+{"who":"Jake","text":"how bad we talking\n\n---","posted":true,"at":"2026-11-27T18:59","checkin":"2026-11-27T18:59"}
+{"who":"Jade","text":"She said he had the mouth of a Victorian chimney sweep. Not to him obviously but after\n\n( 3)\n\n---","posted":true,"at":"2026-11-27T19:00","checkin":"2026-11-27T19:00"}
+{"who":"Liam","text":"to be fair that could be jake\n\n---","posted":true,"at":"2026-11-27T19:01","checkin":"2026-11-27T19:01"}
+{"who":"Jake","text":"my teeth are fine actually\n\n---","posted":true,"at":"2026-11-27T19:01","checkin":"2026-11-27T19:01"}
+{"who":"Ellis","text":"donna barker probably checked em for him\n\n( 2)\n\n---","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Jake","text":"I hate all of you\n\n---","posted":true,"at":"2026-11-27T19:03","checkin":"2026-11-27T19:03"}
+{"who":"Ellis","text":"what's everyone doing tonight\n\n---","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Jake","text":"I'm on til 10 then prob the oak\n\n---","posted":true,"at":"2026-11-27T19:14","checkin":"2026-11-27T19:14"}
+{"who":"Liam","text":"I'm working\n\n---","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Ellis","text":"jade?\n\n---","posted":true,"at":"2026-11-27T19:16","checkin":"2026-11-27T19:16"}
+{"who":"Jade","text":"Already in my pyjamas so probably nothing, might watch something\n\n---","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Ellis","text":"on a friday\n\n---","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Jade","text":"I was up at six ellis\n\n---","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Ellis","text":"fair\n\n---","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Ellis","text":"might come to the oak after mine then jake\n\n---","posted":true,"at":"2026-11-27T19:21","checkin":"2026-11-27T19:21"}
+{"who":"Jake","text":"yeah do it\n\n---","posted":true,"at":"2026-11-27T19:22","checkin":"2026-11-27T19:22"}
+{"who":"Jake","text":"liam is donna in tonight\n\n---","posted":true,"at":"2026-11-27T20:48","checkin":"2026-11-27T20:48"}
+{"who":"Liam","text":"yes and I am not telling her you asked\n\n---","posted":true,"at":"2026-11-27T20:49","checkin":"2026-11-27T20:49"}
+{"who":"Jake","text":"I wasn't gonna do anything I was just asking\n\n---","posted":true,"at":"2026-11-27T20:50","checkin":"2026-11-27T20:50"}
+{"who":"Ellis","text":"sure mate\n\n---","posted":true,"at":"2026-11-27T20:51","checkin":"2026-11-27T20:51"}
+{"who":"Jake","text":"ellis you can shut up you shagged charlotte from down your road twice and told everyone it was a one off\n\n---","posted":true,"at":"2026-11-27T20:52","checkin":"2026-11-27T20:52"}
+{"who":"Ellis","text":"that's DIFFERENT\n\n---","posted":true,"at":"2026-11-27T20:53","checkin":"2026-11-27T20:53"}
+{"who":"Liam","text":"how\n\n---","posted":true,"at":"2026-11-27T20:54","checkin":"2026-11-27T20:54"}
+{"who":"Ellis","text":"charlotte is fit\n\n( 1)\n\n---","posted":true,"at":"2026-11-27T20:55","checkin":"2026-11-27T20:55"}
+{"who":"Jake","text":"donna is fit\n\n---","posted":true,"at":"2026-11-27T20:56","checkin":"2026-11-27T20:56"}
+{"who":"Jade","text":"She is actually tbf\n\n---","posted":true,"at":"2026-11-27T20:57","checkin":"2026-11-27T20:57"}
+{"who":"Jake","text":"thank you jade\n\n---","posted":true,"at":"2026-11-27T20:58","checkin":"2026-11-27T20:58"}
+{"who":"Jade","text":"Doesn't mean I'm not judging you\n\n---","posted":true,"at":"2026-11-27T20:58","checkin":"2026-11-27T20:58"}
+{"who":"Ellis","text":"jake I'm here\n\n---","posted":true,"at":"2026-11-27T21:34","checkin":"2026-11-27T21:34"}
+{"who":"Jake","text":"five mins\n\n---","posted":true,"at":"2026-11-27T21:35","checkin":"2026-11-27T21:35"}
+{"who":"Jade","text":"What are you two like\n\n[photo: Ellis asleep sitting upright at a table, pint in front of him, Jake grinning next to him]\n\n( 3)\n\n---","posted":true,"at":"2026-11-27T22:17","checkin":"2026-11-27T22:17"}
+{"who":"Liam","text":"how has he managed that\n\n---","posted":true,"at":"2026-11-27T22:18","checkin":"2026-11-27T22:18"}
+{"who":"Jake","text":"he was out on runs from half 7 this morning he said, just went 😂\n\n---","posted":true,"at":"2026-11-27T22:19","checkin":"2026-11-27T22:19"}
+{"who":"Jade","text":"Wake him up he looks dead\n\n---","posted":true,"at":"2026-11-27T22:20","checkin":"2026-11-27T22:20"}
+{"who":"Jake","text":"he's fine he's snoring\n\n---","posted":true,"at":"2026-11-27T22:21","checkin":"2026-11-27T22:21"}
+{"who":"Jade","text":"Honestly\n\n---","posted":true,"at":"2026-11-27T22:22","checkin":"2026-11-27T22:22"}
+{"who":"Jake","text":"he's up now. angry\n\n( 2)\n\n---","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Jade","text":"Good\n\n---","posted":true,"at":"2026-11-27T22:52","checkin":"2026-11-27T22:52"}
+{"who":"Ellis","text":"jake told everyone in the pub I was asleep I want him dead\n\n( 1)\n\n---","posted":true,"at":"2026-11-27T22:53","checkin":"2026-11-27T22:53"}
+{"who":"Liam","text":"you were asleep\n\n---","posted":true,"at":"2026-11-27T22:54","checkin":"2026-11-27T22:54"}
+{"who":"Ellis","text":"I was resting my eyes\n\n---","posted":true,"at":"2026-11-27T22:55","checkin":"2026-11-27T22:55"}
+{"who":"Jake","text":"for 25 minutes 😂\n\n---","posted":true,"at":"2026-11-27T22:55","checkin":"2026-11-27T22:55"}
+{"who":"Jake","text":"liam donna just smiled at me\n\n---","posted":true,"at":"2026-11-27T23:34","checkin":"2026-11-27T23:34"}
+{"who":"Liam","text":"do not\n\n---","posted":true,"at":"2026-11-27T23:35","checkin":"2026-11-27T23:35"}
+{"who":"Jake","text":"I'm not doing anything\n\n---","posted":true,"at":"2026-11-27T23:35","checkin":"2026-11-27T23:35"}
+{"who":"Liam","text":"jake I mean it I work here\n\n---","posted":true,"at":"2026-11-27T23:36","checkin":"2026-11-27T23:36"}
+{"who":"Ellis","text":"jakkkkeee don't be a dickhead mate\n\n---","posted":true,"at":"2026-11-27T23:37","checkin":"2026-11-27T23:37"}
+{"who":"Jake","text":"I said I'm not doing anything chill out\n\n---","posted":true,"at":"2026-11-27T23:38","checkin":"2026-11-27T23:38"}
+{"who":"Ellis","text":"right I'm gone, can't keep me eyes open\n\n---","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Jake","text":"lightweight\n\n---","posted":true,"at":"2026-11-28T00:14","checkin":"2026-11-28T00:14"}
+{"who":"Ellis","text":"done more miles today than ur car has all week\n\n( 1)\n\n---","posted":true,"at":"2026-11-28T00:15","checkin":"2026-11-28T00:15"}
+{"who":"Jade","text":"Night ellis\n\n---","posted":true,"at":"2026-11-28T00:22","checkin":"2026-11-28T00:22"}
+{"who":"Ellis","text":"night jade\n\n---","posted":true,"at":"2026-11-28T00:23","checkin":"2026-11-28T00:23"}
+{"who":"Jake","text":"liam genuinely good night mate, cheers for the pint\n\n---","posted":true,"at":"2026-11-28T00:51","checkin":"2026-11-28T00:51"}
+{"who":"Liam","text":"alright. get home safe\n\n---","posted":true,"at":"2026-11-28T00:52","checkin":"2026-11-28T00:52"}

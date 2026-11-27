@@ -1,0 +1,115 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T12:25","complete":true,"rejects":0,"today":[null,null,"Kieran"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1992,"cache_read_input_tokens":0,"output_tokens":2475,"output_tokens_details":{"thinking_tokens":1308},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1992,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2475,"cache_read_input_tokens":0,"cache_creation_input_tokens":1992,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1992},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3031,"cache_read_input_tokens":0,"output_tokens":3224,"output_tokens_details":{"thinking_tokens":2598},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3031,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3224,"cache_read_input_tokens":0,"cache_creation_input_tokens":3031,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3031},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3676,"cache_read_input_tokens":0,"output_tokens":3746,"output_tokens_details":{"thinking_tokens":2475},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3676,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3746,"cache_read_input_tokens":0,"cache_creation_input_tokens":3676,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3676},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Jade","Kieran"],"setting":"You are both in Bristol, close friends who have known each other for years. Your ordinary shared things right now are a Thursday pub quiz you both go to and planning a birthday meal for a mutual friend, and this chat is where you sort those out and talk about everything else.","openers":["Send \"you up?\" with no context","Admit you haven't got out of bed yet today","Ask Kieran if he fancies a walk on the harbourside","Text a dark joke about the quiz being your only plan"],"opener":"Send \"you up?\" with no context","cast":{"Jade":{"who":"27, woman, the struggling close friend","work":"library assistant","knows":"You know Kieran as your close friend, and you are his close friend.","texts":"","style":"a few emoji and some common texting abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Kieran":{"who":"28, man, the listening close friend","work":"warehouse supervisor","knows":"You know Jade as your close friend, and she is your close friend.","texts":"","style":"a few emoji and some common texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Jade":"You live in Bristol, work as a library assistant, and live with nobody.","Kieran":"You live in Bristol, work as a warehouse supervisor, and live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":865,"cache_read_input_tokens":0,"output_tokens":1245,"output_tokens_details":{"thinking_tokens":1020},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":865,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1245,"cache_read_input_tokens":0,"cache_creation_input_tokens":865,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":865},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1137,"cache_read_input_tokens":0,"output_tokens":1593,"output_tokens_details":{"thinking_tokens":1227},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1137,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1593,"cache_read_input_tokens":0,"cache_creation_input_tokens":1137,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1137},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bristol, England","castMs":17339,"situation":"Two close friends.","topic":"One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would."}
+{"who":"Jade","text":"you up?","posted":true,"at":"2026-12-03T12:25","checkin":"2026-12-03T12:25"}
+{"who":"Kieran","text":"on my break. u ok","posted":true,"at":"2026-12-03T12:31","checkin":"2026-12-03T12:31"}
+{"who":"Jade","text":"not really","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Jade","text":"still in bed at lunch. which is a new low even for me","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Kieran","text":"what's going on","posted":true,"at":"2026-12-03T12:36","checkin":"2026-12-03T12:36"}
+{"who":"Jade","text":"nothing. that's the problem lol","posted":true,"at":"2026-12-03T12:41","checkin":"2026-12-03T12:41"}
+{"who":"Jade","text":"everything's just grey. like the whole thing. can't be bothered to get up and i kinda hate myself a bit for not getting up","posted":true,"at":"2026-12-03T12:42","checkin":"2026-12-03T12:42"}
+{"who":"Kieran","text":"how long's it been like this","posted":true,"at":"2026-12-03T12:44","checkin":"2026-12-03T12:44"}
+{"who":"Jade","text":"few weeks maybe. i keep saying ill get up in ten mins and then it's 3 hours later","posted":true,"at":"2026-12-03T12:52","checkin":"2026-12-03T12:52"}
+{"who":"Jade","text":"guess bed and me are in a committed relationship now. marriage of convenience","posted":true,"at":"2026-12-03T12:53","checkin":"2026-12-03T12:53"}
+{"who":"Kieran","text":"don't do the bitter joke thing at me","posted":true,"at":"2026-12-03T12:58","checkin":"2026-12-03T12:58"}
+{"who":"Jade","text":"sorry","posted":true,"at":"2026-12-03T13:02","checkin":"2026-12-03T13:02"}
+{"who":"Jade","text":"it's just what i've got rn","posted":true,"at":"2026-12-03T13:02","checkin":"2026-12-03T13:02"}
+{"who":"Kieran","text":"ok. that's fine. you don't have to be funny","posted":true,"at":"2026-12-03T13:04","checkin":"2026-12-03T13:04"}
+{"who":"Kieran","text":"you eaten today","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Jade","text":"a slice of toast. it was grey too 🙃","posted":true,"at":"2026-12-03T13:19","checkin":"2026-12-03T13:19"}
+{"who":"Kieran","text":"jade","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Jade","text":"i know","posted":true,"at":"2026-12-03T13:21","checkin":"2026-12-03T13:21"}
+{"who":"Kieran","text":"back on shift at 1, can ring you after 5 if you want","posted":true,"at":"2026-12-03T13:45","checkin":"2026-12-03T13:45"}
+{"who":"Jade","text":"dont ring i'll probably be asleep again","posted":true,"at":"2026-12-03T13:47","checkin":"2026-12-03T13:47"}
+{"who":"Kieran","text":"text then","posted":true,"at":"2026-12-03T13:48","checkin":"2026-12-03T13:48"}
+{"who":"Jade","text":"ok","posted":true,"at":"2026-12-03T14:30","checkin":"2026-12-03T14:30"}
+{"who":"Kieran","text":"quiz tonight?","posted":true,"at":"2026-12-03T16:12","checkin":"2026-12-03T16:12"}
+{"who":"Jade","text":"i don't think i can do quiz. sorry","posted":true,"at":"2026-12-03T16:40","checkin":"2026-12-03T16:40"}
+{"who":"Kieran","text":"no bother. i'll tell dan you're ill","posted":true,"at":"2026-12-03T16:41","checkin":"2026-12-03T16:41"}
+{"who":"Jade","text":"don't tell dan he'll send me pictures of soup","posted":true,"at":"2026-12-03T16:43","checkin":"2026-12-03T16:43"}
+{"who":"Kieran","text":"soup isn't the worst thing","posted":true,"at":"2026-12-03T16:43","checkin":"2026-12-03T16:43"}
+{"who":"Jade","text":"it's a bit the worst thing","posted":true,"at":"2026-12-03T16:44","checkin":"2026-12-03T16:44"}
+{"who":"Kieran","text":"still in bed?","posted":true,"at":"2026-12-03T17:58","checkin":"2026-12-03T17:58"}
+{"who":"Jade","text":"yeah. been up for the loo and a glass of water so that's a win apparently","posted":true,"at":"2026-12-03T18:10","checkin":"2026-12-03T18:10"}
+{"who":"Kieran","text":"that is a win","posted":true,"at":"2026-12-03T18:11","checkin":"2026-12-03T18:11"}
+{"who":"Jade","text":"is it","posted":true,"at":"2026-12-03T18:13","checkin":"2026-12-03T18:13"}
+{"who":"Kieran","text":"yeah it is","posted":true,"at":"2026-12-03T18:14","checkin":"2026-12-03T18:14"}
+{"who":"Kieran","text":"you safe tonight? honest answer","posted":true,"at":"2026-12-03T19:30","checkin":"2026-12-03T19:30"}
+{"who":"Jade","text":"yeah. i'm not going to do anything. just feel like shit about everything","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Kieran","text":"ok. i believe you. but if that changes you tell me, straight away, even if it's 3am","posted":true,"at":"2026-12-03T19:53","checkin":"2026-12-03T19:53"}
+{"who":"Jade","text":"ok","posted":true,"at":"2026-12-03T19:55","checkin":"2026-12-03T19:55"}
+{"who":"Kieran","text":"want me to come round after my shift tomorrow? i can get the bus up to yours","posted":true,"at":"2026-12-03T19:56","checkin":"2026-12-03T19:56"}
+{"who":"Jade","text":"maybe tomorrow. not tonight","posted":true,"at":"2026-12-03T20:14","checkin":"2026-12-03T20:14"}
+{"who":"Kieran","text":"ok. i'll text you at 9 to check","posted":true,"at":"2026-12-03T20:15","checkin":"2026-12-03T20:15"}
+{"who":"Jade","text":"ok","posted":true,"at":"2026-12-03T20:15","checkin":"2026-12-03T20:15"}
+{"who":"Jade","text":"thanks kieran","posted":true,"at":"2026-12-03T21:03","checkin":"2026-12-03T21:03"}
+{"who":"Kieran","text":"👍","posted":true,"at":"2026-12-03T21:04","checkin":"2026-12-03T21:04"}
+{"who":"","react":"❤️","to":42,"posted":false,"at":"2026-12-03T21:04"}
+{"who":"Kieran","text":"morning. slept?","posted":true,"at":"2026-12-04T07:48","checkin":"2026-12-04T07:48"}
+{"who":"Jade","text":"on and off","posted":true,"at":"2026-12-04T09:15","checkin":"2026-12-04T09:15"}
+{"who":"Jade","text":"got up for the loo. counts","posted":true,"at":"2026-12-04T09:16","checkin":"2026-12-04T09:16"}
+{"who":"Kieran","text":"counts","posted":true,"at":"2026-12-04T09:17","checkin":"2026-12-04T09:17"}
+{"who":"Kieran","text":"on break. did you eat","posted":true,"at":"2026-12-04T12:10","checkin":"2026-12-04T12:10"}
+{"who":"Jade","text":"half a banana. don't start","posted":true,"at":"2026-12-04T12:34","checkin":"2026-12-04T12:34"}
+{"who":"Kieran","text":"wasn't going to start","posted":true,"at":"2026-12-04T12:35","checkin":"2026-12-04T12:35"}
+{"who":"Kieran","text":"ok i was a bit","posted":true,"at":"2026-12-04T12:36","checkin":"2026-12-04T12:36"}
+{"who":"Jade","text":"🙃","posted":true,"at":"2026-12-04T12:50","checkin":"2026-12-04T12:50"}
+{"who":"Kieran","text":"shift finishes 5. still want me to come round or is that too much","posted":true,"at":"2026-12-04T13:30","checkin":"2026-12-04T13:30"}
+{"who":"Jade","text":"it's not too much. i just don't know what i'd do with you there","posted":true,"at":"2026-12-04T13:58","checkin":"2026-12-04T13:58"}
+{"who":"Kieran","text":"sit on the end of the bed and be annoying. i'm good at that","posted":true,"at":"2026-12-04T14:02","checkin":"2026-12-04T14:02"}
+{"who":"Jade","text":"you are","posted":true,"at":"2026-12-04T14:03","checkin":"2026-12-04T14:03"}
+{"who":"Jade","text":"ok yeah. come if you want","posted":true,"at":"2026-12-04T14:03","checkin":"2026-12-04T14:03"}
+{"who":"Kieran","text":"bus gets to yours about 6. i'll bring something not soup","posted":true,"at":"2026-12-04T14:05","checkin":"2026-12-04T14:05"}
+{"who":"Jade","text":"dan's gonna find out","posted":true,"at":"2026-12-04T14:07","checkin":"2026-12-04T14:07"}
+{"who":"Kieran","text":"on the bus. anything you want from the shop by yours","posted":true,"at":"2026-12-04T17:20","checkin":"2026-12-04T17:20"}
+{"who":"Jade","text":"no. i got up. i'm dressed. look at me","posted":true,"at":"2026-12-04T17:41","checkin":"2026-12-04T17:41"}
+{"who":"Kieran","text":"proud of you","posted":true,"at":"2026-12-04T17:42","checkin":"2026-12-04T17:42"}
+{"who":"Jade","text":"don't be weird about it","posted":true,"at":"2026-12-04T17:43","checkin":"2026-12-04T17:43"}
+{"who":"Kieran","text":"too late","posted":true,"at":"2026-12-04T17:43","checkin":"2026-12-04T17:43"}
+{"who":"Jade","text":"you get home ok","posted":true,"at":"2026-12-04T23:31","checkin":"2026-12-04T23:31"}
+{"who":"Kieran","text":"yeah. walked up the hill, legs gone","posted":true,"at":"2026-12-04T23:44","checkin":"2026-12-04T23:44"}
+{"who":"Kieran","text":"same deal as last night. text me if it changes","posted":true,"at":"2026-12-04T23:46","checkin":"2026-12-04T23:46"}
+{"who":"Jade","text":"ok. thanks for today","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Jade","text":"up before 10. not a massive achievement but","posted":true,"at":"2026-12-05T09:12","checkin":"2026-12-05T09:12"}
+{"who":"Kieran","text":"it's an achievement","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Jade","text":"how's the shift","posted":true,"at":"2026-12-05T09:40","checkin":"2026-12-05T09:40"}
+{"who":"Kieran","text":"half shift. finish at 2. quiet so far","posted":true,"at":"2026-12-05T09:41","checkin":"2026-12-05T09:41"}
+{"who":"Kieran","text":"bit of a shit morning","posted":true,"at":"2026-12-05T11:08","checkin":"2026-12-05T11:08"}
+{"who":"Jade","text":"what happened","posted":true,"at":"2026-12-05T11:09","checkin":"2026-12-05T11:09"}
+{"who":"Kieran","text":"lad on my team got his hand caught in the pallet wrapper. not wrecked but loads of blood. i sat with him till the first aider came then did the report. they took him to A&E","posted":true,"at":"2026-12-05T11:15","checkin":"2026-12-05T11:15"}
+{"who":"Jade","text":"oh god. is he ok","posted":true,"at":"2026-12-05T11:16","checkin":"2026-12-05T11:16"}
+{"who":"Kieran","text":"he texted me from the ambulance being a dick about it so probably","posted":true,"at":"2026-12-05T11:21","checkin":"2026-12-05T11:21"}
+{"who":"Jade","text":"that's good","posted":true,"at":"2026-12-05T11:22","checkin":"2026-12-05T11:22"}
+{"who":"Jade","text":"are you ok","posted":true,"at":"2026-12-05T11:22","checkin":"2026-12-05T11:22"}
+{"who":"Kieran","text":"yeah fine. my hands were doing a thing after. been a while since i did first aid for real","posted":true,"at":"2026-12-05T11:40","checkin":"2026-12-05T11:40"}
+{"who":"Kieran","text":"don't make a thing of it i'm just saying","posted":true,"at":"2026-12-05T11:41","checkin":"2026-12-05T11:41"}
+{"who":"Jade","text":"i'm not making a thing. you can say it to me","posted":true,"at":"2026-12-05T11:43","checkin":"2026-12-05T11:43"}
+{"who":"Kieran","text":"ok","posted":true,"at":"2026-12-05T11:50","checkin":"2026-12-05T11:50"}
+{"who":"Jade","text":"did you eat","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Kieran","text":"you're doing it back at me","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Jade","text":"i'm allowed. that's the rule apparently","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Kieran","text":"crisps. hero","posted":true,"at":"2026-12-05T12:33","checkin":"2026-12-05T12:33"}
+{"who":"Jade","text":"had a shower. that's two things. going to lie back down, it's basically a nap","posted":true,"at":"2026-12-05T13:10","checkin":"2026-12-05T13:10"}
+{"who":"Kieran","text":"off shift. going home to sit down for a bit","posted":true,"at":"2026-12-05T14:20","checkin":"2026-12-05T14:20"}
+{"who":"Jade","text":"[photo: toast with way too much butter]","posted":true,"at":"2026-12-05T14:22","checkin":"2026-12-05T14:22"}
+{"who":"Kieran","text":"that's the most butter i've ever seen on a slice","posted":true,"at":"2026-12-05T14:24","checkin":"2026-12-05T14:24"}
+{"who":"Jade","text":"it was a crisis","posted":true,"at":"2026-12-05T14:25","checkin":"2026-12-05T14:25"}
+{"who":"Jade","text":"dan's birthday thing is booked for the 19th btw. franco's, he says 8. i said i'd check with you about the back room","posted":true,"at":"2026-12-05T17:50","checkin":"2026-12-05T17:50"}
+{"who":"Kieran","text":"yeah 8 works. ring them tomorrow? i'll be half asleep","posted":true,"at":"2026-12-05T18:30","checkin":"2026-12-05T18:30"}
+{"who":"Jade","text":"i'll ring them. you stay asleep","posted":true,"at":"2026-12-05T18:32","checkin":"2026-12-05T18:32"}
+{"who":"Kieran","text":"you ok? been thinking about the lad a bit","posted":true,"at":"2026-12-05T19:40","checkin":"2026-12-05T19:40"}
+{"who":"Jade","text":"kind of. it's the grey thing but worse. feels like i've been sat in it all day and done nothing","posted":true,"at":"2026-12-05T19:58","checkin":"2026-12-05T19:58"}
+{"who":"Kieran","text":"you got up, showered, ate toast twice, booked a restaurant","posted":true,"at":"2026-12-05T20:01","checkin":"2026-12-05T20:01"}
+{"who":"Jade","text":"the restaurant is a phone call i'm yet to make","posted":true,"at":"2026-12-05T20:02","checkin":"2026-12-05T20:02"}
+{"who":"Kieran","text":"still counts","posted":true,"at":"2026-12-05T20:05","checkin":"2026-12-05T20:05"}
+{"who":"Kieran","text":"9 o'clock check. you safe tonight? honest answer","posted":true,"at":"2026-12-05T21:00","checkin":"2026-12-05T21:00"}
+{"who":"Jade","text":"yeah. same as last night. not planning anything","posted":true,"at":"2026-12-05T21:14","checkin":"2026-12-05T21:14"}
+{"who":"Kieran","text":"ok. i believe you. if it changes text me, even if it's 3am","posted":true,"at":"2026-12-05T21:15","checkin":"2026-12-05T21:15"}
+{"who":"Jade","text":"you already said that","posted":true,"at":"2026-12-05T21:16","checkin":"2026-12-05T21:16"}
+{"who":"Kieran","text":"i'll say it every night","posted":true,"at":"2026-12-05T21:16","checkin":"2026-12-05T21:16"}
+{"who":"","react":"❤️","to":104,"posted":false,"at":"2026-12-05T21:16"}
+{"who":"Jade","text":"ok","posted":true,"at":"2026-12-05T21:17","checkin":"2026-12-05T21:17"}
+{"who":"Jade","text":"can't sleep. not in a bad way, just brain going","posted":true,"at":"2026-12-05T23:48","checkin":"2026-12-05T23:48"}
+{"who":"Kieran","text":"what's the brain on about","posted":true,"at":"2026-12-05T23:52","checkin":"2026-12-05T23:52"}
+{"who":"Jade","text":"the lad's hand. and whether franco's will have a table. mostly the table","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}
+{"who":"Kieran","text":"go to sleep jade","posted":true,"at":"2026-12-06T00:21","checkin":"2026-12-06T00:21"}
+{"who":"Jade","text":"trying","posted":true,"at":"2026-12-06T00:22","checkin":"2026-12-06T00:22"}

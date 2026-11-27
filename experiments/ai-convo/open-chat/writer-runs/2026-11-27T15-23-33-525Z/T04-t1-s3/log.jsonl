@@ -1,0 +1,86 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T09:15","complete":true,"rejects":0,"today":[null,null,"Isla"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2191,"cache_read_input_tokens":0,"output_tokens":1733,"output_tokens_details":{"thinking_tokens":1046},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2191,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1733,"cache_read_input_tokens":0,"cache_creation_input_tokens":2191,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2191},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2808,"cache_read_input_tokens":0,"output_tokens":1125,"output_tokens_details":{"thinking_tokens":387},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2808,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1125,"cache_read_input_tokens":0,"cache_creation_input_tokens":2808,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2808},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3553,"cache_read_input_tokens":0,"output_tokens":3868,"output_tokens_details":{"thinking_tokens":2538},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3553,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3868,"cache_read_input_tokens":0,"cache_creation_input_tokens":3553,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3553},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ben","Jess","Matt","Isla"],"setting":"You are four old uni friends in Bristol, all from the same course group, using this chat to swap news about everyday life and to plan a birthday dinner for Matt next month.","openers":["Ask who was sick","Share the blurry photo from the taxi","Post the bill and ask who had the shots","Admit nobody remembers getting home"],"opener":"Ask who was sick","cast":{"Ben":{"who":"29, man, old uni friend","work":"secondary school teacher","knows":"You know Jess, Matt and Isla as old uni mates from your course.","texts":"Ben texts in this chat only now and again.","style":"some emoji and the odd texting abbreviation","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Jess":{"who":"30, woman, old uni friend","work":"junior doctor","knows":"You know Ben, Matt and Isla as old uni mates from your course.","texts":"Jess texts in this chat only now and again.","style":"some emoji and the odd texting abbreviation","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Matt":{"who":"30, man, old uni friend","work":"architect","knows":"You know Ben, Jess and Isla as old uni mates from your course.","texts":"Matt texts in this chat now and then.","style":"some emoji and the odd texting abbreviation","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Isla":{"who":"28, woman, old uni friend","work":"management consultant","knows":"You know Ben, Jess and Matt as old uni mates from your course.","texts":"Isla texts in this chat a lot.","style":"some emoji and the odd texting abbreviation","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Ben":"You live in Bristol, teach at a secondary school, and live alone.","Jess":"You live in Bristol, work long shifts as a junior doctor, and live alone.","Matt":"You live in Bristol, spend your days designing buildings as an architect, and live alone.","Isla":"You live in Bristol, spend your days on client projects as a management consultant, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":837,"cache_read_input_tokens":0,"output_tokens":1301,"output_tokens_details":{"thinking_tokens":895},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":837,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1301,"cache_read_input_tokens":0,"cache_creation_input_tokens":837,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":837},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1143,"cache_read_input_tokens":0,"output_tokens":2183,"output_tokens_details":{"thinking_tokens":1654},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1143,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2183,"cache_read_input_tokens":0,"cache_creation_input_tokens":1143,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1143},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bristol, England","castMs":17501,"situation":"Old mates from uni in a group chat.","topic":"Going over the night before: how drunk they all got, who was sick, what nobody can remember."}
+{"who":"Ben","text":"Ok who was sick last night. I've got a vague memory of a taxi with my head out the window but might be a different night","posted":true,"at":"2026-11-30T09:15","checkin":"2026-11-30T09:15"}
+{"who":"Isla","text":"It was you. Sick in the bin outside the pub then again in the taxi. Matt held your hair","posted":true,"at":"2026-11-30T09:22","checkin":"2026-11-30T09:22"}
+{"who":"Ben","text":"Ah","posted":true,"at":"2026-11-30T09:23","checkin":"2026-11-30T09:23"}
+{"who":"Ben","text":"Was I the only one","posted":true,"at":"2026-11-30T09:26","checkin":"2026-11-30T09:26"}
+{"who":"Jess","text":"Not the only one. I was on shift at 7 today so I'm not talking about it","posted":true,"at":"2026-11-30T09:31","checkin":"2026-11-30T09:31"}
+{"who":"Jess","text":"It wasn't me though","posted":true,"at":"2026-11-30T09:31","checkin":"2026-11-30T09:31"}
+{"who":"Matt","text":"It was jess. At the bar. She said it was the prosecco 😂","posted":true,"at":"2026-11-30T09:44","checkin":"2026-11-30T09:44"}
+{"who":"Jess","text":"It was not the prosecco","posted":true,"at":"2026-11-30T09:45","checkin":"2026-11-30T09:45"}
+{"who":"Isla","text":"It was the fourth tequila jess","posted":true,"at":"2026-11-30T09:45","checkin":"2026-11-30T09:45"}
+{"who":"Ben","text":"I genuinely can't remember getting home","posted":true,"at":"2026-11-30T10:02","checkin":"2026-11-30T10:02"}
+{"who":"Isla","text":"You got home. I saw you text matt at 2am about a pizza","posted":true,"at":"2026-11-30T10:08","checkin":"2026-11-30T10:08"}
+{"who":"Matt","text":"I didn't get a pizza","posted":true,"at":"2026-11-30T10:09","checkin":"2026-11-30T10:09"}
+{"who":"Matt","text":"I got a text about a pizza and I think I was asleep","posted":true,"at":"2026-11-30T10:09","checkin":"2026-11-30T10:09"}
+{"who":"Jess","text":"Just out of handover. Nobody talk to me 😴","posted":true,"at":"2026-11-30T13:17","checkin":"2026-11-30T13:17"}
+{"who":"Isla","text":"Ok matt's dinner. I'm thinking the 12th or 13th of december, somewhere in the centre. I'll look at a few places","posted":true,"at":"2026-11-30T18:40","checkin":"2026-11-30T18:40"}
+{"who":"Jess","text":"13th is fine for me. 12th I'm on","posted":true,"at":"2026-11-30T18:52","checkin":"2026-11-30T18:52"}
+{"who":"Matt","text":"Sounds good. Don't spend too long on it","posted":true,"at":"2026-11-30T18:55","checkin":"2026-11-30T18:55"}
+{"who":"Isla","text":"Booked the table at the one on park street for the 13th at 7. 8 people max. Sending the link in a sec","posted":true,"at":"2026-11-30T21:14","checkin":"2026-11-30T21:14"}
+{"who":"Isla","text":"[link: restaurant booking for Sat 13 Dec, 19:00]","posted":true,"at":"2026-11-30T21:14","checkin":"2026-11-30T21:14"}
+{"who":"Ben","text":"Nice. Is it the one with the bread","posted":true,"at":"2026-11-30T21:15","checkin":"2026-11-30T21:15"}
+{"who":"Isla","text":"Yes ben it's the one with the bread","posted":true,"at":"2026-11-30T21:15","checkin":"2026-11-30T21:15"}
+{"who":"Ben","text":"Morning. Year 10 have decided they're all doing their mocks in pencil and it's causing a incident","posted":true,"at":"2026-12-01T08:02","checkin":"2026-12-01T08:02"}
+{"who":"Isla","text":"Pencil is so much worse for the exam board. Do they know that","posted":true,"at":"2026-12-01T08:10","checkin":"2026-12-01T08:10"}
+{"who":"Ben","text":"They know everything. That's the problem","posted":true,"at":"2026-12-01T08:11","checkin":"2026-12-01T08:11"}
+{"who":"Matt","text":"Is anyone allergic to anything for the 13th. Isla's going to ask anyway so may as well","posted":true,"at":"2026-12-01T09:47","checkin":"2026-12-01T09:47"}
+{"who":"Isla","text":"Yes I was going to ask. Anyone with dietary stuff reply here please","posted":true,"at":"2026-12-01T09:52","checkin":"2026-12-01T09:52"}
+{"who":"Jess","text":"Nothing for me. I eat everything including the bread","posted":true,"at":"2026-12-01T10:30","checkin":"2026-12-01T10:30"}
+{"who":"Ben","text":"Ben's the bread man","posted":true,"at":"2026-12-01T10:31","checkin":"2026-12-01T10:31"}
+{"who":"Isla","text":"Ben you are not on this chat to make jokes about bread","posted":true,"at":"2026-12-01T10:31","checkin":"2026-12-01T10:31"}
+{"who":"Ben","text":"I'm on this chat for the bread","posted":true,"at":"2026-12-01T10:33","checkin":"2026-12-01T10:33"}
+{"who":"Matt","text":"Site meeting ran over so I missed the rest of the morning. Any updates","posted":true,"at":"2026-12-01T13:05","checkin":"2026-12-01T13:05"}
+{"who":"Isla","text":"Only that Ben is a bread man now","posted":true,"at":"2026-12-01T13:06","checkin":"2026-12-01T13:06"}
+{"who":"Jess","text":"Off shift at 8 tomorrow so I'm going to be dead for the 13th unless someone else is working that day","posted":true,"at":"2026-12-01T13:20","checkin":"2026-12-01T13:20"}
+{"who":"Jess","text":"Not sure I'm dead for the 12th either haha","posted":true,"at":"2026-12-01T13:21","checkin":"2026-12-01T13:21"}
+{"who":"Isla","text":"Ok I'll put you down for the 13th and you can tell me if you need to swap","posted":true,"at":"2026-12-01T17:48","checkin":"2026-12-01T17:48"}
+{"who":"Isla","text":"Also has anyone heard from Ruth about the stag? Not sure she's coming","posted":true,"at":"2026-12-01T17:49","checkin":"2026-12-01T17:49"}
+{"who":"Matt","text":"Didn't know there was a stag. Whose","posted":true,"at":"2026-12-01T18:30","checkin":"2026-12-01T18:30"}
+{"who":"Isla","text":"Gary's. Not Matt. Relax","posted":true,"at":"2026-12-01T18:31","checkin":"2026-12-01T18:31"}
+{"who":"Matt","text":"Relax 😂","posted":true,"at":"2026-12-01T18:31","checkin":"2026-12-01T18:31"}
+{"who":"Ben","text":"Anyone up. Mocks are finally done marking and I need to talk about something that isn't a pencil","posted":true,"at":"2026-12-01T21:58","checkin":"2026-12-01T21:58"}
+{"who":"Matt","text":"Up. What's the something","posted":true,"at":"2026-12-01T22:06","checkin":"2026-12-01T22:06"}
+{"who":"Ben","text":"Nothing much. Just tired of being the one who knows where the spare stapler is 😴","posted":true,"at":"2026-12-01T22:14","checkin":"2026-12-01T22:14"}
+{"who":"Jess","text":"Home. Not asleep yet. Don't ask","posted":true,"at":"2026-12-02T08:47","checkin":"2026-12-02T08:47"}
+{"who":"Matt","text":"Asking anyway. How was it","posted":true,"at":"2026-12-02T08:51","checkin":"2026-12-02T08:51"}
+{"who":"Jess","text":"A man who wanted to know if I was \"the proper doctor\". Yes Matt I am the proper doctor","posted":true,"at":"2026-12-02T08:58","checkin":"2026-12-02T08:58"}
+{"who":"Matt","text":"😂 that's the worst of it","posted":true,"at":"2026-12-02T09:02","checkin":"2026-12-02T09:02"}
+{"who":"Jess","text":"No the worst of it is I'm back on at 7 tomorrow night","posted":true,"at":"2026-12-02T09:03","checkin":"2026-12-02T09:03"}
+{"who":"Ben","text":"Pen up the nose is a classic though","posted":true,"at":"2026-12-02T09:20","checkin":"2026-12-02T09:20"}
+{"who":"Isla","text":"Locked myself out of the flat in my socks. Landlord is 40 mins away. Sitting on the stairs with a flat white like a crazy person","posted":true,"at":"2026-12-02T10:14","checkin":"2026-12-02T10:14"}
+{"who":"Matt","text":"Where's your key","posted":true,"at":"2026-12-02T10:16","checkin":"2026-12-02T10:16"}
+{"who":"Isla","text":"In the flat. Obviously","posted":true,"at":"2026-12-02T10:17","checkin":"2026-12-02T10:17"}
+{"who":"Ben","text":"Is there a window open","posted":true,"at":"2026-12-02T10:40","checkin":"2026-12-02T10:40"}
+{"who":"Isla","text":"Don't","posted":true,"at":"2026-12-02T10:41","checkin":"2026-12-02T10:41"}
+{"who":"Isla","text":"Locksmith is coming. £90 for the privilege","posted":true,"at":"2026-12-02T11:05","checkin":"2026-12-02T11:05"}
+{"who":"Matt","text":"Ouch","posted":true,"at":"2026-12-02T11:06","checkin":"2026-12-02T11:06"}
+{"who":"Matt","text":"Back-to-back site visits all afternoon. Client wants the atrium lower. Again","posted":true,"at":"2026-12-02T12:30","checkin":"2026-12-02T12:30"}
+{"who":"Ben","text":"Lower the atrium","posted":true,"at":"2026-12-02T12:32","checkin":"2026-12-02T12:32"}
+{"who":"Matt","text":"Ben that's not how buildings work","posted":true,"at":"2026-12-02T12:33","checkin":"2026-12-02T12:33"}
+{"who":"Ben","text":"I know. I'm mourning the atrium","posted":true,"at":"2026-12-02T12:34","checkin":"2026-12-02T12:34"}
+{"who":"Matt","text":"Ben what was the something last night. You went quiet","posted":true,"at":"2026-12-02T13:50","checkin":"2026-12-02T13:50"}
+{"who":"Ben","text":"Honestly it's fine. Head's moved me to Year 7 next year. Not a disaster just a lot. Will tell you properly at the dinner with a drink in me","posted":true,"at":"2026-12-02T14:22","checkin":"2026-12-02T14:22"}
+{"who":"Matt","text":"Ok. Drink at the dinner it is","posted":true,"at":"2026-12-02T14:24","checkin":"2026-12-02T14:24"}
+{"who":"Isla","text":"Back in. £85 and a man called Dev who had to go through my bag twice. Got in. Still in socks","posted":true,"at":"2026-12-02T15:40","checkin":"2026-12-02T15:40"}
+{"who":"Jess","text":"Hero","posted":true,"at":"2026-12-02T15:41","checkin":"2026-12-02T15:41"}
+{"who":"Isla","text":"Also I've had the worst call with Sarah on the Hartley account and I'm going to need a long walk and a lot of cheese","posted":true,"at":"2026-12-02T15:55","checkin":"2026-12-02T15:55"}
+{"who":"Matt","text":"Sorry Isla. Hartley?","posted":true,"at":"2026-12-02T16:10","checkin":"2026-12-02T16:10"}
+{"who":"Isla","text":"Yes. Hartley. They want the whole deck redone for a board that is apparently \"very interested\" in something they haven't defined","posted":true,"at":"2026-12-02T16:14","checkin":"2026-12-02T16:14"}
+{"who":"Matt","text":"Classic","posted":true,"at":"2026-12-02T16:15","checkin":"2026-12-02T16:15"}
+{"who":"Jess","text":"Awake. Mostly. What's the dinner menu situation, I'm assuming there is one","posted":true,"at":"2026-12-02T19:02","checkin":"2026-12-02T19:02"}
+{"who":"Isla","text":"No menu. It's a restaurant Jess. They have menus","posted":true,"at":"2026-12-02T19:05","checkin":"2026-12-02T19:05"}
+{"who":"Jess","text":"💀 ok thanks","posted":true,"at":"2026-12-02T19:06","checkin":"2026-12-02T19:06"}
+{"who":"Ben","text":"Bread","posted":true,"at":"2026-12-02T19:30","checkin":"2026-12-02T19:30"}
+{"who":"Isla","text":"Ben","posted":true,"at":"2026-12-02T19:31","checkin":"2026-12-02T19:31"}
+{"who":"Isla","text":"Matt did you see the photos Ruth sent from the 2008 house? There's one of you in a Hawaiian shirt that should be legally protected","posted":true,"at":"2026-12-02T21:48","checkin":"2026-12-02T21:48"}
+{"who":"Matt","text":"No. Send","posted":true,"at":"2026-12-02T21:49","checkin":"2026-12-02T21:49"}
+{"who":"Isla","text":"[photo: five people on a sofa, one in a hawaiian shirt]","posted":true,"at":"2026-12-02T21:49","checkin":"2026-12-02T21:49"}
+{"who":"Matt","text":"Who is the man in the shirt","posted":true,"at":"2026-12-02T21:52","checkin":"2026-12-02T21:52"}
+{"who":"Isla","text":"You","posted":true,"at":"2026-12-02T21:52","checkin":"2026-12-02T21:52"}
+{"who":"Matt","text":"Ok","posted":true,"at":"2026-12-02T21:58","checkin":"2026-12-02T21:58"}
+{"who":"Ben","text":"Ruth says she's in for Gary's stag. Didn't say why she wasn't before","posted":true,"at":"2026-12-02T22:20","checkin":"2026-12-02T22:20"}
+{"who":"Isla","text":"Ok good. Gary will cry","posted":true,"at":"2026-12-02T22:21","checkin":"2026-12-02T22:21"}
+{"who":"Jess","text":"Got to bed at 11, woke up at 1 thinking about a patient and now I'm just here","posted":true,"at":"2026-12-02T23:40","checkin":"2026-12-02T23:40"}
+{"who":"Jess","text":"Nobody answer this","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Ben","text":"Nobody answering","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}

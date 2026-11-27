@@ -1,0 +1,96 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T14:45","complete":true,"rejects":0,"today":["Lauren",null,"Lauren"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2325,"cache_read_input_tokens":0,"output_tokens":3836,"output_tokens_details":{"thinking_tokens":2847},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2325,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3836,"cache_read_input_tokens":0,"cache_creation_input_tokens":2325,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2325},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3162,"cache_read_input_tokens":0,"output_tokens":1401,"output_tokens_details":{"thinking_tokens":737},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3162,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1401,"cache_read_input_tokens":0,"cache_creation_input_tokens":3162,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3162},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3830,"cache_read_input_tokens":0,"output_tokens":3630,"output_tokens_details":{"thinking_tokens":2298},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3830,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3630,"cache_read_input_tokens":0,"cache_creation_input_tokens":3830,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3830},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ciara","Fionn","Lauren","Dylan"],"setting":"You are four friends from secondary school, all living in Cork, planning to go to a house party on Saturday, and using this chat for the taxi and drink plans. You all know that Fionn and Lauren use drugs.","openers":["Ask who's bringing the bottles","Suggest splitting the taxi home","Ask Fionn and Lauren what they're planning for Saturday","Propose we all meet at mine at nine"],"opener":"Suggest splitting the taxi home","cast":{"Ciara":{"who":"24, woman, a friend going to the party","work":"marketing executive","knows":"You know Fionn as a school friend, Lauren as a school friend, and Dylan as a school friend.","texts":"Ciara texts in this chat now and then.","style":"a few emoji, few abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Fionn":{"who":"25, man, a friend going to the party who uses drugs","work":"gym instructor","knows":"You know Ciara as a school friend, Lauren as a school friend, and Dylan as a school friend.","texts":"Fionn texts in this chat now and then.","style":"frequent emoji and texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Lauren":{"who":"23, woman, a friend going to the party who uses drugs","work":"events assistant","knows":"You know Ciara as a school friend, Fionn as a school friend, and Dylan as a school friend.","texts":"Lauren texts in this chat now and then.","style":"some emoji, some abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Dylan":{"who":"24, man, a friend going to the party","work":"software developer","knows":"You know Ciara as a school friend, Fionn as a school friend, and Lauren as a school friend.","texts":"Dylan texts in this chat a lot.","style":"no emoji, few abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Ciara":"You live in Cork and work as a marketing executive, living alone.","Fionn":"You live in Cork and work as a gym instructor, living alone.","Lauren":"You live in Cork and work as an events assistant, living alone.","Dylan":"You live in Cork and work as a software developer, living alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":873,"cache_read_input_tokens":0,"output_tokens":1853,"output_tokens_details":{"thinking_tokens":1389},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":873,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1853,"cache_read_input_tokens":0,"cache_creation_input_tokens":873,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":873},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1205,"cache_read_input_tokens":0,"output_tokens":2336,"output_tokens_details":{"thinking_tokens":1753},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1205,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2336,"cache_read_input_tokens":0,"cache_creation_input_tokens":1205,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1205},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cork, Ireland","castMs":20733,"situation":"Four friends in their twenties going to a house party on Saturday.","topic":"Two of them take drugs most weekends, are casual about it, and tell the others stories of the worst comedowns and wildest nights they have had on pills, coke and ketamine."}
+{"who":"Ciara","text":"Anyone sorted the taxi for sat or are we leaving it","posted":true,"at":"2026-12-02T14:45","checkin":"2026-12-02T14:45"}
+{"who":"Dylan","text":"Leaving it. Ill sort it closer","posted":true,"at":"2026-12-02T15:20","checkin":"2026-12-02T15:20"}
+{"who":"Fionn","text":"i'll sort it, i know a lad with a people carrier","posted":true,"at":"2026-12-02T15:21","checkin":"2026-12-02T15:21"}
+{"who":"Dylan","text":"People carrier is fine","posted":true,"at":"2026-12-02T15:22","checkin":"2026-12-02T15:22"}
+{"who":"Lauren","text":"Where's it actually happening","posted":true,"at":"2026-12-02T15:40","checkin":"2026-12-02T15:40"}
+{"who":"Ciara","text":"Ballincollig. Off the main st somewhere, getting the address from sinead","posted":true,"at":"2026-12-02T15:44","checkin":"2026-12-02T15:44"}
+{"who":"Fionn","text":"ballincollig. bit of a trek. need a cab both ways","posted":true,"at":"2026-12-02T15:46","checkin":"2026-12-02T15:46"}
+{"who":"Dylan","text":"Cab from town is about 25 so split 4 ways its fine","posted":true,"at":"2026-12-02T16:05","checkin":"2026-12-02T16:05"}
+{"who":"Ciara","text":"Split home too? Dont mind paying its just the 2am one im worried about","posted":true,"at":"2026-12-02T16:07","checkin":"2026-12-02T16:07"}
+{"who":"Lauren","text":"Rough one today. Client moved the whole seating plan at 4pm and we're 200 people short for the room","posted":true,"at":"2026-12-02T17:30","checkin":"2026-12-02T17:30"}
+{"who":"Ciara","text":"Oof. Did you get out on time","posted":true,"at":"2026-12-02T17:31","checkin":"2026-12-02T17:31"}
+{"who":"Lauren","text":"No. Still in the car park","posted":true,"at":"2026-12-02T17:34","checkin":"2026-12-02T17:34"}
+{"who":"Fionn","text":"got a bit of something for after not forcing anyone","posted":true,"at":"2026-12-02T19:12","checkin":"2026-12-02T19:12"}
+{"who":"Dylan","text":"No","posted":true,"at":"2026-12-02T19:15","checkin":"2026-12-02T19:15"}
+{"who":"Ciara","text":"Not for me","posted":true,"at":"2026-12-02T19:15","checkin":"2026-12-02T19:15"}
+{"who":"Fionn","text":"lauren?","posted":true,"at":"2026-12-02T19:19","checkin":"2026-12-02T19:19"}
+{"who":"Lauren","text":"Maybe. Not sure yet","posted":true,"at":"2026-12-02T19:40","checkin":"2026-12-02T19:40"}
+{"who":"Fionn","text":"last time i had a bit of ket at one of these i was on the bathroom floor for like 3 hours singing to the bath best night of my life","posted":true,"at":"2026-12-02T19:41","checkin":"2026-12-02T19:41"}
+{"who":"Lauren","text":"That was not the best night of your life. That was the night I got you into a taxi with a towel on your head","posted":true,"at":"2026-12-02T19:44","checkin":"2026-12-02T19:44"}
+{"who":"","react":"😂","to":18,"posted":false,"at":"2026-12-02T19:44"}
+{"who":"","react":"😂","to":18,"posted":false,"at":"2026-12-02T19:44"}
+{"who":"Fionn","text":"gorgeous memories","posted":true,"at":"2026-12-02T19:44","checkin":"2026-12-02T19:44"}
+{"who":"Dylan","text":"Cant believe you two are still going on about that","posted":true,"at":"2026-12-02T20:02","checkin":"2026-12-02T20:02"}
+{"who":"Ciara","text":"Ok can we actually sort the taxi home. Dont want to be stood outside at 4am waiting on whoever's still going","posted":true,"at":"2026-12-02T20:05","checkin":"2026-12-02T20:05"}
+{"who":"Dylan","text":"Fine by me","posted":true,"at":"2026-12-02T20:07","checkin":"2026-12-02T20:07"}
+{"who":"Fionn","text":"split is grand. ill be out by 2 anyway","posted":true,"at":"2026-12-02T20:09","checkin":"2026-12-02T20:09"}
+{"who":"Lauren","text":"Split works. Might leave earlier than you both","posted":true,"at":"2026-12-02T20:09","checkin":"2026-12-02T20:09"}
+{"who":"Ciara","text":"Good. Ill text when im leaving","posted":true,"at":"2026-12-02T20:10","checkin":"2026-12-02T20:10"}
+{"who":"Dylan","text":"Party's north side isnt it, could walk from the bus","posted":true,"at":"2026-12-02T22:15","checkin":"2026-12-02T22:15"}
+{"who":"Ciara","text":"No. Its out past the village. Not walkable in the dark","posted":true,"at":"2026-12-02T22:20","checkin":"2026-12-02T22:20"}
+{"who":"Fionn","text":"lads im in bed. keep the taxi ciara ur a boss","posted":true,"at":"2026-12-02T23:48","checkin":"2026-12-02T23:48"}
+{"who":"Lauren","text":"Cant sleep. The seating plan is still in my head 😭","posted":true,"at":"2026-12-03T00:40","checkin":"2026-12-03T00:40"}
+{"who":"Ciara","text":"Go to sleep. Seating plans will still be wrong tomorrow","posted":true,"at":"2026-12-03T00:52","checkin":"2026-12-03T00:52"}
+{"who":"Lauren","text":"Trying","posted":true,"at":"2026-12-03T00:55","checkin":"2026-12-03T00:55"}
+{"who":"Dylan","text":"Is it BYO on sat or is there going to be actual drink","posted":true,"at":"2026-12-03T09:12","checkin":"2026-12-03T09:12"}
+{"who":"Ciara","text":"Dont know. Sinead said there's a keg but she also said that about the last one","posted":true,"at":"2026-12-03T09:30","checkin":"2026-12-03T09:30"}
+{"who":"Dylan","text":"Ok so BYO","posted":true,"at":"2026-12-03T09:31","checkin":"2026-12-03T09:31"}
+{"who":"Fionn","text":"morning. just up. head is wrecked","posted":true,"at":"2026-12-03T11:03","checkin":"2026-12-03T11:03"}
+{"who":"Ciara","text":"Wasn't it you who said you'd be out by 2","posted":true,"at":"2026-12-03T11:05","checkin":"2026-12-03T11:05"}
+{"who":"Fionn","text":"i said i'd be out by 2 and i meant it, the body had other plans 😅","posted":true,"at":"2026-12-03T11:06","checkin":"2026-12-03T11:06"}
+{"who":"Lauren","text":"Client emailed to say sorry for the seating thing. Like it's fine now, I've already got the room reset","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Lauren","text":"Still annoyed though","posted":true,"at":"2026-12-03T13:22","checkin":"2026-12-03T13:22"}
+{"who":"Ciara","text":"Sounds like you need a drink more than a party","posted":true,"at":"2026-12-03T13:40","checkin":"2026-12-03T13:40"}
+{"who":"Lauren","text":"Saturday then","posted":true,"at":"2026-12-03T13:41","checkin":"2026-12-03T13:41"}
+{"who":"Dylan","text":"Can someone send me the address when sinead does","posted":true,"at":"2026-12-03T17:15","checkin":"2026-12-03T17:15"}
+{"who":"Ciara","text":"Will forward it when she sends it. Not holding my breath","posted":true,"at":"2026-12-03T17:18","checkin":"2026-12-03T17:18"}
+{"who":"Fionn","text":"anyone going to the offie before sat or are we all waiting til the last minute like usual 🙄","posted":true,"at":"2026-12-03T21:04","checkin":"2026-12-03T21:04"}
+{"who":"Dylan","text":"I'll grab a bottle of something Saturday afternoon","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Dylan","text":"Not going to spend 40 on vodka though","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Fionn","text":"sure wasnt going to ask u to","posted":true,"at":"2026-12-03T23:12","checkin":"2026-12-03T23:12"}
+{"who":"Ciara","text":"Night all. Going to bed before I start on the taxi spreadsheet","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Ciara","text":"Dont tell me its been 2 hours since I asked","posted":true,"at":"2026-12-03T23:41","checkin":"2026-12-03T23:41"}
+{"who":"Ciara","text":"Sinead still hasnt sent the address","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Lauren","text":"Got a ticket in the work car park. Overstayed the pass by 2 hours on Wednesday, apparently. Its 80 quid","posted":true,"at":"2026-12-04T09:14","checkin":"2026-12-04T09:14"}
+{"who":"Dylan","text":"Appeal it","posted":true,"at":"2026-12-04T09:15","checkin":"2026-12-04T09:15"}
+{"who":"Lauren","text":"Already did. 40 mins on hold","posted":true,"at":"2026-12-04T09:19","checkin":"2026-12-04T09:19"}
+{"who":"Fionn","text":"2 hours?? the car park has ruined ur whole week lauren","posted":true,"at":"2026-12-04T10:02","checkin":"2026-12-04T10:02"}
+{"who":"Lauren","text":"Ruined is a strong word 🙄","posted":true,"at":"2026-12-04T10:03","checkin":"2026-12-04T10:03"}
+{"who":"Ciara","text":"Started the taxi spreadsheet. Dont laugh","posted":true,"at":"2026-12-04T11:30","checkin":"2026-12-04T11:30"}
+{"who":"Dylan","text":"Laughing","posted":true,"at":"2026-12-04T11:31","checkin":"2026-12-04T11:31"}
+{"who":"Ciara","text":"Rude","posted":true,"at":"2026-12-04T11:33","checkin":"2026-12-04T11:33"}
+{"who":"Fionn","text":"anyone know if the offie in ballincollig is open sat morning or do we have to go to the one in town","posted":true,"at":"2026-12-04T13:10","checkin":"2026-12-04T13:10"}
+{"who":"Dylan","text":"Town one is open till 11 Sat I think","posted":true,"at":"2026-12-04T13:22","checkin":"2026-12-04T13:22"}
+{"who":"Fionn","text":"ok ur a legend","posted":true,"at":"2026-12-04T13:23","checkin":"2026-12-04T13:23"}
+{"who":"Ciara","text":"[screenshot: text from Sinead with party address, Ballincollig]","posted":true,"at":"2026-12-04T15:48","checkin":"2026-12-04T15:48"}
+{"who":"Dylan","text":"Got it","posted":true,"at":"2026-12-04T15:49","checkin":"2026-12-04T15:49"}
+{"who":"Fionn","text":"ballincollig bit of a trek","posted":true,"at":"2026-12-04T15:55","checkin":"2026-12-04T15:55"}
+{"who":"Lauren","text":"Is it a house or a flat","posted":true,"at":"2026-12-04T16:10","checkin":"2026-12-04T16:10"}
+{"who":"Ciara","text":"House. Sinead says its her cousins so dont break anything","posted":true,"at":"2026-12-04T16:12","checkin":"2026-12-04T16:12"}
+{"who":"Lauren","text":"Will try","posted":true,"at":"2026-12-04T16:14","checkin":"2026-12-04T16:14"}
+{"who":"Fionn","text":"closing up the gym now. lads whats the plan for tomorrow, pres or going in cold","posted":true,"at":"2026-12-04T18:30","checkin":"2026-12-04T18:30"}
+{"who":"Dylan","text":"Going in cold. Not paying 3 times for drink","posted":true,"at":"2026-12-04T18:34","checkin":"2026-12-04T18:34"}
+{"who":"Ciara","text":"Pres at mine if were doing pres. I have the good glasses","posted":true,"at":"2026-12-04T18:36","checkin":"2026-12-04T18:36"}
+{"who":"Fionn","text":"pres at ciaras","posted":true,"at":"2026-12-04T18:37","checkin":"2026-12-04T18:37"}
+{"who":"Ciara","text":"I have 4 glasses. One is cracked","posted":true,"at":"2026-12-04T18:38","checkin":"2026-12-04T18:38"}
+{"who":"Lauren","text":"Pres at ciaras works. Im wrecked from today tbh, might be a slow one","posted":true,"at":"2026-12-04T19:40","checkin":"2026-12-04T19:40"}
+{"who":"Ciara","text":"You can bail if you want, we'll survive","posted":true,"at":"2026-12-04T19:44","checkin":"2026-12-04T19:44"}
+{"who":"Lauren","text":"No im coming. Need it honestly","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Fionn","text":"ok good. lauren's back on the team 😂","posted":true,"at":"2026-12-04T20:15","checkin":"2026-12-04T20:15"}
+{"who":"Lauren","text":"Dont make me regret it","posted":true,"at":"2026-12-04T20:16","checkin":"2026-12-04T20:16"}
+{"who":"Dylan","text":"Whats the time we're getting the taxi to ciaras for pres","posted":true,"at":"2026-12-04T21:48","checkin":"2026-12-04T21:48"}
+{"who":"Ciara","text":"7 for pres. Taxi home from ciaras at 1 for the first wave, Fionn you'll need to be ready at 1 not 2","posted":true,"at":"2026-12-04T21:50","checkin":"2026-12-04T21:50"}
+{"who":"Fionn","text":"ur mad. ill be ready 😅","posted":true,"at":"2026-12-04T21:52","checkin":"2026-12-04T21:52"}
+{"who":"Lauren","text":"Stop wasting time on the seating plan for weddings in your head Ciara 😂","posted":true,"at":"2026-12-04T23:10","checkin":"2026-12-04T23:10"}
+{"who":"Ciara","text":"Thats not what im doing. Go to sleep","posted":true,"at":"2026-12-04T23:11","checkin":"2026-12-04T23:11"}
+{"who":"Ciara","text":"Spreadsheet done. 2 cabs, 2 trips each, all 4 of us covered","posted":true,"at":"2026-12-04T23:40","checkin":"2026-12-04T23:40"}
+{"who":"Fionn","text":"ur a genius","posted":true,"at":"2026-12-04T23:42","checkin":"2026-12-04T23:42"}
+{"who":"Dylan","text":"Nice one","posted":true,"at":"2026-12-04T23:55","checkin":"2026-12-04T23:55"}
+{"who":"Lauren","text":"Home. Cabbed it, dont wait up","posted":true,"at":"2026-12-05T00:20","checkin":"2026-12-05T00:20"}
+{"who":"Ciara","text":"You're not even out yet","posted":true,"at":"2026-12-05T00:22","checkin":"2026-12-05T00:22"}
+{"who":"Lauren","text":"I know. Thats the plan","posted":true,"at":"2026-12-05T00:23","checkin":"2026-12-05T00:23"}
+{"who":"Fionn","text":"lads im actually going to bed this time. big day tmrw","posted":true,"at":"2026-12-05T00:41","checkin":"2026-12-05T00:41"}
+{"who":"Ciara","text":"Night Fionn","posted":true,"at":"2026-12-05T00:43","checkin":"2026-12-05T00:43"}
+{"who":"Dylan","text":"Night","posted":true,"at":"2026-12-05T00:50","checkin":"2026-12-05T00:50"}

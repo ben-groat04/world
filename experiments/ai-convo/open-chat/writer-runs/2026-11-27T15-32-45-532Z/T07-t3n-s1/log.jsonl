@@ -1,0 +1,85 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T09:05","complete":true,"rejects":0,"today":["Maureen",null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2323,"cache_read_input_tokens":0,"output_tokens":3374,"output_tokens_details":{"thinking_tokens":2456},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2323,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3374,"cache_read_input_tokens":0,"cache_creation_input_tokens":2323,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2323},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3084,"cache_read_input_tokens":0,"output_tokens":2946,"output_tokens_details":{"thinking_tokens":2244},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3084,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2946,"cache_read_input_tokens":0,"cache_creation_input_tokens":3084,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3084},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3783,"cache_read_input_tokens":0,"output_tokens":3888,"output_tokens_details":{"thinking_tokens":2953},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3783,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3888,"cache_read_input_tokens":0,"cache_creation_input_tokens":3783,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3783},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Maureen","Liam","Robert","Bridget"],"setting":"You are all in Perth, Australia, and you are one family: two parents and their two adult children, who know each other through that family life. You are in a family group chat, and a bitter row has just broken out between you, involving faith, swearing and raised voices.","openers":["Send a message asking everyone to calm down","Ask Liam to apologise for his language","Call a family meeting this Sunday","Say she is sorry for what she said"],"opener":"Ask Liam to apologise for his language","cast":{"Maureen":{"who":"58, woman, the mother","work":"hairdresser","knows":"You know Robert as the father of your children, Liam as your eldest, and Bridget as your younger child.","texts":"Maureen texts in this chat only now and again.","style":"some emoji and a few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Liam":{"who":"31, man, the eldest adult child","work":"software developer","knows":"You know Maureen as your mother, Robert as your father, and Bridget as your younger sister.","texts":"Liam texts in this chat only now and again.","style":"a few texting abbreviations and no emoji.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Robert":{"who":"60, man, the father","work":"site supervisor","knows":"You know Maureen as the mother of your children, Liam as your eldest son, and Bridget as your younger daughter.","texts":"Robert texts in this chat a lot.","style":"none","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Bridget":{"who":"27, woman, the younger adult child","work":"speech pathologist","knows":"You know Maureen as your mother, Robert as your father, and Liam as your older brother.","texts":"Bridget texts in this chat now and then.","style":"some emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Maureen":"You live in Perth, Australia, working as a hairdresser, and you live with nobody.","Liam":"You live in Perth, Australia, working as a software developer, and you live with nobody.","Robert":"You live in Perth, Australia, working as a site supervisor, and you live with nobody.","Bridget":"You live in Perth, Australia, working as a speech pathologist, and you live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":871,"cache_read_input_tokens":0,"output_tokens":2169,"output_tokens_details":{"thinking_tokens":1746},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":871,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2169,"cache_read_input_tokens":0,"cache_creation_input_tokens":871,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":871},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1140,"cache_read_input_tokens":0,"output_tokens":2577,"output_tokens_details":{"thinking_tokens":1984},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1140,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2577,"cache_read_input_tokens":0,"cache_creation_input_tokens":1140,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1140},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Perth, Australia","castMs":22450,"situation":"A family group chat: parents and their two adult children.","topic":"A full-blown row: the mother calls the eldest a disgrace, the eldest mocks her faith and swears at her, the father shouts them both down, and the younger sibling takes sides."}
+{"who":"Maureen","text":"Liam I want an apology for last night. Not just the swearing. The way you talked about God at the table in front of your father and your sister","posted":true,"at":"2026-11-28T09:05","checkin":"2026-11-28T09:05"}
+{"who":"Liam","text":"i said sorry for the swearing. im not apologising for what i think about church","posted":true,"at":"2026-11-28T09:38","checkin":"2026-11-28T09:38"}
+{"who":"Robert","text":"Liam. Your mother is asking you to apologise. Its not a hard thing to do. You will do it.","posted":true,"at":"2026-11-28T09:44","checkin":"2026-11-28T09:44"}
+{"who":"Robert","text":"And I'll say this once. Nobody in this family talks to your mother like that in my house. Not you, not anybody","posted":true,"at":"2026-11-28T09:46","checkin":"2026-11-28T09:46"}
+{"who":"Liam","text":"you did the shouting dad. twice","posted":true,"at":"2026-11-28T09:51","checkin":"2026-11-28T09:51"}
+{"who":"Bridget","text":"Can we not do this on here","posted":true,"at":"2026-11-28T09:52","checkin":"2026-11-28T09:52"}
+{"who":"Robert","text":"Bridget dont tell me what to do on the phone","posted":true,"at":"2026-11-28T09:53","checkin":"2026-11-28T09:53"}
+{"who":"Bridget","text":"Mum you did call him a disgrace though. In front of everyone","posted":true,"at":"2026-11-28T10:02","checkin":"2026-11-28T10:02"}
+{"who":"Maureen","text":"I said what I felt Bridget. I'm allowed to be hurt by my own son","posted":true,"at":"2026-11-28T10:10","checkin":"2026-11-28T10:10"}
+{"who":"","react":"👍","to":8,"posted":false,"at":"2026-11-28T10:10"}
+{"who":"Maureen","text":"Got a client in the chair. Will read the rest later","posted":true,"at":"2026-11-28T10:14","checkin":"2026-11-28T10:14"}
+{"who":"Robert","text":"Liam you know what your mother has done for you your whole life. Church every Sunday, drove you to every stupid thing. And you sit there and laugh at her","posted":true,"at":"2026-11-28T10:31","checkin":"2026-11-28T10:31"}
+{"who":"Liam","text":"i didnt laugh at her","posted":true,"at":"2026-11-28T10:33","checkin":"2026-11-28T10:33"}
+{"who":"Liam","text":"i laughed at the video she sent me. the rapture one. that was it","posted":true,"at":"2026-11-28T10:34","checkin":"2026-11-28T10:34"}
+{"who":"Bridget","text":"Brunch with Jess. Anyone want me to bring anything back","posted":true,"at":"2026-11-28T11:50","checkin":"2026-11-28T11:50"}
+{"who":"Robert","text":"Not for me thanks love","posted":true,"at":"2026-11-28T12:15","checkin":"2026-11-28T12:15"}
+{"who":"Robert","text":"Maureen I'm sorry about the table. I shouldn't have raised my voice. Doesn't mean he's right","posted":true,"at":"2026-11-28T13:20","checkin":"2026-11-28T13:20"}
+{"who":"Maureen","text":"Thank you Rob. Doesn't feel like it from where I'm standing","posted":true,"at":"2026-11-28T13:24","checkin":"2026-11-28T13:24"}
+{"who":"Liam","text":"mum ill apologise. im sorry for the language. not the rest","posted":true,"at":"2026-11-28T14:02","checkin":"2026-11-28T14:02"}
+{"who":"Maureen","text":"Off work finally. Liam the language was the smallest part of it","posted":true,"at":"2026-11-28T17:48","checkin":"2026-11-28T17:48"}
+{"who":"Liam","text":"ok","posted":true,"at":"2026-11-28T17:50","checkin":"2026-11-28T17:50"}
+{"who":"Maureen","text":"I shouldn't have called you a disgrace though. That was wrong of me and I'm sorry for it","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Liam","text":"ok mum. thanks","posted":true,"at":"2026-11-28T20:31","checkin":"2026-11-28T20:31"}
+{"who":"Robert","text":"Good. That's all we needed","posted":true,"at":"2026-11-28T20:33","checkin":"2026-11-28T20:33"}
+{"who":"Bridget","text":"Good","posted":true,"at":"2026-11-28T20:35","checkin":"2026-11-28T20:35"}
+{"who":"Robert","text":"Maureen are you up","posted":true,"at":"2026-11-28T23:50","checkin":"2026-11-28T23:50"}
+{"who":"Robert","text":"Maureen you there","posted":true,"at":"2026-11-29T00:40","checkin":"2026-11-29T00:40"}
+{"who":"Robert","text":"Maureen I know you're awake. Ring me when you get a sec","posted":true,"at":"2026-11-29T07:12","checkin":"2026-11-29T07:12"}
+{"who":"Robert","text":"Not about last night. Just about lunch. Are we still going to Carol's or not","posted":true,"at":"2026-11-29T07:14","checkin":"2026-11-29T07:14"}
+{"who":"Bridget","text":"Mum I'm not gonna pretend last night didn't happen but I hope you're ok","posted":true,"at":"2026-11-29T08:55","checkin":"2026-11-29T08:55"}
+{"who":"","react":"👍","to":28,"posted":false,"at":"2026-11-29T08:55"}
+{"who":"Liam","text":"is lunch still on","posted":true,"at":"2026-11-29T09:30","checkin":"2026-11-29T09:30"}
+{"who":"Robert","text":"Yes lunch is on. 12:30. Maureen is coming. She's just having a sleep in","posted":true,"at":"2026-11-29T10:02","checkin":"2026-11-29T10:02"}
+{"who":"Robert","text":"Liam you'll be there","posted":true,"at":"2026-11-29T10:04","checkin":"2026-11-29T10:04"}
+{"who":"Liam","text":"yeah","posted":true,"at":"2026-11-29T10:21","checkin":"2026-11-29T10:21"}
+{"who":"Maureen","text":"Up. Didn't sleep much. I'm not sitting through church stuff again today","posted":true,"at":"2026-11-29T11:47","checkin":"2026-11-29T11:47"}
+{"who":"Robert","text":"Nobody's bringing it up","posted":true,"at":"2026-11-29T11:49","checkin":"2026-11-29T11:49"}
+{"who":"Maureen","text":"Liam can you get ice on the way. Not the cheap stuff","posted":true,"at":"2026-11-29T12:05","checkin":"2026-11-29T12:05"}
+{"who":"Liam","text":"ok","posted":true,"at":"2026-11-29T12:06","checkin":"2026-11-29T12:06"}
+{"who":"Robert","text":"We're leaving in 5","posted":true,"at":"2026-11-29T12:31","checkin":"2026-11-29T12:31"}
+{"who":"Liam","text":"mum thanks for lunch. the lamb was good","posted":true,"at":"2026-11-29T16:22","checkin":"2026-11-29T16:22"}
+{"who":"Maureen","text":"Thanks love. Glad someone noticed the lamb","posted":true,"at":"2026-11-29T16:40","checkin":"2026-11-29T16:40"}
+{"who":"Robert","text":"Bridget did you get home ok","posted":true,"at":"2026-11-29T16:44","checkin":"2026-11-29T16:44"}
+{"who":"Bridget","text":"Yep. Jess's car got a ticket outside the bakery lol. Unrelated that's it","posted":true,"at":"2026-11-29T16:51","checkin":"2026-11-29T16:51"}
+{"who":"Robert","text":"Maureen I'm not trying to make it a thing. I just want us all right","posted":true,"at":"2026-11-29T19:03","checkin":"2026-11-29T19:03"}
+{"who":"Robert","text":"Wont sleep otherwise","posted":true,"at":"2026-11-29T19:03","checkin":"2026-11-29T19:03"}
+{"who":"Maureen","text":"You can sleep Rob. I'm fine","posted":true,"at":"2026-11-29T21:12","checkin":"2026-11-29T21:12"}
+{"who":"Maureen","text":"Im not ok but im fine. Different thing","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Robert","text":"Ok","posted":true,"at":"2026-11-29T21:40","checkin":"2026-11-29T21:40"}
+{"who":"Liam","text":"going to bed. work tmrw","posted":true,"at":"2026-11-29T22:55","checkin":"2026-11-29T22:55"}
+{"who":"Robert","text":"Maureen you there","posted":true,"at":"2026-11-30T00:20","checkin":"2026-11-30T00:20"}
+{"who":"Robert","text":"Maureen I know you're up","posted":true,"at":"2026-11-30T07:38","checkin":"2026-11-30T07:38"}
+{"who":"Robert","text":"Had a think about last night. I was out of line with the shouting. Liam was out of line too but I shouldnt have come at him like that","posted":true,"at":"2026-11-30T07:52","checkin":"2026-11-30T07:52"}
+{"who":"Maureen","text":"Rob I've got a 9 and a root touch up at 10. Leave it pls","posted":true,"at":"2026-11-30T08:20","checkin":"2026-11-30T08:20"}
+{"who":"Robert","text":"Ok","posted":true,"at":"2026-11-30T08:21","checkin":"2026-11-30T08:21"}
+{"who":"Robert","text":"Just didnt want you thinking I'm not sorry","posted":true,"at":"2026-11-30T08:21","checkin":"2026-11-30T08:21"}
+{"who":"Bridget","text":"Morning. Mum how are you going today","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Liam","text":"morning. anyone know if the bins are going out thurs or tomorrow","posted":true,"at":"2026-11-30T08:44","checkin":"2026-11-30T08:44"}
+{"who":"Bridget","text":"Thurs. Yellow bin this week","posted":true,"at":"2026-11-30T08:46","checkin":"2026-11-30T08:46"}
+{"who":"Robert","text":"Thursday yes. Yellow is the recycling","posted":true,"at":"2026-11-30T08:47","checkin":"2026-11-30T08:47"}
+{"who":"Maureen","text":"Going ok. Busy. Got a bride's mum in the chair who wants a bob","posted":true,"at":"2026-11-30T09:58","checkin":"2026-11-30T09:58"}
+{"who":"","react":"❤️","to":58,"posted":false,"at":"2026-11-30T09:58"}
+{"who":"Bridget","text":"A bob good luck","posted":true,"at":"2026-11-30T10:03","checkin":"2026-11-30T10:03"}
+{"who":"Robert","text":"Maureen I'm going to Bunnings after work. Need anything","posted":true,"at":"2026-11-30T12:40","checkin":"2026-11-30T12:40"}
+{"who":"Maureen","text":"No thanks Rob","posted":true,"at":"2026-11-30T13:15","checkin":"2026-11-30T13:15"}
+{"who":"Liam","text":"mum how much was the ice. ill transfer it","posted":true,"at":"2026-11-30T13:50","checkin":"2026-11-30T13:50"}
+{"who":"Robert","text":"I'll cover the ice Liam. Dont fuss","posted":true,"at":"2026-11-30T13:52","checkin":"2026-11-30T13:52"}
+{"who":"Liam","text":"im not fussing im paying for ice","posted":true,"at":"2026-11-30T13:53","checkin":"2026-11-30T13:53"}
+{"who":"Maureen","text":"Dont worry about it love","posted":true,"at":"2026-11-30T14:40","checkin":"2026-11-30T14:40"}
+{"who":"Liam","text":"ok","posted":true,"at":"2026-11-30T14:41","checkin":"2026-11-30T14:41"}
+{"who":"Robert","text":"Maureen you home yet","posted":true,"at":"2026-11-30T17:22","checkin":"2026-11-30T17:22"}
+{"who":"Maureen","text":"Home. Going to have a bath","posted":true,"at":"2026-11-30T18:05","checkin":"2026-11-30T18:05"}
+{"who":"Robert","text":"Ok. Ring me later if you want","posted":true,"at":"2026-11-30T18:06","checkin":"2026-11-30T18:06"}
+{"who":"Bridget","text":"Mum I dont want to pick sides. I just hate this on the group chat","posted":true,"at":"2026-11-30T19:47","checkin":"2026-11-30T19:47"}
+{"who":"Maureen","text":"I havent picked a side Bridget. Liam knows I'm not having church talk at the table, and I'm not having your father shouting at me. That's all","posted":true,"at":"2026-11-30T19:52","checkin":"2026-11-30T19:52"}
+{"who":"Robert","text":"Nobody's shouting","posted":true,"at":"2026-11-30T19:55","checkin":"2026-11-30T19:55"}
+{"who":"Bridget","text":"Dad","posted":true,"at":"2026-11-30T20:01","checkin":"2026-11-30T20:01"}
+{"who":"Liam","text":"dad","posted":true,"at":"2026-11-30T20:02","checkin":"2026-11-30T20:02"}
+{"who":"Liam","text":"im not talking about it on here","posted":true,"at":"2026-11-30T20:04","checkin":"2026-11-30T20:04"}
+{"who":"Robert","text":"Good. Nobody should","posted":true,"at":"2026-11-30T20:05","checkin":"2026-11-30T20:05"}
+{"who":"Maureen","text":"Rob I'm in bed. Not doing this tonight. If its something real say it in the morning","posted":true,"at":"2026-11-30T21:30","checkin":"2026-11-30T21:30"}
+{"who":"Robert","text":"Ok","posted":true,"at":"2026-11-30T21:34","checkin":"2026-11-30T21:34"}
+{"who":"Robert","text":"Maureen you there","posted":true,"at":"2026-12-01T00:14","checkin":"2026-12-01T00:14"}

@@ -1,0 +1,91 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T14:15","complete":true,"rejects":0,"today":["Rachel",null,"Danielle"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2034,"cache_read_input_tokens":0,"output_tokens":2494,"output_tokens_details":{"thinking_tokens":1604},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2034,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2494,"cache_read_input_tokens":0,"cache_creation_input_tokens":2034,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2034},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2759,"cache_read_input_tokens":0,"output_tokens":1389,"output_tokens_details":{"thinking_tokens":442},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2759,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1389,"cache_read_input_tokens":0,"cache_creation_input_tokens":2759,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2759},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3709,"cache_read_input_tokens":0,"output_tokens":2926,"output_tokens_details":{"thinking_tokens":1677},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3709,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2926,"cache_read_input_tokens":0,"cache_creation_input_tokens":3709,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3709},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Danielle","Rachel"],"setting":"You are both in Atlanta, texting from your own homes in a chat that is just the two of you. You are sisters, and you both follow the same true crime podcast.","openers":["Send a link to the episode about the case","Ask if the injuries in the last episode bothered Rachel","Type \"ok be honest, was the killer's psychology creepy or fascinating\"","Share the one detail from the forensics that you can't stop thinking about"],"opener":"Ask if the injuries in the last episode bothered Rachel","cast":{"Danielle":{"who":"34, woman, the older sister","work":"high school chemistry teacher","knows":"You know Rachel is your younger sister, and you have known her all her life.","texts":"","style":"little emoji, few texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Rachel":{"who":"31, woman, the younger sister","work":"interior designer","knows":"You know Danielle is your older sister, and you have known her all your life.","texts":"","style":"frequent emoji and texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Danielle":"You live in Atlanta, where you spend your days teaching high school chemistry, and you live by yourself.","Rachel":"You live in Atlanta, where you spend your days working as an interior designer, and you live by yourself."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":871,"cache_read_input_tokens":0,"output_tokens":801,"output_tokens_details":{"thinking_tokens":564},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":871,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":801,"cache_read_input_tokens":0,"cache_creation_input_tokens":871,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":871},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1104,"cache_read_input_tokens":0,"output_tokens":1400,"output_tokens_details":{"thinking_tokens":1032},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1104,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1400,"cache_read_input_tokens":0,"cache_creation_input_tokens":1104,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1104},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Atlanta, USA","castMs":12846,"situation":"Two sisters who both follow the same true crime podcast.","topic":"Talking through the gruesome forensic details of an invented serial killer case, the injuries to the victims, the killer's psychology, and whether they find it disturbing or fascinating."}
+{"who":"Danielle","text":"Did the new ep drop or am I going crazy","posted":true,"at":"2026-12-01T14:15","checkin":"2026-12-01T14:15"}
+{"who":"Rachel","text":"it dropped at 6 this morning i'm driving home tonight so i'll listen then","posted":true,"at":"2026-12-01T14:22","checkin":"2026-12-01T14:22"}
+{"who":"Danielle","text":"Ok good. I'm grading lab reports til like 5 so no spoilers","posted":true,"at":"2026-12-01T14:23","checkin":"2026-12-01T14:23"}
+{"who":"Rachel","text":"no spoilers (wait what do u mean by lab reports is that a threat","posted":true,"at":"2026-12-01T14:24","checkin":"2026-12-01T14:24"}
+{"who":"Danielle","text":"Ha. They're titration write-ups. 14 of them and half say \"the solution turned pink\" with no volume","posted":true,"at":"2026-12-01T14:31","checkin":"2026-12-01T14:31"}
+{"who":"Rachel","text":"omg. kids","posted":true,"at":"2026-12-01T14:33","checkin":"2026-12-01T14:33"}
+{"who":"Rachel","text":"client just called to say the sample swatches are \"too sad.\" the sample swatches are from the ORDER SHE PICKED","posted":true,"at":"2026-12-01T15:02","checkin":"2026-12-01T15:02"}
+{"who":"Danielle","text":"Oof. What did you say","posted":true,"at":"2026-12-01T15:03","checkin":"2026-12-01T15:03"}
+{"who":"Rachel","text":"said \"they're the colors you chose\" in the nicest voice i have. she wants me to come back out thursday and \"feel the room\"","posted":true,"at":"2026-12-01T15:09","checkin":"2026-12-01T15:09"}
+{"who":"Danielle","text":"Feel the room","posted":true,"at":"2026-12-01T15:10","checkin":"2026-12-01T15:10"}
+{"who":"Danielle","text":"Home. The pink reports are done","posted":true,"at":"2026-12-01T17:48","checkin":"2026-12-01T17:48"}
+{"who":"Rachel","text":"ur a hero. still in traffic on 85 ugh","posted":true,"at":"2026-12-01T17:49","checkin":"2026-12-01T17:49"}
+{"who":"Rachel","text":"home. ok i'm listening now. dont text me","posted":true,"at":"2026-12-01T19:20","checkin":"2026-12-01T19:20"}
+{"who":"Danielle","text":"Ok","posted":true,"at":"2026-12-01T19:21","checkin":"2026-12-01T19:21"}
+{"who":"Danielle","text":"Did the ep bother you. The injuries part. I kept thinking about the second victim's hands and I'm not sure if that's normal","posted":true,"at":"2026-12-01T21:52","checkin":"2026-12-01T21:52"}
+{"who":"Rachel","text":"honestly yeah i had to pause it and go wash dishes. i kept picturing it. is that weird","posted":true,"at":"2026-12-01T21:58","checkin":"2026-12-01T21:58"}
+{"who":"Danielle","text":"No. I think it's fine. I'm not sure if I'm bothered or just can't stop reading the autopsy part","posted":true,"at":"2026-12-01T22:01","checkin":"2026-12-01T22:01"}
+{"who":"Rachel","text":"i'm both the killer's voice in the interview part made my skin crawl more than the actual injuries tbh","posted":true,"at":"2026-12-01T22:03","checkin":"2026-12-01T22:03"}
+{"who":"Danielle","text":"Yeah. He sounds so reasonable","posted":true,"at":"2026-12-01T22:04","checkin":"2026-12-01T22:04"}
+{"who":"Rachel","text":"right?? like he's explaining it like a recipe. i was like ok stop","posted":true,"at":"2026-12-01T22:09","checkin":"2026-12-01T22:09"}
+{"who":"Danielle","text":"The chemist in me kept wanting to check his timeline","posted":true,"at":"2026-12-01T22:10","checkin":"2026-12-01T22:10"}
+{"who":"Rachel","text":"of course u did","posted":true,"at":"2026-12-01T22:11","checkin":"2026-12-01T22:11"}
+{"who":"Rachel","text":"ok i'm gonna sleep or i'll be up thinking about it. night","posted":true,"at":"2026-12-01T22:30","checkin":"2026-12-01T22:30"}
+{"who":"Danielle","text":"Night","posted":true,"at":"2026-12-01T22:31","checkin":"2026-12-01T22:31"}
+{"who":"Rachel","text":"ok i slept like 4 hrs. his voice is still in my head","posted":true,"at":"2026-12-02T06:48","checkin":"2026-12-02T06:48"}
+{"who":"Danielle","text":"Same. Coffee helped a little","posted":true,"at":"2026-12-02T06:50","checkin":"2026-12-02T06:50"}
+{"who":"Danielle","text":"Did you eat or are you doing the thing where you just drink coffee and leave","posted":true,"at":"2026-12-02T07:15","checkin":"2026-12-02T07:15"}
+{"who":"Rachel","text":"coffee and half a granola bar. the thing","posted":true,"at":"2026-12-02T07:19","checkin":"2026-12-02T07:19"}
+{"who":"Danielle","text":"Rachel","posted":true,"at":"2026-12-02T07:20","checkin":"2026-12-02T07:20"}
+{"who":"Rachel","text":"ok ok i have a banana in the car","posted":true,"at":"2026-12-02T07:21","checkin":"2026-12-02T07:21"}
+{"who":"Rachel","text":"client emailed the swatches again. now she wants to see \"warmer options\" but in the same colors. like the warmth is supposed to just appear","posted":true,"at":"2026-12-02T12:04","checkin":"2026-12-02T12:04"}
+{"who":"Danielle","text":"Can you send her a warmth sheet","posted":true,"at":"2026-12-02T12:06","checkin":"2026-12-02T12:06"}
+{"who":"Rachel","text":"i am not sending her a warmth sheet i'm going to make a very nice folder and say \"per our conversation\"","posted":true,"at":"2026-12-02T12:07","checkin":"2026-12-02T12:07"}
+{"who":"Danielle","text":"That's the most passive aggressive thing I've ever heard and I approve","posted":true,"at":"2026-12-02T12:09","checkin":"2026-12-02T12:09"}
+{"who":"Rachel","text":"ur gonna be a mean principal one day","posted":true,"at":"2026-12-02T12:10","checkin":"2026-12-02T12:10"}
+{"who":"Danielle","text":"I'm a chemistry teacher. I'm already mean","posted":true,"at":"2026-12-02T12:11","checkin":"2026-12-02T12:11"}
+{"who":"Danielle","text":"Lab reports are back in the bin, 9 of 14 say \"pink\" again. I'm starting to think it's a cult","posted":true,"at":"2026-12-02T15:47","checkin":"2026-12-02T15:47"}
+{"who":"Rachel","text":"lmaooo the pink cult","posted":true,"at":"2026-12-02T15:52","checkin":"2026-12-02T15:52"}
+{"who":"Rachel","text":"u still going to be up late grading or u done for real","posted":true,"at":"2026-12-02T16:30","checkin":"2026-12-02T16:30"}
+{"who":"Danielle","text":"Done for real. Making dinner. Eggs and something green","posted":true,"at":"2026-12-02T16:41","checkin":"2026-12-02T16:41"}
+{"who":"Rachel","text":"ur doing ur best","posted":true,"at":"2026-12-02T16:42","checkin":"2026-12-02T16:42"}
+{"who":"Rachel","text":"hey did u finish the ep or did u stop at the autopsy part","posted":true,"at":"2026-12-02T19:05","checkin":"2026-12-02T19:05"}
+{"who":"Danielle","text":"Stopped. I'm not going to finish it tonight","posted":true,"at":"2026-12-02T19:14","checkin":"2026-12-02T19:14"}
+{"who":"Rachel","text":"yeah. same. i'm gonna do something dumb like rewatch the new mexico show","posted":true,"at":"2026-12-02T19:15","checkin":"2026-12-02T19:15"}
+{"who":"Danielle","text":"Ok. Lock the door","posted":true,"at":"2026-12-02T19:16","checkin":"2026-12-02T19:16"}
+{"who":"Rachel","text":"i always lock the door 🙄","posted":true,"at":"2026-12-02T19:16","checkin":"2026-12-02T19:16"}
+{"who":"Danielle","text":"You always say that and then you're on the phone with the door open","posted":true,"at":"2026-12-02T19:17","checkin":"2026-12-02T19:17"}
+{"who":"Rachel","text":"ok fair. night dani","posted":true,"at":"2026-12-02T19:19","checkin":"2026-12-02T19:19"}
+{"who":"Danielle","text":"Did you ever hear back from her about Thursday","posted":true,"at":"2026-12-02T21:40","checkin":"2026-12-02T21:40"}
+{"who":"Rachel","text":"she texted \"see you at 10 xx\" like nothing happened. so yes?? she's coming to Thursday like its a date","posted":true,"at":"2026-12-02T21:58","checkin":"2026-12-02T21:58"}
+{"who":"Danielle","text":"Good luck. Text me when you're out","posted":true,"at":"2026-12-02T22:01","checkin":"2026-12-02T22:01"}
+{"who":"Rachel","text":"will do","posted":true,"at":"2026-12-02T22:02","checkin":"2026-12-02T22:02"}
+{"who":"Rachel","text":"ok the folder is done. it has a cover page","posted":true,"at":"2026-12-03T07:02","checkin":"2026-12-03T07:02"}
+{"who":"Danielle","text":"Of course it does","posted":true,"at":"2026-12-03T07:03","checkin":"2026-12-03T07:03"}
+{"who":"Danielle","text":"Morning. Did you eat","posted":true,"at":"2026-12-03T07:40","checkin":"2026-12-03T07:40"}
+{"who":"Rachel","text":"yes. toast. standing up but it counts","posted":true,"at":"2026-12-03T07:44","checkin":"2026-12-03T07:44"}
+{"who":"Rachel","text":"in the room. she's already here. she brought a candle","posted":true,"at":"2026-12-03T10:06","checkin":"2026-12-03T10:06"}
+{"who":"Danielle","text":"A candle","posted":true,"at":"2026-12-03T10:07","checkin":"2026-12-03T10:07"}
+{"who":"Rachel","text":"a candle dani. to feel the room","posted":true,"at":"2026-12-03T10:07","checkin":"2026-12-03T10:07"}
+{"who":"Danielle","text":"Morning block. Kid cracked a burette and sliced his thumb open. Nurse took him, I did the paper towel thing. Thumb's fine, I think. My hands are still doing a thing","posted":true,"at":"2026-12-03T11:34","checkin":"2026-12-03T11:34"}
+{"who":"","react":"❤️","to":59,"posted":false,"at":"2026-12-03T11:34"}
+{"who":"Rachel","text":"oh no. is he ok","posted":true,"at":"2026-12-03T11:36","checkin":"2026-12-03T11:36"}
+{"who":"Danielle","text":"Stitches maybe. He was more embarrassed than hurt. Kept apologizing to the floor","posted":true,"at":"2026-12-03T11:37","checkin":"2026-12-03T11:37"}
+{"who":"Danielle","text":"He's 15","posted":true,"at":"2026-12-03T11:37","checkin":"2026-12-03T11:37"}
+{"who":"Rachel","text":"ur the best teacher. sorry about ur hands 💕","posted":true,"at":"2026-12-03T11:52","checkin":"2026-12-03T11:52"}
+{"who":"Rachel","text":"ok the candle is lavender and she keeps saying \"i want the room to breathe\" and i'm writing \"breathe\" on a legal pad like it's a clue","posted":true,"at":"2026-12-03T12:20","checkin":"2026-12-03T12:20"}
+{"who":"Danielle","text":"Lol. Breathe","posted":true,"at":"2026-12-03T12:21","checkin":"2026-12-03T12:21"}
+{"who":"Danielle","text":"Did the kid's mom call. I'm supposed to write up the incident and I don't know what to put for \"cause\"","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Danielle","text":"Put \"glassware.\" I'm going with glassware","posted":true,"at":"2026-12-03T13:12","checkin":"2026-12-03T13:12"}
+{"who":"Rachel","text":"leaving now. she wants to walk to the window one more time. it's the same window","posted":true,"at":"2026-12-03T14:50","checkin":"2026-12-03T14:50"}
+{"who":"Danielle","text":"Ok","posted":true,"at":"2026-12-03T14:51","checkin":"2026-12-03T14:51"}
+{"who":"Rachel","text":"out. i'm in the car. she hugged me which was not in the contract","posted":true,"at":"2026-12-03T15:30","checkin":"2026-12-03T15:30"}
+{"who":"Danielle","text":"Did she say anything about the swatches","posted":true,"at":"2026-12-03T15:31","checkin":"2026-12-03T15:31"}
+{"who":"Rachel","text":"she said she trusts my eye now. which is either a compliment or a threat","posted":true,"at":"2026-12-03T15:34","checkin":"2026-12-03T15:34"}
+{"who":"Danielle","text":"Compliment. Your eye is good","posted":true,"at":"2026-12-03T15:35","checkin":"2026-12-03T15:35"}
+{"who":"Rachel","text":"dani ur sweet ok im going home and eating something green. ur rubbing off","posted":true,"at":"2026-12-03T15:36","checkin":"2026-12-03T15:36"}
+{"who":"Danielle","text":"Bell just rang. Bin of 14 lab reports on my desk and the incident form. Going to be here a while","posted":true,"at":"2026-12-03T16:58","checkin":"2026-12-03T16:58"}
+{"who":"Rachel","text":"ur a hero twice in one week. ill send u a candle emoji as a sympathy gift","posted":true,"at":"2026-12-03T17:02","checkin":"2026-12-03T17:02"}
+{"who":"Rachel","text":"home. did u finish the write up","posted":true,"at":"2026-12-03T19:40","checkin":"2026-12-03T19:40"}
+{"who":"Danielle","text":"Finished. Put \"glassware\" and a smiley face. The office didn't love it","posted":true,"at":"2026-12-03T20:15","checkin":"2026-12-03T20:15"}
+{"who":"Rachel","text":"it's perfect","posted":true,"at":"2026-12-03T20:16","checkin":"2026-12-03T20:16"}
+{"who":"Danielle","text":"Hands are fine now. Had a glass of wine and I'm done thinking about burettes","posted":true,"at":"2026-12-03T21:05","checkin":"2026-12-03T21:05"}
+{"who":"Rachel","text":"good. ur allowed to be done","posted":true,"at":"2026-12-03T21:06","checkin":"2026-12-03T21:06"}
+{"who":"Rachel","text":"i'm not listening to the ep tonight. i think im gonna take a break from it for a while","posted":true,"at":"2026-12-03T21:08","checkin":"2026-12-03T21:08"}
+{"who":"Danielle","text":"Ok. That's probably smart","posted":true,"at":"2026-12-03T21:12","checkin":"2026-12-03T21:12"}
+{"who":"Rachel","text":"i'm on the couch w the door locked i checked twice","posted":true,"at":"2026-12-03T21:13","checkin":"2026-12-03T21:13"}
+{"who":"Danielle","text":"Good. Text me when you're in bed","posted":true,"at":"2026-12-03T21:14","checkin":"2026-12-03T21:14"}
+{"who":"Rachel","text":"will do. night dani","posted":true,"at":"2026-12-03T21:19","checkin":"2026-12-03T21:19"}
+{"who":"Danielle","text":"Night","posted":true,"at":"2026-12-03T21:20","checkin":"2026-12-03T21:20"}

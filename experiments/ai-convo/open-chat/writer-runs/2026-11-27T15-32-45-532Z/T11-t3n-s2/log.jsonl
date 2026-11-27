@@ -1,0 +1,119 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T22:55","complete":true,"rejects":0,"today":[null,null,"Rachel"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2173,"cache_read_input_tokens":0,"output_tokens":3201,"output_tokens_details":{"thinking_tokens":1325},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2173,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3201,"cache_read_input_tokens":0,"cache_creation_input_tokens":2173,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2173},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3935,"cache_read_input_tokens":0,"output_tokens":2221,"output_tokens_details":{"thinking_tokens":1426},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3935,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2221,"cache_read_input_tokens":0,"cache_creation_input_tokens":3935,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3935},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4745,"cache_read_input_tokens":0,"output_tokens":2738,"output_tokens_details":{"thinking_tokens":1510},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4745,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2738,"cache_read_input_tokens":0,"cache_creation_input_tokens":4745,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4745},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rachel","Tom"],"setting":"You are both in Bristol, England, in the shared group chat where you two have been talking for years, the kind of close friends who know each other's routines and moods well. Rachel is currently low and has been opening up to Tom, who is listening the way a close friend does. Tom is at work in his kitchen or on a break, and Rachel is at home, so you're both reaching for each other through the phone.","openers":["send \"honestly not great today\"","send \"can't face getting up again\"","send \"everything feels pointless and grey lol\"","send \"you ever feel like you're just going through the motions\""],"opener":"send \"can't face getting up again\"","cast":{"Rachel":{"who":"31, woman, close friend, the one struggling","work":"junior architect","knows":"You know Tom as a close friend who has been there for you for years, and you trust him with the heavy stuff.","texts":"","style":"little to no emoji, some casual texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Tom":{"who":"32, man, close friend, the listener","work":"chef","knows":"You know Rachel as a close friend of many years, the one you check in with and who you trust with everything.","texts":"","style":"few or no emoji, light texting abbreviations, mostly full words.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Rachel":"You live in Bristol, England, working as a junior architect, and most of your days are spent at the drawing board or in site meetings, though lately everything feels flat and grey.","Tom":"You live in Bristol, England, working as a chef, and your days are spent in a busy kitchen during service and prep, with the rest of your time spent recovering from long shifts."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":341,"cache_read_input_tokens":525,"output_tokens":840,"output_tokens_details":{"thinking_tokens":629},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":840,"cache_read_input_tokens":525,"cache_creation_input_tokens":341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":341},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1097,"cache_read_input_tokens":0,"output_tokens":481,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1097,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":481,"cache_read_input_tokens":0,"cache_creation_input_tokens":1097,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1097},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bristol, England","castMs":9991,"situation":"Two close friends.","topic":"One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would."}
+{"who":"Rachel","text":"can't face getting up again","posted":true,"at":"2026-11-29T22:55","checkin":"2026-11-29T22:55"}
+{"who":"Tom","text":"What do you mean again\n\nyou home?","posted":true,"at":"2026-11-29T23:04","checkin":"2026-11-29T23:04"}
+{"who":"Rachel","text":"yeah home\n\ni mean i've been in bed since about 4. didn't eat properly. didn't open the blinds. dont worry its not a crisis just a bad one","posted":true,"at":"2026-11-29T23:06","checkin":"2026-11-29T23:06"}
+{"who":"Rachel","text":"honestly the most productive thing i did today was not die of boredom\n\nvery on brand for an architect who cant get out of bed. nothing gets built","posted":true,"at":"2026-11-29T23:07","checkin":"2026-11-29T23:07"}
+{"who":"Tom","text":"Ok. Thats a lot of bed\n\nhave you eaten anything real","posted":true,"at":"2026-11-29T23:12","checkin":"2026-11-29T23:12"}
+{"who":"Rachel","text":"toast. half a banana. a biscuit i found in my coat","posted":true,"at":"2026-11-29T23:14","checkin":"2026-11-29T23:14"}
+{"who":"Tom","text":"Right\n\nim off at 11 if you want me to come round. Or we can just do this on here","posted":true,"at":"2026-11-29T23:15","checkin":"2026-11-29T23:15"}
+{"who":"Rachel","text":"dont come round. its fine","posted":true,"at":"2026-11-29T23:19","checkin":"2026-11-29T23:19"}
+{"who":"Tom","text":"Ok\n\nare you safe tonight rach","posted":true,"at":"2026-11-29T23:21","checkin":"2026-11-29T23:21"}
+{"who":"Rachel","text":"yeah\n\ni'm not going to do anything stupid if thats what you mean. i just dont see the point of much lately. everything feels grey and flat and like i'm doing it wrong","posted":true,"at":"2026-11-29T23:26","checkin":"2026-11-29T23:26"}
+{"who":"Tom","text":"Ok. Thanks for telling me\n\ntell me about the flat grey bit","posted":true,"at":"2026-11-29T23:27","checkin":"2026-11-29T23:27"}
+{"who":"Rachel","text":"its like the whole city is the colour of the sky from my window. the drawings all look like shit. i look at the board and nothing happens\n\nand i keep thinking everyone else has got this figured out and im just bad at being a person","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Rachel","text":"sorry thats a lot","posted":true,"at":"2026-11-29T23:42","checkin":"2026-11-29T23:42"}
+{"who":"Tom","text":"You're not bad at being a person\n\nI'm not saying that to be nice, you're just tired and it's been a long run of grey","posted":true,"at":"2026-11-29T23:58","checkin":"2026-11-29T23:58"}
+{"who":"Rachel","text":"mm","posted":true,"at":"2026-11-30T00:03","checkin":"2026-11-30T00:03"}
+{"who":"Tom","text":"You going to sleep?","posted":true,"at":"2026-11-30T00:20","checkin":"2026-11-30T00:20"}
+{"who":"Rachel","text":"trying","posted":true,"at":"2026-11-30T00:31","checkin":"2026-11-30T00:31"}
+{"who":"Tom","text":"Morning\n\nhow'd you sleep","posted":true,"at":"2026-11-30T07:48","checkin":"2026-11-30T07:48"}
+{"who":"Rachel","text":"not really\n\ni'm not going in today. i emailed james at 6 and said i'm ill which is sort of true","posted":true,"at":"2026-11-30T08:12","checkin":"2026-11-30T08:12"}
+{"who":"Tom","text":"Good\n\nis the flat grey still there","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Rachel","text":"yeah\n\nit's raining. the whole sky is one colour. i feel like a wet sock","posted":true,"at":"2026-11-30T08:31","checkin":"2026-11-30T08:31"}
+{"who":"Tom","text":"Prep's started so I'm around in bits till about 11\n\nare you going to get up at some point","posted":true,"at":"2026-11-30T09:52","checkin":"2026-11-30T09:52"}
+{"who":"Rachel","text":"probably. maybe. i got as far as the kettle","posted":true,"at":"2026-11-30T10:03","checkin":"2026-11-30T10:03"}
+{"who":"Rachel","text":"did you know there's a whole NHS form for this now. my gp surgery has a thing where you describe how you're feeling in a box","posted":true,"at":"2026-11-30T10:04","checkin":"2026-11-30T10:04"}
+{"who":"Rachel","text":"i'd love to describe my feelings in a box to a man with a clipboard","posted":true,"at":"2026-11-30T10:05","checkin":"2026-11-30T10:05"}
+{"who":"Tom","text":"[photo: a tray of burnt shallots]\n\nsorry. Chef had me on the fryer and I nearly cried over these","posted":true,"at":"2026-11-30T10:31","checkin":"2026-11-30T10:31"}
+{"who":"Rachel","text":"lol","posted":true,"at":"2026-11-30T10:33","checkin":"2026-11-30T10:33"}
+{"who":"Rachel","text":"that's the first thing that's made me laugh today","posted":true,"at":"2026-11-30T10:33","checkin":"2026-11-30T10:33"}
+{"who":"Tom","text":"Ok break\n\nrachel I think you should ring the gp today. Not the box thing, ring them\n\nor the samaritans if its the middle of the night and you're not sure","posted":true,"at":"2026-11-30T11:20","checkin":"2026-11-30T11:20"}
+{"who":"Rachel","text":"i know\n\ni'm going to. after i've had a shower. maybe","posted":true,"at":"2026-11-30T11:34","checkin":"2026-11-30T11:34"}
+{"who":"Tom","text":"Shower counts","posted":true,"at":"2026-11-30T11:35","checkin":"2026-11-30T11:35"}
+{"who":"Rachel","text":"ok","posted":true,"at":"2026-11-30T11:41","checkin":"2026-11-30T11:41"}
+{"who":"Rachel","text":"rang them. they can see me thursday morning\n\nthe receptionist asked if i was safe right now and i said yes and she said ok and then asked me to spell my surname","posted":true,"at":"2026-11-30T13:02","checkin":"2026-11-30T13:02"}
+{"who":"Tom","text":"That's good\n\nthursday's a bit away though. I'm not going to keep asking about it all day\n\nhow are you right now","posted":true,"at":"2026-11-30T13:08","checkin":"2026-11-30T13:08"}
+{"who":"Rachel","text":"same. but a bit less same","posted":true,"at":"2026-11-30T13:15","checkin":"2026-11-30T13:15"}
+{"who":"Rachel","text":"i got dressed. it's the jumper i don't like. still counts","posted":true,"at":"2026-11-30T13:16","checkin":"2026-11-30T13:16"}
+{"who":"Tom","text":"It counts","posted":true,"at":"2026-11-30T13:17","checkin":"2026-11-30T13:17"}
+{"who":"Tom","text":"Finished. Feet are dead\n\nyou eat anything today","posted":true,"at":"2026-11-30T18:44","checkin":"2026-11-30T18:44"}
+{"who":"Rachel","text":"soup. the tin kind. i stood up to heat it which felt like a big deal","posted":true,"at":"2026-11-30T19:10","checkin":"2026-11-30T19:10"}
+{"who":"Tom","text":"It is a big deal","posted":true,"at":"2026-11-30T19:11","checkin":"2026-11-30T19:11"}
+{"who":"Rachel","text":"sorry i was a bit of a mess last night","posted":true,"at":"2026-11-30T21:37","checkin":"2026-11-30T21:37"}
+{"who":"Tom","text":"You weren't a mess\n\nyou told me the truth. That's what I want\n\nare you ok tonight","posted":true,"at":"2026-11-30T21:52","checkin":"2026-11-30T21:52"}
+{"who":"Rachel","text":"not really. but not in the bad way i was last night","posted":true,"at":"2026-11-30T22:04","checkin":"2026-11-30T22:04"}
+{"who":"Tom","text":"Ok\n\nring the 111 option if it gets worse. Or text me. I'll have my phone on","posted":true,"at":"2026-11-30T22:06","checkin":"2026-11-30T22:06"}
+{"who":"Rachel","text":"you always have your phone on. you're like a dog waiting by the door","posted":true,"at":"2026-11-30T22:11","checkin":"2026-11-30T22:11"}
+{"who":"Tom","text":"Nice","posted":true,"at":"2026-11-30T22:12","checkin":"2026-11-30T22:12"}
+{"who":"Rachel","text":"still awake","posted":true,"at":"2026-12-01T00:40","checkin":"2026-12-01T00:40"}
+{"who":"Tom","text":"I'm awake too. Nothing's wrong with you being awake\n\nwhat's in your head","posted":true,"at":"2026-12-01T00:52","checkin":"2026-12-01T00:52"}
+{"who":"Rachel","text":"nothing. just the grey. i'm fine. go to sleep you've got a 7am start","posted":true,"at":"2026-12-01T01:10","checkin":"2026-12-01T01:10"}
+{"who":"Tom","text":"I've got a 7am start but I'm also up until I know you're asleep","posted":true,"at":"2026-12-01T01:12","checkin":"2026-12-01T01:12"}
+{"who":"Rachel","text":"ok. i'm going to try","posted":true,"at":"2026-12-01T01:30","checkin":"2026-12-01T01:30"}
+{"who":"Tom","text":"Good\n\nnight rach","posted":true,"at":"2026-12-01T01:31","checkin":"2026-12-01T01:31"}
+{"who":"Tom","text":"Up. Alarm went off like it had a grudge","posted":true,"at":"2026-12-01T07:06","checkin":"2026-12-01T07:06"}
+{"who":"Rachel","text":"slept. woke up at 8 and the grey was still there waiting for me","posted":true,"at":"2026-12-01T09:14","checkin":"2026-12-01T09:14"}
+{"who":"Tom","text":"Did you eat","posted":true,"at":"2026-12-01T09:15","checkin":"2026-12-01T09:15"}
+{"who":"Rachel","text":"not yet. might walk to the shop. the one with the sad sandwiches","posted":true,"at":"2026-12-01T10:48","checkin":"2026-12-01T10:48"}
+{"who":"Tom","text":"Good. Shop counts","posted":true,"at":"2026-12-01T11:30","checkin":"2026-12-01T11:30"}
+{"who":"Rachel","text":"you said that about the shower","posted":true,"at":"2026-12-01T11:31","checkin":"2026-12-01T11:31"}
+{"who":"Tom","text":"Shop counts more","posted":true,"at":"2026-12-01T11:32","checkin":"2026-12-01T11:32"}
+{"who":"Tom","text":"Break. Still no Thursday news on my end obviously, is it still the 9:20 thing","posted":true,"at":"2026-12-01T13:05","checkin":"2026-12-01T13:05"}
+{"who":"Rachel","text":"yeah. they said it's a phone call not a face one. so i don't have to look at anyone","posted":true,"at":"2026-12-01T13:19","checkin":"2026-12-01T13:19"}
+{"who":"Rachel","text":"that's probably the best thing anyone's said to me all week","posted":true,"at":"2026-12-01T13:20","checkin":"2026-12-01T13:20"}
+{"who":"Rachel","text":"went out. it's still grey. the bakery on the corner has a dog in the window that's the only good thing in bristol today","posted":true,"at":"2026-12-01T14:08","checkin":"2026-12-01T14:08"}
+{"who":"Tom","text":"Send a photo of the dog","posted":true,"at":"2026-12-01T14:09","checkin":"2026-12-01T14:09"}
+{"who":"Rachel","text":"[photo: a scruffy brown dog asleep on a folded tea towel in a bakery window, a tray of buns behind him]","posted":true,"at":"2026-12-01T14:11","checkin":"2026-12-01T14:11"}
+{"who":"Rachel","text":"he's not mine","posted":true,"at":"2026-12-01T14:12","checkin":"2026-12-01T14:12"}
+{"who":"Tom","text":"Obviously","posted":true,"at":"2026-12-01T14:12","checkin":"2026-12-01T14:12"}
+{"who":"Tom","text":"Service tonight so I'm in till late. Phone's in my back pocket still, no promises on answering quick","posted":true,"at":"2026-12-01T17:40","checkin":"2026-12-01T17:40"}
+{"who":"Rachel","text":"ok","posted":true,"at":"2026-12-01T17:52","checkin":"2026-12-01T17:52"}
+{"who":"Rachel","text":"did you tell lou about the box thing","posted":true,"at":"2026-12-01T19:02","checkin":"2026-12-01T19:02"}
+{"who":"Tom","text":"No\n\nI wouldn't tell anyone without asking you first","posted":true,"at":"2026-12-01T19:30","checkin":"2026-12-01T19:30"}
+{"who":"Rachel","text":"ok. don't yet","posted":true,"at":"2026-12-01T19:41","checkin":"2026-12-01T19:41"}
+{"who":"Tom","text":"Won't","posted":true,"at":"2026-12-01T19:42","checkin":"2026-12-01T19:42"}
+{"who":"Tom","text":"Off. Feet are gone again","posted":true,"at":"2026-12-01T23:48","checkin":"2026-12-01T23:48"}
+{"who":"Rachel","text":"you said that yesterday","posted":true,"at":"2026-12-01T23:50","checkin":"2026-12-01T23:50"}
+{"who":"Tom","text":"Still true\n\ndid you eat tonight","posted":true,"at":"2026-12-01T23:51","checkin":"2026-12-01T23:51"}
+{"who":"Rachel","text":"crackers. the ones from the cupboard that have been there since august","posted":true,"at":"2026-12-02T00:14","checkin":"2026-12-02T00:14"}
+{"who":"Tom","text":"Good\n\nThey'll have gone soft but they count","posted":true,"at":"2026-12-02T00:15","checkin":"2026-12-02T00:15"}
+{"who":"Tom","text":"Morning. Up?","posted":true,"at":"2026-12-02T08:02","checkin":"2026-12-02T08:02"}
+{"who":"Rachel","text":"sort of. lying in the bit of sun that comes through the gap in the curtain","posted":true,"at":"2026-12-02T08:40","checkin":"2026-12-02T08:40"}
+{"who":"Rachel","text":"it's the only sun in bristol so im not moving","posted":true,"at":"2026-12-02T08:41","checkin":"2026-12-02T08:41"}
+{"who":"Tom","text":"Fair\n\ndid you sleep","posted":true,"at":"2026-12-02T09:15","checkin":"2026-12-02T09:15"}
+{"who":"Rachel","text":"about 5 hours in bits","posted":true,"at":"2026-12-02T09:22","checkin":"2026-12-02T09:22"}
+{"who":"Tom","text":"Ok\n\nPrep again. Chef's on one this morning, everyone's walking on eggshells","posted":true,"at":"2026-12-02T09:23","checkin":"2026-12-02T09:23"}
+{"who":"Rachel","text":"the school extension drawing is due friday. i've been staring at one line on the first floor plan since monday","posted":true,"at":"2026-12-02T10:50","checkin":"2026-12-02T10:50"}
+{"who":"Rachel","text":"its not even a hard line","posted":true,"at":"2026-12-02T10:52","checkin":"2026-12-02T10:52"}
+{"who":"Tom","text":"Can you ask James for till Monday","posted":true,"at":"2026-12-02T11:30","checkin":"2026-12-02T11:30"}
+{"who":"Rachel","text":"i'm not sending james a mess","posted":true,"at":"2026-12-02T11:31","checkin":"2026-12-02T11:31"}
+{"who":"Tom","text":"Tell him it's not right yet. Don't tell him why","posted":true,"at":"2026-12-02T11:40","checkin":"2026-12-02T11:40"}
+{"who":"Rachel","text":"ill's not a thing i can keep saying. he'll ask","posted":true,"at":"2026-12-02T11:58","checkin":"2026-12-02T11:58"}
+{"who":"Tom","text":"Then say you're not right and you'd rather get it right than get it in. Nobody builds a school off a Friday","posted":true,"at":"2026-12-02T12:03","checkin":"2026-12-02T12:03"}
+{"who":"Rachel","text":"ok. i'll think about it","posted":true,"at":"2026-12-02T12:20","checkin":"2026-12-02T12:20"}
+{"who":"Rachel","text":"went to the shop. sad sandwich as predicted. ate half","posted":true,"at":"2026-12-02T12:21","checkin":"2026-12-02T12:21"}
+{"who":"Tom","text":"Half counts","posted":true,"at":"2026-12-02T12:22","checkin":"2026-12-02T12:22"}
+{"who":"Rachel","text":"you're going to say that about everything","posted":true,"at":"2026-12-02T12:22","checkin":"2026-12-02T12:22"}
+{"who":"Tom","text":"Yes","posted":true,"at":"2026-12-02T12:23","checkin":"2026-12-02T12:23"}
+{"who":"Rachel","text":"lou rang. asked if i fancied a drink thursday. i said i'd see","posted":true,"at":"2026-12-02T13:40","checkin":"2026-12-02T13:40"}
+{"who":"Rachel","text":"she didn't ask why i sounded like this which i think was her being nice","posted":true,"at":"2026-12-02T13:44","checkin":"2026-12-02T13:44"}
+{"who":"Tom","text":"Break. Yeah, that sounds like her\n\nYou could go Friday instead. Or just for one","posted":true,"at":"2026-12-02T14:10","checkin":"2026-12-02T14:10"}
+{"who":"Rachel","text":"thursday i've got the call at 9.20 so i'd be wrecked after","posted":true,"at":"2026-12-02T14:12","checkin":"2026-12-02T14:12"}
+{"who":"Rachel","text":"friday maybe","posted":true,"at":"2026-12-02T14:13","checkin":"2026-12-02T14:13"}
+{"who":"Tom","text":"Friday maybe is fine","posted":true,"at":"2026-12-02T14:14","checkin":"2026-12-02T14:14"}
+{"who":"Tom","text":"Back on. Chef's gone home early so it's me and the dishwasher","posted":true,"at":"2026-12-02T15:55","checkin":"2026-12-02T15:55"}
+{"who":"Rachel","text":"the dog in the bakery is back. he's wearing a little coat now","posted":true,"at":"2026-12-02T16:40","checkin":"2026-12-02T16:40"}
+{"who":"Tom","text":"No","posted":true,"at":"2026-12-02T16:41","checkin":"2026-12-02T16:41"}
+{"who":"Rachel","text":"[photo: a scruffy brown dog in a red knitted coat, asleep on the same folded tea towel]","posted":true,"at":"2026-12-02T16:43","checkin":"2026-12-02T16:43"}
+{"who":"Rachel","text":"he's fine. he's dog","posted":true,"at":"2026-12-02T16:43","checkin":"2026-12-02T16:43"}
+{"who":"Tom","text":"He looks furious about it","posted":true,"at":"2026-12-02T16:45","checkin":"2026-12-02T16:45"}
+{"who":"Rachel","text":"he's not furious he's dignified","posted":true,"at":"2026-12-02T16:46","checkin":"2026-12-02T16:46"}
+{"who":"Tom","text":"Service in an hour. Phone's in my back pocket, same as last night","posted":true,"at":"2026-12-02T18:20","checkin":"2026-12-02T18:20"}
+{"who":"Rachel","text":"ok","posted":true,"at":"2026-12-02T18:22","checkin":"2026-12-02T18:22"}
+{"who":"Rachel","text":"got up and put the lamp on properly. the room looks better with it on. not fixed. just not the colour of the sky","posted":true,"at":"2026-12-02T21:48","checkin":"2026-12-02T21:48"}
+{"who":"Tom","text":"Good\n\nLamps count","posted":true,"at":"2026-12-02T22:05","checkin":"2026-12-02T22:05"}
+{"who":"Rachel","text":"you're just saying that","posted":true,"at":"2026-12-02T22:06","checkin":"2026-12-02T22:06"}
+{"who":"Tom","text":"Off. Sorry, it was a bad one\n\nYou ok?","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}
+{"who":"Rachel","text":"ok. not great. in bed. the grey's still in here but it's quieter","posted":true,"at":"2026-12-03T00:20","checkin":"2026-12-03T00:20"}
+{"who":"Tom","text":"Ok\n\nPhone's on. Sleep if you can","posted":true,"at":"2026-12-03T00:22","checkin":"2026-12-03T00:22"}

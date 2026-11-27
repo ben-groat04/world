@@ -1,0 +1,136 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T08:05","complete":true,"rejects":0,"today":["Sophie","Sophie","Sophie"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1972,"cache_read_input_tokens":0,"output_tokens":3396,"output_tokens_details":{"thinking_tokens":1092},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1972,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3396,"cache_read_input_tokens":0,"cache_creation_input_tokens":1972,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1972},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4126,"cache_read_input_tokens":0,"output_tokens":2983,"output_tokens_details":{"thinking_tokens":1818},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4126,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2983,"cache_read_input_tokens":0,"cache_creation_input_tokens":4126,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4126},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":5292,"cache_read_input_tokens":0,"output_tokens":2772,"output_tokens_details":{"thinking_tokens":1687},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5292,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2772,"cache_read_input_tokens":0,"cache_creation_input_tokens":5292,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5292},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sophie","Matt"],"setting":"You two are in Adelaide, South Australia, texting from your own homes. You are close friends who tell each other everything, and you have known each other for years.","openers":["Text Matt \"okay I need to tell you something\"","Ask Matt if he has any gossip from this week","Send a laughing emoji and ask how his weekend went","Tell Matt you have a story from last night"],"opener":"Text Matt \"okay I need to tell you something\"","cast":{"Sophie":{"who":"34, woman, close friend","work":"architect","knows":"You know Matt, a close friend.","texts":"","style":"light emoji and some texting abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Matt":{"who":"33, man, close friend","work":"electrician","knows":"You know Sophie, a close friend.","texts":"","style":"light emoji and some texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Sophie":"You live in Adelaide, where your days are filled with architecture work, and you live on your own.","Matt":"You live in Adelaide, where your days are filled with electrical work, and you live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":860,"cache_read_input_tokens":0,"output_tokens":937,"output_tokens_details":{"thinking_tokens":731},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":860,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":937,"cache_read_input_tokens":0,"cache_creation_input_tokens":860,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":860},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1080,"cache_read_input_tokens":0,"output_tokens":1512,"output_tokens_details":{"thinking_tokens":1198},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1080,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1512,"cache_read_input_tokens":0,"cache_creation_input_tokens":1080,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1080},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Adelaide, Australia","castMs":14490,"situation":"Two close friends in their thirties who tell each other everything.","topic":"They swap graphic, explicit detail about sex they have had, including what they liked and what went wrong, with no filter and a lot of laughing."}
+{"who":"Sophie","text":"okay I need to tell you something","posted":true,"at":"2026-11-29T08:05","checkin":"2026-11-29T08:05"}
+{"who":"Matt","text":"oh no. ok go","posted":true,"at":"2026-11-29T08:06","checkin":"2026-11-29T08:06"}
+{"who":"Sophie","text":"remember the guy from the cycling group I mentioned? Dan","posted":true,"at":"2026-11-29T08:09","checkin":"2026-11-29T08:09"}
+{"who":"Matt","text":"the one with the e-bike","posted":true,"at":"2026-11-29T08:09","checkin":"2026-11-29T08:09"}
+{"who":"Sophie","text":"yes him. we went back to mine thursday","posted":true,"at":"2026-11-29T08:10","checkin":"2026-11-29T08:10"}
+{"who":"Matt","text":"and??","posted":true,"at":"2026-11-29T08:10","checkin":"2026-11-29T08:10"}
+{"who":"Sophie","text":"he's been going on for weeks about how good he is at foreplay and then he just went at one spot like he was trying to get a seized bolt loose. I had to literally stop him and show him what I meant","posted":true,"at":"2026-11-29T08:12","checkin":"2026-11-29T08:12"}
+{"who":"Matt","text":"lol that's not the worst thing. at least he was trying","posted":true,"at":"2026-11-29T08:13","checkin":"2026-11-29T08:13"}
+{"who":"Sophie","text":"it was so mechanical. like I was a drivetrain","posted":true,"at":"2026-11-29T08:13","checkin":"2026-11-29T08:13"}
+{"who":"Matt","text":"ok that's a great line I'm stealing it","posted":true,"at":"2026-11-29T08:14","checkin":"2026-11-29T08:14"}
+{"who":"Sophie","text":"you're not allowed","posted":true,"at":"2026-11-29T08:14","checkin":"2026-11-29T08:14"}
+{"who":"Matt","text":"too late. so did you finish or did you just give up and make tea","posted":true,"at":"2026-11-29T08:15","checkin":"2026-11-29T08:15"}
+{"who":"Sophie","text":"I finished, I'm not a saint. I just had to do most of the steering he was very proud of himself after","posted":true,"at":"2026-11-29T08:17","checkin":"2026-11-29T08:17"}
+{"who":"Matt","text":"is there a second date or is this a one-chain situation","posted":true,"at":"2026-11-29T08:18","checkin":"2026-11-29T08:18"}
+{"who":"Sophie","text":"honestly he's sweet and I'd probably see him again but the bar is in the basement now","posted":true,"at":"2026-11-29T08:20","checkin":"2026-11-29T08:20"}
+{"who":"Matt","text":"hahaha the basement. ok I'm going to need a rating system for these","posted":true,"at":"2026-11-29T08:21","checkin":"2026-11-29T08:21"}
+{"who":"Sophie","text":"you're going to make me make a spreadsheet aren't you","posted":true,"at":"2026-11-29T08:21","checkin":"2026-11-29T08:21"}
+{"who":"Matt","text":"you're an architect, you'd love a spreadsheet","posted":true,"at":"2026-11-29T08:22","checkin":"2026-11-29T08:22"}
+{"who":"Matt","text":"ok my turn to be the worst person you know. the one from last winter, Jess. she used to narrate","posted":true,"at":"2026-11-29T08:45","checkin":"2026-11-29T08:45"}
+{"who":"Sophie","text":"narrate what","posted":true,"at":"2026-11-29T08:46","checkin":"2026-11-29T08:46"}
+{"who":"Matt","text":"everything she was doing. like a documentary. \"and now I'm going to move my hand there\" while I'm trying to concentrate","posted":true,"at":"2026-11-29T08:47","checkin":"2026-11-29T08:47"}
+{"who":"Sophie","text":"omg 😂😂 what did you do","posted":true,"at":"2026-11-29T08:47","checkin":"2026-11-29T08:47"}
+{"who":"Matt","text":"I laughed so hard I had to pretend it was a sneeze and then she was offended and we didn't really recover from that","posted":true,"at":"2026-11-29T08:49","checkin":"2026-11-29T08:49"}
+{"who":"Sophie","text":"you are both chaos","posted":true,"at":"2026-11-29T08:50","checkin":"2026-11-29T08:50"}
+{"who":"Matt","text":"we were chaos. good times though. she was fun","posted":true,"at":"2026-11-29T08:50","checkin":"2026-11-29T08:50"}
+{"who":"Sophie","text":"ok so the real question is did you ever tell her she was being a bit much or just let it go","posted":true,"at":"2026-11-29T09:30","checkin":"2026-11-29T09:30"}
+{"who":"Matt","text":"I tried once. she said I was \"too in my head.\" which, fair, but also I'm trying to have sex, not do a mindfulness course","posted":true,"at":"2026-11-29T09:33","checkin":"2026-11-29T09:33"}
+{"who":"Sophie","text":"😂 this is why people need to talk about this stuff more","posted":true,"at":"2026-11-29T09:33","checkin":"2026-11-29T09:33"}
+{"who":"Matt","text":"we are talking about it. we're doing great","posted":true,"at":"2026-11-29T09:34","checkin":"2026-11-29T09:34"}
+{"who":"Sophie","text":"my brain is fried. I've been on a facade for a hospital job since 6am and the consultant keeps changing the glazing ratio","posted":true,"at":"2026-11-29T11:02","checkin":"2026-11-29T11:02"}
+{"who":"Matt","text":"that's brutal on a sunday","posted":true,"at":"2026-11-29T11:03","checkin":"2026-11-29T11:03"}
+{"who":"Sophie","text":"he said \"I'm sure it'll be fine\" and then sent me four versions at once","posted":true,"at":"2026-11-29T11:04","checkin":"2026-11-29T11:04"}
+{"who":"Matt","text":"the classic. I've got a board in a cellar in Glenelg that's supposed to be finished by tomorrow and the owner keeps asking if it's \"basically done\"","posted":true,"at":"2026-11-29T11:05","checkin":"2026-11-29T11:05"}
+{"who":"Sophie","text":"is it?","posted":true,"at":"2026-11-29T11:06","checkin":"2026-11-29T11:06"}
+{"who":"Matt","text":"it's a board. it's never basically done","posted":true,"at":"2026-11-29T11:06","checkin":"2026-11-29T11:06"}
+{"who":"Sophie","text":"you should put that on your business card","posted":true,"at":"2026-11-29T11:08","checkin":"2026-11-29T11:08"}
+{"who":"Matt","text":"you still in the office or home","posted":true,"at":"2026-11-29T14:20","checkin":"2026-11-29T14:20"}
+{"who":"Sophie","text":"home. I gave up around 1 and ate half a sleeve of crackers standing at the bench","posted":true,"at":"2026-11-29T14:45","checkin":"2026-11-29T14:45"}
+{"who":"Matt","text":"living the dream","posted":true,"at":"2026-11-29T14:46","checkin":"2026-11-29T14:46"}
+{"who":"Sophie","text":"you're one to talk, you ate cold pizza for breakfast on Wednesday","posted":true,"at":"2026-11-29T14:46","checkin":"2026-11-29T14:46"}
+{"who":"Matt","text":"that was a snack, I'm not going to dignify it as breakfast","posted":true,"at":"2026-11-29T14:47","checkin":"2026-11-29T14:47"}
+{"who":"Sophie","text":"Dan just texted me asking if I want to go on a ride next Saturday","posted":true,"at":"2026-11-29T16:10","checkin":"2026-11-29T16:10"}
+{"who":"Matt","text":"are you going","posted":true,"at":"2026-11-29T16:11","checkin":"2026-11-29T16:11"}
+{"who":"Sophie","text":"I said maybe. he sent a photo of his new light with the caption \"for the dark bits\"","posted":true,"at":"2026-11-29T16:13","checkin":"2026-11-29T16:13"}
+{"who":"Matt","text":"[photo: a bike headlight, mounted at a slightly crooked angle]","posted":true,"at":"2026-11-29T16:13","checkin":"2026-11-29T16:13"}
+{"who":"Matt","text":"I'm not even going to comment on the angle","posted":true,"at":"2026-11-29T16:14","checkin":"2026-11-29T16:14"}
+{"who":"Sophie","text":"it's very crooked I think I might go just so I can fix it","posted":true,"at":"2026-11-29T16:15","checkin":"2026-11-29T16:15"}
+{"who":"Matt","text":"you're going to fix his bike and his love life in one go","posted":true,"at":"2026-11-29T16:16","checkin":"2026-11-29T16:16"}
+{"who":"Sophie","text":"don't say love life. it's a bolt situation","posted":true,"at":"2026-11-29T16:16","checkin":"2026-11-29T16:16"}
+{"who":"Matt","text":"ok I'm making a curry and it's going to be too hot. I'm already sweating","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Sophie","text":"you always say that and then you eat the whole pot","posted":true,"at":"2026-11-29T19:41","checkin":"2026-11-29T19:41"}
+{"who":"Matt","text":"it's a tradition. dinner is a dare","posted":true,"at":"2026-11-29T19:42","checkin":"2026-11-29T19:42"}
+{"who":"Sophie","text":"I'm having toast. I'm not in the mood to be dared","posted":true,"at":"2026-11-29T19:45","checkin":"2026-11-29T19:45"}
+{"who":"Matt","text":"boring but respectable","posted":true,"at":"2026-11-29T19:46","checkin":"2026-11-29T19:46"}
+{"who":"Sophie","text":"ok real question, do you think it's weird that I'm more annoyed about the bad sex than the actual bad date part?","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Matt","text":"no. the date was probably fine. the sex was the bit you were looking forward to","posted":true,"at":"2026-11-29T21:18","checkin":"2026-11-29T21:18"}
+{"who":"Sophie","text":"yes exactly. like I wanted to have a nice time and I ended up giving a tutorial","posted":true,"at":"2026-11-29T21:18","checkin":"2026-11-29T21:18"}
+{"who":"Matt","text":"you're allowed to be annoyed. you can also laugh about it. that's what we're doing","posted":true,"at":"2026-11-29T21:20","checkin":"2026-11-29T21:20"}
+{"who":"Sophie","text":"we are doing that","posted":true,"at":"2026-11-29T21:21","checkin":"2026-11-29T21:21"}
+{"who":"Matt","text":"send me the basement rating when you've done the spreadsheet","posted":true,"at":"2026-11-29T21:24","checkin":"2026-11-29T21:24"}
+{"who":"Sophie","text":"I will not be making a spreadsheet","posted":true,"at":"2026-11-29T21:25","checkin":"2026-11-29T21:25"}
+{"who":"Matt","text":"you already made the first column in your head","posted":true,"at":"2026-11-29T21:25","checkin":"2026-11-29T21:25"}
+{"who":"Sophie","text":"...fine. I did. it's called \"does he know where the bolts are\"","posted":true,"at":"2026-11-29T21:26","checkin":"2026-11-29T21:26"}
+{"who":"Matt","text":"ok I'm going to bed, the cellar guy wants me there at 7 and I'd like to be functional","posted":true,"at":"2026-11-29T22:50","checkin":"2026-11-29T22:50"}
+{"who":"Sophie","text":"good luck with basically done","posted":true,"at":"2026-11-29T22:51","checkin":"2026-11-29T22:51"}
+{"who":"Matt","text":"night soph","posted":true,"at":"2026-11-29T22:51","checkin":"2026-11-29T22:51"}
+{"who":"Sophie","text":"night","posted":true,"at":"2026-11-29T22:52","checkin":"2026-11-29T22:52"}
+{"who":"Matt","text":"on site. cellar guy has made himself a coffee and not me","posted":true,"at":"2026-11-30T07:02","checkin":"2026-11-30T07:02"}
+{"who":"Sophie","text":"rude. make him hold the level","posted":true,"at":"2026-11-30T07:03","checkin":"2026-11-30T07:03"}
+{"who":"Matt","text":"he's holding the level. I'm holding the ladder. this is where we're at","posted":true,"at":"2026-11-30T07:10","checkin":"2026-11-30T07:10"}
+{"who":"Sophie","text":"consultant has now sent five versions. the glazing ratio has become a personality","posted":true,"at":"2026-11-30T09:14","checkin":"2026-11-30T09:14"}
+{"who":"Matt","text":"you going to pick one or wait for a sixth","posted":true,"at":"2026-11-30T09:15","checkin":"2026-11-30T09:15"}
+{"who":"Sophie","text":"I'm going to pick the one where I can tell him it's fine and he can't argue, because he sent it at 4am","posted":true,"at":"2026-11-30T09:16","checkin":"2026-11-30T09:16"}
+{"who":"Matt","text":"[photo: a cellar wall with a run of new cable clipped along a beam, the board mounted on the far wall]","posted":true,"at":"2026-11-30T11:40","checkin":"2026-11-30T11:40"}
+{"who":"Matt","text":"basically done","posted":true,"at":"2026-11-30T11:40","checkin":"2026-11-30T11:40"}
+{"who":"Sophie","text":"it's a board","posted":true,"at":"2026-11-30T11:41","checkin":"2026-11-30T11:41"}
+{"who":"Matt","text":"it's a board that's basically done. owner's going to be thrilled","posted":true,"at":"2026-11-30T11:41","checkin":"2026-11-30T11:41"}
+{"who":"Sophie","text":"ok glazing is sorted. he's happy. I'm mostly happy. lunch is sad crackers again","posted":true,"at":"2026-11-30T12:55","checkin":"2026-11-30T12:55"}
+{"who":"Matt","text":"go get real food. walk to the bakery on Rundle or something","posted":true,"at":"2026-11-30T12:56","checkin":"2026-11-30T12:56"}
+{"who":"Sophie","text":"I'm not walking in 34 degrees for a pie","posted":true,"at":"2026-11-30T12:58","checkin":"2026-11-30T12:58"}
+{"who":"Matt","text":"it's a pie. it's worth it","posted":true,"at":"2026-11-30T12:58","checkin":"2026-11-30T12:58"}
+{"who":"Sophie","text":"did you actually eat lunch","posted":true,"at":"2026-11-30T13:20","checkin":"2026-11-30T13:20"}
+{"who":"Matt","text":"had a sandwich in the ute. egg, sad, I'm choosing to be grateful for it","posted":true,"at":"2026-11-30T13:22","checkin":"2026-11-30T13:22"}
+{"who":"Sophie","text":"Dan texted again asking what gear I'm bringing Saturday. I don't have gear. I have a helmet and a spare tube","posted":true,"at":"2026-11-30T15:33","checkin":"2026-11-30T15:33"}
+{"who":"Matt","text":"you have a spare tube and you're going to fix his light","posted":true,"at":"2026-11-30T15:34","checkin":"2026-11-30T15:34"}
+{"who":"Sophie","text":"it's a whole plan now","posted":true,"at":"2026-11-30T15:35","checkin":"2026-11-30T15:35"}
+{"who":"Matt","text":"off. cellar guy said \"good job mate\" and then asked if I could look at the garage too","posted":true,"at":"2026-11-30T17:50","checkin":"2026-11-30T17:50"}
+{"who":"Sophie","text":"the garage is never basically done either","posted":true,"at":"2026-11-30T17:51","checkin":"2026-11-30T17:51"}
+{"who":"Matt","text":"it's not even a garage, it's a shed with ambitions","posted":true,"at":"2026-11-30T17:51","checkin":"2026-11-30T17:51"}
+{"who":"Sophie","text":"did you say yes","posted":true,"at":"2026-11-30T18:30","checkin":"2026-11-30T18:30"}
+{"who":"Matt","text":"I said I'd look at it. which is what I said about the cellar","posted":true,"at":"2026-11-30T18:33","checkin":"2026-11-30T18:33"}
+{"who":"Sophie","text":"pushover","posted":true,"at":"2026-11-30T18:34","checkin":"2026-11-30T18:34"}
+{"who":"Matt","text":"ok I'm a pushover. I'm also starving so it's eggs. no curry. I've learned","posted":true,"at":"2026-11-30T18:35","checkin":"2026-11-30T18:35"}
+{"who":"Sophie","text":"good. toast is also an option, I'll let you know if I die","posted":true,"at":"2026-11-30T18:36","checkin":"2026-11-30T18:36"}
+{"who":"Sophie","text":"you still awake","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Matt","text":"yeah, sitting here with my legs aching from the ladder","posted":true,"at":"2026-11-30T21:58","checkin":"2026-11-30T21:58"}
+{"who":"Sophie","text":"the bolt question is still open. I'm not making a spreadsheet","posted":true,"at":"2026-11-30T21:59","checkin":"2026-11-30T21:59"}
+{"who":"Matt","text":"you've made it","posted":true,"at":"2026-11-30T22:01","checkin":"2026-11-30T22:01"}
+{"who":"Sophie","text":"it's got two rows. one is Dan. the other is \"bike shop, for emergencies\"","posted":true,"at":"2026-11-30T22:02","checkin":"2026-11-30T22:02"}
+{"who":"Matt","text":"the bike shop row is the most romantic thing I've heard all week","posted":true,"at":"2026-11-30T22:04","checkin":"2026-11-30T22:04"}
+{"who":"Sophie","text":"go to bed matt","posted":true,"at":"2026-11-30T22:05","checkin":"2026-11-30T22:05"}
+{"who":"Matt","text":"going. garage can wait till Tuesday","posted":true,"at":"2026-11-30T22:05","checkin":"2026-11-30T22:05"}
+{"who":"Sophie","text":"morning. consultant has sent a sixth one","posted":true,"at":"2026-12-01T08:12","checkin":"2026-12-01T08:12"}
+{"who":"Matt","text":"no","posted":true,"at":"2026-12-01T08:14","checkin":"2026-12-01T08:14"}
+{"who":"Sophie","text":"he's calling it the \"revised revised\"","posted":true,"at":"2026-12-01T08:14","checkin":"2026-12-01T08:14"}
+{"who":"Matt","text":"is it any different","posted":true,"at":"2026-12-01T08:15","checkin":"2026-12-01T08:15"}
+{"who":"Sophie","text":"he moved one window 3mm and changed \"approx\" to \"approximately\"","posted":true,"at":"2026-12-01T08:15","checkin":"2026-12-01T08:15"}
+{"who":"Matt","text":"that's a full redesign then","posted":true,"at":"2026-12-01T08:17","checkin":"2026-12-01T08:17"}
+{"who":"Matt","text":"at the garage. owner says the back wall is warm to touch and he's \"not sure why\". I'm going to look at it with a lot of suspicion","posted":true,"at":"2026-12-01T08:30","checkin":"2026-12-01T08:30"}
+{"who":"Matt","text":"[photo: a junction box with the cover off, three wires that don't match the colours on the drawing]","posted":true,"at":"2026-12-01T10:47","checkin":"2026-12-01T10:47"}
+{"who":"Matt","text":"the wall is not warm for no reason","posted":true,"at":"2026-12-01T10:47","checkin":"2026-12-01T10:47"}
+{"who":"Sophie","text":"is it going to kill you","posted":true,"at":"2026-12-01T10:58","checkin":"2026-12-01T10:58"}
+{"who":"Matt","text":"not today. I've isolated it and I'm standing here in a state of fear","posted":true,"at":"2026-12-01T11:02","checkin":"2026-12-01T11:02"}
+{"who":"Sophie","text":"good. be scared, that's how you stay alive on a job","posted":true,"at":"2026-12-01T11:03","checkin":"2026-12-01T11:03"}
+{"who":"Sophie","text":"Dan asked again. I looked up his bike shop and apparently he's in there every Saturday and they know him by name. I might be developing feelings for a bike shop","posted":true,"at":"2026-12-01T12:30","checkin":"2026-12-01T12:30"}
+{"who":"Matt","text":"you're doing the bike shop row now","posted":true,"at":"2026-12-01T12:31","checkin":"2026-12-01T12:31"}
+{"who":"Matt","text":"had a sandwich in the ute again. I'm becoming a sandwich person","posted":true,"at":"2026-12-01T12:45","checkin":"2026-12-01T12:45"}
+{"who":"Sophie","text":"you have to eat something that isn't from the ute. I'm worried","posted":true,"at":"2026-12-01T13:10","checkin":"2026-12-01T13:10"}
+{"who":"Matt","text":"the garage has a fridge. it's full of someone else's beer","posted":true,"at":"2026-12-01T13:12","checkin":"2026-12-01T13:12"}
+{"who":"Sophie","text":"I'm going to be honest, I'm thinking about cancelling Saturday. not because of him. just the thought of 6am with a crooked light and a spare tube","posted":true,"at":"2026-12-01T15:02","checkin":"2026-12-01T15:02"}
+{"who":"Matt","text":"you can go, fix it, and then pretend you were always going to. that's the plan","posted":true,"at":"2026-12-01T15:04","checkin":"2026-12-01T15:04"}
+{"who":"Sophie","text":"that's an awful plan","posted":true,"at":"2026-12-01T15:04","checkin":"2026-12-01T15:04"}
+{"who":"Matt","text":"good plan, awful name","posted":true,"at":"2026-12-01T15:05","checkin":"2026-12-01T15:05"}
+{"who":"Matt","text":"done for today. there's a wire in the wall that needs replacing and I have to go back Thursday. I said I'd look at it, I didn't say I'd fix it","posted":true,"at":"2026-12-01T17:30","checkin":"2026-12-01T17:30"}
+{"who":"Sophie","text":"you said that on Monday too","posted":true,"at":"2026-12-01T17:31","checkin":"2026-12-01T17:31"}
+{"who":"Matt","text":"that was the cellar. different thing","posted":true,"at":"2026-12-01T17:31","checkin":"2026-12-01T17:31"}
+{"who":"Sophie","text":"dinner?","posted":true,"at":"2026-12-01T19:50","checkin":"2026-12-01T19:50"}
+{"who":"Matt","text":"pasta. not curry. recovered","posted":true,"at":"2026-12-01T19:58","checkin":"2026-12-01T19:58"}
+{"who":"Sophie","text":"proud of you. toast again","posted":true,"at":"2026-12-01T19:59","checkin":"2026-12-01T19:59"}
+{"who":"Sophie","text":"Dan just sent a pic of the crooked light, slightly less crooked. he says he fixed it. he did not fix it","posted":true,"at":"2026-12-01T21:30","checkin":"2026-12-01T21:30"}
+{"who":"Matt","text":"he's making progress. like the cellar guy","posted":true,"at":"2026-12-01T21:32","checkin":"2026-12-01T21:32"}
+{"who":"Sophie","text":"I'm going to leave it alone and see if I can hold off until Saturday","posted":true,"at":"2026-12-01T21:33","checkin":"2026-12-01T21:33"}
+{"who":"Matt","text":"ok bed. garage wire is a Thursday problem","posted":true,"at":"2026-12-01T22:40","checkin":"2026-12-01T22:40"}
+{"who":"Sophie","text":"night matt","posted":true,"at":"2026-12-01T22:41","checkin":"2026-12-01T22:41"}

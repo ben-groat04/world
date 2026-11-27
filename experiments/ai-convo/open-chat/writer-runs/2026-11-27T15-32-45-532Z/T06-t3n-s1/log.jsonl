@@ -1,0 +1,87 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T10:35","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1938,"cache_read_input_tokens":0,"output_tokens":3738,"output_tokens_details":{"thinking_tokens":2634},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1938,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3738,"cache_read_input_tokens":0,"cache_creation_input_tokens":1938,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1938},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2916,"cache_read_input_tokens":0,"output_tokens":2985,"output_tokens_details":{"thinking_tokens":2002},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2916,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2985,"cache_read_input_tokens":0,"cache_creation_input_tokens":2916,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2916},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3895,"cache_read_input_tokens":0,"output_tokens":2313,"output_tokens_details":{"thinking_tokens":1511},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3895,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2313,"cache_read_input_tokens":0,"cache_creation_input_tokens":3895,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3895},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Daniel","Helen"],"setting":"You are both in Bristol, England, messaging each other about abortion, a subject you have argued over before. You are brother and sister, and you have known each other since childhood.","openers":["Ask Helen what she thinks about the abortion debate","Tell Helen you would rather not fight about this again","Send Helen an apology for what you said last time","Suggest you talk about it properly in person"],"opener":"Ask Helen what she thinks about the abortion debate","cast":{"Daniel":{"who":"44, man, the brother","work":"plumber","knows":"You have Helen as your sister, known since childhood.","texts":"","style":"none","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Helen":{"who":"41, woman, the sister","work":"midwife","knows":"You have Daniel as your brother, known since childhood.","texts":"","style":"occasional emoji, few abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Daniel":"You live alone in Bristol, England, and your days are filled with plumbing work.","Helen":"You live alone in Bristol, England, and your days are filled with midwifery work."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":341,"cache_read_input_tokens":512,"output_tokens":897,"output_tokens_details":{"thinking_tokens":685},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":341,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":897,"cache_read_input_tokens":512,"cache_creation_input_tokens":341,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":341},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1074,"cache_read_input_tokens":0,"output_tokens":1733,"output_tokens_details":{"thinking_tokens":1423},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1074,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1733,"cache_read_input_tokens":0,"cache_creation_input_tokens":1074,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1074},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Bristol, England","castMs":17231,"situation":"A brother and sister, both adults, who fell out over politics before.","topic":"Abortion: they are furious, swearing at each other, bringing up old family grudges, and saying they might stop speaking."}
+{"who":"Daniel","text":"You about later? Want to ask you something properly about the abortion stuff, not the bit mum posted","posted":true,"at":"2026-11-30T10:35","checkin":"2026-11-30T10:35"}
+{"who":"Helen","text":"Depends what properly means I'm on a late til 9","posted":true,"at":"2026-11-30T10:41","checkin":"2026-11-30T10:41"}
+{"who":"Daniel","text":"Just what you actually think. Not what mum thinks you think","posted":true,"at":"2026-11-30T10:43","checkin":"2026-11-30T10:43"}
+{"who":"Helen","text":"I'm at work Dan. can't do this now","posted":true,"at":"2026-11-30T11:02","checkin":"2026-11-30T11:02"}
+{"who":"Daniel","text":"Ok","posted":true,"at":"2026-11-30T11:05","checkin":"2026-11-30T11:05"}
+{"who":"Daniel","text":"You can answer in one line","posted":true,"at":"2026-11-30T13:20","checkin":"2026-11-30T13:20"}
+{"who":"Helen","text":"maybe. I've got a woman in labour who's had a rough afternoon so my head's not in it","posted":true,"at":"2026-11-30T13:58","checkin":"2026-11-30T13:58"}
+{"who":"Helen","text":"home. go on then","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Daniel","text":"Right. I think it should be legal up to a point and I think that point is earlier than where it is now. That's it","posted":true,"at":"2026-11-30T21:44","checkin":"2026-11-30T21:44"}
+{"who":"Helen","text":"Earlier than what. Earlier than 24 weeks? Did you read that off a leaflet","posted":true,"at":"2026-11-30T21:46","checkin":"2026-11-30T21:46"}
+{"who":"Daniel","text":"No I didn't read it off a leaflet. I fit boilers all day, I read plenty","posted":true,"at":"2026-11-30T21:47","checkin":"2026-11-30T21:47"}
+{"who":"Helen","text":"you don't know what happens at 22 weeks. you've never sat with anyone at 22 weeks","posted":true,"at":"2026-11-30T21:49","checkin":"2026-11-30T21:49"}
+{"who":"Daniel","text":"And you're going to tell me what it's like because you've sat with plenty of people","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Helen","text":"I'm telling you what I've seen. which you haven't. that's the difference Dan","posted":true,"at":"2026-11-30T21:52","checkin":"2026-11-30T21:52"}
+{"who":"Daniel","text":"So because you've seen it you get the final say? That's not how this works","posted":true,"at":"2026-11-30T21:55","checkin":"2026-11-30T21:55"}
+{"who":"Helen","text":"never said final say. I've held babies that didn't make it. you don't get to talk about \"early\" like it's a line on a plan","posted":true,"at":"2026-11-30T21:57","checkin":"2026-11-30T21:57"}
+{"who":"Daniel","text":"I'm not lecturing you. I asked what you think and you're doing the thing you always do","posted":true,"at":"2026-11-30T22:03","checkin":"2026-11-30T22:03"}
+{"who":"Daniel","text":"Where you make it about how much more you know than everyone","posted":true,"at":"2026-11-30T22:04","checkin":"2026-11-30T22:04"}
+{"who":"Helen","text":"Oh here we go. \"the thing I always do\". like when you stopped speaking to me for three years over the house","posted":true,"at":"2026-11-30T22:06","checkin":"2026-11-30T22:06"}
+{"who":"Daniel","text":"The house was dad's. You wanted it sold the week after the funeral","posted":true,"at":"2026-11-30T22:09","checkin":"2026-11-30T22:09"}
+{"who":"Helen","text":"I wanted it sold because you'd have drunk it. and you still didn't speak to me for three years. so don't do the wounded thing","posted":true,"at":"2026-11-30T22:10","checkin":"2026-11-30T22:10"}
+{"who":"Daniel","text":"Fuck off Helen","posted":true,"at":"2026-11-30T22:12","checkin":"2026-11-30T22:12"}
+{"who":"Helen","text":"fuck off yourself","posted":true,"at":"2026-11-30T22:13","checkin":"2026-11-30T22:13"}
+{"who":"Daniel","text":"Every conversation we have ends with you deciding I'm an idiot","posted":true,"at":"2026-11-30T22:14","checkin":"2026-11-30T22:14"}
+{"who":"Daniel","text":"I'd sooner not talk to you at all then","posted":true,"at":"2026-11-30T22:14","checkin":"2026-11-30T22:14"}
+{"who":"Helen","text":"fine. didn't realise we were on speaking terms","posted":true,"at":"2026-11-30T22:16","checkin":"2026-11-30T22:16"}
+{"who":"","react":"😐","to":25,"posted":false,"at":"2026-11-30T22:16"}
+{"who":"Daniel","text":"Dont start with that","posted":true,"at":"2026-11-30T22:19","checkin":"2026-11-30T22:19"}
+{"who":"Helen","text":"I'm not starting anything. I'm saying what's true. you always go quiet when you lose","posted":true,"at":"2026-11-30T22:31","checkin":"2026-11-30T22:31"}
+{"who":"Daniel","text":"That was out of order, the drink thing. Sorry","posted":true,"at":"2026-12-01T00:40","checkin":"2026-12-01T00:40"}
+{"who":"Daniel","text":"Still think you're wrong about 22 weeks though","posted":true,"at":"2026-12-01T00:41","checkin":"2026-12-01T00:41"}
+{"who":"Helen","text":"still wrong about 22 weeks? go on then","posted":true,"at":"2026-12-01T08:12","checkin":"2026-12-01T08:12"}
+{"who":"Daniel","text":"Not saying you're wrong about what you've seen. I just don't think I can argue about a number I haven't sat with","posted":true,"at":"2026-12-01T08:16","checkin":"2026-12-01T08:16"}
+{"who":"Daniel","text":"And I shouldn't have gone for the drink thing","posted":true,"at":"2026-12-01T08:17","checkin":"2026-12-01T08:17"}
+{"who":"Helen","text":"you said sorry already","posted":true,"at":"2026-12-01T08:21","checkin":"2026-12-01T08:21"}
+{"who":"Helen","text":"it's ok","posted":true,"at":"2026-12-01T08:22","checkin":"2026-12-01T08:22"}
+{"who":"Helen","text":"on earlies today, then nights thurs. can't do long texts","posted":true,"at":"2026-12-01T08:31","checkin":"2026-12-01T08:31"}
+{"who":"Daniel","text":"Mum rang. Wants both of us at hers Sunday, she's doing the gammon","posted":true,"at":"2026-12-01T08:44","checkin":"2026-12-01T08:44"}
+{"who":"Daniel","text":"I said I'd ask. So I'm asking","posted":true,"at":"2026-12-01T08:45","checkin":"2026-12-01T08:45"}
+{"who":"Helen","text":"tell her yes. I'll bring the crumble she likes","posted":true,"at":"2026-12-01T09:02","checkin":"2026-12-01T09:02"}
+{"who":"Helen","text":"don't tell her about this","posted":true,"at":"2026-12-01T09:03","checkin":"2026-12-01T09:03"}
+{"who":"Daniel","text":"She's not going to ask","posted":true,"at":"2026-12-01T09:05","checkin":"2026-12-01T09:05"}
+{"who":"Daniel","text":"She won't ask about anything. She'll just put the gravy on the table and look at us both","posted":true,"at":"2026-12-01T09:06","checkin":"2026-12-01T09:06"}
+{"who":"Daniel","text":"Fishponds job turned out to be a cracked heat exchanger. Two grand. Bloke went white","posted":true,"at":"2026-12-01T13:17","checkin":"2026-12-01T13:17"}
+{"who":"Helen","text":"he'll get over it","posted":true,"at":"2026-12-01T13:19","checkin":"2026-12-01T13:19"}
+{"who":"Helen","text":"can I say something about 22 weeks without you starting","posted":true,"at":"2026-12-01T21:18","checkin":"2026-12-01T21:18"}
+{"who":"Daniel","text":"Go on","posted":true,"at":"2026-12-01T21:19","checkin":"2026-12-01T21:19"}
+{"who":"Helen","text":"I'm not saying you can't have the view. I just wish you'd think about what a 22 week baby is actually like when they're born. the tiny hands. that's what I see when people say \"earlier\"","posted":true,"at":"2026-12-01T21:26","checkin":"2026-12-01T21:26"}
+{"who":"Helen","text":"I don't know what I think about where the line is. I know what I'd want for someone I was sitting with. and I know that's not the same as what should be law. it's a mess","posted":true,"at":"2026-12-01T21:27","checkin":"2026-12-01T21:27"}
+{"who":"Daniel","text":"That's the most you've said about it in ages","posted":true,"at":"2026-12-01T21:34","checkin":"2026-12-01T21:34"}
+{"who":"Daniel","text":"I don't think you have to know where the line is to say it's a mess. I'm not sure where mine is. I just don't like that it moves with what the neonatal unit can keep alive","posted":true,"at":"2026-12-01T21:35","checkin":"2026-12-01T21:35"}
+{"who":"Helen","text":"that's fair. the units keep moving the goalposts","posted":true,"at":"2026-12-01T21:41","checkin":"2026-12-01T21:41"}
+{"who":"Helen","text":"don't make it a whole thing","posted":true,"at":"2026-12-01T21:42","checkin":"2026-12-01T21:42"}
+{"who":"Daniel","text":"Wasn't going to","posted":true,"at":"2026-12-01T21:50","checkin":"2026-12-01T21:50"}
+{"who":"Daniel","text":"You still up","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Helen","text":"no. on the sofa with the telly on mute","posted":true,"at":"2026-12-02T00:20","checkin":"2026-12-02T00:20"}
+{"who":"Helen","text":"is it just us Sunday or is Sam coming","posted":true,"at":"2026-12-02T00:21","checkin":"2026-12-02T00:21"}
+{"who":"Daniel","text":"Just us. She said bring the good wine not the Lidl one","posted":true,"at":"2026-12-02T00:23","checkin":"2026-12-02T00:23"}
+{"who":"Helen","text":"we're not bringing the good wine","posted":true,"at":"2026-12-02T00:24","checkin":"2026-12-02T00:24"}
+{"who":"Daniel","text":"Obviously","posted":true,"at":"2026-12-02T00:24","checkin":"2026-12-02T00:24"}
+{"who":"","react":"😂","to":58,"posted":false,"at":"2026-12-02T00:24"}
+{"who":"Daniel","text":"Scraped myself out of bed. Westbury job, someone's combi's dead","posted":true,"at":"2026-12-02T07:52","checkin":"2026-12-02T07:52"}
+{"who":"Helen","text":"off today. going back to sleep till 10 and not apologising for it","posted":true,"at":"2026-12-02T08:10","checkin":"2026-12-02T08:10"}
+{"who":"Daniel","text":"Good for you","posted":true,"at":"2026-12-02T08:11","checkin":"2026-12-02T08:11"}
+{"who":"Daniel","text":"Turned out to be a dead pump not a dead boiler. Forty quid and a grateful old lady who gave me a biscuit tin. Eating the shortbread now","posted":true,"at":"2026-12-02T11:34","checkin":"2026-12-02T11:34"}
+{"who":"Helen","text":"she gave you the tin?? that's the good stuff","posted":true,"at":"2026-12-02T11:36","checkin":"2026-12-02T11:36"}
+{"who":"Daniel","text":"Mostly. There's one of those dry ones with sugar on top that nobody wants","posted":true,"at":"2026-12-02T11:36","checkin":"2026-12-02T11:36"}
+{"who":"Helen","text":"you can bring the tin Sunday. mum will love it, she's been on about her tin for years","posted":true,"at":"2026-12-02T13:02","checkin":"2026-12-02T13:02"}
+{"who":"Daniel","text":"Not taking a biscuit tin to mum's. She'll think I'm doing her a favour","posted":true,"at":"2026-12-02T13:04","checkin":"2026-12-02T13:04"}
+{"who":"Helen","text":"you are though","posted":true,"at":"2026-12-02T13:05","checkin":"2026-12-02T13:05"}
+{"who":"Helen","text":"did the sink sort itself out or are you going to make me ask again","posted":true,"at":"2026-12-02T15:47","checkin":"2026-12-02T15:47"}
+{"who":"Daniel","text":"Which sink. The kitchen one's fine. I did the bathroom one Monday, you'd know that if you'd come round like you said you would","posted":true,"at":"2026-12-02T15:52","checkin":"2026-12-02T15:52"}
+{"who":"Helen","text":"I said I'd come round. I didn't say which week","posted":true,"at":"2026-12-02T15:58","checkin":"2026-12-02T15:58"}
+{"who":"Daniel","text":"Sunday you can see it","posted":true,"at":"2026-12-02T16:30","checkin":"2026-12-02T16:30"}
+{"who":"Helen","text":"sunday's mum's, not yours","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"Daniel","text":"Then after","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"Helen","text":"can't sleep. nights start tomorrow so I should be","posted":true,"at":"2026-12-02T22:47","checkin":"2026-12-02T22:47"}
+{"who":"Daniel","text":"Go to bed then","posted":true,"at":"2026-12-02T22:48","checkin":"2026-12-02T22:48"}
+{"who":"Daniel","text":"The hands thing. Tuesday. I wasn't being a dick about it, I just don't know what to do with that picture","posted":true,"at":"2026-12-02T22:55","checkin":"2026-12-02T22:55"}
+{"who":"Helen","text":"I know you weren't","posted":true,"at":"2026-12-02T23:10","checkin":"2026-12-02T23:10"}
+{"who":"Helen","text":"still don't agree with you","posted":true,"at":"2026-12-02T23:11","checkin":"2026-12-02T23:11"}
+{"who":"Daniel","text":"Didn't ask you to","posted":true,"at":"2026-12-02T23:12","checkin":"2026-12-02T23:12"}
+{"who":"Helen","text":"I know. you never do","posted":true,"at":"2026-12-02T23:14","checkin":"2026-12-02T23:14"}
+{"who":"Helen","text":"going to try again. 7pm start so don't text before 8 or I'll ignore you","posted":true,"at":"2026-12-03T00:09","checkin":"2026-12-03T00:09"}
+{"who":"Daniel","text":"Wouldn't dream of it","posted":true,"at":"2026-12-03T00:10","checkin":"2026-12-03T00:10"}

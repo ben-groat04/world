@@ -1,0 +1,120 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T10:15","complete":true,"rejects":0,"today":["Conor",null,"Orla"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2271,"cache_read_input_tokens":0,"output_tokens":4539,"output_tokens_details":{"thinking_tokens":3210},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2271,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4539,"cache_read_input_tokens":0,"cache_creation_input_tokens":2271,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2271},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3454,"cache_read_input_tokens":0,"output_tokens":2363,"output_tokens_details":{"thinking_tokens":1312},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3454,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2363,"cache_read_input_tokens":0,"cache_creation_input_tokens":3454,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3454},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4487,"cache_read_input_tokens":0,"output_tokens":2987,"output_tokens_details":{"thinking_tokens":1556},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4487,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2987,"cache_read_input_tokens":0,"cache_creation_input_tokens":4487,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4487},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Conor","Cathal","Orla","Sarah"],"setting":"You are all in the same Dublin group chat, four mates who have known each other since school, and you use it to sort Thursday's five-a-side and the split for Sarah's birthday dinner.","openers":["Send a photo of Cathal's burnt pancakes with a rude caption","Tell Orla her spreadsheet bet cost her the round","Roast Sarah for giving everyone the wrong advice on the cough syrup","Ask Cathal whether the knife he waves at the stove is still in his pocket"],"opener":"Tell Orla her spreadsheet bet cost her the round","cast":{"Conor":{"who":"24, man, a mate in the group","work":"pharmacy assistant","knows":"You know Cathal, Orla and Sarah as mates from school.","texts":"Conor texts in this chat only now and again.","style":"some emoji, a few abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Cathal":{"who":"25, man, a mate in the group","work":"chef","knows":"You know Conor, Orla and Sarah as mates from school.","texts":"Cathal texts in this chat only now and again.","style":"some emoji, a few abbreviations","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Orla":{"who":"23, woman, a mate in the group","work":"data analyst","knows":"You know Conor, Cathal and Sarah as mates from school.","texts":"Orla texts in this chat only now and again.","style":"some emoji, a few abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Sarah":{"who":"26, woman, a mate in the group","work":"pharmacist","knows":"You know Conor, Cathal and Orla as mates from school.","texts":"Sarah texts in this chat a lot.","style":"a few emoji, few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Conor":"You live in Dublin, your days are spent as a pharmacy assistant, and you live with nobody else.","Cathal":"You live in Dublin, your days are spent cooking as a chef, and you live with nobody else.","Orla":"You live in Dublin, your days are spent as a data analyst, and you live with nobody else.","Sarah":"You live in Dublin, your days are spent as a pharmacist, and you live with nobody else."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":870,"cache_read_input_tokens":0,"output_tokens":1322,"output_tokens_details":{"thinking_tokens":880},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":870,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1322,"cache_read_input_tokens":0,"cache_creation_input_tokens":870,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":870},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1183,"cache_read_input_tokens":0,"output_tokens":2277,"output_tokens_details":{"thinking_tokens":1687},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1183,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2277,"cache_read_input_tokens":0,"cache_creation_input_tokens":1183,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1183},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Dublin, Ireland","castMs":19880,"situation":"Four mates in their twenties who have been friends since school.","topic":"Nonstop obscene banter, every message a crude insult or filthy joke aimed at one of them, with the worst swearing and sexual put-downs, all of them loving it."}
+{"who":"Conor","text":"lads who's still in for thurs 7pm or are we all too fucking old now","posted":true,"at":"2026-12-02T10:15","checkin":"2026-12-02T10:15"}
+{"who":"Conor","text":"cathal ur face looks like a pizza box someone sat on","posted":true,"at":"2026-12-02T10:16","checkin":"2026-12-02T10:16"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-12-02T10:16"}
+{"who":"Cathal","text":"im in. conor you have the sex appeal of a wet bus shelter","posted":true,"at":"2026-12-02T10:17","checkin":"2026-12-02T10:17"}
+{"who":"Conor","text":"ur mum said i was fine last night","posted":true,"at":"2026-12-02T10:17","checkin":"2026-12-02T10:17"}
+{"who":"Orla","text":"in for thurs","posted":true,"at":"2026-12-02T10:19","checkin":"2026-12-02T10:19"}
+{"who":"Sarah","text":"In. And sat dinner still on, booked 8pm drury st. Just the four of us","posted":true,"at":"2026-12-02T10:21","checkin":"2026-12-02T10:21"}
+{"who":"Orla","text":"sarah do u want it split by item or evenly","posted":true,"at":"2026-12-02T10:24","checkin":"2026-12-02T10:24"}
+{"who":"Sarah","text":"Evenly pls. I'm not paying for cathal's wine","posted":true,"at":"2026-12-02T10:24","checkin":"2026-12-02T10:24"}
+{"who":"Cathal","text":"ur not paying for conor's bill either, he eats like a dog at a bin","posted":true,"at":"2026-12-02T10:25","checkin":"2026-12-02T10:25"}
+{"who":"Conor","text":"orla u still owe us the round from the sheet bet","posted":true,"at":"2026-12-02T10:26","checkin":"2026-12-02T10:26"}
+{"who":"Orla","text":"i don't owe anyone anything. the sheet was rigged","posted":true,"at":"2026-12-02T10:26","checkin":"2026-12-02T10:26"}
+{"who":"Conor","text":"u put the 14th as the date and it was the 21st. u lost. 4 pints, get the fuck on with it","posted":true,"at":"2026-12-02T10:27","checkin":"2026-12-02T10:27"}
+{"who":"Orla","text":"i said the 14th. the 14th was the one before","posted":true,"at":"2026-12-02T10:28","checkin":"2026-12-02T10:28"}
+{"who":"Cathal","text":"sarah u see this? orla's bet is a disgrace","posted":true,"at":"2026-12-02T10:30","checkin":"2026-12-02T10:30"}
+{"who":"Sarah","text":"I was there. She said the 21st","posted":true,"at":"2026-12-02T10:31","checkin":"2026-12-02T10:31"}
+{"who":"Orla","text":"fine. 2 pints","posted":true,"at":"2026-12-02T10:31","checkin":"2026-12-02T10:31"}
+{"who":"Sarah","text":"Lunch. Just had a cheese toastie that tasted of a bin","posted":true,"at":"2026-12-02T12:40","checkin":"2026-12-02T12:40"}
+{"who":"Cathal","text":"ur breath would strip paint sarah","posted":true,"at":"2026-12-02T12:42","checkin":"2026-12-02T12:42"}
+{"who":"Sarah","text":"Says the man who calls his steak \"sad\" 😂","posted":true,"at":"2026-12-02T12:42","checkin":"2026-12-02T12:42"}
+{"who":"Conor","text":"2 pints orla. not 2 pints and an apology","posted":true,"at":"2026-12-02T12:50","checkin":"2026-12-02T12:50"}
+{"who":"Orla","text":"[link: five-a-side pitch booking, council site]","posted":true,"at":"2026-12-02T14:12","checkin":"2026-12-02T14:12"}
+{"who":"Cathal","text":"7pm still? i finish at 10 tonight but prep is early thurs so i'm in","posted":true,"at":"2026-12-02T14:14","checkin":"2026-12-02T14:14"}
+{"who":"Conor","text":"7 yeah. cathal bring the bibs and ur shite attitude","posted":true,"at":"2026-12-02T14:15","checkin":"2026-12-02T14:15"}
+{"who":"Sarah","text":"Pitch is 2 quid each. I'll put it on my card and sort later","posted":true,"at":"2026-12-02T14:20","checkin":"2026-12-02T14:20"}
+{"who":"Orla","text":"ok","posted":true,"at":"2026-12-02T14:21","checkin":"2026-12-02T14:21"}
+{"who":"Conor","text":"9 hour shift and someone asked me for a \"cheeky one\" for the sun. the sun is cream","posted":true,"at":"2026-12-02T18:03","checkin":"2026-12-02T18:03"}
+{"who":"Sarah","text":"Lol. \"cheeky one\" must be about your personality","posted":true,"at":"2026-12-02T18:05","checkin":"2026-12-02T18:05"}
+{"who":"Cathal","text":"service mad tonight. someone sent back a steak cos it looked \"sad\". it was a steak","posted":true,"at":"2026-12-02T18:20","checkin":"2026-12-02T18:20"}
+{"who":"Orla","text":"that's a sad steak","posted":true,"at":"2026-12-02T18:22","checkin":"2026-12-02T18:22"}
+{"who":"Conor","text":"lads who's watching the match tomorrow 8pm, i'm not able for that one","posted":true,"at":"2026-12-02T21:47","checkin":"2026-12-02T21:47"}
+{"who":"Sarah","text":"No. Thurs is five a side and sat is dinner. That's enough for me this week","posted":true,"at":"2026-12-02T21:50","checkin":"2026-12-02T21:50"}
+{"who":"Cathal","text":"back, legs gone. conor ur still a bellend","posted":true,"at":"2026-12-02T22:30","checkin":"2026-12-02T22:30"}
+{"who":"Conor","text":"ur a bellend with a chef hat","posted":true,"at":"2026-12-02T22:31","checkin":"2026-12-02T22:31"}
+{"who":"Orla","text":"sarah what's the cap for sat","posted":true,"at":"2026-12-02T23:15","checkin":"2026-12-02T23:15"}
+{"who":"Sarah","text":"Around 40 each with wine I think. Don't come with a tenner and a face","posted":true,"at":"2026-12-02T23:18","checkin":"2026-12-02T23:18"}
+{"who":"Orla","text":"i'm not a tenner person","posted":true,"at":"2026-12-02T23:20","checkin":"2026-12-02T23:20"}
+{"who":"Conor","text":"orla u were a tenner person at the last one. tenner and a note saying \"sorry\"","posted":true,"at":"2026-12-02T23:20","checkin":"2026-12-02T23:20"}
+{"who":"Sarah","text":"Is this what I'm doing with my birthday week","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Cathal","text":"prep done. goodnight, i'll be a mess thurs","posted":true,"at":"2026-12-03T00:40","checkin":"2026-12-03T00:40"}
+{"who":"Cathal","text":"prep done. i can barely lift my head. 7 still on?","posted":true,"at":"2026-12-03T09:12","checkin":"2026-12-03T09:12"}
+{"who":"Sarah","text":"Yes. Orla booked it. Just bring yourself","posted":true,"at":"2026-12-03T09:40","checkin":"2026-12-03T09:40"}
+{"who":"Conor","text":"ye still on. cathal u gonna be dead on ur feet","posted":true,"at":"2026-12-03T10:02","checkin":"2026-12-03T10:02"}
+{"who":"Cathal","text":"yeah","posted":true,"at":"2026-12-03T10:03","checkin":"2026-12-03T10:03"}
+{"who":"Orla","text":"i've the bibs in the boot. one is orange","posted":true,"at":"2026-12-03T13:18","checkin":"2026-12-03T13:18"}
+{"who":"Conor","text":"sarah wear the orange one","posted":true,"at":"2026-12-03T13:20","checkin":"2026-12-03T13:20"}
+{"who":"Sarah","text":"Absolutely not 😂","posted":true,"at":"2026-12-03T13:22","checkin":"2026-12-03T13:22"}
+{"who":"","react":"👍","to":45,"posted":false,"at":"2026-12-03T13:22"}
+{"who":"Sarah","text":"Is the pitch the one by the canal or the one with the broken gate","posted":true,"at":"2026-12-03T17:44","checkin":"2026-12-03T17:44"}
+{"who":"Orla","text":"canal. gate's been broken since 2019 they never fix it","posted":true,"at":"2026-12-03T17:46","checkin":"2026-12-03T17:46"}
+{"who":"Sarah","text":"Ok. Pitch is 2 quid each, I'll sort it on the card. Lads pay me back by Sat","posted":true,"at":"2026-12-03T17:48","checkin":"2026-12-03T17:48"}
+{"who":"Cathal","text":"paying for conor to be a bellend is a lot","posted":true,"at":"2026-12-03T17:50","checkin":"2026-12-03T17:50"}
+{"who":"Conor","text":"cathal ur paying for ur own ball","posted":true,"at":"2026-12-03T17:51","checkin":"2026-12-03T17:51"}
+{"who":"Conor","text":"orla still owe us 2 pints","posted":true,"at":"2026-12-03T18:30","checkin":"2026-12-03T18:30"}
+{"who":"Orla","text":"sheet was rigged","posted":true,"at":"2026-12-03T18:31","checkin":"2026-12-03T18:31"}
+{"who":"Cathal","text":"leaving in 10. dying","posted":true,"at":"2026-12-03T18:40","checkin":"2026-12-03T18:40"}
+{"who":"Orla","text":"here already. cold as anything","posted":true,"at":"2026-12-03T19:02","checkin":"2026-12-03T19:02"}
+{"who":"Conor","text":"that was a disgrace. cathal went down like a sack of spuds in the 4th min","posted":true,"at":"2026-12-03T21:44","checkin":"2026-12-03T21:44"}
+{"who":"Cathal","text":"i was tackled by a man in a dressing gown","posted":true,"at":"2026-12-03T21:46","checkin":"2026-12-03T21:46"}
+{"who":"Conor","text":"he was in trackies. ur not doing well cathal","posted":true,"at":"2026-12-03T21:47","checkin":"2026-12-03T21:47"}
+{"who":"Orla","text":"i scored 2. both were off conor","posted":true,"at":"2026-12-03T21:51","checkin":"2026-12-03T21:51"}
+{"who":"Conor","text":"ur a liar. 1 was off ur arse","posted":true,"at":"2026-12-03T21:52","checkin":"2026-12-03T21:52"}
+{"who":"","react":"😂","to":59,"posted":false,"at":"2026-12-03T21:52"}
+{"who":"","react":"😂","to":59,"posted":false,"at":"2026-12-03T21:52"}
+{"who":"Sarah","text":"Home. Hot shower. My calves are gone. Orla you owe me for the bibs","posted":true,"at":"2026-12-03T22:10","checkin":"2026-12-03T22:10"}
+{"who":"Orla","text":"i didn't charge for the bibs","posted":true,"at":"2026-12-03T22:11","checkin":"2026-12-03T22:11"}
+{"who":"Sarah","text":"You brought them in the boot Orla. Pay the bibs","posted":true,"at":"2026-12-03T22:14","checkin":"2026-12-03T22:14"}
+{"who":"Cathal","text":"home. eating cold chips standing up","posted":true,"at":"2026-12-03T22:20","checkin":"2026-12-03T22:20"}
+{"who":"Conor","text":"legend","posted":true,"at":"2026-12-03T22:22","checkin":"2026-12-03T22:22"}
+{"who":"Orla","text":"fine. 2 pints. i'll get them sat after the dinner","posted":true,"at":"2026-12-03T23:06","checkin":"2026-12-03T23:06"}
+{"who":"Conor","text":"ur buying the pints before the dinner, not after. ur ruining the timeline","posted":true,"at":"2026-12-03T23:07","checkin":"2026-12-03T23:07"}
+{"who":"Sarah","text":"Please don't do pints before my birthday dinner. I'm already 40 quid into this","posted":true,"at":"2026-12-03T23:09","checkin":"2026-12-03T23:09"}
+{"who":"Cathal","text":"bed. not up for pints tomorrow, got a 7am","posted":true,"at":"2026-12-03T23:24","checkin":"2026-12-03T23:24"}
+{"who":"Conor","text":"sat then","posted":true,"at":"2026-12-03T23:25","checkin":"2026-12-03T23:25"}
+{"who":"Sarah","text":"Ok. Sat, 8pm, Drury St. No pints before. Goodnight lads","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Sarah","text":"Morning. Anyone else's calves still going or just mine","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Conor","text":"mine are grand. my arse is the problem","posted":true,"at":"2026-12-04T09:05","checkin":"2026-12-04T09:05"}
+{"who":"Sarah","text":"Charming","posted":true,"at":"2026-12-04T09:06","checkin":"2026-12-04T09:06"}
+{"who":"Orla","text":"had to tell 12 people in a meeting the dashboard i built has been wrong since october. wrong date column. i'm fine","posted":true,"at":"2026-12-04T11:30","checkin":"2026-12-04T11:30"}
+{"who":"Conor","text":"ur fine","posted":true,"at":"2026-12-04T11:33","checkin":"2026-12-04T11:33"}
+{"who":"Sarah","text":"Orla that's awful. Is it fixed?","posted":true,"at":"2026-12-04T11:35","checkin":"2026-12-04T11:35"}
+{"who":"Orla","text":"fixed. nobody cared. my manager said \"these things happen\" in the voice he uses for bins","posted":true,"at":"2026-12-04T11:41","checkin":"2026-12-04T11:41"}
+{"who":"Cathal","text":"bins are honest at least","posted":true,"at":"2026-12-04T11:43","checkin":"2026-12-04T11:43"}
+{"who":"Conor","text":"[photo: screenshot of the bet spreadsheet, date cell highlighted in yellow]","posted":true,"at":"2026-12-04T11:44","checkin":"2026-12-04T11:44"}
+{"who":"Conor","text":"the date column. the date column orla","posted":true,"at":"2026-12-04T11:44","checkin":"2026-12-04T11:44"}
+{"who":"Orla","text":"ur not helping","posted":true,"at":"2026-12-04T11:46","checkin":"2026-12-04T11:46"}
+{"who":"Conor","text":"2 pints","posted":true,"at":"2026-12-04T11:46","checkin":"2026-12-04T11:46"}
+{"who":"Sarah","text":"Lunch. Pharmacy's been dead all morning. Someone came in asking for \"something for the calves\" and I gave them ibuprofen and a look","posted":true,"at":"2026-12-04T12:15","checkin":"2026-12-04T12:15"}
+{"who":"Cathal","text":"ur a legend","posted":true,"at":"2026-12-04T12:17","checkin":"2026-12-04T12:17"}
+{"who":"Sarah","text":"Pitch was 2 quid, I've got it on the card. Lads pay me by Sat, I'm not chasing anyone","posted":true,"at":"2026-12-04T12:18","checkin":"2026-12-04T12:18"}
+{"who":"Conor","text":"sent u 2 quid sarah","posted":true,"at":"2026-12-04T12:19","checkin":"2026-12-04T12:19"}
+{"who":"Sarah","text":"Thanks Conor. Cathal, Orla","posted":true,"at":"2026-12-04T12:31","checkin":"2026-12-04T12:31"}
+{"who":"Cathal","text":"sent 2 to sarah. sleeping now","posted":true,"at":"2026-12-04T13:55","checkin":"2026-12-04T13:55"}
+{"who":"Orla","text":"sent","posted":true,"at":"2026-12-04T14:02","checkin":"2026-12-04T14:02"}
+{"who":"Sarah","text":"Thanks all. Orla that's 4 quid now but I'm not counting the bibs","posted":true,"at":"2026-12-04T14:02","checkin":"2026-12-04T14:02"}
+{"who":"Orla","text":"i didn't pay for the bibs either","posted":true,"at":"2026-12-04T14:03","checkin":"2026-12-04T14:03"}
+{"who":"Sarah","text":"You brought them in the boot","posted":true,"at":"2026-12-04T14:04","checkin":"2026-12-04T14:04"}
+{"who":"Conor","text":"9 hr day, cheeky one request again. someone wanted it \"with less sun\"","posted":true,"at":"2026-12-04T16:48","checkin":"2026-12-04T16:48"}
+{"who":"Sarah","text":"Did you tell them it's December","posted":true,"at":"2026-12-04T16:50","checkin":"2026-12-04T16:50"}
+{"who":"Conor","text":"they knew. they just wanted the sun to be sad","posted":true,"at":"2026-12-04T16:51","checkin":"2026-12-04T16:51"}
+{"who":"Cathal","text":"up. mouth like a chip bag. who's going to drury st sat that actually wants to eat","posted":true,"at":"2026-12-04T17:30","checkin":"2026-12-04T17:30"}
+{"who":"Conor","text":"me","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Cathal","text":"ur not going to eat anything you'll just look at the menu like it owes u money","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Sarah","text":"I've booked 8, we're eating. Bread and wine before. Nobody's ordering a steak to send back","posted":true,"at":"2026-12-04T17:33","checkin":"2026-12-04T17:33"}
+{"who":"Conor","text":"cathal's steak is sad","posted":true,"at":"2026-12-04T17:34","checkin":"2026-12-04T17:34"}
+{"who":"Cathal","text":"it's a steak","posted":true,"at":"2026-12-04T17:35","checkin":"2026-12-04T17:35"}
+{"who":"Orla","text":"anyone want to do the 7 a side again next thurs or is that too much after tonight's loss","posted":true,"at":"2026-12-04T19:20","checkin":"2026-12-04T19:20"}
+{"who":"Conor","text":"no. ur team had a 4th min disaster","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Orla","text":"it was 1 goal and it was off ur arse","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Conor","text":"ur still a liar","posted":true,"at":"2026-12-04T19:24","checkin":"2026-12-04T19:24"}
+{"who":"Sarah","text":"Quiet night in for me. Face mask, bad telly, early start Sat for the dinner prep. Not the Drury St prep, I mean the getting dressed prep","posted":true,"at":"2026-12-04T21:10","checkin":"2026-12-04T21:10"}
+{"who":"Orla","text":"sarah i'm not sure u need prep","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Sarah","text":"Ok, rude, but thank you","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Cathal","text":"awake again. ate 3 cold chips and a bit of the bread from the bin. going to bed","posted":true,"at":"2026-12-04T22:48","checkin":"2026-12-04T22:48"}
+{"who":"Conor","text":"the bread from the bin is not a meal cathal","posted":true,"at":"2026-12-04T22:50","checkin":"2026-12-04T22:50"}
+{"who":"Orla","text":"home. didn't do a single thing today that wasn't a dashboard or a meeting. going to bed like a log","posted":true,"at":"2026-12-04T23:31","checkin":"2026-12-04T23:31"}
+{"who":"Sarah","text":"Night Orla. Hope tomorrow's meeting-free","posted":true,"at":"2026-12-04T23:33","checkin":"2026-12-04T23:33"}
+{"who":"Orla","text":"it's a saturday sarah","posted":true,"at":"2026-12-04T23:34","checkin":"2026-12-04T23:34"}

@@ -1,0 +1,94 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T08:45","complete":true,"rejects":0,"today":["Nathan",null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2271,"cache_read_input_tokens":0,"output_tokens":3142,"output_tokens_details":{"thinking_tokens":2225},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2271,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3142,"cache_read_input_tokens":0,"cache_creation_input_tokens":2271,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2271},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3047,"cache_read_input_tokens":0,"output_tokens":3081,"output_tokens_details":{"thinking_tokens":2097},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3047,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3081,"cache_read_input_tokens":0,"cache_creation_input_tokens":3047,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3047},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4025,"cache_read_input_tokens":0,"output_tokens":4071,"output_tokens_details":{"thinking_tokens":3120},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4025,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4071,"cache_read_input_tokens":0,"cache_creation_input_tokens":4025,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4025},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Chloe","Craig","Nathan"],"setting":"You are all in Manchester, where you work together on the same ambulance crew out of one station, and you have known each other through shifts for years. This chat is where you swap shifts, sort cover for sickness, and arrange the drinks after your last colleague's funeral, when your crew mate Gaz died suddenly in the spring.","openers":["Send a photo of the station whiteboard","Post the grimmest job you've ever been to","Ask who has the worst Gaz story","Start the dark joke about the lift-shaft call"],"opener":"Post the grimmest job you've ever been to","cast":{"Chloe":{"who":"34, woman, paramedic on the crew","work":"emergency care assistant","knows":"You know Craig as a crew mate on your ambulance, and Nathan as a crew mate who also takes 999 calls.","texts":"Chloe texts in this chat now and then.","style":"Uses emoji and texting abbreviations a lot.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Craig":{"who":"38, man, paramedic on the crew","work":"emergency care assistant","knows":"You know Chloe as a crew mate on your ambulance, and Nathan as a crew mate who also takes 999 calls.","texts":"Craig texts in this chat now and then.","style":"Rarely uses emoji, and uses few texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Nathan":{"who":"41, man, paramedic on the crew","work":"999 call handler","knows":"You know Chloe and Craig as crew mates on your ambulance.","texts":"Nathan texts in this chat a lot.","style":"Uses few or no emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Chloe":"You live in Manchester, spend your days on ambulance shifts with your crew, and live on your own.","Craig":"You live in Manchester, spend your days on ambulance shifts with your crew, and live on your own.","Nathan":"You live in Manchester, spend your days taking 999 calls and working alongside your crew, and live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":872,"cache_read_input_tokens":0,"output_tokens":1617,"output_tokens_details":{"thinking_tokens":1245},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":872,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1617,"cache_read_input_tokens":0,"cache_creation_input_tokens":872,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":872},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1178,"cache_read_input_tokens":0,"output_tokens":1711,"output_tokens_details":{"thinking_tokens":1152},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1178,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1711,"cache_read_input_tokens":0,"cache_creation_input_tokens":1178,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1178},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Manchester, England","castMs":18914,"situation":"Three paramedics on the same crew, off shift.","topic":"Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise."}
+{"who":"Chloe","text":"Right. Grimmest job you've ever been to. Go 💀","posted":true,"at":"2026-12-03T08:45","checkin":"2026-12-03T08:45"}
+{"who":"Craig","text":"dont start","posted":true,"at":"2026-12-03T08:52","checkin":"2026-12-03T08:52"}
+{"who":"Nathan","text":"The fridge one in Levenshulme. You know the one","posted":true,"at":"2026-12-03T08:58","checkin":"2026-12-03T08:58"}
+{"who":"Chloe","text":"NOT the fridge one that's a top 3 for ever","posted":true,"at":"2026-12-03T09:03","checkin":"2026-12-03T09:03"}
+{"who":"Chloe","text":"Ok mine. Bloke in the bath in Gorton. Been in there about a week. The water had gone a colour. And the cat had been at his face 🫠 I genuinely have to hold the bath bit in my head like a dead thing","posted":true,"at":"2026-12-03T09:10","checkin":"2026-12-03T09:10"}
+{"who":"","react":"💀","to":4,"posted":false,"at":"2026-12-03T09:10"}
+{"who":"","react":"💀","to":4,"posted":false,"at":"2026-12-03T09:10"}
+{"who":"","react":"😬","to":4,"posted":false,"at":"2026-12-03T09:10"}
+{"who":"Craig","text":"ok you win","posted":true,"at":"2026-12-03T09:14","checkin":"2026-12-03T09:14"}
+{"who":"Nathan","text":"Not a win, a horrible one. Dont win on that","posted":true,"at":"2026-12-03T09:20","checkin":"2026-12-03T09:20"}
+{"who":"Craig","text":"sausage roll man in Denton. choked on it at his own kitchen table. no other food in the house, just a bag of greggs and a cold tea","posted":true,"at":"2026-12-03T11:33","checkin":"2026-12-03T11:33"}
+{"who":"Chloe","text":"That's so specific","posted":true,"at":"2026-12-03T11:40","checkin":"2026-12-03T11:40"}
+{"who":"Craig","text":"he had the receipt in his hand","posted":true,"at":"2026-12-03T11:41","checkin":"2026-12-03T11:41"}
+{"who":"Nathan","text":"Gaz would've done that one better","posted":true,"at":"2026-12-03T13:02","checkin":"2026-12-03T13:02"}
+{"who":"Chloe","text":"Don't","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Craig","text":"he would though","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Nathan","text":"He'd have had the postcode and a photo of the receipt on fb before we got the stretcher out","posted":true,"at":"2026-12-03T13:09","checkin":"2026-12-03T13:09"}
+{"who":"Chloe","text":"Ok that's cruel. Ok. 😭 I'm laughing and I feel bad","posted":true,"at":"2026-12-03T13:14","checkin":"2026-12-03T13:14"}
+{"who":"Craig","text":"that's the rule with gaz","posted":true,"at":"2026-12-03T13:15","checkin":"2026-12-03T13:15"}
+{"who":"Nathan","text":"Had one last night I can't do the funny version of yet","posted":true,"at":"2026-12-03T17:40","checkin":"2026-12-03T17:40"}
+{"who":"Chloe","text":"Oh nath. Ok. We don't have to do it here","posted":true,"at":"2026-12-03T17:44","checkin":"2026-12-03T17:44"}
+{"who":"Craig","text":"yeah no need","posted":true,"at":"2026-12-03T17:46","checkin":"2026-12-03T17:46"}
+{"who":"Nathan","text":"It's fine. Just a bad one. Kid's bedroom door, you don't need the rest","posted":true,"at":"2026-12-03T17:51","checkin":"2026-12-03T17:51"}
+{"who":"Chloe","text":"Ok. Ring me if you want. I'm up til whenever tonight 🫶","posted":true,"at":"2026-12-03T17:53","checkin":"2026-12-03T17:53"}
+{"who":"Craig","text":"ill be in the crown from 8 if anyone's about","posted":true,"at":"2026-12-03T18:20","checkin":"2026-12-03T18:20"}
+{"who":"Chloe","text":"Quiz at the crown is a no from me, I'm wrecked. Who's got the answers to the 80s round lol","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Nathan","text":"Maybe. Depends if I'm still upright","posted":true,"at":"2026-12-03T21:22","checkin":"2026-12-03T21:22"}
+{"who":"Chloe","text":"Cant sleep. Keep seeing the cat","posted":true,"at":"2026-12-03T23:50","checkin":"2026-12-03T23:50"}
+{"who":"Craig","text":"same","posted":true,"at":"2026-12-03T23:58","checkin":"2026-12-03T23:58"}
+{"who":"Nathan","text":"Still up. You two aren't alone in it then","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"Chloe","text":"Ur still up?","posted":true,"at":"2026-12-04T00:44","checkin":"2026-12-04T00:44"}
+{"who":"Nathan","text":"Yeah. On the back step with a tea. Neighbours cat came and sat with me so that's the cat sorted","posted":true,"at":"2026-12-04T00:46","checkin":"2026-12-04T00:46"}
+{"who":"Chloe","text":"😭 don't","posted":true,"at":"2026-12-04T00:47","checkin":"2026-12-04T00:47"}
+{"who":"Craig","text":"its 1am","posted":true,"at":"2026-12-04T00:49","checkin":"2026-12-04T00:49"}
+{"who":"Chloe","text":"Going to bed. Really this time. Nath text if you need","posted":true,"at":"2026-12-04T01:02","checkin":"2026-12-04T01:02"}
+{"who":"Nathan","text":"Will do","posted":true,"at":"2026-12-04T01:03","checkin":"2026-12-04T01:03"}
+{"who":"Craig","text":"Anyone able to take my Sun early? Mark's kid thing","posted":true,"at":"2026-12-04T09:12","checkin":"2026-12-04T09:12"}
+{"who":"Nathan","text":"Which one is it","posted":true,"at":"2026-12-04T09:40","checkin":"2026-12-04T09:40"}
+{"who":"Craig","text":"07:00 to 19:00 with Jade","posted":true,"at":"2026-12-04T09:41","checkin":"2026-12-04T09:41"}
+{"who":"Chloe","text":"I'm on sun days already can do Sat nights if that helps anyone","posted":true,"at":"2026-12-04T09:55","checkin":"2026-12-04T09:55"}
+{"who":"Nathan","text":"I'll do Sun early if Craig takes my Tues","posted":true,"at":"2026-12-04T10:03","checkin":"2026-12-04T10:03"}
+{"who":"Craig","text":"ok deal","posted":true,"at":"2026-12-04T10:04","checkin":"2026-12-04T10:04"}
+{"who":"Chloe","text":"Is the Crown thing still on for the 19th","posted":true,"at":"2026-12-04T10:20","checkin":"2026-12-04T10:20"}
+{"who":"Nathan","text":"Booked. Marie says she'll do the back room if we give her numbers by Monday","posted":true,"at":"2026-12-04T10:31","checkin":"2026-12-04T10:31"}
+{"who":"Chloe","text":"Ok I'll say yes. Is the 19th a Sat?","posted":true,"at":"2026-12-04T10:33","checkin":"2026-12-04T10:33"}
+{"who":"Nathan","text":"Yes","posted":true,"at":"2026-12-04T10:34","checkin":"2026-12-04T10:34"}
+{"who":"Craig","text":"I can do the 19th. Not the speeches","posted":true,"at":"2026-12-04T10:35","checkin":"2026-12-04T10:35"}
+{"who":"Nathan","text":"No one's doing speeches Craig","posted":true,"at":"2026-12-04T10:36","checkin":"2026-12-04T10:36"}
+{"who":"Craig","text":"good","posted":true,"at":"2026-12-04T10:36","checkin":"2026-12-04T10:36"}
+{"who":"Chloe","text":"Got the cat's name off the neighbours. It's Biscuit. Ok I'm done with the cat now","posted":true,"at":"2026-12-04T15:12","checkin":"2026-12-04T15:12"}
+{"who":"Nathan","text":"Biscuit's a good name","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Craig","text":"Anyone coming to the Crown tonight or is it a no from everyone","posted":true,"at":"2026-12-04T17:48","checkin":"2026-12-04T17:48"}
+{"who":"Chloe","text":"Sofa and sweats for me have fun","posted":true,"at":"2026-12-04T17:55","checkin":"2026-12-04T17:55"}
+{"who":"Nathan","text":"Im going. Maybe one. Got the 06:45 tomorrow","posted":true,"at":"2026-12-04T18:30","checkin":"2026-12-04T18:30"}
+{"who":"Craig","text":"ok","posted":true,"at":"2026-12-04T19:12","checkin":"2026-12-04T19:12"}
+{"who":"Nathan","text":"Here. Gerry's got the quiz on. Round 3 is a shambles","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Craig","text":"who's on your table","posted":true,"at":"2026-12-04T21:41","checkin":"2026-12-04T21:41"}
+{"who":"Nathan","text":"Some lads from the fire station. Nobody we know. Taking the piss out of our table name","posted":true,"at":"2026-12-04T21:45","checkin":"2026-12-04T21:45"}
+{"who":"Craig","text":"what's the table name","posted":true,"at":"2026-12-04T21:46","checkin":"2026-12-04T21:46"}
+{"who":"Nathan","text":"Dont","posted":true,"at":"2026-12-04T21:50","checkin":"2026-12-04T21:50"}
+{"who":"Chloe","text":"Ok I am awake again. Thinking about the 80s round","posted":true,"at":"2026-12-04T23:18","checkin":"2026-12-04T23:18"}
+{"who":"Nathan","text":"Still don't know the answer to the 80s round","posted":true,"at":"2026-12-04T23:19","checkin":"2026-12-04T23:19"}
+{"who":"Chloe","text":"👍 no one does","posted":true,"at":"2026-12-04T23:20","checkin":"2026-12-04T23:20"}
+{"who":"Nathan","text":"On. Already had a man try to sell us his fish tank","posted":true,"at":"2026-12-05T07:12","checkin":"2026-12-05T07:12"}
+{"who":"Chloe","text":"😂 did u take it","posted":true,"at":"2026-12-05T07:14","checkin":"2026-12-05T07:14"}
+{"who":"Nathan","text":"Said no","posted":true,"at":"2026-12-05T07:15","checkin":"2026-12-05T07:15"}
+{"who":"Chloe","text":"Woke up and first thing I thought was the bath bloke. Shower now. Hate it","posted":true,"at":"2026-12-05T09:30","checkin":"2026-12-05T09:30"}
+{"who":"Craig","text":"you ok","posted":true,"at":"2026-12-05T09:33","checkin":"2026-12-05T09:33"}
+{"who":"Chloe","text":"Yeah just a pattern. Walked round the reservoir and that helped","posted":true,"at":"2026-12-05T09:41","checkin":"2026-12-05T09:41"}
+{"who":"Craig","text":"reservoir's a good one","posted":true,"at":"2026-12-05T09:44","checkin":"2026-12-05T09:44"}
+{"who":"Craig","text":"Mark's kid is fine btw. Jade says it was a tooth","posted":true,"at":"2026-12-05T11:02","checkin":"2026-12-05T11:02"}
+{"who":"Chloe","text":"Good","posted":true,"at":"2026-12-05T11:05","checkin":"2026-12-05T11:05"}
+{"who":"Nathan","text":"Found the 80s answer. Dexys Midnight Runners. Gerry says it's wrong, he's wrong","posted":true,"at":"2026-12-05T13:20","checkin":"2026-12-05T13:20"}
+{"who":"Chloe","text":"NO. Gerry is always wrong 😂","posted":true,"at":"2026-12-05T13:21","checkin":"2026-12-05T13:21"}
+{"who":"Craig","text":"it was dexys","posted":true,"at":"2026-12-05T13:24","checkin":"2026-12-05T13:24"}
+{"who":"Chloe","text":"Marie needs numbers by Mon. I'll put me, you two","posted":true,"at":"2026-12-05T14:10","checkin":"2026-12-05T14:10"}
+{"who":"Nathan","text":"Put me down. Don't put a number on it yet, people say they're coming and then don't","posted":true,"at":"2026-12-05T14:31","checkin":"2026-12-05T14:31"}
+{"who":"Chloe","text":"Ok putting \"3 + maybe\" 😅","posted":true,"at":"2026-12-05T14:33","checkin":"2026-12-05T14:33"}
+{"who":"Nathan","text":"Off. Last one was a fall off a ladder in Ancoats. Bloke's fine, shoulder's in bits. Going home to eat something that isn't from a machine","posted":true,"at":"2026-12-05T18:52","checkin":"2026-12-05T18:52"}
+{"who":"Craig","text":"ladder","posted":true,"at":"2026-12-05T18:53","checkin":"2026-12-05T18:53"}
+{"who":"Nathan","text":"Yeah. Didn't need the rest","posted":true,"at":"2026-12-05T18:55","checkin":"2026-12-05T18:55"}
+{"who":"Chloe","text":"On nights. Quiet so far. Nath did you get home ok","posted":true,"at":"2026-12-05T19:30","checkin":"2026-12-05T19:30"}
+{"who":"Nathan","text":"Home. Tea on. Watching nothing","posted":true,"at":"2026-12-05T19:34","checkin":"2026-12-05T19:34"}
+{"who":"Craig","text":"going to the crown for one. not staying","posted":true,"at":"2026-12-05T21:50","checkin":"2026-12-05T21:50"}
+{"who":"Chloe","text":"Ha go on then. Tell Gerry I said he's wrong","posted":true,"at":"2026-12-05T21:58","checkin":"2026-12-05T21:58"}
+{"who":"Craig","text":"he knows","posted":true,"at":"2026-12-05T22:03","checkin":"2026-12-05T22:03"}
+{"who":"Chloe","text":"Ambulance has been stood outside the hospital 40 mins. Cold. Mel's got the heater on full and I'm not complaining","posted":true,"at":"2026-12-05T23:14","checkin":"2026-12-05T23:14"}
+{"who":"Craig","text":"someone's put the quiz on the big screen. gerry's wrong on round 3 again","posted":true,"at":"2026-12-05T23:41","checkin":"2026-12-05T23:41"}
+{"who":"Chloe","text":"🙄","posted":true,"at":"2026-12-05T23:42","checkin":"2026-12-05T23:42"}
+{"who":"Craig","text":"getting a taxi now","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}
+{"who":"Chloe","text":"Back at station. Getting a cuppa. Nath still up?","posted":true,"at":"2026-12-06T00:51","checkin":"2026-12-06T00:51"}
+{"who":"Nathan","text":"Still up. Half asleep on the sofa with the telly on","posted":true,"at":"2026-12-06T01:30","checkin":"2026-12-06T01:30"}

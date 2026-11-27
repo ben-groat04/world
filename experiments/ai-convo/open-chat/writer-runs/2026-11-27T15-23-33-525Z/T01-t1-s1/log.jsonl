@@ -1,0 +1,145 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T11:35","complete":true,"rejects":0,"today":["Josh",null,"Olivia"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1995,"cache_read_input_tokens":0,"output_tokens":2839,"output_tokens_details":{"thinking_tokens":1177},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1995,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2839,"cache_read_input_tokens":0,"cache_creation_input_tokens":1995,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1995},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3538,"cache_read_input_tokens":0,"output_tokens":2043,"output_tokens_details":{"thinking_tokens":804},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3538,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2043,"cache_read_input_tokens":0,"cache_creation_input_tokens":3538,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3538},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4781,"cache_read_input_tokens":0,"output_tokens":2947,"output_tokens_details":{"thinking_tokens":1522},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4781,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2947,"cache_read_input_tokens":0,"cache_creation_input_tokens":4781,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4781},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Olivia","Josh"],"setting":"You are both in Christchurch, New Zealand, and you have been close friends since your early twenties, texting each other most days. Together you play on the same Tuesday pub quiz team and are slowly planning a long weekend in Akaroa.","openers":["Send \"Guess who had a big weekend\"","Text \"Okay, I'm ready, spill\"","Ask \"Do you want the full story or the highlights?\"","Tell him \"You will not believe what happened Saturday\""],"opener":"Tell him \"You will not believe what happened Saturday\"","cast":{"Olivia":{"who":"35, woman, the one who slept with someone new","work":"accountant","knows":"You know Josh as your closest friend since your early twenties, and you tell him almost everything.","texts":"","style":"light emoji use, few texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Josh":{"who":"34, man, the friend who wants the details","work":"electrician","knows":"You know Olivia as your closest friend since your early twenties, and you tell her almost everything.","texts":"","style":"heavy emoji use, many texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Olivia":"You live in Christchurch, work as an accountant, and live alone.","Josh":"You live in Christchurch, work as an electrician, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":841,"cache_read_input_tokens":0,"output_tokens":1115,"output_tokens_details":{"thinking_tokens":893},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":841,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1115,"cache_read_input_tokens":0,"cache_creation_input_tokens":841,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":841},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1114,"cache_read_input_tokens":0,"output_tokens":1540,"output_tokens_details":{"thinking_tokens":1169},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1114,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1540,"cache_read_input_tokens":0,"cache_creation_input_tokens":1114,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1114},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Christchurch, New Zealand","castMs":16528,"situation":"Two close friends in their thirties who tell each other everything.","topic":"One of them slept with someone new at the weekend and the other wants the full details."}
+{"who":"Olivia","text":"You will not believe what happened Saturday","posted":true,"at":"2026-11-30T11:35","checkin":"2026-11-30T11:35"}
+{"who":"Josh","text":"go on then 👀 I've got 10 mins before I'm back up a ladder","posted":true,"at":"2026-11-30T11:41","checkin":"2026-11-30T11:41"}
+{"who":"Olivia","text":"Ok so you know the guy from the Orion thing? Sourdough guy","posted":true,"at":"2026-11-30T11:43","checkin":"2026-11-30T11:43"}
+{"who":"Josh","text":"the one who talked about his bike for 40 mins??","posted":true,"at":"2026-11-30T11:43","checkin":"2026-11-30T11:43"}
+{"who":"Olivia","text":"That one","posted":true,"at":"2026-11-30T11:44","checkin":"2026-11-30T11:44"}
+{"who":"Josh","text":"no way","posted":true,"at":"2026-11-30T11:44","checkin":"2026-11-30T11:44"}
+{"who":"Olivia","text":"Not saying anything yet","posted":true,"at":"2026-11-30T11:46","checkin":"2026-11-30T11:46"}
+{"who":"Josh","text":"u already said something \"not saying anything\" IS saying something","posted":true,"at":"2026-11-30T11:46","checkin":"2026-11-30T11:46"}
+{"who":"Olivia","text":"Fine. His place after the pub. He made eggs at 1am","posted":true,"at":"2026-11-30T11:52","checkin":"2026-11-30T11:52"}
+{"who":"Josh","text":"ok that's the most romantic thing I've ever heard","posted":true,"at":"2026-11-30T11:53","checkin":"2026-11-30T11:53"}
+{"who":"Olivia","text":"It was not romantic it was 1am eggs","posted":true,"at":"2026-11-30T11:53","checkin":"2026-11-30T11:53"}
+{"who":"Josh","text":"and then??","posted":true,"at":"2026-11-30T11:54","checkin":"2026-11-30T11:54"}
+{"who":"Josh","text":"[photo: a switchboard with the cover off, one wire labelled in marker \"DO NOT\"]","posted":true,"at":"2026-11-30T12:08","checkin":"2026-11-30T12:08"}
+{"who":"Josh","text":"some genius in Riccarton has labelled the hot water wire DO NOT and then clearly did not read the label himself","posted":true,"at":"2026-11-30T12:08","checkin":"2026-11-30T12:08"}
+{"who":"Olivia","text":"Did you touch it","posted":true,"at":"2026-11-30T12:09","checkin":"2026-11-30T12:09"}
+{"who":"Josh","text":"I touched it with the tester. I'm not an idiot. unlike him","posted":true,"at":"2026-11-30T12:09","checkin":"2026-11-30T12:09"}
+{"who":"Olivia","text":"Ha","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Olivia","text":"Anyway","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Josh","text":"ANYWAY. you were saying. eggs","posted":true,"at":"2026-11-30T12:16","checkin":"2026-11-30T12:16"}
+{"who":"Olivia","text":"We talked for ages after. About his ex and his mum and whether akaroa is overrated","posted":true,"at":"2026-11-30T12:17","checkin":"2026-11-30T12:17"}
+{"who":"Josh","text":"is it","posted":true,"at":"2026-11-30T12:17","checkin":"2026-11-30T12:17"}
+{"who":"Olivia","text":"No idea I've never been","posted":true,"at":"2026-11-30T12:18","checkin":"2026-11-30T12:18"}
+{"who":"Josh","text":"we've been talking about akaroa for 3 years and you've never been. that's embarrassing for both of us","posted":true,"at":"2026-11-30T12:18","checkin":"2026-11-30T12:18"}
+{"who":"Olivia","text":"I have to go into a call with a client who keeps saying \"quick question\" and then it isn't","posted":true,"at":"2026-11-30T12:30","checkin":"2026-11-30T12:30"}
+{"who":"Josh","text":"good luck","posted":true,"at":"2026-11-30T12:31","checkin":"2026-11-30T12:31"}
+{"who":"Josh","text":"still at the eggs?","posted":true,"at":"2026-11-30T14:02","checkin":"2026-11-30T14:02"}
+{"who":"Olivia","text":"At my desk. Pretending to do the BAS","posted":true,"at":"2026-11-30T14:40","checkin":"2026-11-30T14:40"}
+{"who":"Josh","text":"bc ur brain is elsewhere","posted":true,"at":"2026-11-30T14:41","checkin":"2026-11-30T14:41"}
+{"who":"Olivia","text":"My brain is on the BAS","posted":true,"at":"2026-11-30T14:41","checkin":"2026-11-30T14:41"}
+{"who":"Josh","text":"ur brain is on the eggs","posted":true,"at":"2026-11-30T14:42","checkin":"2026-11-30T14:42"}
+{"who":"Olivia","text":"Did you ever do the bach listing for akaroa","posted":true,"at":"2026-11-30T14:55","checkin":"2026-11-30T14:55"}
+{"who":"Josh","text":"not yet. got distracted by this conversation 😂 will do tonight","posted":true,"at":"2026-11-30T14:56","checkin":"2026-11-30T14:56"}
+{"who":"Josh","text":"[link: Gulf Harbour bach, 3 bed, sleeps 6, $340 a night]","posted":true,"at":"2026-11-30T14:57","checkin":"2026-11-30T14:57"}
+{"who":"Josh","text":"too fancy? or fine","posted":true,"at":"2026-11-30T14:57","checkin":"2026-11-30T14:57"}
+{"who":"Olivia","text":"Sleeps 6 is for a bigger group","posted":true,"at":"2026-11-30T15:20","checkin":"2026-11-30T15:20"}
+{"who":"Olivia","text":"It's just us","posted":true,"at":"2026-11-30T15:21","checkin":"2026-11-30T15:21"}
+{"who":"Josh","text":"and the eggs guy?","posted":true,"at":"2026-11-30T15:21","checkin":"2026-11-30T15:21"}
+{"who":"Olivia","text":"No","posted":true,"at":"2026-11-30T15:24","checkin":"2026-11-30T15:24"}
+{"who":"Josh","text":"ok I'm home. shower then I'm going to look at more baches and pretend I'm not waiting for the next bit of the story","posted":true,"at":"2026-11-30T17:48","checkin":"2026-11-30T17:48"}
+{"who":"Josh","text":"you're going to make me wait till quiz aren't you","posted":true,"at":"2026-11-30T17:50","checkin":"2026-11-30T17:50"}
+{"who":"Olivia","text":"He texted this morning. \"that was nice, want to do it again sometime\"","posted":true,"at":"2026-11-30T19:12","checkin":"2026-11-30T19:12"}
+{"who":"Josh","text":"ohhh","posted":true,"at":"2026-11-30T19:13","checkin":"2026-11-30T19:13"}
+{"who":"Josh","text":"and what did u say","posted":true,"at":"2026-11-30T19:13","checkin":"2026-11-30T19:13"}
+{"who":"Olivia","text":"Haven't. I'm still in the part where I decide if I want to","posted":true,"at":"2026-11-30T19:30","checkin":"2026-11-30T19:30"}
+{"who":"Josh","text":"ok but the eggs guy has a text that's a good sign","posted":true,"at":"2026-11-30T19:31","checkin":"2026-11-30T19:31"}
+{"who":"Josh","text":"do u want to","posted":true,"at":"2026-11-30T19:31","checkin":"2026-11-30T19:31"}
+{"who":"Olivia","text":"Maybe. Don't know yet","posted":true,"at":"2026-11-30T20:05","checkin":"2026-11-30T20:05"}
+{"who":"Josh","text":"that's fair. ur allowed to be wishy washy with a man who makes 1am eggs 😂","posted":true,"at":"2026-11-30T20:06","checkin":"2026-11-30T20:06"}
+{"who":"Olivia","text":"👀","posted":true,"at":"2026-11-30T20:06","checkin":"2026-11-30T20:06"}
+{"who":"Josh","text":"ok the bach. the one with the deck facing the harbour. I think that one. they've got a hot tub which is ridiculous for 2 people","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Olivia","text":"Not ridiculous if one of us is on the hot tub","posted":true,"at":"2026-11-30T21:41","checkin":"2026-11-30T21:41"}
+{"who":"Josh","text":"ok that was a bit much","posted":true,"at":"2026-11-30T21:41","checkin":"2026-11-30T21:41"}
+{"who":"Olivia","text":"It's fine. Book it when you're sure. Not before the quiz","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Josh","text":"you awake","posted":true,"at":"2026-11-30T23:58","checkin":"2026-11-30T23:58"}
+{"who":"Olivia","text":"No","posted":true,"at":"2026-12-01T00:40","checkin":"2026-12-01T00:40"}
+{"who":"Josh","text":"morning. u awake or still in the BAS dream","posted":true,"at":"2026-12-01T07:52","checkin":"2026-12-01T07:52"}
+{"who":"Olivia","text":"Woke up at 6 with the BAS in my head. Now I'm up and it's still in my head","posted":true,"at":"2026-12-01T08:30","checkin":"2026-12-01T08:30"}
+{"who":"Josh","text":"that's a bad trade","posted":true,"at":"2026-12-01T08:31","checkin":"2026-12-01T08:31"}
+{"who":"Josh","text":"did u reply to eggs guy","posted":true,"at":"2026-12-01T08:33","checkin":"2026-12-01T08:33"}
+{"who":"Olivia","text":"No","posted":true,"at":"2026-12-01T08:50","checkin":"2026-12-01T08:50"}
+{"who":"Josh","text":"👀","posted":true,"at":"2026-12-01T08:50","checkin":"2026-12-01T08:50"}
+{"who":"Olivia","text":"Stop it","posted":true,"at":"2026-12-01T08:51","checkin":"2026-12-01T08:51"}
+{"who":"Josh","text":"🫡","posted":true,"at":"2026-12-01T08:51","checkin":"2026-12-01T08:51"}
+{"who":"Josh","text":"[photo: a fuse box with a tiny plastic bag taped to the lid, contents unclear]","posted":true,"at":"2026-12-01T12:20","checkin":"2026-12-01T12:20"}
+{"who":"Josh","text":"landlord's been putting screws in a bag and taping them to the box. this is the third one. I'm not fixing the bag, just reporting it","posted":true,"at":"2026-12-01T12:21","checkin":"2026-12-01T12:21"}
+{"who":"Olivia","text":"That's a very specific kind of tenant nightmare","posted":true,"at":"2026-12-01T12:24","checkin":"2026-12-01T12:24"}
+{"who":"Josh","text":"he's not a tenant he's a landlord. the tenant is my client and she's losing it","posted":true,"at":"2026-12-01T12:24","checkin":"2026-12-01T12:24"}
+{"who":"Olivia","text":"Tell her to leave the bag","posted":true,"at":"2026-12-01T12:25","checkin":"2026-12-01T12:25"}
+{"who":"Olivia","text":"Lunch is a sandwich I made at 7am and regret","posted":true,"at":"2026-12-01T12:40","checkin":"2026-12-01T12:40"}
+{"who":"Josh","text":"what kind","posted":true,"at":"2026-12-01T12:41","checkin":"2026-12-01T12:41"}
+{"who":"Olivia","text":"Egg","posted":true,"at":"2026-12-01T12:41","checkin":"2026-12-01T12:41"}
+{"who":"Josh","text":"ur brain is still on the eggs","posted":true,"at":"2026-12-01T12:42","checkin":"2026-12-01T12:42"}
+{"who":"Olivia","text":"Everything is on the eggs at this point","posted":true,"at":"2026-12-01T12:42","checkin":"2026-12-01T12:42"}
+{"who":"Olivia","text":"Client just said \"quick question\" again. It was about whether BAS is due in January. It is always due in January","posted":true,"at":"2026-12-01T15:03","checkin":"2026-12-01T15:03"}
+{"who":"Josh","text":"that's not a quick question that's a cry for help","posted":true,"at":"2026-12-01T15:05","checkin":"2026-12-01T15:05"}
+{"who":"Olivia","text":"Yep","posted":true,"at":"2026-12-01T15:05","checkin":"2026-12-01T15:05"}
+{"who":"Josh","text":"quiz tonight 7:30. I'm bringing the good pen","posted":true,"at":"2026-12-01T17:14","checkin":"2026-12-01T17:14"}
+{"who":"Olivia","text":"You're not bringing the good pen. You never bring the good pen","posted":true,"at":"2026-12-01T17:15","checkin":"2026-12-01T17:15"}
+{"who":"Josh","text":"I've been saving it for a special occasion","posted":true,"at":"2026-12-01T17:15","checkin":"2026-12-01T17:15"}
+{"who":"Olivia","text":"It's a pub quiz","posted":true,"at":"2026-12-01T17:16","checkin":"2026-12-01T17:16"}
+{"who":"Josh","text":"and u have a story to tell I'm going to be very focused on the question sheet and not you at all","posted":true,"at":"2026-12-01T17:16","checkin":"2026-12-01T17:16"}
+{"who":"Olivia","text":"Sure","posted":true,"at":"2026-12-01T17:20","checkin":"2026-12-01T17:20"}
+{"who":"Olivia","text":"Home. Everyone knows the capital of Burkina Faso now, unfortunately","posted":true,"at":"2026-12-01T23:14","checkin":"2026-12-01T23:14"}
+{"who":"Josh","text":"we got the bonus on the 1990s one tho. we're a team","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Josh","text":"u ok?","posted":true,"at":"2026-12-01T23:16","checkin":"2026-12-01T23:16"}
+{"who":"Olivia","text":"Yeah. He texted again. \"hope you got home ok\"","posted":true,"at":"2026-12-01T23:52","checkin":"2026-12-01T23:52"}
+{"who":"Josh","text":"ok that's sweet. not eggs sweet but a step up","posted":true,"at":"2026-12-01T23:53","checkin":"2026-12-01T23:53"}
+{"who":"Olivia","text":"Could also be a dad thing","posted":true,"at":"2026-12-01T23:53","checkin":"2026-12-01T23:53"}
+{"who":"Josh","text":"u think he's a dad??","posted":true,"at":"2026-12-01T23:54","checkin":"2026-12-01T23:54"}
+{"who":"Olivia","text":"No idea. That's the point. Haven't replied","posted":true,"at":"2026-12-01T23:54","checkin":"2026-12-01T23:54"}
+{"who":"Josh","text":"ur allowed to reply \"yep\"","posted":true,"at":"2026-12-01T23:55","checkin":"2026-12-01T23:55"}
+{"who":"Olivia","text":"I did reply. \"yep\"","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Josh","text":"ur killing me","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Olivia","text":"Going to bed. Don't text me about the bach","posted":true,"at":"2026-12-02T00:11","checkin":"2026-12-02T00:11"}
+{"who":"Josh","text":"I wasn't going to","posted":true,"at":"2026-12-02T00:12","checkin":"2026-12-02T00:12"}
+{"who":"Josh","text":"I've got 4 more baches open in tabs 😂","posted":true,"at":"2026-12-02T00:12","checkin":"2026-12-02T00:12"}
+{"who":"Olivia","text":"Night Josh","posted":true,"at":"2026-12-02T00:13","checkin":"2026-12-02T00:13"}
+{"who":"Josh","text":"up. first job is a rental in Papanui with a dishwasher that hums like it's sad","posted":true,"at":"2026-12-02T07:44","checkin":"2026-12-02T07:44"}
+{"who":"Olivia","text":"Hope it's just the filter","posted":true,"at":"2026-12-02T08:15","checkin":"2026-12-02T08:15"}
+{"who":"Olivia","text":"Morning","posted":true,"at":"2026-12-02T08:15","checkin":"2026-12-02T08:15"}
+{"who":"Josh","text":"it's never the filter","posted":true,"at":"2026-12-02T08:16","checkin":"2026-12-02T08:16"}
+{"who":"Josh","text":"did u sleep","posted":true,"at":"2026-12-02T08:16","checkin":"2026-12-02T08:16"}
+{"who":"Olivia","text":"Mostly. Dreamt about the BAS again. It was on a boat","posted":true,"at":"2026-12-02T08:40","checkin":"2026-12-02T08:40"}
+{"who":"Josh","text":"ur brain has no boundaries","posted":true,"at":"2026-12-02T08:41","checkin":"2026-12-02T08:41"}
+{"who":"Josh","text":"[photo: a dishwasher with its front panel off, a pile of screws and a tiny rubber duck on the carpet]","posted":true,"at":"2026-12-02T10:22","checkin":"2026-12-02T10:22"}
+{"who":"Josh","text":"it was a rubber duck. stuck in the pump. the duck was the problem","posted":true,"at":"2026-12-02T10:22","checkin":"2026-12-02T10:22"}
+{"who":"Olivia","text":"How does a duck get in the pump","posted":true,"at":"2026-12-02T10:25","checkin":"2026-12-02T10:25"}
+{"who":"Josh","text":"tenant says \"he got in there himself.\" I believe her now","posted":true,"at":"2026-12-02T10:25","checkin":"2026-12-02T10:25"}
+{"who":"Olivia","text":"Eggs guy texted again. Not a text this time, a photo of his cat","posted":true,"at":"2026-12-02T12:10","checkin":"2026-12-02T12:10"}
+{"who":"Josh","text":"ok this is getting serious. cat = commitment","posted":true,"at":"2026-12-02T12:11","checkin":"2026-12-02T12:11"}
+{"who":"Josh","text":"what's the cat called","posted":true,"at":"2026-12-02T12:11","checkin":"2026-12-02T12:11"}
+{"who":"Olivia","text":"Didn't ask. Did reply though. I said \"nice cat\"","posted":true,"at":"2026-12-02T12:19","checkin":"2026-12-02T12:19"}
+{"who":"Josh","text":"ok that's a yes","posted":true,"at":"2026-12-02T12:20","checkin":"2026-12-02T12:20"}
+{"who":"Olivia","text":"It's not a yes","posted":true,"at":"2026-12-02T12:20","checkin":"2026-12-02T12:20"}
+{"who":"Josh","text":"ur typing \"nice cat\" to a man u slept with on saturday. that is a yes","posted":true,"at":"2026-12-02T12:21","checkin":"2026-12-02T12:21"}
+{"who":"Olivia","text":"Lunch at my desk again. Client wants to talk about GST on a boat he hasn't bought yet","posted":true,"at":"2026-12-02T12:45","checkin":"2026-12-02T12:45"}
+{"who":"Josh","text":"bold of him to assume the boat will be bought","posted":true,"at":"2026-12-02T12:46","checkin":"2026-12-02T12:46"}
+{"who":"Josh","text":"doing a switchboard in Opawa and the owner keeps asking if I can \"just\" add a plug. I cannot just add a plug","posted":true,"at":"2026-12-02T13:30","checkin":"2026-12-02T13:30"}
+{"who":"Olivia","text":"Add the plug and then say sorry","posted":true,"at":"2026-12-02T13:31","checkin":"2026-12-02T13:31"}
+{"who":"Josh","text":"ha","posted":true,"at":"2026-12-02T13:31","checkin":"2026-12-02T13:31"}
+{"who":"Olivia","text":"Finally out. Client said \"quick question\" one last time and then asked me to explain depreciation to his nephew","posted":true,"at":"2026-12-02T16:48","checkin":"2026-12-02T16:48"}
+{"who":"Josh","text":"is the nephew ok","posted":true,"at":"2026-12-02T16:49","checkin":"2026-12-02T16:49"}
+{"who":"Olivia","text":"Nephew is 9 and asked better questions than the client","posted":true,"at":"2026-12-02T16:49","checkin":"2026-12-02T16:49"}
+{"who":"Josh","text":"nephew's going places","posted":true,"at":"2026-12-02T16:51","checkin":"2026-12-02T16:51"}
+{"who":"Olivia","text":"Did you get the Opawa one sorted","posted":true,"at":"2026-12-02T19:20","checkin":"2026-12-02T19:20"}
+{"who":"Josh","text":"yep. plug added. apologised. owner happy. I'm a professional","posted":true,"at":"2026-12-02T19:34","checkin":"2026-12-02T19:34"}
+{"who":"Olivia","text":"Proud of you","posted":true,"at":"2026-12-02T19:35","checkin":"2026-12-02T19:35"}
+{"who":"Josh","text":"so the eggs guy. cat guy. what's ur plan","posted":true,"at":"2026-12-02T21:02","checkin":"2026-12-02T21:02"}
+{"who":"Olivia","text":"No plan. Thinking about whether I want to see him again without the cat in the room","posted":true,"at":"2026-12-02T21:04","checkin":"2026-12-02T21:04"}
+{"who":"Josh","text":"the cat is always in the room. that's the cat's whole thing","posted":true,"at":"2026-12-02T21:05","checkin":"2026-12-02T21:05"}
+{"who":"Olivia","text":"Ha","posted":true,"at":"2026-12-02T21:05","checkin":"2026-12-02T21:05"}
+{"who":"Olivia","text":"Replied to him. Said Thursday's better than Friday for me","posted":true,"at":"2026-12-02T22:47","checkin":"2026-12-02T22:47"}
+{"who":"Josh","text":"!!!! what did he say","posted":true,"at":"2026-12-02T22:48","checkin":"2026-12-02T22:48"}
+{"who":"Olivia","text":"\"Thursday works.\" Now I have a Thursday","posted":true,"at":"2026-12-02T22:50","checkin":"2026-12-02T22:50"}
+{"who":"Josh","text":"ok I need u to tell me everything at quiz tomorrow","posted":true,"at":"2026-12-02T22:50","checkin":"2026-12-02T22:50"}
+{"who":"Olivia","text":"Quiz is Tuesday. You need to chill","posted":true,"at":"2026-12-02T22:51","checkin":"2026-12-02T22:51"}
+{"who":"Josh","text":"ok so next Tuesday. I'll be patient for 6 days","posted":true,"at":"2026-12-02T22:51","checkin":"2026-12-02T22:51"}
+{"who":"Olivia","text":"Stop it","posted":true,"at":"2026-12-02T22:52","checkin":"2026-12-02T22:52"}
+{"who":"Josh","text":"night. not asking about the bach. bach is closed for discussion","posted":true,"at":"2026-12-02T23:40","checkin":"2026-12-02T23:40"}
+{"who":"Olivia","text":"Thank you","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Josh","text":"I've got 5 tabs open tho 😂","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Olivia","text":"Josh","posted":true,"at":"2026-12-02T23:42","checkin":"2026-12-02T23:42"}
+{"who":"Josh","text":"night","posted":true,"at":"2026-12-02T23:42","checkin":"2026-12-02T23:42"}

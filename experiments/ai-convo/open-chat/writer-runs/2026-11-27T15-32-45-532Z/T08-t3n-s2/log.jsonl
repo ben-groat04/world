@@ -1,0 +1,93 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T11:05","complete":true,"rejects":0,"today":["Rob","Stephanie",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2261,"cache_read_input_tokens":0,"output_tokens":2153,"output_tokens_details":{"thinking_tokens":1280},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2261,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2153,"cache_read_input_tokens":0,"cache_creation_input_tokens":2261,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2261},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3034,"cache_read_input_tokens":0,"output_tokens":2040,"output_tokens_details":{"thinking_tokens":1356},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3034,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2040,"cache_read_input_tokens":0,"cache_creation_input_tokens":3034,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3034},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3693,"cache_read_input_tokens":0,"output_tokens":3196,"output_tokens_details":{"thinking_tokens":2205},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3693,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3196,"cache_read_input_tokens":0,"cache_creation_input_tokens":3693,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3693},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Matt","Stephanie","Rob"],"setting":"You are all in Halifax, Nova Scotia, Canada, and you are all paramedics on the same crew, so you know each other from working shifts together. You are off shift and chatting in a group, and one of your crewmates, whom you all knew, has died.","openers":["Drop the grimmest call you ever worked","Post the blackest joke you have about the crash","Tell the nastiest scene you still can't shake","Start with the worst thing you saw on shift"],"opener":"Post the blackest joke you have about the crash","cast":{"Matt":{"who":"34, man, paramedic on the crew","work":"emergency dispatcher","knows":"You know Stephanie and Rob as crewmates on the same paramedic crew.","texts":"Matt texts in this chat only now and again.","style":"moderate, with some abbreviations and a few emoji","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Stephanie":{"who":"29, woman, paramedic on the crew","work":"EMT instructor","knows":"You know Matt and Rob as crewmates on the same paramedic crew.","texts":"Stephanie texts in this chat a lot.","style":"moderate, with some abbreviations and a few emoji","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Rob":{"who":"46, man, paramedic on the crew","work":"search and rescue technician","knows":"You know Matt and Stephanie as crewmates on the same paramedic crew.","texts":"Rob texts in this chat only now and again.","style":"moderate, with some abbreviations and a few emoji","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Matt":"You live in Halifax, filling your days with dispatch work and paramedic shifts, and you live with nobody.","Stephanie":"You live in Halifax, filling your days with paramedic shifts and teaching EMT courses, and you live with nobody.","Rob":"You live in Halifax, filling your days with paramedic shifts and search and rescue work, and you live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":875,"cache_read_input_tokens":0,"output_tokens":1114,"output_tokens_details":{"thinking_tokens":760},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":875,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1114,"cache_read_input_tokens":0,"cache_creation_input_tokens":875,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":875},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1138,"cache_read_input_tokens":0,"output_tokens":1954,"output_tokens_details":{"thinking_tokens":1434},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1138,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1954,"cache_read_input_tokens":0,"cache_creation_input_tokens":1138,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1138},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Halifax, Canada","castMs":15998,"situation":"Three paramedics on the same crew, off shift.","topic":"Competing to tell the grimmest, most disgusting call-out stories with the blackest jokes they can manage, including the death of someone they all knew, joked about because nobody can cope otherwise."}
+{"who":"Matt","text":"Ok ill go first. Jordan finally got a scene where we didnt need to do anything 💀 no ALS, no bag, nobody had to ask him what happened","posted":true,"at":"2026-12-02T11:05","checkin":"2026-12-02T11:05"}
+{"who":"Stephanie","text":"Matt","posted":true,"at":"2026-12-02T11:09","checkin":"2026-12-02T11:09"}
+{"who":"Stephanie","text":"Lmaooo I hate you","posted":true,"at":"2026-12-02T11:09","checkin":"2026-12-02T11:09"}
+{"who":"","react":"😂","to":2,"posted":false,"at":"2026-12-02T11:09"}
+{"who":"","react":"😂","to":2,"posted":false,"at":"2026-12-02T11:09"}
+{"who":"Rob","text":"Not wrong though","posted":true,"at":"2026-12-02T11:14","checkin":"2026-12-02T11:14"}
+{"who":"Matt","text":"Rob ur supposed to say \"that's sick\" and then top it","posted":true,"at":"2026-12-02T11:16","checkin":"2026-12-02T11:16"}
+{"who":"Rob","text":"That's sick","posted":true,"at":"2026-12-02T11:17","checkin":"2026-12-02T11:17"}
+{"who":"Stephanie","text":"Ok my turn and it's worse. Remember the guy on the 111 with the deer. Jordan said he'd \"just check the grill\" and then got out of the truck","posted":true,"at":"2026-12-02T11:31","checkin":"2026-12-02T11:31"}
+{"who":"Matt","text":"Jordan would absolutely have done that","posted":true,"at":"2026-12-02T11:33","checkin":"2026-12-02T11:33"}
+{"who":"Stephanie","text":"He did do that","posted":true,"at":"2026-12-02T11:33","checkin":"2026-12-02T11:33"}
+{"who":"Matt","text":"Ok too far?","posted":true,"at":"2026-12-02T11:40","checkin":"2026-12-02T11:40"}
+{"who":"Rob","text":"Yeah","posted":true,"at":"2026-12-02T11:52","checkin":"2026-12-02T11:52"}
+{"who":"Stephanie","text":"No its fine. We're allowed","posted":true,"at":"2026-12-02T11:52","checkin":"2026-12-02T11:52"}
+{"who":"Rob","text":"Was at a recovery in porters lake yesterday. The lake one. Been having a hard time getting the smell off me, sorry","posted":true,"at":"2026-12-02T12:20","checkin":"2026-12-02T12:20"}
+{"who":"Stephanie","text":"Rob. I'm sorry. You don't have to say anything about it","posted":true,"at":"2026-12-02T12:24","checkin":"2026-12-02T12:24"}
+{"who":"Matt","text":"Shit rob. Ur ok?","posted":true,"at":"2026-12-02T12:25","checkin":"2026-12-02T12:25"}
+{"who":"Rob","text":"Ok enough. Shower, eat something. I'll be ok","posted":true,"at":"2026-12-02T12:31","checkin":"2026-12-02T12:31"}
+{"who":"Matt","text":"Are we doing the funeral thing this weekend or is that next week","posted":true,"at":"2026-12-02T13:02","checkin":"2026-12-02T13:02"}
+{"who":"Stephanie","text":"Next week I think, family is still doing the paperwork","posted":true,"at":"2026-12-02T13:40","checkin":"2026-12-02T13:40"}
+{"who":"Stephanie","text":"I talked to his sister this morning. She asked if any of us would speak","posted":true,"at":"2026-12-02T13:41","checkin":"2026-12-02T13:41"}
+{"who":"Matt","text":"Of course","posted":true,"at":"2026-12-02T14:15","checkin":"2026-12-02T14:15"}
+{"who":"Matt","text":"Ill do it. Dont know what id say","posted":true,"at":"2026-12-02T14:16","checkin":"2026-12-02T14:16"}
+{"who":"Stephanie","text":"I keep picking up my phone to text him about the 111 thing and then remembering","posted":true,"at":"2026-12-02T17:48","checkin":"2026-12-02T17:48"}
+{"who":"Matt","text":"Yeah","posted":true,"at":"2026-12-02T17:50","checkin":"2026-12-02T17:50"}
+{"who":"Rob","text":"You two up","posted":true,"at":"2026-12-02T22:10","checkin":"2026-12-02T22:10"}
+{"who":"Stephanie","text":"Yeah","posted":true,"at":"2026-12-02T22:14","checkin":"2026-12-02T22:14"}
+{"who":"Matt","text":"Yeah. Cant sleep","posted":true,"at":"2026-12-02T22:15","checkin":"2026-12-02T22:15"}
+{"who":"Stephanie","text":"I made a list of everything jordan ever did that would have gotten him fired. It's so long","posted":true,"at":"2026-12-02T23:31","checkin":"2026-12-02T23:31"}
+{"who":"Matt","text":"Send it","posted":true,"at":"2026-12-02T23:33","checkin":"2026-12-02T23:33"}
+{"who":"Stephanie","text":"No. I'm going to bed. Night","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}
+{"who":"Stephanie","text":"Up. Slept like crap","posted":true,"at":"2026-12-03T07:12","checkin":"2026-12-03T07:12"}
+{"who":"Matt","text":"Yeah","posted":true,"at":"2026-12-03T07:40","checkin":"2026-12-03T07:40"}
+{"who":"Rob","text":"Going to the gym with the SAR guys this afternoon if anyone wants out of the house","posted":true,"at":"2026-12-03T09:03","checkin":"2026-12-03T09:03"}
+{"who":"Stephanie","text":"Ugh I have class 1 to 5. EMR refresher, 14 people","posted":true,"at":"2026-12-03T09:10","checkin":"2026-12-03T09:10"}
+{"who":"Stephanie","text":"Gonna have to do the whole airway module without crying probably","posted":true,"at":"2026-12-03T09:11","checkin":"2026-12-03T09:11"}
+{"who":"Matt","text":"Ur gonna be fine","posted":true,"at":"2026-12-03T09:14","checkin":"2026-12-03T09:14"}
+{"who":"Matt","text":"Ur the best teacher I ever had lol","posted":true,"at":"2026-12-03T09:15","checkin":"2026-12-03T09:15"}
+{"who":"Stephanie","text":"Didn't ask for that","posted":true,"at":"2026-12-03T09:20","checkin":"2026-12-03T09:20"}
+{"who":"Stephanie","text":"Ok on break. One of the students asked if I knew \"the paramedic who died\" because he saw the post on the local 911 page. Like yeah I did","posted":true,"at":"2026-12-03T13:18","checkin":"2026-12-03T13:18"}
+{"who":"Stephanie","text":"Said he was on my crew. Then I had to do the rest of the module","posted":true,"at":"2026-12-03T13:19","checkin":"2026-12-03T13:19"}
+{"who":"Matt","text":"Did u tell them the deer story","posted":true,"at":"2026-12-03T13:24","checkin":"2026-12-03T13:24"}
+{"who":"Stephanie","text":"No. I did not","posted":true,"at":"2026-12-03T13:25","checkin":"2026-12-03T13:25"}
+{"who":"Rob","text":"Good","posted":true,"at":"2026-12-03T13:31","checkin":"2026-12-03T13:31"}
+{"who":"Stephanie","text":"Done. Drove past the station on the way home and sat in the lot for a minute like an idiot","posted":true,"at":"2026-12-03T17:05","checkin":"2026-12-03T17:05"}
+{"who":"Matt","text":"Not an idiot","posted":true,"at":"2026-12-03T17:06","checkin":"2026-12-03T17:06"}
+{"who":"Rob","text":"Want company tonight or u good","posted":true,"at":"2026-12-03T19:40","checkin":"2026-12-03T19:40"}
+{"who":"Stephanie","text":"I'm good. Maybe tmrw","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Rob","text":"Ok","posted":true,"at":"2026-12-03T19:53","checkin":"2026-12-03T19:53"}
+{"who":"Matt","text":"Off tmrw. Anyone want to get coffee","posted":true,"at":"2026-12-03T22:30","checkin":"2026-12-03T22:30"}
+{"who":"Stephanie","text":"Yes. Tims on Robie at 10?","posted":true,"at":"2026-12-03T22:48","checkin":"2026-12-03T22:48"}
+{"who":"Matt","text":"Ok","posted":true,"at":"2026-12-03T22:49","checkin":"2026-12-03T22:49"}
+{"who":"Rob","text":"I'll try. Might be out in the woods, will say","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Stephanie","text":"Ok","posted":true,"at":"2026-12-03T23:41","checkin":"2026-12-03T23:41"}
+{"who":"Rob","text":"Going out to the Cobequid edge with the team, back by noon. Phone might be dead","posted":true,"at":"2026-12-04T07:55","checkin":"2026-12-04T07:55"}
+{"who":"Stephanie","text":"Leaving now","posted":true,"at":"2026-12-04T09:48","checkin":"2026-12-04T09:48"}
+{"who":"Matt","text":"Same. Ill grab a table","posted":true,"at":"2026-12-04T09:50","checkin":"2026-12-04T09:50"}
+{"who":"Stephanie","text":"Here. Ur in the back?","posted":true,"at":"2026-12-04T10:22","checkin":"2026-12-04T10:22"}
+{"who":"Matt","text":"Ya by the window. Get me a double double","posted":true,"at":"2026-12-04T10:23","checkin":"2026-12-04T10:23"}
+{"who":"Stephanie","text":"Ur not the boss of me","posted":true,"at":"2026-12-04T10:24","checkin":"2026-12-04T10:24"}
+{"who":"Rob","text":"Out. At the truck. Shower then sleep","posted":true,"at":"2026-12-04T11:58","checkin":"2026-12-04T11:58"}
+{"who":"Matt","text":"Good","posted":true,"at":"2026-12-04T12:03","checkin":"2026-12-04T12:03"}
+{"who":"Stephanie","text":"Rob did u eat","posted":true,"at":"2026-12-04T12:06","checkin":"2026-12-04T12:06"}
+{"who":"Rob","text":"Yeah. Gas station pizza. Dont tell anyone","posted":true,"at":"2026-12-04T12:15","checkin":"2026-12-04T12:15"}
+{"who":"Stephanie","text":"Ugh","posted":true,"at":"2026-12-04T12:16","checkin":"2026-12-04T12:16"}
+{"who":"Matt","text":"Stephanie when u get home can u look at something for me. Its the eulogy. Its bad","posted":true,"at":"2026-12-04T13:40","checkin":"2026-12-04T13:40"}
+{"who":"Stephanie","text":"Send it. Dont say its bad before I read it","posted":true,"at":"2026-12-04T13:52","checkin":"2026-12-04T13:52"}
+{"who":"Matt","text":"[link: eulogy draft, shared doc]","posted":true,"at":"2026-12-04T13:52","checkin":"2026-12-04T13:52"}
+{"who":"Stephanie","text":"Read it. Its not bad. Its very Jordan","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Stephanie","text":"The deer is in there","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"Matt","text":"It's in there??","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"Stephanie","text":"Ya. You can't leave out the deer","posted":true,"at":"2026-12-04T16:22","checkin":"2026-12-04T16:22"}
+{"who":"Matt","text":"Ok but I have to say it without laughing","posted":true,"at":"2026-12-04T16:24","checkin":"2026-12-04T16:24"}
+{"who":"Stephanie","text":"Ur gonna laugh. Thats fine. His sister will laugh","posted":true,"at":"2026-12-04T16:25","checkin":"2026-12-04T16:25"}
+{"who":"Rob","text":"How's the doc","posted":true,"at":"2026-12-04T19:10","checkin":"2026-12-04T19:10"}
+{"who":"Matt","text":"Stephanie says the deer stays","posted":true,"at":"2026-12-04T19:12","checkin":"2026-12-04T19:12"}
+{"who":"Rob","text":"Obviously","posted":true,"at":"2026-12-04T19:14","checkin":"2026-12-04T19:14"}
+{"who":"Stephanie","text":"Anyone up","posted":true,"at":"2026-12-04T21:33","checkin":"2026-12-04T21:33"}
+{"who":"Matt","text":"Up","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Matt","text":"Just up. Not on shift","posted":true,"at":"2026-12-04T21:41","checkin":"2026-12-04T21:41"}
+{"who":"Stephanie","text":"Ok im sending the list. Just the first 5","posted":true,"at":"2026-12-04T23:02","checkin":"2026-12-04T23:02"}
+{"who":"Matt","text":"💀","posted":true,"at":"2026-12-04T23:03","checkin":"2026-12-04T23:03"}
+{"who":"","react":"😂","to":79,"posted":false,"at":"2026-12-04T23:03"}
+{"who":"","react":"😂","to":79,"posted":false,"at":"2026-12-04T23:03"}
+{"who":"Stephanie","text":"1. Drove the rig through the Tims drive thru with the lights on","posted":true,"at":"2026-12-04T23:03","checkin":"2026-12-04T23:03"}
+{"who":"Stephanie","text":"2. Lost the rig keys for 3 hrs and blamed the bay","posted":true,"at":"2026-12-04T23:04","checkin":"2026-12-04T23:04"}
+{"who":"Stephanie","text":"3. Wrote a pt's name on a chart in pen and then \"corrected\" it with white-out","posted":true,"at":"2026-12-04T23:05","checkin":"2026-12-04T23:05"}
+{"who":"Stephanie","text":"4. The hoodie thing","posted":true,"at":"2026-12-04T23:06","checkin":"2026-12-04T23:06"}
+{"who":"Matt","text":"4 is the one about the hoodie","posted":true,"at":"2026-12-04T23:06","checkin":"2026-12-04T23:06"}
+{"who":"Stephanie","text":"Dont. Thats for the eulogy","posted":true,"at":"2026-12-04T23:06","checkin":"2026-12-04T23:06"}
+{"who":"Rob","text":"Good","posted":true,"at":"2026-12-04T23:31","checkin":"2026-12-04T23:31"}

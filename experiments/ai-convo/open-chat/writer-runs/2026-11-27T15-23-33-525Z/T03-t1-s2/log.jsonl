@@ -1,0 +1,84 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T12:00","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2175,"cache_read_input_tokens":0,"output_tokens":3203,"output_tokens_details":{"thinking_tokens":2432},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2175,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3203,"cache_read_input_tokens":0,"cache_creation_input_tokens":2175,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2175},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2839,"cache_read_input_tokens":0,"output_tokens":1800,"output_tokens_details":{"thinking_tokens":1083},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2839,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1800,"cache_read_input_tokens":0,"cache_creation_input_tokens":2839,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2839},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3542,"cache_read_input_tokens":0,"output_tokens":2166,"output_tokens_details":{"thinking_tokens":1386},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3542,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2166,"cache_read_input_tokens":0,"cache_creation_input_tokens":3542,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3542},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Liam","Jess","Luke","Sophie"],"setting":"You are all in a group chat in Birmingham, friends from school who use it to plan Saturday's house party, including lifts there and back. Two of you are planning to take MDMA that night, which is a Class A drug in the UK, so possessing or supplying it is illegal, and you all know that.","openers":["Ask who's driving Saturday","Sort the lifts to and from the party","Check who's planning to take anything before the night","Agree to look out for each other"],"opener":"Agree to look out for each other","cast":{"Liam":{"who":"24, man, friend","work":"sixth-form teacher","knows":"You know Jess, Luke and Sophie as friends from school.","texts":"Liam texts in this chat now and then.","style":"Few emoji, some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Jess":{"who":"23, woman, friend","work":"retail manager","knows":"You know Liam, Luke and Sophie as friends from school.","texts":"Jess texts in this chat only now and again.","style":"Lots of emoji and texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Luke":{"who":"26, man, friend","work":"plasterer","knows":"You know Liam, Jess and Sophie as friends from school.","texts":"Luke texts in this chat only now and again.","style":"none","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Sophie":{"who":"25, woman, friend","work":"bartender","knows":"You know Liam, Jess and Luke as friends from school.","texts":"Sophie texts in this chat a lot.","style":"Some emoji, few abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Liam":"You live in Birmingham, teach sixth form, and live alone.","Jess":"You live in Birmingham, work as a retail manager, and live alone.","Luke":"You live in Birmingham, work as a plasterer, and live alone.","Sophie":"You live in Birmingham, work as a bartender, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":857,"cache_read_input_tokens":0,"output_tokens":972,"output_tokens_details":{"thinking_tokens":557},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":857,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":972,"cache_read_input_tokens":0,"cache_creation_input_tokens":857,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":857},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1153,"cache_read_input_tokens":0,"output_tokens":2522,"output_tokens_details":{"thinking_tokens":1997},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1153,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2522,"cache_read_input_tokens":0,"cache_creation_input_tokens":1153,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1153},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Birmingham, England","castMs":18352,"situation":"Four friends in their twenties going to a house party on Saturday.","topic":"Two of them are taking MDMA at the party, one of those has done it plenty of times before, and they are talking about the night ahead."}
+{"who":"Liam","text":"Saturday. Can we agree to look out for each other properly this time","posted":true,"at":"2026-12-01T12:04","checkin":"2026-12-01T12:04"}
+{"who":"Jess","text":"meaning?","posted":true,"at":"2026-12-01T12:09","checkin":"2026-12-01T12:09"}
+{"who":"Liam","text":"Nobody wanders off alone. Phones charged. We all leave together or say where we're going","posted":true,"at":"2026-12-01T12:12","checkin":"2026-12-01T12:12"}
+{"who":"Sophie","text":"yes","posted":true,"at":"2026-12-01T12:15","checkin":"2026-12-01T12:15"}
+{"who":"Sophie","text":"i'm not having a repeat of the bush incident 😂","posted":true,"at":"2026-12-01T12:15","checkin":"2026-12-01T12:15"}
+{"who":"","react":"😂","to":4,"posted":false,"at":"2026-12-01T12:15"}
+{"who":"","react":"😂","to":4,"posted":false,"at":"2026-12-01T12:15"}
+{"who":"Jess","text":"that was ONE time","posted":true,"at":"2026-12-01T12:21","checkin":"2026-12-01T12:21"}
+{"who":"Luke","text":"Which bush","posted":true,"at":"2026-12-01T12:22","checkin":"2026-12-01T12:22"}
+{"who":"Sophie","text":"you know which bush","posted":true,"at":"2026-12-01T12:30","checkin":"2026-12-01T12:30"}
+{"who":"Luke","text":"I can do lift back if someone does lift there","posted":true,"at":"2026-12-01T13:48","checkin":"2026-12-01T13:48"}
+{"who":"Liam","text":"I'll drive there and back, not drinking anyway","posted":true,"at":"2026-12-01T13:52","checkin":"2026-12-01T13:52"}
+{"who":"Liam","text":"Can fit 3 if no one's got a massive coat","posted":true,"at":"2026-12-01T13:52","checkin":"2026-12-01T13:52"}
+{"who":"Sophie","text":"ok liam's the designated 🙄 nice","posted":true,"at":"2026-12-01T14:03","checkin":"2026-12-01T14:03"}
+{"who":"Jess","text":"me and soph can get a taxi back if we go a bit late","posted":true,"at":"2026-12-01T14:05","checkin":"2026-12-01T14:05"}
+{"who":"Liam","text":"And you two are taking stuff so can we just keep an eye on each other","posted":true,"at":"2026-12-01T14:09","checkin":"2026-12-01T14:09"}
+{"who":"Jess","text":"we're fine","posted":true,"at":"2026-12-01T14:14","checkin":"2026-12-01T14:14"}
+{"who":"Sophie","text":"i've done it loads liam it's fine","posted":true,"at":"2026-12-01T14:16","checkin":"2026-12-01T14:16"}
+{"who":"Liam","text":"I know, that's why I'm saying","posted":true,"at":"2026-12-01T14:16","checkin":"2026-12-01T14:16"}
+{"who":"Luke","text":"Me neither for the record","posted":true,"at":"2026-12-01T14:31","checkin":"2026-12-01T14:31"}
+{"who":"Luke","text":"Just the drinks","posted":true,"at":"2026-12-01T14:31","checkin":"2026-12-01T14:31"}
+{"who":"Sophie","text":"did someone say they'd bring water 💧","posted":true,"at":"2026-12-01T17:20","checkin":"2026-12-01T17:20"}
+{"who":"Jess","text":"i've got water","posted":true,"at":"2026-12-01T17:44","checkin":"2026-12-01T17:44"}
+{"who":"Jess","text":"ok maybe not enough","posted":true,"at":"2026-12-01T17:44","checkin":"2026-12-01T17:44"}
+{"who":"Liam","text":"I'll bring some and snacks","posted":true,"at":"2026-12-01T18:02","checkin":"2026-12-01T18:02"}
+{"who":"Sophie","text":"👍","posted":true,"at":"2026-12-01T18:02","checkin":"2026-12-01T18:02"}
+{"who":"","react":"😂","to":23,"posted":false,"at":"2026-12-01T18:02"}
+{"who":"Luke","text":"Shift at 6 tomorrow so I'm out early sat too probably","posted":true,"at":"2026-12-01T21:37","checkin":"2026-12-01T21:37"}
+{"who":"Luke","text":"Dont go without me","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Jess","text":"is it same house as last year","posted":true,"at":"2026-12-01T22:41","checkin":"2026-12-01T22:41"}
+{"who":"Liam","text":"Think so, the one in moseley","posted":true,"at":"2026-12-01T22:58","checkin":"2026-12-01T22:58"}
+{"who":"Jess","text":"ok good","posted":true,"at":"2026-12-01T22:59","checkin":"2026-12-01T22:59"}
+{"who":"Luke","text":"Is it bring own charger or does the house have one","posted":true,"at":"2026-12-02T08:47","checkin":"2026-12-02T08:47"}
+{"who":"Sophie","text":"bring your own nobody has ever had a working charger at moseley","posted":true,"at":"2026-12-02T09:15","checkin":"2026-12-02T09:15"}
+{"who":"Jess","text":"the lamp one?","posted":true,"at":"2026-12-02T09:16","checkin":"2026-12-02T09:16"}
+{"who":"Sophie","text":"lamp one is gone","posted":true,"at":"2026-12-02T09:16","checkin":"2026-12-02T09:16"}
+{"who":"Liam","text":"Can I get a rough time for leaving. Marking till 8 so I'll be late getting the car sorted","posted":true,"at":"2026-12-02T12:30","checkin":"2026-12-02T12:30"}
+{"who":"Jess","text":"10ish? doors are like 9 anyway","posted":true,"at":"2026-12-02T12:58","checkin":"2026-12-02T12:58"}
+{"who":"Liam","text":"10 works","posted":true,"at":"2026-12-02T13:02","checkin":"2026-12-02T13:02"}
+{"who":"Luke","text":"I'll try for 10 but might be 10:30 if the job overruns","posted":true,"at":"2026-12-02T13:03","checkin":"2026-12-02T13:03"}
+{"who":"Sophie","text":"you'll be there when you're there","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Jess","text":"soph are you still doing the thing sat 😬","posted":true,"at":"2026-12-02T19:14","checkin":"2026-12-02T19:14"}
+{"who":"Sophie","text":"yes. i've got it sorted, i've checked it","posted":true,"at":"2026-12-02T19:40","checkin":"2026-12-02T19:40"}
+{"who":"Liam","text":"Checked how","posted":true,"at":"2026-12-02T19:44","checkin":"2026-12-02T19:44"}
+{"who":"Sophie","text":"it has a kit thing, i'm not explaining it in a group chat liam","posted":true,"at":"2026-12-02T19:51","checkin":"2026-12-02T19:51"}
+{"who":"Liam","text":"Fair. Just don't take it in the car or on your own","posted":true,"at":"2026-12-02T19:52","checkin":"2026-12-02T19:52"}
+{"who":"Sophie","text":"👍","posted":true,"at":"2026-12-02T19:53","checkin":"2026-12-02T19:53"}
+{"who":"Jess","text":"can we not do the thing where liam does the dad voice in here","posted":true,"at":"2026-12-02T20:10","checkin":"2026-12-02T20:10"}
+{"who":"Liam","text":"Not doing a dad voice, just saying","posted":true,"at":"2026-12-02T20:12","checkin":"2026-12-02T20:12"}
+{"who":"Jess","text":"ok","posted":true,"at":"2026-12-02T20:12","checkin":"2026-12-02T20:12"}
+{"who":"Luke","text":"Who's bringing the water then, jess said not enough","posted":true,"at":"2026-12-02T21:33","checkin":"2026-12-02T21:33"}
+{"who":"Jess","text":"i said maybe not enough 🙄 liam said he'd bring some","posted":true,"at":"2026-12-02T21:41","checkin":"2026-12-02T21:41"}
+{"who":"Liam","text":"Yeah I'll get a multipack on the way Sat","posted":true,"at":"2026-12-02T21:42","checkin":"2026-12-02T21:42"}
+{"who":"Sophie","text":"can we have the sofa at the house this time not the floor","posted":true,"at":"2026-12-02T23:50","checkin":"2026-12-02T23:50"}
+{"who":"Jess","text":"we can have whatever we want if we get there before luke takes the good chair 😂","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}
+{"who":"Luke","text":"Not taking any chair","posted":true,"at":"2026-12-02T23:59","checkin":"2026-12-02T23:59"}
+{"who":"Jess","text":"who's on the sofa question. i'm asking for soph","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Sophie","text":"the sofa at moseley has a massive stain on it that is not my problem","posted":true,"at":"2026-12-03T08:20","checkin":"2026-12-03T08:20"}
+{"who":"Liam","text":"Marking done for the day. Anyone know if Moseley house has a bin","posted":true,"at":"2026-12-03T12:31","checkin":"2026-12-03T12:31"}
+{"who":"Jess","text":"it has a bin liam it's a house","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Liam","text":"Ok good","posted":true,"at":"2026-12-03T12:33","checkin":"2026-12-03T12:33"}
+{"who":"Luke","text":"Bin's outside the back gate. Used to be anyway","posted":true,"at":"2026-12-03T13:10","checkin":"2026-12-03T13:10"}
+{"who":"Sophie","text":"liam can you bring a pack of cups","posted":true,"at":"2026-12-03T16:47","checkin":"2026-12-03T16:47"}
+{"who":"Liam","text":"Yep","posted":true,"at":"2026-12-03T16:48","checkin":"2026-12-03T16:48"}
+{"who":"Jess","text":"i can't do the lift there, my sister's got the car sat so i'm getting the bus into town and meeting you there","posted":true,"at":"2026-12-03T17:02","checkin":"2026-12-03T17:02"}
+{"who":"Liam","text":"Bus there is fine, just make sure you're not on your own coming back","posted":true,"at":"2026-12-03T17:05","checkin":"2026-12-03T17:05"}
+{"who":"Jess","text":"liam","posted":true,"at":"2026-12-03T17:05","checkin":"2026-12-03T17:05"}
+{"who":"Jess","text":"i'm literally getting a taxi from the bus stop","posted":true,"at":"2026-12-03T17:06","checkin":"2026-12-03T17:06"}
+{"who":"Sophie","text":"has anyone seen my keys. i've looked in every coat","posted":true,"at":"2026-12-03T19:22","checkin":"2026-12-03T19:22"}
+{"who":"Luke","text":"Check the car","posted":true,"at":"2026-12-03T19:25","checkin":"2026-12-03T19:25"}
+{"who":"Sophie","text":"they were in the car 🙄","posted":true,"at":"2026-12-03T19:31","checkin":"2026-12-03T19:31"}
+{"who":"Liam","text":"Soph you good for Sat? Not trying to do the thing, just checking you won't be doing it on your own","posted":true,"at":"2026-12-03T21:10","checkin":"2026-12-03T21:10"}
+{"who":"Sophie","text":"i'm good liam. with people. i said i'd be with people","posted":true,"at":"2026-12-03T21:14","checkin":"2026-12-03T21:14"}
+{"who":"Sophie","text":"i'll be where you can see me","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Liam","text":"Ok. Cheers","posted":true,"at":"2026-12-03T21:16","checkin":"2026-12-03T21:16"}
+{"who":"Jess","text":"who's getting the multipack liam you said","posted":true,"at":"2026-12-03T22:40","checkin":"2026-12-03T22:40"}
+{"who":"Liam","text":"Getting it Sat morning, Tesco on the way","posted":true,"at":"2026-12-03T22:41","checkin":"2026-12-03T22:41"}
+{"who":"Jess","text":"ok","posted":true,"at":"2026-12-03T22:41","checkin":"2026-12-03T22:41"}
+{"who":"Luke","text":"Just got in. Knackered. Found the charger for my phone so that's one thing","posted":true,"at":"2026-12-03T23:18","checkin":"2026-12-03T23:18"}
+{"who":"","react":"😂","to":75,"posted":false,"at":"2026-12-03T23:18"}
+{"who":"Sophie","text":"that's the first charger anyone's ever found","posted":true,"at":"2026-12-03T23:20","checkin":"2026-12-03T23:20"}
+{"who":"Jess","text":"soph do you know if the moseley bar still does the cheap drinks before 10 or was that last year","posted":true,"at":"2026-12-04T00:37","checkin":"2026-12-04T00:37"}

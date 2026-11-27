@@ -1,0 +1,65 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T07:00","complete":true,"rejects":0,"today":["Kenny",null,"Malcolm"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2248,"cache_read_input_tokens":0,"output_tokens":1909,"output_tokens_details":{"thinking_tokens":1281},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2248,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1909,"cache_read_input_tokens":0,"cache_creation_input_tokens":2248,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2248},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2752,"cache_read_input_tokens":0,"output_tokens":1498,"output_tokens_details":{"thinking_tokens":1053},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2752,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1498,"cache_read_input_tokens":0,"cache_creation_input_tokens":2752,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2752},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3210,"cache_read_input_tokens":0,"output_tokens":1348,"output_tokens_details":{"thinking_tokens":795},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3210,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1348,"cache_read_input_tokens":0,"cache_creation_input_tokens":3210,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3210},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Fiona","Kenny","Malcolm","Hannah"],"setting":"You are all in Glasgow, a family group chat of two parents and their two adult children, and you use it to arrange Christmas lunch at Fiona and Malcolm's house and to chip in together for a present for your gran.","openers":["Ask everyone to keep Christmas lunch plans","Suggest we all calm down before anyone replies","Tell Kenny you want an apology before Sunday","Propose we talk properly after church this week"],"opener":"Propose we talk properly after church this week","cast":{"Fiona":{"who":"58, woman, the mother","work":"church administrator","knows":"You are the mother; Malcolm is your husband; Kenny is your eldest; Hannah is your younger daughter.","texts":"Fiona texts in this chat a lot.","style":"none","emojiKeep":0.6,"capitals":true,"lives":["Malcolm"],"ex":[]},"Kenny":{"who":"31, man, the eldest child","work":"sales representative","knows":"Fiona is your mother; Malcolm is your father; Hannah is your younger sister.","texts":"Kenny texts in this chat now and then.","style":"some","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Malcolm":{"who":"61, man, the father","work":"school caretaker","knows":"You are the father; Fiona is your wife; Kenny is your eldest son; Hannah is your younger daughter.","texts":"Malcolm texts in this chat now and then.","style":"none","emojiKeep":0.35,"capitals":true,"lives":["Fiona"],"ex":[]},"Hannah":{"who":"27, woman, the younger child","work":"primary teacher","knows":"Fiona is your mother; Malcolm is your father; Kenny is your older brother.","texts":"Hannah texts in this chat only now and again.","style":"frequent","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Fiona":"You live in Glasgow, work as a church administrator, and live with Malcolm.","Kenny":"You live in Glasgow, work in sales, and live alone.","Malcolm":"You live in Glasgow, work as a school caretaker, and live with Fiona.","Hannah":"You live in Glasgow, work as a primary teacher, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":874,"cache_read_input_tokens":0,"output_tokens":1668,"output_tokens_details":{"thinking_tokens":1233},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":874,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1668,"cache_read_input_tokens":0,"cache_creation_input_tokens":874,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":874},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1182,"cache_read_input_tokens":0,"output_tokens":2385,"output_tokens_details":{"thinking_tokens":1818},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1182,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2385,"cache_read_input_tokens":0,"cache_creation_input_tokens":1182,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1182},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Glasgow, Scotland","castMs":20012,"situation":"A family group chat: parents and their two adult children.","topic":"A full-blown row: the mother calls the eldest a disgrace, the eldest mocks her faith and swears at her, the father shouts them both down, and the younger sibling takes sides."}
+{"who":"Fiona","text":"Morning. Still ok for christmas lunch the 25th at 1? Need numbers for the turkey","posted":true,"at":"2026-11-28T07:02","checkin":"2026-11-28T07:02"}
+{"who":"Malcolm","text":"Aye","posted":true,"at":"2026-11-28T08:15","checkin":"2026-11-28T08:15"}
+{"who":"Hannah","text":"Yes! Do u want me to bring anything or is it sorted","posted":true,"at":"2026-11-28T08:40","checkin":"2026-11-28T08:40"}
+{"who":"Fiona","text":"Sorted. Just bring yourselves","posted":true,"at":"2026-11-28T08:47","checkin":"2026-11-28T08:47"}
+{"who":"Kenny","text":"ill be there","posted":true,"at":"2026-11-28T10:30","checkin":"2026-11-28T10:30"}
+{"who":"Fiona","text":"Gran's present. Did we decide","posted":true,"at":"2026-11-28T11:02","checkin":"2026-11-28T11:02"}
+{"who":"Malcolm","text":"She liked that cardigan from last year","posted":true,"at":"2026-11-28T11:20","checkin":"2026-11-28T11:20"}
+{"who":"Hannah","text":"She has 3 of those dad","posted":true,"at":"2026-11-28T11:25","checkin":"2026-11-28T11:25"}
+{"who":"Hannah","text":"The blue one maybe","posted":true,"at":"2026-11-28T11:26","checkin":"2026-11-28T11:26"}
+{"who":"Kenny","text":"had a shocker today. lost the glenrothes order. nae bother","posted":true,"at":"2026-11-28T13:10","checkin":"2026-11-28T13:10"}
+{"who":"Fiona","text":"Sorry love. Are you ok","posted":true,"at":"2026-11-28T13:40","checkin":"2026-11-28T13:40"}
+{"who":"Kenny","text":"fine","posted":true,"at":"2026-11-28T13:55","checkin":"2026-11-28T13:55"}
+{"who":"Hannah","text":"Oh no kenny :(","posted":true,"at":"2026-11-28T14:02","checkin":"2026-11-28T14:02"}
+{"who":"Malcolm","text":"Thats rough son","posted":true,"at":"2026-11-28T16:00","checkin":"2026-11-28T16:00"}
+{"who":"Fiona","text":"Kenny are you still coming to church tomorrow","posted":true,"at":"2026-11-28T19:30","checkin":"2026-11-28T19:30"}
+{"who":"Kenny","text":"dont know mum","posted":true,"at":"2026-11-28T19:58","checkin":"2026-11-28T19:58"}
+{"who":"Fiona","text":"I'd like us to talk properly this week. After church sunday maybe, at ours, just us four. Not on here","posted":true,"at":"2026-11-28T20:15","checkin":"2026-11-28T20:15"}
+{"who":"Malcolm","text":"Ok","posted":true,"at":"2026-11-28T20:17","checkin":"2026-11-28T20:17"}
+{"who":"Hannah","text":"What do u mean properly","posted":true,"at":"2026-11-28T20:40","checkin":"2026-11-28T20:40"}
+{"who":"Fiona","text":"Properly. Sitting down","posted":true,"at":"2026-11-28T20:41","checkin":"2026-11-28T20:41"}
+{"who":"Kenny","text":"talk about what","posted":true,"at":"2026-11-28T21:33","checkin":"2026-11-28T21:33"}
+{"who":"Fiona","text":"You know what","posted":true,"at":"2026-11-28T21:34","checkin":"2026-11-28T21:34"}
+{"who":"Hannah","text":"Mum","posted":true,"at":"2026-11-28T21:50","checkin":"2026-11-28T21:50"}
+{"who":"Malcolm","text":"Lets not do this on a saturday night fiona","posted":true,"at":"2026-11-28T22:05","checkin":"2026-11-28T22:05"}
+{"who":"Malcolm","text":"Gran's present. Hannah get the blue one. Cheaper at the place on Byres Road","posted":true,"at":"2026-11-29T09:12","checkin":"2026-11-29T09:12"}
+{"who":"Hannah","text":"Ok ill get it wed","posted":true,"at":"2026-11-29T09:20","checkin":"2026-11-29T09:20"}
+{"who":"Hannah","text":"Dad that place is shut sundays","posted":true,"at":"2026-11-29T09:21","checkin":"2026-11-29T09:21"}
+{"who":"Malcolm","text":"Wed then","posted":true,"at":"2026-11-29T09:22","checkin":"2026-11-29T09:22"}
+{"who":"Fiona","text":"Kenny are you coming to church","posted":true,"at":"2026-11-29T10:05","checkin":"2026-11-29T10:05"}
+{"who":"Kenny","text":"dont think so mum","posted":true,"at":"2026-11-29T10:48","checkin":"2026-11-29T10:48"}
+{"who":"Fiona","text":"Ok. Lunch still at 1 on the 25th?","posted":true,"at":"2026-11-29T10:50","checkin":"2026-11-29T10:50"}
+{"who":"Kenny","text":"yeah","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Hannah","text":"👍","posted":true,"at":"2026-11-29T11:31","checkin":"2026-11-29T11:31"}
+{"who":"","react":"👍","to":32,"posted":false,"at":"2026-11-29T11:31"}
+{"who":"Hannah","text":"R u guys still doing the talk tonight","posted":true,"at":"2026-11-29T14:12","checkin":"2026-11-29T14:12"}
+{"who":"Fiona","text":"Yes. Come round for 6 Hannah","posted":true,"at":"2026-11-29T14:40","checkin":"2026-11-29T14:40"}
+{"who":"Hannah","text":"Ok","posted":true,"at":"2026-11-29T14:41","checkin":"2026-11-29T14:41"}
+{"who":"Hannah","text":"Everyone home ok?","posted":true,"at":"2026-11-29T22:17","checkin":"2026-11-29T22:17"}
+{"who":"Fiona","text":"Home. Love you all","posted":true,"at":"2026-11-29T22:19","checkin":"2026-11-29T22:19"}
+{"who":"Malcolm","text":"Aye","posted":true,"at":"2026-11-29T22:24","checkin":"2026-11-29T22:24"}
+{"who":"Kenny","text":"got in. sorry mum","posted":true,"at":"2026-11-29T22:51","checkin":"2026-11-29T22:51"}
+{"who":"Fiona","text":"Don't be love. Get some sleep","posted":true,"at":"2026-11-29T22:53","checkin":"2026-11-29T22:53"}
+{"who":"Malcolm","text":"Off to the school. Gym boiler packed in again","posted":true,"at":"2026-11-30T07:48","checkin":"2026-11-30T07:48"}
+{"who":"Fiona","text":"Oh no. Will they get someone out","posted":true,"at":"2026-11-30T07:50","checkin":"2026-11-30T07:50"}
+{"who":"Malcolm","text":"Aye man's coming at 10. Thinks its the pump","posted":true,"at":"2026-11-30T07:53","checkin":"2026-11-30T07:53"}
+{"who":"Hannah","text":"Dad did they get the gym heating back on","posted":true,"at":"2026-11-30T12:14","checkin":"2026-11-30T12:14"}
+{"who":"Malcolm","text":"Not yet. Kids playing in their coats","posted":true,"at":"2026-11-30T13:30","checkin":"2026-11-30T13:30"}
+{"who":"Hannah","text":"Poor wee things","posted":true,"at":"2026-11-30T13:31","checkin":"2026-11-30T13:31"}
+{"who":"Fiona","text":"Did you eat today Kenny","posted":true,"at":"2026-11-30T16:48","checkin":"2026-11-30T16:48"}
+{"who":"Kenny","text":"yeah","posted":true,"at":"2026-11-30T17:05","checkin":"2026-11-30T17:05"}
+{"who":"Fiona","text":"What did you have","posted":true,"at":"2026-11-30T17:06","checkin":"2026-11-30T17:06"}
+{"who":"Kenny","text":"toast mum","posted":true,"at":"2026-11-30T17:09","checkin":"2026-11-30T17:09"}
+{"who":"Fiona","text":"Kenny","posted":true,"at":"2026-11-30T17:10","checkin":"2026-11-30T17:10"}
+{"who":"Malcolm","text":"Pump's gone. Parts not in till Wed so the gym's shut till then","posted":true,"at":"2026-11-30T18:52","checkin":"2026-11-30T18:52"}
+{"who":"Fiona","text":"Where are you now","posted":true,"at":"2026-11-30T18:53","checkin":"2026-11-30T18:53"}
+{"who":"Malcolm","text":"Still here. Got to lock up after","posted":true,"at":"2026-11-30T18:55","checkin":"2026-11-30T18:55"}
+{"who":"Hannah","text":"Dad you're not on your own there at this time are you","posted":true,"at":"2026-11-30T19:02","checkin":"2026-11-30T19:02"}
+{"who":"Malcolm","text":"Naw. Jim's here","posted":true,"at":"2026-11-30T19:04","checkin":"2026-11-30T19:04"}
+{"who":"Hannah","text":"Everyone home ok?","posted":true,"at":"2026-11-30T21:37","checkin":"2026-11-30T21:37"}
+{"who":"Fiona","text":"Home. Malcolm's not","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Malcolm","text":"Just in the door","posted":true,"at":"2026-11-30T21:41","checkin":"2026-11-30T21:41"}
+{"who":"Fiona","text":"Eat something","posted":true,"at":"2026-11-30T21:42","checkin":"2026-11-30T21:42"}
+{"who":"Kenny","text":"got a bowl of soup. thats something","posted":true,"at":"2026-11-30T22:10","checkin":"2026-11-30T22:10"}

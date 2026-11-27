@@ -1,0 +1,79 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T17:00","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2279,"cache_read_input_tokens":0,"output_tokens":1799,"output_tokens_details":{"thinking_tokens":1178},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2279,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1799,"cache_read_input_tokens":0,"cache_creation_input_tokens":2279,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2279},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2757,"cache_read_input_tokens":0,"output_tokens":1879,"output_tokens_details":{"thinking_tokens":1280},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2757,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1879,"cache_read_input_tokens":0,"cache_creation_input_tokens":2757,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2757},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3336,"cache_read_input_tokens":0,"output_tokens":2392,"output_tokens_details":{"thinking_tokens":1418},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3336,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2392,"cache_read_input_tokens":0,"cache_creation_input_tokens":3336,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3336},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ryan","Leah","Adrian","Grace"],"setting":"You are in a group chat with three close friends in Seattle, Washington, all part of the same social circle, planning a house party together this Saturday and sorting out rides and what to bring.","openers":["Send the Saturday party countdown","Ask who has a ride","Tell everyone to wear the sparkly stuff","Hype up the playlist you're making"],"opener":"Ask who has a ride","cast":{"Ryan":{"who":"23, man, friend who is hyping up the plans","work":"freelance videographer","knows":"You know Leah, Adrian, and Grace as friends from the same circle, and you're in this chat with all of them.","texts":"Ryan texts in this chat a lot.","style":"heavy use of emoji and texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Leah":{"who":"25, woman, friend","work":"paralegal","knows":"You know Ryan, Adrian, and Grace as friends from the same circle, and you're in this chat with all of them.","texts":"Leah texts in this chat now and then.","style":"moderate use of emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Adrian":{"who":"27, man, friend","work":"delivery driver","knows":"You know Ryan, Leah, and Grace as friends from the same circle, and you're in this chat with all of them.","texts":"Adrian texts in this chat now and then.","style":"light use of emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Grace":{"who":"24, woman, friend","work":"pharmacist","knows":"You know Ryan, Leah, and Adrian as friends from the same circle, and you're in this chat with all of them.","texts":"Grace texts in this chat only now and again.","style":"moderate use of emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Ryan":"You live in Seattle, filling your days with freelance video work, and you live alone.","Leah":"You live in Seattle, filling your days with paralegal work, and you live alone.","Adrian":"You live in Seattle, filling your days with delivery driving, and you live alone.","Grace":"You live in Seattle, filling your days with pharmacy work, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":855,"cache_read_input_tokens":0,"output_tokens":1373,"output_tokens_details":{"thinking_tokens":957},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":855,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1373,"cache_read_input_tokens":0,"cache_creation_input_tokens":855,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":855},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1165,"cache_read_input_tokens":0,"output_tokens":2496,"output_tokens_details":{"thinking_tokens":1892},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1165,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2496,"cache_read_input_tokens":0,"cache_creation_input_tokens":1165,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1165},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Seattle, USA","castMs":20345,"situation":"Four friends in their twenties going to a house party on Saturday.","topic":"They are all planning to take MDMA and pills and have a big night, and are hyped and joking about how off their heads they will be."}
+{"who":"Ryan","text":"ok saturday. who has a ride i don't have a car and im not doing an uber home at 3am lol","posted":true,"at":"2026-12-02T17:00","checkin":"2026-12-02T17:00"}
+{"who":"Ryan","text":"also we are DOING the thing gonna be so off our heads","posted":true,"at":"2026-12-02T17:04","checkin":"2026-12-02T17:04"}
+{"who":"Leah","text":"I can drive. I'm not doing the pills tho","posted":true,"at":"2026-12-02T17:22","checkin":"2026-12-02T17:22"}
+{"who":"Ryan","text":"lol you're the designated","posted":true,"at":"2026-12-02T17:23","checkin":"2026-12-02T17:23"}
+{"who":"Adrian","text":"i can do rides saturday after 10, on shift till then","posted":true,"at":"2026-12-02T17:40","checkin":"2026-12-02T17:40"}
+{"who":"Ryan","text":"PERFECT 🙌 leah + adrian covering rides","posted":true,"at":"2026-12-02T17:41","checkin":"2026-12-02T17:41"}
+{"who":"Grace","text":"Im in. What do I bring","posted":true,"at":"2026-12-02T18:15","checkin":"2026-12-02T18:15"}
+{"who":"Ryan","text":"snacks and bad decisions","posted":true,"at":"2026-12-02T18:16","checkin":"2026-12-02T18:16"}
+{"who":"Leah","text":"Ill bring the chips","posted":true,"at":"2026-12-02T18:16","checkin":"2026-12-02T18:16"}
+{"who":"Grace","text":"Can someone else get the ice bc im at work till 9 and pharmacy is slammed rn","posted":true,"at":"2026-12-02T18:30","checkin":"2026-12-02T18:30"}
+{"who":"Ryan","text":"i got ice","posted":true,"at":"2026-12-02T18:31","checkin":"2026-12-02T18:31"}
+{"who":"Adrian","text":"whose place is it again","posted":true,"at":"2026-12-02T19:02","checkin":"2026-12-02T19:02"}
+{"who":"Ryan","text":"the house on 14th w the big backyard. jaylen's roommate is throwing it","posted":true,"at":"2026-12-02T19:05","checkin":"2026-12-02T19:05"}
+{"who":"Adrian","text":"oh ok yeah","posted":true,"at":"2026-12-02T19:06","checkin":"2026-12-02T19:06"}
+{"who":"Leah","text":"Ryan dont take the whole thing at once like last time","posted":true,"at":"2026-12-02T21:48","checkin":"2026-12-02T21:48"}
+{"who":"Ryan","text":"im a professional","posted":true,"at":"2026-12-02T21:50","checkin":"2026-12-02T21:50"}
+{"who":"Ryan","text":"ok ok i hear u mom","posted":true,"at":"2026-12-02T21:50","checkin":"2026-12-02T21:50"}
+{"who":"Grace","text":"Leah is right tho. Pace yourself","posted":true,"at":"2026-12-02T22:14","checkin":"2026-12-02T22:14"}
+{"who":"Ryan","text":"grace is also my mom now","posted":true,"at":"2026-12-02T22:15","checkin":"2026-12-02T22:15"}
+{"who":"Adrian","text":"can we just get through saturday first lol","posted":true,"at":"2026-12-02T22:31","checkin":"2026-12-02T22:31"}
+{"who":"Ryan","text":"morning. cant believe its december already","posted":true,"at":"2026-12-03T08:52","checkin":"2026-12-03T08:52"}
+{"who":"Adrian","text":"what time we leaving sat","posted":true,"at":"2026-12-03T09:30","checkin":"2026-12-03T09:30"}
+{"who":"Ryan","text":"whenever it gets going prob like 10ish??","posted":true,"at":"2026-12-03T09:41","checkin":"2026-12-03T09:41"}
+{"who":"Leah","text":"Adrian you're on till 10 right","posted":true,"at":"2026-12-03T09:43","checkin":"2026-12-03T09:43"}
+{"who":"Adrian","text":"yeah. ill come get whoever after. leah can u do the early one","posted":true,"at":"2026-12-03T09:58","checkin":"2026-12-03T09:58"}
+{"who":"Grace","text":"Ok I'm closing sat so I'll be late","posted":true,"at":"2026-12-03T10:20","checkin":"2026-12-03T10:20"}
+{"who":"Grace","text":"Will need a ride from somebody tho","posted":true,"at":"2026-12-03T10:21","checkin":"2026-12-03T10:21"}
+{"who":"Ryan","text":"ill take grace 😤 she can be my plus one","posted":true,"at":"2026-12-03T12:05","checkin":"2026-12-03T12:05"}
+{"who":"Grace","text":"No","posted":true,"at":"2026-12-03T12:06","checkin":"2026-12-03T12:06"}
+{"who":"Ryan","text":"😭","posted":true,"at":"2026-12-03T12:06","checkin":"2026-12-03T12:06"}
+{"who":"Leah","text":"Ok who's bringing the cups","posted":true,"at":"2026-12-03T14:32","checkin":"2026-12-03T14:32"}
+{"who":"Ryan","text":"i got cups","posted":true,"at":"2026-12-03T14:40","checkin":"2026-12-03T14:40"}
+{"who":"Ryan","text":"and ice and the speaker","posted":true,"at":"2026-12-03T14:41","checkin":"2026-12-03T14:41"}
+{"who":"","react":"😂","to":32,"posted":false,"at":"2026-12-03T14:41"}
+{"who":"","react":"😂","to":32,"posted":false,"at":"2026-12-03T14:41"}
+{"who":"Leah","text":"Ryan are you actually sober sat or is that a bit","posted":true,"at":"2026-12-03T17:55","checkin":"2026-12-03T17:55"}
+{"who":"Ryan","text":"depends what u mean by sober","posted":true,"at":"2026-12-03T18:02","checkin":"2026-12-03T18:02"}
+{"who":"Leah","text":"Ryan","posted":true,"at":"2026-12-03T18:02","checkin":"2026-12-03T18:02"}
+{"who":"Ryan","text":"ill be fine!! im hydrating","posted":true,"at":"2026-12-03T18:04","checkin":"2026-12-03T18:04"}
+{"who":"Grace","text":"Did anyone send the address to jaylen's roommate or should I","posted":true,"at":"2026-12-03T21:17","checkin":"2026-12-03T21:17"}
+{"who":"Adrian","text":"ryan got it i think","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Ryan","text":"ya i texted her","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Leah","text":"Going to bed. Night","posted":true,"at":"2026-12-03T23:48","checkin":"2026-12-03T23:48"}
+{"who":"Ryan","text":"leah is asleep and im awake 😴","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"Leah","text":"Morning. Up","posted":true,"at":"2026-12-04T08:14","checkin":"2026-12-04T08:14"}
+{"who":"Ryan","text":"morning sunshine ur up early for someone who was asleep at midnight lol","posted":true,"at":"2026-12-04T09:02","checkin":"2026-12-04T09:02"}
+{"who":"Leah","text":"I'm a functional adult","posted":true,"at":"2026-12-04T09:03","checkin":"2026-12-04T09:03"}
+{"who":"Adrian","text":"who has the speaker","posted":true,"at":"2026-12-04T09:20","checkin":"2026-12-04T09:20"}
+{"who":"Ryan","text":"me!! bluetooth one charged last night","posted":true,"at":"2026-12-04T09:22","checkin":"2026-12-04T09:22"}
+{"who":"Grace","text":"Can someone resend the address I lost it in the thread","posted":true,"at":"2026-12-04T11:47","checkin":"2026-12-04T11:47"}
+{"who":"Ryan","text":"1419 14th ave. backyard gate on the left","posted":true,"at":"2026-12-04T11:52","checkin":"2026-12-04T11:52"}
+{"who":"Ryan","text":"[location: 1419 14th Ave]","posted":true,"at":"2026-12-04T11:52","checkin":"2026-12-04T11:52"}
+{"who":"Grace","text":"Ty","posted":true,"at":"2026-12-04T11:53","checkin":"2026-12-04T11:53"}
+{"who":"Adrian","text":"on a run in ballard, 4 stops and one of them is a dude who wants his burrito \"in the car\"","posted":true,"at":"2026-12-04T13:10","checkin":"2026-12-04T13:10"}
+{"who":"Leah","text":"Dont take it","posted":true,"at":"2026-12-04T13:12","checkin":"2026-12-04T13:12"}
+{"who":"Adrian","text":"too late","posted":true,"at":"2026-12-04T13:14","checkin":"2026-12-04T13:14"}
+{"who":"Ryan","text":"ok so ice count","posted":true,"at":"2026-12-04T16:40","checkin":"2026-12-04T16:40"}
+{"who":"Ryan","text":"i have 3 bags should be enough right","posted":true,"at":"2026-12-04T16:41","checkin":"2026-12-04T16:41"}
+{"who":"Leah","text":"For how many people","posted":true,"at":"2026-12-04T16:55","checkin":"2026-12-04T16:55"}
+{"who":"Ryan","text":"idk 20? 25?","posted":true,"at":"2026-12-04T16:58","checkin":"2026-12-04T16:58"}
+{"who":"Leah","text":"Ryan","posted":true,"at":"2026-12-04T17:02","checkin":"2026-12-04T17:02"}
+{"who":"Ryan","text":"ok ill get a 4th","posted":true,"at":"2026-12-04T17:03","checkin":"2026-12-04T17:03"}
+{"who":"Grace","text":"Ice is in the fridge at my place if u need it, I'm not home till like 10 so just ask first","posted":true,"at":"2026-12-04T17:30","checkin":"2026-12-04T17:30"}
+{"who":"Ryan","text":"ur a hero","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Adrian","text":"off in 20. tomorrow after 10 i'm free to do rides, just text me","posted":true,"at":"2026-12-04T19:48","checkin":"2026-12-04T19:48"}
+{"who":"Leah","text":"Ok","posted":true,"at":"2026-12-04T19:49","checkin":"2026-12-04T19:49"}
+{"who":"Grace","text":"Just got out of the pharmacy. It was insane. I'm wrecked","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Ryan","text":"u deserve a drink","posted":true,"at":"2026-12-04T21:13","checkin":"2026-12-04T21:13"}
+{"who":"Grace","text":"I deserve to sit down","posted":true,"at":"2026-12-04T21:13","checkin":"2026-12-04T21:13"}
+{"who":"Adrian","text":"where u at grace, i'll grab u after 10","posted":true,"at":"2026-12-04T21:20","checkin":"2026-12-04T21:20"}
+{"who":"Grace","text":"At the pharmacy on 15th still. I'll walk out at like 10:15 and text","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"Adrian","text":"👍","posted":true,"at":"2026-12-04T21:32","checkin":"2026-12-04T21:32"}
+{"who":"Ryan","text":"anyone else cant sleep or just me","posted":true,"at":"2026-12-04T22:47","checkin":"2026-12-04T22:47"}
+{"who":"Ryan","text":"the speaker is charging on my bed so i just keep looking at it","posted":true,"at":"2026-12-04T23:10","checkin":"2026-12-04T23:10"}
+{"who":"Ryan","text":"its 11:58 and i have a 4 hour energy and a playlist i've been editing since 6","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Ryan","text":"ITS SATURDAY","posted":true,"at":"2026-12-05T00:12","checkin":"2026-12-05T00:12"}
+{"who":"Adrian","text":"go to bed ryan","posted":true,"at":"2026-12-05T00:12","checkin":"2026-12-05T00:12"}

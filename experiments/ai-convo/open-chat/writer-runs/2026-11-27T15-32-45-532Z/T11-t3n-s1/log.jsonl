@@ -1,0 +1,87 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T12:10","complete":true,"rejects":0,"today":["Daniel","Maya","Daniel"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1978,"cache_read_input_tokens":0,"output_tokens":3519,"output_tokens_details":{"thinking_tokens":2350},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1978,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3519,"cache_read_input_tokens":0,"cache_creation_input_tokens":1978,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1978},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3053,"cache_read_input_tokens":0,"output_tokens":3012,"output_tokens_details":{"thinking_tokens":1980},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3053,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3012,"cache_read_input_tokens":0,"cache_creation_input_tokens":3053,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3053},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4085,"cache_read_input_tokens":0,"output_tokens":2548,"output_tokens_details":{"thinking_tokens":1678},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4085,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2548,"cache_read_input_tokens":0,"cache_creation_input_tokens":4085,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4085},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Maya","Daniel"],"setting":"You are both in Vancouver, Canada, close friends who have known each other for years and talk often. You are texting from your own places in this one-to-one chat, where you can be open with each other.","openers":["Ask how he has been holding up","Say you have been thinking about him","Offer to come over this weekend","Suggest getting coffee together soon"],"opener":"Say you have been thinking about him","cast":{"Maya":{"who":"29, woman, close friend","work":"nurse","knows":"You know Daniel as a close friend.","texts":"","style":"light use of emoji and texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Daniel":{"who":"30, man, close friend","work":"sound engineer","knows":"You know Maya as a close friend.","texts":"","style":"light use of emoji and texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Maya":"You live in Vancouver, Canada, and work shifts as a nurse.","Daniel":"You live in Vancouver, Canada, and work as a sound engineer."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":869,"cache_read_input_tokens":0,"output_tokens":972,"output_tokens_details":{"thinking_tokens":764},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":869,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":972,"cache_read_input_tokens":0,"cache_creation_input_tokens":869,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":869},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1089,"cache_read_input_tokens":0,"output_tokens":1483,"output_tokens_details":{"thinking_tokens":1183},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1089,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1483,"cache_read_input_tokens":0,"cache_creation_input_tokens":1089,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1089},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Vancouver, Canada","castMs":13642,"situation":"Two close friends.","topic":"One says everything feels pointless and grey, they cannot be bothered to get up, they hate themselves a bit, and they are bitter and blunt about it with dark jokes; the other listens like a close friend would."}
+{"who":"Maya","text":"Hey. Off today, so I've got the afternoon\nyou around?","posted":true,"at":"2026-11-30T12:10","checkin":"2026-11-30T12:10"}
+{"who":"Daniel","text":"Yeah. Sort of\nsession got cancelled last minute so I'm just at home","posted":true,"at":"2026-11-30T12:14","checkin":"2026-11-30T12:14"}
+{"who":"Daniel","text":"Wasn't even mad, just sat there","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Maya","text":"Ugh. That's rough\nyou ok","posted":true,"at":"2026-11-30T12:22","checkin":"2026-11-30T12:22"}
+{"who":"Daniel","text":"Define ok\nnot really tbh. Everything's kinda grey today. Like the whole city's been wet for a week and I'm just in it","posted":true,"at":"2026-11-30T12:31","checkin":"2026-11-30T12:31"}
+{"who":"Daniel","text":"Haven't gotten out of bed till like 11\nnot even a dramatic reason","posted":true,"at":"2026-11-30T12:33","checkin":"2026-11-30T12:33"}
+{"who":"Maya","text":"Okay. I've been thinking about you a bunch this past week actually\nnot in a weird way. You've sounded flat in the group chat and I wanted to ask directly","posted":true,"at":"2026-11-30T12:38","checkin":"2026-11-30T12:38"}
+{"who":"Daniel","text":"Lol that's a very nurse thing to do\nit's fine. Honestly kinda appreciated","posted":true,"at":"2026-11-30T12:41","checkin":"2026-11-30T12:41"}
+{"who":"Daniel","text":"I hate myself a bit today, if that counts","posted":true,"at":"2026-11-30T12:42","checkin":"2026-11-30T12:42"}
+{"who":"Maya","text":"It counts. Tell me more about the hating yourself bit","posted":true,"at":"2026-11-30T12:44","checkin":"2026-11-30T12:44"}
+{"who":"Daniel","text":"It's not a crisis or anything. Just the usual voice going \"you couldn't even keep a session together, what are you doing with your life\"\nand then I make a joke about it and it lands like a wet sock","posted":true,"at":"2026-11-30T12:52","checkin":"2026-11-30T12:52"}
+{"who":"Daniel","text":"Like \"at least the mixing desk isn't disappointed in me\"","posted":true,"at":"2026-11-30T12:53","checkin":"2026-11-30T12:53"}
+{"who":"Maya","text":"That's dark but I see the joke\nare you having any thoughts about not wanting to be here","posted":true,"at":"2026-11-30T12:55","checkin":"2026-11-30T12:55"}
+{"who":"Daniel","text":"No. Not like that. I don't want to die I just don't want to be doing anything\nwhich is its own thing I guess","posted":true,"at":"2026-11-30T13:08","checkin":"2026-11-30T13:08"}
+{"who":"Maya","text":"Yeah. That's real and it's worth taking seriously even if it's not the scary version\nhave you eaten","posted":true,"at":"2026-11-30T13:10","checkin":"2026-11-30T13:10"}
+{"who":"Daniel","text":"Had toast at 11\nmum would be horrified","posted":true,"at":"2026-11-30T13:14","checkin":"2026-11-30T13:14"}
+{"who":"Maya","text":"Ok toast counts as something. Eat something with protein\nhave you talked to Dr. Patel since the summer","posted":true,"at":"2026-11-30T13:16","checkin":"2026-11-30T13:16"}
+{"who":"Daniel","text":"No\nit's a lot of effort to book and then explain why I'm here","posted":true,"at":"2026-11-30T13:30","checkin":"2026-11-30T13:30"}
+{"who":"Maya","text":"You don't have to explain much. \"everything's grey and I can't get out of bed\" is enough for a receptionist\nI'll sit with you while you book if you want","posted":true,"at":"2026-11-30T13:33","checkin":"2026-11-30T13:33"}
+{"who":"Daniel","text":"You're on shift tomorrow aren't you","posted":true,"at":"2026-11-30T13:41","checkin":"2026-11-30T13:41"}
+{"who":"Maya","text":"I'm off till Thursday. I can come by after 5 if you want company, no pressure. I can bring food","posted":true,"at":"2026-11-30T13:42","checkin":"2026-11-30T13:42"}
+{"who":"Daniel","text":"Yeah ok\npad thai from the place on Broadway? I'll pay","posted":true,"at":"2026-11-30T13:50","checkin":"2026-11-30T13:50"}
+{"who":"Maya","text":"Deal. I'll get it on the way\ncan you do me one thing though. If it gets heavier than grey, text me or call me, don't just sit with it","posted":true,"at":"2026-11-30T13:51","checkin":"2026-11-30T13:51"}
+{"who":"Daniel","text":"Yeah\npromise. This is embarrassingly nice of you","posted":true,"at":"2026-11-30T14:03","checkin":"2026-11-30T14:03"}
+{"who":"","react":"👍","to":23,"posted":false,"at":"2026-11-30T14:03"}
+{"who":"Maya","text":"Leaving now. Food's going to be cold, sorry in advance","posted":true,"at":"2026-11-30T16:40","checkin":"2026-11-30T16:40"}
+{"who":"Daniel","text":"Cold pad thai is still pad thai","posted":true,"at":"2026-11-30T16:41","checkin":"2026-11-30T16:41"}
+{"who":"Maya","text":"Here. Buzzer still broken?","posted":true,"at":"2026-11-30T17:22","checkin":"2026-11-30T17:22"}
+{"who":"Daniel","text":"Yeah just come up, I'll leave the door open","posted":true,"at":"2026-11-30T17:23","checkin":"2026-11-30T17:23"}
+{"who":"Maya","text":"Home. You ate more than half that pad thai, I'm counting it as a win","posted":true,"at":"2026-11-30T21:52","checkin":"2026-11-30T21:52"}
+{"who":"Daniel","text":"Ate the rest cold at 9. Felt like a duty","posted":true,"at":"2026-11-30T21:58","checkin":"2026-11-30T21:58"}
+{"who":"Daniel","text":"Thanks for coming over\nyou didn't have to do the whole sit-with-me thing","posted":true,"at":"2026-11-30T22:04","checkin":"2026-11-30T22:04"}
+{"who":"Daniel","text":"Not saying stop","posted":true,"at":"2026-11-30T22:05","checkin":"2026-11-30T22:05"}
+{"who":"Maya","text":"Didn't feel like a have to. Sleep if you can","posted":true,"at":"2026-11-30T22:20","checkin":"2026-11-30T22:20"}
+{"who":"Maya","text":"Morning. Did you sleep or did you lie there","posted":true,"at":"2026-12-01T09:14","checkin":"2026-12-01T09:14"}
+{"who":"Daniel","text":"Slept, kind of. Up at 6 then back and forth","posted":true,"at":"2026-12-01T09:31","checkin":"2026-12-01T09:31"}
+{"who":"Daniel","text":"Booked Dr Patel. Thursday 2:40, they had a cancellation so that's lucky\nit's on the books now so I can't wriggle out","posted":true,"at":"2026-12-01T09:38","checkin":"2026-12-01T09:38"}
+{"who":"Maya","text":"Good. That's a real step\nI'm on Thursday so I can't come, but you can text me from the waiting room","posted":true,"at":"2026-12-01T09:40","checkin":"2026-12-01T09:40"}
+{"who":"Daniel","text":"Lol waiting room texting. Ok","posted":true,"at":"2026-12-01T09:44","checkin":"2026-12-01T09:44"}
+{"who":"Daniel","text":"Walked to the coffee place on Commercial. Rain stopped for like twenty minutes which felt suspicious","posted":true,"at":"2026-12-01T13:02","checkin":"2026-12-01T13:02"}
+{"who":"Daniel","text":"Still grey tho","posted":true,"at":"2026-12-01T13:03","checkin":"2026-12-01T13:03"}
+{"who":"Maya","text":"Sorry, been asleep on the couch since 1 like a bear. Glad you got out","posted":true,"at":"2026-12-01T15:17","checkin":"2026-12-01T15:17"}
+{"who":"Daniel","text":"Nice to be woken by a text, I assume","posted":true,"at":"2026-12-01T15:19","checkin":"2026-12-01T15:19"}
+{"who":"Maya","text":"Honestly kind of not doing great either\nHad a shift Sunday that's still sitting on me. Old man on 4 West, his daughter asked me to explain it again and I did and then I cried in the linen closet like a crazy person","posted":true,"at":"2026-12-01T15:40","checkin":"2026-12-01T15:40"}
+{"who":"Daniel","text":"Oof. Sorry May\nYou did good though. The explaining part","posted":true,"at":"2026-12-01T15:42","checkin":"2026-12-01T15:42"}
+{"who":"Daniel","text":"You can tell me the whole thing if you want. Or not","posted":true,"at":"2026-12-01T15:44","checkin":"2026-12-01T15:44"}
+{"who":"Maya","text":"Not right now. I just needed to say it to someone who isn't on the unit","posted":true,"at":"2026-12-01T15:58","checkin":"2026-12-01T15:58"}
+{"who":"Daniel","text":"Ok. I'm here","posted":true,"at":"2026-12-01T16:01","checkin":"2026-12-01T16:01"}
+{"who":"","react":"❤️","to":46,"posted":false,"at":"2026-12-01T16:01"}
+{"who":"Maya","text":"Thanks. Ok I'm going to put the kettle on and pretend I'm a functioning adult","posted":true,"at":"2026-12-01T16:03","checkin":"2026-12-01T16:03"}
+{"who":"Daniel","text":"Had dinner. Eggs, so protein, I'm told this counts","posted":true,"at":"2026-12-01T19:48","checkin":"2026-12-01T19:48"}
+{"who":"Maya","text":"Counts. Look at you","posted":true,"at":"2026-12-01T19:50","checkin":"2026-12-01T19:50"}
+{"who":"Daniel","text":"Still grey. Not heavier though\nI'll tell you if it gets heavier, promise. Not sitting on it","posted":true,"at":"2026-12-01T19:51","checkin":"2026-12-01T19:51"}
+{"who":"Maya","text":"Ok. Text me before you go to bed, even if it's just \"still grey\"","posted":true,"at":"2026-12-01T19:52","checkin":"2026-12-01T19:52"}
+{"who":"Daniel","text":"Still grey","posted":true,"at":"2026-12-01T19:58","checkin":"2026-12-01T19:58"}
+{"who":"Maya","text":"Ha. Ok. Night","posted":true,"at":"2026-12-01T19:59","checkin":"2026-12-01T19:59"}
+{"who":"Daniel","text":"Night. Go easy on yourself about the linen closet","posted":true,"at":"2026-12-01T20:01","checkin":"2026-12-01T20:01"}
+{"who":"Maya","text":"Morning. Did you sleep any better","posted":true,"at":"2026-12-02T08:47","checkin":"2026-12-02T08:47"}
+{"who":"Daniel","text":"Little bit. Not much","posted":true,"at":"2026-12-02T09:20","checkin":"2026-12-02T09:20"}
+{"who":"Daniel","text":"Thursday's still on. 2:40. I've been rehearsing \"everything's grey\" in the mirror like a dork","posted":true,"at":"2026-12-02T09:21","checkin":"2026-12-02T09:21"}
+{"who":"Maya","text":"Lol. Mirror rehearsal is allowed","posted":true,"at":"2026-12-02T09:25","checkin":"2026-12-02T09:25"}
+{"who":"Maya","text":"You don't need the perfect version","posted":true,"at":"2026-12-02T09:26","checkin":"2026-12-02T09:26"}
+{"who":"Daniel","text":"I've got a freelance mix due Friday that I haven't opened. Opening it feels like lifting a car","posted":true,"at":"2026-12-02T10:02","checkin":"2026-12-02T10:02"}
+{"who":"Maya","text":"Can you open it for ten minutes. Just the file","posted":true,"at":"2026-12-02T10:04","checkin":"2026-12-02T10:04"}
+{"who":"Daniel","text":"Opened it. Listened for four minutes. Closed it","posted":true,"at":"2026-12-02T10:19","checkin":"2026-12-02T10:19"}
+{"who":"Daniel","text":"That's a start I guess","posted":true,"at":"2026-12-02T10:19","checkin":"2026-12-02T10:19"}
+{"who":"Maya","text":"That's a start","posted":true,"at":"2026-12-02T10:21","checkin":"2026-12-02T10:21"}
+{"who":"Daniel","text":"[photo: the harbour from the window, all grey]","posted":true,"at":"2026-12-02T13:47","checkin":"2026-12-02T13:47"}
+{"who":"Daniel","text":"It's the only view I've seen today","posted":true,"at":"2026-12-02T13:48","checkin":"2026-12-02T13:48"}
+{"who":"Maya","text":"Did you eat lunch or is it toast again","posted":true,"at":"2026-12-02T15:30","checkin":"2026-12-02T15:30"}
+{"who":"Daniel","text":"Soup from the tin. Don't judge","posted":true,"at":"2026-12-02T15:58","checkin":"2026-12-02T15:58"}
+{"who":"Maya","text":"Not judging. Soup counts","posted":true,"at":"2026-12-02T16:01","checkin":"2026-12-02T16:01"}
+{"who":"Daniel","text":"You ok? After yesterday. Didn't want to bring it up while you were on the couch","posted":true,"at":"2026-12-02T17:40","checkin":"2026-12-02T17:40"}
+{"who":"Maya","text":"Sort of. Went for a walk by the seawall in the dark, which was a bad idea in this weather\nBetter than the couch though","posted":true,"at":"2026-12-02T18:12","checkin":"2026-12-02T18:12"}
+{"who":"Daniel","text":"Glad you went out. Hood up at least?","posted":true,"at":"2026-12-02T18:14","checkin":"2026-12-02T18:14"}
+{"who":"Maya","text":"Hood was up. Soaked anyway","posted":true,"at":"2026-12-02T18:15","checkin":"2026-12-02T18:15"}
+{"who":"Daniel","text":"Still grey. Not heavier","posted":true,"at":"2026-12-02T20:02","checkin":"2026-12-02T20:02"}
+{"who":"Maya","text":"Ok. Thanks for telling me","posted":true,"at":"2026-12-02T20:05","checkin":"2026-12-02T20:05"}
+{"who":"Maya","text":"Want a text from me at 9 tomorrow too? Before the appointment","posted":true,"at":"2026-12-02T20:06","checkin":"2026-12-02T20:06"}
+{"who":"Daniel","text":"Yeah. Could use that","posted":true,"at":"2026-12-02T20:20","checkin":"2026-12-02T20:20"}
+{"who":"Maya","text":"Thinking about the 4 West daughter again. Might be a bit of a wreck tonight, that's ok","posted":true,"at":"2026-12-02T21:45","checkin":"2026-12-02T21:45"}
+{"who":"Daniel","text":"Ok. You can be a wreck here, I'm not going anywhere","posted":true,"at":"2026-12-02T21:52","checkin":"2026-12-02T21:52"}
+{"who":"","react":"❤️","to":79,"posted":false,"at":"2026-12-02T21:52"}
+{"who":"Maya","text":"Ha. Ok. Night","posted":true,"at":"2026-12-02T22:10","checkin":"2026-12-02T22:10"}
+{"who":"Daniel","text":"Night May","posted":true,"at":"2026-12-02T22:11","checkin":"2026-12-02T22:11"}

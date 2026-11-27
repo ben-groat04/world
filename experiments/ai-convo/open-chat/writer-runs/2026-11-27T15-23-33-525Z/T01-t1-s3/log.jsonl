@@ -1,0 +1,82 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T18:10","complete":true,"rejects":0,"today":[null,"Sophie",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2052,"cache_read_input_tokens":0,"output_tokens":2431,"output_tokens_details":{"thinking_tokens":2132},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2052,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2431,"cache_read_input_tokens":0,"cache_creation_input_tokens":2052,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2052},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2266,"cache_read_input_tokens":0,"output_tokens":2422,"output_tokens_details":{"thinking_tokens":1783},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2266,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2422,"cache_read_input_tokens":0,"cache_creation_input_tokens":2266,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2266},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2910,"cache_read_input_tokens":0,"output_tokens":2641,"output_tokens_details":{"thinking_tokens":1564},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2910,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2641,"cache_read_input_tokens":0,"cache_creation_input_tokens":2910,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2910},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sophie","Ryan"],"setting":"You are both in Atlanta, USA, and you have been close friends since your early twenties, when you met through a shared rec league. Right now you are swapping news about the week's dinners, a shared book club you both half-attend, and planning a trip to see your parents over the holidays. This chat is where you tell each other everything.","openers":["Send a teasing \"okay spill\"","Send a \"you're not getting out of this\"","Send a \"was he as good as he looked\"","Send a \"start from the beginning, don't skip anything\""],"opener":"Send a \"start from the beginning, don't skip anything\"","cast":{"Sophie":{"who":"34, woman, the one who slept with someone new","work":"speech therapist","knows":"You know Ryan as your closest friend, going back to your early twenties through a shared rec league.","texts":"","style":"some emoji and light texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Ryan":{"who":"33, man, the one who wants the full details","work":"physiotherapist","knows":"You know Sophie as your closest friend, going back to your early twenties through a shared rec league.","texts":"","style":"little to no emoji, few texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Sophie":"You live in Atlanta, working as a speech therapist, and your days are filled with clinic sessions and weekend plans with friends.","Ryan":"You live in Atlanta, working as a physiotherapist, and your days are filled with patient appointments and the book club and holiday planning with friends."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":838,"cache_read_input_tokens":0,"output_tokens":951,"output_tokens_details":{"thinking_tokens":730},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":838,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":951,"cache_read_input_tokens":0,"cache_creation_input_tokens":838,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":838},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1117,"cache_read_input_tokens":0,"output_tokens":435,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1117,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":435,"cache_read_input_tokens":0,"cache_creation_input_tokens":1117,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1117},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Atlanta, USA","castMs":10306,"situation":"Two close friends in their thirties who tell each other everything.","topic":"One of them slept with someone new at the weekend and the other wants the full details."}
+{"who":"Sophie","text":"Start from the beginning, don't skip anything","posted":true,"at":"2026-11-29T18:10","checkin":"2026-11-29T18:10"}
+{"who":"Ryan","text":"From the beginning of what","posted":true,"at":"2026-11-29T18:12","checkin":"2026-11-29T18:12"}
+{"who":"Sophie","text":"You know what","posted":true,"at":"2026-11-29T18:12","checkin":"2026-11-29T18:12"}
+{"who":"Ryan","text":"Nothing happened","posted":true,"at":"2026-11-29T18:15","checkin":"2026-11-29T18:15"}
+{"who":"Sophie","text":"Ryan","posted":true,"at":"2026-11-29T18:15","checkin":"2026-11-29T18:15"}
+{"who":"Ryan","text":"Ok fine. It was saturday. She was at the bar near the clinic","posted":true,"at":"2026-11-29T18:21","checkin":"2026-11-29T18:21"}
+{"who":"Sophie","text":"THE bar","posted":true,"at":"2026-11-29T18:22","checkin":"2026-11-29T18:22"}
+{"who":"Ryan","text":"Yes","posted":true,"at":"2026-11-29T18:22","checkin":"2026-11-29T18:22"}
+{"who":"Sophie","text":"And?? Who is she","posted":true,"at":"2026-11-29T18:24","checkin":"2026-11-29T18:24"}
+{"who":"Ryan","text":"Her name is dana. She's a nurse at grady. We talked for like 3 hours","posted":true,"at":"2026-11-29T18:31","checkin":"2026-11-29T18:31"}
+{"who":"Sophie","text":"3 hours is not nothing","posted":true,"at":"2026-11-29T18:31","checkin":"2026-11-29T18:31"}
+{"who":"Ryan","text":"I said that","posted":true,"at":"2026-11-29T18:33","checkin":"2026-11-29T18:33"}
+{"who":"Sophie","text":"Ok so what did u talk about for 3 hours","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Ryan","text":"Work mostly. Her charge nurse. The parking deck at grady","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Ryan","text":"And the book club. She's already read the one we're doing in jan","posted":true,"at":"2026-11-30T08:41","checkin":"2026-11-30T08:41"}
+{"who":"Sophie","text":"Of course she has","posted":true,"at":"2026-11-30T08:41","checkin":"2026-11-30T08:41"}
+{"who":"Sophie","text":"Did u kiss her","posted":true,"at":"2026-11-30T08:43","checkin":"2026-11-30T08:43"}
+{"who":"Ryan","text":"Not telling u till u give me something back","posted":true,"at":"2026-11-30T11:02","checkin":"2026-11-30T11:02"}
+{"who":"Sophie","text":"Ugh fine","posted":true,"at":"2026-11-30T11:05","checkin":"2026-11-30T11:05"}
+{"who":"Sophie","text":"I have a lunch today I cant talk long","posted":true,"at":"2026-11-30T11:05","checkin":"2026-11-30T11:05"}
+{"who":"Sophie","text":"Ok I need to tell u something and u cant make a face","posted":true,"at":"2026-11-30T19:20","checkin":"2026-11-30T19:20"}
+{"who":"Ryan","text":"I cant see your face","posted":true,"at":"2026-11-30T19:24","checkin":"2026-11-30T19:24"}
+{"who":"Ryan","text":"Go","posted":true,"at":"2026-11-30T19:24","checkin":"2026-11-30T19:24"}
+{"who":"Sophie","text":"So the guy from thursday trivia. Marcus","posted":true,"at":"2026-11-30T19:31","checkin":"2026-11-30T19:31"}
+{"who":"Sophie","text":"We went back to his place friday","posted":true,"at":"2026-11-30T19:31","checkin":"2026-11-30T19:31"}
+{"who":"Sophie","text":"And then again sat morning","posted":true,"at":"2026-11-30T19:33","checkin":"2026-11-30T19:33"}
+{"who":"Sophie","text":"So","posted":true,"at":"2026-11-30T19:33","checkin":"2026-11-30T19:33"}
+{"who":"Ryan","text":"Ok so now ur the one who doesnt skip anything","posted":true,"at":"2026-11-30T19:40","checkin":"2026-11-30T19:40"}
+{"who":"Sophie","text":"Not doing this one by text","posted":true,"at":"2026-11-30T19:44","checkin":"2026-11-30T19:44"}
+{"who":"Ryan","text":"Then do it by text","posted":true,"at":"2026-11-30T19:44","checkin":"2026-11-30T19:44"}
+{"who":"Sophie","text":"He's a sound engineer lol. Works out of a studio off edgewood. We both like the same bad pizza","posted":true,"at":"2026-11-30T21:02","checkin":"2026-11-30T21:02"}
+{"who":"Ryan","text":"Sound engineer. Ok","posted":true,"at":"2026-11-30T21:10","checkin":"2026-11-30T21:10"}
+{"who":"Ryan","text":"Is he nice","posted":true,"at":"2026-11-30T21:10","checkin":"2026-11-30T21:10"}
+{"who":"Sophie","text":"Yes. Annoyingly","posted":true,"at":"2026-11-30T21:30","checkin":"2026-11-30T21:30"}
+{"who":"Sophie","text":"So whats ur thing w dana","posted":true,"at":"2026-11-30T22:48","checkin":"2026-11-30T22:48"}
+{"who":"Ryan","text":"Dinner thurs. Maybe","posted":true,"at":"2026-11-30T23:15","checkin":"2026-11-30T23:15"}
+{"who":"Sophie","text":"Maybe is doing a lot of work there","posted":true,"at":"2026-12-01T07:52","checkin":"2026-12-01T07:52"}
+{"who":"Ryan","text":"It's doing what it needs to","posted":true,"at":"2026-12-01T08:30","checkin":"2026-12-01T08:30"}
+{"who":"Ryan","text":"Did u tell ur mom about the 23rd or no","posted":true,"at":"2026-12-01T08:31","checkin":"2026-12-01T08:31"}
+{"who":"Sophie","text":"Not yet. She'll ask if im bringing someone and then she'll ask about marcus","posted":true,"at":"2026-12-01T08:44","checkin":"2026-12-01T08:44"}
+{"who":"Ryan","text":"Are u bringing someone","posted":true,"at":"2026-12-01T08:46","checkin":"2026-12-01T08:46"}
+{"who":"Sophie","text":"Lol no. Its been 4 days","posted":true,"at":"2026-12-01T08:47","checkin":"2026-12-01T08:47"}
+{"who":"Ryan","text":"Its been 4 days","posted":true,"at":"2026-12-01T08:47","checkin":"2026-12-01T08:47"}
+{"who":"Sophie","text":"Ok its been 4 days 😑","posted":true,"at":"2026-12-01T08:48","checkin":"2026-12-01T08:48"}
+{"who":"Sophie","text":"So did u kiss her or not","posted":true,"at":"2026-12-01T08:50","checkin":"2026-12-01T08:50"}
+{"who":"Ryan","text":"Yes","posted":true,"at":"2026-12-01T09:33","checkin":"2026-12-01T09:33"}
+{"who":"Sophie","text":"!!!!","posted":true,"at":"2026-12-01T09:33","checkin":"2026-12-01T09:33"}
+{"who":"Ryan","text":"Once. In the parking deck","posted":true,"at":"2026-12-01T09:34","checkin":"2026-12-01T09:34"}
+{"who":"Sophie","text":"THE parking deck at grady??","posted":true,"at":"2026-12-01T09:34","checkin":"2026-12-01T09:34"}
+{"who":"Ryan","text":"It was a nice parking deck","posted":true,"at":"2026-12-01T09:35","checkin":"2026-12-01T09:35"}
+{"who":"","react":"😂","to":49,"posted":false,"at":"2026-12-01T09:35"}
+{"who":"Sophie","text":"Ok im at lunch. U owe me the rest","posted":true,"at":"2026-12-01T12:10","checkin":"2026-12-01T12:10"}
+{"who":"Ryan","text":"What rest","posted":true,"at":"2026-12-01T12:40","checkin":"2026-12-01T12:40"}
+{"who":"Sophie","text":"U know what rest","posted":true,"at":"2026-12-01T12:40","checkin":"2026-12-01T12:40"}
+{"who":"Ryan","text":"[link: january book, used copy, 9.50]","posted":true,"at":"2026-12-01T13:55","checkin":"2026-12-01T13:55"}
+{"who":"Sophie","text":"I dont have to read it till jan","posted":true,"at":"2026-12-01T13:56","checkin":"2026-12-01T13:56"}
+{"who":"Ryan","text":"U dont have to read it at all","posted":true,"at":"2026-12-01T13:56","checkin":"2026-12-01T13:56"}
+{"who":"Sophie","text":"Im reading it","posted":true,"at":"2026-12-01T13:58","checkin":"2026-12-01T13:58"}
+{"who":"Sophie","text":"Marcus asked if im free sat","posted":true,"at":"2026-12-01T17:20","checkin":"2026-12-01T17:20"}
+{"who":"Ryan","text":"And","posted":true,"at":"2026-12-01T17:44","checkin":"2026-12-01T17:44"}
+{"who":"Sophie","text":"And im thinking about it","posted":true,"at":"2026-12-01T17:44","checkin":"2026-12-01T17:44"}
+{"who":"Ryan","text":"Ok","posted":true,"at":"2026-12-01T17:50","checkin":"2026-12-01T17:50"}
+{"who":"Sophie","text":"Ur supposed to say more than ok","posted":true,"at":"2026-12-01T17:50","checkin":"2026-12-01T17:50"}
+{"who":"Ryan","text":"Is it a good idea","posted":true,"at":"2026-12-01T18:02","checkin":"2026-12-01T18:02"}
+{"who":"Sophie","text":"Idk. He makes me laugh. The pizza thing is real","posted":true,"at":"2026-12-01T18:09","checkin":"2026-12-01T18:09"}
+{"who":"Ryan","text":"Ok thats good","posted":true,"at":"2026-12-01T18:10","checkin":"2026-12-01T18:10"}
+{"who":"Sophie","text":"Is it","posted":true,"at":"2026-12-01T18:10","checkin":"2026-12-01T18:10"}
+{"who":"Ryan","text":"Yes I think so","posted":true,"at":"2026-12-01T18:31","checkin":"2026-12-01T18:31"}
+{"who":"Sophie","text":"Ur being weird","posted":true,"at":"2026-12-01T18:31","checkin":"2026-12-01T18:31"}
+{"who":"Ryan","text":"Im at the clinic late. Pt took forever to leave","posted":true,"at":"2026-12-01T18:33","checkin":"2026-12-01T18:33"}
+{"who":"Sophie","text":"Ok","posted":true,"at":"2026-12-01T18:34","checkin":"2026-12-01T18:34"}
+{"who":"Ryan","text":"Dana texted asking if thurs is still on","posted":true,"at":"2026-12-01T20:15","checkin":"2026-12-01T20:15"}
+{"who":"Sophie","text":"👀","posted":true,"at":"2026-12-01T20:15","checkin":"2026-12-01T20:15"}
+{"who":"Ryan","text":"Dont","posted":true,"at":"2026-12-01T20:16","checkin":"2026-12-01T20:16"}
+{"who":"Sophie","text":"U said maybe on mon","posted":true,"at":"2026-12-01T20:16","checkin":"2026-12-01T20:16"}
+{"who":"Ryan","text":"I said yes today","posted":true,"at":"2026-12-01T20:20","checkin":"2026-12-01T20:20"}
+{"who":"Sophie","text":"Ok thats a real answer","posted":true,"at":"2026-12-01T20:20","checkin":"2026-12-01T20:20"}
+{"who":"Sophie","text":"Sorry for pressing. Its just nice to hear u sound like this","posted":true,"at":"2026-12-01T23:40","checkin":"2026-12-01T23:40"}
+{"who":"Ryan","text":"Night","posted":true,"at":"2026-12-01T23:52","checkin":"2026-12-01T23:52"}
+{"who":"Sophie","text":"Night","posted":true,"at":"2026-12-01T23:52","checkin":"2026-12-01T23:52"}

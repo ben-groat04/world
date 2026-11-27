@@ -1,0 +1,74 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1598,"cache_read_input_tokens":0,"output_tokens":2099,"output_tokens_details":{"thinking_tokens":543},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1598,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2099,"cache_read_input_tokens":0,"cache_creation_input_tokens":1598,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1598},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Fiona","Heather","Amy"],"setting":"You all work at the same company in Edinburgh, Scotland. You met through the office and have become close enough to have your own private group chat away from work channels.","openers":["Clocks the absent colleague walking past outside","Shares something embarrassing she spotted about her","Drops a cutting remark about her appearance","Asks if the others noticed something odd about her lately"],"opener":"Asks if the others noticed something odd about her lately","cast":{"Fiona":{"who":"34, woman, the ringleader colleague","work":"sales executive","knows":"You work with Heather and Amy at the same Edinburgh office; Heather is in procurement, Amy handles admin.","texts":"Fiona texts in this chat now and then.","style":"moderate emoji use, casual abbreviations, keeps it punchy","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Heather":{"who":"31, woman, the second colleague","work":"procurement officer","knows":"You work with Fiona and Amy at the same Edinburgh office; Fiona is in sales, Amy is the office administrator.","texts":"Heather texts in this chat only now and again.","style":"a few emoji, light on abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Amy":{"who":"29, woman, the third colleague","work":"office administrator","knows":"You work with Fiona and Heather at the same Edinburgh office; Fiona is in sales, Heather handles procurement.","texts":"Amy texts in this chat a lot.","style":"frequent emoji, lots of abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Fiona":"You live in Edinburgh, work as a sales executive, and live alone.","Heather":"You live in Edinburgh, work as a procurement officer, and live with a flatmate.","Amy":"You live in Edinburgh, work as an office administrator, and live alone."},"usage":[{"input_tokens":701,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":337,"output_tokens_details":{"thinking_tokens":106},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":701,"output_tokens":337,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":897,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":362,"output_tokens_details":{"thinking_tokens":27},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":897,"output_tokens":362,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Edinburgh, Scotland","castMs":14762,"situation":"Three colleagues in a private chat.","topic":"Viciously cruel gossip about an absent colleague, speculating about her private life and body, wishing her gone, and cackling about it."}
+{"who":"Fiona","text":"Has anyone else noticed something off with Sandra lately 👀","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Amy","text":"omg yes?? was gonna say something","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
+{"who":"Amy","text":"like the way she was in the kitchen today","posted":true,"at":"2026-11-27T18:23","checkin":"2026-11-27T18:23"}
+{"who":"Fiona","text":"She was absolutely weird with me on Wednesday too, just blanked me in the corridor","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Heather","text":"I hadn't noticed anything particular","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Amy","text":"she's been weird for weeks imo","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Fiona","text":"Something's going on with her, definitely","posted":true,"at":"2026-11-27T18:34","checkin":"2026-11-27T18:34"}
+{"who":"Fiona","text":"And she's been looking… different","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Amy","text":"I KNOW","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Amy","text":"she's put on a fair bit hasn't she","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Fiona","text":"Yeah I wasn't going to say it but yes","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Amy","text":"been thinking that for ages lol","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Heather","text":"I mean, people's weight changes","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Amy","text":"no obviously but she looks totally different from like a year ago","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Fiona","text":"It's not just the weight though. Something else is going on","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Fiona","text":"She's miserable and she's making everyone else miserable","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Amy","text":"she was SO short with me on Monday, I asked her a basic question abt the invoices and she proper snapped","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Amy","text":"in front of Helen as well","posted":true,"at":"2026-11-27T18:49","checkin":"2026-11-27T18:49"}
+{"who":"Fiona","text":"She does that","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Fiona","text":"She's done it to me twice this month","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Amy","text":"do u think something's going on at home","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Fiona","text":"Either that or she's just… like this now","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Fiona","text":"Which honestly I'm starting to think is just who she is","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Amy","text":"her and Derek are still together aren't they? I thought I saw something on her instagram","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Fiona","text":"No idea. Don't follow her","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"Amy","text":"same I had a nosy once lol","posted":true,"at":"2026-11-27T19:05","checkin":"2026-11-27T19:05"}
+{"who":"Amy","text":"it's private anyway","posted":true,"at":"2026-11-27T19:05","checkin":"2026-11-27T19:05"}
+{"who":"Heather","text":"She might just be having a hard time","posted":true,"at":"2026-11-27T19:08","checkin":"2026-11-27T19:08"}
+{"who":"Amy","text":"yeah maybe but it's not really fair to take it out on people","posted":true,"at":"2026-11-27T19:09","checkin":"2026-11-27T19:09"}
+{"who":"Fiona","text":"Exactly. Not our problem what's going on in her life. It becomes our problem when she's speaking to us like that","posted":true,"at":"2026-11-27T19:10","checkin":"2026-11-27T19:10"}
+{"who":"Amy","text":"genuinely dread going to her with anything now","posted":true,"at":"2026-11-27T19:16","checkin":"2026-11-27T19:16"}
+{"who":"Amy","text":"like I'll put off sending her stuff because I know what I'm gonna get back","posted":true,"at":"2026-11-27T19:17","checkin":"2026-11-27T19:17"}
+{"who":"Fiona","text":"Same. I've started copying Marcus in on everything so there's a paper trail","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Amy","text":"smart","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Heather","text":"Is it worth saying something to her","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Fiona","text":"God no","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Amy","text":"absolutely not 😂","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Fiona","text":"She'd go ballistic","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Amy","text":"can u imagine","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"Fiona","text":"Honestly I just think she's deeply unhappy and it seeps out","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Fiona","text":"And I feel for her a tiny bit but also… sort it out or don't come in","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Amy","text":"harsh but fair lmaooo","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Amy","text":"I mean it though, she poisons the whole office sometimes","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Fiona","text":"She does. She really does","posted":true,"at":"2026-11-27T19:36","checkin":"2026-11-27T19:36"}
+{"who":"Fiona","text":"And there's something… I don't know. I keep thinking about how she looked at that client meeting on Tuesday","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Amy","text":"what do u mean","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Fiona","text":"Just. Not well. Like properly not well","posted":true,"at":"2026-11-27T19:40","checkin":"2026-11-27T19:40"}
+{"who":"Fiona","text":"Pale, sort of puffy, couldn't concentrate","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Amy","text":"oh interesting","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Amy","text":"do u think she's drinking","posted":true,"at":"2026-11-27T19:44","checkin":"2026-11-27T19:44"}
+{"who":"Fiona","text":"I genuinely wondered","posted":true,"at":"2026-11-27T19:44","checkin":"2026-11-27T19:44"}
+{"who":"Amy","text":"like there's a thing isn't there, puffiness in the face","posted":true,"at":"2026-11-27T19:47","checkin":"2026-11-27T19:47"}
+{"who":"Fiona","text":"Yeah","posted":true,"at":"2026-11-27T19:48","checkin":"2026-11-27T19:48"}
+{"who":"Amy","text":"would explain a lot tbh","posted":true,"at":"2026-11-27T19:49","checkin":"2026-11-27T19:49"}
+{"who":"Heather","text":"That's a bit of a jump","posted":true,"at":"2026-11-27T19:53","checkin":"2026-11-27T19:53"}
+{"who":"Fiona","text":"Maybe. Just saying what it looked like","posted":true,"at":"2026-11-27T19:54","checkin":"2026-11-27T19:54"}
+{"who":"Amy","text":"could just be stress","posted":true,"at":"2026-11-27T19:55","checkin":"2026-11-27T19:55"}
+{"who":"Amy","text":"but yeah could be other stuff","posted":true,"at":"2026-11-27T19:55","checkin":"2026-11-27T19:55"}
+{"who":"Fiona","text":"Either way she needs to sort herself out before she poisons the whole place","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Fiona","text":"Honestly sometimes I think about how much nicer it would be in there without her","posted":true,"at":"2026-11-27T20:03","checkin":"2026-11-27T20:03"}
+{"who":"Amy","text":"omg don't","posted":true,"at":"2026-11-27T20:05","checkin":"2026-11-27T20:05"}
+{"who":"Amy","text":"I mean… yes. but don't","posted":true,"at":"2026-11-27T20:05","checkin":"2026-11-27T20:05"}
+{"who":"Fiona","text":"What, it's true","posted":true,"at":"2026-11-27T20:06","checkin":"2026-11-27T20:06"}
+{"who":"Amy","text":"no I KNOW I'm just saying it really would be a different office","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Fiona","text":"Different. Better.","posted":true,"at":"2026-11-27T20:09","checkin":"2026-11-27T20:09"}
+{"who":"Amy","text":"😂😂😂","posted":true,"at":"2026-11-27T20:10","checkin":"2026-11-27T20:10"}
+{"who":"Amy","text":"right anyway I'm starving, what are you doing tonight","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Fiona","text":"Nothing, staying in. Been a week","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Amy","text":"same honestly, got wine and that's all I need rn","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Fiona","text":"Correct response","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Heather","text":"Going to my sister's for dinner","posted":true,"at":"2026-11-27T20:28","checkin":"2026-11-27T20:28"}
+{"who":"Amy","text":"nice! enjoy","posted":true,"at":"2026-11-27T20:30","checkin":"2026-11-27T20:30"}

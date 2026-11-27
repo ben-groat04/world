@@ -1,0 +1,84 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T14:40","complete":true,"rejects":0,"today":["Callum",null,"Adam"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2207,"cache_read_input_tokens":0,"output_tokens":2076,"output_tokens_details":{"thinking_tokens":1442},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2207,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2076,"cache_read_input_tokens":0,"cache_creation_input_tokens":2207,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2207},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2721,"cache_read_input_tokens":0,"output_tokens":2236,"output_tokens_details":{"thinking_tokens":1332},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2721,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2236,"cache_read_input_tokens":0,"cache_creation_input_tokens":2721,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2721},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3626,"cache_read_input_tokens":0,"output_tokens":2499,"output_tokens_details":{"thinking_tokens":1672},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3626,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2499,"cache_read_input_tokens":0,"cache_creation_input_tokens":3626,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3626},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Callum","Rachel","Adam","Nadia"],"setting":"You are all in Leeds, old uni mates who still keep in touch through this group chat, which you use to sort a Christmas meal you're booking together and the five-a-side team you all play in on Saturdays.","openers":["send a photo from last night","ask who was actually sick in the taxi","post a timeline of who left when","message the bar asking for the closing tab"],"opener":"message the bar asking for the closing tab","cast":{"Callum":{"who":"29, man, old uni mate","work":"town planner","knows":"You know Rachel, Adam and Nadia from uni, all old mates.","texts":"Callum texts in this chat only now and again.","style":"a little emoji and some light abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Rachel":{"who":"28, woman, old uni mate","work":"civil engineer","knows":"You know Callum, Adam and Nadia from uni, all old mates.","texts":"Rachel texts in this chat a lot.","style":"a little emoji and few abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Adam":{"who":"30, man, old uni mate","work":"bar manager","knows":"You know Callum, Rachel and Nadia from uni, all old mates.","texts":"Adam texts in this chat now and then.","style":"lots of emoji and heavy abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Nadia":{"who":"30, woman, old uni mate","work":"pharmacy technician","knows":"You know Callum, Rachel and Adam from uni, all old mates.","texts":"Nadia texts in this chat now and then.","style":"a little emoji and some abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Callum":"You live in Leeds, work as a town planner and live alone.","Rachel":"You live in Leeds, work as a civil engineer and live alone.","Adam":"You live in Leeds, manage a bar and live alone.","Nadia":"You live in Leeds, work as a pharmacy technician and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":837,"cache_read_input_tokens":0,"output_tokens":1344,"output_tokens_details":{"thinking_tokens":927},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":837,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1344,"cache_read_input_tokens":0,"cache_creation_input_tokens":837,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":837},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1146,"cache_read_input_tokens":0,"output_tokens":1646,"output_tokens_details":{"thinking_tokens":1125},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1146,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1646,"cache_read_input_tokens":0,"cache_creation_input_tokens":1146,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1146},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Leeds, England","castMs":16006,"situation":"Old mates from uni in a group chat.","topic":"Going over the night before: how drunk they all got, who was sick, what nobody can remember."}
+{"who":"Callum","text":"Rang the bar about last night, asked for the closing tab","posted":true,"at":"2026-12-03T14:40","checkin":"2026-12-03T14:40"}
+{"who":"Rachel","text":"Did we get a taxi or did we walk","posted":true,"at":"2026-12-03T14:52","checkin":"2026-12-03T14:52"}
+{"who":"Adam","text":"walked to mine i think? there was a kebab involved","posted":true,"at":"2026-12-03T14:55","checkin":"2026-12-03T14:55"}
+{"who":"Nadia","text":"i genuinely have no memory of leaving","posted":true,"at":"2026-12-03T14:58","checkin":"2026-12-03T14:58"}
+{"who":"Rachel","text":"You were asleep on a bench outside the cathedral nadia","posted":true,"at":"2026-12-03T15:01","checkin":"2026-12-03T15:01"}
+{"who":"Nadia","text":"thats not a real place to be asleep","posted":true,"at":"2026-12-03T15:01","checkin":"2026-12-03T15:01"}
+{"who":"Callum","text":"So who was sick","posted":true,"at":"2026-12-03T15:04","checkin":"2026-12-03T15:04"}
+{"who":"Adam","text":"not me","posted":true,"at":"2026-12-03T15:05","checkin":"2026-12-03T15:05"}
+{"who":"Rachel","text":"It was not me before anyone asks","posted":true,"at":"2026-12-03T15:09","checkin":"2026-12-03T15:09"}
+{"who":"Callum","text":"Bar says they'll send the tab over tmrw. They found a card behind the bar with someone's name on it, checking if it's one of ours","posted":true,"at":"2026-12-03T15:20","checkin":"2026-12-03T15:20"}
+{"who":"Nadia","text":"whose card","posted":true,"at":"2026-12-03T15:22","checkin":"2026-12-03T15:22"}
+{"who":"Rachel","text":"Saturday still on for 5 a side?","posted":true,"at":"2026-12-03T16:47","checkin":"2026-12-03T16:47"}
+{"who":"Adam","text":"obviously","posted":true,"at":"2026-12-03T17:30","checkin":"2026-12-03T17:30"}
+{"who":"Callum","text":"Yeah. Need to sort bibs","posted":true,"at":"2026-12-03T17:31","checkin":"2026-12-03T17:31"}
+{"who":"Nadia","text":"i can bring bibs 🙌","posted":true,"at":"2026-12-03T17:33","checkin":"2026-12-03T17:33"}
+{"who":"Rachel","text":"Any news on the xmas meal? We need to book by the 12th","posted":true,"at":"2026-12-03T18:02","checkin":"2026-12-03T18:02"}
+{"who":"Callum","text":"Still waiting on Mario's to reply. Chasing tmrw","posted":true,"at":"2026-12-03T18:40","checkin":"2026-12-03T18:40"}
+{"who":"Adam","text":"tell them we'll pay the deposit if they hold it","posted":true,"at":"2026-12-03T19:15","checkin":"2026-12-03T19:15"}
+{"who":"Rachel","text":"That's not how any of this works adam","posted":true,"at":"2026-12-03T19:16","checkin":"2026-12-03T19:16"}
+{"who":"Adam","text":"[photo: the card behind the bar]","posted":true,"at":"2026-12-03T23:58","checkin":"2026-12-03T23:58"}
+{"who":"Adam","text":"it's nadias","posted":true,"at":"2026-12-04T00:03","checkin":"2026-12-04T00:03"}
+{"who":"Nadia","text":"no it isn't","posted":true,"at":"2026-12-04T00:04","checkin":"2026-12-04T00:04"}
+{"who":"Callum","text":"Mario's still not back to me. Ringing them at 9 when they open","posted":true,"at":"2026-12-04T09:12","checkin":"2026-12-04T09:12"}
+{"who":"Callum","text":"Rang. They're full on the 12th except 6pm. Would that work for everyone","posted":true,"at":"2026-12-04T09:21","checkin":"2026-12-04T09:21"}
+{"who":"Rachel","text":"6 is fine. Earlier is better honestly but 6 is fine","posted":true,"at":"2026-12-04T09:38","checkin":"2026-12-04T09:38"}
+{"who":"Adam","text":"6 works can they do the deposit thing or not","posted":true,"at":"2026-12-04T09:52","checkin":"2026-12-04T09:52"}
+{"who":"Rachel","text":"Adam.","posted":true,"at":"2026-12-04T09:53","checkin":"2026-12-04T09:53"}
+{"who":"Adam","text":"just asking","posted":true,"at":"2026-12-04T09:55","checkin":"2026-12-04T09:55"}
+{"who":"Nadia","text":"6 is fine. is it the basement one or the big room","posted":true,"at":"2026-12-04T10:30","checkin":"2026-12-04T10:30"}
+{"who":"Callum","text":"Basement. Deposit is £10pp. Can everyone confirm they're in before I pay","posted":true,"at":"2026-12-04T10:44","checkin":"2026-12-04T10:44"}
+{"who":"Rachel","text":"In","posted":true,"at":"2026-12-04T10:46","checkin":"2026-12-04T10:46"}
+{"who":"Nadia","text":"in","posted":true,"at":"2026-12-04T11:20","checkin":"2026-12-04T11:20"}
+{"who":"Adam","text":"in","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Callum","text":"Paying the £40 now. Sort me out later","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Rachel","text":"Will do","posted":true,"at":"2026-12-04T13:09","checkin":"2026-12-04T13:09"}
+{"who":"Nadia","text":"has the bar got back to you about the card","posted":true,"at":"2026-12-04T15:30","checkin":"2026-12-04T15:30"}
+{"who":"Callum","text":"Not yet. Said they'd check tomorrow","posted":true,"at":"2026-12-04T15:48","checkin":"2026-12-04T15:48"}
+{"who":"Adam","text":"it's yours nadia","posted":true,"at":"2026-12-04T16:10","checkin":"2026-12-04T16:10"}
+{"who":"Nadia","text":"i have been to that bar twice this year and both times i paid cash","posted":true,"at":"2026-12-04T16:11","checkin":"2026-12-04T16:11"}
+{"who":"Rachel","text":"So the bench was real and the card might be real. Pick one","posted":true,"at":"2026-12-04T16:14","checkin":"2026-12-04T16:14"}
+{"who":"Nadia","text":"the bench was not real","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Rachel","text":"You were asleep on it Nadia","posted":true,"at":"2026-12-04T16:22","checkin":"2026-12-04T16:22"}
+{"who":"Rachel","text":"Bibs. Nadia you said you'd bring them","posted":true,"at":"2026-12-04T17:48","checkin":"2026-12-04T17:48"}
+{"who":"Nadia","text":"bag by the door. will bring them saturday 🙌","posted":true,"at":"2026-12-04T17:55","checkin":"2026-12-04T17:55"}
+{"who":"Adam","text":"on at 10 yeah? astro on woodhouse lane","posted":true,"at":"2026-12-04T18:10","checkin":"2026-12-04T18:10"}
+{"who":"Rachel","text":"Yeah 10","posted":true,"at":"2026-12-04T18:12","checkin":"2026-12-04T18:12"}
+{"who":"Adam","text":"🫡","posted":true,"at":"2026-12-04T18:14","checkin":"2026-12-04T18:14"}
+{"who":"Adam","text":"bar's rammed tonight. might be stuck here til close","posted":true,"at":"2026-12-04T21:30","checkin":"2026-12-04T21:30"}
+{"who":"Rachel","text":"Mad for a Friday in December","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"Rachel","text":"Nadia are you actually in bed or are you on a bench","posted":true,"at":"2026-12-04T23:41","checkin":"2026-12-04T23:41"}
+{"who":"Nadia","text":"bed. in bed. i swear","posted":true,"at":"2026-12-04T23:50","checkin":"2026-12-04T23:50"}
+{"who":"Rachel","text":"Good","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Adam","text":"closing up. no more tabs","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Rachel","text":"Night all. Don't be sick at 10am","posted":true,"at":"2026-12-05T00:20","checkin":"2026-12-05T00:20"}
+{"who":"Rachel","text":"Bibs??","posted":true,"at":"2026-12-05T08:14","checkin":"2026-12-05T08:14"}
+{"who":"Nadia","text":"bag by the door like i said","posted":true,"at":"2026-12-05T08:15","checkin":"2026-12-05T08:15"}
+{"who":"Rachel","text":"Blue or orange","posted":true,"at":"2026-12-05T08:15","checkin":"2026-12-05T08:15"}
+{"who":"Nadia","text":"both. cant remember which is ours","posted":true,"at":"2026-12-05T08:16","checkin":"2026-12-05T08:16"}
+{"who":"Callum","text":"Bar doesn't open till 12 on a Sat apparently. Will ring then","posted":true,"at":"2026-12-05T08:40","checkin":"2026-12-05T08:40"}
+{"who":"Adam","text":"up since 7 deliveries might be 10:15 the lad's late with the keg order","posted":true,"at":"2026-12-05T09:12","checkin":"2026-12-05T09:12"}
+{"who":"Rachel","text":"Adam you have to be there, we're one short if Callum's late too","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Callum","text":"I'll be there. Have cones","posted":true,"at":"2026-12-05T09:15","checkin":"2026-12-05T09:15"}
+{"who":"Adam","text":"👍","posted":true,"at":"2026-12-05T09:16","checkin":"2026-12-05T09:16"}
+{"who":"Adam","text":"card's sorted. checked the lost property box. it's nadias","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Adam","text":"[photo: the card, name visible]","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Nadia","text":"that is not a card i own","posted":true,"at":"2026-12-05T12:33","checkin":"2026-12-05T12:33"}
+{"who":"Rachel","text":"Is it a card you own","posted":true,"at":"2026-12-05T12:33","checkin":"2026-12-05T12:33"}
+{"who":"Nadia","text":"i own 3 cards and none of them are that colour","posted":true,"at":"2026-12-05T12:35","checkin":"2026-12-05T12:35"}
+{"who":"Adam","text":"its the one with the chip","posted":true,"at":"2026-12-05T12:36","checkin":"2026-12-05T12:36"}
+{"who":"Callum","text":"So it's Nadia's. Bar's fine with it being sent to her if she gives them a card number. Or she pays it","posted":true,"at":"2026-12-05T12:40","checkin":"2026-12-05T12:40"}
+{"who":"Nadia","text":"i will pay cash. i have been saying cash since thursday","posted":true,"at":"2026-12-05T12:41","checkin":"2026-12-05T12:41"}
+{"who":"Rachel","text":"Glad we've solved that","posted":true,"at":"2026-12-05T12:45","checkin":"2026-12-05T12:45"}
+{"who":"Rachel","text":"Anyone still up for the pub after? Not the one with the sticky floor","posted":true,"at":"2026-12-05T20:10","checkin":"2026-12-05T20:10"}
+{"who":"Callum","text":"Fine by me","posted":true,"at":"2026-12-05T20:11","checkin":"2026-12-05T20:11"}
+{"who":"Adam","text":"just got in. legs are gone. cant feel my right hand from the keeper's kick","posted":true,"at":"2026-12-05T20:52","checkin":"2026-12-05T20:52"}
+{"who":"Rachel","text":"You weren't in goal Adam","posted":true,"at":"2026-12-05T20:52","checkin":"2026-12-05T20:52"}
+{"who":"Adam","text":"i was in goal in my head","posted":true,"at":"2026-12-05T20:53","checkin":"2026-12-05T20:53"}
+{"who":"Nadia","text":"bench was not real but my hamstring is definitely real","posted":true,"at":"2026-12-05T21:04","checkin":"2026-12-05T21:04"}
+{"who":"Rachel","text":"Good. Ice it","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Callum","text":"Mario's said yes to 6 on the 12th. Deposit's already in so that's sorted","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Rachel","text":"Thank god","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Adam","text":"💪","posted":true,"at":"2026-12-05T21:33","checkin":"2026-12-05T21:33"}

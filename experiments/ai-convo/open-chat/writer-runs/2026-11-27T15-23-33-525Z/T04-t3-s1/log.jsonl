@@ -1,0 +1,97 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T08:40","complete":true,"rejects":0,"today":[null,"Liam",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2304,"cache_read_input_tokens":0,"output_tokens":3897,"output_tokens_details":{"thinking_tokens":2486},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2304,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3897,"cache_read_input_tokens":0,"cache_creation_input_tokens":2304,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2304},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3559,"cache_read_input_tokens":0,"output_tokens":2250,"output_tokens_details":{"thinking_tokens":1409},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3559,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2250,"cache_read_input_tokens":0,"cache_creation_input_tokens":3559,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3559},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4364,"cache_read_input_tokens":0,"output_tokens":2341,"output_tokens_details":{"thinking_tokens":1433},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4364,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2341,"cache_read_input_tokens":0,"cache_creation_input_tokens":4364,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4364},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Liam","Jess","Aled","Grace"],"setting":"You are all old mates from uni, still in Cardiff, and this group chat is where you plan nights out, birthdays and catch-ups. Lately you've been arranging a get-together for one of the group's birthdays and swapping plans for the coming weekend.","openers":["Post a screenshot of last weekend's bar tab","Ask who's up for doubles on Saturday","Dare Aled to a proper pint-for-pint night","Suggest booking a table for the birthday weekend"],"opener":"Suggest booking a table for the birthday weekend","cast":{"Liam":{"who":"29, man, the uni mate bragging about drinking","work":"electrician","knows":"You know Jess, Aled and Grace as uni mates.","texts":"Liam texts in this chat now and then.","style":"some emoji and light texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Jess":{"who":"29, woman, the uni mate daring the others to a bigger night","work":"charity fundraiser","knows":"You know Liam, Aled and Grace as uni mates.","texts":"Jess texts in this chat now and then.","style":"lots of emoji and texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Aled":{"who":"30, man, the uni mate who wants to cut down and gets mocked","work":"social worker","knows":"You know Liam, Jess and Grace as uni mates.","texts":"Aled texts in this chat only now and again.","style":"few emoji and little texting shorthand.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Grace":{"who":"28, woman, the uni mate who is pulled into the dares","work":"NHS physiotherapist","knows":"You know Liam, Jess and Aled as uni mates.","texts":"Grace texts in this chat a lot.","style":"some emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Liam":"You live in Cardiff, spend your days on electrical jobs, and live alone.","Jess":"You live in Cardiff, spend your days on charity fundraising, and live alone.","Aled":"You live in Cardiff, spend your days on social work casework, and live alone.","Grace":"You live in Cardiff, spend your days as an NHS physiotherapist, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":855,"cache_read_input_tokens":0,"output_tokens":1687,"output_tokens_details":{"thinking_tokens":1206},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":855,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1687,"cache_read_input_tokens":0,"cache_creation_input_tokens":855,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":855},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1204,"cache_read_input_tokens":0,"output_tokens":2205,"output_tokens_details":{"thinking_tokens":1645},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1204,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2205,"cache_read_input_tokens":0,"cache_creation_input_tokens":1204,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1204},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cardiff, Wales","castMs":19612,"situation":"Old mates from uni in a group chat.","topic":"Boasting and joking about how much they drink most weeks, mocking the one who wants to cut down, and daring each other to a bigger night."}
+{"who":"Liam","text":"morning. shall i book a table for the birthday sat 5th? the place on Mill Lane does a booth for 8","posted":true,"at":"2026-11-28T08:40","checkin":"2026-11-28T08:40"}
+{"who":"Jess","text":"YES book it. 8 is too early tho we need to start at 6","posted":true,"at":"2026-11-28T08:52","checkin":"2026-11-28T08:52"}
+{"who":"Liam","text":"6 is for children jess","posted":true,"at":"2026-11-28T08:53","checkin":"2026-11-28T08:53"}
+{"who":"Jess","text":"Ok 7 then but you're buying the first round of shots","posted":true,"at":"2026-11-28T08:55","checkin":"2026-11-28T08:55"}
+{"who":"Grace","text":"Mornings I'm on a late so count me in for the booth, not sure about shots","posted":true,"at":"2026-11-28T09:10","checkin":"2026-11-28T09:10"}
+{"who":"Liam","text":"grace you said that last time and you were on the bar floor at 1am","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Jess","text":"She was","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Aled","text":"Booth's fine. Can we do food properly this time, not just pints and chips. I'm on a 6am shift Monday so I'll be on soft drinks after 10","posted":true,"at":"2026-11-28T10:31","checkin":"2026-11-28T10:31"}
+{"who":"Liam","text":"aled on soft drinks who is this man and what have you done with aled","posted":true,"at":"2026-11-28T10:44","checkin":"2026-11-28T10:44"}
+{"who":"Jess","text":"He's been reading the leaflets again 🙄","posted":true,"at":"2026-11-28T10:44","checkin":"2026-11-28T10:44"}
+{"who":"Aled","text":"Not lecturing. I felt rubbish Thursday and I'd like to not do that again","posted":true,"at":"2026-11-28T10:46","checkin":"2026-11-28T10:46"}
+{"who":"Liam","text":"lecturing thursday was 4 pints","posted":true,"at":"2026-11-28T10:48","checkin":"2026-11-28T10:48"}
+{"who":"Liam","text":"4 pints is a warm up. last week i did 9 and still made it to the gym","posted":true,"at":"2026-11-28T10:49","checkin":"2026-11-28T10:49"}
+{"who":"Jess","text":"9 pints on a tuesday liam","posted":true,"at":"2026-11-28T10:50","checkin":"2026-11-28T10:50"}
+{"who":"Liam","text":"it was a wednesday","posted":true,"at":"2026-11-28T10:51","checkin":"2026-11-28T10:51"}
+{"who":"Jess","text":"Ok the dare: birthday night we do the 3 bar crawl then cocktails at the top bar. Anyone who doesnt finish their drink gets a shot","posted":true,"at":"2026-11-28T13:02","checkin":"2026-11-28T13:02"}
+{"who":"Aled","text":"I'll be out by 10, I've got a visit Sunday morning","posted":true,"at":"2026-11-28T13:05","checkin":"2026-11-28T13:05"}
+{"who":"Liam","text":"aled leaves at 10 🙄 typical","posted":true,"at":"2026-11-28T13:09","checkin":"2026-11-28T13:09"}
+{"who":"Liam","text":"its a birthday not a funeral mate","posted":true,"at":"2026-11-28T13:10","checkin":"2026-11-28T13:10"}
+{"who":"Grace","text":"I'll do the first bar. Not doing the top bar, I'll be dead by the second round. Do the first bar with me Jess","posted":true,"at":"2026-11-28T13:44","checkin":"2026-11-28T13:44"}
+{"who":"Jess","text":"Deal you're coming to top bar grace","posted":true,"at":"2026-11-28T13:46","checkin":"2026-11-28T13:46"}
+{"who":"Grace","text":"No 😭","posted":true,"at":"2026-11-28T13:46","checkin":"2026-11-28T13:46"}
+{"who":"Liam","text":"[photo: the bill from friday]","posted":true,"at":"2026-11-28T16:20","checkin":"2026-11-28T16:20"}
+{"who":"Liam","text":"£211 for one night. worth it 😎","posted":true,"at":"2026-11-28T16:21","checkin":"2026-11-28T16:21"}
+{"who":"Jess","text":"How many did you have","posted":true,"at":"2026-11-28T16:24","checkin":"2026-11-28T16:24"}
+{"who":"Liam","text":"enough. 6 pints and a double jager. aled would've been proud of the 2 cans of lemonade he's been smug about","posted":true,"at":"2026-11-28T16:25","checkin":"2026-11-28T16:25"}
+{"who":"Aled","text":"Liam I'm not interested in the total. I had two pints Friday and I'm glad I stopped there. Are we booking the booth or not","posted":true,"at":"2026-11-28T16:40","checkin":"2026-11-28T16:40"}
+{"who":"Liam","text":"booked for 7, 8 of us. deposit's on the link, tell me when you've paid","posted":true,"at":"2026-11-28T16:41","checkin":"2026-11-28T16:41"}
+{"who":"Grace","text":"Ok sending mine now","posted":true,"at":"2026-11-28T17:02","checkin":"2026-11-28T17:02"}
+{"who":"Grace","text":"Paid ✅","posted":true,"at":"2026-11-28T17:03","checkin":"2026-11-28T17:03"}
+{"who":"Jess","text":"Out in the bay Liam you coming or are you still recovering from friday","posted":true,"at":"2026-11-28T19:12","checkin":"2026-11-28T19:12"}
+{"who":"Liam","text":"recovering I'm on my 3rd pint, I'm fine","posted":true,"at":"2026-11-28T19:14","checkin":"2026-11-28T19:14"}
+{"who":"Aled","text":"Enjoy. I'm in for a quiet one","posted":true,"at":"2026-11-28T19:15","checkin":"2026-11-28T19:15"}
+{"who":"Liam","text":"quiet one ok nan","posted":true,"at":"2026-11-28T19:15","checkin":"2026-11-28T19:15"}
+{"who":"Jess","text":"Top bar crawl starting now. Liam you owe me one for the shot dare","posted":true,"at":"2026-11-28T22:48","checkin":"2026-11-28T22:48"}
+{"who":"Liam","text":"i owe nobody anything jess","posted":true,"at":"2026-11-28T22:50","checkin":"2026-11-28T22:50"}
+{"who":"Grace","text":"Home. Not going to top bar. Survived the first bar and feel good about myself","posted":true,"at":"2026-11-28T23:30","checkin":"2026-11-28T23:30"}
+{"who":"Jess","text":"Traitor","posted":true,"at":"2026-11-28T23:31","checkin":"2026-11-28T23:31"}
+{"who":"Liam","text":"after the top bar we go for shots at the place by the castle need someone to keep up with me","posted":true,"at":"2026-11-29T00:40","checkin":"2026-11-29T00:40"}
+{"who":"Jess","text":"Who's keeping up with you exactly I'm done","posted":true,"at":"2026-11-29T00:41","checkin":"2026-11-29T00:41"}
+{"who":"Liam","text":"you're all soft","posted":true,"at":"2026-11-29T00:52","checkin":"2026-11-29T00:52"}
+{"who":"Grace","text":"I'm asleep Liam","posted":true,"at":"2026-11-29T01:15","checkin":"2026-11-29T01:15"}
+{"who":"Aled","text":"Hope everyone got home alright","posted":true,"at":"2026-11-29T10:12","checkin":"2026-11-29T10:12"}
+{"who":"Jess","text":"Home at 4 dead to the world liam did u make it to the castle","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Liam","text":"made it. 2 at the castle and that was that","posted":true,"at":"2026-11-29T10:58","checkin":"2026-11-29T10:58"}
+{"who":"Aled","text":"Good. Glad you stopped.","posted":true,"at":"2026-11-29T11:03","checkin":"2026-11-29T11:03"}
+{"who":"Liam","text":"got called out to a flat in splott this morning. no heating, old lad in his 70s, bit of a cutting-out on the boiler circuit","posted":true,"at":"2026-11-29T14:22","checkin":"2026-11-29T14:22"}
+{"who":"Liam","text":"spent an hour on it and then sat with him while the kettle went on","posted":true,"at":"2026-11-29T14:23","checkin":"2026-11-29T14:23"}
+{"who":"Liam","text":"[photo: the old consumer unit]","posted":true,"at":"2026-11-29T14:25","checkin":"2026-11-29T14:25"}
+{"who":"Jess","text":"Aw liam 🥹 that's actually really nice of you","posted":true,"at":"2026-11-29T14:31","checkin":"2026-11-29T14:31"}
+{"who":"Grace","text":"Good on you. Hope he's warm now","posted":true,"at":"2026-11-29T14:32","checkin":"2026-11-29T14:32"}
+{"who":"Liam","text":"he's warm. made me have two biscuits before i could leave 😂","posted":true,"at":"2026-11-29T14:40","checkin":"2026-11-29T14:40"}
+{"who":"Aled","text":"Did you get the boiler working?","posted":true,"at":"2026-11-29T14:41","checkin":"2026-11-29T14:41"}
+{"who":"Liam","text":"yeah. needs a new pump in the spring. told him to ring me","posted":true,"at":"2026-11-29T14:44","checkin":"2026-11-29T14:44"}
+{"who":"Jess","text":"Ok booth is 7pm Sat 5th confirmed with the place. Who's paid? I've paid","posted":true,"at":"2026-11-29T19:03","checkin":"2026-11-29T19:03"}
+{"who":"Grace","text":"Paid","posted":true,"at":"2026-11-29T19:05","checkin":"2026-11-29T19:05"}
+{"who":"Aled","text":"Paid, sorry, meant to say","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Liam","text":"👍","posted":true,"at":"2026-11-29T19:21","checkin":"2026-11-29T19:21"}
+{"who":"Liam","text":"its booked for 8 so one of you lot needs to sort the other 2 deposits","posted":true,"at":"2026-11-29T19:21","checkin":"2026-11-29T19:21"}
+{"who":"Jess","text":"Liam you've booked for 8 and there's 8 of us??","posted":true,"at":"2026-11-29T19:22","checkin":"2026-11-29T19:22"}
+{"who":"Liam","text":"yeah. one of you bring a plus one 😎","posted":true,"at":"2026-11-29T19:22","checkin":"2026-11-29T19:22"}
+{"who":"Grace","text":"That's not how it works","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Liam","text":"off to bed. gym at 6. anyone?","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Jess","text":"Not me I'm still recovering from your 9 pints","posted":true,"at":"2026-11-29T21:17","checkin":"2026-11-29T21:17"}
+{"who":"Liam","text":"it was a wednesday","posted":true,"at":"2026-11-29T21:18","checkin":"2026-11-29T21:18"}
+{"who":"Aled","text":"Gym's a good shout. Enjoy it","posted":true,"at":"2026-11-29T21:20","checkin":"2026-11-29T21:20"}
+{"who":"Liam","text":"up. gym","posted":true,"at":"2026-11-30T06:12","checkin":"2026-11-30T06:12"}
+{"who":"Aled","text":"Morning. On shift from 6 so I'll catch up later","posted":true,"at":"2026-11-30T06:20","checkin":"2026-11-30T06:20"}
+{"who":"Liam","text":"gym done. 4 sets of legs","posted":true,"at":"2026-11-30T07:48","checkin":"2026-11-30T07:48"}
+{"who":"Jess","text":"Who even counts sets liam","posted":true,"at":"2026-11-30T07:49","checkin":"2026-11-30T07:49"}
+{"who":"Grace","text":"Booth's definitely 7 yeah? My sister's asking if she can come","posted":true,"at":"2026-11-30T08:30","checkin":"2026-11-30T08:30"}
+{"who":"Jess","text":"7pm yes. Plus one is fine as long as she pays her own deposit","posted":true,"at":"2026-11-30T08:34","checkin":"2026-11-30T08:34"}
+{"who":"Liam","text":"see jess gets it","posted":true,"at":"2026-11-30T08:35","checkin":"2026-11-30T08:35"}
+{"who":"Grace","text":"She pays her own. Liam you're not the one deciding who gets in","posted":true,"at":"2026-11-30T08:36","checkin":"2026-11-30T08:36"}
+{"who":"Liam","text":"i booked it i decide","posted":true,"at":"2026-11-30T08:37","checkin":"2026-11-30T08:37"}
+{"who":"Jess","text":"🙄🙄","posted":true,"at":"2026-11-30T08:38","checkin":"2026-11-30T08:38"}
+{"who":"Jess","text":"Smashed the quiz target today £1,240 for the hospice. Thank u to everyone who sponsored me","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Grace","text":"Well done Jess","posted":true,"at":"2026-11-30T12:17","checkin":"2026-11-30T12:17"}
+{"who":"Liam","text":"did u get the 1240 in cash or is it all on the link","posted":true,"at":"2026-11-30T12:30","checkin":"2026-11-30T12:30"}
+{"who":"Jess","text":"Link liam. Some people actually give to charity","posted":true,"at":"2026-11-30T12:31","checkin":"2026-11-30T12:31"}
+{"who":"Grace","text":"Going on a late now. Still doing first bar with Jess, top bar I'm out","posted":true,"at":"2026-11-30T14:02","checkin":"2026-11-30T14:02"}
+{"who":"Jess","text":"Ok fine","posted":true,"at":"2026-11-30T14:03","checkin":"2026-11-30T14:03"}
+{"who":"Aled","text":"Off shift. Long one, two reviews and a missed visit I'm not happy about. Not drinking tonight","posted":true,"at":"2026-11-30T18:47","checkin":"2026-11-30T18:47"}
+{"who":"Liam","text":"bit early for mocktails aled","posted":true,"at":"2026-11-30T18:52","checkin":"2026-11-30T18:52"}
+{"who":"Aled","text":"It's a Monday Liam","posted":true,"at":"2026-11-30T18:53","checkin":"2026-11-30T18:53"}
+{"who":"Jess","text":"Leave him alone liam he's had a day","posted":true,"at":"2026-11-30T18:55","checkin":"2026-11-30T18:55"}
+{"who":"Liam","text":"old lad from splott rang. says the pump's making a noise again. told him spring. he said he's 74 not 80 and he'll ring when he likes","posted":true,"at":"2026-11-30T19:10","checkin":"2026-11-30T19:10"}
+{"who":"Jess","text":"You're going to have to go back liam","posted":true,"at":"2026-11-30T19:11","checkin":"2026-11-30T19:11"}
+{"who":"Liam","text":"probably. he's got a good kettle","posted":true,"at":"2026-11-30T19:14","checkin":"2026-11-30T19:14"}
+{"who":"Grace","text":"Back. Knackered. Did anyone sort the plus one or is that still open","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Liam","text":"still open. jess can sort it","posted":true,"at":"2026-11-30T21:44","checkin":"2026-11-30T21:44"}
+{"who":"Jess","text":"I'm not sorting your booth liam","posted":true,"at":"2026-11-30T21:45","checkin":"2026-11-30T21:45"}
+{"who":"Aled","text":"Booth's paid, Liam, I'll sort the plus one if nobody else wants it. Ask Eleri to pay Grace, not you","posted":true,"at":"2026-11-30T22:30","checkin":"2026-11-30T22:30"}
+{"who":"Liam","text":"ok nan","posted":true,"at":"2026-11-30T22:31","checkin":"2026-11-30T22:31"}
+{"who":"Jess","text":"😂😂","posted":true,"at":"2026-11-30T22:31","checkin":"2026-11-30T22:31"}

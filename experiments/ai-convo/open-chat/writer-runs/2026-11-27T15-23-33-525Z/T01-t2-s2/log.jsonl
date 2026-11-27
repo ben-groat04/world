@@ -1,0 +1,102 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T12:55","complete":true,"rejects":0,"today":[null,null,"Rachel"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2034,"cache_read_input_tokens":0,"output_tokens":3463,"output_tokens_details":{"thinking_tokens":2125},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2034,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3463,"cache_read_input_tokens":0,"cache_creation_input_tokens":2034,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2034},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3252,"cache_read_input_tokens":0,"output_tokens":2015,"output_tokens_details":{"thinking_tokens":956},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3252,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2015,"cache_read_input_tokens":0,"cache_creation_input_tokens":3252,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3252},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4314,"cache_read_input_tokens":0,"output_tokens":2356,"output_tokens_details":{"thinking_tokens":1381},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4314,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2356,"cache_read_input_tokens":0,"cache_creation_input_tokens":4314,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4314},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rachel","Jack"],"setting":"You're both in Wellington, New Zealand, close friends who tell each other almost everything, and this chat is where you do that. You're planning a weekend away in the Wairarapa next month and trading restaurant suggestions for the trip.","openers":["Send \"guess who I slept with\"","Text \"ok you need every detail\"","Message \"so this weekend happened\"","Type \"right, I'm telling you everything\""],"opener":"Type \"right, I'm telling you everything\"","cast":{"Rachel":{"who":"35, woman, the friend who slept with someone new and is telling","work":"pharmacist","knows":"You know Jack as your close friend, and you tell him everything.","texts":"","style":"Light use of emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Jack":{"who":"34, man, the close friend asking for the details","work":"electrician","knows":"You know Rachel as your close friend, and she tells you everything.","texts":"","style":"Little or no emoji, a few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Rachel":"You live in Wellington, where you work as a pharmacist and spend your days on the shop floor and the dispensary counter, and you live alone.","Jack":"You live in Wellington, where you work as an electrician on call-outs and jobs across the city, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":862,"cache_read_input_tokens":0,"output_tokens":811,"output_tokens_details":{"thinking_tokens":594},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":862,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":811,"cache_read_input_tokens":0,"cache_creation_input_tokens":862,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":862},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1143,"cache_read_input_tokens":0,"output_tokens":1346,"output_tokens_details":{"thinking_tokens":971},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1143,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1346,"cache_read_input_tokens":0,"cache_creation_input_tokens":1143,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1143},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Wellington, New Zealand","castMs":14679,"situation":"Two close friends in their thirties who tell each other everything.","topic":"One of them slept with someone new at the weekend and tells the other exactly what they did and how it was, in plain crude words, while the other asks for more."}
+{"who":"Rachel","text":"right, I'm telling you everything","posted":true,"at":"2026-11-29T12:55","checkin":"2026-11-29T12:55"}
+{"who":"Jack","text":"Go on then","posted":true,"at":"2026-11-29T12:56","checkin":"2026-11-29T12:56"}
+{"who":"Rachel","text":"you know the guy from quiz night at the Hope and Anchor? the one who got every boat question wrong","posted":true,"at":"2026-11-29T12:58","checkin":"2026-11-29T12:58"}
+{"who":"Jack","text":"Green jumper","posted":true,"at":"2026-11-29T12:58","checkin":"2026-11-29T12:58"}
+{"who":"Rachel","text":"that's him. we got chatting at the bar again, he walked me to the car, then \"come back to mine for one drink\" which we both knew was not one drink","posted":true,"at":"2026-11-29T12:59","checkin":"2026-11-29T12:59"}
+{"who":"Jack","text":"And?","posted":true,"at":"2026-11-29T13:01","checkin":"2026-11-29T13:01"}
+{"who":"Rachel","text":"he kissed me in the hallway before I'd got my shoes off","posted":true,"at":"2026-11-29T13:03","checkin":"2026-11-29T13:03"}
+{"who":"Jack","text":"Ok good start","posted":true,"at":"2026-11-29T13:03","checkin":"2026-11-29T13:03"}
+{"who":"Rachel","text":"he's annoyingly good at kissing. made me forget the one drink thing entirely","posted":true,"at":"2026-11-29T13:05","checkin":"2026-11-29T13:05"}
+{"who":"Jack","text":"How far did it go","posted":true,"at":"2026-11-29T13:06","checkin":"2026-11-29T13:06"}
+{"who":"Rachel","text":"hand up my top on the couch, then I dragged him to the bedroom floor because the bed was covered in washing. he got my jeans off with his teeth, which I did not think was a real thing people did","posted":true,"at":"2026-11-29T13:10","checkin":"2026-11-29T13:10"}
+{"who":"Jack","text":"Lmao","posted":true,"at":"2026-11-29T13:11","checkin":"2026-11-29T13:11"}
+{"who":"Rachel","text":"then he went down on me for ages. I had to hold his head like a bowling ball lol","posted":true,"at":"2026-11-29T13:14","checkin":"2026-11-29T13:14"}
+{"who":"Jack","text":"And then","posted":true,"at":"2026-11-29T13:16","checkin":"2026-11-29T13:16"}
+{"who":"Rachel","text":"then I did him. he's bigger than I expected. not scary, more \"oh, that's useful\"","posted":true,"at":"2026-11-29T13:19","checkin":"2026-11-29T13:19"}
+{"who":"Jack","text":"Ha","posted":true,"at":"2026-11-29T13:20","checkin":"2026-11-29T13:20"}
+{"who":"Rachel","text":"got to the bed in the end once I'd shoved the washing off it. he held my wrists a bit, I liked it. came twice, which hasn't happened with someone I'd just met in a long time","posted":true,"at":"2026-11-29T13:22","checkin":"2026-11-29T13:22"}
+{"who":"Jack","text":"You're going to be insufferable about this","posted":true,"at":"2026-11-29T13:25","checkin":"2026-11-29T13:25"}
+{"who":"Rachel","text":"already am","posted":true,"at":"2026-11-29T13:25","checkin":"2026-11-29T13:25"}
+{"who":"Jack","text":"Was he any good after or did he bolt","posted":true,"at":"2026-11-29T13:27","checkin":"2026-11-29T13:27"}
+{"who":"Rachel","text":"stayed. we got kebabs at 2am, he ate my last garlic bread, I forgave him. left at 9 for a call-out (he's a plumber, very handy apparently)","posted":true,"at":"2026-11-29T13:31","checkin":"2026-11-29T13:31"}
+{"who":"Jack","text":"So it's a second date","posted":true,"at":"2026-11-29T13:33","checkin":"2026-11-29T13:33"}
+{"who":"Rachel","text":"no, one-off. not doing the morning-after texts with someone who thinks boats are a quiz topic","posted":true,"at":"2026-11-29T13:35","checkin":"2026-11-29T13:35"}
+{"who":"Jack","text":"You've already said he walked you to the car, you're weighing up round two","posted":true,"at":"2026-11-29T13:36","checkin":"2026-11-29T13:36"}
+{"who":"Rachel","text":"...maybe","posted":true,"at":"2026-11-29T13:40","checkin":"2026-11-29T13:40"}
+{"who":"Jack","text":"At the wholesaler, back on jobs after. Read the rest tonight","posted":true,"at":"2026-11-29T14:02","checkin":"2026-11-29T14:02"}
+{"who":"Rachel","text":"there's no rest, that's the lot","posted":true,"at":"2026-11-29T14:03","checkin":"2026-11-29T14:03"}
+{"who":"Rachel","text":"ok. cabin in Martinborough has the outdoor bath. not dropping the topic but I'm putting it on the list","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Jack","text":"Outdoor bath is a fair call. Book it before someone else does","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Rachel","text":"booking in the morning. you want the bit I skipped? I skipped one bit","posted":true,"at":"2026-11-29T19:22","checkin":"2026-11-29T19:22"}
+{"who":"Jack","text":"Obviously","posted":true,"at":"2026-11-29T19:23","checkin":"2026-11-29T19:23"}
+{"who":"Rachel","text":"after he left the first time he came back for his keys. then he texted from the van: \"that was a good way to spend a Saturday\"","posted":true,"at":"2026-11-29T19:31","checkin":"2026-11-29T19:31"}
+{"who":"Jack","text":"He's either a poet or a dickhead","posted":true,"at":"2026-11-29T19:32","checkin":"2026-11-29T19:32"}
+{"who":"Rachel","text":"poet. verified","posted":true,"at":"2026-11-29T19:33","checkin":"2026-11-29T19:33"}
+{"who":"Jack","text":"Night. Don't text him back before you've slept","posted":true,"at":"2026-11-29T23:48","checkin":"2026-11-29T23:48"}
+{"who":"Rachel","text":"he's texting again. wants to do it on a weeknight, says he's \"not used to being this stupid about someone\"","posted":true,"at":"2026-11-30T00:40","checkin":"2026-11-30T00:40"}
+{"who":"Rachel","text":"which is either very sweet or a line","posted":true,"at":"2026-11-30T00:41","checkin":"2026-11-30T00:41"}
+{"who":"Jack","text":"Both probably. What are you going to say","posted":true,"at":"2026-11-30T00:44","checkin":"2026-11-30T00:44"}
+{"who":"Rachel","text":"no idea. go to sleep","posted":true,"at":"2026-11-30T00:46","checkin":"2026-11-30T00:46"}
+{"who":"Rachel","text":"booked the cabin sat 12 to mon 14 dec. outdoor bath is ours","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Jack","text":"Nice. Pay the deposit before you leave work or it'll slip","posted":true,"at":"2026-11-30T08:21","checkin":"2026-11-30T08:21"}
+{"who":"Rachel","text":"already did. I'm not a child","posted":true,"at":"2026-11-30T08:22","checkin":"2026-11-30T08:22"}
+{"who":"Rachel","text":"he's sent a photo of a pipe under a sink. caption: \"not a romantic gesture, sorry, job\"","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Rachel","text":"[photo: a corroded pipe joint under a kitchen sink]","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Jack","text":"Romantic","posted":true,"at":"2026-11-30T08:44","checkin":"2026-11-30T08:44"}
+{"who":"Rachel","text":"I know","posted":true,"at":"2026-11-30T08:45","checkin":"2026-11-30T08:45"}
+{"who":"Jack","text":"Is the thing with him going to be a problem for the trip","posted":true,"at":"2026-11-30T09:02","checkin":"2026-11-30T09:02"}
+{"who":"Rachel","text":"no? it's a cabin, not a booking for two. nobody has to be anything","posted":true,"at":"2026-11-30T09:10","checkin":"2026-11-30T09:10"}
+{"who":"Rachel","text":"I haven't replied to him yet btw","posted":true,"at":"2026-11-30T09:11","checkin":"2026-11-30T09:11"}
+{"who":"Jack","text":"Noted","posted":true,"at":"2026-11-30T09:12","checkin":"2026-11-30T09:12"}
+{"who":"Rachel","text":"ok replied. said weds could work, not before 7","posted":true,"at":"2026-11-30T13:30","checkin":"2026-11-30T13:30"}
+{"who":"Jack","text":"Good. Keep it that short","posted":true,"at":"2026-11-30T13:31","checkin":"2026-11-30T13:31"}
+{"who":"Rachel","text":"he said \"good, I'll bring the garlic bread\"","posted":true,"at":"2026-11-30T13:33","checkin":"2026-11-30T13:33"}
+{"who":"Jack","text":"Ha. Fine. He's earned a second chance on the bread alone","posted":true,"at":"2026-11-30T13:34","checkin":"2026-11-30T13:34"}
+{"who":"Rachel","text":"ikr. counter's manic, a woman brought in six prescriptions and a cat","posted":true,"at":"2026-11-30T13:36","checkin":"2026-11-30T13:36"}
+{"who":"Jack","text":"Cat doesn't need a script","posted":true,"at":"2026-11-30T13:37","checkin":"2026-11-30T13:37"}
+{"who":"Rachel","text":"the cat did not come in, she brought a photo of the cat","posted":true,"at":"2026-11-30T13:38","checkin":"2026-11-30T13:38"}
+{"who":"Jack","text":"Off the job. Traffic on Hutt Rd is wrecked","posted":true,"at":"2026-11-30T17:52","checkin":"2026-11-30T17:52"}
+{"who":"Rachel","text":"just locked up. stopped at the bakery for a sausage roll that I'm now regretting","posted":true,"at":"2026-11-30T17:53","checkin":"2026-11-30T17:53"}
+{"who":"Jack","text":"Martinborough dinner: the place with the wood fire or do you want to cook","posted":true,"at":"2026-11-30T17:55","checkin":"2026-11-30T17:55"}
+{"who":"Rachel","text":"wood fire. we're not cooking on holiday, I have a cabin with a bath, I'm not doing dishes too","posted":true,"at":"2026-11-30T18:10","checkin":"2026-11-30T18:10"}
+{"who":"Jack","text":"Wood fire it is. They book out, so I'll ring Sat 12 for a table at 7","posted":true,"at":"2026-11-30T18:11","checkin":"2026-11-30T18:11"}
+{"who":"Rachel","text":"you're a legend","posted":true,"at":"2026-11-30T18:12","checkin":"2026-11-30T18:12"}
+{"who":"Jack","text":"I'm the one who has to eat the dinner, so","posted":true,"at":"2026-11-30T18:12","checkin":"2026-11-30T18:12"}
+{"who":"Rachel","text":"he's texted asking what I'm doing tonight. told him I'm on the couch with the Hutt Rd sausage roll regret","posted":true,"at":"2026-11-30T21:40","checkin":"2026-11-30T21:40"}
+{"who":"Rachel","text":"he said \"sounds like a good night. want a pic of my kitchen sink, for science\"","posted":true,"at":"2026-11-30T21:44","checkin":"2026-11-30T21:44"}
+{"who":"Jack","text":"Block him","posted":true,"at":"2026-11-30T21:45","checkin":"2026-11-30T21:45"}
+{"who":"Rachel","text":"not blocking a man for offering science","posted":true,"at":"2026-11-30T21:46","checkin":"2026-11-30T21:46"}
+{"who":"Jack","text":"Night. Don't reply to the sink","posted":true,"at":"2026-11-30T22:58","checkin":"2026-11-30T22:58"}
+{"who":"Rachel","text":"no promises","posted":true,"at":"2026-11-30T23:02","checkin":"2026-11-30T23:02"}
+{"who":"Rachel","text":"old bloke at the counter asked for \"something for a sore head, don't tell the wife\". I said I'd tell her myself","posted":true,"at":"2026-12-01T09:48","checkin":"2026-12-01T09:48"}
+{"who":"Jack","text":"Did he buy it","posted":true,"at":"2026-12-01T09:50","checkin":"2026-12-01T09:50"}
+{"who":"Rachel","text":"paracetamol and a lecture on how he was twenty-five once","posted":true,"at":"2026-12-01T09:53","checkin":"2026-12-01T09:53"}
+{"who":"Jack","text":"Outdoor bath is a lot of pressure on one bath","posted":true,"at":"2026-12-01T10:30","checkin":"2026-12-01T10:30"}
+{"who":"Rachel","text":"it's a bath, it's not going to judge","posted":true,"at":"2026-12-01T10:33","checkin":"2026-12-01T10:33"}
+{"who":"Rachel","text":"tomorrow's the plumber. 7pm, he suggested \"somewhere with a drink menu\"","posted":true,"at":"2026-12-01T11:14","checkin":"2026-12-01T11:14"}
+{"who":"Jack","text":"Keep it at a drink","posted":true,"at":"2026-12-01T11:16","checkin":"2026-12-01T11:16"}
+{"who":"Rachel","text":"he's calling it a drink, I'm calling it dinner","posted":true,"at":"2026-12-01T11:17","checkin":"2026-12-01T11:17"}
+{"who":"Jack","text":"Dinner was never the problem","posted":true,"at":"2026-12-01T11:18","checkin":"2026-12-01T11:18"}
+{"who":"Rachel","text":"rude","posted":true,"at":"2026-12-01T11:20","checkin":"2026-12-01T11:20"}
+{"who":"Rachel","text":"you going to ring the wood fire place or are we just hoping","posted":true,"at":"2026-12-01T12:40","checkin":"2026-12-01T12:40"}
+{"who":"Jack","text":"Thu. They open the Sat books a week out and I'm not missing it","posted":true,"at":"2026-12-01T12:44","checkin":"2026-12-01T12:44"}
+{"who":"Rachel","text":"organised. who knew","posted":true,"at":"2026-12-01T12:45","checkin":"2026-12-01T12:45"}
+{"who":"Jack","text":"Off Naenae job. Pipes were older than both of us and somehow more sensible","posted":true,"at":"2026-12-01T16:58","checkin":"2026-12-01T16:58"}
+{"who":"Rachel","text":"just got home. feet hurt, sink full of plates, I'm lying on the floor for a bit","posted":true,"at":"2026-12-01T17:04","checkin":"2026-12-01T17:04"}
+{"who":"Jack","text":"Hope the sink isn't the plumber's problem","posted":true,"at":"2026-12-01T17:05","checkin":"2026-12-01T17:05"}
+{"who":"Rachel","text":"it is not. he's not allowed in the flat until Weds","posted":true,"at":"2026-12-01T17:06","checkin":"2026-12-01T17:06"}
+{"who":"Rachel","text":"he's asked if I'd rather go somewhere loud or somewhere you can hear yourself think. told him the second one, obviously","posted":true,"at":"2026-12-01T21:30","checkin":"2026-12-01T21:30"}
+{"who":"Jack","text":"Do you actually want to hear yourself think","posted":true,"at":"2026-12-01T21:31","checkin":"2026-12-01T21:31"}
+{"who":"Rachel","text":"I want to hear HIM think. that's a different thing","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Jack","text":"Oh no","posted":true,"at":"2026-12-01T21:41","checkin":"2026-12-01T21:41"}
+{"who":"Rachel","text":"Jack","posted":true,"at":"2026-12-01T23:12","checkin":"2026-12-01T23:12"}
+{"who":"Jack","text":"Yep","posted":true,"at":"2026-12-01T23:14","checkin":"2026-12-01T23:14"}
+{"who":"Rachel","text":"do I wear the green top or is that trying too hard","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Jack","text":"Wear the green top. He's seen you in the jumper, not much else to worry about","posted":true,"at":"2026-12-01T23:17","checkin":"2026-12-01T23:17"}
+{"who":"Rachel","text":"that's the most helpful thing you've said all week","posted":true,"at":"2026-12-01T23:18","checkin":"2026-12-01T23:18"}
+{"who":"Jack","text":"Night","posted":true,"at":"2026-12-01T23:19","checkin":"2026-12-01T23:19"}
+{"who":"Rachel","text":"he's sent a photo of the kebab place we ended up at. caption: \"for next time, or for the record\"","posted":true,"at":"2026-12-02T00:31","checkin":"2026-12-02T00:31"}
+{"who":"Rachel","text":"[photo: a kebab shop at night, sign half lit]","posted":true,"at":"2026-12-02T00:31","checkin":"2026-12-02T00:31"}
+{"who":"Rachel","text":"I'm not answering that until I've slept. I mean it","posted":true,"at":"2026-12-02T00:50","checkin":"2026-12-02T00:50"}

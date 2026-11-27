@@ -1,0 +1,78 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T18:25","complete":true,"rejects":0,"today":[null,"Ffion","Sion"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2272,"cache_read_input_tokens":0,"output_tokens":2428,"output_tokens_details":{"thinking_tokens":1885},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2272,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2428,"cache_read_input_tokens":0,"cache_creation_input_tokens":2272,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2272},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2673,"cache_read_input_tokens":0,"output_tokens":2062,"output_tokens_details":{"thinking_tokens":1244},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2673,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2062,"cache_read_input_tokens":0,"cache_creation_input_tokens":2673,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2673},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3481,"cache_read_input_tokens":0,"output_tokens":2943,"output_tokens_details":{"thinking_tokens":2090},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3481,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2943,"cache_read_input_tokens":0,"cache_creation_input_tokens":3481,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3481},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Alun","Megan","Sion","Ffion"],"setting":"You are all in a family group chat, each of you in Cardiff, and you use it to plan Sunday lunches at your parents' house and sort out Christmas arrangements. Right now the chat has also turned to Sion's atheism, which Megan calls a sin and Sion calls a scam.","openers":["Ask who is bringing the pudding on Sunday","Suggest we all sit down together for Sunday lunch","Tell everyone to stop arguing about church","Ask Sion and Ffion to help plan Christmas dinner"],"opener":"Suggest we all sit down together for Sunday lunch","cast":{"Alun":{"who":"61, man, the father","work":"allotment-and-garden centre owner","knows":"You know Megan as the mother of your children. You know Sion as your eldest son. You know Ffion as your younger daughter.","texts":"Alun texts in this chat now and then.","style":"None.","emojiKeep":0.15,"capitals":true,"lives":["Megan"],"ex":[]},"Megan":{"who":"58, woman, the mother","work":"nurse","knows":"You know Alun as your husband and the father of your children. You know Sion as your eldest son. You know Ffion as your younger daughter.","texts":"Megan texts in this chat only now and again.","style":"Some emoji, few abbreviations.","emojiKeep":0.15,"capitals":true,"lives":["Alun"],"ex":[]},"Sion":{"who":"33, man, the eldest child","work":"junior doctor","knows":"You know Alun as your father. You know Megan as your mother. You know Ffion as your younger sister.","texts":"Sion texts in this chat now and then.","style":"None.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Ffion":{"who":"28, woman, the younger child","work":"primary teacher","knows":"You know Alun as your father. You know Megan as your mother. You know Sion as your older brother.","texts":"Ffion texts in this chat a lot.","style":"Lots of emoji and texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Alun":"You live in Cardiff, running your allotment and garden centre, and live with Megan.","Megan":"You live in Cardiff, working as a nurse, and live with Alun.","Sion":"You live in Cardiff, working as a junior doctor, and live alone.","Ffion":"You live in Cardiff, teaching at a primary school, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":868,"cache_read_input_tokens":0,"output_tokens":1679,"output_tokens_details":{"thinking_tokens":1245},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":868,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1679,"cache_read_input_tokens":0,"cache_creation_input_tokens":868,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":868},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1176,"cache_read_input_tokens":0,"output_tokens":1910,"output_tokens_details":{"thinking_tokens":1296},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1176,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1910,"cache_read_input_tokens":0,"cache_creation_input_tokens":1176,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1176},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cardiff, Wales","castMs":18782,"situation":"A family group chat: parents and their two adult children.","topic":"The eldest has told them they are an atheist and think religion is nonsense; the mother says they are damned and ruining the family, and the eldest hits back that the church is a scam."}
+{"who":"Alun","text":"Sunday lunch? All of us at ours. Would be good to sit down together for once","posted":true,"at":"2026-12-03T18:25","checkin":"2026-12-03T18:25"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-12-03T18:25"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-12-03T18:25"}
+{"who":"","react":"👍","to":0,"posted":false,"at":"2026-12-03T18:25"}
+{"who":"Ffion","text":"YESSS what time?? i can bring the crumble is sion coming","posted":true,"at":"2026-12-03T18:31","checkin":"2026-12-03T18:31"}
+{"who":"Megan","text":"Sunday's fine. 1 o'clock?","posted":true,"at":"2026-12-03T18:33","checkin":"2026-12-03T18:33"}
+{"who":"Sion","text":"Can do. Might be late, depends if I'm stuck on the ward","posted":true,"at":"2026-12-03T18:47","checkin":"2026-12-03T18:47"}
+{"who":"Ffion","text":"2 is fine!!","posted":true,"at":"2026-12-03T18:52","checkin":"2026-12-03T18:52"}
+{"who":"Alun","text":"Two it is. I'll sort the wine","posted":true,"at":"2026-12-03T19:10","checkin":"2026-12-03T19:10"}
+{"who":"Megan","text":"Not the cheap stuff Alun","posted":true,"at":"2026-12-03T19:14","checkin":"2026-12-03T19:14"}
+{"who":"Alun","text":"Never","posted":true,"at":"2026-12-03T19:15","checkin":"2026-12-03T19:15"}
+{"who":"Ffion","text":"are we talking about the church thing or is that banned","posted":true,"at":"2026-12-03T19:30","checkin":"2026-12-03T19:30"}
+{"who":"Megan","text":"Not at the table Ffion.","posted":true,"at":"2026-12-03T19:34","checkin":"2026-12-03T19:34"}
+{"who":"Sion","text":"I'm not going to sit there and nod while she tells me I'm damned over the gravy","posted":true,"at":"2026-12-03T19:36","checkin":"2026-12-03T19:36"}
+{"who":"Alun","text":"Nobody's going to talk about it at the table. Eat your lunch.","posted":true,"at":"2026-12-03T19:41","checkin":"2026-12-03T19:41"}
+{"who":"Sion","text":"Fine","posted":true,"at":"2026-12-03T19:44","checkin":"2026-12-03T19:44"}
+{"who":"Megan","text":"Thank you","posted":true,"at":"2026-12-03T19:44","checkin":"2026-12-03T19:44"}
+{"who":"Ffion","text":"😬","posted":true,"at":"2026-12-03T19:45","checkin":"2026-12-03T19:45"}
+{"who":"Ffion","text":"i'll bring the good gravy mam","posted":true,"at":"2026-12-03T21:02","checkin":"2026-12-03T21:02"}
+{"who":"Megan","text":"Is Sion's shift changed or is he coming","posted":true,"at":"2026-12-03T22:18","checkin":"2026-12-03T22:18"}
+{"who":"Sion","text":"Coming.","posted":true,"at":"2026-12-03T22:40","checkin":"2026-12-03T22:40"}
+{"who":"Megan","text":"Shift at 8. Alun did you ring about the boiler","posted":true,"at":"2026-12-04T07:52","checkin":"2026-12-04T07:52"}
+{"who":"Alun","text":"Rang them. Monday","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Ffion","text":"ok so my year 2s have decided the nativity sheep are on strike 🐑😭 one has gone home with a cough and the other has glitter in her eye","posted":true,"at":"2026-12-04T08:03","checkin":"2026-12-04T08:03"}
+{"who":"Ffion","text":"[photo: a row of cardboard sheep, one lying on its side]","posted":true,"at":"2026-12-04T08:03","checkin":"2026-12-04T08:03"}
+{"who":"Alun","text":"Tell them the sheep get the best seats","posted":true,"at":"2026-12-04T08:10","checkin":"2026-12-04T08:10"}
+{"who":"Ffion","text":"dad that's not how it works they want the wise men to have the good seats","posted":true,"at":"2026-12-04T08:11","checkin":"2026-12-04T08:11"}
+{"who":"Sion","text":"Off the ward finally. Haven't eaten since 6","posted":true,"at":"2026-12-04T12:34","checkin":"2026-12-04T12:34"}
+{"who":"Megan","text":"Eat something then","posted":true,"at":"2026-12-04T12:36","checkin":"2026-12-04T12:36"}
+{"who":"Sion","text":"Eating","posted":true,"at":"2026-12-04T12:36","checkin":"2026-12-04T12:36"}
+{"who":"Ffion","text":"ok the sheep are fine now. head teacher wants a word about the glitter","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Megan","text":"Tell her it was the sheep","posted":true,"at":"2026-12-04T15:22","checkin":"2026-12-04T15:22"}
+{"who":"Alun","text":"Sunday, do we need anything from the shop or is Ffion doing dessert and the gravy too","posted":true,"at":"2026-12-04T18:40","checkin":"2026-12-04T18:40"}
+{"who":"Ffion","text":"i'm bringing the crumble AND the good gravy dad i am a whole service","posted":true,"at":"2026-12-04T18:44","checkin":"2026-12-04T18:44"}
+{"who":"Ffion","text":"sion are you still coming or are you doing a 24","posted":true,"at":"2026-12-04T18:45","checkin":"2026-12-04T18:45"}
+{"who":"Sion","text":"Coming. Off Sunday 8am so I'll be there by 2 if I don't fall asleep on the M4","posted":true,"at":"2026-12-04T19:02","checkin":"2026-12-04T19:02"}
+{"who":"Ffion","text":"mam did you really tell the vicar you'd pray for sion's soul","posted":true,"at":"2026-12-04T21:15","checkin":"2026-12-04T21:15"}
+{"who":"Megan","text":"I said I'd pray for him. That's not the same thing","posted":true,"at":"2026-12-04T21:20","checkin":"2026-12-04T21:20"}
+{"who":"Ffion","text":"🙃","posted":true,"at":"2026-12-04T21:21","checkin":"2026-12-04T21:21"}
+{"who":"Sion","text":"That's worse","posted":true,"at":"2026-12-04T21:24","checkin":"2026-12-04T21:24"}
+{"who":"Megan","text":"It's what I've got Sion","posted":true,"at":"2026-12-04T21:25","checkin":"2026-12-04T21:25"}
+{"who":"Alun","text":"Right. Sunday. Nobody bring up the vicar","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"Ffion","text":"dad you brought up the vicar","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"Alun","text":"I was quoting your mother","posted":true,"at":"2026-12-04T21:33","checkin":"2026-12-04T21:33"}
+{"who":"Megan","text":"Night all. Early start","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Ffion","text":"night mam night dad","posted":true,"at":"2026-12-04T22:58","checkin":"2026-12-04T22:58"}
+{"who":"Sion","text":"Night","posted":true,"at":"2026-12-04T23:40","checkin":"2026-12-04T23:40"}
+{"who":"Ffion","text":"ok update on the sheep. they have reached an agreement","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Alun","text":"Is that a good thing","posted":true,"at":"2026-12-05T09:40","checkin":"2026-12-05T09:40"}
+{"who":"Megan","text":"Who's doing the boiler on Monday, you or the man","posted":true,"at":"2026-12-05T10:22","checkin":"2026-12-05T10:22"}
+{"who":"Alun","text":"The man","posted":true,"at":"2026-12-05T10:23","checkin":"2026-12-05T10:23"}
+{"who":"Ffion","text":"[photo: a crumble topping in a glass dish, one side visibly thinner than the other]","posted":true,"at":"2026-12-05T11:05","checkin":"2026-12-05T11:05"}
+{"who":"Ffion","text":"test run. it's fine. dad you can have the corner","posted":true,"at":"2026-12-05T11:06","checkin":"2026-12-05T11:06"}
+{"who":"Alun","text":"I'll have the corner","posted":true,"at":"2026-12-05T11:15","checkin":"2026-12-05T11:15"}
+{"who":"Sion","text":"Stuck on till 8 tonight. Covering for Priya. Sunday still on","posted":true,"at":"2026-12-05T14:47","checkin":"2026-12-05T14:47"}
+{"who":"Ffion","text":"sion ur a legend","posted":true,"at":"2026-12-05T14:50","checkin":"2026-12-05T14:50"}
+{"who":"Megan","text":"Eat something. And tell them you're not doing another one","posted":true,"at":"2026-12-05T14:50","checkin":"2026-12-05T14:50"}
+{"who":"Sion","text":"Ate. Not my call on the shifts","posted":true,"at":"2026-12-05T14:58","checkin":"2026-12-05T14:58"}
+{"who":"Sion","text":"Man in bay 4 died this afternoon. His daughter stayed with him till the end. Just a bit much","posted":true,"at":"2026-12-05T19:22","checkin":"2026-12-05T19:22"}
+{"who":"Megan","text":"Oh love. I'm sorry. Are you alright","posted":true,"at":"2026-12-05T19:25","checkin":"2026-12-05T19:25"}
+{"who":"Sion","text":"I'm ok. Going to sit in the car for a bit then go home","posted":true,"at":"2026-12-05T19:31","checkin":"2026-12-05T19:31"}
+{"who":"Ffion","text":"do you want me to come over tomorrow instead of sunday","posted":true,"at":"2026-12-05T19:33","checkin":"2026-12-05T19:33"}
+{"who":"Sion","text":"No. Sunday's fine. Thanks","posted":true,"at":"2026-12-05T19:40","checkin":"2026-12-05T19:40"}
+{"who":"Alun","text":"Look after yourself son","posted":true,"at":"2026-12-05T19:44","checkin":"2026-12-05T19:44"}
+{"who":"Megan","text":"I'll say a prayer for him and the family. Not for you","posted":true,"at":"2026-12-05T20:05","checkin":"2026-12-05T20:05"}
+{"who":"Sion","text":"Ha","posted":true,"at":"2026-12-05T20:08","checkin":"2026-12-05T20:08"}
+{"who":"Ffion","text":"mam that's kind of sweet","posted":true,"at":"2026-12-05T20:11","checkin":"2026-12-05T20:11"}
+{"who":"Megan","text":"Night all. Sion get some sleep when you're home","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Ffion","text":"wales lost dad are you crying","posted":true,"at":"2026-12-05T22:12","checkin":"2026-12-05T22:12"}
+{"who":"Alun","text":"Not crying. It's the gravy","posted":true,"at":"2026-12-05T22:14","checkin":"2026-12-05T22:14"}
+{"who":"Ffion","text":"dad you literally said nobody bring up the vicar and then you did the rugby","posted":true,"at":"2026-12-05T22:15","checkin":"2026-12-05T22:15"}
+{"who":"Alun","text":"That's different","posted":true,"at":"2026-12-05T22:16","checkin":"2026-12-05T22:16"}
+{"who":"Sion","text":"Home. Sorry for the messages earlier","posted":true,"at":"2026-12-05T23:15","checkin":"2026-12-05T23:15"}
+{"who":"Alun","text":"Don't be daft","posted":true,"at":"2026-12-05T23:16","checkin":"2026-12-05T23:16"}
+{"who":"Ffion","text":"night everyone","posted":true,"at":"2026-12-05T23:50","checkin":"2026-12-05T23:50"}
+{"who":"Sion","text":"Night","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}

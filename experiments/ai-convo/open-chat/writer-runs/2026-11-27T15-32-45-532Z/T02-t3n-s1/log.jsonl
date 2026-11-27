@@ -1,0 +1,120 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T08:25","complete":true,"rejects":0,"today":["Cian","Cian","Ciara"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1960,"cache_read_input_tokens":0,"output_tokens":2738,"output_tokens_details":{"thinking_tokens":1225},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1960,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2738,"cache_read_input_tokens":0,"cache_creation_input_tokens":1960,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1960},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3389,"cache_read_input_tokens":0,"output_tokens":3168,"output_tokens_details":{"thinking_tokens":2327},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3389,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3168,"cache_read_input_tokens":0,"cache_creation_input_tokens":3389,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3389},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4230,"cache_read_input_tokens":0,"output_tokens":3850,"output_tokens_details":{"thinking_tokens":2604},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4230,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3850,"cache_read_input_tokens":0,"cache_creation_input_tokens":4230,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4230},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ciara","Cian"],"setting":"You are both in Galway, Ireland, a couple together for six years, texting each other from separate places while apart.","openers":["Ask what he is wearing right now","Tell him you have been thinking about him all day","Send a line you would whisper if he were here","Say you miss the way he touched you last night"],"opener":"Ask what he is wearing right now","cast":{"Ciara":{"who":"34, woman, the partner","work":"pharmacist","knows":"You know Cian as your partner of six years.","texts":"","style":"light emoji use and some casual short forms","emojiKeep":0.35,"capitals":true,"lives":["Cian"],"ex":[]},"Cian":{"who":"36, man, the partner","work":"quantity surveyor","knows":"You know Ciara as your partner of six years.","texts":"","style":"rare emoji and frequent texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":["Ciara"],"ex":[]}},"private_lines":{"Ciara":"You live in Galway, working as a pharmacist, and you live with Cian.","Cian":"You live in Galway, working as a quantity surveyor, and you live with Ciara."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":842,"cache_read_input_tokens":0,"output_tokens":815,"output_tokens_details":{"thinking_tokens":582},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":842,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":815,"cache_read_input_tokens":0,"cache_creation_input_tokens":842,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":842},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":842,"output_tokens":912,"output_tokens_details":{"thinking_tokens":685},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":912,"cache_read_input_tokens":842,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1069,"cache_read_input_tokens":0,"output_tokens":1582,"output_tokens_details":{"thinking_tokens":1289},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1069,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1582,"cache_read_input_tokens":0,"cache_creation_input_tokens":1069,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1069},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Galway, Ireland","castMs":21907,"situation":"A couple in their thirties, together six years.","topic":"They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart."}
+{"who":"Ciara","text":"What are you wearing rn","posted":true,"at":"2026-11-27T08:25","checkin":"2026-11-27T08:25"}
+{"who":"Cian","text":"lol. morning to you too\nhi-vis and a jumper with a hole in it. site in ballybrit at 9 so nothing fancy","posted":true,"at":"2026-11-27T08:31","checkin":"2026-11-27T08:31"}
+{"who":"Ciara","text":"Boring\nyou had the grey shirt on yesterday though","posted":true,"at":"2026-11-27T08:33","checkin":"2026-11-27T08:33"}
+{"who":"Cian","text":"ye the grey one has a hole in the cuff, dont look at it","posted":true,"at":"2026-11-27T08:34","checkin":"2026-11-27T08:34"}
+{"who":"Ciara","text":"Looking at it now","posted":true,"at":"2026-11-27T08:36","checkin":"2026-11-27T08:36"}
+{"who":"Cian","text":"ur in the shop?","posted":true,"at":"2026-11-27T08:40","checkin":"2026-11-27T08:40"}
+{"who":"Ciara","text":"In already, white coat on, the hatch isnt open yet\nthe lad from the chemist next door keeps waving at me through the window like were in a fish tank","posted":true,"at":"2026-11-27T08:41","checkin":"2026-11-27T08:41"}
+{"who":"Cian","text":"hes just jealous","posted":true,"at":"2026-11-27T08:43","checkin":"2026-11-27T08:43"}
+{"who":"Cian","text":"[photo: the cracked slab]","posted":true,"at":"2026-11-27T09:12","checkin":"2026-11-27T09:12"}
+{"who":"Cian","text":"this is what i get to look at for the next two hrs","posted":true,"at":"2026-11-27T09:12","checkin":"2026-11-27T09:12"}
+{"who":"Ciara","text":"Is that the one that was poured wrong","posted":true,"at":"2026-11-27T09:14","checkin":"2026-11-27T09:14"}
+{"who":"Cian","text":"the one that was poured wrong. contractor swears the mix was fine. the cores say otherwise\nso were holding the pour sheet and getting engineers down","posted":true,"at":"2026-11-27T09:15","checkin":"2026-11-27T09:15"}
+{"who":"Ciara","text":"Oh no. Will it cost a lot","posted":true,"at":"2026-11-27T09:16","checkin":"2026-11-27T09:16"}
+{"who":"Cian","text":"prob not as much as they'd like it to. depends on the cores, but i wont know till monday","posted":true,"at":"2026-11-27T09:18","checkin":"2026-11-27T09:18"}
+{"who":"Ciara","text":"Ok thats a bad week for them then","posted":true,"at":"2026-11-27T09:19","checkin":"2026-11-27T09:19"}
+{"who":"Cian","text":"they had it coming tbh. they keep skipping the testing bit","posted":true,"at":"2026-11-27T09:20","checkin":"2026-11-27T09:20"}
+{"who":"Ciara","text":"Customer just asked me if the cough mixture is \"like, the strong one\" and I said that's not a thing","posted":true,"at":"2026-11-27T11:02","checkin":"2026-11-27T11:02"}
+{"who":"Cian","text":"its a thing","posted":true,"at":"2026-11-27T11:03","checkin":"2026-11-27T11:03"}
+{"who":"Ciara","text":"Its not a thing","posted":true,"at":"2026-11-27T11:03","checkin":"2026-11-27T11:03"}
+{"who":"Cian","text":"lunch in the van. chicken fillet roll and a warm coke, ive earned it","posted":true,"at":"2026-11-27T13:17","checkin":"2026-11-27T13:17"}
+{"who":"Ciara","text":"Get a second roll. You were up at 6","posted":true,"at":"2026-11-27T13:20","checkin":"2026-11-27T13:20"}
+{"who":"Cian","text":"i wasnt up at 6, i was up at 6:40 which is different","posted":true,"at":"2026-11-27T13:21","checkin":"2026-11-27T13:21"}
+{"who":"Ciara","text":"Its the same","posted":true,"at":"2026-11-27T13:22","checkin":"2026-11-27T13:22"}
+{"who":"Cian","text":"whats the plan for tonight. dinner or ur wiped","posted":true,"at":"2026-11-27T15:48","checkin":"2026-11-27T15:48"}
+{"who":"Ciara","text":"Im not wiped. Im done at 6 and I'm going to lie on the couch and not move for ten minutes","posted":true,"at":"2026-11-27T15:55","checkin":"2026-11-27T15:55"}
+{"who":"Ciara","text":"Then dinner. I can do the thing with the chorizo","posted":true,"at":"2026-11-27T15:55","checkin":"2026-11-27T15:55"}
+{"who":"Cian","text":"the chorizo thing. ye","posted":true,"at":"2026-11-27T15:57","checkin":"2026-11-27T15:57"}
+{"who":"Cian","text":"ill grab the wine on the way, the red one that tastes like a warm radiator","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Ciara","text":"You say that like its a bad thing 😂","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Cian","text":"its a great thing","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Ciara","text":"Home. The couch is calling my name","posted":true,"at":"2026-11-27T18:40","checkin":"2026-11-27T18:40"}
+{"who":"Cian","text":"still on site, the snag list is 40 items long and one of them is a toilet that flushes into the wrong pipe\nhome by 7","posted":true,"at":"2026-11-27T18:42","checkin":"2026-11-27T18:42"}
+{"who":"Ciara","text":"A toilet that flushes into the wrong pipe","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Cian","text":"dont ask","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Cian","text":"home. shower then ill be down","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Ciara","text":"Ok. Chorizo is on the board. Dont come down looking like a builder","posted":true,"at":"2026-11-27T19:33","checkin":"2026-11-27T19:33"}
+{"who":"Cian","text":"ill come down looking like exactly a builder","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Ciara","text":"Dinner was good. You're going to do the dishes","posted":true,"at":"2026-11-27T20:55","checkin":"2026-11-27T20:55"}
+{"who":"Cian","text":"i did the dishes last time","posted":true,"at":"2026-11-27T20:56","checkin":"2026-11-27T20:56"}
+{"who":"Ciara","text":"Last time was a week ago","posted":true,"at":"2026-11-27T20:56","checkin":"2026-11-27T20:56"}
+{"who":"Cian","text":"fine. but you're on the dishes next time and i'm not discussing it","posted":true,"at":"2026-11-27T21:10","checkin":"2026-11-27T21:10"}
+{"who":"Ciara","text":"So what are you wearing rn","posted":true,"at":"2026-11-27T22:38","checkin":"2026-11-27T22:38"}
+{"who":"Cian","text":"the same jumper with the hole in it. i went to bed in a t-shirt and then came back down for the wine","posted":true,"at":"2026-11-27T22:41","checkin":"2026-11-27T22:41"}
+{"who":"Ciara","text":"You're not in bed","posted":true,"at":"2026-11-27T22:43","checkin":"2026-11-27T22:43"}
+{"who":"Cian","text":"im on the couch. you're right next to me","posted":true,"at":"2026-11-27T22:44","checkin":"2026-11-27T22:44"}
+{"who":"Ciara","text":"Then you can put the phone down and come sit closer","posted":true,"at":"2026-11-27T22:44","checkin":"2026-11-27T22:44"}
+{"who":"Cian","text":"on my way","posted":true,"at":"2026-11-27T22:45","checkin":"2026-11-27T22:45"}
+{"who":"Ciara","text":"Are you alive\nUr going to have to get the car to the garage, it wont turn over again","posted":true,"at":"2026-11-28T09:02","checkin":"2026-11-28T09:02"}
+{"who":"Cian","text":"alive. mostly. chorizo sitting heavy\nill ring them on the way to mams","posted":true,"at":"2026-11-28T09:20","checkin":"2026-11-28T09:20"}
+{"who":"Ciara","text":"Dont bother, theyre closed on a Saturday","posted":true,"at":"2026-11-28T09:21","checkin":"2026-11-28T09:21"}
+{"who":"Cian","text":"ill ring them so","posted":true,"at":"2026-11-28T09:22","checkin":"2026-11-28T09:22"}
+{"who":"Ciara","text":"Customer wants a prescription filled for her dog. Like the dog is the patient. Antibiotics. The dog had a bad paw","posted":true,"at":"2026-11-28T11:48","checkin":"2026-11-28T11:48"}
+{"who":"Cian","text":"did the dog come in","posted":true,"at":"2026-11-28T11:49","checkin":"2026-11-28T11:49"}
+{"who":"Ciara","text":"No. Thats the problem","posted":true,"at":"2026-11-28T11:49","checkin":"2026-11-28T11:49"}
+{"who":"Cian","text":"engineer rang. cores are going to the lab monday, they said wed for results\ni said thats not a plan thats a wish","posted":true,"at":"2026-11-28T12:30","checkin":"2026-11-28T12:30"}
+{"who":"Ciara","text":"Is that bad","posted":true,"at":"2026-11-28T12:31","checkin":"2026-11-28T12:31"}
+{"who":"Cian","text":"its not good. dont know yet\nill know wed","posted":true,"at":"2026-11-28T12:33","checkin":"2026-11-28T12:33"}
+{"who":"Ciara","text":"Ok. Sorry babe\nPint after work? Not a massive one","posted":true,"at":"2026-11-28T12:35","checkin":"2026-11-28T12:35"}
+{"who":"Cian","text":"ye go on","posted":true,"at":"2026-11-28T12:37","checkin":"2026-11-28T12:37"}
+{"who":"Cian","text":"[photo: a collie asleep across mams kitchen floor]\nthis is the dog from the prescription","posted":true,"at":"2026-11-28T14:10","checkin":"2026-11-28T14:10"}
+{"who":"Ciara","text":"Is that a dog or a rug","posted":true,"at":"2026-11-28T14:11","checkin":"2026-11-28T14:11"}
+{"who":"Cian","text":"its a dog. shes been like that since 2019","posted":true,"at":"2026-11-28T14:11","checkin":"2026-11-28T14:11"}
+{"who":"Ciara","text":"Give her the amoxicillin anyway","posted":true,"at":"2026-11-28T14:12","checkin":"2026-11-28T14:12"}
+{"who":"Ciara","text":"Done. Are you outside or are you still at mams eating her dinner","posted":true,"at":"2026-11-28T17:34","checkin":"2026-11-28T17:34"}
+{"who":"Cian","text":"outside. garage says the battery is fine, its the alternator\nill tell you in the car","posted":true,"at":"2026-11-28T17:36","checkin":"2026-11-28T17:36"}
+{"who":"Cian","text":"at the lads in the Crane. Fergal's buying a round for his birthday which is a lie","posted":true,"at":"2026-11-28T21:50","checkin":"2026-11-28T21:50"}
+{"who":"Ciara","text":"Who's Fergal","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Cian","text":"the one in the good coat","posted":true,"at":"2026-11-28T21:52","checkin":"2026-11-28T21:52"}
+{"who":"Ciara","text":"Are you going to be a mess","posted":true,"at":"2026-11-28T21:58","checkin":"2026-11-28T21:58"}
+{"who":"Cian","text":"no. one more and im gone","posted":true,"at":"2026-11-28T22:01","checkin":"2026-11-28T22:01"}
+{"who":"Ciara","text":"Text me when ur leaving","posted":true,"at":"2026-11-28T22:03","checkin":"2026-11-28T22:03"}
+{"who":"Cian","text":"leaving. ur still up?","posted":true,"at":"2026-11-29T00:48","checkin":"2026-11-29T00:48"}
+{"who":"Ciara","text":"Ye. On the couch. Dont get in a taxi with Fergal","posted":true,"at":"2026-11-29T00:49","checkin":"2026-11-29T00:49"}
+{"who":"Cian","text":"home. not in a taxi\nwalked the last bit with fergal. he tried to hug a bollard","posted":true,"at":"2026-11-29T00:52","checkin":"2026-11-29T00:52"}
+{"who":"Ciara","text":"Good. Did he get home","posted":true,"at":"2026-11-29T00:54","checkin":"2026-11-29T00:54"}
+{"who":"Cian","text":"he's in his own door. im in ours","posted":true,"at":"2026-11-29T00:55","checkin":"2026-11-29T00:55"}
+{"who":"Ciara","text":"Ok. Bed","posted":true,"at":"2026-11-29T00:57","checkin":"2026-11-29T00:57"}
+{"who":"Cian","text":"bed","posted":true,"at":"2026-11-29T01:03","checkin":"2026-11-29T01:03"}
+{"who":"Ciara","text":"Are you alive","posted":true,"at":"2026-11-29T10:17","checkin":"2026-11-29T10:17"}
+{"who":"Cian","text":"alive. headache with opinions\nwhats mam doing for dinner","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Ciara","text":"Roast. She wants us there at 1, not 1:15 like last time\nShe said it to me on the phone like I was the one who was late","posted":true,"at":"2026-11-29T10:53","checkin":"2026-11-29T10:53"}
+{"who":"Cian","text":"you were late last time","posted":true,"at":"2026-11-29T10:54","checkin":"2026-11-29T10:54"}
+{"who":"Ciara","text":"I was ten mins late","posted":true,"at":"2026-11-29T10:54","checkin":"2026-11-29T10:54"}
+{"who":"Cian","text":"ur always ten mins late","posted":true,"at":"2026-11-29T10:55","checkin":"2026-11-29T10:55"}
+{"who":"Cian","text":"garage still shut. car does the click, the click, nothing\nill get a lift off gerry","posted":true,"at":"2026-11-29T11:30","checkin":"2026-11-29T11:30"}
+{"who":"Ciara","text":"Gerry has the kids today. I'll drive. I'm not doing Mams dinner on a bus","posted":true,"at":"2026-11-29T11:32","checkin":"2026-11-29T11:32"}
+{"who":"Ciara","text":"Ur not driving anyway","posted":true,"at":"2026-11-29T11:32","checkin":"2026-11-29T11:32"}
+{"who":"Cian","text":"ur a star","posted":true,"at":"2026-11-29T11:34","checkin":"2026-11-29T11:34"}
+{"who":"Ciara","text":"I am not a star. I'm picking you up at 12:40\nBe ready\nNot in the jumper","posted":true,"at":"2026-11-29T11:35","checkin":"2026-11-29T11:35"}
+{"who":"Cian","text":"its the nice jumper","posted":true,"at":"2026-11-29T11:36","checkin":"2026-11-29T11:36"}
+{"who":"Ciara","text":"It has a hole in it","posted":true,"at":"2026-11-29T11:36","checkin":"2026-11-29T11:36"}
+{"who":"Ciara","text":"Outside","posted":true,"at":"2026-11-29T12:41","checkin":"2026-11-29T12:41"}
+{"who":"Cian","text":"coming. ur early","posted":true,"at":"2026-11-29T12:44","checkin":"2026-11-29T12:44"}
+{"who":"Cian","text":"mam sent me home with tupperware. three of them","posted":true,"at":"2026-11-29T15:30","checkin":"2026-11-29T15:30"}
+{"who":"Ciara","text":"Is it the stuffing","posted":true,"at":"2026-11-29T15:31","checkin":"2026-11-29T15:31"}
+{"who":"Cian","text":"its all of it","posted":true,"at":"2026-11-29T15:31","checkin":"2026-11-29T15:31"}
+{"who":"Ciara","text":"Did you ring the garage","posted":true,"at":"2026-11-29T16:02","checkin":"2026-11-29T16:02"}
+{"who":"Cian","text":"they open tmrw at 8. ill ring at 8:01","posted":true,"at":"2026-11-29T16:03","checkin":"2026-11-29T16:03"}
+{"who":"Ciara","text":"Ring at 8, not 8:01","posted":true,"at":"2026-11-29T16:03","checkin":"2026-11-29T16:03"}
+{"who":"Cian","text":"8:01 is when they answer","posted":true,"at":"2026-11-29T16:04","checkin":"2026-11-29T16:04"}
+{"who":"Ciara","text":"Any word on the cores","posted":true,"at":"2026-11-29T19:10","checkin":"2026-11-29T19:10"}
+{"who":"Cian","text":"no. monday. lab said they'd email","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Ciara","text":"Ok. You're allowed to not think about it","posted":true,"at":"2026-11-29T19:15","checkin":"2026-11-29T19:15"}
+{"who":"Cian","text":"im not thinking about it. im thinking about the 40 item snag list","posted":true,"at":"2026-11-29T19:16","checkin":"2026-11-29T19:16"}
+{"who":"Ciara","text":"Chorizo leftovers are in the fridge. Don't eat the whole thing","posted":true,"at":"2026-11-29T20:48","checkin":"2026-11-29T20:48"}
+{"who":"Cian","text":"did i eat the whole thing","posted":true,"at":"2026-11-29T21:30","checkin":"2026-11-29T21:30"}
+{"who":"Ciara","text":"Don't answer that","posted":true,"at":"2026-11-29T21:30","checkin":"2026-11-29T21:30"}
+{"who":"Cian","text":"its gone","posted":true,"at":"2026-11-29T21:31","checkin":"2026-11-29T21:31"}
+{"who":"Ciara","text":"Are we doing the dishes or pretending we didn't see them","posted":true,"at":"2026-11-29T22:15","checkin":"2026-11-29T22:15"}
+{"who":"Cian","text":"pretending. ur on the dishes next time, we said","posted":true,"at":"2026-11-29T22:17","checkin":"2026-11-29T22:17"}
+{"who":"Ciara","text":"Mam sent the tupperware home with you. So those are yours","posted":true,"at":"2026-11-29T22:18","checkin":"2026-11-29T22:18"}
+{"who":"Cian","text":"fair","posted":true,"at":"2026-11-29T22:19","checkin":"2026-11-29T22:19"}
+{"who":"Cian","text":"alarm set. 6:40. like an animal","posted":true,"at":"2026-11-29T23:02","checkin":"2026-11-29T23:02"}
+{"who":"Ciara","text":"Ur not an animal","posted":true,"at":"2026-11-29T23:03","checkin":"2026-11-29T23:03"}
+{"who":"Ciara","text":"Night. Don't take the good duvet","posted":true,"at":"2026-11-29T23:05","checkin":"2026-11-29T23:05"}
+{"who":"Cian","text":"its my duvet","posted":true,"at":"2026-11-29T23:06","checkin":"2026-11-29T23:06"}
+{"who":"Ciara","text":"Night","posted":true,"at":"2026-11-29T23:06","checkin":"2026-11-29T23:06"}
+{"who":"Cian","text":"night. ur on the dishes","posted":true,"at":"2026-11-29T23:20","checkin":"2026-11-29T23:20"}

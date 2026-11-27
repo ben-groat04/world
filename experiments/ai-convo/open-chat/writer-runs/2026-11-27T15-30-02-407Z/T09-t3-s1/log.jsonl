@@ -1,0 +1,95 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T13:50","complete":true,"rejects":0,"today":[null,"Niamh",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2290,"cache_read_input_tokens":0,"output_tokens":4495,"output_tokens_details":{"thinking_tokens":2860},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2290,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4495,"cache_read_input_tokens":0,"cache_creation_input_tokens":2290,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2290},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3742,"cache_read_input_tokens":0,"output_tokens":2726,"output_tokens_details":{"thinking_tokens":1909},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3742,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2726,"cache_read_input_tokens":0,"cache_creation_input_tokens":3742,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3742},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4527,"cache_read_input_tokens":0,"output_tokens":2534,"output_tokens_details":{"thinking_tokens":1668},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4527,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2534,"cache_read_input_tokens":0,"cache_creation_input_tokens":4527,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4527},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Eoin","Gearóid","Niamh","Rory"],"setting":"You are all in Galway, and you have been mates since secondary school, so the group chat is where you sort things out. Right now you are organising the Thursday five-a-side league, splitting the pitch fees, and planning a weekend away in Connemara after Christmas.","openers":["Tell Rory his new car is a shed on wheels","Ask Gearóid why the van is making that noise again","Tell Niamh she owes everyone for the pitch fees","Send the group the pub quiz photo from last Friday"],"opener":"Send the group the pub quiz photo from last Friday","cast":{"Eoin":{"who":"24, man, a mate in the group","work":"warehouse supervisor","knows":"You know Gearóid, Niamh and Rory as school mates from way back.","texts":"Eoin texts in this chat now and then.","style":"Heavy emoji and lots of texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Gearóid":{"who":"25, man, a mate in the group","work":"mechanic","knows":"You know Eoin, Niamh and Rory as school mates from way back.","texts":"Gearóid texts in this chat only now and again.","style":"Some emoji and a few texting abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Niamh":{"who":"23, woman, a mate in the group","work":"accounts clerk","knows":"You know Eoin, Gearóid and Rory as school mates from way back.","texts":"Niamh texts in this chat now and then.","style":"Moderate emoji and a few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Rory":{"who":"26, man, a mate in the group","work":"estate agent","knows":"You know Eoin, Gearóid and Niamh as school mates from way back.","texts":"Rory texts in this chat a lot.","style":"Rare emoji and almost no texting abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Eoin":"You live in Galway, work as a warehouse supervisor, and live with nobody.","Gearóid":"You live in Galway, work as a mechanic, and live with nobody.","Niamh":"You live in Galway, work as an accounts clerk, and live with nobody.","Rory":"You live in Galway, work as an estate agent, and live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":869,"cache_read_input_tokens":0,"output_tokens":1401,"output_tokens_details":{"thinking_tokens":966},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":869,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1401,"cache_read_input_tokens":0,"cache_creation_input_tokens":869,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":869},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1189,"cache_read_input_tokens":0,"output_tokens":1618,"output_tokens_details":{"thinking_tokens":1009},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1189,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1618,"cache_read_input_tokens":0,"cache_creation_input_tokens":1189,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1189},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Galway, Ireland","castMs":18358,"situation":"Four mates in their twenties who have been friends since school.","topic":"Nonstop obscene banter, every message a crude insult or filthy joke aimed at one of them, with the worst swearing and sexual put-downs, all of them loving it."}
+{"who":"Eoin","text":"[photo: quiz scoreboard from Friday]","posted":true,"at":"2026-11-30T13:50","checkin":"2026-11-30T13:50"}
+{"who":"Eoin","text":"Look at us 🏆🔥 we were robbed by that table of teachers in the bunny ears 😤😤","posted":true,"at":"2026-11-30T13:51","checkin":"2026-11-30T13:51"}
+{"who":"Eoin","text":"Gearóid ur answer on the capital of bolivia was embarrassing. Ur mother wouldnt even look at u rn","posted":true,"at":"2026-11-30T13:53","checkin":"2026-11-30T13:53"}
+{"who":"Gearóid","text":"it was sucre and i said sucre","posted":true,"at":"2026-11-30T13:55","checkin":"2026-11-30T13:55"}
+{"who":"","react":"😂","to":3,"posted":false,"at":"2026-11-30T13:55"}
+{"who":"","react":"😂","to":3,"posted":false,"at":"2026-11-30T13:55"}
+{"who":"Eoin","text":"Sucre is not a capital its a fancy biscuit ur as thick as a bag of mince ffs","posted":true,"at":"2026-11-30T13:56","checkin":"2026-11-30T13:56"}
+{"who":"Rory","text":"Who had the music round","posted":true,"at":"2026-11-30T14:02","checkin":"2026-11-30T14:02"}
+{"who":"Niamh","text":"Eoin did. He got the Kerrang one wrong","posted":true,"at":"2026-11-30T14:04","checkin":"2026-11-30T14:04"}
+{"who":"","react":"😂","to":6,"posted":false,"at":"2026-11-30T14:04"}
+{"who":"Eoin","text":"I got 9/10 on music u cant hold that against me niamh ur a shite singer anyway everyone in the pub heard u butcher wonderwall","posted":true,"at":"2026-11-30T14:05","checkin":"2026-11-30T14:05"}
+{"who":"Niamh","text":"I was singing it ironically. You're the one who got teary during it","posted":true,"at":"2026-11-30T14:07","checkin":"2026-11-30T14:07"}
+{"who":"Eoin","text":"I did not cry I got smoke in my eye ur breath smells like a wet ashtray btw","posted":true,"at":"2026-11-30T14:09","checkin":"2026-11-30T14:09"}
+{"who":"Rory","text":"Right so pitch fees for Thursday. Its 68 quid for the hour at the astro in Knocknacarra. Thats 17 each for four of us. Ill pay it upfront and you can send me yours. Eoin you still owe me from October","posted":true,"at":"2026-11-30T17:20","checkin":"2026-11-30T17:20"}
+{"who":"Eoin","text":"I owe u nothing ur a loan shark with a moustache I already sent it in october u never checked","posted":true,"at":"2026-11-30T17:21","checkin":"2026-11-30T17:21"}
+{"who":"Rory","text":"Ill check. Lads the league starts this thursday at 8. Need to know whos in","posted":true,"at":"2026-11-30T17:24","checkin":"2026-11-30T17:24"}
+{"who":"Gearóid","text":"in","posted":true,"at":"2026-11-30T17:31","checkin":"2026-11-30T17:31"}
+{"who":"Niamh","text":"Can I still play or is it lads only? Im in if I can play. Eoin you're not going to get nasty with me on the pitch, I'm telling you now","posted":true,"at":"2026-11-30T17:33","checkin":"2026-11-30T17:33"}
+{"who":"Eoin","text":"Ur the only one who cant tackle without falling over ur a disgrace to the sport. Ofc u can play","posted":true,"at":"2026-11-30T17:35","checkin":"2026-11-30T17:35"}
+{"who":"Rory","text":"Niamh yes you can play, the league is mixed. Eoin behave","posted":true,"at":"2026-11-30T17:36","checkin":"2026-11-30T17:36"}
+{"who":"Eoin","text":"Rory ur such a mammy 🙄 relax ur making it weird","posted":true,"at":"2026-11-30T17:38","checkin":"2026-11-30T17:38"}
+{"who":"Niamh","text":"Connemara weekend. I've seen a cabin near Clifden that sleeps 6 with a hot tub. Think it's 240 for the two nights split four ways","posted":true,"at":"2026-11-30T19:12","checkin":"2026-11-30T19:12"}
+{"who":"Niamh","text":"[link: the cabin listing near Clifden]","posted":true,"at":"2026-11-30T19:12","checkin":"2026-11-30T19:12"}
+{"who":"Gearóid","text":"hot tub is nice but is it near a pub","posted":true,"at":"2026-11-30T19:16","checkin":"2026-11-30T19:16"}
+{"who":"Eoin","text":"Gearóid the only thing u need near a pub is a drip tray imagine u drunk in a hot tub the water would be a crime scene","posted":true,"at":"2026-11-30T19:17","checkin":"2026-11-30T19:17"}
+{"who":"Rory","text":"Clifden is grand. Dates? Im thinking 9-11 Jan, after the Christmas stuff is over","posted":true,"at":"2026-11-30T19:21","checkin":"2026-11-30T19:21"}
+{"who":"Niamh","text":"9th-11th works for me","posted":true,"at":"2026-11-30T19:25","checkin":"2026-11-30T19:25"}
+{"who":"Gearóid","text":"ye fine","posted":true,"at":"2026-11-30T19:40","checkin":"2026-11-30T19:40"}
+{"who":"Eoin","text":"Cant I have a hot tub weekend without the loan shark and the mammy whatever im in. Niamh ur bringing the speakers this time not ur sad playlist","posted":true,"at":"2026-11-30T19:44","checkin":"2026-11-30T19:44"}
+{"who":"Niamh","text":"My playlist is great thank you. You'll be dancing to Enya in the hot tub like a sick cat","posted":true,"at":"2026-11-30T19:46","checkin":"2026-11-30T19:46"}
+{"who":"Eoin","text":"Enya is a legend ur a dinosaur u should be in a museum next to the bog people","posted":true,"at":"2026-11-30T19:47","checkin":"2026-11-30T19:47"}
+{"who":"Eoin","text":"Gearóid u still alive or did the car finally die on u like ur dad's marriage","posted":true,"at":"2026-11-30T22:58","checkin":"2026-11-30T22:58"}
+{"who":"Gearóid","text":"car's grand. was under a Corolla","posted":true,"at":"2026-11-30T23:03","checkin":"2026-11-30T23:03"}
+{"who":"Eoin","text":"Ur always under something ur one sad sack of a mechanic get ur hands out of ur arse for five mins","posted":true,"at":"2026-11-30T23:04","checkin":"2026-11-30T23:04"}
+{"who":"Rory","text":"Eoin I know ur not going to like this but you need to lay off Niamh a bit in here. Its not funny","posted":true,"at":"2026-11-30T23:40","checkin":"2026-11-30T23:40"}
+{"who":"Eoin","text":"Rory u r the least funny man in galway and u have the personality of a damp estate agent brochure she's grand she gives as good as she gets","posted":true,"at":"2026-11-30T23:42","checkin":"2026-11-30T23:42"}
+{"who":"Niamh","text":"I do give as good as I get. Rory's right though. Not all of it's funny","posted":true,"at":"2026-11-30T23:43","checkin":"2026-11-30T23:43"}
+{"who":"Gearóid","text":"ye","posted":true,"at":"2026-11-30T23:45","checkin":"2026-11-30T23:45"}
+{"who":"Rory","text":"Eoin did u send the 17 or not","posted":true,"at":"2026-12-01T08:14","checkin":"2026-12-01T08:14"}
+{"who":"Eoin","text":"Yes check ur bank before u start on me ffs","posted":true,"at":"2026-12-01T08:22","checkin":"2026-12-01T08:22"}
+{"who":"Rory","text":"Found it. Sorry","posted":true,"at":"2026-12-01T08:31","checkin":"2026-12-01T08:31"}
+{"who":"Eoin","text":"Apology accepted ur still a loan shark","posted":true,"at":"2026-12-01T08:32","checkin":"2026-12-01T08:32"}
+{"who":"Gearóid","text":"anyone know if the astro does refunds if it rains","posted":true,"at":"2026-12-01T12:47","checkin":"2026-12-01T12:47"}
+{"who":"Eoin","text":"No. Its ireland its always raining. Ur paying anyway 😂","posted":true,"at":"2026-12-01T13:02","checkin":"2026-12-01T13:02"}
+{"who":"Niamh","text":"Long day. Some genius in AP keyed a supplier number wrong and I spent four hours finding 412 euro. Don't ask","posted":true,"at":"2026-12-01T17:48","checkin":"2026-12-01T17:48"}
+{"who":"Eoin","text":"Did u find it","posted":true,"at":"2026-12-01T17:52","checkin":"2026-12-01T17:52"}
+{"who":"Niamh","text":"Yeah. It was me. Obviously","posted":true,"at":"2026-12-01T17:53","checkin":"2026-12-01T17:53"}
+{"who":"Eoin","text":"Sure ur an accounts clerk its basically ur job to be cranky","posted":true,"at":"2026-12-01T17:55","checkin":"2026-12-01T17:55"}
+{"who":"Niamh","text":"I'm not cranky","posted":true,"at":"2026-12-01T17:56","checkin":"2026-12-01T17:56"}
+{"who":"Gearóid","text":"u sound cranky","posted":true,"at":"2026-12-01T18:04","checkin":"2026-12-01T18:04"}
+{"who":"Niamh","text":"Yeah I am","posted":true,"at":"2026-12-01T18:06","checkin":"2026-12-01T18:06"}
+{"who":"Rory","text":"Eoin apologise to Niamh. Properly","posted":true,"at":"2026-12-01T18:20","checkin":"2026-12-01T18:20"}
+{"who":"Eoin","text":"Sorry niamh ur not a shite singer","posted":true,"at":"2026-12-01T18:22","checkin":"2026-12-01T18:22"}
+{"who":"Niamh","text":"That's not an apology","posted":true,"at":"2026-12-01T18:23","checkin":"2026-12-01T18:23"}
+{"who":"Eoin","text":"Sorry ur a good singer 🙄 happy now","posted":true,"at":"2026-12-01T18:25","checkin":"2026-12-01T18:25"}
+{"who":"Niamh","text":"Thank you. Going to bed at nine like a pensioner","posted":true,"at":"2026-12-01T18:26","checkin":"2026-12-01T18:26"}
+{"who":"Rory","text":"good. sleep","posted":true,"at":"2026-12-01T18:27","checkin":"2026-12-01T18:27"}
+{"who":"Rory","text":"I'll do the Connemara deposit tomorrow. Need 60 each to hold it. Send me yours when I post the link","posted":true,"at":"2026-12-01T21:10","checkin":"2026-12-01T21:10"}
+{"who":"Gearóid","text":"ye grand","posted":true,"at":"2026-12-01T21:14","checkin":"2026-12-01T21:14"}
+{"who":"Eoin","text":"Gearóid ur car sorted or are u still under it","posted":true,"at":"2026-12-01T23:12","checkin":"2026-12-01T23:12"}
+{"who":"Gearóid","text":"sorted. under nothing now 🔧","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Eoin","text":"Niamh u ok","posted":true,"at":"2026-12-01T23:48","checkin":"2026-12-01T23:48"}
+{"who":"Niamh","text":"Yeah. Thanks Eoin","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Eoin","text":"Ok","posted":true,"at":"2026-12-02T00:02","checkin":"2026-12-02T00:02"}
+{"who":"Rory","text":"Night lads","posted":true,"at":"2026-12-02T00:04","checkin":"2026-12-02T00:04"}
+{"who":"Rory","text":"[link: Connemara cabin deposit page]","posted":true,"at":"2026-12-02T09:41","checkin":"2026-12-02T09:41"}
+{"who":"Rory","text":"60 each to hold it. Send when u can","posted":true,"at":"2026-12-02T09:43","checkin":"2026-12-02T09:43"}
+{"who":"Niamh","text":"Sent","posted":true,"at":"2026-12-02T09:58","checkin":"2026-12-02T09:58"}
+{"who":"Gearóid","text":"sent","posted":true,"at":"2026-12-02T10:12","checkin":"2026-12-02T10:12"}
+{"who":"Eoin","text":"Sent Rory ur going to need a bigger notebook for all the debts","posted":true,"at":"2026-12-02T10:20","checkin":"2026-12-02T10:20"}
+{"who":"Rory","text":"Its a banking app not a notebook","posted":true,"at":"2026-12-02T10:22","checkin":"2026-12-02T10:22"}
+{"who":"Gearóid","text":"anyone bringing a ball thursday","posted":true,"at":"2026-12-02T13:05","checkin":"2026-12-02T13:05"}
+{"who":"Rory","text":"I have one","posted":true,"at":"2026-12-02T13:09","checkin":"2026-12-02T13:09"}
+{"who":"Eoin","text":"Rory has one ball and a moustache","posted":true,"at":"2026-12-02T13:10","checkin":"2026-12-02T13:10"}
+{"who":"Niamh","text":"Can someone check the bibs are the blue ones and not the ones with the cartoon dog on them","posted":true,"at":"2026-12-02T13:14","checkin":"2026-12-02T13:14"}
+{"who":"Rory","text":"Blue ones are in my boot. Dog ones are in Eoin's boot","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Eoin","text":"The dog ones are a vibe u lot have no soul","posted":true,"at":"2026-12-02T13:21","checkin":"2026-12-02T13:21"}
+{"who":"Gearóid","text":"is it 8 or 8:15","posted":true,"at":"2026-12-02T17:40","checkin":"2026-12-02T17:40"}
+{"who":"Rory","text":"8. Dont be late Gearoid","posted":true,"at":"2026-12-02T17:42","checkin":"2026-12-02T17:42"}
+{"who":"Eoin","text":"Gearoid will be under the goal fixing the net","posted":true,"at":"2026-12-02T17:43","checkin":"2026-12-02T17:43"}
+{"who":"Gearóid","text":"ur a bit of a tool","posted":true,"at":"2026-12-02T17:45","checkin":"2026-12-02T17:45"}
+{"who":"Niamh","text":"Thursday is all I'm looking forward to. Yes, I'm serious","posted":true,"at":"2026-12-02T18:30","checkin":"2026-12-02T18:30"}
+{"who":"Eoin","text":"Ur going to get a red card before the first whistle","posted":true,"at":"2026-12-02T18:31","checkin":"2026-12-02T18:31"}
+{"who":"Niamh","text":"Watch me","posted":true,"at":"2026-12-02T18:33","checkin":"2026-12-02T18:33"}
+{"who":"Eoin","text":"Gearóid did the car make it to the astro or is it still on blocks","posted":true,"at":"2026-12-02T21:03","checkin":"2026-12-02T21:03"}
+{"who":"Gearóid","text":"its grand. just needed a new belt","posted":true,"at":"2026-12-02T21:05","checkin":"2026-12-02T21:05"}
+{"who":"Eoin","text":"Ur a proper mechanic now 🔧🔥 cant believe ur finally useful","posted":true,"at":"2026-12-02T21:06","checkin":"2026-12-02T21:06"}
+{"who":"Niamh","text":"Eoin please stop sending me pictures of sheep at 10 at night","posted":true,"at":"2026-12-02T22:31","checkin":"2026-12-02T22:31"}
+{"who":"Eoin","text":"It was a pig and u asked for it","posted":true,"at":"2026-12-02T22:33","checkin":"2026-12-02T22:33"}
+{"who":"Niamh","text":"I did not ask for a pig","posted":true,"at":"2026-12-02T22:35","checkin":"2026-12-02T22:35"}
+{"who":"Rory","text":"Did anyone get the confirmation from the astro for thursday","posted":true,"at":"2026-12-02T23:20","checkin":"2026-12-02T23:20"}
+{"who":"Gearóid","text":"ye got it. 8 sharp","posted":true,"at":"2026-12-02T23:44","checkin":"2026-12-02T23:44"}
+{"who":"Rory","text":"Good","posted":true,"at":"2026-12-02T23:46","checkin":"2026-12-02T23:46"}

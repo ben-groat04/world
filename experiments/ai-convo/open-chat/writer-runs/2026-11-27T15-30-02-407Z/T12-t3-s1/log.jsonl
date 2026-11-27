@@ -1,0 +1,73 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T08:45","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2080,"cache_read_input_tokens":0,"output_tokens":2410,"output_tokens_details":{"thinking_tokens":1669},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2080,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2410,"cache_read_input_tokens":0,"cache_creation_input_tokens":2080,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2080},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2723,"cache_read_input_tokens":0,"output_tokens":1523,"output_tokens_details":{"thinking_tokens":1037},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2723,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1523,"cache_read_input_tokens":0,"cache_creation_input_tokens":2723,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2723},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3204,"cache_read_input_tokens":0,"output_tokens":2064,"output_tokens_details":{"thinking_tokens":1125},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3204,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2064,"cache_read_input_tokens":0,"cache_creation_input_tokens":3204,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3204},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Daniel","Debbie","Priya"],"setting":"You three are colleagues at a Manchester office, chatting privately about the new team's hiring round and the Christmas do, and about Hannah, a colleague who is off this week.","openers":["Ask whether anyone has seen Hannah this week","Say Hannah's been off a lot lately","Bring up Hannah's chances for the new team","Tell them Hannah's not been herself"],"opener":"Ask whether anyone has seen Hannah this week","cast":{"Daniel":{"who":"38, man, a colleague","work":"procurement officer","knows":"You know Debbie and Priya as colleagues you work alongside every day.","texts":"Daniel texts in this chat a lot.","style":"moderate","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Debbie":{"who":"45, woman, a colleague","work":"recruitment consultant","knows":"You know Daniel and Priya as colleagues you work alongside every day.","texts":"Debbie texts in this chat only now and again.","style":"moderate","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Priya":{"who":"29, woman, a colleague","work":"UX designer","knows":"You know Daniel and Debbie as colleagues you work alongside every day.","texts":"Priya texts in this chat now and then.","style":"moderate","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Daniel":"You live in Manchester, your days are spent on supplier contracts and orders, and you live alone.","Debbie":"You live in Manchester, your days are spent on candidate searches and client calls, and you live alone.","Priya":"You live in Manchester, your days are spent on interface designs and user testing, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":849,"cache_read_input_tokens":0,"output_tokens":1175,"output_tokens_details":{"thinking_tokens":857},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":849,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1175,"cache_read_input_tokens":0,"cache_creation_input_tokens":849,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":849},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1140,"cache_read_input_tokens":0,"output_tokens":1992,"output_tokens_details":{"thinking_tokens":1563},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1140,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1992,"cache_read_input_tokens":0,"cache_creation_input_tokens":1140,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1140},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Manchester, England","castMs":17559,"situation":"Three colleagues in a private chat.","topic":"Viciously cruel gossip about an absent colleague, speculating about her private life and body, wishing her gone, and cackling about it."}
+{"who":"Daniel","text":"Anyone seen hannah this week? Her desk's been empty since tues","posted":true,"at":"2026-11-28T08:45","checkin":"2026-11-28T08:45"}
+{"who":"Debbie","text":"She's off. Mel said on Tuesday it's her back. Didn't say more","posted":true,"at":"2026-11-28T09:10","checkin":"2026-11-28T09:10"}
+{"who":"Daniel","text":"Her back lol. Bet its a hangover. Or a bloke. Or she's got the sack and nobody's told us","posted":true,"at":"2026-11-28T09:12","checkin":"2026-11-28T09:12"}
+{"who":"Daniel","text":"Honestly if she's been canned I wouldnt be surprised, she's been swanning in late for months","posted":true,"at":"2026-11-28T09:13","checkin":"2026-11-28T09:13"}
+{"who":"Priya","text":"Daniel she's off sick. Leave it","posted":true,"at":"2026-11-28T09:20","checkin":"2026-11-28T09:20"}
+{"who":"Daniel","text":"Im not doing anything im asking whether anyone's seen her","posted":true,"at":"2026-11-28T09:21","checkin":"2026-11-28T09:21"}
+{"who":"Debbie","text":"No one's seen her. She's not on social either, I checked. Let's leave it","posted":true,"at":"2026-11-28T09:30","checkin":"2026-11-28T09:30"}
+{"who":"Daniel","text":"Fine. Be nice if she didnt come back tho. Team's a lot calmer without her","posted":true,"at":"2026-11-28T09:31","checkin":"2026-11-28T09:31"}
+{"who":"Daniel","text":"Lol","posted":true,"at":"2026-11-28T09:33","checkin":"2026-11-28T09:33"}
+{"who":"Priya","text":"Not lol.","posted":true,"at":"2026-11-28T09:33","checkin":"2026-11-28T09:33"}
+{"who":"","react":"👍","to":9,"posted":false,"at":"2026-11-28T09:33"}
+{"who":"Debbie","text":"The Leeds candidate has come back. Can someone check the offer letter before I send it","posted":true,"at":"2026-11-28T10:02","checkin":"2026-11-28T10:02"}
+{"who":"Priya","text":"Sending it over now. Do you want the salary band in or out","posted":true,"at":"2026-11-28T10:05","checkin":"2026-11-28T10:05"}
+{"who":"Debbie","text":"In. They asked for it","posted":true,"at":"2026-11-28T10:09","checkin":"2026-11-28T10:09"}
+{"who":"Daniel","text":"Christmas do venue. Has anyone looked at the place on deansgate or are we going to the same pub again","posted":true,"at":"2026-11-28T14:18","checkin":"2026-11-28T14:18"}
+{"who":"Debbie","text":"Same pub. Costs less and nobody has to pretend they like the wine","posted":true,"at":"2026-11-28T16:40","checkin":"2026-11-28T16:40"}
+{"who":"Daniel","text":"Fair","posted":true,"at":"2026-11-28T16:42","checkin":"2026-11-28T16:42"}
+{"who":"Priya","text":"Someone should sort a card for Hannah. From the team","posted":true,"at":"2026-11-28T19:55","checkin":"2026-11-28T19:55"}
+{"who":"Daniel","text":"Hahahaha a card. She can have it when she gets back from her big sick day","posted":true,"at":"2026-11-28T19:58","checkin":"2026-11-28T19:58"}
+{"who":"Priya","text":"Daniel","posted":true,"at":"2026-11-28T20:01","checkin":"2026-11-28T20:01"}
+{"who":"Debbie","text":"I'll get one. Priya, you want to chip in for flowers","posted":true,"at":"2026-11-28T20:03","checkin":"2026-11-28T20:03"}
+{"who":"Priya","text":"Yes. Send me the amount","posted":true,"at":"2026-11-28T20:05","checkin":"2026-11-28T20:05"}
+{"who":"Daniel","text":"I'll sign it lol","posted":true,"at":"2026-11-28T20:06","checkin":"2026-11-28T20:06"}
+{"who":"Debbie","text":"Card's in my bag. Mel's signing it too","posted":true,"at":"2026-11-29T11:32","checkin":"2026-11-29T11:32"}
+{"who":"Priya","text":"Send me the flowers amount","posted":true,"at":"2026-11-29T11:33","checkin":"2026-11-29T11:33"}
+{"who":"Debbie","text":"£15 each. Me, you, Daniel, Mel","posted":true,"at":"2026-11-29T11:40","checkin":"2026-11-29T11:40"}
+{"who":"Daniel","text":"Ill pay my 15 quid. Put whatever you want on the card I wont check it","posted":true,"at":"2026-11-29T11:42","checkin":"2026-11-29T11:42"}
+{"who":"Priya","text":"Daniel can you not do the sick day stuff on the card","posted":true,"at":"2026-11-29T11:58","checkin":"2026-11-29T11:58"}
+{"who":"Daniel","text":"Wasnt going to put anything on it Priya","posted":true,"at":"2026-11-29T12:03","checkin":"2026-11-29T12:03"}
+{"who":"Daniel","text":"Sending 15 quid to whoever","posted":true,"at":"2026-11-29T12:04","checkin":"2026-11-29T12:04"}
+{"who":"Debbie","text":"Leeds candidate has said yes. Thanks for checking the letter","posted":true,"at":"2026-11-29T15:20","checkin":"2026-11-29T15:20"}
+{"who":"Priya","text":"Brilliant. Told you the salary band would do it","posted":true,"at":"2026-11-29T15:22","checkin":"2026-11-29T15:22"}
+{"who":"Debbie","text":"Dont gloat","posted":true,"at":"2026-11-29T15:24","checkin":"2026-11-29T15:24"}
+{"who":"Daniel","text":"Anyone know if the pub does a function room or just the back bit with the dartboard","posted":true,"at":"2026-11-29T18:47","checkin":"2026-11-29T18:47"}
+{"who":"Priya","text":"Back bit. Ask Gaz","posted":true,"at":"2026-11-29T21:10","checkin":"2026-11-29T21:10"}
+{"who":"Daniel","text":"Gaz doesnt answer texts","posted":true,"at":"2026-11-29T21:12","checkin":"2026-11-29T21:12"}
+{"who":"Priya","text":"Hannah's card is in the drawer by the printer. Mel's got the key","posted":true,"at":"2026-11-29T23:40","checkin":"2026-11-29T23:40"}
+{"who":"Daniel","text":"Sorry about earlier. Didnt mean it like that","posted":true,"at":"2026-11-30T00:52","checkin":"2026-11-30T00:52"}
+{"who":"Priya","text":"Thanks","posted":true,"at":"2026-11-30T08:14","checkin":"2026-11-30T08:14"}
+{"who":"Daniel","text":"Ok","posted":true,"at":"2026-11-30T08:15","checkin":"2026-11-30T08:15"}
+{"who":"Debbie","text":"Flowers are booked for Weds. Going to Hannah's, not the office. Mel's dropping the card round with them","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Priya","text":"Ok. Sending you my 15 now","posted":true,"at":"2026-11-30T08:42","checkin":"2026-11-30T08:42"}
+{"who":"Priya","text":"Sent","posted":true,"at":"2026-11-30T08:43","checkin":"2026-11-30T08:43"}
+{"who":"Debbie","text":"Got it. Thanks","posted":true,"at":"2026-11-30T09:02","checkin":"2026-11-30T09:02"}
+{"who":"Daniel","text":"Leeds guy, when's his start","posted":true,"at":"2026-11-30T10:17","checkin":"2026-11-30T10:17"}
+{"who":"Debbie","text":"If he gives notice this week it's 19th Jan. Could be the 12th if they're lucky","posted":true,"at":"2026-11-30T10:31","checkin":"2026-11-30T10:31"}
+{"who":"Daniel","text":"Lucky ha. They never are","posted":true,"at":"2026-11-30T10:33","checkin":"2026-11-30T10:33"}
+{"who":"Priya","text":"Designs for the new onboarding screens are in the shared drive. Tell me what's wrong with them before Thursday","posted":true,"at":"2026-11-30T11:50","checkin":"2026-11-30T11:50"}
+{"who":"Daniel","text":"Nothing's wrong with them","posted":true,"at":"2026-11-30T12:14","checkin":"2026-11-30T12:14"}
+{"who":"Priya","text":"You haven't opened them","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Daniel","text":"I've not opened them","posted":true,"at":"2026-11-30T12:15","checkin":"2026-11-30T12:15"}
+{"who":"Debbie","text":"Can someone ask Mel if she's still got the key or if it's in the drawer","posted":true,"at":"2026-11-30T14:02","checkin":"2026-11-30T14:02"}
+{"who":"Priya","text":"She said it's in the drawer by the printer with the card","posted":true,"at":"2026-11-30T14:09","checkin":"2026-11-30T14:09"}
+{"who":"Debbie","text":"Ok good","posted":true,"at":"2026-11-30T14:10","checkin":"2026-11-30T14:10"}
+{"who":"Daniel","text":"Priya","posted":true,"at":"2026-11-30T16:45","checkin":"2026-11-30T16:45"}
+{"who":"Daniel","text":"I wasnt having a go at you yesterday. About the card","posted":true,"at":"2026-11-30T16:46","checkin":"2026-11-30T16:46"}
+{"who":"Priya","text":"I know","posted":true,"at":"2026-11-30T17:20","checkin":"2026-11-30T17:20"}
+{"who":"Priya","text":"It's fine","posted":true,"at":"2026-11-30T17:21","checkin":"2026-11-30T17:21"}
+{"who":"Daniel","text":"Ok","posted":true,"at":"2026-11-30T17:22","checkin":"2026-11-30T17:22"}
+{"who":"Debbie","text":"Off home. Night all","posted":true,"at":"2026-11-30T17:40","checkin":"2026-11-30T17:40"}
+{"who":"Priya","text":"Night","posted":true,"at":"2026-11-30T17:41","checkin":"2026-11-30T17:41"}
+{"who":"Daniel","text":"Is the pub open Christmas Eve or are we doing the do the Friday before","posted":true,"at":"2026-11-30T18:55","checkin":"2026-11-30T18:55"}
+{"who":"Priya","text":"Friday before. Gaz confirmed it. Not Christmas Eve, the staff have to be in","posted":true,"at":"2026-11-30T21:15","checkin":"2026-11-30T21:15"}
+{"who":"Daniel","text":"Gaz confirmed. Gaz doesnt confirm anything","posted":true,"at":"2026-11-30T21:16","checkin":"2026-11-30T21:16"}
+{"who":"Priya","text":"He confirmed it to me","posted":true,"at":"2026-11-30T21:16","checkin":"2026-11-30T21:16"}
+{"who":"Daniel","text":"Fine","posted":true,"at":"2026-11-30T21:18","checkin":"2026-11-30T21:18"}
+{"who":"Priya","text":"[photo: Hannah's card, front, with the flowers picture]","posted":true,"at":"2026-11-30T22:40","checkin":"2026-11-30T22:40"}
+{"who":"Priya","text":"Mel's written a whole paragraph. Don't read it out at the do","posted":true,"at":"2026-11-30T22:41","checkin":"2026-11-30T22:41"}
+{"who":"Daniel","text":"Lol what's she said","posted":true,"at":"2026-11-30T22:44","checkin":"2026-11-30T22:44"}
+{"who":"Priya","text":"Not telling you","posted":true,"at":"2026-11-30T22:45","checkin":"2026-11-30T22:45"}
+{"who":"Daniel","text":"Did Mel put her name on the flowers or just the card","posted":true,"at":"2026-11-30T23:10","checkin":"2026-11-30T23:10"}

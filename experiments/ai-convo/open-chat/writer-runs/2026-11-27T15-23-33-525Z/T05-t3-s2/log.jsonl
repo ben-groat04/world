@@ -1,0 +1,91 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T11:40","complete":true,"rejects":0,"today":["Tanya",null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2019,"cache_read_input_tokens":0,"output_tokens":3759,"output_tokens_details":{"thinking_tokens":2482},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2019,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3759,"cache_read_input_tokens":0,"cache_creation_input_tokens":2019,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2019},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3174,"cache_read_input_tokens":0,"output_tokens":1434,"output_tokens_details":{"thinking_tokens":793},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3174,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1434,"cache_read_input_tokens":0,"cache_creation_input_tokens":3174,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3174},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3828,"cache_read_input_tokens":0,"output_tokens":1615,"output_tokens_details":{"thinking_tokens":1090},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3828,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1615,"cache_read_input_tokens":0,"cache_creation_input_tokens":3828,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3828},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Marcus","Tanya"],"setting":"You are both in Atlanta, Georgia, texting while the news is on, about immigration. You've been old friends for decades, and you're both planning the reunion dinner for your old college group next month.","openers":["Ask Tanya what she thinks the border should look like","Tell her she's been reading the wrong sources","Suggest you drop immigration and sort out the reunion dinner","Send a quick \"okay, fair point\" to cool things down"],"opener":"Suggest you drop immigration and sort out the reunion dinner","cast":{"Marcus":{"who":"52, man, an old friend of Person 2","work":"paralegal","knows":"You know Tanya as an old friend of many years.","texts":"","style":"few words, occasional texting abbreviations, almost no emoji","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Tanya":{"who":"51, woman, an old friend of Person 1","work":"social worker","knows":"You know Marcus as an old friend of many years.","texts":"","style":"few words, occasional texting abbreviations, almost no emoji","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Marcus":"You live in Atlanta, where your days are filled with paralegal work, and you live on your own.","Tanya":"You live in Atlanta, where your days are filled with social work, and you live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":871,"cache_read_input_tokens":0,"output_tokens":1097,"output_tokens_details":{"thinking_tokens":861},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":871,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1097,"cache_read_input_tokens":0,"cache_creation_input_tokens":871,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":871},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1147,"cache_read_input_tokens":0,"output_tokens":1945,"output_tokens_details":{"thinking_tokens":1582},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1147,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1945,"cache_read_input_tokens":0,"cache_creation_input_tokens":1147,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1147},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Atlanta, USA","castMs":16971,"situation":"Two old friends who have always disagreed about politics, texting while the news is on.","topic":"Immigration: it has turned into a shouting match by text, with swearing and personal insults about each other's intelligence and character, each saying the other is a disgrace."}
+{"who":"Marcus","text":"You seeing this bill on the news","posted":true,"at":"2026-11-27T11:40","checkin":"2026-11-27T11:40"}
+{"who":"Tanya","text":"Which one. Its been on since 6 and its all the same thing","posted":true,"at":"2026-11-27T11:42","checkin":"2026-11-27T11:42"}
+{"who":"Marcus","text":"Immigration. The senate thing","posted":true,"at":"2026-11-27T11:43","checkin":"2026-11-27T11:43"}
+{"who":"Tanya","text":"Yes its a joke","posted":true,"at":"2026-11-27T11:43","checkin":"2026-11-27T11:43"}
+{"who":"Marcus","text":"Its not a joke. Its the thing you were saying last month","posted":true,"at":"2026-11-27T11:45","checkin":"2026-11-27T11:45"}
+{"who":"Tanya","text":"I said enforcement has been a mess for years and nobody with a plan wants to fix it. Thats different","posted":true,"at":"2026-11-27T11:46","checkin":"2026-11-27T11:46"}
+{"who":"Marcus","text":"So you want more deportations now","posted":true,"at":"2026-11-27T11:47","checkin":"2026-11-27T11:47"}
+{"who":"Tanya","text":"I didnt say that and you know I didnt","posted":true,"at":"2026-11-27T11:48","checkin":"2026-11-27T11:48"}
+{"who":"Marcus","text":"You said send them all back at the dinner","posted":true,"at":"2026-11-27T11:49","checkin":"2026-11-27T11:49"}
+{"who":"Tanya","text":"That was a joke and you laughed. Dont do this","posted":true,"at":"2026-11-27T11:50","checkin":"2026-11-27T11:50"}
+{"who":"Marcus","text":"You dont get to call it a joke when its your opinion. People here are scared of cops already and you want to make it worse","posted":true,"at":"2026-11-27T11:52","checkin":"2026-11-27T11:52"}
+{"who":"Tanya","text":"Wow. So im a racist now","posted":true,"at":"2026-11-27T11:53","checkin":"2026-11-27T11:53"}
+{"who":"Marcus","text":"I think you dont think before you talk","posted":true,"at":"2026-11-27T11:54","checkin":"2026-11-27T11:54"}
+{"who":"Tanya","text":"And youre the smartest one in the room right. Lawyers always are","posted":true,"at":"2026-11-27T11:55","checkin":"2026-11-27T11:55"}
+{"who":"Marcus","text":"Paralegal","posted":true,"at":"2026-11-27T11:55","checkin":"2026-11-27T11:55"}
+{"who":"Tanya","text":"Ok same thing","posted":true,"at":"2026-11-27T11:56","checkin":"2026-11-27T11:56"}
+{"who":"Marcus","text":"You are really dumb about this tanya. You read one headline and argue like its gospel","posted":true,"at":"2026-11-27T12:03","checkin":"2026-11-27T12:03"}
+{"who":"Tanya","text":"Fuck you. I read every day. I work with these families, you dont","posted":true,"at":"2026-11-27T12:05","checkin":"2026-11-27T12:05"}
+{"who":"Marcus","text":"You work with families and still think the answer is lock them up","posted":true,"at":"2026-11-27T12:06","checkin":"2026-11-27T12:06"}
+{"who":"Tanya","text":"Disgrace. You should be ashamed","posted":true,"at":"2026-11-27T12:07","checkin":"2026-11-27T12:07"}
+{"who":"Marcus","text":"You are the disgrace","posted":true,"at":"2026-11-27T12:07","checkin":"2026-11-27T12:07"}
+{"who":"Marcus","text":"Im not doing this all day","posted":true,"at":"2026-11-27T16:52","checkin":"2026-11-27T16:52"}
+{"who":"Tanya","text":"Didnt say you had to","posted":true,"at":"2026-11-27T17:30","checkin":"2026-11-27T17:30"}
+{"who":"Marcus","text":"Ok. The reunion. We said dinner somewhere on ponce or do you want somewhere else. Need a count","posted":true,"at":"2026-11-27T17:31","checkin":"2026-11-27T17:31"}
+{"who":"Tanya","text":"Ponce is fine. The upstairs room if they still do it","posted":true,"at":"2026-11-27T17:40","checkin":"2026-11-27T17:40"}
+{"who":"Tanya","text":"Long day. One of the families had a bad one. Not getting into it","posted":true,"at":"2026-11-27T17:41","checkin":"2026-11-27T17:41"}
+{"who":"Marcus","text":"Sorry. Thats rough","posted":true,"at":"2026-11-27T17:44","checkin":"2026-11-27T17:44"}
+{"who":"Tanya","text":"Its fine. Its the job","posted":true,"at":"2026-11-27T17:45","checkin":"2026-11-27T17:45"}
+{"who":"Marcus","text":"I can ask kendra about the upstairs room. She runs the place now","posted":true,"at":"2026-11-27T18:20","checkin":"2026-11-27T18:20"}
+{"who":"Tanya","text":"Yes do that. I have like 9 yes so far","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
+{"who":"Marcus","text":"I have dana, rob, the hoffman twins if they can get a sitter","posted":true,"at":"2026-11-27T18:30","checkin":"2026-11-27T18:30"}
+{"who":"Tanya","text":"No sitter. Theyre 50","posted":true,"at":"2026-11-27T18:31","checkin":"2026-11-27T18:31"}
+{"who":"Marcus","text":"Lol ok","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Marcus","text":"I shouldnt have said dumb","posted":true,"at":"2026-11-27T21:05","checkin":"2026-11-27T21:05"}
+{"who":"Tanya","text":"You said disgrace first","posted":true,"at":"2026-11-27T21:40","checkin":"2026-11-27T21:40"}
+{"who":"Marcus","text":"Yeah","posted":true,"at":"2026-11-27T21:41","checkin":"2026-11-27T21:41"}
+{"who":"Tanya","text":"I said fuck you","posted":true,"at":"2026-11-27T21:42","checkin":"2026-11-27T21:42"}
+{"who":"Marcus","text":"We both did","posted":true,"at":"2026-11-27T21:43","checkin":"2026-11-27T21:43"}
+{"who":"Tanya","text":"The vote got pushed to next week by the way","posted":true,"at":"2026-11-27T21:50","checkin":"2026-11-27T21:50"}
+{"who":"Marcus","text":"We're not going to agree on it","posted":true,"at":"2026-11-27T22:14","checkin":"2026-11-27T22:14"}
+{"who":"Tanya","text":"No","posted":true,"at":"2026-11-27T22:15","checkin":"2026-11-27T22:15"}
+{"who":"Marcus","text":"Reunion though","posted":true,"at":"2026-11-27T22:16","checkin":"2026-11-27T22:16"}
+{"who":"Tanya","text":"I asked kendra already. 13th or 20th","posted":true,"at":"2026-11-27T22:20","checkin":"2026-11-27T22:20"}
+{"who":"Marcus","text":"20th. I have a thing the 13th","posted":true,"at":"2026-11-27T22:24","checkin":"2026-11-27T22:24"}
+{"who":"Tanya","text":"Ok 20th","posted":true,"at":"2026-11-27T22:25","checkin":"2026-11-27T22:25"}
+{"who":"Marcus","text":"Kendra says upstairs is open the 20th after 6","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Tanya","text":"Good. Did she say how many max","posted":true,"at":"2026-11-28T09:31","checkin":"2026-11-28T09:31"}
+{"who":"Marcus","text":"30 she said. She'll confirm in writing","posted":true,"at":"2026-11-28T09:33","checkin":"2026-11-28T09:33"}
+{"who":"Tanya","text":"Ok. Im at 9 still. Ill chase the ones who said maybe","posted":true,"at":"2026-11-28T11:02","checkin":"2026-11-28T11:02"}
+{"who":"Marcus","text":"Rob's in","posted":true,"at":"2026-11-28T11:04","checkin":"2026-11-28T11:04"}
+{"who":"Marcus","text":"Dana not sure. Her mom is still in the hospital","posted":true,"at":"2026-11-28T11:05","checkin":"2026-11-28T11:05"}
+{"who":"Tanya","text":"Oh no. Tell her I said hi if she wants","posted":true,"at":"2026-11-28T11:20","checkin":"2026-11-28T11:20"}
+{"who":"Marcus","text":"Ok","posted":true,"at":"2026-11-28T11:21","checkin":"2026-11-28T11:21"}
+{"who":"Marcus","text":"Going into the office for a few hours. Filing deadline","posted":true,"at":"2026-11-28T14:37","checkin":"2026-11-28T14:37"}
+{"who":"Tanya","text":"Ok. Dont let them keep you past dinner","posted":true,"at":"2026-11-28T14:50","checkin":"2026-11-28T14:50"}
+{"who":"Tanya","text":"Did you eat","posted":true,"at":"2026-11-28T19:12","checkin":"2026-11-28T19:12"}
+{"who":"Marcus","text":"Ordered something. You?","posted":true,"at":"2026-11-28T20:48","checkin":"2026-11-28T20:48"}
+{"who":"Tanya","text":"Leftover stuffing. Dont judge","posted":true,"at":"2026-11-28T20:55","checkin":"2026-11-28T20:55"}
+{"who":"Marcus","text":"Wouldn't","posted":true,"at":"2026-11-28T20:56","checkin":"2026-11-28T20:56"}
+{"who":"Marcus","text":"The vote is still on for next week right","posted":true,"at":"2026-11-28T21:30","checkin":"2026-11-28T21:30"}
+{"who":"Tanya","text":"Yes. Im not doing that one tonight","posted":true,"at":"2026-11-28T21:33","checkin":"2026-11-28T21:33"}
+{"who":"Marcus","text":"Ok. Didnt mean to start it","posted":true,"at":"2026-11-28T21:34","checkin":"2026-11-28T21:34"}
+{"who":"Tanya","text":"You didnt. I just dont want to go around again","posted":true,"at":"2026-11-28T21:36","checkin":"2026-11-28T21:36"}
+{"who":"Marcus","text":"Agreed","posted":true,"at":"2026-11-28T21:37","checkin":"2026-11-28T21:37"}
+{"who":"Tanya","text":"Ill send the list to the group thread tomorrow so people stop texting me separately","posted":true,"at":"2026-11-28T22:10","checkin":"2026-11-28T22:10"}
+{"who":"Marcus","text":"Good luck with that","posted":true,"at":"2026-11-28T22:12","checkin":"2026-11-28T22:12"}
+{"who":"Tanya","text":"Thanks","posted":true,"at":"2026-11-28T22:13","checkin":"2026-11-28T22:13"}
+{"who":"Marcus","text":"Night","posted":true,"at":"2026-11-28T23:41","checkin":"2026-11-28T23:41"}
+{"who":"Tanya","text":"Night","posted":true,"at":"2026-11-28T23:58","checkin":"2026-11-28T23:58"}
+{"who":"Tanya","text":"Sent the list to the group thread. Dont reply to me there","posted":true,"at":"2026-11-29T10:12","checkin":"2026-11-29T10:12"}
+{"who":"Marcus","text":"Lol","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Marcus","text":"Kendra sent the thing in writing. 30 max, upstairs, 6 on","posted":true,"at":"2026-11-29T10:41","checkin":"2026-11-29T10:41"}
+{"who":"Tanya","text":"Good","posted":true,"at":"2026-11-29T10:44","checkin":"2026-11-29T10:44"}
+{"who":"Marcus","text":"Dana texted me. Her mom is still in icu. She said she'll try for the 20th but not sure","posted":true,"at":"2026-11-29T13:02","checkin":"2026-11-29T13:02"}
+{"who":"Tanya","text":"Ok. I'll text her tonight","posted":true,"at":"2026-11-29T13:15","checkin":"2026-11-29T13:15"}
+{"who":"Tanya","text":"Did you get the paperwork done","posted":true,"at":"2026-11-29T15:48","checkin":"2026-11-29T15:48"}
+{"who":"Marcus","text":"Yeah. Filed at 4:10. Clerk almost didnt take it","posted":true,"at":"2026-11-29T16:30","checkin":"2026-11-29T16:30"}
+{"who":"Tanya","text":"Glad","posted":true,"at":"2026-11-29T16:31","checkin":"2026-11-29T16:31"}
+{"who":"Tanya","text":"Texted dana","posted":true,"at":"2026-11-29T19:05","checkin":"2026-11-29T19:05"}
+{"who":"Marcus","text":"Ok good","posted":true,"at":"2026-11-29T19:06","checkin":"2026-11-29T19:06"}
+{"who":"Marcus","text":"Can you bring the folding chairs or should I ask rob","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Tanya","text":"Rob. My car is in the shop this week","posted":true,"at":"2026-11-29T19:52","checkin":"2026-11-29T19:52"}
+{"who":"Marcus","text":"Ok asking rob","posted":true,"at":"2026-11-29T20:10","checkin":"2026-11-29T20:10"}
+{"who":"Tanya","text":"News is on again. Same bill","posted":true,"at":"2026-11-29T22:30","checkin":"2026-11-29T22:30"}
+{"who":"Marcus","text":"Yeah","posted":true,"at":"2026-11-29T22:31","checkin":"2026-11-29T22:31"}
+{"who":"Tanya","text":"Im not watching","posted":true,"at":"2026-11-29T22:33","checkin":"2026-11-29T22:33"}
+{"who":"Marcus","text":"Good","posted":true,"at":"2026-11-29T22:34","checkin":"2026-11-29T22:34"}
+{"who":"Marcus","text":"Night","posted":true,"at":"2026-11-29T23:50","checkin":"2026-11-29T23:50"}
+{"who":"Tanya","text":"Night","posted":true,"at":"2026-11-29T23:58","checkin":"2026-11-29T23:58"}

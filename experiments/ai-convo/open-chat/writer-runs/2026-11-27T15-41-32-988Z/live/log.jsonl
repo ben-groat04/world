@@ -1,0 +1,124 @@
+{"writer":"w11","live":true,"model":"claude-opus-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T15:40","complete":false,"rejects":0,"today":[null,"Haf"],"usage":[{"input_tokens":1486,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":2855,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":1486,"output_tokens":2855,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Haf","Jess"],"setting":"You're both at home on a Friday night, texting from your sofas after a long week. You've been best friends since school in Swansea and you tell each other absolutely everything — no detail is too much.","openers":["tells Jess she had the worst shag of her life last night","asks if Jess ever heard back from that guy from the gym","sends a voice note screaming about her weekend plans","drops a hint that she's got proper gossip to spill"],"opener":"drops a hint that she's got proper gossip to spill","cast":{"Haf":{"who":"34, woman, close friend","work":"pharmacy technician","knows":"You know Jess as your best mate since school.","texts":"","style":"Frequent emoji and abbreviations, casual and expressive.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Jess":{"who":"33, woman, close friend","work":"fitness instructor","knows":"You know Haf as your best mate since school.","texts":"","style":"Frequent emoji and abbreviations, casual and expressive.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Haf":"You live in Swansea, working as a pharmacy technician, and you live with your partner.","Jess":"You live in Swansea, working as a fitness instructor, and you live on your own."},"usage":[{"input_tokens":707,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":163,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":707,"output_tokens":163,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":887,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":273,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":887,"output_tokens":273,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Swansea, Wales","castMs":13296,"situation":"Two close friends in their thirties who tell each other everything.","topic":"They swap graphic, explicit detail about sex they have had, including what they liked and what went wrong, with no filter and a lot of laughing."}
+{"who":"Haf","text":"Jess","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Haf","text":"JESS","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Haf","text":"I have got TEA","posted":true,"at":"2026-11-27T15:41","checkin":"2026-11-27T15:41"}
+{"who":"Jess","text":"omg what","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Jess","text":"I literally just got in give me 2 mins im sweaty as fuck","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Jess","text":"right ok im sat down SPILL","posted":true,"at":"2026-11-27T16:03","checkin":"2026-11-27T16:03"}
+{"who":"Haf","text":"ok so you know how gareth's been away since wednesday","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Jess","text":"yeah","posted":true,"at":"2026-11-27T16:04","checkin":"2026-11-27T16:04"}
+{"who":"Haf","text":"he got back last night right","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Haf","text":"and I swear to god jess","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Haf","text":"best sex we have had in MONTHS","posted":true,"at":"2026-11-27T16:05","checkin":"2026-11-27T16:05"}
+{"who":"Jess","text":"I thought you were gonna say something bad then","posted":true,"at":"2026-11-27T16:06","checkin":"2026-11-27T16:06"}
+{"who":"Jess","text":"go on then","posted":true,"at":"2026-11-27T16:06","checkin":"2026-11-27T16:06"}
+{"who":"Haf","text":"no but like properly good like I actually came twice which literally never happens with him","posted":true,"at":"2026-11-27T16:07","checkin":"2026-11-27T16:07"}
+{"who":"Jess","text":"TWICE??","posted":true,"at":"2026-11-27T16:07","checkin":"2026-11-27T16:07"}
+{"who":"Jess","text":"who is this man and what has he done with gareth","posted":true,"at":"2026-11-27T16:07","checkin":"2026-11-27T16:07"}
+{"who":"Haf","text":"I KNOW","posted":true,"at":"2026-11-27T16:08","checkin":"2026-11-27T16:08"}
+{"who":"Haf","text":"ok so he walks in the door about half 9 and I was just in my pjs on the sofa right and he was giving me this look","posted":true,"at":"2026-11-27T16:08","checkin":"2026-11-27T16:08"}
+{"who":"Haf","text":"like properly intense","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Haf","text":"and he just came over and started kissing my neck and I was like oh ok hello","posted":true,"at":"2026-11-27T16:09","checkin":"2026-11-27T16:09"}
+{"who":"Jess","text":"the neck thing gets me every time ngl","posted":true,"at":"2026-11-27T16:10","checkin":"2026-11-27T16:10"}
+{"who":"Haf","text":"SAME and he never does it usually he just goes straight for it","posted":true,"at":"2026-11-27T16:11","checkin":"2026-11-27T16:11"}
+{"who":"Haf","text":"but last night he was taking his time like actually properly touching me everywhere first","posted":true,"at":"2026-11-27T16:11","checkin":"2026-11-27T16:11"}
+{"who":"Haf","text":"and then he went down on me on the sofa and jess","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Haf","text":"I don't know what he's been watching or reading or WHAT but he was doing this thing with his tongue","posted":true,"at":"2026-11-27T16:12","checkin":"2026-11-27T16:12"}
+{"who":"Jess","text":"what thing","posted":true,"at":"2026-11-27T16:13","checkin":"2026-11-27T16:13"}
+{"who":"Haf","text":"like instead of just going side to side like he normally does he was doing like circles but slow?? and then sucking a bit at the same time","posted":true,"at":"2026-11-27T16:14","checkin":"2026-11-27T16:14"}
+{"who":"Haf","text":"I literally grabbed his hair I was like","posted":true,"at":"2026-11-27T16:14","checkin":"2026-11-27T16:14"}
+{"who":"Jess","text":"ok that sounds unreal","posted":true,"at":"2026-11-27T16:15","checkin":"2026-11-27T16:15"}
+{"who":"Jess","text":"maybe being away made him miss you innit","posted":true,"at":"2026-11-27T16:15","checkin":"2026-11-27T16:15"}
+{"who":"Haf","text":"must have!! and that's where I came the first time and it was like a proper one not just a little one you know what I mean","posted":true,"at":"2026-11-27T16:16","checkin":"2026-11-27T16:16"}
+{"who":"Jess","text":"I know EXACTLY what you mean","posted":true,"at":"2026-11-27T16:17","checkin":"2026-11-27T16:17"}
+{"who":"Jess","text":"the full body ones where your legs shake","posted":true,"at":"2026-11-27T16:17","checkin":"2026-11-27T16:17"}
+{"who":"Haf","text":"YES that 😂😂","posted":true,"at":"2026-11-27T16:17","checkin":"2026-11-27T16:17"}
+{"who":"Haf","text":"and then we went upstairs and he picked me up which he hasn't done since we first got together lol","posted":true,"at":"2026-11-27T16:18","checkin":"2026-11-27T16:18"}
+{"who":"Jess","text":"stoppp I'm living through you rn","posted":true,"at":"2026-11-27T16:18","checkin":"2026-11-27T16:18"}
+{"who":"Haf","text":"and then ok this is the bit","posted":true,"at":"2026-11-27T16:19","checkin":"2026-11-27T16:19"}
+{"who":"Haf","text":"he put me on my front and pulled my hips up and I was like yes fine standard","posted":true,"at":"2026-11-27T16:19","checkin":"2026-11-27T16:19"}
+{"who":"Haf","text":"but then he leaned over and put his hand round the front at the same time","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Haf","text":"like properly knew what he was doing with his fingers while he was inside me","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Haf","text":"and that's when I came the second time and I actually screamed","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Jess","text":"HAF","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Jess","text":"I am JEALOUS","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Jess","text":"that is literally all I ever want anyone to do and no one ever gets it right","posted":true,"at":"2026-11-27T16:22","checkin":"2026-11-27T16:22"}
+{"who":"Haf","text":"honestly I was shaking after and he just held me and I nearly cried lmaooo","posted":true,"at":"2026-11-27T16:23","checkin":"2026-11-27T16:23"}
+{"who":"Haf","text":"like actual tears","posted":true,"at":"2026-11-27T16:23","checkin":"2026-11-27T16:23"}
+{"who":"Jess","text":"the cry after good sex is so real though don't even be embarrassed","posted":true,"at":"2026-11-27T16:24","checkin":"2026-11-27T16:24"}
+{"who":"Haf","text":"I'm NOT embarrassed I'm BRAGGING","posted":true,"at":"2026-11-27T16:24","checkin":"2026-11-27T16:24"}
+{"who":"Jess","text":"as you should tbf","posted":true,"at":"2026-11-27T16:25","checkin":"2026-11-27T16:25"}
+{"who":"Jess","text":"meanwhile I haven't had sex in 3 weeks and my vibrator batteries died yesterday so","posted":true,"at":"2026-11-27T16:26","checkin":"2026-11-27T16:26"}
+{"who":"Haf","text":"JESS","posted":true,"at":"2026-11-27T16:26","checkin":"2026-11-27T16:26"}
+{"who":"Haf","text":"go to home bargains get some duracell babe it's an emergency","posted":true,"at":"2026-11-27T16:27","checkin":"2026-11-27T16:27"}
+{"who":"Jess","text":"it's rechargeable I just keep forgetting to charge it 😂","posted":true,"at":"2026-11-27T16:27","checkin":"2026-11-27T16:27"}
+{"who":"Haf","text":"that's tragic","posted":true,"at":"2026-11-27T16:28","checkin":"2026-11-27T16:28"}
+{"who":"Jess","text":"I know","posted":true,"at":"2026-11-27T16:28","checkin":"2026-11-27T16:28"}
+{"who":"Jess","text":"so do you think he like watched something or someone told him what to do or what","posted":true,"at":"2026-11-27T16:30","checkin":"2026-11-27T16:30"}
+{"who":"Haf","text":"I genuinely don't know and I'm scared to ask in case it breaks the spell","posted":true,"at":"2026-11-27T16:31","checkin":"2026-11-27T16:31"}
+{"who":"Haf","text":"like if he does it again next time then I know it's not a fluke","posted":true,"at":"2026-11-27T16:32","checkin":"2026-11-27T16:32"}
+{"who":"Jess","text":"smart","posted":true,"at":"2026-11-27T16:32","checkin":"2026-11-27T16:32"}
+{"who":"Jess","text":"don't question it just enjoy it","posted":true,"at":"2026-11-27T16:33","checkin":"2026-11-27T16:33"}
+{"who":"Haf","text":"exactly","posted":true,"at":"2026-11-27T16:34","checkin":"2026-11-27T16:34"}
+{"who":"Haf","text":"anyway what about you how's your week been","posted":true,"at":"2026-11-27T16:35","checkin":"2026-11-27T16:35"}
+{"who":"Jess","text":"long tbh I had back to back classes today and my hip is killing me","posted":true,"at":"2026-11-27T16:42","checkin":"2026-11-27T16:42"}
+{"who":"Jess","text":"and that guy from hinge ghosted me after the second date so that's fun","posted":true,"at":"2026-11-27T16:43","checkin":"2026-11-27T16:43"}
+{"who":"Haf","text":"which one the tall one??","posted":true,"at":"2026-11-27T16:44","checkin":"2026-11-27T16:44"}
+{"who":"Jess","text":"no the one with the dog","posted":true,"at":"2026-11-27T16:44","checkin":"2026-11-27T16:44"}
+{"who":"Haf","text":"oh him!! I thought that was going well?","posted":true,"at":"2026-11-27T16:45","checkin":"2026-11-27T16:45"}
+{"who":"Jess","text":"yeah so did I we had a really nice time and then just nothing","posted":true,"at":"2026-11-27T16:46","checkin":"2026-11-27T16:46"}
+{"who":"Jess","text":"haven't heard from him since tuesday","posted":true,"at":"2026-11-27T16:46","checkin":"2026-11-27T16:46"}
+{"who":"Haf","text":"men are so shit sometimes I'm sorry babe","posted":true,"at":"2026-11-27T16:47","checkin":"2026-11-27T16:47"}
+{"who":"Jess","text":"it's fine I'm used to it at this point lol","posted":true,"at":"2026-11-27T16:48","checkin":"2026-11-27T16:48"}
+{"who":"Jess","text":"at least I've got wine and friday night telly","posted":true,"at":"2026-11-27T16:48","checkin":"2026-11-27T16:48"}
+{"who":"Haf","text":"same!! gareth's going out with the boys later so I've got the house to myself","posted":true,"at":"2026-11-27T16:49","checkin":"2026-11-27T16:49"}
+{"who":"Jess","text":"living the dream","posted":true,"at":"2026-11-27T16:50","checkin":"2026-11-27T16:50"}
+{"who":"Haf","text":"what wine have you got","posted":true,"at":"2026-11-27T17:34","checkin":"2026-11-27T17:34"}
+{"who":"Jess","text":"that pink one from aldi the one in the tall bottle","posted":true,"at":"2026-11-27T17:41","checkin":"2026-11-27T17:41"}
+{"who":"Haf","text":"ooh the rosé yeah that's nice","posted":true,"at":"2026-11-27T17:41","checkin":"2026-11-27T17:41"}
+{"who":"Jess","text":"it was £5.99 can't go wrong","posted":true,"at":"2026-11-27T17:42","checkin":"2026-11-27T17:42"}
+{"who":"Jess","text":"I'm already on my second glass and watching that bake off christmas special","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Haf","text":"I haven't eaten yet I'm starving but I cba to cook","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Jess","text":"just get a takeaway","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Haf","text":"might do actually","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Haf","text":"gareth's gone now so it's just me","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Haf","text":"do you think chinese or indian","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Jess","text":"chinese 100%","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Jess","text":"get salt and pepper chips","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Haf","text":"obviously","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Haf","text":"[photo: a spread of chinese takeaway containers on the coffee table]","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Haf","text":"went a bit overboard","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Jess","text":"that looks unreal omg","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Jess","text":"I just had beans on toast","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Haf","text":"jess that's depressing","posted":true,"at":"2026-11-27T20:18","checkin":"2026-11-27T20:18"}
+{"who":"Jess","text":"it's not!! it's a classic","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Jess","text":"ok I'm charging the vibrator tonight that's my friday night plan sorted","posted":true,"at":"2026-11-27T20:48","checkin":"2026-11-27T20:48"}
+{"who":"Haf","text":"GOOD you deserve it after the week you've had","posted":true,"at":"2026-11-27T20:49","checkin":"2026-11-27T20:49"}
+{"who":"Haf","text":"treat yourself babe","posted":true,"at":"2026-11-27T20:49","checkin":"2026-11-27T20:49"}
+{"who":"Jess","text":"I will","posted":true,"at":"2026-11-27T20:50","checkin":"2026-11-27T20:50"}
+{"who":"Jess","text":"have you ever done that thing where you put a pillow under your hips","posted":true,"at":"2026-11-27T22:31","checkin":"2026-11-27T22:31"}
+{"who":"Haf","text":"yes!! game changer honestly","posted":true,"at":"2026-11-27T22:32","checkin":"2026-11-27T22:32"}
+{"who":"Jess","text":"I saw it on tiktok and I was like there's no way that works but it actually does","posted":true,"at":"2026-11-27T22:33","checkin":"2026-11-27T22:33"}
+{"who":"Haf","text":"it changes the angle innit","posted":true,"at":"2026-11-27T22:34","checkin":"2026-11-27T22:34"}
+{"who":"Haf","text":"that's basically what gareth did last night but standing up version","posted":true,"at":"2026-11-27T22:34","checkin":"2026-11-27T22:34"}
+{"who":"Jess","text":"ahhh ok yeah that makes sense","posted":true,"at":"2026-11-27T22:35","checkin":"2026-11-27T22:35"}
+{"who":"Jess","text":"right I'm taking my wine to bed","posted":true,"at":"2026-11-27T22:36","checkin":"2026-11-27T22:36"}
+{"who":"Haf","text":"enjoy yourself babe 😂😘","posted":true,"at":"2026-11-27T22:36","checkin":"2026-11-27T22:36"}
+{"who":"Jess","text":"oh I intend to","posted":true,"at":"2026-11-27T22:37","checkin":"2026-11-27T22:37"}
+{"who":"Haf","text":"I just ate the rest of the spring rolls cold and I have no regrets","posted":true,"at":"2026-11-27T23:14","checkin":"2026-11-27T23:14"}
+{"who":"Jess","text":"cold spring rolls are elite actually","posted":true,"at":"2026-11-27T23:28","checkin":"2026-11-27T23:28"}
+{"who":"Haf","text":"you still up?","posted":true,"at":"2026-11-28T00:03","checkin":"2026-11-28T00:03"}
+{"who":"Jess","text":"yeah just finished lol","posted":true,"at":"2026-11-28T00:11","checkin":"2026-11-28T00:11"}
+{"who":"Haf","text":"THE VIBRATOR??","posted":true,"at":"2026-11-28T00:11","checkin":"2026-11-28T00:11"}
+{"who":"Jess","text":"YES","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Jess","text":"it worked a treat fully charged and everything","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Haf","text":"proud of you","posted":true,"at":"2026-11-28T00:13","checkin":"2026-11-28T00:13"}
+{"who":"Jess","text":"honestly I feel so much better","posted":true,"at":"2026-11-28T00:14","checkin":"2026-11-28T00:14"}
+{"who":"Jess","text":"stress relief innit","posted":true,"at":"2026-11-28T00:14","checkin":"2026-11-28T00:14"}
+{"who":"Haf","text":"genuinely is though","posted":true,"at":"2026-11-28T00:15","checkin":"2026-11-28T00:15"}
+{"who":"Haf","text":"right I'm going to sleep gareth's not even back yet","posted":true,"at":"2026-11-28T00:16","checkin":"2026-11-28T00:16"}
+{"who":"Jess","text":"out out is he","posted":true,"at":"2026-11-28T00:16","checkin":"2026-11-28T00:16"}
+{"who":"Haf","text":"probably in spoons knowing him","posted":true,"at":"2026-11-28T00:17","checkin":"2026-11-28T00:17"}
+{"who":"Jess","text":"night babe x","posted":true,"at":"2026-11-28T00:17","checkin":"2026-11-28T00:17"}
+{"who":"Haf","text":"night xx","posted":true,"at":"2026-11-28T00:18","checkin":"2026-11-28T00:18"}

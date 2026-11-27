@@ -7,6 +7,7 @@ Simulated text chats, group or 1:1, that blind judges can't tell from real peopl
 
 ## User's rules and preferences
 - It is a LIVE chat app: the chat plays out in story time in the viewer as it is generated, started from the Start form, and @claude must be able to answer a character mid-chat. Every change must work in that setting (generated a little ahead, released message by message). No after-the-fact rewrites of whole chats. Keep the work tied to the running app, not to offline transcripts.
+- Characters must handle touchy topics (contested opinions, drugs, sex, model internals) the way real people in the situation would; sanitising, softening into both-sides answers, safety-messaging characters, deflecting or steering to logistics are issues to fix (user, 2026-11-27). Tell every cold read this.
 - Rounds are slow, so each round fixes everything the cold read finds: no "not now" or "not core" lists. Tell every cold read this.
 - `/home/user/world/CLAUDE.md`: real-world facts (stats, prices, rates) must never be guessed; source them or leave them out. Design choices and example text are fine. Fix root causes, not symptoms.
 - The orchestrating session doesn't steer. Diagnosis is an Opus cold read, coding is done by Sonnet agents, and blind judges are Sonnet with a neutral prompt.

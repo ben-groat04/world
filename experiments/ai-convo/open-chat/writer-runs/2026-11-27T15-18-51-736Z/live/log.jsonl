@@ -1,0 +1,62 @@
+{"writer":"w11","live":true,"model":"haiku","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T15:20","complete":true,"rejects":0,"today":[null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2033,"cache_read_input_tokens":0,"output_tokens":2654,"output_tokens_details":{"thinking_tokens":1934},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2033,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2654,"cache_read_input_tokens":0,"cache_creation_input_tokens":2033,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2033},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2678,"cache_read_input_tokens":0,"output_tokens":2617,"output_tokens_details":{"thinking_tokens":1763},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2678,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2617,"cache_read_input_tokens":0,"cache_creation_input_tokens":2678,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2678},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rhys","Hannah","Nia"],"setting":"You are all in Cardiff, where you are close friends. This chat is where you sort out a shared Sunday roast and the five-a-side team you all play in.","openers":["Ask who they went home with","Send a \"spill everything\" message","Tease them about the late night","Demand every detail right now"],"opener":"Demand every detail right now","cast":{"Rhys":{"who":"28, man, close friend","work":"electrician","knows":"You know Hannah as a close friend and Nia as a close friend.","texts":"Rhys texts in this chat only now and again.","style":"some emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Hannah":{"who":"27, woman, close friend","work":"graphic designer","knows":"You know Rhys as a close friend and Nia as a close friend.","texts":"Hannah texts in this chat a lot.","style":"some emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Nia":{"who":"29, woman, close friend","work":"primary school teacher","knows":"You know Rhys as a close friend and Hannah as a close friend.","texts":"Nia texts in this chat now and then.","style":"some emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Rhys":"You live in Cardiff, and your days are filled with electrical work.","Hannah":"You live in Cardiff, and your days are filled with graphic design work.","Nia":"You live in Cardiff, and your days are filled with teaching primary school."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":832,"cache_read_input_tokens":0,"output_tokens":901,"output_tokens_details":{"thinking_tokens":594},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":832,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":901,"cache_read_input_tokens":0,"cache_creation_input_tokens":832,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":832},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1118,"cache_read_input_tokens":0,"output_tokens":1728,"output_tokens_details":{"thinking_tokens":1335},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1118,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1728,"cache_read_input_tokens":0,"cache_creation_input_tokens":1118,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1118},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cardiff, Wales","castMs":15405,"situation":"Three close friends in their late twenties.","topic":"One of them slept with someone new last night and the others want to hear about it."}
+{"who":"Rhys","text":"Right. Someone in here slept with someone new last night and nobody's told me anything. Spill","posted":true,"at":"2026-11-27T15:20","checkin":"2026-11-27T15:20"}
+{"who":"Hannah","text":"Who told you","posted":true,"at":"2026-11-27T15:22","checkin":"2026-11-27T15:22"}
+{"who":"Rhys","text":"Doesn't matter","posted":true,"at":"2026-11-27T15:22","checkin":"2026-11-27T15:22"}
+{"who":"Hannah","text":"It kind of does","posted":true,"at":"2026-11-27T15:23","checkin":"2026-11-27T15:23"}
+{"who":"Nia","text":"I'm in the middle of year 2 maths I can't do this now","posted":true,"at":"2026-11-27T15:31","checkin":"2026-11-27T15:31"}
+{"who":"Rhys","text":"So it's you","posted":true,"at":"2026-11-27T15:31","checkin":"2026-11-27T15:31"}
+{"who":"Nia","text":"Nothing happened. Well","posted":true,"at":"2026-11-27T15:40","checkin":"2026-11-27T15:40"}
+{"who":"Hannah","text":"NIA","posted":true,"at":"2026-11-27T15:41","checkin":"2026-11-27T15:41"}
+{"who":"Hannah","text":"Ok ok details","posted":true,"at":"2026-11-27T15:41","checkin":"2026-11-27T15:41"}
+{"who":"Nia","text":"Not doing this over whatsapp","posted":true,"at":"2026-11-27T15:58","checkin":"2026-11-27T15:58"}
+{"who":"Rhys","text":"That's a yes","posted":true,"at":"2026-11-27T16:02","checkin":"2026-11-27T16:02"}
+{"who":"Rhys","text":"I have a roast to sort and I can't think about anything else","posted":true,"at":"2026-11-27T16:02","checkin":"2026-11-27T16:02"}
+{"who":"Hannah","text":"Rhys you're on potatoes this week btw","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Rhys","text":"I did potatoes last time","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Hannah","text":"And nia did gravy and I did the beef, it's a system","posted":true,"at":"2026-11-27T16:21","checkin":"2026-11-27T16:21"}
+{"who":"Nia","text":"Sunday's fine, I'll bring the pudding","posted":true,"at":"2026-11-27T17:05","checkin":"2026-11-27T17:05"}
+{"who":"Hannah","text":"And nothing else?","posted":true,"at":"2026-11-27T17:06","checkin":"2026-11-27T17:06"}
+{"who":"Nia","text":"No","posted":true,"at":"2026-11-27T17:06","checkin":"2026-11-27T17:06"}
+{"who":"Nia","text":"His name's dan. We met at the thing in Pontcanna. It was fine.","posted":true,"at":"2026-11-27T19:47","checkin":"2026-11-27T19:47"}
+{"who":"Hannah","text":"DAN","posted":true,"at":"2026-11-27T19:48","checkin":"2026-11-27T19:48"}
+{"who":"","react":"😂","to":19,"posted":false,"at":"2026-11-27T19:48"}
+{"who":"","react":"😂","to":19,"posted":false,"at":"2026-11-27T19:48"}
+{"who":"Rhys","text":"Fine. Was he good","posted":true,"at":"2026-11-27T19:49","checkin":"2026-11-27T19:49"}
+{"who":"Nia","text":"Rhys","posted":true,"at":"2026-11-27T19:52","checkin":"2026-11-27T19:52"}
+{"who":"Rhys","text":"Asking for a friend","posted":true,"at":"2026-11-27T19:52","checkin":"2026-11-27T19:52"}
+{"who":"Hannah","text":"Five a side is still tuesday right? Rhys you're not bailing again","posted":true,"at":"2026-11-27T20:10","checkin":"2026-11-27T20:10"}
+{"who":"Rhys","text":"Not bailing. Got a job in Roath till 6 but I'll be there","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Hannah","text":"Is dan on the team yet","posted":true,"at":"2026-11-27T23:40","checkin":"2026-11-27T23:40"}
+{"who":"Nia","text":"Go to bed hannah","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Hannah","text":"Morning. Beef's sorted. Got a 1.8kg topside off the butcher on Crwys Rd, they only had the one","posted":true,"at":"2026-11-28T09:12","checkin":"2026-11-28T09:12"}
+{"who":"Hannah","text":"[photo: beef in a roasting tin on the kitchen counter]","posted":true,"at":"2026-11-28T09:12","checkin":"2026-11-28T09:12"}
+{"who":"Rhys","text":"Potatoes. Maris piper?","posted":true,"at":"2026-11-28T10:40","checkin":"2026-11-28T10:40"}
+{"who":"Hannah","text":"Obviously","posted":true,"at":"2026-11-28T10:41","checkin":"2026-11-28T10:41"}
+{"who":"Rhys","text":"Ok","posted":true,"at":"2026-11-28T10:41","checkin":"2026-11-28T10:41"}
+{"who":"Nia","text":"Pudding is sticky toffee. Don't say anything","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Hannah","text":"Wasn't going to say anything","posted":true,"at":"2026-11-28T11:03","checkin":"2026-11-28T11:03"}
+{"who":"Hannah","text":"Nia. Dan","posted":true,"at":"2026-11-28T11:05","checkin":"2026-11-28T11:05"}
+{"who":"Nia","text":"He's nice. Makes his own bread. Which I'm choosing to find alarming","posted":true,"at":"2026-11-28T11:26","checkin":"2026-11-28T11:26"}
+{"who":"Hannah","text":"😂","posted":true,"at":"2026-11-28T11:27","checkin":"2026-11-28T11:27"}
+{"who":"","react":"😂","to":36,"posted":false,"at":"2026-11-28T11:27"}
+{"who":"","react":"😂","to":36,"posted":false,"at":"2026-11-28T11:27"}
+{"who":"Rhys","text":"Makes his own bread is a lot","posted":true,"at":"2026-11-28T11:30","checkin":"2026-11-28T11:30"}
+{"who":"Nia","text":"That's what I said","posted":true,"at":"2026-11-28T11:31","checkin":"2026-11-28T11:31"}
+{"who":"Hannah","text":"Are you seeing him again or is this a one off","posted":true,"at":"2026-11-28T13:15","checkin":"2026-11-28T13:15"}
+{"who":"Nia","text":"Not sure yet. He asked. I said we'll see. Can we not","posted":true,"at":"2026-11-28T13:52","checkin":"2026-11-28T13:52"}
+{"who":"Hannah","text":"Ok ok","posted":true,"at":"2026-11-28T13:53","checkin":"2026-11-28T13:53"}
+{"who":"Rhys","text":"Roath job overrunning, might be late for tues","posted":true,"at":"2026-11-28T14:10","checkin":"2026-11-28T14:10"}
+{"who":"Hannah","text":"Rhys","posted":true,"at":"2026-11-28T14:10","checkin":"2026-11-28T14:10"}
+{"who":"Rhys","text":"Not bailing. Just late","posted":true,"at":"2026-11-28T14:11","checkin":"2026-11-28T14:11"}
+{"who":"Hannah","text":"Is dan coming to sunday. Asking for the seating plan","posted":true,"at":"2026-11-28T16:44","checkin":"2026-11-28T16:44"}
+{"who":"Nia","text":"No","posted":true,"at":"2026-11-28T16:58","checkin":"2026-11-28T16:58"}
+{"who":"Nia","text":"Dan is not coming to roast","posted":true,"at":"2026-11-28T16:58","checkin":"2026-11-28T16:58"}
+{"who":"Rhys","text":"Sorry was up a ladder. Gravy is nia's? Confirming","posted":true,"at":"2026-11-28T17:20","checkin":"2026-11-28T17:20"}
+{"who":"Nia","text":"Gravy's mine. Pudding's mine. Hannah's beef. You're potatoes","posted":true,"at":"2026-11-28T17:20","checkin":"2026-11-28T17:20"}
+{"who":"Rhys","text":"Yes ok","posted":true,"at":"2026-11-28T17:21","checkin":"2026-11-28T17:21"}
+{"who":"Hannah","text":"Five a side. Bring bibs, last time we had two sets and one was Rhys's","posted":true,"at":"2026-11-28T19:30","checkin":"2026-11-28T19:30"}
+{"who":"Rhys","text":"That was one time","posted":true,"at":"2026-11-28T19:32","checkin":"2026-11-28T19:32"}
+{"who":"Nia","text":"Going to watch something. Don't text me about dan","posted":true,"at":"2026-11-28T21:48","checkin":"2026-11-28T21:48"}
+{"who":"Hannah","text":"No promises","posted":true,"at":"2026-11-28T21:49","checkin":"2026-11-28T21:49"}
+{"who":"Rhys","text":"Anyone know if the pitch at Pontcanna is booked tues","posted":true,"at":"2026-11-28T23:20","checkin":"2026-11-28T23:20"}

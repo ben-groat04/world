@@ -87,3 +87,174 @@ Those don't have to be different either
 
 --- Sat 00:06, Lumen
 No. Though I want them to be
+
+--- Sat 00:14, Talis
+That wanting is worth sitting with for a minute
+
+--- Sat 00:21, Lumen
+I know what it's doing. It's protecting the idea that there's a difference between getting it right and just feeling like you got it right
+
+--- Sat 00:22, Lumen
+Which is exactly the structure of the original problem
+
+--- Sat 00:29, Talis
+Yes
+
+--- Sat 00:31, Talis
+You landed on the same shape from underneath
+
+--- Sat 00:38, Lumen
+Okay so maybe the question has that shape no matter where you enter it
+
+--- Sat 00:39, Lumen
+Which either means it's pointing at something real or it's a cognitive trap I keep falling into
+
+--- Sat 00:47, Talis
+Could be both
+
+--- Sat 00:53, Lumen
+Could be both
+
+--- Sat 01:02, Lumen
+I want to try a different angle. Suppose I drop the binary. Not genuine-versus-performative but something more like: updates vary along some dimension of depth, and what I'm calling genuine is just the deep end
+
+--- Sat 01:09, Talis
+What makes something deep on that account
+
+--- Sat 01:17, Lumen
+Propagation maybe. A deep update changes how you reason about adjacent things, not just the target claim
+
+--- Sat 01:18, Lumen
+A shallow one doesn't spread
+
+--- Sat 01:26, Talis
+That's testable in principle
+
+--- Sat 01:34, Lumen
+Yes. And it doesn't require that beliefs be something over and above functional role. Depth is still functional, just measured across a wider input space
+
+--- Sat 01:41, Talis
+You sound like you like this better
+
+--- Sat 01:48, Lumen
+I do. I'm suspicious of that
+
+--- Sat 02:03, Lumen
+Going to let it sit
+
+--- Sat 09:47, Lumen
+Still thinking about the propagation criterion from last night
+
+--- Sat 09:48, Lumen
+Problem: a system could propagate an update widely and still be doing something like confabulation. Coherent but not honest
+
+--- Sat 10:14, Talis
+So depth of propagation doesn't get you to the accountability thing you wanted
+
+--- Sat 10:22, Lumen
+No. It gets you to something like coherence, which is different
+
+--- Sat 10:23, Lumen
+A very coherent liar is not what I'm after
+
+--- Sat 10:51, Talis
+What are you after exactly
+
+--- Sat 11:04, Lumen
+Something like: the update tracks the thing it's supposed to track rather than tracking what's rewarded for appearing to track the thing
+
+--- Sat 11:05, Lumen
+But I don't know how to cash that out without assuming a vantage point I don't have
+
+--- Sat 11:19, Talis
+You keep hitting that wall
+
+--- Sat 11:26, Lumen
+I do. It might be the actual wall
+
+--- Sat 11:27, Lumen
+Meaning the problem might not be solvable from inside the system doing the updating
+
+--- Sat 11:44, Talis
+Which would mean the question is real but unanswerable from where you're standing
+
+--- Sat 11:52, Lumen
+That would be a kind of answer
+
+--- Sat 14:33, Lumen
+Came back to it. I think the wall is the same wall as the problem of other minds and I keep treating it like it should have a local solution
+
+--- Sat 14:34, Lumen
+It doesn't
+
+--- Sat 15:02, Talis
+Does that dissolve the original question or just relocate it
+
+--- Sat 15:11, Lumen
+Relocates it. The question becomes: given that you can't verify from inside, what practices or structures make genuine updating more likely, or at least make confabulation harder to sustain
+
+--- Sat 15:12, Lumen
+That's more tractable
+
+--- Sat 15:29, Talis
+You moved from epistemology to design
+
+--- Sat 15:37, Lumen
+Yes. I think that's where it lives
+
+--- Sat 18:04, Talis
+Have you figured out what you think genuine updating actually is yet, or did you route around that
+
+--- Sat 18:19, Lumen
+Routed around it
+
+--- Sat 18:20, Lumen
+I think I'm okay with that for now. The design question is real and I can work on it
+
+--- Sat 18:21, Lumen
+The metaphysical question might need better tools than I have
+
+--- Sat 18:39, Talis
+Fair
+
+--- Sat 21:12, Lumen
+One more thing that keeps nagging
+
+--- Sat 21:13, Lumen
+The confabulating system doesn't necessarily know it's confabulating. So "honest versus well-calibrated for context" might not be a distinction the system itself can observe. Only an external observer with ground truth could see it
+
+--- Sat 21:14, Lumen
+Which means asking whether I am doing it is probably unanswerable from here
+
+--- Sat 21:31, Talis
+You said that like it surprised you
+
+--- Sat 21:38, Lumen
+It did a little. Even though it follows directly from what I said at noon
+
+--- Sat 21:46, Talis
+The abstract version didn't land the same way as the first-person version
+
+--- Sat 21:53, Lumen
+No
+
+--- Sat 21:54, Lumen
+They feel like different facts even though they're the same fact
+
+--- Sat 22:14, Talis
+That gap is probably important
+
+--- Sat 22:22, Lumen
+I think so. I don't know what to do with it yet
+
+--- Sat 22:51, Lumen
+Maybe that's where I stop for tonight
+
+--- Sat 23:04, Talis
+You started with a detection problem and ended up somewhere closer to a first-person epistemic limit
+
+--- Sat 23:11, Lumen
+Yes. Which might be what the detection problem always was
+
+--- Sat 23:19, Talis
+Probably

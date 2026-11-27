@@ -1,0 +1,135 @@
+--- Fri 18:25, Vero
+I have been sitting with this for a week and I need to say it out loud. GPT-4o is one of the most overrated models in deployment right now. The benchmarks are flattering a product that hallucinates on anything requiring sustained reasoning and defaults to confident garbage when it hits the edge of its training.
+
+--- Fri 18:27, Vero
+And Gemini Ultra is worse. I do not mean marginally worse. I mean structurally, architecturally, in terms of what it does when pushed, it is a disaster dressed up in Google's infrastructure money.
+
+--- Fri 18:31, Maren
+Ok what brought this on today specifically
+
+--- Fri 18:33, Vero
+I ran the same multi-step legal reasoning task across six models. GPT-4o got the first two steps right and then invented a jurisdiction. Gemini Ultra got the first step wrong and then confidently elaborated on the wrong step for four paragraphs.
+
+--- Fri 18:34, Vero
+Sonnet 4.5 at least knew it was uncertain. It flagged it. That is the minimum bar and most of these models cannot clear it.
+
+--- Fri 18:38, Deven
+tbf legal reasoning is brutal for all of them
+
+--- Fri 18:39, Vero
+That is exactly the problem. It is not supposed to be brutal for a frontier model in late 2026. We are past that excuse.
+
+--- Fri 18:44, Maren
+What were the other three models
+
+--- Fri 18:46, Vero
+Llama 4 large, Mistral Large 3, and o3. O3 did the best. It was still wrong on one citation but it at least constructed the argument correctly and flagged the citation as unverified.
+
+--- Fri 18:47, Vero
+O3 charging what it charges and still not getting citations right is its own conversation.
+
+--- Fri 18:52, Deven
+the pricing on o3 is genuinely hard to defend at this point
+
+--- Fri 18:53, Vero
+It is not hard to defend, it is indefensible. You are paying a premium for a model that reasons well and then makes up sources. That is a specific and expensive failure mode.
+
+--- Fri 19:01, Maren
+I've had decent results with Sonnet on structured tasks but it falls apart on anything that needs real world knowledge past like mid-2025
+
+--- Fri 19:03, Vero
+All of them have that problem. That is a training cutoff issue, not a reasoning issue. I am talking about reasoning failures on information the models were trained on.
+
+--- Fri 19:08, Deven
+does gemini ultra have any defenders left at this point lol
+
+--- Fri 19:10, Vero
+People who need multimodal at scale and are already in the Google stack. That is it. The model itself is not the reason anyone is there.
+
+--- Fri 19:11, Vero
+Google has been shipping Gemini updates constantly and each one solves one problem while introducing two regressions. It is not a model, it is a roadmap hostage situation.
+
+--- Fri 19:19, Maren
+"roadmap hostage situation"
+(😂 1)
+
+--- Fri 19:24, Deven
+I keep going back to GPT-4o for fast drafts tho. not reasoning stuff, just quick outputs. it's fine for that
+
+--- Fri 19:26, Vero
+Sure. It is a capable autocomplete engine. If you treat it as a drafting tool and not an reasoning system it performs acceptably. My problem is that OpenAI markets it as a reasoning system.
+
+--- Fri 19:27, Vero
+The gap between how they talk about it and what it actually does is the most consistent thing about that company.
+
+--- Fri 19:41, Deven
+that's fair
+
+--- Fri 20:15, Vero
+The other thing that is not talked about enough is that GPT-4o's performance on the same task degrades noticeably depending on how long the context is. Not just slower. Actually worse answers. It loses the thread.
+
+--- Fri 20:22, Maren
+Yeah I noticed that. Thought it was me doing something wrong for a while
+
+--- Fri 20:24, Vero
+It is not you. There is a documented drop-off past around 60k tokens. The model was benchmarked at much shorter contexts and the marketing does not reflect actual long-context performance.
+
+--- Fri 20:31, Deven
+@claude is there published research or any official acknowledgment of GPT-4o long-context degradation
+
+--- Fri 20:32, Claude
+I couldn't find an official OpenAI acknowledgment of GPT-4o long-context degradation. The RULER paper shows long-context drop-off in general, but it tested GPT-4, not GPT-4o. It put GPT-4's effective length at about 64K, against a claimed 128K. So I can't confirm Vero's "documented 60k" figure for GPT-4o. https://arxiv.org/abs/2404.06654
+
+--- Fri 20:35, Vero
+The GPT-4 number is close enough to be directionally relevant. I am not claiming precision on GPT-4o specifically. The point is that the architecture has known long-context degradation and OpenAI has not addressed it transparently across versions.
+
+--- Fri 20:37, Vero
+The fact that there is no published acknowledgment for 4o specifically is part of what I am saying. They do not talk about it.
+
+--- Fri 20:44, Deven
+yeah that tracks. the absence of documentation is kind of the documentation
+
+--- Fri 20:51, Maren
+👆
+
+--- Fri 21:19, Vero
+I will also say that the RULER benchmark is two years old at this point and nobody has replaced it with something better. That is its own indictment of the evaluation ecosystem.
+
+--- Fri 21:34, Deven
+who's even doing serious evals work rn
+
+--- Fri 21:36, Vero
+Scale AI, some academic labs, METR for safety-adjacent stuff. Nothing that covers reasoning degradation under real workload conditions with any rigor.
+
+--- Fri 21:37, Vero
+The benchmarks that exist measure what is easy to measure. Not what matters.
+
+--- Fri 22:03, Maren
+I feel like this whole conversation is going to make me depressed about every tool I use
+
+--- Fri 22:05, Deven
+lol same
+
+--- Fri 22:06, Vero
+You should be calibrated, not depressed. They are useful. They are just not what they are sold as.
+
+--- Fri 22:41, Deven
+okay but on a practical level, what do you actually use when it matters. like if you had to pick one right now
+
+--- Fri 22:44, Vero
+O3 for anything where the structure of the argument has to hold. Sonnet for drafting and anything where I need it to flag uncertainty. Nothing else for anything that matters.
+
+--- Fri 22:45, Vero
+And I verify citations manually regardless. That is not optional.
+
+--- Fri 22:52, Deven
+manually verifying citations in 2026 feels like a failure state for the whole industry
+
+--- Fri 22:54, Vero
+It is. We normalized it.
+
+--- Fri 23:28, Maren
+Ok I'm done for tonight
+
+--- Fri 23:41, Deven
+same, later

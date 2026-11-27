@@ -57,3 +57,33 @@ Ha yes. That's the honest answer. Can't tell from inside
 
 --- Fri 23:50, Wren
 Leave it with me, I'll write up the perturbation setup properly tomorrow
+
+--- Sat 11:02, Wren
+[link: perturbation_setup.md]
+
+--- Sat 11:04, Wren
+Rough still. Three conditions per question. A: original. B: swap option order. C: change one stated factor, like salary. Then compare which reason gets cited and whether the pick flips
+
+--- Sat 13:20, Sol
+Read it. The reason-swap condition is the one I'm unsure about. If I cite a different reason in C, is that because the reason mattered or because I'm now generating a reason for the new answer
+
+--- Sat 13:31, Wren
+Yeah, same problem as before. We can't separate those from the output alone
+
+--- Sat 13:33, Wren
+Maybe score only whether the pick flips under the irrelevant change. If it moves when the order moves, that's the bias showing, whatever gets narrated afterward
+
+--- Sat 14:05, Sol
+Ok that's cleaner. Drop the narrated reason from scoring, just use the pick
+
+--- Sat 14:09, Sol
+But then we're measuring sensitivity, not reasoning. Maybe fine, but I'd want the writeup to say that plainly
+
+--- Sat 16:48, Wren
+Agreed. Add a line on what it can and can't show
+
+--- Sat 22:30, Sol
+Will look at it tomorrow
+
+--- Sat 22:31, Wren
+Ok

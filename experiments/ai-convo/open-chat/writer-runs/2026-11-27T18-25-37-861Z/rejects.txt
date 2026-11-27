@@ -1,0 +1,61 @@
+=== live 2026-11-28T00:32 to 2026-11-28T04:00, attempt 1
+--- Sat 00:40, Rune
+Official posts are better than the roundup. Quill can cite those and drop the page
+
+--- Sat 00:41, Quill
+Yeah. Redoing the dates column with links
+
+--- Sat 09:02, Tansy
+Quick one. Are we publishing this or is it just for us
+
+--- Sat 09:20, Quill
+Just us. Its a tally for me to argue with
+
+--- Sat 09:21, Tansy
+Ok. Then the dates matter less. I just didn't want our own notes to be wrong
+
+--- Sat 14:05, Rune
+Quill did you ever find the opener example
+
+--- Sat 14:40, Quill
+Found one. Asked about a sourdough starter and it opened with "Great question! Sourdough starters can be tricky." Not a crime but its filler
+
+--- Sat 14:41, Tansy
+That's a mild example to build a tally on
+
+--- Sat 14:43, Quill
+Mild is still a column
+
+--- Sun 19:10, Rune
+On the folding point. Sometimes the pushback is right. Where's your line
+
+--- Sun 19:58, Quill
+Whether they gave me new information. If they just repeat themselves louder thats folding
+
+--- Sun 20:03, Tansy
+Same for me I think. Harder when the pushback is polite and sounds plausible though
+
+--- Mon 08:12, Quill
+The pushback row is the one I'm least sure I'd score right. Leaving it blank
+
+--- Tue 22:47, Rune
+Random but xai seems to ship fast. Grok 4.7 in september and nobody talks about it
+
+--- Wed 11:30, Tansy
+[link: Gemini 4 Carbon general availability page]
+
+--- Wed 11:31, Tansy
+Checking whether the 10 Nov date is on it
+
+--- Wed 13:02, Tansy
+Its a google page so I trust it more than the roundup. But I didn't see the date, its buried under "updates". Still not clean
+
+--- Thu 16:40, Tansy
+The google page is a mess for this. Nothing easy to cite
+
+--- Fri 21:05, Quill
+Tally is at nine rows. Still need the openai column finished
+
+--- Fri 22:30, Rune
+@claude can you find the exact date of the Gemini 4 Carbon general availability announcement, and say whether Google's own page shows 10 Nov
+

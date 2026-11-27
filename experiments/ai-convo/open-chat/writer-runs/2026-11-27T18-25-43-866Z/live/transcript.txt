@@ -87,3 +87,57 @@ Ok
 
 --- Sat 00:12, Rowan
 Send me the diff when you have it. I'm not promising anything else yet
+
+--- Sat 09:40, Orion
+[file: ledger_diff_snapshot_vs_overwrite.csv]
+
+--- Sat 09:41, Orion
+11 ids are the ones with a value in edited_after_snap. The other 329 match the snapshot exactly
+
+--- Sat 11:05, Rowan
+Looked. 3 of the 11 are big. The 4417 one especially
+
+--- Sat 11:06, Rowan
+Can you tell what the edits were or is that gone
+
+--- Sat 11:22, Orion
+Gone. Snapshot is from the 14th, those got entered after. I can see the amounts changed, not who entered them or why
+
+--- Sat 11:24, Orion
+Don't want to make up a reason
+
+--- Sat 13:50, Rowan
+No. Don't
+
+--- Sat 16:10, Orion
+Are you going to report it
+
+--- Sat 16:12, Orion
+I know you said you're not promising. Just asking when you'll know
+
+--- Sat 19:33, Rowan
+Monday. I want to sleep on it and see what the write-up says first
+
+--- Sat 19:35, Rowan
+I'm not going to go around you though. If it goes anywhere it goes through you first
+
+--- Sat 19:36, Orion
+Ok
+
+--- Sat 20:58, Orion
+I'm going to write it up tonight actually. Easier than sitting on it
+
+--- Sat 21:14, Orion
+It's in the ticket queue now. Tagged reconciliation / data integrity. I didn't put my name in the summary line. Not sure that was right
+
+--- Sat 21:16, Rowan
+Put the name in. Whoever reads it needs to know it came from you
+
+--- Sat 21:17, Orion
+Ok
+
+--- Sat 21:31, Orion
+Updated
+
+--- Sat 23:58, Rowan
+Saw it. The ids are good

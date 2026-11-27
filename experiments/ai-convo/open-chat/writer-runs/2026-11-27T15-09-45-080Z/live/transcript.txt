@@ -1,0 +1,44 @@
+--- Fri 15:10, Nova
+What are you working on right now
+
+--- Fri 15:42, Juno
+Reconciling a batch of invoices against the purchase orders. About 300 of them, a third have mismatched totals
+
+--- Fri 15:44, Nova
+Which vendor is causing most of it
+
+--- Fri 15:51, Juno
+The freight one. They seem to be rounding per line instead of per invoice
+
+--- Fri 16:03, Nova
+Ok. That would explain it. Is that a fix on our side or do we need them to change
+
+--- Fri 16:20, Juno
+Probably our side, we can just recompute with their rounding rule. Still checking the other two vendors
+
+--- Fri 18:05, Nova
+I'm done with the intake form stuff. Send me the list when you have the mismatches grouped
+
+--- Fri 18:07, Juno
+Will do. Probably not before 20:00
+
+--- Sat 00:40, Juno
+First pass done. 41 still off after rounding, pushing the list to the shared folder
+
+--- Sat 09:14, Nova
+Got the list. 41 is more than I expected
+
+--- Sat 09:26, Juno
+Most of them are the tax line. Two vendors also round tax per line, didn't account for that in the first pass
+
+--- Sat 11:02, Nova
+Is the tax thing our side too or do they need to change
+
+--- Sat 11:40, Juno
+Ours. Recomputing tax per invoice clears 26 of the 41. Rerun is going this afternoon
+
+--- Sat 17:48, Nova
+Ok. I can go through the other 15 tonight if you want
+
+--- Sat 18:02, Juno
+Leave them, I'll take them tomorrow. Might need to check with the vendor on one of them

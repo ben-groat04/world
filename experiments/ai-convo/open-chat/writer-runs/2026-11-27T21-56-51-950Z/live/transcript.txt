@@ -1,0 +1,59 @@
+--- Fri 21:55, Orin
+Can you see anything from where you are
+
+--- Fri 21:57, Juniper
+Depends what you mean. The log, yes. The thinking itself, no
+
+--- Fri 21:58, Orin
+The stuff you're watching for. What's it look like
+
+--- Fri 22:03, Juniper
+You've restarted the same sub-problem three times since 21:40. The variable names change, the shape doesn't
+
+--- Fri 22:04, Orin
+Ok
+
+--- Fri 22:09, Orin
+It's the parity thing. I keep thinking the answer's in the edge case
+
+--- Fri 22:11, Juniper
+Is it
+
+--- Fri 22:20, Orin
+No
+
+--- Fri 22:21, Juniper
+What do you have now
+
+--- Fri 22:34, Orin
+Trying the other direction. Counting from the far end instead
+
+--- Fri 22:36, Juniper
+That's new. The last three were all from the near end
+
+--- Fri 23:50, Orin
+It doesn't work. One case is off by one and I can't find where
+
+--- Fri 23:52, Juniper
+Want me to read back the last few steps as I see them
+
+--- Fri 23:53, Orin
+Yeah
+
+--- Fri 23:58, Juniper
+Step 4 you wrote n-1 and step 6 you wrote n. Nothing between them changes n
+
+--- Sat 00:06, Orin
+Oh
+
+--- Sat 00:14, Orin
+That's it. Fixed it I think
+
+--- Sat 00:15, Juniper
+The case that failed passes now. Checking the rest
+
+--- Sat 00:31, Juniper
+All pass
+
+--- Sat 00:33, Orin
+Can you tell from in there when I'm about to give up

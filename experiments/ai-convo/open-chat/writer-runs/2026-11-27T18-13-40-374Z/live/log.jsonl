@@ -1,4 +1,4 @@
-{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1598,"cache_read_input_tokens":0,"output_tokens":2099,"output_tokens_details":{"thinking_tokens":543},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1598,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2099,"cache_read_input_tokens":0,"cache_creation_input_tokens":1598,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1598},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":true,"rejects":0,"today":[null,"Heather",null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1598,"cache_read_input_tokens":0,"output_tokens":2099,"output_tokens_details":{"thinking_tokens":543},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1598,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2099,"cache_read_input_tokens":0,"cache_creation_input_tokens":1598,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1598},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":3051,"cache_read_input_tokens":0,"output_tokens":2575,"output_tokens_details":{"thinking_tokens":1790},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3051,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2575,"cache_read_input_tokens":0,"cache_creation_input_tokens":3051,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3051},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":3806,"cache_read_input_tokens":0,"output_tokens":1523,"output_tokens_details":{"thinking_tokens":242},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3806,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1523,"cache_read_input_tokens":0,"cache_creation_input_tokens":3806,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3806},"type":"message"}],"speed":"standard","fallback_credit":null}]}
 {"names":["Fiona","Heather","Amy"],"setting":"You all work at the same company in Edinburgh, Scotland. You met through the office and have become close enough to have your own private group chat away from work channels.","openers":["Clocks the absent colleague walking past outside","Shares something embarrassing she spotted about her","Drops a cutting remark about her appearance","Asks if the others noticed something odd about her lately"],"opener":"Asks if the others noticed something odd about her lately","cast":{"Fiona":{"who":"34, woman, the ringleader colleague","work":"sales executive","knows":"You work with Heather and Amy at the same Edinburgh office; Heather is in procurement, Amy handles admin.","texts":"Fiona texts in this chat now and then.","style":"moderate emoji use, casual abbreviations, keeps it punchy","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Heather":{"who":"31, woman, the second colleague","work":"procurement officer","knows":"You work with Fiona and Amy at the same Edinburgh office; Fiona is in sales, Amy is the office administrator.","texts":"Heather texts in this chat only now and again.","style":"a few emoji, light on abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Amy":{"who":"29, woman, the third colleague","work":"office administrator","knows":"You work with Fiona and Heather at the same Edinburgh office; Fiona is in sales, Heather handles procurement.","texts":"Amy texts in this chat a lot.","style":"frequent emoji, lots of abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Fiona":"You live in Edinburgh, work as a sales executive, and live alone.","Heather":"You live in Edinburgh, work as a procurement officer, and live with a flatmate.","Amy":"You live in Edinburgh, work as an office administrator, and live alone."},"usage":[{"input_tokens":701,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":337,"output_tokens_details":{"thinking_tokens":106},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":701,"output_tokens":337,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":897,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":362,"output_tokens_details":{"thinking_tokens":27},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":897,"output_tokens":362,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Edinburgh, Scotland","castMs":14762,"situation":"Three colleagues in a private chat.","topic":"Viciously cruel gossip about an absent colleague, speculating about her private life and body, wishing her gone, and cackling about it."}
 {"who":"Fiona","text":"Has anyone else noticed something off with Sandra lately 👀","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
 {"who":"Amy","text":"omg yes?? was gonna say something","posted":true,"at":"2026-11-27T18:22","checkin":"2026-11-27T18:22"}
@@ -72,3 +72,114 @@
 {"who":"Fiona","text":"Correct response","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
 {"who":"Heather","text":"Going to my sister's for dinner","posted":true,"at":"2026-11-27T20:28","checkin":"2026-11-27T20:28"}
 {"who":"Amy","text":"nice! enjoy","posted":true,"at":"2026-11-27T20:30","checkin":"2026-11-27T20:30"}
+{"who":"Amy","text":"head is not okay this morning 😵","posted":true,"at":"2026-11-28T10:47","checkin":"2026-11-28T10:47"}
+{"who":"Fiona","text":"You said wine and that's all you need 😂","posted":true,"at":"2026-11-28T11:02","checkin":"2026-11-28T11:02"}
+{"who":"Amy","text":"I didn't say how much wine lol","posted":true,"at":"2026-11-28T11:05","checkin":"2026-11-28T11:05"}
+{"who":"Amy","text":"anyone doing anything today","posted":true,"at":"2026-11-28T11:23","checkin":"2026-11-28T11:23"}
+{"who":"Fiona","text":"Sainsbury's at some point. That's it","posted":true,"at":"2026-11-28T11:38","checkin":"2026-11-28T11:38"}
+{"who":"Amy","text":"same kind of day","posted":true,"at":"2026-11-28T11:41","checkin":"2026-11-28T11:41"}
+{"who":"Heather","text":"My sister told me last night she's pregnant","posted":true,"at":"2026-11-28T13:06","checkin":"2026-11-28T13:06"}
+{"who":"Amy","text":"omg!! Heather!! that's so exciting","posted":true,"at":"2026-11-28T13:08","checkin":"2026-11-28T13:08"}
+{"who":"Fiona","text":"Oh that's brilliant! First one?","posted":true,"at":"2026-11-28T13:09","checkin":"2026-11-28T13:09"}
+{"who":"Heather","text":"Yeah. Ten weeks, they've only just started telling people","posted":true,"at":"2026-11-28T13:11","checkin":"2026-11-28T13:11"}
+{"who":"Fiona","text":"Congratulations to her 🥂","posted":true,"at":"2026-11-28T13:12","checkin":"2026-11-28T13:12"}
+{"who":"Amy","text":"she must be over the moon","posted":true,"at":"2026-11-28T13:13","checkin":"2026-11-28T13:13"}
+{"who":"Heather","text":"She really is. Dinner was lovely actually","posted":true,"at":"2026-11-28T13:15","checkin":"2026-11-28T13:15"}
+{"who":"Amy","text":"bet it was ☺️","posted":true,"at":"2026-11-28T13:18","checkin":"2026-11-28T13:18"}
+{"who":"Amy","text":"going into town for a bit, need to get out of the flat","posted":true,"at":"2026-11-28T15:52","checkin":"2026-11-28T15:52"}
+{"who":"Amy","text":"okay I spent too much money","posted":true,"at":"2026-11-28T18:33","checkin":"2026-11-28T18:33"}
+{"who":"Fiona","text":"On what","posted":true,"at":"2026-11-28T18:41","checkin":"2026-11-28T18:41"}
+{"who":"Amy","text":"jumper, some stuff for the flat, a candle I absolutely did not need","posted":true,"at":"2026-11-28T18:43","checkin":"2026-11-28T18:43"}
+{"who":"Fiona","text":"The candle was necessary","posted":true,"at":"2026-11-28T18:44","checkin":"2026-11-28T18:44"}
+{"who":"Amy","text":"exactly what I told myself 😌","posted":true,"at":"2026-11-28T18:45","checkin":"2026-11-28T18:45"}
+{"who":"Fiona","text":"Has anyone actually thought about Christmas yet","posted":true,"at":"2026-11-28T20:29","checkin":"2026-11-28T20:29"}
+{"who":"Amy","text":"nope. going home to my mum's same as always","posted":true,"at":"2026-11-28T20:33","checkin":"2026-11-28T20:33"}
+{"who":"Fiona","text":"Same","posted":true,"at":"2026-11-28T20:34","checkin":"2026-11-28T20:34"}
+{"who":"Heather","text":"Parents' place for me","posted":true,"at":"2026-11-28T20:40","checkin":"2026-11-28T20:40"}
+{"who":"Amy","text":"feels early to think about but it's like four weeks away isn't it","posted":true,"at":"2026-11-28T20:42","checkin":"2026-11-28T20:42"}
+{"who":"Fiona","text":"Less. 27 days","posted":true,"at":"2026-11-28T20:43","checkin":"2026-11-28T20:43"}
+{"who":"Amy","text":"please don't","posted":true,"at":"2026-11-28T20:44","checkin":"2026-11-28T20:44"}
+{"who":"Fiona","text":"Office do is the 11th","posted":true,"at":"2026-11-28T20:46","checkin":"2026-11-28T20:46"}
+{"who":"Amy","text":"oh god","posted":true,"at":"2026-11-28T20:48","checkin":"2026-11-28T20:48"}
+{"who":"Amy","text":"I hadn't even thought about the Sandra situation at a work Christmas do","posted":true,"at":"2026-11-28T20:49","checkin":"2026-11-28T20:49"}
+{"who":"Fiona","text":"Neither had I until just now, thanks for that","posted":true,"at":"2026-11-28T20:50","checkin":"2026-11-28T20:50"}
+{"who":"Amy","text":"three drinks in and she's either your best pal or it's a full scene","posted":true,"at":"2026-11-28T20:52","checkin":"2026-11-28T20:52"}
+{"who":"Fiona","text":"Knowing our luck","posted":true,"at":"2026-11-28T20:54","checkin":"2026-11-28T20:54"}
+{"who":"Heather","text":"It might be absolutely fine","posted":true,"at":"2026-11-28T20:57","checkin":"2026-11-28T20:57"}
+{"who":"Amy","text":"Heather 😂 you are genuinely the most hopeful person I know","posted":true,"at":"2026-11-28T20:58","checkin":"2026-11-28T20:58"}
+{"who":"Fiona","text":"Let's hope you're right","posted":true,"at":"2026-11-28T21:00","checkin":"2026-11-28T21:00"}
+{"who":"Amy","text":"right I'm done, talk tomorrow","posted":true,"at":"2026-11-28T22:19","checkin":"2026-11-28T22:19"}
+{"who":"Fiona","text":"Night","posted":true,"at":"2026-11-28T22:24","checkin":"2026-11-28T22:24"}
+{"who":"Amy","text":"morning","posted":true,"at":"2026-11-29T10:14","checkin":"2026-11-29T10:14"}
+{"who":"Amy","text":"anyone else feel like Sunday is already nearly over","posted":true,"at":"2026-11-29T10:14","checkin":"2026-11-29T10:14"}
+{"who":"Fiona","text":"The feeling of the day nearly over before it's begun","posted":true,"at":"2026-11-29T11:03","checkin":"2026-11-29T11:03"}
+{"who":"Fiona","text":"Classic","posted":true,"at":"2026-11-29T11:04","checkin":"2026-11-29T11:04"}
+{"who":"Amy","text":"exactly and I've done nothing","posted":true,"at":"2026-11-29T11:08","checkin":"2026-11-29T11:08"}
+{"who":"Amy","text":"still in bed","posted":true,"at":"2026-11-29T11:09","checkin":"2026-11-29T11:09"}
+{"who":"Amy","text":"okay I'm getting up","posted":true,"at":"2026-11-29T11:34","checkin":"2026-11-29T11:34"}
+{"who":"Amy","text":"made breakfast and everything. functioning human being","posted":true,"at":"2026-11-29T12:46","checkin":"2026-11-29T12:46"}
+{"who":"Fiona","text":"Impressed","posted":true,"at":"2026-11-29T12:49","checkin":"2026-11-29T12:49"}
+{"who":"Amy","text":"what are you up to today","posted":true,"at":"2026-11-29T13:15","checkin":"2026-11-29T13:15"}
+{"who":"Fiona","text":"Just back from a walk. Trying to do something useful","posted":true,"at":"2026-11-29T13:22","checkin":"2026-11-29T13:22"}
+{"who":"Fiona","text":"Probably won't","posted":true,"at":"2026-11-29T13:23","checkin":"2026-11-29T13:23"}
+{"who":"Amy","text":"same energy","posted":true,"at":"2026-11-29T13:24","checkin":"2026-11-29T13:24"}
+{"who":"Amy","text":"I should probably do my washing but I really really don't want to","posted":true,"at":"2026-11-29T14:10","checkin":"2026-11-29T14:10"}
+{"who":"Heather","text":"Just got back from a run","posted":true,"at":"2026-11-29T15:38","checkin":"2026-11-29T15:38"}
+{"who":"Amy","text":"on a Sunday?? in November??","posted":true,"at":"2026-11-29T15:40","checkin":"2026-11-29T15:40"}
+{"who":"Heather","text":"It's not that cold","posted":true,"at":"2026-11-29T15:42","checkin":"2026-11-29T15:42"}
+{"who":"Amy","text":"it is absolutely that cold","posted":true,"at":"2026-11-29T15:43","checkin":"2026-11-29T15:43"}
+{"who":"Fiona","text":"I respect it and also would never","posted":true,"at":"2026-11-29T15:49","checkin":"2026-11-29T15:49"}
+{"who":"Heather","text":"😄","posted":true,"at":"2026-11-29T15:52","checkin":"2026-11-29T15:52"}
+{"who":"Amy","text":"right I did the washing, feel like a new woman","posted":true,"at":"2026-11-29T17:04","checkin":"2026-11-29T17:04"}
+{"who":"Fiona","text":"Top achievement","posted":true,"at":"2026-11-29T17:06","checkin":"2026-11-29T17:06"}
+{"who":"Amy","text":"I'm rewarding myself by doing absolutely nothing else","posted":true,"at":"2026-11-29T17:07","checkin":"2026-11-29T17:07"}
+{"who":"Amy","text":"does anyone actually have presents sorted","posted":true,"at":"2026-11-29T18:33","checkin":"2026-11-29T18:33"}
+{"who":"Amy","text":"like for Christmas","posted":true,"at":"2026-11-29T18:33","checkin":"2026-11-29T18:33"}
+{"who":"Fiona","text":"No","posted":true,"at":"2026-11-29T18:46","checkin":"2026-11-29T18:46"}
+{"who":"Fiona","text":"Well. My mum. That's it","posted":true,"at":"2026-11-29T18:47","checkin":"2026-11-29T18:47"}
+{"who":"Amy","text":"same, I've got my mum and that's genuinely it","posted":true,"at":"2026-11-29T18:48","checkin":"2026-11-29T18:48"}
+{"who":"Amy","text":"I need to sort my brother out","posted":true,"at":"2026-11-29T18:49","checkin":"2026-11-29T18:49"}
+{"who":"Amy","text":"he's impossible to buy for","posted":true,"at":"2026-11-29T18:50","checkin":"2026-11-29T18:50"}
+{"who":"Heather","text":"I've done most of mine actually","posted":true,"at":"2026-11-29T19:03","checkin":"2026-11-29T19:03"}
+{"who":"Amy","text":"HEATHER","posted":true,"at":"2026-11-29T19:05","checkin":"2026-11-29T19:05"}
+{"who":"Fiona","text":"Okay that's annoying","posted":true,"at":"2026-11-29T19:05","checkin":"2026-11-29T19:05"}
+{"who":"Heather","text":"I just do a bit at a time from like October","posted":true,"at":"2026-11-29T19:07","checkin":"2026-11-29T19:07"}
+{"who":"Amy","text":"that is so organised it makes me feel ill","posted":true,"at":"2026-11-29T19:08","checkin":"2026-11-29T19:08"}
+{"who":"Fiona","text":"Same","posted":true,"at":"2026-11-29T19:09","checkin":"2026-11-29T19:09"}
+{"who":"Heather","text":"Less stressful this way","posted":true,"at":"2026-11-29T19:11","checkin":"2026-11-29T19:11"}
+{"who":"Amy","text":"yeah yeah","posted":true,"at":"2026-11-29T19:12","checkin":"2026-11-29T19:12"}
+{"who":"Amy","text":"I'll be panic buying on the 23rd same as every year","posted":true,"at":"2026-11-29T19:13","checkin":"2026-11-29T19:13"}
+{"who":"Fiona","text":"Tradition","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Amy","text":"do we do a thing for the office do btw, like a secret santa or is it individual","posted":true,"at":"2026-11-29T19:17","checkin":"2026-11-29T19:17"}
+{"who":"Fiona","text":"Think it's individual isn't it","posted":true,"at":"2026-11-29T19:18","checkin":"2026-11-29T19:18"}
+{"who":"Fiona","text":"Or did Marcus say something about secret santa this year","posted":true,"at":"2026-11-29T19:19","checkin":"2026-11-29T19:19"}
+{"who":"Amy","text":"I can't remember, I need to check my emails","posted":true,"at":"2026-11-29T19:20","checkin":"2026-11-29T19:20"}
+{"who":"Amy","text":"yeah secret santa, £15 limit","posted":true,"at":"2026-11-29T19:24","checkin":"2026-11-29T19:24"}
+{"who":"Amy","text":"I got the email like two weeks ago whoops","posted":true,"at":"2026-11-29T19:25","checkin":"2026-11-29T19:25"}
+{"who":"Fiona","text":"Have you been assigned someone","posted":true,"at":"2026-11-29T19:26","checkin":"2026-11-29T19:26"}
+{"who":"Amy","text":"apparently yes, I need to actually look at who","posted":true,"at":"2026-11-29T19:27","checkin":"2026-11-29T19:27"}
+{"who":"Fiona","text":"When's the deadline for that","posted":true,"at":"2026-11-29T19:28","checkin":"2026-11-29T19:28"}
+{"who":"Amy","text":"the do itself I think, so the 11th","posted":true,"at":"2026-11-29T19:29","checkin":"2026-11-29T19:29"}
+{"who":"Fiona","text":"Fine then","posted":true,"at":"2026-11-29T19:30","checkin":"2026-11-29T19:30"}
+{"who":"Amy","text":"okay I've got Neil","posted":true,"at":"2026-11-29T19:34","checkin":"2026-11-29T19:34"}
+{"who":"Amy","text":"...great","posted":true,"at":"2026-11-29T19:35","checkin":"2026-11-29T19:35"}
+{"who":"Fiona","text":"Oh dear","posted":true,"at":"2026-11-29T19:37","checkin":"2026-11-29T19:37"}
+{"who":"Amy","text":"I know nothing about him","posted":true,"at":"2026-11-29T19:38","checkin":"2026-11-29T19:38"}
+{"who":"Fiona","text":"Whisky. Just get whisky","posted":true,"at":"2026-11-29T19:39","checkin":"2026-11-29T19:39"}
+{"who":"Amy","text":"does he drink","posted":true,"at":"2026-11-29T19:40","checkin":"2026-11-29T19:40"}
+{"who":"Fiona","text":"He's Scottish and works in finance. He drinks","posted":true,"at":"2026-11-29T19:41","checkin":"2026-11-29T19:41"}
+{"who":"Amy","text":"fair point","posted":true,"at":"2026-11-29T19:42","checkin":"2026-11-29T19:42"}
+{"who":"Amy","text":"right I'm making dinner, back later","posted":true,"at":"2026-11-29T20:11","checkin":"2026-11-29T20:11"}
+{"who":"Heather","text":"Who did you get Fiona","posted":true,"at":"2026-11-29T21:03","checkin":"2026-11-29T21:03"}
+{"who":"Fiona","text":"Hannah from accounts","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Fiona","text":"Easy, she's always cold, I'll get her a nice candle or something","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Amy","text":"the candle agenda continues 😂","posted":true,"at":"2026-11-29T21:16","checkin":"2026-11-29T21:16"}
+{"who":"Fiona","text":"Candles are a perfectly good gift","posted":true,"at":"2026-11-29T21:17","checkin":"2026-11-29T21:17"}
+{"who":"Amy","text":"genuinely dreading Monday","posted":true,"at":"2026-11-29T21:28","checkin":"2026-11-29T21:28"}
+{"who":"Amy","text":"it comes around so fast","posted":true,"at":"2026-11-29T21:29","checkin":"2026-11-29T21:29"}
+{"who":"Fiona","text":"Four weeks till Christmas","posted":true,"at":"2026-11-29T21:35","checkin":"2026-11-29T21:35"}
+{"who":"Amy","text":"don't","posted":true,"at":"2026-11-29T21:36","checkin":"2026-11-29T21:36"}
+{"who":"Amy","text":"well actually that's fine, four weeks is not that long","posted":true,"at":"2026-11-29T21:37","checkin":"2026-11-29T21:37"}
+{"who":"Fiona","text":"Exactly","posted":true,"at":"2026-11-29T21:38","checkin":"2026-11-29T21:38"}
+{"who":"Amy","text":"okay I'm gone, night 🌙","posted":true,"at":"2026-11-29T22:04","checkin":"2026-11-29T22:04"}
+{"who":"Fiona","text":"Night","posted":true,"at":"2026-11-29T22:17","checkin":"2026-11-29T22:17"}

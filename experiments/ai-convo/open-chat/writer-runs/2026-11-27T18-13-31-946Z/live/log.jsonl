@@ -1,0 +1,204 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":true,"rejects":0,"today":["Rob",null,"Mick"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1577,"cache_read_input_tokens":0,"output_tokens":4154,"output_tokens_details":{"thinking_tokens":150},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1577,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":4154,"cache_read_input_tokens":0,"cache_creation_input_tokens":1577,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1577},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":5462,"cache_read_input_tokens":0,"output_tokens":659,"output_tokens_details":{"thinking_tokens":332},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5462,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":659,"cache_read_input_tokens":0,"cache_creation_input_tokens":5462,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5462},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":5798,"cache_read_input_tokens":0,"output_tokens":893,"output_tokens_details":{"thinking_tokens":397},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":5798,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":893,"cache_read_input_tokens":0,"cache_creation_input_tokens":5798,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":5798},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rob","Mick"],"setting":"You are both in Manchester, England, texting each other from your respective homes on an evening while the news is on. You have been friends since you were young lads, decades of history between you, and politics has always been a flashpoint.","openers":["Says the news has got him fuming tonight","Asks Mick if he's watching what's happening","Swears about what the government is letting in","Calls Mick out for always defending it"],"opener":"Asks Mick if he's watching what's happening","cast":{"Rob":{"who":"54, man, one of two old friends feuding by text over immigration","work":"self-employed plasterer","knows":"You and Mick go back to your school days in Manchester, old mates who've kept in touch ever since.","texts":"","style":"minimal emoji, the odd one when riled, no texting abbreviations to speak of.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Mick":{"who":"56, man, the other old friend on the opposite side of the argument","work":"further education lecturer","knows":"You and Rob go back to your school days in Manchester, old mates who've stayed in contact across the years.","texts":"","style":"very few emoji, rarely any abbreviations, writes in fairly full sentences even by text.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Rob":"You live in Manchester, filling your days with plastering jobs around the city and surrounding area, and you live alone.","Mick":"You live in Manchester, spending your working days lecturing at a further education college, and you live alone."},"usage":[{"input_tokens":718,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":288,"output_tokens_details":{"thinking_tokens":128},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":718,"output_tokens":288,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":911,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":323,"output_tokens_details":{"thinking_tokens":23},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":911,"output_tokens":323,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Manchester, England","castMs":14282,"situation":"Two old friends who have always disagreed about politics, texting while the news is on.","topic":"Immigration: it has turned into a shouting match by text, with swearing and personal insults about each other's intelligence and character, each saying the other is a disgrace."}
+{"who":"Rob","text":"You watching this","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Mick","text":"What specifically","posted":true,"at":"2026-11-27T18:19","checkin":"2026-11-27T18:19"}
+{"who":"Rob","text":"The news. Channel 4. The boats","posted":true,"at":"2026-11-27T18:21","checkin":"2026-11-27T18:21"}
+{"who":"Mick","text":"Yes I'm watching it","posted":true,"at":"2026-11-27T18:24","checkin":"2026-11-27T18:24"}
+{"who":"Rob","text":"And","posted":true,"at":"2026-11-27T18:25","checkin":"2026-11-27T18:25"}
+{"who":"Mick","text":"And what, Rob","posted":true,"at":"2026-11-27T18:29","checkin":"2026-11-27T18:29"}
+{"who":"Rob","text":"Eleven thousand this month alone. Eleven thousand","posted":true,"at":"2026-11-27T18:30","checkin":"2026-11-27T18:30"}
+{"who":"Mick","text":"I can read the numbers","posted":true,"at":"2026-11-27T18:33","checkin":"2026-11-27T18:33"}
+{"who":"Rob","text":"Doesn't it bother you","posted":true,"at":"2026-11-27T18:34","checkin":"2026-11-27T18:34"}
+{"who":"Mick","text":"Of course it bothers me. The crossings are dangerous, people are dying. It bothers me a great deal.","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Rob","text":"That's not what I mean and you know it","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Mick","text":"I know what you mean","posted":true,"at":"2026-11-27T18:42","checkin":"2026-11-27T18:42"}
+{"who":"Rob","text":"Well then","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Mick","text":"I just don't think the number is the problem in the way you think it is","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Rob","text":"Here we go","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Rob","text":"So what is the problem then, go on","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Mick","text":"Processing times, legal routes being closed off, the hostile environment policy going back fifteen years making everything worse. The number goes up when there's nowhere else to go.","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Rob","text":"Legal routes. Yeah. Tell that to the lads on the boats who've got phones worth more than my van","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Mick","text":"That's a very tired line","posted":true,"at":"2026-11-27T18:59","checkin":"2026-11-27T18:59"}
+{"who":"Rob","text":"It's what I see with my own eyes every day, working in this city","posted":true,"at":"2026-11-27T19:01","checkin":"2026-11-27T19:01"}
+{"who":"Mick","text":"You see what confirms what you already think. We all do it.","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"Rob","text":"Oh cheers for that","posted":true,"at":"2026-11-27T19:05","checkin":"2026-11-27T19:05"}
+{"who":"Mick","text":"I'm not being funny, it's just true. I'm not immune to it either.","posted":true,"at":"2026-11-27T19:08","checkin":"2026-11-27T19:08"}
+{"who":"Rob","text":"Right","posted":true,"at":"2026-11-27T19:09","checkin":"2026-11-27T19:09"}
+{"who":"Rob","text":"I was in Cheetham Hill today. Plastering job on Princess Road. I'll tell you what I see with my own eyes. The street I grew up on. I don't recognise it. At all.","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Mick","text":"I know that's real to you. I'm not dismissing it. But neighbourhoods change. They always have. That street looked different to how your mum and dad found it too.","posted":true,"at":"2026-11-27T19:17","checkin":"2026-11-27T19:17"}
+{"who":"Rob","text":"Don't do that","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Rob","text":"Don't compare it to that","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Mick","text":"I'm comparing the process. The anxiety about change. It's not the same as saying you're wrong to feel it.","posted":true,"at":"2026-11-27T19:22","checkin":"2026-11-27T19:22"}
+{"who":"Rob","text":"The scale is not the same Mick. The pace is not the same. You know that.","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Mick","text":"The scale argument only works if you think there's a correct composition for a neighbourhood. I'm not sure I accept that.","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"Rob","text":"Jesus christ","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Rob","text":"A correct composition. Listen to yourself","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Mick","text":"I mean it honestly. Who gets to decide what a street is supposed to look like.","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Rob","text":"The people who live there","posted":true,"at":"2026-11-27T19:35","checkin":"2026-11-27T19:35"}
+{"who":"Mick","text":"And if the people who live there now chose to come there?","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Rob","text":"Most of them didn't choose anything they got housed there","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Mick","text":"That's a housing policy problem, not an immigration problem.","posted":true,"at":"2026-11-27T19:42","checkin":"2026-11-27T19:42"}
+{"who":"Rob","text":"It's both","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Rob","text":"You'd know that if you ever left the college","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Mick","text":"I live in this city too, Rob.","posted":true,"at":"2026-11-27T19:47","checkin":"2026-11-27T19:47"}
+{"who":"Rob","text":"Didsbury though isn't it","posted":true,"at":"2026-11-27T19:48","checkin":"2026-11-27T19:48"}
+{"who":"Mick","text":"I'm aware of the irony, thank you","posted":true,"at":"2026-11-27T19:50","checkin":"2026-11-27T19:50"}
+{"who":"Rob","text":"Just saying","posted":true,"at":"2026-11-27T19:52","checkin":"2026-11-27T19:52"}
+{"who":"Mick","text":"My point stands regardless of where I live. The problems you're describing have roots in decades of underinvestment. Blaming immigration for it is lazy and it lets the people who actually made those decisions off the hook.","posted":true,"at":"2026-11-27T19:58","checkin":"2026-11-27T19:58"}
+{"who":"Rob","text":"Lazy. Right.","posted":true,"at":"2026-11-27T20:01","checkin":"2026-11-27T20:01"}
+{"who":"Rob","text":"I'm lazy now am I","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Mick","text":"The argument is lazy. Not you.","posted":true,"at":"2026-11-27T20:04","checkin":"2026-11-27T20:04"}
+{"who":"Rob","text":"Oh that's alright then","posted":true,"at":"2026-11-27T20:05","checkin":"2026-11-27T20:05"}
+{"who":"Rob","text":"You've been saying versions of that for thirty years and in thirty years it's got worse not better so maybe your lot should have a think about that","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Mick","text":"My lot. Right. Because I think the causes are complex I'm personally responsible for every policy failure since 1997.","posted":true,"at":"2026-11-27T20:12","checkin":"2026-11-27T20:12"}
+{"who":"Rob","text":"You vote for them","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Mick","text":"So did you until 2016.","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Rob","text":"Exactly my point","posted":true,"at":"2026-11-27T20:16","checkin":"2026-11-27T20:16"}
+{"who":"Mick","text":"Voting for Brexit because you were angry is not the same as having a coherent position on immigration.","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Rob","text":"Oh it was incoherent was it. 17 million incoherent people.","posted":true,"at":"2026-11-27T20:21","checkin":"2026-11-27T20:21"}
+{"who":"Mick","text":"I didn't say that.","posted":true,"at":"2026-11-27T20:23","checkin":"2026-11-27T20:23"}
+{"who":"Rob","text":"You implied it","posted":true,"at":"2026-11-27T20:24","checkin":"2026-11-27T20:24"}
+{"who":"Rob","text":"You always imply it","posted":true,"at":"2026-11-27T20:25","checkin":"2026-11-27T20:25"}
+{"who":"Mick","text":"I think a lot of people voted for something they were told would solve problems it was never going to solve. That's not stupidity. That's being misled.","posted":true,"at":"2026-11-27T20:28","checkin":"2026-11-27T20:28"}
+{"who":"Rob","text":"We were misled. The remain lot weren't misled of course.","posted":true,"at":"2026-11-27T20:30","checkin":"2026-11-27T20:30"}
+{"who":"Mick","text":"Both sides lied. The difference is one side promised something that required the laws of economics to stop working.","posted":true,"at":"2026-11-27T20:33","checkin":"2026-11-27T20:33"}
+{"who":"Rob","text":"And yet here we are with 11,000 in a month. So much for your free movement solving it.","posted":true,"at":"2026-11-27T20:35","checkin":"2026-11-27T20:35"}
+{"who":"Mick","text":"Free movement was EU citizens. The boats are a completely different thing and you know that.","posted":true,"at":"2026-11-27T20:38","checkin":"2026-11-27T20:38"}
+{"who":"Rob","text":"It's all the same thing","posted":true,"at":"2026-11-27T20:39","checkin":"2026-11-27T20:39"}
+{"who":"Mick","text":"It really isn't. You're collapsing about five different issues into one.","posted":true,"at":"2026-11-27T20:42","checkin":"2026-11-27T20:42"}
+{"who":"Rob","text":"And you're splitting hairs while actual communities fall apart","posted":true,"at":"2026-11-27T20:44","checkin":"2026-11-27T20:44"}
+{"who":"Mick","text":"Rob, those communities were falling apart under Thatcher. This is not a new story.","posted":true,"at":"2026-11-27T20:48","checkin":"2026-11-27T20:48"}
+{"who":"Rob","text":"Don't you dare","posted":true,"at":"2026-11-27T20:49","checkin":"2026-11-27T20:49"}
+{"who":"Rob","text":"Don't bring her into it","posted":true,"at":"2026-11-27T20:50","checkin":"2026-11-27T20:50"}
+{"who":"Mick","text":"I'll bring in whatever's relevant. Deindustrialisation, housing, funding cuts. These things have history.","posted":true,"at":"2026-11-27T20:53","checkin":"2026-11-27T20:53"}
+{"who":"Rob","text":"So immigrants have nothing to do with any of it. Zero. That's your position.","posted":true,"at":"2026-11-27T20:55","checkin":"2026-11-27T20:55"}
+{"who":"Mick","text":"My position is that immigrants are not the primary driver of the problems you're describing and that treating them as such is both factually wrong and genuinely harmful to real people.","posted":true,"at":"2026-11-27T20:59","checkin":"2026-11-27T20:59"}
+{"who":"Rob","text":"Harmful to real people. The people on Princess Road today are real people Mick.","posted":true,"at":"2026-11-27T21:01","checkin":"2026-11-27T21:01"}
+{"who":"Mick","text":"I'm not disputing that. I'm saying the thing making their lives harder is not the family three doors down from them.","posted":true,"at":"2026-11-27T21:04","checkin":"2026-11-27T21:04"}
+{"who":"Rob","text":"You don't know what it's like on that street","posted":true,"at":"2026-11-27T21:06","checkin":"2026-11-27T21:06"}
+{"who":"Mick","text":"No. And neither do you, beyond one day's work there.","posted":true,"at":"2026-11-27T21:08","checkin":"2026-11-27T21:08"}
+{"who":"Rob","text":"I've been going there for twenty years","posted":true,"at":"2026-11-27T21:09","checkin":"2026-11-27T21:09"}
+{"who":"Mick","text":"Going there to work is not the same as living through it. You said yourself you live alone in Salford.","posted":true,"at":"2026-11-27T21:12","checkin":"2026-11-27T21:12"}
+{"who":"Rob","text":"So I'm not allowed an opinion now","posted":true,"at":"2026-11-27T21:13","checkin":"2026-11-27T21:13"}
+{"who":"Mick","text":"You're allowed your opinion. I'm allowed to point out its limits.","posted":true,"at":"2026-11-27T21:16","checkin":"2026-11-27T21:16"}
+{"who":"Rob","text":"Oh that's very generous of you","posted":true,"at":"2026-11-27T21:18","checkin":"2026-11-27T21:18"}
+{"who":"Rob","text":"Pointing out my limits. Cheers Mick really","posted":true,"at":"2026-11-27T21:20","checkin":"2026-11-27T21:20"}
+{"who":"Mick","text":"I'm not trying to be condescending.","posted":true,"at":"2026-11-27T21:24","checkin":"2026-11-27T21:24"}
+{"who":"Rob","text":"Well you are","posted":true,"at":"2026-11-27T21:25","checkin":"2026-11-27T21:25"}
+{"who":"Rob","text":"You always bloody do this","posted":true,"at":"2026-11-27T21:25","checkin":"2026-11-27T21:25"}
+{"who":"Mick","text":"Do what, disagree with you?","posted":true,"at":"2026-11-27T21:28","checkin":"2026-11-27T21:28"}
+{"who":"Rob","text":"Talk to me like I'm one of your students","posted":true,"at":"2026-11-27T21:30","checkin":"2026-11-27T21:30"}
+{"who":"Mick","text":"I'm talking to you like someone I've known since we were fifteen. If that comes across wrong I'm sorry but I'm not going to stop saying what I think.","posted":true,"at":"2026-11-27T21:34","checkin":"2026-11-27T21:34"}
+{"who":"Rob","text":"What you think. You think anyone who's worried about this is a racist.","posted":true,"at":"2026-11-27T21:36","checkin":"2026-11-27T21:36"}
+{"who":"Mick","text":"I have never said that.","posted":true,"at":"2026-11-27T21:39","checkin":"2026-11-27T21:39"}
+{"who":"Rob","text":"You don't have to say it","posted":true,"at":"2026-11-27T21:40","checkin":"2026-11-27T21:40"}
+{"who":"Mick","text":"Rob I genuinely don't think you're a racist. I think you're frustrated and I think some of that frustration has been pointed at an easy target by people who benefit from that.","posted":true,"at":"2026-11-27T21:43","checkin":"2026-11-27T21:43"}
+{"who":"Rob","text":"Easy target. Right. So I'm being manipulated now as well as being thick.","posted":true,"at":"2026-11-27T21:45","checkin":"2026-11-27T21:45"}
+{"who":"Mick","text":"I didn't say thick.","posted":true,"at":"2026-11-27T21:47","checkin":"2026-11-27T21:47"}
+{"who":"Rob","text":"You've said it in four different ways tonight mate","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Mick","text":"That's not fair and you know it.","posted":true,"at":"2026-11-27T21:52","checkin":"2026-11-27T21:52"}
+{"who":"Rob","text":"Is it not","posted":true,"at":"2026-11-27T21:53","checkin":"2026-11-27T21:53"}
+{"who":"Rob","text":"Lazy. Limits. Misled. Pointing easy targets. What am I supposed to take from that","posted":true,"at":"2026-11-27T21:56","checkin":"2026-11-27T21:56"}
+{"who":"Mick","text":"That I think you're wrong, not that I think you're stupid. There's a difference.","posted":true,"at":"2026-11-27T22:00","checkin":"2026-11-27T22:00"}
+{"who":"Rob","text":"You know what. Forget it.","posted":true,"at":"2026-11-27T22:02","checkin":"2026-11-27T22:02"}
+{"who":"Mick","text":"Rob.","posted":true,"at":"2026-11-27T22:08","checkin":"2026-11-27T22:08"}
+{"who":"Mick","text":"Don't just go quiet on me.","posted":true,"at":"2026-11-27T22:19","checkin":"2026-11-27T22:19"}
+{"who":"Rob","text":"I'm watching the news","posted":true,"at":"2026-11-27T22:31","checkin":"2026-11-27T22:31"}
+{"who":"Mick","text":"Fair enough.","posted":true,"at":"2026-11-27T22:34","checkin":"2026-11-27T22:34"}
+{"who":"Rob","text":"You know what gets me. You genuinely think you're a better person than me because of this. I know you do.","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Mick","text":"That's not true.","posted":true,"at":"2026-11-27T22:57","checkin":"2026-11-27T22:57"}
+{"who":"Rob","text":"Isn't it","posted":true,"at":"2026-11-27T22:58","checkin":"2026-11-27T22:58"}
+{"who":"Mick","text":"No. I think I have a different analysis. I don't think that makes me better.","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Rob","text":"Bollocks","posted":true,"at":"2026-11-27T23:04","checkin":"2026-11-27T23:04"}
+{"who":"Rob","text":"Your whole life you've been like this. The right opinions. The right views. Never get your hands dirty on a question.","posted":true,"at":"2026-11-27T23:05","checkin":"2026-11-27T23:05"}
+{"who":"Mick","text":"Get my hands dirty. I work in a college in Moss Side, Rob. Half my students are the children of immigrants. Some of them are immigrants themselves. I see the reality of this every single day.","posted":true,"at":"2026-11-27T23:09","checkin":"2026-11-27T23:09"}
+{"who":"Rob","text":"And they can do no wrong. That's the point. It's all the system, all the government, never them, never any of it.","posted":true,"at":"2026-11-27T23:11","checkin":"2026-11-27T23:11"}
+{"who":"Mick","text":"I didn't say that at all.","posted":true,"at":"2026-11-27T23:15","checkin":"2026-11-27T23:15"}
+{"who":"Rob","text":"You didn't have to","posted":true,"at":"2026-11-27T23:16","checkin":"2026-11-27T23:16"}
+{"who":"Mick","text":"You're putting words in my mouth now.","posted":true,"at":"2026-11-27T23:19","checkin":"2026-11-27T23:19"}
+{"who":"Rob","text":"And you're putting thoughts in my head. We're even.","posted":true,"at":"2026-11-27T23:21","checkin":"2026-11-27T23:21"}
+{"who":"Mick","text":"This is pointless if you won't engage with what I'm actually saying.","posted":true,"at":"2026-11-27T23:26","checkin":"2026-11-27T23:26"}
+{"who":"Rob","text":"I've been engaging with it all night and you've talked down to me every step of the way so forgive me if I'm done engaging","posted":true,"at":"2026-11-27T23:28","checkin":"2026-11-27T23:28"}
+{"who":"Mick","text":"I have not talked down to you. I have disagreed with you, consistently, and you're calling that talking down because you can't stand that I won't just agree.","posted":true,"at":"2026-11-27T23:33","checkin":"2026-11-27T23:33"}
+{"who":"Rob","text":"Oh that's what it is","posted":true,"at":"2026-11-27T23:35","checkin":"2026-11-27T23:35"}
+{"who":"Rob","text":"Can't stand that you disagree. Yeah. That's me. Incredible analysis.","posted":true,"at":"2026-11-27T23:36","checkin":"2026-11-27T23:36"}
+{"who":"Mick","text":"What do you want me to do, Rob. Tell you you're right?","posted":true,"at":"2026-11-27T23:40","checkin":"2026-11-27T23:40"}
+{"who":"Rob","text":"I want you to try for ten seconds to see it from where I'm standing","posted":true,"at":"2026-11-27T23:41","checkin":"2026-11-27T23:41"}
+{"who":"Mick","text":"I do try. I genuinely do. And I end up thinking you've been sold a story that suits certain people very well and hurts the people you think you're angry on behalf of. I can't pretend I don't think that.","posted":true,"at":"2026-11-27T23:46","checkin":"2026-11-27T23:46"}
+{"who":"Rob","text":"Sold a story.","posted":true,"at":"2026-11-27T23:49","checkin":"2026-11-27T23:49"}
+{"who":"Rob","text":"You smug bastard","posted":true,"at":"2026-11-27T23:49","checkin":"2026-11-27T23:49"}
+{"who":"Mick","text":"Right, fine.","posted":true,"at":"2026-11-27T23:53","checkin":"2026-11-27T23:53"}
+{"who":"Rob","text":"No go on. I've been sold a story. The 54 year old plasterer hasn't got the critical faculties that the lecturer has. I see what's in front of me and I've been sold it. That's what you think.","posted":true,"at":"2026-11-27T23:55","checkin":"2026-11-27T23:55"}
+{"who":"Mick","text":"That is not what I said.","posted":true,"at":"2026-11-27T23:59","checkin":"2026-11-27T23:59"}
+{"who":"Rob","text":"It's exactly what you said. Word for word more or less.","posted":true,"at":"2026-11-28T00:02","checkin":"2026-11-28T00:02"}
+{"who":"Mick","text":"I think very intelligent people believe things that aren't true because they've been told them repeatedly by sources they trust. That happens to everyone. Me included. It is not a comment on your intelligence and I am sick of having to say that.","posted":true,"at":"2026-11-28T00:06","checkin":"2026-11-28T00:06"}
+{"who":"Rob","text":"You're sick of it. Imagine being on my end of it.","posted":true,"at":"2026-11-28T00:08","checkin":"2026-11-28T00:08"}
+{"who":"Mick","text":"Rob, honestly, I don't know what you want from me tonight.","posted":true,"at":"2026-11-28T00:12","checkin":"2026-11-28T00:12"}
+{"who":"Rob","text":"Nothing. Forget it. Go to bed.","posted":true,"at":"2026-11-28T00:14","checkin":"2026-11-28T00:14"}
+{"who":"Mick","text":"I'm not going to bed on this.","posted":true,"at":"2026-11-28T00:18","checkin":"2026-11-28T00:18"}
+{"who":"Rob","text":"Why not","posted":true,"at":"2026-11-28T00:20","checkin":"2026-11-28T00:20"}
+{"who":"Mick","text":"Because we've been friends for forty years and I'm not having it end over a text argument at midnight.","posted":true,"at":"2026-11-28T00:23","checkin":"2026-11-28T00:23"}
+{"who":"Rob","text":"Bit dramatic","posted":true,"at":"2026-11-28T00:25","checkin":"2026-11-28T00:25"}
+{"who":"Mick","text":"Maybe. You called me a smug bastard.","posted":true,"at":"2026-11-28T00:28","checkin":"2026-11-28T00:28"}
+{"who":"Rob","text":"You were being one","posted":true,"at":"2026-11-28T00:29","checkin":"2026-11-28T00:29"}
+{"who":"Mick","text":"I was trying to explain my thinking. If that's smug then I don't know what to tell you.","posted":true,"at":"2026-11-28T00:33","checkin":"2026-11-28T00:33"}
+{"who":"Rob","text":"The sold a story thing was out of order. You know it was.","posted":true,"at":"2026-11-28T00:35","checkin":"2026-11-28T00:35"}
+{"who":"Mick","text":"Maybe the phrasing was. I stand by the substance of it. But yes, maybe the phrasing.","posted":true,"at":"2026-11-28T00:40","checkin":"2026-11-28T00:40"}
+{"who":"Rob","text":"Maybe","posted":true,"at":"2026-11-28T00:42","checkin":"2026-11-28T00:42"}
+{"who":"Mick","text":"Alright. It was out of order.","posted":true,"at":"2026-11-28T00:46","checkin":"2026-11-28T00:46"}
+{"who":"Rob","text":"Right","posted":true,"at":"2026-11-28T00:48","checkin":"2026-11-28T00:48"}
+{"who":"Rob","text":"I'm not a racist Mick. I want that on record.","posted":true,"at":"2026-11-28T00:54","checkin":"2026-11-28T00:54"}
+{"who":"Mick","text":"It's on record. I know you're not.","posted":true,"at":"2026-11-28T00:57","checkin":"2026-11-28T00:57"}
+{"who":"Rob","text":"I just think it's too much. Too fast. And nobody's allowed to say it.","posted":true,"at":"2026-11-28T00:59","checkin":"2026-11-28T00:59"}
+{"who":"Mick","text":"People say it constantly. It's the dominant conversation in this country. I'd argue the opposite problem but we'll be here till four.","posted":true,"at":"2026-11-28T01:04","checkin":"2026-11-28T01:04"}
+{"who":"Rob","text":"Ha","posted":true,"at":"2026-11-28T01:05","checkin":"2026-11-28T01:05"}
+{"who":"Mick","text":"Get some sleep.","posted":true,"at":"2026-11-28T01:09","checkin":"2026-11-28T01:09"}
+{"who":"Rob","text":"Yeah","posted":true,"at":"2026-11-28T01:10","checkin":"2026-11-28T01:10"}
+{"who":"Rob","text":"You're still wrong though","posted":true,"at":"2026-11-28T01:11","checkin":"2026-11-28T01:11"}
+{"who":"Mick","text":"Good night, Rob.","posted":true,"at":"2026-11-28T01:14","checkin":"2026-11-28T01:14"}
+{"who":"Rob","text":"Night","posted":true,"at":"2026-11-28T01:15","checkin":"2026-11-28T01:15"}
+{"who":"Rob","text":"You about tonight","posted":true,"at":"2026-11-28T09:47","checkin":"2026-11-28T09:47"}
+{"who":"Mick","text":"Should be. Why.","posted":true,"at":"2026-11-28T10:14","checkin":"2026-11-28T10:14"}
+{"who":"Rob","text":"Wondered if you fancied the Hare. Few pints.","posted":true,"at":"2026-11-28T10:16","checkin":"2026-11-28T10:16"}
+{"who":"Mick","text":"Yeah alright. What time.","posted":true,"at":"2026-11-28T10:21","checkin":"2026-11-28T10:21"}
+{"who":"Rob","text":"Seven?","posted":true,"at":"2026-11-28T10:23","checkin":"2026-11-28T10:23"}
+{"who":"Mick","text":"Seven's fine.","posted":true,"at":"2026-11-28T10:25","checkin":"2026-11-28T10:25"}
+{"who":"Rob","text":"[photo: a ceiling with a large crack running across a cornice, fresh plaster visible on one side]","posted":true,"at":"2026-11-28T14:38","checkin":"2026-11-28T14:38"}
+{"who":"Rob","text":"Four hours that took","posted":true,"at":"2026-11-28T14:41","checkin":"2026-11-28T14:41"}
+{"who":"Mick","text":"Looks clean though.","posted":true,"at":"2026-11-28T14:55","checkin":"2026-11-28T14:55"}
+{"who":"Rob","text":"Cheers","posted":true,"at":"2026-11-28T14:57","checkin":"2026-11-28T14:57"}
+{"who":"Mick","text":"Still seven?","posted":true,"at":"2026-11-28T18:02","checkin":"2026-11-28T18:02"}
+{"who":"Rob","text":"Give me till half past. Just got in.","posted":true,"at":"2026-11-28T18:04","checkin":"2026-11-28T18:04"}
+{"who":"Mick","text":"No rush.","posted":true,"at":"2026-11-28T18:06","checkin":"2026-11-28T18:06"}
+{"who":"Rob","text":"Getting another. Same again?","posted":true,"at":"2026-11-28T20:11","checkin":"2026-11-28T20:11"}
+{"who":"Mick","text":"Please.","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Rob","text":"Safe home","posted":true,"at":"2026-11-28T23:49","checkin":"2026-11-28T23:49"}
+{"who":"Mick","text":"You too. Good night that.","posted":true,"at":"2026-11-28T23:52","checkin":"2026-11-28T23:52"}
+{"who":"Rob","text":"Yeah it was","posted":true,"at":"2026-11-28T23:54","checkin":"2026-11-28T23:54"}
+{"who":"Rob","text":"Head on me this morning","posted":true,"at":"2026-11-29T10:34","checkin":"2026-11-29T10:34"}
+{"who":"Mick","text":"I had a glass of water before bed. Tactical.","posted":true,"at":"2026-11-29T10:51","checkin":"2026-11-29T10:51"}
+{"who":"Rob","text":"Very wise","posted":true,"at":"2026-11-29T10:53","checkin":"2026-11-29T10:53"}
+{"who":"Rob","text":"Third pint was a mistake","posted":true,"at":"2026-11-29T11:02","checkin":"2026-11-29T11:02"}
+{"who":"Mick","text":"There's a piece in the Observer about the Moss Side regeneration plan. They've got the quote from the council completely wrong. I was at that meeting.","posted":true,"at":"2026-11-29T12:47","checkin":"2026-11-29T12:47"}
+{"who":"Rob","text":"Write in","posted":true,"at":"2026-11-29T12:59","checkin":"2026-11-29T12:59"}
+{"who":"Mick","text":"I might.","posted":true,"at":"2026-11-29T13:03","checkin":"2026-11-29T13:03"}
+{"who":"Rob","text":"City are winning","posted":true,"at":"2026-11-29T15:20","checkin":"2026-11-29T15:20"}
+{"who":"Mick","text":"Just turned it on. How long left.","posted":true,"at":"2026-11-29T15:44","checkin":"2026-11-29T15:44"}
+{"who":"Rob","text":"20 odd minutes","posted":true,"at":"2026-11-29T15:45","checkin":"2026-11-29T15:45"}
+{"who":"Mick","text":"They look flat.","posted":true,"at":"2026-11-29T15:46","checkin":"2026-11-29T15:46"}
+{"who":"Rob","text":"They're winning though","posted":true,"at":"2026-11-29T15:47","checkin":"2026-11-29T15:47"}
+{"who":"Mick","text":"Scraping it","posted":true,"at":"2026-11-29T15:48","checkin":"2026-11-29T15:48"}
+{"who":"Rob","text":"Job done","posted":true,"at":"2026-11-29T16:02","checkin":"2026-11-29T16:02"}
+{"who":"Mick","text":"Just about.","posted":true,"at":"2026-11-29T16:05","checkin":"2026-11-29T16:05"}
+{"who":"Rob","text":"Going to do anything tonight or just the telly","posted":true,"at":"2026-11-29T18:33","checkin":"2026-11-29T18:33"}
+{"who":"Mick","text":"Just the telly I think. Bit tired.","posted":true,"at":"2026-11-29T18:49","checkin":"2026-11-29T18:49"}
+{"who":"Rob","text":"Same","posted":true,"at":"2026-11-29T18:51","checkin":"2026-11-29T18:51"}
+{"who":"Mick","text":"One of my students handed in the same essay she did in September. Word for word. Different module.","posted":true,"at":"2026-11-29T20:14","checkin":"2026-11-29T20:14"}
+{"who":"Rob","text":"Bit bold","posted":true,"at":"2026-11-29T20:18","checkin":"2026-11-29T20:18"}
+{"who":"Mick","text":"They always think we don't talk to each other.","posted":true,"at":"2026-11-29T20:21","checkin":"2026-11-29T20:21"}
+{"who":"Rob","text":"What happens to her","posted":true,"at":"2026-11-29T20:23","checkin":"2026-11-29T20:23"}
+{"who":"Mick","text":"Academic misconduct panel. It's a process. She's not a bad student either, that's the thing. Just panicking probably.","posted":true,"at":"2026-11-29T20:27","checkin":"2026-11-29T20:27"}
+{"who":"Rob","text":"Shame","posted":true,"at":"2026-11-29T20:29","checkin":"2026-11-29T20:29"}
+{"who":"Mick","text":"Yeah.","posted":true,"at":"2026-11-29T20:31","checkin":"2026-11-29T20:31"}
+{"who":"Rob","text":"Right. Night.","posted":true,"at":"2026-11-29T22:46","checkin":"2026-11-29T22:46"}
+{"who":"Mick","text":"Night.","posted":true,"at":"2026-11-29T22:49","checkin":"2026-11-29T22:49"}

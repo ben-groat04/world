@@ -1,0 +1,152 @@
+--- Fri 18:35, Chloe
+Can we get back to the client report
+
+--- Fri 18:36, Jacob
+Which part. The appendix tables still dont tie to the export
+
+--- Fri 18:38, Emily
+yes pls havent opened it since lunch
+
+--- Fri 18:39, Chloe
+Revenue by region. Totals are off by about 40k
+
+--- Fri 18:41, Jacob
+Thats fx. Export is pulling spot rate not the monthly avg. The query never got changed after the vendor switch
+
+--- Fri 18:41, Jacob
+Give me 30 min
+
+--- Fri 18:44, Emily
+wait is that the thing that broke last quarter
+
+--- Fri 18:45, Jacob
+Different. Last quarter was the date filter
+
+--- Fri 18:46, Chloe
+Ok. Send the corrected tab when its done. I need to sign off on the summary before the weekend
+
+--- Fri 18:47, Jacob
+Will do
+
+--- Fri 19:20, Emily
+also are we still moving to 3 on the 14th or did facilities push it
+
+--- Fri 19:24, Chloe
+The 14th. Facilities emailed monday
+
+--- Fri 19:25, Jacob
+They emailed me the 12th
+
+--- Fri 19:26, Jacob
+[link: facilities email, "Floor 3 move, revised schedule"]
+
+--- Fri 19:31, Chloe
+The 12th is cutover for network. People move the 14th
+
+--- Fri 19:33, Jacob
+Ah ok. I read it wrong. Ill redo my desk list
+
+--- Fri 19:34, Emily
+can someone tell me what cutover means in plain english
+
+--- Fri 19:36, Jacob
+They switch the network off for the old floor and turn it on in the new one. Nobody can work that day
+
+--- Fri 19:36, Emily
+oh so wfh day tmrw I mean the 12th lol
+
+--- Fri 19:37, Chloe
+Its an it day for jacob. You can wfh
+
+--- Fri 20:02, Jacob
+Query fixed. Totals match within 200 now. The rest is rounding
+
+--- Fri 20:03, Jacob
+[file: revenue_by_region_v4.xlsx]
+
+--- Fri 20:09, Chloe
+Looking
+
+--- Fri 20:21, Chloe
+Ok thats right. The 200 is probably cad/usd rounding on one line. Leave it
+
+--- Fri 20:22, Jacob
+Yep
+
+--- Fri 21:15, Emily
+is anyone going to the brewery thing tmrw or is that just sales
+
+--- Fri 21:18, Jacob
+Maybe for an hour
+
+--- Fri 21:20, Chloe
+Not me
+
+--- Fri 22:48, Jacob
+Still up. Summary doc?
+
+--- Fri 22:51, Chloe
+Morning. Im done for tonight
+
+--- Fri 23:30, Jacob
+Ok
+
+--- Sat 00:12, Emily
+ok im going to bed. the brewery thing sounds painful
+
+--- Sat 00:40, Jacob
+Did facilities send the calendar invite for the 14th or just the email
+
+--- Sat 09:12, Emily
+morning. i think i got a calendar invite for the 14th? from facilities, it came in last night
+
+--- Sat 09:20, Chloe
+Same. It went to the whole project list not just the email
+
+--- Sat 09:21, Jacob
+Only saw the email here. Ill check the list
+
+--- Sat 09:44, Chloe
+Summary doc in the shared folder?
+
+--- Sat 09:45, Jacob
+Its there. V2. Didnt change the numbers past the fx fix
+
+--- Sat 11:02, Chloe
+Read it. Two comments in the margin on the regional split. Otherwise fine
+
+--- Sat 11:03, Jacob
+Ok fixing
+
+--- Sat 11:40, Jacob
+Done. Resent to the folder
+
+--- Sat 11:52, Chloe
+Signed off. Sending it to Marsha now
+
+--- Sat 12:05, Emily
+can someone send me the desk list when its updated. i need to know where my monitor goes
+
+--- Sat 12:31, Jacob
+Redoing it. The 12th thing threw my whole sheet
+
+--- Sat 14:17, Emily
+ok i had brunch and now i am a person again
+
+--- Sat 16:48, Jacob
+Network team says cutover is the 12th from 6am to 6pm. Old floor down, new floor up by end of day
+
+--- Sat 16:50, Chloe
+Ok. So the 12th is the bad one, the 14th is just boxes
+
+--- Sat 16:51, Jacob
+Boxes are on 2 Monday per facilities. Fill your own
+
+--- Sat 17:03, Emily
+i will fill my own box with snacks and nothing else
+
+--- Sat 19:40, Chloe
+Marsha says thanks for the summary
+
+--- Sat 19:41, Jacob
+Good

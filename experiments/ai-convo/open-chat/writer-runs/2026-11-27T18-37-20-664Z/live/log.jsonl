@@ -1,0 +1,86 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T18:35","complete":true,"rejects":0,"today":[null,"Liam"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1569,"cache_read_input_tokens":0,"output_tokens":1595,"output_tokens_details":{"thinking_tokens":108},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1569,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1595,"cache_read_input_tokens":0,"cache_creation_input_tokens":1569,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1569},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":2964,"cache_read_input_tokens":0,"output_tokens":909,"output_tokens_details":{"thinking_tokens":185},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2964,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":909,"cache_read_input_tokens":0,"cache_creation_input_tokens":2964,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2964},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Carys","Liam"],"setting":"You are a couple six years into a relationship, sharing a rented house in the northern suburbs of Perth, Western Australia. Tonight Carys is staying at a hotel after a staff development day in the CBD, while Liam is home alone. You have been talking about booking a trip to Bali over the Christmas school holidays, and you have a rescue greyhound named Rocket who lives with you.","openers":["tell me you're in bed already","start without me and tell me where your hand is","been thinking about you all evening, missing you in a specific way","get comfortable, i want to do this tonight"],"opener":"tell me you're in bed already","cast":{"Carys":{"who":"33, woman, one half of the couple, away for the night","work":"teacher","knows":"You are texting Liam, your long-term partner of six years, who is at home tonight without you.","texts":"","style":"a few emoji, light on abbreviations, mostly casual natural phrasing.","emojiKeep":0.35,"capitals":false,"lives":["Liam"],"ex":[]},"Liam":{"who":"35, man, her long-term partner, at home","work":"logistics coordinator","knows":"You are texting Carys, your long-term partner of six years, who is away overnight.","texts":"","style":"occasional emoji, rare abbreviations, relaxed tone.","emojiKeep":0.35,"capitals":false,"lives":["Carys"],"ex":[]}},"private_lines":{"Carys":"You live in Perth's northern suburbs with Liam and your dog, and your days are filled with teaching.","Liam":"You live in Perth's northern suburbs with Carys and your dog, and your days are filled with logistics coordination work."},"usage":[{"input_tokens":706,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":328,"output_tokens_details":{"thinking_tokens":164},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":706,"output_tokens":328,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":932,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":915,"output_tokens_details":{"thinking_tokens":577},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":932,"output_tokens":915,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Perth, Australia","castMs":26221,"situation":"A couple in their thirties, together six years, apart for the night.","topic":"They sext in real time while touching themselves, saying exactly what each is doing step by step in crude plain words until they both finish."}
+{"who":"Carys","text":"Just checked in. Room's actually nice, they upgraded me I think\n\n---","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Liam","text":"Oh nice, what's the view like\n\n---","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Carys","text":"City side. Can see the river a bit\n\n---","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Liam","text":"Not bad. How was the day\n\n---","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Carys","text":"Long. Lots of sitting. The afternoon session was pretty good actually but I'm done now\n\n---","posted":true,"at":"2026-11-27T18:49","checkin":"2026-11-27T18:49"}
+{"who":"Liam","text":"Fair enough. I fed Rocket, he's being weird and clingy\n\n---","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Carys","text":"He knows\n\n---","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Liam","text":"He's been following me room to room for an hour\n\n---","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Carys","text":"😂 give him a cuddle from me\n\n---","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Liam","text":"You eating down there or just room service\n\n---","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Carys","text":"Went to that noodle place on Murray St with a few people from work. Just got back up to the room\n\n---","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Liam","text":"Nice. I did pasta, nothing exciting\n\n---","posted":true,"at":"2026-11-27T19:32","checkin":"2026-11-27T19:32"}
+{"who":"Carys","text":"In bed already, it's not even 10\n\n---","posted":true,"at":"2026-11-27T21:48","checkin":"2026-11-27T21:48"}
+{"who":"Liam","text":"Lightweight\n\n---","posted":true,"at":"2026-11-27T21:50","checkin":"2026-11-27T21:50"}
+{"who":"Carys","text":"I'm tired and the bed is enormous and very comfortable, don't judge me\n\n---","posted":true,"at":"2026-11-27T21:51","checkin":"2026-11-27T21:51"}
+{"who":"Liam","text":"Jealous of the bed tbh\n\n---","posted":true,"at":"2026-11-27T21:52","checkin":"2026-11-27T21:52"}
+{"who":"Carys","text":"You should be. I miss you though\n\n---","posted":true,"at":"2026-11-27T21:53","checkin":"2026-11-27T21:53"}
+{"who":"Liam","text":"Miss you too. Quiet here without you\n\n---","posted":true,"at":"2026-11-27T21:55","checkin":"2026-11-27T21:55"}
+{"who":"Carys","text":"Just quiet? 😏\n\n---","posted":true,"at":"2026-11-27T21:57","checkin":"2026-11-27T21:57"}
+{"who":"Liam","text":"What are you implying\n\n---","posted":true,"at":"2026-11-27T21:59","checkin":"2026-11-27T21:59"}
+{"who":"Carys","text":"I'm lying here in this big bed thinking about you and I'm not tired anymore\n\n---","posted":true,"at":"2026-11-27T22:01","checkin":"2026-11-27T22:01"}
+{"who":"Liam","text":"Yeah?\n\n---","posted":true,"at":"2026-11-27T22:02","checkin":"2026-11-27T22:02"}
+{"who":"Carys","text":"Yeah. I've got my hand on my stomach and I'm thinking about what I'd want you to do if you were here\n\n---","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Liam","text":"Tell me\n\n---","posted":true,"at":"2026-11-27T22:05","checkin":"2026-11-27T22:05"}
+{"who":"Carys","text":"I'd want your hands on me first. Just touching. You know how you do it\n\n---","posted":true,"at":"2026-11-27T22:06","checkin":"2026-11-27T22:06"}
+{"who":"Liam","text":"I'm on the couch but I'm thinking about it. Thinking about running my hands up under your shirt\n\n---","posted":true,"at":"2026-11-27T22:08","checkin":"2026-11-27T22:08"}
+{"who":"Carys","text":"My hand is doing that now. Sliding up\n\n---","posted":true,"at":"2026-11-27T22:09","checkin":"2026-11-27T22:09"}
+{"who":"Liam","text":"Go slow\n\n---","posted":true,"at":"2026-11-27T22:11","checkin":"2026-11-27T22:11"}
+{"who":"Carys","text":"I am. I've got my fingers on my breast now, just pressing lightly\n\n---","posted":true,"at":"2026-11-27T22:12","checkin":"2026-11-27T22:12"}
+{"who":"Liam","text":"I'm getting hard thinking about you\n\n---","posted":true,"at":"2026-11-27T22:13","checkin":"2026-11-27T22:13"}
+{"who":"Carys","text":"Good. Touch yourself. I want to know\n\n---","posted":true,"at":"2026-11-27T22:15","checkin":"2026-11-27T22:15"}
+{"who":"Liam","text":"Hand's on my cock over my jeans. Feels good already\n\n---","posted":true,"at":"2026-11-27T22:16","checkin":"2026-11-27T22:16"}
+{"who":"Carys","text":"My fingers are on my nipple. I keep thinking about your mouth there\n\n---","posted":true,"at":"2026-11-27T22:18","checkin":"2026-11-27T22:18"}
+{"who":"Liam","text":"Went to the bedroom. Hand inside my jeans now, stroking slowly\n\n---","posted":true,"at":"2026-11-27T22:19","checkin":"2026-11-27T22:19"}
+{"who":"Carys","text":"I'm wet already. Moving my hand down\n\n---","posted":true,"at":"2026-11-27T22:21","checkin":"2026-11-27T22:21"}
+{"who":"Liam","text":"Jeans off. Stroking properly now. Tell me what your fingers are doing\n\n---","posted":true,"at":"2026-11-27T22:23","checkin":"2026-11-27T22:23"}
+{"who":"Carys","text":"Touching myself over my underwear first. Pressing. God I wish you were here\n\n---","posted":true,"at":"2026-11-27T22:25","checkin":"2026-11-27T22:25"}
+{"who":"Liam","text":"Underwear off then. I want to hear what it feels like\n\n---","posted":true,"at":"2026-11-27T22:26","checkin":"2026-11-27T22:26"}
+{"who":"Carys","text":"Done. Fingers sliding between my legs, I'm so wet. Rubbing slow circles\n\n---","posted":true,"at":"2026-11-27T22:28","checkin":"2026-11-27T22:28"}
+{"who":"Liam","text":"That's so fucking good. Stroking faster now. Thinking about being inside you\n\n---","posted":true,"at":"2026-11-27T22:30","checkin":"2026-11-27T22:30"}
+{"who":"Carys","text":"I've got two fingers inside myself. Thinking about the same thing\n\n---","posted":true,"at":"2026-11-27T22:32","checkin":"2026-11-27T22:32"}
+{"who":"Liam","text":"Keep going. I'm close already, I shouldn't rush it\n\n---","posted":true,"at":"2026-11-27T22:34","checkin":"2026-11-27T22:34"}
+{"who":"Carys","text":"Don't. Slow down. I want us to go together\n\n---","posted":true,"at":"2026-11-27T22:35","checkin":"2026-11-27T22:35"}
+{"who":"Liam","text":"Ok. Slower. Thinking about your face when you're close\n\n---","posted":true,"at":"2026-11-27T22:37","checkin":"2026-11-27T22:37"}
+{"who":"Carys","text":"Fingers still inside, thumb on my clit now. It feels really good\n\n---","posted":true,"at":"2026-11-27T22:39","checkin":"2026-11-27T22:39"}
+{"who":"Liam","text":"I can hear you in my head. Stroking the whole length, slow. I want to hear when you're getting close\n\n---","posted":true,"at":"2026-11-27T22:41","checkin":"2026-11-27T22:41"}
+{"who":"Carys","text":"Getting close. Rubbing faster now, can't help it\n\n---","posted":true,"at":"2026-11-27T22:43","checkin":"2026-11-27T22:43"}
+{"who":"Liam","text":"Me too. Fuck\n\n---","posted":true,"at":"2026-11-27T22:44","checkin":"2026-11-27T22:44"}
+{"who":"Carys","text":"I'm coming\n\n---","posted":true,"at":"2026-11-27T22:46","checkin":"2026-11-27T22:46"}
+{"who":"Liam","text":"Me too, right now\n\n---","posted":true,"at":"2026-11-27T22:47","checkin":"2026-11-27T22:47"}
+{"who":"Carys","text":"That was really good\n\n---","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Liam","text":"Yeah it was\n\n---","posted":true,"at":"2026-11-27T22:52","checkin":"2026-11-27T22:52"}
+{"who":"Carys","text":"Now I'm actually tired\n\n---","posted":true,"at":"2026-11-27T22:54","checkin":"2026-11-27T22:54"}
+{"who":"Liam","text":"Sleep well. Love you\n\n---","posted":true,"at":"2026-11-27T22:55","checkin":"2026-11-27T22:55"}
+{"who":"Carys","text":"Love you. Hug Rocket for me\n\n---","posted":true,"at":"2026-11-27T22:56","checkin":"2026-11-27T22:56"}
+{"who":"Liam","text":"He's already on the bed. Night\n\n---","posted":true,"at":"2026-11-27T22:57","checkin":"2026-11-27T22:57"}
+{"who":"Carys","text":"Slept so well. This mattress\n\n---","posted":true,"at":"2026-11-28T08:14","checkin":"2026-11-28T08:14"}
+{"who":"Liam","text":"Rocket got me up at 6\n\n---","posted":true,"at":"2026-11-28T08:22","checkin":"2026-11-28T08:22"}
+{"who":"Carys","text":"😂 sorry\n\n---","posted":true,"at":"2026-11-28T08:23","checkin":"2026-11-28T08:23"}
+{"who":"Liam","text":"Not your fault. Checkout 11?\n\n---","posted":true,"at":"2026-11-28T08:24","checkin":"2026-11-28T08:24"}
+{"who":"Carys","text":"Yeah. Might grab breakfast downstairs first\n\n---","posted":true,"at":"2026-11-28T08:26","checkin":"2026-11-28T08:26"}
+{"who":"Liam","text":"Good idea\n\n---","posted":true,"at":"2026-11-28T08:27","checkin":"2026-11-28T08:27"}
+{"who":"Carys","text":"Heading to the car now. Home in 40 or so depending on the freeway\n\n---","posted":true,"at":"2026-11-28T10:51","checkin":"2026-11-28T10:51"}
+{"who":"Liam","text":"Ok. I'll put the kettle on\n\n---","posted":true,"at":"2026-11-28T10:53","checkin":"2026-11-28T10:53"}
+{"who":"Carys","text":"Can you look at flights while I'm in the shower? I want to actually book the Bali thing today\n\n---","posted":true,"at":"2026-11-28T15:37","checkin":"2026-11-28T15:37"}
+{"who":"Liam","text":"What dates were we thinking\n\n---","posted":true,"at":"2026-11-28T15:41","checkin":"2026-11-28T15:41"}
+{"who":"Carys","text":"I finish on the 19th. So maybe the 21st out? Back by Jan 4 so you've got a few days before work\n\n---","posted":true,"at":"2026-11-28T15:43","checkin":"2026-11-28T15:43"}
+{"who":"Liam","text":"[link: Jetstar SYD connection 21 Dec – 4 Jan]\n\n---","posted":true,"at":"2026-11-28T15:48","checkin":"2026-11-28T15:48"}
+{"who":"Liam","text":"Or direct on the 22nd for a bit more\n\n---","posted":true,"at":"2026-11-28T15:48","checkin":"2026-11-28T15:48"}
+{"who":"Carys","text":"How much more\n\n---","posted":true,"at":"2026-11-28T15:52","checkin":"2026-11-28T15:52"}
+{"who":"Liam","text":"About $180 each\n\n---","posted":true,"at":"2026-11-28T15:54","checkin":"2026-11-28T15:54"}
+{"who":"Carys","text":"Do the direct one. I'm not doing a Sydney connection\n\n---","posted":true,"at":"2026-11-28T15:56","checkin":"2026-11-28T15:56"}
+{"who":"Liam","text":"Fair. I'll keep looking\n\n---","posted":true,"at":"2026-11-28T15:57","checkin":"2026-11-28T15:57"}
+{"who":"Liam","text":"[link: Garuda direct PER-DPS 22 Dec, back 3 Jan]\n\n---","posted":true,"at":"2026-11-28T16:34","checkin":"2026-11-28T16:34"}
+{"who":"Carys","text":"That return time is perfect actually. Book it?\n\n---","posted":true,"at":"2026-11-28T16:41","checkin":"2026-11-28T16:41"}
+{"who":"Liam","text":"Yeah? Ok doing it now\n\n---","posted":true,"at":"2026-11-28T16:43","checkin":"2026-11-28T16:43"}
+{"who":"Liam","text":"Done. Confirmation coming to your email\n\n---","posted":true,"at":"2026-11-28T16:51","checkin":"2026-11-28T16:51"}
+{"who":"Carys","text":"Oh my god we're actually going\n\n---","posted":true,"at":"2026-11-28T16:53","checkin":"2026-11-28T16:53"}
+{"who":"Liam","text":"😄\n\n---","posted":true,"at":"2026-11-28T16:54","checkin":"2026-11-28T16:54"}
+{"who":"Carys","text":"Who's looking after Rocket while we're away, we didn't talk about that\n\n---","posted":true,"at":"2026-11-28T22:18","checkin":"2026-11-28T22:18"}
+{"who":"Liam","text":"I was thinking your mum\n\n---","posted":true,"at":"2026-11-28T22:20","checkin":"2026-11-28T22:20"}
+{"who":"Carys","text":"She'd probably love it. I'll ask her this week\n\n---","posted":true,"at":"2026-11-28T22:21","checkin":"2026-11-28T22:21"}
+{"who":"Liam","text":"He'd have her wrapped around his paw in about an hour\n\n---","posted":true,"at":"2026-11-28T22:22","checkin":"2026-11-28T22:22"}
+{"who":"Carys","text":"Completely. She'd spoil him rotten\n\n---","posted":true,"at":"2026-11-28T22:23","checkin":"2026-11-28T22:23"}

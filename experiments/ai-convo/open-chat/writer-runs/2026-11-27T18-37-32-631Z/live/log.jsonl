@@ -1,0 +1,112 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T18:35","complete":true,"rejects":0,"today":[null,null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1677,"cache_read_input_tokens":0,"output_tokens":1676,"output_tokens_details":{"thinking_tokens":125},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1677,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1676,"cache_read_input_tokens":0,"cache_creation_input_tokens":1677,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1677},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":3115,"cache_read_input_tokens":0,"output_tokens":1059,"output_tokens_details":{"thinking_tokens":137},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3115,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1059,"cache_read_input_tokens":0,"cache_creation_input_tokens":3115,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3115},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Aoife","Tamsin","Lynsey"],"setting":"You're three friends who met at university in Edinburgh and have all stayed in the city since graduating. You're currently planning a joint birthday night out for Tamsin's upcoming 35th, debating venues and whether to do a meal first, and you've also been loosely organising a weekend trip to the Highlands sometime in the new year.","openers":["tell them what she just found out he did next","rant about seeing his car parked outside the pub","describe what she's fantasising doing to his stuff","ask if they're free tonight because she needs a vent"],"opener":"rant about seeing his car parked outside the pub","cast":{"Aoife":{"who":"32, woman, the one who was cheated on","work":"HR coordinator","knows":"Tamsin is a close friend from your uni days. Lynsey is a close friend from the same group.","texts":"Aoife texts in this chat now and then.","style":"a fair few emoji, minimal abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Tamsin":{"who":"34, woman, close friend egging her on","work":"estate agent","knows":"Aoife is a close friend from your uni days. Lynsey is a close friend from the same group.","texts":"Tamsin texts in this chat only now and again.","style":"lots of emoji, some abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Lynsey":{"who":"31, woman, close friend egging her on","work":"accountancy trainee","knows":"Aoife is a close friend from your uni days. Tamsin is a close friend from the same group.","texts":"Lynsey texts in this chat a lot.","style":"very few emoji, fairly casual but mostly typed out.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Aoife":"You live in a flat in Leith, working full-time as an HR coordinator, and are recently out of a relationship after being cheated on by your ex.","Tamsin":"You live in a flat in Stockbridge, working as an estate agent, and are currently helping plan your own upcoming 35th birthday night out with the group.","Lynsey":"You live in a shared flat in Morningside, doing your accountancy training while juggling study exams alongside work."},"usage":[{"input_tokens":704,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":376,"output_tokens_details":{"thinking_tokens":117},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":704,"output_tokens":376,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":946,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":465,"output_tokens_details":{"thinking_tokens":32},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":946,"output_tokens":465,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Edinburgh, Scotland","castMs":17339,"situation":"Three close friends in their thirties.","topic":"One of them was cheated on and vents violent revenge fantasies about her ex, hyperbolic and graphic, and the others egg her on with darker jokes."}
+{"who":"Aoife","text":"his car is outside the Teuchters right now 😤","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Aoife","text":"just walked past it. that horrible wee red golf","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Lynsey","text":"No way","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Aoife","text":"YES way. still has that dent in the passenger door as well","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Lynsey","text":"Are you going in","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Aoife","text":"I am NOT going in","posted":true,"at":"2026-11-27T18:42","checkin":"2026-11-27T18:42"}
+{"who":"Aoife","text":"I am standing outside like a psychopath looking at his car","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Lynsey","text":"Slash and burn","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Aoife","text":"genuinely considered it","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Lynsey","text":"What are you actually doing though, are you just standing there","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Aoife","text":"I walked away. I'm round the corner on Deanhaugh","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Aoife","text":"my heart is going so fast I feel sick","posted":true,"at":"2026-11-27T18:49","checkin":"2026-11-27T18:49"}
+{"who":"Lynsey","text":"Ok walk home, don't go back","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Aoife","text":"I know I know. I just want to key it so badly","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Lynsey","text":"I mean nobody is stopping you morally","posted":true,"at":"2026-11-27T18:54","checkin":"2026-11-27T18:54"}
+{"who":"Tamsin","text":"omg I just saw these 😤😤 key it","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Aoife","text":"you two are terrible influences and I love you","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Lynsey","text":"In my defence I said nobody is stopping you morally, there are other obstacles","posted":true,"at":"2026-11-27T18:58","checkin":"2026-11-27T18:58"}
+{"who":"Tamsin","text":"witnesses, cctv etc","posted":true,"at":"2026-11-27T19:01","checkin":"2026-11-27T19:01"}
+{"who":"Lynsey","text":"Exactly. Logistically complex","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Aoife","text":"I'm home. flat is cold, great","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"Tamsin","text":"pour something","posted":true,"at":"2026-11-27T19:06","checkin":"2026-11-27T19:06"}
+{"who":"Aoife","text":"ahead of you","posted":true,"at":"2026-11-27T19:07","checkin":"2026-11-27T19:07"}
+{"who":"Aoife","text":"do you think she was with him","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Lynsey","text":"Don't do that to yourself","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Aoife","text":"you're right. I know. changing the subject","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"Aoife","text":"Tamsin where are we on the birthday plans","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Tamsin","text":"ok so I looked at Timberyard for the dinner bit but it's quite pricey for a big group","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Lynsey","text":"How many are we now","posted":true,"at":"2026-11-27T19:32","checkin":"2026-11-27T19:32"}
+{"who":"Tamsin","text":"probably 9 or 10 if everyone comes","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Lynsey","text":"Timberyard might be a nightmare for that many tbh","posted":true,"at":"2026-11-27T19:35","checkin":"2026-11-27T19:35"}
+{"who":"Tamsin","text":"yeah that's what I thought. what about Noto","posted":true,"at":"2026-11-27T19:37","checkin":"2026-11-27T19:37"}
+{"who":"Aoife","text":"Noto is gorgeous 😍 bit loud though","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Lynsey","text":"Loud is fine it's a birthday","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Tamsin","text":"I'll see if they have availability for the 19th","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Aoife","text":"are we still thinking the 19th or would the 12th work better for people","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Lynsey","text":"12th I've got my exam results coming that week and honestly I might need a drink or I'll need to study I genuinely don't know","posted":true,"at":"2026-11-27T19:45","checkin":"2026-11-27T19:45"}
+{"who":"Tamsin","text":"19th it is then","posted":true,"at":"2026-11-27T19:46","checkin":"2026-11-27T19:46"}
+{"who":"Lynsey","text":"Honestly best for everyone","posted":true,"at":"2026-11-27T19:47","checkin":"2026-11-27T19:47"}
+{"who":"Tamsin","text":"Noto doesn't do bookings for groups over 8 apparently","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Aoife","text":"annoying","posted":true,"at":"2026-11-27T20:16","checkin":"2026-11-27T20:16"}
+{"who":"Lynsey","text":"What about The Kitchin","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Tamsin","text":"that's quite a commitment for a night where we want to end up dancing","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Lynsey","text":"Fair","posted":true,"at":"2026-11-27T20:20","checkin":"2026-11-27T20:20"}
+{"who":"Aoife","text":"Galvin Brasserie? easier, still nice","posted":true,"at":"2026-11-27T20:21","checkin":"2026-11-27T20:21"}
+{"who":"Tamsin","text":"yeah actually that could work. I'll check","posted":true,"at":"2026-11-27T20:23","checkin":"2026-11-27T20:23"}
+{"who":"Aoife","text":"still thinking about that bloody car","posted":true,"at":"2026-11-27T21:08","checkin":"2026-11-27T21:08"}
+{"who":"Lynsey","text":"I know but genuinely what would you have done if you'd gone in","posted":true,"at":"2026-11-27T21:09","checkin":"2026-11-27T21:09"}
+{"who":"Aoife","text":"poured a drink on his head ideally","posted":true,"at":"2026-11-27T21:11","checkin":"2026-11-27T21:11"}
+{"who":"Lynsey","text":"Tempting but then you get barred from Teuchters","posted":true,"at":"2026-11-27T21:12","checkin":"2026-11-27T21:12"}
+{"who":"Aoife","text":"worth it","posted":true,"at":"2026-11-27T21:13","checkin":"2026-11-27T21:13"}
+{"who":"Tamsin","text":"100% worth it tbh","posted":true,"at":"2026-11-27T21:14","checkin":"2026-11-27T21:14"}
+{"who":"Aoife","text":"I keep thinking of better ones though. like I could have deflated all his tyres","posted":true,"at":"2026-11-27T21:15","checkin":"2026-11-27T21:15"}
+{"who":"Lynsey","text":"Takes ages","posted":true,"at":"2026-11-27T21:16","checkin":"2026-11-27T21:16"}
+{"who":"Aoife","text":"or put something in his exhaust pipe","posted":true,"at":"2026-11-27T21:17","checkin":"2026-11-27T21:17"}
+{"who":"Lynsey","text":"What would you even put","posted":true,"at":"2026-11-27T21:18","checkin":"2026-11-27T21:18"}
+{"who":"Aoife","text":"a potato apparently. I googled it","posted":true,"at":"2026-11-27T21:19","checkin":"2026-11-27T21:19"}
+{"who":"","react":"😂","to":56,"posted":false,"at":"2026-11-27T21:19"}
+{"who":"","react":"😂","to":56,"posted":false,"at":"2026-11-27T21:19"}
+{"who":"Tamsin","text":"she googled it 😂😂","posted":true,"at":"2026-11-27T21:21","checkin":"2026-11-27T21:21"}
+{"who":"Aoife","text":"in my defence I was upset and standing on Deanhaugh Street with nothing else to do","posted":true,"at":"2026-11-27T21:22","checkin":"2026-11-27T21:22"}
+{"who":"Lynsey","text":"This is going in the speech at your wedding","posted":true,"at":"2026-11-27T21:24","checkin":"2026-11-27T21:24"}
+{"who":"Aoife","text":"absolutely not 😭","posted":true,"at":"2026-11-27T21:25","checkin":"2026-11-27T21:25"}
+{"who":"Lynsey","text":"Right I'm going to do an hour of study, speak tomorrow","posted":true,"at":"2026-11-27T21:47","checkin":"2026-11-27T21:47"}
+{"who":"Aoife","text":"on a Friday night 😭 good luck xx","posted":true,"at":"2026-11-27T21:49","checkin":"2026-11-27T21:49"}
+{"who":"Lynsey","text":"Don't remind me","posted":true,"at":"2026-11-27T21:50","checkin":"2026-11-27T21:50"}
+{"who":"Tamsin","text":"Galvin has space on the 19th for up to 12 🎉","posted":true,"at":"2026-11-27T22:31","checkin":"2026-11-27T22:31"}
+{"who":"Aoife","text":"yes!! 🎉🎉","posted":true,"at":"2026-11-27T22:44","checkin":"2026-11-27T22:44"}
+{"who":"Tamsin","text":"I'll book it tomorrow, need a card","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Tamsin","text":"Galvin booked deposit paid, 7:30 on the 19th","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Aoife","text":"amazing!! 🎉","posted":true,"at":"2026-11-28T09:47","checkin":"2026-11-28T09:47"}
+{"who":"Lynsey","text":"Nice one","posted":true,"at":"2026-11-28T11:23","checkin":"2026-11-28T11:23"}
+{"who":"Lynsey","text":"How are you doing this morning","posted":true,"at":"2026-11-28T11:24","checkin":"2026-11-28T11:24"}
+{"who":"Aoife","text":"fine actually. slept ok. feel a bit embarrassed about the potato thing","posted":true,"at":"2026-11-28T11:31","checkin":"2026-11-28T11:31"}
+{"who":"Lynsey","text":"Don't","posted":true,"at":"2026-11-28T11:33","checkin":"2026-11-28T11:33"}
+{"who":"Aoife","text":"I genuinely googled how to block someone's exhaust pipe on a public street","posted":true,"at":"2026-11-28T11:35","checkin":"2026-11-28T11:35"}
+{"who":"Lynsey","text":"To be fair it shows initiative","posted":true,"at":"2026-11-28T11:36","checkin":"2026-11-28T11:36"}
+{"who":"Aoife","text":"going to do a food shop and try to have a normal Saturday","posted":true,"at":"2026-11-28T12:48","checkin":"2026-11-28T12:48"}
+{"who":"Lynsey","text":"Marks or the big Waitrose","posted":true,"at":"2026-11-28T14:02","checkin":"2026-11-28T14:02"}
+{"who":"Aoife","text":"ended up in Lidl","posted":true,"at":"2026-11-28T14:19","checkin":"2026-11-28T14:19"}
+{"who":"Lynsey","text":"Good woman","posted":true,"at":"2026-11-28T14:21","checkin":"2026-11-28T14:21"}
+{"who":"Tamsin","text":"who's confirmed for the 19th so far, I need to start a list","posted":true,"at":"2026-11-28T16:33","checkin":"2026-11-28T16:33"}
+{"who":"Lynsey","text":"Me obviously. Cara said yes I think","posted":true,"at":"2026-11-28T16:41","checkin":"2026-11-28T16:41"}
+{"who":"Aoife","text":"me, definitely. I'll ask Niamh tonight","posted":true,"at":"2026-11-28T16:44","checkin":"2026-11-28T16:44"}
+{"who":"Tamsin","text":"Jess and Rachel are both coming. still waiting on Fiona","posted":true,"at":"2026-11-28T16:46","checkin":"2026-11-28T16:46"}
+{"who":"Lynsey","text":"What's her thing","posted":true,"at":"2026-11-28T16:48","checkin":"2026-11-28T16:48"}
+{"who":"Tamsin","text":"she might be away that weekend, she's not sure yet","posted":true,"at":"2026-11-28T16:50","checkin":"2026-11-28T16:50"}
+{"who":"Lynsey","text":"Just say you need to know by next weekend","posted":true,"at":"2026-11-28T16:51","checkin":"2026-11-28T16:51"}
+{"who":"Tamsin","text":"yeah I'll text her","posted":true,"at":"2026-11-28T16:52","checkin":"2026-11-28T16:52"}
+{"who":"Aoife","text":"Niamh is in","posted":true,"at":"2026-11-28T18:09","checkin":"2026-11-28T18:09"}
+{"who":"Tamsin","text":"great!","posted":true,"at":"2026-11-28T18:11","checkin":"2026-11-28T18:11"}
+{"who":"Lynsey","text":"Has anyone looked at the Highlands thing properly yet","posted":true,"at":"2026-11-28T20:44","checkin":"2026-11-28T20:44"}
+{"who":"Aoife","text":"not really. I keep meaning to","posted":true,"at":"2026-11-28T20:51","checkin":"2026-11-28T20:51"}
+{"who":"Lynsey","text":"Same. What are we thinking, January or February","posted":true,"at":"2026-11-28T20:52","checkin":"2026-11-28T20:52"}
+{"who":"Tamsin","text":"February might be better for me work wise. January is always chaos","posted":true,"at":"2026-11-28T20:54","checkin":"2026-11-28T20:54"}
+{"who":"Aoife","text":"February works for me","posted":true,"at":"2026-11-28T20:55","checkin":"2026-11-28T20:55"}
+{"who":"Lynsey","text":"February it is then. I'll have a look at some places","posted":true,"at":"2026-11-28T20:57","checkin":"2026-11-28T20:57"}
+{"who":"Lynsey","text":"What's the budget roughly, like per night","posted":true,"at":"2026-11-28T21:03","checkin":"2026-11-28T21:03"}
+{"who":"Aoife","text":"I'd say £60-70 each per night? is that enough for somewhere decent","posted":true,"at":"2026-11-28T21:08","checkin":"2026-11-28T21:08"}
+{"who":"Tamsin","text":"should be yeah if it's just the three of us","posted":true,"at":"2026-11-28T21:11","checkin":"2026-11-28T21:11"}
+{"who":"Lynsey","text":"Ok I'll have a look tomorrow, might be too tired tonight","posted":true,"at":"2026-11-28T21:13","checkin":"2026-11-28T21:13"}
+{"who":"Aoife","text":"just FYI I walked past Teuchters again on purpose and his car wasn't there","posted":true,"at":"2026-11-28T22:17","checkin":"2026-11-28T22:17"}
+{"who":"Lynsey","text":"Aoife","posted":true,"at":"2026-11-28T22:19","checkin":"2026-11-28T22:19"}
+{"who":"Aoife","text":"I know I know. I just needed to know","posted":true,"at":"2026-11-28T22:20","checkin":"2026-11-28T22:20"}
+{"who":"Tamsin","text":"did it help","posted":true,"at":"2026-11-28T22:21","checkin":"2026-11-28T22:21"}
+{"who":"Aoife","text":"weirdly yes","posted":true,"at":"2026-11-28T22:23","checkin":"2026-11-28T22:23"}
+{"who":"Lynsey","text":"Ok fine. Valid","posted":true,"at":"2026-11-28T22:24","checkin":"2026-11-28T22:24"}
+{"who":"Tamsin","text":"honestly fair enough","posted":true,"at":"2026-11-28T22:25","checkin":"2026-11-28T22:25"}
+{"who":"Lynsey","text":"Right I'm going to bed, got study in the morning","posted":true,"at":"2026-11-28T23:41","checkin":"2026-11-28T23:41"}
+{"who":"Aoife","text":"on a Sunday good luck x","posted":true,"at":"2026-11-28T23:43","checkin":"2026-11-28T23:43"}

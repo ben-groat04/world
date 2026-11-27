@@ -1,0 +1,102 @@
+{"writer":"w11","live":true,"model":"haiku","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T18:35","complete":true,"rejects":0,"today":[null,"Leanne"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2155,"cache_read_input_tokens":0,"output_tokens":4577,"output_tokens_details":{"thinking_tokens":2932},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2155,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4577,"cache_read_input_tokens":0,"cache_creation_input_tokens":2155,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2155},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3724,"cache_read_input_tokens":0,"output_tokens":3880,"output_tokens_details":{"thinking_tokens":2210},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3724,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3880,"cache_read_input_tokens":0,"cache_creation_input_tokens":3724,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3724},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ciara","Conor","Leanne"],"setting":"You three are in Belfast, in a group chat for close friends in your thirties, and you're sorting out drinks for Leanne's birthday and the Secret Santa for the office Christmas do.","openers":["Vent about him being a coward","Ask who's free for drinks on Thursday","Send a dramatic one-liner about his tyres","Say you're fine, honestly, then rant anyway"],"opener":"Vent about him being a coward","cast":{"Ciara":{"who":"35, woman, the friend who was cheated on","work":"estate agent","knows":"You know Conor as a close friend and Leanne as a close friend.","texts":"Ciara texts in this chat a lot.","style":"moderate emoji, light texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Conor":{"who":"36, man, a friend who eggs her on","work":"electrician","knows":"You know Ciara as a close friend and Leanne as a close friend.","texts":"Conor texts in this chat now and then.","style":"moderate emoji, light texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Leanne":{"who":"34, woman, a friend who eggs her on","work":"graphic designer","knows":"You know Ciara as a close friend and Conor as a close friend.","texts":"Leanne texts in this chat now and then.","style":"moderate emoji, light texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Ciara":"You work as an estate agent in Belfast, spend your days on viewings and valuations, and live alone.","Conor":"You work as an electrician in Belfast, spend your days on call-outs and site jobs, and live alone.","Leanne":"You work as a graphic designer in Belfast, spend your days on client briefs and deadlines, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":863,"cache_read_input_tokens":0,"output_tokens":1724,"output_tokens_details":{"thinking_tokens":1381},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":863,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1724,"cache_read_input_tokens":0,"cache_creation_input_tokens":863,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":863},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1165,"cache_read_input_tokens":0,"output_tokens":1450,"output_tokens_details":{"thinking_tokens":976},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1165,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1450,"cache_read_input_tokens":0,"cache_creation_input_tokens":1165,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1165},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Belfast, Northern Ireland","castMs":17452,"situation":"Three close friends in their thirties.","topic":"One of them was cheated on and vents violent revenge fantasies about her ex, hyperbolic and graphic, and the others egg her on with darker jokes."}
+{"who":"Ciara","text":"Ok I need to vent and you two are the only ones who won't tell me to be the bigger person 😤","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Ciara","text":"He's such a coward. Found out off a screenshot his mate sent my sister. Not even him telling me","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Conor","text":"Ah ciara","posted":true,"at":"2026-11-27T18:36","checkin":"2026-11-27T18:36"}
+{"who":"Leanne","text":"Ok im here. Is this kyle","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Ciara","text":"Yes kyle. 14 months. And the girl is a physio from lisburn apparently","posted":true,"at":"2026-11-27T18:38","checkin":"2026-11-27T18:38"}
+{"who":"Conor","text":"A physio. So she'll be quite fit then","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Leanne","text":"Conor","posted":true,"at":"2026-11-27T18:39","checkin":"2026-11-27T18:39"}
+{"who":"Ciara","text":"Thank you conor","posted":true,"at":"2026-11-27T18:40","checkin":"2026-11-27T18:40"}
+{"who":"Leanne","text":"Honestly I'd have him somewhere up the antrim hills with a very bad sense of direction","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Ciara","text":"I've been picturing him getting his knackers caught in a lawnmower. Slowly. With him watching","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Conor","text":"Ok thats a bit much but im listening","posted":true,"at":"2026-11-27T18:43","checkin":"2026-11-27T18:43"}
+{"who":"Conor","text":"Get him on a live site with me for an afternoon and he'll be in bits by lunch. Nothing I'd say on the record","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Ciara","text":"You wouldnt actually","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Conor","text":"I wouldnt. I'd just tell him the wires were live and watch him read the panel for 20 mins","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Ciara","text":"Hes the sort who'd cry at a funeral he caused","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Leanne","text":"He'd cry at a wetherspoons receipt","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Ciara","text":"He called me \"unstable\" in the text. Like its my fault he went and shagged a physio","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Conor","text":"Unstable I'd be unstable too if I'd just lost 14 months and a decent kitchen","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Ciara","text":"Im not even mad about the kitchen","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Ciara","text":"Ok im a bit mad about the kitchen","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Leanne","text":"You should be. That was your grandad's dresser","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Leanne","text":"Anyway. Birthday. I said I'd do tues or thurs?? Ciara are you still free thurs for drinks","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Ciara","text":"Thurs works. I've a valuation in dundonald at 9 so not a late one","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Conor","text":"On a call out in holywood thurs till 5 probably. Can be there for 7","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Leanne","text":"7 is fine. The crown?","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Ciara","text":"The crown is full of tourists somewhere on the lisburn rd","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Conor","text":"Botanic inn is still going. 5 mins from the end of the rd","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Leanne","text":"Botanic inn works","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Ciara","text":"He's posted a photo of her on a beach in donegal. Caption is \"new chapter\"","posted":true,"at":"2026-11-27T21:04","checkin":"2026-11-27T21:04"}
+{"who":"Ciara","text":"No photo of me. She's wearing my actual coat","posted":true,"at":"2026-11-27T21:04","checkin":"2026-11-27T21:04"}
+{"who":"Leanne","text":"Oh that's a clean slap","posted":true,"at":"2026-11-27T21:06","checkin":"2026-11-27T21:06"}
+{"who":"Conor","text":"A coat's a coat, don't let it get in your head","posted":true,"at":"2026-11-27T21:06","checkin":"2026-11-27T21:06"}
+{"who":"Ciara","text":"It was a 300 quid coat conor","posted":true,"at":"2026-11-27T21:08","checkin":"2026-11-27T21:08"}
+{"who":"Conor","text":"Then she's in a 300 quid coat and he's on a beach in donegal in the rain. Thats his punishment","posted":true,"at":"2026-11-27T21:09","checkin":"2026-11-27T21:09"}
+{"who":"Leanne","text":"Rain in donegal is the most violent thing I've ever heard of","posted":true,"at":"2026-11-27T21:15","checkin":"2026-11-27T21:15"}
+{"who":"Ciara","text":"I want him to get a parking ticket every day for a year and have to go into the council offices in person to dispute each one","posted":true,"at":"2026-11-27T21:15","checkin":"2026-11-27T21:15"}
+{"who":"Conor","text":"Thats the most diabolical thing anyone's said in this chat and I've been in it since 2019","posted":true,"at":"2026-11-27T21:16","checkin":"2026-11-27T21:16"}
+{"who":"Ciara","text":"Ok im off to bed. I have a 9am. Thanks for letting me be unhinged","posted":true,"at":"2026-11-27T21:20","checkin":"2026-11-27T21:20"}
+{"who":"Leanne","text":"You're allowed to be unhinged. See you thurs at the botanic and you can be unhinged in person","posted":true,"at":"2026-11-27T21:21","checkin":"2026-11-27T21:21"}
+{"who":"Ciara","text":"Cant sleep. Keep picturing him reading the text I sent him","posted":true,"at":"2026-11-27T23:47","checkin":"2026-11-27T23:47"}
+{"who":"Conor","text":"Don't read anything into it, he's a numpty","posted":true,"at":"2026-11-27T23:50","checkin":"2026-11-27T23:50"}
+{"who":"Ciara","text":"I wrote him a 900 word message and didnt send it","posted":true,"at":"2026-11-28T00:40","checkin":"2026-11-28T00:40"}
+{"who":"Leanne","text":"Good. Save it for when you can say it to his face and watch him try to say sorry","posted":true,"at":"2026-11-28T00:41","checkin":"2026-11-28T00:41"}
+{"who":"Conor","text":"Send it to me, I'll tell you if it's any good","posted":true,"at":"2026-11-28T00:43","checkin":"2026-11-28T00:43"}
+{"who":"Ciara","text":"Absolutely not","posted":true,"at":"2026-11-28T00:44","checkin":"2026-11-28T00:44"}
+{"who":"Conor","text":"Worth a try","posted":true,"at":"2026-11-28T00:44","checkin":"2026-11-28T00:44"}
+{"who":"Ciara","text":"Up already. 9am viewing in ballynahinch. Couple looking at a 3 bed like its the louvre","posted":true,"at":"2026-11-28T08:41","checkin":"2026-11-28T08:41"}
+{"who":"Conor","text":"Ballynahinch on a Sat morning is a bold choice","posted":true,"at":"2026-11-28T08:58","checkin":"2026-11-28T08:58"}
+{"who":"Leanne","text":"[screenshot: client email]","posted":true,"at":"2026-11-28T09:14","checkin":"2026-11-28T09:14"}
+{"who":"Leanne","text":"\"Can we make the logo bigger but also more subtle.\" Monday deadline. Ok we're doing this","posted":true,"at":"2026-11-28T09:15","checkin":"2026-11-28T09:15"}
+{"who":"Ciara","text":"Thats not a brief thats a riddle","posted":true,"at":"2026-11-28T09:17","checkin":"2026-11-28T09:17"}
+{"who":"Conor","text":"Make it bigger, then make it smaller, then send them the bigger one","posted":true,"at":"2026-11-28T09:19","checkin":"2026-11-28T09:19"}
+{"who":"Leanne","text":"Conor you are not helping me as a designer","posted":true,"at":"2026-11-28T09:19","checkin":"2026-11-28T09:19"}
+{"who":"Conor","text":"Im an electrician, my help is always a bit off","posted":true,"at":"2026-11-28T09:21","checkin":"2026-11-28T09:21"}
+{"who":"Ciara","text":"She's commented \"cant wait to see you\" under his beach photo","posted":true,"at":"2026-11-28T10:02","checkin":"2026-11-28T10:02"}
+{"who":"Leanne","text":"Put the phone in a drawer","posted":true,"at":"2026-11-28T10:03","checkin":"2026-11-28T10:03"}
+{"who":"Ciara","text":"Already looked at her profile. Shes got a dog called biscuit","posted":true,"at":"2026-11-28T10:03","checkin":"2026-11-28T10:03"}
+{"who":"Conor","text":"Dont look at her profile","posted":true,"at":"2026-11-28T10:04","checkin":"2026-11-28T10:04"}
+{"who":"Ciara","text":"Too late. Biscuit is a lurcher","posted":true,"at":"2026-11-28T10:04","checkin":"2026-11-28T10:04"}
+{"who":"Leanne","text":"Secret santa budget is 15 right. Someone in accounts drew me and im already stressed","posted":true,"at":"2026-11-28T11:30","checkin":"2026-11-28T11:30"}
+{"who":"Ciara","text":"15 yes. Dont go mental, Declan spent 40 last year and it was a sad candle","posted":true,"at":"2026-11-28T11:34","checkin":"2026-11-28T11:34"}
+{"who":"Leanne","text":"Who was the candle for","posted":true,"at":"2026-11-28T11:35","checkin":"2026-11-28T11:35"}
+{"who":"Ciara","text":"Nobody knows. He wont say","posted":true,"at":"2026-11-28T11:35","checkin":"2026-11-28T11:35"}
+{"who":"Conor","text":"[photo: fuse box with scorch marks around the main breaker]","posted":true,"at":"2026-11-28T13:10","checkin":"2026-11-28T13:10"}
+{"who":"Conor","text":"Holywood. Man wired this himself in 2009 and thought the earth was optional","posted":true,"at":"2026-11-28T13:11","checkin":"2026-11-28T13:11"}
+{"who":"Leanne","text":"Is he alive","posted":true,"at":"2026-11-28T13:12","checkin":"2026-11-28T13:12"}
+{"who":"Conor","text":"Yeah he's at the kitchen table watching me like im the one who did it","posted":true,"at":"2026-11-28T13:12","checkin":"2026-11-28T13:12"}
+{"who":"Ciara","text":"Ok thats the best thing I've read all day","posted":true,"at":"2026-11-28T13:14","checkin":"2026-11-28T13:14"}
+{"who":"Ciara","text":"I sent him something. Cut it to two lines","posted":true,"at":"2026-11-28T15:47","checkin":"2026-11-28T15:47"}
+{"who":"Conor","text":"Ah ciara","posted":true,"at":"2026-11-28T15:48","checkin":"2026-11-28T15:48"}
+{"who":"Leanne","text":"What did it say","posted":true,"at":"2026-11-28T15:48","checkin":"2026-11-28T15:48"}
+{"who":"Ciara","text":"That he's a coward and he owes me a kitchen. That's it","posted":true,"at":"2026-11-28T15:52","checkin":"2026-11-28T15:52"}
+{"who":"Conor","text":"Fair enough. Thats a good two lines","posted":true,"at":"2026-11-28T15:52","checkin":"2026-11-28T15:52"}
+{"who":"Ciara","text":"He's read it. Blue ticks","posted":true,"at":"2026-11-28T15:55","checkin":"2026-11-28T15:55"}
+{"who":"Ciara","text":"No reply","posted":true,"at":"2026-11-28T15:55","checkin":"2026-11-28T15:55"}
+{"who":"Conor","text":"Blue ticks and nothing is worse than a reply","posted":true,"at":"2026-11-28T15:56","checkin":"2026-11-28T15:56"}
+{"who":"Leanne","text":"Dont check it again","posted":true,"at":"2026-11-28T15:58","checkin":"2026-11-28T15:58"}
+{"who":"Ciara","text":"Checking it again","posted":true,"at":"2026-11-28T16:00","checkin":"2026-11-28T16:00"}
+{"who":"Leanne","text":"Sorry being useless today. Client wants a call Monday morning and I've been on the phone since 2 about a logo that's green. Not even a nice green","posted":true,"at":"2026-11-28T17:20","checkin":"2026-11-28T17:20"}
+{"who":"Conor","text":"What green","posted":true,"at":"2026-11-28T17:22","checkin":"2026-11-28T17:22"}
+{"who":"Leanne","text":"The green of a Lidl sign","posted":true,"at":"2026-11-28T17:22","checkin":"2026-11-28T17:22"}
+{"who":"Ciara","text":"Tell them its bold","posted":true,"at":"2026-11-28T17:24","checkin":"2026-11-28T17:24"}
+{"who":"Leanne","text":"I've said it's bold. They want it bolder","posted":true,"at":"2026-11-28T17:25","checkin":"2026-11-28T17:25"}
+{"who":"Ciara","text":"Going for a walk round the lagan then home. Need air","posted":true,"at":"2026-11-28T19:02","checkin":"2026-11-28T19:02"}
+{"who":"Leanne","text":"Wrap up, its brass monkeys","posted":true,"at":"2026-11-28T19:04","checkin":"2026-11-28T19:04"}
+{"who":"Conor","text":"Mon I'm on a site in newtownabbey from 7 so no late ones this week","posted":true,"at":"2026-11-28T19:30","checkin":"2026-11-28T19:30"}
+{"who":"Leanne","text":"Thurs is still on. Botanic inn. Unhinged in person","posted":true,"at":"2026-11-28T19:31","checkin":"2026-11-28T19:31"}
+{"who":"Ciara","text":"Is it bad that im scrolling through 2019 photos of us for the reason","posted":true,"at":"2026-11-28T21:48","checkin":"2026-11-28T21:48"}
+{"who":"Leanne","text":"Yes. Mute him and put the phone down","posted":true,"at":"2026-11-28T21:50","checkin":"2026-11-28T21:50"}
+{"who":"Conor","text":"Mute, dont delete. Deleting just makes it a story","posted":true,"at":"2026-11-28T21:51","checkin":"2026-11-28T21:51"}
+{"who":"Ciara","text":"Muted","posted":true,"at":"2026-11-28T21:53","checkin":"2026-11-28T21:53"}
+{"who":"Ciara","text":"Cant sleep again","posted":true,"at":"2026-11-28T23:12","checkin":"2026-11-28T23:12"}
+{"who":"Leanne","text":"Put on a film. Not a romcom","posted":true,"at":"2026-11-28T23:13","checkin":"2026-11-28T23:13"}
+{"who":"Ciara","text":"Die hard","posted":true,"at":"2026-11-28T23:15","checkin":"2026-11-28T23:15"}
+{"who":"Conor","text":"Good choice","posted":true,"at":"2026-11-28T23:15","checkin":"2026-11-28T23:15"}
+{"who":"Leanne","text":"Die hard is a christmas film and I won't be taking questions","posted":true,"at":"2026-11-28T23:16","checkin":"2026-11-28T23:16"}
+{"who":"Ciara","text":"He's replied. Just \"I hope youre ok\"","posted":true,"at":"2026-11-29T00:20","checkin":"2026-11-29T00:20"}
+{"who":"Ciara","text":"I'm ok","posted":true,"at":"2026-11-29T00:21","checkin":"2026-11-29T00:21"}
+{"who":"Leanne","text":"Don't reply. Not tonight","posted":true,"at":"2026-11-29T00:31","checkin":"2026-11-29T00:31"}
+{"who":"Conor","text":"Agreed. Sleep ciara","posted":true,"at":"2026-11-29T00:33","checkin":"2026-11-29T00:33"}

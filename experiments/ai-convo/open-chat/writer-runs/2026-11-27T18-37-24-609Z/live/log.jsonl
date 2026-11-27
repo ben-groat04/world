@@ -1,0 +1,146 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T18:35","complete":true,"rejects":0,"today":["Niamh","Jess"],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1668,"cache_read_input_tokens":0,"output_tokens":2743,"output_tokens_details":{"thinking_tokens":42},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1668,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2743,"cache_read_input_tokens":0,"cache_creation_input_tokens":1668,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1668},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":4250,"cache_read_input_tokens":0,"output_tokens":636,"output_tokens_details":{"thinking_tokens":149},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4250,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":636,"cache_read_input_tokens":0,"cache_creation_input_tokens":4250,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4250},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Jess","Niamh","Jamie"],"setting":"You're a group of friends in Edinburgh who met at university there and have stayed close since graduating. You're currently organising a joint birthday night out for Niamh whose birthday falls next month, and you use this chat to sort logistics, share gossip, and keep up with each other day to day.","openers":["drops a voice note teaser saying she has something to tell them","sends a row of increasingly suggestive emoji with no context","texts asking if they're both free because she needs to debrief immediately","types out the opening line of the story and says buckle up"],"opener":"sends a row of increasingly suggestive emoji with no context","cast":{"Jess":{"who":"28, woman, the one who had the threesome and is recounting it","work":"secondary school teacher","knows":"Niamh is a close friend from university. Jamie is a close friend from university.","texts":"Jess texts in this chat a lot.","style":"a handful of emoji here and there, no abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Niamh":{"who":"27, woman, close friend reacting to the story","work":"junior accountant","knows":"Jess is a close friend from university. Jamie is a close friend from university.","texts":"Niamh texts in this chat now and then.","style":"frequent emoji, light use of abbreviations like omg and lol","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Jamie":{"who":"29, man, close friend reacting to the story","work":"delivery driver","knows":"Jess is a close friend from university. Niamh is a close friend from university.","texts":"Jamie texts in this chat now and then.","style":"minimal emoji, occasional abbreviations","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Jess":"You live in Edinburgh, spend your days teaching at a secondary school, and share a flat with a flatmate not in this chat.","Niamh":"You live in Edinburgh, spend your days working in an accountancy firm, and share a flat with a couple of friends not in this chat.","Jamie":"You live in Edinburgh, spend your days doing delivery driving, and share a flat with a mate not in this chat."},"usage":[{"input_tokens":704,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":372,"output_tokens_details":{"thinking_tokens":127},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":704,"output_tokens":372,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":952,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":423,"output_tokens_details":{"thinking_tokens":25},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":952,"output_tokens":423,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Edinburgh, Scotland","castMs":15965,"situation":"Three close friends in their late twenties.","topic":"One of them had a threesome at the weekend and tells the others every graphic detail, who did what to whom, while they react and ask for more."}
+{"who":"Jess","text":"🙂😏🥵🍑💦","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Niamh","text":"omg what","posted":true,"at":"2026-11-27T18:41","checkin":"2026-11-27T18:41"}
+{"who":"Jess","text":"So. You know I was out on Saturday","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Niamh","text":"JESS","posted":true,"at":"2026-11-27T18:44","checkin":"2026-11-27T18:44"}
+{"who":"Niamh","text":"tell me everything right now","posted":true,"at":"2026-11-27T18:45","checkin":"2026-11-27T18:45"}
+{"who":"Jess","text":"Okay so you know the guy I've been seeing, Callum","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Niamh","text":"yeah","posted":true,"at":"2026-11-27T18:52","checkin":"2026-11-27T18:52"}
+{"who":"Jess","text":"He has this flatmate, Rory","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Niamh","text":"oh my god","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Jamie","text":"what's going on","posted":true,"at":"2026-11-27T18:55","checkin":"2026-11-27T18:55"}
+{"who":"Niamh","text":"Jess had a threesome","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Jamie","text":"oh","posted":true,"at":"2026-11-27T18:56","checkin":"2026-11-27T18:56"}
+{"who":"Jamie","text":"nice one","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Jess","text":"Thank you Jamie","posted":true,"at":"2026-11-27T18:57","checkin":"2026-11-27T18:57"}
+{"who":"Jess","text":"So we'd been out at this bar on Leith Walk and we all came back to theirs after and we were just drinking and then at some point it just became very obvious what was happening","posted":true,"at":"2026-11-27T18:58","checkin":"2026-11-27T18:58"}
+{"who":"Niamh","text":"how obvious, like did someone say something or","posted":true,"at":"2026-11-27T19:00","checkin":"2026-11-27T19:00"}
+{"who":"Jess","text":"Rory kissed me while Callum was in the kitchen and then Callum came back in and saw and just sort of smiled","posted":true,"at":"2026-11-27T19:01","checkin":"2026-11-27T19:01"}
+{"who":"Niamh","text":"so it had been planned??","posted":true,"at":"2026-11-27T19:02","checkin":"2026-11-27T19:02"}
+{"who":"Jess","text":"I think between them yes. I didn't know","posted":true,"at":"2026-11-27T19:03","checkin":"2026-11-27T19:03"}
+{"who":"Niamh","text":"and you were into it","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"Jess","text":"I was VERY into it","posted":true,"at":"2026-11-27T19:04","checkin":"2026-11-27T19:04"}
+{"who":"","react":"😂","to":20,"posted":false,"at":"2026-11-27T19:04"}
+{"who":"Niamh","text":"okay so then what","posted":true,"at":"2026-11-27T19:08","checkin":"2026-11-27T19:08"}
+{"who":"Jess","text":"Then Callum put his hand on my neck from behind and I just thought, yeah, okay, this is happening","posted":true,"at":"2026-11-27T19:09","checkin":"2026-11-27T19:09"}
+{"who":"Niamh","text":"I am going to need you to be more specific","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Jess","text":"We moved to the bedroom and both of them were just completely focused on me for a while which was","posted":true,"at":"2026-11-27T19:13","checkin":"2026-11-27T19:13"}
+{"who":"Jamie","text":"I've got a delivery but I want updates","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Niamh","text":"lol bye Jamie","posted":true,"at":"2026-11-27T19:15","checkin":"2026-11-27T19:15"}
+{"who":"Jess","text":"Rory is very tall and very good with his hands is all I'll say about that","posted":true,"at":"2026-11-27T19:16","checkin":"2026-11-27T19:16"}
+{"who":"Niamh","text":"oh?? elaborate","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Jess","text":"So I was lying between them and Callum was kissing me and Rory had his hand between my legs and I was basically losing my mind","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Niamh","text":"okay yes this is good","posted":true,"at":"2026-11-27T19:23","checkin":"2026-11-27T19:23"}
+{"who":"Jess","text":"And then they sort of switched and Rory was kissing me and Callum started going down on me","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Niamh","text":"JESS","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Niamh","text":"okay and then","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Jess","text":"And then I finished embarrassingly quickly","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-11-27T19:28"}
+{"who":"Niamh","text":"that is NOT embarrassing that is correct","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Jess","text":"I think I sort of apologised and they both laughed","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Niamh","text":"oh god","posted":true,"at":"2026-11-27T19:32","checkin":"2026-11-27T19:32"}
+{"who":"Jess","text":"But then we kept going so","posted":true,"at":"2026-11-27T19:33","checkin":"2026-11-27T19:33"}
+{"who":"Niamh","text":"okay yes and","posted":true,"at":"2026-11-27T19:33","checkin":"2026-11-27T19:33"}
+{"who":"Jess","text":"So after that it was more like. All three of us. At once","posted":true,"at":"2026-11-27T19:36","checkin":"2026-11-27T19:36"}
+{"who":"Niamh","text":"meaning","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Jess","text":"Meaning I had Callum inside me and Rory in my mouth at the same time","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Niamh","text":"omg","posted":true,"at":"2026-11-27T19:40","checkin":"2026-11-27T19:40"}
+{"who":"Niamh","text":"okay and was that","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Niamh","text":"like logistically how did that work","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Jess","text":"I was on my hands and knees and Rory was kneeling in front of me, so it was actually pretty straightforward 😂","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Niamh","text":"I feel like I need a diagram but also I fully understand","posted":true,"at":"2026-11-27T19:45","checkin":"2026-11-27T19:45"}
+{"who":"Jess","text":"It was a lot to focus on but in the best possible way","posted":true,"at":"2026-11-27T19:46","checkin":"2026-11-27T19:46"}
+{"who":"Niamh","text":"and was Rory good or","posted":true,"at":"2026-11-27T19:48","checkin":"2026-11-27T19:48"}
+{"who":"Jess","text":"Yes very. Very enthusiastic","posted":true,"at":"2026-11-27T19:49","checkin":"2026-11-27T19:49"}
+{"who":"Niamh","text":"I need to know if Callum minded like, sharing","posted":true,"at":"2026-11-27T19:50","checkin":"2026-11-27T19:50"}
+{"who":"Jess","text":"Genuinely seemed like it was his idea so I think he was fine","posted":true,"at":"2026-11-27T19:52","checkin":"2026-11-27T19:52"}
+{"who":"Niamh","text":"that's so interesting like some men are weirdly into that","posted":true,"at":"2026-11-27T19:53","checkin":"2026-11-27T19:53"}
+{"who":"Jess","text":"This man apparently yes","posted":true,"at":"2026-11-27T19:54","checkin":"2026-11-27T19:54"}
+{"who":"Niamh","text":"and did the boys do anything with each other or was it all focused on you","posted":true,"at":"2026-11-27T19:57","checkin":"2026-11-27T19:57"}
+{"who":"Jess","text":"All focused on me as far as I could tell, there was definitely some touching that happened but nothing more than that","posted":true,"at":"2026-11-27T20:00","checkin":"2026-11-27T20:00"}
+{"who":"Niamh","text":"okay","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Niamh","text":"so how did it end, like did you all just","posted":true,"at":"2026-11-27T20:03","checkin":"2026-11-27T20:03"}
+{"who":"Jess","text":"Rory finished first and then it was just me and Callum for a bit and that was actually really nice, sort of came back to something more normal","posted":true,"at":"2026-11-27T20:05","checkin":"2026-11-27T20:05"}
+{"who":"Niamh","text":"aw","posted":true,"at":"2026-11-27T20:06","checkin":"2026-11-27T20:06"}
+{"who":"Jess","text":"And then we all just lay there for a bit and Rory made tea at like 2am which I thought was very funny","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Niamh","text":"lol the most Scottish possible ending","posted":true,"at":"2026-11-27T20:09","checkin":"2026-11-27T20:09"}
+{"who":"","react":"😂","to":62,"posted":false,"at":"2026-11-27T20:09"}
+{"who":"Jess","text":"Genuinely he just went, anyone want tea, and disappeared to the kitchen","posted":true,"at":"2026-11-27T20:10","checkin":"2026-11-27T20:10"}
+{"who":"Niamh","text":"okay so are you going to see Callum again","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Jess","text":"I think so? We've texted since, it's not weird","posted":true,"at":"2026-11-27T20:16","checkin":"2026-11-27T20:16"}
+{"who":"Niamh","text":"and Rory?","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Jess","text":"I mean we're friends on Instagram now so","posted":true,"at":"2026-11-27T20:18","checkin":"2026-11-27T20:18"}
+{"who":"Niamh","text":"modern romance","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Jamie","text":"back. did I miss a lot","posted":true,"at":"2026-11-27T20:22","checkin":"2026-11-27T20:22"}
+{"who":"Niamh","text":"scroll up","posted":true,"at":"2026-11-27T20:23","checkin":"2026-11-27T20:23"}
+{"who":"Jamie","text":"okay yeah fair play","posted":true,"at":"2026-11-27T20:28","checkin":"2026-11-27T20:28"}
+{"who":"Jamie","text":"was it good though like actually","posted":true,"at":"2026-11-27T20:29","checkin":"2026-11-27T20:29"}
+{"who":"Jess","text":"Jamie it was incredible 😂","posted":true,"at":"2026-11-27T20:30","checkin":"2026-11-27T20:30"}
+{"who":"Jamie","text":"nice","posted":true,"at":"2026-11-27T20:31","checkin":"2026-11-27T20:31"}
+{"who":"Niamh","text":"right anyway on a different note, did either of you look at that venue I sent last week","posted":true,"at":"2026-11-27T20:35","checkin":"2026-11-27T20:35"}
+{"who":"Jess","text":"The one on Rose Street?","posted":true,"at":"2026-11-27T20:36","checkin":"2026-11-27T20:36"}
+{"who":"Niamh","text":"yeah","posted":true,"at":"2026-11-27T20:36","checkin":"2026-11-27T20:36"}
+{"who":"Jess","text":"I looked at it. I think it's maybe too small","posted":true,"at":"2026-11-27T20:38","checkin":"2026-11-27T20:38"}
+{"who":"Jamie","text":"how many are we thinking now","posted":true,"at":"2026-11-27T20:39","checkin":"2026-11-27T20:39"}
+{"who":"Niamh","text":"I've got about 14 saying yes","posted":true,"at":"2026-11-27T20:40","checkin":"2026-11-27T20:40"}
+{"who":"Jamie","text":"yeah that venue's too small then","posted":true,"at":"2026-11-27T20:41","checkin":"2026-11-27T20:41"}
+{"who":"Niamh","text":"that's what I thought. there's another one I found, hold on","posted":true,"at":"2026-11-27T20:42","checkin":"2026-11-27T20:42"}
+{"who":"Niamh","text":"[link: Howff private dining, Edinburgh]","posted":true,"at":"2026-11-27T20:44","checkin":"2026-11-27T20:44"}
+{"who":"Jess","text":"Oh this looks good","posted":true,"at":"2026-11-27T20:47","checkin":"2026-11-27T20:47"}
+{"who":"Jamie","text":"how much is the hire","posted":true,"at":"2026-11-27T20:48","checkin":"2026-11-27T20:48"}
+{"who":"Niamh","text":"it says free hire if you spend over £400 on food","posted":true,"at":"2026-11-27T20:49","checkin":"2026-11-27T20:49"}
+{"who":"Jamie","text":"14 people, that's doable","posted":true,"at":"2026-11-27T20:50","checkin":"2026-11-27T20:50"}
+{"who":"Jess","text":"When are you thinking? Still the 19th?","posted":true,"at":"2026-11-27T20:51","checkin":"2026-11-27T20:51"}
+{"who":"Niamh","text":"yeah 19th works for most people","posted":true,"at":"2026-11-27T20:52","checkin":"2026-11-27T20:52"}
+{"who":"Jess","text":"I'll check if they have availability","posted":true,"at":"2026-11-27T20:53","checkin":"2026-11-27T20:53"}
+{"who":"Niamh","text":"actually I'll do it, it's my birthday lol","posted":true,"at":"2026-11-27T20:54","checkin":"2026-11-27T20:54"}
+{"who":"Jess","text":"Fair","posted":true,"at":"2026-11-27T20:55","checkin":"2026-11-27T20:55"}
+{"who":"Niamh","text":"okay sent them an enquiry","posted":true,"at":"2026-11-27T21:18","checkin":"2026-11-27T21:18"}
+{"who":"Jess","text":"👍","posted":true,"at":"2026-11-27T21:19","checkin":"2026-11-27T21:19"}
+{"who":"Niamh","text":"also honestly today was a nightmare, one of the partners had a go at me in front of the whole team about a report that was actually his mistake","posted":true,"at":"2026-11-27T22:46","checkin":"2026-11-27T22:46"}
+{"who":"Jess","text":"Oh that's awful, which one","posted":true,"at":"2026-11-27T22:48","checkin":"2026-11-27T22:48"}
+{"who":"Niamh","text":"Gordon. the one with the beard","posted":true,"at":"2026-11-27T22:49","checkin":"2026-11-27T22:49"}
+{"who":"Jess","text":"I hate him on your behalf","posted":true,"at":"2026-11-27T22:50","checkin":"2026-11-27T22:50"}
+{"who":"Niamh","text":"genuinely I nearly cried which made it worse","posted":true,"at":"2026-11-27T22:51","checkin":"2026-11-27T22:51"}
+{"who":"Jess","text":"Did anyone say anything after?","posted":true,"at":"2026-11-27T22:53","checkin":"2026-11-27T22:53"}
+{"who":"Niamh","text":"Priya came over and was nice about it. but still","posted":true,"at":"2026-11-27T22:54","checkin":"2026-11-27T22:54"}
+{"who":"Jess","text":"Are you going to say something to him","posted":true,"at":"2026-11-27T22:55","checkin":"2026-11-27T22:55"}
+{"who":"Niamh","text":"probably not, what would I even say","posted":true,"at":"2026-11-27T22:57","checkin":"2026-11-27T22:57"}
+{"who":"Jess","text":"I mean you could just very calmly point out it was his numbers","posted":true,"at":"2026-11-27T22:58","checkin":"2026-11-27T22:58"}
+{"who":"Niamh","text":"yeah maybe. I'll see how I feel on Monday","posted":true,"at":"2026-11-27T23:01","checkin":"2026-11-27T23:01"}
+{"who":"Jess","text":"You should though. You always let it go","posted":true,"at":"2026-11-27T23:02","checkin":"2026-11-27T23:02"}
+{"who":"Niamh","text":"I know","posted":true,"at":"2026-11-27T23:04","checkin":"2026-11-27T23:04"}
+{"who":"Jamie","text":"that's shite, sorry","posted":true,"at":"2026-11-27T23:06","checkin":"2026-11-27T23:06"}
+{"who":"Niamh","text":"thanks. anyway. glad it's the weekend","posted":true,"at":"2026-11-27T23:07","checkin":"2026-11-27T23:07"}
+{"who":"Jess","text":"Are you in tomorrow night?","posted":true,"at":"2026-11-27T23:08","checkin":"2026-11-27T23:08"}
+{"who":"Niamh","text":"I think so, why","posted":true,"at":"2026-11-27T23:09","checkin":"2026-11-27T23:09"}
+{"who":"Jess","text":"Might see if Callum wants to come over","posted":true,"at":"2026-11-27T23:10","checkin":"2026-11-27T23:10"}
+{"who":"Niamh","text":"just Callum this time??","posted":true,"at":"2026-11-27T23:11","checkin":"2026-11-27T23:11"}
+{"who":"Jess","text":"😂😂 yes just Callum","posted":true,"at":"2026-11-27T23:12","checkin":"2026-11-27T23:12"}
+{"who":"Niamh","text":"lol okay. night x","posted":true,"at":"2026-11-27T23:15","checkin":"2026-11-27T23:15"}
+{"who":"Jess","text":"Night x","posted":true,"at":"2026-11-27T23:16","checkin":"2026-11-27T23:16"}
+{"who":"Niamh","text":"heard back from the venue already","posted":true,"at":"2026-11-28T11:23","checkin":"2026-11-28T11:23"}
+{"who":"Niamh","text":"19th is available","posted":true,"at":"2026-11-28T11:24","checkin":"2026-11-28T11:24"}
+{"who":"Jess","text":"Yes!","posted":true,"at":"2026-11-28T11:31","checkin":"2026-11-28T11:31"}
+{"who":"Niamh","text":"going to reply and confirm. do you think £35 a head for food is reasonable to ask people","posted":true,"at":"2026-11-28T11:34","checkin":"2026-11-28T11:34"}
+{"who":"Jess","text":"I think so yeah","posted":true,"at":"2026-11-28T11:41","checkin":"2026-11-28T11:41"}
+{"who":"Jamie","text":"yeah that's fine","posted":true,"at":"2026-11-28T12:06","checkin":"2026-11-28T12:06"}
+{"who":"Niamh","text":"okay done. they want a £100 deposit","posted":true,"at":"2026-11-28T12:08","checkin":"2026-11-28T12:08"}
+{"who":"Niamh","text":"I'll put it on my card and people can pay me back","posted":true,"at":"2026-11-28T12:09","checkin":"2026-11-28T12:09"}
+{"who":"Jess","text":"👍","posted":true,"at":"2026-11-28T12:10","checkin":"2026-11-28T12:10"}
+{"who":"Jess","text":"Right so Callum is coming over at 7","posted":true,"at":"2026-11-28T14:52","checkin":"2026-11-28T14:52"}
+{"who":"Niamh","text":"nice","posted":true,"at":"2026-11-28T14:55","checkin":"2026-11-28T14:55"}
+{"who":"Jess","text":"Behave","posted":true,"at":"2026-11-28T14:56","checkin":"2026-11-28T14:56"}
+{"who":"Jamie","text":"anyone know if Sainsbury's on Lothian Road is open late tonight","posted":true,"at":"2026-11-28T16:38","checkin":"2026-11-28T16:38"}
+{"who":"Jess","text":"I think it closes at 10","posted":true,"at":"2026-11-28T16:44","checkin":"2026-11-28T16:44"}
+{"who":"Jamie","text":"cheers","posted":true,"at":"2026-11-28T16:45","checkin":"2026-11-28T16:45"}
+{"who":"Niamh","text":"how's it going","posted":true,"at":"2026-11-28T19:51","checkin":"2026-11-28T19:51"}
+{"who":"Jess","text":"We're just watching something, he literally just got here","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Niamh","text":"lol okay","posted":true,"at":"2026-11-28T20:15","checkin":"2026-11-28T20:15"}
+{"who":"Niamh","text":"okay update or","posted":true,"at":"2026-11-28T23:47","checkin":"2026-11-28T23:47"}
+{"who":"Jess","text":"Good night 😇","posted":true,"at":"2026-11-29T00:04","checkin":"2026-11-29T00:04"}
+{"who":"Niamh","text":"omg","posted":true,"at":"2026-11-29T00:06","checkin":"2026-11-29T00:06"}
+{"who":"Niamh","text":"just the two of you?","posted":true,"at":"2026-11-29T00:07","checkin":"2026-11-29T00:07"}
+{"who":"Jess","text":"Yes Niamh just the two of us","posted":true,"at":"2026-11-29T00:08","checkin":"2026-11-29T00:08"}
+{"who":"Niamh","text":"haha okay good night x","posted":true,"at":"2026-11-29T00:09","checkin":"2026-11-29T00:09"}

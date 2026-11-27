@@ -1,0 +1,85 @@
+{"writer":"w11","live":true,"model":"claude-sonnet-4-6","effort":"medium","days":1,"oracle":false,"start":"2026-11-27T18:35","complete":true,"rejects":0,"today":["Sasha",null],"usage":[{"input_tokens":3,"cache_creation_input_tokens":1765,"cache_read_input_tokens":0,"output_tokens":2270,"output_tokens_details":{"thinking_tokens":1503},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1765,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":2270,"cache_read_input_tokens":0,"cache_creation_input_tokens":1765,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1765},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":3,"cache_creation_input_tokens":2399,"cache_read_input_tokens":0,"output_tokens":1041,"output_tokens_details":{"thinking_tokens":235},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2399,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":3,"output_tokens":1041,"cache_read_input_tokens":0,"cache_creation_input_tokens":2399,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2399},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Isla","Finn","Sasha"],"setting":"You're all in Christchurch, New Zealand, friends who met working at the same bar in the city centre a couple of years back, though not all of you still work there. Right now you've been loosely organising a flat trip up to Hanmer Springs sometime before Christmas, and you share a playlist you've been adding to together for a while.","openers":["suggest a meetup time before Hanmer to sort logistics","ask if anyone's added songs to the playlist lately","check what everyone's doing this weekend","send a screenshot of a cheap accommodation option near Hanmer"],"opener":"ask if anyone's added songs to the playlist lately","cast":{"Isla":{"who":"24, woman, the friend not at the party, receiving the chaotic texts","work":"admin temp","knows":"Finn is a mate from your old bar job, Sasha is a mate from the same place, both of them closer to each other than to you these days but all three of you stayed in touch.","texts":"Isla texts in this chat a lot.","style":"a few emoji, minimal abbreviations, fairly relaxed.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Finn":{"who":"23, man, one of the two at the party, high and barely coherent","work":"bar staff","knows":"Isla is a mate from the bar you all used to work at together, Sasha is a mate and fellow bar worker you're out with tonight.","texts":"Finn texts in this chat only now and again.","style":"barely any emoji, lots of abbreviations, chaotic punctuation.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Sasha":{"who":"25, woman, the other one at the party, sending wild 4am messages","work":"nanny","knows":"Isla is a mate from the bar job where you all met, Finn is a mate you're currently at a house party with.","texts":"Sasha texts in this chat only now and again.","style":"heavy on emoji, rapid-fire short messages, some abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Isla":"You live in a flat in Christchurch, fill your days doing admin temp work, and live with flatmates who aren't in this chat.","Finn":"You live in Christchurch, work bar shifts most evenings and weekends, and live with flatmates who aren't in this chat.","Sasha":"You live in Christchurch, work as a nanny during the week, and live with flatmates who aren't in this chat."},"usage":[{"input_tokens":713,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":433,"output_tokens_details":{"thinking_tokens":162},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":713,"output_tokens":433,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":967,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":498,"output_tokens_details":{"thinking_tokens":36},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":967,"output_tokens":498,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Christchurch, New Zealand","castMs":20182,"situation":"Three friends in their twenties.","topic":"Two of them text from a house party at 4am high on ketamine and coke, barely coherent, then the brutal comedown messages the next day; nobody moralises."}
+{"who":"Isla","text":"Has anyone added to the playlist lately? Feels like nothing new's in there","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Sasha","text":"I added some last week\ndid u not see them","posted":true,"at":"2026-11-27T18:51","checkin":"2026-11-27T18:51"}
+{"who":"Isla","text":"No I didn't even check I just assumed","posted":true,"at":"2026-11-27T18:53","checkin":"2026-11-27T18:53"}
+{"who":"Sasha","text":"[link: Spotify playlist]","posted":true,"at":"2026-11-27T18:54","checkin":"2026-11-27T18:54"}
+{"who":"Isla","text":"Oh the Caroline Polachek one yes good","posted":true,"at":"2026-11-27T18:58","checkin":"2026-11-27T18:58"}
+{"who":"Sasha","text":"one of the kids told me today I look like a villain from a kids show lmao","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Isla","text":"Which one","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Sasha","text":"she wouldn't say 😭","posted":true,"at":"2026-11-27T19:43","checkin":"2026-11-27T19:43"}
+{"who":"Sasha","text":"at pres at jades, finn coming after his shift 🥂","posted":true,"at":"2026-11-27T21:08","checkin":"2026-11-27T21:08"}
+{"who":"Isla","text":"Nice, have fun","posted":true,"at":"2026-11-27T21:22","checkin":"2026-11-27T21:22"}
+{"who":"Finn","text":"isla add smth to the playlist","posted":true,"at":"2026-11-27T23:31","checkin":"2026-11-27T23:31"}
+{"who":"Isla","text":"Like what","posted":true,"at":"2026-11-27T23:38","checkin":"2026-11-27T23:38"}
+{"who":"Finn","text":"idk ur the one w taste","posted":true,"at":"2026-11-27T23:40","checkin":"2026-11-27T23:40"}
+{"who":"Isla","text":"Where are you even","posted":true,"at":"2026-11-27T23:44","checkin":"2026-11-27T23:44"}
+{"who":"Finn","text":"some house on fitzgerald st","posted":true,"at":"2026-11-27T23:46","checkin":"2026-11-27T23:46"}
+{"who":"Sasha","text":"isla 🌙","posted":true,"at":"2026-11-28T00:09","checkin":"2026-11-28T00:09"}
+{"who":"Sasha","text":"finn found us","posted":true,"at":"2026-11-28T00:09","checkin":"2026-11-28T00:09"}
+{"who":"Isla","text":"How's the party","posted":true,"at":"2026-11-28T00:14","checkin":"2026-11-28T00:14"}
+{"who":"Sasha","text":"so good honestly","posted":true,"at":"2026-11-28T00:15","checkin":"2026-11-28T00:15"}
+{"who":"Sasha","text":"isla the music in here","posted":true,"at":"2026-11-28T02:41","checkin":"2026-11-28T02:41"}
+{"who":"Sasha","text":"we need ALL of this for hanmer","posted":true,"at":"2026-11-28T02:41","checkin":"2026-11-28T02:41"}
+{"who":"Sasha","text":"adding things rn","posted":true,"at":"2026-11-28T02:42","checkin":"2026-11-28T02:42"}
+{"who":"Finn","text":"she's added like 12 songs in a row","posted":true,"at":"2026-11-28T02:50","checkin":"2026-11-28T02:50"}
+{"who":"Sasha","text":"they're all good!!","posted":true,"at":"2026-11-28T02:51","checkin":"2026-11-28T02:51"}
+{"who":"Sasha","text":"ok so","posted":true,"at":"2026-11-28T03:47","checkin":"2026-11-28T03:47"}
+{"who":"Sasha","text":"the floor is moving","posted":true,"at":"2026-11-28T03:48","checkin":"2026-11-28T03:48"}
+{"who":"Finn","text":"its not","posted":true,"at":"2026-11-28T03:49","checkin":"2026-11-28T03:49"}
+{"who":"Sasha","text":"finn it literally is","posted":true,"at":"2026-11-28T03:49","checkin":"2026-11-28T03:49"}
+{"who":"Finn","text":"sasha","posted":true,"at":"2026-11-28T03:50","checkin":"2026-11-28T03:50"}
+{"who":"Sasha","text":"👁️👁️","posted":true,"at":"2026-11-28T03:51","checkin":"2026-11-28T03:51"}
+{"who":"Finn","text":"isla r u awake","posted":true,"at":"2026-11-28T04:06","checkin":"2026-11-28T04:06"}
+{"who":"Finn","text":"the guy who lives here has a cat named after a prime minister","posted":true,"at":"2026-11-28T04:14","checkin":"2026-11-28T04:14"}
+{"who":"Sasha","text":"HELEN","posted":true,"at":"2026-11-28T04:19","checkin":"2026-11-28T04:19"}
+{"who":"Finn","text":"helen clark","posted":true,"at":"2026-11-28T04:20","checkin":"2026-11-28T04:20"}
+{"who":"Sasha","text":"I am completely obsessed with her","posted":true,"at":"2026-11-28T04:21","checkin":"2026-11-28T04:21"}
+{"who":"Sasha","text":"[photo: Sasha with her face pressed against a grey cat, eyes closed, big grin]","posted":true,"at":"2026-11-28T04:22","checkin":"2026-11-28T04:22"}
+{"who":"","react":"😂","to":35,"posted":false,"at":"2026-11-28T04:22"}
+{"who":"Finn","text":"not leaving for a while i reckon","posted":true,"at":"2026-11-28T04:38","checkin":"2026-11-28T04:38"}
+{"who":"Sasha","text":"not leaving helen ever","posted":true,"at":"2026-11-28T04:40","checkin":"2026-11-28T04:40"}
+{"who":"Sasha","text":"ok we're leaving 😭","posted":true,"at":"2026-11-28T05:12","checkin":"2026-11-28T05:12"}
+{"who":"Sasha","text":"bye helen","posted":true,"at":"2026-11-28T05:12","checkin":"2026-11-28T05:12"}
+{"who":"Finn","text":"she didn't care","posted":true,"at":"2026-11-28T05:14","checkin":"2026-11-28T05:14"}
+{"who":"Sasha","text":"home","posted":true,"at":"2026-11-28T06:02","checkin":"2026-11-28T06:02"}
+{"who":"Isla","text":"Morning","posted":true,"at":"2026-11-28T12:47","checkin":"2026-11-28T12:47"}
+{"who":"Isla","text":"How's the head","posted":true,"at":"2026-11-28T12:49","checkin":"2026-11-28T12:49"}
+{"who":"Sasha","text":"not great","posted":true,"at":"2026-11-28T13:04","checkin":"2026-11-28T13:04"}
+{"who":"Finn","text":"fine actually","posted":true,"at":"2026-11-28T13:21","checkin":"2026-11-28T13:21"}
+{"who":"Isla","text":"Unfair","posted":true,"at":"2026-11-28T13:24","checkin":"2026-11-28T13:24"}
+{"who":"Sasha","text":"so unfair","posted":true,"at":"2026-11-28T13:26","checkin":"2026-11-28T13:26"}
+{"who":"Isla","text":"Someone added a lot of stuff to the playlist","posted":true,"at":"2026-11-28T15:33","checkin":"2026-11-28T15:33"}
+{"who":"Sasha","text":"it's all good though right","posted":true,"at":"2026-11-28T15:41","checkin":"2026-11-28T15:41"}
+{"who":"Isla","text":"Most of it yeah","posted":true,"at":"2026-11-28T15:44","checkin":"2026-11-28T15:44"}
+{"who":"Isla","text":"There's like four in a row that are kind of the same vibe","posted":true,"at":"2026-11-28T15:45","checkin":"2026-11-28T15:45"}
+{"who":"Sasha","text":"that's a feature not a bug","posted":true,"at":"2026-11-28T15:52","checkin":"2026-11-28T15:52"}
+{"who":"Isla","text":"Have we actually sorted dates for Hanmer yet","posted":true,"at":"2026-11-28T17:09","checkin":"2026-11-28T17:09"}
+{"who":"Finn","text":"no","posted":true,"at":"2026-11-28T17:34","checkin":"2026-11-28T17:34"}
+{"who":"Isla","text":"We should before December gets weird","posted":true,"at":"2026-11-28T17:41","checkin":"2026-11-28T17:41"}
+{"who":"Sasha","text":"I can do most weekends before Christmas\nnot the 19th","posted":true,"at":"2026-11-28T18:02","checkin":"2026-11-28T18:02"}
+{"who":"Isla","text":"Finn what about you","posted":true,"at":"2026-11-28T18:19","checkin":"2026-11-28T18:19"}
+{"who":"Finn","text":"need to check my roster","posted":true,"at":"2026-11-28T18:45","checkin":"2026-11-28T18:45"}
+{"who":"Finn","text":"probs easier after the 10th","posted":true,"at":"2026-11-28T18:46","checkin":"2026-11-28T18:46"}
+{"who":"Isla","text":"So like 12th or 13th?","posted":true,"at":"2026-11-28T19:02","checkin":"2026-11-28T19:02"}
+{"who":"Sasha","text":"yes that works for me","posted":true,"at":"2026-11-28T19:28","checkin":"2026-11-28T19:28"}
+{"who":"Finn","text":"yeah think so","posted":true,"at":"2026-11-28T19:55","checkin":"2026-11-28T19:55"}
+{"who":"Isla","text":"Ok I'll look at places","posted":true,"at":"2026-11-28T20:03","checkin":"2026-11-28T20:03"}
+{"who":"Isla","text":"[link: bach rental listing, Hanmer Springs, sleeps 6]","posted":true,"at":"2026-11-28T22:14","checkin":"2026-11-28T22:14"}
+{"who":"Isla","text":"This one's not bad","posted":true,"at":"2026-11-28T22:14","checkin":"2026-11-28T22:14"}
+{"who":"Sasha","text":"oh that looks nice","posted":true,"at":"2026-11-28T22:31","checkin":"2026-11-28T22:31"}
+{"who":"Sasha","text":"hot tub??","posted":true,"at":"2026-11-28T22:32","checkin":"2026-11-28T22:32"}
+{"who":"Isla","text":"Yeah","posted":true,"at":"2026-11-28T22:34","checkin":"2026-11-28T22:34"}
+{"who":"Sasha","text":"done I don't need to see anything else","posted":true,"at":"2026-11-28T22:35","checkin":"2026-11-28T22:35"}
+{"who":"Finn","text":"how much","posted":true,"at":"2026-11-28T22:51","checkin":"2026-11-28T22:51"}
+{"who":"Isla","text":"$180 a night split between us\nso like $60 each if we do two nights","posted":true,"at":"2026-11-28T22:53","checkin":"2026-11-28T22:53"}
+{"who":"Finn","text":"yeah ok","posted":true,"at":"2026-11-28T23:01","checkin":"2026-11-28T23:01"}
+{"who":"Sasha","text":"we need more people though or is it just us three","posted":true,"at":"2026-11-28T23:04","checkin":"2026-11-28T23:04"}
+{"who":"Isla","text":"I was thinking just us but it's six beds so up to you","posted":true,"at":"2026-11-28T23:09","checkin":"2026-11-28T23:09"}
+{"who":"Sasha","text":"I'm fine either way","posted":true,"at":"2026-11-28T23:14","checkin":"2026-11-28T23:14"}
+{"who":"Finn","text":"let's just do us","posted":true,"at":"2026-11-28T23:28","checkin":"2026-11-28T23:28"}
+{"who":"Sasha","text":"finn did u get home ok","posted":true,"at":"2026-11-29T00:41","checkin":"2026-11-29T00:41"}
+{"who":"Finn","text":"yeah why","posted":true,"at":"2026-11-29T00:43","checkin":"2026-11-29T00:43"}
+{"who":"Sasha","text":"just checking, you left weird","posted":true,"at":"2026-11-29T00:44","checkin":"2026-11-29T00:44"}
+{"who":"Finn","text":"I'm fine","posted":true,"at":"2026-11-29T00:46","checkin":"2026-11-29T00:46"}
+{"who":"Sasha","text":"ok good","posted":true,"at":"2026-11-29T00:47","checkin":"2026-11-29T00:47"}

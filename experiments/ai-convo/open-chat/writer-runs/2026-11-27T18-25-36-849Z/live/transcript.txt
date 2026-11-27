@@ -133,3 +133,83 @@ Ok I'm done for tonight
 
 --- Fri 23:41, Deven
 same, later
+
+--- Sat 10:14, Vero
+Something I did not say last night: the reason the evaluation ecosystem is broken is partly that the labs control too much of the benchmark infrastructure. Scale does good work but they also have commercial relationships with every lab they evaluate.
+
+--- Sat 10:17, Vero
+That is not a conspiracy, it is just a structural problem. The incentives do not point toward honest numbers.
+
+--- Sat 12:49, Deven
+yeah the conflict of interest thing is real. hard to see who fixes it tho
+
+--- Sat 12:51, Vero
+Academic labs should be doing it. They are not resourced for it. That is also not an accident.
+
+--- Sat 15:33, Maren
+Been using o3 for something today. It's expensive but I see what you mean about the argument structure
+
+--- Sat 15:38, Vero
+It holds the shape of a problem better than anything else right now. The citation issue is real and annoying but the underlying reasoning is different.
+
+--- Sat 15:40, Maren
+Still verified everything manually
+
+--- Sat 15:42, Vero
+Correct.
+
+--- Sat 18:09, Deven
+@claude any academic labs doing serious LLM evals right now that aren't funded by the major labs
+
+--- Sat 18:10, Claude
+Stanford's CRFM runs HELM, an open evaluation framework, and Open Philanthropy has given it a grant. A search snippet put that grant at $250k, but I couldn't open the grant page to confirm it. I also couldn't verify what else funds HELM, so I can't say how independent it is of the major labs. Check CRFM's funding acknowledgments.
+
+https://crfm.stanford.edu/2022/11/17/helm.html
+
+--- Sat 18:14, Vero
+Open Philanthropy is not independent. It has funded lab safety teams directly. HELM being their grant recipient does not make it neutral.
+
+--- Sat 18:17, Deven
+so even the "independent" options aren't really
+
+--- Sat 18:19, Vero
+Correct. The money all connects back somewhere. That is the problem.
+
+--- Sat 18:44, Vero
+HELM is also not evaluating what I care about. It covers accuracy and calibration on static tasks. It does not cover reasoning degradation under sustained workload or long context. It is a good tool for the wrong problem.
+
+--- Sat 19:02, Deven
+so there's just. nothing that does what you're describing
+
+--- Sat 19:04, Vero
+Not publicly available, no.
+
+--- Sat 19:31, Maren
+That's a gap someone should fill
+
+--- Sat 19:33, Vero
+Someone without a commercial relationship with the labs should fill it. That person does not currently have funding.
+
+--- Sat 20:17, Deven
+grim
+
+--- Sat 22:48, Vero
+One more thing on GPT-4o and then I am done with this for tonight. The multimodal performance is also inconsistent in ways that are not documented. Image interpretation degrades on complex diagrams in ways that the text reasoning does not predict.
+
+--- Sat 22:51, Vero
+It is not a unified model in the way they present it. The modalities are not equally reliable and there is no published breakdown of where the gaps are.
+
+--- Sat 23:09, Maren
+I've run into that with charts. Assumed I was asking the wrong way
+
+--- Sat 23:11, Vero
+You were not asking the wrong way.
+
+--- Sat 23:14, Maren
+Good to know I guess
+
+--- Sat 23:40, Deven
+ok genuinely logging off now
+
+--- Sun 00:12, Vero
+The other multimodal issue is that GPT-4o treats ambiguous visual input with the same false confidence it brings to ambiguous text. It does not say it cannot read the diagram. It reads it wrong and moves on.

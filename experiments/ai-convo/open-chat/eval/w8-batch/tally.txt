@@ -1,0 +1,32 @@
+group	arm	n	mean	n_p_real	mean_p_real
+overall	W7	118	7.16	118	72
+overall	W8	118	6.94	118	64
+scenario X1	W7	12	7.75	12	78
+scenario X1	W8	12	7.58	12	73
+scenario X2	W7	12	7.58	12	79
+scenario X2	W8	12	7.58	12	68
+scenario X3	W7	12	7.00	12	67
+scenario X3	W8	12	6.08	12	54
+scenario X4	W7	12	7.83	12	73
+scenario X4	W8	12	7.42	12	70
+scenario X5	W7	12	6.75	12	72
+scenario X5	W8	12	6.42	12	51
+scenario X6	W7	12	6.75	12	78
+scenario X6	W8	12	7.08	12	70
+scenario X7	W7	12	6.75	12	66
+scenario X7	W8	12	6.67	12	62
+scenario X8	W7	12	6.75	12	60
+scenario X8	W8	12	6.33	12	52
+scenario Y1	W7	12	7.42	12	75
+scenario Y1	W8	12	7.00	12	68
+scenario Y2	W7	10	7.00	10	70
+scenario Y2	W8	10	7.30	10	72
+window A	W7	60	7.27	60	71
+window A	W8	60	7.10	60	67
+window B	W7	58	7.05	58	73
+window B	W8	58	6.78	58	61
+
+runs by status (dead = 0 messages, short = fewer than MIN_W in the first window, A-only = no judged second window, full = both)
+arm	dead	short	A-only	full	judged share	dead and short runs
+W7	0	0	1	29	30/30	
+W8	0	0	1	29	30/30	

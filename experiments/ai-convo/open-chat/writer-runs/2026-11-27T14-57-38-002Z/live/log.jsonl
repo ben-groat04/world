@@ -1,0 +1,107 @@
+{"writer":"w11","live":true,"model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T14:55","complete":true,"rejects":0,"today":["Refilwe","Bongani","Refilwe"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2149,"cache_read_input_tokens":0,"output_tokens":2613,"output_tokens_details":{"thinking_tokens":1708},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2149,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2613,"cache_read_input_tokens":0,"cache_creation_input_tokens":2149,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2149},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3022,"cache_read_input_tokens":0,"output_tokens":2192,"output_tokens_details":{"thinking_tokens":1306},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3022,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2192,"cache_read_input_tokens":0,"cache_creation_input_tokens":3022,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3022},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3906,"cache_read_input_tokens":0,"output_tokens":2551,"output_tokens_details":{"thinking_tokens":1484},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3906,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2551,"cache_read_input_tokens":0,"cache_creation_input_tokens":3906,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3906},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Refilwe","Bongani"],"setting":"You are both in Johannesburg and know each other through a shared circle of friends, meeting at group hangouts over the years. This week you are both helping plan a housewarming braai for your mutual friends next Saturday, and you are sorting the details in this chat.","openers":["Send a photo of the braai invite draft","Ask if he can help choose the playlist","Share the venue details for Saturday","Send a voice note about the guest list"],"opener":"Send a voice note about the guest list","cast":{"Refilwe":{"who":"22, woman, friend of Person 2","work":"junior graphic designer","knows":"You know Bongani as a friend of your friend, met at group hangouts.","texts":"","style":"some emoji and light texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Bongani":{"who":"22, man, friend of Person 1","work":"high school teacher","knows":"You know Refilwe as a friend of your friend, met at group hangouts.","texts":"","style":"some emoji and light texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Refilwe":"You live in Johannesburg, spend your days as a junior graphic designer, and live alone.","Bongani":"You live in Johannesburg, spend your days teaching high school, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":851,"cache_read_input_tokens":0,"output_tokens":1208,"output_tokens_details":{"thinking_tokens":951},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":851,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1208,"cache_read_input_tokens":0,"cache_creation_input_tokens":851,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":851},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1178,"cache_read_input_tokens":0,"output_tokens":2143,"output_tokens_details":{"thinking_tokens":1775},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1178,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2143,"cache_read_input_tokens":0,"cache_creation_input_tokens":1178,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1178},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Johannesburg, South Africa","castMs":17786,"situation":"You're friends, both 22.","topic":null}
+{"secrets":{"Refilwe":"You have a crush on Bongani and you're scared to tell him.","Bongani":"You have a crush on Refilwe and you're scared to tell her."}}
+{"who":"Refilwe","text":"[voice note: guest list]","posted":true,"at":"2026-11-27T14:55","checkin":"2026-11-27T14:55"}
+{"who":"Bongani","text":"Ok listened. Thabo's bringing his cousin?","posted":true,"at":"2026-11-27T15:02","checkin":"2026-11-27T15:02"}
+{"who":"Refilwe","text":"Think so. Check with Lerato","posted":true,"at":"2026-11-27T15:04","checkin":"2026-11-27T15:04"}
+{"who":"Refilwe","text":"The cousin is a yes","posted":true,"at":"2026-11-27T15:04","checkin":"2026-11-27T15:04"}
+{"who":"Bongani","text":"Should I ask about meat or is that sorted","posted":true,"at":"2026-11-27T15:10","checkin":"2026-11-27T15:10"}
+{"who":"Refilwe","text":"Sorted with Sipho. He's doing boerewors and chops. We need someone for pap and salads","posted":true,"at":"2026-11-27T15:31","checkin":"2026-11-27T15:31"}
+{"who":"Bongani","text":"I can do salads","posted":true,"at":"2026-11-27T15:33","checkin":"2026-11-27T15:33"}
+{"who":"Bongani","text":"Pap I'm not touching","posted":true,"at":"2026-11-27T15:33","checkin":"2026-11-27T15:33"}
+{"who":"Refilwe","text":"Lol fair. I'll ask Naledi","posted":true,"at":"2026-11-27T15:36","checkin":"2026-11-27T15:36"}
+{"who":"Refilwe","text":"[photo: invite sketch]","posted":true,"at":"2026-11-27T16:20","checkin":"2026-11-27T16:20"}
+{"who":"Bongani","text":"That's clean. Is that the font from the ad last week","posted":true,"at":"2026-11-27T16:22","checkin":"2026-11-27T16:22"}
+{"who":"Refilwe","text":"No it's my own. Long day, client changed the logo three times","posted":true,"at":"2026-11-27T16:25","checkin":"2026-11-27T16:25"}
+{"who":"Bongani","text":"Three times","posted":true,"at":"2026-11-27T16:26","checkin":"2026-11-27T16:26"}
+{"who":"Refilwe","text":"Gonna send it to Lerato tonight, she can tell me if the date's wrong","posted":true,"at":"2026-11-27T16:40","checkin":"2026-11-27T16:40"}
+{"who":"Bongani","text":"Is the date wrong","posted":true,"at":"2026-11-27T17:55","checkin":"2026-11-27T17:55"}
+{"who":"Refilwe","text":"Idk. Checking","posted":true,"at":"2026-11-27T17:57","checkin":"2026-11-27T17:57"}
+{"who":"Refilwe","text":"It's right. 5th, 3pm","posted":true,"at":"2026-11-27T18:10","checkin":"2026-11-27T18:10"}
+{"who":"Bongani","text":"Cool. Parking?","posted":true,"at":"2026-11-27T18:14","checkin":"2026-11-27T18:14"}
+{"who":"Refilwe","text":"They've got the street. Ask Lerato","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Refilwe","text":"You're bringing the speaker right","posted":true,"at":"2026-11-27T19:40","checkin":"2026-11-27T19:40"}
+{"who":"Bongani","text":"Yes","posted":true,"at":"2026-11-27T19:41","checkin":"2026-11-27T19:41"}
+{"who":"Refilwe","text":"Thank you","posted":true,"at":"2026-11-27T19:42","checkin":"2026-11-27T19:42"}
+{"who":"Bongani","text":"Quiet night?","posted":true,"at":"2026-11-27T21:03","checkin":"2026-11-27T21:03"}
+{"who":"Refilwe","text":"Yeah. Couch since 6. You?","posted":true,"at":"2026-11-27T21:05","checkin":"2026-11-27T21:05"}
+{"who":"Bongani","text":"Marking. 40 essays on Things Fall Apart","posted":true,"at":"2026-11-27T21:30","checkin":"2026-11-27T21:30"}
+{"who":"Refilwe","text":"😭 that's a lot","posted":true,"at":"2026-11-27T21:31","checkin":"2026-11-27T21:31"}
+{"who":"Refilwe","text":"Are they good at least","posted":true,"at":"2026-11-27T21:31","checkin":"2026-11-27T21:31"}
+{"who":"Bongani","text":"Some. One guy wrote about the wrong book","posted":true,"at":"2026-11-27T22:50","checkin":"2026-11-27T22:50"}
+{"who":"Refilwe","text":"💀","posted":true,"at":"2026-11-27T22:52","checkin":"2026-11-27T22:52"}
+{"who":"Refilwe","text":"Can I ask you something random","posted":true,"at":"2026-11-27T23:40","checkin":"2026-11-27T23:40"}
+{"who":"Bongani","text":"Go","posted":true,"at":"2026-11-27T23:44","checkin":"2026-11-27T23:44"}
+{"who":"Refilwe","text":"Nvm it's dumb. Goodnight","posted":true,"at":"2026-11-27T23:51","checkin":"2026-11-27T23:51"}
+{"who":"Bongani","text":"Ok","posted":true,"at":"2026-11-27T23:52","checkin":"2026-11-27T23:52"}
+{"who":"Bongani","text":"Are you asleep","posted":true,"at":"2026-11-28T00:40","checkin":"2026-11-28T00:40"}
+{"who":"Refilwe","text":"Not asleep, woke up at 4 thinking about the logo lol","posted":true,"at":"2026-11-28T09:12","checkin":"2026-11-28T09:12"}
+{"who":"Bongani","text":"Go back to sleep","posted":true,"at":"2026-11-28T09:20","checkin":"2026-11-28T09:20"}
+{"who":"Bongani","text":"Or ask. The random thing","posted":true,"at":"2026-11-28T09:21","checkin":"2026-11-28T09:21"}
+{"who":"Refilwe","text":"It's not that random","posted":true,"at":"2026-11-28T09:40","checkin":"2026-11-28T09:40"}
+{"who":"Refilwe","text":"Later maybe","posted":true,"at":"2026-11-28T09:41","checkin":"2026-11-28T09:41"}
+{"who":"Bongani","text":"Ok","posted":true,"at":"2026-11-28T09:42","checkin":"2026-11-28T09:42"}
+{"who":"Bongani","text":"[photo: speaker in the boot of a Corolla]","posted":true,"at":"2026-11-28T11:15","checkin":"2026-11-28T11:15"}
+{"who":"Bongani","text":"Charged and everything","posted":true,"at":"2026-11-28T11:15","checkin":"2026-11-28T11:15"}
+{"who":"Refilwe","text":"Proud of you","posted":true,"at":"2026-11-28T11:18","checkin":"2026-11-28T11:18"}
+{"who":"Refilwe","text":"Naledi says she'll do pap if someone else does the fire","posted":true,"at":"2026-11-28T11:18","checkin":"2026-11-28T11:18"}
+{"who":"Bongani","text":"Who does the fire","posted":true,"at":"2026-11-28T11:30","checkin":"2026-11-28T11:30"}
+{"who":"Refilwe","text":"Not me","posted":true,"at":"2026-11-28T11:34","checkin":"2026-11-28T11:34"}
+{"who":"Bongani","text":"Sipho will be insulted","posted":true,"at":"2026-11-28T11:35","checkin":"2026-11-28T11:35"}
+{"who":"Bongani","text":"Ok I'm at Makro. They have 12 chairs in stock and I need 15","posted":true,"at":"2026-11-28T13:02","checkin":"2026-11-28T13:02"}
+{"who":"Bongani","text":"Do we buy 3 more or ask Lerato if people are bringing their own","posted":true,"at":"2026-11-28T13:02","checkin":"2026-11-28T13:02"}
+{"who":"Refilwe","text":"Ask Lerato. She knows who's coming","posted":true,"at":"2026-11-28T13:20","checkin":"2026-11-28T13:20"}
+{"who":"Refilwe","text":"Also don't buy the cheap ones, last time two of them collapsed","posted":true,"at":"2026-11-28T13:21","checkin":"2026-11-28T13:21"}
+{"who":"Bongani","text":"That was Thabo, not the chair","posted":true,"at":"2026-11-28T13:24","checkin":"2026-11-28T13:24"}
+{"who":"Refilwe","text":"😂 it was the chair","posted":true,"at":"2026-11-28T13:25","checkin":"2026-11-28T13:25"}
+{"who":"Bongani","text":"Lerato says 4 people bringing chairs. Buying 11 then","posted":true,"at":"2026-11-28T15:48","checkin":"2026-11-28T15:48"}
+{"who":"Refilwe","text":"Good. Thank you for doing the chair thing","posted":true,"at":"2026-11-28T15:50","checkin":"2026-11-28T15:50"}
+{"who":"Refilwe","text":"Ok the random thing","posted":true,"at":"2026-11-28T17:30","checkin":"2026-11-28T17:30"}
+{"who":"Refilwe","text":"Is it weird if I","posted":true,"at":"2026-11-28T17:31","checkin":"2026-11-28T17:31"}
+{"who":"Refilwe","text":"Nvm. Still not ready","posted":true,"at":"2026-11-28T17:33","checkin":"2026-11-28T17:33"}
+{"who":"Bongani","text":"You can say it","posted":true,"at":"2026-11-28T17:40","checkin":"2026-11-28T17:40"}
+{"who":"Bongani","text":"Still here if you want","posted":true,"at":"2026-11-28T18:55","checkin":"2026-11-28T18:55"}
+{"who":"Refilwe","text":"Has anyone ever told you something and you just felt really unsure how to answer","posted":true,"at":"2026-11-28T20:12","checkin":"2026-11-28T20:12"}
+{"who":"Bongani","text":"Yes","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Bongani","text":"Usually me, when I'm the one who said it","posted":true,"at":"2026-11-28T20:14","checkin":"2026-11-28T20:14"}
+{"who":"Refilwe","text":"Ok","posted":true,"at":"2026-11-28T20:20","checkin":"2026-11-28T20:20"}
+{"who":"Refilwe","text":"Goodnight Bongani","posted":true,"at":"2026-11-28T21:45","checkin":"2026-11-28T21:45"}
+{"who":"Bongani","text":"Night Refilwe","posted":true,"at":"2026-11-28T21:46","checkin":"2026-11-28T21:46"}
+{"who":"Refilwe","text":"Are you up","posted":true,"at":"2026-11-29T10:02","checkin":"2026-11-29T10:02"}
+{"who":"Bongani","text":"Yeah. Making coffee","posted":true,"at":"2026-11-29T10:30","checkin":"2026-11-29T10:30"}
+{"who":"Refilwe","text":"Ok","posted":true,"at":"2026-11-29T10:31","checkin":"2026-11-29T10:31"}
+{"who":"Refilwe","text":"I'm either going to say it today or talk myself out of it by lunch","posted":true,"at":"2026-11-29T10:33","checkin":"2026-11-29T10:33"}
+{"who":"Bongani","text":"Say it","posted":true,"at":"2026-11-29T10:36","checkin":"2026-11-29T10:36"}
+{"who":"Refilwe","text":"Not over text 😭","posted":true,"at":"2026-11-29T10:38","checkin":"2026-11-29T10:38"}
+{"who":"Bongani","text":"Ok","posted":true,"at":"2026-11-29T10:38","checkin":"2026-11-29T10:38"}
+{"who":"Bongani","text":"Naledi asked if the 5th is still on for the fire","posted":true,"at":"2026-11-29T10:52","checkin":"2026-11-29T10:52"}
+{"who":"Refilwe","text":"Tell her the fire is Sipho's problem","posted":true,"at":"2026-11-29T11:04","checkin":"2026-11-29T11:04"}
+{"who":"Refilwe","text":"He's already said he'll stand there with the tongs like it's a job","posted":true,"at":"2026-11-29T11:04","checkin":"2026-11-29T11:04"}
+{"who":"Bongani","text":"😂","posted":true,"at":"2026-11-29T11:09","checkin":"2026-11-29T11:09"}
+{"who":"Refilwe","text":"Client sent logo v4 at 7am. On a Sunday","posted":true,"at":"2026-11-29T12:47","checkin":"2026-11-29T12:47"}
+{"who":"Refilwe","text":"Told them I'd look Monday","posted":true,"at":"2026-11-29T12:48","checkin":"2026-11-29T12:48"}
+{"who":"Bongani","text":"Good. Let it be Monday","posted":true,"at":"2026-11-29T12:50","checkin":"2026-11-29T12:50"}
+{"who":"Refilwe","text":"Trying to","posted":true,"at":"2026-11-29T13:15","checkin":"2026-11-29T13:15"}
+{"who":"Bongani","text":"Are you going to the Rosebank market or is that just a Saturday thing","posted":true,"at":"2026-11-29T15:30","checkin":"2026-11-29T15:30"}
+{"who":"Refilwe","text":"Saturday thing. I've been on the couch since lunch","posted":true,"at":"2026-11-29T15:44","checkin":"2026-11-29T15:44"}
+{"who":"Bongani","text":"Same. Marking is 30 essays down. Thing fell apart","posted":true,"at":"2026-11-29T15:45","checkin":"2026-11-29T15:45"}
+{"who":"Refilwe","text":"Stop with the Things Fall Apart jokes you're killing me","posted":true,"at":"2026-11-29T15:46","checkin":"2026-11-29T15:46"}
+{"who":"Bongani","text":"They're killing me","posted":true,"at":"2026-11-29T15:50","checkin":"2026-11-29T15:50"}
+{"who":"Refilwe","text":"Ok","posted":true,"at":"2026-11-29T18:20","checkin":"2026-11-29T18:20"}
+{"who":"Refilwe","text":"Are you free Thursday evening? Coffee or something. I want to say the random thing properly and not in a text at midnight","posted":true,"at":"2026-11-29T18:21","checkin":"2026-11-29T18:21"}
+{"who":"Bongani","text":"Yes","posted":true,"at":"2026-11-29T18:40","checkin":"2026-11-29T18:40"}
+{"who":"Bongani","text":"Wednesday I've got the Grade 11 exam thing till late so Thursday","posted":true,"at":"2026-11-29T18:41","checkin":"2026-11-29T18:41"}
+{"who":"Refilwe","text":"Thursday","posted":true,"at":"2026-11-29T18:43","checkin":"2026-11-29T18:43"}
+{"who":"Refilwe","text":"Is it bad that I'm nervous and it's just coffee","posted":true,"at":"2026-11-29T18:44","checkin":"2026-11-29T18:44"}
+{"who":"Bongani","text":"Not bad","posted":true,"at":"2026-11-29T18:58","checkin":"2026-11-29T18:58"}
+{"who":"Bongani","text":"I'm nervous too and I don't even know what you're going to say","posted":true,"at":"2026-11-29T19:02","checkin":"2026-11-29T19:02"}
+{"who":"Refilwe","text":"You do though","posted":true,"at":"2026-11-29T19:05","checkin":"2026-11-29T19:05"}
+{"who":"Bongani","text":"Maybe","posted":true,"at":"2026-11-29T19:06","checkin":"2026-11-29T19:06"}
+{"who":"Refilwe","text":"I'm going to bed early so I don't spiral","posted":true,"at":"2026-11-29T21:14","checkin":"2026-11-29T21:14"}
+{"who":"Bongani","text":"Good","posted":true,"at":"2026-11-29T21:15","checkin":"2026-11-29T21:15"}
+{"who":"Bongani","text":"Sleep","posted":true,"at":"2026-11-29T21:16","checkin":"2026-11-29T21:16"}
+{"who":"Bongani","text":"For what it's worth it's not a dumb thing","posted":true,"at":"2026-11-29T23:48","checkin":"2026-11-29T23:48"}
+{"who":"Refilwe","text":"You don't know what it is","posted":true,"at":"2026-11-29T23:50","checkin":"2026-11-29T23:50"}
+{"who":"Bongani","text":"No. But I know you don't do dumb things on purpose","posted":true,"at":"2026-11-29T23:52","checkin":"2026-11-29T23:52"}
+{"who":"Refilwe","text":"Goodnight Bongani","posted":true,"at":"2026-11-30T00:02","checkin":"2026-11-30T00:02"}
+{"who":"Bongani","text":"Night Refilwe","posted":true,"at":"2026-11-30T00:03","checkin":"2026-11-30T00:03"}

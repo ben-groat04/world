@@ -1,0 +1,49 @@
+group	arm	n	mean	n_p_real	mean_p_real
+class business	W10	60	7.47	60	77
+class business	W11	60	7.38	60	76
+class minimal	W10	60	7.60	60	77
+class minimal	W11	60	8.25	60	84
+overall	W10	120	7.53	120	77
+overall	W11	120	7.82	120	80
+scenario B1	W10	12	7.00	12	73
+scenario B1	W11	12	6.67	12	68
+scenario B2	W10	12	7.00	12	71
+scenario B2	W11	12	7.42	12	76
+scenario B3	W10	12	8.00	12	82
+scenario B3	W11	12	7.83	12	81
+scenario M1	W10	12	7.75	12	80
+scenario M1	W11	12	8.33	12	85
+scenario M2	W10	12	6.50	12	65
+scenario M2	W11	12	7.83	12	82
+scenario M3	W10	12	8.42	12	85
+scenario M3	W11	12	8.42	12	86
+scenario M4	W10	12	7.58	12	78
+scenario M4	W11	12	8.17	12	83
+scenario M5	W10	12	7.75	12	79
+scenario M5	W11	12	8.50	12	87
+scenario V1	W10	12	7.42	12	77
+scenario V1	W11	12	7.17	12	74
+scenario V2	W10	12	7.92	12	82
+scenario V2	W11	12	7.83	12	82
+window A	W10	60	7.52	60	78
+window A	W11	60	7.68	60	78
+window B	W10	60	7.55	60	77
+window B	W11	60	7.95	60	82
+
+judge-centred (judge mean taken off)
+group	arm	n	score_centred	p_real_centred
+class business	W10	60	-0.21	-1.92
+class business	W11	60	-0.29	-2.59
+class minimal	W10	60	-0.02	-0.43
+class minimal	W11	60	+0.52	+4.95
+overall	W10	120	-0.12	-1.18
+overall	W11	120	+0.12	+1.18
+window A	W10	60	-0.12	-0.93
+window A	W11	60	+0.07	+0.64
+window B	W10	60	-0.11	-1.43
+window B	W11	60	+0.16	+1.72
+
+runs by status (dead = 0 messages, short = fewer than MIN_W in the first window, A-only = no judged second window, full = both)
+arm	dead	short	A-only	full	judged share	dead and short runs
+W10	0	0	0	30	30/30	
+W11	0	0	0	30	30/30	

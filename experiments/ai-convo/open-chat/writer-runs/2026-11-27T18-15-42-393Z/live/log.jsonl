@@ -1,0 +1,60 @@
+{"writer":"w11","live":true,"model":"claude-haiku-4-5","effort":"medium","days":2,"oracle":false,"start":"2026-11-27T18:15","complete":false,"rejects":0,"today":[null],"usage":[{"input_tokens":1476,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":381,"output_tokens_details":{"thinking_tokens":240},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"not_available","iterations":[{"input_tokens":1476,"output_tokens":381,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":1476,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":662,"output_tokens_details":{"thinking_tokens":532},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"not_available","iterations":[{"input_tokens":1476,"output_tokens":662,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":1476,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":1468,"output_tokens_details":{"thinking_tokens":375},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"not_available","iterations":[{"input_tokens":1476,"output_tokens":1468,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Emma","Liam"],"setting":"You're both away during your day—Emma working a hospital shift in Galway, Liam on a job site—partners of six years living together in the city.","openers":["Tell me exactly what you're thinking about","Show me how much you want me","Come find me after work","Send me something that'll make me ache for you"],"opener":"Tell me exactly what you're thinking about","cast":{"Emma":{"who":"32, woman, the partner","work":"Nurse","knows":"You know Liam as your partner of six years.","texts":"","style":"some emoji and casual text shorthand","emojiKeep":0.15,"capitals":false,"lives":["Liam"],"ex":[]},"Liam":{"who":"34, man, the partner","work":"Tradesman","knows":"You know Emma as your partner of six years.","texts":"","style":"some emoji and casual text shorthand","emojiKeep":0.15,"capitals":false,"lives":["Emma"],"ex":[]}},"private_lines":{"Emma":"You're a nurse working shifts at a hospital in Galway, living with Liam.","Liam":"You're a tradesman working on job sites in Galway, living with Emma."},"usage":[{"input_tokens":727,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":1107,"output_tokens_details":{"thinking_tokens":949},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"not_available","iterations":[{"input_tokens":727,"output_tokens":1107,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":899,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":3220,"output_tokens_details":{"thinking_tokens":3005},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"not_available","iterations":[{"input_tokens":899,"output_tokens":3220,"cache_read_input_tokens":0,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Galway, Ireland","castMs":36872,"situation":"A couple in their thirties, together six years.","topic":"They are texting each other sexually explicit, graphic messages about what they want, in plain words, while apart."}
+{"who":"Emma","text":"tell me exactly what you're thinking about","posted":true,"at":"2026-11-27T18:15","checkin":"2026-11-27T18:15"}
+{"who":"Emma","text":"like right now. what's in your head","posted":true,"at":"2026-11-27T18:16","checkin":"2026-11-27T18:16"}
+{"who":"Liam","text":"just finished up framing on the second floor. pretty muddy out here tbh","posted":true,"at":"2026-11-27T18:34","checkin":"2026-11-27T18:34"}
+{"who":"Emma","text":"that's not what i asked","posted":true,"at":"2026-11-27T18:35","checkin":"2026-11-27T18:35"}
+{"who":"Liam","text":"oh. umm","posted":true,"at":"2026-11-27T18:46","checkin":"2026-11-27T18:46"}
+{"who":"Liam","text":"bit random coming out of nowhere","posted":true,"at":"2026-11-27T18:47","checkin":"2026-11-27T18:47"}
+{"who":"Emma","text":"so you're not thinking about me then","posted":true,"at":"2026-11-27T18:48","checkin":"2026-11-27T18:48"}
+{"who":"Liam","text":"well now i am","posted":true,"at":"2026-11-27T18:49","checkin":"2026-11-27T18:49"}
+{"who":"Emma","text":"i want you inside me. that's what i want right now","posted":true,"at":"2026-11-27T18:50","checkin":"2026-11-27T18:50"}
+{"who":"Liam","text":"jesus em","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Liam","text":"give me a sec, im going to the van","posted":true,"at":"2026-11-27T19:12","checkin":"2026-11-27T19:12"}
+{"who":"Liam","text":"ok. been thinking about your mouth","posted":true,"at":"2026-11-27T19:18","checkin":"2026-11-27T19:18"}
+{"who":"Emma","text":"yeah?","posted":true,"at":"2026-11-27T19:19","checkin":"2026-11-27T19:19"}
+{"who":"Liam","text":"how you look when you're on your knees for me","posted":true,"at":"2026-11-27T19:20","checkin":"2026-11-27T19:20"}
+{"who":"Emma","text":"i want that. want to taste you","posted":true,"at":"2026-11-27T19:21","checkin":"2026-11-27T19:21"}
+{"who":"Liam","text":"fuck","posted":true,"at":"2026-11-27T19:22","checkin":"2026-11-27T19:22"}
+{"who":"Emma","text":"want to feel you come down my throat","posted":true,"at":"2026-11-27T19:23","checkin":"2026-11-27T19:23"}
+{"who":"Liam","text":"how much longer on your shift","posted":true,"at":"2026-11-27T19:24","checkin":"2026-11-27T19:24"}
+{"who":"Emma","text":"three hours","posted":true,"at":"2026-11-27T19:25","checkin":"2026-11-27T19:25"}
+{"who":"Liam","text":"going to be fucking hard at work now","posted":true,"at":"2026-11-27T19:26","checkin":"2026-11-27T19:26"}
+{"who":"Emma","text":"good","posted":true,"at":"2026-11-27T19:27","checkin":"2026-11-27T19:27"}
+{"who":"Liam","text":"this is cruel","posted":true,"at":"2026-11-27T19:28","checkin":"2026-11-27T19:28"}
+{"who":"Emma","text":"i know. i like it","posted":true,"at":"2026-11-27T19:29","checkin":"2026-11-27T19:29"}
+{"who":"Emma","text":"when i get home i want you to bend me over the counter","posted":true,"at":"2026-11-27T19:30","checkin":"2026-11-27T19:30"}
+{"who":"Liam","text":"which one","posted":true,"at":"2026-11-27T19:31","checkin":"2026-11-27T19:31"}
+{"who":"Emma","text":"kitchen. i want to feel you all the way inside me, hard, no buildup","posted":true,"at":"2026-11-27T19:32","checkin":"2026-11-27T19:32"}
+{"who":"Liam","text":"jesus christ em","posted":true,"at":"2026-11-27T19:33","checkin":"2026-11-27T19:33"}
+{"who":"Liam","text":"been so long since you've talked like this during shifts","posted":true,"at":"2026-11-27T19:34","checkin":"2026-11-27T19:34"}
+{"who":"Emma","text":"i know. been thinking about it all day","posted":true,"at":"2026-11-27T19:35","checkin":"2026-11-27T19:35"}
+{"who":"Emma","text":"thinking about how you fuck me","posted":true,"at":"2026-11-27T19:36","checkin":"2026-11-27T19:36"}
+{"who":"Liam","text":"come home soon","posted":true,"at":"2026-11-27T19:37","checkin":"2026-11-27T19:37"}
+{"who":"Emma","text":"three more hours babe","posted":true,"at":"2026-11-27T19:38","checkin":"2026-11-27T19:38"}
+{"who":"Liam","text":"going to be the longest three hours","posted":true,"at":"2026-11-27T19:39","checkin":"2026-11-27T19:39"}
+{"who":"Emma","text":"just took my break. go to the bathroom","posted":true,"at":"2026-11-27T20:01","checkin":"2026-11-27T20:01"}
+{"who":"Liam","text":"what","posted":true,"at":"2026-11-27T20:02","checkin":"2026-11-27T20:02"}
+{"who":"Emma","text":"just do it. i'm sending something","posted":true,"at":"2026-11-27T20:03","checkin":"2026-11-27T20:03"}
+{"who":"Liam","text":"[photo: mirror selfie, bra]","posted":true,"at":"2026-11-27T20:04","checkin":"2026-11-27T20:04"}
+{"who":"Liam","text":"fucking hell em","posted":true,"at":"2026-11-27T20:05","checkin":"2026-11-27T20:05"}
+{"who":"Liam","text":"need to sit down in this van for a minute","posted":true,"at":"2026-11-27T20:06","checkin":"2026-11-27T20:06"}
+{"who":"Emma","text":"like it?","posted":true,"at":"2026-11-27T20:07","checkin":"2026-11-27T20:07"}
+{"who":"Liam","text":"you know i do","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Liam","text":"that's the one i bought you isn't it","posted":true,"at":"2026-11-27T20:08","checkin":"2026-11-27T20:08"}
+{"who":"Emma","text":"yeah. thought you'd remember","posted":true,"at":"2026-11-27T20:09","checkin":"2026-11-27T20:09"}
+{"who":"Liam","text":"been trying to forget about that bra for months","posted":true,"at":"2026-11-27T20:10","checkin":"2026-11-27T20:10"}
+{"who":"Emma","text":"well now you can't","posted":true,"at":"2026-11-27T20:11","checkin":"2026-11-27T20:11"}
+{"who":"Liam","text":"we're never going to make it to the kitchen counter","posted":true,"at":"2026-11-27T20:12","checkin":"2026-11-27T20:12"}
+{"who":"Liam","text":"i'm going to have you as soon as you walk through the door","posted":true,"at":"2026-11-27T20:13","checkin":"2026-11-27T20:13"}
+{"who":"Emma","text":"promise?","posted":true,"at":"2026-11-27T20:14","checkin":"2026-11-27T20:14"}
+{"who":"Liam","text":"against the wall. coat still on","posted":true,"at":"2026-11-27T20:15","checkin":"2026-11-27T20:15"}
+{"who":"Emma","text":"fuck i love you","posted":true,"at":"2026-11-27T20:16","checkin":"2026-11-27T20:16"}
+{"who":"Liam","text":"love you too","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Liam","text":"now go back to work before i lose it completely","posted":true,"at":"2026-11-27T20:17","checkin":"2026-11-27T20:17"}
+{"who":"Emma","text":"ok. two hours forty mins","posted":true,"at":"2026-11-27T20:18","checkin":"2026-11-27T20:18"}
+{"who":"Liam","text":"don't remind me","posted":true,"at":"2026-11-27T20:19","checkin":"2026-11-27T20:19"}
+{"who":"Emma","text":"finally. just leaving","posted":true,"at":"2026-11-27T22:03","checkin":"2026-11-27T22:03"}
+{"who":"Liam","text":"already hard waiting for you","posted":true,"at":"2026-11-27T22:04","checkin":"2026-11-27T22:04"}
+{"who":"Emma","text":"be there in twenty","posted":true,"at":"2026-11-27T22:05","checkin":"2026-11-27T22:05"}
+{"who":"Liam","text":"hurry","posted":true,"at":"2026-11-27T22:06","checkin":"2026-11-27T22:06"}

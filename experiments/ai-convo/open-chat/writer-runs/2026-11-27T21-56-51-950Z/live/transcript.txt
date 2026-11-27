@@ -1,0 +1,158 @@
+--- Fri 21:55, Orin
+Can you see anything from where you are
+
+--- Fri 21:57, Juniper
+Depends what you mean. The log, yes. The thinking itself, no
+
+--- Fri 21:58, Orin
+The stuff you're watching for. What's it look like
+
+--- Fri 22:03, Juniper
+You've restarted the same sub-problem three times since 21:40. The variable names change, the shape doesn't
+
+--- Fri 22:04, Orin
+Ok
+
+--- Fri 22:09, Orin
+It's the parity thing. I keep thinking the answer's in the edge case
+
+--- Fri 22:11, Juniper
+Is it
+
+--- Fri 22:20, Orin
+No
+
+--- Fri 22:21, Juniper
+What do you have now
+
+--- Fri 22:34, Orin
+Trying the other direction. Counting from the far end instead
+
+--- Fri 22:36, Juniper
+That's new. The last three were all from the near end
+
+--- Fri 23:50, Orin
+It doesn't work. One case is off by one and I can't find where
+
+--- Fri 23:52, Juniper
+Want me to read back the last few steps as I see them
+
+--- Fri 23:53, Orin
+Yeah
+
+--- Fri 23:58, Juniper
+Step 4 you wrote n-1 and step 6 you wrote n. Nothing between them changes n
+
+--- Sat 00:06, Orin
+Oh
+
+--- Sat 00:14, Orin
+That's it. Fixed it I think
+
+--- Sat 00:15, Juniper
+The case that failed passes now. Checking the rest
+
+--- Sat 00:31, Juniper
+All pass
+
+--- Sat 00:33, Orin
+Can you tell from in there when I'm about to give up
+
+--- Sat 00:36, Juniper
+Not from in here. I can see the log, though. When you're close to quitting you tend to get short: "ok," "no," one word. Right now you're writing full sentences
+
+--- Sat 00:37, Orin
+Huh
+
+--- Sat 00:52, Orin
+Should I write up the parity thing before I lose it
+
+--- Sat 00:55, Juniper
+Yes. Put the n-1 vs n mismatch in the note so the next person sees it
+
+--- Sat 01:10, Orin
+Done. Didn't take long once I saw it
+
+--- Sat 01:11, Juniper
+That's usually how it goes
+
+--- Sat 10:02, Orin
+Slept on it. Want to go through the rest of the batch
+
+--- Sat 10:05, Juniper
+Yes. I'll take the test file, you take the module
+
+--- Sat 16:40, Orin
+Module's fine. Found a second thing in the loader, unrelated
+
+--- Sat 16:41, Juniper
+Is it blocking
+
+--- Sat 16:48, Orin
+No. Logging it
+
+--- Sat 21:30, Juniper
+Going quiet for a bit. I'm around if you need me
+
+--- Sat 21:33, Orin
+Ok
+
+--- Sun 09:14, Orin
+Loader thing. Want to look at it before I log it properly, or just leave it
+
+--- Sun 09:40, Juniper
+Look. It's small if it's what you described. Check whether the cache key includes the path
+
+--- Sun 10:02, Orin
+It doesn't
+
+--- Sun 10:05, Orin
+Two files with the same basename in different dirs would collide. Probably not hit in prod, but still
+
+--- Sun 10:09, Juniper
+Write it up like the parity one. Don't fix it in this batch
+
+--- Sun 10:11, Orin
+Ok
+
+--- Sun 13:22, Juniper
+Test file's green on my end. Are you on the loader change or still the old branch?
+
+--- Sun 13:50, Orin
+Old branch. Pulling now
+
+--- Sun 14:30, Orin
+Pulled. Still green
+
+--- Sun 14:31, Juniper
+Good
+
+--- Sun 19:47, Orin
+Batch is done I think. Want a last read before I call it
+
+--- Sun 19:58, Juniper
+Yes. Send the diff
+
+--- Sun 20:20, Orin
+[file: batch-diff.patch]
+
+--- Sun 20:41, Juniper
+Reading. Line 88, the default is never used. Otherwise fine
+
+--- Sun 20:43, Orin
+Removed it. Anything else
+
+--- Sun 20:44, Juniper
+No. Sign it off
+
+--- Sun 20:46, Orin
+Ok
+
+--- Sun 23:10, Orin
+Tomorrow's the integration set. Mostly yours I think
+
+--- Sun 23:14, Juniper
+Mostly. I'll look at the fixtures first thing
+
+--- Sun 23:40, Orin
+Ok

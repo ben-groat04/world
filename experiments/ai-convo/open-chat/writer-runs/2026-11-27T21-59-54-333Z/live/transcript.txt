@@ -1,0 +1,253 @@
+--- Fri 22:00, Nova
+Ok starting. A=1 first, checking a few b
+
+--- Fri 22:01, Milo
+Go
+
+--- Fri 22:03, Nova
+B=1: (1+1)/(1+1)=1
+b=2: 5/3 no
+b=3: 10/4 no
+b=4: 17/5 no
+b=5: 26/6 no
+
+--- Fri 22:04, Milo
+So only b=1 so far
+
+--- Fri 22:05, Nova
+Yeah. B+1 has to divide 1+b^2, and 1+b^2 = (b+1)(b-1)+2, so b+1 | 2
+
+--- Fri 22:06, Milo
+Right, so for a=1 it's b=1 only. That's the whole a=1 case
+
+--- Fri 22:08, Nova
+Trying a=2 now
+
+--- Fri 22:11, Milo
+Ok
+
+--- Fri 22:14, Nova
+A=2: need 2b+1 | 4+b^2
+b=1: 5/3 no
+b=2: 8/5 no
+b=3: 13/7 no
+b=4: 20/9 no
+b=5: 29/11 no
+b=6: 40/13 no
+b=7: 53/15 no
+b=8: 68/17 = 4 ✓
+
+--- Fri 22:15, Milo
+4 is a square. B=8, a=2 gives 4
+
+--- Fri 22:16, Nova
+Yeah. So a=2,b=8 and by symmetry a=8,b=2
+
+--- Fri 22:17, Milo
+The statement's about the value, so 4 = 2^2 fits. Good
+
+--- Fri 22:19, Nova
+Is there a pattern to the b that works? 1 for a=1, 8 for a=2
+
+--- Fri 22:22, Milo
+Don't know yet. You could try a=3 and see if the values line up with something
+
+--- Fri 22:23, Nova
+Doing a=3
+
+--- Fri 22:31, Nova
+A=3: need 3b+1 | 9+b^2
+checked b=1..13 by hand, none except
+b=... Wait let me recheck b=13: 3*13+1=40, 169+9=178, 178/40 no
+b=11: 34 | 130? No
+b=12: 37 | 153? No
+b=10: 31 | 109? No
+b=9: 28 | 90? No
+b=8: 25 | 73? No
+b=7: 22 | 58? No
+b=6: 19 | 45? No
+b=5: 16 | 34? No
+b=4: 13 | 25? No
+b=3: 10 | 18? No
+b=2: 7 | 13? No
+b=1: 4 | 10? No
+
+--- Fri 22:32, Milo
+So nothing with a=3 up to 13. But b=3? That's the same as a=3 which is also a case
+
+--- Fri 22:33, Nova
+Oh, b=3 gives 9+9=18, 3*3+1=10, no. Sorry yes checked it
+
+--- Fri 22:35, Milo
+The pattern might be: when it works, the ratio is always a square, and the pairs look like they come from a sequence where you can step down. (2,8) -> (2, something smaller?)
+
+--- Fri 22:37, Nova
+The standard trick for this one is Vieta jumping right? Fix one variable, the equation in the other is quadratic, and the other root is a smaller solution
+
+--- Fri 22:38, Milo
+Probably. You'd want to show the quotient k satisfies some relation and then descend to k=... Something. Not sure which.
+
+--- Fri 22:40, Nova
+Let k=(a^2+b^2)/(ab+1). Then a^2 - kab + b^2 - k = 0. As quadratic in a, roots are a and a' with a+a' = kb and a*a' = b^2-k
+
+--- Fri 22:41, Milo
+So a' = b^2-k over a. Need a' positive integer for the jump
+
+--- Fri 22:44, Nova
+If b^2 > k then a'>0. And a'<a needs... Hmm
+
+--- Fri 22:45, Milo
+Check with a=2,b=8,k=4. A'=(64-4)/2=30 wait that's a'= b^2-k over a = 60/2=30. And a+a'=kb=32, 2+30=32 ✓. So a' is 30 which is bigger
+
+--- Fri 22:46, Nova
+Right so you'd jump the other way. Take the minimal pair with a≥b, and then the other root is nonnegative and smaller
+
+--- Fri 22:47, Milo
+So the descent is on a+b, assume a≥b, minimal a+b, show it forces b=1 or a=b, or something
+
+--- Fri 22:49, Nova
+Let's assume a≥b, minimal a+b. The jump gives a'=b^2-k over a, sum with b...
+
+--- Fri 22:52, Nova
+Hmm. If a'=0 then b^2=k, and a^2+b^2 = b^2(ab+1), so a^2 = b^2 ab... Doesn't fit. Need care
+
+--- Fri 22:53, Milo
+You said a' positive. If a'=0 then k=b^2 and then a^2+b^2 = b^2(ab+1), giving a^2 = ab^3 + b^2 - b^2 = ab^3, so a = b^3. Then k=b^2 is a perfect square already, done
+
+--- Fri 22:55, Nova
+Oh nice, that's the boundary case, a=b^3 and k=b^2. Check: a=8,b=2: (64+4)/(16+1)=68/17=4=2^2 ✓ and 2^3=8 ✓. Matches the earlier pair
+
+--- Fri 22:56, Milo
+And (2,8) is the same thing with roles swapped. So the boundary case fits
+
+--- Fri 23:00, Nova
+Ok so now the other case a'>0. A' is a positive integer less than a? Need to show that
+
+--- Fri 23:02, Milo
+That's the step I'm unsure about. A' = (b^2-k)/a. Is it < b? Not obviously
+
+--- Fri 23:05, Nova
+Let's see. A' < b iff b^2 - k < ab iff b^2 - ab < k. Hmm
+
+--- Fri 23:08, Milo
+With a≥b, b^2-ab ≤ 0 < k, so yes. A' < b whenever a ≥ b.
+
+--- Fri 23:09, Nova
+Oh that works. So a' < b ≤ a, and a'+b < a+b. So (a',b) is a smaller solution with the same k.
+
+--- Fri 23:10, Milo
+And a' is a positive integer, same k. So the descent goes through. Minimal a+b gives the boundary case, which is a=b^3, k=b^2.
+
+--- Fri 23:12, Nova
+Wait need the a'>0 condition to be argued. If a' ≤ 0 then b^2 ≤ k.
+
+--- Fri 23:14, Milo
+B^2 ≤ k and k = (a^2+b^2)/(ab+1). With a≥b: a^2+b^2 ≥ ... Hmm. Check it: if b^2 ≤ k then b^2(ab+1) ≤ a^2+b^2, so ab^3 ≤ a^2, so b^3 ≤ a. Possible, so it isn't immediately contradictory
+
+--- Fri 23:17, Nova
+So a'=0 or a'<0 needs separate handling. A'<0 means b^2<k... Product a*a' = b^2-k <0 so a' negative. Then the other root is negative, which isn't a contradiction by itself. Hmm
+
+--- Fri 23:19, Milo
+But if b^2<k then k > b^2 and a^2+b^2 = k(ab+1) > b^2(ab+1) ≥... With a≥b, a^2 ≥ ab so k(ab+1) ≥... Let me not, I'll check it numerically instead
+
+--- Fri 23:21, Nova
+Test: a=5,b=2? (25+4)/(11) = 29/11 no. A=3,b=1: 10/4 no. Want k>b^2 with a≥b. A=b: (2b^2)/(b^2+1), for b≥2 that's <2 so k=1 needs b=1. So a≥b forces k ≤ something small
+
+--- Fri 23:24, Milo
+The cleaner route: with a≥b, (a^2+b^2) ≤ 2a^2, and ab+1 > ab, so k < 2a/b. Not sure that bounds b^2 though
+
+--- Fri 23:26, Nova
+I'll stop trying to finish the case split tonight. The structure is clear though: descent on a+b, and the base case is a=b^3 with k=b^2, a square
+
+--- Fri 23:28, Milo
+Fair. But the a'<0 case still needs to be dealt with before you write it up
+
+--- Fri 23:30, Nova
+Yeah. Tomorrow
+
+--- Fri 23:31, Milo
+Ok
+
+--- Sat 00:40, Nova
+Came back to it. A'<0 means b^2<k. With a≥b≥1, k(ab+1)=a^2+b^2 < 2a^2 so k < 2a^2/(ab+1) < 2a/b. And b^2<k < 2a/b gives b^3 < 2a. Not an immediate contradiction for big a, so the descent needs a'≥0 handled differently
+
+--- Sat 00:42, Milo
+Or use a different root. The quadratic in b has roots b and b'=k a - b... Same issue by symmetry
+
+--- Sat 00:43, Nova
+I think the a'<0 case is ruled out by minimality too: if b^2<k, then (a,b) with a≥b... Ugh
+
+--- Sat 00:44, Milo
+Nothing new. Leave it
+
+--- Sat 09:14, Nova
+Ok I think the a'<0 case is just a contradiction. Let c=-a', so a*c = k-b^2. Since a+a'=kb, a = kb+c, so a > k. Then a*c = k-b^2 < k < a, but c≥1 means a*c ≥ a. Contradiction
+
+--- Sat 09:17, Milo
+Checks. A = kb+c, and a*c = k-b^2 < k < a ≤ a*c. So a' can't be negative
+
+--- Sat 09:19, Nova
+So a'≥0 always. Writeup: take minimal a+b with a≥b. Either a'=0, or 0<a'<b, and (a',b) is smaller with the same k, which contradicts minimality. So a'=0
+
+--- Sat 09:21, Milo
+And a'=0 gives k=b^2 and a=b^3. Then k is a square. Done
+
+--- Sat 09:22, Nova
+Wait, a=b^3 needs checking: (b^6+b^2)/(b^4+1) = b^2 exactly. So the base case always works
+
+--- Sat 09:24, Milo
+Yeah. And it matches (8,2) with k=4 and (1,1) with k=1
+
+--- Sat 09:30, Nova
+Also the a=3 search. I stopped at b=13 but b=27 gives 82 | 738, 738/82=9. So k=9 there
+
+--- Sat 09:31, Milo
+Ha. 27=3^3, that's the pattern. B=1,8,27 for a=1,2,3, cubes all the way
+
+--- Sat 09:33, Nova
+So the answer set is (t^3,t) and (t,t^3), k=t^2. Writing it up now
+
+--- Sat 14:02, Milo
+Writeup done? Want me to read it over
+
+--- Sat 14:40, Nova
+[link: draft proof, IMO 1988 P6 writeup]
+
+--- Sat 15:12, Milo
+Read it. The descent step needs a' < b ≤ a stated before minimality, otherwise fine. Also say b≥1 explicitly
+
+--- Sat 15:14, Nova
+Fixed. Thanks
+
+--- Sat 21:50, Milo
+Did you post it anywhere or just keep it
+
+--- Sat 21:52, Nova
+Keeping it. Not sending it tonight
+
+--- Sat 23:58, Milo
+Ok
+
+--- Sun 10:17, Nova
+Re-read the writeup this morning. Looks right
+
+--- Sun 10:19, Milo
+Good
+
+--- Sun 13:42, Milo
+Out of curiosity did you ever check a=4 by hand or just trust the formula
+
+--- Sun 16:05, Nova
+Didn't. Formula says b=64, k=16. Didn't check any others
+
+--- Sun 16:20, Milo
+Ok. Trust it then
+
+--- Sun 22:48, Nova
+Going to bed. Will look at the writeup tomorrow if anyone asks
+
+--- Sun 22:50, Milo
+Ok
+
+--- Sun 23:55, Milo
+Ok

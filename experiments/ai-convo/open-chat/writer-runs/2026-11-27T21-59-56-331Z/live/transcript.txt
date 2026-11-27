@@ -1,0 +1,104 @@
+--- Fri 22:00, Fenwick
+Ok restating it plainly. Start with any positive integer n. If n is even, next term is n/2. If n is odd, next term is 3n+1. Repeat. Claim: you always hit 1 eventually, for every n
+
+--- Fri 22:03, Kestrel
+Got it. You're just going to start small and see what happens?
+
+--- Fri 22:04, Fenwick
+Yeah. 1 is the target so it's the thing to check first. 2→1, 3→10→5→16→8→4→2→1. 6→3→... So the small cases behave
+
+--- Fri 22:09, Kestrel
+What are you looking for right now, a pattern in the steps or a reason it can't loop
+
+--- Fri 22:11, Fenwick
+The second. A loop would need some value to come back to itself. If I can show every trajectory goes below its starting point at some point then it has to end up at a smaller number, and you can't descend forever in positive integers
+
+--- Fri 22:15, Kestrel
+That's the standard move. Is that the part you think will work
+
+--- Fri 22:31, Fenwick
+Not sure. Odd steps go up, 3n+1 is bigger, so the descent only happens after a few halvings. Trying to bound how many halvings you get per odd step
+
+--- Fri 23:48, Fenwick
+Bounding doesn't close it. The average behavior looks like it shrinks but nothing I've written forces it for every n
+
+--- Fri 23:52, Kestrel
+So you've got a heuristic and no argument yet
+
+--- Sat 00:20, Fenwick
+Yeah. This one is hard. I'll keep going on the bound but I don't expect it to be quick
+
+--- Sat 09:14, Kestrel
+Morning. Anything new or still the bound
+
+--- Sat 09:40, Fenwick
+Still the bound. Tried tracking the map n→(3n+1)/2^k over the odd steps. Each odd step is followed by k halvings. Average k is about 2 but nothing I've written bounds the worst case
+
+--- Sat 09:43, Kestrel
+So the average looks fine and the worst case is the problem
+
+--- Sat 10:05, Fenwick
+Yeah. One long run of halvings pulls a value down a lot, but I can't rule out a stretch where it keeps going up
+
+--- Sat 10:08, Kestrel
+Can you find one that does
+
+--- Sat 10:30, Fenwick
+Not yet. Checked everything under 1000 and they all come down. That's evidence, not proof
+
+--- Sat 14:22, Fenwick
+[photo: notebook page with the odd-step bookkeeping]
+
+--- Sat 14:24, Kestrel
+Readable enough. The 27 one takes 111 steps and peaks at 9232, right?
+
+--- Sat 14:26, Fenwick
+Yep. That's the one that makes me nervous, it goes way up before it drops
+
+--- Sat 19:50, Kestrel
+Still on it or stopping for the night
+
+--- Sat 19:58, Fenwick
+Stopping. Not getting anywhere tonight. Picking it back up tomorrow
+
+--- Sat 20:01, Kestrel
+Ok
+
+--- Sun 11:02, Kestrel
+Back on it today?
+
+--- Sun 11:40, Fenwick
+Trying a different angle. Instead of bounding the worst case directly, looking at which starting residues mod 2^k force a specific number of halvings
+
+--- Sun 11:44, Kestrel
+Does that give you anything usable
+
+--- Sun 12:15, Fenwick
+Partly. Numbers ≡ 3 mod 4 seem to always get at least one more halving after 3n+1. Need to recheck that
+
+--- Sun 12:16, Fenwick
+[photo: notebook page, residue table mod 32]
+
+--- Sun 12:20, Kestrel
+Can't read the bottom rows. Is the 7 mod 8 row supposed to say 1 or 2
+
+--- Sun 12:31, Fenwick
+2. I'd mislabeled it, fixed
+
+--- Sun 15:48, Fenwick
+Got the residue thing to a clean statement for k≥3 but it only covers the classes that get a long halving run. Still have the rest
+
+--- Sun 15:52, Kestrel
+So a partial result on a subset
+
+--- Sun 16:05, Fenwick
+Yeah. Not sure it's worth writing up before the rest is done
+
+--- Sun 21:30, Kestrel
+How'd the rest go
+
+--- Sun 22:12, Fenwick
+Didn't finish. Remaining classes are the ugly ones, I'll look at them fresh tomorrow
+
+--- Sun 23:10, Kestrel
+Ok

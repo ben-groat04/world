@@ -1,0 +1,98 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T20:40","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1466,"cache_read_input_tokens":0,"output_tokens":2906,"output_tokens_details":{"thinking_tokens":1981},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1466,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2906,"cache_read_input_tokens":0,"cache_creation_input_tokens":1466,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1466},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2355,"cache_read_input_tokens":0,"output_tokens":2721,"output_tokens_details":{"thinking_tokens":1859},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2355,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2721,"cache_read_input_tokens":0,"cache_creation_input_tokens":2355,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2355},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3211,"cache_read_input_tokens":0,"output_tokens":3403,"output_tokens_details":{"thinking_tokens":2154},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3211,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3403,"cache_read_input_tokens":0,"cache_creation_input_tokens":3211,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3211},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Tamara","Marlon"],"setting":"You two live in Kingston, Jamaica, and have been close friends since secondary school, so this chat is where you keep in touch.","openers":["Ask when your flight leaves","Send a photo of your packed suitcases","Tell him you'll video call every Sunday","Say you're nervous about the move"],"opener":"Send a photo of your packed suitcases","cast":{"Tamara":{"who":"29, woman, the friend moving abroad","work":"nurse","knows":"You know Marlon as your best friend since secondary school.","texts":"","style":"moderate emoji and some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Marlon":{"who":"30, man, the friend staying behind","work":"delivery driver","knows":"You know Tamara as your best friend since secondary school.","texts":"","style":"moderate emoji and some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Tamara":"You live alone in Kingston, Jamaica, working shifts as a nurse.","Marlon":"You live alone in Kingston, Jamaica, delivering parcels around the city."},"sleep":{"Tamara":[23.5,7],"Marlon":[22.5,6]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":788,"cache_read_input_tokens":0,"output_tokens":773,"output_tokens_details":{"thinking_tokens":550},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":788,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":773,"cache_read_input_tokens":0,"cache_creation_input_tokens":788,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":788},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1029,"cache_read_input_tokens":0,"output_tokens":1721,"output_tokens_details":{"thinking_tokens":1374},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1029,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1721,"cache_read_input_tokens":0,"cache_creation_input_tokens":1029,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1029},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Kingston, Jamaica","castMs":13470,"situation":"Two friends, one is moving abroad.","topic":null}
+{"who":"Tamara","text":"[photo: two suitcases open on the bed, half full]","posted":true,"at":"2026-12-03T20:40","checkin":"2026-12-03T20:40"}
+{"who":"Tamara","text":"Mi tink mi forget something 😩","posted":true,"at":"2026-12-03T20:41","checkin":"2026-12-03T20:41"}
+{"who":"Marlon","text":"Mek sure yuh nuh pack di jerk seasoning inside di bag lol","posted":true,"at":"2026-12-03T20:47","checkin":"2026-12-03T20:47"}
+{"who":"Tamara","text":"Di one sitting on top? 😂 I'm not that bad","posted":true,"at":"2026-12-03T20:52","checkin":"2026-12-03T20:52"}
+{"who":"Marlon","text":"Yuh literally have di kitchen drawer in one suitcase","posted":true,"at":"2026-12-03T20:53","checkin":"2026-12-03T20:53"}
+{"who":"Tamara","text":"It's the good scissors. Ok fine","posted":true,"at":"2026-12-03T20:55","checkin":"2026-12-03T20:55"}
+{"who":"Tamara","text":"Is the big one too heavy? They said 23kg","posted":true,"at":"2026-12-03T21:02","checkin":"2026-12-03T21:02"}
+{"who":"Marlon","text":"Weigh it wid di bathroom scale lol\ntry lift it. If u struggle pull sumting out","posted":true,"at":"2026-12-03T21:10","checkin":"2026-12-03T21:10"}
+{"who":"Tamara","text":"Mi cant tell if I'm struggling or just being dramatic rn","posted":true,"at":"2026-12-03T21:14","checkin":"2026-12-03T21:14"}
+{"who":"Marlon","text":"Both prob","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Tamara","text":"Ok I took out the boots. They're going in the carry on now 🙄","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Marlon","text":"Dem boot yuh wear to hospital?","posted":true,"at":"2026-12-03T21:33","checkin":"2026-12-03T21:33"}
+{"who":"Tamara","text":"No the other ones. The ones for when it's cold lol","posted":true,"at":"2026-12-03T21:35","checkin":"2026-12-03T21:35"}
+{"who":"Marlon","text":"Cold where yuh going again 💀","posted":true,"at":"2026-12-03T21:36","checkin":"2026-12-03T21:36"}
+{"who":"Tamara","text":"Canada. U was there when I booked it","posted":true,"at":"2026-12-03T21:38","checkin":"2026-12-03T21:38"}
+{"who":"Marlon","text":"Mi remember now. Mi just cant imagine yuh in snow","posted":true,"at":"2026-12-03T21:40","checkin":"2026-12-03T21:40"}
+{"who":"Tamara","text":"I'll send you pictures and you can laugh 😂","posted":true,"at":"2026-12-03T21:41","checkin":"2026-12-03T21:41"}
+{"who":"","react":"👍","to":16,"posted":false,"at":"2026-12-03T21:41"}
+{"who":"Marlon","text":"Bet. Mi have di parcel run start 6 so mi might be quiet","posted":true,"at":"2026-12-03T21:44","checkin":"2026-12-03T21:44"}
+{"who":"Tamara","text":"You always quiet at 6","posted":true,"at":"2026-12-03T21:46","checkin":"2026-12-03T21:46"}
+{"who":"Marlon","text":"Lie. Mi always quiet at 9","posted":true,"at":"2026-12-03T21:47","checkin":"2026-12-03T21:47"}
+{"who":"Tamara","text":"U coming to the airport or nah","posted":true,"at":"2026-12-03T22:08","checkin":"2026-12-03T22:08"}
+{"who":"Marlon","text":"Mi coming. Mi nuh saying goodbye at di curb tho","posted":true,"at":"2026-12-03T22:20","checkin":"2026-12-03T22:20"}
+{"who":"Tamara","text":"😭 fine","posted":true,"at":"2026-12-03T22:21","checkin":"2026-12-03T22:21"}
+{"who":"Marlon","text":"U was about to cry","posted":true,"at":"2026-12-03T22:24","checkin":"2026-12-03T22:24"}
+{"who":"Tamara","text":"I was not","posted":true,"at":"2026-12-03T22:25","checkin":"2026-12-03T22:25"}
+{"who":"Tamara","text":"Ok a little","posted":true,"at":"2026-12-03T22:26","checkin":"2026-12-03T22:26"}
+{"who":"Marlon","text":"Night. Take di jacket","posted":true,"at":"2026-12-03T22:31","checkin":"2026-12-03T22:31"}
+{"who":"","react":"❤️","to":26,"posted":false,"at":"2026-12-03T22:31"}
+{"who":"Tamara","text":"Night 🫶","posted":true,"at":"2026-12-03T22:32","checkin":"2026-12-03T22:32"}
+{"who":"Tamara","text":"Cant sleep. The house already sounds empty","posted":true,"at":"2026-12-03T23:40","checkin":"2026-12-03T23:40"}
+{"who":"Tamara","text":"[photo: the winter jacket folded on the chair]","posted":true,"at":"2026-12-03T23:52","checkin":"2026-12-03T23:52"}
+{"who":"Tamara","text":"Mi just put on the jacket to see 😂 it's too big in the shoulder","posted":true,"at":"2026-12-03T23:58","checkin":"2026-12-03T23:58"}
+{"who":"Tamara","text":"Is that normal","posted":true,"at":"2026-12-04T00:06","checkin":"2026-12-04T00:06"}
+{"who":"Marlon","text":"Yuh still up? Mi phone a tell mi yuh message","posted":true,"at":"2026-12-04T06:14","checkin":"2026-12-04T06:14"}
+{"who":"Marlon","text":"Eat something before u go in today","posted":true,"at":"2026-12-04T06:15","checkin":"2026-12-04T06:15"}
+{"who":"Tamara","text":"Finally knock out around 3 not on today thank God","posted":true,"at":"2026-12-04T09:40","checkin":"2026-12-04T09:40"}
+{"who":"Tamara","text":"Shoulder is normal I think. Just have to get used to it","posted":true,"at":"2026-12-04T09:41","checkin":"2026-12-04T09:41"}
+{"who":"Marlon","text":"Dat jacket cut fi bigger man, nuh wonder","posted":true,"at":"2026-12-04T09:55","checkin":"2026-12-04T09:55"}
+{"who":"Tamara","text":"Thanks 🙄","posted":true,"at":"2026-12-04T10:02","checkin":"2026-12-04T10:02"}
+{"who":"Marlon","text":"[photo: a shoe box with \"FRAGILE\" sticker half peeled off]","posted":true,"at":"2026-12-04T13:20","checkin":"2026-12-04T13:20"}
+{"who":"Marlon","text":"Some people really tek di fragile sticker as a suggestion","posted":true,"at":"2026-12-04T13:21","checkin":"2026-12-04T13:21"}
+{"who":"Tamara","text":"Mi hope it's not the good scissors","posted":true,"at":"2026-12-04T13:22","checkin":"2026-12-04T13:22"}
+{"who":"Marlon","text":"Nah. Shoes fi a man mother birthday. Portmore","posted":true,"at":"2026-12-04T13:23","checkin":"2026-12-04T13:23"}
+{"who":"Tamara","text":"Dem gonna arrive broke","posted":true,"at":"2026-12-04T13:25","checkin":"2026-12-04T13:25"}
+{"who":"Marlon","text":"Mi already mark it pon di route. If it broke mi a go hear about it","posted":true,"at":"2026-12-04T13:26","checkin":"2026-12-04T13:26"}
+{"who":"Tamara","text":"[photo: sheet cake with blue icing]","posted":true,"at":"2026-12-04T16:48","checkin":"2026-12-04T16:48"}
+{"who":"Tamara","text":"Dem did a cake at work 😭 sayin \"BON VOYAGE TAMERA\"","posted":true,"at":"2026-12-04T16:49","checkin":"2026-12-04T16:49"}
+{"who":"Marlon","text":"Dem spell yuh name wrong","posted":true,"at":"2026-12-04T16:50","checkin":"2026-12-04T16:50"}
+{"who":"Tamara","text":"Sharon say it's the Canadian spelling 🙄","posted":true,"at":"2026-12-04T16:51","checkin":"2026-12-04T16:51"}
+{"who":"Marlon","text":"Mi finish. Feet dead","posted":true,"at":"2026-12-04T19:34","checkin":"2026-12-04T19:34"}
+{"who":"Marlon","text":"Yuh eat?","posted":true,"at":"2026-12-04T19:35","checkin":"2026-12-04T19:35"}
+{"who":"Tamara","text":"Eat the cake 🙃 that counts","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Marlon","text":"Lie","posted":true,"at":"2026-12-04T19:53","checkin":"2026-12-04T19:53"}
+{"who":"Tamara","text":"When yuh going to sleep","posted":true,"at":"2026-12-04T22:10","checkin":"2026-12-04T22:10"}
+{"who":"Marlon","text":"Going down soon. Mi have a 6 o'clock run again","posted":true,"at":"2026-12-04T22:41","checkin":"2026-12-04T22:41"}
+{"who":"Marlon","text":"Yuh alright?","posted":true,"at":"2026-12-04T22:42","checkin":"2026-12-04T22:42"}
+{"who":"Tamara","text":"Mi keep looking at di suitcase like it gonna change","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Tamara","text":"Going to try again. Night 🫶","posted":true,"at":"2026-12-05T00:20","checkin":"2026-12-05T00:20"}
+{"who":"Marlon","text":"Mi start. Yuh managed to sleep?","posted":true,"at":"2026-12-05T06:12","checkin":"2026-12-05T06:12"}
+{"who":"Tamara","text":"Mi up. Dream bout di airport and mi cyaan find di gate","posted":true,"at":"2026-12-05T11:47","checkin":"2026-12-05T11:47"}
+{"who":"Marlon","text":"Dat mek sense. Yuh cyaan find anyting","posted":true,"at":"2026-12-05T11:49","checkin":"2026-12-05T11:49"}
+{"who":"Marlon","text":"Portmore shoes deliver. Lady come out inna house slipper and cry before she even open di box lol","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Tamara","text":"Aw 🥹 that's sweet actually","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Marlon","text":"Mi did say sorry bout di sticker","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Tamara","text":"[photo: big suitcase on the bathroom scale, reading 24.6]","posted":true,"at":"2026-12-05T13:05","checkin":"2026-12-05T13:05"}
+{"who":"Tamara","text":"So it's 24.6","posted":true,"at":"2026-12-05T13:06","checkin":"2026-12-05T13:06"}
+{"who":"Marlon","text":"Lie. Mi see yuh wid di scale pon di floor","posted":true,"at":"2026-12-05T13:07","checkin":"2026-12-05T13:07"}
+{"who":"Tamara","text":"I took out the 2 sweaters and put dem on mi body 🙃","posted":true,"at":"2026-12-05T13:09","checkin":"2026-12-05T13:09"}
+{"who":"Marlon","text":"Yuh a go look like a marshmallow wid legs","posted":true,"at":"2026-12-05T13:09","checkin":"2026-12-05T13:09"}
+{"who":"Tamara","text":"Better dan freezing it's now 23.8 so","posted":true,"at":"2026-12-05T13:10","checkin":"2026-12-05T13:10"}
+{"who":"Marlon","text":"Mi proud. Hear Canada inna December, dem nuh play","posted":true,"at":"2026-12-05T13:11","checkin":"2026-12-05T13:11"}
+{"who":"Marlon","text":"Done wid run. Mi going nap, feet still a complain","posted":true,"at":"2026-12-05T15:40","checkin":"2026-12-05T15:40"}
+{"who":"Tamara","text":"Mum asking if I want fish tea before I go","posted":true,"at":"2026-12-05T16:02","checkin":"2026-12-05T16:02"}
+{"who":"Tamara","text":"She say tell u come if u want. She know u gonna come anyway 🙄","posted":true,"at":"2026-12-05T16:03","checkin":"2026-12-05T16:03"}
+{"who":"Marlon","text":"Tell her mi a come. Mi not missing fish tea fi nuh reason","posted":true,"at":"2026-12-05T16:20","checkin":"2026-12-05T16:20"}
+{"who":"Tamara","text":"Mi just realise I have nothing to wear on the plane that isn't a hoodie","posted":true,"at":"2026-12-05T18:22","checkin":"2026-12-05T18:22"}
+{"who":"Marlon","text":"Wear di hoodie. Yuh already look like one","posted":true,"at":"2026-12-05T18:24","checkin":"2026-12-05T18:24"}
+{"who":"Tamara","text":"Rude 😭","posted":true,"at":"2026-12-05T18:25","checkin":"2026-12-05T18:25"}
+{"who":"Marlon","text":"Wha time flight again","posted":true,"at":"2026-12-05T20:14","checkin":"2026-12-05T20:14"}
+{"who":"Tamara","text":"Plane 6:40 so we leave house 3:30 latest. Mi said dat already","posted":true,"at":"2026-12-05T20:15","checkin":"2026-12-05T20:15"}
+{"who":"Marlon","text":"Mi forget. Mi put it pon mi phone now","posted":true,"at":"2026-12-05T20:16","checkin":"2026-12-05T20:16"}
+{"who":"Tamara","text":"U put it on u phone u still have it on di paper from last month?","posted":true,"at":"2026-12-05T20:17","checkin":"2026-12-05T20:17"}
+{"who":"Marlon","text":"Mi have it inna two places. Mek mi have a backup","posted":true,"at":"2026-12-05T20:19","checkin":"2026-12-05T20:19"}
+{"who":"Tamara","text":"Mi finally eat. Mum make mi take a plate fi di road","posted":true,"at":"2026-12-05T21:50","checkin":"2026-12-05T21:50"}
+{"who":"Marlon","text":"Good. Dat a di first real food yuh eat dis week?","posted":true,"at":"2026-12-05T21:51","checkin":"2026-12-05T21:51"}
+{"who":"Tamara","text":"Don't start I had cake","posted":true,"at":"2026-12-05T21:53","checkin":"2026-12-05T21:53"}
+{"who":"Marlon","text":"😂 cake nuh count","posted":true,"at":"2026-12-05T21:54","checkin":"2026-12-05T21:54"}
+{"who":"Tamara","text":"Mi keep reaching fi mi phone fi check if mi forget something","posted":true,"at":"2026-12-05T23:38","checkin":"2026-12-05T23:38"}
+{"who":"Marlon","text":"Yuh forget nuttin. Mi check it already","posted":true,"at":"2026-12-05T23:40","checkin":"2026-12-05T23:40"}
+{"who":"Tamara","text":"Wha yuh check?","posted":true,"at":"2026-12-05T23:41","checkin":"2026-12-05T23:41"}
+{"who":"Marlon","text":"Yuh nuh forget me","posted":true,"at":"2026-12-05T23:42","checkin":"2026-12-05T23:42"}
+{"who":"Tamara","text":"Mi going bed now","posted":true,"at":"2026-12-05T23:43","checkin":"2026-12-05T23:43"}
+{"who":"Marlon","text":"Go sleep. Di jacket nuh fi sleep pon di chair","posted":true,"at":"2026-12-05T23:44","checkin":"2026-12-05T23:44"}
+{"who":"","react":"❤️","to":91,"posted":false,"at":"2026-12-05T23:44"}
+{"who":"Tamara","text":"Night","posted":true,"at":"2026-12-06T00:14","checkin":"2026-12-06T00:14"}

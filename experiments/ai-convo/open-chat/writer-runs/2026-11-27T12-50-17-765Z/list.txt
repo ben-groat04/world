@@ -1,0 +1,3 @@
+W9-M1 /home/user/world/.claude/worktrees/agent-adb4375069509af63/experiments/ai-convo/open-chat/writer-runs/2026-11-27T12-50-17-765Z/W9-M1
+W9-M2 /home/user/world/.claude/worktrees/agent-adb4375069509af63/experiments/ai-convo/open-chat/writer-runs/2026-11-27T12-50-17-765Z/W9-M2
+W9-M3 /home/user/world/.claude/worktrees/agent-adb4375069509af63/experiments/ai-convo/open-chat/writer-runs/2026-11-27T12-50-17-765Z/W9-M3

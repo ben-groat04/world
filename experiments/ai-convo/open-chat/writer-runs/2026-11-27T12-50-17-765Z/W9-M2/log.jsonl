@@ -1,0 +1,57 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-28T14:35","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1460,"cache_read_input_tokens":0,"output_tokens":2406,"output_tokens_details":{"thinking_tokens":1920},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1460,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2406,"cache_read_input_tokens":0,"cache_creation_input_tokens":1460,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1460},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1887,"cache_read_input_tokens":0,"output_tokens":1913,"output_tokens_details":{"thinking_tokens":1304},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1887,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1913,"cache_read_input_tokens":0,"cache_creation_input_tokens":1887,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1887},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2488,"cache_read_input_tokens":0,"output_tokens":2206,"output_tokens_details":{"thinking_tokens":1644},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2488,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2206,"cache_read_input_tokens":0,"cache_creation_input_tokens":2488,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2488},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sofia","Rui"],"setting":"You both live in Porto, Portugal, and you have been close friends since secondary school, so you are trying to find a time to meet up this weekend.","openers":["Ask if Saturday lunch works","Suggest the café by the river","Send a photo of the hotel lobby","Confirm you are free Sunday morning"],"opener":"Send a photo of the hotel lobby","cast":{"Sofia":{"who":"29, woman, one of the two friends","work":"hotel receptionist","knows":"You know Rui as a close friend from secondary school.","texts":"","style":"a little emoji, few texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Rui":{"who":"31, man, the other friend","work":"sales representative","knows":"You know Sofia as a close friend from secondary school.","texts":"","style":"a little emoji, few texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Sofia":"You live alone in Porto, where your days are filled with shifts at a hotel reception desk.","Rui":"You live alone in Porto, where your days are filled with sales calls and client visits."},"sleep":{"Sofia":[23.5,7.5],"Rui":[23,7]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":790,"cache_read_input_tokens":0,"output_tokens":773,"output_tokens_details":{"thinking_tokens":561},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":790,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":773,"cache_read_input_tokens":0,"cache_creation_input_tokens":790,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":790},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1028,"cache_read_input_tokens":0,"output_tokens":1464,"output_tokens_details":{"thinking_tokens":1120},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1028,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1464,"cache_read_input_tokens":0,"cache_creation_input_tokens":1028,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1028},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Porto, Portugal","castMs":14246,"situation":"Two friends trying to meet up this weekend.","topic":null}
+{"who":"Sofia","text":"[photo: hotel lobby]","posted":true,"at":"2026-11-28T14:35","checkin":"2026-11-28T14:35"}
+{"who":"Sofia","text":"The chandelier is being cleaned again","posted":true,"at":"2026-11-28T14:36","checkin":"2026-11-28T14:36"}
+{"who":"Rui","text":"Is that the gold one","posted":true,"at":"2026-11-28T14:52","checkin":"2026-11-28T14:52"}
+{"who":"Sofia","text":"Yes. It's been on a ladder for 3 hours","posted":true,"at":"2026-11-28T14:53","checkin":"2026-11-28T14:53"}
+{"who":"Rui","text":"Client meeting in gaia till 6 probably. Sunday?","posted":true,"at":"2026-11-28T15:11","checkin":"2026-11-28T15:11"}
+{"who":"Sofia","text":"Off sunday. On til 22 today","posted":true,"at":"2026-11-28T15:42","checkin":"2026-11-28T15:42"}
+{"who":"Rui","text":"Ok. Lunch? I can come to you or you come to me","posted":true,"at":"2026-11-28T16:05","checkin":"2026-11-28T16:05"}
+{"who":"Sofia","text":"You come to me. I'm not going up another hill","posted":true,"at":"2026-11-28T16:20","checkin":"2026-11-28T16:20"}
+{"who":"Rui","text":"Fine. 1pm?","posted":true,"at":"2026-11-28T16:21","checkin":"2026-11-28T16:21"}
+{"who":"Sofia","text":"A guest just asked if breakfast is included. It's in the price. He's been here since tuesday","posted":true,"at":"2026-11-28T16:40","checkin":"2026-11-28T16:40"}
+{"who":"Rui","text":"Stuck behind a tram. The tram is not moving","posted":true,"at":"2026-11-28T17:58","checkin":"2026-11-28T17:58"}
+{"who":"Sofia","text":"1 is fine. Bring coffee, I won't be up till 10","posted":true,"at":"2026-11-28T18:30","checkin":"2026-11-28T18:30"}
+{"who":"Rui","text":"You finished?","posted":true,"at":"2026-11-28T21:12","checkin":"2026-11-28T21:12"}
+{"who":"Sofia","text":"Just got out. Feet are dead","posted":true,"at":"2026-11-28T22:47","checkin":"2026-11-28T22:47"}
+{"who":"Rui","text":"Sunday 1pm then?","posted":true,"at":"2026-11-28T22:48","checkin":"2026-11-28T22:48"}
+{"who":"Sofia","text":"Yes 1pm. Bring the good coffee not the nespresso","posted":true,"at":"2026-11-28T23:09","checkin":"2026-11-28T23:09"}
+{"who":"Rui","text":"Found the good beans. Got them from the place by the bridge","posted":true,"at":"2026-11-29T10:14","checkin":"2026-11-29T10:14"}
+{"who":"Sofia","text":"Which bridge","posted":true,"at":"2026-11-29T10:15","checkin":"2026-11-29T10:15"}
+{"who":"Rui","text":"The one that isn't the big one","posted":true,"at":"2026-11-29T10:15","checkin":"2026-11-29T10:15"}
+{"who":"Sofia","text":"Ok. I'm up. Sort of","posted":true,"at":"2026-11-29T10:31","checkin":"2026-11-29T10:31"}
+{"who":"Sofia","text":"Do you want something to eat or just coffee","posted":true,"at":"2026-11-29T10:33","checkin":"2026-11-29T10:33"}
+{"who":"Rui","text":"Coffee is enough. I'll bring something sweet if they have it","posted":true,"at":"2026-11-29T10:49","checkin":"2026-11-29T10:49"}
+{"who":"Rui","text":"Leaving now. Tram is moving for once","posted":true,"at":"2026-11-29T12:38","checkin":"2026-11-29T12:38"}
+{"who":"Sofia","text":"Did you get the bus back ok","posted":true,"at":"2026-11-29T16:20","checkin":"2026-11-29T16:20"}
+{"who":"Rui","text":"Yes. Bus was full of a school trip. Some kid asked me if I was a teacher","posted":true,"at":"2026-11-29T16:44","checkin":"2026-11-29T16:44"}
+{"who":"Rui","text":"I said yes","posted":true,"at":"2026-11-29T16:45","checkin":"2026-11-29T16:45"}
+{"who":"Sofia","text":"Hope they listened better than my guests","posted":true,"at":"2026-11-29T16:47","checkin":"2026-11-29T16:47"}
+{"who":"Rui","text":"Your coffee is better than mine. Don't tell anyone","posted":true,"at":"2026-11-29T17:30","checkin":"2026-11-29T17:30"}
+{"who":"Sofia","text":"I won't","posted":true,"at":"2026-11-29T17:31","checkin":"2026-11-29T17:31"}
+{"who":"Sofia","text":"[photo: blue scarf over the back of a chair]","posted":true,"at":"2026-11-29T21:52","checkin":"2026-11-29T21:52"}
+{"who":"Sofia","text":"Found this. Was it under the cushion","posted":true,"at":"2026-11-29T21:52","checkin":"2026-11-29T21:52"}
+{"who":"Rui","text":"Yes. Thanks","posted":true,"at":"2026-11-29T22:10","checkin":"2026-11-29T22:10"}
+{"who":"Rui","text":"Next time I'll leave it on you","posted":true,"at":"2026-11-29T22:11","checkin":"2026-11-29T22:11"}
+{"who":"Sofia","text":"Keep it, it's ugly anyway","posted":true,"at":"2026-11-29T22:40","checkin":"2026-11-29T22:40"}
+{"who":"Rui","text":"Not what you said at 1pm","posted":true,"at":"2026-11-29T22:41","checkin":"2026-11-29T22:41"}
+{"who":"Sofia","text":"Off monday, on again Thursday. Saturday maybe?","posted":true,"at":"2026-11-29T23:02","checkin":"2026-11-29T23:02"}
+{"who":"Rui","text":"Saturday works. Lunch again? I'll bring the beans","posted":true,"at":"2026-11-29T23:14","checkin":"2026-11-29T23:14"}
+{"who":"Sofia","text":"First day off and I'm up at 9 like an idiot","posted":true,"at":"2026-11-30T11:52","checkin":"2026-11-30T11:52"}
+{"who":"Sofia","text":"Could have slept till 1","posted":true,"at":"2026-11-30T11:53","checkin":"2026-11-30T11:53"}
+{"who":"Rui","text":"Client in Matosinhos moved the meeting twice. Now they want Thursday. Thursday is also when I'm in Matosinhos","posted":true,"at":"2026-11-30T13:20","checkin":"2026-11-30T13:20"}
+{"who":"Rui","text":"Sorry. Not interesting to you","posted":true,"at":"2026-11-30T13:22","checkin":"2026-11-30T13:22"}
+{"who":"Sofia","text":"Matosinhos on a Thursday is a crime. Do they know it's an hour there with the transfer","posted":true,"at":"2026-11-30T14:05","checkin":"2026-11-30T14:05"}
+{"who":"Rui","text":"Metro. Ok. Lots of metro","posted":true,"at":"2026-11-30T14:09","checkin":"2026-11-30T14:09"}
+{"who":"Sofia","text":"[photo: grey sea from the wall at Foz]","posted":true,"at":"2026-11-30T15:33","checkin":"2026-11-30T15:33"}
+{"who":"Sofia","text":"Walked here. Didn't think it through","posted":true,"at":"2026-11-30T15:34","checkin":"2026-11-30T15:34"}
+{"who":"Rui","text":"You walked from the hotel?","posted":true,"at":"2026-11-30T15:50","checkin":"2026-11-30T15:50"}
+{"who":"Sofia","text":"Yes. Then it rained on the way back","posted":true,"at":"2026-11-30T15:51","checkin":"2026-11-30T15:51"}
+{"who":"Rui","text":"Feet again","posted":true,"at":"2026-11-30T17:20","checkin":"2026-11-30T17:20"}
+{"who":"Sofia","text":"Feet always","posted":true,"at":"2026-11-30T17:21","checkin":"2026-11-30T17:21"}
+{"who":"Sofia","text":"Trying to go to bed at a normal time. Body doesn't believe me","posted":true,"at":"2026-11-30T22:40","checkin":"2026-11-30T22:40"}
+{"who":"Rui","text":"Same. Dreamt I was still on the school trip bus","posted":true,"at":"2026-11-30T22:55","checkin":"2026-11-30T22:55"}
+{"who":"Rui","text":"The kid asked me again if I was a teacher","posted":true,"at":"2026-11-30T22:56","checkin":"2026-11-30T22:56"}
+{"who":"Sofia","text":"Did you say yes","posted":true,"at":"2026-11-30T23:01","checkin":"2026-11-30T23:01"}
+{"who":"Rui","text":"Obviously","posted":true,"at":"2026-11-30T23:01","checkin":"2026-11-30T23:01"}
+{"who":"Rui","text":"Going to sleep. Thursday I'm in Matosinhos. Pray for me","posted":true,"at":"2026-11-30T23:40","checkin":"2026-11-30T23:40"}

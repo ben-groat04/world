@@ -1,0 +1,117 @@
+--- Tue 10:03, Manon
+I'll pick you up at the usual spot tmrw, 7:40
+
+--- Tue 10:21, Baptiste
+Yes perfect 👍
+
+--- Tue 14:52, Baptiste
+Did the regional extract job run ok or did it fail again
+
+--- Tue 15:30, Manon
+Ran fine. Checked the row counts, the timezone thing didn't bite this time
+
+--- Tue 15:34, Baptiste
+Nice. Ta
+
+--- Tue 18:12, Manon
+Are you still coming to standup tmrw or is it moved
+
+--- Tue 18:40, Baptiste
+Not moved. 9:30
+
+--- Tue 19:55, Baptiste
+Football tonight so I'll be back late. Don't wait up
+
+--- Tue 20:10, Manon
+[photo: the Rhône from the quai at dusk]
+
+--- Tue 20:11, Manon
+Freezing but worth it
+
+--- Tue 21:40, Baptiste
+We're 2-2 and it's raining
+
+--- Tue 22:58, Baptiste
+Home. The cat is furious I was out
+(😂 1)
+
+--- Tue 23:02, Manon
+She'll get over it
+
+--- Wed 07:14, Baptiste
+She's sulking on the radiator. I've been forgiven, technically
+
+--- Wed 07:40, Manon
+Outside when you're ready
+
+--- Wed 07:42, Baptiste
+Coming
+
+--- Wed 12:55, Manon
+Null region codes are coming from the Lyon import, about 4% of rows. Are you on it or should I
+
+--- Wed 13:20, Baptiste
+On it. Postcode join is dropping them. Should have it by 5
+
+--- Wed 17:48, Baptiste
+Fixed and reran. Null count is 0 now. Lyon postcodes had a leading space
+
+--- Wed 17:52, Manon
+Ah good. That would have been fun to find on Friday
+
+--- Wed 22:31, Manon
+Lift still on for tmrw?
+
+--- Wed 22:36, Baptiste
+Yes. 7:40
+
+--- Wed 22:38, Manon
+👍
+
+--- Thu 07:21, Baptiste
+Running 5 min late. Cat sat on my bag
+
+--- Thu 07:22, Manon
+Ok. I'll wait at the corner
+
+--- Thu 07:44, Baptiste
+Thanks for waiting
+
+--- Thu 12:08, Manon
+Did the extract pass on the second run or only the first
+
+--- Thu 12:19, Baptiste
+Both. Added a trim on the postcode field so it can't happen again
+
+--- Thu 12:20, Manon
+👍
+
+--- Thu 17:33, Baptiste
+Anyone know if the Friday room is still the small one
+
+--- Thu 17:50, Manon
+Booked the big one, small one has the projector thing broken
+
+--- Thu 17:51, Baptiste
+Fine by me
+
+--- Thu 20:14, Manon
+[photo: a pot of red lentil dal]
+
+--- Thu 20:15, Baptiste
+What is that
+
+--- Thu 20:15, Manon
+Dal. Too much chilli, I was careless
+
+--- Thu 20:17, Baptiste
+Cat says no thanks
+
+--- Thu 22:40, Baptiste
+Can you resend the Friday agenda, I think it went to the old list
+
+--- Thu 22:52, Manon
+Sent to the team list. Check your spam too
+
+--- Thu 23:06, Baptiste
+Found it. Ta

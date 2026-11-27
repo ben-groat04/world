@@ -1,0 +1,90 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T11:00","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1702,"cache_read_input_tokens":0,"output_tokens":3636,"output_tokens_details":{"thinking_tokens":2452},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1702,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3636,"cache_read_input_tokens":0,"cache_creation_input_tokens":1702,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1702},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2875,"cache_read_input_tokens":0,"output_tokens":2621,"output_tokens_details":{"thinking_tokens":1898},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2875,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2621,"cache_read_input_tokens":0,"cache_creation_input_tokens":2875,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2875},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3593,"cache_read_input_tokens":0,"output_tokens":2865,"output_tokens_details":{"thinking_tokens":1952},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3593,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2865,"cache_read_input_tokens":0,"cache_creation_input_tokens":3593,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3593},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Usman","Nadia","Saad"],"setting":"You are all in Karachi, Pakistan, in your own homes and offices across the city, texting one another as old university housemates who shared a rented house during your student years.","openers":["Send a photo of the old house gate","Ask who is free for dinner Friday","Share a link to an old housemate's new article","Suggest a catch-up call this weekend"],"opener":"Send a photo of the old house gate","cast":{"Usman":{"who":"38, man, university housemate","work":"journalist","knows":"You know Nadia as an old university housemate from the shared house, and Saad as another housemate from those same student years.","texts":"Usman texts in this chat now and then.","style":"Uses little emoji and few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Nadia":{"who":"37, woman, university housemate","work":"research scientist","knows":"You know Usman as an old university housemate from the shared house, and Saad as another housemate from those same student years.","texts":"Nadia texts in this chat now and then.","style":"Uses little emoji and few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Saad":{"who":"39, man, university housemate","work":"airline pilot","knows":"You know Usman as an old university housemate from the shared house, and Nadia as another housemate from those same student years.","texts":"Saad texts in this chat a lot.","style":"Uses little emoji and few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Usman":"You live in Karachi, Pakistan, where your days are filled with journalism work, and you live with nobody else in your home.","Nadia":"You live in Karachi, Pakistan, where your days are filled with research science work, and you live with nobody else in your home.","Saad":"You live in Karachi, Pakistan, where your days are filled with flying airline routes as a pilot, and you live with nobody else in your home."},"sleep":{"Usman":[23.5,7],"Nadia":[23,6.5],"Saad":[22,6]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":784,"cache_read_input_tokens":0,"output_tokens":1445,"output_tokens_details":{"thinking_tokens":1125},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":784,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1445,"cache_read_input_tokens":0,"cache_creation_input_tokens":784,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":784},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1034,"cache_read_input_tokens":0,"output_tokens":566,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1034,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":566,"cache_read_input_tokens":0,"cache_creation_input_tokens":1034,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1034},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Karachi, Pakistan","castMs":13356,"situation":"Old university housemates.","topic":null}
+{"who":"Usman","text":"[photo: the old house gate]","posted":true,"at":"2026-12-01T11:00","checkin":"2026-12-01T11:00"}
+{"who":"Usman","text":"Passing by on the way to a press thing. They painted it","posted":true,"at":"2026-12-01T11:02","checkin":"2026-12-01T11:02"}
+{"who":"Nadia","text":"Which colour","posted":true,"at":"2026-12-01T11:24","checkin":"2026-12-01T11:24"}
+{"who":"Usman","text":"Some green. Not the old green","posted":true,"at":"2026-12-01T11:25","checkin":"2026-12-01T11:25"}
+{"who":"Nadia","text":"Thats a crime","posted":true,"at":"2026-12-01T11:25","checkin":"2026-12-01T11:25"}
+{"who":"Saad","text":"Is that the street 9 gate? The one that always stuck","posted":true,"at":"2026-12-01T12:50","checkin":"2026-12-01T12:50"}
+{"who":"Usman","text":"Yes. Still sticks. They just painted over the lock","posted":true,"at":"2026-12-01T12:52","checkin":"2026-12-01T12:52"}
+{"who":"Saad","text":"We used to lift it and push","posted":true,"at":"2026-12-01T12:54","checkin":"2026-12-01T12:54"}
+{"who":"Saad","text":"Nadia remember the night usman locked himself out with the milk","posted":true,"at":"2026-12-01T12:55","checkin":"2026-12-01T12:55"}
+{"who":"Nadia","text":"He locked himself out because he was taking milk from the neighbours","posted":true,"at":"2026-12-01T13:30","checkin":"2026-12-01T13:30"}
+{"who":"Usman","text":"I was not stealing. I was borrowing with intent","posted":true,"at":"2026-12-01T13:31","checkin":"2026-12-01T13:31"}
+{"who":"Nadia","text":"Never returned it","posted":true,"at":"2026-12-01T13:33","checkin":"2026-12-01T13:33"}
+{"who":"Saad","text":"The neighbours still bring it up","posted":true,"at":"2026-12-01T13:34","checkin":"2026-12-01T13:34"}
+{"who":"Nadia","text":"Sample run went late. 4 hours on a column that wasnt even ours. Back at the lab now","posted":true,"at":"2026-12-01T15:10","checkin":"2026-12-01T15:10"}
+{"who":"Nadia","text":"Anyway. Who has the old house key","posted":true,"at":"2026-12-01T15:12","checkin":"2026-12-01T15:12"}
+{"who":"Usman","text":"Not me. I gave it to the landlord the day we left. Or I think I did","posted":true,"at":"2026-12-01T15:40","checkin":"2026-12-01T15:40"}
+{"who":"Usman","text":"He said the lock was getting changed anyway","posted":true,"at":"2026-12-01T15:41","checkin":"2026-12-01T15:41"}
+{"who":"Saad","text":"In doha, 40 mins on the ground. Nobody has the key. Thats the house's problem now","posted":true,"at":"2026-12-01T17:22","checkin":"2026-12-01T17:22"}
+{"who":"Saad","text":"Usman ask the landlord for a photo of the new lock","posted":true,"at":"2026-12-01T17:23","checkin":"2026-12-01T17:23"}
+{"who":"Usman","text":"He doesn't reply to me. He never replied to anyone","posted":true,"at":"2026-12-01T18:05","checkin":"2026-12-01T18:05"}
+{"who":"Nadia","text":"He replied to me once about the deposit. Took 3 years","posted":true,"at":"2026-12-01T18:06","checkin":"2026-12-01T18:06"}
+{"who":"Usman","text":"Cant believe we paid that rent","posted":true,"at":"2026-12-01T18:40","checkin":"2026-12-01T18:40"}
+{"who":"Usman","text":"2011 rent. 14000 a month for that room with the fan that only worked on one setting","posted":true,"at":"2026-12-01T18:41","checkin":"2026-12-01T18:41"}
+{"who":"Saad","text":"It was 9000. You're remembering wrong","posted":true,"at":"2026-12-01T18:42","checkin":"2026-12-01T18:42"}
+{"who":"Usman","text":"It was 14000 and you paid late every month","posted":true,"at":"2026-12-01T18:43","checkin":"2026-12-01T18:43"}
+{"who":"Saad","text":"I paid late twice","posted":true,"at":"2026-12-01T18:50","checkin":"2026-12-01T18:50"}
+{"who":"Nadia","text":"Guys I'm going to be stuck here. The centrifuge alarm is going off and nobody's answering the facilities line","posted":true,"at":"2026-12-01T19:30","checkin":"2026-12-01T19:30"}
+{"who":"Nadia","text":"Ok it stopped. I'm fine","posted":true,"at":"2026-12-01T19:31","checkin":"2026-12-01T19:31"}
+{"who":"Usman","text":"[photo: the press room at 8pm, nobody here but me and a kettle]","posted":true,"at":"2026-12-01T20:15","checkin":"2026-12-01T20:15"}
+{"who":"Usman","text":"The copy desk left early. Not on strike, just left","posted":true,"at":"2026-12-01T20:16","checkin":"2026-12-01T20:16"}
+{"who":"Saad","text":"Landed. Checking into the hotel. Crew wants to get food. I'm too tired for food","posted":true,"at":"2026-12-01T21:02","checkin":"2026-12-01T21:02"}
+{"who":"Saad","text":"Ok I'll eat","posted":true,"at":"2026-12-01T21:03","checkin":"2026-12-01T21:03"}
+{"who":"Nadia","text":"Home. Eating dal from the tiffin. You would not believe the day","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Nadia","text":"The tiffin is from the aunty downstairs, she sends it every tuesday","posted":true,"at":"2026-12-01T21:41","checkin":"2026-12-01T21:41"}
+{"who":"Saad","text":"Send her my regards","posted":true,"at":"2026-12-01T21:44","checkin":"2026-12-01T21:44"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-12-01T21:44"}
+{"who":"Usman","text":"Did the gate ever get fixed","posted":true,"at":"2026-12-01T22:10","checkin":"2026-12-01T22:10"}
+{"who":"Nadia","text":"No. We all just knew to lift it","posted":true,"at":"2026-12-01T22:12","checkin":"2026-12-01T22:12"}
+{"who":"Usman","text":"Right","posted":true,"at":"2026-12-01T22:14","checkin":"2026-12-01T22:14"}
+{"who":"Nadia","text":"Tell the gate I said hi","posted":true,"at":"2026-12-01T22:40","checkin":"2026-12-01T22:40"}
+{"who":"Nadia","text":"Did the gate say anything","posted":true,"at":"2026-12-02T06:52","checkin":"2026-12-02T06:52"}
+{"who":"Saad","text":"Still in Doha. Return delayed. Nobody has the key still","posted":true,"at":"2026-12-02T07:40","checkin":"2026-12-02T07:40"}
+{"who":"Usman","text":"Called the landlord. Went to voicemail. Obviously","posted":true,"at":"2026-12-02T09:08","checkin":"2026-12-02T09:08"}
+{"who":"Nadia","text":"Did you leave a message or just breathe into it","posted":true,"at":"2026-12-02T09:09","checkin":"2026-12-02T09:09"}
+{"who":"Usman","text":"Left a message. Said I'm the one who gave him the key and he should reply to a human","posted":true,"at":"2026-12-02T09:11","checkin":"2026-12-02T09:11"}
+{"who":"Nadia","text":"Good. Most useful thing anyone's done about that gate in 15 years","posted":true,"at":"2026-12-02T09:30","checkin":"2026-12-02T09:30"}
+{"who":"Usman","text":"[photo: a note taped to the press room kettle, \"NOT YOURS\"]","posted":true,"at":"2026-12-02T11:48","checkin":"2026-12-02T11:48"}
+{"who":"Usman","text":"Someone is clearly having a worse day than me","posted":true,"at":"2026-12-02T11:50","checkin":"2026-12-02T11:50"}
+{"who":"","react":"😂","to":46,"posted":false,"at":"2026-12-02T11:50"}
+{"who":"Nadia","text":"Lab is back on. Column rerun Friday. Nobody wants to be here on a Wednesday","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Saad","text":"Found the 2011 receipts. Mum kept everything","posted":true,"at":"2026-12-02T15:02","checkin":"2026-12-02T15:02"}
+{"who":"Saad","text":"[photo: rent receipt, 2011, Rs 9,000, paid on the 3rd]","posted":true,"at":"2026-12-02T15:02","checkin":"2026-12-02T15:02"}
+{"who":"Usman","text":"Paid on the 3rd. Late","posted":true,"at":"2026-12-02T15:04","checkin":"2026-12-02T15:04"}
+{"who":"Saad","text":"Once","posted":true,"at":"2026-12-02T15:05","checkin":"2026-12-02T15:05"}
+{"who":"Usman","text":"You said twice","posted":true,"at":"2026-12-02T15:05","checkin":"2026-12-02T15:05"}
+{"who":"Saad","text":"I'm not discussing this from a hotel","posted":true,"at":"2026-12-02T15:06","checkin":"2026-12-02T15:06"}
+{"who":"Nadia","text":"Can someone confirm which fan setting worked","posted":true,"at":"2026-12-02T15:40","checkin":"2026-12-02T15:40"}
+{"who":"Saad","text":"Back in Karachi. Crew took the cab. Supposed to be in bed by 10, not happening","posted":true,"at":"2026-12-02T22:30","checkin":"2026-12-02T22:30"}
+{"who":"Nadia","text":"Home. Dal again. Aunty says it's the last one, she's going to her daughter's in Lahore for a month","posted":true,"at":"2026-12-02T22:44","checkin":"2026-12-02T22:44"}
+{"who":"Nadia","text":"So that's my tuesdays","posted":true,"at":"2026-12-02T22:46","checkin":"2026-12-02T22:46"}
+{"who":"Saad","text":"Ask her to leave the recipe","posted":true,"at":"2026-12-02T22:51","checkin":"2026-12-02T22:51"}
+{"who":"Usman","text":"Ok I'm going to sleep. Gate's still there if anyone wants to lift it","posted":true,"at":"2026-12-02T23:05","checkin":"2026-12-02T23:05"}
+{"who":"Usman","text":"Landlord called back. Says the lock was changed in March. Has no photo","posted":true,"at":"2026-12-03T07:15","checkin":"2026-12-03T07:15"}
+{"who":"Usman","text":"Asked me if I was \"the one who always lifted the gate\". How does he know that","posted":true,"at":"2026-12-03T07:16","checkin":"2026-12-03T07:16"}
+{"who":"Nadia","text":"Everyone knew about the gate. Nobody ever fixed it","posted":true,"at":"2026-12-03T07:50","checkin":"2026-12-03T07:50"}
+{"who":"Saad","text":"Lahore sector. Coffee is bad here. Not that anyone asked","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Saad","text":"The fan was the one on the left. Right one died after the storm","posted":true,"at":"2026-12-03T08:15","checkin":"2026-12-03T08:15"}
+{"who":"Nadia","text":"That's not an answer","posted":true,"at":"2026-12-03T08:16","checkin":"2026-12-03T08:16"}
+{"who":"Usman","text":"Left side. Nobody remembers the right side","posted":true,"at":"2026-12-03T08:16","checkin":"2026-12-03T08:16"}
+{"who":"Nadia","text":"Lab column rerun moved to Monday. Friday's cancelled","posted":true,"at":"2026-12-03T12:30","checkin":"2026-12-03T12:30"}
+{"who":"Nadia","text":"Ok I'm complaining","posted":true,"at":"2026-12-03T12:31","checkin":"2026-12-03T12:31"}
+{"who":"Usman","text":"[photo: a desk covered in old printouts, a torn green sticky note on top]","posted":true,"at":"2026-12-03T14:05","checkin":"2026-12-03T14:05"}
+{"who":"Usman","text":"Found my copy of the house inventory from the day we moved in. Fan listed as \"works, one speed\"","posted":true,"at":"2026-12-03T14:06","checkin":"2026-12-03T14:06"}
+{"who":"Saad","text":"That's not the same as 14000","posted":true,"at":"2026-12-03T14:20","checkin":"2026-12-03T14:20"}
+{"who":"Nadia","text":"It's the same as one speed","posted":true,"at":"2026-12-03T14:21","checkin":"2026-12-03T14:21"}
+{"who":"Saad","text":"Doha again tomorrow, then Jeddah. Someone tell the gate I'm still thinking about it","posted":true,"at":"2026-12-03T16:47","checkin":"2026-12-03T16:47"}
+{"who":"Nadia","text":"Home. Aunty came up with the last tiffin. Plus a jar of her chutney","posted":true,"at":"2026-12-03T19:10","checkin":"2026-12-03T19:10"}
+{"who":"Nadia","text":"She asked if the three of us are still in touch. I said yes, mostly about a gate","posted":true,"at":"2026-12-03T19:12","checkin":"2026-12-03T19:12"}
+{"who":"Usman","text":"Tell her the gate is most of our conversation","posted":true,"at":"2026-12-03T19:20","checkin":"2026-12-03T19:20"}
+{"who":"Saad","text":"Did she give the recipe","posted":true,"at":"2026-12-03T20:45","checkin":"2026-12-03T20:45"}
+{"who":"Nadia","text":"She said she'd write it down. Then she said her handwriting is terrible. Then she said Lahore","posted":true,"at":"2026-12-03T20:47","checkin":"2026-12-03T20:47"}
+{"who":"Usman","text":"[photo: the press room kettle with the NOT YOURS note still taped to it]","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Usman","text":"Someone has written underneath it. \"YOURS ALSO\"","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"","react":"😂","to":80,"posted":false,"at":"2026-12-03T21:31"}
+{"who":"Usman","text":"Landlord just texted. Two words. \"Lock: yes.\"","posted":true,"at":"2026-12-03T22:10","checkin":"2026-12-03T22:10"}
+{"who":"Saad","text":"Crew bus. Layover in an hour. Going to try for sleep","posted":true,"at":"2026-12-03T22:58","checkin":"2026-12-03T22:58"}
+{"who":"Nadia","text":"Going to bed. Lab tomorrow before 9 because the cooler's down","posted":true,"at":"2026-12-03T23:02","checkin":"2026-12-03T23:02"}
+{"who":"Saad","text":"Can't sleep. Crew snoring through the wall. Did anyone ever get the gate photo","posted":true,"at":"2026-12-04T00:18","checkin":"2026-12-04T00:18"}

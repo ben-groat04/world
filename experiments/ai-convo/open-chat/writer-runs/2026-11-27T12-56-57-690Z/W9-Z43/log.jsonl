@@ -1,0 +1,97 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T12:25","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2214,"cache_read_input_tokens":0,"output_tokens":3806,"output_tokens_details":{"thinking_tokens":2964},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2214,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3806,"cache_read_input_tokens":0,"cache_creation_input_tokens":2214,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2214},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3001,"cache_read_input_tokens":0,"output_tokens":4500,"output_tokens_details":{"thinking_tokens":3364},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3001,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4500,"cache_read_input_tokens":0,"cache_creation_input_tokens":3001,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3001},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4089,"cache_read_input_tokens":0,"output_tokens":2438,"output_tokens_details":{"thinking_tokens":1626},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4089,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2438,"cache_read_input_tokens":0,"cache_creation_input_tokens":4089,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4089},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Andrea","Mateo","Carla","Manuel","Brenda","Segundo"],"setting":"You are all in Lima, Peru, where you live and work together at one small cafe, and you know each other from that work.","openers":["Send a photo of today's roast","Ask who can cover Saturday's opening shift","Post the supplier's delivery time","Remind everyone the storeroom closes early on Monday"],"opener":"Send a photo of today's roast","cast":{"Andrea":{"who":"34, woman, the head barista","work":"coffee roaster assistant","knows":"You know Mateo, Carla, Brenda, Manuel and Segundo as coworkers at the cafe.","texts":"Andrea texts in this chat now and then.","style":"uses a little emoji and no texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Mateo":{"who":"27, man, the line cook","work":"grill cook","knows":"You know Andrea, Carla, Brenda, Manuel and Segundo as coworkers at the cafe.","texts":"Mateo texts in this chat a lot.","style":"uses heavy emoji and lots of texting abbreviations.","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Carla":{"who":"22, woman, the server","work":"cashier","knows":"You know Andrea, Mateo, Manuel and Segundo as coworkers at the cafe, and Brenda as your younger sister.","texts":"Carla texts in this chat now and then.","style":"uses heavy emoji and lots of texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":["Brenda"],"ex":[]},"Manuel":{"who":"45, man, the cafe owner","work":"supplier negotiator","knows":"You know Andrea, Mateo, Carla, Brenda and Segundo as staff at your cafe.","texts":"Manuel texts in this chat now and then.","style":"uses little emoji and no texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Brenda":{"who":"19, woman, the part-time cashier","work":"cashier","knows":"You know Andrea, Mateo, Manuel and Segundo as coworkers at the cafe, and Carla as your older sister.","texts":"Brenda texts in this chat now and then.","style":"uses heavy emoji and lots of texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":["Carla"],"ex":[]},"Segundo":{"who":"58, man, the dishwasher and prep cook","work":"storeroom keeper","knows":"You know Andrea, Mateo, Carla, Brenda and Manuel as coworkers at the cafe.","texts":"Segundo texts in this chat only now and again.","style":"uses little emoji and no texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Andrea":"You live in Lima, Peru, where your days are spent at the cafe, and you live alone.","Mateo":"You live in Lima, Peru, where you work the grill at the cafe, and you live alone.","Carla":"You live in Lima, Peru, where you work at the cafe, and you live with Brenda.","Manuel":"You live in Lima, Peru, where you run your cafe and handle supplier deals, and you live alone.","Brenda":"You live in Lima, Peru, where you work part-time at the cafe, and you live with Carla.","Segundo":"You live in Lima, Peru, where you wash dishes, prep food and keep the storeroom at the cafe, and you live alone."},"sleep":{"Andrea":[22.5,5.5],"Mateo":[1.5,9],"Carla":[0.5,8.5],"Manuel":[23,6.5],"Brenda":[23.5,7.5],"Segundo":[21.5,5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":784,"cache_read_input_tokens":0,"output_tokens":1972,"output_tokens_details":{"thinking_tokens":1312},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":784,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1972,"cache_read_input_tokens":0,"cache_creation_input_tokens":784,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":784},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1115,"cache_read_input_tokens":0,"output_tokens":4252,"output_tokens_details":{"thinking_tokens":3245},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1115,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4252,"cache_read_input_tokens":0,"cache_creation_input_tokens":1115,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1115},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Lima, Peru","castMs":27856,"situation":"Staff at a small cafe.","topic":null}
+{"who":"Andrea","text":"[photo: today's roast]","posted":true,"at":"2026-11-30T12:25","checkin":"2026-11-30T12:25"}
+{"who":"","react":"👀","to":0,"posted":false,"at":"2026-11-30T12:25"}
+{"who":"Andrea","text":"Ethiopia lot first batch off the new drum, cooled it fast so it should hold for the weekend","posted":true,"at":"2026-11-30T12:26","checkin":"2026-11-30T12:26"}
+{"who":"Manuel","text":"Looks good. Same price as the last lot?","posted":true,"at":"2026-11-30T12:31","checkin":"2026-11-30T12:31"}
+{"who":"Andrea","text":"Yes the supplier kept it","posted":true,"at":"2026-11-30T12:33","checkin":"2026-11-30T12:33"}
+{"who":"Manuel","text":"Ok","posted":true,"at":"2026-11-30T12:34","checkin":"2026-11-30T12:34"}
+{"who":"Segundo","text":"Flour came","posted":true,"at":"2026-11-30T13:10","checkin":"2026-11-30T13:10"}
+{"who":"Manuel","text":"Which one","posted":true,"at":"2026-11-30T13:12","checkin":"2026-11-30T13:12"}
+{"who":"Segundo","text":"The usual. 25 kilo. One bag has a bad seal, I put it aside","posted":true,"at":"2026-11-30T13:14","checkin":"2026-11-30T13:14"}
+{"who":"Manuel","text":"Ok tell supplier tomorrow","posted":true,"at":"2026-11-30T13:15","checkin":"2026-11-30T13:15"}
+{"who":"Mateo","text":"ya ya the roast pic is 🔥🔥 can u send the bag when its packed, want to take 2 home","posted":true,"at":"2026-11-30T15:48","checkin":"2026-11-30T15:48"}
+{"who":"Andrea","text":"Ill save you one. The 250g not the 1kg","posted":true,"at":"2026-11-30T15:50","checkin":"2026-11-30T15:50"}
+{"who":"Mateo","text":"the 250 is fine 😂","posted":true,"at":"2026-11-30T15:51","checkin":"2026-11-30T15:51"}
+{"who":"Carla","text":"a guy just asked me if the oat milk is \"real\"","posted":true,"at":"2026-11-30T16:20","checkin":"2026-11-30T16:20"}
+{"who":"Brenda","text":"tell him its just oats","posted":true,"at":"2026-11-30T16:21","checkin":"2026-11-30T16:21"}
+{"who":"Carla","text":"i said its oat milk, he said \"but is it real\"","posted":true,"at":"2026-11-30T16:21","checkin":"2026-11-30T16:21"}
+{"who":"Brenda","text":"lmaooo","posted":true,"at":"2026-11-30T16:22","checkin":"2026-11-30T16:22"}
+{"who":"Mateo","text":"andrea ur opening tomorrow? i can cover close if u need, got a thing at 4","posted":true,"at":"2026-11-30T19:05","checkin":"2026-11-30T19:05"}
+{"who":"Andrea","text":"Yes, 6:40. The roaster needs cleaning first","posted":true,"at":"2026-11-30T19:40","checkin":"2026-11-30T19:40"}
+{"who":"Mateo","text":"ur a machine 😴","posted":true,"at":"2026-11-30T19:41","checkin":"2026-11-30T19:41"}
+{"who":"Manuel","text":"Delivery tomorrow 7am. Someone on the door","posted":true,"at":"2026-11-30T21:10","checkin":"2026-11-30T21:10"}
+{"who":"Andrea","text":"I can be there 6:40","posted":true,"at":"2026-11-30T21:12","checkin":"2026-11-30T21:12"}
+{"who":"Manuel","text":"Ok","posted":true,"at":"2026-11-30T21:14","checkin":"2026-11-30T21:14"}
+{"who":"Andrea","text":"Going to sleep. The roaster is cooling, dont touch it","posted":true,"at":"2026-11-30T22:28","checkin":"2026-11-30T22:28"}
+{"who":"Mateo","text":"😂 ok goodnight","posted":true,"at":"2026-11-30T22:29","checkin":"2026-11-30T22:29"}
+{"who":"Mateo","text":"cant sleep. anyone up","posted":true,"at":"2026-11-30T23:52","checkin":"2026-11-30T23:52"}
+{"who":"Mateo","text":"[photo: my late dinner, sad]","posted":true,"at":"2026-12-01T00:41","checkin":"2026-12-01T00:41"}
+{"who":"Mateo","text":"nobody up at all 😭","posted":true,"at":"2026-12-01T00:42","checkin":"2026-12-01T00:42"}
+{"who":"Carla","text":"im up, cant sleep either","posted":true,"at":"2026-12-01T00:44","checkin":"2026-12-01T00:44"}
+{"who":"Carla","text":"same. brenda is also up lol","posted":true,"at":"2026-12-01T00:46","checkin":"2026-12-01T00:46"}
+{"who":"Brenda","text":"im not even up im just lying here","posted":true,"at":"2026-12-01T00:47","checkin":"2026-12-01T00:47"}
+{"who":"Mateo","text":"ur both useless 😂 i made eggs and rice, sad","posted":true,"at":"2026-12-01T00:49","checkin":"2026-12-01T00:49"}
+{"who":"Carla","text":"eggs and rice is elite honestly","posted":true,"at":"2026-12-01T00:50","checkin":"2026-12-01T00:50"}
+{"who":"Mateo","text":"the rice was from sunday so idk 💀","posted":true,"at":"2026-12-01T00:52","checkin":"2026-12-01T00:52"}
+{"who":"Carla","text":"ok thats not elite","posted":true,"at":"2026-12-01T00:52","checkin":"2026-12-01T00:52"}
+{"who":"Mateo","text":"😂😂 lol ok going to sleep for real (or try)","posted":true,"at":"2026-12-01T00:55","checkin":"2026-12-01T00:55"}
+{"who":"Segundo","text":"Up. Going in for the storeroom","posted":true,"at":"2026-12-01T05:02","checkin":"2026-12-01T05:02"}
+{"who":"Segundo","text":"The bag with the bad seal is still there. I did not open it","posted":true,"at":"2026-12-01T05:04","checkin":"2026-12-01T05:04"}
+{"who":"Andrea","text":"Morning ☕ roaster should be cool by now, checking it when I get there","posted":true,"at":"2026-12-01T05:30","checkin":"2026-12-01T05:30"}
+{"who":"Andrea","text":"Segundo thanks for keeping the bag aside","posted":true,"at":"2026-12-01T05:41","checkin":"2026-12-01T05:41"}
+{"who":"Segundo","text":"Ok","posted":true,"at":"2026-12-01T05:43","checkin":"2026-12-01T05:43"}
+{"who":"Manuel","text":"Morning. I will call the flour supplier at 9 about the seal","posted":true,"at":"2026-12-01T06:35","checkin":"2026-12-01T06:35"}
+{"who":"Manuel","text":"Andrea, delivery is 7 still?","posted":true,"at":"2026-12-01T06:36","checkin":"2026-12-01T06:36"}
+{"who":"Andrea","text":"Yes. I am there at 6:40, I can take the door if no one else is in yet","posted":true,"at":"2026-12-01T06:38","checkin":"2026-12-01T06:38"}
+{"who":"Manuel","text":"Ok","posted":true,"at":"2026-12-01T06:39","checkin":"2026-12-01T06:39"}
+{"who":"Mateo","text":"morning did andrea save my roast","posted":true,"at":"2026-12-01T09:12","checkin":"2026-12-01T09:12"}
+{"who":"Andrea","text":"Yes, it's in the cabinet by the till with your name. 250g","posted":true,"at":"2026-12-01T09:20","checkin":"2026-12-01T09:20"}
+{"who":"Mateo","text":"legend","posted":true,"at":"2026-12-01T09:21","checkin":"2026-12-01T09:21"}
+{"who":"Carla","text":"brenda i need u to bring my charger to work","posted":true,"at":"2026-12-01T14:05","checkin":"2026-12-01T14:05"}
+{"who":"Brenda","text":"ur charger is on ur bed 😭 im at work in 20","posted":true,"at":"2026-12-01T14:06","checkin":"2026-12-01T14:06"}
+{"who":"Brenda","text":"the card machine is doing the thing again","posted":true,"at":"2026-12-01T16:33","checkin":"2026-12-01T16:33"}
+{"who":"Manuel","text":"Restart it. If not, call the bank line, number is on the fridge","posted":true,"at":"2026-12-01T16:35","checkin":"2026-12-01T16:35"}
+{"who":"Brenda","text":"it worked 🙏","posted":true,"at":"2026-12-01T16:36","checkin":"2026-12-01T16:36"}
+{"who":"Mateo","text":"andrea im closing tonight yeah? still doing my 4pm thing but im coming back","posted":true,"at":"2026-12-01T17:50","checkin":"2026-12-01T17:50"}
+{"who":"Andrea","text":"Yes I close with you. You don't have to come back after your thing","posted":true,"at":"2026-12-01T17:52","checkin":"2026-12-01T17:52"}
+{"who":"Mateo","text":"no im coming back, i said i would 😤","posted":true,"at":"2026-12-01T17:53","checkin":"2026-12-01T17:53"}
+{"who":"Andrea","text":"Ok","posted":true,"at":"2026-12-01T17:55","checkin":"2026-12-01T17:55"}
+{"who":"Carla","text":"im on at 19 tonight, andrea can u leave the lights on for me to find the cash box","posted":true,"at":"2026-12-01T19:20","checkin":"2026-12-01T19:20"}
+{"who":"Andrea","text":"Cash box is on the shelf, I counted it. Lights on","posted":true,"at":"2026-12-01T19:24","checkin":"2026-12-01T19:24"}
+{"who":"Mateo","text":"closed. trash out. brenda ur shift was good today","posted":true,"at":"2026-12-01T22:40","checkin":"2026-12-01T22:40"}
+{"who":"Brenda","text":"thanks!! 🥹 carla said u might come by ours for food tmrw?","posted":true,"at":"2026-12-01T22:41","checkin":"2026-12-01T22:41"}
+{"who":"Mateo","text":"cant sleep again 😭 carla ur up right","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Carla","text":"no im on the couch with brenda, we ate the mango","posted":true,"at":"2026-12-02T00:15","checkin":"2026-12-02T00:15"}
+{"who":"Mateo","text":"nobody invited me to the mango","posted":true,"at":"2026-12-02T00:16","checkin":"2026-12-02T00:16"}
+{"who":"Carla","text":"come tmrw, we have like half a mango left","posted":true,"at":"2026-12-02T00:17","checkin":"2026-12-02T00:17"}
+{"who":"Mateo","text":"🥺 ok","posted":true,"at":"2026-12-02T00:18","checkin":"2026-12-02T00:18"}
+{"who":"Brenda","text":"[photo: mango skin, nothing left]","posted":true,"at":"2026-12-02T00:19","checkin":"2026-12-02T00:19"}
+{"who":"","react":"😂","to":65,"posted":false,"at":"2026-12-02T00:19"}
+{"who":"","react":"😂","to":65,"posted":false,"at":"2026-12-02T00:19"}
+{"who":"Mateo","text":"brutal","posted":true,"at":"2026-12-02T00:24","checkin":"2026-12-02T00:24"}
+{"who":"Brenda","text":"carla is snoring","posted":true,"at":"2026-12-02T00:58","checkin":"2026-12-02T00:58"}
+{"who":"Carla","text":"im not","posted":true,"at":"2026-12-02T00:58","checkin":"2026-12-02T00:58"}
+{"who":"Manuel","text":"Flour supplier says replacement bag on Friday. Segundo, they will pick up the bad one with the driver","posted":true,"at":"2026-12-02T09:05","checkin":"2026-12-02T09:05"}
+{"who":"Segundo","text":"Ok","posted":true,"at":"2026-12-02T09:06","checkin":"2026-12-02T09:06"}
+{"who":"Mateo","text":"morning who's on today","posted":true,"at":"2026-12-02T09:14","checkin":"2026-12-02T09:14"}
+{"who":"Andrea","text":"Carla 7 to 3, Brenda after. I'm off till 4","posted":true,"at":"2026-12-02T09:31","checkin":"2026-12-02T09:31"}
+{"who":"Carla","text":"im on at 7?? why does everyone have me at 7","posted":true,"at":"2026-12-02T09:33","checkin":"2026-12-02T09:33"}
+{"who":"Brenda","text":"bc ur a morning person","posted":true,"at":"2026-12-02T09:34","checkin":"2026-12-02T09:34"}
+{"who":"Carla","text":"im not","posted":true,"at":"2026-12-02T09:34","checkin":"2026-12-02T09:34"}
+{"who":"Mateo","text":"ok i do the grill from 12 then","posted":true,"at":"2026-12-02T09:50","checkin":"2026-12-02T09:50"}
+{"who":"Segundo","text":"Driver took the bag. The bag with the seal is gone. Storeroom is ok","posted":true,"at":"2026-12-02T12:41","checkin":"2026-12-02T12:41"}
+{"who":"Manuel","text":"Good. Thanks Segundo","posted":true,"at":"2026-12-02T12:55","checkin":"2026-12-02T12:55"}
+{"who":"Mateo","text":"left burner keeps going out. it clicks then nothing","posted":true,"at":"2026-12-02T14:10","checkin":"2026-12-02T14:10"}
+{"who":"Manuel","text":"Turn it off. I will look at it when I come in at 6","posted":true,"at":"2026-12-02T14:12","checkin":"2026-12-02T14:12"}
+{"who":"Mateo","text":"turned it off, no food on it","posted":true,"at":"2026-12-02T14:13","checkin":"2026-12-02T14:13"}
+{"who":"Andrea","text":"Roast 2 is in the drum. Don't touch the drum","posted":true,"at":"2026-12-02T16:02","checkin":"2026-12-02T16:02"}
+{"who":"Mateo","text":"never 😂","posted":true,"at":"2026-12-02T16:04","checkin":"2026-12-02T16:04"}
+{"who":"Andrea","text":"You touched it last time","posted":true,"at":"2026-12-02T16:04","checkin":"2026-12-02T16:04"}
+{"who":"Mateo","text":"that was ONE time","posted":true,"at":"2026-12-02T16:05","checkin":"2026-12-02T16:05"}
+{"who":"Brenda","text":"card machine is fine today","posted":true,"at":"2026-12-02T17:48","checkin":"2026-12-02T17:48"}
+{"who":"Manuel","text":"Good","posted":true,"at":"2026-12-02T17:49","checkin":"2026-12-02T17:49"}
+{"who":"Mateo","text":"heading to carla's now. bringing bread 🍞","posted":true,"at":"2026-12-02T19:12","checkin":"2026-12-02T19:12"}
+{"who":"Carla","text":"bring the good bread not the sad one","posted":true,"at":"2026-12-02T19:13","checkin":"2026-12-02T19:13"}
+{"who":"Mateo","text":"home. the mango was NOT half a mango","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Carla","text":"it was half a mango","posted":true,"at":"2026-12-02T23:42","checkin":"2026-12-02T23:42"}

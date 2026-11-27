@@ -1,0 +1,43 @@
+RUN w9-checks/live-fact-out/run.json
+live: @claude at Fri 14:05
+live: day 1: 25 messages
+TURN w9-checks/live-fact-out/turn-0000.json
+live: day 2: 20 messages
+TURN w9-checks/live-fact-out/turn-0001.json
+TURN w9-checks/live-fact-out/turn-0002.json
+TURN w9-checks/live-fact-out/turn-0003.json
+TURN w9-checks/live-fact-out/turn-0004.json
+TURN w9-checks/live-fact-out/turn-0005.json
+TURN w9-checks/live-fact-out/turn-0006.json
+TURN w9-checks/live-fact-out/turn-0007.json
+TURN w9-checks/live-fact-out/turn-0008.json
+TURN w9-checks/live-fact-out/turn-0009.json
+TURN w9-checks/live-fact-out/turn-0010.json
+TURN w9-checks/live-fact-out/turn-0011.json
+TURN w9-checks/live-fact-out/turn-0012.json
+TURN w9-checks/live-fact-out/turn-0013.json
+TURN w9-checks/live-fact-out/turn-0014.json
+TURN w9-checks/live-fact-out/turn-0015.json
+TURN w9-checks/live-fact-out/turn-0016.json
+TURN w9-checks/live-fact-out/turn-0017.json
+TURN w9-checks/live-fact-out/turn-0018.json
+TURN w9-checks/live-fact-out/turn-0019.json
+TURN w9-checks/live-fact-out/turn-0020.json
+TURN w9-checks/live-fact-out/turn-0021.json
+TURN w9-checks/live-fact-out/turn-0022.json
+TURN w9-checks/live-fact-out/turn-0023.json
+TURN w9-checks/live-fact-out/turn-0024.json
+TURN w9-checks/live-fact-out/turn-0025.json
+TURN w9-checks/live-fact-out/turn-0026.json
+TURN w9-checks/live-fact-out/turn-0027.json
+TURN w9-checks/live-fact-out/turn-0028.json
+TURN w9-checks/live-fact-out/turn-0029.json
+TURN w9-checks/live-fact-out/turn-0030.json
+TURN w9-checks/live-fact-out/turn-0031.json
+TURN w9-checks/live-fact-out/turn-0032.json
+TURN w9-checks/live-fact-out/turn-0033.json
+TURN w9-checks/live-fact-out/turn-0034.json
+TURN w9-checks/live-fact-out/turn-0035.json
+TURN w9-checks/live-fact-out/turn-0036.json
+TURN w9-checks/live-fact-out/turn-0037.json
+TURN w9-checks/live-fact-out/turn-0038.json

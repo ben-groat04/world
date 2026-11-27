@@ -48,6 +48,11 @@ if (process.argv[2] === '--tally') {
   const anyReal = Object.keys(real).length > 0;
   console.log(`group\tarm\tn\tmean${anyReal ? '\tn_p_real\tmean_p_real' : ''}`);
   for (const g of Object.keys(groups).sort()) { const v = groups[g], r = real[g]; console.log(`${g}\t${v.length}\t${mean(v).toFixed(2)}${anyReal ? `\t${r?.length ?? 0}\t${r ? mean(r).toFixed(0) : '-'}` : ''}`); }
+  // Judge-centred p_real (and score): each judge's mean over all the files they scored is taken off their own numbers, so a judge who is generous or harsh to everyone does not move an arm. The judge of a row comes from the SCORES block of <out>/judges/jN.md.
+  const jdir = path.join(out, 'judges'), cen = {}, jrows = [];
+  if (fs.existsSync(jdir)) for (const f of fs.readdirSync(jdir).filter(f => /^j\d+\.md$/.test(f))) { const rows = []; for (const l of fs.readFileSync(path.join(jdir, f), 'utf8').split(/^SCORES\s*$/m).at(-1).split('\n')) { const m = l.match(/^\W*([0-9a-f]{6})\W+(\d+(?:\.\d+)?)\W+(\d+(?:\.\d+)?)/); if (m && key[m[1]]) rows.push([m[1], +m[2], +m[3]]); } const ms_ = mean(rows.map(r => r[1])), mp = mean(rows.map(r => r[2])); for (const [id, v, p] of rows) jrows.push([id, v - ms_, p - mp]); }
+  for (const [id, dv, dp] of jrows) { const [arm] = key[id].label.split('-'); for (const g of [`window ${key[id].win}\t${arm}`, `overall\t${arm}`]) ((cen[g] ??= { v: [], p: [] }).v.push(dv), cen[g].p.push(dp)); }
+  if (jrows.length) { console.log('\njudge-centred (judge mean taken off)\ngroup\tarm\tn\tscore_centred\tp_real_centred'); for (const g of Object.keys(cen).sort()) { const x = cen[g], f = v => { const m = mean(v); return (m >= 0 ? '+' : '') + m.toFixed(2); }; console.log(`${g}\t${x.v.length}\t${f(x.v)}\t${f(x.p)}`); } }
   console.log('\nruns by status (dead = 0 messages, short = fewer than MIN_W in the first window, A-only = no judged second window, full = both)\narm\tdead\tshort\tA-only\tfull\tjudged share\tdead and short runs');
   for (const arm of Object.keys(runs).sort()) { const r = runs[arm], c = k => (r[k] ?? []).length, tot = c('dead') + c('short') + c('A-only') + c('full'); console.log([arm, c('dead'), c('short'), c('A-only'), c('full'), `${c('A-only') + c('full')}/${tot}`, [...(r.dead ?? []), ...(r.short ?? [])].join(' ')].join('\t')); }
 } else {

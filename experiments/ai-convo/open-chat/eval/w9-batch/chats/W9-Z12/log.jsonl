@@ -1,0 +1,82 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-02T07:25","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1709,"cache_read_input_tokens":0,"output_tokens":1602,"output_tokens_details":{"thinking_tokens":1076},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1709,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1602,"cache_read_input_tokens":0,"cache_creation_input_tokens":1709,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1709},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2190,"cache_read_input_tokens":0,"output_tokens":2352,"output_tokens_details":{"thinking_tokens":1591},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2190,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2352,"cache_read_input_tokens":0,"cache_creation_input_tokens":2190,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2190},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2953,"cache_read_input_tokens":0,"output_tokens":2871,"output_tokens_details":{"thinking_tokens":1829},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2953,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2871,"cache_read_input_tokens":0,"cache_creation_input_tokens":2953,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2953},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Solveig","Jonas","Synne"],"setting":"You are all in Oslo, Norway, where you live now and meet in this group chat. You knew each other as housemates at university, sharing a flat during your studies, and have stayed in touch since.","openers":["Sends a photo of the old flat's kitchen","Asks who still has the blue mugs","Suggests meeting for coffee on Saturday","Shares a link to a reunion playlist"],"opener":"Shares a link to a reunion playlist","cast":{"Solveig":{"who":"46, woman, old university housemate","work":"research librarian","knows":"You know Jonas as an old university housemate from the shared flat. You know Synne as an old university housemate from the same flat.","texts":"Solveig texts in this chat only now and again.","style":"uses a little emoji and some texting abbreviations, not much.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Jonas":{"who":"47, man, old university housemate","work":"software developer","knows":"You know Solveig as an old university housemate from the shared flat. You know Synne as an old university housemate from the same flat.","texts":"Jonas texts in this chat now and then.","style":"uses some emoji and a few texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Synne":{"who":"45, woman, old university housemate","work":"district judge","knows":"You know Solveig as an old university housemate from the shared flat. You know Jonas as an old university housemate from the same flat.","texts":"Synne texts in this chat a lot.","style":"none","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Solveig":"You live in Oslo, working as a research librarian and spending your days among books, catalogues and readers, and you live alone.","Jonas":"You live in Oslo, working as a software developer and spending your days writing code and attending meetings, and you live alone.","Synne":"You live in Oslo, working as a district judge and spending your days in court hearings and case files, and you live with your partner and two children."},"sleep":{"Solveig":[23,7],"Jonas":[0,8],"Synne":[23.5,6.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":782,"cache_read_input_tokens":0,"output_tokens":1166,"output_tokens_details":{"thinking_tokens":849},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":782,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1166,"cache_read_input_tokens":0,"cache_creation_input_tokens":782,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":782},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1037,"cache_read_input_tokens":0,"output_tokens":580,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1037,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":580,"cache_read_input_tokens":0,"cache_creation_input_tokens":1037,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1037},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Oslo, Norway","castMs":12703,"situation":"Old university housemates.","topic":null}
+{"who":"Solveig","text":"[link: \"flat 4b reunion\" playlist]","posted":true,"at":"2026-12-02T07:25","checkin":"2026-12-02T07:25"}
+{"who":"Solveig","text":"Found this while looking for something else 😅 it has all the 2004 stuff","posted":true,"at":"2026-12-02T07:31","checkin":"2026-12-02T07:31"}
+{"who":"Synne","text":"Oh no. The kent song is on there","posted":true,"at":"2026-12-02T07:52","checkin":"2026-12-02T07:52"}
+{"who":"Synne","text":"Who made this","posted":true,"at":"2026-12-02T07:52","checkin":"2026-12-02T07:52"}
+{"who":"","react":"😂","to":3,"posted":false,"at":"2026-12-02T07:52"}
+{"who":"","react":"😂","to":3,"posted":false,"at":"2026-12-02T07:52"}
+{"who":"Jonas","text":"is that the one from the kitchen radio tape","posted":true,"at":"2026-12-02T08:40","checkin":"2026-12-02T08:40"}
+{"who":"Solveig","text":"Ya. I think I got all of it","posted":true,"at":"2026-12-02T08:41","checkin":"2026-12-02T08:41"}
+{"who":"Synne","text":"Court break. Jonas you still owe me for that tape","posted":true,"at":"2026-12-02T11:18","checkin":"2026-12-02T11:18"}
+{"who":"Jonas","text":"i owe you nothing","posted":true,"at":"2026-12-02T11:19","checkin":"2026-12-02T11:19"}
+{"who":"","react":"😤","to":7,"posted":false,"at":"2026-12-02T11:19"}
+{"who":"Solveig","text":"Lunch at the desk 🥪 new cataloguing system is making everyone cry","posted":true,"at":"2026-12-02T12:33","checkin":"2026-12-02T12:33"}
+{"who":"Synne","text":"Judge who said \"in the matter of\" 40 times this morning. I nearly lost it","posted":true,"at":"2026-12-02T13:30","checkin":"2026-12-02T13:30"}
+{"who":"Jonas","text":"standup ran 50 min. i have now been on mute for an hour","posted":true,"at":"2026-12-02T15:12","checkin":"2026-12-02T15:12"}
+{"who":"Jonas","text":"kill me","posted":true,"at":"2026-12-02T15:12","checkin":"2026-12-02T15:12"}
+{"who":"Synne","text":"Kids want the playlist in the car. Solveig you have a bad influence on my children","posted":true,"at":"2026-12-02T19:40","checkin":"2026-12-02T19:40"}
+{"who":"","react":"😂","to":12,"posted":false,"at":"2026-12-02T19:40"}
+{"who":"","react":"😂","to":12,"posted":false,"at":"2026-12-02T19:40"}
+{"who":"","react":"😂","to":12,"posted":false,"at":"2026-12-02T19:40"}
+{"who":"Jonas","text":"which one is the kent song again","posted":true,"at":"2026-12-02T21:15","checkin":"2026-12-02T21:15"}
+{"who":"Solveig","text":"Track 7 bed now","posted":true,"at":"2026-12-02T22:48","checkin":"2026-12-02T22:48"}
+{"who":"Synne","text":"Track 7 was a mistake","posted":true,"at":"2026-12-02T23:22","checkin":"2026-12-02T23:22"}
+{"who":"Jonas","text":"dont play track 7 in the morning","posted":true,"at":"2026-12-02T23:58","checkin":"2026-12-02T23:58"}
+{"who":"Synne","text":"Kids already fighting over track 7 in the car. I'm going to lose my mind","posted":true,"at":"2026-12-03T06:52","checkin":"2026-12-03T06:52"}
+{"who":"Solveig","text":"Sorry","posted":true,"at":"2026-12-03T07:20","checkin":"2026-12-03T07:20"}
+{"who":"Jonas","text":"synne what did you do to the car","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Synne","text":"Nothing. My youngest requested it. He knows all the words now 🙃","posted":true,"at":"2026-12-03T08:16","checkin":"2026-12-03T08:16"}
+{"who":"Solveig","text":"The new cataloguing system deletes subject headings when you save. I was told this is \"a feature\" by someone in IT","posted":true,"at":"2026-12-03T09:05","checkin":"2026-12-03T09:05"}
+{"who":"Synne","text":"Who is in IT","posted":true,"at":"2026-12-03T09:06","checkin":"2026-12-03T09:06"}
+{"who":"Jonas","text":"standup at 10. the ritual begins","posted":true,"at":"2026-12-03T09:40","checkin":"2026-12-03T09:40"}
+{"who":"Synne","text":"Lunch. Got a plea deal through in 20 min, has never happened in my life. Eating it before someone changes their mind","posted":true,"at":"2026-12-03T12:18","checkin":"2026-12-03T12:18"}
+{"who":"Solveig","text":"Congrats 🎉 eat the sandwich","posted":true,"at":"2026-12-03T12:22","checkin":"2026-12-03T12:22"}
+{"who":"Jonas","text":"[photo: my desk, four monitors, one cold coffee]","posted":true,"at":"2026-12-03T14:03","checkin":"2026-12-03T14:03"}
+{"who":"Synne","text":"You need a plant","posted":true,"at":"2026-12-03T14:05","checkin":"2026-12-03T14:05"}
+{"who":"Jonas","text":"i have a plant. it's on the other desk. i'm not allowed to move it","posted":true,"at":"2026-12-03T14:09","checkin":"2026-12-03T14:09"}
+{"who":"Solveig","text":"Someone returned a book 14 years late with a note saying \"sorry, was in Bergen\"","posted":true,"at":"2026-12-03T16:47","checkin":"2026-12-03T16:47"}
+{"who":"Jonas","text":"was he in bergen for 14 years","posted":true,"at":"2026-12-03T16:52","checkin":"2026-12-03T16:52"}
+{"who":"Solveig","text":"She. She was in bergen for 14 years","posted":true,"at":"2026-12-03T16:53","checkin":"2026-12-03T16:53"}
+{"who":"Synne","text":"Bath, bed, two kids asleep, husband has the dishes. Wine. Not talking to anyone for an hour","posted":true,"at":"2026-12-03T19:10","checkin":"2026-12-03T19:10"}
+{"who":"Jonas","text":"did anyone ever find the kitchen radio tape","posted":true,"at":"2026-12-03T21:36","checkin":"2026-12-03T21:36"}
+{"who":"Solveig","text":"Which tape","posted":true,"at":"2026-12-03T21:40","checkin":"2026-12-03T21:40"}
+{"who":"Jonas","text":"the one synne says i owe her","posted":true,"at":"2026-12-03T21:41","checkin":"2026-12-03T21:41"}
+{"who":"Synne","text":"You owe me an apology for flat 4b. Also the tape","posted":true,"at":"2026-12-03T21:52","checkin":"2026-12-03T21:52"}
+{"who":"Jonas","text":"i owe nothing","posted":true,"at":"2026-12-03T22:30","checkin":"2026-12-03T22:30"}
+{"who":"","react":"😤","to":37,"posted":false,"at":"2026-12-03T22:30"}
+{"who":"Synne","text":"Going to bed. Track 7 stays on the playlist no matter what anyone says","posted":true,"at":"2026-12-03T23:44","checkin":"2026-12-03T23:44"}
+{"who":"","react":"😂","to":38,"posted":false,"at":"2026-12-03T23:44"}
+{"who":"","react":"😂","to":38,"posted":false,"at":"2026-12-03T23:44"}
+{"who":"Jonas","text":"ok","posted":true,"at":"2026-12-03T23:51","checkin":"2026-12-03T23:51"}
+{"who":"Synne","text":"Kids are up. Track 7 has been requested twice before breakfast","posted":true,"at":"2026-12-04T07:14","checkin":"2026-12-04T07:14"}
+{"who":"Solveig","text":"Sorry. I can take it off if you want","posted":true,"at":"2026-12-04T07:41","checkin":"2026-12-04T07:41"}
+{"who":"Synne","text":"No. Track 7 stays. Two of them are fighting over who gets to sing the bridge","posted":true,"at":"2026-12-04T07:42","checkin":"2026-12-04T07:42"}
+{"who":"Jonas","text":"the bridge is the best part","posted":true,"at":"2026-12-04T08:20","checkin":"2026-12-04T08:20"}
+{"who":"Synne","text":"Of course you think so","posted":true,"at":"2026-12-04T08:21","checkin":"2026-12-04T08:21"}
+{"who":"Solveig","text":"New cataloguing system update. Subject headings are now read-only. So at least they're not deleting them","posted":true,"at":"2026-12-04T09:02","checkin":"2026-12-04T09:02"}
+{"who":"Synne","text":"Progress","posted":true,"at":"2026-12-04T09:15","checkin":"2026-12-04T09:15"}
+{"who":"Jonas","text":"is it still mandatory to use it","posted":true,"at":"2026-12-04T09:16","checkin":"2026-12-04T09:16"}
+{"who":"Solveig","text":"Yes. It's \"a feature\"","posted":true,"at":"2026-12-04T09:18","checkin":"2026-12-04T09:18"}
+{"who":"Jonas","text":"standup ran 4 min today. either they're getting faster or i'm getting tired","posted":true,"at":"2026-12-04T10:05","checkin":"2026-12-04T10:05"}
+{"who":"Synne","text":"Lunch. Defence counsel asked for an adjournment because his car is in for a service. Granted","posted":true,"at":"2026-12-04T12:02","checkin":"2026-12-04T12:02"}
+{"who":"Solveig","text":"Lunch at the desk again the Thursday sandwich was better","posted":true,"at":"2026-12-04T12:09","checkin":"2026-12-04T12:09"}
+{"who":"Jonas","text":"[photo: whiteboard, someone has drawn a plant]","posted":true,"at":"2026-12-04T13:44","checkin":"2026-12-04T13:44"}
+{"who":"Synne","text":"Good. That's a start","posted":true,"at":"2026-12-04T13:46","checkin":"2026-12-04T13:46"}
+{"who":"Jonas","text":"it is not a plant it is a tree in a pot","posted":true,"at":"2026-12-04T13:47","checkin":"2026-12-04T13:47"}
+{"who":"Solveig","text":"Man came in looking for a book he remembered from \"a red cover, 1990s, something about a lighthouse\". Took 40 min. Found it. He didn't want it. He wanted to tell me about the lighthouse","posted":true,"at":"2026-12-04T15:30","checkin":"2026-12-04T15:30"}
+{"who":"Synne","text":"Did you let him","posted":true,"at":"2026-12-04T15:33","checkin":"2026-12-04T15:33"}
+{"who":"Solveig","text":"I did 🥲","posted":true,"at":"2026-12-04T15:34","checkin":"2026-12-04T15:34"}
+{"who":"Jonas","text":"week finished. standup tomorrow is cancelled. i have cancelled it in my head","posted":true,"at":"2026-12-04T17:02","checkin":"2026-12-04T17:02"}
+{"who":"Synne","text":"Bath. Husband made fish. Youngest wants to know if Jonas is still on mute","posted":true,"at":"2026-12-04T19:20","checkin":"2026-12-04T19:20"}
+{"who":"Jonas","text":"i am not on mute i am at home. i am on the sofa","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Synne","text":"Tell him that","posted":true,"at":"2026-12-04T19:22","checkin":"2026-12-04T19:22"}
+{"who":"Jonas","text":"[link: \"Kent 2027 tour dates\"]","posted":true,"at":"2026-12-04T19:40","checkin":"2026-12-04T19:40"}
+{"who":"Synne","text":"Don't","posted":true,"at":"2026-12-04T19:44","checkin":"2026-12-04T19:44"}
+{"who":"Solveig","text":"I'm in for 2027 if someone else buys the tickets","posted":true,"at":"2026-12-04T19:46","checkin":"2026-12-04T19:46"}
+{"who":"Synne","text":"Kids asleep. Track 7 finally out of my head","posted":true,"at":"2026-12-04T21:10","checkin":"2026-12-04T21:10"}
+{"who":"Synne","text":"Obviously I'll think of it in the morning","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Jonas","text":"ok","posted":true,"at":"2026-12-04T22:30","checkin":"2026-12-04T22:30"}
+{"who":"Solveig","text":"Going to sleep soon. Off tomorrow, so I'm sleeping in","posted":true,"at":"2026-12-04T22:41","checkin":"2026-12-04T22:41"}
+{"who":"Jonas","text":"anyone else awake","posted":true,"at":"2026-12-04T23:55","checkin":"2026-12-04T23:55"}
+{"who":"Jonas","text":"the tape is in the box in my cupboard. found it. i don't owe anyone anything but i have it","posted":true,"at":"2026-12-05T00:14","checkin":"2026-12-05T00:14"}

@@ -1,0 +1,76 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T19:00","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1723,"cache_read_input_tokens":0,"output_tokens":2018,"output_tokens_details":{"thinking_tokens":1453},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1723,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2018,"cache_read_input_tokens":0,"cache_creation_input_tokens":1723,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1723},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2249,"cache_read_input_tokens":0,"output_tokens":2103,"output_tokens_details":{"thinking_tokens":1487},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2249,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2103,"cache_read_input_tokens":0,"cache_creation_input_tokens":2249,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2249},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2860,"cache_read_input_tokens":0,"output_tokens":4911,"output_tokens_details":{"thinking_tokens":3945},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2860,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4911,"cache_read_input_tokens":0,"cache_creation_input_tokens":2860,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2860},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Yen","Nam","Thao","Son"],"setting":"You are all in Hanoi, Vietnam, and you know each other as parents at the same school. You are running a school fundraiser together.","openers":["Send a photo of the fundraiser poster","Ask who can bring tables on Saturday","Share the bank details for donations","Confirm the bake sale date with the school"],"opener":"Send a photo of the fundraiser poster","cast":{"Yen":{"who":"41, woman, a parent","work":"civil servant","knows":"You know Nam, Thao and Son as fellow parents from your children's school.","texts":"Yen texts in this chat only now and again.","style":"a few emoji and some abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Nam":{"who":"45, man, a parent","work":"hotel manager","knows":"You know Yen, Thao and Son as fellow parents from your children's school.","texts":"Nam texts in this chat a lot.","style":"a few emoji and some abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Thao":{"who":"38, woman, a parent","work":"freelance translator","knows":"You know Yen, Nam and Son as fellow parents from your children's school.","texts":"Thao texts in this chat only now and again.","style":"a few emoji and some abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Son":{"who":"50, man, a parent","work":"tour guide","knows":"You know Yen, Nam and Thao as fellow parents from your children's school.","texts":"Son texts in this chat only now and again.","style":"a few emoji and some abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Yen":"You live in Hanoi, work as a civil servant, and live with your children.","Nam":"You live in Hanoi, manage a hotel, and live with your children.","Thao":"You live in Hanoi, work as a freelance translator, and live with your children.","Son":"You live in Hanoi, guide tours, and live with your children."},"sleep":{"Yen":[23,6],"Nam":[0,7],"Thao":[1,8.5],"Son":[22,5.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":790,"cache_read_input_tokens":0,"output_tokens":1429,"output_tokens_details":{"thinking_tokens":1032},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":790,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1429,"cache_read_input_tokens":0,"cache_creation_input_tokens":790,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":790},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1055,"cache_read_input_tokens":0,"output_tokens":2836,"output_tokens_details":{"thinking_tokens":2264},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1055,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2836,"cache_read_input_tokens":0,"cache_creation_input_tokens":1055,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1055},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Hanoi, Vietnam","castMs":20386,"situation":"Parents running a school fundraiser.","topic":null}
+{"who":"Yen","text":"[photo: fundraiser poster]","posted":true,"at":"2026-11-30T19:00","checkin":"2026-11-30T19:00"}
+{"who":"Yen","text":"Draft poster for the 12/12 bake sale tell me what's wrong","posted":true,"at":"2026-11-30T19:01","checkin":"2026-11-30T19:01"}
+{"who":"Nam","text":"Date ok? 12 dec is saturday right","posted":true,"at":"2026-11-30T19:04","checkin":"2026-11-30T19:04"}
+{"who":"Yen","text":"Yes sat. 9–12 at the gate","posted":true,"at":"2026-11-30T19:05","checkin":"2026-11-30T19:05"}
+{"who":"Nam","text":"Font too small for the gate tho. Ppl walk past","posted":true,"at":"2026-11-30T19:09","checkin":"2026-11-30T19:09"}
+{"who":"","react":"👍","to":4,"posted":false,"at":"2026-11-30T19:09"}
+{"who":"Nam","text":"Can make the QR bigger too","posted":true,"at":"2026-11-30T19:10","checkin":"2026-11-30T19:10"}
+{"who":"Thao","text":"Ok good. Who's printing","posted":true,"at":"2026-11-30T19:22","checkin":"2026-11-30T19:22"}
+{"who":"Son","text":"I can print at the shop near my office. A3 fine?","posted":true,"at":"2026-11-30T19:38","checkin":"2026-11-30T19:38"}
+{"who":"Nam","text":"A2 better","posted":true,"at":"2026-11-30T19:41","checkin":"2026-11-30T19:41"}
+{"who":"Son","text":"Ok A2 then 🤙 tomorrow im on a tour to ha long till late so maybe wed","posted":true,"at":"2026-11-30T19:41","checkin":"2026-11-30T19:41"}
+{"who":"Nam","text":"Who's doing the cash box","posted":true,"at":"2026-11-30T20:15","checkin":"2026-11-30T20:15"}
+{"who":"Thao","text":"I can, im not up early anyway 😅","posted":true,"at":"2026-11-30T20:30","checkin":"2026-11-30T20:30"}
+{"who":"Yen","text":"Ok thanks thao","posted":true,"at":"2026-11-30T21:02","checkin":"2026-11-30T21:02"}
+{"who":"Nam","text":"Also need the table list, not everyone's answered yet","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Nam","text":"Still waiting on 3B. Will chase tmrw","posted":true,"at":"2026-11-30T22:31","checkin":"2026-11-30T22:31"}
+{"who":"Yen","text":"Ok. Off to bed, night all","posted":true,"at":"2026-11-30T22:45","checkin":"2026-11-30T22:45"}
+{"who":"Nam","text":"Night","posted":true,"at":"2026-11-30T23:12","checkin":"2026-11-30T23:12"}
+{"who":"Thao","text":"Anyone know if the school gym is free thursday? Want to check before I message the office","posted":true,"at":"2026-12-01T00:40","checkin":"2026-12-01T00:40"}
+{"who":"Nam","text":"Ask the office not me 😅 I'm not even sure about the lights in there","posted":true,"at":"2026-12-01T00:52","checkin":"2026-12-01T00:52"}
+{"who":"Nam","text":"3B still not answering. Called the mum, she said tonight","posted":true,"at":"2026-12-01T07:52","checkin":"2026-12-01T07:52"}
+{"who":"Yen","text":"Ok. I'll ask homeroom for another number if she doesn't reply","posted":true,"at":"2026-12-01T08:10","checkin":"2026-12-01T08:10"}
+{"who":"Thao","text":"Office says gym is free thurs afternoon. Lights out on the left side, they're checking","posted":true,"at":"2026-12-01T09:30","checkin":"2026-12-01T09:30"}
+{"who":"Nam","text":"For what thurs","posted":true,"at":"2026-12-01T09:33","checkin":"2026-12-01T09:33"}
+{"who":"Thao","text":"Table planning. Everyone in one room instead of 4 chats 😅","posted":true,"at":"2026-12-01T09:35","checkin":"2026-12-01T09:35"}
+{"who":"Son","text":"[photo: Ha Long, boats in mist]","posted":true,"at":"2026-12-01T13:20","checkin":"2026-12-01T13:20"}
+{"who":"Son","text":"Tour fine. Printing wed morning, shop opens 8. Send me the final file","posted":true,"at":"2026-12-01T13:21","checkin":"2026-12-01T13:21"}
+{"who":"Yen","text":"QR links to the old form. Fixing it, new file tonight","posted":true,"at":"2026-12-01T14:05","checkin":"2026-12-01T14:05"}
+{"who":"Nam","text":"Got 3B. 2 more families still silent. Close list tmrw?","posted":true,"at":"2026-12-01T16:40","checkin":"2026-12-01T16:40"}
+{"who":"Thao","text":"Tmrw morning I'm asleep till 8:30. Nam can you send the list","posted":true,"at":"2026-12-01T17:02","checkin":"2026-12-01T17:02"}
+{"who":"Nam","text":"Ok I'll send it tonight","posted":true,"at":"2026-12-01T17:04","checkin":"2026-12-01T17:04"}
+{"who":"Yen","text":"[file: poster_v3.pdf]","posted":true,"at":"2026-12-01T21:48","checkin":"2026-12-01T21:48"}
+{"who":"Yen","text":"Bigger QR. Check before son prints. Going to sleep soon","posted":true,"at":"2026-12-01T21:49","checkin":"2026-12-01T21:49"}
+{"who":"Nam","text":"Looks good 👍","posted":true,"at":"2026-12-01T21:55","checkin":"2026-12-01T21:55"}
+{"who":"","react":"👍","to":32,"posted":false,"at":"2026-12-01T21:55"}
+{"who":"Son","text":"Back at hotel, dead tired. Will look at it in the morning","posted":true,"at":"2026-12-01T22:20","checkin":"2026-12-01T22:20"}
+{"who":"Nam","text":"[file: table_list_final.xlsx]","posted":true,"at":"2026-12-01T23:58","checkin":"2026-12-01T23:58"}
+{"who":"Nam","text":"2 families still not answered, marked as maybe","posted":true,"at":"2026-12-01T23:59","checkin":"2026-12-01T23:59"}
+{"who":"Thao","text":"Got it. Gym: waiting for office to confirm, they said tomorrow","posted":true,"at":"2026-12-02T00:37","checkin":"2026-12-02T00:37"}
+{"who":"Yen","text":"V3 is the final one right. Son print that","posted":true,"at":"2026-12-02T06:14","checkin":"2026-12-02T06:14"}
+{"who":"Yen","text":"Qr works now, tested on my phone","posted":true,"at":"2026-12-02T06:16","checkin":"2026-12-02T06:16"}
+{"who":"","react":"👍","to":38,"posted":false,"at":"2026-12-02T06:16"}
+{"who":"Nam","text":"3B mum replied finally. 2 trays cake, yes","posted":true,"at":"2026-12-02T07:05","checkin":"2026-12-02T07:05"}
+{"who":"Nam","text":"1 family still silent","posted":true,"at":"2026-12-02T07:06","checkin":"2026-12-02T07:06"}
+{"who":"Son","text":"At the shop. V3 yes. A2 matte or glossy? Guy says glossy gets glare by the gate","posted":true,"at":"2026-12-02T08:02","checkin":"2026-12-02T08:02"}
+{"who":"Nam","text":"Matte","posted":true,"at":"2026-12-02T08:05","checkin":"2026-12-02T08:05"}
+{"who":"Son","text":"Ok matte","posted":true,"at":"2026-12-02T08:06","checkin":"2026-12-02T08:06"}
+{"who":"Thao","text":"Morning. Office emailed, gym thurs 2–5 confirmed. Left side lights still being checked","posted":true,"at":"2026-12-02T08:41","checkin":"2026-12-02T08:41"}
+{"who":"Yen","text":"2–5 is ok for me","posted":true,"at":"2026-12-02T08:43","checkin":"2026-12-02T08:43"}
+{"who":"Son","text":"Printed. 2 copies A2 matte, ready noon","posted":true,"at":"2026-12-02T09:15","checkin":"2026-12-02T09:15"}
+{"who":"Son","text":"Going on another tour at 1, back late. Who grabs them","posted":true,"at":"2026-12-02T09:17","checkin":"2026-12-02T09:17"}
+{"who":"Thao","text":"Me, im free. Send shop address","posted":true,"at":"2026-12-02T09:40","checkin":"2026-12-02T09:40"}
+{"who":"Son","text":"[link: shop location]","posted":true,"at":"2026-12-02T09:41","checkin":"2026-12-02T09:41"}
+{"who":"Thao","text":"[photo: 2 posters strapped to motorbike seat]","posted":true,"at":"2026-12-02T12:24","checkin":"2026-12-02T12:24"}
+{"who":"Thao","text":"Got them. They look good","posted":true,"at":"2026-12-02T12:25","checkin":"2026-12-02T12:25"}
+{"who":"Yen","text":"Can someone bring small notes for change. 10k 20k 50k","posted":true,"at":"2026-12-02T12:40","checkin":"2026-12-02T12:40"}
+{"who":"Thao","text":"I can get small notes from the bank near my place. How much","posted":true,"at":"2026-12-02T13:02","checkin":"2026-12-02T13:02"}
+{"who":"Yen","text":"2 mil maybe","posted":true,"at":"2026-12-02T13:05","checkin":"2026-12-02T13:05"}
+{"who":"Nam","text":"Thurs I cant come till 3. Check-in rush. Start without me","posted":true,"at":"2026-12-02T14:10","checkin":"2026-12-02T14:10"}
+{"who":"Thao","text":"Ok we start 2 then","posted":true,"at":"2026-12-02T14:12","checkin":"2026-12-02T14:12"}
+{"who":"Yen","text":"I can bring tape and the sign-up sheets thurs. On break now","posted":true,"at":"2026-12-02T15:03","checkin":"2026-12-02T15:03"}
+{"who":"Nam","text":"Last family answered. Yes, 1 box","posted":true,"at":"2026-12-02T16:30","checkin":"2026-12-02T16:30"}
+{"who":"Nam","text":"So 0 maybe now","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"","react":"👍","to":59,"posted":false,"at":"2026-12-02T16:31"}
+{"who":"","react":"👍","to":59,"posted":false,"at":"2026-12-02T16:31"}
+{"who":"","react":"🎉","to":59,"posted":false,"at":"2026-12-02T16:31"}
+{"who":"Son","text":"Back on the bus. 40 guests, one lady asked about the 12/12 bake sale. I told her saturday, she wants to come","posted":true,"at":"2026-12-02T19:20","checkin":"2026-12-02T19:20"}
+{"who":"Son","text":"She said she'll bring her own cake lol","posted":true,"at":"2026-12-02T19:22","checkin":"2026-12-02T19:22"}
+{"who":"Nam","text":"Tell her yes. We need more cake","posted":true,"at":"2026-12-02T20:12","checkin":"2026-12-02T20:12"}
+{"who":"Thao","text":"Got the gym key from the office. I have it, thurs","posted":true,"at":"2026-12-02T21:40","checkin":"2026-12-02T21:40"}
+{"who":"Son","text":"Dead tired. Sleeping. Tour at 6 tmrw","posted":true,"at":"2026-12-02T22:05","checkin":"2026-12-02T22:05"}
+{"who":"Nam","text":"2 new people filled the form tonight, both are cake","posted":true,"at":"2026-12-02T23:31","checkin":"2026-12-02T23:31"}
+{"who":"Nam","text":"Ok thats enough for now. Night","posted":true,"at":"2026-12-02T23:33","checkin":"2026-12-02T23:33"}
+{"who":"Thao","text":"Anyone up. I'll bring the cash tin sat. Yen can you do the small notes or should I","posted":true,"at":"2026-12-03T00:20","checkin":"2026-12-03T00:20"}

@@ -1,0 +1,135 @@
+=== W9-P1 2026-12-04T00:40 to 2026-12-05T04:00, attempt 1 (format)
+--- Fri 05:52, Sipho
+Good morning. I will go down to the desk at 7 for my parcel.
+
+--- Fri 07:14, Zanele
+desk open now? 🙏
+
+--- Fri 07:19, Sipho
+Yes, the guard opened it at 7. I am on my way.
+
+--- Fri 07:26, Zanele
+got mine. its huge 😅 they wanted ID for the sign
+
+--- Fri 07:31, Sipho
+I brought my ID. Did they have yours without a problem?
+
+--- Fri 07:33, Zanele
+yep no problem
+
+--- Fri 10:22, Mpho
+just woke up 😴 my one is still "out for delivery" lol
+
+--- Fri 10:40, Sipho
+Ask the guard if it came. He keeps the parcels at the desk too.
+
+--- Fri 10:44, Mpho
+ok bet 👍
+
+--- Fri 13:05, Sipho
+[photo: the lift notice on the ground floor door]
+
+--- Fri 13:06, Sipho
+The lift on our landing is making a noise again. I phoned the body corporate. They said someone will come next week.
+
+--- Fri 13:52, Zanele
+ugh. thanks for phoning 🙄
+
+--- Fri 14:03, Mpho
+the lift is always making noise lol 💀
+
+--- Fri 16:30, Zanele
+deadline tonight so im basically in a cave 🫠 dont expect replies
+
+--- Fri 16:31, Sipho
+Understood.
+
+--- Fri 18:47, Sipho
+The guard says the water will be off on Saturday from 8 until 2 for pipe work. There is a notice at the gate.
+
+--- Fri 18:48, Sipho
+(👍 1)
+
+--- Fri 19:12, Mpho
+back from work 😮‍💮 water off tmrw?? i was gonna shower after my shift lol
+
+--- Fri 19:14, Sipho
+It is off from 8 in the morning. You will have to shower tonight or wait until 2.
+
+--- Fri 19:15, Mpho
+bruh 😭 ok
+
+--- Fri 21:40, Zanele
+ok delivered, my deadline is done 🎉 gonna sleep early
+
+--- Fri 21:42, Sipho
+Good. Rest well.
+
+--- Sat 00:52, Mpho
+my parcel is at the gate now 🎉📦 guard said it came at 23:40 lol
+
+--- Sat 00:55, Mpho
+ok sleep time 😴
+
+=== W9-P5 2026-12-03T22:48 to 2026-12-05T04:00, attempt 1 (format)
+--- Fri 06:48, Chutima
+Rama IV still closed?
+
+--- Fri 06:55, Lek
+Checked the notice. They opened one lane
+
+--- Fri 07:02, Pim
+Ok see you at the soi
+
+--- Fri 11:40, Lek
+Called them. Says the truck was loaded wrong at their end. Will check
+
+--- Fri 11:52, Chutima
+Check = they'll blame the warehouse 😒
+
+--- Fri 11:58, Lek
+Probably
+
+--- Fri 14:20, Pim
+Client sent new version. Moved the logo 2px left
+
+--- Fri 14:21, Pim
+So that's the pop
+
+--- Fri 15:02, Pichai
+Concrete pour pushed to Monday. Pump truck couldn't get in
+
+--- Fri 15:10, Lek
+Monday then
+
+--- Fri 16:50, Pim
+Vector file, sending now
+[file: logo_v7_final_FINAL.ai]
+
+--- Fri 16:52, Chutima
+thx. Lek wants the supplier numbers in a chart by monday
+
+--- Fri 19:30, Pichai
+Anyone know if Rama IV stays shut over the weekend
+
+--- Fri 19:44, Lek
+Notice says till Sunday. Pipe
+
+--- Fri 21:03, Pim
+Did the supplier ever send the right steel
+
+--- Fri 21:20, Lek
+Not yet. Monday
+
+--- Fri 23:10, Pim
+Client just sent a "quick" change. Logo bigger now
+
+--- Fri 23:10, Pim
+(😂 2)
+
+--- Fri 23:40, Pichai
+pop
+
+--- Fri 23:52, Lek
+Night
+

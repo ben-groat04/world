@@ -1,0 +1,86 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T22:40","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1702,"cache_read_input_tokens":0,"output_tokens":1622,"output_tokens_details":{"thinking_tokens":1040},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1702,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1622,"cache_read_input_tokens":0,"cache_creation_input_tokens":1702,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1702},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2216,"cache_read_input_tokens":0,"output_tokens":2397,"output_tokens_details":{"thinking_tokens":1599},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2216,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2397,"cache_read_input_tokens":0,"cache_creation_input_tokens":2216,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2216},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3009,"cache_read_input_tokens":0,"output_tokens":2631,"output_tokens_details":{"thinking_tokens":1871},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3009,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2631,"cache_read_input_tokens":0,"cache_creation_input_tokens":3009,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3009},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Rania","Omar","Khaled"],"setting":"You are all in Amman, Jordan, where you live now. You are old university housemates who shared a house during your studies and still keep in touch through this group chat.","openers":["Send a good morning message to the group","Share a photo from today's school run","Ask who is free for coffee this week","Check in on how Khaled's thesis is going"],"opener":"Share a photo from today's school run","cast":{"Rania":{"who":"29, woman, a former housemate","work":"primary school teacher","knows":"You are Omar's and Khaled's former housemate from university, and you have stayed close to both of them since then.","texts":"Rania texts in this chat a lot.","style":"Uses a little emoji and some texting abbreviations, not much.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Omar":{"who":"30, man, a former housemate","work":"sales manager","knows":"You are Rania's and Khaled's former housemate from university, and you have stayed in touch with both of them since then.","texts":"Omar texts in this chat now and then.","style":"Uses a little emoji and few texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Khaled":{"who":"28, man, a former housemate","work":"doctoral student","knows":"You are Rania's and Omar's former housemate from university, and you have stayed in touch with both of them since then.","texts":"Khaled texts in this chat now and then.","style":"Uses almost no emoji and no texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Rania":"You live in Amman, Jordan, spend your days teaching at a primary school, and live with your family.","Omar":"You live in Amman, Jordan, spend your days working in sales management, and live with your family.","Khaled":"You live in Amman, Jordan, spend your days on your doctoral studies, and live alone."},"sleep":{"Rania":[23,6.5],"Omar":[23.5,7],"Khaled":[0.5,8]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":782,"cache_read_input_tokens":0,"output_tokens":976,"output_tokens_details":{"thinking_tokens":656},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":782,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":976,"cache_read_input_tokens":0,"cache_creation_input_tokens":782,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":782},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1038,"cache_read_input_tokens":0,"output_tokens":536,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1038,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":536,"cache_read_input_tokens":0,"cache_creation_input_tokens":1038,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1038},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Amman, Jordan","castMs":10370,"situation":"Old university housemates.","topic":null}
+{"who":"Rania","text":"[photo: the kaak cart outside the school gate this morning]","posted":true,"at":"2026-11-30T22:40","checkin":"2026-11-30T22:40"}
+{"who":"Rania","text":"The kaak man got a new cart. It's blue now","posted":true,"at":"2026-11-30T22:41","checkin":"2026-11-30T22:41"}
+{"who":"Omar","text":"the old one was better","posted":true,"at":"2026-11-30T22:44","checkin":"2026-11-30T22:44"}
+{"who":"Khaled","text":"The one by the roundabout?","posted":true,"at":"2026-11-30T22:46","checkin":"2026-11-30T22:46"}
+{"who":"Rania","text":"Yes","posted":true,"at":"2026-11-30T22:47","checkin":"2026-11-30T22:47"}
+{"who":"Rania","text":"He said the wheels were making a noise every morning","posted":true,"at":"2026-11-30T22:47","checkin":"2026-11-30T22:47"}
+{"who":"Omar","text":"he still has the same cart in the photo","posted":true,"at":"2026-11-30T22:58","checkin":"2026-11-30T22:58"}
+{"who":"Rania","text":"Look again","posted":true,"at":"2026-11-30T22:58","checkin":"2026-11-30T22:58"}
+{"who":"Omar","text":"ok fair","posted":true,"at":"2026-11-30T22:59","checkin":"2026-11-30T22:59"}
+{"who":"Rania","text":"Gn","posted":true,"at":"2026-11-30T23:03","checkin":"2026-11-30T23:03"}
+{"who":"Omar","text":"my boss wants the Q4 numbers by 11","posted":true,"at":"2026-12-01T07:18","checkin":"2026-12-01T07:18"}
+{"who":"Omar","text":"they are not ready","posted":true,"at":"2026-12-01T07:19","checkin":"2026-12-01T07:19"}
+{"who":"Khaled","text":"Supervisor sent chapter 3 back with 40 comments. 38 of them are \"rephrase\"","posted":true,"at":"2026-12-01T13:12","checkin":"2026-12-01T13:12"}
+{"who":"Rania","text":"Which means what","posted":true,"at":"2026-12-01T13:14","checkin":"2026-12-01T13:14"}
+{"who":"Khaled","text":"I don't know. I'm rephrasing","posted":true,"at":"2026-12-01T13:15","checkin":"2026-12-01T13:15"}
+{"who":"Rania","text":"Good luck","posted":true,"at":"2026-12-01T13:16","checkin":"2026-12-01T13:16"}
+{"who":"Omar","text":"client moved the call to thursday","posted":true,"at":"2026-12-01T18:40","checkin":"2026-12-01T18:40"}
+{"who":"Omar","text":"so the 11 o'clock was for nothing","posted":true,"at":"2026-12-01T18:41","checkin":"2026-12-01T18:41"}
+{"who":"Rania","text":"My class did a play about the moon today","posted":true,"at":"2026-12-01T21:52","checkin":"2026-12-01T21:52"}
+{"who":"Rania","text":"One kid was the potato. He refused to be anything else","posted":true,"at":"2026-12-01T21:53","checkin":"2026-12-01T21:53"}
+{"who":"Omar","text":"which potato","posted":true,"at":"2026-12-01T21:55","checkin":"2026-12-01T21:55"}
+{"who":"Rania","text":"The one in the sky","posted":true,"at":"2026-12-01T21:55","checkin":"2026-12-01T21:55"}
+{"who":"Khaled","text":"That's a good role actually","posted":true,"at":"2026-12-01T22:20","checkin":"2026-12-01T22:20"}
+{"who":"Omar","text":"numbers still not ready. they're asking for them by thursday now","posted":true,"at":"2026-12-02T07:24","checkin":"2026-12-02T07:24"}
+{"who":"Omar","text":"they moved the deadline so i'd have time. i have the same amount of time as yesterday","posted":true,"at":"2026-12-02T07:26","checkin":"2026-12-02T07:26"}
+{"who":"Rania","text":"Did the potato kid actually get the part","posted":true,"at":"2026-12-02T12:50","checkin":"2026-12-02T12:50"}
+{"who":"Rania","text":"He's now refusing to be the moon","posted":true,"at":"2026-12-02T12:51","checkin":"2026-12-02T12:51"}
+{"who":"Khaled","text":"Let him be the potato","posted":true,"at":"2026-12-02T12:53","checkin":"2026-12-02T12:53"}
+{"who":"Khaled","text":"Rephrased 31 of them. The other 7 I think are actually wrong","posted":true,"at":"2026-12-02T13:05","checkin":"2026-12-02T13:05"}
+{"who":"Rania","text":"Tell her that","posted":true,"at":"2026-12-02T13:06","checkin":"2026-12-02T13:06"}
+{"who":"Khaled","text":"I'll tell her in a week","posted":true,"at":"2026-12-02T13:06","checkin":"2026-12-02T13:06"}
+{"who":"Omar","text":"[photo: spreadsheet with one row highlighted red]","posted":true,"at":"2026-12-02T15:40","checkin":"2026-12-02T15:40"}
+{"who":"Omar","text":"that's the row","posted":true,"at":"2026-12-02T15:41","checkin":"2026-12-02T15:41"}
+{"who":"Rania","text":"What's the row","posted":true,"at":"2026-12-02T15:41","checkin":"2026-12-02T15:41"}
+{"who":"Omar","text":"Q4 for the north branch. down 22%. nobody knows why yet","posted":true,"at":"2026-12-02T15:43","checkin":"2026-12-02T15:43"}
+{"who":"Khaled","text":"Did you check whether it's a date thing","posted":true,"at":"2026-12-02T15:44","checkin":"2026-12-02T15:44"}
+{"who":"Omar","text":"it's always a date thing","posted":true,"at":"2026-12-02T15:46","checkin":"2026-12-02T15:46"}
+{"who":"Rania","text":"Kaak man again today. Wheels are still making the noise","posted":true,"at":"2026-12-02T16:10","checkin":"2026-12-02T16:10"}
+{"who":"Rania","text":"He blamed the new cart. He's going to take it back","posted":true,"at":"2026-12-02T16:10","checkin":"2026-12-02T16:10"}
+{"who":"Omar","text":"so the old cart was better","posted":true,"at":"2026-12-02T16:12","checkin":"2026-12-02T16:12"}
+{"who":"Rania","text":"Don't","posted":true,"at":"2026-12-02T16:12","checkin":"2026-12-02T16:12"}
+{"who":"Khaled","text":"Anyone eat yet","posted":true,"at":"2026-12-02T19:30","checkin":"2026-12-02T19:30"}
+{"who":"Omar","text":"mansaf leftovers. my mother made too much again","posted":true,"at":"2026-12-02T19:44","checkin":"2026-12-02T19:44"}
+{"who":"Khaled","text":"Lucky","posted":true,"at":"2026-12-02T19:46","checkin":"2026-12-02T19:46"}
+{"who":"Rania","text":"I'm going to say goodnight early, I'm wiped","posted":true,"at":"2026-12-02T20:15","checkin":"2026-12-02T20:15"}
+{"who":"Rania","text":"Good luck Omar with the north branch","posted":true,"at":"2026-12-02T20:16","checkin":"2026-12-02T20:16"}
+{"who":"Omar","text":"thanks","posted":true,"at":"2026-12-02T20:30","checkin":"2026-12-02T20:30"}
+{"who":"","react":"😂","to":46,"posted":false,"at":"2026-12-02T20:30"}
+{"who":"Khaled","text":"Chapter 3 is done. Sending it back with a note that says \"I rephrased.\"","posted":true,"at":"2026-12-02T21:58","checkin":"2026-12-02T21:58"}
+{"who":"Omar","text":"ok","posted":true,"at":"2026-12-02T22:04","checkin":"2026-12-02T22:04"}
+{"who":"Omar","text":"he'll send it back","posted":true,"at":"2026-12-02T22:10","checkin":"2026-12-02T22:10"}
+{"who":"Khaled","text":"Probably","posted":true,"at":"2026-12-02T22:11","checkin":"2026-12-02T22:11"}
+{"who":"Omar","text":"gn","posted":true,"at":"2026-12-02T23:14","checkin":"2026-12-02T23:14"}
+{"who":"Khaled","text":"Gn","posted":true,"at":"2026-12-02T23:20","checkin":"2026-12-02T23:20"}
+{"who":"Rania","text":"The potato kid is back. He wants to be a cloud now","posted":true,"at":"2026-12-03T07:31","checkin":"2026-12-03T07:31"}
+{"who":"Omar","text":"he's negotiating","posted":true,"at":"2026-12-03T07:33","checkin":"2026-12-03T07:33"}
+{"who":"Khaled","text":"Supervisor replied already. One line: \"Good. Keep going.\"","posted":true,"at":"2026-12-03T08:50","checkin":"2026-12-03T08:50"}
+{"who":"Rania","text":"?? That's it","posted":true,"at":"2026-12-03T08:51","checkin":"2026-12-03T08:51"}
+{"who":"Khaled","text":"That's it","posted":true,"at":"2026-12-03T08:52","checkin":"2026-12-03T08:52"}
+{"who":"Omar","text":"north branch. found it","posted":true,"at":"2026-12-03T10:14","checkin":"2026-12-03T10:14"}
+{"who":"Omar","text":"branch was closed 9 days in october for renovation. nobody updated the system","posted":true,"at":"2026-12-03T10:15","checkin":"2026-12-03T10:15"}
+{"who":"Khaled","text":"Told you","posted":true,"at":"2026-12-03T10:16","checkin":"2026-12-03T10:16"}
+{"who":"Omar","text":"don't","posted":true,"at":"2026-12-03T10:16","checkin":"2026-12-03T10:16"}
+{"who":"Rania","text":"Kaak man took the new cart back. He's using the old one again","posted":true,"at":"2026-12-03T12:40","checkin":"2026-12-03T12:40"}
+{"who":"Rania","text":"[photo: old cart outside the gate, wheels visibly rusty]","posted":true,"at":"2026-12-03T12:41","checkin":"2026-12-03T12:41"}
+{"who":"Omar","text":"vindicated","posted":true,"at":"2026-12-03T12:42","checkin":"2026-12-03T12:42"}
+{"who":"Rania","text":"Don't","posted":true,"at":"2026-12-03T12:42","checkin":"2026-12-03T12:42"}
+{"who":"","react":"😂","to":65,"posted":false,"at":"2026-12-03T12:42"}
+{"who":"Omar","text":"numbers sent. they said thanks. nobody has read them yet","posted":true,"at":"2026-12-03T14:05","checkin":"2026-12-03T14:05"}
+{"who":"Khaled","text":"Lunch?","posted":true,"at":"2026-12-03T14:20","checkin":"2026-12-03T14:20"}
+{"who":"Khaled","text":"Actually no. Writing. Ignore me","posted":true,"at":"2026-12-03T14:22","checkin":"2026-12-03T14:22"}
+{"who":"Rania","text":"Class trip to the zoo in January. I have to count 26 kids at a gate","posted":true,"at":"2026-12-03T19:30","checkin":"2026-12-03T19:30"}
+{"who":"Omar","text":"good luck. the potato will come","posted":true,"at":"2026-12-03T19:31","checkin":"2026-12-03T19:31"}
+{"who":"Rania","text":"He is coming","posted":true,"at":"2026-12-03T19:33","checkin":"2026-12-03T19:33"}
+{"who":"Khaled","text":"Mansaf again?","posted":true,"at":"2026-12-03T20:02","checkin":"2026-12-03T20:02"}
+{"who":"Omar","text":"no. chicken and rice. mum is sulking about the mansaf","posted":true,"at":"2026-12-03T20:10","checkin":"2026-12-03T20:10"}
+{"who":"Khaled","text":"Nothing to sulk about","posted":true,"at":"2026-12-03T20:12","checkin":"2026-12-03T20:12"}
+{"who":"Khaled","text":"Chapter 4 outline sent. Supervisor's note on it: \"promising\"","posted":true,"at":"2026-12-03T21:40","checkin":"2026-12-03T21:40"}
+{"who":"Rania","text":"PROMISING","posted":true,"at":"2026-12-03T21:43","checkin":"2026-12-03T21:43"}
+{"who":"Rania","text":"That's a whole new word","posted":true,"at":"2026-12-03T21:43","checkin":"2026-12-03T21:43"}
+{"who":"Omar","text":"she's going to rephrase that too","posted":true,"at":"2026-12-03T21:50","checkin":"2026-12-03T21:50"}
+{"who":"Rania","text":"Gn","posted":true,"at":"2026-12-03T22:58","checkin":"2026-12-03T22:58"}
+{"who":"Omar","text":"gn","posted":true,"at":"2026-12-03T23:12","checkin":"2026-12-03T23:12"}
+{"who":"Khaled","text":"Still up. Gn","posted":true,"at":"2026-12-04T00:14","checkin":"2026-12-04T00:14"}

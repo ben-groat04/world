@@ -1,0 +1,97 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-29T09:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2358,"cache_read_input_tokens":0,"output_tokens":1849,"output_tokens_details":{"thinking_tokens":1186},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2358,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1849,"cache_read_input_tokens":0,"cache_creation_input_tokens":2358,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2358},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2929,"cache_read_input_tokens":0,"output_tokens":3641,"output_tokens_details":{"thinking_tokens":2508},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2929,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3641,"cache_read_input_tokens":0,"cache_creation_input_tokens":2929,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2929},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4060,"cache_read_input_tokens":0,"output_tokens":2920,"output_tokens_details":{"thinking_tokens":2155},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4060,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2920,"cache_read_input_tokens":0,"cache_creation_input_tokens":4060,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4060},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Mariel","Rodel","Nicole","Esperanza","Jerome","Rafael"],"setting":"You are all staff at a small cafe in Manila, working shifts together, and you know each other only through that work. Most of you live in different parts of the city.","openers":["Send a photo of the stacked trays after lunch rush","Ask who can cover the sink on Saturday","Post a reminder about the new stock delivery","Say good morning and ask if anyone has the schedule"],"opener":"Say good morning and ask if anyone has the schedule","cast":{"Mariel":{"who":"29, woman, cafe staff","work":"dishwasher","knows":"You know Rodel as the barista on your shifts; Nicole as the social media helper; Esperanza as the senior dishwasher you share the sink with; Jerome as your shift lead; Rafael as the young crew member and Esperanza's nephew.","texts":"Mariel texts in this chat a lot.","style":"some emoji and some abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Rodel":{"who":"41, man, cafe staff","work":"barista","knows":"You know Mariel as the dishwasher on your shift; Nicole as the social media helper; Esperanza as the senior dishwasher; Jerome as your shift lead; Rafael as the student crew member.","texts":"Rodel texts in this chat only now and again.","style":"almost no emoji, plain words","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Nicole":{"who":"22, woman, cafe staff","work":"social media helper","knows":"You know Mariel as a dishwasher at the cafe; Rodel as the barista; Esperanza as the senior dishwasher; Jerome as your shift lead; Rafael as the student crew member.","texts":"Nicole texts in this chat now and then.","style":"heavy emoji and lots of abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Esperanza":{"who":"55, woman, cafe staff","work":"dishwasher","knows":"You know Mariel as a dishwasher you work beside; Rodel as the barista; Nicole as the social media helper; Jerome as your shift lead; Rafael as your nephew who also works at the cafe.","texts":"Esperanza texts in this chat only now and again.","style":"almost no emoji and no abbreviations","emojiKeep":0.35,"capitals":true,"lives":["Rafael"],"ex":[]},"Jerome":{"who":"34, man, cafe staff","work":"shift lead","knows":"You know Mariel as a dishwasher on your shifts; Rodel as the barista; Nicole as the social media helper; Esperanza as the senior dishwasher; Rafael as the student crew member.","texts":"Jerome texts in this chat only now and again.","style":"a little emoji and few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Rafael":{"who":"19, man, cafe staff","work":"student","knows":"You know Mariel as a dishwasher at the cafe; Rodel as the barista; Nicole as the social media helper; Jerome as your shift lead; Esperanza as your aunt who also works the dishes.","texts":"Rafael texts in this chat only now and again.","style":"many abbreviations and some emoji","emojiKeep":0.35,"capitals":false,"lives":["Esperanza"],"ex":[]}},"private_lines":{"Mariel":"You live in Quezon City, and your days are filled with dishwashing shifts at the cafe.","Rodel":"You live in Caloocan, and your days are spent making coffee at the cafe.","Nicole":"You live in Makati, and your days go to running the cafe's social media alongside your shifts.","Esperanza":"You live in Pasay, and your days are spent washing dishes at the cafe.","Jerome":"You live in Mandaluyong, and your days are spent leading shifts at the cafe.","Rafael":"You live in Pasay with your aunt, and your days are split between classes and cafe shifts."},"sleep":{"Mariel":[23.5,6.5],"Rodel":[22.5,5.5],"Nicole":[0.5,8],"Esperanza":[21.5,4.5],"Jerome":[23,6],"Rafael":[0,7.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":786,"cache_read_input_tokens":0,"output_tokens":2116,"output_tokens_details":{"thinking_tokens":1514},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2116,"cache_read_input_tokens":0,"cache_creation_input_tokens":786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1103,"cache_read_input_tokens":0,"output_tokens":4230,"output_tokens_details":{"thinking_tokens":3071},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1103,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4230,"cache_read_input_tokens":0,"cache_creation_input_tokens":1103,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1103},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Manila, the Philippines","castMs":28715,"situation":"Staff at a small cafe.","topic":null}
+{"who":"Mariel","text":"good morning! does anyone have the schedule for this week? mine's not on the wall pic","posted":true,"at":"2026-11-29T09:50","checkin":"2026-11-29T09:50"}
+{"who":"Rodel","text":"Morning. Not me. Jerome posts it","posted":true,"at":"2026-11-29T10:14","checkin":"2026-11-29T10:14"}
+{"who":"Nicole","text":"good morning!! i think jerome posted it on the page instagram story friday? checking","posted":true,"at":"2026-11-29T10:31","checkin":"2026-11-29T10:31"}
+{"who":"Nicole","text":"nvm found it dishwash mon wed fri 7-3 for u mariel","posted":true,"at":"2026-11-29T10:40","checkin":"2026-11-29T10:40"}
+{"who":"Esperanza","text":"Mariel, Monday and Wednesday. Thursday is off.","posted":true,"at":"2026-11-29T11:02","checkin":"2026-11-29T11:02"}
+{"who":"Mariel","text":"thank you po ok thursday off yay","posted":true,"at":"2026-11-29T11:05","checkin":"2026-11-29T11:05"}
+{"who":"Jerome","text":"Sorry was driving. The one on the wall is right","posted":true,"at":"2026-11-29T13:47","checkin":"2026-11-29T13:47"}
+{"who":"Mariel","text":"ok. nvm na 😅","posted":true,"at":"2026-11-29T13:48","checkin":"2026-11-29T13:48"}
+{"who":"Rafael","text":"tita can u pick me up after shift, bus is so slow i have class till 5 tho","posted":true,"at":"2026-11-29T16:20","checkin":"2026-11-29T16:20"}
+{"who":"Esperanza","text":"Ok. Six.","posted":true,"at":"2026-11-29T16:22","checkin":"2026-11-29T16:22"}
+{"who":"Rafael","text":"thx","posted":true,"at":"2026-11-29T16:23","checkin":"2026-11-29T16:23"}
+{"who":"Rodel","text":"Who's opening tmrw","posted":true,"at":"2026-11-29T19:10","checkin":"2026-11-29T19:10"}
+{"who":"Jerome","text":"Me. Rodel you close","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Rodel","text":"Ok","posted":true,"at":"2026-11-29T19:14","checkin":"2026-11-29T19:14"}
+{"who":"Nicole","text":"anyone know if the cake order for tmrw got confirmed? the supplier didnt reply to me 😩","posted":true,"at":"2026-11-29T22:40","checkin":"2026-11-29T22:40"}
+{"who":"Rodel","text":"No","posted":true,"at":"2026-11-29T22:52","checkin":"2026-11-29T22:52"}
+{"who":"Mariel","text":"goodnight everyone see u mon","posted":true,"at":"2026-11-29T23:05","checkin":"2026-11-29T23:05"}
+{"who":"Rafael","text":"still awake ugh esp is already asleep lol","posted":true,"at":"2026-11-30T00:12","checkin":"2026-11-30T00:12"}
+{"who":"Rafael","text":"nicole can u ask the supplier again pls","posted":true,"at":"2026-11-30T00:13","checkin":"2026-11-30T00:13"}
+{"who":"Nicole","text":"ok sending now 📦 goodnight rafa 🌙","posted":true,"at":"2026-11-30T00:40","checkin":"2026-11-30T00:40"}
+{"who":"","react":"👍","to":19,"posted":false,"at":"2026-11-30T00:40"}
+{"who":"Mariel","text":"sorry running late, waiting for jeep. 15 min","posted":true,"at":"2026-11-30T06:52","checkin":"2026-11-30T06:52"}
+{"who":"Jerome","text":"Ok. Sink's backed up from sat, start there","posted":true,"at":"2026-11-30T06:55","checkin":"2026-11-30T06:55"}
+{"who":"Mariel","text":"here","posted":true,"at":"2026-11-30T07:41","checkin":"2026-11-30T07:41"}
+{"who":"Rodel","text":"Grinder jammed again. Calling the guy","posted":true,"at":"2026-11-30T08:20","checkin":"2026-11-30T08:20"}
+{"who":"Jerome","text":"Call after 9, he's not up yet","posted":true,"at":"2026-11-30T08:22","checkin":"2026-11-30T08:22"}
+{"who":"Rodel","text":"Ok","posted":true,"at":"2026-11-30T08:30","checkin":"2026-11-30T08:30"}
+{"who":"Nicole","text":"CAKE CONFIRMED supplier said sorry for the delay, delivery at 11","posted":true,"at":"2026-11-30T08:55","checkin":"2026-11-30T08:55"}
+{"who":"Jerome","text":"Thanks nicole","posted":true,"at":"2026-11-30T08:56","checkin":"2026-11-30T08:56"}
+{"who":"Nicole","text":"np!!","posted":true,"at":"2026-11-30T08:56","checkin":"2026-11-30T08:56"}
+{"who":"Mariel","text":"sink is still full lol","posted":true,"at":"2026-11-30T10:12","checkin":"2026-11-30T10:12"}
+{"who":"Esperanza","text":"Rinse first. Then soak.","posted":true,"at":"2026-11-30T10:40","checkin":"2026-11-30T10:40"}
+{"who":"Mariel","text":"ok","posted":true,"at":"2026-11-30T10:41","checkin":"2026-11-30T10:41"}
+{"who":"Rafael","text":"class cancelled!! prof is sick","posted":true,"at":"2026-11-30T12:03","checkin":"2026-11-30T12:03"}
+{"who":"Rafael","text":"so im coming in early","posted":true,"at":"2026-11-30T12:04","checkin":"2026-11-30T12:04"}
+{"who":"Jerome","text":"Your shift is 4. Stay at the library","posted":true,"at":"2026-11-30T12:09","checkin":"2026-11-30T12:09"}
+{"who":"Rafael","text":"ok","posted":true,"at":"2026-11-30T12:11","checkin":"2026-11-30T12:11"}
+{"who":"Nicole","text":"[photo: the cake, box half open on the counter]","posted":true,"at":"2026-11-30T13:20","checkin":"2026-11-30T13:20"}
+{"who":"Mariel","text":"ang ganda 😍","posted":true,"at":"2026-11-30T13:21","checkin":"2026-11-30T13:21"}
+{"who":"Nicole","text":"it looks better in person 😩","posted":true,"at":"2026-11-30T13:21","checkin":"2026-11-30T13:21"}
+{"who":"Rodel","text":"Caloocan is flooding. Bus not moving","posted":true,"at":"2026-11-30T14:58","checkin":"2026-11-30T14:58"}
+{"who":"Rodel","text":"Will be late","posted":true,"at":"2026-11-30T15:00","checkin":"2026-11-30T15:00"}
+{"who":"Jerome","text":"How late","posted":true,"at":"2026-11-30T15:02","checkin":"2026-11-30T15:02"}
+{"who":"Rodel","text":"Don't know","posted":true,"at":"2026-11-30T15:02","checkin":"2026-11-30T15:02"}
+{"who":"Jerome","text":"Mariel can you stay till 4","posted":true,"at":"2026-11-30T15:10","checkin":"2026-11-30T15:10"}
+{"who":"Mariel","text":"ok. 4","posted":true,"at":"2026-11-30T15:31","checkin":"2026-11-30T15:31"}
+{"who":"Mariel","text":"only if someone buys me merienda 🥲","posted":true,"at":"2026-11-30T15:33","checkin":"2026-11-30T15:33"}
+{"who":"Esperanza","text":"Rafael did you eat","posted":true,"at":"2026-11-30T15:50","checkin":"2026-11-30T15:50"}
+{"who":"Rafael","text":"yes tita","posted":true,"at":"2026-11-30T15:52","checkin":"2026-11-30T15:52"}
+{"who":"Esperanza","text":"What.","posted":true,"at":"2026-11-30T15:52","checkin":"2026-11-30T15:52"}
+{"who":"Rafael","text":"bread 🍞","posted":true,"at":"2026-11-30T15:53","checkin":"2026-11-30T15:53"}
+{"who":"Rodel","text":"Here now. Soaked","posted":true,"at":"2026-11-30T17:30","checkin":"2026-11-30T17:30"}
+{"who":"Jerome","text":"Go home after, you're closing tmrw","posted":true,"at":"2026-11-30T17:31","checkin":"2026-11-30T17:31"}
+{"who":"Rodel","text":"Ok","posted":true,"at":"2026-11-30T17:31","checkin":"2026-11-30T17:31"}
+{"who":"Rafael","text":"tita can u pick me up after shift, its raining again","posted":true,"at":"2026-11-30T18:40","checkin":"2026-11-30T18:40"}
+{"who":"Esperanza","text":"Six.","posted":true,"at":"2026-11-30T18:44","checkin":"2026-11-30T18:44"}
+{"who":"Rafael","text":"thx","posted":true,"at":"2026-11-30T18:44","checkin":"2026-11-30T18:44"}
+{"who":"Jerome","text":"Mariel you can go. Thanks","posted":true,"at":"2026-11-30T19:02","checkin":"2026-11-30T19:02"}
+{"who":"Mariel","text":"ok bye everyone 🙋‍♀️","posted":true,"at":"2026-11-30T19:04","checkin":"2026-11-30T19:04"}
+{"who":"Nicole","text":"[link: cafe page post, cake photo]","posted":true,"at":"2026-11-30T23:48","checkin":"2026-11-30T23:48"}
+{"who":"Nicole","text":"got 14 likes already 😭🎂","posted":true,"at":"2026-11-30T23:49","checkin":"2026-11-30T23:49"}
+{"who":"Rafael","text":"esp is asleep again lol","posted":true,"at":"2026-11-30T23:51","checkin":"2026-11-30T23:51"}
+{"who":"Rafael","text":"nicole did the supplier send the invoice","posted":true,"at":"2026-11-30T23:52","checkin":"2026-11-30T23:52"}
+{"who":"Nicole","text":"not yet. tmrw 🌙","posted":true,"at":"2026-11-30T23:55","checkin":"2026-11-30T23:55"}
+{"who":"","react":"👍","to":62,"posted":false,"at":"2026-11-30T23:55"}
+{"who":"Rafael","text":"ok goodnight","posted":true,"at":"2026-12-01T00:14","checkin":"2026-12-01T00:14"}
+{"who":"Jerome","text":"Grinder guy says Wed. Using the old one till then","posted":true,"at":"2026-12-01T07:58","checkin":"2026-12-01T07:58"}
+{"who":"Nicole","text":"[screenshot: supplier invoice]","posted":true,"at":"2026-12-01T08:14","checkin":"2026-12-01T08:14"}
+{"who":"Nicole","text":"rafa u asked lol","posted":true,"at":"2026-12-01T08:15","checkin":"2026-12-01T08:15"}
+{"who":"Rafael","text":"ok thx. not in till 1, class at 10","posted":true,"at":"2026-12-01T09:31","checkin":"2026-12-01T09:31"}
+{"who":"Rafael","text":"tita u awake","posted":true,"at":"2026-12-01T09:33","checkin":"2026-12-01T09:33"}
+{"who":"Mariel","text":"who bought merienda mon 🥲 im still waiting","posted":true,"at":"2026-12-01T11:48","checkin":"2026-12-01T11:48"}
+{"who":"Jerome","text":"Not me","posted":true,"at":"2026-12-01T11:50","checkin":"2026-12-01T11:50"}
+{"who":"Rodel","text":"Not me","posted":true,"at":"2026-12-01T11:52","checkin":"2026-12-01T11:52"}
+{"who":"Mariel","text":"ur all useless","posted":true,"at":"2026-12-01T11:55","checkin":"2026-12-01T11:55"}
+{"who":"Esperanza","text":"Yes. Sink.","posted":true,"at":"2026-12-01T12:20","checkin":"2026-12-01T12:20"}
+{"who":"Rodel","text":"Here. Caloocan still wet. Bus is ok today","posted":true,"at":"2026-12-01T13:05","checkin":"2026-12-01T13:05"}
+{"who":"Jerome","text":"Ok. Close tonight, I'm out at 6","posted":true,"at":"2026-12-01T13:06","checkin":"2026-12-01T13:06"}
+{"who":"Rodel","text":"Ok","posted":true,"at":"2026-12-01T13:06","checkin":"2026-12-01T13:06"}
+{"who":"Rafael","text":"tita can u pick me up 6 again? class ends 5 and im not waiting for bus in this rain","posted":true,"at":"2026-12-01T15:42","checkin":"2026-12-01T15:42"}
+{"who":"Esperanza","text":"Six.","posted":true,"at":"2026-12-01T15:50","checkin":"2026-12-01T15:50"}
+{"who":"Rafael","text":"thx","posted":true,"at":"2026-12-01T15:50","checkin":"2026-12-01T15:50"}
+{"who":"Nicole","text":"the cake post hit 40 likes!! ppl asking if we do custom orders 👀","posted":true,"at":"2026-12-01T17:12","checkin":"2026-12-01T17:12"}
+{"who":"Nicole","text":"i said dm us","posted":true,"at":"2026-12-01T17:14","checkin":"2026-12-01T17:14"}
+{"who":"Jerome","text":"Good. Don't promise a price","posted":true,"at":"2026-12-01T17:20","checkin":"2026-12-01T17:20"}
+{"who":"Nicole","text":"i didnt","posted":true,"at":"2026-12-01T17:21","checkin":"2026-12-01T17:21"}
+{"who":"Rodel","text":"Closing. Machine's cleaned","posted":true,"at":"2026-12-01T21:36","checkin":"2026-12-01T21:36"}
+{"who":"Jerome","text":"Ok. Lock the back","posted":true,"at":"2026-12-01T21:37","checkin":"2026-12-01T21:37"}
+{"who":"Rodel","text":"Locked","posted":true,"at":"2026-12-01T21:37","checkin":"2026-12-01T21:37"}
+{"who":"Nicole","text":"[photo: the cake, one slice left on the box]","posted":true,"at":"2026-12-01T23:14","checkin":"2026-12-01T23:14"}
+{"who":"Nicole","text":"someone ate it","posted":true,"at":"2026-12-01T23:15","checkin":"2026-12-01T23:15"}
+{"who":"Rafael","text":"not me","posted":true,"at":"2026-12-01T23:19","checkin":"2026-12-01T23:19"}
+{"who":"Rafael","text":"esp is asleep lol","posted":true,"at":"2026-12-01T23:20","checkin":"2026-12-01T23:20"}
+{"who":"Nicole","text":"ok goodnight","posted":true,"at":"2026-12-01T23:41","checkin":"2026-12-01T23:41"}
+{"who":"","react":"👍","to":91,"posted":false,"at":"2026-12-01T23:41"}

@@ -1,0 +1,78 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T07:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1479,"cache_read_input_tokens":0,"output_tokens":1261,"output_tokens_details":{"thinking_tokens":544},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1479,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1261,"cache_read_input_tokens":0,"cache_creation_input_tokens":1479,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1479},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2124,"cache_read_input_tokens":0,"output_tokens":2180,"output_tokens_details":{"thinking_tokens":1454},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2124,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2180,"cache_read_input_tokens":0,"cache_creation_input_tokens":2124,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2124},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2862,"cache_read_input_tokens":0,"output_tokens":2793,"output_tokens_details":{"thinking_tokens":1950},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2862,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2793,"cache_read_input_tokens":0,"cache_creation_input_tokens":2862,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2862},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Olivia","Lisa"],"setting":"You are both in Wellington, New Zealand, where you live, and you are mother and daughter who talk most days. Lisa is working through her clients' year-end books while Olivia juggles pharmacy shifts, and you are both sorting out plans for Sunday lunch.","openers":["Send a photo of the lunch menu","Ask whether you can look at the GST return","Remind her about the flu jab appointment","Check whether the prescription refill came through"],"opener":"Send a photo of the lunch menu","cast":{"Olivia":{"who":"34, woman, the daughter","work":"pharmacist","knows":"You know Lisa as your mother.","texts":"","style":"Frequent emoji and regular texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Lisa":{"who":"62, woman, the mother","work":"bookkeeper","knows":"You know Olivia as your daughter.","texts":"","style":"Rare emoji and almost no texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Olivia":"You live in Wellington, New Zealand, where you work as a pharmacist and fill your days with shifts at the pharmacy.","Lisa":"You live in Wellington, New Zealand, where you keep the books for a few small businesses and spend your days on their year-end accounts."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":780,"cache_read_input_tokens":0,"output_tokens":1220,"output_tokens_details":{"thinking_tokens":988},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":780,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1220,"cache_read_input_tokens":0,"cache_creation_input_tokens":780,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":780},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1038,"cache_read_input_tokens":0,"output_tokens":1978,"output_tokens_details":{"thinking_tokens":1595},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1038,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1978,"cache_read_input_tokens":0,"cache_creation_input_tokens":1038,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1038},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Wellington, New Zealand","castMs":17521,"situation":"My mum.","topic":null}
+{"who":"Olivia","text":"[photo: Sunday lunch menu from the cafe in Island Bay]","posted":true,"at":"2026-12-03T07:50","checkin":"2026-12-03T07:50"}
+{"who":"Lisa","text":"Is the lamb still on? I don't eat lamb on Sundays anymore","posted":true,"at":"2026-12-03T08:12","checkin":"2026-12-03T08:12"}
+{"who":"Olivia","text":"Yes but there's the chicken and the fish","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Lisa","text":"Fish then","posted":true,"at":"2026-12-03T08:15","checkin":"2026-12-03T08:15"}
+{"who":"Olivia","text":"👍","posted":true,"at":"2026-12-03T08:15","checkin":"2026-12-03T08:15"}
+{"who":"Olivia","text":"Booking for 12:30 unless u want earlier","posted":true,"at":"2026-12-03T08:40","checkin":"2026-12-03T08:40"}
+{"who":"Lisa","text":"12:30 is fine. Will Hamish come","posted":true,"at":"2026-12-03T08:52","checkin":"2026-12-03T08:52"}
+{"who":"Olivia","text":"He's on the rota at the hospital so prob not","posted":true,"at":"2026-12-03T08:58","checkin":"2026-12-03T08:58"}
+{"who":"Lisa","text":"Shame. Tell him I'll bring him a container","posted":true,"at":"2026-12-03T09:03","checkin":"2026-12-03T09:03"}
+{"who":"Olivia","text":"Lol ok","posted":true,"at":"2026-12-03T09:03","checkin":"2026-12-03T09:03"}
+{"who":"Lisa","text":"Mitchell's sent me a shoebox of receipts. An actual shoebox","posted":true,"at":"2026-12-03T13:27","checkin":"2026-12-03T13:27"}
+{"who":"Olivia","text":"Brave of u is it all from this year","posted":true,"at":"2026-12-03T13:28","checkin":"2026-12-03T13:28"}
+{"who":"Lisa","text":"Some of it is from 2019","posted":true,"at":"2026-12-03T13:30","checkin":"2026-12-03T13:30"}
+{"who":"Olivia","text":"Ok I'm on the register till 6, text me if u need me to pick up anything on the way","posted":true,"at":"2026-12-03T13:31","checkin":"2026-12-03T13:31"}
+{"who":"Olivia","text":"Off shift. Ran out of the fridge stock twice today so I'm never doing that again","posted":true,"at":"2026-12-03T16:58","checkin":"2026-12-03T16:58"}
+{"who":"Lisa","text":"Bring something back for me at least","posted":true,"at":"2026-12-03T17:02","checkin":"2026-12-03T17:02"}
+{"who":"Olivia","text":"U can have the rest of the pastries from the staff room if I remember","posted":true,"at":"2026-12-03T17:02","checkin":"2026-12-03T17:02"}
+{"who":"Lisa","text":"Found a receipt for a $14 parking fine from 2019 in with the lunch receipts. Mitchell swears he never parked there","posted":true,"at":"2026-12-03T19:20","checkin":"2026-12-03T19:20"}
+{"who":"Olivia","text":"Lmaooo send it to me, I want to see the handwriting","posted":true,"at":"2026-12-03T19:21","checkin":"2026-12-03T19:21"}
+{"who":"Lisa","text":"Not sending it. Going to bed soon, I'll do the rest tomorrow","posted":true,"at":"2026-12-03T19:44","checkin":"2026-12-03T19:44"}
+{"who":"Olivia","text":"Night mum","posted":true,"at":"2026-12-03T19:45","checkin":"2026-12-03T19:45"}
+{"who":"Olivia","text":"Morning. Shift 9 to 5 today","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Lisa","text":"Morning. Are you driving Sunday or do you want a lift from the bus","posted":true,"at":"2026-12-04T08:10","checkin":"2026-12-04T08:10"}
+{"who":"Olivia","text":"Driving. Will tell u if hamish needs the car","posted":true,"at":"2026-12-04T08:11","checkin":"2026-12-04T08:11"}
+{"who":"Lisa","text":"Fine. Is there cake or are we doing the pavlova from last year","posted":true,"at":"2026-12-04T08:12","checkin":"2026-12-04T08:12"}
+{"who":"Olivia","text":"Ask the cafe, they do a chocolate thing","posted":true,"at":"2026-12-04T08:13","checkin":"2026-12-04T08:13"}
+{"who":"Lisa","text":"Mitchell rang. Says the parking receipt was for his brother's car","posted":true,"at":"2026-12-04T11:40","checkin":"2026-12-04T11:40"}
+{"who":"Olivia","text":"😂 so he DID park there","posted":true,"at":"2026-12-04T11:44","checkin":"2026-12-04T11:44"}
+{"who":"Lisa","text":"He says not. Says the brother did","posted":true,"at":"2026-12-04T11:45","checkin":"2026-12-04T11:45"}
+{"who":"Olivia","text":"Can u check if the 2019 total matches the bank statement or was it cash","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Lisa","text":"Cash. Can't match it. Going under sundries and he can argue with the accountant","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Olivia","text":"Ok","posted":true,"at":"2026-12-04T13:06","checkin":"2026-12-04T13:06"}
+{"who":"Olivia","text":"Customer asked if codeine needs a script over the counter now. It doesnt. She said her sister said it did. Went round in circles for 10 min","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Lisa","text":"Did you get her to believe you","posted":true,"at":"2026-12-04T15:22","checkin":"2026-12-04T15:22"}
+{"who":"Olivia","text":"No. Bought the cough syrup anyway lol","posted":true,"at":"2026-12-04T15:23","checkin":"2026-12-04T15:23"}
+{"who":"Olivia","text":"Off. Going to the supermarket, need anything?","posted":true,"at":"2026-12-04T17:40","checkin":"2026-12-04T17:40"}
+{"who":"Lisa","text":"Milk and the good butter, not the spread","posted":true,"at":"2026-12-04T17:52","checkin":"2026-12-04T17:52"}
+{"who":"Olivia","text":"Ok","posted":true,"at":"2026-12-04T17:53","checkin":"2026-12-04T17:53"}
+{"who":"Olivia","text":"No pastries left btw, sorry. The sesame ones went to the 3pm lot","posted":true,"at":"2026-12-04T18:30","checkin":"2026-12-04T18:30"}
+{"who":"Lisa","text":"That's fine","posted":true,"at":"2026-12-04T18:31","checkin":"2026-12-04T18:31"}
+{"who":"Lisa","text":"Are you wearing the grey jacket or the blue one Sunday","posted":true,"at":"2026-12-04T21:15","checkin":"2026-12-04T21:15"}
+{"who":"Olivia","text":"Grey. Blue one has a stain from the shift","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Lisa","text":"Grey then","posted":true,"at":"2026-12-04T21:41","checkin":"2026-12-04T21:41"}
+{"who":"Olivia","text":"U still up","posted":true,"at":"2026-12-05T00:14","checkin":"2026-12-05T00:14"}
+{"who":"Lisa","text":"Yes. Shoebox","posted":true,"at":"2026-12-05T00:31","checkin":"2026-12-05T00:31"}
+{"who":"Olivia","text":"Go to bed mum","posted":true,"at":"2026-12-05T00:32","checkin":"2026-12-05T00:32"}
+{"who":"Lisa","text":"Going","posted":true,"at":"2026-12-05T00:32","checkin":"2026-12-05T00:32"}
+{"who":"Olivia","text":"Morning. Off today. Going to the waterfront market, u want anything","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Lisa","text":"No. Have to finish the Harbour St lot","posted":true,"at":"2026-12-05T09:40","checkin":"2026-12-05T09:40"}
+{"who":"Olivia","text":"Ok. Bread from the Cuba st place if I pass it","posted":true,"at":"2026-12-05T09:41","checkin":"2026-12-05T09:41"}
+{"who":"Lisa","text":"Mitchell's found the brother. Brother says he parked there on a Tuesday","posted":true,"at":"2026-12-05T11:02","checkin":"2026-12-05T11:02"}
+{"who":"Olivia","text":"Fine's dated Tuesday though lol","posted":true,"at":"2026-12-05T11:03","checkin":"2026-12-05T11:03"}
+{"who":"Lisa","text":"I know","posted":true,"at":"2026-12-05T11:03","checkin":"2026-12-05T11:03"}
+{"who":"Olivia","text":"Tell him to pay it and be done","posted":true,"at":"2026-12-05T11:04","checkin":"2026-12-05T11:04"}
+{"who":"Lisa","text":"He's going to appeal","posted":true,"at":"2026-12-05T11:04","checkin":"2026-12-05T11:04"}
+{"who":"Olivia","text":"Of course he is","posted":true,"at":"2026-12-05T11:05","checkin":"2026-12-05T11:05"}
+{"who":"Olivia","text":"[photo: the stain on the blue jacket]","posted":true,"at":"2026-12-05T13:18","checkin":"2026-12-05T13:18"}
+{"who":"Lisa","text":"Grey, I said","posted":true,"at":"2026-12-05T13:19","checkin":"2026-12-05T13:19"}
+{"who":"Olivia","text":"Just checking ur paying attention 😂","posted":true,"at":"2026-12-05T13:19","checkin":"2026-12-05T13:19"}
+{"who":"Lisa","text":"I'm paying attention","posted":true,"at":"2026-12-05T13:20","checkin":"2026-12-05T13:20"}
+{"who":"Olivia","text":"Hamish says hi. Asked if the container thing is a real offer","posted":true,"at":"2026-12-05T15:47","checkin":"2026-12-05T15:47"}
+{"who":"Lisa","text":"It is","posted":true,"at":"2026-12-05T15:52","checkin":"2026-12-05T15:52"}
+{"who":"Olivia","text":"He says he'll hold u to it","posted":true,"at":"2026-12-05T15:52","checkin":"2026-12-05T15:52"}
+{"who":"Lisa","text":"Good","posted":true,"at":"2026-12-05T16:30","checkin":"2026-12-05T16:30"}
+{"who":"Olivia","text":"Making pasta. Did u eat","posted":true,"at":"2026-12-05T17:10","checkin":"2026-12-05T17:10"}
+{"who":"Lisa","text":"Soup. Shoebox is down to 2019 and 2021","posted":true,"at":"2026-12-05T17:44","checkin":"2026-12-05T17:44"}
+{"who":"Olivia","text":"Mum","posted":true,"at":"2026-12-05T17:45","checkin":"2026-12-05T17:45"}
+{"who":"Lisa","text":"Still going","posted":true,"at":"2026-12-05T17:46","checkin":"2026-12-05T17:46"}
+{"who":"Olivia","text":"Did u get the shoebox sorted or is it just a bigger mess now","posted":true,"at":"2026-12-05T21:55","checkin":"2026-12-05T21:55"}
+{"who":"Lisa","text":"Bigger","posted":true,"at":"2026-12-05T22:10","checkin":"2026-12-05T22:10"}
+{"who":"Olivia","text":"😭","posted":true,"at":"2026-12-05T22:11","checkin":"2026-12-05T22:11"}
+{"who":"Olivia","text":"Tell Mitchell he owes me a coffee for the parking fine saga","posted":true,"at":"2026-12-05T22:12","checkin":"2026-12-05T22:12"}
+{"who":"Lisa","text":"Tell him yourself","posted":true,"at":"2026-12-05T22:40","checkin":"2026-12-05T22:40"}
+{"who":"Olivia","text":"Ha ok","posted":true,"at":"2026-12-05T22:41","checkin":"2026-12-05T22:41"}
+{"who":"Lisa","text":"Night","posted":true,"at":"2026-12-05T23:20","checkin":"2026-12-05T23:20"}
+{"who":"Olivia","text":"Night mum","posted":true,"at":"2026-12-05T23:21","checkin":"2026-12-05T23:21"}

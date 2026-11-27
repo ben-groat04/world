@@ -1,0 +1,68 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T07:50","complete":true,"rejects":0,"today":[null,"Karen","Karen"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1858,"cache_read_input_tokens":0,"output_tokens":1988,"output_tokens_details":{"thinking_tokens":1327},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1858,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1988,"cache_read_input_tokens":0,"cache_creation_input_tokens":1858,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1858},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2491,"cache_read_input_tokens":0,"output_tokens":2603,"output_tokens_details":{"thinking_tokens":2104},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2491,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2603,"cache_read_input_tokens":0,"cache_creation_input_tokens":2491,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2491},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2991,"cache_read_input_tokens":0,"output_tokens":2474,"output_tokens_details":{"thinking_tokens":1793},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2991,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2474,"cache_read_input_tokens":0,"cache_creation_input_tokens":2991,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2991},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Owen","Karen"],"setting":"You are both in Halifax, Canada, where you each live. You are mother and son, and you have been texting about Christmas dinner and who is driving to the airport for the holidays.","openers":["Send a photo of the Christmas menu draft","Ask whether Saturday works for the airport run","Check if you're bringing the pie","Text the link to the turkey recipe"],"opener":"Text the link to the turkey recipe","cast":{"Owen":{"who":"29, man, the child","work":"software developer","knows":"You know Karen as your mum.","texts":"","style":"moderate use of emoji and texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Karen":{"who":"58, woman, the parent","work":"social worker","knows":"You know Owen as your son.","texts":"","style":"almost no emoji and few texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Owen":"You live in Halifax, Canada, where your days are filled with software development, and you live alone.","Karen":"You live in Halifax, Canada, where your days are filled with social work, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":778,"cache_read_input_tokens":0,"output_tokens":890,"output_tokens_details":{"thinking_tokens":680},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":778,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":890,"cache_read_input_tokens":0,"cache_creation_input_tokens":778,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":778},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1038,"cache_read_input_tokens":0,"output_tokens":1449,"output_tokens_details":{"thinking_tokens":1138},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1038,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1449,"cache_read_input_tokens":0,"cache_creation_input_tokens":1038,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1038},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Halifax, Canada","castMs":13889,"situation":"My mum.","topic":null}
+{"who":"Owen","text":"Ok found the turkey one, sending","posted":true,"at":"2026-12-03T07:50","checkin":"2026-12-03T07:50"}
+{"who":"Owen","text":"[link: Herb-Butter Roast Turkey, recipe]","posted":true,"at":"2026-12-03T07:50","checkin":"2026-12-03T07:50"}
+{"who":"Karen","text":"Is that the one with the cheesecloth","posted":true,"at":"2026-12-03T08:12","checkin":"2026-12-03T08:12"}
+{"who":"Owen","text":"No thats a different one. This one just says cover loosely w foil","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Karen","text":"Ok. Your aunt says 14 lbs won't fit in my oven.","posted":true,"at":"2026-12-03T08:15","checkin":"2026-12-03T08:15"}
+{"who":"Owen","text":"Ur oven fits 14 lb?","posted":true,"at":"2026-12-03T08:31","checkin":"2026-12-03T08:31"}
+{"who":"Karen","text":"I don't know. Look at the bird.","posted":true,"at":"2026-12-03T08:40","checkin":"2026-12-03T08:40"}
+{"who":"Karen","text":"Who is driving to the airport on the 22nd for Denise","posted":true,"at":"2026-12-03T12:05","checkin":"2026-12-03T12:05"}
+{"who":"Owen","text":"I can do the 22nd. Will have to leave work early tho","posted":true,"at":"2026-12-03T12:20","checkin":"2026-12-03T12:20"}
+{"who":"Karen","text":"I can also do it. Don't leave work early for her.","posted":true,"at":"2026-12-03T12:24","checkin":"2026-12-03T12:24"}
+{"who":"Owen","text":"Lol ok","posted":true,"at":"2026-12-03T12:26","checkin":"2026-12-03T12:26"}
+{"who":"Owen","text":"Home. Did u get the flight time","posted":true,"at":"2026-12-03T17:48","checkin":"2026-12-03T17:48"}
+{"who":"Karen","text":"Yes 15:10. Terminal A.","posted":true,"at":"2026-12-03T17:55","checkin":"2026-12-03T17:55"}
+{"who":"Owen","text":"Perfect 👍","posted":true,"at":"2026-12-03T18:02","checkin":"2026-12-03T18:02"}
+{"who":"Karen","text":"Are you bringing anything for dinner","posted":true,"at":"2026-12-03T18:03","checkin":"2026-12-03T18:03"}
+{"who":"Owen","text":"I can do the pie or rolls","posted":true,"at":"2026-12-03T18:10","checkin":"2026-12-03T18:10"}
+{"who":"Karen","text":"Rolls. I have the pie.","posted":true,"at":"2026-12-03T18:11","checkin":"2026-12-03T18:11"}
+{"who":"Owen","text":"Rolls it is","posted":true,"at":"2026-12-03T19:41","checkin":"2026-12-03T19:41"}
+{"who":"Karen","text":"Did you see the snow for Saturday","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Karen","text":"I'll leave earlier if it's bad","posted":true,"at":"2026-12-03T21:16","checkin":"2026-12-03T21:16"}
+{"who":"Owen","text":"Yeah saw it. Ok","posted":true,"at":"2026-12-03T22:30","checkin":"2026-12-03T22:30"}
+{"who":"Owen","text":"Turns out the brine is a whole thing. 24 hrs in the fridge","posted":true,"at":"2026-12-03T23:50","checkin":"2026-12-03T23:50"}
+{"who":"Karen","text":"Not in my fridge.","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"","react":"😂","to":22,"posted":false,"at":"2026-12-04T00:40"}
+{"who":"Owen","text":"Brine in the cooler on the porch then","posted":true,"at":"2026-12-04T07:58","checkin":"2026-12-04T07:58"}
+{"who":"Karen","text":"It's 2 degrees out there. That's fine.","posted":true,"at":"2026-12-04T08:03","checkin":"2026-12-04T08:03"}
+{"who":"Owen","text":"Ok","posted":true,"at":"2026-12-04T08:04","checkin":"2026-12-04T08:04"}
+{"who":"Karen","text":"Long morning. Went to a house in Spryfield at 7 with the police. Kids had been alone since last night. Got them to their grandmother's. I haven't eaten.","posted":true,"at":"2026-12-04T13:12","checkin":"2026-12-04T13:12"}
+{"who":"Owen","text":"Jesus. Ur ok?","posted":true,"at":"2026-12-04T13:14","checkin":"2026-12-04T13:14"}
+{"who":"Karen","text":"I'm ok. They're ok for now. Don't worry about it.","posted":true,"at":"2026-12-04T13:20","checkin":"2026-12-04T13:20"}
+{"who":"Owen","text":"Ok. Eat something real","posted":true,"at":"2026-12-04T13:21","checkin":"2026-12-04T13:21"}
+{"who":"Karen","text":"Granola bar. It counts.","posted":true,"at":"2026-12-04T13:40","checkin":"2026-12-04T13:40"}
+{"who":"Owen","text":"Doesn't count","posted":true,"at":"2026-12-04T13:41","checkin":"2026-12-04T13:41"}
+{"who":"Owen","text":"Home soon. Want me to grab milk on the way Sat?","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Karen","text":"Yes. And eggs if they're not $9.","posted":true,"at":"2026-12-04T16:30","checkin":"2026-12-04T16:30"}
+{"who":"Owen","text":"👍","posted":true,"at":"2026-12-04T16:31","checkin":"2026-12-04T16:31"}
+{"who":"Owen","text":"Snow still on for Sat? Are u leaving early","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Karen","text":"Probably. I'll see what it looks like at 6.","posted":true,"at":"2026-12-04T21:52","checkin":"2026-12-04T21:52"}
+{"who":"Owen","text":"Ok. I'll be up","posted":true,"at":"2026-12-04T21:55","checkin":"2026-12-04T21:55"}
+{"who":"Owen","text":"Brine's in the cooler. Yes I know","posted":true,"at":"2026-12-04T23:50","checkin":"2026-12-04T23:50"}
+{"who":"Karen","text":"Good.","posted":true,"at":"2026-12-05T00:15","checkin":"2026-12-05T00:15"}
+{"who":"Karen","text":"Snow started. Already a few cm on the car.","posted":true,"at":"2026-12-05T07:12","checkin":"2026-12-05T07:12"}
+{"who":"Owen","text":"Ok. Still getting milk or should I skip it","posted":true,"at":"2026-12-05T07:40","checkin":"2026-12-05T07:40"}
+{"who":"Karen","text":"Get the milk. Eggs are 8.49 at Sobeys so get eggs too","posted":true,"at":"2026-12-05T07:46","checkin":"2026-12-05T07:46"}
+{"who":"Owen","text":"👍","posted":true,"at":"2026-12-05T07:47","checkin":"2026-12-05T07:47"}
+{"who":"Karen","text":"Have to go into the office for a bit. Spryfield thing","posted":true,"at":"2026-12-05T09:20","checkin":"2026-12-05T09:20"}
+{"who":"Owen","text":"On a saturday??","posted":true,"at":"2026-12-05T09:22","checkin":"2026-12-05T09:22"}
+{"who":"Karen","text":"Paperwork. Back by noon","posted":true,"at":"2026-12-05T09:30","checkin":"2026-12-05T09:30"}
+{"who":"Owen","text":"Be careful on the roads","posted":true,"at":"2026-12-05T09:31","checkin":"2026-12-05T09:31"}
+{"who":"Karen","text":"Home. Roads are bad past the bridge","posted":true,"at":"2026-12-05T12:48","checkin":"2026-12-05T12:48"}
+{"who":"Owen","text":"Good that ur home","posted":true,"at":"2026-12-05T12:49","checkin":"2026-12-05T12:49"}
+{"who":"Karen","text":"I ate. Real food.","posted":true,"at":"2026-12-05T12:52","checkin":"2026-12-05T12:52"}
+{"who":"Owen","text":"Finally","posted":true,"at":"2026-12-05T12:53","checkin":"2026-12-05T12:53"}
+{"who":"","react":"😂","to":51,"posted":false,"at":"2026-12-05T12:53"}
+{"who":"Owen","text":"Milk and eggs in the car. Im coming by ur place after I finish this, shouldnt be long","posted":true,"at":"2026-12-05T14:10","checkin":"2026-12-05T14:10"}
+{"who":"Karen","text":"Ok. Door's open","posted":true,"at":"2026-12-05T14:11","checkin":"2026-12-05T14:11"}
+{"who":"Owen","text":"Im home. Forgot to say the eggs were 8.29 not 8.49 so u got a deal","posted":true,"at":"2026-12-05T17:33","checkin":"2026-12-05T17:33"}
+{"who":"Karen","text":"Good","posted":true,"at":"2026-12-05T17:50","checkin":"2026-12-05T17:50"}
+{"who":"Owen","text":"Roads still bad?","posted":true,"at":"2026-12-05T21:04","checkin":"2026-12-05T21:04"}
+{"who":"Karen","text":"Its fine on the main roads. Kids are at their grandmother's for the weekend. The mother is coming to the office Monday","posted":true,"at":"2026-12-05T21:20","checkin":"2026-12-05T21:20"}
+{"who":"Owen","text":"Thats good","posted":true,"at":"2026-12-05T21:22","checkin":"2026-12-05T21:22"}
+{"who":"Owen","text":"Ur going in Monday too?","posted":true,"at":"2026-12-05T21:23","checkin":"2026-12-05T21:23"}
+{"who":"Karen","text":"Yes. Don't worry about it","posted":true,"at":"2026-12-05T21:40","checkin":"2026-12-05T21:40"}
+{"who":"Owen","text":"Ok","posted":true,"at":"2026-12-05T21:41","checkin":"2026-12-05T21:41"}
+{"who":"Owen","text":"Brine's in the cooler. Still fine at 2 degrees, I checked","posted":true,"at":"2026-12-05T23:50","checkin":"2026-12-05T23:50"}
+{"who":"Karen","text":"Good","posted":true,"at":"2026-12-05T23:55","checkin":"2026-12-05T23:55"}

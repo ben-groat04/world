@@ -1,0 +1,65 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-09T10:15","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1599,"cache_read_input_tokens":0,"output_tokens":1660,"output_tokens_details":{"thinking_tokens":1180},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1599,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1660,"cache_read_input_tokens":0,"cache_creation_input_tokens":1599,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1599},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2032,"cache_read_input_tokens":0,"output_tokens":1800,"output_tokens_details":{"thinking_tokens":1204},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2032,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1800,"cache_read_input_tokens":0,"cache_creation_input_tokens":2032,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2032},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2639,"cache_read_input_tokens":0,"output_tokens":2589,"output_tokens_details":{"thinking_tokens":1861},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2639,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2589,"cache_read_input_tokens":0,"cache_creation_input_tokens":2639,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2639},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Klára","Jan","Sára"],"setting":"You are all in Prague, where you live and work as colleagues at the same bakery. You know each other from the shifts you share there. Right now the Christmas orders are piling up, so this chat is for swapping shifts and sorting out who bakes and packs what.","openers":["Send a photo of the new Christmas tarts","Ask who can cover Saturday's early shift","Remind everyone the custom order list closes Friday","Share the delivery time for tomorrow's flour"],"opener":"Ask who can cover Saturday's early shift","cast":{"Klára":{"who":"34, woman, a colleague","work":"pastry chef","knows":"You know Jan, a colleague from the bakery, and Sára, a colleague from the bakery too.","texts":"Klára texts in this chat a lot.","style":"some emoji and common abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Jan":{"who":"52, man, a colleague","work":"bread baker","knows":"You know Klára, a colleague from the bakery, and Sára, a colleague from the bakery too.","texts":"Jan texts in this chat only now and again.","style":"some emoji and common abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Sára":{"who":"21, woman, a colleague","work":"packer","knows":"You know Klára and Jan, both colleagues from the bakery.","texts":"Sára texts in this chat only now and again.","style":"some emoji and common abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Klára":"You live in Prague, and your days are filled with work at the bakery.","Jan":"You live in Prague, and your days are filled with work at the bakery.","Sára":"You live in Prague, and your days are filled with work at the bakery."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":787,"cache_read_input_tokens":0,"output_tokens":1339,"output_tokens_details":{"thinking_tokens":1018},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":787,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1339,"cache_read_input_tokens":0,"cache_creation_input_tokens":787,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":787},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1057,"cache_read_input_tokens":0,"output_tokens":1968,"output_tokens_details":{"thinking_tokens":1509},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1057,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1968,"cache_read_input_tokens":0,"cache_creation_input_tokens":1057,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1057},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Prague, Czechia","castMs":16649,"situation":"Colleagues at a bakery.","topic":null}
+{"who":"Klára","text":"Who can take saturday early? 5am start, the christmas batch","posted":true,"at":"2026-12-09T10:15","checkin":"2026-12-09T10:15"}
+{"who":"Sára","text":"Can't, I have a uni thing till 2 😩","posted":true,"at":"2026-12-09T10:31","checkin":"2026-12-09T10:31"}
+{"who":"Klára","text":"Ok np. Jan?","posted":true,"at":"2026-12-09T11:02","checkin":"2026-12-09T11:02"}
+{"who":"Jan","text":"Not sat. Knee is bad after the big mixing days","posted":true,"at":"2026-12-09T13:48","checkin":"2026-12-09T13:48"}
+{"who":"Klára","text":"Sunday we're closed tho 😅","posted":true,"at":"2026-12-09T13:50","checkin":"2026-12-09T13:50"}
+{"who":"Jan","text":"Then nobody","posted":true,"at":"2026-12-09T13:52","checkin":"2026-12-09T13:52"}
+{"who":"Klára","text":"I can do 5-12 if someone takes my thu late","posted":true,"at":"2026-12-09T14:20","checkin":"2026-12-09T14:20"}
+{"who":"Klára","text":"Dentist at 2 anyway so it kinda works","posted":true,"at":"2026-12-09T14:24","checkin":"2026-12-09T14:24"}
+{"who":"Sára","text":"Is thu late the 6-close one? I'm free thu, I can swap","posted":true,"at":"2026-12-09T19:03","checkin":"2026-12-09T19:03"}
+{"who":"Klára","text":"Yes 6-close. Ty","posted":true,"at":"2026-12-09T19:05","checkin":"2026-12-09T19:05"}
+{"who":"Sára","text":"Ok I'll take it","posted":true,"at":"2026-12-09T19:06","checkin":"2026-12-09T19:06"}
+{"who":"Klára","text":"So sat early me, thu late sara. Done","posted":true,"at":"2026-12-09T19:07","checkin":"2026-12-09T19:07"}
+{"who":"Jan","text":"Orders are at 40 already and it's only wednesday","posted":true,"at":"2026-12-09T21:14","checkin":"2026-12-09T21:14"}
+{"who":"Klára","text":"Yeah I saw. 60 by friday prob","posted":true,"at":"2026-12-09T21:30","checkin":"2026-12-09T21:30"}
+{"who":"Klára","text":"Who's doing the stollen dough tmrw, not me","posted":true,"at":"2026-12-09T21:31","checkin":"2026-12-09T21:31"}
+{"who":"Sára","text":"I can start the dough if someone tells me the recipe is still the one in the blue folder","posted":true,"at":"2026-12-09T22:48","checkin":"2026-12-09T22:48"}
+{"who":"Klára","text":"Morning. Blue folder is in the drawer under the proofer, not on the shelf","posted":true,"at":"2026-12-10T07:40","checkin":"2026-12-10T07:40"}
+{"who":"Klára","text":"Stollen is p.14 but the butter changed in oct, check the sticky note","posted":true,"at":"2026-12-10T07:41","checkin":"2026-12-10T07:41"}
+{"who":"Sára","text":"Ok found it","posted":true,"at":"2026-12-10T08:02","checkin":"2026-12-10T08:02"}
+{"who":"Jan","text":"[photo: sticky note on p.14]","posted":true,"at":"2026-12-10T08:20","checkin":"2026-12-10T08:20"}
+{"who":"Jan","text":"New butter is 1.2kg not 1","posted":true,"at":"2026-12-10T08:21","checkin":"2026-12-10T08:21"}
+{"who":"Sára","text":"Ok 👍","posted":true,"at":"2026-12-10T08:24","checkin":"2026-12-10T08:24"}
+{"who":"Klára","text":"60 for fri already. Novák wants 4 extra loaves","posted":true,"at":"2026-12-10T11:37","checkin":"2026-12-10T11:37"}
+{"who":"Klára","text":"Ill tell him no","posted":true,"at":"2026-12-10T11:38","checkin":"2026-12-10T11:38"}
+{"who":"Jan","text":"Tell him yes and charge him","posted":true,"at":"2026-12-10T13:10","checkin":"2026-12-10T13:10"}
+{"who":"Klára","text":"Lol","posted":true,"at":"2026-12-10T13:12","checkin":"2026-12-10T13:12"}
+{"who":"Sára","text":"Tram 9 is stuck at karlovo, be there 6:20 maybe","posted":true,"at":"2026-12-10T17:42","checkin":"2026-12-10T17:42"}
+{"who":"Klára","text":"Ok. Jan can you open the cold room if he's not in yet","posted":true,"at":"2026-12-10T17:43","checkin":"2026-12-10T17:43"}
+{"who":"Jan","text":"Knee is fine today. No mixing for me","posted":true,"at":"2026-12-10T17:58","checkin":"2026-12-10T17:58"}
+{"who":"Klára","text":"Good 🙂","posted":true,"at":"2026-12-10T18:02","checkin":"2026-12-10T18:02"}
+{"who":"Jan","text":"Dough's in the proofer. Sara you ok on your own?","posted":true,"at":"2026-12-10T21:49","checkin":"2026-12-10T21:49"}
+{"who":"Sára","text":"Yes. Cold room is full tho","posted":true,"at":"2026-12-10T22:10","checkin":"2026-12-10T22:10"}
+{"who":"Sára","text":"Moving the stollen to the back shelf","posted":true,"at":"2026-12-10T22:11","checkin":"2026-12-10T22:11"}
+{"who":"Klára","text":"Sat 5am. Going to bed. Don't let jan lift the 25kg sacks sara","posted":true,"at":"2026-12-10T23:05","checkin":"2026-12-10T23:05"}
+{"who":"Jan","text":"🙄","posted":true,"at":"2026-12-10T23:19","checkin":"2026-12-10T23:19"}
+{"who":"Jan","text":"I lifted them fine in 2019","posted":true,"at":"2026-12-10T23:20","checkin":"2026-12-10T23:20"}
+{"who":"Sára","text":"Closed. See you sat klára","posted":true,"at":"2026-12-11T00:41","checkin":"2026-12-11T00:41"}
+{"who":"Jan","text":"Cold room is at 3°, someone turned the fan off","posted":true,"at":"2026-12-11T07:12","checkin":"2026-12-11T07:12"}
+{"who":"Jan","text":"Not me","posted":true,"at":"2026-12-11T07:14","checkin":"2026-12-11T07:14"}
+{"who":"Klára","text":"Ill check when I get in. Who's on fri morning","posted":true,"at":"2026-12-11T08:30","checkin":"2026-12-11T08:30"}
+{"who":"Jan","text":"Me till 2","posted":true,"at":"2026-12-11T08:31","checkin":"2026-12-11T08:31"}
+{"who":"Sára","text":"[photo: stollen on the back shelf, 14 loaves]","posted":true,"at":"2026-12-11T10:02","checkin":"2026-12-11T10:02"}
+{"who":"Sára","text":"Is that right or do I need to redo the top ones, they look dark","posted":true,"at":"2026-12-11T10:03","checkin":"2026-12-11T10:03"}
+{"who":"Jan","text":"Dark is fine. Brush them again before they go in the case","posted":true,"at":"2026-12-11T10:20","checkin":"2026-12-11T10:20"}
+{"who":"Klára","text":"Novák called. Says yes to the extra 4 but wants them by 8 not 9","posted":true,"at":"2026-12-11T11:45","checkin":"2026-12-11T11:45"}
+{"who":"Klára","text":"So that's 4am for me sat","posted":true,"at":"2026-12-11T11:46","checkin":"2026-12-11T11:46"}
+{"who":"Jan","text":"Sat is your batch anyway","posted":true,"at":"2026-12-11T11:47","checkin":"2026-12-11T11:47"}
+{"who":"Sára","text":"Ok I'm in. Jan you still here?","posted":true,"at":"2026-12-11T15:30","checkin":"2026-12-11T15:30"}
+{"who":"Jan","text":"Left at 2. Klára's in","posted":true,"at":"2026-12-11T15:31","checkin":"2026-12-11T15:31"}
+{"who":"Klára","text":"Yep. 6 orders still open on the board","posted":true,"at":"2026-12-11T15:33","checkin":"2026-12-11T15:33"}
+{"who":"Jan","text":"[photo: whiteboard with order counts, 61 written in red]","posted":true,"at":"2026-12-11T16:10","checkin":"2026-12-11T16:10"}
+{"who":"Jan","text":"Someone wrote 61 and crossed out 58","posted":true,"at":"2026-12-11T16:11","checkin":"2026-12-11T16:11"}
+{"who":"Klára","text":"That was me it's 61 now","posted":true,"at":"2026-12-11T16:14","checkin":"2026-12-11T16:14"}
+{"who":"","react":"😂","to":52,"posted":false,"at":"2026-12-11T16:14"}
+{"who":"","react":"😂","to":52,"posted":false,"at":"2026-12-11T16:14"}
+{"who":"Sára","text":"Cold room fan is still off. Turned it on at the switch by the door","posted":true,"at":"2026-12-11T19:48","checkin":"2026-12-11T19:48"}
+{"who":"Klára","text":"Thx","posted":true,"at":"2026-12-11T19:49","checkin":"2026-12-11T19:49"}
+{"who":"Jan","text":"Did the 25kg sacks get moved or are they still in the corridor","posted":true,"at":"2026-12-11T22:20","checkin":"2026-12-11T22:20"}
+{"who":"Sára","text":"Moved. Didn't lift anything, Klára was watching me","posted":true,"at":"2026-12-11T22:24","checkin":"2026-12-11T22:24"}
+{"who":"Klára","text":"Good","posted":true,"at":"2026-12-11T22:25","checkin":"2026-12-11T22:25"}
+{"who":"Klára","text":"Ok going to sleep, alarm 4:15. Jan plz don't be the one to forget the big mixer","posted":true,"at":"2026-12-11T23:52","checkin":"2026-12-11T23:52"}
+{"who":"Jan","text":"I'm not even on sat","posted":true,"at":"2026-12-11T23:58","checkin":"2026-12-11T23:58"}
+{"who":"Sára","text":"Who's on sat with klára","posted":true,"at":"2026-12-12T00:03","checkin":"2026-12-12T00:03"}

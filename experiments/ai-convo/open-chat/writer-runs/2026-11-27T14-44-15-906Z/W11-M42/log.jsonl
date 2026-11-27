@@ -1,0 +1,74 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-13T08:50","complete":true,"rejects":0,"today":[null,null,"Mpho"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2240,"cache_read_input_tokens":0,"output_tokens":1215,"output_tokens_details":{"thinking_tokens":792},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2240,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1215,"cache_read_input_tokens":0,"cache_creation_input_tokens":2240,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2240},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2607,"cache_read_input_tokens":0,"output_tokens":2649,"output_tokens_details":{"thinking_tokens":2002},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2607,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2649,"cache_read_input_tokens":0,"cache_creation_input_tokens":2607,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2607},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3290,"cache_read_input_tokens":0,"output_tokens":1933,"output_tokens_details":{"thinking_tokens":1123},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3290,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1933,"cache_read_input_tokens":0,"cache_creation_input_tokens":3290,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3290},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Thandi","Mpho","Aisha","Pieter"],"setting":"You are all in Johannesburg, friends from uni, and at the moment you're planning a birthday braai for one of you and splitting the cost of a group gift.","openers":["Send a photo of the braai shopping list","Ask who can bring chairs","Suggest a date for collecting the gift money","Share a link to the birthday playlist"],"opener":"Share a link to the birthday playlist","cast":{"Thandi":{"who":"20, woman, friend from uni","work":"community kitchen volunteer","knows":"You know Mpho as a friend from uni, Aisha as a friend from uni, and Pieter as a friend from uni.","texts":"Thandi texts in this chat now and then.","style":"light emoji, some abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Mpho":{"who":"22, man, friend from uni","work":"restaurant waiter","knows":"You know Thandi as a friend from uni, Aisha as a friend from uni, and Pieter as a friend from uni.","texts":"Mpho texts in this chat a lot.","style":"light emoji, some abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Aisha":{"who":"21, woman, friend from uni","work":"campus radio presenter","knows":"You know Thandi as a friend from uni, Mpho as a friend from uni, and Pieter as a friend from uni.","texts":"Aisha texts in this chat now and then.","style":"light emoji, some abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Pieter":{"who":"23, man, friend from uni","work":"junior graphic designer freelancer","knows":"You know Thandi as a friend from uni, Mpho as a friend from uni, and Aisha as a friend from uni.","texts":"Pieter texts in this chat now and then.","style":"light emoji, some abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Thandi":"You live in Johannesburg, volunteering at a community kitchen, and you live with nobody else.","Mpho":"You live in Johannesburg, working shifts as a waiter at a restaurant, and you live with nobody else.","Aisha":"You live in Johannesburg, presenting a show on campus radio, and you live with nobody else.","Pieter":"You live in Johannesburg, freelancing as a junior graphic designer, and you live with nobody else."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":785,"cache_read_input_tokens":0,"output_tokens":1426,"output_tokens_details":{"thinking_tokens":916},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":785,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1426,"cache_read_input_tokens":0,"cache_creation_input_tokens":785,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":785},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1116,"cache_read_input_tokens":0,"output_tokens":2693,"output_tokens_details":{"thinking_tokens":2068},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1116,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2693,"cache_read_input_tokens":0,"cache_creation_input_tokens":1116,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1116},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Johannesburg, South Africa","castMs":20544,"situation":"Friends from uni.","topic":null}
+{"who":"Thandi","text":"[link: birthday playlist]","posted":true,"at":"2026-12-13T08:50","checkin":"2026-12-13T08:50"}
+{"who":"Thandi","text":"The top ones are for the braai, the rest is for the drive lol","posted":true,"at":"2026-12-13T08:52","checkin":"2026-12-13T08:52"}
+{"who":"Mpho","text":"Ok who's bringing the speaker","posted":true,"at":"2026-12-13T09:15","checkin":"2026-12-13T09:15"}
+{"who":"Mpho","text":"I can do it","posted":true,"at":"2026-12-13T09:16","checkin":"2026-12-13T09:16"}
+{"who":"Aisha","text":"Can we add the one from res","posted":true,"at":"2026-12-13T10:03","checkin":"2026-12-13T10:03"}
+{"who":"Aisha","text":"The one we did in first year","posted":true,"at":"2026-12-13T10:04","checkin":"2026-12-13T10:04"}
+{"who":"Pieter","text":"Which one","posted":true,"at":"2026-12-13T11:30","checkin":"2026-12-13T11:30"}
+{"who":"Aisha","text":"You know the one","posted":true,"at":"2026-12-13T11:31","checkin":"2026-12-13T11:31"}
+{"who":"Pieter","text":"I do not","posted":true,"at":"2026-12-13T11:31","checkin":"2026-12-13T11:31"}
+{"who":"Thandi","text":"I'll add it","posted":true,"at":"2026-12-13T14:22","checkin":"2026-12-13T14:22"}
+{"who":"Mpho","text":"Gift money. How much each","posted":true,"at":"2026-12-13T14:25","checkin":"2026-12-13T14:25"}
+{"who":"Thandi","text":"400? We did 350 last time but everything's more expensive now","posted":true,"at":"2026-12-13T14:40","checkin":"2026-12-13T14:40"}
+{"who":"Pieter","text":"400 is fine","posted":true,"at":"2026-12-13T14:42","checkin":"2026-12-13T14:42"}
+{"who":"Aisha","text":"Ok","posted":true,"at":"2026-12-13T14:43","checkin":"2026-12-13T14:43"}
+{"who":"Mpho","text":"Can someone send me the account number","posted":true,"at":"2026-12-13T19:12","checkin":"2026-12-13T19:12"}
+{"who":"Pieter","text":"[photo: bank details]","posted":true,"at":"2026-12-13T19:58","checkin":"2026-12-13T19:58"}
+{"who":"Mpho","text":"Legend","posted":true,"at":"2026-12-13T20:01","checkin":"2026-12-13T20:01"}
+{"who":"Thandi","text":"Sent","posted":true,"at":"2026-12-13T21:37","checkin":"2026-12-13T21:37"}
+{"who":"Thandi","text":"Ok found it. The one with the bass drop at 3:40 right","posted":true,"at":"2026-12-14T08:31","checkin":"2026-12-14T08:31"}
+{"who":"Aisha","text":"YES","posted":true,"at":"2026-12-14T08:33","checkin":"2026-12-14T08:33"}
+{"who":"Pieter","text":"Still no idea","posted":true,"at":"2026-12-14T08:33","checkin":"2026-12-14T08:33"}
+{"who":"Aisha","text":"Bro you were there","posted":true,"at":"2026-12-14T08:35","checkin":"2026-12-14T08:35"}
+{"who":"Pieter","text":"I was there for the bar not the music","posted":true,"at":"2026-12-14T08:36","checkin":"2026-12-14T08:36"}
+{"who":"Mpho","text":"Lol the bass drop. Added","posted":true,"at":"2026-12-14T08:41","checkin":"2026-12-14T08:41"}
+{"who":"Thandi","text":"Who's getting the card","posted":true,"at":"2026-12-14T12:17","checkin":"2026-12-14T12:17"}
+{"who":"Aisha","text":"Not me, I'm at the station till 6 and then I have to sleep","posted":true,"at":"2026-12-14T12:50","checkin":"2026-12-14T12:50"}
+{"who":"Mpho","text":"On lunch then dinner. Can't do it before thurs","posted":true,"at":"2026-12-14T13:02","checkin":"2026-12-14T13:02"}
+{"who":"Thandi","text":"Ok I'll go thurs after the kitchen","posted":true,"at":"2026-12-14T13:20","checkin":"2026-12-14T13:20"}
+{"who":"Thandi","text":"Can someone do the money tho I don't want to be the one chasing","posted":true,"at":"2026-12-14T13:21","checkin":"2026-12-14T13:21"}
+{"who":"Pieter","text":"Ill chase, its fine","posted":true,"at":"2026-12-14T13:44","checkin":"2026-12-14T13:44"}
+{"who":"Pieter","text":"My client pays tomorrow so ill send after that. Sorry","posted":true,"at":"2026-12-14T13:46","checkin":"2026-12-14T13:46"}
+{"who":"Thandi","text":"No stress","posted":true,"at":"2026-12-14T13:47","checkin":"2026-12-14T13:47"}
+{"who":"Aisha","text":"[screenshot: payment confirmation]","posted":true,"at":"2026-12-14T17:58","checkin":"2026-12-14T17:58"}
+{"who":"Mpho","text":"Got it","posted":true,"at":"2026-12-14T18:02","checkin":"2026-12-14T18:02"}
+{"who":"Thandi","text":"Where are we braaing again","posted":true,"at":"2026-12-14T18:20","checkin":"2026-12-14T18:20"}
+{"who":"Aisha","text":"Is it still the park or did it move","posted":true,"at":"2026-12-14T18:24","checkin":"2026-12-14T18:24"}
+{"who":"Pieter","text":"Park's booked I think. Checking","posted":true,"at":"2026-12-14T18:31","checkin":"2026-12-14T18:31"}
+{"who":"Pieter","text":"Will confirm tmrw","posted":true,"at":"2026-12-14T18:33","checkin":"2026-12-14T18:33"}
+{"who":"Mpho","text":"Off shift. Almost asleep standing","posted":true,"at":"2026-12-14T23:41","checkin":"2026-12-14T23:41"}
+{"who":"Mpho","text":"Speaker's charging","posted":true,"at":"2026-12-14T23:42","checkin":"2026-12-14T23:42"}
+{"who":"Aisha","text":"Is the braai still happening lol","posted":true,"at":"2026-12-14T23:58","checkin":"2026-12-14T23:58"}
+{"who":"Mpho","text":"Yes","posted":true,"at":"2026-12-15T00:14","checkin":"2026-12-15T00:14"}
+{"who":"Aisha","text":"👍","posted":true,"at":"2026-12-15T00:15","checkin":"2026-12-15T00:15"}
+{"who":"Pieter","text":"Park's booked from 2. Confirmed","posted":true,"at":"2026-12-15T09:47","checkin":"2026-12-15T09:47"}
+{"who":"Pieter","text":"It's the one by the hall not the other one","posted":true,"at":"2026-12-15T09:48","checkin":"2026-12-15T09:48"}
+{"who":"Thandi","text":"Ok good. Do we need ice","posted":true,"at":"2026-12-15T10:20","checkin":"2026-12-15T10:20"}
+{"who":"Mpho","text":"Yes. And charcoal, I'm not doing petrol station charcoal again","posted":true,"at":"2026-12-15T10:31","checkin":"2026-12-15T10:31"}
+{"who":"Mpho","text":"Last time it was basically wet sticks","posted":true,"at":"2026-12-15T10:33","checkin":"2026-12-15T10:33"}
+{"who":"Aisha","text":"I'm asleep till 2 pls don't start without me","posted":true,"at":"2026-12-15T10:34","checkin":"2026-12-15T10:34"}
+{"who":"Thandi","text":"Who's got charcoal then","posted":true,"at":"2026-12-15T13:05","checkin":"2026-12-15T13:05"}
+{"who":"Mpho","text":"I'll get it after shift","posted":true,"at":"2026-12-15T13:09","checkin":"2026-12-15T13:09"}
+{"who":"Thandi","text":"Ok I'll do ice","posted":true,"at":"2026-12-15T13:10","checkin":"2026-12-15T13:10"}
+{"who":"Pieter","text":"Client paid. Sending my share now","posted":true,"at":"2026-12-15T14:50","checkin":"2026-12-15T14:50"}
+{"who":"Pieter","text":"Sorry again","posted":true,"at":"2026-12-15T14:51","checkin":"2026-12-15T14:51"}
+{"who":"Thandi","text":"Got it thx","posted":true,"at":"2026-12-15T14:58","checkin":"2026-12-15T14:58"}
+{"who":"Thandi","text":"Kitchen just got 40kg of onions and nobody knows whose they are","posted":true,"at":"2026-12-15T16:33","checkin":"2026-12-15T16:33"}
+{"who":"Thandi","text":"I am crying","posted":true,"at":"2026-12-15T16:34","checkin":"2026-12-15T16:34"}
+{"who":"Aisha","text":"Up. Who's on the speaker","posted":true,"at":"2026-12-15T17:02","checkin":"2026-12-15T17:02"}
+{"who":"Aisha","text":"Mpho?","posted":true,"at":"2026-12-15T17:02","checkin":"2026-12-15T17:02"}
+{"who":"Mpho","text":"Speaker's with me. Charging in my bag","posted":true,"at":"2026-12-15T17:09","checkin":"2026-12-15T17:09"}
+{"who":"Mpho","text":"Table 12 just sent back a steak for being \"too honest\"","posted":true,"at":"2026-12-15T21:40","checkin":"2026-12-15T21:40"}
+{"who":"Mpho","text":"Then the guy tipped me R20 and said I should smile more","posted":true,"at":"2026-12-15T21:41","checkin":"2026-12-15T21:41"}
+{"who":"Mpho","text":"Smiling is not in my contract","posted":true,"at":"2026-12-15T21:41","checkin":"2026-12-15T21:41"}
+{"who":"Aisha","text":"Lol. Did you smile","posted":true,"at":"2026-12-15T21:58","checkin":"2026-12-15T21:58"}
+{"who":"Mpho","text":"Yes. Mostly out of spite","posted":true,"at":"2026-12-15T22:03","checkin":"2026-12-15T22:03"}
+{"who":"Thandi","text":"Sorry that happened","posted":true,"at":"2026-12-15T22:04","checkin":"2026-12-15T22:04"}
+{"who":"Pieter","text":"Good man","posted":true,"at":"2026-12-15T22:10","checkin":"2026-12-15T22:10"}
+{"who":"Thandi","text":"Charcoal sorted?","posted":true,"at":"2026-12-15T23:19","checkin":"2026-12-15T23:19"}
+{"who":"Mpho","text":"Yes. Bought it at the proper shop. Lesson learnt","posted":true,"at":"2026-12-15T23:26","checkin":"2026-12-15T23:26"}
+{"who":"Aisha","text":"Ok I'm going to bed. Park at 2 right","posted":true,"at":"2026-12-15T23:27","checkin":"2026-12-15T23:27"}
+{"who":"Pieter","text":"2","posted":true,"at":"2026-12-15T23:27","checkin":"2026-12-15T23:27"}
+{"who":"Mpho","text":"Off shift now. My feet are gone","posted":true,"at":"2026-12-16T00:05","checkin":"2026-12-16T00:05"}

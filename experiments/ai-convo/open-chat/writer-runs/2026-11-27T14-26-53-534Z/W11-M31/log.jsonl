@@ -1,0 +1,64 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T14:30","complete":true,"rejects":0,"today":["Rachel","Rachel",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1932,"cache_read_input_tokens":0,"output_tokens":1322,"output_tokens_details":{"thinking_tokens":764},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1932,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1322,"cache_read_input_tokens":0,"cache_creation_input_tokens":1932,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1932},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2466,"cache_read_input_tokens":0,"output_tokens":1449,"output_tokens_details":{"thinking_tokens":858},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2466,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1449,"cache_read_input_tokens":0,"cache_creation_input_tokens":2466,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2466},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3030,"cache_read_input_tokens":0,"output_tokens":2645,"output_tokens_details":{"thinking_tokens":1948},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3030,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2645,"cache_read_input_tokens":0,"cache_creation_input_tokens":3030,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3030},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Mason","Rachel"],"setting":"You and Rachel both live in Halifax, Canada. You dated for years, split up, and stayed friends, and right now you're trading care of the dog you co-own and planning a group hike for the weekend.","openers":["Ask if Rachel can take the dog Thursday","Send a photo of the trail map for Saturday","Remind her about splitting the vet bill","Suggest coffee before the hike"],"opener":"Remind her about splitting the vet bill","cast":{"Mason":{"who":"34, man, the ex","work":"pharmacist","knows":"You know Rachel as your former partner, now a friend.","texts":"","style":"little emoji, few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Rachel":{"who":"33, woman, the former partner","work":"journalist","knows":"You know Mason as your former partner, now a friend.","texts":"","style":"little emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Mason":"You live in Halifax, where your days go to pharmacy shifts and arranging care for the dog you share with Rachel, and you live alone.","Rachel":"You live in Halifax, where your days go to deadlines and reporting and arranging care for the dog you share with Mason, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":784,"cache_read_input_tokens":0,"output_tokens":988,"output_tokens_details":{"thinking_tokens":784},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":784,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":988,"cache_read_input_tokens":0,"cache_creation_input_tokens":784,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":784},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1049,"cache_read_input_tokens":0,"output_tokens":1837,"output_tokens_details":{"thinking_tokens":1474},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1049,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1837,"cache_read_input_tokens":0,"cache_creation_input_tokens":1049,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1049},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Halifax, Canada","castMs":16244,"situation":"An ex who is still a friend.","topic":null}
+{"who":"Mason","text":"Reminder about the vet bill. 186.40 total, so 93.20 each. I can etransfer whenever","posted":true,"at":"2026-12-01T14:30","checkin":"2026-12-01T14:30"}
+{"who":"Rachel","text":"Oh right. Yes 93 works. Wait is that the bloodwork too or just the visit","posted":true,"at":"2026-12-01T14:52","checkin":"2026-12-01T14:52"}
+{"who":"Mason","text":"Bloodwork is on the invoice, its all in there","posted":true,"at":"2026-12-01T14:55","checkin":"2026-12-01T14:55"}
+{"who":"Rachel","text":"Sent","posted":true,"at":"2026-12-01T15:20","checkin":"2026-12-01T15:20"}
+{"who":"Mason","text":"Got it 👍","posted":true,"at":"2026-12-01T15:21","checkin":"2026-12-01T15:21"}
+{"who":"","react":"👍","to":4,"posted":false,"at":"2026-12-01T15:21"}
+{"who":"Rachel","text":"Sorry, day is a mess. Editor moved the council piece up to thurs and the staff doc still hasnt come in","posted":true,"at":"2026-12-01T16:05","checkin":"2026-12-01T16:05"}
+{"who":"Mason","text":"Ugh. That's rough","posted":true,"at":"2026-12-01T16:09","checkin":"2026-12-01T16:09"}
+{"who":"Mason","text":"Who's doing the morning walk tmrw","posted":true,"at":"2026-12-01T16:10","checkin":"2026-12-01T16:10"}
+{"who":"Rachel","text":"Me. Before 8. Can you do thurs evening?","posted":true,"at":"2026-12-01T16:14","checkin":"2026-12-01T16:14"}
+{"who":"Mason","text":"Yeah im off at 6","posted":true,"at":"2026-12-01T16:20","checkin":"2026-12-01T16:20"}
+{"who":"Rachel","text":"Perfect","posted":true,"at":"2026-12-01T16:21","checkin":"2026-12-01T16:21"}
+{"who":"Mason","text":"Are we still on for sat","posted":true,"at":"2026-12-01T18:47","checkin":"2026-12-01T18:47"}
+{"who":"Rachel","text":"Yes unless the weather turns. Shubie or the dartmouth loop?","posted":true,"at":"2026-12-01T19:30","checkin":"2026-12-01T19:30"}
+{"who":"Mason","text":"Shubie. The loop is too icy this time of year","posted":true,"at":"2026-12-01T19:44","checkin":"2026-12-01T19:44"}
+{"who":"Rachel","text":"Agreed. Im texting kayla and the others","posted":true,"at":"2026-12-01T19:46","checkin":"2026-12-01T19:46"}
+{"who":"Rachel","text":"Council doc finally came through. Im going to bed, I'm wrecked","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Mason","text":"Good luck tmrw","posted":true,"at":"2026-12-01T21:42","checkin":"2026-12-01T21:42"}
+{"who":"Rachel","text":"Cant sleep lol. This is what the 4am brain does","posted":true,"at":"2026-12-02T00:40","checkin":"2026-12-02T00:40"}
+{"who":"Rachel","text":"[photo: the dog in a puddle, soaked to the belly]","posted":true,"at":"2026-12-02T07:52","checkin":"2026-12-02T07:52"}
+{"who":"Rachel","text":"Walk done. Shes filthy, sorry","posted":true,"at":"2026-12-02T07:53","checkin":"2026-12-02T07:53"}
+{"who":"Mason","text":"Lol she looks thrilled about it","posted":true,"at":"2026-12-02T08:20","checkin":"2026-12-02T08:20"}
+{"who":"Mason","text":"She's not wrong","posted":true,"at":"2026-12-02T08:21","checkin":"2026-12-02T08:21"}
+{"who":"Rachel","text":"Editor wants the council lede rewritten by 3. He hated the first one","posted":true,"at":"2026-12-02T12:38","checkin":"2026-12-02T12:38"}
+{"who":"Rachel","text":"Fine. Fine.","posted":true,"at":"2026-12-02T12:40","checkin":"2026-12-02T12:40"}
+{"who":"Mason","text":"Shift done. Did you eat anything today","posted":true,"at":"2026-12-02T17:52","checkin":"2026-12-02T17:52"}
+{"who":"Rachel","text":"Ate a granola bar at my desk. Doesnt count","posted":true,"at":"2026-12-02T18:09","checkin":"2026-12-02T18:09"}
+{"who":"Mason","text":"It counts a little","posted":true,"at":"2026-12-02T18:10","checkin":"2026-12-02T18:10"}
+{"who":"Rachel","text":"Kayla cant do sat, her nephew has a hockey thing. So its us and the Okafors plus maybe Jess","posted":true,"at":"2026-12-02T18:31","checkin":"2026-12-02T18:31"}
+{"who":"Mason","text":"Ok. Shubie still","posted":true,"at":"2026-12-02T18:33","checkin":"2026-12-02T18:33"}
+{"who":"Rachel","text":"Yes. Bringing the big thermos since its just us","posted":true,"at":"2026-12-02T18:33","checkin":"2026-12-02T18:33"}
+{"who":"Mason","text":"Ill bring the good biscuits then","posted":true,"at":"2026-12-02T19:15","checkin":"2026-12-02T19:15"}
+{"who":"Rachel","text":"Deal","posted":true,"at":"2026-12-02T19:16","checkin":"2026-12-02T19:16"}
+{"who":"Rachel","text":"Editor just sent the staff doc back with 40 comments. Its not even morning","posted":true,"at":"2026-12-02T22:48","checkin":"2026-12-02T22:48"}
+{"who":"Mason","text":"Ugh. Tmrw is going to be the same?","posted":true,"at":"2026-12-02T22:50","checkin":"2026-12-02T22:50"}
+{"who":"Rachel","text":"Probably. Im going to try to sleep before the 4am brain shows up","posted":true,"at":"2026-12-02T22:58","checkin":"2026-12-02T22:58"}
+{"who":"Mason","text":"Night. Ill be up at 7 for the dog","posted":true,"at":"2026-12-02T23:40","checkin":"2026-12-02T23:40"}
+{"who":"Mason","text":"(Rachel)","posted":true,"at":"2026-12-02T23:41","checkin":"2026-12-02T23:41"}
+{"who":"Mason","text":"Walk done. She found a new puddle","posted":true,"at":"2026-12-03T07:08","checkin":"2026-12-03T07:08"}
+{"who":"Mason","text":"[photo: the dog standing in the snow, looking betrayed]","posted":true,"at":"2026-12-03T07:09","checkin":"2026-12-03T07:09"}
+{"who":"Rachel","text":"Thank you. Staff doc still hasnt come in so im not even awake for it","posted":true,"at":"2026-12-03T07:40","checkin":"2026-12-03T07:40"}
+{"who":"Rachel","text":"Going to be a long one","posted":true,"at":"2026-12-03T07:41","checkin":"2026-12-03T07:41"}
+{"who":"Mason","text":"Two flu shot lineups already. Ok going quiet for a bit","posted":true,"at":"2026-12-03T09:15","checkin":"2026-12-03T09:15"}
+{"who":"Rachel","text":"Can you grab the first aid kit from your car before sat. Mine's empty since the last trip","posted":true,"at":"2026-12-03T12:02","checkin":"2026-12-03T12:02"}
+{"who":"Mason","text":"Yeah. Should I check the gauze, the packet might be old","posted":true,"at":"2026-12-03T12:40","checkin":"2026-12-03T12:40"}
+{"who":"Rachel","text":"Editor says the lede is better. Didn't say it's good","posted":true,"at":"2026-12-03T13:58","checkin":"2026-12-03T13:58"}
+{"who":"Rachel","text":"Took it","posted":true,"at":"2026-12-03T13:58","checkin":"2026-12-03T13:58"}
+{"who":"","react":"👍","to":45,"posted":false,"at":"2026-12-03T13:58"}
+{"who":"Rachel","text":"Still stuck. Can you do the evening one","posted":true,"at":"2026-12-03T18:04","checkin":"2026-12-03T18:04"}
+{"who":"Mason","text":"Yeah","posted":true,"at":"2026-12-03T18:06","checkin":"2026-12-03T18:06"}
+{"who":"Mason","text":"Did you eat","posted":true,"at":"2026-12-03T18:06","checkin":"2026-12-03T18:06"}
+{"who":"Rachel","text":"Half a sandwich. Counts","posted":true,"at":"2026-12-03T18:40","checkin":"2026-12-03T18:40"}
+{"who":"Mason","text":"Lol ok","posted":true,"at":"2026-12-03T18:41","checkin":"2026-12-03T18:41"}
+{"who":"Mason","text":"[photo: the dog on the couch with her head on the armrest, eyes shut]","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Mason","text":"She's asleep. Hope you are too soon","posted":true,"at":"2026-12-03T19:53","checkin":"2026-12-03T19:53"}
+{"who":"Rachel","text":"Editor sent another comment on the lede at 10pm. Council people are going to be furious either way","posted":true,"at":"2026-12-03T22:31","checkin":"2026-12-03T22:31"}
+{"who":"Rachel","text":"Going to bed","posted":true,"at":"2026-12-03T22:33","checkin":"2026-12-03T22:33"}
+{"who":"Mason","text":"Night","posted":true,"at":"2026-12-03T22:35","checkin":"2026-12-03T22:35"}
+{"who":"Rachel","text":"Jess says maybe. Ill tell you if she confirms","posted":true,"at":"2026-12-03T23:50","checkin":"2026-12-03T23:50"}
+{"who":"Rachel","text":"Cant sleep lol. The 4am brain is early","posted":true,"at":"2026-12-04T00:58","checkin":"2026-12-04T00:58"}
+{"who":"Mason","text":"Put the phone down","posted":true,"at":"2026-12-04T01:03","checkin":"2026-12-04T01:03"}
+{"who":"Mason","text":"Close your eyes. Shubie will still be there in the morning","posted":true,"at":"2026-12-04T01:03","checkin":"2026-12-04T01:03"}

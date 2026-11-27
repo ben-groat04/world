@@ -1,0 +1,146 @@
+[
+ {
+  "label": "W11-M11",
+  "people": 2,
+  "brief": "My cousin.",
+  "start": "2026-12-10T07:35"
+ },
+ {
+  "label": "W11-M12",
+  "people": 2,
+  "brief": "My cousin.",
+  "start": "2026-12-13T21:40"
+ },
+ {
+  "label": "W11-M13",
+  "people": 2,
+  "brief": "My cousin.",
+  "start": "2026-12-08T11:20"
+ },
+ {
+  "label": "W11-M21",
+  "people": 4,
+  "brief": "People from my book club.",
+  "start": "2026-12-13T14:00"
+ },
+ {
+  "label": "W11-M22",
+  "people": 4,
+  "brief": "People from my book club.",
+  "start": "2026-12-07T13:25"
+ },
+ {
+  "label": "W11-M23",
+  "people": 4,
+  "brief": "People from my book club.",
+  "start": "2026-12-07T20:50"
+ },
+ {
+  "label": "W11-M31",
+  "people": 2,
+  "brief": "My oldest friend.",
+  "start": "2026-12-09T19:10"
+ },
+ {
+  "label": "W11-M32",
+  "people": 2,
+  "brief": "My oldest friend.",
+  "start": "2026-12-07T12:20"
+ },
+ {
+  "label": "W11-M33",
+  "people": 2,
+  "brief": "My oldest friend.",
+  "start": "2026-12-13T22:30"
+ },
+ {
+  "label": "W11-M41",
+  "people": 4,
+  "brief": "Friends from uni.",
+  "start": "2026-12-13T15:30"
+ },
+ {
+  "label": "W11-M42",
+  "people": 4,
+  "brief": "Friends from uni.",
+  "start": "2026-12-13T08:50"
+ },
+ {
+  "label": "W11-M43",
+  "people": 4,
+  "brief": "Friends from uni.",
+  "start": "2026-12-11T16:25"
+ },
+ {
+  "label": "W11-M51",
+  "people": 2,
+  "brief": "Two old neighbours.",
+  "start": "2026-12-10T09:20"
+ },
+ {
+  "label": "W11-M52",
+  "people": 2,
+  "brief": "Two old neighbours.",
+  "start": "2026-12-09T16:05"
+ },
+ {
+  "label": "W11-M53",
+  "people": 2,
+  "brief": "Two old neighbours.",
+  "start": "2026-12-09T13:00"
+ },
+ {
+  "label": "W11-B11",
+  "people": 5,
+  "brief": "Organising a school fundraiser.",
+  "start": "2026-12-12T11:05"
+ },
+ {
+  "label": "W11-B12",
+  "people": 5,
+  "brief": "Organising a school fundraiser.",
+  "start": "2026-12-12T13:05"
+ },
+ {
+  "label": "W11-B13",
+  "people": 5,
+  "brief": "Organising a school fundraiser.",
+  "start": "2026-12-10T08:00"
+ },
+ {
+  "label": "W11-B21",
+  "people": 4,
+  "brief": "Friends planning a camping trip.",
+  "start": "2026-12-10T21:35"
+ },
+ {
+  "label": "W11-B22",
+  "people": 4,
+  "brief": "Friends planning a camping trip.",
+  "start": "2026-12-09T10:10"
+ },
+ {
+  "label": "W11-B23",
+  "people": 4,
+  "brief": "Friends planning a camping trip.",
+  "start": "2026-12-11T13:10"
+ },
+ {
+  "label": "W11-B31",
+  "people": 3,
+  "brief": "Colleagues at a bakery.",
+  "start": "2026-12-07T15:30"
+ },
+ {
+  "label": "W11-B32",
+  "people": 3,
+  "brief": "Colleagues at a bakery.",
+  "start": "2026-12-09T10:15"
+ },
+ {
+  "label": "W11-B33",
+  "people": 3,
+  "brief": "Colleagues at a bakery.",
+  "start": "2026-12-07T19:35"
+ }
+]

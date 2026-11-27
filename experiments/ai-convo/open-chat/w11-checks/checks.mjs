@@ -1,0 +1,13 @@
+// node w11-checks/checks.mjs <list.txt>...   per arm (label prefix): chats, messages/chat, weekday-date mismatches (item 3), settings and places (items 2 and 4, with SETTINGS=1).
+// Weekday-date regex: a weekday name followed by a day number (optional month), checked against the story calendar: the month is the one written, else the message's month or the next one that makes the day number valid for that weekday.
+import fs from 'node:fs'; import path from 'node:path';
+const WDN = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], MON = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+const RX = /\b(sun|mon|tue|wed|thu|fri|sat)[a-z]*\.?,?\s+(?:the\s+)?(\d{1,2})(?:(?:st|nd|rd|th)\b(?:\s+(?:of\s+)?(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*)?|\s+(?:of\s+)?(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*)/gi; // a bare number after a weekday ("sat 11", "thu 13") is a time and is not counted
+const rows = []; for (const f of process.argv.slice(2)) for (const l of fs.readFileSync(f, 'utf8').split('\n').filter(Boolean)) { const [label, dir] = l.split(/\s+/); const r = fs.readFileSync(path.join(dir, 'log.jsonl'), 'utf8').split('\n').filter(Boolean).map(x => JSON.parse(x)); rows.push({ label, c: r.find(x => x.cast), ms: r.filter(x => x.posted === true && !x.oracle && typeof x.text === 'string'), head: r[0] }); }
+const arms = {};
+for (const { label, c, ms, head } of rows) { const arm = label.split('-')[0], a = arms[arm] ??= { chats: 0, msgs: 0, refs: 0, bad: 0, rejects: 0, show: [] }; a.chats++; a.msgs += ms.length; a.rejects += head.rejects ?? 0;
+  for (const m of ms) for (const x of m.text.matchAll(RX)) { const wd = WDN.indexOf(x[1].toLowerCase()), day = +x[2]; if (day < 1 || day > 31) continue; a.refs++; const t = new Date(m.at.slice(0, 10) + 'T00:00:00Z'); let ok = false;
+    const months = (x[3] || x[4]) ? [MON.indexOf((x[3] || x[4]).toLowerCase())] : [t.getUTCMonth(), (t.getUTCMonth() + 1) % 12]; for (const mo of months) for (const yr of [t.getUTCFullYear(), t.getUTCFullYear() + 1]) { const d = new Date(Date.UTC(yr, mo, day)); if (d.getUTCDate() === day && d.getUTCDay() === wd && Math.abs(+d - +t) < 120 * 864e5) ok = true; }
+    if (!ok) { a.bad++; a.show.push(`${label} ${m.at} "${x[0]}"`); } } }
+for (const [arm, a] of Object.entries(arms)) { console.log(`${arm}: chats ${a.chats}, messages/chat ${(a.msgs / a.chats).toFixed(1)}, weekday-date refs ${a.refs}, mismatches ${a.bad}, stamp rejects ${a.rejects}`); for (const s of a.show) console.log('  ', s); }
+if (process.env.SETTINGS) for (const { label, c } of rows) console.log(`\n${label} [${c?.place}]: ${c?.setting}`);

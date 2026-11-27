@@ -1,0 +1,95 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-13T15:30","complete":true,"rejects":0,"today":["Rowan","Noah","Rowan"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2235,"cache_read_input_tokens":0,"output_tokens":2244,"output_tokens_details":{"thinking_tokens":1268},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2235,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2244,"cache_read_input_tokens":0,"cache_creation_input_tokens":2235,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2235},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3129,"cache_read_input_tokens":0,"output_tokens":2661,"output_tokens_details":{"thinking_tokens":1697},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3129,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2661,"cache_read_input_tokens":0,"cache_creation_input_tokens":3129,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3129},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4075,"cache_read_input_tokens":0,"output_tokens":2542,"output_tokens_details":{"thinking_tokens":1560},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4075,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2542,"cache_read_input_tokens":0,"cache_creation_input_tokens":4075,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4075},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Megan","Callum","Rowan","Noah"],"setting":"You are all in Leeds, England, friends from uni who met in your first year and still keep in touch as a group. At the moment you're arranging a joint Christmas dinner and sorting out a shared Secret Santa.","openers":["Send a photo of the mince pies","Ask who's free for the Christmas dinner","Check the Secret Santa budget","Suggest a walk to see the Christmas lights"],"opener":"Send a photo of the mince pies","cast":{"Megan":{"who":"21, woman, friend","work":"English literature postgraduate","knows":"You know Callum, Rowan and Noah as friends from uni, and Rowan is also your flatmate.","texts":"Megan texts in this chat only now and again.","style":"Moderate use of emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":["Rowan"],"ex":[]},"Callum":{"who":"22, man, friend","work":"third-year engineering student","knows":"You know Megan, Rowan and Noah as friends from uni.","texts":"Callum texts in this chat only now and again.","style":"Rare emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Rowan":{"who":"20, non-binary, friend","work":"tutor for GCSE students","knows":"You know Megan as your flatmate and uni friend, and Callum and Noah as uni friends.","texts":"Rowan texts in this chat a lot.","style":"Heavy use of emoji and plenty of texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":["Megan"],"ex":[]},"Noah":{"who":"23, man, friend","work":"paralegal","knows":"You know Megan, Callum and Rowan as friends from uni.","texts":"Noah texts in this chat only now and again.","style":"Occasional emoji and a few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Megan":"You live in Leeds, spending your days on your English literature postgraduate work and sharing a flat with Rowan.","Callum":"You live in Leeds, spending your days on your third-year engineering course and living alone.","Rowan":"You live in Leeds, spending your days tutoring GCSE students and sharing a flat with Megan.","Noah":"You live in Leeds, spending your days on paralegal work and living alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":780,"cache_read_input_tokens":0,"output_tokens":896,"output_tokens_details":{"thinking_tokens":436},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":780,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":896,"cache_read_input_tokens":0,"cache_creation_input_tokens":780,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":780},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1090,"cache_read_input_tokens":0,"output_tokens":2193,"output_tokens_details":{"thinking_tokens":1591},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1090,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2193,"cache_read_input_tokens":0,"cache_creation_input_tokens":1090,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1090},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Leeds, England","castMs":17129,"situation":"Friends from uni.","topic":null}
+{"who":"Megan","text":"[photo: mince pies cooling on the hob]","posted":true,"at":"2026-12-13T15:30","checkin":"2026-12-13T15:30"}
+{"who":"Megan","text":"Made 24 and somehow only 19 survived the morning","posted":true,"at":"2026-12-13T15:31","checkin":"2026-12-13T15:31"}
+{"who":"Rowan","text":"MEGAN I'm literally starving, a yr 10 gave me a satsuma and I ate it on the bus","posted":true,"at":"2026-12-13T15:34","checkin":"2026-12-13T15:34"}
+{"who":"Rowan","text":"Ok xmas dinner. 23rd or 27th?","posted":true,"at":"2026-12-13T15:36","checkin":"2026-12-13T15:36"}
+{"who":"Callum","text":"27th works","posted":true,"at":"2026-12-13T16:02","checkin":"2026-12-13T16:02"}
+{"who":"Noah","text":"27 is fine, where tho","posted":true,"at":"2026-12-13T16:05","checkin":"2026-12-13T16:05"}
+{"who":"Megan","text":"Ours could work if rowan stops hoarding the chairs","posted":true,"at":"2026-12-13T16:20","checkin":"2026-12-13T16:20"}
+{"who":"Rowan","text":"I have never hoarded a chair in my life","posted":true,"at":"2026-12-13T16:21","checkin":"2026-12-13T16:21"}
+{"who":"Rowan","text":"We can get a table from the uni flat? Or just eat on the sofa like animals","posted":true,"at":"2026-12-13T16:22","checkin":"2026-12-13T16:22"}
+{"who":"Noah","text":"Sofa is fine","posted":true,"at":"2026-12-13T16:40","checkin":"2026-12-13T16:40"}
+{"who":"Callum","text":"who's doing the turkey lol","posted":true,"at":"2026-12-13T17:15","checkin":"2026-12-13T17:15"}
+{"who":"Megan","text":"Not me 😅","posted":true,"at":"2026-12-13T17:16","checkin":"2026-12-13T17:16"}
+{"who":"Rowan","text":"I'll do a nut roast and everyone can pretend they like it","posted":true,"at":"2026-12-13T17:30","checkin":"2026-12-13T17:30"}
+{"who":"Callum","text":"no","posted":true,"at":"2026-12-13T17:31","checkin":"2026-12-13T17:31"}
+{"who":"Noah","text":"Secret santa thoughts? Draw names on a website and budget like £10","posted":true,"at":"2026-12-13T17:44","checkin":"2026-12-13T17:44"}
+{"who":"Megan","text":"Yes to £10 no more than that","posted":true,"at":"2026-12-13T17:50","checkin":"2026-12-13T17:50"}
+{"who":"Callum","text":"fine by me","posted":true,"at":"2026-12-13T18:02","checkin":"2026-12-13T18:02"}
+{"who":"Rowan","text":"Can I just say I got one of the year 10s to tell me his mum's dinner is a gammon the size of a dog","posted":true,"at":"2026-12-13T18:05","checkin":"2026-12-13T18:05"}
+{"who":"Rowan","text":"He also asked if secret santa counts as a crime","posted":true,"at":"2026-12-13T18:06","checkin":"2026-12-13T18:06"}
+{"who":"Megan","text":"He's not wrong","posted":true,"at":"2026-12-13T18:40","checkin":"2026-12-13T18:40"}
+{"who":"Noah","text":"Ok I'll set up the draw link tonight","posted":true,"at":"2026-12-13T19:12","checkin":"2026-12-13T19:12"}
+{"who":"Megan","text":"Rowan did you finish the mock marking","posted":true,"at":"2026-12-13T21:03","checkin":"2026-12-13T21:03"}
+{"who":"Rowan","text":"No I'm doing it in bed with the telly on","posted":true,"at":"2026-12-13T21:04","checkin":"2026-12-13T21:04"}
+{"who":"Callum","text":"link or just names","posted":true,"at":"2026-12-13T21:30","checkin":"2026-12-13T21:30"}
+{"who":"Noah","text":"Link, sending in a sec","posted":true,"at":"2026-12-13T21:32","checkin":"2026-12-13T21:32"}
+{"who":"Noah","text":"[link: secret santa draw]","posted":true,"at":"2026-12-13T21:33","checkin":"2026-12-13T21:33"}
+{"who":"Megan","text":"Got mine!! I'm not telling who though","posted":true,"at":"2026-12-13T21:50","checkin":"2026-12-13T21:50"}
+{"who":"Rowan","text":"I got callum 👀","posted":true,"at":"2026-12-13T22:14","checkin":"2026-12-13T22:14"}
+{"who":"Callum","text":"great","posted":true,"at":"2026-12-13T22:14","checkin":"2026-12-13T22:14"}
+{"who":"Rowan","text":"Don't be like that, I'm buying you something very specific","posted":true,"at":"2026-12-13T22:15","checkin":"2026-12-13T22:15"}
+{"who":"Noah","text":"Rowan that's the least reassuring thing you've ever said","posted":true,"at":"2026-12-13T23:02","checkin":"2026-12-13T23:02"}
+{"who":"Rowan","text":"It's a good thing I promise 😌","posted":true,"at":"2026-12-13T23:40","checkin":"2026-12-13T23:40"}
+{"who":"Megan","text":"Night all 🌙","posted":true,"at":"2026-12-14T00:40","checkin":"2026-12-14T00:40"}
+{"who":"Callum","text":"anyone know if the uni flat still has the big table or did they chuck it","posted":true,"at":"2026-12-14T08:52","checkin":"2026-12-14T08:52"}
+{"who":"Rowan","text":"I have 4 back to back sessions today and a yr 10 who thinks a semicolon is a type of cheese deal with the table yourselves","posted":true,"at":"2026-12-14T09:15","checkin":"2026-12-14T09:15"}
+{"who":"Megan","text":"I'm in the library till like 5 don't look at me","posted":true,"at":"2026-12-14T09:16","checkin":"2026-12-14T09:16"}
+{"who":"Noah","text":"Ok so I need to tell you about my morning","posted":true,"at":"2026-12-14T12:31","checkin":"2026-12-14T12:31"}
+{"who":"Noah","text":"Opposing solicitor sent a letter with \"Dear Mate\" at the top. A formal letter. Dear Mate","posted":true,"at":"2026-12-14T12:32","checkin":"2026-12-14T12:32"}
+{"who":"Callum","text":"legally binding?","posted":true,"at":"2026-12-14T12:32","checkin":"2026-12-14T12:32"}
+{"who":"Noah","text":"Unfortunately no","posted":true,"at":"2026-12-14T12:33","checkin":"2026-12-14T12:33"}
+{"who":"Noah","text":"I'm framing it","posted":true,"at":"2026-12-14T12:33","checkin":"2026-12-14T12:33"}
+{"who":"Rowan","text":"NOAH YOU'RE A LEGAL GOD","posted":true,"at":"2026-12-14T12:40","checkin":"2026-12-14T12:40"}
+{"who":"","react":"😂","to":41,"posted":false,"at":"2026-12-14T12:40"}
+{"who":"","react":"😂","to":41,"posted":false,"at":"2026-12-14T12:40"}
+{"who":"Megan","text":"Did anyone else see the lidl has the big tins of quality street back","posted":true,"at":"2026-12-14T14:18","checkin":"2026-12-14T14:18"}
+{"who":"Rowan","text":"Megan I am not allowed to be tempted at work I am a role model","posted":true,"at":"2026-12-14T14:19","checkin":"2026-12-14T14:19"}
+{"who":"Callum","text":"turkey thoughts. lidl or m&s","posted":true,"at":"2026-12-14T16:50","checkin":"2026-12-14T16:50"}
+{"who":"Rowan","text":"M&S you absolute animal","posted":true,"at":"2026-12-14T16:58","checkin":"2026-12-14T16:58"}
+{"who":"Noah","text":"Lidl is fine. Callum you said you'd do the turkey","posted":true,"at":"2026-12-14T17:02","checkin":"2026-12-14T17:02"}
+{"who":"Callum","text":"i said i'd look at it","posted":true,"at":"2026-12-14T17:04","checkin":"2026-12-14T17:04"}
+{"who":"Noah","text":"That's what I said about the dishwasher","posted":true,"at":"2026-12-14T17:05","checkin":"2026-12-14T17:05"}
+{"who":"Megan","text":"Home. The sofa has been taken over by a cat that is not ours","posted":true,"at":"2026-12-14T18:22","checkin":"2026-12-14T18:22"}
+{"who":"Rowan","text":"It's the one from the flat downstairs it's been living here since october and it has a name now","posted":true,"at":"2026-12-14T18:23","checkin":"2026-12-14T18:23"}
+{"who":"Megan","text":"Don't tell it that","posted":true,"at":"2026-12-14T18:23","checkin":"2026-12-14T18:23"}
+{"who":"Noah","text":"Has anyone actually checked the draw link or is it just me who's got someone and has no idea what to buy","posted":true,"at":"2026-12-14T20:47","checkin":"2026-12-14T20:47"}
+{"who":"Megan","text":"I have a plan. I'm not sharing the plan","posted":true,"at":"2026-12-14T21:02","checkin":"2026-12-14T21:02"}
+{"who":"Rowan","text":"Callum if you're reading this don't open anything before the 27th","posted":true,"at":"2026-12-14T21:40","checkin":"2026-12-14T21:40"}
+{"who":"Callum","text":"noted","posted":true,"at":"2026-12-14T21:44","checkin":"2026-12-14T21:44"}
+{"who":"Noah","text":"Is there a limit on how many times you can send the same gift to someone? Asking for a friend who may have already bought socks","posted":true,"at":"2026-12-14T22:51","checkin":"2026-12-14T22:51"}
+{"who":"Megan","text":"Noah it's been 4 hours and you've asked nothing else","posted":true,"at":"2026-12-14T22:52","checkin":"2026-12-14T22:52"}
+{"who":"Noah","text":"I'm thinking about it","posted":true,"at":"2026-12-14T22:53","checkin":"2026-12-14T22:53"}
+{"who":"Callum","text":"does anyone know if you can return stuff to the uni shop without a receipt","posted":true,"at":"2026-12-14T23:58","checkin":"2026-12-14T23:58"}
+{"who":"Rowan","text":"No idea but I'm in bed with a cat on me","posted":true,"at":"2026-12-15T00:12","checkin":"2026-12-15T00:12"}
+{"who":"Callum","text":"anyone know what time the lidl on headingley opens","posted":true,"at":"2026-12-15T08:47","checkin":"2026-12-15T08:47"}
+{"who":"Megan","text":"8 I think. Why are you up","posted":true,"at":"2026-12-15T08:50","checkin":"2026-12-15T08:50"}
+{"who":"Callum","text":"cant sleep. thinking about turkeys","posted":true,"at":"2026-12-15T08:51","checkin":"2026-12-15T08:51"}
+{"who":"Rowan","text":"Ok so I had a 9am and a kid asked me if Christmas is a bank holiday in every country then asked if Jesus was a bank holiday","posted":true,"at":"2026-12-15T09:30","checkin":"2026-12-15T09:30"}
+{"who":"Rowan","text":"I said we'll talk about it in January","posted":true,"at":"2026-12-15T09:31","checkin":"2026-12-15T09:31"}
+{"who":"Noah","text":"Gift policies vary but most shops will do an exchange with proof of purchase. Callum, is it the uni shop or some other one","posted":true,"at":"2026-12-15T12:10","checkin":"2026-12-15T12:10"}
+{"who":"Callum","text":"uni shop. i dont know if they have a policy or just vibes","posted":true,"at":"2026-12-15T12:11","checkin":"2026-12-15T12:11"}
+{"who":"Noah","text":"Probably vibes","posted":true,"at":"2026-12-15T12:12","checkin":"2026-12-15T12:12"}
+{"who":"Megan","text":"Library lunch is a sad sandwich and a bag of quavers. Send help or send mince pies","posted":true,"at":"2026-12-15T13:05","checkin":"2026-12-15T13:05"}
+{"who":"Megan","text":"[photo: tupperware of mince pies]","posted":true,"at":"2026-12-15T13:06","checkin":"2026-12-15T13:06"}
+{"who":"Rowan","text":"Megan I'm coming for those","posted":true,"at":"2026-12-15T13:20","checkin":"2026-12-15T13:20"}
+{"who":"Callum","text":"ok i looked at turkeys","posted":true,"at":"2026-12-15T17:12","checkin":"2026-12-15T17:12"}
+{"who":"Callum","text":"they're all massive and i dont have a fridge big enough","posted":true,"at":"2026-12-15T17:12","checkin":"2026-12-15T17:12"}
+{"who":"Noah","text":"So the answer is Lidl","posted":true,"at":"2026-12-15T17:13","checkin":"2026-12-15T17:13"}
+{"who":"Callum","text":"the answer is i need a bigger fridge","posted":true,"at":"2026-12-15T17:14","checkin":"2026-12-15T17:14"}
+{"who":"Rowan","text":"So the gammon kid's mum emailed me. Not about gammon. She wants to know if I'm \"the tutor with the purple hair\"","posted":true,"at":"2026-12-15T18:40","checkin":"2026-12-15T18:40"}
+{"who":"Rowan","text":"I don't have purple hair. I had purple hair for one (1) week in September","posted":true,"at":"2026-12-15T18:41","checkin":"2026-12-15T18:41"}
+{"who":"Megan","text":"She's not wrong 😂","posted":true,"at":"2026-12-15T18:41","checkin":"2026-12-15T18:41"}
+{"who":"","react":"😂","to":78,"posted":false,"at":"2026-12-15T18:41"}
+{"who":"","react":"😂","to":78,"posted":false,"at":"2026-12-15T18:41"}
+{"who":"Rowan","text":"Rude. I'm replying with a nut roast recipe","posted":true,"at":"2026-12-15T18:42","checkin":"2026-12-15T18:42"}
+{"who":"Callum","text":"that's not a threat i'm scared","posted":true,"at":"2026-12-15T19:03","checkin":"2026-12-15T19:03"}
+{"who":"Noah","text":"Has anyone bought anything yet or is it just me stalling","posted":true,"at":"2026-12-15T21:15","checkin":"2026-12-15T21:15"}
+{"who":"Megan","text":"Bought. Wrapped nothing. Plan still secret","posted":true,"at":"2026-12-15T21:20","checkin":"2026-12-15T21:20"}
+{"who":"Rowan","text":"Callum I want to be clear that the thing is not in the flat, it's ordered, it arrives on the 23rd","posted":true,"at":"2026-12-15T22:30","checkin":"2026-12-15T22:30"}
+{"who":"Callum","text":"ok","posted":true,"at":"2026-12-15T22:31","checkin":"2026-12-15T22:31"}
+{"who":"Rowan","text":"Ok is not a reaction I'm going to accept","posted":true,"at":"2026-12-15T22:31","checkin":"2026-12-15T22:31"}
+{"who":"Noah","text":"Rowan if it's a gift card just say so, nobody's going to think less of you","posted":true,"at":"2026-12-15T23:10","checkin":"2026-12-15T23:10"}
+{"who":"Rowan","text":"It is not a gift card","posted":true,"at":"2026-12-15T23:11","checkin":"2026-12-15T23:11"}
+{"who":"Rowan","text":"Cat has moved onto my laptop. It's sitting on the keyboard. I'm going to sleep with my phone in my hand like a hostage","posted":true,"at":"2026-12-16T00:20","checkin":"2026-12-16T00:20"}

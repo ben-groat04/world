@@ -1,0 +1,67 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T18:00","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1531,"cache_read_input_tokens":0,"output_tokens":1766,"output_tokens_details":{"thinking_tokens":1203},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1531,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1766,"cache_read_input_tokens":0,"cache_creation_input_tokens":1531,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1531},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2045,"cache_read_input_tokens":0,"output_tokens":2004,"output_tokens_details":{"thinking_tokens":1404},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2045,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2004,"cache_read_input_tokens":0,"cache_creation_input_tokens":2045,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2045},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2657,"cache_read_input_tokens":0,"output_tokens":3183,"output_tokens_details":{"thinking_tokens":2473},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2657,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3183,"cache_read_input_tokens":0,"cache_creation_input_tokens":2657,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2657},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Ruby","Tane","Ben"],"setting":"You are all in Wellington, New Zealand, close friends trying to agree on where to go this Saturday, and you use this chat to sort out the plans.","openers":["Suggest the south coast walk","Ask who's driving Saturday","Check the forecast for the weekend","Send a poll with three cafe options"],"opener":"Send a poll with three cafe options","cast":{"Ruby":{"who":"29, woman, friend","work":"software tester","knows":"You know Tane and Ben as friends you have known for years.","texts":"Ruby texts in this chat a lot.","style":"some emoji and a few texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Tane":{"who":"31, man, friend","work":"electrician","knows":"You know Ruby and Ben as friends.","texts":"Tane texts in this chat only now and again.","style":"a little emoji and few abbreviations","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]},"Ben":{"who":"33, man, friend","work":"film editor","knows":"You know Ruby and Tane as friends.","texts":"Ben texts in this chat only now and again.","style":"a little emoji and few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Ruby":"You live in Wellington, your days are spent testing software, and you live alone.","Tane":"You live in Wellington, your days are spent working as an electrician, and you live alone.","Ben":"You live in Wellington, your days are spent editing film, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":792,"cache_read_input_tokens":0,"output_tokens":1191,"output_tokens_details":{"thinking_tokens":898},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":792,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1191,"cache_read_input_tokens":0,"cache_creation_input_tokens":792,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":792},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1056,"cache_read_input_tokens":0,"output_tokens":1563,"output_tokens_details":{"thinking_tokens":1175},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1056,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1563,"cache_read_input_tokens":0,"cache_creation_input_tokens":1056,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1056},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Wellington, New Zealand","castMs":14464,"situation":"Friends deciding where to go on Saturday.","topic":null}
+{"who":"Ruby","text":"[poll: Sat brunch? ]\nKettle & Crumb (Newtown)\nHollow Bean (Cuba St)\nMana Yard (Mt Vic)","posted":true,"at":"2026-12-04T18:00","checkin":"2026-12-04T18:00"}
+{"who":"Ruby","text":"Vote pls","posted":true,"at":"2026-12-04T18:02","checkin":"2026-12-04T18:02"}
+{"who":"Tane","text":"hollow bean. the one on cuba has the good seats out back","posted":true,"at":"2026-12-04T18:41","checkin":"2026-12-04T18:41"}
+{"who":"Ben","text":"Kettle. Hollow bean queue on sat is brutal","posted":true,"at":"2026-12-04T19:05","checkin":"2026-12-04T19:05"}
+{"who":"Ruby","text":"Mana yard is a 20 min walk up the hill fyi","posted":true,"at":"2026-12-04T19:06","checkin":"2026-12-04T19:06"}
+{"who":"Tane","text":"can we not walk up a hill saturday","posted":true,"at":"2026-12-04T19:30","checkin":"2026-12-04T19:30"}
+{"who":"Ben","text":"Still in the cut til late, sorry. Kettle is fine by me","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Ruby","text":"Ok so 2 kettle, 1 hollow bean. Tane?","posted":true,"at":"2026-12-04T21:14","checkin":"2026-12-04T21:14"}
+{"who":"Tane","text":"hollow bean is still better imo but im not dying on it. kettle\n\nis kettle 10 or 11","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"Ruby","text":"11. They don't do brunch before 10 anyway lol","posted":true,"at":"2026-12-04T21:43","checkin":"2026-12-04T21:43"}
+{"who":"","react":"👍","to":9,"posted":false,"at":"2026-12-04T21:43"}
+{"who":"Tane","text":"pulled a 40 amp circuit out of a cafe kitchen today. the owner's dad wired it in like 1987 with what looked like fence wire","posted":true,"at":"2026-12-04T22:30","checkin":"2026-12-04T22:30"}
+{"who":"Ruby","text":"Ew","posted":true,"at":"2026-12-04T22:31","checkin":"2026-12-04T22:31"}
+{"who":"Ruby","text":"Is it still on","posted":true,"at":"2026-12-04T22:31","checkin":"2026-12-04T22:31"}
+{"who":"Tane","text":"it is now 🙃","posted":true,"at":"2026-12-04T22:44","checkin":"2026-12-04T22:44"}
+{"who":"Ben","text":"11 works","posted":true,"at":"2026-12-04T22:58","checkin":"2026-12-04T22:58"}
+{"who":"Ruby","text":"Did you guys see the bakery on riddiford is closing","posted":true,"at":"2026-12-05T00:40","checkin":"2026-12-05T00:40"}
+{"who":"Tane","text":"yeah saw it. the pie one?","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Ruby","text":"Yes the pie one","posted":true,"at":"2026-12-05T09:15","checkin":"2026-12-05T09:15"}
+{"who":"Ben","text":"Sorry, deadline. Kettle at 11 still? I can do 11:10","posted":true,"at":"2026-12-05T09:58","checkin":"2026-12-05T09:58"}
+{"who":"Ruby","text":"11:10 is fine. Tane?","posted":true,"at":"2026-12-05T10:03","checkin":"2026-12-05T10:03"}
+{"who":"Tane","text":"on a job in khandallah til 10:45 prob. I'll be there","posted":true,"at":"2026-12-05T10:20","checkin":"2026-12-05T10:20"}
+{"who":"Ruby","text":"Ok ill grab a table","posted":true,"at":"2026-12-05T10:21","checkin":"2026-12-05T10:21"}
+{"who":"Ruby","text":"You two coming or nah","posted":true,"at":"2026-12-05T11:24","checkin":"2026-12-05T11:24"}
+{"who":"Tane","text":"coming. parking on adelaide, 10 mins","posted":true,"at":"2026-12-05T11:26","checkin":"2026-12-05T11:26"}
+{"who":"Ben","text":"Here. Table by the door is free","posted":true,"at":"2026-12-05T11:27","checkin":"2026-12-05T11:27"}
+{"who":"Ben","text":"Got the cut to the client. Off til monday maybe","posted":true,"at":"2026-12-05T14:52","checkin":"2026-12-05T14:52"}
+{"who":"Ruby","text":"Nice. Did you eat the lamington or was that just me","posted":true,"at":"2026-12-05T14:55","checkin":"2026-12-05T14:55"}
+{"who":"Tane","text":"[photo: the circuit from yesterday, still fence wire]","posted":true,"at":"2026-12-05T15:40","checkin":"2026-12-05T15:40"}
+{"who":"Ruby","text":"Ew","posted":true,"at":"2026-12-05T15:41","checkin":"2026-12-05T15:41"}
+{"who":"Ruby","text":"We should go get pies from riddiford before it shuts","posted":true,"at":"2026-12-05T16:25","checkin":"2026-12-05T16:25"}
+{"who":"Tane","text":"at a mates bbq in island bay. cant","posted":true,"at":"2026-12-05T16:40","checkin":"2026-12-05T16:40"}
+{"who":"Ben","text":"Yeah","posted":true,"at":"2026-12-05T18:33","checkin":"2026-12-05T18:33"}
+{"who":"Ruby","text":"Anyone want to do a movie sun","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Tane","text":"depends if its before 2","posted":true,"at":"2026-12-05T21:50","checkin":"2026-12-05T21:50"}
+{"who":"Ruby","text":"Sure whatever","posted":true,"at":"2026-12-05T23:17","checkin":"2026-12-05T23:17"}
+{"who":"Ruby","text":"Went to riddiford anyway. Got the last 2 pies","posted":true,"at":"2026-12-05T23:48","checkin":"2026-12-05T23:48"}
+{"who":"","react":"😂","to":35,"posted":false,"at":"2026-12-05T23:48"}
+{"who":"","react":"😢","to":35,"posted":false,"at":"2026-12-05T23:48"}
+{"who":"Ruby","text":"[photo: the last two pies from riddiford]","posted":true,"at":"2026-12-05T23:48","checkin":"2026-12-05T23:48"}
+{"who":"Tane","text":"did you eat both or save one","posted":true,"at":"2026-12-06T09:12","checkin":"2026-12-06T09:12"}
+{"who":"Ruby","text":"Saved one for Ben you want it","posted":true,"at":"2026-12-06T09:20","checkin":"2026-12-06T09:20"}
+{"who":"Ben","text":"Yes. Can I get it tonight","posted":true,"at":"2026-12-06T09:52","checkin":"2026-12-06T09:52"}
+{"who":"Ruby","text":"Fridge. Come by after the movie if you're going","posted":true,"at":"2026-12-06T09:53","checkin":"2026-12-06T09:53"}
+{"who":"Ruby","text":"Movie's 4:15 at the Embassy if anyone","posted":true,"at":"2026-12-06T12:02","checkin":"2026-12-06T12:02"}
+{"who":"Ruby","text":"Or 6:30 if not","posted":true,"at":"2026-12-06T12:03","checkin":"2026-12-06T12:03"}
+{"who":"Tane","text":"4:15 ok. might be late, callout in kilbirnie","posted":true,"at":"2026-12-06T13:10","checkin":"2026-12-06T13:10"}
+{"who":"Ben","text":"Still in the cut. Client wants the grade redone. Might miss it","posted":true,"at":"2026-12-06T15:37","checkin":"2026-12-06T15:37"}
+{"who":"Ruby","text":"Ok 4:15 it is. Tane you're coming?","posted":true,"at":"2026-12-06T15:40","checkin":"2026-12-06T15:40"}
+{"who":"Tane","text":"yeah. text me where you sit","posted":true,"at":"2026-12-06T16:02","checkin":"2026-12-06T16:02"}
+{"who":"Ruby","text":"Ok","posted":true,"at":"2026-12-06T16:03","checkin":"2026-12-06T16:03"}
+{"who":"Tane","text":"callout ran over. 4:40 prob","posted":true,"at":"2026-12-06T16:41","checkin":"2026-12-06T16:41"}
+{"who":"Ruby","text":"Ok we'll be in the back row. Ben you coming or nah","posted":true,"at":"2026-12-06T16:44","checkin":"2026-12-06T16:44"}
+{"who":"Ben","text":"Nah. Going to keep going on this. Enjoy","posted":true,"at":"2026-12-06T16:48","checkin":"2026-12-06T16:48"}
+{"who":"Ruby","text":"Home. That dog movie was sad","posted":true,"at":"2026-12-06T19:12","checkin":"2026-12-06T19:12"}
+{"who":"Ruby","text":"Tane you were late and missed the good bit","posted":true,"at":"2026-12-06T19:13","checkin":"2026-12-06T19:13"}
+{"who":"Ben","text":"Got the grade signed off finally","posted":true,"at":"2026-12-06T21:02","checkin":"2026-12-06T21:02"}
+{"who":"Ruby","text":"Congrats ate your pie","posted":true,"at":"2026-12-06T21:05","checkin":"2026-12-06T21:05"}
+{"who":"Ben","text":"Ate the pie. Good","posted":true,"at":"2026-12-06T21:06","checkin":"2026-12-06T21:06"}
+{"who":"Tane","text":"kilbirnie job was also fence wire. the owner's nephew this time","posted":true,"at":"2026-12-06T22:15","checkin":"2026-12-06T22:15"}
+{"who":"Ruby","text":"Ew","posted":true,"at":"2026-12-06T22:16","checkin":"2026-12-06T22:16"}
+{"who":"Ruby","text":"Is it on","posted":true,"at":"2026-12-06T22:17","checkin":"2026-12-06T22:17"}
+{"who":"Tane","text":"it is","posted":true,"at":"2026-12-06T22:20","checkin":"2026-12-06T22:20"}
+{"who":"Ruby","text":"Not going to sleep","posted":true,"at":"2026-12-06T23:50","checkin":"2026-12-06T23:50"}
+{"who":"Ruby","text":"Ok going to sleep","posted":true,"at":"2026-12-07T00:12","checkin":"2026-12-07T00:12"}

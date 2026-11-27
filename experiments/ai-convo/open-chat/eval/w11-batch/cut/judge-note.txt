@@ -1,0 +1,1 @@
+Each file is an excerpt from a longer chat: it may start or end in the middle of a conversation. A line like "(👍 2)" under a message shows the reactions that message got. A line like [photo: ...] stands for a photo, link or file sent in the chat.

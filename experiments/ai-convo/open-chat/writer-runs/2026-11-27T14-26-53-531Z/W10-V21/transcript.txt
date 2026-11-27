@@ -1,0 +1,172 @@
+--- Tue 07:55, Kasia
+What about we meet at Warszawa Centralna before the train
+
+--- Tue 08:12, Łukasz
+Works for me. 9:10 to Kraków? I'll book it now if nobody objects
+
+--- Tue 08:14, Łukasz
+They have 2 seats together in coach 4 but not 4
+
+--- Tue 08:40, Henryk
+9:10 is fine. Coach 4 ok for me
+
+--- Tue 08:41, Henryk
+I'll be by the clock in the main hall
+
+--- Tue 09:02, Kasia
+Good. I'll take 2 seats with Łukasz if you sort the rest
+
+--- Tue 09:03, Łukasz
+Ok
+
+--- Tue 11:47, Weronika
+Sorry was in a meeting. 9:10 works for me too. Can someone send the confirmation
+
+--- Tue 11:50, Łukasz
+[screenshot: booking confirmation]
+
+--- Tue 11:50, Łukasz
+Booked. Me and Kasia 41-42 in coach 4, Henryk 46 same coach. Weronika you're coach 5 seat 12, only 3 together there
+
+--- Tue 11:52, Weronika
+Fine, not far
+(👍 2)
+
+--- Tue 12:30, Henryk
+Freezer alarm went off at 4am. Someone from nights left the door open
+
+--- Tue 12:31, Henryk
+Everything's ok now
+
+--- Tue 12:33, Kasia
+Oh no. Are the samples ok?
+
+--- Tue 12:40, Henryk
+Most of them
+
+--- Tue 15:18, Łukasz
+On the regression tests now, sorry I missed the chat
+
+--- Tue 15:20, Kasia
+Nothing important. Weronika did the email with the ticket come through?
+
+--- Tue 15:52, Weronika
+Yes. Do we need to print them? The printer here is broken again
+
+--- Tue 16:00, Łukasz
+App is enough, they check on phone
+
+--- Tue 16:02, Weronika
+Ok
+
+--- Tue 18:47, Kasia
+Checking the platform. The site still says 9:10 is on time
+
+--- Tue 18:48, Łukasz
+Fine for now
+
+--- Tue 21:30, Henryk
+Does anyone know which platform? The board at Centralna only goes up the morning of
+
+--- Tue 21:31, Kasia
+They usually post it at the gate
+
+--- Tue 23:14, Łukasz
+[link: rail operator timetable page for the 9:10]
+
+--- Tue 23:16, Weronika
+Thanks, saved
+
+--- Wed 08:33, Henryk
+Samples done. Ran checks on the rest, will know more later
+
+--- Wed 08:35, Kasia
+Good. Do you need to be at the lab before we go or meet at the hall as planned
+
+--- Wed 08:41, Henryk
+Hall as planned. Techs can sign off without me
+
+--- Wed 10:15, Łukasz
+Regression still failing on the payment module. Might be my env
+
+--- Wed 10:16, Łukasz
+Not going to get more done here today. Sorry
+
+--- Wed 13:02, Weronika
+Did anyone book a taxi to Centralna or are we walking
+
+--- Wed 13:20, Kasia
+Tram if it rains, otherwise walking
+
+--- Wed 13:24, Weronika
+Ok
+
+--- Wed 16:47, Henryk
+Printer in the lab works. I'll print the tickets there if the app doesn't load on the platform
+
+--- Wed 16:48, Łukasz
+App is fine. Battery is the issue, bring a charger
+
+--- Wed 18:30, Kasia
+Anyone know if the platform is up yet
+
+--- Wed 18:52, Łukasz
+[link: rail operator timetable page for the 9:10]
+
+--- Wed 18:52, Łukasz
+Still says platform tbc
+
+--- Wed 22:08, Weronika
+Charger yes. Have one in my bag already
+
+--- Thu 07:48, Łukasz
+Platform up yet?
+
+--- Thu 08:02, Henryk
+Not yet. Saw on the news trains out of Kraków are delayed, might be unrelated
+
+--- Thu 08:20, Kasia
+Still tbc on the site. They usually post it closer to the day
+
+--- Thu 08:21, Kasia
+Will check again at lunch
+
+--- Thu 12:14, Weronika
+Did the lab printer get fixed or is it still broken
+
+--- Thu 13:05, Łukasz
+Payment module passes now. Was a stale config. Sorry for the noise yesterday
+(👍 2)
+
+--- Thu 13:06, Kasia
+Good
+
+--- Thu 16:30, Henryk
+Lab smells like cold cleaner, they had to dump the bottom shelf. Going home early
+
+--- Thu 16:31, Henryk
+Won't print anything then
+
+--- Thu 18:15, Kasia
+[link: rail operator timetable page for the 9:10]
+
+--- Thu 18:16, Kasia
+Platform 3 I think. It says 3
+
+--- Thu 18:17, Łukasz
+Yes 3
+
+--- Thu 18:19, Weronika
+Ok
+
+--- Thu 21:52, Henryk
+Can someone check coach 4 seat 46 isn't the one by the toilet
+
+--- Thu 22:40, Łukasz
+It's the window one. 45 is by the toilet
+
+--- Thu 22:41, Henryk
+Ok good
+
+--- Thu 23:58, Weronika
+Gonna sleep. See you at the hall

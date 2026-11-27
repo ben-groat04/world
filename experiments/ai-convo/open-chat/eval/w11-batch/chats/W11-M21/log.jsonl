@@ -1,0 +1,97 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-13T14:00","complete":true,"rejects":0,"today":["Lorna","Sophie",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2138,"cache_read_input_tokens":0,"output_tokens":2640,"output_tokens_details":{"thinking_tokens":1962},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2138,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2640,"cache_read_input_tokens":0,"cache_creation_input_tokens":2138,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2138},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2753,"cache_read_input_tokens":0,"output_tokens":3220,"output_tokens_details":{"thinking_tokens":1696},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2753,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3220,"cache_read_input_tokens":0,"cache_creation_input_tokens":2753,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2753},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4252,"cache_read_input_tokens":0,"output_tokens":2757,"output_tokens_details":{"thinking_tokens":1971},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4252,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2757,"cache_read_input_tokens":0,"cache_creation_input_tokens":4252,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4252},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Lorna","Callum","Sophie","Raymond"],"setting":"You are all in Glasgow, members of the same book club that meets monthly in a community library room. At the moment you are arranging the December Christmas meal and choosing the January read.","openers":["Suggests a date for the December Christmas meal","Asks who can host the January meeting","Shares a link to the January pick","Reminds everyone to bring their copy of the book"],"opener":"Suggests a date for the December Christmas meal","cast":{"Lorna":{"who":"34, woman, book club member","work":"primary school teacher","knows":"You know Callum, Sophie and Raymond from book club.","texts":"Lorna texts in this chat now and then.","style":"a fair amount of emoji and some texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Callum":{"who":"61, man, book club member","work":"council planning officer","knows":"You know Lorna, Sophie and Raymond from book club.","texts":"Callum texts in this chat now and then.","style":"a little emoji and few texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Sophie":{"who":"29, woman, book club member","work":"trainee solicitor","knows":"You know Lorna, Callum and Raymond from book club.","texts":"Sophie texts in this chat only now and again.","style":"some emoji and some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Raymond":{"who":"45, man, book club member","work":"electrician","knows":"You know Lorna, Callum and Sophie from book club.","texts":"Raymond texts in this chat a lot.","style":"a little emoji and some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Lorna":"You live in Glasgow, teach at a primary school, and live alone.","Callum":"You live in Glasgow, work as a council planning officer, and live alone.","Sophie":"You live in Glasgow, train as a solicitor, and live alone.","Raymond":"You live in Glasgow, work as an electrician, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":783,"cache_read_input_tokens":0,"output_tokens":1368,"output_tokens_details":{"thinking_tokens":924},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":783,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1368,"cache_read_input_tokens":0,"cache_creation_input_tokens":783,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":783},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1092,"cache_read_input_tokens":0,"output_tokens":2144,"output_tokens_details":{"thinking_tokens":1622},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1092,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2144,"cache_read_input_tokens":0,"cache_creation_input_tokens":1092,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1092},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Glasgow, Scotland","castMs":20359,"situation":"People from my book club.","topic":null}
+{"who":"Lorna","text":"Right so christmas meal. How about sat 19th? 7ish?","posted":true,"at":"2026-12-13T14:00","checkin":"2026-12-13T14:00"}
+{"who":"Raymond","text":"Sat works. Where tho","posted":true,"at":"2026-12-13T14:04","checkin":"2026-12-13T14:04"}
+{"who":"Lorna","text":"Was thinking ashton lane somewhere? I can check the chip but thats pricey lol","posted":true,"at":"2026-12-13T14:09","checkin":"2026-12-13T14:09"}
+{"who":"Raymond","text":"Ashton lane is always heaving in dec. Book early","posted":true,"at":"2026-12-13T14:11","checkin":"2026-12-13T14:11"}
+{"who":"Callum","text":"Sat's fine by me. Ashton Lane sounds right, the earlier we book the better.","posted":true,"at":"2026-12-13T15:32","checkin":"2026-12-13T15:32"}
+{"who":"Callum","text":"I'll be a bit late if it's before 7, got a thing at the council till 5.","posted":true,"at":"2026-12-13T15:34","checkin":"2026-12-13T15:34"}
+{"who":"Lorna","text":"Sorry was at the school xmas fair all morning. One of my p2s threw up on the bouncy castle anyway yes sat","posted":true,"at":"2026-12-13T17:20","checkin":"2026-12-13T17:20"}
+{"who":"Lorna","text":"I can ring round tomorrow if nobody else wants to","posted":true,"at":"2026-12-13T17:21","checkin":"2026-12-13T17:21"}
+{"who":"Sophie","text":"Sat good for me. Can we do after 7 tho, I've got something till 6 or so","posted":true,"at":"2026-12-13T18:55","checkin":"2026-12-13T18:55"}
+{"who":"Raymond","text":"7:30 then? Gives callum time to get off work","posted":true,"at":"2026-12-13T19:03","checkin":"2026-12-13T19:03"}
+{"who":"Callum","text":"7:30 fine","posted":true,"at":"2026-12-13T19:10","checkin":"2026-12-13T19:10"}
+{"who":"Lorna","text":"7:30","posted":true,"at":"2026-12-13T19:12","checkin":"2026-12-13T19:12"}
+{"who":"","react":"👍","to":11,"posted":false,"at":"2026-12-13T19:12"}
+{"who":"","react":"👍","to":11,"posted":false,"at":"2026-12-13T19:12"}
+{"who":"Raymond","text":"Right the january read. Before anyone says it I'm not doing another one with a dead dog in it","posted":true,"at":"2026-12-13T21:40","checkin":"2026-12-13T21:40"}
+{"who":"Lorna","text":"That's like half of fiction tho","posted":true,"at":"2026-12-13T21:44","checkin":"2026-12-13T21:44"}
+{"who":"Raymond","text":"The good half","posted":true,"at":"2026-12-13T21:46","checkin":"2026-12-13T21:46"}
+{"who":"Sophie","text":"I'm fine with anything under 300 pages, I'm drowning in due diligence till feb 🙃","posted":true,"at":"2026-12-13T22:30","checkin":"2026-12-13T22:30"}
+{"who":"Callum","text":"Could we do the one about the reservoir? Lorna had it on the list in autumn.","posted":true,"at":"2026-12-13T23:05","checkin":"2026-12-13T23:05"}
+{"who":"Lorna","text":"Yes I'll put it to a vote tomorrow. And I'll ring ashton lane first thing","posted":true,"at":"2026-12-13T23:40","checkin":"2026-12-13T23:40"}
+{"who":"Lorna","text":"Ashton lane say they can do sat 19th but only the set menu and they want min 6 😬","posted":true,"at":"2026-12-14T08:12","checkin":"2026-12-14T08:12"}
+{"who":"Lorna","text":"We're 4 lol","posted":true,"at":"2026-12-14T08:13","checkin":"2026-12-14T08:13"}
+{"who":"Raymond","text":"Bring a plus one","posted":true,"at":"2026-12-14T08:15","checkin":"2026-12-14T08:15"}
+{"who":"Raymond","text":"Or ask if they'll do a la carte for 4","posted":true,"at":"2026-12-14T08:16","checkin":"2026-12-14T08:16"}
+{"who":"Callum","text":"Set menu's always too much haggis for me. Ask about a la carte","posted":true,"at":"2026-12-14T08:31","checkin":"2026-12-14T08:31"}
+{"who":"Lorna","text":"Ok will ring at lunch","posted":true,"at":"2026-12-14T08:33","checkin":"2026-12-14T08:33"}
+{"who":"Raymond","text":"Haggis is the point","posted":true,"at":"2026-12-14T08:34","checkin":"2026-12-14T08:34"}
+{"who":"Sophie","text":"Morning. In at 8 and already behind. Some bloke's sent 900 pages of leases as a \"quick look\"","posted":true,"at":"2026-12-14T09:02","checkin":"2026-12-14T09:02"}
+{"who":"Sophie","text":"🙃","posted":true,"at":"2026-12-14T09:02","checkin":"2026-12-14T09:02"}
+{"who":"Raymond","text":"Got a job in Bearsden, customer wanted one socket moved and I've now agreed to three more","posted":true,"at":"2026-12-14T09:40","checkin":"2026-12-14T09:40"}
+{"who":"Raymond","text":"That's an electrician's whole life","posted":true,"at":"2026-12-14T09:41","checkin":"2026-12-14T09:41"}
+{"who":"Lorna","text":"Right so january. Reservoir book is the one. Callum's already put it forward and I'm not voting against it","posted":true,"at":"2026-12-14T11:15","checkin":"2026-12-14T11:15"}
+{"who":"Lorna","text":"[link: the reservoir book, Waterstones]","posted":true,"at":"2026-12-14T11:16","checkin":"2026-12-14T11:16"}
+{"who":"Raymond","text":"Is it the one with the drowned village","posted":true,"at":"2026-12-14T11:19","checkin":"2026-12-14T11:19"}
+{"who":"Callum","text":"Yes","posted":true,"at":"2026-12-14T11:20","checkin":"2026-12-14T11:20"}
+{"who":"Raymond","text":"Does a dog die","posted":true,"at":"2026-12-14T11:21","checkin":"2026-12-14T11:21"}
+{"who":"Lorna","text":"Not a dog","posted":true,"at":"2026-12-14T11:21","checkin":"2026-12-14T11:21"}
+{"who":"Raymond","text":"Good","posted":true,"at":"2026-12-14T11:22","checkin":"2026-12-14T11:22"}
+{"who":"Sophie","text":"Is it under 300","posted":true,"at":"2026-12-14T11:24","checkin":"2026-12-14T11:24"}
+{"who":"Lorna","text":"280 I think","posted":true,"at":"2026-12-14T11:25","checkin":"2026-12-14T11:25"}
+{"who":"Sophie","text":"Perfect","posted":true,"at":"2026-12-14T11:25","checkin":"2026-12-14T11:25"}
+{"who":"Callum","text":"Could we start the second week of Jan, not the first. First's a bank holiday weekend and I'll be useless","posted":true,"at":"2026-12-14T11:31","checkin":"2026-12-14T11:31"}
+{"who":"Lorna","text":"Fine by me. Meet 15th? That's a thurs, check it's ok with everyone","posted":true,"at":"2026-12-14T11:33","checkin":"2026-12-14T11:33"}
+{"who":"Raymond","text":"Thurs fine","posted":true,"at":"2026-12-14T13:02","checkin":"2026-12-14T13:02"}
+{"who":"Lorna","text":"Rang ashton lane. They'll do a la carte for 4 at 7:30 but they want a deposit by friday or the table goes","posted":true,"at":"2026-12-14T13:44","checkin":"2026-12-14T13:44"}
+{"who":"Lorna","text":"Thats £20 each, can I just put it on my card and sort it after","posted":true,"at":"2026-12-14T13:45","checkin":"2026-12-14T13:45"}
+{"who":"Callum","text":"Yes","posted":true,"at":"2026-12-14T13:50","checkin":"2026-12-14T13:50"}
+{"who":"Raymond","text":"Put it on mine if the card's easier, I'm paid thurs","posted":true,"at":"2026-12-14T13:51","checkin":"2026-12-14T13:51"}
+{"who":"Lorna","text":"Dw ill do it x","posted":true,"at":"2026-12-14T13:52","checkin":"2026-12-14T13:52"}
+{"who":"Sophie","text":"Quick one, anyone know if the sheriff clerks are actually open the week before xmas or is it just a rumour","posted":true,"at":"2026-12-14T14:20","checkin":"2026-12-14T14:20"}
+{"who":"Raymond","text":"Dunno. Ask the sheriff","posted":true,"at":"2026-12-14T14:35","checkin":"2026-12-14T14:35"}
+{"who":"Sophie","text":"Haha. Yeah ok","posted":true,"at":"2026-12-14T14:36","checkin":"2026-12-14T14:36"}
+{"who":"Callum","text":"Late one tonight. Planning committee's gone to a vote on a bike lane and I'm the one who has to write it up","posted":true,"at":"2026-12-14T16:48","checkin":"2026-12-14T16:48"}
+{"who":"Callum","text":"Lorna does the book club deposit count as a christmas present","posted":true,"at":"2026-12-14T16:49","checkin":"2026-12-14T16:49"}
+{"who":"Lorna","text":"Lol no","posted":true,"at":"2026-12-14T16:51","checkin":"2026-12-14T16:51"}
+{"who":"Sophie","text":"[photo: my desk, a wall of bundles and a cold tea]","posted":true,"at":"2026-12-14T17:10","checkin":"2026-12-14T17:10"}
+{"who":"Sophie","text":"Due diligence has a face and it's the vendor's solicitor's","posted":true,"at":"2026-12-14T17:11","checkin":"2026-12-14T17:11"}
+{"who":"Raymond","text":"Clock off","posted":true,"at":"2026-12-14T17:12","checkin":"2026-12-14T17:12"}
+{"who":"Sophie","text":"Can't. Partner's watching","posted":true,"at":"2026-12-14T17:12","checkin":"2026-12-14T17:12"}
+{"who":"Raymond","text":"Right I'm for the pub. Anyone else coming to the xmas thing early or are we just doing the 19th","posted":true,"at":"2026-12-14T19:30","checkin":"2026-12-14T19:30"}
+{"who":"Lorna","text":"Just the 19th!! I'm done with xmas stuff till sat","posted":true,"at":"2026-12-14T19:33","checkin":"2026-12-14T19:33"}
+{"who":"Raymond","text":"Fair","posted":true,"at":"2026-12-14T19:34","checkin":"2026-12-14T19:34"}
+{"who":"Lorna","text":"Booked. Sat 19th 7:30, Ashton Lane, a la carte for 4. Callum you can have all the haggis you want from the menu","posted":true,"at":"2026-12-14T21:12","checkin":"2026-12-14T21:12"}
+{"who":"Callum","text":"Cheers Lorna","posted":true,"at":"2026-12-14T21:14","checkin":"2026-12-14T21:14"}
+{"who":"Lorna","text":"👍🎄","posted":true,"at":"2026-12-14T21:15","checkin":"2026-12-14T21:15"}
+{"who":"","react":"👍","to":62,"posted":false,"at":"2026-12-14T21:15"}
+{"who":"","react":"👍","to":62,"posted":false,"at":"2026-12-14T21:15"}
+{"who":"Sophie","text":"Finally out. Going to bed at a reasonable hour for once","posted":true,"at":"2026-12-14T22:50","checkin":"2026-12-14T22:50"}
+{"who":"Raymond","text":"That's a lie","posted":true,"at":"2026-12-14T22:51","checkin":"2026-12-14T22:51"}
+{"who":"Raymond","text":"Bearsden job starts at 8. Somebody's going to ask why the kitchen lights flicker","posted":true,"at":"2026-12-15T07:52","checkin":"2026-12-15T07:52"}
+{"who":"Lorna","text":"Ask if the dishwasher's on the same circuit 😬","posted":true,"at":"2026-12-15T08:04","checkin":"2026-12-15T08:04"}
+{"who":"Raymond","text":"It always is","posted":true,"at":"2026-12-15T08:05","checkin":"2026-12-15T08:05"}
+{"who":"Sophie","text":"Sheriff clerk says the court's open to the 18th then shut till 4th Jan. So I wasn't wrong for once","posted":true,"at":"2026-12-15T08:40","checkin":"2026-12-15T08:40"}
+{"who":"Sophie","text":"Still got the bundle though","posted":true,"at":"2026-12-15T08:41","checkin":"2026-12-15T08:41"}
+{"who":"Callum","text":"Bike lane's through. 6-5. Write-up's on the portal","posted":true,"at":"2026-12-15T12:17","checkin":"2026-12-15T12:17"}
+{"who":"Lorna","text":"Congrats??","posted":true,"at":"2026-12-15T12:18","checkin":"2026-12-15T12:18"}
+{"who":"Callum","text":"Bit of both","posted":true,"at":"2026-12-15T12:19","checkin":"2026-12-15T12:19"}
+{"who":"Raymond","text":"[photo: a socket with the front off, three wires and a look of regret]","posted":true,"at":"2026-12-15T13:30","checkin":"2026-12-15T13:30"}
+{"who":"Raymond","text":"That's the one they wanted moved. They're now thinking about a fourth","posted":true,"at":"2026-12-15T13:31","checkin":"2026-12-15T13:31"}
+{"who":"Lorna","text":"Don't let them talk you into a fourth 😂","posted":true,"at":"2026-12-15T13:33","checkin":"2026-12-15T13:33"}
+{"who":"","react":"😂","to":75,"posted":false,"at":"2026-12-15T13:33"}
+{"who":"","react":"😂","to":75,"posted":false,"at":"2026-12-15T13:33"}
+{"who":"Raymond","text":"Too late it's in the quote","posted":true,"at":"2026-12-15T13:34","checkin":"2026-12-15T13:34"}
+{"who":"Lorna","text":"Library's got three copies of the reservoir book, one's already on hold for me lol","posted":true,"at":"2026-12-15T17:48","checkin":"2026-12-15T17:48"}
+{"who":"Callum","text":"Ta. I'll get it from the library, it's on my bus route","posted":true,"at":"2026-12-15T17:49","checkin":"2026-12-15T17:49"}
+{"who":"Callum","text":"Did the deposit go through?","posted":true,"at":"2026-12-15T17:50","checkin":"2026-12-15T17:50"}
+{"who":"Lorna","text":"Yes all on my card. I'll sort the transfers Thurs when I know the final numbers","posted":true,"at":"2026-12-15T17:52","checkin":"2026-12-15T17:52"}
+{"who":"Sophie","text":"Still in. Partner wants to know who put a Christmas tree in the boardroom","posted":true,"at":"2026-12-15T18:20","checkin":"2026-12-15T18:20"}
+{"who":"Sophie","text":"Don't ask","posted":true,"at":"2026-12-15T18:21","checkin":"2026-12-15T18:21"}
+{"who":"Raymond","text":"Home. Sockets all working. Customer's paying me in biscuits","posted":true,"at":"2026-12-15T21:03","checkin":"2026-12-15T21:03"}
+{"who":"Raymond","text":"Lol","posted":true,"at":"2026-12-15T21:04","checkin":"2026-12-15T21:04"}
+{"who":"Sophie","text":"Bed. Really this time","posted":true,"at":"2026-12-15T23:12","checkin":"2026-12-15T23:12"}
+{"who":"Raymond","text":"Mm","posted":true,"at":"2026-12-15T23:12","checkin":"2026-12-15T23:12"}
+{"who":"Lorna","text":"P2s still asking me about the bouncy castle 🙈","posted":true,"at":"2026-12-15T23:40","checkin":"2026-12-15T23:40"}
+{"who":"Callum","text":"Still awake. Bike lane people are emailing me already","posted":true,"at":"2026-12-16T00:48","checkin":"2026-12-16T00:48"}

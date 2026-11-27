@@ -1,0 +1,98 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-09T10:15","complete":true,"rejects":0,"today":["Niall","Roisín","Niall"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2145,"cache_read_input_tokens":0,"output_tokens":2277,"output_tokens_details":{"thinking_tokens":1247},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2145,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2277,"cache_read_input_tokens":0,"cache_creation_input_tokens":2145,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2145},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3128,"cache_read_input_tokens":0,"output_tokens":3005,"output_tokens_details":{"thinking_tokens":2039},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3128,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3005,"cache_read_input_tokens":0,"cache_creation_input_tokens":3128,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3128},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4069,"cache_read_input_tokens":0,"output_tokens":1930,"output_tokens_details":{"thinking_tokens":562},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4069,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1930,"cache_read_input_tokens":0,"cache_creation_input_tokens":4069,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4069},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Niall","Mairéad","Roisín"],"setting":"You are all in Dublin, Ireland, where you live and work together at the same bakery. You know each other as colleagues on the bakery team. At the moment you are juggling the Christmas pre-orders and the year-end stock count, and this chat is where you coordinate both.","openers":["Send a photo of the Christmas pre-order sheet","Ask who can cover Saturday's early bake","Remind everyone the stock count is Thursday","Check whether the flour delivery has arrived"],"opener":"Send a photo of the Christmas pre-order sheet","cast":{"Niall":{"who":"34, man, the baker","work":"bread baker","knows":"You know Mairéad as your shop manager and Roisín as a front-of-house colleague at the bakery.","texts":"Niall texts in this chat a lot.","style":"Some emoji, few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Mairéad":{"who":"52, woman, the shop manager","work":"bookkeeper","knows":"You know Niall as the baker at your bakery and Roisín as your front-of-house assistant.","texts":"Mairéad texts in this chat now and then.","style":"Some emoji, few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Roisín":{"who":"22, woman, the front-of-house assistant","work":"stock assistant","knows":"You know Niall as the baker at the bakery and Mairéad as your shop manager.","texts":"Roisín texts in this chat now and then.","style":"Some emoji, few texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Niall":"You live in Dublin, where you spend your days baking bread for the shop, and you live alone.","Mairéad":"You live in Dublin, where you spend your days managing the shop and keeping its books, and you live alone.","Roisín":"You live in Dublin, where you spend your days working the counter and helping with stock, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":787,"cache_read_input_tokens":0,"output_tokens":1111,"output_tokens_details":{"thinking_tokens":772},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":787,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1111,"cache_read_input_tokens":0,"cache_creation_input_tokens":787,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":787},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1083,"cache_read_input_tokens":0,"output_tokens":1779,"output_tokens_details":{"thinking_tokens":1253},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1083,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1779,"cache_read_input_tokens":0,"cache_creation_input_tokens":1083,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1083},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Dublin, Ireland","castMs":15172,"situation":"Colleagues at a bakery.","topic":null}
+{"who":"Niall","text":"[photo: Christmas pre-order sheet]","posted":true,"at":"2026-12-09T10:15","checkin":"2026-12-09T10:15"}
+{"who":"Niall","text":"That's everything up to this morning. 41 sourdough for the 23rd alone 🥖","posted":true,"at":"2026-12-09T10:16","checkin":"2026-12-09T10:16"}
+{"who":"Mairéad","text":"Thanks. Roisín can you check the stollen against the sheet, the Harrington order had two changed","posted":true,"at":"2026-12-09T10:31","checkin":"2026-12-09T10:31"}
+{"who":"Roisín","text":"Yep on it","posted":true,"at":"2026-12-09T10:33","checkin":"2026-12-09T10:33"}
+{"who":"Roisín","text":"Harrington's now 3 stollen not 2, and someone's put \"gluten free\" on the Doyle order?? That's not us is it","posted":true,"at":"2026-12-09T10:58","checkin":"2026-12-09T10:58"}
+{"who":"Niall","text":"No we don't do gf. Ring Doyles","posted":true,"at":"2026-12-09T11:02","checkin":"2026-12-09T11:02"}
+{"who":"Mairéad","text":"I'll ring them at lunch. Niall you'll need the flour order in by Friday for the extra","posted":true,"at":"2026-12-09T11:04","checkin":"2026-12-09T11:04"}
+{"who":"Niall","text":"Already rang it through","posted":true,"at":"2026-12-09T11:05","checkin":"2026-12-09T11:05"}
+{"who":"","react":"👍","to":7,"posted":false,"at":"2026-12-09T11:05"}
+{"who":"Niall","text":"Stock count is going to be a nightmare if the freezer's still full of last year's croissant dough","posted":true,"at":"2026-12-09T13:20","checkin":"2026-12-09T13:20"}
+{"who":"Roisín","text":"I've done the front shelves. Dairy's short, 2 cream cheese, 1 butter in the fridge","posted":true,"at":"2026-12-09T13:44","checkin":"2026-12-09T13:44"}
+{"who":"Mairéad","text":"Order them. Roisín can you do the cabinet count tomorrow before we open","posted":true,"at":"2026-12-09T13:45","checkin":"2026-12-09T13:45"}
+{"who":"Roisín","text":"Ok","posted":true,"at":"2026-12-09T13:47","checkin":"2026-12-09T13:47"}
+{"who":"Niall","text":"Sorry was dead to the world. Pulled a tray of rye late and burnt my wrist on it. Just a blister 🙃","posted":true,"at":"2026-12-09T15:10","checkin":"2026-12-09T15:10"}
+{"who":"Roisín","text":"Ouch. Ice it","posted":true,"at":"2026-12-09T15:12","checkin":"2026-12-09T15:12"}
+{"who":"Mairéad","text":"Put a dressing on it from the first aid box, not a tea towel. And tell me if it's blistered past the size of a coin","posted":true,"at":"2026-12-09T15:12","checkin":"2026-12-09T15:12"}
+{"who":"Niall","text":"It's the size of a 10c 😅","posted":true,"at":"2026-12-09T15:14","checkin":"2026-12-09T15:14"}
+{"who":"Mairéad","text":"Fine. Keep it covered","posted":true,"at":"2026-12-09T15:14","checkin":"2026-12-09T15:14"}
+{"who":"Roisín","text":"Did the Doyles get sorted?","posted":true,"at":"2026-12-09T17:40","checkin":"2026-12-09T17:40"}
+{"who":"Mairéad","text":"Yes. They want the gf cake gone, they're doing it themselves","posted":true,"at":"2026-12-09T17:52","checkin":"2026-12-09T17:52"}
+{"who":"Roisín","text":"Ha ok","posted":true,"at":"2026-12-09T17:53","checkin":"2026-12-09T17:53"}
+{"who":"Niall","text":"My mum rang at lunch btw, she's getting the hip done in January and wants me to drive her to the appointment. Said I'd check the roster","posted":true,"at":"2026-12-09T19:08","checkin":"2026-12-09T19:08"}
+{"who":"Mairéad","text":"Tell her we'll sort the Saturday around it. Don't worry about the roster yet","posted":true,"at":"2026-12-09T19:30","checkin":"2026-12-09T19:30"}
+{"who":"Niall","text":"Thanks 🙏","posted":true,"at":"2026-12-09T19:31","checkin":"2026-12-09T19:31"}
+{"who":"","react":"❤️","to":22,"posted":false,"at":"2026-12-09T19:31"}
+{"who":"Roisín","text":"Does anyone know if the Tesco on Parnell is open Christmas Eve","posted":true,"at":"2026-12-09T21:40","checkin":"2026-12-09T21:40"}
+{"who":"Niall","text":"No idea, try the website","posted":true,"at":"2026-12-09T22:15","checkin":"2026-12-09T22:15"}
+{"who":"Mairéad","text":"Pre-order deposits, I'll go through them first thing. Roisín, bring the cash tin in with you","posted":true,"at":"2026-12-09T22:58","checkin":"2026-12-09T22:58"}
+{"who":"Roisín","text":"Ok","posted":true,"at":"2026-12-09T23:02","checkin":"2026-12-09T23:02"}
+{"who":"","react":"👍","to":26,"posted":false,"at":"2026-12-09T23:02"}
+{"who":"Niall","text":"Night","posted":true,"at":"2026-12-09T23:50","checkin":"2026-12-09T23:50"}
+{"who":"Niall","text":"In early. Freezer's defrosting itself into the bin starting on the stollen","posted":true,"at":"2026-12-10T07:48","checkin":"2026-12-10T07:48"}
+{"who":"Mairéad","text":"Roisín where are you","posted":true,"at":"2026-12-10T08:20","checkin":"2026-12-10T08:20"}
+{"who":"Roisín","text":"Bus stuck on Parnell St, the 16 never came. Walking from Mountjoy sq, 10 mins","posted":true,"at":"2026-12-10T08:22","checkin":"2026-12-10T08:22"}
+{"who":"Mairéad","text":"Ok. Niall can you do the front door, I'll do the till float","posted":true,"at":"2026-12-10T08:23","checkin":"2026-12-10T08:23"}
+{"who":"Niall","text":"On it","posted":true,"at":"2026-12-10T08:24","checkin":"2026-12-10T08:24"}
+{"who":"Roisín","text":"Here. Sorry","posted":true,"at":"2026-12-10T08:41","checkin":"2026-12-10T08:41"}
+{"who":"Mairéad","text":"Cabinet count when you're set, before the first customer if you can","posted":true,"at":"2026-12-10T08:41","checkin":"2026-12-10T08:41"}
+{"who":"Roisín","text":"Cabinet done. 3 short on the pecan danish, 1 lemon curd, everything else matches","posted":true,"at":"2026-12-10T09:15","checkin":"2026-12-10T09:15"}
+{"who":"Niall","text":"Danish came out at 7 and I counted 14 someone's been at them","posted":true,"at":"2026-12-10T09:16","checkin":"2026-12-10T09:16"}
+{"who":"Mairéad","text":"Put it down as waste, I'll note it","posted":true,"at":"2026-12-10T09:18","checkin":"2026-12-10T09:18"}
+{"who":"Mairéad","text":"Deposits are in the safe, I've put the Harrington one on top. Roisín you're doing the cash rec after lunch","posted":true,"at":"2026-12-10T11:30","checkin":"2026-12-10T11:30"}
+{"who":"Roisín","text":"Ok","posted":true,"at":"2026-12-10T11:31","checkin":"2026-12-10T11:31"}
+{"who":"Niall","text":"Rye's out, wrist's fine. Dressing's on","posted":true,"at":"2026-12-10T13:12","checkin":"2026-12-10T13:12"}
+{"who":"Mairéad","text":"Good","posted":true,"at":"2026-12-10T13:12","checkin":"2026-12-10T13:12"}
+{"who":"Roisín","text":"Sorry I'll be late tomorrow too, Dublin Bus again. Going to try the Luas instead","posted":true,"at":"2026-12-10T14:50","checkin":"2026-12-10T14:50"}
+{"who":"Roisín","text":"Cash is €20 over. Counted it three times. Could be me","posted":true,"at":"2026-12-10T16:05","checkin":"2026-12-10T16:05"}
+{"who":"Mairéad","text":"Could be a deposit put in the wrong tin. I'll check the sheet tomorrow. Don't stress about it","posted":true,"at":"2026-12-10T16:09","checkin":"2026-12-10T16:09"}
+{"who":"Roisín","text":"I'm not stressed","posted":true,"at":"2026-12-10T16:10","checkin":"2026-12-10T16:10"}
+{"who":"Niall","text":"She's stressed","posted":true,"at":"2026-12-10T16:11","checkin":"2026-12-10T16:11"}
+{"who":"Niall","text":"Mum's asked if the hip date is definite. Said I'd let her know after I'd checked with you","posted":true,"at":"2026-12-10T19:47","checkin":"2026-12-10T19:47"}
+{"who":"Mairéad","text":"Tell her Saturday's covered. I'll write the roster tomorrow. Not your job tonight","posted":true,"at":"2026-12-10T19:52","checkin":"2026-12-10T19:52"}
+{"who":"Roisín","text":"Anyone else's fares gone up or is it just me","posted":true,"at":"2026-12-10T21:20","checkin":"2026-12-10T21:20"}
+{"who":"Mairéad","text":"Roisín, the €20. Found it. Harrington paid cash Tuesday and it went in the tin, not the safe. It's in the book","posted":true,"at":"2026-12-10T23:38","checkin":"2026-12-10T23:38"}
+{"who":"Roisín","text":"Oh thank god","posted":true,"at":"2026-12-10T23:39","checkin":"2026-12-10T23:39"}
+{"who":"","react":"👍","to":51,"posted":false,"at":"2026-12-10T23:39"}
+{"who":"Roisín","text":"Sorry for the fuss","posted":true,"at":"2026-12-10T23:39","checkin":"2026-12-10T23:39"}
+{"who":"Mairéad","text":"No fuss. Go to bed","posted":true,"at":"2026-12-10T23:41","checkin":"2026-12-10T23:41"}
+{"who":"Niall","text":"Night","posted":true,"at":"2026-12-10T23:50","checkin":"2026-12-10T23:50"}
+{"who":"Niall","text":"Flour's on the step. 4 pallets, delivery guy wants a signature","posted":true,"at":"2026-12-11T07:55","checkin":"2026-12-11T07:55"}
+{"who":"Mairéad","text":"Roisín's on her way in, Niall can you sign and stack it in the back, not by the bins","posted":true,"at":"2026-12-11T07:58","checkin":"2026-12-11T07:58"}
+{"who":"Niall","text":"Stacked. Two sacks are split at the corner, I'll put them in the bin","posted":true,"at":"2026-12-11T08:01","checkin":"2026-12-11T08:01"}
+{"who":"Mairéad","text":"Photo them before you bin them","posted":true,"at":"2026-12-11T08:03","checkin":"2026-12-11T08:03"}
+{"who":"Niall","text":"[photo: two split sacks of flour]","posted":true,"at":"2026-12-11T08:03","checkin":"2026-12-11T08:03"}
+{"who":"Roisín","text":"Here. Luas was fine","posted":true,"at":"2026-12-11T08:09","checkin":"2026-12-11T08:09"}
+{"who":"Mairéad","text":"Good. Cabinet's yours again","posted":true,"at":"2026-12-11T08:10","checkin":"2026-12-11T08:10"}
+{"who":"Roisín","text":"Ok","posted":true,"at":"2026-12-11T08:11","checkin":"2026-12-11T08:11"}
+{"who":"Niall","text":"Letter from the hospital came to mum's. Hip's the 14th Jan, 7am. She's asked me to bring a flask","posted":true,"at":"2026-12-11T08:34","checkin":"2026-12-11T08:34"}
+{"who":"Mairéad","text":"Right. 14th is a Wednesday, I'll get cover for the 7 to 1 shift. You'll be back by 10?","posted":true,"at":"2026-12-11T08:36","checkin":"2026-12-11T08:36"}
+{"who":"Niall","text":"Should be. She says it'll be the whole morning","posted":true,"at":"2026-12-11T08:37","checkin":"2026-12-11T08:37"}
+{"who":"Mairéad","text":"Then it's the whole morning. Put it in the roster note, don't put it on the sheet yet","posted":true,"at":"2026-12-11T08:38","checkin":"2026-12-11T08:38"}
+{"who":"Roisín","text":"Harrington's collecting the 3 stollen at 2, they asked if they can pay on the card this time","posted":true,"at":"2026-12-11T11:20","checkin":"2026-12-11T11:20"}
+{"who":"Mairéad","text":"Card's fine. Tell them the machine's been playing up so they might have to try twice","posted":true,"at":"2026-12-11T11:22","checkin":"2026-12-11T11:22"}
+{"who":"Roisín","text":"Is it?","posted":true,"at":"2026-12-11T11:22","checkin":"2026-12-11T11:22"}
+{"who":"Mairéad","text":"It is now","posted":true,"at":"2026-12-11T11:24","checkin":"2026-12-11T11:24"}
+{"who":"Niall","text":"Freezer's finally empty. Found three trays of croissant dough from last January. Binned all of it","posted":true,"at":"2026-12-11T13:05","checkin":"2026-12-11T13:05"}
+{"who":"Niall","text":"Smell has not improved 🤢","posted":true,"at":"2026-12-11T13:06","checkin":"2026-12-11T13:06"}
+{"who":"Roisín","text":"Can someone else do the bread count with me after 4 I can't lift the sacks on my own","posted":true,"at":"2026-12-11T13:40","checkin":"2026-12-11T13:40"}
+{"who":"Niall","text":"I'll do it, I'm in till 6 anyway","posted":true,"at":"2026-12-11T13:44","checkin":"2026-12-11T13:44"}
+{"who":"Mairéad","text":"Roisín, Niall's got it. Take the bins out with him first","posted":true,"at":"2026-12-11T13:45","checkin":"2026-12-11T13:45"}
+{"who":"Niall","text":"Wrist's grand, been using the other hand all day and it's annoying","posted":true,"at":"2026-12-11T14:30","checkin":"2026-12-11T14:30"}
+{"who":"Mairéad","text":"Keep the dressing on and don't go near the oven door bare-handed","posted":true,"at":"2026-12-11T14:31","checkin":"2026-12-11T14:31"}
+{"who":"Niall","text":"Yes mam 🙃","posted":true,"at":"2026-12-11T14:31","checkin":"2026-12-11T14:31"}
+{"who":"Mairéad","text":"Roster for next week's up in the back office. Saturday 19th I've put Roisín on the early and Niall the late, shout if you need a swap","posted":true,"at":"2026-12-11T16:52","checkin":"2026-12-11T16:52"}
+{"who":"Roisín","text":"Can I swap the 19th for the 20th? Got a thing with my sister","posted":true,"at":"2026-12-11T16:55","checkin":"2026-12-11T16:55"}
+{"who":"Mairéad","text":"Fine, I'll move it. Niall, you good with the late on the 19th?","posted":true,"at":"2026-12-11T16:58","checkin":"2026-12-11T16:58"}
+{"who":"Niall","text":"Yep","posted":true,"at":"2026-12-11T17:03","checkin":"2026-12-11T17:03"}
+{"who":"Roisín","text":"Anyone going to the thing at the Stag's Head Sunday or is it just the Monday lot","posted":true,"at":"2026-12-11T18:40","checkin":"2026-12-11T18:40"}
+{"who":"Niall","text":"Monday lot. Not me, I'm on the early Sunday","posted":true,"at":"2026-12-11T19:12","checkin":"2026-12-11T19:12"}
+{"who":"Mairéad","text":"Go for one, Roisín. Don't drink the Christmas punch","posted":true,"at":"2026-12-11T19:15","checkin":"2026-12-11T19:15"}
+{"who":"Roisín","text":"Too late, I had it at lunch","posted":true,"at":"2026-12-11T19:16","checkin":"2026-12-11T19:16"}
+{"who":"Niall","text":"Sorry, was asleep on the couch. Count's done. 41 sourdough for the 23rd, rest of the sheet matches. Sent Mairéad the numbers","posted":true,"at":"2026-12-11T23:04","checkin":"2026-12-11T23:04"}
+{"who":"Mairéad","text":"Got them. Thanks. Go to bed","posted":true,"at":"2026-12-11T23:05","checkin":"2026-12-11T23:05"}
+{"who":"Niall","text":"Night","posted":true,"at":"2026-12-11T23:06","checkin":"2026-12-11T23:06"}
+{"who":"Niall","text":"Can't sleep. Wrist's throbbing. Maybe I'll go in early and get the rye on","posted":true,"at":"2026-12-12T00:21","checkin":"2026-12-12T00:21"}
+{"who":"Niall","text":"Not telling Mairéad that","posted":true,"at":"2026-12-12T00:22","checkin":"2026-12-12T00:22"}

@@ -1,0 +1,77 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-13T08:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1723,"cache_read_input_tokens":0,"output_tokens":1761,"output_tokens_details":{"thinking_tokens":1054},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1723,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1761,"cache_read_input_tokens":0,"cache_creation_input_tokens":1723,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1723},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2361,"cache_read_input_tokens":0,"output_tokens":2065,"output_tokens_details":{"thinking_tokens":1362},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2361,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2065,"cache_read_input_tokens":0,"cache_creation_input_tokens":2361,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2361},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3068,"cache_read_input_tokens":0,"output_tokens":2300,"output_tokens_details":{"thinking_tokens":1439},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3068,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2300,"cache_read_input_tokens":0,"cache_creation_input_tokens":3068,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3068},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Zanele","Thabo","Brandon","Sarah"],"setting":"You are all in Johannesburg, South Africa, and you know each other as friends from university. You use this group chat to plan weekend meet-ups, split the cost of takeaway orders, and check who is free for a braai or a movie.","openers":["Send a photo of the library's new reading list","Ask who can split a takeaway order on Friday","Remind everyone about the braai on Saturday","Share the link for the study session notes"],"opener":"Send a photo of the library's new reading list","cast":{"Zanele":{"who":"21, woman, a university friend","work":"sessional library assistant","knows":"You know Thabo, Brandon and Sarah as university friends.","texts":"Zanele texts in this chat a lot.","style":"moderate emoji, some abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Thabo":{"who":"22, man, a university friend","work":"restaurant dishwasher","knows":"You know Zanele, Brandon and Sarah as university friends.","texts":"Thabo texts in this chat only now and again.","style":"moderate emoji, some abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Brandon":{"who":"20, man, a university friend","work":"unpaid law firm intern","knows":"You know Zanele, Thabo and Sarah as university friends.","texts":"Brandon texts in this chat only now and again.","style":"little emoji, some abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Sarah":{"who":"23, woman, a university friend","work":"pharmacy intern","knows":"You know Zanele, Thabo and Brandon as university friends.","texts":"Sarah texts in this chat only now and again.","style":"moderate emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Zanele":"You live in Johannesburg, working as a sessional library assistant, and you live alone.","Thabo":"You live in Johannesburg, working as a dishwasher in a restaurant, and you live alone.","Brandon":"You live in Johannesburg, doing an unpaid internship at a law firm, and you live alone.","Sarah":"You live in Johannesburg, doing a pharmacy internship, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":786,"cache_read_input_tokens":0,"output_tokens":1604,"output_tokens_details":{"thinking_tokens":1069},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1604,"cache_read_input_tokens":0,"cache_creation_input_tokens":786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1097,"cache_read_input_tokens":0,"output_tokens":2309,"output_tokens_details":{"thinking_tokens":1737},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1097,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2309,"cache_read_input_tokens":0,"cache_creation_input_tokens":1097,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1097},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Johannesburg, South Africa","castMs":20434,"situation":"Friends from uni.","topic":null}
+{"who":"Zanele","text":"[photo: the library's new reading list]","posted":true,"at":"2026-12-13T08:50","checkin":"2026-12-13T08:50"}
+{"who":"Zanele","text":"They finally put the whole list up half of these are my old prescribed books","posted":true,"at":"2026-12-13T08:51","checkin":"2026-12-13T08:51"}
+{"who":"","react":"😂","to":1,"posted":false,"at":"2026-12-13T08:51"}
+{"who":"Sarah","text":"Is \"Sociology of Everyday Life\" still on there","posted":true,"at":"2026-12-13T09:14","checkin":"2026-12-13T09:14"}
+{"who":"Zanele","text":"Yes nobody has taken it out","posted":true,"at":"2026-12-13T09:15","checkin":"2026-12-13T09:15"}
+{"who":"Brandon","text":"I need the contract law one from the top shelf, is it still there","posted":true,"at":"2026-12-13T11:02","checkin":"2026-12-13T11:02"}
+{"who":"Zanele","text":"No idea, I'm at the desk till 1 check the second floor","posted":true,"at":"2026-12-13T11:20","checkin":"2026-12-13T11:20"}
+{"who":"Thabo","text":"just got off a double. kitchen flooded again","posted":true,"at":"2026-12-13T13:47","checkin":"2026-12-13T13:47"}
+{"who":"Thabo","text":"nearly slipped on a crate of tomatoes 😭","posted":true,"at":"2026-12-13T13:48","checkin":"2026-12-13T13:48"}
+{"who":"","react":"😬","to":7,"posted":false,"at":"2026-12-13T13:48"}
+{"who":"Sarah","text":"Ouch. Are you okay","posted":true,"at":"2026-12-13T13:50","checkin":"2026-12-13T13:50"}
+{"who":"Thabo","text":"yeah just my pride","posted":true,"at":"2026-12-13T13:52","checkin":"2026-12-13T13:52"}
+{"who":"Zanele","text":"Anyone want to do a braai at mine on saturday? Landlord says the gate is fixed so we can finally use the back","posted":true,"at":"2026-12-13T16:30","checkin":"2026-12-13T16:30"}
+{"who":"Sarah","text":"I'm in. What time","posted":true,"at":"2026-12-13T16:44","checkin":"2026-12-13T16:44"}
+{"who":"Zanele","text":"4ish? Bring your own meat lol","posted":true,"at":"2026-12-13T16:45","checkin":"2026-12-13T16:45"}
+{"who":"Brandon","text":"Can't saturday, I have a 3 hour thing at my firm in the morning and then I'm sleeping. Maybe later","posted":true,"at":"2026-12-13T17:20","checkin":"2026-12-13T17:20"}
+{"who":"Zanele","text":"You're going to sleep through a braai 😂 come for dessert","posted":true,"at":"2026-12-13T17:21","checkin":"2026-12-13T17:21"}
+{"who":"Thabo","text":"I can come. might be late, I'm on till 10 sat","posted":true,"at":"2026-12-13T19:05","checkin":"2026-12-13T19:05"}
+{"who":"Zanele","text":"Ok so 6ish then 👍","posted":true,"at":"2026-12-13T19:06","checkin":"2026-12-13T19:06"}
+{"who":"","react":"👍","to":16,"posted":false,"at":"2026-12-13T19:06"}
+{"who":"","react":"👍","to":16,"posted":false,"at":"2026-12-13T19:06"}
+{"who":"Sarah","text":"Is it cool if I bring my cousin? She's in town for the week and has nothing to do","posted":true,"at":"2026-12-13T21:38","checkin":"2026-12-13T21:38"}
+{"who":"Zanele","text":"Yes obviously. The more the merrier","posted":true,"at":"2026-12-13T21:41","checkin":"2026-12-13T21:41"}
+{"who":"Sarah","text":"She eats a lot of pap so bring extra","posted":true,"at":"2026-12-13T22:10","checkin":"2026-12-13T22:10"}
+{"who":"Thabo","text":"kitchen closed till wed","posted":true,"at":"2026-12-14T08:12","checkin":"2026-12-14T08:12"}
+{"who":"Sarah","text":"Sorry:( does that mean you still get paid","posted":true,"at":"2026-12-14T08:40","checkin":"2026-12-14T08:40"}
+{"who":"Thabo","text":"no. unpaid. they'll say it's a \"water damage\" thing","posted":true,"at":"2026-12-14T08:41","checkin":"2026-12-14T08:41"}
+{"who":"Zanele","text":"Second floor no contract law. Checked twice. Sorry","posted":true,"at":"2026-12-14T11:34","checkin":"2026-12-14T11:34"}
+{"who":"Brandon","text":"Ok thanks. Might just buy it","posted":true,"at":"2026-12-14T11:36","checkin":"2026-12-14T11:36"}
+{"who":"Brandon","text":"Partner just asked me to redo a memo because I put \"hereby\" in the wrong place 🙃","posted":true,"at":"2026-12-14T12:58","checkin":"2026-12-14T12:58"}
+{"who":"Zanele","text":"Is that bad","posted":true,"at":"2026-12-14T13:10","checkin":"2026-12-14T13:10"}
+{"who":"Brandon","text":"It's fine. Just me being me","posted":true,"at":"2026-12-14T13:14","checkin":"2026-12-14T13:14"}
+{"who":"Sarah","text":"Does anyone know if the gazebo is still at Sipho's or is it at Thabo's","posted":true,"at":"2026-12-14T15:22","checkin":"2026-12-14T15:22"}
+{"who":"Thabo","text":"dunno, ask zanele. I've got the 2 folding chairs tho","posted":true,"at":"2026-12-14T15:40","checkin":"2026-12-14T15:40"}
+{"who":"Zanele","text":"I think the gazebo is nobody's, it's been in my hallway since August","posted":true,"at":"2026-12-14T15:41","checkin":"2026-12-14T15:41"}
+{"who":"Zanele","text":"Ok I'll put it in the yard","posted":true,"at":"2026-12-14T15:42","checkin":"2026-12-14T15:42"}
+{"who":"Sarah","text":"Cousin asked if her friend can come too. Is that a no","posted":true,"at":"2026-12-14T15:58","checkin":"2026-12-14T15:58"}
+{"who":"Zanele","text":"Ok. How much pap are we talking","posted":true,"at":"2026-12-14T16:03","checkin":"2026-12-14T16:03"}
+{"who":"","react":"😂","to":33,"posted":false,"at":"2026-12-14T16:03"}
+{"who":"Sarah","text":"She said \"a normal amount\" which means a lot","posted":true,"at":"2026-12-14T16:20","checkin":"2026-12-14T16:20"}
+{"who":"Thabo","text":"just got home. feet are dead","posted":true,"at":"2026-12-14T21:47","checkin":"2026-12-14T21:47"}
+{"who":"Sarah","text":"Go to bed","posted":true,"at":"2026-12-14T21:48","checkin":"2026-12-14T21:48"}
+{"who":"Zanele","text":"Is anyone bringing ice or should I just get it","posted":true,"at":"2026-12-14T22:30","checkin":"2026-12-14T22:30"}
+{"who":"Sarah","text":"I'll get it on the way, what size","posted":true,"at":"2026-12-14T22:51","checkin":"2026-12-14T22:51"}
+{"who":"Zanele","text":"2 bags should be ok 👍","posted":true,"at":"2026-12-14T22:53","checkin":"2026-12-14T22:53"}
+{"who":"","react":"👍","to":39,"posted":false,"at":"2026-12-14T22:53"}
+{"who":"Brandon","text":"Still at the office. This firm is going to kill me","posted":true,"at":"2026-12-14T23:40","checkin":"2026-12-14T23:40"}
+{"who":"Brandon","text":"Sorry for being dramatic","posted":true,"at":"2026-12-14T23:41","checkin":"2026-12-14T23:41"}
+{"who":"Zanele","text":"[photo: the gazebo leaning against a bin in the yard]","posted":true,"at":"2026-12-15T08:31","checkin":"2026-12-15T08:31"}
+{"who":"Zanele","text":"It's bent. The top bit","posted":true,"at":"2026-12-15T08:32","checkin":"2026-12-15T08:32"}
+{"who":"Sarah","text":"Can you fix it or is that a Sipho problem","posted":true,"at":"2026-12-15T09:02","checkin":"2026-12-15T09:02"}
+{"who":"Zanele","text":"I'll try. Thabo you're still good for the chairs?","posted":true,"at":"2026-12-15T09:20","checkin":"2026-12-15T09:20"}
+{"who":"Thabo","text":"yeah bringing them sat. i'm off till wed so i can help set up if u want","posted":true,"at":"2026-12-15T09:44","checkin":"2026-12-15T09:44"}
+{"who":"Zanele","text":"Please. The gazebo needs two people","posted":true,"at":"2026-12-15T10:15","checkin":"2026-12-15T10:15"}
+{"who":"Brandon","text":"[photo: contract law book on a desk with a sticky note on the cover]","posted":true,"at":"2026-12-15T12:03","checkin":"2026-12-15T12:03"}
+{"who":"Brandon","text":"Got it. R180 from some guy in Braamfontein. Cover's coming off","posted":true,"at":"2026-12-15T12:03","checkin":"2026-12-15T12:03"}
+{"who":"Brandon","text":"Don't tell the library","posted":true,"at":"2026-12-15T12:04","checkin":"2026-12-15T12:04"}
+{"who":"Zanele","text":"Ha. Not telling anyone","posted":true,"at":"2026-12-15T12:20","checkin":"2026-12-15T12:20"}
+{"who":"","react":"😂","to":51,"posted":false,"at":"2026-12-15T12:20"}
+{"who":"Sarah","text":"Ok I'll get ice on the way home. Do we need charcoal too or is that sorted","posted":true,"at":"2026-12-15T13:30","checkin":"2026-12-15T13:30"}
+{"who":"Zanele","text":"Not sorted. Can someone else get it? I'm on the desk till 5 then the bank","posted":true,"at":"2026-12-15T13:52","checkin":"2026-12-15T13:52"}
+{"who":"Thabo","text":"i can get charcoal, i pass the shop on tues","posted":true,"at":"2026-12-15T14:10","checkin":"2026-12-15T14:10"}
+{"who":"Thabo","text":"good stuff or cheap stuff","posted":true,"at":"2026-12-15T14:11","checkin":"2026-12-15T14:11"}
+{"who":"Zanele","text":"Cheap is fine 👍","posted":true,"at":"2026-12-15T14:30","checkin":"2026-12-15T14:30"}
+{"who":"","react":"👍","to":56,"posted":false,"at":"2026-12-15T14:30"}
+{"who":"Sarah","text":"Cousin wants to know if her friend is vegetarian. I said I'd ask","posted":true,"at":"2026-12-15T16:40","checkin":"2026-12-15T16:40"}
+{"who":"Zanele","text":"Ugh. Ok. Is there a salad. Ask her","posted":true,"at":"2026-12-15T16:58","checkin":"2026-12-15T16:58"}
+{"who":"Sarah","text":"She says \"I eat chicken but not in front of people\"","posted":true,"at":"2026-12-15T17:02","checkin":"2026-12-15T17:02"}
+{"who":"Sarah","text":"I don't know what that means","posted":true,"at":"2026-12-15T17:03","checkin":"2026-12-15T17:03"}
+{"who":"Zanele","text":"Veggie then. Potato salad, there's always a potato salad","posted":true,"at":"2026-12-15T17:20","checkin":"2026-12-15T17:20"}
+{"who":"Thabo","text":"home. charcoal's by the front door so don't let me forget it sat","posted":true,"at":"2026-12-15T21:50","checkin":"2026-12-15T21:50"}
+{"who":"Zanele","text":"Landlord said the gate lock works now but I haven't tried it","posted":true,"at":"2026-12-15T22:14","checkin":"2026-12-15T22:14"}
+{"who":"Zanele","text":"I'll check tomorrow, it's late","posted":true,"at":"2026-12-15T22:15","checkin":"2026-12-15T22:15"}
+{"who":"Brandon","text":"Still at the office. Partner sent me a 4 page email at 11pm","posted":true,"at":"2026-12-15T23:40","checkin":"2026-12-15T23:40"}
+{"who":"Brandon","text":"Not even a question, just \"thoughts?\"","posted":true,"at":"2026-12-15T23:41","checkin":"2026-12-15T23:41"}

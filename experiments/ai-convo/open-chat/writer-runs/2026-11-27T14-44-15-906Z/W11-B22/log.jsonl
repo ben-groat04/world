@@ -1,0 +1,86 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-09T10:10","complete":true,"rejects":0,"today":["Priya",null,"Omar"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2154,"cache_read_input_tokens":0,"output_tokens":2360,"output_tokens_details":{"thinking_tokens":1527},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2154,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2360,"cache_read_input_tokens":0,"cache_creation_input_tokens":2154,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2154},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2929,"cache_read_input_tokens":0,"output_tokens":2687,"output_tokens_details":{"thinking_tokens":1338},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2929,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2687,"cache_read_input_tokens":0,"cache_creation_input_tokens":2929,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2929},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":2929,"output_tokens":3804,"output_tokens_details":{"thinking_tokens":2809},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3804,"cache_read_input_tokens":2929,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3921,"cache_read_input_tokens":0,"output_tokens":2634,"output_tokens_details":{"thinking_tokens":1927},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3921,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2634,"cache_read_input_tokens":0,"cache_creation_input_tokens":3921,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3921},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Priya","Omar","Grace","Arjun"],"setting":"You are all in Toronto, Canada, close friends who are planning a weekend camping trip together, working out dates, gear, and who is driving.","openers":["Send a poll for trip dates","Ask who has a tent","Share a list of campsites near the city","Suggest splitting the gas money"],"opener":"Share a list of campsites near the city","cast":{"Priya":{"who":"29, woman, friend","work":"paralegal","knows":"You know Omar, Grace and Arjun as close friends from years together.","texts":"Priya texts in this chat a lot.","style":"a little emoji and common texting shorthand.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Omar":{"who":"31, man, friend","work":"architect","knows":"You know Priya, Grace and Arjun as close friends from years together.","texts":"Omar texts in this chat only now and again.","style":"a little emoji and common texting shorthand.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Grace":{"who":"27, woman, friend","work":"research assistant","knows":"You know Priya, Omar and Arjun as close friends from years together.","texts":"Grace texts in this chat only now and again.","style":"a little emoji and common texting shorthand.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Arjun":{"who":"33, man, friend","work":"accountant","knows":"You know Priya, Omar and Grace as close friends from years together.","texts":"Arjun texts in this chat now and then.","style":"a little emoji and common texting shorthand.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Priya":"You live in Toronto, spending your days on paralegal work and this camping plan, and you live alone.","Omar":"You live in Toronto, spending your days on architecture work and this camping plan, and you live alone.","Grace":"You live in Toronto, spending your days on research assistant work and this camping plan, and you live alone.","Arjun":"You live in Toronto, spending your days on accounting work and this camping plan, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":786,"cache_read_input_tokens":0,"output_tokens":1221,"output_tokens_details":{"thinking_tokens":823},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1221,"cache_read_input_tokens":0,"cache_creation_input_tokens":786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1079,"cache_read_input_tokens":0,"output_tokens":1628,"output_tokens_details":{"thinking_tokens":1097},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1079,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1628,"cache_read_input_tokens":0,"cache_creation_input_tokens":1079,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1079},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Toronto, Canada","castMs":14817,"situation":"Friends planning a camping trip.","topic":null}
+{"who":"Priya","text":"Made a list of campsites within 2 hrs of the city","posted":true,"at":"2026-12-09T10:10","checkin":"2026-12-09T10:10"}
+{"who":"Priya","text":"[photo: handwritten-style list of 6 campsites with distances]","posted":true,"at":"2026-12-09T10:11","checkin":"2026-12-09T10:11"}
+{"who":"Omar","text":"Nice. Are any of them open in dec lol","posted":true,"at":"2026-12-09T10:14","checkin":"2026-12-09T10:14"}
+{"who":"Priya","text":"Idk, most close after october. The ones still open are the heated cabin/yurt places","posted":true,"at":"2026-12-09T10:21","checkin":"2026-12-09T10:21"}
+{"who":"Priya","text":"So not really camping camping","posted":true,"at":"2026-12-09T10:21","checkin":"2026-12-09T10:21"}
+{"who":"Arjun","text":"Lol so we're glamping","posted":true,"at":"2026-12-09T10:40","checkin":"2026-12-09T10:40"}
+{"who":"Grace","text":"Is it still camping if there's no fire. Asking for a friend","posted":true,"at":"2026-12-09T10:41","checkin":"2026-12-09T10:41"}
+{"who":"Arjun","text":"There's a fire pit at the one by the lake","posted":true,"at":"2026-12-09T11:02","checkin":"2026-12-09T11:02"}
+{"who":"Priya","text":"Cedar hollow has a wood stove too. I checked","posted":true,"at":"2026-12-09T11:05","checkin":"2026-12-09T11:05"}
+{"who":"Omar","text":"What's the drive for cedar hollow","posted":true,"at":"2026-12-09T11:30","checkin":"2026-12-09T11:30"}
+{"who":"Priya","text":"1h45 from downtown","posted":true,"at":"2026-12-09T11:32","checkin":"2026-12-09T11:32"}
+{"who":"Priya","text":"Arjun you have the car right","posted":true,"at":"2026-12-09T11:32","checkin":"2026-12-09T11:32"}
+{"who":"Arjun","text":"I can do sat the 19th. My car's good but I'm not doing 4 people in the civic","posted":true,"at":"2026-12-09T11:40","checkin":"2026-12-09T11:40"}
+{"who":"Arjun","text":"3 max","posted":true,"at":"2026-12-09T11:41","checkin":"2026-12-09T11:41"}
+{"who":"Grace","text":"Sat morning works for me. I've got work til 1 on sundays","posted":true,"at":"2026-12-09T12:15","checkin":"2026-12-09T12:15"}
+{"who":"Omar","text":"Sat the 19th works. I'm off all weekend","posted":true,"at":"2026-12-09T13:02","checkin":"2026-12-09T13:02"}
+{"who":"Priya","text":"Ok so I'll book cedar hollow when reservations open tmrw","posted":true,"at":"2026-12-09T13:05","checkin":"2026-12-09T13:05"}
+{"who":"Priya","text":"Sorry gonna be distracted for a bit. Sent a client the wrong draft of a lease amendment this afternoon and have to get the right one out before 5","posted":true,"at":"2026-12-09T16:48","checkin":"2026-12-09T16:48"}
+{"who":"Omar","text":"Oof. You'll fix it","posted":true,"at":"2026-12-09T16:49","checkin":"2026-12-09T16:49"}
+{"who":"Priya","text":"Yeah it's fine just annoying. They already replied with a thumbs up lol","posted":true,"at":"2026-12-09T16:52","checkin":"2026-12-09T16:52"}
+{"who":"Arjun","text":"How far is the lake site from the parking","posted":true,"at":"2026-12-09T17:20","checkin":"2026-12-09T17:20"}
+{"who":"Grace","text":"Can someone check if they take reservations or if it's first come","posted":true,"at":"2026-12-09T20:14","checkin":"2026-12-09T20:14"}
+{"who":"Priya","text":"Reservations, it says they open at 9am tmrw","posted":true,"at":"2026-12-09T20:30","checkin":"2026-12-09T20:30"}
+{"who":"Omar","text":"[link: cedar hollow site map]","posted":true,"at":"2026-12-09T22:50","checkin":"2026-12-09T22:50"}
+{"who":"Arjun","text":"Looks decent. Are the tent pads flat or is it all roots","posted":true,"at":"2026-12-09T23:58","checkin":"2026-12-09T23:58"}
+{"who":"Priya","text":"No idea. Night all 🌙","posted":true,"at":"2026-12-10T00:40","checkin":"2026-12-10T00:40"}
+{"who":"Priya","text":"Reservations are up","posted":true,"at":"2026-12-10T09:01","checkin":"2026-12-10T09:01"}
+{"who":"Priya","text":"Cedar hollow has 2 sites left with the wood stove. Booking now","posted":true,"at":"2026-12-10T09:03","checkin":"2026-12-10T09:03"}
+{"who":"Priya","text":"Got site 7. Its the one by the trail","posted":true,"at":"2026-12-10T09:06","checkin":"2026-12-10T09:06"}
+{"who":"Omar","text":"Nice","posted":true,"at":"2026-12-10T09:06","checkin":"2026-12-10T09:06"}
+{"who":"Arjun","text":"Is 7 the one with the flat pad or the roots","posted":true,"at":"2026-12-10T09:08","checkin":"2026-12-10T09:08"}
+{"who":"Priya","text":"No idea. Its on the map tho","posted":true,"at":"2026-12-10T09:09","checkin":"2026-12-10T09:09"}
+{"who":"Priya","text":"Paid. I'll send everyone the split later","posted":true,"at":"2026-12-10T09:12","checkin":"2026-12-10T09:12"}
+{"who":"Grace","text":"Ok good","posted":true,"at":"2026-12-10T09:12","checkin":"2026-12-10T09:12"}
+{"who":"Omar","text":"Reviews say most pads are roots. 7 and 9 are flatter","posted":true,"at":"2026-12-10T10:30","checkin":"2026-12-10T10:30"}
+{"who":"Arjun","text":"Ok 7 then","posted":true,"at":"2026-12-10T10:31","checkin":"2026-12-10T10:31"}
+{"who":"Arjun","text":"Im taking 3 max in the civic. Someone else needs to take the 4th","posted":true,"at":"2026-12-10T11:15","checkin":"2026-12-10T11:15"}
+{"who":"Priya","text":"Can't you do 4 for like 2 hrs","posted":true,"at":"2026-12-10T11:16","checkin":"2026-12-10T11:16"}
+{"who":"Arjun","text":"No","posted":true,"at":"2026-12-10T11:18","checkin":"2026-12-10T11:18"}
+{"who":"Omar","text":"I'll take mine","posted":true,"at":"2026-12-10T11:19","checkin":"2026-12-10T11:19"}
+{"who":"Omar","text":"Grace you need a ride?","posted":true,"at":"2026-12-10T11:19","checkin":"2026-12-10T11:19"}
+{"who":"Grace","text":"Im good I have my own car. I'll follow you guys","posted":true,"at":"2026-12-10T11:44","checkin":"2026-12-10T11:44"}
+{"who":"Priya","text":"Client got the right draft. They said thanks lol. Im off the lease stuff now","posted":true,"at":"2026-12-10T13:02","checkin":"2026-12-10T13:02"}
+{"who":"Priya","text":"Does cedar hollow sell firewood or do we bring","posted":true,"at":"2026-12-10T13:03","checkin":"2026-12-10T13:03"}
+{"who":"Omar","text":"They sell it at the office I think","posted":true,"at":"2026-12-10T13:08","checkin":"2026-12-10T13:08"}
+{"who":"Priya","text":"Bring ours anyway. Its cheaper","posted":true,"at":"2026-12-10T13:09","checkin":"2026-12-10T13:09"}
+{"who":"Grace","text":"Should I bring the cooler or is there ice there","posted":true,"at":"2026-12-10T13:20","checkin":"2026-12-10T13:20"}
+{"who":"Arjun","text":"Bring the cooler. No ice at the office","posted":true,"at":"2026-12-10T13:24","checkin":"2026-12-10T13:24"}
+{"who":"Priya","text":"I'll grab the tarps. Who has the tarps","posted":true,"at":"2026-12-10T13:25","checkin":"2026-12-10T13:25"}
+{"who":"Omar","text":"I have 2 tarps","posted":true,"at":"2026-12-10T17:50","checkin":"2026-12-10T17:50"}
+{"who":"Grace","text":"Ok cool. I'll do saturday dinner I guess","posted":true,"at":"2026-12-10T18:30","checkin":"2026-12-10T18:30"}
+{"who":"Priya","text":"U dont have to do dinner. We can split it","posted":true,"at":"2026-12-10T18:31","checkin":"2026-12-10T18:31"}
+{"who":"Grace","text":"I want to","posted":true,"at":"2026-12-10T18:31","checkin":"2026-12-10T18:31"}
+{"who":"Arjun","text":"Anyone bringing a real pan or are we doing the disposable tray thing","posted":true,"at":"2026-12-10T21:14","checkin":"2026-12-10T21:14"}
+{"who":"Omar","text":"Cast iron. I'll bring it","posted":true,"at":"2026-12-10T21:20","checkin":"2026-12-10T21:20"}
+{"who":"Priya","text":"Obviously omar has the pan","posted":true,"at":"2026-12-10T21:20","checkin":"2026-12-10T21:20"}
+{"who":"","react":"👍","to":55,"posted":false,"at":"2026-12-10T21:20"}
+{"who":"Grace","text":"Anyone know if cell service is ok up there","posted":true,"at":"2026-12-10T23:48","checkin":"2026-12-10T23:48"}
+{"who":"Arjun","text":"Bell is bad up there. Rogers was fine last time I checked","posted":true,"at":"2026-12-11T00:05","checkin":"2026-12-11T00:05"}
+{"who":"Priya","text":"Lol you checked last year?","posted":true,"at":"2026-12-11T00:07","checkin":"2026-12-11T00:07"}
+{"who":"Arjun","text":"I was there last year. Dont start","posted":true,"at":"2026-12-11T00:09","checkin":"2026-12-11T00:09"}
+{"who":"Priya","text":"Morning. Who's bringing the lantern","posted":true,"at":"2026-12-11T08:40","checkin":"2026-12-11T08:40"}
+{"who":"Grace","text":"I have one. Battery one","posted":true,"at":"2026-12-11T08:52","checkin":"2026-12-11T08:52"}
+{"who":"Omar","text":"Sorry, been on site since 7. Contractor's behind and the inspector wants a revised beam detail before he signs off. Fun","posted":true,"at":"2026-12-11T12:14","checkin":"2026-12-11T12:14"}
+{"who":"Priya","text":"Ugh. Can you do it from your phone","posted":true,"at":"2026-12-11T12:16","checkin":"2026-12-11T12:16"}
+{"who":"Omar","text":"Laptop's in the trunk, in the rain. Not dead yet 🙃","posted":true,"at":"2026-12-11T12:17","checkin":"2026-12-11T12:17"}
+{"who":"Arjun","text":"Tent situation. Priya do we have 2 tents or 1","posted":true,"at":"2026-12-11T13:40","checkin":"2026-12-11T13:40"}
+{"who":"Priya","text":"2. The big one and the orange one","posted":true,"at":"2026-12-11T13:52","checkin":"2026-12-11T13:52"}
+{"who":"Arjun","text":"I'll take the orange one","posted":true,"at":"2026-12-11T13:53","checkin":"2026-12-11T13:53"}
+{"who":"Grace","text":"Is anyone else's back gonna be sore after setting up tents or is it just me 😅","posted":true,"at":"2026-12-11T15:10","checkin":"2026-12-11T15:10"}
+{"who":"Priya","text":"Just you. Ur 27","posted":true,"at":"2026-12-11T15:44","checkin":"2026-12-11T15:44"}
+{"who":"Omar","text":"Done. Inspector signed. Going home to sit down","posted":true,"at":"2026-12-11T17:30","checkin":"2026-12-11T17:30"}
+{"who":"Priya","text":"Congrats on not falling off a scaffold","posted":true,"at":"2026-12-11T17:31","checkin":"2026-12-11T17:31"}
+{"who":"Arjun","text":"Can you get firewood at the gas station on the way or only at the site","posted":true,"at":"2026-12-11T19:02","checkin":"2026-12-11T19:02"}
+{"who":"Priya","text":"Omar said site","posted":true,"at":"2026-12-11T19:20","checkin":"2026-12-11T19:20"}
+{"who":"Grace","text":"[photo: grocery list on a napkin]","posted":true,"at":"2026-12-11T21:47","checkin":"2026-12-11T21:47"}
+{"who":"Grace","text":"Priya you said you'd do breakfast","posted":true,"at":"2026-12-11T21:47","checkin":"2026-12-11T21:47"}
+{"who":"Priya","text":"I said I'd think about it","posted":true,"at":"2026-12-11T21:49","checkin":"2026-12-11T21:49"}
+{"who":"Omar","text":"[photo: cast iron pan on the counter, small dent near the handle]","posted":true,"at":"2026-12-11T22:30","checkin":"2026-12-11T22:30"}
+{"who":"Omar","text":"Dropped it at my mom's. It's fine. Re-seasoning tonight, don't ask","posted":true,"at":"2026-12-11T22:31","checkin":"2026-12-11T22:31"}
+{"who":"Arjun","text":"So the pan is alive","posted":true,"at":"2026-12-11T22:33","checkin":"2026-12-11T22:33"}
+{"who":"Omar","text":"Barely 😂","posted":true,"at":"2026-12-11T22:35","checkin":"2026-12-11T22:35"}
+{"who":"Priya","text":"Going to bed. Omar don't burn the kitchen down","posted":true,"at":"2026-12-11T23:12","checkin":"2026-12-11T23:12"}
+{"who":"Omar","text":"No promises","posted":true,"at":"2026-12-12T00:14","checkin":"2026-12-12T00:14"}

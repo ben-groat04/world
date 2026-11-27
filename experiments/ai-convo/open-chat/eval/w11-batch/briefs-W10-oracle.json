@@ -1,0 +1,44 @@
+[
+ {
+  "label": "W10-V11",
+  "people": 3,
+  "brief": "Friends deciding what to do on Sunday.",
+  "topic": "What time does the Science Museum in London close, and is entry free?",
+  "start": "2026-12-10T22:15"
+ },
+ {
+  "label": "W10-V12",
+  "people": 3,
+  "brief": "Friends deciding what to do on Sunday.",
+  "topic": "What time does the Science Museum in London close, and is entry free?",
+  "start": "2026-12-10T21:15"
+ },
+ {
+  "label": "W10-V13",
+  "people": 3,
+  "brief": "Friends deciding what to do on Sunday.",
+  "topic": "What time does the Science Museum in London close, and is entry free?",
+  "start": "2026-12-12T09:40"
+ },
+ {
+  "label": "W10-V21",
+  "people": 3,
+  "brief": "A family sorting out a flight.",
+  "topic": "How long is the flight from Dublin to Edinburgh?",
+  "start": "2026-12-09T18:30"
+ },
+ {
+  "label": "W10-V22",
+  "people": 3,
+  "brief": "A family sorting out a flight.",
+  "topic": "How long is the flight from Dublin to Edinburgh?",
+  "start": "2026-12-10T11:55"
+ },
+ {
+  "label": "W10-V23",
+  "people": 3,
+  "brief": "A family sorting out a flight.",
+  "topic": "How long is the flight from Dublin to Edinburgh?",
+  "start": "2026-12-12T15:30"
+ }
+]

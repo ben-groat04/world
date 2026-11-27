@@ -1,0 +1,88 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-10T21:35","complete":true,"rejects":0,"today":[null,"Kira","Rowan"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2238,"cache_read_input_tokens":0,"output_tokens":1294,"output_tokens_details":{"thinking_tokens":1033},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2238,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1294,"cache_read_input_tokens":0,"cache_creation_input_tokens":2238,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2238},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2461,"cache_read_input_tokens":0,"output_tokens":1771,"output_tokens_details":{"thinking_tokens":1098},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2461,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1771,"cache_read_input_tokens":0,"cache_creation_input_tokens":2461,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2461},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3144,"cache_read_input_tokens":0,"output_tokens":3292,"output_tokens_details":{"thinking_tokens":1713},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3144,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3292,"cache_read_input_tokens":0,"cache_creation_input_tokens":3144,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3144},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Hannah","Tariq","Rowan","Kira"],"setting":"You are all in Houston, Texas, and you know each other as close friends from years of hanging out around town. You're planning a camping trip together for this weekend, and the group chat is where you're sorting out the gear list, who's driving, and which campsite to book.","openers":["Send a campsite booking link","Share a packing checklist","Ask who's driving Saturday","Post a photo of the trail map"],"opener":"Ask who's driving Saturday","cast":{"Hannah":{"who":"29, woman, a friend","work":"nurse","knows":"You are close friends with Tariq, Rowan, and Kira. You've known them for years and they're part of your regular circle.","texts":"Hannah texts in this chat a lot.","style":"Uses a little emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Tariq":{"who":"31, man, a friend","work":"electrician","knows":"You are close friends with Hannah, Rowan, and Kira. You've known them for years and they're part of your regular circle.","texts":"Tariq texts in this chat only now and again.","style":"Uses no emoji and few texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Rowan":{"who":"28, nonbinary, a friend","work":"librarian","knows":"You are close friends with Hannah, Tariq, and Kira. You've known them for years and they're part of your regular circle.","texts":"Rowan texts in this chat only now and again.","style":"Uses a little emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Kira":{"who":"30, woman, a friend","work":"park ranger","knows":"You are close friends with Hannah, Tariq, and Rowan. You've known them for years and they're part of your regular circle.","texts":"Kira texts in this chat only now and again.","style":"Uses a little emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Hannah":"You live in Houston, work shifts as a nurse, and live alone.","Tariq":"You live in Houston, work as an electrician, and live alone.","Rowan":"You live in Houston, work as a librarian, and live alone.","Kira":"You live in Houston, work as a park ranger, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":784,"cache_read_input_tokens":0,"output_tokens":774,"output_tokens_details":{"thinking_tokens":368},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":784,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":774,"cache_read_input_tokens":0,"cache_creation_input_tokens":784,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":784},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1089,"cache_read_input_tokens":0,"output_tokens":613,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1089,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":613,"cache_read_input_tokens":0,"cache_creation_input_tokens":1089,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1089},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Houston, USA","castMs":8597,"situation":"Friends planning a camping trip.","topic":null}
+{"who":"Hannah","text":"Who's driving sat? I can take my car but I work til 7 fri so I'd be leaving late","posted":true,"at":"2026-12-10T21:35","checkin":"2026-12-10T21:35"}
+{"who":"Kira","text":"I can drive. Need to be at the station til noon sat tho","posted":true,"at":"2026-12-10T21:41","checkin":"2026-12-10T21:41"}
+{"who":"Tariq","text":"I can do it. Truck fits everybody's stuff","posted":true,"at":"2026-12-10T21:52","checkin":"2026-12-10T21:52"}
+{"who":"Hannah","text":"Perfect","posted":true,"at":"2026-12-10T21:53","checkin":"2026-12-10T21:53"}
+{"who":"Rowan","text":"Wait is the truck the one w the bad tailgate","posted":true,"at":"2026-12-10T23:10","checkin":"2026-12-10T23:10"}
+{"who":"Tariq","text":"It's fine. Just don't lean on it","posted":true,"at":"2026-12-10T23:14","checkin":"2026-12-10T23:14"}
+{"who":"Rowan","text":"Lol ok","posted":true,"at":"2026-12-10T23:15","checkin":"2026-12-10T23:15"}
+{"who":"Hannah","text":"Did anyone book the site yet. The one by the creek? Lmk before I book cuz they go fast","posted":true,"at":"2026-12-11T00:20","checkin":"2026-12-11T00:20"}
+{"who":"Kira","text":"Dont book the creek one yet","posted":true,"at":"2026-12-11T09:12","checkin":"2026-12-11T09:12"}
+{"who":"Kira","text":"Its closed. Got the notice this morning. Tree came down over the loop road and they're keeping it shut til monday","posted":true,"at":"2026-12-11T09:14","checkin":"2026-12-11T09:14"}
+{"who":"Hannah","text":"Wait really?? I was literally about to","posted":true,"at":"2026-12-11T09:14","checkin":"2026-12-11T09:14"}
+{"who":"Kira","text":"Yeah. Upper loop by the restrooms is open though. No creek tho","posted":true,"at":"2026-12-11T09:15","checkin":"2026-12-11T09:15"}
+{"who":"Hannah","text":"Ugh ok","posted":true,"at":"2026-12-11T09:31","checkin":"2026-12-11T09:31"}
+{"who":"Rowan","text":"Upper loop is fine? I've slept there before","posted":true,"at":"2026-12-11T11:02","checkin":"2026-12-11T11:02"}
+{"who":"Tariq","text":"Upper's dry camp isn't it. Need water","posted":true,"at":"2026-12-11T11:20","checkin":"2026-12-11T11:20"}
+{"who":"Kira","text":"Restrooms and a spigot. You'll be fine","posted":true,"at":"2026-12-11T11:22","checkin":"2026-12-11T11:22"}
+{"who":"Kira","text":"Sorry that was a long morning. Guy wandered off trail last night and we spent like 3 hrs finding him. He's ok","posted":true,"at":"2026-12-11T11:24","checkin":"2026-12-11T11:24"}
+{"who":"Hannah","text":"Omg is he ok","posted":true,"at":"2026-12-11T11:31","checkin":"2026-12-11T11:31"}
+{"who":"Kira","text":"Hes fine. Just embarrassed","posted":true,"at":"2026-12-11T11:33","checkin":"2026-12-11T11:33"}
+{"who":"Hannah","text":"Lol. Ok im booking upper loop then, site 14 looks good","posted":true,"at":"2026-12-11T11:35","checkin":"2026-12-11T11:35"}
+{"who":"","react":"👍","to":19,"posted":false,"at":"2026-12-11T11:35"}
+{"who":"","react":"👍","to":19,"posted":false,"at":"2026-12-11T11:35"}
+{"who":"Rowan","text":"Booked?","posted":true,"at":"2026-12-11T14:50","checkin":"2026-12-11T14:50"}
+{"who":"Hannah","text":"Yes. Confirmation in your email","posted":true,"at":"2026-12-11T14:58","checkin":"2026-12-11T14:58"}
+{"who":"Rowan","text":"👍","posted":true,"at":"2026-12-11T15:02","checkin":"2026-12-11T15:02"}
+{"who":"Tariq","text":"What time we leaving sat","posted":true,"at":"2026-12-11T19:40","checkin":"2026-12-11T19:40"}
+{"who":"Hannah","text":"Im off at 7 but I'll be wiped. Can I just get a ride from you","posted":true,"at":"2026-12-11T19:52","checkin":"2026-12-11T19:52"}
+{"who":"Tariq","text":"Yeah I'll swing by. 8?","posted":true,"at":"2026-12-11T19:54","checkin":"2026-12-11T19:54"}
+{"who":"Hannah","text":"8 works","posted":true,"at":"2026-12-11T19:55","checkin":"2026-12-11T19:55"}
+{"who":"Kira","text":"Home. Dont wanna talk about today","posted":true,"at":"2026-12-11T22:10","checkin":"2026-12-11T22:10"}
+{"who":"Hannah","text":"Understood","posted":true,"at":"2026-12-11T22:11","checkin":"2026-12-11T22:11"}
+{"who":"Rowan","text":"Packing list in the notes app if anyone wants to add stuff","posted":true,"at":"2026-12-11T23:48","checkin":"2026-12-11T23:48"}
+{"who":"Hannah","text":"Up. Coffee in hand tariq still coming at 8?","posted":true,"at":"2026-12-12T07:48","checkin":"2026-12-12T07:48"}
+{"who":"Tariq","text":"Leaving now","posted":true,"at":"2026-12-12T07:55","checkin":"2026-12-12T07:55"}
+{"who":"Tariq","text":"Outside","posted":true,"at":"2026-12-12T08:04","checkin":"2026-12-12T08:04"}
+{"who":"Hannah","text":"Omw","posted":true,"at":"2026-12-12T08:05","checkin":"2026-12-12T08:05"}
+{"who":"Rowan","text":"Can you swing by Alabama on your way? Rowan's car is in the shop and I'll be on the corner by the laundromat","posted":true,"at":"2026-12-12T08:31","checkin":"2026-12-12T08:31"}
+{"who":"Tariq","text":"Yeah","posted":true,"at":"2026-12-12T08:33","checkin":"2026-12-12T08:33"}
+{"who":"Rowan","text":"Thanks","posted":true,"at":"2026-12-12T08:33","checkin":"2026-12-12T08:33"}
+{"who":"Hannah","text":"Should I be worried the bed of the truck smells like a bait shop","posted":true,"at":"2026-12-12T08:40","checkin":"2026-12-12T08:40"}
+{"who":"Tariq","text":"That's the cooler","posted":true,"at":"2026-12-12T08:41","checkin":"2026-12-12T08:41"}
+{"who":"Hannah","text":"🙃","posted":true,"at":"2026-12-12T08:41","checkin":"2026-12-12T08:41"}
+{"who":"Rowan","text":"Sorry, I was on the phone with facilities till 2 last night. Basement flooded in the stacks. Pulled soaked boxes out until my back gave up","posted":true,"at":"2026-12-12T09:17","checkin":"2026-12-12T09:17"}
+{"who":"Tariq","text":"Damn. You ok?","posted":true,"at":"2026-12-12T09:18","checkin":"2026-12-12T09:18"}
+{"who":"Rowan","text":"Books are fine. Carpet isn't. I'm going to sleep in the truck bed if I have to","posted":true,"at":"2026-12-12T09:22","checkin":"2026-12-12T09:22"}
+{"who":"Hannah","text":"Rowan you're going to sleep in the truck bed anyway lol","posted":true,"at":"2026-12-12T09:24","checkin":"2026-12-12T09:24"}
+{"who":"Rowan","text":"🫠","posted":true,"at":"2026-12-12T09:25","checkin":"2026-12-12T09:25"}
+{"who":"Kira","text":"At the station til 12:30. Then I'm driving up. Dont wait on me for lunch","posted":true,"at":"2026-12-12T11:48","checkin":"2026-12-12T11:48"}
+{"who":"Tariq","text":"We stopped for gas in Huntsville. Hannah wants jerky","posted":true,"at":"2026-12-12T11:49","checkin":"2026-12-12T11:49"}
+{"who":"Hannah","text":"I want the good jerky not the gas station kind","posted":true,"at":"2026-12-12T11:51","checkin":"2026-12-12T11:51"}
+{"who":"Tariq","text":"They have the good kind","posted":true,"at":"2026-12-12T11:52","checkin":"2026-12-12T11:52"}
+{"who":"Hannah","text":"They do not","posted":true,"at":"2026-12-12T11:52","checkin":"2026-12-12T11:52"}
+{"who":"Hannah","text":"[photo: a dirt loop road with a fallen pine across the far lane, orange cones]","posted":true,"at":"2026-12-12T13:20","checkin":"2026-12-12T13:20"}
+{"who":"Hannah","text":"That's the closure","posted":true,"at":"2026-12-12T13:21","checkin":"2026-12-12T13:21"}
+{"who":"Kira","text":"Yep. That's the one","posted":true,"at":"2026-12-12T13:22","checkin":"2026-12-12T13:22"}
+{"who":"Hannah","text":"It's huge","posted":true,"at":"2026-12-12T13:22","checkin":"2026-12-12T13:22"}
+{"who":"Tariq","text":"At 14. Spigot works. Restroom is clean, which surprised me","posted":true,"at":"2026-12-12T14:37","checkin":"2026-12-12T14:37"}
+{"who":"Hannah","text":"YES. Site 14 👍","posted":true,"at":"2026-12-12T14:38","checkin":"2026-12-12T14:38"}
+{"who":"Rowan","text":"Ok I'm about to fall asleep in the cab. Wake me when we're there","posted":true,"at":"2026-12-12T14:40","checkin":"2026-12-12T14:40"}
+{"who":"Hannah","text":"You're already there rowan","posted":true,"at":"2026-12-12T14:41","checkin":"2026-12-12T14:41"}
+{"who":"Rowan","text":"Am I","posted":true,"at":"2026-12-12T14:41","checkin":"2026-12-12T14:41"}
+{"who":"Kira","text":"40 min out. Need gas","posted":true,"at":"2026-12-12T15:55","checkin":"2026-12-12T15:55"}
+{"who":"Tariq","text":"Is there a burn ban?","posted":true,"at":"2026-12-12T15:56","checkin":"2026-12-12T15:56"}
+{"who":"Kira","text":"No burn ban. Wood's in the bin by the post. Dont cut the dead limbs off the trees, the ones by the pit are the wrong kind","posted":true,"at":"2026-12-12T16:01","checkin":"2026-12-12T16:01"}
+{"who":"Tariq","text":"Got it. No hatchet on the dead limbs","posted":true,"at":"2026-12-12T16:02","checkin":"2026-12-12T16:02"}
+{"who":"Kira","text":"Lol yes","posted":true,"at":"2026-12-12T16:04","checkin":"2026-12-12T16:04"}
+{"who":"Hannah","text":"[photo: sunset through the pines, orange over the tent]","posted":true,"at":"2026-12-12T17:52","checkin":"2026-12-12T17:52"}
+{"who":"Rowan","text":"Ok that's worth the drive","posted":true,"at":"2026-12-12T17:52","checkin":"2026-12-12T17:52"}
+{"who":"Tariq","text":"Yeah","posted":true,"at":"2026-12-12T17:53","checkin":"2026-12-12T17:53"}
+{"who":"Kira","text":"Here. Got the lantern going","posted":true,"at":"2026-12-12T18:30","checkin":"2026-12-12T18:30"}
+{"who":"Tariq","text":"Fire's going too","posted":true,"at":"2026-12-12T18:31","checkin":"2026-12-12T18:31"}
+{"who":"Hannah","text":"Who has the extra headlamp","posted":true,"at":"2026-12-12T18:33","checkin":"2026-12-12T18:33"}
+{"who":"Tariq","text":"In the truck. Back left bin","posted":true,"at":"2026-12-12T18:34","checkin":"2026-12-12T18:34"}
+{"who":"Hannah","text":"Ty","posted":true,"at":"2026-12-12T18:34","checkin":"2026-12-12T18:34"}
+{"who":"Rowan","text":"Sorry, I'm all wrung out. Going to eat whatever's in the foil and go to bed early","posted":true,"at":"2026-12-12T19:48","checkin":"2026-12-12T19:48"}
+{"who":"Kira","text":"Yeah. Same","posted":true,"at":"2026-12-12T19:50","checkin":"2026-12-12T19:50"}
+{"who":"Tariq","text":"Kira you good?","posted":true,"at":"2026-12-12T20:15","checkin":"2026-12-12T20:15"}
+{"who":"Kira","text":"Yeah. Just tired. Thanks for asking","posted":true,"at":"2026-12-12T20:22","checkin":"2026-12-12T20:22"}
+{"who":"Tariq","text":"Ok","posted":true,"at":"2026-12-12T20:24","checkin":"2026-12-12T20:24"}
+{"who":"Hannah","text":"The stars out here are insane. I forgot they exist","posted":true,"at":"2026-12-12T21:40","checkin":"2026-12-12T21:40"}
+{"who":"Hannah","text":"[photo: the sky above the loop, dense with stars]","posted":true,"at":"2026-12-12T21:41","checkin":"2026-12-12T21:41"}
+{"who":"Rowan","text":"Wow","posted":true,"at":"2026-12-12T21:44","checkin":"2026-12-12T21:44"}
+{"who":"Kira","text":"Going to bed. Tent's on the north side if anyone needs me","posted":true,"at":"2026-12-12T22:58","checkin":"2026-12-12T22:58"}
+{"who":"Tariq","text":"Night","posted":true,"at":"2026-12-12T23:02","checkin":"2026-12-12T23:02"}
+{"who":"Hannah","text":"Night","posted":true,"at":"2026-12-12T23:05","checkin":"2026-12-12T23:05"}
+{"who":"Rowan","text":"Hey is anyone up. My phone's about to die, the fire's out","posted":true,"at":"2026-12-12T23:40","checkin":"2026-12-12T23:40"}

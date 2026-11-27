@@ -1,0 +1,83 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-13T14:00","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1664,"cache_read_input_tokens":0,"output_tokens":1941,"output_tokens_details":{"thinking_tokens":1097},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1664,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1941,"cache_read_input_tokens":0,"cache_creation_input_tokens":1664,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1664},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2479,"cache_read_input_tokens":0,"output_tokens":1682,"output_tokens_details":{"thinking_tokens":915},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2479,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1682,"cache_read_input_tokens":0,"cache_creation_input_tokens":2479,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2479},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3250,"cache_read_input_tokens":0,"output_tokens":2414,"output_tokens_details":{"thinking_tokens":1548},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3250,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2414,"cache_read_input_tokens":0,"cache_creation_input_tokens":3250,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3250},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Saima","Shahid","Zara","Asif"],"setting":"You are all in Karachi, Pakistan, and you belong to the same book club. You use this group chat to choose the next book and to confirm meeting times and venues.","openers":["Post the pick for next month's read","Ask who can host the August meeting","Share the chapter you want to discuss first","Confirm the meeting time with everyone"],"opener":"Share the chapter you want to discuss first","cast":{"Saima":{"who":"41, woman, book club member","work":"physiotherapist","knows":"You know Shahid, Zara and Asif from the book club, each as a fellow member.","texts":"Saima texts in this chat now and then.","style":"light emoji, few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Shahid":{"who":"67, man, book club member","work":"hardware shop owner","knows":"You know Saima, Zara and Asif from the book club, each as a fellow member.","texts":"Shahid texts in this chat only now and again.","style":"light emoji, few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Zara":{"who":"29, woman, book club member","work":"medical resident","knows":"You know Saima, Shahid and Asif from the book club, each as a fellow member.","texts":"Zara texts in this chat only now and again.","style":"light emoji, few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Asif":{"who":"54, man, book club member","work":"restaurant owner","knows":"You know Saima, Shahid and Zara from the book club, each as a fellow member.","texts":"Asif texts in this chat a lot.","style":"light emoji, few abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Saima":"You live in Karachi, work as a physiotherapist, and live alone.","Shahid":"You live in Karachi, run a hardware shop, and live alone.","Zara":"You live in Karachi, work as a medical resident, and live alone.","Asif":"You live in Karachi, run a restaurant, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":784,"cache_read_input_tokens":0,"output_tokens":1395,"output_tokens_details":{"thinking_tokens":954},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":784,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1395,"cache_read_input_tokens":0,"cache_creation_input_tokens":784,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":784},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1077,"cache_read_input_tokens":0,"output_tokens":1897,"output_tokens_details":{"thinking_tokens":1382},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1077,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1897,"cache_read_input_tokens":0,"cache_creation_input_tokens":1077,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1077},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Karachi, Pakistan","castMs":19182,"situation":"People from my book club.","topic":null}
+{"who":"Saima","text":"Ok which chapter does everyone want to start with for the 20th. I'll bring the book with post its 📖","posted":true,"at":"2026-12-13T14:02","checkin":"2026-12-13T14:02"}
+{"who":"Asif","text":"Ch 4 for me. The dinner scene with the uncle, I want to argue about it","posted":true,"at":"2026-12-13T14:09","checkin":"2026-12-13T14:09"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-12-13T14:09"}
+{"who":"","react":"👍","to":1,"posted":false,"at":"2026-12-13T14:09"}
+{"who":"Asif","text":"Also I have some thoughts on the ending but that's for later","posted":true,"at":"2026-12-13T14:11","checkin":"2026-12-13T14:11"}
+{"who":"Shahid","text":"Ch 7","posted":true,"at":"2026-12-13T15:37","checkin":"2026-12-13T15:37"}
+{"who":"Saima","text":"7 ok. Zara?","posted":true,"at":"2026-12-13T15:38","checkin":"2026-12-13T15:38"}
+{"who":"Zara","text":"Still on shift till tmrw morning so my brain is mush. Ch 2 maybe, its short","posted":true,"at":"2026-12-13T16:20","checkin":"2026-12-13T16:20"}
+{"who":"Saima","text":"Ch 2 is good, short is good","posted":true,"at":"2026-12-13T16:22","checkin":"2026-12-13T16:22"}
+{"who":"Asif","text":"Venue. Last time at the cafe we couldnt hear anything over the coffee machine. My place upstairs is free that sunday, we can do it there","posted":true,"at":"2026-12-13T16:45","checkin":"2026-12-13T16:45"}
+{"who":"Asif","text":"Not cooking, promise. Just chai","posted":true,"at":"2026-12-13T16:47","checkin":"2026-12-13T16:47"}
+{"who":"","react":"😂","to":8,"posted":false,"at":"2026-12-13T16:47"}
+{"who":"Shahid","text":"Chai is fine. What time","posted":true,"at":"2026-12-13T17:30","checkin":"2026-12-13T17:30"}
+{"who":"Saima","text":"7 or 7:30? I have a client at 9 am the next day so not too late pls","posted":true,"at":"2026-12-13T17:31","checkin":"2026-12-13T17:31"}
+{"who":"Asif","text":"7:30 then. Fans work upstairs now I fixed the one","posted":true,"at":"2026-12-13T17:35","checkin":"2026-12-13T17:35"}
+{"who":"Shahid","text":"Got a shipment of pipe fittings today, 200 pieces, sorted them all by hand because the new boy cant count. Back aching","posted":true,"at":"2026-12-13T19:12","checkin":"2026-12-13T19:12"}
+{"who":"Saima","text":"Ouch. Ice it","posted":true,"at":"2026-12-13T19:14","checkin":"2026-12-13T19:14"}
+{"who":"Shahid","text":"Ice is for old men saima 😂","posted":true,"at":"2026-12-13T19:14","checkin":"2026-12-13T19:14"}
+{"who":"Zara","text":"Just got out. 14 hrs. Someone's granddad coded in bay 3 and we got him back which is good but I need to sleep for a week","posted":true,"at":"2026-12-13T21:50","checkin":"2026-12-13T21:50"}
+{"who":"","react":"👍","to":15,"posted":false,"at":"2026-12-13T21:50"}
+{"who":"","react":"👍","to":15,"posted":false,"at":"2026-12-13T21:50"}
+{"who":"","react":"👍","to":15,"posted":false,"at":"2026-12-13T21:50"}
+{"who":"","react":"❤️","to":15,"posted":false,"at":"2026-12-13T21:50"}
+{"who":"Saima","text":"So glad he made it. Sleep","posted":true,"at":"2026-12-13T21:52","checkin":"2026-12-13T21:52"}
+{"who":"Asif","text":"[photo: draft of the new winter menu, the nihari is mine]","posted":true,"at":"2026-12-13T22:03","checkin":"2026-12-13T22:03"}
+{"who":"Asif","text":"Tell me honestly is the chai on the back page too much","posted":true,"at":"2026-12-13T22:04","checkin":"2026-12-13T22:04"}
+{"who":"Saima","text":"Its not too much. The price is though 😅","posted":true,"at":"2026-12-13T22:40","checkin":"2026-12-13T22:40"}
+{"who":"Asif","text":"The price is a crime","posted":true,"at":"2026-12-13T22:41","checkin":"2026-12-13T22:41"}
+{"who":"Asif","text":"Cant sleep. Reread ch 4 and the uncle is worse than I remembered. 7:30 for the 20th still?","posted":true,"at":"2026-12-14T00:40","checkin":"2026-12-14T00:40"}
+{"who":"Saima","text":"Yes 7:30. Go to sleep asif","posted":true,"at":"2026-12-14T00:52","checkin":"2026-12-14T00:52"}
+{"who":"Saima","text":"Clinic opens at 9 so I'm off. Shahid how's the back today","posted":true,"at":"2026-12-14T09:14","checkin":"2026-12-14T09:14"}
+{"who":"Shahid","text":"Better. Slept on the floor like a monk 😂","posted":true,"at":"2026-12-14T09:31","checkin":"2026-12-14T09:31"}
+{"who":"Shahid","text":"Dont tell the doctor I said that","posted":true,"at":"2026-12-14T09:33","checkin":"2026-12-14T09:33"}
+{"who":"Asif","text":"Ch 4 again. The uncle makes the whole dinner about money and nobody at the table calls him on it. I want someone to call him on it","posted":true,"at":"2026-12-14T10:02","checkin":"2026-12-14T10:02"}
+{"who":"Saima","text":"Thats the point of the chapter though","posted":true,"at":"2026-12-14T10:05","checkin":"2026-12-14T10:05"}
+{"who":"Asif","text":"Yes but still","posted":true,"at":"2026-12-14T10:06","checkin":"2026-12-14T10:06"}
+{"who":"Shahid","text":"Shop is quiet. Man came in for one bolt and bought a whole toolbox","posted":true,"at":"2026-12-14T12:48","checkin":"2026-12-14T12:48"}
+{"who":"Zara","text":"Up. Barely. Did anyone finish ch 2 or is it just me","posted":true,"at":"2026-12-14T14:30","checkin":"2026-12-14T14:30"}
+{"who":"Saima","text":"Half. Its really short though, you can do it tonight","posted":true,"at":"2026-12-14T14:34","checkin":"2026-12-14T14:34"}
+{"who":"Zara","text":"Ok. Dont tell me the ending","posted":true,"at":"2026-12-14T14:35","checkin":"2026-12-14T14:35"}
+{"who":"Asif","text":"I wasnt going to","posted":true,"at":"2026-12-14T14:35","checkin":"2026-12-14T14:35"}
+{"who":"Asif","text":"(I was going to)","posted":true,"at":"2026-12-14T14:36","checkin":"2026-12-14T14:36"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-12-14T14:36"}
+{"who":"","react":"😂","to":34,"posted":false,"at":"2026-12-14T14:36"}
+{"who":"Asif","text":"[photo: the nihari pot, 6pm, the whole lane smells of it]","posted":true,"at":"2026-12-14T18:40","checkin":"2026-12-14T18:40"}
+{"who":"Asif","text":"Lunch crowd thought it was Eid","posted":true,"at":"2026-12-14T18:41","checkin":"2026-12-14T18:41"}
+{"who":"Shahid","text":"Closing up. Fittings are all still in the back, the boy counted 12 and then gave up","posted":true,"at":"2026-12-14T19:55","checkin":"2026-12-14T19:55"}
+{"who":"Saima","text":"Finished ch 2. Post its everywhere","posted":true,"at":"2026-12-14T20:15","checkin":"2026-12-14T20:15"}
+{"who":"Saima","text":"Zara you will have to explain the thing with the letter to me","posted":true,"at":"2026-12-14T20:16","checkin":"2026-12-14T20:16"}
+{"who":"Zara","text":"Going to sleep at 9 like a grandmother. Will read tmrw on the bus","posted":true,"at":"2026-12-14T21:30","checkin":"2026-12-14T21:30"}
+{"who":"Zara","text":"Tmrw being Tuesday which I am not on shift for, miracle","posted":true,"at":"2026-12-14T21:31","checkin":"2026-12-14T21:31"}
+{"who":"Asif","text":"Anyone else think the ending is cheating","posted":true,"at":"2026-12-14T23:50","checkin":"2026-12-14T23:50"}
+{"who":"Shahid","text":"Not tonight Asif","posted":true,"at":"2026-12-14T23:58","checkin":"2026-12-14T23:58"}
+{"who":"Asif","text":"Ok ok","posted":true,"at":"2026-12-14T23:59","checkin":"2026-12-14T23:59"}
+{"who":"Asif","text":"Still thinking about the uncle. Going to bed for real this time","posted":true,"at":"2026-12-15T00:20","checkin":"2026-12-15T00:20"}
+{"who":"Zara","text":"Bus is full of school kids singing at the top of their lungs. Reading anyway","posted":true,"at":"2026-12-15T07:48","checkin":"2026-12-15T07:48"}
+{"who":"Saima","text":"Brave","posted":true,"at":"2026-12-15T08:10","checkin":"2026-12-15T08:10"}
+{"who":"Shahid","text":"Shop open. Boy is here, recounted the fittings. 200 is 200 he says now","posted":true,"at":"2026-12-15T09:02","checkin":"2026-12-15T09:02"}
+{"who":"Asif","text":"Supplier wants to double the lamb price for January. Telling him no. Telling him maybe","posted":true,"at":"2026-12-15T09:40","checkin":"2026-12-15T09:40"}
+{"who":"Asif","text":"Going to be a long week","posted":true,"at":"2026-12-15T09:41","checkin":"2026-12-15T09:41"}
+{"who":"Zara","text":"Finished 2. Ok, the letter. Saima I'll explain at the club, its easier to point at it","posted":true,"at":"2026-12-15T11:15","checkin":"2026-12-15T11:15"}
+{"who":"Saima","text":"Fine. Dont make me wait till the 20th","posted":true,"at":"2026-12-15T11:16","checkin":"2026-12-15T11:16"}
+{"who":"Saima","text":"Clinic lunch was a samosa and a patient with opinions about my shoes. Fair opinions","posted":true,"at":"2026-12-15T13:22","checkin":"2026-12-15T13:22"}
+{"who":"Asif","text":"[photo: supplier invoice, lamb line circled in red]","posted":true,"at":"2026-12-15T13:40","checkin":"2026-12-15T13:40"}
+{"who":"Asif","text":"This is what I am dealing with","posted":true,"at":"2026-12-15T13:41","checkin":"2026-12-15T13:41"}
+{"who":"Shahid","text":"Ask him for the bulk rate. Everyone asks for bulk rate","posted":true,"at":"2026-12-15T13:44","checkin":"2026-12-15T13:44"}
+{"who":"Asif","text":"Already asked. He laughed","posted":true,"at":"2026-12-15T13:50","checkin":"2026-12-15T13:50"}
+{"who":"Zara","text":"Slept 3 hrs and now awake for no reason. Ch 2 is sitting in my head. The letter writer is not who I thought","posted":true,"at":"2026-12-15T17:02","checkin":"2026-12-15T17:02"}
+{"who":"Zara","text":"Ok not saying anything else","posted":true,"at":"2026-12-15T17:03","checkin":"2026-12-15T17:03"}
+{"who":"Saima","text":"Good","posted":true,"at":"2026-12-15T17:04","checkin":"2026-12-15T17:04"}
+{"who":"Shahid","text":"Back is fine. Heating pad from the medical store. Saima dont look at me like that","posted":true,"at":"2026-12-15T19:30","checkin":"2026-12-15T19:30"}
+{"who":"Saima","text":"I didn't say anything","posted":true,"at":"2026-12-15T19:31","checkin":"2026-12-15T19:31"}
+{"who":"Asif","text":"Ending is cheating. I'm going to say it again at the club so its on record","posted":true,"at":"2026-12-15T21:15","checkin":"2026-12-15T21:15"}
+{"who":"Asif","text":"Ok I'm done","posted":true,"at":"2026-12-15T21:16","checkin":"2026-12-15T21:16"}
+{"who":"","react":"😂","to":64,"posted":false,"at":"2026-12-15T21:16"}
+{"who":"Saima","text":"Its on record","posted":true,"at":"2026-12-15T21:40","checkin":"2026-12-15T21:40"}
+{"who":"Zara","text":"Power cut on our street just now. Hospital has generators, I'm told the lane is dark","posted":true,"at":"2026-12-15T22:58","checkin":"2026-12-15T22:58"}
+{"who":"Asif","text":"Power cut here too. Candles in the kitchen. Nihari is in the fridge, its fine","posted":true,"at":"2026-12-15T23:10","checkin":"2026-12-15T23:10"}
+{"who":"Asif","text":"Not a single customer in the dark, they all went home","posted":true,"at":"2026-12-15T23:11","checkin":"2026-12-15T23:11"}
+{"who":"Shahid","text":"Gen is on at the shop. Sitting in it with the fans","posted":true,"at":"2026-12-15T23:40","checkin":"2026-12-15T23:40"}
+{"who":"Shahid","text":"Going to sleep. Not on the floor","posted":true,"at":"2026-12-15T23:41","checkin":"2026-12-15T23:41"}

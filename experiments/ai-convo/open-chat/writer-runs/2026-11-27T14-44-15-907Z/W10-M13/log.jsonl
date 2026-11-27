@@ -1,0 +1,66 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-08T11:20","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1491,"cache_read_input_tokens":0,"output_tokens":2148,"output_tokens_details":{"thinking_tokens":1507},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1491,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2148,"cache_read_input_tokens":0,"cache_creation_input_tokens":1491,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1491},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2063,"cache_read_input_tokens":0,"output_tokens":2422,"output_tokens_details":{"thinking_tokens":1713},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2063,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2422,"cache_read_input_tokens":0,"cache_creation_input_tokens":2063,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2063},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2734,"cache_read_input_tokens":0,"output_tokens":3014,"output_tokens_details":{"thinking_tokens":2343},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2734,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3014,"cache_read_input_tokens":0,"cache_creation_input_tokens":2734,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2734},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sanaa","Karim"],"setting":"You two are cousins in Casablanca, Morocco, and you know each other from family gatherings. You use this chat to coordinate a Sunday family lunch and to sort out whether Sanaa's car, which Karim has been looking at in his garage, is ready to collect.","openers":["Ask whether the car is ready yet","Tell him lunch is moved to Sunday at one","Send a photo of the spare pharmacy receipt","Remind him to bring the cake"],"opener":"Send a photo of the spare pharmacy receipt","cast":{"Sanaa":{"who":"32, woman, the cousin of Person 2","work":"pharmacist","knows":"You know Karim as your cousin, from your family.","texts":"","style":"little emoji, no texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Karim":{"who":"29, man, the cousin of Person 1","work":"mechanic","knows":"You know Sanaa as your cousin, from your family.","texts":"","style":"lots of emoji and short texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Sanaa":"You live in Casablanca, where your days are filled with work as a pharmacist, and you live on your own.","Karim":"You live in Casablanca, where your days are filled with work as a mechanic, and you live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":782,"cache_read_input_tokens":0,"output_tokens":1071,"output_tokens_details":{"thinking_tokens":839},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":782,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1071,"cache_read_input_tokens":0,"cache_creation_input_tokens":782,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":782},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1050,"cache_read_input_tokens":0,"output_tokens":1878,"output_tokens_details":{"thinking_tokens":1506},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1050,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1878,"cache_read_input_tokens":0,"cache_creation_input_tokens":1050,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1050},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Casablanca, Morocco","castMs":17607,"situation":"My cousin.","topic":null}
+{"who":"Sanaa","text":"[photo: pharmacy receipt]","posted":true,"at":"2026-12-08T11:20","checkin":"2026-12-08T11:20"}
+{"who":"Sanaa","text":"The battery one. From the shop on bd zerktouni, I paid cash so its on this","posted":true,"at":"2026-12-08T11:21","checkin":"2026-12-08T11:21"}
+{"who":"Karim","text":"i see it. 380dh?","posted":true,"at":"2026-12-08T11:34","checkin":"2026-12-08T11:34"}
+{"who":"Karim","text":"wlh thats cheap for that brand lol","posted":true,"at":"2026-12-08T11:35","checkin":"2026-12-08T11:35"}
+{"who":"Sanaa","text":"It was on sale. Did you check the car yet","posted":true,"at":"2026-12-08T11:52","checkin":"2026-12-08T11:52"}
+{"who":"Karim","text":"yeah this morning. battery was the problem new one fixed the start. now the brakes need pads","posted":true,"at":"2026-12-08T12:10","checkin":"2026-12-08T12:10"}
+{"who":"Karim","text":"not urgent but dont drive it far before i do them","posted":true,"at":"2026-12-08T12:11","checkin":"2026-12-08T12:11"}
+{"who":"Sanaa","text":"Ok. How much for pads","posted":true,"at":"2026-12-08T12:40","checkin":"2026-12-08T12:40"}
+{"who":"Karim","text":"i tell u tmrw when i order them. prob 400-500","posted":true,"at":"2026-12-08T12:58","checkin":"2026-12-08T12:58"}
+{"who":"Sanaa","text":"Ok. Is it ready to collect before sunday","posted":true,"at":"2026-12-08T13:03","checkin":"2026-12-08T13:03"}
+{"who":"Karim","text":"not before pads. sunday prob yes if the parts come wed","posted":true,"at":"2026-12-08T13:20","checkin":"2026-12-08T13:20"}
+{"who":"Sanaa","text":"Mama asked if you're coming sunday for lunch","posted":true,"at":"2026-12-08T13:21","checkin":"2026-12-08T13:21"}
+{"who":"Karim","text":"obv tell her i'll bring the bread","posted":true,"at":"2026-12-08T13:22","checkin":"2026-12-08T13:22"}
+{"who":"Sanaa","text":"I'll be late tonight, inventory at the pharmacy","posted":true,"at":"2026-12-08T17:45","checkin":"2026-12-08T17:45"}
+{"who":"Sanaa","text":"Dont wait for me to eat","posted":true,"at":"2026-12-08T17:46","checkin":"2026-12-08T17:46"}
+{"who":"Karim","text":"ok im home. cooking tajine for myself lol","posted":true,"at":"2026-12-08T19:12","checkin":"2026-12-08T19:12"}
+{"who":"Karim","text":"ur aunt asked me too. lunch at ur place or mine?","posted":true,"at":"2026-12-08T19:13","checkin":"2026-12-08T19:13"}
+{"who":"Sanaa","text":"At mine I think. I'll ask","posted":true,"at":"2026-12-08T21:30","checkin":"2026-12-08T21:30"}
+{"who":"Sanaa","text":"Home. So tired","posted":true,"at":"2026-12-08T23:58","checkin":"2026-12-08T23:58"}
+{"who":"Karim","text":"go sleep 😴","posted":true,"at":"2026-12-09T00:40","checkin":"2026-12-09T00:40"}
+{"who":"Karim","text":"ordered the pads. 460dh delivered to the garage, they say wed afternoon","posted":true,"at":"2026-12-09T09:48","checkin":"2026-12-09T09:48"}
+{"who":"Karim","text":"cheaper than the dealer lol","posted":true,"at":"2026-12-09T09:49","checkin":"2026-12-09T09:49"}
+{"who":"","react":"👍","to":21,"posted":false,"at":"2026-12-09T09:49"}
+{"who":"Sanaa","text":"Ok. So if they come today you fit them tomorrow?","posted":true,"at":"2026-12-09T10:30","checkin":"2026-12-09T10:30"}
+{"who":"Karim","text":"prob. if they come today. if not sat morning","posted":true,"at":"2026-12-09T10:44","checkin":"2026-12-09T10:44"}
+{"who":"Sanaa","text":"Mama says lunch at mine, 1pm. She's making the tajine, I'm doing the salad","posted":true,"at":"2026-12-09T13:05","checkin":"2026-12-09T13:05"}
+{"who":"Karim","text":"ur mama and her tajine","posted":true,"at":"2026-12-09T13:06","checkin":"2026-12-09T13:06"}
+{"who":"Karim","text":"ok bread is covered","posted":true,"at":"2026-12-09T13:07","checkin":"2026-12-09T13:07"}
+{"who":"Sanaa","text":"The inventory is a disaster. Half the shelf is expired","posted":true,"at":"2026-12-09T15:22","checkin":"2026-12-09T15:22"}
+{"who":"Karim","text":"lol ur boss gonna love that","posted":true,"at":"2026-12-09T15:40","checkin":"2026-12-09T15:40"}
+{"who":"Karim","text":"parts came. fitting tmrw morning","posted":true,"at":"2026-12-09T16:10","checkin":"2026-12-09T16:10"}
+{"who":"Sanaa","text":"Good. What time should I come get it?","posted":true,"at":"2026-12-09T16:11","checkin":"2026-12-09T16:11"}
+{"who":"Karim","text":"sat afternoon prob. dont take it on the highway yet","posted":true,"at":"2026-12-09T16:14","checkin":"2026-12-09T16:14"}
+{"who":"Sanaa","text":"Ok. Saturday then","posted":true,"at":"2026-12-09T16:15","checkin":"2026-12-09T16:15"}
+{"who":"Sanaa","text":"Its getting so cold. Did you turn the heater on at yours","posted":true,"at":"2026-12-09T18:50","checkin":"2026-12-09T18:50"}
+{"who":"Karim","text":"no im under 3 blankets","posted":true,"at":"2026-12-09T19:20","checkin":"2026-12-09T19:20"}
+{"who":"Karim","text":"ur going to be late again tonight?","posted":true,"at":"2026-12-09T19:21","checkin":"2026-12-09T19:21"}
+{"who":"Sanaa","text":"No, home at 8. Making soup","posted":true,"at":"2026-12-09T19:40","checkin":"2026-12-09T19:40"}
+{"who":"Sanaa","text":"Do you want some? I'll make too much","posted":true,"at":"2026-12-09T20:05","checkin":"2026-12-09T20:05"}
+{"who":"Karim","text":"yes i'll pass by after the garage. 7?","posted":true,"at":"2026-12-09T20:08","checkin":"2026-12-09T20:08"}
+{"who":"Sanaa","text":"7 is fine","posted":true,"at":"2026-12-09T20:09","checkin":"2026-12-09T20:09"}
+{"who":"Karim","text":"ok going to sleep. the car is looking good btw 🚗","posted":true,"at":"2026-12-09T23:17","checkin":"2026-12-09T23:17"}
+{"who":"","react":"😂","to":40,"posted":false,"at":"2026-12-09T23:17"}
+{"who":"Sanaa","text":"Ok. Night","posted":true,"at":"2026-12-09T23:30","checkin":"2026-12-09T23:30"}
+{"who":"Karim","text":"fitting the pads now. garage opens 8 but the boss let me in early","posted":true,"at":"2026-12-10T07:52","checkin":"2026-12-10T07:52"}
+{"who":"Karim","text":"done. front pads in, disks checked, disks ok. pedal feels way better","posted":true,"at":"2026-12-10T09:30","checkin":"2026-12-10T09:30"}
+{"who":"Karim","text":"ill take it round the block once then park it","posted":true,"at":"2026-12-10T09:31","checkin":"2026-12-10T09:31"}
+{"who":"Sanaa","text":"Good. Glad you took some of the soup, I was going to eat it for 3 days","posted":true,"at":"2026-12-10T10:15","checkin":"2026-12-10T10:15"}
+{"who":"Karim","text":"back from the test run. no noise, no pulling. its good","posted":true,"at":"2026-12-10T10:40","checkin":"2026-12-10T10:40"}
+{"who":"Karim","text":"washing it too 🚗💦","posted":true,"at":"2026-12-10T10:41","checkin":"2026-12-10T10:41"}
+{"who":"Sanaa","text":"Ok. How much do I owe you for labor","posted":true,"at":"2026-12-10T10:52","checkin":"2026-12-10T10:52"}
+{"who":"Karim","text":"nothing. parts 460 and that's it","posted":true,"at":"2026-12-10T11:08","checkin":"2026-12-10T11:08"}
+{"who":"Karim","text":"dont argue wlh","posted":true,"at":"2026-12-10T11:09","checkin":"2026-12-10T11:09"}
+{"who":"Sanaa","text":"I'm not arguing I'll give you the 460 saturday","posted":true,"at":"2026-12-10T11:20","checkin":"2026-12-10T11:20"}
+{"who":"Karim","text":"pot is still at mine. i'll bring it sunday with the bread","posted":true,"at":"2026-12-10T11:24","checkin":"2026-12-10T11:24"}
+{"who":"Sanaa","text":"Mama asked how many bread loaves. She says 10 people","posted":true,"at":"2026-12-10T13:10","checkin":"2026-12-10T13:10"}
+{"who":"Karim","text":"then 10 loaves ur mama knows i eat a lot","posted":true,"at":"2026-12-10T13:12","checkin":"2026-12-10T13:12"}
+{"who":"Sanaa","text":"Pharmacy is quiet today. Finally a break","posted":true,"at":"2026-12-10T15:48","checkin":"2026-12-10T15:48"}
+{"who":"Karim","text":"ur boss has no ur patience lol","posted":true,"at":"2026-12-10T15:49","checkin":"2026-12-10T15:49"}
+{"who":"Karim","text":"ok im off. my bike chain is squeaking again, going to try fix it before the cold gets worse","posted":true,"at":"2026-12-10T17:30","checkin":"2026-12-10T17:30"}
+{"who":"Sanaa","text":"Don't use the thick grease, it attracts dust. Use light oil","posted":true,"at":"2026-12-10T19:02","checkin":"2026-12-10T19:02"}
+{"who":"Karim","text":"ok boss","posted":true,"at":"2026-12-10T19:04","checkin":"2026-12-10T19:04"}
+{"who":"Sanaa","text":"Home. Going to sleep early, I'm wrecked","posted":true,"at":"2026-12-10T22:50","checkin":"2026-12-10T22:50"}
+{"who":"Karim","text":"good. sleep well 🌙","posted":true,"at":"2026-12-10T22:51","checkin":"2026-12-10T22:51"}

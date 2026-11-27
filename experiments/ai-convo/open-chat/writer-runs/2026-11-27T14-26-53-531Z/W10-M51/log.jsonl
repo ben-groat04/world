@@ -1,0 +1,57 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T09:05","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1489,"cache_read_input_tokens":0,"output_tokens":1542,"output_tokens_details":{"thinking_tokens":1021},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1489,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1542,"cache_read_input_tokens":0,"cache_creation_input_tokens":1489,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1489},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1968,"cache_read_input_tokens":0,"output_tokens":1523,"output_tokens_details":{"thinking_tokens":999},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1968,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1523,"cache_read_input_tokens":0,"cache_creation_input_tokens":1968,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1968},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2490,"cache_read_input_tokens":0,"output_tokens":1557,"output_tokens_details":{"thinking_tokens":1012},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2490,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1557,"cache_read_input_tokens":0,"cache_creation_input_tokens":2490,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2490},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sophie","Paul"],"setting":"You are both in Leipzig, where you each live, and you met on holiday last summer and have kept in touch since. Sophie is reworking a menu for a café run by a friend, and Paul is building shelves for his flat, and you chat about these projects.","openers":["Send a photo of the menu draft","Ask how the shelves turned out","Suggest getting a coffee next week","Share a link to a poster you liked"],"opener":"Suggest getting a coffee next week","cast":{"Sophie":{"who":"29, woman, a holiday acquaintance","work":"graphic designer","knows":"You met Paul on holiday; he is a fellow holidaymaker you got talking to.","texts":"","style":"some emoji and some abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Paul":{"who":"31, man, the other holidaymaker","work":"carpenter","knows":"You met Sophie on holiday; she is a fellow holidaymaker you got talking to.","texts":"","style":"light emoji and some abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Sophie":"You live in Leipzig, designing graphics and reworking a café menu, and you live alone.","Paul":"You live in Leipzig, building shelves and doing carpentry jobs, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":785,"cache_read_input_tokens":0,"output_tokens":702,"output_tokens_details":{"thinking_tokens":489},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":785,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":702,"cache_read_input_tokens":0,"cache_creation_input_tokens":785,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":785},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1049,"cache_read_input_tokens":0,"output_tokens":1556,"output_tokens_details":{"thinking_tokens":1193},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1049,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1556,"cache_read_input_tokens":0,"cache_creation_input_tokens":1049,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1049},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Leipzig, Germany","castMs":12186,"situation":"Two people who met on holiday.","topic":null}
+{"who":"Sophie","text":"Coffee next week? Mon or tues maybe","posted":true,"at":"2026-12-03T09:05","checkin":"2026-12-03T09:05"}
+{"who":"Paul","text":"Mon works. Shelves are a mess atm, sawdust everywhere","posted":true,"at":"2026-12-03T10:32","checkin":"2026-12-03T10:32"}
+{"who":"Paul","text":"Tues is bad, delivery in the morning","posted":true,"at":"2026-12-03T10:33","checkin":"2026-12-03T10:33"}
+{"who":"Sophie","text":"Mon then 🙂 where? The place by Südplatz or somewhere else","posted":true,"at":"2026-12-03T10:40","checkin":"2026-12-03T10:40"}
+{"who":"Paul","text":"Südplatz is fine. 11?","posted":true,"at":"2026-12-03T10:52","checkin":"2026-12-03T10:52"}
+{"who":"Sophie","text":"11 works","posted":true,"at":"2026-12-03T10:53","checkin":"2026-12-03T10:53"}
+{"who":"Sophie","text":"[photo: menu draft, page 1]","posted":true,"at":"2026-12-03T11:20","checkin":"2026-12-03T11:20"}
+{"who":"Sophie","text":"Jonas wants the prices in a box. Looks like a parking ticket to me","posted":true,"at":"2026-12-03T11:21","checkin":"2026-12-03T11:21"}
+{"who":"Paul","text":"[photo: the shelf brackets, two of them out]","posted":true,"at":"2026-12-03T13:08","checkin":"2026-12-03T13:08"}
+{"who":"Paul","text":"Ok not wonky, just not level. Sorting it tomorrow","posted":true,"at":"2026-12-03T13:08","checkin":"2026-12-03T13:08"}
+{"who":"Sophie","text":"Haha at least they're on the wall 😂","posted":true,"at":"2026-12-03T13:15","checkin":"2026-12-03T13:15"}
+{"who":"Paul","text":"Did the level thing. Took 40 min and a bottle of wine","posted":true,"at":"2026-12-03T19:47","checkin":"2026-12-03T19:47"}
+{"who":"","react":"👍","to":11,"posted":false,"at":"2026-12-03T19:47"}
+{"who":"Sophie","text":"Which one was the wine for","posted":true,"at":"2026-12-03T19:50","checkin":"2026-12-03T19:50"}
+{"who":"Paul","text":"Me","posted":true,"at":"2026-12-03T19:52","checkin":"2026-12-03T19:52"}
+{"who":"Sophie","text":"Box or no box. Be honest","posted":true,"at":"2026-12-03T22:14","checkin":"2026-12-03T22:14"}
+{"who":"Paul","text":"No box. Bit of breathing room, dont make it a ticket","posted":true,"at":"2026-12-03T22:30","checkin":"2026-12-03T22:30"}
+{"who":"","react":"😂","to":15,"posted":false,"at":"2026-12-03T22:30"}
+{"who":"Sophie","text":"Ok ok. No box 🙂","posted":true,"at":"2026-12-03T22:31","checkin":"2026-12-03T22:31"}
+{"who":"Paul","text":"Going at the brackets again. Round two","posted":true,"at":"2026-12-04T09:12","checkin":"2026-12-04T09:12"}
+{"who":"Sophie","text":"Good luck spirit level not the wine this time","posted":true,"at":"2026-12-04T09:14","checkin":"2026-12-04T09:14"}
+{"who":"Paul","text":"No promises","posted":true,"at":"2026-12-04T09:15","checkin":"2026-12-04T09:15"}
+{"who":"Sophie","text":"[photo: menu draft, page 2]","posted":true,"at":"2026-12-04T12:40","checkin":"2026-12-04T12:40"}
+{"who":"Sophie","text":"Drinks page. Jonas says the Club-Mate needs to be bigger than the chai. Can't really argue","posted":true,"at":"2026-12-04T12:44","checkin":"2026-12-04T12:44"}
+{"who":"Paul","text":"Is the chai a big seller","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Sophie","text":"Apparently not but he has feelings about it","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Paul","text":"Fair","posted":true,"at":"2026-12-04T13:06","checkin":"2026-12-04T13:06"}
+{"who":"Paul","text":"Level. Finally. Bracket 2 is a hair less level than bracket 1 but I'm calling it","posted":true,"at":"2026-12-04T16:20","checkin":"2026-12-04T16:20"}
+{"who":"Sophie","text":"Calling it 😂","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"Paul","text":"Dont tell the shelves","posted":true,"at":"2026-12-04T16:21","checkin":"2026-12-04T16:21"}
+{"who":"","react":"😂","to":27,"posted":false,"at":"2026-12-04T16:21"}
+{"who":"Sophie","text":"Still at the café. Jonas wants to set the whole menu in Comic Sans as a joke and I need to say no in a nice way","posted":true,"at":"2026-12-04T20:15","checkin":"2026-12-04T20:15"}
+{"who":"Paul","text":"Just say the printer's on the blink","posted":true,"at":"2026-12-04T20:18","checkin":"2026-12-04T20:18"}
+{"who":"Sophie","text":"Lol. That's actually good","posted":true,"at":"2026-12-04T20:19","checkin":"2026-12-04T20:19"}
+{"who":"Paul","text":"Is it bad that I bought a new drill tonight","posted":true,"at":"2026-12-04T23:40","checkin":"2026-12-04T23:40"}
+{"who":"Sophie","text":"Not bad. Is it the one with two batteries","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Paul","text":"Yes","posted":true,"at":"2026-12-04T23:53","checkin":"2026-12-04T23:53"}
+{"who":"Paul","text":"Drill's charged. Both batteries. Feel like a man","posted":true,"at":"2026-12-05T10:14","checkin":"2026-12-05T10:14"}
+{"who":"Sophie","text":"Heard that was going to happen","posted":true,"at":"2026-12-05T10:40","checkin":"2026-12-05T10:40"}
+{"who":"Sophie","text":"[photo: menu draft, page 3]","posted":true,"at":"2026-12-05T11:55","checkin":"2026-12-05T11:55"}
+{"who":"Sophie","text":"Desserts. Jonas made me add a line calling the apple cake \"legendary\" and I've vetoed it","posted":true,"at":"2026-12-05T11:56","checkin":"2026-12-05T11:56"}
+{"who":"Paul","text":"Legendary is a lot","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Paul","text":"Is the apple cake good","posted":true,"at":"2026-12-05T12:31","checkin":"2026-12-05T12:31"}
+{"who":"Sophie","text":"It's fine. It's a Saturday cake","posted":true,"at":"2026-12-05T13:02","checkin":"2026-12-05T13:02"}
+{"who":"Paul","text":"Last bracket going up. Pilot holes first this time. No wine","posted":true,"at":"2026-12-05T15:48","checkin":"2026-12-05T15:48"}
+{"who":"Sophie","text":"Good. Send a photo when it's up","posted":true,"at":"2026-12-05T15:50","checkin":"2026-12-05T15:50"}
+{"who":"Paul","text":"[photo: shelves with books on, one bracket a bit higher than the other]","posted":true,"at":"2026-12-05T17:20","checkin":"2026-12-05T17:20"}
+{"who":"Paul","text":"Nobody will see it but me","posted":true,"at":"2026-12-05T17:21","checkin":"2026-12-05T17:21"}
+{"who":"Sophie","text":"You can show me Monday and I'll judge","posted":true,"at":"2026-12-05T17:22","checkin":"2026-12-05T17:22"}
+{"who":"Paul","text":"Deal","posted":true,"at":"2026-12-05T17:23","checkin":"2026-12-05T17:23"}
+{"who":"Sophie","text":"Still at the café. Jonas ordered pizza and is now arguing with the oven","posted":true,"at":"2026-12-05T21:04","checkin":"2026-12-05T21:04"}
+{"who":"Paul","text":"Tell him the printer's on the blink","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Sophie","text":"Ha. Already used that on Friday 😂","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Paul","text":"Asleep yet","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Sophie","text":"Not yet. Heading home soon. The pizza was ok","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}

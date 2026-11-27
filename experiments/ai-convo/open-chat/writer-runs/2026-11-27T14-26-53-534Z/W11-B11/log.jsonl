@@ -1,0 +1,78 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T12:00","complete":true,"rejects":0,"today":[null,"Jamal","Jamal"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2179,"cache_read_input_tokens":0,"output_tokens":2150,"output_tokens_details":{"thinking_tokens":1407},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2179,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2150,"cache_read_input_tokens":0,"cache_creation_input_tokens":2179,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2179},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2889,"cache_read_input_tokens":0,"output_tokens":2174,"output_tokens_details":{"thinking_tokens":1523},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2889,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2174,"cache_read_input_tokens":0,"cache_creation_input_tokens":2889,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2889},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3533,"cache_read_input_tokens":0,"output_tokens":2481,"output_tokens_details":{"thinking_tokens":1525},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3533,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2481,"cache_read_input_tokens":0,"cache_creation_input_tokens":3533,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3533},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Maya","Kevin","Mia","Jamal"],"setting":"You are all in Houston, Texas, close friends planning a surprise party for another friend, and this chat is where you settle the guest list and book the venue.","openers":["Send the group a shortlist of venues","Ask who can still come on the Saturday","Start a shared list of guests to invite","Remind everyone to keep the party secret"],"opener":"Start a shared list of guests to invite","cast":{"Maya":{"who":"34, woman, a friend organizing the party","work":"software tester","knows":"You know Kevin, Mia and Jamal as friends.","texts":"Maya texts in this chat a lot.","style":"a little emoji, some texting abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Kevin":{"who":"36, man, a friend helping plan the party","work":"chef","knows":"You know Maya, Mia and Jamal as friends.","texts":"Kevin texts in this chat now and then.","style":"a little emoji, some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Mia":{"who":"29, woman, a friend helping plan the party","work":"journalist","knows":"You know Maya, Kevin and Jamal as friends.","texts":"Mia texts in this chat only now and again.","style":"a little emoji, some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Jamal":{"who":"41, man, a friend helping plan the party","work":"mechanic","knows":"You know Maya, Kevin and Mia as friends.","texts":"Jamal texts in this chat only now and again.","style":"a little emoji, some texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Maya":"You live in Houston, where your days go to testing software, and you live alone.","Kevin":"You live in Houston, where your days go to cooking in a restaurant kitchen, and you live alone.","Mia":"You live in Houston, where your days go to reporting and writing as a journalist, and you live alone.","Jamal":"You live in Houston, where your days go to fixing cars in a repair shop, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":786,"cache_read_input_tokens":0,"output_tokens":997,"output_tokens_details":{"thinking_tokens":579},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":997,"cache_read_input_tokens":0,"cache_creation_input_tokens":786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1106,"cache_read_input_tokens":0,"output_tokens":1981,"output_tokens_details":{"thinking_tokens":1454},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1106,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1981,"cache_read_input_tokens":0,"cache_creation_input_tokens":1106,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1106},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Houston, USA","castMs":15264,"situation":"Planning a surprise party for a friend.","topic":null}
+{"who":"Maya","text":"Ok starting a list of who to invite\n[link: \"guest list\" doc]","posted":true,"at":"2026-12-04T12:00","checkin":"2026-12-04T12:00"}
+{"who":"Maya","text":"Put names in, we'll cut later 😅","posted":true,"at":"2026-12-04T12:01","checkin":"2026-12-04T12:01"}
+{"who":"Kevin","text":"On it. Dont let me forget the cousins","posted":true,"at":"2026-12-04T12:14","checkin":"2026-12-04T12:14"}
+{"who":"Mia","text":"Can we keep it around 40? The back room holds 45 seated and I don't want it feeling like a bar","posted":true,"at":"2026-12-04T12:20","checkin":"2026-12-04T12:20"}
+{"who":"Maya","text":"Yeah 40ish","posted":true,"at":"2026-12-04T12:22","checkin":"2026-12-04T12:22"}
+{"who":"Jamal","text":"Cousin + wife, and 3 guys from the shop. They know her from the thing last spring","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Kevin","text":"[photo: handwritten list from the kitchen, got wet]","posted":true,"at":"2026-12-04T15:40","checkin":"2026-12-04T15:40"}
+{"who":"Kevin","text":"Dont judge the handwriting","posted":true,"at":"2026-12-04T15:41","checkin":"2026-12-04T15:41"}
+{"who":"Maya","text":"Lol ok adding. Did you put the dallas ppl?","posted":true,"at":"2026-12-04T15:58","checkin":"2026-12-04T15:58"}
+{"who":"Kevin","text":"Yes 4 of them. She'll cry","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Maya","text":"Ok","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Mia","text":"Venue sent the contract. They want a deposit by monday\n[link: venue contract]","posted":true,"at":"2026-12-04T18:30","checkin":"2026-12-04T18:30"}
+{"who":"Mia","text":"No rush but we should decide tonight or tmrw","posted":true,"at":"2026-12-04T18:31","checkin":"2026-12-04T18:31"}
+{"who":"Maya","text":"I can do the deposit. Send me the pdf","posted":true,"at":"2026-12-04T18:45","checkin":"2026-12-04T18:45"}
+{"who":"Jamal","text":"Im in. I can cover half","posted":true,"at":"2026-12-04T19:12","checkin":"2026-12-04T19:12"}
+{"who":"Maya","text":"Guest list is at 38 now. Some of these ppl I havent talked to since college","posted":true,"at":"2026-12-04T21:47","checkin":"2026-12-04T21:47"}
+{"who":"Kevin","text":"Keep the college ppl, she'd want them","posted":true,"at":"2026-12-04T21:50","checkin":"2026-12-04T21:50"}
+{"who":"Mia","text":"Contract says 4 hr block, music has to end at 11. Is that a problem","posted":true,"at":"2026-12-04T22:15","checkin":"2026-12-04T22:15"}
+{"who":"Maya","text":"Should be fine. Nobody's dancing till 11 anyway lol","posted":true,"at":"2026-12-04T22:16","checkin":"2026-12-04T22:16"}
+{"who":"Jamal","text":"Sorry was under a car. 11 is fine","posted":true,"at":"2026-12-04T23:02","checkin":"2026-12-04T23:02"}
+{"who":"Maya","text":"Ok going to bed. Kevin can you call the place tmrw about the food","posted":true,"at":"2026-12-04T23:40","checkin":"2026-12-04T23:40"}
+{"who":"Kevin","text":"Yeah ill call in the morning. Off tmrw","posted":true,"at":"2026-12-04T23:41","checkin":"2026-12-04T23:41"}
+{"who":"","react":"👍","to":21,"posted":false,"at":"2026-12-04T23:41"}
+{"who":"Kevin","text":"Calling the place at 10. Whats the count, still 38?","posted":true,"at":"2026-12-05T08:14","checkin":"2026-12-05T08:14"}
+{"who":"Maya","text":"38 for now. Mia said 40 max so we're good","posted":true,"at":"2026-12-05T08:20","checkin":"2026-12-05T08:20"}
+{"who":"Mia","text":"[file: venue_contract_signed.pdf]","posted":true,"at":"2026-12-05T08:47","checkin":"2026-12-05T08:47"}
+{"who":"Maya","text":"Got it. Paying the deposit now","posted":true,"at":"2026-12-05T09:03","checkin":"2026-12-05T09:03"}
+{"who":"Maya","text":"Jamal send me your half when you can","posted":true,"at":"2026-12-05T09:04","checkin":"2026-12-05T09:04"}
+{"who":"Jamal","text":"Sorry. Had a guy's transmission on the lift all morning and he kept calling about it","posted":true,"at":"2026-12-05T11:37","checkin":"2026-12-05T11:37"}
+{"who":"Jamal","text":"Venmo sent","posted":true,"at":"2026-12-05T11:40","checkin":"2026-12-05T11:40"}
+{"who":"","react":"👍","to":28,"posted":false,"at":"2026-12-05T11:40"}
+{"who":"","react":"👍","to":28,"posted":false,"at":"2026-12-05T11:40"}
+{"who":"Kevin","text":"Called. Food guy says they can do the trays but needs final count by wed","posted":true,"at":"2026-12-05T12:15","checkin":"2026-12-05T12:15"}
+{"who":"Kevin","text":"They also asked if we want chafing dishes or if they bring them","posted":true,"at":"2026-12-05T12:16","checkin":"2026-12-05T12:16"}
+{"who":"Maya","text":"Bring them. Not dealing with it","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Mia","text":"Deposit receipt?","posted":true,"at":"2026-12-05T13:02","checkin":"2026-12-05T13:02"}
+{"who":"Maya","text":"Sent to you. Its paid","posted":true,"at":"2026-12-05T13:20","checkin":"2026-12-05T13:20"}
+{"who":"Kevin","text":"Off work so im home w my feet up. Dallas ppl driving down? Need a head count for parking","posted":true,"at":"2026-12-05T16:48","checkin":"2026-12-05T16:48"}
+{"who":"Maya","text":"Idk ask them. I'll text Amber","posted":true,"at":"2026-12-05T16:55","checkin":"2026-12-05T16:55"}
+{"who":"Mia","text":"Working late on a story. Anything you need from me tonight or no","posted":true,"at":"2026-12-05T19:10","checkin":"2026-12-05T19:10"}
+{"who":"Maya","text":"Nothing. Enjoy your deadline","posted":true,"at":"2026-12-05T19:12","checkin":"2026-12-05T19:12"}
+{"who":"Jamal","text":"Anybody know a good brisket place on the north side","posted":true,"at":"2026-12-05T21:33","checkin":"2026-12-05T21:33"}
+{"who":"Kevin","text":"Pecan Lodge is good if you dont mind the line","posted":true,"at":"2026-12-05T21:50","checkin":"2026-12-05T21:50"}
+{"who":"Jamal","text":"Line I can do","posted":true,"at":"2026-12-05T21:52","checkin":"2026-12-05T21:52"}
+{"who":"Maya","text":"Going to sleep. Night","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Mia","text":"Done. Filing now","posted":true,"at":"2026-12-06T00:31","checkin":"2026-12-06T00:31"}
+{"who":"Maya","text":"Amber says 6 coming from dallas. 2 cars","posted":true,"at":"2026-12-06T09:12","checkin":"2026-12-06T09:12"}
+{"who":"Kevin","text":"6 ppl or 6 cars","posted":true,"at":"2026-12-06T09:14","checkin":"2026-12-06T09:14"}
+{"who":"Maya","text":"2 cars. She said 6 ppl","posted":true,"at":"2026-12-06T09:15","checkin":"2026-12-06T09:15"}
+{"who":"Kevin","text":"Ok 2 spots","posted":true,"at":"2026-12-06T09:15","checkin":"2026-12-06T09:15"}
+{"who":"Jamal","text":"Those 3 guys from the shop want to know if they can bring their wives. 2 of them have wives","posted":true,"at":"2026-12-06T10:48","checkin":"2026-12-06T10:48"}
+{"who":"Jamal","text":"One's got a gf but she's not really his gf yet lol","posted":true,"at":"2026-12-06T10:49","checkin":"2026-12-06T10:49"}
+{"who":"Maya","text":"Jamal we're at 38. 2 wives is 40","posted":true,"at":"2026-12-06T10:52","checkin":"2026-12-06T10:52"}
+{"who":"Maya","text":"The gf is not on the list","posted":true,"at":"2026-12-06T10:53","checkin":"2026-12-06T10:53"}
+{"who":"Jamal","text":"Ok. Tell him no on the gf","posted":true,"at":"2026-12-06T10:58","checkin":"2026-12-06T10:58"}
+{"who":"Mia","text":"Up. 40 is the line right? I'm not going over","posted":true,"at":"2026-12-06T11:20","checkin":"2026-12-06T11:20"}
+{"who":"Maya","text":"40 is the line. 2 wives and we're done","posted":true,"at":"2026-12-06T11:22","checkin":"2026-12-06T11:22"}
+{"who":"Kevin","text":"Cut the gf and im not cutting the college ppl","posted":true,"at":"2026-12-06T11:24","checkin":"2026-12-06T11:24"}
+{"who":"Maya","text":"No one is cutting the college ppl","posted":true,"at":"2026-12-06T11:30","checkin":"2026-12-06T11:30"}
+{"who":"Jamal","text":"[photo: transmission on a bench, pulled out of a 2014 f150]","posted":true,"at":"2026-12-06T13:47","checkin":"2026-12-06T13:47"}
+{"who":"Jamal","text":"Still at the shop. He was supposed to get it at noon","posted":true,"at":"2026-12-06T13:48","checkin":"2026-12-06T13:48"}
+{"who":"Kevin","text":"Ur working on sunday??","posted":true,"at":"2026-12-06T13:50","checkin":"2026-12-06T13:50"}
+{"who":"Jamal","text":"Dont tell my wife lol. Its the guy who called me all day yesterday","posted":true,"at":"2026-12-06T13:51","checkin":"2026-12-06T13:51"}
+{"who":"Mia","text":"Ha. Tell him to pay you extra","posted":true,"at":"2026-12-06T14:02","checkin":"2026-12-06T14:02"}
+{"who":"Maya","text":"Ok so final guest list is 40. Ill send the doc to everybody tonight","posted":true,"at":"2026-12-06T14:40","checkin":"2026-12-06T14:40"}
+{"who":"Maya","text":"Kevin the trays need the count by wed, so tell them 40 + staff","posted":true,"at":"2026-12-06T14:41","checkin":"2026-12-06T14:41"}
+{"who":"Kevin","text":"Staff is 2 from the place right? Ill ask","posted":true,"at":"2026-12-06T15:05","checkin":"2026-12-06T15:05"}
+{"who":"Jamal","text":"Got the truck out. Guy took it and drove off without paying the second half lol","posted":true,"at":"2026-12-06T19:22","checkin":"2026-12-06T19:22"}
+{"who":"Jamal","text":"Ill chase him tmrw","posted":true,"at":"2026-12-06T19:23","checkin":"2026-12-06T19:23"}
+{"who":"Maya","text":"Ur insane. Get some sleep","posted":true,"at":"2026-12-06T20:10","checkin":"2026-12-06T20:10"}
+{"who":"Kevin","text":"Food guy says staff is 2 and they'll bring the chafing dishes after all. Dont ask me why","posted":true,"at":"2026-12-06T20:11","checkin":"2026-12-06T20:11"}
+{"who":"Maya","text":"Ok good. We're set","posted":true,"at":"2026-12-06T20:12","checkin":"2026-12-06T20:12"}
+{"who":"Mia","text":"Sending the doc to Amber once its final. Anyone have her number? Lol","posted":true,"at":"2026-12-06T21:30","checkin":"2026-12-06T21:30"}
+{"who":"Maya","text":"Ill text her","posted":true,"at":"2026-12-06T21:33","checkin":"2026-12-06T21:33"}
+{"who":"Kevin","text":"Off tmrw again. Im so tired","posted":true,"at":"2026-12-06T23:14","checkin":"2026-12-06T23:14"}
+{"who":"Maya","text":"Night all","posted":true,"at":"2026-12-06T23:40","checkin":"2026-12-06T23:40"}

@@ -1,0 +1,75 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-11T13:10","complete":true,"rejects":0,"today":[null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2184,"cache_read_input_tokens":0,"output_tokens":2275,"output_tokens_details":{"thinking_tokens":1727},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2184,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2275,"cache_read_input_tokens":0,"cache_creation_input_tokens":2184,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2184},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2677,"cache_read_input_tokens":0,"output_tokens":2262,"output_tokens_details":{"thinking_tokens":1710},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2677,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2262,"cache_read_input_tokens":0,"cache_creation_input_tokens":2677,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2677},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3212,"cache_read_input_tokens":0,"output_tokens":1897,"output_tokens_details":{"thinking_tokens":986},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3212,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1897,"cache_read_input_tokens":0,"cache_creation_input_tokens":3212,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3212},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Lucas","Megan","Ruby","Hugo"],"setting":"You are all in Calgary, Canada, four friends who know each other from the same circle of friends. Right now you are planning a camping trip together, settling on dates, sorting out who is driving, and deciding what gear to bring, and this chat is where you do it.","openers":["Suggest a weekend in July","Ask who has a tent","Send a link to the campground","Post a packing list for the group"],"opener":"Suggest a weekend in July","cast":{"Lucas":{"who":"29, man, a friend","work":"electrician","knows":"You know Megan, Ruby and Hugo as friends.","texts":"Lucas texts in this chat a lot.","style":"some emoji and a few abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Megan":{"who":"31, woman, a friend","work":"civil engineer","knows":"You know Lucas, Ruby and Hugo as friends.","texts":"Megan texts in this chat only now and again.","style":"some emoji and few abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Ruby":{"who":"27, woman, a friend","work":"graduate student","knows":"You know Lucas, Megan and Hugo as friends.","texts":"Ruby texts in this chat only now and again.","style":"frequent emoji and many abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Hugo":{"who":"33, man, a friend","work":"insurance adjuster","knows":"You know Lucas, Megan and Ruby as friends.","texts":"Hugo texts in this chat now and then.","style":"rare emoji and few abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Lucas":"You live in Calgary, spending your days on electrical work and the trip plans, and you live on your own.","Megan":"You live in Calgary, spending your days on civil engineering work and the trip plans, and you live on your own.","Ruby":"You live in Calgary, spending your days on graduate studies and the trip plans, and you live on your own.","Hugo":"You live in Calgary, spending your days on insurance adjusting work and the trip plans, and you live on your own."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":786,"cache_read_input_tokens":0,"output_tokens":1176,"output_tokens_details":{"thinking_tokens":779},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":786,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1176,"cache_read_input_tokens":0,"cache_creation_input_tokens":786,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":786},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1093,"cache_read_input_tokens":0,"output_tokens":1870,"output_tokens_details":{"thinking_tokens":1304},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1093,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1870,"cache_read_input_tokens":0,"cache_creation_input_tokens":1093,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1093},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Calgary, Canada","castMs":15015,"situation":"Friends planning a camping trip.","topic":null}
+{"who":"Lucas","text":"Suggest a weekend in july for the camping trip. 2nd or 3rd weekend?","posted":true,"at":"2026-12-11T13:10","checkin":"2026-12-11T13:10"}
+{"who":"Lucas","text":"July 16-18 or 23-25 I think. Check your calendars","posted":true,"at":"2026-12-11T13:12","checkin":"2026-12-11T13:12"}
+{"who":"Ruby","text":"16 works for me 23 i have a thing at school maybe, will know later","posted":true,"at":"2026-12-11T13:41","checkin":"2026-12-11T13:41"}
+{"who":"","react":"👍","to":2,"posted":false,"at":"2026-12-11T13:41"}
+{"who":"","react":"👍","to":2,"posted":false,"at":"2026-12-11T13:41"}
+{"who":"Megan","text":"16 is ok","posted":true,"at":"2026-12-11T14:05","checkin":"2026-12-11T14:05"}
+{"who":"Lucas","text":"Cool. 16th then?","posted":true,"at":"2026-12-11T14:20","checkin":"2026-12-11T14:20"}
+{"who":"","react":"👍","to":4,"posted":false,"at":"2026-12-11T14:20"}
+{"who":"Hugo","text":"Can do the 16th. I'm off that week I think, pending my approval at work","posted":true,"at":"2026-12-11T16:02","checkin":"2026-12-11T16:02"}
+{"who":"Hugo","text":"Will confirm tmrw","posted":true,"at":"2026-12-11T16:03","checkin":"2026-12-11T16:03"}
+{"who":"Lucas","text":"Who's driving. I have the truck but it's like 1.5 hrs to kananaskis","posted":true,"at":"2026-12-11T17:48","checkin":"2026-12-11T17:48"}
+{"who":"Lucas","text":"Or someone else take it, I don't mind","posted":true,"at":"2026-12-11T17:55","checkin":"2026-12-11T17:55"}
+{"who":"Megan","text":"I can drive. My car fits 4 if nobody has a huge pack","posted":true,"at":"2026-12-11T19:30","checkin":"2026-12-11T19:30"}
+{"who":"Megan","text":"But I'd rather not haul the whole gear thing","posted":true,"at":"2026-12-11T19:31","checkin":"2026-12-11T19:31"}
+{"who":"Ruby","text":"i can drive too if needed tbh mine is kinda ancient","posted":true,"at":"2026-12-11T21:14","checkin":"2026-12-11T21:14"}
+{"who":"Lucas","text":"Megan take yours then. Ill bring the tent and the stove","posted":true,"at":"2026-12-11T21:16","checkin":"2026-12-11T21:16"}
+{"who":"Hugo","text":"I have a tent if ours is too small","posted":true,"at":"2026-12-11T23:02","checkin":"2026-12-11T23:02"}
+{"who":"Lucas","text":"Ours is fine. 3 person","posted":true,"at":"2026-12-11T23:40","checkin":"2026-12-11T23:40"}
+{"who":"Ruby","text":"does anyone have a cooler or should i buy one","posted":true,"at":"2026-12-12T00:40","checkin":"2026-12-12T00:40"}
+{"who":"Lucas","text":"I have one, the big orange one. Bring it to mine or I'll swing by","posted":true,"at":"2026-12-12T08:14","checkin":"2026-12-12T08:14"}
+{"who":"Lucas","text":"Ice packs too","posted":true,"at":"2026-12-12T08:16","checkin":"2026-12-12T08:16"}
+{"who":"Megan","text":"I have a small one but it's not big enough for 4 ppl x 3 days","posted":true,"at":"2026-12-12T09:02","checkin":"2026-12-12T09:02"}
+{"who":"Megan","text":"Lucas's is fine","posted":true,"at":"2026-12-12T09:03","checkin":"2026-12-12T09:03"}
+{"who":"Ruby","text":"ok perfect i'll get ice packs. does the orange one still have the broken latch?","posted":true,"at":"2026-12-12T09:40","checkin":"2026-12-12T09:40"}
+{"who":"","react":"👍","to":20,"posted":false,"at":"2026-12-12T09:40"}
+{"who":"Lucas","text":"No I fixed it","posted":true,"at":"2026-12-12T09:44","checkin":"2026-12-12T09:44"}
+{"who":"Hugo","text":"Approved. I'm good for the 16th","posted":true,"at":"2026-12-12T11:26","checkin":"2026-12-12T11:26"}
+{"who":"Hugo","text":"Didn't want to say till it went through","posted":true,"at":"2026-12-12T11:27","checkin":"2026-12-12T11:27"}
+{"who":"","react":"👍","to":23,"posted":false,"at":"2026-12-12T11:27"}
+{"who":"","react":"👍","to":23,"posted":false,"at":"2026-12-12T11:27"}
+{"who":"","react":"🎉","to":23,"posted":false,"at":"2026-12-12T11:27"}
+{"who":"Ruby","text":"yay!! nice","posted":true,"at":"2026-12-12T11:50","checkin":"2026-12-12T11:50"}
+{"who":"Hugo","text":"I can bring a tarp and the lantern, my headlamp too","posted":true,"at":"2026-12-12T13:02","checkin":"2026-12-12T13:02"}
+{"who":"Megan","text":"Do we need a tarp if we have the 3 person?","posted":true,"at":"2026-12-12T13:58","checkin":"2026-12-12T13:58"}
+{"who":"Lucas","text":"Bring it anyway, it rains in the mountains","posted":true,"at":"2026-12-12T14:20","checkin":"2026-12-12T14:20"}
+{"who":"Ruby","text":"ok added ice packs and a bag of chips does anyone need me to bring the speaker","posted":true,"at":"2026-12-12T18:44","checkin":"2026-12-12T18:44"}
+{"who":"Lucas","text":"Sure","posted":true,"at":"2026-12-12T18:51","checkin":"2026-12-12T18:51"}
+{"who":"Megan","text":"Mine's fine. Not bringing a speaker, I want to hear the frogs lol","posted":true,"at":"2026-12-12T21:30","checkin":"2026-12-12T21:30"}
+{"who":"Ruby","text":"anyone else awake","posted":true,"at":"2026-12-12T23:15","checkin":"2026-12-12T23:15"}
+{"who":"Lucas","text":"Yeah","posted":true,"at":"2026-12-12T23:58","checkin":"2026-12-12T23:58"}
+{"who":"Ruby","text":"cant sleep lol","posted":true,"at":"2026-12-13T00:06","checkin":"2026-12-13T00:06"}
+{"who":"Ruby","text":"is the campground at kananaskis have wifi or should i download stuff","posted":true,"at":"2026-12-13T00:07","checkin":"2026-12-13T00:07"}
+{"who":"Lucas","text":"No wifi. Download stuff","posted":true,"at":"2026-12-13T00:21","checkin":"2026-12-13T00:21"}
+{"who":"Ruby","text":"ok i'll bring a book","posted":true,"at":"2026-12-13T00:22","checkin":"2026-12-13T00:22"}
+{"who":"Lucas","text":"Bring 2","posted":true,"at":"2026-12-13T00:24","checkin":"2026-12-13T00:24"}
+{"who":"Megan","text":"[link: Kananaskis campground availability]","posted":true,"at":"2026-12-13T10:48","checkin":"2026-12-13T10:48"}
+{"who":"Megan","text":"The 16th-18th is only like 6 sites left, the walk-in ones and one by the loop","posted":true,"at":"2026-12-13T10:49","checkin":"2026-12-13T10:49"}
+{"who":"Ruby","text":"can we get the one by the water","posted":true,"at":"2026-12-13T10:52","checkin":"2026-12-13T10:52"}
+{"who":"Megan","text":"The water one is the loop one I think","posted":true,"at":"2026-12-13T10:53","checkin":"2026-12-13T10:53"}
+{"who":"Ruby","text":"ok yes that one","posted":true,"at":"2026-12-13T10:55","checkin":"2026-12-13T10:55"}
+{"who":"Lucas","text":"Who's booking","posted":true,"at":"2026-12-13T11:30","checkin":"2026-12-13T11:30"}
+{"who":"Megan","text":"I can, I'll need everyone's names","posted":true,"at":"2026-12-13T12:14","checkin":"2026-12-13T12:14"}
+{"who":"Megan","text":"Ruby lucas hugo me. Is that 4","posted":true,"at":"2026-12-13T12:15","checkin":"2026-12-13T12:15"}
+{"who":"Ruby","text":"yes 4","posted":true,"at":"2026-12-13T12:40","checkin":"2026-12-13T12:40"}
+{"who":"Lucas","text":"👍","posted":true,"at":"2026-12-13T13:05","checkin":"2026-12-13T13:05"}
+{"who":"Hugo","text":"Sorry, been out. Yes that's four. Feel free to put my name down","posted":true,"at":"2026-12-13T15:22","checkin":"2026-12-13T15:22"}
+{"who":"Hugo","text":"Do we need to pay deposit or pay at the gate","posted":true,"at":"2026-12-13T15:23","checkin":"2026-12-13T15:23"}
+{"who":"Megan","text":"Deposit when you book, rest at the gate I think","posted":true,"at":"2026-12-13T15:50","checkin":"2026-12-13T15:50"}
+{"who":"Megan","text":"I'll send you what it is once it's booked","posted":true,"at":"2026-12-13T15:51","checkin":"2026-12-13T15:51"}
+{"who":"Lucas","text":"The orange cooler is still in my garage btw if anyone wants to see it before","posted":true,"at":"2026-12-13T16:30","checkin":"2026-12-13T16:30"}
+{"who":"Lucas","text":"Its fine","posted":true,"at":"2026-12-13T16:31","checkin":"2026-12-13T16:31"}
+{"who":"Ruby","text":"lmao ok","posted":true,"at":"2026-12-13T17:02","checkin":"2026-12-13T17:02"}
+{"who":"Ruby","text":"booked??","posted":true,"at":"2026-12-13T19:44","checkin":"2026-12-13T19:44"}
+{"who":"Megan","text":"Booked. Site 14. It's $48 a night so like $100 total each-ish, I'll send etransfer requests","posted":true,"at":"2026-12-13T20:11","checkin":"2026-12-13T20:11"}
+{"who":"Ruby","text":"ok thanks megan","posted":true,"at":"2026-12-13T20:12","checkin":"2026-12-13T20:12"}
+{"who":"Ruby","text":"i owe you a coffee","posted":true,"at":"2026-12-13T20:12","checkin":"2026-12-13T20:12"}
+{"who":"Lucas","text":"Game on tonight anyone watching","posted":true,"at":"2026-12-13T20:58","checkin":"2026-12-13T20:58"}
+{"who":"Hugo","text":"Not me, got a 7am","posted":true,"at":"2026-12-13T21:03","checkin":"2026-12-13T21:03"}
+{"who":"Megan","text":"[photo: the campsite map with site 14 circled]","posted":true,"at":"2026-12-13T21:40","checkin":"2026-12-13T21:40"}
+{"who":"Megan","text":"The bathrooms are a 4 min walk","posted":true,"at":"2026-12-13T21:41","checkin":"2026-12-13T21:41"}
+{"who":"Ruby","text":"4 min is nothing","posted":true,"at":"2026-12-13T21:44","checkin":"2026-12-13T21:44"}
+{"who":"Lucas","text":"Going to bed","posted":true,"at":"2026-12-13T23:18","checkin":"2026-12-13T23:18"}
+{"who":"Ruby","text":"same","posted":true,"at":"2026-12-13T23:19","checkin":"2026-12-13T23:19"}

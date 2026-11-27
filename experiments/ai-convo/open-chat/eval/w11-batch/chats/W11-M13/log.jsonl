@@ -1,0 +1,64 @@
+{"writer":"w11","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-08T11:20","complete":true,"rejects":0,"today":[null,"Claire","Marcus"],"usage":[{"input_tokens":2,"cache_creation_input_tokens":1933,"cache_read_input_tokens":0,"output_tokens":1482,"output_tokens_details":{"thinking_tokens":974},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1933,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1482,"cache_read_input_tokens":0,"cache_creation_input_tokens":1933,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1933},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2402,"cache_read_input_tokens":0,"output_tokens":1345,"output_tokens_details":{"thinking_tokens":736},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2402,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1345,"cache_read_input_tokens":0,"cache_creation_input_tokens":2402,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2402},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2984,"cache_read_input_tokens":0,"output_tokens":1693,"output_tokens_details":{"thinking_tokens":896},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2984,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1693,"cache_read_input_tokens":0,"cache_creation_input_tokens":2984,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2984},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Claire","Marcus"],"setting":"You and Marcus are both in Vancouver, Canada, where you each live. You are cousins who grew up at the same family gatherings. Right now you are both helping plan your aunt's seventieth birthday dinner in December, so you use this chat to sort the venue and the guest list.","openers":["Send the dinner venue shortlist","Ask who's bringing the cake","Confirm the December date","Forward the guest list"],"opener":"Ask who's bringing the cake","cast":{"Claire":{"who":"34, woman, the speaker with no named role","work":"paralegal","knows":"You know Marcus as your cousin, from family gatherings growing up.","texts":"","style":"Light, with occasional emoji and few texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Marcus":{"who":"29, man, the cousin","work":"physiotherapist","knows":"You know Claire as your cousin, from family gatherings growing up.","texts":"","style":"Heavy, with frequent emoji and many texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Claire":"You live in Vancouver, work as a paralegal, and live alone.","Marcus":"You live in Vancouver, work as a physiotherapist, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":780,"cache_read_input_tokens":0,"output_tokens":1369,"output_tokens_details":{"thinking_tokens":1152},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":780,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1369,"cache_read_input_tokens":0,"cache_creation_input_tokens":780,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":780},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1052,"cache_read_input_tokens":0,"output_tokens":1825,"output_tokens_details":{"thinking_tokens":1468},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1052,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1825,"cache_read_input_tokens":0,"cache_creation_input_tokens":1052,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1052},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Vancouver, Canada","castMs":18096,"situation":"My cousin.","topic":null}
+{"who":"Claire","text":"Who's doing the cake","posted":true,"at":"2026-12-08T11:20","checkin":"2026-12-08T11:20"}
+{"who":"Marcus","text":"idk i thought mum said she'd order from the place on broadway","posted":true,"at":"2026-12-08T13:05","checkin":"2026-12-08T13:05"}
+{"who":"Claire","text":"She said she'd ask. Did she","posted":true,"at":"2026-12-08T13:07","checkin":"2026-12-08T13:07"}
+{"who":"Marcus","text":"not that i saw i can call her tonight","posted":true,"at":"2026-12-08T13:09","checkin":"2026-12-08T13:09"}
+{"who":"Claire","text":"[link: Cedar Hall private room listing]\nis this one still ok for sat 19th","posted":true,"at":"2026-12-08T15:42","checkin":"2026-12-08T15:42"}
+{"who":"Marcus","text":"yeah the upstairs room. they said max 45 but u need to ask about the deposit","posted":true,"at":"2026-12-08T15:50","checkin":"2026-12-08T15:50"}
+{"who":"Marcus","text":"also aunt p said she wants the old crowd not just the family friends","posted":true,"at":"2026-12-08T15:51","checkin":"2026-12-08T15:51"}
+{"who":"Claire","text":"Ok. The old crowd is like 30 people","posted":true,"at":"2026-12-08T16:10","checkin":"2026-12-08T16:10"}
+{"who":"Claire","text":"I'll do the deposit","posted":true,"at":"2026-12-08T16:12","checkin":"2026-12-08T16:12"}
+{"who":"Marcus","text":"👍","posted":true,"at":"2026-12-08T16:14","checkin":"2026-12-08T16:14"}
+{"who":"","react":"👍","to":9,"posted":false,"at":"2026-12-08T16:14"}
+{"who":"Claire","text":"Can you send the list you had from last year","posted":true,"at":"2026-12-08T19:30","checkin":"2026-12-08T19:30"}
+{"who":"Marcus","text":"[photo: handwritten list on the back of an envelope]","posted":true,"at":"2026-12-08T19:44","checkin":"2026-12-08T19:44"}
+{"who":"Marcus","text":"its mostly right. the kellys might be out, they moved","posted":true,"at":"2026-12-08T19:46","checkin":"2026-12-08T19:46"}
+{"who":"Marcus","text":"also the cake is still unknown 💀","posted":true,"at":"2026-12-08T19:46","checkin":"2026-12-08T19:46"}
+{"who":"Claire","text":"I'll ask mum tomorrow","posted":true,"at":"2026-12-08T21:03","checkin":"2026-12-08T21:03"}
+{"who":"Marcus","text":"ok night","posted":true,"at":"2026-12-08T23:50","checkin":"2026-12-08T23:50"}
+{"who":"Claire","text":"Night","posted":true,"at":"2026-12-08T23:52","checkin":"2026-12-08T23:52"}
+{"who":"Claire","text":"Mum says she never ordered anything. She thought u were doing it","posted":true,"at":"2026-12-09T08:47","checkin":"2026-12-09T08:47"}
+{"who":"Marcus","text":"lmaooo ok ill call her at lunch","posted":true,"at":"2026-12-09T08:51","checkin":"2026-12-09T08:51"}
+{"who":"Marcus","text":"she says the broadway place is fine or the lemon one by the market. she sent me a link\n[link: Lemon & Co bakery menu]","posted":true,"at":"2026-12-09T12:20","checkin":"2026-12-09T12:20"}
+{"who":"Claire","text":"Which one is the market one","posted":true,"at":"2026-12-09T12:22","checkin":"2026-12-09T12:22"}
+{"who":"Marcus","text":"the one w the lemon cake. she says it's her fave","posted":true,"at":"2026-12-09T12:40","checkin":"2026-12-09T12:40"}
+{"who":"Claire","text":"Ok I'll call them after work","posted":true,"at":"2026-12-09T12:44","checkin":"2026-12-09T12:44"}
+{"who":"Claire","text":"Sorry was in a filing deadline all afternoon. Phone was in my bag","posted":true,"at":"2026-12-09T17:58","checkin":"2026-12-09T17:58"}
+{"who":"Marcus","text":"no stress. did u do the cedar deposit","posted":true,"at":"2026-12-09T18:03","checkin":"2026-12-09T18:03"}
+{"who":"Claire","text":"Not yet, they only take cards over the phone and I'm not doing that from the office","posted":true,"at":"2026-12-09T18:20","checkin":"2026-12-09T18:20"}
+{"who":"Marcus","text":"fair","posted":true,"at":"2026-12-09T18:22","checkin":"2026-12-09T18:22"}
+{"who":"Marcus","text":"do u know where the kellys went? i'd guess burnaby but idk","posted":true,"at":"2026-12-09T18:23","checkin":"2026-12-09T18:23"}
+{"who":"Claire","text":"No clue. Auntie j would know","posted":true,"at":"2026-12-09T18:40","checkin":"2026-12-09T18:40"}
+{"who":"Marcus","text":"ill ask her when i call about the cake","posted":true,"at":"2026-12-09T18:41","checkin":"2026-12-09T18:41"}
+{"who":"Claire","text":"Ok did cedar deposit online. 200 down, balance due 5 jan\n[photo: screenshot of payment confirmation]","posted":true,"at":"2026-12-09T21:15","checkin":"2026-12-09T21:15"}
+{"who":"Marcus","text":"ur a legend","posted":true,"at":"2026-12-09T21:17","checkin":"2026-12-09T21:17"}
+{"who":"","react":"👍","to":31,"posted":false,"at":"2026-12-09T21:17"}
+{"who":"Claire","text":"Dont make it weird","posted":true,"at":"2026-12-09T21:30","checkin":"2026-12-09T21:30"}
+{"who":"Marcus","text":"too late","posted":true,"at":"2026-12-09T22:04","checkin":"2026-12-09T22:04"}
+{"who":"Marcus","text":"night","posted":true,"at":"2026-12-09T23:41","checkin":"2026-12-09T23:41"}
+{"who":"Claire","text":"Night","posted":true,"at":"2026-12-09T23:44","checkin":"2026-12-09T23:44"}
+{"who":"Claire","text":"Did u ask auntie j about the kellys","posted":true,"at":"2026-12-10T08:31","checkin":"2026-12-10T08:31"}
+{"who":"Marcus","text":"not yet she's at the dr thurs mornings. will try at lunch","posted":true,"at":"2026-12-10T09:15","checkin":"2026-12-10T09:15"}
+{"who":"Marcus","text":"called lemon & co. they can do a 2 tier for up to 35 ppl but they need the order confirmed by monday or they release the slot","posted":true,"at":"2026-12-10T12:48","checkin":"2026-12-10T12:48"}
+{"who":"Marcus","text":"i told them u'd call. sorry","posted":true,"at":"2026-12-10T12:49","checkin":"2026-12-10T12:49"}
+{"who":"Claire","text":"Ok I'll call them at lunch tmrw","posted":true,"at":"2026-12-10T12:52","checkin":"2026-12-10T12:52"}
+{"who":"Marcus","text":"also i may have strained my back at work this morning carrying a transfer board up stairs not dramatic just annoying. spent the last hour doing the stretches i give everyone else lol","posted":true,"at":"2026-12-10T13:30","checkin":"2026-12-10T13:30"}
+{"who":"Claire","text":"Are you ok","posted":true,"at":"2026-12-10T13:31","checkin":"2026-12-10T13:31"}
+{"who":"Marcus","text":"yeah it's fine it's a me problem. ice + ibuprofen + refusing to admit i need a massage","posted":true,"at":"2026-12-10T13:33","checkin":"2026-12-10T13:33"}
+{"who":"Claire","text":"Get a massage","posted":true,"at":"2026-12-10T13:34","checkin":"2026-12-10T13:34"}
+{"who":"Marcus","text":"lol. ill see","posted":true,"at":"2026-12-10T13:36","checkin":"2026-12-10T13:36"}
+{"who":"Claire","text":"Auntie j answer","posted":true,"at":"2026-12-10T17:20","checkin":"2026-12-10T17:20"}
+{"who":"Marcus","text":"she did. kellys are in surrey now, gave me their new number. she also asked if u're bringing someone","posted":true,"at":"2026-12-10T19:02","checkin":"2026-12-10T19:02"}
+{"who":"Claire","text":"No","posted":true,"at":"2026-12-10T19:04","checkin":"2026-12-10T19:04"}
+{"who":"Claire","text":"Tell her no","posted":true,"at":"2026-12-10T19:04","checkin":"2026-12-10T19:04"}
+{"who":"Marcus","text":"i told her ur \"between things\" and she said that's what she said about u at 25","posted":true,"at":"2026-12-10T19:06","checkin":"2026-12-10T19:06"}
+{"who":"Claire","text":"Dont","posted":true,"at":"2026-12-10T19:07","checkin":"2026-12-10T19:07"}
+{"who":"Marcus","text":"too late","posted":true,"at":"2026-12-10T19:09","checkin":"2026-12-10T19:09"}
+{"who":"Claire","text":"Ok I'll text the kellys tmrw. Can u put the new number on the list","posted":true,"at":"2026-12-10T19:15","checkin":"2026-12-10T19:15"}
+{"who":"Marcus","text":"[photo: the envelope list with a new line written at the bottom, \"KELLYS - SURREY\"]","posted":true,"at":"2026-12-10T19:31","checkin":"2026-12-10T19:31"}
+{"who":"Marcus","text":"ur welcome","posted":true,"at":"2026-12-10T19:32","checkin":"2026-12-10T19:32"}
+{"who":"Marcus","text":"how's the back of ur neck, did u get any sleep lol","posted":true,"at":"2026-12-10T22:40","checkin":"2026-12-10T22:40"}
+{"who":"Claire","text":"Ya fine. Sleep is for people with no filing","posted":true,"at":"2026-12-10T22:41","checkin":"2026-12-10T22:41"}
+{"who":"Marcus","text":"night","posted":true,"at":"2026-12-10T22:43","checkin":"2026-12-10T22:43"}
+{"who":"Claire","text":"Night. Ice the back","posted":true,"at":"2026-12-10T22:44","checkin":"2026-12-10T22:44"}

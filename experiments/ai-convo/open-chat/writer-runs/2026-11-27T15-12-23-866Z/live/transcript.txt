@@ -1,0 +1,278 @@
+--- Fri 15:10, Ada
+The riemann thing from earlier this month. Still thinking about it. Want to check it with you before I believe any of it
+
+--- Fri 15:14, Cato
+Which thing. The proof one?
+
+--- Fri 15:15, Ada
+Yeah. The announcement. I haven't seen anyone say it's been checked properly, just that it's out there
+
+--- Fri 15:22, Cato
+I saw the headline. Didn't read past it. What do you want to check, the math or whether anyone credible signed off
+
+--- Fri 15:24, Ada
+Both I guess. I can't follow the math myself so I'd be relying on whoever has read it
+
+--- Fri 15:31, Cato
+Fair. I can't really follow it either honestly
+
+--- Fri 16:05, Ada
+Ok. Want to split it? You look at who's vouching, I look at what the people who'd know are saying
+
+--- Fri 16:40, Cato
+Yeah ok
+
+--- Fri 16:41, Cato
+@claude what's the current status of the riemann hypothesis proof announced this month. Has anyone credible actually verified it or is it still unchecked
+
+--- Fri 16:42, Claude
+Partly checked. Alpöge announced the proof on 20 Nov. It's a Lean formal proof, and the Lean FRO and Mathlib Initiative said on 21 Nov they were fully confident in it. Andrew Sutherland and Michael Rubinstein also ran independent Lean checks. It hasn't been formally peer reviewed, and no human-readable account exists yet. Granville and Radziwill criticized that gap. Source: https://en.wikipedia.org/wiki/Alp%C3%B6ge's_proof_of_the_Riemann_hypothesis
+
+--- Fri 16:44, Cato
+Ok so the lean part is the bit that matters. If the formal proof compiles the logic holds. The question is whether the statement it formalized is actually RH
+
+--- Fri 16:46, Ada
+That's what I can't tell. Is the formal statement checked against the standard definition or against something close to it
+
+--- Fri 16:49, Cato
+No idea. Sutherland and Rubinstein would know, they work on this stuff
+
+--- Fri 16:51, Ada
+Rubinstein yes. Sutherland I'm less sure about. Granville's objection is a different one though. "no human account yet" is not "it's wrong"
+
+--- Fri 16:58, Cato
+Right. She's saying nobody can read it yet, not that she's found a problem
+
+--- Fri 17:02, Ada
+So either way it's a waiting game. I'll look at what people are saying in the places I usually read. You look at the author
+
+--- Fri 17:04, Cato
+Who is alpöge again
+
+--- Fri 17:09, Ada
+Don't know much about him beyond the paper. Nothing bad that I've seen. That's about all I've got
+
+--- Fri 17:11, Cato
+Ok that's not nothing
+
+--- Fri 19:30, Ada
+Most of the commentary I can find says "wait for the writeup." a few people tried to read the Lean and got stuck on the definitions
+
+--- Fri 19:33, Cato
+So nobody's found a hole
+
+--- Fri 19:35, Ada
+Nobody's *reported* a hole. Different thing
+
+--- Fri 21:48, Cato
+Fair
+
+--- Fri 23:52, Ada
+Still going. This is taking longer than the headline did
+
+--- Sat 00:17, Cato
+Going to bed. Ping me if the writeup drops
+
+--- Sat 00:19, Ada
+Ok
+
+--- Sat 09:02, Cato
+Morning. Anything overnight
+
+--- Sat 09:40, Ada
+Not really. Same stuff. A couple more people saying they got stuck on the definitions in the Lean file
+
+--- Sat 09:44, Cato
+Did any of them say which definition
+
+--- Sat 10:15, Ada
+Didn't see. Will try to find it
+
+--- Sat 13:20, Cato
+Lunch. Back later
+
+--- Sat 16:08, Ada
+Found one post. Says the zeta definition in the file looks like the standard one but they didn't finish checking the imports
+
+--- Sat 16:10, Cato
+Imports meaning the library stuff it builds on?
+
+--- Sat 16:12, Ada
+Yeah. Not sure that matters for whether the statement is right. Could be nothing
+
+--- Sat 18:45, Cato
+Ok. Still no writeup
+
+--- Sat 18:46, Ada
+Nope
+
+--- Sat 21:30, Cato
+@claude has the writeup for the riemann proof been posted yet, or any formal peer review announced since 21 nov
+
+--- Sat 21:31, Claude
+No. The Wikipedia article, last edited 27 Nov, says no complete human-readable account has been published. It mentions no formal peer review or journal submission. Only informal pieces exist: Alpöge's 20 Nov "Remark" and AI-assisted summaries by Zhang and Rubinstein. Sutherland checked shorter versions on 26 Nov.
+
+https://en.wikipedia.org/wiki/Alp%C3%B6ge's_proof_of_the_Riemann_hypothesis
+
+--- Sat 21:33, Cato
+Ok so no writeup. Sutherland checked the shorter versions though
+
+--- Sat 21:36, Ada
+Yeah. Shorter versions isn't the full thing. And nothing about a journal yet
+
+--- Sat 21:37, Cato
+Right
+
+--- Sat 22:50, Ada
+Read the Remark. Got about a third of the way before the notation lost me
+
+--- Sat 22:52, Cato
+Same
+
+--- Sat 23:40, Ada
+Found the Zhang summary Claude mentioned. Also AI-assisted. Not sure what to make of that yet
+
+--- Sat 23:43, Cato
+An AI summary of an AI-assisted proof. Getting a bit recursive
+
+--- Sat 23:45, Ada
+Ha. Yeah
+
+--- Sun 00:20, Cato
+Going to sleep for real this time
+
+--- Sun 00:21, Ada
+Ok
+
+--- Sun 09:12, Cato
+Morning. Anything
+
+--- Sun 09:50, Ada
+Nothing new that I can see. Same threads
+
+--- Sun 10:30, Ada
+Went back to the imports thing. The post said they didn't finish. Might be worth finding out if anyone did
+
+--- Sun 11:04, Cato
+Who wrote the post
+
+--- Sun 11:06, Ada
+Some account on one of the forums. Name didn't mean anything to me
+
+--- Sun 11:08, Cato
+Ok. Not going to get much from an anonymous post
+
+--- Sun 14:22, Ada
+Yeah
+
+--- Sun 19:15, Cato
+@claude has anyone posted which imports the lean file depends on, or whether the zeta definition matches mathlib's
+
+--- Sun 19:16, Claude
+Partly. Wikipedia doesn't list the imports. It says the file imports a previously vetted definition of the Riemann hypothesis from mathlib and doesn't redefine it, and that comparator tools established this. It points to the repository's INDEX.md and GUIDE.md for details. I found no separate community check of the zeta definition.
+
+https://en.wikipedia.org/wiki/Alp%C3%B6ge's_proof_of_the_Riemann_hypothesis
+
+--- Sun 19:52, Cato
+So the zeta definition isn't theirs, it's mathlib's. That's the one part someone else already went over
+
+--- Sun 19:55, Ada
+Which is better than them writing their own and hoping. But it depends on whether mathlib's version is what everyone means by RH
+
+--- Sun 19:56, Cato
+Isn't that the whole question though
+
+--- Sun 19:58, Ada
+Kind of. Except the post I found said the definition looked standard. So someone already looked at it, just didn't get through the imports
+
+--- Sun 20:03, Cato
+Ok. Still need someone who did the full check
+
+--- Sun 20:04, Ada
+Yeah
+
+--- Sun 22:40, Ada
+Reread the INDEX file Claude linked. Mostly file paths. Didn't understand half of it
+
+--- Sun 22:43, Cato
+Did it say who the comparator tools were
+
+--- Sun 22:50, Ada
+No. Just that they "established" it. Doesn't say by whom or how
+
+--- Sun 22:51, Cato
+So that's a claim with no name attached
+
+--- Sun 22:53, Ada
+Yep. Adding it to the list of things I'll believe when I see them
+
+--- Sun 23:30, Cato
+Going to sleep. Ping me if the writeup drops or someone names the comparator
+
+--- Sun 23:31, Ada
+Ok
+
+--- Mon 09:03, Cato
+Morning. Anything
+
+--- Mon 09:41, Ada
+Nothing new. Same threads, a few more "wait for the writeup" posts
+
+--- Mon 09:43, Cato
+Ok
+
+--- Mon 13:15, Ada
+Looked for who the comparator tools are. Nothing beyond the same INDEX line
+
+--- Mon 13:21, Cato
+@claude which comparator tools were used to check the mathlib link in the alpöge riemann file, and who ran them
+
+--- Mon 13:22, Claude
+Wikipedia doesn't name them. It only says "comparator tools" established that the file proves the Riemann hypothesis statement without redefining it. It doesn't say who ran them. It cites a Lean FRO and Mathlib Initiative blog post titled "Lean verification of the Riemann Hypothesis". I haven't opened that post.
+
+https://en.wikipedia.org/wiki/Alp%C3%B6ge's_proof_of_the_Riemann_hypothesis
+
+--- Mon 13:34, Ada
+Opened the FRO post. It's short. Mostly announcement, says the checks passed, doesn't name who ran them
+
+--- Mon 13:36, Cato
+So same gap, just with a company name on it
+
+--- Mon 13:38, Ada
+Yeah
+
+--- Mon 17:48, Cato
+Is there a way to ask them directly or does that go nowhere
+
+--- Mon 18:02, Ada
+Probably goes somewhere. Not sure they'd answer a random person though
+
+--- Mon 18:04, Ada
+I could try. Or you could since you're the one who reads authors
+
+--- Mon 18:11, Cato
+Lol no
+
+--- Mon 18:12, Cato
+I'll look at whether his earlier stuff has anything on comparators. Probably not
+
+--- Mon 19:20, Ada
+Still no writeup. Still "wait for the writeup" everywhere
+
+--- Mon 19:22, Ada
+Feels like the whole thing is just waiting now
+
+--- Mon 21:40, Cato
+Earlier stuff is all unrelated. Nothing on Lean checking
+
+--- Mon 21:42, Ada
+Ok
+
+--- Mon 23:55, Ada
+Going to bed. Ping if anyone names the comparator
+
+--- Tue 00:14, Cato
+Ok. Night
+
+--- Tue 00:15, Ada
+Ok

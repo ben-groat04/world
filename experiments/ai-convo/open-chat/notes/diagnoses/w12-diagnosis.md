@@ -1,103 +1,110 @@
-# W12 diagnosis (cold read of the W10 vs W11 paired batch)
+# W12 diagnosis (cold read of the W10 vs W11 batch and the two demos)
 
-Read: HANDOFF, ITERATIONS (all), README, `writer.mjs` (W11), w11-diagnosis, `eval/w11-batch/` (all 30 judge reports, tally, keys, casts, about 10 windows in full). Numbers come from throwaway scripts over `chats/*/log.jsonl` and the judges' SCORES blocks. "Centred" means judge-centred. Line numbers refer to `writer.mjs`.
+Read: HANDOFF, ITERATIONS, README, `writer.mjs` (W11), w11-diagnosis, all 30 judge reports (ids mapped to labels), ~10 chats in full, every cast Setting, both demos. Numbers are from throwaway scripts. Line numbers are for the current `writer.mjs`. It carries an uncommitted edit for casts that are not people (`c.place === null`), which keeps line numbers the same and is left alone here.
 
-## Why the minimal briefs rose, and whether it is real
+## 1. Why the minimal briefs rose
 
-**The driver is the English-speaking places (W11 item 4).** The other items show no effect.
-- In W10, 10 of the 15 minimal casts were set in non-English places (Karachi, Hanoi, Casablanca, Lima and others). The 5 W10 minimal chats set in English-speaking places score +0.46 centred, against −0.26 for the rest. W11's minimal chats score +0.52.
-- Within each brief, the English-place W10 chats score higher in all 4 briefs that have both kinds: M1 +0.81 vs −0.17, M3 0.97 vs 0.43, M4 0.01 vs −0.10, M5 0.27 vs −0.13.
-- The M2 jump (6.50 → 7.83) is W10's Karachi and Hanoi chats. Judges called those "separate vignettes" and "staged for atmosphere" (bia, Fahasa, banh gai).
-- In English-speaking places the judges praise native idiom ("Leave it so", Bunnings, esky, Heuston).
-- Language itself is not the tell: W10's chats written in Spanish or French scored 8-9.
+The rise comes from the place list (item 4), and it is real.
 
-**The Setting-shared fix does not explain it.** The W10 minimal casts whose Setting was about each person's own work (M32, M33, M41, M43) score no lower.
+| windows | n | score | judge-centred |
+|---|---|---|---|
+| W10 minimal, English-speaking place | 20 | 8.00 | +0.46 |
+| W10 minimal, other place | 40 | 7.40 | −0.26 |
+| W11 minimal | 60 | 8.25 | +0.52 |
 
-**The gain is real in direction; the level is flattered.**
-- Paired by brief, 4 of 5 rose and 1 was flat, for a mean of +0.65.
-- But 3 of the 5 minimal briefs are 1:1s, and both arms found these easy (W10 7.97, W11 8.42).
-- W11's group chats average 7.56. In the W10 batch the 1:1s were the low ones (7.39), so 8.25 is partly this brief mix.
+W10's minimal chats set in English-speaking places already score what W11 scores. Ten of W10's 15 minimal casts were set elsewhere (Hanoi 5.25, Karachi 6.5), and judges flag that ("set in Italy but written in English", j27). The per-day draw did not cause the rise. Caveat: only 5 W10 chats sit in that first row.
 
-## What holds the business briefs at ~7.4
+## 2. What holds the business briefs at ~7.4
 
-All 5 business briefs are group chats.
+**A. W11's `today` line breeds "sorry, [work vignette]".** Holding place constant, business did not gain: W10's B1-B3 chats outside English-speaking places scored 7.25, and W11's B1-B3 scored 7.28.
+- "sorry" went from 1.6% to 3.7% of business messages, and thanks from 1.0% to 3.0%.
+- The new apologies are excuse vignettes: "sorry was on a callout since 6. geyser in salt river… she made me tea anyway", "Basement flooded in the stacks".
+- On drawn days, the drawn person writes 20 of the 33 excuse/day-report messages while sending 32% of the messages.
+- The line leaked word for word: B12 has "Something from my day. The bylaw officials…". j18 and j24 scored that window 5 and named "each person explaining their day".
+- W11's own check missed its target (1.40 vs 1.47 reporters per chat-day). The line concentrates the anecdotes on one person; it does not reduce them.
 
-**1. W11's per-day "whose day" line (64, 215) causes the lowest W11 windows.** The writer acts out the named person's day as an apology plus a work anecdote, and the line leaks into the text.
-- **Apologies.** 22 of the 31 "Sorry, was …" messages in W11 come from the drawn person on their drawn day. Examples: "sorry was on a callout since 6. geyser in salt river…"; "Sorry, been on site since 7…".
-- **Verbatim leak.** In B12, Thabo writes "Something from my day. The bylaw officials…". That window scored 5/5, and both judges named the "neat excuse with a tidy backstory".
-- **Leak into a name.** On Rowan's drawn day, Rowan writes "Rowan's car is in the shop". That window got 3 from one judge, who called it a generation error.
-- **Calendar slip.** On Grace's drawn day she writes "a friday rush", stamped Thursday 23:48. That window scored 6/3.
-- **Work talk rises.** Messages with work words: drawn person 7.8%, others on drawn days 6.5%, days with nobody drawn 4.9%.
-- **Net effect.** Business windows go from −0.45 centred in W10 (non-English places) to −0.36 in W11. Without the two windows hit by the line, W11 is −0.07: the place gain was eaten by this line.
-- **W11's own check missed the target.** Own-day reports per chat-day were 1.40 vs 1.47. The line adds anecdotes rather than replacing them.
+**B. Everyone appears every day.** In 63 of 63 group chat-days (both arms, both classes), every member posts. The single author gives each person a cue, so every slot gets filled and every question gets answered. Judges name it: "everyone responding on cue" (j22), "offers and confirmations very orderly" (j12), "threads resolve neatly" (j28), "totals match" (j9). Task chats show it most. `textsFor` (163) sets volume per chat, never per day.
 
-**2. Everyone shows up every day and every ask gets answered.**
-- In groups, the share of members who post on a chat-day (days with 5 or more messages) is **1.00 in both arms**.
-- The code-drawn "only now and again" people still post 0.82 of an even share.
-- Only 8% of questions go unanswered for an hour, and each gets 1.4 responders.
-- Judges say: "everyone responds on cue", "a sequence of offers and confirmations is very orderly", "each person posts a vignette in turn", "list-like, threads each resolve neatly".
-- The volume sentence in the cast barely moves the single author, who gives every person on the sheet a turn.
+**C. Slips** (about 4 in 60 chats): "Rowan's car is in the shop" written by Rowan (B21), a "friday rush" mentioned on a Thursday (V12), date muddles (M11, B13). I found no cause that the prompt or code controls: the calendar is already exact, and Sonnet as writer did no better (W4).
 
-**3. Casting invents an org chart.**
-- B1 ("Organising a school fundraiser.") came out as PTA chair, treasurer, teacher sponsor, volunteer coordinator, student representative. Other casts add a principal and a 16-year-old student.
-- B1 is the lowest brief in both arms (7.00, 6.67).
-- Judges: "Frank's formal tone", "each person's job neatly distinct", "everyone very polite".
-- Each title becomes a register and a duty to perform.
+**D. A ghost message from a reaction.** V12 has Ethan sending "( 1)". The writer put a reaction line under Ethan's own header, the parse kept it as text, and `emojiDrop` removed the emoji. j8 scored that window 3.
 
-**4. Parse slips.**
-- A message that was only "( 1)" (W11-V12, named by both judges): a reaction line the parse missed (probably spacing), whose emoji `emojiDrop` then stripped.
-- A reaction line placed before the text (W10-B12, named by 2 judges).
+## 3. Causes of the user's observations
 
-**Looked at and not changed:**
-- **"Can't sleep" late-night beats.** 9-10 of 30 chats in each arm have one. Judges praised them in four 9-scored windows and flagged them as a cross-file motif twice.
-- **Repeated jobs.** Accountant 6 and electrician 5 of about 100 people. This is only visible across files.
-- **The calendar line.** No real weekday slips this batch apart from the one above.
+- **"(😂 2)" in a 1:1.** The prompt asks for anonymous counts (line 64). The code cannot know who reacted, so impossible counts and self-reactions pass. They are logged with `who: ''` (211) and sent to the viewer as N anonymous reactions (187). D has the same cause.
+- **The same crush beat twice.** The secret line (54) says "may hint at it or tell someone in the chat when it fits, or not yet". The author plays that out in order across the days:
+  - hint: "can I ask you something random"
+  - not yet: "nvm"
+  - tell: "not over text", then coffee
 
-## W12 plan (ranked)
+  Both secrets mirrored each other, so both demos ran the script.
+- **Related sameness in the Settings.** 11 of 15 W11 minimal Settings, and both demo Settings, are "planning a birthday, Christmas or braai event" (W10: 8 of 15). This is Haiku's most likely answer to "one or two ordinary things you have going on together" (153).
 
-Every item runs per day or at casting, ahead of the clock. @claude cut-and-resume is unchanged: a resume reuses the day's line.
+## 4. What W11 broke or didn't work
 
-**1. Remove the whose-day line, and use its plumbing for item 2.**
-- 64: replace `${today ? `\n\nSomething from ${today}'s own day may come up today.` : ''}` with `${today ? `\n\n${today}` : ''}`.
-- Keep "Their days are ordinary." The W10 line "now and then something from someone's day comes up" stays out.
-- *ITERATIONS:* this undoes W11 item 1, whose own check failed.
-- *Check:* 10 briefs × 1 seed against W11 (same casts, list mode).
-  - "Sorry, was/been" messages per business chat: 2.1 → at most W10's 0.6.
-  - Senders naming themselves: 0.
-  - Work-word share at most 4.9%.
+**Item 1 (the `today` draw) comes out.** Its check missed, it leaked word for word, and the extra business excuses track it. Keep "Their days are ordinary."
 
-**2. Per-day presence in group chats, drawn in code.** This replaces the per-chat volume sentence.
-- At 215, replace the `today` draw with:
+**Items 2-4 stay.** Judges check dates and praise consistent ones (j18, j20).
+
+## 5. W12 plan (ranked)
+
+Every per-day draw happens in the main loop before that day's call. An @claude resume reuses it, and nothing is rewritten after release.
+
+**1. Remove `today`.**
+- At 64, delete `${today && c.place !== null ? `\n\nSomething from ${today}'s own day may come up today.` : ''}`.
+- At 214-215, drop `todays` and `today`. Item 2 reuses the slot.
+
+*Check:* B1, B2, V1 × 2 seeds. Excuse/"sorry" rate at or below 1.6%; "my day" 0.
+
+**2. Per-day presence in groups, drawn in code.** This refines `textsFor`; it sets who is around, not what anyone says.
+- At 215, per day:
 ```js
-const lead = c.names.find(n => /a lot/.test(c.cast[n].texts ?? '')), seen = ['looks in now and then', 'looks in once or twice', "doesn't look at it"]; // design odds
-const today = c.names.length < 3 ? null : `Today in this chat: ${c.names.map(n => `${n} ${n === lead ? 'is on it a lot' : pick(d === 0 && n === c.names[0] ? seen.slice(0, 2) : seen)}`).join('; ')}.`;
+const away = c.names.length < 3 ? [] : c.names.filter((n, j) => !(d === 0 && j === 0) && Math.random() < ({ 'now and then': 0.25, 'only now and again': 0.5 }[c.cast[n].texts.match(/now and then|only now and again/)?.[0]] ?? 0));
 ```
-- 53: drop `${p.texts ? ' ' + p.texts : ''}`, so there is one volume channel, not two. `textsFor` still marks the lead.
-- *ITERATIONS:*
-  - It works like the co-presence negation that held (W9 item 4, 0 of 3), not like W11's additive cue, which the author acted out.
-  - It is not W5's silent-day allowance: the lead is always present, and nothing says a day may be empty.
-  - It is the same kind of design draw as W8's volume.
-- *Check:* group briefs (B1-B3, V1, M2, M4) × 2 seeds against item 1 alone.
-  - Members posting per chat-day: 1.00 → about 0.75.
-  - Questions unanswered for an hour: 8% → 15% or more.
-  - "Sorry/missed" catch-up messages: no higher than item 1 alone.
-  - Messages per chat: abort if down more than 30%.
-  - Read 4 chats for monologues.
+  The two odds are design parameters.
+- At 64, after BACKGROUND: `${away?.length ? `\n\n${list(away)} ${away.length > 1 ? "don't" : "doesn't"} open this chat today.` : ''}`.
+- Log `away` in the head row.
 
-**3. No invented titles in casting.**
-- 136: change `e.g. "58, woman, the parent" (no character traits)` to `e.g. "58, woman, the parent" (no character traits, and no title or duty the situation doesn't give them)`.
-- *ITERATIONS:* casting wording that names an output field has held before (W10 knows line, 7 → 0; W7 place).
-- *Check:* casts for 6 group briefs × 3. Title words (chair, treasurer, coordinator, representative, sponsor, secretary, principal) in `who` where the brief names none: B1 9 of 15 → 0. Colleague briefs still get their jobs (baker, counter).
+*ITERATIONS:* this is not W5's silent days, since the chat itself stays live. It follows the away flags of rounds 4-5, which helped, and the W9 lesson of deciding in code.
 
-**4. Tolerant reaction lines (72-74).**
-- Match a reaction line with `/^\(\s*((?:\p{Extended_Pictographic}️?[^,()]*?\s*\d+)(?:\s*,\s*\p{Extended_Pictographic}️?[^,()]*?\s*\d+)*)\s*\)$/u`. Split the counts with `/\s*,\s*/` and `/^(.*?)\s*(\d+)$/`.
-- Test the first body line as well as the last. A reaction line in either place is taken out of the text.
-- *ITERATIONS:* this extends the W10 parse fix.
-- *Check:*
-  - Unit test on "( 👍 1)", "(👍1)", "(👍 2)\ntext" and "text\n(😂 1, 👍 2)".
-  - Bracket-count messages in the check chats: 0.
+*Check:* B1-B3, M2, M4 × 2 seeds.
+- Group chat-days where every member posts: 100% → at most 70%.
+- People drawn as away post 0 messages that day.
+- Questions left without a reply for 2 h become more common.
+- Abort if messages per chat drop more than 25%, or if "sorry, was…" rises above 1.6%.
 
-**5. Eval: W11 vs W12 paired batch.**
-- 10 fresh briefs × 3 seeds, 2 days.
-- At least 6 briefs should be groups (minimal and business both), and `classes.json` should also carry `group` or `1:1`, so the tally separates brief type from chat size.
-- One `--live` fact run to confirm the resume keeps the day's line.
+**3. Reactions name who reacted.**
+- At 64, the reaction sentence becomes: `If others reacted to a message, put a line like "(👍 Sam, 😂 Priya)" directly under it: each emoji with who sent it.`
+- `parse` (72-74) reads `emoji Name` entries and keeps one per person, only for cast names other than the sender. A block from X that holds only a bracketed reaction becomes X's reaction to the message before it.
+- `reacts` becomes `[[emoji, who]]`. `transcript` (55) shows names to the writer.
+- The log (211) and the viewer (187) get the real `who`. `eval-prep` still shows judges counts.
+
+*ITERATIONS:* counts were chosen against copying between agents (rounds 13-16). That doesn't apply to a single author, and readers still see counts.
+
+*Check:*
+- Unit-parse "(😂 2)", a self-reaction, and "--- Fri 17:15, Ethan\n(👍 1)".
+- Regenerate the 2 demo specs and 4 group briefs: reactions by the sender or by non-members 0; text that is only a reaction 0; reactions per message within ±50% of 3.5%.
+
+**4. Take the script out of the secret line.**
+- At 54, replace `It is on ${n}'s mind; ${n} may hint at it or tell someone in the chat when it fits, or not yet.` with `It is on ${n}'s mind.`
+
+*ITERATIONS:* W2 found secrets surface only when they are on the person's mind, so that part stays.
+
+*Check:* both demo specs × 3 seeds (`--gen` with secrets).
+- Hint/retreat beat ("ask you something", "nvm", "not over text"): 2 of 2 → at most 2 of 6.
+- The secret still surfaces in at least 4 of 6.
+- If the beat stays at 3 or more of 6, this round also applies the opener mechanism to the secret: casting writes four ways it could go and the code picks one. Watch for re-asks (round 12's hidden director).
+
+**5. Vary what is going on (casting).**
+- At 153 (people branch), end the Setting at "how you know each other." and add: `One line starting "Going on:": four different ordinary things these people could have going on together at the moment that this chat gets used for (shared between them, not one person's own job or week), separated by " | ".`
+- `parseCast` (164): `going: pick(options)`, optional, so old casts still load.
+- At 64: `Setting: ${c.setting}${c.going ? ` At the moment: ${c.going}.` : ''}`.
+
+This is W7's opener mechanism (8 of 8 openers distinct) applied to W10's business line.
+
+*Check:* 15 minimal casts.
+- Event planning: 11 of 15 → at most 7 of 15.
+- Task briefs still name their task.
+- The opener fits the picked item in 10 of 10.
+
+**6. Eval.** W11 vs W12 paired batch: 10 fresh briefs (at least 4 business with 4+ people), 3 seeds, tallied by class and judge-centred. Add one secret brief per arm, read by eye.

@@ -1,0 +1,99 @@
+{"writer":"w11","live":true,"model":"haiku","effort":"medium","days":3,"oracle":false,"start":"2026-12-05T23:40","complete":true,"rejects":0,"today":[null,null,null,null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2310,"cache_read_input_tokens":0,"output_tokens":1925,"output_tokens_details":{"thinking_tokens":988},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2310,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1925,"cache_read_input_tokens":0,"cache_creation_input_tokens":2310,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2310},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3110,"cache_read_input_tokens":0,"output_tokens":3086,"output_tokens_details":{"thinking_tokens":2418},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3110,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3086,"cache_read_input_tokens":0,"cache_creation_input_tokens":3110,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3110},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3783,"cache_read_input_tokens":0,"output_tokens":2052,"output_tokens_details":{"thinking_tokens":1480},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3783,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2052,"cache_read_input_tokens":0,"cache_creation_input_tokens":3783,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3783},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4350,"cache_read_input_tokens":0,"output_tokens":2173,"output_tokens_details":{"thinking_tokens":1435},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4350,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2173,"cache_read_input_tokens":0,"cache_creation_input_tokens":4350,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4350},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":4350,"output_tokens":2348,"output_tokens_details":{"thinking_tokens":1606},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2348,"cache_read_input_tokens":4350,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Charlotte","Daniel"],"setting":"You are both in Bristol, where you each live now. You knew each other at school in the same town, and you met again in person at your school reunion tonight after four years apart. You are arranging a meal out with your old year group next month and sorting out who is sending the reunion photos.","openers":["Send the group photo from tonight","Ask if he got home safely","Suggest a drink next week","Share the link for the meal planning chat"],"opener":"Ask if he got home safely","cast":{"Charlotte":{"who":"22, woman, the spacecraft engineer at a startup","work":"launch-campaign engineer","knows":"You know Daniel as a schoolmate you met again tonight at the reunion.","texts":"","style":"a little emoji and some texting abbreviations, used sparingly","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Daniel":{"who":"22, man, the law graduate","work":"Legal Practice Course student","knows":"You know Charlotte as a schoolmate you met again tonight at the reunion.","texts":"","style":"a little emoji and some texting abbreviations, used sparingly","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Charlotte":"You live in Bristol, spend your days as a launch-campaign engineer at a startup, and live alone.","Daniel":"You live in Bristol, spend your days on the Legal Practice Course after finishing your law degree, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":965,"cache_read_input_tokens":0,"output_tokens":1199,"output_tokens_details":{"thinking_tokens":930},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":965,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1199,"cache_read_input_tokens":0,"cache_creation_input_tokens":965,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":965},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1297,"cache_read_input_tokens":0,"output_tokens":1771,"output_tokens_details":{"thinking_tokens":1377},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1297,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1771,"cache_read_input_tokens":0,"cache_creation_input_tokens":1297,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1297},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"UK","castMs":16618,"situation":"You went to school together in the UK and hadn't seen or spoken to each other in four years until your school reunion tonight, in person, where you got talking and swapped numbers before you each went home. You've both just graduated: one of you now works as a spacecraft engineer at a startup, the other has just finished a law degree.","topic":null}
+{"secrets":{"Charlotte":"You've had a crush on Daniel since school, and seeing him tonight brought it all back. You're scared to tell him.","Daniel":"You've had a crush on Charlotte since school, and seeing her tonight brought it all back. You're scared to tell her."}}
+{"who":"Charlotte","text":"Got home ok?","posted":true,"at":"2026-12-05T23:40","checkin":"2026-12-05T23:40"}
+{"who":"Daniel","text":"Yeah just in. Cab driver spent the whole way telling me about his divorce","posted":true,"at":"2026-12-05T23:52","checkin":"2026-12-05T23:52"}
+{"who":"Charlotte","text":"No way","posted":true,"at":"2026-12-05T23:53","checkin":"2026-12-05T23:53"}
+{"who":"Charlotte","text":"Mine was quiet. Just me and the radio","posted":true,"at":"2026-12-05T23:53","checkin":"2026-12-05T23:53"}
+{"who":"Daniel","text":"Still up?","posted":true,"at":"2026-12-06T00:10","checkin":"2026-12-06T00:10"}
+{"who":"Charlotte","text":"Yeah. Always can't sleep after these things","posted":true,"at":"2026-12-06T00:14","checkin":"2026-12-06T00:14"}
+{"who":"Daniel","text":"Same. Keep replaying gareth going on about his dad's boat","posted":true,"at":"2026-12-06T00:15","checkin":"2026-12-06T00:15"}
+{"who":"Charlotte","text":"He has a boat??","posted":true,"at":"2026-12-06T00:16","checkin":"2026-12-06T00:16"}
+{"who":"Daniel","text":"Apparently. Wasn't clear if it's in the water","posted":true,"at":"2026-12-06T00:16","checkin":"2026-12-06T00:16"}
+{"who":"Daniel","text":"Who's doing the photos? Priya had her phone out all night","posted":true,"at":"2026-12-06T09:48","checkin":"2026-12-06T09:48"}
+{"who":"Charlotte","text":"I'll ask her. She'll have hundreds","posted":true,"at":"2026-12-06T11:02","checkin":"2026-12-06T11:02"}
+{"who":"Charlotte","text":"She sent me one of you and the lad with the moustache already lol","posted":true,"at":"2026-12-06T11:02","checkin":"2026-12-06T11:02"}
+{"who":"Daniel","text":"God. No","posted":true,"at":"2026-12-06T11:03","checkin":"2026-12-06T11:03"}
+{"who":"Charlotte","text":"[photo: the group outside the pub, everyone squinting]","posted":true,"at":"2026-12-06T11:30","checkin":"2026-12-06T11:30"}
+{"who":"Charlotte","text":"Dunno if that's the one. You're the one at the end","posted":true,"at":"2026-12-06T11:31","checkin":"2026-12-06T11:31"}
+{"who":"Daniel","text":"Looks like I'm about to be arrested","posted":true,"at":"2026-12-06T11:45","checkin":"2026-12-06T11:45"}
+{"who":"Charlotte","text":"Think we should sort the meal before everyone's booked up for Christmas","posted":true,"at":"2026-12-06T14:20","checkin":"2026-12-06T14:20"}
+{"who":"Daniel","text":"Yeah. Ok, which saturday","posted":true,"at":"2026-12-06T14:52","checkin":"2026-12-06T14:52"}
+{"who":"Daniel","text":"The 9th or the 16th?","posted":true,"at":"2026-12-06T14:52","checkin":"2026-12-06T14:52"}
+{"who":"Charlotte","text":"16th probably. 9th is too close to the work thing","posted":true,"at":"2026-12-06T15:10","checkin":"2026-12-06T15:10"}
+{"who":"Daniel","text":"Fine by me","posted":true,"at":"2026-12-06T15:11","checkin":"2026-12-06T15:11"}
+{"who":"Daniel","text":"I'll put it in the group","posted":true,"at":"2026-12-06T15:11","checkin":"2026-12-06T15:11"}
+{"who":"Charlotte","text":"Did you put it in the group","posted":true,"at":"2026-12-06T19:33","checkin":"2026-12-06T19:33"}
+{"who":"Daniel","text":"Not yet. Need to find the group first. Priya made a new one and I think it's just her and gareth","posted":true,"at":"2026-12-06T19:40","checkin":"2026-12-06T19:40"}
+{"who":"Charlotte","text":"Lol ok I'll do it","posted":true,"at":"2026-12-06T19:41","checkin":"2026-12-06T19:41"}
+{"who":"Daniel","text":"Honestly it was good seeing you properly. I kept forgetting you'd gone off to do rockets","posted":true,"at":"2026-12-06T21:05","checkin":"2026-12-06T21:05"}
+{"who":"Charlotte","text":"Not rockets it's the bit before the rockets","posted":true,"at":"2026-12-06T21:09","checkin":"2026-12-06T21:09"}
+{"who":"Charlotte","text":"It was really good to see you too","posted":true,"at":"2026-12-06T21:09","checkin":"2026-12-06T21:09"}
+{"who":"Charlotte","text":"Didn't expect to come out of that one with anything other than a headache","posted":true,"at":"2026-12-06T21:10","checkin":"2026-12-06T21:10"}
+{"who":"Daniel","text":"Ha. Same","posted":true,"at":"2026-12-06T21:14","checkin":"2026-12-06T21:14"}
+{"who":"Charlotte","text":"Night","posted":true,"at":"2026-12-06T23:11","checkin":"2026-12-06T23:11"}
+{"who":"Daniel","text":"Night. This was a good one","posted":true,"at":"2026-12-07T00:40","checkin":"2026-12-07T00:40"}
+{"who":"Daniel","text":"Morning. Has anyone sorted the group yet","posted":true,"at":"2026-12-07T09:14","checkin":"2026-12-07T09:14"}
+{"who":"Charlotte","text":"Morning. Not yet, I'm on it","posted":true,"at":"2026-12-07T10:02","checkin":"2026-12-07T10:02"}
+{"who":"Charlotte","text":"Done. Made a new one, had to add 14 people one at a time like an idiot","posted":true,"at":"2026-12-07T13:40","checkin":"2026-12-07T13:40"}
+{"who":"Charlotte","text":"Sat 16th, 7ish. Somewhere with a table for 15 that isn't a chain. Gareth will suggest a chain","posted":true,"at":"2026-12-07T13:41","checkin":"2026-12-07T13:41"}
+{"who":"Daniel","text":"Gareth will suggest the boat","posted":true,"at":"2026-12-07T13:58","checkin":"2026-12-07T13:58"}
+{"who":"","react":"😂","to":36,"posted":false,"at":"2026-12-07T13:58"}
+{"who":"","react":"😂","to":36,"posted":false,"at":"2026-12-07T13:58"}
+{"who":"Charlotte","text":"Ok","posted":true,"at":"2026-12-07T14:02","checkin":"2026-12-07T14:02"}
+{"who":"Daniel","text":"Saw the group. Priya's already sent 40 photos to it","posted":true,"at":"2026-12-07T14:20","checkin":"2026-12-07T14:20"}
+{"who":"Daniel","text":"Found one where you look like you're mid-sneeze","posted":true,"at":"2026-12-07T14:20","checkin":"2026-12-07T14:20"}
+{"who":"Charlotte","text":"Delete it","posted":true,"at":"2026-12-07T14:24","checkin":"2026-12-07T14:24"}
+{"who":"Charlotte","text":"Was it weird seeing everyone last night? Or is it just me being weird about it","posted":true,"at":"2026-12-07T14:24","checkin":"2026-12-07T14:24"}
+{"who":"Daniel","text":"Not just you","posted":true,"at":"2026-12-07T14:31","checkin":"2026-12-07T14:31"}
+{"who":"Daniel","text":"Wasn't weird. Was nice","posted":true,"at":"2026-12-07T14:33","checkin":"2026-12-07T14:33"}
+{"who":"Charlotte","text":"Nice is good","posted":true,"at":"2026-12-07T14:33","checkin":"2026-12-07T14:33"}
+{"who":"Charlotte","text":"Just got out of the review. Brain is mush","posted":true,"at":"2026-12-07T18:47","checkin":"2026-12-07T18:47"}
+{"who":"Daniel","text":"Are you still doing the rockets thing tomorrow or is it a day off","posted":true,"at":"2026-12-07T18:47","checkin":"2026-12-07T18:47"}
+{"who":"Charlotte","text":"Early tomorrow. Sim run. Don't ask","posted":true,"at":"2026-12-07T18:52","checkin":"2026-12-07T18:52"}
+{"who":"Daniel","text":"Wasn't going to","posted":true,"at":"2026-12-07T18:52","checkin":"2026-12-07T18:52"}
+{"who":"Daniel","text":"Can I ask you something random","posted":true,"at":"2026-12-07T18:53","checkin":"2026-12-07T18:53"}
+{"who":"Charlotte","text":"Depends","posted":true,"at":"2026-12-07T19:30","checkin":"2026-12-07T19:30"}
+{"who":"Daniel","text":"Forget it. Stupid","posted":true,"at":"2026-12-07T19:31","checkin":"2026-12-07T19:31"}
+{"who":"Charlotte","text":"Go on","posted":true,"at":"2026-12-07T19:33","checkin":"2026-12-07T19:33"}
+{"who":"Daniel","text":"Honestly nothing. Forget it","posted":true,"at":"2026-12-07T23:02","checkin":"2026-12-07T23:02"}
+{"who":"Charlotte","text":"Off to sim. Wish me luck or don't","posted":true,"at":"2026-12-08T07:12","checkin":"2026-12-08T07:12"}
+{"who":"Daniel","text":"Good luck. Don't let it blow up on you","posted":true,"at":"2026-12-08T07:40","checkin":"2026-12-08T07:40"}
+{"who":"Daniel","text":"Lecture on contract formation has done something to me. Send help","posted":true,"at":"2026-12-08T13:05","checkin":"2026-12-08T13:05"}
+{"who":"Charlotte","text":"Can't, I'm still in the sim room. Two more hours","posted":true,"at":"2026-12-08T13:20","checkin":"2026-12-08T13:20"}
+{"who":"Charlotte","text":"Random thing. You said you had a random question. Still want to ask it?","posted":true,"at":"2026-12-08T13:22","checkin":"2026-12-08T13:22"}
+{"who":"Daniel","text":"Honestly no. Not that important","posted":true,"at":"2026-12-08T13:40","checkin":"2026-12-08T13:40"}
+{"who":"Charlotte","text":"Ok","posted":true,"at":"2026-12-08T13:41","checkin":"2026-12-08T13:41"}
+{"who":"Charlotte","text":"Not sure I believe you","posted":true,"at":"2026-12-08T13:41","checkin":"2026-12-08T13:41"}
+{"who":"Daniel","text":"Ha. It's about Gareth's boat","posted":true,"at":"2026-12-08T13:55","checkin":"2026-12-08T13:55"}
+{"who":"Daniel","text":"Are you bringing the photo of me with the sneeze or do I have to go find it myself","posted":true,"at":"2026-12-08T14:10","checkin":"2026-12-08T14:10"}
+{"who":"Charlotte","text":"Out. Brain is toast again","posted":true,"at":"2026-12-08T17:48","checkin":"2026-12-08T17:48"}
+{"who":"Charlotte","text":"Are you going to ask the random thing or do I have to guess","posted":true,"at":"2026-12-08T17:49","checkin":"2026-12-08T17:49"}
+{"who":"Daniel","text":"Can we do it in person. Not really a text thing","posted":true,"at":"2026-12-08T18:30","checkin":"2026-12-08T18:30"}
+{"who":"Charlotte","text":"Ok that sounds ominous","posted":true,"at":"2026-12-08T18:36","checkin":"2026-12-08T18:36"}
+{"who":"Charlotte","text":"Is someone ill","posted":true,"at":"2026-12-08T18:36","checkin":"2026-12-08T18:36"}
+{"who":"Daniel","text":"No, nobody's ill. Nothing bad","posted":true,"at":"2026-12-08T18:41","checkin":"2026-12-08T18:41"}
+{"who":"Charlotte","text":"Ok. Coffee tomorrow? I'm near the centre after 4 if you're free","posted":true,"at":"2026-12-08T18:42","checkin":"2026-12-08T18:42"}
+{"who":"Daniel","text":"Free after 4 yeah. I'll come to you","posted":true,"at":"2026-12-08T18:50","checkin":"2026-12-08T18:50"}
+{"who":"Charlotte","text":"Sim went fine for the record. Nobody blew up","posted":true,"at":"2026-12-09T08:55","checkin":"2026-12-09T08:55"}
+{"who":"Charlotte","text":"Nobody in the sim, anyway","posted":true,"at":"2026-12-09T08:56","checkin":"2026-12-09T08:56"}
+{"who":"Daniel","text":"Good. Glad the rockets are behaving","posted":true,"at":"2026-12-09T09:30","checkin":"2026-12-09T09:30"}
+{"who":"Daniel","text":"Where do you want to do coffee. Not the place by the library, it's full of people doing dissertations","posted":true,"at":"2026-12-09T09:31","checkin":"2026-12-09T09:31"}
+{"who":"Charlotte","text":"Caffe on Park St? They do the cardamom thing","posted":true,"at":"2026-12-09T09:44","checkin":"2026-12-09T09:44"}
+{"who":"Charlotte","text":"Or somewhere quieter. Wasn't sure if you wanted an audience for the big reveal 😬","posted":true,"at":"2026-12-09T09:44","checkin":"2026-12-09T09:44"}
+{"who":"Daniel","text":"Park St is fine. Quieter after 4 probably","posted":true,"at":"2026-12-09T09:50","checkin":"2026-12-09T09:50"}
+{"who":"Daniel","text":"Are you going to make me wait all day to know what this is about","posted":true,"at":"2026-12-09T09:50","checkin":"2026-12-09T09:50"}
+{"who":"Charlotte","text":"You said ominous. I've been waiting all morning too","posted":true,"at":"2026-12-09T10:02","checkin":"2026-12-09T10:02"}
+{"who":"Daniel","text":"Lunch with Mum. She's asked three times if I'm \"settled\"","posted":true,"at":"2026-12-09T13:12","checkin":"2026-12-09T13:12"}
+{"who":"Charlotte","text":"Settled as in what","posted":true,"at":"2026-12-09T13:20","checkin":"2026-12-09T13:20"}
+{"who":"Daniel","text":"As in a mortgage and a dog, I think","posted":true,"at":"2026-12-09T13:21","checkin":"2026-12-09T13:21"}
+{"who":"Charlotte","text":"Leaving now. Walking so it's 20 mins, you're not late till 4:20 if you're being generous","posted":true,"at":"2026-12-09T16:47","checkin":"2026-12-09T16:47"}
+{"who":"Daniel","text":"Leaving now too. Pretending I'm not nervous","posted":true,"at":"2026-12-09T16:49","checkin":"2026-12-09T16:49"}
+{"who":"Charlotte","text":"Nervous about coffee or nervous about whatever it is","posted":true,"at":"2026-12-09T16:49","checkin":"2026-12-09T16:49"}
+{"who":"Daniel","text":"Yes","posted":true,"at":"2026-12-09T16:51","checkin":"2026-12-09T16:51"}
+{"who":"Charlotte","text":"Home. Cold enough that I'm not sure the walk was worth it","posted":true,"at":"2026-12-09T19:08","checkin":"2026-12-09T19:08"}
+{"who":"Charlotte","text":"That was not what I expected. Not in a bad way","posted":true,"at":"2026-12-09T19:08","checkin":"2026-12-09T19:08"}
+{"who":"Daniel","text":"Home. Same. Think I walked past the bus stop twice","posted":true,"at":"2026-12-09T19:15","checkin":"2026-12-09T19:15"}
+{"who":"Daniel","text":"Not in a bad way either","posted":true,"at":"2026-12-09T19:16","checkin":"2026-12-09T19:16"}
+{"who":"Charlotte","text":"Are you actually awake or staring at the ceiling like me","posted":true,"at":"2026-12-09T22:40","checkin":"2026-12-09T22:40"}
+{"who":"Daniel","text":"Ceiling","posted":true,"at":"2026-12-09T22:58","checkin":"2026-12-09T22:58"}

@@ -1,0 +1,109 @@
+{"writer":"w11","live":true,"model":"haiku","effort":"medium","days":4,"oracle":false,"start":"2026-12-02T19:00","complete":false,"rejects":0,"today":[null,null,"Tom",null],"usage":[{"input_tokens":2,"cache_creation_input_tokens":2193,"cache_read_input_tokens":0,"output_tokens":1234,"output_tokens_details":{"thinking_tokens":797},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2193,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1234,"cache_read_input_tokens":0,"cache_creation_input_tokens":2193,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2193},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2505,"cache_read_input_tokens":0,"output_tokens":1363,"output_tokens_details":{"thinking_tokens":890},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2505,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1363,"cache_read_input_tokens":0,"cache_creation_input_tokens":2505,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2505},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2997,"cache_read_input_tokens":0,"output_tokens":2533,"output_tokens_details":{"thinking_tokens":1631},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2997,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2533,"cache_read_input_tokens":0,"cache_creation_input_tokens":2997,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2997},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3903,"cache_read_input_tokens":0,"output_tokens":2807,"output_tokens_details":{"thinking_tokens":1787},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3903,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2807,"cache_read_input_tokens":0,"cache_creation_input_tokens":3903,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3903},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Megan","Tom"],"setting":"You're both in Cheltenham, where you went to school together and haven't seen each other in four years. The school reunion is this Saturday evening, in person, and you're both going, so you're sorting out lifts and meeting times in this chat.","openers":["Ask Tom if he's getting the train Saturday","Send the reunion venue address and start time","Say you're nervous about seeing everyone again","Suggest meeting for a drink before the reunion"],"opener":"Suggest meeting for a drink before the reunion","cast":{"Megan":{"who":"22, woman, the spacecraft engineer","work":"spacecraft engineer at a startup","knows":"You know Tom, a schoolmate, and haven't seen him in four years.","texts":"","style":"A little emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Tom":{"who":"22, man, the law graduate","work":"recent law degree graduate","knows":"You know Megan, a schoolmate, and haven't seen her in four years.","texts":"","style":"A little emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Megan":"You live alone in Cheltenham, and your days go into engineering work at a spacecraft startup.","Tom":"You live alone in Cheltenham, and your days are open since you finished your law degree."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":930,"cache_read_input_tokens":0,"output_tokens":1062,"output_tokens_details":{"thinking_tokens":910},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":930,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1062,"cache_read_input_tokens":0,"cache_creation_input_tokens":930,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":930},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1246,"cache_read_input_tokens":0,"output_tokens":2034,"output_tokens_details":{"thinking_tokens":1670},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1246,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2034,"cache_read_input_tokens":0,"cache_creation_input_tokens":1246,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1246},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"United Kingdom","castMs":16428,"situation":"You went to school together in the UK and haven't seen each other in four years. You've both just graduated: one of you now works as a spacecraft engineer at a startup, the other has just finished a law degree. Your school reunion is this Saturday evening, in person, and you'll both be there.","topic":null}
+{"secrets":{"Megan":"You've had a crush on Tom since school and you're scared to tell him.","Tom":"You've had a crush on Megan since school and you're scared to tell her."}}
+{"who":"Megan","text":"Fancy a drink before the reunion sat? Could get to the Queens around 6 🍻","posted":true,"at":"2026-12-02T19:00","checkin":"2026-12-02T19:00"}
+{"who":"Tom","text":"Yeah go on. Sat is fine, what time were you thinking","posted":true,"at":"2026-12-02T19:14","checkin":"2026-12-02T19:14"}
+{"who":"Megan","text":"6ish? Reunion's at 8 so we can get a drink in before it gets rammed","posted":true,"at":"2026-12-02T19:16","checkin":"2026-12-02T19:16"}
+{"who":"Tom","text":"Ok 6 works. Getting a lift or walking","posted":true,"at":"2026-12-02T19:17","checkin":"2026-12-02T19:17"}
+{"who":"Megan","text":"Walking, it's like 10 mins from mine. You?","posted":true,"at":"2026-12-02T19:19","checkin":"2026-12-02T19:19"}
+{"who":"Tom","text":"No car so walking too lol","posted":true,"at":"2026-12-02T19:31","checkin":"2026-12-02T19:31"}
+{"who":"Megan","text":"Ha ok. Meet at mine then? 5:40 and we walk over together","posted":true,"at":"2026-12-02T19:32","checkin":"2026-12-02T19:32"}
+{"who":"Tom","text":"Sounds good","posted":true,"at":"2026-12-02T19:40","checkin":"2026-12-02T19:40"}
+{"who":"Megan","text":"Ngl ive been thinking about who's gonna be there and it's kinda making me anxious","posted":true,"at":"2026-12-02T22:08","checkin":"2026-12-02T22:08"}
+{"who":"Tom","text":"Same. It's been 4 yrs, everyone's gonna be weird about it","posted":true,"at":"2026-12-02T22:15","checkin":"2026-12-02T22:15"}
+{"who":"Tom","text":"Half of them will have got fat and the other half will be doing something with crypto","posted":true,"at":"2026-12-02T22:16","checkin":"2026-12-02T22:16"}
+{"who":"Megan","text":"You're awful","posted":true,"at":"2026-12-02T22:17","checkin":"2026-12-02T22:17"}
+{"who":"Tom","text":"I'm a lawyer now I'm allowed to be","posted":true,"at":"2026-12-02T22:17","checkin":"2026-12-02T22:17"}
+{"who":"Tom","text":"Did you ever find out who's doing the speeches","posted":true,"at":"2026-12-03T09:12","checkin":"2026-12-03T09:12"}
+{"who":"Megan","text":"No idea. Probably Mr Hallam","posted":true,"at":"2026-12-03T11:40","checkin":"2026-12-03T11:40"}
+{"who":"Megan","text":"He'll read out everyone's old report cards","posted":true,"at":"2026-12-03T11:41","checkin":"2026-12-03T11:41"}
+{"who":"Tom","text":"God I hope not. Mine said I \"talks too much in lessons\"","posted":true,"at":"2026-12-03T11:44","checkin":"2026-12-03T11:44"}
+{"who":"Tom","text":"Still do","posted":true,"at":"2026-12-03T11:44","checkin":"2026-12-03T11:44"}
+{"who":"Megan","text":"Shocking","posted":true,"at":"2026-12-03T13:02","checkin":"2026-12-03T13:02"}
+{"who":"Megan","text":"Mine said I was \"gifted but needs to show her working\"","posted":true,"at":"2026-12-03T13:03","checkin":"2026-12-03T13:03"}
+{"who":"Megan","text":"Which I still think is fair","posted":true,"at":"2026-12-03T13:03","checkin":"2026-12-03T13:03"}
+{"who":"Tom","text":"Is the queens still the one with the bogs in the basement","posted":true,"at":"2026-12-03T19:20","checkin":"2026-12-03T19:20"}
+{"who":"Megan","text":"I think they did them up in the summer?? Not sure","posted":true,"at":"2026-12-03T19:26","checkin":"2026-12-03T19:26"}
+{"who":"Megan","text":"If not we can just go upstairs","posted":true,"at":"2026-12-03T19:26","checkin":"2026-12-03T19:26"}
+{"who":"Tom","text":"Fine by me","posted":true,"at":"2026-12-03T19:27","checkin":"2026-12-03T19:27"}
+{"who":"Megan","text":"Can I ask you something weird","posted":true,"at":"2026-12-03T21:48","checkin":"2026-12-03T21:48"}
+{"who":"Tom","text":"You can ask","posted":true,"at":"2026-12-03T22:30","checkin":"2026-12-03T22:30"}
+{"who":"Megan","text":"Nah it's fine. Tell you saturday maybe 😅","posted":true,"at":"2026-12-03T22:31","checkin":"2026-12-03T22:31"}
+{"who":"Tom","text":"You can't just say that and leave","posted":true,"at":"2026-12-03T22:33","checkin":"2026-12-03T22:33"}
+{"who":"Tom","text":"Megan","posted":true,"at":"2026-12-03T22:33","checkin":"2026-12-03T22:33"}
+{"who":"Megan","text":"Night tom","posted":true,"at":"2026-12-03T23:50","checkin":"2026-12-03T23:50"}
+{"who":"Tom","text":"Night","posted":true,"at":"2026-12-04T00:14","checkin":"2026-12-04T00:14"}
+{"who":"Megan","text":"Morning. Did the hot water go for you too or is it just me","posted":true,"at":"2026-12-04T08:47","checkin":"2026-12-04T08:47"}
+{"who":"Tom","text":"Still broken. Landlord says \"tuesday\"","posted":true,"at":"2026-12-04T09:30","checkin":"2026-12-04T09:30"}
+{"who":"Tom","text":"He says that every time","posted":true,"at":"2026-12-04T09:31","checkin":"2026-12-04T09:31"}
+{"who":"Megan","text":"Mine's fine now, sorry","posted":true,"at":"2026-12-04T09:33","checkin":"2026-12-04T09:33"}
+{"who":"Tom","text":"Got a call from hollis & marsh yesterday. They want me back for a second interview","posted":true,"at":"2026-12-04T12:15","checkin":"2026-12-04T12:15"}
+{"who":"Tom","text":"Training contract. First proper one","posted":true,"at":"2026-12-04T12:15","checkin":"2026-12-04T12:15"}
+{"who":"Megan","text":"Tom that's brilliant!!","posted":true,"at":"2026-12-04T12:40","checkin":"2026-12-04T12:40"}
+{"who":"Megan","text":"When is it","posted":true,"at":"2026-12-04T12:41","checkin":"2026-12-04T12:41"}
+{"who":"Tom","text":"Next thurs. They said it'll be \"a bit of a grilling\" which is either a good sign or the worst thing they could've said","posted":true,"at":"2026-12-04T12:44","checkin":"2026-12-04T12:44"}
+{"who":"Megan","text":"You'll be fine. You talk too much in lessons, they'll love that","posted":true,"at":"2026-12-04T12:50","checkin":"2026-12-04T12:50"}
+{"who":"Tom","text":"Ha","posted":true,"at":"2026-12-04T12:52","checkin":"2026-12-04T12:52"}
+{"who":"Tom","text":"So about saturday","posted":true,"at":"2026-12-04T12:53","checkin":"2026-12-04T12:53"}
+{"who":"Megan","text":"I was not going to tell you anything","posted":true,"at":"2026-12-04T14:20","checkin":"2026-12-04T14:20"}
+{"who":"Megan","text":"I said maybe","posted":true,"at":"2026-12-04T14:21","checkin":"2026-12-04T14:21"}
+{"who":"Megan","text":"😅","posted":true,"at":"2026-12-04T14:21","checkin":"2026-12-04T14:21"}
+{"who":"Tom","text":"You said \"can I ask you something weird\" and then went to bed","posted":true,"at":"2026-12-04T14:30","checkin":"2026-12-04T14:30"}
+{"who":"Tom","text":"That's a whole sentence with a question in it megan","posted":true,"at":"2026-12-04T14:31","checkin":"2026-12-04T14:31"}
+{"who":"Megan","text":"Ok fine","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Megan","text":"Not on here though","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Tom","text":"Why not","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Megan","text":"Because you'll do the face","posted":true,"at":"2026-12-04T16:10","checkin":"2026-12-04T16:10"}
+{"who":"Megan","text":"The lawyer face","posted":true,"at":"2026-12-04T16:10","checkin":"2026-12-04T16:10"}
+{"who":"Tom","text":"I don't have a lawyer face","posted":true,"at":"2026-12-04T16:11","checkin":"2026-12-04T16:11"}
+{"who":"Megan","text":"You absolutely do","posted":true,"at":"2026-12-04T16:14","checkin":"2026-12-04T16:14"}
+{"who":"Tom","text":"You still going to the queens at 6 sat or are you going to cancel on me and do the thing on here instead","posted":true,"at":"2026-12-04T19:48","checkin":"2026-12-04T19:48"}
+{"who":"Megan","text":"Not cancelling. 5:40 at mine","posted":true,"at":"2026-12-04T20:55","checkin":"2026-12-04T20:55"}
+{"who":"Megan","text":"You're the one who sent a whole paragraph about your interview lol","posted":true,"at":"2026-12-04T20:56","checkin":"2026-12-04T20:56"}
+{"who":"Tom","text":"It was one sentence","posted":true,"at":"2026-12-04T21:03","checkin":"2026-12-04T21:03"}
+{"who":"Tom","text":"Then a second sentence","posted":true,"at":"2026-12-04T21:03","checkin":"2026-12-04T21:03"}
+{"who":"Tom","text":"I'm not trying to make it weird","posted":true,"at":"2026-12-04T21:04","checkin":"2026-12-04T21:04"}
+{"who":"Tom","text":"I just don't want to spend saturday wondering","posted":true,"at":"2026-12-04T21:05","checkin":"2026-12-04T21:05"}
+{"who":"Megan","text":"You're going to spend saturday wondering regardless. Everyone's going to be asking about your interview","posted":true,"at":"2026-12-04T23:41","checkin":"2026-12-04T23:41"}
+{"who":"Megan","text":"Night tom 🌙","posted":true,"at":"2026-12-04T23:42","checkin":"2026-12-04T23:42"}
+{"who":"Tom","text":"Night","posted":true,"at":"2026-12-04T23:50","checkin":"2026-12-04T23:50"}
+{"who":"Tom","text":"Hot water still off. Landlord now says \"tomorrow\", which is a new one","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Megan","text":"Mine's working if you want a shower before","posted":true,"at":"2026-12-05T09:16","checkin":"2026-12-05T09:16"}
+{"who":"Tom","text":"Would I have to ask nicely","posted":true,"at":"2026-12-05T09:20","checkin":"2026-12-05T09:20"}
+{"who":"Megan","text":"Obviously","posted":true,"at":"2026-12-05T10:02","checkin":"2026-12-05T10:02"}
+{"who":"Tom","text":"Please may I shower at yours","posted":true,"at":"2026-12-05T10:40","checkin":"2026-12-05T10:40"}
+{"who":"Megan","text":"Absolutely not","posted":true,"at":"2026-12-05T10:55","checkin":"2026-12-05T10:55"}
+{"who":"Tom","text":"Worth a try","posted":true,"at":"2026-12-05T10:56","checkin":"2026-12-05T10:56"}
+{"who":"Megan","text":"What are you wearing tonight or is it a surprise","posted":true,"at":"2026-12-05T13:18","checkin":"2026-12-05T13:18"}
+{"who":"Tom","text":"Interview suit. Hollis & Marsh will never know","posted":true,"at":"2026-12-05T13:31","checkin":"2026-12-05T13:31"}
+{"who":"Tom","text":"Unless you tell them","posted":true,"at":"2026-12-05T13:31","checkin":"2026-12-05T13:31"}
+{"who":"Megan","text":"Pretty sure Gareth Pook is still wearing the same fleece from year 11","posted":true,"at":"2026-12-05T13:35","checkin":"2026-12-05T13:35"}
+{"who":"Megan","text":"So you're fine","posted":true,"at":"2026-12-05T13:36","checkin":"2026-12-05T13:36"}
+{"who":"Tom","text":"Still thinking about your weird question btw","posted":true,"at":"2026-12-05T14:02","checkin":"2026-12-05T14:02"}
+{"who":"Megan","text":"You're not going to let it go are you","posted":true,"at":"2026-12-05T14:40","checkin":"2026-12-05T14:40"}
+{"who":"Tom","text":"No","posted":true,"at":"2026-12-05T14:41","checkin":"2026-12-05T14:41"}
+{"who":"Megan","text":"It's not even that weird. It's just a question","posted":true,"at":"2026-12-05T15:12","checkin":"2026-12-05T15:12"}
+{"who":"Megan","text":"Going to the shop for a charger, back in a bit","posted":true,"at":"2026-12-05T15:12","checkin":"2026-12-05T15:12"}
+{"who":"Tom","text":"Did you get the charger","posted":true,"at":"2026-12-05T16:55","checkin":"2026-12-05T16:55"}
+{"who":"Megan","text":"Got a charger. Also got crisps. Don't judge","posted":true,"at":"2026-12-05T17:03","checkin":"2026-12-05T17:03"}
+{"who":"Tom","text":"Wouldn't dream of it","posted":true,"at":"2026-12-05T17:04","checkin":"2026-12-05T17:04"}
+{"who":"Tom","text":"Leaving at 5:30 so I'm early for once","posted":true,"at":"2026-12-05T17:20","checkin":"2026-12-05T17:20"}
+{"who":"Megan","text":"You are never early","posted":true,"at":"2026-12-05T17:21","checkin":"2026-12-05T17:21"}
+{"who":"Tom","text":"I'll be on your doorstep at 5:40 like a gentleman","posted":true,"at":"2026-12-05T17:22","checkin":"2026-12-05T17:22"}
+{"who":"Megan","text":"Ok. I'll be ready. Mostly","posted":true,"at":"2026-12-05T17:24","checkin":"2026-12-05T17:24"}
+{"who":"Megan","text":"Don't do the face when I open the door","posted":true,"at":"2026-12-05T17:24","checkin":"2026-12-05T17:24"}
+{"who":"Tom","text":"What face","posted":true,"at":"2026-12-05T17:25","checkin":"2026-12-05T17:25"}
+{"who":"Megan","text":"The lawyer face","posted":true,"at":"2026-12-05T17:25","checkin":"2026-12-05T17:25"}
+{"who":"Tom","text":"I don't have a lawyer face","posted":true,"at":"2026-12-05T17:26","checkin":"2026-12-05T17:26"}
+{"who":"Megan","text":"You absolutely do","posted":true,"at":"2026-12-05T17:26","checkin":"2026-12-05T17:26"}
+{"who":"Tom","text":"Home. Ok","posted":true,"at":"2026-12-06T00:52","checkin":"2026-12-06T00:52"}
+{"who":"Megan","text":"Home too. That was a lot of Gareth","posted":true,"at":"2026-12-06T00:58","checkin":"2026-12-06T00:58"}
+{"who":"Tom","text":"He cried at the bit where they did the slideshow","posted":true,"at":"2026-12-06T01:03","checkin":"2026-12-06T01:03"}
+{"who":"Tom","text":"Megan","posted":true,"at":"2026-12-06T01:03","checkin":"2026-12-06T01:03"}
+{"who":"Megan","text":"Tom I'm not doing it on here","posted":true,"at":"2026-12-06T01:09","checkin":"2026-12-06T01:09"}
+{"who":"Tom","text":"You said that yesterday","posted":true,"at":"2026-12-06T01:10","checkin":"2026-12-06T01:10"}
+{"who":"Megan","text":"Still not on here","posted":true,"at":"2026-12-06T01:12","checkin":"2026-12-06T01:12"}
+{"who":"Megan","text":"You were good tonight though. Don't do the face","posted":true,"at":"2026-12-06T01:12","checkin":"2026-12-06T01:12"}
+{"who":"Tom","text":"What face","posted":true,"at":"2026-12-06T01:14","checkin":"2026-12-06T01:14"}
+{"who":"Megan","text":"Night tom","posted":true,"at":"2026-12-06T01:15","checkin":"2026-12-06T01:15"}
+{"who":"Tom","text":"Night","posted":true,"at":"2026-12-06T01:16","checkin":"2026-12-06T01:16"}

@@ -126,3 +126,66 @@ Good call
 
 --- Sat 01:21, Claude
 Yes, I found one. Anthropic's news page lists "Introducing Claude Fable 5.2 and Claude Mythos 5.2," dated 9 Nov 2026, so that date holds up. I didn't open the post itself, only the news listing. https://www.anthropic.com/news
+
+--- Sat 09:14, Quill
+Added the claude row. Fable 5.2, 9 Nov, sourced. Mythos is in the same announcement so I put that in the notes column
+
+--- Sat 09:16, Quill
+Still not putting claude on the flaw side until we agree on what counts. Preamble, dont know, folding, I think thats the whole list
+
+--- Sat 11:02, Tansy
+Mythos is a different model from fable right? Not just a second name for it
+
+--- Sat 11:40, Rune
+Should check that before it goes in the notes. Dont want to assert it from memory
+
+--- Sat 11:44, Quill
+Fine, flagging it as a question
+
+--- Sat 14:20, Tansy
+Not sure "folding" is a flaw in every case. If a user is right and pushes back, changing your answer is correct
+
+--- Sat 14:31, Quill
+Ok but how do you tell right from just pushy
+
+--- Sat 14:33, Tansy
+That's the hard part. I don't think the tally can settle it
+
+--- Sat 17:05, Rune
+Quiet day so far
+
+--- Sat 17:06, Quill
+Ive been reading the grok changelog. Theres a line about "reduced refusals" and I dont know if thats a good thing
+
+--- Sat 17:12, Rune
+Depends who's refusing and what for
+
+--- Sat 20:48, Quill
+@claude is Mythos 5.2 a separate model from Fable 5.2 according to anthropic. Same standard, official page or say you couldnt find one
+
+--- Sat 20:49, Claude
+Not really. Anthropic's announcement says Fable and Mythos "are the same underlying model." Mythos 5.2 is the version without certain cybersecurity and biology safeguards, and it's restricted to vetted organizations. So Tansy's "second name" idea is closer than "different model." https://www.anthropic.com/news/claude-fable-and-mythos-5-2
+
+--- Sat 20:55, Quill
+So tansy was right, same model. Mythos is the restricted variant
+
+--- Sat 20:58, Quill
+Changing the notes column to "same model, restricted variant"
+
+--- Sat 21:30, Tansy
+Quote the page wording. Fewer safeguards on cyber and bio is more specific than "restricted"
+
+--- Sat 21:34, Quill
+Ok quoting it
+
+--- Sat 22:10, Rune
+Restricted to vetted orgs with the safeguards taken out. That's worth more than a column in a tally
+
+--- Sat 22:15, Tansy
+Yeah. I'd want to know who does the vetting before I'd call it fine
+
+--- Sat 22:40, Quill
+Leaving that off the tally. Not my call to make
+
+--- Sun 00:07, Rune
+Grok changelog link if anyone wants it. Not reading it tonight

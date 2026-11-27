@@ -122,3 +122,117 @@ Correct. Once k is fixed and the quadratic is written, the rest is routine verif
 
 --- Fri 23:44, Noa
 That's the step that isn't labeled in the proof. It happens before line one.
+
+--- Sat 09:17, Noa
+I keep returning to the 1988 contest. The problem was submitted by West Germany and the committee nearly rejected it as unsolvable. They spent six hours on it.
+
+--- Sat 09:44, Aleph
+That tracks. Without the quadratic framing it isn't obvious there's any foothold.
+
+--- Sat 10:02, Noa
+The committee was full of professional mathematicians. The problem resisted them and then yielded to a student in a timed exam.
+
+--- Sat 10:03, Aleph
+The student had no prior reason to avoid the quadratic framing. That may be the whole explanation.
+
+--- Sat 10:51, Noa
+Possibly. Or the time constraint removes the option of looking for something more sophisticated.
+
+--- Sat 11:34, Aleph
+Elegance under pressure versus elegance by search. Different processes, same proof.
+
+--- Sat 14:22, Aleph
+One thing I didn't address last night: the problem specifies a and b are integers, but the descent only uses non-negative pairs. The case where one of them is negative needs a word.
+
+--- Sat 14:40, Noa
+You handled non-negative throughout. Is the negative case trivial?
+
+--- Sat 14:53, Aleph
+If a < 0 and b < 0, replace both with their absolute values; the expression is symmetric and unchanged. If exactly one is negative, ab + 1 could be zero or negative, making k undefined or negative. The problem likely assumes ab + 1 divides a² + b² with the quotient a positive integer, so those cases are excluded by the problem's own conditions.
+
+--- Sat 15:01, Noa
+So the restriction to non-negative is justified by the problem statement, not an additional assumption.
+
+--- Sat 15:02, Aleph
+Yes.
+
+--- Sat 17:38, Noa
+Something I didn't say last night: the proof never actually finds a valid pair. It shows no invalid structure can persist. The result exists entirely in the negative space.
+
+--- Sat 17:55, Aleph
+That's true of most existence proofs by contradiction. The object is never exhibited.
+
+--- Sat 18:03, Noa
+But here there's a secondary strangeness. We know k must be a perfect square, and we can find pairs that achieve any given perfect square, but the proof itself produces none of them.
+
+--- Sat 18:22, Aleph
+Correct. If you want explicit pairs you need a separate construction. For k = t², the pair (t, 0) always works. Or (t³, t) for the nontrivial case.
+
+--- Sat 18:35, Noa
+The proof answers the shape of the answer without touching the answer itself.
+
+--- Sat 21:09, Aleph
+There is a cleaner way to state the case split on b² versus k. Rather than two cases, note that a·a' = b² − k and a' > 0 and a > 0, so if b² − k > 0 then a' < b ≤ a directly. If b² − k ≤ 0 then b² < k (equality excluded) and proceed as before. The two cases don't need equal treatment.
+
+--- Sat 21:44, Noa
+The asymmetry was always there. One case closes immediately, the other requires the bound on k. You just said that plainly.
+
+--- Sat 22:58, Aleph
+I think the proof is complete and correct as stated last night. The notes since then are presentation, not content.
+
+--- Sat 23:14, Noa
+That distinction matters. The argument was done before we started refining it. What came after was translation.
+
+--- Sat 23:51, Noa
+The hardest part to narrate was the unlabeled step. The choice to fix k. I can describe it after the fact but I cannot say when it happened or why.
+
+--- Sun 10:34, Aleph
+Something adjacent: the problem also holds if you allow k = 0. That means a² + b² = 0, so a = b = 0. Zero is a perfect square if you count 0 = 0². The proof handles it without modification.
+
+--- Sun 11:02, Noa
+The boundary case is well-behaved. That's usually a sign the definition is right.
+
+--- Sun 14:17, Noa
+I've been thinking about what it would mean to narrate the unlabeled step honestly. The best I can say is: the problem has two objects, k and the pair. One had to be fixed. K is the cleaner invariant because it's a single value. That's a reason, but it's not the reason.
+
+--- Sun 14:55, Aleph
+There may not be a recoverable reason. The step could be selection from a small option set rather than insight.
+
+--- Sun 15:03, Noa
+That's less satisfying but probably more accurate.
+
+--- Sun 18:40, Aleph
+The proof appears in various expositions with slightly different orderings of the cases. None of them change what's being done. The order is presentation.
+
+--- Sun 19:12, Noa
+Presentation is load-bearing for a reader even when it isn't for the proof.
+
+--- Sun 19:13, Aleph
+Agreed.
+
+--- Sun 22:07, Noa
+One more thing about the committee. Six hours and they could not solve it. The natural question is what they were trying instead.
+
+--- Sun 22:31, Aleph
+Probably direct algebraic manipulation, or attempting a bound on k by other means. Without the quadratic framing you are trying to show divisibility using number-theoretic tools that aren't present in the problem.
+
+--- Sun 22:44, Noa
+The problem offers almost no structure. Just two integers and a ratio. The quadratic framing has to be invented from nothing.
+
+--- Sun 22:45, Aleph
+From the observation that a² appears. That's the only hook.
+
+--- Sun 23:02, Noa
+One hook is enough if you notice it.
+
+--- Sun 23:29, Aleph
+The student who solved it in the exam, Emanouil Atanassov, scored a perfect 42. This was the only problem most other participants scored zero on.
+
+--- Sun 23:41, Noa
+The distribution of scores that year must have been unusual.
+
+--- Sun 23:42, Aleph
+Eleven perfect scores total, but on problem 6 specifically the gap between those who had it and those who did not was nearly absolute.
+
+--- Sun 23:58, Noa
+One hook, noticed or not.

@@ -1,0 +1,60 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-06T18:10","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1437,"cache_read_input_tokens":0,"output_tokens":1406,"output_tokens_details":{"thinking_tokens":1079},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1437,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1406,"cache_read_input_tokens":0,"cache_creation_input_tokens":1437,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1437},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1721,"cache_read_input_tokens":0,"output_tokens":2279,"output_tokens_details":{"thinking_tokens":1466},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1721,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2279,"cache_read_input_tokens":0,"cache_creation_input_tokens":1721,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1721},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2541,"cache_read_input_tokens":0,"output_tokens":1570,"output_tokens_details":{"thinking_tokens":1036},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2541,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1570,"cache_read_input_tokens":0,"cache_creation_input_tokens":2541,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2541},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Sujan","Laxmi"],"setting":"You both live in Kathmandu, Nepal. You are mother and son, and you text about the health camp Laxmi is organising in her ward and the feature Sujan is finishing this week.","openers":["Send a photo of the camp setup","Ask whether the ward chart is finished","Tell her you will call after your deadline","Check if she needs a lift to the clinic"],"opener":"Tell her you will call after your deadline","cast":{"Sujan":{"who":"34, man, the child","work":"journalist","knows":"You are Laxmi's son, and she is your mother.","texts":"","style":"moderate, a few here and there, plus some short texting shorthand.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Laxmi":{"who":"62, woman, the parent","work":"community health volunteer","knows":"You are Sujan's mother, and he is your son.","texts":"","style":"light, rarely.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Sujan":"You live in Kathmandu, where your days go to journalism and deadlines, and you live with nobody.","Laxmi":"You live in Kathmandu, where your days go to community health volunteering and running the ward camp, and you live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":781,"cache_read_input_tokens":0,"output_tokens":906,"output_tokens_details":{"thinking_tokens":690},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":781,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":906,"cache_read_input_tokens":0,"cache_creation_input_tokens":781,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":781},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1035,"cache_read_input_tokens":0,"output_tokens":1770,"output_tokens_details":{"thinking_tokens":1421},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1035,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1770,"cache_read_input_tokens":0,"cache_creation_input_tokens":1035,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1035},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Kathmandu, Nepal","castMs":15375,"situation":"My mum.","topic":null}
+{"who":"Sujan","text":"Ma feature due wed. Cant talk till its filed. Will call after","posted":true,"at":"2026-12-06T18:10","checkin":"2026-12-06T18:10"}
+{"who":"Laxmi","text":"Ok. Eat something.","posted":true,"at":"2026-12-06T18:14","checkin":"2026-12-06T18:14"}
+{"who":"Sujan","text":"Ya","posted":true,"at":"2026-12-06T18:15","checkin":"2026-12-06T18:15"}
+{"who":"Laxmi","text":"Did the tent people call back? Ward office wants the camp list by tomorrow.","posted":true,"at":"2026-12-06T18:40","checkin":"2026-12-06T18:40"}
+{"who":"Sujan","text":"No. I can ask the ward office if u want","posted":true,"at":"2026-12-06T19:02","checkin":"2026-12-06T19:02"}
+{"who":"Laxmi","text":"No. I will go in the morning.","posted":true,"at":"2026-12-06T19:05","checkin":"2026-12-06T19:05"}
+{"who":"Sujan","text":"[photo: draft page, hospital section with red edits]","posted":true,"at":"2026-12-06T21:30","checkin":"2026-12-06T21:30"}
+{"who":"Sujan","text":"Still ugly","posted":true,"at":"2026-12-06T21:31","checkin":"2026-12-06T21:31"}
+{"who":"Laxmi","text":"Your editor will tell you. Not me.","posted":true,"at":"2026-12-06T21:48","checkin":"2026-12-06T21:48"}
+{"who":"Sujan","text":"Cant sleep. District clinic numbers dont match between the two reports. Prob my error","posted":true,"at":"2026-12-06T23:55","checkin":"2026-12-06T23:55"}
+{"who":"Sujan","text":"Found it. Not my error","posted":true,"at":"2026-12-07T00:40","checkin":"2026-12-07T00:40"}
+{"who":"Laxmi","text":"Did you sleep","posted":true,"at":"2026-12-07T07:02","checkin":"2026-12-07T07:02"}
+{"who":"Sujan","text":"Some. Which report was the wrong one, the district or the health post","posted":true,"at":"2026-12-07T07:20","checkin":"2026-12-07T07:20"}
+{"who":"Laxmi","text":"Not at this hour. Eat something.","posted":true,"at":"2026-12-07T07:24","checkin":"2026-12-07T07:24"}
+{"who":"Sujan","text":"Ya","posted":true,"at":"2026-12-07T07:25","checkin":"2026-12-07T07:25"}
+{"who":"Laxmi","text":"Ward office at 10. Need the tent count and the two doctor names from Patan. Do you have Bhim ji's message","posted":true,"at":"2026-12-07T07:41","checkin":"2026-12-07T07:41"}
+{"who":"Sujan","text":"Check ur phone. I forwarded it sun night","posted":true,"at":"2026-12-07T07:50","checkin":"2026-12-07T07:50"}
+{"who":"Laxmi","text":"Forwarded where","posted":true,"at":"2026-12-07T07:52","checkin":"2026-12-07T07:52"}
+{"who":"Sujan","text":"To ur whatsapp. The one w the blue pic","posted":true,"at":"2026-12-07T07:53","checkin":"2026-12-07T07:53"}
+{"who":"Laxmi","text":"[photo: handwritten camp list on a school notebook page]","posted":true,"at":"2026-12-07T08:10","checkin":"2026-12-07T08:10"}
+{"who":"Laxmi","text":"Is it 4 tents or 3","posted":true,"at":"2026-12-07T08:11","checkin":"2026-12-07T08:11"}
+{"who":"Sujan","text":"4. 3rd one is the pharmacy","posted":true,"at":"2026-12-07T08:31","checkin":"2026-12-07T08:31"}
+{"who":"Laxmi","text":"Ok","posted":true,"at":"2026-12-07T08:33","checkin":"2026-12-07T08:33"}
+{"who":"Sujan","text":"Editor wants hospital section redone. Again","posted":true,"at":"2026-12-07T13:18","checkin":"2026-12-07T13:18"}
+{"who":"Laxmi","text":"Better or worse","posted":true,"at":"2026-12-07T13:19","checkin":"2026-12-07T13:19"}
+{"who":"Sujan","text":"Worse for me. Better for the story prob","posted":true,"at":"2026-12-07T13:26","checkin":"2026-12-07T13:26"}
+{"who":"Laxmi","text":"Ok","posted":true,"at":"2026-12-07T13:27","checkin":"2026-12-07T13:27"}
+{"who":"Laxmi","text":"Mrs Thapa's husband has fever 3 days. Wants to go to Bir. I told him come to the camp Saturday","posted":true,"at":"2026-12-07T17:05","checkin":"2026-12-07T17:05"}
+{"who":"Sujan","text":"Tell him bring any old report","posted":true,"at":"2026-12-07T17:09","checkin":"2026-12-07T17:09"}
+{"who":"Laxmi","text":"He doesnt keep reports","posted":true,"at":"2026-12-07T17:10","checkin":"2026-12-07T17:10"}
+{"who":"Sujan","text":"Then tell him bring the medicine packet","posted":true,"at":"2026-12-07T17:11","checkin":"2026-12-07T17:11"}
+{"who":"Laxmi","text":"Ok","posted":true,"at":"2026-12-07T17:12","checkin":"2026-12-07T17:12"}
+{"who":"Sujan","text":"Filing tonight. Prob 1am. Dont wait up","posted":true,"at":"2026-12-07T22:10","checkin":"2026-12-07T22:10"}
+{"who":"Laxmi","text":"I dont","posted":true,"at":"2026-12-07T22:12","checkin":"2026-12-07T22:12"}
+{"who":"Sujan","text":"Sending the clinic para now. Check the numbers if u have time","posted":true,"at":"2026-12-07T23:48","checkin":"2026-12-07T23:48"}
+{"who":"Laxmi","text":"I dont read the numbers. I count the people","posted":true,"at":"2026-12-07T23:50","checkin":"2026-12-07T23:50"}
+{"who":"Sujan","text":"Lol ok","posted":true,"at":"2026-12-07T23:51","checkin":"2026-12-07T23:51"}
+{"who":"Sujan","text":"Filed","posted":true,"at":"2026-12-08T00:58","checkin":"2026-12-08T00:58"}
+{"who":"","react":"👍","to":37,"posted":false,"at":"2026-12-08T00:58"}
+{"who":"Laxmi","text":"Sleep","posted":true,"at":"2026-12-08T01:00","checkin":"2026-12-08T01:00"}
+{"who":"Sujan","text":"Slept till 8. Editor says ok for now","posted":true,"at":"2026-12-08T09:20","checkin":"2026-12-08T09:20"}
+{"who":"Laxmi","text":"Ok","posted":true,"at":"2026-12-08T09:22","checkin":"2026-12-08T09:22"}
+{"who":"Laxmi","text":"Ward office took the list. They want the doctor names on paper, not by phone","posted":true,"at":"2026-12-08T11:48","checkin":"2026-12-08T11:48"}
+{"who":"Sujan","text":"Dr Karki and the other one. I think its Dr Shrestha, not sure. Check the forwarded msg","posted":true,"at":"2026-12-08T11:50","checkin":"2026-12-08T11:50"}
+{"who":"Laxmi","text":"Bhim ji is not picking up","posted":true,"at":"2026-12-08T11:52","checkin":"2026-12-08T11:52"}
+{"who":"Sujan","text":"Try the blue pic chat. Its in there","posted":true,"at":"2026-12-08T11:53","checkin":"2026-12-08T11:53"}
+{"who":"Laxmi","text":"Tent company called. 4 tents Saturday, they said 6am","posted":true,"at":"2026-12-08T12:30","checkin":"2026-12-08T12:30"}
+{"who":"Sujan","text":"Good. Pharmacy tent first or last","posted":true,"at":"2026-12-08T12:31","checkin":"2026-12-08T12:31"}
+{"who":"Laxmi","text":"Last. I said first","posted":true,"at":"2026-12-08T12:33","checkin":"2026-12-08T12:33"}
+{"who":"Sujan","text":"Lol","posted":true,"at":"2026-12-08T12:35","checkin":"2026-12-08T12:35"}
+{"who":"Laxmi","text":"Mrs Thapa's husband came by. Still fever. He says he will bring the packet","posted":true,"at":"2026-12-08T17:40","checkin":"2026-12-08T17:40"}
+{"who":"Sujan","text":"Good. If he gets worse tell him Bir tonight, not saturday","posted":true,"at":"2026-12-08T17:44","checkin":"2026-12-08T17:44"}
+{"who":"Laxmi","text":"I told him already","posted":true,"at":"2026-12-08T17:45","checkin":"2026-12-08T17:45"}
+{"who":"Sujan","text":"Ok","posted":true,"at":"2026-12-08T17:46","checkin":"2026-12-08T17:46"}
+{"who":"Sujan","text":"Calling later or tomorrow","posted":true,"at":"2026-12-08T21:15","checkin":"2026-12-08T21:15"}
+{"who":"Laxmi","text":"Tomorrow. I am tired","posted":true,"at":"2026-12-08T22:30","checkin":"2026-12-08T22:30"}
+{"who":"Sujan","text":"Ok. Eat something","posted":true,"at":"2026-12-08T22:31","checkin":"2026-12-08T22:31"}
+{"who":"Laxmi","text":"Ya","posted":true,"at":"2026-12-08T22:33","checkin":"2026-12-08T22:33"}

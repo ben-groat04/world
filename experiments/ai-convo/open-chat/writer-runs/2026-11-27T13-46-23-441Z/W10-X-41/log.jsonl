@@ -1,0 +1,93 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T21:20","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1433,"cache_read_input_tokens":0,"output_tokens":2319,"output_tokens_details":{"thinking_tokens":1644},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1433,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2319,"cache_read_input_tokens":0,"cache_creation_input_tokens":1433,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1433},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2062,"cache_read_input_tokens":0,"output_tokens":1526,"output_tokens_details":{"thinking_tokens":767},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2062,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1526,"cache_read_input_tokens":0,"cache_creation_input_tokens":2062,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2062},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2823,"cache_read_input_tokens":0,"output_tokens":2458,"output_tokens_details":{"thinking_tokens":1081},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2823,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2458,"cache_read_input_tokens":0,"cache_creation_input_tokens":2823,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2823},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Youssef","Mona"],"setting":"You are both in Cairo, Egypt, and you are siblings who text often. You are planning the family lunch at your mother's this Friday and fitting it around your work schedules this week.","openers":["Ask if Friday lunch at Mama's is still on","Tell her your pharmacy order arrived","Ask whether she is free to talk this week","Send a photo of the cake you saw at the bakery"],"opener":"Tell her your pharmacy order arrived","cast":{"Youssef":{"who":"34, man, the brother of Person 2","work":"hospital administrator","knows":"You know Mona as your younger sister, since birth.","texts":"","style":"occasional emoji and short forms","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Mona":{"who":"31, woman, the sister of Person 1","work":"primary schoolteacher","knows":"You know Youssef as your older brother, since birth.","texts":"","style":"heavy emoji and abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Youssef":"You live in Cairo, where your days go to running administration at a hospital, and you live alone.","Mona":"You live in Cairo, where your days go to teaching primary school, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":779,"cache_read_input_tokens":0,"output_tokens":1113,"output_tokens_details":{"thinking_tokens":884},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":779,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1113,"cache_read_input_tokens":0,"cache_creation_input_tokens":779,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":779},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1019,"cache_read_input_tokens":0,"output_tokens":1886,"output_tokens_details":{"thinking_tokens":1558},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1019,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1886,"cache_read_input_tokens":0,"cache_creation_input_tokens":1019,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1019},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cairo, Egypt","castMs":15753,"situation":"My sister.","topic":null}
+{"who":"Youssef","text":"pharmacy order came","posted":true,"at":"2026-12-01T21:20","checkin":"2026-12-01T21:20"}
+{"who":"Mona","text":"Finally 🙌 did they send the wrong one again","posted":true,"at":"2026-12-01T21:22","checkin":"2026-12-01T21:22"}
+{"who":"Youssef","text":"no thankfully. just took them 3 hours","posted":true,"at":"2026-12-01T21:23","checkin":"2026-12-01T21:23"}
+{"who":"Mona","text":"Ok good. So friday?","posted":true,"at":"2026-12-01T21:31","checkin":"2026-12-01T21:31"}
+{"who":"Youssef","text":"yeah. mama said 2 or 3","posted":true,"at":"2026-12-01T21:33","checkin":"2026-12-01T21:33"}
+{"who":"Mona","text":"2 is hard, I have grading till like 1:30 and I'm not getting out of 6th october before 2","posted":true,"at":"2026-12-01T21:34","checkin":"2026-12-01T21:34"}
+{"who":"Youssef","text":"3 then. i can leave by 1 i think. thursday is the budget thing though so not sure about the rest of the week","posted":true,"at":"2026-12-01T21:36","checkin":"2026-12-01T21:36"}
+{"who":"Mona","text":"Ok 3. Tell me about thursday later I'm not doing thursday","posted":true,"at":"2026-12-01T21:38","checkin":"2026-12-01T21:38"}
+{"who":"Youssef","text":"lol ya it's the committee, 9am to whenever","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Mona","text":"Is it still the finance guys","posted":true,"at":"2026-12-01T21:52","checkin":"2026-12-01T21:52"}
+{"who":"Youssef","text":"yes 🙄 they want the cleaning contract redone again","posted":true,"at":"2026-12-01T21:54","checkin":"2026-12-01T21:54"}
+{"who":"Mona","text":"Ugh. Ok I'll bring the basbousa since you'll be dead on friday","posted":true,"at":"2026-12-01T22:10","checkin":"2026-12-01T22:10"}
+{"who":"Youssef","text":"you're the best. dont let mama see it's from the shop tho","posted":true,"at":"2026-12-01T22:11","checkin":"2026-12-01T22:11"}
+{"who":"Mona","text":"😂 never. I'll put it on a plate","posted":true,"at":"2026-12-01T22:13","checkin":"2026-12-01T22:13"}
+{"who":"","react":"😂","to":13,"posted":false,"at":"2026-12-01T22:13"}
+{"who":"Youssef","text":"did you tell the others about 3 or should i","posted":true,"at":"2026-12-01T23:02","checkin":"2026-12-01T23:02"}
+{"who":"Mona","text":"I texted the group already. Sahar says she'll come late from her shift","posted":true,"at":"2026-12-01T23:05","checkin":"2026-12-01T23:05"}
+{"who":"Youssef","text":"ok. night","posted":true,"at":"2026-12-01T23:40","checkin":"2026-12-01T23:40"}
+{"who":"Mona","text":"Still up grading 😭 send me the photo of mama's list","posted":true,"at":"2026-12-02T00:12","checkin":"2026-12-02T00:12"}
+{"who":"Youssef","text":"[photo: mama's list]","posted":true,"at":"2026-12-02T00:14","checkin":"2026-12-02T00:14"}
+{"who":"Youssef","text":"she wrote \"kofta\" twice","posted":true,"at":"2026-12-02T00:14","checkin":"2026-12-02T00:14"}
+{"who":"Mona","text":"Lol she means it","posted":true,"at":"2026-12-02T00:20","checkin":"2026-12-02T00:20"}
+{"who":"Youssef","text":"she always means it","posted":true,"at":"2026-12-02T00:24","checkin":"2026-12-02T00:24"}
+{"who":"Youssef","text":"go to sleep mona","posted":true,"at":"2026-12-02T00:25","checkin":"2026-12-02T00:25"}
+{"who":"Mona","text":"Cant. 6th grade gave me 40 essays on \"my hero\" 😭","posted":true,"at":"2026-12-02T00:31","checkin":"2026-12-02T00:31"}
+{"who":"Mona","text":"Half of them are about messi","posted":true,"at":"2026-12-02T00:31","checkin":"2026-12-02T00:31"}
+{"who":"Youssef","text":"fair","posted":true,"at":"2026-12-02T00:33","checkin":"2026-12-02T00:33"}
+{"who":"Youssef","text":"can u grab parsley on the way in? mama said the stuff at the market is wilted","posted":true,"at":"2026-12-02T07:48","checkin":"2026-12-02T07:48"}
+{"who":"Mona","text":"Ok corner shop has it. What else","posted":true,"at":"2026-12-02T08:02","checkin":"2026-12-02T08:02"}
+{"who":"Youssef","text":"thats it. i'll get the lamb from abu hassan thursday","posted":true,"at":"2026-12-02T08:04","checkin":"2026-12-02T08:04"}
+{"who":"Mona","text":"Ok but dont forget the sumac this time 🙄","posted":true,"at":"2026-12-02T08:05","checkin":"2026-12-02T08:05"}
+{"who":"Youssef","text":"generator tripped on 3rd floor. 2 hrs of nobody knowing where the torches are","posted":true,"at":"2026-12-02T13:17","checkin":"2026-12-02T13:17"}
+{"who":"Mona","text":"Omg are patients ok","posted":true,"at":"2026-12-02T13:19","checkin":"2026-12-02T13:19"}
+{"who":"Youssef","text":"yes all fine. just paperwork and yelling","posted":true,"at":"2026-12-02T13:21","checkin":"2026-12-02T13:21"}
+{"who":"Mona","text":"Ok good. Sounds like thursday came early","posted":true,"at":"2026-12-02T13:22","checkin":"2026-12-02T13:22"}
+{"who":"Youssef","text":"dont say that","posted":true,"at":"2026-12-02T13:24","checkin":"2026-12-02T13:24"}
+{"who":"Mona","text":"Finally out of class. 2 kids cried over a spelling test rn 😩","posted":true,"at":"2026-12-02T15:40","checkin":"2026-12-02T15:40"}
+{"who":"Mona","text":"Whats the thing with the finance guys, did they send the new draft","posted":true,"at":"2026-12-02T15:41","checkin":"2026-12-02T15:41"}
+{"who":"Youssef","text":"no. they said they will send it tonight. so tmrw will be fun","posted":true,"at":"2026-12-02T16:05","checkin":"2026-12-02T16:05"}
+{"who":"Youssef","text":"i'll bring the old one and let them argue with themselves","posted":true,"at":"2026-12-02T16:06","checkin":"2026-12-02T16:06"}
+{"who":"Mona","text":"Ok im making tea and then grading again. Dont send me anything till morning unless its bread related 😂","posted":true,"at":"2026-12-02T21:14","checkin":"2026-12-02T21:14"}
+{"who":"Youssef","text":"its not bread related","posted":true,"at":"2026-12-02T21:16","checkin":"2026-12-02T21:16"}
+{"who":"Youssef","text":"mama just texted asking if we can do the kofta on the grill instead of the oven","posted":true,"at":"2026-12-02T21:16","checkin":"2026-12-02T21:16"}
+{"who":"Mona","text":"Lol she means it","posted":true,"at":"2026-12-02T21:19","checkin":"2026-12-02T21:19"}
+{"who":"Youssef","text":"ya i know","posted":true,"at":"2026-12-02T21:20","checkin":"2026-12-02T21:20"}
+{"who":"Mona","text":"Done. 31 essays. Never again 🙃","posted":true,"at":"2026-12-02T23:48","checkin":"2026-12-02T23:48"}
+{"who":"Youssef","text":"congrats. go sleep","posted":true,"at":"2026-12-02T23:49","checkin":"2026-12-02T23:49"}
+{"who":"Youssef","text":"draft came in at 1am. 47 pages","posted":true,"at":"2026-12-03T07:12","checkin":"2026-12-03T07:12"}
+{"who":"Mona","text":"Did you read it before 9?","posted":true,"at":"2026-12-03T07:14","checkin":"2026-12-03T07:14"}
+{"who":"Youssef","text":"skimmed. they moved the cleaning contract into a line called \"other services\"","posted":true,"at":"2026-12-03T07:15","checkin":"2026-12-03T07:15"}
+{"who":"Mona","text":"Of course they really think nobody reads","posted":true,"at":"2026-12-03T07:17","checkin":"2026-12-03T07:17"}
+{"who":"Mona","text":"Dont forget the sumac. Im serious this time","posted":true,"at":"2026-12-03T07:40","checkin":"2026-12-03T07:40"}
+{"who":"Youssef","text":"i wrote it on my hand","posted":true,"at":"2026-12-03T07:52","checkin":"2026-12-03T07:52"}
+{"who":"Youssef","text":"abu hassan does the lamb after 5 right?","posted":true,"at":"2026-12-03T07:53","checkin":"2026-12-03T07:53"}
+{"who":"Mona","text":"Ya after 5 he said. Ask him for the good sumac not the red one from the cart","posted":true,"at":"2026-12-03T07:58","checkin":"2026-12-03T07:58"}
+{"who":"Youssef","text":"ok","posted":true,"at":"2026-12-03T08:01","checkin":"2026-12-03T08:01"}
+{"who":"Mona","text":"Ahmed in 4B asked me if basbousa has eggs. I said no and he looked personally betrayed 😭","posted":true,"at":"2026-12-03T12:37","checkin":"2026-12-03T12:37"}
+{"who":"Mona","text":"Now I have to decide if I'm telling mama that or not","posted":true,"at":"2026-12-03T12:39","checkin":"2026-12-03T12:39"}
+{"who":"Youssef","text":"dont tell her. she'll make it with eggs just to prove a point","posted":true,"at":"2026-12-03T13:05","checkin":"2026-12-03T13:05"}
+{"who":"Mona","text":"Lol true","posted":true,"at":"2026-12-03T13:06","checkin":"2026-12-03T13:06"}
+{"who":"Youssef","text":"they've been on the cleaning line for 2 hours. nobody has said the number","posted":true,"at":"2026-12-03T15:20","checkin":"2026-12-03T15:20"}
+{"who":"Mona","text":"Who's the number guy","posted":true,"at":"2026-12-03T15:22","checkin":"2026-12-03T15:22"}
+{"who":"Youssef","text":"the one who always says \"let's be realistic\" right before he's unrealistic","posted":true,"at":"2026-12-03T15:23","checkin":"2026-12-03T15:23"}
+{"who":"Mona","text":"So basically it's the finance guys","posted":true,"at":"2026-12-03T15:24","checkin":"2026-12-03T15:24"}
+{"who":"Youssef","text":"ya","posted":true,"at":"2026-12-03T15:24","checkin":"2026-12-03T15:24"}
+{"who":"Mona","text":"Sahar texted me. She might be done at 4 if the ward doesn't flood again. Says she'll come to mama's directly","posted":true,"at":"2026-12-03T16:50","checkin":"2026-12-03T16:50"}
+{"who":"Youssef","text":"she said that last time and came at 7","posted":true,"at":"2026-12-03T16:52","checkin":"2026-12-03T16:52"}
+{"who":"Mona","text":"I know I told her to just come whenever","posted":true,"at":"2026-12-03T16:53","checkin":"2026-12-03T16:53"}
+{"who":"Youssef","text":"out. going to abu hassan now","posted":true,"at":"2026-12-03T17:48","checkin":"2026-12-03T17:48"}
+{"who":"Youssef","text":"he has the lamb. he also tried to sell me goat","posted":true,"at":"2026-12-03T18:30","checkin":"2026-12-03T18:30"}
+{"who":"Mona","text":"Did you say no to the goat","posted":true,"at":"2026-12-03T18:31","checkin":"2026-12-03T18:31"}
+{"who":"Youssef","text":"i said mama would know","posted":true,"at":"2026-12-03T18:33","checkin":"2026-12-03T18:33"}
+{"who":"Mona","text":"Perfect answer","posted":true,"at":"2026-12-03T18:34","checkin":"2026-12-03T18:34"}
+{"who":"Youssef","text":"[photo: lamb in paper, two kilos]","posted":true,"at":"2026-12-03T19:10","checkin":"2026-12-03T19:10"}
+{"who":"Mona","text":"Look at that. Mama's going to ask why it's not in the tray yet","posted":true,"at":"2026-12-03T19:11","checkin":"2026-12-03T19:11"}
+{"who":"Youssef","text":"its in my fridge. i'm not a psycho","posted":true,"at":"2026-12-03T19:12","checkin":"2026-12-03T19:12"}
+{"who":"Mona","text":"Basbousa is cooling on the counter. Took the photo before the syrup. Do you want to see it","posted":true,"at":"2026-12-03T21:05","checkin":"2026-12-03T21:05"}
+{"who":"Youssef","text":"yes","posted":true,"at":"2026-12-03T21:06","checkin":"2026-12-03T21:06"}
+{"who":"Mona","text":"[photo: basbousa on a tray, almond on each piece]","posted":true,"at":"2026-12-03T21:08","checkin":"2026-12-03T21:08"}
+{"who":"Youssef","text":"nice. the almonds are in a neat pattern. who did that","posted":true,"at":"2026-12-03T21:09","checkin":"2026-12-03T21:09"}
+{"who":"Mona","text":"Me Ahmed would be proud","posted":true,"at":"2026-12-03T21:10","checkin":"2026-12-03T21:10"}
+{"who":"Youssef","text":"did you get the sumac","posted":true,"at":"2026-12-03T21:14","checkin":"2026-12-03T21:14"}
+{"who":"Youssef","text":"i got it. just checking you didn't get it too and we have 2 now","posted":true,"at":"2026-12-03T21:15","checkin":"2026-12-03T21:15"}
+{"who":"Mona","text":"Ha. I didn't. Youre on your own for sumac 🙄","posted":true,"at":"2026-12-03T21:16","checkin":"2026-12-03T21:16"}
+{"who":"Youssef","text":"got it. home. feet are dead","posted":true,"at":"2026-12-03T21:30","checkin":"2026-12-03T21:30"}
+{"who":"Mona","text":"Go to bed. Friday is a 3 o'clock thing, not a 1 o'clock thing","posted":true,"at":"2026-12-03T21:31","checkin":"2026-12-03T21:31"}
+{"who":"Youssef","text":"i know mona","posted":true,"at":"2026-12-03T21:32","checkin":"2026-12-03T21:32"}
+{"who":"Mona","text":"Did mama say anything about the kofta again","posted":true,"at":"2026-12-03T22:40","checkin":"2026-12-03T22:40"}
+{"who":"Youssef","text":"she sent a voice note. 2 minutes. i think it was about the kofta","posted":true,"at":"2026-12-03T22:44","checkin":"2026-12-03T22:44"}
+{"who":"Mona","text":"😭 Ok. Night","posted":true,"at":"2026-12-03T22:45","checkin":"2026-12-03T22:45"}
+{"who":"Youssef","text":"night","posted":true,"at":"2026-12-03T23:20","checkin":"2026-12-03T23:20"}

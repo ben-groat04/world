@@ -1,0 +1,82 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T09:45","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1436,"cache_read_input_tokens":0,"output_tokens":1309,"output_tokens_details":{"thinking_tokens":712},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1436,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1309,"cache_read_input_tokens":0,"cache_creation_input_tokens":1436,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1436},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1995,"cache_read_input_tokens":0,"output_tokens":3112,"output_tokens_details":{"thinking_tokens":2316},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1995,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3112,"cache_read_input_tokens":0,"cache_creation_input_tokens":1995,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1995},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2785,"cache_read_input_tokens":0,"output_tokens":2287,"output_tokens_details":{"thinking_tokens":1442},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2785,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2287,"cache_read_input_tokens":0,"cache_creation_input_tokens":2785,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2785},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Priya","Oliver"],"setting":"You and Oliver both live in Sydney, Australia, and have been best friends since school, so you keep in touch constantly and are now arranging a catch-up dinner and a joint birthday gift for a mutual friend.","openers":["Send a photo of the restaurant menu","Ask if he's free next Saturday","Suggest splitting the gift cost three ways","Share a link to a cheap flight deal"],"opener":"Ask if he's free next Saturday","cast":{"Priya":{"who":"24, woman, the one whose best friend from school is Person 2","work":"accountant","knows":"You know Oliver as your best friend from school.","texts":"","style":"Some emoji and light abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Oliver":{"who":"24, man, the best friend from school","work":"surveyor","knows":"You know Priya as your best friend from school.","texts":"","style":"A few emoji and light abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Priya":"You live in Sydney, work as an accountant, and live alone.","Oliver":"You live in Sydney, work as a surveyor, and live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":781,"cache_read_input_tokens":0,"output_tokens":1094,"output_tokens_details":{"thinking_tokens":873},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":781,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1094,"cache_read_input_tokens":0,"cache_creation_input_tokens":781,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":781},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1016,"cache_read_input_tokens":0,"output_tokens":1667,"output_tokens_details":{"thinking_tokens":1350},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1016,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1667,"cache_read_input_tokens":0,"cache_creation_input_tokens":1016,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1016},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Sydney, Australia","castMs":14834,"situation":"My best friend from school.","topic":null}
+{"who":"Priya","text":"Are you free next sat","posted":true,"at":"2026-12-04T09:45","checkin":"2026-12-04T09:45"}
+{"who":"Oliver","text":"Maybe. What's on","posted":true,"at":"2026-12-04T10:03","checkin":"2026-12-04T10:03"}
+{"who":"Priya","text":"Dinner and we need to get tash's present sorted before her thing","posted":true,"at":"2026-12-04T10:04","checkin":"2026-12-04T10:04"}
+{"who":"Oliver","text":"Oh yeah her bday is the 19th right","posted":true,"at":"2026-12-04T10:11","checkin":"2026-12-04T10:11"}
+{"who":"Priya","text":"Yep","posted":true,"at":"2026-12-04T10:11","checkin":"2026-12-04T10:11"}
+{"who":"Oliver","text":"Ok I can do dinner. Not before 7 I have a job out at parramatta that morning","posted":true,"at":"2026-12-04T10:26","checkin":"2026-12-04T10:26"}
+{"who":"Priya","text":"Ok 7 is fine. Where","posted":true,"at":"2026-12-04T10:27","checkin":"2026-12-04T10:27"}
+{"who":"Oliver","text":"Dunno, the thai place on king st?","posted":true,"at":"2026-12-04T10:52","checkin":"2026-12-04T10:52"}
+{"who":"Priya","text":"They're always full","posted":true,"at":"2026-12-04T10:53","checkin":"2026-12-04T10:53"}
+{"who":"Oliver","text":"Then book it lol","posted":true,"at":"2026-12-04T10:53","checkin":"2026-12-04T10:53"}
+{"who":"Priya","text":"[photo: a bunch of candles from the shop on Crown St]","posted":true,"at":"2026-12-04T11:20","checkin":"2026-12-04T11:20"}
+{"who":"Priya","text":"Should we get her these or is that too much","posted":true,"at":"2026-12-04T11:21","checkin":"2026-12-04T11:21"}
+{"who":"Oliver","text":"She'd like them","posted":true,"at":"2026-12-04T11:34","checkin":"2026-12-04T11:34"}
+{"who":"Oliver","text":"But she'd like a voucher more","posted":true,"at":"2026-12-04T11:35","checkin":"2026-12-04T11:35"}
+{"who":"Priya","text":"She hates vouchers","posted":true,"at":"2026-12-04T11:35","checkin":"2026-12-04T11:35"}
+{"who":"Oliver","text":"Ok candles then","posted":true,"at":"2026-12-04T11:36","checkin":"2026-12-04T11:36"}
+{"who":"Priya","text":"God my boss just gave me the june reconciliation to redo because someone forgot a column","posted":true,"at":"2026-12-04T16:02","checkin":"2026-12-04T16:02"}
+{"who":"Oliver","text":"That's rough","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Oliver","text":"Did you say it was june or did they just assume","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Priya","text":"They assumed","posted":true,"at":"2026-12-04T16:08","checkin":"2026-12-04T16:08"}
+{"who":"Oliver","text":"Did you book the thai place","posted":true,"at":"2026-12-04T19:48","checkin":"2026-12-04T19:48"}
+{"who":"Priya","text":"Not yet. I'll ring in the morning","posted":true,"at":"2026-12-04T19:49","checkin":"2026-12-04T19:49"}
+{"who":"Oliver","text":"Ok","posted":true,"at":"2026-12-04T19:49","checkin":"2026-12-04T19:49"}
+{"who":"Priya","text":"Booked. 7pm sat 12th for 3","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Oliver","text":"Ok nice. Does she know it's a dinner for her or is it a surprise","posted":true,"at":"2026-12-05T09:20","checkin":"2026-12-05T09:20"}
+{"who":"Priya","text":"It's her birthday dinner, she knows","posted":true,"at":"2026-12-05T09:21","checkin":"2026-12-05T09:21"}
+{"who":"Oliver","text":"Haha ok","posted":true,"at":"2026-12-05T09:21","checkin":"2026-12-05T09:21"}
+{"who":"Priya","text":"Candles still on? I'm at the shop tmrw arvo, can grab them if you send me your half","posted":true,"at":"2026-12-05T10:05","checkin":"2026-12-05T10:05"}
+{"who":"Oliver","text":"How much","posted":true,"at":"2026-12-05T10:06","checkin":"2026-12-05T10:06"}
+{"who":"Priya","text":"36 each. 72 total","posted":true,"at":"2026-12-05T10:06","checkin":"2026-12-05T10:06"}
+{"who":"Priya","text":"The big ones. Not buying her tealights 🙄","posted":true,"at":"2026-12-05T10:11","checkin":"2026-12-05T10:11"}
+{"who":"Oliver","text":"Fair","posted":true,"at":"2026-12-05T10:14","checkin":"2026-12-05T10:14"}
+{"who":"Oliver","text":"Ok sent","posted":true,"at":"2026-12-05T10:14","checkin":"2026-12-05T10:14"}
+{"who":"Oliver","text":"Doing a kitchen in Marrickville, client ran late so I'm still here","posted":true,"at":"2026-12-05T13:52","checkin":"2026-12-05T13:52"}
+{"who":"Priya","text":"Ugh. Sorry. Still on june. Got it to tie out to the penny finally but now july is off by 12 dollars","posted":true,"at":"2026-12-05T13:58","checkin":"2026-12-05T13:58"}
+{"who":"Oliver","text":"Its always 12 dollars","posted":true,"at":"2026-12-05T14:02","checkin":"2026-12-05T14:02"}
+{"who":"Priya","text":"Its never 12 dollars","posted":true,"at":"2026-12-05T14:03","checkin":"2026-12-05T14:03"}
+{"who":"Oliver","text":"Done. Getting something to eat then home","posted":true,"at":"2026-12-05T17:40","checkin":"2026-12-05T17:40"}
+{"who":"Priya","text":"Get me something from the place on enmore rd if you're going past","posted":true,"at":"2026-12-05T17:41","checkin":"2026-12-05T17:41"}
+{"who":"Oliver","text":"Ok. Which place","posted":true,"at":"2026-12-05T17:44","checkin":"2026-12-05T17:44"}
+{"who":"Priya","text":"The lebanese one with the big sign. You know the one","posted":true,"at":"2026-12-05T17:44","checkin":"2026-12-05T17:44"}
+{"who":"Oliver","text":"There's like four of those","posted":true,"at":"2026-12-05T17:45","checkin":"2026-12-05T17:45"}
+{"who":"Priya","text":"The one we went to after tash's last thing","posted":true,"at":"2026-12-05T17:45","checkin":"2026-12-05T17:45"}
+{"who":"Oliver","text":"Ok","posted":true,"at":"2026-12-05T17:49","checkin":"2026-12-05T17:49"}
+{"who":"Priya","text":"[photo: paper bag, pita and two dips]","posted":true,"at":"2026-12-05T21:12","checkin":"2026-12-05T21:12"}
+{"who":"Priya","text":"You didn't have to but thanks","posted":true,"at":"2026-12-05T21:12","checkin":"2026-12-05T21:12"}
+{"who":"Oliver","text":"Didn't get the hummus, they were out. Got the baba","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Priya","text":"Baba is better anyway","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Oliver","text":"Did you ring them about the june thing or are you still doing it","posted":true,"at":"2026-12-05T23:40","checkin":"2026-12-05T23:40"}
+{"who":"Priya","text":"Still doing it. Going to bed and pretend it's fine","posted":true,"at":"2026-12-05T23:41","checkin":"2026-12-05T23:41"}
+{"who":"Oliver","text":"Morning. Did you sleep or just stare at the june thing","posted":true,"at":"2026-12-06T10:37","checkin":"2026-12-06T10:37"}
+{"who":"Priya","text":"Slept. Mostly","posted":true,"at":"2026-12-06T10:52","checkin":"2026-12-06T10:52"}
+{"who":"Priya","text":"Going to the shop at 2 for the candles. Transfer me?","posted":true,"at":"2026-12-06T10:52","checkin":"2026-12-06T10:52"}
+{"who":"Oliver","text":"Sent","posted":true,"at":"2026-12-06T10:58","checkin":"2026-12-06T10:58"}
+{"who":"Oliver","text":"Ask if they'll gift wrap them, might be worth it","posted":true,"at":"2026-12-06T10:58","checkin":"2026-12-06T10:58"}
+{"who":"Priya","text":"She doesn't need wrapping","posted":true,"at":"2026-12-06T11:03","checkin":"2026-12-06T11:03"}
+{"who":"Priya","text":"It's fine","posted":true,"at":"2026-12-06T11:03","checkin":"2026-12-06T11:03"}
+{"who":"Priya","text":"[photo: receipt, two candles, $72.00 total]","posted":true,"at":"2026-12-06T14:41","checkin":"2026-12-06T14:41"}
+{"who":"Priya","text":"Got them. Don't tell her they were 36 each","posted":true,"at":"2026-12-06T14:42","checkin":"2026-12-06T14:42"}
+{"who":"Oliver","text":"Ha ok","posted":true,"at":"2026-12-06T14:50","checkin":"2026-12-06T14:50"}
+{"who":"Oliver","text":"Did you look at the june thing again or leaving it til tmrw","posted":true,"at":"2026-12-06T15:20","checkin":"2026-12-06T15:20"}
+{"who":"Priya","text":"Looked. Found it. Transposed number in the accruals. Obviously","posted":true,"at":"2026-12-06T15:24","checkin":"2026-12-06T15:24"}
+{"who":"Priya","text":"Now I have to find out if it was the bloke before me or the system","posted":true,"at":"2026-12-06T15:25","checkin":"2026-12-06T15:25"}
+{"who":"Oliver","text":"Its probably the bloke before you","posted":true,"at":"2026-12-06T15:31","checkin":"2026-12-06T15:31"}
+{"who":"Oliver","text":"Ring someone","posted":true,"at":"2026-12-06T15:31","checkin":"2026-12-06T15:31"}
+{"who":"Priya","text":"Emailing him tmrw. He's going to say it wasn't him","posted":true,"at":"2026-12-06T15:33","checkin":"2026-12-06T15:33"}
+{"who":"Oliver","text":"Ok so 7 at the thai place Sat. Are we getting her anything else or just the candles","posted":true,"at":"2026-12-06T19:10","checkin":"2026-12-06T19:10"}
+{"who":"Priya","text":"Just candles. Was going to ask you about a card","posted":true,"at":"2026-12-06T19:14","checkin":"2026-12-06T19:14"}
+{"who":"Priya","text":"Don't do a joke card","posted":true,"at":"2026-12-06T19:14","checkin":"2026-12-06T19:14"}
+{"who":"Oliver","text":"Wouldn't dream of it","posted":true,"at":"2026-12-06T19:19","checkin":"2026-12-06T19:19"}
+{"who":"Priya","text":"Want to give the candles before dinner or at the table","posted":true,"at":"2026-12-06T20:47","checkin":"2026-12-06T20:47"}
+{"who":"Oliver","text":"At the table. Don't want her carrying them round","posted":true,"at":"2026-12-06T20:52","checkin":"2026-12-06T20:52"}
+{"who":"Oliver","text":"Also ask her what she actually wants before the 19th. No more candle situations","posted":true,"at":"2026-12-06T20:52","checkin":"2026-12-06T20:52"}
+{"who":"Priya","text":"Haha ok","posted":true,"at":"2026-12-06T21:30","checkin":"2026-12-06T21:30"}
+{"who":"Priya","text":"She'll say candles","posted":true,"at":"2026-12-06T21:31","checkin":"2026-12-06T21:31"}
+{"who":"Oliver","text":"Still awake?","posted":true,"at":"2026-12-06T23:58","checkin":"2026-12-06T23:58"}
+{"who":"Priya","text":"Yeah. Can't stop thinking about the 12 dollars","posted":true,"at":"2026-12-07T00:20","checkin":"2026-12-07T00:20"}
+{"who":"Oliver","text":"It's always 12 dollars","posted":true,"at":"2026-12-07T00:21","checkin":"2026-12-07T00:21"}
+{"who":"","react":"😂","to":77,"posted":false,"at":"2026-12-07T00:21"}
+{"who":"Priya","text":"Go to sleep","posted":true,"at":"2026-12-07T00:21","checkin":"2026-12-07T00:21"}

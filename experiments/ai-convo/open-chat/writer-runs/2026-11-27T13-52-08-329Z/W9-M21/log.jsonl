@@ -1,0 +1,70 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T21:20","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1727,"cache_read_input_tokens":0,"output_tokens":2343,"output_tokens_details":{"thinking_tokens":1842},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1727,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2343,"cache_read_input_tokens":0,"cache_creation_input_tokens":1727,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1727},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2140,"cache_read_input_tokens":0,"output_tokens":2806,"output_tokens_details":{"thinking_tokens":2104},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2140,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2806,"cache_read_input_tokens":0,"cache_creation_input_tokens":2140,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2140},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2833,"cache_read_input_tokens":0,"output_tokens":4170,"output_tokens_details":{"thinking_tokens":3556},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2833,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4170,"cache_read_input_tokens":0,"cache_creation_input_tokens":2833,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2833},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Adam","Natalie","Greg","Omar"],"setting":"You are all in Phoenix, Arizona, where you each live now. You played football together on the same team years ago, so you know each other from the field and the locker room.","openers":["Send a photo of the old field","Ask who's free for a game Saturday","Tell everyone the transmission finally held","Check whether anyone still has the team jersey"],"opener":"Ask who's free for a game Saturday","cast":{"Adam":{"who":"35, man, former team-mate","work":"auto mechanic","knows":"You know Natalie, Greg and Omar as former football teammates from the same team.","texts":"Adam texts in this chat only now and again.","style":"some emoji and a few texting abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Natalie":{"who":"34, woman, former team-mate","work":"nurse","knows":"You know Adam, Greg and Omar as former football teammates from the same team.","texts":"Natalie texts in this chat only now and again.","style":"none","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Greg":{"who":"36, man, former team-mate","work":"restaurant owner","knows":"You know Adam, Natalie and Omar as former football teammates from the same team.","texts":"Greg texts in this chat a lot.","style":"lots of emoji and texting abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Omar":{"who":"33, man, former team-mate","work":"chef","knows":"You know Adam, Natalie and Greg as former football teammates from the same team.","texts":"Omar texts in this chat only now and again.","style":"a few emoji and some texting abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Adam":"You live in Phoenix, working as an auto mechanic, and you live alone.","Natalie":"You live in Phoenix, working as a nurse, and you live alone.","Greg":"You live in Phoenix, running your own restaurant, and you live alone.","Omar":"You live in Phoenix, working as a chef, and you live alone."},"sleep":{"Adam":[22.5,6.5],"Natalie":[23.5,7],"Greg":[1,9],"Omar":[2,10]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":782,"cache_read_input_tokens":0,"output_tokens":1736,"output_tokens_details":{"thinking_tokens":1307},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":782,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1736,"cache_read_input_tokens":0,"cache_creation_input_tokens":782,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":782},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1055,"cache_read_input_tokens":0,"output_tokens":1851,"output_tokens_details":{"thinking_tokens":1273},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1055,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1851,"cache_read_input_tokens":0,"cache_creation_input_tokens":1055,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1055},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Phoenix, USA","castMs":17597,"situation":"People I used to play football with.","topic":null}
+{"who":"Adam","text":"who's free sat for a game 👀","posted":true,"at":"2026-12-04T21:20","checkin":"2026-12-04T21:20"}
+{"who":"Greg","text":"im in. what time","posted":true,"at":"2026-12-04T21:26","checkin":"2026-12-04T21:26"}
+{"who":"Adam","text":"8? field at 9 if we can get it","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"","react":"👍","to":2,"posted":false,"at":"2026-12-04T21:31"}
+{"who":"","react":"👍","to":2,"posted":false,"at":"2026-12-04T21:31"}
+{"who":"Natalie","text":"I can do sat if its before 11. Im on sunday so no late night","posted":true,"at":"2026-12-04T21:38","checkin":"2026-12-04T21:38"}
+{"who":"Greg","text":"8 works i open late sat so ill be dead by 10 jk ill be there","posted":true,"at":"2026-12-04T21:41","checkin":"2026-12-04T21:41"}
+{"who":"Omar","text":"Sat mornings are rough for me, not up till like 10 lol. Can I come for the 2nd half 😅","posted":true,"at":"2026-12-04T22:05","checkin":"2026-12-04T22:05"}
+{"who":"Adam","text":"need 8 for a proper one. we're at 4 so far 😅 anyone know who else is still around","posted":true,"at":"2026-12-04T22:12","checkin":"2026-12-04T22:12"}
+{"who":"Greg","text":"tony's back in town i think!! ill text him 🙏🙏","posted":true,"at":"2026-12-04T22:14","checkin":"2026-12-04T22:14"}
+{"who":"Natalie","text":"My cousin's kid might play, not sure. Will ask","posted":true,"at":"2026-12-04T22:20","checkin":"2026-12-04T22:20"}
+{"who":"Adam","text":"ok im off to bed, early start. tmrw is fine 🤞","posted":true,"at":"2026-12-04T22:28","checkin":"2026-12-04T22:28"}
+{"who":"Greg","text":"tony said yes + his brother maybe. so we're at 6 + omar","posted":true,"at":"2026-12-04T22:51","checkin":"2026-12-04T22:51"}
+{"who":"Omar","text":"Ok im in. Will try get there by 10:30","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Greg","text":"field's showing free 8-10 on the site someone book it??","posted":true,"at":"2026-12-05T00:41","checkin":"2026-12-05T00:41"}
+{"who":"Adam","text":"up. booking it now","posted":true,"at":"2026-12-05T06:34","checkin":"2026-12-05T06:34"}
+{"who":"Adam","text":"booked 8-10. $ each for the field, ill send the link","posted":true,"at":"2026-12-05T06:41","checkin":"2026-12-05T06:41"}
+{"who":"Greg","text":"legend","posted":true,"at":"2026-12-05T06:44","checkin":"2026-12-05T06:44"}
+{"who":"","react":"👍","to":15,"posted":false,"at":"2026-12-05T06:44"}
+{"who":"","react":"👍","to":15,"posted":false,"at":"2026-12-05T06:44"}
+{"who":"Natalie","text":"I'm up. Bringing water and the bibs","posted":true,"at":"2026-12-05T07:02","checkin":"2026-12-05T07:02"}
+{"who":"Greg","text":"tony confirmed. bringing his brother too","posted":true,"at":"2026-12-05T07:15","checkin":"2026-12-05T07:15"}
+{"who":"Adam","text":"👍","posted":true,"at":"2026-12-05T07:18","checkin":"2026-12-05T07:18"}
+{"who":"Natalie","text":"Parking's full on the street, I'm in the lot on the east side","posted":true,"at":"2026-12-05T07:40","checkin":"2026-12-05T07:40"}
+{"who":"Omar","text":"Up. Still going?? 😅","posted":true,"at":"2026-12-05T10:04","checkin":"2026-12-05T10:04"}
+{"who":"Greg","text":"we're on the 2nd half lol come","posted":true,"at":"2026-12-05T10:06","checkin":"2026-12-05T10:06"}
+{"who":"Omar","text":"Omw. 15 min","posted":true,"at":"2026-12-05T10:19","checkin":"2026-12-05T10:19"}
+{"who":"Adam","text":"its done. we won 5-4 😤","posted":true,"at":"2026-12-05T10:22","checkin":"2026-12-05T10:22"}
+{"who":"Omar","text":"NO. I missed it 😭","posted":true,"at":"2026-12-05T10:23","checkin":"2026-12-05T10:23"}
+{"who":"Greg","text":"[photo: team in the lot after]","posted":true,"at":"2026-12-05T10:24","checkin":"2026-12-05T10:24"}
+{"who":"","react":"😂","to":25,"posted":false,"at":"2026-12-05T10:24"}
+{"who":"","react":"😂","to":25,"posted":false,"at":"2026-12-05T10:24"}
+{"who":"","react":"😭","to":25,"posted":false,"at":"2026-12-05T10:24"}
+{"who":"Omar","text":"Ok who's got the ball bag","posted":true,"at":"2026-12-05T10:31","checkin":"2026-12-05T10:31"}
+{"who":"Natalie","text":"Adam","posted":true,"at":"2026-12-05T10:31","checkin":"2026-12-05T10:31"}
+{"who":"Adam","text":"in the car","posted":true,"at":"2026-12-05T10:44","checkin":"2026-12-05T10:44"}
+{"who":"Natalie","text":"Knees are dead. Tony's brother wants to do this every week","posted":true,"at":"2026-12-05T13:50","checkin":"2026-12-05T13:50"}
+{"who":"Adam","text":"hes not wrong","posted":true,"at":"2026-12-05T14:12","checkin":"2026-12-05T14:12"}
+{"who":"Greg","text":"prep day, cant get out til 6","posted":true,"at":"2026-12-05T15:30","checkin":"2026-12-05T15:30"}
+{"who":"Omar","text":"Same, dinner service at 5","posted":true,"at":"2026-12-05T15:31","checkin":"2026-12-05T15:31"}
+{"who":"Adam","text":"anyone want food after next week's game? the place on 7th","posted":true,"at":"2026-12-05T20:40","checkin":"2026-12-05T20:40"}
+{"who":"Greg","text":"cant, dinner rush till close","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Omar","text":"At work till 2, have fun","posted":true,"at":"2026-12-05T22:18","checkin":"2026-12-05T22:18"}
+{"who":"Natalie","text":"Home. On at 7 tmrw so going to bed. Good game everyone","posted":true,"at":"2026-12-05T23:37","checkin":"2026-12-05T23:37"}
+{"who":"Greg","text":"tony just sent a video of himself falling off the bench at the field lol\n\n[link: video]","posted":true,"at":"2026-12-06T00:12","checkin":"2026-12-06T00:12"}
+{"who":"Omar","text":"Tony ok??","posted":true,"at":"2026-12-06T00:31","checkin":"2026-12-06T00:31"}
+{"who":"Greg","text":"hes fine. bench is not","posted":true,"at":"2026-12-06T00:33","checkin":"2026-12-06T00:33"}
+{"who":"Omar","text":"Lmaooo","posted":true,"at":"2026-12-06T00:35","checkin":"2026-12-06T00:35"}
+{"who":"Adam","text":"tony is a menace","posted":true,"at":"2026-12-06T06:52","checkin":"2026-12-06T06:52"}
+{"who":"","react":"👍","to":41,"posted":false,"at":"2026-12-06T06:52"}
+{"who":"","react":"👍","to":41,"posted":false,"at":"2026-12-06T06:52"}
+{"who":"Natalie","text":"Morning shift already. Knees still wrecked","posted":true,"at":"2026-12-06T07:20","checkin":"2026-12-06T07:20"}
+{"who":"Greg","text":"u guys eating after next wk or what. not doing 7th st without a plan lol","posted":true,"at":"2026-12-06T09:14","checkin":"2026-12-06T09:14"}
+{"who":"Adam","text":"ill book next week's field tmrw night. same 8am?","posted":true,"at":"2026-12-06T09:40","checkin":"2026-12-06T09:40"}
+{"who":"Greg","text":"8 is brutal. 9","posted":true,"at":"2026-12-06T09:52","checkin":"2026-12-06T09:52"}
+{"who":"Omar","text":"Up 😅 im in for next week, whole game this time","posted":true,"at":"2026-12-06T10:18","checkin":"2026-12-06T10:18"}
+{"who":"Omar","text":"9 is fine","posted":true,"at":"2026-12-06T10:19","checkin":"2026-12-06T10:19"}
+{"who":"Natalie","text":"[photo: tony's brother's knee, bruised]","posted":true,"at":"2026-12-06T12:47","checkin":"2026-12-06T12:47"}
+{"who":"Greg","text":"💀","posted":true,"at":"2026-12-06T12:48","checkin":"2026-12-06T12:48"}
+{"who":"","react":"😂","to":49,"posted":false,"at":"2026-12-06T12:48"}
+{"who":"Adam","text":"food on 7th st after is still on. need to know who's coming","posted":true,"at":"2026-12-06T14:05","checkin":"2026-12-06T14:05"}
+{"who":"Omar","text":"Me if I'm not on shift. Checking the schedule","posted":true,"at":"2026-12-06T14:31","checkin":"2026-12-06T14:31"}
+{"who":"Natalie","text":"Off. Dead. Food after works if the game's early enough","posted":true,"at":"2026-12-06T19:42","checkin":"2026-12-06T19:42"}
+{"who":"Greg","text":"closed mon so im prepping sunday night lol. i can do food if its 9ish","posted":true,"at":"2026-12-06T20:10","checkin":"2026-12-06T20:10"}
+{"who":"Adam","text":"ok 9 at 7th st after the game. ill put it in here thurs when i know the field","posted":true,"at":"2026-12-06T21:48","checkin":"2026-12-06T21:48"}
+{"who":"Omar","text":"Ill be there. Bringing the ball bag this time","posted":true,"at":"2026-12-06T22:55","checkin":"2026-12-06T22:55"}
+{"who":"Natalie","text":"In bed. 7am again","posted":true,"at":"2026-12-06T23:14","checkin":"2026-12-06T23:14"}
+{"who":"Greg","text":"tony just sent me the bench video again from another angle 💀\n\n[link: video]","posted":true,"at":"2026-12-07T00:26","checkin":"2026-12-07T00:26"}

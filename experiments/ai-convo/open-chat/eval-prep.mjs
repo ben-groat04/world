@@ -25,7 +25,7 @@
 //   "id<TAB>score<TAB>p_real" (one per judgement, so each id appears 3 times). The join with key.tsv is by id. p_real is the detection question (judge.mjs asks it every time), asked
 //   after the score: "how likely, 0-100, is it that this is real people texting?" (judge.mjs asks it itself, every time); the tally then prints its mean per group
 //   next to the score, so "AI windows score like real windows" can be read as a detection rate too, not only a score.
-// Tally:  node eval-prep.mjs --tally <out dir> <scores.tsv>
+// Tally:  node eval-prep.mjs --tally <out dir> <scores.tsv>   (an optional <out dir>/classes.json {scenario: class} adds a "class" group, plain and judge-centred)
 //   prints n and mean score per arm (label prefix before '-') by window, by scenario (label after '-' minus the trailing
 //   seed digit; REAL is one scenario, "anchor"), and overall; n counts judgements. Then the runs per arm by status.
 import fs from 'node:fs'; import path from 'node:path'; import { randomBytes } from 'node:crypto';
@@ -37,11 +37,12 @@ const hm = at => at.slice(11, 16), ms = at => Date.parse(at + ':00Z');
 if (process.argv[2] === '--tally') {
   const [, , , out, scores] = process.argv, key = {};
   for (const l of fs.readFileSync(path.join(out, 'key.tsv'), 'utf8').trim().split('\n').slice(1)) { const [id, label, win] = l.split('\t'); key[id] = { label, win }; }
+  const clsFile = path.join(out, 'classes.json'), cls = fs.existsSync(clsFile) ? JSON.parse(fs.readFileSync(clsFile, 'utf8')) : {}, clsOf = label => cls[label.split('-').slice(1).join('-').replace(/\d$/, '')]; // optional <out>/classes.json {scenario: class}: the tally also splits by brief class
   const groups = {}, real = {}; // real: the optional third column of scores.tsv, a judge's chance (0-100) that the chat is real people texting
   for (const l of fs.readFileSync(scores, 'utf8').trim().split('\n')) {
     const [id, s, pr] = l.split('\t'), k = key[id], v = parseFloat(s), p = parseFloat(pr); if (!k || isNaN(v)) { console.error('skipped:', l); continue; }
     const [arm, scen] = k.label.split('-'), sc = arm === 'REAL' ? 'anchor' : scen.replace(/\d$/, '');
-    for (const g of [`window ${k.win}\t${arm}`, `scenario ${sc}\t${arm}`, `overall\t${arm}`]) { (groups[g] ??= []).push(v); if (!isNaN(p)) (real[g] ??= []).push(p); }
+    for (const g of [`window ${k.win}\t${arm}`, `scenario ${sc}\t${arm}`, ...(clsOf(k.label) ? [`class ${clsOf(k.label)}\t${arm}`] : []), `overall\t${arm}`]) { (groups[g] ??= []).push(v); if (!isNaN(p)) (real[g] ??= []).push(p); }
   }
   const runs = {}, mean = a => a.reduce((x, y) => x + y, 0) / a.length;
   for (const l of fs.readFileSync(path.join(out, 'runs.tsv'), 'utf8').trim().split('\n').slice(1)) { const c = l.split('\t'), arm = c[0].split('-')[0]; ((runs[arm] ??= {})[c.at(-1)] ??= []).push(c[0]); } // status is the last column (older runs.tsv had three)
@@ -51,7 +52,7 @@ if (process.argv[2] === '--tally') {
   // Judge-centred p_real (and score): each judge's mean over all the files they scored is taken off their own numbers, so a judge who is generous or harsh to everyone does not move an arm. The judge of a row comes from the SCORES block of <out>/judges/jN.md.
   const jdir = path.join(out, 'judges'), cen = {}, jrows = [];
   if (fs.existsSync(jdir)) for (const f of fs.readdirSync(jdir).filter(f => /^j\d+\.md$/.test(f))) { const rows = []; for (const l of fs.readFileSync(path.join(jdir, f), 'utf8').split(/^SCORES\s*$/m).at(-1).split('\n')) { const m = l.match(/^\W*([0-9a-f]{6})\W+(\d+(?:\.\d+)?)\W+(\d+(?:\.\d+)?)/); if (m && key[m[1]]) rows.push([m[1], +m[2], +m[3]]); } const ms_ = mean(rows.map(r => r[1])), mp = mean(rows.map(r => r[2])); for (const [id, v, p] of rows) jrows.push([id, v - ms_, p - mp]); }
-  for (const [id, dv, dp] of jrows) { const [arm] = key[id].label.split('-'); for (const g of [`window ${key[id].win}\t${arm}`, `overall\t${arm}`]) ((cen[g] ??= { v: [], p: [] }).v.push(dv), cen[g].p.push(dp)); }
+  for (const [id, dv, dp] of jrows) { const [arm] = key[id].label.split('-'); for (const g of [`window ${key[id].win}\t${arm}`, ...(clsOf(key[id].label) ? [`class ${clsOf(key[id].label)}\t${arm}`] : []), `overall\t${arm}`]) ((cen[g] ??= { v: [], p: [] }).v.push(dv), cen[g].p.push(dp)); }
   if (jrows.length) { console.log('\njudge-centred (judge mean taken off)\ngroup\tarm\tn\tscore_centred\tp_real_centred'); for (const g of Object.keys(cen).sort()) { const x = cen[g], f = v => { const m = mean(v); return (m >= 0 ? '+' : '') + m.toFixed(2); }; console.log(`${g}\t${x.v.length}\t${f(x.v)}\t${f(x.p)}`); } }
   console.log('\nruns by status (dead = 0 messages, short = fewer than MIN_W in the first window, A-only = no judged second window, full = both)\narm\tdead\tshort\tA-only\tfull\tjudged share\tdead and short runs');
   for (const arm of Object.keys(runs).sort()) { const r = runs[arm], c = k => (r[k] ?? []).length, tot = c('dead') + c('short') + c('A-only') + c('full'); console.log([arm, c('dead'), c('short'), c('A-only'), c('full'), `${c('A-only') + c('full')}/${tot}`, [...(r.dead ?? []), ...(r.short ?? [])].join(' ')].join('\t')); }

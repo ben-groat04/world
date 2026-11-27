@@ -1,0 +1,94 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T08:05","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1425,"cache_read_input_tokens":0,"output_tokens":2663,"output_tokens_details":{"thinking_tokens":1733},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1425,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2663,"cache_read_input_tokens":0,"cache_creation_input_tokens":1425,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1425},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2320,"cache_read_input_tokens":0,"output_tokens":1823,"output_tokens_details":{"thinking_tokens":1149},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2320,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1823,"cache_read_input_tokens":0,"cache_creation_input_tokens":2320,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2320},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2989,"cache_read_input_tokens":0,"output_tokens":3446,"output_tokens_details":{"thinking_tokens":2436},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2989,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3446,"cache_read_input_tokens":0,"cache_creation_input_tokens":2989,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2989},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":0,"cache_read_input_tokens":2989,"output_tokens":3603,"output_tokens_details":{"thinking_tokens":2403},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3603,"cache_read_input_tokens":2989,"cache_creation_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Tasnim","Rehana"],"setting":"You and Rehana are both in Dhaka, Bangladesh, each in your own home, and you know each other as mother and daughter.","openers":["Ask whether she has eaten","Send a photo of the finished blouse","Tell her the tax forms are filed","Ask if she needs anything from the market"],"opener":"Ask whether she has eaten","cast":{"Tasnim":{"who":"34, woman, the child","work":"accountant","knows":"You know Rehana as your mum, since birth.","texts":"","style":"some, a few emoji and short texting abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Rehana":{"who":"61, woman, the mum","work":"tailor","knows":"You know Tasnim as your daughter, since birth.","texts":"","style":"none","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Tasnim":"You live in Dhaka, Bangladesh, working as an accountant, and you live alone.","Rehana":"You live in Dhaka, Bangladesh, spending your days sewing as a tailor, and you live alone."},"sleep":{"Tasnim":[23.5,6.5],"Rehana":[22,5.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":781,"cache_read_input_tokens":0,"output_tokens":962,"output_tokens_details":{"thinking_tokens":732},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":781,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":962,"cache_read_input_tokens":0,"cache_creation_input_tokens":781,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":781},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1014,"cache_read_input_tokens":0,"output_tokens":2103,"output_tokens_details":{"thinking_tokens":1753},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1014,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2103,"cache_read_input_tokens":0,"cache_creation_input_tokens":1014,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1014},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Dhaka, Bangladesh","castMs":16059,"situation":"My mum.","topic":null}
+{"who":"Tasnim","text":"Ammi did you eat","posted":true,"at":"2026-11-30T08:05","checkin":"2026-11-30T08:05"}
+{"who":"Rehana","text":"Yes. Rice and dal. You?","posted":true,"at":"2026-11-30T08:40","checkin":"2026-11-30T08:40"}
+{"who":"Tasnim","text":"Tea and a paratha at the office canteen not a real breakfast","posted":true,"at":"2026-11-30T08:42","checkin":"2026-11-30T08:42"}
+{"who":"Rehana","text":"Not a real breakfast. Eat an egg tomorrow.","posted":true,"at":"2026-11-30T09:15","checkin":"2026-11-30T09:15"}
+{"who":"Tasnim","text":"Ok","posted":true,"at":"2026-11-30T09:16","checkin":"2026-11-30T09:16"}
+{"who":"Rehana","text":"Lunch?","posted":true,"at":"2026-11-30T13:02","checkin":"2026-11-30T13:02"}
+{"who":"Tasnim","text":"Desk lunch. Dal and rice from the tiffin place. The usual","posted":true,"at":"2026-11-30T13:30","checkin":"2026-11-30T13:30"}
+{"who":"Rehana","text":"Good. Buy rui on the way home if you pass Shyamoli. The fish man had it this morning, the woman who came for the blouse said so.","posted":true,"at":"2026-11-30T13:31","checkin":"2026-11-30T13:31"}
+{"who":"Tasnim","text":"I'll see. Late meeting prob. The audit people again","posted":true,"at":"2026-11-30T13:45","checkin":"2026-11-30T13:45"}
+{"who":"Rehana","text":"Audit people always. Eat anyway.","posted":true,"at":"2026-11-30T13:46","checkin":"2026-11-30T13:46"}
+{"who":"Rehana","text":"Did you eat or not","posted":true,"at":"2026-11-30T17:20","checkin":"2026-11-30T17:20"}
+{"who":"Tasnim","text":"😤 yes ammi I ate at 1. Stop","posted":true,"at":"2026-11-30T17:58","checkin":"2026-11-30T17:58"}
+{"who":"Rehana","text":"Stop what. I asked a question.","posted":true,"at":"2026-11-30T17:59","checkin":"2026-11-30T17:59"}
+{"who":"","react":"😂","to":12,"posted":false,"at":"2026-11-30T17:59"}
+{"who":"Tasnim","text":"Ok","posted":true,"at":"2026-11-30T18:02","checkin":"2026-11-30T18:02"}
+{"who":"Tasnim","text":"Home. Bus was packed","posted":true,"at":"2026-11-30T19:10","checkin":"2026-11-30T19:10"}
+{"who":"Rehana","text":"Did you eat?","posted":true,"at":"2026-11-30T19:12","checkin":"2026-11-30T19:12"}
+{"who":"Tasnim","text":"Ammi","posted":true,"at":"2026-11-30T19:14","checkin":"2026-11-30T19:14"}
+{"who":"Rehana","text":"I know you'll say yes. I'm asking so I know.","posted":true,"at":"2026-11-30T19:20","checkin":"2026-11-30T19:20"}
+{"who":"Tasnim","text":"Making khichuri from the packet. Eating it now 🍛","posted":true,"at":"2026-11-30T19:24","checkin":"2026-11-30T19:24"}
+{"who":"Rehana","text":"Khichuri from a packet. Add an egg.","posted":true,"at":"2026-11-30T19:25","checkin":"2026-11-30T19:25"}
+{"who":"Rehana","text":"[photo: the blue georgette suit, the hem done]","posted":true,"at":"2026-11-30T19:40","checkin":"2026-11-30T19:40"}
+{"who":"Tasnim","text":"Oh it looks so good. Is that for the engagement thing?","posted":true,"at":"2026-11-30T21:05","checkin":"2026-11-30T21:05"}
+{"who":"Rehana","text":"Nilufar's niece. She wants it by Thursday, I said Wednesday.","posted":true,"at":"2026-11-30T21:08","checkin":"2026-11-30T21:08"}
+{"who":"Tasnim","text":"You're going to do it wednesday night aren't you","posted":true,"at":"2026-11-30T21:09","checkin":"2026-11-30T21:09"}
+{"who":"Rehana","text":"I'm going to do it. Thursday I'm not doing anything.","posted":true,"at":"2026-11-30T21:11","checkin":"2026-11-30T21:11"}
+{"who":"Rehana","text":"Go to sleep. Alarm at 6:30.","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Tasnim","text":"Still at the q3 sheet. The numbers dont match and I cant find where","posted":true,"at":"2026-11-30T22:55","checkin":"2026-11-30T22:55"}
+{"who":"Tasnim","text":"Ok im going to bed. Night ammi","posted":true,"at":"2026-11-30T23:12","checkin":"2026-11-30T23:12"}
+{"who":"Tasnim","text":"Eat the egg tomorrow","posted":true,"at":"2026-11-30T23:12","checkin":"2026-11-30T23:12"}
+{"who":"Rehana","text":"Up. Eat the egg.","posted":true,"at":"2026-12-01T05:48","checkin":"2026-12-01T05:48"}
+{"who":"Tasnim","text":"Up. The q3 thing was a duplicate row in the bank file. Took forever","posted":true,"at":"2026-12-01T06:41","checkin":"2026-12-01T06:41"}
+{"who":"Tasnim","text":"Egg at the office, promise","posted":true,"at":"2026-12-01T06:42","checkin":"2026-12-01T06:42"}
+{"who":"Rehana","text":"Duplicate row. Those bank people.","posted":true,"at":"2026-12-01T07:15","checkin":"2026-12-01T07:15"}
+{"who":"Rehana","text":"Eat it at home. Now.","posted":true,"at":"2026-12-01T07:16","checkin":"2026-12-01T07:16"}
+{"who":"","react":"👍","to":33,"posted":false,"at":"2026-12-01T07:16"}
+{"who":"Tasnim","text":"Ok ammi 🙄","posted":true,"at":"2026-12-01T07:30","checkin":"2026-12-01T07:30"}
+{"who":"Rehana","text":"Did you pass Shyamoli. The rui","posted":true,"at":"2026-12-01T12:05","checkin":"2026-12-01T12:05"}
+{"who":"Tasnim","text":"Not going home that way. Meeting moved to 6, audit people again","posted":true,"at":"2026-12-01T12:40","checkin":"2026-12-01T12:40"}
+{"who":"Rehana","text":"Ok. Eggs then.","posted":true,"at":"2026-12-01T12:41","checkin":"2026-12-01T12:41"}
+{"who":"Tasnim","text":"Sorry in the meeting all day. Did you eat","posted":true,"at":"2026-12-01T14:10","checkin":"2026-12-01T14:10"}
+{"who":"Rehana","text":"Yes. Nilufar came, the niece wants a button changed on the sleeve. Smaller ones.","posted":true,"at":"2026-12-01T14:22","checkin":"2026-12-01T14:22"}
+{"who":"Tasnim","text":"Smaller buttons on wednesday night. Good luck","posted":true,"at":"2026-12-01T14:23","checkin":"2026-12-01T14:23"}
+{"who":"Rehana","text":"I have the buttons.","posted":true,"at":"2026-12-01T14:25","checkin":"2026-12-01T14:25"}
+{"who":"Tasnim","text":"Home. Got a CNG today, no bus","posted":true,"at":"2026-12-01T19:52","checkin":"2026-12-01T19:52"}
+{"who":"Rehana","text":"Did you eat","posted":true,"at":"2026-12-01T19:53","checkin":"2026-12-01T19:53"}
+{"who":"Tasnim","text":"Ammi eating the egg now, happy?","posted":true,"at":"2026-12-01T19:58","checkin":"2026-12-01T19:58"}
+{"who":"Rehana","text":"Yes.","posted":true,"at":"2026-12-01T19:59","checkin":"2026-12-01T19:59"}
+{"who":"Rehana","text":"[photo: the sleeve, the new buttons pinned on]","posted":true,"at":"2026-12-01T20:31","checkin":"2026-12-01T20:31"}
+{"who":"Tasnim","text":"Those are tiny, how do you even","posted":true,"at":"2026-12-01T20:44","checkin":"2026-12-01T20:44"}
+{"who":"Tasnim","text":"Looks really nice though","posted":true,"at":"2026-12-01T20:45","checkin":"2026-12-01T20:45"}
+{"who":"Tasnim","text":"Cant sleep. Keep thinking about the bank file","posted":true,"at":"2026-12-01T23:38","checkin":"2026-12-01T23:38"}
+{"who":"Tasnim","text":"Night ammi","posted":true,"at":"2026-12-01T23:41","checkin":"2026-12-01T23:41"}
+{"who":"Tasnim","text":"Up. Barely slept","posted":true,"at":"2026-12-02T06:34","checkin":"2026-12-02T06:34"}
+{"who":"Rehana","text":"Eat something before the bus. Not only tea.","posted":true,"at":"2026-12-02T06:38","checkin":"2026-12-02T06:38"}
+{"who":"Tasnim","text":"Ya ok","posted":true,"at":"2026-12-02T06:39","checkin":"2026-12-02T06:39"}
+{"who":"Tasnim","text":"Office. Audit people want the Q3 sheet resent with the fixed file","posted":true,"at":"2026-12-02T08:20","checkin":"2026-12-02T08:20"}
+{"who":"Rehana","text":"Did you eat","posted":true,"at":"2026-12-02T08:55","checkin":"2026-12-02T08:55"}
+{"who":"Tasnim","text":"Egg happy now","posted":true,"at":"2026-12-02T09:10","checkin":"2026-12-02T09:10"}
+{"who":"Rehana","text":"Good.","posted":true,"at":"2026-12-02T09:11","checkin":"2026-12-02T09:11"}
+{"who":"Rehana","text":"Nilufar's niece is coming at 5 for the fitting. If she's on time, which she won't be","posted":true,"at":"2026-12-02T11:48","checkin":"2026-12-02T11:48"}
+{"who":"Tasnim","text":"Dont start with the niece lol","posted":true,"at":"2026-12-02T11:50","checkin":"2026-12-02T11:50"}
+{"who":"Rehana","text":"I didn't start anything.","posted":true,"at":"2026-12-02T11:50","checkin":"2026-12-02T11:50"}
+{"who":"Tasnim","text":"Desk lunch again. Khichuri from the packet, I have 3 packets now","posted":true,"at":"2026-12-02T13:15","checkin":"2026-12-02T13:15"}
+{"who":"Rehana","text":"Buy rice. The packet is for emergencies.","posted":true,"at":"2026-12-02T13:16","checkin":"2026-12-02T13:16"}
+{"who":"Tasnim","text":"This is an emergency every day ammi","posted":true,"at":"2026-12-02T13:20","checkin":"2026-12-02T13:20"}
+{"who":"Rehana","text":"Hm.","posted":true,"at":"2026-12-02T13:22","checkin":"2026-12-02T13:22"}
+{"who":"Rehana","text":"Fitting done. She wants the sleeve longer. I said no","posted":true,"at":"2026-12-02T17:40","checkin":"2026-12-02T17:40"}
+{"who":"Tasnim","text":"Ammi","posted":true,"at":"2026-12-02T17:41","checkin":"2026-12-02T17:41"}
+{"who":"Rehana","text":"I said I'll look.","posted":true,"at":"2026-12-02T17:42","checkin":"2026-12-02T17:42"}
+{"who":"Tasnim","text":"Meeting ran over. Audit people sent 14 questions on Q3, 3 are the same question","posted":true,"at":"2026-12-02T18:30","checkin":"2026-12-02T18:30"}
+{"who":"Rehana","text":"Answer the 3 and say you answered the 3","posted":true,"at":"2026-12-02T18:33","checkin":"2026-12-02T18:33"}
+{"who":"Tasnim","text":"😂 ok","posted":true,"at":"2026-12-02T18:34","checkin":"2026-12-02T18:34"}
+{"who":"","react":"😂","to":70,"posted":false,"at":"2026-12-02T18:34"}
+{"who":"Tasnim","text":"Home. Bus again, packed. No rui obviously, I didn't pass Shyamoli","posted":true,"at":"2026-12-02T19:48","checkin":"2026-12-02T19:48"}
+{"who":"Rehana","text":"Did you eat","posted":true,"at":"2026-12-02T19:50","checkin":"2026-12-02T19:50"}
+{"who":"Tasnim","text":"Ammi. Not yet. Going to cook dal","posted":true,"at":"2026-12-02T19:52","checkin":"2026-12-02T19:52"}
+{"who":"Rehana","text":"Cook the dal. Then eat it. Don't do the sheet first.","posted":true,"at":"2026-12-02T19:53","checkin":"2026-12-02T19:53"}
+{"who":"Tasnim","text":"Cant promise","posted":true,"at":"2026-12-02T19:55","checkin":"2026-12-02T19:55"}
+{"who":"Rehana","text":"I'm starting the dupatta hem now. Don't wait up","posted":true,"at":"2026-12-02T20:30","checkin":"2026-12-02T20:30"}
+{"who":"Tasnim","text":"Dal done. Eating at the laptop","posted":true,"at":"2026-12-02T21:14","checkin":"2026-12-02T21:14"}
+{"who":"Rehana","text":"Not at the laptop.","posted":true,"at":"2026-12-02T21:15","checkin":"2026-12-02T21:15"}
+{"who":"Tasnim","text":"Ok not at the laptop","posted":true,"at":"2026-12-02T21:16","checkin":"2026-12-02T21:16"}
+{"who":"Tasnim","text":"Still the sheet. Audit people want a reconciliation by tomorrow noon. I dont even know what they want reconciled","posted":true,"at":"2026-12-02T21:40","checkin":"2026-12-02T21:40"}
+{"who":"Rehana","text":"Ask them. Write the question down, ask it nicely.","posted":true,"at":"2026-12-02T21:42","checkin":"2026-12-02T21:42"}
+{"who":"Tasnim","text":"They are not nice ammi","posted":true,"at":"2026-12-02T21:44","checkin":"2026-12-02T21:44"}
+{"who":"Rehana","text":"Go to sleep. Alarm 6:30.","posted":true,"at":"2026-12-02T21:50","checkin":"2026-12-02T21:50"}
+{"who":"Tasnim","text":"Ok stopping. Found one thing, the bank file had 2 duplicates not 1","posted":true,"at":"2026-12-02T22:58","checkin":"2026-12-02T22:58"}
+{"who":"Tasnim","text":"Night ammi","posted":true,"at":"2026-12-02T23:01","checkin":"2026-12-02T23:01"}
+{"who":"Rehana","text":"Dupatta hem done. Finally.","posted":true,"at":"2026-12-03T00:33","checkin":"2026-12-03T00:33"}
+{"who":"Rehana","text":"[photo: the blue suit folded on the chair, the dupatta over it]","posted":true,"at":"2026-12-03T00:34","checkin":"2026-12-03T00:34"}
+{"who":"Rehana","text":"Sleep. Tomorrow I'm not doing anything.","posted":true,"at":"2026-12-03T00:36","checkin":"2026-12-03T00:36"}

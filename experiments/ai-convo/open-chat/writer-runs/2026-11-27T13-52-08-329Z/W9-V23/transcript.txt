@@ -1,0 +1,180 @@
+--- Wed 20:40, Rachel
+Anyone know what time the first sunday train from leeds to kings cross is? Trying to sort the conf trip
+
+--- Wed 20:52, Ryan
+Not off the top of my head. Would have to look.
+
+--- Wed 20:58, Grace
+no clue, sundays are always weird on the trains 😅
+
+--- Wed 21:14, Richard
+Check the LNER site or app.
+
+--- Wed 21:15, Ryan
+@claude what time is the first sunday train from leeds to london kings cross
+
+--- Wed 21:16, Claude
+I couldn't confirm the first Sunday departure. LNER's Leeds to King's Cross page doesn't list Sunday times. It only says extra Sunday trains have been added. Sunday times also change with engineering works, so check your exact date in the LNER journey planner or app: lner.co.uk/routes/leeds-to-london-kings-cross-trains/
+
+--- Wed 21:19, Ryan
+So it's the app then
+
+--- Wed 21:22, Rachel
+Ok will check tmrw. Are we all going sunday or just monday
+
+--- Wed 21:23, Grace
+monday for me, i'm not doing a sunday wake up 🫠
+(😂 1)
+
+--- Wed 21:31, Richard
+Monday's the session I'm presenting. Need to be there by 9.
+
+--- Wed 21:33, Ryan
+Then monday. I'll get the earliest one that gets us there before 9
+
+--- Wed 21:40, Rachel
+👍 what about getting back. Last train thurs or fri?
+
+--- Wed 21:44, Ryan
+Depends if we're staying over. Richard, what's the hotel situation
+
+--- Wed 21:58, Grace
+i'm already booked into a travelodge near the venue fyi 😬 nothing sorted for anyone else?
+
+--- Wed 22:05, Ryan
+Not booked. Will sort it tmrw
+
+--- Wed 22:09, Grace
+ok i'll send you the link
+
+--- Wed 22:17, Ryan
+Send the link. And sorry for pinging claude for a train time, should have just checked myself
+
+--- Wed 23:14, Rachel
+What time is everyone's train back monday night? I'm in the office thurs
+
+--- Wed 23:41, Grace
+depends when the session finishes. i'll look going to bed soon
+
+--- Thu 07:21, Rachel
+App has the 07.15 from leeds getting in 09.10ish. Earlier ones are gone or stupid money
+
+--- Thu 07:48, Ryan
+Book the 07.15. I'll take it.
+
+--- Thu 08:02, Grace
+ok i'm on the 07.15 then
+(👍 1)
+
+--- Thu 09:31, Rachel
+Ryan is it ok if I do the thurs train back? Got a 9am fri
+
+--- Thu 11:06, Richard
+Not staying. Back Monday night.
+
+--- Thu 11:40, Ryan
+Ok I'll get a room mon night. Grace send the travelodge thing
+
+--- Thu 12:20, Grace
+[link: Travelodge booking page]
+
+--- Thu 12:22, Ryan
+Got it
+
+--- Thu 13:05, Ryan
+@claude what's the last train from london kings cross to leeds on monday 7 dec
+
+--- Thu 13:06, Claude
+The best I found is a third-party timetable page (live-departures.info). It lists the last Monday to Friday train from King's Cross to Leeds as 23:33, arriving 02:14. That timetable runs until 12 December, so it should cover the 7th. It isn't an official LNER page, though, so check the LNER app before you book.
+
+https://live-departures.info/rail/timetable/London-Kings-Cross/Leeds/
+
+--- Thu 13:09, Ryan
+Live departures? Never heard of it. I'll check the app
+
+--- Thu 13:14, Richard
+Session finishes 16:30 I think. Will confirm
+
+--- Thu 13:52, Ryan
+App has the 23.33 Mon and nothing much after. Richard you're on that unless you find something earlier
+
+--- Thu 14:10, Grace
+client call running over, sorry. looking at trains later
+
+--- Thu 17:48, Rachel
+Office emptying out. Anyone doing anything sat? My sister wants help moving flat
+
+--- Thu 18:02, Ryan
+Nothing planned. Whose flat
+
+--- Thu 18:04, Rachel
+Hers. She has 3 boxes and a sofa
+
+--- Thu 18:20, Richard
+Checked. Nothing useful after 17.30 without 3 changes. 23.33 is fine
+
+--- Thu 18:22, Ryan
+Ok Richard's on the 23.33 then. I'm staying Mon, Grace you're in the travelodge already
+
+--- Thu 18:23, Grace
+yep. just me and my travelodge 😅
+
+--- Thu 21:47, Rachel
+Going to bed, 9am fri is going to be brutal. Night all
+
+--- Thu 22:12, Grace
+the travelodge page keeps timing out, does anyone else have a booking for mon or is it just me
+
+--- Thu 22:20, Ryan
+Not booked yet. Will do it in the morning
+
+--- Fri 08:12, Ryan
+Travelodge page working now
+
+--- Fri 08:14, Grace
+oh thank god. thought it was just me
+
+--- Fri 08:27, Ryan
+Booked mon night, same place as you
+
+--- Fri 08:29, Grace
+nice
+
+--- Fri 08:35, Richard
+Booked 23.33 Mon.
+
+--- Fri 11:50, Ryan
+Yeah thurs is fine Rachel. Didn't see the question till now, sorry
+
+--- Fri 11:52, Rachel
+Ta
+
+--- Fri 12:30, Grace
+anyone know if the 07.15 has a quiet coach or is it all loud
+
+--- Fri 12:44, Ryan
+No idea. Didn't look
+
+--- Fri 16:52, Richard
+Slides done. Anyone want to see them before Mon
+
+--- Fri 17:30, Ryan
+Yes send them
+
+--- Fri 17:31, Richard
+[file: conference-session-slides-v3.pptx]
+
+--- Fri 17:33, Ryan
+Looks fine. Slide 9 is hard to read on a projector though
+
+--- Fri 17:40, Richard
+Will fix
+
+--- Fri 21:55, Rachel
+Home. Sister says 10am tomorrow and she's promised takeaway
+
+--- Fri 22:10, Ryan
+Hope the sofa fits. Sofas never fit
+
+--- Fri 22:14, Rachel
+Its a 3 box 1 sofa move so should be fine

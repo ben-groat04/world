@@ -1,0 +1,72 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T07:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1420,"cache_read_input_tokens":0,"output_tokens":1566,"output_tokens_details":{"thinking_tokens":975},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1420,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1566,"cache_read_input_tokens":0,"cache_creation_input_tokens":1420,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1420},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1933,"cache_read_input_tokens":0,"output_tokens":2344,"output_tokens_details":{"thinking_tokens":1662},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1933,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2344,"cache_read_input_tokens":0,"cache_creation_input_tokens":1933,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1933},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2595,"cache_read_input_tokens":0,"output_tokens":1830,"output_tokens_details":{"thinking_tokens":1204},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2595,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1830,"cache_read_input_tokens":0,"cache_creation_input_tokens":2595,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2595},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Kerem","Semra"],"setting":"You both live in Istanbul, Turkey. You are mother and son and have known each other since Kerem was born. You keep in touch through messages and calls.","openers":["Ask whether she slept well","Send a sketch of the logo idea","Share a funny video from work","Remind her about Sunday lunch"],"opener":"Remind her about Sunday lunch","cast":{"Kerem":{"who":"34, man, the child","work":"graphic designer","knows":"You know Semra as your mother, from birth.","texts":"","style":"a moderate amount of emoji and frequent texting shorthand","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Semra":{"who":"60, woman, the mum","work":"retired schoolteacher","knows":"You know Kerem as your son, from birth.","texts":"","style":"none","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Kerem":"You live in Istanbul, working as a graphic designer, and you live alone.","Semra":"You live in Istanbul, spending your days in retirement after a career as a schoolteacher, and you live alone."},"sleep":{"Kerem":[23.5,7.5],"Semra":[22.5,6.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":779,"cache_read_input_tokens":0,"output_tokens":1437,"output_tokens_details":{"thinking_tokens":1215},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":779,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1437,"cache_read_input_tokens":0,"cache_creation_input_tokens":779,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":779},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1014,"cache_read_input_tokens":0,"output_tokens":2538,"output_tokens_details":{"thinking_tokens":2205},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1014,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2538,"cache_read_input_tokens":0,"cache_creation_input_tokens":1014,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1014},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Istanbul, Turkey","castMs":19648,"situation":"My mum.","topic":null}
+{"who":"Kerem","text":"hey anne, sunday lunch still on? 6th","posted":true,"at":"2026-12-03T07:50","checkin":"2026-12-03T07:50"}
+{"who":"Semra","text":"Yes. One o'clock. Bring bread, from the bakery on your street, not the one by the metro.","posted":true,"at":"2026-12-03T08:12","checkin":"2026-12-03T08:12"}
+{"who":"Kerem","text":"ok the metro one is shit anyway","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Semra","text":"Don't swear.","posted":true,"at":"2026-12-03T08:14","checkin":"2026-12-03T08:14"}
+{"who":"Kerem","text":"sorry one o'clock, bakery on my street","posted":true,"at":"2026-12-03T08:20","checkin":"2026-12-03T08:20"}
+{"who":"Semra","text":"Is Nermin coming or not. I need to know how many plates.","posted":true,"at":"2026-12-03T13:37","checkin":"2026-12-03T13:37"}
+{"who":"Kerem","text":"no idea, she hasnt answered me since monday","posted":true,"at":"2026-12-03T13:52","checkin":"2026-12-03T13:52"}
+{"who":"Semra","text":"She answers me.","posted":true,"at":"2026-12-03T13:52","checkin":"2026-12-03T13:52"}
+{"who":"Kerem","text":"then ask her","posted":true,"at":"2026-12-03T13:54","checkin":"2026-12-03T13:54"}
+{"who":"Kerem","text":"[photo: the logo drafts for the bakery client]","posted":true,"at":"2026-12-03T16:20","checkin":"2026-12-03T16:20"}
+{"who":"Semra","text":"The third one looks like a spoon.","posted":true,"at":"2026-12-03T16:24","checkin":"2026-12-03T16:24"}
+{"who":"Kerem","text":"its a wheat ear 😑","posted":true,"at":"2026-12-03T16:25","checkin":"2026-12-03T16:25"}
+{"who":"Semra","text":"It's a spoon with a hat.","posted":true,"at":"2026-12-03T16:25","checkin":"2026-12-03T16:25"}
+{"who":"Kerem","text":"ok i'll show them the spoon with a hat","posted":true,"at":"2026-12-03T16:40","checkin":"2026-12-03T16:40"}
+{"who":"Semra","text":"Nermin says yes, with the husband. So seven.","posted":true,"at":"2026-12-03T19:12","checkin":"2026-12-03T19:12"}
+{"who":"Kerem","text":"ok seven","posted":true,"at":"2026-12-03T19:15","checkin":"2026-12-03T19:15"}
+{"who":"Semra","text":"Did you eat","posted":true,"at":"2026-12-03T21:48","checkin":"2026-12-03T21:48"}
+{"who":"Kerem","text":"yes pide from the place downstairs","posted":true,"at":"2026-12-03T21:58","checkin":"2026-12-03T21:58"}
+{"who":"Semra","text":"Good. Sleep. Don't work till two.","posted":true,"at":"2026-12-03T22:04","checkin":"2026-12-03T22:04"}
+{"who":"Kerem","text":"no promises","posted":true,"at":"2026-12-03T22:10","checkin":"2026-12-03T22:10"}
+{"who":"","react":"👍","to":19,"posted":false,"at":"2026-12-03T22:10"}
+{"who":"Kerem","text":"morning. slept?","posted":true,"at":"2026-12-04T07:41","checkin":"2026-12-04T07:41"}
+{"who":"Semra","text":"Yes. Did you sleep or did you work.","posted":true,"at":"2026-12-04T07:44","checkin":"2026-12-04T07:44"}
+{"who":"Kerem","text":"slept mostly","posted":true,"at":"2026-12-04T07:45","checkin":"2026-12-04T07:45"}
+{"who":"Semra","text":"Mehmet from the building says the water will be off on Monday between nine and two. Keep a bottle for the coffee.","posted":true,"at":"2026-12-04T10:03","checkin":"2026-12-04T10:03"}
+{"who":"Kerem","text":"which monday","posted":true,"at":"2026-12-04T10:09","checkin":"2026-12-04T10:09"}
+{"who":"Semra","text":"This one.","posted":true,"at":"2026-12-04T10:10","checkin":"2026-12-04T10:10"}
+{"who":"Kerem","text":"ok ty. ill fill the big pot","posted":true,"at":"2026-12-04T10:12","checkin":"2026-12-04T10:12"}
+{"who":"Kerem","text":"[photo: the new logo with the hat]","posted":true,"at":"2026-12-04T12:30","checkin":"2026-12-04T12:30"}
+{"who":"Semra","text":"That is worse.","posted":true,"at":"2026-12-04T12:31","checkin":"2026-12-04T12:31"}
+{"who":"Kerem","text":"the client loves it","posted":true,"at":"2026-12-04T12:31","checkin":"2026-12-04T12:31"}
+{"who":"Semra","text":"Then the client should bring the bread.","posted":true,"at":"2026-12-04T12:33","checkin":"2026-12-04T12:33"}
+{"who":"Semra","text":"Nermin again. She wants to bring börek. Should I say no to the börek.","posted":true,"at":"2026-12-04T15:02","checkin":"2026-12-04T15:02"}
+{"who":"Kerem","text":"say yes. she makes it better than you","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Semra","text":"I heard that.","posted":true,"at":"2026-12-04T15:24","checkin":"2026-12-04T15:24"}
+{"who":"Kerem","text":"lol","posted":true,"at":"2026-12-04T15:24","checkin":"2026-12-04T15:24"}
+{"who":"Kerem","text":"did you go out today or stay in","posted":true,"at":"2026-12-04T18:47","checkin":"2026-12-04T18:47"}
+{"who":"Semra","text":"Went to the pharmacy and the market. The man at the cheese stall asked after you. I said you are drawing spoons.","posted":true,"at":"2026-12-04T19:30","checkin":"2026-12-04T19:30"}
+{"who":"Kerem","text":"tell him its a wheat ear","posted":true,"at":"2026-12-04T19:33","checkin":"2026-12-04T19:33"}
+{"who":"Semra","text":"I told him it is a spoon with a hat.","posted":true,"at":"2026-12-04T19:34","checkin":"2026-12-04T19:34"}
+{"who":"","react":"😂","to":38,"posted":false,"at":"2026-12-04T19:34"}
+{"who":"Kerem","text":"ok","posted":true,"at":"2026-12-04T19:41","checkin":"2026-12-04T19:41"}
+{"who":"Semra","text":"Did you eat.","posted":true,"at":"2026-12-04T21:15","checkin":"2026-12-04T21:15"}
+{"who":"Kerem","text":"yes. dont worry","posted":true,"at":"2026-12-04T22:50","checkin":"2026-12-04T22:50"}
+{"who":"Semra","text":"I always worry. It is the job.","posted":true,"at":"2026-12-04T22:51","checkin":"2026-12-04T22:51"}
+{"who":"Kerem","text":"ok good night anne","posted":true,"at":"2026-12-04T23:02","checkin":"2026-12-04T23:02"}
+{"who":"Kerem","text":"night","posted":true,"at":"2026-12-04T23:20","checkin":"2026-12-04T23:20"}
+{"who":"Semra","text":"Are you up.","posted":true,"at":"2026-12-05T08:02","checkin":"2026-12-05T08:02"}
+{"who":"Kerem","text":"up. coffee first","posted":true,"at":"2026-12-05T08:40","checkin":"2026-12-05T08:40"}
+{"who":"Semra","text":"Use the small pot. The big one is for Monday.","posted":true,"at":"2026-12-05T08:41","checkin":"2026-12-05T08:41"}
+{"who":"Kerem","text":"ha ok","posted":true,"at":"2026-12-05T08:43","checkin":"2026-12-05T08:43"}
+{"who":"Semra","text":"Nermin says the börek is spinach and cheese, no meat, because of the husband's stomach. Write that down.","posted":true,"at":"2026-12-05T10:15","checkin":"2026-12-05T10:15"}
+{"who":"Kerem","text":"i wont write it down. ill remember","posted":true,"at":"2026-12-05T10:20","checkin":"2026-12-05T10:20"}
+{"who":"Semra","text":"You will not.","posted":true,"at":"2026-12-05T10:21","checkin":"2026-12-05T10:21"}
+{"who":"Kerem","text":"[photo: the shop front mockup with the logo on the sign]","posted":true,"at":"2026-12-05T13:05","checkin":"2026-12-05T13:05"}
+{"who":"Semra","text":"Where is the spoon.","posted":true,"at":"2026-12-05T13:06","checkin":"2026-12-05T13:06"}
+{"who":"Kerem","text":"its the wheat ear anne","posted":true,"at":"2026-12-05T13:07","checkin":"2026-12-05T13:07"}
+{"who":"Semra","text":"It is on a sign now. The whole street will see it.","posted":true,"at":"2026-12-05T13:07","checkin":"2026-12-05T13:07"}
+{"who":"Semra","text":"Mehmet says the water might come back early. Or late. He does not know.","posted":true,"at":"2026-12-05T15:44","checkin":"2026-12-05T15:44"}
+{"who":"Kerem","text":"so basically unknown","posted":true,"at":"2026-12-05T15:50","checkin":"2026-12-05T15:50"}
+{"who":"Semra","text":"Yes.","posted":true,"at":"2026-12-05T15:52","checkin":"2026-12-05T15:52"}
+{"who":"Kerem","text":"went down for pide again dont tell u","posted":true,"at":"2026-12-05T19:30","checkin":"2026-12-05T19:30"}
+{"who":"Semra","text":"I will tell you. You don't eat vegetables. Eat a tomato.","posted":true,"at":"2026-12-05T19:31","checkin":"2026-12-05T19:31"}
+{"who":"Kerem","text":"yes anne","posted":true,"at":"2026-12-05T19:40","checkin":"2026-12-05T19:40"}
+{"who":"Semra","text":"Did you eat.","posted":true,"at":"2026-12-05T21:20","checkin":"2026-12-05T21:20"}
+{"who":"Kerem","text":"yes. eating now","posted":true,"at":"2026-12-05T21:24","checkin":"2026-12-05T21:24"}
+{"who":"Semra","text":"Going to sleep. Wear a jacket on the stairs, it is cold.","posted":true,"at":"2026-12-05T22:35","checkin":"2026-12-05T22:35"}
+{"who":"Kerem","text":"ok night","posted":true,"at":"2026-12-05T22:38","checkin":"2026-12-05T22:38"}
+{"who":"Kerem","text":"cant sleep","posted":true,"at":"2026-12-05T23:50","checkin":"2026-12-05T23:50"}
+{"who":"Kerem","text":"the spoon keeps being in my head","posted":true,"at":"2026-12-05T23:52","checkin":"2026-12-05T23:52"}

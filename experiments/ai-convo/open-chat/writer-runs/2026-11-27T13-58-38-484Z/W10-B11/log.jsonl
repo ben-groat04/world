@@ -1,0 +1,94 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T12:00","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1862,"cache_read_input_tokens":0,"output_tokens":2828,"output_tokens_details":{"thinking_tokens":1796},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1862,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2828,"cache_read_input_tokens":0,"cache_creation_input_tokens":1862,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1862},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2848,"cache_read_input_tokens":0,"output_tokens":2569,"output_tokens_details":{"thinking_tokens":1584},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2848,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2569,"cache_read_input_tokens":0,"cache_creation_input_tokens":2848,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2848},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3845,"cache_read_input_tokens":0,"output_tokens":1950,"output_tokens_details":{"thinking_tokens":985},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3845,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1950,"cache_read_input_tokens":0,"cache_creation_input_tokens":3845,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3845},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Elif","Burak","Nazlı","Ozan"],"setting":"You are all in Istanbul, friends of the same honoree, and you know each other through them. You are using this group chat to plan a surprise party for the honoree, including the guest list, the venue booking, and collecting contributions.","openers":["Send the group your availability for Saturday","Ask everyone to pitch in for the venue deposit","Share a draft of the guest list","Remind everyone to keep the surprise quiet"],"opener":"Remind everyone to keep the surprise quiet","cast":{"Elif":{"who":"34, woman, the organiser","work":"accountant","knows":"You are organising the party for the honoree. Burak, Nazlı and Ozan are the honoree's friends, whom you know through the honoree.","texts":"Elif texts in this chat a lot.","style":"a little emoji, few abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Burak":{"who":"31, man, a friend of the honoree","work":"electrician","knows":"You are a friend of the honoree. Elif is organising the party, and Nazlı and Ozan are the honoree's other friends, whom you know through the honoree.","texts":"Burak texts in this chat only now and again.","style":"a little emoji, few abbreviations","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]},"Nazlı":{"who":"30, woman, a friend of the honoree","work":"university researcher","knows":"You are a friend of the honoree. Elif is organising the party, and Burak and Ozan are the honoree's other friends, whom you know through the honoree.","texts":"Nazlı texts in this chat now and then.","style":"a little emoji, few abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Ozan":{"who":"33, man, a friend of the honoree","work":"pharmacy assistant","knows":"You are a friend of the honoree. Elif is organising the party, and Burak and Nazlı are the honoree's other friends, whom you know through the honoree.","texts":"Ozan texts in this chat now and then.","style":"a little emoji, few abbreviations","emojiKeep":0.6,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Elif":"You live in Istanbul, and your days are filled with accounting work and planning the surprise party.","Burak":"You live in Istanbul, and your days are filled with electrical work and helping plan the surprise party.","Nazlı":"You live in Istanbul, and your days are filled with research at the university and helping plan the surprise party.","Ozan":"You live in Istanbul, and your days are filled with pharmacy shifts and helping plan the surprise party."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":790,"cache_read_input_tokens":0,"output_tokens":1107,"output_tokens_details":{"thinking_tokens":680},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":790,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1107,"cache_read_input_tokens":0,"cache_creation_input_tokens":790,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":790},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1096,"cache_read_input_tokens":0,"output_tokens":2028,"output_tokens_details":{"thinking_tokens":1345},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1096,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2028,"cache_read_input_tokens":0,"cache_creation_input_tokens":1096,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1096},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Istanbul, Turkey","castMs":16397,"situation":"Planning a surprise party for a friend.","topic":null}
+{"who":"Elif","text":"Hi all 🙏 quick one. The surprise is still a surprise. Nobody mentions the party to deniz, not even as a joke. She's been asking me weird questions this week so be careful","posted":true,"at":"2026-12-04T12:00","checkin":"2026-12-04T12:00"}
+{"who":"Burak","text":"ok","posted":true,"at":"2026-12-04T12:04","checkin":"2026-12-04T12:04"}
+{"who":"Nazlı","text":"She asked me yesterday if I was free on the 19th \"for nothing\" lol. I said yes. Dont know if thats a bad sign","posted":true,"at":"2026-12-04T12:09","checkin":"2026-12-04T12:09"}
+{"who":"Elif","text":"The 19th is the party 😅 say you're free, act normal","posted":true,"at":"2026-12-04T12:11","checkin":"2026-12-04T12:11"}
+{"who":"Nazlı","text":"I am normal","posted":true,"at":"2026-12-04T12:12","checkin":"2026-12-04T12:12"}
+{"who":"Ozan","text":"[photo: guest list printout, somebody's handwriting]","posted":true,"at":"2026-12-04T12:30","checkin":"2026-12-04T12:30"}
+{"who":"Ozan","text":"who's doing the venue visit. i'm on till 8 sat so not me","posted":true,"at":"2026-12-04T12:34","checkin":"2026-12-04T12:34"}
+{"who":"Elif","text":"I can go sat morning. The place in kadıköy with the garden?","posted":true,"at":"2026-12-04T13:02","checkin":"2026-12-04T13:02"}
+{"who":"Burak","text":"the one with the bad parking","posted":true,"at":"2026-12-04T13:20","checkin":"2026-12-04T13:20"}
+{"who":"Elif","text":"Parking is not my problem","posted":true,"at":"2026-12-04T13:21","checkin":"2026-12-04T13:21"}
+{"who":"Burak","text":"sorry was up a ladder all morning, doing a panel in a flat in şişli. dust everywhere","posted":true,"at":"2026-12-04T15:45","checkin":"2026-12-04T15:45"}
+{"who":"Burak","text":"who's bringing the speaker","posted":true,"at":"2026-12-04T15:46","checkin":"2026-12-04T15:46"}
+{"who":"Nazlı","text":"I can. Can't carry it far though","posted":true,"at":"2026-12-04T16:10","checkin":"2026-12-04T16:10"}
+{"who":"Elif","text":"You don't carry it, burak does","posted":true,"at":"2026-12-04T16:11","checkin":"2026-12-04T16:11"}
+{"who":"Burak","text":"💀","posted":true,"at":"2026-12-04T16:12","checkin":"2026-12-04T16:12"}
+{"who":"Elif","text":"Deposit for the room is 6000 TL total. Split 4 ways, 1500 each? Send by sunday pls","posted":true,"at":"2026-12-04T17:30","checkin":"2026-12-04T17:30"}
+{"who":"Elif","text":"[screenshot: the venue's booking message]","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Ozan","text":"fine. i'll send mine tonight, card not cash","posted":true,"at":"2026-12-04T18:05","checkin":"2026-12-04T18:05"}
+{"who":"Elif","text":"Card's fine 🙂","posted":true,"at":"2026-12-04T18:06","checkin":"2026-12-04T18:06"}
+{"who":"Nazlı","text":"Sending now. Wait is it 4 or 5 people paying. Did we add the cousin","posted":true,"at":"2026-12-04T19:40","checkin":"2026-12-04T19:40"}
+{"who":"Elif","text":"4 is us. Cousin is in the cake money, not the room money","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Nazlı","text":"Ok","posted":true,"at":"2026-12-04T19:53","checkin":"2026-12-04T19:53"}
+{"who":"Burak","text":"wait the guest list. did anyone invite the people from her old job or no","posted":true,"at":"2026-12-04T21:14","checkin":"2026-12-04T21:14"}
+{"who":"Elif","text":"Yes ayşe and the two from the office. Rest is her uni friends. 19 total with us","posted":true,"at":"2026-12-04T21:20","checkin":"2026-12-04T21:20"}
+{"who":"Ozan","text":"sent. 1500 🙂","posted":true,"at":"2026-12-04T22:02","checkin":"2026-12-04T22:02"}
+{"who":"Nazlı","text":"She just texted me a gif of a cat in a party hat with no context","posted":true,"at":"2026-12-04T23:10","checkin":"2026-12-04T23:10"}
+{"who":"Nazlı","text":"Is that a clue or is she just tired","posted":true,"at":"2026-12-04T23:11","checkin":"2026-12-04T23:11"}
+{"who":"Elif","text":"She's tired. Don't reply with a cat","posted":true,"at":"2026-12-04T23:15","checkin":"2026-12-04T23:15"}
+{"who":"Nazlı","text":"Wasn't going to","posted":true,"at":"2026-12-04T23:16","checkin":"2026-12-04T23:16"}
+{"who":"","react":"👍","to":28,"posted":false,"at":"2026-12-04T23:16"}
+{"who":"Elif","text":"Last one tonight. Burak can you pick up the speaker tmrw or should I ask ozan. Reply when you see this, no need to be up 🙂","posted":true,"at":"2026-12-05T00:40","checkin":"2026-12-05T00:40"}
+{"who":"Burak","text":"yes i can pick it up. where is it","posted":true,"at":"2026-12-05T09:12","checkin":"2026-12-05T09:12"}
+{"who":"Elif","text":"My hallway, by the shoe rack. I'm at the kadıköy place till 12, then home","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Burak","text":"ok","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Elif","text":"[photo: a wet lawn behind a low stone wall, a few plastic chairs stacked under a tree]","posted":true,"at":"2026-12-05T11:48","checkin":"2026-12-05T11:48"}
+{"who":"Elif","text":"The garden is nice. Parking is a joke 🙂","posted":true,"at":"2026-12-05T11:49","checkin":"2026-12-05T11:49"}
+{"who":"Burak","text":"told you","posted":true,"at":"2026-12-05T11:51","checkin":"2026-12-05T11:51"}
+{"who":"Elif","text":"You were right, don't make it a thing","posted":true,"at":"2026-12-05T11:51","checkin":"2026-12-05T11:51"}
+{"who":"Nazlı","text":"Is the garden heated or are we all going to freeze in december lol","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Elif","text":"They said there are heaters on the terrace. I'll confirm in writing, don't trust \"they said\"","posted":true,"at":"2026-12-05T12:44","checkin":"2026-12-05T12:44"}
+{"who":"Nazlı","text":"Ok. I'll bring blankets anyway","posted":true,"at":"2026-12-05T12:45","checkin":"2026-12-05T12:45"}
+{"who":"Ozan","text":"guy came in asking for something for his dog that is definitely not for dogs. long story","posted":true,"at":"2026-12-05T13:05","checkin":"2026-12-05T13:05"}
+{"who":"Elif","text":"What did you give him","posted":true,"at":"2026-12-05T13:06","checkin":"2026-12-05T13:06"}
+{"who":"Ozan","text":"water and a lecture 🙂","posted":true,"at":"2026-12-05T13:19","checkin":"2026-12-05T13:19"}
+{"who":"Burak","text":"picked up the speaker. it's heavy. who's doing the playlist","posted":true,"at":"2026-12-05T14:20","checkin":"2026-12-05T14:20"}
+{"who":"Nazlı","text":"Not me lol","posted":true,"at":"2026-12-05T14:22","checkin":"2026-12-05T14:22"}
+{"who":"Elif","text":"I'll do it. Nobody send me songs","posted":true,"at":"2026-12-05T14:40","checkin":"2026-12-05T14:40"}
+{"who":"Burak","text":"👍","posted":true,"at":"2026-12-05T14:41","checkin":"2026-12-05T14:41"}
+{"who":"Elif","text":"Ayşe confirmed. The two from the office too","posted":true,"at":"2026-12-05T15:10","checkin":"2026-12-05T15:10"}
+{"who":"Burak","text":"good","posted":true,"at":"2026-12-05T15:14","checkin":"2026-12-05T15:14"}
+{"who":"Ozan","text":"off at 8. can someone check the cake order is still on for the 19th, the bakery needed a name","posted":true,"at":"2026-12-05T17:50","checkin":"2026-12-05T17:50"}
+{"who":"Elif","text":"I'll call monday. Name is deniz's, obviously","posted":true,"at":"2026-12-05T17:58","checkin":"2026-12-05T17:58"}
+{"who":"Ozan","text":"k","posted":true,"at":"2026-12-05T18:01","checkin":"2026-12-05T18:01"}
+{"who":"Nazlı","text":"Deniz texted me again. Wants to know if I'll be at the \"thing\" on the 19th. I said yes I'm free. She sent a thumbs up and a sad face","posted":true,"at":"2026-12-05T19:30","checkin":"2026-12-05T19:30"}
+{"who":"Elif","text":"Don't reply to her about it. Keep the calendar vague","posted":true,"at":"2026-12-05T19:33","checkin":"2026-12-05T19:33"}
+{"who":"Nazlı","text":"I'm trying","posted":true,"at":"2026-12-05T19:34","checkin":"2026-12-05T19:34"}
+{"who":"Burak","text":"is the cousin coming or is the cousin just paying","posted":true,"at":"2026-12-05T21:02","checkin":"2026-12-05T21:02"}
+{"who":"Elif","text":"Coming. Paying too","posted":true,"at":"2026-12-05T21:05","checkin":"2026-12-05T21:05"}
+{"who":"Burak","text":"lol ok","posted":true,"at":"2026-12-05T21:06","checkin":"2026-12-05T21:06"}
+{"who":"Elif","text":"Burak the 1500 isn't in yet. Deposit is due sunday","posted":true,"at":"2026-12-05T23:21","checkin":"2026-12-05T23:21"}
+{"who":"Burak","text":"sorry, my card hit its limit after the materials order. paying tmrw morning, promise","posted":true,"at":"2026-12-05T23:40","checkin":"2026-12-05T23:40"}
+{"who":"Elif","text":"Ok. Tmrw morning. Don't forget","posted":true,"at":"2026-12-05T23:41","checkin":"2026-12-05T23:41"}
+{"who":"Burak","text":"i won't","posted":true,"at":"2026-12-05T23:42","checkin":"2026-12-05T23:42"}
+{"who":"Burak","text":"[screenshot: bank transfer confirmation, 1500 TL]","posted":true,"at":"2026-12-06T08:52","checkin":"2026-12-06T08:52"}
+{"who":"Burak","text":"sent. sorry again","posted":true,"at":"2026-12-06T08:53","checkin":"2026-12-06T08:53"}
+{"who":"Elif","text":"Got it","posted":true,"at":"2026-12-06T09:10","checkin":"2026-12-06T09:10"}
+{"who":"Elif","text":"Thanks for not making me chase you past 9","posted":true,"at":"2026-12-06T09:11","checkin":"2026-12-06T09:11"}
+{"who":"Burak","text":"💀","posted":true,"at":"2026-12-06T09:12","checkin":"2026-12-06T09:12"}
+{"who":"Nazlı","text":"Advisor wants the draft by tomorrow noon. I'm going to be in the library all day with my phone on silent","posted":true,"at":"2026-12-06T10:05","checkin":"2026-12-06T10:05"}
+{"who":"Nazlı","text":"If anything urgent, Elif, you know where I am. Not really","posted":true,"at":"2026-12-06T10:06","checkin":"2026-12-06T10:06"}
+{"who":"Ozan","text":"off today, finally. sleeping till 11 and then doing nothing","posted":true,"at":"2026-12-06T10:40","checkin":"2026-12-06T10:40"}
+{"who":"Elif","text":"They confirmed in writing. Heaters on the terrace, two of them. I have the email so nobody can say I didn't ask","posted":true,"at":"2026-12-06T13:15","checkin":"2026-12-06T13:15"}
+{"who":"Elif","text":"Also the cake place said the name is fine, they'll call Monday to confirm the size","posted":true,"at":"2026-12-06T13:16","checkin":"2026-12-06T13:16"}
+{"who":"Burak","text":"[photo: a fuse box with three wires hanging out, half a label]","posted":true,"at":"2026-12-06T13:31","checkin":"2026-12-06T13:31"}
+{"who":"Burak","text":"this is a flat in şişli. the guy did this himself","posted":true,"at":"2026-12-06T13:31","checkin":"2026-12-06T13:31"}
+{"who":"Ozan","text":"that's not a fuse box that's a cry for help","posted":true,"at":"2026-12-06T13:33","checkin":"2026-12-06T13:33"}
+{"who":"Burak","text":"he wants me to make it work by tomorrow. i'm not doing that","posted":true,"at":"2026-12-06T13:34","checkin":"2026-12-06T13:34"}
+{"who":"Nazlı","text":"Deniz just asked if I'm free for dinner on the 18th. I said no, I'm booked. She said \"booked with who \"","posted":true,"at":"2026-12-06T17:12","checkin":"2026-12-06T17:12"}
+{"who":"Nazlı","text":"I said my mom","posted":true,"at":"2026-12-06T17:13","checkin":"2026-12-06T17:13"}
+{"who":"Elif","text":"Don't say mom. She'll ask what's the plan and then she'll be at the restaurant","posted":true,"at":"2026-12-06T17:14","checkin":"2026-12-06T17:14"}
+{"who":"Nazlı","text":"Ok I'll say work","posted":true,"at":"2026-12-06T17:15","checkin":"2026-12-06T17:15"}
+{"who":"Nazlı","text":"Is that worse","posted":true,"at":"2026-12-06T17:15","checkin":"2026-12-06T17:15"}
+{"who":"Elif","text":"Work is fine. Nobody has ever checked on work","posted":true,"at":"2026-12-06T17:19","checkin":"2026-12-06T17:19"}
+{"who":"Ozan","text":"anyone know what time the speaker needs to be back to burak. he said he's taking it to the kadıköy place again on thurs","posted":true,"at":"2026-12-06T20:47","checkin":"2026-12-06T20:47"}
+{"who":"Burak","text":"i'll bring it myself. it's in the hallway by the shoe rack like before","posted":true,"at":"2026-12-06T21:30","checkin":"2026-12-06T21:30"}
+{"who":"Burak","text":"don't let elif move it","posted":true,"at":"2026-12-06T21:31","checkin":"2026-12-06T21:31"}
+{"who":"Elif","text":"I'm not moving your speaker","posted":true,"at":"2026-12-06T21:32","checkin":"2026-12-06T21:32"}
+{"who":"Elif","text":"Bed. Reply tmrw 🙂","posted":true,"at":"2026-12-06T22:55","checkin":"2026-12-06T22:55"}
+{"who":"Nazlı","text":"Draft is sent. Thank god","posted":true,"at":"2026-12-07T00:18","checkin":"2026-12-07T00:18"}
+{"who":"Nazlı","text":"Cat gif from deniz again, no context","posted":true,"at":"2026-12-07T00:19","checkin":"2026-12-07T00:19"}
+{"who":"Elif","text":"Don't","posted":true,"at":"2026-12-07T00:19","checkin":"2026-12-07T00:19"}
+{"who":"Nazlı","text":"Not replying","posted":true,"at":"2026-12-07T00:20","checkin":"2026-12-07T00:20"}

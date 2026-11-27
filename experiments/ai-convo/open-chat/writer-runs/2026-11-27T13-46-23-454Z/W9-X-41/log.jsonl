@@ -1,0 +1,62 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-01T21:20","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1429,"cache_read_input_tokens":0,"output_tokens":1844,"output_tokens_details":{"thinking_tokens":1245},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1429,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1844,"cache_read_input_tokens":0,"cache_creation_input_tokens":1429,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1429},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1978,"cache_read_input_tokens":0,"output_tokens":1486,"output_tokens_details":{"thinking_tokens":912},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1978,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1486,"cache_read_input_tokens":0,"cache_creation_input_tokens":1978,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1978},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2542,"cache_read_input_tokens":0,"output_tokens":1734,"output_tokens_details":{"thinking_tokens":1346},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2542,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1734,"cache_read_input_tokens":0,"cache_creation_input_tokens":2542,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2542},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Omar","Mira"],"setting":"You are both in Amman, Jordan, texting from your own homes. You are siblings: Omar, the older brother, and Mira, the younger sister.","openers":["Send Mira a photo of the new lamp","Ask if she's free Friday","Tell her the fuse box is fixed","Call her when you get home"],"opener":"Tell her the fuse box is fixed","cast":{"Omar":{"who":"30, man, the brother","work":"electrician","knows":"You know Mira as your younger sister, since birth.","texts":"","style":"Light use of emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Mira":{"who":"27, woman, the sister","work":"journalist","knows":"You know Omar as your older brother, since birth.","texts":"","style":"Frequent emoji and many texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Omar":"You live in Amman, working as an electrician, and you live alone.","Mira":"You live in Amman, working as a journalist, and you live alone."},"sleep":{"Omar":[23,6.5],"Mira":[0.5,8]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":778,"cache_read_input_tokens":0,"output_tokens":1118,"output_tokens_details":{"thinking_tokens":915},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":778,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1118,"cache_read_input_tokens":0,"cache_creation_input_tokens":778,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":778},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1004,"cache_read_input_tokens":0,"output_tokens":1307,"output_tokens_details":{"thinking_tokens":981},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1004,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1307,"cache_read_input_tokens":0,"cache_creation_input_tokens":1004,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1004},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Amman, Jordan","castMs":12996,"situation":"My sister.","topic":null}
+{"who":"Omar","text":"fuse box is fixed","posted":true,"at":"2026-12-01T21:20","checkin":"2026-12-01T21:20"}
+{"who":"Mira","text":"Wait for real?? 😭","posted":true,"at":"2026-12-01T21:21","checkin":"2026-12-01T21:21"}
+{"who":"Omar","text":"yes. the old one was burnt at the back. replaced the breaker and the wire","posted":true,"at":"2026-12-01T21:21","checkin":"2026-12-01T21:21"}
+{"who":"Mira","text":"So the AC wont trip anymore","posted":true,"at":"2026-12-01T21:23","checkin":"2026-12-01T21:23"}
+{"who":"Omar","text":"should be fine. dont run the heater and the kettle together though","posted":true,"at":"2026-12-01T21:24","checkin":"2026-12-01T21:24"}
+{"who":"Mira","text":"Lol ok ok I always do","posted":true,"at":"2026-12-01T21:24","checkin":"2026-12-01T21:24"}
+{"who":"Mira","text":"Thank u seriously","posted":true,"at":"2026-12-01T21:26","checkin":"2026-12-01T21:26"}
+{"who":"","react":"❤️","to":6,"posted":false,"at":"2026-12-01T21:26"}
+{"who":"Omar","text":"ya","posted":true,"at":"2026-12-01T21:40","checkin":"2026-12-01T21:40"}
+{"who":"Mira","text":"How much do I owe u","posted":true,"at":"2026-12-01T21:58","checkin":"2026-12-01T21:58"}
+{"who":"Omar","text":"nothing. parts were 15jd, ill send you the receipt pic later","posted":true,"at":"2026-12-01T22:03","checkin":"2026-12-01T22:03"}
+{"who":"Mira","text":"No no I'll pay for the parts","posted":true,"at":"2026-12-01T22:03","checkin":"2026-12-01T22:03"}
+{"who":"Omar","text":"[photo: receipt]","posted":true,"at":"2026-12-01T22:10","checkin":"2026-12-01T22:10"}
+{"who":"Mira","text":"Ok sending 15 now","posted":true,"at":"2026-12-01T22:11","checkin":"2026-12-01T22:11"}
+{"who":"Mira","text":"Did u sleep yet 😂 its 10","posted":true,"at":"2026-12-01T22:14","checkin":"2026-12-01T22:14"}
+{"who":"Omar","text":"almost. sleeping at 11","posted":true,"at":"2026-12-01T22:20","checkin":"2026-12-01T22:20"}
+{"who":"Mira","text":"Ugh ur so old","posted":true,"at":"2026-12-01T22:21","checkin":"2026-12-01T22:21"}
+{"who":"Omar","text":"ok","posted":true,"at":"2026-12-01T22:21","checkin":"2026-12-01T22:21"}
+{"who":"Mira","text":"The paper is doing a thing about the water cuts again. I have to call 3 people tomorrow lol","posted":true,"at":"2026-12-01T22:50","checkin":"2026-12-01T22:50"}
+{"who":"Omar","text":"good luck. dont call the ministry at 8am they wont pick up","posted":true,"at":"2026-12-01T22:58","checkin":"2026-12-01T22:58"}
+{"who":"Mira","text":"Ur so helpful 🙃","posted":true,"at":"2026-12-01T22:59","checkin":"2026-12-01T22:59"}
+{"who":"Omar","text":"gn","posted":true,"at":"2026-12-01T23:02","checkin":"2026-12-01T23:02"}
+{"who":"Mira","text":"Gn","posted":true,"at":"2026-12-02T00:14","checkin":"2026-12-02T00:14"}
+{"who":"Omar","text":"did the water come back in ur area","posted":true,"at":"2026-12-02T07:12","checkin":"2026-12-02T07:12"}
+{"who":"Mira","text":"No. Still nothing since last night calling the company now","posted":true,"at":"2026-12-02T08:27","checkin":"2026-12-02T08:27"}
+{"who":"Omar","text":"last time they said tomorrow and it was 3 days","posted":true,"at":"2026-12-02T08:29","checkin":"2026-12-02T08:29"}
+{"who":"Mira","text":"Yes thank u for the reminder","posted":true,"at":"2026-12-02T08:31","checkin":"2026-12-02T08:31"}
+{"who":"Mira","text":"Do u have water at ur place","posted":true,"at":"2026-12-02T08:31","checkin":"2026-12-02T08:31"}
+{"who":"Omar","text":"yes. tank was full last week","posted":true,"at":"2026-12-02T08:44","checkin":"2026-12-02T08:44"}
+{"who":"Omar","text":"[photo: a fuse panel with the cover off, wires labeled in marker]","posted":true,"at":"2026-12-02T13:02","checkin":"2026-12-02T13:02"}
+{"who":"Omar","text":"job in abdoun. the guy did his own wiring 😐","posted":true,"at":"2026-12-02T13:03","checkin":"2026-12-02T13:03"}
+{"who":"Mira","text":"Ur going to tell me about it at dinner","posted":true,"at":"2026-12-02T13:05","checkin":"2026-12-02T13:05"}
+{"who":"Omar","text":"no","posted":true,"at":"2026-12-02T13:05","checkin":"2026-12-02T13:05"}
+{"who":"Mira","text":"Ok 2 of 3 calls done. The ministry didnt pick up","posted":true,"at":"2026-12-02T15:48","checkin":"2026-12-02T15:48"}
+{"who":"Omar","text":"told u","posted":true,"at":"2026-12-02T15:49","checkin":"2026-12-02T15:49"}
+{"who":"Mira","text":"Ur so annoying 🙃","posted":true,"at":"2026-12-02T15:49","checkin":"2026-12-02T15:49"}
+{"who":"Omar","text":"im going home. ill eat then sleep early","posted":true,"at":"2026-12-02T16:30","checkin":"2026-12-02T16:30"}
+{"who":"Mira","text":"Its 4:30 wtf","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"Omar","text":"i woke up at 6","posted":true,"at":"2026-12-02T16:31","checkin":"2026-12-02T16:31"}
+{"who":"Mira","text":"Ok grandpa 😂","posted":true,"at":"2026-12-02T16:32","checkin":"2026-12-02T16:32"}
+{"who":"Mira","text":"The water came back at 11 lol so the story is dead","posted":true,"at":"2026-12-02T23:14","checkin":"2026-12-02T23:14"}
+{"who":"Mira","text":"I still have to write it anyway","posted":true,"at":"2026-12-02T23:15","checkin":"2026-12-02T23:15"}
+{"who":"Omar","text":"good luck","posted":true,"at":"2026-12-02T23:31","checkin":"2026-12-02T23:31"}
+{"who":"Omar","text":"gn","posted":true,"at":"2026-12-02T23:31","checkin":"2026-12-02T23:31"}
+{"who":"Mira","text":"Gn","posted":true,"at":"2026-12-02T23:40","checkin":"2026-12-02T23:40"}
+{"who":"Omar","text":"job in sweifieh today. wire stripper died again","posted":true,"at":"2026-12-03T06:52","checkin":"2026-12-03T06:52"}
+{"who":"Mira","text":"Ok so the water story is dead but my editor wants a follow up 😒","posted":true,"at":"2026-12-03T08:26","checkin":"2026-12-03T08:26"}
+{"who":"Mira","text":"She says the ministry should respond to the 3 people I called. They did not","posted":true,"at":"2026-12-03T08:27","checkin":"2026-12-03T08:27"}
+{"who":"Omar","text":"she can call them. ur the journalist","posted":true,"at":"2026-12-03T08:40","checkin":"2026-12-03T08:40"}
+{"who":"Mira","text":"Ur so helpful","posted":true,"at":"2026-12-03T08:41","checkin":"2026-12-03T08:41"}
+{"who":"Omar","text":"done in sweifieh. guy wanted me to check his generator. no","posted":true,"at":"2026-12-03T13:18","checkin":"2026-12-03T13:18"}
+{"who":"Mira","text":"Lol","posted":true,"at":"2026-12-03T13:19","checkin":"2026-12-03T13:19"}
+{"who":"Mira","text":"Im at the office til late. Dont text me about the ministry","posted":true,"at":"2026-12-03T17:40","checkin":"2026-12-03T17:40"}
+{"who":"Omar","text":"didnt","posted":true,"at":"2026-12-03T17:41","checkin":"2026-12-03T17:41"}
+{"who":"","react":"😂","to":52,"posted":false,"at":"2026-12-03T17:41"}
+{"who":"Omar","text":"mama says ur coming sunday or not","posted":true,"at":"2026-12-03T19:55","checkin":"2026-12-03T19:55"}
+{"who":"Mira","text":"Not sure. The paper wants me sunday 😩","posted":true,"at":"2026-12-03T20:12","checkin":"2026-12-03T20:12"}
+{"who":"Omar","text":"ok","posted":true,"at":"2026-12-03T20:13","checkin":"2026-12-03T20:13"}
+{"who":"Mira","text":"Ok im home. Kettle or heater not both","posted":true,"at":"2026-12-03T23:48","checkin":"2026-12-03T23:48"}
+{"who":"Mira","text":"Gn","posted":true,"at":"2026-12-04T00:20","checkin":"2026-12-04T00:20"}

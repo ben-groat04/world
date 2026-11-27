@@ -12,7 +12,7 @@ for (const f of process.argv.slice(2)) for (const l of fs.readFileSync(f, 'utf8'
   const hits = {};
   for (const x of m) { T.n++; const h = +x.at.slice(11, 13), hf = h + +x.at.slice(14, 16) / 60, ms = +new Date(x.at + ':00Z');
     if (h < 6) T.night++; if (x.at.slice(11, 13) === '04') T.h04++; if (ms < e4) T.eve++;
-    const [s, e] = c.sleep[x.who] ?? [23, 7]; if (s > e ? (hf >= s || hf < e) : (hf >= s && hf < e)) T.sleep++;
+    const [s, e] = c.sleep?.[x.who] ?? [23, 7]; if (s > e ? (hf >= s || hf < e) : (hf >= s && hf < e)) T.sleep++;
     const w = x.text.split(/\s+/).filter(Boolean).length; if (w <= 4) T.short++; if (/^\p{Lu}/u.test(x.text)) { T.capN++; T.capW += w; } else if (/^\p{Ll}/u.test(x.text)) { T.lowN++; T.lowW += w; }
     for (const word of new Set(x.text.toLowerCase().match(/\p{L}{5,}/gu) ?? [])) if (cast.has(word)) { const o = hits[word] ??= { n: 0, who: new Set(), day: new Set() }; o.n++; o.who.add(x.who); o.day.add(x.at.slice(0, 10)); } }
   T.recur += Object.values(hits).filter(o => o.n >= 4 && o.who.size >= 2 && o.day.size >= 2).length;

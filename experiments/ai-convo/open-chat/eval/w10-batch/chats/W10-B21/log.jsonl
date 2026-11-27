@@ -1,0 +1,88 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T16:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1989,"cache_read_input_tokens":0,"output_tokens":2344,"output_tokens_details":{"thinking_tokens":1639},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1989,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2344,"cache_read_input_tokens":0,"cache_creation_input_tokens":1989,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1989},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2624,"cache_read_input_tokens":0,"output_tokens":3208,"output_tokens_details":{"thinking_tokens":2136},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2624,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3208,"cache_read_input_tokens":0,"cache_creation_input_tokens":2624,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2624},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3691,"cache_read_input_tokens":0,"output_tokens":3130,"output_tokens_details":{"thinking_tokens":1934},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3691,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3130,"cache_read_input_tokens":0,"cache_creation_input_tokens":3691,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3691},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Yu-ting","Wei-chen","Jun-jie","Ya-fen","Wan-ting"],"setting":"You are all in Taipei, Taiwan, and you know each other as volunteers at the same food bank. You use this group chat to coordinate the weekend sorting shifts and the Sunday food distribution. Right now you are trying to fill the open slots and confirm who is bringing the van.","openers":["Ask who can take Saturday's sorting shift","Post the sign-up link for Sunday","Remind everyone the van leaves at eight","Confirm who has the key to the storeroom"],"opener":"Ask who can take Saturday's sorting shift","cast":{"Yu-ting":{"who":"34, woman, a volunteer","work":"architect","knows":"You know Wei-chen, Jun-jie, Ya-fen and Wan-ting as fellow food bank volunteers.","texts":"Yu-ting texts in this chat a lot.","style":"uses a few emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Wei-chen":{"who":"67, man, a volunteer","work":"retired bank teller","knows":"You know Yu-ting, Jun-jie, Ya-fen and Wan-ting as fellow food bank volunteers.","texts":"Wei-chen texts in this chat now and then.","style":"none","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Jun-jie":{"who":"21, man, a volunteer","work":"delivery rider","knows":"You know Yu-ting, Wei-chen, Ya-fen and Wan-ting as fellow food bank volunteers.","texts":"Jun-jie texts in this chat now and then.","style":"uses lots of emoji and heavy texting abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Ya-fen":{"who":"45, woman, a volunteer","work":"social worker","knows":"You know Yu-ting, Wei-chen, Jun-jie and Wan-ting as fellow food bank volunteers.","texts":"Ya-fen texts in this chat only now and again.","style":"uses light emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Wan-ting":{"who":"17, woman, a volunteer","work":"library assistant","knows":"You know Yu-ting, Wei-chen, Jun-jie and Ya-fen as fellow food bank volunteers.","texts":"Wan-ting texts in this chat now and then.","style":"uses frequent emoji and many texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Yu-ting":"You live in Taipei, spend your days on architecture work, and live alone.","Wei-chen":"You live in Taipei, fill your days with retirement and volunteering, and live alone.","Jun-jie":"You live in Taipei, spend your days on delivery rides, and live alone.","Ya-fen":"You live in Taipei, spend your days on social work, and live alone.","Wan-ting":"You live in Taipei, spend your days on library assistant work, and live with your parents."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":788,"cache_read_input_tokens":0,"output_tokens":1605,"output_tokens_details":{"thinking_tokens":941},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":788,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1605,"cache_read_input_tokens":0,"cache_creation_input_tokens":788,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":788},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1122,"cache_read_input_tokens":0,"output_tokens":2166,"output_tokens_details":{"thinking_tokens":1328},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1122,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2166,"cache_read_input_tokens":0,"cache_creation_input_tokens":1122,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1122},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Taipei, Taiwan","castMs":18119,"situation":"Volunteers at a food bank.","topic":null}
+{"who":"Yu-ting","text":"Hi all, need someone for sat sorting shift 9-12? We're short 2 people. Who can? 🙏","posted":true,"at":"2026-12-04T16:50","checkin":"2026-12-04T16:50"}
+{"who":"Wei-chen","text":"I can do sat morning. What time do we start","posted":true,"at":"2026-12-04T17:22","checkin":"2026-12-04T17:22"}
+{"who":"Yu-ting","text":"9 at the warehouse, till 12ish","posted":true,"at":"2026-12-04T17:25","checkin":"2026-12-04T17:25"}
+{"who":"Jun-jie","text":"sat morning i got deliveries till like 11 😭 can do 12-2 if that works?","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Yu-ting","text":"12-2 works!! Would help if someone covers 9-12 too","posted":true,"at":"2026-12-04T17:33","checkin":"2026-12-04T17:33"}
+{"who":"Ya-fen","text":"Can't this weekend, my mother has an appointment. Sorry","posted":true,"at":"2026-12-04T18:04","checkin":"2026-12-04T18:04"}
+{"who":"Yu-ting","text":"No worries! Still need one more for the morning","posted":true,"at":"2026-12-04T18:40","checkin":"2026-12-04T18:40"}
+{"who":"Yu-ting","text":"Also who's bringing the van for sunday? Need to pick up from the supermarket by 8","posted":true,"at":"2026-12-04T19:12","checkin":"2026-12-04T19:12"}
+{"who":"Wan-ting","text":"can ask my dad if he can drive the van sun morning?? i don't have a license yet","posted":true,"at":"2026-12-04T19:48","checkin":"2026-12-04T19:48"}
+{"who":"Wan-ting","text":"i can do sat morning 9-12 if my mom says ok","posted":true,"at":"2026-12-04T19:52","checkin":"2026-12-04T19:52"}
+{"who":"Yu-ting","text":"Amazing thank you wan-ting 🙏 pls confirm when she says","posted":true,"at":"2026-12-04T20:15","checkin":"2026-12-04T20:15"}
+{"who":"Wei-chen","text":"I can drive the van Sunday if no one else has it. I'll pick up at 8","posted":true,"at":"2026-12-04T21:03","checkin":"2026-12-04T21:03"}
+{"who":"Yu-ting","text":"Perfect!! Wei-chen you're a legend 🙌","posted":true,"at":"2026-12-04T21:05","checkin":"2026-12-04T21:05"}
+{"who":"","react":"👍","to":12,"posted":false,"at":"2026-12-04T21:05"}
+{"who":"Jun-jie","text":"sun i'm free after 1","posted":true,"at":"2026-12-04T21:30","checkin":"2026-12-04T21:30"}
+{"who":"Yu-ting","text":"Great, 1pm is fine for distribution cleanup","posted":true,"at":"2026-12-04T21:31","checkin":"2026-12-04T21:31"}
+{"who":"Wan-ting","text":"my mom said yes!! 9 sat","posted":true,"at":"2026-12-04T23:10","checkin":"2026-12-04T23:10"}
+{"who":"Yu-ting","text":"Yay 🎉 see you all sat then","posted":true,"at":"2026-12-04T23:11","checkin":"2026-12-04T23:11"}
+{"who":"Jun-jie","text":"just finished last order sorry if i missed anything in here","posted":true,"at":"2026-12-05T00:40","checkin":"2026-12-05T00:40"}
+{"who":"Wei-chen","text":"Morning. Is the warehouse still the one behind the temple?","posted":true,"at":"2026-12-05T08:14","checkin":"2026-12-05T08:14"}
+{"who":"Yu-ting","text":"Yes same one! Back gate on the lane, front is locked","posted":true,"at":"2026-12-05T08:20","checkin":"2026-12-05T08:20"}
+{"who":"Yu-ting","text":"Bring gloves if u have them, spare box is empty 😅","posted":true,"at":"2026-12-05T08:22","checkin":"2026-12-05T08:22"}
+{"who":"Wan-ting","text":"on the bus rn be there by 9:05 sorry","posted":true,"at":"2026-12-05T08:51","checkin":"2026-12-05T08:51"}
+{"who":"Yu-ting","text":"No worries, we'll start with the tinned stuff","posted":true,"at":"2026-12-05T08:52","checkin":"2026-12-05T08:52"}
+{"who":"Wei-chen","text":"Here. Sorting the rice now","posted":true,"at":"2026-12-05T09:40","checkin":"2026-12-05T09:40"}
+{"who":"Wei-chen","text":"Some bags have split. Keep or toss?","posted":true,"at":"2026-12-05T09:41","checkin":"2026-12-05T09:41"}
+{"who":"Yu-ting","text":"Keep if the rice is dry, toss if it smells off. Put the split ones in the blue crate for the kitchen","posted":true,"at":"2026-12-05T09:48","checkin":"2026-12-05T09:48"}
+{"who":"Wan-ting","text":"ok","posted":true,"at":"2026-12-05T09:50","checkin":"2026-12-05T09:50"}
+{"who":"Wan-ting","text":"have to leave at 12 for my tutor thing, sorry. who's taking over?","posted":true,"at":"2026-12-05T11:58","checkin":"2026-12-05T11:58"}
+{"who":"Yu-ting","text":"Jun-jie is coming at 12 🙏 thanks for coming wan-ting!!","posted":true,"at":"2026-12-05T12:01","checkin":"2026-12-05T12:01"}
+{"who":"Jun-jie","text":"omw 🛵 5 min","posted":true,"at":"2026-12-05T12:03","checkin":"2026-12-05T12:03"}
+{"who":"Yu-ting","text":"Wei-chen, can you check the van tank for tomorrow? Last time it was low","posted":true,"at":"2026-12-05T12:30","checkin":"2026-12-05T12:30"}
+{"who":"Wei-chen","text":"I'll fill it on the way in tomorrow. Gas station on Xinyi opens early","posted":true,"at":"2026-12-05T12:45","checkin":"2026-12-05T12:45"}
+{"who":"Jun-jie","text":"just got to warehouse. yu-ting is that the whole tinned pile or more in back","posted":true,"at":"2026-12-05T13:10","checkin":"2026-12-05T13:10"}
+{"who":"Yu-ting","text":"More in back, two pallets. Take the left shelf first","posted":true,"at":"2026-12-05T13:14","checkin":"2026-12-05T13:14"}
+{"who":"Jun-jie","text":"ok my back","posted":true,"at":"2026-12-05T13:20","checkin":"2026-12-05T13:20"}
+{"who":"Ya-fen","text":"How did it go this morning? Sorry I missed it","posted":true,"at":"2026-12-05T14:02","checkin":"2026-12-05T14:02"}
+{"who":"Yu-ting","text":"Good! Got through about half the tinned stuff. Wei-chen was a machine","posted":true,"at":"2026-12-05T14:20","checkin":"2026-12-05T14:20"}
+{"who":"Wei-chen","text":"Not a machine. Slow and steady","posted":true,"at":"2026-12-05T14:22","checkin":"2026-12-05T14:22"}
+{"who":"Jun-jie","text":"done!! going home to sleep","posted":true,"at":"2026-12-05T15:45","checkin":"2026-12-05T15:45"}
+{"who":"Yu-ting","text":"Thanks jun-jie see u tomorrow","posted":true,"at":"2026-12-05T16:10","checkin":"2026-12-05T16:10"}
+{"who":"","react":"👍","to":39,"posted":false,"at":"2026-12-05T16:10"}
+{"who":"Wan-ting","text":"sorry if this is dumb but do we need to bring our own bags tomorrow or does the supermarket give crates","posted":true,"at":"2026-12-05T19:30","checkin":"2026-12-05T19:30"}
+{"who":"Yu-ting","text":"They give crates! Bring a cloth bag for yourself if u want","posted":true,"at":"2026-12-05T19:44","checkin":"2026-12-05T19:44"}
+{"who":"Wan-ting","text":"ok thanks 👍","posted":true,"at":"2026-12-05T19:45","checkin":"2026-12-05T19:45"}
+{"who":"Ya-fen","text":"My mother's fine, the appointment went ok. I might come by for cleanup after 1 if that's alright","posted":true,"at":"2026-12-05T21:17","checkin":"2026-12-05T21:17"}
+{"who":"Yu-ting","text":"Of course!! 1pm cleanup 🙌","posted":true,"at":"2026-12-05T21:20","checkin":"2026-12-05T21:20"}
+{"who":"Wei-chen","text":"Alarm set for 6:30","posted":true,"at":"2026-12-05T23:55","checkin":"2026-12-05T23:55"}
+{"who":"Yu-ting","text":"Mine's 7 lol","posted":true,"at":"2026-12-05T23:58","checkin":"2026-12-05T23:58"}
+{"who":"Wei-chen","text":"Up. Going to the gas station first","posted":true,"at":"2026-12-06T06:52","checkin":"2026-12-06T06:52"}
+{"who":"Yu-ting","text":"Morning! Supermarket loading dock is round the side not the front","posted":true,"at":"2026-12-06T07:10","checkin":"2026-12-06T07:10"}
+{"who":"Wei-chen","text":"Ok","posted":true,"at":"2026-12-06T07:14","checkin":"2026-12-06T07:14"}
+{"who":"Wei-chen","text":"At the supermarket. Found the dock","posted":true,"at":"2026-12-06T07:58","checkin":"2026-12-06T07:58"}
+{"who":"Yu-ting","text":"Here too, bringing the scale","posted":true,"at":"2026-12-06T08:06","checkin":"2026-12-06T08:06"}
+{"who":"Wei-chen","text":"14 crates of bread and some veg. Bread is from yesterday, they said it's fine","posted":true,"at":"2026-12-06T08:20","checkin":"2026-12-06T08:20"}
+{"who":"Yu-ting","text":"Bread's fine!! Put it at the front so it goes out first 🍞","posted":true,"at":"2026-12-06T08:21","checkin":"2026-12-06T08:21"}
+{"who":"Wei-chen","text":"Van is full. Heading back","posted":true,"at":"2026-12-06T08:40","checkin":"2026-12-06T08:40"}
+{"who":"Ya-fen","text":"Running a bit late, the bus was slow. Be there soon","posted":true,"at":"2026-12-06T09:15","checkin":"2026-12-06T09:15"}
+{"who":"Yu-ting","text":"At the warehouse already. Come whenever","posted":true,"at":"2026-12-06T09:16","checkin":"2026-12-06T09:16"}
+{"who":"Jun-jie","text":"distribution line is long already people been here since 8","posted":true,"at":"2026-12-06T10:30","checkin":"2026-12-06T10:30"}
+{"who":"Yu-ting","text":"Yeah the 9:30 batch is going fast. Can someone take the door list? Hand out the numbered cards","posted":true,"at":"2026-12-06T10:34","checkin":"2026-12-06T10:34"}
+{"who":"Wei-chen","text":"I'll do the list","posted":true,"at":"2026-12-06T10:40","checkin":"2026-12-06T10:40"}
+{"who":"Yu-ting","text":"Last few people in line. We'll be done by 12:30ish","posted":true,"at":"2026-12-06T11:55","checkin":"2026-12-06T11:55"}
+{"who":"Jun-jie","text":"van's making a noise when it brakes. wei-chen did u hear it","posted":true,"at":"2026-12-06T12:20","checkin":"2026-12-06T12:20"}
+{"who":"Wei-chen","text":"Yes. Brake pads maybe. I'll take it in Tuesday. Not today","posted":true,"at":"2026-12-06T12:31","checkin":"2026-12-06T12:31"}
+{"who":"Yu-ting","text":"Ok. Tell me when it's booked","posted":true,"at":"2026-12-06T12:33","checkin":"2026-12-06T12:33"}
+{"who":"Ya-fen","text":"Here now. What do you need me to do","posted":true,"at":"2026-12-06T12:50","checkin":"2026-12-06T12:50"}
+{"who":"Yu-ting","text":"Breaking down boxes and stacking the crates","posted":true,"at":"2026-12-06T12:52","checkin":"2026-12-06T12:52"}
+{"who":"Jun-jie","text":"ok im here where's the broom","posted":true,"at":"2026-12-06T13:02","checkin":"2026-12-06T13:02"}
+{"who":"Yu-ting","text":"Behind the door with the mop","posted":true,"at":"2026-12-06T13:03","checkin":"2026-12-06T13:03"}
+{"who":"Wei-chen","text":"Pads booked. Tuesday 10am, the shop on Heping Rd","posted":true,"at":"2026-12-06T13:40","checkin":"2026-12-06T13:40"}
+{"who":"Yu-ting","text":"👍","posted":true,"at":"2026-12-06T13:41","checkin":"2026-12-06T13:41"}
+{"who":"","react":"👍","to":69,"posted":false,"at":"2026-12-06T13:41"}
+{"who":"Jun-jie","text":"how many left in the blue crate. kitchen guy is asking","posted":true,"at":"2026-12-06T14:15","checkin":"2026-12-06T14:15"}
+{"who":"Wei-chen","text":"Six bags. Rice mostly","posted":true,"at":"2026-12-06T14:18","checkin":"2026-12-06T14:18"}
+{"who":"Jun-jie","text":"ill tell him","posted":true,"at":"2026-12-06T14:20","checkin":"2026-12-06T14:20"}
+{"who":"Ya-fen","text":"Crates are all stacked. Anything else?","posted":true,"at":"2026-12-06T15:02","checkin":"2026-12-06T15:02"}
+{"who":"Yu-ting","text":"Nope you can go. Thank you!! 🙏","posted":true,"at":"2026-12-06T15:10","checkin":"2026-12-06T15:10"}
+{"who":"Yu-ting","text":"Anyone want the spare gloves? Otherwise I'll bring them back next week","posted":true,"at":"2026-12-06T16:30","checkin":"2026-12-06T16:30"}
+{"who":"Jun-jie","text":"nah keep them. i got my own 🧤","posted":true,"at":"2026-12-06T16:55","checkin":"2026-12-06T16:55"}
+{"who":"Wei-chen","text":"Home. Van's back in the lot","posted":true,"at":"2026-12-06T19:20","checkin":"2026-12-06T19:20"}
+{"who":"Yu-ting","text":"Thank you wei-chen!! ❤️","posted":true,"at":"2026-12-06T19:22","checkin":"2026-12-06T19:22"}
+{"who":"Yu-ting","text":"The drawings are finally done and the client already wants them redone 😩","posted":true,"at":"2026-12-06T20:40","checkin":"2026-12-06T20:40"}
+{"who":"Jun-jie","text":"sleep time. 6am rides tmrw","posted":true,"at":"2026-12-06T22:10","checkin":"2026-12-06T22:10"}
+{"who":"Wei-chen","text":"Night.","posted":true,"at":"2026-12-06T23:30","checkin":"2026-12-06T23:30"}
+{"who":"Yu-ting","text":"Night all 🌙","posted":true,"at":"2026-12-06T23:50","checkin":"2026-12-06T23:50"}

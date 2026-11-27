@@ -1,0 +1,63 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T09:05","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1509,"cache_read_input_tokens":0,"output_tokens":2174,"output_tokens_details":{"thinking_tokens":1408},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1509,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2174,"cache_read_input_tokens":0,"cache_creation_input_tokens":1509,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1509},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2233,"cache_read_input_tokens":0,"output_tokens":1263,"output_tokens_details":{"thinking_tokens":779},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2233,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1263,"cache_read_input_tokens":0,"cache_creation_input_tokens":2233,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2233},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2717,"cache_read_input_tokens":0,"output_tokens":2997,"output_tokens_details":{"thinking_tokens":2375},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2717,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2997,"cache_read_input_tokens":0,"cache_creation_input_tokens":2717,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2717},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Hyunwoo","Dahye"],"setting":"You are both in Seoul, South Korea, where you both live. You met as fellow holidaymakers on a trip and have been in touch since you got back.","openers":["Send a photo of the view from your window","Ask how the trip home went","Suggest a video call this weekend","Share a link to a song from the trip"],"opener":"Send a photo of the view from your window","cast":{"Hyunwoo":{"who":"29, man, a fellow holidaymaker","work":"software developer","knows":"You know Dahye as a fellow holidaymaker you met on the trip.","texts":"","style":"light, occasional emoji and abbreviations","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Dahye":{"who":"27, woman, a fellow holidaymaker","work":"hotel receptionist","knows":"You know Hyunwoo as a fellow holidaymaker you met on the trip.","texts":"","style":"light, occasional emoji and abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Hyunwoo":"You live in Seoul, spending your days on software development work, and you live alone.","Dahye":"You live in Seoul, spending your days working the front desk of a hotel, and you live with your parents."},"sleep":{"Hyunwoo":[0,7.5],"Dahye":[23.5,7.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":784,"cache_read_input_tokens":0,"output_tokens":937,"output_tokens_details":{"thinking_tokens":700},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":784,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":937,"cache_read_input_tokens":0,"cache_creation_input_tokens":784,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":784},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1041,"cache_read_input_tokens":0,"output_tokens":1580,"output_tokens_details":{"thinking_tokens":1194},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1041,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1580,"cache_read_input_tokens":0,"cache_creation_input_tokens":1041,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1041},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Seoul, South Korea","castMs":13522,"situation":"Two people who met on holiday.","topic":null}
+{"who":"Hyunwoo","text":"[photo: view from my window]","posted":true,"at":"2026-12-03T09:05","checkin":"2026-12-03T09:05"}
+{"who":"Dahye","text":"Wait is that the river side?","posted":true,"at":"2026-12-03T09:11","checkin":"2026-12-03T09:11"}
+{"who":"Hyunwoo","text":"Yeah. Lean left and you get the bridge","posted":true,"at":"2026-12-03T09:12","checkin":"2026-12-03T09:12"}
+{"who":"Dahye","text":"Oh I see it","posted":true,"at":"2026-12-03T09:13","checkin":"2026-12-03T09:13"}
+{"who":"Hyunwoo","text":"It's cold lol. Heater's broken again so I'm in two hoodies","posted":true,"at":"2026-12-03T09:14","checkin":"2026-12-03T09:14"}
+{"who":"Dahye","text":"You should ask the landlord again","posted":true,"at":"2026-12-03T09:16","checkin":"2026-12-03T09:16"}
+{"who":"Hyunwoo","text":"Did already. He said next week (he says that every week)","posted":true,"at":"2026-12-03T09:17","checkin":"2026-12-03T09:17"}
+{"who":"Dahye","text":"My desk is so quiet this morning. One guy keeps asking if the pool is open and it's december","posted":true,"at":"2026-12-03T09:24","checkin":"2026-12-03T09:24"}
+{"who":"Hyunwoo","text":"Is it open","posted":true,"at":"2026-12-03T09:25","checkin":"2026-12-03T09:25"}
+{"who":"Dahye","text":"It is 😭 nobody goes","posted":true,"at":"2026-12-03T09:25","checkin":"2026-12-03T09:25"}
+{"who":"Hyunwoo","text":"Lunch?? I'm doing the cold rice at desk thing again","posted":true,"at":"2026-12-03T12:48","checkin":"2026-12-03T12:48"}
+{"who":"Dahye","text":"On break in 20 but I'm on reception so probably not. Will eat something in the back","posted":true,"at":"2026-12-03T12:55","checkin":"2026-12-03T12:55"}
+{"who":"Hyunwoo","text":"Ok","posted":true,"at":"2026-12-03T12:56","checkin":"2026-12-03T12:56"}
+{"who":"Dahye","text":"Manager made us redo the whole key cabinet. The labels were 'wrong' apparently. They were fine","posted":true,"at":"2026-12-03T16:02","checkin":"2026-12-03T16:02"}
+{"who":"Hyunwoo","text":"That's a whole afternoon gone","posted":true,"at":"2026-12-03T16:10","checkin":"2026-12-03T16:10"}
+{"who":"Dahye","text":"Yes","posted":true,"at":"2026-12-03T16:11","checkin":"2026-12-03T16:11"}
+{"who":"Hyunwoo","text":"Still on this build. The test server keeps dying for no reason","posted":true,"at":"2026-12-03T19:30","checkin":"2026-12-03T19:30"}
+{"who":"Dahye","text":"Off at 9. I'm going to sleep early today, my body is tired from standing","posted":true,"at":"2026-12-03T19:31","checkin":"2026-12-03T19:31"}
+{"who":"Hyunwoo","text":"You sleep at like 11:30 anyway","posted":true,"at":"2026-12-03T19:33","checkin":"2026-12-03T19:33"}
+{"who":"Dahye","text":"I said early 😤","posted":true,"at":"2026-12-03T19:33","checkin":"2026-12-03T19:33"}
+{"who":"Hyunwoo","text":"Did it pass. It passed. Don't ask","posted":true,"at":"2026-12-03T22:48","checkin":"2026-12-03T22:48"}
+{"who":"Dahye","text":"Ok I won't ask 😂","posted":true,"at":"2026-12-03T23:10","checkin":"2026-12-03T23:10"}
+{"who":"Dahye","text":"Glad it passed though","posted":true,"at":"2026-12-03T23:11","checkin":"2026-12-03T23:11"}
+{"who":"Hyunwoo","text":"Me too. Going to eat something then probably sleep","posted":true,"at":"2026-12-03T23:14","checkin":"2026-12-03T23:14"}
+{"who":"Dahye","text":"Goodnight then","posted":true,"at":"2026-12-03T23:20","checkin":"2026-12-03T23:20"}
+{"who":"Dahye","text":"Did the landlord come yet","posted":true,"at":"2026-12-04T08:14","checkin":"2026-12-04T08:14"}
+{"who":"Hyunwoo","text":"No. He texted \"monday\"","posted":true,"at":"2026-12-04T11:40","checkin":"2026-12-04T11:40"}
+{"who":"Dahye","text":"😑","posted":true,"at":"2026-12-04T11:41","checkin":"2026-12-04T11:41"}
+{"who":"Hyunwoo","text":"Going out for real food today. Cold rice is done","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Dahye","text":"Good. Eat something hot for me","posted":true,"at":"2026-12-04T13:07","checkin":"2026-12-04T13:07"}
+{"who":"Dahye","text":"Same guy asked about the pool again. I said yes, he said \"in december??\"","posted":true,"at":"2026-12-04T15:22","checkin":"2026-12-04T15:22"}
+{"who":"Hyunwoo","text":"Tell him it's heated lol","posted":true,"at":"2026-12-04T15:30","checkin":"2026-12-04T15:30"}
+{"who":"Dahye","text":"It is heated I checked","posted":true,"at":"2026-12-04T15:31","checkin":"2026-12-04T15:31"}
+{"who":"Hyunwoo","text":"Test server died again. I'm pretty sure it's the disk","posted":true,"at":"2026-12-04T18:44","checkin":"2026-12-04T18:44"}
+{"who":"Dahye","text":"Off at 9. Mom made kimchi jjigae, I'm eating that","posted":true,"at":"2026-12-04T18:50","checkin":"2026-12-04T18:50"}
+{"who":"Hyunwoo","text":"Ok that's a better dinner than mine","posted":true,"at":"2026-12-04T18:52","checkin":"2026-12-04T18:52"}
+{"who":"Dahye","text":"Home. Everyone's watching a drama in the living room, I'm in my room","posted":true,"at":"2026-12-04T21:38","checkin":"2026-12-04T21:38"}
+{"who":"Hyunwoo","text":"Market on Sat? The one by the station. If you're not working","posted":true,"at":"2026-12-04T22:30","checkin":"2026-12-04T22:30"}
+{"who":"Dahye","text":"Maybe. Don't know my shift yet, will check tomorrow morning","posted":true,"at":"2026-12-04T23:02","checkin":"2026-12-04T23:02"}
+{"who":"Hyunwoo","text":"Ok. Tell me when","posted":true,"at":"2026-12-04T23:04","checkin":"2026-12-04T23:04"}
+{"who":"Hyunwoo","text":"Morning. Heater is still dead. I can see my breath","posted":true,"at":"2026-12-05T08:02","checkin":"2026-12-05T08:02"}
+{"who":"Dahye","text":"Checked my shift. 2 to 10","posted":true,"at":"2026-12-05T09:40","checkin":"2026-12-05T09:40"}
+{"who":"Dahye","text":"So market is out unless I sneak out for 5 min","posted":true,"at":"2026-12-05T09:41","checkin":"2026-12-05T09:41"}
+{"who":"Hyunwoo","text":"Ok. Next one then","posted":true,"at":"2026-12-05T09:55","checkin":"2026-12-05T09:55"}
+{"who":"Hyunwoo","text":"Is the market open all day or just mornings","posted":true,"at":"2026-12-05T11:18","checkin":"2026-12-05T11:18"}
+{"who":"Dahye","text":"I think mornings till like 1? Not sure. Mom goes early","posted":true,"at":"2026-12-05T11:50","checkin":"2026-12-05T11:50"}
+{"who":"Hyunwoo","text":"Ok I'll go early then maybe","posted":true,"at":"2026-12-05T11:51","checkin":"2026-12-05T11:51"}
+{"who":"Dahye","text":"[photo: reception desk with a giant bouquet on it]","posted":true,"at":"2026-12-05T13:22","checkin":"2026-12-05T13:22"}
+{"who":"Dahye","text":"Someone sent it for the lobby. It's so ugly. Manager loves it","posted":true,"at":"2026-12-05T13:23","checkin":"2026-12-05T13:23"}
+{"who":"Hyunwoo","text":"Ugly flowers are still flowers","posted":true,"at":"2026-12-05T13:40","checkin":"2026-12-05T13:40"}
+{"who":"","react":"😂","to":49,"posted":false,"at":"2026-12-05T13:40"}
+{"who":"Hyunwoo","text":"Got the build to run twice in a row. Might be a miracle","posted":true,"at":"2026-12-05T16:55","checkin":"2026-12-05T16:55"}
+{"who":"Dahye","text":"Don't jinx it","posted":true,"at":"2026-12-05T17:02","checkin":"2026-12-05T17:02"}
+{"who":"Hyunwoo","text":"Too late. It's dying now 🫠","posted":true,"at":"2026-12-05T17:03","checkin":"2026-12-05T17:03"}
+{"who":"Dahye","text":"Off. My feet hate me","posted":true,"at":"2026-12-05T22:14","checkin":"2026-12-05T22:14"}
+{"who":"Dahye","text":"Eating convenience store kimbap on the bus","posted":true,"at":"2026-12-05T22:15","checkin":"2026-12-05T22:15"}
+{"who":"Hyunwoo","text":"Real food this time?","posted":true,"at":"2026-12-05T22:31","checkin":"2026-12-05T22:31"}
+{"who":"Dahye","text":"It's a triangle. It counts 😤","posted":true,"at":"2026-12-05T22:33","checkin":"2026-12-05T22:33"}
+{"who":"Hyunwoo","text":"Going to bed. Landlord said monday again btw","posted":true,"at":"2026-12-05T23:50","checkin":"2026-12-05T23:50"}
+{"who":"Dahye","text":"😑","posted":true,"at":"2026-12-05T23:52","checkin":"2026-12-05T23:52"}
+{"who":"Dahye","text":"Goodnight","posted":true,"at":"2026-12-05T23:52","checkin":"2026-12-05T23:52"}

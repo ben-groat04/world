@@ -1,0 +1,9 @@
+// node w10-checks/checks.mjs <list.txt>...  per chat: messages, sleep-word regex hits, exact duplicate messages, share of messages 00:00-06:00; cast: lives-with pairs, setting text.
+import fs from 'node:fs'; import path from 'node:path';
+const SLEEP = /going to (bed|sleep)|off to bed|night all|\bgn\b|goodnight|^night\b|^morning\b/i;
+const rows = []; for (const f of process.argv.slice(2)) for (const l of fs.readFileSync(f, 'utf8').split('\n').filter(Boolean)) { const [label, dir] = l.split(/\s+/); const r = fs.readFileSync(path.join(dir, 'log.jsonl'), 'utf8').split('\n').filter(Boolean).map(x => JSON.parse(x)); rows.push({ label, c: r.find(x => x.cast), ms: r.filter(x => x.posted === true && !x.oracle && typeof x.text === 'string') }); }
+const mean = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : 0, byArm = {};
+for (const { label, c, ms } of rows) { const arm = label.split('-')[0], seen = {}, dup = ms.filter(m => seen[m.who + m.text.toLowerCase()]++ === 1).length, night = ms.filter(m => +m.at.slice(11, 13) < 6).length;
+  (byArm[arm] ??= []).push({ label, n: ms.length, sleepHits: ms.filter(m => SLEEP.test(m.text)).length, dup, night, pairs: c ? c.names.reduce((s, n) => s + c.cast[n].lives.length, 0) / 2 : 0, shared: c?.setting }); }
+for (const [arm, a] of Object.entries(byArm)) { const tot = a.reduce((s, x) => s + x.n, 0); console.log(`${arm}: chats ${a.length}, messages/chat ${mean(a.map(x => x.n)).toFixed(1)}, sleep-regex/chat ${mean(a.map(x => x.sleepHits)).toFixed(2)}, exact dups/chat ${mean(a.map(x => x.dup)).toFixed(2)}, 00-06 share ${(100 * a.reduce((s, x) => s + x.night, 0) / tot).toFixed(1)}%, lives-with pairs/cast ${mean(a.map(x => x.pairs)).toFixed(2)}`); if (process.env.V) for (const x of a) console.log(' ', x.label, x.n, x.sleepHits, x.dup); }
+if (process.env.SETTINGS) for (const { label, c } of rows) console.log(`\n${label}: ${c?.setting}`);

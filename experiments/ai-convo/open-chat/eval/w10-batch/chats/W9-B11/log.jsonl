@@ -1,0 +1,89 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T12:00","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1865,"cache_read_input_tokens":0,"output_tokens":3927,"output_tokens_details":{"thinking_tokens":2966},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1865,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3927,"cache_read_input_tokens":0,"cache_creation_input_tokens":1865,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1865},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2762,"cache_read_input_tokens":0,"output_tokens":4623,"output_tokens_details":{"thinking_tokens":3862},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2762,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4623,"cache_read_input_tokens":0,"cache_creation_input_tokens":2762,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2762},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3506,"cache_read_input_tokens":0,"output_tokens":2978,"output_tokens_details":{"thinking_tokens":2278},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3506,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2978,"cache_read_input_tokens":0,"cache_creation_input_tokens":3506,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3506},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Dana","Diego","Lydia","Gary"],"setting":"You are all in Atlanta, Georgia, and you know each other through the friend you are surprising, who is your mutual friend, and you are the four people organizing her party.","openers":["Send a poll for the party date","Ask who can host at their place","Share the venue shortlist","Suggest a budget per person"],"opener":"Ask who can host at their place","cast":{"Dana":{"who":"34, woman, one of the party planners","work":"pharmacist","knows":"You know Diego from the gym you share with the honoree, Lydia from her book club, and Gary from her neighborhood.","texts":"Dana texts in this chat now and then.","style":"some emoji and a few abbreviations","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Diego":{"who":"29, man, one of the party planners","work":"bartender","knows":"You know Dana from the gym you share with the honoree, Lydia from trivia night with the honoree, and Gary from the honoree's neighborhood.","texts":"Diego texts in this chat a lot.","style":"lots of emoji and heavy abbreviations","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]},"Lydia":{"who":"41, woman, one of the party planners","work":"librarian","knows":"You know Dana from book club, Diego from trivia night with the honoree, and Gary from the honoree's neighborhood.","texts":"Lydia texts in this chat only now and again.","style":"almost no emoji and no abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Gary":{"who":"52, man, one of the party planners","work":"head chef","knows":"You know Dana, Diego, and Lydia from the honoree's neighborhood.","texts":"Gary texts in this chat now and then.","style":"occasional emoji and almost no abbreviations","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Dana":"You live in Atlanta, Georgia, where your days are filled with pharmacy shifts, and you live alone.","Diego":"You live in Atlanta, Georgia, where your days are filled with bartending shifts, and you live alone.","Lydia":"You live in Atlanta, Georgia, where your days are filled with library work, and you live alone.","Gary":"You live in Atlanta, Georgia, where your days are filled with running a restaurant kitchen, and you live alone."},"sleep":{"Dana":[23,6.5],"Diego":[3,11],"Lydia":[23,7],"Gary":[1,8.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":787,"cache_read_input_tokens":0,"output_tokens":1223,"output_tokens_details":{"thinking_tokens":819},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":787,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1223,"cache_read_input_tokens":0,"cache_creation_input_tokens":787,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":787},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1062,"cache_read_input_tokens":0,"output_tokens":4081,"output_tokens_details":{"thinking_tokens":3399},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1062,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4081,"cache_read_input_tokens":0,"cache_creation_input_tokens":1062,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1062},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Atlanta, USA","castMs":24922,"situation":"Planning a surprise party for a friend.","topic":null}
+{"who":"Dana","text":"Ok so who can host. Need a place w room for like 30 that isnt a bar 😅","posted":true,"at":"2026-12-04T12:04","checkin":"2026-12-04T12:04"}
+{"who":"Diego","text":"lol my place is a studio cant fit 10 ppl standing","posted":true,"at":"2026-12-04T12:21","checkin":"2026-12-04T12:21"}
+{"who":"Diego","text":"ur place dana?","posted":true,"at":"2026-12-04T12:22","checkin":"2026-12-04T12:22"}
+{"who":"Dana","text":"2bd but the living room is tiny. Max 15ish. Say yes or no","posted":true,"at":"2026-12-04T13:47","checkin":"2026-12-04T13:47"}
+{"who":"Diego","text":"yes lol","posted":true,"at":"2026-12-04T13:50","checkin":"2026-12-04T13:50"}
+{"who":"Lydia","text":"I have the back room. Seats 20, more if standing.","posted":true,"at":"2026-12-04T14:30","checkin":"2026-12-04T14:30"}
+{"who":"Lydia","text":"Parking is bad.","posted":true,"at":"2026-12-04T14:31","checkin":"2026-12-04T14:31"}
+{"who":"Dana","text":"Lydia thats the one 🙌","posted":true,"at":"2026-12-04T14:44","checkin":"2026-12-04T14:44"}
+{"who":"Diego","text":"lydia said a whole sentence","posted":true,"at":"2026-12-04T14:45","checkin":"2026-12-04T14:45"}
+{"who":"","react":"😂","to":8,"posted":false,"at":"2026-12-04T14:45"}
+{"who":"","react":"😂","to":8,"posted":false,"at":"2026-12-04T14:45"}
+{"who":"Gary","text":"I can get the back room at the restaurant. Closed Mondays.","posted":true,"at":"2026-12-04T15:10","checkin":"2026-12-04T15:10"}
+{"who":"Dana","text":"Gary thats not a party room","posted":true,"at":"2026-12-04T15:12","checkin":"2026-12-04T15:12"}
+{"who":"Gary","text":"It has a bar and a door. Its fine.","posted":true,"at":"2026-12-04T15:14","checkin":"2026-12-04T15:14"}
+{"who":"Diego","text":"wait ur place is a restaurant 😭","posted":true,"at":"2026-12-04T15:14","checkin":"2026-12-04T15:14"}
+{"who":"Lydia","text":"Mine's fine. I'll do it.","posted":true,"at":"2026-12-04T15:20","checkin":"2026-12-04T15:20"}
+{"who":"Dana","text":"Date? Sat 19th?","posted":true,"at":"2026-12-04T15:22","checkin":"2026-12-04T15:22"}
+{"who":"Diego","text":"19 i work till 2 tho 😩 can i come late","posted":true,"at":"2026-12-04T15:40","checkin":"2026-12-04T15:40"}
+{"who":"Dana","text":"Its a surprise party diego just come when u can","posted":true,"at":"2026-12-04T15:41","checkin":"2026-12-04T15:41"}
+{"who":"Diego","text":"ok","posted":true,"at":"2026-12-04T15:41","checkin":"2026-12-04T15:41"}
+{"who":"Gary","text":"19th I'm free.","posted":true,"at":"2026-12-04T16:03","checkin":"2026-12-04T16:03"}
+{"who":"Lydia","text":"19th works.","posted":true,"at":"2026-12-04T16:04","checkin":"2026-12-04T16:04"}
+{"who":"Dana","text":"On at 7 tonight ugh. Ill be asleep by 11 so dont wait on me","posted":true,"at":"2026-12-04T18:12","checkin":"2026-12-04T18:12"}
+{"who":"Diego","text":"lol i'll be pouring 🍸 all night so ill be on here every 5 min 🤪","posted":true,"at":"2026-12-04T18:30","checkin":"2026-12-04T18:30"}
+{"who":"Gary","text":"Ok.","posted":true,"at":"2026-12-04T19:05","checkin":"2026-12-04T19:05"}
+{"who":"Diego","text":"who has the guest list. i need names for the group invite","posted":true,"at":"2026-12-04T21:48","checkin":"2026-12-04T21:48"}
+{"who":"Dana","text":"Send me yours and ill merge","posted":true,"at":"2026-12-04T21:55","checkin":"2026-12-04T21:55"}
+{"who":"Lydia","text":"Doors at 7?","posted":true,"at":"2026-12-04T22:14","checkin":"2026-12-04T22:14"}
+{"who":"Diego","text":"i'll say 7","posted":true,"at":"2026-12-04T22:40","checkin":"2026-12-04T22:40"}
+{"who":"Gary","text":"Walk-in died tonight. Lost six hours of product.","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"Gary","text":"[photo: the walk-in thermometer reading 51]","posted":true,"at":"2026-12-04T23:59","checkin":"2026-12-04T23:59"}
+{"who":"Diego","text":"oof u ok gary","posted":true,"at":"2026-12-05T00:14","checkin":"2026-12-05T00:14"}
+{"who":"Gary","text":"Fine. Just a bad night. Calling the repair guy at 7.","posted":true,"at":"2026-12-05T00:31","checkin":"2026-12-05T00:31"}
+{"who":"Diego","text":"ok lmk if u need anything","posted":true,"at":"2026-12-05T00:33","checkin":"2026-12-05T00:33"}
+{"who":"Gary","text":"Will do.","posted":true,"at":"2026-12-05T00:52","checkin":"2026-12-05T00:52"}
+{"who":"Gary","text":"Guy came. Compressor's shot. Parts thursday.","posted":true,"at":"2026-12-05T07:08","checkin":"2026-12-05T07:08"}
+{"who":"Gary","text":"Six hrs of product and a grand. Good.","posted":true,"at":"2026-12-05T07:09","checkin":"2026-12-05T07:09"}
+{"who":"Diego","text":"u asleep gary. tell me if u need $ for the fridge","posted":true,"at":"2026-12-05T11:22","checkin":"2026-12-05T11:22"}
+{"who":"Diego","text":"dana did u get my names","posted":true,"at":"2026-12-05T11:40","checkin":"2026-12-05T11:40"}
+{"who":"Dana","text":"Yes. Ur list is 9 people diego","posted":true,"at":"2026-12-05T13:05","checkin":"2026-12-05T13:05"}
+{"who":"Diego","text":"9 is not a lot","posted":true,"at":"2026-12-05T13:06","checkin":"2026-12-05T13:06"}
+{"who":"Diego","text":"its like 4 of them are my cousins","posted":true,"at":"2026-12-05T13:06","checkin":"2026-12-05T13:06"}
+{"who":"Lydia","text":"Cake?","posted":true,"at":"2026-12-05T13:30","checkin":"2026-12-05T13:30"}
+{"who":"Diego","text":"nobody's doing cake its a whole thing 🎂","posted":true,"at":"2026-12-05T13:31","checkin":"2026-12-05T13:31"}
+{"who":"Dana","text":"Ill get it. Not costco","posted":true,"at":"2026-12-05T13:40","checkin":"2026-12-05T13:40"}
+{"who":"Lydia","text":"Good.","posted":true,"at":"2026-12-05T13:41","checkin":"2026-12-05T13:41"}
+{"who":"","react":"😂","to":43,"posted":false,"at":"2026-12-05T13:41"}
+{"who":"","react":"😂","to":43,"posted":false,"at":"2026-12-05T13:41"}
+{"who":"Gary","text":"Parts thursday. Kitchen walk-in is full of my walk-in now","posted":true,"at":"2026-12-05T15:02","checkin":"2026-12-05T15:02"}
+{"who":"","react":"😂","to":44,"posted":false,"at":"2026-12-05T15:02"}
+{"who":"","react":"😂","to":44,"posted":false,"at":"2026-12-05T15:02"}
+{"who":"Diego","text":"gary ur moving into the restaurant","posted":true,"at":"2026-12-05T15:05","checkin":"2026-12-05T15:05"}
+{"who":"Dana","text":"Gary ur ok right","posted":true,"at":"2026-12-05T15:20","checkin":"2026-12-05T15:20"}
+{"who":"Lydia","text":"Church lot across the street. Pastor says ok as long as we don't block the side door.","posted":true,"at":"2026-12-05T17:31","checkin":"2026-12-05T17:31"}
+{"who":"Lydia","text":"I asked.","posted":true,"at":"2026-12-05T17:33","checkin":"2026-12-05T17:33"}
+{"who":"Dana","text":"Wait u asked the pastor","posted":true,"at":"2026-12-05T17:50","checkin":"2026-12-05T17:50"}
+{"who":"Diego","text":"[photo: bar setup, 3 bottles of prosecco, a bag of limes]","posted":true,"at":"2026-12-05T18:02","checkin":"2026-12-05T18:02"}
+{"who":"Diego","text":"thats the whole budget","posted":true,"at":"2026-12-05T18:03","checkin":"2026-12-05T18:03"}
+{"who":"Dana","text":"Ill bring a bottle from my car","posted":true,"at":"2026-12-05T19:14","checkin":"2026-12-05T19:14"}
+{"who":"Diego","text":"slow night. everyone's ordering beer who's doing the playlist","posted":true,"at":"2026-12-05T21:12","checkin":"2026-12-05T21:12"}
+{"who":"Dana","text":"Ill try. On at 7 tmrw so no promises","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Dana","text":"Night. Dont party without me","posted":true,"at":"2026-12-05T22:58","checkin":"2026-12-05T22:58"}
+{"who":"Diego","text":"last call","posted":true,"at":"2026-12-05T23:40","checkin":"2026-12-05T23:40"}
+{"who":"Diego","text":"closing up. who's doing balloons","posted":true,"at":"2026-12-06T00:22","checkin":"2026-12-06T00:22"}
+{"who":"Diego","text":"no one? ok ill ask lydia","posted":true,"at":"2026-12-06T00:23","checkin":"2026-12-06T00:23"}
+{"who":"Lydia","text":"I can do balloons. Helium at the party store on Memorial. Who's paying for it","posted":true,"at":"2026-12-06T07:12","checkin":"2026-12-06T07:12"}
+{"who":"Dana","text":"Cake is ordered. Half sheet lemon from the bakery on clairmont. Pickup the 19th at 2","posted":true,"at":"2026-12-06T07:40","checkin":"2026-12-06T07:40"}
+{"who":"Dana","text":"Dont argue its her favorite","posted":true,"at":"2026-12-06T07:41","checkin":"2026-12-06T07:41"}
+{"who":"Gary","text":"Parts rep says maybe Wednesday. Not promising Thursday.","posted":true,"at":"2026-12-06T09:02","checkin":"2026-12-06T09:02"}
+{"who":"Gary","text":"Got the walk-in stacked with ice packs in the meantime.","posted":true,"at":"2026-12-06T09:03","checkin":"2026-12-06T09:03"}
+{"who":"Diego","text":"gary ur up 😭 ok good","posted":true,"at":"2026-12-06T11:20","checkin":"2026-12-06T11:20"}
+{"who":"Diego","text":"lydia u a legend i'll venmo u for the helium","posted":true,"at":"2026-12-06T11:24","checkin":"2026-12-06T11:24"}
+{"who":"Diego","text":"lemon is fine dana","posted":true,"at":"2026-12-06T11:25","checkin":"2026-12-06T11:25"}
+{"who":"Diego","text":"who has the playlist?? dana u said u'd try","posted":true,"at":"2026-12-06T11:26","checkin":"2026-12-06T11:26"}
+{"who":"Dana","text":"Ugh I didnt. Lydia can u","posted":true,"at":"2026-12-06T13:18","checkin":"2026-12-06T13:18"}
+{"who":"Lydia","text":"Ok.","posted":true,"at":"2026-12-06T13:52","checkin":"2026-12-06T13:52"}
+{"who":"Diego","text":"no diego songs??","posted":true,"at":"2026-12-06T15:30","checkin":"2026-12-06T15:30"}
+{"who":"Lydia","text":"Yes.","posted":true,"at":"2026-12-06T16:45","checkin":"2026-12-06T16:45"}
+{"who":"Diego","text":"ok","posted":true,"at":"2026-12-06T16:46","checkin":"2026-12-06T16:46"}
+{"who":"Dana","text":"On shift. Pharmacy line is out the door.","posted":true,"at":"2026-12-06T19:08","checkin":"2026-12-06T19:08"}
+{"who":"Dana","text":"Has anyone talked to her sister? She keeps asking me what I'm doing sat","posted":true,"at":"2026-12-06T19:09","checkin":"2026-12-06T19:09"}
+{"who":"Diego","text":"i'll say i have a shift lol 🍸","posted":true,"at":"2026-12-06T19:31","checkin":"2026-12-06T19:31"}
+{"who":"Lydia","text":"I'll call her sister tomorrow.","posted":true,"at":"2026-12-06T19:52","checkin":"2026-12-06T19:52"}
+{"who":"Gary","text":"Rep says Wednesday for sure now. Kitchen's still full of my stuff.","posted":true,"at":"2026-12-06T22:14","checkin":"2026-12-06T22:14"}
+{"who":"Dana","text":"Off. Going to bed. Dont all talk about the lemon cake without me","posted":true,"at":"2026-12-06T23:50","checkin":"2026-12-06T23:50"}
+{"who":"Diego","text":"lydia u never actually said yes to the balloons lol","posted":true,"at":"2026-12-07T00:38","checkin":"2026-12-07T00:38"}
+{"who":"Diego","text":"just checking","posted":true,"at":"2026-12-07T00:39","checkin":"2026-12-07T00:39"}

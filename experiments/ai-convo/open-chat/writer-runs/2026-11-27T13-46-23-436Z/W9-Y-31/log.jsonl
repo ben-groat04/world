@@ -1,0 +1,55 @@
+{"writer":"w9","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-11-30T21:15","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1410,"cache_read_input_tokens":0,"output_tokens":1148,"output_tokens_details":{"thinking_tokens":817},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1410,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1148,"cache_read_input_tokens":0,"cache_creation_input_tokens":1410,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1410},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1705,"cache_read_input_tokens":0,"output_tokens":1491,"output_tokens_details":{"thinking_tokens":1085},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1705,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1491,"cache_read_input_tokens":0,"cache_creation_input_tokens":1705,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1705},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2108,"cache_read_input_tokens":0,"output_tokens":2357,"output_tokens_details":{"thinking_tokens":1668},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2108,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2357,"cache_read_input_tokens":0,"cache_creation_input_tokens":2108,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2108},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Emily","Tony"],"setting":"You are both in Perth, Western Australia, where you each live. You know each other as father and daughter and stay in regular touch.","openers":["Ask if he's free for Sunday lunch","Send a photo of the dripping tap in your kitchen","Tell him your tax return is finally lodged","Check whether he got home safely from the job"],"opener":"Check whether he got home safely from the job","cast":{"Emily":{"who":"30, woman, the child","work":"accountant","knows":"You know Tony as your father, since birth.","texts":"","style":"light, occasional emoji and texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Tony":{"who":"61, man, the parent","work":"plumber","knows":"You know Emily as your daughter, since birth.","texts":"","style":"rare emoji and almost no abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Emily":"You live in Perth, working as an accountant, and you live alone.","Tony":"You live in Perth, working as a plumber, and you live alone."},"sleep":{"Emily":[23.5,7],"Tony":[21.5,5.5]},"usage":[{"input_tokens":2,"cache_creation_input_tokens":777,"cache_read_input_tokens":0,"output_tokens":864,"output_tokens_details":{"thinking_tokens":660},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":777,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":864,"cache_read_input_tokens":0,"cache_creation_input_tokens":777,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":777},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1002,"cache_read_input_tokens":0,"output_tokens":1523,"output_tokens_details":{"thinking_tokens":1194},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1002,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1523,"cache_read_input_tokens":0,"cache_creation_input_tokens":1002,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1002},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Perth, Australia","castMs":16027,"situation":"My dad.","topic":null}
+{"who":"Emily","text":"Did you get home ok","posted":true,"at":"2026-11-30T21:15","checkin":"2026-11-30T21:15"}
+{"who":"Tony","text":"yeah. just walked in","posted":true,"at":"2026-11-30T21:31","checkin":"2026-11-30T21:31"}
+{"who":"Emily","text":"What time did you finish","posted":true,"at":"2026-11-30T21:32","checkin":"2026-11-30T21:32"}
+{"who":"Tony","text":"bit after 8. then had to go back for the valve and the bloke wanted to talk about his whole kitchen","posted":true,"at":"2026-11-30T21:48","checkin":"2026-11-30T21:48"}
+{"who":"Emily","text":"Ha poor you","posted":true,"at":"2026-11-30T21:50","checkin":"2026-11-30T21:50"}
+{"who":"Emily","text":"Did the valve work","posted":true,"at":"2026-11-30T22:14","checkin":"2026-11-30T22:14"}
+{"who":"Tony","text":"yeah it's fine now","posted":true,"at":"2026-11-30T22:40","checkin":"2026-11-30T22:40"}
+{"who":"Emily","text":"Good","posted":true,"at":"2026-11-30T22:41","checkin":"2026-11-30T22:41"}
+{"who":"Tony","text":"you still up","posted":true,"at":"2026-11-30T23:12","checkin":"2026-11-30T23:12"}
+{"who":"Emily","text":"Yeah for a bit. Doing my bank rec for tomorrow","posted":true,"at":"2026-11-30T23:13","checkin":"2026-11-30T23:13"}
+{"who":"Tony","text":"dont stay up too late","posted":true,"at":"2026-11-30T23:15","checkin":"2026-11-30T23:15"}
+{"who":"Emily","text":"Ok","posted":true,"at":"2026-11-30T23:16","checkin":"2026-11-30T23:16"}
+{"who":"Tony","text":"going to bed now","posted":true,"at":"2026-11-30T23:17","checkin":"2026-11-30T23:17"}
+{"who":"Emily","text":"Ok sleep well","posted":true,"at":"2026-11-30T23:17","checkin":"2026-11-30T23:17"}
+{"who":"Emily","text":"Morning. Did you sleep ok","posted":true,"at":"2026-12-01T07:12","checkin":"2026-12-01T07:12"}
+{"who":"Tony","text":"yeah. up since 5","posted":true,"at":"2026-12-01T07:40","checkin":"2026-12-01T07:40"}
+{"who":"Emily","text":"Ugh. Bank rec finally balanced but there was a $4.20 I couldn't find","posted":true,"at":"2026-12-01T07:41","checkin":"2026-12-01T07:41"}
+{"who":"Tony","text":"found it?","posted":true,"at":"2026-12-01T07:55","checkin":"2026-12-01T07:55"}
+{"who":"Emily","text":"Yeah it was a bank fee from October. Took me 40 mins","posted":true,"at":"2026-12-01T07:58","checkin":"2026-12-01T07:58"}
+{"who":"Tony","text":"thats the job","posted":true,"at":"2026-12-01T08:03","checkin":"2026-12-01T08:03"}
+{"who":"Tony","text":"off to the Hendersons in Joondalup. hot water unit's gone. might be late","posted":true,"at":"2026-12-01T12:20","checkin":"2026-12-01T12:20"}
+{"who":"Emily","text":"Ok. Are you eating lunch or just driving","posted":true,"at":"2026-12-01T12:31","checkin":"2026-12-01T12:31"}
+{"who":"Tony","text":"eating","posted":true,"at":"2026-12-01T12:45","checkin":"2026-12-01T12:45"}
+{"who":"Tony","text":"home. hot water's in. he wanted a second opinion on the tiles too","posted":true,"at":"2026-12-01T17:50","checkin":"2026-12-01T17:50"}
+{"who":"Emily","text":"Haha of course he did","posted":true,"at":"2026-12-01T17:52","checkin":"2026-12-01T17:52"}
+{"who":"Tony","text":"all sorted. going to bed early, tired","posted":true,"at":"2026-12-01T21:14","checkin":"2026-12-01T21:14"}
+{"who":"Emily","text":"Ok sleep well","posted":true,"at":"2026-12-01T21:15","checkin":"2026-12-01T21:15"}
+{"who":"Emily","text":"Did he end up paying for the tiles or is that a separate job","posted":true,"at":"2026-12-01T22:48","checkin":"2026-12-01T22:48"}
+{"who":"Tony","text":"yeah he paid the tiles. cash. dont ask","posted":true,"at":"2026-12-02T05:52","checkin":"2026-12-02T05:52"}
+{"who":"Emily","text":"Ha ok. Cash is a good sign or a bad one","posted":true,"at":"2026-12-02T07:14","checkin":"2026-12-02T07:14"}
+{"who":"Tony","text":"hes a good bloke just talks a lot","posted":true,"at":"2026-12-02T07:20","checkin":"2026-12-02T07:20"}
+{"who":"Emily","text":"Did you have breakfast","posted":true,"at":"2026-12-02T07:21","checkin":"2026-12-02T07:21"}
+{"who":"Tony","text":"yeah","posted":true,"at":"2026-12-02T07:44","checkin":"2026-12-02T07:44"}
+{"who":"Emily","text":"Lunch at my desk again. Client wants the BAS by Friday and the GST doesnt reconcile","posted":true,"at":"2026-12-02T12:05","checkin":"2026-12-02T12:05"}
+{"who":"Tony","text":"whats not reconciling","posted":true,"at":"2026-12-02T12:30","checkin":"2026-12-02T12:30"}
+{"who":"Emily","text":"Their sales ledger is $1,300 over what's in the bank. Could be timing or they've double entered something. Won't know till I call them","posted":true,"at":"2026-12-02T12:52","checkin":"2026-12-02T12:52"}
+{"who":"Tony","text":"double entered. they always do","posted":true,"at":"2026-12-02T13:10","checkin":"2026-12-02T13:10"}
+{"who":"Emily","text":"Ha you don't even know them","posted":true,"at":"2026-12-02T13:11","checkin":"2026-12-02T13:11"}
+{"who":"Tony","text":"i know plenty of people who double enter things","posted":true,"at":"2026-12-02T13:14","checkin":"2026-12-02T13:14"}
+{"who":"Tony","text":"Scarborough quote at 4. back after","posted":true,"at":"2026-12-02T15:40","checkin":"2026-12-02T15:40"}
+{"who":"Emily","text":"Are we doing anything for Christmas or just the usual","posted":true,"at":"2026-12-02T16:05","checkin":"2026-12-02T16:05"}
+{"who":"Tony","text":"usual is fine by me","posted":true,"at":"2026-12-02T16:41","checkin":"2026-12-02T16:41"}
+{"who":"Emily","text":"Ok I'll sort the prawns","posted":true,"at":"2026-12-02T16:42","checkin":"2026-12-02T16:42"}
+{"who":"Tony","text":"home","posted":true,"at":"2026-12-02T17:30","checkin":"2026-12-02T17:30"}
+{"who":"Emily","text":"Did you get the Scarborough one?","posted":true,"at":"2026-12-02T17:31","checkin":"2026-12-02T17:31"}
+{"who":"Tony","text":"no they went with someone cheaper. not my problem","posted":true,"at":"2026-12-02T17:58","checkin":"2026-12-02T17:58"}
+{"who":"Emily","text":"😔","posted":true,"at":"2026-12-02T18:03","checkin":"2026-12-02T18:03"}
+{"who":"Emily","text":"Sent the BAS to the client. Found the $1,300, they'd put a rent payment in twice","posted":true,"at":"2026-12-02T20:50","checkin":"2026-12-02T20:50"}
+{"who":"","react":"👍","to":47,"posted":false,"at":"2026-12-02T20:50"}
+{"who":"Tony","text":"good","posted":true,"at":"2026-12-02T20:52","checkin":"2026-12-02T20:52"}
+{"who":"Tony","text":"off to bed. up at 5 for Osborne Park","posted":true,"at":"2026-12-02T21:20","checkin":"2026-12-02T21:20"}
+{"who":"Emily","text":"Ok sleep well","posted":true,"at":"2026-12-02T21:21","checkin":"2026-12-02T21:21"}
+{"who":"Emily","text":"Did you put the bins out? I forgot again","posted":true,"at":"2026-12-02T23:14","checkin":"2026-12-02T23:14"}

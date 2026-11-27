@@ -1,0 +1,71 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-05T17:55","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1448,"cache_read_input_tokens":0,"output_tokens":1832,"output_tokens_details":{"thinking_tokens":1137},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1448,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1832,"cache_read_input_tokens":0,"cache_creation_input_tokens":1448,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1448},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2086,"cache_read_input_tokens":0,"output_tokens":1875,"output_tokens_details":{"thinking_tokens":1315},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2086,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1875,"cache_read_input_tokens":0,"cache_creation_input_tokens":2086,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2086},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2633,"cache_read_input_tokens":0,"output_tokens":1559,"output_tokens_details":{"thinking_tokens":728},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2633,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1559,"cache_read_input_tokens":0,"cache_creation_input_tokens":2633,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2633},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Lwazi","Kelsey"],"setting":"You are both in Cape Town, where you each live, and you are siblings who have known each other all your lives. You are sorting out the family Christmas lunch, including who brings what and who collects Mum from the airport.","openers":["Ask if you can collect Mum from the airport on Saturday","Send the lunch menu for Sunday","Tell her the Christmas lunch is at ours","Check whether your flight lands before noon"],"opener":"Send the lunch menu for Sunday","cast":{"Lwazi":{"who":"34, man, the sibling","work":"primary school teacher","knows":"You know Kelsey as your younger sister, from childhood.","texts":"","style":"Little emoji and few abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Kelsey":{"who":"31, woman, the sister","work":"marketing executive","knows":"You know Lwazi as your older brother, from childhood.","texts":"","style":"Lots of emoji and frequent abbreviations.","emojiKeep":0.35,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Lwazi":"You live in Cape Town, where your days are spent teaching at a primary school, and you live alone.","Kelsey":"You live in Cape Town, where your days are spent on marketing work, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":780,"cache_read_input_tokens":0,"output_tokens":1047,"output_tokens_details":{"thinking_tokens":822},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":780,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1047,"cache_read_input_tokens":0,"cache_creation_input_tokens":780,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":780},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1013,"cache_read_input_tokens":0,"output_tokens":1709,"output_tokens_details":{"thinking_tokens":1342},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1013,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1709,"cache_read_input_tokens":0,"cache_creation_input_tokens":1013,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1013},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Cape Town, South Africa","castMs":15426,"situation":"My sister.","topic":null}
+{"who":"Lwazi","text":"Menu for sunday 20th\nroast chicken, potatoes, butternut, green beans, gravy\nI'll do the pudding, lemon tart","posted":true,"at":"2026-12-05T17:55","checkin":"2026-12-05T17:55"}
+{"who":"Kelsey","text":"ok 🙌\nwho's doing the chicken\npls not me 😭","posted":true,"at":"2026-12-05T18:02","checkin":"2026-12-05T18:02"}
+{"who":"Lwazi","text":"You did the chicken last year and it was dry\nI'll do chicken\nyou do potatoes and butternut","posted":true,"at":"2026-12-05T18:04","checkin":"2026-12-05T18:04"}
+{"who":"Kelsey","text":"fine\ngravy?","posted":true,"at":"2026-12-05T18:06","checkin":"2026-12-05T18:06"}
+{"who":"Lwazi","text":"Mum makes the gravy","posted":true,"at":"2026-12-05T18:07","checkin":"2026-12-05T18:07"}
+{"who":"Kelsey","text":"lol ok","posted":true,"at":"2026-12-05T18:07","checkin":"2026-12-05T18:07"}
+{"who":"Kelsey","text":"who's getting mum from the airport","posted":true,"at":"2026-12-05T18:15","checkin":"2026-12-05T18:15"}
+{"who":"Lwazi","text":"I can do it\nwhat time does she land","posted":true,"at":"2026-12-05T18:31","checkin":"2026-12-05T18:31"}
+{"who":"Kelsey","text":"thu 14:10 cpt\ni have a 3pm call so can't","posted":true,"at":"2026-12-05T18:33","checkin":"2026-12-05T18:33"}
+{"who":"Kelsey","text":"u'll need to leave by 12:30 with the traffic","posted":true,"at":"2026-12-05T18:33","checkin":"2026-12-05T18:33"}
+{"who":"Lwazi","text":"Ok\nI'm off school by 1 that day anyway","posted":true,"at":"2026-12-05T18:50","checkin":"2026-12-05T18:50"}
+{"who":"Kelsey","text":"🙏🙏","posted":true,"at":"2026-12-05T18:52","checkin":"2026-12-05T18:52"}
+{"who":"Kelsey","text":"[photo: the list from mum, she wants rooibos and biltong from the checkers near the airport]","posted":true,"at":"2026-12-05T19:20","checkin":"2026-12-05T19:20"}
+{"who":"Kelsey","text":"she says that's not a joke","posted":true,"at":"2026-12-05T19:21","checkin":"2026-12-05T19:21"}
+{"who":"Lwazi","text":"She's not joking\nI'll get it thu","posted":true,"at":"2026-12-05T19:44","checkin":"2026-12-05T19:44"}
+{"who":"Kelsey","text":"did you ever end up replacing the gas bottle","posted":true,"at":"2026-12-05T21:08","checkin":"2026-12-05T21:08"}
+{"who":"Lwazi","text":"No. I'll do it this week","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Kelsey","text":"u said that last week 🙃","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Lwazi","text":"I know","posted":true,"at":"2026-12-05T21:32","checkin":"2026-12-05T21:32"}
+{"who":"Kelsey","text":"cranberry sauce. do we need it or is it a mum thing","posted":true,"at":"2026-12-06T00:14","checkin":"2026-12-06T00:14"}
+{"who":"Lwazi","text":"Mum thing\nget the tin, she'll eat it","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}
+{"who":"Kelsey","text":"tin of cranberry it is","posted":true,"at":"2026-12-06T09:12","checkin":"2026-12-06T09:12"}
+{"who":"Lwazi","text":"Yes","posted":true,"at":"2026-12-06T09:40","checkin":"2026-12-06T09:40"}
+{"who":"Kelsey","text":"who's bringing ice","posted":true,"at":"2026-12-06T11:03","checkin":"2026-12-06T11:03"}
+{"who":"Lwazi","text":"I'll get it on the way from the airport","posted":true,"at":"2026-12-06T11:05","checkin":"2026-12-06T11:05"}
+{"who":"Kelsey","text":"mum asked if we're doing crackers this year\ni said ask lwazi 🙃","posted":true,"at":"2026-12-06T11:21","checkin":"2026-12-06T11:21"}
+{"who":"Lwazi","text":"Crackers yes\nGet the ones with the jokes, not the plastic things","posted":true,"at":"2026-12-06T13:47","checkin":"2026-12-06T13:47"}
+{"who":"Kelsey","text":"the jokes are always bad","posted":true,"at":"2026-12-06T13:48","checkin":"2026-12-06T13:48"}
+{"who":"Kelsey","text":"thats the point","posted":true,"at":"2026-12-06T13:48","checkin":"2026-12-06T13:48"}
+{"who":"Lwazi","text":"Half my Grade 3 class wrote \"Christmas\" with two S's today\nTwo S's. Whole class","posted":true,"at":"2026-12-06T16:02","checkin":"2026-12-06T16:02"}
+{"who":"Kelsey","text":"💀💀 how do you even get that wrong","posted":true,"at":"2026-12-06T16:03","checkin":"2026-12-06T16:03"}
+{"who":"Lwazi","text":"No idea\nSome of them did it on purpose I think","posted":true,"at":"2026-12-06T16:03","checkin":"2026-12-06T16:03"}
+{"who":"Kelsey","text":"lmaooo","posted":true,"at":"2026-12-06T16:04","checkin":"2026-12-06T16:04"}
+{"who":"Kelsey","text":"gas bottle","posted":true,"at":"2026-12-06T21:15","checkin":"2026-12-06T21:15"}
+{"who":"Lwazi","text":"Tomorrow after school","posted":true,"at":"2026-12-06T21:16","checkin":"2026-12-06T21:16"}
+{"who":"Kelsey","text":"🙃🙃🙃","posted":true,"at":"2026-12-06T21:16","checkin":"2026-12-06T21:16"}
+{"who":"Lwazi","text":"Not a promise","posted":true,"at":"2026-12-06T22:50","checkin":"2026-12-06T22:50"}
+{"who":"Kelsey","text":"u up","posted":true,"at":"2026-12-06T23:58","checkin":"2026-12-06T23:58"}
+{"who":"Kelsey","text":"mum just sent me a voice note about the turkey\ni dont know how to reply 😭","posted":true,"at":"2026-12-06T23:59","checkin":"2026-12-06T23:59"}
+{"who":"Lwazi","text":"Thumbs up and move on","posted":true,"at":"2026-12-07T00:31","checkin":"2026-12-07T00:31"}
+{"who":"Kelsey","text":"did u reply to mum re the turkey or am i still on read","posted":true,"at":"2026-12-07T07:48","checkin":"2026-12-07T07:48"}
+{"who":"Lwazi","text":"I said chicken","posted":true,"at":"2026-12-07T07:55","checkin":"2026-12-07T07:55"}
+{"who":"Lwazi","text":"She sent a thumbs up back","posted":true,"at":"2026-12-07T07:55","checkin":"2026-12-07T07:55"}
+{"who":"Kelsey","text":"she'll bring it up on sunday","posted":true,"at":"2026-12-07T07:58","checkin":"2026-12-07T07:58"}
+{"who":"Lwazi","text":"Probably","posted":true,"at":"2026-12-07T08:02","checkin":"2026-12-07T08:02"}
+{"who":"Kelsey","text":"need to pick up the cranberry tin before thu. u want me to get it or u getting everything at the airport anyway","posted":true,"at":"2026-12-07T13:20","checkin":"2026-12-07T13:20"}
+{"who":"Lwazi","text":"I'll get it","posted":true,"at":"2026-12-07T13:44","checkin":"2026-12-07T13:44"}
+{"who":"Kelsey","text":"ok","posted":true,"at":"2026-12-07T13:44","checkin":"2026-12-07T13:44"}
+{"who":"Lwazi","text":"[photo: gas bottle in the boot of the car]","posted":true,"at":"2026-12-07T15:41","checkin":"2026-12-07T15:41"}
+{"who":"Lwazi","text":"Done","posted":true,"at":"2026-12-07T15:41","checkin":"2026-12-07T15:41"}
+{"who":"Kelsey","text":"WHAT","posted":true,"at":"2026-12-07T15:42","checkin":"2026-12-07T15:42"}
+{"who":"Kelsey","text":"who are u and what have u done with my brother","posted":true,"at":"2026-12-07T15:42","checkin":"2026-12-07T15:42"}
+{"who":"Lwazi","text":"The guy at the shop swapped it for me\nTook 4 minutes","posted":true,"at":"2026-12-07T15:43","checkin":"2026-12-07T15:43"}
+{"who":"Kelsey","text":"4 minutes 💀 u could have done that in june","posted":true,"at":"2026-12-07T15:43","checkin":"2026-12-07T15:43"}
+{"who":"Lwazi","text":"Yes","posted":true,"at":"2026-12-07T15:44","checkin":"2026-12-07T15:44"}
+{"who":"Lwazi","text":"Grade 3 just asked me if Father Christmas has a Christmas\nI said yes","posted":true,"at":"2026-12-07T16:30","checkin":"2026-12-07T16:30"}
+{"who":"Kelsey","text":"🥹 what did they say","posted":true,"at":"2026-12-07T16:31","checkin":"2026-12-07T16:31"}
+{"who":"Lwazi","text":"Someone said then he should get a day off\nThen the bell went","posted":true,"at":"2026-12-07T16:31","checkin":"2026-12-07T16:31"}
+{"who":"Kelsey","text":"ok thats actually good","posted":true,"at":"2026-12-07T17:02","checkin":"2026-12-07T17:02"}
+{"who":"Kelsey","text":"the lemon tart. do u need eggs or is that sorted","posted":true,"at":"2026-12-07T21:14","checkin":"2026-12-07T21:14"}
+{"who":"Lwazi","text":"Have eggs\nHave 2 lemons too I think","posted":true,"at":"2026-12-07T21:40","checkin":"2026-12-07T21:40"}
+{"who":"Kelsey","text":"u think","posted":true,"at":"2026-12-07T21:41","checkin":"2026-12-07T21:41"}
+{"who":"Lwazi","text":"Checking now","posted":true,"at":"2026-12-07T21:41","checkin":"2026-12-07T21:41"}
+{"who":"Lwazi","text":"Have 1 lemon\nGet 2","posted":true,"at":"2026-12-07T21:52","checkin":"2026-12-07T21:52"}
+{"who":"Kelsey","text":"at the checkers near the airport too? mum wants her rooibos","posted":true,"at":"2026-12-07T21:53","checkin":"2026-12-07T21:53"}
+{"who":"Lwazi","text":"Not sure I'm going that route","posted":true,"at":"2026-12-07T22:10","checkin":"2026-12-07T22:10"}
+{"who":"Kelsey","text":"u up","posted":true,"at":"2026-12-07T23:40","checkin":"2026-12-07T23:40"}
+{"who":"Kelsey","text":"ok night","posted":true,"at":"2026-12-08T00:14","checkin":"2026-12-08T00:14"}
+{"who":"Lwazi","text":"Night","posted":true,"at":"2026-12-08T00:14","checkin":"2026-12-08T00:14"}

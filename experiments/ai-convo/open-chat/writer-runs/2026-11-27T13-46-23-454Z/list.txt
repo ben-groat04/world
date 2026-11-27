@@ -1,0 +1,12 @@
+W9-X-11 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-11
+W9-X-12 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-12
+W9-X-21 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-21
+W9-X-22 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-22
+W9-X-31 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-31
+W9-X-32 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-32
+W9-X-41 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-41
+W9-X-42 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-42
+W9-X-51 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-51
+W9-X-52 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-52
+W9-X-61 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-61
+W9-X-62 /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-46-23-454Z/W9-X-62

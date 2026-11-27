@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// W10 single writer (plan: notes/diagnoses/w10-diagnosis.md; the W9 version is writer-w9.mjs). W10 changes: the Setting names shared current business; no sleep line; lives-with only for real households; parse stops at the @claude message and attaches a reaction-only block to the message before it.
 // W9 single writer (plan: notes/diagnoses/w9-diagnosis.md; the W8 version is writer-w8.mjs). W9 changes: the writing unit is a day again (W7's, @claude cuts and resumes it); emoji are kept or dropped per message in code (emojiKeep per person); the life line is one plain sentence and knows is the relation only; people who are in the same place stop texting each other; eight work options to pick from. W8 single writer (plan: notes/diagnoses/w8-diagnosis.md; the W7 version is writer-w7.mjs). W8 changes: a call writes the next stretch of the chat (until it goes quiet), not a day, and each stretch is released as soon as it is written; chat volume is drawn per person in code and the cast has no texts or style line; the background says the others know each other's lives and carries no daily routine; topic briefs get opener options too; @claude gives the answer, not its search (effort medium). W7 single writer (plan: notes/diagnoses/w7-diagnosis.md; the W6 version is writer-w6.mjs). W7 changes: list fields split on commas and semicolons; the place is decided in casting call 1 from the situation and topic (the code's draw is only the fallback); style says how much, not which tokens; knows is the relation, texts is how often, the setting no longer says what they know about each other; the opener is picked in code from four options; spans name the day and night the chunk ends on and messages past the chunk end are kept; @claude gives no Sources line; a family's names fit one family. W6 single writer (the W5 version is writer-w5.mjs). W6 changes: no silent-day allowance and no offline-note channel; stamps are read as written and sorted (no clamp); the writer and Claude are told today's date; casting in two calls (who they are, names and work picked in code; then the lives), no type labels or temperament line, a style line only when there is one; the topic is on the opener's mind, not pasted in as the first message; batch runs draw their own start; @claude is a text-message answer from found pages only, and characters get by when it can't find something; a photo, link or file sent is a message like "[photo: the bill]". W5 single writer (plan: notes/diagnoses/w5-diagnosis.md; the W4 version is writer-w4.mjs). W5 changes: casting keeps what the situation says the participants are and invents no world facts; the writer says nothing untrue about the world, @claude gets the chat and answers as a chat message; capitals are applied by code from a per-person yes/no; days are not episodes (a day may be silent, no bedtime close); later days do not restate the opening situation; bracketed offline lines [..] for what happens off the phone; a same-weekday backwards stamp is an ordering slip, not a week jump. W4 single writer (plan: notes/diagnoses/w4-diagnosis.md). W4 changes: the span lines name the weekday after midnight, a later day continues from the last message (not from a fixed 04:00) and rejected chunks are saved (rejects.txt); (the style line stays: dropping it was tried and aborted, see ITERATIONS); the log is written after every day; --live runs one brief from the viewer's Start form and releases turns on the story clock (see README "Viewer"); with oracle on, a message starting "@claude" cuts the day and Claude's answer is posted before the day resumes; (a delete-only pass, cut.mjs, was tried and lost the blind check: see ITERATIONS, W4). W3 single writer (plans: notes/diagnoses/w1..w3-diagnosis.md; the W2 version is writer-w2.mjs, the W1 version writer-w1.mjs). W3 changes: each call writes one waking day with no end time to fill, effort medium by default, no "last talked about" in the setting, plain content (temperament-only like-line, unremarkable messages). W2 notes:. W2 changes: style is typing only, no appointments in the cast, secrets outside the background, chunks break at 04:00, no "for a story", effort option. Like baseline.mjs (same cast rows in, same log.jsonl / transcript.txt out, same parse/dated), but:
 //  - one Haiku call per chunk (first: start to the next 04:00, then 04:00 to 04:00; --days sets the full chunks after it), given the chat so far (item 5): the structure the live app needs;
 //  - the cast's example texts are not passed (item 1);
@@ -13,7 +14,7 @@
 //   node writer.mjs --live spec.json [--out dir] [--speed 60]   spec.json: {situation, topic, people, secrets: {"Maya": "..."}, model, oracle, start?, days?}; writes the run as --gen does and releases it to <out> (default <run dir>/export): run.json and turn-XXXX.json files in the viewer's live format, each turn at its story time / speed (1 story minute = 60/speed s); prints RUN/TURN/DONE <file> lines.
 //   Other options: --model haiku|sonnet (the writer and the casting call), --oracle (the @claude line; answers by ORACLE_MODEL, default sonnet).
 //   Writes writer-runs/<timestamp>/<label>/{transcript.txt, log.jsonl} and writer-runs/<timestamp>/list.txt.
-import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path'; import { spawn } from 'node:child_process'; import { ENV_NOTE, hhmm } from './prompts.mjs';
+import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path'; import { spawn } from 'node:child_process'; import { ENV_NOTE } from './prompts.mjs';
 const argv = process.argv.slice(2), opt = (k, d) => { const i = argv.indexOf('--' + k); if (i < 0) return d; const v = argv[i + 1]; argv.splice(i, 2); return v; };
 const flag = k => { const i = argv.indexOf('--' + k); if (i < 0) return false; argv.splice(i, 1); return true; };
 const ORACLE_FLAG = flag('oracle'), LIVE = opt('live'), LIVE_OUT = opt('out'), SPEED = +opt('speed', 60), MODEL0 = opt('model', 'haiku'), ORACLE_MODEL = process.env.ORACLE_MODEL || 'sonnet';
@@ -48,7 +49,7 @@ const iso = t => new Date(t).toISOString().slice(0, 16), stampOf = at => `${WD[n
 // Design wording, not data. The texting block is the plan's item 3 text; the group sentence is item 4; the background sentence is item 2.
 const TEXTING = 'This is texting between people who know each other. Messages are short, often fragments. No names unless it would be unclear who is meant, no greetings, thanks or sign-offs as a habit, and nobody restates a plan or repeats what someone just said. Not everyone answers everything: some people say little for hours, a question can sit unanswered, a thread gets dropped, someone goes off on something unrelated. What anyone says about the real world is true or plainly unsure. Quiet stretches of hours are normal. Most messages are unremarkable (a plain answer, a time, ok, a half-thought); nobody is writing for an audience, so jokes are occasional and often fall flat. Once people are in the same place they stop texting each other until they are apart again. Write as many messages as these people would really send in this time.';
 const BACKGROUND = 'This is background you know as the writer. The others know about each other\'s lives what people who know each other this way would, so nobody tells them what they already know. Their days are ordinary; now and then something from someone\'s day comes up, unplanned. A person\'s typing habits show in some messages, not all; most messages are plain.';
-const block = c => c.names.map(n => { const p = c.cast[n]; return `${n} (${p.who}). ${p.knows} ${c.private_lines[n]} Usually asleep ${hhmm(c.sleep[n][0])} to ${hhmm(c.sleep[n][1])}.${p.texts ? ' ' + p.texts : ''}${p.lives?.length ? ` ${n} lives with ${list(p.lives)}.` : ''}${p.style && !/^\W*none\b/i.test(p.style) ? ` How ${n} types, when it shows: ${p.style}` : ''}`; }).join('\n\n');
+const block = c => c.names.map(n => { const p = c.cast[n]; return `${n} (${p.who}). ${p.knows} ${c.private_lines[n]}${p.texts ? ' ' + p.texts : ''}${p.lives?.length ? ` ${n} lives with ${list(p.lives)}.` : ''}${p.style && !/^\W*none\b/i.test(p.style) ? ` How ${n} types, when it shows: ${p.style}` : ''}`; }).join('\n\n');
 const secretLines = secrets => Object.entries(secrets ?? {}).map(([n, s]) => `Only ${n} knows this, at least at first: ${s.replace(/\s*$/, '')} It is on ${n}'s mind; ${n} may hint at it or tell someone in the chat when it fits, or not yet. Nobody else knows it until ${n} says it in the chat.`).join('\n');
 const transcript = ms => ms.map(m => `--- ${stampOf(m.at)}, ${m.who}\n${m.text}${m.reacts.length ? `\n(${m.reacts.map(([e, n]) => `${e} ${n}`).join(', ')})` : ''}\n`).join('\n');
 const ASK = 'Anyone can ask Claude, an AI assistant in this chat that reads it and searches the web, by putting "@claude" in a message, written like any other message; stop right after such a message. Nobody states a fact about the real world (news, research, timetables, prices, opening hours, rules, history) that they would not know offhand unless Claude has posted it; if Claude couldn\'t find it, they get by without it.';
@@ -63,12 +64,15 @@ function promptFor(c, secrets, so_far, from, to, resume, dayStart) {
 }
 // baseline.mjs's parse/dated (same format). An empty or unparseable reply is retried like any bad reply.
 const ASKS = /@claude\b/i;
-function parse(text, names, min) {
+function parse(text, names, min, stop) {
   const msgs = [], blocks = text.split(/^(?=--- )/m); if (!blocks[0].startsWith('--- ')) blocks.shift();
   for (const b of blocks) {
     const m = b.match(/^--- (\w{3}) (\d{1,2}):(\d\d), ([^\n]+)\n([\s\S]*)$/); if (!m || !WD.includes(m[1]) || !names.includes(m[4].trim()) || +m[2] > 23) return null;
     const body = m[5].trim().split('\n'), last = body.at(-1)?.trim(), rc = last?.match(/^\(((?:\p{Extended_Pictographic}\uFE0F?[^,()]*? \d+)(?:, \p{Extended_Pictographic}\uFE0F?[^,()]*? \d+)*)\)$/u);
-    msgs.push({ who: m[4].trim(), text: (rc ? body.slice(0, -1) : body).join('\n').trim(), wd: WD.indexOf(m[1]), hm: `${p2(m[2])}:${m[3]}`, reacts: rc ? rc[1].split(', ').map(x => { const k = x.lastIndexOf(' '); return [x.slice(0, k), +x.slice(k + 1)]; }) : [] });
+    const text = (rc ? body.slice(0, -1) : body).join('\n').trim(), reacts = rc ? rc[1].split(', ').map(x => { const k = x.lastIndexOf(' '); return [x.slice(0, k), +x.slice(k + 1)]; }) : [];
+    if (!text && reacts.length && msgs.length) { msgs.at(-1).reacts.push(...reacts); continue; } // a block of only a reaction line belongs to the message before it
+    msgs.push({ who: m[4].trim(), text, wd: WD.indexOf(m[1]), hm: `${p2(m[2])}:${m[3]}`, reacts });
+    if (stop && ASKS.test(msgs.at(-1).text)) break;
   }
   return msgs.length && msgs.length >= min && msgs.every(m => m.text) ? msgs : null;
 }
@@ -88,11 +92,11 @@ function chunkEnds(startAt, days) {
   return Array.from({ length: days + 1 }, (_, k) => iso(t + k * 864e5));
 }
 // One chunk (an @claude message ends it early, so the usual minimum count is lowered to 1 when one is present): the parsed messages must fall inside [from, to] (a stamp more than 12 h past `to`, such as a week ahead after dated(), is rejected and retried; stamps up to 12 h past `to` are kept and the next day starts after them). Rejected texts are kept in rejects.txt.
-async function chunk(c, secrets, so_far, from, to, label, min, resume, dayStart) {
+async function chunk(c, secrets, so_far, from, to, label, min, resume, dayStart, stop) {
   const usages = [];
   for (let a = 0; a < 3; a++) {
     const r = await claude(promptFor(c, secrets, so_far, from, to, resume, dayStart)).catch(e => { console.error(`${label}: ${e.message}`); return null; }); if (!r) continue; usages.push(r.usage);
-    const ms = parse(r.text, c.names, ORACLE && ASKS.test(r.text) ? Math.min(min, 1) : min); if (!ms) { console.error(`${label}: not in the format, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1} (format)\n${r.text}\n\n`); continue; }
+    const ms = parse(r.text, c.names, ORACLE && ASKS.test(r.text) ? Math.min(min, 1) : min, stop); if (!ms) { console.error(`${label}: not in the format, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1} (format)\n${r.text}\n\n`); continue; }
     const dm = dated(ms, from).map(m => { const p = c.cast[m.who]; return { ...m, text: (p?.capitals ? caps : x => x)(p?.emojiKeep !== undefined ? emojiDrop(m.text, p.emojiKeep) : m.text) }; }), limit = +new Date(to + ':00Z');
     if (dm.some(m => +new Date(m.at + ':00Z') > limit + 12 * 36e5)) { console.error(`${label}: stamps out of order or before the span, ${a < 2 ? 'retrying' : 'giving up'}`); fs.appendFileSync(path.join(out, 'rejects.txt'), `=== ${label} ${from} to ${to}, attempt ${a + 1}\n${r.text}\n\n`); usages.rejected = (usages.rejected ?? 0) + 1; continue; }
     return { dm, usages };
@@ -103,7 +107,7 @@ const MAX_ASKS = 5; // design parameter: questions answered per day
 async function writeDay(c, secrets, so_far, from, to, label, dayStart) {
   const day = [], usages = []; let resume = null, rejects = 0;
   for (let asks = 0; ; asks++) {
-    const r = await chunk(c, secrets, [...so_far, ...day], resume ?? from, to, label, resume ? 1 : so_far.length ? 0 : 5, !!resume, dayStart);
+    const r = await chunk(c, secrets, [...so_far, ...day], resume ?? from, to, label, resume ? 1 : so_far.length ? 0 : 5, !!resume, dayStart, ORACLE && asks < MAX_ASKS);
     if (!r) return day.length ? { dm: day, usages, rejects } : null; usages.push(...r.usages); rejects += r.usages.rejected ?? 0;
     if (!r.dm) return day.length ? { dm: day, usages, rejects } : null;
     const i = ORACLE && asks < MAX_ASKS ? r.dm.findIndex(m => ASKS.test(m.text)) : -1;
@@ -145,12 +149,11 @@ const castPrompt = (people, brief, topic, secretText, place) => { const N = peop
 Their lines must agree with each other (the same place, the same way of knowing each other). People in a group of one cohort text in much the same register as each other; family members can differ.
 
 ${place ? `They live in ${place}.\n\n` : ''}Reply with only these lines, each on one line, in this order:
-One line starting "Setting:": a few sentences in the second person for ${N > 2 ? 'the whole group' : 'both of them'}, saying where you ${N > 2 ? 'all ' : 'both '}are (for people, where they live: that place), how you know each other. Do not invent public facts or events (news, publications, research results, records): only what these participants would really know, true in the real world.${topic ? ' If the topic concerns something you share include the facts you all know about it.' : ''}
+One line starting "Setting:": a few sentences in the second person for ${N > 2 ? 'the whole group' : 'both of them'}, saying where you ${N > 2 ? 'all ' : 'both '}are (for people, where they live: that place), how you know each other, and one or two ordinary things you have going on together at the moment that this chat gets used for. Do not invent public facts or events (news, publications, research results, records): only what these participants would really know, true in the real world.${topic ? ' If the topic concerns something you share include the facts you all know about it.' : ''}
 Then, for each person in turn, these lines, each starting with that person's name:
-"<name> knows:" in the second person ('You ...'), who each of the others is to you and how you know them, a few words each, nothing about what they are like or what they do for you.
+"<name> knows:" in the second person ('You ...'), who each of the others is to you and how you know them, a few words each, taken from the situation and the participant lines above (kinship or a partnership only where they name it), nothing about what they are like or what they do for you.
 "<name> life:" in the second person ('You ...'), one plain sentence: where you live, what fills your days (given above) and who you live with. No other details.
-"<name> lives with:" the names of the others in this chat who live in the same home as you, or "nobody".
-"<name> sleeps:" the hours they usually sleep as HH:MM-HH:MM, following from their life (most people sleep overnight).
+"<name> lives with:" the names of the others in this chat who share your home because of what they are to you above (family, partner, housemate), or "nobody".
 "<name> style:" in a few plain words, how much <name> uses emoji and texting abbreviations, without naming any, or "none".
 "<name> capitals:" yes or no, whether <name>'s messages start with a capital letter.
 Last, one line starting "${people[0].name} opens with:", four different things, each a short phrase starting with a verb (what is sent, not just the verb) and separated by " | ", that ${people[0].name} might send ${N > 2 ? 'the group' : 'the other'}${topic ? ' to start on this' : ', fitting the situation'}.`; };
@@ -159,10 +162,10 @@ const fieldOf = (text, k) => text.match(new RegExp(`^\\W*${k}[*_\\s]*:[*_\\s]*(.
 const textsFor = names => { const o = names.length < 3 ? names.map(() => '') : [...names].sort(() => Math.random() - .5).reduce((m, n, k) => ({ ...m, [n]: `${n} texts in this chat ${k === 0 ? 'a lot' : pick(['now and then', 'only now and again'])}.` }), {}); return names.map(n => o[n] ?? ''); };
 function parseCast(text, people, topic) {
   const f = k => fieldOf(text, k)?.replace(new RegExp(`^${k}\\s*:\\s*`), ''), names = people.map(p => p.name), texts = textsFor(names);
-  const openers = (f(`${names[0]} opens with`) ?? '').split('|').map(x => x.trim()).filter(Boolean), c = { names, setting: f('Setting'), openers, opener: pick(openers) ?? '', cast: {}, private_lines: {}, sleep: {} };
-  for (const [i, n] of names.entries()) { const h = f(`${n} sleeps`)?.match(/(\d{1,2})(?::(\d\d))?\s*(?:-|–|to)\s*(\d{1,2})(?::(\d\d))?/); if (h) c.sleep[n] = [+h[1] + +(h[2] ?? 0) / 60, +h[3] + +(h[4] ?? 0) / 60];
+  const openers = (f(`${names[0]} opens with`) ?? '').split('|').map(x => x.trim()).filter(Boolean), c = { names, setting: f('Setting'), openers, opener: pick(openers) ?? '', cast: {}, private_lines: {} };
+  for (const [i, n] of names.entries()) {
     c.cast[n] = { who: people[i].who, work: people[i].work, knows: f(`${n} knows`), texts: texts[i], style: f(`${n} style`), emojiKeep: pick([0.15, 0.35, 0.6]), capitals: (v => v && /^\W*(yes|no)\b/i.test(v) ? /^\W*yes/i.test(v) : undefined)(f(`${n} capitals`)), lives: c.names.filter(o => o !== n && new RegExp(`\\b${o}\\b`, 'u').test(f(`${n} lives with`) ?? '')), ex: [] }; c.private_lines[n] = f(`${n} life`); }
-  return c.setting && openers.length >= 2 && names.every(n => Object.values(c.cast[n]).every(v => v !== undefined) && c.private_lines[n] && c.sleep[n]) && c;
+  return c.setting && openers.length >= 2 && names.every(n => Object.values(c.cast[n]).every(v => v !== undefined) && c.private_lines[n]) && c;
 }
 
 // ---- run ----
@@ -202,7 +205,7 @@ await Promise.all(Array.from({ length: CONC }, async () => { while (k < items.le
   const days = it.gen?.days ?? DAYS, all = [], usage = []; let ok = true, rejects = 0;
   const sink = it.live ? liveSink(LIVE_OUT || path.join(out, 'export'), { id: `${ts}-${it.label}`, started: new Date().toISOString(), model: MODEL, people: c.names.length, names: c.names, brief: c.situation || '', topic: c.topic, secrets, oracle: ORACLE }) : null; sink?.start();
   const flush = complete => { // the log after every day, so a run in progress can be read
-    const log = [{ writer: 'w9', ...(it.live && { live: true }), source, model: MODEL, effort: EFFORT, days, oracle: ORACLE, start: startAt, complete, rejects, usage }, c, ...(secrets ? [{ secrets }] : [])]; let j = 0;
+    const log = [{ writer: 'w10', ...(it.live && { live: true }), source, model: MODEL, effort: EFFORT, days, oracle: ORACLE, start: startAt, complete, rejects, usage }, c, ...(secrets ? [{ secrets }] : [])]; let j = 0;
     for (const m of all) { if (m.oracle) { log.push({ who: m.who, text: m.text, oracle: true, question: m.question, posted: true, at: m.at, checkin: m.at }); continue; }
       log.push({ who: m.who, text: m.text, posted: true, at: m.at, checkin: m.at }); for (const [emoji, n] of m.reacts) for (let q = 0; q < n; q++) log.push({ who: '', react: emoji, to: j, posted: false, at: m.at }); j++; }
     fs.writeFileSync(path.join(dir, 'log.jsonl'), log.map(r => JSON.stringify(r)).join('\n') + '\n'); fs.writeFileSync(path.join(dir, 'transcript.txt'), transcript(all)); };

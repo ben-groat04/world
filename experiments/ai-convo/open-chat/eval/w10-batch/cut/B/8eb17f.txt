@@ -1,0 +1,62 @@
+--- Wed 08:47, Renata
+Coffee first. Then the shoebox
+
+--- Wed 09:30, Felipe
+Did you find the 2k or was that a different one
+
+--- Wed 09:31, Renata
+Different one. This is the USD account
+
+--- Wed 10:12, Felipe
+Standup ran 40 min because someone wanted to rename a variable
+
+--- Wed 10:13, Renata
+Which variable
+
+--- Wed 10:14, Felipe
+Doesn't matter. It's "customerRecord" now instead of "cust" and everyone's happy
+
+--- Wed 12:50, Renata
+[photo: a faded receipt from a tapioca place, date half-cut off]
+
+--- Wed 12:51, Renata
+Is this one ours? From the first week
+
+--- Wed 12:58, Felipe
+Can't tell, the amount's gone. Could be anyone's bad tapioca
+
+--- Wed 13:05, Renata
+Rude
+
+--- Wed 15:40, Felipe
+Release notes are half done. Writing them is the worst part somehow
+
+--- Wed 16:22, Renata
+Client wants the report by friday now 🙃
+
+--- Wed 16:23, Felipe
+Did you say no
+
+--- Wed 16:30, Renata
+Said "I'll see what I can do," which is how it starts
+
+--- Wed 17:45, Felipe
+Market still on for Sat. Checked the weather, no rain
+
+--- Wed 17:46, Renata
+Ok good. Bring the umbrella anyway
+
+--- Wed 19:02, Felipe
+Sure
+
+--- Wed 22:40, Felipe
+Pushed the fix. Tests green. Going to watch whatever's on and not think about it
+
+--- Wed 23:20, Renata
+Found it. The bank split the statement by currency and the client never looked. 3 hrs of my life, again
+
+--- Wed 23:21, Felipe
+Bill him
+
+--- Wed 23:21, Renata
+Already did 😂

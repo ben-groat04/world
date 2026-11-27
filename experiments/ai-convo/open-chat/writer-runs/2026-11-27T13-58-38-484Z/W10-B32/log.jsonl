@@ -1,0 +1,103 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-06T11:20","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":2071,"cache_read_input_tokens":0,"output_tokens":2719,"output_tokens_details":{"thinking_tokens":1709},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2071,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2719,"cache_read_input_tokens":0,"cache_creation_input_tokens":2071,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2071},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3031,"cache_read_input_tokens":0,"output_tokens":3044,"output_tokens_details":{"thinking_tokens":1990},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3031,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":3044,"cache_read_input_tokens":0,"cache_creation_input_tokens":3031,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3031},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":4086,"cache_read_input_tokens":0,"output_tokens":4162,"output_tokens_details":{"thinking_tokens":2969},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":4086,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":4162,"cache_read_input_tokens":0,"cache_creation_input_tokens":4086,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":4086},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Vanessa","Thiago","Rosana","Gabriel"],"setting":"You are all covering the evening shift at a small vet clinic in Recife, Brazil, where you work together as colleagues. Right now you are handling a post-surgery dog in the ICU, a backlog of discharge calls, and lab samples that need to go out on the morning courier run. This chat is for passing updates and swapping shifts while you cover.","openers":["Send the ICU dog's overnight update","Ask who is taking the lab samples on the morning run","Confirm the discharge calls are finished","Remind everyone to log the fridge temperatures"],"opener":"Confirm the discharge calls are finished","cast":{"Vanessa":{"who":"34, woman, a veterinarian covering the shift","work":"clinic manager","knows":"You know Thiago as the veterinary nurse covering the shift and an ICU technician at the clinic, Rosana as the practice receptionist covering the shift, and Gabriel as the student on placement covering the shift, all colleagues at the clinic.","texts":"Vanessa texts in this chat a lot.","style":"moderate emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Thiago":{"who":"27, man, a veterinary nurse covering the shift","work":"ICU technician","knows":"You know Vanessa as the clinic manager and covering vet, Rosana as the practice receptionist covering the shift, and Gabriel as the student on placement covering the shift, all colleagues at the clinic.","texts":"Thiago texts in this chat only now and again.","style":"moderate emoji and some texting abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Rosana":{"who":"58, woman, the practice receptionist covering the shift","work":"retired veterinary nurse","knows":"You know Vanessa as the clinic manager and covering vet, Thiago as the veterinary nurse covering the shift, and Gabriel as the student on placement covering the shift, all colleagues at the clinic.","texts":"Rosana texts in this chat now and then.","style":"moderate emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Gabriel":{"who":"22, man, a student on placement covering the shift","work":"lab-sample courier","knows":"You know Vanessa as the clinic manager and covering vet, Thiago as the veterinary nurse covering the shift, and Rosana as the practice receptionist covering the shift, all colleagues at the clinic.","texts":"Gabriel texts in this chat only now and again.","style":"moderate emoji and some texting abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Vanessa":"You live in Recife, where you run the clinic and cover shifts as the veterinarian, and you live alone.","Thiago":"You live in Recife, where you work as an ICU technician at the clinic, and you live alone.","Rosana":"You live in Recife, where you work the front desk at the clinic and spend your days on the phones, and you live alone.","Gabriel":"You live in Recife, where you are a student on placement at the clinic and also courier lab samples, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":793,"cache_read_input_tokens":0,"output_tokens":1691,"output_tokens_details":{"thinking_tokens":1172},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":793,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1691,"cache_read_input_tokens":0,"cache_creation_input_tokens":793,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":793},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1132,"cache_read_input_tokens":0,"output_tokens":1997,"output_tokens_details":{"thinking_tokens":1139},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1132,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1997,"cache_read_input_tokens":0,"cache_creation_input_tokens":1132,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1132},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Recife, Brazil","castMs":18281,"situation":"Colleagues covering shifts at a vet clinic.","topic":null}
+{"who":"Vanessa","text":"Guys did we finish the discharge calls or is there still a list?","posted":true,"at":"2026-12-06T11:20","checkin":"2026-12-06T11:20"}
+{"who":"Rosana","text":"Still 2 left. Mr. Assis (poodle) and the Lima cat. Lima didnt pick up twice","posted":true,"at":"2026-12-06T11:26","checkin":"2026-12-06T11:26"}
+{"who":"Vanessa","text":"Ok I'll try lima after this one","posted":true,"at":"2026-12-06T11:27","checkin":"2026-12-06T11:27"}
+{"who":"Thiago","text":"ICU dog (the lab mix from this morning) still on fluids, pressure ok, pee ok. No vomit since 10","posted":true,"at":"2026-12-06T11:58","checkin":"2026-12-06T11:58"}
+{"who":"Vanessa","text":"Good. Keep an eye on the bp at 14h","posted":true,"at":"2026-12-06T12:02","checkin":"2026-12-06T12:02"}
+{"who":"Thiago","text":"Will do 👍","posted":true,"at":"2026-12-06T12:03","checkin":"2026-12-06T12:03"}
+{"who":"Gabriel","text":"I'm in the lab room, samples are labeled but I need the courier form. Where is it","posted":true,"at":"2026-12-06T13:40","checkin":"2026-12-06T13:40"}
+{"who":"Rosana","text":"Top drawer at the front desk, blue folder. Monday run is 8am?","posted":true,"at":"2026-12-06T13:44","checkin":"2026-12-06T13:44"}
+{"who":"Gabriel","text":"Yeah 8am pickup","posted":true,"at":"2026-12-06T13:45","checkin":"2026-12-06T13:45"}
+{"who":"Vanessa","text":"Rosana did mr assis pick up?","posted":true,"at":"2026-12-06T14:10","checkin":"2026-12-06T14:10"}
+{"who":"Rosana","text":"Yes he said he'd come tomorrow for the stitches, booked 9:30","posted":true,"at":"2026-12-06T14:12","checkin":"2026-12-06T14:12"}
+{"who":"Vanessa","text":"Perfect. Lima?","posted":true,"at":"2026-12-06T14:13","checkin":"2026-12-06T14:13"}
+{"who":"Rosana","text":"No answer again. Left voicemail. I'll try after 5","posted":true,"at":"2026-12-06T14:20","checkin":"2026-12-06T14:20"}
+{"who":"Gabriel","text":"Heading out for a bit, need to eat something. Back by 6:30","posted":true,"at":"2026-12-06T17:45","checkin":"2026-12-06T17:45"}
+{"who":"Vanessa","text":"Ok. Who's on the ICU now","posted":true,"at":"2026-12-06T17:46","checkin":"2026-12-06T17:46"}
+{"who":"Thiago","text":"Me, I'm here till 22","posted":true,"at":"2026-12-06T17:50","checkin":"2026-12-06T17:50"}
+{"who":"Rosana","text":"Lima called back!! The cat is fine, owner wants pickup tomorrow at 11. Booked","posted":true,"at":"2026-12-06T18:15","checkin":"2026-12-06T18:15"}
+{"who":"Vanessa","text":"Amazing","posted":true,"at":"2026-12-06T18:16","checkin":"2026-12-06T18:16"}
+{"who":"","react":"👍","to":17,"posted":false,"at":"2026-12-06T18:16"}
+{"who":"","react":"👍","to":17,"posted":false,"at":"2026-12-06T18:16"}
+{"who":"Gabriel","text":"Back. Samples in the fridge, I double checked the tube numbers vs the form","posted":true,"at":"2026-12-06T18:30","checkin":"2026-12-06T18:30"}
+{"who":"Thiago","text":"ICU dog just woke up and is trying to get off the blanket lol. He's ok I think, finally awake","posted":true,"at":"2026-12-06T19:02","checkin":"2026-12-06T19:02"}
+{"who":"Vanessa","text":"Great. Dont let him stand on the drip","posted":true,"at":"2026-12-06T19:05","checkin":"2026-12-06T19:05"}
+{"who":"Thiago","text":"Already on it","posted":true,"at":"2026-12-06T19:06","checkin":"2026-12-06T19:06"}
+{"who":"Vanessa","text":"I'm home now. Tell me if anything changes with the dog, I'll be up","posted":true,"at":"2026-12-06T21:30","checkin":"2026-12-06T21:30"}
+{"who":"Thiago","text":"Will do","posted":true,"at":"2026-12-06T21:31","checkin":"2026-12-06T21:31"}
+{"who":"Thiago","text":"Leaving now. Handed the ICU to gabriel, he has the sheet and the 2am check. Bp was 110 at 21h","posted":true,"at":"2026-12-06T22:40","checkin":"2026-12-06T22:40"}
+{"who":"Gabriel","text":"Got it. 2am check, if he vomits do I call vanessa?","posted":true,"at":"2026-12-06T22:48","checkin":"2026-12-06T22:48"}
+{"who":"Vanessa","text":"Yes call me","posted":true,"at":"2026-12-06T22:50","checkin":"2026-12-06T22:50"}
+{"who":"Gabriel","text":"Dog's temp 37.4, all calm","posted":true,"at":"2026-12-06T23:55","checkin":"2026-12-06T23:55"}
+{"who":"Vanessa","text":"Goodnight all","posted":true,"at":"2026-12-07T00:20","checkin":"2026-12-07T00:20"}
+{"who":"Gabriel","text":"2am check done. Temp 37.8, bp 105. He tried to chew the drip line, I moved it. No vomit","posted":true,"at":"2026-12-07T02:04","checkin":"2026-12-07T02:04"}
+{"who":"Vanessa","text":"Ok good. Call if anything changes","posted":true,"at":"2026-12-07T02:11","checkin":"2026-12-07T02:11"}
+{"who":"Gabriel","text":"Up early for the courier. Samples still in the fridge","posted":true,"at":"2026-12-07T06:52","checkin":"2026-12-07T06:52"}
+{"who":"Thiago","text":"On my way, 15 min. Dog ok?","posted":true,"at":"2026-12-07T07:34","checkin":"2026-12-07T07:34"}
+{"who":"Gabriel","text":"Ate a little. Peed at 5","posted":true,"at":"2026-12-07T07:38","checkin":"2026-12-07T07:38"}
+{"who":"Gabriel","text":"[photo: courier form, signed]","posted":true,"at":"2026-12-07T08:02","checkin":"2026-12-07T08:02"}
+{"who":"Vanessa","text":"Got it. Who's collecting","posted":true,"at":"2026-12-07T08:05","checkin":"2026-12-07T08:05"}
+{"who":"Gabriel","text":"Driver at 8:20. Tube numbers match the form","posted":true,"at":"2026-12-07T08:07","checkin":"2026-12-07T08:07"}
+{"who":"Rosana","text":"Morning. Mr Assis at 9:30 still and Lima at 11?","posted":true,"at":"2026-12-07T08:40","checkin":"2026-12-07T08:40"}
+{"who":"Vanessa","text":"Yes both. Rosana can you put Lima on the board","posted":true,"at":"2026-12-07T08:42","checkin":"2026-12-07T08:42"}
+{"who":"Rosana","text":"Already did","posted":true,"at":"2026-12-07T08:43","checkin":"2026-12-07T08:43"}
+{"who":"Thiago","text":"Dog's bp 118, pee good, eating a bit","posted":true,"at":"2026-12-07T09:14","checkin":"2026-12-07T09:14"}
+{"who":"Rosana","text":"Mr Assis is here. Thiago you free for the stitches?","posted":true,"at":"2026-12-07T09:31","checkin":"2026-12-07T09:31"}
+{"who":"Thiago","text":"Coming now","posted":true,"at":"2026-12-07T09:33","checkin":"2026-12-07T09:33"}
+{"who":"Thiago","text":"Stitches out, wound clean, he's fine. Owner asked if the dog can go home Tuesday","posted":true,"at":"2026-12-07T10:02","checkin":"2026-12-07T10:02"}
+{"who":"Vanessa","text":"Not until bloods are back. I'll check at lunch","posted":true,"at":"2026-12-07T10:05","checkin":"2026-12-07T10:05"}
+{"who":"Rosana","text":"Lima's owner is here early with the carrier","posted":true,"at":"2026-12-07T11:04","checkin":"2026-12-07T11:04"}
+{"who":"Vanessa","text":"Coming, 5 min","posted":true,"at":"2026-12-07T11:06","checkin":"2026-12-07T11:06"}
+{"who":"Vanessa","text":"Dog's bloods are fine, creatinine down. Maybe discharge Tue morning if he keeps eating","posted":true,"at":"2026-12-07T14:02","checkin":"2026-12-07T14:02"}
+{"who":"Thiago","text":"Nice 👍","posted":true,"at":"2026-12-07T14:04","checkin":"2026-12-07T14:04"}
+{"who":"Gabriel","text":"Back from lunch. Anything for the ICU before I start the afternoon?","posted":true,"at":"2026-12-07T14:20","checkin":"2026-12-07T14:20"}
+{"who":"Thiago","text":"Just fluids to 50%, no other changes","posted":true,"at":"2026-12-07T14:25","checkin":"2026-12-07T14:25"}
+{"who":"Rosana","text":"Someone from the bank called about the card machine receipts. Who do I send them to","posted":true,"at":"2026-12-07T15:40","checkin":"2026-12-07T15:40"}
+{"who":"Vanessa","text":"Me. Forward it","posted":true,"at":"2026-12-07T15:44","checkin":"2026-12-07T15:44"}
+{"who":"Thiago","text":"Leaving at 18. Who has the ICU tonight?","posted":true,"at":"2026-12-07T17:30","checkin":"2026-12-07T17:30"}
+{"who":"Gabriel","text":"I do till 22. Then whoever","posted":true,"at":"2026-12-07T17:33","checkin":"2026-12-07T17:33"}
+{"who":"Vanessa","text":"I can come back at 21 if you need me","posted":true,"at":"2026-12-07T18:10","checkin":"2026-12-07T18:10"}
+{"who":"Gabriel","text":"Ok, I'll call if so","posted":true,"at":"2026-12-07T18:12","checkin":"2026-12-07T18:12"}
+{"who":"Rosana","text":"[photo: Lima the cat in his carrier, owner sent it]","posted":true,"at":"2026-12-07T22:14","checkin":"2026-12-07T22:14"}
+{"who":"Rosana","text":"Looks very annoyed","posted":true,"at":"2026-12-07T22:15","checkin":"2026-12-07T22:15"}
+{"who":"Gabriel","text":"Dog temp 37.9, all calm. Will check again at 1","posted":true,"at":"2026-12-07T23:31","checkin":"2026-12-07T23:31"}
+{"who":"Vanessa","text":"Ok. Goodnight","posted":true,"at":"2026-12-08T00:10","checkin":"2026-12-08T00:10"}
+{"who":"Gabriel","text":"1am check. Temp 37.6, bp 108. Quiet","posted":true,"at":"2026-12-08T01:12","checkin":"2026-12-08T01:12"}
+{"who":"Vanessa","text":"Ok","posted":true,"at":"2026-12-08T01:14","checkin":"2026-12-08T01:14"}
+{"who":"Gabriel","text":"Dog peed at 5 again. Ate a little at 6","posted":true,"at":"2026-12-08T06:58","checkin":"2026-12-08T06:58"}
+{"who":"Thiago","text":"Here. Dog ok?","posted":true,"at":"2026-12-08T07:40","checkin":"2026-12-08T07:40"}
+{"who":"Gabriel","text":"Yeah he's ok","posted":true,"at":"2026-12-08T07:41","checkin":"2026-12-08T07:41"}
+{"who":"Vanessa","text":"Running 30 min late. Thiago can you do the 8am bp when you're settled","posted":true,"at":"2026-12-08T08:15","checkin":"2026-12-08T08:15"}
+{"who":"Thiago","text":"Ok","posted":true,"at":"2026-12-08T08:17","checkin":"2026-12-08T08:17"}
+{"who":"Rosana","text":"Morning. Lima at 11 still. Dog's owner asking what time he can pick up","posted":true,"at":"2026-12-08T08:44","checkin":"2026-12-08T08:44"}
+{"who":"Vanessa","text":"Tell him after my check, around 13 if bp and appetite are fine","posted":true,"at":"2026-12-08T08:46","checkin":"2026-12-08T08:46"}
+{"who":"Vanessa","text":"Here. Ok dog can go home today. Thiago please do discharge sheet and meds","posted":true,"at":"2026-12-08T09:10","checkin":"2026-12-08T09:10"}
+{"who":"Thiago","text":"👍","posted":true,"at":"2026-12-08T09:12","checkin":"2026-12-08T09:12"}
+{"who":"Gabriel","text":"I'm off at 9. Anything else before I go","posted":true,"at":"2026-12-08T09:13","checkin":"2026-12-08T09:13"}
+{"who":"Vanessa","text":"Nothing, thanks for the nights","posted":true,"at":"2026-12-08T09:14","checkin":"2026-12-08T09:14"}
+{"who":"Gabriel","text":"👍","posted":true,"at":"2026-12-08T09:15","checkin":"2026-12-08T09:15"}
+{"who":"","react":"👍","to":74,"posted":false,"at":"2026-12-08T09:15"}
+{"who":"Rosana","text":"Lima's owner called, asking if the carrier needs to be bigger. Don't know what to tell him","posted":true,"at":"2026-12-08T10:48","checkin":"2026-12-08T10:48"}
+{"who":"Vanessa","text":"Tell him it's fine, he just needs the cat in it","posted":true,"at":"2026-12-08T10:52","checkin":"2026-12-08T10:52"}
+{"who":"Rosana","text":"Lol ok","posted":true,"at":"2026-12-08T10:53","checkin":"2026-12-08T10:53"}
+{"who":"Thiago","text":"Lima's owner here. Cat is NOT happy with the carrier. 10 min of fighting","posted":true,"at":"2026-12-08T11:42","checkin":"2026-12-08T11:42"}
+{"who":"Rosana","text":"Pics or it didn't happen","posted":true,"at":"2026-12-08T11:44","checkin":"2026-12-08T11:44"}
+{"who":"Thiago","text":"[photo: Lima half out of the carrier, ears flat]","posted":true,"at":"2026-12-08T11:46","checkin":"2026-12-08T11:46"}
+{"who":"Rosana","text":"😂 poor thing","posted":true,"at":"2026-12-08T11:47","checkin":"2026-12-08T11:47"}
+{"who":"Vanessa","text":"Dog bp 112, eating a full bowl. Ok for discharge at 13","posted":true,"at":"2026-12-08T12:20","checkin":"2026-12-08T12:20"}
+{"who":"Thiago","text":"Nice. Owner coming at 13 then","posted":true,"at":"2026-12-08T12:21","checkin":"2026-12-08T12:21"}
+{"who":"Rosana","text":"Card machine jammed again. Anyone know how to reset it or do I call the bank","posted":true,"at":"2026-12-08T12:45","checkin":"2026-12-08T12:45"}
+{"who":"Vanessa","text":"Unplug it 10 sec and plug back in. If not, bank. I'm in a spay at 2, phone off till 3","posted":true,"at":"2026-12-08T12:50","checkin":"2026-12-08T12:50"}
+{"who":"Rosana","text":"Worked!","posted":true,"at":"2026-12-08T12:52","checkin":"2026-12-08T12:52"}
+{"who":"Thiago","text":"Dog discharged. Owner happy. Meds on the sheet","posted":true,"at":"2026-12-08T13:08","checkin":"2026-12-08T13:08"}
+{"who":"Rosana","text":"Booked his check for next Tue 15 Dec 10am","posted":true,"at":"2026-12-08T13:10","checkin":"2026-12-08T13:10"}
+{"who":"Vanessa","text":"Going in now","posted":true,"at":"2026-12-08T13:11","checkin":"2026-12-08T13:11"}
+{"who":"Gabriel","text":"Can someone cover Thursday evening for me? Exam Friday morning","posted":true,"at":"2026-12-08T17:20","checkin":"2026-12-08T17:20"}
+{"who":"Thiago","text":"I can do Thursday if you do Saturday","posted":true,"at":"2026-12-08T18:02","checkin":"2026-12-08T18:02"}
+{"who":"Gabriel","text":"Deal","posted":true,"at":"2026-12-08T18:03","checkin":"2026-12-08T18:03"}
+{"who":"Vanessa","text":"Spay done, all good. Who's here tonight","posted":true,"at":"2026-12-08T19:40","checkin":"2026-12-08T19:40"}
+{"who":"Rosana","text":"Nobody. ICU is empty and I left at 17","posted":true,"at":"2026-12-08T19:44","checkin":"2026-12-08T19:44"}
+{"who":"Vanessa","text":"Ok. Lock up","posted":true,"at":"2026-12-08T19:45","checkin":"2026-12-08T19:45"}
+{"who":"Vanessa","text":"Night all","posted":true,"at":"2026-12-08T23:20","checkin":"2026-12-08T23:20"}
+{"who":"Rosana","text":"Night","posted":true,"at":"2026-12-09T00:05","checkin":"2026-12-09T00:05"}

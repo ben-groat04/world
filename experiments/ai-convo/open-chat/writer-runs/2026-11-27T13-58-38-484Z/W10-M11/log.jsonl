@@ -1,0 +1,75 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T07:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1470,"cache_read_input_tokens":0,"output_tokens":1853,"output_tokens_details":{"thinking_tokens":1203},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1470,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1853,"cache_read_input_tokens":0,"cache_creation_input_tokens":1470,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1470},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2054,"cache_read_input_tokens":0,"output_tokens":2758,"output_tokens_details":{"thinking_tokens":1536},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2054,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2758,"cache_read_input_tokens":0,"cache_creation_input_tokens":2054,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2054},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":3261,"cache_read_input_tokens":0,"output_tokens":2408,"output_tokens_details":{"thinking_tokens":1718},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":3261,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2408,"cache_read_input_tokens":0,"cache_creation_input_tokens":3261,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":3261},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Pedro","Fernanda"],"setting":"You and Fernanda are both in Porto, where you each live, and you are mother and son who text to keep in touch. Lately you have been arranging Christmas, with the family meal and who is bringing what, and you are both busy with work before the holidays.","openers":["Send a photo of the Christmas tree","Ask what she wants you to bring for the meal","Remind her the pharmacy closes early on Saturday","Tell her you'll call her after work"],"opener":"Ask what she wants you to bring for the meal","cast":{"Pedro":{"who":"34, man, the child","work":"pharmacist","knows":"You know Fernanda as your mum, your mother since birth.","texts":"","style":"a few emoji and some texting abbreviations.","emojiKeep":0.35,"capitals":true,"lives":[],"ex":[]},"Fernanda":{"who":"61, woman, the parent","work":"bookkeeper","knows":"You know Pedro as your son, your child since birth.","texts":"","style":"uses emoji often and some texting abbreviations.","emojiKeep":0.15,"capitals":false,"lives":[],"ex":[]}},"private_lines":{"Pedro":"You live in Porto, where your days are spent working at the pharmacy and sorting out Christmas plans, and you live alone.","Fernanda":"You live in Porto, where your days go to bookkeeping for clients and the year-end accounts, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":778,"cache_read_input_tokens":0,"output_tokens":942,"output_tokens_details":{"thinking_tokens":728},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":778,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":942,"cache_read_input_tokens":0,"cache_creation_input_tokens":778,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":778},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1034,"cache_read_input_tokens":0,"output_tokens":1439,"output_tokens_details":{"thinking_tokens":1053},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1034,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1439,"cache_read_input_tokens":0,"cache_creation_input_tokens":1034,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1034},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Porto, Portugal","castMs":12808,"situation":"My mum.","topic":null}
+{"who":"Pedro","text":"Mãe o que queres que leve para o jantar de natal?","posted":true,"at":"2026-12-03T07:50","checkin":"2026-12-03T07:50"}
+{"who":"Fernanda","text":"Bom dia filho! Leva o pão e o vinho tinto, o resto já está tratado pela tia","posted":true,"at":"2026-12-03T08:23","checkin":"2026-12-03T08:23"}
+{"who":"Fernanda","text":"As sobremesas são comigo","posted":true,"at":"2026-12-03T08:24","checkin":"2026-12-03T08:24"}
+{"who":"Pedro","text":"Ok. Vinho tinto de que? Tenho de ir à garrafeira ou serve o do supermercado","posted":true,"at":"2026-12-03T08:31","checkin":"2026-12-03T08:31"}
+{"who":"Fernanda","text":"Serve o do Continente se estiver em promoção, mas não compres o mais barato","posted":true,"at":"2026-12-03T09:02","checkin":"2026-12-03T09:02"}
+{"who":"Pedro","text":"Ok","posted":true,"at":"2026-12-03T09:05","checkin":"2026-12-03T09:05"}
+{"who":"","react":"👍","to":5,"posted":false,"at":"2026-12-03T09:05"}
+{"who":"Fernanda","text":"[photo: draft closing balance sheet for Silva Lda]\n\nIsto não bate certo e tenho de fechar até sexta","posted":true,"at":"2026-12-03T12:40","checkin":"2026-12-03T12:40"}
+{"who":"Pedro","text":"Quanto é a diferença","posted":true,"at":"2026-12-03T12:44","checkin":"2026-12-03T12:44"}
+{"who":"Fernanda","text":"8.450 € uma fatura do ano passado que entrou em dezembro","posted":true,"at":"2026-12-03T12:46","checkin":"2026-12-03T12:46"}
+{"who":"Pedro","text":"Ui. Na farmácia está tudo calmo, só gripe e gente a pedir vitamina C","posted":true,"at":"2026-12-03T12:47","checkin":"2026-12-03T12:47"}
+{"who":"Fernanda","text":"Tens tomado a tua vitamina?","posted":true,"at":"2026-12-03T13:10","checkin":"2026-12-03T13:10"}
+{"who":"Pedro","text":"Sim mãe","posted":true,"at":"2026-12-03T13:11","checkin":"2026-12-03T13:11"}
+{"who":"Fernanda","text":"Encontraste a fatura?","posted":true,"at":"2026-12-03T17:58","checkin":"2026-12-03T17:58"}
+{"who":"Pedro","text":"Ainda não. Estou a tratar de umas receitas em atraso no computador. Amanhã vejo a fatura","posted":true,"at":"2026-12-03T19:33","checkin":"2026-12-03T19:33"}
+{"who":"Fernanda","text":"Ok. Não te esqueças do vinho","posted":true,"at":"2026-12-03T19:35","checkin":"2026-12-03T19:35"}
+{"who":"Pedro","text":"Não esqueço. Boa noite mãe","posted":true,"at":"2026-12-03T22:50","checkin":"2026-12-03T22:50"}
+{"who":"Fernanda","text":"Boa noite filho 💛","posted":true,"at":"2026-12-03T22:52","checkin":"2026-12-03T22:52"}
+{"who":"Pedro","text":"Mãe encontrei a fatura","posted":true,"at":"2026-12-04T08:12","checkin":"2026-12-04T08:12"}
+{"who":"Pedro","text":"[photo: fatura do fornecedor, 8.450,00 €, data 11/12/2025]","posted":true,"at":"2026-12-04T08:12","checkin":"2026-12-04T08:12"}
+{"who":"Fernanda","text":"Ah! Estava no sítio errado?","posted":true,"at":"2026-12-04T08:15","checkin":"2026-12-04T08:15"}
+{"who":"Pedro","text":"Na pasta das compras de dezembro. Nem sei como foi lá parar","posted":true,"at":"2026-12-04T08:16","checkin":"2026-12-04T08:16"}
+{"who":"Fernanda","text":"É a de dezembro do ano passado. Devia ter entrado em 2025 e entrou agora","posted":true,"at":"2026-12-04T08:18","checkin":"2026-12-04T08:18"}
+{"who":"Fernanda","text":"Isto explica tudo Vou reabrir o exercício e passar para o ano certo","posted":true,"at":"2026-12-04T08:19","checkin":"2026-12-04T08:19"}
+{"who":"Pedro","text":"Ainda bem","posted":true,"at":"2026-12-04T08:20","checkin":"2026-12-04T08:20"}
+{"who":"Pedro","text":"Queres que vá ao fornecedor confirmar a data?","posted":true,"at":"2026-12-04T08:21","checkin":"2026-12-04T08:21"}
+{"who":"Fernanda","text":"Se puderes. Eu só preciso de um papel dizer que foi emitida em 2025","posted":true,"at":"2026-12-04T08:24","checkin":"2026-12-04T08:24"}
+{"who":"Pedro","text":"Hoje não consigo, a farmácia está cheia. Ao almoço talvez","posted":true,"at":"2026-12-04T08:25","checkin":"2026-12-04T08:25"}
+{"who":"Fernanda","text":"Ok","posted":true,"at":"2026-12-04T08:25","checkin":"2026-12-04T08:25"}
+{"who":"Pedro","text":"Liguei ao fornecedor. Atendeu a Dulce","posted":true,"at":"2026-12-04T12:58","checkin":"2026-12-04T12:58"}
+{"who":"Pedro","text":"Confirma que a fatura é de 11 de dezembro. Entrou no sistema deles com a data errada também, por isso ficou em dezembro","posted":true,"at":"2026-12-04T13:00","checkin":"2026-12-04T13:00"}
+{"who":"Fernanda","text":"Perfeito. Então a diferença é só de data","posted":true,"at":"2026-12-04T13:04","checkin":"2026-12-04T13:04"}
+{"who":"Pedro","text":"Acho que sim. Ela disse que manda o papel por email hoje","posted":true,"at":"2026-12-04T13:05","checkin":"2026-12-04T13:05"}
+{"who":"Fernanda","text":"Ótimo 👍","posted":true,"at":"2026-12-04T13:06","checkin":"2026-12-04T13:06"}
+{"who":"Fernanda","text":"A Lurdes ligou-me a perguntar se levas os guardanapos para o jantar ou se é a tia","posted":true,"at":"2026-12-04T14:37","checkin":"2026-12-04T14:37"}
+{"who":"Pedro","text":"Não sei, diz-lhe que pergunte à tia","posted":true,"at":"2026-12-04T14:41","checkin":"2026-12-04T14:41"}
+{"who":"Fernanda","text":"Já disse","posted":true,"at":"2026-12-04T14:42","checkin":"2026-12-04T14:42"}
+{"who":"Pedro","text":"Mãe tenho o vinho. Comprei um tinto da Quinta a 6,99. Não o mais barato","posted":true,"at":"2026-12-04T17:20","checkin":"2026-12-04T17:20"}
+{"who":"Fernanda","text":"Bom. Isso é o que eu queria","posted":true,"at":"2026-12-04T17:24","checkin":"2026-12-04T17:24"}
+{"who":"Pedro","text":"Pensei que ias dizer que era caro","posted":true,"at":"2026-12-04T17:25","checkin":"2026-12-04T17:25"}
+{"who":"Fernanda","text":"Para vinho de Natal não é caro","posted":true,"at":"2026-12-04T17:31","checkin":"2026-12-04T17:31"}
+{"who":"Fernanda","text":"Fechado! Enviei o balanço ao Silva","posted":true,"at":"2026-12-04T18:52","checkin":"2026-12-04T18:52"}
+{"who":"Pedro","text":"Boa mãe 👏","posted":true,"at":"2026-12-04T18:53","checkin":"2026-12-04T18:53"}
+{"who":"Fernanda","text":"Dá-me uma semana de paz até à próxima fatura","posted":true,"at":"2026-12-04T18:53","checkin":"2026-12-04T18:53"}
+{"who":"Pedro","text":"Haha combinado","posted":true,"at":"2026-12-04T18:58","checkin":"2026-12-04T18:58"}
+{"who":"Pedro","text":"A tia já decidiu se é dia 24 ou 25?","posted":true,"at":"2026-12-04T19:10","checkin":"2026-12-04T19:10"}
+{"who":"Fernanda","text":"Dia 24. Ela quer as passas e o bacalhau à mesma hora que sempre","posted":true,"at":"2026-12-04T19:15","checkin":"2026-12-04T19:15"}
+{"who":"Pedro","text":"Ok, então saio mais cedo na véspera","posted":true,"at":"2026-12-04T19:16","checkin":"2026-12-04T19:16"}
+{"who":"Fernanda","text":"Já jantaste filho?","posted":true,"at":"2026-12-04T23:41","checkin":"2026-12-04T23:41"}
+{"who":"Pedro","text":"Sim, sopa e um iogurte","posted":true,"at":"2026-12-04T23:52","checkin":"2026-12-04T23:52"}
+{"who":"Fernanda","text":"Dorme bem","posted":true,"at":"2026-12-04T23:53","checkin":"2026-12-04T23:53"}
+{"who":"Pedro","text":"Boa noite mãe","posted":true,"at":"2026-12-04T23:54","checkin":"2026-12-04T23:54"}
+{"who":"Fernanda","text":"[photo: email da Dulce, fatura confirmada 11/12/2025]","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Fernanda","text":"Este dá para o Silva","posted":true,"at":"2026-12-05T09:14","checkin":"2026-12-05T09:14"}
+{"who":"Pedro","text":"Boa. Eu hoje só saio às 14, há fila de gente com receitas","posted":true,"at":"2026-12-05T09:31","checkin":"2026-12-05T09:31"}
+{"who":"Pedro","text":"Antes passo na feira a ver se há castanhas","posted":true,"at":"2026-12-05T09:32","checkin":"2026-12-05T09:32"}
+{"who":"Fernanda","text":"Castanhas já? Ainda é cedo","posted":true,"at":"2026-12-05T11:05","checkin":"2026-12-05T11:05"}
+{"who":"Fernanda","text":"Compra só se forem boas, a tia diz que o ano passado vieram moles","posted":true,"at":"2026-12-05T11:06","checkin":"2026-12-05T11:06"}
+{"who":"Pedro","text":"Haha ok","posted":true,"at":"2026-12-05T11:20","checkin":"2026-12-05T11:20"}
+{"who":"Pedro","text":"Mãe a Lurdes mandou-me mensagem a dizer que os guardanapos são dela, não é preciso levar nada","posted":true,"at":"2026-12-05T13:48","checkin":"2026-12-05T13:48"}
+{"who":"Fernanda","text":"Então ainda bem. Já tinha três pacotes em casa","posted":true,"at":"2026-12-05T13:50","checkin":"2026-12-05T13:50"}
+{"who":"Pedro","text":"Vou ter de inventar outra coisa então","posted":true,"at":"2026-12-05T13:52","checkin":"2026-12-05T13:52"}
+{"who":"Fernanda","text":"Pão e vinho chegam","posted":true,"at":"2026-12-05T13:53","checkin":"2026-12-05T13:53"}
+{"who":"","react":"👍","to":61,"posted":false,"at":"2026-12-05T13:53"}
+{"who":"Fernanda","text":"Acabei agora de arrumar a semana. Vou descansar um bocado","posted":true,"at":"2026-12-05T16:10","checkin":"2026-12-05T16:10"}
+{"who":"Pedro","text":"Eu também. Hoje a farmácia foi calma, fui dar uma volta pela Ribeira","posted":true,"at":"2026-12-05T19:02","checkin":"2026-12-05T19:02"}
+{"who":"Pedro","text":"Estava uma loucura de turistas","posted":true,"at":"2026-12-05T19:05","checkin":"2026-12-05T19:05"}
+{"who":"Fernanda","text":"Nesta altura do ano é sempre assim","posted":true,"at":"2026-12-05T19:06","checkin":"2026-12-05T19:06"}
+{"who":"Fernanda","text":"Jantaste?","posted":true,"at":"2026-12-05T21:40","checkin":"2026-12-05T21:40"}
+{"who":"Pedro","text":"Ainda não. Vou fazer arroz","posted":true,"at":"2026-12-05T21:58","checkin":"2026-12-05T21:58"}
+{"who":"Fernanda","text":"Come a sério filho","posted":true,"at":"2026-12-05T22:00","checkin":"2026-12-05T22:00"}
+{"who":"Pedro","text":"Vou","posted":true,"at":"2026-12-05T22:04","checkin":"2026-12-05T22:04"}
+{"who":"Pedro","text":"Boa noite mãe","posted":true,"at":"2026-12-05T22:04","checkin":"2026-12-05T22:04"}

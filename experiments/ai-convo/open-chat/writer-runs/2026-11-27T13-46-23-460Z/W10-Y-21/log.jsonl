@@ -1,0 +1,77 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-04T08:50","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1581,"cache_read_input_tokens":0,"output_tokens":1800,"output_tokens_details":{"thinking_tokens":1136},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1581,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1800,"cache_read_input_tokens":0,"cache_creation_input_tokens":1581,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1581},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2217,"cache_read_input_tokens":0,"output_tokens":1600,"output_tokens_details":{"thinking_tokens":956},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2217,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1600,"cache_read_input_tokens":0,"cache_creation_input_tokens":2217,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2217},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2846,"cache_read_input_tokens":0,"output_tokens":2370,"output_tokens_details":{"thinking_tokens":1616},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2846,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2370,"cache_read_input_tokens":0,"cache_creation_input_tokens":2846,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2846},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Marian","Frank","Priya"],"setting":"You are all in Houston, Texas, and you are former colleagues who worked together years ago. Right now you are arranging a monthly lunch get-together and sharing old photos from a past project.","openers":["Ask who can make lunch next Thursday","Share the list of restaurants you picked","Send the photos from the old project folder","Confirm the table booking for noon"],"opener":"Send the photos from the old project folder","cast":{"Marian":{"who":"58, woman, a former colleague","work":"freelance editor","knows":"You know Frank, a former colleague from work. You know Priya, a former colleague from work.","texts":"Marian texts in this chat a lot.","style":"Little emoji use and only occasional abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Frank":{"who":"61, man, a former colleague","work":"semi-retired surveyor","knows":"You know Marian, a former colleague from work. You know Priya, a former colleague from work.","texts":"Frank texts in this chat only now and again.","style":"none","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]},"Priya":{"who":"34, woman, a former colleague","work":"data analyst","knows":"You know Marian, a former colleague from work. You know Frank, a former colleague from work.","texts":"Priya texts in this chat now and then.","style":"Little emoji use and only occasional abbreviations.","emojiKeep":0.6,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Marian":"You live in Houston, Texas, freelance editing fills most of your days, and you live alone.","Frank":"You live in Houston, Texas, semi-retirement fills your days, and you live alone.","Priya":"You live in Houston, Texas, data analysis work fills your days, and you live alone."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":779,"cache_read_input_tokens":0,"output_tokens":915,"output_tokens_details":{"thinking_tokens":577},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":779,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":915,"cache_read_input_tokens":0,"cache_creation_input_tokens":779,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":779},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1031,"cache_read_input_tokens":0,"output_tokens":2349,"output_tokens_details":{"thinking_tokens":1903},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1031,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2349,"cache_read_input_tokens":0,"cache_creation_input_tokens":1031,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1031},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Houston, USA","castMs":20092,"situation":"Old colleagues.","topic":null}
+{"who":"Marian","text":"Found the old project folder. Scanning the site visit ones","posted":true,"at":"2026-12-04T08:50","checkin":"2026-12-04T08:50"}
+{"who":"Marian","text":"[photo: the four of us in hard hats outside the trailer]","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Marian","text":"[photo: Frank holding a clipboard, squinting]","posted":true,"at":"2026-12-04T08:52","checkin":"2026-12-04T08:52"}
+{"who":"Marian","text":"Sending the rest in a sec. Some of these are rough","posted":true,"at":"2026-12-04T09:14","checkin":"2026-12-04T09:14"}
+{"who":"Marian","text":"[photo: whiteboard with the schedule, half erased]","posted":true,"at":"2026-12-04T09:16","checkin":"2026-12-04T09:16"}
+{"who":"Priya","text":"Oh no. Where was that trailer","posted":true,"at":"2026-12-04T11:03","checkin":"2026-12-04T11:03"}
+{"who":"Marian","text":"Kirby I think? Or the one off 288","posted":true,"at":"2026-12-04T11:20","checkin":"2026-12-04T11:20"}
+{"who":"Marian","text":"Can't remember which had the broken coffee maker","posted":true,"at":"2026-12-04T11:21","checkin":"2026-12-04T11:21"}
+{"who":"Frank","text":"Kirby. The coffee maker was kirby","posted":true,"at":"2026-12-04T13:45","checkin":"2026-12-04T13:45"}
+{"who":"Frank","text":"288 had the dog","posted":true,"at":"2026-12-04T13:47","checkin":"2026-12-04T13:47"}
+{"who":"Priya","text":"Ha ok","posted":true,"at":"2026-12-04T13:50","checkin":"2026-12-04T13:50"}
+{"who":"Marian","text":"Lunch for the december one. Still on? I was thinking the 17th or 18th","posted":true,"at":"2026-12-04T15:02","checkin":"2026-12-04T15:02"}
+{"who":"Priya","text":"17 works. The 18th I have a client thing","posted":true,"at":"2026-12-04T16:30","checkin":"2026-12-04T16:30"}
+{"who":"Frank","text":"17 is fine","posted":true,"at":"2026-12-04T18:41","checkin":"2026-12-04T18:41"}
+{"who":"Frank","text":"Where","posted":true,"at":"2026-12-04T18:43","checkin":"2026-12-04T18:43"}
+{"who":"Marian","text":"The vietnamese place on westheimer? The one with the good banh mi","posted":true,"at":"2026-12-04T19:05","checkin":"2026-12-04T19:05"}
+{"who":"Marian","text":"Or the heights place if the other is too loud","posted":true,"at":"2026-12-04T19:06","checkin":"2026-12-04T19:06"}
+{"who":"Priya","text":"Westheimer. Isn't the banh mi place closed by 2 on fridays","posted":true,"at":"2026-12-04T21:12","checkin":"2026-12-04T21:12"}
+{"who":"Marian","text":"Not sure. I'll call tmrw","posted":true,"at":"2026-12-04T21:40","checkin":"2026-12-04T21:40"}
+{"who":"","react":"👍","to":18,"posted":false,"at":"2026-12-04T21:40"}
+{"who":"","react":"👍","to":18,"posted":false,"at":"2026-12-04T21:40"}
+{"who":"Frank","text":"[photo: old ID badge, very bad photo of me]","posted":true,"at":"2026-12-04T22:15","checkin":"2026-12-04T22:15"}
+{"who":"Frank","text":"Found this in a drawer","posted":true,"at":"2026-12-04T22:15","checkin":"2026-12-04T22:15"}
+{"who":"Priya","text":"You look like you're being arrested","posted":true,"at":"2026-12-04T22:31","checkin":"2026-12-04T22:31"}
+{"who":"Marian","text":"That's the face he made every time they took a picture","posted":true,"at":"2026-12-04T22:31","checkin":"2026-12-04T22:31"}
+{"who":"Marian","text":"Called. They close at 2 on fridays, confirmed. Saturday till 9","posted":true,"at":"2026-12-05T09:48","checkin":"2026-12-05T09:48"}
+{"who":"Marian","text":"So the 17th is fine. Thursday lunch","posted":true,"at":"2026-12-05T09:49","checkin":"2026-12-05T09:49"}
+{"who":"Frank","text":"Thursday works","posted":true,"at":"2026-12-05T10:31","checkin":"2026-12-05T10:31"}
+{"who":"Frank","text":"Heights or westheimer","posted":true,"at":"2026-12-05T10:33","checkin":"2026-12-05T10:33"}
+{"who":"Priya","text":"Westheimer. Sorry been buried since 7","posted":true,"at":"2026-12-05T10:41","checkin":"2026-12-05T10:41"}
+{"who":"Priya","text":"Banh mi is the reason","posted":true,"at":"2026-12-05T10:42","checkin":"2026-12-05T10:42"}
+{"who":"Marian","text":"Ok westheimer","posted":true,"at":"2026-12-05T11:05","checkin":"2026-12-05T11:05"}
+{"who":"Frank","text":"[photo: hedges along the back fence, trimmed]","posted":true,"at":"2026-12-05T14:20","checkin":"2026-12-05T14:20"}
+{"who":"Frank","text":"Finally","posted":true,"at":"2026-12-05T14:21","checkin":"2026-12-05T14:21"}
+{"who":"Marian","text":"Those look great. You did the whole fence?","posted":true,"at":"2026-12-05T14:50","checkin":"2026-12-05T14:50"}
+{"who":"Frank","text":"Half. Knees said stop","posted":true,"at":"2026-12-05T15:12","checkin":"2026-12-05T15:12"}
+{"who":"Priya","text":"Did anyone ever find the rest of the Kirby photos or is that it","posted":true,"at":"2026-12-05T19:37","checkin":"2026-12-05T19:37"}
+{"who":"Marian","text":"That's what I've got so far. Still going through the subfolder","posted":true,"at":"2026-12-05T20:02","checkin":"2026-12-05T20:02"}
+{"who":"Marian","text":"Found the ribbon cutting ones. Oh god","posted":true,"at":"2026-12-05T20:58","checkin":"2026-12-05T20:58"}
+{"who":"Marian","text":"[photo: the four of us with a giant scissors, Frank mid-sneeze]","posted":true,"at":"2026-12-05T21:00","checkin":"2026-12-05T21:00"}
+{"who":"Marian","text":"Look at Priya's face","posted":true,"at":"2026-12-05T21:00","checkin":"2026-12-05T21:00"}
+{"who":"Priya","text":"I was 24 and had been awake for 30 hours","posted":true,"at":"2026-12-05T21:14","checkin":"2026-12-05T21:14"}
+{"who":"Priya","text":"Frank's sneeze is the best thing in here","posted":true,"at":"2026-12-05T21:14","checkin":"2026-12-05T21:14"}
+{"who":"Frank","text":"Allergies. Ribbon was dusty","posted":true,"at":"2026-12-05T21:16","checkin":"2026-12-05T21:16"}
+{"who":"","react":"👍","to":41,"posted":false,"at":"2026-12-05T21:16"}
+{"who":"","react":"😂","to":41,"posted":false,"at":"2026-12-05T21:16"}
+{"who":"","react":"😂","to":41,"posted":false,"at":"2026-12-05T21:16"}
+{"who":"Marian","text":"Can't sleep, going through the last folder. Mostly bad lighting","posted":true,"at":"2026-12-05T23:48","checkin":"2026-12-05T23:48"}
+{"who":"Priya","text":"Same. Send the bad ones","posted":true,"at":"2026-12-06T00:20","checkin":"2026-12-06T00:20"}
+{"who":"Marian","text":"[photo: blurry shot of a ladder against a wall]","posted":true,"at":"2026-12-06T00:24","checkin":"2026-12-06T00:24"}
+{"who":"Marian","text":"Think this was the stairwell at the courthouse annex","posted":true,"at":"2026-12-06T00:25","checkin":"2026-12-06T00:25"}
+{"who":"Priya","text":"No idea. Why is the ladder in every one","posted":true,"at":"2026-12-06T00:31","checkin":"2026-12-06T00:31"}
+{"who":"Marian","text":"Frank kept moving it","posted":true,"at":"2026-12-06T00:33","checkin":"2026-12-06T00:33"}
+{"who":"Frank","text":"It was in the way","posted":true,"at":"2026-12-06T00:40","checkin":"2026-12-06T00:40"}
+{"who":"Marian","text":"Coffee. Finishing the scans then back to someone's dissertation","posted":true,"at":"2026-12-06T09:12","checkin":"2026-12-06T09:12"}
+{"who":"Priya","text":"[photo: whiteboard covered in regression output, taken from a doorway]","posted":true,"at":"2026-12-06T10:58","checkin":"2026-12-06T10:58"}
+{"who":"Priya","text":"Found this on my phone. Don't ask","posted":true,"at":"2026-12-06T10:58","checkin":"2026-12-06T10:58"}
+{"who":"Marian","text":"Is that the churn model","posted":true,"at":"2026-12-06T11:30","checkin":"2026-12-06T11:30"}
+{"who":"Priya","text":"Second version. First one was worse","posted":true,"at":"2026-12-06T11:31","checkin":"2026-12-06T11:31"}
+{"who":"Frank","text":"Drove past the 288 site. I think it's a Whataburger now","posted":true,"at":"2026-12-06T13:12","checkin":"2026-12-06T13:12"}
+{"who":"Marian","text":"Of course it is","posted":true,"at":"2026-12-06T13:40","checkin":"2026-12-06T13:40"}
+{"who":"Marian","text":"[photo: group of contractors on a roof, one waving]","posted":true,"at":"2026-12-06T13:41","checkin":"2026-12-06T13:41"}
+{"who":"Marian","text":"Don't know who that is","posted":true,"at":"2026-12-06T13:41","checkin":"2026-12-06T13:41"}
+{"who":"Priya","text":"That's Ray. He's the one who backed the forklift into the trailer","posted":true,"at":"2026-12-06T15:20","checkin":"2026-12-06T15:20"}
+{"who":"Priya","text":"Pretty sure","posted":true,"at":"2026-12-06T15:20","checkin":"2026-12-06T15:20"}
+{"who":"Frank","text":"Ray had a mustache for like three years. Then it was gone","posted":true,"at":"2026-12-06T15:55","checkin":"2026-12-06T15:55"}
+{"who":"Marian","text":"I'd forgotten about the forklift","posted":true,"at":"2026-12-06T16:02","checkin":"2026-12-06T16:02"}
+{"who":"Marian","text":"Last batch is up. Mostly dark, sorry","posted":true,"at":"2026-12-06T21:15","checkin":"2026-12-06T21:15"}
+{"who":"Marian","text":"[photo: dim shot of four people at a folding table, one blurry figure with a cup]","posted":true,"at":"2026-12-06T21:15","checkin":"2026-12-06T21:15"}
+{"who":"Marian","text":"That's you Frank with the thermos","posted":true,"at":"2026-12-06T21:16","checkin":"2026-12-06T21:16"}
+{"who":"Frank","text":"Thermos was a gift","posted":true,"at":"2026-12-06T21:50","checkin":"2026-12-06T21:50"}
+{"who":"","react":"👍","to":65,"posted":false,"at":"2026-12-06T21:50"}
+{"who":"Priya","text":"Mine's the one with the laptop. Not sure I was ever not on a laptop","posted":true,"at":"2026-12-06T23:04","checkin":"2026-12-06T23:04"}
+{"who":"Priya","text":"Going to bed","posted":true,"at":"2026-12-06T23:05","checkin":"2026-12-06T23:05"}
+{"who":"Marian","text":"That's everything. Putting the folder on the shared drive so nobody has to dig for it again","posted":true,"at":"2026-12-07T00:12","checkin":"2026-12-07T00:12"}

@@ -1,0 +1,176 @@
+--- Mon 20:25, Renata
+[photo: Boa Viagem beach at sunset, the tide out]
+
+--- Mon 20:26, Renata
+Finally got out of the office before dark 🌅
+
+--- Mon 20:41, Felipe
+That's the spot from the first day right
+
+--- Mon 20:42, Renata
+Yeah same spot. No one on it, weird
+
+--- Mon 20:44, Felipe
+Release is still on for thurs. Been in the repo since 8
+
+--- Mon 20:47, Renata
+Pray for you 🙏 my client sent me a shoebox of receipts today. A SHOEBOX
+
+--- Mon 20:49, Felipe
+The paper kind?
+
+--- Mon 20:49, Renata
+The paper kind. 3 years of it
+
+--- Mon 21:30, Felipe
+Still on for saturday? I can do after 4 if the release doesn't eat it
+
+--- Mon 21:58, Renata
+Sat after 4 works. Where tho, the market at boa vista?
+
+--- Mon 22:10, Felipe
+Fine by me. The one with the bad tapioca is on me this time
+
+--- Mon 22:11, Renata
+Lol deal. I'll bring receipts to bribe the accountant gods 😂
+
+--- Mon 23:15, Felipe
+Ci is green. First time all day
+
+--- Mon 23:16, Renata
+Go to bed felipe
+
+--- Mon 23:17, Felipe
+One more thing first
+
+--- Tue 00:40, Renata
+Still at the receipts. One client's bank statement is in two different currencies and nobody told me
+
+--- Tue 00:52, Felipe
+Which two
+
+--- Tue 00:53, Renata
+Usd and brl. The usd part is in a different account number from the rest, like they opened a second account and didn't mention it
+
+--- Tue 00:54, Felipe
+So nobody told you because nobody knew
+
+--- Tue 00:55, Renata
+Possibly I'm going to pretend that's fine and sleep
+
+--- Tue 00:58, Felipe
+Branch is cut. Going to bed now, really
+
+--- Tue 00:58, Renata
+Go to bed felipe 🙄
+
+--- Tue 09:12, Felipe
+Slept until 9. Feels illegal
+
+--- Tue 09:14, Renata
+Lucky. I had a client call at 8, he wanted to talk about the "missing" 2k
+
+--- Tue 09:15, Renata
+It was a transfer to his own card. He forgot. 2 hrs of my life
+
+--- Tue 09:20, Felipe
+Should have billed him for the 2 hrs
+
+--- Tue 09:21, Renata
+I did
+
+--- Tue 13:04, Felipe
+Staging is green again. Deploy Thurs morning if nothing else breaks
+
+--- Tue 13:20, Renata
+[photo: receipts on the dining table, sorted into piles]
+
+--- Tue 13:20, Renata
+Left pile is "probably fine". Middle is "why". Right is the shoebox's ghost
+
+--- Tue 13:31, Felipe
+What's the total
+
+--- Tue 13:40, Renata
+No idea lol. Ok lunch, the shoebox won this round
+
+--- Tue 18:15, Felipe
+Sat still ok? Market or do you want somewhere with a view
+
+--- Tue 18:50, Renata
+Market is fine. Bring cash, the card machine at the tapioca place is unreliable
+
+--- Tue 18:51, Renata
+Also the bad tapioca is non-negotiable
+
+--- Tue 19:30, Felipe
+Wouldn't dream of negotiating it
+
+--- Tue 22:14, Renata
+Can't look at another receipt tonight. Going to bed
+
+--- Tue 22:15, Felipe
+Good. Sleep
+
+--- Wed 08:47, Renata
+Coffee first. Then the shoebox
+
+--- Wed 09:30, Felipe
+Did you find the 2k or was that a different one
+
+--- Wed 09:31, Renata
+Different one. This is the USD account
+
+--- Wed 10:12, Felipe
+Standup ran 40 min because someone wanted to rename a variable
+
+--- Wed 10:13, Renata
+Which variable
+
+--- Wed 10:14, Felipe
+Doesn't matter. It's "customerRecord" now instead of "cust" and everyone's happy
+
+--- Wed 12:50, Renata
+[photo: a faded receipt from a tapioca place, date half-cut off]
+
+--- Wed 12:51, Renata
+Is this one ours? From the first week
+
+--- Wed 12:58, Felipe
+Can't tell, the amount's gone. Could be anyone's bad tapioca
+
+--- Wed 13:05, Renata
+Rude
+
+--- Wed 15:40, Felipe
+Release notes are half done. Writing them is the worst part somehow
+
+--- Wed 16:22, Renata
+Client wants the report by friday now 🙃
+
+--- Wed 16:23, Felipe
+Did you say no
+
+--- Wed 16:30, Renata
+Said "I'll see what I can do," which is how it starts
+
+--- Wed 17:45, Felipe
+Market still on for Sat. Checked the weather, no rain
+
+--- Wed 17:46, Renata
+Ok good. Bring the umbrella anyway
+
+--- Wed 19:02, Felipe
+Sure
+
+--- Wed 22:40, Felipe
+Pushed the fix. Tests green. Going to watch whatever's on and not think about it
+
+--- Wed 23:20, Renata
+Found it. The bank split the statement by currency and the client never looked. 3 hrs of my life, again
+
+--- Wed 23:21, Felipe
+Bill him
+
+--- Wed 23:21, Renata
+Already did 😂

@@ -1,0 +1,69 @@
+{"writer":"w10","model":"haiku","effort":"medium","days":2,"oracle":false,"start":"2026-12-03T14:05","complete":true,"rejects":0,"usage":[{"input_tokens":2,"cache_creation_input_tokens":1459,"cache_read_input_tokens":0,"output_tokens":2059,"output_tokens_details":{"thinking_tokens":1301},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1459,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2059,"cache_read_input_tokens":0,"cache_creation_input_tokens":1459,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1459},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2173,"cache_read_input_tokens":0,"output_tokens":2592,"output_tokens_details":{"thinking_tokens":1784},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2173,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":2592,"cache_read_input_tokens":0,"cache_creation_input_tokens":2173,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2173},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":2985,"cache_read_input_tokens":0,"output_tokens":1504,"output_tokens_details":{"thinking_tokens":1015},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":2985,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1504,"cache_read_input_tokens":0,"cache_creation_input_tokens":2985,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":2985},"type":"message"}],"speed":"standard","fallback_credit":null}]}
+{"names":["Priya","Jonah"],"setting":"You are both in Seattle, Washington. You were partners once, and now you are friends who text each other easily and keep things light. Right now Priya is working busy shifts at a veterinary clinic, Jonah is wiring a kitchen for a client, and you are planning a hike together this weekend.","openers":["Send a photo of the clinic's busy waiting room","Ask if Saturday's hike is still on","Tell him about the dog you saw today","Check whether he's free to help you move a couch"],"opener":"Tell him about the dog you saw today","cast":{"Priya":{"who":"34, woman, the ex","work":"veterinary technician","knows":"You know Jonah as your ex, now a close friend.","texts":"","style":"some emoji and a few abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]},"Jonah":{"who":"35, man, the friend","work":"electrician","knows":"You know Priya as your ex, now a close friend.","texts":"","style":"some emoji and a few abbreviations.","emojiKeep":0.15,"capitals":true,"lives":[],"ex":[]}},"private_lines":{"Priya":"You live in Seattle, where your days go to veterinary technician shifts, and you live with nobody.","Jonah":"You live in Seattle, where your days go to electrical jobs, and you live with nobody."},"usage":[{"input_tokens":2,"cache_creation_input_tokens":783,"cache_read_input_tokens":0,"output_tokens":1057,"output_tokens_details":{"thinking_tokens":851},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":783,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1057,"cache_read_input_tokens":0,"cache_creation_input_tokens":783,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":783},"type":"message"}],"speed":"standard","fallback_credit":null},{"input_tokens":2,"cache_creation_input_tokens":1034,"cache_read_input_tokens":0,"output_tokens":1753,"output_tokens_details":{"thinking_tokens":1385},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":1034,"ephemeral_5m_input_tokens":0},"inference_geo":"global","iterations":[{"input_tokens":2,"output_tokens":1753,"cache_read_input_tokens":0,"cache_creation_input_tokens":1034,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1034},"type":"message"}],"speed":"standard","fallback_credit":null}],"place":"Seattle, USA","castMs":15631,"situation":"An ex who is still a friend.","topic":null}
+{"who":"Priya","text":"Ok so a guy brought in a greyhound today who had apparently been living in his car","posted":true,"at":"2026-12-03T14:05","checkin":"2026-12-03T14:05"}
+{"who":"Priya","text":"Not hurt, just thin. And so scared of the tile she walked on it like it was ice","posted":true,"at":"2026-12-03T14:06","checkin":"2026-12-03T14:06"}
+{"who":"Jonah","text":"Oh no. Is she ok","posted":true,"at":"2026-12-03T14:09","checkin":"2026-12-03T14:09"}
+{"who":"Priya","text":"She's fine, we did bloodwork, she's gonna be a lot healthier. Sleeps on everything now","posted":true,"at":"2026-12-03T14:11","checkin":"2026-12-03T14:11"}
+{"who":"Jonah","text":"Of course she does","posted":true,"at":"2026-12-03T14:12","checkin":"2026-12-03T14:12"}
+{"who":"Jonah","text":"Who was the guy","posted":true,"at":"2026-12-03T14:12","checkin":"2026-12-03T14:12"}
+{"who":"Priya","text":"No idea. Didn't leave a name. Said he found her at a rest stop off I-5 near Marysville and couldn't keep her. Left her with us and a bag of kibble. The tech wanted to chase him down honestly","posted":true,"at":"2026-12-03T15:40","checkin":"2026-12-03T15:40"}
+{"who":"Priya","text":"[photo: the greyhound asleep on a blanket in kennel 4]","posted":true,"at":"2026-12-03T15:41","checkin":"2026-12-03T15:41"}
+{"who":"Jonah","text":"Ok she's cute","posted":true,"at":"2026-12-03T15:52","checkin":"2026-12-03T15:52"}
+{"who":"Jonah","text":"Does she have a name","posted":true,"at":"2026-12-03T15:52","checkin":"2026-12-03T15:52"}
+{"who":"Priya","text":"They're calling her Biscuit till someone claims her. I'm trying to make it Pickle","posted":true,"at":"2026-12-03T16:30","checkin":"2026-12-03T16:30"}
+{"who":"Jonah","text":"Biscuit is fine","posted":true,"at":"2026-12-03T16:31","checkin":"2026-12-03T16:31"}
+{"who":"Priya","text":"You're no fun","posted":true,"at":"2026-12-03T16:33","checkin":"2026-12-03T16:33"}
+{"who":"Jonah","text":"Just got out of a kitchen. Guy wants 6 outlets on one island and wants to know why I'm not \"just doing it like the last guy\"","posted":true,"at":"2026-12-03T19:10","checkin":"2026-12-03T19:10"}
+{"who":"Jonah","text":"Did it right. He's not happy but it's code","posted":true,"at":"2026-12-03T19:11","checkin":"2026-12-03T19:11"}
+{"who":"Priya","text":"Classic","posted":true,"at":"2026-12-03T19:12","checkin":"2026-12-03T19:12"}
+{"who":"Priya","text":"Still thinking about the greyhound","posted":true,"at":"2026-12-03T21:48","checkin":"2026-12-03T21:48"}
+{"who":"Priya","text":"The tech asked if I'd take her for the weekend and I almost said yes","posted":true,"at":"2026-12-03T21:49","checkin":"2026-12-03T21:49"}
+{"who":"Jonah","text":"You're not gonna","posted":true,"at":"2026-12-03T21:52","checkin":"2026-12-03T21:52"}
+{"who":"Priya","text":"No. I have a rule about not adopting on a Thursday","posted":true,"at":"2026-12-03T21:53","checkin":"2026-12-03T21:53"}
+{"who":"Jonah","text":"That's a real rule","posted":true,"at":"2026-12-03T21:54","checkin":"2026-12-03T21:54"}
+{"who":"Priya","text":"It's my rule","posted":true,"at":"2026-12-03T22:30","checkin":"2026-12-03T22:30"}
+{"who":"Priya","text":"Is the hike still on for saturday or is the weather going to ruin it","posted":true,"at":"2026-12-04T00:40","checkin":"2026-12-04T00:40"}
+{"who":"Jonah","text":"Forecast says rain till like noon then clearing. Still on I think","posted":true,"at":"2026-12-04T07:22","checkin":"2026-12-04T07:22"}
+{"who":"Jonah","text":"Rattlesnake works. Anything higher is gonna be snow","posted":true,"at":"2026-12-04T07:23","checkin":"2026-12-04T07:23"}
+{"who":"Priya","text":"Rattlesnake works. Bring the good boots not the sneakers from last time","posted":true,"at":"2026-12-04T07:31","checkin":"2026-12-04T07:31"}
+{"who":"Priya","text":"Dont make that face","posted":true,"at":"2026-12-04T07:32","checkin":"2026-12-04T07:32"}
+{"who":"Jonah","text":"Those were fine","posted":true,"at":"2026-12-04T07:33","checkin":"2026-12-04T07:33"}
+{"who":"Jonah","text":"Leaving at 7:45 for a panel swap, can't text much","posted":true,"at":"2026-12-04T07:33","checkin":"2026-12-04T07:33"}
+{"who":"Priya","text":"Biscuit ate a whole sock this morning. They're doing xrays. Pray for me","posted":true,"at":"2026-12-04T08:10","checkin":"2026-12-04T08:10"}
+{"who":"Priya","text":"[photo: x-ray of a greyhound's stomach with a sock-shaped blob]","posted":true,"at":"2026-12-04T08:11","checkin":"2026-12-04T08:11"}
+{"who":"Jonah","text":"Is it a sock or are we looking at a sock-shaped problem","posted":true,"at":"2026-12-04T13:20","checkin":"2026-12-04T13:20"}
+{"who":"Priya","text":"It's a sock. They're keeping her overnight to watch. She's fine","posted":true,"at":"2026-12-04T13:41","checkin":"2026-12-04T13:41"}
+{"who":"Jonah","text":"Ok good. Pickle is clearly the right name now","posted":true,"at":"2026-12-04T13:44","checkin":"2026-12-04T13:44"}
+{"who":"Priya","text":"No","posted":true,"at":"2026-12-04T13:52","checkin":"2026-12-04T13:52"}
+{"who":"Jonah","text":"Kitchen guy finally signed off. Still wants a refund on principle","posted":true,"at":"2026-12-04T16:05","checkin":"2026-12-04T16:05"}
+{"who":"Jonah","text":"I told him the principle is the outlets","posted":true,"at":"2026-12-04T16:06","checkin":"2026-12-04T16:06"}
+{"who":"Priya","text":"Off in 20. Going to bed at 8 like a responsible adult","posted":true,"at":"2026-12-04T17:30","checkin":"2026-12-04T17:30"}
+{"who":"Jonah","text":"Responsible adults don't text about hikes at 12:40am","posted":true,"at":"2026-12-04T17:34","checkin":"2026-12-04T17:34"}
+{"who":"Priya","text":"It's a time sensitive matter","posted":true,"at":"2026-12-04T17:35","checkin":"2026-12-04T17:35"}
+{"who":"Priya","text":"Biscuit's sock came out fine. Still no owner so she's getting listed Monday","posted":true,"at":"2026-12-04T21:10","checkin":"2026-12-04T21:10"}
+{"who":"Priya","text":"I'm not applying","posted":true,"at":"2026-12-04T21:11","checkin":"2026-12-04T21:11"}
+{"who":"Jonah","text":"You're not applying","posted":true,"at":"2026-12-04T21:14","checkin":"2026-12-04T21:14"}
+{"who":"Priya","text":"It's my rule","posted":true,"at":"2026-12-04T21:15","checkin":"2026-12-04T21:15"}
+{"who":"Priya","text":"But if I ever do I'm naming her Pickle","posted":true,"at":"2026-12-04T21:15","checkin":"2026-12-04T21:15"}
+{"who":"Jonah","text":"No","posted":true,"at":"2026-12-04T21:19","checkin":"2026-12-04T21:19"}
+{"who":"Jonah","text":"Wiring's done. Going to sleep. Hike at 8? You bring the coffee","posted":true,"at":"2026-12-04T23:50","checkin":"2026-12-04T23:50"}
+{"who":"Priya","text":"Coffee at the trailhead. 8 at the lot 👍","posted":true,"at":"2026-12-04T23:58","checkin":"2026-12-04T23:58"}
+{"who":"","react":"👍","to":47,"posted":false,"at":"2026-12-04T23:58"}
+{"who":"Jonah","text":"Leaving now. Rain's still going","posted":true,"at":"2026-12-05T07:12","checkin":"2026-12-05T07:12"}
+{"who":"Priya","text":"Coffee's from the good place so you're welcome in advance","posted":true,"at":"2026-12-05T07:14","checkin":"2026-12-05T07:14"}
+{"who":"Priya","text":"Parked. You're late","posted":true,"at":"2026-12-05T07:58","checkin":"2026-12-05T07:58"}
+{"who":"Jonah","text":"Parked 2 min ago. Behind the red subaru","posted":true,"at":"2026-12-05T08:01","checkin":"2026-12-05T08:01"}
+{"who":"Jonah","text":"Ok you were right about the boots","posted":true,"at":"2026-12-05T12:47","checkin":"2026-12-05T12:47"}
+{"who":"Priya","text":"Wait say that again","posted":true,"at":"2026-12-05T12:47","checkin":"2026-12-05T12:47"}
+{"who":"Jonah","text":"Don't make that face","posted":true,"at":"2026-12-05T12:48","checkin":"2026-12-05T12:48"}
+{"who":"Priya","text":"Home safe?","posted":true,"at":"2026-12-05T12:50","checkin":"2026-12-05T12:50"}
+{"who":"Jonah","text":"Yeah. Shower then nap then nothing","posted":true,"at":"2026-12-05T12:51","checkin":"2026-12-05T12:51"}
+{"who":"Priya","text":"[photo: greyhound in a fleece that's too big for her, looking unimpressed]","posted":true,"at":"2026-12-05T16:40","checkin":"2026-12-05T16:40"}
+{"who":"Jonah","text":"She looks like she knows something we don't","posted":true,"at":"2026-12-05T16:41","checkin":"2026-12-05T16:41"}
+{"who":"Priya","text":"She's been like that since Thursday","posted":true,"at":"2026-12-05T16:41","checkin":"2026-12-05T16:41"}
+{"who":"Jonah","text":"Did you make it home or did the bus eat you","posted":true,"at":"2026-12-05T21:17","checkin":"2026-12-05T21:17"}
+{"who":"Priya","text":"Home. Legs are gone. Zero regrets","posted":true,"at":"2026-12-05T21:30","checkin":"2026-12-05T21:30"}
+{"who":"Jonah","text":"Same. Calves are a different person now","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Priya","text":"Rattlesnake rule: you're never doing that again until next weekend","posted":true,"at":"2026-12-05T21:31","checkin":"2026-12-05T21:31"}
+{"who":"Jonah","text":"Deal","posted":true,"at":"2026-12-05T21:33","checkin":"2026-12-05T21:33"}
+{"who":"","react":"👍","to":64,"posted":false,"at":"2026-12-05T21:33"}

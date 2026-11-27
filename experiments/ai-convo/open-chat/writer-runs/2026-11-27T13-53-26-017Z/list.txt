@@ -1,0 +1,1 @@
+live /home/user/world/.claude/worktrees/agent-adfe27196a1fbbd09/experiments/ai-convo/open-chat/writer-runs/2026-11-27T13-53-26-017Z/live

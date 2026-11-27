@@ -1,0 +1,44 @@
+[
+ {
+  "label": "W10-V11",
+  "people": 3,
+  "brief": "Friends deciding where to go on Saturday.",
+  "topic": "What time does the Tate Modern close on a Friday, and is entry free?",
+  "start": "2026-12-04T18:00"
+ },
+ {
+  "label": "W10-V12",
+  "people": 3,
+  "brief": "Friends deciding where to go on Saturday.",
+  "topic": "What time does the Tate Modern close on a Friday, and is entry free?",
+  "start": "2026-12-04T17:55"
+ },
+ {
+  "label": "W10-V13",
+  "people": 3,
+  "brief": "Friends deciding where to go on Saturday.",
+  "topic": "What time does the Tate Modern close on a Friday, and is entry free?",
+  "start": "2026-12-05T22:40"
+ },
+ {
+  "label": "W10-V21",
+  "people": 4,
+  "brief": "Colleagues sorting out a train to a conference.",
+  "topic": "What time is the first train from Leeds to London King's Cross on a Sunday?",
+  "start": "2026-12-01T07:55"
+ },
+ {
+  "label": "W10-V22",
+  "people": 4,
+  "brief": "Colleagues sorting out a train to a conference.",
+  "topic": "What time is the first train from Leeds to London King's Cross on a Sunday?",
+  "start": "2026-12-01T20:25"
+ },
+ {
+  "label": "W10-V23",
+  "people": 4,
+  "brief": "Colleagues sorting out a train to a conference.",
+  "topic": "What time is the first train from Leeds to London King's Cross on a Sunday?",
+  "start": "2026-12-02T20:40"
+ }
+]
